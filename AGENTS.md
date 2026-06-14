@@ -39,6 +39,16 @@ L'application s'appuie sur une gem privée qui fournit :
 - `goldiloader` gère le eager loading automatiquement — ne pas ajouter d'includes manuels sauf nécessité
 - L'extension PostgreSQL `unaccent` est disponible pour les recherches
 
+## Collaboration Codex / Claude Code
+
+Note Codex - 2026-06-14.
+
+- Un seul agent travaille a la fois sur une meme zone de code.
+- Le bon agent pour modifier ou relire une zone est celui qui a le contexte le plus frais sur les fichiers concernes.
+- Une unite de travail doit se terminer par un commit, ou au minimum par un diff/stash clairement identifie, avant passation a l'autre agent.
+- Pour les zones sensibles (`Journey`, `Challenge`, `ChallengesUser`, `JourneysUser`, progression, validation, points, LTI, messagerie), faire une analyse d'impact avant implementation.
+- Les mises a jour de documentation ajoutees par Codex doivent etre signalees avec une mention `Note Codex` ou `Ajout Codex`.
+
 ## Structure des dossiers clés
 
 ```
@@ -60,7 +70,7 @@ docs/
 ## Convention de signature
 
 Les modifications de cette documentation indiquent leur provenance :
-- Commits préfixés  → produits par Claude Code
-- Commits préfixés  → produits par Codex
+- Commits préfixés `[Claude]` → produits par Claude Code
+- Commits préfixés `[Codex]` → produits par Codex
 
 Cela permet de tracer qui a écrit quoi et de détecter d'éventuelles incohérences entre les deux agents.
