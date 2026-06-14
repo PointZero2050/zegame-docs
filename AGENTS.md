@@ -56,3 +56,11 @@ db/
 docs/
   architecture.md   ← documentation architecture complète
 ```
+
+## Convention de signature
+
+Les modifications de cette documentation indiquent leur provenance :
+- Commits préfixés  → produits par Claude Code
+- Commits préfixés  → produits par Codex
+
+Cela permet de tracer qui a écrit quoi et de détecter d'éventuelles incohérences entre les deux agents.
