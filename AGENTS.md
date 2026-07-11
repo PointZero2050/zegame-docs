@@ -6,6 +6,8 @@ Plateforme d'apprentissage par compétences gamifiée pour des communautés. Les
 
 Voir [docs/architecture.md](docs/architecture.md) pour l'architecture complète.
 
+Pour les évolutions liées au Point Zéro, à la Marelle Oméga et aux mondes, lire également [docs/point-zero-marelle.md](docs/point-zero-marelle.md).
+
 ## Stack
 
 Rails 8.1.3 · Ruby 4.0.0 · PostgreSQL · Puma · Caddy · Hotwire (Turbo + Stimulus) · HAML · Solid Queue · Capistrano

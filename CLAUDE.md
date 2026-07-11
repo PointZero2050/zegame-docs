@@ -14,6 +14,8 @@ ssh -i /c/Users/Boris/.ssh/id_ed25519 daployar@vibe.ze.game
 
 Voir [docs/architecture.md](docs/architecture.md) pour la documentation complète.
 
+Pour les évolutions liées au Point Zéro, à la Marelle Oméga et aux mondes, lire également [docs/point-zero-marelle.md](docs/point-zero-marelle.md).
+
 ## Stack en bref
 
 Rails 8.1.3 · Ruby 4.0.0 · PostgreSQL · Puma · Caddy · Hotwire · HAML · Solid Queue · Capistrano
