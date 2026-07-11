@@ -39,13 +39,19 @@ Le livre emploie « 10 mondes » tout en décrivant une échelle allant du Monde
 
 Les éléments ci-dessous sont des hypothèses de conception, pas encore des décisions.
 
-### Une couche au-dessus des Journeys
+### Articulation entre Mondes et Journeys
 
-Un Monde ne devrait probablement pas être un simple Journey. Il constitue un palier qui donne accès à plusieurs Journeys et à d'autres types d'expériences. La hiérarchie cible pourrait devenir :
+Le Monde 0 existe déjà sous la forme d'un Journey prototypé dans ze.game. Cette représentation constitue une base valide pour expérimenter l'expérience et éviter une refonte abstraite prématurée.
+
+À court terme, chaque Monde peut donc être représenté par un Journey, la Marelle servant de navigation entre ces parcours et les rites de passage pouvant prendre la forme de Challenges particuliers.
+
+Un modèle `World` séparé ne devra être introduit que si les besoins réels dépassent clairement les capacités de `Journey`, par exemple lorsqu'un Monde doit contenir plusieurs catalogues, parcours, rites, événements et expériences externes. La hiérarchie cible éventuelle serait alors :
 
 `Marelle -> Monde -> catalogue d'expériences -> Journey -> Challenge`
 
-Le catalogue devra pouvoir référencer des objets internes et externes : parcours ze.game, ateliers, événements, rites, communautés, contenus, retraites ou dispositifs partenaires.
+Le catalogue pourrait référencer des objets internes et externes : parcours ze.game, ateliers, événements, rites, communautés, contenus, retraites ou dispositifs partenaires.
+
+La vision narrative du jumeau numérique et du monde-miroir est documentée séparément dans [vision-monde-miroir.md](vision-monde-miroir.md).
 
 ### Plusieurs progressions liées
 
