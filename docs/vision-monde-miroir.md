@@ -2,6 +2,15 @@
 
 > Ajout Codex - 2026-07-12. Synthèse d'un brainstorming avec Boris. Ce document décrit un horizon produit volontairement ambitieux, pas un périmètre validé ni une spécification d'implémentation.
 
+## Documents complémentaires
+
+Cette vision est approfondie dans quatre notes fonctionnelles :
+
+- [vision-relations-recits-collectifs.md](vision-relations-recits-collectifs.md) : messagerie Point Zéro, récit-fresque, cercles et quêtes collectives ;
+- [vision-ressourcerie-marketplace.md](vision-ressourcerie-marketplace.md) : graphe de ressources, évaluation par les cinq cadres, studio de création et marketplace ;
+- [vision-validation.md](vision-validation.md) : preuves, conditions composites et moteur de validation pédagogique ;
+- [vision-game-autosubversion.md](vision-game-autosubversion.md) : mécaniques classiques, combats par runes, esthétique, satire, autosubversion et génération de quêtes depuis les récits réels.
+
 ## 1. Repositionnement de ze.game
 
 La version idéale de ze.game n'est plus principalement un catalogue de parcours gamifiés. Elle devient un compagnon de transformation personnelle et collective, organisé autour de quatre questions simples pour le Joueur :
@@ -252,3 +261,20 @@ Une première version n'a pas besoin d'un monde ouvert ni d'une narration entiè
 6. Comment construire du mana relationnel sans créer de compétition morale ni d'économie de faux feedbacks ?
 7. Quels éléments du prototype `https://pointzero.vision/jeu/` doivent devenir le prologue canonique ?
 8. Quel est le premier épisode complet reliant avatar, expérience réelle, trace, résonance et transformation du décor ?
+
+## 16. Boucle générative étendue
+
+Les nouvelles briques convergent vers une boucle où le jeu, les relations, les récits, la connaissance et l'économie de l'écosystème s'alimentent mutuellement :
+
+```text
+Quête du monde-miroir
+→ action individuelle ou collective dans le réel
+→ preuves, trace et résonances
+→ temps d'intégration
+→ bloc de récit-fresque
+→ mana et transformation du monde-miroir
+→ récit réel transposé en nouvelle quête
+→ parcours publié et transmis dans l'écosystème
+```
+
+Le cercle de croissance de 6 à 8 Joueurs reste la maille relationnelle de base. Il peut se déployer en binômes, triades, cercle complet ou constellations intercercles selon l'échelle de la quête.
