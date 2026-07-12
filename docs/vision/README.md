@@ -20,9 +20,11 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 
 6. **[game-autosubversion.md](game-autosubversion.md)** — Direction de game design : codes de l'Empire détournés progressivement vers la conscience, combats par runes, ton et personnages, direction artistique.
 
+7. **[accueil-point-zero.md](accueil-point-zero.md)** — Première proposition concrète issue de la vision : accueil orchestrateur, états du Joueur, mode événement pour le New Civilization Festival, parcours libre et workflow de prototype HTML avant implémentation Rails.
+
 ## Ce qui manque encore
 
 - **Priorisation inter-documents** : chaque note propose sa propre séquence interne, mais rien n'arbitre l'ordre entre la messagerie, la ressourcerie, la marketplace et le moteur de validation.
-- **Confrontation avec `../design.md`** : le design actuel documenté est une UI Bootstrap classique. Cette vision suppose un avatar pixel art et un monde-miroir. Aucune décision n'a encore tranché si le travail de design doit partir de l'existant (amélioration incrémentale) ou prototyper une direction radicalement nouvelle.
+- **Validation du prototype d'accueil** : [accueil-point-zero.md](accueil-point-zero.md) propose de partir de l'existant avec une expérience Point Zéro dédiée et un prototype HTML autonome, mais les wireframes, la direction visuelle et les règles définitives n'ont pas encore été validés par Boris.
 - **Revue légale/éthique dédiée** : plusieurs mécaniques envisagées (quatrième mur via caméra/géolocalisation/notifications, récits personnels sensibles, vocabulaire thérapeutique/initiatique, public potentiellement mineur) dépassent le cadre d'une revue produit ou design classique.
 - **Clarification de la numérotation des mondes** (10 ou 11 positions, mondes 8-9 non décrits) — question ouverte à trancher par Boris, remontée dans [marelle-mondes.md](marelle-mondes.md).
