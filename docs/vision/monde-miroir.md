@@ -6,10 +6,10 @@
 
 Cette vision est approfondie dans quatre notes fonctionnelles :
 
-- [vision-relations-recits-collectifs.md](vision-relations-recits-collectifs.md) : messagerie Point Zéro, récit-fresque, cercles et quêtes collectives ;
-- [vision-ressourcerie-marketplace.md](vision-ressourcerie-marketplace.md) : graphe de ressources, évaluation par les cinq cadres, studio de création et marketplace ;
-- [vision-validation.md](vision-validation.md) : preuves, conditions composites et moteur de validation pédagogique ;
-- [vision-game-autosubversion.md](vision-game-autosubversion.md) : mécaniques classiques, combats par runes, esthétique, satire, autosubversion et génération de quêtes depuis les récits réels.
+- [relations-recits-collectifs.md](relations-recits-collectifs.md) : messagerie Point Zéro, récit-fresque, cercles et quêtes collectives ;
+- [ressourcerie-marketplace.md](ressourcerie-marketplace.md) : graphe de ressources, évaluation par les cinq cadres, studio de création et marketplace ;
+- [validation.md](validation.md) : preuves, conditions composites et moteur de validation pédagogique ;
+- [game-autosubversion.md](game-autosubversion.md) : mécaniques classiques, combats par runes, esthétique, satire, autosubversion et génération de quêtes depuis les récits réels.
 
 ## 1. Repositionnement de ze.game
 

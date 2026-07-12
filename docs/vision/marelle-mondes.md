@@ -51,7 +51,7 @@ Un modèle `World` séparé ne devra être introduit que si les besoins réels d
 
 Le catalogue pourrait référencer des objets internes et externes : parcours ze.game, ateliers, événements, rites, communautés, contenus, retraites ou dispositifs partenaires.
 
-La vision narrative du jumeau numérique et du monde-miroir est documentée séparément dans [vision-monde-miroir.md](vision-monde-miroir.md).
+La vision narrative du jumeau numérique et du monde-miroir est documentée séparément dans [monde-miroir.md](monde-miroir.md).
 
 ### Plusieurs progressions liées
 

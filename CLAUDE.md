@@ -14,9 +14,7 @@ ssh -i /c/Users/Boris/.ssh/id_ed25519 daployar@vibe.ze.game
 
 Voir [docs/architecture.md](docs/architecture.md) pour la documentation complète.
 
-Pour les évolutions liées au Point Zéro, à la Marelle Oméga et aux mondes, lire également [docs/point-zero-marelle.md](docs/point-zero-marelle.md).
-
-Pour la vision idéale du jumeau numérique, du monde-miroir, de l'Ombre et du mana, lire [docs/vision-monde-miroir.md](docs/vision-monde-miroir.md).
+Pour la vision produit idéale (Marelle Oméga, mondes, monde-miroir, messagerie, ressourcerie, marketplace, moteur de validation, game design), voir l'index [docs/vision/README.md](docs/vision/README.md).
 
 ## Stack en bref
 
