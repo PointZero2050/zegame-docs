@@ -16,6 +16,8 @@ Voir [docs/architecture.md](docs/architecture.md) pour la documentation complèt
 
 Pour la vision produit idéale (Marelle Oméga, mondes, monde-miroir, messagerie, ressourcerie, marketplace, moteur de validation, game design), voir l'index [docs/vision/README.md](docs/vision/README.md).
 
+Les prototypes d'interface (HTML autonomes) vivent dans le repo dédié [zegame-prototypes](https://github.com/PointZero2050/zegame-prototypes), cloné sur le serveur dans ~/zegame-prototypes/. Un dossier par prototype, conventions dans son README.
+
 ## Stack en bref
 
 Rails 8.1.3 · Ruby 4.0.0 · PostgreSQL · Puma · Caddy · Hotwire · HAML · Solid Queue · Capistrano
