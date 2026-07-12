@@ -25,6 +25,6 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 ## Ce qui manque encore
 
 - **Priorisation inter-documents** : chaque note propose sa propre séquence interne, mais rien n'arbitre l'ordre entre la messagerie, la ressourcerie, la marketplace et le moteur de validation.
-- **Validation du prototype d'accueil** : [accueil-point-zero.md](accueil-point-zero.md) propose de partir de l'existant avec une expérience Point Zéro dédiée et un prototype HTML autonome, mais les wireframes, la direction visuelle et les règles définitives n'ont pas encore été validés par Boris.
+- **Prototype accueil : cadrage validé le 2026-07-12** (ton mixte, vocabulaire hybride, Festival 1er octobre confirmé, et décision structurante : future appli dédiée Point Zéro séparée de ze.game — voir §13 de [accueil-point-zero.md](accueil-point-zero.md)). Wireframes en cours dans le repo zegame-prototypes.
 - **Revue légale/éthique dédiée** : plusieurs mécaniques envisagées (quatrième mur via caméra/géolocalisation/notifications, récits personnels sensibles, vocabulaire thérapeutique/initiatique, public potentiellement mineur) dépassent le cadre d'une revue produit ou design classique.
 - **Clarification de la numérotation des mondes** (10 ou 11 positions, mondes 8-9 non décrits) — question ouverte à trancher par Boris, remontée dans [marelle-mondes.md](marelle-mondes.md).

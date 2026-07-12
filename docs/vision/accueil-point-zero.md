@@ -267,3 +267,17 @@ Enregistrer décisions, formulations, composants rejetés, règles de priorité 
 9. Journey événementiel à ordre libre.
 
 Cette V1 améliore déjà l'accueil tout en servant de base réutilisable au Festival et à la vision cible.
+
+## 13. Décisions de cadrage (Boris, 2026-07-12)
+
+<!-- Ajout Claude, 2026-07-12 — arbitrages recueillis lors du lancement de l'étape 1 -->
+
+1. **Ton de la voix : mixte.** Narratif-poétique aux moments de seuil (première arrivée, retour après absence, passages), sobre et direct pour les usages quotidiens (continuer une expérience, filtres Festival). Conforme au §4.
+
+2. **Vocabulaire : hybride prudent.** Le nouveau vocabulaire (expérience, trace, résonance, Monde 0) s'applique au Monde 0 et au Festival. Le vocabulaire actuel (parcours, défis, points) reste pour les contextes clients classiques.
+
+3. **Périmètre — décision structurante : une nouvelle application dédiée Point Zéro sera créée pour l'écosystème.** Ze.game continue de servir les clients « classiques » (KEDGE, ESSAIM...). L'accueil orchestrateur décrit ici est donc celui de la future appli Point Zéro, pas un remplacement de l'accueil ze.game.
+   - Le §10 (architecture produit) est à relire à cette lumière : la « couche d'expérience Point Zéro » devient une application à part entière. Reste à arbitrer ce qu'elle partage avec ze.game : gems (`mathieu_core`), modèles, base de données, comptes utilisateurs, serveur — voir [../architecture.md](../architecture.md) §8 pour les dépendances en jeu.
+   - Le prototype HTML n'est pas impacté (agnostique par nature) ; c'est l'étape 7 (implémentation) qui change de cible.
+
+4. **Festival : confirmé comme cas pilote.** New Civilization Festival, 1er octobre, Paris. Les trois états Festival sont prioritaires dans le prototype, et le chemin critique du jour J (QR codes, usage mobile debout, tenue de charge) doit remonter dans la planification.
