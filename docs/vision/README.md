@@ -22,6 +22,9 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 
 7. **[accueil-point-zero.md](accueil-point-zero.md)** — Première proposition concrète issue de la vision : accueil orchestrateur, états du Joueur, mode événement pour le New Civilization Festival, parcours libre et workflow de prototype HTML avant implémentation Rails.
 
+
+8. **[impacts-fonctionnels.md](impacts-fonctionnels.md)** — Registre d'analyse d'impact back/front (F1-F8) : chaque page front y est modélisée avec ses impacts backoffice avant implémentation. Règle : aucune implémentation sans ligne d'analyse ici.
+
 ## Ce qui manque encore
 
 - **Priorisation inter-documents** : chaque note propose sa propre séquence interne, mais rien n'arbitre l'ordre entre la messagerie, la ressourcerie, la marketplace et le moteur de validation.

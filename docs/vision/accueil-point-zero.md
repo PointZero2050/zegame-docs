@@ -281,3 +281,8 @@ Cette V1 améliore déjà l'accueil tout en servant de base réutilisable au Fes
    - Le prototype HTML n'est pas impacté (agnostique par nature) ; c'est l'étape 7 (implémentation) qui change de cible.
 
 4. **Festival : confirmé comme cas pilote.** New Civilization Festival, 1er octobre, Paris. Les trois états Festival sont prioritaires dans le prototype, et le chemin critique du jour J (QR codes, usage mobile debout, tenue de charge) doit remonter dans la planification.
+
+
+## 14. Retours wireframe v1 (Boris, 2026-07-12)
+
+Retours détaillés et impacts backoffice consignés dans [impacts-fonctionnels.md](impacts-fonctionnels.md) (registre F1-F8) : module News featured, mode libre/linéaire, parcours obligatoire, Marelle multi-parcours au Monde 1, Grains de Récit avec mentors IA, Oméga (lemniscate), mode événement (salle + compteurs), vocabulaire Challenge → Action. Wireframe v2 dans le repo zegame-prototypes.
