@@ -25,6 +25,9 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 
 8. **[impacts-fonctionnels.md](impacts-fonctionnels.md)** — Registre d'analyse d'impact back/front (F1-F8) : chaque page front y est modélisée avec ses impacts backoffice avant implémentation. Règle : aucune implémentation sans ligne d'analyse ici.
 
+
+9. **[sept-puissances.md](sept-puissances.md)** — Référentiel des 7 puissances et moteur ontologique (synthèse du Livre II) : verbes, polarités Lumière/Ombre, 5 états du moteur, gardiens des Mondes, implications pour l'Oméga et la validation.
+
 ## Ce qui manque encore
 
 - **Priorisation inter-documents** : chaque note propose sa propre séquence interne, mais rien n'arbitre l'ordre entre la messagerie, la ressourcerie, la marketplace et le moteur de validation.

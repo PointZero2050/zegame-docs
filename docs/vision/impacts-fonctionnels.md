@@ -109,9 +109,14 @@ F4 (Marelle multi) ── nécessaire seulement à l'ouverture du Monde 1
 
 Ordre suggéré : **F1 + F2 + F3** (socle Monde 0, petits chantiers backoffice) → **F7** (Festival, deadline) → **F6** (Oméga, nécessite arbitrage 7 puissances) → **F5** (Récit/IA) → **F4** (Monde 1).
 
-## 3. Questions ouvertes transverses
+## 3. Décisions transverses (Boris, 2026-07-12)
 
-1. La nouvelle appli Point Zéro partage-t-elle la base de données et les modèles de ze.game, ou seulement les gems ? (Impacte tous les chantiers ci-dessus.)
-2. Mana (vision) et Oméga (décision) : un seul concept — unifier le vocabulaire dans les docs de vision.
-3. Les 7 puissances : couche structurée nouvelle ou lecture des compétences existantes ("PUISSANCE : ASPECT") ?
-4. Compteurs temps réel du Festival : SSE existant ou solution dédiée ?
+1. **Base de données séparée.** La nouvelle appli Point Zéro ne partage pas la BDD de ze.game. Nouveau compte sur les stores (Apple/Google) dédié au Point Zéro. Mention « powered by ze.game » dans l'appli, et **SSO** entre les deux plateformes (chantier technique à cadrer : ze.game comme fournisseur d'identité ? OIDC ?).
+2. **Oméga vs Mana : les deux, à des niveaux différents.** « Oméga » (Cosmo Coin Oméga) est la monnaie du monde IRL ; « Mana » est celle du monde-miroir. Les docs de vision utilisant « mana » restent valides pour le monde-miroir uniquement.
+3. **7 puissances : référentiel existant de l'app.** Les compétences actuelles au format « PUISSANCE : ASPECT » avec framework « Point Zéro - Puissance - Lumière/Ombre » servent de base — pas de nouvelle couche de données pour la V1. Approfondissement théorique dans [sept-puissances.md](sept-puissances.md).
+
+## 4. Questions ouvertes restantes
+
+1. Architecture SSO : protocole, sens de la fédération (ze.game IdP ?), partage ou non des comptes existants.
+2. Compteurs temps réel du Festival : SSE existant ou solution dédiée ?
+3. Si BDD séparée : comment le Monde 0 actuel (données dans vibe.ze.game) migre-t-il vers la nouvelle appli ?
