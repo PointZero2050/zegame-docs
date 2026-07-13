@@ -52,15 +52,15 @@ Contexte : ces impacts visent la **future application dédiée Point Zéro** (d�
 | Front | Page Marelle = catalogue de parcours du Monde courant + pédagogie explicite du passage ("tu peux désormais mener plusieurs parcours de front") |
 | UX | Moment de seuil à soigner : l'arrivée au Monde 1 change la règle du jeu |
 
-### F5 — Récit, Grains de Récit et mentors IA
+### F5 — Récit, Graines de Récit et mentors IA
 
-**Origine front** : remplace le feedback actuel. À la fin d'un parcours ou à des étapes-clés, le joueur fait le point avec un mentor IA (héros d'une bibliothèque de mentors) et produit un **Grain de Récit**. Les résonances des autres joueurs germent sur les Grains.
+**Origine front** : remplace le feedback actuel. À la fin d'un parcours ou à des étapes-clés, le joueur fait le point avec un mentor IA (héros d'une bibliothèque de mentors) et produit un **Graine de Récit**. Les résonances des autres joueurs germent sur les Graines.
 
 | Aspect | Impact |
 |---|---|
-| Modèle | `Mentor` (bibliothèque : nom, personnage, prompt/persona, visuel) ; `StoryGrain` (auteur, parcours/étape source, contenu issu de la conversation, mentor, visibilité) ; résonances rattachées aux Grains (évolution de la messagerie actuelle ou nouvel objet) |
+| Modèle | `Mentor` (bibliothèque : nom, personnage, prompt/persona, visuel) ; `StorySeed` (auteur, parcours/étape source, contenu issu de la conversation, mentor, visibilité) ; résonances rattachées aux Graines (évolution de la messagerie actuelle ou nouvel objet) |
 | Backoffice | Gestion de la bibliothèque de mentors ; configuration des déclencheurs (fin de parcours / étapes-clés d'un parcours long) |
-| IA | Conversation mentor = intégration LLM (nouveau composant technique — API, coûts, modération) ; le joueur valide/corrige le Grain produit (garde-fou : l'IA n'impose jamais le sens, cf. [relations-recits-collectifs.md](relations-recits-collectifs.md) §2) |
+| IA | Conversation mentor = intégration LLM (nouveau composant technique — API, coûts, modération) ; le joueur valide/corrige la Graine produit (garde-fou : l'IA n'impose jamais le sens, cf. [relations-recits-collectifs.md](relations-recits-collectifs.md) §2) |
 | Existant | Un exemple de mentor existe dans le parcours Monde 0 actuel de vibe.ze.game — à documenter comme référence |
 | Lien vision | Concrétise le "récit-fresque" ([relations-recits-collectifs.md](relations-recits-collectifs.md)) : Grain ≈ bloc narratif |
 
@@ -82,7 +82,7 @@ Contexte : ces impacts visent la **future application dédiée Point Zéro** (d�
 | Aspect | Impact |
 |---|---|
 | Modèle | Flag/mode `event` sur Journey + champs par Action : `salle`, `capacité`, compteur de participants (inscriptions temps réel), créneau éventuel |
-| Backoffice | Activation du mode événement sur un parcours ; gestion des salles ; suivi des compteurs |
+| Backoffice | Statut « événement » activable sur un parcours → les expériences s'affichent en mosaïque (au lieu de linéaire) ; gestion des salles et des sessions ; suivi des compteurs ; rattachement des facilitateurs |
 | Front | Affichage mosaïque (grille filtrable) au lieu de la liste ; états disponible/recommandé/vécu/à intégrer/complet ; compteur "8/15" visible |
 | Technique | Compteur de participants = donnée temps réel (SSE existant réutilisable ?) ; contraintes jour J : cache, QR codes, charge (cf. [accueil-point-zero.md](accueil-point-zero.md) §9) |
 | Deadline | Festival confirmé le 1er octobre — chemin critique |
@@ -92,7 +92,7 @@ Contexte : ces impacts visent la **future application dédiée Point Zéro** (d�
 | Décision | Détail |
 |---|---|
 | Challenge → **Action** | Retenu (lien sociétariat : en entrant dans la Marelle, les joueurs deviennent sociétaires du Point Zéro et génèrent des Oméga). "Expérience" conservé pour les moments vécus en événement. À confirmer définitivement avant implémentation. |
-| Feedback → **Grain de Récit + résonances** | Cf. F5 |
+| Feedback → **Graine de Récit + résonances** | Cf. F5 |
 | Points → **Oméga (Ω)** | Cf. F6 |
 
 ### F9 — Inscription événement et rattachement du billet
@@ -104,7 +104,7 @@ Contexte : ces impacts visent la **future application dédiée Point Zéro** (d�
 | Aspect | Impact |
 |---|---|
 | Modèle | `EventRegistration` séparé du compte : événement, fournisseur (`woocommerce`/`stripe`/manuel), identifiants externes de commande et de billet, statut de paiement, statut de rattachement, `user_id` nullable, code/jeton à usage unique, date de check-in |
-| Identité | Ne jamais relier automatiquement sur le seul e-mail. Associer par contexte signé au départ, jeton de retour à usage unique, code/QR du billet ou intervention backoffice tracée |
+| Identité | **Stratégie en 4 niveaux (Boris, 2026-07-13 — on contrôle entièrement la billetterie WP)** : ① rattachement automatique par jeton de contexte quand l'achat part de l'appli (zéro saisie) ; ② lien magique « Activer mon billet dans l'appli » dans l'e-mail de confirmation ; ③ rapprochement assisté : consigne « utilisez le même e-mail » sur la billetterie + proposition de rattachement à confirmer quand un billet non lié porte l'e-mail du compte ; ④ code/QR en dernier recours (billet offert, autre adresse). L'e-mail seul ne relie jamais automatiquement — il suggère, l'utilisateur confirme |
 | Backoffice | Pour chaque événement : mode d'inscription, URL externe, identifiant fournisseur, dates de vente, capacité, URL de retour ; recherche et rattachement manuel d'un billet ; resynchronisation ; journal d'erreurs |
 | Front | CTA « M'inscrire », retour après paiement, « J'ai déjà un billet », confirmation, billet disponible hors connexion ; l'état inscrit pilote la priorité de l'accueil |
 | Pont WordPress | Extension légère côté WordPress pour conserver un identifiant de contexte dans la commande, notifier l'appli lors d'un changement de statut et produire un retour signé. L'API Event Tickets permet l'accès authentifié aux participants ; les webhooks WooCommerce peuvent notifier les changements de commande |
@@ -115,6 +115,11 @@ Contexte : ces impacts visent la **future application dédiée Point Zéro** (d�
 **Décision proposée pour le Festival pilote** : conserver Event Tickets Plus + WooCommerce + Stripe et développer le pont d'identité. La billetterie native n'est à envisager qu'après mesure des limites réelles du tunnel existant et confirmation d'un besoin récurrent multi-événements.
 
 Références techniques officielles : [intégration Event Tickets + WooCommerce](https://theeventscalendar.com/knowledgebase/woocommerce-integration-feature/), [API REST Event Tickets](https://theeventscalendar.com/knowledgebase/event-tickets-rest-api/), [webhooks WooCommerce](https://developer.woocommerce.com/docs/best-practices/urls-and-routing/webhooks/), [Stripe Checkout et fulfillment](https://docs.stripe.com/checkout/fulfillment).
+
+### Décisions UX transverses (Boris, 2026-07-13)
+
+- **Cercles masqués tant que non pertinents** : aucune section « cercle » dans l'interface tant que le joueur n'a pas effectivement rejoint le monde qui les introduit (Monde 2). Retirés de l'accueil Monde 0 et de l'après-Festival dans le proto v2.2.
+- **Vocabulaire : « Graine de Récit »** (et non « Grain ») — on sème une Graine, les résonances y germent.
 
 ## 2. Vue d'ensemble — dépendances entre chantiers
 

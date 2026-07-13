@@ -61,7 +61,7 @@ Le livre associe la traversée des Mondes de la Marelle à des « gardiens » �
 - **Docteur Z.E.R.O.** ([game-autosubversion.md](game-autosubversion.md) §3) : le livre précise son origine — figure alchimique née du travail de l'Ombre au niveau du cœur (gardien 3 / Monde 3). Suggestion pour F5 (mentors IA) : les mentors de la bibliothèque pourraient être liés aux gardiens/puissances qu'ils aident à traverser.
 - **L'Ombre comme « Lumière non intégrée »** ([monde-miroir.md](monde-miroir.md) §5) : confirmé et approfondi — l'Ombre emmagasine la Lumière non reconnue et « ne veut jamais nous détruire, elle veut être réintégrée ». La boucle des antagonistes (combat → victoire apparente → déplacement → Lumière captive → transformation) est le moteur inverti raconté.
 - **Fonctions universelles** : les 7 puissances s'appliquent aussi aux organisations (famille, entreprise, communauté) — pertinent pour l'évaluation des cercles et des communautés (sans jamais devenir un diagnostic automatique, garde-fou maintenu).
-- **Émotions primaires** : peur, colère, tristesse, honte, dégoût sont définies comme signaux d'écart au « JE SUIS » — vocabulaire utilisable pour les conversations d'intégration des Grains de Récit.
+- **Émotions primaires** : peur, colère, tristesse, honte, dégoût sont définies comme signaux d'écart au « JE SUIS » — vocabulaire utilisable pour les conversations d'intégration des Graines de Récit.
 
 ## 6. Garde-fous spécifiques à ce référentiel
 

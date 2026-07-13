@@ -285,7 +285,7 @@ Cette V1 améliore déjà l'accueil tout en servant de base réutilisable au Fes
 
 ## 14. Retours wireframe v1 (Boris, 2026-07-12)
 
-Retours détaillés et impacts backoffice consignés dans [impacts-fonctionnels.md](impacts-fonctionnels.md) (registre F1-F8) : module News featured, mode libre/linéaire, parcours obligatoire, Marelle multi-parcours au Monde 1, Grains de Récit avec mentors IA, Oméga (lemniscate), mode événement (salle + compteurs), vocabulaire Challenge → Action. Wireframe v2 dans le repo zegame-prototypes.
+Retours détaillés et impacts backoffice consignés dans [impacts-fonctionnels.md](impacts-fonctionnels.md) (registre F1-F8) : module News featured, mode libre/linéaire, parcours obligatoire, Marelle multi-parcours au Monde 1, Graines de Récit avec mentors IA, Oméga (lemniscate), mode événement (salle + compteurs), vocabulaire Challenge → Action. Wireframe v2 dans le repo zegame-prototypes.
 
 ## 15. Parcours d'inscription au Festival (Boris + Codex, 2026-07-13)
 
