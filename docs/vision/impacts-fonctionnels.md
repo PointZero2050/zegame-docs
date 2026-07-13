@@ -19,7 +19,10 @@ Contexte : ces impacts visent la **future application dédiée Point Zéro** (d�
 | Front | Bloc "À la une" (featured) ; à décider : liste des news non-featured (où ?) |
 | Questions | Une news par communauté/monde ou globale ? Qui peut publier ? |
 
-### F2 — Mode de progression d'un parcours (libre / linéaire)
+### F2 — Mode de progression d'un parcours (libre / linéaire) ✅ IMPLÉMENTÉ (2026-07-14)
+
+Implémenté dans vibe.ze.game : colonne `progression_mode` (libre/lineaire, défaut libre), option dans le formulaire admin parcours, verrous dans la vue parcours, garde d'accès (redirection vers le parcours avec message), Monde 0 passé en linéaire. Décisions associées : les Pages/chapitres ne sont plus cliquables (leur vue dédiée était inutile) ; le numéro/nom du chapitre s'affiche dans le détail de l'Action ; une Action en attente de validation pédagogique bloque la suivante.
+
 
 **Origine front** : Monde 0 linéaire (une Action accomplie ouvre la suivante) ; parcours actuels libres.
 
