@@ -150,7 +150,8 @@ Références techniques officielles : [intégration Event Tickets + WooCommerce]
 
 | Aspect | Impact |
 |---|---|
-| Oméga | Séparer solde disponible et contribution cumulée ; droits ouverts par les Oméga en cours de prototypage (texte + vidéo de présentation en attendant) ; aucune lecture comme score de conscience ; représentation lemniscate animée en synthèse du profil |
+| Oméga | Séparer solde disponible et contribution cumulée ; bloc « Ce que tes Oméga ouvrent » = texte d'ambition + vidéo (mécanisme régénératif complet en horizon, cf. [cosmo-coin-omega.md](cosmo-coin-omega.md)) ; aucune lecture comme score de conscience ; représentation lemniscate animée en synthèse du profil |
+| Mon Récit | **4e sous-menu du profil (Boris, 2026-07-13)** : page dédiée avec résumé global évolutif en entrée (régénéré avec le mentor à chaque Graine, toujours validé par le joueur) + fil des Graines avec résonances consultables. Limite par Graine : 800 caractères (recommandation Claude dans la fourchette 500-1 000 décidée par Boris — ajustable) |
 | Badges | Credentials Open Badges avec émetteur, critères et preuves distincts des trophées ludiques internes |
 | Puissances | Six axes Ombre/Lumière et Transcendance en synthèse ; **degrés officiels du moteur (Boris, 2026-07-13) : Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience**, évalués en 360° (collecte depuis les expériences concernées à concevoir) ; lemniscate de synthèse en tête ; source/date/visibilité des lectures ; privé par défaut |
 | Sécurité | Pas de diagnostic automatisé, de classement public ou de partage sans consentement explicite |
