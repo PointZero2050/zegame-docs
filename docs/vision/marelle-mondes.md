@@ -49,6 +49,8 @@ Un modèle `World` séparé ne devra être introduit que si les besoins réels d
 
 `Marelle -> Monde -> catalogue d'expériences -> Journey -> Challenge`
 
+> Mise à jour Codex - 2026-07-13. Ce seuil est désormais atteint : Boris demande plusieurs parcours par Monde, des Mondes dédiés (facilitateurs, gouvernance), des accès automatiques et des droits distincts des collectifs. La cible retient donc un modèle `World` séparé de `Journey` et de `Community`, avec un droit d'accès joueur auditable. Voir [navigation-vues-ensemble.md](navigation-vues-ensemble.md).
+
 Le catalogue pourrait référencer des objets internes et externes : parcours ze.game, ateliers, événements, rites, communautés, contenus, retraites ou dispositifs partenaires.
 
 La vision narrative du jumeau numérique et du monde-miroir est documentée séparément dans [monde-miroir.md](monde-miroir.md).
