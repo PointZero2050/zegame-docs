@@ -43,7 +43,11 @@ Implémenté dans vibe.ze.game : colonne `progression_mode` (libre/lineaire, dé
 | Logique | Le déverrouillage suit l'ordre `challenges_journeys.position` ; définir l'interaction avec `auto_validated` (validation pédagogique bloque-t-elle la suite ?) |
 | Lien vision | Modes envisagés dans [accueil-point-zero.md](accueil-point-zero.md) §7 (séquentiel/libre/guidé/conditionnel/temporel) — commencer par libre/linéaire |
 
-### F3 — Parcours obligatoire (tutoriel de Monde)
+### F3 — Parcours obligatoire (tutoriel de Monde) ✅ IMPLÉMENTÉ (2026-07-14)
+
+Implémenté dans vibe.ze.game : colonne `mandatory` (bool, défaut false) sur journeys, switch dans le formulaire admin, gating au niveau du Monde (= communauté). Design retenu (question « un seul obligatoire ? ») : pas de contrainte d'unicité — un Monde se déverrouille quand TOUS ses parcours obligatoires sont accomplis (`Community#mandatory_completed_by?`), ce qui couvre 1 tutoriel ou plusieurs prérequis. « Accompli » = tous les challenges du parcours validés (`Journey#completed_by?`). Front : dans le catalogue, les parcours non-obligatoires d'un Monde verrouillé sont grisés 🔒 avec un message, le tutoriel porte un badge « À commencer » ; garde d'accès sur la vue parcours. Monde 0 marqué obligatoire. Effet front peu visible pour l'instant (Monde 0 = un seul parcours) — mécanique validée par test, pleinement utile dès que le Monde 1 aura plusieurs parcours (F4).
+
+### F3 (ancienne fiche) — Parcours obligatoire (tutoriel de Monde)
 
 **Origine front** : chaque Monde s'ouvre par un petit parcours de base servant de tutoriel.
 
