@@ -286,3 +286,46 @@ Cette V1 améliore déjà l'accueil tout en servant de base réutilisable au Fes
 ## 14. Retours wireframe v1 (Boris, 2026-07-12)
 
 Retours détaillés et impacts backoffice consignés dans [impacts-fonctionnels.md](impacts-fonctionnels.md) (registre F1-F8) : module News featured, mode libre/linéaire, parcours obligatoire, Marelle multi-parcours au Monde 1, Grains de Récit avec mentors IA, Oméga (lemniscate), mode événement (salle + compteurs), vocabulaire Challenge → Action. Wireframe v2 dans le repo zegame-prototypes.
+
+## 15. Parcours d'inscription au Festival (Boris + Codex, 2026-07-13)
+
+<!-- Ajout Codex, 2026-07-13 — formalisation de l'intention exprimée par Boris -->
+
+L'expérience Festival commence avant l'état « inscrit ». Le frontoffice doit couvrir le parcours complet :
+
+```text
+Festival visible sur l'accueil
+        ↓
+Découvrir le Festival
+        ↓
+S'inscrire ───────────────→ achat sur le site Point Zéro
+        │                              ↓
+        │                    retour après paiement
+        │                              ↓
+        └─ « J'ai déjà un billet » → rattachement par code ou QR
+                                       ↓
+                              inscription confirmée
+                                       ↓
+                       préparation → direct → intégration
+```
+
+### États frontoffice ajoutés au prototype v2.1
+
+1. `festival-inscription` : proposition d'inscription et bénéfices de l'appli avant, pendant et après l'événement.
+2. `festival-lier` : rattachement d'un billet existant par code ou QR.
+3. `festival-confirme` : confirmation explicite du lien entre billet et compte.
+4. `festival-experience` : détail d'une expérience du jour J.
+5. `festival-reserve` : place réservée et consignes d'accès.
+6. `festival-attente` : expérience complète, liste d'attente et alternative disponible.
+
+### Règle d'identité
+
+L'adresse e-mail d'achat ne doit jamais être la clé unique de rattachement. Un billet peut être acheté avec une autre adresse ou par un tiers. L'identité fonctionnelle est un **billet unique**, associable une seule fois à un compte par un jeton de retour, un code ou son QR. L'e-mail reste une donnée de contact et de rapprochement assisté, pas la preuve de propriété.
+
+### Recommandation progressive
+
+Pour le Festival du 1er octobre, conserver en première intention la billetterie existante Event Tickets Plus + WooCommerce + Stripe, puis construire un pont minimal vers l'appli : contexte de départ, synchronisation du paiement, retour signé et solution de rattachement manuel. Cette voie réutilise la gestion actuelle des stocks, commandes, remboursements et billets.
+
+Une billetterie native dans l'appli devient pertinente dans un second temps si les événements sont nombreux et si Point Zéro veut maîtriser durablement le tunnel d'achat. Elle devrait alors utiliser Stripe Checkout côté serveur plutôt qu'un formulaire bancaire développé sur mesure, tout en conservant le même contrat frontoffice (`pending`, `paid`, `linked`, `checked_in`, `cancelled`, `refunded`).
+
+Le choix du fournisseur ne doit donc pas modifier les écrans du joueur. Il modifie seulement la manière dont une inscription payée entre dans le système.
