@@ -83,7 +83,7 @@ Contexte : ces impacts visent la **future application dédiée Point Zéro** (d�
 |---|---|
 | Modèle | Flag/mode `event` sur Journey + champs par Action : `format`, `salle`/`lieu`, référentiels multiples (7 puissances, 5 cadres...) + **`Session`** : un même atelier proposé plusieurs fois dans la journée (tranche horaire, capacité et compteur de participants PAR session) |
 | Facilitateurs | Rattachement d'un ou plusieurs facilitateurs à une expérience ; interface de **validation en masse** (principalement : valider la présence réelle à l'atelier) ; pas de bouton feedbacks côté joueur en mode événement |
-| Vue détail | Réutilise la vue Action existante (type journeys/.../challenges/...) sans le bouton FEEDBACKS, avec ajout Format / Lieu / Tranche horaire et sélecteur de créneau |
+| Vue détail | Réutilise la vue Action existante (type journeys/.../challenges/...) sans le bouton FEEDBACKS, avec ajout Format / Lieu / Tranche horaire et sélecteur de créneau ; le bloc Ressources des challenges actuels est conservé, rempli ou non par les facilitateurs (section masquée si vide) |
 | Backoffice | Statut « événement » activable sur un parcours → les expériences s'affichent en mosaïque (au lieu de linéaire) ; gestion des salles et des sessions ; suivi des compteurs ; rattachement des facilitateurs |
 | Front | Affichage mosaïque (grille filtrable) au lieu de la liste ; états disponible/recommandé/vécu/à intégrer/complet ; compteur "8/15" visible |
 | Technique | Compteur de participants = donnée temps réel (SSE existant réutilisable ?) ; contraintes jour J : cache, QR codes, charge (cf. [accueil-point-zero.md](accueil-point-zero.md) §9) |
