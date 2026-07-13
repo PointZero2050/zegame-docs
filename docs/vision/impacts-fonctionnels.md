@@ -130,13 +130,13 @@ Références techniques officielles : [intégration Event Tickets + WooCommerce]
 | Visibilité | Mondes principaux visibles verrouillés ; Mondes privés invisibles sans entitlement |
 | Migration | Les tokens de Community restent une compatibilité/invitation, pas le passage normal entre Mondes |
 
-### F11 — Cercle progressif
+### F11 — Cercle progressif (révisé Boris 2026-07-13)
 
 | Aspect | Impact |
 |---|---|
-| Front | Monde 0 : écran de seuil + vidéo ; Monde 1 : discussions ; Monde 2 : cercle de croissance 6 à 8 joueurs |
-| Modèle | Distinguer conversation temporaire et cercle stable ; membres, facilitateur, cycle, rencontres, quêtes et sous-groupes |
-| Décision | Remplace la décision de masquer totalement le Cercle avant le Monde 2 |
+| Front | Monde 0 : écran de seuil + vidéo (à l'essai, groupe test) ; Monde 1+ : page unique avec trois blocs — **Mes cercles** (nature du cercle, Ω générés par le cercle et part revenue au joueur), **Ouvrir un cercle** (nom, thématique, description), **Cercles à découvrir** (cercles cherchant des membres ; l'ouvreur reçoit les demandes et contacte par téléphone/e-mail) |
+| Modèle | Un seul objet Cercle — pas de distinction discussion/croissance : tous les cercles deviennent de fait des cercles de croissance à partir du Monde 2 ; membres, ouvreur, thématique, description, comptabilité Ω (généré / redistribué) |
+| Écarté | Page dédiée « cercle Monde 2 » ; distinction DiscussionCircle/GrowthCircle |
 
 ### F12 — Ressourcerie en six cartographies
 
@@ -150,15 +150,19 @@ Références techniques officielles : [intégration Event Tickets + WooCommerce]
 
 | Aspect | Impact |
 |---|---|
-| Oméga | Séparer solde disponible, contribution cumulée et droits ouverts ; aucune lecture comme score de conscience |
+| Oméga | Séparer solde disponible et contribution cumulée ; droits ouverts par les Oméga en cours de prototypage (texte + vidéo de présentation en attendant) ; aucune lecture comme score de conscience ; représentation lemniscate animée en synthèse du profil |
 | Badges | Credentials Open Badges avec émetteur, critères et preuves distincts des trophées ludiques internes |
-| Puissances | Six axes Ombre/Lumière et Transcendance en synthèse ; source/date/visibilité des lectures ; privé par défaut |
+| Puissances | Six axes Ombre/Lumière et Transcendance en synthèse ; **degrés officiels du moteur (Boris, 2026-07-13) : Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience**, évalués en 360° (collecte depuis les expériences concernées à concevoir) ; lemniscate de synthèse en tête ; source/date/visibilité des lectures ; privé par défaut |
 | Sécurité | Pas de diagnostic automatisé, de classement public ou de partage sans consentement explicite |
 
 ### Décisions UX transverses (Boris, 2026-07-13)
 
 - **Cercles progressifs** : l'ancienne décision de masquer totalement l'entrée avant le Monde 2 est remplacée par F11. L'entrée existe dès le Monde 0 comme teaser ; discussions au Monde 1 ; croissance au Monde 2.
 - **Vocabulaire : « Graine de Récit »** (et non « Grain ») — on sème une Graine, les résonances y germent.
+- **Mondes 0-1 : mantra « JE DISCERNE »** (Boris, 2026-07-13) — le « JE SUIS » (Désir) est la puissance la plus profonde à toucher, pas la première affichée. Cohérent avec le gardien de l'Intuition (sept-puissances.md §4).
+- **Marelle** : intro actée (« dispositif de transformation personnelle et collective en 10 mondes d'intensité progressive ») ; bloc Monde actuel collapsable, rouvert automatiquement à l'ouverture d'un nouveau monde, nourri par les fiches Mondes (Dropbox Point Zéro/img/Mondes) ; recherche libre titre+description ; filtres : thématique, durée, intensité, puissance, monde.
+- **Fresque de Récit dans le profil** : Graines (titre + contenu) affichées en fresque, visibilité par la communauté choisie Graine par Graine.
+- **Statut des concepts** : le prototype marque désormais décidé / à l'essai / exploratoire (cf. NOTES.md du proto) — les concepts exploratoires (Open Badges, trophées secrets, attestations, quêtes inter-cercles) ne passent pas en implémentation sans arbitrage.
 
 ## 2. Vue d'ensemble — dépendances entre chantiers
 
@@ -181,7 +185,7 @@ Ordre suggéré : **F9** (inscription et billet, à éprouver en premier) → **
 ## 3. Décisions transverses (Boris, 2026-07-12)
 
 1. **Base de données séparée.** La nouvelle appli Point Zéro ne partage pas la BDD de ze.game. Nouveau compte sur les stores (Apple/Google) dédié au Point Zéro. Mention « powered by ze.game » dans l'appli, et **SSO** entre les deux plateformes (chantier technique à cadrer : ze.game comme fournisseur d'identité ? OIDC ?).
-2. **Oméga vs Mana : les deux, à des niveaux différents.** « Oméga » (Cosmo Coin Oméga) est la monnaie du monde IRL ; « Mana » est celle du monde-miroir. Les docs de vision utilisant « mana » restent valides pour le monde-miroir uniquement.
+2. **Une seule monnaie : l'Oméga (révisé 2026-07-13).** Le jeu en réalité alternée (monde-miroir) n'apparaît pas à ce stade du produit : toute mention au mana est éliminée de l'interface et des chantiers F1-F13. Les docs de vision monde-miroir restent un horizon non planifié.
 3. **7 puissances : référentiel existant de l'app.** Les compétences actuelles au format « PUISSANCE : ASPECT » avec framework « Point Zéro - Puissance - Lumière/Ombre » servent de base — pas de nouvelle couche de données pour la V1. Approfondissement théorique dans [sept-puissances.md](sept-puissances.md).
 
 ## 4. Questions ouvertes restantes
