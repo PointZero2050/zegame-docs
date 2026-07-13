@@ -185,9 +185,11 @@ Ordre suggéré : **F9** (inscription et billet, à éprouver en premier) → **
 
 ## 3. Décisions transverses (Boris, 2026-07-12)
 
-1. **Base de données séparée.** La nouvelle appli Point Zéro ne partage pas la BDD de ze.game. Nouveau compte sur les stores (Apple/Google) dédié au Point Zéro. Mention « powered by ze.game » dans l'appli, et **SSO** entre les deux plateformes (chantier technique à cadrer : ze.game comme fournisseur d'identité ? OIDC ?).
-2. **Une seule monnaie : l'Oméga (révisé 2026-07-13).** Le jeu en réalité alternée (monde-miroir) n'apparaît pas à ce stade du produit : toute mention au mana est éliminée de l'interface et des chantiers F1-F13. Les docs de vision monde-miroir restent un horizon non planifié.
-3. **7 puissances : référentiel existant de l'app.** Les compétences actuelles au format « PUISSANCE : ASPECT » avec framework « Point Zéro - Puissance - Lumière/Ombre » servent de base — pas de nouvelle couche de données pour la V1. Approfondissement théorique dans [sept-puissances.md](sept-puissances.md).
+1. **Programme V1 (révisé 2026-07-14) : tout se construit d'abord DANS vibe.ze.game.** Objectif : un proto fonctionnel à montrer au cercle cœur du Point Zéro et à Mathieu avant de lancer l'appli autonome. La décision d'appli dédiée (BDD séparée, stores, SSO, « powered by ze.game ») reste actée mais son exécution est différée après cette validation.
+2. **Charte graphique actée** : base violet identique à ze.game ; titres Roboto Slab, texte Poppins ; logos dans Dropbox/Vibe Coding/Ressources Point Zero/Logos (spirale PZ + Cosmo Coin infini). DA appliquée au proto (v3.0, étape 4 du workflow).
+3. **Base de données séparée (différé).** La nouvelle appli Point Zéro ne partage pas la BDD de ze.game. Nouveau compte sur les stores (Apple/Google) dédié au Point Zéro. Mention « powered by ze.game » dans l'appli, et **SSO** entre les deux plateformes (chantier technique à cadrer : ze.game comme fournisseur d'identité ? OIDC ?).
+4. **Une seule monnaie : l'Oméga (révisé 2026-07-13).** Le jeu en réalité alternée (monde-miroir) n'apparaît pas à ce stade du produit : toute mention au mana est éliminée de l'interface et des chantiers F1-F13. Les docs de vision monde-miroir restent un horizon non planifié.
+5. **7 puissances : référentiel existant de l'app.** Les compétences actuelles au format « PUISSANCE : ASPECT » avec framework « Point Zéro - Puissance - Lumière/Ombre » servent de base — pas de nouvelle couche de données pour la V1. Approfondissement théorique dans [sept-puissances.md](sept-puissances.md).
 
 ## 4. Questions ouvertes restantes
 
