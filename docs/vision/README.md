@@ -36,6 +36,8 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 
 13. **[direction-artistique-point-zero.md](direction-artistique-point-zero.md)** — Système visuel global : néoarchaïsme comme grammaire mère, coque produit stable, univers libres par parcours, invariants de continuité, éthique des références aux peuples premiers et processus de création des assets.
 
+14. **[autofacilitation-monde-1.md](autofacilitation-monde-1.md)** — Cadre des Cercles autofacilités du Monde 1 : rôles tournants, conducteur, accords de sécurité, validation de participation et distinction avec la facilitation professionnelle requise au Monde 2.
+
 ## Ce qui manque encore
 
 - **Priorisation inter-documents** : chaque note propose sa propre séquence interne, mais rien n'arbitre l'ordre entre la messagerie, la ressourcerie, la marketplace et le moteur de validation.

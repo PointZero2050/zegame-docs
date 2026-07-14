@@ -400,3 +400,82 @@ Les images générées existantes peuvent nourrir le premier niveau. Les deuxiè
 Chaque visuel retenu doit recevoir une fiche minimale : source, auteur ou outil de génération, date, licence ou droit d'usage, prompt disponible, modifications et parcours concernés.
 
 Les images comportant des personnages, marques ou univers reconnaissables (`Tintin`, `X-Files`, etc.) ne doivent pas être publiées dans le produit sans vérification des droits. Les anomalies typiques des générations d'IA, les pseudo-textes et les personnages involontairement inquiétants doivent également être écartés ou retravaillés.
+
+## 14. Grammaire des modalités pédagogiques
+
+> Ajout Codex - 2026-07-14. Ce cadre traduit la décision de combiner, à partir du Monde 1, des temps individuels et collectifs sans confondre participation, preuve et jugement sur la personne.
+
+La séquence `vidéo → jeu ou quiz → Graine` est une **grammaire**, pas une obligation pour chaque expérience. La vidéo met en situation, le jeu ou le quiz rend le joueur actif, et la Graine clôt un chapitre ou un déplacement significatif. Une expérience ne doit pas accumuler artificiellement les quatre formats.
+
+| Modalité | Usage | Validation recommandée |
+|---|---|---|
+| Individuel autovalidé | Découverte, manipulation, réflexion, action personnelle | Achèvement des étapes et déclaration du joueur ; seuil uniquement pour un acquis objectivement vérifiable |
+| Collectif autofacilité — Monde 1 | Mise en discussion, confrontation des lectures, synthèse | Présence ou contribution attestée, trace individuelle et éventuellement trace commune ; aucun pair ne juge la qualité de conscience d'un autre |
+| Collectif validé par facilitateur | Expérience exigeant observation du processus, sécurité ou critères partagés | Validation par un facilitateur autorisé selon des critères visibles et contestables |
+| Terrain ou action | Expérimentation dans le monde réel, seul ou en sous-groupe | Preuve proportionnée, récit réflexif ou combinaison de conditions définies à l'avance |
+
+Chaque expérience devra préciser au minimum :
+
+- sa modalité et la taille du groupe ;
+- son caractère obligatoire, facultatif ou alternatif ;
+- les prérequis et le mode de constitution du groupe ;
+- les rôles éventuels et le guide associé ;
+- la trace attendue, son niveau de visibilité et sa durée de conservation ;
+- le mécanisme de validation et l'acteur habilité à valider ;
+- une solution de repli en cas d'absence, de désaccord ou de besoin d'accessibilité.
+
+### Place du collectif dans La Boussole
+
+Le tutoriel obligatoire doit rester entièrement réalisable en individuel afin de ne pas conditionner l'entrée dans le Monde 1 à la disponibilité d'un Cercle. Une **escale collective facultative** peut être proposée à la fin : partager sa première lecture des Puissances et découvrir les rôles d'autofacilitation. Les premiers collectifs obligatoires interviennent ensuite dans les parcours du catalogue qui en ont pédagogiquement besoin.
+
+La Boussole doit aussi aider le joueur à formuler sa première **signature d'engagement**. L'expérience montre que la réussite d'un Cercle dépend davantage d'un désir commun d'avancer avec une intensité compatible que d'un niveau de départ homogène. Il ne s'agit donc ni d'un test de maturité, ni d'un score de conscience, mais de préférences déclarées et révisables :
+
+- cadence de rencontre souhaitée ;
+- temps disponible entre les rencontres ;
+- horizon d'engagement envisagé ;
+- place souhaitée pour l'action concrète dans le monde réel ;
+- degré de confrontation bienveillante et de redevabilité mutuelle recherché.
+
+La synthèse de ces choix est visible par le joueur dès le tutoriel. Elle pourra ensuite être rendue visible, avec son consentement, aux personnes qui composent un Cercle. L'application doit montrer les compatibilités et les écarts axe par axe, sans produire une note globale ni présenter l'intensité maximale comme supérieure.
+
+Le cadre détaillé des Cercles du Monde 1 est décrit dans [autofacilitation-monde-1.md](autofacilitation-monde-1.md).
+
+## 15. Paquet de production d'un parcours
+
+Un parcours peut être écrit avant le développement de ses interactions. Le paquet documentaire cible comprend :
+
+1. **Fiche-cadre** : public, promesse, déplacement attendu, place dans le Monde, durée, prérequis et risques particuliers.
+2. **Déroulé éditorial** : chapitres, expériences, textes, ressources, modalités, validations, Puissances et Oméga.
+3. **Fiches d'interaction** : règles, états, retours pédagogiques, accessibilité et données attendues pour chaque jeu ou quiz.
+4. **Guide collectif** : préparation, rôles, conducteur, traces et protocole de sécurité pour chaque séquence collective.
+5. **Manifeste média** : liste des vidéos, illustrations, schémas, sons et variantes de format.
+6. **Manifeste structuré** : représentation Markdown, YAML ou JSON préparant l'import futur, à aligner avec le format réellement accepté par l'application avant intégration.
+
+### Pipeline des illustrations
+
+Codex peut prendre en charge l'ensemble du processus de génération : rédaction des prompts, génération, inspection, itérations, sélection et classement des fichiers finaux. Boris peut aussi générer les images avec les mêmes prompts ; le manifeste conserve alors la continuité entre outils.
+
+Pour chaque asset, le manifeste indique : identifiant, fonction dans le parcours, dimensions, univers visuel, invariants néoarchaïques, prompt, références, éléments à éviter, statut, outil ou modèle, date, droits et nom de fichier final.
+
+Le processus recommandé est :
+
+1. produire trois à cinq images pilotes pour verrouiller l'univers du parcours ;
+2. valider une image-seuil, une scène ou un personnage, et un composant pédagogique ;
+3. générer ensuite les séries cohérentes par lots courts ;
+4. contrôler la continuité, les anomalies et les droits avant intégration ;
+5. conserver les prompts et métadonnées avec les assets retenus.
+
+Les illustrations immersives, décors et personnages peuvent être générés comme images matricielles. Les diagrammes, glyphes, cartes de jeu, textes et éléments interactifs doivent plutôt être construits en SVG, HTML/CSS ou composants d'interface pour rester lisibles, cohérents et accessibles.
+
+## 16. Informations nécessaires pour lancer un parcours
+
+Les documents actuels permettent de commencer `La Boussole du nouveau monde`. Les décisions encore demandées à Boris se limitent à :
+
+- valider la promesse et le résultat attendu du parcours ;
+- indiquer les sources obligatoires, formulations intouchables et sujets sensibles ;
+- confirmer le public de la première version et le niveau de langage ;
+- choisir les séquences collectives obligatoires, facultatives ou absentes ;
+- arbitrer les points ouverts du §10, en priorité `JE VEUX` / `JE DÉCIDE`, `Expérience` / `Action`, taille du Cercle et attribution de l'Oméga ;
+- valider le premier lot d'images pilotes avant production en série.
+
+À défaut d'un arbitrage immédiat, la production peut avancer avec les hypothèses réversibles suivantes : `JE VEUX` désigne la Puissance et `JE DÉCIDE` son acte d'orientation ; **Expérience** est le nom visible de l'unité ; le Cercle cible compte 6 à 8 personnes ; l'Oméga V1 récompense l'accomplissement sans prétendre mesurer l'impact systémique.
