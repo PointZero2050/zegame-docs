@@ -225,3 +225,5 @@ Ordre suggéré : **F9** (inscription et billet, à éprouver en premier) → **
 - **Détail expérience** : Oméga reçus / total (challenge + parcours), chapitre en fil d'Ariane (au-dessus de la carte, fix collision mobile), section Validation en liste à puces simple (sans check ni marqueur), padding des flèches Précédent/Suivant sur mobile.
 - **Vocabulaire** : « POINT » → « OMÉGA » (labels), montants inline = nombre + logo infini violet. « FEEDBACKS » → « Graine de Récit », affichée uniquement sur les expériences de **fin de chapitre** (calcul auto : dernière expérience avant le chapitre suivant / la fin) ; bouton de niveau parcours retiré.
 - **À traiter (éditorial, contenu Boris)** : certaines expériences du Monde 0 ont un texte de validation qui dit « clique sur FEEDBACKS » — à réécrire pour le modèle Graine de Récit (le bouton n'existe plus que sur les fins de chapitre).
+
+- **Validation autonome restaurée (2026-07-14)** : bouton « J'ai réalisé cette expérience » (mark_as_ended, hors LTI) sur les expériences non-fin-de-chapitre — corrige la régression du retrait de FEEDBACKS. Aux fins de chapitre : bouton de complétion + « Graine de Récit ».
