@@ -254,3 +254,145 @@ Fin de chapitre ? Mentor ? Graine ?
 5. Produire `Composer un Cercle de Croissance`, en incluant ou non le Sas selon arbitrage.
 6. Ajouter trois parcours très contrastés pour tester le catalogue : un par Puissance, un « lire le monde » et un collectif.
 7. Étendre seulement ensuite vers le catalogue des douze parcours.
+
+## 12. Format cible des six expériences de La Boussole
+
+> Ajout Codex - 2026-07-14. Préconisation de formats avant développement, à partir du principe validé par Boris : alterner vidéos courtes, mini-jeux et quiz.
+
+### Rythme commun
+
+Chaque expérience suit un rythme court en trois temps :
+
+1. **Voir** : une situation, une métaphore ou un récit de 45 secondes à 2 minutes ;
+2. **Manipuler** : un seul mini-jeu ou quiz central, sans interaction décorative concurrente ;
+3. **Relire** : un débrief qui explicite la tension découverte, puis la validation.
+
+Les interactions sont formatives : pas de chronomètre, pas de classement et pas de sanction pour une mauvaise réponse. Le joueur peut recommencer et reçoit une explication liée à son choix. La validation porte sur le fait d'avoir traversé toutes les étapes, sauf lorsqu'un acquis objectif exige plus tard un seuil explicite.
+
+| Expérience | Dominante | Ressource introductive | Interaction centrale | Sortie et débrief | Durée cible | Complexité |
+|---|---|---|---|---|---|---|
+| 1. Le moteur aux sept Puissances | Vidéo + mini-jeu de séquençage | Animation de 75 à 90 s : une intention concrète, par exemple un jardin partagé, traverse les sept fonctions | **Remets le moteur en marche** : ordonner sept cartes ; second tour avec une fonction absente et choix de la conséquence | Vue animée du moteur complet et phrase : « aucune Puissance ne produit seule le mouvement » | 12 min | Moyenne |
+| 2. Quand une Puissance prend toute la place | Mini-jeu à scénarios | Vignette animée de 45 à 60 s : une mission collective bascule dans la caricature | **Sauve la mission impossible** : pour cinq incidents, choisir s'il faut réintroduire, tempérer ou relier une Puissance | Le résultat ne désigne pas une « bonne » Puissance ; il montre la fonction manquante ou exacerbée dans la situation | 14 min | Moyenne à forte |
+| 3. Des Puissances aux besoins individuels | Quiz illustré d'association | Cinq messages courts de personnages confrontés à un collectif | **Que demande réellement le joueur ?** : associer situation, besoin et Puissance ; chaque réponse ouvre une justification | Tableau final des cinq correspondances et invitation à repérer celle qui résonne, sans en déduire un profil | 12 min | Faible à moyenne |
+| 4. Les cinq chakras du système | Vidéo + mini-diagnostic | Motion comic de 75 à 90 s : réunion d'une organisation fictive accumulant cinq symptômes | **Répare le collectif dysfonctionnel** : placer les symptômes sur les cinq cadres, puis relier chaque cadre à sa Puissance | Passage de la lecture morale des personnes à la lecture systémique des conditions | 15 min | Moyenne |
+| 5. L'harmonie entre le joueur et le système | Mini-jeu de construction | Introduction visuelle très courte : deux rives, besoins individuels et cadres collectifs | **Le pont de l'harmonie** : construire cinq ponts, puis choisir dans des cas concrets le levier à restaurer : expression du besoin, qualité du cadre, responsabilité individuelle ou collective | Carte des ponts solides ou fragiles, sans score psychologique | 15 min | Moyenne à forte |
+| 6. Ce qui génère de l'Oméga | Vidéo + quiz de qualification + récit | Montage de 90 à 120 s : six contributions, de l'inflexion personnelle à l'essaimage civilisationnel | **Le laboratoire de la valeur invisible** : qualifier plusieurs dimensions de valeur ; certaines situations acceptent plusieurs lectures argumentées | Échange mentor, Graine de Récit finale et choix de la première orientation dans le catalogue | 22 min | Forte avec mentor ; moyenne sans IA |
+
+Durée totale cible : **environ 90 minutes**, avec possibilité de quitter et reprendre entre les expériences.
+
+### Détails d'interaction
+
+#### 1. Remets le moteur en marche
+
+- Cartes : élan, décision, conception, ressenti, expression, discernement, redistribution.
+- Le glisser-déposer doit avoir une alternative accessible par sélection et boutons « monter/descendre ».
+- Le second tour retire une carte et propose trois conséquences plausibles : le jeu explique le déséquilibre plutôt que de signaler seulement une erreur.
+- Le tracé final peut devenir la première animation réutilisable du moteur des Puissances.
+
+#### 2. Sauve la mission impossible
+
+- Chaque incident est une petite scène avec personnages récurrents.
+- Trois verbes structurent la réponse : **réintroduire**, **tempérer**, **relier**.
+- Les conséquences sont jouées immédiatement dans la scène, avec une touche d'humour.
+- Une même Puissance peut être utile dans un incident et problématique dans un autre.
+
+#### 3. Que demande réellement le joueur ?
+
+- Le quiz évite les formulations scolaires du type « quelle est la bonne définition ? ».
+- Le joueur lit d'abord la situation, choisit un besoin, puis découvre la Puissance associée.
+- Une seconde passe peut demander quel cadre collectif permettrait au besoin de s'exprimer.
+- Le choix personnel final est facultatif et n'alimente aucun profil automatique.
+
+#### 4. Répare le collectif dysfonctionnel
+
+- Le collectif fictif doit être mémorable mais non assimilable à une organisation réelle.
+- Les symptômes apparaissent dans des extraits de réunion, messages ou décisions contradictoires.
+- Le joueur place chaque indice dans un cadre, puis voit les relations entre cadres plutôt qu'un tableau de cases indépendantes.
+- Le débrief distingue symptôme, cadre défaillant et responsabilité partagée.
+
+#### 5. Le pont de l'harmonie
+
+- Les deux rives portent les cinq besoins et les cinq cadres.
+- Construire une correspondance correcte ne suffit pas : trois cas demandent ensuite où agir.
+- Le pont peut se tendre, se rigidifier ou se rompre selon la situation, afin d'éviter une représentation statique de l'équilibre.
+- La métaphore doit rester claire sur mobile et ne pas dépendre uniquement des couleurs.
+
+#### 6. Le laboratoire de la valeur invisible
+
+- Les dimensions proposées peuvent être : personnelle, relationnelle, communautaire, transmissible et civilisationnelle.
+- Plusieurs dimensions peuvent coexister ; le joueur justifie parfois son choix en une phrase.
+- Le quiz ne calcule pas la quantité d'Oméga : il apprend ce que la monnaie cherche à reconnaître.
+- La Graine finale reprend les cinq questions du mentor et reste modifiable avant publication.
+
+## 13. Direction artistique du Monde 1
+
+### État de la banque d'images
+
+Le dossier `Ressources Point Zero/Images` contient actuellement **456 fichiers** : 316 PNG et 140 JPG, répartis principalement entre `Illustrations` et `Badges`.
+
+La matière est riche mais hétérogène :
+
+- scènes fantasy ou science-fiction très colorées ;
+- collages surréalistes et symboliques ;
+- compositions sombres adaptées à l'Ombre ou aux Mondes ultérieurs ;
+- diagrammes circulaires autour des cadres, de la monnaie et du jeu ;
+- images historiques ou humoristiques parfois liées à des références culturelles reconnaissables ;
+- styles et générations d'IA différents.
+
+Ces images constituent une **iconothèque et un moodboard**, pas encore une série éditoriale homogène.
+
+### Direction proposée : l'atlas alchimique vivant
+
+Le Monde 1 donne une carte et un langage. Sa direction artistique peut donc combiner :
+
+- **cartographie** : boussoles, cartes, chemins, légendes, coordonnées et constellations ;
+- **mécanique vivante** : roues, engrenages organiques, circulation, orreries et ponts ;
+- **alchimie contemporaine** : gravure, collage, textures physiques et lumière cosmique ;
+- **clarté pédagogique** : diagrammes propres, composants manipulables et états lisibles.
+
+Le ton doit être merveilleux et légèrement décalé, mais moins sombre que les Mondes de confrontation à l'Ombre. Le joueur découvre un instrument d'orientation, pas une prophétie écrasante.
+
+### Palette et langage visuel
+
+- conserver le violet Point Zéro comme ancrage d'interface ;
+- utiliser bleu pétrole, ivoire clair et noir en base, avec or solaire et corail comme accents ;
+- reprendre provisoirement les couleurs du référentiel des chakras pour distinguer les Puissances : rouge, orange, jaune, vert, cyan, indigo, puis violet/blanc pour la Transcendance ;
+- ne jamais faire reposer une information uniquement sur la couleur : symbole, libellé et forme accompagnent chaque Puissance ;
+- réserver les textures et détails aux images narratives ; les jeux utilisent des formes plus nettes et stables.
+
+### Trois niveaux d'assets
+
+1. **Images-seuils** : illustrations immersives 16:9 pour ouvrir une expérience ou une vidéo.
+2. **Schémas du référentiel** : dessins propres et réutilisables du moteur, des cinq cadres, des ponts et du cycle de l'Oméga.
+3. **Pièces de jeu** : cartes, personnages, symptômes, jetons et états conçus comme une seule famille de composants.
+
+Les images générées existantes peuvent nourrir le premier niveau. Les deuxième et troisième niveaux doivent être redessinés dans une grammaire cohérente plutôt que découpés directement dans des images complexes.
+
+### Premières correspondances dans l'iconothèque
+
+| Usage | Candidat existant | Recommandation |
+|---|---|---|
+| Couverture du tutoriel | `Firefly_Une carte aux trésor et une boussole 522905.jpg` | Très bon signal d'orientation ; recadrer et harmoniser la colorimétrie |
+| Moteur des Puissances | séries `Philosophie-Point-Zéro-*` et `Jeu-*` | Moodboard symbolique ; créer un schéma dédié plus lisible |
+| Cadres systémiques | série `Cadres-systemiques-*` | Bonne matière de départ, à simplifier pour l'interaction |
+| Pont besoins/cadres | `Deux-continents.png` | Métaphore pertinente ; reconstruire une version jouable moins spectaculaire |
+| Oméga | séries `Monnaie-*` | Conserver la logique circulaire ; aligner avec le logo officiel de l'Oméga |
+| Situations collectives | images de groupes, labyrinthes et scènes de facilitation | Sélectionner un style unique et des personnages récurrents |
+
+`Jeu-1.png` et d'autres images très sombres ont une vraie force, mais semblent mieux adaptées à des Mondes ultérieurs qu'au tutoriel d'orientation.
+
+### Règles média
+
+- vidéo courte en 16:9, 1080p, sans lecture automatique ;
+- sous-titres séparés, transcription et image d'affiche ;
+- texte, symboles et boutons toujours produits par l'interface, jamais incrustés dans une image générée ;
+- zone centrale sûre pour les recadrages mobile, avec variantes 16:9 et 4:3 ou carrées lorsque nécessaire ;
+- aucun détail essentiel uniquement dans un fond décoratif ;
+- alternative accessible pour chaque glisser-déposer ;
+- sons facultatifs, sous-titrés lorsqu'ils portent une information, et désactivables.
+
+### Audit avant publication
+
+Chaque visuel retenu doit recevoir une fiche minimale : source, auteur ou outil de génération, date, licence ou droit d'usage, prompt disponible, modifications et parcours concernés.
+
+Les images comportant des personnages, marques ou univers reconnaissables (`Tintin`, `X-Files`, etc.) ne doivent pas être publiées dans le produit sans vérification des droits. Les anomalies typiques des générations d'IA, les pseudo-textes et les personnages involontairement inquiétants doivent également être écartés ou retravaillés.
