@@ -34,6 +34,8 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 
 12. **[monde-1-parcours.md](monde-1-parcours.md)** — Cadre opérationnel pour produire les parcours du Monde 1 : tutoriel obligatoire, catalogue initial, correspondance avec les modèles actuels, matrice disponible/développement, politique de passage vers le Monde 2 et gabarits éditoriaux.
 
+13. **[direction-artistique-point-zero.md](direction-artistique-point-zero.md)** — Système visuel global : néoarchaïsme comme grammaire mère, coque produit stable, univers libres par parcours, invariants de continuité, éthique des références aux peuples premiers et processus de création des assets.
+
 ## Ce qui manque encore
 
 - **Priorisation inter-documents** : chaque note propose sa propre séquence interne, mais rien n'arbitre l'ordre entre la messagerie, la ressourcerie, la marketplace et le moteur de validation.

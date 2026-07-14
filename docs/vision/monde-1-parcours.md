@@ -326,6 +326,8 @@ Durée totale cible : **environ 90 minutes**, avec possibilité de quitter et re
 
 ## 13. Direction artistique du Monde 1
 
+La direction artistique globale est définie dans [direction-artistique-point-zero.md](direction-artistique-point-zero.md) : le **néoarchaïsme** est la grammaire mère du Point Zéro, tandis que chaque parcours peut développer son propre univers narratif.
+
 ### État de la banque d'images
 
 Le dossier `Ressources Point Zero/Images` contient actuellement **456 fichiers** : 316 PNG et 140 JPG, répartis principalement entre `Illustrations` et `Badges`.
@@ -341,16 +343,16 @@ La matière est riche mais hétérogène :
 
 Ces images constituent une **iconothèque et un moodboard**, pas encore une série éditoriale homogène.
 
-### Direction proposée : l'atlas alchimique vivant
+### Expression proposée pour La Boussole : l'atlas alchimique vivant
 
-Le Monde 1 donne une carte et un langage. Sa direction artistique peut donc combiner :
+La Boussole donne une carte et un langage. Son univers peut donc combiner :
 
 - **cartographie** : boussoles, cartes, chemins, légendes, coordonnées et constellations ;
 - **mécanique vivante** : roues, engrenages organiques, circulation, orreries et ponts ;
 - **alchimie contemporaine** : gravure, collage, textures physiques et lumière cosmique ;
 - **clarté pédagogique** : diagrammes propres, composants manipulables et états lisibles.
 
-Le ton doit être merveilleux et légèrement décalé, mais moins sombre que les Mondes de confrontation à l'Ombre. Le joueur découvre un instrument d'orientation, pas une prophétie écrasante.
+Le ton doit être merveilleux et légèrement décalé, mais moins sombre que les Mondes de confrontation à l'Ombre. Le joueur découvre un instrument d'orientation, pas une prophétie écrasante. Les autres parcours du Monde 1 peuvent adopter des styles très différents en conservant quelques invariants néoarchaïques.
 
 ### Palette et langage visuel
 
@@ -380,6 +382,8 @@ Les images générées existantes peuvent nourrir le premier niveau. Les deuxiè
 | Situations collectives | images de groupes, labyrinthes et scènes de facilitation | Sélectionner un style unique et des personnages récurrents |
 
 `Jeu-1.png` et d'autres images très sombres ont une vraie force, mais semblent mieux adaptées à des Mondes ultérieurs qu'au tutoriel d'orientation.
+
+`Jeu-3.png` constitue en revanche un bon exemple de transposition : univers heroic fantasy, mais continuité Point Zéro par la silhouette archétypale, le portail, le cercle, le glyphe et la matière.
 
 ### Règles média
 
