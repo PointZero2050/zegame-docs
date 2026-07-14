@@ -30,7 +30,9 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 10. **[sept-puissances.md](sept-puissances.md)** — Référentiel des 7 puissances et moteur ontologique (synthèse du Livre II) : verbes, polarités Lumière/Ombre, 5 états du moteur, gardiens des Mondes, implications pour l'Oméga et la validation.
 
 
-10. **[cosmo-coin-omega.md](cosmo-coin-omega.md)** — Référentiel du Cosmo Coin Oméga (synthèse du document source) : ce que l'Ω valorise (4 échelles), mécanisme régénératif (horizon), rôle de l'IA systémique, harmonie des besoins, traduction produit V1 vs horizon, garde-fous.
+11. **[cosmo-coin-omega.md](cosmo-coin-omega.md)** — Référentiel du Cosmo Coin Oméga (synthèse du document source) : ce que l'Ω valorise (4 échelles), mécanisme régénératif (horizon), rôle de l'IA systémique, harmonie des besoins, traduction produit V1 vs horizon, garde-fous.
+
+12. **[monde-1-parcours.md](monde-1-parcours.md)** — Cadre opérationnel pour produire les parcours du Monde 1 : tutoriel obligatoire, catalogue initial, correspondance avec les modèles actuels, matrice disponible/développement, politique de passage vers le Monde 2 et gabarits éditoriaux.
 
 ## Ce qui manque encore
 
