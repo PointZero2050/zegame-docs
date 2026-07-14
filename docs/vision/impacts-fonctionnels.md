@@ -232,3 +232,7 @@ Ordre suggéré : **F9** (inscription et billet, à éprouver en premier) → **
 
 - **Personnalisation du contenu** : helper `personalize` remplace `[Prénom]` (toutes casses) par le prénom du joueur, appliqué au contenu des chapitres (Page) et des expériences (Challenge). Extensible à dautres variables.
 - **Fix perte dimages TinyMCE (Firefox)** : les éditeurs inline (mode utilisé quand `document.moveBefore` absent, ex. Firefox) ne synchronisaient pas les images insérées vers le champ soumis. Corrigé par `public/pz/pz_forms.js` (statique, inclus dans les layouts) qui force la synchro à la soumission. Le chemin serveur préservait déjà les images.
+
+### Correction (le vrai diagnostic)
+
+Le fix images TinyMCE décrit plus haut (pz_forms.js, mode full) était une **mauvaise piste** et a été **reverté**. Vraie cause découverte grâce à un indice de Boris (limage disparaît seulement si on la redimensionne/aligne) : le modèle `Page` faisait `clean_html_tiny :content` **sans `extended: %i(img video)`**. La sanitization garde une image brute mais **retire une image portant un attribut `style`** (alignement float/marges). Correctif définitif : `clean_html_tiny :content, extended: %i(img video)` sur `Page` (comme `Challenge`). Le mode inline_unless_movebefore et le JS de synchro nont jamais été en cause — limage atteignait le serveur puis y était nettoyée.
