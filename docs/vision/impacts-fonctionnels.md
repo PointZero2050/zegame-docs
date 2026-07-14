@@ -217,3 +217,11 @@ Ordre suggéré : **F9** (inscription et billet, à éprouver en premier) → **
 4. Quel mécanisme WordPress porte le contexte du compte applicatif jusqu'au billet : métadonnée de commande, champ participant dédié ou jeton de rattachement créé après paiement ?
 5. Quelle source fait foi pour les capacités : stock global de billets WordPress, réservations d'expériences dans l'appli, ou deux niveaux distincts ?
 6. Combien d'événements payants par an justifieraient le remplacement de WooCommerce par une billetterie Stripe native ?
+
+## Journal d'implémentation UX/vocabulaire (vibe.ze.game)
+
+<!-- Ajout Claude, 2026-07-14 -->
+
+- **Détail expérience** : Oméga reçus / total (challenge + parcours), chapitre en fil d'Ariane (au-dessus de la carte, fix collision mobile), section Validation en liste à puces simple (sans check ni marqueur), padding des flèches Précédent/Suivant sur mobile.
+- **Vocabulaire** : « POINT » → « OMÉGA » (labels), montants inline = nombre + logo infini violet. « FEEDBACKS » → « Graine de Récit », affichée uniquement sur les expériences de **fin de chapitre** (calcul auto : dernière expérience avant le chapitre suivant / la fin) ; bouton de niveau parcours retiré.
+- **À traiter (éditorial, contenu Boris)** : certaines expériences du Monde 0 ont un texte de validation qui dit « clique sur FEEDBACKS » — à réécrire pour le modèle Graine de Récit (le bouton n'existe plus que sur les fins de chapitre).
