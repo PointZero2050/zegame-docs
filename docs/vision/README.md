@@ -38,6 +38,8 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 
 14. **[autofacilitation-monde-1.md](autofacilitation-monde-1.md)** — Cadre des Cercles autofacilités du Monde 1 : rôles tournants, conducteur, accords de sécurité, validation de participation et distinction avec la facilitation professionnelle requise au Monde 2.
 
+15. **[moteur-ontologique-visuel.md](moteur-ontologique-visuel.md)** — Grammaire visuelle du Moteur ontologique sur le Profil : lemniscate vivant à lobes indépendants (Option B), 4 couleurs (gris horizon / violet état 360° / pointillé cap / or progression Oméga), distinction état vs progression, moteur global comme résultante (Transcendance non nommée), 6 puissances en mini-lemniscates, fiche puissance et implications modèle de données. Prototypes dans zegame-prototypes.
+
 ## Ce qui manque encore
 
 - **Priorisation inter-documents** : chaque note propose sa propre séquence interne, mais rien n'arbitre l'ordre entre la messagerie, la ressourcerie, la marketplace et le moteur de validation.

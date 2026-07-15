@@ -74,3 +74,8 @@ Le matériau est puissant et intime. En plus des garde-fous généraux ([monde-m
 - L'Ombre n'est jamais un score négatif ni une identité assignée ;
 - Les états du moteur sont un langage d'auto-exploration proposé au joueur, pas une grille d'évaluation par des tiers ;
 - Les contenus touchant sexualité, honte, haine de soi (présents dans le livre) relèvent de l'accompagnement humain, pas de mécaniques de jeu.
+
+---
+
+<!-- Ajout Claude, 2026-07-15 -->
+**Voir aussi** : [moteur-ontologique-visuel.md](moteur-ontologique-visuel.md) pour la traduction visuelle de ce référentiel (lemniscate vivant à lobes indépendants, grammaire état/progression, fiche puissance) et le modèle d'interaction piloté par un questionnaire 360°.
