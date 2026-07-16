@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PathwayDefinition",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "title",
+    "experience_steps",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "world": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "family": {
+      "type": "string"
+    },
+    "promise": {
+      "type": "string"
+    },
+    "experience_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "branching_rules": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "completion_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "experimental",
+        "validated",
+        "deprecated"
+      ]
+    }
+  }
+}

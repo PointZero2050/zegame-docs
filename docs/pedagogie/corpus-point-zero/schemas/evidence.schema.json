@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "user_id",
+    "type",
+    "created_at",
+    "context",
+    "visibility"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "auto_evaluation",
+        "pair_feedback",
+        "facilitator_observation",
+        "mentor_dialogue",
+        "real_world_action",
+        "creation",
+        "story_seed",
+        "system_signal"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "context": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "power": {
+      "type": "string"
+    },
+    "interpretation": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "visibility": {
+      "enum": [
+        "private",
+        "circle",
+        "facilitators",
+        "community",
+        "public"
+      ]
+    },
+    "consent_record_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "experience_run_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Recommendation",
+  "type": "object",
+  "required": [
+    "id",
+    "user_id",
+    "created_at",
+    "reasoning_summary",
+    "candidate_items"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "target_transition": {
+      "type": "object"
+    },
+    "reasoning_summary": {
+      "type": "string"
+    },
+    "candidate_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_type": {
+            "enum": [
+              "experience",
+              "pathway",
+              "generated_prototype"
+            ]
+          },
+          "item_id": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "explanation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "requires_human_review": {
+      "type": "boolean"
+    },
+    "model_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

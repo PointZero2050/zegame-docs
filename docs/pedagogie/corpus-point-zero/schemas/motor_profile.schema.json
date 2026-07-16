@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pointzero.local/schemas/motor_profile.schema.json",
+  "title": "PowerProfile",
+  "type": "object",
+  "required": [
+    "power",
+    "context",
+    "explored_shadow_level",
+    "explored_light_level",
+    "circulation_mastery"
+  ],
+  "properties": {
+    "power": {
+      "enum": [
+        "desir",
+        "volonte",
+        "imagination",
+        "emotion",
+        "communication",
+        "intuition",
+        "transcendance"
+      ]
+    },
+    "context": {
+      "type": "string"
+    },
+    "explored_shadow_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "explored_light_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "freely_mastered_shadow_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "freely_mastered_light_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "circulation_mastery": {
+      "enum": [
+        "bloque",
+        "intermediaire",
+        "libre"
+      ]
+    },
+    "current_activation_polarity": {
+      "enum": [
+        "ombre",
+        "source",
+        "lumiere",
+        "mixte",
+        "inconnue"
+      ]
+    },
+    "current_activation_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "archetype_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

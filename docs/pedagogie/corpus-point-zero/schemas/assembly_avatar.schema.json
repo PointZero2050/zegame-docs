@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AssemblyAvatar",
+  "type": "object",
+  "required": [
+    "id",
+    "user_id",
+    "name",
+    "role_type",
+    "target_profiles"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "role_type": {
+      "enum": [
+        "lumiere_non_realisee",
+        "ombre_reprimee",
+        "alliance",
+        "passage",
+        "antagoniste",
+        "autre"
+      ]
+    },
+    "source_figures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "target_profiles": {
+      "type": "array",
+      "items": {
+        "$ref": "motor_profile.schema.json"
+      }
+    },
+    "origin_story": {
+      "type": "string"
+    },
+    "motto": {
+      "type": "string"
+    },
+    "powers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "wound": {
+      "type": "string"
+    },
+    "temptation": {
+      "type": "string"
+    },
+    "counterweight_avatar_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "entry_ritual": {
+      "type": "string"
+    },
+    "exit_ritual": {
+      "type": "string"
+    },
+    "relationship_stage": {
+      "enum": [
+        "projete",
+        "explore",
+        "integre",
+        "depasse"
+      ]
+    }
+  }
+}

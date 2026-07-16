@@ -1,0 +1,45 @@
+{
+  "title": "Point Zéro — Corpus de référence pour Codex",
+  "version": "0.2",
+  "generated_at": "2026-07-16",
+  "documents": [
+    "00_README.md",
+    "01_architecture_pedagogique_globale.md",
+    "02_moteur_de_conscience.md",
+    "03_archetypes/communication.md",
+    "03_archetypes/desir.md",
+    "03_archetypes/emotion.md",
+    "03_archetypes/imagination.md",
+    "03_archetypes/intuition.md",
+    "03_archetypes/volonte.md",
+    "04_marelle_et_progression_des_mondes.md",
+    "05_catalogue_parcours_et_experiences.md",
+    "06_verticales_organisations_et_commun.md",
+    "07_atlas_figures_et_assemblee_interieure.md",
+    "08_specifications_fonctionnelles_application.md",
+    "09_modele_de_donnees.md",
+    "10_backlog_et_questions_ouvertes.md",
+    "11_evaluation_initiale_moteur.md",
+    "12_mentoring_et_matching_du_moteur.md"
+  ],
+  "schemas": [
+    "assembly_avatar.schema.json",
+    "evidence.schema.json",
+    "experience.schema.json",
+    "figure.schema.json",
+    "motor_profile.schema.json",
+    "pathway.schema.json",
+    "recommendation.schema.json"
+  ],
+  "assets": [
+    "20_verticales.png",
+    "communication_ombre_lumiere.png",
+    "desir_ombre_lumiere.png",
+    "emotion_ombre_lumiere.png",
+    "feminin_masculin.png",
+    "imagination_ombre_lumiere.png",
+    "intuition_ombre_lumiere.png",
+    "volonte_ombre_lumiere.png",
+    "vue_moteur_desir.png"
+  ]
+}

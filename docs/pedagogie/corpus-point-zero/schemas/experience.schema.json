@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExperienceDefinition",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "title",
+    "movement_type",
+    "entry_states",
+    "target_states",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "world": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "family": {
+      "type": "string"
+    },
+    "primary_power": {
+      "type": "string"
+    },
+    "secondary_powers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "movement_type": {
+      "enum": [
+        "conscientisation",
+        "liberation_circulation",
+        "autonomisation",
+        "elargissement_ombre",
+        "elargissement_lumiere",
+        "transfert",
+        "transmission"
+      ]
+    },
+    "entry_states": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "target_states": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "context_scale": {
+      "enum": [
+        "individuel",
+        "relationnel",
+        "cercle",
+        "organisationnel",
+        "societal",
+        "civilisationnel"
+      ]
+    },
+    "verticals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "duration_minutes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "facilitation_required": {
+      "type": "boolean"
+    },
+    "safety_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "experimental",
+        "validated",
+        "deprecated"
+      ]
+    }
+  }
+}

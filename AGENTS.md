@@ -8,6 +8,8 @@ Voir [docs/architecture.md](docs/architecture.md) pour l'architecture complète.
 
 Pour la vision produit idéale (Marelle Oméga, mondes, monde-miroir, messagerie, ressourcerie, marketplace, moteur de validation, game design), voir l'index [docs/vision/README.md](docs/vision/README.md).
 
+Pour l'architecture pédagogique détaillée (Moteur de Conscience, parcours, expériences, Conseil du Seuil, mentoring et schémas), voir [docs/pedagogie/README.md](docs/pedagogie/README.md). Lire la note de convergence avant d'utiliser le corpus comme base fonctionnelle ou technique.
+
 Les prototypes d'interface (HTML autonomes) vivent dans le repo dédié [zegame-prototypes](https://github.com/PointZero2050/zegame-prototypes), cloné sur le serveur dans ~/zegame-prototypes/. Un dossier par prototype, conventions dans son README.
 
 ## Stack
