@@ -2,6 +2,8 @@
 
 > Ajout Codex - 2026-07-16. Proposition de conception à partir de [11_evaluation_initiale_moteur.md](corpus-point-zero/11_evaluation_initiale_moteur.md), challengée au regard de la [note de convergence](convergence-2026-07-16.md) et de la grammaire du [Moteur ontologique](../vision/moteur-ontologique-visuel.md). Prototype autonome : `zegame-prototypes/conseil-du-seuil/`.
 
+> Mise à jour Codex - 2026-07-16. Après revue de la V1 avec Boris, le Conseil du Seuil n'est plus envisagé comme un dispositif autonome couvrant toute l'évaluation du Monde 0. Son Appel, sa mécanique de mouvements et son premier miroir deviennent la fondation du bloc 1 du [triptyque narratif du Monde 0](monde-0-triptyque-narratif.md). La présente note conserve les décisions UX et artistiques réutilisables ; l'architecture narrative du triptyque prévaut en cas d'écart.
+
 ## 1. Intention
 
 Le Conseil du Seuil n'est pas un test de personnalité. C'est une **scène d'orientation** : le joueur découvre que les deux pôles d'une Puissance peuvent être féconds ou captifs selon le contexte, puis reçoit une première hypothèse de navigation.

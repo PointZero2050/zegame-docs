@@ -7,8 +7,9 @@ Ce dossier rassemble les référentiels pédagogiques qui complètent la vision 
 ## Documents
 
 1. **[Note de convergence](convergence-2026-07-16.md)** — articulation entre le corpus pédagogique, les décisions prises avec Claude et les principes déjà documentés dans `docs/vision/`.
-2. **[Conseil du Seuil — structure UX et direction artistique](conseil-du-seuil-design.md)** — proposition challengée pour l'évaluation initiale : durée, écrans, restitution, garde-fous, univers visuel et prompt matrice.
-3. **[Corpus Point Zéro](corpus-point-zero/00_README.md)** — architecture pédagogique, Moteur de Conscience, archétypes, Marelle, catalogue d'expériences, évaluation initiale, mentoring, schémas JSON et assets.
+2. **[Monde 0 — triptyque narratif du Moteur](monde-0-triptyque-narratif.md)** — architecture actée en trois blocs : présent et Posture de Seuil, traversée 2026–2033, Conseil Oméga en 2050.
+3. **[Conseil du Seuil — structure UX et direction artistique](conseil-du-seuil-design.md)** — fondation V1 du premier bloc : Appel, mouvements, restitution, garde-fous, univers visuel et prompt matrice.
+4. **[Corpus Point Zéro](corpus-point-zero/00_README.md)** — architecture pédagogique, Moteur de Conscience, archétypes, Marelle, catalogue d'expériences, évaluation initiale, mentoring, schémas JSON et assets.
 
 ## Statut et provenance
 

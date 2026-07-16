@@ -27,7 +27,7 @@ Ces apports sont compatibles avec les Graines de Récit, l'Oméga, la validation
 | Intuition | `JE CONNAIS` | `JE DISCERNE` est le mantra des Mondes 0 et 1 | `JE CONNAIS` peut rester le verbe ontologique ; `JE DISCERNE` décrit l'acte pédagogique d'entrée dans la Marelle. Le libellé visible définitif reste à harmoniser |
 | Volonté | `JE DÉCIDE` | Le référentiel ancien emploie `JE VEUX` | Recommandation : `JE VEUX` nomme la puissance de direction ; `JE DÉCIDE` nomme son passage à l'acte. L'interface doit éviter de les employer comme synonymes non expliqués |
 | Expérience et Action | Expérience = définition pédagogique réutilisable | Action est le vocabulaire visible actuel de ze.game | **Expérience** peut désigner le modèle pédagogique ; **Action** son occurrence proposée au joueur. Le modèle technique actuel `Challenge` reste inchangé tant qu'aucune migration n'est décidée |
-| Évaluation initiale | Conseil du Seuil en 15 à 18 minutes | Une expérience de questionnaire est prévue au Monde 0 | Le Conseil du Seuil devient candidat pour cette expérience du Monde 0. La Boussole du Monde 1 réutilise ses résultats sans imposer une seconde passation |
+| Évaluation initiale | Conseil du Seuil en 15 à 18 minutes | Le Monde 0 suit désormais un triptyque narratif 2026 → 2026–2033 → 2050 | Le Conseil du Seuil fournit l'Appel et le premier miroir du bloc 1. `Avant le Zéro` devient la traversée existentielle du bloc 2. Le Conseil Oméga produit en bloc 3 la posture-cible et la restitution cumulative. Voir [triptyque narratif](monde-0-triptyque-narratif.md) |
 | Composition des Cercles | Appel compatible et diversité mesurée du Moteur | Le désir commun d'avancer à une intensité compatible est le facteur premier | La compatibilité d'engagement est un filtre prioritaire. La diversité du Moteur est secondaire, explicable et jamais utilisée pour constituer automatiquement un Cercle |
 | Matching de mentoring | Graphe des passages et contre-archétypes | Consentement, sécurité, absence de hiérarchie de conscience | Commencer par homologues, précurseurs proches et compagnons de passage. Reporter les contre-archétypes et les intensités élevées après expérimentation encadrée |
 | Recommandation | Score déterministe puis génération adaptative | Le joueur conserve le choix et comprend la proposition | Le système classe des options, pas des personnes. Chaque recommandation expose ses raisons, son niveau de confiance et ses alternatives |
@@ -48,11 +48,13 @@ L'Appel oriente les recommandations. La signature prépare la composition et le 
 
 ## 4. Séquence proposée entre Mondes 0 et 1
 
-1. **Monde 0 — Conseil du Seuil** : première hypothèse du Moteur, Appel d'activation et premières préférences relationnelles.
-2. **Passage au Monde 1 — La Boussole** : compréhension des Puissances, des polarités, des cadres et de l'Oméga ; formulation ou confirmation de la signature d'engagement.
-3. **Catalogue du Monde 1** : parcours `Voir → Circuler → Oser → Œuvrer`, avec alternance individuel, autofacilité et terrain.
-4. **Composer son Cercle** : comparaison consentie des signatures, Sas du Cercle et adoption d'un pacte d'intensité commun.
-5. **Passage au Monde 2** : Cercle stable, prérequis pédagogiques et accompagnement professionnel pour les expériences qui l'exigent.
+1. **Monde 0, bloc 1 — 2026** : Appel d'activation, première hypothèse des six Puissances, Transcendance comme état global du Moteur et Posture de Seuil.
+2. **Monde 0, bloc 2 — 2026–2033** : traversée rejouable de son propre Point Zéro et exploration existentielle de plusieurs devenirs possibles.
+3. **Monde 0, bloc 3 — Conseil Oméga en 2050** : arbitrages dans un futur commun, posture-cible, cap par Puissance et engagement ramené au présent.
+4. **Passage au Monde 1 — La Boussole** : compréhension approfondie des Puissances, des polarités, des cadres et de l'Oméga ; formulation ou confirmation de la signature d'engagement.
+5. **Catalogue du Monde 1** : parcours `Voir → Circuler → Oser → Œuvrer`, avec alternance individuel, autofacilité et terrain.
+6. **Composer son Cercle** : comparaison consentie des signatures, Sas du Cercle et adoption d'un pacte d'intensité commun.
+7. **Passage au Monde 2** : Cercle stable, prérequis pédagogiques et accompagnement professionnel pour les expériences qui l'exigent.
 
 Cette séquence évite de faire du questionnaire une barrière : le résultat reste une hypothèse de navigation et le joueur peut corriger le contexte depuis lequel il a répondu.
 
@@ -83,7 +85,7 @@ Cette séquence évite de faire du questionnaire une barrière : le résultat re
 ### Maintenant
 
 - utiliser `Voir → Circuler → Oser → Œuvrer` pour écrire les parcours du Monde 1 ;
-- transformer le Conseil du Seuil en spécification éditoriale testable, sans prétention psychométrique ;
+- transformer le Conseil du Seuil en premier bloc du triptyque, puis construire le catalogue éditorial des Postures de Seuil avant tout scoring ;
 - conserver Appel d'activation et signature d'engagement comme deux ensembles de données distincts ;
 - décrire les mini-jeux, quiz, preuves et guides avant leur développement.
 
