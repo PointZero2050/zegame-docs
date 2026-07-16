@@ -12,6 +12,24 @@ La promesse visible est :
 
 > Six situations, aucune réponse parfaite. Un premier miroir de tes mouvements et trois portes pour commencer.
 
+### Voix du Conseil
+
+> Mise à jour Codex - 2026-07-16. Application de la [charte de voix Point Zéro](../vision/voix-point-zero.md).
+
+Le Conseil n'est ni un thérapeute satisfait, ni un oracle qui aurait lu les conditions générales de l'univers. Sa voix est adulte, lucide, légèrement provocatrice et capable de mettre sa propre autorité à distance. Elle confronte les contradictions sans récompenser la conformité et introduit une touche d'humour sec lorsque la scène risque de devenir trop solennelle.
+
+La promesse pourra être poussée vers :
+
+> Six situations. Aucune réponse parfaite. Le Conseil avait oublié de commander le corrigé.
+
+Règles spécifiques :
+
+- aucune félicitation automatique après un choix ;
+- les deux mouvements restent légitimes, mais leurs conséquences peuvent être formulées avec davantage de mordant ;
+- la restitution se présente comme un miroir contestable, « pas un verdict cosmique gravé dans le marbre » ;
+- l'humour vise le Conseil, l'algorithme, les procédures et nos contradictions communes, jamais une réponse intime ;
+- une seule touche décalée forte par scène suffit.
+
 Le dispositif doit donner envie d'entrer dans la Marelle tout en diminuant, et non en augmentant, l'autorité apparente de l'évaluation.
 
 ## 2. Principaux défis adressés à la proposition initiale
@@ -175,6 +193,19 @@ Les couleurs propres aux six Puissances apparaissent avec retenue pendant les sc
 - aucun son obligatoire ni lecture automatique.
 
 ## 6. Famille d'illustrations à produire
+
+### Direction validée
+
+> Mise à jour Codex - 2026-07-16. Direction retenue avec Boris après génération de plusieurs images pilotes.
+
+La série adopte un **collage néoarchaïque contemporain** fait de papiers déchirés, matières minérales, fragments cartographiques, graines, racines et architectures civiques du futur. Deux plans coexistent dans une seule matière :
+
+- le **plan explicite** occupe environ 70 à 75 % de l'image : humains, territoire, problème concret et action possible ;
+- le **plan archétypal implicite** occupe environ 25 à 30 % : signes Point Zéro partiellement enfouis dans les strates, tracés, reflets, racines et fragments du décor.
+
+Les symboles ne forment ni bordure décorative ni collection de pictogrammes. Ils se découvrent dans un second temps et répondent discrètement aux éléments explicites : chemin et ligne, assemblée et présences abstraites, infrastructure et cercle, territoire et réseau de racines. Le vocabulaire reste volontairement limité et original : cercle imparfait, graine, bifurcation, onde, main ouverte et figures en relation. Il ne reproduit aucun motif sacré ou culturellement identifiable.
+
+La série reprend aussi la voix visuelle Point Zéro : les humains restent réalistes, mais ne posent pas pour une brochure de transformation. Chaque scène peut contenir un **grain de sabotage** discret — thermos au milieu du Conseil, carte recousue, chaise pliante sous l'architecture monumentale, symbole qui refuse de s'aligner ou regard sceptique devant une procédure trop parfaite. Le plan archétypal peut commenter et contredire le plan explicite. Le détail reste secondaire : il crée une seconde lecture sans transformer l'image en caricature.
 
 Les images actuelles du prototype servent de composition. La série finale doit comprendre :
 

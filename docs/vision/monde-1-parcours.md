@@ -352,7 +352,7 @@ La Boussole donne une carte et un langage. Son univers peut donc combiner :
 - **alchimie contemporaine** : gravure, collage, textures physiques et lumière cosmique ;
 - **clarté pédagogique** : diagrammes propres, composants manipulables et états lisibles.
 
-Le ton doit être merveilleux et légèrement décalé, mais moins sombre que les Mondes de confrontation à l'Ombre. Le joueur découvre un instrument d'orientation, pas une prophétie écrasante. Les autres parcours du Monde 1 peuvent adopter des styles très différents en conservant quelques invariants néoarchaïques.
+Le ton applique la [charte de voix Point Zéro](voix-point-zero.md) : merveilleux et décalé, mais aussi adulte, légèrement provocateur et capable de percer sa propre solennité. Le joueur découvre un instrument d'orientation, pas une prophétie écrasante ni un module de développement personnel qui le félicite d'avoir cliqué. Les autres parcours du Monde 1 peuvent adopter des styles très différents en conservant quelques invariants néoarchaïques et ce rapport vivant entre ambition, friction et humour discret.
 
 ### Palette et langage visuel
 

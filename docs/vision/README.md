@@ -40,6 +40,8 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 
 15. **[moteur-ontologique-visuel.md](moteur-ontologique-visuel.md)** — Grammaire visuelle du Moteur ontologique sur le Profil : lemniscate vivant à lobes indépendants (Option B), 4 couleurs (gris horizon / violet état 360° / pointillé cap / or progression Oméga), distinction état vs progression, moteur global comme résultante (Transcendance non nommée), 6 puissances en mini-lemniscates, fiche puissance et implications modèle de données. Prototypes dans zegame-prototypes.
 
+16. **[voix-point-zero.md](voix-point-zero.md)** — Charte de voix transversale issue du Monde 0 : ton adulte, décalé et provocateur, humour discret, sortie de la posture « Enfant Adapté », dosage par surface, limites éthiques et traduction graphique du sublime confronté au trivial.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.

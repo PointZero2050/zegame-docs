@@ -10,6 +10,8 @@ Pour la vision produit idéale (Marelle Oméga, mondes, monde-miroir, messagerie
 
 Pour l'architecture pédagogique détaillée (Moteur de Conscience, parcours, expériences, Conseil du Seuil, mentoring et schémas), voir [docs/pedagogie/README.md](docs/pedagogie/README.md). Lire la note de convergence avant d'utiliser le corpus comme base fonctionnelle ou technique.
 
+Pour tout texte ou visuel destiné au public Point Zéro, lire [docs/vision/voix-point-zero.md](docs/vision/voix-point-zero.md). La voix attendue est adulte, décalée, légèrement provocatrice et ponctuée d'un humour discret. Éviter la posture de coach, la félicitation automatique, la solennité continue et le ton lisse d'« Enfant Adapté ».
+
 Les prototypes d'interface (HTML autonomes) vivent dans le repo dédié [zegame-prototypes](https://github.com/PointZero2050/zegame-prototypes), cloné sur le serveur dans ~/zegame-prototypes/. Un dossier par prototype, conventions dans son README.
 
 ## Stack

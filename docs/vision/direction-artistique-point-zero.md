@@ -11,6 +11,14 @@ Le Point Zéro explore simultanément :
 
 La direction artistique ne doit donc être ni un « style tribal » uniforme, ni une anthologie visuelle sans cohérence.
 
+### Une voix visuelle qui garde du jeu
+
+La direction artistique applique la [charte de voix Point Zéro](voix-point-zero.md). Le néoarchaïsme ne doit pas devenir une esthétique révérencieuse où chaque personnage contemple gravement un cercle lumineux. Le sublime et le trivial cohabitent : une architecture-seuil peut contenir une chaise pliante, une assemblée cosmique un thermos, une carte parfaite une réparation visible.
+
+Chaque image narrative peut intégrer un **grain de sabotage** discret : détail prosaïque, symbole qui contredit le plan officiel, personnage sceptique, découpe naïve, rapport d'échelle inattendu ou accent coloré légèrement indiscipliné. Ce contrepoint doit enrichir la lecture sans devenir un gag illustré. L'humour visuel vise la pose, le système ou nos contradictions communes, jamais une culture ni une vulnérabilité.
+
+Les visages et les corps restent dignes mais non publicitaires : hésitations, désaccords et gestes imparfaits sont autorisés. À éviter : esthétique de bien-être premium, extase collective, symétrie systématique et mysticisme générique sans friction.
+
 Le système repose sur cette relation :
 
 `Néoarchaïsme = grammaire mère`
