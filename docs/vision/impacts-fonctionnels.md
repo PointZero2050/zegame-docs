@@ -172,6 +172,17 @@ Références techniques officielles : [intégration Event Tickets + WooCommerce]
 | Puissances | Six axes Ombre/Lumière et Transcendance en synthèse ; **degrés officiels du moteur (Boris, 2026-07-13) : Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience**, évalués en 360° (collecte depuis les expériences concernées à concevoir) ; lemniscate de synthèse en tête ; source/date/visibilité des lectures ; privé par défaut |
 | Sécurité | Pas de diagnostic automatisé, de classement public ou de partage sans consentement explicite |
 
+### F14 — Conseil du Seuil (évaluation initiale du Moteur) ✅ IMPLÉMENTÉ v0.1 (2026-07-16)
+
+Implémenté dans vibe.ze.game par Claude, d'après [11_evaluation_initiale_moteur.md](../pedagogie/corpus-point-zero/11_evaluation_initiale_moteur.md) et les arbitrages de [conseil-du-seuil-design.md](../pedagogie/conseil-du-seuil-design.md).
+- **Modèle `MoteurAssessment`** (table `moteur_assessments`) : passations historisées (jamais réécrites), versionnées (dispositif + scoring), `answers`/`result` en JSONB, contexte de passation, statuts in_progress/completed/abandoned. `User has_many :moteur_assessments`.
+- **Contenu versionné** : `config/conseil_du_seuil.yml` — Appel resserré à 5 questions (A6 verticales différée), 6 scènes avec gestes-sources (inspiration documentée + mention adaptation Point Zéro), Don au Commun (2 gestes familiers + 1 difficile), formulations adoucies avant restitution (aucun libellé O1-O3/L1-L3 ni terme chargé).
+- **Flow** : `/conseil-du-seuil` (layout immersif dédié, DA « archéologie civique du futur », progression, reprise automatique, retour arrière). Étapes : seuil+contexte → Appel ×5 → ouverture narrative → 6 scènes (polarité → geste-source révélé → intensité, textes adaptés à la polarité choisie → mouvement inverse) → Don au Commun → premier miroir.
+- **Calcul provisoire** (corpus §15) : amplitude de la polarité non choisie = inconnue (jamais zéro) ; circulation `bloque_probable`/`intermediaire_probable`/`libre_declare` ; confiance faible/moyenne au maximum ; « libre » toujours déclaratif.
+- **Premier miroir** : Appel restitué (sans moyenne générale), lemniscate provisoire (lobes = moyennes des amplitudes déclarées par polarité), 6 tendances (mouvement spontané + « à explorer » + confiance), 3 portes explicables (circulation / élan disponible / conscientisation — jamais uniquement correctif), message de clôture canonique, « Refaire le Conseil » (nouvelle passation).
+- **Profil** : bloc « Ton Moteur Ombre / Lumière » — CTA « Franchir le seuil » si aucune passation, sinon lien vers le miroir. Conformément au garde-fou, le premier miroir n'alimente pas l'état violet consolidé (360°) du Profil.
+- **Reste (v0.2+)** : illustrations des scènes (en production côté Boris), micro-récits adaptatifs post-restitution, recommandations réelles branchées sur le catalogue Monde 1, expérience dédiée dans le parcours du Monde 0 (skip si déjà réalisé), admin d'édition des contenus, sauvegarde fine intra-scène.
+
 ### Décisions UX transverses (Boris, 2026-07-13)
 
 - **Cercles progressifs** : l'ancienne décision de masquer totalement l'entrée avant le Monde 2 est remplacée par F11. L'entrée existe dès le Monde 0 comme teaser ; discussions au Monde 1 ; croissance au Monde 2.
