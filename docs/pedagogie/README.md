@@ -9,6 +9,7 @@ Ce dossier rassemble les référentiels pédagogiques qui complètent la vision 
 1. **[Note de convergence](convergence-2026-07-16.md)** — articulation entre le corpus pédagogique, les décisions prises avec Claude et les principes déjà documentés dans `docs/vision/`.
 2. **[Monde 0 — triptyque narratif du Moteur](monde-0-triptyque-narratif.md)** — architecture actée en trois blocs : présent et Posture de Seuil, traversée 2026–2033, Conseil Oméga en 2050.
 3. **[Conseil du Seuil — structure UX et direction artistique](conseil-du-seuil-design.md)** — fondation V1 du premier bloc : Appel, mouvements, restitution, garde-fous, univers visuel et prompt matrice.
+3bis. **[Bloc 1 — « Une drôle d'époque »](bloc-1-une-drole-depoque.md)** — script fondateur du bloc 1 refondu (Claude, sur cadrage Boris 2026-07-16) : la semaine narrative (une puissance par jour), bible des récurrents, grammaire d'écrans ventilée (une situation = un choix), prologue + deux journées complètes, Posture Point Zéro (12 candidates), Appel déplacé vers un bloc 4, bloc 2 sans scoring (traces seulement).
 4. **[Corpus Point Zéro](corpus-point-zero/00_README.md)** — architecture pédagogique, Moteur de Conscience, archétypes, Marelle, catalogue d'expériences, évaluation initiale, mentoring, schémas JSON et assets.
 
 ## Statut et provenance
