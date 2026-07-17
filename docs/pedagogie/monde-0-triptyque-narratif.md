@@ -207,6 +207,8 @@ Les trois blocs partagent la grammaire néoarchaïque mais font évoluer son rap
 - **2026–2033** : collage plus instable, fissures, superposition de futurs, montée du monde-miroir ;
 - **2050** : archéologie civique du futur, technologies précises, Cité Cosmique inachevée et plan archétypal devenu partiellement visible.
 
+> Mise à jour Codex - 2026-07-17. Les personnages du Monde 0 suivent la [ligne archétypale en papier découpé](conseil-du-seuil-design.md#direction-validée) : figures adultes anguleuses, têtes agrandies sans proportions chibi, corps compacts, expressions et vêtements diversifiés, couleurs plus fortes que le décor. La continuité avec le futur pixel game passe par les silhouettes, palettes et signes distinctifs, pas par une esthétique de sprite imposée aux illustrations. Sur mobile, les scènes sont recomposées avec moins de personnages et moins d'éléments secondaires.
+
 La voix reste adulte, lucide, provocatrice et légèrement joueuse. L'humour vise les systèmes, les institutions, les procédures et les contradictions humaines ; jamais la vulnérabilité du joueur.
 
 ## 9. Conséquences fonctionnelles à anticiper

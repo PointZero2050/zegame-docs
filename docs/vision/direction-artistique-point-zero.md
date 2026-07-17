@@ -98,6 +98,27 @@ Ces images montrent un néoarchaïsme qui ne copie pas une culture précise. Il 
 
 C'est le modèle recherché : **changer d'univers sans changer de langue profonde**.
 
+### Ligne principale des personnages narratifs
+
+> Mise à jour Codex - 2026-07-17. Direction validée avec Boris à partir des essais du Conseil du Seuil.
+
+Pour le Monde 0 et, par défaut, pour les illustrations narratives qui ne disposent pas encore d'un contrat artistique propre, les personnages suivent une ligne **archétypale en papier découpé** :
+
+- adultes, dignes et expressifs, sans réalisme photographique ni finition publicitaire ;
+- silhouettes anguleuses, asymétriques et immédiatement reconnaissables ;
+- têtes agrandies et corps compacts, sans basculer vers le chibi, le kawaii ou l'apparence enfantine ;
+- visages capables d'exprimer joie, tristesse, colère, peur, doute, détermination, fatigue et humour ;
+- vêtements contemporains-futurs diversifiés, qui contribuent à raconter la fonction et l'archétype de chaque figure ;
+- couleurs plus vives et contrastées que le décor ;
+- contours irréguliers, fibres visibles et ombres portées légères donnant l'impression de figures découpées puis posées sur le monde ;
+- texture commune de papier, d'encre, de charbon et de pigments minéraux.
+
+Le décor reste plus désaturé et légèrement moins incisif afin que les êtres apparaissent comme la partie vivante et agissante de la scène. Cette ligne peut préparer le pixel game par les silhouettes, les palettes et les signes distinctifs ; la traduction en sprite fera l'objet d'une simplification ultérieure et ne détermine pas les proportions des illustrations principales.
+
+Référence validée : [Conseil du Seuil — personnages archétypaux](../pedagogie/assets/conseil-seuil-personnages-archetypaux-master.png).
+
+Sur mobile, une scène dense doit être **recomposée** : moins de personnages simultanés, moins d'éléments secondaires et une émotion principale plus lisible. Un recadrage automatique de l'image desktop ne suffit pas.
+
 ## 5. Liberté encadrée par parcours
 
 Chaque fiche de parcours devrait comporter un court contrat artistique :

@@ -200,6 +200,8 @@ Les couleurs propres aux six Puissances apparaissent avec retenue pendant les sc
 
 > Mise à jour Codex - 2026-07-16. Direction retenue avec Boris après génération de plusieurs images pilotes.
 
+> Mise à jour Codex - 2026-07-17. La ligne des personnages réalistes est remplacée par des figures archétypales adultes en papier découpé. L'essai chibi n'est pas retenu comme ligne principale. Référence visuelle : [personnages archétypaux du Conseil](assets/conseil-seuil-personnages-archetypaux-master.png).
+
 La série adopte un **collage néoarchaïque contemporain** fait de papiers déchirés, matières minérales, fragments cartographiques, graines, racines et architectures civiques du futur. Deux plans coexistent dans une seule matière :
 
 - le **plan explicite** occupe environ 70 à 75 % de l'image : humains, territoire, problème concret et action possible ;
@@ -207,7 +209,11 @@ La série adopte un **collage néoarchaïque contemporain** fait de papiers déc
 
 Les symboles ne forment ni bordure décorative ni collection de pictogrammes. Ils se découvrent dans un second temps et répondent discrètement aux éléments explicites : chemin et ligne, assemblée et présences abstraites, infrastructure et cercle, territoire et réseau de racines. Le vocabulaire reste volontairement limité et original : cercle imparfait, graine, bifurcation, onde, main ouverte et figures en relation. Il ne reproduit aucun motif sacré ou culturellement identifiable.
 
-La série reprend aussi la voix visuelle Point Zéro : les humains restent réalistes, mais ne posent pas pour une brochure de transformation. Chaque scène peut contenir un **grain de sabotage** discret — thermos au milieu du Conseil, carte recousue, chaise pliante sous l'architecture monumentale, symbole qui refuse de s'aligner ou regard sceptique devant une procédure trop parfaite. Le plan archétypal peut commenter et contredire le plan explicite. Le détail reste secondaire : il crée une seconde lecture sans transformer l'image en caricature.
+La série reprend aussi la voix visuelle Point Zéro par des **figures humaines archétypales en papier découpé**. Les personnages restent adultes, dignes et émotionnellement complexes, mais quittent le réalisme photographique : silhouettes anguleuses, visages asymétriques, têtes agrandies sans proportions chibi, corps compacts, contours fibreux et légères ombres portées. Leurs vêtements contemporains-futurs, leurs couleurs et leurs postures distinguent leurs archétypes. Joie, tristesse, colère, peur, doute, sérénité et détermination peuvent coexister dans une même assemblée.
+
+Les personnages sont plus saturés, plus nets et plus contrastés que le décor. Celui-ci conserve sa matière néoarchaïque, mais sa saturation et sa microtexture sont calmées derrière les visages. Cette hiérarchie fait des humains la partie vivante et agissante de l'image sans transformer le paysage en fond neutre.
+
+Chaque scène peut contenir un **grain de sabotage** discret — thermos au milieu du Conseil, carte recousue, chaise pliante sous l'architecture monumentale, symbole qui refuse de s'aligner ou regard sceptique devant une procédure trop parfaite. Le plan archétypal peut commenter et contredire le plan explicite. Le détail reste secondaire : il crée une seconde lecture sans transformer l'image en caricature.
 
 Les images actuelles du prototype servent de composition. La série finale doit comprendre :
 
@@ -216,12 +222,12 @@ Les images actuelles du prototype servent de composition. La série finale doit 
 3. **Un Don au Commun** : méthode ou objet circulant entre plusieurs communautés, transformé sans perdre sa source.
 4. **Une texture commune** : papier minéral, marques topographiques et traces de gestes, utilisable avec parcimonie.
 
-Chaque scène doit disposer de variantes 16:9 et 4:3 avec une zone sûre centrale. Les personnages restent divers, non héroïsés et sans costume associé à un peuple réel. Les symboles sont abstraits et propres au Point Zéro.
+Chaque scène doit disposer de variantes 16:9 et 4:3 ainsi que d'une **composition mobile dédiée**. La version mobile montre moins de personnages et moins d'éléments secondaires afin de préserver la lecture des émotions ; elle ne doit pas être un simple recadrage automatique de la scène desktop. Les personnages restent divers, non héroïsés et sans costume associé à un peuple réel. Les symboles sont abstraits et propres au Point Zéro.
 
 ### Prompt matrice
 
 ```text
-Illustration éditoriale néoarchaïque pour Le Conseil du Seuil, archéologie civique du futur, assemblée humaine diverse dans un territoire en transition, matières minérales et papier découpé, formes primitives abstraites mêlées à une cartographie contemporaine précise, obsidienne, craie, turquoise oxydé, jaune solaire et accent corail, lumière claire, composition lisible sur mobile, profondeur modérée, aucun texte, aucun logo, aucun costume tribal identifiable, aucune esthétique fantasy médiévale, aucune interface.
+Illustration éditoriale néoarchaïque pour Le Conseil du Seuil, archéologie civique du futur, assemblée humaine diverse dans un territoire en transition, personnages adultes archétypaux en papier découpé aux silhouettes anguleuses, têtes agrandies sans proportions chibi, corps compacts, expressions émotionnelles variées, vêtements contemporains-futurs distinctifs, contours fibreux et ombres portées légères, personnages plus colorés et contrastés que le décor désaturé, matières minérales et cartographie contemporaine précise, plan symbolique implicite fondu dans les strates, obsidienne, craie, turquoise oxydé, jaune solaire, violet et corail, lumière claire, aucun texte, aucun logo, aucun costume tribal identifiable, aucune esthétique fantasy médiévale, aucune interface.
 ```
 
 Chaque prompt de scène ajoute uniquement la situation, le geste principal et la Puissance concernée afin de conserver une famille cohérente.
