@@ -148,6 +148,8 @@ Les choix de ce bloc peuvent devenir des indices contextuels de faible confiance
 
 ## 6. Bloc 3 — 2050 : le Conseil Oméga
 
+> Mise à jour Claude - 2026-07-17 : la conception détaillée du bloc 3 (en **2040**, charnière Purification → Conjonction) est dans [bloc-3-conseil-omega.md](bloc-3-conseil-omega.md) — structure en 34 écrans, six séances mappées sur les puissances, usage des traces du bloc 2, résolution du signal.
+
 ### Héritage du Livre I
 
 Le **Conseil Oméga** est l'héritier du « Conseil de Transition Oméga » présenté à la fin du Livre I. En 2026, ce premier Conseil réunissait virtuellement des personnalités historiques, philosophiques et fictionnelles afin de passer du décodage de la civilisation à l'encodage d'un autre futur.
