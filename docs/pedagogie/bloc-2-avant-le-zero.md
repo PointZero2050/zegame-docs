@@ -1,6 +1,6 @@
 # Bloc 2 — « Avant le Zéro » refondu : le sablier de la traversée
 
-> Ajout Claude - 2026-07-17. Document fondateur de la refonte du LDVELH « Avant le Zéro » (v1 : avril 2026, fichier `Vibe Coding/ldvelh/avant-le-zero.html`) en **bloc 2 du [triptyque narratif du Monde 0](monde-0-triptyque-narratif.md)**. Cadrage Boris (2026-07-16) : éveil émotionnel et existentiel, le Point Zéro personnel comme véritable **mort/renaissance** au cœur de la mécanique, fins diversifiées incluant les extrêmes des puissances, rejouabilité assumée, **aucun scoring** (traces non évaluatives uniquement). Architecture + échantillons pour validation avant écriture complète.
+> Ajout Claude - 2026-07-17. Document fondateur de la refonte du LDVELH « Avant le Zéro » (v1 : avril 2026, fichier `Vibe Coding/ldvelh/avant-le-zero.html`) en **bloc 2 du [triptyque narratif du Monde 0](monde-0-triptyque-narratif.md)**. Cadrage Boris (2026-07-16) : éveil émotionnel et existentiel, le Point Zéro personnel comme véritable **mort/renaissance** au cœur de la mécanique, fins diversifiées incluant les extrêmes des puissances, rejouabilité assumée, **aucun scoring** (traces non évaluatives uniquement). Architecture + échantillons pour validation avant écriture complète. **Toile de fond canonique du monde : [bloc-2-arc-du-monde.md](bloc-2-arc-du-monde.md)** (Ombre collective, Diviseur en filigrane, chronologie 2026-2033, germes des 25 scénarios).
 
 ## 1. Diagnostic de l'existant (v1)
 
