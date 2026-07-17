@@ -49,9 +49,11 @@ Héritier du Conseil de Transition Oméga du Livre I (2026 : figures historiques
 - **Le Greffier** — l'IA du Conseil (proposition : c'est la voix qui deviendra le mentor **Docteur Z.E.R.O.** de la Marelle — le bloc 3 en serait l'origine). Tient le registre, y compris les pages en avance. Ton : exactitude pince-sans-rire, zéro mystique.
 - Des **mémoires historiques** sont invoquées ponctuellement en séance (des voix, pas des hologrammes de cire) et une **figure archétypale** peut traverser une délibération — le plan implicite devenu partiellement visible, canon du §8 du triptyque.
 
-### Le treizième siège
+### Le treizième siège — le mental (arbitrage Boris, 2026-07-17)
 
-La chambre a douze sièges et **un treizième, toujours vide, tourné vers la porte**. Le règlement du Conseil le désigne comme « le siège de ce qui ferme » : chaque séance commence en vérifiant qu'il est vide, et personne ne rit pendant cette vérification. C'est l'évocation indirecte du Diviseur — jamais nommé, conformément au canon : le Conseil ne combat pas un ennemi, il garde une place à ce qu'il pourrait devenir. (Rite miroir du tour des absents : on convoque les voix qui manquent, on surveille la seule qui ne manque jamais.)
+La chambre a douze sièges et **un treizième, toujours vide, tourné vers la porte**. Le règlement le désigne d'un mot que tout le monde comprend sans qu'on l'explique : **c'est la place du mental**. Ce vieil oncle grincheux que personne n'a invité mais qui s'assoit toujours, qui parle par-dessus le cœur, qui a un avis raisonnable sur tout et te distrait de la seule voix qui compte. Le Conseil ne le chasse pas — on ne chasse pas un oncle — : il lui garde une chaise **en vue**, précisément pour ne pas le laisser s'installer dans les onze autres. Chaque séance commence en vérifiant qu'il est bien à sa place, à la porte, et pas au centre. Personne ne rit pendant cette vérification.
+
+C'est l'évocation indirecte du Diviseur (canon : jamais nommé) — la force qui **sépare la tête du cœur** et fait passer sa fermeture pour de la prudence. Rite miroir du tour des absents : on convoque à voix haute les présences qui manquent au cœur, et on surveille en silence la seule voix qui ne manque jamais, celle qui voudrait toujours avoir le dernier mot. Le travail du Conseil est un travail de cœur ; le treizième siège rappelle, séance après séance, contre quoi.
 
 ### Le rite d'ouverture
 
@@ -64,7 +66,7 @@ Chaque séance ouvre par le **tour de parole des absents** — le protocole d'Ac
 | **L'ellipse** | 4 | 2033→2040 en un panoramique (l'unique autorisé) · la convocation (le registre daté — résolution du signal) · le voyage vers le territoire · le seuil (Nadia, retrouvailles, la salle Simone-Veil) |
 | **Séance d'ouverture** | 3 | Le tour des absents (le joueur y porte une voix — écho de A3) · le treizième siège · la question de la Conjonction posée par Imane |
 | **Six séances** (une par puissance) | 6 × 3 = 18 | Par séance : **le dossier** (un cas concret 2040, jamais un exposé) → **la délibération** (trois positions incarnées par des membres ; un devenir du joueur est invoqué — échos des traces du bloc 2) → **l'arbitrage + le cap** (le joueur tranche le dossier, puis formule son cap pour la puissance engagée) |
-| **Le rite de clôture** | 5 | La posture-cible (3 suggérées d'après les traces + catalogue ouvert) · l'Ombre et la Lumière assumées (synthèse des caps) · la fonction que le joueur tiendrait en 2040 · l'engagement au présent (Graine de Récit) · la signature (écho de la signature d'engagement du bloc 1) |
+| **Le rite de clôture** | 5 | La posture-cible (**choix parmi 3 postures suggérées** d'après les traces : Posture de Seuil + devenirs regardés en face + caps) · l'Ombre et la Lumière assumées (synthèse des caps) · la fonction que le joueur tiendrait en 2040 · l'engagement au présent · la signature (écho de la signature d'engagement du bloc 1) |
 | **La restitution** | 4 | La fresque du Monde 0 : posture initiale → devenirs regardés en face → posture-cible → engagement · le retour : la dernière page du registre porte la date d'aujourd'hui · sortie vers la Marelle |
 | **Total** | **34** | + 2 écrans de respiration si besoin au montage |
 
@@ -116,22 +118,49 @@ La carte du bloc 2 l'annonce : « Le Conseil Oméga, en 2040, saura quels deveni
 
 > « Objection consignée. Le registre note par ailleurs que la même objection a été formulée en 2031, 2034 et 2037, chaque fois par la personne la mieux placée pour savoir qu'elle avait tort. Le registre ne juge pas. Le registre a des habitudes. »
 
-## 7. Sorties et implémentation (esquisse)
+## 7. Sorties et implémentation
 
-- **Modèle** : `ConseilSession` (une passation historisée, même philosophie que `Traversee`) — `arbitrages` jsonb (6 dossiers : position tranchée), `caps` jsonb (6 puissances : {ombre_acceptee, lumiere_assumee, cap}), `posture_cible`, `fonction_2040`, `engagement` (texte court), timestamps. Une nouvelle passation ajoute un instantané ; le Profil affiche la dernière.
-- **Lectures** : `Traversee.fins_for(user)` pour les invocations ; `MoteurAssessment` pour la Posture de Seuil et le rappel « tu es entré X ».
-- **Profil** : la zone cap des mini-lemniscates (placeholder « Définir un cap ») se remplit ; la posture-cible s'affiche à côté de la Posture de Seuil (« De [posture initiale] vers [posture-cible] ») ; l'engagement rejoint Mon Récit comme Graine de Récit.
-- **Marelle** : validation auto de l'expérience Conseil Oméga du parcours Monde 0 à la première signature (même mécanisme que 237/238).
-- **Contenu** : `config/conseil_omega/*.yml`, moteur de sections réutilisé (le graphe est quasi linéaire — seules les invocations et le rite varient selon les traces : mécanique d'échos déjà en place, avec des variantes par devenir au lieu de variantes par réponse).
-- **Prérequis d'accès** : au moins une traversée complétée du bloc 2 (sinon : écran d'attente « Le registre te connaît, mais ta page est blanche — traverse d'abord »).
+- **Modèle** : `ConseilSession` (une passation historisée, même philosophie que `Traversee`) — `arbitrages` jsonb (6 dossiers : **la position tranchée par le joueur**), `caps` jsonb (6 puissances : {ombre_acceptee, lumiere_assumee, cap}), `posture_cible`, `fonction_2040`, `engagement` (texte court), timestamps. Une nouvelle passation ajoute un instantané ; le Profil affiche la dernière. Le joueur **vote et tranche** chaque dossier (arbitrage Boris) — mais le monde commun de 2040 ne change pas : ce qui fait trace, c'est le **cap**, pas le vote (le vote est l'expérience d'arbitrer sans corrigé ; le cap est ce que le joueur en retire pour lui).
+- **Lectures** : `Traversee.fins_for(user)` pour les invocations de devenirs ; `MoteurAssessment` pour la Posture de Seuil et le rappel « tu es entré X ».
+- **Posture-cible** : à la clôture, le Conseil **suggère 3 postures** (parmi le catalogue des 24) dérivées des informations collectées — Posture de Seuil du bloc 1 + devenirs regardés en face au bloc 2 + caps tranchés en séance — et le joueur **en choisit une** (arbitrage Boris : choix parmi 3, pas de catalogue ouvert). Les 3 sont accompagnées d'une phrase expliquant *pourquoi elle t'est proposée* (traçabilité, comme les postures voisines du bloc 1).
+- **Profil** : la zone cap des mini-lemniscates (placeholder « Définir un cap ») se remplit à partir des caps ; la posture-cible s'affiche à côté de la Posture de Seuil (« De [posture initiale] vers [posture-cible] ») ; **lien de rejeu** depuis le Profil (comme « Une drôle d'époque » et « Avant le Zéro ») pour refaire le Conseil.
+- **Pas de Graine de Récit sur le bloc 3** (arbitrage Boris) : la Graine du chapitre est portée par le dernier challenge du Chapitre 3 (« Mon récit de passage », CH 247). L'engagement formulé au Conseil est une **sortie du Moteur** (cap + fonction + phrase d'engagement), pas une Graine — il alimente la restitution et le Profil, sans passer par le fil de messages.
+- **Marelle** : validation auto de l'expérience Conseil Oméga (nouveau challenge du Chapitre 3, voir §7bis) à la première signature (même mécanisme `validate_marelle_experience!` que 237/238).
+- **Contenu** : `config/conseil_omega/*.yml`, **moteur de sections du bloc 2 réutilisé** (le graphe est quasi linéaire — seules les invocations de devenirs et certains rappels varient selon les traces : la mécanique d'échos est déjà en place, avec des variantes indexées par devenir/posture au lieu de variantes par réponse).
+- **Prérequis d'accès** : au moins une traversée complétée du bloc 2 (sinon, écran de seuil tenu par Nadia : « Le registre te connaît, mais ta page est encore blanche. On ne convoque pas quelqu'un qui n'a rien traversé. Reviens quand tu auras vu au moins un de tes devenirs. » + lien vers `/avant-le-zero`).
 
-## 8. Arbitrages à trancher (Boris)
+## 7bis. Adaptation du parcours Monde 0 (arbitrage Boris + proposition Claude)
 
-1. **Le joueur tranche-t-il les dossiers ?** Proposition : oui, il vote en séance (l'expérience d'arbitrer sans corrigé est LE cœur du bloc) — mais le monde commun n'enregistre pas son vote comme canon : ce qui reste dans les traces, c'est son cap. Alternative : il témoigne et conseille, le Conseil tranche hors champ.
-2. **Le treizième siège** (évocation indirecte du Diviseur) — valider ou adoucir.
-3. **Le Greffier = futur Docteur Z.E.R.O.** (origine du mentor IA de la Marelle) — valider cette jonction, ou garder le Greffier anonyme.
-4. **La mère de Sonia morte pendant la Purification** (donne son poids au tour des absents) — valider, ou garder tous les récurrents vivants.
-5. **Posture-cible** : 3 suggestions dérivées des traces + catalogue des 24 ouvert (proposition), ou choix entièrement libre, ou dérivation ferme ?
-6. **L'engagement final** : Graine de Récit obligatoire (comme les fins de chapitre de la Marelle) ou optionnelle ?
-7. **Volume** : ~34 écrans (± séance en moins ou respiration en plus) — bon calibre ?
-8. **Le retour à la date réelle de 2026** en clôture (le registre convoque le joueur réel) — valider cette bascule métaleptique comme pont vers le bloc 4.
+Le triptyque n'est **pas** regroupé dans un seul chapitre — c'est un choix, pas un accident. La structure du parcours (Journey 14) devient :
+
+| Chapitre | Rôle | Expériences (dans l'ordre) |
+|---|---|---|
+| **Chapitre 1 — la traversée intérieure** | Fiction introspective : qui es-tu face au basculement ? | Entrer dans le Jeu → **Une drôle d'époque** (bloc 1, 2026) → **Avant le Zéro** (bloc 2, 2026-2033) → Et moi dans tout ça ? |
+| **Chapitre 2 — l'écosystème** | Le réel : le Point Zéro existe pour de vrai | L'écosystème · le site · le signe de reconnaissance · les choses se précisent |
+| **Chapitre 3 — l'engagement** | Du futur au présent : que viens-tu faire ? | **Le Conseil Oméga** (bloc 3, 2040) → Découvrir les formats → Le sas d'entrée → Vivre l'Atelier Point Zéro → Mon récit de passage *(Graine de Récit)* |
+
+**Pourquoi le Conseil Oméga ouvre le Chapitre 3, et n'est pas collé aux blocs 1-2 :** le bloc 3 n'est plus de l'introspection, c'est de l'**engagement**. Sa fonction dramatique — la bascule métaleptique où le Conseil de 2040 convoque le joueur *réel* de 2026 — est le **sas exact** vers l'atelier réel qui suit dans le même chapitre. Le joueur sort du Conseil « convoqué maintenant », et le chapitre enchaîne sur « Découvrir les formats / Le sas d'entrée » de l'atelier physique. Le Chapitre 2 (découverte de l'écosystème réel) sert alors de **préparation involontaire** : le joueur apprend que le Festival, la monnaie Ω, la Marelle existent — *puis* leur futur de 2040 le convoque. Le signal du bloc 2 (« la date qui n'existe pas encore ») a ainsi le temps de mûrir avant sa résolution.
+
+- **À créer** : un nouveau challenge « Le Conseil Oméga » dans le Chapitre 3 (position juste après la Page 30, avant « Découvrir les formats »), contenu = présentation + lien `/conseil-omega` + mention validation auto (miroir des blocs 1-2). Sa validation auto se déclenche à la signature finale.
+- **Décalage de position** : « Une drôle d'époque » (238) et « Avant le Zéro » (237) déjà remis dans l'ordre pédagogique (238 pos.3, 237 pos.4) — **fait le 2026-07-17**.
+- **Rejeu** : trois liens de rejeu sur le Profil (bloc 1, bloc 2, bloc 3), même UX que l'existant.
+
+## 8. Arbitrages — tous tranchés (Boris, 2026-07-17)
+
+1. **Le joueur tranche les dossiers.** ✅ Il vote et arbitre en séance ; le vote est l'expérience, le cap est la trace (§7).
+2. **Le treizième siège = le mental.** ✅ « Ce vieil oncle grincheux qui nous distrait de la voix du cœur » — évocation indirecte du Diviseur (§4).
+3. **Le Greffier = le futur Docteur Z.E.R.O.** ✅ Le bloc 3 est l'origine du mentor IA de la Marelle.
+4. **La mère de Sonia est morte pendant la Purification.** ✅ Première nommée au tour des absents, chaise pliante vide au Conseil.
+5. **Posture-cible : choix parmi 3 postures suggérées** d'après les infos collectées. ✅ (§7)
+6. **Pas de Graine de Récit sur le bloc 3.** ✅ La Graine est portée par « Mon récit de passage » (fin du Chapitre 3) ; lien de rejeu du bloc 3 depuis le Profil (§7).
+7. **Volume : 34 écrans.** ✅ On tente ce calibre.
+8. **Retour à la date réelle de 2026 en clôture.** ✅ Validé comme pont — reste à trancher **où atterrit ce pont** (bloc 4 : fin du Monde 0 ou entrée du Monde 1), voir §9.
+
+## 9. Question ouverte : où placer le bloc 4 (l'Appel) ?
+
+Le bloc 3 se termine sur la bascule 2040 → 2026 (le registre convoque le joueur réel). **Où atterrit cette convocation ?** Deux options, avec une conséquence directe sur les 2 derniers écrans du script du bloc 3.
+
+- **Option A — bloc 4 en fin de Monde 0.** Le Conseil convoque, et l'Appel (engagement réel : intensité, disponibilité, sécurité intérieure — la mécanique déjà prête du Conseil du Seuil v1) suit dans la foulée. Avantage : le triptyque se referme sur son propre engagement, tout dans le Monde 0. Inconvénient : le joueur formule une envie d'engagement **avant** d'avoir vécu l'atelier réel — sur la seule base de la fiction.
+- **Option B — bloc 4 à l'entrée du Monde 1 (recommandation Boris, et la mienne).** Le bloc 3 se referme sur la convocation *ouverte* (« le registre a écrit ta date ; à toi de venir »), le joueur traverse le vrai atelier (fin du Chapitre 3), passe le Monde 0, **puis** l'Appel l'accueille à l'entrée du Monde 1 — au moment où son envie d'engagement est réelle, informée par l'atelier vécu, pas seulement par la fiction. Plus juste psychologiquement : on mesure un élan d'engagement **après** l'avoir éprouvé, pas avant.
+
+Si **Option B** (recommandée) : les 2 écrans de clôture du bloc 3 changent de cible — ils ne débouchent pas sur un questionnaire d'engagement, mais sur la restitution du Monde 0 + une **promesse suspendue** (« la porte est écrite ; on t'y attend »), que le bloc 4 rouvrira à l'entrée du Monde 1. C'est le seul point qui bloque encore l'écriture du script complet — dès qu'il est tranché, j'écris les 34 écrans.
