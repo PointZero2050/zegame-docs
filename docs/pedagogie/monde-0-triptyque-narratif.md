@@ -1,6 +1,8 @@
 # Monde 0 — triptyque narratif du Moteur
 
 > Ajout Codex - 2026-07-16. Décisions actées avec Boris à partir de la V1 du Conseil du Seuil, du jeu des archétypes, d'`Avant le Zéro`, de la fin du Livre I, du Livre II et du schéma préparatoire du Scénario Oméga. Cette note oriente la prochaine phase de conception avec Claude ; elle ne constitue pas encore une spécification de scoring ni un contrat d'implémentation.
+>
+> **Mise à jour Claude - 2026-07-17 (arbitrages Boris)** : le bloc 2 s'achève en **2033** et le **Conseil Oméga (bloc 3) se tient en 2040** — charnière **Purification → Conjonction** (et non plus Conjonction → Congélation en 2050). Les mentions « 2050 » ci-dessous sont à lire « 2040 ». Toile de fond canonique du monde : [bloc-2-arc-du-monde.md](bloc-2-arc-du-monde.md) (géographie Occident/laboratoires du reste du monde, alchimie Orient/Occident, Diviseur en évocation indirecte seulement).
 
 ## 1. Décision directrice
 

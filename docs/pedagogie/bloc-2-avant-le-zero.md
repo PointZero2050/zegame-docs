@@ -18,7 +18,7 @@
 2. **Le Point Zéro est un épisode, pas le cœur** : une seule branche le traverse vraiment ; les autres passent à côté. Le cadrage veut l'inverse : *toutes* les routes y mènent, chacune à sa manière.
 3. **Fins asymétriques** : les fins « captives » actuelles (la bulle, brûlé, l'incohérence) sont des culs-de-sac aimables ; les extrêmes du triptyque (gourou, violence légitimée, dissociation, absorption par l'Empire…) ne sont pas explorables.
 4. **Pas de continuité bloc 1** : ni le territoire, ni Nadia/Étienne/Léna/Imane, ni le pad, ni la canicule fondatrice.
-5. **Chronologie** : 2026-2040 ; le triptyque cadre le bloc 2 sur **2026-2033** (2033-2050 appartient à l'ellipse vers le Conseil Oméga).
+5. **Chronologie** : 2026-2040 ; le triptyque cadre le bloc 2 sur **2026-2033** (2033-2040 appartient à l'ellipse vers le Conseil Oméga, désormais daté de 2040 — arbitrage Boris 2026-07-17).
 
 ## 2. Architecture cible : le sablier
 
@@ -81,7 +81,7 @@ Règles d'écriture des fins : ni récompense ni condamnation ; chaque fin dit *
 - **Léna** est le fil rouge de la Dispersion : sa trajectoire (radicalisation lucide) croise toutes les voies — on la retrouve différente selon la voie choisie (alliée au Feu, perdue de vue au Large, adversaire au Village…). La question « qu'est devenue Léna ? » est un des moteurs émotionnels du bloc, et sa réponse canonique appartient au bloc 3.
 - **Nadia** tient le cercle de pratique (voie du Silence et voie du Fil) ; son carnet réapparaît au goulot — quelle que soit la voie — comme objet-passeur (« elle t'avait noté quelque chose, ce dimanche-là »).
 - **Étienne** incarne la Machine (il rejoint une startup d'adaptation « pour prendre des notes de l'intérieur »).
-- **Le signal 2050** : au goulot, dans la nuit du Point Zéro, un fragment (le pad affiche une modification datée… d'un futur impossible). Non expliqué, non commenté. Payé au bloc 3.
+- **Le signal 2040** (le Conseil Oméga se tient en 2040 — arbitrage Boris) : au goulot, dans la nuit du Point Zéro, un fragment (le pad affiche une modification datée… d'un futur impossible). Non expliqué, non commenté. Payé au bloc 3 (2040).
 
 ## 6. Rejouabilité et traces (pas de scoring — confirmé)
 

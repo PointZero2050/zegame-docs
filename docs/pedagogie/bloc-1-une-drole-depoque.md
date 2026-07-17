@@ -44,15 +44,15 @@ La semaine boucle sur elle-même : dimanche → dimanche. Sept jours, ça tombe 
 
 | Personnage | Bloc 1 | Devenir possible |
 |---|---|---|
-| **Nadia** | Anime la fresque. Infirmière de nuit, ateliers le week-end. Humour sec, fatigue réelle, foi discutée. Tient un carnet. | Bloc 3 : siège au Conseil Oméga territorial de 2050. Son carnet est devenu autre chose. |
+| **Nadia** | Anime la fresque. Infirmière de nuit, ateliers le week-end. Humour sec, fatigue réelle, foi discutée. Tient un carnet. | Bloc 3 : siège au Conseil Oméga territorial de 2040. Son carnet est devenu autre chose. |
 | **Étienne** | Ingénieur proche de la retraite. « J'ai déjà vu trois fins du monde annoncées, cette fois je prends des notes. » Sceptique constructif, prête son appart. | Bloc 2 : figure croisée pendant la traversée. |
 | **Léna** | 19 ans, radicale, lucidité brûlante. Poste à 2h du matin. | Bloc 2 : une des trajectoires extrêmes la recroise. Bloc 3 : à déterminer — la question de ce qu'elle est devenue est un des fils émotionnels du triptyque. |
 | **Sonia** | Collègue. Craque le lundi entre le décaféiné et le tableau des congés. | Récurrente légère. |
 | **Marc** | Collègue. Positive tout. L'Empire intérieur en pull molletonné. | Récurrent léger — cible d'humour systémique, jamais humilié. |
-| **Imane** | Stagiaire. Deux ans de terrain dans une ONG climat, jamais eu la parole en réunion. Sait ce que sont les nuits à 30° dans les logements qu'elle visitait. | Bloc 3 : candidate naturelle pour reparaître en 2050 — à arbitrer avec Léna. |
-| **Le groupe WhatsApp** | Rebaptisé trois fois la première nuit. Chœur grec numérique de la semaine. | Ses archives resurgissent en 2050. |
+| **Imane** | Stagiaire. Deux ans de terrain dans une ONG climat, jamais eu la parole en réunion. Sait ce que sont les nuits à 30° dans les logements qu'elle visitait. | Bloc 3 : candidate naturelle pour reparaître en 2040 — à arbitrer avec Léna. |
+| **Le groupe WhatsApp** | Rebaptisé trois fois la première nuit. Chœur grec numérique de la semaine. | Ses archives resurgissent en 2040. |
 
-**L'objet-transmission** : le **pad de notes du groupe** (et/ou le carnet de Nadia). Créé le dimanche du prologue, disputé le dernier dimanche (scène Transcendance), retrouvé en 2050 sous une forme inattendue. C'est le candidat naturel pour le « signal venu de 2050 » de la note triptyque.
+**L'objet-transmission** : le **pad de notes du groupe** (et/ou le carnet de Nadia). Créé le dimanche du prologue, disputé le dernier dimanche (scène Transcendance), retrouvé en 2040 sous une forme inattendue. C'est le candidat naturel pour le « signal venu du futur » de la note triptyque (Conseil Oméga : 2040).
 
 ## 4. Grammaire d'écrans — la ventilation
 
@@ -579,4 +579,4 @@ Boris : « Ce bloc n'est a priori pas utilisé pour générer des informations u
 4. Les **24 postures** : les paires enracinée/passante et leurs noms te parlent-ils ? La teinte Transcendance en phrase (plutôt qu'en posture séparée) te va ? Restitution en « 1 principale + 2 voisines » ok ?
 5. Le **prologue non scoré** : ok pour un choix d'ambiance sans mesure (il pose le contrat « ici, choisir ne veut pas dire être noté ») ?
 6. Le **verger-école** comme fil du Désir : assez universel, ou tu préfères que l'élan « pas raisonnable » soit personnalisable (2-3 variantes au choix du joueur) ?
-7. **Imane** (la stagiaire du mardi, nommée pour la bible) : ok pour le prénom et son crochet possible vers 2050 ?
+7. **Imane** (la stagiaire du mardi, nommée pour la bible) : ok pour le prénom et son crochet possible vers 2040 ?
