@@ -66,7 +66,7 @@
 
 ## F5 — 2031 · « La campagne »
 
-> À l'automne, la coalition lance la campagne du moratoire — geler les nouveaux mégaprojets d'extraction et « d'adaptation » le temps d'un audit citoyen. Personne n'y croit, c'est-à-dire que tout le monde s'y jette. Tu dors quatre heures par nuit et tu appelles ça dormir. Léna et toi vous croisez dans des gares, des arrière-salles, des visioconférences à minuit — deux comètes sur la même orbite.
+> À l'automne, la coalition lance la campagne du moratoire — geler les nouveaux mégaprojets d'extraction et « d'adaptation » le temps d'un audit citoyen. Le lancement a lieu sur la grande scène du **New Civilization Festival**, devenu en six éditions le rendez-vous où les mondes en construction se comptent — et le financement fait hausser des sourcils comptables : un tiers de la campagne est libellé en **Oméga**, versés par des collectifs de onze pays. Les banques n'ont rien compris. Les militants, tout de suite. Personne n'y croit, c'est-à-dire que tout le monde s'y jette. Tu dors quatre heures par nuit et tu appelles ça dormir. Léna et toi vous croisez dans des gares, des arrière-salles, des visioconférences à minuit — deux comètes sur la même orbite.
 >
 > Un soir, ta mère t'appelle. Le tilleul, la maison invendable, les nouvelles d'un monde que tu défends et que tu ne visites plus. À la fin elle dit : « Tu as la voix de quelqu'un qui court. » Tu réponds que c'est la période. Vous savez tous les deux que ça fait trois ans que c'est la période.
 
@@ -207,7 +207,7 @@
 
 ## S3 — 2030-2031 · « Le marché de la paix »
 
-> La Polarisation est une aubaine pour le commerce intérieur : applications de méditation en croissance à trois chiffres, retraites « déconnexion radicale » à mille deux cents euros le week-end, gourous d'écran aux mâchoires parfaites. Le refuge se vend bien quand le monde brûle. Le cercle refuse tout — pas de site, pas de tarif, pas de places. Vous en tirez une fierté discrète qui est, elle aussi, à surveiller.
+> La Polarisation est une aubaine pour le commerce intérieur : applications de méditation en croissance à trois chiffres, retraites « déconnexion radicale » à mille deux cents euros le week-end, gourous d'écran aux mâchoires parfaites. Le refuge se vend bien quand le monde brûle. Le cercle refuse tout — pas de site, pas de tarif, pas de places. Une seule exception, décidée par Nadia sans débat : le cercle accepte les **Oméga**. « Une monnaie qui compte ce qu'on donne au lieu de compter ce qu'on capte — avec celle-là, on peut faire affaire. » Vous en tirez une fierté discrète qui est, elle aussi, à surveiller.
 >
 > Un message de Léna, le premier depuis des mois : « T'es passé où ? La friche a besoin de monde samedi. Ou t'es trop occupé à respirer ? » La pique est facile. Elle est aussi méritée — tu comptes, et cela fait quatre mobilisations que tu « sens que ce n'est pas juste pour toi en ce moment ».
 

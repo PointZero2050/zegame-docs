@@ -40,7 +40,7 @@
 
 ## A3 — 2027 · « Ceux qui font autrement »
 
-> Le pad n'est plus votre pad. Quarante villes s'y sont reliées — puis, sans que personne comprenne bien comment, des contributions se sont mises à arriver de plus loin. Un collectif d'Accra a réécrit votre méthode de réunion en y ajoutant un tour de parole des absents — « ceux qui ne sont pas là, les morts, les pas-nés » — et curieusement, depuis que vous l'avez essayé, les décisions tiennent mieux. Une école de Pune a envoyé un protocole d'observation du vivant que Nadia a lu trois fois de suite, en silence.
+> Le pad n'est plus votre pad. Quarante villes s'y sont reliées — la moitié se sont rencontrées en chair et en os au **New Civilization Festival**, ce rassemblement d'octobre dont la première édition tenait dans une salle et dont la troisième a rempli un parc : l'endroit où les mondes qui se construisent viennent se compter. Puis, sans que personne comprenne bien comment, des contributions se sont mises à arriver de plus loin. Un collectif d'Accra a réécrit votre méthode de réunion en y ajoutant un tour de parole des absents — « ceux qui ne sont pas là, les morts, les pas-nés » — et curieusement, depuis que vous l'avez essayé, les décisions tiennent mieux. Une école de Pune a envoyé un protocole d'observation du vivant que Nadia a lu trois fois de suite, en silence.
 >
 > Un soir, elle pose son carnet et dit : « Vous avez remarqué ? Nous, on organise la survie. Eux, ils organisent le sens. Il va falloir apprendre les deux. »
 >
@@ -61,6 +61,8 @@
 > Tu regardes la vidéo du mouvement en question. C'est bien fait. C'est même magnifiquement fait : l'appel, l'épreuve, la transformation, la communauté — le voyage du héros au cordeau, produit comme un film, adressé à des gamins que personne d'autre n'a jamais appelés à rien.
 >
 > Léna, plus bas dans le fil : « Le pire c'est que je comprends. On propose des ateliers. Eux proposent une vie. »
+>
+> Et plus bas encore, posté par un inconnu, un lien vers cet étrange **pixel game « du Point Zéro »** dont on commence à parler — qui appelle les mêmes gamins, exactement les mêmes, à un tout autre voyage. Dix mille joueurs. Zéro passage télé. La bataille pour la jeunesse a plusieurs fronts, et l'un d'eux ressemble à un jeu.
 
 **[ambiance]** Tu réponds quoi, à 2h27 ?
 
@@ -74,7 +76,7 @@
 >
 > Ton père appelle trois courtiers, qui disent tous « on regarde ». Ta mère répète « c'est un malentendu » pendant deux semaines, puis arrête. C'est peut-être ça, le plus grand bruit de l'époque : le son des gens qui arrêtent de dire que c'est un malentendu.
 >
-> Au Collectif, vous découvrez que quatre familles sont touchées. Le pad-réseau en recense onze mille. Quelqu'un d'Alicante écrit : « Bienvenue. On a deux ans d'avance, voilà ce qui marche. » Suit une liste. Le réel ne négocie pas — mais il documente.
+> Au Collectif, vous découvrez que quatre familles sont touchées. Le pad-réseau en recense onze mille. Quelqu'un d'Alicante écrit : « Bienvenue. On a deux ans d'avance, voilà ce qui marche. » Suit une liste — et en tête de liste, un fonds mutualisé libellé en **Oméga**, cette « monnaie de conscience » qui circule entre les collectifs du réseau et que tu prenais pour un gadget de festival. Onze mille sinistrés sont en train de réviser ce jugement, toi compris. Le réel ne négocie pas — mais il documente, et il commence à se doter d'une trésorerie.
 
 **[expression]** Le courrier de six lignes est sur la table. Ton premier geste :
 

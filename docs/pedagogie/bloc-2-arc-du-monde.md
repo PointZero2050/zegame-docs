@@ -89,6 +89,15 @@ Même règle que le bloc 1 — la géopolitique entre par la petite porte :
 
 Jalons discrets, avec ratés et humour (règle du triptyque : jamais une brochure) : le pixel game passe de prototype étrange (2026) à réseau d'un million de joueurs (2032) — après avoir été accusé de manipuler la réalité ; dix écoles Oméga dans trois pays ; la Monnaie Oméga essuie sa première bulle spéculative ; vingt communautés au seuil de quelque chose ; trois merveilles crowdfundées. Le joueur croise ces objets **de biais** — dont ce bouclage **validé par Boris** : une école Oméga ouvre dans l'ancienne salle Simone-Veil.
 
+**Arbitrage Boris (2026-07-17) — appuyer les clins d'œil.** L'écosystème doit être un peu plus présent qu'un simple décor, avec un message précis : **le Point Zéro a l'ambition d'accélérer les autres systèmes, pas de les remplacer.** Traduction dans les scripts (implémentée) :
+- **le New Civilization Festival** — le rendez-vous annuel « où les mondes en construction se comptent » : rencontre physique du pad-réseau (acte I), scène de lancement de la campagne du moratoire (Feu), scène sans captation des « premières voix » (Parole) ;
+- **la Monnaie Oméga** — « la monnaie de conscience » : fonds mutualisé des sinistrés du Signal (acte I), tiers du financement de la campagne (Feu), seule monnaie acceptée par le cercle de Nadia — « elle compte ce qu'on donne au lieu de compter ce qu'on capte » (Silence) ;
+- **le Commun Oméga** — la clause de réciprocité recopiée mot pour mot depuis ses licences (Machine, la Passerelle) ;
+- **les merveilles crowdfundées** — le Bocage retenu parmi les trois de 2033 (Terre) ;
+- **le pixel game** — l'autre front de la bataille pour la jeunesse, face aux récits qui recrutent (acte I, A4) ;
+- **les écoles Oméga** — dont celle de la salle Simone-Veil (Silence, la Clairière).
+À faire vivre dans les voies restantes (Large, Village, Fil) et au bloc 3 — même dosage : un objet à la fois, croisé de biais, jamais deux paragraphes de suite.
+
 ## 9. Règles d'écriture (synthèse)
 
 1. Une Ombre nommée = une graine montrée, dans la même séquence.

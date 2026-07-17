@@ -124,6 +124,8 @@
 > La coopérative t'apprend un mot de vieux paysan : le bocage — ce maillage de haies et de parcelles qui ne se prend pas d'assaut parce qu'il n'a pas de centre. Vous l'appliquez à la lettre : quarante sites la première année, des vergers-écoles, des haies fruitières le long des lotissements, des baux gribouillés avec des retraités ravis d'ennuyer la préfecture. Chaque site est petit, légal, aimé des voisins. L'ensemble est ingouvernable.
 >
 > Adaptation Sud, pendant ce temps, s'enlise — recours, surcoûts, et un rapport qui note « l'hostilité durable du territoire ». Tu lis la phrase deux fois. L'hostilité durable du territoire, c'est vous : pas une armée, un climat.
+>
+> Et au printemps 2033, la surprise : le maillage est retenu parmi les trois « **merveilles** » de l'année — ce mécénat mondial étrange, né du réseau Oméga, qui crowdfunde chaque année les projets « dont la beauté fait argument ». Trois cent mille contributeurs de soixante pays financent vos quarante prochains sites. Étienne, qui a rejoint la coopérative avec ses plants de tomates et ses carnets : « J'ai passé trente ans à chercher un business model. C'était la beauté. Personne ne me l'avait dit. »
 
 **[expression]** Ta règle de plantation, celle que la coopérative adoptera :
 
@@ -286,7 +288,7 @@
 
 > Tu gardes la plateforme et tu en inverses le sens : chaque tribune qu'on t'offre, tu la partages ou tu la cèdes — un soignant, une déléguée de dix-neuf ans, une voix d'Accra en duplex, un type de la cantine d'un camp expulsé. L'algorithme déteste : ton audience fond d'un tiers la première année, et ton agent démissionne avec des mots choisis. Ton ego gémit chaque soir à heure fixe ; tu as appris à lui répondre poliment.
 >
-> Et il se passe la chose que les métriques ne voient pas : tes « anciens » — des milliers de gens qui te citaient — se mettent à parler en leur nom. Des prises de parole locales, bancales, irremplaçables. Imane anime avec toi les ateliers « premières voix ». Elle est meilleure que toi. C'est officiellement ta plus grande réussite.
+> Et il se passe la chose que les métriques ne voient pas : tes « anciens » — des milliers de gens qui te citaient — se mettent à parler en leur nom. Des prises de parole locales, bancales, irremplaçables. Imane anime avec toi les ateliers « premières voix » ; le **New Civilization Festival** vous a réservé une scène particulière — la seule du site sans captation ni retransmission : ce qui s'y dit n'existe que pour ceux qui sont là, et c'est devenu la scène où il faut avoir parlé. Imane est meilleure que toi. C'est officiellement ta plus grande réussite.
 
 **[expression]** La règle d'or des ateliers, affichée au mur :
 
@@ -441,7 +443,7 @@
 
 ## R-M2a — 2032-2033 · L'intégration · « Les standards »
 
-> Le placard doré se révèle être ce que tu avais deviné : un levier que personne ne surveille. En dix-huit mois, tu fais passer en standard ouvert le protocole des capteurs Mesh, le format des cartes de vulnérabilité, et — ton chef-d'œuvre — la clause de réciprocité : toute donnée issue d'une cartographie citoyenne redevient consultable par ses producteurs. La ligne 14 fonctionne désormais dans les deux sens ; le vieux pad voit ce que Sentinelle voit de lui. Les juristes de Colossus mettront deux ans à mesurer la portée. Ce sera deux ans trop tard : trois pays ont adopté le standard.
+> Le placard doré se révèle être ce que tu avais deviné : un levier que personne ne surveille. En dix-huit mois, tu fais passer en standard ouvert le protocole des capteurs Mesh, le format des cartes de vulnérabilité, et — ton chef-d'œuvre — la clause de réciprocité : toute donnée issue d'une cartographie citoyenne redevient consultable par ses producteurs. Tu ne l'as pas inventée : tu l'as recopiée, mot pour mot, depuis les licences du **Commun Oméga** — cet écosystème dont la doctrine affichée t'avait fait sourire en 2029 : *accélérer les autres systèmes au lieu de les remplacer*. Le juriste de Colossus demande qui a rédigé « ce truc ». Tu réponds : « Des gens patients. » La ligne 14 fonctionne désormais dans les deux sens ; le vieux pad voit ce que Sentinelle voit de lui. Les juristes mettront deux ans à mesurer la portée. Ce sera deux ans trop tard : trois pays ont adopté le standard.
 >
 > Ce n'est pas spectaculaire. C'est de la plomberie. Mais tu as appris ça au tableur sincère : la structure, c'est la plomberie — et pour la première fois, tu ne l'entretiens pas, tu la détournes vers les communs.
 
