@@ -13,10 +13,11 @@
 - **Bloc 3** (2050, Conseil Oméga) : le même personnage ayant traversé son Point Zéro ; produit les **caps des puissances** et l'**Archétype Point Zéro** (concept nouveau, page Profil).
 - **Bloc 4** (nouveau) : tout ce que l'Appel collectait (engagement, type de Cercle, consentement à l'inconfort…) sort du bloc 1 et devient un format dédié — fin de Monde 0 ou entrée de Monde 1, Boris tranchera après avoir vu les trois blocs.
 - **Cohérence narrative** : territoire, détails et personnages récurrents à travers les trois blocs.
+- **Cadre temporel (Boris, 2026-07-17)** : l'intrigue se situe pendant **un été de canicule et de sécheresse sans précédent** — de ceux qui sont appelés à se reproduire. Les contradictions de l'époque s'y incarnent concrètement : les personnes fragiles qui souffrent sans climatisation, les climatisations qui aggravent ce qu'elles fuient, la fresque du climat qui se tient dans la seule salle climatisée du quartier.
 
 ## 2. La semaine — trame générale
 
-Un seul événement déclencheur, une semaine de répercussions. Chaque jour sollicite une puissance parce que **la vie la sollicite**, pas parce que le questionnaire l'a décidé.
+Un seul événement déclencheur, une semaine de répercussions, **au cœur d'un été qui bat des records sans plus impressionner personne**. Chaque jour sollicite une puissance parce que **la vie la sollicite**, pas parce que le questionnaire l'a décidé.
 
 | Jour | Puissance | Sphère de vie | Fil narratif |
 |---|---|---|---|
@@ -35,7 +36,7 @@ La semaine boucle sur elle-même : dimanche → dimanche. Sept jours, ça tombe 
 
 À enrichir dans la bible complète du triptyque (livrable 2 du §10 de la note Codex). Le strict nécessaire pour écrire :
 
-**Le territoire** : une ville moyenne française, jamais nommée. La salle des fêtes **Simone-Veil** (moquette orange, vidéoprojecteur théologiquement opposé à la transcendance — canon établi). La friche derrière la gare. La machine à café du bureau, le tableau des congés.
+**Le territoire** : une ville moyenne française, jamais nommée, **en plein été caniculaire** — 34° à l'ombre quand il y a de l'ombre, quatrième semaine sans pluie, fontaines coupées par arrêté sécheresse, le gymnase reconverti en « salle rafraîchie » pour les anciens. La salle des fêtes **Simone-Veil** (moquette orange, l'un des rares climatiseurs du quartier associatif, vidéoprojecteur théologiquement opposé à la transcendance — canon établi). La friche derrière la gare, qui devient un four à partir de 17h. La machine à café du bureau, le tableau des congés, la clim du bureau réglée à 19° par principe.
 
 **Les récurrents** (avec leurs crochets vers les blocs 2 et 3) :
 
@@ -79,9 +80,11 @@ Les annotations `[→ …]` sont le mapping d'évaluation ; elles ne sont jamais
 
 **É0.1 (narratif)**
 
-> Tu avais coché « peut-être » il y a trois semaines, et le « peut-être » a gagné : ce dimanche soir, tu es à la salle Simone-Veil pour une fresque du climat. Moquette orange, thé tiède, douze inconnus, et un vidéoprojecteur qui a refusé de s'allumer — l'animatrice, Nadia, a dit « très bien, on fera avec les mains », et curieusement c'était mieux.
+> Tu avais coché « peut-être » il y a trois semaines, et le « peut-être » a gagné : ce dimanche soir — 31° à 20h, quatrième semaine sans pluie — tu es à la salle Simone-Veil pour une fresque du climat. La moitié des participants est venue pour le sujet, l'autre moitié pour la climatisation. Personne n'ose demander qui est venu pour quoi.
 >
-> Trois heures plus tard, les cartes sont sur la table. Toutes. Celles qu'on connaissait déjà « de loin », comme on connaît de loin un chien qui mord.
+> Moquette orange, thé glacé qui a tiédi, douze inconnus, et un vidéoprojecteur qui a refusé de s'allumer — l'animatrice, Nadia, a dit « très bien, on fera avec les mains », et curieusement c'était mieux.
+>
+> Trois heures plus tard, les cartes sont sur la table. Toutes. Celles qu'on connaissait déjà « de loin », comme on connaît de loin un chien qui mord. La carte « canicules » n'a pas eu besoin d'explication : il a suffi d'ouvrir la porte.
 >
 > Il y a ce silence particulier des fins d'atelier, quand plus personne ne peut dire qu'il ne savait pas. Étienne, un grand type en polaire, range les chaises avec une précision d'ingénieur. Léna, dix-neuf ans, n'a rien dit depuis vingt minutes — c'est sa façon de crier. Nadia note quelque chose dans un carnet.
 >
@@ -89,7 +92,7 @@ Les annotations `[→ …]` sont le mapping d'évaluation ; elles ne sont jamais
 
 **É0.2 (choix d'ambiance — non scoré, mémorisé comme couleur)**
 
-> Sur le chemin du retour, la ville fait semblant de rien : les vitrines sont éclairées pour personne, un panneau publicitaire te propose une croisière.
+> Sur le chemin du retour, la ville fait semblant de rien : les terrasses brumisent le trottoir, les boutiques climatisées refroidissent la rue portes grandes ouvertes, un panneau publicitaire te propose une croisière dans les fjords « tant qu'il est encore temps ». Le panneau ne précise pas pour qui.
 >
 > Toi, tu…
 
@@ -105,17 +108,17 @@ Les annotations `[→ …]` sont le mapping d'évaluation ; elles ne sont jamais
 
 **É1 (narratif)**
 
-> Lundi, 7h04. Le radio-réveil enchaîne un record de température, une publicité pour un SUV hybride et l'horoscope. Personne à la radio n'a l'air de trouver ça étrange.
+> Lundi, 7h04. Il fait déjà 28°. Le radio-réveil enchaîne le troisième record de température du mois, une publicité pour un SUV hybride et l'horoscope. Personne à la radio n'a l'air de trouver ça étrange.
 >
-> Le groupe — rebaptisé trois fois cette nuit, actuellement « La Fresque d'abord » — affiche 47 messages. Léna a posté à 2h13 un article sur l'effondrement des courants atlantiques. Marc a répondu au lever du jour par une photo de lever de soleil et « Belle semaine à tous 🌞 ».
+> Le groupe — rebaptisé trois fois cette nuit, actuellement « La Fresque d'abord » — affiche 47 messages. Léna a posté à 2h13 un article sur l'effondrement des courants atlantiques (il faisait encore 29° chez elle, elle a précisé, « merci le sixième sans volets »). Marc a répondu au lever du jour par une photo de lever de soleil et « Belle semaine à tous 🌞 ».
 >
-> Toi, tu as la gorge serrée depuis hier soir. Et une réunion budget à 9h.
+> Toi, tu as la gorge serrée depuis hier soir. Et une réunion budget à 9h, dans un bureau climatisé à 19° par principe — dehors, il fera 36 à midi.
 
 **É2 (premier mouvement)** — *illustration : la cuisine du bureau*
 
-> 8h40, machine à café. Sonia — elle était à la fresque — craque d'un coup : « Je me sens ridicule de pleurer pour des ours. Mais c'est pas les ours, en fait. C'est tout. »
+> 8h40, machine à café. Sonia — elle était à la fresque — raccroche son téléphone : « Ma mère. 84 ans, sixième étage, pas de clim. La mairie lui a envoyé un dépliant : “pensez à boire régulièrement”. » Elle rit, deux secondes. Puis elle craque d'un coup : « Je me sens ridicule de pleurer. Mais c'est pas que maman, en fait. C'est tout. »
 >
-> Elle pleure pour de vrai, entre le décaféiné et le tableau des congés.
+> Elle pleure pour de vrai, entre le décaféiné et le tableau des congés, dans le souffle de la clim qui fabrique quelque part le prochain été de sa mère.
 >
 > Que fais-tu, là, maintenant ?
 
@@ -170,13 +173,13 @@ Les annotations `[→ …]` sont le mapping d'évaluation ; elles ne sont jamais
 
 **É1 (narratif)**
 
-> Vendredi. La semaine a été dense — le groupe s'appelle désormais « Fresque & Conséquences », ce qui est au moins honnête. Ce soir, réunion chez Étienne pour décider « la suite ». Il a promis des chaises pour tout le monde et un ordre du jour, ce qui chez lui est une déclaration d'amour.
+> Vendredi. La semaine a été dense — le groupe s'appelle désormais « Fresque & Conséquences », ce qui est au moins honnête. La canicule, elle, refuse de conclure : 38 annoncés pour demain, et la préfecture vient d'interdire d'arroser ce qui n'a pas encore jauni. Ce soir, réunion chez Étienne pour décider « la suite ». Il a promis des chaises pour tout le monde, un ordre du jour, et son unique ventilateur — qui balaiera l'assemblée avec équité, ce qui chez lui est une déclaration d'amour.
 >
-> Et toi, depuis mercredi, une idée ne te lâche pas. Pas la plus utile. Pas la plus urgente. Aucun business plan et beaucoup d'insistance : un **verger-école** sur la friche derrière la gare. Tu n'en as parlé à personne. Elle pousse quand même.
+> Et toi, depuis mercredi, une idée ne te lâche pas. Pas la plus utile. Pas la plus urgente. Aucun business plan et beaucoup d'insistance : un **verger-école** sur la friche derrière la gare — cette friche qui devient un four à 17h. Des arbres. De l'ombre gratuite, dans vingt ans, pour les gens qui n'auront jamais la clim. Tu n'en as parlé à personne. Elle pousse quand même.
 
 **É2 (premier mouvement)** — *illustration : le salon d'Étienne, plan de la ville au mur*
 
-> Tour de table des « suites possibles » : une pétition, une demande de rendez-vous en mairie, un composteur collectif. Des choses utiles, prouvées, raisonnables. Ton verger insiste, au fond de toi, comme un enfant qui tire une manche.
+> Tour de table des « suites possibles » : une pétition, une demande de rendez-vous en mairie, une carte collaborative des îlots de fraîcheur. Des choses utiles, prouvées, raisonnables. Ton verger insiste, au fond de toi, comme un enfant qui tire une manche.
 >
 > Léna se tourne vers toi : « Et toi, t'as rien ? »
 
@@ -191,7 +194,7 @@ Les annotations `[→ …]` sont le mapping d'évaluation ; elles ne sont jamais
 >
 > Maintenant, la question que personne ne pose à ta place : quelle place tu lui donnes, à cet élan ?
 
-1. « Une place d'essai : trois samedis sur la friche, on regarde ce qui pousse — dans la terre et dans le groupe. » `[→ intensité 1]`
+1. « Une place d'essai : on prépare le sol cet été, on plante aux premières pluies, trois samedis pour voir ce qui prend — dans la terre et dans le groupe. » `[→ intensité 1]`
 2. « Une vraie place : tu proposes que le verger devienne l'un des deux projets structurants, et tu t'y colles. » `[→ intensité 2]`
 3. « Tu l'annonces à voix haute : tu vas y mettre ton temps, une part de tes économies, et tes prochaines années s'il le faut. Les regards autour de la table font un drôle de bruit. » `[→ intensité 3]`
 
@@ -227,11 +230,11 @@ Les annotations `[→ …]` sont le mapping d'évaluation ; elles ne sont jamais
 
 ## 6. Synopsis des cinq autres journées (à écrire après validation du ton)
 
-- **Mardi — Communication · « Le retour d'atelier »** : ta responsable te demande « un retour rapide » sur la fresque en réunion d'équipe — dix minutes, entre deux points budget, avec Marc qui a préparé des slides sur la RSE. Dans la salle, la stagiaire qui a passé deux ans dans une ONG climat n'a jamais eu la parole. Premier mouvement : porter la parole (rendre l'enjeu vivant en dix minutes) **vs** recevoir/ouvrir (utiliser tes dix minutes pour faire parler celle qui sait). Retournements : si tu as parlé — on te propose de « faire le porte-parole » d'un sujet que tu n'as pas choisi ; si tu as ouvert — la stagiaire se noie et tout le monde te regarde, toi.
-- **Mercredi — Imagination · « On fait quoi maintenant ? »** : première vraie réunion du groupe. Deux camps : « inventer une forme qui n'existe pas » vs « répliquer ce qui a marché à Louviers ». Les deux ont préparé des slides ; le vidéoprojecteur reste neutre. Retournements croisés : le visionnaire doit formaliser/répliquer la vision d'un autre ; le pragmatique doit défendre une forme sans précédent devant la mairie.
-- **Jeudi — Volonté · « La décision impossible »** : la mairie propose un créneau… demain 9h, pendant que Léna propose une action coup d'éclat samedi. Le groupe se divise, la pendule de la salle est arrêtée depuis deux ans, le temps non. Premier mouvement : prendre la direction **vs** servir la décision d'un autre. Retournements : le meneur doit exécuter loyalement le plan adverse voté à une voix près ; le loyal se retrouve seul dépositaire du mandat quand tout le monde se défile.
-- **Samedi — Intuition · « La bataille des graphiques »** : Étienne apporte trois études, ta belle-sœur en envoie deux autres, chaque graphique contredit le précédent avec la même assurance. Et toi, depuis la fresque, tu *sens* quelque chose sur la friche derrière la gare — sans preuve. Premier mouvement : suivre ce qui te paraît juste **vs** suspendre la conclusion et organiser l'enquête. Retournements : au convaincu on demande d'accueillir la donnée qui invalide ; au prudent on demande de trancher ce soir parce que le dossier mairie part lundi.
-- **Dimanche — Transcendance · « Le pad »** : une semaine après la fresque. Le pad du groupe est devenu quelque chose : méthode de réunion, arguments, carte de la friche, le début du verger. Un collectif de la ville voisine demande « à tout récupérer ». Pas de polarité ici — un choix de gestes (2 familiers + 1 difficile) contextualisés sur le pad : le garder pour aboutir d'abord, le documenter, le transmettre, l'ouvrir en modifiable, créditer chaque contributeur, le laisser muter sans votre nom, chercher ce que ça rend possible à l'échelle de la ville. `[→ profil Transcendance : contribution / transmission / redistribution / non-appropriation]` — et dernier écran : Nadia range son carnet, en regardant le pad : « Curieux. J'ai l'impression que ce truc nous survivra. » *(amorce du signal 2050)*
+- **Mardi — Communication · « Le retour d'atelier »** : ta responsable te demande « un retour rapide » sur la fresque en réunion d'équipe — dix minutes, entre deux points budget, dans la salle climatisée à 19° où quelqu'un a apporté un gilet (dehors : 36). Marc a préparé des slides RSE. Dans la salle, la stagiaire qui a passé deux ans dans une ONG climat n'a jamais eu la parole. Premier mouvement : porter la parole (rendre l'enjeu vivant en dix minutes) **vs** recevoir/ouvrir (utiliser tes dix minutes pour faire parler celle qui sait). Retournements : si tu as parlé — on te propose de « faire le porte-parole » d'un sujet que tu n'as pas choisi ; si tu as ouvert — la stagiaire se noie et tout le monde te regarde, toi.
+- **Mercredi — Imagination · « On fait quoi maintenant ? »** : première vraie réunion du groupe, à 21h parce qu'avant « on cuit ». Deux camps : « inventer une forme qui n'existe pas » vs « répliquer ce qui a marché à Louviers » (leur plan fraîcheur cité en exemple partout). Les deux ont préparé des slides ; le vidéoprojecteur reste neutre. Retournements croisés : le visionnaire doit formaliser/répliquer la vision d'un autre ; le pragmatique doit défendre une forme sans précédent devant la mairie.
+- **Jeudi — Volonté · « La décision impossible »** : la mairie propose un créneau… demain 9h, « plan canicule et espaces verts » — pendant que Léna propose une action coup d'éclat samedi devant le centre commercial climatisé, « là où tout le monde se réfugie pour oublier pourquoi il fait chaud ». Le groupe se divise, la pendule de la salle est arrêtée depuis deux ans, le temps non. Premier mouvement : prendre la direction **vs** servir la décision d'un autre. Retournements : le meneur doit exécuter loyalement le plan adverse voté à une voix près ; le loyal se retrouve seul dépositaire du mandat quand tout le monde se défile.
+- **Samedi — Intuition · « La bataille des graphiques »** : 38° au thermomètre de la pharmacie, qui clignote comme si de rien n'était. Étienne apporte trois études sur les étés à venir, ta belle-sœur envoie un article « les vagues de chaleur ont toujours existé », chaque graphique contredit le précédent avec la même assurance. Et toi, depuis la fresque, tu *sens* quelque chose sur la friche derrière la gare — sans preuve. Premier mouvement : suivre ce qui te paraît juste **vs** suspendre la conclusion et organiser l'enquête. Retournements : au convaincu on demande d'accueillir la donnée qui invalide ; au prudent on demande de trancher ce soir parce que le dossier mairie part lundi.
+- **Dimanche — Transcendance · « Le pad »** : une semaine après la fresque. L'orage promis n'est pas venu, mais le pad du groupe, lui, est devenu quelque chose : méthode de réunion, arguments, la carte des îlots de fraîcheur, le début du verger. Un collectif de la ville voisine — même canicule, zéro fresque — demande « à tout récupérer ». Pas de polarité ici — un choix de gestes (2 familiers + 1 difficile) contextualisés sur le pad : le garder pour aboutir d'abord, le documenter, le transmettre, l'ouvrir en modifiable, créditer chaque contributeur, le laisser muter sans votre nom, chercher ce que ça rend possible à l'échelle de la ville. `[→ profil Transcendance : contribution / transmission / redistribution / non-appropriation]` — et dernier écran : Nadia range son carnet, en regardant le pad : « Curieux. J'ai l'impression que ce truc nous survivra. » *(amorce du signal 2050)*
 
 ## 7. Restitution du bloc 1 — et la Posture Point Zéro
 
@@ -274,7 +277,7 @@ Boris : « Ce bloc n'est a priori pas utilisé pour générer des informations u
 - **L'Appel (A1-A5)** est déjà stocké séparément (`answers.appel_*` / `result.activation_call`) : la bascule vers le bloc 4 est un déplacement de flow, pas une migration de données.
 - **La restitution** perd le panneau Appel, gagne la Posture Point Zéro (dérivation dans le modèle, catalogue dans le YAML).
 - **Le Conseil du Seuil v0.2 reste en ligne** tel quel jusqu'à validation du script complet — pas de démontage prématuré.
-- Illustrations : ~9 à 14 (une par É1 + prologue + les É2 forts), même famille que la série en production côté Boris. Les prompts par écran seront fournis avec le script complet.
+- Illustrations : ~9 à 14 (une par É1 + prologue + les É2 forts), même famille que la série en production côté Boris. **Ambiance commune : été caniculaire** — lumière blanche et dure, ombres portées franches, stores baissés en journée, brumisateurs, pelouses jaunies, la vie qui se décale vers le soir. Les prompts par écran seront fournis avec le script complet.
 
 ## 10. Questions ouvertes pour Boris
 
