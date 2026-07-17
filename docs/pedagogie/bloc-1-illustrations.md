@@ -2,13 +2,16 @@
 
 > Ajout Claude - 2026-07-17, pour l'itération de production d'images (Boris + Codex). Source : [bloc-1-une-drole-depoque.md](bloc-1-une-drole-depoque.md) (script complet) et la [note design](conseil-du-seuil-design.md) §5-6 (grammaire néoarchaïque, prompt matrice). Les emplacements existent déjà dans le flow en ligne (`/une-drole-depoque`) : je branche les fichiers dès qu'ils sont déposés.
 
+> Mise à jour Codex - 2026-07-17. La matrice ci-dessous intègre la [ligne artistique validée des personnages](../vision/direction-artistique-point-zero.md#ligne-principale-des-personnages-narratifs) : figures adultes archétypales en papier découpé, plus colorées et contrastées que le décor. L'essai chibi n'est pas retenu. Les versions mobiles doivent être recomposées avec moins de personnages et d'éléments secondaires.
+
 ## Contraintes de série (rappel + spécifiques au bloc 1)
 
-- **Prompt matrice Codex** (base commune) : illustration éditoriale néoarchaïque, archéologie civique du futur, matières minérales et papier découpé, formes primitives abstraites + cartographie contemporaine précise, obsidienne / craie / turquoise oxydé / jaune solaire / accent corail, composition lisible sur mobile, aucun texte, aucun logo, aucun costume tribal identifiable, aucune esthétique fantasy, aucune interface.
+- **Prompt matrice Codex** (base commune) : illustration éditoriale néoarchaïque, archéologie civique du futur, personnages adultes archétypaux en papier découpé, silhouettes anguleuses et asymétriques, têtes agrandies sans proportions chibi, corps compacts, expressions variées, vêtements contemporains-futurs distinctifs, contours fibreux et ombres portées légères. Les personnages sont plus colorés, plus nets et plus contrastés que le décor désaturé. Matières minérales, papier déchiré, encre, charbon, pigments, formes primitives abstraites et cartographie contemporaine précise ; obsidienne / craie / turquoise oxydé / jaune solaire / violet / corail ; aucun texte, logo, costume tribal identifiable, fantasy médiévale ou interface.
 - **Ambiance commune du bloc 1 : été caniculaire** — lumière blanche et dure, ombres portées franches, stores baissés, brumisateurs, pelouses jaunies, la vie décalée vers le soir. Le décalage Point Zéro passe par un détail prosaïque par image (charte de voix §8) : ventilateur, gilet sur une chaise, thermos, pendule arrêtée.
-- **Formats** : 16:9 (desktop) + 4:3 (mobile), zone sûre centrale (le texte de l'écran passe à côté/en dessous, jamais incrusté).
-- **Continuité** : même territoire (ville moyenne, salle Simone-Veil à moquette orange, friche derrière la gare), personnages récurrents non héroïsés et divers (Nadia ~45 ans, Étienne ~60 ans en polaire, Léna 19 ans, Sonia, Imane) — silhouettes reconnaissables d'image en image sans être des portraits.
+- **Formats** : 16:9 pour le desktop, puis composition mobile dédiée en 4:3. La version mobile montre moins de personnages, simplifie le décor et renforce l'émotion principale ; elle ne doit pas être un recadrage automatique. Zone sûre centrale dans les deux cas, texte toujours à côté ou en dessous, jamais incrusté.
+- **Continuité** : même territoire (ville moyenne, salle Simone-Veil à moquette orange, friche derrière la gare), personnages récurrents non héroïsés et divers (Nadia ~45 ans, Étienne ~60 ans en polaire, Léna 19 ans, Sonia, Imane). Leurs silhouettes, coiffures, palettes, vêtements et accessoires doivent permettre de les reconnaître d'image en image sans devenir des portraits réalistes.
 - **Ratio des plans** : 70-75 % humain explicite, 25-30 % archétypal implicite (un symbole discret par image maximum : lemniscate en ombre portée, cercle réparé, graine du mauvais côté du plan).
+- **Hiérarchie visuelle** : personnages au contraste et à la saturation les plus élevés ; action ou objet central en second ; décor plus calme, légèrement moins net derrière les visages ; symbole archétypal perceptible seulement dans un second regard.
 
 ## Les 10 images
 
@@ -31,10 +34,13 @@ Chaque prompt = **matrice + ligne de scène**. Exemple complet pour l'image 1 :
 
 ```text
 Illustration éditoriale néoarchaïque pour Le Conseil du Seuil, archéologie civique du futur,
-assemblée humaine diverse dans un territoire en transition, matières minérales et papier découpé,
-formes primitives abstraites mêlées à une cartographie contemporaine précise, obsidienne, craie,
-turquoise oxydé, jaune solaire et accent corail, lumière claire, composition lisible sur mobile,
-profondeur modérée, aucun texte, aucun logo, aucun costume tribal identifiable, aucune esthétique
+personnages adultes archétypaux en papier découpé, silhouettes anguleuses et asymétriques,
+têtes agrandies sans proportions chibi, corps compacts, expressions émotionnelles variées,
+vêtements contemporains-futurs distinctifs, contours fibreux et ombres portées légères,
+personnages plus colorés, nets et contrastés que le décor désaturé, matières minérales,
+papier déchiré, encre, charbon et cartographie contemporaine précise, plan symbolique implicite
+fondu dans les strates, obsidienne, craie, turquoise oxydé, jaune solaire, violet et corail,
+lumière claire, aucun texte, aucun logo, aucun costume tribal identifiable, aucune esthétique
 fantasy médiévale, aucune interface.
 SCÈNE : soir de canicule dans une salle des fêtes municipale à moquette orange, douze personnes
 diverses autour de grandes cartes illustrées étalées sur des tables, une animatrice d'environ 45 ans
