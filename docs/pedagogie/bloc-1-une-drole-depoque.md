@@ -1,6 +1,8 @@
 # Bloc 1 — « Une drôle d'époque » (script fondateur et grammaire d'écrans)
 
-> Ajout Claude - 2026-07-16, sur cadrage direct de Boris. Refonte complète du storytelling du bloc 1 du [triptyque narratif du Monde 0](monde-0-triptyque-narratif.md). Le Conseil du Seuil v0.2 actuellement en ligne reste actif jusqu'au basculement ; sa mécanique d'évaluation (polarité / intensité / rapport au mouvement inverse) est conservée, son habillage narratif est intégralement remplacé. Le prologue et deux journées sont écrits en entier pour validation du ton ; les cinq autres journées suivront sur le même gabarit après retour de Boris.
+> Ajout Claude - 2026-07-16, sur cadrage direct de Boris. Refonte complète du storytelling du bloc 1 du [triptyque narratif du Monde 0](monde-0-triptyque-narratif.md). Le Conseil du Seuil v0.2 actuellement en ligne reste actif jusqu'au basculement ; sa mécanique d'évaluation (polarité / intensité / rapport au mouvement inverse) est conservée, son habillage narratif est intégralement remplacé.
+>
+> **Mise à jour 2026-07-17** : ton validé par Boris sur le prologue + Lundi + Vendredi ; cadre caniculaire intégré ; **script complet des sept journées** (§5-§6) ; catalogue des Postures Point Zéro étendu de 12 à **24** à la demande de Boris (§7).
 
 ## 1. Cadrage acté (Boris, 2026-07-16)
 
@@ -47,6 +49,7 @@ La semaine boucle sur elle-même : dimanche → dimanche. Sept jours, ça tombe 
 | **Léna** | 19 ans, radicale, lucidité brûlante. Poste à 2h du matin. | Bloc 2 : une des trajectoires extrêmes la recroise. Bloc 3 : à déterminer — la question de ce qu'elle est devenue est un des fils émotionnels du triptyque. |
 | **Sonia** | Collègue. Craque le lundi entre le décaféiné et le tableau des congés. | Récurrente légère. |
 | **Marc** | Collègue. Positive tout. L'Empire intérieur en pull molletonné. | Récurrent léger — cible d'humour systémique, jamais humilié. |
+| **Imane** | Stagiaire. Deux ans de terrain dans une ONG climat, jamais eu la parole en réunion. Sait ce que sont les nuits à 30° dans les logements qu'elle visitait. | Bloc 3 : candidate naturelle pour reparaître en 2050 — à arbitrer avec Léna. |
 | **Le groupe WhatsApp** | Rebaptisé trois fois la première nuit. Chœur grec numérique de la semaine. | Ses archives resurgissent en 2050. |
 
 **L'objet-transmission** : le **pad de notes du groupe** (et/ou le carnet de Nadia). Créé le dimanche du prologue, disputé le dernier dimanche (scène Transcendance), retrouvé en 2050 sous une forme inattendue. C'est le candidat naturel pour le « signal venu de 2050 » de la note triptyque.
@@ -228,13 +231,292 @@ Les annotations `[→ …]` sont le mapping d'évaluation ; elles ne sont jamais
 
 ---
 
-## 6. Synopsis des cinq autres journées (à écrire après validation du ton)
+## 6. Script — les cinq autres journées (complet)
 
-- **Mardi — Communication · « Le retour d'atelier »** : ta responsable te demande « un retour rapide » sur la fresque en réunion d'équipe — dix minutes, entre deux points budget, dans la salle climatisée à 19° où quelqu'un a apporté un gilet (dehors : 36). Marc a préparé des slides RSE. Dans la salle, la stagiaire qui a passé deux ans dans une ONG climat n'a jamais eu la parole. Premier mouvement : porter la parole (rendre l'enjeu vivant en dix minutes) **vs** recevoir/ouvrir (utiliser tes dix minutes pour faire parler celle qui sait). Retournements : si tu as parlé — on te propose de « faire le porte-parole » d'un sujet que tu n'as pas choisi ; si tu as ouvert — la stagiaire se noie et tout le monde te regarde, toi.
-- **Mercredi — Imagination · « On fait quoi maintenant ? »** : première vraie réunion du groupe, à 21h parce qu'avant « on cuit ». Deux camps : « inventer une forme qui n'existe pas » vs « répliquer ce qui a marché à Louviers » (leur plan fraîcheur cité en exemple partout). Les deux ont préparé des slides ; le vidéoprojecteur reste neutre. Retournements croisés : le visionnaire doit formaliser/répliquer la vision d'un autre ; le pragmatique doit défendre une forme sans précédent devant la mairie.
-- **Jeudi — Volonté · « La décision impossible »** : la mairie propose un créneau… demain 9h, « plan canicule et espaces verts » — pendant que Léna propose une action coup d'éclat samedi devant le centre commercial climatisé, « là où tout le monde se réfugie pour oublier pourquoi il fait chaud ». Le groupe se divise, la pendule de la salle est arrêtée depuis deux ans, le temps non. Premier mouvement : prendre la direction **vs** servir la décision d'un autre. Retournements : le meneur doit exécuter loyalement le plan adverse voté à une voix près ; le loyal se retrouve seul dépositaire du mandat quand tout le monde se défile.
-- **Samedi — Intuition · « La bataille des graphiques »** : 38° au thermomètre de la pharmacie, qui clignote comme si de rien n'était. Étienne apporte trois études sur les étés à venir, ta belle-sœur envoie un article « les vagues de chaleur ont toujours existé », chaque graphique contredit le précédent avec la même assurance. Et toi, depuis la fresque, tu *sens* quelque chose sur la friche derrière la gare — sans preuve. Premier mouvement : suivre ce qui te paraît juste **vs** suspendre la conclusion et organiser l'enquête. Retournements : au convaincu on demande d'accueillir la donnée qui invalide ; au prudent on demande de trancher ce soir parce que le dossier mairie part lundi.
-- **Dimanche — Transcendance · « Le pad »** : une semaine après la fresque. L'orage promis n'est pas venu, mais le pad du groupe, lui, est devenu quelque chose : méthode de réunion, arguments, la carte des îlots de fraîcheur, le début du verger. Un collectif de la ville voisine — même canicule, zéro fresque — demande « à tout récupérer ». Pas de polarité ici — un choix de gestes (2 familiers + 1 difficile) contextualisés sur le pad : le garder pour aboutir d'abord, le documenter, le transmettre, l'ouvrir en modifiable, créditer chaque contributeur, le laisser muter sans votre nom, chercher ce que ça rend possible à l'échelle de la ville. `[→ profil Transcendance : contribution / transmission / redistribution / non-appropriation]` — et dernier écran : Nadia range son carnet, en regardant le pad : « Curieux. J'ai l'impression que ce truc nous survivra. » *(amorce du signal 2050)*
+### MARDI — Communication · « Le retour d'atelier »
+
+**É1 (narratif)**
+
+> Mardi, 13h50. La salle de réunion est climatisée à 19° — quelqu'un a apporté un gilet, dehors il fait 36, personne ne relève plus le paradoxe, c'est peut-être ça le plus inquiétant.
+>
+> Ta responsable t'a écrit ce matin : « On m'a dit que tu avais fait un atelier climat ce week-end ? Tu nous fais un retour rapide ? Dix minutes, entre le point budget et le point budget. » Marc a spontanément préparé des slides RSE « en soutien ». Ils comportent une planète tenue entre deux mains.
+>
+> Au fond de la salle, Imane, la stagiaire. Deux ans de terrain dans une ONG climat avant son master. À l'ordre du jour, elle figure dans « Divers ».
+
+**É2 (premier mouvement)** — *illustration : la salle de réunion, le gilet sur la chaise*
+
+> 14h20. « Bon, le retour atelier ? On a douze minutes, finalement. »
+>
+> Douze minutes. Une salle captive. Et toi qui sais deux choses : ce que la fresque t'a fait, et ce qu'Imane sait mieux que toi.
+
+- **A** — « Tu prends les douze minutes et tu les habites. Pas de chiffres d'abord : la carte « canicules » qui n'a pas eu besoin d'explication, la mère de Sonia, le dépliant municipal. Tu veux qu'il se passe quelque chose, pas que l'information circule. » `[→ polarité lumière]`
+- **B** — « Tu ouvres ta fenêtre à celle qui sait : « Avant mon retour, il y a mieux que moi ici — Imane a passé deux ans sur le terrain. Je préfère qu'on l'écoute elle. » Ta parole sert à faire de la place. » `[→ polarité ombre]`
+
+*Geste-source du jour : « Les voix irréductibles » — reformuler sans traduire trop vite dans son propre cadre ; certaines paroles doivent rester dans leurs propres termes.*
+
+**É3 (la suite immédiate — variante lumière)**
+
+> Il s'est passé quelque chose. Un silence d'une autre qualité que le silence poli. Deux collègues sont venus te voir après — « on en reparle ? » — et ta responsable a dit « très inspirant », formule qui peut tout vouloir dire mais qu'elle n'avait jamais utilisée pour un point budget.
+>
+> La question, maintenant : quelle place tu donnes à cette parole qui porte ?
+
+1. « Une intervention réussie, point. Tu réponds aux questions à la machine à café, sans t'installer dans le rôle. » `[→ intensité 1]`
+2. « Tu proposes un rendez-vous mensuel : douze minutes de réel entre deux points budget. Ta parole devient un lieu. » `[→ intensité 2]`
+3. « Tu vises le cœur du réacteur : un créneau au CODIR, quitte à devenir « la personne climat » — avec tout ce que ça aimante de projections, d'attentes et de procès. » `[→ intensité 3]`
+
+**É3 (variante ombre)**
+
+> Imane a parlé. Petit d'abord, puis le terrain est entré dans la salle : les nuits à 30° dans les logements qu'elle visitait, les ventilateurs partagés entre trois familles. La responsable a noté quelque chose. Marc a rangé ses slides — événement géologique.
+>
+> La question : jusqu'où tu tiens cette place d'ouvreur de parole ?
+
+1. « Ponctuel : aujourd'hui c'était juste. Demain, tu verras qui a besoin d'espace — ou pas. » `[→ intensité 1]`
+2. « Tu deviens celui qui fait circuler : préparer les autres, souffler les questions, tenir la porte. Ne plus être la voix — être l'acoustique. » `[→ intensité 2]`
+3. « Tu retires durablement ta parole du centre sur ce sujet : ta plus grande utilité est le silence qui fait de la place. Même les jours où tu brûles de dire. » `[→ intensité 3]`
+
+**É4 (le retournement — variante lumière : la vie te demande de porter la parole d'autrui)**
+
+> Jeudi, 17h. Ta responsable, enthousiaste : « Le séminaire régional veut ton intervention ! Avec les slides de Marc, et la comm relira le texte — on garde ton énergie, on ajuste juste le fond. »
+>
+> Ta voix, leur partition.
+
+1. « Prêter ta voix à ce que tu ne penses pas, ça a un nom, et ce n'est pas « communiquer ». Tu refuses — ta parole ne se loue pas. » `[→ bloque]`
+2. « Tu acceptes si tu relis tout et gardes trois phrases à toi, non négociables, par écrit. On verra si l'énergie survit à la relecture. » `[→ cadre]`
+3. « Tu sais porter fidèlement une parole qui n'est pas la tienne — et tu sais exactement où, ensuite, tu redéposeras la tienne. » `[→ libre]`
+
+**É4 (variante ombre : la vie te demande de porter, toi)**
+
+> Jeudi, 17h30. Imane t'attrape à la sortie, blême : « Le séminaire régional veut « mon retour terrain ». En amphi. Deux cents personnes. Je ne peux pas. Vas-y, toi — tu diras mieux que moi. »
+>
+> Toi qui as passé la semaine à lui faire de la place, la voilà qui te tend le centre.
+
+1. « Prendre sa parole en grand format, c'est défaire tout ce que mardi a construit. Tu ne peux pas — quelqu'un d'autre ira, ou personne. » `[→ bloque]`
+2. « Tu acceptes de co-écrire et d'ouvrir par ses mots à elle, cités, nommés — et elle valide chaque ligne avant lundi. » `[→ cadre]`
+3. « Tu montes en scène sans te renier : tu portes pleinement, en sachant que ce n'est qu'un prêt. Mardi prochain, le centre sera rendu. » `[→ libre]`
+
+---
+
+### MERCREDI — Imagination · « On fait quoi maintenant ? »
+
+**É1 (narratif)**
+
+> Mercredi, 21h — la réunion a été calée à cette heure parce qu'avant, dixit le pad, « on cuit ». La mairie prête la salle Simone-Veil jusqu'à 23h ; le gardien passe à 22h55, et le gardien est incorruptible.
+>
+> Deux pages se sont affrontées toute la journée sur le pad. Page « Vision » : réinventer le quartier — rues-canyons d'arbres, façades vivantes, une école qui fait classe dehors. Page « Louviers » : répliquer le plan fraîcheur de Louviers, cité en exemple partout — ombrières, fontaines, subventions, mode d'emploi fourni.
+>
+> Les deux camps ont préparé des slides. Le vidéoprojecteur, saisi de l'affaire, fonctionne ce soir. Personne ne sait pourquoi, personne n'ose le dire tout haut.
+
+**É2 (premier mouvement)** — *illustration : la salle Simone-Veil, deux écrans de slides face à face*
+
+> 21h40. Nadia coupe court : « On n'aura pas deux étés d'avance. On part sur quoi ? »
+
+- **A** — « Tu défends la page Vision : si on ne dessine que ce qui existe déjà, on aura les étés d'hier avec les températures de demain. Quelqu'un doit oser une forme sans précédent — même imparfaite, même moquée. » `[→ polarité lumière]`
+- **B** — « Tu défends la page Louviers : des ombrières posées en six mois valent mieux qu'une utopie en débat pendant trois étés. On copie, on adapte, on livre — l'invention attendra d'avoir de l'ombre. » `[→ polarité ombre]`
+
+*Geste-source du jour : « Le diagnostic croisé » — croiser trois regards qui ne parlent pas la même langue : les données, l'expérience vécue, les signaux du territoire.*
+
+**É3 (la suite immédiate — variante lumière)**
+
+> Ta vision a embarqué du monde. Léna a dessiné pendant que tu parlais — le croquis circule encore. Quelqu'un a murmuré « la friche… ». Même Étienne a noté « pourquoi pas » dans sa marge, avec un seul point d'interrogation, ce qui constitue chez lui un enthousiasme débridé.
+>
+> Quelle place tu donnes à cette vision ?
+
+1. « Une esquisse au pad : tu poses l'image et tu la laisses faire son chemin — les visions qui tiennent n'ont pas besoin d'escorte. » `[→ intensité 1]`
+2. « Tu la structures en projet : phases, images, plan du quartier redessiné. De quoi transformer la perception de la ville — et affronter un budget. » `[→ intensité 2]`
+3. « Tu veux l'univers entier : un nom, un récit, une fête d'inauguration fictive datée de 2031 — un futur si vivant qu'il devient difficile de ne pas y aller. En le cognant au réel régulièrement, sinon c'est de la fuite en beau. » `[→ intensité 3]`
+
+**É3 (variante ombre)**
+
+> Le groupe a choisi Louviers, et tu as passé la soirée à rendre ça réel : qui appelle qui, quelles rues d'abord, quel dossier de subvention. C'est moins grisant qu'une cité-forêt. Ce sera aussi plus frais dès l'été prochain, et la mère de Sonia n'a pas trois étés devant elle.
+>
+> Jusqu'où tu portes ce réalisme ?
+
+1. « Le crash-test, c'est toi : chaque idée passe par budget, arrêté sécheresse, calendrier. Ce qui survit méritait de vivre. » `[→ intensité 1]`
+2. « Tu prends la standardisation : transformer le plan de Louviers en méthode réplicable — ici, puis ailleurs. L'innovation, c'est aussi la copie qui marche. » `[→ intensité 2]`
+3. « Tu suspends tes propres images : le quartier n'a pas besoin de ta vision, il a besoin que quelqu'un rende possible celle qui émergera. Même si elle ne te ressemble pas. Surtout si elle ne te ressemble pas. » `[→ intensité 3]`
+
+**É4 (le retournement — variante lumière : la vie te demande d'ancrer)**
+
+> Samedi, message de Nadia : « La mairie adore votre vision. Ils veulent un dossier de subvention avant jeudi. Formulaire CERFA, douze pages, cases à cocher, budget prévisionnel. » 
+>
+> La brume doit tenir dans des cases.
+
+1. « Mettre le quartier-forêt dans un CERFA, c'est l'y enterrer, section 4.2. Tu ne formalises pas — quelqu'un d'autre s'y collera, ou l'idée restera sauvage. » `[→ bloque]`
+2. « Tu t'y mets à deux : quelqu'un tient les cases, tu tiens l'image, et à la page douze on vérifie qu'elle respire encore. » `[→ cadre]`
+3. « Tu remplis le CERFA toi-même. Tu sais faire atterrir une brume sans la tuer — c'est même à ça qu'on reconnaît qu'elle était solide. » `[→ libre]`
+
+**É4 (variante ombre : la vie te demande d'ouvrir sans précédent)**
+
+> Dimanche, coup de théâtre : Louviers appelle. Leur plan fraîcheur sature — « on a copié tout ce qui existait, il nous faut maintenant une ville qui invente la suite, pour candidater ensemble au programme européen ». Ils veulent votre vision.
+>
+> Celle qui n'existe pas encore.
+
+1. « Inventer sur commande en trois semaines, sans précédent ni preuve ? C'est promettre du vent avec un logo. Tu proposes de répliquer autre chose d'éprouvé — il en reste. » `[→ bloque]`
+2. « Tu acceptes d'ouvrir, avec des rambardes : un atelier structuré, des hypothèses testables, et le droit de conclure « pas prêt ». » `[→ cadre]`
+3. « Tu ouvres le champ toi-même. Pour une fois, c'est le réel qui réclame l'inédit — et tu sauras revenir aux fondations quand il faudra couler du béton. » `[→ libre]`
+
+---
+
+### JEUDI — Volonté · « La décision impossible »
+
+**É1 (narratif)**
+
+> Jeudi, 22h, salle Simone-Veil. La nouvelle est tombée à 17h : la mairie propose un rendez-vous demain 9h — « plan canicule et espaces verts » — et l'adjointe part ensuite trois semaines. En face, Léna a déjà tout prévu pour samedi : une sieste collective devant le centre commercial climatisé, « là où tout le monde se réfugie pour oublier pourquoi il fait chaud ». La presse locale est prévenue. Les deux, disent leurs partisans, sont « le seul choix cohérent ».
+>
+> Étienne résume : « On ne peut pas serrer la main de l'adjointe le vendredi et bloquer sa galerie marchande le samedi. » Un silence. Personne n'est tout à fait sûr qu'il ait raison.
+>
+> La pendule de la salle est arrêtée sur 10h07 depuis deux ans. Le temps, lui, ne l'est pas : le gardien passe dans trente-cinq minutes.
+
+**É2 (premier mouvement)** — *illustration : la salle, deux plans posés sur la table, la pendule arrêtée*
+
+> 22h40. Le tour de table tourne en rond, troisième passage. Quinze minutes avant le gardien.
+
+- **A** — « Tu te lèves : « On fait les deux, et voilà comment. » Tu découpes : qui va à la mairie, qui encadre samedi, qui parle à la presse, ce qu'on dit si on nous accuse de jouer double. Quelqu'un devait trancher le nœud — tu assumes que ce soit toi. » `[→ polarité lumière]`
+- **B** — « Tu regardes qui porte déjà : Nadia a le dossier, Léna a la colère juste. Tu choisis, et tu mets ta force derrière : « Décide. Je m'aligne, et je fais. » Une volonté au service, c'est encore une volonté. » `[→ polarité ombre]`
+
+*Geste-source du jour : « Le cercle des conséquences » — avant de trancher, regarder qui porte la décision, qui en bénéficie, qui devra en répondre plus tard.*
+
+**É3 (la suite immédiate — variante lumière)**
+
+> Ton découpage a fait retomber la pression d'un coup — chacun est reparti avec une tâche et l'impression étrange d'avoir été vu. Le gardien a fermé sur un groupe qui souriait, ce qui ne lui était pas arrivé depuis le club de scrabble.
+>
+> Jusqu'où tu prends la direction ?
+
+1. « Tu as lancé la machine, tu rends la main : une initiative n'a pas besoin de propriétaire, juste d'un premier geste. » `[→ intensité 1]`
+2. « Tu prends la coordination pour de bon : ordre du jour, arbitrages, relances. Le squelette du groupe, c'est toi — tant que ça sert. » `[→ intensité 2]`
+3. « Tu acceptes d'avance le rôle qui fâche : trancher contre une partie du groupe quand il le faudra, et en payer le prix relationnel sans le faire payer aux autres. » `[→ intensité 3]`
+
+**É3 (variante ombre)**
+
+> Tu t'es placé derrière Nadia — et ta loyauté a fait basculer trois indécis. Le dossier mairie est devenu la ligne du groupe. Léna t'a regardé longtemps, sans hostilité : elle archivait.
+>
+> Jusqu'où va ton alignement ?
+
+1. « Un coup de main daté : tu portes le dossier jusqu'à demain 10h. Ensuite, tu reprends ta liberté de manœuvre. » `[→ intensité 1]`
+2. « Tu deviens le bras droit : la ligne de Nadia est la tienne, durablement — y compris les soirs où, seul, tu aurais tranché autrement. » `[→ intensité 2]`
+3. « Tu es prêt à y laisser ta position : si le groupe doit choisir entre ta préférence et sa cohésion, tu sacrifies ta préférence. Publiquement s'il le faut. » `[→ intensité 3]`
+
+**É4 (le retournement — variante lumière : la vie te demande de servir)**
+
+> 22h58, vote à main levée sous l'œil du gardien : ta stratégie « les deux » perd d'une voix. Ce sera « mairie seule, pas de vagues ». Et comme tu es le plus organisé, le groupe te confie… la logistique du plan que tu ne voulais pas.
+
+1. « Exécuter avec zèle un plan que tu juges bancal, ton corps ne sait pas faire. Tu passes ton tour — sans saboter, mais sans toi. » `[→ bloque]`
+2. « Tu joues le jeu à fond jusqu'au rendez-vous — avec une clause de revoyure écrite au pad : si la mairie ne donne rien sous quinze jours, on rediscute samedi. » `[→ cadre]`
+3. « Tu sers le plan voté comme s'il était le tien. C'est même le test : une volonté qui ne sait pas servir n'était qu'un caprice armé. » `[→ libre]`
+
+**É4 (variante ombre : la vie te demande de diriger)**
+
+> Vendredi, 8h40, devant la mairie. Téléphone : Nadia, voix de fin de garde prolongée. « Je suis coincée au service. Vas-y, toi — tu connais le dossier par cœur. Représente-nous. Et décide, s'il faut décider. » L'adjointe arrive dans vingt minutes.
+
+1. « Représenter, oui. Décider à la place du groupe, non : tu prends les informations, tu ne signes rien — même si l'occasion passe avec les trois semaines de vacances de l'adjointe. » `[→ bloque]`
+2. « Tu te donnes un mandat minimal, à voix haute, seul sur le parvis : oui aux ombrières, tout le reste sera « je reviens vers vous lundi ». » `[→ cadre]`
+3. « Tu entres, tu négocies, tu décides. Et dimanche tu rends le mandat, comptes posés sur le pad, prêt à être désavoué. » `[→ libre]`
+
+---
+
+### SAMEDI — Intuition · « La bataille des graphiques »
+
+**É1 (narratif)**
+
+> Samedi, 11h, la seule terrasse à l'ombre. Le thermomètre de la pharmacie affiche 38° en clignotant, comme si de rien n'était.
+>
+> Étienne a étalé trois études sur la table — trois fourchettes pour 2035, qui ne se recouvrent pas. Ta belle-sœur a envoyé au groupe familial un article intitulé « Les vagues de chaleur ont toujours existé », avec un graphique de 1976. Chaque courbe contredit la précédente avec exactement la même assurance.
+>
+> Et toi, depuis la fresque, tu sens quelque chose. Hier soir, 22h, en longeant la friche : il y faisait presque frais. Pas « moins chaud ». Frais. Tu as pensé au vieux canal enterré. Tu n'as aucune preuve, et personne ne t'a cru — sauf le chien d'Étienne, qui refuse désormais de rentrer par un autre chemin.
+
+**É2 (premier mouvement)** — *illustration : la terrasse, les études étalées, le thermomètre clignotant au fond*
+
+> Étienne, stylo levé : « Le dossier part lundi. Dans la partie diagnostic, on met quoi ? Du solide uniquement — ou ton histoire de friche fraîche ? »
+
+- **A** — « Tu le dis : la friche est un îlot frais, tu le sais avant de pouvoir le prouver — le canal, l'ombre du talus, l'air qui change à hauteur du grillage. On le met au dossier. On assumera. » `[→ polarité lumière]`
+- **B** — « Tu proposes l'enquête : trois soirs, des thermomètres, un relevé propre. Ni ta sensation ni les graphiques de qui que ce soit — des mesures à nous. Ensuite, on conclura. » `[→ polarité ombre]`
+
+*Geste-source du jour : « Le carnet des signaux » — observer avant de conclure : noter les signaux faibles, puis les croiser avec les faits disponibles.*
+
+**É3 (la suite immédiate — variante lumière)**
+
+> Nadia t'a suivi — « les infirmières croient les mains avant les moniteurs ». La friche est entrée au dossier comme « poumon frais pressenti ». Étienne a exigé les guillemets ; tu as accepté les guillemets.
+>
+> Quelle place tu donnes à cette manière de savoir ?
+
+1. « Une hypothèse de travail assumée : assez crédible pour agir, pas assez pour se battre. » `[→ intensité 1]`
+2. « Tu structures : indices, témoignages, la carte de 1932 retrouvée aux archives. Ton pressentiment devient un savoir transmissible — avec ses limites affichées. » `[→ intensité 2]`
+3. « Tu engages gros : le verger, le dossier, ta crédibilité — tout misé sur cette certitude intérieure. Si la friche est un four, tu tombes avec elle. » `[→ intensité 3]`
+
+**É3 (variante ombre)**
+
+> L'enquête a eu lieu. Trois soirs, huit thermomètres prêtés par le lycée, un tableur tenu par Léna — elle a détesté aimer ça. Verdict : moins quatre degrés à 22h, reproductible. Ta suspension a produit la seule donnée solide du dossier.
+>
+> Jusqu'où tu tiens ce non-savoir fécond ?
+
+1. « Ouvert, mais pas éternellement : tu recueilles ce qui contredit, tu retestes une fois, puis tu fermes le dossier. » `[→ intensité 1]`
+2. « Tu institutionnalises le doute : chaque affirmation du groupe aura sa contre-hypothèse et son protocole. Le doute devient une méthode, pas une humeur. » `[→ intensité 2]`
+3. « Tu acceptes de lâcher jusqu'à la question : peut-être que « rafraîchir la ville » n'est pas le bon problème. Tu laisses le terrain reformuler la question lui-même. » `[→ intensité 3]`
+
+**É4 (le retournement — variante lumière : la vie invalide ton explication)**
+
+> Dimanche, 9h04. Mail du service urbanisme — un dimanche : l'adjointe a des insomnies. « Le canal a été comblé en 1987. Remblais et gravats. Cordialement. »
+>
+> Ta belle explication vient de mourir. La fraîcheur, elle, était mesurable hier soir encore.
+
+1. « L'explication est tombée, pas le phénomène : tu défends la friche plus fort encore. C'est la donnée qu'on attaque, pas ta certitude. » `[→ bloque]`
+2. « Tu encaisses et tu re-suspends : la friche reste au dossier comme « anomalie mesurée, cause inconnue ». C'est moins vendeur. C'est plus vrai. » `[→ cadre]`
+3. « Tu remercies presque le mail : une conviction qui survit à la mort de son explication est peut-être en train de devenir une connaissance. Tu rouvres l'enquête toi-même. » `[→ libre]`
+
+**É4 (variante ombre : la vie exige que tu tranches)**
+
+> Dimanche, 18h. Nadia : « Le dossier part demain 8h. Ta friche : pièce maîtresse ou note de bas de page ? Tes mesures sont belles mais partielles — trois soirées, un seul secteur. Décide. Maintenant. »
+
+1. « Sans série complète, tu ne trancheras pas : note de bas de page, et tant pis si l'occasion passe. On ne bâtit pas un quartier sur trois soirées. » `[→ bloque]`
+2. « Tu tranches, à condition de l'écrire comme un pari : « données partielles, conviction forte, protocole de vérification joint ». Le lecteur saura sur quoi il marche. » `[→ cadre]`
+3. « Pièce maîtresse. Tu sais reconnaître quand un faisceau suffit — et tu sais déjà ce que tu feras si le réel te donne tort. » `[→ libre]`
+
+---
+
+### DIMANCHE — Transcendance · « Le pad »
+
+*Structure spécifique : pas de polarité — un profil de gestes (2 familiers + 1 difficile), contextualisé sur le pad.*
+
+**É1 (narratif)**
+
+> Dimanche. Une semaine exactement après la fresque. L'orage promis n'est pas venu — « passé à côté », dit la météo, fidèle à l'époque.
+>
+> Le pad du groupe, lui, est devenu quelque chose. La méthode de réunion qui a survécu à jeudi. L'argumentaire. La carte des îlots de fraîcheur et ses quarante-sept points. Les relevés de la friche. Le début du verger. Sept jours — et un objet que personne n'a décidé de créer existe.
+>
+> 19h34, message privé d'un collectif de la ville voisine — même canicule, zéro fresque : « On a vu passer votre carte. On peut tout récupérer ? »
+
+**É2 (les gestes familiers)** — *illustration : un téléphone posé sur une table, le pad ouvert, la nuit qui tombe enfin*
+
+> Huit réponses te traversent, dans le désordre. Choisis les **deux** qui te ressemblent le plus, là, maintenant.
+
+1. « D'abord finir ici : le verger, le dossier. On partagera du fini, pas du fragile. » `[→ contribution]`
+2. « Tu leur passes tout de la main à la main — avec un vrai appel, pour raconter ce que la carte ne dit pas. » `[→ transmission]`
+3. « Tu passes ta soirée à rendre le pad lisible par des inconnus : un mode d'emploi, les sources, et ce qui a raté aussi. » `[→ transmission]`
+4. « Tu proposes d'aller animer leur première réunion. Pas donner le pad : donner le geste. » `[→ transmission]`
+5. « Tu passes le pad en modifiable, publiquement. Ce qui lui arrivera ne t'appartient déjà plus. » `[→ non_appropriation]`
+6. « Avant tout envoi, tu écris la page « qui a fait quoi » : Imane, Léna, les huit thermomètres du lycée. La valeur circule avec les noms. » `[→ redistribution]`
+7. « Tu acceptes d'avance leur version : d'autres priorités, d'autres erreurs, et votre nom nulle part. » `[→ non_appropriation]`
+8. « Tu réponds par une question : et si deux villes qui comparent leurs cartes, c'était le début d'autre chose que deux cartes ? » `[→ contribution]`
+
+*Geste-source du jour : « Restituer avant de diffuser » — documenter ce qui a été reçu, redistribuer ce qui doit l'être, puis laisser la méthode se transformer.*
+
+**É3 (le geste difficile)**
+
+> Et maintenant, l'inverse. Parmi ces huit gestes, lequel te **coûterait** le plus, aujourd'hui ?
+>
+> (Le Conseil ne le répétera à personne. Le Conseil, d'ailleurs, n'existe pas encore — mais ça, c'est une autre histoire.)
+
+*(même liste — un seul choix)* `[→ axe difficile du profil Transcendance]`
+
+**É4 (clôture du bloc 1)**
+
+> Tu envoies. Ou tu n'envoies pas. Mais quelque chose, cette semaine, a changé de mains — et ce n'était peut-être pas le pad.
+>
+> Sur le parking de la salle Simone-Veil, Nadia range son carnet et regarde ton téléphone, le pad encore ouvert : « Curieux. J'ai l'impression que ce truc nous survivra. »
+>
+> Au-dessus de la ville, la chaleur hésite enfin. Demain, dit la météo, « un front orageux venu de l'ouest ». Demain, dit le pad, réunion à 21h.
+>
+> `[→ fin du bloc 1 · calcul du premier miroir : 6 puissances + Moteur global + profil Transcendance + Posture Point Zéro]`
 
 ## 7. Restitution du bloc 1 — et la Posture Point Zéro
 
@@ -244,24 +526,32 @@ La restitution reprend la structure du premier miroir actuel (Moteur global + 6 
 
 **Définition** : la manière dont tu tends à entrer dans le basculement, aujourd'hui. Une synthèse contextuelle et datée — ni une identité, ni un niveau, ni une case. Elle se formule : *« Face à une drôle d'époque, tu tends à… »*. Le joueur peut la contester, et le bloc 3 lui fera formuler autre chose : la stature qu'il **choisit** (l'Archétype Point Zéro).
 
-**Règle de dérivation candidate** (déterministe et explicable) : `puissance dominante` (plus grande amplitude déclarée) × `polarité dominante` × `circulation la plus libre / la plus bloquée`. Douze postures candidates, construites pour couvrir les configurations fréquentes :
+**Règle de dérivation** (déterministe et explicable — étendue à 24 sur demande de Boris, 2026-07-17) : trois axes croisés.
 
-| Posture | « Face au basculement, tu tends à… » | Configuration type |
-|---|---|---|
-| **La Vigie** | …observer ce que personne ne regarde encore | Intuition ombre dominante |
-| **Le Cartographe** | …structurer ce qui est su pour agir | Intuition lumière + circulation cadrée |
-| **Le Foyer** | …tenir un point stable pour que d'autres traversent | Émotion ombre + Volonté service |
-| **La Source** | …rejoindre ce que les autres ressentent | Émotion lumière dominante |
-| **L'Étincelle** | …embraser ce qui dort | Désir lumière + intensité forte |
-| **Le Semeur** | …poser des graines sans exiger la récolte | Désir/Imagination + non-appropriation forte |
-| **La Proue** | …prendre la direction quand le temps manque | Volonté lumière dominante |
-| **L'Ancre** | …servir loyalement ce qui doit tenir | Volonté ombre + circulation cadrée |
-| **Le Jardinier** | …rendre fiable et transmissible ce qui a poussé | Imagination ombre + transmission |
-| **L'Architecte de brume** | …ouvrir des formes que personne n'attend | Imagination lumière + intensité forte |
-| **Le Tisserand** | …relier des paroles qui s'ignorent | Communication (les deux polarités proches) |
-| **Le Passeur** | …transmettre ce qui a été reçu | Transcendance transmission dominante |
+1. **Puissance dominante** : la plus grande amplitude déclarée (départage : la circulation la plus affirmée, puis le choix le plus tardif dans la semaine).
+2. **Polarité dominante** : celle de cette amplitude.
+3. **Rapport au mouvement inverse** de cette puissance : `libre` → posture **passante** (tu circules entre les pôles) ; `cadre` ou `bloque` → posture **enracinée** (tu habites ton pôle en profondeur — avec la nuance « prête à circuler avec un cadre » affichée si `cadre`).
 
-Noms non hiérarchiques, tous désirables, tous avec un angle mort (à écrire dans la fiche de chaque posture : ressource + tension + postures voisines — gabarit de la note triptyque §4). **Ce catalogue est un candidat de travail** pour le livrable 1 du triptyque ; à challenger avec Codex avant intégration.
+Soit 6 puissances × 2 polarités × 2 rapports = **24 postures**, organisées en **paires** : chaque posture enracinée a sa jumelle passante. Aucune n'est supérieure — l'enracinée a la profondeur et la constance, la passante a la mobilité ; chacune a son angle mort (la fiche complète de chaque posture portera : ressource, tension, postures voisines — gabarit de la note triptyque §4).
+
+| Puissance | Pôle | Posture **enracinée** — « tu tends à… » | Posture **passante** — « tu tends à… » |
+|---|---|---|---|
+| Désir | Lumière | **La Braise** — …embraser sans pouvoir t'éteindre | **Le Semeur** — …embraser, puis laisser reposer |
+| Désir | Ombre | **Le Puits** — …contenir ton élan pour laisser la place | **La Marée** — …retirer ton élan et le laisser revenir |
+| Volonté | Lumière | **La Proue** — …tenir la direction, coûte que coûte | **Le Timonier** — …diriger, et savoir rendre la barre |
+| Volonté | Ombre | **L'Ancre** — …tenir loyalement ce qui doit tenir | **Le Relais** — …servir, puis prendre ou passer la main |
+| Imagination | Lumière | **L'Architecte de brume** — …habiter la forme que personne n'attend | **L'Éclaireur** — …ouvrir des possibles, puis revenir les ancrer |
+| Imagination | Ombre | **Le Jardinier** — …rendre fiable et transmissible ce qui a poussé | **Le Greffeur** — …greffer le neuf sur l'éprouvé |
+| Émotion | Lumière | **La Source** — …rejoindre ce que les autres ressentent | **L'Estuaire** — …entrer dans le ressenti et en revenir |
+| Émotion | Ombre | **Le Foyer** — …tenir un point stable pendant que ça tremble | **Le Rivage** — …contenir sans cesser d'être touché |
+| Communication | Lumière | **Le Héraut** — …porter la parole qui mobilise | **Le Tisserand** — …porter et recevoir, relier les paroles |
+| Communication | Ombre | **Le Confident** — …recevoir ce qui ne peut se dire ailleurs | **L'Interprète** — …faire passer les voix sans les capturer |
+| Intuition | Lumière | **Le Phare** — …tenir ta vérité dans la tempête | **Le Cartographe** — …structurer le su, redessiner quand le terrain change |
+| Intuition | Ombre | **La Vigie** — …guetter ce que personne ne regarde encore | **Le Sourcier** — …chercher sans conclure, trancher quand ça vibre |
+
+**La teinte Transcendance** : le profil du dimanche (contribution / transmission / redistribution / non-appropriation) ne crée pas de 25ᵉ posture — il **colore la phrase de restitution**. Exemples : « La Braise — et ce que tu allumes tend à être donné » (non-appropriation forte) ; « La Vigie — et ce que tu vois, tu le transmets » (transmission forte). L'axe *difficile* choisi en É3 du dimanche nourrit la ligne « angle mort » de la fiche.
+
+**Restitution recommandée** : une posture principale + **deux voisines** (la jumelle de circulation de la même case, et la posture de même rapport de la deuxième puissance la plus marquée) — pour dire d'emblée que c'est une position sur une carte, pas une case d'identité. **Ce catalogue reste un candidat de travail** pour le livrable 1 du triptyque ; à challenger avec Codex avant intégration.
 
 ## 8. Bloc 2 challengé (réponse à la question ouverte de Boris)
 
@@ -281,9 +571,12 @@ Boris : « Ce bloc n'est a priori pas utilisé pour générer des informations u
 
 ## 10. Questions ouvertes pour Boris
 
-1. **Le ton des deux journées écrites (§5)** : c'est la question qui commande tout le reste. Trop ? Pas assez ? La bonne dose de pince-sans-rire ?
+~~1. Le ton~~ — **validé (Boris, 2026-07-17 : « J'adore ! »)** ; ~~les 12 postures~~ — **étendues à 24 (Boris, 2026-07-17)**.
+
+1. **Les cinq nouvelles journées (§6)** : mêmes réglages que Lundi/Vendredi ? Un jour à retravailler en particulier ?
 2. Le **titre** « Une drôle d'époque » — à confirmer (alternatives faciles : « La Semaine », « Le Contrecoup »).
 3. L'**ordre des jours** (Émotion en premier parce que le contrecoup est émotionnel — mais Communication ou Intuition pourraient ouvrir).
-4. La **Posture Point Zéro** : une seule proposée, ou une principale + deux voisines ? Les 12 noms candidats te parlent-ils ?
+4. Les **24 postures** : les paires enracinée/passante et leurs noms te parlent-ils ? La teinte Transcendance en phrase (plutôt qu'en posture séparée) te va ? Restitution en « 1 principale + 2 voisines » ok ?
 5. Le **prologue non scoré** : ok pour un choix d'ambiance sans mesure (il pose le contrat « ici, choisir ne veut pas dire être noté ») ?
 6. Le **verger-école** comme fil du Désir : assez universel, ou tu préfères que l'élan « pas raisonnable » soit personnalisable (2-3 variantes au choix du joueur) ?
+7. **Imane** (la stagiaire du mardi, nommée pour la bible) : ok pour le prénom et son crochet possible vers 2050 ?
