@@ -1,6 +1,8 @@
 # Bloc 3 — « Le Conseil Oméga » (2040) : conception
 
 > Ajout Claude - 2026-07-17. Troisième volet du [triptyque du Monde 0](monde-0-triptyque-narratif.md), sur le canon de l'[arc du monde](bloc-2-arc-du-monde.md) et dans la continuité des blocs implémentés ([Une drôle d'époque](bloc-1-une-drole-depoque.md), [Avant le Zéro](bloc-2-avant-le-zero.md)). Document de conception à valider par Boris avant l'écriture du script complet — structure, décisions proposées, échantillons de ton, arbitrages ouverts en fin de document.
+>
+> **✅ IMPLÉMENTÉ v1.0 (2026-07-17)** : le bloc 3 est en ligne sur `/conseil-omega` (34 écrans, modèle `ConseilSession`, challenge 254 en tête du Chapitre 3). Tous les arbitrages ci-dessous sont tranchés. Détails d'intégration : [impacts-fonctionnels.md F16](../vision/impacts-fonctionnels.md). Illustrations pour Codex : [bloc-3-illustrations.md](bloc-3-illustrations.md). Ce document reste la référence de conception ; le script joué vit dans `config/conseil_omega/conseil.yml` sur le serveur.
 
 ## 1. Ce que le bloc 3 doit accomplir
 
