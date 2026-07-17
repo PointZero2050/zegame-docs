@@ -2,6 +2,8 @@
 
 > Ajout Claude - 2026-07-17, pour l'itération de production d'images (Boris + Codex). Sources : les quatre scripts du bloc 2 ([acte I](bloc-2-script-acte-1.md), [Feu & Silence](bloc-2-script-voies-feu-silence.md), [Terre, Parole, Machine](bloc-2-script-voies-terre-parole-machine.md), [Large, Village, Fil](bloc-2-script-voies-large-village-fil.md)), le [canon du monde](bloc-2-arc-du-monde.md) et la grammaire visuelle de la [note design](conseil-du-seuil-design.md). **Le bloc 2 est en ligne** (`/avant-le-zero`, ~117 écrans) : les emplacements d'images seront branchés dès livraison, sur le même circuit que le bloc 1.
 
+> Mise à jour Codex - 2026-07-17. Les 21 illustrations desktop 16:9 ont été générées avec OpenAI, itérées et validées avec Boris, puis déposées dans [`assets/bloc-2-avant-le-zero/`](assets/bloc-2-avant-le-zero/). La série applique le collage instable à partir de 2029, la signature nocturne commune des goulots et le contraste relevé demandé sur les derniers lots. Les compositions mobiles 4:3 restent à produire séparément.
+
 ## Ce qui change par rapport au bloc 1
 
 - **Le temps s'étire** : 2026 → 2033, sept ans. La série doit *vieillir* — lumières plus dures, matières plus fatiguées, personnages qui changent (Léna passe de 19 à 26 ans, Étienne de la polaire au plant de tomate).
@@ -47,6 +49,34 @@
 | 19 | G-V2 (Village, goulot) | La valise | Chambre simple la nuit, valise ouverte sur le lit, par la fenêtre le séchoir terminé au clair de lune, le carnet posé sur les vêtements pliés | Les clés du portail, rendues, posées sur la table de nuit — étiquetées « à rendre » |
 | 20 | FI4 (Fil, ambiance) | L'atelier du tisserand, 2031 | Grand métier à tisser en bois, fils tendus multicolores (les teintes des huit voies), Imane la main sur la navette, le joueur en face, lumière d'atelier | Trois centimètres d'étoffe grossière déjà tissée, encadrés au mur comme un trophée |
 | 21 | G-FI2 (Fil, goulot) | La nuit du métier | L'atelier la nuit, le joueur seul assis au métier, la navette immobile à mi-traversée, les fils qui projettent des ombres de routes qui se croisent, le carnet dans la sacoche ouverte | Un communiqué imprimé froissé au sol, dont on ne lit qu'un guillemet |
+
+## Livrables validés — desktop 16:9
+
+| # | Fichier source dans la documentation | Type |
+|---|---|---|
+| 1 | [`01-verger.png`](assets/bloc-2-avant-le-zero/01-verger.png) | Tronc commun |
+| 2 | [`02-signal.png`](assets/bloc-2-avant-le-zero/02-signal.png) | Tronc commun |
+| 3 | [`03-nasse.png`](assets/bloc-2-avant-le-zero/03-nasse.png) | Tronc commun |
+| 4 | [`04-dispersion-huit-portes.png`](assets/bloc-2-avant-le-zero/04-dispersion-huit-portes.png) | Tronc commun |
+| 5 | [`05-carte-roue-17.png`](assets/bloc-2-avant-le-zero/05-carte-roue-17.png) | Carte des devenirs |
+| 6 | [`06-feu-ambiance.png`](assets/bloc-2-avant-le-zero/06-feu-ambiance.png) | Feu — ambiance |
+| 7 | [`07-feu-goulot.png`](assets/bloc-2-avant-le-zero/07-feu-goulot.png) | Feu — goulot |
+| 8 | [`08-silence-ambiance.png`](assets/bloc-2-avant-le-zero/08-silence-ambiance.png) | Silence — ambiance |
+| 9 | [`09-silence-goulot.png`](assets/bloc-2-avant-le-zero/09-silence-goulot.png) | Silence — goulot |
+| 10 | [`10-terre-ambiance.png`](assets/bloc-2-avant-le-zero/10-terre-ambiance.png) | Terre — ambiance |
+| 11 | [`11-terre-goulot.png`](assets/bloc-2-avant-le-zero/11-terre-goulot.png) | Terre — goulot |
+| 12 | [`12-parole-ambiance.png`](assets/bloc-2-avant-le-zero/12-parole-ambiance.png) | Parole — ambiance |
+| 13 | [`13-parole-goulot.png`](assets/bloc-2-avant-le-zero/13-parole-goulot.png) | Parole — goulot |
+| 14 | [`14-machine-ambiance.png`](assets/bloc-2-avant-le-zero/14-machine-ambiance.png) | Machine — ambiance |
+| 15 | [`15-machine-goulot.png`](assets/bloc-2-avant-le-zero/15-machine-goulot.png) | Machine — goulot |
+| 16 | [`16-large-ambiance.png`](assets/bloc-2-avant-le-zero/16-large-ambiance.png) | Large — ambiance |
+| 17 | [`17-large-goulot.png`](assets/bloc-2-avant-le-zero/17-large-goulot.png) | Large — goulot |
+| 18 | [`18-village-ambiance.png`](assets/bloc-2-avant-le-zero/18-village-ambiance.png) | Village — ambiance |
+| 19 | [`19-village-goulot.png`](assets/bloc-2-avant-le-zero/19-village-goulot.png) | Village — goulot |
+| 20 | [`20-fil-ambiance.png`](assets/bloc-2-avant-le-zero/20-fil-ambiance.png) | Fil — ambiance |
+| 21 | [`21-fil-goulot.png`](assets/bloc-2-avant-le-zero/21-fil-goulot.png) | Fil — goulot |
+
+**Provenance :** génération et itérations visuelles Codex/OpenAI, direction et validation Boris. Ces PNG sont les sources de référence ; Claude peut les convertir en JPEG web et les renommer `alz-*` lors de l'intégration. Ne pas fabriquer les variantes mobiles par simple recadrage.
 
 ## Prompts prêts à l'emploi
 
