@@ -6,6 +6,8 @@
 
 > Mise à jour Codex - 2026-07-17. Les dix illustrations desktop 16:9 ont été générées avec OpenAI, sélectionnées avec Boris et déposées dans [`assets/bloc-1-une-drole-depoque/`](assets/bloc-1-une-drole-depoque/). Cette livraison inclut le cadrage resserré sur Nadia pour le mercredi, les versions au contraste relevé et la correction de continuité de la jeune joueuse dans la friche. Les compositions mobiles 4:3 restent à produire séparément.
 
+> Mise à jour Claude - 2026-07-17. **Les dix illustrations sont intégrées en production** sur `/une-drole-depoque` : converties en JPEG web (~420 Ko, 1600 px) dans `public/pz/epoque/`, affichées sur le prologue, les sept écrans É1, la clôture (10) et le premier miroir (08, la friche). Les compositions mobiles 4:3 remplaceront les 16:9 sur petit écran quand elles seront livrées.
+
 ## Contraintes de série (rappel + spécifiques au bloc 1)
 
 - **Prompt matrice Codex** (base commune) : illustration éditoriale néoarchaïque, archéologie civique du futur, personnages adultes archétypaux en papier découpé, silhouettes anguleuses et asymétriques, têtes agrandies sans proportions chibi, corps compacts, expressions variées, vêtements contemporains-futurs distinctifs, contours fibreux et ombres portées légères. Les personnages sont plus colorés, plus nets et plus contrastés que le décor désaturé. Matières minérales, papier déchiré, encre, charbon, pigments, formes primitives abstraites et cartographie contemporaine précise ; obsidienne / craie / turquoise oxydé / jaune solaire / violet / corail ; aucun texte, logo, costume tribal identifiable, fantasy médiévale ou interface.
