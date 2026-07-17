@@ -4,6 +4,8 @@
 
 > Mise à jour Codex - 2026-07-17. La matrice ci-dessous intègre la [ligne artistique validée des personnages](../vision/direction-artistique-point-zero.md#ligne-principale-des-personnages-narratifs) : figures adultes archétypales en papier découpé, plus colorées et contrastées que le décor. L'essai chibi n'est pas retenu. Les versions mobiles doivent être recomposées avec moins de personnages et d'éléments secondaires.
 
+> Mise à jour Codex - 2026-07-17. Les dix illustrations desktop 16:9 ont été générées avec OpenAI, sélectionnées avec Boris et déposées dans [`assets/bloc-1-une-drole-depoque/`](assets/bloc-1-une-drole-depoque/). Cette livraison inclut le cadrage resserré sur Nadia pour le mercredi, les versions au contraste relevé et la correction de continuité de la jeune joueuse dans la friche. Les compositions mobiles 4:3 restent à produire séparément.
+
 ## Contraintes de série (rappel + spécifiques au bloc 1)
 
 - **Prompt matrice Codex** (base commune) : illustration éditoriale néoarchaïque, archéologie civique du futur, personnages adultes archétypaux en papier découpé, silhouettes anguleuses et asymétriques, têtes agrandies sans proportions chibi, corps compacts, expressions variées, vêtements contemporains-futurs distinctifs, contours fibreux et ombres portées légères. Les personnages sont plus colorés, plus nets et plus contrastés que le décor désaturé. Matières minérales, papier déchiré, encre, charbon, pigments, formes primitives abstraites et cartographie contemporaine précise ; obsidienne / craie / turquoise oxydé / jaune solaire / violet / corail ; aucun texte, logo, costume tribal identifiable, fantasy médiévale ou interface.
@@ -27,6 +29,23 @@
 | 8 | (transverse V/S) | La friche derrière la gare, 22h | Terrain vague, herbes jaunies, talus, grillage, lumière de crépuscule étrangement fraîche/bleutée par contraste avec la ville surchauffée derrière | Le chien d'Étienne assis, catégorique, refusant de partir |
 | 9 | Dimanche É2 | Le pad, 19h34 | Un téléphone posé sur une table, le pad ouvert (carte aux 47 points, illisible), la nuit qui tombe enfin, une main qui hésite | La notification du collectif voisin qui flotte, un peu trop enthousiaste |
 | 10 | Dimanche É4 (clôture) | Le parking de la salle Simone-Veil | Nadia rangeant son carnet, le joueur téléphone en main, ciel de fin de canicule où la chaleur « hésite », la salle éclairée derrière | Au loin, un premier nuage — accueilli comme une célébrité |
+
+## Livrables validés — desktop 16:9
+
+| # | Fichier source dans la documentation | Statut |
+|---|---|---|
+| 1 | [`01-prologue-fresque.png`](assets/bloc-1-une-drole-depoque/01-prologue-fresque.png) | Validé |
+| 2 | [`02-lundi-sonia.png`](assets/bloc-1-une-drole-depoque/02-lundi-sonia.png) | Validé |
+| 3 | [`03-mardi-imane.png`](assets/bloc-1-une-drole-depoque/03-mardi-imane.png) | Validé, contraste relevé |
+| 4 | [`04-mercredi-nadia.png`](assets/bloc-1-une-drole-depoque/04-mercredi-nadia.png) | Validé, cadrage resserré sur Nadia |
+| 5 | [`05-jeudi-decision.png`](assets/bloc-1-une-drole-depoque/05-jeudi-decision.png) | Validé |
+| 6 | [`06-vendredi-chez-etienne.png`](assets/bloc-1-une-drole-depoque/06-vendredi-chez-etienne.png) | Validé |
+| 7 | [`07-samedi-terrasse.png`](assets/bloc-1-une-drole-depoque/07-samedi-terrasse.png) | Validé |
+| 8 | [`08-friche-chien-etienne.png`](assets/bloc-1-une-drole-depoque/08-friche-chien-etienne.png) | Validé, continuité de la joueuse corrigée |
+| 9 | [`09-dimanche-pad.png`](assets/bloc-1-une-drole-depoque/09-dimanche-pad.png) | Validé |
+| 10 | [`10-cloture-parking.png`](assets/bloc-1-une-drole-depoque/10-cloture-parking.png) | Validé |
+
+**Provenance :** génération et itérations visuelles Codex/OpenAI, direction et validation Boris. Ces PNG sont les sources de référence ; Claude peut les convertir et les renommer pour `public/pz/epoque/` lors de l'intégration. Ne pas fabriquer les variantes mobiles par simple recadrage.
 
 ## Prompts prêts à l'emploi
 
