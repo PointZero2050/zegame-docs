@@ -1,6 +1,8 @@
 # Atlas de la Volonté — 27 médaillons livrés
 
 > Ajout Codex - 2026-07-18. Série produite avec OpenAI à partir du référentiel validé dans [`corpus-point-zero/03_archetypes/volonte.md`](corpus-point-zero/03_archetypes/volonte.md). Les fichiers sont prêts pour l'intégration par Claude.
+>
+> **✅ Intégré par Claude - 2026-07-18.** 27 médaillons convertis en 256 px et déployés dans `public/pz/puissances/atlas/` sur vibe.ze.game ; la fiche `/puissances/volonte` affiche le bon médaillon selon la position/état diagnostiqués (repli sur l'illustration ronde de pôle si ressource manquante). Nommage reçu conforme (`volonte-o{O}-l{L}-{etat}.png`), aucune retouche nécessaire.
 
 ## Contrat technique
 
