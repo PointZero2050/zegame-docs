@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "status": "pilot",
+  "provenance": "Codex + OpenAI, validation Boris",
+  "power": "desir",
+  "format": {
+    "mime": "image/png",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "shape": "circular-medallion"
+  },
+  "items": [
+    {
+      "id": "desir-o1-l1-bloque",
+      "amplitude": "O1-L1",
+      "state": "bloque",
+      "name": "Le Désir sous permission",
+      "file": "desir-o1-l1-bloque.png"
+    },
+    {
+      "id": "desir-o1-l1-intermediaire",
+      "amplitude": "O1-L1",
+      "state": "intermediaire",
+      "name": "L'Élan en éveil",
+      "file": "desir-o1-l1-intermediaire.png"
+    },
+    {
+      "id": "desir-o1-l1-libre",
+      "amplitude": "O1-L1",
+      "state": "libre",
+      "name": "Le Gardien du rythme",
+      "file": "desir-o1-l1-libre.png"
+    },
+    {
+      "id": "desir-o2-l2-bloque",
+      "amplitude": "O2-L2",
+      "state": "bloque",
+      "name": "Le Funambule captif",
+      "file": "desir-o2-l2-bloque.png"
+    },
+    {
+      "id": "desir-o2-l2-intermediaire",
+      "amplitude": "O2-L2",
+      "state": "intermediaire",
+      "name": "Le Navigateur du Désir",
+      "file": "desir-o2-l2-intermediaire.png"
+    },
+    {
+      "id": "desir-o2-l2-libre",
+      "amplitude": "O2-L2",
+      "state": "libre",
+      "name": "Le Danseur d'intensité",
+      "file": "desir-o2-l2-libre.png"
+    },
+    {
+      "id": "desir-o3-l3-bloque",
+      "amplitude": "O3-L3",
+      "state": "bloque",
+      "name": "Le Brasier affamé",
+      "file": "desir-o3-l3-bloque.png"
+    },
+    {
+      "id": "desir-o3-l3-intermediaire",
+      "amplitude": "O3-L3",
+      "state": "intermediaire",
+      "name": "Le Phénix initiatique",
+      "file": "desir-o3-l3-intermediaire.png"
+    },
+    {
+      "id": "desir-o3-l3-libre",
+      "amplitude": "O3-L3",
+      "state": "libre",
+      "name": "Le Vivant total",
+      "file": "desir-o3-l3-libre.png"
+    }
+  ]
+}
