@@ -3,6 +3,8 @@
 > Brief initial Claude - 2026-07-18. Matrice des 27 archétypes, contrat de nommage et intentions fonctionnelles préparés pour la génération.
 >
 > Ajout Codex - 2026-07-18. Série produite avec OpenAI à partir de ce brief, de la direction artistique validée par Boris et du référentiel [`corpus-point-zero/03_archetypes/emotion.md`](corpus-point-zero/03_archetypes/emotion.md). Les fichiers sont prêts pour l’intégration par Claude.
+>
+> **✅ Intégré par Claude - 2026-07-18.** 27 médaillons convertis en 256 px et déployés dans `public/pz/puissances/atlas/` sur vibe.ze.game ; la fiche `/puissances/emotion` affiche le bon médaillon selon la position/état diagnostiqués (repli sur l'illustration ronde de pôle si ressource manquante). Nommage reçu conforme, aucune retouche nécessaire.
 
 ## Contrat technique
 
