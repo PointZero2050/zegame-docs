@@ -1,12 +1,15 @@
 # Atlas des archétypes — direction artistique et série du Désir
 
-> Mise à jour Codex - 2026-07-18. La série complète du Désir a été produite avec OpenAI, validée par Boris et préparée pour l'intégration par Claude. Les fichiers sont des PNG circulaires à fond transparent.
+> Mise à jour Codex - 2026-07-18. Les séries complètes du Désir et de la Volonté ont été produites avec OpenAI, validées par Boris et préparées pour l'intégration par Claude. Les fichiers sont des PNG circulaires à fond transparent.
 
 ## Périmètre
 
 La grille actuelle comprend **27 archétypes pour chacune des six Puissances polaires**, soit 162 images potentielles. La Transcendance décrit l'état global du Moteur et ne possède pas à ce stade une grille équivalente de 27 figures.
 
-La première série couvre désormais les **27 figures du Désir** : les neuf combinaisons d'amplitude O1-L1 à O3-L3, chacune déclinée en `bloque`, `intermediaire` et `libre`. Les neuf images du pilote ont servi d'étalonnage ; les dix-huit images complémentaires utilisent la même grammaire graphique et le même contrat technique.
+Les deux premières séries couvrent les **27 figures du Désir** et les **27 figures de la Volonté** : neuf combinaisons d'amplitude O1-L1 à O3-L3, chacune déclinée en `bloque`, `intermediaire` et `libre`. Le Désir a servi d'étalonnage général ; la Volonté reprend la même grammaire en affirmant sa couleur orange et son vocabulaire de décision.
+
+- [Série complète du Désir](atlas-illustrations-desir.md)
+- [Série complète de la Volonté](atlas-illustrations-volonte.md)
 
 ## Format livré
 

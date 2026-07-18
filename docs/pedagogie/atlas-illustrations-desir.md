@@ -48,5 +48,5 @@
 ## Livraison et suite
 
 - **Désir** : série complète livrée, soit 27 PNG 512×512 transparents et un manifeste de 27 entrées.
-- **Après le Désir** : même modèle pour les **5 autres puissances** (Volonté, Imagination, Émotion, Communication, Intuition) — 27 chacune, soit **162** au total. Les noms et descriptions des 27 par puissance sont dans [`corpus-point-zero/03_archetypes/*.md`](corpus-point-zero/03_archetypes/) (Claude enrichira les descriptions à ~150 car. comme pour le Désir au fil de la généralisation des fiches).
+- **Après le Désir** : la Volonté est également livrée. Restent **4 puissances** (Imagination, Émotion, Communication, Intuition), 27 médaillons chacune. Les noms et descriptions sont dans [`corpus-point-zero/03_archetypes/*.md`](corpus-point-zero/03_archetypes/).
 - **Livraison** : `assets/atlas/{puissance}/*.png` + `manifest.json`. Claude convertit (256 px) et branche dès réception — nommage `{slug}-o{O}-l{L}-{etat}.png` suffit, aucune autre coordination nécessaire.
