@@ -1,18 +1,19 @@
 # Atlas des archétypes — direction artistique
 
-> Mise à jour Codex - 2026-07-18. Les séries complètes du Désir, de la Volonté, de l’Imagination, de l’Émotion et de la Communication ont été produites avec OpenAI dans la direction artistique validée par Boris et préparées pour l’intégration par Claude. Les fichiers sont des PNG circulaires à fond transparent.
+> Mise à jour Codex - 2026-07-18. Les six séries polaires complètes du Désir, de la Volonté, de l’Imagination, de l’Émotion, de la Communication et de l’Intuition ont été produites avec OpenAI dans la direction artistique validée par Boris et préparées pour l’intégration par Claude. Les fichiers sont des PNG circulaires à fond transparent.
 
 ## Périmètre
 
-La grille actuelle comprend **27 archétypes pour chacune des six Puissances polaires**, soit 162 images potentielles. La Transcendance décrit l'état global du Moteur et ne possède pas à ce stade une grille équivalente de 27 figures.
+La grille actuelle comprend **27 archétypes pour chacune des six Puissances polaires**, soit 162 images livrées. La Transcendance décrit l'état global du Moteur et ne possède pas à ce stade une grille équivalente de 27 figures.
 
-Les cinq premières séries couvrent les **27 figures du Désir**, de la **Volonté**, de l’**Imagination**, de l’**Émotion** et de la **Communication** : neuf combinaisons d’amplitude O1-L1 à O3-L3, chacune déclinée en `bloque`, `intermediaire` et `libre`. Le Désir a servi d’étalonnage général ; la Volonté affirme l’orange et la décision ; l’Imagination adopte le jaune-or et les mondes possibles ; l’Émotion emploie le vert cœur, l’onde de résonance et la circulation entre ouverture et protection ; la Communication installe le bleu gorge, les courants de parole et le canal ouvert entre écoute et expression.
+Les six séries couvrent **162 figures** : neuf combinaisons d’amplitude O1-L1 à O3-L3 par puissance, chacune déclinée en `bloque`, `intermediaire` et `libre`. Le Désir a servi d’étalonnage général ; la Volonté affirme l’orange et la décision ; l’Imagination adopte le jaune-or et les mondes possibles ; l’Émotion emploie le vert cœur et l’onde de résonance ; la Communication installe le bleu gorge et le canal ouvert entre écoute et expression ; l’Intuition déploie l’indigo, l’œil-boussole, les cartes révisables et le vide fertile.
 
 - [Série complète du Désir](atlas-illustrations-desir.md)
 - [Série complète de la Volonté](atlas-illustrations-volonte.md)
 - [Série complète de l’Imagination](atlas-illustrations-imagination.md)
 - [Série complète de l’Émotion](atlas-illustrations-emotion.md)
 - [Série complète de la Communication](atlas-illustrations-communication.md)
+- [Série complète de l’Intuition](atlas-illustrations-intuition.md)
 
 ## Format livré
 

@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "status": "complete",
+  "provenance": "Brief Claude, production Codex + OpenAI, direction artistique validée par Boris",
+  "power": "intuition",
+  "format": {
+    "mime": "image/png",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "shape": "circular-medallion"
+  },
+  "items": [
+    { "id": "intuition-o1-l1-bloque", "amplitude": "O1-L1", "state": "bloque", "name": "Le Convaincu conditionnel", "file": "intuition-o1-l1-bloque.png" },
+    { "id": "intuition-o1-l1-intermediaire", "amplitude": "O1-L1", "state": "intermediaire", "name": "L'Explorateur d'hypothèses", "file": "intuition-o1-l1-intermediaire.png" },
+    { "id": "intuition-o1-l1-libre", "amplitude": "O1-L1", "state": "libre", "name": "L'Éclaireur ouvert", "file": "intuition-o1-l1-libre.png" },
+    { "id": "intuition-o1-l2-bloque", "amplitude": "O1-L2", "state": "bloque", "name": "Le Certain courtois", "file": "intuition-o1-l2-bloque.png" },
+    { "id": "intuition-o1-l2-intermediaire", "amplitude": "O1-L2", "state": "intermediaire", "name": "Le Savant en révision", "file": "intuition-o1-l2-intermediaire.png" },
+    { "id": "intuition-o1-l2-libre", "amplitude": "O1-L2", "state": "libre", "name": "Le Cartographe vivant", "file": "intuition-o1-l2-libre.png" },
+    { "id": "intuition-o1-l3-bloque", "amplitude": "O1-L3", "state": "bloque", "name": "Le Missionnaire bienveillant", "file": "intuition-o1-l3-bloque.png" },
+    { "id": "intuition-o1-l3-intermediaire", "amplitude": "O1-L3", "state": "intermediaire", "name": "Le Fidèle en dialogue", "file": "intuition-o1-l3-intermediaire.png" },
+    { "id": "intuition-o1-l3-libre", "amplitude": "O1-L3", "state": "libre", "name": "L'Humble Hiérophante", "file": "intuition-o1-l3-libre.png" },
+    { "id": "intuition-o2-l1-bloque", "amplitude": "O2-L1", "state": "bloque", "name": "L'Enquêteur paralysé", "file": "intuition-o2-l1-bloque.png" },
+    { "id": "intuition-o2-l1-intermediaire", "amplitude": "O2-L1", "state": "intermediaire", "name": "Le Pèlerin des Limbes", "file": "intuition-o2-l1-intermediaire.png" },
+    { "id": "intuition-o2-l1-libre", "amplitude": "O2-L1", "state": "libre", "name": "L'Enquêteur orienté", "file": "intuition-o2-l1-libre.png" },
+    { "id": "intuition-o2-l2-bloque", "amplitude": "O2-L2", "state": "bloque", "name": "Le Procès sans verdict", "file": "intuition-o2-l2-bloque.png" },
+    { "id": "intuition-o2-l2-intermediaire", "amplitude": "O2-L2", "state": "intermediaire", "name": "Le Discernant initié", "file": "intuition-o2-l2-intermediaire.png" },
+    { "id": "intuition-o2-l2-libre", "amplitude": "O2-L2", "state": "libre", "name": "Le Cartographe critique", "file": "intuition-o2-l2-libre.png" },
+    { "id": "intuition-o2-l3-bloque", "amplitude": "O2-L3", "state": "bloque", "name": "L'Inquisiteur méthodique", "file": "intuition-o2-l3-bloque.png" },
+    { "id": "intuition-o2-l3-intermediaire", "amplitude": "O2-L3", "state": "intermediaire", "name": "Le Révélateur en discernement", "file": "intuition-o2-l3-intermediaire.png" },
+    { "id": "intuition-o2-l3-libre", "amplitude": "O2-L3", "state": "libre", "name": "Le Gardien de la vérité vivante", "file": "intuition-o2-l3-libre.png" },
+    { "id": "intuition-o3-l1-bloque", "amplitude": "O3-L1", "state": "bloque", "name": "Le Chercheur perdu", "file": "intuition-o3-l1-bloque.png" },
+    { "id": "intuition-o3-l1-intermediaire", "amplitude": "O3-L1", "state": "intermediaire", "name": "Le Discernant renaissant", "file": "intuition-o3-l1-intermediaire.png" },
+    { "id": "intuition-o3-l1-libre", "amplitude": "O3-L1", "state": "libre", "name": "Le Veilleur du mystère", "file": "intuition-o3-l1-libre.png" },
+    { "id": "intuition-o3-l2-bloque", "amplitude": "O3-L2", "state": "bloque", "name": "L'Oracle intermittent", "file": "intuition-o3-l2-bloque.png" },
+    { "id": "intuition-o3-l2-intermediaire", "amplitude": "O3-L2", "state": "intermediaire", "name": "Le Sage en déconstruction", "file": "intuition-o3-l2-intermediaire.png" },
+    { "id": "intuition-o3-l2-libre", "amplitude": "O3-L2", "state": "libre", "name": "Le Passeur de paradigmes", "file": "intuition-o3-l2-libre.png" },
+    { "id": "intuition-o3-l3-bloque", "amplitude": "O3-L3", "state": "bloque", "name": "L'Absolutiste vacillant", "file": "intuition-o3-l3-bloque.png" },
+    { "id": "intuition-o3-l3-intermediaire", "amplitude": "O3-L3", "state": "intermediaire", "name": "Le Prophète initiatique", "file": "intuition-o3-l3-intermediaire.png" },
+    { "id": "intuition-o3-l3-libre", "amplitude": "O3-L3", "state": "libre", "name": "Le Clairvoyant paisible", "file": "intuition-o3-l3-libre.png" }
+  ]
+}

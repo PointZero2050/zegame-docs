@@ -1,19 +1,22 @@
-# Atlas de l'Intuition — 27 médaillons d'archétypes à générer
+# Atlas de l'Intuition — série complète de 27 médaillons
 
-> Ajout Claude - 2026-07-18, pour Codex. **Dernière des six puissances polaires du Moteur.** Même modèle que les atlas [Désir](atlas-illustrations-desir.md), [Volonté](atlas-illustrations-volonte.md), [Imagination](atlas-illustrations-imagination.md), [Émotion](atlas-illustrations-emotion.md) (livrés, intégrés) et [Communication](atlas-illustrations-communication.md) (en génération). La fiche `/puissances/intuition` est en ligne ; dès livraison je convertis (256 px) et je branche — chemin dérivé automatiquement (`intuition-o{O}-l{L}-{etat}.png`), repli sur l'illustration ronde du pôle en attendant. Contenu de référence : [`corpus-point-zero/03_archetypes/intuition.md`](corpus-point-zero/03_archetypes/intuition.md) et la fiche `config/puissances/intuition.yml` (descriptions validées).
+> Ajout Codex - 2026-07-18. Les 27 médaillons ont été produits avec OpenAI, détourés, normalisés en PNG RGBA 512 x 512 et livrés dans [`assets/atlas/intuition/`](assets/atlas/intuition/). Le mapping machine est disponible dans le [`manifest.json`](assets/atlas/intuition/manifest.json).
+
+> Brief initial Claude - 2026-07-18. **Dernière des six puissances polaires du Moteur.** La fiche `/puissances/intuition` dérive automatiquement le chemin `intuition-o{O}-l{L}-{etat}.png`. Contenu de référence : [`corpus-point-zero/03_archetypes/intuition.md`](corpus-point-zero/03_archetypes/intuition.md) et la fiche `config/puissances/intuition.yml`.
 
 ## Le modèle (identique aux pilotes précédents)
 
 - **Format** : PNG **512×512**, fond **transparent (alpha)**, **médaillon circulaire** (le cadre rond fait partie de l'image).
 - **Nommage** : `intuition-o{O}-l{L}-{etat}.png` — ex. `intuition-o2-l3-bloque.png`. États : `bloque`, `intermediaire`, `libre` (clés internes ; affichage : Bloqué / En chemin / Intégré).
 - **Livraison** : `assets/atlas/intuition/*.png` + `manifest.json` (schéma `id, amplitude, state, name, file`, comme le Désir).
+- **Signe de série** : un œil-boussole composé de trois anneaux concentriques en papier ivoire et indigo, d'un point central lumineux et de quatre repères cardinaux discrets. Il exprime le discernement et l'orientation sans devenir un œil surnaturel.
 - **Grammaire visuelle** (celle de la série, teinte dominante **indigo 3e œil** pour l'Intuition — chakra 6) : une figure humaine archétypale au centre, **tenant l'Ombre et la Lumière** de part et d'autre. Papier découpé, facettes, matières minérales ; diversité humaine, sans costume-signal.
   - Côté **Lumière — JE CROIS** (conviction, certitude, foi totale) : l'œil qui voit clair, l'étoile/la boussole qui oriente, la carte tracée, la flamme d'une vérité (L1 Conviction : une orientation crédible, un cap qui se dessine → L2 Certitude : une carte stable et structurée, une constellation fixée → L3 Foi totale : un soleil intérieur, un engagement absolu, au risque du dogme aveuglant).
   - Côté **Ombre — JE DOUTE** (ouverture, suspension, non-savoir) : la carte qu'on repose, les hypothèses tenues en suspens, la brume/le vide fertile (O1 Ouverture : accueillir une anomalie, une porte entrouverte → O2 Suspension : plusieurs fils tenus ensemble, une balance d'hypothèses → O3 Non-savoir : abandon des cartes et des catégories, un espace vide et ouvert d'où un paradigme neuf peut surgir).
   - **Source / centre** : l'acte de connaître — un œil serein, une figure qui discerne la cohérence au-delà des apparences, équilibrée entre croire et douter.
   - **État** : **Bloqué** = déséquilibre — soit une certitude fermée/dogmatique qui n'entend plus rien (l'inquisiteur, le certain courtois), soit un doute qui désoriente et paralyse (le chercheur perdu, l'enquêteur paralysé) ; **En chemin** = la circulation s'amorce, l'un accepte de réviser sa carte, l'autre retrouve un fil après la perte des repères (posture en transition) ; **Intégré** = croire ET douter en équilibre — tout consacrer à une vérité puis abandonner toute prétention à la posséder (posture claire, paisible — écho au « Clairvoyant paisible »).
 
-## Les 27 (à générer)
+## Les 27 livrés
 
 | Position | Intensité (Ombre · Lumière) | État | Archétype | Intention visuelle (brief) |
 |---|---|---|---|---|
@@ -47,4 +50,4 @@
 
 ## Fin de série des six puissances polaires
 
-Avec l'Intuition, les **six puissances polaires du Moteur** sont couvertes côté fiches (Désir, Volonté, Imagination, Émotion, Communication, Intuition). Côté médaillons, restent à générer : **Communication** (liste [ici](atlas-illustrations-communication.md)) et **Intuition** (ce document). Claude branche chaque livraison automatiquement (`{slug}-o{O}-l{L}-{etat}.png`). La 7ᵉ puissance, la **Transcendance** (JE DONNE), est non polaire et relève d'un traitement distinct (pas de fiche O-L à ce stade).
+Avec l'Intuition, les **six puissances polaires du Moteur** sont couvertes côté fiches et médaillons : Désir, Volonté, Imagination, Émotion, Communication et Intuition, soit **162 archétypes illustrés**. Claude branche chaque livraison automatiquement (`{slug}-o{O}-l{L}-{etat}.png`). La 7ᵉ puissance, la **Transcendance** (JE DONNE), est non polaire et relève d'un traitement distinct, sans fiche O-L à ce stade.
