@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "status": "pilot",
+  "version": 2,
+  "status": "complete",
   "provenance": "Codex + OpenAI, validation Boris",
   "power": "desir",
   "format": {
@@ -11,68 +11,32 @@
     "shape": "circular-medallion"
   },
   "items": [
-    {
-      "id": "desir-o1-l1-bloque",
-      "amplitude": "O1-L1",
-      "state": "bloque",
-      "name": "Le Désir sous permission",
-      "file": "desir-o1-l1-bloque.png"
-    },
-    {
-      "id": "desir-o1-l1-intermediaire",
-      "amplitude": "O1-L1",
-      "state": "intermediaire",
-      "name": "L'Élan en éveil",
-      "file": "desir-o1-l1-intermediaire.png"
-    },
-    {
-      "id": "desir-o1-l1-libre",
-      "amplitude": "O1-L1",
-      "state": "libre",
-      "name": "Le Gardien du rythme",
-      "file": "desir-o1-l1-libre.png"
-    },
-    {
-      "id": "desir-o2-l2-bloque",
-      "amplitude": "O2-L2",
-      "state": "bloque",
-      "name": "Le Funambule captif",
-      "file": "desir-o2-l2-bloque.png"
-    },
-    {
-      "id": "desir-o2-l2-intermediaire",
-      "amplitude": "O2-L2",
-      "state": "intermediaire",
-      "name": "Le Navigateur du Désir",
-      "file": "desir-o2-l2-intermediaire.png"
-    },
-    {
-      "id": "desir-o2-l2-libre",
-      "amplitude": "O2-L2",
-      "state": "libre",
-      "name": "Le Danseur d'intensité",
-      "file": "desir-o2-l2-libre.png"
-    },
-    {
-      "id": "desir-o3-l3-bloque",
-      "amplitude": "O3-L3",
-      "state": "bloque",
-      "name": "Le Brasier affamé",
-      "file": "desir-o3-l3-bloque.png"
-    },
-    {
-      "id": "desir-o3-l3-intermediaire",
-      "amplitude": "O3-L3",
-      "state": "intermediaire",
-      "name": "Le Phénix initiatique",
-      "file": "desir-o3-l3-intermediaire.png"
-    },
-    {
-      "id": "desir-o3-l3-libre",
-      "amplitude": "O3-L3",
-      "state": "libre",
-      "name": "Le Vivant total",
-      "file": "desir-o3-l3-libre.png"
-    }
+    { "id": "desir-o1-l1-bloque", "amplitude": "O1-L1", "state": "bloque", "name": "Le Désir sous permission", "file": "desir-o1-l1-bloque.png" },
+    { "id": "desir-o1-l1-intermediaire", "amplitude": "O1-L1", "state": "intermediaire", "name": "L'Élan en éveil", "file": "desir-o1-l1-intermediaire.png" },
+    { "id": "desir-o1-l1-libre", "amplitude": "O1-L1", "state": "libre", "name": "Le Gardien du rythme", "file": "desir-o1-l1-libre.png" },
+    { "id": "desir-o1-l2-bloque", "amplitude": "O1-L2", "state": "bloque", "name": "Le Célébrant inquiet", "file": "desir-o1-l2-bloque.png" },
+    { "id": "desir-o1-l2-intermediaire", "amplitude": "O1-L2", "state": "intermediaire", "name": "Le Funambule du plaisir", "file": "desir-o1-l2-intermediaire.png" },
+    { "id": "desir-o1-l2-libre", "amplitude": "O1-L2", "state": "libre", "name": "Le Célébrant lucide", "file": "desir-o1-l2-libre.png" },
+    { "id": "desir-o1-l3-bloque", "amplitude": "O1-L3", "state": "bloque", "name": "Le Feu qui refuse la nuit", "file": "desir-o1-l3-bloque.png" },
+    { "id": "desir-o1-l3-intermediaire", "amplitude": "O1-L3", "state": "intermediaire", "name": "Le Porte-Flamme en initiation", "file": "desir-o1-l3-intermediaire.png" },
+    { "id": "desir-o1-l3-libre", "amplitude": "O1-L3", "state": "libre", "name": "Le Porte-Flamme", "file": "desir-o1-l3-libre.png" },
+    { "id": "desir-o2-l1-bloque", "amplitude": "O2-L1", "state": "bloque", "name": "Le Désir négocié", "file": "desir-o2-l1-bloque.png" },
+    { "id": "desir-o2-l1-intermediaire", "amplitude": "O2-L1", "state": "intermediaire", "name": "L'Élan en réhabilitation", "file": "desir-o2-l1-intermediaire.png" },
+    { "id": "desir-o2-l1-libre", "amplitude": "O2-L1", "state": "libre", "name": "Le Canaliseur vivant", "file": "desir-o2-l1-libre.png" },
+    { "id": "desir-o2-l2-bloque", "amplitude": "O2-L2", "state": "bloque", "name": "Le Funambule captif", "file": "desir-o2-l2-bloque.png" },
+    { "id": "desir-o2-l2-intermediaire", "amplitude": "O2-L2", "state": "intermediaire", "name": "Le Navigateur du Désir", "file": "desir-o2-l2-intermediaire.png" },
+    { "id": "desir-o2-l2-libre", "amplitude": "O2-L2", "state": "libre", "name": "Le Danseur d'intensité", "file": "desir-o2-l2-libre.png" },
+    { "id": "desir-o2-l3-bloque", "amplitude": "O2-L3", "state": "bloque", "name": "Le Volcan corseté", "file": "desir-o2-l3-bloque.png" },
+    { "id": "desir-o2-l3-intermediaire", "amplitude": "O2-L3", "state": "intermediaire", "name": "Le Feu en alchimisation", "file": "desir-o2-l3-intermediaire.png" },
+    { "id": "desir-o2-l3-libre", "amplitude": "O2-L3", "state": "libre", "name": "Le Fervent souverain", "file": "desir-o2-l3-libre.png" },
+    { "id": "desir-o3-l1-bloque", "amplitude": "O3-L1", "state": "bloque", "name": "Le Désir enseveli", "file": "desir-o3-l1-bloque.png" },
+    { "id": "desir-o3-l1-intermediaire", "amplitude": "O3-L1", "state": "intermediaire", "name": "Le Veilleur du retour", "file": "desir-o3-l1-intermediaire.png" },
+    { "id": "desir-o3-l1-libre", "amplitude": "O3-L1", "state": "libre", "name": "Le Gardien du vide fertile", "file": "desir-o3-l1-libre.png" },
+    { "id": "desir-o3-l2-bloque", "amplitude": "O3-L2", "state": "bloque", "name": "Le Rebond d'ivresse", "file": "desir-o3-l2-bloque.png" },
+    { "id": "desir-o3-l2-intermediaire", "amplitude": "O3-L2", "state": "intermediaire", "name": "Le Phénix en mue", "file": "desir-o3-l2-intermediaire.png" },
+    { "id": "desir-o3-l2-libre", "amplitude": "O3-L2", "state": "libre", "name": "Le Régénérateur du Désir", "file": "desir-o3-l2-libre.png" },
+    { "id": "desir-o3-l3-bloque", "amplitude": "O3-L3", "state": "bloque", "name": "Le Brasier affamé", "file": "desir-o3-l3-bloque.png" },
+    { "id": "desir-o3-l3-intermediaire", "amplitude": "O3-L3", "state": "intermediaire", "name": "Le Phénix initiatique", "file": "desir-o3-l3-intermediaire.png" },
+    { "id": "desir-o3-l3-libre", "amplitude": "O3-L3", "state": "libre", "name": "Le Vivant total", "file": "desir-o3-l3-libre.png" }
   ]
 }
