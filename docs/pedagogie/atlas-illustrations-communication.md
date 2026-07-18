@@ -1,19 +1,22 @@
-# Atlas de la Communication — 27 médaillons d'archétypes à générer
+# Atlas de la Communication — série complète de 27 médaillons
 
-> Ajout Claude - 2026-07-18, pour Codex. Même modèle que les atlas [Désir](atlas-illustrations-desir.md) et [Volonté](atlas-illustrations-volonte.md) (livrés, intégrés), [Imagination](atlas-illustrations-imagination.md) et [Émotion](atlas-illustrations-emotion.md) (en génération). La fiche `/puissances/communication` est en ligne ; dès livraison je convertis (256 px) et je branche — chemin dérivé automatiquement (`communication-o{O}-l{L}-{etat}.png`), repli sur l'illustration ronde du pôle en attendant. Contenu de référence : [`corpus-point-zero/03_archetypes/communication.md`](corpus-point-zero/03_archetypes/communication.md) et la fiche `config/puissances/communication.yml` (descriptions validées).
+> Ajout Codex - 2026-07-18. Les 27 médaillons ont été produits avec OpenAI, détourés, normalisés en PNG RGBA 512 x 512 et livrés dans [`assets/atlas/communication/`](assets/atlas/communication/). Le mapping machine est disponible dans le [`manifest.json`](assets/atlas/communication/manifest.json).
+
+> Brief initial Claude - 2026-07-18. Même modèle que les atlas précédents. La fiche `/puissances/communication` dérive automatiquement le chemin `communication-o{O}-l{L}-{etat}.png`. Contenu de référence : [`corpus-point-zero/03_archetypes/communication.md`](corpus-point-zero/03_archetypes/communication.md) et la fiche `config/puissances/communication.yml`.
 
 ## Le modèle (identique aux pilotes précédents)
 
 - **Format** : PNG **512×512**, fond **transparent (alpha)**, **médaillon circulaire** (le cadre rond fait partie de l'image).
 - **Nommage** : `communication-o{O}-l{L}-{etat}.png` — ex. `communication-o2-l3-bloque.png`. États : `bloque`, `intermediaire`, `libre` (clés internes ; affichage : Bloqué / En chemin / Intégré).
 - **Livraison** : `assets/atlas/communication/*.png` + `manifest.json` (schéma `id, amplitude, state, name, file`, comme le Désir).
+- **Signe de série** : deux arcs de papier ouverts se font face autour d'un intervalle central, avec un point dans chaque ouverture. Ce canal relie visuellement écoute et expression sans recourir à la bulle de dialogue.
 - **Grammaire visuelle** (celle de la série, teinte dominante **bleu gorge** pour la Communication — chakra 5) : une figure humaine archétypale au centre, **tenant l'Ombre et la Lumière** de part et d'autre. Papier découpé, facettes, matières minérales ; diversité humaine, sans costume-signal.
   - Côté **Lumière — JE CAPTIVE** (persuasion, séduction, envoûtement) : la parole qui rayonne, ondes sonores, la bouche/le souffle qui porte, l'auditoire attiré (L1 Persuasion : arguments clairs, un trait net qui relie → L2 Séduction : un récit qui enroule et attire, des volutes → L3 Envoûtement : la parole magnétique qui transforme la perception d'une foule, un halo hypnotique).
   - Côté **Ombre — J'ÉCOUTE** (écoute, effacement, silence) : l'oreille qui reçoit, la signature retirée, la bouche close/le doigt sur les lèvres (O1 Écoute : recevoir et reformuler, deux figures reliées par l'écoute → O2 Effacement : porter la parole d'un autre, une figure qui s'estompe pour amplifier une voix → O3 Silence : suspendre le langage, un espace vide protecteur, un secret gardé).
   - **Source / centre** : l'acte de rendre partageable — une figure sereine, souffle/verbe équilibré entre dire, écouter et se taire.
   - **État** : **Bloqué** = déséquilibre — soit une parole qui capture/manipule (envoûtement, charme anxieux, oracle opaque), soit un silence subi/une voix confisquée (le silencieux blessé, le porte-parole sans voix) ; **En chemin** = la circulation s'amorce, l'un ose porter sa parole, l'autre apprend à se taire et écouter (posture en transition) ; **Intégré** = exprimer ET recevoir en équilibre — faire naître un monde par la parole puis se taire pour le rendre libre (posture ouverte, sereine — écho au « Verbe total »).
 
-## Les 27 (à générer)
+## Les 27 livrés
 
 | Position | Intensité (Ombre · Lumière) | État | Archétype | Intention visuelle (brief) |
 |---|---|---|---|---|
