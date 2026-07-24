@@ -206,6 +206,8 @@ Ces éléments doivent avoir une histoire, des réussites, des ratés et des eff
 ## 7bis. Fil rouge pédagogique du parcours Monde 0
 
 > Ajout Codex - 2026-07-24. Architecture validée par Boris après relecture du parcours déployé. Le Monde 0 fait **pressentir** la grammaire fractale ; le Monde 1 apprend à la nommer et à l'utiliser.
+>
+> La traduction expérience par expérience est tenue dans la [matrice de révision du parcours déployé](monde-0-matrice-revision.md).
 
 Le parcours articule trois mouvements :
 
@@ -229,7 +231,7 @@ Dans la première révision du Monde 0 :
 
 - **Le Sas d'entrée** devient optionnel ;
 - la publication d'un signe de reconnaissance sur LinkedIn devient une possibilité parmi d'autres formes de mise en relation, jamais une obligation d'exposition publique ;
-- l'Atelier Point Zéro conserve sa fonction de rite de passage, avec pour cible ultérieure plusieurs modalités collectives équivalentes afin de ne pas imposer un format, un lieu ou une date uniques.
+- l'**Atelier Point Zéro est le rite obligatoire du passage Monde 0 → Monde 1** ; il est proposé régulièrement en présentiel et en distanciel, ces deux modalités produisant la même validation.
 
 ## 8. Continuité visuelle et tonale
 

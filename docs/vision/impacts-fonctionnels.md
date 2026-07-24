@@ -43,9 +43,11 @@ Implémenté dans vibe.ze.game : colonne `progression_mode` (libre/lineaire, dé
 | Logique | Le déverrouillage suit l'ordre `challenges_journeys.position` ; définir l'interaction avec `auto_validated` (validation pédagogique bloque-t-elle la suite ?) |
 | Lien vision | Modes envisagés dans [accueil-point-zero.md](accueil-point-zero.md) §7 (séquentiel/libre/guidé/conditionnel/temporel) — commencer par libre/linéaire |
 
-### F2b — Expérience obligatoire ou optionnelle dans un parcours
+### F2b — Expérience obligatoire ou optionnelle dans un parcours ✅ IMPLÉMENTÉ (2026-07-24)
 
 <!-- Ajout Codex - 2026-07-24. Décision Boris : permettre de passer une expérience exigeante, notamment un Sas d'entrée, sans abandonner le parcours. -->
+
+Implémenté dans vibe.ze.game par Claude, commit `3c675d0` : `required` et `optional_note` sur l'inclusion `ChallengesJourney`, état de saut séparé dans `ChallengesJourneysUser`, déverrouillage de la suite en progression linéaire, reprise possible, absence d'Oméga et de fausse validation lors du saut, prise en compte des seules expériences obligatoires pour l'accomplissement. Vérifié en lecture le 2026-07-24 sur la branche serveur `pointzero`, worktree propre. Le parcours Monde 0 expose les nouveaux contrôles, mais ses treize expériences sont encore toutes cochées obligatoires : la configuration du Sas reste à appliquer.
 
 Une expérience peut être **obligatoire ou optionnelle dans un parcours donné**. Ce caractère appartient à son inclusion dans le parcours (`ChallengesJourney`), et non au `Challenge` lui-même : une même expérience peut être structurante dans un parcours et facultative dans un autre.
 
@@ -62,7 +64,7 @@ Une expérience peut être **obligatoire ou optionnelle dans un parcours donné*
 | Statistiques | Distinguer `réalisée`, `passée`, `en cours` et `non commencée`. Ne pas compter un saut comme un accomplissement de l'expérience. |
 | Garde-fou | Une expérience indispensable à la sécurité, au consentement ou à la compréhension d'une activité ne doit pas devenir optionnelle sans proposer une voie équivalente. |
 
-Pour le Monde 0, le **Sas d'entrée** devient le premier cas recommandé d'expérience optionnelle. L'Atelier Point Zéro conserve sa fonction de rite de passage ; à terme, plusieurs expériences collectives équivalentes pourront satisfaire ce passage sans imposer un format ou une date uniques.
+Pour le Monde 0, le **Sas d'entrée** devient le premier cas d'expérience optionnelle. L'**Atelier Point Zéro reste obligatoire** : il est le rite de passage vers le Monde 1 et peut être vécu en présentiel ou en distanciel. La matrice de révision complète se trouve dans [monde-0-matrice-revision.md](../pedagogie/monde-0-matrice-revision.md).
 
 ### F3 — Parcours obligatoire (tutoriel de Monde) ✅ IMPLÉMENTÉ (2026-07-14)
 
