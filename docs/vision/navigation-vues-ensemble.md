@@ -124,14 +124,16 @@ Le profil distingue :
 
 Les droits doivent citer leur source. L'Oméga n'est ni un niveau de conscience ni un rang public.
 
-### 5.2 Open Badges et trophées
+### 5.2 Accomplissements internes
 
-Deux familles doivent rester séparées :
+> Note Codex - 2026-07-24. Décision Boris : les Open Badges sont laissés de côté pour l'instant afin de garder une interface et un modèle simples.
 
-- les **Open Badges** sont des attestations vérifiables avec émetteur, critères, preuve, date et possibilité de partage ;
-- les **trophées secrets** sont des récompenses ludiques internes, parfois cachées, sans valeur d'attestation.
+Deux familles sont réunies dans le sous-menu **Accomplissements**, tout en restant visuellement distinctes :
 
-Un parcours accompli ne produit un Open Badge que si ses critères, preuves et règles d'émission sont définis. Les parcours plus légers peuvent rester de simples accomplissements internes.
+- les **badges de complétion de parcours**, qui reprennent l'illustration du parcours dans un médaillon avec un signe d'accomplissement ;
+- les **badges de seuil**, visibles ou secrets, qui marquent un premier geste, une progression Oméga, une exploration particulière ou la découverte d'une fonctionnalité.
+
+Le standard Open Badge pourra être réexaminé plus tard si un besoin d'attestation externe apparaît. Il n'est pas une contrainte de conception de la V1.
 
 ### 5.3 Carte personnelle des sept puissances
 
@@ -146,12 +148,18 @@ La carte s'inspire du diagnostic EVH sans en faire un diagnostic psychologique a
 
 Le langage doit parler de circulation, d'exploration et de zones d'attention, jamais de valeur personnelle, de déficit ou de classement. Aucune inférence sensible ne doit être publiée ou partagée sans consentement explicite.
 
+### 5.4 Mes Récits et Contributions
+
+**Mes Récits** donne accès aux Graines de Récit, à leurs Résonances et à leur évolution. **Contributions** rend visibles les passages où une intention est devenue action, où des puissances ont été manifestées et où des effets ont été observés chez d'autres personnes, dans un collectif ou dans le monde.
+
+Ces deux espaces sont reliés sans être confondus : une Graine peut faire émerger une contribution et recevoir des Résonances, mais tout récit intime n'a pas à devenir une preuve. Les points gagnés dans les parcours restent le socle V1 de l'Oméga ; les contributions pourront ultérieurement compléter ou pondérer cette base selon un modèle encore à expérimenter.
+
 ## 6. États ajoutés au prototype v2.5
 
 - `marelle`
 - `cercle-seuil`, `cercle-discussion`, `cercle-croissance`
 - `ressources`, `ressources-pensees`
-- `profil`, `profil-puissances`, `profil-badges`
+- `profil`, `profil-puissances`, `profil-recits`, `profil-accomplissements`, `profil-contributions`
 
 La navigation produit est cliquable et active automatiquement la bonne section. Les six états principaux ont été contrôlés sans débordement horizontal en vue mobile 390 x 844.
 
@@ -160,6 +168,6 @@ La navigation produit est cliquable et active automatiquement la bonne section. 
 1. Les Mondes 0 à 10 forment-ils onze positions ou faut-il renuméroter la Marelle ?
 2. Un joueur peut-il avoir plusieurs `WorldAccess` actifs simultanément, y compris dans des branches métiers ?
 3. Quels droits précis sont attachés à chaque Monde, indépendamment des Communautés ?
-4. Quels parcours méritent un Open Badge et quelle entité joue le rôle d'émetteur vérifiable ?
-5. Quelles données alimentent la carte des puissances en V1, et lesquelles restent exclusivement déclaratives ?
-6. Le profil montre-t-il un solde Oméga dépensable dès la première version ou seulement la contribution cumulée ?
+4. Quelles données alimentent la carte des puissances en V1, et lesquelles restent exclusivement déclaratives ?
+5. Le profil montre-t-il un solde Oméga dépensable dès la première version ou seulement la contribution cumulée ?
+6. Quel premier protocole léger permet de documenter une Contribution Oméga sans créer une logique de popularité, de surveillance ou de preuve disproportionnée ?

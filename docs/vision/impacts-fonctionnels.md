@@ -123,9 +123,9 @@ Avant le partage, il peut préciser le type de Résonance souhaité : **être se
 
 | Aspect | Impact |
 |---|---|
-| Modèle | À articuler avec `Point` existant (points par compétence) : l'Oméga est-il la somme des points, ou un calcul distinct intégrant les 7 puissances ? Les 7 puissances doivent-elles devenir des données structurées (aujourd'hui : noms de compétences "PUISSANCE : ASPECT") ? |
+| Modèle | **Décision Boris, 2026-07-24** : les points par compétence gagnés dans les parcours constituent le **socle V1 de l'Oméga**. Une couche ultérieure de Contributions Oméga pourra compléter ou pondérer ce socle à partir de capacités manifestées, de Résonances et d'effets concrets documentés. La formule et le statut de cette pondération restent à expérimenter ; cf. [cosmo-coin-omega.md](cosmo-coin-omega.md) §1.1. |
 | Front | Composant lemniscate réutilisable (chip compacte + carte détaillée) ; animation d'amplitude Ombre/Lumière à définir en fonction de données réelles |
-| Garde-fou | L'Oméga ne doit pas devenir un score de conscience public ni un classement ([monde-miroir.md](monde-miroir.md) §13) ; c'est le "mana" de la vision — vocabulaire à unifier (mana vs Oméga) |
+| Garde-fou | L'Oméga ne doit pas devenir un score de conscience public ni un classement ([monde-miroir.md](monde-miroir.md) §13). Une contribution ne se réduit ni à un nombre de réactions ni à une validation IA. Le vocabulaire d'interface retenu est uniquement « Oméga ». |
 | Prototype | Première interprétation visuelle dans le proto `point-zero-home` (état `monde0`) |
 
 ### F7 — Mode événement d'un parcours
@@ -199,15 +199,22 @@ Références techniques officielles : [intégration Event Tickets + WooCommerce]
 | Modèle | Graphe de noeuds et relations, pas six silos ; recherche globale, facettes par type et relations affichables |
 | Front | Six portes orientées Comprendre, Pratiquer, Rencontrer, Soutenir, Rejoindre, Vivre ; vues liste/carte |
 
-### F13 — Profil, droits, Open Badges et puissances
+### F13 — Profil, accomplissements, contributions et puissances
+
+<!-- Note Codex - 2026-07-24. Les Open Badges sont différés. La première version du Profil ne présente que des badges internes. -->
 
 | Aspect | Impact |
 |---|---|
 | Oméga | Séparer solde disponible et contribution cumulée ; bloc « Ce que tes Oméga ouvrent » = texte d'ambition + vidéo (mécanisme régénératif complet en horizon, cf. [cosmo-coin-omega.md](cosmo-coin-omega.md)) ; aucune lecture comme score de conscience ; représentation lemniscate animée en synthèse du profil |
 | Mon Récit | **4e sous-menu du profil (Boris, 2026-07-13)** : page dédiée avec résumé global évolutif en entrée (régénéré avec le mentor à chaque Graine, toujours validé par le joueur) + fil des Graines avec résonances consultables. Limite par Graine : 800 caractères (recommandation Claude dans la fourchette 500-1 000 décidée par Boris — ajustable) |
-| Badges | Credentials Open Badges avec émetteur, critères et preuves distincts des trophées ludiques internes |
+| Navigation | Cinq dimensions cibles : **Vue d'ensemble**, **Puissances**, **Mes Récits**, **Accomplissements**, **Contributions**. Leur profondeur peut être déployée progressivement sans multiplier les concepts dans la première interface. |
+| Accomplissements | Deux familles de badges internes : **complétion de parcours**, reconnaissable immédiatement et illustrée par l'image du parcours recadrée en médaillon ; **seuils gamifiés**, visibles ou secrets, représentés par des sceaux géométriques. Aucun standard Open Badge ni valeur d'attestation externe dans le périmètre actuel. |
+| Obtention | Petit seuil : notification discrète. Seuil narratif ou secret : carte de révélation à une respiration du parcours. Fin de parcours : médaillon intégré à l'écran final. Tous restent consultables dans « Accomplissements » sans rejouer l'animation. Les obtentions simultanées sont regroupées. |
+| Contributions | Une Contribution Oméga relie capacités manifestées, Résonances chez d'autres personnes et effets concrets sur le collectif ou le monde. Elle est documentée par des regards et traces proportionnés à son enjeu. Le Profil doit raconter cette manifestation, pas afficher une note de popularité. |
 | Puissances | Six axes Ombre/Lumière et Transcendance en synthèse ; **degrés officiels du moteur (Boris, 2026-07-13) : Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience**, évalués en 360° (collecte depuis les expériences concernées à concevoir) ; lemniscate de synthèse en tête ; source/date/visibilité des lectures ; privé par défaut |
 | Sécurité | Pas de diagnostic automatisé, de classement public ou de partage sans consentement explicite |
+
+Pour le Monde 0, un premier lot resserré de seuils peut tester cette grammaire sans saturer le Profil : **Entrer dans le Jeu**, **Le Moteur s'éveille**, **Un futur regardé en face**, **Graine semée**, **Le futur renvoie la balle**, et le secret **Les futurs sont pluriels**. Le seuil des **100 premiers Oméga** reste transversal et devrait marquer le passage vers le Monde 1 plutôt que la seule conclusion du Monde 0 ; vérifier le barème courant avant implémentation.
 
 ### F14 — Conseil du Seuil (évaluation initiale du Moteur) ✅ IMPLÉMENTÉ v0.1 (2026-07-16)
 
