@@ -43,6 +43,27 @@ Implémenté dans vibe.ze.game : colonne `progression_mode` (libre/lineaire, dé
 | Logique | Le déverrouillage suit l'ordre `challenges_journeys.position` ; définir l'interaction avec `auto_validated` (validation pédagogique bloque-t-elle la suite ?) |
 | Lien vision | Modes envisagés dans [accueil-point-zero.md](accueil-point-zero.md) §7 (séquentiel/libre/guidé/conditionnel/temporel) — commencer par libre/linéaire |
 
+### F2b — Expérience obligatoire ou optionnelle dans un parcours
+
+<!-- Ajout Codex - 2026-07-24. Décision Boris : permettre de passer une expérience exigeante, notamment un Sas d'entrée, sans abandonner le parcours. -->
+
+Une expérience peut être **obligatoire ou optionnelle dans un parcours donné**. Ce caractère appartient à son inclusion dans le parcours (`ChallengesJourney`), et non au `Challenge` lui-même : une même expérience peut être structurante dans un parcours et facultative dans un autre.
+
+| Aspect | Impact |
+|---|---|
+| Modèle | Ajouter `required` (booléen, défaut `true`, non nul) à `challenges_journeys`. Le défaut obligatoire préserve le comportement de tous les parcours existants. |
+| Progression joueur | Enregistrer le saut séparément de la validation, par joueur et par inclusion dans le parcours (`user_id`, `challenges_journey_id`, `skipped_at`). Un saut ne doit jamais créer une fausse validation de l'expérience. |
+| Parcours linéaire | Une expérience optionnelle atteinte reste l'étape courante jusqu'à ce que le joueur l'accomplisse ou choisisse explicitement « Passer cette étape ». Le saut déverrouille alors la suite. |
+| Accomplissement | Seules les expériences obligatoires doivent être validées pour accomplir le parcours. Les expériences optionnelles non commencées ou passées ne bloquent ni la fin du chapitre ni celle du parcours. |
+| Retour | Une expérience passée reste accessible avec une action « Reprendre cette expérience ». Si elle est ensuite accomplie, son état visible devient « réalisée » tout en conservant l'historique du saut si cette information est utile. |
+| Oméga | Passer une expérience ne génère aucun Oméga et n'entraîne aucune pénalité. Les Oméga sont attribués uniquement si l'expérience est réellement accomplie selon ses critères. |
+| Backoffice | Dans la construction du parcours, proposer « Obligatoire » / « Optionnelle » sur chaque expérience ajoutée, avec une courte explication éditoriale facultative pour justifier l'option. |
+| Front | Badge « Optionnelle » sur la carte et le détail ; bouton secondaire « Passer cette étape » ; confirmation sobre : « Cette expérience est optionnelle. Tu pourras y revenir plus tard. » |
+| Statistiques | Distinguer `réalisée`, `passée`, `en cours` et `non commencée`. Ne pas compter un saut comme un accomplissement de l'expérience. |
+| Garde-fou | Une expérience indispensable à la sécurité, au consentement ou à la compréhension d'une activité ne doit pas devenir optionnelle sans proposer une voie équivalente. |
+
+Pour le Monde 0, le **Sas d'entrée** devient le premier cas recommandé d'expérience optionnelle. L'Atelier Point Zéro conserve sa fonction de rite de passage ; à terme, plusieurs expériences collectives équivalentes pourront satisfaire ce passage sans imposer un format ou une date uniques.
+
 ### F3 — Parcours obligatoire (tutoriel de Monde) ✅ IMPLÉMENTÉ (2026-07-14)
 
 Implémenté dans vibe.ze.game : colonne `mandatory` (bool, défaut false) sur journeys, switch dans le formulaire admin, gating au niveau du Monde (= communauté). Design retenu (question « un seul obligatoire ? ») : pas de contrainte d'unicité — un Monde se déverrouille quand TOUS ses parcours obligatoires sont accomplis (`Community#mandatory_completed_by?`), ce qui couvre 1 tutoriel ou plusieurs prérequis. « Accompli » = tous les challenges du parcours validés (`Journey#completed_by?`). Front : dans le catalogue, les parcours non-obligatoires d'un Monde verrouillé sont grisés 🔒 avec un message, le tutoriel porte un badge « À commencer » ; garde d'accès sur la vue parcours. Monde 0 marqué obligatoire. Effet front peu visible pour l'instant (Monde 0 = un seul parcours) — mécanique validée par test, pleinement utile dès que le Monde 1 aura plusieurs parcours (F4).
@@ -70,15 +91,31 @@ Implémenté dans vibe.ze.game : colonne `mandatory` (bool, défaut false) sur j
 
 ### F5 — Récit, Graines de Récit et mentors IA
 
-**Origine front** : remplace le feedback actuel. À la fin d'un parcours ou à des étapes-clés, le joueur fait le point avec un mentor IA (héros d'une bibliothèque de mentors) et produit un **Graine de Récit**. Les résonances des autres joueurs germent sur les Graines.
+**Origine front** : remplace le feedback actuel. À la fin d'un parcours ou à des étapes-clés, le joueur fait le point avec un mentor IA (héros d'une bibliothèque de mentors) et produit une **Graine de Récit**. Les résonances des autres joueurs germent sur les Graines.
 
 | Aspect | Impact |
 |---|---|
-| Modèle | `Mentor` (bibliothèque : nom, personnage, prompt/persona, visuel) ; `StorySeed` (auteur, parcours/étape source, contenu issu de la conversation, mentor, visibilité) ; résonances rattachées aux Graines (évolution de la messagerie actuelle ou nouvel objet) |
+| Modèle | `Mentor` (bibliothèque : nom, personnage, prompt/persona, visuel) ; `StorySeed` (auteur, parcours/étape source, contenu issu de la conversation, mentor, visibilité) ; destinataires explicites si la Graine est partagée avec des personnes choisies ; résonances rattachées aux Graines (évolution de la messagerie actuelle ou nouvel objet) |
 | Backoffice | Gestion de la bibliothèque de mentors ; configuration des déclencheurs (fin de parcours / étapes-clés d'un parcours long) |
 | IA | Conversation mentor = intégration LLM (nouveau composant technique — API, coûts, modération) ; le joueur valide/corrige la Graine produit (garde-fou : l'IA n'impose jamais le sens, cf. [relations-recits-collectifs.md](relations-recits-collectifs.md) §2) |
 | Existant | Un exemple de mentor existe dans le parcours Monde 0 actuel de vibe.ze.game — à documenter comme référence |
-| Lien vision | Concrétise le "récit-fresque" ([relations-recits-collectifs.md](relations-recits-collectifs.md)) : Grain ≈ bloc narratif |
+| Lien vision | Concrétise le "récit-fresque" ([relations-recits-collectifs.md](relations-recits-collectifs.md)) : Graine ≈ bloc narratif |
+
+#### Visibilité choisie Graine par Graine
+
+<!-- Ajout Codex - 2026-07-24. Décision Boris : le joueur choisit à qui il partage chaque Graine de Récit. -->
+
+La création d'une Graine et son partage sont deux actes distincts. **Une Graine privée satisfait le prérequis de fin de chapitre** : le joueur n'a jamais à rendre public un récit intime pour progresser.
+
+Le joueur choisit, pour chaque Graine :
+
+- **Moi uniquement** — choix par défaut ;
+- **une ou plusieurs personnes choisies** ;
+- **mon Cercle** ;
+- **une communauté choisie** ;
+- **public**, avec confirmation explicite et possibilité de produire une version publique distincte ou anonymisée.
+
+Avant le partage, il peut préciser le type de Résonance souhaité : **être seulement écouté**, recevoir des **questions**, demander un **miroir**, chercher une **mise en relation** ou ouvrir une **proposition d'action**. La visibilité reste modifiable et révocable ; sa réduction coupe les nouveaux accès sans effacer silencieusement les Résonances déjà reçues. Les destinataires ne peuvent résonner que tant qu'ils ont accès à la Graine. Aucun like, classement ou partage par défaut n'est ajouté.
 
 ### F6 — Oméga (Cosmo Coin Oméga)
 

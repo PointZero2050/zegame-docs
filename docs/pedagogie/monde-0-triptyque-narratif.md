@@ -203,6 +203,34 @@ Les dispositifs réels du Point Zéro doivent apparaître dans le récit avec hu
 
 Ces éléments doivent avoir une histoire, des réussites, des ratés et des effets inattendus. Le pixel game peut avoir été accusé de manipuler la réalité avant de contribuer à la sauver ; la Monnaie Oméga peut susciter une bulle spéculative que personne n'avait commandée ; un Cercle peut devenir légendaire après avoir commencé dans une salle municipale dont le vidéoprojecteur refusait toute transcendance.
 
+## 7bis. Fil rouge pédagogique du parcours Monde 0
+
+> Ajout Codex - 2026-07-24. Architecture validée par Boris après relecture du parcours déployé. Le Monde 0 fait **pressentir** la grammaire fractale ; le Monde 1 apprend à la nommer et à l'utiliser.
+
+Le parcours articule trois mouvements :
+
+| Chapitre | Mouvement | Fonction | Sortie narrative |
+|---|---|---|---|
+| **Franchir le seuil — Je pressens** | Entrer dans le Jeu → Une drôle d'époque → Avant le Zéro → intégration avec le mentor | Faire vivre le Moteur, les sept Puissances, les polarités Ombre/Lumière/Point Zéro et un premier Voyage du héros sans commencer par un cours | **Graine de l'Appel** : ce qui se fissure en moi et ce qui m'appelle |
+| **Reconnaître la constellation — Je résonne** | Enquête dans l'écosystème réel → choix de ressources → première mise en relation → intégration | Faire découvrir que des pensées, pratiques, Chrysalides, experts et événements portent déjà des fragments du futur aperçu dans la fiction | **Graine de relation** : ce que je reconnais dans le monde qui cherche à naître |
+| **Prendre place — Je contribue** | Conseil Oméga → découverte des formats → passage collectif → intégration finale | Revenir du futur avec un cap, choisir une manière de contribuer et comprendre ce que l'Oméga reconnaît | **Graine de passage** : ce que je choisis de rendre possible maintenant |
+
+Après chaque chapitre, une révélation méta très courte nomme ce que le joueur vient de vivre sans lui demander encore de maîtriser le référentiel. La restitution finale prend la forme d'une **Carte du Seuil** : Appel, premier miroir du Moteur, devenirs explorés, récit ou croyance interrogé, tension entre besoin individuel et besoin du système, Résonances choisies, contribution envisagée et Graine finale. Le Monde 1 reprend cette carte pour enseigner explicitement la grammaire.
+
+### Partage des Graines et Résonances
+
+Créer une Graine suffit à accomplir l'étape narrative, même si elle reste privée. Pour chaque Graine, le joueur choisit séparément de la garder pour lui, de la partager avec une ou plusieurs personnes, avec son Cercle, avec une communauté ou publiquement. Il peut aussi indiquer la Résonance souhaitée : écoute, questions, miroir, mise en relation ou proposition d'action. Aucun partage public n'est exigé pour progresser.
+
+### Expériences exigeantes et droit de passer
+
+Le parcours conserve une colonne vertébrale obligatoire, mais une expérience exigeante en temps, en disponibilité ou en exposition peut être déclarée **optionnelle** dans ce parcours. Lorsqu'il l'atteint, le joueur peut choisir « Passer cette étape », poursuivre sans pénalité et y revenir plus tard. Le saut n'est ni une validation ni une source d'Oméga.
+
+Dans la première révision du Monde 0 :
+
+- **Le Sas d'entrée** devient optionnel ;
+- la publication d'un signe de reconnaissance sur LinkedIn devient une possibilité parmi d'autres formes de mise en relation, jamais une obligation d'exposition publique ;
+- l'Atelier Point Zéro conserve sa fonction de rite de passage, avec pour cible ultérieure plusieurs modalités collectives équivalentes afin de ne pas imposer un format, un lieu ou une date uniques.
+
 ## 8. Continuité visuelle et tonale
 
 Les trois blocs partagent la grammaire néoarchaïque mais font évoluer son rapport au réel :
