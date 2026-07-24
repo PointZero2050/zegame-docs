@@ -4,7 +4,7 @@
 
 Ce document est le registre d'analyse d'impact : chaque nouvelle page ou fonctionnalité front y est modélisée avec ses impacts sur le backoffice, les modèles de données et la cohérence d'ensemble. **Règle de travail : aucune page ne passe en implémentation sans sa ligne d'analyse ici.** Claude et Codex le tiennent à jour ; les arbitrages restent à Boris.
 
-Contexte : ces impacts visent la **future application dédiée Point Zéro** (décision du 2026-07-12, cf. [accueil-point-zero.md](accueil-point-zero.md) §13). La question de ce qui est partagé avec ze.game (modèles, gems, base, comptes) reste ouverte.
+Contexte : ces impacts visent l'**application dédiée Point Zéro** (décision du 2026-07-12, cf. [accueil-point-zero.md](accueil-point-zero.md) §13). Depuis le 2026-07-24, sa trajectoire Festival est cadrée dans [application-festival-2026.md](application-festival-2026.md) : code issu de l'existant, base séparée et aucune dépendance d'exécution aux gems privées. Les modalités précises de migration des comptes restent à arbitrer.
 
 ## 1. Registre des impacts identifiés
 
@@ -249,19 +249,19 @@ Ordre suggéré : **F9** (inscription et billet, à éprouver en premier) → **
 
 ## 3. Décisions transverses (Boris, 2026-07-12)
 
-1. **Programme V1 (révisé 2026-07-14) : tout se construit d'abord DANS vibe.ze.game.** Objectif : un proto fonctionnel à montrer au cercle cœur du Point Zéro et à Mathieu avant de lancer l'appli autonome. La décision d'appli dédiée (BDD séparée, stores, SSO, « powered by ze.game ») reste actée mais son exécution est différée après cette validation.
+1. **Programme Festival révisé le 2026-07-24 : validation produit et autonomie avancent en parallèle.** `vibe.ze.game` reste le bac à sable où les parcours sont éprouvés, mais l'extraction vers l'application autonome commence avant la fin de toutes les itérations produit. Le précédent report de cette extraction après validation complète est remplacé par [le cadrage Festival](application-festival-2026.md). La branche `pointzero` reste une référence déployable ; une branche d'autonomie distincte portera le retrait progressif des gems privées.
 2. **Implémentation démarrée dans vibe.ze.game (2026-07-14).** Layout Point Zéro en place (logo, chip Ω temps réel, nav Accueil/Marelle/Cercle/Ressources/Profil — Cercle et Ressources désactivés) + accueil orchestrateur V1 (états : seuil nouveau joueur avec news Festival / Monde 0 en cours avec prochaine Action, progression, lemniscate Ω). Particularités techniques : les assets de prod sont buildés hors serveur (Capistrano copy public/assets) → les ajouts PZ sont servis en statique depuis public/pz/ (CSS pur, fonts, logos) sans toucher à la chaîne de build. Versioning : git local dans ~/zegame/current (branche pointzero) — ATTENTION, un cap deploy de Mathieu écraserait le dossier : à coordonner avec lui.
 3. **Bac à sable réinitialisé (2026-07-14).** vibe.ze.game est une instance sandbox séparée de la préprod — aucune précaution multi-clients nécessaire. Contenu réduit au seul parcours « Point Zéro - Monde 0 » (12 Actions, 13 inscrits). **11 communautés « Point Zéro - Monde N » créées (N = 0 à 10)** — ce qui tranche la question ouverte de la numérotation : 11 positions. Monde 0 = communauté default + joinable ; les membres d'une communauté Monde = les joueurs entrés dans ce Monde. Communauté « Cercle pédagogique PZ » conservée (facilitateurs). Tous les utilisateurs conservés. Sauvegarde : ~/backup-avant-reset-pz-*.sql sur le serveur.
 3. **Charte graphique actée** : base violet identique à ze.game ; titres Roboto Slab, texte Poppins ; logos dans Dropbox/Vibe Coding/Ressources Point Zero/Logos (spirale PZ + Cosmo Coin infini). DA appliquée au proto (v3.0, étape 4 du workflow).
-4. **Base de données séparée (différé).** La nouvelle appli Point Zéro ne partage pas la BDD de ze.game. Nouveau compte sur les stores (Apple/Google) dédié au Point Zéro. Mention « powered by ze.game » dans l'appli, et **SSO** entre les deux plateformes (chantier technique à cadrer : ze.game comme fournisseur d'identité ? OIDC ?).
+4. **Base de données séparée (confirmé le 2026-07-24).** La nouvelle appli Point Zéro ne partage pas la BDD de ze.game. Pour le Festival, le transfert est un import contrôlé et rejouable, sans synchronisation bidirectionnelle permanente. Nouveau compte sur les stores (Apple/Google) dédié au Point Zéro et mention « powered by ze.game » dans l'appli. Le **SSO** reste un chantier à cadrer et n'entre dans le chemin critique que s'il est confirmé indispensable.
 5. **Une seule monnaie : l'Oméga (révisé 2026-07-13).** Le jeu en réalité alternée (monde-miroir) n'apparaît pas à ce stade du produit : toute mention au mana est éliminée de l'interface et des chantiers F1-F13. Les docs de vision monde-miroir restent un horizon non planifié.
 6. **7 puissances : référentiel existant de l'app.** Les compétences actuelles au format « PUISSANCE : ASPECT » avec framework « Point Zéro - Puissance - Lumière/Ombre » servent de base — pas de nouvelle couche de données pour la V1. Approfondissement théorique dans [sept-puissances.md](sept-puissances.md).
 
 ## 4. Questions ouvertes restantes
 
-1. Architecture SSO : protocole, sens de la fédération (ze.game IdP ?), partage ou non des comptes existants.
+1. Le SSO est-il indispensable au Festival ? Si oui : protocole, sens de la fédération (ze.game IdP ?) et rapprochement des comptes existants.
 2. Compteurs temps réel du Festival : SSE existant ou solution dédiée ?
-3. Si BDD séparée : comment le Monde 0 actuel (données dans vibe.ze.game) migre-t-il vers la nouvelle appli ?
+3. Quel sous-ensemble du Monde 0 actuel (comptes, contenus, progression) est importé dans la base séparée, et quels contrôles valident cette migration ?
 4. Quel mécanisme WordPress porte le contexte du compte applicatif jusqu'au billet : métadonnée de commande, champ participant dédié ou jeton de rattachement créé après paiement ?
 5. Quelle source fait foi pour les capacités : stock global de billets WordPress, réservations d'expériences dans l'appli, ou deux niveaux distincts ?
 6. Combien d'événements payants par an justifieraient le remplacement de WooCommerce par une billetterie Stripe native ?

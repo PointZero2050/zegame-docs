@@ -6,6 +6,10 @@ Cette section rassemble la vision idéale de ze.game, issue d'un brainstorming e
 
 Pour l'état réel actuel de l'application, voir [../architecture.md](../architecture.md) et [../design.md](../design.md).
 
+## Décision opérationnelle en vigueur
+
+Le cadrage [application-festival-2026.md](application-festival-2026.md), validé le 2026-07-24, fixe la trajectoire de livraison de l'application Point Zéro autonome pour le Festival du 1er octobre 2026. Contrairement aux autres documents de cette section, il constitue une décision opérationnelle et prévaut sur les recommandations antérieures qu'il identifie comme remplacées.
+
 ## Ordre de lecture recommandé
 
 1. **[marelle-mondes.md](marelle-mondes.md)** — Le document fondateur. Traduit la Marelle Oméga (progression par mondes 0 à 10, cercles de croissance, sécurité ontologique) issue du livre source en hypothèses fonctionnelles pour ze.game. Pose la stratégie d'adoption incrémentale.
@@ -49,6 +53,7 @@ Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagog
 ## Ce qui manque encore
 
 - **Priorisation inter-documents** : chaque note propose sa propre séquence interne, mais rien n'arbitre l'ordre entre la messagerie, la ressourcerie, la marketplace et le moteur de validation.
+- **Application Festival : cadrage opérationnel validé le 2026-07-24** — application Rails autonome, base séparée, retrait progressif des gems privées et gel fonctionnel cible au 15 septembre ; voir [application-festival-2026.md](application-festival-2026.md).
 - **Prototype accueil : cadrage validé le 2026-07-12** (ton mixte, vocabulaire hybride, Festival 1er octobre confirmé, et décision structurante : future appli dédiée Point Zéro séparée de ze.game — voir §13 de [accueil-point-zero.md](accueil-point-zero.md)). Wireframes en cours dans le repo zegame-prototypes.
 - **Revue légale/éthique dédiée** : plusieurs mécaniques envisagées (quatrième mur via caméra/géolocalisation/notifications, récits personnels sensibles, vocabulaire thérapeutique/initiatique, public potentiellement mineur) dépassent le cadre d'une revue produit ou design classique.
 - ~~Clarification de la numérotation des mondes~~ **Tranché (2026-07-14) : 11 positions, Mondes 0 à 10** — matérialisé par les 11 communautés du bac à sable.

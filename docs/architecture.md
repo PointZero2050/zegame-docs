@@ -150,7 +150,13 @@ La logique métier réelle (`gain_points`, `set_validated_at`, `send_data_to_lti
 
 `SseController`, `UploadedFilesController`, contrôleurs de deep links Hotwire Native (iOS/Android), `MissionControlAdminController`, upload d'images (`SquareImageUploader`), email transactionnel (`CustomDeviseMailer`/`SendMyMailModule`), déploiement (tâches Capistrano `mathieu_core_deploy.rb`).
 
-### Recommandation
+### Décision opérationnelle du 2026-07-24
+
+Pour le Festival du 1er octobre 2026, Point Zéro doit devenir une application Rails autonome, sans dépendance d'exécution aux gems privées `mathieu_core` et `mathieu_core_messaging`, avec une base séparée. La stratégie ne consiste pas à réécrire le domaine : elle part de la branche `pointzero`, caractérise les comportements utiles par des tests, puis remplace uniquement l'infrastructure effectivement utilisée. Le cadrage canonique, le calendrier et les critères de bascule sont décrits dans [vision/application-festival-2026.md](vision/application-festival-2026.md).
+
+Cette décision remplace la recommandation historique ci-dessous pour la trajectoire Festival.
+
+### Recommandation historique (2026-07-12)
 
 Ne pas repartir sur une nouvelle base applicative. Le domaine métier (Journey/Challenge/JourneysUser/ChallengesUser/Ability) est déjà propre et applicatif — le réécrire ne l'améliorerait pas. Ce que fournit la gem est de l'infrastructure qui fonctionne (CRUD, filtres, composants de vue, JS, upload, mail, déploiement) ; la reconstruire coûterait des mois pour zéro gain de domaine.
 
