@@ -4,6 +4,8 @@
 >
 > **Décision immédiate** : améliorer les fiches actuelles avec une carte-couverture mobile-first réutilisable.
 >
+> **Extensions validées le 2026-07-25** : une expérience fondée sur une vidéo adopte une variante vidéo-first ; la zone d'action indique la prochaine action réelle du joueur plutôt qu'un bouton générique de validation. Ces décisions préparent l'UX sans commander un moteur générique de workflows.
+>
 > **Horizon validé, non à implémenter sans cadrage dédié** : ouvrir progressivement un mode Freeride à partir du Monde 2, sous forme de petites mains de cartes explicables et contextualisées.
 
 ## 1. Problème constaté
@@ -66,6 +68,39 @@ Voir les détails ↓
 ```
 
 La révélation « Ton premier super-pouvoir est ton récit » intervient ensuite dans l'expérience ou sa restitution ; elle ne remplace pas nécessairement l'accroche interrogative.
+
+### Variante vidéo-first
+
+Lorsqu'une vidéo porte l'entrée narrative ou le contenu principal, la couverture devient une **affiche vidéo**, pas une fiche contenant un lecteur secondaire :
+
+- la scène d'image sert de poster 16:9 ;
+- un bouton de lecture central et le CTA `Regarder… · n min` rendent le média immédiatement identifiable ;
+- la durée distingue vidéo et expérience complète ;
+- aucun son ni contenu essentiel ne démarre automatiquement ;
+- la vidéo s'ouvre dans un mode immersion sur la même URL ;
+- la fin du film propose directement la prochaine action de l'expérience, sans retour à la fiche ni second bouton `Commencer`.
+
+Exemple :
+
+```text
+Le Point Zéro : entrer dans le Jeu
+
+Et si la crise du monde était aussi une crise de nos récits ?
+
+Vidéo 5 min · Expérience complète 12 min · 6 Ω
+
+[ Regarder le prologue · 5 min ]
+```
+
+Pendant le visionnage :
+
+- le lecteur occupe l'espace principal, en largeur complète sur mobile ;
+- le reste de l'interface s'efface sans rompre la navigation ;
+- sous-titres, transcription, clavier et lecteurs d'écran restent pris en charge ;
+- la position de lecture peut être mémorisée pour afficher `Reprendre à 03:12` ;
+- la fin du lecteur est éditorialisée : elle ouvre l'action suivante et ne montre aucune recommandation vidéo étrangère.
+
+La vidéo peut être accompagnée d'une synthèse courte et d'une transcription. Cette trace écrite sert l'accessibilité, la mémorisation et le retour ultérieur ; elle n'est pas un doublon obligatoire à lire.
 
 ## 3. Comportement responsive
 
@@ -181,6 +216,74 @@ Une même expérience peut être obligatoire dans un parcours, libre dans le cat
 | Freeride | Prendre ce passage | Pas maintenant |
 | Expérience programmée | Voir le rendez-vous | Modifier la programmation |
 | Prérequis manquant | Préparer ce passage | Comprendre les conditions |
+
+### Le CTA décrit la prochaine action
+
+Le CTA principal ne doit pas être figé autour de `Commencer` et `Valider`. Il décrit l'action concrète immédiatement disponible et évolue avec la traversée :
+
+| État | Exemple de CTA | Indication |
+|---|---|---|
+| Non commencé | `Discuter avec le mentor` | Étape 1 sur 2 · Explorer |
+| En cours | `Reprendre la conversation` | Conversation en cours |
+| Trace prête | `Produire ma Graine de Récit` | Étape 2 sur 2 · Créer |
+| Soumission requise | `Envoyer au facilitateur` | Dernière étape |
+| En attente | `Voir ma Graine` | En attente de validation |
+| Accomplie | `Voir ma Graine` | 6 Ω obtenus |
+
+L'expression `Étape n sur n` décrit la progression dans l'expérience. Le mot `validation` est réservé au moment où une confirmation déclarative, système ou humaine est réellement attendue.
+
+### Séparer action, preuve, validation et récompense
+
+Une expérience possède quatre dimensions distinctes :
+
+| Dimension | Question |
+|---|---|
+| Parcours d'action | Que doit faire le joueur ? |
+| Preuve de traversée | Quelle trace montre que l'expérience a eu lieu ? |
+| Autorité de validation | Qui ou quoi confirme l'achèvement ? |
+| Récompense | Quand les Oméga sont-ils attribués ? |
+
+Trois autorités de validation sont distinguées :
+
+1. **déclarative** — le joueur confirme une action que le système ne peut raisonnablement observer ;
+2. **système** — une trace vérifiable existe, par exemple une partie terminée, une Graine créée ou un questionnaire envoyé ;
+3. **facilitateur** — une présence, une pratique collective ou une production à enjeu exige une confirmation humaine.
+
+Une IA peut accompagner la production d'une Graine. Le système peut vérifier que cette Graine existe. Ni l'un ni l'autre ne doivent en déduire automatiquement sa qualité, sa profondeur ou un niveau de conscience.
+
+Exemples :
+
+```text
+Regarder le prologue
+    → jouer au Coupable idéal
+    → obtenir la Carte narrative
+    → validation système et attribution des Ω
+
+Préparer l'Atelier
+    → participer à l'Atelier
+    → validation par le facilitateur
+    → attribution des Ω
+```
+
+### Trajectoire technique proportionnée
+
+La carte-couverture prépare dès maintenant une zone `prochaine action` capable d'afficher :
+
+- libellé contextualisé ;
+- `Étape n sur n` ;
+- état disponible, en cours, en attente ou terminé ;
+- action de reprise différente de l'action initiale ;
+- éventuelle action secondaire.
+
+La première version peut configurer ces éléments expérience par expérience et conserver le moteur de validation existant.
+
+Dans un second temps, quelques expériences pilotes peuvent dériver leur état depuis des traces métier déjà présentes : conversation commencée, Graine créée, session terminée, Carte conservée ou demande de validation envoyée. Un résolveur de présentation peut traduire ces traces en :
+
+`not_started → in_progress → evidence_ready → submitted → validated`
+
+Ce résolveur ne doit pas attribuer lui-même les Oméga. La validation finale reste idempotente et passe par le mécanisme métier prévu.
+
+Un modèle générique d'étapes, conditions et branchements ne sera envisagé qu'après observation de plusieurs expériences réellement répétitives. Il n'appartient pas au lot actuel.
 
 `Passer cette étape` et `Pas maintenant` ne sont pas synonymes :
 
@@ -365,6 +468,15 @@ Chaque expérience devra progressivement exposer :
 - illustration et mode d'affichage ;
 - raisons éditoriales candidates de recommandation.
 
+Pour les expériences multiétapes, préparer également sans présumer du schéma Rails :
+
+- libellé de l'action initiale ;
+- libellé de reprise ;
+- progression éditoriale `Étape n sur n` ;
+- type de trace attendue ;
+- autorité de validation ;
+- action disponible après accomplissement.
+
 Les noms de colonnes ou le besoin d'une migration doivent être vérifiés dans l'application avant implémentation. Cette liste décrit un contrat éditorial cible, pas encore un schéma Rails.
 
 ## 15. Trajectoire produit
@@ -376,9 +488,11 @@ Les noms de colonnes ou le besoin d'une migration doivent être vérifiés dans 
 3. ajouter ou dériver une accroche courte ;
 4. créer la scène d'image adaptable ;
 5. déplacer les informations techniques sous `Voir les détails` ;
-6. clarifier statut et validation ;
-7. rendre les actions dépendantes du contexte ;
-8. décliner une version compacte sur la page du parcours.
+6. créer la variante vidéo-first et sa sortie directe vers l'action suivante ;
+7. remplacer le CTA générique par une zone `prochaine action` contextualisable ;
+8. clarifier séparément progression, trace, validation et attribution des Oméga ;
+9. rendre les actions dépendantes du contexte ;
+10. décliner une version compacte sur la page du parcours.
 
 ### Lot B — préparation du Monde 1
 
@@ -412,6 +526,7 @@ La validation du principe ne commande pas encore :
 - le moteur adaptatif ;
 - l'apprentissage automatique à partir des refus ;
 - la génération d'expériences ;
+- le moteur générique d'étapes, conditions et branchements ;
 - la refonte du modèle de données.
 
-Le chantier immédiatement autorisé par cette décision est la **carte-couverture réutilisable et la réorganisation progressive de la fiche actuelle**. Toute implémentation du Freeride doit faire l'objet d'un lot séparé.
+Le chantier immédiatement autorisé par cette décision est la **carte-couverture réutilisable, sa variante vidéo-first, la zone de prochaine action et la réorganisation progressive de la fiche actuelle**. Les libellés et états peuvent d'abord être spécifiques aux expériences pilotes. Toute généralisation du workflow ou implémentation du Freeride doit faire l'objet d'un lot séparé et, pour les zones sensibles, d'une analyse d'impact.

@@ -57,40 +57,107 @@ Chaque vidéo accomplit ensuite un déplacement :
 | 2 — Je résonne | Du récit solitaire à un écosystème de récits, de ressources et de relations |
 | 3 — Je contribue | De la circulation comprise à la circulation incarnée dans un rite et une contribution |
 
-## 4. Vidéo teaser — note d'adaptation
+## 4. Prologue vidéo — de la crise du monde à la crise des récits
 
 ### Décision de réalisation
 
-Le montage et le texte existants sont conservés. La chaîne logique est ajoutée sous la forme d'une **coda de 60 à 90 secondes**, après la conclusion actuelle et avant l'appel à entrer dans le parcours.
+> Révision validée par Boris le 2026-07-25 : la transition vers **Le coupable idéal** devient un véritable seuil pédagogique vidéo-first. Elle ne se limite plus à une coda allusive.
 
-Si le remontage de la vidéo déjà produite est disproportionné, cette coda peut devenir :
+Le format privilégié est un **prologue audiovisuel continu de quatre à six minutes** :
 
-- une capsule vidéo immédiatement enchaînée ;
-- ou une séquence de quatre cartons animés avec voix off.
+- soit le remontage de la vidéo existante avec la nouvelle séquence ;
+- soit deux chapitres lus sans rupture dans le même lecteur : `Le monde en crise`, puis `La crise de nos récits`.
 
-Elle ne doit pas énumérer les polarités, les amplitudes ou les archétypes. Elle donne seulement la clé qui permettra de comprendre les expériences suivantes.
+Le joueur doit percevoir un seul objet narratif, pas deux vidéos successives ni une vidéothèque. Le prologue ne détaille pas encore les polarités, les amplitudes ou les archétypes. Il expose l'hypothèse Point Zéro, puis le mini-jeu la transforme en expérience personnelle.
 
-### Texte proposé pour la coda
+La séquence accomplit sept mouvements :
 
-> Quand les crises s'accumulent, nous cherchons un coupable.
->
-> L'argent. Le capitalisme. L'individualisme. Le patriarcat. La technologie. L'État. La religion. La nature humaine — cette vieille récidiviste.
->
-> Chacun de ces récits touche peut-être une part du réel. Le problème commence lorsqu'une part prétend devenir le tout. Lorsque son contraire ne peut plus rien nous apprendre et doit seulement être vaincu.
->
-> Le Point Zéro part d'une autre hypothèse : la conscience n'est pas un territoire sans contradictions. C'est un Moteur constitué de polarités fondamentales.
->
-> Monter en conscience ne consiste pas à choisir une fois pour toutes le bon côté. Cela consiste à apprendre le passage.
->
-> Ton premier super-pouvoir est ton propre récit. Il peut mettre le monde en mouvement. Mais s'il refuse ses contradictions, ses angles morts et ses polarités, il risque surtout de remettre le passé en circulation avec un nouveau logo.
->
-> Six Puissances organisent ces mouvements. Une septième apparaît lorsqu'elles commencent à circuler ensemble, au service de quelque chose qui nous dépasse.
->
-> La Marelle est le terrain de cet apprentissage. L'Oméga en garde la mémoire.
->
-> Avant de mettre le Moteur en marche, une question demeure : qui, selon toi, a cassé le monde ?
+1. les crises contemporaines forment un système sans précédent par son ampleur et ses interdépendances ;
+2. sous les crises visibles se trouve aussi une inadéquation croissante entre le territoire et nos cartes mentales collectives ;
+3. les civilisations peuvent perdre leur capacité à adapter leurs récits, leurs institutions et leurs réponses au réel ;
+4. les récits nouveaux naissent souvent en compensation des anciens, libèrent un pôle étouffé, puis risquent de l'absolutiser et de créer un déséquilibre inverse ;
+5. les Chrysalides actuelles ne sont pas immunisées contre ce mouvement du pendule ;
+6. le Point Zéro commence par l'accueil des polarités en chacune et chacun, sans confusion avec le centrisme, l'inaction ou l'équivalence morale ;
+7. la grammaire de Conscience aide à reconnaître les puissances à l'œuvre et à retrouver la capacité de choisir le passage juste.
 
-La dernière question lance directement le mini-jeu **Le coupable idéal**.
+Cette lecture reste présentée comme une **hypothèse Point Zéro proposée à l'expérience**, pas comme une loi historique monocausale — ce qui reproduirait exactement le mécanisme que le jeu cherche à rendre visible.
+
+### Trame éditoriale
+
+#### Tableau 1 — Le territoire a changé
+
+> Tu viens de regarder un récit sur l'état du monde. Maintenant, regardons la mécanique qui se cache derrière.
+>
+> Nous ne traversons pas une crise de plus. Les crises écologiques, sociales, démocratiques, économiques et technologiques se renforcent mutuellement.
+>
+> Mais sous ces secousses visibles, une crise plus discrète travaille nos sociétés : **nos cartes mentales ont été dessinées pour un territoire qui n'existe plus.**
+
+#### Tableau 2 — Quand le récit ne sait plus apprendre
+
+> Une civilisation ne tient pas seulement par ses lois, ses ressources ou ses institutions. Elle tient aussi par des croyances partagées : ce qui paraît normal, désirable, possible ou impossible.
+>
+> Le Point Zéro propose de regarder un facteur parmi d'autres dans les effondrements du passé : lorsqu'une civilisation ne parvient plus à transformer ses récits assez vite, elle continue de répondre au présent avec les solutions d'hier.
+>
+> Et le réel finit généralement par refuser le scénario.
+
+#### Tableau 3 — Le mouvement du pendule
+
+> Les nouveaux récits naissent souvent contre les anciens.
+>
+> Ils libèrent ce qui avait été étouffé. Ils rendent visible une injustice, une limite ou un besoin oublié. Mais lorsqu'ils deviennent à leur tour l'unique explication du monde, ils peuvent absolutiser le pôle qu'ils défendent.
+>
+> **La compensation corrige un déséquilibre — puis risque d'en fabriquer un nouveau.**
+>
+> Le décor change. Le pendule continue.
+
+Repère visuel :
+
+`récit dominant → angle mort → contre-récit libérateur → absolutisation → nouvel angle mort`
+
+#### Tableau 4 — Le risque des Chrysalides
+
+> Aujourd'hui, des collectifs, des pratiques, des lieux et des projets — les Chrysalides — portent déjà des fragments du monde qui cherche à naître.
+>
+> Mais leurs intentions ne les mettent pas à l'abri du pendule.
+>
+> Une alternative peut combattre la domination tout en recréant de l'exclusion. Défendre le vivant tout en refusant la complexité. Chercher le commun tout en étouffant les singularités.
+>
+> **Le monde nouveau peut reproduire l'ancien avec un vocabulaire plus frais et un logo biodégradable.**
+
+#### Tableau 5 — Ce que propose le Point Zéro
+
+> Le Point Zéro ne cherche donc pas le récit parfait qui remplacera tous les autres.
+>
+> Il commence au lieu le plus proche et le moins confortable : **en chacune et chacun de nous**.
+>
+> Accueillir les polarités ne signifie pas tout accepter, excuser la violence ou rester prudemment au milieu. Cela signifie reconnaître les puissances présentes dans chaque mouvement, voir leurs risques de capture et retrouver la capacité de choisir le passage juste.
+>
+> Le Point Zéro propose pour cela une **grammaire de Conscience** : une manière de lire nos croyances, nos récits et nos contradictions afin de ne plus être automatiquement possédés par leur dualité.
+>
+> Avant de découvrir cette grammaire, observons le récit qui se met spontanément en marche en toi.
+
+La dernière image se prolonge dans le lecteur par :
+
+> **Cette histoire parlait du monde.**
+> La suivante commence avec la manière dont tu te le racontes.
+>
+> Aucun récit n'explique tout. Mais lequel organise aujourd'hui ton regard ?
+
+CTA principal : `Voir comment mon récit cherche un coupable`.
+
+Le clic ouvre directement le contrat du mini-jeu, sans retour à la fiche ni second écran de lancement.
+
+### Trace écrite sous le lecteur
+
+La vidéo reste accompagnée d'une synthèse accessible intitulée `Les cinq idées à garder ouvertes` :
+
+1. nos crises forment un système ;
+2. nos croyances collectives ne correspondent plus entièrement au réel ;
+3. les contre-récits peuvent devenir les déséquilibres de demain ;
+4. les Chrysalides ne sont pas immunisées contre ce phénomène ;
+5. le Point Zéro propose une grammaire de circulation, pas un nouveau camp.
+
+La transcription complète est disponible séparément. La synthèse ne duplique pas le film : elle offre une trace mémorisable, citable et accessible.
 
 ## 5. Vidéo d'ouverture du chapitre 2
 
@@ -369,7 +436,21 @@ Actions :
 - `Ne rien conserver`
 - `Poursuivre vers Une drôle d'époque`
 
-### 7.10. Règles de restitution V1
+### 7.10. Débrief — nommer le premier mouvement Point Zéro
+
+Après les choix de conservation, le jeu explicite ce que le joueur vient de pratiquer :
+
+> Sans forcément le savoir, tu viens d'effectuer un premier mouvement du Point Zéro.
+>
+> Tu as identifié le récit qui organise ton regard. Tu as vérifié s'il expliquait une partie du réel ou prétendait devenir le tout. Tu as recherché la fonction de ce que tu combats. Tu as imaginé les dérives possibles de son contraire. Enfin, tu as nommé ce qui pourrait encore déplacer ta lecture.
+>
+> **La grammaire de Conscience commence ici : non pas lorsqu'un pôle disparaît, mais lorsque tu cesses d'être condamné à lui obéir ou à le combattre.**
+>
+> Ton récit reste une puissance. Le Point Zéro ne te demandera pas de l'abandonner, mais d'apprendre à le faire circuler.
+
+Ce débrief ne crée ni score de conscience ni validation idéologique. Il relie explicitement l'expérience vécue à la proposition générale du Point Zéro.
+
+### 7.11. Règles de restitution V1
 
 La V1 peut fonctionner sans IA :
 
@@ -383,7 +464,7 @@ La V1 peut fonctionner sans IA :
 
 Ces règles produisent du langage descriptif. Elles ne dérivent ni état `bloqué/intermédiaire/libre`, ni amplitude Ombre/Lumière, ni archétype.
 
-### 7.11. Données minimales
+### 7.12. Données minimales
 
 ```yaml
 narrative_circulation:

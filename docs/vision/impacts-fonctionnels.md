@@ -277,13 +277,21 @@ Document canonique : [Cartes-couvertures d'expérience et mode Freeride](cartes-
 | Aspect | Impact |
 |---|---|
 | Front fiche | Remplacer le bandeau à médaillon par une carte-couverture mobile-first : scène d'image, titre, accroche, format, durée, Oméga, statut contextuel et action principale |
+| Vidéo-first | Pour une expérience portée par une vidéo, transformer la couverture en affiche vidéo ; lecture immersive sur la même URL, reprise mémorisable, synthèse/transcription accessibles et sortie directe vers l'action suivante |
 | Responsive | Mobile plein écran utile ; affiche horizontale à largeur maximale sur grand écran ; image entière par défaut sur fond dérivé, mode plein cadre facultatif |
 | Détails | Conserver une URL canonique ; placer description, validation, Puissances, conditions et ressources sous l'ancre `#details` |
 | Page parcours | Décliner une version compacte du même composant sans supprimer chapitres, ordre ni progression |
 | Navigation | Actions et `Précédent` / `Suivant` dépendent du contexte d'ouverture ; ne pas coder la fiche comme exclusivement linéaire |
 | Statuts | Distinguer obligatoire, optionnelle, alternative, libre, recommandée et verrouillée ; obligatoire/optionnelle reste porté par `ChallengesJourney` |
+| Prochaine action | Le CTA décrit l'action concrète disponible (`Regarder`, `Discuter`, `Reprendre`, `Produire ma Graine`, `Envoyer au facilitateur`) et peut afficher `Étape n sur n` sans confondre progression et validation |
+| Contrat d'achèvement | Séparer parcours d'action, preuve de traversée, autorité de validation et attribution des Oméga ; autorités déclarative, système ou facilitateur |
+| Trajectoire technique | V1 configurable par expérience avec validation existante ; puis résolveur de présentation fondé sur les traces métier ; aucun moteur générique de workflow dans le lot actuel |
 | Backoffice | Préparer une accroche courte et des métadonnées éditoriales ; vérifier les champs existants avant toute migration |
 | Accessibilité | Un seul CTA principal, boutons équivalents aux gestes futurs, aucun texte essentiel incrusté dans l'image, respect du clavier et des lecteurs d'écran |
+
+Une IA peut accompagner une production, mais ne valide pas automatiquement sa qualité ni un niveau de conscience. Pour une Graine de Récit, le système peut reconnaître l'existence de la trace ; une éventuelle appréciation qualitative reste humaine et proportionnée à l'enjeu.
+
+Avant toute évolution du moteur de validation, produire une analyse d'impact sur `Challenge`, `ChallengesUser`, la progression linéaire, les expériences optionnelles, l'idempotence de l'attribution des Oméga, les callbacks de `mathieu_core` et la compatibilité des traversées déjà commencées.
 
 #### Horizon — Freeride à partir du Monde 2
 
