@@ -5,6 +5,7 @@
 ## 1. Décisions directrices
 
 - Le Monde 0 fait **pressentir** la grammaire fractale ; le Monde 1 commence à la nommer et à l'utiliser.
+- La chaîne `crises → transition civilisationnelle → polarisation des récits → récit personnel comme premier super-pouvoir → circulation dans le Moteur → Puissances → Marelle → Oméga` est introduite dès l'entrée. Un récit ne devient une puissance de transformation que s'il reste ouvert à ses propres polarités, aux Résonances et aux effets du réel. Sa traduction vidéo et interactive est spécifiée dans [le fil rouge des récits, des Puissances et de l'Oméga](monde-0-fil-rouge-puissances.md).
 - Le parcours reste linéaire et obligatoire à l'échelle du Monde.
 - **L'Atelier Point Zéro est le rite obligatoire du passage Monde 0 → Monde 1**, en présentiel comme en distanciel.
 - **Le Sas d'entrée est optionnel** : il approfondit la préparation, mais son absence ne bloque ni l'Atelier ni le passage.
@@ -43,10 +44,10 @@ Les révélations méta sont intégrées aux expériences de fin de chapitre. Il
 
 | # | Expérience et Ω actuels | Statut cible | Fonction dans la fractale | Validation cible | Révision à effectuer |
 |---|---|---|---|---|---|
-| 1 | **Le Point Zéro : entrer dans le Jeu** · 6 Ω | Obligatoire | Appel du Voyage du héros ; crise civilisationnelle ; première intuition Ombre/Lumière/Point Zéro | Vidéo vue, puis validation autonome explicite | Conserver le texte de la vidéo. Retirer l'obligation de partager. Présenter le parcours comme une traversée en trois mouvements. Déclencheur futur : accomplissement **Entrer dans le Jeu**. |
+| 1 | **Le Point Zéro : entrer dans le Jeu** · 6 Ω | Obligatoire | Appel du Voyage du héros ; crise civilisationnelle ; crise et polarisation des récits ; première intuition Ombre/Lumière/Point Zéro | Teaser puis mini-jeu **Le coupable idéal** terminés ; aucune réponse particulière n'est attendue | Conserver le montage et le texte existants ; ajouter une coda de 60 à 90 secondes qui donne la chaîne logique, puis lancer le mini-jeu. Retirer l'obligation de partager. Présenter le parcours comme une traversée en trois mouvements. Déclencheur futur : accomplissement **Entrer dans le Jeu**. Voir [spécification éditoriale et mécanisme](monde-0-fil-rouge-puissances.md). |
 | 2 | **Une drôle d'époque** · 3 Ω | Obligatoire | Premier miroir du Moteur ; six Puissances polaires ; besoins individuels et besoins du système vécus sans cours théorique | Validation automatique à la clôture du premier miroir | Remplacer les restes de l'ancien « mini-jeu des archétypes de besoin » et la consigne `FEEDBACKS` par le fonctionnement réel. Déclencheur futur : **Le Moteur s'éveille**. |
 | 3 | **Avant le Zéro** · 3 Ω | Obligatoire | Traversée mort/renaissance du Voyage du héros ; futurs et récits possibles ; Source et Néant en filigrane | Validation automatique au premier devenir atteint ; rejeu libre ensuite | Aligner durée et ressource sur le bloc réellement déployé. Retirer la consigne de partage. Une Graine à chaque fin peut rester facultative ; la Graine de chapitre vient à l'étape suivante. Déclencheurs futurs : **Un futur regardé en face** et secret **Les futurs sont pluriels**. |
-| 4 | **Et moi dans tout ça ?** · 9 Ω | Obligatoire | Intégration de l'Appel ; passage de l'expérience à un premier Germe de Récit | Conversation mentor → proposition éditable → **Graine de l'Appel** ; privée par défaut et suffisante | Remplacer « élément de récit partagé à la communauté » par une Graine validée par le joueur. Ajouter la révélation méta : « Tu viens de rencontrer ton Moteur. Il ne te définit pas : il te donne un premier endroit depuis lequel marcher. » |
+| 4 | **Et moi dans tout ça ?** · 9 Ω | Obligatoire | Intégration de l'Appel ; découverte du récit personnel comme premier super-pouvoir, à ouvrir par l'intégration de ses polarités | Conversation mentor → proposition éditable → **Graine de l'Appel** ; privée par défaut et suffisante | Remplacer « élément de récit partagé à la communauté » par une Graine validée par le joueur. Ajouter la révélation méta : « Tu viens de rencontrer ton Moteur. Il ne te définit pas : il te donne un premier endroit depuis lequel marcher. Ton récit est ton premier super-pouvoir. La suite t'apprendra à l'ouvrir à ses polarités pour qu'il ne répète pas simplement le passé. » |
 
 À la fin du chapitre, la Graine peut faire apparaître quatre éléments simples : **ce qui se fissure**, **ce qui appelle**, **une croyance interrogée**, **une tension entre mon besoin et celui du système**.
 
@@ -54,7 +55,7 @@ Les révélations méta sont intégrées aux expériences de fin de chapitre. Il
 
 | # | Expérience et Ω actuels | Statut cible | Fonction dans la fractale | Validation cible | Révision à effectuer |
 |---|---|---|---|---|---|
-| 5 | **L'écosystème Point Zéro** · 3 Ω | Obligatoire | Révéler la vocation de mise en synergie autour de la Marelle et de l'Oméga | Vidéo vue, puis validation autonome | Ne plus réduire l'écosystème au site, au Sas et à LinkedIn. Introduire les pensées, pratiques, Chrysalides/projets, experts, Cercles et événements comme des fragments qui peuvent entrer en résonance. |
+| 5 | **L'écosystème Point Zéro** · 3 Ω | Obligatoire | Révéler la vocation de mise en synergie autour de la Marelle et de l'Oméga ; passer du récit solitaire à un écosystème de récits | Vidéo vue, puis validation autonome | Remplacer la vidéo d'ouverture par **La constellation**. Ne plus réduire l'écosystème au site, au Sas et à LinkedIn. Introduire les pensées, pratiques, Chrysalides/projets, experts, Cercles et événements comme des fragments qui peuvent entrer en résonance. Script dans [le fil rouge des vidéos](monde-0-fil-rouge-puissances.md). |
 | 6 | **Le site du Point Zéro** · 9 Ω | Obligatoire, avec contenu refondu | Passer d'un questionnaire de connaissance à une enquête active dans la constellation | Repérer au moins deux ressources ou acteurs de natures différentes et expliciter le lien possible entre eux et l'Appel du joueur | Remplacer le contrôle de connaissances par une mini-cartographie choisie. Conserver le site comme terrain d'exploration, pas comme objet à réciter. Réduire ou confirmer la durée annoncée de 45 minutes. |
 | 7 | **Le signe de reconnaissance** · 6 Ω | Obligatoire **après refonte** ; optionnel tant que LinkedIn reste l'unique voie | Premier geste relationnel ; passage de l'observation à une interaction consentie | Choisir un geste : conserver une ressource, contacter une personne, demander une mise en relation, rejoindre un événement, partager à un destinataire choisi ou publier sur LinkedIn | Supprimer toute obligation d'exposition publique et le mot-clé imposé. Si la fiche n'est pas refondue immédiatement, la rendre optionnelle. Déclencheur futur possible : **Premier signe envoyé**. |
 | 8 | **Les choses se précisent** · 6 Ω | Obligatoire | Intégrer ce qui résonne dans l'écosystème et choisir une première relation possible | Conversation mentor → **Graine de relation** éditable ; privée par défaut ; choix séparé du partage et du type de Résonance | Remplacer le « bloc de récit » et `FEEDBACKS`. Ajouter la révélation méta : « Ce que tu pressens n'est pas seul. Des pensées, des pratiques et des personnes en portent déjà des fragments. » |
@@ -65,7 +66,7 @@ La Graine de relation ne demande pas « quelle organisation préfères-tu ? », 
 
 | # | Expérience et Ω actuels | Statut cible | Fonction dans la fractale | Validation cible | Révision à effectuer |
 |---|---|---|---|---|---|
-| 9 | **Le Conseil Oméga** · 3 Ω | Obligatoire | Six Puissances, récits de futurs, tension individu/système, arbitrage et cap ; première compréhension vécue de ce que l'Oméga cherche à reconnaître | Validation automatique à la signature finale | Conserver la structure déployée. Ajouter dans la fiche une checklist de validation lisible ; elle est actuellement vide. Relier explicitement l'engagement au « rendre possible », sans le transformer en Graine supplémentaire. |
+| 9 | **Le Conseil Oméga** · 3 Ω | Obligatoire | Six Puissances, récits de futurs, tension individu/système, arbitrage et cap ; première compréhension vécue de ce que l'Oméga cherche à reconnaître | Vidéo d'ouverture puis validation automatique à la signature finale | Faire précéder le Conseil par la vidéo **La chaise vide**, sans modifier ses 34 écrans. Ajouter dans la fiche une checklist de validation lisible ; elle est actuellement vide. Relier explicitement l'engagement au « rendre possible », sans le transformer en Graine supplémentaire. Script dans [le fil rouge des vidéos](monde-0-fil-rouge-puissances.md). |
 | 10 | **Découvrir les formats** · 3 Ω | Obligatoire | Retour du futur vers les formes de rencontre disponibles maintenant | Vidéo vue + identification du prochain passage concret | Remplacer `FEEDBACKS` par une validation autonome. Présenter le Sas comme approfondissement optionnel et l'Atelier comme rite de passage disponible en présentiel ou distanciel. |
 | 11 | **Le Sas d'entrée** · 12 Ω | **Optionnel** | Préparation relationnelle et clarification de l'intention avant le rite | Intention formulée + participation + questionnaire post-Sas ; 12 Ω seulement si réellement accompli | Décocher « Obligatoire dans ce parcours ». Note proposée : « Le Sas prépare l'Atelier et permet une première rencontre avec l'écosystème. Il est recommandé, mais tu peux poursuivre et y revenir plus tard. » |
 | 12 | **Vivre l'Atelier Point Zéro** · 24 Ω | **Obligatoire — rite de passage** | Expérience collective des Cadres, récits et postures ; passage Monde 0 → Monde 1 | Présence complète en présentiel ou distanciel, confirmée par un facilitateur ; questionnaire post-Atelier si nécessaire | Remplacer la validation autonome par une validation de présence. Afficher clairement « Rite de passage — requis pour ouvrir le Monde 1 ». Les deux modalités produisent le même accomplissement et les mêmes Ω. |
@@ -131,10 +132,12 @@ Une V1 textuelle et cumulative suffit. La composition visuelle, les Résonances 
 
 ### Lot B — expérience narrative
 
-1. transformer les trois fins de chapitre en Graines nommées ;
-2. ajouter les trois révélations méta ;
-3. remplacer le contrôle de connaissances du site par la mini-constellation ;
-4. produire la Carte du Seuil V1.
+1. ajouter la coda du teaser et intégrer le mini-jeu **Le coupable idéal** à l'expérience d'entrée ;
+2. remplacer les introductions des chapitres 2 et 3 par **La constellation** et **La chaise vide** ;
+3. transformer les trois fins de chapitre en Graines nommées ;
+4. ajouter les trois révélations méta ;
+5. remplacer le contrôle de connaissances du site par la mini-constellation ;
+6. produire la Carte du Seuil V1.
 
 ### Lot C — fonctionnalités complémentaires
 
@@ -143,4 +146,3 @@ Une V1 textuelle et cumulative suffit. La composition visuelle, les Résonances 
 3. sous-menu Mes Récits ;
 4. badges internes et animations d'obtention ;
 5. Contributions Oméga documentées, sans modifier encore le calcul V1.
-

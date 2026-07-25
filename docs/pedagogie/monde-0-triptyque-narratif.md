@@ -208,12 +208,14 @@ Ces éléments doivent avoir une histoire, des réussites, des ratés et des eff
 > Ajout Codex - 2026-07-24. Architecture validée par Boris après relecture du parcours déployé. Le Monde 0 fait **pressentir** la grammaire fractale ; le Monde 1 apprend à la nommer et à l'utiliser.
 >
 > La traduction expérience par expérience est tenue dans la [matrice de révision du parcours déployé](monde-0-matrice-revision.md).
+>
+> Le chaînage `crises → récits polarisés → Moteur → Puissances → Marelle → Oméga`, les trois vidéos d'ouverture et le mini-jeu d'entrée sont détaillés dans [le fil rouge des récits, des Puissances et de l'Oméga](monde-0-fil-rouge-puissances.md).
 
-Le parcours articule trois mouvements :
+Le parcours articule trois mouvements. Il installe dès le premier la proposition suivante : **le récit personnel est le premier super-pouvoir du joueur**, à condition de rester ouvert à ses propres polarités, aux Résonances et aux effets du réel ; un récit fermé risque de répéter le passé sous une forme nouvelle.
 
 | Chapitre | Mouvement | Fonction | Sortie narrative |
 |---|---|---|---|
-| **Franchir le seuil — Je pressens** | Entrer dans le Jeu → Une drôle d'époque → Avant le Zéro → intégration avec le mentor | Faire vivre le Moteur, les sept Puissances, les polarités Ombre/Lumière/Point Zéro et un premier Voyage du héros sans commencer par un cours | **Graine de l'Appel** : ce qui se fissure en moi et ce qui m'appelle |
+| **Franchir le seuil — Je pressens** | Teaser et `Le coupable idéal` → Une drôle d'époque → Avant le Zéro → intégration avec le mentor | Relier la crise des récits à la polarisation, puis faire vivre le Moteur, les sept Puissances, les polarités Ombre/Lumière/Point Zéro et un premier Voyage du héros sans commencer par un cours | **Graine de l'Appel** : ce qui se fissure en moi et ce qui m'appelle |
 | **Reconnaître la constellation — Je résonne** | Enquête dans l'écosystème réel → choix de ressources → première mise en relation → intégration | Faire découvrir que des pensées, pratiques, Chrysalides, experts et événements portent déjà des fragments du futur aperçu dans la fiction | **Graine de relation** : ce que je reconnais dans le monde qui cherche à naître |
 | **Prendre place — Je contribue** | Conseil Oméga → découverte des formats → passage collectif → intégration finale | Revenir du futur avec un cap, choisir une manière de contribuer et comprendre ce que l'Oméga reconnaît | **Graine de passage** : ce que je choisis de rendre possible maintenant |
 
