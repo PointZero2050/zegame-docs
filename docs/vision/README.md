@@ -48,6 +48,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 17. **[cartes-experiences-freeride.md](cartes-experiences-freeride.md)** — Architecture UX validée des fiches d'expérience : carte-couverture mobile-first, scène d'image robuste, détails progressifs, actions contextuelles et horizon Freeride à partir du Monde 2. Distingue explicitement l'amélioration immédiate du futur deck adaptatif.
 
+18. **[page-parcours-carte-du-voyage.md](page-parcours-carte-du-voyage.md)** — Spécification validée de la page ordonnée d'un parcours : carte du voyage, prochaine action au premier écran, chapitres narratifs, progression requise distincte des Oméga, cartes compactes et rite final. Inclut lots et critères d'acceptation responsive.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.

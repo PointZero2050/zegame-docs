@@ -270,7 +270,12 @@ Implémenté dans vibe.ze.game par Claude, d'après [11_evaluation_initiale_mote
 
 <!-- Ajout Codex - 2026-07-25. Principe validé par Boris. La carte-couverture relève de l'amélioration actuelle ; le deck Freeride reste un lot ultérieur à cadrer séparément. -->
 
-Document canonique : [Cartes-couvertures d'expérience et mode Freeride](cartes-experiences-freeride.md).
+Documents canoniques :
+
+- [Cartes-couvertures d'expérience et mode Freeride](cartes-experiences-freeride.md) pour la fiche
+  d'expérience et l'horizon du deck ;
+- [Page parcours — la carte du voyage](page-parcours-carte-du-voyage.md) pour la vue ordonnée d'un
+  parcours.
 
 #### Lot actuel — fiche et composants
 
@@ -292,6 +297,29 @@ Document canonique : [Cartes-couvertures d'expérience et mode Freeride](cartes-
 Une IA peut accompagner une production, mais ne valide pas automatiquement sa qualité ni un niveau de conscience. Pour une Graine de Récit, le système peut reconnaître l'existence de la trace ; une éventuelle appréciation qualitative reste humaine et proportionnée à l'enjeu.
 
 Avant toute évolution du moteur de validation, produire une analyse d'impact sur `Challenge`, `ChallengesUser`, la progression linéaire, les expériences optionnelles, l'idempotence de l'attribution des Oméga, les callbacks de `mathieu_core` et la compatibilité des traversées déjà commencées.
+
+#### Sous-lot validé — page parcours
+
+<!-- Ajout Codex - 2026-07-25. Décision Boris après audit de la page Monde 0 déployée. -->
+
+| Aspect | Impact |
+|---|---|
+| Rôle | La page devient la carte verticale du voyage ; elle ne devient ni catalogue ni deck |
+| Premier écran | Promesse courte, progression narrative, prochaine expérience accessible et CTA unique avant la description longue |
+| Chapitres | Afficher mouvements, fil rouge, état et progression ; chapitre actuel ouvert, accomplis et futurs repliables |
+| Cartes | Réutiliser la carte-couverture compacte ; retirer la répétition du mode de validation ; nommer les états |
+| Progression | Séparer étapes requises accomplies et Oméga gagnés/disponibles ; éviter le pourcentage composite |
+| Optionnel | Montrer `Détour facultatif` et `Passée pour l'instant` ; permettre la reprise sans fausse validation |
+| Rite | Sortir l'Atelier de la liste ordinaire et le présenter comme seuil requis vers le Monde 1 ; Sas facultatif |
+| Puissances | Déplacer la ventilation détaillée sous une restitution secondaire repliable |
+| Responsive | Aucun débordement horizontal ; CTA au-dessus de la navigation basse ; états et titres lisibles à 320–390 px |
+| Accessibilité | `h1` parcours, `h2` chapitres, `h3` expériences ; accordéons clavier ; états textuels et contrastes suffisants |
+| Modèle | Réutiliser l'ordre, les validations, `progression_mode`, `ChallengesJourney.required`, les sauts et les totaux existants avant toute migration |
+| Calcul | Centraliser un résolveur de présentation pour prochaine étape, reprise, comptes requis, Oméga accessibles et rite ; ne pas recopier les règles dans HAML |
+
+Le premier lot est principalement front et présentation. Toute modification de la sémantique
+d'accomplissement, de la formule d'Oméga ou des modèles centraux reste soumise à une analyse
+d'impact séparée.
 
 #### Horizon — Freeride à partir du Monde 2
 

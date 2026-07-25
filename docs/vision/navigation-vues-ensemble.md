@@ -48,6 +48,11 @@ La page combine :
 
 Le catalogue, la page d'un parcours et le Freeride restent trois vues différentes d'expériences réutilisables. Le deck ne remplace ni le récit ordonné d'un parcours ni la visibilité de la Marelle.
 
+La page ordonnée d'un parcours est sa **carte du voyage** : elle met la prochaine action au premier
+écran, déploie les chapitres comme mouvements narratifs, distingue le chemin requis des Oméga
+disponibles et rend le rite final visible dès l'entrée. Sa spécification responsive est détaillée
+dans [Page parcours — la carte du voyage](page-parcours-carte-du-voyage.md).
+
 Les Mondes communs de la Marelle peuvent être visibles lorsqu'ils sont verrouillés. Les Mondes privés ou dédiés, par exemple facilitateurs ou gouvernance, restent invisibles tant que le joueur n'a pas le droit de les découvrir.
 
 ### 2.2 Modèle fonctionnel cible

@@ -1,0 +1,390 @@
+# Page parcours — la carte du voyage
+
+> Ajout Codex - 2026-07-25. Architecture UX validée par Boris après inspection en lecture de la
+> page déployée du Monde 0 sur `vibe.ze.game`, aux formats ordinateur et mobile 390 × 844.
+
+## 1. Décision
+
+La page ordonnée d'un parcours devient la **carte du voyage** du joueur.
+
+Elle ne doit être :
+
+- ni une fiche administrative suivie d'une longue liste ;
+- ni un catalogue d'expériences interchangeables ;
+- ni un deck Freeride.
+
+Elle raconte un chemin, situe le joueur et rend sa prochaine action évidente. Sa hiérarchie répond
+dans cet ordre à quatre questions :
+
+1. Où suis-je ?
+2. Que dois-je faire maintenant ?
+3. Qu'ai-je déjà traversé ?
+4. Vers quel seuil ce parcours me conduit-il ?
+
+Le Monde 0 reste une trajectoire commune écrite. Le futur Freeride ouvre un axe horizontal à partir
+du Monde 2, sans remplacer cette page verticale ni ses rites.
+
+## 2. Diagnostic de la page déployée
+
+L'audit du 25 juillet 2026 montre :
+
+- un premier écran mobile presque entièrement occupé par la description du parcours, ses tags et
+  la ventilation des Oméga ;
+- la première expérience située après environ 900 px de défilement ;
+- aucune prochaine action explicite au-dessus de la ligne de flottaison ;
+- un `38 %` dont la sémantique n'est pas compréhensible sans connaître le calcul ;
+- `30 / 96 Ω` présenté à proximité de ce pourcentage, ce qui mélange progression et récompense ;
+- trois chapitres nommés seulement `Chapitre 1`, `Chapitre 2` et `Chapitre 3` ;
+- treize cartes presque équivalentes visuellement, malgré leurs rôles très différents ;
+- la répétition de `Validation Autonome` sur chaque carte ;
+- un engrenage peu explicite pour signaler l'expérience courante ;
+- des expériences verrouillées rendues très pâles, avec un contraste insuffisant ;
+- un léger débordement horizontal à 390 px ;
+- l'Atelier Point Zéro, rite de passage, traité comme une carte ordinaire en fin de liste.
+
+La page contient les bonnes données. Le problème principal est leur ordre de priorité.
+
+## 3. Architecture cible
+
+### 3.1. Premier écran
+
+Le premier écran utile contient :
+
+1. un retour vers la Marelle ;
+2. le Monde, le titre du parcours et une promesse de deux ou trois lignes au maximum ;
+3. une mini-progression narrative par chapitres ;
+4. la prochaine expérience sous forme de carte-couverture compacte ;
+5. un CTA principal unique.
+
+La description longue, les tags et la ventilation détaillée des Oméga descendent sous cette zone.
+Le label générique `Validation Autonome` disparaît de l'en-tête du parcours.
+
+Exemple de hiérarchie :
+
+```text
+← Retour à la Marelle
+
+MONDE 0 · ENTRER DANS LE JEU
+Le monde ne s'est pas cassé tout seul.
+Bonne nouvelle : sa suite non plus.
+
+[ Je pressens ✓ ]—[ Je relie ● ]—[ Je prends place ○ ]
+
+PROCHAINE EXPÉRIENCE
+┌─────────────────────────────────────────┐
+│ Illustration                            │
+│ L'écosystème Point Zéro                 │
+│ Découvre comment les pièces commencent  │
+│ à former une constellation.             │
+│ Vidéo · 5 min · 3 Ω                     │
+│ [ Continuer le parcours ]               │
+└─────────────────────────────────────────┘
+
+4 expériences accomplies
+30 Ω gagnés · 96 Ω disponibles
+```
+
+Sur mobile, un CTA compact peut rester fixé au-dessus de la navigation basse tant que l'action
+principale n'est pas visible :
+
+`Continuer · 5 min`
+
+Il disparaît lorsque la carte de prochaine action entre dans la zone visible afin d'éviter deux CTA
+concurrents.
+
+### 3.2. Progression narrative
+
+La progression principale n'est pas un pourcentage abstrait. Elle montre les mouvements du parcours.
+
+Pour le Monde 0 :
+
+| Chapitre technique | Mouvement visible | Fil rouge |
+|---|---|---|
+| Chapitre 1 | **Je pressens** | **Qui a cassé le monde ?** |
+| Chapitre 2 | **Je relie** | **La constellation** |
+| Chapitre 3 | **Je prends place** | **La chaise vide** |
+
+Chaque mouvement expose :
+
+- son état : accompli, actuel ou à venir ;
+- son nombre d'expériences requises accomplies ;
+- une accroche courte ;
+- une illustration ou une texture de chapitre ;
+- sa Graine de Récit lorsqu'elle existe.
+
+Les noms techniques `Chapitre n` peuvent rester disponibles pour l'administration et
+l'accessibilité, mais ne constituent plus le titre principal montré au joueur.
+
+### 3.3. Déploiement progressif des chapitres
+
+Afin de réduire la longueur de page :
+
+- le chapitre actuel est ouvert ;
+- un chapitre accompli est replié en un résumé valorisant, dépliable à la demande ;
+- un chapitre futur montre sa promesse et son état, sans nécessairement afficher toutes ses cartes ;
+- tous les contenus restent accessibles sans changer d'URL.
+
+Un accordéon ne doit pas cacher l'architecture générale : les trois mouvements et le rite final
+restent toujours visibles.
+
+### 3.4. Cartes d'expérience compactes
+
+La page parcours réutilise une variante compacte du composant de
+[carte-couverture](cartes-experiences-freeride.md). Elle ne duplique pas une seconde grammaire de
+cartes.
+
+Une carte compacte montre seulement :
+
+- médaillon ou illustration ;
+- titre ;
+- accroche sur une ligne, deux au maximum ;
+- format, durée et Oméga ;
+- état explicite ;
+- CTA uniquement pour l'expérience qui demande l'attention.
+
+Le mode de validation n'est pas répété dans la liste. Il apparaît dans la fiche détaillée ou dans
+la formulation de la prochaine action réelle.
+
+États visibles recommandés :
+
+| État métier | Présentation |
+|---|---|
+| accomplie | `Accomplie` et coche, carte compacte |
+| courante non commencée | `Prochaine étape` et CTA |
+| commencée | `À reprendre` et CTA |
+| verrouillée | `À venir après…`, contenu lisible et raison accessible |
+| optionnelle | `Détour facultatif` |
+| passée | `Passée pour l'instant`, reprise possible |
+| en attente humaine | `En attente du facilitateur` |
+| rite | `Rite de passage` avec traitement distinct |
+
+Ne pas utiliser seulement une couleur, une opacité, un cadenas ou un engrenage pour porter un état.
+
+### 3.5. Deux progressions distinctes
+
+La page sépare :
+
+1. **la progression du chemin requis** ;
+2. **l'exploration Oméga disponible**.
+
+Exemple :
+
+```text
+4 étapes requises accomplies · Chapitre 1 terminé
+30 Ω gagnés · 66 Ω encore accessibles
+```
+
+Règles :
+
+- une expérience optionnelle non réalisée ou passée ne bloque pas l'accomplissement ;
+- elle reste comptée dans les Oméga encore accessibles ;
+- le Sas optionnel ne doit pas empêcher `Monde 0 accompli` ;
+- l'Atelier et la Graine de passage restent requis ;
+- un pourcentage ne peut être affiché que si son dénominateur est explicite et stable.
+
+La V1 doit préférer des comptes compréhensibles à un pourcentage composite.
+
+### 3.6. Ventilation par puissance
+
+Le détail `Communication : Écoute`, `Émotion : Passion`, etc. ne précède plus le parcours.
+
+Il devient une restitution secondaire repliable :
+
+```text
+Ce que tu as déjà mis en mouvement
+3 Puissances ont produit des Oméga.
+[ Voir le détail ]
+```
+
+Le détail conserve les attributions réelles par compétence. Il ne prétend pas évaluer le niveau de
+conscience du joueur.
+
+### 3.7. Seuil et rite de passage
+
+Le rite final est une destination de la carte du voyage, pas la douzième carte d'une liste.
+
+Pour le Monde 0 :
+
+```text
+PASSAGE VERS LE MONDE 1
+
+Vivre l'Atelier Point Zéro
+Le rite collectif qui ouvre la suite.
+Présentiel ou distanciel · 3 h · 24 Ω
+
+[ Voir les prochaines dates ]
+```
+
+Même verrouillé, ce seuil reste visible et explique ses prérequis. Le Sas apparaît à proximité
+comme `Préparation facultative`, et non comme une condition implicite du passage.
+
+La validation de présence par un facilitateur doit être nommée. La page n'annonce jamais une
+ouverture du Monde 1 sur le seul total d'Oméga.
+
+## 4. Ton et microcopie
+
+La page suit la [voix Point Zéro](voix-point-zero.md) : adulte, concrète, légèrement décalée et
+piquante. Le décalage se place surtout dans les accroches et transitions ; les actions restent
+explicites.
+
+Exemples à tester :
+
+- `Le monde ne s'est pas cassé tout seul.`
+- `Reprendre le fil`
+- `Le jeu continue ici`
+- `Pas encore. Il reste une porte à ouvrir.`
+- `Détour facultatif — pour pousser un peu plus loin`
+- `Une chaise est encore vide. Étrangement, elle t'attend.`
+
+Éviter :
+
+- la félicitation automatique ;
+- les injonctions de coach ;
+- l'humour sur l'intimité ou la vulnérabilité du joueur ;
+- les CTA poétiques dont l'action réelle serait ambiguë.
+
+## 5. Responsive et accessibilité
+
+### Mobile
+
+- aucun débordement horizontal à 320, 375 ou 390 px ;
+- prochaine action identifiable dans le premier écran utile ;
+- métadonnées sur une ligne stable ou dans des chips lisibles ;
+- zone tactile minimale de 44 × 44 px ;
+- CTA fixe placé au-dessus de la navigation basse, sans la masquer ;
+- titres sans troncature lorsque le sens dépend de leur fin ;
+- expérience verrouillée lisible malgré son état.
+
+### Grand écran
+
+- largeur de lecture limitée ;
+- en-tête et prochaine action peuvent former deux colonnes ;
+- la liste ne s'étire pas sur toute la largeur ;
+- le chemin vertical ou segmenté reste lisible sans simuler un deck ;
+- aucune image ne redevient un petit médaillon lorsque son rôle est de vendre l'étape courante.
+
+### Sémantique
+
+- un seul `h1` pour le parcours ;
+- chapitres en `h2`, expériences en `h3` ;
+- texte alternatif utile pour les illustrations porteuses de sens ;
+- état fourni par du texte accessible, pas uniquement par une icône ;
+- accordéons utilisables au clavier avec état `aria-expanded` ;
+- contrastes conformes, y compris pour les expériences verrouillées.
+
+## 6. Impacts fonctionnels
+
+### Réutiliser avant d'ajouter
+
+La première version doit exploiter :
+
+- l'ordre et les Pages déjà présents dans le parcours ;
+- `progression_mode` ;
+- `ChallengesJourney.required` et `optional_note` ;
+- l'état de saut dans `ChallengesJourneysUser` ;
+- les validations `ChallengesUser` existantes ;
+- les totaux Oméga et répartitions par compétence existants ;
+- la carte-couverture compacte en cours d'implémentation.
+
+Avant toute migration, vérifier si la promesse courte du parcours et les accroches de chapitre
+peuvent utiliser des champs existants ou une configuration éditoriale locale.
+
+### Résolveur de présentation
+
+La vue a besoin d'un état de présentation calculé, sans modifier les contrats métier :
+
+- prochain chapitre ;
+- prochaine expérience accessible ;
+- expérience à reprendre ;
+- nombre d'expériences requises accomplies ;
+- nombre total d'expériences requises ;
+- Oméga gagnés ;
+- Oméga encore accessibles ;
+- prochain rite et état de ses prérequis.
+
+Ce calcul doit réutiliser les méthodes de progression existantes autant que possible. Ne pas
+dupliquer les règles de déverrouillage dans la vue HAML.
+
+### Backoffice
+
+À vérifier ou préparer :
+
+- promesse courte du parcours ;
+- titre public et accroche des chapitres ;
+- illustration ou texture de chapitre ;
+- identification éditoriale du rite ;
+- accroche courte des expériences, déjà requise par la carte-couverture.
+
+Le statut obligatoire ou optionnel reste porté par l'inclusion `ChallengesJourney`.
+
+## 7. Découpage d'implémentation
+
+### Lot P0 — corriger la hiérarchie
+
+1. raccourcir l'en-tête ;
+2. remplacer `Retour à la page d'accueil` par `Retour à la Marelle` ;
+3. afficher la prochaine action et son CTA avant la liste ;
+4. distinguer progression requise et Oméga ;
+5. retirer `Validation Autonome` des cartes compactes ;
+6. expliciter les états en texte ;
+7. corriger le débordement horizontal mobile ;
+8. corriger titres, contrastes et structure de headings.
+
+### Lot P1 — raconter le voyage
+
+1. donner aux chapitres leurs mouvements et fils rouges ;
+2. ouvrir le chapitre actuel et replier les autres ;
+3. distinguer visuellement expérience courante, détour facultatif et rite ;
+4. déplacer la ventilation des Puissances dans une section secondaire ;
+5. ajouter le seuil `Passage vers le Monde 1`.
+
+### Lot P2 — enrichir sans changer le modèle
+
+1. CTA mobile fixe contextuel ;
+2. transitions légères entre mouvements ;
+3. textures et illustrations de chapitre ;
+4. animation sobre lors de l'ouverture d'un nouveau chapitre ;
+5. mémorisation locale de l'état ouvert ou replié des chapitres.
+
+## 8. Critères d'acceptation du premier lot
+
+- [ ] À 390 × 844, le joueur voit le parcours, sa position et une prochaine action sans devoir
+      parcourir la description longue ni la ventilation des Puissances.
+- [ ] Une seule action principale est visible simultanément.
+- [ ] La prochaine expérience est calculée depuis les règles existantes.
+- [ ] Les expériences accomplies, courantes, verrouillées, optionnelles, passées et en attente sont
+      distinguables sans dépendre uniquement de la couleur ou d'une icône.
+- [ ] Le caractère optionnel du Sas est visible.
+- [ ] L'Atelier est présenté comme rite requis pour ouvrir le Monde 1.
+- [ ] Le chemin requis et les Oméga disponibles sont deux informations séparées.
+- [ ] Une expérience optionnelle passée ne bloque ni le chapitre ni le parcours.
+- [ ] Aucun débordement horizontal n'apparaît à 320, 375, 390, 768 et 1440 px.
+- [ ] La navigation basse ne masque ni contenu ni CTA.
+- [ ] La structure comporte un `h1`, des `h2` de chapitre et des `h3` d'expérience cohérents.
+- [ ] La page reste utilisable sans animation.
+
+## 9. Hors périmètre
+
+Ce chantier n'autorise pas :
+
+- le swipe ;
+- une pile de cartes persistante ;
+- le moteur adaptatif du Freeride ;
+- une nouvelle formule de progression composite ;
+- une modification du contrat d'accomplissement ;
+- une attribution d'Oméga au simple fait de commencer, choisir ou passer une expérience ;
+- un nouveau modèle générique de workflow ;
+- la refonte de `Journey`, `Challenge`, `ChallengesUser` ou `JourneysUser` sans analyse d'impact.
+
+## 10. Ordre de vérification
+
+Après implémentation :
+
+1. compte n'ayant pas commencé ;
+2. compte avec chapitre 1 accompli et chapitre 2 courant ;
+3. expérience commencée puis reprise ;
+4. expérience optionnelle passée puis reprise ;
+5. expérience en attente de facilitateur ;
+6. parcours dont toutes les étapes requises sont accomplies mais pas toutes les options ;
+7. affichage 320, 375, 390, 768 et 1440 px ;
+8. navigation clavier et lecteur d'écran sur les accordéons et états.
