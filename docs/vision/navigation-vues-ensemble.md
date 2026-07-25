@@ -12,6 +12,19 @@ Les cinq entrées de navigation doivent raconter une seule architecture :
 - **Ressources** : ce qui peut nourrir mon chemin ;
 - **Profil** : ce que j'ai ouvert, attesté et choisi de relire sur moi.
 
+### 1.1. Deux axes de navigation : Marelle et Freeride
+
+<!-- Ajout Codex - 2026-07-25. Décision Boris : colonne vertébrale initiatique commune et ouverture progressive d'un deck Freeride à partir du Monde 2. -->
+
+La Marelle conserve l'axe vertical des Mondes, rites, seuils et passages. Le futur **Freeride** ouvre un axe horizontal d'expériences optionnelles, de détours, de contributions et d'approfondissements.
+
+- Monde 0 : trajectoire commune écrite ;
+- Monde 1 : catalogue et recommandations guidées ;
+- Monde 2 : ouverture réelle du Freeride, sans suppression du Cercle stable ni des rites ;
+- Mondes suivants : autonomie croissante.
+
+Le Freeride utilise de petites mains de trois cartes explicables (`Élan`, `Circulation`, `Ouverture`), jamais un flux infini. La décision détaillée et son périmètre sont dans [Cartes-couvertures et mode Freeride](cartes-experiences-freeride.md).
+
 La navigation reste stable. Lorsqu'un espace n'est pas encore accessible, l'entrée ouvre un **écran de seuil** utile plutôt qu'une page vide ou une interdiction opaque.
 
 ## 2. Marelle
@@ -26,6 +39,14 @@ La page combine :
 4. des vues rapides `Tous`, `En cours`, `Accomplis`, `À découvrir` ;
 5. des filtres par Monde, thème, durée, difficulté, puissance dominante et autres référentiels ;
 6. un statut visible sur chaque parcours, sans devoir ouvrir sa fiche.
+
+À terme, la Marelle montre également :
+
+- la colonne vertébrale du Monde et son prochain rite ;
+- la **ligne de jeu** actuelle : une expérience active, deux cartes en réserve et les expériences programmées ;
+- un accès au Freeride lorsqu'il est ouvert.
+
+Le catalogue, la page d'un parcours et le Freeride restent trois vues différentes d'expériences réutilisables. Le deck ne remplace ni le récit ordonné d'un parcours ni la visibilité de la Marelle.
 
 Les Mondes communs de la Marelle peuvent être visibles lorsqu'ils sont verrouillés. Les Mondes privés ou dédiés, par exemple facilitateurs ou gouvernance, restent invisibles tant que le joueur n'a pas le droit de les découvrir.
 
@@ -56,6 +77,8 @@ Le code reste un mécanisme de secours ou d'invitation, pas la progression norma
 - ancien code maintenu temporairement pour compatibilité.
 
 Exemple Monde 0 vers Monde 1 : la dernière expérience est validée par le facilitateur ; un événement métier est émis ; une règle idempotente crée le `WorldAccess` au Monde 1 ; le joueur reçoit une notification et voit le nouveau Monde illuminé.
+
+Les expériences accomplies en Freeride peuvent nourrir la carte du joueur et l'Oméga, mais ne remplacent jamais une règle de passage ou un rite requis.
 
 Le traitement doit être asynchrone et auditable, avec reprise sur erreur, révocation/override manuel et journal de la règle ayant ouvert l'accès. Il vaut mieux déclencher un service/job après commit que densifier directement les callbacks déjà sensibles de `JourneysUser` ou `ChallengesUser`.
 

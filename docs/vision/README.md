@@ -29,7 +29,7 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 8. **[navigation-vues-ensemble.md](navigation-vues-ensemble.md)** — Vision coordonnée des vues Marelle, Cercle, Ressourcerie et Profil ; modèle `World` distinct de `Community`, passages automatiques auditables, Open Badges et carte personnelle des puissances.
 
-9. **[impacts-fonctionnels.md](impacts-fonctionnels.md)** — Registre d'analyse d'impact back/front (F1-F13) : chaque page front y est modélisée avec ses impacts backoffice avant implémentation. Règle : aucune implémentation sans ligne d'analyse ici.
+9. **[impacts-fonctionnels.md](impacts-fonctionnels.md)** — Registre d'analyse d'impact back/front (F1-F18) : chaque page front y est modélisée avec ses impacts backoffice avant implémentation. Règle : aucune implémentation sans ligne d'analyse ici.
 
 10. **[sept-puissances.md](sept-puissances.md)** — Référentiel des 7 puissances et moteur ontologique (synthèse du Livre II) : verbes, polarités Lumière/Ombre, 5 états du moteur, gardiens des Mondes, implications pour l'Oméga et la validation.
 
@@ -45,6 +45,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 15. **[moteur-ontologique-visuel.md](moteur-ontologique-visuel.md)** — Grammaire visuelle du Moteur ontologique sur le Profil : lemniscate vivant à lobes indépendants (Option B), 4 couleurs (gris horizon / violet état 360° / pointillé cap / or progression Oméga), distinction état vs progression, moteur global comme résultante (Transcendance non nommée), 6 puissances en mini-lemniscates, fiche puissance et implications modèle de données. Prototypes dans zegame-prototypes.
 
 16. **[voix-point-zero.md](voix-point-zero.md)** — Charte de voix transversale issue du Monde 0 : ton adulte, décalé et provocateur, humour discret, sortie de la posture « Enfant Adapté », dosage par surface, limites éthiques et traduction graphique du sublime confronté au trivial.
+
+17. **[cartes-experiences-freeride.md](cartes-experiences-freeride.md)** — Architecture UX validée des fiches d'expérience : carte-couverture mobile-first, scène d'image robuste, détails progressifs, actions contextuelles et horizon Freeride à partir du Monde 2. Distingue explicitement l'amélioration immédiate du futur deck adaptatif.
 
 ## Corpus pédagogique associé
 

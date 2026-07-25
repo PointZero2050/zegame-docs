@@ -266,6 +266,47 @@ Implémenté dans vibe.ze.game par Claude, d'après [11_evaluation_initiale_mote
 - **Pilote livré** : Désir (`config/puissances/desir.yml`, 27 archétypes + questionnaire 4 questions). Vérifié : O1-L3 bloqué = « Le Feu qui refuse la nuit » → cap Intermédiaire « Le Porte-Flamme en initiation ».
 - **Reste** : généraliser aux 5 autres puissances (contenu atlas prêt) ; **illustrations d'archétypes** (Codex ; fallback = illustrations rondes par pôle) ; polir les croyances depuis `Evaluation-Puissances.pptx` ; propager la surdétermination sur la posture/les caps du Profil ; créer l'expérience Monde 1 + listener de validation.
 
+### F18 — Carte-couverture d'expérience et horizon Freeride
+
+<!-- Ajout Codex - 2026-07-25. Principe validé par Boris. La carte-couverture relève de l'amélioration actuelle ; le deck Freeride reste un lot ultérieur à cadrer séparément. -->
+
+Document canonique : [Cartes-couvertures d'expérience et mode Freeride](cartes-experiences-freeride.md).
+
+#### Lot actuel — fiche et composants
+
+| Aspect | Impact |
+|---|---|
+| Front fiche | Remplacer le bandeau à médaillon par une carte-couverture mobile-first : scène d'image, titre, accroche, format, durée, Oméga, statut contextuel et action principale |
+| Responsive | Mobile plein écran utile ; affiche horizontale à largeur maximale sur grand écran ; image entière par défaut sur fond dérivé, mode plein cadre facultatif |
+| Détails | Conserver une URL canonique ; placer description, validation, Puissances, conditions et ressources sous l'ancre `#details` |
+| Page parcours | Décliner une version compacte du même composant sans supprimer chapitres, ordre ni progression |
+| Navigation | Actions et `Précédent` / `Suivant` dépendent du contexte d'ouverture ; ne pas coder la fiche comme exclusivement linéaire |
+| Statuts | Distinguer obligatoire, optionnelle, alternative, libre, recommandée et verrouillée ; obligatoire/optionnelle reste porté par `ChallengesJourney` |
+| Backoffice | Préparer une accroche courte et des métadonnées éditoriales ; vérifier les champs existants avant toute migration |
+| Accessibilité | Un seul CTA principal, boutons équivalents aux gestes futurs, aucun texte essentiel incrusté dans l'image, respect du clavier et des lecteurs d'écran |
+
+#### Horizon — Freeride à partir du Monde 2
+
+| Aspect | Impact |
+|---|---|
+| UX | Main de trois cartes `Élan / Circulation / Ouverture`, pas de flux infini |
+| Geste | Droite = choisir ; gauche = pas maintenant ; toucher = détails ; boutons visibles équivalents |
+| Trajectoire | Une expérience active, deux en réserve, expériences programmées et prochain rite visibles dans `Ma ligne de jeu` |
+| Recommandation | `Pourquoi maintenant ?`, raisons, confiance, alternatives et correction des sources par le joueur |
+| Profil | Un swipe ou un refus ne modifie jamais le Moteur ; signal contextuel de faible confiance et durée limitée |
+| Sécurité | Prérequis, intensité, Cercle, facilitateur et protocoles d'arrêt filtrent les cartes avant tout classement |
+| Oméga | Aucun gain pour choisir ou swiper ; gain sur accomplissement réel ; le Freeride ne remplace aucun rite |
+| Données futures | Distinguer expérience réutilisable, main/recommandation, ligne de jeu et occurrence vécue ; aucun nouveau modèle n'est décidé dans ce cadrage |
+
+#### À ne pas lancer dans le lot actuel
+
+- gestes de swipe ;
+- pile ou persistance de cartes ;
+- moteur de recommandation adaptatif ;
+- apprentissage à partir des refus ;
+- génération d'expériences par IA ;
+- refonte spéculative du modèle de données.
+
 ### Décisions UX transverses (Boris, 2026-07-13)
 
 - **Cercles progressifs** : l'ancienne décision de masquer totalement l'entrée avant le Monde 2 est remplacée par F11. L'entrée existe dès le Monde 0 comme teaser ; discussions au Monde 1 ; croissance au Monde 2.

@@ -6,6 +6,7 @@
 
 - Le Monde 0 fait **pressentir** la grammaire fractale ; le Monde 1 commence à la nommer et à l'utiliser.
 - La chaîne `crises → transition civilisationnelle → polarisation des récits → récit personnel comme premier super-pouvoir → circulation dans le Moteur → Puissances → Marelle → Oméga` est introduite dès l'entrée. Un récit ne devient une puissance de transformation que s'il reste ouvert à ses propres polarités, aux Résonances et aux effets du réel. Sa traduction vidéo et interactive est spécifiée dans [le fil rouge des récits, des Puissances et de l'Oméga](monde-0-fil-rouge-puissances.md).
+- Les fiches des treize expériences adoptent progressivement la [carte-couverture mobile-first](../vision/cartes-experiences-freeride.md) : illustration immersive, accroche, promesse, action principale et détails techniques sous une ancre. Le futur deck ne fait pas partie de cette révision du Monde 0.
 - Le parcours reste linéaire et obligatoire à l'échelle du Monde.
 - **L'Atelier Point Zéro est le rite obligatoire du passage Monde 0 → Monde 1**, en présentiel comme en distanciel.
 - **Le Sas d'entrée est optionnel** : il approfondit la préparation, mais son absence ne bloque ni l'Atelier ni le passage.
@@ -127,8 +128,9 @@ Une V1 textuelle et cumulative suffit. La composition visuelle, les Résonances 
 2. renommer et réécrire les trois pages de chapitre ;
 3. nettoyer les onze consignes `FEEDBACKS` ;
 4. aligner descriptions, ressources, durées et checklists sur les blocs réellement déployés ;
-5. refondre « Le signe de reconnaissance » en choix de geste relationnel ;
-6. passer l'Atelier en validation par facilitateur.
+5. préparer une accroche courte pour chaque expérience en vue de la carte-couverture ;
+6. refondre « Le signe de reconnaissance » en choix de geste relationnel ;
+7. passer l'Atelier en validation par facilitateur.
 
 ### Lot B — expérience narrative
 
