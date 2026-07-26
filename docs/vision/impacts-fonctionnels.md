@@ -287,8 +287,13 @@ Documents canoniques :
 | Détails | Conserver une URL canonique ; placer description, validation, Puissances, conditions et ressources sous l'ancre `#details` |
 | Page parcours | Décliner une version compacte du même composant sans supprimer chapitres, ordre ni progression |
 | Navigation | Actions et `Précédent` / `Suivant` dépendent du contexte d'ouverture ; ne pas coder la fiche comme exclusivement linéaire |
+| Orientation | Remonter `Précédente / Voir le déroulé / Suivante` sous la couverture ; ne pas pointer vers les anciennes Pages de chapitre ; remplacer la navigation basse dupliquée par une carte de prochaine étape |
 | Statuts | Distinguer obligatoire, optionnelle, alternative, libre, recommandée et verrouillée ; obligatoire/optionnelle reste porté par `ChallengesJourney` |
 | Prochaine action | Le CTA décrit l'action concrète disponible (`Regarder`, `Discuter`, `Reprendre`, `Produire ma Graine`, `Envoyer au facilitateur`) et peut afficher `Étape n sur n` sans confondre progression et validation |
+| Média principal | Une vidéo, un jeu ou une pratique indispensable apparaît avant la complétion et n'est pas classé comme ressource complémentaire |
+| Puissances | Cartes lisibles : Puissance, aspect, axe Ombre/Point Zéro/Lumière, versant travaillé et Oméga par association ; aucune chaîne framework brute ni lecture comme évaluation du joueur |
+| Cohérence données | Vérifier compétence et `derived_framework` ; anomalie relevée : `Intuition : Conviction` associée à `Communication - Lumière` sur `L'écosystème Point Zéro` |
+| Libellés | `n Ω à gagner` ou `n Ω gagnés`, intensité nommée, autorité déclarative formulée en langage joueur ; retirer `Validation Autonome` de la couverture |
 | Contrat d'achèvement | Séparer parcours d'action, preuve de traversée, autorité de validation et attribution des Oméga ; autorités déclarative, système ou facilitateur |
 | Trajectoire technique | V1 configurable par expérience avec validation existante ; puis résolveur de présentation fondé sur les traces métier ; aucun moteur générique de workflow dans le lot actuel |
 | Backoffice | Préparer une accroche courte et des métadonnées éditoriales ; vérifier les champs existants avant toute migration |

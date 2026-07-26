@@ -5,6 +5,10 @@
 > **Décision immédiate** : améliorer les fiches actuelles avec une carte-couverture mobile-first réutilisable.
 >
 > **Extensions validées le 2026-07-25** : une expérience fondée sur une vidéo adopte une variante vidéo-first ; la zone d'action indique la prochaine action réelle du joueur plutôt qu'un bouton générique de validation. Ces décisions préparent l'UX sans commander un moteur générique de workflows.
+
+> **Extension validée le 2026-07-26** : la navigation `Précédent / Déroulé / Suivant` remonte sous
+> la couverture ; les Puissances deviennent des cartes explicatives ; le média ou geste principal
+> précède toute déclaration d'achèvement. Décision issue de l'audit des fiches déployées du Monde 0.
 >
 > **Horizon validé, non à implémenter sans cadrage dédié** : ouvrir progressivement un mode Freeride à partir du Monde 2, sous forme de petites mains de cartes explicables et contextualisées.
 
@@ -176,13 +180,17 @@ La couverture vend l'expérience. La fiche technique explique ses conditions.
 
 Ordre recommandé sous l'ancre `#details` :
 
-1. **À quoi t'attendre** — description développée ;
-2. **Vivre l'expérience** — ressource ou interaction principale ;
-3. **Comment ce passage sera reconnu** — validation ;
-4. **Ce que cette expérience met en mouvement** — Puissances et polarités ;
+1. **Vivre l'expérience** — média, jeu, pratique ou interaction principale ;
+2. **À quoi t'attendre** — promesse développée, sans répéter l'accroche de couverture ;
+3. **Ce que cette expérience met en mouvement** — Puissances et polarités ;
+4. **Comment ce passage sera reconnu** — trace, autorité de validation et état actuel ;
 5. **Conditions** — prérequis, intensité, collectif, sécurité et accessibilité ;
 6. **Ressources complémentaires** ;
 7. **Oméga** — montant et logique d'attribution.
+
+Une ressource indispensable à l'expérience n'est jamais classée dans les ressources complémentaires.
+Pour une expérience vidéo-first, la vidéo ou son bouton de lecture apparaît avant toute action de
+complétion.
 
 ### Deux contextes de détail
 
@@ -190,6 +198,31 @@ Ordre recommandé sous l'ancre `#details` :
 - **Futur deck** : toucher la carte ouvre les mêmes détails dans un écran superposé plein format ou une feuille remontante. Fermer restitue exactement la position dans la main.
 
 La fiche conserve une URL canonique unique. Le deck ne duplique pas son contenu.
+
+### Barre d'orientation sous la couverture
+
+La navigation de séquence remonte immédiatement sous la carte-couverture :
+
+```text
+[ ← Précédente ]   [ Voir le déroulé ↓ ]   [ Suivante → ]
+```
+
+- `Voir les détails →` devient `Voir le déroulé ↓`, car l'action descend sur la même page ;
+- la barre reste secondaire face au CTA principal de l'expérience ;
+- sur mobile, les trois commandes restent lisibles et disposent de zones tactiles suffisantes ;
+- la première expérience d'un parcours ou d'un chapitre ne pointe pas vers une ancienne Page non
+  cliquable : l'action est absente ou devient `Retour au parcours` selon le contexte ;
+- précédent et suivant sont résolus depuis l'inclusion courante et les règles d'accessibilité du
+  parcours, pas depuis une hypothèse globale sur le `Challenge`.
+
+En bas de la fiche, ne pas dupliquer cette barre. Afficher une carte de continuité plus engageante :
+
+```text
+Étape suivante
+Une drôle d'époque
+20 min · 3 Ω
+[ Continuer le parcours ]
+```
 
 ## 6. Statuts et contextes
 
@@ -231,6 +264,75 @@ Le CTA principal ne doit pas être figé autour de `Commencer` et `Valider`. Il 
 | Accomplie | `Voir ma Graine` | 6 Ω obtenus |
 
 L'expression `Étape n sur n` décrit la progression dans l'expérience. Le mot `validation` est réservé au moment où une confirmation déclarative, système ou humaine est réellement attendue.
+
+### L'action réelle précède la complétion
+
+La fiche ne propose jamais `J'ai réalisé cette expérience` avant d'avoir rendu son média, son jeu ou
+sa pratique principale directement accessible.
+
+| État vidéo-first | Action principale |
+|---|---|
+| Non commencée | `Regarder la vidéo · 2 min` |
+| Lecture interrompue | `Reprendre à 01:24` |
+| Vidéo terminée, action requise | `Faire l'action suivante` |
+| Confirmation déclarative légitime | `Confirmer mon passage` |
+| Accomplie | `Revoir` ou `Rejouer`, en secondaire |
+
+Un mécanisme observable utilise de préférence une validation système. Une déclaration autonome
+reste possible lorsque le système ne peut raisonnablement observer le geste, mais son libellé
+décrit ce que le joueur confirme.
+
+### Rendre les Puissances intuitives
+
+La section porte le titre **Ce que cette expérience met en mouvement** et commence par un résumé :
+
+```text
+3 Puissances mobilisées · 3 Ω disponibles
+Ces indications décrivent ce que l'expérience exerce, pas ta personnalité.
+```
+
+Chaque association compétence–expérience devient une carte lisible :
+
+```text
+┌────────────────────────────────────────┐
+│ ◉ IMAGINATION                    +1 Ω │
+│ Projection                             │
+│ Ombre ─── Point Zéro ─── LUMIÈRE       │
+│ Cette expérience travaille le versant  │
+│ Lumière de l'Imagination.              │
+└────────────────────────────────────────┘
+```
+
+La carte expose :
+
+- la Puissance, avec signe ou mini-lemniscate stable ;
+- l'aspect mobilisé, par exemple `Projection`, `Conviction` ou `Service` ;
+- l'axe `Ombre — Point Zéro — Lumière`, avec le versant travaillé mis en évidence ;
+- les Oméga attribués à cette association ;
+- un lien facultatif `Comprendre cette Puissance` vers sa fiche.
+
+Les cartes s'empilent sur mobile et forment une grille de deux ou trois colonnes sur grand écran.
+La couleur renforce la lecture sans porter seule l'information.
+
+Ne pas afficher la chaîne technique brute `Point Zéro - Puissance - Lumière/Ombre`. Elle est
+traduite en langage joueur. La polarité décrit le versant exercé par l'expérience, jamais un niveau
+ou une identité attribués au joueur.
+
+Avant rendu, vérifier la cohérence entre le nom de la compétence et son framework dérivé. L'audit du
+26 juillet 2026 a relevé sur `L'écosystème Point Zéro` : `INTUITION : CONVICTION` associé à
+`Point Zéro - Communication - Lumière`. Cette donnée contradictoire doit être corrigée à la source,
+pas seulement masquée dans l'interface.
+
+### Métadonnées en langage joueur
+
+- `Validation Autonome` quitte la couverture ; afficher `À confirmer par toi` seulement lorsque
+  cette autorité est réellement requise ;
+- `0 / 3 Ω` devient `3 Ω à gagner` ;
+- `3 / 3 Ω` devient `3 Ω gagnés` ;
+- une rangée d'étoiles non expliquée devient par exemple `Intensité douce · 1/5` ;
+- le titre de l'expérience est le `h1` de la page ; les sections utilisent des `h2` cohérents ;
+- une illustration porteuse de sens reçoit une alternative accessible ;
+- les tags, liens secondaires et états accomplis ou verrouillés respectent les contrastes attendus.
 
 ### Séparer action, preuve, validation et récompense
 
@@ -492,7 +594,10 @@ Les noms de colonnes ou le besoin d'une migration doivent être vérifiés dans 
 7. remplacer le CTA générique par une zone `prochaine action` contextualisable ;
 8. clarifier séparément progression, trace, validation et attribution des Oméga ;
 9. rendre les actions dépendantes du contexte ;
-10. décliner une version compacte sur la page du parcours.
+10. remonter la barre `Précédente / Déroulé / Suivante` sous la couverture ;
+11. remplacer les étiquettes techniques de Puissances par des cartes explicatives ;
+12. corriger les incohérences compétence/framework avant affichage ;
+13. décliner une version compacte sur la page du parcours.
 
 ### Lot B — préparation du Monde 1
 
