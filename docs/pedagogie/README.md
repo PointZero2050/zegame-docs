@@ -26,6 +26,7 @@ Ce dossier rassemble les référentiels pédagogiques qui complètent la vision 
 3nonies. **[Bloc 2 — script voies Large, Village & Fil + carte des devenirs](bloc-2-script-voies-large-village-fil.md)** — lot final : le bloc 2 est intégralement écrit (~130 écrans, 17 fins). L île et l archipel, le nous et ses murs, tisser ou planer, la fin de bord (la Bulle honorée), la carte des devenirs en roue autour du goulot et l écran de sortie vers 2040.
 4. **[Corpus Point Zéro](corpus-point-zero/00_README.md)** — architecture pédagogique, Moteur de Conscience, archétypes, Marelle, catalogue d'expériences, évaluation initiale, mentoring, schémas JSON et assets.
 5. **[Atlas des archétypes — direction artistique et pilote](atlas-illustrations.md)** — format des médaillons transparents, garde-fous de représentation et premier lot de neuf figures du Désir prêt pour un test d'intégration.
+5bis. **[Monde 0 — série archétypale des 14 expériences](assets/monde-0-experiences-archetypes/README.md)** — remplacements illustrés cohérents avec la direction artistique du procès du `Coupable idéal`, planche d'ensemble, correspondance Challenge → fichier, prompt matrice et consignes d'intégration sans déploiement.
 
 ## Statut et provenance
 
