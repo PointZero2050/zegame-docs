@@ -70,6 +70,12 @@ Le format privilégié est un **prologue audiovisuel continu de quatre à six mi
 
 Le joueur doit percevoir un seul objet narratif, pas deux vidéos successives ni une vidéothèque. Le prologue ne détaille pas encore les polarités, les amplitudes ou les archétypes. Il expose l'hypothèse Point Zéro, puis le mini-jeu la transforme en expérience personnelle.
 
+Depuis la scission de l'expérience d'entrée en deux Challenges, la vidéo appartient au Challenge
+257 **Le Coupable idéal**, après la vidéo générale du Challenge 236. Le script dialogué, minuté et
+prêt pour la production devient la référence opérationnelle :
+[Le coupable idéal — La crise de nos récits](videos/coupable-ideal-la-crise-de-nos-recits.md).
+La trame ci-dessous reste le résumé pédagogique de cette version longue.
+
 La séquence accomplit sept mouvements :
 
 1. les crises contemporaines forment un système sans précédent par son ampleur et ses interdépendances ;
