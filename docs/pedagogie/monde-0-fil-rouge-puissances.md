@@ -257,6 +257,11 @@ La chaise vide devient le premier plan ou le dernier plan de la vidéo, puis le 
 
 ## 7. Mini-jeu — Le coupable idéal
 
+> **Note Codex - 2026-07-27.** Le déroulé ci-dessous documente la V1 et reste utile pour son
+> intention pédagogique et la compatibilité historique. La nouvelle UX de référence est le
+> [procès contradictoire avec roue des polarités](coupable-ideal-proces-polarites.md). En cas de
+> divergence sur les écrans, les données V2 ou la restitution, cette nouvelle spec prévaut.
+
 ### 7.1. Position et statut
 
 - **Emplacement** : seconde partie de l'expérience 1, après le teaser et avant `Une drôle d'époque`.
