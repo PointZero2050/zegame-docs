@@ -150,15 +150,13 @@ deux restent pleinement participants.
 |---|---|---|---|
 | **Volonté** | Relationnel | **Gardien·ne de l'harmonie** | Permettre à chaque souveraineté de s'affirmer sans domination ni soumission ; protéger la relation et la confrontation féconde |
 | **Imagination** | Sens | **Boussole du collectif** | Maintenir ouvert le futur possible et relier les échanges, décisions et actions au récit partagé |
-| **Émotion** | Gouvernance | **Garant·e des choix** ou **Gardien·ne du cœur décisionnel** | Aider le Cercle à sentir ce qui est vivant, bloqué ou juste dans le champ ; soutenir le consentement éclairé |
-| **Communication** | Opérationnel | **Tisseur·euse du flux** | Rendre explicites besoins, engagements, responsabilités, rythme et passage à l'acte |
+| **Émotion** | Gouvernance | **Gardien·ne du cœur collectif** | Aider le Cercle à sentir ce qui est vivant, bloqué ou juste dans le champ ; soutenir le consentement éclairé |
+| **Communication** | Opérationnel | **Tisseur·euse de flux** | Rendre explicites besoins, engagements, responsabilités, rythme et passage à l'acte |
 | **Intuition** | Apprenance | **Passeur·euse de sagesse** | Capter ce que la situation enseigne et transformer l'expérience en connaissance vivante |
 
-Les dénominations existantes sont conservées pour les tests, avec deux arbitrages UX à mener :
-
-- tester `Garant·e des choix` face à `Gardien·ne du cœur décisionnel` ;
-- remplacer de préférence `Champion·ne du flux`, trop lié à la performance, par
-  `Tisseur·euse du flux`.
+> Arbitrage Boris - 2026-07-31 (transcrit par Claude). Les deux noms en débat sont tranchés :
+> **Gardien·ne du cœur collectif** pour la Gouvernance et **Tisseur·euse de flux** pour
+> l'Opérationnel. `Champion·ne du flux`, trop lié à la performance, est définitivement écarté.
 
 La pratique des cinq rôles doit accoutumer les joueurs aux cinq cadres et aux cinq puissances
 médianes. Leur circulation libère progressivement la Racine, **Désir — JE SUIS**, puis ouvre la
@@ -687,7 +685,6 @@ sans tests d'idempotence, audit des données existantes et stratégie de retour 
 - calendrier technique du decay annuel ;
 - pourcentage d'abonnement affecté à la cagnotte financière ;
 - prix et règles du forfait facultatif de facilitation du Monde 1 ;
-- noms définitifs des rôles Gouvernance et Opérationnel ;
 - politique de conservation des feedbacks nominaux ;
 - critères précis de continuité d'une lignée après fusion ou scission ;
 - statut juridique de l'abonnement, de la cagnotte et de l'Oméga ;

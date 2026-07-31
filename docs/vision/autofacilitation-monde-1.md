@@ -48,8 +48,8 @@ Un Cercle de 5 à 8 personnes distribue cinq rôles, qui changent à chaque renc
 |---|---|---|---|
 | Volonté | Relationnel | Gardien·ne de l'harmonie | Soutient la souveraineté de chacun, la relation et la confrontation sans domination ni soumission |
 | Imagination | Sens | Boussole du collectif | Relie les échanges et décisions au récit et au futur communs |
-| Émotion | Gouvernance | Garant·e des choix | Soutient la décision depuis le cœur et le consentement éclairé |
-| Communication | Opérationnel | Tisseur·euse du flux | Rend explicites besoins, rythme, engagements et actions |
+| Émotion | Gouvernance | Gardien·ne du cœur collectif | Soutient la décision depuis le cœur et le consentement éclairé |
+| Communication | Opérationnel | Tisseur·euse de flux | Rend explicites besoins, rythme, engagements et actions |
 | Intuition | Apprenance | Passeur·euse de sagesse | Récolte et transmet les apprentissages vivants de la séance |
 
 Ces rôles sont des services temporaires, pas des statuts. L'application peut les attribuer aléatoirement, permettre un échange consenti, puis mémoriser la rotation sans créer de classement.

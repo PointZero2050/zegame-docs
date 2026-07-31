@@ -428,8 +428,11 @@ l'autorisation explicite de Boris.
 
 ## 15. Points restant à arbitrer
 
-- titre public : `Les Sept Années décisives`, `Traversée de l'Intercycle` ou conservation de
-  `Le Monde d'après` en sous-titre ;
+> Arbitrage Boris - 2026-07-31 (transcrit par Claude). Le titre public du jeu est
+> **« 7 ans pour une nouvelle civilisation »** — choisi pour le distinguer clairement
+> d'« Avant le Zéro ». `Les Sept Années décisives` reste le nom de la fiction interne ;
+> `Le Monde d'après` ne désigne plus que le jeu de plateau source.
+
 - date et fiction exacte des sept années ;
 - degré de reprise à l'identique de la situation solo dans la version collaborative ;
 - matériel physique disponible et coût d'un kit par Cercle ;
