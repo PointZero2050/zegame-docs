@@ -3,6 +3,13 @@
 > Ajout Claude - 2026-07-17. Troisième volet du [triptyque du Monde 0](monde-0-triptyque-narratif.md), sur le canon de l'[arc du monde](bloc-2-arc-du-monde.md) et dans la continuité des blocs implémentés ([Une drôle d'époque](bloc-1-une-drole-depoque.md), [Avant le Zéro](bloc-2-avant-le-zero.md)). Document de conception à valider par Boris avant l'écriture du script complet — structure, décisions proposées, échantillons de ton, arbitrages ouverts en fin de document.
 >
 > **✅ IMPLÉMENTÉ v1.0 (2026-07-17)** : le bloc 3 est en ligne sur `/conseil-omega` (34 écrans, modèle `ConseilSession`, challenge 254 en tête du Chapitre 3). Tous les arbitrages ci-dessous sont tranchés. Détails d'intégration : [impacts-fonctionnels.md F16](../vision/impacts-fonctionnels.md). Illustrations pour Codex : [bloc-3-illustrations.md](bloc-3-illustrations.md). Ce document reste la référence de conception ; le script joué vit dans `config/conseil_omega/conseil.yml` sur le serveur.
+>
+> **Mise à jour canonique — 2026-07-31.** La V1 déployée reste décrite ci-dessous, mais sa sortie
+> `posture-cible` doit évoluer vers un **Rôle d'appel**. La Posture de Seuil reste un miroir de la
+> manière d'entrer dans l'inconnu ; le Rôle d'appel préfigure une fonction civilisationnelle à
+> explorer dans la Marelle. Les règles, la taxonomie, la migration des données et les visuels sont
+> spécifiés dans [Rôles d'appel et fonctions civilisationnelles](roles-appel-fonctions-civilisationnelles.md),
+> qui prévaut sur les paragraphes historiques en cas de divergence.
 
 ## 1. Ce que le bloc 3 doit accomplir
 
@@ -11,10 +18,12 @@ Le bloc 1 a répondu à « comment entres-tu dans la crise ? », le bloc 2 à «
 Concrètement, à la sortie du Conseil, le joueur a formulé :
 
 - son **cap par puissance** (l'Ombre qu'il accepte de rencontrer, la Lumière qu'il ose assumer) — ce qui remplit enfin la zone « Définir un cap » des mini-lemniscates du Profil ;
-- sa **posture-cible**, distincte de sa Posture de Seuil du bloc 1 (même catalogue des 24, choisie et non plus dérivée) ;
+- son **Rôle d'appel**, choisi parmi trois fonctions civilisationnelles proposées avec des raisons
+  explicables, une qualité captive à reprendre à l'Empire, un risque de capture et des garde-fous ;
 - un **premier engagement** formulé au présent — la charnière vers le bloc 4 (l'Appel) et la Marelle.
 
-Et le Monde 0 se referme sur sa restitution cumulative : *posture initiale → devenirs regardés en face → posture-cible → engagement*.
+Et le Monde 0 se referme sur sa restitution cumulative : *posture initiale → devenirs regardés en
+face → Rôle d'appel → premier geste d'exploration*.
 
 ## 2. 2040 : la charnière Purification → Conjonction
 
@@ -68,8 +77,8 @@ Chaque séance ouvre par le **tour de parole des absents** — le protocole d'Ac
 | **L'ellipse** | 4 | 2033→2040 en un panoramique (l'unique autorisé) · la convocation (le registre daté — résolution du signal) · le voyage vers le territoire · le seuil (Nadia, retrouvailles, la salle Simone-Veil) |
 | **Séance d'ouverture** | 3 | Le tour des absents (le joueur y porte une voix — écho de A3) · le treizième siège · la question de la Conjonction posée par Imane |
 | **Six séances** (une par puissance) | 6 × 3 = 18 | Par séance : **le dossier** (un cas concret 2040, jamais un exposé) → **la délibération** (trois positions incarnées par des membres ; un devenir du joueur est invoqué — échos des traces du bloc 2) → **l'arbitrage + le cap** (le joueur tranche le dossier, puis formule son cap pour la puissance engagée) |
-| **Le rite de clôture** | 5 | La posture-cible (**choix parmi 3 postures suggérées** d'après les traces : Posture de Seuil + devenirs regardés en face + caps) · l'Ombre et la Lumière assumées (synthèse des caps) · la fonction que le joueur tiendrait en 2040 · l'engagement au présent · la signature (écho de la signature d'engagement du bloc 1) |
-| **La restitution** | 4 | La fresque du Monde 0 : posture initiale → devenirs regardés en face → posture-cible → engagement · le retour : la dernière page du registre porte la date d'aujourd'hui · sortie vers la Marelle |
+| **Le rite de clôture** | 5 | Rappel de la Posture de Seuil · trois Rôles d'appel suggérés d'après les traces et les caps · choix ou `Je ne sais pas encore` · qualité captive, risque impérial et garde-fous · premier geste au présent |
+| **La restitution** | 4 | La fresque du Monde 0 : posture initiale → devenirs regardés en face → Rôle d'appel → premier geste · le retour : la dernière page du registre porte la date d'aujourd'hui · sortie vers la Marelle |
 | **Total** | **34** | + 2 écrans de respiration si besoin au montage |
 
 ### Les six séances (mapping puissances × dossiers)
@@ -93,7 +102,8 @@ La carte du bloc 2 l'annonce : « Le Conseil Oméga, en 2040, saura quels deveni
 
 - à chaque séance, la délibération invoque **un devenir que le joueur a réellement atteint** (« Toi qui as été la Torche, tu sais ce que brûler veut dire — parle. ») : le texte de l'invocation varie selon les `fins` tracées ;
 - si aucun devenir pertinent n'a été rencontré, le Conseil invoque **une silhouette** (« Quelqu'un, quelque part, a vécu l'Oracle. Ce n'est pas toi — pas encore. Écoute quand même. ») — invitation organique à rejouer le bloc 2, jamais un reproche ;
-- la Posture de Seuil du bloc 1 est rappelée à l'ouverture du rite de clôture (« Tu es entré [Posture]. Qui ressort ? ») ;
+- la Posture de Seuil du bloc 1 est rappelée à l'ouverture du rite de clôture (« Tu es entré
+  [Posture]. Quelle fonction pourrait maintenant t'appeler ? »), sans la transformer en identité ;
 - la Bulle a un traitement spécial : si le joueur ne l'a jamais vécue, personne n'en parle ; s'il l'a vécue, c'est **Nadia** qui la nomme, au seuil, avec douceur (« Tu sais ce que coûte le bord. C'est une compétence, ici. »).
 
 ## 6. Échantillons de ton
@@ -122,10 +132,19 @@ La carte du bloc 2 l'annonce : « Le Conseil Oméga, en 2040, saura quels deveni
 
 ## 7. Sorties et implémentation
 
-- **Modèle** : `ConseilSession` (une passation historisée, même philosophie que `Traversee`) — `arbitrages` jsonb (6 dossiers : **la position tranchée par le joueur**), `caps` jsonb (6 puissances : {ombre_acceptee, lumiere_assumee, cap}), `posture_cible`, `fonction_2040`, `engagement` (texte court), timestamps. Une nouvelle passation ajoute un instantané ; le Profil affiche la dernière. Le joueur **vote et tranche** chaque dossier (arbitrage Boris) — mais le monde commun de 2040 ne change pas : ce qui fait trace, c'est le **cap**, pas le vote (le vote est l'expérience d'arbitrer sans corrigé ; le cap est ce que le joueur en retire pour lui).
+- **Modèle V1 historique** : `ConseilSession` conserve `arbitrages`, `caps`, `posture_cible`,
+  `fonction_2040` et `engagement`. Une évolution ajoute une structure versionnée pour les trois
+  candidats, leurs raisons, le Rôle d'appel choisi ou laissé ouvert, son premier geste et la version
+  de taxonomie. Aucun champ historique n'est supprimé ou réinterprété silencieusement.
 - **Lectures** : `Traversee.fins_for(user)` pour les invocations de devenirs ; `MoteurAssessment` pour la Posture de Seuil et le rappel « tu es entré X ».
-- **Posture-cible** : à la clôture, le Conseil **suggère 3 postures** (parmi le catalogue des 24) dérivées des informations collectées — Posture de Seuil du bloc 1 + devenirs regardés en face au bloc 2 + caps tranchés en séance — et le joueur **en choisit une** (arbitrage Boris : choix parmi 3, pas de catalogue ouvert). Les 3 sont accompagnées d'une phrase expliquant *pourquoi elle t'est proposée* (traçabilité, comme les postures voisines du bloc 1).
-- **Profil** : la zone cap des mini-lemniscates (placeholder « Définir un cap ») se remplit à partir des caps ; la posture-cible s'affiche à côté de la Posture de Seuil (« De [posture initiale] vers [posture-cible] ») ; **lien de rejeu** depuis le Profil (comme « Une drôle d'époque » et « Avant le Zéro ») pour refaire le Conseil.
+- **Rôle d'appel** : à la clôture, le Conseil suggère trois fonctions selon trois logiques :
+  continuité des traces, polarité moins disponible et motif secondaire inattendu. Le joueur en choisit
+  une ou répond `Je ne sais pas encore`. Chaque proposition rend visibles sa fonction, ses raisons,
+  les Puissances mobilisées, la qualité à reprendre à l'Empire, sa capture possible, ses garde-fous
+  et un premier geste. Le catalogue complet n'est pas ouvert au Monde 0.
+- **Profil** : la zone cap des mini-lemniscates reste alimentée par les caps. La Posture de Seuil et
+  le Rôle d'appel sont présentés comme deux objets distincts ; un lien de rejeu permet de refaire le
+  Conseil sans effacer les instantanés précédents.
 - **Pas de Graine de Récit sur le bloc 3** (arbitrage Boris) : la Graine du chapitre est portée par le dernier challenge du Chapitre 3 (« Mon récit de passage », CH 247). L'engagement formulé au Conseil est une **sortie du Moteur** (cap + fonction + phrase d'engagement), pas une Graine — il alimente la restitution et le Profil, sans passer par le fil de messages.
 - **Marelle** : validation auto de l'expérience Conseil Oméga (nouveau challenge du Chapitre 3, voir §7bis) à la première signature (même mécanisme `validate_marelle_experience!` que 237/238).
 - **Contenu** : `config/conseil_omega/*.yml`, **moteur de sections du bloc 2 réutilisé** (le graphe est quasi linéaire — seules les invocations de devenirs et certains rappels varient selon les traces : la mécanique d'échos est déjà en place, avec des variantes indexées par devenir/posture au lieu de variantes par réponse).

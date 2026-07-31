@@ -179,17 +179,22 @@ et intelligence collective.
 
 ### 5.1 Architecture cible
 
-1. **Relire mon passage** : retrouver les traces choisies de l'Atelier et distinguer peur, désir,
-   croyance et intention.
-2. **Remettre le Moteur en circulation** : manipuler les sept Puissances et constater qu'aucune ne
-   produit seule le mouvement.
-3. **Du joueur au système** : relier Puissances, besoins individuels et cinq Cadres sans produire de
-   profil automatique.
-4. **Traverser seul les Sept Années** : vivre la version solo du jeu de l'Intercycle.
-5. **Relire ma stratégie** : identifier avec le mentor les choix, angles morts et conséquences ;
-   produire une Graine individuelle.
-6. **Choisir ma prochaine traversée** : ouvrir le catalogue, préciser sa signature d'engagement et
-   préparer la rencontre d'un Cercle.
+1. **Relire mon passage** : retrouver les traces choisies de l'Atelier, distinguer Posture de Seuil,
+   Rôle d'appel et première hypothèse d'œuvre, puis reprendre `Interrompre — Reprendre — Transformer`.
+2. **Remettre le Moteur en circulation** : manipuler les sept Puissances, notamment celles que le
+   rôle appelle moins spontanément ; aucune famille n'est rattachée à une Puissance unique.
+3. **Du joueur au système** : relier Puissances, besoins et cinq Cadres à travers la chaîne
+   `besoin → capacité → capture → cadre → circulation`, sans profil automatique ni classement
+   global d'une institution en Empire ou Cité.
+4. **Traverser seul les Sept Années** : vivre la version solo du jeu de l'Intercycle avec le Rôle
+   d'appel comme angle de traversée, sans en faire une classe de personnage.
+5. **Relire ma stratégie** : distinguer les capacités refusées par peur de l'Empire, celles
+   mobilisées sans garde-fou et celles remises en circulation ; produire une Graine individuelle.
+6. **Choisir ma prochaine traversée** : choisir une micro-expérience qui teste le rôle dans le Réel,
+   préciser sa signature d'engagement et préparer la rencontre d'un Cercle.
+
+Les règles complètes et la taxonomie sont définies dans
+[Rôles d'appel et fonctions civilisationnelles](roles-appel-fonctions-civilisationnelles.md).
 
 La traversée solo est donc une expérience centrale du tutoriel, pas un bonus facultatif.
 
@@ -255,7 +260,9 @@ recommandations et son éventuel statut de mentor IA ne commencent qu'au Monde 2
 
 La version collaborative intervient après la constitution d'un Cercle de croissance de cinq à
 huit personnes. Elle constitue l'expérience-pivot de son parcours d'entrée collectif, avant
-l'apprentissage approfondi des cinq rôles et la rédaction du Pacte-Source léger.
+l'apprentissage approfondi des cinq rôles et la rédaction du Pacte-Source léger. Celui-ci nomme
+également les formes de puissance que le Cercle accepte d'exercer pour protéger son intention et les
+garde-fous prévus contre leur capture.
 
 ### 8.2 Format
 

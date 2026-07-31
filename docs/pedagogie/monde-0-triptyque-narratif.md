@@ -181,12 +181,15 @@ Le Conseil Oméga permet au joueur de formuler :
 
 - ce qu'il veut stabiliser pour chacune des six Puissances ;
 - les Ombres qu'il accepte de rencontrer et les Lumières qu'il ose assumer ;
-- sa posture-cible, distincte de sa Posture de Seuil ;
+- son Rôle d'appel, distinct de sa Posture de Seuil et présenté comme une fonction à explorer ;
 - la fonction qu'il pourrait tenir dans le monde de 2050 ;
 - ce qu'il est prêt à engager dès aujourd'hui ;
 - ce qui reste inconnu et devra se préciser dans la Marelle.
 
-La restitution relie `posture initiale → devenirs explorés → posture-cible → premier engagement`. Elle rappelle que cette carte est un début de trajectoire, pas un destin calculé.
+La restitution relie `posture initiale → devenirs explorés → Rôle d'appel → premier geste`. Elle
+rappelle que cette carte est un début de trajectoire, pas un destin calculé. Le rôle explicite ce qui
+doit être interrompu, la qualité captive à reprendre à l'Empire et les garde-fous nécessaires à sa
+transformation ; voir [Rôles d'appel et fonctions civilisationnelles](roles-appel-fonctions-civilisationnelles.md).
 
 ## 7. L'écosystème Point Zéro comme fil du temps
 
@@ -256,7 +259,7 @@ Sans arrêter encore le modèle Rails, la conception devra distinguer :
 - état global du Moteur / Transcendance ;
 - Posture de Seuil et raisons explicables de sa proposition ;
 - différentes parties du bloc 2 et perspectives explorées ;
-- posture-cible et cap par Puissance ;
+- Rôle d'appel choisi ou laissé ouvert, raisons explicables et cap par Puissance ;
 - engagement formulé à la sortie du Conseil Oméga ;
 - version du contenu et date de chaque passation.
 

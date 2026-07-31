@@ -85,11 +85,17 @@ La sortie du Monde 0 rassemble, sans prétendre évaluer la personne :
 3. les devenirs explorés ;
 4. une croyance ou un récit interrogé ;
 5. une tension entre besoin individuel et besoin du système ;
-6. la posture-cible et les caps issus du Conseil ;
+6. le Rôle d'appel choisi ou laissé ouvert, la qualité captive à reprendre, son risque de capture
+   et les caps issus du Conseil ;
 7. les trois Graines, avec leur visibilité choisie ;
 8. les Résonances reçues, s'il y en a ;
 9. la contribution que le joueur envisage de rendre possible ;
 10. l'Atelier vécu comme rite de passage.
+
+La Posture de Seuil reste le miroir de la manière dont le joueur entre dans l'inconnu. Le Rôle
+d'appel devient la fonction civilisationnelle qu'il pourra explorer. La restitution associe les
+trois verbes **Interrompre — Reprendre — Transformer** et suit la spécification
+[Rôles d'appel et fonctions civilisationnelles](roles-appel-fonctions-civilisationnelles.md).
 
 Une V1 textuelle et cumulative suffit. La composition visuelle, les Résonances et la Contribution Oméga documentée pourront être enrichies ensuite.
 

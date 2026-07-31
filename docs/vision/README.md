@@ -60,6 +60,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 20. **[analyse-impact-cercles-intercycle.md](analyse-impact-cercles-intercycle.md)** — Analyse d'impact exigée avant tout code Cercles/Intercycle (audit serveur du 2026-07-31) : sémantique exacte d'`on_change`, idempotence des Ω, barème réel du Monde 0 (le marqueur « 100 Ω » est inatteignable), révocation résiduelle sur `JourneysUser`, absence de modèle Graine, schéma proposé pour le Lot 1 et stratégie de retour arrière.
 
+21. **[Rôles d'appel et fonctions civilisationnelles](../pedagogie/roles-appel-fonctions-civilisationnelles.md)** — Décision canonique sur la sortie du Conseil Oméga et son prolongement au Monde 1 : douze fonctions, mode Pulsateur transversal, réintégration non naïve des capacités de l'Empire, Carte du Seuil, Intercycle, Pacte-Source et migration des illustrations historiques.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.

@@ -84,17 +84,21 @@ Le champ V1 `Journey#mandatory` répond au deuxième besoin. Il ne doit pas serv
 
 Les six expériences proposées sont :
 
-1. **Relire mon passage** : reprendre les traces choisies de l'Atelier et distinguer peur, désir,
-   croyance, Résonance et Intention.
-2. **Remettre le Moteur en circulation** : manipuler les sept Puissances et observer qu'aucune ne
-   produit seule le mouvement.
-3. **Du joueur au système** : relier les Puissances, les besoins individuels et les cinq Cadres,
-   sans produire de profil automatique.
-4. **Traverser seul les Sept Années** : jouer la version solo courte du jeu de l'Intercycle.
-5. **Relire ma stratégie** : identifier avec le mentor les arbitrages, angles morts et conséquences,
-   puis produire une Graine individuelle.
-6. **Choisir ma prochaine traversée** : ouvrir le catalogue, préciser sa signature d'engagement et
-   préparer la rencontre d'un Cercle.
+1. **Relire mon passage** : reprendre les traces choisies de l'Atelier, distinguer Posture de Seuil,
+   Rôle d'appel et hypothèse d'œuvre, puis relire `Interrompre — Reprendre — Transformer`.
+2. **Remettre le Moteur en circulation** : manipuler les sept Puissances nécessaires au rôle, sans
+   rattacher une famille à une Puissance unique.
+3. **Du joueur au système** : relier Puissances, besoins et cinq Cadres à travers
+   `besoin → capacité → capture → cadre → circulation`, sans profil automatique.
+4. **Traverser seul les Sept Années** : jouer la version solo avec le Rôle d'appel comme angle de
+   traversée, en rencontrant refus de la puissance, capture et réintégration.
+5. **Relire ma stratégie** : identifier les capacités refusées, celles employées sans garde-fou et
+   celles transformées, puis produire une Graine individuelle.
+6. **Choisir ma prochaine traversée** : tester le rôle dans une micro-expérience réelle, préciser sa
+   signature d'engagement et préparer la rencontre d'un Cercle.
+
+Le Rôle d'appel et les fonctions civilisationnelles suivent la spécification canonique
+[Rôles d'appel et fonctions civilisationnelles](../pedagogie/roles-appel-fonctions-civilisationnelles.md).
 
 Le parcours se termine par une hypothèse choisie par le joueur, jamais par un profil assigné :
 Puissance à explorer, besoin prioritaire, Cadre collectif à expérimenter, figure de jeu qui l'a
