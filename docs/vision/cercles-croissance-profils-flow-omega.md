@@ -30,6 +30,10 @@ contrat et un accompagnement professionnel nouveaux.
 - Un joueur entré dans un Monde supérieur peut continuer à participer à un Cercle de Monde 1.
 - Les Cercles sont choisis par les joueurs. L'algorithme suggère des rapprochements explicables,
   mais ne constitue jamais automatiquement un Cercle.
+- La mise en relation passe par un profil communautaire à divulgation progressive et un fil interne
+  contextuel. Les coordonnées, Puissances détaillées, Graines et évaluations ne sont jamais révélées
+  automatiquement par une candidature ou une adhésion ; voir
+  [Profil communautaire et messagerie des Cercles — V1](profil-communautaire-messagerie-cercles-v1.md).
 - Le Pacte-Source, et non le facilitateur, constitue la référence souveraine du Cercle.
 - Les spécialisations de Cercle relèvent d'une **V2 à prototyper**. Elles ne doivent pas complexifier
   le premier modèle applicatif.
@@ -579,6 +583,11 @@ initiales comme finales.
 - missions et enveloppes à redistribuer ;
 - historique et lignée.
 
+La page distingue les demandes en attente des membres effectifs. Une demande ouvre un fil privé
+entre le candidat et un référent habilité ; elle ne devient lisible par tout le Cercle qu'avec le
+consentement du candidat. Le statut d'adhésion reste une action métier explicite et n'est jamais
+déduit du contenu d'un message.
+
 ### 15.2 Profil systémique
 
 - synthèse à trois états : Bloqué, En chemin, Intégré ;
@@ -619,7 +628,9 @@ initiales comme finales.
 - parcours d'autofacilitation ;
 - cinq rôles tournants ;
 - Pacte-Source léger ;
-- page Cercle minimale.
+- page Cercle minimale ;
+- profil communautaire minimal et préférences de visibilité ;
+- demande d'adhésion ou invitation avec conversation interne contextuelle, sans messagerie générale.
 
 ### Lot 2 — Passage et cycle Monde 2
 

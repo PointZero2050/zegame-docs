@@ -198,6 +198,9 @@ Références techniques officielles : [intégration Event Tickets + WooCommerce]
 |---|---|
 | Front | Monde 0 : écran de seuil + vidéo ; Monde 1+ : **Mes Cercles**, **Ouvrir un Cercle**, **Cercles à découvrir**, puis page du Cercle avec cycle, rôles, Pacte-Source, séances, profil systémique, missions et lignée |
 | Modèle | Un seul Cercle de croissance dès le Monde 1 ; identité durable `Circle`, incarnations `CircleCycle`, appartenances multiples, Pacte-Source versionné, rôles, facilitateur, évaluations systémiques et enveloppes de mission sans solde Ω collectif |
+| Profil et contact V1 | Annuaire et profil communautaire à visibilité choisie ; dossier de rencontre partagé avec un Cercle précis ; coordonnées révélées uniquement par consentement explicite |
+| Messagerie V1 | Réemploi de `Messaging::Thread` / `Messaging::Message` pour un fil rattaché à la demande d'adhésion ou invitation ; e-mail de notification seulement ; pas de messagerie directe générale |
+| Audit additionnel | Conteneur polymorphe, participants et scopes de `mathieu_core_messaging`, vues supposant Challenge/Journey, callbacks `receive_message_extra`, notifications, droits inter-communautés et suppressions en cascade ; voir [spec V1](profil-communautaire-messagerie-cercles-v1.md) |
 | Écarté | Page dédiée « cercle Monde 2 » ; distinction DiscussionCircle/GrowthCircle |
 
 ### F12 — Ressourcerie en six cartographies

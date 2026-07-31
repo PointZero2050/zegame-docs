@@ -1,6 +1,12 @@
 # Vision : relations, récits et quêtes collectives
 
 > Ajout Codex - 2026-07-12. Synthèse du brainstorming avec Boris. Horizon produit, non spécification validée.
+>
+> **Décision V1 — 2026-07-31.** L'horizon ci-dessous reste valable, mais la première livraison est
+> limitée aux profils communautaires et aux conversations contextuelles de mise en relation avec un
+> Cercle. Elle réemploie `Messaging::Thread` / `Messaging::Message`; l'e-mail notifie sans exposer
+> les coordonnées. Périmètre, visibilités, UX, autorisations et lots :
+> [Profil communautaire et messagerie des Cercles — V1](profil-communautaire-messagerie-cercles-v1.md).
 
 ## 1. Une messagerie propre au Point Zéro
 
