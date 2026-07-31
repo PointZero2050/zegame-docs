@@ -10,6 +10,14 @@
 > [cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md), qui prévaut
 > sur les formulations antérieures de cette page.
 
+> **Mise à jour canonique - 2026-07-31, atelier et jeu de l'Intercycle.** L'Atelier Point Zéro
+> devient le seuil expérientiel de fin du Monde 0 dans un format à trois vidéos. Le tutoriel du
+> Monde 1 intègre ensuite une traversée solo de l'Intercycle ; la même grammaire est rejouée en
+> collectif après la constitution du Cercle afin de faire éprouver les conditions de
+> l'intelligence collective. La spécification détaillée
+> [atelier-seuil-et-jeu-intercycle-monde-1.md](../pedagogie/atelier-seuil-et-jeu-intercycle-monde-1.md)
+> prévaut sur l'ancien détail des six expériences au § 12.
+
 ## 1. Promesse et limite pédagogique
 
 Le Monde 1 est **l'éveil cognitif** : un espace d'orientation, de décodage, de dialogue et de mise en relation.
@@ -34,16 +42,20 @@ Formule de passage :
 ## 2. Architecture pédagogique du Monde 1
 
 ```text
-Entrée dans le Monde 1
-└── Tutoriel obligatoire : La Boussole du nouveau monde
-    └── Ouverture du catalogue
-        ├── Fondamentaux
-        ├── Parcours par Puissance
-        ├── Lire le monde
-        ├── Découvrir l'écosystème
-        ├── Organisations et société
-        └── Former son Cercle
-            └── Politique de passage vers le Monde 2
+Atelier Point Zéro V2 — rite de fin du Monde 0
+└── Carte du Seuil enrichie
+    └── Entrée dans le Monde 1
+        └── Tutoriel obligatoire : La Boussole du nouveau monde
+            ├── Traversée solo de l'Intercycle
+            ├── Graine individuelle et orientation
+            └── Ouverture du catalogue
+                ├── Fondamentaux et parcours par Puissance
+                ├── Lire le monde et découvrir l'écosystème
+                └── Former ou rejoindre un Cercle
+                    ├── Traversée collaborative de l'Intercycle
+                    ├── Parcours d'autofacilitation
+                    ├── Pacte-Source léger
+                    └── Politique de passage vers le Monde 2
 ```
 
 Trois mécanismes doivent rester distincts :
@@ -63,23 +75,32 @@ Le champ V1 `Journey#mandatory` répond au deuxième besoin. Il ne doit pas serv
 | Structure | Parcours court non chapitré |
 | Progression | Linéaire |
 | Expériences | 6 |
-| Durée cible | Environ 1 h 30 |
-| Validation | Majoritairement autonome |
+| Durée cible | Environ 1 h 45 à 2 h, traversée solo comprise |
+| Validation | Individuelle, formative et majoritairement autonome |
 | Jeu ou quiz | Un maximum par expérience |
-| Mentor | Dernière expérience uniquement |
-| Graine de Récit | Une Graine finale |
-| Fonction | Donner la carte générale et orienter vers le catalogue |
+| Mentor | Relecture après la traversée solo |
+| Graine de Récit | Une Graine de traversée, validée par le joueur |
+| Fonction | Donner la carte générale, observer sa stratégie et préparer le Cercle |
 
 Les six expériences proposées sont :
 
-1. **Le moteur aux sept Puissances** : remettre les fonctions dans l'ordre et observer l'effet d'une fonction absente.
-2. **Quand une Puissance prend toute la place** : restaurer ou tempérer une Puissance dans une mission caricaturalement déséquilibrée.
-3. **Des Puissances aux besoins individuels** : relier situations, besoins et Puissances.
-4. **Les cinq chakras du système** : relier symptômes collectifs, cadres capacitants et Puissances.
-5. **L'harmonie entre le joueur et le système** : reconstruire les ponts entre besoins et cadres.
-6. **Ce qui génère de l'Oméga** : qualifier la valeur rendue possible, échanger avec le mentor, semer la Graine et choisir une orientation.
+1. **Relire mon passage** : reprendre les traces choisies de l'Atelier et distinguer peur, désir,
+   croyance, Résonance et Intention.
+2. **Remettre le Moteur en circulation** : manipuler les sept Puissances et observer qu'aucune ne
+   produit seule le mouvement.
+3. **Du joueur au système** : relier les Puissances, les besoins individuels et les cinq Cadres,
+   sans produire de profil automatique.
+4. **Traverser seul les Sept Années** : jouer la version solo courte du jeu de l'Intercycle.
+5. **Relire ma stratégie** : identifier avec le mentor les arbitrages, angles morts et conséquences,
+   puis produire une Graine individuelle.
+6. **Choisir ma prochaine traversée** : ouvrir le catalogue, préciser sa signature d'engagement et
+   préparer la rencontre d'un Cercle.
 
-Le parcours se termine par une hypothèse choisie par le joueur, jamais par un profil assigné : Puissance comprise, Puissance à explorer, besoin prioritaire, cadre collectif et type de valeur à rendre possible.
+Le parcours se termine par une hypothèse choisie par le joueur, jamais par un profil assigné :
+Puissance à explorer, besoin prioritaire, Cadre collectif à expérimenter, figure de jeu qui l'a
+inspiré et type de valeur à rendre possible. Cette figure ne devient pas encore un héros persistant
+ni un mentor : ce choix reste réservé au Monde 2. La traversée collaborative n'appartient pas à ce
+tutoriel individuel : elle ouvre le parcours collectif du Cercle constitué.
 
 ## 4. Catalogue cible
 
@@ -150,23 +171,30 @@ Les derniers travaux documentés de Claude rendent déjà possibles :
 - contenus TinyMCE avec images et vidéos préservées ;
 - Oméga V1 fondé sur le mécanisme actuel des points.
 
-Le tutoriel peut donc être construit immédiatement comme :
+Une première coque éditoriale du tutoriel peut encore être construite avec les objets actuels :
 
 ```text
 Journey
   community: Point Zéro - Monde 1
   mandatory: true
   progression_mode: lineaire
-  pages: aucune
+  pages: facultatives selon l'UX retenue
   challenges: 6
-  dernière expérience: Graine requise + autovalidation
+  expérience 4: traversée solo ciblée ou prototype externe
+  expérience 5: Graine requise après restitution
 ```
+
+Cette coque ne suffit pas à la cible : la partie solo, la comparaison avec la partie collective et
+les traces versionnées nécessitent les comportements décrits dans la spécification dédiée.
 
 ## 7. Ce qui exige encore un développement
 
 | Besoin | État |
 |---|---|
 | Jeux de classement, association, scénario ou QCM avec résultat | Pas de moteur interactif générique documenté |
+| Traversée solo versionnée, décisions et conséquences différées | Nouveau composant ou moteur de jeu ciblé |
+| Session collaborative à cinq ou huit, état partagé et reconnexion | Non implémenté ; prototype hybride recommandé |
+| Comparaison solo / collectif et restitution narrative | Non implémentée |
 | Seuil de réussite, tentatives et débrief adaptatif | Relève du futur moteur de validation |
 | Mentor IA et synthèse proposée puis validée | F5, non implémenté ; la Graine V1 reste un message libre |
 | Recommandation explicable de parcours | Non implémentée |
@@ -262,17 +290,24 @@ Fin de chapitre ? Mentor ? Graine ?
 
 ## 11. Ordre de production recommandé
 
-1. Verrouiller le lexique canonique et le gabarit.
-2. Écrire et intégrer `La Boussole du nouveau monde` comme parcours pilote.
-3. Tester la structure, la durée, la Graine finale et une première interaction ludique avec un petit groupe.
-4. Produire `La Grammaire des 7 Puissances` comme premier parcours chapitré de référence.
-5. Produire `Composer un Cercle de Croissance`, en incluant ou non le Sas selon arbitrage.
-6. Ajouter trois parcours très contrastés pour tester le catalogue : un par Puissance, un « lire le monde » et un collectif.
-7. Étendre seulement ensuite vers le catalogue des douze parcours.
+1. Auditer et réécrire l'Atelier Point Zéro en trois vidéos et trois bascules vécues.
+2. Cartographier les cartes du jeu existant : conserver, réécrire, transformer ou créer.
+3. Prototyper sur table la traversée solo courte, puis la traversée collaborative à cinq ou six.
+4. Écrire et intégrer `La Boussole du nouveau monde` avec la traversée solo comme expérience-pivot.
+5. Tester la durée, la Graine de traversée et la continuité depuis la Carte du Seuil.
+6. Produire le parcours collectif du Cercle : traversée collaborative, débrief, cinq rôles et
+   Pacte-Source léger.
+7. Produire `La Grammaire des 7 Puissances` comme premier parcours chapitré de référence.
+8. Ajouter trois parcours contrastés, puis étendre le catalogue.
 
-## 12. Format cible des six expériences de La Boussole
+## 12. Ancienne proposition détaillée des six expériences — historique remplacé
 
-> Ajout Codex - 2026-07-14. Préconisation de formats avant développement, à partir du principe validé par Boris : alterner vidéos courtes, mini-jeux et quiz.
+> Ajout Codex - 2026-07-14. Cette première proposition reste utile comme banque de micro-jeux et
+> de formats, mais son ordre n'est plus canonique. Depuis l'arbitrage du 31 juillet 2026, se
+> reporter au § 3 et à
+> [atelier-seuil-et-jeu-intercycle-monde-1.md](../pedagogie/atelier-seuil-et-jeu-intercycle-monde-1.md).
+> Les interactions ci-dessous peuvent être réemployées à l'intérieur des expériences 2 et 3 ou
+> dans de futurs parcours fondamentaux ; elles ne définissent plus à elles seules La Boussole.
 
 ### Rythme commun
 
@@ -441,7 +476,10 @@ Chaque expérience devra préciser au minimum :
 
 ### Place du collectif dans La Boussole
 
-Le tutoriel obligatoire doit rester entièrement réalisable en individuel afin de ne pas conditionner l'entrée dans le Monde 1 à la disponibilité d'un Cercle. Une **escale collective facultative** peut être proposée à la fin : partager sa première lecture des Puissances et découvrir les rôles d'autofacilitation. Les premiers collectifs obligatoires interviennent ensuite dans les parcours du catalogue qui en ont pédagogiquement besoin.
+Le tutoriel obligatoire reste entièrement réalisable en individuel afin de ne pas conditionner
+l'ouverture du catalogue à la disponibilité d'un Cercle. Il inclut désormais la **traversée solo
+de l'Intercycle**. La version collaborative intervient ensuite dans le parcours d'entrée du Cercle
+constitué : elle est obligatoire pour ce parcours collectif, pas pour terminer La Boussole.
 
 La Boussole doit aussi aider le joueur à formuler sa première **signature d'engagement**. L'expérience montre que la réussite d'un Cercle dépend davantage d'un désir commun d'avancer avec une intensité compatible que d'un niveau de départ homogène. Il ne s'agit donc ni d'un test de maturité, ni d'un score de conscience, mais de préférences déclarées et révisables :
 

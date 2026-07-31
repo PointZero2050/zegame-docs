@@ -9,6 +9,9 @@
 - Les fiches des treize expériences adoptent progressivement la [carte-couverture mobile-first](../vision/cartes-experiences-freeride.md) : illustration immersive, accroche, promesse, action principale et détails techniques sous une ancre. Le futur deck ne fait pas partie de cette révision du Monde 0.
 - Le parcours reste linéaire et obligatoire à l'échelle du Monde.
 - **L'Atelier Point Zéro est le rite obligatoire du passage Monde 0 → Monde 1**, en présentiel comme en distanciel.
+- Sa refonte canonique en trois vidéos et trois bascules vécues, ainsi que la continuité avec les
+  traversées solo et collaborative du Monde 1, sont décrites dans
+  [atelier-seuil-et-jeu-intercycle-monde-1.md](atelier-seuil-et-jeu-intercycle-monde-1.md).
 - **Le Sas d'entrée est optionnel** : il approfondit la préparation, mais son absence ne bloque ni l'Atelier ni le passage.
 - Une Graine de Récit privée suffit à intégrer et valider une fin de chapitre. Le partage est un second choix.
 - Les Oméga gagnés dans le parcours restent le socle V1. Aucun calcul de Contribution Oméga n'est ajouté ici.

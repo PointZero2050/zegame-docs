@@ -38,19 +38,28 @@ contrat et un accompagnement professionnel nouveaux.
 
 ### 2.1 Monde 1 : naissance et apprentissage
 
-Le joueur accomplit d'abord un parcours d'entrée obligatoire, pendant du tutoriel du Monde 0. Il
-vit ensuite plusieurs expériences individuelles avant de chercher ou de former un Cercle.
+Le joueur franchit d'abord l'Atelier Point Zéro, rite de fin du Monde 0, puis accomplit le parcours
+d'entrée obligatoire du Monde 1. Ce tutoriel comprend une **traversée solo de l'Intercycle** qui
+produit une Graine individuelle. Il vit ensuite plusieurs expériences individuelles avant de
+chercher ou de former un Cercle.
 
 Lorsqu'un Cercle est constitué, l'application déclenche un **parcours collectif dédié** qui lui
 apprend :
 
-1. les cinq cadres organisationnels ;
-2. les cinq rôles tournants ;
-3. le conducteur commun d'une séance ;
-4. les règles de sécurité et d'escalade ;
-5. la décision par consentement ;
-6. la confrontation ;
-7. la rédaction et la révision du Pacte-Source léger.
+1. à rejouer collectivement les Sept Années décisives et à comparer cette traversée aux parties
+   solo de ses membres ;
+2. les cinq cadres organisationnels ;
+3. les cinq rôles tournants ;
+4. le conducteur commun d'une séance ;
+5. les règles de sécurité et d'escalade ;
+6. la décision par consentement ;
+7. la confrontation ;
+8. la rédaction et la révision du Pacte-Source léger.
+
+La traversée collaborative est une expérience-pivot : elle ne doit pas prouver que le collectif
+réussit toujours, mais rendre visibles les conditions qui permettent à l'information, au pouvoir
+et à l'apprentissage de circuler. Voir la spécification
+[atelier-seuil-et-jeu-intercycle-monde-1.md](../pedagogie/atelier-seuil-et-jeu-intercycle-monde-1.md).
 
 Il n'existe pas de nombre minimal de réunions avant l'accès au Monde 2. La condition rituelle
 obligatoire est la **journée de l'Intention souveraine**.
@@ -608,6 +617,7 @@ initiales comme finales.
 
 - `Circle`, appartenance et composition manuelle assistée ;
 - taille 5 à 8 ;
+- traversée collaborative de l'Intercycle et débrief solo / collectif ;
 - parcours d'autofacilitation ;
 - cinq rôles tournants ;
 - Pacte-Source léger ;

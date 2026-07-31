@@ -56,6 +56,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 18. **[page-parcours-carte-du-voyage.md](page-parcours-carte-du-voyage.md)** — Spécification validée de la page ordonnée d'un parcours : carte du voyage, prochaine action au premier écran, chapitres narratifs, progression requise distincte des Oméga, cartes compactes et rite final. Inclut lots et critères d'acceptation responsive.
 
+19. **[Atelier-seuil et jeu de l'Intercycle](../pedagogie/atelier-seuil-et-jeu-intercycle-monde-1.md)** — articulation canonique du rite de fin du Monde 0 avec le tutoriel et les Cercles du Monde 1 : trois vidéos, Carte du Seuil enrichie, traversée solo, rejeu collaboratif et débrief sur les conditions de l'intelligence collective.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.
