@@ -65,6 +65,42 @@ comptés dans la Ressourcerie : contenus à **conserver et réécrire légèreme
 correspondent aux 25 scénarios et à la Ressourcerie déjà intégrées dans l'appli
 (`config/ressources/*.yml`), qui doivent devenir la source unique.
 
+## 3 bis. Ancrage dans la vision-cible de l'application
+
+Lecture faite de l'index [README.md](README.md) et des documents structurants. Ce que la
+vision-cible impose au site :
+
+- **Le site est l'amont de l'« accueil orchestrateur »** décrit dans
+  [accueil-point-zero.md](accueil-point-zero.md) : l'accueil de l'appli répond à « Où suis-je ?
+  Que se passe-t-il ? Quel est mon prochain pas ? » pour un joueur connecté. Le site public
+  répond aux mêmes trois questions pour le visiteur *pas encore joueur* — son unique issue
+  naturelle est « Entrer dans le Monde 0 » (état « Nouveau Joueur » de l'accueil). Le site et
+  l'accueil forment un seul tunnel, pas deux univers.
+- **Mode événement / Festival** : accueil-point-zero.md prévoit l'entrée événementielle
+  « très courte, via invitation, lien ou QR code ». La page Festival du site (et sa
+  billetterie) est exactement cette porte latérale — elle doit déboucher sur le flux
+  d'inscription de l'appli, pas sur un tunnel WooCommerce parallèle. Cohérent avec l'option A.
+- **Charte de voix** ([voix-point-zero.md](voix-point-zero.md)) : lucide, provocatrice,
+  décalée, complice sans complaisance ; sortie de la voix « Enfant Adapté » ; test rapide :
+  « si le texte pourrait être publié par une plateforme de bien-être, il n'est pas encore
+  Point Zéro ». Le contenu actuel du site échoue à ce test sur la quasi-totalité des pages
+  (registre encyclopédique-inspirationnel). La réécriture Livre II doit appliquer cette charte,
+  avec le dosage par surface prévu (pages narratives : torsion forte ; inscription/paiement :
+  clarté littérale, jamais d'humour qui masque une conséquence).
+- **Direction artistique** ([direction-artistique-point-zero.md](direction-artistique-point-zero.md)) :
+  coque produit stable (violet PZ, composants) + grammaire néoarchaïque (collages, matière,
+  vides actifs, glyphes) + grain de sabotage discret. Le site doit adopter la même coque que
+  l'appli — c'est l'argument décisif pour qu'il soit servi par la même pile (question 4 du §6).
+  Les assets existent déjà : 73 fiches pédagogiques, 162 médaillons d'atlas, covers Ressourcerie,
+  emblèmes des Rôles d'appel.
+- **Navigation cible de l'appli** (accueil-point-zero.md : Accueil · Marelle · Cercle ·
+  Ressources · Profil) : la Ressourcerie du site et celle de l'appli doivent être la même vue
+  avec deux niveaux d'accès (public / joueur), pas deux copies.
+- **Réserve** : le README de la vision rappelle qu'hors application-festival-2026.md (décision
+  opérationnelle) ces documents sont un horizon, pas une spécification. Le site ne doit
+  vitrine-iser que ce qui existera au festival (Monde 0, Moteur, Puissances, Cercles V1,
+  événements) — pas le monde-miroir ni la marketplace.
+
 ## 4. Architecture éditoriale cible (proposition à valider)
 
 Principe : le site public devient la **couche d'appel du Jeu** — courte, incarnée, dans le
