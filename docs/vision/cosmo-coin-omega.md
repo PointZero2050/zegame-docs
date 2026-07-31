@@ -2,6 +2,12 @@
 
 > Ajout Claude - 2026-07-13. Synthèse fonctionnelle de `Le Point Zéro - Cosmo Coin.docx` (source : Boris), orientée conception produit. Complète [sept-puissances.md](sept-puissances.md) et éclaire le chantier F13 ([impacts-fonctionnels.md](impacts-fonctionnels.md)).
 
+> **Mise à jour canonique - 2026-07-31.** Les décisions détaillées sur les trois piliers, les
+> Contributions, les missions, la redistribution et le decay de 10 % sont consolidées dans
+> [cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md). Les Omégas
+> sont strictement individuels : un Cercle ne possède pas de solde d'Omégas, seulement une enveloppe
+> temporaire à distribuer.
+
 ## 1. Ce que l'Oméga valorise
 
 L'Oméga (Cosmo Coin Oméga) quantifie les **contributions à la montée en conscience** — pas la performance, pas l'accumulation. Quatre échelles de génération :
@@ -58,17 +64,31 @@ L'IA du Point Zéro n'évalue jamais la conscience directement. Elle :
 
 ## 4. L'harmonie des besoins — indicateur traçable
 
-La désynchronisation naît de la honte du Désir : l'individu masque ses besoins, le système contrôle. Dans un collectif conscient, les besoins se répondent :
+La désynchronisation naît de la honte du Désir : l'individu masque ses besoins, le système contrôle.
+Dans un collectif conscient, les besoins se répondent selon cinq axes canoniques :
 
-| Besoins de l'individu | Besoins du système |
-|---|---|
-| Reconnaissance | Confiance |
-| Impact | Efficacité |
-| Liberté | Apprenance |
-| Sécurité | Gouvernance |
-| Évolution | Sens |
+| Puissance | Besoin individuel | Besoin / capacité du système | Cadre |
+|---|---|---|---|
+| Volonté | Reconnaissance et souveraineté | Confiance et co-souveraineté | Relationnel |
+| Imagination | Impact et accomplissement | Sens, direction et récit | Sens |
+| Émotion | Liberté d'être et d'éprouver | Décision depuis le cœur et syntonisation du champ | Gouvernance |
+| Communication | Sécurité, ressources et expression | Coordination et efficacité | Opérationnel |
+| Intuition | Évolution | Apprenance et connaissance vivante | Apprenance |
 
-Deux critères observables : la capacité du système à exprimer ses besoins, et celle des individus à exprimer les leurs sans honte ni manipulation.
+Deux dimensions doivent être observées : l'activation réelle de chaque puissance et l'écart de
+synchronisation entre besoins individuels et collectifs. Une faible différence ne suffit pas à
+caractériser le flow si l'individu et le système sont tous deux résignés ou inertes.
+
+## 4.1 Trois piliers de la comptabilité Oméga
+
+Le Profil affiche un score unique ventilé en trois piliers :
+
+1. libération et progression du Moteur individuel ;
+2. capacité à créer et tenir un PsychoKernel et des cadres collectifs sains ;
+3. contribution et impact des projets, résultant des deux premiers.
+
+Un impact élevé ne peut pas compenser des cadres toxiques. La formule cible doit appliquer un
+coefficient ou un plafond systémique plutôt qu'une somme naïve.
 
 ## 5. Sources de génération reconnues (écosystème)
 
@@ -82,11 +102,12 @@ Transmission intergénérationnelle, gardiennage des lieux et savoirs, accompagn
 | Ω générés par les Actions et la progression | **V1 — socle** : mécanique actuelle des points, renommée et conservée |
 | Contributions Oméga documentées | **Horizon proche** : registre des capacités manifestées, Résonances et effets observables |
 | Pondération ou complément des gains de parcours par les contributions | **À concevoir et expérimenter** : ne pas figer de formule avant d'avoir testé les preuves, les échelles et les risques de détournement |
-| Comptabilité Ω des cercles (généré / part redistribuée au joueur) | **V1 léger** (affichage, cf. F11) |
+| Missions et enveloppes de reconnaissance des Cercles | **Horizon proche** : estimation initiale, correction par l'impact réel, redistribution intégrale aux individus |
 | Texte + vidéo d'ambition dans le profil | **V1** (en attendant le mécanisme complet) |
 | Blocage 50 % + crowdfunding + redistribution | **Horizon** — nécessite cadrage juridique (monnaie, financement participatif) |
 | IA systémique d'observation des dynamiques | **Horizon** — commence modestement avec les mentors IA (F5) |
-| Harmonie des besoins comme indicateur | **Horizon** — à prototyper au niveau des cercles d'abord |
+| Profils de Cercle et d'organisation | **Horizon proche** — cinq puissances systémiques, cinq cadres, activation, synchronisation et flow |
+| Decay annuel des Omégas actifs | **Décision cible** — 10 % retournent à la Source ; le cumul historique reste visible |
 
 ## 7. Garde-fous spécifiques
 
@@ -96,3 +117,5 @@ Transmission intergénérationnelle, gardiennage des lieux et savoirs, accompagn
 - Les personnes concernées contrôlent la visibilité de leurs récits, Résonances et traces ; aucune preuve intime n'est exigée pour progresser ;
 - La rémunération « à l'évolution réelle » (accompagnement) suppose des critères transparents et co-validés — jamais un score IA unilatéral ;
 - Le mécanisme monétaire (blocage, crowdfunding, redistribution) touche au droit financier : validation juridique spécialisée requise avant toute implémentation réelle.
+- Le Cercle ne possède jamais les Omégas : toute enveloppe de mission doit être distribuée aux
+  individus selon le rituel de reconnaissance, de récit, d'évaluation et de consentement.

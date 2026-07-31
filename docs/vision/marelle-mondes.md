@@ -23,9 +23,9 @@ Le critère de passage central est la sécurité ontologique : capacité à trav
 | Monde | Fonction principale | Formes d'engagement | Passage ou accomplissement |
 |---|---|---|---|
 | 0 - Terre | Sas d'entrée, mise en résonance, découverte du Point Zéro et premières expériences réflexives | Contenus courts, échanges légers, exploration personnelle | Atelier Point Zéro d'une journée et choix d'un scénario de futur |
-| 1 | Découverte du moi face au collectif ; articulation entre besoins individuels et besoins du système | Communauté, événements et constellation de parcours choisis | Mise en récit de soi reliant futur souhaité, récit présent et transformations nécessaires |
-| 2 | Entrée dans un cercle de croissance stable de 6 à 8 personnes autour du Voyage du héros | Réunion mensuelle, facilitateur certifié, héros modèles, challenges et projets | Nuit blanche initiatique et épreuves incarnées |
-| 3 | Engagement approfondi sur un an et transformation identitaire, relationnelle et professionnelle | Cercle stable, Chrysalides, pratiques profondes et projet à impact | Oeuvre personnelle réelle, soutenue et ritualisée par l'écosystème |
+| 1 | Découverte du moi face au collectif ; naissance du Cercle de croissance et apprentissage de l'autofacilitation | Parcours d'entrée, Cercle de 5 à 8 personnes, cinq rôles, Pacte-Source léger | Journée obligatoire de l'Intention souveraine, récapitulant Graines et Résonances |
+| 2 | Entrée dans le Voyage du héros et engagement annuel intensif | Facilitateur certifié, abonnement individuel, journée de lancement, 10 réunions mensuelles, journée de clôture, héros modèles, Freeride et projets | Cycle annuel évalué, oeuvre ou contribution incarnée et choix de renouvellement |
+| 3 | Approfondissement de l'Ombre et transformation identitaire, relationnelle et professionnelle | Cercle accompagné, Chrysalides, pratiques profondes et projet à impact | Oeuvre personnelle réelle, soutenue et ritualisée par l'écosystème |
 | 4 | Exploration directe de la Conscience et de son langage | Méditation, retraites, immersions ; cercle devenu autonome | Oeuvre collective mobilisant les talents singuliers de l'équipe |
 | 5 | Service collectif conscient et incarnation dans la vie quotidienne | Travail de l'Ombre, persona symbolique, communautés de vie ou de service | Parcours initiatique personnalisé sur un an au service d'autres communautés |
 | 6 | Construction et mise en réseau de Cités Cosmiques | Service cosmolocal, gouvernance et création communautaire territoriale | Oeuvre collective multi-cercles et multi-territoires, au moins nationale |
@@ -78,9 +78,15 @@ Un passage n'est pas un déblocage automatique par points. Il peut combiner pré
 
 ### Collectifs durables
 
-À partir du Monde 2, l'équipe stable devient un objet fonctionnel central. La notion actuelle de Communauté paraît trop large pour représenter à elle seule un cercle de 6 à 8 personnes avec cycle, facilitateur, maturité collective, rencontres, oeuvre commune et historique.
+À partir du Monde 1, le Cercle de croissance devient un objet fonctionnel central. La notion actuelle
+de Communauté paraît trop large pour représenter à elle seule un Cercle de 5 à 8 personnes avec
+cycles, Pacte-Source, rôles tournants, profil systémique, facilitateur éventuel, rencontres, missions,
+oeuvre commune, lignées et historique.
 
-Il faudra étudier un objet dédié de type `Circle` ou une spécialisation explicite de `Community`, ainsi que les relations entre Joueurs, facilitateurs, Chrysalides, Cités Cosmiques et territoires.
+La cible distingue un `Circle` durable de ses incarnations `CircleCycle`. Les joueurs progressent
+individuellement, peuvent appartenir à plusieurs Cercles et les compositions sont reventilées à la
+fin de chaque cycle annuel. Voir
+[cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md).
 
 ### Sécurité et éthique
 

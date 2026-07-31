@@ -29,8 +29,13 @@ Chaque puissance peut être vécue selon cinq états :
 
 Le moteur inverti (blocage) suit quatre phases : **répression → résurgence → décharge → saturation**.
 
-**Échelle produit officielle (Boris, 2026-07-13)** — les cinq degrés affichés au joueur, évalués en 360° :
-**Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience**. La collecte des données depuis les expériences concernées reste à concevoir.
+**Échelle produit révisée (Boris, 2026-07-31)** — les profils individuels, de Cercle et
+d'organisation emploient cinq niveaux communs : **Entravé · Fragile · En chemin · Intégré · En
+flow**. L'interface les synthétise en trois états : **Bloqué** pour les niveaux 1-2, **En chemin**
+pour le niveau 3 et **Intégré** pour les niveaux 4-5. Le flow est un état ponctuel observable, pas
+un titre acquis. Cette nomenclature remplace l'ancienne échelle
+`Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience` dans les nouveaux écrans ; les
+données historiques doivent rester interprétables lors d'une migration.
 
 **Implication produit — Oméga et lemniscate** : cette mécanique fonde directement la représentation lemniscate de l'Oméga (cf. [impacts-fonctionnels.md](impacts-fonctionnels.md) F6). Le moteur ontologique EST une circulation permanente Ombre ⇄ Lumière passant par le Point Zéro ; l'amplitude visualisée peut refléter jusqu'où le joueur a exploré chaque polarité de chaque puissance. Les 5 états donnent une grammaire d'animation possible (position sur la boucle, blocage sur un pôle, circulation fluide).
 
@@ -65,6 +70,18 @@ Le livre associe la traversée des Mondes de la Marelle à des « gardiens » �
 - **L'Ombre comme « Lumière non intégrée »** ([monde-miroir.md](monde-miroir.md) §5) : confirmé et approfondi — l'Ombre emmagasine la Lumière non reconnue et « ne veut jamais nous détruire, elle veut être réintégrée ». La boucle des antagonistes (combat → victoire apparente → déplacement → Lumière captive → transformation) est le moteur inverti raconté.
 - **Fonctions universelles** : les 7 puissances s'appliquent aussi aux organisations (famille, entreprise, communauté) — pertinent pour l'évaluation des cercles et des communautés (sans jamais devenir un diagnostic automatique, garde-fou maintenu).
 - **Émotions primaires** : peur, colère, tristesse, honte, dégoût sont définies comme signaux d'écart au « JE SUIS » — vocabulaire utilisable pour les conversations d'intégration des Graines de Récit.
+
+### Correspondance canonique avec les cinq cadres
+
+> Décision Boris - 2026-07-31. Ces correspondances ne doivent pas être remplacées par une lecture
+> fonctionnelle plus intuitive : **Volonté ↔ Relationnel**, **Imagination ↔ Sens**,
+> **Émotion ↔ Gouvernance**, **Communication ↔ Opérationnel**, **Intuition ↔ Apprenance**.
+
+La Volonté devient relationnelle dans la co-souveraineté, entre décider, servir et diriger. La
+gouvernance relève de l'Émotion parce que le Point Zéro vise à faire du cœur le nouveau centre de
+décision, notamment par des dispositifs capables de syntoniser le champ d'information. La chaîne
+complète des profils systémiques et du flow est spécifiée dans
+[cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md).
 
 ## 6. Garde-fous spécifiques à ce référentiel
 

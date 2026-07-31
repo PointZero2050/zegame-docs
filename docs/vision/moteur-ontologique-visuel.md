@@ -37,7 +37,9 @@ Les deux stratégies d'évolution du référentiel sont couvertes par le cap : v
 ## 4. États d'affichage
 
 - **Avant questionnaire (première connexion)** : lemniscate violet réduit à une **graine** visible autour du yin-yang (intrigue le joueur) ; à la place du degré, message *« Pour une première évaluation de ton Moteur Ombre / Lumière, réponds au questionnaire : »* + bouton. Les 6 puissances sont en « à évaluer ».
-- **Après questionnaire** : lobes ouverts selon l'évaluation ; les 5 degrés (Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience) s'affichent.
+- **Après questionnaire** : lobes ouverts selon l'évaluation ; les cinq niveaux révisés
+  (Entravé · Fragile · En chemin · Intégré · En flow) s'affichent, avec la synthèse Bloqué / En
+  chemin / Intégré.
 
 Une **expérience dédiée au questionnaire** sera ajoutée dans le parcours du **Monde 0** ; si le joueur y a répondu librement depuis le Profil, il ne le refait pas.
 

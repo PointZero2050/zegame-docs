@@ -277,4 +277,5 @@ Quête du monde-miroir
 → parcours publié et transmis dans l'écosystème
 ```
 
-Le cercle de croissance de 6 à 8 Joueurs reste la maille relationnelle de base. Il peut se déployer en binômes, triades, cercle complet ou constellations intercercles selon l'échelle de la quête.
+Le Cercle de croissance de 5 à 8 Joueurs reste la maille relationnelle de base. Il peut se déployer
+en binômes, triades, Cercle complet ou constellations inter-Cercles selon l'échelle de la quête.

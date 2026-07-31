@@ -93,15 +93,17 @@ Pour les Mondes initiatiques avancés, « automatique » signifie **automatique 
 
 ### 3.1 Visibilité progressive
 
-La proposition précédente de masquer totalement le Cercle avant le Monde 2 est remplacée par une pédagogie en trois états :
+La proposition précédente de masquer totalement le Cercle avant le Monde 2 est remplacée par une
+pédagogie en trois états :
 
 | État | Expérience |
 |---|---|
 | Monde 0 | Écran de seuil, courte vidéo de teasing, CTA vers la prochaine Action du Monde 0 |
-| Monde 1 | Cercles de discussion thématiques ou liés aux parcours |
-| Monde 2 | Cercle de croissance stable de 6 à 8 joueurs, sous-groupes et quêtes inter-cercles |
+| Monde 1 | Cercle de croissance de 5 à 8 joueurs, autofacilitation, cinq rôles et Pacte-Source léger |
+| Monde 2 | Cycle annuel accompagné par un facilitateur certifié, abonnement, Freeride et quêtes inter-Cercles |
 
-L'écran de seuil doit expliquer la différence entre conversation et cercle de croissance, sans promettre une disponibilité immédiate.
+L'écran de seuil doit expliquer que le Cercle commence au Monde 1 comme apprentissage collectif et
+change d'intensité, de contrat et d'accompagnement au Monde 2.
 
 ### 3.2 Données à distinguer
 

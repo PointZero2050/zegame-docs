@@ -2,13 +2,26 @@
 
 > Ajout Codex - 2026-07-14. Première proposition fonctionnelle et pédagogique, à tester avec des groupes pilotes avant généralisation.
 
+> **Mise à jour canonique - 2026-07-31.** Le cadrage initial ci-dessous reste utile pour les
+> conducteurs et la sécurité, mais ses rôles génériques et l'idée que le Cercle de croissance ne
+> commencerait qu'au Monde 2 sont remplacés par
+> [cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md). Dès le
+> Monde 1, tout Cercle est un Cercle de croissance de 5 à 8 personnes ; il apprend cinq rôles
+> correspondant aux cinq cadres et aux cinq puissances médianes.
+
 ## 1. Principe
 
-Au Monde 1, certaines séquences collectives relèvent principalement de la réflexion, de l'écoute et de la mise en perspective. Elles peuvent donc être menées sans facilitateur professionnel, à condition que l'application fournisse un cadre explicite, des rôles distribués et un droit de retrait réel.
+Au Monde 1, le Cercle de croissance apprend à fonctionner par la réflexion, l'écoute, la
+confrontation et la mise en perspective. Il peut être autofacilité à condition que l'application
+fournisse un cadre explicite, cinq rôles distribués, un Pacte-Source léger et un droit de retrait
+réel.
 
 L'autofacilitation ne signifie pas absence de facilitation : la fonction est distribuée entre les membres et soutenue par un conducteur. Aucun participant n'acquiert une autorité sur le cheminement intérieur des autres.
 
-Au Monde 2, les séquences qui exigent une observation plus fine du processus, une intervention sur des dynamiques sensibles ou une validation qualitative relèvent de facilitateurs professionnels certifiés. Les permissions et critères correspondants doivent être distincts dans l'application.
+Une facilitation professionnelle payante peut être demandée au Monde 1. Au Monde 2, un facilitateur
+certifié accompagne le cycle annuel ; les séquences sensibles peuvent exiger en plus un
+accompagnateur spécialisé. Les permissions et critères correspondants doivent être distincts dans
+l'application.
 
 ## 2. Compatibilité des désirs d'engagement
 
@@ -28,16 +41,16 @@ L'algorithme peut suggérer des personnes ou signaler une incompatibilité proba
 
 ## 3. Rôles tournants
 
-Un Cercle de 6 à 8 personnes distribue les rôles suivants ; dans un groupe plus petit, plusieurs rôles peuvent être réunis. Ils changent à chaque rencontre.
+Un Cercle de 5 à 8 personnes distribue cinq rôles, qui changent à chaque rencontre. Un rôle peut
+être tenu par un gardien principal et un appui.
 
-| Rôle | Responsabilité |
-|---|---|
-| Gardien du cadre | Rappelle l'intention, les accords et le droit de passer |
-| Gardien du temps | Annonce les étapes et protège un temps de parole équitable |
-| Gardien de la parole | Distribue les tours, veille à l'écoute et intervient en cas d'interruption répétée |
-| Scribe | Produit uniquement la synthèse convenue, sans attribuer les propos personnels |
-| Gardien de la Graine | Formule avec le groupe ce qui mérite d'être conservé ou transmis |
-| Observateur du processus | Partage en fin de séance une observation descriptive, sans interpréter les personnes |
+| Puissance | Cadre | Rôle | Responsabilité |
+|---|---|---|---|
+| Volonté | Relationnel | Gardien·ne de l'harmonie | Soutient la souveraineté de chacun, la relation et la confrontation sans domination ni soumission |
+| Imagination | Sens | Boussole du collectif | Relie les échanges et décisions au récit et au futur communs |
+| Émotion | Gouvernance | Garant·e des choix | Soutient la décision depuis le cœur et le consentement éclairé |
+| Communication | Opérationnel | Tisseur·euse du flux | Rend explicites besoins, rythme, engagements et actions |
+| Intuition | Apprenance | Passeur·euse de sagesse | Récolte et transmet les apprentissages vivants de la séance |
 
 Ces rôles sont des services temporaires, pas des statuts. L'application peut les attribuer aléatoirement, permettre un échange consenti, puis mémoriser la rotation sans créer de classement.
 

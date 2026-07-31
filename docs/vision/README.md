@@ -12,6 +12,12 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 ## Ordre de lecture recommandé
 
+> **Décision canonique récente :** lire en complément prioritaire
+> **[cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md)**. Ce
+> document consolide les arbitrages du 31 juillet 2026 sur le Cercle de croissance dès le Monde 1,
+> les cycles et lignées, le Pacte-Source, les cinq rôles, les profils systémiques, le flow, le 360°,
+> les héros, les missions et le decay des Omégas.
+
 1. **[marelle-mondes.md](marelle-mondes.md)** — Le document fondateur. Traduit la Marelle Oméga (progression par mondes 0 à 10, cercles de croissance, sécurité ontologique) issue du livre source en hypothèses fonctionnelles pour ze.game. Pose la stratégie d'adoption incrémentale.
 
 2. **[monde-miroir.md](monde-miroir.md)** — Le repositionnement le plus ambitieux : avatar/jumeau numérique autonome, monde-miroir narratif, Ombre et Lumière captive, mana, quatrième mur. Sert de hub vers les 4 notes fonctionnelles ci-dessous.

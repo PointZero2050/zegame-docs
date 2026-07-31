@@ -2,6 +2,14 @@
 
 > Ajout Codex - 2026-07-14. Synthèse opérationnelle de `Synthese_Monde_1_Point_Zero.docx` fourni par Boris, croisée avec l'état documenté de `vibe.ze.game` au 14 juillet 2026. Cette note prépare la production des parcours sans intervenir dans la zone de code actuellement travaillée par Claude.
 
+> **Mise à jour canonique - 2026-07-31.** Le Monde 1 ne prépare plus seulement un Cercle futur :
+> tout Cercle constitué au Monde 1 est déjà un **Cercle de croissance** autofacilité. Il suit un
+> parcours collectif dédié, produit un Pacte-Source léger et prépare la journée obligatoire de
+> l'Intention souveraine. Le passage au Monde 2 reste individuel et introduit le facilitateur
+> certifié, l'abonnement et le cycle annuel. Voir
+> [cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md), qui prévaut
+> sur les formulations antérieures de cette page.
+
 ## 1. Promesse et limite pédagogique
 
 Le Monde 1 est **l'éveil cognitif** : un espace d'orientation, de décodage, de dialogue et de mise en relation.
@@ -12,13 +20,16 @@ Le joueur doit pouvoir :
 - relier les 7 Puissances, les besoins individuels, les cinq cadres et l'Oméga ;
 - appliquer cette lecture à soi, aux collectifs et au monde ;
 - choisir des parcours selon ses questions et ses résonances ;
-- rencontrer cinq à huit compagnons potentiels avant de décider avec eux d'entrer dans le Monde 2.
+- former ou rejoindre un Cercle de croissance de cinq à huit personnes et y apprendre les bases de
+  l'autofacilitation.
 
-Le Monde 1 ne cherche pas encore une transformation relationnelle profonde. Celle-ci commence dans le Monde 2, avec un Cercle stable et le Voyage du héros.
+Le Monde 1 constitue l'antichambre du Voyage du héros : le travail relationnel y commence réellement,
+mais reste un apprentissage des codes et des cadres. L'expérience intensive commence au Monde 2,
+avec un facilitateur certifié et un engagement annuel.
 
 Formule de passage :
 
-`Monde 0 : je pressens -> Monde 1 : je nomme et je discerne -> Monde 2 : je commence à vivre la grammaire dans la relation`
+`Monde 0 : je pressens -> Monde 1 : je nomme, je discerne et j'apprends le Cercle -> Monde 2 : j'engage mon Voyage du héros`
 
 ## 2. Architecture pédagogique du Monde 1
 
@@ -172,28 +183,32 @@ Pour le premier parcours, les jeux peuvent être conçus pédagogiquement dès m
 
 ## 8. Condition de passage vers le Monde 2
 
-Le document propose :
+> Révision Boris - 2026-07-31. Il n'existe pas de nombre minimal de réunions de Cercle. La condition
+> rituelle obligatoire est la **journée de l'Intention souveraine**.
 
-- tutoriel du Monde 1 terminé ;
-- `La Grammaire des 7 Puissances` terminé ;
-- deux parcours librement choisis ;
-- un parcours conversationnel, de discernement ou de vie collective ;
-- `Composer un Cercle de Croissance` terminé ;
-- Sas du Cercle vécu avec l'équipe pressentie ;
-- Graine de Récit de passage semée.
+Le joueur doit avoir :
 
-Cette politique ne doit pas être réduite à un nombre de parcours. Elle combine des exigences fixes, un choix libre, une catégorie de parcours, une production narrative et une décision collective.
+- terminé le parcours d'entrée obligatoire du Monde 1 ;
+- vécu suffisamment d'expériences individuelles pour alimenter sa Fresque de Récit ;
+- rejoint ou constitué un Cercle de croissance de 5 à 8 personnes ;
+- suivi le parcours collectif d'apprentissage de l'autofacilitation ;
+- produit et consenti un Pacte-Source léger avec son Cercle ;
+- vécu la journée de l'Intention souveraine, synthèse de ses Graines et Résonances ;
+- choisi explicitement l'engagement annuel accompagné du Monde 2.
+
+Le passage reste individuel : les membres d'un même Cercle peuvent franchir le seuil à des moments
+différents, continuer à cheminer ensemble ou participer à d'autres Cercles.
 
 Modèle cible :
 
 ```text
 WorldPassagePolicy Monde 1 -> Monde 2
 ├── exigences fixes
-├── N parcours parmi une sélection ou une famille
-├── Graine de passage
-├── Cercle pressenti de 5 à 8 membres
-├── Sas attesté
-└── décision explicite des membres
+├── parcours d'entrée terminé
+├── parcours d'autofacilitation du Cercle terminé
+├── Pacte-Source léger consenti
+├── Intention souveraine produite et journée attestée
+└── décision individuelle d'engagement annuel
 ```
 
 L'algorithme peut aider à proposer des constellations, mais il ne forme jamais seul le Cercle.
@@ -240,7 +255,7 @@ Fin de chapitre ? Mentor ? Graine ?
 
 1. **Volonté** : le document Monde 1 emploie `JE DÉCIDE`, tandis que le référentiel partagé emploie `JE VEUX`. Il faut choisir une formule canonique ou distinguer puissance (`JE VEUX`) et acte d'orientation (`JE DÉCIDE`).
 2. **Vocabulaire de l'unité** : le document impose « Expérience », alors que la décision précédente retenait « Action ». Recommandation : `Challenge` en technique, **Expérience** comme nom de l'unité, et verbes d'action pour les CTA. À valider.
-3. **Taille du Cercle** : le cadre Monde 1 indique 5 à 8 membres ; les documents précédents indiquent souvent 6 à 8. Une règle unique est nécessaire pour les textes et validations.
+3. ~~**Taille du Cercle**~~ : **tranché le 2026-07-31 — 5 à 8 membres**.
 4. **Numérotation** : la plateforme retient désormais onze positions, Mondes 0 à 10. Le titre de parcours « les dix mondes » doit être reformulé ou expliqué.
 5. **Premier lot** : confirmer l'intégration du Sas dans `Composer un Cercle de Croissance` ou élargir le lancement au-delà de douze parcours.
 6. **Oméga** : définir pour la V1 ce qui est attribué à l'accomplissement et ce qui relève plus tard d'une reconnaissance de contribution amplifiée.
@@ -475,7 +490,11 @@ Les documents actuels permettent de commencer `La Boussole du nouveau monde`. Le
 - indiquer les sources obligatoires, formulations intouchables et sujets sensibles ;
 - confirmer le public de la première version et le niveau de langage ;
 - choisir les séquences collectives obligatoires, facultatives ou absentes ;
-- arbitrer les points ouverts du §10, en priorité `JE VEUX` / `JE DÉCIDE`, `Expérience` / `Action`, taille du Cercle et attribution de l'Oméga ;
+- arbitrer les points encore ouverts du §10, en priorité `JE VEUX` / `JE DÉCIDE`,
+  `Expérience` / `Action` et attribution de l'Oméga ;
 - valider le premier lot d'images pilotes avant production en série.
 
-À défaut d'un arbitrage immédiat, la production peut avancer avec les hypothèses réversibles suivantes : `JE VEUX` désigne la Puissance et `JE DÉCIDE` son acte d'orientation ; **Expérience** est le nom visible de l'unité ; le Cercle cible compte 6 à 8 personnes ; l'Oméga V1 récompense l'accomplissement sans prétendre mesurer l'impact systémique.
+À défaut d'un arbitrage immédiat, la production peut avancer avec les hypothèses réversibles
+suivantes : `JE VEUX` désigne la Puissance et `JE DÉCIDE` son acte d'orientation ; **Expérience**
+est le nom visible de l'unité ; le Cercle cible compte **5 à 8 personnes** ; l'Oméga V1 récompense
+l'accomplissement sans prétendre mesurer l'impact systémique.

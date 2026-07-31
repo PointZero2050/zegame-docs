@@ -75,7 +75,8 @@ Dans le pixel game, les blocs deviennent pages du Grand Livre, fresques, constel
 
 ## 3. Architecture sociale fractale
 
-Le cercle de croissance de 6 à 8 Joueurs est la maille de confiance et d'intégration. Les quêtes peuvent mobiliser temporairement différentes formations :
+Le Cercle de croissance de 5 à 8 Joueurs est la maille de confiance et d'intégration. Les quêtes
+peuvent mobiliser temporairement différentes formations :
 
 | Formation | Fonction |
 |---|---|

@@ -187,10 +187,17 @@ Références techniques officielles : [intégration Event Tickets + WooCommerce]
 
 ### F11 — Cercle progressif (révisé Boris 2026-07-13)
 
+> **Révision canonique Boris/Codex - 2026-07-31.** F11 doit désormais être relu à travers
+> [cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md). Le Cercle de
+> croissance commence au Monde 1, réunit 5 à 8 personnes, apprend cinq rôles liés aux cinq cadres,
+> possède un Pacte-Source et distingue identité durable, cycles et lignées. Au Monde 2 s'ajoutent
+> facilitateur certifié, abonnement et engagement annuel. La « comptabilité Ω du Cercle » ci-dessous
+> est remplacée par des enveloppes de mission temporaires, intégralement distribuées aux individus.
+
 | Aspect | Impact |
 |---|---|
-| Front | Monde 0 : écran de seuil + vidéo (à l'essai, groupe test) ; Monde 1+ : page unique avec trois blocs — **Mes cercles** (nature du cercle, Ω générés par le cercle et part revenue au joueur), **Ouvrir un cercle** (nom, thématique, description), **Cercles à découvrir** (cercles cherchant des membres ; l'ouvreur reçoit les demandes et contacte par téléphone/e-mail) |
-| Modèle | Un seul objet Cercle — pas de distinction discussion/croissance : tous les cercles deviennent de fait des cercles de croissance à partir du Monde 2 ; membres, ouvreur, thématique, description, comptabilité Ω (généré / redistribué) |
+| Front | Monde 0 : écran de seuil + vidéo ; Monde 1+ : **Mes Cercles**, **Ouvrir un Cercle**, **Cercles à découvrir**, puis page du Cercle avec cycle, rôles, Pacte-Source, séances, profil systémique, missions et lignée |
+| Modèle | Un seul Cercle de croissance dès le Monde 1 ; identité durable `Circle`, incarnations `CircleCycle`, appartenances multiples, Pacte-Source versionné, rôles, facilitateur, évaluations systémiques et enveloppes de mission sans solde Ω collectif |
 | Écarté | Page dédiée « cercle Monde 2 » ; distinction DiscussionCircle/GrowthCircle |
 
 ### F12 — Ressourcerie en six cartographies
@@ -213,7 +220,7 @@ Références techniques officielles : [intégration Event Tickets + WooCommerce]
 | Accomplissements | Deux familles de badges internes : **complétion de parcours**, reconnaissable immédiatement et illustrée par l'image du parcours recadrée en médaillon ; **seuils gamifiés**, visibles ou secrets, représentés par des sceaux géométriques. Aucun standard Open Badge ni valeur d'attestation externe dans le périmètre actuel. |
 | Obtention | Petit seuil : notification discrète. Seuil narratif ou secret : carte de révélation à une respiration du parcours. Fin de parcours : médaillon intégré à l'écran final. Tous restent consultables dans « Accomplissements » sans rejouer l'animation. Les obtentions simultanées sont regroupées. |
 | Contributions | Une Contribution Oméga relie capacités manifestées, Résonances chez d'autres personnes et effets concrets sur le collectif ou le monde. Elle est documentée par des regards et traces proportionnés à son enjeu. Le Profil doit raconter cette manifestation, pas afficher une note de popularité. |
-| Puissances | Six axes Ombre/Lumière et Transcendance en synthèse ; **degrés officiels du moteur (Boris, 2026-07-13) : Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience**, évalués en 360° (collecte depuis les expériences concernées à concevoir) ; lemniscate de synthèse en tête ; source/date/visibilité des lectures ; privé par défaut |
+| Puissances | Six axes Ombre/Lumière et Transcendance en synthèse ; **échelle révisée Boris 2026-07-31 : Entravé · Fragile · En chemin · Intégré · En flow**, synthétisée dans l'interface en Bloqué / En chemin / Intégré ; évaluation individuelle alimentée par les parcours, distincte des profils systémiques de Cercle et d'organisation ; source/date/visibilité des lectures ; privé par défaut |
 | Sécurité | Pas de diagnostic automatisé, de classement public ou de partage sans consentement explicite |
 
 Pour le Monde 0, un premier lot resserré de seuils peut tester cette grammaire sans saturer le Profil : **Entrer dans le Jeu**, **Le Moteur s'éveille**, **Un futur regardé en face**, **Graine semée**, **Le futur renvoie la balle**, et le secret **Les futurs sont pluriels**. Le seuil des **100 premiers Oméga** reste transversal et devrait marquer le passage vers le Monde 1 plutôt que la seule conclusion du Monde 0 ; vérifier le barème courant avant implémentation.
@@ -350,7 +357,9 @@ d'impact séparée.
 
 ### Décisions UX transverses (Boris, 2026-07-13)
 
-- **Cercles progressifs** : l'ancienne décision de masquer totalement l'entrée avant le Monde 2 est remplacée par F11. L'entrée existe dès le Monde 0 comme teaser ; discussions au Monde 1 ; croissance au Monde 2.
+- **Cercles progressifs** : l'entrée existe dès le Monde 0 comme teaser ; tout Cercle constitué au
+  Monde 1 est déjà un Cercle de croissance autofacilité ; le Monde 2 introduit le facilitateur
+  certifié, l'abonnement et le cycle annuel.
 - **Vocabulaire : « Graine de Récit »** (et non « Grain ») — on sème une Graine, les résonances y germent.
 - **Mondes 0-1 : mantra « JE DISCERNE »** (Boris, 2026-07-13) — le « JE SUIS » (Désir) est la puissance la plus profonde à toucher, pas la première affichée. Cohérent avec le gardien de l'Intuition (sept-puissances.md §4).
 - **Marelle** : intro actée (« dispositif de transformation personnelle et collective en 10 mondes d'intensité progressive ») ; bloc Monde actuel collapsable, rouvert automatiquement à l'ouverture d'un nouveau monde, nourri par les fiches Mondes (Dropbox Point Zéro/img/Mondes) ; recherche libre titre+description ; filtres : thématique, durée, intensité, puissance, monde.
