@@ -42,8 +42,21 @@ Constats techniques :
   sert en https → redirections et risques de contenu mixte.
 - Performance accueil : ~244 requêtes, 51 assets `wp-content`, DOMContentLoaded ≈ 3,7 s avec
   cache. Conséquence directe de l'empilement thème Pro + WPBakery + Slider Revolution.
-- La page newsletter charge 4 iframes `https://div.show/public` — service à identifier dans
-  l'admin (probablement un embed vidéo), à supprimer ou internaliser lors de la refonte.
+
+### ⚠️ Site compromis : injection d'iframes cachées `div.show`
+
+Découvert pendant l'audit admin (2026-07-31) : des **iframes invisibles** (1 px,
+`visibility: hidden`) pointant vers `https://div.show/public` sont injectées **dans le contenu
+même des pages** (au cœur du HTML WPBakery, y compris à l'intérieur de balises `<h2>`). Étendue
+mesurée : **169 occurrences sur l'accueil**, 136 sur `/ecosysteme-introduction/`, 73 sur
+`/ressourcerie-les-articles/`, 45 sur `/formats-ateliers-2/`, 1 sur `/contact/` (0 sur
+`/comprendre-presentation/`). C'est un motif classique de compromission WordPress (injection en
+base dans `post_content`). Conséquences : réputation SEO, risque pour les visiteurs, et surtout
+**tout export de contenu vers la nouvelle pile devra être assaini** (filtrer ces iframes lors de
+la migration). Actions immédiates recommandées : scan Wordfence complet, vérification des
+sauvegardes UpdraftPlus, changement des mots de passe admin (aucun des 6 comptes n'a la 2FA),
+signalement à l'hébergeur Liquid Web/Nexcess. La compromission renforce l'argument d'une
+migration complète plutôt qu'un maintien prolongé de WordPress.
 
 ## 3. État des lieux fonctionnel
 
@@ -136,13 +149,58 @@ festival reste prioritaire).
 - Sécurité : les accès (WP, SQL) doivent vivre dans le gestionnaire de mots de passe de Boris,
   pas dans des fichiers synchronisés Dropbox.
 
-## 7. À compléter (audit admin en attente)
+## 7. Audit admin (réalisé le 2026-07-31, session Boris, lecture seule)
 
-L'audit de l'admin WP reste à faire (session authentifiée nécessaire) :
+### Plugins
 
-- liste exacte des plugins actifs et versions, licences ;
-- volume d'abonnés MailPoet et listes ;
-- historique des commandes WooCommerce et réglages Stripe (mode test/live) ;
-- utilisateurs WP existants ;
-- identification des iframes `div.show` ;
-- inventaire complet des pages/articles publiés (y compris brouillons).
+36 extensions actives (38 installées ; Polylang et WP Mail SMTP inactives), toutes à jour.
+Principales : ACF 6.8.6, WPBakery 8.6.1 + All In One Addons + Templatera, Slider Revolution
+6.7.37, The Events Calendar 6.17.1 + Pro 7.7.14, Event Tickets 5.29.1 + Plus 6.9.3 (+ extension
+Additional Fields), WooCommerce 10.9.4 + Stripe Gateway 10.8.4 + Catalog Mode + StoreCustomizer,
+MailPoet 5.34.3 + **MailPoet Premium 5.30.0 (obsolète : fonctionnalités premium désactivées
+par MailPoet, avertissement affiché dans l'admin)**, WPForms 2.0.0.2, GamiPress 7.9.9.2,
+Wordfence 8.2.2, CleanTalk 6.84 (**période d'essai en fin de vie, relance de paiement**),
+Complianz 7.5.1, UpdraftPlus 1.26.6 (sauvegardes), WP Statistics, Code Snippets, Duplicate
+Page, Enable Media Replace, Regenerate/Force Regenerate Thumbnails, Favicon RealFaviconGenerator,
+Simple Custom CSS, Widget Logic, Content Views, Dossiers.
+
+### Newsletter (MailPoet)
+
+- **634 contacts** : 569 abonné·es actifs, 6 non confirmés, 36 désabonnés, 23 retournés
+  (bounces). Quota du plan : 575/1500.
+- Listes : « Newsletter Point Zéro 2050 » (633), Test (1), Utilisateurs WordPress (6), 35
+  contacts sans liste.
+- Étiquettes : Webinaire Organisations (103), Formats PZ (61), Import 16/02/26 (47),
+  Master class (14) — à préserver lors de la migration (segmentation).
+
+### Commandes et Stripe
+
+- **1 seule commande WooCommerce** (#4454, Boris, 11 juillet 2026, statut « En cours ») —
+  cohérent avec « les billets vendus sont des tests ». Historique à ignorer lors de la
+  migration.
+- **La passerelle Stripe est en mode LIVE** (mode test décoché). Les clés live sont donc déjà
+  configurées ; un « test » de billet payant passe par une vraie transaction. Pour la nouvelle
+  pile : réutiliser le même compte Stripe, et faire les tests en mode test.
+
+### Comptes WordPress
+
+6 comptes : 5 administrateurs (admin9878, Boris Sirbey, Fred Angelot, matdaval, philmalbrunot)
++ 1 « Events Administrator » (Sara). **Aucun compte n'a la 2FA active.** À corréler avec la
+compromission (§2) : rotation des mots de passe recommandée.
+
+### Volumes de contenu
+
+- 105 pages publiées, 33 articles publiés, 9 événements, 37 produits WooCommerce,
+  807 médias.
+- Le périmètre éditorial réel à migrer est donc plus large que les ~40 pages du menu :
+  inventaire page par page nécessaire (beaucoup de pages hors navigation, comme `/contact/`).
+
+## 8. Prochaines étapes proposées
+
+1. **Traiter la compromission** (§2) : scan Wordfence, nettoyage ou décision d'accélérer la
+   migration ; rotation des mots de passe ; 2FA sur les comptes restants.
+2. Arbitrer option A (migration complète avant fin août) vs option B (transition douce).
+3. Export MailPoet (CSV, avec listes et étiquettes) et inventaire éditorial complet
+   (105 pages + 33 articles) avec assainissement des iframes injectées.
+4. Concevoir l'architecture cible côté appli (modèles Event/Registration, pages statiques
+   versionnées, formulaire contact, newsletter) — en cohérence avec le chantier appli festival.
