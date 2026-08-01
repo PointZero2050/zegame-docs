@@ -248,6 +248,61 @@ Un jeton Hetzner Read & Write est utilisé par les scripts d'exploitation, lu de
 local hors Dropbox et jamais affiché. **À révoquer dans la console à la fin du chantier**
 (Security → API tokens), ou à conserver si l'on veut garder l'exploitation scriptable.
 
+## 7 quinquies. Application Rails livrée — 2026-08-01
+
+Le squelette de l'application autonome tourne en production sur `pointzero-app-01`.
+
+| Élément | Valeur |
+|---|---|
+| Chemin | `/home/deploy/src/pointzero-app` (dépôt git local, commit `0bac7af`) |
+| Rails / Ruby | **8.1.3.1 / 4.0.6** |
+| Base | PostgreSQL 17 en conteneur ; 4 bases créées (`pointzero_production` + `_cache`, `_queue`, `_cable`) |
+| Options | `--database=postgresql --css=sass --javascript=importmap` |
+| Jobs / cache | Solid Queue, Solid Cache, Solid Cable |
+| Déploiement | `/home/deploy/deploy` : `compose.yml` + `caddy/Caddyfile` + `.env` (droits 600) |
+| Santé | `/up` répond 200 depuis le proxy |
+
+### Révision d'une décision : Compose plutôt que Kamal
+
+J'avais recommandé Kamal (défaut Rails 8). À la mise en œuvre, deux contraintes non anticipées
+sont apparues : **aucun Ruby ni Docker sur le poste de Boris** — tout se fait donc sur le
+serveur — et Kamal exige un **registre d'images authentifié** plus une clé SSH du serveur vers
+lui-même. Cela ajoutait un registre privé, un htpasswd et une seconde paire de clés, pour
+aucun bénéfice sur une machine unique où l'on développe aussi.
+
+Retenu : **Docker Compose + Caddy**. Le `Dockerfile` de production généré par Rails est
+inchangé, Caddy obtient et renouvelle les certificats Let's Encrypt tout seul, et le
+déploiement se résume à `docker compose build web && docker compose up -d`. On perd le
+déploiement sans coupure et le retour arrière en une commande ; c'est acceptable avant
+l'ouverture, et la bascule vers Kamal restera possible le jour où il y aura une intégration
+continue et un registre.
+
+### Deux corrections rencontrées, à connaître pour la suite
+
+1. **`DATABASE_URL` ne suffit pas en Rails 8.** Il ne s'applique qu'à la connexion primaire ;
+   `cache`, `queue` et `cable` retombaient sur une socket Unix locale et faisaient échouer
+   `db:prepare`. `config/database.yml` déclare désormais les quatre bases explicitement, à
+   partir de `DB_HOST`, `POSTGRES_USER`, `POSTGRES_PASSWORD` et `POSTGRES_DB`.
+2. **Les valeurs par défaut de `ENV.fetch` sont obligatoires** : `assets:precompile` s'exécute
+   pendant la construction de l'image, sans les variables d'environnement de production. Un
+   `ENV.fetch("POSTGRES_USER")` sans repli casse le build.
+
+### Reste bloqué : le DNS
+
+`new.pointzero2050.com` renvoie **NXDOMAIN** depuis les serveurs faisant autorité d'OVH
+(`ns20.ovh.net`) comme depuis les résolveurs publics. Let's Encrypt échoue donc à valider le
+domaine et Caddy réessaie toutes les deux minutes. **Aucune action ne sera nécessaire côté
+serveur** : dès que l'enregistrement sera visible, le certificat sera émis automatiquement.
+À vérifier dans la zone OVH du domaine (l'enregistrement A `new` → `167.233.210.57`).
+
+### Question ouverte : le dépôt distant
+
+Le code est versionné localement sur le serveur mais n'a pas encore de dépôt distant. Deux
+options : une branche `festival-standalone` dans `zegame-app` comme le prévoyait le cadrage
+Festival, ou un **nouveau dépôt `PointZero2050/pointzero-app`**. Recommandation : le nouveau
+dépôt, car il ne s'agit pas d'une extraction de l'application ze.game mais d'une base neuve
+dans laquelle la logique Point Zéro sera portée ensuite. À trancher par Boris.
+
 ## 8. Questions bloquantes
 
 Il n'en reste qu'une, mais elle conditionne la bascule finale :
