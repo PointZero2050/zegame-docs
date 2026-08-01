@@ -352,6 +352,44 @@ Les 138 contenus et l'intégralité des médias sont dans l'application.
 - Reconstruire les 14 formulaires en natif.
 - Reprendre la mise en forme, ensemble par ensemble.
 
+## 7 septies. Site en ligne — 2026-08-01
+
+**https://new.pointzero2050.com** est servi en HTTPS, certificat Let's Encrypt obtenu.
+
+- **DNS résolu.** L'enregistrement avait été saisi comme `new.pointzero2050.com` dans le champ
+  « sous-domaine » d'OVH, qui y ajoute la zone : le nom réellement publié était
+  `new.pointzero2050.com.pointzero2050.com`. Corrigé en saisissant `new` seul. À retenir pour
+  la bascule du domaine principal.
+- **Dépôt distant** : https://github.com/PointZero2050/pointzero-app (privé, organisation
+  PointZero2050). Le serveur pousse via une **clé de déploiement dédiée** en lecture/écriture
+  (`~/.ssh/id_ed25519_github` sur le serveur, empreinte
+  `SHA256:bU+nwnSo210nEJI6Wd3Y6Ug59HIJD8ddSuNVBaSW2Ts`). Aucun identifiant GitHub personnel
+  n'est stocké sur le serveur.
+
+### Corrections apportées après première vérification en ligne
+
+1. **URL en protocole relatif.** Le filtre de réécriture ne couvrait que `https?://` et
+   laissait passer les `//pointzero2050.com/…`, qui auraient cassé à l'extinction de
+   WordPress. Corrigé : **82 médias supplémentaires** ont été découverts et rapatriés, soit
+   **2 188 fichiers, 344 Mo**. Il ne reste que 7 références au domaine, toutes dans
+   `test-658`, une page de test destinée à la suppression.
+2. **Entités HTML des titres.** `CGI.unescapeHTML` ne décode que les entités XML de base :
+   les titres contenant `&rsquo;` s'affichaient tels quels. Décodage confié à Nokogiri.
+
+### Limite connue : Slider Revolution
+
+Les images des sliders **ne survivent pas à l'export REST**. Leur balisage ne contient que des
+placeholders (`dummy.png` en `src` comme en `data-lazyload`) ; les visuels réels vivent dans
+les tables du plugin et sont injectés par son JavaScript, que nous avons retiré. Sur une page
+comme `/comprendre-question-1`, cela représente 28 images fantômes, à côté de 11 images de
+contenu qui, elles, s'affichent correctement.
+
+Conséquence : si un visuel de slider a une valeur éditoriale, il faudra le récupérer dans la
+base WordPress ou le recréer. La reprise éditoriale prévoyant de toute façon de nouveaux
+visuels issus du corpus Point Zéro (fiches pédagogiques, atlas), l'impact est limité — mais la
+décision doit être prise **avant l'extinction de WordPress**, après quoi ces visuels seront
+perdus.
+
 ## 8. Questions bloquantes
 
 Il n'en reste qu'une, mais elle conditionne la bascule finale :
