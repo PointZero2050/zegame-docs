@@ -204,6 +204,50 @@ Recommandations :
 supprimer du dossier synchronisé après import, en conservant l'original côté MailPoet jusqu'à
 l'extinction de WordPress.
 
+## 7 quater. Infrastructure livrée — 2026-08-01
+
+Serveur Point Zéro créé et provisionné, sur le compte Hetzner propre à Point Zéro.
+
+| Élément | Valeur |
+|---|---|
+| Nom | `pointzero-app-01` (id 157902593) |
+| Type | **cx33** — 4 vCPU x86, 8 Go RAM, 80 Go SSD |
+| Localisation | Falkenstein (fsn1), Allemagne |
+| Système | Ubuntu 26.04 LTS, noyau 7.0 |
+| IPv4 | `167.233.210.57` |
+| IPv6 | `2a01:4f8:c015:16f3::/64` |
+| Sauvegardes | automatiques activées (+20 %) |
+| Pare-feu | `pointzero-web` (id 11401908) — entrant 22/80/443 + ICMP uniquement |
+
+**Coût réel : 10,69 € HT / mois** (serveur 8,49 + IPv4 0,50 + sauvegardes 1,70), soit
+12,83 € TTC. *Note : le `cpx31` évoqué au §6 coûtait 17,49 € HT pour les mêmes 4 vCPU et 8 Go —
+le `cx33` est deux fois moins cher à performance égale, avec 80 Go de disque au lieu de 160.*
+
+Configuration appliquée :
+
+- fuseau horaire Europe/Paris, système entièrement à jour, redémarrage effectué ;
+- utilisateur **`deploy`** (sudo sans mot de passe, membre du groupe `docker`) ;
+- authentification SSH **par clé uniquement** — mot de passe désactivé, `root` en
+  `prohibit-password` ;
+- `unattended-upgrades` actif pour les correctifs de sécurité ;
+- `fail2ban` actif ;
+- **Docker 29.1.3** installé et utilisable par `deploy`, en vue d'un déploiement **Kamal**
+  (défaut Rails 8 ; ni Ruby ni Caddy à installer sur l'hôte, `kamal-proxy` gère le TLS).
+
+### Accès
+
+- Clé privée : `~/.ssh/id_ed25519_pointzero` sur le poste de Boris — **hors Dropbox**,
+  distincte de la clé ze.game. À sauvegarder par un canal sûr, jamais dans un dépôt.
+- Connexion : `ssh -i ~/.ssh/id_ed25519_pointzero deploy@167.233.210.57`
+- Clé publique enregistrée dans le projet Hetzner sous le nom `pointzero-app`
+  (empreinte `6a:c3:ea:89:20:7c:f4:60:3f:86:ca:69:27:9a:aa:e2`).
+
+### Jeton API
+
+Un jeton Hetzner Read & Write est utilisé par les scripts d'exploitation, lu depuis un fichier
+local hors Dropbox et jamais affiché. **À révoquer dans la console à la fin du chantier**
+(Security → API tokens), ou à conserver si l'on veut garder l'exploitation scriptable.
+
 ## 8. Questions bloquantes
 
 Il n'en reste qu'une, mais elle conditionne la bascule finale :
