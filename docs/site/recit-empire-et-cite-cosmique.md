@@ -1,9 +1,12 @@
 # Le Récit 2/3 — L'Empire et la Cité cosmique
 
-> **Méta** · Remplace : `/comprendre-question-3/` (forces qui ont façonné nos croyances),
-> `/comprendre-question-4/` (qu'est-ce qui nous paralyse) · Redirections 301 : ces deux URLs
-> → cette page · Visuels : fiche 18 « Empire et Cité cosmique », fiche 15 « Chrysalides et
-> recapture », fiche 29 « L'Ombre n'est pas le mal » · CTA : page suivante du Récit.
+> **Méta** · **Ne remplace rien** : s'ajoute au-dessus de `/comprendre-question-3/` et
+> `/comprendre-question-4/`, qui restent en place · Aucune redirection · Visuels :
+> `Cite-Cosmique-Empire.png` (registre analytique) en tête, fiche 18 en illustration · CTA :
+> suite du Récit.
+>
+> Cette page fournit aussi les arguments de la **porte 3** sur la repolarisation des
+> Chrysalides — même matière, angle opérationnel (cf. `chrysalides.md`, lot 3).
 
 ---
 

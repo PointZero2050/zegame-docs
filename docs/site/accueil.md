@@ -1,61 +1,106 @@
 # Accueil
 
 > **Méta** · Remplace : `/` (Homepage-FR), `/homepage-fr-english/` · Redirections : aucune
-> (même URL) · Visuels : collage « Moteur lumineux » ou fiche 01 « Qui a cassé le monde ? » en
-> héros ; médaillons de l'atlas pour la section Puissances · CTA primaire : prochain Sas ;
-> CTA secondaire : entrer dans le Monde 0 (appli).
+> (même URL) · Visuels : vidéo teaser (version courte) en ouverture ; trois vignettes de
+> portes en registre néoarchaïque ; vignettes Actus en registre documentaire · CTA : les trois
+> portes, rien d'autre au premier écran.
+>
+> **Version 2** (2026-07-31) — réécrite après la correction de cadrage : introduction générale
+> puis trois portes. Le texte d'introduction est dérivé du script
+> `Ressources Point Zero/Vidéos/Vidéo teaser Ecosystème PZ.docx` (version courte).
 
 ---
 
-## Héros
+## 1. Ouverture
 
-**Le monde que tu connais est en train de finir. Ce n'est pas une mauvaise nouvelle.**
+**Nous vivons une époque étrange.**
 
-Les récits qui tenaient notre civilisation debout — la croissance infinie, le progrès qui
-sauve, l'individu tout-puissant — s'effondrent les uns après les autres. Ce qui vient à leur
-place dépend de ce que nous déciderons maintenant. Le Point Zéro est un jeu grandeur nature
-pour fonder la suite : une civilisation de la conscience, d'ici 2050.
+Jamais l'humanité n'a eu autant de pouvoir, de technologie, d'informations. Et jamais autant de
+gens n'ont ressenti une telle lassitude, une telle solitude, une telle paralysie.
 
-Oui, c'est démesuré. C'est même le premier niveau du Jeu : oser regarder l'ampleur de ce qui
-se joue sans se raconter d'histoires.
+Rien de tout cela n'est nouveau. Plus d'une vingtaine de civilisations majeures ont pris ce
+chemin avant nous. Elles aussi se croyaient avancées, capables de maîtriser leur destin. Elles
+ont toutes disparu. Nous marchons aujourd'hui dans leurs ruines, l'appareil photo à la main,
+sans toujours entendre la question que ces pierres nous posent : pourquoi n'ont-elles pas
+changé à temps ?
 
-[Vivre un Sas découverte — gratuit, 1 h 30] [Entrer dans le Jeu]
+Parce qu'elles ont cherché des solutions à l'intérieur du logiciel de pensée qui avait produit
+le problème. Nous sommes en train de refaire exactement la même chose.
 
-## Ce qui se passe (le Récit)
+[▶ Regarder la vidéo — 4 min]
 
-Nous ne traversons pas une crise de plus. Nous sommes au point de rencontre de deux vagues :
-une puissance technique qui dissout les règles du jeu humain — IA, biotechnologies, abondance
-possible — et une montée de conscience qui, pour la première fois de l'Histoire, peut se
-diffuser à l'échelle planétaire. L'une sans l'autre, c'est la catastrophe. Les deux ensemble,
-c'est un passage.
+## 2. Ce que fait le Point Zéro
 
-→ [Lire le Récit : le point de bascule](recit-la-bascule.md)
+Nous fonctionnons tous à partir de récits collectifs. « L'individu est tout-puissant », « la
+technologie résout tout », « la croissance rend heureux » : ces récits étaient légitimes quand
+ils sont apparus, ils nous ont émancipés du monde d'avant. Mais comme un médicament périmé,
+ils sont devenus nocifs. Nos crises ne sont pas des accidents — elles sont le symptôme d'un
+écart entre notre carte mentale et le territoire réel. Nous pilotons un vaisseau spatial avec
+un tableau de bord de caravelle.
 
-## Ce que nous faisons (le Jeu)
+Le Point Zéro fait deux choses. Il **décode** : d'où viennent ces récits, comment ils se sont
+installés depuis 13 000 ans, pourquoi ils tiennent si bien. Et il **ouvre un passage** : parce
+qu'un schéma rendu conscient cesse d'être une fatalité.
 
-Pas un mouvement de plus, pas une méthode miracle : un Jeu. Une marelle — oui, le jeu
-d'enfant — déployée en dix Mondes, du monde ordinaire jusqu'à ce que nous ne savons pas
-encore nommer. On y entre par le Monde 0 : quelques heures pour découvrir ce qui fait tourner
-ta conscience (ton Moteur, tes sept Puissances), semer une première Graine et décider,
-librement, si tu continues.
+C'est un écosystème, des ateliers, et un jeu collectif fondé sur le voyage du héros. Il existe
+un plan chiffré pour les sept prochaines années et jusqu'en 2050 ; il est détaillé dans les
+Livres.
 
-→ [Découvrir le Jeu](le-jeu.md)
+## 3. Les trois portes
 
-## Par où commencer (les Chemins)
+> Une seule question : où en es-tu, aujourd'hui, maintenant ?
 
-- **Le Sas découverte** — 1 h 30, en ligne, gratuit. Comprendre de quoi il retourne avant de
-  s'engager. C'est fait pour les curieux et les sceptiques ; les convaincus d'avance nous
-  inquiètent un peu plus.
-- **L'Atelier Point Zéro** — 3 h, en présentiel. Décoder le basculement en cours, explorer
-  25 scénarios du futur, et repartir avec autre chose que des slides.
-- **Le New Civilization Festival** — 1er octobre 2026, Paris. Sept ans pour bâtir la
-  civilisation de la conscience ; jour 1.
+### 🜂 Je veux agir
 
-→ [Voir les prochains événements] (données de l'appli)
+Tu as déjà fait le tour du diagnostic. Ce qui te manque, ce ne sont pas des analyses
+supplémentaires, c'est un endroit où mettre ce que tu portes.
 
-## Rester en lien
+Le Jeu commence au Monde 0 : quelques heures pour découvrir ce qui fait tourner ta conscience,
+semer une première trace, et décider librement si tu continues. Ou viens d'abord nous regarder
+dans les yeux à un Sas.
 
-Une lettre par semaine sur la bascule en cours et ce que nous en faisons. Pas de recettes de
-bonheur en cinq étapes — c'est promis.
+[Entrer dans le Jeu] · [Prochain Sas — gratuit, 1 h 30]
+
+### 🜄 Je veux comprendre
+
+Tu sens que quelque chose ne tourne pas rond, mais les explications disponibles te paraissent
+toutes trop courtes. Normal : elles le sont.
+
+Commence par te situer. En deux minutes, ce petit jeu te dit quelle lecture des crises est la
+tienne aujourd'hui, ce qu'elle explique très bien, et ce qu'elle ne voit pas encore.
+
+[Découvrir ma lecture — 2 min] · [Parcourir les clés de décodage]
+
+### 🜃 Je porte un projet ou une organisation
+
+Tu fais déjà quelque chose. Et tu as peut-être déjà vu ce qui arrive aux initiatives qui
+réussissent : elles se font absorber, diluer, retourner — pas par malveillance, par gravité.
+
+C'est le problème que nous prenons au sérieux, et c'est là-dessus que nous travaillons avec
+les Chrysalides et les Vaisseaux.
+
+[Voir la proposition] · [Candidater au parcours Chrysalides]
+
+## 4. Ce qui se passe vraiment (Actus)
+
+*Trois dernières entrées, alimentées par la rubrique Actus.*
+
+- **Une première résonance planétaire avec le Club de Rome** — Boris Sirbey et Vincent
+  Lenhardt sont intervenus au Maroc lors d'une rencontre internationale organisée avec le Club
+  de Rome, l'OCP et l'UM6P.
+- **De Lyon à Marrakech : l'écosystème accélère**
+- **New Civilization Festival — 1er octobre 2026, Paris**
+
+[Toutes les actualités]
+
+## 5. Ils traversent le Point Zéro
+
+*Section témoignages — voir [temoignages.md](temoignages.md). Contenus de calage en attendant
+la collecte réelle en cours.*
+
+## 6. Rester en lien
+
+Une lettre régulière sur la bascule en cours et ce que nous en faisons. Pas de recettes de
+bonheur en cinq étapes.
 
 [S'abonner à la newsletter]

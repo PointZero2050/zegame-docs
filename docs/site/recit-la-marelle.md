@@ -1,9 +1,14 @@
 # Le Récit 3/3 — La Marelle, ou pourquoi un Jeu
 
-> **Méta** · Remplace : `/comprendre-question-5/` (comment nous réveiller), `/cycle-point-zero/`
-> · Redirections 301 : ces deux URLs → cette page · Visuels : fiche 03 « Marelle » (ou 08
-> collage V2), fiche 73 « Quatre voyages », gravures des chapitres du Monde 0 · CTA : entrer
-> dans le Monde 0 (appli) + prochain Sas.
+> **Méta** · **Ne remplace rien** : s'ajoute à `/comprendre-question-5/` et
+> `/cycle-point-zero/`, qui restent en place · Aucune redirection · Visuels :
+> `10-mondes-Marelle.png` et les fiches `10--Mondes-Fiche-00..07`, fiche 03 « Marelle » ·
+> CTA : entrer dans le Monde 0 + prochain Sas.
+>
+> **Passée au filtre « dispositifs sans cosmogonie » (2026-07-31)** : la Marelle est présentée
+> comme dispositif de progression, pas comme carte métaphysique. La Source, le multivers et le
+> plan archétypal restent dans les Livres et dans le Jeu. C'est aussi la page qui installe la
+> Marelle comme **boussole de navigation** — rôle qu'elle prend une fois le seuil franchi.
 
 ---
 
@@ -11,8 +16,8 @@
 
 Depuis des millénaires, sur tous les continents, les enfants jouent au même jeu : une case
 Terre, une case Ciel, un caillou qu'on lance, un parcours à cloche-pied. La marelle n'est pas
-un divertissement anodin. C'est une carte cosmique, cachée dans la poussière du chemin : le
-voyage de la conscience depuis le monde ordinaire jusqu'à l'Unité — et retour.
+un divertissement anodin. C'est une carte d'initiation, cachée dans la poussière du chemin —
+et probablement la plus ancienne que nous ayons.
 
 Regarde les règles. Le caillou tombe dans une case qui devient interdite : chacun de nous se
 structure autour d'un point aveugle, et c'est pour ça que nous avons besoin les uns des
@@ -26,10 +31,12 @@ Toute initiation humaine tient dans ce dessin à la craie. Nous avons juste arr�
 ## La Marelle Oméga : dix cases, dix Mondes
 
 Le Point Zéro a repris la marelle au sérieux — très au sérieux : nous en avons fait
-l'architecture d'une école de la conscience à l'échelle civilisationnelle. Dix Mondes, du
-Monde 0 (le monde ordinaire, celui où tu es performant, intégré, et où tout te pousse à ne
-surtout rien remarquer) jusqu'au Monde 10 (dont nous ne dirons rien ici, d'abord parce qu'il
-faut le vivre, ensuite parce que tu ne nous croirais pas).
+l'architecture d'une école de la conscience. Onze positions, du Monde 0 (le monde ordinaire,
+celui où tu es performant, intégré, et où tout te pousse à ne surtout rien remarquer) jusqu'au
+Monde 10, dont nous ne dirons rien ici : il se vit, il ne se raconte pas en bas de page.
+
+C'est cette marelle qui devient ta carte une fois que tu es entré. Elle te dit où tu en es, ce
+qui est ouvert, et ce qui attendra. Sur ce site tu la regardes ; dans le Jeu, tu la joues.
 
 La loi du Jeu est simple : plus la conscience s'élargit, plus l'engagement demande de
 discipline. Les premiers Mondes sont volontairement légers — quelques heures, des expériences

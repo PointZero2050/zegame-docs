@@ -1,10 +1,13 @@
 # Le Récit 1/3 — Le point de bascule
 
-> **Méta** · Remplace : `/comprendre-presentation/`, `/comprendre-question-1/` (qu'arrive-t-il
-> à l'humanité), `/comprendre-question-2/` (scénarios du futur, renvoi Ressourcerie) ·
-> Redirections 301 : ces trois URLs → cette page · Visuels : fiche 43 « Dix vagues
-> technospirituelles », fiche 19 « Cycle et intercycle », fiche 28 « 25 futurs » · CTA :
-> page suivante du Récit + Sas.
+> **Méta** · **Ne remplace rien** : page de tête de la porte « Je veux comprendre », dont le
+> corps reste le corpus Livre I (`/comprendre-question-1..5/` et les 33 articles), conservé et
+> repris en surface · Aucune redirection · Visuels : registre analytique (schémas des Modèles :
+> `10-vagues-1/2.png`, `Civilisations.png`) plutôt que collages · CTA : suite du Récit + Sas.
+>
+> **Angle : historique.** Les dix vagues figurent aussi dans la porte « agir », sous l'angle
+> stratégique (décision Boris : la même matière lue à deux niveaux est elle-même la
+> démonstration des niveaux logiques).
 
 ---
 
@@ -53,8 +56,12 @@ conscience. Une humanité dont la maturité intérieure serait, enfin, à la hau
 puissance extérieure.
 
 Personne ne sait si nous y arriverons. Vingt-cinq scénarios restent ouverts, du pire au plus
-beau — nous les avons [cartographiés](../vision/ressourcerie-marketplace.md). Le Point Zéro
-s'engage sur l'un d'eux. Pas le plus probable. Le seul qui vaille qu'on joue.
+beau, et nous les avons cartographiés un par un — c'est même la partie la plus utile du
+travail, parce qu'elle n'impose aucun imaginaire. Le Point Zéro s'engage ensuite sur l'un
+d'eux. Pas le plus probable : le seul qui vaille qu'on joue. Il existe pour cela un plan
+chiffré sur sept ans puis jusqu'en 2050 ; il est détaillé dans les Livres.
+
+[Les 25 scénarios du futur] · [Les clés de décodage]
 
 → [Le Récit 2/3 : l'Empire et la Cité cosmique](recit-empire-et-cite-cosmique.md)
 → [Vivre un Sas découverte]
