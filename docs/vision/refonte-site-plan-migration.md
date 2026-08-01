@@ -444,6 +444,54 @@ dans `/home/deploy/deploy/.env` (droits 600) :
 Reste également à configurer ActionMailer en production (relais SMTP Brevo) et à déclarer le
 point d'entrée du webhook côté Stripe.
 
+## 7 nonies. Brevo et Stripe branchés et vérifiés — 2026-08-01
+
+### Brevo
+
+- Compte : Point Zero 2050 (`boris@sirbey.com`). Relais SMTP `smtp-relay.brevo.com:587`,
+  identifiant `b40bf6001@smtp-brevo.com`.
+- Liste **« Newsletter Point Zero 2050 », identifiant 3**, créée par l'API.
+- Vérifié : authentification SMTP réussie **sans envoi de courriel** (session ouverte puis
+  fermée) ; synchronisation d'un contact de test vers la liste réussie, contact supprimé
+  ensuite des deux côtés.
+- Attention : Brevo distingue la **clé SMTP** (`xsmtpsib-`, mot de passe du relais) et la
+  **clé API** (`xkeysib-`, pour les contacts). Les deux sont nécessaires et ne sont pas
+  interchangeables.
+
+### Stripe
+
+- Compte Point Zero 2050, **mode test**. Webhook créé et actif vers
+  `https://new.pointzero2050.com/webhooks/stripe`, sur `checkout.session.completed` et
+  `checkout.session.expired`. *(Nom généré par Stripe : « charming-triumph » — à renommer.)*
+- Chaîne complète vérifiée sans saisir aucun numéro de carte, en signant un événement avec le
+  vrai secret de webhook :
+
+| Étape | Résultat |
+|---|---|
+| Création de l'inscription | `en_attente` |
+| Session Checkout réelle (25 000 c. EUR) | créée, statut `en_attente_paiement` |
+| Webhook signé `checkout.session.completed` | HTTP 200, inscription **confirmée**, `payment_intent` enregistré |
+| **Rejeu** du même événement | HTTP 200, `confirmee_le` **inchangé** — idempotence vérifiée |
+| **Signature invalide** | **HTTP 400**, rejeté |
+
+### Piège Docker Compose
+
+Les variables d'un fichier `.env` ne sont lues que pour la **substitution dans compose.yml** ;
+elles ne descendent pas dans le conteneur. Il faut déclarer `env_file:` sur le service, faute
+de quoi la configuration reste invisible côté application — sans aucun message d'erreur.
+
+### Reste à faire sur ce volet
+
+- **Authentifier le domaine dans Brevo** (SPF, DKIM dans la zone OVH), sans quoi les courriels
+  partiront mais atterriront en indésirables. Les anciens enregistrements MailPoet
+  (`mailpoet1._domainkey`, `mailpoet2._domainkey`) seront à retirer après bascule.
+- Trancher l'adresse d'expédition, réglée provisoirement sur `bonjour@pointzero2050.com`.
+- Synchroniser les 568 abonnés confirmés vers la liste Brevo (non fait : à lancer sciemment).
+- Au passage en production : remplacer la clé standard par une **clé Stripe limitée**
+  (écriture sur les sessions Checkout, lecture sur les paiements) — si elle fuite, elle ne
+  permet ni remboursement ni virement.
+- Supprimer `C:\Temp\brevo.txt`, qui contient encore les clés Brevo en clair.
+
 ## 8. Questions bloquantes
 
 Il n'en reste qu'une, mais elle conditionne la bascule finale :
