@@ -303,6 +303,55 @@ Festival, ou un **nouveau dépôt `PointZero2050/pointzero-app`**. Recommandatio
 dépôt, car il ne s'agit pas d'une extraction de l'application ze.game mais d'une base neuve
 dans laquelle la logique Point Zéro sera portée ensuite. À trancher par Boris.
 
+## 7 sexies. Import du corpus réalisé — 2026-08-01
+
+Les 138 contenus et l'intégralité des médias sont dans l'application.
+
+### Contenus
+
+- **105 pages + 33 articles** importés dans `content/legacy/`, versionnés avec l'application
+  (3 Mo). Commit `8731edf`.
+- Traitements appliqués à l'import, en plus de l'assainissement des iframes injectées :
+  **71 balises `<script>` retirées** (elles pointaient vers des ressources WordPress
+  condamnées), **14 formulaires WordPress retirés** et remplacés par un commentaire
+  `<!-- FORMULAIRE WORDPRESS RETIRE - a reconstruire en natif -->` — ces 14 pages sont la
+  liste de travail des formulaires à refaire —, et réécriture de toutes les URL absolues
+  `pointzero2050.com` en chemins relatifs.
+- **Les contenus sont servis à leur URL d'origine** (`/comprendre-question-1`,
+  `/les-cadres-systemiques`…). C'est le point important pour le référencement : **la majorité
+  du corpus n'a besoin d'aucune redirection 301**. Le plan de redirections ne portera que sur
+  les pages supprimées ou renommées.
+- Mise en œuvre : modèle `LegacyPage` (lecture du manifeste JSON, sans base de données),
+  `LegacyPagesController`, et une route attrape-tout `get "/:slug"` sous contrainte — la
+  contrainte vérifie l'existence du slug dans le manifeste, ce qui empêche cette route de
+  masquer les futures routes de l'application. Un slug inconnu renvoie bien 404.
+- Un sommaire provisoire est servi en racine, le temps de la reprise éditoriale.
+
+### Médias
+
+- **2 106 fichiers rapatriés, 315 Mo, aucun échec.** Ils correspondent aux 807 médias
+  WordPress et à leurs variantes de taille.
+- Ils vivent dans `/home/deploy/media` sur le serveur, **hors du dépôt et hors du contexte de
+  construction Docker** (315 Mo auraient été renvoyés au démon Docker à chaque build et
+  gonflé l'image), montés en lecture seule sur `/rails/public/media`. Exclus par `.gitignore`
+  et `.dockerignore`. Commit `ca429e1`.
+- Leur sauvegarde est assurée par les instantanés Hetzner. À terme, un stockage objet serait
+  plus propre si le volume croît.
+
+### Pièges rencontrés
+
+- Les fichiers produits par PowerShell portent un **BOM UTF-8** que `JSON.parse` refuse. Le
+  modèle lit désormais avec `read(encoding: "bom|utf-8")`, qui absorbe le BOM proprement.
+- Le corpus contient encore le balisage WPBakery (`vc_row`, `wpb_wrapper`). Sans la feuille de
+  style du thème, les pages s'affichent sans mise en forme mais restent lisibles et complètes.
+  C'est assumé : la reprise éditoriale et graphique se fera page par page.
+
+### Reste à faire sur ce volet
+
+- Créer le dépôt distant et y pousser (voir ci-dessous).
+- Reconstruire les 14 formulaires en natif.
+- Reprendre la mise en forme, ensemble par ensemble.
+
 ## 8. Questions bloquantes
 
 Il n'en reste qu'une, mais elle conditionne la bascule finale :
