@@ -517,7 +517,13 @@ est l'événement `delivered` chez le fournisseur.*
 - Les anciens enregistrements MailPoet (`mailpoet1._domainkey`, `mailpoet2._domainkey`) seront
   à retirer **après** l'extinction de WordPress, pas avant.
 - Confirmer l'adresse d'expédition, réglée sur `bonjour@pointzero2050.com`.
-- Synchroniser les 568 abonnés confirmés vers la liste Brevo (non fait : à lancer sciemment).
+- ~~Synchroniser les 568 abonnés confirmés vers la liste Brevo.~~ **Fait le 2026-08-01** :
+  568 contacts poussés, **0 échec**, 209 s. Contrôle croisé concordant — 568 en base marqués
+  synchronisés, 568 dans la liste Brevo, 0 en liste noire. Les **59 refus** (36 désabonnés,
+  23 rebonds) et les 6 non confirmés n'ont pas été poussés : ils restent en base comme
+  mémoire du refus, sans jamais être contactables.
+- Décision Boris (2026-08-01) : **les visuels Slider Revolution sont abandonnés**, il en a des
+  copies. Plus rien ne retient l'extinction de WordPress de ce côté.
 - Au passage en production : remplacer la clé standard par une **clé Stripe limitée**
   (écriture sur les sessions Checkout, lecture sur les paiements) — si elle fuite, elle ne
   permet ni remboursement ni virement.
