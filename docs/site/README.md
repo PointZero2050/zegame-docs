@@ -10,7 +10,7 @@
 
 | Lot | Contenu | Statut |
 |---|---|---|
-| 1 | Accueil + ensemble « le Récit » (3 pages) | **Brouillon — à valider par Boris** |
+| 1 | Accueil + ensemble « le Récit » (3 pages) | **⚠️ À RÉVISER** — cadrage corrigé le 2026-07-31 |
 | 2 | Ensemble « le Jeu » | À faire |
 | 3 | « les Chemins » (formats, événements) | À faire |
 | 4 | « la Ressourcerie » (toilettage) | À faire |
@@ -22,6 +22,27 @@
 - [recit-la-bascule.md](recit-la-bascule.md) — le Récit 1/3 : le point de bascule (dix vagues)
 - [recit-empire-et-cite-cosmique.md](recit-empire-et-cite-cosmique.md) — le Récit 2/3 : les deux morphologies
 - [recit-la-marelle.md](recit-la-marelle.md) — le Récit 3/3 : la Marelle et le Jeu
+
+## ⚠️ Réserve sur le lot 1 (2026-07-31)
+
+Ces quatre brouillons ont été écrits avec un cadrage trop réducteur : ils **fusionnaient et
+supprimaient** les pages « Comprendre » issues du Livre I, considérées à tort comme périmées.
+Or ces contenus sont la rampe d'accès qui fait monter en conscience systémique — voir la
+correction §2 bis de
+[refonte-site-revision-editoriale.md](../vision/refonte-site-revision-editoriale.md).
+
+À réviser en conséquence :
+
+- l'accueil doit d'abord poser l'**intention de l'écosystème** (vidéo teaser) avant de router
+  vers **trois portes** (agir / comprendre / porter un projet ou une organisation) ;
+- les trois pages du Récit ne doivent pas *remplacer* les pages Comprendre mais constituer le
+  sommet de la porte « comprendre », dont le corpus Livre I reste le corps ;
+- le jeu d'auto-positionnement (5 niveaux) devient le moteur de la porte « comprendre » ;
+- vérifier l'absence de cosmogonie explicite (décision « dispositifs sans cosmogonie ») : la
+  page Marelle est à repasser au filtre.
+
+Le matériau rédactionnel reste réutilisable ; c'est l'architecture et le sort réservé à
+l'existant qui changent.
 
 ## Conventions
 

@@ -65,6 +65,79 @@ comptés dans la Ressourcerie : contenus à **conserver et réécrire légèreme
 correspondent aux 25 scénarios et à la Ressourcerie déjà intégrées dans l'appli
 (`config/ressources/*.yml`), qui doivent devenir la source unique.
 
+## 2 bis. CORRECTION DE CADRAGE — les trois Livres sont trois niveaux, pas trois versions
+
+> Ajout Claude, 2026-07-31, après retour de Boris. **Cette section corrige le §2 ci-dessus**,
+> qui concluait trop vite que le contenu Livre I était périmé. Il ne l'est pas : il est la
+> rampe d'accès sans laquelle le Livre II est inaudible.
+
+L'œuvre se déploie sur trois niveaux complémentaires :
+
+- **Livre I — le diagnostic.** Histoire humaine, causes profondes des crises, impuissance de
+  l'humanité malgré son pouvoir technique. Vision **neutre**, qui accueille tous les
+  imaginaires possibles via les 25 scénarios. C'est la face « universitaire » de l'œuvre :
+  elle donne les clés de décodage et fait passer d'une conscience superficielle à une
+  conscience systémique.
+- **Livre II — la grammaire de la Conscience.** Accessible seulement aux lecteurs du Livre I.
+  Pensée métaphysique qui **prend parti** pour un scénario de transcendance : matrice
+  cosmogonique, multivers, plan archétypal, niveaux de réalité, et la Marelle Oméga — base de
+  la fractale de résorption de l'Empire dans la Cité Cosmique. C'est lui qui comble la faille
+  d'action reprochée au Livre I, en traitant le fond du problème (la polarisation) et en
+  l'opérationnalisant par des parcours.
+- **Livre III — le plan d'action** (en chantier) : les 7 ans à venir puis 2050, avec les
+  transitions épistémologique, anthropologique, organisationnelle et économique.
+
+### Le modèle des 5 niveaux de conscience systémique
+
+Référence : `Ressources Point Zero/Modèles/Niveaux-conscience-systemiques.png`. Cinq lectures
+des crises, chacune avec sa perception, ses solutions et ses acteurs :
+
+| Niveau | Perception | Solutions typiques | Acteurs |
+|---|---|---|---|
+| 1. Superficiel | Manque de sensibilisation | Campagnes, information, médias | Organisations, pouvoirs publics, médias |
+| 2. Introspectif | Enjeux internes, biais cognitifs | Coaching, thérapie, développement personnel, fresques | Entreprises progressistes, thérapeutes |
+| 3. Systémique | Cadres invisibles qui déterminent les comportements | Culture organisationnelle, sociocratie, cadres capacitants | Consultants, facilitateurs |
+| 4. Holistique | Conditionnement anthropologique, traumas collectifs | Raison d'être civilisationnelle, guérison collective, nouvelles croyances | Chercheurs interdisciplinaires, prospectivistes |
+| 5. Hyperconscience | Enfermement dans une histoire prise pour le réel | Cosmogénèse générative, pratiques transcendantales, ingénierie civilisationnelle | Praticiens, communautés hyperconscientes |
+
+Ce modèle est le pont manquant entre les Livres : il explique **pourquoi** les solutions
+courantes sont réelles mais insuffisantes, sans les disqualifier. Il est aussi la meilleure
+réponse au reproche « le Point Zéro manque d'action » : ce n'est pas l'action qui manque
+ailleurs, c'est le niveau auquel elle s'applique.
+
+### Conséquence pour le site
+
+Le site ne remplace pas la couche Livre I par la couche Livre II : il **superpose** les deux
+et laisse le visiteur entrer par où il en est.
+
+- Pour celles et ceux qui sont déjà prêts et veulent agir vite : un tunnel d'engagement court
+  vers le Jeu et les formats.
+- Pour les autres : de la matière Livre I en quantité, pour entrer dans le sujet et monter en
+  conscience systémique.
+
+Le §2 reste valable sur un point : le site actuel ne dit **rien** du Jeu, du Moteur, des
+Puissances ni des Mondes, et son tunnel s'arrête à l'inscription. Il manque la couche haute,
+pas la couche basse.
+
+## 2 ter. Décisions Boris — 2026-07-31 (2e série)
+
+1. **Trois portes + une introduction générale.** L'accueil pose d'abord l'intention de
+   l'écosystème (support pressenti : la **vidéo teaser Écosystème PZ**, script dans
+   `Ressources Point Zero/Vidéos/Vidéo teaser Ecosystème PZ.docx`, versions longue et courte),
+   puis oriente vers trois portes : agir / comprendre / porter un projet ou une organisation.
+2. **Les 5 niveaux deviennent un dispositif public** : un petit jeu d'auto-positionnement qui
+   oriente vers le contenu adapté du site ou directement vers l'appli. Aujourd'hui absent
+   partout. Articulation avec les trois portes : voir §4 bis.
+3. **Dispositifs sans cosmogonie.** Marelle, Moteur, Puissances et Cercles sont présentés comme
+   des dispositifs opérationnels. La Source, le multivers et le plan archétypal restent dans
+   les Livres et dans le Jeu.
+4. **La promesse d'action s'appuie sur le Jeu ET le plan**, à condition de filtrer les aspects
+   métaphysiques trop marqués. **Les dix vagues technospirituelles ont toute leur place** :
+   c'est une interprétation historique défendable, qui inclut toutes les approches et
+   traditions spirituelles sans en imposer une.
+5. **Tutoiement confirmé de fait** : le script du teaser tutoie déjà (« toi qui regardes cette
+   vidéo », « est-ce que tu es prêt à prendre ta place »).
+
 ## 3 bis. Ancrage dans la vision-cible de l'application
 
 Lecture faite de l'index [README.md](README.md) et des documents structurants. Ce que la
@@ -125,6 +198,47 @@ Moteur lumineux). Cinq ensembles au lieu de 5 rubriques × 40 entrées :
 
 Le tunnel type : arriver par le Récit → vivre un avant-goût (extrait du mini-jeu « Le coupable
 idéal » ou fiche interactive) → s'inscrire à un Sas/Atelier → créer son compte → Monde 0.
+
+## 4 bis. Trois portes et auto-positionnement : deux axes, pas deux choix
+
+Question de Boris : le jeu d'auto-positionnement contredit-il les trois portes ? **Non — à
+condition qu'ils ne se disputent pas le même moment du parcours.** Ils opèrent sur deux axes
+orthogonaux :
+
+- **Les trois portes = l'axe de l'intention.** « Qu'est-ce que je veux faire maintenant ? »
+  C'est un choix, fait par le visiteur, instantané et sans engagement.
+- **Les cinq niveaux = l'axe de la lecture.** « Comment est-ce que je lis le problème
+  aujourd'hui ? » Ce n'est pas un choix mais un **miroir** : un dispositif le renvoie, en deux
+  minutes, avec une sortie qui est un aiguillage de contenu.
+
+Les deux axes sont indépendants : on peut lire les crises au niveau 2 et vouloir agir tout de
+suite, comme on peut être au niveau 4 et vouloir d'abord comprendre. La contradiction
+n'apparaîtrait que si les deux étaient placés au même endroit — deux portiques « situe-toi »
+à l'entrée, ce qui ferait fuir tout le monde.
+
+**Règle de conception retenue :** un seul choix à l'entrée (les trois portes), le jeu
+d'auto-positionnement comme dispositif *à l'intérieur*.
+
+- Il est le **moteur de la porte « Je veux comprendre »** — exactement le public qui a besoin
+  d'un miroir avant d'avoir besoin d'un catalogue.
+- Il reste accessible depuis n'importe où par une entrée secondaire permanente.
+- Sa sortie peut **renvoyer vers n'importe laquelle des trois portes**, y compris « agir ».
+  C'est donc lui qui convertit un visiteur « comprendre » en visiteur « agir » quand il est
+  prêt, au lieu de le laisser lire indéfiniment.
+
+Formulation : *les portes sont la carte, le jeu est la boussole.*
+
+### Garde-fous d'écriture du jeu d'auto-positionnement
+
+- On ne classe **jamais une personne**, on caractérise **une lecture** : « voici la lecture qui
+  te parle le plus aujourd'hui », pas « tu es niveau 1 ».
+- Chaque niveau est présenté comme **réel et partiel** : ce qu'il explique bien, ce qu'il ne
+  voit pas encore. Les acteurs cités au niveau 1 et 2 ne sont pas des naïfs : ce sont
+  souvent les visiteurs eux-mêmes, et parfois les partenaires du Point Zéro.
+- Pas de score, pas de rang, pas de progression affichée : une lecture, ses angles morts, et
+  une porte de sortie.
+- Le dispositif doit passer le test de la charte de voix : s'il ressemble à un quiz de magazine
+  ou à un diagnostic de cabinet de conseil, il est raté.
 
 ## 5. Méthode de travail proposée
 
