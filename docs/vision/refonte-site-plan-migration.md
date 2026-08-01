@@ -136,6 +136,47 @@ l'application **et** chez le fournisseur. Conserver les preuves de consentement 
 d'inscription et statut — et ne pas réimporter les 36 désabonnés ni les 23 adresses en rebond
 dans les listes d'envoi.
 
+## 7 bis. Étape 0 réalisée — export et assainissement du corpus (2026-08-01)
+
+- **DNS** : Boris a la main sur toutes les zones, Point Zéro et ze.game. Plus de bloquant.
+- **Export MailPoet** fourni par Boris : `Vibe Coding/migration/MailPoet_export.csv`, 633
+  lignes. Colonnes : e-mail, prénom, nom, temps d'abonnement, temps de confirmation, état de
+  la liste, état global, liste. Les preuves de consentement (dates d'abonnement et de
+  confirmation, statut) sont présentes — condition nécessaire à une reprise conforme.
+- **Corpus WordPress exporté et assaini** dans `Vibe Coding/migration/export-wp/` :
+  105 pages + 33 articles = **138 fichiers HTML**, 2,7 Mo, plus un `manifest.csv`
+  (type, id, slug, titre, URL, date de modification, taille, injections retirées, résiduel).
+  Chaque fichier porte un en-tête de traçabilité en commentaire.
+- **Assainissement vérifié** : **3 014 occurrences d'iframes injectées `div.show` retirées,
+  0 résiduelle**. Les 8 iframes légitimes (YouTube) sont intactes — le filtre ne vise que les
+  iframes dont la source contient `div.show`, il ne touche pas les autres embeds.
+- Ampleur réelle de l'infection : **71 des 138 contenus étaient touchés**. Les plus atteints
+  sont les pages vitrines — Chrysalides (186 injections), Ressourcerie (172), accueil (169),
+  Explorateurs (167), Vaisseaux (161).
+- Script d'export reproductible (PowerShell, API REST publique, aucune écriture côté
+  WordPress) : à rejouer juste avant la bascule pour capturer les dernières modifications.
+
+## 7 ter. ⚠️ Secrets déposés dans un dossier synchronisé
+
+`Vibe Coding/migration/stripe.txt` contient une clé Stripe. Ce dossier est synchronisé par
+Dropbox, ce que la consigne de sécurité du projet interdit explicitement (CLAUDE.md :
+« jamais de mot de passe, clé privée ou token dans ce dossier ni dans les repos »). Le fichier
+n'a pas été ouvert.
+
+Recommandations :
+
+- ne pas transmettre la clé par fichier : les clés vivent dans les identifiants chiffrés Rails
+  (`config/credentials.yml.enc`) ou dans les variables d'environnement du serveur, saisies
+  directement par Boris ;
+- **supprimer `stripe.txt`** une fois la clé posée sur le serveur ;
+- comme la clé actuelle provient d'une installation compromise, elle doit de toute façon être
+  remplacée par une clé neuve puis révoquée (§5) — sa fuite éventuelle devient alors sans
+  conséquence.
+
+`MailPoet_export.csv` contient par ailleurs les données personnelles de 633 personnes. À
+supprimer du dossier synchronisé après import, en conservant l'original côté MailPoet jusqu'à
+l'extinction de WordPress.
+
 ## 8. Questions bloquantes
 
 Il n'en reste qu'une, mais elle conditionne la bascule finale :
