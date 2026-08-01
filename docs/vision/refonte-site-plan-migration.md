@@ -390,6 +390,60 @@ visuels issus du corpus Point Zéro (fiches pédagogiques, atlas), l'impact est 
 décision doit être prise **avant l'extinction de WordPress**, après quoi ces visuels seront
 perdus.
 
+## 7 octies. Lettre d'information et billetterie — 2026-08-01
+
+Commit `8fccd01`. Les deux domaines sont construits et testés ; il ne manque que les clés.
+
+### Lettre d'information
+
+- Table `Subscriber` **possédée par l'application** : source de vérité, segmentable par
+  étiquettes. Brevo n'est qu'un tuyau d'envoi.
+- **Double opt-in** : tant que la personne n'a pas cliqué, elle n'est pas contactable. Un
+  réabonnement après désinscription repasse par la confirmation.
+- **Désinscription en un clic, sans authentification** — obligation légale, et cela ne doit
+  jamais demander d'effort.
+- `BrevoClient` **inerte tant que `BREVO_API_KEY` est absente** : l'inscription fonctionne
+  quand même, la synchronisation est rejouée par `SynchroniseSubscriberJob` (Solid Queue,
+  5 tentatives espacées).
+- **633 abonnés MailPoet importés** : 568 confirmés, 36 désabonnés, 23 en rebond, 6 en
+  attente. Les statuts de refus sont conservés — sans quoi un réimport rendrait ces personnes
+  à nouveau contactables. Les dates d'abonnement et de confirmation sont reprises comme
+  preuves de consentement. La tâche `mailpoet:import` est idempotente.
+
+### Billetterie
+
+- `Event` et `Registration`. Gratuit : inscription confirmée immédiatement. Payant :
+  **Stripe Checkout**, aucune donnée de carte ne transite par l'application, qui reste donc
+  hors périmètre PCI.
+- **La confirmation vient exclusivement du webhook signé**, jamais de la redirection du
+  navigateur — celle-ci n'est pas une preuve de paiement et peut ne jamais être atteinte.
+  Le webhook est idempotent : Stripe rejoue ses événements.
+- Référence de billet unique et non devinable (`PZ-XXXXXXXX`), conformément au principe du
+  cadrage Festival : c'est le billet, et non l'adresse e-mail, qui fait foi.
+- Capacité, complet, clôture des inscriptions et cases à cocher newsletter gérés et testés.
+
+### Piège rencontré, à retenir
+
+**Ne jamais nommer une colonne `format`** : elle masque `Kernel#format` et fait échouer tout
+appel de formatage dans le modèle avec un `ArgumentError` obscur. La colonne a été renommée
+`categorie`.
+
+### Il ne manque que les clés
+
+À fournir par Boris, jamais dans un dossier synchronisé ni dans un dépôt — elles se posent
+dans `/home/deploy/deploy/.env` (droits 600) :
+
+| Variable | Où l'obtenir |
+|---|---|
+| `BREVO_API_KEY` | Brevo → SMTP & API → clés API |
+| `BREVO_LIST_ID` | identifiant de la liste « Newsletter Point Zéro 2050 » à recréer dans Brevo |
+| `SMTP_*` | Brevo → SMTP & API → identifiants SMTP (pour ActionMailer) |
+| `STRIPE_SECRET_KEY` | **clé neuve**, l'actuelle vient d'une installation compromise |
+| `STRIPE_WEBHOOK_SECRET` | créé en déclarant le webhook vers `/webhooks/stripe` |
+
+Reste également à configurer ActionMailer en production (relais SMTP Brevo) et à déclarer le
+point d'entrée du webhook côté Stripe.
+
 ## 8. Questions bloquantes
 
 Il n'en reste qu'une, mais elle conditionne la bascule finale :
