@@ -138,6 +138,55 @@ pas la couche basse.
 5. **Tutoiement confirmé de fait** : le script du teaser tutoie déjà (« toi qui regardes cette
    vidéo », « est-ce que tu es prêt à prendre ta place »).
 
+## 2 quater. Décisions Boris — 2026-07-31 (3e série)
+
+1. **Corpus « Comprendre » et 33 articles conservés** comme corps de la porte « comprendre »,
+   avec reprise de surface seulement. **Nouveauté à prévoir : partenariat avec
+   [Soara](https://www.soara.fr/)** qui ouvre une ligne éditoriale, annoncé à partir de la
+   rentrée 2026 → la rubrique articles doit être conçue pour croître et pour créditer un
+   partenaire éditorial.
+2. **Les dix vagues figurent aux deux endroits** — dans « comprendre » comme clé de lecture
+   historique, dans « agir » comme justification de la stratégie. Boris : « c'est justement la
+   démonstration des niveaux logiques ». Le même matériau lu à deux niveaux devient lui-même
+   une démonstration du propos.
+3. **Plan 7 ans / 2050 : teaser sans chiffres.** On mentionne l'existence d'un plan chiffré et
+   on renvoie aux Livres. Pas de publication des ordres de grandeur (70 Mds, 800 M d'humains)
+   pour l'instant.
+4. **Vidéo teaser : version courte**, et son texte sert de matrice à l'**intro textuelle qui
+   précède les trois portes**.
+5. **Jeu d'auto-positionnement : validé** — 5 à 7 situations concrètes, sortie en trois temps,
+   ~2 min. Aiguillage détaillé en §4 ter.
+6. **Porte 3 (projets et organisations)** : la vraie proposition ne se limite pas à un annuaire.
+   Elle s'écrit à partir des arguments du **Livre II sur la repolarisation des Chrysalides
+   historiques** (sections « Quand les Chrysalides deviennent Empire », « Le bain de Jouvence »,
+   « Insupportable cohérence », « Les stratégies de neutralisation », « Une laisse invisible »,
+   « La naïveté des Chrysalides »). L'écosystème a déjà incubé plusieurs Chrysalides ; le site
+   annonce la **création d'un parcours dédié avec appel à candidatures**. La Ressourcerie en
+   cours de structuration dans l'appli peut être exposée publiquement.
+7. **Direction artistique : trois registres assumés**, chacun sur sa couche — analytique pour
+   « comprendre », néoarchaïque pour « le Jeu », documentaire pour la Ressourcerie. Boris
+   reprendra au cas par cas si besoin.
+8. **⚠️ Correction importante — statut du modèle des 5 niveaux.** Les 5 niveaux sont **un
+   modèle propre au site**, un dispositif d'accueil. La **grammaire profonde est celle des
+   11 Mondes de la Marelle (Monde 0 à Monde 10)**, qui est la véritable boussole de navigation.
+   Conséquence de conception : **le modèle des 5 niveaux s'arrête au seuil de l'appli.** Il ne
+   réapparaît jamais dans le Jeu, sous peine d'avoir deux échelles de progression concurrentes.
+   Il ne faut pas non plus publier de correspondance niveau ↔ Monde : les niveaux qualifient
+   une *lecture des crises*, les Mondes jalonnent un *chemin de conscience*. Ce ne sont pas
+   deux graduations de la même chose.
+9. **Palette alignée dès maintenant** sur la coque de l'appli.
+10. **Témoignages : textes de remplissage** en attendant la collecte auprès des membres.
+    ⚠️ Contrainte d'intégrité : les remplissages doivent être **visiblement des placeholders**
+    (mention explicite « témoignage à venir », pas de nom ni de visage inventé). Un faux
+    témoignage attribué, même provisoire, est un contenu trompeur — et le jour où il passe en
+    production par inadvertance, il engage le Point Zéro.
+11. **Nouvelle rubrique « Actus » alimentée rétrospectivement par les newsletters.** Gisement
+    inexploité : `/newsletters-point-zero/` recense 6 numéros (juillet 2025 → juin 2026)
+    contenant du factuel vérifiable — rencontre internationale avec le **Club de Rome, l'OCP
+    et l'UM6P au Maroc** (27-28 septembre, avec Vincent Lenhardt), Lyon, Marrakech, programme
+    facilitateurs, alliances, one-man show, expériences collectives. Ce matériau est la preuve
+    tangible que l'écosystème agit — donc une réponse directe au reproche « manque d'impact ».
+
 ## 3 bis. Ancrage dans la vision-cible de l'application
 
 Lecture faite de l'index [README.md](README.md) et des documents structurants. Ce que la
@@ -195,6 +244,14 @@ Moteur lumineux). Cinq ensembles au lieu de 5 rubriques × 40 entrées :
    de vérité), avec la fiche « Gouvernance des communs » et le lot Pensées V2 de Codex.
 5. **L'Alliance** (remplace « Écosystème » côté structure) — l'association, le commun,
    l'Incubateur, le Pacte-Source, le festival (NCF) et sa billetterie.
+6. **Les Actus** (nouveau, cf. §2 quater point 11) — ce que l'écosystème fait réellement,
+   alimenté rétrospectivement par les six newsletters puis en continu. Rubrique distincte des
+   articles de fond : ici du factuel daté, là de la pensée.
+
+> Mise à jour 2026-07-31 : cette architecture est désormais précédée d'une **introduction
+> générale** (vidéo teaser courte + texte dérivé du script) puis de **trois portes** — agir /
+> comprendre / porter un projet ou une organisation. Les cinq ensembles ci-dessus se
+> répartissent derrière ces portes ; ils ne sont pas la navigation de premier niveau.
 
 Le tunnel type : arriver par le Récit → vivre un avant-goût (extrait du mini-jeu « Le coupable
 idéal » ou fiche interactive) → s'inscrire à un Sas/Atelier → créer son compte → Monde 0.
@@ -239,6 +296,50 @@ Formulation : *les portes sont la carte, le jeu est la boussole.*
   une porte de sortie.
 - Le dispositif doit passer le test de la charte de voix : s'il ressemble à un quiz de magazine
   ou à un diagnostic de cabinet de conseil, il est raté.
+
+## 4 ter. Aiguillage : ce que le jeu d'auto-positionnement recommande ensuite
+
+Question de Boris : une fois la lecture identifiée, comment se fait la préconisation de
+navigation ?
+
+### Principe
+
+La sortie du jeu est en trois blocs — ce que cette lecture voit bien, son angle mort, par où
+continuer. **Le troisième bloc n'est pas un menu, c'est un seul pas.** Un pas = une action
+dominante + deux ou trois contenus adossés + la porte vers laquelle on bascule.
+
+La règle qui fait tout le travail : **plus la lecture est éloignée du Jeu, plus le chemin
+passe d'abord par la matière Livre I ; plus elle en est proche, plus le tunnel est court.**
+C'est le jeu lui-même qui calibre la longueur du tunnel, ce qui résout la tension entre
+« ceux qui sont prêts et veulent agir vite » et « ceux qui doivent entrer dans le sujet ».
+
+### Table d'aiguillage (proposition)
+
+| Lecture | Angle mort nommé | Pas suivant proposé | Matière adossée | Porte |
+|---|---|---|---|---|
+| 1. Superficiel | On réforme avec le logiciel qui a produit le problème | Vidéo teaser puis « pourquoi les civilisations ne changent pas à temps » | Cycles, civilisations, crise des récits ; **dix vagues, angle historique** | Comprendre |
+| 2. Introspectif | Un travail sur soi qui ne touche pas les systèmes se fait reprendre par eux | Comprendre ce qui programme les choix, puis un Sas | PsychoKernel, croyances collectives-pratiques, écologie interne | Comprendre → Agir |
+| 3. Systémique | L'analyse des cadres reste intellectuelle, sans l'inconscient ni le corps | Un Atelier, ou le diagnostic pour une organisation | Cinq cadres capacitants, traumas collectifs, pratico-inerte | Agir / Porter |
+| 4. Holistique | Il manque la marche transcendantale, donc l'effet de levier | Entrer dans le Monde 0 | **Dix vagues, angle stratégique** ; Empire et Cité cosmique | Agir |
+| 5. Hyperconscience | Le risque n'est plus de comprendre, il est de se repolariser en chemin | Le Jeu, les Cercles, l'appel à candidatures Chrysalides | Repolarisation des Chrysalides (Livre II) | Agir / Porter |
+
+Les niveaux 1 et 2 représentent la majorité des visiteurs : c'est là que se joue la qualité de
+la rampe. Le niveau 5 est rare mais c'est lui qui remplit les Cercles et les Chrysalides.
+
+### Ce que la sortie ne fait jamais
+
+- Pas de score, pas de rang, pas de « tu es niveau 2 ».
+- Pas de correspondance affichée entre les niveaux et les Mondes (cf. §2 quater, point 8).
+- Pas de disqualification des solutions du niveau : elles sont réelles, elles sont partielles.
+  Plusieurs acteurs cités aux niveaux 1 à 3 sont des partenaires du Point Zéro.
+- Pas plus d'un pas proposé : le catalogue reste accessible, il n'est pas la réponse.
+
+### Passage de relais à la Marelle
+
+Quel que soit le chemin, l'entrée dans le Jeu se fait par le **Monde 0**, et c'est là que la
+Marelle prend le relais comme boussole. Le jeu d'auto-positionnement a rempli sa fonction : il
+a parlé au visiteur dans la langue qu'il parlait en arrivant, et il l'a amené jusqu'au seuil.
+Il ne le suit pas au-delà.
 
 ## 5. Méthode de travail proposée
 
