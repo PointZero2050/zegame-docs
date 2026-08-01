@@ -77,8 +77,9 @@ Le premier jalon technique est une **tranche verticale autonome** : connexion �
 - Le transfert initial est une migration contrôlée et rejouable d'un sous-ensemble explicitement défini : comptes nécessaires, contenus Point Zéro et progression utile.
 - Il n'y a pas de synchronisation bidirectionnelle permanente entre les deux bases pour le Festival.
 - Le rapprochement de comptes doit être documenté et auditable. Le SSO n'entre dans le chemin critique que s'il est confirmé indispensable au périmètre figé.
-- La billetterie existante Event Tickets Plus + WooCommerce + Stripe reste la source d'achat recommandée pour le Festival.
-- Un billet unique, et non l'adresse e-mail, constitue la preuve de rattachement à un compte. Le pont applicatif doit prévoir retour signé ou code/QR, idempotence et rattachement manuel de secours.
+- ~~La billetterie existante Event Tickets Plus + WooCommerce + Stripe reste la source d'achat recommandée pour le Festival.~~ **AMENDÉ le 2026-08-01 (décision Boris, Ajout Claude).** La billetterie bascule vers l'application, en Stripe Checkout, **avant la reprise des ventes** attendue en septembre. Motifs : le site WordPress est compromis (infection confirmée par Wordfence) et sera éteint ; les ventes réelles n'ont pas commencé (une seule commande, de test) ; le moment est donc le moins coûteux possible. La migration complète des fonctionnalités WordPress vers l'outil dédié, intégré au workflow de l'application, devient l'objectif. Voir [refonte-site-plan-migration.md](refonte-site-plan-migration.md).
+- Corollaire : les clés Stripe **live** stockées dans la base WordPress compromise ne sont pas recopiées. L'application utilise des clés neuves ; les anciennes sont révoquées à l'extinction de WordPress.
+- Un billet unique, et non l'adresse e-mail, constitue la preuve de rattachement à un compte. Le pont applicatif doit prévoir retour signé ou code/QR, idempotence et rattachement manuel de secours. **Ce pont devient interne à l'application** puisque la vente s'y déroule ; le retour signé depuis WordPress n'a plus lieu d'être.
 - Une répétition de migration sur une copie de données précède obligatoirement la bascule réelle.
 
 ## 6. Calendrier de référence

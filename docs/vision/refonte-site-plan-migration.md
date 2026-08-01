@@ -70,13 +70,81 @@ Stripe et révoquer les anciennes au moment de l'extinction de WordPress**. C'es
 immédiat, et cela referme le seul vecteur à conséquence financière directe — sans nécessiter
 la passe sécurité complète que Boris a reportée.
 
-## 6. Questions bloquantes
+## 5 bis. Décisions Boris — 2026-08-01
 
-1. **Où le nouveau site tourne-t-il ?** Seconde application Rails sur le serveur
-   `vibe.ze.game` derrière Caddy, ou hébergement neuf dédié à Point Zéro ? Et qui a la main
-   sur le DNS de `pointzero2050.com` (registrar, zone) ?
-2. **La billetterie bascule-t-elle bien maintenant**, contre la recommandation de
-   `application-festival-2026.md` §5 ? Si oui, ce document doit être amendé pour rester
-   canonique.
-3. **Vers quoi part la newsletter ?** Table interne + fournisseur d'envoi (Brevo, Mailjet…),
-   ou plateforme externe qui reprend les 634 contacts ? Cela conditionne la forme de l'export.
+1. **Objectif confirmé** : migrer *l'ensemble* des fonctionnalités WordPress vers un outil
+   dédié, intégré au workflow de l'application.
+2. **La billetterie bascule maintenant.** Motif : peu d'inscrits aux événements aujourd'hui,
+   le flux ne reprend qu'en septembre. `application-festival-2026.md` §5 a été amendé en
+   conséquence.
+3. **Clés Stripe** : nouvelles clés pour l'application, révocation des anciennes à
+   l'extinction de WordPress.
+
+## 6. Hébergement — recommandation
+
+**Un serveur dédié à Point Zéro, distinct de `vibe.ze.game`, avec la même pile.**
+
+Le site et l'application ne font qu'un : la question n'est donc pas « où héberger le site »
+mais « où vit l'application Point Zéro autonome ». La réponse ne peut pas être le bac à sable
+ze.game, pour quatre raisons :
+
+- l'autonomie vis-à-vis de ze.game est l'objet même du chantier, y compris juridiquement
+  (Point Zéro et ze.game sont deux structures) ;
+- la base séparée est déjà exigée par le cadrage Festival ;
+- `vibe.ze.game` est un bac à sable de validation produit : il doit rester cassable. Un site
+  public avec paiement ne peut pas partager ce sort ;
+- le 1er octobre concentrera du trafic et des paiements sur quelques heures.
+
+Pile recommandée, identique à l'existant pour que le savoir-faire soit transférable : un VPS
+Linux, PostgreSQL, Puma derrière Caddy, Rails 8. **Déploiement par Kamal** (défaut Rails 8,
+plus simple que Capistrano pour une application neuve sans historique) — sauf si l'habitude
+Capistrano de l'équipe pèse davantage que la simplicité, auquel cas garder Capistrano :
+sous contrainte de temps, la cohérence vaut mieux que la nouveauté.
+
+`vibe.ze.game` reste le bac à sable produit. L'hébergement WordPress actuel (Liquid Web /
+Nexcess) peut être résilié après la bascule, ce qui compense une partie du coût.
+
+## 7. Newsletter — recommandation
+
+**Le fichier d'abonnés appartient à l'application ; l'envoi est délégué à un spécialiste.**
+
+Tout construire en interne serait cohérent sur le papier, mais la délivrabilité e-mail est un
+métier ingrat et permanent : SPF, DKIM, DMARC, réputation d'IP, gestion des rebonds, plaintes
+pour spam, désinscription conforme. C'est plusieurs semaines de travail et une charge
+d'exploitation définitive, pour un bénéfice nul du point de vue du joueur.
+
+L'intégration recherchée par Boris ne vient pas de l'outil d'envoi : elle vient de la
+**propriété du fichier**. Le schéma retenu est donc :
+
+- l'application détient la table des abonnés et leur consentement — c'est la source de vérité,
+  segmentable par Monde, progression, Cercle, événement ;
+- un fournisseur d'envoi reçoit les contacts et gère campagnes, délivrabilité, rebonds et
+  désinscriptions.
+
+**Fournisseur recommandé : Brevo.** Société française, données en Union européenne (RGPD),
+API correcte, et surtout il couvre à la fois les campagnes et les e-mails transactionnels —
+or l'application en aura besoin de toute façon pour les billets, les confirmations
+d'inscription et les comptes. Un seul fournisseur au lieu de deux.
+
+Réserve budgétaire à connaître : le palier gratuit de Brevo plafonne à 300 envois par jour,
+insuffisant pour un envoi unique à 634 contacts. Il faut prévoir un forfait d'entrée de gamme,
+de l'ordre de quelques dizaines d'euros par mois.
+
+Migration : export MailPoet en CSV avec listes et étiquettes (Newsletter Point Zéro 2050,
+Webinaire Organisations, Formats PZ, Master class, Import 16/02/26), import dans
+l'application **et** chez le fournisseur. Conserver les preuves de consentement — date
+d'inscription et statut — et ne pas réimporter les 36 désabonnés ni les 23 adresses en rebond
+dans les listes d'envoi.
+
+## 8. Questions bloquantes
+
+Il n'en reste qu'une, mais elle conditionne la bascule finale :
+
+1. **Qui a la main sur le DNS de `pointzero2050.com`** — chez quel registrar, et qui détient
+   les accès à la zone ? Sans cela, tout le reste peut être prêt sans pouvoir basculer.
+
+Deux éléments à fournir dès que possible, non bloquants pour démarrer :
+
+2. Accès au tableau de bord Stripe (pour générer les clés neuves) — par Boris lui-même,
+   jamais transmis en clair dans ce dossier ni dans les dépôts.
+3. Choix du fournisseur d'hébergement, si différent de celui de `vibe.ze.game`.
