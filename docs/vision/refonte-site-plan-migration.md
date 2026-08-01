@@ -480,12 +480,43 @@ Les variables d'un fichier `.env` ne sont lues que pour la **substitution dans c
 elles ne descendent pas dans le conteneur. Il faut déclarer `env_file:` sur le service, faute
 de quoi la configuration reste invisible côté application — sans aucun message d'erreur.
 
+### Domaine authentifié et envoi vérifié — 2026-08-01
+
+`pointzero2050.com` est **authentifié et vérifié** chez Brevo. Un courriel réel a été
+**délivré** depuis `bonjour@pointzero2050.com`, en passant par le vrai code de production
+(`SubscriptionMailer`).
+
+Enregistrements en place dans la zone OVH : `brevo-code` à l'apex, les deux CNAME DKIM
+`brevo1._domainkey` et `brevo2._domainkey`, le CNAME du sous-domaine de marque
+`em → em-pointzero2050-com.brand.brevosend.com`, et un DMARC unique avec `rua`.
+
+**Le SPF n'a pas eu à être modifié** et reste `v=spf1 include:mx.ovh.com -all` : avec le
+sous-domaine de marque, c'est `em` qui porte le chemin de retour et son propre SPF,
+l'alignement DMARC se faisant par le DKIM. Le risque d'écrasement redouté ne s'est pas
+matérialisé.
+
+Choix du sous-domaine : **`em`**, et surtout pas `mail` que Brevo suggérait — `mail` est déjà
+un CNAME vers `ssl0.ovh.net` qui sert les boîtes aux lettres, l'écraser aurait coupé la
+réception.
+
+#### Deux pannes silencieuses rencontrées, à connaître
+
+1. **Deux enregistrements DMARC** coexistaient. La norme prévoit que plusieurs enregistrements
+   DMARC équivalent à **aucun** : les destinataires ignorent la politique, et Brevo refusait
+   d'authentifier avec un message générique. Un seul doit subsister.
+2. **`ApplicationMailer` généré par Rails contient `default from: "from@example.com"` en
+   dur**, valeur qui **prime sur `config.action_mailer.default_options`**. Rails signalait un
+   envoi réussi et Brevo rejetait le message (« sender not valid »). Seule la consultation du
+   journal d'envoi Brevo l'a révélé — la vérification côté application était trompeuse.
+
+*Leçon générale : pour l'e-mail, un succès côté application ne prouve rien. La seule preuve
+est l'événement `delivered` chez le fournisseur.*
+
 ### Reste à faire sur ce volet
 
-- **Authentifier le domaine dans Brevo** (SPF, DKIM dans la zone OVH), sans quoi les courriels
-  partiront mais atterriront en indésirables. Les anciens enregistrements MailPoet
-  (`mailpoet1._domainkey`, `mailpoet2._domainkey`) seront à retirer après bascule.
-- Trancher l'adresse d'expédition, réglée provisoirement sur `bonjour@pointzero2050.com`.
+- Les anciens enregistrements MailPoet (`mailpoet1._domainkey`, `mailpoet2._domainkey`) seront
+  à retirer **après** l'extinction de WordPress, pas avant.
+- Confirmer l'adresse d'expédition, réglée sur `bonjour@pointzero2050.com`.
 - Synchroniser les 568 abonnés confirmés vers la liste Brevo (non fait : à lancer sciemment).
 - Au passage en production : remplacer la clé standard par une **clé Stripe limitée**
   (écriture sur les sessions Checkout, lecture sur les paiements) — si elle fuite, elle ne
