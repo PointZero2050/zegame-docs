@@ -18,7 +18,11 @@
 
 ## 2. État des lieux technique (audit public, 2026-07-31)
 
-Hébergement : Liquid Web / Nexcess (namespace REST `liquidweb/harbor`).
+Hébergement : **OVH, hébergement mutualisé** (`cluster023.hosting.ovh.net`, IP 164.132.235.17,
+Gravelines/Dunkerque). *Correction du 2026-08-01 : l'audit initial concluait à Liquid Web /
+Nexcess d'après le namespace REST `liquidweb/harbor`, qui provient en réalité d'un plugin et
+non de l'hébergeur.* Le caractère mutualisé de l'hébergement est un élément de contexte pour
+la compromission constatée.
 
 | Composant | Outil | Remarque |
 |---|---|---|

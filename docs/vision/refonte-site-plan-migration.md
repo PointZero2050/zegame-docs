@@ -101,8 +101,35 @@ plus simple que Capistrano pour une application neuve sans historique) — sauf 
 Capistrano de l'équipe pèse davantage que la simplicité, auquel cas garder Capistrano :
 sous contrainte de temps, la cohérence vaut mieux que la nouveauté.
 
-`vibe.ze.game` reste le bac à sable produit. L'hébergement WordPress actuel (Liquid Web /
-Nexcess) peut être résilié après la bascule, ce qui compense une partie du coût.
+`vibe.ze.game` reste le bac à sable produit. L'hébergement mutualisé OVH du WordPress actuel
+peut être résilié après la bascule, ce qui compense une partie du coût.
+
+### Fournisseur recommandé : Hetzner, sur un compte propre à Point Zéro
+
+Constat du 2026-08-01 : **`vibe.ze.game` tourne déjà chez Hetzner** (91.99.189.249,
+Falkenstein, Allemagne) et **`pointzero2050.com` chez OVH en mutualisé** (164.132.235.17,
+Gravelines). Le choix devient simple.
+
+Reprendre **Hetzner** :
+
+- l'équipe y opère déjà `vibe.ze.game` : la pile Caddy + PostgreSQL + Puma + Rails 8 y est
+  éprouvée, rien de nouveau à apprendre sous contrainte de temps ;
+- meilleur rapport prix/puissance d'Europe, et couple éprouvé avec Kamal ;
+- Allemagne, donc Union européenne : la question RGPD ne se pose pas.
+
+**Mais sur un compte Hetzner appartenant à Point Zéro**, distinct de celui de ze.game.
+L'autonomie visée est aussi juridique et comptable : la facture, les accès et les sauvegardes
+doivent appartenir à la structure qui exploite l'application. Même fournisseur, compte séparé.
+
+Dimensionnement conseillé : un **CX32 ou CPX31** (4 vCPU, 8 Go, ~80 Go SSD), de l'ordre de 8 à
+15 € par mois, largement suffisant pour le site, l'application et le pic du 1er octobre.
+Activer l'option de sauvegarde automatique (+20 %, quelques euros) : c'est l'assurance la
+moins chère du projet. Les 807 médias tiennent sur le disque, sans stockage objet.
+
+Alternative si la juridiction française devait devenir un critère explicite — par exemple à la
+demande d'un partenaire institutionnel : un VPS OVH à Gravelines ou Roubaix, où Boris possède
+déjà un compte. Rapport prix/puissance inférieur, mais défendable. À ne retenir que si le
+critère est posé ; sinon Hetzner.
 
 ## 7. Newsletter — recommandation
 
