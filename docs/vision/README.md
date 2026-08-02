@@ -72,6 +72,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 26. **[caracterisation-triptyque-monde-0.md](caracterisation-triptyque-monde-0.md)** — Caractérisation du triptyque Monde 0 (2026-08-02) : le patron « auto-validation Marelle » identique dans cinq modules (`MoteurAssessment`, `Traversee`, `ConseilSession`, `CoupableIdealSession`, `ExperienceQuizAttempt`, à fusionner en un seul service au portage), le calcul déterministe et explicable de posture/portes de « Une drôle d'époque », l'absence délibérée de scoring dans « Avant le Zéro » et le Conseil Oméga, le couplage descendant vers le Rôle d'appel du profil communautaire, scénarios de vérification de parité.
 
+27. **[caracterisation-coupable-ideal.md](caracterisation-coupable-ideal.md)** — Caractérisation du mini-jeu « Le Coupable idéal » (2026-08-02) : coexistence V1/V2 sans réévaluation rétroactive, le procès contradictoire déterministe (cause → charges → axes révélés → verdict à quatre volets, roue toujours à 6 axes avec équivalent textuel d'accessibilité, absence délibérée de mapping axe→Puissance), le mode éphémère et sa purge immédiate après restitution, la rétention choisie par le joueur, scénarios de vérification de parité.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.
