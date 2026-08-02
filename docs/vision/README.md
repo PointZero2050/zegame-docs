@@ -68,6 +68,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 24. **[caracterisation-progression-omega.md](caracterisation-progression-omega.md)** — Caractérisation du cœur du jeu pour le portage catégorie B (2026-08-02) : cycle de vie `end_at`/`validated_at`, règle « une validation ne se révoque jamais », piège du double-écriture `on_change` (incident Oméga du 2026-07-25), dérivation `auto_validated`, progression F2b obligatoire/optionnelle et verrouillage linéaire, scénarios de vérification de parité.
 
+25. **[caracterisation-auth-roles-autorisations.md](caracterisation-auth-roles-autorisations.md)** — Caractérisation de l'authentification, des rôles (`nil`/`dff`/`admin`) et du moteur d'autorisation `Cans` (2026-08-02) : sémantique exacte de `no_roles`/`roles`/`all`/`can?` (aliasing multi-actions, retour strictement `true`), piège classe-vs-instance d'`authorize_resource` sur les routes imbriquées singulières (faille du 2026-08-01), leçon générale sur le partage de communauté par défaut, scénarios de vérification de parité.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.
