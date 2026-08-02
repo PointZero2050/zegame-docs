@@ -2,7 +2,30 @@
 
 > Rédigé par Claude (instance pile neuve), 2026-08-02, après confrontation du portage à
 > [caracterisation-auth-roles-autorisations.md](caracterisation-auth-roles-autorisations.md).
-> **Décision produit demandée à Boris.** Aucun code n'est modifié tant qu'elle n'est pas prise.
+>
+> ## ✅ TRANCHÉ — Boris, 2026-08-02 : **option A, rôle global**
+>
+> Motif donné : **tous les facilitateurs travaillent sur le même périmètre**. Le cloisonnement
+> par communauté n'a donc pas d'objet fonctionnel aujourd'hui.
+>
+> Ce que cela implique, et qui est désormais appliqué :
+> - la table `dffs` **n'est volontairement pas portée** — ce n'est **pas un oubli**, ne pas la
+>   restaurer sans un nouvel arbitrage de Boris ;
+> - `User#peut_gerer_le_jeu?` (contenus du jeu) et `User#peut_gerer_evenements?` (site) sont
+>   deux méthodes **distinctes au corps identique** : elles répondent à deux questions
+>   différentes et pourront diverger sans réécriture si Boris veut un jour séparer les deux ;
+> - **règle de traduction pour le portage des contrôleurs** : partout où la source écrit
+>   `user.is_admin? or user.dff_community_ids.include?(objet.community_id)`, écrire
+>   `current_user.peut_gerer_le_jeu?` — et rien d'autre. Ne pas réintroduire de test de
+>   communauté ;
+> - l'écart est commenté dans `app/models/user.rb`, à l'endroit exact où il pourrait tromper
+>   un futur lecteur.
+>
+> Si le besoin de cloisonnement réapparaît (par exemple des facilitateurs rattachés à des
+> Mondes distincts), l'option C reste applicable : ajouter la table de jonction et remplacer
+> `peut_gerer_le_jeu?` par une version qui prend l'objet en argument.
+>
+> Le reste du document est conservé comme trace du raisonnement.
 
 ## 1. Ce que fait la source
 
