@@ -70,6 +70,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 25. **[caracterisation-auth-roles-autorisations.md](caracterisation-auth-roles-autorisations.md)** — Caractérisation de l'authentification, des rôles (`nil`/`dff`/`admin`) et du moteur d'autorisation `Cans` (2026-08-02) : sémantique exacte de `no_roles`/`roles`/`all`/`can?` (aliasing multi-actions, retour strictement `true`), piège classe-vs-instance d'`authorize_resource` sur les routes imbriquées singulières (faille du 2026-08-01), leçon générale sur le partage de communauté par défaut, scénarios de vérification de parité.
 
+26. **[caracterisation-triptyque-monde-0.md](caracterisation-triptyque-monde-0.md)** — Caractérisation du triptyque Monde 0 (2026-08-02) : le patron « auto-validation Marelle » identique dans cinq modules (`MoteurAssessment`, `Traversee`, `ConseilSession`, `CoupableIdealSession`, `ExperienceQuizAttempt`, à fusionner en un seul service au portage), le calcul déterministe et explicable de posture/portes de « Une drôle d'époque », l'absence délibérée de scoring dans « Avant le Zéro » et le Conseil Oméga, le couplage descendant vers le Rôle d'appel du profil communautaire, scénarios de vérification de parité.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.
