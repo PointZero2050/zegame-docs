@@ -76,6 +76,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 28. **[caracterisation-qcm-experience.md](caracterisation-qcm-experience.md)** — Caractérisation du moteur générique de QCM d'expérience (2026-08-02), ferme la boucle des cinq modules d'évaluation : registre d'évaluateurs enfichables (deux méthodes de contrat, pas de DSL générique anticipé), sécurité contre la double-création en cas de course (index unique partiel + rescue), validation/normalisation d'URL saisie par le joueur, scénarios de vérification de parité.
 
+29. **[caracterisation-controleurs-conventions.md](caracterisation-controleurs-conventions.md)** — Caractérisation de la couche contrôleurs (2026-08-02), pour le portage des contrôleurs/vues qui suit celui des modèles : détection de langue par en-tête navigateur (préférence par utilisateur jamais nourrie, `:fr` forcé en dev/test), `Slugable#find` (slug ou id) vs `find_by` (id seulement, échec silencieux), listes blanches de params imbriqués (champ absent = ignoré sans erreur), le patron PRG partagé par les quatre contrôleurs d'évaluation du Monde 0.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.
