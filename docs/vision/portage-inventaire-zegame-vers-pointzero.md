@@ -76,7 +76,15 @@ bac à sable les utilise comme conteneurs de Mondes — le cadrage prévoyait d�
 ## 4. Séquence de portage proposée
 
 1. **Gel** : plus aucun nouveau chantier sur `zegame-app` ; on y termine ce qui est en vol.
-2. Config + assets (catégorie A) — quelques heures, aucun risque.
+2. ~~Config + assets (catégorie A)~~ **FAIT le 2026-08-02** (commit `7da4277` de
+   pointzero-app, source : tête `5b4a875` de zegame-app). Au dépôt : 6 YAML puissances,
+   5 YAML ressources, `coupable_ideal` (v1+v2), `experiences_video`, CSS/JS du thème
+   (`pz_theme.css`, `conseil.css`, `video.js`, `conseil.js`, `pz_admin.js`) et images de
+   racine. En volume monté lecture seule (`/home/deploy/pz`, hors dépôt et hors contexte de
+   build, même modèle que les médias WordPress) : 417 fichiers, 76 Mo — atlas des 162
+   médaillons, covers ressources, époque, coupable-idéal, polices, moteur. Vérifié servi en
+   production (`/pz/...` → 200) et YAML chargés par Rails. ⚠️ Si zegame-app modifie un YAML
+   pendant la fin de ses chantiers en vol, re-synchroniser avant la migration des données.
 3. Fusion `User` (Devise↔Devise, rôles unifiés) + autorisations simplifiées.
 4. Cœur du jeu (catégorie B) dans l'ordre des dépendances : Journey/Page/Challenge →
    progression/points → évaluations (Moteur, Puissances, Conseil, Traversée, Coupable idéal).
