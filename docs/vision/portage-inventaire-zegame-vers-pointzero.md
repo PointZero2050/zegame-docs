@@ -93,12 +93,13 @@ bac à sable les utilise comme conteneurs de Mondes — le cadrage prévoyait d�
 - **Faisable en août ; intenable si le périmètre de `zegame-app` continue de croître pendant
   le portage.** Chaque fonctionnalité ajoutée là-bas s'ajoute à la facture ici.
 
-## 6. Décisions demandées à Boris
+## 6. Décisions
 
-1. **Acter la cible** : `pointzero-app` est l'application du Festival.
-2. **Acter le gel** de `zegame-app` (et le communiquer à l'autre instance Claude et à Codex —
-   un agent par zone).
-3. OAuth au festival : garder ou différer ?
-4. Communities/Groups : porter tel quel ou basculer vers le modèle `World` du cadrage ?
-5. Plan B explicite : si le portage du cœur (B) glisse au-delà de fin août, le festival se
-   joue sur `vibe.ze.game` et seul le site+billetterie reste sur la nouvelle pile.
+1. ~~Acter la cible~~ **ACTÉ (Boris, 2026-08-02)** : `pointzero-app` est l'application du
+   Festival.
+2. ~~Acter le gel~~ **ACTÉ (Boris, 2026-08-02)** : `zegame-app` est gelée — on termine ce qui
+   est en vol, on n'ouvre plus de nouveau chantier. Consigné en tête de `PASSATION-CLAUDE.md`.
+3. **Ouvert** — OAuth au festival : garder ou différer ?
+4. **Ouvert** — Communities/Groups : porter tel quel ou basculer vers le modèle `World` ?
+5. **ACTÉ** comme plan B : si le portage du cœur (B) glisse au-delà de fin août, le festival
+   se joue sur `vibe.ze.game` et seul le site+billetterie reste sur la nouvelle pile.
