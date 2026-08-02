@@ -64,6 +64,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 22. **[Profil communautaire et messagerie des Cercles — V1](profil-communautaire-messagerie-cercles-v1.md)** — visibilité progressive entre joueurs, dossier de rencontre, contact interne candidat/référent, e-mail de notification, réemploi de la messagerie des feedbacks, périmètre reporté et analyse d'impact avant code.
 
+23. **[analyse-impact-messagerie-cercles.md](analyse-impact-messagerie-cercles.md)** — Analyse d'impact P0 (audit serveur du 2026-07-31) : faille d'accès déjà en production sur `Messaging::Thread` (aucune restriction de participation), notifications e-mail jamais implémentées (`GlobalSettings.send_mail_notif_for_thread` non défini), vues d'index/show hard-codées Challenge/Journey, conteneur unique proposé (`CircleMembership`), absence totale de Badge/Contribution/Resonance/Block/Report.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.
