@@ -60,6 +60,14 @@ uploader → standard. Les pièges connus de la passation (validated_at/Oméga, 
 locale) s'appliquent ici.
 
 ### C — réécriture (messagerie et social)
+
+> **Périmètre confirmé le 2026-08-02 par l'instance du bac à sable** : la catégorie C
+> s'arrête à **P3**. La série P0→P3 est intégralement livrée, poussée et vérifiée en HTTP
+> réel (commits `7d533fb`, `fe55234`, `057cf25`, `ae9a91b`, `5b4a875`) ; les notifications
+> e-mail à lien profond existent déjà (`ThreadMailer` + `GlobalSettings.notify_of_new_message`,
+> dans le commit P2). Restent hors périmètre par décision explicite de Boris : « Proposer un
+> échange » et le chantier badges/Contributions (jamais commencé). Le périmètre de portage C
+> est donc **clos et connu** — l'estimation 3-5 jours tient. La caractérisation peut commencer.
 `circle, circle_cycle, circle_membership, circle_session, blocage, signalement` + contrôleurs
 `cercles, graines, profils, signalements, threads`. **C'est précisément la zone des 5 commits
 du 2026-08-01** (P1→P3 : annuaire, profil communautaire, fil candidat/référent, blocage,
