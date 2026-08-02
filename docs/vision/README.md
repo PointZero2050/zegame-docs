@@ -74,6 +74,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 27. **[caracterisation-coupable-ideal.md](caracterisation-coupable-ideal.md)** — Caractérisation du mini-jeu « Le Coupable idéal » (2026-08-02) : coexistence V1/V2 sans réévaluation rétroactive, le procès contradictoire déterministe (cause → charges → axes révélés → verdict à quatre volets, roue toujours à 6 axes avec équivalent textuel d'accessibilité, absence délibérée de mapping axe→Puissance), le mode éphémère et sa purge immédiate après restitution, la rétention choisie par le joueur, scénarios de vérification de parité.
 
+28. **[caracterisation-qcm-experience.md](caracterisation-qcm-experience.md)** — Caractérisation du moteur générique de QCM d'expérience (2026-08-02), ferme la boucle des cinq modules d'évaluation : registre d'évaluateurs enfichables (deux méthodes de contrat, pas de DSL générique anticipé), sécurité contre la double-création en cas de course (index unique partiel + rescue), validation/normalisation d'URL saisie par le joueur, scénarios de vérification de parité.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.
