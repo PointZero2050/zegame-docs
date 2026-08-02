@@ -103,8 +103,39 @@ bac à sable les utilise comme conteneurs de Mondes — le cadrage prévoyait d�
    remplacement mécanique `first_name/last_name → prenom/nom`.
    Reste de l'étape : les **autorisations** (DSL Cans → vérifications de rôle), à faire au
    fil du portage des contrôleurs.
-4. Cœur du jeu (catégorie B) dans l'ordre des dépendances : Journey/Page/Challenge →
-   progression/points → évaluations (Moteur, Puissances, Conseil, Traversée, Coupable idéal).
+4. **Cœur du jeu (catégorie B) — modèles FAITS le 2026-08-02** (commits `e4b9033`, `85a0050`).
+   26 modèles chargent en production ; il reste les **contrôleurs et les vues**.
+
+   **Sortie de `mathieu_core` pour cette couche** : `on_change` réimplémenté à l'identique
+   dans `ApplicationRecord` (`after_commit` conditionné au changement, création comprise —
+   **ne jamais « simplifier » en `after_save`**, les modèles d'évaluation font délibérément
+   deux écritures) ; concerns `Slugable`, `Positionable`, `HasMultipleParts`,
+   `CleanHtmlTiny` copiés depuis la gem ; `String#t`/`#ta` réduits à l'identité
+   (application monolingue, 3 messages traduits en dur).
+
+   **Écarts assumés, à connaître** :
+   - `send_data_to_lti` supprimé (hors périmètre) ; colonne `lti_endpoint_url` conservée.
+   - `news_sync.rb` supprimé : il aspirait les événements depuis l'API WordPress que nous
+     remplaçons. `wordpress_registrations.rb` supprimé : inscriptions natives désormais.
+   - Réaffectation `dff_communities` à la duplication supprimée (la copie reste dans sa
+     communauté d'origine) ; la notion de facilitateur par communauté est remplacée par le
+     rôle global.
+   - `has_many :groups` retiré de `Community` (catégorie D).
+   - `GrainePubliee` **reportée en catégorie C** : elle dépend de `Messaging::Message`.
+   - Uploaders et fils Messaging retirés partout (catégories C et suivantes).
+
+   **Deux défauts de mon extraction de schéma, corrigés par migration** — à surveiller si
+   une autre table est portée : les colonnes tableau PostgreSQL (`challenges.tags`,
+   `journeys.tags`) avaient perdu leur type `array`, et les **défauts `jsonb` étaient
+   double-encodés** (`"{}"` devenu `"\"{}\""`), si bien que `answers` arrivait en `String`
+   et que `store_answer` plantait. Toujours comparer les types après extraction.
+
+   **Parité vérifiée** : slug et `find` par slug, dérivation `auto_validated`, attribution
+   des Oméga à la validation, **conservation des Oméga et de la validation après
+   `restart!`** (la régression de juillet), non-validation automatique en autorité
+   facilitateur, `completed_by?` sur les seules expériences obligatoires, chargement des
+   6 fiches puissances et des 117 sections d'« Avant le Zéro », diagnostic O-L et cap
+   d'évolution, progression du Moteur, instantané historisé de la Traversée.
 5. Cercles + messagerie minimale (catégorie C) — en dernier car le plus récent et le moins
    stabilisé.
 6. Migration contrôlée et rejouable des données (sous-ensemble explicite, répétition
