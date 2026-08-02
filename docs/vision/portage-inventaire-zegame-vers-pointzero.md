@@ -85,7 +85,16 @@ bac à sable les utilise comme conteneurs de Mondes — le cadrage prévoyait d�
    médaillons, covers ressources, époque, coupable-idéal, polices, moteur. Vérifié servi en
    production (`/pz/...` → 200) et YAML chargés par Rails. ⚠️ Si zegame-app modifie un YAML
    pendant la fin de ses chantiers en vol, re-synchroniser avant la migration des données.
-3. Fusion `User` (Devise↔Devise, rôles unifiés) + autorisations simplifiées.
+3. ~~Fusion `User`~~ **FAIT le 2026-08-02** (commit `c5b59a2`) : la table `users` de
+   pointzero-app porte désormais les champs de profil de zegame-app (civilité, téléphone,
+   territoire, présentation, langues, disponibilité, `moteur_caps`, photo, slug,
+   `is_anonymized`) plus les colonnes `confirmable` (module désactivé). Correspondance
+   d'import documentée dans la migration : `first_name→prenom`, `last_name→nom`,
+   `dff→facilitateur`, `admin→administrateur`, `nil→joueur`. `registerable` et OAuth restent
+   désactivés (question 3 du §6 toujours ouverte). Conséquence pour le portage des vues :
+   remplacement mécanique `first_name/last_name → prenom/nom`.
+   Reste de l'étape : les **autorisations** (DSL Cans → vérifications de rôle), à faire au
+   fil du portage des contrôleurs.
 4. Cœur du jeu (catégorie B) dans l'ordre des dépendances : Journey/Page/Challenge →
    progression/points → évaluations (Moteur, Puissances, Conseil, Traversée, Coupable idéal).
 5. Cercles + messagerie minimale (catégorie C) — en dernier car le plus récent et le moins
