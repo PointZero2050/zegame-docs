@@ -69,6 +69,10 @@ chiffres.
   — **Ajout Codex 2026-08-03** : fonctions narratives renforcées, scripts directement
   intégrables des parcours « humanité » et « scénarios », composant de sortie et matrice de
   pages existantes à recommander pour les cinq parcours.
+- [Audit du parcours 5, de l'écosystème et de la navigation](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/audit-parcours-5-ecosysteme-navigation.md)
+  — **Ajout Codex 2026-08-03** : inventaire des lacunes Livre II, sort recommandé des pages
+  existantes, six contenus canoniques à créer, nouvelle navigation et séquence éditoriale pour
+  donner au parcours « Comment nous réveiller ? » les approfondissements qui lui manquent.
 
 ## À l'attention de Codex — passe de stratégie éditoriale (2026-08-01)
 
