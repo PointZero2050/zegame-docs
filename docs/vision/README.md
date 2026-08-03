@@ -12,6 +12,12 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 ## Ordre de lecture recommandé
 
+> **Synthèse pour le Cercle cœur :**
+> [Point Zéro — Questions et réponses sur le fonctionnement global de l'écosystème](ecosysteme-point-zero-questions-reponses-cercle-coeur.md)
+> consolide les décisions sur le Sas public, les Mondes 0 à 2, les Cercles, les profils, les
+> Rôles d'appel, l'Oméga, les trois circuits financiers et la Ressourcerie. Il distingue
+> explicitement ce qui est acté, hypothétique, ouvert ou reporté.
+
 > **Décision canonique récente :** lire en complément prioritaire
 > **[cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md)**. Ce
 > document consolide les arbitrages du 31 juillet 2026 sur le Cercle de croissance dès le Monde 1,
