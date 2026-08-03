@@ -28,7 +28,7 @@ chiffres.
 | Lot | Contenu | Statut |
 |---|---|---|
 | 1 | Accueil, jeu d'auto-positionnement, Récit (3 pages), témoignages | **Brouillon v2 — à valider** |
-| 2 | « Le Jeu » : Monde 0, Moteur, Puissances, Cercles, Oméga | À faire |
+| 2 | « Le Jeu » : Monde 0, Moteur, Puissances, Cercles, Oméga | **Socle Moteur–Puissances–Marelle–Cadres rédigé — intégration à faire** |
 | 3 | « Les Chemins » + porte 3 (Chrysalides, Vaisseaux, appel à candidatures) | À faire |
 | 4 | « La Ressourcerie » (toilettage) + « les Actus » (reprise des 6 newsletters) | À faire |
 | 5 | « L'Alliance » (association, commun, festival) | À faire |
@@ -73,6 +73,25 @@ chiffres.
   — **Ajout Codex 2026-08-03** : inventaire des lacunes Livre II, sort recommandé des pages
   existantes, six contenus canoniques à créer, nouvelle navigation et séquence éditoriale pour
   donner au parcours « Comment nous réveiller ? » les approfondissements qui lui manquent.
+
+## Socle éditorial du Livre II pour le site
+
+- [Le Moteur et les sept Puissances](le-moteur-et-les-sept-puissances.md) — page canonique de
+  la grammaire individuelle et systémique, des polarités et des états de circulation.
+- [La Marelle, un dépolarisateur géant](marelle-depolarisateur-geant.md) — page canonique de
+  la dépolarisation à cinq échelles, avec garde-fous contre le centrisme et le relativisme.
+- [Des Puissances aux Cadres](des-puissances-aux-cadres.md) — traduction collective canonique,
+  correspondances exactes et définition du flow systémique.
+- [Pourquoi les transformations reproduisent-elles ce qu'elles combattent ?](article-organisations-transformations.md)
+  — approfondissement pour les organisations.
+- [La métamorphose interdite](article-chrysalides-metamorphose.md) — approfondissement pour les
+  Chrysalides et projets de transformation.
+- [Se dépolariser sans renoncer à ses convictions](article-citoyens-se-depolariser.md) —
+  approfondissement citoyen.
+- [Gouverner une société polarisée](article-pouvoirs-publics-polarisation.md) — approfondissement
+  pour les pouvoirs publics.
+- [Manifeste de connexion](manifeste-connexion-puissances-marelle.md) — routes, raccords aux cinq
+  parcours, navigation, règles d'intégration et critères d'acceptation pour Claude.
 
 ## À l'attention de Codex — passe de stratégie éditoriale (2026-08-01)
 
