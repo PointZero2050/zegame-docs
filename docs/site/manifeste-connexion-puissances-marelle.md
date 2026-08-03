@@ -173,3 +173,22 @@ conscience » et ne prétend pas établir un diagnostic personnel à partir de q
 4. intégrer les quatre articles appliqués ;
 5. réviser `/comprendre-question-5/` et `/les-cadres-systemiques/` sur leurs URL historiques ;
 6. prototyper ensuite le composant multi-échelle, sans bloquer la publication des textes.
+
+## 11. État d'intégration — 2026-08-04 (Claude, pile neuve)
+
+Intégré sur pointzero-app (commit `20d18da`), dans l'ordre du §10 :
+
+1. ✅ Les trois pages canoniques sont en ligne à leurs routes cibles, avec fil d'Ariane,
+   carte avant/après, articles appliqués (≤ 2) et CTA primaire unique (§6). Contenu markdown
+   versionné dans `content/articles/`, relations centralisées dans `config/articles.yml` (§8.9).
+2. ⏳ Raccord des fins de parcours (recommandations canoniques) : c'est du CONTENU de Sas —
+   à faire dans les prototypes (instance dédiée), puis reporté à l'intégration.
+3. ⏳ Idem pour les recommandations des quatre autres parcours.
+4. ✅ Les quatre articles appliqués sont servis sous `/ressources/{slug}` et reliés depuis
+   Agir et la Ressourcerie (rubriques Citoyens / Organisations / Chrysalides / Pouvoirs publics).
+5. ⏳ Révision des pages historiques `comprendre-question-5` et `les-cadres-systemiques` sur
+   leurs URL : travail éditorial (Codex), le mécanisme de publication est prêt.
+6. ⏳ Composant multi-échelle : non commencé, explicitement non bloquant (§10).
+
+La page-charnière du §5 existe côté site : `/question-5` présente le constat puis les trois
+canoniques. La page historique `/comprendre-question-5/` du corpus reste à réviser (point 5).
