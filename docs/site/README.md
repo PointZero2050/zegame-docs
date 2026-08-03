@@ -61,6 +61,10 @@ chiffres.
   — **Ajout Codex 2026-08-03** : coque mobile commune, patrons d'écran, cartographie des 62
   écrans des cinq parcours, reprise locale, passage avec consentement vers l'application et
   critères de prototype.
+- [Le parcours qui n'existe pas](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/parcours-cache-le-parcours-qui-n-existe-pas.md)
+  — **Ajout Codex 2026-08-03** : conditions de révélation, storyboard en onze écrans, dialogue
+  Professeur–Docteur–visiteur, contrat IA et distinction Patient Z.E.R.O. / Tiers inclus /
+  Passeur du Seuil.
 
 ## À l'attention de Codex — passe de stratégie éditoriale (2026-08-01)
 

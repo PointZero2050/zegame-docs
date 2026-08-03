@@ -45,8 +45,10 @@ par où il doit entrer.
 5. **Comment nous réveiller ?** — cinq Puissances centrales, Cercles et première découverte
    de l'économie Oméga.
 
-Un sixième parcours, **« Le parcours qui n'existe pas »**, est caché et se révèle sous des
-conditions à définir. Il ne doit jamais apparaître comme une sixième carte grisée.
+Un sixième parcours, **« Le parcours qui n'existe pas »**, est caché. Sa
+[spécification dédiée](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/parcours-cache-le-parcours-qui-n-existe-pas.md)
+recommande de le révéler après trois parcours distincts et la rencontre des deux guides. Il ne
+doit jamais apparaître comme une sixième carte grisée.
 
 ### 1.1 Articulation avec les trois portes
 
@@ -208,8 +210,9 @@ complétion. Le badge d'un parcours est identique quel que soit le guide.
 
 - Rejouer les cinq parcours avec les deux guides révèle le badge caché
   **« Le Tiers inclus »**.
-- Accomplir « Le parcours qui n'existe pas » donne **« Patient Z.E.R.O. »** et peut ouvrir un
-  mentor ou un contenu spécial ; il s'agit d'un secret distinct.
+- Accomplir « Le parcours qui n'existe pas » donne **« Patient Z.E.R.O. »** et peut ouvrir le
+  mentor spécial **Cabinet Z.E.R.O.** après import dans l'application ; il s'agit d'un secret
+  distinct, à n'annoncer que lorsque la fonction existe.
 - Réunir les cinq badges publics complète la constellation du site, mais ne donne pas encore
   **« Passeur du Seuil »**.
 
@@ -2021,5 +2024,6 @@ Les cinq parcours détaillés sont prêts à prototyper si :
 5. Tester chaque parcours auprès de cinq personnes sans expliquer auparavant son modèle
    central.
 6. Mesurer compréhension, friction, durée et envie de poursuivre ; corriger.
-7. Après ces tests, spécifier le parcours caché et ses conditions de révélation sans l'ajouter
-   à la constellation visible.
+7. Prototyper le
+   [parcours caché](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/parcours-cache-le-parcours-qui-n-existe-pas.md)
+   sur papier puis en 360 px, sans l'ajouter à la constellation visible.

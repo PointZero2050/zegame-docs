@@ -488,9 +488,9 @@ personnes :
 - attribution d'Omégas réels ;
 - simulation de la cagnotte d'un Cercle ;
 - paiement, crowdfunding ou décision financière réelle ;
-- contenu et condition exacte du parcours caché ;
+- réalisation du parcours caché, désormais cadré dans sa
+  [spécification dédiée](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/parcours-cache-le-parcours-qui-n-existe-pas.md) ;
 - implémentation Rails et choix définitif du mécanisme d'import.
 
-La prochaine décision après le prototype basse fidélité porte sur l'architecture du **parcours
-caché** : ce qu'il reconnaît, ce qu'il révèle et pourquoi il mérite d'être rejoué selon les deux
-angles sans devenir une simple chasse à l'easter egg.
+Après validation de la coque basse fidélité, le prototype peut ajouter les onze écrans du
+**parcours caché** sans modifier les patrons communs de vidéo, choix, révélation, trace et badge.
