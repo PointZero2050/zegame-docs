@@ -47,8 +47,9 @@ chiffres.
 
 - [parcours-publics-sas.md](parcours-publics-sas.md) — **Ajout Codex 2026-08-03** : évolution
   du Sas public vers cinq parcours immédiatement visibles, grammaire commune, deux guides,
-  badges et constellation, passage de relais vers le Monde 0, puis storyboard complet du
-  pilote « Quelles forces ont façonné nos croyances ? » autour du pratico-inerte.
+  badges et constellation, passage de relais vers le Monde 0, puis storyboards complets de
+  « Qu'arrive-t-il à l'humanité ? » autour de la convergence des cycles et du pilote
+  « Quelles forces ont façonné nos croyances ? » autour du pratico-inerte.
 - [jeu-positionnement.md](jeu-positionnement.md) reste la source éditoriale des cinq lectures,
   mais sa mécanique doit être recentrée dans le parcours « Qu'est-ce qui nous paralyse ? » ;
   il n'est plus le test préalable général de la porte « Comprendre ».

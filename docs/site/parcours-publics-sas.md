@@ -1,9 +1,9 @@
-# Parcours publics du Sas — grammaire commune et pilote « croyances »
+# Parcours publics du Sas — grammaire commune et parcours détaillés
 
 > **Ajout Codex — 2026-08-03 · Spécification éditoriale et UX à destination de Claude.**
 >
 > **Statut** : cadrage issu des arbitrages de Boris des 2 et 3 août 2026. La grammaire
-> commune et le storyboard du premier parcours peuvent servir de base à la conception. Les
+> commune et les storyboards des deux premiers parcours peuvent servir de base à la conception. Les
 > formulations proposées restent éditoriales : elles doivent être relues en situation avant
 > publication.
 >
@@ -273,9 +273,329 @@ Cette carte empêche les redondances avant l'écriture détaillée.
 
 ---
 
-## 4. Parcours pilote — « Quelles forces ont façonné nos croyances ? »
+## 4. Parcours détaillé — « Qu'arrive-t-il à l'humanité ? »
 
 ### 4.1 Fiche d'identité
+
+- **Titre public** : Qu'arrive-t-il à l'humanité ?
+- **Accroche courte** : Pourquoi tout semble-t-il casser en même temps ?
+- **Promesse** : changer d'échelle pour découvrir que plusieurs transformations de durées
+  différentes convergent dans notre époque, puis repérer les signes de cette bascule dans le
+  présent.
+- **Durée affichée** : 10 minutes.
+- **Badge** : Décodeur des cycles.
+- **Acquisition** : distinguer crise ponctuelle, fin de cycle et intercycle ; comprendre
+  qu'une convergence ouvre plusieurs bifurcations sans prédire laquelle adviendra.
+- **Limite pédagogique** : modèle de lecture historique, pas horloge déterministe, prophétie
+  d'effondrement ni preuve scientifique d'un changement d'ère cosmique.
+- **Point de passage vers le Jeu** : le Point Zéro comme moment où plusieurs anciens
+  équilibres cessent simultanément d'organiser le réel, rendant possible — mais jamais
+  automatique — l'émergence de nouveaux récits.
+
+### 4.2 Écran 1 — L'appel
+
+**Titre**
+
+> Pourquoi tout semble-t-il casser en même temps ?
+
+**Texte**
+
+> Climat, démocratie, travail, santé mentale, information, économie : chaque crise possède
+> ses causes propres. Mais si leur simultanéité racontait aussi quelque chose ? Change
+> d'échelle et regarde notre époque comme on regarderait une carte depuis le ciel.
+
+CTA : `Changer d'échelle`
+
+### 4.3 Écran 2 — Choix du guide
+
+Deux cartes de même poids :
+
+**Professeur Sirbey — Lire les différentes horloges**
+
+> Il t'aidera à distinguer les rythmes économiques, organisationnels, anthropologiques,
+> épistémologiques et civilisationnels, sans confondre modèle et certitude.
+
+**Docteur Z.E.R.O. — Reconstituer la scène de crise**
+
+> Dix alarmes sonnent dans le même bâtiment. Il soupçonne un problème légèrement plus vaste
+> qu'une succession de piles défectueuses.
+
+CTA : `Continuer avec le Professeur` ou `Continuer avec le Docteur`
+
+### 4.4 Écran 3 — Vidéo d'ouverture
+
+#### Tronc commun du script
+
+> Nous parlons de la crise comme s'il s'agissait d'un événement : quelque chose qui aurait
+> commencé, que nous pourrions résoudre, puis laisser derrière nous. Pourtant, une économie
+> peut atteindre ses limites en quelques décennies tandis qu'une manière d'organiser la
+> société, de produire la connaissance ou de concevoir la place de l'être humain se transforme
+> sur plusieurs siècles ou plusieurs millénaires. Ces mouvements ne possèdent ni la même
+> origine ni la même durée. Mais ils peuvent entrer ensemble dans une zone d'instabilité. Le
+> Point Zéro nomme cette convergence : non pas la date de la fin du monde, mais le moment où
+> plusieurs cartes anciennes cessent simultanément de décrire le territoire.
+
+#### Fermeture Professeur
+
+> Une carte historique simplifie toujours. Sa valeur ne tient pas à sa capacité à prédire,
+> mais à la question qu'elle permet enfin de poser. Voyons quelles horloges nous sommes en
+> train de confondre.
+
+#### Fermeture Docteur
+
+> Bonne nouvelle : ce n'est probablement pas une seule crise. Mauvaise nouvelle : la réunion
+> de coordination entre toutes les autres a manifestement déjà commencé sans nous.
+
+Sous la vidéo : `Lire la transcription` · `Continuer`
+
+### 4.5 Écran 4 — Le jeu des temporalités
+
+Cinq cartes décrivent des transformations sans afficher encore le nom de leur cycle :
+
+1. **La croissance fossile et industrielle atteint ses limites matérielles et sociales.**
+2. **Les organisations pyramidales peinent à agir dans des environnements complexes.**
+3. **La séparation entre l'humanité et le vivant issue de la sédentarisation devient
+   insoutenable.**
+4. **La vision mécaniste du réel et la seule rationalité analytique ne suffisent plus à
+   comprendre les systèmes vivants.**
+5. **Le récit moderne du progrès, de l'individu souverain et de la maîtrise du monde se
+   désagrège.**
+
+Consigne :
+
+> Place chaque transformation sur l'horloge qui te paraît la plus juste : **quelques
+> décennies**, **plusieurs siècles** ou **plusieurs millénaires**.
+
+Il ne s'agit pas de retrouver une date exacte. Plusieurs cartes peuvent chevaucher deux
+horloges. Le geste attendu est de percevoir des profondeurs temporelles différentes.
+
+Retour Professeur :
+
+> Nous datons facilement un choc. Nous datons beaucoup moins bien le système qui l'a rendu
+> probable. Une crise visible peut être le dernier épisode d'une transformation très longue.
+
+Retour Docteur :
+
+> Tu viens de découvrir pourquoi « revenir à la normale » est une formulation pratique :
+> elle évite soigneusement de préciser à quel siècle appartient la normale en question.
+
+CTA : `Révéler les cinq cycles`
+
+### 4.6 Écran 5 — Nommer les cinq cycles centraux
+
+Les cartes se retournent et font apparaître les cinq familles centrales du parcours :
+
+| Cycle central | Ce qui entre en transition | Ce que le parcours ne prétend pas |
+|---|---|---|
+| **Économique** | modèle de croissance, travail, production et valeur | qu'une seule théorie économique explique toutes les crises |
+| **Organisationnel** | hiérarchie, centralisation, coopération et apprentissage | que toute hiérarchie doive disparaître |
+| **Anthropologique** | rapport au vivant, au corps, à la communauté et à la technique | qu'il faudrait revenir à une société préindustrielle |
+| **Épistémologique** | manières de connaître, de prouver et de relier les savoirs | que la raison ou la science seraient devenues inutiles |
+| **Civilisationnel** | récit du progrès, place de l'individu et finalité collective | qu'une civilisation nouvelle serait déjà écrite |
+
+Trois **couches complémentaires** apparaissent ensuite autour de la carte :
+
+- **politique** — lieu où les changements d'autorité, de souveraineté et de représentation
+  deviennent visibles ;
+- **écologique** — limites matérielles et réactions du vivant qui rendent la transition
+  impossible à différer indéfiniment ;
+- **cosmique** — horizon symbolique et culturel par lequel des sociétés inscrivent leur
+  histoire dans un temps plus vaste. Il ne doit jamais être présenté comme une causalité
+  astronomique démontrée.
+
+La V1 fait jouer avec les cinq cycles centraux. Les trois autres couches enrichissent la
+restitution sans ajouter un second exercice de classement.
+
+### 4.7 Écran 6 — Faire converger les lignes
+
+L'interface transforme les cinq cartes en lignes temporelles simplifiées. Le visiteur fait
+glisser un curseur de zoom :
+
+- de près, les événements semblent indépendants ;
+- à moyenne distance, des transitions de plusieurs décennies ou siècles apparaissent ;
+- au recul maximal, les cinq lignes traversent une même zone contemporaine.
+
+Le schéma `Cycle-Convergence-2.png` sert de source, mais n'est jamais affiché en miniature
+illisible. Sur mobile, une seule ligne est détaillée à la fois ; la convergence finale montre
+les cinq lignes et les trois couches complémentaires sans leurs jalons secondaires.
+
+Question :
+
+> Que garantit cette convergence ?
+
+Réponses proposées :
+
+- `Un effondrement général` ;
+- `L'arrivée automatique d'un monde meilleur` ;
+- `Une période de bifurcations et d'instabilité` ;
+- `Rien : ces cycles n'ont aucun lien possible`.
+
+Restitution commune, quel que soit le choix :
+
+> Le modèle ne garantit ni l'effondrement ni le progrès. Il suggère qu'un nombre inhabituel
+> d'équilibres deviennent contestables en même temps. L'avenir dépend alors davantage de la
+> manière dont les tensions seront accueillies, polarisées ou transformées.
+
+CTA : `Chercher les signes dans le présent`
+
+### 4.8 Écran 7 — Les dix manifestations
+
+Dix cartes courtes sont dérivées de `10-Manifestations.jpg` :
+
+- multiplication des crises ;
+- exponentialité ;
+- polarisation ;
+- exacerbation des anciens paradigmes ;
+- désintégration du récit dominant ;
+- émergence de récits alternatifs ;
+- désarroi d'une partie de la jeunesse ;
+- transformation ou fin de certaines formes de travail ;
+- mutation de la démocratie ;
+- fatigue du changement.
+
+Consigne :
+
+> Choisis les trois signes que tu observes le plus nettement — dans ton environnement, dans
+> les médias ou dans ta propre activité.
+
+Chaque carte comporte une définition sobre et un exemple contestable. La carte sur la
+jeunesse parle d'éco-anxiété, de décrochage, de défiance et de recherche d'autres formes de
+vie ; elle ne transforme ni le suicide ni la dépression en preuve mécanique d'un changement
+de civilisation.
+
+CTA : `Relier mes trois signes`
+
+### 4.9 Écran 8 — Un signe, plusieurs niveaux
+
+Pour chacun des trois signes, le visiteur choisit le cycle qui lui paraît le plus directement
+concerné. L'interface révèle ensuite deux ou trois relations supplémentaires.
+
+Exemples :
+
+- la **polarisation** touche le politique, mais aussi les récits civilisationnels, les
+  architectures de l'information et nos manières de produire une vérité commune ;
+- la **fin du travail** touche l'économie, mais aussi l'organisation, l'identité sociale et
+  la définition d'une vie utile ;
+- la **fatigue du changement** touche les personnes, mais aussi les organisations soumises à
+  des adaptations de surface sans transformation de leurs cadres ;
+- les **récits alternatifs** peuvent ouvrir des possibles et reproduire en même temps les
+  captures de pouvoir des récits qu'ils contestent.
+
+Retour Professeur :
+
+> Un signe devient systémique lorsqu'il ne peut plus être contenu dans une seule discipline.
+> Le relier ne supprime pas ses causes locales ; cela évite de demander à une solution locale
+> de porter seule toute la transformation.
+
+Retour Docteur :
+
+> Chaque service avait correctement identifié que le problème venait du service voisin. Le
+> système peut désormais poursuivre son enquête dans d'excellentes conditions.
+
+CTA : `Mettre le modèle à l'épreuve`
+
+### 4.10 Écran 9 — Chercher ce qui résiste au récit
+
+Pour éviter un dispositif qui ne ferait que confirmer sa propre hypothèse, le parcours pose
+une question contradictoire :
+
+> Qu'est-ce qui, autour de toi, continue de fonctionner, se stabilise ou dément l'idée d'une
+> rupture totale ?
+
+Le visiteur peut choisir : institutions résilientes, solidarités ordinaires, innovations
+réparatrices, continuités culturelles, amélioration d'indicateurs matériels, ou écrire un
+autre contre-signe.
+
+Retour Professeur :
+
+> Une transition n'efface jamais tout ce qui précède. Les continuités indiquent les capacités
+> à préserver ; les ruptures montrent ce qui doit changer de forme.
+
+Retour Docteur :
+
+> L'accusation vient de verser au dossier une pièce qui contredit sa propre thèse. C'est très
+> mauvais pour le spectacle et plutôt bon pour la conscience.
+
+Le contre-signe n'annule pas les trois manifestations choisies. Il empêche la carte de devenir
+un récit totalisant ou une prophétie autoréalisatrice.
+
+CTA : `Formuler ce que je vois`
+
+### 4.11 Écran 10 — Le retournement et la trace
+
+Deux formulations à compléter :
+
+> **Le signe de bascule que je ne peux plus ne pas voir est…**
+
+> **Ce qu'il pourrait aussi rendre possible est…**
+
+Le premier champ peut être prérempli à partir d'une manifestation choisie. Le second propose
+des amorces — transformer, relier, préserver, apprendre, redistribuer, ralentir — sans imposer
+une vision optimiste. Les deux formulations peuvent rester privées ou être effacées.
+
+La prise de conscience attendue n'est donc ni « tout va s'effondrer » ni « une nouvelle ère
+nous sauvera », mais :
+
+> **Plusieurs cartes anciennes perdent simultanément leur pouvoir d'orientation. Ce que nous
+> faisons de cet intervalle participe au monde qui vient.**
+
+CTA : `Composer ma carte de convergence`
+
+### 4.12 Écran 11 — Restitution
+
+La carte **« Ma lecture de la bascule »** montre :
+
+- les cinq lignes centrales convergeant vers une zone commune ;
+- les trois manifestations choisies ;
+- le contre-signe qui nuance la lecture ;
+- le signe que le visiteur ne peut plus ne pas voir ;
+- la possibilité qu'il associe à ce signe.
+
+Les couches politique et écologique peuvent être surlignées lorsqu'elles sont mobilisées par
+les choix. La couche cosmique reste un anneau optionnel portant la mention `horizon symbolique`,
+jamais une preuve ajoutée au diagnostic.
+
+Actions : `Télécharger ma carte` · `Modifier ma formulation` · `Effacer ma trace personnelle`.
+
+### 4.13 Écran 12 — Badge et passage
+
+**Badge révélé : Décodeur des cycles**
+
+> J'ai distingué plusieurs temporalités dans la crise contemporaine et repéré les signes de
+> leur convergence sans confondre bascule et prédiction.
+
+CTA principal recommandé : `Explorer les futurs possibles` vers **« Quels sont les scénarios
+du futur ? »**.
+
+Si ce parcours est déjà accompli : `Choisir une autre question`.
+
+CTA secondaire : `Rejouer avec [l'autre guide]`.
+
+Teasing du Monde 0 :
+
+> Ici, tu as regardé les horloges du monde. Dans le Monde 0, tu commenceras à voir comment
+> leurs tensions traversent aussi tes récits, tes polarités et tes choix.
+
+### 4.14 Données éditoriales à préparer avant développement
+
+La V1 nécessite un petit corpus validé, séparé du code :
+
+- cinq cartes de cycles avec définition, profondeur temporelle indicative et sources ;
+- trois couches complémentaires et leur statut épistémologique explicite ;
+- dix cartes de manifestations, chacune avec définition courte, exemple et limites ;
+- une matrice non exclusive reliant chaque manifestation à plusieurs cycles ;
+- six à dix contre-signes afin de ne pas enfermer le visiteur dans une lecture de crise ;
+- les deux variantes complètes de voix et le script définitif de la vidéo ;
+- une version mobile progressive de `Cycle-Convergence-2.png`.
+
+Les formulations historiques et les dates doivent être relues comme des hypothèses de
+périodisation. Le front ne doit pas présenter des bornes discutables comme des faits exacts.
+
+---
+
+## 5. Parcours pilote — « Quelles forces ont façonné nos croyances ? »
+
+### 5.1 Fiche d'identité
 
 - **Titre public** : Quelles forces ont façonné nos croyances ?
 - **Accroche courte** : Qu'est-ce qui nous programme ?
@@ -289,7 +609,7 @@ Cette carte empêche les redondances avant l'écriture détaillée.
 - **Point de passage vers le Jeu** : le PsychoKernel comme nom donné à l'ensemble des récits,
   croyances et automatismes qui orientent un système.
 
-### 4.2 Écran 1 — L'appel
+### 5.2 Écran 1 — L'appel
 
 **Titre**
 
@@ -303,7 +623,7 @@ Cette carte empêche les redondances avant l'écriture détaillée.
 
 CTA : `Choisir mon guide`
 
-### 4.3 Écran 2 — Choix du guide
+### 5.3 Écran 2 — Choix du guide
 
 Deux cartes de même poids :
 
@@ -319,7 +639,7 @@ Deux cartes de même poids :
 
 CTA : `Continuer avec le Professeur` ou `Continuer avec le Docteur`
 
-### 4.4 Écran 3 — Vidéo d'ouverture
+### 5.4 Écran 3 — Vidéo d'ouverture
 
 #### Tronc commun du script
 
@@ -344,7 +664,7 @@ CTA : `Continuer avec le Professeur` ou `Continuer avec le Docteur`
 
 Sous la vidéo : `Lire la transcription` · `Continuer`
 
-### 4.5 Écran 4 — Choisir une pièce à conviction
+### 5.5 Écran 4 — Choisir une pièce à conviction
 
 Six cartes illustrées, sans hiérarchie :
 
@@ -366,7 +686,7 @@ Microcopy Docteur :
 
 CTA : `Examiner [objet]`
 
-### 4.6 Écran 5 — Reconnaître la Lumière
+### 5.6 Écran 5 — Reconnaître la Lumière
 
 Question :
 
@@ -390,7 +710,7 @@ Retour Docteur :
 
 CTA : `Regarder l'autre face`
 
-### 4.7 Écran 6 — Entendre l'instruction silencieuse
+### 5.7 Écran 6 — Entendre l'instruction silencieuse
 
 Question :
 
@@ -413,7 +733,7 @@ une boucle possible et contestable.
 
 CTA : `Suivre cette phrase`
 
-### 4.8 Écran 7 — Le regard de l'enfant
+### 5.8 Écran 7 — Le regard de l'enfant
 
 Mise en situation :
 
@@ -436,7 +756,7 @@ d'un traumatisme.
 
 CTA : `Voir ce qui a pris racine`
 
-### 4.9 Écran 8 — Construire l'arbre de croyance
+### 5.9 Écran 8 — Construire l'arbre de croyance
 
 L'interface assemble progressivement quatre niveaux :
 
@@ -459,7 +779,7 @@ Réponses : `Souvent` · `Parfois` · `Peu` · `Je ne sais pas` · `Je garde cel
 Le système ne déduit aucune Puissance, aucun état psychologique et aucun niveau de conscience
 à partir de cette réponse.
 
-### 4.10 Écran 9 — Alchimiser plutôt que supprimer
+### 5.10 Écran 9 — Alchimiser plutôt que supprimer
 
 Question :
 
@@ -488,7 +808,7 @@ Retour Docteur :
 
 CTA : `Composer ma trace`
 
-### 4.11 Écran 10 — Restitution
+### 5.11 Écran 10 — Restitution
 
 La carte **« Mon arbre de croyance »** montre uniquement les éléments choisis :
 
@@ -508,7 +828,7 @@ Conclusion :
 Actions : `Télécharger ma carte` · `Modifier ma formulation` · `Ne pas conserver la phrase
 personnelle`.
 
-### 4.12 Écran 11 — Badge et passage
+### 5.12 Écran 11 — Badge et passage
 
 **Badge révélé : Archéologue des croyances**
 
@@ -531,12 +851,15 @@ Teasing du Monde 0 :
 
 ---
 
-## 5. Direction artistique du pilote
+## 6. Direction artistique des parcours détaillés
 
-Le parcours appartient au registre **analytique** du site, pas au registre néoarchaïque des
-fiches Point Zéro.
+Les parcours appartiennent au registre **analytique** du site, pas au registre néoarchaïque
+des fiches Point Zéro.
 
-- Les six objets sont photographiés ou détourés avec une présence documentaire simple.
+- Pour les cycles, les lignes temporelles se révèlent progressivement ; jamais plus de cinq
+  lignes et trois couches complémentaires ne sont visibles simultanément sur mobile.
+- Pour les croyances, les six objets sont photographiés ou détourés avec une présence
+  documentaire simple.
 - L'arbre de croyance apparaît par strates et lignes de causalité, lisibles sur mobile.
 - Le passage Lumière / Ombre utilise le contraste de la coque sans transformer l'Ombre en
   zone « mauvaise ».
@@ -549,7 +872,7 @@ fiches Point Zéro.
 
 ---
 
-## 6. Garde-fous éditoriaux et éthiques
+## 7. Garde-fous éditoriaux et éthiques
 
 - Ne pas présenter Sartre, Heidegger ou Ellul comme s'ils avaient formulé une doctrine
   identique ; le terme `pratico-inerte` est attribué à Sartre, les rapprochements sont annoncés
@@ -565,12 +888,20 @@ fiches Point Zéro.
   psychologique.
 - Ne jamais présenter la restitution générée comme une vérité sur la personne.
 - Le Docteur peut mettre une contradiction en procès ; il ne met pas le visiteur au pilori.
+- Ne pas présenter la convergence comme une datation scientifique du Point Zéro, une preuve
+  d'effondrement ou la garantie d'un saut de conscience collectif.
+- Distinguer les périodisations historiques documentables de la couche cosmique, employée
+  comme horizon symbolique et culturel.
+- Ne pas utiliser le désarroi, la dépression ou le suicide des jeunes comme arguments
+  spectaculaires ni comme preuves causales d'une transition de civilisation.
+- Faire apparaître au moins un contre-signe ou une continuité afin que le parcours ne fabrique
+  pas artificiellement la confirmation de son propre modèle.
 
 ---
 
-## 7. Critères d'acceptation éditoriaux et UX
+## 8. Critères d'acceptation éditoriaux et UX
 
-Le pilote est prêt à développer si :
+Les deux parcours détaillés sont prêts à prototyper si :
 
 - le parcours peut être achevé sans compte et repris après fermeture du navigateur ;
 - la durée médiane observée reste entre 8 et 12 minutes ;
@@ -582,16 +913,25 @@ Le pilote est prêt à développer si :
 - le parcours donne envie de continuer sans prétendre avoir déjà accompli le Monde 0 ;
 - le badge et la constellation survivent localement et leur import est explicite ;
 - vidéo, transcription, clavier, contraste et lecteurs d'écran donnent accès au même contenu.
+- la convergence reste compréhensible sur un écran de 360 px sans afficher le schéma-source
+  complet en réduction ;
+- le visiteur distingue cinq cycles centraux et trois couches complémentaires sans devoir
+  mémoriser huit taxonomies équivalentes ;
+- la restitution sur les cycles conserve le contre-signe et ne transforme pas une lecture
+  personnelle en prédiction historique.
 
 ---
 
-## 8. Suite recommandée
+## 9. Suite recommandée
 
-1. Valider cette grammaire et le pilote sur papier.
-2. Produire un wireflow mobile basse fidélité des onze écrans.
-3. Écrire les variantes complètes Professeur / Docteur et le script vidéo définitif.
-4. Constituer les six jeux de propositions contextualisées et les règles de restitution.
-5. Tester le parcours auprès de cinq personnes sans expliquer le pratico-inerte auparavant.
+1. Valider cette grammaire et les deux parcours détaillés sur papier.
+2. Produire les wireflows mobiles basse fidélité des douze écrans « cycles » et des onze
+   écrans « croyances ».
+3. Écrire les variantes complètes Professeur / Docteur et les deux scripts vidéo définitifs.
+4. Constituer les données éditoriales des cycles, des manifestations, des objets et les règles
+   de restitution.
+5. Tester chaque parcours auprès de cinq personnes sans expliquer auparavant son modèle
+   central.
 6. Mesurer compréhension, friction, durée et envie de poursuivre ; corriger.
-7. Décliner la grammaire sur les quatre autres parcours, puis seulement spécifier le parcours
+7. Décliner la grammaire sur les trois autres parcours, puis seulement spécifier le parcours
    caché.
