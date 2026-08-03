@@ -51,7 +51,9 @@ chiffres.
   « Qu'arrive-t-il à l'humanité ? » autour de la convergence des cycles, « Quels sont les
   scénarios du futur ? » autour des 25 futurs et de l'intercycle, et du pilote « Quelles
   forces ont façonné nos croyances ? » autour du pratico-inerte, puis « Qu'est-ce qui nous
-  paralyse ? » autour des cinq profondeurs d'action et de leurs angles morts.
+  paralyse ? » autour des cinq profondeurs d'action et de leurs angles morts, puis « Comment
+  nous réveiller ? » autour des cinq couples Puissance–Cadre et d'une première expérience
+  simplifiée de l'économie Oméga.
 - [jeu-positionnement.md](jeu-positionnement.md) reste la source éditoriale des cinq lectures,
   mais sa mécanique doit être recentrée dans le parcours « Qu'est-ce qui nous paralyse ? » ;
   il n'est plus le test préalable général de la porte « Comprendre ».

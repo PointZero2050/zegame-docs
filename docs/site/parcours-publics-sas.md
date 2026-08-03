@@ -1,9 +1,9 @@
-# Parcours publics du Sas — grammaire commune et quatre parcours détaillés
+# Parcours publics du Sas — grammaire commune et cinq parcours détaillés
 
 > **Ajout Codex — 2026-08-03 · Spécification éditoriale et UX à destination de Claude.**
 >
 > **Statut** : cadrage issu des arbitrages de Boris des 2 et 3 août 2026. La grammaire
-> commune et les storyboards des quatre premiers parcours peuvent servir de base à la
+> commune et les storyboards des cinq parcours visibles peuvent servir de base à la
 > conception. Les formulations proposées restent éditoriales : elles doivent être relues en
 > situation avant publication.
 >
@@ -17,7 +17,10 @@
 > `Ressources Point Zero/Modèles/Niveaux-conscience-systemiques.png` pour les cinq lectures ;
 > `Ressources Point Zero/Modèles/Pratico-inerte-2.jpg` ; textes scéniques de
 > `Ressources Point Zero/Docteur ZERO/` ;
-> [charte de voix Point Zéro](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/voix-point-zero.md).
+> [charte de voix Point Zéro](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/voix-point-zero.md) ;
+> [sept Puissances](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/sept-puissances.md) ;
+> [écosystème Point Zéro — questions-réponses](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md),
+> notamment Q8 à Q10 et Q45 à Q59.
 >
 > **Dépendances** : cette spécification amende l'entrée du dispositif décrite dans
 > [accueil.md](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/accueil.md)
@@ -1537,7 +1540,329 @@ ancien calcul de dominante n'est pas repris comme mécanique principale.
 
 ---
 
-## 8. Direction artistique des parcours détaillés
+## 8. Parcours détaillé — « Comment nous réveiller ? »
+
+### 8.1 Fiche d'identité
+
+- **Question** : comment nous réveiller ?
+- **Promesse** : découvrir que la puissance n'est pas ce que l'on possède ou impose, mais ce
+  que l'on parvient à remettre en circulation entre soi, les autres et le monde.
+- **Acquisition centrale** : relier les cinq Puissances centrales aux cinq Cadres qui leur
+  donnent une prise collective, puis comprendre le principe de souveraineté économique de
+  l'Oméga.
+- **Durée cible** : 10 à 12 minutes.
+- **Nombre d'écrans** : 13.
+- **Badge** : **Réactivateur de Puissances**.
+- **Trace locale** : premier circuit réactivé, cinq gestes choisis, tension rencontrée dans
+  l'orientation d'un financement fictif et projet que le visiteur aimerait rendre possible.
+- **Non-promesse** : ce parcours n'évalue ni les Puissances du visiteur, ni sa générosité, ni
+  son aptitude à gouverner de l'argent réel.
+
+Le parcours met en scène un collectif fictif qui veut transformer une ancienne école fermée
+en **Maison des futurs** : lieu d'apprentissage, d'entraide, de création et d'expérimentation
+écologique ouvert au quartier. Le lieu, le budget et les personnes sont fictifs. Cette distance
+permet de faire des choix significatifs sans demander au visiteur de livrer des données
+personnelles.
+
+### 8.2 Écran 1 — L'appel
+
+Visuel : l'école abandonnée occupe le centre. Autour, cinq personnes tiennent chacune une
+pièce utile — une clé, un plan, un outil, une lettre d'habitants, un carnet d'apprentissages —
+mais rien ne circule entre elles.
+
+Titre :
+
+> **Comment nous réveiller ?**
+
+Accroche :
+
+> Nous ne manquons pas toujours d'idées, de moyens ou de bonne volonté. Il arrive que nous
+> manquions surtout des cadres qui permettent à nos puissances de circuler ensemble.
+
+CTA : **Entrer dans la Maison des futurs**.
+
+### 8.3 Écran 2 — Choix du guide
+
+Le choix suit la grammaire commune et ne modifie ni la situation, ni les décisions, ni le
+badge.
+
+**Professeur Sirbey** :
+
+> Je te propose d'observer cinq circuits. Chacun relie une capacité humaine à une règle du
+> jeu collectif.
+
+**Docteur Z.E.R.O.** :
+
+> Ils ont des idées, un bâtiment, des compétences et un tableau partagé. Le tableau est le
+> seul membre du groupe qui ne soit jamais en retard, puisqu'il ne vient plus aux réunions.
+
+CTA : **Suivre ce guide**.
+
+### 8.4 Écran 3 — Vidéo d'ouverture
+
+#### Tronc commun du script
+
+> Nous parlons souvent de puissance comme d'une chose que l'on détient : du pouvoir, de
+> l'argent, une position, une influence. Le Point Zéro propose un autre regard.
+>
+> Une puissance est une capacité de circulation. Elle devient féconde lorsqu'un désir peut
+> rencontrer les autres, prendre forme, être ressenti, transmis, éprouvé puis transformé par
+> l'expérience. Elle se bloque lorsqu'un pôle prétend suffire à lui seul.
+>
+> Dans un collectif, cette circulation ne repose pas sur la vertu supposée de ses membres.
+> Elle a besoin de cadres : des règles, des rituels et des espaces qui rendent possible la
+> co-souveraineté. Réveiller un système, ce n'est donc pas trouver un sauveur. C'est rouvrir
+> ses circuits.
+
+#### Fermeture Professeur
+
+> Tu vas remettre un projet en mouvement en reliant cinq Puissances à cinq Cadres. Certaines
+> correspondances sont moins intuitives qu'elles n'en ont l'air : observe ce qu'elles rendent
+> possible.
+
+#### Fermeture Docteur
+
+> Nous avons confié la puissance à ceux qui la confondaient avec la domination. Expérience
+> audacieuse. Les résultats sont disponibles partout autour de nous.
+
+La transcription est visible sans lancer la vidéo. CTA : **Observer ce qui bloque**.
+
+### 8.5 Écran 4 — Le projet immobile
+
+Une courte scène présente les données communes :
+
+- la mairie prête le lieu pendant dix-huit mois ;
+- vingt habitants sont prêts à contribuer ;
+- un petit financement de départ existe ;
+- après six réunions, aucune décision stable n'a été prise ;
+- deux personnes commencent à porter presque tout le projet.
+
+Question :
+
+> **Par quoi commencerais-tu ?**
+
+Cinq symptômes concrets sont proposés, sans nommer encore les Puissances :
+
+1. les décisions sont soit imposées, soit repoussées pour ne froisser personne ;
+2. chacun imagine un lieu différent et le groupe ne sait plus ce qu'il veut servir ;
+3. les tensions affectives restent hors ordre du jour mais gouvernent les réunions ;
+4. les informations, engagements et responsabilités se perdent entre deux rencontres ;
+5. le collectif répète les mêmes erreurs sans relire ce qu'il apprend.
+
+Le visiteur choisit le premier blocage à traiter. Il n'existe pas de bon ordre universel.
+
+### 8.6 Écran 5 — Ouvrir le premier circuit
+
+Le symptôme choisi devient une petite scène. Trois gestes sont proposés ; l'un agit au niveau
+du Cadre attendu, les deux autres sont utiles mais incomplets. Le retour n'attribue pas une
+note : il montre ce que chaque geste peut produire et ce qu'il laisse intact.
+
+Les cinq correspondances canoniques sont :
+
+| Symptôme | Puissance remise en circulation | Cadre collectif | Exemple de geste capacitant |
+|---|---|---|---|
+| décider ou servir devient une lutte de places | **Volonté** | **Relationnel** | clarifier qui décide quoi, depuis quelle souveraineté et au service de quoi |
+| aucune image commune ne relie les initiatives | **Imagination** | **Sens** | formuler une intention commune et rendre visibles plusieurs futurs possibles |
+| les affects cachés prennent les décisions | **Émotion** | **Gouvernance** | accueillir les ressentis avant de rechercher le consentement |
+| la parole ne devient pas action partagée | **Communication** | **Opérationnel** | rendre explicites engagements, responsabilités et boucles d'information |
+| l'expérience ne modifie pas les habitudes | **Intuition** | **Apprenance** | relire les signaux, les erreurs et les surprises avant l'itération suivante |
+
+Après le choix, une ligne relie visuellement la personne, la Puissance, le Cadre et le projet.
+
+### 8.7 Écran 6 — Réactiver les quatre autres circuits
+
+Les quatre scènes restantes s'enchaînent sous forme de cartes brèves. Pour chacune, le
+visiteur choisit un geste parmi deux formulations concrètes. Il peut ouvrir une explication
+« Pourquoi ce lien ? » sans interrompre son avancée.
+
+Le dispositif ne demande pas de mémoriser cinq définitions. Chaque réponse produit un effet
+visible sur la scène : une place est rendue, un horizon apparaît, une tension peut être dite,
+une information circule ou une expérience devient apprentissage.
+
+Le Professeur explicite les correspondances contre-intuitives, notamment :
+
+> La Volonté devient relationnelle lorsque décider n'est plus confondu avec dominer. L'Émotion
+> devient un enjeu de gouvernance lorsque le cœur peut informer la décision sans régner seul.
+
+Le Docteur peut ponctuer :
+
+> Les émotions n'avaient aucun pouvoir officiel. Elles dirigeaient donc l'organisation dans
+> la clandestinité.
+
+### 8.8 Écran 7 — Voir le Moteur collectif
+
+Les cinq lignes ouvertes composent un moteur simple autour du projet. L'interface révèle que
+les Puissances ne sont ni des départements ni des compétences isolées : elles forment un
+circuit.
+
+Une dernière perturbation survient : le collectif veut aller vite et renforce seulement le
+Cadre opérationnel. La Communication augmente, mais le Sens et l'Apprenance se contractent.
+
+Question :
+
+> **Que faudrait-il préserver pour que l'accélération ne referme pas le circuit ?**
+
+Le visiteur choisit deux garde-fous parmi cinq. La restitution insiste sur l'équilibre vivant,
+pas sur une combinaison parfaite : une Puissance très mobilisée ne compense pas durablement
+une Puissance empêchée.
+
+### 8.9 Écran 8 — Pourquoi le Cercle ?
+
+Les mêmes personnes se replacent en cercle. Aucun nouveau héros n'arrive. Les cinq Cadres
+deviennent des fonctions et rituels tournants, encore présentés de façon légère :
+
+- garder le Sens ;
+- prendre soin du Relationnel ;
+- tenir la Gouvernance ;
+- soutenir l'Opérationnel ;
+- organiser l'Apprenance.
+
+Texte :
+
+> Le Cercle n'efface ni les conflits ni les asymétries. Il rend visibles les conditions dans
+> lesquelles chacun peut contribuer sans abandonner sa souveraineté. Dans le Jeu, ces cadres
+> s'apprennent par la pratique et se spécialisent selon les besoins.
+
+Le parcours ne présente ni les cinq rôles détaillés du Monde 1, ni le Pacte-Source, ni la
+facilitation certifiée. Il en fait seulement sentir la nécessité.
+
+### 8.10 Écran 9 — Une autre circulation : l'argent
+
+Transition : la Maison des futurs peut désormais agir, mais trois projets utiles demandent un
+financement. Une animation distingue explicitement trois objets :
+
+- des **Omégas actifs**, rattachés à une personne et jamais transférés ;
+- un **Fonds du Commun** constitué d'argent réel ;
+- une **capacité d'orientation** calculée à un instant donné.
+
+Exemple fictif volontairement simple :
+
+> Le Fonds contient **10 000 €**. La communauté détient **100 Ω actifs**. Une personne qui
+> détient **5 Ω** peut contribuer à orienter **500 €**. Après sa décision, elle détient toujours
+> **5 Ω**.
+
+Deux compteurs restent visibles en parallèle : `5 Ω actifs` et `500 € à orienter`. Le premier
+ne diminue jamais ; le second devient le budget de la simulation.
+
+**Professeur** :
+
+> L'Oméga n'est ni un euro, ni un jeton à dépenser. Il reconnaît une croissance et ouvre un
+> domaine de souveraineté sur l'usage d'une part du Commun.
+
+**Docteur** :
+
+> L'argent avait pris l'habitude de décider seul où il voulait aller. Étrangement, il
+> choisissait surtout les endroits où il y en avait déjà beaucoup.
+
+### 8.11 Écran 10 — Orienter sans posséder
+
+Le visiteur répartit les 500 € fictifs entre trois besoins :
+
+1. **La Maison des futurs** — un atelier immédiatement utile au Cercle et au quartier ;
+2. **La Traverse** — une réponse urgente portée par un autre territoire ;
+3. **La Fabrique du Commun** — un outil ouvert qui pourra servir à de nombreux projets mais
+   dont l'effet sera moins immédiat.
+
+Il peut tout affecter à un seul projet ou répartir librement. Aucun minimum, plafond moral ou
+solution recommandée n'est imposé. L'interface nomme sobrement les tensions rencontrées :
+
+- proche / lointain ;
+- bénéfice direct / infrastructure commune ;
+- urgence / fécondité à long terme ;
+- autonomie du projet / interdépendance de l'écosystème.
+
+Le CTA dit **Confirmer cette orientation fictive**, jamais « Dépenser mes Omégas ».
+
+Après confirmation, le compteur monétaire atteint zéro tandis que `5 Ω actifs` reste inchangé.
+
+### 8.12 Écran 11 — Refermer la boucle
+
+Une conséquence courte est générée à partir de la répartition : ce que chaque projet peut
+engager, ce qui reste non financé et la tension assumée. Il ne s'agit ni d'une prévision
+scientifique ni d'un jugement de générosité.
+
+Une flèche montre ensuite qu'une part de la valeur produite par les activités financées revient
+alimenter le Fonds du Commun. Aucun pourcentage n'est indiqué sur le site public : le taux, son
+assiette et ses règles restent des hypothèses à tester.
+
+Texte :
+
+> L'enjeu n'est pas de rendre l'argent vertueux par décret. Il est de le faire repasser par
+> des décisions conscientes, confrontables et reliées à leurs effets — puis de remettre une
+> part de la valeur en circulation.
+
+Teasing :
+
+> Dans le Monde 1, tu expérimenteras aussi la cagnotte d'un Cercle, le financement des projets
+> et la tension entre intérêt personnel et intérêt collectif. Non comme un examen moral, mais
+> comme une polarité à apprendre à tenir.
+
+### 8.13 Écran 12 — La trace
+
+La trace rassemble quatre éléments :
+
+- **le premier circuit ouvert** dans la situation fictive ;
+- **les cinq couples Puissance–Cadre** et les gestes choisis ;
+- **l'orientation de financement** et la tension la plus présente ;
+- **une possibilité à rendre réelle**, choisie parmi trois formulations ou saisie librement en
+  une phrase facultative.
+
+Question finale :
+
+> **Si davantage de puissance circulait, qu'aimerais-tu contribuer à rendre possible ?**
+
+La réponse libre reste facultative et locale. L'écran rappelle :
+
+> Ceci est la mémoire de tes choix dans une situation, pas la mesure de tes Puissances.
+
+### 8.14 Écran 13 — Badge et passage
+
+Le badge **Réactivateur de Puissances** apparaît dans la constellation locale.
+
+Restitution courte :
+
+> Tu as vu qu'une capacité individuelle ne devient pas automatiquement une puissance
+> collective. Entre les deux, il faut des cadres. Tu as aussi expérimenté une économie où la
+> reconnaissance n'est pas dépensée : elle ouvre la possibilité d'orienter une ressource qui
+> demeure commune.
+
+Si d'autres parcours restent à faire :
+
+- CTA principal : **Choisir une autre question** ;
+- CTA secondaire : **Rejouer avec l'autre guide**.
+
+Si les cinq badges visibles sont acquis :
+
+- la constellation révèle qu'un passage est possible ;
+- CTA principal : **Faire passer mes traces dans le Jeu** ;
+- microcopie : « Dans l'application, ces fragments deviendront le point de départ d'un
+  parcours qui ne sera plus seulement une sensibilisation. »
+
+Le badge caché lié aux deux guides reste une surprise ; aucune jauge `5/10` ne le révèle.
+
+### 8.15 Données éditoriales et règles à préparer
+
+La V1 repose sur une matrice explicite et auditable :
+
+- cinq symptômes, chacun relié à une Puissance et un Cadre canoniques ;
+- deux ou trois gestes et leurs effets pour chaque symptôme ;
+- cinq perturbations possibles du Moteur et leurs garde-fous ;
+- trois projets fictifs comparables, sans projet repoussoir ;
+- une restitution pour les principales répartitions monétaires ;
+- les variantes de voix Professeur / Docteur ;
+- une formulation courte et une formulation approfondie de chaque couple Puissance–Cadre.
+
+Le calcul monétaire est déterministe et purement pédagogique. Aucun Oméga réel, argent réel,
+profil personnel, expertise ou droit de décision n'est lu ou écrit par ce parcours public.
+
+Le **Désir** et la **Transcendance** encadrent symboliquement la séquence : le premier donne
+l'impulsion à la Maison des futurs, la seconde apparaît dans le retour de valeur au Commun.
+Ils ne deviennent pas deux mini-tests supplémentaires. Le parcours public reste centré sur les
+cinq Puissances centrales ; les sept Puissances seront vécues et réévaluées dans le Jeu.
+
+---
+
+## 9. Direction artistique des parcours détaillés
 
 Les parcours appartiennent au registre **analytique** du site, pas au registre néoarchaïque
 des fiches Point Zéro.
@@ -1553,6 +1878,12 @@ des fiches Point Zéro.
 - Pour les moyens d'action, les dix jetons restent visibles pendant la première allocation,
   puis la ville évolue sur une ligne temporelle sobre. Les cinq lectures apparaissent comme
   des lentilles imbriquées sans numéro, podium ni flèche ascendante.
+- Pour les Puissances, cinq circuits colorés relient personnages, Cadres et projet. Le code
+  couleur et les icônes canoniques aident à reconnaître les Puissances sans transformer la
+  scène en tableau de bord psychométrique.
+- La simulation économique superpose deux couches visuellement incompatibles avec une monnaie
+  de jeu : l'Oméga reste un repère fixe attaché au personnage ; les euros circulent entre le
+  Fonds et les projets. Aucun jeton Ω ne vole vers un projet, ne brûle ou ne disparaît.
 - L'arbre de croyance apparaît par strates et lignes de causalité, lisibles sur mobile.
 - Le passage Lumière / Ombre utilise le contraste de la coque sans transformer l'Ombre en
   zone « mauvaise ».
@@ -1565,7 +1896,7 @@ des fiches Point Zéro.
 
 ---
 
-## 9. Garde-fous éditoriaux et éthiques
+## 10. Garde-fous éditoriaux et éthiques
 
 - Ne pas présenter Sartre, Heidegger ou Ellul comme s'ils avaient formulé une doctrine
   identique ; le terme `pratico-inerte` est attribué à Sartre, les rapprochements sont annoncés
@@ -1610,12 +1941,28 @@ des fiches Point Zéro.
   l'utiliser pour invalider les faits, la médecine, le droit ou les contraintes matérielles.
 - Ne jamais afficher les numéros ou les anciens intitulés hiérarchiques du modèle-source au
   visiteur.
+- Respecter les correspondances canoniques : Volonté–Relationnel, Imagination–Sens,
+  Émotion–Gouvernance, Communication–Opérationnel et Intuition–Apprenance ; ne pas les remplacer
+  par une association fonctionnelle jugée plus intuitive.
+- Ne pas transformer les gestes choisis en diagnostic personnel, profil de Puissances ou score
+  de flow.
+- Ne jamais représenter l'Oméga comme une cryptomonnaie, un actif financier, un moyen de
+  paiement, un revenu, une cagnotte ou un capital personnel.
+- Ne jamais écrire que le visiteur gagne, donne, investit, dépense, échange ou perd ses Omégas
+  dans la simulation. Il oriente un montant en euros ; son nombre d'Omégas reste inchangé.
+- Ne pas laisser entendre que la capacité d'orientation est une somme possédée, retirable ou
+  garantie. Elle dépend du Fonds disponible à un instant donné.
+- Ne pas confondre le Fonds du Commun, la cagnotte financière d'un Cercle et le financement
+  d'un projet. Le parcours public n'expérimente que le premier de ces circuits.
+- Ne pas afficher comme règle acquise les taux de retour économique encore à expérimenter.
+- Ne pas moraliser l'intérêt personnel et l'intérêt collectif : rendre visible leur tension,
+  leurs apports et leurs risques de capture.
 
 ---
 
-## 10. Critères d'acceptation éditoriaux et UX
+## 11. Critères d'acceptation éditoriaux et UX
 
-Les quatre parcours détaillés sont prêts à prototyper si :
+Les cinq parcours détaillés sont prêts à prototyper si :
 
 - le parcours peut être achevé sans compte et repris après fermeture du navigateur ;
 - la durée médiane observée reste entre 8 et 12 minutes ;
@@ -1647,19 +1994,31 @@ Les quatre parcours détaillés sont prêts à prototyper si :
   situations ;
 - une nouvelle partie peut produire une autre alliance sans être interprétée comme une
   incohérence de la personne.
+- les cinq couples Puissance–Cadre sont correctement nommés et compris à partir d'une situation,
+  sans demander au visiteur de mémoriser une taxonomie abstraite ;
+- le visiteur comprend qu'une Puissance est une capacité de circulation et qu'un Cadre lui
+  donne une prise collective ;
+- pendant et après l'orientation fictive, le nombre d'Omégas reste identique et distinct du
+  montant en euros restant à orienter ;
+- le visiteur distingue l'Oméga, le Fonds du Commun et sa capacité momentanée d'orientation ;
+- aucune répartition n'est interprétée comme une mesure de générosité ou de conscience ;
+- la simulation publique donne envie d'expérimenter l'économie Oméga sans dupliquer celle du
+  tutoriel du Monde 1.
 
 ---
 
-## 11. Suite recommandée
+## 12. Suite recommandée
 
-1. Valider cette grammaire et les quatre parcours détaillés sur papier.
+1. Valider cette grammaire et les cinq parcours détaillés sur papier.
 2. Produire les wireflows mobiles basse fidélité des douze écrans « cycles », des treize
-   écrans « scénarios », des onze écrans « croyances » et des treize écrans « paralysie ».
-3. Écrire les variantes complètes Professeur / Docteur et les quatre scripts vidéo définitifs.
+   écrans « scénarios », des onze écrans « croyances », des treize écrans « paralysie » et des
+   treize écrans « réveil ».
+3. Écrire les variantes complètes Professeur / Docteur et les cinq scripts vidéo définitifs.
 4. Constituer les données éditoriales des cycles, des manifestations, des scénarios, des objets,
-   des cinq leviers et les règles de restitution.
+   des cinq leviers, des cinq couples Puissance–Cadre, des projets fictifs et les règles de
+   restitution.
 5. Tester chaque parcours auprès de cinq personnes sans expliquer auparavant son modèle
    central.
 6. Mesurer compréhension, friction, durée et envie de poursuivre ; corriger.
-7. Décliner la grammaire sur le dernier parcours, puis seulement spécifier le parcours
-   caché.
+7. Après ces tests, spécifier le parcours caché et ses conditions de révélation sans l'ajouter
+   à la constellation visible.
