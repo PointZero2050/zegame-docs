@@ -1,6 +1,10 @@
 # Direction artistique du Point Zéro
 
 > Ajout Codex - 2026-07-14. Formalisation de l'intention de Boris à partir de la banque d'images Point Zéro. Le néoarchaïsme constitue la grammaire graphique de base ; chaque parcours peut développer un imaginaire propre comme expression de cette grammaire.
+>
+> **Extension canonique — 2026-08-03** : la synthèse entre collage néoarchaïque et
+> peinture-diagramme initiatique est détaillée dans
+> [Grammaire visuelle Point Zéro — du collage néoarchaïque au Temple vivant](grammaire-visuelle-hilma-point-zero.md).
 
 ## 1. Principe directeur
 
