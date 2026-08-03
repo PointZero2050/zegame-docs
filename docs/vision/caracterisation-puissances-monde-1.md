@@ -149,3 +149,24 @@ serait une sur-ingénierie, pas une amélioration de sécurité.
    inchangés (fusion partielle, §4).
 5. Un `return_to` forgé en `//attaquant.example.com` (ou toute valeur ne commençant pas par un
    `/` simple) → jamais suivi, repli sur `/users/me`.
+
+## 8. Parité vérifiée sur pointzero-app — 2026-08-03 (instance pile neuve)
+
+Les cinq vérifications du §7 passent sur `pointzero-app` (commit `c5eceee`), exécutées en
+conteneur contre le code porté avec un compte jetable détruit ensuite :
+
+1. Sphères hétérogènes (o3/o1/l2) → `o_level = 3`, maximum et non moyenne. ✓
+2. Requestionnaire → deuxième ligne, l'ancienne intacte, `latest_for` suit. ✓
+3. O3-L3 libre → `cap` nil ; bloqué → cap `circulation`, jamais `amplitude`. ✓
+4. Fusion partielle : un cap ajusté, les cinq autres intacts ; le manuel prime sur le
+   Conseil (`effective_moteur_caps`). ✓
+5. `return_to` en `//attaquant.example.com` et `https://…` → repli `/users/me` ;
+   `/parcours` → suivi. ✓
+
+Le point laissé ouvert au §4 (recopier ou reconsidérer `update_columns`) est tranché et
+documenté dans le code : la raison mathieu_core a disparu, mais `update_columns` reste juste —
+un `update!` standard revaliderait tout le profil (prénom obligatoire…), et un compte incomplet
+ne doit pas être empêché d'ajuster un cap. La valeur est déjà filtrée par la liste `VALID`.
+
+Le point du §6 (« illustration obligatoire si libre » côté formulaire) reste non confirmé —
+même statut qu'à la source, le questionnaire porté est identique.
