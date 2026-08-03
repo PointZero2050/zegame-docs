@@ -2010,9 +2010,10 @@ Les cinq parcours détaillés sont prêts à prototyper si :
 ## 12. Suite recommandée
 
 1. Valider cette grammaire et les cinq parcours détaillés sur papier.
-2. Produire les wireflows mobiles basse fidélité des douze écrans « cycles », des treize
-   écrans « scénarios », des onze écrans « croyances », des treize écrans « paralysie » et des
-   treize écrans « réveil ».
+2. Prototyper la coque et les 62 écrans à partir des
+   [wireflows mobiles](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/wireflows-mobiles-parcours-publics.md) :
+   douze écrans « cycles », treize écrans « scénarios », onze écrans « croyances », treize
+   écrans « paralysie » et treize écrans « réveil ».
 3. Écrire les variantes complètes Professeur / Docteur et les cinq scripts vidéo définitifs.
 4. Constituer les données éditoriales des cycles, des manifestations, des scénarios, des objets,
    des cinq leviers, des cinq couples Puissance–Cadre, des projets fictifs et les règles de

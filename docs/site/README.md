@@ -57,6 +57,10 @@ chiffres.
 - [jeu-positionnement.md](jeu-positionnement.md) reste la source éditoriale des cinq lectures,
   mais sa mécanique doit être recentrée dans le parcours « Qu'est-ce qui nous paralyse ? » ;
   il n'est plus le test préalable général de la porte « Comprendre ».
+- [wireflows mobiles des parcours publics](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/wireflows-mobiles-parcours-publics.md)
+  — **Ajout Codex 2026-08-03** : coque mobile commune, patrons d'écran, cartographie des 62
+  écrans des cinq parcours, reprise locale, passage avec consentement vers l'application et
+  critères de prototype.
 
 ## À l'attention de Codex — passe de stratégie éditoriale (2026-08-01)
 
