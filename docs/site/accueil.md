@@ -5,7 +5,8 @@
 > parcours publics ; deux accès directs « Agir » et « Porter » ; vignettes Actus en registre
 > documentaire · CTA principal : choisir une question.
 >
-> **Version 3** (2026-08-03) — introduction générale, cinq parcours immédiatement visibles,
+> **Version 4** (2026-08-03) — introduction générale, corpus profond librement accessible,
+> cinq parcours immédiatement visibles comme boussole d'apprentissage,
 > puis deux accès directs vers l'application et l'autodiagnostic systémique. Cette version
 > remplace l'ancien portique de trois choix concurrents. Le texte d'introduction est dérivé du script
 > `Ressources Point Zero/Vidéos/Vidéo teaser Ecosystème PZ.docx` (version courte).
@@ -48,6 +49,14 @@ un plan chiffré pour les sept prochaines années et jusqu'en 2050 ; il est dét
 Livres.
 
 ## 3. Choisis la question qui t'appelle
+
+Ce site contient 13 000 ans d'histoire, plusieurs crises de civilisation, 25 scénarios du futur
+et quelques questions beaucoup trop vastes pour tenir dans une barre de navigation. Cela peut
+donner le vertige — parfois même un peu peur.
+
+Tu peux explorer librement toutes ses pages. Ou commencer par cinq parcours courts qui
+t'aideront à construire progressivement ta carte, tout en observant ce que ces questions mettent
+en mouvement chez toi.
 
 Tu n'as pas besoin de commencer par le commencement. Choisis la question qui insiste déjà.
 Chaque parcours dure entre 8 et 12 minutes, produit une trace et révèle un fragment du Jeu.

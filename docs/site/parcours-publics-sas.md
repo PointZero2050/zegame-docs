@@ -146,6 +146,12 @@ chaque parcours porter une mécanique différente.
 Le choix du guide change environ **20 à 30 % des formulations**, jamais les concepts, les
 options, les règles, la durée ni le badge.
 
+La différence ne doit pas reposer sur quatre traits d'humour ajoutés après les interactions.
+Chaque guide intervient à six ou sept moments de bascule, lit la trace finale et ordonne les
+approfondissements depuis son angle. Les scripts intégrables des deux premiers parcours et la
+matrice des pages à recommander sont définis dans
+[guides et approfondissements](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/guides-et-approfondissements-parcours-publics.md).
+
 **Professeur Sirbey**
 
 - accueille et donne le contexte ;
@@ -229,6 +235,11 @@ travail de transformation et trace la contribution.
 
 À la fin de chaque parcours, un CTA secondaire peut proposer : `Rejouer avec l'autre guide`.
 Le CTA principal reste contextualisé et unique.
+
+Après le badge et avant les actions de sortie, un bloc **« Ton guide te propose de poursuivre »**
+présente au maximum trois pages existantes du site : une page essentielle, un approfondissement
+et un contrepoint lié à la trace. Ces lectures restent facultatives, ne conditionnent pas le
+badge et ne sont jamais formulées comme un profil de la personne.
 
 ---
 

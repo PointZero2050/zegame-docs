@@ -200,6 +200,9 @@ mobile. La bascule conserve les mêmes positions pour faciliter la comparaison.
 
 - révélation brève, désactivable avec `Réduire les animations` ;
 - badge, acquisition formulée en « J'ai… », pas en qualité identitaire absolue ;
+- lecture finale propre au guide choisi ;
+- bloc `Ton guide te propose de poursuivre` limité à trois pages : essentiel,
+  approfondissement et contrepoint situationnel ;
 - constellation mise à jour ;
 - CTA vers une autre question ou vers le passage dans l'application ;
 - rejeu avec l'autre guide disponible mais secondaire.
