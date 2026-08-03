@@ -1,12 +1,13 @@
 # Accueil
 
 > **Méta** · Remplace : `/` (Homepage-FR), `/homepage-fr-english/` · Redirections : aucune
-> (même URL) · Visuels : vidéo teaser (version courte) en ouverture ; trois vignettes de
-> portes en registre néoarchaïque ; vignettes Actus en registre documentaire · CTA : les trois
-> portes, rien d'autre au premier écran.
+> (même URL) · Visuels : vidéo teaser (version courte) en ouverture ; constellation des cinq
+> parcours publics ; deux accès directs « Agir » et « Porter » ; vignettes Actus en registre
+> documentaire · CTA principal : choisir une question.
 >
-> **Version 2** (2026-07-31) — réécrite après la correction de cadrage : introduction générale
-> puis trois portes. Le texte d'introduction est dérivé du script
+> **Version 3** (2026-08-03) — introduction générale, cinq parcours immédiatement visibles,
+> puis deux accès directs vers l'application et l'autodiagnostic systémique. Cette version
+> remplace l'ancien portique de trois choix concurrents. Le texte d'introduction est dérivé du script
 > `Ressources Point Zero/Vidéos/Vidéo teaser Ecosystème PZ.docx` (version courte).
 
 ---
@@ -46,42 +47,74 @@ C'est un écosystème, des ateliers, et un jeu collectif fondé sur le voyage du
 un plan chiffré pour les sept prochaines années et jusqu'en 2050 ; il est détaillé dans les
 Livres.
 
-## 3. Les trois portes
+## 3. Choisis la question qui t'appelle
 
-> Une seule question : où en es-tu, aujourd'hui, maintenant ?
+Tu n'as pas besoin de commencer par le commencement. Choisis la question qui insiste déjà.
+Chaque parcours dure entre 8 et 12 minutes, produit une trace et révèle un fragment du Jeu.
 
-### 🜂 Je veux agir
+### Qu'arrive-t-il à l'humanité ?
+
+Plusieurs cycles historiques sont en train de s'achever en même temps. Sauras-tu reconnaître
+leurs rythmes et les signes annonçant qu'un basculement a déjà commencé ?
+
+[Explorer la convergence — 10 min]
+
+### Quels sont les scénarios du futur ?
+
+Effondrement, dystopie, néohumanisme, utopie, transcendance : explore 25 futurs possibles,
+puis compose celui dont tu reconnais déjà les signes dans le présent.
+
+[Composer un futur — 10 min]
+
+### Quelles forces ont façonné nos croyances ?
+
+Choisis un objet ou une institution familière. Suis l'instruction silencieuse qu'il transporte
+jusqu'à une croyance collective — et peut-être jusqu'à toi.
+
+[Suivre une croyance — 9 min]
+
+### Qu'est-ce qui nous paralyse ?
+
+Information, travail intérieur, transformation des cadres, nouveaux récits : que mobiliserais-tu
+d'abord ? Découvre ce que ton levier voit très bien et ce qu'il laisse hors champ.
+
+[Changer d'échelle — 10 min]
+
+### Comment nous réveiller ?
+
+Explore cinq Puissances centrales, éprouve ce qu'un Cercle peut en faire et découvre pourquoi
+une autre circulation de la valeur pourrait changer les règles du jeu.
+
+[Réactiver les Puissances — 12 min]
+
+*La constellation conserve localement les parcours commencés ou accomplis. Quelque chose semble
+manquer entre les cinq étoiles. C'est probablement une erreur de calcul parfaitement normale.*
+
+## 4. Tu sais déjà ce que tu veux faire ?
+
+### 🜂 Agir — entrer dans le Jeu
 
 Tu as déjà fait le tour du diagnostic. Ce qui te manque, ce ne sont pas des analyses
 supplémentaires, c'est un endroit où mettre ce que tu portes.
 
 Le Jeu commence au Monde 0 : quelques heures pour découvrir ce qui fait tourner ta conscience,
-semer une première trace, et décider librement si tu continues. Ou viens d'abord nous regarder
-dans les yeux à un Sas.
+semer une première trace, et décider librement si tu continues. Si tu veux commencer, commence :
+le passage se fait directement dans l'application.
 
-[Entrer dans le Jeu] · [Prochain Sas — gratuit, 1 h 30]
+[Entrer dans le Jeu]
 
-### 🜄 Je veux comprendre
-
-Tu sens que quelque chose ne tourne pas rond, mais les explications disponibles te paraissent
-toutes trop courtes. Normal : elles le sont.
-
-Commence par te situer. En deux minutes, ce petit jeu te dit quelle lecture des crises est la
-tienne aujourd'hui, ce qu'elle explique très bien, et ce qu'elle ne voit pas encore.
-
-[Découvrir ma lecture — 2 min] · [Parcourir les clés de décodage]
-
-### 🜃 Je porte un projet ou une organisation
+### 🜃 Porter — diagnostiquer un système
 
 Tu fais déjà quelque chose. Et tu as peut-être déjà vu ce qui arrive aux initiatives qui
 réussissent : elles se font absorber, diluer, retourner — pas par malveillance, par gravité.
 
-C'est le problème que nous prenons au sérieux, et c'est là-dessus que nous travaillons avec
-les Chrysalides et les Vaisseaux.
+C'est le problème que nous prenons au sérieux. Un premier autodiagnostic met en regard les
+cinq Cadres de ton système et les Puissances qu'il libère, bloque ou détourne. Il ne délivre
+pas un label : il donne une hypothèse de travail que tu pourras confronter avec nous.
 
-[Voir la proposition] · [Candidater au parcours Chrysalides]
+[Diagnostiquer mon système] · [Découvrir l'accompagnement]
 
-## 4. Ce qui se passe vraiment (Actus)
+## 5. Ce qui se passe vraiment (Actus)
 
 *Trois dernières entrées, alimentées par la rubrique Actus.*
 
@@ -93,12 +126,12 @@ les Chrysalides et les Vaisseaux.
 
 [Toutes les actualités]
 
-## 5. Ils traversent le Point Zéro
+## 6. Ils traversent le Point Zéro
 
 *Section témoignages — voir [temoignages.md](temoignages.md). Contenus de calage en attendant
 la collecte réelle en cours.*
 
-## 6. Rester en lien
+## 7. Rester en lien
 
 Une lettre régulière sur la bascule en cours et ce que nous en faisons. Pas de recettes de
 bonheur en cinq étapes.

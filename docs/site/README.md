@@ -43,6 +43,16 @@ chiffres.
 - [recit-la-marelle.md](recit-la-marelle.md) — la Marelle comme dispositif et boussole
 - [temoignages.md](temoignages.md) — ⚠️ contenus de calage, attributions en jetons
 
+## Parcours publics du Sas
+
+- [parcours-publics-sas.md](parcours-publics-sas.md) — **Ajout Codex 2026-08-03** : évolution
+  du Sas public vers cinq parcours immédiatement visibles, grammaire commune, deux guides,
+  badges et constellation, passage de relais vers le Monde 0, puis storyboard complet du
+  pilote « Quelles forces ont façonné nos croyances ? » autour du pratico-inerte.
+- [jeu-positionnement.md](jeu-positionnement.md) reste la source éditoriale des cinq lectures,
+  mais sa mécanique doit être recentrée dans le parcours « Qu'est-ce qui nous paralyse ? » ;
+  il n'est plus le test préalable général de la porte « Comprendre ».
+
 ## À l'attention de Codex — passe de stratégie éditoriale (2026-08-01)
 
 Claude rend la main sur la **zone éditoriale** pour une passe de stratégie. Il conserve la
