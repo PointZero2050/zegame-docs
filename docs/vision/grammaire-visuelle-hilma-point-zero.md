@@ -275,8 +275,18 @@ Il teste le degré **Carte** : grande architecture circulaire, sept cellules dif
 archétype central en collage, axe Racine–Point Zéro–Couronne, pigments corail, rose, turquoise,
 indigo et or. La géométrie organise l'image au lieu de l'orner.
 
-Pour la prochaine itération, conserver cette syntaxe et comparer deux variations contrôlées :
+Deux variations contrôlées ont ensuite été produites :
 
-- une version **Vision**, plus narrative, plus asymétrique et dominée par le personnage ;
-- une version **Signe**, beaucoup plus dépouillée, permettant de vérifier la continuité avec
-  l'interface et l'animation.
+- `Ressources Point Zero/DA/tests-hilma-pz/moteur-conscience-vision-v1.png` — 972 × 1619 px :
+  version **Vision**, plus narrative, asymétrique et dominée par la traversée du personnage.
+  Les sept Puissances deviennent des flux qui relient l'Ombre fertile et la Lumière habitée.
+  Son ratio très vertical en fait un bon test pour un écran-seuil ou une story ; une cover 4:5
+  de production devra être recomposée, pas simplement recadrée.
+- `Ressources Point Zero/DA/tests-hilma-pz/moteur-conscience-signe-v1.png` — 1254 × 1254 px :
+  version **Signe**, dépouillée et carrée. Sept cellules, un axe, une Racine, un Point Zéro et
+  une forme de Couronne suffisent à conserver la grammaire. Elle peut servir de base à un
+  médaillon, une transition ou une animation, mais ne constitue pas un nouveau logo.
+
+Ce triptyque valide l'intérêt des trois degrés. Il ne faut pas demander au même fichier de
+remplir les trois fonctions : **Signe** pour orienter, **Carte** pour expliquer, **Vision** pour
+faire franchir un seuil.
