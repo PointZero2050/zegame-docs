@@ -84,6 +84,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 29. **[caracterisation-controleurs-conventions.md](caracterisation-controleurs-conventions.md)** — Caractérisation de la couche contrôleurs (2026-08-02), pour le portage des contrôleurs/vues qui suit celui des modèles : détection de langue par en-tête navigateur (préférence par utilisateur jamais nourrie, `:fr` forcé en dev/test), `Slugable#find` (slug ou id) vs `find_by` (id seulement, échec silencieux), listes blanches de params imbriqués (champ absent = ignoré sans erreur), le patron PRG partagé par les quatre contrôleurs d'évaluation du Monde 0.
 
+30. **[caracterisation-puissances-monde-1.md](caracterisation-puissances-monde-1.md)** — Caractérisation de `PuissanceAssessment` et des caps du Moteur (2026-08-03), ferme la liste des cinq évaluations de l'inventaire : diagnostic O-L déterministe (maximum, pas moyenne, sur trois sphères), la règle de cap à un seul pas (circulation puis amplitude, jamais les deux, sommet sans cap), `effective_moteur_caps` (Conseil comme base, ajustement manuel qui l'emporte, `update_columns` pour éviter les callbacks, garde anti-open-redirect), le contrôleur « self-only » implicite.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.
