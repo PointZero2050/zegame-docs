@@ -314,9 +314,11 @@ Les 138 contenus et l'intégralité des médias sont dans l'application.
 - Traitements appliqués à l'import, en plus de l'assainissement des iframes injectées :
   **71 balises `<script>` retirées** (elles pointaient vers des ressources WordPress
   condamnées), **14 formulaires WordPress retirés** et remplacés par un commentaire
-  `<!-- FORMULAIRE WORDPRESS RETIRE - a reconstruire en natif -->` — ces 14 pages sont la
-  liste de travail des formulaires à refaire —, et réécriture de toutes les URL absolues
-  `pointzero2050.com` en chemins relatifs.
+  `<!-- FORMULAIRE WORDPRESS RETIRE - a reconstruire en natif -->`, et réécriture de toutes
+  les URL absolues `pointzero2050.com` en chemins relatifs.
+  **Décision Boris 2026-08-03 : les 14 formulaires ne sont PAS à récupérer** — ils seront
+  reconstruits dans le cadre de la nouvelle version du site, au fil des besoins éditoriaux.
+  Les commentaires en place dans les pages legacy marquent simplement les emplacements.
 - **Les contenus sont servis à leur URL d'origine** (`/comprendre-question-1`,
   `/les-cadres-systemiques`…). C'est le point important pour le référencement : **la majorité
   du corpus n'a besoin d'aucune redirection 301**. Le plan de redirections ne portera que sur
