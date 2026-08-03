@@ -1,17 +1,19 @@
-# Parcours publics du Sas — grammaire commune et parcours détaillés
+# Parcours publics du Sas — grammaire commune et trois parcours détaillés
 
 > **Ajout Codex — 2026-08-03 · Spécification éditoriale et UX à destination de Claude.**
 >
 > **Statut** : cadrage issu des arbitrages de Boris des 2 et 3 août 2026. La grammaire
-> commune et les storyboards des deux premiers parcours peuvent servir de base à la conception. Les
-> formulations proposées restent éditoriales : elles doivent être relues en situation avant
-> publication.
+> commune et les storyboards des trois premiers parcours peuvent servir de base à la
+> conception. Les formulations proposées restent éditoriales : elles doivent être relues en
+> situation avant publication.
 >
 > **Périmètre** : site public intégré à l'application Point Zéro. Aucun compte n'est requis
 > pour jouer. Les traces restent locales jusqu'à une action explicite du visiteur.
 >
 > **Sources principales** : Livre I, cinq grandes questions ; `PRT-Le Point Zéro - Livre
-> I.docx`, p. 296-304 pour le pratico-inerte ;
+> I.docx`, p. 296-304 pour le pratico-inerte ; `Ressources Point Zero/Documents/Point Zéro
+> 2050 - 25 scénarios.docx` et `Ressources Point Zero/Modèles/Scenarios-livre-01.png` à
+> `Scenarios-livre-25.png` pour la prospective ;
 > `Ressources Point Zero/Modèles/Pratico-inerte-2.jpg` ; textes scéniques de
 > `Ressources Point Zero/Docteur ZERO/` ;
 > [charte de voix Point Zéro](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/voix-point-zero.md).
@@ -593,9 +595,359 @@ périodisation. Le front ne doit pas présenter des bornes discutables comme des
 
 ---
 
-## 5. Parcours pilote — « Quelles forces ont façonné nos croyances ? »
+## 5. Parcours détaillé — « Quels sont les scénarios du futur ? »
 
 ### 5.1 Fiche d'identité
+
+- **Titre public** : Quels sont les scénarios du futur ?
+- **Accroche courte** : Quel futur a déjà commencé ?
+- **Promesse** : explorer cinq familles et vingt-cinq scénarios, repérer leurs signaux faibles,
+  puis composer une trajectoire hybride sans la confondre avec une prédiction.
+- **Durée affichée** : 12 minutes.
+- **Badge** : Prospectiviste.
+- **Acquisition** : comprendre la différence entre prédiction, préférence et scénario ; voir
+  qu'une même technologie peut alimenter des futurs opposés selon les récits, les cadres et
+  les rapports de pouvoir qui l'accueillent.
+- **Limite pédagogique** : les scénarios sont des objets de pensée. Ils ne constituent ni des
+  probabilités calculées, ni une échelle linéaire du pire au meilleur, ni la doctrine officielle
+  du Point Zéro sur ce qui adviendra.
+- **Point de passage vers le Jeu** : le futur n'est pas seulement quelque chose qui nous
+  arrive ; nos choix présents, nos croyances et nos institutions rendent certaines trajectoires
+  plus probables que d'autres.
+
+### 5.2 Écran 1 — L'appel
+
+**Titre**
+
+> Le futur n'attend pas 2050 pour commencer.
+
+**Texte**
+
+> Effondrement, contrôle, compromis, harmonie, dépassement : vingt-cinq futurs possibles
+> laissent déjà des traces dans le présent. Aucun n'arrivera probablement à l'état pur. Mais
+> certains fragments sont peut-être entrés dans ta vie avant même que tu leur donnes un nom.
+
+CTA : `Chercher les futurs déjà présents`
+
+### 5.3 Écran 2 — Choix du guide
+
+Deux cartes de même poids :
+
+**Professeur Sirbey — Cartographier les bifurcations**
+
+> Il t'aidera à distinguer les familles de scénarios, leurs hypothèses et les signaux qui
+> pourraient les rendre plus plausibles.
+
+**Docteur Z.E.R.O. — Visiter le rayon des avenirs**
+
+> L'humanité a produit vingt-cinq manières de se sauver, de se surveiller ou de disparaître.
+> Il tient à vérifier les conditions générales de vente.
+
+CTA : `Continuer avec le Professeur` ou `Continuer avec le Docteur`
+
+### 5.4 Écran 3 — Vidéo d'ouverture
+
+#### Tronc commun du script
+
+> Prévoir l'avenir consiste souvent à prolonger le présent en ligne droite. La prospective
+> fait autre chose : elle construit plusieurs récits cohérents à partir de tendances,
+> d'incertitudes et de ruptures possibles. Un scénario n'annonce donc pas ce qui arrivera.
+> Il montre ce qui pourrait arriver si certaines dynamiques se renforcent, se rencontrent ou
+> changent de direction. Les vingt-cinq scénarios du Point Zéro sont répartis en cinq familles :
+> effondrement, dystopie, néohumanisme, utopie et transcendance. Elles ne forment pas cinq
+> cases où ranger le monde. Elles servent à reconnaître les futurs qui cherchent déjà à
+> prendre corps — souvent plusieurs à la fois.
+
+#### Fermeture Professeur
+
+> La bonne question n'est pas : « Quel scénario est vrai ? » Elle est : « Quelles hypothèses
+> et quels signaux dois-je surveiller pour ne pas être prisonnier d'un seul avenir ? »
+
+#### Fermeture Docteur
+
+> Tu peux donc ranger la boule de cristal. Elle refusait déjà les mises à jour et son modèle
+> économique reposait essentiellement sur la crédulité récurrente.
+
+Sous la vidéo : `Lire la transcription` · `Continuer`
+
+### 5.5 Écran 4 — Découvrir les cinq familles
+
+Les familles apparaissent comme cinq **directions narratives**, pas comme cinq niveaux de
+conscience ni cinq marches obligatoires :
+
+| Famille | Question qu'elle pose | Risque de lecture simpliste |
+|---|---|---|
+| **Effondrement** | Que subsiste-t-il lorsque les systèmes vitaux cessent de tenir ? | croire que le chaos est certain ou uniformément mondial |
+| **Dystopie** | Que sacrifions-nous pour maintenir l'ordre, la sécurité ou le confort ? | réduire le contrôle au seul État autoritaire |
+| **Néohumanisme** | Jusqu'où pouvons-nous progresser par compromis et régulation ? | confondre amélioration réelle et prolongation indéfinie du système actuel |
+| **Utopie** | Que deviendrait une alliance féconde entre coopération, vivant et technologie ? | effacer les conflits, les coûts et les rapports de pouvoir |
+| **Transcendance** | Que se passerait-il si notre conception de la conscience ou du réel changeait ? | présenter une hypothèse métaphysique comme un fait scientifique acquis |
+
+Consigne :
+
+> Ouvre chaque famille et choisis la question qui t'intrigue le plus. Ce choix guide l'ordre
+> de visite ; il ne produit aucun profil psychologique.
+
+CTA : `Observer les signaux`
+
+### 5.6 Écran 5 — Trois signaux dans le présent
+
+Le visiteur choisit trois signaux parmi une bibliothèque courte et actualisable :
+
+- multiplication des zones durablement inhabitables ou non assurables ;
+- concentration extrême des ressources et accès inégal aux technologies ;
+- surveillance algorithmique et délégation croissante des décisions ;
+- retour des blocs civilisationnels et des frontières culturelles ;
+- réseaux locaux de résilience et nouvelles solidarités ;
+- technologies ouvertes mises au service de communs ;
+- restauration d'écosystèmes et nouvelles relations au vivant ;
+- automatisation d'une part croissante du travail ;
+- recherche scientifique sur la conscience et essor de pratiques contemplatives ;
+- multiplication de récits contestant la définition moderne du progrès.
+
+Chaque signal comporte `Je l'observe` · `Je n'en suis pas sûr` · `Je veux comprendre`. Les
+formulations restent descriptives et sont révisables dans l'administration éditoriale.
+
+Retour Professeur :
+
+> Un signal faible n'est pas une preuve. C'est une information encore ambiguë dont la portée
+> augmente lorsqu'elle converge avec d'autres.
+
+Retour Docteur :
+
+> Trois indices ne font pas une prophétie. Ils suffisent néanmoins à empêcher le futur de
+> plaider qu'il n'était pas sur les lieux.
+
+CTA : `Voir les scénarios que ces signes traversent`
+
+### 5.7 Écran 6 — L'Atlas des vingt-cinq scénarios
+
+L'interface révèle une grille de cinq familles et cinq scénarios. Les vingt-cinq cartes sont
+accessibles, mais le visiteur n'a pas à lire vingt-cinq fiches longues pour achever le parcours.
+
+| Famille | Scénarios du corpus |
+|---|---|
+| **Effondrement** | Apocalypse · Terre stérile · Cygne noir · La menace venue d'ailleurs · Exode spatial contraint |
+| **Dystopie** | Elysium · La prison des rêves · Under His Eye · Cyberpunk · Viki |
+| **Néohumanisme** | Monopolis · Le métavers citoyen · Blocs civilisationnels · Hypertech · Révolte verte |
+| **Utopie** | Nos amis d'ailleurs · Ecotopia · Terraforma · Asimovia · We Are One |
+| **Transcendance** | Noosphère · Spiritworld · Métahumains · Multivers · Le Jeu cosmique |
+
+Le système met en avant cinq cartes — une par famille — reliées aux trois signaux choisis. Le
+visiteur peut remplacer chaque proposition par l'une des quatre autres cartes de sa famille.
+
+Chaque aperçu contient seulement :
+
+- une image ;
+- une hypothèse en une phrase ;
+- la capacité humaine mobilisée ;
+- le risque ou la capture centrale ;
+- un prérequis éventuel ;
+- un bouton `Explorer ce scénario` ouvrant sa fiche courte.
+
+Les visuels `Scenarios-livre-01.png` à `Scenarios-livre-25.png` fournissent le corpus iconographique,
+mais leurs blocs de texte ne sont jamais affichés comme images sur mobile. L'illustration est
+recadrée ; tout contenu essentiel est recomposé en HTML accessible.
+
+CTA : `Comparer deux bifurcations`
+
+### 5.8 Écran 7 — Une même puissance, deux futurs
+
+Le parcours choisit une paire partageant une technologie ou une rupture, mais aboutissant à
+des structures opposées. Exemples :
+
+- **métavers** : La prison des rêves / Le métavers citoyen ;
+- **intelligence artificielle ou singularité** : Viki / Asimovia ;
+- **premier contact** : La menace venue d'ailleurs / Nos amis d'ailleurs ;
+- **colonisation spatiale** : Exode spatial contraint / Terraforma ;
+- **mutation écologique** : Terre stérile / Ecotopia ou Révolte verte.
+
+Question :
+
+> Si la technologie ne suffit pas à expliquer la bifurcation, qu'est-ce qui change entre les
+> deux mondes ?
+
+Le visiteur choisit deux facteurs : `le récit dominant` · `la répartition du pouvoir` · `les
+cadres collectifs` · `l'accès aux ressources` · `le rapport à l'autre` · `la capacité
+d'apprentissage`.
+
+Restitution :
+
+> Une innovation porte plusieurs polarités. Elle ne choisit pas seule le monde qu'elle
+> produit. Les croyances, les cadres et les rapports de pouvoir orientent la capacité qu'elle
+> libère — ou la capture qu'elle renforce.
+
+CTA : `Choisir mes cinq cartes`
+
+### 5.9 Écran 8 — Constituer le jeu de futurs
+
+Le visiteur conserve une carte par famille. Sa main contient donc cinq futurs incompatibles
+pris à l'état pur, mais susceptibles de coexister par fragments.
+
+Pour chaque carte, il choisit l'élément qu'il veut garder dans la composition :
+
+- une **alerte** à ne pas minimiser ;
+- une **capacité** à préserver ou développer ;
+- une **tension** à maintenir ouverte ;
+- un **prérequis** à surveiller.
+
+Le système n'autorise pas à ne garder que des éléments désirables. Au moins une alerte ou une
+tension issue d'une famille sombre reste dans la main. Il ne s'agit pas de punir l'optimisme,
+mais d'empêcher la fabrication d'une utopie sans Ombre.
+
+Retour Docteur :
+
+> Un avenir composé uniquement d'avantages est généralement un prospectus immobilier. Nous
+> allons conserver au moins une clause écrite en petits caractères.
+
+CTA : `Traverser l'intercycle`
+
+### 5.10 Écran 9 — Les cinq phases de l'intercycle
+
+Le corpus décrit chaque scénario à travers cinq phases. Elles sont présentées avec une
+traduction immédiatement compréhensible :
+
+1. **Putréfaction — ce qui se décompose** : l'ancien équilibre perd sa capacité à tenir.
+2. **Polarisation — ce qui s'affronte** : les réponses opposées se radicalisent.
+3. **Purification — ce qui est éprouvé** : certaines formes disparaissent, d'autres sont
+   retenues ou transformées. Le terme est alchimique ; il ne désigne jamais une purification
+   humaine, identitaire ou politique.
+4. **Conjonction — ce qui se recombine** : des éléments auparavant séparés produisent une
+   forme nouvelle.
+5. **Congélation — ce qui devient la nouvelle normalité** : l'innovation se stabilise et
+   crée à son tour des habitudes, des institutions et des angles morts.
+
+Le visiteur fait défiler les cinq phases comme les cases d'une courte ligne temporelle. Aucun
+millésime précis n'est exigé : les dates du corpus restent des hypothèses narratives, pas des
+prévisions affichées comme certaines.
+
+CTA : `Composer ma trajectoire`
+
+### 5.11 Écran 10 — Composer un scénario hybride
+
+À chaque phase, trois fragments sont proposés à partir des cinq cartes retenues. Le visiteur
+en choisit un ou écrit une variante courte :
+
+```text
+CE QUI SE DÉCOMPOSE
+        ↓
+LA TENSION QUI DEVIENT VISIBLE
+        ↓
+LA CAPACITÉ QUI TRAVERSE L'ÉPREUVE
+        ↓
+LES ÉLÉMENTS QUI SE RECOMBINENT
+        ↓
+LA NOUVELLE NORMALITÉ — ET SON ANGLE MORT
+```
+
+Deux règles de cohérence sont appliquées :
+
+- la conjonction doit répondre à une tension apparue auparavant ;
+- la nouvelle normalité doit comporter un bénéfice et un risque de capture.
+
+Si la combinaison est contradictoire, le système ne la bloque pas. Il pose une question :
+
+> Ces deux éléments peuvent-ils coexister ? Si oui, quel cadre les empêcherait de se détruire
+> mutuellement ?
+
+Cette confrontation légère prépare la grammaire Point Zéro : intégrer les polarités plutôt
+que sélectionner un futur entièrement lumineux.
+
+CTA : `Mettre mon scénario à l'épreuve`
+
+### 5.12 Écran 11 — Ce qui pourrait le faire bifurquer
+
+Le visiteur complète deux phrases :
+
+> **Le premier signe qui rendrait ce scénario plus plausible serait…**
+
+> **Le fait qui m'obligerait à le réviser serait…**
+
+Puis il choisit un levier présent : `un récit` · `une règle` · `une technologie` · `un
+comportement collectif` · `une redistribution du pouvoir` · `une relation au vivant`.
+
+Retour Professeur :
+
+> Un scénario utile indique ce qu'il faut observer et ce qui pourrait le réfuter. Sans cela,
+> il cesse d'être un outil de prospective et devient une croyance protégée du réel.
+
+Retour Docteur :
+
+> Ton futur accepte donc d'être contredit par les faits. Il vient de dépasser une proportion
+> préoccupante de nos débats contemporains.
+
+CTA : `Donner un nom à mon futur`
+
+### 5.13 Écran 12 — Restitution
+
+La carte **« Le futur que je rends pensable »** montre :
+
+- le nom donné par le visiteur ;
+- les cinq cartes-sources et leurs familles ;
+- la trajectoire en cinq phases ;
+- la capacité préservée et le risque de capture ;
+- le signal à surveiller et le fait susceptible de faire réviser le scénario ;
+- le levier présent choisi.
+
+Une mention permanente précise :
+
+> Ce scénario n'est ni une prédiction, ni un souhait, ni un diagnostic. C'est une hypothèse
+> narrative destinée à éclairer tes choix présents.
+
+Actions : `Télécharger ma carte` · `Modifier ma trajectoire` · `Ne pas conserver mon texte`.
+
+### 5.14 Écran 13 — Badge et passage
+
+**Badge révélé : Prospectiviste**
+
+> J'ai exploré les vingt-cinq scénarios du futur, comparé leurs bifurcations et composé une
+> trajectoire que les faits pourront encore transformer.
+
+CTA principal recommandé : `Découvrir ce qui façonne nos croyances` vers **« Quelles forces
+ont façonné nos croyances ? »**.
+
+Si ce parcours est déjà accompli : `Choisir une autre question`.
+
+CTA secondaire : `Rejouer avec [l'autre guide]`.
+
+Teasing du Monde 0 :
+
+> Ici, tu as composé une trajectoire collective. Dans le Monde 0, tu découvriras pourquoi
+> certains futurs t'attirent, t'effraient ou restent invisibles — et ce que cela révèle des
+> récits qui agissent aussi en toi.
+
+### 5.15 Corpus, cohérence et arbitrages avant développement
+
+Le développement nécessite un référentiel éditorial structuré séparément de l'interface :
+
+- les cinq familles et leurs limites de lecture ;
+- les vingt-cinq scénarios avec identifiant stable, titre public, hypothèse, capacité, capture,
+  prérequis et cinq fragments d'intercycle ;
+- les paires de bifurcations partageant un même prérequis ;
+- une matrice reliant les signaux aux scénarios sans prétendre calculer leur probabilité ;
+- un statut de source et de solidité pour chaque affirmation ;
+- des formulations courtes distinctes des textes historiques du livre.
+
+**Anomalie du corpus à corriger** : dans le document Word, Ecotopia apparaît en n° 17 et
+Terraforma en n° 18, tandis que les exports `Scenarios-livre-17.png` et
+`Scenarios-livre-18.png` inversent ces deux numéros. Les identifiants fonctionnels ne doivent
+pas être déduits des noms de fichiers avant arbitrage.
+
+**Relecture éditoriale requise** : plusieurs titres renvoient directement à des œuvres ou à
+des univers connus — Elysium, Under His Eye, Cyberpunk, Viki, Asimovia. Avant publication,
+choisir entre conservation, sous-titrage ou création d'alias publics, et ne réutiliser aucun
+visuel promotionnel tiers. Les illustrations existantes peuvent servir de matière si leur
+provenance et leurs droits sont confirmés.
+
+Les niveaux chiffrés de conscience ou de technologie présents dans le document-source ne sont
+pas affichés dans le parcours public. Ils transformeraient une hypothèse narrative en classement
+et créeraient une hiérarchie implicite entre les croyances du visiteur.
+
+---
+
+## 6. Parcours pilote — « Quelles forces ont façonné nos croyances ? »
+
+### 6.1 Fiche d'identité
 
 - **Titre public** : Quelles forces ont façonné nos croyances ?
 - **Accroche courte** : Qu'est-ce qui nous programme ?
@@ -609,7 +961,7 @@ périodisation. Le front ne doit pas présenter des bornes discutables comme des
 - **Point de passage vers le Jeu** : le PsychoKernel comme nom donné à l'ensemble des récits,
   croyances et automatismes qui orientent un système.
 
-### 5.2 Écran 1 — L'appel
+### 6.2 Écran 1 — L'appel
 
 **Titre**
 
@@ -623,7 +975,7 @@ périodisation. Le front ne doit pas présenter des bornes discutables comme des
 
 CTA : `Choisir mon guide`
 
-### 5.3 Écran 2 — Choix du guide
+### 6.3 Écran 2 — Choix du guide
 
 Deux cartes de même poids :
 
@@ -639,7 +991,7 @@ Deux cartes de même poids :
 
 CTA : `Continuer avec le Professeur` ou `Continuer avec le Docteur`
 
-### 5.4 Écran 3 — Vidéo d'ouverture
+### 6.4 Écran 3 — Vidéo d'ouverture
 
 #### Tronc commun du script
 
@@ -664,7 +1016,7 @@ CTA : `Continuer avec le Professeur` ou `Continuer avec le Docteur`
 
 Sous la vidéo : `Lire la transcription` · `Continuer`
 
-### 5.5 Écran 4 — Choisir une pièce à conviction
+### 6.5 Écran 4 — Choisir une pièce à conviction
 
 Six cartes illustrées, sans hiérarchie :
 
@@ -686,7 +1038,7 @@ Microcopy Docteur :
 
 CTA : `Examiner [objet]`
 
-### 5.6 Écran 5 — Reconnaître la Lumière
+### 6.6 Écran 5 — Reconnaître la Lumière
 
 Question :
 
@@ -710,7 +1062,7 @@ Retour Docteur :
 
 CTA : `Regarder l'autre face`
 
-### 5.7 Écran 6 — Entendre l'instruction silencieuse
+### 6.7 Écran 6 — Entendre l'instruction silencieuse
 
 Question :
 
@@ -733,7 +1085,7 @@ une boucle possible et contestable.
 
 CTA : `Suivre cette phrase`
 
-### 5.8 Écran 7 — Le regard de l'enfant
+### 6.8 Écran 7 — Le regard de l'enfant
 
 Mise en situation :
 
@@ -756,7 +1108,7 @@ d'un traumatisme.
 
 CTA : `Voir ce qui a pris racine`
 
-### 5.9 Écran 8 — Construire l'arbre de croyance
+### 6.9 Écran 8 — Construire l'arbre de croyance
 
 L'interface assemble progressivement quatre niveaux :
 
@@ -779,7 +1131,7 @@ Réponses : `Souvent` · `Parfois` · `Peu` · `Je ne sais pas` · `Je garde cel
 Le système ne déduit aucune Puissance, aucun état psychologique et aucun niveau de conscience
 à partir de cette réponse.
 
-### 5.10 Écran 9 — Alchimiser plutôt que supprimer
+### 6.10 Écran 9 — Alchimiser plutôt que supprimer
 
 Question :
 
@@ -808,7 +1160,7 @@ Retour Docteur :
 
 CTA : `Composer ma trace`
 
-### 5.11 Écran 10 — Restitution
+### 6.11 Écran 10 — Restitution
 
 La carte **« Mon arbre de croyance »** montre uniquement les éléments choisis :
 
@@ -828,7 +1180,7 @@ Conclusion :
 Actions : `Télécharger ma carte` · `Modifier ma formulation` · `Ne pas conserver la phrase
 personnelle`.
 
-### 5.12 Écran 11 — Badge et passage
+### 6.12 Écran 11 — Badge et passage
 
 **Badge révélé : Archéologue des croyances**
 
@@ -851,13 +1203,17 @@ Teasing du Monde 0 :
 
 ---
 
-## 6. Direction artistique des parcours détaillés
+## 7. Direction artistique des parcours détaillés
 
 Les parcours appartiennent au registre **analytique** du site, pas au registre néoarchaïque
 des fiches Point Zéro.
 
 - Pour les cycles, les lignes temporelles se révèlent progressivement ; jamais plus de cinq
   lignes et trois couches complémentaires ne sont visibles simultanément sur mobile.
+- Pour les scénarios, les cinq couleurs de familles structurent l'Atlas sans devenir une
+  échelle morale. Les cartes existantes sont recadrées autour de l'illustration ; leur texte
+  est recomposé nativement. La trajectoire hybride se construit comme cinq cartes posées sur
+  une ligne, et non comme un tableau prospectif réduit.
 - Pour les croyances, les six objets sont photographiés ou détourés avec une présence
   documentaire simple.
 - L'arbre de croyance apparaît par strates et lignes de causalité, lisibles sur mobile.
@@ -872,7 +1228,7 @@ des fiches Point Zéro.
 
 ---
 
-## 7. Garde-fous éditoriaux et éthiques
+## 8. Garde-fous éditoriaux et éthiques
 
 - Ne pas présenter Sartre, Heidegger ou Ellul comme s'ils avaient formulé une doctrine
   identique ; le terme `pratico-inerte` est attribué à Sartre, les rapprochements sont annoncés
@@ -896,12 +1252,22 @@ des fiches Point Zéro.
   spectaculaires ni comme preuves causales d'une transition de civilisation.
 - Faire apparaître au moins un contre-signe ou une continuité afin que le parcours ne fabrique
   pas artificiellement la confirmation de son propre modèle.
+- Ne pas présenter les cinq familles comme une échelle objective de conscience, de valeur ou
+  de probabilité.
+- Ne pas attribuer une trajectoire au visiteur à partir de ses peurs, de ses préférences ou de
+  trois signaux choisis.
+- Séparer clairement faits observables, extrapolations prospectives et hypothèses
+  métaphysiques ; rendre leur statut visible dans les fiches.
+- Ne jamais employer « purification » sans sa définition alchimique ni l'associer à un groupe
+  humain, une identité ou une idéologie à éliminer.
+- Le scénario hybride doit conserver une Ombre et un critère de révision ; il ne devient ni
+  manifeste politique automatique ni promesse de développement personnel.
 
 ---
 
-## 8. Critères d'acceptation éditoriaux et UX
+## 9. Critères d'acceptation éditoriaux et UX
 
-Les deux parcours détaillés sont prêts à prototyper si :
+Les trois parcours détaillés sont prêts à prototyper si :
 
 - le parcours peut être achevé sans compte et repris après fermeture du navigateur ;
 - la durée médiane observée reste entre 8 et 12 minutes ;
@@ -919,19 +1285,27 @@ Les deux parcours détaillés sont prêts à prototyper si :
   mémoriser huit taxonomies équivalentes ;
 - la restitution sur les cycles conserve le contre-signe et ne transforme pas une lecture
   personnelle en prédiction historique.
+- les vingt-cinq scénarios sont tous accessibles sans qu'il soit nécessaire de lire les
+  vingt-cinq fiches pour obtenir le badge ;
+- le visiteur comprend pourquoi une même technologie peut soutenir deux bifurcations
+  opposées ;
+- le scénario hybride respecte les cinq phases, conserve un bénéfice et un risque de capture,
+  et indique ce qui conduirait à le réviser ;
+- aucune donnée locale ne transforme les choix prospectifs en profil psychologique ou
+  politique.
 
 ---
 
-## 9. Suite recommandée
+## 10. Suite recommandée
 
-1. Valider cette grammaire et les deux parcours détaillés sur papier.
-2. Produire les wireflows mobiles basse fidélité des douze écrans « cycles » et des onze
-   écrans « croyances ».
-3. Écrire les variantes complètes Professeur / Docteur et les deux scripts vidéo définitifs.
-4. Constituer les données éditoriales des cycles, des manifestations, des objets et les règles
-   de restitution.
+1. Valider cette grammaire et les trois parcours détaillés sur papier.
+2. Produire les wireflows mobiles basse fidélité des douze écrans « cycles », des treize
+   écrans « scénarios » et des onze écrans « croyances ».
+3. Écrire les variantes complètes Professeur / Docteur et les trois scripts vidéo définitifs.
+4. Constituer les données éditoriales des cycles, des manifestations, des scénarios, des objets
+   et les règles de restitution.
 5. Tester chaque parcours auprès de cinq personnes sans expliquer auparavant son modèle
    central.
 6. Mesurer compréhension, friction, durée et envie de poursuivre ; corriger.
-7. Décliner la grammaire sur les trois autres parcours, puis seulement spécifier le parcours
+7. Décliner la grammaire sur les deux autres parcours, puis seulement spécifier le parcours
    caché.

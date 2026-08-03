@@ -64,7 +64,7 @@ leurs rythmes et les signes annonçant qu'un basculement a déjà commencé ?
 Effondrement, dystopie, néohumanisme, utopie, transcendance : explore 25 futurs possibles,
 puis compose celui dont tu reconnais déjà les signes dans le présent.
 
-[Composer un futur — 10 min]
+[Composer un futur — 12 min]
 
 ### Quelles forces ont façonné nos croyances ?
 
