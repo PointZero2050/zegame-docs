@@ -1,7 +1,13 @@
 # Jeu d'auto-positionnement — « Quelle est ta lecture ? »
 
-> **Méta** · Nouveau dispositif · Moteur de la porte « Je veux comprendre », accessible aussi
-> par une entrée secondaire permanente · Durée cible : 2 min · Source : modèle
+> **Statut révisé — 2026-08-03.** Ce document reste la banque éditoriale des six situations,
+> des cinq lectures et de leurs angles morts. Il ne décrit plus un test autonome ni l'entrée
+> générale de la porte « Comprendre ». Sa matière est réemployée dans le parcours public
+> **« Qu'est-ce qui nous paralyse ? »**, spécifié dans
+> [parcours-publics-sas.md](parcours-publics-sas.md). Le calcul d'une dominante n'est pas repris.
+>
+> **Méta historique** · Ancienne proposition de dispositif autonome · Durée cible initiale :
+> 2 min · Source : modèle
 > `Ressources Point Zero/Modèles/Niveaux-conscience-systemiques.png` · Aiguillage : §4 ter de
 > [refonte-site-revision-editoriale.md](../vision/refonte-site-revision-editoriale.md)
 >

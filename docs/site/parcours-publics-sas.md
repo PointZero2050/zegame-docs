@@ -1,9 +1,9 @@
-# Parcours publics du Sas — grammaire commune et trois parcours détaillés
+# Parcours publics du Sas — grammaire commune et quatre parcours détaillés
 
 > **Ajout Codex — 2026-08-03 · Spécification éditoriale et UX à destination de Claude.**
 >
 > **Statut** : cadrage issu des arbitrages de Boris des 2 et 3 août 2026. La grammaire
-> commune et les storyboards des trois premiers parcours peuvent servir de base à la
+> commune et les storyboards des quatre premiers parcours peuvent servir de base à la
 > conception. Les formulations proposées restent éditoriales : elles doivent être relues en
 > situation avant publication.
 >
@@ -14,6 +14,7 @@
 > I.docx`, p. 296-304 pour le pratico-inerte ; `Ressources Point Zero/Documents/Point Zéro
 > 2050 - 25 scénarios.docx` et `Ressources Point Zero/Modèles/Scenarios-livre-01.png` à
 > `Scenarios-livre-25.png` pour la prospective ;
+> `Ressources Point Zero/Modèles/Niveaux-conscience-systemiques.png` pour les cinq lectures ;
 > `Ressources Point Zero/Modèles/Pratico-inerte-2.jpg` ; textes scéniques de
 > `Ressources Point Zero/Docteur ZERO/` ;
 > [charte de voix Point Zéro](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/voix-point-zero.md).
@@ -1203,7 +1204,340 @@ Teasing du Monde 0 :
 
 ---
 
-## 7. Direction artistique des parcours détaillés
+## 7. Parcours détaillé — « Qu'est-ce qui nous paralyse ? »
+
+### 7.1 Fiche d'identité
+
+- **Titre public** : Qu'est-ce qui nous paralyse ?
+- **Accroche courte** : Pourquoi nos solutions ne suffisent-elles pas ?
+- **Promesse** : prendre les commandes d'une situation de crise, choisir où agir avec des
+  moyens limités, puis découvrir ce que chaque levier transforme et ce qu'il laisse hors
+  champ.
+- **Durée affichée** : 10 minutes.
+- **Badge** : Changeur d'échelle.
+- **Acquisition** : distinguer cinq profondeurs d'action et apprendre à associer un levier à
+  son angle mort plutôt qu'à chercher la solution totale.
+- **Limite pédagogique** : la simulation ne mesure ni la conscience, ni l'idéologie, ni la
+  compétence du visiteur. Elle ne prétend pas prévoir les effets réels d'une politique
+  publique.
+- **Point de passage vers le Jeu** : une solution devient transformatrice lorsqu'elle peut
+  circuler entre information, vie intérieure, cadres collectifs, héritages civilisationnels
+  et rapport au réel.
+
+### 7.2 Écran 1 — L'appel
+
+**Titre**
+
+> Nous ne manquons pas de solutions. Alors pourquoi rien ne change ?
+
+**Texte**
+
+> Informer, accompagner, réorganiser, changer de récit, retisser un lien avec le vivant :
+> chacune de ces réponses agit vraiment. Chacune échoue aussi lorsqu'elle se prend pour le
+> tout. Tu disposes de moyens limités et d'une situation qui n'attendra pas. Par où
+> commences-tu ?
+
+CTA : `Prendre place dans la cellule de crise`
+
+### 7.3 Écran 2 — Choix du guide
+
+Deux cartes de même poids :
+
+**Professeur Sirbey — Distinguer les niveaux d'action**
+
+> Il t'aidera à observer ce que chaque intervention rend possible, son horizon temporel et
+> le niveau qu'elle ne peut pas traiter seule.
+
+**Docteur Z.E.R.O. — Auditer la grande fabrique des solutions**
+
+> Tous les services ont une réponse prioritaire et un excellent dossier expliquant pourquoi
+> les autres devraient commencer par la financer.
+
+CTA : `Continuer avec le Professeur` ou `Continuer avec le Docteur`
+
+### 7.4 Écran 3 — Vidéo d'ouverture
+
+#### Tronc commun du script
+
+> Face à une crise, nous mobilisons spontanément le levier que nous savons voir. Certains
+> rendent les faits accessibles. D'autres travaillent les peurs et les comportements. D'autres
+> encore transforment les règles, les récits hérités ou notre rapport même au réel. Ces actions
+> ne sont pas interchangeables : elles n'agissent ni à la même profondeur ni au même rythme.
+> Le problème commence lorsqu'une lecture devient exclusive. L'information ne remplace pas un
+> cadre capable d'agir. Le travail intérieur ne modifie pas seul une règle économique. Une
+> nouvelle gouvernance peut reproduire les anciens rapports de pouvoir. Et un récit
+> civilisationnel, aussi profond soit-il, ne répare pas une canalisation aujourd'hui.
+
+#### Fermeture Professeur
+
+> Nous allons donc évaluer des relations entre leviers, pas la valeur des personnes qui les
+> emploient. Une action juste à un niveau peut devenir insuffisante lorsqu'elle refuse de
+> changer d'échelle.
+
+#### Fermeture Docteur
+
+> Tu vas participer à une expérience très rare : une réunion où chaque solution devra déclarer
+> publiquement ce qu'elle ne sait pas faire.
+
+Sous la vidéo : `Lire la transcription` · `Continuer`
+
+### 7.5 Écran 4 — La situation
+
+Une ville fictive traverse son troisième été de chaleur extrême. Les écoles ferment certains
+après-midi, l'eau est rationnée, une usine annonce des licenciements et des rumeurs circulent
+sur la qualité du réseau. Une consultation publique a réuni beaucoup de monde, mais aucune
+décision n'a tenu plus de trois semaines. Les équipes municipales sont épuisées et la défiance
+monte.
+
+Le visiteur rejoint une cellule temporaire disposant de **dix jetons d'action**. Il ne lui est
+pas demandé de « résoudre la ville », mais de choisir une première architecture d'intervention.
+
+Mention permanente :
+
+> Cette ville est une fiction pédagogique. Les conséquences proposées illustrent des angles
+> morts possibles ; elles ne simulent pas scientifiquement une politique publique.
+
+CTA : `Découvrir les cinq propositions`
+
+### 7.6 Écran 5 — Cinq leviers, dix jetons
+
+Les propositions sont présentées sans nommer encore les cinq lectures :
+
+**A — Rendre les faits visibles**
+
+> Publier les données d'eau et de température, ouvrir une cellule de vérification des rumeurs,
+> lancer une campagne claire sur les comportements de protection.
+
+**B — Prendre soin de ce que la crise fait aux personnes**
+
+> Organiser des espaces d'écoute, soutenir les professionnels exposés, accompagner les peurs,
+> les conflits et l'épuisement.
+
+**C — Transformer les règles qui produisent l'impuissance**
+
+> Modifier les critères budgétaires, créer une assemblée décisionnelle temporaire, redistribuer
+> des responsabilités et rendre les arbitrages contestables.
+
+**D — Travailler l'histoire qui organise encore le territoire**
+
+> Relire avec les habitants le récit industriel de la ville, ses ruptures, ses attachements et
+> ses blessures ; faire émerger une nouvelle raison d'être territoriale.
+
+**E — Expérimenter une autre relation au vivant et au réel**
+
+> Faire précéder certaines décisions d'une expérience directe du territoire : marches
+> sensibles, observations du vivant, temps de silence, mise en relation des savoirs scientifiques,
+> vécus et perceptions.
+
+Consigne :
+
+> Répartis tes dix jetons. Tu peux concentrer les moyens ou les distribuer. Rien ne t'oblige à
+> financer les cinq propositions.
+
+La répartition reste modifiable jusqu'au CTA `Engager les moyens`.
+
+### 7.7 Écran 6 — Les premiers effets
+
+L'interface restitue les effets de premier ordre des deux leviers les plus financés. Elle ne
+dit jamais qu'un choix est bon ou mauvais.
+
+| Levier | Effet possible à court terme | Ce qu'il ne peut garantir seul |
+|---|---|---|
+| **Faits visibles** | rumeurs mieux identifiées, décisions plus compréhensibles | confiance, changement de comportement ou capacité institutionnelle à agir |
+| **Vie intérieure** | épuisement reconnu, tensions mieux régulées, personnes remises en mouvement | modification des budgets, des règles ou des infrastructures |
+| **Cadres collectifs** | responsabilités plus claires, décisions et ressources réellement déplacées | transformation des peurs, des héritages et des usages informels du pouvoir |
+| **Histoire du territoire** | conflits replacés dans un temps long, nouvelle raison d'agir ensemble | réponse immédiate à l'urgence et traduction institutionnelle durable |
+| **Relation au vivant et au réel** | interdépendances éprouvées, qualité d'attention et imagination renouvelées | preuve, arbitrage matériel ou protection contre le déni et le contournement |
+
+Retour Professeur :
+
+> Ton intervention produit déjà quelque chose. La question suivante n'est pas de la juger,
+> mais de regarder ce qu'elle devra rencontrer pour durer.
+
+Retour Docteur :
+
+> Les premiers résultats sont suffisamment encourageants pour qu'un communiqué soit en cours
+> de rédaction. Attendons donc le moment traditionnel où le système répond.
+
+CTA : `Avancer de dix-huit mois`
+
+### 7.8 Écran 7 — Le retour de l'angle mort
+
+La ville réapparaît dix-huit mois plus tard. La conséquence affichée dépend du levier dominant
+et du levier le moins mobilisé. Exemples :
+
+- les données sont excellentes, mais une partie des habitants ne croit plus l'institution qui
+  les publie ;
+- les équipes vont mieux, mais retrouvent chaque lundi les mêmes règles budgétaires ;
+- la nouvelle assemblée fonctionne, puis les anciens rapports d'autorité se reconstituent dans
+  les échanges informels ;
+- le nouveau récit mobilise, mais personne ne sait encore quel budget ni quelle règle il
+  transforme ;
+- les expériences sensibles ouvrent des prises de conscience, mais sont rejetées comme une
+  diversion par ceux qui attendent des preuves et des décisions.
+
+La simulation montre également ce qui a réellement progressé. L'angle mort ne vient pas
+annuler la capacité du levier initial.
+
+Question :
+
+> Que manque-t-il maintenant pour que ce qui a commencé puisse changer d'échelle ?
+
+CTA : `Choisir un levier allié`
+
+### 7.9 Écran 8 — Le second tour
+
+Trois jetons supplémentaires sont disponibles. Le visiteur peut :
+
+- renforcer son levier initial ;
+- financer un levier jusque-là absent ;
+- répartir les jetons entre deux alliances.
+
+Lorsqu'il sélectionne une combinaison, une question de confrontation apparaît :
+
+- **faits + intérieur** : comment l'information devient-elle recevable sans être réduite au
+  ressenti ?
+- **intérieur + cadres** : comment les personnes transformées peuvent-elles réellement modifier
+  les règles ?
+- **cadres + temps long** : comment une mémoire collective devient-elle une institution
+  nouvelle plutôt qu'un récit commémoratif ?
+- **temps long + rapport au réel** : comment une nouvelle cosmogonie reste-t-elle contestable
+  et reliée aux faits ?
+- **rapport au réel + faits** : comment une expérience subjective dialogue-t-elle avec les
+  connaissances vérifiables ?
+
+Toutes les autres combinaisons restent possibles. Ces cinq couples servent d'exemples, pas de
+chemins obligatoires.
+
+CTA : `Observer le changement d'échelle`
+
+### 7.10 Écran 9 — Révéler les cinq lectures
+
+Les propositions se transforment en cinq **lentilles imbriquées** :
+
+- **Rendre les faits visibles** — lecture de l'information : faits et conséquences ;
+- **Transformer de l'intérieur** — lecture intérieure : émotions, biais, défenses et
+  comportements ;
+- **Changer les cadres** — lecture systémique : règles, gouvernance et conditions collectives ;
+- **Travailler le temps long** — héritages anthropologiques, mémoires et récits
+  civilisationnels ;
+- **Changer de rapport au réel** — séparation entre conscience, monde et vivant.
+
+La correspondance avec les cinq niveaux ordonnés du modèle-source reste documentée en interne,
+mais **aucun numéro n'est affiché au visiteur**. L'interface montre un mouvement du plus
+directement observable vers les conditions les plus profondes, sans transformer cette
+profondeur en mérite personnel.
+
+Le schéma `Niveaux-conscience-systemiques.png` n'est jamais réduit et affiché tel quel. Sa
+version web révèle une lentille à la fois, puis montre leurs relations. Aucun acteur, métier ou
+communauté n'est assigné à une lecture comme s'il y était enfermé.
+
+Restitution :
+
+> Changer d'échelle ne consiste pas à abandonner le premier levier. Il consiste à lui donner
+> accès au niveau qu'il ne peut pas transformer seul.
+
+CTA : `Tester cette alliance ailleurs`
+
+### 7.11 Écran 10 — Une autre scène, deux leviers
+
+Une micro-situation est tirée parmi trois variantes :
+
+- une entreprise publie une raison d'être puis licencie six mois plus tard ;
+- une réunion produit un accord unanime mais aucune décision ;
+- une initiative alternative devient progressivement un produit comme les autres.
+
+Le visiteur choisit :
+
+1. le levier qui permettrait le premier geste concret ;
+2. le levier qui empêcherait ce premier geste d'être repris par le système.
+
+Il n'existe pas de paire correcte unique. La restitution compare les temporalités et demande :
+
+> Qu'est-ce qui te ferait changer d'avis sur cette combinaison ?
+
+Cette dernière question évite que les cinq lectures deviennent une nouvelle grille appliquée
+automatiquement à tout.
+
+CTA : `Formuler ma trace`
+
+### 7.12 Écran 11 — La trace
+
+Trois fragments sont assemblés :
+
+> **Le levier que je mobilise spontanément est…**
+
+> **Ce qu'il voit particulièrement bien est…**
+
+> **Pour changer d'échelle, je veux désormais lui associer…**
+
+Le visiteur peut remplacer la première phrase par `Dans cette situation, j'ai commencé par…`
+afin de ne pas transformer un choix contextuel en trait d'identité.
+
+Une quatrième formulation facultative est proposée :
+
+> **Je saurai que cette alliance fonctionne lorsque…**
+
+CTA : `Composer ma carte de changement d'échelle`
+
+### 7.13 Écran 12 — Restitution
+
+La carte **« Mes leviers de changement d'échelle »** montre :
+
+- la première allocation de dix jetons ;
+- les effets obtenus et l'angle mort rencontré ;
+- le second levier mobilisé ;
+- la relation recherchée entre les deux ;
+- l'indicateur choisi par le visiteur, s'il l'a formulé.
+
+La carte ne montre ni score global, ni niveau, ni pourcentage de conscience. Les cinq lentilles
+restent visibles en arrière-plan afin de rappeler que l'alliance produite n'épuise pas la carte.
+
+Actions : `Télécharger ma carte` · `Rejouer avec une autre allocation` · `Effacer ma formulation`.
+
+### 7.14 Écran 13 — Badge et passage
+
+**Badge révélé : Changeur d'échelle**
+
+> J'ai éprouvé ce que mon premier levier transforme, rencontré son angle mort et construit une
+> alliance avec un autre niveau d'action.
+
+CTA principal recommandé : `Découvrir comment nous réveiller` vers **« Comment nous
+réveiller ? »**.
+
+Si ce parcours est déjà accompli : `Choisir une autre question`.
+
+CTA secondaire : `Rejouer avec [l'autre guide]`.
+
+Teasing du Monde 0 :
+
+> Ici, tu as relié plusieurs niveaux d'action dans un système fictif. Dans le Monde 0, tu
+> commenceras à voir pourquoi certaines solutions t'appellent davantage — et comment tes
+> propres polarités participent à leur circulation ou à leur blocage.
+
+### 7.15 Règles de simulation et corpus à préparer
+
+La V1 repose sur une matrice éditoriale déterministe, pas sur un LLM produisant librement des
+conséquences politiques :
+
+- cinq leviers et leurs capacités ;
+- cinq angles morts principaux ;
+- vingt combinaisons `levier dominant × levier absent` ;
+- les effets à court terme et à dix-huit mois ;
+- les questions de confrontation entre paires ;
+- trois scènes finales et leurs restitutions ;
+- les variantes de voix des deux guides.
+
+Le moteur ne déduit aucune lecture stable de la personne. Il conserve uniquement les choix de
+la partie, la trace finale et l'état d'accomplissement. Rejouer peut donc produire une autre
+carte sans contredire un profil antérieur.
+
+Le contenu de `jeu-positionnement.md` reste une banque de situations et d'angles morts. Son
+ancien calcul de dominante n'est pas repris comme mécanique principale.
+
+---
+
+## 8. Direction artistique des parcours détaillés
 
 Les parcours appartiennent au registre **analytique** du site, pas au registre néoarchaïque
 des fiches Point Zéro.
@@ -1216,6 +1550,9 @@ des fiches Point Zéro.
   une ligne, et non comme un tableau prospectif réduit.
 - Pour les croyances, les six objets sont photographiés ou détourés avec une présence
   documentaire simple.
+- Pour les moyens d'action, les dix jetons restent visibles pendant la première allocation,
+  puis la ville évolue sur une ligne temporelle sobre. Les cinq lectures apparaissent comme
+  des lentilles imbriquées sans numéro, podium ni flèche ascendante.
 - L'arbre de croyance apparaît par strates et lignes de causalité, lisibles sur mobile.
 - Le passage Lumière / Ombre utilise le contraste de la coque sans transformer l'Ombre en
   zone « mauvaise ».
@@ -1228,7 +1565,7 @@ des fiches Point Zéro.
 
 ---
 
-## 8. Garde-fous éditoriaux et éthiques
+## 9. Garde-fous éditoriaux et éthiques
 
 - Ne pas présenter Sartre, Heidegger ou Ellul comme s'ils avaient formulé une doctrine
   identique ; le terme `pratico-inerte` est attribué à Sartre, les rapprochements sont annoncés
@@ -1262,12 +1599,23 @@ des fiches Point Zéro.
   humain, une identité ou une idéologie à éliminer.
 - Le scénario hybride doit conserver une Ombre et un critère de révision ; il ne devient ni
   manifeste politique automatique ni promesse de développement personnel.
+- Ne jamais convertir l'allocation de jetons en lecture dominante stable, niveau de conscience,
+  orientation politique ou recommandation personnelle automatisée.
+- Présenter les effets à dix-huit mois comme des conséquences pédagogiques possibles, jamais
+  comme les résultats calculés d'une simulation scientifique.
+- Ne ridiculiser ni l'information, ni le soin, ni la transformation institutionnelle, ni le
+  travail des récits, ni les pratiques sensibles. Chacun répond à un besoin réel et rencontre
+  une limite réelle.
+- Présenter le rapport conscience-réalité comme un champ d'expérience et d'hypothèses ; ne pas
+  l'utiliser pour invalider les faits, la médecine, le droit ou les contraintes matérielles.
+- Ne jamais afficher les numéros ou les anciens intitulés hiérarchiques du modèle-source au
+  visiteur.
 
 ---
 
-## 9. Critères d'acceptation éditoriaux et UX
+## 10. Critères d'acceptation éditoriaux et UX
 
-Les trois parcours détaillés sont prêts à prototyper si :
+Les quatre parcours détaillés sont prêts à prototyper si :
 
 - le parcours peut être achevé sans compte et repris après fermeture du navigateur ;
 - la durée médiane observée reste entre 8 et 12 minutes ;
@@ -1278,13 +1626,13 @@ Les trois parcours détaillés sont prêts à prototyper si :
 - aucune option n'est présentée comme la bonne lecture psychologique ;
 - le parcours donne envie de continuer sans prétendre avoir déjà accompli le Monde 0 ;
 - le badge et la constellation survivent localement et leur import est explicite ;
-- vidéo, transcription, clavier, contraste et lecteurs d'écran donnent accès au même contenu.
+- vidéo, transcription, clavier, contraste et lecteurs d'écran donnent accès au même contenu ;
 - la convergence reste compréhensible sur un écran de 360 px sans afficher le schéma-source
   complet en réduction ;
 - le visiteur distingue cinq cycles centraux et trois couches complémentaires sans devoir
   mémoriser huit taxonomies équivalentes ;
 - la restitution sur les cycles conserve le contre-signe et ne transforme pas une lecture
-  personnelle en prédiction historique.
+  personnelle en prédiction historique ;
 - les vingt-cinq scénarios sont tous accessibles sans qu'il soit nécessaire de lire les
   vingt-cinq fiches pour obtenir le badge ;
 - le visiteur comprend pourquoi une même technologie peut soutenir deux bifurcations
@@ -1292,20 +1640,26 @@ Les trois parcours détaillés sont prêts à prototyper si :
 - le scénario hybride respecte les cinq phases, conserve un bénéfice et un risque de capture,
   et indique ce qui conduirait à le réviser ;
 - aucune donnée locale ne transforme les choix prospectifs en profil psychologique ou
-  politique.
+  politique ;
+- la première allocation, l'effet obtenu, l'angle mort et le second levier restent lisibles
+  ensemble dans la restitution ;
+- aucun couple de leviers n'est présenté comme la combinaison correcte dans toutes les
+  situations ;
+- une nouvelle partie peut produire une autre alliance sans être interprétée comme une
+  incohérence de la personne.
 
 ---
 
-## 10. Suite recommandée
+## 11. Suite recommandée
 
-1. Valider cette grammaire et les trois parcours détaillés sur papier.
+1. Valider cette grammaire et les quatre parcours détaillés sur papier.
 2. Produire les wireflows mobiles basse fidélité des douze écrans « cycles », des treize
-   écrans « scénarios » et des onze écrans « croyances ».
-3. Écrire les variantes complètes Professeur / Docteur et les trois scripts vidéo définitifs.
-4. Constituer les données éditoriales des cycles, des manifestations, des scénarios, des objets
-   et les règles de restitution.
+   écrans « scénarios », des onze écrans « croyances » et des treize écrans « paralysie ».
+3. Écrire les variantes complètes Professeur / Docteur et les quatre scripts vidéo définitifs.
+4. Constituer les données éditoriales des cycles, des manifestations, des scénarios, des objets,
+   des cinq leviers et les règles de restitution.
 5. Tester chaque parcours auprès de cinq personnes sans expliquer auparavant son modèle
    central.
 6. Mesurer compréhension, friction, durée et envie de poursuivre ; corriger.
-7. Décliner la grammaire sur les deux autres parcours, puis seulement spécifier le parcours
+7. Décliner la grammaire sur le dernier parcours, puis seulement spécifier le parcours
    caché.
