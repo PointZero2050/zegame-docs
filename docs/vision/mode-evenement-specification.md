@@ -63,7 +63,7 @@ pour les faire entrer dans le jeu.
 | Chevauchement d'horaires | **Refusé** — réserver une place qu'on ne prendra pas en prive un autre |
 | Validation | **Auto-validation par trois questions** (voir §4) |
 | Portée des trois questions | **Expériences d'événement seulement** — les parcours existants ne changent pas |
-| Troisième réponse | **Privée** — le joueur seul la lit |
+| Troisième réponse | **Privée, mais exploitée anonymisée** pour améliorer les ateliers — le participant en est informé au moment où il écrit (voir §4) |
 | Ω | **Par compétence**, mécanisme existant ; le cadre dérivé les regroupe en puissances |
 | Accès au compte le jour J | **QR sur le billet → lien magique** |
 
@@ -79,10 +79,37 @@ Les réponses sont stockées sur la progression (`challenges_users`, colonne `re
 consultables dans le carnet de bord du joueur. La validation attribue les Ω par le mécanisme
 existant — aucune dérogation.
 
-**Les trois réponses sont privées.** Aucune n'est publiée sur le profil communautaire ni lue par
-l'équipe. Si un jour un agrégat anonyme des « manques » devait servir à améliorer les ateliers,
-**la décision doit être prise avant que les données existent** : on ne peut pas rendre
-exploitable après coup ce qui a été recueilli sous promesse de confidentialité.
+### Ce qui est privé, ce qui est exploité (décision Boris, 2026-08-04)
+
+**Les trois réponses appartiennent au joueur** et restent visibles dans son carnet de bord.
+Aucune n'est publiée sur le profil communautaire.
+
+**La troisième — « ce qui m'a manqué » — est exploitée de façon anonymisée** pour améliorer les
+ateliers. Le participant en est informé **au moment où il écrit**, pas dans une politique de
+confidentialité que personne ne lit :
+
+> Ce que tu écris ici est lu par l'équipe, détaché de ton nom, pour améliorer les prochains
+> ateliers. Les deux réponses précédentes ne sont lues par personne d'autre que toi.
+
+### Ce que l'anonymisation veut dire ici — et ce qu'elle ne veut pas dire
+
+Soyons exacts : la réponse reste **stockée rattachée au joueur**, puisqu'il doit pouvoir la
+relire. Elle est donc **pseudonyme en base**, pas anonyme. L'anonymisation porte sur le **chemin
+d'accès de l'équipe**, et elle n'a de valeur que si elle est réellement construite :
+
+1. **Vue dédiée, jamais la table brute** : la lecture par l'équipe passe par un écran qui ne
+   joint jamais l'identité — ni nom, ni adresse, ni identifiant.
+2. **Seuil de diffusion** : les retours d'un atelier ne s'affichent qu'à partir de **cinq
+   réponses**. En dessous, montrer les textes revient à les attribuer — s'ils sont trois dans la
+   salle, chacun se reconnaît et reconnaît les autres.
+3. **Ordre détaché du temps** : les réponses sont mélangées, jamais présentées dans l'ordre
+   d'arrivée, qui se recoupe avec la liste d'émargement.
+4. **Aucun export nominatif** : l'export CSV des inscriptions ne contient jamais les retours.
+5. **Le texte libre reste du texte libre** : quelqu'un peut s'y nommer ou nommer un tiers. Le
+   seuil et l'absence d'export limitent la portée, ils ne l'annulent pas. C'est une limite à
+   assumer, pas à masquer.
+
+Ces cinq points sont des exigences de construction, pas des intentions.
 
 ## 5. Le chaînon billet → compte
 
@@ -143,6 +170,8 @@ poussé — la complexité ne serait pas justifiée pour une journée.
 5. **Composer la journée** — créer les créneaux : atelier, salle, horaire, capacité.
 6. **Affluences** — le remplissage de chaque créneau, pour rééquilibrer en cours de journée.
 7. **Pointage** — l'existant (`/gestion/inscriptions`, émargement), inchangé.
+8. **Retours d'expérience** — les « ce qui m'a manqué » par atelier, détachés de toute identité,
+   mélangés, et masqués tant qu'un atelier n'a pas réuni cinq réponses (§4).
 
 ## 8. Ce que cette spécification ne couvre pas
 
