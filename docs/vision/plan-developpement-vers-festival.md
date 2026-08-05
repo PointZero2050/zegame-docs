@@ -38,8 +38,8 @@ corrections bloquantes et répétition générale, 1er octobre exploitation.
 
 Sans eux, ni la vente de fin août ni le Festival ne peuvent avoir lieu sur la nouvelle pile.
 
-> **Relevé du 2026-08-05** — B1 et B5 sont levés, B2 ne tient plus qu'à une décision. B3 et B4
-> restent, et sont désormais **les seuls blocages de l'ouverture de la vente**.
+> **Relevé du 2026-08-05 (soir)** — B1, B3, B4 et B5 sont levés. B2 ne tient plus qu'à une
+> décision de Boris : **plus aucun blocage technique n'empêche l'ouverture de la vente.**
 
 ### B1 — Stripe est en mode TEST · ~~bloquant~~ **LEVÉ le 2026-08-04**
 La clé de production est en place (`rk_live_`, restreinte), le webhook est signé, et un achat
@@ -51,19 +51,21 @@ rattaché au parcours « Festival 2026 — la journée ». Son `statut` est `bro
 manque que la décision de Boris d'ouvrir la vente. **Ne pas publier avant B3 et B4** — un
 acheteur n'obtiendrait aucun accès.
 
-### B3 — Aucune inscription publique · **TOUJOURS BLOQUANT**
-Vérifié le 2026-08-05 : les modules Devise actifs sont `database_authenticatable, rememberable,
-recoverable, validatable, trackable` — **pas `registerable`**. Personne ne peut créer de compte.
-Les 31 joueurs migrés entrent par « mot de passe oublié ». Un acheteur de billet à 250 €
-n'obtient aujourd'hui aucun accès.
+### B3 — Aucune inscription publique · **LEVÉ le 2026-08-05, par le billet**
+Choix de conception (conforme au cadrage F9) : pas de `registerable` général — **on entre dans
+le jeu par billet**, pas par formulaire libre. Le lien magique du courriel de confirmation crée
+le compte (l'adresse du billet, non modifiable) ; cliquer le lien prouve le contrôle de la
+boîte, ce qui rend `confirmable` superflu sur ce flux. L'inscription publique sans billet reste
+un choix ouvert pour plus tard, mais elle ne bloque plus rien.
 
-### B4 — Le billet ne donne pas accès au jeu (spec F9) · **TOUJOURS BLOQUANT**
-Vérifié le 2026-08-05 : `Registration` n'a toujours aucune colonne `user_id`. Le cadrage pose
-pourtant le principe inverse : **le
-billet, non l'adresse électronique, est la preuve de rattachement**. La spec F9 existe
-(`impacts-fonctionnels.md`) mais décrit un pont WordPress **devenu caduc** — à réécrire pour
-Stripe Checkout interne : lien magique signé par billet, code/QR de secours, idempotence,
-rattachement manuel de secours.
+### B4 — Le billet ne donne pas accès au jeu (spec F9) · **LEVÉ le 2026-08-05**
+Construit et vérifié (24 contrôles HTTP de bout en bout, préprod puis production, comptes
+jetables) : `Registration#user_id`, lien magique signé sans expiration dans le courriel de
+confirmation, création de compte ou rattachement au compte connecté — **le billet fait foi,
+pas l'adresse**. Le rattachement ouvre le Monde 0 et le parcours du jour (l'onboarding suit
+par le callback existant). Secours : page `/billet` (référence + adresse, réponse uniforme),
+renvoi du lien et rattachement/détachement manuels dans la console gestion. Idempotent sous
+verrou ; un billet déjà rattaché à un autre compte est refusé avec un chemin de recours.
 
 ### B5 — Le mode événement d'un parcours n'existe pas (spec F7) · **LEVÉ le 2026-08-04**
 Construit en trois tranches : créneaux et salles avec capacité, composition de la journée,
