@@ -87,9 +87,11 @@ composer en créneaux.
   implémentée — un candidat à un Cercle n'est pas prévenu qu'on lui a répondu.
 - **Marqueur « 100 Ω » du Monde 0 inatteignable** avec le barème réel — visible du joueur.
 - **Couvertures d'expériences** : 21 des 22 sans image de couverture, 6 sans médaillon.
-- **Espace pédagogique incomplet** : pas de création (expérience, page, parcours), pas
-  d'ajout/retrait d'étape, pas d'éditeur visuel, pas d'administration des ressources
-  d'expérience (13 en base), des communautés ni des joueurs.
+- ~~**Espace pédagogique incomplet**~~ — **traité le 2026-08-05** : création et suppression des
+  parcours, expériences et compétences, et composition d'un parcours (ajouter une expérience
+  existante ou une page, retirer une étape, ordonner, rendre optionnelle). Les suppressions
+  refusent ce qui porte de la progression joueur. Restent hors périmètre : éditeur visuel,
+  administration des ressources d'expérience (13 en base), des communautés et des joueurs.
 - **CTA sans dispositif** : les articles de Codex renvoient vers « l'autodiagnostic de ton
   organisation », qui n'est pas spécifié fonctionnellement — incohérence introduite par
   l'intégration, à corriger côté texte en attendant.
