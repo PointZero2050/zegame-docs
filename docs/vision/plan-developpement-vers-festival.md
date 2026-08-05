@@ -38,37 +38,46 @@ corrections bloquantes et répétition générale, 1er octobre exploitation.
 
 Sans eux, ni la vente de fin août ni le Festival ne peuvent avoir lieu sur la nouvelle pile.
 
-### B1 — Stripe est en mode TEST
-`STRIPE_SECRET_KEY` commence par `sk_test_`. Aucun paiement réel encaissable. Il faut les clés
-`live` (restreintes), un nouveau secret de webhook, et **un achat réel de bout en bout, puis
-remboursé** — la seule preuve qui vaille.
+> **Relevé du 2026-08-05** — B1 et B5 sont levés, B2 ne tient plus qu'à une décision. B3 et B4
+> restent, et sont désormais **les seuls blocages de l'ouverture de la vente**.
 
-### B2 — Le Festival n'existe pas en base
-`Event.count == 0`. Le site affiche « Billetterie · ouverture prochaine » faute d'événement de
-catégorie `festival`. À créer, décrire, jauger, tarifer, publier.
+### B1 — Stripe est en mode TEST · ~~bloquant~~ **LEVÉ le 2026-08-04**
+La clé de production est en place (`rk_live_`, restreinte), le webhook est signé, et un achat
+réel de bout en bout a été encaissé puis remboursé. C'était la seule preuve qui valait.
 
-### B3 — Aucune inscription publique
-`User` ne porte pas `:registerable` et `devise_for` fait `skip: [:registrations]` : **personne
-ne peut créer de compte**. Les 31 joueurs migrés entrent par « mot de passe oublié ». Un
-acheteur de billet à 250 € n'obtient aujourd'hui aucun accès.
+### B2 — Le Festival n'existe pas en base · **CRÉÉ, en brouillon**
+`new-civilization-festival-2026` existe : 1er octobre 2026 9 h-22 h, Paris, 200 places, 250 €,
+rattaché au parcours « Festival 2026 — la journée ». Son `statut` est `brouillon` : il ne
+manque que la décision de Boris d'ouvrir la vente. **Ne pas publier avant B3 et B4** — un
+acheteur n'obtiendrait aucun accès.
 
-### B4 — Le billet ne donne pas accès au jeu (spec F9)
-`Registration` n'a aucun lien vers `User`. Le cadrage pose pourtant le principe inverse : **le
+### B3 — Aucune inscription publique · **TOUJOURS BLOQUANT**
+Vérifié le 2026-08-05 : les modules Devise actifs sont `database_authenticatable, rememberable,
+recoverable, validatable, trackable` — **pas `registerable`**. Personne ne peut créer de compte.
+Les 31 joueurs migrés entrent par « mot de passe oublié ». Un acheteur de billet à 250 €
+n'obtient aujourd'hui aucun accès.
+
+### B4 — Le billet ne donne pas accès au jeu (spec F9) · **TOUJOURS BLOQUANT**
+Vérifié le 2026-08-05 : `Registration` n'a toujours aucune colonne `user_id`. Le cadrage pose
+pourtant le principe inverse : **le
 billet, non l'adresse électronique, est la preuve de rattachement**. La spec F9 existe
 (`impacts-fonctionnels.md`) mais décrit un pont WordPress **devenu caduc** — à réécrire pour
 Stripe Checkout interne : lien magique signé par billet, code/QR de secours, idempotence,
 rattachement manuel de secours.
 
-### B5 — Le mode événement d'un parcours n'existe pas (spec F7)
-`impacts-fonctionnels.md` §F7 le déclare **« chemin critique, deadline Festival »** : mosaïque
-des expériences du jour, créneaux et salles, capacité par atelier, compteurs de présence,
-facilitateurs, validation en masse. **Rien n'est construit.** C'est le plus gros chantier
-restant du chemin critique — il m'avait échappé avant ce balayage.
+### B5 — Le mode événement d'un parcours n'existe pas (spec F7) · **LEVÉ le 2026-08-04**
+Construit en trois tranches : créneaux et salles avec capacité, composition de la journée,
+programme du jour et réservation par le participant (verrou de capacité et détection des
+chevauchements), compteurs d'inscrits, validation générique par trois questions avec traitement
+anonymisé de la troisième. Voir `mode-evenement-specification.md`.
 
-### B6 — Le parcours du jour J n'existe ni en base ni en écrans
-Deux parcours seulement (Monde 0, Boussole du Monde 1). `accueil-point-zero.md` §13-15
-spécifie six états frontoffice du Festival (`festival-inscription`, `-lier`, `-confirme`,
-`-experience`, `-reserve`, `-attente`) : prototypés, jamais intégrés.
+**Reste la tranche 4** — lien magique billet → compte : c'est exactement B4, elle attend de
+vrais billets. Et le contenu : `Creneau.count == 0`, la journée n'est pas encore composée.
+
+### B6 — Le parcours du jour J · **CRÉÉ, à remplir**
+Le parcours « Festival 2026 — la journée » existe (id 18) et l'événement lui est rattaché. Les
+six états frontoffice de `accueil-point-zero.md` §13-15 restent à intégrer, et la journée à
+composer en créneaux.
 
 ## 4. Autres manques constatés
 
