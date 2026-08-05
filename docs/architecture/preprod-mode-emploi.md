@@ -61,6 +61,35 @@ cd /home/deploy/src/pointzero-preprod && git pull --ff-only origin preprod
 cd /home/deploy/preprod && docker compose up -d --build preprod-web
 ```
 
+## Reporter un prototype du Sas
+
+Le report d'un prototype vers l'application est un **script**, pas une reprise à la main :
+`scripts/porter_sas.py` dans `pointzero-app`.
+
+```bash
+python3 scripts/porter_sas.py humanite   # ou sans argument : les cinq parcours
+```
+
+Il lit `zegame-prototypes/parcours-<slug>/` (index.html, styles.css, app.js) et produit la vue
+`app/views/sas/<slug>.html.erb` plus les assets dans `public/sas/<slug>/`. Les seules libertés
+prises à l'intégration sont énumérées en tête du script et nulle part ailleurs : barre d'auteur
+retirée, chemins d'assets réécrits, cartes de l'accueil ouvertes vers les parcours en ligne,
+enchaînement d'un parcours au suivant. Si l'une de ces formes disparaît du prototype, le script
+s'arrête en le disant — il ne produit pas une page silencieusement amputée.
+
+Le `?v=` des assets est une empreinte de leur contenu : un visiteur ne peut pas se retrouver
+avec l'ancien script et le nouveau HTML.
+
+**Le serveur n'a pas accès à `zegame-prototypes`** (sa clé de déploiement est limitée à
+`pointzero-app`, et c'est voulu). L'instance portable copie les prototypes depuis son clone
+local vers `/home/deploy/src/zegame-prototypes/` avant de lancer le script.
+
+## Promotion vers la production
+
+La préprod n'est pas une antichambre automatique. Une fois le rendu validé sur la préprod par
+qui a produit le contenu, l'instance portable reporte la branche sur `main` et déploie. Rien ne
+part en production sans cette relecture : celui qui produit ne s'auto-valide pas.
+
 ## Rappel de périmètre
 
 Le prototype reste la référence de construction : la préprod montre ce que l'application rend,
