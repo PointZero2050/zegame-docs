@@ -47,12 +47,12 @@ Un `Journey` ordinaire, en mode **libre** (les participants choisissent, il n'y 
 imposé) et **non obligatoire**. Il porte les ateliers via `ChallengesJourney` comme n'importe
 quel parcours.
 
-**Question de rattachement, à trancher** : ce parcours appartient à quelle communauté ? Ma
-recommandation : **au Monde 0**. Un billet donne alors accès au Monde 0, donc au jeu tout
-entier après le Festival — ce qui est précisément l'intention annoncée sur le site
-(« entrer dans un parcours collectif soutenu par l'application »). L'alternative, une
-communauté « Festival 2026 » dédiée, isolerait les participants et demanderait un second geste
-pour les faire entrer dans le jeu.
+**Rattachement — tranché par Boris le 2026-08-04 : le parcours du jour appartient au Monde 0.**
+Un billet donne donc accès au Monde 0, et au jeu tout entier après le Festival — ce qui est
+précisément l'intention annoncée sur le site (« entrer dans un parcours collectif soutenu par
+l'application »). Conséquence pratique : le lien magique du billet inscrit le participant à la
+communauté Monde 0 **et** au parcours du jour ; rien d'autre n'est à faire pour qu'il continue
+le lendemain.
 
 ## 3. Décisions de Boris — 2026-08-04
 
