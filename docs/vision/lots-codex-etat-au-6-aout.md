@@ -27,26 +27,37 @@ La spécification est
 [profil-communautaire-messagerie-cercles-v1.md](profil-communautaire-messagerie-cercles-v1.md).
 L'infrastructure est là ; ce qui manque est la **matière de la rencontre**.
 
-### 2.1. Le dossier de rencontre n'existe pas (§ 3.3)
+### 2.1. Le dossier de rencontre · **LIVRÉ le 2026-08-06**
 
-`circle_memberships` porte `status`, `joined_at`, `left_at`, `ouvert_au_cercle` — et rien d'autre.
-Aucun des champs que la spécification demande : motivation, ce qu'on espère du Cercle, ce qu'on
-pense y apporter, rythme et créneaux, présence/distance/hybride, territoire et contraintes de
-déplacement, durée et intensité, rapport à la confrontation, sujets à éviter, besoins
-d'accessibilité, expérience antérieure, autres appartenances, rôle d'appel, Graines jointes.
+Les quatorze champs de la spécification, en jsonb sur `circle_memberships`. Quatre sont ordonnés
+et comparables — cadence, présence, intensité, confrontation — et le Cercle déclare les siens sur
+les mêmes dimensions, ce qui rend la restitution possible.
 
-Conséquence : **on peut demander à rejoindre un Cercle, mais pas dire qui on est en le
-demandant.** C'est le cœur du « se choisir » de la spécification.
+La restitution est bornée comme la spécification l'exige : « Cadence compatible · Présentiel à
+organiser · Intensité proche · Attentes de confrontation à discuter ». Jamais un pourcentage,
+jamais « profil complémentaire » ou « niveau insuffisant », jamais de recommandation d'accepter
+ou de refuser. Trois états seulement : ce qui concorde, ce qui demande un arrangement pratique,
+ce qui demande une conversation.
 
-### 2.2. Aucune notification par courriel (§ 5.2)
+Visibilité : le candidat, l'ouvreur, un administrateur — et un membre actif **seulement** si le
+candidat y a consenti. La règle vit désormais sur `CircleMembership#visible_par?`, et
+`Messaging::Thread` y délègue : une seule source pour deux surfaces.
 
-Vérifié : aucun mailer ne concerne les fils. Un candidat n'est jamais prévenu qu'on lui a
-répondu — les conversations meurent en silence. C'est le manque le plus coûteux : il annule
-en pratique tout ce qui est déjà construit.
+Un dossier vide reste une candidature recevable.
 
-La spécification est précise sur la forme : identité d'usage, type de demande, nom du Cercle, lien
-profond, réglage des notifications. **Pas** de récit sensible, pas d'adresse révélée, pas de
-réponse par courriel.
+### 2.2. Notification par courriel (§ 5.2) · **LIVRÉ le 2026-08-06**
+
+`NotificationFilJob` part dix minutes après le message : une conversation vivante ne produit pas
+un courriel par réplique. L'auteur ne se notifie pas, qui a lu n'est pas notifié, qui s'est
+désabonné non plus, et un accès révoqué entre le message et l'envoi ne produit rien.
+
+Le courriel porte l'identité d'usage de l'expéditeur, la nature de l'échange, le contexte, un lien
+profond et le réglage des notifications. **Jamais** le texte du message, l'adresse d'un tiers ou
+le nom complet de l'expéditeur ; aucune réponse par courriel.
+
+À noter pour la mémoire du projet : `mathieu_core_messaging` esquissait le mécanisme côté vibe
+(débounce de 10 minutes) puis appelait `GlobalSettings.send_mail_notif_for_thread`, **une méthode
+jamais définie**. L'envoi n'a donc jamais existé nulle part.
 
 ### 2.3. Les coordonnées ne se partagent pas (§ 5.1)
 
@@ -101,20 +112,15 @@ créneau (déjà construite, tranche 3 du mode événement) est le seul chemin p
 
 **Décision attendue de Boris.**
 
-## 4. Découverte du relevé — deux barèmes Ω coexistent
+## 4. Les deux barèmes Ω · **RÉSOLU le 2026-08-06**
 
-Ce n'est signalé nulle part et ça gêne dès maintenant la composition du Festival.
+Deux barèmes coexistaient sans que rien ne le signale : `challenges_skills` créditait réellement
+le joueur, tandis que `challenges.point` — le champ « Ω à la validation » de la console — n'avait
+aucun effet. Quinze expériences sur vingt-trois divergeaient.
 
-- `challenges_skills` : ce qui **crédite réellement** le joueur (`gain_points`). Monde 0 = 99 Ω.
-- `challenges.point` : le champ **« Ω à la validation »** affiché dans la console. Monde 0 = 34 Ω.
-
-**15 expériences sur 23 ont un écart entre les deux.** « Le sas d'entrée » affiche 4 et en crédite
-12 ; « Le Coupable idéal » affiche 0 et en crédite 6.
-
-Le joueur ne voit pas ce champ — il n'est rendu que dans la console. Mais **celui qui compose une
-expérience croit régler les Ω et ne règle rien** : seule la ventilation par compétence, plus bas
-dans le même formulaire, a un effet. À trancher : faire de `point` un calcul dérivé, ou l'expliciter
-dans le formulaire comme un champ d'affichage sans effet.
+Le champ trompeur est retiré du formulaire, qui affiche désormais `total_point`, la somme de la
+ventilation par compétence. Le paramètre n'est plus accepté en écriture. La colonne reste en base
+par fidélité à la migration zegame ; elle n'est plus lue nulle part.
 
 ## 5. Les autres lots, par ordre de dépendance
 
@@ -163,18 +169,25 @@ aujourd'hui **un** Cercle, aucun dossier de candidature, et aucune notification 
 une demande d'adhésion part et personne n'est prévenu. Le Festival produirait une cohorte qui
 arrive dans une pièce vide.
 
-D'où l'ordre :
+### Fait le 2026-08-06
 
-1. **La notification par courriel des fils** (§ 2.2). Petite, isolée, et elle rend vivant tout ce
-   qui est déjà construit. Sans elle, le reste ne sert à rien.
-2. **Le dossier de rencontre** (§ 2.1) puis **le partage de coordonnées** (§ 2.3) — le lot
-   « messagerie V1 » proprement dit. C'est ce qui permet de se choisir.
-3. **Le refactor polymorphe des vues de fil** (§ 2.6), prérequis technique des deux précédents.
+1. ~~La notification par courriel des fils~~ (§ 2.2) — livrée.
+2. ~~Le dossier de rencontre~~ (§ 2.1) — livré.
+3. ~~Une répétition de restauration~~ — faite : 45 tables, zéro divergence, le critère de feu vert
+   du §7 est coché. Le script `scripts/repeter_restauration.sh` la rejoue quand on veut.
+4. ~~Clarifier les deux barèmes Ω~~ (§ 4) — fait.
 
-En parallèle, deux choses courtes qui ne sont pas des lots mais protègent le Festival :
+### Ce qui reste pour août
 
-- **une répétition de restauration** — jamais faite, critère de feu vert non coché ;
-- **clarifier les deux barèmes Ω** (§ 4), qui gêne la production de contenu dès maintenant.
+1. **Le partage de coordonnées** (§ 2.3) — « permettre le contact ne signifie pas exposer les
+   coordonnées » n'a toujours aucun support : ni politique de contact, ni canal préféré, ni
+   partage par fil.
+2. **Le refactor polymorphe des vues de fil** (§ 2.6). Les vues d'index et de conversation
+   supposent encore un conteneur `ChallengesUser` ou `JourneysUser`.
+3. **Le reste du profil détaillé** (§ 2.4) : rôle d'appel, année d'entrée, liens externes, badges
+   épinglés.
+4. **Le § 6 restant** : proposition de rencontre, carte de contact, prévention d'une nouvelle
+   sollicitation par la même personne.
 
 Et une décision à prendre tôt : **comment l'Atelier est validé pour les participants du
 Festival** (§ 3.1).
