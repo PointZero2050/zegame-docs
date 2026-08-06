@@ -69,22 +69,35 @@ Les vues d'index et de conversation supposent un conteneur `ChallengesUser` ou `
 Avec 69 fils dont certains sur `CircleMembership`, le titre, l'image, l'URL et le badge de contexte
 doivent devenir polymorphes.
 
-## 3. Le « 100 Ω » — mesuré, et confirmé impossible
+## 3. Le « 100 Ω » — tranché le 2026-07-31, et déjà implémenté
 
-Codex l'avait signalé dans
-[analyse-impact-cercles-intercycle.md § 8.1](analyse-impact-cercles-intercycle.md). Vérifié sur la
-production le 2026-08-06 : le Monde 0 plafonne à **84 Ω** sur les expériences requises, **99 Ω**
-avec les optionnelles. Le joueur le plus avancé est à **99 Ω** — il a tout fait et n'atteindra
-jamais 100.
+**Ce point est clos** ; une première version de ce document le présentait à tort comme ouvert.
 
-Trois options, dans l'ordre de préférence de Codex :
+Boris a tranché le 2026-07-31 pour le critère structurel, et il est en production dans
+`app/services/mondes.rb` + `config/mondes.yml` : le passage d'un Monde au suivant vérifie que les
+**parcours obligatoires** de la communauté prérequise sont accomplis. Aucun seuil d'Oméga
+n'intervient nulle part dans le verrou.
 
-1. **Critère structurel** — passage M1 = Monde 0 complété **+** Atelier validé. C'est déjà le
-   critère de la Ressourcerie (`peut_evaluer_ressources?`) : un seul mécanisme, aucun nombre
-   magique, insensible aux évolutions du barème.
-2. Abaisser le marqueur à 80 Ω.
-3. Recalibrer le barème — déconseillé : toucher aux `challenges_skills` recalculerait les Ω des
-   joueurs existants au prochain `gain_points`.
+Vérifié sur la production le 2026-08-06 : le prérequis du Monde 1 est le parcours obligatoire
+« Point Zéro - Monde 0 », ses 12 expériences requises incluent **« Vivre l'Atelier Point Zéro »**,
+dont l'autorité de validation est `facilitateur`. Six joueurs sur vingt ont le Monde 1 ouvert.
+
+L'Oméga reste un indicateur indépendant de la progression, conformément à la décision.
+
+Ce qui subsiste du sujet est purement documentaire : plusieurs specs mentionnent encore
+« les 100 premiers Oméga » comme marqueur de passage. À corriger dans les documents concernés
+quand on les rouvrira.
+
+### 3.1. Le point réellement ouvert : l'Atelier au Festival
+
+Le Monde 1 exige « Vivre l'Atelier Point Zéro », validé par un facilitateur. Cette expérience
+n'est **pas** rattachée au parcours « Festival 2026 — la journée ».
+
+Si l'intention est que les participants du 1er octobre puissent poursuivre vers le Monde 1, il
+faut décider comment leur journée valide cet Atelier : soit l'expérience est ajoutée au parcours
+du jour, soit un facilitateur valide en masse depuis la console. Quatre facilitateurs et sept
+administrateurs peuvent valider — pour deux cents participants, la validation en masse par
+créneau (déjà construite, tranche 3 du mode événement) est le seul chemin praticable.
 
 **Décision attendue de Boris.**
 
@@ -139,13 +152,32 @@ avant toute ligne de code** — propriété intellectuelle, fiscalité, paiement
 [récit-fresque et quêtes collectives](relations-recits-collectifs.md),
 [page parcours « carte du voyage »](page-parcours-carte-du-voyage.md).
 
-## 6. Ce que je recommanderais dans l'ordre
+## 6. Ce que je recommanderais pour août
 
-1. **La notification par courriel des fils.** Petit, isolé, et il débloque tout ce qui existe déjà.
-2. **Trancher le marqueur de passage au Monde 1** (§ 3) — décision, pas développement.
-3. **Clarifier les deux barèmes Ω** (§ 4) — gêne la production de contenu aujourd'hui.
-4. **Le dossier de rencontre** (§ 2.1) puis le partage de coordonnées (§ 2.3) : c'est le lot
-   « messagerie V1 » proprement dit, et il a du sens avant que des Cercles se forment au Festival.
-5. Le refactor polymorphe des vues de fil (§ 2.6), qui conditionne la suite.
+La question qui devrait décider du programme n'est pas « quel lot est le plus mûr » mais
+**« que trouvent deux cents personnes le 2 octobre ? »**
 
-Tout le reste est postérieur au Festival.
+Le 1er octobre, deux cents participants reçoivent un compte, entrent au Monde 0 et font le
+parcours du jour. Le lendemain, ce qui les attend est le Monde 1, donc les Cercles. Or il existe
+aujourd'hui **un** Cercle, aucun dossier de candidature, et aucune notification par courriel :
+une demande d'adhésion part et personne n'est prévenu. Le Festival produirait une cohorte qui
+arrive dans une pièce vide.
+
+D'où l'ordre :
+
+1. **La notification par courriel des fils** (§ 2.2). Petite, isolée, et elle rend vivant tout ce
+   qui est déjà construit. Sans elle, le reste ne sert à rien.
+2. **Le dossier de rencontre** (§ 2.1) puis **le partage de coordonnées** (§ 2.3) — le lot
+   « messagerie V1 » proprement dit. C'est ce qui permet de se choisir.
+3. **Le refactor polymorphe des vues de fil** (§ 2.6), prérequis technique des deux précédents.
+
+En parallèle, deux choses courtes qui ne sont pas des lots mais protègent le Festival :
+
+- **une répétition de restauration** — jamais faite, critère de feu vert non coché ;
+- **clarifier les deux barèmes Ω** (§ 4), qui gêne la production de contenu dès maintenant.
+
+Et une décision à prendre tôt : **comment l'Atelier est validé pour les participants du
+Festival** (§ 3.1).
+
+Tout le reste — lots Cercles 2 à 5, marketplace, monde-miroir, catalogue Monde 1 — est postérieur
+au Festival.
