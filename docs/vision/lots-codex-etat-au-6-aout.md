@@ -78,10 +78,25 @@ spécification ne prévoit aucune exception pour des coordonnées personnelles.
 La révocation vaut pour les accès futurs, et l'interface le dit sans farder : ce qu'un
 destinataire a déjà noté reste chez lui.
 
-### 2.4. Le profil détaillé est incomplet (§ 3.2)
+### 2.4. Le profil détaillé (§ 3.2) · **LIVRÉ le 2026-08-07**
 
-Manquent : rôle d'appel, année d'entrée dans le Jeu, liens externes, préférences de rencontre,
-badges et contributions épinglés.
+Année d'entrée dans le Jeu, liens externes, préférence de rencontre (présence / distance /
+hybride), centres d'intérêt, et les trois questions de « Me rencontrer » — ce qui m'amène au Point
+Zéro, ce que je cherche maintenant, ce que j'aimerais rendre possible. La politique de contact,
+déjà en base, s'y lit désormais.
+
+Le rôle d'appel était déjà là sous sa forme provisoire (`role_appel_provisoire`, dérivé de la
+posture du Conseil Oméga — décision Boris du 2026-08-01).
+
+**Les liens externes sont la seule donnée du profil qui puisse devenir un vecteur d'attaque** :
+des URL saisies par une personne, rendues cliquables pour d'autres. `LiensExternes` ne retient que
+`http`/`https` — `javascript:` et `data:` sont des schémas valides, et un lien cliquable qui les
+porte exécute du code chez celui qui clique —, plafonne à dix, et le rendu porte
+`rel="noopener noreferrer nofollow"` en n'affichant que le domaine.
+
+**Reste du § 3** : les badges et contributions épinglés de la carte d'annuaire (§ 3.1). Aucun
+modèle de badge n'existe ; l'épinglage porterait sur les Graines publiées — à trancher plutôt qu'à
+deviner.
 
 ### 2.5. Reste du § 6
 
@@ -210,15 +225,21 @@ arrive dans une pièce vide.
 6. ~~Le refactor polymorphe des vues de fil~~ (§ 2.6) — livré le 7 août, avec la route oubliée
    des fils de parcours.
 
+7. ~~Le profil détaillé~~ (§ 2.4) — livré le 7 août.
+
 ### Ce qui reste pour août
 
-1. **Le reste du profil détaillé** (§ 2.4) : rôle d'appel, année d'entrée, liens externes, badges
-   épinglés.
-2. **Le § 6 restant** : proposition de rencontre (créneaux ou lien), et prévention d'une nouvelle
+1. **Le § 6 restant** : proposition de rencontre (créneaux ou lien), et prévention d'une nouvelle
    sollicitation par la même personne. La carte de contact, elle, est faite.
 
 ### Décisions en attente de Boris
 
+- **« Proposer un échange »** (§ 4.1). La spécification en fait l'un des deux déclencheurs de mise
+  en relation, depuis un profil. Mais le § 6 reporte explicitement « la messagerie directe générale
+  entre tous les membres », et le § 8 exige qu'un fil soit rattaché à un objet de demande. Un
+  échange sans Cercle n'a donc pas d'objet auquel se rattacher : soit ce bouton est une invitation
+  déguisée, soit il ouvre une messagerie que la V1 reporte. **Non construit faute d'arbitrage.**
+- **Les badges épinglés** (§ 3.1) : sur quoi porte l'épinglage, faute de modèle de badge ?
 - **Le fil orphelin 47** (§ 2.6) : 3 messages sans conteneur — conserver ou supprimer ?
 - **Comment l'Atelier est validé pour les participants du Festival** (§ 3.1).
 
