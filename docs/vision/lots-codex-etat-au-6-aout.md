@@ -117,11 +117,11 @@ Le rendu d'un retour d'expérience et celui d'une mise en relation sont désorma
 la seconde affiche des coordonnées, et le statut de la candidature se lit dans un badge **hors** du
 fil — un message n'est jamais un état métier.
 
-**Un fil orphelin subsiste en production** : le fil 47 porte 3 messages et 7 participants alors
-que son `ChallengesUser` n'existe plus. Il est rendu inerte et lisible par personne, mais **non
-détruit** : c'est du contenu, sa suppression est une décision de Boris. La cause — pas de
-`dependent: :destroy` entre `ChallengesUser` et son fil — est laissée en l'état volontairement :
-l'ajouter détruirait du contenu, y compris de possibles Graines.
+**Le fil orphelin 47 a été supprimé le 2026-08-07** sur décision de Boris — sauvegarde préalable,
+et vérification qu'aucune Graine publiée n'en dépendait. Plus aucun orphelin en base. La cause —
+pas de `dependent: :destroy` entre `ChallengesUser` et son fil — reste en l'état volontairement :
+l'ajouter détruirait du contenu, y compris de possibles Graines. Le contexte `Inconnu` garde
+l'application sûre si le cas se reproduit.
 
 ## 3. Le « 100 Ω » — tranché le 2026-07-31, et déjà implémenté
 
@@ -142,18 +142,28 @@ Ce qui subsiste du sujet est purement documentaire : plusieurs specs mentionnent
 « les 100 premiers Oméga » comme marqueur de passage. À corriger dans les documents concernés
 quand on les rouvrira.
 
-### 3.1. Le point réellement ouvert : l'Atelier au Festival
+### 3.1. L'Atelier au Festival · **TRANCHÉ et LIVRÉ le 2026-08-07**
 
-Le Monde 1 exige « Vivre l'Atelier Point Zéro », validé par un facilitateur. Cette expérience
-n'est **pas** rattachée au parcours « Festival 2026 — la journée ».
+Le Monde 1 exige « Vivre l'Atelier Point Zéro », validé par un facilitateur. Or l'expérience a
+`auto_validated = false` : un participant qui la faisait et répondait aux trois questions voyait
+sa progression passer à « terminée » mais **jamais à « validée »** — et aucun écran ne permettait
+à quiconque de la valider. Deux cents personnes seraient restées bloquées au Monde 0 le
+2 octobre.
 
-Si l'intention est que les participants du 1er octobre puissent poursuivre vers le Monde 1, il
-faut décider comment leur journée valide cet Atelier : soit l'expérience est ajoutée au parcours
-du jour, soit un facilitateur valide en masse depuis la console. Quatre facilitateurs et sept
-administrateurs peuvent valider — pour deux cents participants, la validation en masse par
-créneau (déjà construite, tranche 3 du mode événement) est le seul chemin praticable.
+**Décision Boris : la présence vaut validation, pour la V1.** Le facilitateur ouvre son créneau,
+pointe qui était là, et l'expérience est validée avec ses Ω. Un bouton pointe toute la salle.
 
-**Décision attendue de Boris.**
+Ce qui a été examiné puis écarté : **vibe.ze.game ne fournit pas ce qu'il semble fournir.** Son
+modèle `Validation` est un *bloc de contenu* décrivant ce qu'on attend d'une expérience — déjà
+porté, 16 blocs en base. Son acte de validation passe par `receive_message_extra` : un
+facilitateur poste dans le fil un message portant un drapeau. C'est un fil par personne,
+impraticable à deux cents — et chez vibe même, les boutons de validation des expériences sont
+commentés dans le code.
+
+L'émargement est **accessible aux facilitateurs**, ce qui n'allait pas de soi : composer la
+journée reste un travail d'administrateur, tenir sa salle est celui de qui anime. Dépointer ne
+révoque jamais une validation acquise (décision du 2026-07-28). Quelqu'un qui arrive sans s'être
+inscrit est accueilli et validé sans contrôle de capacité — il est déjà dans la salle.
 
 ## 4. Les deux barèmes Ω · **RÉSOLU le 2026-08-06**
 
@@ -240,8 +250,8 @@ arrive dans une pièce vide.
   échange sans Cercle n'a donc pas d'objet auquel se rattacher : soit ce bouton est une invitation
   déguisée, soit il ouvre une messagerie que la V1 reporte. **Non construit faute d'arbitrage.**
 - **Les badges épinglés** (§ 3.1) : sur quoi porte l'épinglage, faute de modèle de badge ?
-- **Le fil orphelin 47** (§ 2.6) : 3 messages sans conteneur — conserver ou supprimer ?
-- **Comment l'Atelier est validé pour les participants du Festival** (§ 3.1).
+- ~~Le fil orphelin 47~~ — supprimé le 2026-08-07 sur décision de Boris, après sauvegarde et vérification qu aucune Graine publiée n en dépendait.
+- ~~La validation de l Atelier au Festival~~ — tranchée et livrée (§ 3.1).
 
 Et une décision à prendre tôt : **comment l'Atelier est validé pour les participants du
 Festival** (§ 3.1).
