@@ -88,11 +88,25 @@ badges et contributions épinglés.
 Proposition de rencontre (créneaux ou lien), carte de contact partagée, prévention d'une nouvelle
 sollicitation par la même personne.
 
-### 2.6. Refactor annoncé par Codex (§ 8.1)
+### 2.6. Refactor annoncé par Codex (§ 8.1) · **LIVRÉ le 2026-08-07**
 
-Les vues d'index et de conversation supposent un conteneur `ChallengesUser` ou `JourneysUser`.
-Avec 69 fils dont certains sur `CircleMembership`, le titre, l'image, l'URL et le badge de contexte
-doivent devenir polymorphes.
+`ContexteDeFil` : une classe par conteneur — `Experience`, `Parcours`, `Candidature`, et
+`Inconnu` pour un fil dont le conteneur a disparu. Titre, retour, badge, participants et règle
+d'accès y vivent. Ajouter un contexte, c'est ajouter une sous-classe et une ligne de route.
+
+**Le refactor a révélé une route manquante** : cinq fils rattachés à un `JourneysUser` existaient
+en base depuis la migration zegame, sans qu'aucune URL n'y mène — le contrôleur porté ne
+connaissait que deux conteneurs sur trois. Ils sont de nouveau accessibles.
+
+Le rendu d'un retour d'expérience et celui d'une mise en relation sont désormais distincts : seule
+la seconde affiche des coordonnées, et le statut de la candidature se lit dans un badge **hors** du
+fil — un message n'est jamais un état métier.
+
+**Un fil orphelin subsiste en production** : le fil 47 porte 3 messages et 7 participants alors
+que son `ChallengesUser` n'existe plus. Il est rendu inerte et lisible par personne, mais **non
+détruit** : c'est du contenu, sa suppression est une décision de Boris. La cause — pas de
+`dependent: :destroy` entre `ChallengesUser` et son fil — est laissée en l'état volontairement :
+l'ajouter détruirait du contenu, y compris de possibles Graines.
 
 ## 3. Le « 100 Ω » — tranché le 2026-07-31, et déjà implémenté
 
@@ -193,14 +207,20 @@ arrive dans une pièce vide.
 
 5. ~~Le partage de coordonnées~~ (§ 2.3) — livré le 7 août, avec la fermeture d'une fuite.
 
+6. ~~Le refactor polymorphe des vues de fil~~ (§ 2.6) — livré le 7 août, avec la route oubliée
+   des fils de parcours.
+
 ### Ce qui reste pour août
 
-1. **Le refactor polymorphe des vues de fil** (§ 2.6). Les vues d'index et de conversation
-   supposent encore un conteneur `ChallengesUser` ou `JourneysUser`.
-2. **Le reste du profil détaillé** (§ 2.4) : rôle d'appel, année d'entrée, liens externes, badges
+1. **Le reste du profil détaillé** (§ 2.4) : rôle d'appel, année d'entrée, liens externes, badges
    épinglés.
-3. **Le § 6 restant** : proposition de rencontre (créneaux ou lien), et prévention d'une nouvelle
+2. **Le § 6 restant** : proposition de rencontre (créneaux ou lien), et prévention d'une nouvelle
    sollicitation par la même personne. La carte de contact, elle, est faite.
+
+### Décisions en attente de Boris
+
+- **Le fil orphelin 47** (§ 2.6) : 3 messages sans conteneur — conserver ou supprimer ?
+- **Comment l'Atelier est validé pour les participants du Festival** (§ 3.1).
 
 Et une décision à prendre tôt : **comment l'Atelier est validé pour les participants du
 Festival** (§ 3.1).
