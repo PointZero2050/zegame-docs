@@ -59,10 +59,24 @@ le nom complet de l'expéditeur ; aucune réponse par courriel.
 (débounce de 10 minutes) puis appelait `GlobalSettings.send_mail_notif_for_thread`, **une méthode
 jamais définie**. L'envoi n'a donc jamais existé nulle part.
 
-### 2.3. Les coordonnées ne se partagent pas (§ 5.1)
+### 2.3. Le partage de coordonnées (§ 5.1) · **LIVRÉ le 2026-08-07**
 
-`users` n'a ni politique de contact, ni canal préféré, ni partage d'e-mail ou de téléphone par fil.
-Le principe « permettre le contact ne signifie pas exposer les coordonnées » n'a aucun support.
+**Une fuite était en production** : la page d'un Cercle affichait l'adresse et le téléphone de
+chaque candidat à l'ouvreur, sans consentement, pour toute demande en attente. L'annuaire et la
+fiche de profil s'en gardaient déjà explicitement ; c'était un vestige du cadrage F11 initial, où
+la décision se prenait hors application par téléphone. Refermée.
+
+Deux niveaux, volontairement séparés. Une **politique** sur le compte — contact dans
+l'application, e-mail sur demande, téléphone après mise en relation — plus un canal préféré et
+l'acceptation ou non des appels. Et un **partage explicite par contexte** : ce fil-ci, ce
+Cercle-ci. La politique n'expose jamais rien à elle seule ; seul un partage le fait.
+
+`CarteDeContact` pose les deux questions dans l'ordre : le lecteur a-t-il sa place dans ce
+contexte, puis la personne y a-t-elle consenti. Un administrateur n'est pas admis d'office — la
+spécification ne prévoit aucune exception pour des coordonnées personnelles.
+
+La révocation vaut pour les accès futurs, et l'interface le dit sans farder : ce qu'un
+destinataire a déjà noté reste chez lui.
 
 ### 2.4. Le profil détaillé est incomplet (§ 3.2)
 
@@ -177,17 +191,16 @@ arrive dans une pièce vide.
    du §7 est coché. Le script `scripts/repeter_restauration.sh` la rejoue quand on veut.
 4. ~~Clarifier les deux barèmes Ω~~ (§ 4) — fait.
 
+5. ~~Le partage de coordonnées~~ (§ 2.3) — livré le 7 août, avec la fermeture d'une fuite.
+
 ### Ce qui reste pour août
 
-1. **Le partage de coordonnées** (§ 2.3) — « permettre le contact ne signifie pas exposer les
-   coordonnées » n'a toujours aucun support : ni politique de contact, ni canal préféré, ni
-   partage par fil.
-2. **Le refactor polymorphe des vues de fil** (§ 2.6). Les vues d'index et de conversation
+1. **Le refactor polymorphe des vues de fil** (§ 2.6). Les vues d'index et de conversation
    supposent encore un conteneur `ChallengesUser` ou `JourneysUser`.
-3. **Le reste du profil détaillé** (§ 2.4) : rôle d'appel, année d'entrée, liens externes, badges
+2. **Le reste du profil détaillé** (§ 2.4) : rôle d'appel, année d'entrée, liens externes, badges
    épinglés.
-4. **Le § 6 restant** : proposition de rencontre, carte de contact, prévention d'une nouvelle
-   sollicitation par la même personne.
+3. **Le § 6 restant** : proposition de rencontre (créneaux ou lien), et prévention d'une nouvelle
+   sollicitation par la même personne. La carte de contact, elle, est faite.
 
 Et une décision à prendre tôt : **comment l'Atelier est validé pour les participants du
 Festival** (§ 3.1).
