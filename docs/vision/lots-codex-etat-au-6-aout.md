@@ -94,9 +94,25 @@ des URL saisies par une personne, rendues cliquables pour d'autres. `LiensExtern
 porte exécute du code chez celui qui clique —, plafonne à dix, et le rendu porte
 `rel="noopener noreferrer nofollow"` en n'affichant que le domaine.
 
-**Reste du § 3** : les badges et contributions épinglés de la carte d'annuaire (§ 3.1). Aucun
-modèle de badge n'existe ; l'épinglage porterait sur les Graines publiées — à trancher plutôt qu'à
-deviner.
+### 2.7. Accomplissements — badges de complétion de parcours · **LIVRÉ le 2026-08-07**
+
+`impacts-fonctionnels.md` **F13** définit deux familles de badges internes : la **complétion de
+parcours** (image du parcours en médaillon) et les **seuils gamifiés** (sceaux géométriques).
+La première est livrée.
+
+**Aucune table** : un badge de complétion est une *lecture* de la progression, pas une donnée. Le
+persister créerait une seconde vérité à tenir synchronisée. La source est `Journey#completed_by?`,
+celle-là même que lit le verrou des Mondes — et non `JourneysUser#validated_at`, qui vaut `nil`
+pour tous les joueurs en base et qu'un `restart!` révoque (§ 8.2 de Codex).
+
+Trois surfaces : la section **Accomplissements** du Profil, « Ce que je contribue » sur le profil
+communautaire (rendu visible par la Q39 de l'écosystème), et **trois badges au plus** sur la carte
+d'annuaire — ce qui répond à ce que désigne l'épinglage du § 3.1.
+
+Six joueurs avaient déjà un badge à recevoir.
+
+**Reste du § 3** : les **seuils gamifiés**, qui demandent un modèle et une règle par seuil, et les
+**Contributions**, qui dépendent du 360° du Cercle (lot 3, après le Festival).
 
 ### 2.5. Reste du § 6
 
@@ -249,7 +265,13 @@ arrive dans une pièce vide.
   entre tous les membres », et le § 8 exige qu'un fil soit rattaché à un objet de demande. Un
   échange sans Cercle n'a donc pas d'objet auquel se rattacher : soit ce bouton est une invitation
   déguisée, soit il ouvre une messagerie que la V1 reporte. **Non construit faute d'arbitrage.**
-- **Les badges épinglés** (§ 3.1) : sur quoi porte l'épinglage, faute de modèle de badge ?
+- ~~Les badges épinglés~~ (§ 3.1) — répondu : ce sont les badges de complétion de parcours, dont
+  la carte montre les trois plus récents (§ 2.7).
+- **Le seuil « 100 premiers Oméga »** comme *badge* (F13). Le verrou de passage est réglé depuis le
+  2026-07-31, mais F13 le garde aussi comme seuil gamifié, en demandant de « vérifier le barème
+  courant avant implémentation ». Vérifié : le Monde 0 plafonne à **99 Ω**. Le badge serait
+  inobtenable, exactement comme l'était le verrou. Trois issues : abaisser le seuil, en faire un
+  badge transversal atteignable au-delà du Monde 0, ou le retirer.
 - ~~Le fil orphelin 47~~ — supprimé le 2026-08-07 sur décision de Boris, après sauvegarde et vérification qu aucune Graine publiée n en dépendait.
 - ~~La validation de l Atelier au Festival~~ — tranchée et livrée (§ 3.1).
 
