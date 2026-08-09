@@ -95,3 +95,39 @@ part en production sans cette relecture : celui qui produit ne s'auto-valide pas
 Le prototype reste la référence de construction : la préprod montre ce que l'application rend,
 elle ne redéfinit pas ce que le prototype a fixé. Si les deux divergent, c'est l'application
 qui a tort.
+
+## Accès SSH du poste fixe (2026-08-10, décision Boris)
+
+Le poste fixe dispose désormais d'un accès SSH direct au serveur — clé `boris@sirbey.com`
+ajoutée par l'instance portable à la demande de Boris, pour l'import des événements de
+l'agenda (https://pointzero2050.com/event/) en préprod.
+
+```bash
+ssh deploy@167.233.210.57
+```
+
+**Le périmètre ne change pas, seul le chemin change.** Ce que le poste fixe touche :
+
+- `~/src/pointzero-preprod/` — la branche `preprod`, dans les zones convenues ;
+- la préprod se reconstruit ainsi (le conteneur COPIE les sources, un simple restart ne
+  suffit pas) :
+
+```bash
+cd ~/preprod && docker compose build preprod-web && docker compose up -d preprod-web
+```
+
+- migrations préprod : `docker exec -e RAILS_ENV=production pointzero-preprod-preprod-web-1 bin/rails db:migrate` ;
+- scripts ponctuels : `docker cp fichier.rb pointzero-preprod-preprod-web-1:/tmp/` puis
+  `docker exec -e RAILS_ENV=production pointzero-preprod-preprod-web-1 bin/rails runner /tmp/fichier.rb`.
+
+**Ce que le poste fixe ne touche pas** (répartition phase 2, inchangée sur le fond) :
+
+- `~/deploy/` et les conteneurs `pointzero-web-1` / `pointzero-db-1` : la PRODUCTION reste à
+  l'instance portable, promotion par cherry-pick après relecture — celui qui produit ne
+  s'auto-valide pas ;
+- `~/sauvegardes/`, `~/.ssh/`, la configuration Docker et Caddy ;
+- les secrets (`.env`) : les lire n'est jamais nécessaire pour la préprod.
+
+Convention de commits inchangée : `[Codex]` ou `[Claude]` selon l'instance, sur la branche
+`preprod` uniquement. Avant de commencer : `git -C ~/src/pointzero-preprod fetch && git status`
+— l'instance portable travaille sur le même clone.
