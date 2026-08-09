@@ -205,12 +205,21 @@ n'importe quand ; A1 est un bon premier chantier d'octobre, avec le Cercle cœur
   laissait derrière lui un fil créé à son passage. Le contrôle précède désormais la création —
   testé négativement (« visiter ne crée pas »).
 
-## 8. Décisions à prendre avant S1 (extraits des questions ouvertes qui bloquent réellement)
+## 8. Décisions avant S1 — **arbitrées par Boris le 2026-08-09**
 
-1. Les **conversations directes libres** : dès le Monde 0, au Monde 1, ou sur consentement de
-   contact ? (Conditionne le gabarit « échange individuel » et la place du blocage.)
-2. Le **droit de lecture des administrateurs** sur les espaces privés : rôle `moderation`
-   explicite, ou statu quo assumé et affiché ?
-3. **Importer l'historique WhatsApp** du Cercle cœur ou démarrer sur des espaces neufs ?
-   (Conditionne A1 : l'import est un chantier en soi.)
-4. Le **plafond de longueur** d'un message (recommandation : 5 000 caractères).
+1. Les **conversations directes libres** : **sur consentement de contact**. Le gabarit
+   « échange individuel » s'ouvre par un consentement explicite (dans l'esprit du partage de
+   coordonnées §5.1 déjà en place), pas par l'appartenance à un Monde. Le blocage se vérifie à
+   l'entrée ET à l'écriture. → chantier S1.
+2. Le **droit de lecture des administrateurs** : **rôle modération explicite**.
+   **Fait le 2026-08-09** (`pointzero-app`, A0) : colonne `users.moderation`, habilitation
+   orthogonale au rôle, révocable en console, personne par défaut ; les trois portes
+   (expérience, parcours, candidature) exigent le mandat, testé négativement sur ses deux
+   faces. Mandat accordé au seul opérateur réel (boris@ze.game).
+3. **Importer l'historique WhatsApp** du Cercle cœur : **oui, si possible**. C'est possible :
+   WhatsApp exporte chaque conversation en `.txt` horodaté (médias optionnels), parsable par un
+   script d'import une fois l'espace du Cercle créé (A1). À prévoir comme un lot propre —
+   auteurs à rapprocher des comptes, médias à décider, et l'import reste une copie : rien ne
+   se synchronise.
+4. Le **plafond de longueur** : **5 000 caractères**. **Fait le 2026-08-09** (A0), refus poli
+   plutôt qu'erreur serveur, testé.
