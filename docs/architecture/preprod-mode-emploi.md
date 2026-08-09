@@ -20,10 +20,24 @@ Accessible en lecture sans mot de passe, en HTTPS, `X-Robots-Tag: noindex, nofol
 enregistrement A pointe vers `167.233.210.57`, le certificat se prend tout seul et l'adresse
 fonctionne. Rien à faire d'ici là — `sslip.io` résout le nom en IP sans aucune action DNS.
 
-**Compte de démonstration** : `demo@preprod.local` / `preprod-demo-2026`, administrateur.
-Il donne accès au jeu **et** à la console de gestion. Ce n'est le compte de personne : la
-préprod ne contient aucun compte réel, et on ne s'y connecte jamais avec une adresse qui
-appartient à quelqu'un.
+**Comptes de démonstration** — tous avec le mot de passe `preprod-demo-2026`, et l'écran de
+connexion est `/comptes/sign_in` (ni `/connexion` ni `/users/sign_in`, qui renvoient 404) :
+
+| Adresse | Rôle | Ce qu'elle permet de voir |
+|---|---|---|
+| `demo@preprod.local` | administrateur | Le jeu **et** la console `/gestion`. Compte déjà avancé : 12 Actions, 172 Ω |
+| `joueur@preprod.local` | joueur | L'accueil **« seuil »** d'un joueur qui n'a rien commencé. `/gestion` lui est fermée |
+| `facilitateur@preprod.local` | facilitateur | L'émargement et les feuilles de créneau, sans les droits d'administration |
+
+Ce ne sont les comptes de personne : la préprod ne contient aucun compte réel, et on ne s'y
+connecte jamais avec une adresse qui appartient à quelqu'un. Les recréer après une
+re-semence : `scripts/comptes_demo_preprod.rb` (idempotent, et il refuse de s'exécuter sur une
+base contenant de vraies adresses).
+
+⚠️ **On ne peut pas créer de compte par l'interface**, ni en préprod ni en production : les
+routes Devise excluent l'inscription (`skip: [:registrations]`), `/comptes/sign_up` renvoie 404
+partout. **On entre par billet** (lot F9). Ce n'est pas une limite de la préprod, c'est
+l'architecture — d'où l'intérêt d'avoir ces trois comptes prêts.
 
 ## Ce qu'elle contient — et ce qu'elle ne contient pas
 
