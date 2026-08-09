@@ -6,6 +6,11 @@
 > d'une première messagerie interne. Elle complète
 > [Cercles de croissance, profils systémiques, flow et Oméga](cercles-croissance-profils-flow-omega.md)
 > et [Relations, récits et quêtes collectives](relations-recits-collectifs.md).
+>
+> **Évolution du 2026-08-09 :** cette V1 reste la fondation livrée. La parité fonctionnelle avec
+> WhatsApp et les fonctions propres au Point Zéro sont désormais cadrées séparément dans
+> [Messagerie Point Zéro — vision cible](messagerie-point-zero-vision-cible.md). La cible ne doit
+> pas être interprétée comme une autorisation de réécrire immédiatement le socle existant.
 
 ## 1. Décisions
 
@@ -448,7 +453,9 @@ spécification.
 
 ### V2 — Messagerie Point Zéro
 
-- conversations directes et collectives ;
-- cartes d'expérience, parcours, rendez-vous, Résonance, mission et décision ;
-- salles de Cercle et de quête ;
-- recherche, pièces jointes et calendrier après cadrage dédié.
+Le contenu détaillé, les garde-fous et la trajectoire de cette V2 sont définis dans
+[Messagerie Point Zéro — vision cible](messagerie-point-zero-vision-cible.md). Elle distingue :
+
+- souveraineté fonctionnelle pour quitter WhatsApp ;
+- messagerie capacitante reliant Fil, Actions, Décisions et Mémoire ;
+- messagerie de Conscience avec protocoles de polarités, cinq Cadres et miroir IA.

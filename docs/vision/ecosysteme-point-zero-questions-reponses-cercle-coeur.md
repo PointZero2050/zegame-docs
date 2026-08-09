@@ -795,7 +795,8 @@ réduction, une reconnaissance ou des Omégas selon un processus explicite.
 **V2 / horizon :**
 
 - moteur générique de spécialisation des Cercles ;
-- messagerie générale et cartes d'action structurées ;
+- messagerie souveraine générale et cartes d'action structurées, selon la trajectoire
+  [Messagerie Point Zéro — vision cible](messagerie-point-zero-vision-cible.md) ;
 - marketplace complète des besoins, experts et facilitateurs ;
 - profils d'organisation multi-zones et diagnostics longitudinaux ;
 - moteur avancé de Contributions et d'impact différé ;
@@ -887,5 +888,6 @@ capacité accrue de devenir souverain sans devenir seul.
 - [Atelier-seuil et jeu de l'Intercycle](https://github.com/PointZero2050/zegame-docs/blob/main/docs/pedagogie/atelier-seuil-et-jeu-intercycle-monde-1.md)
 - [Rôles d'appel et fonctions civilisationnelles](https://github.com/PointZero2050/zegame-docs/blob/main/docs/pedagogie/roles-appel-fonctions-civilisationnelles.md)
 - [Profil communautaire et messagerie des Cercles](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/profil-communautaire-messagerie-cercles-v1.md)
+- [Messagerie Point Zéro — vision cible](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-point-zero-vision-cible.md)
 - [Parcours publics du Sas](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/parcours-publics-sas.md)
 - [Ressourcerie V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/ressourcerie-v1-principe-affichage.md)
