@@ -72,6 +72,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
    **[Messagerie Point Zéro — vision cible](messagerie-point-zero-vision-cible.md)** — cible souveraine destinée à remplacer WhatsApp puis à relier conversations, médias, réactions, sondages, Cercles, projets, actions, décisions, Mémoire, polarités, cinq Cadres et miroir IA, sans gamification de l'attention ni diagnostic des personnes.
 
+   **[Espaces de discussion et apprentissage au Monde 1](messagerie-espaces-discussion-monde-1.md)** — distinction espace/fil, dix gabarits d'espaces relationnels, pédagogiques, fonctionnels et décisionnels, création guidée par la finalité, droits, cycle de vie, prévention de la prolifération et apprentissage des cinq gestes collectifs au Monde 1.
+
 23. **[analyse-impact-messagerie-cercles.md](analyse-impact-messagerie-cercles.md)** — Analyse d'impact P0 (audit serveur du 2026-07-31) : faille d'accès déjà en production sur `Messaging::Thread` (aucune restriction de participation), notifications e-mail jamais implémentées (`GlobalSettings.send_mail_notif_for_thread` non défini), vues d'index/show hard-codées Challenge/Journey, conteneur unique proposé (`CircleMembership`), absence totale de Badge/Contribution/Resonance/Block/Report.
 
 24. **[caracterisation-progression-omega.md](caracterisation-progression-omega.md)** — Caractérisation du cœur du jeu pour le portage catégorie B (2026-08-02) : cycle de vie `end_at`/`validated_at`, règle « une validation ne se révoque jamais », piège du double-écriture `on_change` (incident Oméga du 2026-07-25), dérivation `auto_validated`, progression F2b obligatoire/optionnelle et verrouillage linéaire, scénarios de vérification de parité.

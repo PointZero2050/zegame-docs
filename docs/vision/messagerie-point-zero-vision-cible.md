@@ -5,6 +5,10 @@
 > [Profil communautaire et messagerie des Cercles — V1](profil-communautaire-messagerie-cercles-v1.md),
 > qui reste la fondation contextuelle déjà livrée. Toute implémentation exige un audit préalable de
 > l'état réel de `pointzero-app`, de ses autorisations, de son stockage et de ses notifications.
+>
+> La taxonomie détaillée des espaces, leurs droits de création et leur apprentissage progressif sont
+> définis dans
+> [Espaces de discussion et apprentissage au Monde 1](messagerie-espaces-discussion-monde-1.md).
 
 ## 0. Décision directrice
 
@@ -119,6 +123,10 @@ L'IA produit des propositions de synthèse reliées à leurs messages sources. U
 une trace collective qu'après validation humaine explicite.
 
 ## 4. Typologie des espaces
+
+La présente section fixe les quatre grandes familles de navigation. Elle ne remplace pas les
+gabarits détaillés et leurs frontières fonctionnelles, documentés dans
+[Espaces de discussion et apprentissage au Monde 1](messagerie-espaces-discussion-monde-1.md).
 
 La navigation générale distingue quatre familles :
 

@@ -17,6 +17,12 @@
 > l'intelligence collective. La spécification détaillée
 > [atelier-seuil-et-jeu-intercycle-monde-1.md](../pedagogie/atelier-seuil-et-jeu-intercycle-monde-1.md)
 > prévaut sur l'ancien détail des six expériences au § 12.
+>
+> **Mise à jour — 2026-08-09, apprentissage des espaces de discussion.** Le parcours collectif
+> enseigne progressivement cinq gestes numériques — accueillir et résonner, formuler une intention,
+> décider par consentement, transformer en action, conserver un apprentissage — avant d'ouvrir vers
+> un espace de Projet distinct. Voir
+> [Messagerie Point Zéro — espaces de discussion et apprentissage au Monde 1](messagerie-espaces-discussion-monde-1.md).
 
 ## 1. Promesse et limite pédagogique
 
