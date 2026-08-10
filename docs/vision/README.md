@@ -10,6 +10,18 @@ Pour l'état réel actuel de l'application, voir [../architecture.md](../archite
 
 Le cadrage [application-festival-2026.md](application-festival-2026.md), validé le 2026-07-24, fixe la trajectoire de livraison de l'application Point Zéro autonome pour le Festival du 1er octobre 2026. Contrairement aux autres documents de cette section, il constitue une décision opérationnelle et prévaut sur les recommandations antérieures qu'il identifie comme remplacées.
 
+## UX-cible et plan général (2026-08-10)
+
+- **[revue-ux-cible-consolidee.md](revue-ux-cible-consolidee.md)** — revue critique de la
+  maquette consolidée de Codex (coque + 31 modules) confrontée au corpus : forces, dix
+  recommandations priorisées (R1-R10), convergences avec l'existant, cinq questions
+  d'arbitrage pour Boris. Transmise à Codex via
+  `zegame-prototypes/application-cible-consolidee/REVUE.md`.
+- **[plan-developpement-general.md](plan-developpement-general.md)** — le plan d'ensemble
+  au-dessus du plan Festival (qui reste directeur jusqu'au 1er octobre) : cinq horizons,
+  répartition des chantiers entre instance portable, poste fixe, Codex et Boris, modèle
+  Claude recommandé par chantier.
+
 ## Ordre de lecture recommandé
 
 > **Synthèse pour le Cercle cœur :**
