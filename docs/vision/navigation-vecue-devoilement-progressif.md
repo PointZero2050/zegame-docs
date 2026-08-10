@@ -184,3 +184,68 @@ Deux points laissés ouverts, à dessein : la place du Monde-miroir (Monde 4 en 
 autosubversive (Monde 7 par cohérence avec « fin du parcours humain » — mais le rite
 pourrait ponctuer chaque passage de Monde en version courte). Ces deux-là méritent une
 lecture du canon par Boris plutôt qu'une déduction.
+
+---
+
+## 5. Maquette comparative et arbitrages de Boris — **2026-08-11**
+
+<!-- [Claude] Les propositions N1-N7 ont été incarnées dans une variante de coque, puis
+     soumises à Boris en trois lectures successives. Cette section consigne ce qu'il a
+     validé, ce qu'il a corrigé, et les défauts relevés dans les prototypes de Codex. -->
+
+Les propositions ci-dessus ont été **incarnées dans une variante de coque comparable à
+celle de Codex**, même matière (les 31 prototypes chargés tels quels en iframe, sources de
+vérité intactes), autre grammaire de navigation :
+
+- maquette : `zegame-prototypes/application-cible-devoilement/`
+- déployée : https://maquettes.167-233-210-57.sslip.io/ux-cible/application-cible-devoilement/
+- à comparer avec : https://maquettes.167-233-210-57.sslip.io/ux-cible/application-cible-consolidee/
+
+### 5.1 Ce que Boris a validé
+
+| Proposition | Verdict |
+|---|---|
+| **N1-N2** — moins d'entrées dans la navigation principale, sous-menu horizontal des destinations | **Retenu.** « Je préfère l'ergonomie générale que tu proposes […] c'est bien vu. » |
+| **R4** — la source d'attention unique en panneau (« Ce qui t'attend »), sans compteur permanent | **Retenu.** « C'est plus ergonomique. » |
+| **N4** — dévoilement par les Mondes, états et clés | **Retenu dans son principe**, avec la précision du 5.2 sur la forme du verrouillage. |
+
+### 5.2 Ce que Boris a décidé ou corrigé
+
+1. **Le verrouillage prend la forme d'une page de teasing, pas d'une modale.** Une
+   destination non encore ouverte affiche une vraie page dans la zone de contenu : ce que
+   c'est, ce qu'on y fera (trois points), ce qui l'ouvre. S'applique notamment au Cercle et
+   aux fils collectifs au Monde 0, et au Freeride aux Mondes 0 **et** 1.
+2. **Le Freeride est teasé jusqu'au Monde 2.** Confirmation explicite du plancher retenu en
+   table §3.2 ; il devient un panneau de la Marelle, annoncé dès le Monde 0.
+3. **Les Échanges gagnent une place sur l'accueil** (R6a). Réalisé sous forme d'un bandeau
+   qui **nomme** ce qui attend une réponse (« Sarah t'a répondu · le Cercle cherche une
+   date ») plutôt que de le compter — projection conversationnelle de la source d'attention
+   unique, pas une seconde boîte.
+4. **L'avatar porte le COMPTE, la porte « Moi » porte le chemin.** La question de la
+   redondance est tranchée par une distinction d'objet : l'avatar ouvre paramètres,
+   connexion et mot de passe, notifications, déconnexion — registre littéral, surface de
+   sécurité ; le profil, les œuvres et les souverainetés restent dans la porte « Moi », et
+   le menu le dit en pied.
+5. **Le compte d'Ω renvoie à la page du Commun**, son contexte d'exercice — et à son teaser
+   tant que le Commun n'est pas lisible. (Amende R5 : l'Ω reste visible en permanence,
+   discret, nommé « compte », et devient cliquable vers une destination.)
+6. **Le Mentor peut apparaître dans deux contextes** (Mon chemin pour produire, Mon profil
+   pour relire) : accepté, cohérent avec « le contexte plutôt que le menu ». À surveiller à
+   l'usage ; si confusion, le profil pointera vers le panneau du chemin.
+
+### 5.3 Défauts relevés dans les prototypes — pour correction par Codex
+
+Constatés en parcourant les modules dans la coque ; ils ne relèvent pas de la grammaire de
+navigation mais des prototypes eux-mêmes.
+
+| # | Constat | Où |
+|---|---|---|
+| D1 | **Typographie trop petite.** Modules composés en 13-14 px, libellés de menus latéraux en 9-10 px. Deux lectures de Boris ont buté dessus. La coque applique un pansement (zoom 1,1 + plancher à 12,5 px) ; le correctif propre est une **base 16 px et une échelle typographique minimale de 12-13 px** dans les modules. **À verser au chantier R9.** | tous les modules |
+| D2 | **Liens morts « Mon mentor IA » et « Mon Cercle ».** Ce sont des `[data-link]` qui n'émettent qu'un toast « Jonction future ». La coque EST cette jonction : elle les rebranche à la volée, mais ils devraient devenir de vrais liens inter-modules. | `marelle-freeride-cible` |
+| D3 | **Routes annoncées inexistantes.** Le registre de la coque consolidée déclare `route:'journey'` pour la Marelle (les routes réelles sont `map`, `journeys`, `freeride`, `line`, `rites`, `home`) et `route:'circle'` pour l'Expérience vivante (qui n'a pas de route interne). Le module s'ouvrait sur sa vue par défaut au lieu de la vue visée. | registre de `application-cible-consolidee/app.js` |
+| D4 | **Module Aide illisible en vignette.** Chargé dans une petite modale, il bascule en mise en page mobile et son tiroir « Menu » recouvre le contenu. Corrigé côté coque par un affichage plein écran ; à connaître pour tout futur embarquement de module. | `aide-situations-sensibles-cible` |
+
+### 5.4 Reste ouvert
+
+Le placement du **Monde-miroir** (Monde 4 dans la table) et de l'**Épreuve autosubversive**
+(Monde 7) attend toujours une lecture du canon par Boris — voir la fin du §4.
