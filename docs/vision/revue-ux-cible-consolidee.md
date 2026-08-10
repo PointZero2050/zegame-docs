@@ -195,29 +195,91 @@ traversée Festival, pas par les trente et un.
 
 ## 3. Récapitulatif des recommandations, par priorité
 
-| # | Recommandation | Pourquoi d'abord |
-|---|---|---|
-| R1 | Sélecteur « Monde 0/1/2+ » dans la coque | Sans lui, tous les tests utilisateurs surestiment la charge réelle |
-| R2 | Traversée « Vivre le Festival » | Le seul périmètre daté (1er octobre) n'est pas dans la maquette |
-| R7 | Chapitre « état réel / projeté » par module | Les décisions de périmètre ont besoin d'une carte honnête |
-| R3 | Porte unique des besoins (marché / missions / observatoire) | Doublon structurel, coûteux s'il atteint le code |
-| R4 | Une source d'attention, trois projections ; badge topbar retiré | Trois inboxes = l'anti-« économie de l'attention » |
-| R5 | Ω hors topbar ; « score » banni de l'annuaire | Contradiction frontale avec la doctrine anti-score |
-| R6 | Cinquième porte mobile = Échanges | §22.1 : quitter WhatsApp exige un accès en un geste |
-| R8 | Lignes F19+ pour les nouveaux objets | Règle existante du registre, préalable à tout portage |
-| R9 | Passe DA + voix (après gel des libellés) | La coque ne ressemble pas encore au Point Zéro |
-| R10 | Matrice droits × états + accessibilité (modules Festival d'abord) | Recommandé par Codex lui-même, jamais montré |
+*(État au 2026-08-10 après les arbitrages de Boris — voir §4.)*
+
+| # | Recommandation | État | Porteur |
+|---|---|---|---|
+| R1 | Sélecteur « Monde 0/1/2+ » dans la coque | **Confirmée et renforcée** (la coque est la cible réelle) | Codex |
+| R2 | Traversée « Vivre le Festival » | À faire | Codex (état réel fourni par le portable) |
+| R7 | Chapitre « état réel / projeté » par module | À faire | Portable (inventaire) → Codex/poste fixe |
+| R3 | Porte unique des besoins | **Tranchée : la Place de marché absorbe les Missions** | Codex |
+| R4 | Une source d'attention, trois projections | À faire ; le badge numérique de la topbar reste à retirer | Codex, puis portable (`ActivityItem`) |
+| R5 | Vocabulaire de l'Ω | **Amendée : l'Ω reste visible en permanence, discret, nommé « compte » — « score » banni** | Codex (NOTES annuaire) |
+| R6a | Échanges visibles sur l'accueil du Jeu **réel** | **Décidée, actionnable tout de suite** | Portable |
+| R6b | Configurations de barre mobile à tester | En attente des tests de Boris | Codex |
+| R8 | Lignes F19+ pour les nouveaux objets | À faire, préalable à tout portage | Portable + Codex |
+| R9 | Passe DA + voix | Confirmée (cible réelle) ; après gel des libellés | Poste fixe |
+| R10 | Matrice droits × états + accessibilité | À faire, modules Festival d'abord | Codex + relecture portable |
+| R11 | Variante « intention par fil » à comparer | **Nouvelle** (demande de Boris) | Codex |
 
 Deux convergences à acter sans attendre (§2.9) : l'objection B1 migrera vers l'objet
 Décision ; les cartes B2 sont LA grammaire des cartes de la maquette.
 
 ---
 
-## 4. Questions ouvertes pour Boris
+## 4. Questions ouvertes — **arbitrées par Boris le 2026-08-10**
 
-1. La coque doit-elle devenir la navigation RÉELLE de l'application à terme, ou rester un
-   outil de test ? (La réponse change l'investissement à mettre dans R1/R9.)
-2. Intention de conversation : par fil (doc) ou par message (maquette) ?
-3. Porte des besoins : la Place de marché absorbe-t-elle les Missions du Commun ?
-4. Cinquième porte mobile : Échanges ou Ressources ?
-5. L'Ω doit-il être visible ailleurs que sur le Profil et l'Économie ?
+### Q1. La coque est-elle la navigation réelle, ou un outil de test ?
+
+**→ C'est la cible RÉELLE**, mais au terme d'un processus en trois temps :
+**revue Claude → corrections par Boris → consolidation finale avec Codex.**
+
+Conséquences : R1 (dimension Monde) et R9 (DA + voix) cessent d'être des améliorations de
+confort — ce sont des investissements sur la future navigation de production. Et le cycle
+lui-même devient une règle de gouvernance : aucune maquette ne devient cible sans avoir
+traversé les trois temps. La présente revue est le premier temps.
+
+### Q2. Intention de conversation : par fil ou par message ?
+
+**→ Non tranché : Boris veut d'abord voir une variante « par fil »** pour la comparer à
+la proposition « par message » de la maquette.
+
+**→ R11 (nouveau, pour Codex) : produire la variante « intention par fil »** dans
+`messagerie-point-zero-cible` — l'intention déclarée au niveau de l'espace ou du sous-fil
+(conforme à la cible §6), affichée en en-tête et adaptant les cartes proposées, avec le
+composeur rendu à sa sobriété. Les deux variantes doivent être comparables côte à côte
+avant l'arbitrage. Cette décision conditionne la spec Proposition/Décision/Action.
+
+### Q3. Porte des besoins : la Place de marché absorbe-t-elle les Missions du Commun ?
+
+**→ Oui, pour simplifier.** R3 est donc tranchée : **la Place de marché est la porte
+unique**. Les Missions du Commun deviennent un sous-ensemble filtré (celles portées par le
+Fonds), et l'Observatoire `#needs` ne fait que lire et pointer — il n'héberge rien.
+`missions-commun-cible` doit être fusionné dans `place-marche-cible` (ou explicitement
+présenté comme une vue filtrée de celle-ci), et la coque ne doit plus proposer deux entrées
+concurrentes.
+
+### Q4. Cinquième porte mobile : Échanges ou Ressources ?
+
+**→ Non tranché : Boris veut tester plusieurs configurations de menu.** Mais une décision
+ferme accompagne l'attente : **dans tous les cas, les Échanges gagnent en visibilité sur la
+page d'accueil elle-même.**
+
+Cette seconde partie est **immédiatement actionnable, et vaut aussi pour l'application
+réelle** : l'accueil du Jeu en production ne mentionne aujourd'hui les Échanges nulle part
+— ils ne sont atteignables que par l'icône de la barre supérieure. R6 devient donc :
+
+- **R6a (app réelle, portable)** : faire remonter les Échanges sur l'accueil du Jeu — les
+  engagements « À ton attention » (déjà construits, S1-A4) y ont leur place naturelle, et
+  ce sont eux qui portent l'information utile, pas un compteur.
+- **R6b (maquette, Codex)** : décliner deux ou trois configurations de barre mobile à
+  tester, l'accueil donnant dans chacune une place visible aux Échanges.
+
+### Q5. L'Ω doit-il rester visible en permanence ?
+
+**→ Oui, en permanence et discrètement — mais on l'appelle un COMPTE, jamais un score**
+(c'est une monnaie de Conscience).
+
+R5 est donc **amendée** : la moitié « sortir l'Ω de la topbar » est écartée par
+l'arbitrage ; la moitié « bannir le mot *score* » est confirmée et renforcée. À appliquer :
+
+- vocabulaire : « compte d'Omégas », « total », « Ω actifs » — jamais « score », jamais
+  « solde » (qui suggérerait une dépense possible, contraire à la doctrine) ;
+- traitement visuel : discret, sans badge d'alerte ni variation animée — un compte qui se
+  consulte, pas une jauge qui sollicite ;
+- corriger la NOTES de `annuaire-vivant-cible`, qui écrit encore « visible comme score
+  unique » ;
+- **sous-question restant ouverte** : le compte permanent affiche-t-il les **Ω actifs**
+  (ce qui vit, soumis au decay, et ouvre la capacité d'orientation) ou le **cumul
+  historique** ? Le corpus distingue soigneusement les deux. Recommandation : afficher les
+  **actifs**, le cumul restant une lecture du Profil.
