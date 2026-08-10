@@ -145,3 +145,28 @@ cd ~/preprod && docker compose build preprod-web && docker compose up -d preprod
 Convention de commits inchangée : `[Codex]` ou `[Claude]` selon l'instance, sur la branche
 `preprod` uniquement. Avant de commencer : `git -C ~/src/pointzero-preprod fetch && git status`
 — l'instance portable travaille sur le même clone.
+
+## Espace maquettes (2026-08-10, demande Boris)
+
+Les **maquettes dynamiques** (HTML/JS autonomes, produites par Codex — ex. les
+fonctionnalités-cible de la messagerie) se déposent dans `~/maquettes/` sur le serveur et
+sont servies en HTTPS à :
+
+> **https://maquettes.167-233-210-57.sslip.io** (listing des dossiers activé, `noindex`)
+
+- **Une maquette = un dossier** : `~/maquettes/messagerie-cible/` → visible à
+  `/messagerie-cible/`. Fichiers statiques uniquement (HTML, CSS, JS, images) — rien ne
+  s'exécute côté serveur.
+- **Déposer** (la clé du poste fixe suffit, périmètre inchangé — `~/maquettes/` s'ajoute à
+  ce que le poste fixe peut toucher) :
+
+```bash
+scp -r ma-maquette/ deploy@167.233.210.57:~/maquettes/ma-maquette/
+```
+
+- **Origine volontairement séparée** de la prod (`new.pointzero2050.com`) et de la préprod :
+  le JavaScript d'une maquette ne partage jamais leurs cookies. Ne JAMAIS servir une
+  maquette depuis ces domaines-là.
+- Le service est en lecture seule côté Caddy (montage `:ro`) ; la configuration
+  (`~/deploy/compose.yml` + `~/deploy/caddy/Caddyfile`, sauvegardes `*.avant-maquettes-*`)
+  reste du ressort de l'instance portable.
