@@ -165,8 +165,10 @@ CHAÎNE MESSAGERIE / OBJETS (la plus longue — commande le palier 3)
           déjà réutilisables tels quels ; colonne « intention du fil » à poser AVANT le
           composeur ; ActivityItem hors périmètre B3)
       ──▶ arbitrages Boris §13 (FAITS, 12 août — les 5 recommandations retenues telles quelles)
-      ──▶ B3 OUVERT : composeur + F22/F23 (portable, Fable) ──▶ B4 vues + F24 (portable, Opus)
-      ──▶ B5 migration objection ──▶ [PALIER 3]
+      ──▶ B3 FAIT (12 août, prod ec29987) : intention du fil + Proposition + Action +
+          transformation de message + cartes, 34 contrôles verts — voir la spec §11
+      ──▶ B4 OUVERT : vues Actions/Décisions + protocole de consentement + versions + F24
+          (portable, Opus) ──▶ B5 migration objection ──▶ [PALIER 3]
 
 CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)
   contrat de coque (fait) ──▶ gabarit teasing (desktop) ──▶ portage coque Rails
