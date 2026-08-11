@@ -11,13 +11,19 @@
 Pour chaque famille, les champs **nom, fonction civilisationnelle, capture à surveiller** et
 **exemples de métiers/œuvres** viennent directement du tableau §3 du document source — rien n'y
 est changé. Les champs **phrase « cette fonction cherche à… »**, **besoin civilisationnel
-servi**, **dommages et forme de capture**, **garde-fous et contre-pouvoirs** et **premier geste
-expérimental** sont rédigés ici pour la première fois : ancrés sur la fonction et la capture déjà
-validées, jamais sur une donnée qui n'existerait nulle part ailleurs. Les **Puissances mobilisées**
-s'appuient sur le référentiel canonique des 7 puissances
-([sept-puissances.md](../vision/sept-puissances.md)) ; la **polarité à intégrer** en est la
-polarité qui contrebalance la capture décrite (jamais un diagnostic — une invitation, comme
+servi**, **dommages et forme de capture**, **garde-fous et contre-pouvoirs**, **premier geste
+expérimental** et **première œuvre ou contribution imaginable** sont rédigés ici pour la première
+fois : ancrés sur la fonction et la capture déjà validées, jamais sur une donnée qui n'existerait
+nulle part ailleurs. Les **Puissances mobilisées** s'appuient sur le référentiel canonique des 7
+puissances ([sept-puissances.md](../vision/sept-puissances.md)) ; la **polarité à intégrer** en
+est la polarité qui contrebalance la capture décrite (jamais un diagnostic — une invitation, comme
 l'exige §3.2 du document source).
+
+**Premier geste vs. première œuvre** (ajout 2026-08-11, lot R2) : le document source distingue au
+§4.3 le premier geste du rite de clôture (une action à l'échelle d'une semaine) de la « première
+œuvre ou contribution imaginable » affichée sur la Carte du Seuil (un objet ou une contribution
+qu'on peut se représenter, pas seulement un geste immédiat). Les deux champs sont donc distincts
+ci-dessous, ancrés l'un et l'autre sur les métiers et œuvres déjà validés de chaque famille.
 
 **Emblèmes** : la migration proposée en §7 du document source (`Ressources Point Zero/Rôles
 Oméga/`) reste **non validée ici** — c'est un chantier DA/Codex, pas éditorial. Chaque carte cite
@@ -47,6 +53,8 @@ par joueur, pas par famille — absent de ce document par construction.
   designers d'accessibilité.
 - **Premier geste expérimental** : cette semaine, transmettre une chose que tu sais faire à
   quelqu'un qui ne te l'a pas demandé, sans lui dire comment s'en servir.
+- **Première œuvre ou contribution imaginable** : un mini-tutoriel, écrit ou filmé en trois
+  minutes, sur une chose que tu sais faire.
 - **Emblème candidat** : `Capaciteurs` (asset existant, réutilisable après validation DA).
 
 ## 2. Communoculteurs
@@ -67,6 +75,8 @@ par joueur, pas par famille — absent de ce document par construction.
   coopératifs, comptables d'impact.
 - **Premier geste expérimental** : repérer une ressource commune près de toi (un lieu, un outil,
   un temps) et vérifier qui en décide vraiment aujourd'hui.
+- **Première œuvre ou contribution imaginable** : un inventaire partagé de ce qu'une ressource
+  commune contient réellement et de qui en décide.
 - **Emblème candidat** : `Communologues` (asset existant, à rapprocher — vérifier le sens du
   symbole avant adoption).
 
@@ -90,6 +100,8 @@ par joueur, pas par famille — absent de ce document par construction.
   archivistes, alchimistes des savoirs.
 - **Premier geste expérimental** : reprendre une conviction que tu tiens pour acquise et chercher,
   une seule fois, ce qui la contredirait.
+- **Première œuvre ou contribution imaginable** : une carte, même incomplète, de ce qu'on sait
+  vraiment sur un sujet — avec ses trous marqués comme tels.
 - **Emblème candidat** : `Connaissanceurs` (asset existant, réutilisable).
 
 ## 4. Contecréateurs
@@ -112,6 +124,8 @@ par joueur, pas par famille — absent de ce document par construction.
   traducteurs culturels.
 - **Premier geste expérimental** : raconter à une personne une transformation que tu as traversée,
   en gardant explicitement la part que tu ne comprends pas encore.
+- **Première œuvre ou contribution imaginable** : un court récit écrit d'une transformation
+  traversée, pensé pour quelqu'un qui ne l'a pas vécue.
 - **Emblème candidat** : `Contecreateurs` (asset existant, réutilisable).
 
 ## 5. Conscientiseurs
@@ -134,6 +148,8 @@ par joueur, pas par famille — absent de ce document par construction.
   spécialistes du trauma collectif.
 - **Premier geste expérimental** : accompagner quelqu'un dans une décision difficile sans lui
   souffler la réponse.
+- **Première œuvre ou contribution imaginable** : un temps d'écoute structuré, proposé une fois,
+  sans y glisser de conseil.
 - **Emblème candidat** : `Conscientiseurs` (asset existant, réutilisable avec garde-fous
   éditoriaux — cf. document source §7).
 
@@ -158,6 +174,8 @@ par joueur, pas par famille — absent de ce document par construction.
   facilitateurs de constellations.
 - **Premier geste expérimental** : passer un moment sans parler dans un lieu vivant (jardin,
   rivière, forêt) et noter ce qui te vient, sans l'interpréter tout de suite.
+- **Première œuvre ou contribution imaginable** : un carnet d'observation d'un lieu vivant, tenu
+  sans intention de l'interpréter tout de suite.
 - **Emblème candidat** : `Ethisentiens` (asset existant, symbole potentiellement réutilisable —
   nom et fonction à reprendre, cf. document source §7).
 
@@ -181,6 +199,8 @@ par joueur, pas par famille — absent de ce document par construction.
   institutionnels, gardiens des contre-pouvoirs.
 - **Premier geste expérimental** : écrire, pour un projet que tu portes, la règle de sa propre
   fin — quand et comment il cesse de dépendre de toi.
+- **Première œuvre ou contribution imaginable** : la charte d'un projet, avec sa propre règle de
+  fin déjà écrite.
 - **Emblème candidat** : `Néoleaders` (asset existant, symbole à réinterpréter hors culte du
   leader — cf. document source §7).
 
@@ -205,6 +225,8 @@ par joueur, pas par famille — absent de ce document par construction.
   low-techistes, régénérateurs de milieux.
 - **Premier geste expérimental** : réparer ou entretenir une chose que tu utilises sans y penser,
   et remarquer le temps que ça prend réellement.
+- **Première œuvre ou contribution imaginable** : un objet réparé plutôt que remplacé, avec le
+  temps de sa maintenance noté quelque part.
 - **Emblème candidat** : aucun asset existant — nouvel emblème à créer (cf. document source §7).
 
 ## 9. Sentinelles
@@ -229,6 +251,8 @@ par joueur, pas par famille — absent de ce document par construction.
   la résilience et de la prévention des abus.
 - **Premier geste expérimental** : nommer à voix haute, une fois, ce que tu protèges et pourquoi —
   à la personne que ça concerne, pas seulement à toi-même.
+- **Première œuvre ou contribution imaginable** : une note écrite de ce qui est protégé et
+  pourquoi, partagée à qui ça concerne.
 - **Emblème candidat** : `Sentinelles` (asset existant, réutilisable après déplacement sémantique
   vers l'intégrité et la résilience — cf. document source §7).
 
@@ -252,6 +276,8 @@ par joueur, pas par famille — absent de ce document par construction.
   mainteneurs, pilotes d'opérations.
 - **Premier geste expérimental** : repérer une procédure que tu suis sans plus savoir pourquoi, et
   demander à qui elle sert encore.
+- **Première œuvre ou contribution imaginable** : une procédure existante réexaminée une fois,
+  avec la question de qui elle sert encore.
 - **Emblème candidat** : `Structurateurs` (asset existant, réutilisable — renommage éditorial en
   « Structuracteurs » à confirmer, cf. document source §7).
 
@@ -274,6 +300,8 @@ par joueur, pas par famille — absent de ce document par construction.
   de Pacte-Source, designers de rétroactions.
 - **Premier geste expérimental** : dessiner, pour un système que tu observes, la boucle qui le
   fait revenir toujours au même point.
+- **Première œuvre ou contribution imaginable** : le schéma d'une boucle qui revient toujours au
+  même point, pour un système observé.
 - **Emblème candidat** : `Systemiciens` (asset existant, réutilisable ; métiers des cinq Cadres à
   compléter, cf. document source §7).
 
@@ -297,6 +325,8 @@ par joueur, pas par famille — absent de ce document par construction.
   interculturels.
 - **Premier geste expérimental** : mettre en contact deux personnes ou groupes qui ne se parlent
   pas, sans essayer de trancher leur différend.
+- **Première œuvre ou contribution imaginable** : une présentation écrite entre deux personnes ou
+  groupes qui ne se parlent pas.
 - **Emblème candidat** : `Tisserands` (asset existant, réutilisable si le symbole exprime bien
   fédération et transformation du conflit — cf. document source §7).
 
