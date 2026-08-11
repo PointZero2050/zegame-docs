@@ -160,7 +160,11 @@ elles ne se rejoignent qu'aux nœuds marqués.
 
 ```
 CHAÎNE MESSAGERIE / OBJETS (la plus longue — commande le palier 3)
-  variante R11 (FAITE) ──▶ arbitrage intention par fil (FAIT) ──▶ spec P/D/A (Codex+Boris)
+  variante R11 (FAITE) ──▶ arbitrage intention par fil (FAIT) ──▶ spec P/D/A (FAITE, Codex)
+      ──▶ audit Claude (FAIT — voir audit-proposition-decision-action.md : droits/carte/mandat
+          déjà réutilisables tels quels ; colonne « intention du fil » à poser AVANT le
+          composeur ; ActivityItem hors périmètre B3 ; gabarit `echange`/`groupe` à trancher)
+      ──▶ arbitrages Boris §13 + gabarit (EN ATTENTE)
       ──▶ B3 composeur + F22/F23 (portable, Fable) ──▶ B4 vues + F24 (portable, Opus)
       ──▶ B5 migration objection ──▶ [PALIER 3]
 
