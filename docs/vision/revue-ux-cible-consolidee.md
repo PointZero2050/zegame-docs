@@ -212,7 +212,7 @@ traversée Festival, pas par les trente et un.
 | R4 | Une source d'attention, trois projections | À faire ; le badge numérique de la topbar reste à retirer | Codex, puis portable (`ActivityItem`) |
 | R5 | Vocabulaire de l'Ω | **Amendée : l'Ω reste visible en permanence, discret, nommé « compte » — « score » banni** | Codex (NOTES annuaire) |
 | R6a | Échanges visibles sur l'accueil du Jeu **réel** | **Décidée, actionnable tout de suite** | Portable |
-| R6b | Configurations de barre mobile à tester | **Trois variantes produites le 2026-08-11 ; arbitrage Boris en attente** | Codex |
+| R6b | Configurations de barre mobile à tester | **Arbitrée le 2026-08-11 : option C, « Échanges au centre »** | Codex |
 | R8 | Lignes F19+ pour les nouveaux objets | **Faite** le 2026-08-11 : F19 (Codex), F20-F24 + F25 (portable) — voir [impacts-fonctionnels.md](impacts-fonctionnels.md) | Portable + Codex |
 | R9 | Passe DA + voix | Confirmée (cible réelle) ; après gel des libellés | Poste fixe |
 | R10 | Matrice droits × états + accessibilité | À faire, modules Festival d'abord | Codex + relecture portable |
@@ -259,9 +259,10 @@ concurrentes.
 
 ### Q4. Cinquième porte mobile : Échanges ou Ressources ?
 
-**→ Non tranché : Boris veut tester plusieurs configurations de menu.** Mais une décision
-ferme accompagne l'attente : **dans tous les cas, les Échanges gagnent en visibilité sur la
-page d'accueil elle-même.**
+**→ Arbitrage Boris du 2026-08-11 : option C, « Échanges au centre ».** La barre mobile
+cible devient : **Aujourd'hui · Chemin · Échanges · Agir · Moi**. L'action centrale rend
+la messagerie accessible en un geste tout en conservant les quatre portes structurantes ;
+les Cercles restent accessibles depuis Mes liens et depuis les contextes d'Échanges.
 
 Cette seconde partie est **immédiatement actionnable, et vaut aussi pour l'application
 réelle** : l'accueil du Jeu en production ne mentionne aujourd'hui les Échanges nulle part
@@ -284,8 +285,8 @@ réelle** : l'accueil du Jeu en production ne mentionne aujourd'hui les Échange
   d'un accès contextuel aux Cercles.
 
 Les trois variantes ont été contrôlées à 390 × 844 sans débordement horizontal. La
-configuration `echanges` est la recommandation initiale de Codex : elle préserve la
-grammaire de la coque tout en donnant un accès en un geste à l'usage quotidien principal.
+configuration `echanges`, désormais retenue, devient la valeur par défaut de la maquette.
+Les variantes `portes` et `quotidien` sont conservées comme témoins de conception.
 
 ### Q5. L'Ω doit-il rester visible en permanence ?
 

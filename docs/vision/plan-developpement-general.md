@@ -73,7 +73,7 @@ Claude ; ses tâches n'en portent pas.
 |---|---|---|
 | Portable | Rotation Stripe + test de paiement bout-en-bout ; appui à Boris pour publier/cocher phare/composer la journée ; **R6a** (les Échanges nommés sur l'accueil du Jeu) ; import WhatsApp si l'export arrive | Sonnet 5 (Fable 5 pour l'import WhatsApp) |
 | Desktop | Monde 0 éditorial + finalisation Sas v2 ; **premier module dev : les pages de teasing** (gabarit « ce que c'est, ce qu'on y fera, ce qui l'ouvre » — vues pures, zéro droit, la brique de base du dévoilement) | Sonnet 5 |
-| Codex | **R11 faite et arbitrée** ; **trois configurations de barre mobile R6b produites** ; **traversée Festival R2 produite** — arbitrages Boris R6b/R2 en attente | — |
+| Codex | **R11 faite et arbitrée** ; **R6b arbitrée : option C, « Échanges au centre »** ; **traversée Festival R2 produite** — revue Boris R2 en attente | — |
 | Boris | Arbitrages Festival vague 0 ; catégories de périmètre §8 | — |
 
 ### Sprint 2 · 26 août - 8 sept — « Le jour J est prêt »
