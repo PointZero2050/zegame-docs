@@ -441,8 +441,10 @@ en trois temps.
 précisable (ce qu'elle protège / le risque / la condition de levée) ; les **cartes** et leur
 contrat sont construits (S1-B2) ; les **sondages** existent (S1-A8) et préfigurent le vote.
 
-⚠️ **Préalable bloquant** : l'arbitrage R11 (intention **par fil** ou par message) — il
-détermine où s'accroche une Proposition. Cette ligne ne passe pas en implémentation avant.
+✅ **Préalable levé le 2026-08-11** : R11 retient l'intention au niveau du fil ou du
+sous-fil, affichée par un bouton compact à côté du titre. Une Proposition s'accroche donc
+au fil qui la porte ; un message ordinaire ne porte pas d'intention autonome. La
+spécification Proposition/Décision/Action peut commencer.
 
 | Aspect | Impact |
 |---|---|

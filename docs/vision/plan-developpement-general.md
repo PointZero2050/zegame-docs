@@ -73,7 +73,7 @@ Claude ; ses tâches n'en portent pas.
 |---|---|---|
 | Portable | Rotation Stripe + test de paiement bout-en-bout ; appui à Boris pour publier/cocher phare/composer la journée ; **R6a** (les Échanges nommés sur l'accueil du Jeu) ; import WhatsApp si l'export arrive | Sonnet 5 (Fable 5 pour l'import WhatsApp) |
 | Desktop | Monde 0 éditorial + finalisation Sas v2 ; **premier module dev : les pages de teasing** (gabarit « ce que c'est, ce qu'on y fera, ce qui l'ouvre » — vues pures, zéro droit, la brique de base du dévoilement) | Sonnet 5 |
-| Codex | Variante **R11** (intention par fil) ; 2-3 **configurations de barre mobile** (R6b) ; traversée Festival (R2) — le tout pour les arbitrages différés de Boris | — |
+| Codex | Variante **R11** (faite et arbitrée : intention par fil, lien compact) ; 2-3 **configurations de barre mobile** (R6b) ; traversée Festival (R2) | — |
 | Boris | Arbitrages Festival vague 0 ; catégories de périmètre §8 | — |
 
 ### Sprint 2 · 26 août - 8 sept — « Le jour J est prêt »
@@ -90,7 +90,7 @@ Claude ; ses tâches n'en portent pas.
 |---|---|---|
 | Portable | Stabilisation, bancs complets, répétition générale, checklist feu vert, astreinte | Sonnet 5 |
 | Desktop | Recette utilisateur complète en préprod (peau de joueur), corrections éditoriales dernière minute | Sonnet 5 (Haiku 4.5 pour les micro-correctifs) |
-| Codex | Rien sur le chemin critique — début de la **spec Proposition/Décision/Action** avec Boris (post-arbitrage R11) | — |
+| Codex | Rien sur le chemin critique — **spec Proposition/Décision/Action** avec Boris, désormais déverrouillée et ouvrable avant cette borne | — |
 
 **→ 1er octobre : PALIER 1.**
 
@@ -160,7 +160,7 @@ elles ne se rejoignent qu'aux nœuds marqués.
 
 ```
 CHAÎNE MESSAGERIE / OBJETS (la plus longue — commande le palier 3)
-  variante R11 (Codex) ──▶ arbitrage intention (BORIS) ──▶ spec P/D/A (Codex+Boris)
+  variante R11 (FAITE) ──▶ arbitrage intention par fil (FAIT) ──▶ spec P/D/A (Codex+Boris)
       ──▶ B3 composeur + F22/F23 (portable, Fable) ──▶ B4 vues + F24 (portable, Opus)
       ──▶ B5 migration objection ──▶ [PALIER 3]
 
@@ -187,8 +187,8 @@ Contraintes calendaires irréductibles (les seules) :
 
 1. **Le gel Festival (15 sept - 1er oct)** : aucun chantier post-Festival ne touche `main`
    pendant cette fenêtre ; préprod reste ouverte — les chaînes continuent d'y avancer.
-2. **Les arbitrages de Boris** sont les seuls nœuds non parallélisables : R11 et la barre
-   mobile (R6b) d'abord, les préalables F25 ensuite (reconnaissance, économie) s'il veut
+2. **Les arbitrages de Boris** sont les seuls nœuds non parallélisables : la barre
+   mobile (R6b) d'abord — R11 est levé —, les préalables F25 ensuite (reconnaissance, économie) s'il veut
    déverrouiller 2027 tôt.
 
 ## 5. Méthode (inchangée) et charge

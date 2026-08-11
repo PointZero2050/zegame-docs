@@ -210,7 +210,7 @@ traversée Festival, pas par les trente et un.
 | R8 | Lignes F19+ pour les nouveaux objets | **Faite** le 2026-08-11 : F19 (Codex), F20-F24 + F25 (portable) — voir [impacts-fonctionnels.md](impacts-fonctionnels.md) | Portable + Codex |
 | R9 | Passe DA + voix | Confirmée (cible réelle) ; après gel des libellés | Poste fixe |
 | R10 | Matrice droits × états + accessibilité | À faire, modules Festival d'abord | Codex + relecture portable |
-| R11 | Variante « intention par fil » à comparer | **Produite le 2026-08-11 ; arbitrage Boris en attente** | Codex |
+| R11 | Variante « intention par fil » à comparer | **Arbitrée le 2026-08-11 : intention par fil, lien compact** | Codex |
 
 Deux convergences à acter sans attendre (§2.9) : l'objection B1 migrera vers l'objet
 Décision ; les cartes B2 sont LA grammaire des cartes de la maquette.
@@ -231,24 +231,16 @@ traversé les trois temps. La présente revue est le premier temps.
 
 ### Q2. Intention de conversation : par fil ou par message ?
 
-**→ Non tranché : Boris veut d'abord voir une variante « par fil »** pour la comparer à
-la proposition « par message » de la maquette.
+**→ Arbitrage Boris du 2026-08-11 : intention par fil ou sous-fil.** La forme retenue
+est celle de la variante R11 compacte : un bouton portant l'intention (`Explorer`,
+`Décider`, etc.) apparaît à côté du titre sans rendre ce dernier cliquable. Il ouvre les
+informations du fil et permet de changer son intention.
 
-**→ R11 (nouveau, pour Codex) : produire la variante « intention par fil »** dans
-`messagerie-point-zero-cible` — l'intention déclarée au niveau de l'espace ou du sous-fil
-(conforme à la cible §6), affichée en en-tête et adaptant les cartes proposées, avec le
-composeur rendu à sa sobriété. Les deux variantes doivent être comparables côte à côte
-avant l'arbitrage. Cette décision conditionne la spec Proposition/Décision/Action.
-
-**Variante disponible pour comparaison :** la version actuelle « par message » reste
-accessible à la racine de `messagerie-point-zero-cible/`; ajouter `?variant=fil` ouvre
-la variante R11. Dans cette dernière, l'intention est affichée comme un lien compact
-à côté du titre ; il ouvre les informations du fil. Les formes proposées par le bouton
-`+` s'y adaptent et le composeur ne porte plus
-d'intention propre. Un changement de mouvement propose d'abord d'ouvrir un sous-fil ;
-si le fil principal change réellement d'intention, une trace est ajoutée à son
-historique. **L'intention ne modifie jamais les lecteurs, les droits ni la
-confidentialité.**
+Les formes proposées par le bouton `+` s'adaptent à cette intention et le composeur ne
+porte plus d'intention propre. Un changement de mouvement propose d'abord d'ouvrir un
+sous-fil ; si le fil principal change réellement d'intention, une trace est ajoutée à
+son historique. **L'intention ne modifie jamais les lecteurs, les droits ni la
+confidentialité.** Cet arbitrage déverrouille la spec Proposition/Décision/Action.
 
 ### Q3. Porte des besoins : la Place de marché absorbe-t-elle les Missions du Commun ?
 
