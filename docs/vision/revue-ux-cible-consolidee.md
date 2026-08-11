@@ -242,8 +242,9 @@ avant l'arbitrage. Cette décision conditionne la spec Proposition/Décision/Act
 
 **Variante disponible pour comparaison :** la version actuelle « par message » reste
 accessible à la racine de `messagerie-point-zero-cible/`; ajouter `?variant=fil` ouvre
-la variante R11. Dans cette dernière, l'intention est affichée dans l'en-tête, les
-formes proposées par le bouton `+` s'y adaptent et le composeur ne porte plus
+la variante R11. Dans cette dernière, l'intention est affichée comme un lien compact
+à côté du titre ; il ouvre les informations du fil. Les formes proposées par le bouton
+`+` s'y adaptent et le composeur ne porte plus
 d'intention propre. Un changement de mouvement propose d'abord d'ouvrir un sous-fil ;
 si le fil principal change réellement d'intention, une trace est ajoutée à son
 historique. **L'intention ne modifie jamais les lecteurs, les droits ni la
