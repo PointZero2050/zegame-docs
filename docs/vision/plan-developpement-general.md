@@ -17,6 +17,15 @@ module du Monde N+1 ne mobilise personne tant qu'un module du Monde N attendu au
 palier n'est pas tenu — à l'exception des pages de teasing, qui sont précisément la manière
 canonique d'exister avant d'ouvrir.
 
+**Les dates sont des bornes, pas un rythme** *(précision Boris, 2026-08-11)*. En pratique,
+le travail avance autant que possible dès août : il est très possible d'être fortement en
+avance sur le calendrier annoncé. Ce qui fait foi dans ce plan, c'est **l'ordre des
+sprints** (un sprint = un lot de dépendances satisfaites, pas quinze jours) et **le graphe
+des dépendances fonctionnelles** (§4). Un sprint s'ouvre dès que le précédent est tenu et
+que ses préalables sont livrés — si c'est trois jours après, tant mieux. Les dates du §3
+sont donc des bornes AU PLUS TARD, garanties par les paliers ; seules deux contraintes
+restent calendaires par nature : le Festival du 1er octobre et son gel du 15 septembre.
+
 ---
 
 ## 1. Amendement à la répartition — l'instance desktop développe des modules
@@ -142,18 +151,45 @@ Claude ; ses tâches n'en portent pas.
 Recette croisée complète (chaque agent teste la zone d'un autre), correctifs, passation
 d'année. **→ 31 décembre : PALIER 4 — la coque fonctionnelle.**
 
-## 4. Dépendances dures (à surveiller, dans l'ordre)
+## 4. Le graphe des dépendances fonctionnelles — la colonne vertébrale du plan
 
-1. **Arbitrage R11** (Boris, sprint 1-2) → spec P/D/A (Codex, sprint 3-4) → B3/B4
-   (portable, sprints 6-7). Tout retard ici décale le palier 3.
-2. **Portage de la coque** (sprint 4) → tous les modules du desktop s'y branchent à partir
-   du sprint 5. En attendant, ils se développent contre le gabarit de teasing et le
-   contrat de coque — c'est prévu pour.
-3. **Modèle avant UI** : chaque module desktop dont la donnée n'existe pas reçoit son
-   modèle + contrat d'accès du portable **en début de sprint**, pas en fin (F20 → agenda,
-   scope annuaire → annuaire, figure → héros).
-4. **Le gel Festival (15 sept - 1er oct)** : aucun chantier post-Festival ne touche
-   `main` pendant cette fenêtre ; préprod reste ouverte.
+Les sprints du §3 sont la LINÉARISATION de ce graphe, pas l'inverse : si les crédits et le
+rythme le permettent, tout ce dont les préalables sont satisfaits peut s'ouvrir sans
+attendre sa quinzaine. Trois chaînes indépendantes avancent en parallèle (une par agent) ;
+elles ne se rejoignent qu'aux nœuds marqués.
+
+```
+CHAÎNE MESSAGERIE / OBJETS (la plus longue — commande le palier 3)
+  variante R11 (Codex) ──▶ arbitrage intention (BORIS) ──▶ spec P/D/A (Codex+Boris)
+      ──▶ B3 composeur + F22/F23 (portable, Fable) ──▶ B4 vues + F24 (portable, Opus)
+      ──▶ B5 migration objection ──▶ [PALIER 3]
+
+CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)
+  contrat de coque (fait) ──▶ gabarit teasing (desktop) ──▶ portage coque Rails
+      (portable, Fable) ──▶ ┬─ pages de teasing par destination (desktop)
+                            ├─ guides LLM : UI desktop ──▶ backend portable (Opus)
+                            ├─ ActivityItem F21 (portable, Opus) ──▶ 3 projections
+                            └─ branchement de CHAQUE module desktop ──▶ [PALIER 4]
+
+CHAÎNE MODÈLE → UI (le contrat portable/desktop, un couple par module)
+  F20 Meeting (portable) ──▶ UI agenda (desktop)
+  scope de recherche annuaire (portable) ──▶ UI annuaire (desktop)
+  modèle figure/choix de héros (portable) ──▶ Héros & mentors (desktop)
+  corpus guides (Codex) ──▶ backend guides (portable) ──▶ pastille (desktop)
+
+INDÉPENDANTS (ouvrable à tout moment, aucun préalable)
+  R6a Échanges sur l'accueil · rotation Stripe · import WhatsApp (attend l'export)
+  · Ressourcerie vivante v1 (modèle existant) · Aide & recours v1 (contenu)
+  · préférences notifications + digest · fiches héros éditoriales (Codex)
+```
+
+Contraintes calendaires irréductibles (les seules) :
+
+1. **Le gel Festival (15 sept - 1er oct)** : aucun chantier post-Festival ne touche `main`
+   pendant cette fenêtre ; préprod reste ouverte — les chaînes continuent d'y avancer.
+2. **Les arbitrages de Boris** sont les seuls nœuds non parallélisables : R11 et la barre
+   mobile (R6b) d'abord, les préalables F25 ensuite (reconnaissance, économie) s'il veut
+   déverrouiller 2027 tôt.
 
 ## 5. Méthode (inchangée) et charge
 
