@@ -207,7 +207,7 @@ traversée Festival, pas par les trente et un.
 | R5 | Vocabulaire de l'Ω | **Amendée : l'Ω reste visible en permanence, discret, nommé « compte » — « score » banni** | Codex (NOTES annuaire) |
 | R6a | Échanges visibles sur l'accueil du Jeu **réel** | **Décidée, actionnable tout de suite** | Portable |
 | R6b | Configurations de barre mobile à tester | En attente des tests de Boris | Codex |
-| R8 | Lignes F19+ pour les nouveaux objets | À faire, préalable à tout portage | Portable + Codex |
+| R8 | Lignes F19+ pour les nouveaux objets | **Faite** le 2026-08-11 : F19 (Codex), F20-F24 + F25 (portable) — voir [impacts-fonctionnels.md](impacts-fonctionnels.md) | Portable + Codex |
 | R9 | Passe DA + voix | Confirmée (cible réelle) ; après gel des libellés | Poste fixe |
 | R10 | Matrice droits × états + accessibilité | À faire, modules Festival d'abord | Codex + relecture portable |
 | R11 | Variante « intention par fil » à comparer | **Nouvelle** (demande de Boris) | Codex |
