@@ -315,7 +315,10 @@ geste et version de taxonomie.
 ## 9. Lots recommandés
 
 1. **R0 — Taxonomie éditoriale** : valider noms, fonctions, captures, garde-fous et migration des
-   49 illustrations existantes.
+   49 illustrations existantes. **Partie textuelle faite** (2026-08-11, poste fixe) : les 12
+   cartes complètes sont dans
+   [roles-appel-cartes-canoniques.md](roles-appel-cartes-canoniques.md). La validation
+   sémantique des emblèmes et animaux-métiers reste ouverte (DA/Codex).
 2. **R1 — Conseil Oméga** : prototype du rite de clôture avec trois Rôles d'appel, sans modifier les
    validations ni les données historiques.
 3. **R2 — Carte du Seuil et Profil** : afficher le rôle choisi ou ouvert, son explication et son
