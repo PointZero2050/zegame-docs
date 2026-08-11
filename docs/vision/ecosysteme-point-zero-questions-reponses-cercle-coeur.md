@@ -536,6 +536,13 @@ sous forme de lemniscates. Elles décrivent une lecture éditoriale de l'œuvre 
 que cette figure peut inspirer ; elles ne prétendent ni diagnostiquer une personne réelle, ni
 noter le joueur.
 
+La carte du catalogue reste une surface de comparaison rapide. Elle ouvre une page dédiée qui
+articule une courte biographie inspirante, les faits essentiels, leur lecture Point Zéro, les
+trois Puissances-phares, le don, l'Ombre et le cadre nécessaire. La page se termine par des
+parcours associés afin de transformer la résonance en expérience plutôt qu'en admiration
+passive. Toute biographie de personne réelle doit être sourcée et validée éditorialement avant
+publication.
+
 ---
 
 # IX. L'Oméga : reconnaissance et souveraineté
