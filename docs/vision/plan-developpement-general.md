@@ -167,8 +167,11 @@ CHAÎNE MESSAGERIE / OBJETS (la plus longue — commande le palier 3)
       ──▶ arbitrages Boris §13 (FAITS, 12 août — les 5 recommandations retenues telles quelles)
       ──▶ B3 FAIT (12 août, prod ec29987) : intention du fil + Proposition + Action +
           transformation de message + cartes, 34 contrôles verts — voir la spec §11
-      ──▶ B4 OUVERT : vues Actions/Décisions + protocole de consentement + versions + F24
-          (portable, Opus) ──▶ B5 migration objection ──▶ [PALIER 3]
+      ──▶ B4 FAIT (12 août, prod 3018869) : Décision par consentement (gabarit cercle,
+          électorat figé, objection à trois champs, consignation validée par un autre
+          membre), vues Mes actions + Décisions du Cercle, versions de Proposition,
+          3 engagements nouveaux — 36 contrôles verts
+      ──▶ B5 OUVERT : migration de l'objection sémantique vers la Décision ──▶ [PALIER 3]
 
 CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)
   contrat de coque (fait) ──▶ gabarit teasing (desktop) ──▶ portage coque Rails
