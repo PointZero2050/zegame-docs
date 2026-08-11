@@ -240,10 +240,14 @@ navigation mais des prototypes eux-mêmes.
 
 | # | Constat | Où |
 |---|---|---|
-| D1 | **Typographie trop petite.** Modules composés en 13-14 px, libellés de menus latéraux en 9-10 px. Deux lectures de Boris ont buté dessus. La coque applique un pansement (zoom 1,1 + plancher à 12,5 px) ; le correctif propre est une **base 16 px et une échelle typographique minimale de 12-13 px** dans les modules. **À verser au chantier R9.** | tous les modules |
-| D2 | **Liens morts « Mon mentor IA » et « Mon Cercle ».** Ce sont des `[data-link]` qui n'émettent qu'un toast « Jonction future ». La coque EST cette jonction : elle les rebranche à la volée, mais ils devraient devenir de vrais liens inter-modules. | `marelle-freeride-cible` |
-| D3 | **Routes annoncées inexistantes.** Le registre de la coque consolidée déclare `route:'journey'` pour la Marelle (les routes réelles sont `map`, `journeys`, `freeride`, `line`, `rites`, `home`) et `route:'circle'` pour l'Expérience vivante (qui n'a pas de route interne). Le module s'ouvrait sur sa vue par défaut au lieu de la vue visée. | registre de `application-cible-consolidee/app.js` |
-| D4 | **Module Aide illisible en vignette.** Chargé dans une petite modale, il bascule en mise en page mobile et son tiroir « Menu » recouvre le contenu. Corrigé côté coque par un affichage plein écran ; à connaître pour tout futur embarquement de module. | `aide-situations-sensibles-cible` |
+| D1 | **Corrigé sur le lot A le 11 août.** Accueil, Marelle, Profil, Cercle et Messagerie ont une base source de 16 px et aucune taille explicite sous 13 px ; la coque les affiche à zoom 1. Le plancher injecté subsiste temporairement pour les modules anciens, à reprendre dans R9. | lot A, puis R9 global |
+| D2 | **Corrigé le 11 août.** « Mon mentor IA » et « Mon Cercle » sont de vrais liens autonomes ; en mode embarqué, le protocole `pz:navigate` ouvre Graines & Résonances et Mes Cercles dans la coque. | `marelle-freeride-cible` |
+| D3 | **Corrigé le 11 août.** Le registre utilise `map` pour la Marelle et aucune route interne pour l'Expérience vivante. | registre de `application-cible-consolidee/app.js` |
+| D4 | **Corrigé dans la coque retenue.** Aide est chargée en plein écran ; cette règle reste un invariant pour ses futurs embarquements. | `application-cible-devoilement` |
+
+La même passe a corrigé un débordement mobile de la Messagerie : la liste des
+espaces et la conversation sont désormais deux vues maître-détail exclusives,
+au lieu de deux panneaux juxtaposés dont l'un restait translaté hors écran.
 
 ### 5.4 Reste ouvert
 
