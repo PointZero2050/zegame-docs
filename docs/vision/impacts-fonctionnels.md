@@ -385,6 +385,116 @@ La conversation du guide ne produit ni Graine, ni validation, ni Oméga. Si un �
 fait émerger un travail personnel, le guide propose d'ouvrir le mentor ou l'expérience
 pertinente et laisse le joueur décider du transfert de contexte.
 
+**Effacement sur les surfaces sensibles** (ajout Claude, 2026-08-11). La pastille est
+persistante, mais pas universelle : elle **disparaît** — et ne se contente pas de changer de
+ton — sur l'Aide et les situations sensibles, le signalement, la médiation, le blocage, la
+contestation d'une évaluation et tout écran de vulnérabilité. Motif : la maquette
+`aide-situations-sensibles-cible` pose que « l'humour du Jeu est absent des écrans de
+sécurité et de vulnérabilité », et la voix du Docteur Z.E.R.O. y serait blessante quel que
+soit le soin de sa formulation. Un guide qui se tait est préférable à un guide qui
+s'excuse. Corollaire déjà écrit dans la maquette, à tenir : l'Aide et les recours restent
+atteignables **sans** passer par le guide.
+
+### F20 — Rencontre (`Meeting`) : l'objet de rendez-vous généralisé
+
+**Origine front** : `agenda-vivant-cible` — journée unifiée, propositions de créneaux, cycle
+`proposée → disponibilités recueillies → confirmée → passée / annulée`.
+
+**État réel** : une V1 existe déjà, mais **restreinte à un seul contexte** —
+`PropositionDeRencontre` ne vit que sur les mises en relation de Cercle
+(`circle_membership`), avec les états `proposee / retenue / declinee / retiree`.
+
+| Aspect | Impact |
+|---|---|
+| Modèle | Généraliser vers un contexte **polymorphe** (espace, candidature, projet, mission, événement) plutôt que créer un second objet concurrent ; conserver la sobriété acquise : créneaux en toutes lettres, pas d'agenda synchronisé |
+| Droits | Le droit de proposer et de répondre suit le contexte porteur, jamais un rôle global — réutiliser `ContexteDeFil` plutôt qu'une nouvelle table d'autorisations |
+| États | Ajouter `disponibilités recueillies` entre `proposée` et `confirmée` (la V1 saute cette étape) ; l'annulation et les changements de participants restent historisés |
+| Front | Une carte structurée (grammaire `Carte`, F-B2) dans le fil + une vue agenda transversale ; la présence réelle reste distincte de l'inscription |
+| Backoffice | Aucun besoin nouveau : un rendez-vous n'est pas un événement de billetterie et ne doit pas encombrer la console Festival |
+| Piège | Ne jamais remplir automatiquement une plage libre ; une disponibilité n'est pas un engagement |
+
+### F21 — Source d'attention unique (`ActivityItem`)
+
+**Origine front** : `centre-activite-cible`, plus les trois inboxes concurrentes relevées en
+revue (accueil, Centre d'activité, accueil des Échanges).
+
+**État réel** : les **engagements** de l'accueil des Échanges (lot S1-A4) sont déjà une
+projection de cette source — mentions non lues, rencontres et contacts à répondre,
+candidatures à décider, invitations, revues échues — mais calculés à la volée, sans objet
+transversal.
+
+| Aspect | Impact |
+|---|---|
+| Modèle | Un `ActivityItem` (ou une projection équivalente) **référence** l'objet métier, ne le remplace pas et ne duplique pas son contenu |
+| États | `vu` doit rester distinct de `traité`, `refusé`, `expiré`, `annulé` — voir une notification ne vaut jamais traitement |
+| Droits | Le centre **réutilise** les autorisations du contexte source ; aucune ligne ne doit être lisible hors des droits de l'objet qu'elle pointe |
+| Front | Trois projections d'une seule source : accueil (sélection courte, nommée et non comptée), Centre (archive complète et auditable), Échanges (part conversationnelle) |
+| Notifications | Préférences portées par l'**appartenance** (`EspaceMembership`), pas par le gabarit ; digest et plages de repos |
+| Piège | Pas de défilement infini, pas de série, pas de relance artificielle ; différer ne modifie jamais une échéance collective |
+
+### F22 — Proposition, Décision et objection
+
+**Origine front** : `messagerie-point-zero-cible` — vues Décisions, composeur `+`, objection
+en trois temps.
+
+**État réel** : l'**objection est construite** (lot S1-B1) comme réaction sémantique
+précisable (ce qu'elle protège / le risque / la condition de levée) ; les **cartes** et leur
+contrat sont construits (S1-B2) ; les **sondages** existent (S1-A8) et préfigurent le vote.
+
+⚠️ **Préalable bloquant** : l'arbitrage R11 (intention **par fil** ou par message) — il
+détermine où s'accroche une Proposition. Cette ligne ne passe pas en implémentation avant.
+
+| Aspect | Impact |
+|---|---|
+| Modèle | `Proposition` portée par un fil, avec états `brouillon → exploration → décision → adoptée / retirée / à retravailler` ; la `Décision` conserve protocole, participants, objections, résultat et historique (critère cible §22.5) |
+| Migration | L'objection B1 **migre** vers la Proposition/Décision — elle ne coexiste pas en double registre |
+| Droits | Proposer, objecter et clore sont trois droits distincts ; aucun ne découle d'un rôle global |
+| Front | Réutiliser la grammaire `Carte` ; une objection reste un objet lié, jamais un emoji négatif |
+| Piège | Un message ne change jamais un statut (invariant V1) ; le protocole de décision est explicite avant le vote, pas déduit après |
+
+### F23 — Action / mission portée dans un espace
+
+**Origine front** : vue `Actions` de la messagerie-cible, `missions-commun-cible`,
+`projet-vivant-cible`.
+
+| Aspect | Impact |
+|---|---|
+| Modèle | `Action` avec porteur, échéance facultative, états `proposée → prise → en cours → achevée / abandonnée` ; distinguer le **besoin borné** (contribution ponctuelle) de la **mission du Commun** (œuvre collective) — la Place de marché est la porte unique (arbitrage Boris, R3) |
+| Droits | Se porter volontaire est un acte de la personne : **aucune affectation** par le système ni par un tiers |
+| Reconnaissance | Une action achevée n'attribue **aucun** Oméga automatiquement — elle alimente le dossier du rituel de reconnaissance (F-horizon) |
+| Front | Carte structurée + vue Actions par espace ; l'intention et le besoin s'affichent avant toute récompense estimée |
+| Piège | Une candidature ouvre un échange, elle n'attribue pas une place |
+
+### F24 — Mémoire d'espace (du Fil à la Mémoire)
+
+**Origine front** : vue `Mémoire` de la messagerie-cible, cible §9.
+
+| Aspect | Impact |
+|---|---|
+| Modèle | Élévation **explicite** d'un message ou d'un objet en trace conservée : qui propose, qui confirme, quel contexte d'origine |
+| Consentement | Une Graine ou une conversation privée ne change jamais de contexte sans consentement (critère §22.6) ; la trace conserve auteur, contexte, lecteurs et consentements (§15.2) |
+| Droits | Lire la Mémoire suit les droits de l'espace ; une élévation ne peut pas élargir l'audience d'origine sans acte explicite |
+| Front | Réutiliser `Carte` ; l'export d'espace (lot S1-A10) doit inclure la Mémoire |
+| Piège | Ne pas confondre archivage (l'espace se clôt) et élévation (une trace est jugée durable) |
+
+### F25 — Objets d'horizon : à spécifier avant toute ligne d'analyse complète
+
+Les maquettes introduisent d'autres objets dont la **spec métier n'existe pas encore**.
+Écrire leur ligne d'impact maintenant produirait une analyse fictive ; les nommer avec leur
+préalable bloquant est plus utile. Aucun ne passe en implémentation sans franchir ce
+préalable **et** recevoir sa propre ligne F.
+
+| Objet | Maquette | Préalable bloquant |
+|---|---|---|
+| Habilitation, mandat, métier PZ | `academie-facilitateurs`, `facilitateur-cockpit` | critères de qualification, garant, durée, veille (politique de formation) |
+| Domaine de souveraineté | `souverainetes-projets` | définition des niveaux qualitatifs et de leur constat |
+| Œuvre, version, filiation, clé de circulation | `studio-filiation` | droits d'auteur, assiette comptable, fiscalité |
+| Besoin, offre, devis, contrat | `place-marche` | **frontières juridiques** marketplace / prestation / don ; TVA ; responsabilités |
+| Consultation du Commun | `gouvernance-commun` | doctrine de pondération et gouvernance exacte des consultations |
+| Contribution reconnue, enveloppe de reconnaissance | `reconnaissance-omega` | spec du rituel (canon 31/07 §11-15) |
+| Espace sensible, médiation, recours | `aide-situations-sensibles`, `consentement-securite` | cadre de responsabilité et de récusation ; conservation |
+| Indicateur d'alchimisation | `alchimisation-cible` | confrontation du calcul (échelles clarifiées le 2026-08-11, cf. [sept-puissances.md](sept-puissances.md)) |
+
 ### Décisions UX transverses (Boris, 2026-07-13)
 
 - **Cercles progressifs** : l'entrée existe dès le Monde 0 comme teaser ; tout Cercle constitué au
