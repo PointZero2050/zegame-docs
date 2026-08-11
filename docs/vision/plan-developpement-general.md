@@ -1,151 +1,167 @@
-# Plan de développement général — sur la base de la revue UX-cible
+# Plan de développement général — v2, paliers par Monde jusqu'à décembre 2026
 
-<!-- [Claude] 2026-08-10, demande Boris. S'appuie sur : revue-ux-cible-consolidee.md,
-     plan-developpement-vers-festival.md (qui reste le plan DIRECTEUR jusqu'au 1er
-     octobre), application-festival-2026.md (décision opérationnelle), audit-s0-messagerie
-     et l'état réel de la production (S1 complet, B1-B2 livrés). -->
+<!-- [Claude] v1 le 2026-08-10 (horizons). v2 le 2026-08-11, demande Boris : distribution
+     de la charge entre les trois agents (l'instance desktop reçoit des modules de
+     développement), objectif « coque fonctionnelle » fin décembre 2026, premier palier au
+     Festival, priorité Monde 0 > Monde 1 > Monde 2, modèle Claude par sprint. -->
 
-**Règle de lecture.** Jusqu'au 1er octobre, le
-[plan Festival](plan-developpement-vers-festival.md) prévaut : rien ici ne doit retarder
-son chemin critique. Le présent plan organise tout le reste — l'itération des maquettes,
-la suite de la messagerie, la généralisation des modules, les systèmes lourds — en
-horizons successifs, avec pour chaque chantier son porteur et le modèle Claude adapté.
+**Objectif.** Une **coque fonctionnelle fin décembre 2026** : la navigation cible réelle
+(grammaire du dévoilement validée le 11 août) portée en Rails, chaque destination existant
+dans l'un des quatre états du contrat (`invisible / annoncée / lecture / ouverte`), les
+Mondes 0 et 1 pleinement jouables, le Monde 2 amorcé. Premier palier au **Festival du
+1er octobre** — le [plan Festival](plan-developpement-vers-festival.md) reste la loi de ses
+trois premiers sprints ; rien ne passe devant son chemin critique.
 
-## 0. Qui fait quoi — la répartition (rappel + extension)
+**Règle de priorité.** Le Monde 0 prime sur le Monde 1, qui prime sur le Monde 2, etc. Un
+module du Monde N+1 ne mobilise personne tant qu'un module du Monde N attendu au même
+palier n'est pas tenu — à l'exception des pages de teasing, qui sont précisément la manière
+canonique d'exister avant d'ouvrir.
 
-La répartition phase 2 (actée le 2026-08-04, amendée le 2026-08-10) reste la loi :
+---
 
-| Acteur | Territoire | Ne touche jamais |
+## 1. Amendement à la répartition — l'instance desktop développe des modules
+
+*(Décision Boris, 2026-08-11 — étend l'accord de phase 2 du 2026-08-04.)*
+
+L'instance Claude desktop (poste fixe) était sous-sollicitée : éditorial, site, Sas,
+relecture. Elle a pourtant fait ses preuves au-delà (import WordPress, catégories et
+`phare` sur le modèle Event, DA v4 — dix commits relus et promus sans reprise entre le 8 et
+le 10 août). Elle reçoit désormais **des modules applicatifs à développer**, dans un cadre
+qui préserve l'invariant « celui qui produit ne s'auto-valide pas » :
+
+| Règle | Détail |
+|---|---|
+| **Un module = un périmètre borné** | vues, contrôleurs, CSS/JS et contenus du module, dans son namespace (`app/views/<module>/`, `<module>_controller.rb`) — un seul agent par zone, comme toujours |
+| **Les fondations restent au portable** | modèles, migrations, règles de droits, routes sensibles, jobs, config serveur. Quand un module du desktop a besoin d'une donnée, le portable livre D'ABORD le modèle et son contrat d'accès (le patron `ContexteDeFil`/`Carte`) ; le module le consomme |
+| **Livraison sur `preprod`** | commits `[Claude]` du poste fixe, sa clé SSH, son périmètre serveur inchangé (jamais `~/deploy/`, jamais la prod) |
+| **Assemblage par le portable** | relecture, banc de vérification (l'app des bancs négatifs vaut pour tous), branchement dans la coque, promotion en production |
+| **Codex reste hors du code Rails** | maquettes, specs, corpus éditorial, revues — le processus en trois temps (revue Claude → corrections Boris → consolidation Codex) s'applique à chaque module avant son ouverture réelle |
+
+## 2. Les paliers
+
+| Palier | Date | Contenu | Critère de sortie |
+|---|---|---|---|
+| **P1 — Festival** | 1er octobre | Monde 0 + billetterie + jour J (périmètre du plan Festival) | un participant réel traverse billet → Sas → Monde 0 → ateliers → après-Festival sans assistance |
+| **P2 — Coque réelle, Monde 0 complet** | fin octobre | la navigation du dévoilement portée en Rails ; toutes les destinations en teasing ou mieux ; Monde 0 entièrement servi dedans ; guides LLM v1 | un joueur Monde 0 ne voit QUE son Monde, et chaque porte fermée explique ce qu'elle ouvrira |
+| **P3 — Monde 1 complet** | fin novembre | Cercles autofacilités au complet dans la coque, messagerie étape B (composeur +, Actions/Décisions/Mémoire), agenda, annuaire enrichi, profil unifié | un Cercle pilote fonctionne sans WhatsApp ni outil externe, décisions et mémoire comprises |
+| **P4 — Coque fonctionnelle, Monde 2 amorcé** | fin décembre | Freeride + ligne de jeu, héros & mentors v1, préférences d'attention, recherche globale ; tout le reste `annoncée`/`lecture` avec sa vraie page | les cinq portes sont réelles à tous les Mondes ; aucun bouton mort ; bancs verts sur l'ensemble |
+
+Ce qui n'est PAS dans ces paliers (donc pas en 2026, sauf décision contraire) : économie
+Ω transactionnelle, reconnaissance rituelle, gouvernance du Commun, place de marché
+juridiquement ouverte, académie/habilitations, organisations, monde-miroir, épreuve des
+runes. Ils existeront fin décembre **en pages d'annonce ou en lecture**, conformément au
+contrat de coque — c'est une existence honnête, pas une absence.
+
+## 3. Les sprints (deux semaines) — qui, quoi, quel modèle
+
+Les modèles suivent la doctrine : Sonnet 5 par défaut, **Opus 5 / Fable 5** pour
+l'architecture et les droits, Haiku 4.5 pour le mécanique. Codex n'est pas un modèle
+Claude ; ses tâches n'en portent pas.
+
+### Sprint 1 · 12-25 août — « La vente ouvre » *(palier P1)*
+
+| Acteur | Charge | Modèle |
 |---|---|---|
-| **Instance portable** (Claude, ce plan) | `pointzero-app` entier, serveur Hetzner, TOUS les déploiements et promotions en production, bancs de vérification | — |
-| **Instance poste fixe** (Claude) | `zegame-prototypes`, `zegame-docs`, et dans `pointzero-app` : `content/articles/`, `app/views/site/`, `public/sas/` ; préprod par sa clé SSH ; `~/maquettes/` | modèles, migrations, config serveur, billetterie, contrôleurs applicatifs, `~/deploy/`, production |
-| **Codex** | maquettes (`zegame-prototypes`), documents de vision, specs rédigées avec Boris | le code Rails |
-| **Boris** | arbitrages, tests utilisateurs, éditorial final, feu vert | — |
+| Portable | Rotation Stripe + test de paiement bout-en-bout ; appui à Boris pour publier/cocher phare/composer la journée ; **R6a** (les Échanges nommés sur l'accueil du Jeu) ; import WhatsApp si l'export arrive | Sonnet 5 (Fable 5 pour l'import WhatsApp) |
+| Desktop | Monde 0 éditorial + finalisation Sas v2 ; **premier module dev : les pages de teasing** (gabarit « ce que c'est, ce qu'on y fera, ce qui l'ouvre » — vues pures, zéro droit, la brique de base du dévoilement) | Sonnet 5 |
+| Codex | Variante **R11** (intention par fil) ; 2-3 **configurations de barre mobile** (R6b) ; traversée Festival (R2) — le tout pour les arbitrages différés de Boris | — |
+| Boris | Arbitrages Festival vague 0 ; catégories de périmètre §8 | — |
 
-Invariant : **celui qui produit ne s'auto-valide pas** — les livraisons du poste fixe et
-de Codex sont relues et promues par l'instance portable ; les revues de l'instance
-portable sont lisibles par tous dans `zegame-docs`.
+### Sprint 2 · 26 août - 8 sept — « Le jour J est prêt »
 
-Modèles Claude — doctrine constante : **Sonnet 5** par défaut (chantiers contenus, spec
-claire) ; **Opus 5 / Fable 5** pour les chantiers multi-fichiers, architecturaux ou
-touchant les droits ; **Haiku 4.5** pour les micro-tâches mécaniques.
+| Acteur | Charge | Modèle |
+|---|---|---|
+| Portable | Rejouer `repetition_50` sur la vraie journée ; QR `festival-lier` ; mode opératoire DNS répété à blanc ; correctifs de la répétition | Sonnet 5 (Opus 5 pour la bascule DNS) |
+| Desktop | Module **Aide & recours v1** (numéros d'urgence avant connexion, orientation, personnes ressources — contenu et vues ; le signalement/blocage EXISTE déjà côté portable, il le branche) | Sonnet 5 |
+| Codex | **R10** matrice droits × états des modules Festival ; consolidation post-arbitrages de Boris (3e temps) | — |
 
----
+### Sprint 3 · 9-22 sept — « Gel et répétition générale » *(gel le 15)*
 
-## Horizon 0 — Festival (maintenant → 1er octobre) · PRIORITAIRE ABSOLU
+| Acteur | Charge | Modèle |
+|---|---|---|
+| Portable | Stabilisation, bancs complets, répétition générale, checklist feu vert, astreinte | Sonnet 5 |
+| Desktop | Recette utilisateur complète en préprod (peau de joueur), corrections éditoriales dernière minute | Sonnet 5 (Haiku 4.5 pour les micro-correctifs) |
+| Codex | Rien sur le chemin critique — début de la **spec Proposition/Décision/Action** avec Boris (post-arbitrage R11) | — |
 
-Le détail vit dans le plan Festival (vagues 0-3). Répartition et modèles :
+**→ 1er octobre : PALIER 1.**
 
-| Chantier | Porteur | Modèle | Échéance |
-|---|---|---|---|
-| Arbitrage des 3 catégories de périmètre (§8 décision Festival) | **Boris** | — | cette semaine |
-| Publier l'événement Festival, le cocher « phare », composer la journée (créneaux) | **Boris** (console) + portable en appui | Haiku 4.5 (appui console) | avant fin août |
-| Rotation de la clé Stripe restreinte + vérification bout-en-bout du paiement | **Portable** | Sonnet 5 | avant vente réelle |
-| Rejouer `repetition_50` sur la vraie journée composée | **Portable** | Sonnet 5 | après composition, puis avant gel |
-| Bascule DNS (mode opératoire existant) + certificats | **Portable** | Opus 5 | date à fixer par Boris |
-| Monde 0 impeccable : éditorial, guides, contenus | **Poste fixe** | Sonnet 5 | continu jusqu'au gel |
-| Sas v2 : validation visuelle puis promotion | **Poste fixe** livre → **portable** promeut | Sonnet 5 | avant gel |
-| QR codes `festival-lier` (impression) | **Portable** | Haiku 4.5 | hors chemin critique |
-| Import WhatsApp du Cercle cœur (attend l'export `.txt` de Boris) | **Portable** | Fable 5 / Opus (données réelles, parsing, attribution des auteurs) | quand l'export arrive |
+### Sprint 4 · 2-15 oct — « Le portage de la coque » *(palier P2)*
 
-## Horizon 1 — Maquette-cible : itération courte (en parallèle, sans code Rails)
+| Acteur | Charge | Modèle |
+|---|---|---|
+| Portable | **La coque réelle en Rails** : les cinq portes, le contexte de Monde côté serveur (le `PZ_SHELL_CONTEXT` de Codex devient un vrai objet de session, les droits restant aux contrôleurs), états `annoncée/lecture/ouverte` câblés | **Fable 5** — LE chantier architectural du trimestre |
+| Desktop | Toutes les **pages de teasing réelles** sur le gabarit du sprint 1 (une par destination fermée, chaque Monde) ; pastille **guides LLM : l'UI** (le backend suit au sprint 5) | Sonnet 5 |
+| Codex | Spec P/D/A finalisée ; **corpus des guides** (sources, ton Professeur/Docteur, limites F19) | — |
 
-**Décision cadre du 2026-08-10 : la coque EST la navigation cible réelle**, au terme d'un
-processus en trois temps qui devient une règle de gouvernance —
-**revue Claude → corrections par Boris → consolidation finale avec Codex**. Aucune maquette
-ne devient cible sans avoir traversé les trois temps. L'investissement dans R1 et R9 est
-donc justifié : ce sont des travaux sur la future navigation de production.
+### Sprint 5 · 16-29 oct — « Monde 0 complet dans la coque »
 
-| Chantier | Porteur | Modèle | État |
-|---|---|---|---|
-| R1 sélecteur « Monde 0/1/2+ » dans la coque | **Codex** | — | confirmé et renforcé — l'écart le plus structurant |
-| R2 traversée « Vivre le Festival » | **Codex**, sur l'état réel fourni par le portable | — | à faire ; seule traversée datée |
-| R3 la Place de marché absorbe les Missions du Commun | **Codex** | — | **tranché** (Boris, 2026-08-10) |
-| R11 variante « intention PAR FIL » à comparer | **Codex** | — | **nouveau** — conditionne la spec Proposition/Décision/Action |
-| R5 vocabulaire de l'Ω : « compte », jamais « score » ; traitement discret | **Codex** | — | **amendé** : l'Ω reste en permanence ; corriger la NOTES annuaire |
-| R6b configurations de barre mobile à tester | **Codex** | — | en attente des tests de Boris |
-| R4 source d'attention unique ; badge numérique retiré de la topbar | **Codex** | — | à faire |
-| R7 chapitre « état réel / projeté » par module | **Portable** fournit l'inventaire → **Codex / poste fixe** l'intègrent | Sonnet 5 (inventaire) | patron du module messagerie |
-| R10 matrice droits × états + accessibilité (modules Festival d'abord) | **Codex** avec relecture **portable** | Opus 5 (relecture droits) | recommandé par Codex lui-même |
-| R9 passe DA + voix sur coque et modules Festival | **Poste fixe** | Sonnet 5 | après gel des libellés |
-| Tests utilisateurs des traversées (un par rôle) + configurations de menu | **Boris** + Cercle cœur | — | après R1/R2/R6b |
-| **R6a — Échanges visibles sur l'accueil du Jeu RÉEL** | **Portable** | Sonnet 5 | **décidé, actionnable tout de suite** — voir Horizon 2 |
+| Acteur | Charge | Modèle |
+|---|---|---|
+| Portable | **Guides LLM backend** (F19 : RAG sur le corpus, citations, garde-fous, effacement sur écrans sensibles) ; **`ActivityItem`** (F21) et ses trois projections | **Opus 5** (guides = IA + sécurité ; ActivityItem = transversal) |
+| Desktop | Module **Ressourcerie vivante v1** (lecture : deux corpus, profondeurs, « Pourquoi maintenant ? » — le modèle de données existe, c'est un chantier de vues) | Sonnet 5 |
+| Codex | Fiches héros éditoriales (biographies sourcées) ; revue du portage de coque (1er temps du cycle suivant) | — |
 
-## Horizon 2 — Messagerie étape B, suite (le cœur applicatif qui continue)
+**→ fin octobre : PALIER 2.**
 
-La messagerie est le seul grand chantier applicatif SANS dépendance aux tests de la
-maquette : sa vision-cible est écrite, S1 + B1 + B2 sont livrés. Ordre de l'audit S0.
+### Sprint 6 · 30 oct - 12 nov — « Monde 1 : les objets de la messagerie » *(palier P3)*
 
-| Chantier | Porteur | Modèle | Préalable |
-|---|---|---|---|
-| **R6a — les Échanges sur l'accueil du Jeu** (engagements « À ton attention » déjà construits en S1-A4 ; aujourd'hui les Échanges ne figurent QUE dans l'icône de la barre) | **Portable** | Sonnet 5 | **aucun — décidé le 2026-08-10** |
-| Spec Proposition / Décision / Action (+ lignes F19-F21 au registre) | **Codex + Boris** rédigent, **portable** relit la faisabilité | Fable 5 (relecture) | **R11** (arbitrage intention par fil / par message) |
-| B3 — le composeur « + » : transformer un message en objet (Graine existe, puis Proposition/Action) | **Portable** | Fable 5 (architecture, cartes B2 comme socle) | la spec ci-dessus |
-| B4 — vues Fil / Actions / Décisions / Mémoire par espace | **Portable** | Opus 5 | B3 |
-| B5 — migration de l'objection B1 vers l'objet Décision | **Portable** | Sonnet 5 | B4 |
-| Préférences de notification par espace + digest (cible §17, `EspaceMembership.notification`) | **Portable** | Sonnet 5 | aucun |
-| Recherche globale d'objets (au-delà des messages : cartes, sondages, espaces) | **Portable** | Opus 5 (périmètre de droits) | B3 |
+| Acteur | Charge | Modèle |
+|---|---|---|
+| Portable | **B3** composeur « + » et transformation message → objet (F22-F23 : Proposition, Action) ; **F20 `Meeting`** modèle + API (généralisation de `PropositionDeRencontre`) | **Fable 5** |
+| Desktop | Module **Annuaire enrichi : l'UI** (recherche multi-critères, cartes — le périmètre d'autorisation des requêtes est livré par le portable en début de sprint) | Sonnet 5 |
+| Codex | Maquette place de marché unifiée (R3 appliquée) ; spec reconnaissance (préalable F25) | — |
 
-## Horizon 3 — Généraliser ce qui existe déjà (post-Festival, court)
+### Sprint 7 · 13-26 nov — « Monde 1 : décisions et mémoire »
 
-Chaque module ci-dessous a un embryon réel en production — la généralisation est un lot
-contenu, pas une invention.
+| Acteur | Charge | Modèle |
+|---|---|---|
+| Portable | **B4** vues Fil/Actions/Décisions/Mémoire (F24) ; **B5** migration de l'objection ; assemblage annuaire + agenda | **Opus 5** |
+| Desktop | Module **Agenda vivant : l'UI** (journée unifiée, calendrier — sur l'API Meeting du sprint 6) ; **profil unifié : les couches visuelles** (lemniscates, fresque — sa zone DA) | Sonnet 5 |
+| Codex | Revue croisée du Monde 1 (1er temps) ; corpus Ressourcerie complété | — |
 
-| Chantier | Existant réel | Porteur | Modèle |
-|---|---|---|---|
-| `Meeting` généralisé (agenda vivant V1) | `PropositionDeRencontre` (mises en relation) | **Portable** | Opus 5 |
-| `ActivityItem` — source d'attention unique (R4) | Engagements S1-A4 + boîte d'Échanges | **Portable** | Opus 5 (transversal) |
-| Profil unifié (couches + visibilité par couche) | Profil + lemniscates + seuils F13 | **Portable** (structure) + **poste fixe** (DA) | Sonnet 5 |
-| Annuaire enrichi (recherche multi-critères, mêmes droits que les cartes) | Annuaire + profils publiés | **Portable** | Sonnet 5 |
-| Centre de consentement (agrégation en lecture des choix existants) | Partage de coordonnées, visibilités, blocages | **Portable** | Opus 5 (droits) |
-| Export de compte complet (RGPD, au-delà du fil) | Export de fil A10 | **Portable** | Sonnet 5 |
+**→ fin novembre : PALIER 3 — un Cercle pilote quitte WhatsApp, tout compris.**
 
-## Horizon 4 — Systèmes nouveaux (specs et juridique AVANT tout code)
+### Sprint 8 · 27 nov - 10 déc — « Monde 2 s'amorce » *(palier P4)*
 
-Aucun de ces chantiers ne démarre sans sa spec validée et, où la revue l'exige, son
-cadrage juridique. L'ordre interne dépendra des tests utilisateurs de l'Horizon 1.
+| Acteur | Charge | Modèle |
+|---|---|---|
+| Portable | **Freeride + ligne de jeu** (F18/F4 : main de trois cartes, teasing aux Mondes 0-1 conformément à l'arbitrage) ; préférences de notification + digest | **Opus 5** |
+| Desktop | Module **Héros & mentors v1** (catalogue + fiches complètes sur le gabarit Q&R §VIII — éditorial + vues ; le choix réversible de figure est un petit modèle que le portable livre) | Sonnet 5 |
+| Codex | États `lecture`/`annoncée` rédigés pour tous les modules d'horizon (économie, gouvernance, académie…) ; spec économie Ω (préalable 2027) | — |
 
-| Chantier | Préalable bloquant | Porteur build | Modèle |
-|---|---|---|---|
-| Économie Ω : orientation, Fonds, cagnottes | gouvernance exacte des consultations (Q&R §X) ; chiffres à confirmer | **Portable** | Fable 5 |
-| Reconnaissance : rituel, enveloppe, consentement | spec du rituel (canon 31/07 §11-15) | **Portable** | Fable 5 |
-| Gouvernance du Commun : consultations pondérées | idem + doctrine de pondération | **Portable** | Fable 5 |
-| Place de marché | **frontières juridiques** (marketplace/prestation/dons), rôles, TVA | **Portable** | Fable 5 |
-| Académie & habilitations | critères de qualification (NOTES héros/académie) | **Portable** | Opus 5 |
-| Organisations & Sas des organisations | offre commerciale réelle | **Portable** | Opus 5 |
-| Héros & mentors, mentor IA & Fresque | politique éditoriale des figures ; coûts IA | **Portable** | Fable 5 |
+### Sprint 9 · 11-24 déc — « La coque fonctionnelle »
 
-## Horizon 5 — Horizon du Jeu (après pilote)
+| Acteur | Charge | Modèle |
+|---|---|---|
+| Portable | **Recherche globale** d'objets (droits !) ; assemblage final ; matrice états réelle vérifiée porte par porte ; suite complète des bancs | **Opus 5** |
+| Desktop | Passe **DA + voix** globale (R9, sur libellés gelés) ; accessibilité (R10 côté réel) | Sonnet 5 |
+| Codex | Consolidation finale de la coque (3e temps) ; bilan des écarts maquette/réel module par module (R7 inversée) | — |
 
-Monde-miroir et épreuve autosubversive restent des prototypes à éprouver avec le Cercle
-cœur (ce que la cible prescrit elle-même). **Codex** les fait vivre en maquette ; aucun
-portage applicatif avant un pilote concluant et une spec. Modèle du moment venu : Fable 5.
+### Sprint 10 · fin décembre — recette du palier 4
 
----
+Recette croisée complète (chaque agent teste la zone d'un autre), correctifs, passation
+d'année. **→ 31 décembre : PALIER 4 — la coque fonctionnelle.**
 
-## Méthode transverse (inchangée, éprouvée sur 25+ lots)
+## 4. Dépendances dures (à surveiller, dans l'ordre)
 
-1. **La cadence** : un lot = construit en préprod → banc de vérification négatif → suite
-   des bancs sœurs → commit `[Claude]`/`[Codex]` → relecture croisée → sauvegarde →
-   promotion en production par l'instance portable → passation.
-2. **La règle F** : aucun objet métier nouveau sans sa ligne dans
-   `impacts-fonctionnels.md` (R8).
-3. **Un agent par zone**, `git fetch` avant reprise, GitHub source de vérité (jamais la
-   copie Dropbox).
-4. **Les maquettes sont la référence visuelle figée** ; l'app ne les contredit jamais —
-   et depuis la revue : les NOTES disent l'écart réel/projeté, l'app documente en retour
-   ce qu'elle a livré (le patron du module messagerie, dans les deux sens).
+1. **Arbitrage R11** (Boris, sprint 1-2) → spec P/D/A (Codex, sprint 3-4) → B3/B4
+   (portable, sprints 6-7). Tout retard ici décale le palier 3.
+2. **Portage de la coque** (sprint 4) → tous les modules du desktop s'y branchent à partir
+   du sprint 5. En attendant, ils se développent contre le gabarit de teasing et le
+   contrat de coque — c'est prévu pour.
+3. **Modèle avant UI** : chaque module desktop dont la donnée n'existe pas reçoit son
+   modèle + contrat d'accès du portable **en début de sprint**, pas en fin (F20 → agenda,
+   scope annuaire → annuaire, figure → héros).
+4. **Le gel Festival (15 sept - 1er oct)** : aucun chantier post-Festival ne touche
+   `main` pendant cette fenêtre ; préprod reste ouverte.
 
-## Ce que ce plan attend de Boris maintenant
+## 5. Méthode (inchangée) et charge
 
-*(Les 5 questions de la revue UX ont été arbitrées le 2026-08-10 — voir
-[revue-ux-cible-consolidee.md](revue-ux-cible-consolidee.md) §4. Reste :)*
+La cadence lot construit-vérifié-promu, les bancs négatifs, la règle F, GitHub source de
+vérité, un agent par zone — tout tient. S'y ajoute : **chaque module du desktop entre dans
+la coque par une relecture du portable**, et le cycle en trois temps (Claude → Boris →
+Codex) scelle chaque palier avant le suivant.
 
-1. Les **arbitrages Festival** (vague 0 du plan Festival) — la seule urgence datée.
-2. Les **deux arbitrages différés**, une fois les maquettes produites par Codex :
-   l'intention **par fil** ou par message (variante R11 à comparer), et la
-   **configuration de barre mobile** (R6b) — plus la sous-question du compte d'Ω :
-   **actifs** (recommandé) ou cumul historique ?
-3. L'**export WhatsApp** du Cercle cœur, quand tu veux lancer l'import.
-4. Le **go** sur la spec Proposition/Décision/Action avec Codex (Horizon 2), qui dépend de
-   l'arbitrage R11 — c'est le prochain chantier applicatif structurant après le Festival.
+Charge indicative par sprint : portable 1 gros chantier + l'assemblage ; desktop 1 module
++ sa part éditoriale ; Codex 1-2 livrables de spec/maquette. C'est la vélocité constatée
+des trois dernières semaines, pas un pari.
