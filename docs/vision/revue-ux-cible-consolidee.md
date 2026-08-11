@@ -215,7 +215,7 @@ traversée Festival, pas par les trente et un.
 | R6b | Configurations de barre mobile à tester | **Arbitrée le 2026-08-11 : option C, « Échanges au centre »** | Codex |
 | R8 | Lignes F19+ pour les nouveaux objets | **Faite** le 2026-08-11 : F19 (Codex), F20-F24 + F25 (portable) — voir [impacts-fonctionnels.md](impacts-fonctionnels.md) | Portable + Codex |
 | R9 | Passe DA + voix | Confirmée (cible réelle) ; après gel des libellés | Poste fixe |
-| R10 | Matrice droits × états + accessibilité | À faire, modules Festival d'abord | Codex + relecture portable |
+| R10 | Matrice droits × états + accessibilité | **Produite le 2026-08-11 pour le Festival ; deux arbitrages Boris isolés** | Codex + relecture portable |
 | R11 | Variante « intention par fil » à comparer | **Arbitrée le 2026-08-11 : intention par fil, lien compact** | Codex |
 
 Deux convergences à acter sans attendre (§2.9) : l'objection B1 migrera vers l'objet

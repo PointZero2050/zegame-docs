@@ -20,7 +20,10 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 - **[plan-developpement-general.md](plan-developpement-general.md)** — le plan d'ensemble
   au-dessus du plan Festival (qui reste directeur jusqu'au 1er octobre) : cinq horizons,
   répartition des chantiers entre instance portable, poste fixe, Codex et Boris, modèle
-  Claude recommandé par chantier.
+  Claude recommandé par chantier, rôles des trois instances et graphe de dépendances.
+- **[festival-matrice-droits-et-etats.md](festival-matrice-droits-et-etats.md)** — matrice R10
+  des acteurs, états du billet/événement/créneau, autorisations, confidentialité et tests de
+  recette du Festival.
 
 ## Ordre de lecture recommandé
 

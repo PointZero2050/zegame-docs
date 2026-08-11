@@ -4,6 +4,9 @@
 > jour. Remplace la spécification F7 de `impacts-fonctionnels.md`, écrite avant que la
 > billetterie devienne interne. Cible : le New Civilization Festival du 1er octobre 2026.
 
+> **Complément Codex — 2026-08-11.** Les droits, états et cas limites de recette sont
+> centralisés dans [festival-matrice-droits-et-etats.md](festival-matrice-droits-et-etats.md).
+
 ## 1. Principe
 
 Un événement n'introduit **aucune nouvelle nature d'objet pédagogique**. Un atelier du Festival
