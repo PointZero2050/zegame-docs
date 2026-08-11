@@ -249,6 +249,13 @@ La même passe a corrigé un débordement mobile de la Messagerie : la liste des
 espaces et la conversation sont désormais deux vues maître-détail exclusives,
 au lieu de deux panneaux juxtaposés dont l'un restait translaté hors écran.
 
+La Marelle est aussi le premier module raccordé au Monde canonique de la coque.
+`pz_world` commande maintenant son identité, le Monde courant de la carte, les
+droits et parcours visibles. Le Freeride et la ligne de jeu restent absents et
+inaccessibles aux Mondes 0 et 1, même par une ancienne ancre directe. Accueil,
+Profil, Cercle et Messagerie doivent encore achever cette projection des données
+fictives ; leur normalisation typographique, elle, est déjà faite.
+
 ### 5.4 Reste ouvert
 
 Le placement du **Monde-miroir** (Monde 4 dans la table) et de l'**Épreuve autosubversive**
