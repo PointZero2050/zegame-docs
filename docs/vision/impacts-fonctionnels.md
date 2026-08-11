@@ -363,6 +363,28 @@ d'impact séparée.
 - génération d'expériences par IA ;
 - refonte spéculative du modèle de données.
 
+### F19 — Guides LLM transversaux du Point Zéro
+
+**Origine front** : prolonger dans l'application le choix entre le Professeur Sirbey et
+le Docteur Z.E.R.O. Le guide répond aux questions sur le Point Zéro, la page courante et
+les fonctionnalités, depuis une pastille persistante de la coque.
+
+| Aspect | Impact |
+|---|---|
+| Front | Pastille non bloquante en bas à droite, dialogue refermable, choix de la voix, suggestions liées au contexte et accès clavier/mobile ; la fonction ne devient pas une rubrique de navigation supplémentaire |
+| Autorité | Les deux voix utilisent le même corpus, les mêmes sources, les mêmes outils et les mêmes permissions ; seule la formulation change |
+| Contexte | Enveloppe minimale fournie par la coque : Monde, droits ouverts, destination, panneau et rôle actif ; aucune déduction à partir d'une page simplement annoncée |
+| Données | Aucune lecture par défaut des Graines, du profil détaillé du Moteur, des conversations privées ou de la mémoire du mentor ; toute extension exige un consentement explicite, finalisé et révocable |
+| IA | Recherche augmentée sur le corpus PZ avec références consultables, degré d'incertitude, mécanisme de correction/signalement et protection contre les instructions contenues dans les documents indexés |
+| Mémoire | Première version éphémère ou locale ; aucune mémoire personnelle implicite. Une continuité ultérieure doit être visible, éditable et désactivable par le joueur |
+| Sécurité | Le guide ne diagnostique pas, n'évalue pas une Puissance et ne remplace ni le mentor, ni le facilitateur, ni l'Aide. Il redirige explicitement hors de son périmètre |
+| Backoffice | Version du corpus et des instructions, sources autorisées, journal technique sans contenu intime, suivi des réponses signalées, coûts et limites d'usage |
+| Déploiement | Prototype front réalisé ; aucun appel LLM réel ni modèle Rails décidé à ce stade. Une analyse d'impact dédiée est requise avant intégration |
+
+La conversation du guide ne produit ni Graine, ni validation, ni Oméga. Si un échange
+fait émerger un travail personnel, le guide propose d'ouvrir le mentor ou l'expérience
+pertinente et laisse le joueur décider du transfert de contexte.
+
 ### Décisions UX transverses (Boris, 2026-07-13)
 
 - **Cercles progressifs** : l'entrée existe dès le Monde 0 comme teaser ; tout Cercle constitué au

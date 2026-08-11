@@ -234,6 +234,13 @@ bloc « À quoi t'attendre » peut simplement avoir un narrateur. Le Professeur 
 le chemin ; le Docteur intervient lorsque l'exploration rencontre l'Ombre. Le Joueur devient
 progressivement son propre narrateur.
 
+La vision-cible ajoute une présence transversale des deux guides dans la coque de
+l'application. Une pastille permet de leur poser des questions sur le Point Zéro, les
+fonctionnalités ou l'écran courant. Ils partagent le même corpus, les mêmes sources et les
+mêmes permissions : le joueur choisit une manière d'être accompagné, pas une vérité différente.
+Cette aide reste séparée du mentor personnel, qui intervient dans une expérience et n'accède
+aux traces intimes que lorsque le joueur les lui ouvre explicitement.
+
 ## Q17. Que deviennent les traces produites sur le site ?
 
 **Acté.** Elles restent d'abord dans le stockage local du navigateur. Au retour, le visiteur
@@ -523,6 +530,11 @@ complémentaire.
 Le joueur peut changer de héros. Des changements répétés appellent une confrontation douce,
 jamais un verrou. Un catalogue de figures inspirantes doit être constitué selon les sept
 Puissances.
+
+Chaque fiche peut rendre visibles trois Puissances-phares — une principale et deux d'appui —
+sous forme de lemniscates. Elles décrivent une lecture éditoriale de l'œuvre et les déplacements
+que cette figure peut inspirer ; elles ne prétendent ni diagnostiquer une personne réelle, ni
+noter le joueur.
 
 ---
 

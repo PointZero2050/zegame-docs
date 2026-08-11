@@ -256,7 +256,39 @@ inaccessibles aux Mondes 0 et 1, même par une ancienne ancre directe. Accueil,
 Profil, Cercle et Messagerie doivent encore achever cette projection des données
 fictives ; leur normalisation typographique, elle, est déjà faite.
 
-### 5.4 Reste ouvert
+### 5.4 Guides transversaux et Puissances-phares des héros — 2026-08-11
+
+La coque peut porter une présence permanente et discrète du Professeur Sirbey et du
+Docteur Z.E.R.O. sous la forme d'une pastille ouvrant un dialogue contextuel. Cette
+présence n'est pas une nouvelle destination de navigation : elle aide le joueur à
+comprendre le Point Zéro, la page courante et les fonctionnalités accessibles.
+
+Les deux guides interrogent le même corpus, disposent des mêmes droits et doivent
+pouvoir montrer leurs sources. Seule leur rhétorique diffère : le Professeur clarifie,
+structure et relie ; le Docteur confronte les contradictions avec un humour caustique
+qui ne ridiculise jamais le joueur. Le choix d'une voix ne doit donc produire aucune
+différence de vérité, de mémoire ou de permission.
+
+Cette fonction reste strictement distincte :
+
+- du **mentor IA**, qui accompagne une expérience personnelle et peut travailler avec
+  les traces que le joueur lui ouvre explicitement pour produire une Graine ;
+- de l'**Aide** et des recours humains, qui traitent support, conflit, détresse,
+  médiation et situations sensibles ;
+- de la **recherche**, qui trouve directement un contenu sans construire un dialogue.
+
+Par défaut, le guide transversal ne lit ni Graines, ni profil détaillé du Moteur, ni
+conversations privées. Son enveloppe de contexte se limite au Monde, aux droits, à la
+destination et au panneau actuellement ouverts. Il doit signaler ses incertitudes,
+permettre de corriger ou signaler une réponse et rediriger vers le mentor, un
+facilitateur ou l'Aide dès que la question sort de son périmètre.
+
+Les fiches des héros montrent par ailleurs trois **Puissances-phares** sous forme de
+lemniscates : une principale et deux puissances d'appui. Il s'agit d'une clé éditoriale
+pour lire l'œuvre et les déplacements proposés par cette figure, jamais d'un diagnostic
+psychologique de la personne réelle ni d'une évaluation du joueur.
+
+### 5.5 Reste ouvert
 
 Le placement du **Monde-miroir** (Monde 4 dans la table) et de l'**Épreuve autosubversive**
 (Monde 7) attend toujours une lecture du canon par Boris — voir la fin du §4.
