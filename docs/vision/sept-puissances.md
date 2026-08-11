@@ -33,9 +33,32 @@ Le moteur inverti (blocage) suit quatre phases : **répression → résurgence �
 d'organisation emploient cinq niveaux communs : **Entravé · Fragile · En chemin · Intégré · En
 flow**. L'interface les synthétise en trois états : **Bloqué** pour les niveaux 1-2, **En chemin**
 pour le niveau 3 et **Intégré** pour les niveaux 4-5. Le flow est un état ponctuel observable, pas
-un titre acquis. Cette nomenclature remplace l'ancienne échelle
-`Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience` dans les nouveaux écrans ; les
-données historiques doivent rester interprétables lors d'une migration.
+un titre acquis. Cette nomenclature remplace l'ancienne échelle **pour la lecture d'UNE
+puissance** ; les données historiques doivent rester interprétables lors d'une migration.
+
+**Deux échelles, deux objets — précision de Boris, 2026-08-11.** La phrase ci-dessus a été
+lue à tort comme l'abandon pur et simple de l'échelle en cinq familles. Il n'en est rien :
+les deux coexistent parce qu'elles ne mesurent pas la même chose.
+
+| Échelle | Ce qu'elle mesure | Où |
+|---|---|---|
+| **Trois degrés** (Bloqué · En chemin · Intégré) | l'amplitude **dans chacune des Puissances**, prise une à une | lemniscate de chaque Puissance, profils individuel / Cercle / organisation |
+| **Dix degrés** (`Blocage · Tiédeur · Alignement · Alchimisation · Hyperconscience`, deux paliers par famille) | la **résultante globale** du Moteur — évaluation plus fine de l'état émergent | indicateur d'alchimisation, grand lemniscate du Moteur |
+
+Les bornes de la résultante sont explicites : le **degré 1** correspond à un Moteur bloqué
+partout et limité au niveau 1 ; le **degré 10** à un Moteur à 3 partout et en état intégré.
+L'échelle en cinq familles n'est donc pas une nomenclature abandonnée — elle a changé
+d'objet : elle ne qualifie plus une puissance isolée, mais la résultante que
+[moteur-ontologique-visuel.md](moteur-ontologique-visuel.md) nomme « Moteur global »
+(la Transcendance, non nommée comme telle à l'écran).
+
+Ce que cela ne change pas : la résultante reste une **lecture**, jamais un rang ni une note
+de valeur ; elle ne se compare pas entre personnes ; le profil d'un Cercle ou d'une
+organisation n'est jamais la moyenne de ses membres (cf.
+[cercles-croissance-profils-flow-omega.md](cercles-croissance-profils-flow-omega.md) §8) ;
+et le principe de la section 3 ci-dessous — *une capacité est un sens de circulation, pas un
+score* — vaut pour les deux échelles. Maquette de référence :
+`zegame-prototypes/alchimisation-cible/`.
 
 **Implication produit — Oméga et lemniscate** : cette mécanique fonde directement la représentation lemniscate de l'Oméga (cf. [impacts-fonctionnels.md](impacts-fonctionnels.md) F6). Le moteur ontologique EST une circulation permanente Ombre ⇄ Lumière passant par le Point Zéro ; l'amplitude visualisée peut refléter jusqu'où le joueur a exploré chaque polarité de chaque puissance. Les 5 états donnent une grammaire d'animation possible (position sur la boucle, blocage sur un pôle, circulation fluide).
 
