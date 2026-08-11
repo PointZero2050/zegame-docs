@@ -82,7 +82,7 @@ Claude ; ses tâches n'en portent pas.
 |---|---|---|
 | Portable | Rejouer `repetition_50` sur la vraie journée ; QR `festival-lier` ; mode opératoire DNS répété à blanc ; correctifs de la répétition | Sonnet 5 (Opus 5 pour la bascule DNS) |
 | Desktop | Module **Aide & recours v1** (numéros d'urgence avant connexion, orientation, personnes ressources — contenu et vues ; le signalement/blocage EXISTE déjà côté portable, il le branche) | Sonnet 5 |
-| Codex | **R10** matrice droits × états des modules Festival ; consolidation post-arbitrages de Boris (3e temps) | — |
+| Codex | **R10 produite** : matrice droits × états des modules Festival ; consolidation après les deux arbitrages Boris (fenêtre D+7, accès intervenant aux retours anonymisés) | — |
 
 ### Sprint 3 · 9-22 sept — « Gel et répétition générale » *(gel le 15)*
 
@@ -163,9 +163,9 @@ CHAÎNE MESSAGERIE / OBJETS (la plus longue — commande le palier 3)
   variante R11 (FAITE) ──▶ arbitrage intention par fil (FAIT) ──▶ spec P/D/A (FAITE, Codex)
       ──▶ audit Claude (FAIT — voir audit-proposition-decision-action.md : droits/carte/mandat
           déjà réutilisables tels quels ; colonne « intention du fil » à poser AVANT le
-          composeur ; ActivityItem hors périmètre B3 ; gabarit `echange`/`groupe` à trancher)
-      ──▶ arbitrages Boris §13 + gabarit (EN ATTENTE)
-      ──▶ B3 composeur + F22/F23 (portable, Fable) ──▶ B4 vues + F24 (portable, Opus)
+          composeur ; ActivityItem hors périmètre B3)
+      ──▶ arbitrages Boris §13 (FAITS, 12 août — les 5 recommandations retenues telles quelles)
+      ──▶ B3 OUVERT : composeur + F22/F23 (portable, Fable) ──▶ B4 vues + F24 (portable, Opus)
       ──▶ B5 migration objection ──▶ [PALIER 3]
 
 CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)

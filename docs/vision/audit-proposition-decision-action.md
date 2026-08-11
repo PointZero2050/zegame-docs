@@ -73,18 +73,19 @@ concept.
 si Proposition/Décision s'appliquent aux trois ou seulement au Cercle — une Décision dans
 un échange à deux n'a pas de sens (pas d'électorat à distinguer du consentement mutuel
 ordinaire), et une Proposition dans un groupe informel de douze est ambiguë (gouvernance
-de fait sans gardien nommé). **Recommandation : réserver Décision et le protocole de
-consentement au gabarit `cercle` en V1 ; Proposition et Action restent ouvertes aux trois
-— une Action peut naître d'un échange à deux sans qu'il y ait de Décision derrière.** À
-confirmer avec Boris en même temps que les quatre points du §13.
+de fait sans gardien nommé). **Tranché par Boris le 12 août 2026, avec les quatre points du §13 : Décision et le
+protocole de consentement réservés au gabarit `cercle` en V1 ; Proposition et Action
+restent ouvertes aux trois — une Action peut naître d'un échange à deux sans qu'il y ait
+de Décision derrière.**
 
 ## 4. Conclusion pour le déblocage de B3
 
 Rien dans la spec n'entre en contradiction avec l'architecture existante — c'est même
 l'inverse : trois de ses mécanismes centraux (droits, cartes, mandat) sont déjà des
 primitifs éprouvés que B3 doit réutiliser tels quels, pas redéfinir. Le seul vrai
-préalable technique est l'intention du fil, absente de la base. Une fois les quatre points
-du §13 tranchés par Boris (plus le gabarit du §3 ci-dessus), B3 est ouvrable.
+préalable technique est l'intention du fil, absente de la base.
+
+**Les cinq points du §13 sont arbitrés (Boris, 12 août 2026) — B3 est ouvrable.**
 
 ## Références
 

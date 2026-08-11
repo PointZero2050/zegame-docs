@@ -1,6 +1,7 @@
 # Messagerie — spécification Proposition / Décision / Action
 
-> **Statut :** spécification fonctionnelle v0.1 pour arbitrage Boris et audit Claude.
+> **Statut :** v0.1 arbitrée et auditée — B3 ouvrable (arbitrages Boris et audit Claude du
+> 12 août 2026, §13).
 > **Décision préalable :** R11 est levé le 11 août 2026. L'intention appartient au fil
 > ou au sous-fil ; elle ne qualifie pas chaque message et ne modifie jamais les droits.
 > **Périmètre :** étape B de la messagerie capacitante. Ce document n'impose ni noms de
@@ -281,18 +282,26 @@ Chaque événement porte : acteur, contexte, objet, horodatage, visibilité et s
 12. mobile : création, objection et acceptation sont possibles sans formulaire déplié
     sous un message ni débordement horizontal.
 
-## 13. Arbitrages encore nécessaires
+## 13. Arbitrages — tranchés par Boris le 12 août 2026
+
+Les cinq points ci-dessous sont **arbitrés : la recommandation de chacun s'applique
+telle quelle.** Le cinquième vient de l'audit Claude, absent de la v0.1 de Codex.
 
 1. Au Monde 1, tout membre d'un Cercle peut-il créer une Proposition, ou ce droit est-il
-   confié au gardien du cadre Gouvernance pendant la séance ? Recommandation : création
-   ouverte, ouverture de la Décision mandatée.
-2. Une Action sans échéance est-elle autorisée ? Recommandation : oui, mais elle doit être
-   explicitement classée `sans échéance`, jamais laissée vide par accident.
+   confié au gardien du cadre Gouvernance pendant la séance ? **Tranché : création
+   ouverte, ouverture de la Décision mandatée.**
+2. Une Action sans échéance est-elle autorisée ? **Tranché : oui, mais elle doit être
+   explicitement classée `sans échéance`, jamais laissée vide par accident.**
 3. À la clôture par consentement, une objection maintenue bloque-t-elle toujours ?
-   Recommandation : le protocole choisi le définit avant ouverture ; le consentement du
-   Cercle de croissance v1 traite une objection argumentée et maintenue comme bloquante.
-4. Qui peut consigner une décision prise hors application ? Recommandation : rôle tenant
-   le cadre ou mandat explicite, avec validation d'au moins un autre membre.
+   **Tranché : le protocole choisi le définit avant ouverture ; le consentement du
+   Cercle de croissance v1 traite une objection argumentée et maintenue comme
+   bloquante.**
+4. Qui peut consigner une décision prise hors application ? **Tranché : rôle tenant
+   le cadre ou mandat explicite, avec validation d'au moins un autre membre.**
+5. *(Ajouté par l'audit Claude.)* Décision et son protocole de consentement
+   s'appliquent-ils aux gabarits d'Espace `groupe` et `echange`, ou seulement
+   `cercle` ? **Tranché : Décision réservée au gabarit `cercle` en V1 ; Proposition et
+   Action restent ouvertes aux trois gabarits.**
 
 ## 14. Références
 
