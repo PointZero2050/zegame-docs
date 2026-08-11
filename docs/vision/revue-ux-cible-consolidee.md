@@ -210,7 +210,7 @@ traversée Festival, pas par les trente et un.
 | R8 | Lignes F19+ pour les nouveaux objets | **Faite** le 2026-08-11 : F19 (Codex), F20-F24 + F25 (portable) — voir [impacts-fonctionnels.md](impacts-fonctionnels.md) | Portable + Codex |
 | R9 | Passe DA + voix | Confirmée (cible réelle) ; après gel des libellés | Poste fixe |
 | R10 | Matrice droits × états + accessibilité | À faire, modules Festival d'abord | Codex + relecture portable |
-| R11 | Variante « intention par fil » à comparer | **Nouvelle** (demande de Boris) | Codex |
+| R11 | Variante « intention par fil » à comparer | **Produite le 2026-08-11 ; arbitrage Boris en attente** | Codex |
 
 Deux convergences à acter sans attendre (§2.9) : l'objection B1 migrera vers l'objet
 Décision ; les cartes B2 sont LA grammaire des cartes de la maquette.
@@ -239,6 +239,15 @@ la proposition « par message » de la maquette.
 (conforme à la cible §6), affichée en en-tête et adaptant les cartes proposées, avec le
 composeur rendu à sa sobriété. Les deux variantes doivent être comparables côte à côte
 avant l'arbitrage. Cette décision conditionne la spec Proposition/Décision/Action.
+
+**Variante disponible pour comparaison :** la version actuelle « par message » reste
+accessible à la racine de `messagerie-point-zero-cible/`; ajouter `?variant=fil` ouvre
+la variante R11. Dans cette dernière, l'intention est affichée dans l'en-tête, les
+formes proposées par le bouton `+` s'y adaptent et le composeur ne porte plus
+d'intention propre. Un changement de mouvement propose d'abord d'ouvrir un sous-fil ;
+si le fil principal change réellement d'intention, une trace est ajoutée à son
+historique. **L'intention ne modifie jamais les lecteurs, les droits ni la
+confidentialité.**
 
 ### Q3. Porte des besoins : la Place de marché absorbe-t-elle les Missions du Commun ?
 
