@@ -73,7 +73,7 @@ Claude ; ses tâches n'en portent pas.
 |---|---|---|
 | Portable | Rotation Stripe + test de paiement bout-en-bout ; appui à Boris pour publier/cocher phare/composer la journée ; **R6a** (les Échanges nommés sur l'accueil du Jeu) ; import WhatsApp si l'export arrive | Sonnet 5 (Fable 5 pour l'import WhatsApp) |
 | Desktop | Monde 0 éditorial + finalisation Sas v2 ; **premier module dev : les pages de teasing** (gabarit « ce que c'est, ce qu'on y fera, ce qui l'ouvre » — vues pures, zéro droit, la brique de base du dévoilement) | Sonnet 5 |
-| Codex | Variante **R11** (faite et arbitrée : intention par fil, lien compact) ; 2-3 **configurations de barre mobile** (R6b) ; traversée Festival (R2) | — |
+| Codex | **R11 faite et arbitrée** ; **trois configurations de barre mobile R6b produites** ; **traversée Festival R2 produite** — arbitrages Boris R6b/R2 en attente | — |
 | Boris | Arbitrages Festival vague 0 ; catégories de périmètre §8 | — |
 
 ### Sprint 2 · 26 août - 8 sept — « Le jour J est prêt »
@@ -90,7 +90,7 @@ Claude ; ses tâches n'en portent pas.
 |---|---|---|
 | Portable | Stabilisation, bancs complets, répétition générale, checklist feu vert, astreinte | Sonnet 5 |
 | Desktop | Recette utilisateur complète en préprod (peau de joueur), corrections éditoriales dernière minute | Sonnet 5 (Haiku 4.5 pour les micro-correctifs) |
-| Codex | Rien sur le chemin critique — **spec Proposition/Décision/Action** avec Boris, désormais déverrouillée et ouvrable avant cette borne | — |
+| Codex | Rien sur le chemin critique — **spec Proposition/Décision/Action v0.1 produite**, arbitrages fonctionnels avec Boris puis consolidation | — |
 
 **→ 1er octobre : PALIER 1.**
 

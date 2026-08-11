@@ -9,6 +9,8 @@
 > La taxonomie détaillée des espaces, leurs droits de création et leur apprentissage progressif sont
 > définis dans
 > [Espaces de discussion et apprentissage au Monde 1](messagerie-espaces-discussion-monde-1.md).
+> La couche opérationnelle Proposition / Décision / Action est détaillée dans
+> [Messagerie — spécification Proposition / Décision / Action](messagerie-proposition-decision-action-specification.md).
 
 ## 0. Décision directrice
 

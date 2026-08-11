@@ -76,6 +76,12 @@ il n'existe pas dans la coque.
 que la maquette serve aussi à tester ce qui sera vécu le 1er octobre — et pour montrer aux
 testeurs le POINT D'ENTRÉE réel de l'écosystème, pas seulement son état de croisière.
 
+**Produite dans `application-cible-devoilement` :** un panneau relie les sept étapes
+billet → rattachement du compte → Sas Festival → Monde 0 → réservation → présence →
+après-Festival. Chaque étape appelle une destination réelle de la coque et distingue
+l'existant de ce qui doit encore être éprouvé. La clé Festival est activée, mais le Monde
+reste à 0 : l'événement ouvre des droits sans provoquer artificiellement un passage.
+
 ### 2.3 Trois surfaces revendiquent les « besoins » — qui est la porte canonique ?
 
 `missions-commun-cible` (« Place des besoins »), `place-marche-cible` (« porte commune
@@ -200,13 +206,13 @@ traversée Festival, pas par les trente et un.
 | # | Recommandation | État | Porteur |
 |---|---|---|---|
 | R1 | Sélecteur « Monde 0/1/2+ » dans la coque | **Confirmée et renforcée** (la coque est la cible réelle) | Codex |
-| R2 | Traversée « Vivre le Festival » | À faire | Codex (état réel fourni par le portable) |
+| R2 | Traversée « Vivre le Festival » | **Produite le 2026-08-11 ; revue Boris en attente** | Codex (état réel fourni par le portable) |
 | R7 | Chapitre « état réel / projeté » par module | À faire | Portable (inventaire) → Codex/poste fixe |
 | R3 | Porte unique des besoins | **Tranchée : la Place de marché absorbe les Missions** | Codex |
 | R4 | Une source d'attention, trois projections | À faire ; le badge numérique de la topbar reste à retirer | Codex, puis portable (`ActivityItem`) |
 | R5 | Vocabulaire de l'Ω | **Amendée : l'Ω reste visible en permanence, discret, nommé « compte » — « score » banni** | Codex (NOTES annuaire) |
 | R6a | Échanges visibles sur l'accueil du Jeu **réel** | **Décidée, actionnable tout de suite** | Portable |
-| R6b | Configurations de barre mobile à tester | En attente des tests de Boris | Codex |
+| R6b | Configurations de barre mobile à tester | **Trois variantes produites le 2026-08-11 ; arbitrage Boris en attente** | Codex |
 | R8 | Lignes F19+ pour les nouveaux objets | **Faite** le 2026-08-11 : F19 (Codex), F20-F24 + F25 (portable) — voir [impacts-fonctionnels.md](impacts-fonctionnels.md) | Portable + Codex |
 | R9 | Passe DA + voix | Confirmée (cible réelle) ; après gel des libellés | Poste fixe |
 | R10 | Matrice droits × états + accessibilité | À faire, modules Festival d'abord | Codex + relecture portable |
@@ -266,6 +272,20 @@ réelle** : l'accueil du Jeu en production ne mentionne aujourd'hui les Échange
   ce sont eux qui portent l'information utile, pas un compteur.
 - **R6b (maquette, Codex)** : décliner deux ou trois configurations de barre mobile à
   tester, l'accueil donnant dans chacune une place visible aux Échanges.
+
+**Variantes R6b disponibles dans `application-cible-devoilement` :**
+
+- `?mobile=portes` — cinq portes architecturales : Aujourd'hui · Mon chemin · Mes liens ·
+  Agir · Moi ; structure la plus stable, mais Échanges reste à deux gestes ;
+- `?mobile=quotidien` — usages quotidiens : Aujourd'hui · Marelle · Échanges · Cercles ·
+  Profil ; accès le plus direct, mais disparition mobile de la porte Agir ;
+- `?mobile=echanges` — quatre portes structurantes et Échanges au centre : Aujourd'hui ·
+  Chemin · Échanges · Agir · Moi ; conserve Agir et rend la messagerie saillante, au prix
+  d'un accès contextuel aux Cercles.
+
+Les trois variantes ont été contrôlées à 390 × 844 sans débordement horizontal. La
+configuration `echanges` est la recommandation initiale de Codex : elle préserve la
+grammaire de la coque tout en donnant un accès en un geste à l'usage quotidien principal.
 
 ### Q5. L'Ω doit-il rester visible en permanence ?
 
