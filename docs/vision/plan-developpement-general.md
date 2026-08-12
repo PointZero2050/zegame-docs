@@ -171,7 +171,12 @@ CHAÎNE MESSAGERIE / OBJETS (la plus longue — commande le palier 3)
           électorat figé, objection à trois champs, consignation validée par un autre
           membre), vues Mes actions + Décisions du Cercle, versions de Proposition,
           3 engagements nouveaux — 36 contrôles verts
-      ──▶ B5 OUVERT : migration de l'objection sémantique vers la Décision ──▶ [PALIER 3]
+      ──▶ B5 FAIT (12 août, prod a93d114) : le double registre est clos — l'objection
+          quitte la palette des réactions (8 restent), les anciennes conservées et gelées
+          avec provenance « ancien registre », 13 contrôles verts
+      ──▶ CHAÎNE COMPLÈTE — la messagerie capacitante du [PALIER 3] est livrée côté
+          objets ; restent, pour le palier lui-même : F20 Meeting/agenda, annuaire
+          enrichi, profil unifié (chaîne modèle → UI, couples portable/desktop)
 
 CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)
   contrat de coque (fait) ──▶ gabarit teasing (desktop) ──▶ portage coque Rails
