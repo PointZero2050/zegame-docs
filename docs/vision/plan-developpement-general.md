@@ -57,9 +57,30 @@ qui préserve l'invariant « celui qui produit ne s'auto-valide pas » :
 
 Ce qui n'est PAS dans ces paliers (donc pas en 2026, sauf décision contraire) : économie
 Ω transactionnelle, reconnaissance rituelle, gouvernance du Commun, place de marché
-juridiquement ouverte, académie/habilitations, organisations, monde-miroir, épreuve des
-runes. Ils existeront fin décembre **en pages d'annonce ou en lecture**, conformément au
-contrat de coque — c'est une existence honnête, pas une absence.
+juridiquement ouverte, académie/habilitations, organisations, **le monde-miroir dans
+Rails**, épreuve des runes. Ils existeront fin décembre **en pages d'annonce ou en
+lecture**, conformément au contrat de coque — c'est une existence honnête, pas une
+absence.
+
+**Amendement du 12 août (bloc canonique `5bf587c`, analyse
+[analyse-impact-coque-cinq-puissances-grand-jeu.md](analyse-impact-coque-cinq-puissances-grand-jeu.md))** —
+deux ajouts qui ne déplacent aucun palier :
+
+- **Coque v2 « les cinq verbes »** (`Discerner · Décider · Relier · Créer · Ressentir`) :
+  correspondance 1:1 avec les cinq portes en production (ids stables, libellés = données
+  de registre), trois destinations changent de porte (ressourcerie, héros, agenda →
+  Discerner), plus le portail-teaser du miroir, la page Omégas et les cinq futurs v0.
+  Séquence imposée : **maquettes (desktop + Codex) → recette de navigation (§8.8 de
+  coque-cinq-puissances) → portage préprod → promotion APRÈS le Festival** — le renommage
+  des portes est la chose la plus visible qu'on puisse faire à l'application, et rien de
+  développé en août n'est rendu visible pour le Festival.
+- **Grand Jeu / monde-miroir** : quatrième chaîne du graphe (§4), autonome. Le premier
+  livrable est le **prototype 2D autonome** (grand-jeu-monde-miroir-cible §15) dans
+  zegame-prototypes — il ne touche pas Rails, simule la validation, et se juge sur une
+  seule hypothèse : le joueur comprend-il que sa transformation réelle modifie le destin
+  de son double ? Les six préalables du §18 (analyses d'impact Omégas/decay/droits,
+  consentement, contrat d'événements, architecture) restent des portes fermées tant que
+  le prototype n'a pas prouvé la boucle.
 
 ## 3. Les sprints (deux semaines) — qui, quoi, quel modèle
 
@@ -75,6 +96,13 @@ Claude ; ses tâches n'en portent pas.
 | Desktop | Monde 0 éditorial + finalisation Sas v2 ; **premier module dev : les pages de teasing** (gabarit « ce que c'est, ce qu'on y fera, ce qui l'ouvre » — vues pures, zéro droit, la brique de base du dévoilement) | Sonnet 5 |
 | Codex | **R11 faite et arbitrée** ; **R6b arbitrée : option C, « Échanges au centre »** ; **traversée Festival R2 produite** — revue Boris R2 en attente | — |
 | Boris | Arbitrages Festival vague 0 ; catégories de périmètre §8 | — |
+
+**Ajout du 12 août, en parallèle du chemin critique Festival** : le desktop et Codex
+traduisent le bloc canonique du 12 août en **maquettes** — (a) la barre des cinq verbes
+et la collision « Créer »/bouton `+` sur mobile, (b) l'emplacement de la Couronne
+(portail miroir) hors des cinq portes, (c) les actions contextuelles du `+`, (d) le
+teaser Monde 0 du miroir (préalable §18.4). Ces maquettes sont le préalable du sprint 4
+révisé ; rien n'en devient visible pour le Festival.
 
 ### Sprint 2 · 26 août - 8 sept — « Le jour J est prêt »
 
@@ -94,13 +122,17 @@ Claude ; ses tâches n'en portent pas.
 
 **→ 1er octobre : PALIER 1.**
 
-### Sprint 4 · 2-15 oct — « Le portage de la coque » *(palier P2)*
+### Sprint 4 · 2-15 oct — « La coque v2 : les cinq verbes » *(palier P2)*
+
+*(Le portage initial de la coque — l'ancien contenu de ce sprint — a été réalisé le
+12 août avec deux mois d'avance, prod `80931d2`. Sa fenêtre accueille la coque v2, dont
+la promotion en production ne pouvait de toute façon pas précéder le Festival.)*
 
 | Acteur | Charge | Modèle |
 |---|---|---|
-| Portable | **La coque réelle en Rails** : les cinq portes, le contexte de Monde côté serveur (le `PZ_SHELL_CONTEXT` de Codex devient un vrai objet de session, les droits restant aux contrôleurs), états `annoncée/lecture/ouverte` câblés | **Fable 5** — LE chantier architectural du trimestre |
+| Portable | **Portage de la coque v2** sur les maquettes validées : renommage + sous-titres + symboles par Monde, les 3 déplacements de destinations (attention à `verifier!` : au plus une annoncée par porte et par Monde), portail-teaser du miroir (Couronne), page Omégas transversale, cinq futurs v0 (YAML + vue Discerner). Recette de navigation §8.8 avant, banc `verifier_coque` étendu après. **Préprod jusqu'au 2 octobre, promotion post-Festival.** | **Opus 5** (registre + droits, mais l'architecture est déjà en place) |
 | Desktop | Toutes les **pages de teasing réelles** sur le gabarit du sprint 1 (une par destination fermée, chaque Monde) ; pastille **guides LLM : l'UI** (le backend suit au sprint 5) | Sonnet 5 |
-| Codex | Spec P/D/A finalisée ; **corpus des guides** (sources, ton Professeur/Docteur, limites F19) | — |
+| Codex | Spec P/D/A finalisée *(FAITE en avance — toute la chaîne B3-B5 est en prod depuis le 12 août)* ; **corpus des guides** (sources, ton Professeur/Docteur, limites F19 — la ligne de partage Professeur=réel / Docteur=miroir posée par grand-jeu-monde-miroir-cible §3 s'y écrit) | — |
 
 ### Sprint 5 · 16-29 oct — « Monde 0 complet dans la coque »
 
@@ -200,6 +232,21 @@ CHAÎNE MODÈLE → UI (le contrat portable/desktop, un couple par module)
   scope de recherche annuaire (FAIT, 12 août) ──▶ UI annuaire (desktop, OUVRABLE)
   modèle figure/choix de héros (FAIT) ──▶ Héros & mentors (desktop, FAIT — relu, branché à la coque, en prod)
   corpus guides (Codex) ──▶ backend guides (portable) ──▶ pastille (desktop)
+
+CHAÎNE GRAND JEU / MONDE-MIROIR (nouvelle, 12 août — autonome, ne touche pas Rails)
+  bloc canonique 5bf587c (FAIT, Codex) ──▶ analyse d'impact coque v2 + Grand Jeu
+      (FAITE, 12 août — voir analyse-impact-coque-cinq-puissances-grand-jeu.md)
+      ──▶ ┬─ maquettes coque v2 (desktop + Codex, EN COURS — sprint 1 amendé)
+          │     ──▶ recette de navigation §8.8 ──▶ portage coque v2 (portable,
+          │         sprint 4 révisé, préprod) ──▶ promotion POST-FESTIVAL
+          ├─ teaser Monde 0 du miroir (desktop, §18.4 — entre dans le lot coque v2)
+          └─ prototype 2D autonome §15 (desktop + Codex, zegame-prototypes, réemploi
+              du fonds avatar/ — validation SIMULÉE, zéro appel à l'app)
+              ──▶ [la boucle est-elle comprise ?] ──▶ SEULEMENT ALORS :
+                  analyse d'impact Omégas/decay/droits (portable, §18.1)
+                  ──▶ consentement + gouvernance LLM (Codex puis portable, §18.2)
+                  ──▶ contrat d'événements réel ↔ miroir (portable, §18.3)
+                  ──▶ décision d'architecture temps réel (Boris, §18.6)
 
 INDÉPENDANTS (ouvrable à tout moment, aucun préalable)
   R6a (FAIT) · rotation Stripe (FAIT) · import WhatsApp (différé, attend l'export)
