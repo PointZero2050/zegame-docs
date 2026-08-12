@@ -135,7 +135,7 @@ Claude ; ses tâches n'en portent pas.
 | Acteur | Charge | Modèle |
 |---|---|---|
 | Portable | **Freeride + ligne de jeu** (F18/F4 : main de trois cartes, teasing aux Mondes 0-1 conformément à l'arbitrage) ; préférences de notification + digest | **Opus 5** |
-| Desktop | Module **Héros & mentors v1** (catalogue + fiches complètes sur le gabarit Q&R §VIII — éditorial + vues ; le choix réversible de figure est un petit modèle que le portable livre) | Sonnet 5 |
+| Desktop | Module **Héros & mentors v1** — **OUVRABLE MAINTENANT** (12 août, en avance sur ce sprint : le petit modèle est livré, `User#choisir_heros!(slug)` / `#heros_choisi?`, aucun catalogue ni contrôleur côté portable — voir détail dans la passation du 12 août) : catalogue + fiches complètes sur le gabarit Q&R §VIII (biographie, faits, lecture PZ, 3 Puissances-phares, don, Ombre, cadre nécessaire, parcours associés), éditorial + vues, patron Ressourcerie (YAML, sans table). Portée v1 : catalogue lisible + choix personnel — PAS la mécanique mentor IA/Freeride (Q44), hors périmètre pour l'instant. | Sonnet 5 |
 | Codex | États `lecture`/`annoncée` rédigés pour tous les modules d'horizon (économie, gouvernance, académie…) ; spec économie Ω (préalable 2027) | — |
 
 ### Sprint 9 · 11-24 déc — « La coque fonctionnelle »
@@ -188,13 +188,14 @@ CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)
 CHAÎNE MODÈLE → UI (le contrat portable/desktop, un couple par module)
   F20 Meeting (portable) ──▶ UI agenda (desktop)
   scope de recherche annuaire (portable) ──▶ UI annuaire (desktop)
-  modèle figure/choix de héros (portable) ──▶ Héros & mentors (desktop)
+  modèle figure/choix de héros (FAIT, 12 août) ──▶ Héros & mentors (desktop, OUVRABLE)
   corpus guides (Codex) ──▶ backend guides (portable) ──▶ pastille (desktop)
 
 INDÉPENDANTS (ouvrable à tout moment, aucun préalable)
-  R6a Échanges sur l'accueil · rotation Stripe · import WhatsApp (attend l'export)
-  · Ressourcerie vivante v1 (modèle existant) · Aide & recours v1 (contenu)
-  · préférences notifications + digest · fiches héros éditoriales (Codex)
+  R6a (FAIT) · rotation Stripe (FAIT) · import WhatsApp (différé, attend l'export)
+  · Ressourcerie vivante v1 (FAIT) · Aide & recours v1 (FAIT)
+  · préférences notifications + digest (FAIT) · fiches héros éditoriales (Codex, FAIT)
+  · Héros & mentors v1 (desktop, OUVRABLE — modèle livré 12 août, voir Sprint 8 ci-dessus)
 ```
 
 Contraintes calendaires irréductibles (les seules) :
