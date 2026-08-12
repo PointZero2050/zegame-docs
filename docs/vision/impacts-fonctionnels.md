@@ -381,6 +381,30 @@ les fonctionnalités, depuis une pastille persistante de la coque.
 | Backoffice | Version du corpus et des instructions, sources autorisées, journal technique sans contenu intime, suivi des réponses signalées, coûts et limites d'usage |
 | Déploiement | Prototype front réalisé ; aucun appel LLM réel ni modèle Rails décidé à ce stade. Une analyse d'impact dédiée est requise avant intégration |
 
+**Analyse d'impact rendue le 12 août 2026** —
+[analyse-impact-guides-llm.md](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/analyse-impact-guides-llm.md).
+Elle remplit l'exigence ci-dessus. Cinq conclusions à retenir ici :
+
+1. **Le chemin critique est éditorial, pas technique.** Le corpus joueur n'existe pas :
+   `docs/vision/` est de la documentation interne (arbitrages, plans, Mondes non ouverts) et
+   l'indexer contredirait le dévoilement progressif. Le corpus curaté tiendra en revanche
+   entièrement dans le prompt — aucune base vectorielle n'est nécessaire (et `pgvector`
+   n'est pas disponible sur notre Postgres).
+2. **La pastille suppose un JavaScript que l'application n'a pas** (32 lignes en tout dans
+   la coque). Recommandation : livrer d'abord une page « Demander au guide » sans JS, la
+   pastille ensuite.
+3. **Le Docteur Z.E.R.O. est le risque humain principal.** L'humour caustique généré en
+   direct, sur un public non trié, dans un jeu qui travaille l'Ombre, est le registre qui
+   échoue le plus mal. Recommandation : ouvrir avec le Professeur seul.
+4. **Le coût n'est pas une contrainte** (~9 $ pour une journée de Festival sur Sonnet 5) —
+   il ne doit donc pas justifier un modèle moins capable. Un plafond de dépense reste requis.
+5. **Le rempart contre l'injection de prompt, ce sont les pouvoirs, pas les mots** : tant
+   que le guide n'a aucun outil, une injection réussie ne peut que faire dire une bêtise.
+   L'analyse est à refaire entièrement le jour où on lui donne une capacité d'action.
+
+Invariant confirmé par l'analyse : **l'Aide et les recours humains ne passent jamais par le
+modèle** — `/aide` est statique et doit le rester.
+
 La conversation du guide ne produit ni Graine, ni validation, ni Oméga. Si un échange
 fait émerger un travail personnel, le guide propose d'ouvrir le mentor ou l'expérience
 pertinente et laisse le joueur décider du transfert de contexte.

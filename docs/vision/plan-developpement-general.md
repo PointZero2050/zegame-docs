@@ -106,7 +106,7 @@ Claude ; ses tâches n'en portent pas.
 
 | Acteur | Charge | Modèle |
 |---|---|---|
-| Portable | **Guides LLM backend** (F19 : RAG sur le corpus, citations, garde-fous, effacement sur écrans sensibles) ; **`ActivityItem`** (F21) et ses trois projections | **Opus 5** (guides = IA + sécurité ; ActivityItem = transversal) |
+| Portable | **Guides LLM backend** (F19) — **analyse d'impact FAITE le 12 août** ([document](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/analyse-impact-guides-llm.md)) : le code n'est plus le goulot (2-3 j), le **corpus joueur** l'est, et il est **éditorial**. Palier 0 = écrire le corpus (Codex/Boris, peut commencer tout de suite) ; palier 1 = page « Demander au guide », Professeur seul, sans JS ; palier 2 = pastille puis Docteur. Pas de RAG vectoriel : le corpus tient dans le prompt. ‖ **`ActivityItem`** (F21) et ses trois projections — **FAIT** | **Sonnet 5** suffit (le RAG vectoriel est écarté ; la difficulté restante est éditoriale et d'arbitrage) |
 | Desktop | Module **Ressourcerie vivante v1** (lecture : deux corpus, profondeurs, « Pourquoi maintenant ? » — le modèle de données existe, c'est un chantier de vues) | Sonnet 5 |
 | Codex | Fiches héros éditoriales (biographies sourcées) ; revue du portage de coque (1er temps du cycle suivant) | — |
 
