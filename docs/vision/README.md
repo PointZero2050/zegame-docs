@@ -25,6 +25,19 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
   des acteurs, états du billet/événement/créneau, autorisations, confidentialité et tests de
   recette du Festival.
 
+## Décisions canoniques du 12 août 2026
+
+- **[coque-cinq-puissances.md](coque-cinq-puissances.md)** — la coque est structurée par
+  les cinq Puissances sous forme de verbes : `Discerner · Décider · Relier · Créer ·
+  Ressentir`. Cartographie de toutes les destinations, Désir comme mise en mouvement,
+  Transcendance comme portail du Grand Jeu, couches transversales et dévoilement par les
+  Mondes. Ce document prévaut sur les anciens libellés de navigation.
+- **[grand-jeu-monde-miroir-cible.md](grand-jeu-monde-miroir-cible.md)** — consolidation
+  canonique du Grand Jeu : voie facultative dès le Monde 1, avatar autonome, Omégas
+  historiques et actifs, mana renouvelable, territoires consentis, cinq futurs, quêtes,
+  Réveil des Trois Sources et scénario du premier prototype 2D. Ce document prévaut sur
+  les hypothèses contradictoires de `monde-miroir.md`.
+
 ## Ordre de lecture recommandé
 
 > **Synthèse pour le Cercle cœur :**
@@ -41,7 +54,10 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 1. **[marelle-mondes.md](marelle-mondes.md)** — Le document fondateur. Traduit la Marelle Oméga (progression par mondes 0 à 10, cercles de croissance, sécurité ontologique) issue du livre source en hypothèses fonctionnelles pour ze.game. Pose la stratégie d'adoption incrémentale.
 
-2. **[monde-miroir.md](monde-miroir.md)** — Le repositionnement le plus ambitieux : avatar/jumeau numérique autonome, monde-miroir narratif, Ombre et Lumière captive, mana, quatrième mur. Sert de hub vers les 4 notes fonctionnelles ci-dessous.
+2. **[grand-jeu-monde-miroir-cible.md](grand-jeu-monde-miroir-cible.md)** — La décision
+   canonique la plus récente sur le Grand Jeu et le monde-miroir. Lire ensuite
+   [monde-miroir.md](monde-miroir.md) comme historique de conception et hub vers les notes
+   fonctionnelles.
 
 3. **[relations-recits-collectifs.md](relations-recits-collectifs.md)** — Messagerie propre au Point Zéro, récit-fresque personnel, architecture sociale fractale (cercles, quêtes collectives).
 

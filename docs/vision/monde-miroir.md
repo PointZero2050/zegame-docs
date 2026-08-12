@@ -2,6 +2,13 @@
 
 > Ajout Codex - 2026-07-12. Synthèse d'un brainstorming avec Boris. Ce document décrit un horizon produit volontairement ambitieux, pas un périmètre validé ni une spécification d'implémentation.
 
+> **Mise à jour canonique — 2026-08-12 :** plusieurs questions et hypothèses de cette note
+> ont été tranchées. Lire d'abord
+> [grand-jeu-monde-miroir-cible.md](grand-jeu-monde-miroir-cible.md), qui prévaut notamment
+> sur l'ouverture par Monde, la distinction Omégas/mana, l'autonomie de l'avatar, les
+> territoires, les cinq futurs et le premier prototype. Le présent document est conservé
+> comme historique de conception et hub vers les notes fonctionnelles.
+
 ## Documents complémentaires
 
 Cette vision est approfondie dans quatre notes fonctionnelles :

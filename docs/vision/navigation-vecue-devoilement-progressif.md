@@ -1,5 +1,12 @@
 # Navigation vécue et dévoilement progressif par les Mondes
 
+> **Mise à jour canonique — 2026-08-12 :** le principe des cinq portes, les pages de
+> teasing et les états de dévoilement restent valides. Leurs libellés et leur grammaire
+> profonde sont désormais définis dans
+> [coque-cinq-puissances.md](coque-cinq-puissances.md) : `Discerner · Décider · Relier ·
+> Créer · Ressentir`. La correspondance historique reste `Aujourd'hui · Mon chemin · Mes
+> liens · Agir · Moi`.
+
 <!-- [Claude] 2026-08-10 — deuxième passe de revue sur la coque `application-cible-consolidee`
      (zegame-prototypes, état ee680ac). La première passe (revue-ux-cible-consolidee.md) était
      structurelle et doctrinale ; celle-ci se place dans la peau de l'utilisateur : faciliter la

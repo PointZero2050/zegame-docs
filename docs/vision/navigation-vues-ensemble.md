@@ -2,6 +2,13 @@
 
 > Ajout Codex - 2026-07-13. Synthèse du cadrage avec Boris, du diagnostic `Introspection - EVH - Final.pptx`, des visuels de Marelle et d'évaluation des chakras, et du prototype `point-zero-home` v2.5. Horizon fonctionnel à valider avant implémentation.
 
+> **Mise à jour canonique — 2026-08-12 :** les définitions métier des vues restent utiles,
+> mais l'ancienne navigation par objets n'est plus directrice. La coque est organisée par
+> intentions et cinq Puissances selon
+> [coque-cinq-puissances.md](coque-cinq-puissances.md). De même, les Omégas ne sont jamais
+> dépensables : lire [grand-jeu-monde-miroir-cible.md](grand-jeu-monde-miroir-cible.md)
+> et [cosmo-coin-omega.md](cosmo-coin-omega.md).
+
 ## 1. Principe d'ensemble
 
 Les cinq entrées de navigation doivent raconter une seule architecture :
