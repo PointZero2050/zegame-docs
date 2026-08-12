@@ -413,6 +413,17 @@ atteignables **sans** passer par le guide.
 | Backoffice | Aucun besoin nouveau : un rendez-vous n'est pas un événement de billetterie et ne doit pas encombrer la console Festival |
 | Piège | Ne jamais remplir automatiquement une plage libre ; une disponibilité n'est pas un engagement |
 
+**Réalisé le 12 août 2026** (`pointzero-app`, prod `8624117`). Le contexte est devenu
+polymorphe — `ContexteDeFil` gouverne qui participe et qui agit, aucune table
+d'autorisations nouvelle — et l'état `disponibilites` s'intercale entre `proposee` et
+`retenue`. Le piège est tenu par une règle explicite, vérifiée au banc : **même lorsque
+tous les participants se disent libres au même créneau, rien ne se retient** — il faut
+encore un geste, et il appartient à l'autre que le proposeur. La rencontre se propose
+depuis tout fil vivant à plusieurs (espace, candidature) ; un fil à un seul participant
+n'en offre pas. **Reste pour l'UI agenda transversale** (desktop) : la vue qui
+rassemblera les rendez-vous de tous les fils — le modèle est prêt et son contrat est
+`PropositionDeRencontre.pour_contexte` / `#participants`.
+
 ### F21 — Source d'attention unique (`ActivityItem`)
 
 **Origine front** : `centre-activite-cible`, plus les trois inboxes concurrentes relevées en

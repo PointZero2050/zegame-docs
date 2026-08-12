@@ -175,8 +175,9 @@ CHAÎNE MESSAGERIE / OBJETS (la plus longue — commande le palier 3)
           quitte la palette des réactions (8 restent), les anciennes conservées et gelées
           avec provenance « ancien registre », 13 contrôles verts
       ──▶ CHAÎNE COMPLÈTE — la messagerie capacitante du [PALIER 3] est livrée côté
-          objets ; restent, pour le palier lui-même : F20 Meeting/agenda, annuaire
-          enrichi, profil unifié (chaîne modèle → UI, couples portable/desktop)
+          objets ; les trois couples modèle→UI de la chaîne 3 sont livrés côté
+          portable (héros, annuaire, F20 Meeting) — restent leurs UI (desktop)
+          et le profil unifié
 
 CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)
   contrat de coque (fait) ──▶ gabarit teasing (desktop, FAIT) ──▶ portage coque Rails
@@ -194,7 +195,8 @@ CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)
           └─ branchement de CHAQUE module desktop ──▶ [PALIER 4]
 
 CHAÎNE MODÈLE → UI (le contrat portable/desktop, un couple par module)
-  F20 Meeting (portable) ──▶ UI agenda (desktop)
+  F20 Meeting (FAIT, 12 août, prod 8624117 : contexte polymorphe + disponibilités
+      recueillies) ──▶ UI agenda (desktop, OUVRABLE)
   scope de recherche annuaire (FAIT, 12 août) ──▶ UI annuaire (desktop, OUVRABLE)
   modèle figure/choix de héros (FAIT) ──▶ Héros & mentors (desktop, FAIT — relu, branché à la coque, en prod)
   corpus guides (Codex) ──▶ backend guides (portable) ──▶ pastille (desktop)
