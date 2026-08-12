@@ -179,16 +179,22 @@ CHAÎNE MESSAGERIE / OBJETS (la plus longue — commande le palier 3)
           enrichi, profil unifié (chaîne modèle → UI, couples portable/desktop)
 
 CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)
-  contrat de coque (fait) ──▶ gabarit teasing (desktop) ──▶ portage coque Rails
-      (portable, Fable) ──▶ ┬─ pages de teasing par destination (desktop)
-                            ├─ guides LLM : UI desktop ──▶ backend portable (Opus)
-                            ├─ ActivityItem F21 (portable, Opus) ──▶ 3 projections
-                            └─ branchement de CHAQUE module desktop ──▶ [PALIER 4]
+  contrat de coque (fait) ──▶ gabarit teasing (desktop, FAIT) ──▶ portage coque Rails
+      (FAIT, 12 août, prod 80931d2 : registre config/coque.yml + service Coque à 4 états,
+       5 portes + destbar + barre mobile option C, VerrouDeCoque — le teasing remplace la
+       redirection-alerte sur Cercles/Annuaire, /a-venir/:id pour les horizons,
+       PZ_SHELL_CONTEXT v1, 31 contrôles + 11 bancs verts. Premier module desktop
+       BRANCHÉ dans le registre : Héros & mentors, relu et promu le même jour)
+      ──▶ ┬─ pages de teasing par destination (desktop, OUVRABLE — le gabarit et la
+          │   mécanique sont en prod, il reste l'éditorial fin par destination)
+          ├─ guides LLM : UI desktop ──▶ backend portable (Opus)
+          ├─ ActivityItem F21 (portable, Opus) ──▶ 3 projections
+          └─ branchement de CHAQUE module desktop ──▶ [PALIER 4]
 
 CHAÎNE MODÈLE → UI (le contrat portable/desktop, un couple par module)
   F20 Meeting (portable) ──▶ UI agenda (desktop)
-  scope de recherche annuaire (portable) ──▶ UI annuaire (desktop)
-  modèle figure/choix de héros (FAIT, 12 août) ──▶ Héros & mentors (desktop, OUVRABLE)
+  scope de recherche annuaire (FAIT, 12 août) ──▶ UI annuaire (desktop, OUVRABLE)
+  modèle figure/choix de héros (FAIT) ──▶ Héros & mentors (desktop, FAIT — relu, branché à la coque, en prod)
   corpus guides (Codex) ──▶ backend guides (portable) ──▶ pastille (desktop)
 
 INDÉPENDANTS (ouvrable à tout moment, aucun préalable)
