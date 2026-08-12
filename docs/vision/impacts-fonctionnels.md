@@ -432,6 +432,22 @@ transversal.
 | Notifications | Préférences portées par l'**appartenance** (`EspaceMembership`), pas par le gabarit ; digest et plages de repos |
 | Piège | Pas de défilement infini, pas de série, pas de relance artificielle ; différer ne modifie jamais une échéance collective |
 
+**Réalisé le 12 août 2026** (`pointzero-app`, prod `51c7eb0`) — avec un **arbitrage de
+Boris qui amende la ligne « Modèle »** : il n'y a **pas de journal d'événements**. Les
+objets métier SONT l'archive (ils portent déjà leurs dates et leurs états) ; persister une
+seconde fois créerait une vérité à resynchroniser, ce que la doctrine du corpus refuse
+partout ailleurs (`SeuilFranchi`, `BadgeDeParcours`, `BoiteDEchanges` : « un état se lit,
+il ne se stocke pas »). `Engagements` est donc la source unique, avec deux lectures : le
+présent (borné, pour l'accueil) et `archive` (sans fenêtre, le traité compris). La seule
+persistance est **`vu`** (`marqueurs_d_attention`), parce qu'il ne se déduit d'aucun objet
+— et il ne vaut jamais traitement.
+
+**Conséquence pour la spec P/D/A §10** (contrat d'événements) : les événements y restent
+la bonne façon de NOMMER ce qui se passe, mais aucune table ne les enregistre — ce sont
+les transitions d'état des objets qui en tiennent lieu. À prendre en compte si un besoin
+d'audit externe apparaît un jour (il justifierait alors son propre lot, et sa propre
+décision).
+
 ### F22 — Proposition, Décision et objection
 
 **Origine front** : `messagerie-point-zero-cible` — vues Décisions, composeur `+`, objection

@@ -188,7 +188,9 @@ CHAÎNE COQUE / NAVIGATION (commande les paliers 2 et 4)
       ──▶ ┬─ pages de teasing par destination (desktop, OUVRABLE — le gabarit et la
           │   mécanique sont en prod, il reste l'éditorial fin par destination)
           ├─ guides LLM : UI desktop ──▶ backend portable (Opus)
-          ├─ ActivityItem F21 (portable, Opus) ──▶ 3 projections
+          ├─ F21 source d'attention (FAIT, 12 août, prod 51c7eb0) ──▶ les 3 projections
+          │   sont en place ; arbitrage Boris : lecture élargie, PAS de journal
+          │   (les objets métier sont l'archive) — seul `vu` est persisté
           └─ branchement de CHAQUE module desktop ──▶ [PALIER 4]
 
 CHAÎNE MODÈLE → UI (le contrat portable/desktop, un couple par module)

@@ -209,7 +209,7 @@ traversée Festival, pas par les trente et un.
 | R2 | Traversée « Vivre le Festival » | **Produite le 2026-08-11 ; revue Boris en attente** | Codex (état réel fourni par le portable) |
 | R7 | Chapitre « état réel / projeté » par module | À faire | Portable (inventaire) → Codex/poste fixe |
 | R3 | Porte unique des besoins | **Tranchée : la Place de marché absorbe les Missions** | Codex |
-| R4 | Une source d'attention, trois projections | À faire ; le badge numérique de la topbar reste à retirer | Codex, puis portable (`ActivityItem`) |
+| R4 | Une source d'attention, trois projections | **Faite** (12 août, prod `51c7eb0`) : `Engagements` est la source unique, l'accueil en montre 3 nommés, le Centre `/aujourdhui/attention` porte l'archive, les Échanges la part conversationnelle ; le badge numérique est devenu un point binaire. **Arbitrage Boris : pas de journal d'événements** — les objets métier sont l'archive, seul `vu` se persiste | Portable |
 | R5 | Vocabulaire de l'Ω | **Amendée : l'Ω reste visible en permanence, discret, nommé « compte » — « score » banni** | Codex (NOTES annuaire) |
 | R6a | Échanges visibles sur l'accueil du Jeu **réel** | **Décidée, actionnable tout de suite** | Portable |
 | R6b | Configurations de barre mobile à tester | **Arbitrée le 2026-08-11 : option C, « Échanges au centre »** | Codex |
