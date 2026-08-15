@@ -29,11 +29,17 @@ acquises et vérifie ce qu'elles impliquent :
 
 **Verdict de l'analyse : la fonction est réalisable, et son coût monétaire est
 négligeable. Ce qui la bloque n'est ni technique ni financier — c'est le corpus, qui
-n'existe pas, et la voix du Docteur, qui demande un arbitrage humain.**
+n'existait pas lors de cette analyse, et la voix du Docteur, qui demande un arbitrage humain.**
+
+> **Mise à jour Codex — 2026-08-15.** Le palier éditorial a commencé dans
+> [`docs/pedagogie/corpus-guides/`](../pedagogie/corpus-guides/README.md) : schéma de fiche,
+> hiérarchie des sources, politique de réponse, profils des deux voix, manifeste et trente
+> fiches canoniques du Monde 0. Ce lot lève le constat d'absence totale de corpus, mais ne vaut
+> pas encore recette de production ni validation humaine définitive du Docteur.
 
 ---
 
-## 1. Constat bloquant — le corpus n'existe pas
+## 1. Constat initial — le corpus joueur n'existait pas
 
 Un guide qui répond « d'après ce que je sais » est un générateur de plausible. Ce que la
 spec demande — montrer ses sources — impose un corpus indexé, cité, et **écrit pour être

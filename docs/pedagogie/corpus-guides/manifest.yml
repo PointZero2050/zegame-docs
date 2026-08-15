@@ -1,0 +1,46 @@
+version: 1
+updated_at: 2026-08-15
+default_locale: fr
+truth_policy: shared_between_guides
+records_file: monde-0/fiches.md
+
+voices:
+  professeur_sirbey: voix-professeur-sirbey.md
+  docteur_zero: voix-docteur-zero.md
+
+policy: politique-de-reponse.md
+schema: schema-fiche.md
+source_registry: registre-sources.md
+editorial_bench: banc-editorial.md
+
+records:
+  - { id: m0-01, slug: point-zero, min_world: 0, status: canonique, destinations: [accueil, intuition, guides] }
+  - { id: m0-02, slug: crise-intercycle, min_world: 0, status: hypothese, destinations: [accueil, intuition, marelle] }
+  - { id: m0-03, slug: civilisation-conscience, min_world: 0, status: horizon, destinations: [accueil, intuition, accomplissements] }
+  - { id: m0-04, slug: recits-croyances, min_world: 0, status: canonique, destinations: [imagination, intuition, marelle] }
+  - { id: m0-05, slug: empire-cite-cosmique, min_world: 0, status: recit_symbolique, destinations: [intuition, marelle, guides] }
+  - { id: m0-06, slug: polarites, min_world: 0, status: canonique, destinations: [moteur, marelle, guides] }
+  - { id: m0-07, slug: ombre-lumiere-source, min_world: 0, status: canonique, destinations: [moteur, guides, heros] }
+  - { id: m0-08, slug: moteur-conscience, min_world: 0, status: canonique, destinations: [moteur, accueil, transcendance] }
+  - { id: m0-09, slug: desir, min_world: 0, status: canonique, destinations: [desir, accueil, immateria] }
+  - { id: m0-10, slug: volonte, min_world: 0, status: canonique, destinations: [volonte, marelle, parcours] }
+  - { id: m0-11, slug: imagination, min_world: 0, status: canonique, destinations: [imagination, fresque, traces] }
+  - { id: m0-12, slug: emotion, min_world: 0, status: canonique, destinations: [emotion, heros, mentors] }
+  - { id: m0-13, slug: communication, min_world: 0, status: canonique, destinations: [communication, guides, seuil] }
+  - { id: m0-14, slug: intuition, min_world: 0, status: canonique, destinations: [intuition, ressources, evenements] }
+  - { id: m0-15, slug: transcendance, min_world: 0, status: canonique, destinations: [transcendance, moteur, accomplissements] }
+  - { id: m0-16, slug: alchimisation, min_world: 0, status: hypothese, destinations: [moteur, transcendance, profil] }
+  - { id: m0-17, slug: marelle-mondes, min_world: 0, status: canonique, destinations: [marelle, volonte, accueil] }
+  - { id: m0-18, slug: parcours-experiences, min_world: 0, status: canonique, destinations: [marelle, parcours, volonte] }
+  - { id: m0-19, slug: fonction-monde-zero, min_world: 0, status: canonique, destinations: [accueil, marelle, accomplissements] }
+  - { id: m0-20, slug: traces, min_world: 0, status: canonique, destinations: [traces, imagination, parcours] }
+  - { id: m0-21, slug: graines-resonances, min_world: 0, status: canonique, destinations: [fresque, imagination, seuil] }
+  - { id: m0-22, slug: heros-mentors, min_world: 0, status: canonique, destinations: [heros, emotion, marelle] }
+  - { id: m0-23, slug: guides-mentors-aide, min_world: 0, status: canonique, destinations: [guides, communication, aide] }
+  - { id: m0-24, slug: ressourcerie, min_world: 0, status: canonique, destinations: [intuition, ressources, evenements] }
+  - { id: m0-25, slug: omegas, min_world: 0, status: canonique, destinations: [omega, accueil, accomplissements] }
+  - { id: m0-26, slug: commun, min_world: 0, status: horizon, destinations: [omega, accomplissements, guides] }
+  - { id: m0-27, slug: cercles, min_world: 0, status: horizon, destinations: [communication, guides, accomplissements] }
+  - { id: m0-28, slug: site-application, min_world: 0, status: canonique, destinations: [accueil, guides, ressources] }
+  - { id: m0-29, slug: donnees-visibilite, min_world: 0, status: canonique, destinations: [compte, fresque, profil, guides] }
+  - { id: m0-30, slug: limites-recours, min_world: 0, status: canonique, destinations: [guides, aide, compte] }
