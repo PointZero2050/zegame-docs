@@ -94,7 +94,7 @@ Accueillir l'Émotion ne signifie pas lui confier seule la décision. Cela signi
 fonction d'information afin que le cœur puisse participer au discernement sans devenir un
 nouveau monarque absolu.
 
-### 5. Communication — J'EXPRIME
+### 5. Communication — JE M'EXPRIME
 
 La Communication rend l'expérience partageable. Elle nomme les besoins, formule les limites,
 transmet les visions et transforme une intention en coordination.
@@ -107,7 +107,7 @@ Une Communication intégrée sait parler, écouter, traduire, reformuler et se t
 mesure pas sa réussite au volume produit, mais à la possibilité réelle donnée aux autres de
 comprendre, répondre et agir.
 
-### 6. Intuition — JE CONNAIS
+### 6. Intuition — JE DISCERNE
 
 L'Intuition perçoit des cohérences avant qu'elles puissent être entièrement démontrées. Elle lit
 les signaux faibles, rapproche des informations éloignées et permet de naviguer dans une

@@ -43,8 +43,8 @@ Le corpus décrit une **architecture conceptuelle et fonctionnelle**. Il ne cons
 - Volonté — **JE DÉCIDE**
 - Imagination — **JE CRÉE**
 - Émotion — **J’AIME**
-- Communication — **J’EXPRIME**
-- Intuition — **JE CONNAIS**
+- Communication — **JE M’EXPRIME**
+- Intuition — **JE DISCERNE**
 - Transcendance — **JE DONNE**
 
 ### État d’une Puissance polaire

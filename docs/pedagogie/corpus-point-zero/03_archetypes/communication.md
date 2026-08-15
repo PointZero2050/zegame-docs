@@ -1,4 +1,4 @@
-# Communication — J’EXPRIME
+# Communication — JE M’EXPRIME
 ![Référentiel visuel](../assets/communication_ombre_lumiere.png)
 ## Intensités
 | Niveau | Ombre | Lumière |

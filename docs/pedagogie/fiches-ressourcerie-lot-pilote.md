@@ -488,8 +488,8 @@ Puissances, chacune portée par un verbe.
 toute raison. **Volonté — JE DÉCIDE.** Choisir, trancher, tenir une ligne dans la durée.
 **Imagination — JE CRÉE.** Ouvrir des possibles, donner forme à ce qui n'existe pas
 encore. **Émotion — J'AIME.** Recevoir l'information de la relation, se laisser toucher,
-revenir au présent. **Communication — J'EXPRIME.** Rendre l'expérience partageable,
-coordonner les consciences. **Intuition — JE CONNAIS.** Percevoir les cohérences,
+revenir au présent. **Communication — JE M'EXPRIME.** Rendre l'expérience partageable,
+coordonner les consciences. **Intuition — JE DISCERNE.** Percevoir les cohérences,
 discerner au-delà des apparences. Et la septième, à part : **Transcendance — JE DONNE.**
 Relier ce qu'on fait à plus vaste que soi, redistribuer — elle n'a pas de polarité propre,
 elle dit comment l'ensemble circule et se transmet.

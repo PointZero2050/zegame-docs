@@ -1,4 +1,4 @@
-# Intuition — JE CONNAIS
+# Intuition — JE DISCERNE
 ![Référentiel visuel](../assets/intuition_ombre_lumiere.png)
 ## Intensités
 | Niveau | Ombre | Lumière |

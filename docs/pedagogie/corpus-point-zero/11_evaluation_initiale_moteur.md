@@ -335,7 +335,7 @@ Une réponse `libre` ne doit pas être validée sans au moins une donnée compl�
 
 ### Puissance observée
 
-**Communication — J’EXPRIME**
+**Communication — JE M’EXPRIME**
 
 ### Situation
 
@@ -370,7 +370,7 @@ Une réponse `libre` ne doit pas être validée sans au moins une donnée compl�
 
 ### Puissance observée
 
-**Intuition — JE CONNAIS**
+**Intuition — JE DISCERNE**
 
 ### Situation
 
