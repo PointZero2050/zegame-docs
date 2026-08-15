@@ -104,6 +104,27 @@ et la collision « Créer »/bouton `+` sur mobile, (b) l'emplacement de la Cour
 teaser Monde 0 du miroir (préalable §18.4). Ces maquettes sont le préalable du sprint 4
 révisé ; rien n'en devient visible pour le Festival.
 
+**RÉVISION DU 15 AOÛT (Boris)** — le travail de maquettage a débouché sur une
+consolidation plus profonde que prévu : le **lot onboarding Monde 0** (doc canonique
+[onboarding-monde-0-sept-puissances.md](onboarding-monde-0-sept-puissances.md), 25
+commits Codex dans zegame-prototypes, 9 prototypes `*-m0-cible` + coque `m0-shell`).
+L'accueil devient un **métaparcours des sept Puissances** (cartes d'appel + roue), qui
+**amende la barre des cinq verbes** : les cinq intentions restent une cartographie
+fonctionnelle, la navigation visible passe par les sept Puissances. Conséquences :
+
+- la **cible de fin août** devient : Monde 0 pleinement fonctionnel et engageant sur ce
+  modèle, **mis en ligne AVANT le Festival** (renversement assumé de la règle « rien
+  d'août visible au Festival » — pour ce lot uniquement, décision Boris du 15 août) ;
+- les chantiers ouverts le 12 août (coque v2 « cinq verbes », lot sprint 4) sont
+  **suspendus** en l'état : la coque v2 sera redéfinie sur la base du métaparcours une
+  fois le Monde 0 en ligne ;
+- le portage Rails du lot est cadencé par l'analyse du portable du 15 août (voir
+  PASSATION-CLAUDE.md, session du 15 août) : l'essentiel du backend existe déjà en
+  production (Marelle, Ressourcerie 10 fiches, héros 42 figures, Moteur/questionnaires,
+  badges, Graines, Espaces, barème Ω) — le chantier est un chantier de **vues et d'un
+  petit modèle d'état** (Traces, popups vues, états de cartes), pas de modèles lourds ;
+- gel du 15 septembre inchangé : la cible de fin août laisse deux semaines de recette.
+
 ### Sprint 2 · 26 août - 8 sept — « Le jour J est prêt »
 
 | Acteur | Charge | Modèle |
