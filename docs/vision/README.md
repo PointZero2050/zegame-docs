@@ -27,6 +27,12 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 ## Décisions canoniques du 12 août 2026
 
+- **[onboarding-monde-0-sept-puissances.md](onboarding-monde-0-sept-puissances.md)** —
+  amendement canonique du 15 août : accueil-métaparcours, navigation visible par la roue
+  des sept Puissances, incrémentation des cartes, cartographie des neuf pages Monde 0,
+  coque partagée, état simulé et écarts à raccorder à Rails. Ce document prévaut sur la
+  barre visible à cinq Puissances décrite auparavant.
+
 - **[coque-cinq-puissances.md](coque-cinq-puissances.md)** — la coque est structurée par
   les cinq Puissances sous forme de verbes : `Discerner · Décider · Relier · Créer ·
   Ressentir`. Cartographie de toutes les destinations, Désir comme mise en mouvement,

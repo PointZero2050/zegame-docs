@@ -1,5 +1,11 @@
 # Coque de l'application structurée par les cinq Puissances
 
+> **Amendement canonique — 2026-08-15 :** Boris a retenu une navigation visible par les
+> **sept Puissances**, incarnée dans l'accueil-métaparcours du Monde 0 et sa roue. Les cinq
+> intentions décrites ci-dessous restent une cartographie fonctionnelle, mais ne sont plus
+> la barre principale cible. Voir
+> [onboarding-monde-0-sept-puissances.md](onboarding-monde-0-sept-puissances.md).
+
 > Ajout Codex — 2026-08-12. Décision de Boris issue du cadrage de l'architecture
 > pédagogique, du Grand Jeu et du monde-miroir. Ce document devient la référence
 > canonique pour le sens des cinq portes de la coque. Il précise et renomme la
