@@ -1,8 +1,11 @@
-version: 1
-updated_at: 2026-08-15
+version: 2
+updated_at: 2026-08-16
 default_locale: fr
 truth_policy: shared_between_guides
 records_file: monde-0/fiches.md
+records_files:
+  - monde-0/fiches.md
+  - monde-1/fiches.md
 
 voices:
   professeur_sirbey: voix-professeur-sirbey.md
@@ -44,3 +47,24 @@ records:
   - { id: m0-28, slug: site-application, min_world: 0, status: canonique, destinations: [accueil, guides, ressources] }
   - { id: m0-29, slug: donnees-visibilite, min_world: 0, status: canonique, destinations: [compte, fresque, profil, guides] }
   - { id: m0-30, slug: limites-recours, min_world: 0, status: canonique, destinations: [guides, aide, compte] }
+  - { id: m1-01, slug: fonction-monde-1, min_world: 1, status: canonique, destinations: [accueil, boussole, cercle] }
+  - { id: m1-02, slug: boussole-monde-1, min_world: 1, status: canonique, destinations: [boussole, marelle, accueil] }
+  - { id: m1-03, slug: catalogue-liberte-parcours, min_world: 1, status: canonique, destinations: [marelle, parcours, freeride] }
+  - { id: m1-04, slug: indicateurs-parcours, min_world: 1, status: canonique, destinations: [parcours, experiences, marelle] }
+  - { id: m1-05, slug: cercle-croissance, min_world: 1, status: canonique, destinations: [cercle, accueil, communication] }
+  - { id: m1-06, slug: trouver-son-cercle, min_world: 1, status: canonique, destinations: [cercle, annuaire, accueil] }
+  - { id: m1-07, slug: taille-appartenance-cercle, min_world: 1, status: canonique, destinations: [cercle, membres, cycle] }
+  - { id: m1-08, slug: autofacilitation-legere, min_world: 1, status: canonique, destinations: [cercle, roles, sessions] }
+  - { id: m1-09, slug: cinq-cadres-gardiens, min_world: 1, status: canonique, destinations: [cercle, roles, cadres] }
+  - { id: m1-10, slug: pacte-source-leger, min_world: 1, status: canonique, destinations: [cercle, pacte, sessions] }
+  - { id: m1-11, slug: rythme-seance, min_world: 1, status: canonique, destinations: [cercle, sessions, agenda] }
+  - { id: m1-12, slug: traversee-intercycle, min_world: 1, status: canonique, destinations: [boussole, jeu, cercle] }
+  - { id: m1-13, slug: espaces-echange, min_world: 1, status: canonique, destinations: [communication, echanges, accueil] }
+  - { id: m1-14, slug: graines-resonances-cercle, min_world: 1, status: canonique, destinations: [fresque, cercle, resonances] }
+  - { id: m1-15, slug: mentor-memoire-consentements, min_world: 1, status: canonique, destinations: [mentor, consentements, fresque] }
+  - { id: m1-16, slug: profil-cercle-flow, min_world: 1, status: horizon, destinations: [cercle, profil, cadres] }
+  - { id: m1-17, slug: omegas-monde-1, min_world: 1, status: canonique, destinations: [omega, accomplissements, cercle] }
+  - { id: m1-18, slug: palier-million-omegas, min_world: 1, status: hypothese, destinations: [omega, observatoire, impact] }
+  - { id: m1-19, slug: contributions-reconnaissance, min_world: 1, status: horizon, destinations: [contributions, omega, cercle] }
+  - { id: m1-20, slug: commun-simulation, min_world: 1, status: horizon, destinations: [commun, omega, cercle] }
+  - { id: m1-21, slug: seuil-monde-2, min_world: 1, status: canonique, destinations: [marelle, rites, cercle] }

@@ -34,8 +34,10 @@ Le premier lot comprend :
 4. la [voix du Professeur Sirbey](voix-professeur-sirbey.md) ;
 5. la [voix du Docteur Z.E.R.O.](voix-docteur-zero.md) ;
 6. trente [fiches canoniques du Monde 0](monde-0/fiches.md) ;
-7. un [`manifest.yml`](manifest.yml) destiné au filtrage déterministe ;
-8. un [banc éditorial](banc-editorial.md) de vingt scénarios ordinaires, limites et sensibles.
+7. vingt-et-une [fiches du Monde 1](monde-1/fiches.md), dont les fonctions non livrées sont
+   explicitement marquées `horizon` ou `hypothese` ;
+8. un [`manifest.yml`](manifest.yml) destiné au filtrage déterministe ;
+9. un [banc éditorial](banc-editorial.md) de vingt scénarios ordinaires, limites et sensibles.
 
 ## Règle de priorité
 
@@ -78,6 +80,8 @@ ne sont pas nécessaires pour répondre sur le Point Zéro ou l'interface. Ils n
 - Répondre d'abord à la question posée, en deux à cinq paragraphes courts.
 - Distinguer `canonique`, `hypothèse`, `horizon` et `récit symbolique`.
 - Citer une ou plusieurs fiches utilisées.
+- Citer les sources par leur **titre public lisible uniquement** : aucun chemin de dépôt,
+  nom de fichier ou ancre interne ne doit entrer dans le prompt assemblé ni dans la réponse.
 - Ne jamais diagnostiquer une personne, une organisation ou une Puissance.
 - Ne jamais transformer une métaphore cosmologique en fait scientifique.
 - Ne jamais annoncer une fonctionnalité non accessible comme si elle existait déjà.
@@ -97,3 +101,16 @@ La validation porte séparément sur :
 
 Une modification doctrinale ne doit pas être propagée silencieusement. Elle entraîne une
 nouvelle revue des fiches liées par le manifeste.
+
+Le registre interne conserve les chemins utiles à la maintenance. Les lignes `Sources` des
+fiches joueur, elles, constituent l'export citable : elles ne portent volontairement que des
+titres.
+
+### Compatibilité du chargeur
+
+Le manifeste v2 conserve `records_file: monde-0/fiches.md` pour ne pas casser le chargeur du
+palier 1 déjà livré. Le nouveau tableau `records_files` est la source canonique multi-Mondes.
+Avant d'exposer le corpus M1, le chargeur Rails doit parcourir ce tableau, vérifier que chaque
+section possède une entrée de manifeste et filtrer ensuite par `min_world`. Ignorer le tableau
+revient à conserver volontairement le seul corpus M0 ; ce n'est pas une erreur silencieuse à
+masquer dans la vue.

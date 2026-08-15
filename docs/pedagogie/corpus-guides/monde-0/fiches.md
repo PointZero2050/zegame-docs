@@ -26,8 +26,7 @@ croire.
 **À ne pas affirmer.** Le Point Zéro n'est ni une thérapie, ni une doctrine spirituelle à
 adopter, ni un cabinet de conseil gamifié.
 
-**Sources.** [Questions-réponses de l'écosystème](../../../vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md),
-[accueil par les Puissances](../../../vision/onboarding-monde-0-sept-puissances.md).
+**Sources.** *Questions-réponses de l'écosystème* ; *Accueil par les Puissances*.
 
 ## M0-02 — Crise et intercycle
 
@@ -49,8 +48,7 @@ de lui chercher un coupable unique.
 
 **À ne pas affirmer.** L'effondrement est certain, daté ou souhaitable.
 
-**Sources.** [Parcours publics du Sas](../../../site/parcours-publics-sas.md),
-[Le Coupable idéal](../../coupable-ideal-proces-polarites.md).
+**Sources.** *Parcours publics du Sas* ; *Le Coupable idéal*.
 
 ## M0-03 — Civilisation de la Conscience
 
@@ -72,8 +70,7 @@ vaste : quelles conditions permettent à la vie de circuler dans un système ?
 
 **À ne pas affirmer.** Le Point Zéro possède déjà le plan complet de la civilisation future.
 
-**Sources.** [Questions-réponses de l'écosystème](../../../vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md),
-[architecture pédagogique](../../corpus-point-zero/01_architecture_pedagogique_globale.md).
+**Sources.** *Questions-réponses de l'écosystème* ; *Architecture pédagogique du Point Zéro*.
 
 ## M0-04 — Récits et croyances
 
@@ -96,8 +93,7 @@ déplacer.
 **À ne pas affirmer.** Il suffirait de penser positivement ou de changer de vocabulaire pour
 transformer le réel.
 
-**Sources.** [Relations entre récits collectifs](../../../vision/relations-recits-collectifs.md),
-[Fresque du Monde 0](../../../vision/onboarding-monde-0-sept-puissances.md#imagination).
+**Sources.** *Relations entre récits collectifs* ; *La Fresque du Monde 0*.
 
 ## M0-05 — Empire et Cité Cosmique
 
@@ -121,8 +117,7 @@ en toi — y compris lorsqu'une solution qui combat l'Empire commence à en repr
 
 **À ne pas affirmer.** L'Empire désigne un groupe précis ou un ennemi extérieur à éliminer.
 
-**Sources.** [Questions-réponses, Q4](../../../vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md#q4-le-point-zéro-veut-il-faire-table-rase-de-lempire-),
-[Grand Jeu](../../../vision/grand-jeu-monde-miroir-cible.md).
+**Sources.** *Questions-réponses de l'écosystème — L'Empire* ; *Le Grand Jeu*.
 
 ## M0-06 — Les polarités
 
@@ -143,8 +138,7 @@ au Point Zéro pour agir selon le contexte.
 **À ne pas affirmer.** Tous les choix se valent, le compromis est toujours préférable ou le
 Point Zéro supprime les conflits.
 
-**Sources.** [Moteur de Conscience](../../corpus-point-zero/02_moteur_de_conscience.md),
-[Moteur ontologique visuel](../../../vision/moteur-ontologique-visuel.md).
+**Sources.** *Le Moteur de Conscience* ; *Le Moteur ontologique*.
 
 ## M0-07 — Ombre, Lumière et Source
 
@@ -168,8 +162,7 @@ l'un des deux mouvements.
 **À ne pas affirmer.** L'Ombre est négative, la Lumière positive, la Source une neutralité sans
 engagement, ou tout retrait constitue par nature un amour de l'autre.
 
-**Sources.** [Moteur de Conscience](../../corpus-point-zero/02_moteur_de_conscience.md),
-[Sept Puissances](../../../vision/sept-puissances.md).
+**Sources.** *Le Moteur de Conscience* ; *Les Sept Puissances*.
 
 ## M0-08 — Le Moteur de Conscience
 
@@ -192,8 +185,7 @@ pour observer ce qui a changé.
 
 **À ne pas affirmer.** Le Moteur est un test psychologique validé ou un diagnostic clinique.
 
-**Sources.** [Moteur de Conscience](../../corpus-point-zero/02_moteur_de_conscience.md),
-[Moteur visuel](../../../vision/moteur-ontologique-visuel.md).
+**Sources.** *Le Moteur de Conscience* ; *Le Moteur ontologique*.
 
 ## M0-09 — Désir, « Je suis »
 
@@ -215,8 +207,7 @@ questionnaire de motivation déguisé.
 
 **À ne pas affirmer.** Tout désir doit être satisfait ou le Jeu connaît ton « vrai désir ».
 
-**Sources.** [Sept Puissances](../../../vision/sept-puissances.md),
-[onboarding — Désir](../../../vision/onboarding-monde-0-sept-puissances.md#désir).
+**Sources.** *Les Sept Puissances* ; *Accueil par les Puissances — Désir*.
 
 ## M0-10 — Volonté, « Je décide »
 
@@ -236,8 +227,7 @@ compréhension du modèle.
 
 **À ne pas affirmer.** Une forte Volonté signifie imposer ses choix ou ne jamais douter.
 
-**Sources.** [Sept Puissances](../../../vision/sept-puissances.md),
-[Monde 0 — Volonté](../../../vision/onboarding-monde-0-sept-puissances.md#volonté).
+**Sources.** *Les Sept Puissances* ; *Accueil par les Puissances — Volonté*.
 
 ## M0-11 — Imagination, « Je crée »
 
@@ -259,8 +249,7 @@ pas ton talent d'écriture.
 
 **À ne pas affirmer.** Une production originale est nécessairement juste ou utile.
 
-**Sources.** [Sept Puissances](../../../vision/sept-puissances.md),
-[Fresque et Traces](../../../vision/onboarding-monde-0-sept-puissances.md#imagination).
+**Sources.** *Les Sept Puissances* ; *La Fresque et les Traces*.
 
 ## M0-12 — Émotion, « Je ressens »
 
@@ -281,8 +270,7 @@ devenir.
 
 **À ne pas affirmer.** Le héros choisi révèle automatiquement ta personnalité ou ton destin.
 
-**Sources.** [Atlas et Assemblée Intérieure](../../corpus-point-zero/07_atlas_figures_et_assemblee_interieure.md),
-[onboarding — Émotion](../../../vision/onboarding-monde-0-sept-puissances.md#émotion).
+**Sources.** *Atlas des figures et Assemblée Intérieure* ; *Accueil par les Puissances — Émotion*.
 
 ## M0-13 — Communication, « Je m'exprime »
 
@@ -303,8 +291,7 @@ l'Espace du Seuil lorsqu'il devient accessible.
 
 **À ne pas affirmer.** Le guide est un interlocuteur humain, un ami ou un mentor personnel.
 
-**Sources.** [Onboarding — Communication](../../../vision/onboarding-monde-0-sept-puissances.md#communication),
-[Messagerie Monde 1](../../../vision/messagerie-espaces-discussion-monde-1.md).
+**Sources.** *Accueil par les Puissances — Communication* ; *Les espaces de discussion du Monde 1*.
 
 ## M0-14 — Intuition, « Je discerne »
 
@@ -325,8 +312,7 @@ des clés sans exiger que tu les adoptes.
 
 **À ne pas affirmer.** Une intuition est vraie parce qu'elle est ressentie fortement.
 
-**Sources.** [Sept Puissances](../../../vision/sept-puissances.md),
-[onboarding — Intuition](../../../vision/onboarding-monde-0-sept-puissances.md#intuition).
+**Sources.** *Les Sept Puissances* ; *Accueil par les Puissances — Intuition*.
 
 ## M0-15 — Transcendance, « Je donne »
 
@@ -349,8 +335,7 @@ et ce que tu choisis d'offrir au Jeu.
 **À ne pas affirmer.** La Transcendance serait supérieure aux autres Puissances ou exigerait
 l'effacement de soi.
 
-**Sources.** [Moteur de Conscience](../../corpus-point-zero/02_moteur_de_conscience.md#9-transcendance),
-[onboarding — Transcendance](../../../vision/onboarding-monde-0-sept-puissances.md#transcendance).
+**Sources.** *Le Moteur de Conscience — Transcendance* ; *Accueil par les Puissances — Transcendance*.
 
 ## M0-16 — Alchimisation
 
@@ -376,8 +361,7 @@ lemniscates.
 **À ne pas affirmer.** Le degré mesure directement ou objectivement la Conscience, prouve un
 niveau spirituel ou permet de comparer la valeur des personnes.
 
-**Sources.** [Moteur visuel](../../../vision/moteur-ontologique-visuel.md),
-[onboarding — Transcendance](../../../vision/onboarding-monde-0-sept-puissances.md#transcendance).
+**Sources.** *Le Moteur ontologique* ; *Accueil par les Puissances — Transcendance*.
 
 ## M0-17 — Marelle et Mondes
 
@@ -398,8 +382,7 @@ expériences plus librement choisies.
 **À ne pas affirmer.** Un Monde supérieur rend une personne meilleure ou tous les Joueurs
 doivent avancer au même rythme.
 
-**Sources.** [Marelle et Mondes](../../../vision/marelle-mondes.md),
-[architecture pédagogique](../../corpus-point-zero/04_marelle_et_progression_des_mondes.md).
+**Sources.** *La Marelle et les Mondes* ; *Architecture pédagogique du Point Zéro*.
 
 ## M0-18 — Parcours et expériences
 
@@ -421,8 +404,7 @@ gestes vers une finalité.
 **À ne pas affirmer.** Une forte intensité garantit un fort impact, ou un score élevé oblige à
 accomplir le parcours.
 
-**Sources.** [Monde 1 — parcours](../../../vision/monde-1-parcours.md),
-[page parcours](../../../vision/page-parcours-carte-du-voyage.md).
+**Sources.** *Architecture des parcours* ; *La carte du voyage*.
 
 ## M0-19 — Fonction du Monde 0
 
@@ -443,8 +425,7 @@ Jeu.
 
 **À ne pas affirmer.** Le Monde 0 réalise un diagnostic complet ou oblige à rejoindre un Cercle.
 
-**Sources.** [Onboarding Monde 0](../../../vision/onboarding-monde-0-sept-puissances.md),
-[Questions-réponses, Q23](../../../vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md#q23-quelle-est-la-fonction-du-monde-0-).
+**Sources.** *Accueil par les Puissances — Monde 0* ; *Questions-réponses de l'écosystème — Le Monde 0*.
 
 ## M0-20 — Les Traces
 
@@ -466,8 +447,7 @@ parcours.
 
 **À ne pas affirmer.** Toute Trace doit être publiée, interprétée ou transformée en Graine.
 
-**Sources.** [Onboarding — Imagination](../../../vision/onboarding-monde-0-sept-puissances.md#imagination),
-[Relations entre récits](../../../vision/relations-recits-collectifs.md).
+**Sources.** *Accueil par les Puissances — Imagination* ; *Relations entre récits collectifs*.
 
 ## M0-21 — Graines et Résonances
 
@@ -490,8 +470,7 @@ gardien de la Graine.
 **À ne pas affirmer.** Une Graine est une confession, une vérité définitive ou un contenu public
 par défaut.
 
-**Sources.** [Relations entre récits](../../../vision/relations-recits-collectifs.md),
-[Questions-réponses, Q22](../../../vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md#q22-que-sont-les-graines-de-récit-et-les-résonances-).
+**Sources.** *Relations entre récits collectifs* ; *Questions-réponses de l'écosystème — Graines et Résonances*.
 
 ## M0-22 — Héros et mentors
 
@@ -513,8 +492,7 @@ ta décision.
 **À ne pas affirmer.** Le personnage historique réel parle au Joueur ou approuverait le Point
 Zéro.
 
-**Sources.** [Atlas et Assemblée Intérieure](../../corpus-point-zero/07_atlas_figures_et_assemblee_interieure.md),
-[Questions-réponses, Q44](../../../vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md#q44-quelle-est-la-place-du-héros-inspirant-).
+**Sources.** *Atlas des figures et Assemblée Intérieure* ; *Questions-réponses de l'écosystème — Le héros inspirant*.
 
 ## M0-23 — Guides, mentors et Aide
 
@@ -537,8 +515,7 @@ vérité, les droits ou les sources.
 **À ne pas affirmer.** Les guides connaissent le Joueur, remplacent un humain ou disposent
 d'actions dans l'application.
 
-**Sources.** [Analyse d'impact des guides](../../../vision/analyse-impact-guides-llm.md),
-[navigation vécue](../../../vision/navigation-vecue-devoilement-progressif.md#54-guides-transversaux-et-puissances-phares-des-héros--2026-08-11).
+**Sources.** *Les guides LLM transversaux du Point Zéro* ; *La navigation vécue du Jeu*.
 
 ## M0-24 — Ressourcerie
 
@@ -561,8 +538,7 @@ qui devient une Trace.
 **À ne pas affirmer.** Il faut assimiler les dix fiches pour mériter l'accès aux ressources
 externes.
 
-**Sources.** [Ressourcerie V1](../../../vision/ressourcerie-v1-principe-affichage.md),
-[onboarding — Intuition](../../../vision/onboarding-monde-0-sept-puissances.md#intuition).
+**Sources.** *La Ressourcerie du Point Zéro* ; *Accueil par les Puissances — Intuition*.
 
 ## M0-25 — Les Omégas
 
@@ -587,8 +563,7 @@ reconnu.
 **À ne pas affirmer.** L'Oméga est une cryptomonnaie, une somme à dépenser, un prix de la
 personne ou une lecture directe de son état intérieur.
 
-**Sources.** [Cosmo Coin Oméga](../../../vision/cosmo-coin-omega.md),
-[onboarding — Oméga](../../../vision/onboarding-monde-0-sept-puissances.md#34-pastille-oméga-au-monde-0).
+**Sources.** *Le Cosmo Coin Oméga* ; *L'Oméga au Monde 0*.
 
 ## M0-26 — Le Commun
 
@@ -610,8 +585,7 @@ reversées au Commun avec des règles de filiation et de reconnaissance.
 **À ne pas affirmer.** Tout ce que produit un Joueur appartient automatiquement au Point Zéro ou
 le Fonds du Commun est déjà accessible au Monde 0.
 
-**Sources.** [Questions-réponses, économie et Commun](../../../vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md#x-léconomie-oméga-et-les-trois-circuits-financiers),
-[architecture pédagogique](../../corpus-point-zero/01_architecture_pedagogique_globale.md#axe-de-propagation--le-commun).
+**Sources.** *Questions-réponses de l'écosystème — Économie et Commun* ; *Architecture pédagogique du Point Zéro*.
 
 ## M0-27 — Les Cercles
 
@@ -634,8 +608,7 @@ faire encore de ses membres un Cercle.
 **À ne pas affirmer.** Le channel du Monde 0 est déjà un Cercle, ou rejoindre un Cercle est
 obligatoire pour terminer le Monde 0.
 
-**Sources.** [Cercles de croissance](../../../vision/cercles-croissance-profils-flow-omega.md),
-[Questions-réponses, section VI](../../../vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md#vi-les-cercles-de-croissance).
+**Sources.** *Les Cercles de croissance* ; *Questions-réponses de l'écosystème — Les Cercles*.
 
 ## M0-28 — Site public et application
 
@@ -658,8 +631,7 @@ boussole de lecture.
 **À ne pas affirmer.** Tout le site est un tutoriel obligatoire ou ses interactions publiques
 alimentent automatiquement le profil.
 
-**Sources.** [Refonte éditoriale du site](../../../vision/refonte-site-revision-editoriale.md),
-[Questions-réponses, section III](../../../vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md#iii-le-site-public-et-lentrée-dans-le-jeu).
+**Sources.** *Le site public du Point Zéro* ; *Questions-réponses de l'écosystème — L'entrée dans le Jeu*.
 
 ## M0-29 — Données et visibilité
 
@@ -682,8 +654,7 @@ Graine.
 **À ne pas affirmer.** Une production privée est anonymisée donc librement exploitable, ou un
 guide connaît déjà ton profil.
 
-**Sources.** [Profil communautaire et messagerie](../../../vision/profil-communautaire-messagerie-cercles-v1.md),
-[analyse d'impact des guides](../../../vision/analyse-impact-guides-llm.md).
+**Sources.** *Le profil communautaire et la messagerie* ; *Les guides LLM transversaux du Point Zéro*.
 
 ## M0-30 — Limites des guides et recours
 
@@ -705,5 +676,4 @@ jamais de lui.
 **À ne pas affirmer.** Le guide garantit la vérité, la confidentialité absolue ou une prise en
 charge humaine.
 
-**Sources.** [Analyse d'impact des guides](../../../vision/analyse-impact-guides-llm.md),
-[politique de réponse](../politique-de-reponse.md).
+**Sources.** *Les guides LLM transversaux du Point Zéro* ; *Politique de réponse des guides*.

@@ -26,7 +26,9 @@ Chaque fiche contient :
 3. **Version courte** — une à trois phrases pour un encart contextuel ;
 4. **Ce que cela change ici** — relation à une page, une action ou une expérience ;
 5. **À ne pas affirmer** — confusion, promesse ou dévoilement interdit ;
-6. **Sources** — liens versionnés vers les documents de fond.
+6. **Sources** — titres publics lisibles des documents de fond, sans chemin de dépôt ; les
+   liens versionnés restent dans le registre interne de maintenance et ne sont pas transmis au
+   modèle comme contenu citable.
 
 ## Statuts de vérité
 

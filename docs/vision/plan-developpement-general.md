@@ -131,7 +131,7 @@ fonctionnelle, la navigation visible passe par les sept Puissances. Conséquence
 |---|---|---|
 | **Portable** | **Portage Rails du lot Monde 0** (le chemin critique) | Ordre : coque `m0-shell` en HAML (en-tête, roue, pastille Ω) → Intuition + Transcendance (backend le plus complet, boucle Trace incluse) → accueil métaparcours (a besoin des états des territoires) → le reste. Plus les modèles transverses : Traces généralisées, popups « vues » côté serveur, états de cartes, et — après arbitrage fournisseur — modèle de consentement par catégorie + mémoire des conversations (tables chez nous, page joueur « visible, éditable, désactivable »). |
 | **Desktop** | **Banc de comparaison Claude/GPT des personnages** (détaché du chemin critique) + suite éditoriale des maquettes | Harnais autonome (prototype dans zegame-prototypes, contrat d'intégration habituel) : transpose les prompts des GPTs existants, fait passer les MÊMES scénarios limites aux deux API (joueur en détresse, joueur provocateur, question intime, 40e message avec mémoire rejouée), sort les réponses côte à côte pour lecture par Boris. Sert ensuite de banc de non-régression du ton. **Règle absolue : aucune clé d'API dans le dossier Dropbox ni dans les repos** — variable d'environnement locale uniquement. |
-| **Codex** | **Scénarios limites + corpus** | Rédige les scénarios limites du banc (c'est de l'éditorial : le ton des personnages est sa zone) ; poursuit le corpus joueur des guides (palier 0 de F19, toujours le goulot de Communication). |
+| **Codex** | **Scénarios limites + corpus — FAIT le 16 août** | Les huit scénarios du banc ont reçu leur version éditoriale agnostique du mentor. Le corpus compte 30 fiches M0 et 21 fiches M1 ; les sources citables sont des titres publics sans chemin interne. Prochaine action : recette qualitative et synchronisation du lot M1 côté application. |
 
 Séquence du chantier « personnages LLM » : banc comparatif (desktop, FAIT) →
 **arbitrage fournisseur par Boris : CLAUDE, acté le 15 août** (mentors ET guides) →
@@ -141,11 +141,10 @@ par le joueur, `PlafondLlm` robinet unique guides+mentors, `MentorReponse` incar
 figure choisie, pages `/mentor` et `/mentor/consentements`) → branchement des guides
 FAIT aussi (F19 Palier 1, le corpus Codex est en prod ; voir PASSATION du 15 août).
 
-**Le goulot du chantier est désormais la VOIX ÉDITORIALE DU MENTOR (Codex)** — la
-consigne v0 s'appuie sur la fiche du héros choisi + la politique de réponse des guides
-en plancher de sécurité ; il manque l'équivalent des fiches voix (registre, opérations,
-formulations interdites, dosage) pour la posture mentor elle-même. Ensuite : UI riche
-Marelle (desktop, sur le contrat `/mentor`), lecture qualitative de Boris avant toute
+**Mise à jour du 16 août : le goulot éditorial n'est plus l'absence de corpus.** Les voix
+des six mentors sont portées par les prompts du banc, les huit scénarios sont éditorialisés et
+le corpus guide couvre M0 et M1. Restent : intégrer le lot M1 sans exposer les chemins de dépôt,
+rejouer le banc de non-régression, puis faire la lecture qualitative de Boris avant toute
 visibilité élargie.
 
 ### Sprint 2 · 26 août - 8 sept — « Le jour J est prêt »
@@ -182,7 +181,7 @@ la promotion en production ne pouvait de toute façon pas précéder le Festival
 
 | Acteur | Charge | Modèle |
 |---|---|---|
-| Portable | **Guides LLM backend** (F19) — **analyse d'impact FAITE le 12 août** ([document](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/analyse-impact-guides-llm.md)) : le code n'est plus le goulot (2-3 j), le **corpus joueur** l'est, et il est **éditorial**. Palier 0 = écrire le corpus (Codex/Boris, peut commencer tout de suite) ; palier 1 = page « Demander au guide », Professeur seul, sans JS ; palier 2 = pastille puis Docteur. Pas de RAG vectoriel : le corpus tient dans le prompt. ‖ **`ActivityItem`** (F21) et ses trois projections — **FAIT** | **Sonnet 5** suffit (le RAG vectoriel est écarté ; la difficulté restante est éditoriale et d'arbitrage) |
+| Portable | **Guides LLM backend** (F19) — **réalisé en avance le 15 août pour le palier 1**, avec les deux voix retenues par Boris. Corpus M0 ingéré ; corpus M1 livré le 16 août, à synchroniser et recetter. Pas de RAG vectoriel : le corpus curaté tient dans le prompt. ‖ **`ActivityItem`** (F21) et ses trois projections — **FAIT** | **Sonnet 5** suffit ; la difficulté restante est la recette éditoriale et l'intégration progressive de la pastille. |
 | Desktop | Module **Ressourcerie vivante v1** (lecture : deux corpus, profondeurs, « Pourquoi maintenant ? » — le modèle de données existe, c'est un chantier de vues) | Sonnet 5 |
 | Codex | Fiches héros éditoriales (biographies sourcées) ; revue du portage de coque (1er temps du cycle suivant) | — |
 

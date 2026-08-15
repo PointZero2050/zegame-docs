@@ -93,6 +93,10 @@ Cette cartographie organise la navigation. Elle ne signifie pas qu’une fonctio
 expérience « appartient » exclusivement à une Puissance. Un parcours reste multi-Puissances et les
 correspondances Puissances/Cadres canoniques demeurent :
 
+Les libellés canoniques de la coque sont **« JE M’EXPRIME »** pour Communication et
+**« JE DISCERNE »** pour Intuition. Les anciens libellés `J’EXPRIME` et `JE CONNAIS` ne doivent
+réapparaître ni dans les parcours, ni dans les cartes, ni dans les configurations.
+
 - Volonté ↔ Relationnel ;
 - Imagination ↔ Sens ;
 - Émotion ↔ Gouvernance ;
@@ -212,6 +216,12 @@ messages, Cercles, rôles, Graines, validations et accomplissements.
 Le portage touche potentiellement des zones sensibles. Avant code, produire une matrice
 `état visible → source de vérité → droit → événement de transition` et auditer au minimum :
 
+Cette matrice est désormais produite dans
+[matrice-impact-onboarding-monde-1.md](matrice-impact-onboarding-monde-1.md). Elle distingue les
+états projetables depuis le code existant, les résolveurs en lecture seule et les objets métier
+encore absents. Elle doit être relue contre la branche Rails effectivement portée avant
+implémentation.
+
 - `Journey`, `Challenge`, `JourneysUser`, `ChallengesUser`, `ExperienceState` ;
 - règles `mandatory` et ouverture du catalogue ;
 - `Circle`, cycle, membres, rôles et Pacte-Source ;
@@ -248,4 +258,3 @@ Le prototype interactif vit dans :
 Les quatre projections sont accessibles par `?phase=entry`, `?phase=boussole`, `?phase=circle` et
 `?phase=living`. Les données et transitions y sont simulées ; elles ne constituent aucune promesse
 d’état actuel de l’application.
-

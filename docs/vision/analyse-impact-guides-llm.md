@@ -31,11 +31,13 @@ acquises et vérifie ce qu'elles impliquent :
 négligeable. Ce qui la bloque n'est ni technique ni financier — c'est le corpus, qui
 n'existait pas lors de cette analyse, et la voix du Docteur, qui demande un arbitrage humain.**
 
-> **Mise à jour Codex — 2026-08-15.** Le palier éditorial a commencé dans
+> **Mise à jour Codex — 2026-08-16.** Le palier éditorial est désormais constitué dans
 > [`docs/pedagogie/corpus-guides/`](../pedagogie/corpus-guides/README.md) : schéma de fiche,
-> hiérarchie des sources, politique de réponse, profils des deux voix, manifeste et trente
-> fiches canoniques du Monde 0. Ce lot lève le constat d'absence totale de corpus, mais ne vaut
-> pas encore recette de production ni validation humaine définitive du Docteur.
+> hiérarchie des sources, politique de réponse, profils des deux voix, manifeste, trente
+> fiches du Monde 0 et vingt-et-une fiches du Monde 1. Le lot M0 a été ingéré et éprouvé en
+> préproduction par le portable le 15 août ; le lot M1 reste à intégrer et à recetter. Les
+> sources citables ont été assainies le 16 août : titres publics uniquement, aucun chemin de
+> dépôt transmis au modèle.
 
 ---
 
@@ -260,11 +262,11 @@ même par commodité.
 **Ne pas ouvrir F19 comme un chantier de développement.** Le code n'est pas le goulot :
 une page, un appel, un corpus en prompt — deux à trois jours. Ce qui manque est ailleurs.
 
-### Palier 0 — avant tout code (éditorial, appartient à Boris et Codex)
+### Palier 0 — avant tout code (éditorial, appartient à Boris et Codex) — réalisé pour M0 et M1
 
-Écrire le **corpus joueur** : les fiches, par Monde ouvert, dans la voix du jeu, disant ce
-qu'un joueur a le droit de savoir. Sans lui, il n'y a rien à indexer et rien à citer. Ce
-palier ne dépend pas de moi et peut commencer aujourd'hui.
+Le **corpus joueur** est versionné pour les Mondes 0 et 1. Chaque extension de Monde doit
+rejouer le même cycle : rédaction, niveau de dévoilement, sources publiques, recette des deux
+voix et validation humaine. Le serveur ne doit jamais indexer directement `docs/vision/`.
 
 ### Palier 1 — la fonction nue
 
