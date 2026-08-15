@@ -130,3 +130,43 @@ Les trois questions ouvertes ont été tranchées le jour même :
 3. **« Puissances » est le vocabulaire canon.** Le portage Rails remplace « chakras »
    partout dans les textes du jeu (les six de `CHAKRA_LABELS` recouvrent les Puissances) ;
    le prototype `avatar/` suivra au rythme de Boris, l'app n'attend pas.
+
+## 5. Socle livré (Claude portable, 15 août au soir) — corrections et contrat
+
+Le socle Rails est en préprod (`zegame-app`, branche `preprod`, commit `6d4eaac`).
+L'exploration approfondie du code pendant le chantier corrige trois points du §1-2 :
+
+1. **`deploy/` est un artefact cassé** : son `js/` est vide (le build réel de `deploy.ps1`
+   va dans `%TEMP%`, pas dans `deploy/`). La source intégrée est **`public/`** (index,
+   css, js, maps) ; seuls les **assets** viennent de `deploy/assets/` (sous-ensemble trié,
+   30 Mo, vérifié complet contre les chargements de `BootScene.js`).
+2. **Aucun texte « chakra » n'est visible par le joueur** — uniquement des identifiants
+   internes (variables, ids DOM, sélecteurs CSS). Les libellés affichés sont déjà les
+   Puissances (`CHAKRA_LABELS`). L'arbitrage vocabulaire n'exige donc AUCUNE réécriture
+   de texte ; renommer les identifiants reste une affaire de propreté, pour la passe
+   prototype.
+3. **La sortie du jeu pointait vers l'ancien serveur** (`app.ze.game/journeys/...`) —
+   réécrite vers `/jeu`. Le hook `CustomEvent pointzero:goto-monde0` du prototype reste
+   émis avant la redirection.
+
+**Le contrat de persistance, pour la passe de refonte du flux** (Boris + Codex) :
+
+- `GET /immateria` — la page du jeu, compte requis (jamais un fichier statique : c'est la
+  vue Rails qui porte l'authentification et le `<meta csrf-token>`).
+- `POST /immateria/trace` — JSON, en-tête `X-CSRF-Token` lu dans le `<meta>`. Liste
+  blanche : `name, gender, charKey, hairKey, archetype, fear, avatarName` (scalaires),
+  `aspirations, answers` (tableaux), `scores, fearScores` (objets). Toute autre clé est
+  ignorée sans erreur. Chaque POST **fusionne** dans l'unique
+  `Trace(territoire: "desir", cle: "immateria")` du joueur — le jeu peut poster autant de
+  fois qu'il veut, quand il veut ; le rejeu écrase clé par clé. `avatarName` est déjà
+  admis pour le futur écran de nommage.
+- L'endpoint **tolère les POST concurrents** : le prototype actuel attache deux écouteurs
+  au bouton du prénom (submit + click), un seul geste part en deux requêtes simultanées —
+  invisible sur le `players.json` du prototype, fatal contre l'index unique de `traces`
+  sans le `retry` ajouté côté serveur. La passe de refonte peut corriger le double
+  écouteur, mais le serveur n'en dépend plus.
+
+Assets servis sous `/pz/immateria/assets/…`, Phaser 3.60 vendoré
+(`/pz/immateria/phaser.min.js`), Nunito auto-hébergée — plus aucune dépendance CDN. La
+roue des 7 Puissances pointe désormais Désir → `/immateria` (le point 3 de la reprise du
+15 août est fermé). Banc : `scripts/verifier_immateria.rb`.
