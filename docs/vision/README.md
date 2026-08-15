@@ -140,3 +140,7 @@ Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagog
 - **Prototype accueil : cadrage validé le 2026-07-12** (ton mixte, vocabulaire hybride, Festival 1er octobre confirmé, et décision structurante : future appli dédiée Point Zéro séparée de ze.game — voir §13 de [accueil-point-zero.md](accueil-point-zero.md)). Wireframes en cours dans le repo zegame-prototypes.
 - **Revue légale/éthique dédiée** : plusieurs mécaniques envisagées (quatrième mur via caméra/géolocalisation/notifications, récits personnels sensibles, vocabulaire thérapeutique/initiatique, public potentiellement mineur) dépassent le cadre d'une revue produit ou design classique.
 - ~~Clarification de la numérotation des mondes~~ **Tranché (2026-07-14) : 11 positions, Mondes 0 à 10** — matérialisé par les 11 communautés du bac à sable.
+  **[onboarding-monde-1-sept-puissances.md](onboarding-monde-1-sept-puissances.md)** —
+  prolongement du métaparcours après l’Atelier-seuil : quatre moments de dévoilement, ouverture de
+  la messagerie et du Commun, Boussole individuelle, constitution libre du Cercle, rôles tournants,
+  Pacte-Source et états d’appropriation des sept territoires.
