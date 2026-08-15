@@ -114,16 +114,19 @@ stable d'Immateria »).
   la référence visuelle figée ; le portable branche côté Rails (contrôleur, route,
   portage de `deploy/`) ; rien de tout cela ne touche les zones du poste fixe.
 
-## 4. Ce qui reste à trancher (Boris)
+## 4. Arbitrages de Boris (15 août 2026)
 
-1. **Le prénom saisi dans le jeu** : le prototype le demande à l'écran d'intro. Dans
-   l'app, `current_user` a déjà un prénom — le jeu doit-il le réutiliser (recommandé,
-   un écran de moins) ou laisser choisir un nom d'avatar distinct ?
-2. **Rejouabilité** : une Trace se réactualise (patron `find_or_initialize_by` des autres
-   territoires). Rejouer Immateria écrase-t-il l'archétype précédent, ou garde-t-on un
-   historique ? (Recommandation : écraser, comme les autres territoires — une Trace est
-   un état, pas un journal.)
-3. **Les 12 archétypes et le vocabulaire chakras** : le jeu parle « chakras » là où le
-   reste de l'app parle « Puissances » (les six de `CHAKRA_LABELS` recouvrent presque les
-   Puissances). Aligner le vocabulaire est éditorial, pas technique — à arbitrer avec
-   Codex avant le portage des textes.
+Les trois questions ouvertes ont été tranchées le jour même :
+
+1. **Nom d'avatar distinct, choisi EN FIN de tutoriel.** L'écran d'intro du prototype
+   (saisie du prénom avant de jouer) disparaît dans l'app : `current_user` porte déjà un
+   prénom, le jeu démarre directement. Au terme du tutoriel, un écran propose de garder
+   son prénom réel ou de nommer son avatar différemment — le nom d'avatar est un fruit du
+   parcours, pas un préalable. Il se range dans la Trace
+   (`reponses.avatar.nom`).
+2. **Le rejeu écrase.** Patron `find_or_initialize_by` des autres territoires : une Trace
+   est un état, pas un journal. Rejouer Immateria réactualise l'archétype, la peur et
+   l'avatar.
+3. **« Puissances » est le vocabulaire canon.** Le portage Rails remplace « chakras »
+   partout dans les textes du jeu (les six de `CHAKRA_LABELS` recouvrent les Puissances) ;
+   le prototype `avatar/` suivra au rythme de Boris, l'app n'attend pas.
