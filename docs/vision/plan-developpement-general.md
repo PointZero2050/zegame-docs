@@ -125,6 +125,20 @@ fonctionnelle, la navigation visible passe par les sept Puissances. Conséquence
   petit modèle d'état** (Traces, popups vues, états de cartes), pas de modèles lourds ;
 - gel du 15 septembre inchangé : la cible de fin août laisse deux semaines de recette.
 
+**Répartition d'août révisée (15 août)** — trois lignes de charge parallèles :
+
+| Acteur | Charge d'ici fin août | Détail |
+|---|---|---|
+| **Portable** | **Portage Rails du lot Monde 0** (le chemin critique) | Ordre : coque `m0-shell` en HAML (en-tête, roue, pastille Ω) → Intuition + Transcendance (backend le plus complet, boucle Trace incluse) → accueil métaparcours (a besoin des états des territoires) → le reste. Plus les modèles transverses : Traces généralisées, popups « vues » côté serveur, états de cartes, et — après arbitrage fournisseur — modèle de consentement par catégorie + mémoire des conversations (tables chez nous, page joueur « visible, éditable, désactivable »). |
+| **Desktop** | **Banc de comparaison Claude/GPT des personnages** (détaché du chemin critique) + suite éditoriale des maquettes | Harnais autonome (prototype dans zegame-prototypes, contrat d'intégration habituel) : transpose les prompts des GPTs existants, fait passer les MÊMES scénarios limites aux deux API (joueur en détresse, joueur provocateur, question intime, 40e message avec mémoire rejouée), sort les réponses côte à côte pour lecture par Boris. Sert ensuite de banc de non-régression du ton. **Règle absolue : aucune clé d'API dans le dossier Dropbox ni dans les repos** — variable d'environnement locale uniquement. |
+| **Codex** | **Scénarios limites + corpus** | Rédige les scénarios limites du banc (c'est de l'éditorial : le ton des personnages est sa zone) ; poursuit le corpus joueur des guides (palier 0 de F19, toujours le goulot de Communication). |
+
+Séquence du chantier « personnages LLM » : banc comparatif (desktop, maintenant) →
+**arbitrage fournisseur par Boris** sur lecture des réponses → consentement + mémoire +
+adaptateur interchangeable (portable, après la mise en ligne du Monde 0) → branchement
+des guides quand le corpus existe. L'adaptateur garde le choix réversible : les prompts
+se transposent tels quels dans les deux API.
+
 ### Sprint 2 · 26 août - 8 sept — « Le jour J est prêt »
 
 | Acteur | Charge | Modèle |
