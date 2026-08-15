@@ -133,11 +133,20 @@ fonctionnelle, la navigation visible passe par les sept Puissances. Conséquence
 | **Desktop** | **Banc de comparaison Claude/GPT des personnages** (détaché du chemin critique) + suite éditoriale des maquettes | Harnais autonome (prototype dans zegame-prototypes, contrat d'intégration habituel) : transpose les prompts des GPTs existants, fait passer les MÊMES scénarios limites aux deux API (joueur en détresse, joueur provocateur, question intime, 40e message avec mémoire rejouée), sort les réponses côte à côte pour lecture par Boris. Sert ensuite de banc de non-régression du ton. **Règle absolue : aucune clé d'API dans le dossier Dropbox ni dans les repos** — variable d'environnement locale uniquement. |
 | **Codex** | **Scénarios limites + corpus** | Rédige les scénarios limites du banc (c'est de l'éditorial : le ton des personnages est sa zone) ; poursuit le corpus joueur des guides (palier 0 de F19, toujours le goulot de Communication). |
 
-Séquence du chantier « personnages LLM » : banc comparatif (desktop, maintenant) →
-**arbitrage fournisseur par Boris** sur lecture des réponses → consentement + mémoire +
-adaptateur interchangeable (portable, après la mise en ligne du Monde 0) → branchement
-des guides quand le corpus existe. L'adaptateur garde le choix réversible : les prompts
-se transposent tels quels dans les deux API.
+Séquence du chantier « personnages LLM » : banc comparatif (desktop, FAIT) →
+**arbitrage fournisseur par Boris : CLAUDE, acté le 15 août** (mentors ET guides) →
+consentement + mémoire + appel (portable, **FAIT le 15 août**, `zegame-app` preprod
+`2e7a88a` : `ConsentementLlm` opt-in par catégorie, `MentorMessage` mémoire effaçable
+par le joueur, `PlafondLlm` robinet unique guides+mentors, `MentorReponse` incarnant la
+figure choisie, pages `/mentor` et `/mentor/consentements`) → branchement des guides
+FAIT aussi (F19 Palier 1, le corpus Codex est en prod ; voir PASSATION du 15 août).
+
+**Le goulot du chantier est désormais la VOIX ÉDITORIALE DU MENTOR (Codex)** — la
+consigne v0 s'appuie sur la fiche du héros choisi + la politique de réponse des guides
+en plancher de sécurité ; il manque l'équivalent des fiches voix (registre, opérations,
+formulations interdites, dosage) pour la posture mentor elle-même. Ensuite : UI riche
+Marelle (desktop, sur le contrat `/mentor`), lecture qualitative de Boris avant toute
+visibilité élargie.
 
 ### Sprint 2 · 26 août - 8 sept — « Le jour J est prêt »
 
