@@ -105,18 +105,19 @@ transformer le réel.
 
 **Question principale — Que désignent l'Empire et la Cité Cosmique ?**
 
-Ce sont deux morphologies symboliques. L'Empire sépare ce qui était relié, privilégie certains
-pôles et tente de maintenir sa cohérence par le contrôle. La Cité Cosmique fait circuler les
-tensions entre ses dimensions et transforme les polarités en forces de régulation et de
-création. Le Point Zéro ne demande pas de détruire l'Empire : il cherche à réintégrer les
-qualités qu'il a capturées — puissance, ordre, stratégie, technique — en désamorçant leur charge
-extractive et dissociative.
+Ce sont deux morphologies symboliques qui peuvent traverser un système comme chacun d'entre
+nous. L'Empire dissocie des fonctions qui ont besoin les unes des autres, privilégie certains
+pôles et stabilise l'ensemble par le contrôle. La Cité Cosmique maintient au contraire le circuit
+ouvert entre les polarités afin qu'elles deviennent des forces de régulation et de création. Le
+Point Zéro ne demande pas de détruire l'Empire : il cherche à reprendre les qualités qu'il a
+capturées — puissance, ordre, stratégie, technique — en désamorçant leur charge extractive et
+dissociative.
 
-**Version courte.** Deux images pour distinguer la dissociation qui contrôle de l'intégration
-qui fait circuler.
+**Version courte.** Deux images d'un même potentiel : l'une dissocie pour contrôler, l'autre
+relie pour faire circuler.
 
 **Ce que cela change ici.** Le Jeu t'invite à repérer ces deux mouvements dans les systèmes et
-en toi, sans distribuer les bons et les méchants.
+en toi — y compris lorsqu'une solution qui combat l'Empire commence à en reproduire la logique.
 
 **À ne pas affirmer.** L'Empire désigne un groupe précis ou un ennemi extérieur à éliminer.
 
@@ -151,20 +152,21 @@ Point Zéro supprime les conflits.
 
 **Question principale — L'Ombre est-elle le mal et la Lumière le bien ?**
 
-Non. Dans la grammaire Point Zéro, la Lumière est le mouvement d'amour de soi qui permet à une
-Puissance de s'affirmer ; l'Ombre est le mouvement d'amour de l'autre qui permet de contenir,
-servir, écouter ou laisser place. Chacun devient destructeur lorsqu'il se coupe de l'autre. La
-Source n'est pas une zone tiède entre les deux : c'est la qualité de présence qui permet de
-traverser toute leur amplitude sans en devenir prisonnier.
+Non. Dans la grammaire symbolique du Point Zéro, la Lumière est le mouvement d'amour de soi :
+elle affirme, actualise et intensifie une Puissance. L'Ombre est le mouvement d'amour de
+l'autre : elle reçoit, limite, sert, écoute ou laisse place. Aucun des deux n'est une vertu par
+nature ; chacun devient destructeur lorsqu'il se coupe de l'autre. La Source n'est pas une zone
+tiède entre les deux, mais la capacité de circuler consciemment dans toute leur amplitude sans
+être capturé par un pôle.
 
-**Version courte.** Ombre et Lumière sont deux mouvements vitaux ; la Source rend leur
-circulation consciente.
+**Version courte.** La Lumière affirme, l'Ombre fait place, la Source permet de passer de l'une
+à l'autre en conscience.
 
 **Ce que cela change ici.** Une Puissance peut être bloquée par l'excès ou l'impossibilité de
 l'un des deux mouvements.
 
-**À ne pas affirmer.** L'Ombre est négative, la Lumière positive, ou la Source une neutralité
-sans engagement.
+**À ne pas affirmer.** L'Ombre est négative, la Lumière positive, la Source une neutralité sans
+engagement, ou tout retrait constitue par nature un amour de l'autre.
 
 **Sources.** [Moteur de Conscience](../../corpus-point-zero/02_moteur_de_conscience.md),
 [Sept Puissances](../../../vision/sept-puissances.md).
@@ -356,19 +358,23 @@ l'effacement de soi.
 
 **Question principale — Que mesure le degré d'alchimisation ?**
 
-Il synthétise la circulation et l'amplitude observées dans les six Puissances polaires. Il
-indique un état provisoire de disponibilité du Moteur, sur dix degrés, et non un rang humain ou
-spirituel. Le calcul dépend des informations que le Joueur a choisi de renseigner et évoluera
-avec les expériences et les regards croisés. Au Monde 0, l'indicateur commence par demander de
-préciser les six Puissances avant de proposer une lecture globale.
+Le degré d'alchimisation est une hypothèse de synthèse du Moteur. Il combine la capacité de
+circulation et l'amplitude observées dans les six Puissances polaires. Sa convention va de 1 —
+les six Puissances sont bloquées à leur amplitude minimale — à 10 — elles circulent librement
+jusqu'à leur pleine amplitude. Il indique une disponibilité provisoire de la Conscience dans
+l'action, jamais un rang humain ou spirituel. Le calcul dépend des informations que le Joueur a
+choisi de renseigner et évoluera avec les expériences puis les regards croisés. Au Monde 0,
+l'indicateur demande donc d'abord de préciser les six Puissances avant de proposer une lecture
+globale.
 
-**Version courte.** Un indicateur provisoire de circulation du Moteur, pas une note de valeur.
+**Version courte.** Une hypothèse sur dix degrés pour lire la circulation du Moteur, pas une
+note sur la valeur du Joueur.
 
 **Ce que cela change ici.** Il suggère un axe de progression sans remplacer le détail des
 lemniscates.
 
-**À ne pas affirmer.** Le degré mesure objectivement la Conscience ou permet de comparer la
-valeur des personnes.
+**À ne pas affirmer.** Le degré mesure directement ou objectivement la Conscience, prouve un
+niveau spirituel ou permet de comparer la valeur des personnes.
 
 **Sources.** [Moteur visuel](../../../vision/moteur-ontologique-visuel.md),
 [onboarding — Transcendance](../../../vision/onboarding-monde-0-sept-puissances.md#transcendance).
@@ -564,19 +570,22 @@ externes.
 
 **Question principale — Qu'est-ce qu'un Oméga ?**
 
-L'Oméga est une unité de reconnaissance strictement personnelle et non fongible. Il ne se
-dépense, ne se vend, ne se donne et ne s'achète pas. Il garde la trace d'une capacité à faire
-circuler la vie entre des polarités, à tenir des cadres collectifs, à contribuer ou à produire
-un impact. Au Monde 0, un solde unique et sa provenance sont visibles. Les usages de souveraineté
-et de financement sont dévoilés plus tard.
+L'Oméga est la monnaie non fongible de reconnaissance et de souveraineté du Point Zéro. Il ne
+cherche pas à mesurer une Conscience intérieure abstraite, mais ses manifestations observables
+dans l'action : capacité à faire circuler la vie entre les polarités, à tenir des cadres
+collectifs, à contribuer et à produire un impact. Strictement personnel, il ne se dépense, ne
+se vend, ne se donne et ne s'achète pas. Il conserve la trace de ce que le Joueur a rendu
+possible. Au Monde 0, un solde unique et sa provenance sont visibles ; ses usages de
+souveraineté et de financement sont dévoilés plus tard.
 
-**Version courte.** Une reconnaissance non échangeable de capacités, contributions et impacts.
+**Version courte.** Une monnaie non échangeable qui reconnaît la Conscience manifestée dans
+l'action et fonde progressivement un domaine de souveraineté.
 
 **Ce que cela change ici.** La pastille ouvre une explication et la ventilation de ce qui a été
 reconnu.
 
-**À ne pas affirmer.** L'Oméga est une cryptomonnaie, un prix de la personne ou une somme à
-dépense.
+**À ne pas affirmer.** L'Oméga est une cryptomonnaie, une somme à dépenser, un prix de la
+personne ou une lecture directe de son état intérieur.
 
 **Sources.** [Cosmo Coin Oméga](../../../vision/cosmo-coin-omega.md),
 [onboarding — Oméga](../../../vision/onboarding-monde-0-sept-puissances.md#34-pastille-oméga-au-monde-0).
