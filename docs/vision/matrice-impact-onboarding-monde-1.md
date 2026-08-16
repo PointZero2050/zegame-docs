@@ -15,6 +15,7 @@ propose une transition déjà autorisée par le domaine concerné.
 carte visible
   = résolution en lecture seule de sources existantes
   + priorité éditoriale explicable
+  + illustration de la destination principale
   + CTA vers une action métier gardée côté serveur
 ```
 
@@ -25,11 +26,24 @@ Conséquences impératives :
 - aucun bouton de carte ne forme ou n’active directement un Cercle ;
 - un état absent du modèle n’est jamais simulé comme une donnée réelle ;
 - un nouvel état d’interface ne justifie pas automatiquement une nouvelle colonne ;
+- `illustration_key` est une donnée éditoriale résolue depuis la destination principale, jamais un
+  état de progression autonome ;
 - la disparition visuelle d’un bouton ne constitue jamais un droit.
 
 L’accueil cible appelle un résolveur de présentation, par exemple `Monde1HomeState`, sans callback
 et sans méthode d’écriture. Ce service peut assembler les sept territoires, mais chaque transition
 reste la responsabilité du contrôleur ou du service métier déjà propriétaire de l’objet.
+
+Le résolveur choisit d’abord la destination et le CTA, puis en déduit l’illustration. Lorsqu’un
+nouvel espace réactive une carte en `invitation` ou `reouverture`, l’image devient celle de cet
+espace. Si plusieurs invitations coexistent, une priorité éditoriale stable puis l’ancienneté de
+l’invitation non visitée désignent la destination principale ; les autres restent comptées. Une
+notification ou un compteur ne suffit jamais à changer l’image.
+
+Le même état de présentation pilote une surbrillance sobre pour `invitation` et `reouverture`.
+Cette surbrillance ne constitue ni une notification métier ni une priorité automatique : elle
+s'éteint lorsque la destination principale a effectivement été visitée. Le résolveur expose le
+statut ; la vue applique le traitement visuel accessible.
 
 ## 2. Légende de maturité
 

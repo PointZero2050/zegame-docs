@@ -140,8 +140,26 @@ Exemples :
 - `Émotion` : Héros et mentors → constellations → Cercle → rôles tournants ;
 - `Transcendance` : Moteur → Accomplissements → Omégas → profil du Cercle → Commun.
 
-Le visuel principal de la carte reste celui de la Puissance. Un visuel spécifique appartient à la
-page intérieure. Ainsi l’accueil reste stable tandis que le territoire s’enrichit.
+L'identité principale de la carte reste celle de la Puissance, mais **pas nécessairement son
+illustration**. Lorsqu'une page nouvelle devient la destination du CTA au stade `invitation` ou
+`reouverture`, la carte adopte l'illustration dédiée à cette page. L'icône, la couleur, le verbe et
+la position dans la roue garantissent la continuité du territoire ; l'image rend visible son
+approfondissement.
+
+Après découverte, l'image reste celle du dernier espace révélé jusqu'à la prochaine invitation.
+Elle ne change pas pour une notification, une variation de compteur ou une activité courante. Si
+plusieurs pages sont à découvrir, le résolveur choisit une invitation principale selon une priorité
+éditoriale stable, puis l'ancienneté de l'invitation non visitée, et affiche le nombre d'autres
+nouveautés sans fabriquer de mosaïque.
+
+La bascule visuelle est animée une seule fois au retour sur l'accueil, par fondu ou métamorphose
+brève, et respecte `prefers-reduced-motion`. Cette règle s'applique aussi rétroactivement au Monde 0,
+notamment aux transitions Fresque → Traces, Guides → Espace du Seuil et Moteur → Accomplissements.
+
+Les phases `invitation` et `reouverture` ajoutent une **surbrillance légère et stable** à la carte :
+bordure lumineuse, halo contenu et contraste renforcé, sans pulsation permanente. Elle s'éteint à
+la première visite de la destination. Le statut textuel et le CTA rendent toujours l'état
+compréhensible sans dépendre de la couleur ou de la lumière.
 
 ## 7. Messagerie dès l’entrée
 
@@ -201,6 +219,7 @@ titre_contextuel
 texte_contextuel
 cta_reel
 destination
+illustration_key
 indicateurs_utiles[]
 badge_de_seuil éventuel
 condition_de_reouverture éventuelle
@@ -242,12 +261,16 @@ former un Cercle.
 5. Les CTA nomment l’action réelle : commencer, relire, se présenter, rejoindre, préparer, comparer.
 6. Après découverte, une carte affiche un usage vivant plutôt qu’une explication répétée.
 7. Un nouvel espace peut réactiver `À explorer` sans retirer les badges antérieurs.
-8. Les messages non lus restent accessibles depuis la coque dès le Monde 1.
-9. Traces privées, Graines partagées et synthèse commune ne sont jamais confondues.
-10. Les suggestions de Cercle ne ressemblent jamais à une affectation automatique.
-11. Le profil de Cercle ne présente jamais une moyenne des profils individuels.
-12. Les Omégas restent individuels, non fongibles et reliés à leur origine.
-13. Le prototype reste lisible à 320 px, au clavier et avec réduction des animations.
+8. Lors de cette réactivation, l'illustration de la carte devient celle de la nouvelle destination,
+   sans perdre l'identité visuelle de la Puissance.
+9. Cette invitation est légèrement mise en lumière, sans pulsation ni dépendance exclusive à la
+   couleur, puis la surbrillance disparaît après la première visite.
+10. Les messages non lus restent accessibles depuis la coque dès le Monde 1.
+11. Traces privées, Graines partagées et synthèse commune ne sont jamais confondues.
+12. Les suggestions de Cercle ne ressemblent jamais à une affectation automatique.
+13. Le profil de Cercle ne présente jamais une moyenne des profils individuels.
+14. Les Omégas restent individuels, non fongibles et reliés à leur origine.
+15. Le prototype reste lisible à 320 px, au clavier et avec réduction des animations.
 
 ## 13. Prototype de référence
 

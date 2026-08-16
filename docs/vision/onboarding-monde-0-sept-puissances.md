@@ -37,7 +37,11 @@ jauge : elle exprime la circulation commune des six autres Puissances.
 
 ### 2.1 Règle d'incrémentation
 
-Une carte d'accueil conserve toujours **le même visuel de Puissance**. Son contenu change :
+> **Décision du 16 août 2026 — cette règle remplace le principe antérieur de visuel fixe.**
+
+Une carte d'accueil conserve son **identité de Puissance** — couleur, icône, verbe et place dans
+la roue — mais son illustration représente le **seuil fonctionnel actuellement proposé**. Son
+contenu et son illustration évoluent ensemble :
 
 1. `À explorer` : un appel, une promesse et un CTA concret ;
 2. `Activée` : l'expérience a eu lieu et le territoire montre un usage courant ;
@@ -48,8 +52,47 @@ Exemple Imagination : première Graine → retour avec compteurs de Graines et R
 première Trace créée → nouvelle invitation à découvrir `Mes Traces` → carte enrichie avec
 Traces et Traces transformées.
 
-Une page interne reçoit en revanche une illustration propre, dans la grammaire de sa
-Puissance. Le visuel de l'accueil ne change donc jamais pour annoncer une nouvelle page.
+Chaque page interne reçoit une illustration propre, dans la grammaire de sa Puissance. Lorsque
+cette page devient la destination principale d'une carte au stade `À explorer`, la carte reprend
+cette illustration. L'accueil devient ainsi le métaparcours visible du dévoilement : avant même de
+lire, le Joueur voit qu'un nouveau territoire vient de s'ouvrir.
+
+Après la première visite, l'illustration reste celle du dernier espace révélé tant qu'aucun seuil
+plus récent ne devient prioritaire. Elle ne change pas au gré des notifications, d'un compteur ou
+d'une activité ordinaire : seuls une révélation durable et le changement du CTA principal peuvent
+la faire évoluer.
+
+Si plusieurs invitations sont simultanément disponibles dans une même Puissance, le résolveur
+retient une destination principale de façon déterministe — priorité éditoriale, puis invitation la
+plus ancienne non visitée — et indique les autres par un compteur. Il ne compose pas plusieurs
+illustrations sur une même carte.
+
+La transition peut être accompagnée d'un fondu ou d'une métamorphose brève, jouée une seule fois
+au retour sur l'accueil, avec une variante sans animation lorsque `prefers-reduced-motion` est
+activé.
+
+Une carte au stade `À explorer` ou `réouverture` reçoit en outre une **légère surbrillance** :
+bordure plus lumineuse, halo très contenu et contraste localement renforcé. Cet appel visuel reste
+stable et non pulsé afin de suggérer une possibilité plutôt qu'une urgence. Il disparaît après la
+première visite de la destination. Le libellé d'état et le CTA restent indispensables : la couleur
+ou la lumière ne portent jamais seules l'information, notamment pour l'accessibilité.
+
+### 2.2 Application rétroactive au Monde 0
+
+| Puissance | Premier visuel proposé | Nouveau visuel lors de la réouverture |
+|---|---|---|
+| Désir | création du jumeau et village d'Immateria | quête ou espace d'Immateria nouvellement révélé |
+| Volonté | entrée dans la Marelle | étape ou parcours qui devient la prochaine invitation |
+| Imagination | première Graine et Fresque | `Mes Traces` dès l'apparition de la première Trace |
+| Émotion | catalogue des six héros | mentor choisi ou nouvelle page liée au mentor lorsqu'elle devient l'appel principal |
+| Communication | rencontre des deux guides | `Espace du Seuil` après le premier dialogue |
+| Intuition | dix clés Point Zéro | espace nouvellement ouvert, notamment les ressources externes au Monde 1 |
+| Transcendance | Moteur de Conscience | `Accomplissements` lorsque les six Puissances sont renseignées |
+
+Le prototype Monde 0 possède déjà des illustrations spécifiques pour la Fresque et les Traces ;
+les autres variantes doivent être produites ou sélectionnées dans la même grammaire avant le
+portage Rails. En attendant, l'absence d'un asset ne doit jamais conduire à inventer un état métier
+supplémentaire : le CTA et sa destination restent la source du choix visuel.
 
 ## 3. Coque commune
 
@@ -245,4 +288,3 @@ La traduction Rails ne doit pas reproduire ces objets tels quels. Elle doit racc
 - la Transcendance n'est jamais évaluée comme une Puissance indépendante ;
 - les guides restent une aide sur le Jeu, distincte du mentor et des échanges humains ;
 - les réglages de compte ne dupliquent ni le profil communautaire ni les œuvres.
-
