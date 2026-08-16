@@ -127,10 +127,10 @@ en lecture seule, sans table. Une vue ne doit **jamais** écrire : un GET qui é
    | `heros-mentors-m0-cible` | `/heros` | Émotion — **bloqué** : bouton mort au Monde 0 |
    | `communication-guides-m0-cible` | `/guide` | Communication (**fait le 16 août**) |
    | `premieres-cles-m0-cible` | `/premieres-cles` | Intuition (**fait le 16 août**) |
-   | `moteur-conscience-m0-cible` | `/users/me` | Transcendance |
+   | `moteur-conscience-m0-cible` | `/users/me` | Transcendance (**fait le 16 août** — refonte visuelle, pas page nue) |
    | `traces-m0-cible` | `/mes-traces` | transversale — **bloqué** : la maquette emploie « Graine », mot interdit par un banc |
    | `accomplissements-m0-cible` | `/accomplissements` | transversale (**fait**, à réaligner sur le patron canonique) |
-   | `profil-joueur-cible` | `/users/me` | — · **même URL que `moteur-conscience-m0-cible`** : à arbitrer avant portage |
+   | `profil-joueur-cible` | `/users/me` | — · **écartée de cette URL** : le Moteur la prend (arbitrage Boris, 16 août) |
 
    Le Désir n'a pas de maquette à porter : son territoire **est** le jeu Immateria, déjà intégré.
 2. **Les Accomplissements du Monde 0** — page ouvrable immédiatement : `BadgeDeParcours.pour` et
