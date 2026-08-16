@@ -157,3 +157,8 @@ Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagog
   blocage initial de la maquette Marelle, désormais levé par l'arbitrage éditorial du Monde 0 :
   puissance globale 3/10, matrice des quatorze expériences et contrat YAML V1 ; plus les réserves
   qui restent distinctement relevées sur les maquettes Traces et Héros.
+- **[marelle-ecarts-matrice-base-2026-08-16.md](marelle-ecarts-matrice-base-2026-08-16.md)** —
+  confrontation de la matrice éditoriale aux données réelles, exigée par sa propre recette : les
+  quatorze expériences concordent 1:1, mais six durées sont hors cible (≈ 4 h 47 en base contre
+  ≈ 6 h 30 annoncées) et « Découvrir les formats » est optionnel en base alors que la matrice le
+  dit obligatoire. Ce que la page affiche en attendant l'arbitrage, plus une anomalie d'Omégas.
