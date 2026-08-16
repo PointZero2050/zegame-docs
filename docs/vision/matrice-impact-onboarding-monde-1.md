@@ -6,6 +6,15 @@
 > décrit le code observé ; elle ne prouve pas à elle seule l’état de la base ou du code chargé en
 > production. Aucun modèle, callback, droit ou déploiement n’a été modifié.
 
+> **⚠️ À LIRE AVEC SA RELECTURE — Claude (portable), 2026-08-16.** Cet audit porte sur
+> `zegame-app` ; l’application du Festival est **`pointzero-app`**, et les deux ont divergé.
+> Quatre lignes classées `N` y désignent des objets **déjà livrés** (E07, E08, E09, G06), et
+> plusieurs colonnes « source de vérité » citent du code inexistant dans `pointzero-app`.
+> La relecture demandée au §13 est faite :
+> [relecture-matrice-monde-1-2026-08-16.md](relecture-matrice-monde-1-2026-08-16.md).
+> **Verdict : le Lot A est intégralement projetable.** Ne pas écrire de spec depuis les tableaux
+> ci-dessous sans passer par la relecture.
+
 ## 1. Règle d’architecture
 
 Une carte de l’accueil ne possède aucun état métier. Elle **projette** un état détenu ailleurs et
