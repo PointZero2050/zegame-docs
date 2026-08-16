@@ -5,6 +5,14 @@
 > les valeurs éditoriales du parcours Monde 0 ; il ne modifie ni la progression Rails, ni les
 > validations, ni l'attribution des Omégas.
 
+> **Révision — Claude (portable), 2026-08-16 au soir.** Deux arbitrages de Boris modifient ce
+> document après sa validation initiale : **l'Atelier Point Zéro passe d'intensité 5 à
+> intensité 2**, et la règle des intensités fortes devient **absolue** — elle n'a plus
+> d'exception, puisque l'Atelier était la seule. Les trois passages concernés sont corrigés
+> ci-dessous et signalés. Le reste du document est inchangé.
+> La règle est désormais tenue par le code : `JourneyProgress.intensites_non_encadrees`
+> (pointzero-app), vérifiée par `scripts/verifier_intensites.rb` avant chaque déploiement.
+
 ## 1. Décisions structurantes
 
 ### Puissance globale du parcours : **3/10**
@@ -34,9 +42,21 @@ susceptible d'agir à l'échelle mondiale ; une expérience isolée ne peut pas 
 | 4 | Initiatique | Confrontation structurée nécessitant un cadre renforcé |
 | 5 | Rite de passage | Expérience collective tenue par un facilitateur |
 
-Les niveaux 4 et 5 demandent normalement un facilitateur certifié et ne sont pas ouverts avant le
-Monde 2. L'Atelier Point Zéro constitue l'exception explicite du Monde 0 : il est précisément le
-rite facilité qui ouvre le Monde 1.
+Les niveaux 4 et 5 exigent un facilitateur certifié et **ne peuvent être publiés qu'au Monde 2 et
+au-delà** (arbitrage Boris du 16 août, qui clôt le point M07 de la matrice d'impact). La règle
+est **absolue et sans exception** : une expérience initiatique ou un rite de passage sans
+encadrement peut abîmer quelqu'un.
+
+L'Atelier Point Zéro n'y déroge pas — il est passé en **intensité 2**. Il reste le rite collectif
+et facilité qui ouvre le Monde 1 : c'est sa MODALITÉ qui le dit, pas son intensité. L'Atelier du
+Festival accueille des personnes qui découvrent ; il ne doit ni s'annoncer comme une confrontation
+initiatique, ni tomber sous la règle réservée au Monde 2.
+
+> **Piège de vocabulaire.** « Rite de passage » désigne ici le niveau 5 de l'échelle
+> d'intensité. D'autres documents — `monde-0-matrice-revision.md` notamment — emploient la
+> même expression au sens NARRATIF : l'Atelier est le passage qui ouvre le Monde 1. Les deux
+> sens coexistent et ne se confondent pas. L'Atelier est un rite de passage dans le récit, et
+> une expérience d'intensité 2 sur l'échelle.
 
 ### Échelle d'effet : **1 à 5**
 
@@ -83,7 +103,7 @@ elle prévaut et doit être alignée avec cette matrice avant affichage.
 | 10 | **Le Conseil Oméga** | 3 — Profonde | 1 — Personnel | M0 · obligatoire · solo · 25–35 min · chapitre 2 achevé | **Être convoqué** → **Arbitrer** entre les futurs → **Signer** un Rôle d'appel et des caps |
 | 11 | **Découvrir les formats** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo · 10–15 min · expérience 10 · agenda accessible | **Clarifier** son intention → **Comparer** les formats → **Produire** sa Boussole de passage |
 | 12 | **Le Sas d'entrée** | 3 — Profonde | 2 — Relationnel | M0 · optionnel · collectif accompagné · 1 h 30 · inscription et présence | **Se présenter** → **Éprouver** une première rencontre → **Clarifier** son intention |
-| 13 | **Vivre l'Atelier Point Zéro** | 5 — Rite de passage | 3 — Collectif | M0 · obligatoire · collectif · 3 h · facilitateur · expériences obligatoires précédentes achevées | **Explorer** les futurs → **Reconnaître** le système en soi → **Franchir** le seuil en Cercle |
+| 13 | **Vivre l'Atelier Point Zéro** | 2 — Engagée | 3 — Collectif | M0 · obligatoire · collectif · 3 h · facilitateur · expériences obligatoires précédentes achevées | **Explorer** les futurs → **Reconnaître** le système en soi → **Franchir** le seuil en Cercle |
 | 14 | **Mon récit de passage** | 3 — Profonde | 2 — Relationnel | M0 · obligatoire · solo avec mentor · 20–30 min · Atelier confirmé | **Rassembler** les traces → **Composer** la Graine de passage → **Sceller** la Carte du Seuil |
 
 Le parcours obligatoire représente environ **6 h 30**, Atelier compris. Le Sas ajoute environ
