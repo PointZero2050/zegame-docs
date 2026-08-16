@@ -86,14 +86,20 @@ hypothese` et leur propre garde-fou éditorial. Les données, elles, n'existent 
 les **deux entrées de la formule existent déjà en base** (circulation et amplitude par Puissance) :
 la spec n'est plus « à concevoir », elle est « à câbler après arbitrage ».
 
-**Arbitrage 3 — et celui-ci est le plus important.** La matrice écrit, pour `O01`, que la
-publication communautaire du total Oméga se fait « selon politique dédiée ».
-**Cette politique n'existe pas.** Le total Ω d'un joueur est affiché à tout membre du Monde 1,
-sur chaque carte de l'annuaire et sur chaque profil, **sans consentement et sans possibilité de
-retrait**. À comparer avec les Puissances, qui sont explicitement opt-in (`PuissanceAssessment#publie`,
-et « un questionnaire refait repart non publié »). Deux données de même nature, deux régimes de
-consentement opposés. Ce n'est pas un écart de spec : c'est une décision de doctrine à prendre
-avant que le Monde 1 n'ouvre l'annuaire à davantage de monde.
+**Arbitrage 3 — TRANCHÉ PAR BORIS LE 16 AOÛT : la publication est voulue.**
+La matrice écrivait, pour `O01`, que la publication communautaire du total Oméga se fait « selon
+politique dédiée ». Cette politique n'existe pas dans le code : le total Ω est affiché à tout
+membre du Monde 1, sur chaque carte de l'annuaire et sur chaque profil, sans consentement et sans
+retrait — là où les Puissances sont explicitement opt-in (`PuissanceAssessment#publie`).
+
+**Arbitrage de Boris : c'est un parti-pris de transparence, assumé.** Le total Oméga se publie.
+L'asymétrie avec les Puissances n'est donc pas un défaut à corriger : les Puissances disent une
+position intérieure, que chacun choisit d'exposer ou non ; le total Oméga dit une contribution au
+commun, et le Point Zéro fait le choix de la rendre visible.
+
+Conséquences à tenir : `O01` reste `E`, sa colonne « Droit » doit dire **« publication assumée,
+sans opt-in »** au lieu de « selon politique dédiée » ; une carte du Monde 1 peut afficher le
+total Ω sans garde supplémentaire ; et **la réserve 3 du §6 tombe**.
 
 ## 6. Verdict sur le Lot A
 
@@ -111,8 +117,9 @@ Trois réserves à porter dans l'implémentation, aucune bloquante :
    tests négatifs viseraient des méthodes inexistantes.
 2. `C01` n'est plus une redirection mais une page de teasing en 200 : la recette doit vérifier le
    **contenu**, pas le code de statut.
-3. `O01` attend l'arbitrage 3 : afficher un total Ω sur une carte Monde 1 prolonge une publication
-   sans consentement.
+3. ~~`O01` attend l'arbitrage 3~~ — **levée le 16 août** : Boris tranche que la publication du
+   total Oméga est un parti-pris de transparence assumé. Une carte du Monde 1 peut l'afficher
+   sans garde supplémentaire.
 
 **Au-delà du Lot A**, la relecture ouvre trois lignes que la matrice réservait au Lot C : `E07`,
 `E08` et `E09` sont livrées. Le Lot C n'est donc plus intégralement conditionné — restent
