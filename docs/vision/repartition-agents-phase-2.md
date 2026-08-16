@@ -123,7 +123,7 @@ en lecture seule, sans table. Une vue ne doit **jamais** écrire : un GET qui é
    |---|---|---|
    | `accueil-puissances-m0-cible` | `/jeu` | — (**fait le 16 août**) |
    | `volonte-marelle-m0-cible` | `/parcours` | Volonté (**fait et validé le 16 août**) |
-   | `fresque-recit-m0-cible` | `/fresque` | Imagination |
+   | `fresque-recit-m0-cible` | `/fresque` | Imagination (**fait le 16 août** — pont Trace → Graine à arbitrer, voir `pont-trace-graine-fresque.md`) |
    | `heros-mentors-m0-cible` | `/heros` | Émotion — **bloqué** : bouton mort au Monde 0 |
    | `communication-guides-m0-cible` | `/guide` | Communication |
    | `premieres-cles-m0-cible` | `/premieres-cles` | Intuition (**fait le 16 août**) |
