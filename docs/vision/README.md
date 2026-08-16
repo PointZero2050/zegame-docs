@@ -147,5 +147,9 @@ Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagog
 - **[matrice-impact-onboarding-monde-1.md](matrice-impact-onboarding-monde-1.md)** — matrice préalable
   au portage Rails de l’accueil Monde 1 : état visible, source de vérité, droit et événement de
   transition pour progression, mandatory, Cercles, messagerie, récits, Omégas et profils composites.
+- **[matrice-visuelle-cartes-puissances-m0-m1.md](matrice-visuelle-cartes-puissances-m0-m1.md)** —
+  matrice de production des illustrations évolutives de l’accueil : seuils qui justifient une
+  bascule visuelle, assets existants, réemplois, manques M0/M1, traitement animé de la
+  Transcendance et ordre recommandé des lots.
 - **[bilan-ecarts-maquettes-application-2026-08-16.md](bilan-ecarts-maquettes-application-2026-08-16.md)** — inventaire systématique des écarts entre prototypes, code audité et préproduction signalée
   afin de distinguer raccordement immédiat, socle partiel, objet métier absent et teasing.
