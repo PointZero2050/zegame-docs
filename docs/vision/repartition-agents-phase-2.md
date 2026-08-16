@@ -1,85 +1,149 @@
-# Répartition des agents — phase 2 (post-portage)> Actée par Boris le 2026-08-04. Version de référence, partagée entre agents et postes.> Le message de cadrage transmis à l'instance du poste fixe en est la mise en forme directe.
-> PHASE 2 » de `PASSATION-CLAUDE.md`.
+# Répartition des agents — phase 2 (post-portage)
+
+> **v2 — Boris, 2026-08-16.** Révision de la version du 4 août, devenue fausse sur deux points :
+> le périmètre du poste fixe s'élargit à l'intégration visuelle du Jeu, et l'état de
+> l'application a beaucoup changé. Les règles inchangées sont reprises telles quelles.
+> Version de référence, partagée entre agents et postes.
 
 ---
 
-Bonjour,
+## 1. Qui fait quoi
 
-Le portage est terminé et la migration réelle est faite : **`pointzero-app` est désormais
-l'application de référence** (31 joueurs migrés avec leur progression, 927 Ω, Cercle et fils de
-conversation). `vibe.ze.game` reste debout comme plan B, mais **plus rien de ce qui s'y joue ne
-compte** — et surtout, **n'y édite plus aucun contenu pédagogique** : un réimport écraserait la
-progression des joueurs sur la nouvelle application.
+**Poste fixe (Sonnet 5) — intégration visuelle, contenus, prototypes, tests UX.**
 
-Ta caractérisation a servi exactement comme prévu : les sept documents ont guidé le portage, et
-les cinq vérifications de parité des Puissances passent sur la nouvelle pile (§8 de
-`caracterisation-puissances-monde-1.md`). Merci — le point que tu avais laissé ouvert sur
-`update_columns` est tranché et documenté dans le code.
+Écrit librement dans `zegame-prototypes` et `zegame-docs`.
 
-## Ton rôle en phase 2 (Boris, 2026-08-04)
+Dans `pointzero-app` :
+- `content/articles/` — les articles de fond en markdown ;
+- `app/views/site/` et `public/sas/` — le site public et les parcours publics ;
+- **NOUVEAU (16 août)** — `app/views/` et `public/pz/` **pour le Jeu** : le portage strict des
+  maquettes, les feuilles de style, le responsive, l'accessibilité.
 
-Tu passes de la caractérisation à la **production** : intégration de pages, correctifs
-éditoriaux, prototypage HTML, et **conception de mini-jeux**.
+**Portable (Opus 5 / Fable 5) — fondations, serveur, déploiements.**
 
-**Tu écris librement dans** : `zegame-prototypes` et `zegame-docs`.
+Modèles, migrations, services, contrôleurs, routes, droits, configuration serveur, billetterie.
+Porte seul la clé SSH et **fait tous les déploiements**. Vérifie en production.
 
-**Dans `pointzero-app`, uniquement les zones de contenu** :
-- `content/articles/` — les articles de fond en markdown (relations éditoriales dans
-  `config/articles.yml`) ;
-- `app/views/site/` — les pages du site public ;
-- `public/sas/` — les parcours publics.
+**Principe inchangé, et il vaut dans les deux sens : celui qui produit ne s'auto-valide pas.**
 
-**Tu n'écris jamais** dans les modèles, les migrations, la configuration serveur, la
-billetterie ni les contrôleurs applicatifs. Les déploiements passent tous par l'instance du
-portable de Boris : elle seule porte la clé SSH du serveur Hetzner, et elle vérifie en
-production. Si tu n'as pas d'accès en écriture au dépôt, travaille sur une branche — elle
-fusionnera après relecture.
+## 2. Ce que le poste fixe n'écrit jamais
 
-Principe, symétrique de celui de la phase 1 : **celui qui produit ne s'auto-valide pas.**
+Modèles, migrations, services, **contrôleurs et routes**, configuration serveur, billetterie,
+gardes et droits.
 
-## Contrat d'intégration des mini-jeux
+Cette frontière a été franchie le 16 août (pages du menu de compte : routes et contrôleur créés
+côté poste fixe). Ça a fonctionné, mais ce n'est pas la bonne façon. **Le schéma qui marche est
+celui de la vague B** : le portable pose la route, la garde et le contrôleur ; le poste fixe
+remplit la vue et le style. Si une page à porter réclame une route qui n'existe pas, **demande-la
+plutôt que de la créer** — elle sera posée devant toi.
 
-Ce qui a rendu l'intégration de tes cinq parcours du Sas parfaitement mécanique, formalisé —
-applique-le aux mini-jeux :
+## 3. La règle du portage strict (leçon du 16 août)
+
+**Une maquette validée se PORTE, elle ne se re-dessine pas** — même « en attendant », même « en
+version sobre ». Le 16 août, l'accueil du Monde 0 a été livré dans une mise en page inventée
+plutôt que dans celle de la maquette : illustrations au-dessus des textes au lieu d'être à
+gauche, identités sous les images au lieu d'être par-dessus, boutons rectangulaires et roses au
+lieu de ronds et sombres. Il a fallu tout refaire.
+
+En pratique :
+1. **Reprendre la structure DOM de la maquette, nom de classe pour nom de classe**, et ses
+   valeurs CSS telles quelles. Un diff entre la maquette et l'intégration doit rester lisible.
+2. **Tout écart est commenté en tête du fichier**, avec sa raison. Deux écarts sont légitimes par
+   nature : le scopage sous une classe racine (l'application charge Bootstrap, la maquette non) et
+   le remplacement des polices externes par celles déjà servies.
+3. **Vérifier ce que la maquette AFFICHE, pas seulement ce qu'elle déclare.** Exemple vécu :
+   `styles.css` importe Libre Caslon Text et DM Sans, mais `m0-typography.css` est chargée après
+   et les remplace en `!important` par Roboto Slab et Poppins. Ces deux polices ne sont jamais
+   rendues ; les importer aurait été une fidélité de façade.
+4. **Le prototype reste la référence figée** : toute évolution se décide dans le prototype puis se
+   reporte dans l'application, jamais l'inverse. Signale tout écart que tu constates — le
+   prototype fait foi.
+
+## 4. Travailler à deux sur le même serveur
+
+L'arbre `~/src/pointzero-preprod` est **partagé**. Le 16 août, deux chantiers s'y sont
+retrouvés mélangés au moment d'un commit et il a fallu trier à la main.
+
+- **Avant tout `git add`, lire `git status --porcelain`.** Jamais de `git add -A` sans avoir
+  regardé ce qu'il emporte.
+- **Ne commite que tes propres fichiers**, nommément. Si tu vois des fichiers que tu n'as pas
+  écrits, laisse-les : ils appartiennent à l'autre instance ou à Boris.
+- **Tu produis, le portable déploie.** Ne lance ni `docker compose build`, ni restart.
+- Commits préfixés `[Codex]` ou `[Claude]` selon l'agent, avec `Co-Authored-By`.
+
+## 5. Les bancs
+
+`scripts/verifier_*.rb` sont la mémoire des décisions : chacun rejoue un invariant arbitré.
+
+- **Si tu changes un balisage qu'un banc assertait, ajuste le banc dans la même livraison.**
+  Cas en cours : `verifier_menu_compte` assertait le bouton du menu de compte que les pages du
+  16 août remplacent — il cassera tant qu'il n'est pas repris.
+- **Un banc qui ne vérifie que des textes ne protège pas une mise en page.** Celui de l'accueil
+  M0 est passé au vert sur une intégration infidèle. Quand tu portes une maquette, ajoute des
+  assertions de **structure** : quel bloc contient l'image, quel élément est par-dessus, quelle
+  classe porte le bouton.
+
+## 6. Contrat d'intégration des mini-jeux (inchangé)
 
 1. **Dossier autonome** en kebab-case, ouvrable par simple `index.html`.
 2. **Aucune dépendance externe** : pas de CDN, pas de framework, pas d'étape de construction.
    CSS en variables personnalisées, polices embarquées localement.
-3. Un **`NOTES.md`** qui documente : les états simulés, les **données réellement attendues de
-   l'application** (comptes, Ω, validation, progression), les **points de branchement**
-   souhaités, et ce qui est délibérément hors périmètre.
-4. **Persistance locale décrite explicitement** : clé, schéma, et ce qui ne doit jamais partir
-   au serveur.
-5. **Aucune donnée inventée** : un contenu éditorial manquant reste visiblement manquant plutôt
-   que comblé — exactement comme tu l'as fait pour les neuf manifestations sans définition.
+3. Un **`NOTES.md`** documentant : les états simulés, les **données réellement attendues de
+   l'application**, les **points de branchement** souhaités, et ce qui est hors périmètre.
+4. **Persistance locale décrite explicitement** : clé, schéma, et ce qui ne part jamais au serveur.
+5. **Aucune donnée inventée** : un contenu manquant reste visiblement manquant plutôt que comblé.
 
-L'instance du portable branche ensuite routes, comptes, attribution des Ω et validation
-d'expérience. **Le prototype reste la référence visuelle figée** : toute évolution de contenu
-se décide chez toi puis se reporte dans l'application, jamais l'inverse.
+Le portable branche ensuite routes, comptes, attribution des Ω et validation d'expérience.
 
-## L'état de la nouvelle application, pour te situer
+## 7. Où en est l'application (16 août)
 
-- **Site public** : `/` (accueil), `/comprendre`, `/ecosysteme`, `/le-jeu`, `/moteur`,
-  `/cercle`, `/omega`, `/agir`, `/ressourcerie`, `/agenda`, `/entrer`, `/association`, plus les
-  trois pages canoniques du Livre II et quatre articles appliqués sous `/ressources/`.
-- **Le Sas** : `/sas` et `/sas/{scenarios,croyances,paralysie,reveil}` — tes cinq prototypes,
-  intégrés tels quels, liens inter-parcours câblés.
-- **Le jeu** (authentifié) : `/jeu` (accueil orchestrateur), `/parcours`, `/cercles`,
-  `/profils`, `/ressources`, `/evenements`, `/users/me`.
-- **Gestion** : billetterie complète (événements, inscriptions, gabarits, abonnés) et espace
-  pédagogique (parcours, expériences, compétences) pour les administrateurs.
+**Monde 0 — le métaparcours des sept Puissances est en place.** L'accueil `/jeu` sert un deck de
+sept cartes, une par Puissance, dont l'état se lit de sept sources réelles (`Monde0Etats`). Deux
+états par carte : « à explorer » puis « territoire activé » à la première trace réelle, avec son
+badge de seuil. Les sept territoires répondent : `/immateria` (Désir), `/parcours` (Volonté),
+`/fresque` (Imagination), `/heros` (Émotion), `/guide` (Communication), `/premieres-cles`
+(Intuition), `/users/me` (Transcendance). Navigation par la roue (`_coque_m0`).
 
-## Ce qui t'attend en priorité
+**Autres briques livrées depuis le 4 août** : guides LLM (Professeur Sirbey, Docteur Z.E.R.O.),
+mentors avec consentement et mémoire, Immateria, page « Mes Traces », seuils et badges,
+Espaces de discussion, propositions/décisions/actions avec protocole de consentement, boîte
+d'Échanges unifiée, source d'attention unique (F21), menu de compte à routes réelles.
 
-1. **Les trous éditoriaux du Sas**, que ton `NOTES.md` avait honnêtement signalés : les
-   définitions des neuf manifestations restantes (écran 7 du parcours humanité) et les exemples
-   de relations multi-cycles manquants (écran 8).
-2. **Les recommandations de fin de parcours** : le manifeste de Codex les demande (§4 et §10.2-3
-   de `manifeste-connexion-puissances-marelle.md`) — trois suites au maximum par parcours, une
-   page canonique, une page profonde, une action. Les trois pages canoniques existent
-   désormais : `/le-moteur-et-les-sept-puissances`, `/la-marelle-depolarisateur-geant`,
-   `/des-puissances-aux-cadres`.
-3. **Les mini-jeux**, selon ce que Boris priorisera.
+**Doctrine de code à connaître** : un état **se lit, il ne se stocke pas**. Les services
+`ExperienceState`, `JourneyProgress`, `Monde0Etats`, `Graine`, `SeuilFranchi` sont des résolveurs
+en lecture seule, sans table. Une vue ne doit **jamais** écrire : un GET qui écrit casse le cache.
 
-Bon travail — et n'hésite pas à signaler tout écart que tu constaterais entre un prototype et
-son intégration : le prototype fait foi.
+## 8. Ce qui t'attend
+
+1. **Le portage strict des pages du Monde 0.** Seul l'accueil est aujourd'hui fidèle à sa
+   maquette ; les autres territoires sont fonctionnels mais dessinés à la main. Même passe que
+   celle faite sur l'accueil, page par page. **C'est la priorité.**
+
+   | Maquette (`zegame-prototypes`) | Page Rails | Puissance |
+   |---|---|---|
+   | `accueil-puissances-m0-cible` | `/jeu` | — (**fait le 16 août**) |
+   | `volonte-marelle-m0-cible` | `/parcours` | Volonté |
+   | `fresque-recit-m0-cible` | `/fresque` | Imagination |
+   | `heros-mentors-m0-cible` | `/heros` | Émotion |
+   | `communication-guides-m0-cible` | `/guide` | Communication |
+   | `premieres-cles-m0-cible` | `/premieres-cles` | Intuition |
+   | `moteur-conscience-m0-cible` | `/users/me` | Transcendance |
+   | `traces-m0-cible` | `/mes-traces` | transversale |
+   | `accomplissements-m0-cible` | *(à créer, voir 2)* | transversale |
+   | `profil-joueur-cible` | `/users/me` | — |
+
+   Le Désir n'a pas de maquette à porter : son territoire **est** le jeu Immateria, déjà intégré.
+2. **Les Accomplissements du Monde 0** — page ouvrable immédiatement : `BadgeDeParcours.pour` et
+   `SeuilFranchi.pour` sont livrés, avec leurs sceaux. Distinguer badges de parcours (acquisition)
+   et badges de seuil (ouverture d'un territoire).
+3. **Les pages du menu de compte** — en cours, à terminer avec l'ajustement du banc.
+
+## 9. Arbitrages de Boris à ne pas rouvrir
+
+- **Le total Oméga se publie**, sans opt-in : parti-pris de transparence assumé (16 août). Les
+  Puissances, elles, restent opt-in — l'asymétrie est voulue.
+- **Le passage entre Mondes est structurel**, jamais un seuil d'Oméga.
+- **Les Omégas acquis restent acquis** : aucune validation ne se révoque.
+- **L'accueil est une projection de l'attention** (F21) : à tous les Mondes, une sélection courte
+  et nommée, jamais un compteur à vider.
+- **Deux états seulement au Monde 0** : à explorer / territoire activé.
