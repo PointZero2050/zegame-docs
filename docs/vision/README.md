@@ -153,8 +153,7 @@ Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagog
   Transcendance et ordre recommandé des lots.
 - **[bilan-ecarts-maquettes-application-2026-08-16.md](bilan-ecarts-maquettes-application-2026-08-16.md)** — inventaire systématique des écarts entre prototypes, code audité et préproduction signalée
   afin de distinguer raccordement immédiat, socle partiel, objet métier absent et teasing.
-- **[portage-marelle-donnees-manquantes.md](portage-marelle-donnees-manquantes.md)** — pourquoi la
-  maquette de la Marelle n'est pas portable en l'état : cinq indicateurs éditoriaux sans donnée
-  (puissance globale du parcours, intensité, échelle d'effet, monde minimal, séquence en trois
-  étapes), ce qu'il faut arbitrer et où le loger ; plus les réserves relevées sur les maquettes
-  Traces et Héros.
+- **[portage-marelle-donnees-manquantes.md](portage-marelle-donnees-manquantes.md)** — analyse du
+  blocage initial de la maquette Marelle, désormais levé par l'arbitrage éditorial du Monde 0 :
+  puissance globale 3/10, matrice des quatorze expériences et contrat YAML V1 ; plus les réserves
+  qui restent distinctement relevées sur les maquettes Traces et Héros.

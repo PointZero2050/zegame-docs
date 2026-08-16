@@ -5,6 +5,15 @@
 > premier lot sur arbitrage de Boris** : ce n'est pas une refonte visuelle, c'est une **spec en
 > avance sur le modèle**. Ce document liste précisément ce qu'il faut décider pour la débloquer.
 
+> **Mise à jour Codex — 2026-08-16. Arbitrage obtenu.** Boris a validé le principe et demandé le
+> chiffrage complet. La puissance du parcours est fixée à **3/10** ; les intensités, effets,
+> conditions et séquences des quatorze expériences sont désormais définis dans
+> [Monde 0 — puissance, intensité, effet et séquences d'expérience](../pedagogie/monde-0-puissance-intensite-effet.md).
+> La recommandation V1 est un YAML versionné lu comme métadonnée éditoriale, sans réinterpréter
+> `Challenge#difficulty` et sans créer de machine de progression concurrente. Le portage n'est donc
+> plus bloqué par un arbitrage éditorial ; il reste soumis à l'analyse d'impact normale des zones
+> `Journey` / `Challenge` / progression.
+
 ## Pourquoi ce n'est pas un simple portage
 
 La règle du portage strict suppose que la maquette dise **la même chose** que l'application, en
@@ -37,8 +46,9 @@ C'est donc une **valeur écrite à la main, parcours par parcours** — pas un c
 porte aujourd'hui : le répertoire `config/journeys/` **n'existe pas**, si bien que
 `JourneyProgress.config(slug)` renvoie toujours `nil`.
 
-**À décider** : la valeur pour le parcours du Monde 0, et son logement (un
-`config/journeys/point-zero-monde-0.yml`, que le service sait déjà lire, semble le plus léger).
+**Arbitrage obtenu** : valeur **3/10**, portée en V1 par
+`config/journeys/point-zero-monde-0.yml`. Cette valeur éditoriale n'est calculée ni depuis les
+Omégas, ni depuis une moyenne des expériences.
 
 ### 2. « Intensité pour toi » — 1/5
 
@@ -47,17 +57,25 @@ porte aujourd'hui : le répertoire `config/journeys/` **n'existe pas**, si bien 
 `Challenge#difficulty` existe mais est un entier **1..10** générique, sans ces libellés : le
 faire passer pour l'intensité serait une réinterprétation silencieuse, pas un portage.
 
-**À décider** : la valeur par expérience du Monde 0, et où elle vit.
+**Arbitrage obtenu** : les quatorze valeurs sont fixées dans la matrice pédagogique liée plus haut
+et vivent dans le même YAML versionné. `difficulty` conserve sa sémantique historique.
 
 ### 3. « Échelle d'effet » — 1/5
 
 Autre échelle nommée : *personnel, relationnel, collectif, systémique, civilisationnel*. Aucun
 équivalent.
 
+**Arbitrage obtenu** : les quatorze valeurs sont fixées dans la matrice pédagogique et portées par
+le YAML V1. L'échelle décrit l'effet directement atteignable, pas l'importance du thème abordé.
+
 ### 4. « Conditions · Monde minimal »
 
 La maquette affiche « Monde minimal · 0 » et une ligne de conditions (« ≈ 15 min · Solo · Aucun
 prérequis »). La durée existe ; **la notion de « Monde minimal » n'existe pas** comme donnée.
+
+**Arbitrage obtenu** : les expériences du parcours portent `minimum_world: 0` et une modalité
+éditoriale dans le YAML. La durée continue de venir de `Challenge#duration`, tandis que l'ordre,
+le caractère obligatoire et les prérequis restent déduits du Journey réel.
 
 ### 5. La séquence en trois étapes
 
@@ -71,20 +89,26 @@ Des briques voisines existent (`Challenge#primary_video`, les quiz d'expérience
 « apprécié / appris / manqué »), et l'on pourrait *deviner* une correspondance — précisément ce
 que le portage strict interdit de faire seul.
 
-**À décider** : la séquence est-elle un vrai objet du modèle, ou une lecture éditoriale d'un
-`Challenge` ? La réponse appartient au portable et à Boris, pas à l'intégration.
+**Arbitrage obtenu** : la séquence est une lecture éditoriale du Challenge et de son dispositif
+interne, jamais un nouvel objet de progression. Elle peut vivre dans le YAML ; les états Rails
+existants restent seuls canoniques. Le Challenge `Le Coupable idéal` ne figure donc plus comme
+étape interne de l'expérience 1 : il reste l'expérience 2.
 
 ### 6. La grammaire de reconnaissance
 
 Le bloc final annonce **ACTION** / **TRACE** / **RECONNAISSANCE** / **MISE EN CIRCULATION (6 Ω)**.
 Seuls les Omégas existent ; les trois autres sont des libellés éditoriaux sans champ.
 
+**Décision de portage** : ces libellés sont une projection lisible des dispositifs et autorités de
+validation déjà documentés. Ils ne justifient pas de nouveau modèle générique en V1. Toute donnée
+manquante reste explicitement absente jusqu'à l'analyse d'impact des validations concernées.
+
 ## En résumé
 
-**Cinq concepts sur six n'ont aucune donnée.** La Marelle se portera d'un bloc, fidèlement, dès
-que ces valeurs seront arbitrées et logées. En attendant, le premier lot de portage strict porte
-sur **Premières clés** (`premieres-cles-m0-cible` → `/premieres-cles`), dont le triage n'a
-retrouvé qu'un seul champ manquant.
+Les cinq concepts initialement manquants disposent maintenant d'un arbitrage éditorial. Claude peut
+préparer le portage de la Marelle à partir de la matrice canonique et du contrat YAML V1. Avant de
+toucher aux modèles ou aux callbacks, il doit toutefois produire l'analyse d'impact prévue pour les
+zones sensibles et confronter les durées proposées aux `Challenge` réels.
 
 Deux autres maquettes du tableau ont par ailleurs été écartées du premier lot :
 

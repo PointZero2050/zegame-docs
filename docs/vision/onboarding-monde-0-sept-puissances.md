@@ -171,8 +171,16 @@ expérience porte séparément une intensité pour le Joueur sur **5**, une éch
 **5**, un Monde minimal, une durée, une modalité et des prérequis. Ces mesures décrivent
 l'expérience, jamais la valeur du Joueur.
 
-La première expérience articule vidéo, mini-jeu `Le coupable idéal` et cristallisation d'une
-Trace. Les CTA décrivent toujours l'action réelle suivante.
+Pour le Monde 0, la puissance globale est fixée à **3/10**. La structure canonique comporte
+**14 expériences**, dont le Sas d'entrée optionnel, organisées en trois mouvements. Les valeurs
+par expérience, leurs conditions et leurs séquences éditoriales sont fixées dans
+[Monde 0 — puissance, intensité, effet et séquences d'expérience](../pedagogie/monde-0-puissance-intensite-effet.md).
+La séquence en trois étapes ne constitue jamais une progression parallèle aux états Rails.
+
+La première expérience articule vidéo, micro-interaction `La chaîne invisible` et formulation
+d'une Hypothèse de seuil. `Le Coupable idéal` constitue l'expérience suivante et ne doit plus être
+présenté comme une étape interne de la première. Les CTA décrivent toujours l'action réelle
+suivante.
 
 ### Imagination
 
