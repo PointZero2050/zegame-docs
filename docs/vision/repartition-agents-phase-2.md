@@ -122,15 +122,15 @@ en lecture seule, sans table. Une vue ne doit **jamais** écrire : un GET qui é
    | Maquette (`zegame-prototypes`) | Page Rails | Puissance |
    |---|---|---|
    | `accueil-puissances-m0-cible` | `/jeu` | — (**fait le 16 août**) |
-   | `volonte-marelle-m0-cible` | `/parcours` | Volonté |
+   | `volonte-marelle-m0-cible` | `/parcours` | Volonté (**fait et validé le 16 août**) |
    | `fresque-recit-m0-cible` | `/fresque` | Imagination |
-   | `heros-mentors-m0-cible` | `/heros` | Émotion |
+   | `heros-mentors-m0-cible` | `/heros` | Émotion — **bloqué** : bouton mort au Monde 0 |
    | `communication-guides-m0-cible` | `/guide` | Communication |
-   | `premieres-cles-m0-cible` | `/premieres-cles` | Intuition |
+   | `premieres-cles-m0-cible` | `/premieres-cles` | Intuition (**fait le 16 août**) |
    | `moteur-conscience-m0-cible` | `/users/me` | Transcendance |
-   | `traces-m0-cible` | `/mes-traces` | transversale |
-   | `accomplissements-m0-cible` | *(à créer, voir 2)* | transversale |
-   | `profil-joueur-cible` | `/users/me` | — |
+   | `traces-m0-cible` | `/mes-traces` | transversale — **bloqué** : la maquette emploie « Graine », mot interdit par un banc |
+   | `accomplissements-m0-cible` | `/accomplissements` | transversale (**fait**, à réaligner sur le patron canonique) |
+   | `profil-joueur-cible` | `/users/me` | — · **même URL que `moteur-conscience-m0-cible`** : à arbitrer avant portage |
 
    Le Désir n'a pas de maquette à porter : son territoire **est** le jeu Immateria, déjà intégré.
 2. **Les Accomplissements du Monde 0** — page ouvrable immédiatement : `BadgeDeParcours.pour` et
