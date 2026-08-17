@@ -124,11 +124,11 @@ en lecture seule, sans table. Une vue ne doit **jamais** écrire : un GET qui é
    | `accueil-puissances-m0-cible` | `/jeu` | — (**fait le 16 août**) |
    | `volonte-marelle-m0-cible` | `/parcours` | Volonté (**fait et validé le 16 août**) |
    | `fresque-recit-m0-cible` | `/fresque` | Imagination (**fait le 16 août** — pont Trace → Graine à arbitrer, voir `pont-trace-graine-fresque.md`) |
-   | `heros-mentors-m0-cible` | `/heros` | Émotion — **bloqué** : bouton mort au Monde 0 |
+   | `heros-mentors-m0-cible` | `/heros` | Émotion — **débloqué le 16 août au soir** : vérification faite, `/heros`, `/heros/:slug/choisir` et `/mentor` existent tous. Portable dès maintenant. |
    | `communication-guides-m0-cible` | `/guide` | Communication (**fait le 16 août**) |
    | `premieres-cles-m0-cible` | `/premieres-cles` | Intuition (**fait le 16 août**) |
    | `moteur-conscience-m0-cible` | `/users/me` | Transcendance (**fait le 16 août** — refonte visuelle, pas page nue) |
-   | `traces-m0-cible` | `/mes-traces` | transversale — **bloqué** : la maquette emploie « Graine », mot interdit par un banc |
+   | `traces-m0-cible` | `/mes-traces` | transversale — **débloqué** : Boris a tranché le vocabulaire (la Fresque crée les Graines, la page Traces ne convertit rien). Reste à porter. |
    | `accomplissements-m0-cible` | `/accomplissements` | transversale (**fait**, à réaligner sur le patron canonique) |
    | `profil-joueur-cible` | `/users/me` | — · **écartée de cette URL** : le Moteur la prend (arbitrage Boris, 16 août) |
 
