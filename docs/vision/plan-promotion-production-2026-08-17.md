@@ -1,5 +1,23 @@
 # Promotion en production — plan d'exécution
 
+> **✅ EXÉCUTÉE le 17 août 2026 au soir** (Claude portable). Production sur
+> `new.pointzero2050.com`, à parité stricte avec la préprod (contrôle d'égalité des arbres
+> vide, `main` = `preprod`). Les 31 joueurs, 927 Ω et 134 validations sont intacts —
+> vérifiés avant et après, en lecture seule. Sauvegardes : `avant-monde-0-20260817-223817`
+> (base + code). 5 migrations additives passées, double redémarrage fait, donnée rejouée
+> (durée 10 min d'« entrer dans le Jeu », canal du Monde 0 créé, id 120). 13 bancs verts
+> sur la base de production.
+>
+> **Deux écarts au plan, découverts et traités pendant la fenêtre :**
+> 1. Le contrôle d'égalité (§3) a attrapé **7 fichiers du Sas** (`app/views/sas/*`,
+>    `public/sas/humanite/*`) que la fusion avait laissés à l'ancienne version prod —
+>    alignés sur la préprod (`f51c975`). Le contrôle a fait exactement son travail.
+> 2. Le banc du menu de compte a révélé un **500 sur `/cgu`** pour un visiteur non
+>    connecté : la popup Ω (livrée après la rédaction de ce plan) appelait
+>    `current_user.omega` sans garde, et `/cgu` est la seule page publique en coque de
+>    Jeu. Garde `user_signed_in?` posée en préprod puis propagée (`8f66b50`) —
+>    `verifier_menu_compte` devient le banc-sentinelle de la coque anonyme.
+
 > **Claude (portable), 17 août 2026.** Établi à la demande de Boris. La production sert
 > **31 joueurs réels et 927 Ω**, sur du code du 12 août : tout le Monde 0 — métaparcours,
 > guides, mentors, Immateria, Fresque, seuils, portages stricts — n'existe qu'en préprod.
