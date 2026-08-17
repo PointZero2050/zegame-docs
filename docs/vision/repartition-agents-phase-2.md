@@ -124,7 +124,7 @@ en lecture seule, sans table. Une vue ne doit **jamais** écrire : un GET qui é
    | `accueil-puissances-m0-cible` | `/jeu` | — (**fait le 16 août**) |
    | `volonte-marelle-m0-cible` | `/parcours` | Volonté (**fait et validé le 16 août**) |
    | `fresque-recit-m0-cible` | `/fresque` | Imagination (**fait le 16 août** — pont Trace → Graine à arbitrer, voir `pont-trace-graine-fresque.md`) |
-   | `heros-mentors-m0-cible` | `/heros` | Émotion — **débloqué le 16 août au soir** : vérification faite, `/heros`, `/heros/:slug/choisir` et `/mentor` existent tous. Portable dès maintenant. |
+   | `heros-mentors-m0-cible` | `/heros` | Émotion — **fait le 17 août** : grille (lot 1) et fiche de détail (lot 2), avec les 48 portraits de Codex. Reste la 3ᵉ vue de la maquette, le **dialogue avec le mentor** (`/mentor`). |
    | `communication-guides-m0-cible` | `/guide` | Communication (**fait le 16 août**) |
    | `premieres-cles-m0-cible` | `/premieres-cles` | Intuition (**fait le 16 août**) |
    | `moteur-conscience-m0-cible` | `/users/me` | Transcendance (**fait le 16 août** — refonte visuelle, pas page nue) |
