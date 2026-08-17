@@ -43,21 +43,31 @@ fonctionnalité est morte, et un joueur du Festival qui écrit à un guide n'obt
 `PlafondLlm` a son plafond journalier réglé pour la production — la préprod tourne avec un
 plafond de test.
 
-### 2.2 L'anomalie des Omégas concerne des joueurs réels
+### 2.2 ~~L'anomalie des Omégas~~ — levée le 17 août, la production est saine
 
-Un résidu de migration attribue des Ω qui ne correspondent à aucune compétence déclarée :
-sur `le-site-du-point-zero`, un compte porte **97 Ω pour une expérience qui en vaut 9** — quatre
-lignes `Point` pour trois compétences. `gain_points` détruit et recrée, il ne peut pas produire
-cela : la ligne est antérieure et aucune revalidation ne l'a nettoyée.
+**Ce prérequis n'en est plus un, et l'alerte initiale était fausse.** Je l'avais formulée à
+partir d'un seul compte — `demo@preprod.local`, qui portait 97 Ω pour une expérience en valant 9 —
+et j'en avais conclu que « le total est faux pour les joueurs migrés ». C'était une généralisation,
+pas un constat.
 
-Conséquence : **le total Ω est faux pour les joueurs migrés, et il est publié sans opt-in**
-(arbitrage de transparence du 16 août). La promotion ne crée pas le problème, elle le rend plus
-visible.
+Vérification faite sur les **deux** bases, en comptant les lignes `Point` en doublon sur un même
+triplet (joueur, expérience, compétence) :
 
-**Décision attendue de Boris** : nettoyer avant la promotion, après, ou pas du tout. Ma
-recommandation : **auditer avant** (compter les lignes `Point` orphelines sur les 31 comptes),
-**nettoyer après** — un nettoyage retire des Ω à de vraies personnes, cela ne se fait pas dans la
-même fenêtre qu'une montée de version.
+| | Triplets en doublon | Joueurs touchés | Ω en trop |
+|---|---:|---:|---:|
+| Production | **0** | **0** | **0** |
+| Préprod | 1 | 1 (compte de démonstration) | 88 |
+
+**La production est intacte : ses 927 Ω sont tous légitimes.** L'unique doublon vivait en préprod,
+sur un compte de test, et a été retiré le 17 août — la ligne conforme au barème (3 Ω) conservée,
+la ligne surnuméraire (88 Ω) supprimée.
+
+Rien à faire côté production, ni avant ni après la promotion.
+
+> **Ce que cet épisode apprend.** Un chiffre relevé sur un compte de démonstration ne dit rien de
+> la production. La règle qui aurait évité l'erreur : quand un constat porte sur des données,
+> le vérifier sur la base concernée avant de le nommer — surtout s'il conduit à toucher aux Ω de
+> vraies personnes.
 
 ## 3. Stratégie de fusion
 
