@@ -140,8 +140,14 @@ en lecture seule, sans table. Une vue ne doit **jamais** écrire : un GET qui é
 
 ## 9. Arbitrages de Boris à ne pas rouvrir
 
-- **Le total Oméga se publie**, sans opt-in : parti-pris de transparence assumé (16 août). Les
-  Puissances, elles, restent opt-in — l'asymétrie est voulue.
+- **Le total Oméga se publie sans opt-in À PARTIR DU MONDE 1** (affiné le 17 août) : au
+  Monde 0, le compteur n'existe pas pour le joueur — pas masqué, absent. La transparence du
+  16 août reste le parti-pris ; elle commence au Monde où les Omégas ouvrent quelque chose.
+  Les Puissances, elles, restent opt-in — l'asymétrie est voulue.
+- **La pastille transversale des guides est dégelée** (Palier 2, 17 août) : elle apparaît dès que
+  le joueur est passé par la page de la rubrique Communication, et son déclencheur est le
+  marqueur de visite — jamais un réglage. Le visuel du widget revient au poste fixe
+  (`guide-widget` de la maquette) ; le branchement conditionnel est en place.
 - **Le passage entre Mondes est structurel**, jamais un seuil d'Oméga.
 - **Les Omégas acquis restent acquis** : aucune validation ne se révoque.
 - **L'accueil est une projection de l'attention** (F21) : à tous les Mondes, une sélection courte
