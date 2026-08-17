@@ -1,56 +1,74 @@
 # Le pont Trace → Graine, et le Miroir de la Fresque
 
 *Écrit le 16 août 2026 par l'instance poste fixe, au portage de
-`fresque-recit-m0-cible`. Destinataire : l'instance portable (modèles,
-services, contrôleurs) et Boris pour l'arbitrage éditorial.*
+`fresque-recit-m0-cible`. **Arbitré par Boris le 16 août au soir** — les décisions
+sont intégrées ci-dessous et remplacent les questions ouvertes de la première
+version. Destinataire : l'instance portable (modèles, services, contrôleurs).*
 
-## Le constat
+## Le constat d'origine
 
-La maquette de la Fresque et le code divergent sur ce qu'**est** une Graine.
+La maquette de la Fresque et le code divergeaient sur ce qu'**est** une Graine.
 
 | | Maquette | Code (`app/services/graine.rb`, vague C, 16 août) |
 |---|---|---|
 | Origine | le rituel des 4 questions | un message écrit dans le fil d'une expérience |
 | Nature | un objet stocké, éditable | une **lecture**, sans table |
-| Visibilité | propre à la Graine (`private` / `threshold`) | `GrainePubliee` (publication sur le profil) |
 
-Ce n'est pas un manque technique : c'est une divergence d'identité. Le service
-`Graine` a été écrit le matin même et pose la doctrine du dépôt — « un état se
-lit, il ne se stocke pas ». La maquette, elle, suppose une table.
+## Ce que Boris a tranché
 
-## Ce que la page fait aujourd'hui (livré, commit `39ce3a2`)
+### 1. La Fresque CRÉE des Graines — c'est bien son rôle
 
-Le rituel crée une **Trace** (`territoire: "imagination"`,
-`cle: "premiere-bifurcation"`), comme il le faisait déjà. La page affiche à
-côté les **vraies** Graines via `Graine.pour`, sans les dupliquer. L'écran des
-trois formulations du Miroir **n'est pas porté** : il compose une Graine, qui
-ne naît pas de ce rituel.
+« Planter ma première Graine » doit **produire une Graine**, pas une Trace. Le libellé
+était juste ; c'est l'implémentation qui ne l'était pas encore.
 
-Une tension de vocabulaire subsiste, signalée et non tranchée : le bouton dit
-« Planter ma première Graine » — c'est le libellé de la maquette **et** celui
-qu'asserte `verifier_v4_imagination` — alors qu'il crée une Trace.
+- **La première Graine** naît des **quatre questions** du rituel (déjà portées).
+- **Les suivantes** naissent d'un **champ de saisie libre**.
 
-## Ce qu'il reste à décider
+### 2. Une Trace ne devient PAS une Graine depuis la page Traces
 
-1. **Le pont.** Une Trace de bifurcation doit-elle pouvoir devenir une Graine ?
-   Si oui, par quel geste : le joueur choisit, ou la clôture de chapitre le
-   propose ? Le doc d'onboarding §4 l'annonce sans le spécifier.
-2. **Le vocabulaire.** Si le rituel ne produit pas de Graine, son bouton ne
-   devrait pas le dire. Changer le libellé demande d'ajuster
-   `verifier_v4_imagination` dans la même livraison.
-3. **Le Miroir.** Arbitrage de Boris du 16 août : les trois formulations
-   viendront d'un **appel au mentor** (LLM), cohérent avec le banc des
-   personnages déjà arbitré sur Claude — et non d'un éditorial fixe, qui
-   servirait les mêmes phrases à tous alors que la maquette les présente comme
-   un reflet des réponses du joueur. Reste à spécifier : quel prompt, quel
-   garde-fou (aucun score de qualité n'est attribué au texte — décision
-   explicite des NOTES de la maquette), et que faire en cas d'indisponibilité.
-4. **Les Résonances.** Aucune donnée aujourd'hui. La page annonce l'horizon
-   sans rien compter ; elles dépendent de l'ouverture de l'Espace du Seuil,
-   elle-même liée à la Communication.
+Le pont n'existe pas comme geste d'interface. La conversion se fait **pédagogiquement**,
+par le dialogue avec le mentor à l'intérieur des parcours. La page Traces reste une
+relecture ; elle ne propose aucune transformation.
 
-## Ce qui est déjà là et ne demande rien
+### 3. Option souhaitée — récolter la Graine en fin de chapitre
 
-Les quatre questions (`config/ressources/premiere_bifurcation.yml`, écrit par
-Codex depuis cette maquette), la Trace, le marqueur de première visite
-(`MarqueDeVisite`), et `Graine.pour` pour l'affichage.
+À la fin d'un dialogue avec un mentor, en clôture de chapitre : le mentor propose
+**« Veux-tu que je publie cette Graine pour toi ? »**. Si le joueur accepte, il est
+basculé vers la **page d'édition de la Graine**, celle-ci étant déjà publiée.
+
+Statut : *souhaité, si possible*. Ce n'est pas un bloquant pour la V1 de la Fresque.
+
+### 4. Le Miroir V1 : pas de LLM
+
+**Décision révisée.** L'arbitrage précédent (les trois formulations demandées au mentor)
+est **abandonné pour la V1** : passer par le mentor complique l'ensemble. La V1 garde
+**des champs libres remplis par le joueur** pour produire la Graine initiale — c'est-à-dire
+exactement ce qui est déjà porté. L'écran des trois propositions n'a donc pas lieu d'être
+pour l'instant.
+
+## Ce que cela demande au portable
+
+L'identité canonique n'est **pas** remise en cause : une Graine reste un message écrit par
+le joueur dans le fil d'une de ses expériences. Ce qui change, c'est qu'un **second point
+d'entrée** doit pouvoir en créer une — la Fresque.
+
+Questions de modèle, hors zone du poste fixe :
+
+1. **À quel fil rattacher une Graine née dans la Fresque ?** Les Graines existantes vivent
+   dans le fil d'un `ChallengesUser`. La première Graine du rituel n'est liée à aucune
+   expérience. Trois pistes : la rattacher à l'expérience courante du joueur ; créer un
+   conteneur d'un nouveau type (`Graine.CONTENEUR` prévoit explicitement ce cas — « Si un
+   second conteneur apparaît, il s'ajoute ICI, une seule fois ») ; ou introduire un fil
+   « Fresque » propre au joueur.
+2. **L'écriture** : la Fresque devient un point de création, alors que `Graine` est
+   aujourd'hui un service de **lecture** seule.
+3. **Une page d'édition de Graine** est nécessaire pour le point 3 ci-dessus (route +
+   action), et servira aussi à la saisie libre des Graines suivantes.
+
+## Ce que le poste fixe fera ensuite
+
+Porter la vue une fois le mécanisme disponible : le champ de saisie libre, la page
+d'édition, et le remplacement de l'actuel `POST /fresque/bifurquer` (qui crée une Trace)
+par la création d'une Graine. Le banc `verifier_fresque` devra suivre dans la même
+livraison — il asserte aujourd'hui que la page **n'invente aucune Graine**, ce qui cessera
+d'être vrai, et c'est voulu.

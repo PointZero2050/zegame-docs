@@ -57,10 +57,15 @@ expériences portent `required: false` :
 Conséquence mesurable : `JourneyProgress` compte `requis_total = 12`, pas 13, et
 `preparations` renvoie `["decouvrir-les-formats", "le-sas-d-entree"]`.
 
-**À arbitrer** : « Découvrir les formats » doit-il redevenir obligatoire (la matrice le classe en
-M0 · obligatoire · 10–15 min), ou la matrice doit-elle acter qu'il est un préparatif au même titre
-que le Sas ? La question n'est pas cosmétique : elle change ce qu'un joueur doit accomplir pour
-achever le Monde 0.
+**TRANCHÉ — Boris, 16 août au soir** : « Découvrir les formats » **est bien optionnel**. La
+base a raison, c'est la MATRICE qui doit être corrigée. Un joueur achève donc le Monde 0 avec
+**12 expériences obligatoires**, et deux préparatifs libres : « Découvrir les formats » et le Sas
+d'entrée.
+
+➡️ Action pour Codex ou le portable : corriger
+`docs/pedagogie/monde-0-puissance-intensite-effet.md`, qui classe encore cette expérience en
+« M0 · obligatoire · 10–15 min ». Rien à changer dans l'application : `JourneyProgress` compte
+déjà juste.
 
 ## Anomalie relevée en passant — Omégas du chapitre 2
 
