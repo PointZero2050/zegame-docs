@@ -79,6 +79,15 @@ par territoire. Si G06 signifie « le joueur dispose d'un registre de ses produc
 est `E`. Si elle signifie « l'agrégateur canonique de tous les mini-jeux », le constat d'origine
 tient et la ligne reste `N` — les résultats de mini-jeux vivent bien dans des tables hétérogènes.
 
+> **Résolu pour `G06` le 17 août.** Boris a retenu la lecture « agrégateur
+> canonique », avec la définition de Codex (une Trace est toute production
+> pédagogique pas encore cristallisée en Graine) : `RegistreDesTraces` livre
+> les quatre familles en lecture pure — territoires M0, retours,
+> diagnostics (Moteur + Puissances, statut suivant `publie`),
+> positionnements (posture du Conseil, héros). La page « Mes Traces » le
+> consomme ; sa maquette élargie reste à dessiner (deux sections
+> échafaudées). La ligne passe de `N` à `E`.
+
 **Arbitrage 2 — le corpus versionné compte-t-il comme source de vérité ?** Une ligne en dépend
 encore : le palier du million d'Ω (`O06`), **écrit et versionné** dans `config/guides/`, servi par
 `GuideCorpus` avec un `status: hypothese` et son propre garde-fou éditorial — mais sans aucune
