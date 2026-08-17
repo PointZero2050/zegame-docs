@@ -94,7 +94,7 @@ reporte ici — jamais l'inverse.
 
 | # | Expérience | Intensité | Effet | Conditions | Séquence éditoriale en trois étapes |
 |---:|---|---:|---:|---|---|
-| 1 | **Le Point Zéro : entrer dans le Jeu** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo · 7 min · aucun prérequis | **Regarder** l'introduction → **Relier** la chaîne invisible → **Formuler** une Hypothèse de seuil |
+| 1 | **Le Point Zéro : entrer dans le Jeu** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo · 10 min · aucun prérequis | **Regarder** l'introduction → **Relier** la chaîne invisible → **Formuler** une Hypothèse de seuil |
 | 2 | **Le Coupable idéal** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo · 10 min · expérience 1 | **Accuser** les coupables idéaux → **Défendre** leurs fonctions → **Délibérer** avec le Réel |
 | 3 | **Une drôle d'époque** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo · 20 min · expérience 2 | **Choisir** dans les situations → **Rencontrer** le mouvement inverse → **Lire** le premier miroir |
 | 4 | **Avant le Zéro** | 3 — Profonde | 1 — Personnel | M0 · obligatoire · solo · 15 min · expérience 3 | **Entrer** dans la dispersion → **Traverser** un devenir → **Revenir** avec une Trace |
@@ -109,9 +109,15 @@ reporte ici — jamais l'inverse.
 | 13 | **Vivre l'Atelier Point Zéro** | 2 — Engagée | 3 — Collectif | M0 · obligatoire · collectif · 3 h · facilitateur · expériences obligatoires précédentes achevées | **Explorer** les futurs → **Reconnaître** le système en soi → **Franchir** le seuil en Cercle |
 | 14 | **Mon récit de passage** | 3 — Profonde | 2 — Relationnel | M0 · obligatoire · solo avec mentor · 30 min · Atelier confirmé | **Rassembler** les traces → **Composer** la Graine de passage → **Sceller** la Carte du Seuil |
 
-Le parcours obligatoire représente **6 h 27**, Atelier compris — somme exacte des durées de
-base. Les deux expériences optionnelles ajoutent **1 h 10** (Sas 1 h, Découvrir les formats
-10 min) sans modifier la puissance globale ni conditionner le passage.
+Le parcours obligatoire représente **6 h 30 exactement**, Atelier compris — somme des durées de
+base, et non une estimation. Les deux expériences optionnelles ajoutent **1 h 10** (Sas 1 h,
+Découvrir les formats 10 min) sans modifier la puissance globale ni conditionner le passage.
+
+> **Comment le compte tombe juste.** La somme des durées valait 6 h 27. Plutôt que d'annoncer un
+> « environ », Boris a tranché le 16 août : **« Le Point Zéro : entrer dans le Jeu » passe de 7 à
+> 10 minutes en base**. C'était la valeur la moins ronde des quatorze, et 10 min était le haut de
+> la fourchette que cette matrice donnait à l'origine. Une seule expérience touchée, et le total
+> devient un nombre qu'on peut annoncer sans réserve.
 
 ## 4. Contrat d'affichage V1
 
