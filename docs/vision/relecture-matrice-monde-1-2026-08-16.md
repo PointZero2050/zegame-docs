@@ -79,12 +79,17 @@ par territoire. Si G06 signifie « le joueur dispose d'un registre de ses produc
 est `E`. Si elle signifie « l'agrégateur canonique de tous les mini-jeux », le constat d'origine
 tient et la ligne reste `N` — les résultats de mini-jeux vivent bien dans des tables hétérogènes.
 
-**Arbitrage 2 — le corpus versionné compte-t-il comme source de vérité ?** Deux lignes en
-dépendent. Le palier du million d'Ω (`O06`) et la convention d'alchimisation sur 10 (`F04`) sont
-**écrits et versionnés** dans `config/guides/`, servis par `GuideCorpus`, avec un `status:
-hypothese` et leur propre garde-fou éditorial. Les données, elles, n'existent pas. Pour `F04`,
-les **deux entrées de la formule existent déjà en base** (circulation et amplitude par Puissance) :
-la spec n'est plus « à concevoir », elle est « à câbler après arbitrage ».
+**Arbitrage 2 — le corpus versionné compte-t-il comme source de vérité ?** Une ligne en dépend
+encore : le palier du million d'Ω (`O06`), **écrit et versionné** dans `config/guides/`, servi par
+`GuideCorpus` avec un `status: hypothese` et son propre garde-fou éditorial — mais sans aucune
+donnée derrière.
+
+> **Résolu pour `F04` le 17 août.** La question ne se pose plus : la formule d'alchimisation
+> **a été câblée**, exactement comme cette relecture l'anticipait (« la spec n'est plus à
+> concevoir, elle est à câbler »). `MoteurHelper#degre_alchimisation` combine la circulation et
+> l'amplitude des six Puissances centrales, les deux entrées qui existaient déjà en base. La
+> ligne passe de `N` à `E`. Le degré reste une **hypothèse** et la page le dit au joueur —
+> « révisable à chaque traversée, et contestable » — ce qui était la condition du corpus.
 
 **Arbitrage 3 — TRANCHÉ PAR BORIS LE 16 AOÛT : la publication est voulue.**
 La matrice écrivait, pour `O01`, que la publication communautaire du total Oméga se fait « selon
