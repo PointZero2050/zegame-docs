@@ -140,9 +140,11 @@ en lecture seule, sans table. Une vue ne doit **jamais** écrire : un GET qui é
 
 ## 9. Arbitrages de Boris à ne pas rouvrir
 
-- **Le total Oméga se publie sans opt-in À PARTIR DU MONDE 1** (affiné le 17 août) : au
-  Monde 0, le compteur n'existe pas pour le joueur — pas masqué, absent. La transparence du
-  16 août reste le parti-pris ; elle commence au Monde où les Omégas ouvrent quelque chose.
+- **Les Omégas, deux surfaces, deux règles** (précisé le 17 août — un premier report les avait
+  confondues) : le **compteur du joueur** est visible à TOUS les Mondes, cliquable, et sa popup
+  explique ce qu'il est (« une monnaie qui ne s'échange pas » — contenu en cours de révision
+  Boris + Codex). Dans la **messagerie**, l'Ω d'un joueur n'apparaît qu'à partir du Monde 1,
+  comme option d'affichage. La transparence du 16 août (annuaire M1 sans opt-in) demeure.
   Les Puissances, elles, restent opt-in — l'asymétrie est voulue.
 - **La pastille transversale des guides est dégelée** (Palier 2, 17 août) : elle apparaît dès que
   le joueur est passé par la page de la rubrique Communication, et son déclencheur est le

@@ -98,10 +98,11 @@ membre du Monde 1, sur chaque carte de l'annuaire et sur chaque profil, sans con
 retrait — là où les Puissances sont explicitement opt-in (`PuissanceAssessment#publie`).
 
 **Arbitrage de Boris : c'est un parti-pris de transparence, assumé.**
-*Affiné le 17 août, au vu de la maquette `profil-communautaire-m0-cible` : la publication vaut
-**à partir du Monde 1**. Au Monde 0, les Omégas n'existent pas pour le joueur — ni chip d'en-tête,
-ni total sur l'accueil (banc `verifier_pastille_et_omega`). Les deux arbitrages se composent :
-transparence sans opt-in, à partir du Monde où les Omégas ouvrent quelque chose.* Le total Oméga se publie.
+*Précisé le 17 août — et un premier report avait sur-appliqué la règle : elle vaut pour la
+**messagerie** (l'Ω d'un joueur n'y apparaît qu'à partir du Monde 1, comme option d'affichage),
+pas pour le compteur du joueur, qui reste visible à tous les Mondes avec sa popup explicative
+(banc `verifier_pastille_et_omega`). La transparence de l'annuaire M1 sans opt-in demeure telle
+quelle.* Le total Oméga se publie.
 L'asymétrie avec les Puissances n'est donc pas un défaut à corriger : les Puissances disent une
 position intérieure, que chacun choisit d'exposer ou non ; le total Oméga dit une contribution au
 commun, et le Point Zéro fait le choix de la rendre visible.
