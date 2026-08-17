@@ -80,34 +80,38 @@ personnel si son résultat observable est seulement un déplacement intérieur.
 3. **Prendre place — Je contribue** : expériences 10 à 14 ; Conseil, formats, rencontre
    collective, Atelier et récit de passage.
 
-La structure canonique comporte **14 expériences**, dont **13 obligatoires** et le **Sas d'entrée
-optionnel**. `Le Point Zéro : entrer dans le Jeu` et `Le Coupable idéal` sont deux Challenges
+La structure canonique comporte **14 expériences**, dont **12 obligatoires** et **deux
+optionnelles** : « Découvrir les formats » et le Sas d'entrée. La matrice donnait « Découvrir les
+formats » comme obligatoire ; la base la sert en optionnelle, et c'est la base qui fait foi. `Le Point Zéro : entrer dans le Jeu` et `Le Coupable idéal` sont deux Challenges
 distincts.
 
 ## 3. Matrice des quatorze expériences
 
-Les durées sont des cibles éditoriales. Lorsqu'une durée canonique existe déjà dans `Challenge`,
-elle prévaut et doit être alignée avec cette matrice avant affichage.
+**Les durées ci-dessous sont celles de la base**, relevées le 16 août dans `Challenge#duration`
+(arbitrage Boris : le réel prime sur la matrice). Ce ne sont donc pas des cibles à atteindre mais
+la description de ce que l'application sert déjà. Toute correction se fait en base, puis se
+reporte ici — jamais l'inverse.
 
 | # | Expérience | Intensité | Effet | Conditions | Séquence éditoriale en trois étapes |
 |---:|---|---:|---:|---|---|
-| 1 | **Le Point Zéro : entrer dans le Jeu** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo · 8–10 min · aucun prérequis | **Regarder** l'introduction → **Relier** la chaîne invisible → **Formuler** une Hypothèse de seuil |
-| 2 | **Le Coupable idéal** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo · 15–20 min · expérience 1 | **Accuser** les coupables idéaux → **Défendre** leurs fonctions → **Délibérer** avec le Réel |
-| 3 | **Une drôle d'époque** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo · 15–20 min · expérience 2 | **Choisir** dans les situations → **Rencontrer** le mouvement inverse → **Lire** le premier miroir |
-| 4 | **Avant le Zéro** | 3 — Profonde | 1 — Personnel | M0 · obligatoire · solo · 20–30 min · expérience 3 | **Entrer** dans la dispersion → **Traverser** un devenir → **Revenir** avec une Trace |
-| 5 | **Et moi dans tout ça ?** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo avec mentor · 15–20 min · expérience 4 | **Relire** les traces → **Dialoguer** avec le mentor → **Semer** la Graine de l'Appel |
-| 6 | **L'écosystème Point Zéro** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo · environ 15 min · chapitre 1 achevé | **Découvrir** la constellation → **Relier** trois fragments → **Produire** un Schéma de circulation |
-| 7 | **Le site du Point Zéro** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo connecté · 20–30 min · expérience 6 | **Explorer** des contenus → **Éprouver** sa compréhension → **Cartographier** deux résonances |
-| 8 | **Le signe de reconnaissance** | 2 — Engagée | 2 — Relationnel | M0 · obligatoire après refonte · solo · 10–15 min · expérience 7 · envoi facultatif | **Choisir** une relation → **Composer** un signe → **Décider** de son canal ou de le conserver |
-| 9 | **Les choses se précisent** | 2 — Engagée | 2 — Relationnel | M0 · obligatoire · solo avec mentor · 15–20 min · expérience 8 | **Relire** la constellation → **Nommer** une relation possible → **Semer** la Graine de relation |
-| 10 | **Le Conseil Oméga** | 3 — Profonde | 1 — Personnel | M0 · obligatoire · solo · 25–35 min · chapitre 2 achevé | **Être convoqué** → **Arbitrer** entre les futurs → **Signer** un Rôle d'appel et des caps |
-| 11 | **Découvrir les formats** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo · 10–15 min · expérience 10 · agenda accessible | **Clarifier** son intention → **Comparer** les formats → **Produire** sa Boussole de passage |
-| 12 | **Le Sas d'entrée** | 3 — Profonde | 2 — Relationnel | M0 · optionnel · collectif accompagné · 1 h 30 · inscription et présence | **Se présenter** → **Éprouver** une première rencontre → **Clarifier** son intention |
+| 1 | **Le Point Zéro : entrer dans le Jeu** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo · 7 min · aucun prérequis | **Regarder** l'introduction → **Relier** la chaîne invisible → **Formuler** une Hypothèse de seuil |
+| 2 | **Le Coupable idéal** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo · 10 min · expérience 1 | **Accuser** les coupables idéaux → **Défendre** leurs fonctions → **Délibérer** avec le Réel |
+| 3 | **Une drôle d'époque** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo · 20 min · expérience 2 | **Choisir** dans les situations → **Rencontrer** le mouvement inverse → **Lire** le premier miroir |
+| 4 | **Avant le Zéro** | 3 — Profonde | 1 — Personnel | M0 · obligatoire · solo · 15 min · expérience 3 | **Entrer** dans la dispersion → **Traverser** un devenir → **Revenir** avec une Trace |
+| 5 | **Et moi dans tout ça ?** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo avec mentor · 20 min · expérience 4 | **Relire** les traces → **Dialoguer** avec le mentor → **Semer** la Graine de l'Appel |
+| 6 | **L'écosystème Point Zéro** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo · 5 min · chapitre 1 achevé | **Découvrir** la constellation → **Relier** trois fragments → **Produire** un Schéma de circulation |
+| 7 | **Le site du Point Zéro** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo connecté · 30 min · expérience 6 | **Explorer** des contenus → **Éprouver** sa compréhension → **Cartographier** deux résonances |
+| 8 | **Le signe de reconnaissance** | 2 — Engagée | 2 — Relationnel | M0 · obligatoire après refonte · solo · 15 min · expérience 7 · envoi facultatif | **Choisir** une relation → **Composer** un signe → **Décider** de son canal ou de le conserver |
+| 9 | **Les choses se précisent** | 2 — Engagée | 2 — Relationnel | M0 · obligatoire · solo avec mentor · 30 min · expérience 8 | **Relire** la constellation → **Nommer** une relation possible → **Semer** la Graine de relation |
+| 10 | **Le Conseil Oméga** | 3 — Profonde | 1 — Personnel | M0 · obligatoire · solo · 25 min · chapitre 2 achevé | **Être convoqué** → **Arbitrer** entre les futurs → **Signer** un Rôle d'appel et des caps |
+| 11 | **Découvrir les formats** | 1 — Douce | 1 — Personnel | M0 · **optionnel** · solo · 10 min · expérience 10 · agenda accessible | **Clarifier** son intention → **Comparer** les formats → **Produire** sa Boussole de passage |
+| 12 | **Le Sas d'entrée** | 3 — Profonde | 2 — Relationnel | M0 · optionnel · collectif accompagné · 1 h · inscription et présence | **Se présenter** → **Éprouver** une première rencontre → **Clarifier** son intention |
 | 13 | **Vivre l'Atelier Point Zéro** | 2 — Engagée | 3 — Collectif | M0 · obligatoire · collectif · 3 h · facilitateur · expériences obligatoires précédentes achevées | **Explorer** les futurs → **Reconnaître** le système en soi → **Franchir** le seuil en Cercle |
-| 14 | **Mon récit de passage** | 3 — Profonde | 2 — Relationnel | M0 · obligatoire · solo avec mentor · 20–30 min · Atelier confirmé | **Rassembler** les traces → **Composer** la Graine de passage → **Sceller** la Carte du Seuil |
+| 14 | **Mon récit de passage** | 3 — Profonde | 2 — Relationnel | M0 · obligatoire · solo avec mentor · 30 min · Atelier confirmé | **Rassembler** les traces → **Composer** la Graine de passage → **Sceller** la Carte du Seuil |
 
-Le parcours obligatoire représente environ **6 h 30**, Atelier compris. Le Sas ajoute environ
-**1 h 30** sans modifier la puissance globale ni conditionner le passage.
+Le parcours obligatoire représente **6 h 27**, Atelier compris — somme exacte des durées de
+base. Les deux expériences optionnelles ajoutent **1 h 10** (Sas 1 h, Découvrir les formats
+10 min) sans modifier la puissance globale ni conditionner le passage.
 
 ## 4. Contrat d'affichage V1
 
