@@ -244,3 +244,37 @@ la question laissée ouverte par l'arbitrage du fil.
    `memoire`, `traces`, `graines`, `moteur` — quatre catégories, pas un interrupteur unique.
 5. Le **journal** peut rester dans la maquette comme cible, en sachant qu'il n'est pas
    porté dans cette vague.
+
+---
+
+## 9. Ce que Codex a fermé le 18 août au soir, et ce qui reste
+
+Codex a livré, après ces décisions, deux documents qui ferment des questions ouvertes ici :
+
+- [`espace-echange-m0-conservation-guides.md`](espace-echange-m0-conservation-guides.md) — la
+  finalité de l'Espace d'échange du Monde 0 (elle était marquée provisoire dans le code depuis
+  le 17 août) **et** la politique cible de conservation du fil des Guides ;
+- [`cgu-application-point-zero-projet.md`](cgu-application-point-zero-projet.md) — une
+  proposition de CGU, à compléter.
+
+**Un point de sa politique dépasse ce que cette analyse couvrait, et il faut le dire :** la
+cible retenue ajoute « **30 jours maximum dans les sauvegardes** » après suppression. Ce n'est
+pas ce que fait le code aujourd'hui — les sauvegardes de la base (`~/sauvegardes/*.sql.gz`) sont
+conservées sans politique d'expiration, et une suppression volontaire du fil **reste présente
+dans toute sauvegarde antérieure** aussi longtemps qu'on la garde.
+
+**Ce n'est pas un défaut du fil des guides : c'est une politique de sauvegarde qui n'existe
+pas**, et qui vaut pour toutes les données, pas seulement pour lui. La rendre vraie demande une
+rotation datée des dumps — un geste d'exploitation, pas de code applicatif. À traiter comme tel
+avant de publier la promesse au joueur.
+
+### Arbitrages de Boris du 18 août au soir, pour mémoire
+
+- **`PlafondLlm`** (20 $/jour partagé préprod/production) : **traité ultérieurement**, en
+  connaissance du risque signalé — les deux surfaces LLM s'éteignent ensemble quand il tombe.
+- **Paramètres du compte : périmètre réduit** au technique. ⚠️ Les champs de profil qu'il porte
+  aujourd'hui doivent **déménager**, pas disparaître, sous peine de priver le joueur de
+  l'édition de son profil communautaire.
+- **2FA et liste des appareils : écartées** avant le Festival.
+- **Fil des Guides : un seul fil en V1** — « supprimer ce fil » efface tout l'historique ; les
+  conversations multiples sont un chantier ultérieur.
