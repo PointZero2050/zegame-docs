@@ -330,11 +330,12 @@ identité, le contenu devient identifié — c'est la séparation que demande la
 compte » serait devenue fausse. Les deux surfaces (page `/guide` et panneau de la pastille)
 disent désormais **« Conversation privée »**, le mot de la maquette.
 
-**Ce que le §5 (RGPD) doit intégrer** : le fil est une donnée personnelle conservée sans durée
-d'expiration décidée. Il est effaçable par le joueur à tout moment, et part avec son compte
-(`dependent: :delete_all`, posé le 18 août après qu'une clé étrangère a bloqué une suppression
-réelle). **Une politique de rétention reste à écrire** — c'est la question ouverte que cet
-arbitrage déplace plutôt qu'il ne la ferme.
+**Décision produit du 18 août** : la politique cible est désormais définie dans
+[Espace d’échange du Monde 0 et conservation du fil des Guides](espace-echange-m0-conservation-guides.md).
+Le fil reste pendant toute la durée du compte, sans expiration propre, est effaçable à tout
+moment et part avec le compte. Sa mémoire est une contrainte de fonctionnement expliquée : la
+carte Guides ne porte pas d’interrupteur, mais offre la suppression du fil. La mise en œuvre de la
+suppression, des sauvegardes et du journal d’accès reste à analyser avant portage.
 
 *Livré dans pointzero-app par `9fcc5a9` (préprod puis production), banc
 `scripts/verifier_fil_guides.rb`, 27 assertions.*

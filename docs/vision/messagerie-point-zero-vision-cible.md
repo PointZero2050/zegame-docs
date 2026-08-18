@@ -46,6 +46,14 @@ La cible ne justifie pas une réécriture immédiate. Les nouvelles primitives d
 socle actuel ou organiser une migration explicite, jamais créer un deuxième système de messages
 sans stratégie de convergence.
 
+### 1.1. Premier espace au Monde 0
+
+Le Monde 0 ouvre un espace communautaire volontairement limité. Sa finalité canonique, ses gestes
+et son vocabulaire sont fixés dans
+[Espace d’échange du Monde 0 et conservation du fil des Guides](espace-echange-m0-conservation-guides.md).
+Cet espace prolonge l’expérience par la rencontre et la Résonance ; il ne constitue pas encore la
+messagerie complète du Monde 1.
+
 ## 2. Principes de conception
 
 1. **Le contexte précède le canal.** Un espace existe pour un Cercle, un projet, une expérience,

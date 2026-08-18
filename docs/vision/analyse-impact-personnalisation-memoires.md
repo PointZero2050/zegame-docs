@@ -117,9 +117,10 @@ Sans cette distinction, « continuer sans personnalisation » signifierait effac
 conversation du joueur sous ses yeux — ce que personne ne veut. Avec elle, la réponse est
 nette : le fil reste lisible, le guide repart de zéro à chaque question.
 
-**Reste alors une question de fond, qui est à Boris :** un joueur qui refuse la
-personnalisation garde-t-il un fil des guides *inerte* (visible, jamais relu par le
-modèle), ou la fonctionnalité entière lui est-elle retirée ?
+**Question fermée par la décision du §7 :** la mémoire du fil des Guides est une contrainte de
+fonctionnement expliquée. Elle ne porte pas d’interrupteur. Le Joueur garde en contrepartie le
+pouvoir de supprimer tout son fil. Voir [Espace d’échange du Monde 0 et conservation du fil des
+Guides](espace-echange-m0-conservation-guides.md).
 
 ---
 
@@ -153,8 +154,10 @@ et il ne pourra jamais couvrir les appels anonymes des guides.
 3. **La page courante transmise aux guides** : on l'ajoute (meilleures réponses, une
    donnée de plus envoyée au tiers), ou on reformule la maquette ?
 4. **Le journal** : objet nouveau maintenant, ou reporté après le Festival ?
-5. **La rétention** — question laissée ouverte par l'arbitrage du 18 août et toujours sans
-   réponse : combien de temps garde-t-on un fil que le joueur n'efface pas ?
+5. ~~**La rétention**~~ — **tranchée le 18 août** : conservation sans expiration propre pendant
+   toute la durée du compte ; suppression volontaire immédiate en base active ; suppression avec
+   le compte ; cible de 30 jours maximum dans les sauvegardes. Validation juridique et contrat
+   d’exploitation encore requis avant portage.
 
 ---
 

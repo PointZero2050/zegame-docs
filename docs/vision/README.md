@@ -111,6 +111,8 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
    **[Espaces de discussion et apprentissage au Monde 1](messagerie-espaces-discussion-monde-1.md)** — distinction espace/fil, dix gabarits d'espaces relationnels, pédagogiques, fonctionnels et décisionnels, création guidée par la finalité, droits, cycle de vie, prévention de la prolifération et apprentissage des cinq gestes collectifs au Monde 1.
 
+   **[Espace d’échange du Monde 0 et conservation du fil des Guides](espace-echange-m0-conservation-guides.md)** — finalité éditoriale du premier espace collectif, gestes disponibles au Seuil, distinction avec le fil privé des Guides, durée cible, suppression, suspension de mémoire et contrat de portage.
+
    **[Audit S0 — messagerie de pointzero-app](audit-s0-messagerie.md)** — livrable du lot S0 (2026-08-09) : carte mesurée de l'existant (73 fils, tous 1-à-1 adossés à un objet métier ; aucune conversation collective), écarts vers l'étape A, modèle de droits testé négativement (28 contrôles rejouables, `scripts/verifier_isolation_messagerie.rb`), proposition `Espace`/`EspaceMembership` sans deuxième système de messages, migration réversible en six pas, estimation A/B/C et quatre décisions à prendre avant S1.
 
 23. **[analyse-impact-messagerie-cercles.md](analyse-impact-messagerie-cercles.md)** — Analyse d'impact P0 (audit serveur du 2026-07-31) : faille d'accès déjà en production sur `Messaging::Thread` (aucune restriction de participation), notifications e-mail jamais implémentées (`GlobalSettings.send_mail_notif_for_thread` non défini), vues d'index/show hard-codées Challenge/Journey, conteneur unique proposé (`CircleMembership`), absence totale de Badge/Contribution/Resonance/Block/Report.
