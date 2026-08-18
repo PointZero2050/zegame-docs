@@ -12,7 +12,8 @@
 - numéro de téléphone professionnel distinct à créer pour l’éditeur : le numéro personnel de
   Boris Sirbey ne doit pas être publié ;
 - adresse exacte des pages couvertes par les CGU ;
-- âge minimal et régime applicable aux mineurs ;
+- modalités opérationnelles d’autorisation et d’information des mineurs selon leur âge et leur
+  contexte d’accès, notamment dans les établissements scolaires ;
 - date d’entrée en vigueur et numéro de version ;
 - URL de la politique de confidentialité et de la politique relative aux cookies ;
 - modalités effectives d’export, de suppression du compte et de signalement ;
@@ -99,13 +100,28 @@ compte.
 L’acceptation est personnelle. Le Joueur ne peut accepter les CGU au nom d’une autre personne sans
 mandat valable.
 
-## 6. Conditions d’accès et compte
+## 6. Conditions d’accès, mineurs et compte
 
-Le Service est proposé aux personnes juridiquement capables de contracter.
+Le Monde 0 et le Monde 1 ne sont pas soumis à un âge minimal général. Un mineur peut notamment y
+participer dans un cadre familial, associatif, scolaire ou éducatif adapté à son âge, à la nature
+des activités proposées et au degré d’autonomie qui lui est accordé.
 
-**Proposition à arbitrer :** sauf dispositif spécifiquement conçu, encadré et autorisé, le Service
-est réservé aux personnes âgées de dix-huit ans ou plus. L’accès d’un mineur suppose l’autorisation
-préalable de son représentant légal et des conditions adaptées au parcours concerné.
+L’accès au **Monde 2 et aux Mondes suivants est réservé aux personnes âgées de dix-huit ans ou
+plus**. Ce passage peut comporter un engagement durable, une facilitation certifiée, des services
+payants et des processus collectifs d’une intensité qui supposent la majorité.
+
+Lorsqu’un mineur utilise le Service, POINT ZERO 2050 met en place une information compréhensible,
+des réglages protecteurs et les autorisations requises par son âge, le fondement du traitement et
+le contexte d’utilisation. Pour un traitement facultatif reposant sur le consentement d’un mineur
+de moins de quinze ans dans le cadre d’un service en ligne, l’accord du mineur est recherché
+conjointement avec celui d’un titulaire de l’autorité parentale. Lorsqu’un établissement scolaire,
+une association ou une autre structure organise l’accès, une convention précise les rôles de
+chacun, les données traitées, les personnes habilitées à y accéder et l’information donnée au
+mineur et à ses représentants.
+
+La simple participation d’un mineur à une activité ne lui permet pas de conclure seul un contrat,
+d’accéder à une fonction payante ou d’accepter un traitement de données lorsque la loi exige
+l’intervention de son représentant légal.
 
 Le Joueur fournit des informations exactes et les actualise lorsque cela est nécessaire. Il garde
 ses identifiants confidentiels et signale rapidement toute utilisation non autorisée de son
@@ -180,6 +196,11 @@ possibilité de retrait global ou individuel, tandis que les Traces sont privée
 publiées volontairement. Cette règle ne rend pas la Fresque accessible au web public. L’interface
 doit indiquer l’audience et le régime effectivement appliqués avant la première publication.
 
+Pour un Joueur mineur, le profil, la Fresque, les Graines, les Accomplissements et les autres
+contenus personnels sont privés par défaut. Leur partage exige une action explicite dans le cadre
+autorisé. Les échanges individuels non sollicités, la publication sur le web public et l’affichage
+public des indicateurs du Moteur ne sont pas activés par défaut.
+
 Le Joueur peut rendre visibles, selon son Monde et ses choix, tout ou partie de ses
 Accomplissements, parcours, badges de seuil, Contributions, Graines, Traces, mentor, Monde maximal
 atteint et autres éléments de profil.
@@ -205,6 +226,12 @@ d’une obligation légale, par des personnes habilitées et selon une procédur
 Le Joueur peut proposer un échange individuel à un autre Joueur. La conversation ne s’ouvre
 qu’après acceptation de son destinataire. Une acceptation n’oblige pas à poursuivre l’échange et
 peut être retirée.
+
+Dans un espace destiné à des mineurs, les règles de contact, de modération, de signalement et
+d’intervention des adultes habilités sont annoncées avant la participation. L’accès d’un adulte
+aux échanges privés d’un mineur ne peut être présenté comme automatique : il doit répondre à une
+finalité de protection clairement définie et à une procédure portée à la connaissance des
+personnes concernées.
 
 Chaque Cercle peut adopter un Pacte-Source, des règles d’engagement et des rôles complémentaires.
 Ces règles s’ajoutent aux CGU sans pouvoir les contredire.
@@ -436,8 +463,21 @@ La page de CGU doit :
 - enregistrer la version acceptée par le Joueur lorsque cette preuve devient disponible ;
 - distinguer clairement `CGU`, `Politique de confidentialité`, `Cookies` et futures `CGV` ;
 - ne pas afficher comme réelles les fonctions encore absentes : export, suppression autonome,
-  journal d’accès, consentement enregistré, médiation ou traitement des mineurs ;
+  journal d’accès, consentement enregistré, médiation ou parcours mineurs institutionnels ;
 - proposer un lien permanent vers le signalement et le contact.
+
+Pour les accès de mineurs, la mise en œuvre doit en outre prévoir :
+
+- une information courte, concrète et adaptée à l’âge, distincte du texte juridique complet ;
+- une collecte de l’âge aussi peu intrusive que possible, par exemple par tranche d’âge, tant que
+  la date de naissance exacte n’est pas nécessaire ;
+- un régime d’autorisation vérifiable lorsque celui-ci est requis ;
+- des valeurs par défaut protectrices pour le profil, les contenus et les échanges ;
+- une convention et une annexe de protection des données pour les usages scolaires ou
+  institutionnels, après qualification des rôles de responsable de traitement et de
+  sous-traitant ;
+- l’interdiction d’utiliser le Moteur, les Omégas ou les productions intimes comme un outil de
+  notation scolaire ou de diagnostic psychologique.
 
 ## Références officielles utilisées pour le cadrage
 
@@ -446,4 +486,6 @@ La page de CGU doit :
 - [Service Public — mentions obligatoires sur le site internet d’une société](https://entreprendre.service-public.gouv.fr/vosdroits/F37351) ;
 - [Légifrance — loi pour la confiance dans l’économie numérique](https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006089778) ;
 - [CNIL — RGPD, chapitre III : droits de la personne concernée](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3) ;
-- [CNIL — qu’est-ce qu’une donnée personnelle ?](https://www.cnil.fr/fr/definition/donnee-personnelle).
+- [CNIL — qu’est-ce qu’une donnée personnelle ?](https://www.cnil.fr/fr/definition/donnee-personnelle) ;
+- [CNIL — rechercher le consentement d’un parent pour les mineurs de moins de 15 ans](https://www.cnil.fr/fr/recommandation-4-rechercher-le-consentement-dun-parent-pour-les-mineurs-de-moins-de-15-ans) ;
+- [CNIL — identifier les rôles de responsable de traitement et de sous-traitant](https://www.cnil.fr/fr/rgpd-comment-bien-identifier-son-role).
