@@ -162,3 +162,82 @@ et il ne pourra jamais couvrir les appels anonymes des guides.
 parlent. Le jour où l'un d'eux pourra agir — écrire, chercher, ouvrir un fil —, elle doit
 être refaite : ce sont les pouvoirs, pas les mots, qui déterminent le risque. Même clause
 que l'analyse F19, et pour la même raison.*
+
+---
+
+## 7. Décisions de Boris — 18 août 2026
+
+Les cinq questions du §6 sont tranchées.
+
+### 1. L'axe de consentement : **croisé**
+
+L'usage devient un interrupteur de haut niveau ; la **catégorie de donnée reste la vérité
+interrogée** par les services. Un service ne demande jamais « le mentor est-il actif ? »
+mais « ai-je le droit de lire les Traces pour ce mentor ? ». C'est ce qui rend le tableau
+« ce qui n'est pas utilisé » vérifiable par un banc, et non pas seulement écrit.
+
+### 2. La mémoire des guides : **contrainte système expliquée, avec suppression**
+
+**Décision de Boris :** imposer la mémoire comme une contrainte de fonctionnement, en
+disant pourquoi, et donner en échange le pouvoir de **supprimer un fil** — l'idiome des
+interfaces LLM que les gens connaissent déjà. Le raisonnement tient : un consentement dont
+le refus casse la fonctionnalité n'est pas un consentement, c'est une case qu'on clique
+sans lire.
+
+**Frontière posée dans la même décision — elle est structurante :**
+
+| | Régime | Pourquoi |
+|---|---|---|
+| **Fil des guides** | Contrainte système, expliquée + suppression | C'est ce que le joueur a écrit lui-même, dans une conversation étroite (son fil, son Monde, sa page). Le conserver relève du fonctionnement du service. |
+| **Mentor** | **Consentement par catégorie, inchangé** | Il lit de la matière intime **déjà existante** : Traces, Graines, Moteur. L'opt-in strict actuel (vérifié en négatif par `verifier_mentor`) n'est pas un excès de prudence, c'est le bon régime. |
+
+**Deux conséquences pratiques :**
+- **la carte « Guides » du centre ne doit pas porter d'interrupteur** — mais une
+  explication et un bouton de suppression. *Modification demandée à la maquette.*
+- il n'existe **qu'un seul fil** par joueur aujourd'hui : « supprimer une conversation »
+  signifie donc supprimer tout son historique de guides (`DELETE /guide/fil`, livré le
+  18 août). Les conversations multiples, si elles sont voulues, sont un chantier ultérieur.
+
+### 3. La page courante transmise aux guides : **oui**
+
+Le contrôleur transmettra la destination courante en plus du Monde. La maquette devient
+exacte, et les réponses gagnent en pertinence. Une donnée de plus part chez le tiers : elle
+est de navigation, jamais de contenu.
+
+### 4. Le journal : **reporté après le Festival**
+
+Recommandation du portable, retenue. Trois raisons, par ordre de poids :
+1. il ne pourra **jamais** couvrir les appels aux guides, anonymes par construction — il
+   afficherait « voici tes accès » en en cachant la moitié, ce qui est pire qu'une absence ;
+2. il journaliserait aujourd'hui le néant : zéro appel mentor en production ;
+3. **un journal d'accès est lui-même un stock de données personnelles**, avec sa propre
+   question de rétention — on créerait le problème qu'on prétend résoudre.
+
+La transparence reste servie par « Données utilisées », par le fil visible, et par la
+suppression.
+
+### 5. La rétention : **indéfinie, le contrepoids est la suppression**
+
+Le fil n'expire pas. Ce qui protège le joueur n'est pas une durée mais un pouvoir : il
+supprime quand il veut, et **le fil part avec le compte** (`dependent: :delete_all`, posé
+le 18 août). Deux faits à garder en tête : le fil ne coûte rien en jetons — seuls les
+**vingt derniers tours** sont relus, quelle que soit sa longueur — et cette décision ferme
+la question laissée ouverte par l'arbitrage du fil.
+
+---
+
+## 8. Pour Codex — ce que ces décisions changent à la maquette
+
+1. **La carte « Guides » perd son interrupteur.** À sa place : la phrase qui dit pourquoi
+   la mémoire est nécessaire, et un bouton **« Supprimer ce fil »**. C'est le seul endroit
+   du centre où le geste est destructif — il mérite sa formulation.
+2. **La carte « Freeride » ne doit pas porter d'interrupteur non plus**, pour une autre
+   raison : le Freeride **n'existe pas** et `config/coque.yml` l'ouvre au **Monde 2**. Il
+   se présente comme une destination annoncée, dans l'idiome de la coque.
+3. **La carte « Repères de l'application »** doit retirer « Moteur synthétique » de ses
+   sources : la coque vérifie seulement **qu'une évaluation existe**, elle n'en lit jamais
+   le contenu.
+4. **La carte « Mentor » garde ses interrupteurs**, et ce sont ceux qui existent déjà :
+   `memoire`, `traces`, `graines`, `moteur` — quatre catégories, pas un interrupteur unique.
+5. Le **journal** peut rester dans la maquette comme cible, en sachant qu'il n'est pas
+   porté dans cette vague.
