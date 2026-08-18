@@ -24,6 +24,10 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 - **[festival-matrice-droits-et-etats.md](festival-matrice-droits-et-etats.md)** — matrice R10
   des acteurs, états du billet/événement/créneau, autorisations, confidentialité et tests de
   recette du Festival.
+- **[cgu-application-point-zero-projet.md](cgu-application-point-zero-projet.md)** — projet de
+  CGU pour le site et l’application : compte, progression, IA, contenus du Joueur, messagerie,
+  Cercles, indicateurs pédagogiques, Omégas, modération, propriété intellectuelle et données
+  personnelles. Texte de travail à faire valider juridiquement avant publication.
 
 ## Décisions canoniques du 12 août 2026
 
