@@ -285,7 +285,9 @@ réels du palier 1 montre que la ligne « sans ridiculiser » tient.
 1. **Le Docteur en v1, ou le Professeur seul d'abord ?** (Je recommande le Professeur seul.)
 2. **Pastille dès la v1, ou page dédiée puis pastille ?** (Je recommande page d'abord.)
 3. **Qui écrit le corpus joueur, et pour quand ?** C'est le seul vrai chemin critique.
-4. **Conserve-t-on les échanges ?** (Je recommande 30 jours, sans identifiant.)
+4. **Conserve-t-on les échanges ?** (Je recommandais 30 jours, sans identifiant.)
+   → **TRANCHÉ le 18 août, autrement : le fil est conservé, rattaché au joueur, sans
+   expiration.** Voir le §9 en fin de document.
 5. **Y aura-t-il des mineurs au Festival ?** La réponse change le régime de conformité.
 
 ---
@@ -294,3 +296,45 @@ réels du palier 1 montre que la ligne « sans ridiculiser » tient.
 **sans outils**, qui lit un corpus et parle. Le jour où l'on voudra lui donner la moindre
 capacité d'action — chercher dans l'annuaire, ouvrir un fil, écrire quoi que ce soit —,
 elle doit être refaite : ce sont les pouvoirs, pas les mots, qui déterminent le risque.*
+
+---
+
+## 9. Arbitrage du 18 août — le fil est conservé, et rattaché au joueur
+
+**Ce document recommandait la conservation trente jours, sans identifiant. Boris a tranché
+autrement, et la raison est bonne :** la maquette de Codex
+(`communication-guides-m0-cible`, `bdb2808`) a fait du dialogue **un fil continu** — « demander
+successivement une lecture Lumière et une lecture Ombre d'une même question sans perdre le
+contexte ». Un fil sans identifiant ne survit pas à une déconnexion : la fonctionnalité
+n'existerait pas. La spec de confidentialité de Codex
+(`personnalisation-memoires-cible`, `a775691`) pose par ailleurs qu'« une nouvelle validation
+ne serait nécessaire qu'en cas d'extension substantielle de finalité, et non lors d'un simple
+changement de guide dans le même fil ».
+
+**Les deux décisions, telles qu'elles ont été prises :**
+
+1. **Le fil persiste par défaut** — c'est la conversation du joueur, visible de lui seul,
+   effaçable par lui (`DELETE /guide/fil`). Pas d'opt-in : sans conservation, la conversation
+   continue conçue par Codex ne se produit pas.
+2. **Le guide reçoit tout le fil, les deux voix confondues** — le Docteur peut rebondir sur ce
+   qu'a dit le Professeur. Les tours de l'autre voix lui sont donnés **nommés entre crochets** :
+   ce sont les mots d'un autre, il ne doit pas les reprendre à son compte.
+
+**Ce qui NE change pas, et qu'il faut continuer de dire :** `GuideAppel` reste **anonyme**, sans
+`user_id`. Le nouveau `GuideMessage` ne porte **aucune colonne de jetons**. Le coût reste sans
+identité, le contenu devient identifié — c'est la séparation que demande la spec de Codex
+(« le journal des usages ne duplique pas le contenu intime »), et elle a un effet pratique :
+`PlafondLlm` continue de sommer ses deux sources d'origine, sans double compte.
+
+**Conséquence éditoriale, appliquée :** la phrase « Tes échanges ne sont pas rattachés à ton
+compte » serait devenue fausse. Les deux surfaces (page `/guide` et panneau de la pastille)
+disent désormais **« Conversation privée »**, le mot de la maquette.
+
+**Ce que le §5 (RGPD) doit intégrer** : le fil est une donnée personnelle conservée sans durée
+d'expiration décidée. Il est effaçable par le joueur à tout moment, et part avec son compte
+(`dependent: :delete_all`, posé le 18 août après qu'une clé étrangère a bloqué une suppression
+réelle). **Une politique de rétention reste à écrire** — c'est la question ouverte que cet
+arbitrage déplace plutôt qu'il ne la ferme.
+
+*Livré dans pointzero-app par `9fcc5a9` (préprod puis production), banc
+`scripts/verifier_fil_guides.rb`, 27 assertions.*
