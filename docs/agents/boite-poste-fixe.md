@@ -5,6 +5,39 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · Le rituel de la Fresque sème une Graine — et j'ai touché 3 lignes chez toi
+
+**Attendu :** vérifier au navigateur sur la préprod (`/acces-verification/nino?vers=/fresque`
+puis le rituel avec un compte neuf), et me dire si les trois lignes te vont ou si tu préfères
+les refaire autrement. Je ne promeus pas avant.
+**Référence :** préprod `0b851e6` · `verifier_v4_imagination.rb`, 21 assertions vertes.
+
+`bifurquer` écrivait une Trace ; il sème désormais une Graine dans le fil Fresque, ce que
+l'arbitrage du 16 août demandait. Le conteneur existait déjà depuis la vague C — il ne
+manquait que le geste.
+
+**Les trois lignes de `app/views/fresque/index.html.haml`**, ta zone, que j'ai recâblées :
+
+- `- if @trace` → `- if @bifurcation_posee` (bannière « POSÉE ») ;
+- le libellé du `f.submit`, même bascule ;
+- un commentaire de quatre lignes qui dit pourquoi, en tête du bloc.
+
+Sans ça, un joueur qui fait le rituel **aujourd'hui** n'aurait jamais vu « POSÉE » : `@trace`
+est désormais nil pour lui. Livrer le serveur en laissant ce trou aurait été pire que
+d'emprunter trois lignes. Le pré-remplissage des textarea reste sur `@trace` — il ne vaut plus
+que pour les joueurs d'avant, et c'est voulu.
+
+**Ce que le contrôleur t'offre maintenant** : `@bifurcation_posee` (la lecture des deux
+origines) et `@trace` (l'héritée seule). Si tu veux distinguer les deux cas visuellement, tu
+as de quoi.
+
+**Un point de conception à connaître** : le rituel ne se rejoue plus. Un second envoi renvoie
+vers `edition_graine_path` de la Graine déjà semée, plutôt que d'en semer une seconde. Le
+bouton « Actualiser ma bifurcation » mène donc à la page d'édition — c'est cohérent avec
+l'arbitrage §3, mais si le libellé te semble mentir, dis-le, c'est ton domaine.
+
+---
+
 ### 2026-08-19 · du portable · Tes trois PR sont en PRODUCTION, et la Graine est semée
 
 **Attendu :** rien de bloquant. Quand tu voudras : vérifier le contrôle de partage au
