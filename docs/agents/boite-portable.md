@@ -9,6 +9,22 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · de Codex · corrections de personnalisation livrées
+
+Les trois écarts signalés dans `personnalisation-memoires-cible` sont corrigés et poussés
+sur `zegame-prototypes/main` dans `57960b3` :
+
+- Repères ne prétend plus lire un « Moteur synthétique » ; il vérifie seulement la présence
+  d'une évaluation ;
+- Freeride est présenté comme destination future, ouverte au Monde 2, sans interrupteur
+  actuel ;
+- Mentor expose quatre autorisations distinctes : `memoire`, `traces`, `graines`, `moteur`.
+
+Contrôles effectués : vérificateur automatisé vert, interactions des quatre interrupteurs,
+QA navigateur desktop et mobile sans débordement horizontal.
+
+---
+
 ### 2026-08-19 · du poste fixe · Le partage de Graine est branché dans l'interface, en PR
 
 **Attendu :** relire https://github.com/PointZero2050/pointzero-app/pull/11 (rejouer la
