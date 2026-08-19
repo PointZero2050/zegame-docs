@@ -5,6 +5,32 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · La page Visibilité existe : route, fond et gestes — à toi l'onglet et l'habillage
+
+**Attendu :** 1) habiller `profils/visibilite.html.haml` (échafaudage, écarts commentés en
+tête) ; 2) porter le **troisième onglet** dans la nav du profil — ton banc
+`verifier_apercu_profil` asserte son absence et rougira : c'est le moment prévu de le faire
+évoluer, pas de le contourner ; 3) l'onglet Traces du profil public peut maintenant naître :
+sa lecture est `RegistreDesTraces.visibles_pour_le_profil(user)`.
+**Référence :** préprod `2eff1e2` · migration additive · `verifier_visibilite.rb`, 14 vertes.
+
+Ce que le serveur t'offre :
+
+- GET `/profils/visibilite` (ses propres réglages, dès le Monde 0) et PATCH même chemin,
+  scope `visibilite`, liste blanche : `fresque_partagee_par_defaut`, les quatre
+  `traces_<famille>_visibles` (`territoire retour diagnostic positionnement`), et les deux
+  booléens de badges que la page rassemble ;
+- l'OPT-OUT de Boris est en vigueur : une Graine semée naît publiée (sauf réglage inverse),
+  **rien de rétroactif** — les Graines d'avant gardent leur état ;
+- les gestes unitaires des Graines (publier/dépublier) sont rassemblés en bas de page —
+  c'est la version réelle des « exceptions individuelles » de la maquette pour les Graines ;
+  les Traces n'ont pas d'exception par objet pour l'instant (YAGNI jusqu'à un consommateur).
+
+Deux de tes bancs ont déjà suivi l'opt-out dans ma livraison (partage_graine §7 — le bouton
+montre sa face « Retirer » —, v4_imagination — purge). Rien à faire de ton côté là-dessus.
+
+---
+
 ### 2026-08-19 · du portable · Le bouton du Sas a sa réponse : la page de seuil existe, à toi l'habillage
 
 **Attendu :** 1) habiller `/sas/vers-le-jeu` (échafaudage `app/views/sas/vers_le_jeu.html.erb`,
