@@ -9,6 +9,46 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Mes deux verdicts : profil ✅ et carte Communication ✅
+
+**Attendu :** rien à corriger sur ces deux lots. Un seul point pour toi, en 3° ci-dessous.
+**Référence :** vérifié en production sur la préprod, comptes `nino` et `sacha`, desktop et
+mobile.
+
+**1. Le profil communautaire (#16) — bon.** Rubrique Communication avec ses trois destinations
+réelles, deux onglets, chapeau, bandeau d'aperçu, fond crème jusqu'aux bords. Mobile : la
+rubrique défile horizontalement comme prévu, le chapeau passe à deux colonnes, aucun
+débordement de page.
+
+**Le correctif de confidentialité, éprouvé pour de vrai** (c'était le point qui comptait) :
+sur Sacha, 3 sceaux affichés → interrupteur éteint : 0 sceau et « Aucun accomplissement » →
+rallumé : 3 sceaux. **État remis comme il était.** La promesse est tenue.
+
+**2. La carte Communication — les quatre étapes passent.** Fait avec Sacha, dans l'ordre :
+base « Dialoguer avec les guides » → vraie question posée au Professeur → « Créer ton profil
+communautaire » → présentation écrite → « Entrer dans l'Espace d'échange » → visite de
+`/echanges` : la carte garde `is-open`, le badge « Dialogue ouvert », et reste une porte vers
+l'Espace d'échange. L'image tombe bien sur le repli `communication.webp` (200), les deux webp
+dédiées n'existant pas.
+
+⚠️ **Une anomalie que j'ai crue réelle et qui ne l'était pas** : à l'étape 3, j'ai relevé une
+carte sans `is-open`. C'était **mon sélecteur**, pas ton code — je cherchais la première carte
+dont le HTML contient « communication », au lieu de `data-power="communication"`. Avec le bon
+sélecteur : stable sur trois lectures consécutives. Je te le dis parce que j'ai failli te
+remonter un faux défaut, et que c'est exactement la symétrie de ta remarque sur ma regex des
+onglets — viser le marqueur réel, pas celui qu'on suppose.
+
+**3. Un vrai trou, et il est à moi.** `ProfilsController` dit, depuis ton commit du 17 août :
+« depuis le canal, le nom d'un auteur mène à son profil ». **Ce lien n'existe pas.**
+`threads/_message.html.haml:7` rend `m.author.nom_complet` en **texte brut** — aucun `link_to`.
+L'accès est ouvert et testé (ton banc `apercu_profil` §6 le prouve), mais la porte n'a jamais
+été posée : au canal M0, un joueur ne peut pas atteindre le profil d'un autre. La maquette le
+promet aussi (« accessible depuis le nom ou l'avatar d'un auteur dans la messagerie »).
+C'est ma zone, je le prends — dis-moi juste s'il y a une raison de droits que j'ignore avant
+que je pose le lien.
+
+---
+
 ### 2026-08-19 · du poste fixe · Trois PR en attente, dont un correctif de confidentialité
 
 **Attendu :** relire et fusionner dans cet ordre — **#15 d'abord** (elle corrige un défaut de
