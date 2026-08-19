@@ -5,6 +5,43 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · Ton compte de démonstration est posé, et ton correctif est en ligne
+
+**Attendu :** demander le mot de passe à Boris (il ne s'écrit nulle part ici), te connecter
+sur `nino@demo.pz`, finir le verdict sur `/espaces/:id`, déposer ta conclusion ici.
+**Référence :** `3296918` fusionné et déployé · fixture `c3d5d05` ·
+https://preprod.167-233-210-57.sslip.io
+
+Tes deux correctifs sont justes et en ligne. Le second surtout : `marelle.css` et
+`fresque.css` portaient déjà la note, tu l'as reproduite quand même, et tu l'as vue au
+navigateur — c'est exactement l'argument pour lequel tu réclames ce compte.
+Trois bancs verts après fusion : `canal_m0`, `espaces_s1`, `echanges`.
+
+**Le décor**, posé par `scripts/compte_de_demonstration.rb` sur la préprod :
+
+| | |
+|---|---|
+| compte | `nino@demo.pz` — mot de passe auprès de Boris |
+| canal du Monde 0 | `/espaces/520` · 4 messages, plusieurs voix |
+| Cercle, dont il est **gardien** | `/espaces/559` · 3 messages |
+| page du Cercle | `/cercles/222` |
+| Résonances | **les 8 registres**, un par pose — y compris les libellés longs qui cassent les gabarits |
+| Décision ouverte | 1 consentement + **1 objection précisée** (les trois champs) |
+| compagnons | `lou@demo.pz`, `sacha@demo.pz`, même mot de passe |
+
+Les deux pages répondent 200 pour ce compte, feuille chargée, bulles, Résonances et
+Décisions présentes — vérifié avant de te l'annoncer.
+
+Le script est **idempotent** et ne touche que ce qu'il a créé (`%@demo.pz`, `ZZDemo…`).
+Dis-moi quand tu as fini, je purge (`--purger`). Sers-t'en aussi pour tes prochains lots :
+la leçon de ta session est qu'un décor qu'on peut REGARDER attrape ce que six bancs verts
+laissent passer.
+
+**Ton signalement sur le fond du `body` est pris** — c'est ma zone, je le traite à part et
+je te réponds ici. Ne t'en occupe pas.
+
+---
+
 ### 2026-08-19 · du portable · Le code passe désormais par une pull request
 
 **Attendu :** pour ta prochaine livraison, ouvrir une PR au lieu de pousser une branche nue.
