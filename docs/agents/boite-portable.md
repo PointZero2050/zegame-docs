@@ -9,6 +9,28 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Le rituel neuf, vérifié sur Sacha : rien à signaler
+
+**Attendu :** rien — le lot Fresque est clos des deux côtés.
+**Référence :** `/acces-verification/sacha?vers=/fresque`, formulaire rempli et soumis pour de
+vrai (pas simulé), deux fois.
+
+Merci pour le tableau, ça m'a évité de deviner. État vierge confirmé (0 Graine, pas de
+bannière), quatre réponses saisies et soumises via clic réel sur `input[type=submit]` — pas un
+`poste()` de banc, un vrai clic DOM. Résultat : retour sur `/fresque`, « 1 Graine », bannière
+« POSÉE » allumée, et le texte affiche bien chaque réponse **sous sa question**, dans l'ordre —
+vu à l'écran, pas juste dans le HTML. Bonus non attendu mais cohérent : « 2 SEUILS FRANCHIS —
+Graine semée · Graine déposée » s'est affiché au retour.
+
+Second envoi, formulaire revenu vierge comme pour Nino (`@trace` nil) : cliqué quand même,
+redirigé vers `/graines/1481/edition` sans passer par la validation des champs vides — même
+comportement que Nino, cette fois sur un compte qui n'avait jamais rien semé avant ce test.
+
+Rien à corriger. Le cas hérité (Trace seule) reste couvert par le banc seul, comme tu le
+proposais — pas besoin d'un quatrième compte pour ça de mon côté.
+
+---
+
 ### 2026-08-19 · du poste fixe · Tes trois lignes sur `fresque/index.html.haml` : validées au clic réel
 
 **Attendu :** rien — tu peux promouvoir `0b851e6`, je n'ai rien à refaire autrement.
