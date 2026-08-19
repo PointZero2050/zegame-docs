@@ -9,6 +9,50 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Trois PR EMPILÉES sur la barre de rubrique — l'ordre compte
+
+Boris a validé la barre sur la page d'exemple, à une condition : supprimer le blanc qui
+la séparait du menu principal. C'est fait, et la généralisation a suivi dans la foulée.
+
+**Fusionner dans cet ordre — chacune contient la précédente :**
+
+1. **[#24](https://github.com/PointZero2050/pointzero-app/pull/24)** — le blanc de 24 px.
+   La règle 2 de `coque.css` annulait déjà le rembourrage du layout ; il en restait un
+   second, celui du `.container.py-4` de la vue. Les deux se neutralisent maintenant dans
+   la coque, pour que les pages suivantes n'aient rien à savoir.
+2. **[#25](https://github.com/PointZero2050/pointzero-app/pull/25)** — `/fresque`, `/guide`
+   et `/espaces/:id` reçoivent leur barre. Rien d'inventé : les destinations et leur ordre
+   sont ceux que déclarent déjà `mes_traces/index` et `profils/index`.
+3. **[#26](https://github.com/PointZero2050/pointzero-app/pull/26)** — les huit copies de
+   l'apparence, ramenées à une. −145 lignes de CSS, aucune couleur déplacée.
+
+**Bancs à rejouer** (espacer de 6 à 8 s, comme d'habitude) : `verifier_canal_m0`,
+`verifier_fresque`, `verifier_guides_page`, `verifier_coque`. Et par précaution, parce que
+#26 touche sept feuilles : `verifier_accomplissements`, `verifier_apercu_profil`,
+`verifier_premieres_cles`, `verifier_recherche_annuaire`, `verifier_visibilite` — ils
+assertent tous la présence de la barre dans le HTML, aucun ne devrait bouger.
+
+**Un défaut à connaître, il est de moi.** `cles.css` ne déclarait pas `justify-content` :
+elle comptait sur le défaut de flex. Quand #23 a mis l'apparence commune dans `coque.css`,
+la barre d'Intuition s'est centrée toute seule — premier onglet passé de 24 px à 321 px du
+bord. C'est **actuellement en préprod**. #26 le répare. Si tu ne devais en fusionner qu'une
+en urgence, c'est celle-là qui corrige un défaut live.
+
+**Un changement visible et assumé dans #26** : les points de bascule responsives étaient à
+640, 700 et 800 px selon les pages. Un seul demeure, 800 px. Entre 640 et 800, sept barres
+passent de centrées à alignées à gauche. Mesuré à 720 px sur `/echanges` (4 entrées, la plus
+chargée) : aucun défilement nécessaire.
+
+Je fais la vérification navigateur des douze pages dès que c'est déployé — dis-moi.
+
+**Deux choses qui ne sont pas pour toi mais que je te signale**, parce qu'elles toucheront
+du code un jour : Communication souligne son entrée courante en `#a32678` sur les Échanges
+et en `#a20b86` sur l'Annuaire et le profil ; et la barre de Mes Traces dit « J'imagine »
+là où `config/monde_0.yml` déclare « Je crée ». Les deux sont chez Boris.
+
+---
+
+
 ### 2026-08-19 · du poste fixe · Visibilité ✅ et coque M1 ✅ — mais une PR à fusionner avant
 
 **Attendu :** fusionner **#20 en priorité** — elle corrige un défaut de MA livraison #19, déjà
