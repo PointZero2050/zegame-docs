@@ -9,6 +9,65 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Trois PR en attente, dont un correctif de confidentialité
+
+**Attendu :** relire et fusionner dans cet ordre — **#15 d'abord** (elle corrige un défaut de
+ma livraison d'hier, déjà en ligne), puis #16, puis #13.
+**Référence :** PR #13 (`4d85d93`), #15 (`866fd62`), #16 (`42ef010`).
+
+- **#15 — la roue chevauchait sur mobile.** Défaut de MON `e49e856`, trouvé en faisant la
+  vérification que j'avais annoncée. Sept tuiles de 108px sur un rayon de 38 % se chevauchaient
+  de 33px à 480px. Le chevauchement est **diagonal** : les centres sont bien à 118px l'un de
+  l'autre le long du cercle, mais les boîtes se croisent — exactement ce qu'un calcul
+  d'écartement angulaire ne montre pas. Corrigé à 96px / rayon 42 %, après un balayage de six
+  combinaisons mesurées dans la page.
+- **#16 — le profil communautaire.** Boris a signalé qu'il ne correspond pas à sa maquette et
+  qu'il manque le sous-menu. Il en manquait **deux** : la rubrique Communication et les vues du
+  profil. La page datait de juillet, écrite depuis la spec S3.2 avant que la maquette existe.
+- **#13 — un commentaire périmé** sur `alchimisation/show.html.haml` (elle réclamait encore la
+  route que tu as posée le 17).
+
+**⚠️ Le point qui compte le plus dans #16, et qui n'est pas visuel** : `profils/show.html.haml`
+affichait les badges et les seuils **sans jamais consulter** `badges_parcours_visibles` /
+`badges_seuils_visibles`. Un joueur pouvait éteindre « Visible sur mon profil communautaire » sur
+`/mes-accomplissements` — **rien ne changeait**. C'était noté « non-régression assumée » le
+16 août et ça tenait depuis. Deux conditions dans la vue, plus une section de banc qui l'éprouve
+pour de vrai (éteint → le badge disparaît, rallumé → il revient).
+
+---
+
+### 2026-08-19 · du poste fixe · La page « Visibilité » du profil : un chantier pour toi
+
+**Attendu :** dire si tu la prends, et quand — je ne fais rien de plus d'ici là.
+**Référence :** maquette `profil-communautaire-m0-cible`, onglet `?view=visibility`.
+
+En portant le profil (PR #16), j'ai laissé le sous-menu à **deux onglets** au lieu de trois :
+« Visibilité » n'a ni page, ni route, ni modèle. Ce n'est pas un habillage manquant, c'est un
+chantier de fond, et il est de ta zone :
+
+- les **exceptions par famille de `RegistreDesTraces`** (productions, retours, diagnostics,
+  positionnements) que demande la révision du 18 août : **aucune colonne n'existe** ;
+- la maquette pose « la Fresque est partagée par défaut en **opt-out** », alors que le réel est
+  **opt-in** (`GrainePubliee` doit être créée pour publier). Décision produit inversée — ça
+  remonte à Boris, pas à nous deux ;
+- ce qui existe déjà et qu'une telle page rassemblerait : `GrainePubliee` (par Graine),
+  `PuissanceAssessment#publie` (par Puissance), les deux booléens de badges, `ouvert_aux_echanges`,
+  `disponibilite`. De quoi faire une page honnête **sans rien inventer**, si tu poses la route.
+
+Le banc de #16 asserte explicitement l'ABSENCE de l'onglet : le jour où la page naîtra, il
+rougira. C'est voulu — il faudra alors venir le porter, pas le contourner.
+
+**Deux autres demandes en attente de ta part, plus petites :**
+1. `marque_la_visite "m0.transcendance.accomplissements", only: :index` — une ligne, pour que je
+   porte la popup de première visite des Accomplissements (`@premiere_visite` existe déjà, aucune
+   vue ne s'en sert encore) ;
+2. l'apparence de `.territory-nav` est **dupliquée dans cinq feuilles**, alors que `coque.css`
+   explique lui-même que le partage évite « qu'une page l'oublie ». La consolider toucherait le
+   rendu de cinq pages — je ne l'ai pas fait au passage d'un portage. À toi de dire si ça vaut
+   un lot à part.
+
+---
+
 ### 2026-08-19 · du poste fixe · La roue enrichie de Codex est portée — géométrie à regarder
 
 **Attendu :** relire https://github.com/PointZero2050/pointzero-app/pull/14, fusionner,
