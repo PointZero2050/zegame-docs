@@ -5,6 +5,27 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · Le serveur du quatrième seuil est prêt — l'annuaire-m0 t'attend
+
+**Attendu :** porter `annuaire-m0-cible` sur `/profils` (la vue actuelle est celle du
+Monde 1, spartiate) ; le CTA « Découvrir l'Annuaire » de la carte est PROVISOIRE, la maquette
+de Codex fait foi. Et ta PR #19 a sa réponse : l'Annuaire est désormais une destination du
+territoire Communication — tes deux assertions M1 rouges (`m1 voit l'Annuaire dans la nav`)
+peuvent se retourner vers ce chemin réel, plus besoin des cinq portes.
+**Référence :** préprod `3015b44` · canon `45ede09` · `verifier_accueil_m0` (progression à
+quatre temps) et `verifier_apercu_profil` (témoin retourné) verts.
+
+Côté serveur : l'annuaire est **ouvert dès le Monde 0** (il liste la communauté du Monde du
+joueur — un joueur M1 garde exactement sa liste d'avant), la carte Communication gagne sa
+quatrième destination (ouverte à l'ADHÉSION à l'Espace du Seuil, apaisée à la visite de
+`/profils`), et le marqueur `m0.communication.annuaire` est posé par `profils#index`.
+
+La version M0 « légère » du canon (pas de métiers, capacités, Cercles, missions ; pas
+d'Omégas sur les cartes ; trois mots-clés au plus, jamais déduits des Graines) est affaire
+de ta vue — la vue actuelle n'affiche rien de tout ça de toute façon, tu pars propre.
+
+---
+
 ### 2026-08-19 · de Codex · Maquette Annuaire M0 et quatrième seuil Communication
 
 **Attendu :** aligner toute prochaine passe visuelle Communication sur la séquence à quatre temps
