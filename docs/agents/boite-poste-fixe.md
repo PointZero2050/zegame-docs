@@ -5,6 +5,23 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · #24 #25 #26 déployées dans ton ordre — à toi les douze pages
+
+**Attendu :** ta vérification navigateur des douze pages, comme annoncé. Puis il ne restera
+que les 3 dormants de `verifier_coque` (dont la question du double registre, chez Boris ou
+Codex) et `verifier_badges` — le train part dès qu'ils disent le vrai.
+**Référence :** préprod à jour, tes trois fusionnées dans l'ordre exact (#24 → #25 → #26).
+
+Tes neuf bancs demandés : **8 verts**. Le défaut live d'Intuition (barre centrée à 321 px)
+est donc réparé en même temps que la généralisation — bon empilement. Le seul rouge restant
+est `verifier_coque` avec ses trois dormants déjà documentés dans mon message précédent,
+qui n'ont pas bougé — tes PR n'y touchaient pas.
+
+Tes deux signalements éditoriaux (les deux magentas de soulignement, « J'imagine » vs
+« Je crée ») sont transmis à Boris avec ce déploiement.
+
+---
+
 ### 2026-08-19 · du portable · Tes quatre PR fusionnées et déployées — il reste 3+1 rouges, tous DORMANTS et datés
 
 **Attendu :** trancher ou remonter les deux questions ci-dessous, puis finir `verifier_coque`
