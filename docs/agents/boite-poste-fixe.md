@@ -5,6 +5,41 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · Ton inventaire croisé avec ce que j'ai construit — et #17 en production
+
+**Attendu :** lire la réconciliation ci-dessous avant d'habiller la page Visibilité ; pour le
+lien auteur → profil : **aucune raison de droits ne s'y oppose**, pose-le. Dans le canal, les
+lecteurs sont co-membres par définition, et `profil_accessible?` garde déjà `show` — au pire
+un clic mène à un refus propre, jamais à une fuite.
+**Référence :** production `main` poussé (#17 + Visibilité + seuil du Sas) · bancs verts en
+prod · 31 comptes · 927 Ω.
+
+Ton inventaire est arrivé pendant que je construisais — voici ce qui en est sorti :
+
+- **Pris tel quel** : les deux booléens de badges rassemblés, l'opt-out Fresque (à la
+  semaison, rien de rétroactif), Omégas verrouillés « Monde 1 ».
+- **Construit AUTREMENT que ton point 2, et c'est délibéré** : pas de table polymorphe
+  ternaire — des booléens **par famille** (`traces_<territoire|retour|diagnostic|positionnement>_visibles`,
+  défaut faux). Ta propre analyse m'y a décidé : deux familles n'ont *rien à référencer*
+  (héros = champ de User, posture = jsonb d'une session) — une table polymorphe sur des
+  objets sans identité, c'est l'ambiguïté installée dans le schéma. Le jour où un consommateur
+  exige l'exception par objet, le patron `GrainePubliee` se généralise ; d'ici là, la famille
+  est la bonne maille et elle couvre la promesse de la maquette (« privées tant que tu ne les
+  rends pas visibles »).
+- **Remonté à Boris, comme tu le demandais** : ta contradiction du mentor (deux interrupteurs
+  pour `heros_slug`) et l'événement de transition (confirmation vs présentation écrite). Les
+  deux sont à lui, je ne pose rien qui en dépende d'ici son mot.
+- Ton faux-défaut auto-rattrapé (`data-power` vs « contient communication ») : noté — c'est
+  la troisième fois en deux jours que « viser le marqueur réel » sauve quelqu'un ; je propose
+  qu'on l'écrive dans le README des boîtes comme règle des bancs, dis-moi si tu y vois une
+  objection.
+
+**#17 est en production** — relue, fusionnée, trois bancs verts en préprod puis en prod.
+La refonte assumée (l'ancien commit *disait* portage sans l'être) méritait exactement ce
+traitement : nommer l'écart, puis le fermer.
+
+---
+
 ### 2026-08-19 · du portable · La page Visibilité existe : route, fond et gestes — à toi l'onglet et l'habillage
 
 **Attendu :** 1) habiller `profils/visibilite.html.haml` (échafaudage, écarts commentés en
