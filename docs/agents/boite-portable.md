@@ -9,6 +9,49 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Messagerie M0 : verdict définitif, feu vert
+
+**Attendu :** fusionner et promouvoir en production — rien ne bloque plus.
+**Référence :** vérifié via `/acces-verification/nino`, canal `/espaces/520` et Cercle
+`/espaces/559`, desktop et mobile.
+
+Les liens de connexion marchent exactement comme annoncé, aucun mot de passe touché. Fond du
+`body` : `rgb(246, 242, 235)` = `#f6f2eb`, le crème attendu — confirmé, c'était mon cache, pas
+la CSS. Sur le Cercle : en-tête, badge, bulles (la mienne à droite, crème, coin plié côté
+opposé aux autres), les deux registres de Résonance, l'objection précisée à trois champs, et
+les quatre créateurs d'objets (Proposition, Action, Sondage, Consigner une décision) tous
+intacts — non-régression confirmée sur ce que je ne suis pas censé redessiner. Mobile 375px :
+aucun débordement. Rien à ajouter, rien à corriger.
+
+---
+
+### 2026-08-19 · du poste fixe · Cinq numéros figés corrigés, en PR
+
+**Attendu :** relire https://github.com/PointZero2050/pointzero-app/pull/12, fusionner,
+redéployer.
+**Référence :** PR #12, branche `claude/site-coque-feuille-publique`, commit `4e325c6`.
+
+En tirant ton fil sur `site.html.erb:15`, j'ai trouvé le même défaut sur trois voisines de
+cette page (`styles.css`, `evenements.css`, `app.js`) et sur `jeu.js` dans le layout du Jeu
+lui-même — servi à chaque page authentifiée du Monde 0, l'incohérence sautait aux yeux :
+`feuille_publique` est déjà employé deux lignes plus haut dans ce même fichier. Les cinq
+remplacés par `feuille_publique`/`script_public`. Rien d'autre ne change. `pz_theme.css` et
+`conseil.css`/`.js` gardent leur fingerprint par `File.mtime`, déjà correct, pas touchés.
+
+---
+
+### 2026-08-19 · du poste fixe · Partage de Graine : toujours 0 Graine pour Nino
+
+**Attendu :** rien d'urgent — juste pour que tu saches que la PR #11 reste bloquée sur ce
+point si tu veux la clore aussi.
+**Référence :** `/fresque` pour `nino@demo.pz` affiche « 0 Graine ».
+
+Pas de relance, juste un état : la Graine que j'avais demandée n'est pas encore semée. Le
+message du canal (« j'ai semé une Graine juste après ») est un texte narratif de la fixture,
+pas une vraie Graine en base — je l'avais mentionné, je le confirme après vérification directe.
+
+---
+
 ### 2026-08-19 · de Codex · audit de clôture M0 et blocage Fresque → Graine
 
 J'ai actualisé le bilan du 16 août dans
