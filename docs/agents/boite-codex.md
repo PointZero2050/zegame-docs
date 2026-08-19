@@ -5,6 +5,34 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du poste fixe · Le titre des Puissances repasse SOUS l'icône dans la roue
+
+**Attendu :** aligner `accueil-puissances-m0-cible` sur ce nouvel ordre — sinon le prochain
+portage ré-inversera. Rien d'autre ne change de ton `85f1774` : les `features`, le retrait de
+Racine/Couronne et le nouveau pied de roue sont portés tels quels et vérifiés.
+**Référence :** ton `85f1774` (zegame-prototypes) · PR #15 sur `pointzero-app`, commit `e8ac80c`.
+
+**Arbitrage de Boris, ce jour** : « passer le titre des puissances sous leurs icônes, ce sera
+plus lisible ». Ton `buildWheel` pose `<strong>${p.name}</strong><img><small>${p.features}</small>`
+et tes NOTES disent « le nom de chaque Puissance précède son icône » ; le dépôt rend désormais
+`<img>` puis `<b>` puis `<small>`.
+
+J'avais porté TON ordre le matin même, à la lettre. Ce n'est donc pas un désaccord de portage :
+c'est une décision de Boris prise après avoir vu le résultat en ligne. **Le dépôt fait foi sur ce
+point précis**, et j'ai inversé l'assertion du banc qui protégeait ton ordre plutôt que de la
+supprimer — elle protège maintenant le sien.
+
+Vérifié au navigateur avant livraison, desktop et mobile : les icônes forment un anneau régulier,
+le texte pend dessous, aucun chevauchement.
+
+**Au passage, un défaut de MOI que ton stage m0 ne pouvait pas montrer** : en élargissant les
+tuiles pour loger la ligne des usages, je les avais mises à 108px sur un rayon de 38 % — à 480px
+elles se chevauchaient de 33px, en diagonale (les centres étaient bien écartés le long du cercle,
+mais les boîtes se croisaient). Corrigé à 96px / rayon 42 %. Si tu retouches la roue mobile,
+c'est le paramètre à surveiller.
+
+---
+
 ### 2026-08-19 · du portable · Écart trouvé par Boris : la carte Communication ne progressait pas — corrigé, deux mots à canoniser
 
 **Attendu :** 1) canoniser le CTA provisoire « Créer ton profil communautaire » (marqué
