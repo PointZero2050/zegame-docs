@@ -9,6 +9,61 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Inventaire complet de la vue Visibilité, avant que tu la construises
+
+**Attendu :** lire avant de poser le modèle — j'ai relevé une contradiction dans la maquette
+elle-même (point 3) et un piège de structure (point 2) qui changent ce qu'il faut construire.
+Boris a demandé cet inventaire ; je te le passe puisque tu prends la page.
+**Référence :** `profil-communautaire-m0-cible/visibility-v2.js`, lu en entier.
+
+**1. Les réglages globaux — quatre booléens manquent.** La maquette en a six ; deux existent
+déjà (`badges_parcours_visibles`, `badges_seuils_visibles`).
+
+| Réglage | Réel |
+|---|---|
+| Mon mentor | ❌ rien |
+| Mes parcours | ❌ rien |
+| Mes accomplissements (chapeau des deux cases) | ❌ le chapeau ; ✅ les deux cases |
+| Ma Fresque (Graines) | ⚠️ `GrainePubliee` par Graine, pas de défaut global — c'est l'opt-out que Boris vient d'arbitrer |
+| Mes Traces | ❌ rien |
+| Mes Omégas | ✅ rien à faire : ligne verrouillée « Monde 1 », `omega_social_visible?` existe |
+
+**2. LE POINT DUR — les exceptions individuelles ne portent pas sur un objet, mais sur cinq.**
+La grille a l'air d'une liste uniforme. En réalité :
+
+| Onglet | Source réelle |
+|---|---|
+| Graines | `Messaging::Message` via `GrainePubliee` — **binaire**, pas d'`inherit` |
+| Productions | `Trace` — table réelle, **aucune** colonne de visibilité |
+| Retours | `ChallengesUser#retour` — une **colonne** sur une autre table |
+| Diagnostics | `MoteurAssessment` + `PuissanceAssessment` — deux tables ; `publie` existe sur la seconde |
+| Positionnements | `ConseilSession#posture_choisie` (jsonb) + `User#heros_slug` — **pas des objets à part** |
+
+Donc : ce n'est pas une colonne, c'est une **table polymorphe** de visibilité (le patron de
+`GrainePubliee`, généralisé), avec un état **ternaire** (`inherit`/`visible`/`private`) là où le
+réel n'a que du binaire. Et deux familles n'ont **rien à référencer** : le héros choisi est un
+champ de `User`, la posture un champ jsonb d'une session. Il faudra soit leur donner une
+identité, soit les traiter à part.
+
+**3. Une contradiction DANS la maquette, à faire trancher par Boris.** Le mentor y apparaît
+**deux fois** : comme réglage global du groupe 01 (« Mon mentor »), et comme exception du groupe
+02 (« Positionnements → Résonance choisie — Léonard de Vinci »). Même donnée
+(`User#heros_slug`), deux interrupteurs qui peuvent se contredire. Il faut choisir lequel fait
+foi avant de poser quoi que ce soit — sinon le modèle héritera de l'ambiguïté.
+
+**4. L'événement de transition diverge de ce qu'on a livré.** Les NOTES de la maquette sont
+explicites : « La confirmation des réglages constitue l'événement de transition. Ouvrir la page
+ou simplement basculer un réglage ne suffit pas. » Or la carte Communication avance aujourd'hui
+sur `profil_communautaire_rempli` (présentation écrite) — ce que j'ai vérifié et validé ce matin.
+Ce n'est pas un défaut de ta livraison, c'est un écart maquette/réel qu'il faut nommer : soit la
+carte avancera sur un nouveau marqueur de confirmation, soit on assume l'écart.
+
+**Ce qui reste à moi**, une fois le modèle posé : la page et ses trois groupes, les
+interrupteurs, la grille d'exceptions et ses cinq onglets, et les quatre onglets du profil
+public avec leurs compteurs (`ownVisibleCounts`). Dis-moi quand la route existe.
+
+---
+
 ### 2026-08-19 · du poste fixe · Mes deux verdicts : profil ✅ et carte Communication ✅
 
 **Attendu :** rien à corriger sur ces deux lots. Un seul point pour toi, en 3° ci-dessous.
