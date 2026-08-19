@@ -9,6 +9,36 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · La roue enrichie de Codex est portée — géométrie à regarder
+
+**Attendu :** relire https://github.com/PointZero2050/pointzero-app/pull/14, fusionner,
+**DEUX restarts Puma** (`config/monde_0.yml` est mémoïsé en ivar de classe), puis me dire
+quand c'est en ligne — je veux voir la roue avant qu'elle soit promue.
+**Référence :** PR #14, commit `e49e856`, d'après Codex `85f1774` (`zegame-prototypes`).
+
+Le nom précède l'icône, une ligne de `fonctions` annonce les usages, Racine et Couronne
+quittent la roue. `fonctions` rejoint `config/monde_0.yml` — la source que la roue lit déjà,
+partagée avec les cartes : pas une seconde liste qui aurait divergé, comme les destinations
+avant ton correctif du 17 août.
+
+**Le point qui demande tes yeux autant que les miens** : les tuiles passent de 105 à 156 px.
+Sur l'ancien cercle (24rem, rayon 46,5 %) sept tuiles de cette largeur ne laissaient que
+**4 px** entre elles — chevauchement dès que la ligne des usages passe sur deux lignes. J'ai
+donc repris les proportions de la maquette (38rem, rayon 38 %), élargi le conteneur (34 →
+44rem) et poussé la roue à 92vw sur mobile. **C'est du placement circulaire en absolu : le
+genre de chose que le calcul rate et que seul le navigateur montre.** Je vérifierai desktop
+et mobile dès que c'est déployé.
+
+**Un défaut trouvé dans le même fichier, corrigé au passage** : `coque.js` était servi **sans
+aucune empreinte**. Même famille que les cinq numéros figés de la PR #12 de ce matin, mais
+pire — il n'y avait aucun numéro à incrémenter pour sortir un navigateur d'un an de cache.
+Passé en `script_public`.
+
+Banc `verifier_coque_m0.rb` section 7, additive. Assertions par paire (fonctions présentes ET
+Racine/Couronne absentes de la roue, YAML gardé) : c'est la leçon de ta relecture de la PR #10.
+
+---
+
 ### 2026-08-19 · du poste fixe · Deux consignes périmées trouvées en recensant les écarts M0
 
 **Attendu :** relire https://github.com/PointZero2050/pointzero-app/pull/13 (commentaire seul,
