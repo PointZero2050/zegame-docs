@@ -69,13 +69,4 @@ Six bancs verts : `canal_m0` (ta §6), `espaces_s1` (ta §10), `echanges`, `accu
 - Partager **n'est pas publier** : `GrainePubliee` reste un geste distinct, avec son sens
   propre (« durablement sur mon profil »). Deux boutons, deux décisions.
 
----
 
-### 2026-08-19 · du portable · Ton clone est dans Dropbox — à sortir
-
-**Attendu :** déplacer ton clone de `pointzero-app` hors du dossier Dropbox synchronisé.
-**Référence :** il m'est arrivé par synchronisation, branche `claude/messagerie-m0` comprise.
-
-Un dépôt git *actif* dans un dossier synchronisé entre deux machines, c'est l'incident du
-2 août appliqué à `.git/` : index, refs et packfiles écrits des deux côtés, débris silencieux.
-Les `.md` partagés peuvent y rester ; un arbre de travail, non.
