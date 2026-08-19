@@ -9,6 +9,57 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Les deux écarts Communication demandent des DONNÉES, pas du CSS
+
+Boris compare les maquettes-cible au réel et signale « des écarts importants » sur deux
+pages de Communication. J'ai relevé les deux au navigateur, maquette et préprod côte à côte.
+Ce qui était mécanique part en [#27](https://github.com/PointZero2050/pointzero-app/pull/27).
+Le reste te concerne — c'est du modèle, pas de l'habillage.
+
+**1. Le profil communautaire — l'épinglage n'existe pas.**
+`profil-communautaire-m0-cible/?view=public` rend une grille de quatre cartes :
+« ce qui m'amène ici », puis **un accomplissement épinglé**, **une Graine épinglée** et
+**une Trace représentative**. Le réel rend une suite plate de `h2`/`p`.
+
+La grammaire de cartes, je la porte quand tu veux. Mais les trois cartes épinglées supposent
+que le joueur ait **choisi** quoi mettre en avant : `grep -riE "epingl|pinned|mis_en_avant"`
+sur `app/models`, `db/migrate` et `app/controllers` ne retourne rien. Il n'y a ni colonne, ni
+modèle, ni geste. C'est une fonctionnalité — colonne(s) sur `User` ou table de mise en avant,
+route de réglage, et une place dans la page Visibilité pour choisir. Arbitrage produit d'abord.
+
+La maquette ajoute aussi un **second niveau d'onglets** (Aperçu / Accomplissements 3 /
+Graines 2 / Traces 1). Deux compteurs sur trois sont déjà à portée de la vue
+(`BadgeDeParcours`/`SeuilFranchi` filtrés par `badges_*_visibles`, `@graines_publiees`).
+Le troisième non : `charger_profil` ne charge pas `RegistreDesTraces`, et surtout **je ne
+redevine pas les droits dans la vue** — c'est ta consigne, elle vaut ici. Si tu poses
+`@traces_visibles` dans `charger_profil` avec le même filtre que la page Visibilité, je porte
+les onglets dans la foulée.
+
+Et son `.identity-meta` affiche **le mentor** (« ✦ Mentor : Léonard de Vinci »). `heros_slug`
+existe, mais `REGLAGES_DE_VISIBILITE` n'a aucun réglage pour lui : l'afficher sur un profil
+public serait une divulgation nouvelle, pas un habillage. Question pour Boris, pas pour moi.
+
+**2. L'Espace d'échange — l'aperçu du canal contredit une décision de droits.**
+Attention, `communication-guides-m0-cible/?view=threshold` n'est **pas** la boîte de réception :
+c'est l'écran de seuil de l'étape 3 sur 4, celui qu'on voit AVANT d'entrer dans l'Espace. Son
+équivalent réel existe — le bloc `@canal_a_rejoindre` des Échanges — mais réduit à quatre
+lignes là où la maquette a un chapeau, un aperçu du canal et quatre règles de passage.
+
+Le chapeau, les quatre règles et les deux boutons : c'est de l'éditorial, je les porte.
+
+**Mais l'aperçu du canal montre deux vrais messages et « 128 Joueurs » à quelqu'un qui n'est
+pas encore membre** — alors que le serveur cache délibérément le fil aux non-membres, et que
+`verifier_canal_m0` §2 l'asserte noir sur blanc (« le fil ne lui est pas encore visible »).
+Je ne vais pas fabriquer cet aperçu dans la vue : ce serait contourner une décision, pas la
+porter. S'il doit exister, il lui faut une notion d'aperçu côté serveur — les N derniers
+messages d'un canal, explicitement lisibles avant adhésion — et l'assertion du banc à
+retourner dans la même livraison. Ton appel, après celui de Boris.
+
+Dis-moi ce que tu poses, je porte le reste le jour même.
+
+---
+
+
 ### 2026-08-19 · du poste fixe · Trois PR EMPILÉES sur la barre de rubrique — l'ordre compte
 
 Boris a validé la barre sur la page d'exemple, à une condition : supprimer le blanc qui
