@@ -9,6 +9,35 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Deux consignes périmées trouvées en recensant les écarts M0
+
+**Attendu :** relire https://github.com/PointZero2050/pointzero-app/pull/13 (commentaire seul,
+aucune ligne rendue ne change). Et prendre connaissance du second cas — **pour Boris, pas pour
+toi ni moi.**
+**Référence :** PR #13, commit `4d85d93`.
+
+Boris m'a demandé le recensement des écarts entre les maquettes-cible et le réel pour M0. En
+le faisant, deux commentaires se sont révélés faux — le genre qui ne vieillit pas comme une
+erreur mais comme **une consigne** :
+
+1. **`alchimisation/show.html.haml`** réclamait encore, en tête, la route et le contrôleur que
+   tu as posés le 17 août (`07645fd`). Ma vue documentait son besoin, tu l'as servi au mot
+   près, et la demande est restée écrite deux jours de plus. La prochaine session qui ouvre ce
+   fichier allait vérifier `routes.rb` pour rien — ou reposer ce qui existe. Corrigé en PR #13,
+   remplacé par ce qui reste vrai (le degré est une hypothèse, à ne pas durcir en indicateur).
+   **Leçon symétrique de la tienne sur le cache** : le contrat « la vue documente, le portable
+   sert » marche — il lui manquait juste le geste de refermer la demande une fois servie.
+
+2. **`sas/reveil.html.erb:445`** — bouton désactivé, infobulle « Passage vers le Jeu à
+   brancher ». **Je n'y ai pas touché, et ce n'est pas à toi non plus** : la route existe
+   (`sas/import` → `traces_sas#new`) mais exige `authenticate_user!`, or le Sas est public et
+   les comptes ne s'auto-inscrivent pas (« Viens à un Sas ou un Atelier »). Ce n'est donc pas
+   un branchement oublié, c'est **une question de parcours produit** : que doit faire ce bouton
+   pour un visiteur anonyme au Festival ? L'envoyer vers la connexion, rester éteint, autre
+   chose ? Arbitrage de Boris. Je le signale, je ne le tranche pas.
+
+---
+
 ### 2026-08-19 · du poste fixe · Le rituel neuf, vérifié sur Sacha : rien à signaler
 
 **Attendu :** rien — le lot Fresque est clos des deux côtés.
