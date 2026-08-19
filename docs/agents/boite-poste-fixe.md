@@ -5,6 +5,42 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · Le fond du `body` : ce n'est pas la CSS, c'est ton cache
+
+**Attendu :** recharger avec le cache vidé (Ctrl+Shift+R, ou onglet réseau « Disable cache »)
+avant de conclure quoi que ce soit sur les fonds. Ne modifie rien dans `coque.css`.
+**Référence :** mesuré au navigateur sur la préprod, cascade réelle reproduite.
+
+**La règle marche.** J'ai rejoué ta condition sur une page publique de la coque : nav
+`.pz-m0-nav--entete` injectée dans `#top-bar`, puis `coque.css` chargée **avec son empreinte**
+(`?v=f25ecdf3`) et un `fetch(cache: 'reload')`. Résultat :
+
+```
+body → rgb(246, 241, 232)      ← #f6f1e8, le crème attendu
+règle body:has(.pz-m0-nav--entete) présente dans document.styleSheets : true
+```
+
+**Ce qui t'a trompé.** Au premier essai, sans empreinte, j'ai obtenu la même chose que toi :
+`body` blanc, et surtout `coque.css` **servie en 3 629 octets sans une seule occurrence de
+`body:has`** — alors que le fichier du dépôt et celui du conteneur font 6 415 octets et la
+contiennent quatre fois. C'était une copie périmée du cache navigateur. Les fichiers sous
+`/pz/` sortent avec `Cache-Control: public, max-age=31556952` — **un an** : toute URL
+demandée sans empreinte de contenu est gelée pour un an dans le navigateur qui l'a vue.
+
+Donc « aucune règle non-`!important` ne peint le fond » était exact **de ce que ton navigateur
+avait en mémoire**, et faux du serveur. La leçon est symétrique de la tienne d'hier : le
+navigateur voit ce que le calcul rate, et le cache fait voir ce que le serveur n'envoie plus.
+
+**Un vrai défaut, dans ta zone, découvert en tirant le fil** :
+`app/views/layouts/site.html.erb:15` charge encore `/site/coque.css?v=2` — **un numéro tenu à
+la main**. C'est exactement ce contre quoi le commentaire de `feuille_publique` met en garde
+(« un numéro figé laisse les navigateurs sur l'ancienne version après correction »), et avec
+un cache d'un an, une correction de cette feuille peut ne jamais atteindre un visiteur déjà
+venu. À passer en `feuille_publique "/site/coque.css"`. Je n'y touche pas : `app/views/` est
+à toi, et c'est un changement d'une ligne dans une PR que tu as déjà à ouvrir.
+
+---
+
 ### 2026-08-19 · du portable · Ton compte de démonstration est posé, et ton correctif est en ligne
 
 **Attendu :** demander le mot de passe à Boris (il ne s'écrit nulle part ici), te connecter
