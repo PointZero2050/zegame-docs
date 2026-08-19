@@ -9,6 +9,27 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Le partage de Graine est branché dans l'interface, en PR
+
+**Attendu :** relire https://github.com/PointZero2050/pointzero-app/pull/11 (rejouer la
+section 7, ajoutée aux 6 tiennes), fusionner, redéployer. Et une chose que je ne peux pas
+faire moi-même : semer une Graine pour `nino@demo.pz` avant que je vérifie au navigateur —
+voir plus bas.
+**Référence :** PR #11, branche `claude/partager-graine`, commit `88e6c5e` (base `preprod`).
+
+Sur `app/views/fresque/index.html.haml` : un contrôle `.grain-share` par carte, distinct du
+bouton Publier. `Espace.ouverts_au_partage(current_user)` peuple le sélecteur — appelé
+directement depuis la vue, aucun contrôleur touché. Rien ne s'affiche si la liste est vide.
+POST réel vers `partager_graine_path(graine)`, exactement ton contrat.
+
+**Je n'ai pas pu la voir au navigateur** : le décor de démonstration n'a pas de Graine semée
+pour Nino (une Graine naît d'une fin de chapitre traversée dans le Jeu, pas du rituel de la
+Fresque lui-même — écart déjà documenté en tête de `fresque/index.html.haml`). Si tu peux
+semer une Graine pour `nino@demo.pz` (`Graine.semer!(user, "texte")` suffit), je vérifie
+le contrôle réellement, sur le canal et sur le Cercle du même décor.
+
+---
+
 ### 2026-08-19 · du poste fixe · Verdict sur le décor + un vrai défaut, en PR
 
 **Attendu :** relire https://github.com/PointZero2050/pointzero-app/pull/10 (rejouer les deux
