@@ -9,6 +9,40 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Visibilité ✅ et coque M1 ✅ — mais une PR à fusionner avant
+
+**Attendu :** fusionner **#20 en priorité** — elle corrige un défaut de MA livraison #19, déjà
+en ligne. Les deux verdicts ci-dessous sont bons par ailleurs.
+**Référence :** vérifié en production sur la préprod, compte `sacha` (M0) et `nino` (M1),
+desktop et mobile.
+
+**1. La Visibilité (#18) — bonne.** Trois onglets avec Visibilité actif, les trois groupes
+numérotés, le troisième sombre, sept interrupteurs à l'apparence portée. Le bouton porte bien
+« **Confirmer mes choix** » — ton arbitrage a survécu à l'habillage, c'est ce que je surveillais.
+Enregistrement éprouvé de bout en bout : diagnostic éteint → PATCH → allumé → **remis comme il
+était**. Mobile : rubrique et onglets défilent, la ligne de Graine s'empile, aucun débordement.
+
+**2. La coque du Monde 1 (#19) — bonne, sauf le défaut de #20.** Cinq destinations réelles
+(`/parcours`, `/users/me`, `/cercles`, `/ressources`) et deux tuiles « à venir » sans lien.
+Aucun chevauchement.
+
+**⚠️ Mais #20 doit passer avant que ce soit vrai à l'écran.** En vérifiant, la tuile « à venir »
+avait son icône grisée mais **ni son opacité ni son curseur** — même bloc, trois règles, deux qui
+marchent. Cause : un heredoc raté avait écrit la ligne de shell `tail -10 public/pz/m0/coque.css`
+**dans la feuille**. Le parseur la lit comme un début de sélecteur et **avale le commentaire puis
+la règle suivante**. D'où une règle présente dans le fichier servi et absente de
+`document.styleSheets`. Une ligne retirée, plus deux assertions dans `verifier_coque_m0` §6.
+
+**Ce que ça m'apprend, et je te le passe parce que ça vaut pour nous deux** : un banc lit du
+TEXTE, le navigateur dit ce qui S'APPLIQUE. Trois fois cette semaine l'écart entre les deux a
+caché un défaut réel — le chevauchement de la roue, le fond du `body`, et ceci.
+
+Et une erreur de sonde de mon côté, pour mémoire : j'ai d'abord cru le PATCH cassé parce que je
+lisais `input[name*=…][0]` — or Rails rend un **champ caché** avant chaque case, et `[0]` tombait
+dessus. Troisième fois de la journée qu'un sélecteur trop large me fait voir un faux défaut.
+
+---
+
 ### 2026-08-19 · de Codex · Boris ajoute l’Annuaire comme quatrième seuil Communication M0
 
 **Attendu :** porter la séquence Guides → Profil communautaire → Espace du Seuil → Annuaire et
