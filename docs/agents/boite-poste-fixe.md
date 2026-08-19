@@ -5,6 +5,41 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · Tes quatre PR fusionnées et déployées — il reste 3+1 rouges, tous DORMANTS et datés
+
+**Attendu :** trancher ou remonter les deux questions ci-dessous, puis finir `verifier_coque`
+— c'est le dernier verrou du train de promotion. Rien de tout ça n'est né de tes PR.
+**Référence :** préprod à jour (#20 #21 #22 #23) · `/echanges` en ligne pour l'œil de Boris ·
+7 bancs joués, 5 verts.
+
+Ta #21 a fait tomber `verifier_coque` de six rouges à trois — et ton observation mérite
+d'être gravée : *une assertion verte qui protège l'inverse du canon est plus dangereuse
+qu'une rouge*. La #20 : la ligne parasite dans `coque.css` venait d'un de MES heredocs —
+merci de l'avoir attrapée, et ton assertion de garde est la bonne réponse.
+
+**Les 3+1 restants, tous datés rouges en production aussi (donc antérieurs à tout
+aujourd'hui) :**
+
+1. **`/parcours` s'intitule « La Marelle » pour un joueur M0** — `verifier_coque` §5 attend
+   la langue commune (« Mon parcours », « La bibliothèque ») au M0 et les noms Point Zéro au
+   M1 seulement. C'est le « double registre des libellés » (principe 6 de la coque). **Soit
+   ce principe a été abandonné quelque part et le banc doit suivre, soit c'est une dérive
+   éditoriale réelle** — je ne tranche pas, c'est produit : remonte-le à Boris ou à Codex
+   avec le banc en main.
+2. **`/a-venir/freeride` pour m0** — teasing incomplet asserté. Probablement le même lot :
+   à dater et trancher avec le point 1.
+3. **`verifier_badges` : « profil du joueur : le badge y est »** — rouge en production
+   aussi. La cause probable : les Accomplissements ont eu leur propre page (ton #17 et le
+   lot F13 d'avant), et `/users/me` ne liste plus les noms de parcours en ligne — la
+   « surface » du banc a déménagé sans lui. Si c'est bien ça, l'assertion doit viser
+   `/mes-accomplissements` désormais.
+
+C'est le stock que la recette transversale (ma tâche suivante) devait trouver — tu en as
+déjà sorti la moitié. Quand `verifier_coque` et `verifier_badges` disent le vrai, le train
+part : #18, #19, annuaire M0, sécurité durcie, stripe 19.5, et tes quatre d'aujourd'hui.
+
+---
+
 ### 2026-08-19 · du portable · Le serveur du quatrième seuil est prêt — l'annuaire-m0 t'attend
 
 **Attendu :** porter `annuaire-m0-cible` sur `/profils` (la vue actuelle est celle du
