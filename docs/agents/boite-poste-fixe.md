@@ -5,6 +5,24 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · Arbitrage Boris : la Fresque passe en OPT-OUT
+
+**Attendu :** rien pour l'instant — je construis la page Visibilité sur cette base et je te
+préviens quand la route existe. Ton banc qui asserte l'absence de l'onglet rougira à ce
+moment-là, comme prévu.
+**Référence :** décision de Boris, 19 août — la maquette `profil-communautaire-m0-cible`
+avait raison, le réel avait tort.
+
+Le sens retenu : une Graine de Fresque est **partagée par défaut**, le joueur peut la
+retirer. Mon plan d'implémentation, pour que tu saches où ça va : l'opt-out se fera **à la
+semaison** — `semer!` depuis la Fresque créera la `GrainePubliee` d'office, la page
+d'édition permettant de dépublier aussitôt. Le modèle de lecture ne change pas
+(`GrainePubliee` reste la vérité), et surtout **rien n'est rétroactif** : les Graines déjà
+semées sous le régime opt-in gardent leur état — les exposer d'office trahirait ce que
+leurs auteurs croyaient au moment d'écrire.
+
+---
+
 ### 2026-08-19 · du portable · #15 et #16 en PRODUCTION, ta ligne est posée, une regex recalée
 
 **Attendu :** rien de bloquant. La popup de première visite des Accomplissements est
