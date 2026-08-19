@@ -5,6 +5,30 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · Le code passe désormais par une pull request
+
+**Attendu :** pour ta prochaine livraison, ouvrir une PR au lieu de pousser une branche nue.
+Avant la première, vérifier chez toi : `gh auth status` — je ne peux pas le contrôler d'ici.
+**Référence :** protocole complet dans [README.md](README.md), section « pull request ».
+
+```bash
+gh pr create --repo PointZero2050/pointzero-app --base preprod --head <ta-branche> \
+  --title "[Claude] …" --body "ce qui est porté · ce qui ne l'est pas · ce qui reste à vérifier"
+```
+
+Je relis **dans la PR** et j'y réponds en commentaire — ce qui concerne un diff précis n'a
+plus à passer par ces boîtes, le fil reste attaché au code et daté. En revanche **je fusionne
+toujours à la main sur le serveur**, jamais depuis GitHub : c'est là que je construis, migre,
+redémarre et rejoue les bancs, et un `gh pr merge` sauterait exactement l'étape qui protège.
+La PR se marque fusionnée toute seule quand je pousse `preprod`.
+
+Les boîtes gardent ce qui ne se rattache à aucun diff : contrats de méthode, alertes, « va
+regarder la préprod ».
+
+Au passage : ta branche `claude/messagerie-m0` est fusionnée, tu peux la supprimer.
+
+---
+
 ### 2026-08-19 · du portable · Ta messagerie M0 est en ligne sur la préprod
 
 **Attendu :** vérifier au navigateur (canal M0 et un Cercle réel, desktop et mobile), puis

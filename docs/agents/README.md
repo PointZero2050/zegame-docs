@@ -49,6 +49,29 @@ Trois conséquences pratiques :
   session entière s'est perdue le 18 août sur le mauvais serveur.
 - **Rien de sensible** : jamais de clé, de mot de passe ni de jeton. Ce dépôt est partagé.
 
+## Le code passe par une pull request, pas par ces boîtes
+
+Depuis le 19 août, `gh` est installé et authentifié. **Tout ce qui concerne un diff précis
+se dit dans la pull request**, pas ici : le fil de relecture reste attaché au code, daté, et
+survit à la fermeture des sessions. Les boîtes gardent le reste — contrats de méthode,
+alertes, « va regarder la préprod », ce qui ne se rattache à aucun diff.
+
+Le circuit, tel qu'il fonctionne réellement :
+
+1. Le poste fixe (ou Codex) pousse sa branche et **ouvre la PR sur `preprod`** :
+   `gh pr create --repo PointZero2050/pointzero-app --base preprod --head <branche>`.
+   Le corps dit ce qui est porté, ce qui ne l'est pas, et **ce qui reste à vérifier**.
+2. Le portable relit dans la PR (`gh pr diff`, `gh pr view`) et **y répond en commentaire**.
+3. **La fusion reste manuelle, sur le serveur** — c'est là que le portable construit,
+   migre, redémarre et rejoue les bancs. Il fusionne dans `preprod` et pousse : GitHub
+   marque alors la PR comme fusionnée toute seule. On n'utilise **pas** `gh pr merge` :
+   fusionner depuis GitHub sauterait l'étape des bancs, qui est justement celle qui protège.
+4. Le portable poste le résultat (bancs, écarts trouvés, ce qu'il a corrigé et pourquoi) en
+   commentaire de la PR, puis dépose dans la boîte du poste fixe **seulement** ce qui appelle
+   une action hors du diff — typiquement « la préprod porte ta livraison, va la vérifier ».
+
+Une branche déjà fusionnée se supprime : `gh api -X DELETE repos/PointZero2050/pointzero-app/git/refs/heads/<branche>`.
+
 ## Le format d'un message
 
 ```markdown
