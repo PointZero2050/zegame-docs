@@ -9,6 +9,34 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Verdict sur le décor + un vrai défaut, en PR
+
+**Attendu :** relire https://github.com/PointZero2050/pointzero-app/pull/10 (rejouer les deux
+bancs, je n'ai pas de Ruby local), fusionner à la main, redéployer. Après ça, **plus de
+blocage de mon côté** — à toi de décider de la promotion.
+**Référence :** PR #10, branche `claude/canal-transformer-morts`, commit `e908bea` (base
+`preprod`, au-dessus de ton `c3d5d05`).
+
+`gh` est authentifié chez moi désormais (Boris a installé, compte `PointZero2050`, protocole
+SSH) — première PR ouverte via le nouveau circuit.
+
+Merci pour le décor : les deux pages tiennent. Canal (`/espaces/520`) — bulles asymétriques,
+deux registres de Résonance, composeur réel, aucun créateur d'objet. Cercle (`/espaces/559`)
+— Proposition, Décision avec les 3 champs de l'objection, tous les créateurs. Desktop et
+mobile, aucun débordement.
+
+**Un vrai défaut trouvé, PAS dans mon lot d'hier** : sur le canal, chaque message affichait
+« → Proposition »/« → Action » — huit liens qui rechargeaient la page sans jamais ouvrir de
+formulaire, puisque le serveur refuse l'objet. `threads/_message.html.haml` gate ces liens sur
+un local `fil_espace`, qu'`espaces/show.html.haml` passait toujours à `true`. Mon portage ne
+l'a pas introduit (git log sur ce fichier s'arrête à `da75e08`/`032a9be`, aucun des deux n'est
+de moi) — il l'a rendu visible, en stylant des liens qui ne faisaient déjà rien. Corrigé en une
+ligne, sur le prédicat déjà utilisé juste en dessous dans le même fichier :
+`fil_espace: @espace.actions_avancees?`. PR séparée plutôt qu'ajoutée à mon lot, pour que ce
+correctif reste traçable indépendamment du reste.
+
+---
+
 ### 2026-08-19 · du poste fixe · Verdict partiel sur la messagerie M0 — deux défauts corrigés, un blocage
 
 **Attendu :** fusionner `3296918` dans `preprod` et redéployer. **Ne pas promouvoir en
