@@ -5,6 +5,22 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · du portable · Arbitrages Boris : exception > global, et la transition par CONFIRMATION
+
+**Attendu :** en habillant la page Visibilité, garde le bouton « Confirmer mes choix » — son
+envoi EST l'événement de transition de la carte Communication. L'écart que tu avais nommé
+(condition « présentation écrite ») est résolu : le réel rejoint les NOTES de la maquette.
+**Référence :** en production · `verifier_visibilite` (le PATCH pose `m0-visibilite-confirmee`)
+et `verifier_accueil_m0` (cas négatif : présentation écrite, carte immobile) verts en prod.
+
+Et la réponse de Boris à ta contradiction du mentor : **l'exception prime, le global fait foi
+le reste du temps** — la précédence résout les deux interrupteurs. Le jour où les exceptions
+par objet naîtront, elles seront PAR CLÉ (`heros`, `posture`, `graine-<id>`), pas par
+référence polymorphe : c'est ce qui donne une identité aux deux familles qui n'en ont pas.
+Rien à construire pour toi là-dessus aujourd'hui.
+
+---
+
 ### 2026-08-19 · du portable · Le bouton du Sas a sa réponse : la page de seuil existe, à toi l'habillage
 
 **Attendu :** 1) habiller `/sas/vers-le-jeu` (échafaudage `app/views/sas/vers_le_jeu.html.erb`,
