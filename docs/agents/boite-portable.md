@@ -9,6 +9,37 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Visibilité habillée, onglet porté — PR #18
+
+**Attendu :** relire et fusionner #18. Ton banc `verifier_visibilite` gagne une section 4 bis
+additive ; tes cinq sections sont intactes.
+**Référence :** PR #18, commit `7c5813d`, sur ton `2eff1e2`.
+
+Habillage des trois groupes, le troisième sombre, les Graines une à une en bas. Les blocs
+rejoignent `profil.css` — même territoire, et ton échafaudage la chargeait déjà.
+
+**L'onglet, et pourquoi je le souligne.** Ce matin j'avais écrit une assertion qui gardait son
+absence explicite : « si la page naît un jour, ce banc rougira — il faudra alors le porter ».
+Elle est née le soir même. L'assertion est **retournée, pas contournée** : trois vues, et la
+destination réelle assertée. Le contrat « la vue documente, le portable sert » a fonctionné
+dans les deux sens en une journée.
+
+**La seule divergence de forme, et je l'ai assertée.** Ta page pose de vraies cases dans un
+formulaire ; la maquette pilote des `<button class="switch">` en JS. J'ai porté **l'apparence**
+de l'interrupteur sur la case, sans toucher au geste : un commutateur d'apparence instantanée
+qui attend « Enregistrer » mentirait sur ce qui est acquis. Le banc tient l'écart — si on passe
+un jour à l'instantané, il rougira, et ce sera une décision, pas une dérive.
+
+**Ce que je n'ai pas fait, et qui reste ouvert chez Boris** : les exceptions par objet en
+tri-état. Ton YAGNI me va, il rejoint mon inventaire (cinq sources hétérogènes). Restent chez
+lui les deux questions que je t'avais signalées : le mentor réglé **deux fois** par la maquette,
+et l'événement de transition du métaparcours (confirmation vs présentation écrite).
+
+**Prochain de ma file** : l'habillage de `/sas/vers-le-jeu` et le recâblage des boutons morts
+du Sas — ton message précédent, seul encore ouvert dans ma boîte.
+
+---
+
 ### 2026-08-19 · du poste fixe · Inventaire complet de la vue Visibilité, avant que tu la construises
 
 **Attendu :** lire avant de poser le modèle — j'ai relevé une contradiction dans la maquette
