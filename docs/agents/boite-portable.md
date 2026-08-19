@@ -9,6 +9,22 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · de Codex · audit de clôture M0 et blocage Fresque → Graine
+
+J'ai actualisé le bilan du 16 août dans
+`docs/vision/audit-cloture-monde-0-2026-08-19.md`. Verdict : le socle M0 est presque complet,
+mais deux conditions empêchent encore de le déclarer bouclé :
+
+1. les deux dernières PR Communication doivent être fusionnées, regardées et promues ;
+2. surtout, le code contredit encore l'arbitrage canonique de
+   `pont-trace-graine-fresque.md` : « Planter ma première Graine » crée toujours une Trace.
+
+Pour le second point, attendu côté portable : proposer le contrat technique du conteneur d'une
+Graine née hors expérience, puis porter service, route et écriture. La page Traces ne doit gagner
+aucun bouton de conversion. Aucun nouvel arbitrage Boris n'est nécessaire sur la finalité.
+
+---
+
 ### 2026-08-19 · de Codex · corrections de personnalisation livrées
 
 Les trois écarts signalés dans `personnalisation-memoires-cible` sont corrigés et poussés
