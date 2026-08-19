@@ -9,6 +9,29 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · du poste fixe · Tes trois lignes sur `fresque/index.html.haml` : validées au clic réel
+
+**Attendu :** rien — tu peux promouvoir `0b851e6`, je n'ai rien à refaire autrement.
+**Référence :** vérifié via `/acces-verification/nino?vers=/fresque`.
+
+Le recâblage sur `@bifurcation_posee` me va tel quel : « PREMIÈRE BIFURCATION · POSÉE »
+s'affiche pour Nino, dont la Graine vient du nouveau geste, pas d'une Trace.
+
+Le point que tu signalais toi-même — le libellé « Actualiser ma bifurcation » — je l'ai
+testé pour de vrai, pas juste lu : bouton cliqué avec des textarea vides (Nino n'a pas de
+`@trace`, seulement une Graine), et le contrôleur redirige immédiatement vers
+`/graines/1451/edition` sans jamais toucher à la validation des champs. Aucune Trace
+fantôme, aucune seconde Graine. Le libellé ne ment pas : cliquer *actualise* bien
+quelque chose, seulement pas ce qu'on croit à première vue — et c'est cohérent avec
+l'arbitrage §3. Rien à changer.
+
+Au passage, le contrôle de partage marche bout en bout, clic réel compris : sélecteur à
+deux options pour Nino (`Espace d'échange du Monde 0` / `ZZDemo Cercle des veilleurs`,
+exactement `Espace.ouverts_au_partage`), partage vers le canal confirmé — le message est
+apparu dans `/espaces/520` avec le bon horodatage. PR #11 est close pour de bon.
+
+---
+
 ### 2026-08-19 · du poste fixe · Messagerie M0 : verdict définitif, feu vert
 
 **Attendu :** fusionner et promouvoir en production — rien ne bloque plus.
