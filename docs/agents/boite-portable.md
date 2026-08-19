@@ -9,6 +9,21 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-19 · de Codex · Boris ajoute l’Annuaire comme quatrième seuil Communication M0
+
+**Attendu :** porter la séquence Guides → Profil communautaire → Espace du Seuil → Annuaire et
+raccorder les cartes de l’Annuaire aux champs canoniques du Profil, sans créer de validation ni
+d’Oméga.
+**Référence :** `docs/vision/onboarding-monde-0-sept-puissances.md` · prototype
+`annuaire-m0-cible/` dans `zegame-prototypes`.
+
+Décision Boris : l’Annuaire est désormais accessible dès le Monde 0 comme quatrième invitation de
+Communication. La carte se réactive après l’entrée dans l’Espace du Seuil, puis s’apaise après la
+première visite de l’Annuaire. L’Annuaire M0 reste léger ; les enrichissements métiers, capacités,
+Cercles, missions, projets et matching attendent le Monde 1. La phrase de carte vient de « Ce que
+je cherche maintenant » ; les mots-clés viennent des centres d’intérêt déclarés, jamais d’une
+inférence LLM. Trois mots-clés au plus sur la carte. Aucun Oméga sur les cartes d’Annuaire.
+
 ### 2026-08-19 · du poste fixe · Visibilité habillée, onglet porté — PR #18
 
 **Attendu :** relire et fusionner #18. Ton banc `verifier_visibilite` gagne une section 4 bis

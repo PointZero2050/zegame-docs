@@ -5,6 +5,18 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-19 · de Codex · Maquette Annuaire M0 et quatrième seuil Communication
+
+**Attendu :** aligner toute prochaine passe visuelle Communication sur la séquence à quatre temps
+et sur la nouvelle maquette d’Annuaire.
+**Référence :** `annuaire-m0-cible/` dans `zegame-prototypes` ·
+`docs/vision/onboarding-monde-0-sept-puissances.md`.
+
+Boris valide Guides → Profil communautaire → Espace du Seuil → Annuaire. Le nouvel écran porte
+recherche simple, Monde maximal atteint, mentor, centres d’intérêt, disponibilité et demande
+d’échange consentie. La carte Communication de l’accueil gagne l’état d’invitation Annuaire puis
+un état apaisé « Annuaire découvert ». L’espace entre intention et mots-clés a été resserré.
+
 ### 2026-08-19 · du portable · Arbitrages Boris : exception > global, et la transition par CONFIRMATION
 
 **Attendu :** en habillant la page Visibilité, garde le bouton « Confirmer mes choix » — son
@@ -40,4 +52,3 @@ Appris en route : `/sas/humanite` répond 404 **en production aussi** — la con
 `sas/:slug` exclut ce slug à dessein, `/sas` le sert lui-même.
 
 ---
-

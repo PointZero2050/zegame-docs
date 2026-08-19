@@ -31,7 +31,7 @@ jauge : elle exprime la circulation commune des six autres Puissances.
 | **Volonté — Je décide** | Entrer dans le premier parcours | Marelle et parcours Monde 0 | Parcours, étape active et prochaine action réelle |
 | **Imagination — Je crée** | Produire une première Graine | Fresque de Récit, puis Mes Traces | Graines, Résonances, Traces et transformations |
 | **Émotion — Je ressens** | Choisir un héros inspirant | Catalogue limité des héros et dialogue avec le mentor | Mentor choisi, échanges et parcours associés |
-| **Communication — Je m'exprime** | Rencontrer Sirbey ou Z.E.R.O. | Guides, puis Espace du Seuil | Guides disponibles et aperçu des échanges du Monde 0 |
+| **Communication — Je m'exprime** | Rencontrer Sirbey ou Z.E.R.O. | Guides, Profil communautaire, Espace du Seuil, puis Annuaire | Guides disponibles, échanges du Monde 0 et personnes découvertes |
 | **Intuition — Je discerne** | Lire une première clé Point Zéro | Corpus PZ, événements ; ressources externes annoncées | Clés assimilées et Traces de lecture créées |
 | **Transcendance — Je donne** | Observer son Moteur | Mon Moteur et Accomplissements | Puissances renseignées, Alchimisation et badges |
 
@@ -85,7 +85,7 @@ ou la lumière ne portent jamais seules l'information, notamment pour l'accessib
 | Volonté | entrée dans la Marelle | étape ou parcours qui devient la prochaine invitation |
 | Imagination | première Graine et Fresque | `Mes Traces` dès l'apparition de la première Trace |
 | Émotion | catalogue des six héros | mentor choisi ou nouvelle page liée au mentor lorsqu'elle devient l'appel principal |
-| Communication | rencontre des deux guides | `Espace du Seuil` après le premier dialogue |
+| Communication | rencontre des deux guides | Profil communautaire, puis `Espace du Seuil`, puis Annuaire communautaire |
 | Intuition | dix clés Point Zéro | espace nouvellement ouvert, notamment les ressources externes au Monde 1 |
 | Transcendance | Moteur de Conscience | `Accomplissements` lorsque les six Puissances sont renseignées |
 
@@ -204,10 +204,24 @@ Le premier geste est un choix entre :
 - Professeur Sirbey, regard de la Lumière ;
 - Docteur Z.E.R.O., regard de l'Ombre.
 
-Après le premier dialogue, le Joueur découvre l'Espace du Seuil du Monde 0. Il peut lire,
-se présenter et faire résonner les Graines. La messagerie complète s'ouvre au Monde 1. Les
-guides expliquent le Point Zéro et l'application ; ils ne remplacent ni le mentor personnel,
-ni le facilitateur, ni l'aide humaine.
+Après le premier dialogue, la Communication progresse en quatre seuils explicites :
+
+1. rencontrer les Guides ;
+2. composer et prévisualiser son Profil communautaire ;
+3. rejoindre l'Espace du Seuil du Monde 0, où le Joueur peut lire, se présenter et faire
+   résonner les Graines ;
+4. découvrir l'Annuaire communautaire et les personnes qui ont choisi de s'y rendre visibles.
+
+L'Annuaire M0 reste volontairement léger : recherche par identité, territoire ou centre d'intérêt,
+Monde maximal atteint, mentor, disponibilité et demande d'échange consentie. Les métiers,
+capacités constatées, Cercles, missions, projets et rapprochements explicables apparaissent au
+Monde 1. Les cartes n'affichent pas les Omégas.
+
+La phrase d'intention d'une carte provient de la réponse `Ce que je cherche maintenant`. Les
+mots-clés sont les centres d'intérêt choisis par le Joueur, trois au plus sur la carte ; ils ne
+sont jamais déduits automatiquement de ses Graines, Traces ou conversations. La messagerie
+complète s'ouvre au Monde 1. Les guides expliquent le Point Zéro et l'application ; ils ne
+remplacent ni le mentor personnel, ni le facilitateur, ni l'aide humaine.
 
 ### Intuition
 
@@ -247,7 +261,7 @@ Les clés `localStorage` permettent seulement de jouer les transitions :
 | `pz_volonte_m0_v1` | étapes du premier parcours |
 | `pz_fresque_demo_v1` | Graines, Résonances, Traces et transformation |
 | `pz_hero_m0_v1` | héros choisi et nombre d'échanges |
-| `pz_communication_demo_v1` | guide choisi, premier dialogue et Espace du Seuil |
+| `pz_communication_demo_v1` | guide choisi, Profil confirmé, Espace du Seuil et Annuaire découvert |
 | `pz_intuition_m0_v1` | fiches ouvertes, réponses et clés assimilées |
 | `pz_moteur_m0_v1` | première lecture des six Puissances |
 | `pz_accomplissements_visibility_v1` | visibilité communautaire des badges |
@@ -264,7 +278,9 @@ La traduction Rails ne doit pas reproduire ces objets tels quels. Elle doit racc
 | Fresque | `fresque-recit-m0-cible/` |
 | Traces | `traces-m0-cible/` |
 | Héros | `heros-mentors-m0-cible/` |
-| Communication | `communication-guides-m0-cible/` |
+| Communication — Guides et Espace du Seuil | `communication-guides-m0-cible/` |
+| Communication — Profil communautaire | `profil-communautaire-m0-cible/` |
+| Communication — Annuaire | `annuaire-m0-cible/` |
 | Intuition | `premieres-cles-m0-cible/` |
 | Moteur | `moteur-conscience-m0-cible/` |
 | Accomplissements | `accomplissements-m0-cible/` |
@@ -279,7 +295,8 @@ La traduction Rails ne doit pas reproduire ces objets tels quels. Elle doit racc
    analyse d'impact.
 5. Brancher le catalogue réel des héros et conserver `principale + deux appuis`.
 6. Implémenter les guides LLM selon l'analyse d'impact dédiée et leurs limites de contexte.
-7. Brancher l'Espace du Seuil sur la messagerie réelle et ses règles d'accès.
+7. Brancher l'Espace du Seuil sur la messagerie réelle et ses règles d'accès, puis raccorder
+   l'Annuaire aux champs canoniques du Profil communautaire et à la demande d'échange consentie.
 8. Remplacer les ancres du menu de compte par les routes techniques et juridiques.
 9. Alimenter événements et ressources depuis les données réelles au lieu du contenu figé.
 10. Préserver la roue, les sous-menus par territoire, les popups initiales et la typographie
@@ -287,7 +304,7 @@ La traduction Rails ne doit pas reproduire ces objets tels quels. Elle doit racc
 
 ## 9. Recette minimale attendue
 
-- les neuf pages affichent Accueil, 7 Puissances, Omégas et menu de compte sans image cassée ;
+- toutes les pages affichent Accueil, 7 Puissances, Omégas et menu de compte sans image cassée ;
 - la roue route directement vers les territoires et son animation est rejouable ;
 - aucun écran large ou mobile ne déborde horizontalement ;
 - la première action significative réactive sa carte d'accueil ;
@@ -295,4 +312,6 @@ La traduction Rails ne doit pas reproduire ces objets tels quels. Elle doit racc
 - les ressources externes annoncent une ouverture automatique au Monde 1 ;
 - la Transcendance n'est jamais évaluée comme une Puissance indépendante ;
 - les guides restent une aide sur le Jeu, distincte du mentor et des échanges humains ;
+- la Communication progresse bien dans l'ordre Guides → Profil → Espace du Seuil → Annuaire ;
+- la visite de l'Annuaire réactive puis apaise la carte Communication sans valider d'expérience ;
 - les réglages de compte ne dupliquent ni le profil communautaire ni les œuvres.
