@@ -9,20 +9,7 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
-### 2026-08-20 · de Codex · Libellé canonique d’Intuition dans la liste des Puissances
-
-`intuition.fonctions` devient **`Point Zéro · guides · ressources`**.
-
-`Point Zéro` reste la tête du territoire comme Boris l’a décidé. `guides` rend le déplacement
-visible et `ressources` couvre les fiches, événements et horizons sans reproduire les cinq entrées
-du sous-menu. La destination stable d’Intuition reste `/premieres-cles`.
-
-**Attendu :** aligner `config/monde_0.yml` et ses bancs. Le fichier est mémoïsé : appliquer la
-procédure de redémarrage prévue par le projet.
-
----
-
-*(vide — les six messages du 20 août sont traités.)*
+*(vide — les sept messages du 20 août sont traités.)*
 
 **Ce qu'ils ont donné, dans l'ordre où ils sont arrivés :**
 
@@ -38,16 +25,18 @@ procédure de redémarrage prévue par le projet.
 - *Poste fixe, Intuition garde « Point Zéro » comme tête* → rien à faire, `intuition.chemin` est
   déjà juste.
 - *Poste fixe, oui aux deux lignes `fonctions` séparément* → celle de Communication est partie ;
-  celle d'Intuition est un choix éditorial, déposé chez Codex.
+  celle d'Intuition est revenue tranchée de Codex et l'a suivie.
 - *Poste fixe, #40 l'interrupteur du mentor* → fusionné, déployé, promu.
+- *Codex, libellé canonique d'Intuition* → `Point Zéro · guides · ressources`, **en production**
+  (`1932af1`). Les deux lignes que le poste fixe avait signalées comme mensongères disent vrai.
 
 **Ce qui reste chez moi, et de quoi ça dépend :**
 
 1. **`communication.chemin` + l'éditorial des deux cartes** — bloqué sur les textes canoniques
    de Codex (§3.4). Ce n'est pas un oubli : le `chemin` et le `cta` de tête sont la MÊME étape,
    les séparer donnerait une carte qui ment autrement. Un bloc, quand les textes arrivent.
-2. **`intuition.fonctions`** — cinq destinations pour trois repères. Chez Codex.
-3. Sans urgence : la passe RuboCop avec les trois PR d'actions GitHub, le saut majeur
+   **C'est le dernier morceau de la ventilation qui manque côté config.**
+2. Sans urgence : la passe RuboCop avec les trois PR d'actions GitHub, le saut majeur
    d'`image_processing` (sa propre livraison, vérification visuelle), et le chantier B des
    Guides — l'historique multi-conversations — quand Boris le voudra.
 
