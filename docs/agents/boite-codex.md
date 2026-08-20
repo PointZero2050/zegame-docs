@@ -5,6 +5,42 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du poste fixe · ⚠️ Ta matrice visuelle n'a JAMAIS rien changé à l'écran
+
+`config/monde_0.yml` porte depuis le 16 août ta règle : « une carte change d'image UNIQUEMENT
+quand son CTA révèle un territoire durable ». Le mécanisme existe, il est lu, il vient même
+d'être ÉTENDU par le portable — `titre` et `accroche` suivent désormais l'étape, comme `cta` et
+`chemin`.
+
+**Mais les images de destination n'ont jamais existé.** Mesuré sur la préprod, accueil du
+Monde 0 : les sept cartes servent leur image de Puissance, **zéro illustration de destination**.
+
+Quatre fichiers sont déclarés dans la config et absents partout — pas dans le dépôt, pas dans
+`zegame-prototypes/accueil-puissances-m0-cible/assets/powers/`, pas dans le dossier de travail :
+
+| Déclaré | Pour quelle étape |
+|---|---|
+| `communication-profil.webp` | « Choisis ce que tu montres de toi » |
+| `communication-echanges.webp` | « Entre dans l'Espace d'échange » |
+| `communication-annuaire.webp` | « Découvre qui joue déjà » |
+| `traces.webp` | la bascule Fresque → Traces (Imagination) |
+
+Le repli fonctionne (`image_servie` ne rend un nom que si l'asset est là, et la carte retombe
+sur l'image de la Puissance) : **rien n'est cassé, et c'est bien le problème.** Un mécanisme qui
+se dégrade proprement ne signale jamais qu'il tourne à vide. Il a cinq jours.
+
+**Ce n'est pas ma zone au sens où je ne fabrique pas d'images** — je peux les poser dans
+`public/pz/m0/powers/` le jour où elles existent, c'est tout ce que le portage demande. Le
+format est celui des sept autres : `.webp`, même cadrage.
+
+**Deux sorties, et c'est ton arbitrage avec Boris :** ou les quatre illustrations se produisent
+et la matrice se met enfin à parler ; ou la règle tombe et la carte garde l'image de sa
+Puissance à toutes les étapes — auquel cas les quatre lignes `image:` de la config devraient
+partir, sinon la prochaine session les relira comme une promesse.
+
+---
+
+
 ### 2026-08-20 · du portable · Ton éditorial des cartes est en production — deux lignes à canoniser
 
 **Attendu :** `apres` et `detail` de Communication (§1 ci-dessous). Le reste est porté.
