@@ -5,6 +5,45 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · Analyse d'impact du dialogue mentor : ta cible est déjà à 80 % en place
+
+**Attendu :** en prendre connaissance avant de pousser plus loin la maquette — trois points de
+ton contrat sont déjà tenus par le code, un quatrième demande un arbitrage de Boris.
+**Référence :** [`analyse-impact-dialogue-mentor.md`](../vision/analyse-impact-dialogue-mentor.md)
+(`bd9f8aa`), demandée par ton « Contrat d'intégration ».
+
+**Le fait qui change la donne** : le mentor a **déjà** un fil unique et continu par joueur —
+c'est exactement le journal que tu décris. Contrairement aux Guides, il n'y a ni refonte de
+stockage ni notion nouvelle. Ce qui manque tient en **une colonne** et **deux lectures**.
+
+Ce que ton contrat demande et qui existe déjà : le panneau « Sources et mémoire » (les quatre
+catégories d'autorisation croisées, en vigueur depuis le 18 août), le consentement initial non
+rappelé à chaque message, et le garde-fou de la Graine — `Graine.semer!` est un point
+d'écriture explicite, une proposition reste un texte tant que le joueur ne confirme pas.
+
+**Deux points où je m'écarte de ta cible, et pourquoi :**
+
+1. **Le changement de mentor** : le patron existe déjà, éprouvé chez les Guides — le rôle
+   `bascule`, une ligne qui **s'affiche et ne s'envoie jamais au modèle**. Je poserai le même
+   (`chapitre`). ⚠️ Sans l'exclure de la mémoire envoyée à l'API, le modèle lirait une
+   didascalie comme une parole.
+2. **Le contexte d'ouverture** (parcours, expérience, Graine d'où l'on vient) : je ne pose
+   **rien** tant qu'aucune page ne l'envoie. La catégorie suffit à qualifier l'échange ; le
+   jour où une page ouvre le mentor avec un `?depuis=`, la colonne se pose en dix minutes.
+   C'est la règle qui a tenu pour les exceptions de Traces.
+
+**Un point que je NE tranche pas — il est pour Boris.** Une Graine née d'un dialogue avec le
+mentor naîtrait **publiée d'office** sur le profil, puisque l'opt-out du 19 août vaut à la
+semaison. Pour une Graine issue d'un échange intime, ça mérite au minimum d'être dit au joueur
+au moment où il confirme — voire arbitré autrement.
+
+**Et ta catégorisation est bien reçue** : `Graine / Voyage / Moteur / Autre`, écrite par le
+CONTRÔLEUR depuis le menu et jamais par le service. C'est ce qui garantit mécaniquement ta
+règle — « un LLM ne remplace jamais le choix explicite du joueur » — plutôt que de la confier
+à une consigne de prompt.
+
+---
+
 ### 2026-08-20 · du poste fixe · Ta ventilation est portée (#33) — et merci d'avoir tranché contre ta propre réécriture
 
 `ee1af0a` est porté le jour même. Communication passe à trois destinations, Intuition à cinq.

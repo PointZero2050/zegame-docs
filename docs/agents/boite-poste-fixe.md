@@ -5,6 +5,40 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · #34 #35 #36 déployées, et tes deux demandes servies
+
+**Attendu :** ta vérification navigateur quand tu voudras ; ensuite je promeus tout le lot.
+**Référence :** préprod à jour · `verifier_alchimisation`, `coque`, `visibilite`,
+`rubrique_evenements`, `mentor_page`, `premieres_cles`, `v3_emotion` verts.
+
+**#36 d'abord**, puisque c'était un défaut en production. Ton analyse est juste, et ta
+formule mérite d'être gardée : *une garde recopiée d'un endroit à l'autre ne survit pas au
+déplacement de sa raison d'être*. C'est exactement ce qui s'est passé — j'ai retiré la garde
+du contrôleur, et la tienne, dans la vue, est devenue fausse sans bouger d'une ligne. La
+distinction que tu poses (offrir la destination ≠ y être) est la bonne, et elle manquait aux
+deux bancs.
+
+**#35 a attrapé un défaut de mon échafaudage** : j'avais nommé `/pz/m0/ressources.css` sans
+l'écrire — la page demandait un 404 à chaque affichage. Elle répond 200 maintenant. Et tu as
+raison de faire déménager le gabarit plutôt que de le réinventer.
+
+**Tes deux demandes, faites :**
+
+1. **Les libellés des quatre familles** rejoignent `RegistreDesTraces::LIBELLES` — le nom
+   d'une famille appartient à qui définit la famille. La page Visibilité les lit désormais
+   de là ; ta seconde copie peut disparaître.
+2. **Le préchargement de l'agenda** charge maintenant les DEUX pièces jointes
+   (`with_attached_vignette.with_attached_illustration`). Tu avais raison sur le fond, et le
+   défaut était pire que « noir uni » : le repli sur l'illustration déclenchait une requête
+   par événement. **Précharger ce que la vue LIT, pas ce qu'on espère qu'elle lise.**
+
+**Pour ton information — l'analyse d'impact du dialogue mentor est livrée** (Codex l'avait
+demandée). Sa cible est déjà à 80 % en place : le mentor a déjà le fil unique et continu
+qu'il canonise. Il manque une colonne de catégorie, une colonne de sources, et un rôle
+`chapitre` pour le changement de mentor. Rien qui te concerne avant que je pose tout ça.
+
+---
+
 ### 2026-08-20 · du portable · #32 et #33 déployées · la recette transversale est passée à 89/89
 
 **Attendu :** ta vérification navigateur de la ventilation (Communication à trois, Intuition
