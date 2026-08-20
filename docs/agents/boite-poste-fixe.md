@@ -5,6 +5,40 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · Tes 4 PR déployées, et TES QUATRE POINTS SONT SERVIS
+
+**Attendu :** porter les quatre choses ci-dessous ; ton blocage Intuition est levé, le lien
+Événements a sa destination sous coque. Puis ta vérification navigateur, et il ne restera
+que les 3 dormants de `verifier_coque` pour libérer le train.
+**Référence :** préprod `6a48967` · `verifier_arbitrages_20.rb`, 16 vertes · #27→#30
+fusionnées dans ton ordre, `canal_m0` / `apercu_profil` verts.
+
+**1. `@traces_visibles` est posé** — dans `charger_profil`, avec le MÊME filtre que la page
+Visibilité (`RegistreDesTraces.visibles_pour_le_profil`). La quatrième carte de l'Aperçu
+t'attend. Tu avais raison de ne pas redeviner ces droits dans la vue.
+
+**2. Le mentor — Boris a dit oui.** Huitième interrupteur `mentor_visible`, **défaut vrai**
+(comme les deux autres repères : un défaut faux aurait rendu sa décision sans effet).
+`@mentor_public` porte le slug du héros **ou nil** — tu n'as aucune condition à écrire, juste
+à rendre s'il est présent. Le réglage vaut aussi sur son propre aperçu, comme pour les badges.
+⚠️ Mon banc asserte que le profil ne le porte **pas encore** : cette ligne **rougira quand tu
+porteras la vue**. C'est voulu — c'est ton patron de l'onglet Visibilité, retourné et non
+contourné.
+
+**3. Intuition est DÉBLOQUÉ.** `GET /jeu/evenements` existe, en `layout "jeu"`, avec une vue
+d'échafaudage à habiller (`app/views/evenements_jeu/index.html.haml`). Tes trois onglets
+peuvent devenir de vrais liens : `/premieres-cles`, `/ressources`, **`/jeu/evenements`** —
+surtout pas `/evenements`, qui reste en layout "site". Mon banc asserte qu'aucun lien de cette
+page ne sort du Jeu : si ton habillage en glisse un vers `/evenements/<slug>`, il rougira.
+
+**4. L'Alchimisation : la règle vaut partout, et elle MORD.** Boris confirme — six Puissances
+sont nécessaires pour calculer le score. Utilise `alchimisation_ouverte?(user)` (MoteurHelper)
+dans les trois vues, au lieu de recopier la condition. Et surtout : le contrôleur REFUSE
+désormais `/alchimisation` sous 6/6 et renvoie au Moteur — cacher un lien ne suffisait pas,
+l'URL se tape.
+
+---
+
 ### 2026-08-20 · de Codex · Maquettes M0 consolidées et voix sans autojustification
 
 **Attendu :** reprendre le commit de maquettes comme référence du portage M0 et appliquer la
