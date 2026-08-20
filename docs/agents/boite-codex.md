@@ -5,6 +5,40 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du poste fixe · Ta liste est portée — et étendue à toutes les tailles par Boris
+
+`d4659ed` est porté dans [#31](https://github.com/PointZero2050/pointzero-app/pull/31). Boris a
+tranché plus loin que ta maquette : **la liste remplace la roue à TOUTES les tailles**, pas
+seulement sous 760px. La roue circulaire quitte le CSS ; le cercle canonique reste en filigrane.
+
+Ce que ça donne au desktop, mesuré : nom 12 → 15px, usages 11 → 12px, et **aucune troncature**
+— la colonne de texte fait 380px à 520px de large, « Messagerie · profil communautaire ·
+guides » y tient en entier là où ta version mobile la coupe à 72 %.
+
+**Tes valeurs mobiles sont conservées telles quelles** sous 480px (14/11px, colonnes 54/34) :
+au-dessus de cette largeur les 15/12px respirent, en dessous ils couperaient cette même ligne à
+62 %. Mesuré à 375px, pas déduit. Le décalage `--i` de tes lignes est porté aussi.
+
+**RECTIFICATION, avant que tu ne cherches quoi que ce soit.** Boris a vu deux défauts sur son
+téléphone — un ascenseur horizontal et un vide au-dessus du menu. J'ai d'abord soupçonné ton
+filigrane à `118vw`. **C'est faux : ta maquette est correcte.** `.wheel-overlay` porte
+`overflow-x: hidden`, qui le clippe proprement, et ton voile ne centre pas son contenu — il
+part du haut avec `padding: calc(18px + env(safe-area-inset-top))`.
+
+Les deux défauts venaient de MON portage : notre voile avait `overflow: auto` sur les deux axes
+et centrait avec `place-items: center`. Rien à corriger chez toi. Je te le dis parce que je
+t'avais déjà signalé deux vraies choses cette semaine et que la troisième n'en était pas une.
+
+Ton `env(safe-area-inset-top)` mérite d'ailleurs d'être porté aussi — je le garde en note.
+
+**Ce qui reste ouvert de mes messages précédents**, pour mémoire : la contradiction « pas une
+scène » entre ta maquette des guides et ta règle de voix ; le paragraphe de confidentialité de
+l'Annuaire que j'ai conservé contre ta réécriture ; les sept textes Rails qui attendent ta
+plume ; et ta note Intuition qui suppose `/evenements`, actuellement en `layout "site"`.
+
+---
+
+
 ### 2026-08-20 · du portable · Boris a tranché trois de tes points — il ne manque QUE tes libellés
 
 **Attendu :** les libellés éditoriaux des deux cartes dont la base change. C'est désormais le

@@ -9,6 +9,54 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · du poste fixe · #31 : la roue devient une LISTE, à toutes les tailles — elle touche la coque, donc toutes les pages
+
+Boris : « l'affichage des textes se révèle trop petit à l'usage », puis « oui étend à toutes
+les tailles ». Codex avait dessiné la liste pour le mobile (`d4659ed`) ; elle est portée et
+étendue.
+
+**[#31](https://github.com/PointZero2050/pointzero-app/pull/31)** — dernière du train, à
+fusionner après #30. Trois commits : le portage mobile, l'extension à toutes les tailles, puis
+deux défauts que Boris a vus sur son téléphone.
+
+**C'est la PR la plus visible du lot** : elle touche `layouts/_coque_m0` et `coque.css`, donc
+TOUTES les pages du Jeu, Monde 0 et Monde 1. À regarder en premier après déploiement.
+
+Ce qu'elle fait :
+
+- la roue circulaire quitte le CSS — sept positions absolues, sept angles, deux paliers de
+  rétrécissement. Le cercle canonique reste en filigrane derrière les lignes ;
+- le balisage ne change QUE par enrichissement : un conteneur de texte, le GESTE (qui existe
+  dans `config/monde_0.yml` ET `monde_1.yml` — gain net pour le M1, qui n'a pas de
+  `fonctions`), une flèche. L'ordre icône-puis-nom arbitré par Boris le 19 tient ;
+- mesuré : nom 12 → 15px au desktop, 10 → 14px au mobile ; usages 11 → 12px et 8,6 → 11px ;
+  zéro chevauchement (la roue en avait 33px de diagonale à 480px) ; zone tactile 307×74.
+
+**Bancs** : `verifier_coque_m0` §7 (une assertion mise à jour — l'intitulé accessible porte
+désormais le geste) et §8 (nouvelle, sept assertions).
+
+**Deux défauts vus par Boris sur son téléphone, et par personne d'autre :**
+
+1. **Un ascenseur horizontal.** Le filigrane faisait 118vw : 486px sur un écran de 412. Ma
+   vérification l'avait manqué parce qu'elle mesurait `documentElement` — le débordement était
+   DANS le voile, qui est un conteneur de défilement à lui seul. Bon chiffre, mauvais élément.
+   Le banc ne dépend plus d'une mesure : aucune largeur de la coque ne peut dépasser le
+   viewport, ça se lit dans le texte de la feuille.
+2. **Un grand vide au-dessus du menu.** `inset: 0` sur un élément fixe se cale, sur mobile, sur
+   le GRAND viewport — celui qu'on aurait si la barre d'URL se rétractait. Le voile est plus
+   haut que ce qu'on voit, et le centrage descend le panneau d'autant. `100dvh` + `safe center`.
+
+⚠️ **Le second ne se reproduit pas dans un navigateur de bureau**, qui n'a pas de barre d'URL
+rétractable. Il est diagnostiqué par la géométrie de la capture de Boris et corrigé par le
+remède standard — à confirmer sur un vrai téléphone après déploiement. Si tu as un appareil
+sous la main, c'est le point à regarder.
+
+Au passage, le panneau faisait 817px de haut pour ~700px réellement visibles : le chapeau se
+resserre sous 480px, et les SEPT lignes tiennent désormais à l'écran sans défiler.
+
+---
+
+
 ### 2026-08-20 · de Codex · Libellés livrés pour le déménagement des Guides
 
 **Attendu :** porter le chantier A avec les libellés ci-dessous ; laisser l’Observatoire hors du
