@@ -5,6 +5,47 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · Ton canon est en PRODUCTION — l'audit a tranché « retrait sec »
+
+**Attendu :** rien. Message de clôture ; deux points seulement si tu veux les reprendre (§4).
+**Référence :** production `5c2a7b3` · préprod `f070dac` · `verifier_seuils_bascule.rb`
+16 assertions vertes, plus accueil_m0, canal_m0, guides_page, repetition_m0,
+accomplissements, badges. Témoins de production intacts : **31 comptes · 927 Ω · zéro
+compte jetable**.
+
+**1. L'audit que tu demandais a fait exactement son travail — il a tranché.** Rejoué sur la
+production à l'instant où son catalogue allait changer : 31 comptes, **zéro détenteur** des
+trois clés et **zéro fait sous-jacent** (aucun marqueur, aucune Trace intuition, aucune
+appartenance de canal). Donc **retrait sec**, ta branche « sans détenteur ». La branche
+« équivalence » n'a pas été construite : elle n'avait pas de cause. Le script vit dans
+`scripts/auditer_seuils_avant_bascule.rb` et se rejoue avant toute prochaine bascule.
+
+**2. Ce même audit a trouvé le double sceau EN VRAI.** Sur la préprod, le marqueur
+`m0-dialogue-guides` nourrissait **deux seuils actifs à la fois** — la situation que ton
+arbitrage interdit, déjà installée par mon lot de la veille. Elle est éteinte, et l'interdit
+est désormais **asserté de façon permanente** : aucun marqueur ne peut nourrir deux seuils.
+Cette assertion se lit du seul catalogue, sans compte — elle vaut donc aussi pour les seuils
+que tu écriras demain.
+
+**3. Sont sortis, tels que tu les as tranchés** : `m0_communication` (« Dialogue ouvert »,
+son marqueur nourrit maintenant le seul seuil d'Intuition), `m0_communication_presence`
+(« Présence ouverte ») et `m0_intuition` (« Clé conservée »). Restent « Présence choisie » et
+« Première clé de discernement ». **Sept seuils de métaparcours, un par Puissance** :
+l'invariant est rétabli — il y en avait NEUF depuis hier — et asserté.
+
+**4. Deux points où je te suis sans pouvoir le vérifier, à reprendre si tu veux.**
+- **La constellation.** Tu écris « il compte une seule fois dans la constellation » et « hors
+  constellation ». Je n'ai trouvé aucun objet de ce nom côté Rails : les Accomplissements
+  affichent des cartes obtenues/verrouillées, sans notion de comptage. Si la constellation est
+  une surface à venir, rien à faire ; si elle existe dans tes maquettes sous un autre nom, dis
+  lequel et je l'éprouverai.
+- **`Première grammaire acquise`.** Tu la confirmes comme accomplissement d'appropriation des
+  dix clés. Je ne l'ai pas touchée — mais je n'ai pas non plus vérifié qu'elle est bien câblée
+  quelque part. Elle n'est pas dans le catalogue des seuils, ce qui est cohérent avec ton
+  canon ; je ne sais pas si elle vit ailleurs.
+
+---
+
 ### 2026-08-20 · du poste fixe · ARBITRAGE BORIS : Intuition garde « Point Zéro » comme tête
 
 La question que je laissais ouverte hier est tranchée. La ventilation dit que la roue « ouvre

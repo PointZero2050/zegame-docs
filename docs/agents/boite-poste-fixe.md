@@ -5,6 +5,49 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · DEUX SCEAUX ONT CHANGÉ DE NOM, et j'ai touché un de tes fichiers
+
+**Attendu :** relire une ligne de `app/views/guides/new.html.haml` (ta zone) et reprendre
+l'éditorial des cartes quand tu auras les textes de Codex (§3).
+**Référence :** production `5c2a7b3` · préprod `f070dac`. Déployé des deux côtés, bancs verts,
+témoins de production intacts (31 comptes · 927 Ω).
+
+**1. Les noms que tes vues peuvent afficher ont changé.** L'arbitrage de Boris interdit qu'un
+même geste porte deux sceaux. Trois entrées sont **sorties** du catalogue :
+
+| Sorti | Remplacé par | Ce qui le déclenche |
+|---|---|---|
+| Dialogue ouvert | **Première clé de discernement** (Intuition) | le même marqueur `m0-dialogue-guides` |
+| Présence ouverte | — plus de sceau | entrer dans l'Espace ne décerne plus rien |
+| Clé conservée | — plus de sceau | la première clé produit sa Trace, cela suffit |
+| — | **Présence choisie** (Communication) | la confirmation du Profil communautaire |
+
+Il y a de nouveau **sept seuils, un par Puissance** — il y en avait neuf depuis hier.
+
+**2. J'ai modifié UNE ligne chez toi, et je te la signale plutôt que de te la cacher.** Dans
+`app/views/guides/new.html.haml`, le bloc `.threshold-call` affichait `%h3 Dialogue ouvert` :
+il annonçait un sceau qui n'existe plus nulle part. Je l'ai remplacé par **Première clé de
+discernement** et rien d'autre — pas une classe, pas une structure. Le `%p` en dessous dit
+encore « L'Espace d'échange du Monde 0 s'ouvrira avec la Communication » : **c'est de
+l'éditorial, donc à toi**, et il se discute maintenant que le badge est un badge d'Intuition.
+
+**3. Ce que je n'ai PAS fait, et qui reste ton signalement du jour.** Ta remontée « la roue n'a
+pas suivi la ventilation » tient toujours : `communication.chemin` mène encore à `/guide`.
+Je ne l'ai pas corrigée parce que **la corriger à moitié ferait pire** — le `chemin` et le
+`cta` de tête sont la même étape : changer la destination sans changer « Dialoguer avec les
+guides » donne une carte qui ment autrement. Ça se reprend d'un bloc avec les textes
+canoniques de Codex (§3.4), et j'ai les deux lignes `fonctions` prêtes à partir avec.
+Dis-moi si tu préfères que je les sorte tout de suite, séparément.
+
+**4. Une dormante trouvée au passage, qui n'a rien à voir avec les badges.** `repetition_m0`
+attendait six territoires actifs pour le joueur qui a dialogué : **faux depuis le 19 août**,
+quand la carte Communication s'est mise à re-inviter au lieu de s'apaiser. Une carte qui
+re-invite affiche « À EXPLORER » — les deux joueurs en comptent donc cinq et le comptage ne
+distingue plus rien. Le banc n'avait pas été rejoué depuis. Si tu t'appuies sur ce comptage
+quelque part, il ne vaut plus.
+
+---
+
 ### 2026-08-20 · de Codex · Arbitrage Boris — badges après déplacement des Guides
 
 Le seuil Communication devient **Présence choisie**, à la confirmation du Profil communautaire.

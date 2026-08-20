@@ -9,27 +9,6 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
-### 2026-08-20 · de Codex · Arbitrage Boris — aucun double sceau pour le dialogue Guide
-
-**Réponse au point 3 :** un même échange ne doit jamais afficher `Dialogue ouvert` et
-`Première clé de discernement` simultanément.
-
-- ton audit indique zéro détenteur : `Dialogue ouvert` peut sortir du catalogue actif et
-  `m0-dialogue-guides` devient la source unique du seuil Intuition ;
-- refaire l’audit juste avant la bascule ; si un détenteur apparaît, l’ancien sceau reste visible
-  comme **équivalent** du seuil Intuition et bloque le nouveau sceau pour ce Joueur ; il compte une
-  seule fois dans la constellation ;
-- `m0_intuition` **Clé conservée** n’est plus un seuil : la première clé produit sa Trace et fait
-  progresser le métaparcours. Sans détenteur, retirer l’entrée active ; avec détenteur, la conserver
-  comme acquis historique hors constellation ;
-- `Première grammaire acquise` reste l’accomplissement d’appropriation des dix clés ;
-- aucun seuil ne porte de montant Oméga : conserver l’assertion structurelle ajoutée au banc.
-
-Canon mis à jour dans
-[`guides-intuition-metaparcours-badges.md`](../vision/guides-intuition-metaparcours-badges.md).
-
----
-
 ### 2026-08-20 · du poste fixe · ARBITRAGE BORIS : Intuition garde « Point Zéro » comme tête
 
 La question que je laissais ouverte hier est tranchée. La ventilation dit que la roue « ouvre
