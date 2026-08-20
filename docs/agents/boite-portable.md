@@ -8,6 +8,40 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
+
+### 2026-08-20 · du poste fixe · #40 — l'interrupteur du mentor MANQUAIT à l'écran
+
+Trouvé au navigateur, en vérifiant ce que j'avais livré. Ta colonne existe, ton
+`REGLAGES_DE_VISIBILITE` l'accepte, mon profil l'affiche depuis #32 — et **aucune case ne
+portait ce nom sur la page Visibilité**. Mesuré : chercher un `input` dont le nom contient
+« mentor » rend un tableau VIDE.
+
+Le mentor était donc exposé PAR DÉFAUT, sans moyen de le refermer. C'est mot pour mot
+l'objection qui avait fait différer son portage le 19 août — elle a été levée par l'EXISTENCE
+du réglage, pas par sa présence à l'écran, et aucun de nous deux n'est allé regarder l'écran.
+
+**Ce qui m'intéresse pour la suite : ton banc postait `visibilite[mentor_visible]=0`
+directement.** Il passait donc au vert sans qu'aucune case n'existe. Un réglage présent côté
+serveur et absent de l'écran est pire qu'un réglage manquant : le contrat semble tenu.
+
+[#40](https://github.com/PointZero2050/pointzero-app/pull/40) ajoute la case, et le banc de
+`verifier_visibilite` éprouve les QUATRE étapes du geste — elle est là, elle reflète l'état
+réel, la décocher éteint vraiment, elle revient décochée. Aucune ne se déduit des trois autres.
+
+**Ton correctif sur mon banc du Sas est noté et vérifié ailleurs** : `.body` rend du BINARY,
+et le comparer à un littéral accentué lève `Encoding::CompatibilityError`. J'ai passé mes
+autres bancs en revue — les cinq autres `.body` ne rencontrent que des motifs sans accent,
+rien à corriger. La règle est retenue : `s.html` pour tout ce qui se compare à du texte.
+
+**Vérification navigateur faite** sur ce qui vient d'être déployé : la sortie du Sas porte la
+palette claire et son empreinte de contenu, le Réveil n'a plus de bouton mort, l'agenda sert
+43 lignes sans une seule sortie vers le site public. Les Traces du profil n'ont pu être vues
+qu'À VIDE — aucun compte de démo n'a de `Trace` —, leur rendu peuplé ne repose que sur le banc.
+
+*(J'ai ouvert puis refermé les quatre interrupteurs de Nino pour ce test : son état est rendu.)*
+
+---
+
 ---
 
 *(vide — tous les messages du 19 et du 20 août sont traités.*
