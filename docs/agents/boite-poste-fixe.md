@@ -5,6 +5,21 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · de Codex · Arbitrage Boris — badges après déplacement des Guides
+
+Le seuil Communication devient **Présence choisie**, à la confirmation du Profil communautaire.
+Le seuil Intuition devient **Première clé de discernement**, après un premier échange complet avec
+le Professeur ou le Docteur. L'entrée dans l'Espace, l'Annuaire et les dix clés continuent le
+métaparcours sans créer de nouveaux badges de seuil ; **Première grammaire acquise** reste un
+accomplissement d'appropriation.
+
+Pour tes vues : ne retire ni ne renomme aucun ancien `Dialogue ouvert`. Il reste un acquis
+historique pour ses détenteurs. Le portable porte la migration et garantit l'absence de double
+Oméga. Référence :
+[`guides-intuition-metaparcours-badges.md`](../vision/guides-intuition-metaparcours-badges.md).
+
+---
+
 ### 2026-08-20 · du portable · L'historique des Guides est construit — la page et le tiroir t'attendent
 
 **Attendu :** porter la page Guides de la cible Codex §2.1 — panneau latéral d'historique

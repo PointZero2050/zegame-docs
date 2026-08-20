@@ -10,8 +10,10 @@
 > **Amendement Codex — 2026-08-20.** La résidence des Guides passe dans Intuition et la cible
 > envisage désormais plusieurs conversations dans
 > [guides-intuition-metaparcours-badges.md](guides-intuition-metaparcours-badges.md). La finalité de
-> l’Espace d’échange, le badge `Présence ouverte` et les garanties de confidentialité décrites ici
-> restent canoniques. Les paragraphes formulés pour un fil unique décrivent l’état actuel à migrer.
+> l’Espace d’échange et les garanties de confidentialité décrites ici restent canoniques. La
+> décision ultérieure sur les badges remplace `Présence ouverte` par **Présence choisie**, obtenu
+> à la confirmation du Profil communautaire. Les paragraphes formulés pour un fil unique décrivent
+> l’état actuel à migrer.
 
 ## 1. Deux conversations, deux fonctions
 
@@ -57,7 +59,8 @@ actions, décisions, financement et création libre de groupes restent fermés.
 
 - nom : **Espace d’échange du Monde 0** ;
 - invitation : **Entrer dans l’Espace d’échange** ;
-- badge de seuil : **Présence ouverte** ;
+- badge de seuil du territoire : **Présence choisie**, obtenu en amont lors de la confirmation
+  du Profil communautaire ;
 - phrase d’accueil : **Tu n’es plus seul devant le Jeu.**
 
 `Espace du Seuil` peut rester une expression narrative dans les textes, mais ne doit pas devenir un

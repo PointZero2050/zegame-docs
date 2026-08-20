@@ -5,6 +5,14 @@
 > (« Avant implémentation, compléter la matrice ») et par son en-tête (« doit faire l'objet
 > d'une analyse d'impact avant portage »). Établie sur `pointzero-app` à `6a48967`, code lu,
 > pas supposé.
+>
+> **Amendement Codex — 2026-08-20, arbitrage Boris.** La partie badges du §2.4 est remplacée
+> par la décision canonique de
+> [`guides-intuition-metaparcours-badges.md`](guides-intuition-metaparcours-badges.md) :
+> **Présence choisie** devient le seuil Communication à la confirmation du Profil, et
+> **Première clé de discernement** le seuil Intuition au premier échange Guide complet. Le
+> constat technique sur le seuil livré **Dialogue ouvert** reste valide et impose la migration
+> non destructive décrite ci-dessous.
 
 ## 1. La conclusion d'abord
 
@@ -104,12 +112,20 @@ condition nouvelle n'est à écrire pour A.
 
 ### 2.4. Ce que le déménagement ne touche PAS
 
-- **Aucun badge.** `Présence ouverte` (`config/seuils.yml:176`) reste attaché à l'entrée dans
-  l'Espace d'échange, `Première grammaire acquise` aux dix clés. Aucun `SeuilFranchi` n'est
-  recalculé, aucun Oméga rappelé — conforme à Codex §4.1 et §5.1.
+- **Les acquis historiques.** Le seuil livré `m0_communication` intitulé **Dialogue ouvert**
+  ne peut être supprimé ni renommé pour ses éventuels détenteurs. Il reste visible comme acquis
+  historique, sans compter comme le nouveau seuil Communication.
+- **Les Omégas déjà attribués.** La reconnaissance rétroactive du seuil Intuition à partir du
+  marqueur `m0-dialogue-guides` ne rappelle aucun callback et ne génère aucun second Oméga.
+- **Première grammaire acquise.** Il reste conditionné aux dix clés, mais relève désormais des
+  accomplissements d'appropriation plutôt que du seuil d'entrée dans Intuition.
 - **Aucune donnée.** `GuideMessage`, `GuideAppel`, `AutorisationLlm` sont inchangés.
 - **La pastille.** Elle est déjà transversale (`_pastille_guides`), rendue par le layout : elle
   ne dépend d'aucun territoire. Son déplacement est donc **déjà fait**, sans le savoir.
+
+Le portage doit donc auditer `config/seuils.yml`, `GuidesController`, `Monde0Etats` et l'événement
+de confirmation du Profil dans une même livraison. Il doit distinguer lecture d'un état existant,
+création d'un badge et attribution d'Omégas.
 
 ## 3. Chantier B — l'historique multiple
 

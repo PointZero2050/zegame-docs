@@ -204,12 +204,16 @@ mentor est réversible.
 
 ### Communication
 
-La Communication progresse en trois seuils explicites :
+La Communication progresse en trois étapes explicites :
 
 1. composer et prévisualiser son Profil communautaire ;
 2. rejoindre l'Espace d'échange du Monde 0, où le Joueur peut lire, se présenter et faire
    résonner les Graines ;
 3. découvrir l'Annuaire communautaire et les personnes qui ont choisi de s'y rendre visibles.
+
+Le premier geste porte le badge de seuil **Présence choisie** lors de la confirmation du Profil.
+Les deux étapes suivantes sont des dévoilements fonctionnels du métaparcours, pas de nouveaux
+badges de seuil.
 
 L'Annuaire M0 reste volontairement léger : recherche par identité, territoire ou centre d'intérêt,
 Monde maximal atteint, mentor, disponibilité et demande d'échange consentie. Les métiers,
@@ -228,6 +232,11 @@ Z.E.R.O., regard de l'Ombre. Après un premier échange significatif, leur bulle
 dans toute l'application et la carte peut inviter à découvrir une première clé Point Zéro. Les
 Guides expliquent le Point Zéro et l'application ; ils ne remplacent ni le mentor personnel, ni le
 facilitateur, ni l'aide humaine.
+
+Ce premier échange complet porte le badge de seuil **Première clé de discernement**. Dialoguer avec
+les deux voix pourra révéler plus tard l'accomplissement caché **Le Double Regard**. L'assimilation
+des dix clés porte l'accomplissement d'appropriation **Première grammaire acquise**, distinct du
+badge de seuil.
 
 Le corpus Point Zéro et les ressources externes sont deux sous-ensembles de la même
 Ressourcerie. Au Monde 0, dix fiches PZ sont visibles. Le Joueur lit d'abord la fiche, puis
@@ -317,6 +326,6 @@ La traduction Rails ne doit pas reproduire ces objets tels quels. Elle doit racc
 - la Transcendance n'est jamais évaluée comme une Puissance indépendante ;
 - les guides restent une aide sur le Jeu, distincte du mentor et des échanges humains ;
 - la Communication progresse bien dans l'ordre Profil → Espace d'échange → Annuaire ;
-- l'Intuition progresse des Guides vers les clés Point Zéro sans attribuer un badge sur une simple visite ;
+- l'Intuition attribue son seuil après un échange Guide complet, jamais sur une simple visite ;
 - la visite de l'Annuaire réactive puis apaise la carte Communication sans valider d'expérience ;
 - les réglages de compte ne dupliquent ni le profil communautaire ni les œuvres.

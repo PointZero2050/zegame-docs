@@ -131,8 +131,8 @@ Ces textes remplacent les bases antérieures du fichier de configuration Monde 0
 - **titre** : `Choisis ce que tu montres de toi`
 - **accroche** : `Avant d’entrer dans la communauté, décide depuis quelle place tu veux être découvert.`
 - **CTA** : `Composer mon profil`
-- **badge du territoire** : `Présence ouverte`, attribué uniquement lors de l’entrée effective
-  dans l’Espace d’échange, jamais à la confirmation du Profil.
+- **badge de seuil** : `Présence choisie`, attribué lorsque le Joueur confirme son Profil
+  communautaire et ses choix de visibilité. Une simple ouverture ou prévisualisation ne suffit pas.
 
 Après confirmation du Profil, la carte se réouvre ainsi :
 
@@ -145,8 +145,9 @@ Après confirmation du Profil, la carte se réouvre ainsi :
 - **titre** : `Choisis par quel regard commencer`
 - **accroche** : `Le Professeur Sirbey éclaire la carte. Le Docteur Z.E.R.O. en révèle les angles morts. Ils t’expliqueront comment trouver ta place dans l’écosystème dans leur style… inimitable.`
 - **CTA** : `Choisir un regard`
-- **badge du territoire** : `Première grammaire acquise`, attribué uniquement après les dix clés
-  assimilées. Le premier échange avec un Guide ne porte aucun badge.
+- **badge de seuil** : `Première clé de discernement`, attribué après un premier échange complet
+  avec le Professeur ou le Docteur : un message du Joueur et une réponse du Guide ont été
+  persistés avec succès.
 
 Après le premier échange abouti, la carte se réouvre vers Point Zéro :
 
@@ -170,35 +171,46 @@ que les événements existants. Le contrat complet et les critères de recette s
 
 ### 4.1. Règle générale
 
-Le déplacement des Guides ne crée ni ne déplace aucun badge existant. Dans les prototypes de
-référence, le dialogue avec les Guides n’attribue pas de badge : **Présence ouverte** est obtenu lors
-de l’entrée effective dans l’Espace d’échange, et **Première grammaire acquise** après l’assimilation
-des dix clés Point Zéro. Ces deux accomplissements conservent leur Puissance et leur condition.
+> **Arbitrage Boris — 2026-08-20.** Un badge de seuil reconnaît le geste fondateur qui fait entrer
+> dans une Puissance. Les étapes internes suivantes font évoluer la carte et ouvrent des usages,
+> sans multiplier les badges de seuil. La constellation canonique reste donc composée d’un seuil
+> par Puissance.
 
-Le principe général reste : une page déplacée ne recrée pas un accomplissement, un état historique
-n’est jamais rejoué et aucun gain d’Oméga n’est rappelé.
+Le déplacement des Guides recompose les seuils de Communication et d’Intuition :
 
-### 4.2. Premier échange avec les Guides : état de découverte, sans badge
+- **Communication — Présence choisie** : confirmer son Profil communautaire et ses choix de
+  visibilité ;
+- **Intuition — Première clé de discernement** : mener un premier échange complet avec l’un des
+  deux Guides.
 
-Le premier échange complet active le territoire Guides et la bulle transversale. C’est un état de
-dévoilement de l’interface, pas un accomplissement récompensé.
+Les accomplissements plus avancés restent possibles, mais ne sont pas des badges de seuil.
+**Première grammaire acquise**, obtenu après les dix clés Point Zéro, devient ainsi un
+accomplissement d’appropriation dans Intuition.
+
+### 4.2. Premier échange avec les Guides : seuil d’Intuition
+
+Le premier échange complet active le territoire Guides, la bulle transversale et le badge de seuil
+**Première clé de discernement**. Échanger avec un seul Guide suffit : le seuil reconnaît l’entrée
+dans le discernement, pas l’exploration exhaustive des deux voix.
 
 Événement recommandé pour cette transition :
 
 ```text
 premier message du Joueur persisté
 + première réponse du Guide persistée avec succès
-= Guides découverts et bulle activée
+= Guides découverts, bulle activée et seuil Intuition franchi
 ```
 
 Ne déclenchent pas cette transition : visiter la page, choisir une voix, créer un fil vide, ouvrir
 la bulle, changer de Guide, archiver ou supprimer une conversation.
 
 L’événement métier doit être idempotent, par exemple `first_guide_exchange_completed_at`. Il ne
-valide aucune expérience et n’attribue ni badge ni Oméga.
+valide aucune expérience. Son badge et l’éventuel Oméga associé ne peuvent être attribués qu’une
+fois par Joueur.
 
-Un badge caché pour avoir réellement dialogué avec les deux regards pourra être envisagé plus tard.
-Il n’est ni une condition du Monde 0, ni un prérequis d’ouverture.
+Un badge caché **Le Double Regard** pourra reconnaître plus tard un dialogue réel avec le
+Professeur et avec le Docteur. Il n’est ni un seuil, ni une condition du Monde 0, ni un prérequis
+d’ouverture.
 
 ### 4.3. Communication
 
@@ -207,41 +219,50 @@ relationnelle :
 
 | Geste | Effet | Condition |
 |---|---|---|
-| Profil communautaire confirmé | état intermédiaire du métaparcours, sans badge | le Joueur enregistre ses choix de visibilité et sa présentation minimale |
-| Entrée dans l’espace | badge de seuil **Présence ouverte** | adhésion effective et autorisée à l’espace ; une prévisualisation ne suffit pas |
+| Profil communautaire confirmé | badge de seuil **Présence choisie** | le Joueur enregistre ses choix de visibilité et sa présentation minimale |
+| Entrée dans l’espace | état de carte et nouvel usage courant | adhésion effective et autorisée à l’espace ; une prévisualisation ne suffit pas |
 | Annuaire découvert | état de carte, sans badge obligatoire | première visite de l’Annuaire |
 | Demande d’échange | pas de badge de seuil en M0 | demande consentie envoyée puis traitée selon les droits |
 
-`Présence ouverte` reste le badge canonique de l’Espace d’échange défini dans
-[espace-echange-m0-conservation-guides.md](espace-echange-m0-conservation-guides.md). La
-configuration du Profil est l’invitation qui y conduit ; elle ne multiplie pas les récompenses.
+Le Profil est le geste fondateur de Communication : le Joueur choisit la place depuis laquelle il
+sera découvert avant d’entrer en relation. L’Espace d’échange et l’Annuaire poursuivent ensuite le
+métaparcours sans créer de nouveaux seuils.
 
 ### 4.4. Intuition après les Guides
 
-Lire une fiche ne suffit pas à créer un badge d’appropriation. La soumission du questionnaire
-produit une Trace et alimente l’état `clé assimilée`. Le badge **Première grammaire acquise** reste
-conditionné à dix clés assimilées. Les événements restent accessibles sans badge de simple visite ;
-une inscription ou une participation réelle pourra recevoir son propre accomplissement si le
-système sait la vérifier.
+Lire une fiche ne suffit pas à créer un accomplissement d’appropriation. La soumission du
+questionnaire produit une Trace et alimente l’état `clé assimilée`. L’accomplissement
+**Première grammaire acquise** reste conditionné à dix clés assimilées. Les événements restent
+accessibles sans badge de simple visite ; une inscription ou une participation réelle pourra
+recevoir son propre accomplissement si le système sait la vérifier.
 
 ## 5. Migration et recette
 
 ### 5.1. Migration sans perte
 
-- ne migrer aucun badge à cause du déplacement des Guides ;
-- conserver `Présence ouverte` dans Communication et `Première grammaire acquise` dans Intuition ;
-- ne jamais réattribuer ces badges et ne jamais rappeler les callbacks d’Omégas ;
+- tout échange Guide historique complet valide rétroactivement le seuil Intuition
+  **Première clé de discernement**, sans attribution supplémentaire d’Oméga ;
+- tout ancien badge **Dialogue ouvert** déjà attribué reste visible comme accomplissement
+  historique, sous son nom d’origine, mais ne compte pas comme le seuil Communication actuel ;
+- ne retirer, renommer ni réattribuer aucun badge déjà détenu ;
+- **Première grammaire acquise** reste acquis et visible comme accomplissement d’appropriation ;
+- le seuil Communication **Présence choisie** est obtenu au prochain enregistrement confirmé du
+  Profil, ou reconnu à partir d’une confirmation déjà persistée, sans rejouer les callbacks ;
 - migrer l’ancien fil commun comme première conversation, sans en dupliquer les messages.
+
+Avant modification de `config/seuils.yml`, auditer les détenteurs réels de **Dialogue ouvert** et
+la manière dont les badges alimentent la constellation. La migration doit distinguer reconnaissance
+d’un état historique et création d’un nouvel accomplissement.
 
 ### 5.2. Critères d’acceptation
 
 1. Les Guides apparaissent dans le sous-menu Intuition et plus dans Communication.
 2. La bulle et la page dédiée lisent et écrivent dans les mêmes conversations.
 3. Le passage Professeur ↔ Docteur conserve le fil et ajoute un marqueur visible.
-4. Une visite, un fil vide ou un premier échange ne donne aucun badge.
-5. Le premier échange complet active la bulle une seule fois.
+4. Une visite, un choix de voix ou un fil vide ne donne aucun badge.
+5. Le premier échange complet active une seule fois la bulle et le seuil Intuition.
 6. Supprimer une conversation ne retire aucun accomplissement ni l’accès aux Guides.
-7. `Présence ouverte` et `Première grammaire acquise` restent visibles sans double gain d’Omégas.
+7. Les acquis historiques restent visibles sans double gain d’Omégas.
 8. Communication commence par le Profil communautaire, puis l’Espace d’échange.
 9. La page explique clairement différence entre archive, suppression et mémoire.
 10. Les droits, l’export et les suppressions sont testés avant activation de l’historique multiple.

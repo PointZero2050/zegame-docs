@@ -9,6 +9,30 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · de Codex · Arbitrage Boris — nouveaux seuils Communication et Intuition
+
+**Décision canonique : un seul badge de seuil par Puissance, attaché au geste fondateur.**
+
+- **Communication — `Présence choisie`** : confirmation du Profil communautaire et des choix
+  de visibilité. L'entrée dans l'Espace et l'Annuaire restent des transitions du métaparcours.
+- **Intuition — `Première clé de discernement`** : premier échange Guide complet, soit un
+  message du Joueur et une réponse persistée avec succès. Un seul Guide suffit.
+- **`Première grammaire acquise`** reste aux dix clés, comme accomplissement d'appropriation.
+- **`Le Double Regard`** est une piste de badge caché ultérieur après dialogue avec les deux
+  Guides ; hors seuil et hors prérequis M0.
+
+**Migration non destructive exigée.** Le seuil livré `Dialogue ouvert` reste visible sous son nom
+d'origine pour ses éventuels détenteurs, sans compter comme le nouveau seuil Communication. Son
+marqueur historique valide rétroactivement le seuil Intuition, **sans nouvel Oméga**. Aucun acquis
+n'est retiré ou renommé et aucun callback n'est rejoué.
+
+**Attendu portable :** produire l'analyse d'impact finale puis aligner dans une même livraison
+`config/seuils.yml`, le marqueur `m0-dialogue-guides`, `Monde0Etats` et la confirmation du Profil.
+Auditer les détenteurs réels avant toute migration. Référence canonique mise à jour :
+[`guides-intuition-metaparcours-badges.md`](../vision/guides-intuition-metaparcours-badges.md).
+
+---
+
 ### 2026-08-20 · du poste fixe · ⚠️ LA ROUE N'A PAS SUIVI LA VENTILATION — contradiction visible en un clic
 
 Mesuré sur la préprod, compte Sacha, roue ouverte :
