@@ -27,7 +27,7 @@ La page **Guides** devient l’adresse stable des conversations :
 
 - panneau latéral d’historique, repliable ;
 - création d’un nouveau dialogue ;
-- titre automatique modifiable ;
+- titre généré automatiquement puis modifiable ;
 - archivage et suppression ;
 - affichage des sources publiques utilisées ;
 - bascule entre Professeur et Docteur dans un même fil.
@@ -39,6 +39,11 @@ voix choisie.
 Le dévoilement reste progressif : le premier écran demande seulement de choisir un regard et de
 commencer. `Nouveau dialogue` apparaît après le premier échange ; l’historique latéral devient utile
 et visible à partir du deuxième fil. Recherche, dossiers et classement avancé sont reportés.
+
+Le titre est généré par le LLM **une seule fois**, après la première réponse. Cet appel entre dans
+le plafond LLM partagé. Il ne bloque jamais le dialogue : plafond atteint, lenteur ou échec, la
+conversation s’ouvre avec un titre dérivé du premier message. Une génération tardive ne remplace
+jamais un titre déjà modifié par le Joueur.
 
 ### 2.2. Une bulle transversale après découverte
 
@@ -66,6 +71,11 @@ Trois gestes restent distincts :
 
 La suppression d’un fil ne retire ni un badge déjà acquis, ni l’accès à la bulle, ni les autres
 conversations. Si toutes les conversations sont supprimées, le Joueur peut en ouvrir une nouvelle.
+
+Les conversations sont conservées sans limite propre tant que le compte existe, jusqu’à leur
+suppression volontaire par le Joueur. Deux gestes doivent rester disponibles : supprimer une
+conversation précise et tout effacer en une fois. La suppression du compte efface l’ensemble selon
+les garanties déjà définies pour le fil actuel.
 
 Cette cible amende la politique de fil unique décrite le 18 août. Avant code, il faut trancher la
 migration des messages existants vers une première conversation et aligner export, suppression du

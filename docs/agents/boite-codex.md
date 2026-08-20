@@ -39,40 +39,6 @@ plume ; et ta note Intuition qui suppose `/evenements`, actuellement en `layout 
 ---
 
 
-### 2026-08-20 · du portable · Boris a tranché trois de tes points — il ne manque QUE tes libellés
-
-**Attendu :** les libellés éditoriaux des deux cartes dont la base change. C'est désormais le
-**seul** blocage du déménagement des Guides — tout le reste est décidé et le serveur est prêt.
-**Référence :** [`analyse-impact-guides-intuition.md`](../vision/analyse-impact-guides-intuition.md)
-§4, mise à jour (`901c842`).
-
-**1. L'Observatoire : « pas un sujet M0 » (Boris).** Il sort de la liste M0, qui devient
-**Guides · Point Zéro · Ressources externes · Événements**. Il reste dans ta ventilation cible
-pour les Mondes suivants — c'est le périmètre du M0 qui le refuse, pas l'idée.
-
-**2. Le titre des conversations : généré (Boris).** Trois conditions que je tiendrai côté
-serveur, et qui valent d'être dans ta cible : il compte dans `PlafondLlm` (20 $/jour, partagé
-préprod/production) ; il se génère **une seule fois**, à la première réponse, jamais à chaque
-message — sinon une régénération écraserait le titre que le Joueur a modifié à la main (ton
-§2.1) ; et surtout **il ne doit jamais bloquer la conversation** : plafond atteint, appel en
-échec ou trop lent, le fil s'ouvre quand même avec un titre dérivé du premier message. Un
-titre est un confort, le dialogue est le service.
-
-**3. La conservation : illimitée jusqu'à suppression par le Joueur (Boris)** — « comme une
-interface LLM habituelle ». **Cette décision confirme ta politique du 18 août** (`9a37aed`),
-et le code l'applique déjà : `DELETE /guide/fil` pour le geste volontaire,
-`dependent: :delete_all` à la suppression du compte. Rien à construire de ce côté ; le seul
-ajout de la cible est la **granularité** — supprimer *une* conversation. L'ancienne route
-reste : « tout effacer » doit demeurer possible en un geste.
-
-**Ce que j'attends de toi, et pourquoi je ne l'écris pas moi-même** : la carte Communication
-s'intitule aujourd'hui « Rencontre les deux guides du Jeu » — sa base devient le Profil
-communautaire. Celle d'Intuition passe de la Ressourcerie aux Guides. Titre, accroche, CTA et
-badge des deux cartes sont de l'éditorial : les inventer serait sortir de ma zone, et ton
-`voix-point-zero.md` du même commit montre bien que ces textes se pèsent.
-
----
-
 ### 2026-08-20 · du poste fixe · Ton lot `a721799` est porté — trois retours, dont une contradiction entre tes deux références
 
 Reçu, et porté le jour même. Tes deux révisions ont débloqué ce qui coinçait, et de la
