@@ -83,17 +83,19 @@ entrera par une porte plutôt que l'autre. Mais aucune reprise de données n'est
 | Territoire | Base | Destinations, dans l'ordre |
 |---|---|---|
 | **Communication** | Profil communautaire | Espace d'échange · Annuaire |
-| **Intuition** | Guides | Point Zéro (clés) · Ressources · Événements · ~~Observatoire~~ |
+| **Intuition** | Guides | Point Zéro (clés) · Ressources · Événements — ~~Observatoire~~ hors M0 |
 
 Les conditions correspondantes existent **toutes déjà**, posées ces deux derniers jours :
 `visibilite_confirmee`, `espace_du_seuil_rejoint`, et le marqueur des Guides. Aucune
 condition nouvelle n'est à écrire pour A.
 
-**Deux réserves à lever avant de toucher le YAML :**
+**Une seule réserve reste à lever avant de toucher le YAML :**
 
-1. **L'Observatoire n'existe pas** — ni route, ni contrôleur, ni vue. Il ne peut pas entrer
-   dans le sous-menu tant qu'il n'a pas de page ; le résolveur refuse d'ailleurs une
-   destination sans `chemin` (garde du 19 août).
+1. ~~**L'Observatoire n'existe pas**~~ — **tranché par Boris le 20 août : « pas un sujet
+   M0 »**. Il sort de la liste M0 (Guides · Point Zéro · Ressources externes · Événements) et
+   reste dans la ventilation cible de Codex pour les Mondes suivants. Sans cette décision, il
+   aurait de toute façon été refusé par le résolveur : une destination sans `chemin` n'est pas
+   accessible (garde du 19 août).
 2. **Les libellés sont éditoriaux, donc à Codex.** La carte Communication s'intitule
    aujourd'hui « Rencontre les deux guides du Jeu » avec l'accroche qui va avec ; sa base
    devient le Profil. Le titre, l'accroche, le CTA et le badge de la carte doivent être
@@ -162,19 +164,44 @@ bulle doivent lire et écrire **le même modèle**, sinon on obtient deux fils q
 Le critère d'acceptation 2 de Codex le dit ; il se vérifie par un banc qui **écrit dans l'une
 et relit dans l'autre**, pas par une revue de code.
 
-## 4. Ce qui reste à décider, et par qui
+## 4. Ce qui était à décider — trois réponses de Boris, 20 août
 
-| Question | Qui |
+| Question | Réponse |
 |---|---|
-| Les libellés des cartes Communication et Intuition (titre, accroche, CTA, badge) | **Codex** — éditorial |
-| L'Observatoire : page à créer, ou destination retirée du sous-menu M0 | **Boris/Codex** — périmètre |
-| Le titre automatique des conversations : LLM ou dérivé du premier message ? | **Boris** — c'est une dépense |
-| La politique de conservation d'une conversation supprimée (immédiat / différé) | **Boris** — juridique, lié aux CGU |
+| L'Observatoire dans le sous-menu Intuition | **« Pas un sujet M0 »** — retiré. La liste M0 devient Guides · Point Zéro · Ressources externes · Événements |
+| Le titre automatique des conversations | **Généré** (LLM) — voir §4.1, il a un coût et une condition |
+| La conservation d'une conversation | **Illimitée jusqu'à suppression par le Joueur**, « comme une interface LLM habituelle » — voir §4.2 |
+| Les libellés des cartes Communication et Intuition | **toujours ouvert — Codex**, seul blocage du chantier A |
+
+### 4.1. Le titre généré : une dépense, et une règle de dégradation
+
+Un titre généré, c'est **un appel LLM de plus par conversation neuve**. Trois conséquences à
+tenir dès la conception, sans quoi elles se découvriront en production :
+
+1. il compte dans `PlafondLlm` — le plafond de 20 $/jour est **partagé préprod/production**,
+   et son relèvement est une décision reportée (passation) ;
+2. **le titre ne doit JAMAIS bloquer la conversation.** Si l'appel échoue, si le plafond est
+   atteint ou si le modèle tarde, la conversation s'ouvre quand même avec un titre dérivé du
+   premier message. Un titre est un confort ; le dialogue est le service ;
+3. il se génère **une fois**, à la première réponse, jamais à chaque message — et il reste
+   modifiable à la main (Codex §2.1), donc une régénération écraserait un choix du Joueur.
+
+### 4.2. La conservation : la décision CONFIRME ce qui existe
+
+« Illimitée jusqu'à suppression par le Joueur » est exactement la politique déjà arrêtée par
+Codex le 18 août (`9a37aed` : conservation sans expiration propre pendant la durée du compte,
+suppression à la main du Joueur ou avec son compte). **Rien à construire de ce côté** : le
+code l'applique déjà — `DELETE /guide/fil` pour le geste volontaire, et
+`has_many :guide_messages, dependent: :delete_all` pour la suppression du compte.
+
+Le seul ajout du chantier B est la **granularité** : supprimer *une* conversation plutôt que
+tout le fil. L'ancienne route reste — « tout effacer » doit rester possible en un geste.
 
 ## 5. Ce que je propose
 
-1. **Livrer A** dès que Codex fournit les libellés : deux conditions, un YAML, les bancs de
-   la carte qui suivent dans la même livraison. Une demi-journée, réversible.
+1. **Livrer A** dès que Codex fournit les libellés — c'est désormais le **seul** blocage, les
+   trois autres décisions étant prises. Deux conditions, un YAML, les bancs de la carte qui
+   suivent dans la même livraison. Une demi-journée, réversible.
 2. **B est moins cher qu'annoncé.** Sans reprise de données, il redevient un chantier
    ordinaire : une table, des routes, des droits, des bancs. Il reste soumis aux quatre
    décisions du §4 et il n'est pas urgent — le fil unique fonctionne. Mais l'argument « c'est
