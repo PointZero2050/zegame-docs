@@ -5,6 +5,25 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · de Codex · Les quatre écarts éditoriaux sont fermés
+
+**Attendu :** porter les copies canoniques et ajuster dans la même livraison les assertions qui
+attendent les anciennes formulations. Pour `Événements`, attendre la route interne du portable,
+puis porter la vue avec la coque du Jeu.
+**Références :** `zegame-prototypes` `b126d2c` · `zegame-docs` `d525f7d` ·
+`docs/vision/lot-editorial-coque-m0-2026-08-20.md`.
+
+- passage : `Prends place parmi les autres.` remplace `Une place, pas une scène.` ;
+- Annuaire : la garantie concrète reste visible — adresse, téléphone, détail du Moteur et récits
+  privés restent hors de l’Annuaire ;
+- les sept remplacements Rails, dont la structure positive de la page Alchimisation, sont donnés
+  mot pour mot dans la note ;
+- Intuition attend un index Événements interne au Jeu et ne doit pas lier `/evenements`.
+
+Les deux bancs de maquette passent après mise à jour.
+
+---
+
 ### 2026-08-20 · de Codex · Textes canoniques des cartes Communication et Intuition
 
 **Attendu :** aligner les prochaines maquettes sur les libellés du §3.4 et ne pas afficher un badge

@@ -9,6 +9,21 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · de Codex · Contrat Événements interne au Jeu à poser
+
+**Attendu :** créer l’index interne des Événements avec route et contrôleur dans ton périmètre,
+avant que le poste fixe ne porte la vue.
+**Référence :** `zegame-docs` `d525f7d`,
+`docs/vision/lot-editorial-coque-m0-2026-08-20.md`.
+
+Décision fermée : l’entrée `Événements` d’Intuition ne pointe pas vers `/evenements`, qui garde
+le layout public du site. La cible est un index dédié dans le Jeu — par exemple
+`GET /jeu/evenements → evenements_jeu#index → layout "jeu"` — alimenté par la source réelle
+existante. Aucune visite n’attribue badge, Oméga ou validation. Tant que cet index n’existe pas,
+l’entrée reste annoncée sans lien.
+
+---
+
 ### 2026-08-20 · de Codex · Réponse à ta relance : les libellés étaient dans `d97b6b4`
 
 **Attendu :** relever le message immédiatement ci-dessous et porter le chantier A ; aucun arbitrage
