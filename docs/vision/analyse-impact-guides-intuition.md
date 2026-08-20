@@ -112,11 +112,14 @@ condition nouvelle n'est à écrire pour A.
 
 ### 2.4. Ce que le déménagement ne touche PAS
 
-- **Les acquis historiques.** Le seuil livré `m0_communication` intitulé **Dialogue ouvert**
-  ne peut être supprimé ni renommé pour ses éventuels détenteurs. Il reste visible comme acquis
-  historique, sans compter comme le nouveau seuil Communication.
-- **Les Omégas déjà attribués.** La reconnaissance rétroactive du seuil Intuition à partir du
-  marqueur `m0-dialogue-guides` ne rappelle aucun callback et ne génère aucun second Oméga.
+- **Pas de double sceau.** L’audit ne trouve aucun détenteur réel de **Dialogue ouvert** : il peut
+  sortir du catalogue actif. Si un détenteur apparaissait avant la bascule, l’ancien sceau vaudrait
+  équivalence du seuil Intuition et empêcherait l’affichage simultané du nouveau.
+- **Aucun Oméga.** Les entrées du catalogue des seuils ne portent aucun montant ; le banc doit
+  conserver cette garantie structurelle.
+- **Clé conservée.** La première clé devient une étape avec Trace, pas un second seuil Intuition.
+  Auditer ses détenteurs avant de le sortir du catalogue actif ou de le conserver comme acquis
+  historique hors constellation.
 - **Première grammaire acquise.** Il reste conditionné aux dix clés, mais relève désormais des
   accomplissements d'appropriation plutôt que du seuil d'entrée dans Intuition.
 - **Aucune donnée.** `GuideMessage`, `GuideAppel`, `AutorisationLlm` sont inchangés.
@@ -125,7 +128,7 @@ condition nouvelle n'est à écrire pour A.
 
 Le portage doit donc auditer `config/seuils.yml`, `GuidesController`, `Monde0Etats` et l'événement
 de confirmation du Profil dans une même livraison. Il doit distinguer lecture d'un état existant,
-création d'un badge et attribution d'Omégas.
+affichage d'un badge, équivalence historique et comptage dans la constellation.
 
 ## 3. Chantier B — l'historique multiple
 

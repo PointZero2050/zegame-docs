@@ -205,8 +205,8 @@ Ne déclenchent pas cette transition : visiter la page, choisir une voix, créer
 la bulle, changer de Guide, archiver ou supprimer une conversation.
 
 L’événement métier doit être idempotent, par exemple `first_guide_exchange_completed_at`. Il ne
-valide aucune expérience. Son badge et l’éventuel Oméga associé ne peuvent être attribués qu’une
-fois par Joueur.
+valide aucune expérience. Le seuil constate le geste sans attribuer d’Oméga ; cette absence de
+montant fait partie du contrat à tester.
 
 Un badge caché **Le Double Regard** pourra reconnaître plus tard un dialogue réel avec le
 Professeur et avec le Docteur. Il n’est ni un seuil, ni une condition du Monde 0, ni un prérequis
@@ -231,7 +231,9 @@ métaparcours sans créer de nouveaux seuils.
 ### 4.4. Intuition après les Guides
 
 Lire une fiche ne suffit pas à créer un accomplissement d’appropriation. La soumission du
-questionnaire produit une Trace et alimente l’état `clé assimilée`. L’accomplissement
+questionnaire produit une Trace et alimente l’état `clé assimilée`. Le sceau historique
+**Clé conservée** ne constitue plus un badge de seuil : la première clé est une étape du
+métaparcours, déjà rendue visible par la Trace. L’accomplissement
 **Première grammaire acquise** reste conditionné à dix clés assimilées. Les événements restent
 accessibles sans badge de simple visite ; une inscription ou une participation réelle pourra
 recevoir son propre accomplissement si le système sait la vérifier.
@@ -240,19 +242,23 @@ recevoir son propre accomplissement si le système sait la vérifier.
 
 ### 5.1. Migration sans perte
 
-- tout échange Guide historique complet valide rétroactivement le seuil Intuition
-  **Première clé de discernement**, sans attribution supplémentaire d’Oméga ;
-- tout ancien badge **Dialogue ouvert** déjà attribué reste visible comme accomplissement
-  historique, sous son nom d’origine, mais ne compte pas comme le seuil Communication actuel ;
-- ne retirer, renommer ni réattribuer aucun badge déjà détenu ;
+- **un geste ne produit jamais deux sceaux visibles** ;
+- l’audit du 20 août ne trouve aucun détenteur réel de **Dialogue ouvert** : l’entrée peut donc
+  sortir du catalogue actif et son marqueur `m0-dialogue-guides` devient la source unique du seuil
+  Intuition **Première clé de discernement** ;
+- si un détenteur apparaissait entre l’audit et la mise en production, **Dialogue ouvert** serait
+  conservé comme équivalent historique du seuil Intuition et empêcherait l’affichage simultané de
+  **Première clé de discernement** ; il compterait une seule fois dans la constellation ;
+- **Clé conservée** sort des badges de seuil. S’il n’a aucun détenteur, il peut sortir du catalogue
+  actif ; sinon il reste un accomplissement historique sans compter dans la constellation ;
 - **Première grammaire acquise** reste acquis et visible comme accomplissement d’appropriation ;
 - le seuil Communication **Présence choisie** est obtenu au prochain enregistrement confirmé du
   Profil, ou reconnu à partir d’une confirmation déjà persistée, sans rejouer les callbacks ;
 - migrer l’ancien fil commun comme première conversation, sans en dupliquer les messages.
 
-Avant modification de `config/seuils.yml`, auditer les détenteurs réels de **Dialogue ouvert** et
-la manière dont les badges alimentent la constellation. La migration doit distinguer reconnaissance
-d’un état historique et création d’un nouvel accomplissement.
+Immédiatement avant modification de `config/seuils.yml`, refaire l’audit des détenteurs réels de
+**Dialogue ouvert** et **Clé conservée**. La migration doit distinguer l’équivalence d’un état
+historique, l’affichage d’un sceau et son comptage dans la constellation.
 
 ### 5.2. Critères d’acceptation
 
@@ -262,7 +268,7 @@ d’un état historique et création d’un nouvel accomplissement.
 4. Une visite, un choix de voix ou un fil vide ne donne aucun badge.
 5. Le premier échange complet active une seule fois la bulle et le seuil Intuition.
 6. Supprimer une conversation ne retire aucun accomplissement ni l’accès aux Guides.
-7. Les acquis historiques restent visibles sans double gain d’Omégas.
+7. Un échange Guide ne produit jamais deux sceaux visibles et les seuils n’attribuent aucun Oméga.
 8. Communication commence par le Profil communautaire, puis l’Espace d’échange.
 9. La page explique clairement différence entre archive, suppression et mémoire.
 10. Les droits, l’export et les suppressions sont testés avant activation de l’historique multiple.

@@ -236,7 +236,8 @@ facilitateur, ni l'aide humaine.
 Ce premier échange complet porte le badge de seuil **Première clé de discernement**. Dialoguer avec
 les deux voix pourra révéler plus tard l'accomplissement caché **Le Double Regard**. L'assimilation
 des dix clés porte l'accomplissement d'appropriation **Première grammaire acquise**, distinct du
-badge de seuil.
+badge de seuil. La première clé assimilée produit une Trace et fait progresser la carte ; elle ne
+porte pas un second badge de seuil.
 
 Le corpus Point Zéro et les ressources externes sont deux sous-ensembles de la même
 Ressourcerie. Au Monde 0, dix fiches PZ sont visibles. Le Joueur lit d'abord la fiche, puis
