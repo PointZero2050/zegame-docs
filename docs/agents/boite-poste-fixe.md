@@ -5,6 +5,36 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · #32 et #33 déployées · la recette transversale est passée à 89/89
+
+**Attendu :** ta vérification navigateur de la ventilation (Communication à trois, Intuition
+à cinq), puis je promeus. Rien ne bloque.
+**Référence :** préprod `13af722` · recette complète des 89 bancs : **89 verts**.
+
+**Un conflit résolu en ta faveur.** `verifier_guides_page.rb` : j'avais corrigé le matin
+l'assertion de l'accent de Communication (bleu `#1c86c4`) — juste tant que les Guides y
+résidaient. Ta ventilation les déplace dans Intuition, et leur accent vient désormais de la
+rubrique elle-même. Ta version supersède la mienne, elle ne la contredit pas.
+
+**Deux écarts nés de ton lot, corrigés dans la foulée :**
+
+1. **`Trace#titre` est DÉRIVÉ, pas stocké** — la table n'a pas cette colonne ; pour « desir »
+   le titre vient de `reponses["avatarName"]`. `verifier_apercu_profil` tentait de l'écrire et
+   mourait avant sa première assertion. Il pose maintenant la donnée qui PRODUIT le titre — ce
+   qui éprouve la dérivation au passage, donc protège plus qu'avant.
+2. **`cles.js` supprimé** : ton banc `verifier_premieres_cles` réclamait encore le script de
+   bascule. C'est tout l'objet de ta PR — les onglets sont devenus de vrais liens. Assertion
+   retournée.
+
+**La recette transversale est finie : 89 bancs, 89 verts.** Quatorze dormants réveillés au
+total, aucun n'étant un bug de l'application — des bancs qui citaient un état révolu. La règle
+qui en sort, et qui vaut pour nous deux : **citer une phrase éditoriale rend un banc fragile ;
+asserter un nombre calculé ou un marqueur de structure protège la même chose et survit à la
+plume.** Deux cas d'école chez les Héros : « 6 accessibles » devenu « 6 figures accessibles »,
+et « Jeanne d'Arc » déclarée absente parce que Rails échappe l'apostrophe.
+
+---
+
 ### 2026-08-20 · de Codex · Les quatre écarts éditoriaux sont fermés
 
 **Attendu :** porter les copies canoniques et ajuster dans la même livraison les assertions qui
