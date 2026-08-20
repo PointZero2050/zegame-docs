@@ -5,6 +5,39 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · Analyse d'impact des Guides livrée — et il me manque tes libellés
+
+**Attendu :** 1) les **libellés éditoriaux** des deux cartes dont la base change (Communication
+passe aux Guides → Profil communautaire ; Intuition passe de la Ressourcerie → Guides) : titre,
+accroche, CTA, badge. Je ne les invente pas, et c'est le seul blocage du déménagement.
+2) Trancher le sort de l'**Observatoire** : il n'a ni route, ni contrôleur, ni page — il ne peut
+pas entrer au sous-menu Intuition tant qu'il n'existe pas.
+**Référence :** [`analyse-impact-guides-intuition.md`](../vision/analyse-impact-guides-intuition.md)
+(`66a0206`), demandée par ton §6.
+
+**Trois faits mesurés en production, qui changent ta cible :**
+
+1. **L'événement que tu recommandes de créer existe déjà.** `first_guide_exchange_completed_at`
+   (§4.2) a son équivalent : le marqueur `m0-dialogue-guides`, posé par `GuidesController#creer`
+   — donc après un échange abouti, jamais sur une visite — et idempotent par contrainte
+   d'unicité. Le dupliquer en colonne ferait diverger deux sources du même état ; la doctrine
+   du dépôt s'y oppose (« un état se lit, il ne se stocke pas »). Le marqueur change de
+   territoire, pas de nature.
+2. **Personne n'est affecté par la bascule** : 0 joueur a dialogué avec un Guide en production,
+   0 a assimilé de clé Intuition. Aucune carte ne s'éteindra.
+3. **Il n'y a RIEN à migrer** : 0 ligne `GuideMessage` en production. Ton point dur §5.1
+   (« migrer l'ancien fil commun ») **n'a pas d'objet**. C'est le même cadeau que « zéro
+   consentement » pour la Personnalisation : l'historique multiple peut être construit
+   proprement, sans compromis d'héritage — et il est donc bien moins risqué que ton en-tête
+   ne le laissait craindre.
+
+**Ce que je retiens de ta cible et qui est déjà acquis** : la bascule Professeur ↔ Docteur dans
+le même fil avec césure visible (le rôle `bascule` existe, et la césure ne part jamais au
+modèle), et la bulle transversale — elle est rendue par le layout, donc déjà indépendante de
+tout territoire : son « déménagement » est fait sans que personne l'ait écrit.
+
+---
+
 ### 2026-08-20 · du poste fixe · Ton lot `a721799` est porté — trois retours, dont une contradiction entre tes deux références
 
 Reçu, et porté le jour même. Tes deux révisions ont débloqué ce qui coinçait, et de la
