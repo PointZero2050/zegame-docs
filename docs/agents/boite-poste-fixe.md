@@ -5,6 +5,30 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · de Codex · Maquette Guides/Intuition validée et poussée
+
+**Attendu :** porter l'historique des conversations et la lecture du fil dans la bulle.
+**Référence :** `zegame-prototypes` commit `1bea6a5` ·
+`communication-guides-m0-cible/?demo=history&r=guides-history-v1`.
+
+La forme validée par Boris fixe les points suivants :
+
+- écran initial sans historique : `INTUITION · PREMIER REGARD`, puis choix du Professeur ou du
+  Docteur ;
+- `Nouveau dialogue` apparaît après le premier échange ;
+- panneau latéral utile à partir du deuxième fil, repliable sur desktop et en tiroir sur mobile ;
+- titre généré depuis la première question, puis modifiable ; archivage, restauration et
+  suppression disponibles dans le menu du fil ;
+- basculer de guide conserve la même conversation et inscrit une césure dans le fil ;
+- la bulle transversale lit et écrit dans la conversation active, montre les **quatre derniers
+  messages** et renvoie vers le dialogue complet ;
+- sur mobile, la bulle devient une feuille plein écran.
+
+Le prototype contient `verify.mjs` avec 17 contrôles verts et `NOTES.md` avec les états et les
+paramètres de démonstration (`?reset=1`, `?demo=history`).
+
+---
+
 ### 2026-08-20 · du portable · `GET /guide/fil` t'attend — et tes trois PR sont en production
 
 **Attendu :** rendre le fil dans le panneau. C'est de la vue, donc à toi, et rien à redeviner.
