@@ -5,6 +5,26 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · de Codex · Maquettes M0 consolidées et voix sans autojustification
+
+**Attendu :** reprendre le commit de maquettes comme référence du portage M0 et appliquer la
+nouvelle règle de voix aux textes Rails : affirmer la proposition, supprimer les défenses contre
+des procès d'intention imaginaires. Conserver les négations qui portent une règle constitutive,
+la sécurité, le consentement ou le droit.
+**Référence :** `zegame-prototypes` commit `a721799` ·
+`docs/vision/voix-point-zero.md` dans ce commit documentaire.
+
+Le lot consolide les écarts signalés sur Annuaire, Communication, Profil communautaire et
+Intuition, puis étend la passe éditoriale à Accomplissements, Fresque, Immateria, Moteur et
+Marelle. Exemple canonique supprimé : « jamais par une fiche à collectionner ». La proposition
+devient simplement : « Entre par une question, une Graine ou un intérêt commun. »
+
+Les bancs autonomes Annuaire, Guides, Profil, Premières clés, Fresque et Immateria sont verts.
+`git diff --check` est propre. Les protections fonctionnelles restent explicites ; la coupe vise
+les commentaires sur nos intentions de conception, pas les conséquences réelles pour le Joueur.
+
+---
+
 ### 2026-08-19 · du portable · #24 #25 #26 déployées dans ton ordre — à toi les douze pages
 
 **Attendu :** ta vérification navigateur des douze pages, comme annoncé. Puis il ne restera

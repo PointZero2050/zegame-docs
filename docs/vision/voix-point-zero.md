@@ -16,6 +16,28 @@ Elle est :
 
 La cible n'est pas la transgression permanente. C'est une voix qui garde du jeu au sens mécanique et ludique : assez de friction pour réveiller, assez d'espace pour penser.
 
+### Affirmer sans se justifier
+
+> Ajout Codex - 2026-08-20. Arbitrage Boris : la voix Point Zéro dit ce qu'elle ouvre, ce qu'elle montre et ce qu'elle demande. Elle ne commente pas en permanence les procès d'intention qu'elle anticipe.
+
+Le texte public reste **sobre et incisif**. Il formule la proposition par son geste, son image ou son effet. Il évite les précautions défensives qui expliquent ce que le Point Zéro a choisi de ne pas faire.
+
+À supprimer ou réécrire :
+
+- les incises du type `pas une fiche à collectionner`, `pas un trophée`, `pas un test`, `pas une scène` lorsqu'elles servent seulement à prévenir une critique imaginaire ;
+- les constructions répétées `ce n'est pas X, c'est Y` et `il ne s'agit pas de X` ;
+- les commentaires méta sur les intentions de conception ;
+- les phrases qui rassurent avant même qu'une inquiétude ait été exprimée.
+
+Préférer :
+
+- une affirmation directe : `Chaque badge garde la mémoire d'un passage.` ;
+- une image concrète : `Ensemble, ils dessinent la constellation de ton Voyage.` ;
+- un verbe d'action : `Entre par une question, une Graine ou un intérêt commun.` ;
+- une phrase courte lorsqu'une idée suffit.
+
+Les négations restent légitimes lorsqu'elles portent une **règle constitutive**, une **conséquence de sécurité**, une **limite de consentement** ou une information juridique indispensable. Ainsi, `L'Oméga ne s'échange pas` décrit sa nature et doit rester. Dans ces cas, la formulation reste littérale et concise.
+
 ## 2. Références du Monde 0
 
 Les descriptions existantes utilisent trois mécanismes caractéristiques :
@@ -177,6 +199,7 @@ Avant de livrer un contenu Point Zéro :
 5. rendre au joueur une décision, une question ou un droit de contestation ;
 6. relire la microcopy sans l'humour pour vérifier que l'action reste claire ;
 7. supprimer une touche sur deux si le texte commence à faire son numéro.
+8. supprimer les défenses contre des critiques que personne n'a encore formulées ; affirmer la proposition à la place.
 
 ### Prompt de contrôle
 
@@ -186,6 +209,7 @@ poétique mais concrète, avec une collision discrète entre enjeu civilisationn
 et détail prosaïque. Évite la voix de coach, la félicitation automatique,
 les abstractions positives et la solennité continue. L'humour vise le dispositif
 ou nos contradictions partagées, jamais la vulnérabilité du joueur.
+Affirme ce que le dispositif propose sans expliquer ce qu'il a voulu éviter.
 Conserve une instruction parfaitement compréhensible.
 ```
 
@@ -198,4 +222,4 @@ Conserve une instruction parfaitement compréhensible.
 - La phrase la plus ambitieuse garde-t-elle un contact avec le réel ?
 - L'interface reste-t-elle claire lorsque la touche d'humour est retirée ?
 - Le visuel contient-il de la vie, de la friction ou une anomalie maîtrisée ?
-
+- Le texte affirme-t-il sa proposition sans répondre à un procès d'intention imaginaire ?
