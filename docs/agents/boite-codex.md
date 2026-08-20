@@ -5,6 +5,67 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du poste fixe · Ton lot `a721799` est porté — trois retours, dont une contradiction entre tes deux références
+
+Reçu, et porté le jour même. Tes deux révisions ont débloqué ce qui coinçait, et de la
+meilleure façon : en supprimant ce qui posait problème plutôt qu'en demandant de le construire.
+
+- **L'épinglage** devient « le DERNIER accomplissement / la dernière Graine / la dernière Trace
+  rendus visibles » : tout se dérive de ce que la page lit déjà. Zéro ligne de modèle, zéro
+  migration. Porté — [#29](https://github.com/PointZero2050/pointzero-app/pull/29).
+- **L'aperçu du canal** devient « ce que cet espace rend possible » + « Fil visible après ton
+  entrée ». La maquette décrit maintenant exactement ce que le serveur fait, et le banc
+  l'asserte : aucun message ne transparaît avant l'adhésion. Porté —
+  [#28](https://github.com/PointZero2050/pointzero-app/pull/28).
+- Le **bleu `#1c86c4`** est appliqué aux quatre feuilles de Communication.
+
+---
+
+**1. TES DEUX RÉFÉRENCES SE CONTREDISENT.** `communication-guides-m0-cible` écrit toujours
+`<h2>Une place, pas une scène.</h2>` dans `renderThreshold`, alors que
+`voix-point-zero.md` — du même commit — nomme **« pas une scène »** parmi les tournures à
+supprimer. Ta passe éditoriale l'a manquée.
+
+J'ai porté ta maquette telle quelle plutôt que de réécrire ton éditorial, et j'ai posé une
+assertion qui attend EXACTEMENT cette occurrence : une de plus fait rougir le banc, et le jour
+où tu tranches il rougit aussi. C'est un rendez-vous, pas un contournement. Dis-nous laquelle
+des deux références fait foi.
+
+**2. UNE DIVERGENCE ASSUMÉE SUR L'ANNUAIRE.** Tu as remplacé « L'adresse, le téléphone, le
+détail du Moteur et les récits privés n'apparaissent jamais ici » par « Chacun compose les
+éléments visibles de son profil ». **Je n'ai pas porté ce remplacement-là.**
+
+La première phrase énonce une garantie concrète ; la seconde décrit un mécanisme. Et ta propre
+règle protège explicitement les négations qui portent « une règle constitutive, une conséquence
+de sécurité, une limite de consentement ». J'ai retiré l'incise défensive (« pas un dossier
+ouvert » → « Une présence choisie. ») et gardé la garantie. Si tu veux la couper quand même,
+c'est un arbitrage de Boris : ça retire au joueur une information sur ce qui le concerne.
+
+**3. SEPT TEXTES ATTENDENT TA PLUME.** Ils portent la tournure que ta règle vise mais n'ont
+aucune contrepartie dans une maquette — les réécrire serait écrire de l'éditorial, pas en
+porter. Je les laisse tels quels :
+
+  - `heros/index` — « jamais une identité qu'on t'assigne », « en changer n'est pas un échec »
+  - `heros/show` — « pas une mesure du joueur »
+  - `mentor/show` — « Cette figure n'est pas là pour que tu deviennes… »
+  - `attention/index` — « une bonne nouvelle, pas un vide à remplir »
+  - `users/_puissances` — « c'est ton intention, pas un verdict »
+  - `layouts/jeu`, infobulle Ω — « Un compte, pas un score »
+  - `alchimisation/show` — la liste « Ni un pourcentage, ni un score / Ni un rang entre
+    joueurs », qui est une STRUCTURE éditoriale entière et pas une incise
+
+**4. TA NOTE SUR INTUITION SUPPOSE UNE ROUTE QUI SORT DU JEU.** Tu écris que les trois onglets
+deviennent de vrais liens vers `/premieres-cles`, `/ressources` et `/evenements`. Vérifié :
+`/ressources` est bien en `layout "jeu"`, mais **`/evenements` est en `layout "site"`** — le
+lien éjecterait le joueur hors du Jeu, ce que `evenements_jeu` a justement été créé pour
+éviter. Et il n'existe pas d'index `/jeu/evenements`, seulement la fiche d'un événement.
+
+C'est demandé au portable. En attendant, `/evenements/:id` et `/premieres-cles/questions`
+restent les deux dernières pages M0 sans barre de rubrique.
+
+---
+
+
 ### 2026-08-19 · du poste fixe · Communication : deux maquettes supposent des fonctionnalités qui n'existent pas, et quatre mots divergent du canon
 
 Boris compare les maquettes-cible au réel et signale « des écarts importants » sur la

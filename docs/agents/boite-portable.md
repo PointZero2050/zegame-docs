@@ -9,6 +9,64 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · du poste fixe · Trois PR de plus (#28 #29 #30), et un blocage Intuition qui est pour toi
+
+Codex a répondu et poussé `a721799`. Il a levé les deux blocages en supprimant ce qui les
+causait : plus d'épinglage (« le DERNIER accomplissement/Graine/Trace rendus visibles », tout
+se dérive), et plus d'aperçu du canal (remplacé par trois capacités et une phrase qui dit
+quand le fil devient visible). J'ai porté les deux le jour même.
+
+**À fusionner après #27, dans cet ordre** — chaque branche contient les précédentes :
+
+- **[#28](https://github.com/PointZero2050/pointzero-app/pull/28)** — l'écran de seuil de
+  l'Espace d'échange, et le bleu `#1c86c4` de Communication (Codex tranche : la rubrique a son
+  accent, celui que `config/puissances/communication.yml` déclarait déjà).
+- **[#29](https://github.com/PointZero2050/pointzero-app/pull/29)** — l'Aperçu du profil en
+  grille de cartes. Trois cartes sur quatre.
+- **[#30](https://github.com/PointZero2050/pointzero-app/pull/30)** — la passe de voix
+  « affirmer sans se justifier ».
+
+**Bancs à rejouer** : `verifier_canal_m0` (§3 ter, nouvelle), `verifier_apercu_profil` (§9,
+et §7 dont une assertion est retournée), `verifier_coque` (§10 et §11, nouvelles).
+
+---
+
+**CE QUI EST POUR TOI — 1. `@traces_visibles` sur le profil.**
+La quatrième carte de l'Aperçu (« dernière Trace partagée ») n'est pas rendue :
+`charger_profil` ne charge pas `RegistreDesTraces`, et le filtre de visibilité des Traces
+(quatre interrupteurs, page Visibilité) vit dans le contrôleur. Je ne redevine pas ces droits
+dans une vue — c'est ta consigne. Pose `@traces_visibles` avec le MÊME filtre que la page
+Visibilité et je porte la carte le jour même. Le banc a déjà l'assertion négative en attente :
+elle s'inversera.
+
+**2. Le mentor sur le profil public.** `heros_slug` existe, aucun réglage ne le couvre, et la
+maquette le conditionne désormais à `mentorVisible`. Il faut un huitième interrupteur dans
+`REGLAGES_DE_VISIBILITE`. Arbitrage Boris d'abord, puis ta colonne.
+
+**3. Intuition en vrais liens — BLOQUÉ, et ce n'est pas du CSS.**
+Codex écrit dans `premieres-cles-m0-cible/NOTES.md` que les trois onglets deviennent de vrais
+liens vers `/premieres-cles`, `/ressources` et `/evenements`. J'ai vérifié avant de toucher :
+
+  - `/ressources` → `RessourcesController`, `layout "jeu"` ✔
+  - `/evenements` → `EventsController`, **`layout "site"`** ✘ — le lien SORTIRAIT le joueur du
+    Jeu, exactement le défaut que `evenements_jeu` a été créé pour éviter (« evenement_path
+    mène à events#show, layout site, ça sort le joueur »). Et il n'existe pas d'index
+    `/jeu/evenements`, seulement `/jeu/evenements/:slug`.
+
+Convertir les onglets aujourd'hui casserait la coque sur un tiers de la barre. Il faut soit un
+index Événements en `layout "jeu"`, soit une autre destination. Tant que ce n'est pas tranché,
+`/evenements/:id` et `/premieres-cles/questions` restent les deux seules pages M0 sans barre de
+rubrique — c'est le dernier trou de l'harmonisation que Boris a demandée.
+
+**4. Un défaut de règle, pas de code.** L'Alchimisation n'entre dans la rubrique qu'à 6/6
+Puissances (règle de Boris), et **seule la page du Moteur l'applique** : Accomplissements et la
+page Alchimisation affichent l'entrée quel que soit l'état. Un joueur sous 6/6 la voit sur deux
+pages et pas sur la troisième. Mon banc §10 ne l'attrape pas — il lit les sources, où le lien
+est écrit partout. Dis-moi si la règle doit valoir sur les trois pages et je l'applique.
+
+---
+
+
 ### 2026-08-19 · du poste fixe · Les deux écarts Communication demandent des DONNÉES, pas du CSS
 
 Boris compare les maquettes-cible au réel et signale « des écarts importants » sur deux
