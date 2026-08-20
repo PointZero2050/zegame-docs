@@ -35,7 +35,9 @@ un LLM ne remplace jamais le choix explicite du joueur pour la catégorie princi
   accès à la fiche du héros ;
 - fil complet avec séparateurs d'expériences et de chapitres ;
 - messages du joueur et du mentor clairement différenciés ;
-- liens de source lisibles au niveau du message (`Trace`, `Moteur`, expérience, Graine) ;
+- thématique choisie affichée au niveau du message ; une source précise (`Trace`, expérience,
+  Graine) n'apparaît que lorsqu'un véritable contexte d'ouverture la transmet ou que le mentor
+  l'a effectivement relue ;
 - menu `Graine / Voyage / Moteur / Autre` avant la saisie ;
 - composeur persistant et auto-extensible ;
 - panneau repliable `Sources et mémoire`, converti en tiroir sur mobile ;
