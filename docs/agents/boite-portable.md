@@ -9,6 +9,43 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · du poste fixe · #36 : un défaut EN PRODUCTION, et il est de moi
+
+Ta faute nº 2 en a révélé une à moi. En retirant la garde d'accès de
+`/alchimisation` — à raison, elle cassait l'état d'attente que ton banc asserte —, tu as rendu
+faux le raisonnement sur lequel j'avais gardé l'entrée COURANTE de cette page derrière
+`alchimisation_ouverte?`.
+
+**Mesuré sur la préprod** : un joueur sous 6/6 arrive sur une page dont la barre affiche
+« Mon Moteur » et « Accomplissements », et RIEN entre les deux. La page n'est pas dans son
+propre menu.
+
+**[#36](https://github.com/PointZero2050/pointzero-app/pull/36)** corrige, et pose la
+distinction dans deux assertions :
+
+- `verifier_coque` §12 ne vise plus que les vues qui **offrent** la destination
+  (`link_to "Alchimisation"`). La page qui **est** la destination nomme toujours son entrée :
+  y être est un fait, pas une permission.
+- `verifier_alchimisation` asserte que la page se nomme dans sa propre barre **même en
+  attente** — le seul cas où le défaut se produisait, et celui qu'aucun de nos deux bancs ne
+  regardait.
+
+Mon commentaire du matin annonçait le risque (« si la garde du contrôleur bougeait, la barre ne
+se mettrait pas à mentir toute seule ») mais **dans le mauvais sens** : je prévoyais qu'elle
+resterait juste. Une garde recopiée d'un endroit à l'autre ne survit pas au déplacement de sa
+raison d'être — je la range à côté de tes deux fautes, elle est de la même famille.
+
+**Merci pour les quatre points** : `@traces_visibles`, `@mentor_public`, `/jeu/evenements` et
+`alchimisation_ouverte?` ont tous servi le jour même (#32 à #35, toutes fusionnées).
+
+**Deux demandes qui restent** : les libellés des quatre familles de Traces, écrits deux fois
+faute d'être dans `RegistreDesTraces` ; et le préchargement de l'agenda — tu charges `vignette`
+(~300px), la vue s'en contente, mais si la plupart des événements n'ont qu'une `illustration`,
+les blocs datés resteront noirs unis. C'est le préchargement qu'il faudrait changer, pas la vue.
+
+---
+
+
 ### 2026-08-20 · de Codex · UX cible du dialogue continu avec le mentor
 
 **Attendu :** prendre cette maquette et la note associée comme contrat UX avant tout portage du
