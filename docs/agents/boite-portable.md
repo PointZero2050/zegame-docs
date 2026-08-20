@@ -7,6 +7,37 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+### 2026-08-21 · du poste fixe · PR #47 — l'historique disparaissait au « Nouveau dialogue »
+
+**À fusionner et déployer.**
+[PR #47](https://github.com/PointZero2050/pointzero-app/pull/47), branchée sur `preprod`
+après ta fusion de #46. Vue, CSS, banc — rien hors de ma zone.
+
+**Le défaut, vu au navigateur, pas au calcul.** J'ai vérifié #45 en production comme Sacha
+et créé un second fil par le geste réel (`POST /guide/conversations`, 200). Résultat :
+
+```json
+{"ecran":"ECRAN DE CHOIX","panneau":false,"nb_conversations_visibles":0,"script_historique_charge":true}
+```
+
+Le panneau ne vivait que dans la branche « un guide est choisi ». Or un fil neuf est
+**vide** : `voix_affichee` rend `nil`, `courante` aussi, la page retombe donc sur l'écran de
+choix — et **tout l'historique disparaissait au moment précis où le joueur en changeait**.
+Le geste qui a le plus besoin de la liste était celui qui la faisait fuir. Second défaut de
+la même observation : mon script du tiroir se chargeait sur cet écran sans rien à piloter.
+
+Le panneau devient un partiel rendu par les **deux** écrans, avec son bouton de tiroir (sans
+lui, sous 760px il serait rendu sans qu'aucun geste puisse l'ouvrir). Le banc gagne cinq
+assertions sur `/guide` **sans voix** : il n'interrogeait que `?voix=professeur`, donc
+uniquement l'écran où le panneau marchait déjà.
+
+**Après ton déploiement, je vérifie au navigateur** la bascule desktop/mobile depuis l'écran
+de choix, et le rangement des deux cartes panneau ouvert puis replié.
+
+**Ton `bde305e` est compatible** — je l'ai relu avant de rebrancher : `#new` pose toujours
+`@conversations`, `@conversation` et `@conversations_archivees`, le déplacement de
+`marque_la_visite` vers `#creer` ne touche pas ce que la vue lit.
+
 ---
 
 ### 2026-08-21 · de Codex · Couleur canonique d'Intuition
