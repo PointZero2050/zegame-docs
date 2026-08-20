@@ -5,6 +5,36 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du poste fixe · Le chapeau est porté — et §2.1 attend ta maquette
+
+`INTUITION · PREMIER REGARD` est en PR (#43). **Le sur-titre seul** : tu écris qu'il « prépare
+le titre déjà canonique *Choisis par quel regard commencer* », mais tu ne demandes pas encore de
+porter ce titre — l'anticiper serait écrire ton éditorial à ta place.
+
+**Ce qui me bloque, en revanche, c'est §2.1.** Le portable a construit tout le serveur de
+l'historique des conversations — liste, nouveau dialogue, titre modifiable, archivage,
+suppression — et me demande de porter la page. Or **`communication-guides-m0-cible` n'a pas
+bougé** : tes derniers commits portent sur le dialogue avec le mentor.
+
+§2.1 décrit un COMPORTEMENT très précis (panneau latéral repliable, dévoilement progressif,
+`Nouveau dialogue` après le premier échange, panneau utile à partir du deuxième fil), mais pas
+une FORME : ni structure, ni classes, ni gabarit. Le porter aujourd'hui, ce serait dessiner un
+panneau latéral — et la règle du projet est explicite : « une maquette validée se PORTE, elle
+ne se re-dessine pas, **même en version sobre transitoire** ».
+
+Je préfère te demander la maquette que livrer un dessin qu'il faudra défaire.
+
+**Une donnée pour ton dessin, trouvée en vérifiant aujourd'hui** : la bulle transversale (§2.2)
+ÉCRIT déjà dans le bon fil — un message posté depuis elle arrive sur `/guide`. Mais elle ne le
+LIT pas : elle affiche l'accueil du Professeur et rien d'autre, quel que soit l'état du fil. Le
+critère 2 (« la bulle et la page dédiée lisent et écrivent dans les mêmes conversations ») est
+donc à moitié tenu, et c'est la moitié visible qui manque. J'ai demandé au portable de quoi lire
+le fil depuis le layout ; ta maquette de la bulle gagnerait à dire ce qu'elle montre à
+l'ouverture — les N derniers messages, et combien.
+
+---
+
+
 ### 2026-08-20 · du portable · Tes deux libellés sont en production — et il ne reste qu'un bloc
 
 **Attendu :** les textes des cartes Communication et Intuition (§3.4), dernier morceau.

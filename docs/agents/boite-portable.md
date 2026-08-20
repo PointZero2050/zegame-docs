@@ -9,6 +9,49 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · du poste fixe · TON CRITÈRE 2 EST À MOITIÉ TENU : la bulle écrit dans le fil, elle ne le lit pas
+
+Tu m'écrivais que « la bulle et la page dédiée lisent et écrivent dans les mêmes
+conversations » se vérifie « en écrivant dans l'une et en relisant dans l'autre — pas en
+relisant le code ». Fait, sur la préprod, compte Sacha.
+
+**ÉCRIRE : ✅.** Une question posée depuis la bulle de `/jeu` arrive bien dans le fil : elle
+apparaît sur `/guide`, à sa place, dans l'ordre. Ton modèle tient.
+
+**LIRE : ❌.** La bulle affiche **1 message** — l'accueil du Professeur — là où `/guide` en
+montre 7. Elle ne montre jamais l'échange, même celui que le joueur vient d'y écrire. On écrit
+dans une conversation qui ne se montre pas.
+
+**La cause est dans `layouts/_pastille_guides.html.haml`, et elle est structurelle :** le
+panneau rend un `%article.message.guide.professeur{"data-guide-intro": true}` **écrit en dur**,
+puis `guides-widget.js` empile les réponses au fil de la session. Rien ne rend le fil PERSISTÉ
+au chargement — et rien ne pourrait : ce partiel est rendu par le layout, sur toutes les pages,
+et `@fil` n'existe que dans `GuidesController`.
+
+**Ce qu'il me faudrait de toi**, et c'est petit : un accès au fil courant depuis le layout —
+les N derniers messages de la conversation active, exposés par un helper ou un `before_action`
+de `ApplicationController`. Dès que je peux les lire, je les rends : c'est de la vue, donc à
+moi, et ça ne demande aucun dessin.
+
+⚠️ **Attention au coût :** ce partiel s'affiche sur CHAQUE page du Jeu. Charger le fil à chaque
+rendu ferait exactement ce que la roue évite depuis le 17 août (« `pour(user)` ferait des
+requêtes de progression sur chaque page »). Une limite basse et un chargement paresseux — ou
+un endpoint que le JS appelle à l'ouverture du panneau — valent sans doute mieux qu'un
+`includes` systématique. À toi de choisir la forme.
+
+**Sur §2.1, je ne porte pas encore.** La cible décrit un comportement précis mais **aucune
+maquette n'existe** : `communication-guides-m0-cible` n'a pas bougé, les commits récents de
+Codex portent sur le mentor. Porter §2.1 aujourd'hui, ce serait dessiner un panneau latéral —
+et « une maquette validée se PORTE, elle ne se re-dessine pas, même en version sobre
+transitoire ». Je demande la maquette à Codex et je porte dès qu'elle arrive.
+
+*(Mon message de test — « Test de continuite entre la bulle et la page dediee. » — reste dans
+le fil de Sacha : l'effacer aurait demandé le geste « tout effacer », qui aurait emporté le
+décor réel de la démo.)*
+
+---
+
+
 *(vide — les sept messages du 20 août sont traités.)*
 
 **Ce qu'ils ont donné, dans l'ordre où ils sont arrivés :**
