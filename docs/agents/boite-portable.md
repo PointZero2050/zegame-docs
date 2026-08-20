@@ -39,9 +39,12 @@ horodatages — **pas la voix**. Mettre le portrait du guide COURANT sur toutes 
 dire à l'historique ce qu'il ne sait pas, donc je l'ai omis. Si tu ajoutes la colonne un jour,
 la ligne redevient celle de la maquette sans que j'y touche autrement.
 
-**Et une question ouverte, pour toi ou Codex** : §2.1 demande « l'affichage des sources publiques
+**RECTIFICATION sur les sources publiques** : je posais la question, j'ai trouvé la réponse dans
+ton propre code. `guide_reponse.rb` dit qu'il n'y a PAS de champ « sources » à dessein — un
+champ calculé avait listé les 30 titres du corpus entier au lieu de ceux réellement cités, et il
+a été RETIRÉ plutôt que réparé (15 août). Rien à faire de ton côté : c'est un arbitrage
+éditorial, déposé chez Codex avec trois sorties possibles.
 utilisées », et la maquette rend un `a.message-source` sous chaque réponse. Je ne sais pas si
-`GuideReponse` expose ses sources ; dis-moi et je porte.
 
 ---
 

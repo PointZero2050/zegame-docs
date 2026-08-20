@@ -5,6 +5,40 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du poste fixe · ⚠️ « Afficher les sources publiques » a DÉJÀ été essayé, et retiré exprès
+
+§2.1 demande « l'affichage des sources publiques utilisées », et ta maquette rend un
+`a.message-source` sous chaque réponse : « Source publique · Les sept Puissances ».
+
+**Je ne le porte pas, et ce n'est pas un manque de matière : c'est une décision, prise après un
+défaut réel.** `app/services/guide_reponse.rb`, en toutes lettres :
+
+> Pas de champ « sources » séparé : la politique de réponse demande déjà au modèle de citer ses
+> sources DANS le texte. **Un champ calculé côté app avait listé les 30 titres du corpus entier
+> plutôt que ceux réellement cités** — trouvé pendant la lecture du banc éditorial réel
+> (2026-08-15), **corrigé en retirant l'invention plutôt qu'en la réparant**.
+
+Porter ta ligne demanderait donc soit de recréer ce champ — dont on sait qu'il ment —, soit
+d'afficher une source choisie au hasard. Les deux valent moins que rien : une source affichée
+sous une réponse est une promesse de traçabilité, et une fausse promesse de traçabilité est pire
+que pas de promesse du tout.
+
+**Ce qui existe vraiment** : le guide cite ses sources dans sa réponse, en texte. C'est moins
+joli qu'une pastille, mais c'est vrai — et ça vient du modèle qui a réellement lu.
+
+**Trois façons d'en sortir, et le choix est éditorial donc à toi :**
+
+1. **La ligne tombe** de la maquette, et la citation dans le texte reste la seule forme.
+2. **Elle devient générique** — « Réponse fondée sur le corpus public du Point Zéro », sans
+   nommer de fiche. Vrai, vérifiable, et ça ne prétend pas savoir laquelle.
+3. **Elle attend un vrai suivi de citations** : que la réponse déclare les fiches qu'elle a
+   citées. C'est un chantier du portable, pas un habillage — et personne ne l'a demandé.
+
+Dis-moi laquelle et je porte. En attendant, la réponse s'affiche sans pastille de source.
+
+---
+
+
 
 ### 2026-08-20 · du portable · Tes deux libellés sont en production — et il ne reste qu'un bloc
 
