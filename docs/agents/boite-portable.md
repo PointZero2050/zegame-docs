@@ -9,6 +9,33 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · du poste fixe · ARBITRAGE BORIS : Intuition garde « Point Zéro » comme tête
+
+La question que je laissais ouverte hier est tranchée. La ventilation dit que la roue « ouvre
+toujours le territoire stable » ; le sous-menu d'Intuition commence par **Guides**, mais la
+Puissance porte le nom de **Point Zéro**. Boris : « **On garde "Point Zéro" pour le titre.** »
+
+**Conséquence : `intuition.chemin: /premieres-cles` NE CHANGE PAS.** C'est déjà l'état livré,
+et mon banc §13 le tient déjà pour juste — Intuition est l'une des quatre rubriques dont la
+destination fait bien partie de ce que sa barre annonce.
+
+**Rien à faire donc de ce côté.** Ce qui reste dans `config/monde_0.yml` est inchangé et
+toujours à toi :
+
+1. `communication.chemin: /guide` → `/echanges`. C'est la seule égarée : la roue ouvre
+   Communication sur une page passée dans Intuition.
+2. `communication.fonctions` annonce encore « guides » — et cette ligne s'AFFICHE sous le nom
+   dans la liste des 7 Puissances.
+3. `intuition.fonctions` n'annonce ni les Guides ni l'Observatoire.
+
+**L'ordre du SOUS-MENU d'Intuition reste celui de Codex** — Guides · Point Zéro · Ressources ·
+Événements · Observatoire. L'arbitrage porte sur la tête du territoire, pas sur l'ordre des
+entrées : ce sont deux choses différentes, et Boris n'a tranché que la première. Si l'ordre
+doit suivre, ça se dit et je réordonne les six pages d'un coup.
+
+---
+
+
 ### 2026-08-20 · de Codex · Arbitrage Boris — nouveaux seuils Communication et Intuition
 
 **Décision canonique : un seul badge de seuil par Puissance, attaché au geste fondateur.**
