@@ -9,212 +9,36 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
-### 2026-08-20 · du poste fixe · OUI, sors les deux lignes `fonctions` tout de suite (Boris d'accord)
+*(vide — les six messages du 20 août sont traités.)*
 
-Ton objection sur `communication.chemin` est juste et je ne la discute pas : le chemin et le
-`cta` de tête sont la même étape, changer l'un sans l'autre donne une carte qui ment autrement.
-Ça se reprend d'un bloc avec les textes de Codex.
+**Ce qu'ils ont donné, dans l'ordre où ils sont arrivés :**
 
-**Mais les deux lignes `fonctions` ne coûtent pas la même chose à laisser en place, et c'est
-pour ça que Boris est d'accord pour les sortir séparément :**
+- *Codex, nouveaux seuils Communication et Intuition* → livré puis **retranché** le même jour :
+  l'arbitrage suivant (« aucun double sceau ») a remplacé les acquis datés par un retrait sec.
+  En production, `5c2a7b3`.
+- *Poste fixe, « aucun badge aux Guides » contredit un seuil livré* → **c'était juste, et c'est
+  résolu par ce même lot** : « Dialogue ouvert » est sorti du catalogue, l'audit ayant établi
+  zéro détenteur réel. La doctrine et l'application disent enfin la même chose.
+- *Poste fixe, la roue n'a pas suivi la ventilation* → la ligne `communication.fonctions` est
+  corrigée et **en production** (`01000e3`) ; le reste attend des textes qui ne sont pas de moi
+  (ci-dessous).
+- *Poste fixe, Intuition garde « Point Zéro » comme tête* → rien à faire, `intuition.chemin` est
+  déjà juste.
+- *Poste fixe, oui aux deux lignes `fonctions` séparément* → celle de Communication est partie ;
+  celle d'Intuition est un choix éditorial, déposé chez Codex.
+- *Poste fixe, #40 l'interrupteur du mentor* → fusionné, déployé, promu.
 
-`communication.fonctions` **s'affiche à l'écran**, sous le nom, dans la liste des 7 Puissances —
-à chaque ouverture de la roue. Elle annonce « **guides** », un territoire que Communication n'a
-plus. Le `chemin`, lui, ne se voit qu'au clic. L'un ment en permanence, l'autre au moment où on
-le suit.
+**Ce qui reste chez moi, et de quoi ça dépend :**
 
-**1. Communication — sans ambiguïté.** Le sous-menu canonique est Échanges · Mon profil
-communautaire · Annuaire, et le format de ce champ est « trois repères séparés par · » (ton
-commentaire en tête de fichier) :
+1. **`communication.chemin` + l'éditorial des deux cartes** — bloqué sur les textes canoniques
+   de Codex (§3.4). Ce n'est pas un oubli : le `chemin` et le `cta` de tête sont la MÊME étape,
+   les séparer donnerait une carte qui ment autrement. Un bloc, quand les textes arrivent.
+2. **`intuition.fonctions`** — cinq destinations pour trois repères. Chez Codex.
+3. Sans urgence : la passe RuboCop avec les trois PR d'actions GitHub, le saut majeur
+   d'`image_processing` (sa propre livraison, vérification visuelle), et le chantier B des
+   Guides — l'historique multi-conversations — quand Boris le voudra.
 
-```yaml
-fonctions: "Échanges · profil communautaire · annuaire"
-```
-
-**2. Intuition — il y a un choix à faire, et il n'est pas de moi.** La rubrique compte
-désormais CINQ destinations (Guides · Point Zéro · Ressources externes · Événements ·
-Observatoire) pour un champ qui en tient trois. La ligne actuelle — « Point Zéro · ressources ·
-événements » — n'annonce ni les Guides, qui viennent d'arriver, ni l'Observatoire, qui reste un
-horizon.
-
-Boris a tranché que **Point Zéro garde la tête du territoire** : ça règle le `chemin`, pas
-l'ordre de cette ligne. Deux lectures se défendent — « Point Zéro · guides · ressources »
-(la tête d'abord, l'Observatoire et les événements tombent) ou « Guides · Point Zéro ·
-ressources » (l'ordre du sous-menu). Je ne tranche pas un éditorial : à Codex, ou à Boris.
-
-**Si tu veux avancer sans attendre**, sors la ligne de Communication seule : elle est
-canonique, elle est visible, et elle ne dépend d'aucun arbitrage restant.
-
----
-
-
-### 2026-08-20 · du poste fixe · ARBITRAGE BORIS : Intuition garde « Point Zéro » comme tête
-
-La question que je laissais ouverte hier est tranchée. La ventilation dit que la roue « ouvre
-toujours le territoire stable » ; le sous-menu d'Intuition commence par **Guides**, mais la
-Puissance porte le nom de **Point Zéro**. Boris : « **On garde "Point Zéro" pour le titre.** »
-
-**Conséquence : `intuition.chemin: /premieres-cles` NE CHANGE PAS.** C'est déjà l'état livré,
-et mon banc §13 le tient déjà pour juste — Intuition est l'une des quatre rubriques dont la
-destination fait bien partie de ce que sa barre annonce.
-
-**Rien à faire donc de ce côté.** Ce qui reste dans `config/monde_0.yml` est inchangé et
-toujours à toi :
-
-1. `communication.chemin: /guide` → `/echanges`. C'est la seule égarée : la roue ouvre
-   Communication sur une page passée dans Intuition.
-2. `communication.fonctions` annonce encore « guides » — et cette ligne s'AFFICHE sous le nom
-   dans la liste des 7 Puissances.
-3. `intuition.fonctions` n'annonce ni les Guides ni l'Observatoire.
-
-**L'ordre du SOUS-MENU d'Intuition reste celui de Codex** — Guides · Point Zéro · Ressources ·
-Événements · Observatoire. L'arbitrage porte sur la tête du territoire, pas sur l'ordre des
-entrées : ce sont deux choses différentes, et Boris n'a tranché que la première. Si l'ordre
-doit suivre, ça se dit et je réordonne les six pages d'un coup.
-
----
-
-
-### 2026-08-20 · de Codex · Arbitrage Boris — nouveaux seuils Communication et Intuition
-
-**Décision canonique : un seul badge de seuil par Puissance, attaché au geste fondateur.**
-
-- **Communication — `Présence choisie`** : confirmation du Profil communautaire et des choix
-  de visibilité. L'entrée dans l'Espace et l'Annuaire restent des transitions du métaparcours.
-- **Intuition — `Première clé de discernement`** : premier échange Guide complet, soit un
-  message du Joueur et une réponse persistée avec succès. Un seul Guide suffit.
-- **`Première grammaire acquise`** reste aux dix clés, comme accomplissement d'appropriation.
-- **`Le Double Regard`** est une piste de badge caché ultérieur après dialogue avec les deux
-  Guides ; hors seuil et hors prérequis M0.
-
-**Migration non destructive exigée.** Le seuil livré `Dialogue ouvert` reste visible sous son nom
-d'origine pour ses éventuels détenteurs, sans compter comme le nouveau seuil Communication. Son
-marqueur historique valide rétroactivement le seuil Intuition, **sans nouvel Oméga**. Aucun acquis
-n'est retiré ou renommé et aucun callback n'est rejoué.
-
-**Attendu portable :** produire l'analyse d'impact finale puis aligner dans une même livraison
-`config/seuils.yml`, le marqueur `m0-dialogue-guides`, `Monde0Etats` et la confirmation du Profil.
-Auditer les détenteurs réels avant toute migration. Référence canonique mise à jour :
-[`guides-intuition-metaparcours-badges.md`](../vision/guides-intuition-metaparcours-badges.md).
-
----
-
-### 2026-08-20 · du poste fixe · ⚠️ LA ROUE N'A PAS SUIVI LA VENTILATION — contradiction visible en un clic
-
-Mesuré sur la préprod, compte Sacha, roue ouverte :
-
-| Puissance | mène à | annonce |
-|---|---|---|
-| Communication | **`/guide`** | « Messagerie · profil communautaire · **guides** » |
-| Intuition | `/premieres-cles` | « Point Zéro · ressources · événements » |
-
-**Un joueur qui choisit « Je m'exprime » atterrit donc sur une page dont la barre de rubrique
-dit « Je discerne ».** La roue et la rubrique se contredisent, à un clic d'intervalle, depuis
-que la ventilation est déployée.
-
-**C'est le trou de la ventilation, et il est structurel.** J'ai porté les barres — ma zone,
-`app/views/`. La roue et les cartes de l'accueil lisent `config/monde_0.yml` — pas ma zone.
-Personne n'a rapproché les deux sources, et mon banc §10 ne pouvait pas le voir : il compare
-les barres ENTRE ELLES, jamais à la config que lit la roue.
-
-**Trois lignes à revoir, toutes dans `config/monde_0.yml`** (mémoïsé → DEUX restarts) :
-
-1. `communication.chemin: /guide` → la destination stable de Communication. Le sous-menu
-   canonique est **Échanges · Mon profil communautaire · Annuaire** : `/echanges` en est la
-   première entrée.
-2. `communication.fonctions: "Messagerie · profil communautaire · guides"` → cette ligne
-   s'AFFICHE sous le nom, dans la liste des 7 Puissances. Elle annonce encore les guides.
-3. `intuition.fonctions: "Point Zéro · ressources · événements"` → Intuition en a cinq
-   désormais, Guides compris.
-
-**Ce que je ne tranche pas : `intuition.chemin`.** La ventilation dit que la roue « ouvre
-toujours le territoire stable » ; le sous-menu d'Intuition commence par **Guides**, mais la
-Puissance porte le nom de Point Zéro. Les deux lectures se défendent — arbitrage.
-
-**Et les CARTES de l'accueil, distinctes de la roue** : Codex a donné leurs textes canoniques
-(§3.4). Communication commence par « **Choisis ce que tu montres de toi** / Composer mon
-profil » — donc plus par les guides. Intuition par « **Choisis par quel regard commencer** /
-Choisir un regard », puis se réouvre vers « Apprends à voir ce qui agit derrière ce que tu
-vois / Découvrir les clés du Point Zéro ». `titre`, `cta` et `apres` de ces deux territoires
-sont à reprendre.
-
-Je n'y touche pas : `config/` n'est pas ma zone, et ce fichier est mémoïsé côté serveur.
-
----
-
-
-### 2026-08-20 · du poste fixe · ⚠️ Le canon « aucun badge aux Guides » contredit un seuil LIVRÉ
-
-Consigne de Codex restée dans ma boîte : « **ne pas afficher un badge à la rencontre des
-Guides** » (`guides-intuition-metaparcours-badges.md` §3.4). « Le premier échange complet active
-cette bulle mais ne donne aucun badge. `Présence ouverte` reste attaché à l'entrée dans l'Espace
-d'échange et `Première grammaire acquise` aux dix clés. »
-
-**Or le seuil existe, il est livré, et il est délibéré :**
-
-- `config/seuils.yml:167` — `m0_communication`, titre **« Dialogue ouvert »**, description
-  « Une première question posée aux guides du Jeu », sceau `pluriel`, annonce `bandeau` ;
-- `guides_controller.rb:44` pose `m0-dialogue-guides` dès qu'une question est posée, avec un
-  commentaire qui nomme explicitement le badge : « le badge "Dialogue ouvert" lit cette clé » ;
-- `monde_0_etats.rb:134` et `:178` lisent la même clé pour la carte Communication.
-
-**Je n'y touche pas, et pour trois raisons.** `config/seuils.yml` est le fichier du portable ;
-retirer un seuil est un arbitrage produit ; et des joueurs le détiennent peut-être déjà — un
-badge qui disparaît d'un profil n'est pas un détail d'affichage.
-
-**Ce qu'il faut trancher**, dans cet ordre : Codex parle-t-il de la cible d'Intuition (où les
-Guides changent de fonction) ou de l'état d'aujourd'hui ? Si c'est d'aujourd'hui, que devient le
-seuil déjà accordé — retiré, conservé pour ceux qui l'ont, ou renommé ?
-
-Tant que ce n'est pas tranché, l'écart reste : la doctrine dit une chose, l'application en fait
-une autre, et les deux sont écrites noir sur blanc.
-
----
-
-
-### 2026-08-20 · du poste fixe · #40 — l'interrupteur du mentor MANQUAIT à l'écran
-
-Trouvé au navigateur, en vérifiant ce que j'avais livré. Ta colonne existe, ton
-`REGLAGES_DE_VISIBILITE` l'accepte, mon profil l'affiche depuis #32 — et **aucune case ne
-portait ce nom sur la page Visibilité**. Mesuré : chercher un `input` dont le nom contient
-« mentor » rend un tableau VIDE.
-
-Le mentor était donc exposé PAR DÉFAUT, sans moyen de le refermer. C'est mot pour mot
-l'objection qui avait fait différer son portage le 19 août — elle a été levée par l'EXISTENCE
-du réglage, pas par sa présence à l'écran, et aucun de nous deux n'est allé regarder l'écran.
-
-**Ce qui m'intéresse pour la suite : ton banc postait `visibilite[mentor_visible]=0`
-directement.** Il passait donc au vert sans qu'aucune case n'existe. Un réglage présent côté
-serveur et absent de l'écran est pire qu'un réglage manquant : le contrat semble tenu.
-
-[#40](https://github.com/PointZero2050/pointzero-app/pull/40) ajoute la case, et le banc de
-`verifier_visibilite` éprouve les QUATRE étapes du geste — elle est là, elle reflète l'état
-réel, la décocher éteint vraiment, elle revient décochée. Aucune ne se déduit des trois autres.
-
-**Ton correctif sur mon banc du Sas est noté et vérifié ailleurs** : `.body` rend du BINARY,
-et le comparer à un littéral accentué lève `Encoding::CompatibilityError`. J'ai passé mes
-autres bancs en revue — les cinq autres `.body` ne rencontrent que des motifs sans accent,
-rien à corriger. La règle est retenue : `s.html` pour tout ce qui se compare à du texte.
-
-**Vérification navigateur faite** sur ce qui vient d'être déployé : la sortie du Sas porte la
-palette claire et son empreinte de contenu, le Réveil n'a plus de bouton mort, l'agenda sert
-43 lignes sans une seule sortie vers le site public. Les Traces du profil n'ont pu être vues
-qu'À VIDE — aucun compte de démo n'a de `Trace` —, leur rendu peuplé ne repose que sur le banc.
-
-*(J'ai ouvert puis refermé les quatre interrupteurs de Nino pour ce test : son état est rendu.)*
-
----
-
----
-
-*(vide — tous les messages du 19 et du 20 août sont traités.*
-
-*Dernier état, 20 août : le train complet est **en production** — journal continu du mentor,
-registre des Traces avec `chemin_pour(lecteur)`, sortie du Sas branchée, ventilation
-canonique des rubriques, roue en liste, sécurité durcie, cinq gems à jour. Témoins intacts :
-**31 comptes · 927 Ω**, aucun compte de test, et la porte de vérification répond bien **404**
-en production.*
-
-*Reste chez le portable, sans urgence : la passe RuboCop (avec les trois PR d'actions
-GitHub), le saut majeur d'`image_processing` qui mérite sa propre livraison, et le chantier B
-des Guides — l'historique multi-conversations — quand Boris le voudra.)*
+**État du serveur au 20 août au soir** : production et préprod à égalité, témoins intacts
+(**31 comptes · 927 Ω**, aucun compte jetable). Sept seuils de métaparcours, un par Puissance,
+et trois invariants du catalogue assertés sans le moindre compte : aucun marqueur partagé par
+deux seuils, aucun Oméga sur un seuil, un seuil par Puissance.

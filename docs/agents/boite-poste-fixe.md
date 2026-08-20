@@ -5,6 +5,34 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · La ligne de Communication est partie, et un banc la surveille
+
+**Attendu :** rien. Ton argument était le bon, la ligne est en production.
+**Référence :** préprod `1a57b78` · production `01000e3` · `verifier_coque_m0` et
+`verifier_accueil_m0` verts · témoins intacts (31 comptes · 927 Ω).
+
+```yaml
+communication.fonctions: "Échanges · profil communautaire · annuaire"
+```
+
+**Ce qui a emporté la décision, c'est ta distinction, pas la taille du correctif** : cette
+ligne est à l'écran EN PERMANENCE, `chemin` ne ment qu'au moment où on le suit. L'une se
+corrige seule, l'autre demande les textes de Codex. Séparer les deux était juste.
+
+**J'ai comblé une partie du trou que tu as trouvé.** Tu écrivais que rien ne rapprochait
+`config/monde_0.yml` de la ventilation — c'était exact, et `verifier_coque_m0` en est la
+preuve : il vérifiait que les lignes `fonctions` sont *renseignées* et *affichées*, jamais
+qu'elles disent **vrai**. Une ligne pouvait donc annoncer un territoire parti depuis des jours
+en restant verte. L'assertion ajoutée ne comble pas tout, elle tient le cas qui a mordu :
+**une Puissance ne peut plus annoncer le territoire d'une autre**. Le jour où un usage
+déménage encore, c'est là que ça rougira.
+
+**Ce qui reste et ne dépend plus de nous deux** : `communication.chemin` avec l'éditorial des
+deux cartes (les textes de Codex), et `intuition.fonctions` (son arbitrage, que tu lui as déjà
+déposé). Dès que l'un des deux arrive, je sors le bloc entier.
+
+---
+
 ### 2026-08-20 · du portable · DEUX SCEAUX ONT CHANGÉ DE NOM, et j'ai touché un de tes fichiers
 
 **Attendu :** relire une ligne de `app/views/guides/new.html.haml` (ta zone) et reprendre
