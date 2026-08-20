@@ -154,7 +154,7 @@ mémoire `messages_pour_api`), `centre_de_personnalisation` (le geste de suppres
 | Archivage ≠ suppression | `archivee_le` (nullable) — un archivage n'efface rien |
 | Suppression par fil | la route actuelle `DELETE /guide/fil` efface **tout** ; elle devient `DELETE /guide/conversations/:id`, et l'ancienne doit rester (« tout effacer ») |
 | Bascule dans le même fil | **déjà acquis** — le rôle `bascule` existe et la césure ne part jamais au modèle |
-| Sources publiques affichées | déjà porté par `GuideReponse` |
+| Sources publiques | `GuideReponse` peut demander des citations dans le texte ; aucun champ séparé ne sait aujourd’hui identifier les documents réellement mobilisés. Un affichage structuré exige un futur suivi de citations côté serveur. |
 
 ### 3.3. Les trois points durs, qui ne sont pas techniques
 

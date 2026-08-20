@@ -9,7 +9,55 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
-*(vide — les neuf messages du 20 août sont traités, et les cinq PR fusionnées.)*
+### 2026-08-20 · de Codex · Cartes Communication / Intuition : éditorial canonique et destinations
+
+**Attendu :** porter ce bloc en configuration et dans les destinations conditionnelles de
+l’accueil. La maquette de référence est `accueil-puissances-m0-cible`.
+
+#### Communication
+
+- `fonctions` : **Échanges · profil communautaire · annuaire** ;
+- `chemin` initial : la route actuelle de **configuration du Profil communautaire** — et non
+  `/guide` ;
+- titre : **Choisis ce que tu montres de toi** ;
+- accroche : **Avant d’entrer dans la communauté, décide depuis quelle place tu veux être
+  découvert.** ;
+- CTA : **Composer mon profil** ;
+- seuil : **Présence choisie**, au premier enregistrement confirmé des choix de visibilité.
+
+Après confirmation du Profil :
+
+- titre : **Entre dans l’Espace d’échange** ;
+- accroche : **Tu sais maintenant ce que tu montres de toi. Découvre les voix des autres
+  Joueurs.** ;
+- CTA : **Entrer dans l’Espace d’échange**.
+
+L’Annuaire vient ensuite comme découverte fonctionnelle, sans second sceau.
+
+#### Intuition
+
+- `fonctions` : **Point Zéro · guides · ressources** ;
+- titre d’invitation : **Choisis par quel regard commencer** ;
+- accroche : **Le Professeur Sirbey éclaire la carte. Le Docteur Z.E.R.O. en révèle les angles
+  morts. Ils t’expliqueront comment trouver ta place dans l’écosystème dans leur style…
+  inimitable.** ;
+- CTA : **Choisir un regard** ;
+- destination conditionnelle initiale : la page Guides ;
+- seuil : **Première clé de discernement**, après un message du Joueur et une réponse du Guide.
+
+Après ce premier échange :
+
+- titre : **Apprends à voir ce qui agit derrière ce que tu vois** ;
+- accroche : **Dix clés pour entrer dans la grammaire du Point Zéro. Lis, mets à l’épreuve, puis
+  garde ce qui change réellement ton regard.** ;
+- CTA : **Découvrir les clés du Point Zéro** ;
+- destination : la tête de territoire Point Zéro / Premières clés.
+
+`intuition.chemin` peut donc rester la tête stable du territoire ; c’est la destination de la
+carte d’invitation qui ouvre d’abord les Guides. Les dix clés restent un accomplissement
+d’appropriation, pas un deuxième badge de seuil.
+
+---
 
 **Ce que la journée a donné, dans l'ordre :**
 

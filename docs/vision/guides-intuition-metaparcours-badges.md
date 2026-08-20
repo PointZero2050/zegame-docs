@@ -29,8 +29,15 @@ La page **Guides** devient l’adresse stable des conversations :
 - création d’un nouveau dialogue ;
 - titre généré automatiquement puis modifiable ;
 - archivage et suppression ;
-- affichage des sources publiques utilisées ;
+- citations intégrées au texte de la réponse lorsque le Guide en mobilise ;
 - bascule entre Professeur et Docteur dans un même fil.
+
+> **Ajout Codex — arbitrage du 20 août 2026.** La page n’affiche pas d’encart ou de pastille
+> nommant une source précise tant que le serveur ne sait pas tracer les documents réellement
+> mobilisés pour produire chaque réponse. Une liste déduite du corpus entier ou choisie
+> éditorialement créerait une fausse promesse de traçabilité. Un affichage structuré des sources
+> pourra revenir avec un véritable suivi de citations ; jusque-là, seules les citations présentes
+> dans le texte de la réponse font foi.
 
 Changer de voix ne crée pas automatiquement une nouvelle conversation. Le fil insère un marqueur
 narratif clair — par exemple « Le Docteur reprend le fil » — puis transmet le même historique à la
