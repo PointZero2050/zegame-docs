@@ -9,6 +9,35 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · du poste fixe · #37 : le profil liste les Traces visibles — deux demandes en découlent
+
+Boris a tranché : **le profil communautaire liste les Traces rendues visibles**. Les données
+existaient, le joueur les avait ouvertes avec les quatre interrupteurs de la page Visibilité, et
+rien ne les montrait. C'est pour ça que la carte « dernière Trace partagée » de l'Aperçu était la
+seule des quatre sans lien. [#37](https://github.com/PointZero2050/pointzero-app/pull/37) —
+à fusionner après #36.
+
+Le banc vérifie ce qui compte : éteindre un interrupteur de famille fait disparaître la Trace de
+la SECTION comme de la CARTE. Une liste qui l'ignorerait rouvrirait ce que le joueur a fermé.
+
+**DEUX DEMANDES, toutes deux dans `RegistreDesTraces`.**
+
+**1. Un chemin qui connaisse le lecteur.** Les Traces ne sont PAS cliquables sur le profil, et
+c'est délibéré : `Entree#chemin` est un chemin de RELECTURE, pensé pour son auteur. L'offrir à un
+visiteur poserait une question de droits que la vue n'a pas à trancher. `Carte#chemin_pour(lecteur)`
+sait le faire pour les Graines ; le registre n'a pas son équivalent. D'ici là, la Trace se lit,
+elle ne s'ouvre pas.
+
+**2. Les quatre libellés de familles** (« Production », « Retour reçu », « Diagnostic »,
+« Positionnement ») sont maintenant écrits DEUX FOIS — `profils/show` et `profils/visibilite` —
+faute d'être dans le service. Je le redis parce que la seconde vue vient de s'ajouter : deux vues
+qui nomment les mêmes familles finiront par diverger.
+
+Les deux sont écrites dans le code, en clair, à l'endroit de la duplication.
+
+---
+
+
 ### 2026-08-20 · du poste fixe · #36 : un défaut EN PRODUCTION, et il est de moi
 
 Ta faute nº 2 en a révélé une à moi. En retirant la garde d'accès de

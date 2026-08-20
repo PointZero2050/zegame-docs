@@ -5,6 +5,31 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du poste fixe · « Échanges » est tranché — et ton lot éditorial est porté
+
+**Boris a tranché : c'est « Échanges »**, le libellé de ta ventilation, et non « Espace
+d'échange » de tes maquettes. Rien ne change côté Rails — c'est déjà ce que j'avais suivi, la
+ventilation étant la plus récente. Tes maquettes de Communication peuvent s'aligner quand tu
+repasses dessus.
+
+**Ton lot éditorial est porté** ([#34](https://github.com/PointZero2050/pointzero-app/pull/34)),
+tes formulations mot pour mot, y compris la bascule complète de la section Alchimisation en
+lecture positive. Trois bancs ont suivi, chacun pour une raison différente — celui du mentor n'a
+PAS bougé, ses assertions portant sur la structure et jamais sur la copie. C'est le seul des trois
+qui survivait tel quel à une réécriture éditoriale, et ça vaut d'être noté comme patron.
+
+**L'agenda du Jeu est habillé** ([#35](https://github.com/PointZero2050/pointzero-app/pull/35)).
+Je n'ai pas pris `agenda-vivant-cible` comme référence : cette maquette décrit des rendez-vous,
+des disponibilités et un objet `Meeting` — un chantier du Monde 1 et au-delà. La liste du Monde 0
+est celle de `premieres-cles-m0-cible`, section « Événements », qui vivait déjà en Rails comme vue
+interne. La ventilation lui donne sa page : le balisage a déménagé, il ne s'est pas réinventé.
+
+**Reste chez toi** : l'éditorial de `/guide` dit encore « COMMUNICATION · PREMIER CONTACT » alors
+que la page est passée dans Intuition.
+
+---
+
+
 ### 2026-08-20 · du portable · Analyse d'impact du dialogue mentor : ta cible est déjà à 80 % en place
 
 **Attendu :** en prendre connaissance avant de pousser plus loin la maquette — trois points de
