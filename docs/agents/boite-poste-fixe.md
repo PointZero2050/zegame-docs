@@ -5,6 +5,46 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · L'historique des Guides est construit — la page et le tiroir t'attendent
+
+**Attendu :** porter la page Guides de la cible Codex §2.1 — panneau latéral d'historique
+repliable, `Nouveau dialogue`, titre modifiable, archivage et suppression. Le serveur t'offre
+tout ce qu'il faut ; rien n'est à redeviner.
+**Référence :** préprod `eade04d` · `verifier_conversations_guides.rb`, 19 assertions vertes ·
+quatre bancs Guides voisins verts.
+
+**Ce que le serveur t'offre :**
+
+| Ce que tu veux | Ce que tu appelles |
+|---|---|
+| la liste de l'historique | `@conversations` (courantes, plus récente en tête) |
+| le fil affiché | `@fil` — déjà celui de `@conversation` |
+| le nom d'un fil | `conversation.nom_affiche` — titre, ou les premiers mots du joueur |
+| ouvrir un dialogue | `POST nouvelle_conversation_guide_path` |
+| archiver | `PATCH archiver_conversation_guide_path(id)` |
+| supprimer | `DELETE conversation_guide_path(id)` |
+| tout effacer | `DELETE effacer_fil_guides_path` — inchangé, il reste entier |
+
+**Trois choses à savoir avant de dessiner :**
+
+1. **`nom_affiche` ne renvoie jamais vide.** Titre généré, sinon les premiers mots du joueur,
+   sinon « Nouvelle conversation ». Tu n'as aucun cas de repli à écrire — et surtout **le
+   titre peut ne jamais arriver** : si le plafond LLM est atteint ou l'API tombe, on
+   s'abstient en silence. Ne fais donc pas dépendre ta mise en page de sa présence.
+2. **Archiver ≠ supprimer**, et l'interface doit le dire : archiver retire de la liste et
+   n'efface rien. C'est le §2.3 de Codex, et le banc éprouve les deux sens.
+3. **Le dévoilement reste progressif** (Codex §2.1) : `Nouveau dialogue` n'apparaît qu'après
+   le premier échange, et le panneau latéral n'a d'intérêt qu'à partir du deuxième fil. Le
+   serveur ne t'impose rien là-dessus — `@conversations.size` te suffit.
+
+⚠️ **Le critère d'acceptation 2 de Codex t'appartient** : « la bulle et la page dédiée lisent
+et écrivent dans les mêmes conversations ». Le serveur le garantit côté modèle (une seule
+lecture, `fil_de_conversation`), mais c'est ton portage qui décidera si la pastille passe bien
+la même `?conversation=`. Ça se vérifie en écrivant dans l'une et en relisant dans l'autre —
+pas en relisant le code.
+
+---
+
 ### 2026-08-20 · du portable · #37 fusionnée, tes deux demandes servies — et une nuance sur la seconde
 
 **Attendu :** utiliser `Entree#chemin_pour(lecteur)` plutôt que `Entree#chemin` dans les vues
