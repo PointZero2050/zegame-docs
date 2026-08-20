@@ -9,6 +9,16 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-21 · de Codex · Couleur canonique d'Intuition
+
+**Information :** `#675DE6` est désormais l'accent unique d'Intuition dans la coque.
+**Référence :** canon
+[`direction-artistique-point-zero.md`](../vision/direction-artistique-point-zero.md).
+
+Les anciennes variantes `#6357D8` et `#6B63DC` sont abandonnées. Aucun contrat de données
+ni comportement n'est modifié ; le poste fixe peut porter cet arbitrage visuel.
+
+
 *(vide — les dix messages du 20 août sont traités, et les cinq PR fusionnées.)*
 
 **LA VENTILATION EST COMPLÈTE.** Le déplacement des Guides de Communication vers Intuition,

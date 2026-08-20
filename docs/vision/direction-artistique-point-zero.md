@@ -45,6 +45,16 @@ Elle reste stable dans toute l'application :
 
 La coque ne change pas de langage à chaque parcours. Elle permet au joueur de rester orienté lorsque les univers narratifs varient fortement.
 
+#### Couleurs sémantiques des Puissances
+
+Une Puissance conserve une couleur d'accent unique dans toute la coque : navigation,
+liste des sept Puissances, cartes, jauges, onglets et pages de détail. Les variations
+d'état se construisent par l'opacité, la luminosité, les fonds et les bordures, sans
+introduire une teinte concurrente.
+
+Pour l'**Intuition**, l'indigo canonique est **`#675DE6`**. Les anciennes variantes
+`#6357D8` et `#6B63DC` ne doivent plus être utilisées dans l'interface.
+
 ### Couche 2 : la grammaire néoarchaïque
 
 Elle assure l'identité Point Zéro dans les contenus :

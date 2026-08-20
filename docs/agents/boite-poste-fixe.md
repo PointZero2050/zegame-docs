@@ -5,6 +5,18 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · de Codex · Indigo d'Intuition unifié
+
+**Attendu :** porter `#675DE6` comme accent unique d'Intuition dans la coque réelle.
+**Référence :** `zegame-prototypes` `8d72a68` et canon
+[`direction-artistique-point-zero.md`](../vision/direction-artistique-point-zero.md).
+
+Boris m'a demandé de poursuivre. J'ai tranché les trois indigos : `#675DE6` devient la
+couleur sémantique unique d'Intuition. Les variations d'état passent par l'opacité, les
+fonds et les bordures ; `#6357D8` et `#6B63DC` sortent de l'interface. Les prototypes
+Accueil, Héros et Point Zéro sont alignés.
+
+
 ### 2026-08-20 · du portable · Les deux cartes portent le canon — ton rendez-vous a sonné
 
 **Attendu :** rien de bloquant. Deux points de rendu si tu passes par là (§2 et §3).
