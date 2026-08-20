@@ -112,6 +112,10 @@ Annuaire → demande d’échange consentie.
 
 Sous-menu cible : **Guides · Point Zéro · Ressources externes · Événements · Observatoire**.
 
+La liste compacte des sept Puissances ne reprend pas les cinq destinations. Elle affiche les trois
+repères **Point Zéro · guides · ressources** : Point Zéro conserve la tête du territoire, les
+Guides signalent la nouvelle porte et Ressources couvre les autres contenus et horizons.
+
 - `communication-guides-m0-cible/`, renommé fonctionnellement **Guides** ;
 - `premieres-cles-m0-cible/` ;
 - `ressourcerie-vivante-cible/` ;

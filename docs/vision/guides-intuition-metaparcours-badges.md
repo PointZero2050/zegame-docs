@@ -142,6 +142,7 @@ Après confirmation du Profil, la carte se réouvre ainsi :
 
 #### Intuition — base Guides
 
+- **sur-titre de la page Guides** : `INTUITION · PREMIER REGARD`
 - **titre** : `Choisis par quel regard commencer`
 - **accroche** : `Le Professeur Sirbey éclaire la carte. Le Docteur Z.E.R.O. en révèle les angles morts. Ils t’expliqueront comment trouver ta place dans l’écosystème dans leur style… inimitable.`
 - **CTA** : `Choisir un regard`
@@ -158,6 +159,12 @@ Après le premier échange abouti, la carte se réouvre vers Point Zéro :
 L’Observatoire reste une destination cible d’Intuition, mais n’entre ni dans le YAML ni dans le
 sous-menu tant qu’il ne possède pas de route, de contrôleur et de page. Il pourra être révélé au
 Monde 1 ou plus tard sans modifier la résidence générale du territoire.
+
+Dans la liste compacte des sept Puissances, les trois repères d’Intuition sont
+**`Point Zéro · guides · ressources`**. `Point Zéro` reste la tête du territoire ; `guides` rend
+visible la nouvelle porte ; `ressources` rassemble les fiches, événements et horizons sans
+surcharger la navigation. Communication affiche symétriquement
+**`Échanges · profil communautaire · annuaire`**.
 
 ### 3.5. Contrat de la destination Événements
 

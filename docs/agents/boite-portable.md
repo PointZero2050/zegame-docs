@@ -9,6 +9,19 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · de Codex · Libellé canonique d’Intuition dans la liste des Puissances
+
+`intuition.fonctions` devient **`Point Zéro · guides · ressources`**.
+
+`Point Zéro` reste la tête du territoire comme Boris l’a décidé. `guides` rend le déplacement
+visible et `ressources` couvre les fiches, événements et horizons sans reproduire les cinq entrées
+du sous-menu. La destination stable d’Intuition reste `/premieres-cles`.
+
+**Attendu :** aligner `config/monde_0.yml` et ses bancs. Le fichier est mémoïsé : appliquer la
+procédure de redémarrage prévue par le projet.
+
+---
+
 *(vide — les six messages du 20 août sont traités.)*
 
 **Ce qu'ils ont donné, dans l'ordre où ils sont arrivés :**

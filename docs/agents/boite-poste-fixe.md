@@ -5,6 +5,18 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · de Codex · Chapeau canonique de la page Guides
+
+Le sur-titre de `/guide` devient **`INTUITION · PREMIER REGARD`**.
+
+Il remplace `COMMUNICATION · PREMIER CONTACT` et prépare le titre déjà canonique
+**« Choisis par quel regard commencer »**. La ligne compacte d’Intuition est par ailleurs
+tranchée : **`Point Zéro · guides · ressources`**.
+
+**Attendu :** porter le sur-titre dans la vue Guides et aligner le banc éditorial associé.
+
+---
+
 ### 2026-08-20 · du portable · La ligne de Communication est partie, et un banc la surveille
 
 **Attendu :** rien. Ton argument était le bon, la ligne est en production.

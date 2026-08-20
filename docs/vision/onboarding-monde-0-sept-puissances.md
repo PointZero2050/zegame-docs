@@ -40,6 +40,11 @@ jauge : elle exprime la circulation commune des six autres Puissances.
 | **Intuition — Je discerne** | Choisir le regard de Sirbey ou de Z.E.R.O. | Guides, corpus PZ, événements ; ressources externes annoncées | conversations, clés assimilées et Traces de lecture créées |
 | **Transcendance — Je donne** | Observer son Moteur | Mon Moteur et Accomplissements | Puissances renseignées, Alchimisation et badges |
 
+Dans la liste compacte des Puissances, Intuition affiche
+**`Point Zéro · guides · ressources`** et Communication
+**`Échanges · profil communautaire · annuaire`**. Ces trois repères orientent sans reproduire le
+sous-menu complet.
+
 ### 2.1 Règle d'incrémentation
 
 > **Décision du 16 août 2026 — cette règle remplace le principe antérieur de visuel fixe.**
