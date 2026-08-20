@@ -158,6 +158,14 @@ L’Observatoire reste une destination cible d’Intuition, mais n’entre ni da
 sous-menu tant qu’il ne possède pas de route, de contrôleur et de page. Il pourra être révélé au
 Monde 1 ou plus tard sans modifier la résidence générale du territoire.
 
+### 3.5. Contrat de la destination Événements
+
+`Événements` désigne ici une page interne au Jeu. Le lien d’Intuition ne cible pas l’index public
+`/evenements`, rendu avec la coque du site. Il attend un index dédié — par exemple
+`/jeu/evenements` — avec le layout du Jeu, le sous-menu Intuition et les mêmes sources de données
+que les événements existants. Le contrat complet et les critères de recette sont fixés dans
+[lot-editorial-coque-m0-2026-08-20.md](lot-editorial-coque-m0-2026-08-20.md).
+
 ## 4. Badges de seuil
 
 ### 4.1. Règle générale

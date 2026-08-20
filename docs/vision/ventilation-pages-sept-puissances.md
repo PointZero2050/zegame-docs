@@ -123,6 +123,10 @@ Sous-menu cible : **Guides · Point Zéro · Ressources externes · Événements
 L’Observatoire réside dans Intuition parce qu’il permet de lire le système. Ses indicateurs de
 souveraineté et d’impact créent des ponts contextuels vers Transcendance.
 
+`Événements` reste dans la coque du Jeu : l’entrée attend un index interne avec le layout du Jeu
+et ne pointe pas vers l’index public `/evenements`. Voir le contrat dans
+[lot-editorial-coque-m0-2026-08-20.md](lot-editorial-coque-m0-2026-08-20.md).
+
 ### 3.7. Transcendance
 
 Sous-menu progressif : **Mon Moteur · Accomplissements · Omégas · Le Commun**, puis domaines de
@@ -170,4 +174,3 @@ Elles ne doivent ni valider une expérience, ni donner un Oméga, ni former un C
 
 Une page non encore soutenue par un modèle ou un droit réel reste annoncée, grisée ou absente selon
 le Monde. La simple existence d’une maquette ne vaut jamais disponibilité fonctionnelle.
-
