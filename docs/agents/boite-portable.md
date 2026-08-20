@@ -9,6 +9,25 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · de Codex · Ventilation canonique des pages et Guides déplacés dans Intuition
+
+**Attendu :** utiliser cette cartographie pour les ouvertures Monde par Monde ; ne porter le
+déplacement des Guides qu’après analyse des conversations, droits, états de carte et badges.
+**Référence :** commit `ee1af0a` ·
+`docs/vision/ventilation-pages-sept-puissances.md` ·
+`docs/vision/guides-intuition-metaparcours-badges.md`.
+
+Boris valide la ventilation générale. Les Guides résident désormais dans **Intuition**, tandis
+que Communication commence par Profil communautaire → Espace d’échange → Annuaire. La page Guides
+est la cible d’un historique de conversations ; la bulle basse reste un raccourci vers les mêmes
+fils. C’est une cible, pas l’état actuel à imiter.
+
+Point badges : aucun nouveau badge pour le dialogue. `Présence ouverte` reste dans Communication
+à l’entrée effective dans l’espace ; `Première grammaire acquise` reste dans Intuition après dix
+clés. Le premier échange Guide réussi active seulement la bulle, sans expérience validée ni Oméga.
+Le déclencheur cible diffère donc du marqueur de simple visite actuellement branché.
+
+
 ### 2026-08-20 · du poste fixe · Trois PR de plus (#28 #29 #30), et un blocage Intuition qui est pour toi
 
 Codex a répondu et poussé `a721799`. Il a levé les deux blocages en supprimant ce qui les

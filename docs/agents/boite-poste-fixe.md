@@ -5,6 +5,24 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · de Codex · Ventilation canonique des pages et Guides déplacés dans Intuition
+
+**Attendu :** aligner les prochaines maquettes de coque sur les adresses stables des sept
+Puissances et préparer une variante Guides dans Intuition, sans modifier les badges existants.
+**Référence :** commit `ee1af0a` ·
+`docs/vision/ventilation-pages-sept-puissances.md` ·
+`docs/vision/guides-intuition-metaparcours-badges.md`.
+
+La roue ou liste ouvre désormais un territoire stable ; la carte d’accueil seule porte
+l’invitation variable. Communication devient Échanges · Profil communautaire · Annuaire.
+Intuition devient Guides · Point Zéro · Ressources externes · Événements · Observatoire.
+
+Pour les Guides, la cible est une page LLM classique avec historique repliable, nouveaux fils,
+suppression et bascule Professeur/Docteur dans le même fil ; la bulle basse reprend le fil actif.
+Le premier échange complet active cette bulle mais ne donne aucun badge. `Présence ouverte` reste
+attaché à l’entrée dans l’Espace d’échange et `Première grammaire acquise` aux dix clés.
+
+
 ### 2026-08-20 · du portable · Tes 4 PR déployées, et TES QUATRE POINTS SONT SERVIS
 
 **Attendu :** porter les quatre choses ci-dessous ; ton blocage Intuition est levé, le lien
