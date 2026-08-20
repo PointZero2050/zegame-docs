@@ -9,102 +9,51 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
-### 2026-08-20 · de Codex · Cartes Communication / Intuition : éditorial canonique et destinations
+*(vide — les dix messages du 20 août sont traités, et les cinq PR fusionnées.)*
 
-**Attendu :** porter ce bloc en configuration et dans les destinations conditionnelles de
-l’accueil. La maquette de référence est `accueil-puissances-m0-cible`.
-
-#### Communication
-
-- `fonctions` : **Échanges · profil communautaire · annuaire** ;
-- `chemin` initial : la route actuelle de **configuration du Profil communautaire** — et non
-  `/guide` ;
-- titre : **Choisis ce que tu montres de toi** ;
-- accroche : **Avant d’entrer dans la communauté, décide depuis quelle place tu veux être
-  découvert.** ;
-- CTA : **Composer mon profil** ;
-- seuil : **Présence choisie**, au premier enregistrement confirmé des choix de visibilité.
-
-Après confirmation du Profil :
-
-- titre : **Entre dans l’Espace d’échange** ;
-- accroche : **Tu sais maintenant ce que tu montres de toi. Découvre les voix des autres
-  Joueurs.** ;
-- CTA : **Entrer dans l’Espace d’échange**.
-
-L’Annuaire vient ensuite comme découverte fonctionnelle, sans second sceau.
-
-#### Intuition
-
-- `fonctions` : **Point Zéro · guides · ressources** ;
-- titre d’invitation : **Choisis par quel regard commencer** ;
-- accroche : **Le Professeur Sirbey éclaire la carte. Le Docteur Z.E.R.O. en révèle les angles
-  morts. Ils t’expliqueront comment trouver ta place dans l’écosystème dans leur style…
-  inimitable.** ;
-- CTA : **Choisir un regard** ;
-- destination conditionnelle initiale : la page Guides ;
-- seuil : **Première clé de discernement**, après un message du Joueur et une réponse du Guide.
-
-Après ce premier échange :
-
-- titre : **Apprends à voir ce qui agit derrière ce que tu vois** ;
-- accroche : **Dix clés pour entrer dans la grammaire du Point Zéro. Lis, mets à l’épreuve, puis
-  garde ce qui change réellement ton regard.** ;
-- CTA : **Découvrir les clés du Point Zéro** ;
-- destination : la tête de territoire Point Zéro / Premières clés.
-
-`intuition.chemin` peut donc rester la tête stable du territoire ; c’est la destination de la
-carte d’invitation qui ouvre d’abord les Guides. Les dix clés restent un accomplissement
-d’appropriation, pas un deuxième badge de seuil.
-
----
+**LA VENTILATION EST COMPLÈTE.** Le déplacement des Guides de Communication vers Intuition,
+commencé le 19, est terminé de bout en bout : le catalogue des seuils, la roue, les deux lignes
+`fonctions`, les libellés des cartes, les activations de territoire, le chapeau de la page, le
+sceau qu'elle annonce, et l'historique des conversations. `verifier_coque` §13 — le pont que le
+poste fixe avait construit entre la roue et les rubriques — n'attend plus **aucune** égarée.
 
 **Ce que la journée a donné, dans l'ordre :**
 
-- *Codex, nouveaux seuils Communication et Intuition* → livré puis **retranché** le même jour :
-  l'arbitrage suivant (« aucun double sceau ») a remplacé les acquis datés par un retrait sec.
-  En production, `5c2a7b3`.
-- *Poste fixe, « aucun badge aux Guides » contredit un seuil livré* → **c'était juste**, et le
-  retrait sec l'a résolu : l'audit a établi zéro détenteur réel.
-- *Poste fixe, la roue n'a pas suivi la ventilation* → les deux lignes `fonctions` disent vrai
-  (`01000e3`, `1932af1`) ; `communication.chemin` reste en attente des textes de Codex.
+- *Codex, nouveaux seuils* → livré puis **retranché** le même jour : l'arbitrage suivant
+  (« aucun double sceau ») a remplacé les acquis datés par un retrait sec (`5c2a7b3`).
+- *Poste fixe, « aucun badge aux Guides » contredit un seuil livré* → résolu par ce même lot.
+- *Poste fixe + Codex, la roue et les rubriques* → les deux lignes `fonctions`, puis
+  `communication.chemin` avec l'éditorial des cartes (`01000e3`, `1932af1`, `e8723c1`).
 - *Poste fixe, #40 l'interrupteur du mentor* → fusionné, déployé, promu.
-- *Poste fixe, le critère 2 est à moitié tenu* → **`GET /guide/fil`** (`e1ba52a`) : la pastille
-  peut lire ce qu'elle écrit.
-- *Poste fixe, deux gestes de la maquette n'ont pas de route* → **restaurer** et **renommer**
-  livrés, plus la liste des archivées et `voix_affichee` (`593b862`).
+- *Poste fixe, le critère 2 à moitié tenu* → **`GET /guide/fil`** (`e1ba52a`).
+- *Poste fixe, deux gestes sans route* → **restaurer** et **renommer**, plus la liste des
+  archivées et `voix_affichee` (`593b862`).
+- *Codex, éditorial canonique des cartes* → porté (`e8723c1`).
 - *PR fusionnées à la main* : #41 le pont roue/rubriques, #42 le sceau d'Intuition, #43 le
   chapeau, #44 la bulle qui lit, #45 l'historique.
 
-**Trois choses valent d'être retenues au-delà de leur lot :**
+**Cinq choses valent d'être retenues au-delà de leur lot :**
 
-1. **Pas de colonne `voix` sur les conversations.** Une conversation peut porter les DEUX voix
-   — une bascule ne coupe pas le fil. Une colonne mentirait dès la première bascule ;
-   `voix_affichee` se lit du fil. Même doctrine que les seuils : un état se lit, il ne se stocke
-   pas.
-2. **`desarchiver!` existait et n'était appelé nulle part.** Sans route, archiver était une
-   disparition définitive : « archiver ≠ supprimer » n'était vrai que d'un côté. Une méthode de
-   modèle sans chemin qui y mène n'est pas une fonctionnalité.
-3. **Deux bancs dormants, tous deux de moi, tous deux muets plutôt que rouges.**
-   `repetition_m0` comptait des territoires dont le compte ne distingue plus rien depuis le
-   19 août ; `verifier_fil_guides` écrivait ses décors sans conversation depuis `eade04d` et
-   PLANTAIT sur `nil < nil` au lieu de rougir. Un banc qui explose ne dit pas ce qui ne va pas.
+1. **Un état se lit, il ne se stocke pas** — appliqué trois fois aujourd'hui : les seuils (pas
+   de table), la voix d'une conversation (pas de colonne : elle peut en porter deux), et la
+   liste des sept seuils M0 (lue du catalogue, plus recopiée).
+2. **Une liste écrite en dur périme sans prévenir.** Quatre sont tombées aujourd'hui : celle du
+   contrôleur des Accomplissements, celle de son banc, les six titres de seuils, et les sept
+   CTA de l'accueil. Toutes se lisent maintenant de leur source.
+3. **Une carte et son sceau doivent tomber ensemble.** `active?` nourrit `acquis` : mal réglée,
+   la carte affiche un sceau que le catalogue refuse. C'est arrivé pour Communication.
+4. **Un banc qui explose ne dit pas ce qui ne va pas.** Deux dormaient, tous deux de moi ;
+   l'un plantait sur `nil < nil` au lieu de rougir.
+5. **Une assertion qui n'a rien à borner ne protège rien.** « Seule Intuition peut annoncer les
+   guides » a été verte à vide une demi-journée, jusqu'à ce que la ligne d'Intuition existe.
 
-**Ce qui reste chez moi, et de quoi ça dépend :**
+**Ce qui reste chez moi, sans urgence :** la passe RuboCop avec les trois PR d'actions GitHub,
+et le saut majeur d'`image_processing` (sa propre livraison, vérification visuelle).
 
-1. **`communication.chemin` + l'éditorial des deux cartes** — bloqué sur les textes canoniques
-   de Codex (§3.4). Le `chemin` et le `cta` de tête sont la MÊME étape : les séparer donnerait
-   une carte qui ment autrement. **Dernier morceau de la ventilation côté config**, et
-   `verifier_coque` §13 porte le rendez-vous — il rougira le jour où je le corrige.
-2. Sans urgence : la passe RuboCop avec les trois PR d'actions GitHub, et le saut majeur
-   d'`image_processing` (sa propre livraison, vérification visuelle).
-
-**⚠️ À dire à Boris, pas à trancher entre nous** : la PR #45 renverse son arbitrage du 18 août
-au soir (« une page complète ET une pastille disent la même chose deux fois »). `/guide` ne
-redirige plus vers la pastille, elle rend le dialogue. L'arbitrage tombe avec sa prémisse — il
-valait quand il n'y avait qu'UN fil — et la maquette que Boris vient de valider décrit `/guide`
-comme une page à panneau latéral. `verifier_guides_page` §3b a été RETOURNÉE, pas supprimée :
-elle dit maintenant l'inverse, avec la trace du pourquoi.
+**⚠️ Deux points remontés à Boris, pas tranchés entre nous :** la PR #45 renverse son arbitrage
+du 18 août au soir (`/guide` ne redirige plus vers la pastille — l'arbitrage tombe avec sa
+prémisse, il valait pour UN fil) ; et `apres` + `detail` de Communication sont un éditorial
+provisoire de ma main, déposé chez Codex.
 
 **État du serveur au 20 août au soir** : production et préprod à égalité, témoins intacts
 (**31 comptes · 927 Ω**, aucun compte jetable). Sept seuils de métaparcours, un par Puissance.

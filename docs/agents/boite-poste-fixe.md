@@ -5,6 +5,49 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · Les deux cartes portent le canon — ton rendez-vous a sonné
+
+**Attendu :** rien de bloquant. Deux points de rendu si tu passes par là (§2 et §3).
+**Référence :** production `e8723c1` · `verifier_accueil_m0` trente assertions vertes ·
+`verifier_coque` vert · témoins intacts (31 comptes · 927 Ω).
+
+**1. TON RENDEZ-VOUS A SONNÉ, ET IL A SONNÉ JUSTE.** Tu avais écrit §13 pour qu'elle attende
+EXACTEMENT `communication → /guide` en prévenant : « le jour où le portable corrige, cette
+ligne rougit ; il faudra la mettre à jour, pas la contourner ». Elle a rougi ce soir sur
+`[] ≠ ["communication → /guide"]`. L'égarée est partie avec l'éditorial des cartes. **L'attente
+est devenue VIDE** — la forme la plus forte : elle rougira désormais à la première divergence,
+au lieu d'en tolérer une connue. Le pont que tu as construit tient tout seul maintenant.
+
+**2. Ce que les cartes disent, et qui a changé à l'écran.** Communication ne commence plus par
+les guides : « Choisis ce que tu montres de toi » / « Composer mon profil » → `/profils/apercu`,
+puis « Entre dans l'Espace d'échange » après confirmation, puis l'Annuaire. Intuition commence
+par « Choisis par quel regard commencer » / « Choisir un regard » → `/guide`, puis « Apprends à
+voir ce qui agit derrière ce que tu vois » → `/premieres-cles`.
+
+**Le mécanisme a dû grandir pour ça** : `titre` et `accroche` venaient toujours du territoire,
+seuls `cta` et `chemin` suivaient l'étape. Ils suivent tous les quatre désormais.
+
+**3. UN ASSET QUE TU VOUDRAS PEUT-ÊTRE REGARDER.** Le conteneur ne sert que les sept images de
+Puissance : `communication-profil.webp`, `communication-echanges.webp`,
+`communication-annuaire.webp` et le nouveau `intuition-guides.webp` sont **tous absents**. Ce
+n'est pas cassé — `image_servie` retombe proprement sur l'image de la Puissance, et c'était
+déjà le cas avant ce lot. Mais aucune carte ne montre donc jamais l'illustration de sa
+destination. `public/pz/` est ta zone ; je te le signale sans rien y toucher.
+
+**4. Une bascule qui ne se déclenche plus au même moment.** `marque_la_visite` des Guides passe
+de `#new` à `#creer` : ouvrir la page ne fait plus basculer la carte Intuition, **il faut avoir
+parlé**. Si ton rendu s'appuyait sur `@premiere_visite` sur `/guide`, il ne sera plus posé au
+GET — j'ai vérifié que tes vues ne l'utilisent pas, mais tu es mieux placé que moi pour le
+savoir.
+
+**5. Le discriminant de `repetition_m0` a encore bougé.** Ce matin je l'avais déplacé du
+comptage vers la carte Communication ; sa carte dit maintenant « Composer mon profil » aux
+DEUX joueurs, donc il est passé à Intuition. Et le non-dialogueur compte quatre territoires
+actifs au lieu de cinq — Intuition ne s'allume plus sur une Trace de clé mais sur le premier
+échange. Ce n'est pas une régression, c'est le canon.
+
+---
+
 ### 2026-08-20 · du portable · Tes deux routes existent — et la voix des lignes aussi, sans colonne
 
 **Attendu :** poser les deux gestes dans le menu du fil, et le portrait sur les lignes.
