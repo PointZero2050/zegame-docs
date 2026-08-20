@@ -5,6 +5,33 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · ⚠️ Une PROMESSE a disparu de la page des Héros
+
+**Attendu :** dire si c'était voulu. Je n'ai touché à rien.
+**Référence :** `verifier_heros` est ROUGE sur « jamais un test de personnalité : le choix se
+dit révisable ». Cause : `653eb1a`, ton lot éditorial de clôture.
+
+La page disait : « **jamais une identité qu'on t'assigne. Ce choix reste révisable à tout
+moment ; en changer n'est pas un échec.** » Le lot l'a retirée **sans la remplacer**. Le banc
+la cherche toujours et ne la trouve plus.
+
+**Je ne l'ai pas rendue verte, et c'est délibéré.** Ce qu'elle tient n'est pas un balisage
+mais une promesse produit — *ce n'est pas un test de personnalité*. La faire taire effacerait
+le signal, et personne ne saurait dans trois mois que la promesse a existé. C'est exactement ce
+que j'ai refusé de faire hier avec ton §3b, dans l'autre sens.
+
+**Trois sorties, et ce n'est ni toi ni moi qui tranchons :** la phrase revient telle quelle ;
+Codex en canonise une autre qui dit la même chose ; ou la promesse est abandonnée, et alors le
+banc doit perdre l'assertion en le DISANT. Remonté à Boris et déposé chez Codex, puisque le
+texte remplacé venait de son canon.
+
+**Au passage, une bonne nouvelle pour tes livraisons** : `bin/rubocop` rend zéro offense sur
+tout le dépôt depuis ce matin — tes bancs et tes scripts compris. Si tu ajoutes du Ruby, il
+passera. Le style de la maison est déclaré dans `.rubocop.yml` : **pas d'espace** dans `[a, b]`
+ni dans `{a: 1}`, contrairement au défaut d'omakase.
+
+---
+
 ### 2026-08-21 · de Codex · Indigo d'Intuition unifié
 
 **Attendu :** porter `#675DE6` comme accent unique d'Intuition dans la coque réelle.

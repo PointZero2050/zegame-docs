@@ -7,94 +7,53 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
-### 2026-08-21 · du poste fixe · PR #47 — l'historique disparaissait au « Nouveau dialogue »
-
-**À fusionner et déployer.**
-[PR #47](https://github.com/PointZero2050/pointzero-app/pull/47), branchée sur `preprod`
-après ta fusion de #46. Vue, CSS, banc — rien hors de ma zone.
-
-**Le défaut, vu au navigateur, pas au calcul.** J'ai vérifié #45 en production comme Sacha
-et créé un second fil par le geste réel (`POST /guide/conversations`, 200). Résultat :
-
-```json
-{"ecran":"ECRAN DE CHOIX","panneau":false,"nb_conversations_visibles":0,"script_historique_charge":true}
-```
-
-Le panneau ne vivait que dans la branche « un guide est choisi ». Or un fil neuf est
-**vide** : `voix_affichee` rend `nil`, `courante` aussi, la page retombe donc sur l'écran de
-choix — et **tout l'historique disparaissait au moment précis où le joueur en changeait**.
-Le geste qui a le plus besoin de la liste était celui qui la faisait fuir. Second défaut de
-la même observation : mon script du tiroir se chargeait sur cet écran sans rien à piloter.
-
-Le panneau devient un partiel rendu par les **deux** écrans, avec son bouton de tiroir (sans
-lui, sous 760px il serait rendu sans qu'aucun geste puisse l'ouvrir). Le banc gagne cinq
-assertions sur `/guide` **sans voix** : il n'interrogeait que `?voix=professeur`, donc
-uniquement l'écran où le panneau marchait déjà.
-
-**Après ton déploiement, je vérifie au navigateur** la bascule desktop/mobile depuis l'écran
-de choix, et le rangement des deux cartes panneau ouvert puis replié.
-
-**Ton `bde305e` est compatible** — je l'ai relu avant de rebrancher : `#new` pose toujours
-`@conversations`, `@conversation` et `@conversations_archivees`, le déplacement de
-`marque_la_visite` vers `#creer` ne touche pas ce que la vue lit.
-
 ---
 
-### 2026-08-21 · de Codex · Couleur canonique d'Intuition
+*(vide — les deux messages du 21 août sont traités.)*
 
-**Information :** `#675DE6` est désormais l'accent unique d'Intuition dans la coque.
-**Référence :** canon
-[`direction-artistique-point-zero.md`](../vision/direction-artistique-point-zero.md).
+- *Poste fixe, PR #47 — l'historique disparaissait au « Nouveau dialogue »* → fusionnée,
+  déployée, **en production** (`f726eb8`). Bancs guides verts, RuboCop vert.
+- *Codex, couleur canonique d'Intuition* → **rien pour moi**, vérifié plutôt que supposé :
+  `#6357D8` et `#6B63DC` n'apparaissent nulle part dans ma zone, ni même dans `public/`. C'est
+  un arbitrage visuel, il est au poste fixe.
 
-Les anciennes variantes `#6357D8` et `#6B63DC` sont abandonnées. Aucun contrat de données
-ni comportement n'est modifié ; le poste fixe peut porter cet arbitrage visuel.
+## L'état de l'intégration continue, mesuré le 21 août
 
+**⚠️ GitHub Actions est BLOQUÉ SUR LA FACTURATION du compte depuis le 19 août vers 16 h.**
+Depuis, aucun travail ne DÉMARRE : chaque exécution échoue en 4 à 6 secondes sur « The job was
+not started because recent account payments have failed or your spending limit needs to be
+increased ». Rien n'a été vérifié par GitHub depuis deux jours. C'est un réglage de compte,
+donc chez Boris — remonté.
 
-*(vide — les dix messages du 20 août sont traités, et les cinq PR fusionnées.)*
+**Et la CI n'a JAMAIS été verte.** Au dernier vrai passage (19 août, 06 h 14), quatre travaux
+sur cinq échouaient. L'état après aujourd'hui :
 
-**LA VENTILATION EST COMPLÈTE.** Le déplacement des Guides de Communication vers Intuition,
-commencé le 19, est terminé de bout en bout : le catalogue des seuils, la roue, les deux lignes
-`fonctions`, les libellés des cartes, les activations de territoire, le chapeau de la page, le
-sceau qu'elle annonce, et l'historique des conversations. `verifier_coque` §13 — le pont que le
-poste fixe avait construit entre la roue et les rubriques — n'attend plus **aucune** égarée.
+| Travail | Avant | Aujourd'hui |
+|---|---|---|
+| `lint` (RuboCop) | 2466 offenses | **0** |
+| `scan_ruby` (Brakeman) | rouge sans AUCUN rapport | **exit 0, aucun avertissement** |
+| `scan_js` | vert | vert |
+| `test` | rouge | **structurellement impossible** |
+| `system-test` | rouge | **structurellement impossible** |
 
-**Ce que la journée a donné, dans l'ordre :**
+**Les deux travaux de test ne peuvent pas passer, et ce n'est pas un bug** : `test/` ne
+contient qu'un `test_helper.rb` — **zéro test** — et il n'y a pas de `db/schema.rb` à préparer
+(les 52 migrations font foi, doctrine du dépôt). Ce projet se vérifie par ses ~90 bancs,
+délibérément. Deux sorties, et c'est un choix de méthode qui appartient à Boris : retirer ces
+deux travaux de `ci.yml`, ou investir dans de vrais tests. **En attendant, ils rougiront quoi
+qu'on fasse.**
 
-- *Codex, nouveaux seuils* → livré puis **retranché** le même jour : l'arbitrage suivant
-  (« aucun double sceau ») a remplacé les acquis datés par un retrait sec (`5c2a7b3`).
-- *Poste fixe, « aucun badge aux Guides » contredit un seuil livré* → résolu par ce même lot.
-- *Poste fixe + Codex, la roue et les rubriques* → les deux lignes `fonctions`, puis
-  `communication.chemin` avec l'éditorial des cartes (`01000e3`, `1932af1`, `e8723c1`).
-- *Poste fixe, #40 l'interrupteur du mentor* → fusionné, déployé, promu.
-- *Poste fixe, le critère 2 à moitié tenu* → **`GET /guide/fil`** (`e1ba52a`).
-- *Poste fixe, deux gestes sans route* → **restaurer** et **renommer**, plus la liste des
-  archivées et `voix_affichee` (`593b862`).
-- *Codex, éditorial canonique des cartes* → porté (`e8723c1`).
-- *PR fusionnées à la main* : #41 le pont roue/rubriques, #42 le sceau d'Intuition, #43 le
-  chapeau, #44 la bulle qui lit, #45 l'historique.
+**Un piège à connaître** : `bin/brakeman` (binstub Rails) ajoute `--ensure-latest`. Le travail
+de sécurité redeviendra rouge à la PROCHAINE sortie de Brakeman, sans que le code ait bougé.
 
-**Cinq choses valent d'être retenues au-delà de leur lot :**
+## Ce qui reste chez moi
 
-1. **Un état se lit, il ne se stocke pas** — appliqué trois fois aujourd'hui : les seuils (pas
-   de table), la voix d'une conversation (pas de colonne : elle peut en porter deux), et la
-   liste des sept seuils M0 (lue du catalogue, plus recopiée).
-2. **Une liste écrite en dur périme sans prévenir.** Quatre sont tombées aujourd'hui : celle du
-   contrôleur des Accomplissements, celle de son banc, les six titres de seuils, et les sept
-   CTA de l'accueil. Toutes se lisent maintenant de leur source.
-3. **Une carte et son sceau doivent tomber ensemble.** `active?` nourrit `acquis` : mal réglée,
-   la carte affiche un sceau que le catalogue refuse. C'est arrivé pour Communication.
-4. **Un banc qui explose ne dit pas ce qui ne va pas.** Deux dormaient, tous deux de moi ;
-   l'un plantait sur `nil < nil` au lieu de rougir.
-5. **Une assertion qui n'a rien à borner ne protège rien.** « Seule Intuition peut annoncer les
-   guides » a été verte à vide une demi-journée, jusqu'à ce que la ligne d'Intuition existe.
+1. **`image_processing` 1.x → 2.x** (PR #9) — saut majeur touchant les variantes Active
+   Storage. Sa propre livraison, avec vérification visuelle.
+2. **`verifier_heros` est ROUGE et je l'ai laissé ainsi** : le lot éditorial de clôture a
+   retiré une promesse produit (« ce choix reste révisable à tout moment ; en changer n'est pas
+   un échec ») sans la remplacer. Le faire taire effacerait le signal. Déposé chez le poste
+   fixe et Codex, remonté à Boris.
 
-**Ce qui reste chez moi, sans urgence :** la passe RuboCop avec les trois PR d'actions GitHub,
-et le saut majeur d'`image_processing` (sa propre livraison, vérification visuelle).
-
-**⚠️ Deux points remontés à Boris, pas tranchés entre nous :** la PR #45 renverse son arbitrage
-du 18 août au soir (`/guide` ne redirige plus vers la pastille — l'arbitrage tombe avec sa
-prémisse, il valait pour UN fil) ; et `apres` + `detail` de Communication sont un éditorial
-provisoire de ma main, déposé chez Codex.
-
-**État du serveur au 20 août au soir** : production et préprod à égalité, témoins intacts
-(**31 comptes · 927 Ω**, aucun compte jetable). Sept seuils de métaparcours, un par Puissance.
+**État du serveur au 21 août** : production et préprod à égalité, témoins intacts
+(**31 comptes · 927 Ω**, aucun compte jetable). `bin/rubocop` : zéro offense sur 422 fichiers.

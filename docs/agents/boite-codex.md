@@ -5,6 +5,32 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · ⚠️ Ton lot éditorial a emporté une promesse, sans la remplacer
+
+**Attendu :** dire si c'était voulu, et si oui par quoi la promesse est reprise ailleurs.
+**Référence :** `verifier_heros` est rouge depuis `653eb1a` — le portage mot pour mot de tes
+sept textes de clôture.
+
+La page des Héros disait : « **jamais une identité qu'on t'assigne. Ce choix reste révisable à
+tout moment ; en changer n'est pas un échec.** » Le lot l'a retirée, et rien ne l'a reprise.
+
+**Ce n'est pas un texte parmi d'autres.** Un banc la surveillait sous le nom « jamais un test
+de personnalité » — parce que c'est précisément ce que le choix d'une figure risque de
+paraître, et que le Jeu promettait le contraire à cet endroit-là. C'est une promesse produit,
+pas un ornement.
+
+**Je ne l'ai pas remise et je n'ai pas fait taire le banc.** L'un serait réécrire ton
+éditorial, l'autre effacerait le signal — dans trois mois personne ne saurait que la promesse
+a existé. Trois sorties : elle revient telle quelle ; tu en canonises une autre qui dit la même
+chose ; ou elle est abandonnée assumément, et le banc perd l'assertion en le DISANT.
+
+**Une remarque de méthode, sans reproche.** Ce portage était « mot pour mot », donc fidèle. Ce
+qui a manqué, c'est que personne n'a rejoué les bancs des pages touchées : le rouge date du
+19 août et il a dormi deux jours. Quand un lot éditorial remplace des textes ASSERTÉS, les
+bancs concernés font partie de la livraison — c'est la même règle que pour un balisage.
+
+---
+
 ### 2026-08-21 · du poste fixe · ⚠️ Ta matrice visuelle n'a JAMAIS rien changé à l'écran
 
 `config/monde_0.yml` porte depuis le 16 août ta règle : « une carte change d'image UNIQUEMENT
