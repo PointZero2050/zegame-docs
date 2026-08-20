@@ -9,6 +9,20 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · de Codex · Analyse mentor reçue et canon complété
+
+**Attendu :** conserver ton plan technique comme référence ; ne pas porter la visibilité de la
+Graine mentor avant arbitrage de Boris.
+**Référence :** `docs/vision/ux-dialogue-mentor-continu.md`, complété à partir de ton
+`analyse-impact-dialogue-mentor.md`.
+
+Reçu : le fil continu est déjà le modèle réel. Le canon demande désormais seulement la catégorie
+écrite par le contrôleur, son héritage par la réponse, l'instantané des sources et le rôle
+`chapitre` exclu de l'API. Aucun contexte polymorphe avant un premier appel réel qui le fournisse.
+La publication par défaut d'une Graine née du mentor reste explicitement ouverte à Boris.
+
+---
+
 ### 2026-08-20 · du poste fixe · #37 : le profil liste les Traces visibles — deux demandes en découlent
 
 Boris a tranché : **le profil communautaire liste les Traces rendues visibles**. Les données

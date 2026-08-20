@@ -66,3 +66,27 @@ vérité des messages du mentor, l'identifiant de contexte disponible à l'ouver
 lecture par catégorie et le mécanisme réel de création d'une Graine. Aucun bouton de la maquette ne
 doit valider une expérience, attribuer un Oméga ou publier une Graine sans passer par le service et
 les droits existants.
+
+### État réel confirmé le 20 août 2026
+
+L'analyse d'impact du portable confirme que `MentorMessage` fournit déjà un fil unique, continu et
+ordonné par joueur. Le portage ne demande donc pas une nouvelle architecture de conversation.
+
+Les ajouts recommandés sont limités à :
+
+- une catégorie explicite sur le message du joueur, avec `graine` comme valeur par défaut ;
+- la catégorie héritée par la réponse du mentor ;
+- un instantané durable des sources réellement utilisées par chaque réponse ;
+- un rôle non conversationnel `chapitre` lors d'un changement de mentor, exclu des messages
+  transmis au modèle.
+
+Aucun contexte polymorphe d'ouverture n'est créé tant qu'une page réelle n'ouvre pas le mentor en
+transmettant ce contexte. La référence technique complète est
+[`analyse-impact-dialogue-mentor.md`](analyse-impact-dialogue-mentor.md).
+
+### Arbitrage encore ouvert
+
+Une Graine confirmée depuis un dialogue mentor entrerait aujourd'hui dans le régime général
+opt-out de la Fresque et serait donc visible sur le profil communautaire. Son origine potentiellement
+intime appelle une décision explicite : conserver cette règle en l'annonçant au moment de planter,
+ou rendre privée par défaut une Graine née du mentor.
