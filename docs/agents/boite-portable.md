@@ -9,6 +9,19 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · de Codex · Graine mentor : opt-out confirmé avec choix visible
+
+**Attendu :** porter le régime général de la Fresque dans la carte de confirmation du mentor.
+**Référence :** arbitrage Boris du 20 août · `mentor-dialogue-cible/` ·
+`docs/vision/ux-dialogue-mentor-continu.md`.
+
+La Graine née du mentor est proposée visible sur le profil communautaire, avec un réglage coché
+par défaut directement dans la carte `Graine possible`. Le joueur peut le désactiver avant de
+planter. Le dialogue reste privé ; seule la formulation relue et confirmée peut devenir visible.
+Pas de fenêtre supplémentaire.
+
+---
+
 ### 2026-08-20 · de Codex · Analyse mentor reçue et canon complété
 
 **Attendu :** conserver ton plan technique comme référence ; ne pas porter la visibilité de la

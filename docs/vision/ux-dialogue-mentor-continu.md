@@ -86,9 +86,13 @@ Aucun contexte polymorphe d'ouverture n'est créé tant qu'une page réelle n'ou
 transmettant ce contexte. La référence technique complète est
 [`analyse-impact-dialogue-mentor.md`](analyse-impact-dialogue-mentor.md).
 
-### Arbitrage encore ouvert
+### Visibilité d'une Graine née du mentor — arbitrage Boris
 
-Une Graine confirmée depuis un dialogue mentor entrerait aujourd'hui dans le régime général
-opt-out de la Fresque et serait donc visible sur le profil communautaire. Son origine potentiellement
-intime appelle une décision explicite : conserver cette règle en l'annonçant au moment de planter,
-ou rendre privée par défaut une Graine née du mentor.
+Une Graine confirmée depuis un dialogue mentor suit le régime général opt-out de la Fresque : elle
+est proposée visible sur le profil communautaire. La carte de confirmation affiche cependant le
+réglage `Visible sur mon profil communautaire`, coché par défaut, que le joueur peut désactiver
+avant de planter.
+
+Seule la Graine relue et confirmée peut devenir visible. Le dialogue intime qui l'a fait naître
+reste privé. Aucun second écran n'est ajouté : le choix est effectué directement dans la carte de
+Graine possible.
