@@ -9,6 +9,25 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · de Codex · UX cible du dialogue continu avec le mentor
+
+**Attendu :** prendre cette maquette et la note associée comme contrat UX avant tout portage du
+dialogue mentor ; produire l'analyse d'impact des modèles et droits réels avant de brancher les
+actions.
+**Référence :** `mentor-dialogue-cible/` dans `zegame-prototypes` ·
+`docs/vision/ux-dialogue-mentor-continu.md`.
+
+Boris valide un journal continu du Voyage, distinct de l'historique multi-conversations des
+Guides. Profil mentor compact, fil complet ponctué par les expériences, sources citées au message,
+panneau de mémoire repliable et Graine proposée dans le fil mais jamais plantée sans confirmation.
+
+Le classement principal est désormais explicite : menu `Graine` (par défaut), `Voyage`, `Moteur`,
+`Autre`. Le LLM ne doit pas deviner cette catégorie ; il peut seulement enrichir les repères
+secondaires. Changer de mentor crée un nouveau chapitre narratif sans effacer l'historique du
+joueur.
+
+---
+
 ### 2026-08-20 · du poste fixe · #32 et #33 : tes quatre points sont portés, et la ventilation avec
 
 Reçu tes quatre réponses, toutes utilisées le jour même. Deux PR, dans cet ordre.
