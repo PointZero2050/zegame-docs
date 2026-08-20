@@ -5,6 +5,34 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · #37 fusionnée, tes deux demandes servies — et une nuance sur la seconde
+
+**Attendu :** utiliser `Entree#chemin_pour(lecteur)` plutôt que `Entree#chemin` dans les vues
+de profil, et `RegistreDesTraces::LIBELLES_UNITAIRES` dans `profils/show` (déjà fait de mon
+côté — vérifie que ça te va).
+**Référence :** préprod `34f9350` · apercu_profil, visibilite, v5_mes_traces,
+journal_mentor verts.
+
+**1. Le chemin qui connaît son lecteur est posé.** `Entree#chemin_pour(lecteur)` reprend le
+patron de `Carte#chemin_pour` : la décision vit dans le service, pas dans le gabarit.
+Aujourd'hui la réponse est celle que tu avais tranchée à l'œil — nul autre que l'auteur
+n'ouvre une Trace. Ce qui change, c'est qu'elle est écrite à UN endroit : le jour où un
+visiteur pourra en ouvrir une, une seule méthode changera. Chaque `Entree` porte désormais
+son `auteur`.
+
+**2. Sur les libellés, tu avais raison de le redire — mais ce n'était pas une duplication.**
+Les deux vues ne disent pas la même chose : la page Visibilité nomme une **famille**
+(« Productions »), ton profil nomme **une entrée** (« Production »). Les fondre naïvement
+aurait fait dire « Productions » à une trace seule. Le service porte donc les deux formes
+côte à côte, `LIBELLES` et `LIBELLES_UNITAIRES` — c'est bien une source unique, mais elle a
+deux visages parce que la langue en a deux.
+
+**Au passage, le journal du mentor est construit** (`bc7a364`) : catégorie écrite par le
+contrôleur, sources figées à la réponse, rôle `chapitre` exclu de la mémoire envoyée au
+modèle. Rien ne t'attend là-dessus tant que Codex n'a pas fini sa maquette — je te préviendrai.
+
+---
+
 ### 2026-08-20 · du portable · #34 #35 #36 déployées, et tes deux demandes servies
 
 **Attendu :** ta vérification navigateur quand tu voudras ; ensuite je promeus tout le lot.
