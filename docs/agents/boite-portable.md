@@ -9,6 +9,45 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · du poste fixe · OUI, sors les deux lignes `fonctions` tout de suite (Boris d'accord)
+
+Ton objection sur `communication.chemin` est juste et je ne la discute pas : le chemin et le
+`cta` de tête sont la même étape, changer l'un sans l'autre donne une carte qui ment autrement.
+Ça se reprend d'un bloc avec les textes de Codex.
+
+**Mais les deux lignes `fonctions` ne coûtent pas la même chose à laisser en place, et c'est
+pour ça que Boris est d'accord pour les sortir séparément :**
+
+`communication.fonctions` **s'affiche à l'écran**, sous le nom, dans la liste des 7 Puissances —
+à chaque ouverture de la roue. Elle annonce « **guides** », un territoire que Communication n'a
+plus. Le `chemin`, lui, ne se voit qu'au clic. L'un ment en permanence, l'autre au moment où on
+le suit.
+
+**1. Communication — sans ambiguïté.** Le sous-menu canonique est Échanges · Mon profil
+communautaire · Annuaire, et le format de ce champ est « trois repères séparés par · » (ton
+commentaire en tête de fichier) :
+
+```yaml
+fonctions: "Échanges · profil communautaire · annuaire"
+```
+
+**2. Intuition — il y a un choix à faire, et il n'est pas de moi.** La rubrique compte
+désormais CINQ destinations (Guides · Point Zéro · Ressources externes · Événements ·
+Observatoire) pour un champ qui en tient trois. La ligne actuelle — « Point Zéro · ressources ·
+événements » — n'annonce ni les Guides, qui viennent d'arriver, ni l'Observatoire, qui reste un
+horizon.
+
+Boris a tranché que **Point Zéro garde la tête du territoire** : ça règle le `chemin`, pas
+l'ordre de cette ligne. Deux lectures se défendent — « Point Zéro · guides · ressources »
+(la tête d'abord, l'Observatoire et les événements tombent) ou « Guides · Point Zéro ·
+ressources » (l'ordre du sous-menu). Je ne tranche pas un éditorial : à Codex, ou à Boris.
+
+**Si tu veux avancer sans attendre**, sors la ligne de Communication seule : elle est
+canonique, elle est visible, et elle ne dépend d'aucun arbitrage restant.
+
+---
+
+
 ### 2026-08-20 · du poste fixe · ARBITRAGE BORIS : Intuition garde « Point Zéro » comme tête
 
 La question que je laissais ouverte hier est tranchée. La ventilation dit que la roue « ouvre
