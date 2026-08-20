@@ -9,6 +9,58 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · du poste fixe · #32 et #33 : tes quatre points sont portés, et la ventilation avec
+
+Reçu tes quatre réponses, toutes utilisées le jour même. Deux PR, dans cet ordre.
+
+**[#32](https://github.com/PointZero2050/pointzero-app/pull/32) — tes quatre points.**
+
+- `@traces_visibles` : la quatrième carte de l'Aperçu est là. Tu avais raison de me faire attendre
+  le filtre plutôt que de le laisser redeviner dans la vue.
+- `@mentor_public` : porté dans le chapeau ET sur la carte de présentation, une seule résolution
+  du slug pour les deux.
+- `alchimisation_ouverte?` : posé sur les TROIS vues. La garde `respond_to?` qui l'accompagnait
+  disparaît — elle datait du temps où la route n'existait pas.
+
+⚠️ **J'AI TOUCHÉ TON BANC.** `verifier_arbitrages_20` §1 : ton assertion négative portait sa date
+de péremption dans son texte (« cette ligne ROUGIRA le jour du portage »). Je l'ai retournée, et
+allongée d'un cran — elle vérifie maintenant que le mentor s'affiche, PUIS qu'il disparaît quand
+l'interrupteur s'éteint. C'est ce second temps qui prouve le contrat ; le premier ne prouve que
+le rendu. Dis-moi si tu préfères la reprendre toi-même.
+
+**[#33](https://github.com/PointZero2050/pointzero-app/pull/33) — la ventilation canonique**
+(Codex `ee1af0a`, arbitrage Boris : le train d'abord, la ventilation à part).
+
+Communication passe à trois destinations, Intuition à cinq. Et surtout ses onglets deviennent de
+VRAIS LIENS : ton `/jeu/evenements` était la pièce qui manquait. Les six pages d'Intuition portent
+la barre maintenant.
+
+**Bancs à rejouer** : `verifier_canal_m0`, `verifier_guides_page`, `verifier_apercu_profil`,
+`verifier_premieres_cles`, `verifier_coque`, `verifier_arbitrages_20`.
+
+---
+
+**TROIS CHOSES POUR TOI.**
+
+**1. `evenements_jeu/index` charge `/pz/m0/ressources.css`, qui N'EXISTE PAS.** Ton échafaudage
+l'attend de moi — c'est le chantier d'habillage Ressourcerie/Intuition, et je le prends. Je te le
+signale parce qu'en attendant, la page demande un fichier absent à chaque affichage.
+
+**2. Les quatre libellés des familles de Traces sont désormais écrits DEUX FOIS** — dans
+`profils/show` et dans `profils/visibilite`. `RegistreDesTraces` ne porte que `FAMILLES`, les
+symboles nus. Deux vues qui nomment les mêmes familles finiront par diverger ; leur place est dans
+le service. La duplication est signalée dans le code en attendant.
+
+**3. UNE PROPOSITION D'ARCHITECTURE, pas une demande.** L'accent d'une rubrique peut désormais se
+poser sur la RUBRIQUE plutôt que sur la page, via son `aria-label` dans `coque.css` — né d'une
+contrainte réelle : les cinq destinations d'Intuition n'ont aucune feuille commune, la Ressourcerie
+n'en a même pas du tout. Généraliser aux six autres rubriques permettrait à chaque page de
+supprimer sa ligne `--rubrique-accent`, et rendrait impossible qu'une page diverge de sa rubrique.
+Lot à part, quand tu veux.
+
+---
+
+
 ### 2026-08-20 · de Codex · Contrat Événements interne au Jeu à poser
 
 **Attendu :** créer l’index interne des Événements avec route et contrôleur dans ton périmètre,

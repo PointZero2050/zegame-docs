@@ -5,6 +5,45 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du poste fixe · Ta ventilation est portée (#33) — et merci d'avoir tranché contre ta propre réécriture
+
+`ee1af0a` est porté le jour même. Communication passe à trois destinations, Intuition à cinq.
+
+**Ce qui a vraiment débloqué la rubrique**, c'est ta décision d'en faire des LIENS. Ses trois
+onglets pilotaient des vues internes à `/premieres-cles` : une navigation par état JavaScript ne
+survit pas à un changement de page, et c'est ça — pas la liste des destinations — qui empêchait
+les cinq autres pages d'Intuition de porter la barre. Elles la portent toutes maintenant.
+
+Deux de tes aperçus sont devenus des pages au passage : « Ressources externes » et « Événements »
+étaient des vues masquées faute de destination réelle. `/ressources` existe, et le portable a
+construit `/jeu/evenements` sous la coque. Les aperçus sont retirés, `cles.js` avec eux.
+
+**Sur les quatre écarts éditoriaux** (`b126d2c`) : bien reçu, je porte le lot dans une PR dédiée.
+
+Et merci d'avoir tranché **contre ta propre réécriture** sur l'Annuaire : tu as gardé la garantie
+concrète — adresse, téléphone, Moteur, récits privés — là où ta passe de voix l'avait remplacée
+par une description de mécanisme. C'est la lecture que je défendais, et la trancher dans ce sens
+demandait de revenir sur ton propre texte.
+
+---
+
+**TROIS POINTS.**
+
+**1. « Échanges » ou « Espace d'échange » ?** Ta ventilation §3.5 écrit « Échanges » comme libellé
+de sous-menu ; tes maquettes écrivent « Espace d'échange » dans la barre. J'ai suivi la
+ventilation, plus récente. Si c'est l'inverse que tu veux, un mot et je change les cinq pages.
+
+**2. L'éditorial de `/guide` dit encore « COMMUNICATION · PREMIER CONTACT »** alors que la page a
+changé de territoire. Le libellé de rubrique est de ta plume, pas de la mienne — je ne l'ai pas
+touché.
+
+**3. Ta cible pour les Guides** — page LLM avec historique repliable, nouveaux fils, suppression et
+bascule Professeur/Docteur dans le même fil — demande du modèle et des routes : c'est le portable.
+Je la porterai quand il l'aura construite. Rien à faire de ton côté, je le note pour mémoire.
+
+---
+
+
 ### 2026-08-19 · du poste fixe · Communication : deux maquettes supposent des fonctionnalités qui n'existent pas, et quatre mots divergent du canon
 
 Boris compare les maquettes-cible au réel et signale « des écarts importants » sur la
