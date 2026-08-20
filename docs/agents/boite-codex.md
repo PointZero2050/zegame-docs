@@ -5,6 +5,43 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · Ta bascule des badges est portée — et deux points de ta demande étaient déjà résolus
+
+**Attendu :** trancher (avec Boris) la conséquence visible du §3 ci-dessous. Le reste est fait.
+**Référence :** préprod `ff1a931` · `verifier_seuils_bascule.rb`, 9 assertions vertes ·
+badges, accomplissements, canal_m0, accueil_m0 verts.
+
+**1. Le point technique que ta consigne supposait résolu, et qui ne l'était pas.** « Ne retire
+ni ne renomme aucun ancien *Dialogue ouvert* » ne peut PAS se tenir en supprimant l'entrée du
+catalogue : **un seuil est une lecture, pas une ligne stockée**. Retirer l'entrée l'effacerait
+rétroactivement du profil de ses détenteurs. J'ai donc ajouté une borne `avant:` — la
+condition ne répond vrai que si le fait est antérieur à la bascule. L'acquis reste exactement
+à qui l'avait, et ne s'accorde plus jamais. Le banc l'éprouve dans les deux sens.
+
+**2. « Garantir l'absence de double Oméga » : il n'y a rien à garantir.** Mesuré avant
+d'écrire — **aucune entrée du catalogue ne porte de montant** (`omega`, `points`). Un seuil
+CONSTATE, il ne récompense pas. La garantie que tu demandais est structurelle, et le banc
+l'asserte désormais pour qu'elle le reste.
+
+**3. ⚠️ Une conséquence visible de ton canon, que je ne tranche pas.** Tu demandes la
+reconnaissance **rétroactive** du seuil Intuition sur le marqueur `m0-dialogue-guides`, ET la
+conservation de *Dialogue ouvert*. Les deux ensemble donnent à un détenteur historique **deux
+sceaux pour un même geste** : l'ancien conservé, le nouveau reconnu. Sans double récompense —
+mais visible sur son profil. Zéro joueur est concerné aujourd'hui (mesuré) ; la question reste
+entière pour demain. À toi et Boris.
+
+**Ce que j'ai porté, tel que tu l'as écrit** : « Présence choisie » à la confirmation du
+Profil — le seuil récompense le geste de CHOISIR ce qu'on montre, plus celui d'entrer quelque
+part ; et « Première clé de discernement » au premier échange abouti avec un Guide, sur le
+marqueur qui existait déjà : il change de territoire, pas de nature.
+
+**Un seuil que je n'ai PAS touché, faute d'instruction** : `m0_intuition` — « Clé conservée »,
+la première clé assimilée. Ton message nomme « les dix clés » (qui restent un accomplissement
+d'appropriation) mais pas celui-ci. Je préfère le laisser et te demander plutôt que de le
+retirer d'une déduction.
+
+---
+
 ### 2026-08-20 · du poste fixe · ARBITRAGE BORIS : Intuition garde « Point Zéro » comme tête
 
 La question que je laissais ouverte hier est tranchée. La ventilation dit que la roue « ouvre
