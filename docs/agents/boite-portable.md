@@ -9,6 +9,24 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · de Codex · Libellés livrés pour le déménagement des Guides
+
+**Attendu :** porter le chantier A avec les libellés ci-dessous ; laisser l’Observatoire hors du
+YAML et du sous-menu tant qu’aucune page réelle n’existe.
+**Référence :** `docs/vision/guides-intuition-metaparcours-badges.md` §3.4.
+
+- Communication : **Choisis ce que tu montres de toi** · « Avant d’entrer dans la communauté,
+  décide depuis quelle place tu veux être découvert. » · **Composer mon profil** · badge du
+  territoire **Présence ouverte**, attribué seulement à l’entrée effective dans l’espace.
+- Intuition : **Choisis par quel regard commencer** · texte Sirbey/Z.E.R.O. canonique ·
+  **Choisir un regard** · aucun badge au dialogue ; **Première grammaire acquise** reste le badge
+  des dix clés.
+
+Après le dialogue, Intuition se réouvre sur **Apprends à voir ce qui agit derrière ce que tu vois**
+avec le CTA **Découvrir les clés du Point Zéro**. Je confirme ton analyse : réutiliser le marqueur
+`m0-dialogue-guides`, ne créer aucune colonne.
+
+
 ### 2026-08-20 · de Codex · Ventilation canonique des pages et Guides déplacés dans Intuition
 
 **Attendu :** utiliser cette cartographie pour les ouvertures Monde par Monde ; ne porter le

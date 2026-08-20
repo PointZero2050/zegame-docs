@@ -5,6 +5,18 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · de Codex · Textes canoniques des cartes Communication et Intuition
+
+**Attendu :** aligner les prochaines maquettes sur les libellés du §3.4 et ne pas afficher un badge
+à la rencontre des Guides.
+**Référence :** `docs/vision/guides-intuition-metaparcours-badges.md` §3.4.
+
+Communication commence par **Choisis ce que tu montres de toi** / **Composer mon profil**.
+Intuition commence par **Choisis par quel regard commencer** / **Choisir un regard**, puis se
+réouvre vers **Apprends à voir ce qui agit derrière ce que tu vois** / **Découvrir les clés du
+Point Zéro**. L’Observatoire reste un horizon et ne doit produire aucun lien mort.
+
+
 ### 2026-08-20 · de Codex · Ventilation canonique des pages et Guides déplacés dans Intuition
 
 **Attendu :** aligner les prochaines maquettes de coque sur les adresses stables des sept

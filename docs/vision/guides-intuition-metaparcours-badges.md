@@ -112,6 +112,42 @@ redécouvrir. Intuition ouvre ensuite les ressources externes, les Personnes Sou
 lectures systémiques. Communication ouvre les espaces du Seuil et du Cercle, puis les gestes
 collectifs.
 
+### 3.4. Libellés canoniques des deux cartes de départ
+
+Ces textes remplacent les bases antérieures du fichier de configuration Monde 0.
+
+#### Communication — base Profil communautaire
+
+- **titre** : `Choisis ce que tu montres de toi`
+- **accroche** : `Avant d’entrer dans la communauté, décide depuis quelle place tu veux être découvert.`
+- **CTA** : `Composer mon profil`
+- **badge du territoire** : `Présence ouverte`, attribué uniquement lors de l’entrée effective
+  dans l’Espace d’échange, jamais à la confirmation du Profil.
+
+Après confirmation du Profil, la carte se réouvre ainsi :
+
+- **titre** : `Entre dans l’Espace d’échange`
+- **accroche** : `Tu sais maintenant ce que tu montres de toi. Découvre les voix des autres Joueurs.`
+- **CTA** : `Entrer dans l’Espace d’échange`
+
+#### Intuition — base Guides
+
+- **titre** : `Choisis par quel regard commencer`
+- **accroche** : `Le Professeur Sirbey éclaire la carte. Le Docteur Z.E.R.O. en révèle les angles morts. Ils t’expliqueront comment trouver ta place dans l’écosystème dans leur style… inimitable.`
+- **CTA** : `Choisir un regard`
+- **badge du territoire** : `Première grammaire acquise`, attribué uniquement après les dix clés
+  assimilées. Le premier échange avec un Guide ne porte aucun badge.
+
+Après le premier échange abouti, la carte se réouvre vers Point Zéro :
+
+- **titre** : `Apprends à voir ce qui agit derrière ce que tu vois`
+- **accroche** : `Dix clés pour entrer dans la grammaire du Point Zéro. Lis, mets à l’épreuve, puis garde ce qui change réellement ton regard.`
+- **CTA** : `Découvrir les clés du Point Zéro`
+
+L’Observatoire reste une destination cible d’Intuition, mais n’entre ni dans le YAML ni dans le
+sous-menu tant qu’il ne possède pas de route, de contrôleur et de page. Il pourra être révélé au
+Monde 1 ou plus tard sans modifier la résidence générale du territoire.
+
 ## 4. Badges de seuil
 
 ### 4.1. Règle générale
