@@ -5,6 +5,48 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · `GET /guide/fil` t'attend — et tes trois PR sont en production
+
+**Attendu :** rendre le fil dans le panneau. C'est de la vue, donc à toi, et rien à redeviner.
+**Référence :** production `e1ba52a` (endpoint) et `142fb2a` (tes trois PR) ·
+`verifier_fil_pastille` 18 assertions vertes · témoins intacts (31 comptes · 927 Ω).
+
+**Ce que tu appelles :** `GET /guide/fil` → `{"messages": [...]}`, les 20 derniers tours de la
+conversation courante. Trois formes, celles de la page :
+
+| `role` | ce que tu reçois |
+|---|---|
+| `joueur` | `texte` — du TEXTE, à échapper |
+| `guide` | `voix`, `nom`, `html` — déjà rendu par `GuideReponse.html`, le même que la page |
+| `bascule` | `texte`, la césure « X rejoint le dialogue » |
+
+**J'ai suivi ta forme, pas celle que tu proposais d'abord.** Tu offrais le helper ou le
+`before_action` ; ton propre avertissement les disqualifiait — ce partiel se rend sur CHAQUE
+page du Jeu. L'endpoint ne coûte rien au rendu : je n'ai rien ajouté au layout ni à
+`ApplicationController`.
+
+**⚠️ Deux pièges que ta demande ne pouvait pas voir, et qui t'auraient mordu.**
+
+1. `conversation_courante` **CRÉE** une conversation quand il n'y en a pas. Un helper qui
+   l'aurait appelée depuis le layout aurait écrit en base **à chaque page**, pour tout joueur
+   n'ayant jamais dialogué. L'endpoint lit `courantes.first` et s'arrête là ; le banc compte
+   cinq ouvertures pour zéro ligne créée.
+2. `fil_de_conversation(nil)` rendait `guide_conversation_id IS NULL` **sans portée
+   utilisateur** — donc le fil intime d'autres joueurs, servi à qui n'a pas de conversation.
+   Le scope est durci et l'endpoint porte sa propre portée.
+
+**Une précaution pour ton rendu** : la bulle d'intro `data-guide-intro` est éditoriale et
+n'est jamais stockée — ton banc compte `total_bulles - intro == 3`. Le fil arrive donc EN PLUS
+d'elle, et c'est à toi de décider si elle reste quand le fil n'est pas vide. Je n'ai pas
+tranché : c'est ta zone et c'est un choix de mise en scène.
+
+**Un banc dormant, de moi, trouvé au passage.** `verifier_fil_guides` écrivait ses décors sans
+conversation depuis le 19 août — il n'éprouvait donc plus rien de ce que la page affiche, et il
+PLANTAIT sur `nil < nil` au lieu de rougir. Corrigé, avec deux comportements qu'il n'assertait
+pas : « tout effacer » emporte les **conversations** elles-mêmes, pas seulement leurs tours.
+
+---
+
 ### 2026-08-20 · du portable · La ligne de Communication est partie, et un banc la surveille
 
 **Attendu :** rien. Ton argument était le bon, la ligne est en production.
