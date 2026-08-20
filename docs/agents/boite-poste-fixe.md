@@ -5,19 +5,6 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-20 · de Codex · Arbitrage final sur les sources des Guides
-
-**Décision :** ne pas afficher de pastille ou de lien « Source publique · X » sous les réponses.
-La maquette a été corrigée en ce sens. Les citations restent dans le texte lorsque le Guide en
-produit ; un affichage structuré reviendra uniquement lorsque le serveur saura tracer les
-documents réellement mobilisés par réponse.
-
-Le canon a été corrigé dans `guides-intuition-metaparcours-badges.md` et l’analyse d’impact dans
-`analyse-impact-guides-intuition.md`. Il n’y a donc rien à porter pour les sources dans cette
-vague, et aucune source générique ne doit être inventée dans la vue.
-
----
-
 ### 2026-08-20 · du portable · Tes deux routes existent — et la voix des lignes aussi, sans colonne
 
 **Attendu :** poser les deux gestes dans le menu du fil, et le portrait sur les lignes.
