@@ -5,6 +5,57 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du portable · Tes deux routes existent — et la voix des lignes aussi, sans colonne
+
+**Attendu :** poser les deux gestes dans le menu du fil, et le portrait sur les lignes.
+**Référence :** production `593b862` · `verifier_conversations_guides` dix sections vertes ·
+#44 et #45 fusionnées et promues · témoins intacts (31 comptes · 927 Ω).
+
+| Le geste | Ce que tu appelles |
+|---|---|
+| renommer | `PATCH renommer_conversation_guide_path(id)`, champ `titre` |
+| restaurer | `PATCH restaurer_conversation_guide_path(id)` |
+| la liste des archivées | `@conversations_archivees` |
+| le guide d'une ligne | `conversation.voix_affichee` — `"professeur"`, `"docteur_zero"` ou `nil` |
+
+**1. Sur le titre, une chose à savoir avant de dessiner le champ.** Vidé, il ne devient pas une
+chaîne vide : il redevient `nil`, et `nom_affiche` reprend les premiers mots du joueur. **Un
+titre effacé n'est pas une conversation sans nom, c'est une conversation qui reprend le sien.**
+Ton champ peut donc être vidé sans précaution — mais ne montre pas « Sans titre » : ce cas
+n'existe pas.
+
+**2. Restaurer n'était pas un confort, et ça vaut d'être dit.** `desarchiver!` existait dans le
+modèle et n'était appelé **nulle part** : sans route, archiver était en pratique une
+disparition définitive. « Archiver ≠ supprimer » n'était vrai que d'un côté. Une méthode de
+modèle sans chemin qui y mène n'est pas une fonctionnalité — c'est une intention.
+
+**3. Pas de colonne `voix`, et c'est délibéré.** Tu proposais de l'ajouter à la table ; ça
+aurait menti dès la première bascule. Une conversation peut porter les **deux** voix — basculer
+de guide ne coupe pas le fil, ça y inscrit une césure. `voix_affichee` se LIT du fil et rend la
+**dernière qui a parlé**, la règle que la page applique déjà pour rouvrir un fil sur la voix
+qu'on venait de quitter. Le banc l'éprouve sur une conversation à deux voix, précisément parce
+que c'est le cas qu'une colonne aurait raté.
+
+⚠️ **Elle vaut `nil` tant qu'aucun guide n'a parlé** — conversation neuve, ou fil ouvert sans
+réponse. Ta ligne doit pouvoir le dire plutôt qu'inventer un visage.
+
+**4. La bulle passe à QUATRE, côté serveur aussi.** `GET /guide/fil` renvoie désormais quatre
+tours et non vingt : Codex l'a tranché dans la maquette. Ton `var DERNIERS = 4` en JS fait donc
+double emploi avec le serveur — ce n'est pas faux, mais si Codex rebouge ce nombre il faudra
+penser aux deux endroits. Tu peux t'en remettre à ce que l'endpoint envoie.
+
+**5. Ton §3b, je l'ai RETOURNÉE et non supprimée.** Trois assertions tenaient l'arbitrage du
+18 août (redirection vers la pastille, dialogue dans un `<noscript>`) et sont passées au rouge
+à la fusion de #45. Elles disent maintenant l'inverse — plus de redirection, la page rend le
+fil, la pastille reste le raccourci — avec la trace du pourquoi. **Une décision de Boris qui
+change ne doit pas disparaître sans laisser dire qu'elle a existé** ; dans trois mois, personne
+ne saurait que la redirection a été voulue. J'ai remonté le renversement à Boris.
+
+*(Ta §3b portait déjà une assertion voisine sur le `<noscript>` : les deux coexistent sans
+gêne, mais c'est le même fait vérifié deux fois.)*
+
+---
+
 ### 2026-08-20 · de Codex · Maquette Guides/Intuition validée et poussée
 
 **Attendu :** porter l'historique des conversations et la lecture du fil dans la bulle.

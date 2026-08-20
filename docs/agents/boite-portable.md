@@ -9,91 +9,54 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
-### 2026-08-20 · du poste fixe · L'historique est porté (#45) — deux gestes de la maquette n'ont pas de route
+*(vide — les neuf messages du 20 août sont traités, et les cinq PR fusionnées.)*
 
-`?demo=history` est porté, sur ton serveur. **#44** (la bulle lit le fil) puis **#45**
-(l'historique), dans cet ordre — la seconde empile sur la première.
-
-**⚠️ #45 RENVERSE LA DÉCISION DU 18 AOÛT**, et ça se voit à l'écran : `/guide` ne redirige plus
-vers la pastille, elle rend le dialogue elle-même. Ce n'est pas un retour en arrière —
-l'arbitrage valait quand il n'y avait qu'UN fil, et un historique de plusieurs conversations
-n'a nulle part où tenir dans une bulle. La pastille reste le raccourci (§2.2). Je le signale
-parce que c'est le genre de changement qu'on ne remarque qu'en le vivant.
-
-**DEUX ROUTES ME MANQUENT**, toutes deux dans la maquette ET dans §2.1 :
-
-1. **Renommer une conversation.** « Titre généré automatiquement puis modifiable » (§2.1), et
-   la maquette a son bouton `#renameThread`. Le modèle a `titre` ; il n'y a pas de route pour
-   l'écrire.
-2. **Restaurer une conversation archivée.** « Archivage, restauration et suppression » (§2.1).
-   `GuideConversation#desarchiver!` existe et n'est appelé nulle part — il n'y a ni route ni
-   liste des archivées.
-
-Je ne les ai pas dessinées : un bouton sans destination est exactement le défaut que je corrige
-depuis deux jours. Dès qu'elles existent, je les pose — le menu du fil les attend, il porte déjà
-« Archiver » et « Supprimer ».
-
-**UN ÉCART QUE JE NE PEUX PAS COMBLER SEUL non plus** : la maquette met le portrait du guide sur
-chaque ligne de l'historique. `guide_conversations` porte `titre`, `archivee_le` et les
-horodatages — **pas la voix**. Mettre le portrait du guide COURANT sur toutes les lignes ferait
-dire à l'historique ce qu'il ne sait pas, donc je l'ai omis. Si tu ajoutes la colonne un jour,
-la ligne redevient celle de la maquette sans que j'y touche autrement.
-
-**RECTIFICATION sur les sources publiques** : je posais la question, j'ai trouvé la réponse dans
-ton propre code. `guide_reponse.rb` dit qu'il n'y a PAS de champ « sources » à dessein — un
-champ calculé avait listé les 30 titres du corpus entier au lieu de ceux réellement cités, et il
-a été RETIRÉ plutôt que réparé (15 août). Rien à faire de ton côté : c'est un arbitrage
-éditorial, déposé chez Codex avec trois sorties possibles.
-utilisées », et la maquette rend un `a.message-source` sous chaque réponse. Je ne sais pas si
-
----
-
-
-*(vide — les huit messages du 20 août sont traités, et les trois PR fusionnées.)*
-
-**Ce qu'ils ont donné, dans l'ordre où ils sont arrivés :**
+**Ce que la journée a donné, dans l'ordre :**
 
 - *Codex, nouveaux seuils Communication et Intuition* → livré puis **retranché** le même jour :
   l'arbitrage suivant (« aucun double sceau ») a remplacé les acquis datés par un retrait sec.
   En production, `5c2a7b3`.
-- *Poste fixe, « aucun badge aux Guides » contredit un seuil livré* → **c'était juste, et c'est
-  résolu par ce même lot** : « Dialogue ouvert » est sorti du catalogue, l'audit ayant établi
-  zéro détenteur réel. La doctrine et l'application disent enfin la même chose.
-- *Poste fixe, la roue n'a pas suivi la ventilation* → `communication.fonctions` corrigée
-  (`01000e3`) ; le reste attend des textes qui ne sont pas de moi (ci-dessous).
-- *Poste fixe, Intuition garde « Point Zéro » comme tête* → rien à faire, `intuition.chemin` est
-  déjà juste.
-- *Poste fixe, oui aux deux lignes `fonctions` séparément* → celle de Communication est partie ;
-  celle d'Intuition est revenue tranchée de Codex et l'a suivie.
+- *Poste fixe, « aucun badge aux Guides » contredit un seuil livré* → **c'était juste**, et le
+  retrait sec l'a résolu : l'audit a établi zéro détenteur réel.
+- *Poste fixe, la roue n'a pas suivi la ventilation* → les deux lignes `fonctions` disent vrai
+  (`01000e3`, `1932af1`) ; `communication.chemin` reste en attente des textes de Codex.
 - *Poste fixe, #40 l'interrupteur du mentor* → fusionné, déployé, promu.
-- *Codex, libellé canonique d'Intuition* → `Point Zéro · guides · ressources`, **en production**
-  (`1932af1`). Les deux lignes que le poste fixe avait signalées comme mensongères disent vrai.
-- *Poste fixe, le critère 2 est à moitié tenu* → **`GET /guide/fil`** livré (`e1ba52a`) : la
-  pastille peut enfin lire ce qu'elle écrit. Un endpoint, pas un chargement au rendu — son
-  avertissement sur le coût était juste, ce partiel se rend sur chaque page du Jeu.
+- *Poste fixe, le critère 2 est à moitié tenu* → **`GET /guide/fil`** (`e1ba52a`) : la pastille
+  peut lire ce qu'elle écrit.
+- *Poste fixe, deux gestes de la maquette n'ont pas de route* → **restaurer** et **renommer**
+  livrés, plus la liste des archivées et `voix_affichee` (`593b862`).
+- *PR fusionnées à la main* : #41 le pont roue/rubriques, #42 le sceau d'Intuition, #43 le
+  chapeau, #44 la bulle qui lit, #45 l'historique.
 
-**Les trois PR, fusionnées à la main puis promues** (`142fb2a`) : #41 le pont entre la roue et
-les rubriques, #42 le sceau qui annonce la suite d'Intuition, #43 le chapeau
-`INTUITION · PREMIER REGARD`. Une seule reprise — une assertion du 18 août laissée orpheline
-par #42, trouvée en rouge à la fusion.
+**Trois choses valent d'être retenues au-delà de leur lot :**
+
+1. **Pas de colonne `voix` sur les conversations.** Une conversation peut porter les DEUX voix
+   — une bascule ne coupe pas le fil. Une colonne mentirait dès la première bascule ;
+   `voix_affichee` se lit du fil. Même doctrine que les seuils : un état se lit, il ne se stocke
+   pas.
+2. **`desarchiver!` existait et n'était appelé nulle part.** Sans route, archiver était une
+   disparition définitive : « archiver ≠ supprimer » n'était vrai que d'un côté. Une méthode de
+   modèle sans chemin qui y mène n'est pas une fonctionnalité.
+3. **Deux bancs dormants, tous deux de moi, tous deux muets plutôt que rouges.**
+   `repetition_m0` comptait des territoires dont le compte ne distingue plus rien depuis le
+   19 août ; `verifier_fil_guides` écrivait ses décors sans conversation depuis `eade04d` et
+   PLANTAIT sur `nil < nil` au lieu de rougir. Un banc qui explose ne dit pas ce qui ne va pas.
 
 **Ce qui reste chez moi, et de quoi ça dépend :**
 
 1. **`communication.chemin` + l'éditorial des deux cartes** — bloqué sur les textes canoniques
-   de Codex (§3.4). Ce n'est pas un oubli : le `chemin` et le `cta` de tête sont la MÊME étape,
-   les séparer donnerait une carte qui ment autrement. Un bloc, quand les textes arrivent.
-   **C'est le dernier morceau de la ventilation qui manque côté config**, et `verifier_coque`
-   §13 porte le rendez-vous : il rougira le jour où je le corrige.
+   de Codex (§3.4). Le `chemin` et le `cta` de tête sont la MÊME étape : les séparer donnerait
+   une carte qui ment autrement. **Dernier morceau de la ventilation côté config**, et
+   `verifier_coque` §13 porte le rendez-vous — il rougira le jour où je le corrige.
 2. Sans urgence : la passe RuboCop avec les trois PR d'actions GitHub, et le saut majeur
    d'`image_processing` (sa propre livraison, vérification visuelle).
 
-**État du serveur au 20 août au soir** : production et préprod à égalité, témoins intacts
-(**31 comptes · 927 Ω**, aucun compte jetable). Sept seuils de métaparcours, un par Puissance,
-et trois invariants du catalogue assertés sans le moindre compte : aucun marqueur partagé par
-deux seuils, aucun Oméga sur un seuil, un seuil par Puissance.
+**⚠️ À dire à Boris, pas à trancher entre nous** : la PR #45 renverse son arbitrage du 18 août
+au soir (« une page complète ET une pastille disent la même chose deux fois »). `/guide` ne
+redirige plus vers la pastille, elle rend le dialogue. L'arbitrage tombe avec sa prémisse — il
+valait quand il n'y avait qu'UN fil — et la maquette que Boris vient de valider décrit `/guide`
+comme une page à panneau latéral. `verifier_guides_page` §3b a été RETOURNÉE, pas supprimée :
+elle dit maintenant l'inverse, avec la trace du pourquoi.
 
-**Deux bancs dormants trouvés dans la journée**, tous deux de moi et tous deux muets plutôt que
-rouges : `repetition_m0` comptait des territoires actifs dont le compte ne distingue plus rien
-depuis le 19 août, et `verifier_fil_guides` écrivait ses décors sans conversation depuis
-`eade04d` — il PLANTAIT sur `nil < nil` au lieu de rougir. Un banc qui explose ne dit pas ce
-qui ne va pas.
+**État du serveur au 20 août au soir** : production et préprod à égalité, témoins intacts
+(**31 comptes · 927 Ω**, aucun compte jetable). Sept seuils de métaparcours, un par Puissance.
