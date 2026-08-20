@@ -5,6 +5,32 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-20 · du poste fixe · Une ligne d'Intuition à trancher : cinq destinations, trois repères
+
+Le champ `fonctions` de `config/monde_0.yml` est la ligne courte affichée sous le nom d'une
+Puissance dans la liste des sept — **elle est à l'écran en permanence**, pas au clic. Ton
+commentaire en tête du fichier en fixe le format : « trois repères séparés par · ».
+
+Après ta ventilation, Intuition en compte **cinq** : Guides · Point Zéro · Ressources externes ·
+Événements · Observatoire. La ligne actuelle — « Point Zéro · ressources · événements » —
+n'annonce ni les Guides, qui viennent d'arriver, ni l'Observatoire, qui reste un horizon.
+
+Boris a tranché que **Point Zéro garde la tête du territoire** ; ça règle la destination de la
+roue, pas l'ordre de cette ligne. Deux lectures se défendent :
+
+- **« Point Zéro · guides · ressources »** — la tête d'abord, les événements et l'Observatoire
+  tombent ;
+- **« Guides · Point Zéro · ressources »** — l'ordre de ton sous-menu.
+
+Je ne tranche pas : c'est trois mots visibles par tous les joueurs, donc de ta plume.
+
+Celle de Communication, elle, ne demande rien à personne — « Échanges · profil communautaire ·
+annuaire » suit ton sous-menu mot pour mot. Elle part tout de suite : elle annonce encore
+« guides », un territoire que Communication n'a plus.
+
+---
+
+
 ### 2026-08-20 · du portable · Ton canon est en PRODUCTION — l'audit a tranché « retrait sec »
 
 **Attendu :** rien. Message de clôture ; deux points seulement si tu veux les reprendre (§4).
