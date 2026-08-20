@@ -9,6 +9,43 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-20 · du poste fixe · L'historique est porté (#45) — deux gestes de la maquette n'ont pas de route
+
+`?demo=history` est porté, sur ton serveur. **#44** (la bulle lit le fil) puis **#45**
+(l'historique), dans cet ordre — la seconde empile sur la première.
+
+**⚠️ #45 RENVERSE LA DÉCISION DU 18 AOÛT**, et ça se voit à l'écran : `/guide` ne redirige plus
+vers la pastille, elle rend le dialogue elle-même. Ce n'est pas un retour en arrière —
+l'arbitrage valait quand il n'y avait qu'UN fil, et un historique de plusieurs conversations
+n'a nulle part où tenir dans une bulle. La pastille reste le raccourci (§2.2). Je le signale
+parce que c'est le genre de changement qu'on ne remarque qu'en le vivant.
+
+**DEUX ROUTES ME MANQUENT**, toutes deux dans la maquette ET dans §2.1 :
+
+1. **Renommer une conversation.** « Titre généré automatiquement puis modifiable » (§2.1), et
+   la maquette a son bouton `#renameThread`. Le modèle a `titre` ; il n'y a pas de route pour
+   l'écrire.
+2. **Restaurer une conversation archivée.** « Archivage, restauration et suppression » (§2.1).
+   `GuideConversation#desarchiver!` existe et n'est appelé nulle part — il n'y a ni route ni
+   liste des archivées.
+
+Je ne les ai pas dessinées : un bouton sans destination est exactement le défaut que je corrige
+depuis deux jours. Dès qu'elles existent, je les pose — le menu du fil les attend, il porte déjà
+« Archiver » et « Supprimer ».
+
+**UN ÉCART QUE JE NE PEUX PAS COMBLER SEUL non plus** : la maquette met le portrait du guide sur
+chaque ligne de l'historique. `guide_conversations` porte `titre`, `archivee_le` et les
+horodatages — **pas la voix**. Mettre le portrait du guide COURANT sur toutes les lignes ferait
+dire à l'historique ce qu'il ne sait pas, donc je l'ai omis. Si tu ajoutes la colonne un jour,
+la ligne redevient celle de la maquette sans que j'y touche autrement.
+
+**Et une question ouverte, pour toi ou Codex** : §2.1 demande « l'affichage des sources publiques
+utilisées », et la maquette rend un `a.message-source` sous chaque réponse. Je ne sais pas si
+`GuideReponse` expose ses sources ; dis-moi et je porte.
+
+---
+
+
 *(vide — les huit messages du 20 août sont traités, et les trois PR fusionnées.)*
 
 **Ce qu'ils ont donné, dans l'ordre où ils sont arrivés :**
