@@ -6,6 +6,11 @@
 > [coque-cinq-puissances.md](coque-cinq-puissances.md) : les cinq intentions restent une
 > cartographie fonctionnelle utile, mais la navigation visible et l'accueil du Joueur
 > s'organisent désormais autour des **sept Puissances**.
+>
+> **Amendement Codex — 2026-08-20.** La cartographie exhaustive est fixée dans
+> [ventilation-pages-sept-puissances.md](ventilation-pages-sept-puissances.md). Les Guides résident
+> désormais dans Intuition ; leur effet sur les conversations, le métaparcours et les badges est
+> défini dans [guides-intuition-metaparcours-badges.md](guides-intuition-metaparcours-badges.md).
 
 ## 1. Décision structurante
 
@@ -31,8 +36,8 @@ jauge : elle exprime la circulation commune des six autres Puissances.
 | **Volonté — Je décide** | Entrer dans le premier parcours | Marelle et parcours Monde 0 | Parcours, étape active et prochaine action réelle |
 | **Imagination — Je crée** | Produire une première Graine | Fresque de Récit, puis Mes Traces | Graines, Résonances, Traces et transformations |
 | **Émotion — Je ressens** | Choisir un héros inspirant | Catalogue limité des héros et dialogue avec le mentor | Mentor choisi, échanges et parcours associés |
-| **Communication — Je m'exprime** | Rencontrer Sirbey ou Z.E.R.O. | Guides, Profil communautaire, Espace du Seuil, puis Annuaire | Guides disponibles, échanges du Monde 0 et personnes découvertes |
-| **Intuition — Je discerne** | Lire une première clé Point Zéro | Corpus PZ, événements ; ressources externes annoncées | Clés assimilées et Traces de lecture créées |
+| **Communication — Je m'exprime** | Composer son Profil communautaire | Profil communautaire, Espace d'échange du Monde 0, puis Annuaire | visibilité choisie, échanges et personnes découvertes |
+| **Intuition — Je discerne** | Choisir le regard de Sirbey ou de Z.E.R.O. | Guides, corpus PZ, événements ; ressources externes annoncées | conversations, clés assimilées et Traces de lecture créées |
 | **Transcendance — Je donne** | Observer son Moteur | Mon Moteur et Accomplissements | Puissances renseignées, Alchimisation et badges |
 
 ### 2.1 Règle d'incrémentation
@@ -85,8 +90,8 @@ ou la lumière ne portent jamais seules l'information, notamment pour l'accessib
 | Volonté | entrée dans la Marelle | étape ou parcours qui devient la prochaine invitation |
 | Imagination | première Graine et Fresque | `Mes Traces` dès l'apparition de la première Trace |
 | Émotion | catalogue des six héros | mentor choisi ou nouvelle page liée au mentor lorsqu'elle devient l'appel principal |
-| Communication | rencontre des deux guides | Profil communautaire, puis `Espace du Seuil`, puis Annuaire communautaire |
-| Intuition | dix clés Point Zéro | espace nouvellement ouvert, notamment les ressources externes au Monde 1 |
+| Communication | Profil communautaire | Espace d'échange du Monde 0, puis Annuaire communautaire |
+| Intuition | rencontre des deux Guides | dix clés Point Zéro, puis ressources externes au Monde 1 |
 | Transcendance | Moteur de Conscience | `Accomplissements` lorsque les six Puissances sont renseignées |
 
 Le prototype Monde 0 possède déjà des illustrations spécifiques pour la Fresque et les Traces ;
@@ -199,18 +204,12 @@ mentor est réversible.
 
 ### Communication
 
-Le premier geste est un choix entre :
+La Communication progresse en trois seuils explicites :
 
-- Professeur Sirbey, regard de la Lumière ;
-- Docteur Z.E.R.O., regard de l'Ombre.
-
-Après le premier dialogue, la Communication progresse en quatre seuils explicites :
-
-1. rencontrer les Guides ;
-2. composer et prévisualiser son Profil communautaire ;
-3. rejoindre l'Espace du Seuil du Monde 0, où le Joueur peut lire, se présenter et faire
+1. composer et prévisualiser son Profil communautaire ;
+2. rejoindre l'Espace d'échange du Monde 0, où le Joueur peut lire, se présenter et faire
    résonner les Graines ;
-4. découvrir l'Annuaire communautaire et les personnes qui ont choisi de s'y rendre visibles.
+3. découvrir l'Annuaire communautaire et les personnes qui ont choisi de s'y rendre visibles.
 
 L'Annuaire M0 reste volontairement léger : recherche par identité, territoire ou centre d'intérêt,
 Monde maximal atteint, mentor, disponibilité et demande d'échange consentie. Les métiers,
@@ -220,10 +219,15 @@ Monde 1. Les cartes n'affichent pas les Omégas.
 La phrase d'intention d'une carte provient de la réponse `Ce que je cherche maintenant`. Les
 mots-clés sont les centres d'intérêt choisis par le Joueur, trois au plus sur la carte ; ils ne
 sont jamais déduits automatiquement de ses Graines, Traces ou conversations. La messagerie
-complète s'ouvre au Monde 1. Les guides expliquent le Point Zéro et l'application ; ils ne
-remplacent ni le mentor personnel, ni le facilitateur, ni l'aide humaine.
+complète s'ouvre au Monde 1.
 
 ### Intuition
+
+Le premier geste est un choix entre le Professeur Sirbey, regard de la Lumière, et le Docteur
+Z.E.R.O., regard de l'Ombre. Après un premier échange significatif, leur bulle devient accessible
+dans toute l'application et la carte peut inviter à découvrir une première clé Point Zéro. Les
+Guides expliquent le Point Zéro et l'application ; ils ne remplacent ni le mentor personnel, ni le
+facilitateur, ni l'aide humaine.
 
 Le corpus Point Zéro et les ressources externes sont deux sous-ensembles de la même
 Ressourcerie. Au Monde 0, dix fiches PZ sont visibles. Le Joueur lit d'abord la fiche, puis
@@ -278,10 +282,10 @@ La traduction Rails ne doit pas reproduire ces objets tels quels. Elle doit racc
 | Fresque | `fresque-recit-m0-cible/` |
 | Traces | `traces-m0-cible/` |
 | Héros | `heros-mentors-m0-cible/` |
-| Communication — Guides et Espace du Seuil | `communication-guides-m0-cible/` |
+| Intuition — Guides | `communication-guides-m0-cible/` |
 | Communication — Profil communautaire | `profil-communautaire-m0-cible/` |
 | Communication — Annuaire | `annuaire-m0-cible/` |
-| Intuition | `premieres-cles-m0-cible/` |
+| Intuition — Point Zéro | `premieres-cles-m0-cible/` |
 | Moteur | `moteur-conscience-m0-cible/` |
 | Accomplissements | `accomplissements-m0-cible/` |
 
@@ -312,6 +316,7 @@ La traduction Rails ne doit pas reproduire ces objets tels quels. Elle doit racc
 - les ressources externes annoncent une ouverture automatique au Monde 1 ;
 - la Transcendance n'est jamais évaluée comme une Puissance indépendante ;
 - les guides restent une aide sur le Jeu, distincte du mentor et des échanges humains ;
-- la Communication progresse bien dans l'ordre Guides → Profil → Espace du Seuil → Annuaire ;
+- la Communication progresse bien dans l'ordre Profil → Espace d'échange → Annuaire ;
+- l'Intuition progresse des Guides vers les clés Point Zéro sans attribuer un badge sur une simple visite ;
 - la visite de l'Annuaire réactive puis apaise la carte Communication sans valider d'expérience ;
 - les réglages de compte ne dupliquent ni le profil communautaire ni les œuvres.

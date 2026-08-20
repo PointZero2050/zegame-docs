@@ -6,6 +6,12 @@
 > des conversations privées avec le Professeur Sirbey et le Docteur Z.E.R.O. Il ne constitue pas
 > à lui seul une autorisation de modifier les modèles Rails. La durée et les mentions juridiques
 > devront être validées avant mise en production.
+>
+> **Amendement Codex — 2026-08-20.** La résidence des Guides passe dans Intuition et la cible
+> envisage désormais plusieurs conversations dans
+> [guides-intuition-metaparcours-badges.md](guides-intuition-metaparcours-badges.md). La finalité de
+> l’Espace d’échange, le badge `Présence ouverte` et les garanties de confidentialité décrites ici
+> restent canoniques. Les paragraphes formulés pour un fil unique décrivent l’état actuel à migrer.
 
 ## 1. Deux conversations, deux fonctions
 

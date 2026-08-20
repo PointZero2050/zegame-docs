@@ -28,6 +28,12 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
   CGU pour le site et l’application : compte, progression, IA, contenus du Joueur, messagerie,
   Cercles, indicateurs pédagogiques, Omégas, modération, propriété intellectuelle et données
   personnelles. Texte de travail à faire valider juridiquement avant publication.
+- **[ventilation-pages-sept-puissances.md](ventilation-pages-sept-puissances.md)** — cartographie
+  générale des pages par Puissance, distinction entre adresse stable, invitation du métaparcours,
+  notifications et sous-menu, puis ouverture minimale envisagée Monde par Monde.
+- **[guides-intuition-metaparcours-badges.md](guides-intuition-metaparcours-badges.md)** — décision
+  de résidence des Guides dans Intuition, page de conversations et bulle transversale, amendement
+  du métaparcours Communication/Intuition et migration des badges de seuil sans double attribution.
 
 ## Décisions canoniques du 12 août 2026
 

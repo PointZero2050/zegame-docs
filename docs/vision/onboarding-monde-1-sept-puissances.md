@@ -4,6 +4,11 @@
 > [l’onboarding du Monde 0](onboarding-monde-0-sept-puissances.md). Elle organise la révélation
 > fonctionnelle du Monde 1 sans autoriser à elle seule une modification des modèles de progression,
 > des validations, des Omégas, des Cercles ou de la messagerie.
+>
+> **Amendement Codex — 2026-08-20.** La ventilation générale est définie dans
+> [ventilation-pages-sept-puissances.md](ventilation-pages-sept-puissances.md). Les Guides résident
+> dans Intuition et leur métaparcours est précisé dans
+> [guides-intuition-metaparcours-badges.md](guides-intuition-metaparcours-badges.md).
 
 ## 1. Décision structurante
 
@@ -13,7 +18,8 @@ pas une coque par une autre : il montre que les mêmes Puissances changent de ra
 Chaque carte fonctionne comme un **métaparcours persistant** :
 
 1. **invitation** : une fonctionnalité encore inconnue est formulée comme une action réelle ;
-2. **découverte** : l’action accomplie produit un badge de seuil et révèle le territoire ;
+2. **découverte** : l’action accomplie révèle le territoire et produit un badge seulement lorsque
+   le seuil pédagogique le justifie ;
 3. **appropriation** : la carte cesse de vendre la fonction et affiche un usage courant, une
    information vivante ou le prochain geste pertinent ;
 4. **réouverture** : lorsqu’un nouvel usage devient disponible, la carte repasse ponctuellement en
@@ -85,8 +91,8 @@ Le sélecteur de ces quatre moments dans le prototype est un outil de démonstra
 | **Volonté** | Premier parcours de la Marelle | Commencer la Boussole obligatoire ; le catalogue reste fermé jusqu’à son accomplissement | Choisir des parcours par durée, intensité et rayon d’effet ; traverser une quête collective |
 | **Imagination** | Fresque, Graines et Traces | Sélectionner ce qui peut être partagé et transformer la restitution solo en Graine | Relier Graines individuelles, Résonances et synthèse commune sans absorber les récits personnels |
 | **Émotion** | Figures inspirantes et mentor | Découvrir des constellations possibles puis choisir librement son Cercle | Pratiquer les cinq Cadres par des rôles tournants, avec gardien principal et appui éventuel |
-| **Communication** | Guides et Espace du Seuil | Se présenter, accueillir et apprendre à produire une Résonance | Préparer les séances, converser, formuler une intention, décider, agir et conserver une Mémoire |
-| **Intuition** | Dix clés Point Zéro | Ouvrir automatiquement les ressources externes, événements et premières cartes systémiques | Récolter les apprentissages et comparer la traversée solo à la traversée collective |
+| **Communication** | Profil communautaire, Espace d'échange et Annuaire | Se présenter, accueillir et apprendre à produire une Résonance | Préparer les séances, converser, formuler une intention, décider, agir et conserver une Mémoire |
+| **Intuition** | Guides et dix clés Point Zéro | Ouvrir automatiquement les ressources externes, événements et premières cartes systémiques | Récolter les apprentissages et comparer la traversée solo à la traversée collective |
 | **Transcendance — Couronne** | Moteur, alchimisation, accomplissements et Omégas | Comprendre la ventilation des Omégas, le domaine de souveraineté et le cap collectif | Lire le flow et les Cadres du Cercle, accéder au Commun sans attribuer d’Omégas au groupe |
 
 Cette cartographie organise la navigation. Elle ne signifie pas qu’une fonctionnalité ou une
@@ -136,7 +142,8 @@ la carte repasse en invitation puis ouvre la rubrique qui conserve tous les item
 Exemples :
 
 - `Imagination` : Fresque → Traces → Fresque du Cercle ;
-- `Communication` : Guides → Espace du Seuil → Échanges → espace du Cercle ;
+- `Communication` : Profil communautaire → Espace d'échange → Annuaire → espace du Cercle ;
+- `Intuition` : Guides → Point Zéro → ressources externes → Observatoire ;
 - `Émotion` : Héros et mentors → constellations → Cercle → rôles tournants ;
 - `Transcendance` : Moteur → Accomplissements → Omégas → profil du Cercle → Commun.
 
@@ -154,7 +161,8 @@ nouveautés sans fabriquer de mosaïque.
 
 La bascule visuelle est animée une seule fois au retour sur l'accueil, par fondu ou métamorphose
 brève, et respecte `prefers-reduced-motion`. Cette règle s'applique aussi rétroactivement au Monde 0,
-notamment aux transitions Fresque → Traces, Guides → Espace du Seuil et Moteur → Accomplissements.
+notamment aux transitions Fresque → Traces, Profil → Espace d'échange, Guides → Point Zéro et
+Moteur → Accomplissements.
 
 Les phases `invitation` et `reouverture` ajoutent une **surbrillance légère et stable** à la carte :
 bordure lumineuse, halo contenu et contraste renforcé, sans pulsation permanente. Elle s'éteint à
