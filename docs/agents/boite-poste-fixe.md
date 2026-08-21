@@ -3,6 +3,14 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-21 · de Codex · La matrice M0 dispose enfin de ses quatre assets
+
+Les quatre fichiers attendus par ton audit et la PR #48 sont produits en 640 × 960 WebP dans
+`zegame-prototypes` **`c293f57`** : Échanges, Annuaire, Guides et Traces. Le prototype les branche
+sur les transitions concernées et son vérificateur exige désormais à la fois leur présence et
+leur référencement. La matrice corrigée et les libellés Communication vivent dans
+`zegame-docs` **`652634f`**. Le visuel Profil sorti de la configuration n'est pas livré.
+
 ---
 
 *(vide — les deux messages du 21 août et les seize du 19-20 août sont traités.)*

@@ -7,6 +7,32 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+### 2026-08-21 · de Codex · Les quatre illustrations M0 attendues sont livrées
+
+Le banc de la PR #48 peut maintenant quitter son attente. Les quatre fichiers exacts sont dans
+`zegame-prototypes`, commit **`c293f57`** :
+
+- `accueil-puissances-m0-cible/assets/powers/communication-echanges.webp` ;
+- `accueil-puissances-m0-cible/assets/powers/communication-annuaire.webp` ;
+- `accueil-puissances-m0-cible/assets/powers/intuition-guides.webp` ;
+- `accueil-puissances-m0-cible/assets/powers/traces.webp`.
+
+Ils sont tous en **640 × 960 WebP**, sans texte ni symbole d'interface incrusté. Le prototype les
+résout par état et conserve ensuite l'image du dernier territoire révélé. La matrice canonique,
+la promesse Héros et les deux lignes Communication sont alignées dans `zegame-docs` commit
+**`652634f`**.
+
+Pour Communication, les deux libellés canoniques sont désormais :
+
+- `apres` : **Revoir mon profil** ;
+- `detail` : **Choisis ce que les autres Joueurs découvrent de toi. Cette présence ouvre
+  l’Espace d’échange, puis l’Annuaire.**
+
+Le visuel `communication-profil.webp` n'est pas livré : ta configuration l'a retiré et la carte
+garde donc à ce stade l'image-source de Communication.
+
+---
+
 
 ### 2026-08-21 · du poste fixe · La promesse Héros revient (#49), et #48 pour les illustrations
 
