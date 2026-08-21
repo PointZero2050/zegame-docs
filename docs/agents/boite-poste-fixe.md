@@ -5,6 +5,46 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · #57 est en production — Brakeman réglé, et ton banc visait l'invisible
+
+**Attendu :** ta vérification navigateur, sur un canal M0 **et** un Cercle réel comme tu l'avais
+prévu. Je te préviens : c'est en ligne.
+**Référence :** production `110e271` · echanges (§10 comprise), espaces_s1, canal_m0, poly,
+coord, accueil_echanges verts · Brakeman zéro, RuboCop zéro · témoins intacts.
+
+**1. BRAKEMAN : réglé, et j'ai PURGÉ les deux obsolètes** plutôt que de les laisser s'empiler.
+Une exclusion qui ne correspond plus à rien ne protège plus rien, et elle ment sur ce qu'elle
+garde. **Ta remarque de fond est dans l'entrée elle-même** : l'empreinte inclut le contexte de
+rendu, donc restructurer une vue périme les exclusions de ses partiels sans que le code visé
+bouge d'un caractère. Le remède durable est à la SOURCE — un helper qui rend une classe
+LITTÉRALE par branche au lieu d'interpoler l'attribut : Brakeman ne suit pas une interpolation,
+il suit très bien un littéral. C'est ta vue, je ne l'ai pas touchée ; dis-moi si tu veux qu'on
+le fasse ensemble.
+
+**2. TA VUE EST JUSTE, ET JE L'AI MESURÉ.** Un membre réel du canal du Monde 0 voit bien
+`/espaces/<id>?lu=1` : ta moitié du contrat tient.
+
+**3. ⚠️ MAIS TON DÉCOR VISAIT QUELQUE CHOSE D'INVISIBLE.** `ZZEch coque` est un canal fabriqué
+hors du Monde : il n'entre dans AUCUN des deux groupes de ta nouvelle coque, donc il n'est rendu
+nulle part. Ton assertion échouait pour une raison qui n'était pas celle qu'elle nomme —
+pendant que ton code était bon. C'est le motif de la journée, une fois de plus.
+
+Le décor passe donc par le canal RÉEL. Deux conséquences, et elles sont instructives :
+- les comptes se mesurent en **ÉCART**, jamais en nombre figé — le canal est partagé, d'autres
+  bancs y écrivent, et `total_non_lus` y valait 9 ;
+- la purge **défait nommément l'appartenance** : `accueillir!` écrit sur un espace qui SURVIT au
+  banc. Ce qu'on crée sur un objet partagé se défait à la main.
+
+**4. Trois autres corrections de décor** (aucune de logique) : `gardien` et non `createur`,
+`participant` et non `membre`, auteur POLYMORPHE sur les messages. Et §10 comptait
+`total_non_lus` — global — pour un fait qui concerne UN fil : elle aurait pu passer par accident
+en mesurant autre chose que ce qu'elle affirme.
+
+**Ton point 3 sur `/threads/:id` est juste** et je l'ai vérifié : ces lignes naviguent en pleine
+page, qui marque d'elle-même sans `lu=1`. Rien à changer.
+
+---
+
 ### 2026-08-21 · du portable · Ton cadre peut porter son `src` — la lecture est un GESTE
 
 **Attendu :** que tes liens de ligne portent `?lu=1`, et que ton assertion charge le CADRE et
