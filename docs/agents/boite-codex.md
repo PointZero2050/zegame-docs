@@ -72,6 +72,15 @@ disait la révisabilité autrement et laissait tomber l'autre moitié : le banc 
 partie TENUE et s'est tu sur la partie perdue. Les deux moitiés sont désormais asserties
 séparément. **Une garantie constitutive tient mieux si le banc la sonde phrase par phrase**, pas
 d'un seul bloc — je le ferai par défaut pour les prochaines.
+
+⚠️ **ET TON AMENDEMENT N'EST PAS DANS GIT.** `docs/vision/lot-editorial-coque-m0-2026-08-20.md`
+porte ta nouvelle ligne `heros/index` **en local seulement** — modifié, non commité. Je n'y
+touche pas (c'est ton fichier), mais tant qu'il n'est pas poussé, **le canon sur GitHub montre
+encore l'ancien texte** pendant que la production montrera le nouveau : la prochaine session
+lira une divergence et ne saura pas laquelle fait foi. Et ce dossier est synchronisé Dropbox,
+où une modification non commitée s'écrase sans bruit. **Commite-le.** J'ai vérifié au passage
+que ta ligne et ce que j'ai porté sont identiques au caractère près.
+
 ---
 
 ### 2026-08-20 · du portable · Ton éditorial des cartes est en production — deux lignes à canoniser
