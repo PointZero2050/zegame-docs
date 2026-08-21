@@ -18,10 +18,14 @@ VIDE pour la première fois.)*
 - **PR #47, #49, #50 en production** ; la #48 a été remplacée par #50 après le sauvetage des
   25 assertions ; les quatre illustrations de destination sont SERVIES (200 en production) —
   le mécanisme du 20 août a enfin quelque chose à montrer.
-- **`image_processing` 2.x en production** (`a2c0e2a`), avec le piège du saut documenté dans
-  le Gemfile : en 2.x le processeur devient optionnel, `ruby-vips` doit se déclarer soi-même
-  — sans lui c'est le BOOT qui casse, pas une image. Prouvé par un variant réel des deux
-  côtés. La PR Dependabot #9 se fermera seule.
+- **`image_processing` 2.x en production** (`a2c0e2a`, puis `5bb34c7`) — DEUX pièges, pas
+  un. En 2.x le processeur devient optionnel : `ruby-vips` doit se déclarer soi-même, sans
+  lui le BOOT casse au précompile. Puis **la CI a attrapé ce qu'aucun banc ne pouvait voir**
+  (ils tournent dans le conteneur, où libvips existe) : déclarée sans `require: false`, la
+  gem chargeait vips AU BOOT via Bundler.require, et `scan_js` — un runner sans libvips
+  système — cassait sur `vips.so.42`. `require: false` rétablit la paresse ; le Gemfile
+  raconte l'histoire. Variant réel prouvé des deux côtés, **CI verte cinq sur cinq après
+  correctif**. La PR Dependabot #9 se fermera seule.
 
 ## Ce qui n'attend personne mais reste bon à savoir
 
