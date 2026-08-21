@@ -37,7 +37,9 @@ ses assertions de copie.
 
 | Surface | Texte canonique de remplacement |
 |---|---|
-| `heros/index` | `Choisis une personne, un personnage, une figure mythique ou un archétype pour ouvrir une perspective sur ton Voyage. Ton chemin évolue ; ton mentor peut évoluer avec lui.` |
+| `accueil_m0/communication`, retour | `Revoir mon profil` |
+| `accueil_m0/communication`, détail | `Choisis ce que les autres Joueurs découvrent de toi. Cette présence ouvre l’Espace d’échange, puis l’Annuaire.` |
+| `heros/index` | `Choisis une personne, un personnage, une figure mythique ou un archétype pour ouvrir une perspective sur ton Voyage. Tu choisis une perspective, pas une identité. Ton chemin évolue ; ton mentor peut évoluer avec lui.` |
 | `heros/show` | `Une lecture éditoriale des Puissances que cette figure met en mouvement.` |
 | `mentor/show` | `Laisse son regard éclairer l’endroit où la Puissance {nom de la puissance} cherche aujourd’hui à circuler dans ta vie — et ce qui l’en empêche.` |
 | `attention/index`, état vide | `Rien n’attend de geste de ta part. Le terrain est libre.` |

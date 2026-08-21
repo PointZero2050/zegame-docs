@@ -49,12 +49,14 @@ exposer dans l'interface ni dans le corpus des guides.
 | **Volonté** | Premier appel | premier parcours Monde 0 disponible | `Entrer dans la Marelle` | entrée dans la Marelle ; `assets/powers/volonte.webp` | **E** | conserver |
 | **Volonté** | Appropriation | parcours commencé | prochaine action réelle du parcours | même image ; titre, étape et CTA évoluent | **E** | aucun nouvel asset |
 | **Imagination** | Premier appel | première Graine proposée | `Créer ma première Graine` → Fresque | `fresque-recit-m0-cible/assets/fresque-hero-v1.webp` | **E** | brancher aussi sur la carte d'accueil à ce seuil |
-| **Imagination** | Réouverture | première Trace créée dans un parcours ou mini-jeu | `Découvrir mes Traces` → Mes Traces | `traces-m0-cible/assets/traces-hero-v1.webp` | **E** | brancher ; conserver ensuite comme mémoire du dernier espace révélé |
+| **Imagination** | Réouverture | première Trace créée dans un parcours ou mini-jeu | `Découvrir mes Traces` → Mes Traces | `accueil-puissances-m0-cible/assets/powers/traces.webp` | **E** | branché ; conserver ensuite comme mémoire du dernier espace révélé |
 | **Émotion** | Premier appel | catalogue pilote accessible | `Choisir mon mentor` → Héros et mentors | couverture de catalogue, distincte d'un portrait individuel | **P** | produire une scène de rencontre avec plusieurs figures possibles |
 | **Émotion** | Appropriation | mentor choisi | `Parler avec mon mentor` | portrait du mentor choisi dans un cadre néoarchaïque commun | **R** | composer depuis les portraits carrés existants, sans générer une nouvelle œuvre |
-| **Communication** | Premier appel | guides accessibles | `Rencontrer les deux guides` → Guides | image des deux guides ou base `assets/powers/communication.webp` | **R** | composer à partir des portraits existants ; garder la dualité Ombre/Lumière |
-| **Communication** | Réouverture | premier dialogue significatif avec un guide | `Découvrir l'Espace du Seuil` | `accueil-puissances-m1-cible/assets/invitations/communication-espace-seuil-v2.webp` | **R** | mutualiser dans un dossier d'assets partagé puis brancher au M0 |
-| **Intuition** | Premier appel | dix clés Point Zéro disponibles | `Lire une première clé` → Point Zéro | `premieres-cles-m0-cible/assets/intuition-hero.webp` | **E** | brancher sur la carte ; les QCM produisent des Traces, pas de nouvelles couvertures |
+| **Communication** | Premier appel | Profil communautaire disponible | `Composer mon profil` → Profil communautaire | image-source de la Puissance `communication.webp` | **E** | conserver : la production Rails ne déclare plus d'image spécifique à ce stade |
+| **Communication** | Réouverture 1 | Profil communautaire confirmé | `Entrer dans l'Espace d'échange` | `accueil-puissances-m0-cible/assets/powers/communication-echanges.webp` | **E** | branché ; conserver jusqu'à l'entrée effective dans l'Espace |
+| **Communication** | Réouverture 2 | Espace d'échange rejoint | `Explorer l'Annuaire` | `accueil-puissances-m0-cible/assets/powers/communication-annuaire.webp` | **E** | branché ; conserver ensuite comme mémoire du dernier territoire révélé |
+| **Intuition** | Premier appel | Guides accessibles | `Choisir un regard` → Guides | `accueil-puissances-m0-cible/assets/powers/intuition-guides.webp` | **E** | branché ; les deux voix sont réunies dans une même composition Ombre/Lumière |
+| **Intuition** | Réouverture | premier échange Guide complet | `Découvrir les clés du Point Zéro` → Point Zéro | `premieres-cles-m0-cible/assets/intuition-hero.webp` | **E** | brancher sur la carte ; les QCM produisent des Traces, pas de nouvelles couvertures |
 | **Intuition** | Appropriation | fiche lue ou QCM rempli | lire la prochaine clé / voir les événements | même illustration, compteurs de clés et Traces | **E** | aucun nouvel asset en M0 |
 | **Transcendance** | Premier appel | questionnaire du Moteur accessible | `Observer mon Moteur` → Moteur | `assets/powers/transcendance.webp` | **E** | conserver |
 | **Transcendance** | Réouverture | six Puissances renseignées et premier badge disponible | `Voir mes Accomplissements` | constellation animée de la page Accomplissements | **A** | conserver le principe ; créer une miniature animée simplifiée et un poster statique |
@@ -147,7 +149,7 @@ existante de page doit être adaptée avant d'en générer une nouvelle.
 ### Lot V1 — raccordement rétroactif M0
 
 1. brancher Fresque, Traces et Point Zéro sur les cartes correspondantes ;
-2. mutualiser l'image Espace du Seuil entre M0 et M1 ;
+2. brancher les trois états Communication : Profil → Espace d'échange → Annuaire ;
 3. produire la couverture du catalogue des héros ;
 4. composer l'état `mentor choisi` depuis le portrait sélectionné ;
 5. adapter la constellation Accomplissements en composant de carte et poster statique.
@@ -172,8 +174,11 @@ exemple :
 ```text
 m0.imagination.fresque
 m0.imagination.traces
-m0.communication.guides
-m0.communication.espace_seuil
+m0.communication.profil
+m0.communication.echanges
+m0.communication.annuaire
+m0.intuition.guides
+m0.intuition.point_zero
 m0.transcendance.moteur
 m0.transcendance.accomplissements
 m1.volonte.boussole

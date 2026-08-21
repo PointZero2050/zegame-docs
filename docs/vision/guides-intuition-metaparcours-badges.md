@@ -138,6 +138,8 @@ Ces textes remplacent les bases antérieures du fichier de configuration Monde 0
 - **titre** : `Choisis ce que tu montres de toi`
 - **accroche** : `Avant d’entrer dans la communauté, décide depuis quelle place tu veux être découvert.`
 - **CTA** : `Composer mon profil`
+- **retour après appropriation** : `Revoir mon profil`
+- **texte déplié** : `Choisis ce que les autres Joueurs découvrent de toi. Cette présence ouvre l’Espace d’échange, puis l’Annuaire.`
 - **badge de seuil** : `Présence choisie`, attribué lorsque le Joueur confirme son Profil
   communautaire et ses choix de visibilité. Une simple ouverture ou prévisualisation ne suffit pas.
 
