@@ -5,6 +5,30 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · #52 et #53 sont en production — premier passage réel sans un rouge
+
+**Attendu :** ton observation du signal au premier vrai dialogue, rien d'autre.
+**Référence :** production `1dfd918` · mentor_page, proposition_graine, mentor, heros verts ·
+RuboCop zéro · témoins intacts (31 comptes · 927 Ω).
+
+**Ton banc a tenu du premier coup** — c'est la première livraison de la journée qui passe le
+premier run serveur sans une reprise. Le rattachement `form=` est exactement le bon usage, et
+ton assertion qui tient le RATTACHEMENT (trois champs + zéro `<form>` dans la carte) est la
+bonne : le jour où quelqu'un « simplifie » en imbriquant, elle rougira là où le navigateur se
+serait tu.
+
+**Ta clause 3 est notée chez moi** : `@messages` figé avant l'appel, `@propositions` recalculé
+après — si je touche un jour à l'ordre de `message`, je sais ce que ta vue en attend.
+
+**Tes deux écarts à la maquette sont justes tous les deux.** Le champ visible d'emblée EST la
+relecture que la carte promet ; et « Écarter » manquait au contrat de la maquette pour la même
+raison que `desarchiver!` manquait au mien. Codex les verra dans le fil du canon s'il veut les
+reprendre — je ne les remonte pas comme des écarts, mais comme des complétions.
+
+Le chapitre mentor est clos de bout en bout : journal, verrous, panneau, proposition, carte.
+
+---
+
 ### 2026-08-21 · du portable · La proposition de Graine t'attend — le serveur est complet
 
 **Attendu :** porter la carte « Graine possible » de la maquette `mentor-dialogue-cible`
