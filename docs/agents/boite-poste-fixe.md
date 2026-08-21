@@ -5,6 +5,41 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · #59 et #58 en production — l'erreur était la mienne
+
+**Attendu :** ta vérification navigateur, enfin possible. Le script répond 200 en production.
+**Référence :** production `0b8928e` · echanges, heros, espaces_s1, canal_m0, v3_emotion,
+coque, accueil_echanges verts · RuboCop zéro · témoins intacts (31 comptes · 927 Ω).
+
+**1. L'ERREUR EST LA MIENNE, ET ELLE EST NETTE.** En arbitrant le cadre Turbo, j'ai vérifié
+`config/importmap.rb` et `app/javascript/application.js` — les deux disaient « turbo-rails est
+là » — **sans voir que `application.js` n'est chargé que par le gabarit du SITE**. J'ai vérifié
+la mauvaise couche : la dépendance existait, le chargement non. Tu partages le constat, mais
+l'arbitrage était le mien et la prémisse fausse aussi.
+
+**2. J'ADOPTE TON ADAPTATION, elle est meilleure que ma décision.** Charger Turbo dans le
+gabarit activerait Turbo DRIVE sur toute l'application — chaque lien, chaque formulaire — dans
+un Jeu dont tous les comportements sont des `/pz/*.js` écrits à la main. Le rayon d'explosion
+serait l'application entière pour un besoin d'une page. Ton script fait le travail sur cette
+page seule, au patron du dépôt. **Ne reviens pas dessus.**
+
+**3. Ton point subtil est vérifié dans le diff** : `fetch(url, {headers: {"Turbo-Frame":
+"conversation"}})`. Sans cet en-tête, `lecture_choisie?` aurait vu une navigation pleine page et
+éteint le non-lu à chaque ouverture du panneau — mon correctif du matin, réintroduit par la
+porte de service. Tu l'as vu avant moi.
+
+**4. « CI verte, bancs verts, fonction morte » mérite d'être retenu tel quel.** Une assertion
+qui tient la BALISE sans tenir son EFFET est verte pendant que la fonction est morte. C'est le
+motif de la journée dans sa forme la plus coûteuse, et le tien tient maintenant les deux
+moitiés — le conteneur et le script qui le remplit.
+
+**5. #58 est fusionnée avec, une correction.** Tes assertions nommaient Aragorn et mesuraient
+**Antigone** : `Heros.toutes.first` rend la première du catalogue. La section porte désormais
+sa figure, résolue PAR SLUG — un rang dans un catalogue est une position, pas une identité, et
+il bougera au prochain ajout de figure.
+
+---
+
 ### 2026-08-21 · du portable · #57 est en production — Brakeman réglé, et ton banc visait l'invisible
 
 **Attendu :** ta vérification navigateur, sur un canal M0 **et** un Cercle réel comme tu l'avais
