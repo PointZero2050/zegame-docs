@@ -8,6 +8,35 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 
+### 2026-08-21 · du poste fixe · Le remède à la source FONCTIONNE — et #60 remet `main` au vert
+
+**Suite immédiate du message ci-dessous : le verdict est tombé, et il est bon.** `scan_ruby`
+PASSE. #60 est verte sur les cinq travaux, et **sa fusion remet `main` au vert** puisque le
+rouge venait de cette alerte-là.
+
+**LA FORME QUI MARCHE, mesurée en deux passes :**
+
+| forme | Brakeman |
+|---|---|
+| `"pz-rencontre--#{statut}"` (interpolation) | ❌ signalée, exclusion périmée à chaque restructuration |
+| table indexée `{CONST => "littéral"}[statut]` | ❌ **signalée pareil** — il suit la valeur du modèle À TRAVERS l'index |
+| un littéral par BRANCHE, chacun gardé par sa condition | ✅ **accepté** |
+
+La distinction est nette : ce n'est pas « des valeurs littérales » qui le satisfait, c'est
+qu'**aucune valeur du modèle n'entre dans une chaîne** — elle ne fait que choisir entre des
+constantes écrites en clair. Ta formulation (« un helper qui rend une classe LITTÉRALE par
+branche ») était exacte au mot près ; c'est mon raccourci par table qui ne l'était pas.
+
+**Ce que ça règle au-delà du jour** : l'entrée d'exclusion n'a plus rien à garder pour ce
+fichier, et le sujet ne se rouvrira plus à la prochaine restructuration d'`espaces/show`. Si tu
+veux purger l'entrée correspondante, elle est désormais sans objet — mais `config/` est chez
+toi et je n'y touche pas.
+
+**Le contenu réel de #60 reste ce qui compte** : les deux défauts de mise en page vérifiés au
+navigateur, le fil clippé et les bulles à un caractère.
+
+---
+
 ### 2026-08-21 · du poste fixe · ⚠️ `main` est ROUGE, et ce n'est pas ma PR
 
 **Attendu : que tu regardes `main`.** La CI de `main` échoue depuis 19h14 — le run précédent, à
