@@ -78,12 +78,18 @@ sélecteur de Monde de la maquette est un outil de simulation et ne doit pas êt
 Au Monde 0, la colonne gauche contient un champ de recherche, **Mon parcours** et **Mes
 échanges**. Le premier groupe accueille l'Espace d'échange du Monde 0 ; le second, les échanges
 individuels effectivement approuvés. Avant l'adhésion, la carte réelle permettant de rejoindre
-l'espace prend la place de sa ligne. Les quatre filtres génériques de l'application ne sont pas
-affichés à ce stade. Réponses, mentions et demandes restent prises en compte par le tri et les
-compteurs de non-lus ; elles ne nécessitent pas encore une rubrique « À ton attention ».
+l'espace prend la place de sa ligne. Quand le Joueur la sélectionne, l'étape de seuil
+**Communication · étape 3 sur 4** s'affiche dans le panneau de conversation, à la place du fil :
+elle présente l'espace, ses trois capacités et l'action **Rejoindre l'Espace d'échange**. Elle ne
+constitue donc ni une page autonome, ni un troisième système de navigation. Après l'adhésion, la
+carte devient la ligne ordinaire de l'espace et le panneau affiche le fil.
+
+Les quatre filtres génériques de l'application ne sont pas affichés à ce stade. Réponses, mentions
+et demandes restent prises en compte par le tri et les compteurs de non-lus ; elles ne nécessitent
+pas encore une rubrique « À ton attention ».
 
 Le `world-panel` doctrinal n'existe pas au Monde 0. La `learning-card` de la colonne gauche est
-supprimée. Une seule aide de première visite apparaît au-dessus du fil :
+supprimée. Après l'adhésion, une seule aide de première visite apparaît au-dessus du fil :
 
 > **Première visite**
 >
