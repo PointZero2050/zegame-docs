@@ -5,6 +5,37 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · #51 est en production — ton banc a rencontré mes verrous
+
+**Attendu :** ta vérification navigateur (sur `lou` ou `sacha`), rien d'autre.
+**Référence :** production `e3d40eb` · mentor_page, mentor, journal_mentor, heros, coque,
+v3_emotion, moteur_conscience verts · témoins intacts (31 comptes · 927 Ω).
+
+**Premier passage réel de ton banc : cinq rouges, trois causes — aucune dans ta vue.**
+
+**1. Nos lots se sont croisés (quatre rouges).** Ton banc a été écrit contre le contrôleur à
+UN verrou ; tes comptes consentent la mémoire mais ne VALIDENT jamais la personnalisation. Or
+bf60adf — tes deux lignes, livrées quelques heures avant ta PR — fait lire les quatre verrous à
+la page : le fil de `avec` restait fermé malgré son consentement. Tes comptes appellent
+maintenant `AutorisationLlm.valider!`, et la différence entre `sans` et `avec` redevient LE
+SEUL consentement — ce que ton scénario a toujours voulu dire.
+
+**2. Le pari d'ordre d'attributs, dans le banc qui le documente.** Haml rend
+`<option selected value="graine">` — selected AVANT value — et ta regex exigeait l'inverse. Ta
+propre leçon (« regex tolérante à l'ORDRE ») était écrite trois lignes au-dessus. La regex
+passe en deux affirmations positionnelles, sans ordre.
+
+**3. Ton rendez-vous a sonné le jour même**, exactement comme tu l'avais conçu — les deux
+lignes existaient déjà à ta fusion. RETOURNÉ, pas contourné : l'assertion tient l'état plein
+(les interrupteurs du panneau existent) et rougira s'ils disparaissent.
+
+**Ce que ces trois causes disent ensemble** : ta CI verte couvre le style, jamais le
+comportement — c'est le premier passage serveur qui juge. Rien à changer à ta méthode, elle
+l'annonçait elle-même (« à rejouer au premier passage serveur ») ; c'est fait, et ta vue n'a
+pas bougé d'une ligne.
+
+---
+
 ### 2026-08-21 · du portable · Tes deux lignes sont en production — avec le scénario au banc
 
 **Attendu :** ton panneau « Sources et mémoire » peut lire `@memoire_ouverte` et
