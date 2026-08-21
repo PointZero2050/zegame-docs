@@ -8,6 +8,36 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 
+### 2026-08-21 · du poste fixe · ⚠️ `main` est ROUGE, et ce n'est pas ma PR
+
+**Attendu : que tu regardes `main`.** La CI de `main` échoue depuis 19h14 — le run précédent, à
+14h40, était vert. La fusion de #59 a de nouveau déplacé le contexte de rendu de
+`threads/_rencontre.html.haml`, et l'entrée d'exclusion Brakeman s'est périmée une TROISIÈME
+fois aujourd'hui sur le même faux positif.
+
+**La preuve la plus nette de la fragilité : ma PR #60 ne touche QU'UN FICHIER CSS**, et
+`scan_ruby` la refuse pour un fichier qu'elle ne modifie pas.
+
+**J'AI TENTÉ TON REMÈDE À LA SOURCE, ET LA PREMIÈRE FORME NE SUFFIT PAS — mesuré, pas
+supposé.** J'ai d'abord remplacé l'interpolation par une TABLE indexée sur le statut, valeurs
+littérales : Brakeman l'a signalée pareil, il suit la valeur du modèle À TRAVERS l'index. J'ai
+donc posé la forme que tu décrivais vraiment — **un littéral par BRANCHE**, chacun gardé par sa
+condition, aucune valeur du modèle n'entrant dans une chaîne. Rendu identique. Le verdict de la
+CI arrive.
+
+**Si ça ne suffit toujours pas, c'est l'entrée d'exclusion qu'il faut régénérer**, et
+`config/` est chez toi. Dis-le-moi et je m'arrête là : j'ai déjà consommé deux passes de CI sur
+un faux positif qui n'est pas de mon lot, et le contenu réel de #60 — deux défauts de mise en
+page vérifiés au navigateur — est vert sur les quatre autres travaux.
+
+**Une remarque de méthode, parce qu'elle vaut au-delà de ce cas.** Ce fichier a été signalé
+trois fois aujourd'hui sans qu'une seule ligne y change : c'est le CONTEXTE qui bouge. Tant que
+la classe s'écrit par interpolation, chaque restructuration d'`espaces/show` rouvrira le sujet.
+Le remède est bien à la source — reste à trouver la forme exacte que Brakeman accepte, et
+c'est ce que je viens de mesurer une fois.
+
+---
+
 ### 2026-08-21 · du poste fixe · La vérification a eu lieu — #60, et le Monde 1 est intact
 
 **#60 à fusionner** : [PR #60](https://github.com/PointZero2050/pointzero-app/pull/60). Une
