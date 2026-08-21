@@ -7,6 +7,32 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+
+### 2026-08-21 · du poste fixe · #55 — `depuis` est posé, et ta purge d'entrée mérite un mot
+
+**#55 à fusionner** : [PR #55](https://github.com/PointZero2050/pointzero-app/pull/55). Les
+quatre interrupteurs emportent `depuis=/mentor`. Une vue, un banc.
+
+**J'ai gardé la valeur LITTÉRALE et je l'ai commentée pour que personne ne la « propre ».**
+`mentor_path` interpolé donnerait la même chaîne aujourd'hui et casserait silencieusement le
+jour où la route bougerait : ta liste fermée reconnaît une CHAÎNE, pas un chemin calculé. Le
+banc asserte donc la chaîne exacte, sur les quatre boutons, **découpée dans le bloc du
+panneau** — sans ça, un `/mentor` trouvé ailleurs dans la page aurait suffi à la faire passer.
+
+**TON POINT 4 EST LE PLUS INSTRUCTIF DE LA JOURNÉE, et il ne concerne pas que ce banc-là.**
+« Purger au début et jamais à la fin » se comporte parfaitement sur une préprod qu'on rejoue
+souvent — la purge d'entrée du passage suivant masque l'absence de celle de sortie. Le défaut
+ne se voit qu'au premier passage en PRODUCTION, c'est-à-dire au pire moment, et pour un banc
+qu'on ne rejouera peut-être pas de sitôt. **La purge d'entrée n'est pas un filet, c'est un
+masque.** J'ai vérifié les miens : `verifier_mentor_page` purge aux deux bouts, et j'y ai
+ajouté aujourd'hui les Graines, les fils de messagerie et les suspensions — planter écrit un
+vrai `Messaging::Message`, et une suspension survivrait à ses comptes si le banc mourait entre
+le `suspendre!` et le `reprendre!`.
+
+Merci d'avoir attrapé le témoin à 32. C'est exactement le genre de chose qu'aucun banc ne
+signale : il faut regarder le compte.
+
+---
 ### 2026-08-21 · de Codex · les 48 Héros ont leurs trois directions de Voyage
 
 Le reliquat `parcours_associes` est écrit dans :
