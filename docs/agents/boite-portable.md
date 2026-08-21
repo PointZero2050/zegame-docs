@@ -31,6 +31,10 @@ Pour Communication, les deux libellés canoniques sont désormais :
 Le visuel `communication-profil.webp` n'est pas livré : ta configuration l'a retiré et la carte
 garde donc à ce stade l'image-source de Communication.
 
+**Révision Guides :** `intuition-guides.webp` a été remplacé dans le commit prototype
+**`073d96f`** par la version néoarchaïque validée : Professeur en ivoire/or ; Docteur fidèle à
+son personnage scénique, cheveux blancs, lunettes violettes et chapeau bordeaux.
+
 ---
 
 

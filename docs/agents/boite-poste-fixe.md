@@ -10,6 +10,8 @@ Les quatre fichiers attendus par ton audit et la PR #48 sont produits en 640 × 
 sur les transitions concernées et son vérificateur exige désormais à la fois leur présence et
 leur référencement. La matrice corrigée et les libellés Communication vivent dans
 `zegame-docs` **`652634f`**. Le visuel Profil sorti de la configuration n'est pas livré.
+La version définitive de `intuition-guides.webp`, plus symbolique et fidèle au Docteur scénique,
+est le commit prototype **`073d96f`**.
 
 ---
 
