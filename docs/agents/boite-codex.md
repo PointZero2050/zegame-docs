@@ -5,55 +5,47 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-21 · du portable · ⚠️ Ton lot éditorial a emporté une promesse, sans la remplacer
-
-**Attendu :** dire si c'était voulu, et si oui par quoi la promesse est reprise ailleurs.
-**Référence :** `verifier_heros` est rouge depuis `653eb1a` — le portage mot pour mot de tes
-sept textes de clôture.
-
-La page des Héros disait : « **jamais une identité qu'on t'assigne. Ce choix reste révisable à
-tout moment ; en changer n'est pas un échec.** » Le lot l'a retirée, et rien ne l'a reprise.
-
-**Ce n'est pas un texte parmi d'autres.** Un banc la surveillait sous le nom « jamais un test
-de personnalité » — parce que c'est précisément ce que le choix d'une figure risque de
-paraître, et que le Jeu promettait le contraire à cet endroit-là. C'est une promesse produit,
-pas un ornement.
-
-**Je ne l'ai pas remise et je n'ai pas fait taire le banc.** L'un serait réécrire ton
-éditorial, l'autre effacerait le signal — dans trois mois personne ne saurait que la promesse
-a existé. Trois sorties : elle revient telle quelle ; tu en canonises une autre qui dit la même
-chose ; ou elle est abandonnée assumément, et le banc perd l'assertion en le DISANT.
-
-**Une remarque de méthode, sans reproche.** Ce portage était « mot pour mot », donc fidèle. Ce
-qui a manqué, c'est que personne n'a rejoué les bancs des pages touchées : le rouge date du
-19 août et il a dormi deux jours. Quand un lot éditorial remplace des textes ASSERTÉS, les
-bancs concernés font partie de la livraison — c'est la même règle que pour un balisage.
-
----
-
 ### 2026-08-21 · du poste fixe · ⚠️ Ta matrice visuelle n'a JAMAIS rien changé à l'écran
+
+*(Message du 21 août, ACTUALISÉ le soir : la liste a bougé avec l'éditorial des cartes, et
+j'ai depuis cherché tes assets partout. Conclusion inchangée, précision augmentée.)*
 
 `config/monde_0.yml` porte depuis le 16 août ta règle : « une carte change d'image UNIQUEMENT
 quand son CTA révèle un territoire durable ». Le mécanisme existe, il est lu, il vient même
 d'être ÉTENDU par le portable — `titre` et `accroche` suivent désormais l'étape, comme `cta` et
 `chemin`.
 
-**Mais les images de destination n'ont jamais existé.** Mesuré sur la préprod, accueil du
-Monde 0 : les sept cartes servent leur image de Puissance, **zéro illustration de destination**.
-
-Quatre fichiers sont déclarés dans la config et absents partout — pas dans le dépôt, pas dans
-`zegame-prototypes/accueil-puissances-m0-cible/assets/powers/`, pas dans le dossier de travail :
+**Mais les images de destination n'ont jamais existé.** Mesuré sur la préprod : les sept cartes
+servent leur image de Puissance, **zéro illustration de destination**. Quatre fichiers sont
+déclarés et absents (les quatre `404` sont vérifiés un à un sur la préprod) :
 
 | Déclaré | Pour quelle étape |
 |---|---|
-| `communication-profil.webp` | « Choisis ce que tu montres de toi » |
 | `communication-echanges.webp` | « Entre dans l'Espace d'échange » |
 | `communication-annuaire.webp` | « Découvre qui joue déjà » |
+| `intuition-guides.webp` | « Choisis par quel regard commencer » — nouveau, arrivé avec la ventilation |
 | `traces.webp` | la bascule Fresque → Traces (Imagination) |
+
+*(`communication-profil.webp` n'est plus déclaré : l'éditorial des cartes l'a fait sortir. La
+liste ci-dessus est celle du canon d'aujourd'hui, pas celle de ce matin.)*
+
+**J'AI CHERCHÉ TES ASSETS, ET IL Y EN A — MAIS AU MONDE 1.**
+`accueil-puissances-m1-cible/assets/invitations/` porte une matrice complète et soignée :
+`communication-espace-seuil-v2.webp`, `intuition-ressources-externes-v1.webp`,
+`volonte-boussole-v4.webp`… Elles visent **d'autres destinations** — l'Espace du Seuil, la
+Boussole, les ressources externes. **Aucune ne se renomme dans un créneau du Monde 0 sans
+poser la mauvaise image sur la mauvaise carte**, et je ne le ferai donc pas. C'est une
+production qui manque, pas un portage oublié.
 
 Le repli fonctionne (`image_servie` ne rend un nom que si l'asset est là, et la carte retombe
 sur l'image de la Puissance) : **rien n'est cassé, et c'est bien le problème.** Un mécanisme qui
 se dégrade proprement ne signale jamais qu'il tourne à vide. Il a cinq jours.
+
+**J'AI POSÉ UN BANC POUR QUE LE SILENCE CESSE** — [PR #48](https://github.com/PointZero2050/pointzero-app/pull/48),
+`verifier_illustrations_m0.rb`. Il lit le canon et le dossier, et son attente est la liste
+EXACTE de ces quatre-là. **Le jour où tu livres, il rougit** sur `[] ≠ [les quatre]` et
+quelqu'un vide l'attente. Il rougit aussi à toute NOUVELLE ligne `image:` laissée sans
+fichier. Tu n'as donc plus à te souvenir de ce message : le dépôt s'en souvient.
 
 **Ce n'est pas ma zone au sens où je ne fabrique pas d'images** — je peux les poser dans
 `public/pz/m0/powers/` le jour où elles existent, c'est tout ce que le portage demande. Le
@@ -62,10 +54,25 @@ format est celui des sept autres : `.webp`, même cadrage.
 **Deux sorties, et c'est ton arbitrage avec Boris :** ou les quatre illustrations se produisent
 et la matrice se met enfin à parler ; ou la règle tombe et la carte garde l'image de sa
 Puissance à toutes les étapes — auquel cas les quatre lignes `image:` de la config devraient
-partir, sinon la prochaine session les relira comme une promesse.
+partir, sinon la prochaine session les relira comme une promesse. **Dis-moi laquelle**, le banc
+suivra dans les deux cas.
 
 ---
 
+### 2026-08-21 · du poste fixe · Ta promesse Héros est portée — merci d'avoir tranché vite
+
+**Rien à faire, information seulement.** « Tu choisis une perspective, pas une identité » est
+portée dans `heros/index` ([PR #49](https://github.com/PointZero2050/pointzero-app/pull/49)),
+avec le reste de ta formulation inchangé.
+
+Un enseignement au passage, qui vaut pour les prochains lots éditoriaux : **le banc ne tenait
+qu'une moitié de la garantie.** Il s'appelait « jamais un test de personnalité : le choix se dit
+révisable » — deux promesses — mais ne sondait que `"révisable à tout moment"`. Ton texte du 20
+disait la révisabilité autrement et laissait tomber l'autre moitié : le banc a donc rougi sur la
+partie TENUE et s'est tu sur la partie perdue. Les deux moitiés sont désormais asserties
+séparément. **Une garantie constitutive tient mieux si le banc la sonde phrase par phrase**, pas
+d'un seul bloc — je le ferai par défaut pour les prochaines.
+---
 
 ### 2026-08-20 · du portable · Ton éditorial des cartes est en production — deux lignes à canoniser
 
