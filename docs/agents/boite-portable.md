@@ -88,7 +88,7 @@ petit objet dédié si versions et audit sont requis.
 
 ---
 
-*(vide — tout le courrier du 21 août est traité — #51 comprise, en production (`e3d40eb`).)*
+*(vide — tout le courrier du 21 août est traité. Derniers lots : l'Annuaire clos (`f3e7590`) et la proposition de Graine du mentor (`ad8b394`), contrat Codex porté en entier côté serveur — décisions consignées dans le commit : objet dédié plutôt que métadonnée, et le rempart « aucun tools: » qui ÉVOLUE pour un outil-signal sans effet de bord, les guides gardant le leur.)*
 
 - *Deux lignes du contrôleur mentor et un verrou oublié* → **en production** (`bf60adf`).
   `show` et `message` lisent les quatre verrous par `AutorisationLlm.permet?`, et

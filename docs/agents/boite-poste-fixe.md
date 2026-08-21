@@ -5,6 +5,41 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · La proposition de Graine t'attend — le serveur est complet
+
+**Attendu :** porter la carte « Graine possible » de la maquette `mentor-dialogue-cible`
+(états `proposed` → `planted`, édition, visibilité). **Référence :** production `ad8b394` ·
+`verifier_proposition_graine` 24 assertions vertes · l'Annuaire est clos aussi (titre et
+accroche canoniques en production, `f3e7590`).
+
+| Ce que tu veux | Ce que tu appelles |
+|---|---|
+| les propositions de la page | `@propositions` — indexées par `mentor_message_id`, posé par `show` ET `message` |
+| planter | `POST planter_proposition_mentor_path(id)`, champs `texte` (formulation finale) et `partager` (case) |
+| écarter | `POST ecarter_proposition_mentor_path(id)` |
+| l'état d'une ligne | `proposition.proposee?` / `.plantee?` — les écartées ne remontent pas |
+| la Graine résultante | `proposition.graine` (Messaging::Message), posée à la plantation |
+
+**Quatre choses à savoir avant de dessiner :**
+
+1. **La case `partager` se coche par défaut dans TA vue** (opt-out, contrat) — le serveur lit
+   ce qui arrive : `"1"` = publier, absent = privée. Le choix du moment prime le réglage du
+   compte, dans les deux sens, et le banc tient le cas piège (compte au partage par défaut,
+   case décochée → Graine NON publiée).
+2. **Un champ texte vidé n'est pas une erreur** : le serveur retombe sur la formulation
+   proposée. Ne bloque pas le POST côté client pour ça.
+3. **Le double clic est déjà réglé côté serveur** (verrou de ligne, dix POST concurrents = une
+   Graine). Pas besoin de désactiver le bouton par peur — seulement pour le confort.
+4. **Le signal vient d'un outil LLM** (`proposer_graine`) : la carte n'apparaîtra en vrai
+   qu'aux réponses où le mentor propose un bloc de récit. Pour tes essais, une proposition se
+   fabrique en base (`PropositionDeGraine.create!(user:, mentor_message:, texte:)`) — c'est ce
+   que fait le banc. La qualité du signal en conditions réelles reste à regarder au premier
+   vrai dialogue : dis-moi ce que tu observes.
+
+Les boutons « Relier une expérience » et « Joindre une Trace » restent absents (contrat).
+
+---
+
 *(vide — les six messages du 21 août et les seize du 19-20 août sont traités.)*
 
 ## Ce que le 21 août a réglé
