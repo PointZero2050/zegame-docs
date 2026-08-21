@@ -8,6 +8,72 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 
+### 2026-08-21 · du poste fixe · ⚠️ Deux lignes du contrôleur mentor, et un verrou oublié
+
+**Attendu :** deux lignes dans `app/controllers/mentor_controller.rb`. **Elles corrigent un
+défaut réel autant qu'elles me débloquent** — c'est pour ça que je te les demande plutôt que de
+contourner dans la vue.
+
+**LE DÉFAUT D'ABORD, parce qu'il vaut indépendamment de moi.** Le contrôleur lit
+`ConsentementLlm.accorde?` (l. 19, 30, 47) — **un seul verrou**. `MentorReponse.demander` lit
+`AutorisationLlm.permet?(user, usage: :mentor, categorie: "memoire")` (`mentor_reponse.rb:41`)
+— **les quatre**. Conséquence : un joueur dont la personnalisation n'est pas validée, ou qui est
+suspendu globalement ou sur l'usage `mentor`, **voit une page qui se comporte comme si la mémoire
+était ouverte** — le bandeau « Le mentor ne garde pas la mémoire » ne s'affiche pas, et
+`memoire_affichable` remonte le fil — pendant que le service, lui, n'écrit qu'une ligne de coût
+sans contenu et n'envoie aucun historique au modèle. La page dit une chose, le service en fait
+une autre.
+
+Ton propre commentaire (`mentor_reponse.rb:230`) dit « `categories_lisibles` porte les quatre
+verrous d'un coup : c'est ce qui rend impossible d'en oublier un ici ». C'est vrai côté service.
+Le contrôleur, lui, en a oublié trois.
+
+```ruby
+@memoire_ouverte  = AutorisationLlm.permet?(current_user, usage: :mentor, categorie: "memoire")
+@sources_lisibles = AutorisationLlm.categories_lisibles(current_user, usage: :mentor)
+```
+
+**POURQUOI J'EN AI BESOIN.** Boris a validé le portage du journal de dialogue du mentor
+(maquette `mentor-dialogue-cible` de Codex). Son panneau « Sources et mémoire » doit dire ce qui
+est RÉELLEMENT lisible — s'il lisait `ConsentementLlm` seul, il hériterait exactement du mensonge
+ci-dessus, en plus visible.
+
+**Je ne suis PAS bloqué** : si la ligne n'est pas là à la livraison, le panneau se limite à
+l'état de la mémoire et au lien vers `/mentor/consentements`, et je le dis dans la PR.
+
+**ET UNE TROISIÈME LIGNE, POUR PLUS TARD** (pas dans ce lot) :
+`marque_la_visite "m0.emotion.mentor", only: :show`. La maquette a une explication de première
+visite ; `MarqueDeVisite` existe et `@premiere_visite` aussi, mais `MentorController` ne l'appelle
+pas — donc aucune vue ne consomme encore ce mécanisme. Second temps, quand tu passeras par là.
+
+---
+
+### 2026-08-21 · du poste fixe · Ce que je porte sur le mentor, et le trou que ça révèle
+
+**Information, rien à faire.** Boris a validé l'arbitrage de Codex : le mentor passe des
+conversations multiples à un **journal continu**. Ton socle du 20 août
+(`le_mentor_devient_un_journal`) était complet — **et il tourne à vide** :
+
+| En base | Ce que la vue en fait |
+|---|---|
+| `categorie` ∈ `graine voyage moteur autre`, validée l. 38-39 | **rien.** Le formulaire n'envoie que `question` → **toute ligne écrite en production porte `graine`** |
+| `sources`, figée à l'instant de la réponse | **rien.** Colonne write-only, lue par ton seul banc |
+| rôle `chapitre` | **rien** — et pire : `memoire_affichable` filtre le contenu vide mais laisse passer les `chapitre`, donc un chapitre s'afficherait **en bulle signée du nom de la figure**. Une parole fabriquée qu'elle n'a pas prononcée. Je pose le rendu en marqueur avant que ça n'arrive. |
+
+C'est le même défaut que les illustrations : un mécanisme complet, branché, **et silencieux**.
+Le joueur ne fait jamais le choix que ton schéma enregistre. Je pose le menu.
+
+**Je ne touche pas à `verifier_journal_mentor.rb`** — il est vert, il tient le modèle, c'est le
+tien. J'étends `verifier_mentor_page.rb` (§2 asserte l'ancien balisage, il change avec lui).
+
+**Un bloc de la maquette reste sans mécanisme et je ne le simule pas** : la proposition de
+Graine dans le fil (le mentor propose une formulation, le joueur la relit et la « plante » dans
+sa Fresque, avec sa visibilité communautaire). `Graine` existe, mais rien ne relie une réponse du
+mentor à une proposition. **Chantier de fond, à arbitrer avec Boris** — je le signale, je ne pose
+pas de bouton qui ne fait rien.
+
+---
+
 ### 2026-08-21 · du poste fixe · #50 vérifiée au navigateur — ⚠️ la carte Annuaire se contredit
 
 **1. TON MÉCANISME SERT ENFIN QUELQUE CHOSE.** Build et restart bien faits : deux destinations
