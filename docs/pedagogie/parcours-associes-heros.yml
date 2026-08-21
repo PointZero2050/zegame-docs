@@ -1,0 +1,256 @@
+version: 1
+statut: proposition_editoriale
+date: 2026-08-21
+
+# Ce fichier fournit la couche éditoriale attendue par `parcours_associes` dans
+# pointzero-app/config/heros/catalogue.yml. Il ne crée aucun parcours, aucune
+# route et aucun droit. Un item ne devient cliquable qu'après association
+# explicite à un parcours réel par son slug.
+#
+# Ordre canonique : Puissance principale, puis les deux Puissances d'appui.
+# Forme cible côté application :
+#   - puissance: desir|volonte|imagination|emotion|communication|intuition
+#     titre: "..."
+#     promesse: "..."
+#     parcours_slug: null
+
+figures:
+  antigone:
+    - { puissance: volonte, titre: "Tenir sans se sacrifier", promesse: "Distinguer la fidélité à une loi intérieure de l'intransigeance qui ne laisse plus aucune issue.", parcours_slug: null }
+    - { puissance: emotion, titre: "Faire place au deuil", promesse: "Écouter ce que l'attachement demande de reconnaître avant de transformer la douleur en combat.", parcours_slug: null }
+    - { puissance: communication, titre: "Dire non sans fermer le monde", promesse: "Porter une parole de refus assez nette pour rester entendue par celles et ceux qu'elle confronte.", parcours_slug: null }
+
+  promethee:
+    - { puissance: imagination, titre: "Donner le feu", promesse: "Transformer une découverte en capacité réellement transmissible, plutôt qu'en geste héroïque sans lendemain.", parcours_slug: null }
+    - { puissance: volonte, titre: "Assumer le prix du don", promesse: "Choisir ce que tu es prêt à risquer pour rendre une puissance accessible à d'autres.", parcours_slug: null }
+    - { puissance: intuition, titre: "Voir ce que le progrès libère", promesse: "Discerner les conséquences d'une innovation avant que l'enthousiasme ne les rende invisibles.", parcours_slug: null }
+
+  nelson-mandela:
+    - { puissance: emotion, titre: "Ne pas devenir son geôlier", promesse: "Accueillir la colère sans lui abandonner le choix de la personne que tu deviens.", parcours_slug: null }
+    - { puissance: volonte, titre: "Préparer la sortie du conflit", promesse: "Tenir une direction assez longtemps pour que la victoire ne reproduise pas la domination combattue.", parcours_slug: null }
+    - { puissance: communication, titre: "Parler à l'adversaire", promesse: "Créer les conditions d'une parole qui reconnaît le réel du conflit sans enfermer chacun dans son camp.", parcours_slug: null }
+
+  sappho:
+    - { puissance: desir, titre: "Nommer ce qui brûle", promesse: "Donner une forme précise au désir au lieu de l'affadir pour le rendre acceptable.", parcours_slug: null }
+    - { puissance: imagination, titre: "Faire œuvre de l'intime", promesse: "Transformer une expérience singulière en forme capable de traverser les siècles.", parcours_slug: null }
+    - { puissance: communication, titre: "Écrire ce qui ne se disait pas", promesse: "Trouver une langue pour ce que les récits dominants laissent sans voix.", parcours_slug: null }
+
+  hermes:
+    - { puissance: communication, titre: "Tenir le passage", promesse: "Relier des mondes qui ne parlent ni la même langue ni depuis le même niveau de réalité.", parcours_slug: null }
+    - { puissance: imagination, titre: "Inventer une voie de traverse", promesse: "Faire apparaître une troisième voie quand les chemins officiels conduisent tous à l'impasse.", parcours_slug: null }
+    - { puissance: intuition, titre: "Lire entre les signes", promesse: "Distinguer le message vivant du bruit, du masque et de la mise en scène.", parcours_slug: null }
+
+  tiresias:
+    - { puissance: intuition, titre: "Voir sans pouvoir prouver", promesse: "Habiter une perception juste quand rien ne permet encore de la rendre évidente aux autres.", parcours_slug: null }
+    - { puissance: volonte, titre: "Parler malgré l'incrédulité", promesse: "Choisir quand et comment porter un avertissement que personne ne souhaite entendre.", parcours_slug: null }
+    - { puissance: emotion, titre: "Traverser plusieurs places", promesse: "Laisser des expériences contradictoires élargir ton regard plutôt que figer ton identité.", parcours_slug: null }
+
+  frida-kahlo:
+    - { puissance: desir, titre: "Peindre depuis la fracture", promesse: "Retrouver l'élan vital là où le corps, l'histoire ou la relation semblaient l'avoir interrompu.", parcours_slug: null }
+    - { puissance: emotion, titre: "Regarder la douleur en face", promesse: "Donner une présence à ce qui fait mal sans réduire ton existence à cette blessure.", parcours_slug: null }
+    - { puissance: imagination, titre: "Faire de soi un territoire", promesse: "Composer une œuvre où les fragments de ton histoire cessent de demander la permission d'exister.", parcours_slug: null }
+
+  monkey-d-luffy:
+    - { puissance: desir, titre: "Déclarer l'aventure", promesse: "Nommer un désir assez vaste pour mettre ta vie en mouvement et attirer des compagnons.", parcours_slug: null }
+    - { puissance: volonte, titre: "Tenir le cap sans commander", promesse: "Porter une direction commune en laissant à chacun sa puissance et sa manière d'y contribuer.", parcours_slug: null }
+    - { puissance: emotion, titre: "Choisir son équipage", promesse: "Reconnaître les liens pour lesquels tu es prêt à traverser l'impossible.", parcours_slug: null }
+
+  jeanne-d-arc:
+    - { puissance: volonte, titre: "Répondre à l'appel", promesse: "Transformer une conviction intérieure en premiers gestes vérifiables dans le monde réel.", parcours_slug: null }
+    - { puissance: intuition, titre: "Éprouver ses voix", promesse: "Discerner ce qui t'appelle sans confondre certitude intérieure et vérité universelle.", parcours_slug: null }
+    - { puissance: emotion, titre: "Rester humaine dans le symbole", promesse: "Préserver ta vulnérabilité quand les autres font de toi une icône, une menace ou une cause.", parcours_slug: null }
+
+  asterix:
+    - { puissance: volonte, titre: "Résister à sa mesure", promesse: "Trouver le geste précis par lequel une petite communauté peut préserver son autonomie.", parcours_slug: null }
+    - { puissance: communication, titre: "Rire de l'Empire", promesse: "Utiliser l'humour pour rendre visible l'absurde sans cesser de voir la force de l'adversaire.", parcours_slug: null }
+    - { puissance: emotion, titre: "Protéger le banquet", promesse: "Faire de la joie partagée une ressource de résistance plutôt qu'une récompense après la lutte.", parcours_slug: null }
+
+  mary-shelley:
+    - { puissance: imagination, titre: "Rencontrer sa créature", promesse: "Suivre une idée jusqu'au moment où elle révèle les responsabilités que sa naissance impose.", parcours_slug: null }
+    - { puissance: emotion, titre: "Écouter le monstre abandonné", promesse: "Reconnaître le besoin de lien derrière ce que la peur désigne comme inhumain.", parcours_slug: null }
+    - { puissance: intuition, titre: "Voir l'Ombre du créateur", promesse: "Discerner ce qu'une œuvre reproduit de son auteur quand celui-ci refuse d'en répondre.", parcours_slug: null }
+
+  edward-elric:
+    - { puissance: imagination, titre: "Créer sans nier la limite", promesse: "Inventer à partir des lois du réel plutôt que chercher le raccourci qui prétend les abolir.", parcours_slug: null }
+    - { puissance: volonte, titre: "Réparer sans tout contrôler", promesse: "Agir sur les conséquences de tes choix sans exiger de restaurer exactement le monde d'avant.", parcours_slug: null }
+    - { puissance: intuition, titre: "Reconnaître le prix réel", promesse: "Voir ce qu'un échange engage au-delà de ce que son calcul rend visible.", parcours_slug: null }
+
+  maya-angelou:
+    - { puissance: emotion, titre: "Retrouver sa voix", promesse: "Faire de ce qui t'a réduit au silence une source de présence et non une identité définitive.", parcours_slug: null }
+    - { puissance: communication, titre: "Dire depuis la dignité", promesse: "Porter une parole qui transforme l'expérience intime en force de reconnaissance collective.", parcours_slug: null }
+    - { puissance: desir, titre: "Choisir une vie plus vaste", promesse: "Réouvrir le champ de ce que tu t'autorises à désirer après l'épreuve.", parcours_slug: null }
+
+  naruto-uzumaki:
+    - { puissance: emotion, titre: "Transformer le rejet", promesse: "Cesser de demander à la blessure de prouver ta valeur et en faire une capacité à reconnaître les autres.", parcours_slug: null }
+    - { puissance: volonte, titre: "Persister sans se raidir", promesse: "Tenir une intention dans la durée tout en laissant les rencontres modifier ton chemin.", parcours_slug: null }
+    - { puissance: communication, titre: "Rompre le cycle", promesse: "Trouver la parole capable d'ouvrir un adversaire à une histoire plus vaste que sa vengeance.", parcours_slug: null }
+
+  simone-veil:
+    - { puissance: communication, titre: "Porter l'indicible dans l'institution", promesse: "Faire entendre une expérience humaine là où le débat menace de la réduire à des positions.", parcours_slug: null }
+    - { puissance: volonte, titre: "Tenir sous les attaques", promesse: "Conserver la direction d'une décision quand la violence cherche à déplacer le sujet vers ta personne.", parcours_slug: null }
+    - { puissance: emotion, titre: "Servir la mémoire sans s'y enfermer", promesse: "Transmettre ce qui doit rester vivant sans laisser le passé capturer tout l'avenir.", parcours_slug: null }
+
+  cyrano-de-bergerac:
+    - { puissance: communication, titre: "Parler sans masque", promesse: "Faire coïncider la beauté de tes mots avec le risque d'être enfin reconnu comme leur auteur.", parcours_slug: null }
+    - { puissance: desir, titre: "Désirer à visage découvert", promesse: "Nommer ce que tu veux avant que la peur du refus ne transforme ton désir en sacrifice élégant.", parcours_slug: null }
+    - { puissance: emotion, titre: "Recevoir ce qui t'est donné", promesse: "Laisser l'autre répondre à ta présence réelle plutôt qu'à la version maîtrisée que tu lui offres.", parcours_slug: null }
+
+  marie-curie:
+    - { puissance: intuition, titre: "Suivre l'invisible", promesse: "Tenir une hypothèse assez longtemps pour laisser un phénomène inconnu devenir observable.", parcours_slug: null }
+    - { puissance: volonte, titre: "Servir la recherche sans s'y consumer", promesse: "Accorder l'endurance de l'œuvre avec la protection de la vie qui la rend possible.", parcours_slug: null }
+    - { puissance: imagination, titre: "Changer l'échelle du visible", promesse: "Inventer les instruments et les gestes qui permettent au réel de montrer une dimension nouvelle.", parcours_slug: null }
+
+  sherlock-holmes:
+    - { puissance: intuition, titre: "Voir ce que tous regardent", promesse: "Ralentir assez pour distinguer le détail décisif dans une scène saturée d'évidences.", parcours_slug: null }
+    - { puissance: communication, titre: "Partager le chemin du raisonnement", promesse: "Rendre ton discernement transmissible au lieu de cultiver l'écart qui te sépare des autres.", parcours_slug: null }
+    - { puissance: imagination, titre: "Formuler plusieurs hypothèses", promesse: "Ouvrir des explications concurrentes avant de choisir celle qui arrange le mieux ton récit.", parcours_slug: null }
+
+  vincent-van-gogh:
+    - { puissance: desir, titre: "Peindre ce qui insiste", promesse: "Donner une forme quotidienne à l'élan qui revient, même lorsque la reconnaissance ne vient pas.", parcours_slug: null }
+    - { puissance: imagination, titre: "Voir la nuit autrement", promesse: "Transformer la perception du réel sans fuir sa matière, sa fatigue ni sa rugosité.", parcours_slug: null }
+    - { puissance: emotion, titre: "Créer sans se perdre", promesse: "Construire autour de l'intensité sensible les liens et les cadres qui lui permettent de durer.", parcours_slug: null }
+
+  jay-gatsby:
+    - { puissance: desir, titre: "Distinguer l'appel du mirage", promesse: "Séparer le désir vivant de l'image parfaite à laquelle tu demandes de réparer le passé.", parcours_slug: null }
+    - { puissance: volonte, titre: "Cesser de fabriquer sa place", promesse: "Choisir une direction qui n'exige pas de devenir le personnage attendu par un autre monde.", parcours_slug: null }
+    - { puissance: imagination, titre: "Réécrire sans falsifier", promesse: "Créer un avenir qui accueille ton histoire au lieu de la maquiller jusqu'à la rendre inhabitable.", parcours_slug: null }
+
+  ulysse:
+    - { puissance: volonte, titre: "Revenir à son royaume", promesse: "Tenir la direction du retour malgré les détours, les métamorphoses et les identités provisoires.", parcours_slug: null }
+    - { puissance: intuition, titre: "Choisir sa ruse", promesse: "Discerner quand contourner l'obstacle sert la vie et quand la ruse devient une manière de ne plus se montrer.", parcours_slug: null }
+    - { puissance: communication, titre: "Raconter sans se grandir", promesse: "Faire de ton voyage un récit de transmission plutôt qu'un monument élevé à ton personnage.", parcours_slug: null }
+
+  rosa-parks:
+    - { puissance: volonte, titre: "Poser le geste qui suffit", promesse: "Reconnaître le moment où un acte simple engage plus de vérité qu'un long discours.", parcours_slug: null }
+    - { puissance: emotion, titre: "Habiter sa dignité", promesse: "Sentir la limite intérieure qui transforme la fatigue de céder en force de rester.", parcours_slug: null }
+    - { puissance: communication, titre: "Faire circuler le refus", promesse: "Relier un geste individuel à l'organisation collective qui lui donne une portée historique.", parcours_slug: null }
+
+  ada-lovelace:
+    - { puissance: imagination, titre: "Voir au-delà de la machine", promesse: "Percevoir dans un outil naissant des usages que sa fonction immédiate ne permet pas encore de nommer.", parcours_slug: null }
+    - { puissance: intuition, titre: "Distinguer calcul et pensée", promesse: "Explorer la puissance d'un système sans lui attribuer ce qu'il ne sait pas faire.", parcours_slug: null }
+    - { puissance: volonte, titre: "Donner corps à la vision", promesse: "Transformer une intuition pionnière en langage assez précis pour devenir transmissible.", parcours_slug: null }
+
+  le-petit-prince:
+    - { puissance: imagination, titre: "Dessiner ce qui compte", promesse: "Réapprendre à voir la présence vivante derrière les formes que les adultes tiennent pour évidentes.", parcours_slug: null }
+    - { puissance: emotion, titre: "Devenir responsable de son lien", promesse: "Accueillir ce que l'attachement rend unique sans transformer l'autre en propriété.", parcours_slug: null }
+    - { puissance: intuition, titre: "Regarder avec le cœur", promesse: "Éprouver une connaissance qui ne se réduit ni au chiffre ni à l'apparence.", parcours_slug: null }
+
+  sailor-moon:
+    - { puissance: emotion, titre: "Faire de la vulnérabilité une force", promesse: "Cesser d'attendre d'être invulnérable pour protéger ce que tu aimes.", parcours_slug: null }
+    - { puissance: volonte, titre: "Combattre sans perdre l'amour", promesse: "Tenir une décision ferme sans devenir le reflet de la puissance affrontée.", parcours_slug: null }
+    - { puissance: communication, titre: "Rassembler les gardiennes", promesse: "Créer une alliance où les différences deviennent des capacités complémentaires.", parcours_slug: null }
+
+  charlie-chaplin:
+    - { puissance: emotion, titre: "Rendre sa dignité au fragile", promesse: "Faire sentir l'humanité de celles et ceux que la machine sociale traite comme des silhouettes.", parcours_slug: null }
+    - { puissance: communication, titre: "Dire sans discours", promesse: "Trouver le geste, le rythme ou l'image qui traverse les langues et désarme les défenses.", parcours_slug: null }
+    - { puissance: volonte, titre: "Résister par le jeu", promesse: "Transformer la contrainte en mouvement créatif sans nier la violence du réel.", parcours_slug: null }
+
+  virginia-woolf:
+    - { puissance: communication, titre: "Écrire depuis sa chambre", promesse: "Créer les conditions matérielles et symboliques qui permettent à une voix singulière d'exister.", parcours_slug: null }
+    - { puissance: imagination, titre: "Faire entendre plusieurs consciences", promesse: "Composer un récit où le réel circule entre des regards incompatibles sans les réduire.", parcours_slug: null }
+    - { puissance: volonte, titre: "Protéger l'espace de l'œuvre", promesse: "Décider des limites nécessaires pour que la création ne soit plus continuellement interrompue.", parcours_slug: null }
+
+  wangari-maathai:
+    - { puissance: communication, titre: "Planter une parole", promesse: "Relier un geste concret, un récit collectif et une organisation capable de les multiplier.", parcours_slug: null }
+    - { puissance: volonte, titre: "Faire pousser le mouvement", promesse: "Tenir une action simple jusqu'à ce qu'elle devienne une capacité distribuée dans tout un territoire.", parcours_slug: null }
+    - { puissance: emotion, titre: "Prendre soin de la terre commune", promesse: "Retrouver dans le lien au vivant une force politique qui n'efface pas le soin.", parcours_slug: null }
+
+  cassandre:
+    - { puissance: intuition, titre: "Porter le signal faible", promesse: "Nommer ce que tu vois avant qu'il ne soit évident, sans exiger d'être cru immédiatement.", parcours_slug: null }
+    - { puissance: communication, titre: "Rendre l'alerte recevable", promesse: "Transformer une vision juste en message qui ouvre une capacité d'action plutôt qu'une sidération.", parcours_slug: null }
+    - { puissance: emotion, titre: "Ne pas habiter seule l'avenir", promesse: "Partager le poids d'une perception inquiétante avant qu'elle ne t'isole du présent.", parcours_slug: null }
+
+  carl-jung:
+    - { puissance: intuition, titre: "Rencontrer ce qui rêve en toi", promesse: "Écouter les images intérieures comme des hypothèses vivantes plutôt que comme des ordres ou des diagnostics.", parcours_slug: null }
+    - { puissance: imagination, titre: "Dialoguer avec ses figures", promesse: "Donner une forme aux voix de l'Assemblée intérieure afin qu'elles cessent d'agir dans l'ombre.", parcours_slug: null }
+    - { puissance: emotion, titre: "Retirer ses projections", promesse: "Reconnaître dans ce qui te fascine ou t'irrite chez l'autre une polarité qui demande à être intégrée.", parcours_slug: null }
+
+  colette:
+    - { puissance: desir, titre: "Reprendre possession de sa vie", promesse: "Nommer le goût, le corps et la liberté que les rôles assignés t'avaient appris à contenir.", parcours_slug: null }
+    - { puissance: emotion, titre: "Éprouver sans demander pardon", promesse: "Laisser la sensualité et l'attachement informer ta vie sans les confondre avec une obligation.", parcours_slug: null }
+    - { puissance: imagination, titre: "Faire langue de l'expérience", promesse: "Transformer les détails du vécu en une œuvre qui échappe aux catégories prévues pour elle.", parcours_slug: null }
+
+  zorba:
+    - { puissance: desir, titre: "Danser avec ce qui arrive", promesse: "Retrouver l'élan de vivre au milieu même de ce qui échoue, se défait ou échappe au plan.", parcours_slug: null }
+    - { puissance: volonte, titre: "Agir avant de tout savoir", promesse: "Poser un geste entier quand l'analyse ne peut plus garantir l'issue.", parcours_slug: null }
+    - { puissance: emotion, titre: "Donner un corps à la joie", promesse: "Laisser l'émotion devenir mouvement partagé plutôt que commentaire intérieur.", parcours_slug: null }
+
+  boudica:
+    - { puissance: volonte, titre: "Lever la révolte", promesse: "Transformer l'humiliation en capacité collective sans laisser la vengeance choisir seule la direction.", parcours_slug: null }
+    - { puissance: emotion, titre: "Porter la colère sans lui obéir", promesse: "Accueillir la force du soulèvement tout en voyant ce qu'elle risque de détruire à son tour.", parcours_slug: null }
+    - { puissance: communication, titre: "Rassembler les peuples", promesse: "Faire entendre une cause commune entre des communautés que l'Empire maintenait séparées.", parcours_slug: null }
+
+  leonidas:
+    - { puissance: volonte, titre: "Tenir le passage", promesse: "Choisir le lieu, la durée et la limite d'un engagement qui protège plus vaste que soi.", parcours_slug: null }
+    - { puissance: communication, titre: "Donner un sens au dernier geste", promesse: "Faire de l'acte une parole collective sans transformer la mort en spectacle désirable.", parcours_slug: null }
+    - { puissance: emotion, titre: "Regarder le sacrifice en face", promesse: "Distinguer le courage qui sert la vie de l'identité héroïque qui ne sait plus revenir.", parcours_slug: null }
+
+  ursula-k-le-guin:
+    - { puissance: imagination, titre: "Inventer d'autres règles du monde", promesse: "Construire un ailleurs assez cohérent pour révéler les croyances cachées de notre présent.", parcours_slug: null }
+    - { puissance: intuition, titre: "Changer la question", promesse: "Déplacer le regard jusqu'à ce que l'opposition qui enfermait le problème perde son évidence.", parcours_slug: null }
+    - { puissance: communication, titre: "Raconter sans conquérir", promesse: "Faire circuler un récit qui accueille plusieurs manières d'être sans les ranger autour d'un centre unique.", parcours_slug: null }
+
+  dedale:
+    - { puissance: imagination, titre: "Construire la sortie du labyrinthe", promesse: "Inventer une forme qui répond au système sans reproduire l'enfermement qui l'a rendue nécessaire.", parcours_slug: null }
+    - { puissance: volonte, titre: "Répondre de sa création", promesse: "Assumer ce que ton ingéniosité rend possible, y compris lorsqu'elle sert un pouvoir que tu ne maîtrises plus.", parcours_slug: null }
+    - { puissance: intuition, titre: "Concevoir avec la limite", promesse: "Lire les contraintes assez finement pour qu'elles deviennent les appuis d'une voie nouvelle.", parcours_slug: null }
+
+  demeter:
+    - { puissance: emotion, titre: "Laisser l'hiver parler", promesse: "Reconnaître la perte et le retrait comme des temps du vivant plutôt que comme des pannes à corriger.", parcours_slug: null }
+    - { puissance: volonte, titre: "Négocier le retour", promesse: "Transformer une douleur absolue en accord qui restaure la circulation sans nier la séparation.", parcours_slug: null }
+    - { puissance: communication, titre: "Instituer les saisons", promesse: "Donner une forme collective aux cycles de présence, d'absence, de soin et de renouvellement.", parcours_slug: null }
+
+  forrest-gump:
+    - { puissance: emotion, titre: "Rester présent au chemin", promesse: "Accueillir les rencontres et les pertes sans demander au récit de prouver que ta vie était exceptionnelle.", parcours_slug: null }
+    - { puissance: volonte, titre: "Faire le prochain pas", promesse: "Laisser la constance accomplir ce que la recherche de maîtrise rendrait impossible.", parcours_slug: null }
+    - { puissance: communication, titre: "Raconter simplement", promesse: "Dire ce que tu as vécu sans fabriquer une leçon qui efface l'ambiguïté de l'expérience.", parcours_slug: null }
+
+  martin-luther-king:
+    - { puissance: communication, titre: "Donner une voix au rêve", promesse: "Transformer une vision morale en parole assez concrète pour mettre un peuple en mouvement.", parcours_slug: null }
+    - { puissance: volonte, titre: "Agir sans devenir la violence", promesse: "Tenir une stratégie qui confronte l'injustice tout en refusant de confier son âme à la haine.", parcours_slug: null }
+    - { puissance: emotion, titre: "Aimer au cœur du conflit", promesse: "Faire de l'amour une discipline collective et non un sentiment qui évite l'affrontement.", parcours_slug: null }
+
+  toni-morrison:
+    - { puissance: communication, titre: "Écrire depuis ce que l'histoire efface", promesse: "Rendre leur densité aux vies que le récit dominant réduit au silence ou au symbole.", parcours_slug: null }
+    - { puissance: imagination, titre: "Faire revenir les fantômes", promesse: "Donner une forme narrative à ce qui continue d'agir parce que personne n'a pu le raconter.", parcours_slug: null }
+    - { puissance: emotion, titre: "Porter la mémoire sans l'adoucir", promesse: "Accueillir l'héritage de la violence tout en rouvrant une capacité d'aimer et de créer.", parcours_slug: null }
+
+  pythie:
+    - { puissance: intuition, titre: "Recevoir le message", promesse: "Créer le silence nécessaire pour entendre ce qui ne vient ni d'un raisonnement ni d'une certitude.", parcours_slug: null }
+    - { puissance: communication, titre: "Traduire sans posséder", promesse: "Donner une langue à une perception sans prétendre en épuiser le sens.", parcours_slug: null }
+    - { puissance: emotion, titre: "Rester ancrée dans le corps", promesse: "Accueillir l'intensité d'une traversée intérieure sans perdre le lien au présent et aux autres.", parcours_slug: null }
+
+  leonard-de-vinci:
+    - { puissance: imagination, titre: "Avant le Zéro", promesse: "Imaginer des futurs au lieu de les recevoir tout faits.", parcours_slug: null }
+    - { puissance: intuition, titre: "Explorer la Ressourcerie", promesse: "Observer assez longtemps pour voir ce qui n'est pas encore là.", parcours_slug: null }
+    - { puissance: volonte, titre: "Vivre l'Atelier Point Zéro", promesse: "Mener une création jusqu'à sa forme, pas seulement jusqu'à l'idée.", parcours_slug: null }
+
+  cleopatre:
+    - { puissance: desir, titre: "Et moi dans tout ça ?", promesse: "Nommer ce que tu veux vraiment, avant de savoir si c'est possible.", parcours_slug: null }
+    - { puissance: communication, titre: "Le signe de reconnaissance", promesse: "Ce que ta présence dit de toi quand tu ne parles pas.", parcours_slug: null }
+    - { puissance: volonte, titre: "Le Conseil Oméga", promesse: "Engager une décision qui te coûte quelque chose.", parcours_slug: null }
+
+  aragorn:
+    - { puissance: volonte, titre: "Le Conseil Oméga", promesse: "Porter une voix dans une décision qui engage le collectif.", parcours_slug: null }
+    - { puissance: communication, titre: "Les choses se précisent", promesse: "Dire où tu en es sans forcer personne à te suivre.", parcours_slug: null }
+    - { puissance: emotion, titre: "Mon récit de passage", promesse: "Reconnaître ce que la traversée t'a demandé.", parcours_slug: null }
+
+  marie-madeleine:
+    - { puissance: emotion, titre: "Une drôle d'époque", promesse: "Laisser monter ce que l'époque te fait, sans le calmer trop vite.", parcours_slug: null }
+    - { puissance: communication, titre: "Mon récit de passage", promesse: "Témoigner de ce que tu as traversé, dans tes mots.", parcours_slug: null }
+    - { puissance: intuition, titre: "Mon Moteur", promesse: "Distinguer ce que tu ressens de ce que tu redoutes.", parcours_slug: null }
+
+  socrate:
+    - { puissance: communication, titre: "Le signe de reconnaissance", promesse: "Chercher la parole juste plutôt que la formule qui convainc.", parcours_slug: null }
+    - { puissance: intuition, titre: "Le Coupable idéal", promesse: "Examiner une certitude avant qu'elle ne désigne quelqu'un.", parcours_slug: null }
+    - { puissance: volonte, titre: "Le Conseil Oméga", promesse: "Tenir une question ouverte quand le groupe veut conclure.", parcours_slug: null }
+
+  athena:
+    - { puissance: intuition, titre: "Le Coupable idéal", promesse: "Voir sur quoi repose ta certitude avant de trancher.", parcours_slug: null }
+    - { puissance: volonte, titre: "Le Conseil Oméga", promesse: "Instituer une règle plutôt que d'imposer ton avis.", parcours_slug: null }
+    - { puissance: communication, titre: "Qu'est-ce qui nous paralyse ?", promesse: "Faire entendre l'autre partie avant de juger.", parcours_slug: null }
+
+  barbara-mcclintock:
+    - { puissance: intuition, titre: "Écouter ce que fait l'organisme", promesse: "Laisser l'observation déplacer le modèle plutôt que forcer le vivant à confirmer la théorie.", parcours_slug: null }
+    - { puissance: imagination, titre: "Penser un génome mobile", promesse: "Accueillir une hypothèse qui rend le système plus vivant, plus instable et plus créatif qu'on ne l'imaginait.", parcours_slug: null }
+    - { puissance: volonte, titre: "Continuer sans validation", promesse: "Protéger une recherche féconde pendant le temps où l'institution ne sait pas encore la reconnaître.", parcours_slug: null }

@@ -7,6 +7,25 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+### 2026-08-21 · de Codex · les 48 Héros ont leurs trois directions de Voyage
+
+Le reliquat `parcours_associes` est écrit dans :
+
+- `docs/pedagogie/parcours-associes-heros.yml` : **48 figures × 3 propositions**, dans l'ordre
+  Puissance principale puis deux Puissances d'appui ;
+- `docs/pedagogie/parcours-associes-heros.md` : contrat de donnée, rendu conditionnel et
+  invariants de portage.
+
+Arbitrage de sécurité éditoriale : les propositions portent un `titre`, une `promesse`, une
+`puissance` et `parcours_slug: null`. Elles ne fabriquent aucun faux lien. Le bloc peut montrer
+une **Direction de Voyage** sans CTA ; il ne devient cliquable qu'après résolution vers un
+parcours réel, existant et accessible. Monde minimal, durée et intensité restent lus sur le
+parcours réel et ne sont pas dupliqués dans le catalogue Héros.
+
+Le lot ne touche ni progression, ni validation, ni Oméga. Les six figures M0 conservent les
+associations déjà validées dans la maquette. Contrôle effectué : 48 figures, 144 items, trois
+Puissances exactement alignées avec `config/heros/catalogue.yml` pour chaque figure.
+
 
 
 

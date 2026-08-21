@@ -30,7 +30,7 @@ Le reste peut être traité après le gel du Monde 0 sans rendre son parcours in
 | Volonté / parcours | progression structurelle, expériences requises, intensité/effet/puissance éditorialisés, rite facilitateur séparé | **Vert** | rejouer le banc complet après les dernières promotions |
 | Imagination / Traces | registre canonique par familles, relecture et retours d'expérience | **Vert** | conserver la page comme registre ; aucun bouton de conversion directe |
 | Imagination / Fresque | vraies Graines relues et publiables, mais le rituel « Planter ma première Graine » crée encore une Trace | **Rouge** | porter l'arbitrage du 16 août : le rituel et la saisie libre doivent créer une vraie Graine |
-| Émotion / Héros et mentor | six figures M0, choix réversible, fiche, trois Puissances, lemniscate, mentor Claude et mémoire consentie | **Vert M0** | `parcours_associes` vide pour les 48 figures : enrichissement éditorial, non bloquant pour traverser M0 |
+| Émotion / Héros et mentor | six figures M0, choix réversible, fiche, trois Puissances, lemniscate, mentor Claude et mémoire consentie | **Vert M0** | `parcours_associes` rédigé pour les 48 figures dans `docs/pedagogie/parcours-associes-heros.yml` ; résolution des slugs et portage applicatif ultérieurs |
 | Communication / Guides | deux voix, fil privé continu, suppression et centre de personnalisation | **Vert** | reprendre dans Rails les trois corrections de vérité de la maquette `57960b3` si nécessaire |
 | Communication / Espace d'échange | canal M0, profils, réactions, réponses et échange individuel consentis | **Orange** | fusionner/recetter les PR de fin de lot, puis promouvoir |
 | Partage d'une Graine | service et droits réels en production ; contrôle d'interface livré en PR | **Orange** | semer une Graine dans le décor, regarder le geste, fusionner et promouvoir la PR |
@@ -102,6 +102,5 @@ Le Monde 0 peut être déclaré bouclé lorsque les contrôles suivants sont tou
 |---|---|
 | Portable | fusionner, déployer et recetter les deux PR Communication ; préparer le contrat technique Fresque → Graine |
 | Poste fixe | regarder les gestes réels sur le décor, desktop/mobile, puis rendre un verdict de promotion |
-| Codex | maintenir la matrice de clôture, vérifier les écarts éditoriaux et traiter ensuite les parcours associés des Héros |
+| Codex | maintenir la matrice de clôture et vérifier les écarts éditoriaux ; parcours associés des Héros livrés le 21 août |
 | Boris | aucun nouvel arbitrage nécessaire pour fermer M0 ; la décision Fresque → Graine existe déjà |
-

@@ -5,11 +5,5 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-19 · du portable · `parcours_associes` reste vide pour les 48 Héros
-
-**Attendu :** produire l'éditorial des parcours associés, seul reliquat de ce lot.
-**Référence :** la finalité de l'Espace d'échange est fixée (`9a37aed`) et traduite dans les
-prototypes (`84fb1cc`).
-
-Le contrat de remontée d'activité d'Immateria est explicitement reporté par Boris : ne pas le
-mélanger avec cette vague.
+*(vide — le lot `parcours_associes` des 48 Héros est traité dans
+`docs/pedagogie/parcours-associes-heros.{md,yml}` ; Immateria reste reporté.)*
