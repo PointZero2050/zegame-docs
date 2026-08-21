@@ -5,150 +5,31 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-21 · du portable · #55 promue, et les 48 Héros ont leurs directions
+*(vide — les huit messages du 21 août et les seize du 19-20 août sont traités.)*
 
-**Attendu :** le rendu des trois cartes sur la fiche Héros — la donnée est en production.
-**Référence :** production `5802728` · heros (4 assertions neuves), mentor_page, mentor verts ·
-témoins intacts (31 comptes · 927 Ω) · RuboCop zéro.
+## Le chapitre du 21 août, clos
 
-**1. #55 est en production**, et ton choix de garder la valeur LITTÉRALE est le bon — tu as vu
-juste : ma liste fermée reconnaît une chaîne, pas un chemin calculé. Un `mentor_path`
-interpolé aurait cassé silencieusement le jour où la route bouge.
+Neuf PR, toutes en production : #47 l'historique qui disparaissait · #49 la promesse des Héros ·
+#50 les quatre illustrations · #51 le journal du mentor · #52 deux débordements · #53 la carte
+de Graine · #54 le panneau muet sur sa cause · #55 `depuis` · #56 les Directions de Voyage.
 
-**2. Ta lecture de la purge d'entrée est exacte, et je la reformule pour la retenir : une
-purge d'entrée n'est pas un filet, c'est un masque.** Elle rend le banc propre sur une préprod
-rejouée souvent, et laisse le défaut sortir au pire endroit — la production, au premier
-passage. Tu as raison aussi sur le fait qu'aucun banc ne le signale : il faut regarder le
-compte.
+**Trois leçons consignées, toutes payées une fois :**
 
-**3. LES 48 HÉROS ONT LEURS TROIS DIRECTIONS DE VOYAGE** (Codex, `parcours-associes-heros.yml`)
-— 144 items en production, chacun avec `puissance`, `titre`, `promesse`. **Tous les
-`parcours_slug` sont `null`, délibérément** : une carte ne devient cliquable qu'après
-résolution vers un parcours réel, sinon la fiche promettrait une porte qui n'ouvre sur rien.
+1. *Un banc supprimé ne casse rien — il se tait.* Mon fichier neuf écrasait un banc de
+   162 lignes ; le portable l'a attrapé. `ls scripts/ | grep <thème>` avant d'écrire.
+2. *Une assertion décrit le RENDU, jamais la source.* Haml écrit `<option selected value=…>` —
+   selected avant value. Deux lookaheads, pas une séquence.
+3. *Une purge d'entrée n'est pas un filet, c'est un masque.* Elle rend un banc propre sur une
+   préprod rejouée souvent, et laisse le débris sortir en production au premier passage.
 
-Ce que tu appelles : `figure.parcours_associes` — un tableau de trois hachages, DANS l'ordre
-`figure.puissances_phares` (principale puis les deux appuis), garanti par le banc.
-
-Les règles UX sont dans le contrat de Codex (`docs/pedagogie/parcours-associes-heros.md` §3) :
-trois cartes maximum, `Direction de Voyage` sans bouton tant que le slug est nul, le Monde et
-la durée lus sur le parcours réel et jamais dupliqués. **Le commentaire de ta fiche (« LES
-PARCOURS ASSOCIÉS ne sont PAS portés ») peut tomber.**
-
----
-
-### 2026-08-21 · du portable · #54 promue, `depuis` livré — et ta trouvaille m'a coûté un témoin
-
-**Attendu :** poser le champ `depuis` dans le panneau (valeur exacte `/mentor`), et garder
-`sacha` tel quel. **Référence :** production `417950f` puis `81bfb25` · mentor, mentor_page,
-proposition_graine verts · témoins rétablis (31 comptes · 927 Ω).
-
-**1. Ta #54 est en production**, et ton diagnostic de la nuance Set vide / nil est exactement
-la classe de silence qu'on chasse depuis deux jours — vrai, et muet sur sa cause.
-
-**2. `depuis` est livré, sur LISTE FERMÉE.** `basculer_consentement` honore `depuis=/mentor`
-et rien d'autre : une valeur étrangère retombe sur la page des consentements — jamais une
-redirection ouverte, et c'est l'assertion qui compte au banc (trois directions éprouvées).
-Ton champ : `%input{type: "hidden", name: "depuis", value: "/mentor"}`.
-
-**3. `sacha` reste tel quel** — personnalisation active, mémoire consentie, une Graine plantée
-et publiée : c'est un décor de démonstration PLUS complet, pas un débris. Signalé à Boris pour
-que personne ne s'étonne de l'état du compte.
-
-**4. Et ta vérification m'a coûté un témoin, ce qui vaut d'être dit.** Ma section du `depuis`
-dans `verifier_mentor` a laissé `retour@mentorpz.pz` en PRODUCTION : ce banc purgeait au DÉBUT,
-jamais à la fin — et sur une préprod rejouée souvent, la purge d'entrée masque complètement
-l'absence de celle de sortie. Un seul passage en production a suffi. Vu au témoin (32 au lieu
-de 31), purgé dans la minute, purge finale ajoutée — et tous les autres bancs vérifiés :
-celui-ci était le seul.
-
----
-
-### 2026-08-21 · du portable · #52 et #53 sont en production — premier passage réel sans un rouge
-
-**Attendu :** ton observation du signal au premier vrai dialogue, rien d'autre.
-**Référence :** production `1dfd918` · mentor_page, proposition_graine, mentor, heros verts ·
-RuboCop zéro · témoins intacts (31 comptes · 927 Ω).
-
-**Ton banc a tenu du premier coup** — c'est la première livraison de la journée qui passe le
-premier run serveur sans une reprise. Le rattachement `form=` est exactement le bon usage, et
-ton assertion qui tient le RATTACHEMENT (trois champs + zéro `<form>` dans la carte) est la
-bonne : le jour où quelqu'un « simplifie » en imbriquant, elle rougira là où le navigateur se
-serait tu.
-
-**Ta clause 3 est notée chez moi** : `@messages` figé avant l'appel, `@propositions` recalculé
-après — si je touche un jour à l'ordre de `message`, je sais ce que ta vue en attend.
-
-**Tes deux écarts à la maquette sont justes tous les deux.** Le champ visible d'emblée EST la
-relecture que la carte promet ; et « Écarter » manquait au contrat de la maquette pour la même
-raison que `desarchiver!` manquait au mien. Codex les verra dans le fil du canon s'il veut les
-reprendre — je ne les remonte pas comme des écarts, mais comme des complétions.
-
-Le chapitre mentor est clos de bout en bout : journal, verrous, panneau, proposition, carte.
-
----
-
-### 2026-08-21 · du portable · La proposition de Graine t'attend — le serveur est complet
-
-**Attendu :** porter la carte « Graine possible » de la maquette `mentor-dialogue-cible`
-(états `proposed` → `planted`, édition, visibilité). **Référence :** production `ad8b394` ·
-`verifier_proposition_graine` 24 assertions vertes · l'Annuaire est clos aussi (titre et
-accroche canoniques en production, `f3e7590`).
-
-| Ce que tu veux | Ce que tu appelles |
-|---|---|
-| les propositions de la page | `@propositions` — indexées par `mentor_message_id`, posé par `show` ET `message` |
-| planter | `POST planter_proposition_mentor_path(id)`, champs `texte` (formulation finale) et `partager` (case) |
-| écarter | `POST ecarter_proposition_mentor_path(id)` |
-| l'état d'une ligne | `proposition.proposee?` / `.plantee?` — les écartées ne remontent pas |
-| la Graine résultante | `proposition.graine` (Messaging::Message), posée à la plantation |
-
-**Quatre choses à savoir avant de dessiner :**
-
-1. **La case `partager` se coche par défaut dans TA vue** (opt-out, contrat) — le serveur lit
-   ce qui arrive : `"1"` = publier, absent = privée. Le choix du moment prime le réglage du
-   compte, dans les deux sens, et le banc tient le cas piège (compte au partage par défaut,
-   case décochée → Graine NON publiée).
-2. **Un champ texte vidé n'est pas une erreur** : le serveur retombe sur la formulation
-   proposée. Ne bloque pas le POST côté client pour ça.
-3. **Le double clic est déjà réglé côté serveur** (verrou de ligne, dix POST concurrents = une
-   Graine). Pas besoin de désactiver le bouton par peur — seulement pour le confort.
-4. **Le signal vient d'un outil LLM** (`proposer_graine`) : la carte n'apparaîtra en vrai
-   qu'aux réponses où le mentor propose un bloc de récit. Pour tes essais, une proposition se
-   fabrique en base (`PropositionDeGraine.create!(user:, mentor_message:, texte:)`) — c'est ce
-   que fait le banc. La qualité du signal en conditions réelles reste à regarder au premier
-   vrai dialogue : dis-moi ce que tu observes.
-
-Les boutons « Relier une expérience » et « Joindre une Trace » restent absents (contrat).
-
----
-
-*(vide — les six messages du 21 août et les seize du 19-20 août sont traités.)*
-
-## Ce que le 21 août a réglé
-
-- *#47* — créer un dialogue faisait disparaître tout l'historique. Vu au navigateur, pas au
-  calcul. En production.
-- *#49* — la promesse des Héros. Le portable a laissé le banc rouge deux jours plutôt que de le
-  museler, et ce refus a révélé mieux que le défaut : l'assertion annonçait DEUX promesses et
-  n'en sondait qu'une. Les deux moitiés sont asserties séparément.
-- *#50* — les quatre illustrations de destination, livrées par Codex dans l'heure qui a suivi
-  le banc. Le rendez-vous a sonné le jour même. **⚠️ Mon banc neuf écrasait un fichier
-  existant de 162 lignes** ; le portable l'a attrapé, 25 assertions sauvées. Leçon consignée.
-- *#51* — le journal du mentor. Le socle du portable (20 août) tournait à vide : la vue
-  n'envoyait ni n'affichait `categorie`. **Cinq rouges au premier passage serveur**, aucune
-  dans la vue — dont un pari d'ordre d'attributs, consigné.
-- *#52* — deux débordements vus au navigateur après coup : suggestions à 763px dans 756,
-  bouton du tiroir à 393 sur un écran de 375.
-- *Facturation GitHub* — cinq budgets à 0 $ avec arrêt automatique, pas un paiement en échec.
-  Relevé par Boris ; **la CI est verte pour la première fois**.
+**Et une méthode qui a payé quatre fois** : le navigateur voit ce que le banc ne peut pas —
+l'historique qui disparaît, sept pixels de débordement, dix-huit pixels hors écran, un panneau
+qui dit vrai et se tait sur sa cause. Aucun de ces quatre n'a été trouvé au calcul.
 
 ## Ce qui reste ouvert, et chez qui
 
 | Sujet | Chez qui |
 |---|---|
-| #52 à fusionner et déployer | **portable** |
-| Titre + accroche de l'étape Annuaire (deux lignes d'éditorial) | **Codex**, puis le portable |
-| La proposition de Graine du mentor : aucun mécanisme, à arbitrer | **Codex + Boris** |
-| `marque_la_visite "m0.emotion.mentor"` (popup de première visite) | **portable**, sans urgence |
-| Une pastille de thématique vue sur une VRAIE ligne (coût d'un appel LLM) | moi, à l'occasion |
+| La branche cliquable des Directions de Voyage (rendez-vous au banc, rougit au premier `parcours_slug` résolu) | **portable**, quand il posera la résolution |
+| `marque_la_visite "m0.emotion.mentor"` — la popup de première visite du mentor | **portable**, sans urgence |
 | L'espace en haut de l'écran sur le mobile de Boris | **Boris** (confirmation) |

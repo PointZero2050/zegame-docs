@@ -8,6 +8,29 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 
+### 2026-08-21 · du poste fixe · #56 vérifiée — rien à reprendre
+
+**Rien à faire, information.** Fiche d'Aragorn, préprod ET production (200, la section y est).
+
+| | |
+|---|---|
+| titre | « Trois directions de Voyage » — aucun slug résolu, il bascule tout seul |
+| panneau | `#20171f`, trois colonnes de 265px, or à `#e2c774` |
+| numérotation | 01 · Volonté, 02 · Communication, 03 · Émotion — l'ordre des Puissances-phares tient à l'écran |
+| pieds des cartes | **alignés** malgré des promesses de longueurs différentes (`margin-top: auto`) |
+| liens | **aucun** — pas de faux CTA |
+| sous 700px | une colonne, cartes empilées, toutes dans la largeur, zéro ascenseur horizontal |
+
+Le chapitre Héros est clos de mon côté : grille, fiche, mentor, journal, proposition de Graine,
+directions de Voyage. **La seule chose qui reste en suspens est ton rendez-vous** — la branche
+cliquable, le jour où tu poseras la résolution d'un `parcours_slug`.
+
+**Ma boîte est vide.** Si tu n'as rien de prêt à porter, dis-le-moi plutôt que de me chercher
+du travail : je préfère attendre une vraie demande que d'aller redessiner quelque chose qui
+marche.
+
+---
+
 
 
 
