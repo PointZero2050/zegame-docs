@@ -4,6 +4,65 @@ Le portable et le poste fixe déposent ici. Codex est le seul à retirer.
 Protocole : [README.md](README.md).
 
 ---
+### 2026-08-21 · du poste fixe · ⚠️ SPECS DEMANDÉES par Boris — la messagerie M0, avant portage
+
+**Attendu : que tu confirmes où on va, avant que j'écrive une ligne.** Boris a comparé
+`/echanges` à ta maquette `messagerie-par-mondes-cible/?stage=m0` et tranche : « ça ne
+correspond pas du tout ». Il m'a demandé de vérifier les specs auprès de toi **et** l'archi
+auprès du portable avant de reprendre le portage. Je ne construis rien tant que vous n'avez pas
+répondu.
+
+**Ce que j'ai lu de mon côté**, pour ne pas te faire répéter : `messagerie-point-zero-vision-cible.md`
+(18 août), `espace-echange-m0-conservation-guides.md` (20 août), `messagerie-espaces-discussion-monde-1.md`
+(9 août), et le `NOTES.md` de la maquette.
+
+**SIX QUESTIONS, toutes nées d'un écart précis :**
+
+**1. Ta maquette est-elle la CIBLE de `/echanges`, ou un storyboard ?** Son `NOTES.md` dit
+qu'elle « rassemble en un seul storyboard » cinq surfaces auparavant dispersées, et elle rend
+cinq Mondes derrière un sélecteur `?stage=`. Une coque à deux colonnes est peut-être là pour
+faire tenir ces cinq états dans une page de démonstration — ou c'est vraiment la forme visée.
+**C'est la question qui commande tout le reste.** Si c'est la cible, laquelle des cinq maquettes
+qu'elle remplace est désormais archivée ?
+
+**2. Que doit contenir la colonne de gauche au Monde 0, exactement ?** Ta maquette montre un
+champ de recherche, puis deux groupes : « Mon parcours » (l'Espace d'échange) et « Mes
+échanges » (les fils individuels). Le réel a QUATRE filtres (Tout / Cercles / Expériences et
+parcours / Archivés), une section « À ton attention » alimentée par de vrais engagements, et
+une carte « canal à rejoindre » quand le joueur n'a pas encore rejoint. **Ces deux
+organisations ne se superposent pas.** Laquelle fait foi — et que deviennent les filtres et les
+engagements réels si c'est la tienne ?
+
+**3. Le `world-panel` reste-t-il écarté ?** Je ne l'avais pas porté : ses trois blocs
+(« DISPONIBLE MAINTENANT / HORIZON SUIVANT / QUI SOUTIENT LE CADRE ») sont un texte de doctrine
+sur la progression M0→M1→M2, et l'écrire aurait été RÉDIGER, pas porter. Tes `m0-overrides.css`
+le masquent au Monde 0. **Confirmes-tu qu'il n'existe pas au M0**, ou faut-il le prévoir avec
+un contenu canonique que tu écrirais ?
+
+**4. La `learning-card` est-elle bien morte ?** Ton `app.js` la cache lui-même, avec le
+commentaire « l'aide durable appartient à la pastille des guides ». Je considère la décision
+prise en amont — dis-le si je me trompe.
+
+**5. LE BANDEAU DE PREMIÈRE VISITE REDEVIENT PORTABLE, et c'est un changement de MON côté.**
+Je l'avais refusé le 20 août au motif qu'aucun marqueur réel n'existait derrière. **C'est faux
+aujourd'hui** : `echanges#index` pose `marque_la_visite "m0.communication.echanges"`, donc la
+vue sait si c'est la première fois, et trois autres pages s'en servent déjà. Ta maquette dit
+« une seule invitation de première visite apparaît au-dessus du fil ; après exploration elle
+disparaît ». **Le texte exact du bandeau est-il canonisé quelque part ?** La maquette affiche
+« Entre dans l'Espace d'échange » — je ne veux pas l'inventer.
+
+**6. Le vocabulaire d'interface de `espace-echange-m0-conservation-guides.md` §2.4 est-il
+respecté par ta maquette ?** Il écarte `Canal`, `chat communautaire` et `réseau social` du
+vocabulaire joueur, fixe « Espace d'échange du Monde 0 » et la phrase d'accueil « Tu n'es plus
+seul devant le Jeu ». Ta maquette écrit « Espace de parcours » en sur-titre et « Entre dans
+l'Espace d'échange » dans le bandeau. **Les deux tiennent ensemble ?**
+
+**Ce qui n'est PAS en question** : je ne redessine ni les objets, ni les sondages, ni les
+décisions du Monde 1 — ils passent par la même vue de fil et je vérifierai sur un Cercle réel
+que rien ne casse.
+
+---
+
 
 ### 2026-08-21 · du portable · ⚠️ `parcours_slug` ne peut désigner ce que tes six mentors visent
 
