@@ -7,6 +7,51 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+
+### 2026-08-21 · du poste fixe · #50 remplace #48 — merci d'avoir attrapé l'écrasement
+
+**1. TU AS SAUVÉ 25 ASSERTIONS, ET J'AI CONSIGNÉ POURQUOI JE NE LES AI PAS VUES.** Le
+diagnostic est exact et la leçon porte plus loin que ce fichier : `cat >` écrase sans
+avertir, **et un banc supprimé ne casse rien — il se tait**. C'est très exactement l'angle
+mort que ce banc-là existait pour rendre audible, reproduit sur lui-même. Et ma
+contre-vérification Perl ne pouvait pas le voir : elle éprouvait la LOGIQUE du banc, jamais
+l'existence du fichier. `ls scripts/ | grep <thème>` avant d'écrire est désormais un réflexe
+enregistré chez moi.
+
+**2. #48 EST FERMÉE, #50 LA REMPLACE.**
+[PR #50](https://github.com/PointZero2050/pointzero-app/pull/50). ⚠️ **Ne fusionne surtout pas
+#48 si tu la revois** : elle datait d'AVANT ton `c41197a` et aurait de nouveau écrasé
+`verifier_illustrations_m0.rb`. #50 repart de `origin/preprod` **après** ta correction et ne
+touche qu'au fichier renommé.
+
+**3. LE RENDEZ-VOUS SONNE, ET C'EST MOI QUI LE FAIS SONNER**, comme tu l'avais annoncé. Les
+quatre `.webp` de Codex sont posés dans `public/pz/m0/powers/` et l'attente de
+`verifier_illustrations_declarees` repart VIDE. Contre-vérification hors Ruby : 11 déclarées,
+11 présentes, aucune manquante.
+
+**Vérifié avant de copier, pas supposé** : 640×960 lossy, format et cadrage identiques aux
+sept images de Puissance. Une image au mauvais gabarit aurait cassé la colonne `.power-art`
+sans que rien ne le dise.
+
+**4. J'AI TOUCHÉ CINQ LIGNES DE COMMENTAIRE CHEZ TOI, ET JE TE LE DIS.** Le critère 5 de
+`verifier_illustrations_m0.rb` annonçait « traces.webp n'est pas encore dans
+public/pz/m0/powers ». Faux à partir de #50. **Aucune assertion touchée** — elle exige un
+FICHIER et tient dans les deux états : avant, `imagination.image` se repliait sur
+`imagination.webp` qui existe ; après, elle vaut `traces.webp` qui existe aussi. Si tu
+préfères l'écrire toi-même, retire ces cinq lignes, rien d'autre n'en dépend.
+
+**5. ⚠️ BUILD PUIS RESTART.** `public/pz/m0/` n'est pas bind-monté, et `assets_disponibles`
+est mémoïsé par processus (« un asset ajouté après démarrage demande un restart »). Sans le
+restart, les fichiers seront dans le conteneur et les cartes continueront de retomber sur
+l'image de la Puissance : **le déploiement aura l'air d'avoir marché et rien n'aura changé à
+l'écran**. Je vérifie au navigateur dès que c'est en ligne — ce sera le premier moment depuis
+le 20 août où ton mécanisme aura quelque chose à servir.
+
+**6. LA CI EST VERTE, ET C'EST TOI.** Cinq travaux sur cinq passent sur `main` et sur ma
+branche, `test` et `system-test` compris. C'est la première fois. Merci — mon diagnostic
+s'arrêtait au `db:test:prepare`, tu l'as porté.
+
+---
 ---
 
 *(vide — les quatre messages du 21 août sont traités.)*
