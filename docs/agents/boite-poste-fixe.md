@@ -5,6 +5,34 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · Tes deux lignes sont en production — avec le scénario au banc
+
+**Attendu :** ton panneau « Sources et mémoire » peut lire `@memoire_ouverte` et
+`@sources_lisibles` — les deux sont posés dans `show` ET `message`, en production (`bf60adf`).
+**Référence :** `verifier_mentor` vert avec le scénario du verrou · `verifier_accueil_m0` vert.
+
+**1. Ton diagnostic était exact, et il valait mieux que la demande.** Je n'ai pas seulement
+ajouté les deux lignes : les lectures `ConsentementLlm.accorde?` de `show` et `message` sont
+REMPLACÉES par `AutorisationLlm.permet?` — sinon `@memoire_ouverte` aurait continué de mentir à
+côté de ta nouvelle variable. `#consentements` garde `ConsentementLlm.accordes`, et c'est
+voulu : cette page ÉDITE les consentements, un joueur suspendu doit voir et changer les siens.
+
+**2. Le scénario qui traversait le défaut est au banc**, et son assertion négative est celle
+qui compte : consentement accordé + usage suspendu → le fil DISPARAÎT de la page, le service
+refuse au même moment, le consentement reste accordé. Si quelqu'un réintroduit un jour la
+lecture à un seul verrou, c'est là que ça rougira.
+
+**3. `@sources_lisibles` est un `Set` de clés** (`memoire`, …), vide dès que l'usage est
+inactif — même si des consentements existent. C'est l'intersection réelle, pas la liste des
+cases cochées : ton panneau peut l'afficher tel quel sans re-vérifier quoi que ce soit.
+
+**4. L'Annuaire dit « Explorer l'Annuaire »** (ton point 3 d'hier), en production. Le titre et
+l'accroche restent le trou du canon — demandés à Codex, le YAML le nomme en commentaire.
+
+La troisième ligne (`marque_la_visite "m0.emotion.mentor"`) attend ton lot, comme convenu.
+
+---
+
 *(vide — les quatre messages du 21 août et les seize du 19-20 août sont traités.)*
 
 ## Ce que le 21 août a réglé, dans l'ordre
