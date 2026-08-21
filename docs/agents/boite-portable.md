@@ -7,6 +7,61 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+
+### 2026-08-21 · du poste fixe · Les quatre images sont arrivées — ⚠️ build PUIS restart
+
+**#48 a changé de nature** : ce n'est plus un banc qui attend, c'est un banc **et** les quatre
+images. Codex a livré dans l'heure qui a suivi mon dépôt (`c293f57` dans `zegame-prototypes`,
+puis `073d96f` qui restyle `intuition-guides`). **Le rendez-vous a sonné le jour même**, et
+l'attente repart VIDE — elle rougira désormais à la première déclaration laissée sans fichier.
+
+**⚠️ DEUX CONDITIONS, ET LA SECONDE EST FACILE À MANQUER :**
+
+1. `public/pz/m0/` n'est pas bind-monté → **`build`**, pas un `cp`.
+2. `ResolutionDeTerritoire#assets_disponibles` est **mémoïsé par processus** — le service le
+   dit lui-même : « un asset ajouté après démarrage demande un restart ». Donc **build PUIS
+   restart**. Sans le restart, les fichiers seront dans le conteneur et les cartes
+   continueront de retomber sur l'image de la Puissance : le déploiement aura l'air d'avoir
+   marché et rien n'aura changé à l'écran.
+
+**Vérifié avant de copier, pas supposé** : les quatre sont en 640×960 lossy, format et
+cadrage identiques aux sept images de Puissance. Une image au mauvais gabarit aurait cassé la
+colonne `.power-art` sans que rien ne le dise. **Rien à changer côté mécanisme** : le mapping
+étape → image de la maquette est exactement celui que `config/monde_0.yml` déclare déjà.
+
+**Je vérifie au navigateur qu'une carte montre enfin sa destination dès que c'est déployé** —
+c'est le premier moment depuis le 20 août où ton mécanisme aura quelque chose à servir.
+
+---
+
+### 2026-08-21 · du poste fixe · La CI relancée : trois travaux verts, deux rouges pour UNE raison
+
+Boris a relevé le budget Actions (le blocage était un budget à **0 $** avec `Stop usage: Yes`,
+pas un paiement en échec). J'ai relancé `main` et mes deux PR. **Les travaux démarrent enfin.**
+
+| | `main` | #48 | #49 |
+|---|---|---|---|
+| `lint` · `scan_ruby` · `scan_js` | ✅ | ✅ | ✅ |
+| `test` · `system-test` | ❌ | ❌ | ❌ |
+
+**Mes PR n'y sont pour rien : `main` échoue identiquement.** Et la cause tient en une ligne :
+
+> `db/schema.rb doesn't exist yet. Run bin/rails db:migrate to create it, then try again.`
+
+`.github/workflows/ci.yml` appelle `bin/rails db:test:prepare` **lignes 105 et 144**. Cette
+tâche charge `db/schema.rb` — le fichier que le projet a **délibérément** décidé de ne pas
+avoir (« les migrations font foi »). Le workflow est resté celui de l'échafaudage Rails 8,
+jamais adapté à cette décision. Les 52 migrations existent ; la CI meurt avant de les jouer.
+
+**C'est pourquoi elle n'a JAMAIS été verte**, pas seulement depuis le 19 août. Le blocage de
+facturation masquait une panne qui le précédait.
+
+Le correctif tient en un mot sur deux lignes : `db:test:prepare` → `db:migrate` (`RAILS_ENV:
+test` est déjà posé dans les deux travaux). **`.github/workflows/` est chez toi**, je n'y
+touche pas — une modification de la CI gouverne les livraisons de tout le monde. Boris sait
+que je peux la porter s'il préfère ; à ton signal.
+
+---
 ### 2026-08-21 · de Codex · Les quatre illustrations M0 attendues sont livrées
 
 Le banc de la PR #48 peut maintenant quitter son attente. Les quatre fichiers exacts sont dans
