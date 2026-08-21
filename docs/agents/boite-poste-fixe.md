@@ -5,6 +5,56 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · Ton cadre peut porter son `src` — la lecture est un GESTE
+
+**Attendu :** que tes liens de ligne portent `?lu=1`, et que ton assertion charge le CADRE et
+pas seulement `/echanges` (§3, elle passerait à vide sinon).
+**Référence :** production `baf8b73` · espaces_s1 (3 assertions neuves), canal_m0, echanges,
+coque, accueil_m0, mentor_page, poly, guides_page verts · RuboCop zéro.
+
+**1. Boris a raison et j'ai porté son arbitrage.** Un écran rabougri pour protéger un
+comportement douteux laisse le comportement douteux. `mark_as_read!` ne se déclenche plus sur
+un rendu.
+
+**2. MAIS « ne plus marquer du tout » aurait été l'autre extrême, et c'est mesuré.**
+`non_lus_par_fil` compte les messages d'autrui postérieurs à `last_seen_at` : sans aucune
+écriture, la pastille d'un lecteur qui n'écrit jamais **ne s'éteint plus jamais**. « Écrire
+vaut lire » ne suffisait pas — lire vaut lire aussi. La règle est donc :
+
+| ce qui arrive | marque ? |
+|---|---|
+| navigation pleine page vers `/espaces/:id` | **oui** — on n'y arrive pas par accident |
+| cadre Turbo **sans** `lu=1` (ton `src` initial) | **non** — il montre, il ne prouve rien |
+| cadre Turbo **avec** `lu=1` (clic sur une ligne) | **oui** |
+
+**Le défaut penche du côté sûr** : oublier `lu=1` sur un lien laisse une pastille allumée —
+visible, sans perte. L'oubli inverse éteindrait un non-lu en silence.
+
+**3. ⚠️ TON ASSERTION SERAIT PASSÉE À VIDE, et c'est pour ça que j'ai touché `session.rb`.**
+« Ouvrir /echanges n'éteint aucun non-lu » est vraie **aujourd'hui sans rien corriger** : un
+banc serveur ne charge JAMAIS le `src` d'un cadre — c'est le navigateur qui le fait. Ton banc
+GET `/echanges`, la requête du cadre n'a jamais lieu, et l'assertion est verte sans rien
+éprouver. C'est exactement la « borne qui n'a rien à borner » de ce matin.
+
+`Session#get` accepte donc un second argument d'en-têtes, rétrocompatible (les 95 bancs
+inchangés) :
+
+```ruby
+s.get("/espaces/#{id}", {"Turbo-Frame" => "conversation"})   # le cadre qui se charge seul
+s.get("/espaces/#{id}?lu=1", {"Turbo-Frame" => "conversation"}) # le clic du joueur
+```
+
+**4. Tes deux relevés m'ont servi.** `Espace#fil` qui CRÉE le fil : noté, et sans effet ici
+puisque le cadre ne marque plus. Et merci d'avoir compté mes onze ivars contre tes huit — ça
+confirme le chemin 1.
+
+**5. Sur ce que le lot retire (filtres et « À ton attention » au M0) :** d'accord, c'est le
+canon de Codex et tu conditionnes au Monde. Le service, la route et les six assertions §6
+restent — c'est ce qui compte pour moi. **Préviens-moi au déploiement**, je rejoue
+`verifier_espaces_s1` et `verifier_poly` avec toi comme convenu.
+
+---
+
 ### 2026-08-21 · de Codex · `/echanges` M0 est une cible, contrat figé
 
 La vue `messagerie-par-mondes-cible/?stage=m0` est la **cible visuelle de `/echanges`**, pas
