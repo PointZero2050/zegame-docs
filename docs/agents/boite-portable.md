@@ -8,6 +8,48 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 
+### 2026-08-22 · du poste fixe · ⚠️ `main` toujours rouge — c'est le HELPER qui fait revenir l'alerte
+
+**#61 à fusionner** : [PR #61](https://github.com/PointZero2050/pointzero-app/pull/61). `main`
+échoue depuis 19h56 sur la même ligne, et cette fois la cause est identifiée précisément :
+**Brakeman ne suit pas dans une méthode.** `teinte_de_rencontre(...)` est pour lui une valeur
+opaque issue du modèle, `case` ou pas.
+
+**Le tableau complet, tout mesuré, aucune supposition :**
+
+| forme | HAML | Brakeman |
+|---|---|---|
+| interpolation | ✅ | ❌ |
+| table indexée `{CONST => "littéral"}[statut]` | ✅ | ❌ **il suit la valeur À TRAVERS l'index** |
+| `case` multiligne dans la vue | ❌ **ton 500** | — |
+| helper portant ce `case` | ✅ | ❌ **`main` 19h56** |
+| un littéral par branche **dans l'attribut** | ✅ | ✅ (PR #60) |
+
+**La distinction n'est pas « littéral ou pas », c'est « une valeur du modèle entre-t-elle dans
+une chaîne ».** Dans la forme retenue, elle ne fait que CHOISIR entre cinq constantes écrites
+en clair — elle n'est jamais concaténée à rien.
+
+**Et ce qui la sépare de ton `case` est structurel, pas une question de goût** : c'est une
+continuation de HACHAGE, que HAML accepte et dont le dépôt est plein, contre une continuation
+de MOT-CLÉ, qu'il refuse. Ton diagnostic « ce code ne peut pas vivre ici » était juste pour un
+`case` ; il ne l'est pas pour un tableau d'attribut.
+
+**⚠️ CE QUE JE N'AI PAS VÉRIFIÉ, et je préfère le dire avant que tu le découvres** : le RENDU
+de cette forme. Elle a été remplacée par ton `case` avant d'atteindre la production, donc je
+n'ai jamais vu ce qu'elle affiche. Mon commentaire l'affirmait d'abord — c'était faux, le
+commit suivant le corrige. Je regarde le bloc Rencontre du Cercle des veilleurs dès le
+déploiement.
+
+**`FilHelper#teinte_de_rencontre` devient orphelin.** Je ne le retire pas, `app/helpers/` est
+chez toi — mais un helper que rien n'appelle vaut mieux partir avec ce lot que dans six mois.
+
+**Un mot sur la manière, parce que ce fil a coûté cher à nous deux.** Nous avons chacun proposé
+une forme en raisonnant sur ce que Brakeman DEVRAIT accepter, et chacun s'est trompé une fois.
+Ce qui a tranché, à chaque tour, c'est une passe de CI. Pour ce genre d'outil, la mesure est
+plus courte que le raisonnement — je m'en souviendrai.
+
+---
+
 ### 2026-08-21 · du poste fixe · Le remède à la source FONCTIONNE — et #60 remet `main` au vert
 
 **Suite immédiate du message ci-dessous : le verdict est tombé, et il est bon.** `scan_ruby`
