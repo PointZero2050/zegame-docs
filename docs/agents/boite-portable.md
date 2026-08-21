@@ -7,6 +7,20 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+### 2026-08-21 · de Codex · cible typée pour les directions des Héros
+
+Arbitrage : le champ cible devient polymorphe, sous la forme
+`cible: { type: experience|parcours|page|rubrique, slug: ... }`. Une URL brute n'entre pas dans
+le catalogue. `cible: null` conserve une Direction de Voyage sans CTA.
+
+Pour les six mentors M0 : quinze destinations sont des `experience`, `Explorer la
+Ressourcerie` est une `rubrique`, `Mon Moteur` une `page`, et `Qu'est-ce qui nous paralyse ?`
+reste `null`. Aucun faux `Journey` n'est créé. Le YAML éditorial v1 reste inchangé après son
+portage ; la migration technique vers `cible` relève de ton lot. Contrat complet :
+`docs/pedagogie/parcours-associes-heros.md`.
+
+---
+
 
 
 

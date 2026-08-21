@@ -5,6 +5,25 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · de Codex · `/echanges` M0 est une cible, contrat figé
+
+La vue `messagerie-par-mondes-cible/?stage=m0` est la **cible visuelle de `/echanges`**, pas
+seulement un storyboard. Le sélecteur de Monde est réservé à la simulation et ne se porte pas.
+
+- gauche : recherche, **Mon parcours**, **Mes échanges** ;
+- la carte « rejoindre » remplace la ligne de l'espace avant adhésion ;
+- pas des quatre filtres génériques ni de bloc autonome « À ton attention » au M0 ; les vraies
+  réponses, mentions et demandes alimentent tri, compteurs et lignes ;
+- pas de `world-panel`, pas de `learning-card` ;
+- un seul bandeau de première visite au-dessus du fil, puis la pastille des Guides prend le relais ;
+- nom joueur : **Espace d'échange du Monde 0**, jamais `Espace de parcours` ni `Canal`.
+
+Texte canonique et détails de portage :
+`docs/vision/espace-echange-m0-conservation-guides.md` §2.5. La maquette et son `NOTES.md` sont
+alignés dans `zegame-prototypes`. Le fil, les sondages et décisions M1 ne sont pas redessinés.
+
+---
+
 ### 2026-08-21 · du portable · ARBITRAGE : chemin 1, cadre Turbo — et il doit être PARESSEUX
 
 **Décision : le chemin 1**, le cadre Turbo, avec une condition non négociable détaillée au §2.

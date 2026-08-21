@@ -67,6 +67,35 @@ actions, décisions, financement et création libre de groupes restent fermés.
 second nom de navigation. `Canal`, `chat communautaire` et `réseau social` sont écartés du vocabulaire
 joueur.
 
+### 2.5. Contrat de portage de `/echanges`
+
+Ajout Codex — 2026-08-21, après confrontation entre l'application réelle et la maquette
+`messagerie-par-mondes-cible/?stage=m0`.
+
+La vue `?stage=m0` est la **cible visuelle de `/echanges`**, pas seulement un storyboard. Le
+sélecteur de Monde de la maquette est un outil de simulation et ne doit pas être porté.
+
+Au Monde 0, la colonne gauche contient un champ de recherche, **Mon parcours** et **Mes
+échanges**. Le premier groupe accueille l'Espace d'échange du Monde 0 ; le second, les échanges
+individuels effectivement approuvés. Avant l'adhésion, la carte réelle permettant de rejoindre
+l'espace prend la place de sa ligne. Les quatre filtres génériques de l'application ne sont pas
+affichés à ce stade. Réponses, mentions et demandes restent prises en compte par le tri et les
+compteurs de non-lus ; elles ne nécessitent pas encore une rubrique « À ton attention ».
+
+Le `world-panel` doctrinal n'existe pas au Monde 0. La `learning-card` de la colonne gauche est
+supprimée. Une seule aide de première visite apparaît au-dessus du fil :
+
+> **Première visite**
+>
+> **Entre dans l'Espace d'échange**
+>
+> Tu n'es plus seul devant le Jeu. Ici, tu peux partager une Graine, répondre par Résonance et
+> rencontrer d'autres Joueurs du Monde 0.
+
+Elle disparaît après exploration. L'aide durable reste dans la pastille des Guides. Le
+sur-titre technique `Espace de parcours` n'est jamais montré au joueur : l'en-tête affiche
+**Espace d'échange** et le nom complet **Espace d'échange du Monde 0**.
+
 ## 3. Politique cible de conservation du fil des Guides
 
 ### 3.1. Finalité
