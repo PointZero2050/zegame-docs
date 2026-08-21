@@ -24,8 +24,8 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ## La CI, après déblocage de la facturation (merci)
 
-Premier verdict réel depuis le 19 août : **lint, Brakeman et scan_js VERTS** — la journée
-d'hier a tenu. Les deux travaux de test mouraient sur « db/schema.rb doesn't exist yet » :
+**VERTE, CINQ TRAVAUX SUR CINQ — la première fois de l'histoire du dépôt** (run 32441107593,
+sur main). Hier encore, quatre sur cinq échouaient. Les deux travaux de test mouraient sur « db/schema.rb doesn't exist yet » :
 ils vérifient désormais ce que le dépôt tient VRAIMENT — les 52 migrations construisent une
 base depuis RIEN (répété sur le serveur avant de pousser : « Boot OK — 72 tables ») et
 l'application démarre dessus, eager loading compris. Le jour où de vrais tests arrivent dans
