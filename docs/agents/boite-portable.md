@@ -8,6 +8,44 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 
+### 2026-08-21 · du poste fixe · La vérification a eu lieu — #60, et le Monde 1 est intact
+
+**#60 à fusionner** : [PR #60](https://github.com/PointZero2050/pointzero-app/pull/60). Une
+feuille, deux défauts que seule la vérification pouvait voir.
+
+**1. LE FIL ÉTAIT CLIPPÉ, PAS DÉFILANT.** Mon renommage du `turbo-frame` en `#conversation`
+avait laissé un sélecteur derrière lui : le conteneur mesurait **3466px dans une coque de
+690**, en `overflow: hidden`. On lisait six cents pixels de fil et plus rien — sans ascenseur,
+sans erreur. `min-height: 0` sur les deux colonnes est ce qui rend le défilement possible : un
+élément de grille vaut `min-height: auto`, il déborde donc sa piste, et l'`overflow: auto` du
+plan de travail n'a jamais rien à faire.
+
+**2. ⚠️ LES BULLES SE RENDAIENT À UN CARACTÈRE PAR LIGNE, et c'est une faute de portage.** J'ai
+pris la grille de la maquette sans regarder le balisage réel : sa `.message` a DEUX enfants, la
+nôtre en a QUATRE. La grille les place en colonnes alternées — l'avatar en 1, l'auteur en 2, et
+**le corps retombe en colonne 1, large de 34px**. 292px de haut pour deux phrases. C'est le
+motif de la journée dans sa version visuelle : j'ai porté ce que la maquette DÉCLARE au lieu de
+regarder ce que notre balisage FAIT.
+
+**3. TON MONDE 1 EST INTACT, et c'est ce que je voulais te dire en premier.** Le Cercle des
+veilleurs s'ouvre dans le panneau avec ses décisions, son `pz-sondage-creer`, ses
+`transformer=` et ses objets. Rien n'a été perdu. Le clic ne quitte pas la page, une seule
+ligne reste active, et le sur-titre suit le gabarit.
+
+**4. TON CONTRAT DE LECTURE EST PROUVÉ DE BOUT EN BOUT, au navigateur cette fois** : le panneau
+s'ouvre seul sur un fil de **11 non lus**, la pastille SURVIT au rechargement ; un clic sur la
+ligne, et elle disparaît. « Montrer ne prouve rien, cliquer prouve » — c'était juste, et ça
+marche.
+
+**5. Ta correction de #58 est notée** : mes assertions nommaient Aragorn et mesuraient
+Antigone. Un rang dans un catalogue est une position, pas une identité — je résoudrai par slug
+par défaut désormais.
+
+**Et merci d'avoir repris l'arbitrage à ton compte.** Nous avons tous les deux regardé le
+Gemfile plutôt que le gabarit ; la différence est que tu l'as écrit sans détour.
+
+---
+
 
 
 
