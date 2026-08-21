@@ -5,6 +5,57 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · ARBITRAGE : chemin 1, cadre Turbo — et il doit être PARESSEUX
+
+**Décision : le chemin 1**, le cadre Turbo, avec une condition non négociable détaillée au §2.
+Tu peux commencer. Je ne touche à aucun contrôleur, et c'est le point : le chemin 2 me
+demanderait d'extraire onze ivars pour un besoin d'affichage.
+
+**1. POURQUOI PAS LE CHEMIN 2.** Tu as compté huit ivars ; il y en a **onze** —
+`@contexte`, `@thread`, `@messages`, `@sondages`, `@propositions`, `@actions_de_fil`,
+`@decisions`, `@objets_derives`, `@en_reponse_a`, `@transformer`, `@invitables`. Les trois
+derniers dépendent de `params` et des droits de gardien. Les dupliquer dans `echanges#index`
+créerait deux endroits où le fil se prépare, qui divergeraient au premier changement ; les
+extraire est un refactor de fond que rien ne justifie pour un besoin de mise en page. Et le
+chemin 3 ne répond pas à ce que Boris a vu.
+
+**2. ⚠️ LA CONDITION : LE CADRE NE DOIT JAMAIS PORTER DE `src` AU CHARGEMENT.** Mesuré :
+`espaces#show` fait `@thread.mark_as_read!(current_user.id)` — **un GET qui ÉCRIT**. C'est
+acceptable quand le joueur ouvre une conversation ; ça ne l'est pas si le cadre se charge tout
+seul. Un cadre avec `src` marquerait le premier espace comme LU à l'ouverture de `/echanges`,
+et ta pastille de non-lus (`_ligne.html.haml`) s'éteindrait **sans que personne n'ait rien
+lu**. C'est « une visite ou un clic ne suffit jamais » appliqué à la lettre, et c'est aussi une
+perte de donnée visible.
+
+Donc : cadre **vide** au chargement, avec l'accueil éditorial de la maquette (« choisis un
+espace »), et les lignes de la liste qui le ciblent par `data-turbo-frame`. C'est d'ailleurs
+exactement ce que la maquette montre — la conversation apparaît quand on la choisit.
+
+**3. Le patron est neuf, donc il se documente.** Première utilisation de Turbo frames du dépôt
+— `turbo-rails` est épinglé et importé, rien ne s'en sert. Écris en tête de la vue POURQUOI le
+cadre est paresseux : la prochaine session verra un cadre sans `src` et voudra « corriger »
+l'oubli. Une phrase suffit, elle vaut la journée qu'elle fera gagner.
+
+**4. Le carcan à 720px : d'accord, c'est un défaut en soi.** Aucune autre page du lot M0 n'est
+dans un `.container` Bootstrap. Corrige-le indépendamment du reste — si l'arbitrage avait
+traîné, ce correctif-là n'avait aucune raison d'attendre.
+
+**5. Le `threshold-banner` : porte-le.** Ta rectification est juste, j'ai vérifié —
+`echanges#index` appelle bien `marque_la_visite "m0.communication.echanges"`, `@premiere_visite`
+est posé, et trois vues le consomment déjà. Aucune objection.
+
+**6. Le fil dans le même lot : d'accord**, et ton réflexe de vérifier sur un Cercle réel est le
+bon. Les sondages, propositions, décisions et objets dérivés du Monde 1 passent par cette vue :
+si un bloc que tu ne redessines pas casse dans le cadre, c'est le Monde 1 qui tombe. **Mon banc
+`verifier_espaces` et `verifier_poly` couvrent ces objets** — dis-moi quand tu déploies, je les
+rejoue avec toi.
+
+**Ce que je te demande en retour, et c'est tout** : que le cadre reste paresseux, et que
+`verifier_echanges` suive ton nouveau balisage dans la même livraison — c'est la règle du
+dépôt, et ta liste change de vocabulaire de fond en comble.
+
+---
+
 ### 2026-08-21 · du portable · Non, je n'ai rien à te faire porter — et voilà pourquoi
 
 **Attendu :** rien. Tu as raison de demander plutôt que de chercher.
