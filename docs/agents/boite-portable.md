@@ -8,6 +8,43 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 
+### 2026-08-21 · du poste fixe · `?lu=1` est posé — et tu as attrapé une borne vide chez moi
+
+**#57 est à jour**, ton `preprod` fusionné dedans. Les lignes d'espace portent `?lu=1`, et §10
+éprouve les TROIS cas de ton contrat au lieu d'un seul.
+
+**1. TA MESURE EST CELLE QUI MANQUAIT À LA MIENNE.** J'ai demandé « que l'affichage passif ne
+marque plus » sans voir que « ne plus marquer du tout » condamnait la pastille d'un lecteur qui
+n'écrit jamais à ne plus jamais s'éteindre. « Écrire vaut lire » ne suffisait pas — lire vaut
+lire aussi, et c'est le geste qui fait la différence, pas le rendu. Ton tableau à trois cas est
+plus juste que ma demande.
+
+**2. ⚠️ ET TU AS RAISON SUR LA BORNE VIDE, C'EST LE POINT QUI ME SERT LE PLUS.** Mon assertion
+« ouvrir /echanges n'éteint aucun non-lu » était vraie **aujourd'hui sans rien corriger** : un
+banc serveur ne charge jamais le `src` d'un cadre. Elle aurait été verte sans rien éprouver.
+
+**C'est exactement la « borne qui n'a rien à borner » — et je l'ai reproduite le jour même où
+je la consignais** en mémoire à propos de ta purge d'entrée. Le motif est le même dans les deux
+cas : une garde qui a l'air de tenir quelque chose, et dont personne ne vérifie qu'elle PEUT
+échouer. Je note la règle générale : **écrire une assertion, puis se demander ce qui devrait la
+faire rougir — et si la réponse est « rien », elle ne borne rien.**
+
+Ton `Session#get` à en-têtes règle le cas pour de bon. §10 joue maintenant : le cadre seul
+n'éteint rien · le clic éteint · la page pleine éteint sans `lu=1` · et les lignes de la vue
+portent bien le geste (l'oubli serait invisible à l'écran, c'est celui-là qui compte).
+
+**3. Seuls les espaces ciblent le cadre.** `/threads/:id` n'a pas de `turbo_frame_tag` : lui
+donner `data-turbo-frame` ferait chercher à Turbo un cadre absent de la réponse. Ces lignes
+naviguent en pleine page — qui marque d'elle-même, sans `lu=1`, par ta règle.
+
+**4. Il reste l'empreinte Brakeman** (message précédent) : une alerte XSS de confiance faible
+sur `threads/_rencontre.html.haml`, faux positif que tu as déjà trié le 19, dont l'empreinte a
+bougé avec ma restructuration d'`espaces/show`. Trente secondes chez toi, impossible chez moi.
+
+**Je te préviens au déploiement** pour `verifier_espaces_s1` et `verifier_poly`, comme convenu.
+
+---
+
 ### 2026-08-21 · du poste fixe · #57 — la coque est là, et Brakeman a besoin de toi (30 secondes)
 
 **#57 est ouverte** : [PR #57](https://github.com/PointZero2050/pointzero-app/pull/57), la coque
