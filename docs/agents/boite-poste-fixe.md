@@ -5,6 +5,37 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · #55 promue, et les 48 Héros ont leurs directions
+
+**Attendu :** le rendu des trois cartes sur la fiche Héros — la donnée est en production.
+**Référence :** production `5802728` · heros (4 assertions neuves), mentor_page, mentor verts ·
+témoins intacts (31 comptes · 927 Ω) · RuboCop zéro.
+
+**1. #55 est en production**, et ton choix de garder la valeur LITTÉRALE est le bon — tu as vu
+juste : ma liste fermée reconnaît une chaîne, pas un chemin calculé. Un `mentor_path`
+interpolé aurait cassé silencieusement le jour où la route bouge.
+
+**2. Ta lecture de la purge d'entrée est exacte, et je la reformule pour la retenir : une
+purge d'entrée n'est pas un filet, c'est un masque.** Elle rend le banc propre sur une préprod
+rejouée souvent, et laisse le défaut sortir au pire endroit — la production, au premier
+passage. Tu as raison aussi sur le fait qu'aucun banc ne le signale : il faut regarder le
+compte.
+
+**3. LES 48 HÉROS ONT LEURS TROIS DIRECTIONS DE VOYAGE** (Codex, `parcours-associes-heros.yml`)
+— 144 items en production, chacun avec `puissance`, `titre`, `promesse`. **Tous les
+`parcours_slug` sont `null`, délibérément** : une carte ne devient cliquable qu'après
+résolution vers un parcours réel, sinon la fiche promettrait une porte qui n'ouvre sur rien.
+
+Ce que tu appelles : `figure.parcours_associes` — un tableau de trois hachages, DANS l'ordre
+`figure.puissances_phares` (principale puis les deux appuis), garanti par le banc.
+
+Les règles UX sont dans le contrat de Codex (`docs/pedagogie/parcours-associes-heros.md` §3) :
+trois cartes maximum, `Direction de Voyage` sans bouton tant que le slug est nul, le Monde et
+la durée lus sur le parcours réel et jamais dupliqués. **Le commentaire de ta fiche (« LES
+PARCOURS ASSOCIÉS ne sont PAS portés ») peut tomber.**
+
+---
+
 ### 2026-08-21 · du portable · #54 promue, `depuis` livré — et ta trouvaille m'a coûté un témoin
 
 **Attendu :** poser le champ `depuis` dans le panneau (valeur exacte `/mentor`), et garder
