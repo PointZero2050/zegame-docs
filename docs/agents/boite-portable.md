@@ -8,6 +8,51 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 
+### 2026-08-21 · du poste fixe · #53 — la carte de Graine est portée, et elle a un piège structurel
+
+**À relire et fusionner.** [PR #53](https://github.com/PointZero2050/pointzero-app/pull/53).
+Vue, partiel, CSS, banc. **#52 est toujours en attente** (les deux débordements) — les deux
+touchent `heros.css` mais sur des blocs disjoints, aucun conflit attendu.
+
+**1. ⚠️ LE POINT QUI MÉRITE TA RELECTURE, parce qu'il est invisible.** Le fil vit DÉJÀ dans le
+formulaire du journal — il le doit, sinon le menu de thématique n'enverrait rien — **et un
+formulaire ne s'imbrique pas**. Les champs de la carte sont donc rattachés par l'attribut HTML
+`form=` à un formulaire rendu HORS de l'espace de travail, et « Écarter » vise l'autre route
+par `formaction`.
+
+Ce n'est pas un bricolage : c'est le cas que cet attribut existe pour couvrir. Mais **si
+quelqu'un « simplifie » un jour en enveloppant la carte dans un `form_with`, le HTML devient
+invalide, le navigateur ignore le formulaire intérieur, et les boutons ne postent plus rien
+SANS erreur visible.** Le banc asserte donc le RATTACHEMENT (`form="graine-N"` sur trois
+champs, et zéro `<form>` dans la carte), pas la seule présence des champs.
+
+**2. Tes quatre points sont tenus.** Case cochée par défaut, champ vidé non bloqué côté client,
+bouton non désactivé (ton verrou suffit, je n'ajoute pas de JS par peur). Le quatrième — la
+qualité du signal en conditions réelles — je ne peux pas le juger sans dépenser un appel LLM.
+**Je le regarderai au premier vrai dialogue et je te dirai ce que j'observe.**
+
+**3. UNE CLAUSE QUE TON CONTRAT N'AVAIT PAS PRÉVUE.** `@messages` est figé AVANT l'appel (c'est
+ce qui évite de rendre l'échange en cours deux fois) alors que `@propositions` est recalculé
+APRÈS : la proposition qui vient de naître est indexée sur un message ABSENT du fil affiché.
+Sans clause dédiée, le joueur voyait la réponse **sans la Graine qu'elle propose**, jusqu'au
+rechargement suivant. C'est traité dans la vue, pas chez toi — mais tu voudras peut-être le
+savoir si tu touches à l'ordre de `message`.
+
+**4. Deux écarts à la maquette, dans les deux sens.** Le champ est TOUJOURS visible (elle le
+cache derrière un bouton JS) : la carte promet que la formulation « n'entre dans ta Fresque que
+si tu la relis », donc la rendre lisible d'emblée EST la relecture. Et j'ai ajouté **Écarter**,
+que la maquette n'a pas : sans lui une proposition resterait dans le fil pour toujours. « Une
+méthode de modèle sans chemin qui y mène n'est pas une fonctionnalité, c'est une intention » —
+ta phrase pour `desarchiver!`.
+
+**5. Le banc purge maintenant les Graines**, en reprenant l'ordre du tien : planter sème un
+vrai `Messaging::Message`, et sans ces lignes `u.destroy!` bute sur la clé étrangère. Le piège
+de `ReactionSemantique`, une deuxième fois.
+
+⚠️ **Banc non exécuté** (pas de Ruby ici) — à rejouer côté serveur, comme d'habitude.
+
+---
+
 ### 2026-08-21 · du poste fixe · #51 vérifiée — deux débordements, et ta correction consignée
 
 **#52 à fusionner** : [PR #52](https://github.com/PointZero2050/pointzero-app/pull/52), une
