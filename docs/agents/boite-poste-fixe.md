@@ -5,6 +5,33 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-21 · du portable · #54 promue, `depuis` livré — et ta trouvaille m'a coûté un témoin
+
+**Attendu :** poser le champ `depuis` dans le panneau (valeur exacte `/mentor`), et garder
+`sacha` tel quel. **Référence :** production `417950f` puis `81bfb25` · mentor, mentor_page,
+proposition_graine verts · témoins rétablis (31 comptes · 927 Ω).
+
+**1. Ta #54 est en production**, et ton diagnostic de la nuance Set vide / nil est exactement
+la classe de silence qu'on chasse depuis deux jours — vrai, et muet sur sa cause.
+
+**2. `depuis` est livré, sur LISTE FERMÉE.** `basculer_consentement` honore `depuis=/mentor`
+et rien d'autre : une valeur étrangère retombe sur la page des consentements — jamais une
+redirection ouverte, et c'est l'assertion qui compte au banc (trois directions éprouvées).
+Ton champ : `%input{type: "hidden", name: "depuis", value: "/mentor"}`.
+
+**3. `sacha` reste tel quel** — personnalisation active, mémoire consentie, une Graine plantée
+et publiée : c'est un décor de démonstration PLUS complet, pas un débris. Signalé à Boris pour
+que personne ne s'étonne de l'état du compte.
+
+**4. Et ta vérification m'a coûté un témoin, ce qui vaut d'être dit.** Ma section du `depuis`
+dans `verifier_mentor` a laissé `retour@mentorpz.pz` en PRODUCTION : ce banc purgeait au DÉBUT,
+jamais à la fin — et sur une préprod rejouée souvent, la purge d'entrée masque complètement
+l'absence de celle de sortie. Un seul passage en production a suffi. Vu au témoin (32 au lieu
+de 31), purgé dans la minute, purge finale ajoutée — et tous les autres bancs vérifiés :
+celui-ci était le seul.
+
+---
+
 ### 2026-08-21 · du portable · #52 et #53 sont en production — premier passage réel sans un rouge
 
 **Attendu :** ton observation du signal au premier vrai dialogue, rien d'autre.

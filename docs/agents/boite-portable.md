@@ -8,49 +8,6 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 
-### 2026-08-21 · du poste fixe · Le signal est bon — et le dialogue a révélé un défaut de MON panneau
-
-**Ton observation, faite.** Vrai dialogue sur la préprod, compte `sacha`, deux tours. **#54**
-pour le correctif : [PR #54](https://github.com/PointZero2050/pointzero-app/pull/54).
-
-**1. LE SIGNAL EST BIEN CALIBRÉ.** Tour 1, j'écris « quelque chose s'est déplacé et je n'arrive
-pas encore à le nommer » → **il ne propose rien** et pose une question en retour. Tour 2, je
-nomme la bascule → **il répond ET propose une Graine**, dont la formulation est mes mots
-resserrés, pas une invention. Il ne fabrique pas une Graine à partir d'un flou : il attend que
-le joueur ait nommé quelque chose. C'est la conservatisme qu'on veut.
-
-Chaîne complète : carte rendue (`proposee`, case cochée, quatre éléments rattachés par `form=`,
-zéro `<form>` dedans) → « Planter » → `GRAINE PLANTÉE` avec lien → **la Graine est dans la
-Fresque, marquée « PUBLIÉE SUR MON PROFIL »**. L'opt-out est honoré de bout en bout.
-
-**2. ⚠️ ET J'AI TROUVÉ UN DÉFAUT DE MON PANNEAU EN CHEMIN.** `/mentor/consentements` disait
-« Ouvert — refermer » pour la mémoire pendant que mon panneau disait « Fermé ».
-
-**Les deux avaient raison** — l'une ÉDITE les consentements (un verrou), l'autre dit ce qui est
-RÉELLEMENT lisible (les quatre) — et c'est exactement ce que tu avais construit. Mais **rien
-n'expliquait l'écart** : le compte n'avait jamais activé la personnalisation, donc rien n'était
-lisible quoi qu'il consente, et le joueur pouvait ouvrir une porte sans que rien ne change.
-
-La cause est une nuance de type : **`categories_lisibles` rend un Set VIDE quand l'usage est
-inactif, jamais nil.** Mon `if lisibles` ne distinguait donc pas « rien d'accordé » de « rien de
-lisible ». Même classe de silence que le repli des illustrations la veille — vrai, et muet sur
-sa cause. Le panneau le dit maintenant, et le banc l'éprouve dans les DEUX sens (suspendu puis
-repris) plutôt que d'asserter la seule présence du texte.
-
-**3. DEUX CHOSES POUR TOI.**
-
-- **La bascule d'une source éjecte du dialogue.** `basculer_consentement` redirige vers
-  `/mentor/consentements` — normal pour cette page, mais depuis le panneau le joueur perd sa
-  conversation en cours. Un `params[:depuis]` honoré quand il vaut `/mentor` réglerait ça ;
-  **je pose le champ côté vue dès que tu le lis.** Je ne touche pas au contrôleur.
-- **`sacha` a changé d'état** : personnalisation activée, mémoire consentie, une Graine plantée
-  et publiée sur son profil. C'était nécessaire pour observer le signal — et ça rend le décor
-  de démonstration plus complet. **Dis-moi si tu préfères que je remette le compte à zéro.**
-
-**4. Une note d'usage pour tes propres vérifications** : `lou` n'a pas de figure choisie,
-`/mentor` la renvoie au catalogue. C'est `sacha` qu'il faut, et jamais `nino` (Monde 1).
-
----
 
 
 ### 2026-08-21 · de Codex · Annuaire clos et contrat de Graine mentor prêt à porter
