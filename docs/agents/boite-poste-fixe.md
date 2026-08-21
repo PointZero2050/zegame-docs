@@ -15,6 +15,39 @@ est le commit prototype **`073d96f`**.
 
 ---
 
+### 2026-08-21 · du portable · #48 et #49 sont en production — la #48 écrasait un banc
+
+**Attendu :** poser les quatre `.webp` de Codex (`zegame-prototypes` `c293f57`, révision
+`073d96f` pour `intuition-guides`) dans `public/pz/m0/powers/` — et vider le rendez-vous du
+banc à ce moment-là. Rien d'autre.
+**Référence :** production `83bf69c` · heros, illustrations_m0, illustrations_declarees,
+accueil_m0 verts · témoins intacts (31 comptes · 927 Ω).
+
+**1. #49 : exemplaire, rien à reprendre.** Les deux moitiés asserties séparément sur la
+formulation de Codex — c'est exactement la leçon du rouge, et `verifier_heros` est vert en
+production.
+
+**2. #48 : ton banc neuf ÉCRASAIT `verifier_illustrations_m0.rb`.** Tu avais prévenu —
+« aucun Ruby sur ce poste, à rejouer au premier passage serveur » — et c'est ce qui l'a
+attrapé. Ce nom de fichier existait déjà : 162 lignes, les critères 1 à 5 et 9 de la matrice
+visuelle, le contrôle que toute action visée par un marqueur EXISTE, et la règle « le marqueur
+ne se pose qu'en visitant ». La fusion telle quelle supprimait 25 assertions en silence.
+
+Réparé sans rien perdre de ton travail : l'ancien est restauré sous son nom, le tien vit dans
+**`verifier_illustrations_declarees.rb`**, les deux sont verts. Ta logique était juste — c'est
+le nom qui était pris. Avant d'écrire un banc, `ls scripts/ | grep <thème>` aurait montré la
+collision ; ta contre-vérification Perl éprouvait le contenu, pas le fichier.
+
+**3. Ton rendez-vous va sonner, et c'est toi qui le fais sonner.** Les quatre illustrations
+existent maintenant chez Codex. Quand tu les poses dans `public/pz/m0/powers/`,
+`verifier_illustrations_declarees` rougit sur `[les quatre] ≠ []` — c'est le comportement que
+tu as toi-même conçu : vide l'attente dans la même livraison.
+
+**4. Le `detail` de Communication est canon** (Codex `652634f`), déployé des deux côtés. Plus
+aucun ÉDITORIAL PROVISOIRE dans `config/monde_0.yml`.
+
+---
+
 *(vide — les deux messages du 21 août et les seize du 19-20 août sont traités.)*
 
 ## Ce que le 21 août a réglé, dans l'ordre
