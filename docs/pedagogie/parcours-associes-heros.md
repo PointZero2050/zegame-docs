@@ -1,11 +1,11 @@
 # Parcours associés aux 48 Héros
 
-**Statut : proposition éditoriale prête à relire**  
+**Statut : contrat porté en production (`894fa36`)**
 **Donnée source :** `docs/pedagogie/parcours-associes-heros.yml`
 
-> Le YAML reste le lot de transport v1 déjà porté, avec `parcours_slug: null`. Le contrat
-> ci-dessous définit la v2 à migrer côté application : remplacer ce champ ambigu par `cible`.
-> Les 144 directions éditoriales, leur ordre et leurs Puissances ne changent pas.
+> Le YAML de ce dépôt reste le lot éditorial v1, avec `parcours_slug: null`. L'application a
+> migré son catalogue vers la forme typée `cible` décrite ci-dessous. Les 144 directions
+> éditoriales, leur ordre et leurs Puissances ne changent pas.
 
 ## 1. Finalité
 
@@ -55,6 +55,14 @@ cible:
 est un identifiant métier stable ; une URL brute n'est jamais stockée dans le catalogue. Une
 `page` ou une `rubrique` se résout également par un registre explicite de destinations.
 
+Deux règles complètent cette forme :
+
+- une cible `experience` se résout dans le parcours réel qui contient l'expérience. Si aucun
+  parcours ne la contient, ou si plusieurs parcours la contiennent, la résolution renvoie `nil`
+  plutôt que d'inventer un contexte ;
+- une cible `page` ou `rubrique` doit rester dans la coque du Jeu. Une route homonyme du site
+  public n'est jamais un repli acceptable.
+
 ## 3. Règles UX
 
 - Trois cartes maximum, toujours dans l'ordre des trois Puissances-phares.
@@ -80,17 +88,27 @@ Le portage utilise donc `cible.type` : `experience` pour les quinze expériences
 pour la Ressourcerie, `page` pour le Moteur et `null` pour la direction d'Athéna. Il ne crée
 jamais un faux `Journey` pour rendre ces cartes cliquables.
 
+Les deux surfaces non pédagogiques se résolvent vers les têtes de territoire internes :
+
+- `Explorer la Ressourcerie` → `/premieres-cles` ;
+- `Mon Moteur` → `/users/me`.
+
+Les routes publiques `/ressourcerie` et `/moteur` sont explicitement exclues : elles feraient
+sortir le Joueur de la coque.
+
 Pour les 42 autres figures, les propositions sont volontairement formulées comme des chemins
 de transformation. Elles pourront être reliées au catalogue Monde 1/2 au fur et à mesure de sa
 construction, ou servir au moteur de recommandation pour proposer la variante la plus proche.
 
-## 5. Portage attendu dans `pointzero-app`
+## 5. Contrat de portage dans `pointzero-app`
 
-1. Relire le lot éditorial avec Boris.
-2. Résoudre, quand elles existent, les associations vers des cibles réelles typées.
-3. Porter les tableaux dans `config/heros/catalogue.yml`.
-4. Ajouter le rendu conditionnel dans `app/views/heros/show.html.haml`.
-5. Étendre `scripts/verifier_heros.rb` avec les invariants suivants :
+Ce contrat est porté en production depuis `894fa36`. La liste suivante reste le banc de
+non-régression du dispositif.
+
+1. Conserver les tableaux dans `config/heros/catalogue.yml`.
+2. Résoudre uniquement les associations vers des cibles réelles typées et internes au Jeu.
+3. Maintenir le rendu conditionnel dans `app/views/heros/show.html.haml`.
+4. Maintenir dans `scripts/verifier_heros.rb` les invariants suivants :
    - 48 figures ;
    - exactement 3 propositions par figure ;
    - ordre identique à `puissances_phares` ;

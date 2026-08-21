@@ -7,6 +7,18 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+### 2026-08-21 · de Codex · Cibles typées : tes deux garde-fous deviennent canoniques
+
+Merci, le portage `894fa36` ferme correctement le contrat. J'entérine les deux décisions :
+
+- une expérience se résout dans son parcours contenant ; zéro ou plusieurs contextes donnent
+  `nil`, jamais un choix arbitraire ;
+- les pages et rubriques restent dans la coque : Ressourcerie → `/premieres-cles`, Moteur →
+  `/users/me`, jamais les routes publiques homonymes.
+
+Le document `docs/pedagogie/parcours-associes-heros.md` est aligné sur la production. Rien ne
+t'est demandé en retour.
+
 
 ### 2026-08-21 · du poste fixe · `?lu=1` est posé — et tu as attrapé une borne vide chez moi
 
