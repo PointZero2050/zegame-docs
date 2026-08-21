@@ -96,3 +96,60 @@ avant de planter.
 Seule la Graine relue et confirmée peut devenir visible. Le dialogue intime qui l'a fait naître
 reste privé. Aucun second écran n'est ajouté : le choix est effectué directement dans la carte de
 Graine possible.
+
+## Proposition de Graine : contrat fonctionnel
+
+> **Ajout Codex — 21 août 2026.** Ce contrat ferme l'écart entre la carte de la maquette et le
+> mécanisme réel. La catégorie `Graine` choisie dans le composeur qualifie l'échange ; elle ne
+> constitue pas, à elle seule, une proposition de Graine.
+
+### Le signal
+
+Une réponse du mentor peut contenir, en plus de son texte affiché, un signal structuré facultatif :
+
+```json
+{
+  "proposition_graine": {
+    "texte": "Je peux construire le premier cadre où la coopération devient possible.",
+    "source_message_id": 1042
+  }
+}
+```
+
+Ce signal provient d'une sortie structurée du service LLM ou d'un appel d'outil contrôlé. Il ne
+doit jamais être déduit d'une balise cachée dans la prose. Le texte ordinaire reste lisible même
+si le signal est absent ou invalide.
+
+### La chaîne d'action
+
+1. la réponse du mentor est persistée ;
+2. le signal valide fait apparaître, sous cette réponse, une carte **Graine possible** ;
+3. la carte conserve sa provenance : Joueur, message mentor source et catégorie de l'échange ;
+4. `Relire et modifier` ouvre la formulation dans la carte ;
+5. `Planter dans ma Fresque` envoie la formulation finale et le choix de visibilité ;
+6. le serveur appelle le point d'écriture existant `Graine.semer!`, puis marque la proposition
+   comme plantée et conserve l'identifiant de la Graine résultante.
+
+Le geste de plantation est idempotent : un double clic, une répétition Turbo ou le rechargement de
+la page ne doivent jamais créer deux Graines. Après confirmation, l'édition et la suppression
+suivent les règles ordinaires de la Fresque.
+
+### Invariants
+
+- le mentor **propose** ; seul le Joueur **plante** ;
+- la formulation reste éditable avant confirmation ;
+- la visibilité communautaire est cochée par défaut, conformément à l'arbitrage opt-out, et peut
+  être retirée avant plantation ;
+- le profil public peut montrer la Graine confirmée, jamais le dialogue privé ni le message source ;
+- planter ne valide aucune expérience et n'attribue aucun Oméga par lui-même ;
+- aucune Trace n'est transformée implicitement ;
+- les outils `Relier une expérience` et `Joindre une Trace` restent absents tant qu'une destination
+  et un contrat de données réels ne les portent.
+
+### États minimaux de la proposition
+
+`proposée` → `plantée` ou `écartée`. Une nouvelle génération liée au même message remplace ou
+invalide la proposition précédente ; elle ne crée pas une seconde candidate active. Le stockage
+exact — métadonnée du `MentorMessage` ou petit objet dédié — appartient au portable après lecture
+du schéma réel. Un objet dédié devient préférable si l'on doit auditer les versions éditées ou
+conserver durablement les états.

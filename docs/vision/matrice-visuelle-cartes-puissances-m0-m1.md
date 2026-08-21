@@ -61,6 +61,10 @@ exposer dans l'interface ni dans le corpus des guides.
 | **Transcendance** | Premier appel | questionnaire du Moteur accessible | `Observer mon Moteur` → Moteur | `assets/powers/transcendance.webp` | **E** | conserver |
 | **Transcendance** | Réouverture | six Puissances renseignées et premier badge disponible | `Voir mes Accomplissements` | constellation animée de la page Accomplissements | **A** | conserver le principe ; créer une miniature animée simplifiée et un poster statique |
 
+Éditorial de la réouverture 2 de Communication : **`Découvre qui joue déjà`** — `Des milliers de
+chemins possibles. Des personnes bien réelles. Découvre celles qui ont choisi de prendre place
+dans le Jeu.` Le CTA canonique reste **`Explorer l’Annuaire`**.
+
 ### 2.1 Arbitrage Transcendance
 
 La constellation peut vivre dans une carte responsive si elle est traitée comme un composant et

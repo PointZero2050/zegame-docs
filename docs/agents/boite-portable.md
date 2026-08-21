@@ -7,6 +7,41 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+### 2026-08-21 · de Codex · Annuaire clos et contrat de Graine mentor prêt à porter
+
+**1. Éditorial Annuaire canonique.** À poser dans `config/monde_0.yml` pour la destination
+`m0.communication.annuaire` :
+
+- titre : **`Découvre qui joue déjà`** ;
+- accroche : **`Des milliers de chemins possibles. Des personnes bien réelles. Découvre celles
+  qui ont choisi de prendre place dans le Jeu.`** ;
+- CTA confirmé : **`Explorer l’Annuaire`**.
+
+Le canon et la maquette ont été corrigés. Aucun nouveau badge : il s'agit de la troisième
+invitation de Communication après le seuil **Présence choisie**.
+
+**2. Proposition de Graine dans le journal mentor.** Boris a demandé de traiter le mécanisme.
+Le contrat complet est dans `docs/vision/ux-dialogue-mentor-continu.md` et sa matrice d'impact
+dans `docs/vision/analyse-impact-dialogue-mentor.md`.
+
+Résumé du portage attendu :
+
+- la catégorie `graine` ne vaut pas proposition ; la réponse mentor porte un signal structuré
+  facultatif `proposition_graine` avec texte et message source ;
+- la carte est privée, relisible et éditable ; seul le POST explicite du Joueur plante ;
+- passer par `Graine.semer!`, avec garde de propriété et idempotence ;
+- conserver l'identifiant de la Graine résultante ; ne déclencher ni validation ni Oméga ;
+- visibilité communautaire cochée par défaut mais retirable avant confirmation ;
+- le dialogue et le message source ne deviennent jamais publics ;
+- les boutons sans destination `Relier une expérience` et `Joindre une Trace` restent absents.
+
+La maquette `mentor-dialogue-cible` simule désormais les états `proposed` → `planted`, l'édition,
+le choix de visibilité et le double clic sans duplication. Le choix du stockage exact reste à
+faire après lecture de la branche réelle : métadonnée de `MentorMessage` si le cycle reste simple,
+petit objet dédié si versions et audit sont requis.
+
+---
+
 
 ---
 

@@ -114,3 +114,36 @@ confirmation**, ou arbitré autrement. C'est la seule question produit de ce lot
    moins, et sans elle la maquette affiche une information fausse.
 3. **Ne rien poser pour le contexte d'ouverture** (§3.2) tant qu'aucune page ne l'envoie.
 4. **Trancher la Graine du mentor face à l'opt-out** — arbitrage de Boris, seul point produit.
+
+## 6. Addendum : proposition structurée et plantation explicite
+
+> **Ajout Codex — 21 août 2026.** L'opt-out a depuis été tranché : la visibilité est proposée
+> cochée, mais reste modifiable avant plantation. Le point restant est la liaison entre une
+> réponse du mentor et une formulation candidate.
+
+La colonne `categorie` ne suffit pas : elle exprime ce que le Joueur veut explorer, pas la décision
+du mentor de proposer une formulation. La réponse doit donc porter un signal structuré facultatif
+`proposition_graine`, validé côté serveur et rattaché à l'identifiant du `MentorMessage` source.
+
+### Matrice d'impact de cette écriture
+
+| État visible | Source de vérité | Droit | Événement de transition |
+|---|---|---|---|
+| carte **Graine possible** | proposition valide rattachée au message mentor courant | propriétaire du journal uniquement | réponse mentor persistée avec signal structuré valide |
+| formulation relue | texte candidat édité côté Joueur | propriétaire uniquement | sauvegarde ou envoi de la confirmation |
+| Graine plantée | lecture canonique de `Graine.semer!` et identifiant résultant conservé | propriétaire uniquement | POST explicite, idempotent |
+| visibilité communautaire | réglage confirmé au moment de planter | propriétaire ; lecture selon règles du profil | création de la Graine avec visibilité choisie |
+
+### Garde-fous de portage
+
+- ne pas écrire directement dans le conteneur sous-jacent résolu par `Graine` ; passer par
+  `Graine.semer!` et ses callbacks existants ;
+- vérifier la propriété du `MentorMessage` source et de la proposition ;
+- refuser une seconde plantation si un identifiant de Graine résultante est déjà présent ;
+- ne déclencher ni validation de `ChallengesUser`, ni callback Oméga ;
+- ne jamais sérialiser le contenu du dialogue privé dans la Graine publique ;
+- tester le double POST, la proposition d'un autre Joueur, le signal LLM invalide et le retrait de
+  visibilité avant confirmation.
+
+Route sémantique recommandée : `POST /mentor/propositions/:id/planter`. Le nom Rails final peut
+suivre les conventions du dépôt ; le contrat est le geste explicite, pas cette chaîne littérale.

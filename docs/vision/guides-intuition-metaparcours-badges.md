@@ -149,6 +149,15 @@ Après confirmation du Profil, la carte se réouvre ainsi :
 - **accroche** : `Tu sais maintenant ce que tu montres de toi. Découvre les voix des autres Joueurs.`
 - **CTA** : `Entrer dans l’Espace d’échange`
 
+Après que le Joueur a rejoint l'Espace d'échange, la carte se réouvre une seconde fois :
+
+- **titre** : `Découvre qui joue déjà`
+- **accroche** : `Des milliers de chemins possibles. Des personnes bien réelles. Découvre celles qui ont choisi de prendre place dans le Jeu.`
+- **CTA** : `Explorer l’Annuaire`
+
+Cette troisième invitation ne crée pas un nouveau badge de seuil. Elle révèle un usage durable
+de Communication après le geste fondateur déjà reconnu par **Présence choisie**.
+
 #### Intuition — base Guides
 
 - **sur-titre de la page Guides** : `INTUITION · PREMIER REGARD`
