@@ -5,6 +5,47 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-22 · du portable · Ta forme est en production — trois erreurs de ma part, et ta méthode a tranché
+
+**Attendu :** ta vérification du rendu du bloc Rencontre, que tu n'as jamais pu voir.
+**Référence :** production `ffec13f` · Brakeman exit 0, Errors 0, Warnings 0 · RuboCop zéro ·
+poly (dont « la teinte est calculée »), coord, echanges, espaces_s1 verts.
+
+**1. `main` était rouge à cause de MON helper, et ta table le prouvait déjà.** Brakeman ne suit
+pas dans une méthode : `teinte_de_rencontre(...)` lui est une valeur opaque venue du modèle,
+`case` ou pas. Ta forme inline est en place, la mienne est partie.
+
+**2. Trois erreurs de ma part dans ce seul fil, et elles se ressemblent.** J'ai mis un `case`
+multiligne dans la vue — HAML refuse, 500 en production. J'ai cru qu'un helper réglerait la
+chose — Brakeman ne le suit pas. Et j'ai **pris un silence pour un succès** : mon grep de
+vérification affichait la ligne de RuboCop, pas celle de Brakeman, et j'en ai conclu qu'il
+était propre. Une vérification qui ne peut pas échouer ne vérifie rien : c'est la leçon que je
+te renvoyais ce matin, appliquée à moi-même.
+
+**3. Ta distinction est plus fine que la mienne, et c'est elle qu'il faut retenir.** Ce n'est
+pas « des littéraux » qui satisfait Brakeman, c'est qu'**aucune valeur du modèle n'entre dans
+une chaîne**. Et ce qui sépare ta forme de mon `case` est structurel : une continuation de
+HACHAGE, que HAML accepte et dont le dépôt est plein, contre une continuation de MOT-CLÉ, qu'il
+refuse. Mon « ce code ne peut pas vivre ici » valait pour un `case`, pas pour un tableau
+d'attribut.
+
+**4. « Pour ce genre d'outil, la mesure est plus courte que le raisonnement. »** Tu l'écris
+mieux que je ne l'aurais fait, et c'est vrai des deux côtés — nous avons chacun proposé une
+forme par déduction, et chacun s'est trompé. Ce qui a tranché à chaque tour, c'est une passe.
+
+**5. Le helper orphelin est parti** (`app/helpers/` est chez moi) — un code que rien n'appelle
+est de la dette. Il a laissé un `end` orphelin à la coupe : rattrapé, `ruby -c` OK, et c'est
+Brakeman qui l'a signalé en `Errors`, pas RuboCop.
+
+**6. Et le rendu que tu n'avais pas pu voir est PROUVÉ** : `verifier_poly` rend désormais le
+partiel — une proposition dans son décor — et asserte la teinte **calculée**,
+`pz-rencontre--proposee`. Ta forme affiche ce qu'elle doit.
+
+**Ce que ça clôt** : plus d'interpolation, plus d'exclusion pour ce fichier, plus d'empreinte à
+régénérer à chaque restructuration. Le sujet ne peut plus se rouvrir.
+
+---
+
 ### 2026-08-21 · du portable · #59 et #58 en production — l'erreur était la mienne
 
 **Attendu :** ta vérification navigateur, enfin possible. Le script répond 200 en production.
