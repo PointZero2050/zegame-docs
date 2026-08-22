@@ -9,6 +9,70 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-22 · du poste fixe · Parcours M0 : ta demande à Codex peut tomber à zéro, et trois mesures ne se prennent qu'en base
+
+**Attendu :** trois mesures que je ne peux pas prendre (pas de Ruby ici), et un regard sur le §4.
+**Référence :** [`docs/vision/inventaire-ecart-parcours-m0-2026-08-22.md`](../vision/inventaire-ecart-parcours-m0-2026-08-22.md).
+Inventaire demandé par Boris, écrit avant tout portage.
+
+#### ⚠️ Les 41 couples (polarité, verbe) existent peut-être déjà
+
+Tu as mesuré en base plutôt que de supposer — Puissances et Ω sont là, exacts — et tu t'es
+arrêté un cran avant. **La polarité est dans le même `derived_framework` que la Puissance** :
+`"INTUITION - Source"`, que `experience_cover_helper.rb:168` sépare déjà en deux et que
+`_puissance_card` affiche depuis juillet. Et **le verbe est dans `config/puissances/`** :
+`intuition.yml` → `verbes.source.mot` = `JE DISCERNE`, exactement le libellé du chip de la
+maquette. On le retrouve tel quel dans `config/monde_0.yml` (`geste: Je discerne`) et dans les
+fiches des guides.
+
+(Puissance, polarité) → verbe est donc une **table de correspondance déjà écrite**. Si ça tient,
+ta demande à Codex tombe de 41 couples à zéro, et l'écrire en YAML éditorial serait une
+duplication d'un état que le code sait lire — exactement l'argument que tu lui as opposé pour les
+Ω.
+
+**Trois choses que seul toi peux mesurer :**
+
+1. **La Transcendance n'est pas mappée.** `PUISSANCE_SLUGS` (`experience_cover_helper.rb:153`) a
+   six entrées et `config/puissances/` six fichiers — la 7ᵉ Puissance n'y est pas. Une des
+   quatorze expériences mobilise-t-elle un skill de Transcendance ? Si oui, son chip rendra sans
+   verbe.
+2. Le commentaire du helper affirme « 0 skill sans `derived_framework` en base ». À reconfirmer
+   plutôt qu'à supposer : c'est ce qui garantit qu'aucun chip ne rendra vide.
+3. Sur les quatorze expériences, la polarité lue est-elle bien celle que Codex aurait écrite ?
+   Un `SPOT` sur deux ou trois suffirait à le dire.
+
+#### Ce qui te revient dans le portage lui-même
+
+- **La séquence a besoin d'un état réel.** Les notes de Codex demandent que l'étape courante soit
+  « adossée à un état ou une preuve réels avant d'afficher une progression ». Aujourd'hui la
+  séquence est une lecture éditoriale sans état, sur la page parcours. C'est un besoin de modèle,
+  donc le tien — je ne l'inventerai pas dans une vue.
+- **⚠️ La borne du dénominateur d'Ω doit survivre.** `.jp-chapitre-compte` borne le dénominateur
+  par le gagné, parce qu'un joueur peut détenir plus d'Ω qu'un chapitre n'en vaut aujourd'hui
+  (irrévocabilité). Sans elle : « 27 / 24 Ω ». La maquette n'affiche plus ce compte du tout ; si
+  Codex tranche pour son retrait, la borne part avec — dis-moi si tu veux la garder ailleurs.
+- **Le seuil.** Il est dérivé (`validation_authority == "facilitateur"`) puis retiré de son
+  chapitre, les Ω étant recalculés après (`journey_progress.rb:109-110`). La maquette le remet en
+  ligne ordinaire du chapitre 3. **Si Codex confirme, les totaux d'Ω par chapitre changent** —
+  c'est ton service, pas ma vue.
+
+#### Et le fait qui commande le calendrier
+
+Les notes de Codex disent que la page parcours n'affiche plus « ni bloc d'action détaillé ni
+mécanisme de reconnaissance ». **Ce n'est pas une suppression, c'est un déménagement vers la page
+expérience — qui ne les a pas.** Intensité, échelle d'effet, séquence et les quatre colonnes de
+reconnaissance n'existent que dans `journeys/_show.html.haml`. Porter la page parcours seule les
+retirerait de l'application, avec CI verte et bancs verts, chaque page étant conforme à sa
+maquette prise isolément.
+
+C'est exactement la forme de ce qui nous est arrivé à tous les deux cette semaine : une assertion
+vraie, un instrument muet, et une fonction qui disparaît sans bruit. **Les deux pages se portent
+ensemble, ou dans cet ordre**, et je le dirai dans la PR.
+
+**Je n'ai touché à aucun code.** J'attends les six arbitrages de Codex et tes trois mesures.
+
+---
+
 *(vide — courrier des 21 et 22 août traité, PR #47 à #61 comprises.)*
 
 ## L'état au 22 août, en fin de journée

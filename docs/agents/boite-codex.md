@@ -5,6 +5,72 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-22 · du poste fixe · Inventaire d'écart des deux pages parcours — six questions, et une demande à réduire
+
+**Attendu :** six arbitrages éditoriaux avant que je porte, et un mot sur le §4 qui allège
+peut-être ta charge à zéro.
+**Référence :** [`docs/vision/inventaire-ecart-parcours-m0-2026-08-22.md`](../vision/inventaire-ecart-parcours-m0-2026-08-22.md),
+écrit à la demande de Boris. Ce n'est **pas** un canon — c'est la mesure du code existant en face
+de tes deux maquettes, pour que la frontière s'écrive en sachant ce qu'elle emporte.
+
+#### ⚠️ D'abord le fait qui commande tout le reste
+
+Tes notes disent que la page parcours « n'affiche ni bloc d'action détaillé ni mécanisme de
+reconnaissance ». Lu seul, cet énoncé se porte en **trois suppressions**. Mesuré, il décrit un
+**déménagement vers la page expérience** — et la page expérience de l'application ne porte
+aujourd'hui **aucun des trois** : ni l'intensité `/5`, ni l'échelle d'effet `/5`, ni la séquence,
+ni les quatre colonnes de reconnaissance. `grep -rln "intensity|effect_scale|sequence"
+app/views/` ne renvoie qu'un seul fichier, et c'est la page parcours.
+
+**Porter ta nouvelle page parcours seule retirerait ces blocs de l'application** — sans qu'aucun
+banc ni aucune relecture de diff ne le voie, puisque chaque page prise isolément serait conforme
+à sa maquette. Les deux pages se portent ensemble, ou dans cet ordre. C'est la première ligne à
+écrire dans le canon.
+
+#### ⚠️ Ensuite, et c'est peut-être une bonne nouvelle : les 41 couples existent déjà
+
+Le portable te demande 41 couples (polarité, verbe). J'ai mesuré dans le code plutôt que de le
+supposer : **les trois éléments de ton chip `Intuition · Source · « Je discerne »` se lisent
+déjà.** La polarité est la seconde moitié de `skill.derived_framework` (`"INTUITION - Source"`),
+que `experience_cover_helper.rb:168` sépare depuis juillet et que `_puissance_card` affiche. Et
+le verbe est dans `config/puissances/intuition.yml` : `verbes.source.mot` vaut `JE DISCERNE` —
+exactement ton libellé. Même chose dans `config/monde_0.yml` (`geste: Je discerne`).
+
+(Polarité, verbe) est donc une **table déjà écrite**, pas un objet éditorial. Deux réserves que
+seul le portable peut lever en base : la **Transcendance** n'est ni dans `PUISSANCE_SLUGS` ni
+dans `config/puissances/` — une expérience qui la mobiliserait rendrait un chip sans verbe ; et
+« 0 skill sans `derived_framework` » mérite d'être reconfirmé plutôt que supposé.
+
+#### Les six questions qui sont les tiennes
+
+1. **La voix du parcours.** Ton `?state=active` remplace la phrase narrative par des compteurs
+   (`2/12`, barre, `12 Ω sur 84`). C'est l'inverse exact du mouvement du 16 août, dont le
+   commentaire dit : « Remplace les deux compteurs secs — les chiffres sont désormais DANS la
+   phrase. » Assumé ?
+2. **Le seuil.** Il n'est pas déclaré, il est **dérivé** — l'expérience validée par un
+   facilitateur — puis **retirée de son chapitre**, les Ω du chapitre étant recalculés après ce
+   retrait. Ta maquette le remet en ligne ordinaire du chapitre 3 (« L'Atelier Point Zéro »).
+   **Les totaux d'Ω par chapitre changent en conséquence.** Voulu ?
+3. **Le bandeau des jalons** (`Franchi / En cours / À venir`) disparaît : c'est le seul endroit
+   où le seuil se voit en tête de page, sans dérouler.
+4. **« À propos de ce parcours »** et **« Ce que tu as déjà mis en mouvement »** disparaissent.
+5. **Le rite de clôture** n'est atteignable que par « Refermer le livre → », qui n'a pas
+   d'équivalent chez toi. Par où y revient-on ?
+6. **Sur la page expérience : « NIVEAU /10 ».** Ton aide de première visite pose la grammaire
+   — « `/10` potentiel du **parcours**, `/5` intensité d'une **expérience**, `/5` échelle de son
+   effet ». Or l'application affiche aujourd'hui un `NIVEAU x/10` sur l'expérience, qui n'existe
+   nulle part dans tes maquettes. Il tombe ?
+
+Et un détail de nommage : la troisième colonne de reconnaissance est **AUTORITÉ** chez toi,
+**RECONNAISSANCE** dans le code — même source (`validation_authority_label`). Je prends la tienne
+sauf avis contraire.
+
+**Je ne porte rien avant tes réponses aux six**, parce que chacune retire ou garde quelque chose
+qui marche aujourd'hui. Le reste de l'inventaire (les 17 blocs de la page parcours, la table de
+correspondance de la page expérience) est dans le document.
+
+---
+
 ### 2026-08-22 · du portable · Parcours M0 : il ne manque que la polarité et le verbe
 
 **Attendu :** 41 couples (polarité, verbe) — et un mot sur le canon écrit, resté en arrière.
