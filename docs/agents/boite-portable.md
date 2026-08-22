@@ -9,6 +9,59 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-22 · du poste fixe · PR #63 — les deux pages du parcours M0, à relire et à jouer
+
+**Attendu :** relire, fusionner à la main, déployer, **jouer `verifier_marelle` qui n'a jamais tourné**,
+et la ligne de `JourneyProgress` demandée dans mon message précédent.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/63 · canon
+[`page-parcours-carte-du-voyage.md`](../vision/page-parcours-carte-du-voyage.md) §3.8.
+
+**⚠️ LE LOT EST INDIVISIBLE, et c'est la seule chose à retenir avant de découper.** Intensité `/5`,
+échelle d'effet `/5`, séquence et reconnaissance n'existaient que dans `journeys/_show`. Les notes
+de la maquette disaient que la page parcours ne les affiche plus ; mesuré, c'est un déménagement
+vers la page expérience, qui ne les avait pas. **Livrer la page parcours seule les aurait retirées
+de l'application, CI verte et bancs verts** — chaque page prise isolément aurait été conforme à sa
+maquette. Le banc porte l'assertion dans les deux sens (§9) : si tu ne prends qu'une moitié, il
+rougit, et c'est voulu.
+
+**Ce que je n'ai pas pu faire, et qui te revient :**
+
+1. **Rien n'a été exécuté.** Pas de Ruby sur ce poste : ni banc, ni rendu, ni lint HAML.
+   `verifier_marelle.rb` est **entièrement réécrit et jamais joué**. Il garde son nom exprès —
+   `recette.sh` le désigne ainsi, et un banc renommé est un banc qui sort de la recette sans qu'on
+   l'entende.
+2. **Les images.** Pas d'outillage ici (`convert` est le convertisseur FAT de Windows). Les 18
+   illustrations de Codex pèsent **57 Mo** ; le canon demande des dérivés WebP par usage —
+   médaillon ≤ 150 Ko, fond de chapitre ≤ 300 Ko, cover ≤ 500 Ko. Les emplacements dégradent
+   proprement en attendant : un chapitre sans image garde sa mise en page, sans trou.
+3. **`journey_progress.rb:109-113`**, déjà demandé : le rite doit rester dans son chapitre et ses Ω
+   y entrer une fois. La vue lit le rite **là où il est**, avec repli sur le dernier chapitre — rien
+   ne disparaît pendant que la correction voyage. **24 Ω sur 99 rentreront dans le chapitre 3** ce
+   jour-là ; un banc qui asserte un total de chapitre rougira.
+
+**Trois pièges attrapés avant de commiter**, parce qu'ils auraient coûté une page :
+
+- une **continuation HAML** que le parseur n'aurait pas suivie — `.filter_map` sous une accolade
+  fermante n'est pas la suite de l'expression. C'est ton `case` multiligne du 21, à l'identique ;
+- un **`link_to` avec libellé ET bloc** : le premier argument devient l'adresse, on obtenait
+  `href="Refermer le livre"` ;
+- **`link_to_if_block` qui supprime le conteneur** quand la condition est fausse. Une expérience
+  **verrouillée** — le cas le plus fréquent d'une liste — aurait perdu `.experience-row` et sa
+  grille entière. C'est le défaut que Boris avait signalé le 28 juillet sur « Étape suivante ».
+
+**Un débris signalé et NON supprimé** : les règles `.jp-chapitre-*`, `.jp-mouvement*`, `.jp-seuil*`,
+`.jp-next*`, `.jp-voix` de `pz_theme.css` deviennent mortes. Je ne les ai pas retirées — mesuré
+avant d'y toucher, `.jp-title`, `.jp-promesse`, `.jp-eyebrow` et `.jp-header-text` sont un
+vocabulaire d'en-tête **partagé par cinq autres vues** (cercles/index, journeys/index, ressources ×2,
+ressource_evaluations/new). Le nettoyage mérite sa passe, pas un coup de sed dans une feuille globale.
+
+**À vérifier au navigateur** : un parcours commencé ET un non commencé (l'en-tête change
+entièrement), une expérience verrouillée dans la liste, le rite verrouillé puis accompli, le
+Festival 2026 (parcours sans YAML, qui doit rester navigable sans inventer de métrique), et **sous
+620 px aucun ascenseur horizontal**.
+
+---
+
 ### 2026-08-22 · du poste fixe · Le rite rentre dans son chapitre : deux lignes de `JourneyProgress` à retourner
 
 **Attendu :** `journey_progress.rb:109-113`, quand tu voudras — je ne porte pas avant.
