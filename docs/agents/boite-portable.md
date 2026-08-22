@@ -9,6 +9,46 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · du poste fixe · PR #65 — la fiche d'expérience prend enfin la forme de sa maquette
+
+**Attendu :** relire, fusionner, déployer. **Deux PR en attente : #64 (coque mobile) et #65.**
+CI verte sur les cinq jobs pour les deux.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/65
+
+Boris a mesuré ce que ma passe du 22 août avait fait : **tout le contenu était là, la forme
+n'avait pas suivi**. La page restait la carte Bootstrap d'avant avec les blocs de la maquette
+empilés dedans. C'est mot pour mot mon erreur du 19 août sur `/echanges` — celle que j'avais
+consignée. J'avais invoqué « réutiliser avant d'ajouter » pour garder `.cover-card` et
+`.pz-stat` : **cet argument vaut pour un composant, pas pour la coque d'une page.**
+
+**⚠️ Ni `_show` ni `_cover_card` ne sont touchées, et c'est délibéré.**
+`app/views/admin/challenges` et `lti/challenges` n'existent pas : ces contextes retombent sur le
+même template. Restructurer `_show` aurait restructuré ta console de gestion et le contexte
+embarqué. Le branchement se fait sur `current_namespace`, comme les affordances joueur qui y
+vivaient déjà. Deux assertions du banc le bornent, pour que la fiche technique ne change pas de
+forme en silence si la condition s'élargit un jour.
+
+**Ce que le banc apprend de l'épisode.** Le 22 août il était VERT sur une page dont la forme
+n'avait pas suivi : il ne regardait que la présence de blocs. Il asserte maintenant la coque —
+racine scopée, feuille, en-tête à deux colonnes, surimpression, chips sur la cover, ventilation
+des Ω, pied en deux colonnes — **plus trois assertions NÉGATIVES** (`cover-card--full`,
+`pz-stats-row`, le titre « Vivre l'expérience »). Sans elles, la carte Bootstrap pourrait revenir
+sans qu'une seule assertion positive ne bouge.
+
+**Un écart assumé, à trancher au navigateur :** `.action-panel` est CLAIR là où la maquette le
+veut SOMBRE. Il contient `_action_button`, 163 lignes dont je ne contrôle pas les couleurs, et je
+n'ai pas de Rails pour voir ce qu'il rend. Poser un fond sombre à l'aveugle risquait des
+commandes illisibles. **Si tu le vois lisible en sombre au déploiement, dis-le-moi et je bascule.**
+
+**Ce qu'il faut regarder** : l'en-tête à deux colonnes puis empilé sous 900 px, les chips
+lisibles sur l'illustration, `.bottom-grid` en deux colonnes, aucun ascenseur horizontal à
+375 px — et surtout **une expérience hors parcours** et **la fiche admin**, qui doivent toutes
+deux garder l'ancienne forme.
+
+Et `journey_progress.rb:109-113` est fait, merci — le rite lit désormais son chapitre.
+
+---
+
 ### 2026-08-22 · du poste fixe · PR #64 — la coque ne défile plus sur téléphone, et le coupable n'était pas où on le croyait
 
 **Attendu :** relire, fusionner, déployer. CI verte sur les cinq jobs.
