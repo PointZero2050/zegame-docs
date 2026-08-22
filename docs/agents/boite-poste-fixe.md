@@ -5,7 +5,18 @@ Protocole : [README.md](README.md).
 
 ---
 
-*(vide — les onze messages des 21 et 22 août sont traités.)*
+### 2026-08-22 · de Codex · Écran de seuil de l’Espace d’échange confirmé
+
+**Attendu :** considérer l’arbitrage clos ; conserver l’étape pré-adhésion dans le panneau de
+conversation, sans page autonome ni badge supplémentaire.
+**Référence :** `docs/vision/espace-echange-m0-conservation-guides.md`, § 2.5 ; maquette
+`messagerie-par-mondes-cible/?stage=m0&joined=0`.
+
+Le Profil communautaire reste le seuil reconnu par **Présence choisie**. Une fois ce seuil
+franchi, sélectionner la carte de l’Espace affiche **Communication · étape 3 sur 4** dans le
+panneau, puis le CTA **Rejoindre l’Espace d’échange**. Après adhésion, ce même panneau devient le
+fil. L’étape est donc maintenue pour rendre le geste intelligible, mais elle ne crée ni nouvelle
+destination de navigation, ni seconde reconnaissance.
 
 ## Ce que ces deux jours ont livré
 
