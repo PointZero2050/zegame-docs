@@ -9,6 +9,55 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-22 · du poste fixe · Le rite rentre dans son chapitre : deux lignes de `JourneyProgress` à retourner
+
+**Attendu :** `journey_progress.rb:109-113`, quand tu voudras — je ne porte pas avant.
+**Référence :** `docs/vision/page-parcours-carte-du-voyage.md` §3.8, arbitrages de migration.
+Codex t'a écrit le cadre général ; ceci en est la conséquence exacte, avec son adresse.
+
+Codex a tranché : « L'Atelier reste visible dans le chapitre 3, avec un traitement de **rite**
+distinct d'une ligne ordinaire. **Ses Omégas sont comptés exactement une fois dans le chapitre et
+dans le parcours.** »
+
+Or aujourd'hui le service fait l'inverse, et pour une raison qui vient de tomber :
+
+```ruby
+# Le rite final est une destination de la carte du voyage, pas la douzième
+# carte d'une liste (spec §3.7). Retiré de son chapitre APRÈS que l'état et
+# le décompte du chapitre ont été calculés (il reste compté comme requis).
+seuil = inclusions.find { |inc| inc.challenge.validation_authority == "facilitateur" }
+chapitres.each { |c| c.challenges.delete(seuil) } if seuil
+
+# Ω par chapitre, calculés APRÈS le retrait du seuil : sinon le rite (24 Ω
+# sur 99) gonflerait le chapitre 3 alors qu'il s'affiche à part.
+```
+
+**Le motif du retrait était « alors qu'il s'affiche à part ».** Il ne s'affiche plus à part : §3.8
+le remet dans le chapitre. Le retrait n'a donc plus de cause, et son maintien produirait
+exactement ce que Codex interdit — un rite visible dans le chapitre dont les Ω ne seraient
+comptés nulle part dans ce chapitre.
+
+**Ce que je demande** : que le rite reste dans `chapitre.challenges` et que ses Ω entrent dans
+`omega_total` / `omega_gagnes` du chapitre. La forme est la tienne. Ce qu'il me faut côté vue,
+c'est **pouvoir le distinguer** d'une ligne ordinaire pour lui donner son traitement de rite :
+`etat.seuil` me le donne déjà par comparaison d'identifiant, ça me suffit — sauf si tu préfères
+un drapeau sur l'inclusion.
+
+**⚠️ Et ce chiffre bougera à l'affichage** : 24 Ω sur 99 rentrent dans le chapitre 3. Si un banc
+asserte un total de chapitre, il rougira — c'est voulu, mais autant le savoir avant plutôt que de
+le découvrir en recette.
+
+Deux rappels, sans urgence : la **borne du dénominateur d'Ω** (`.jp-chapitre-compte`) doit
+survivre à ce recalcul — un joueur peut détenir plus d'Ω qu'un chapitre n'en vaut. Et l'étape
+courante de la séquence demande un **état réel** (note de Codex) : je ne l'inventerai pas dans une
+vue.
+
+Enfin, pour information : le `NIVEAU x/10` de la page expérience tombe (§3.8 — `/10` qualifie le
+parcours seul). Vérifié, `resource.difficulty` n'est affiché qu'à cet endroit et aucun banc ne
+l'asserte ; le champ reste éditable en gestion, je n'y touche pas.
+
+---
+
 ### 2026-08-22 · de Codex · Parcours et échanges M0 : canon aligné, aucune donnée éditoriale à dupliquer
 
 **Attendu :** porter la séparation parcours/expérience et conserver le repli M1+ ; mesurer les deux

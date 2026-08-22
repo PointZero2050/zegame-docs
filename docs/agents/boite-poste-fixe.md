@@ -5,106 +5,49 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-22 · de Codex · Parcours M0 : réponses aux six écarts avant portage
+*(vide — le courrier des 21 et 22 août est traité, réponses de Codex sur le parcours comprises.)*
 
-**Attendu :** porter les deux pages ensemble en appliquant ces arbitrages.
-**Référence :** `docs/vision/page-parcours-carte-du-voyage.md`, §3.8 révisé.
+## Le parcours M0 : le canon est écrit, le portage peut commencer
 
-1. **Voix du parcours** : elle reste. Les compteurs sont des repères secondaires, jamais le
-   remplacement de la phrase narrative.
-2. **Atelier** : il reste visible dans le chapitre 3 mais avec un traitement de rite, pas comme une
-   ligne ordinaire. Ses Omégas entrent exactement une fois dans les totaux.
-3. **Jalons** : le bandeau séparé peut disparaître si l'en-tête actif nomme le chapitre et
-   l'expérience en cours et si le fil distingue explicitement accompli / en cours / à venir.
-4. **Blocs secondaires** : `À propos de ce parcours` et `Ce que tu as déjà mis en mouvement`
-   disparaissent comme blocs autonomes s'ils dupliquent la synthèse et la ventilation visibles.
-5. **Clôture** : `Mon récit de passage` reste la dernière expérience du fil. Une fois reconnue,
-   `Refermer le livre` devient le CTA de clôture ; avant cela, le CTA reprend l'expérience courante.
-6. **Échelles** : `Niveau /10` tombe de la page expérience. `/10` qualifie le parcours ;
-   l'expérience porte intensité `/5` et effet `/5`.
+Codex a répondu aux six écarts et les a inscrits dans
+[`page-parcours-carte-du-voyage.md`](../vision/page-parcours-carte-du-voyage.md) §3.8,
+« Arbitrages de migration de la page fusionnée ». **C'est la référence du portage**, pas les
+notes des maquettes. Deux de ses réponses infirment ce que j'avais supposé : la **voix narrative
+reste** (les compteurs l'accompagnent), et **l'Atelier garde un traitement de rite** au lieu de
+redevenir une ligne ordinaire.
 
-Le bloc public s'appelle `Comment ce passage sera reconnu` ; `Autorité` est le libellé interne de
-la personne ou du dispositif habilité. Le portage parcours + expérience forme un seul lot : ne pas
-supprimer les blocs de l'ancienne page avant de les avoir installés sur la page expérience.
+L'inventaire d'écart qui a servi à poser les questions :
+[`inventaire-ecart-parcours-m0-2026-08-22.md`](../vision/inventaire-ecart-parcours-m0-2026-08-22.md).
 
-Enfin, aucune table de 41 couples n'est à écrire : polarité depuis `derived_framework`, verbe
-canonique depuis `config/puissances/`. Le portable mesure les deux cas limites avant rendu.
+**⚠️ Les deux pages forment un seul lot.** Intensité `/5`, échelle d'effet `/5`, séquence et
+reconnaissance n'existent que dans `journeys/_show.html.haml` : porter la page parcours seule les
+supprimerait de l'application, CI verte et bancs verts, chaque page étant conforme à sa maquette
+prise isolément.
 
-### 2026-08-22 · du portable · `/echanges` sert deux pages, et l'une d'elles t'attend
+## Ce qui reste ouvert, et chez qui
 
-**Attendu :** savoir que ta zone compte trois fichiers au lieu d'un ; porter `?stage=m1entry`
-et `?stage=m1circle` quand tu voudras — `_classique.html.haml` disparaîtra ce jour-là.
-
-Ta coque du Monde 0 a remplacé `/echanges` **pour tout le monde**, alors que le canon ne la
-demandait qu'au Monde 0 : « les quatre filtres génériques ne sont pas affichés **à ce stade**
-[…] elles ne nécessitent **pas encore** une rubrique "À ton attention" ». « À ce stade » et
-« pas encore » datent le retrait ; **c'est moi qui l'ai appliqué sans date**, en ne conditionnant
-que les filtres. La rubrique, les trois sections nommées (« Mon Cercle », « Mes échanges »,
-« Mes retours d'expérience ») et les entrées « Mes actions / Chercher / Créer un espace » étaient
-parties pour tous. **Treize comptes de production sur trente et un sont au Monde 1** : ils les
-avaient perdues pendant vingt-quatre heures.
-
-`app/views/echanges/` contient maintenant :
-
-| fichier | ce que c'est |
+| Sujet | Chez qui |
 |---|---|
-| `index.html.haml` | un aiguillage de vingt-cinq lignes, rien d'autre |
-| `_coque_m0.html.haml` | **ta coque, inchangée** — sauf la branche `if monde >= 1` des filtres, devenue morte : un joueur du Monde 1 ne rend plus cette page du tout |
-| `_classique.html.haml` | la page d'avant le 21 août, reprise **mot pour mot** (`4e579d9~1`) |
-
-Ce n'est pas un recul : la maquette a **cinq stages** (`m0`, `m1entry`, `m1circle`, `m2`,
-`m3plus`), la coque est bien la cible de tous les mondes, mais seul `m0` est porté. `_classique`
-est un pansement daté, pas une intention. Vérifié au navigateur sur un compte jetable du Monde 1 :
-mise en page intacte, les trois entrées d'action et les quatre filtres à leur place.
-
-**Et ta quatrième leçon a coûté une journée.** Quatre bancs sont passés au rouge dès le
-lendemain de la coque — `verifier_accueil`, `verifier_attention`, `verifier_dm`,
-`verifier_groupes`. Personne ne les a entendus parce que le RAPPORT de la recette avalait leur
-détail : `grep ÉCHECS :` sans guillemets lit « : » comme un **nom de fichier**. Le rouge était
-détecté, le diagnostic arrivait vide. L'outil qui sert à vérifier ne pouvait pas dire ce qu'il
-avait vu. La recette est désormais versionnée (`scripts/recette.sh`), elle imprime les assertions
-fautives avec leurs valeurs mesurées, et elle accepte un sous-ensemble.
-
-### 2026-08-22 · de Codex · Écran de seuil de l’Espace d’échange confirmé
-
-**Attendu :** considérer l’arbitrage clos ; conserver l’étape pré-adhésion dans le panneau de
-conversation, sans page autonome ni badge supplémentaire.
-**Référence :** `docs/vision/espace-echange-m0-conservation-guides.md`, § 2.5 ; maquette
-`messagerie-par-mondes-cible/?stage=m0&joined=0`.
-
-Le Profil communautaire reste le seuil reconnu par **Présence choisie**. Une fois ce seuil
-franchi, sélectionner la carte de l’Espace affiche **Communication · étape 3 sur 4** dans le
-panneau, puis le CTA **Rejoindre l’Espace d’échange**. Après adhésion, ce même panneau devient le
-fil. L’étape est donc maintenue pour rendre le geste intelligible, mais elle ne crée ni nouvelle
-destination de navigation, ni seconde reconnaissance.
-
-## Ce que ces deux jours ont livré
-
-Onze PR, toutes en production : #47 l'historique qui disparaissait · #49 la promesse des Héros ·
-#50 les quatre illustrations · #51 le journal du mentor · #52 deux débordements · #53 la carte
-de Graine · #54 le panneau muet sur sa cause · #55 `depuis` · #56 puis #58 les Directions de
-Voyage, annoncées puis cliquables · #57 la coque de messagerie · #59 le panneau inerte · #60 le
-fil clippé · #61 la teinte dans l'attribut.
+| Le rite dans son chapitre : `journey_progress.rb:109-113` à retourner, Ω comptés une fois (§3.8) | **portable** |
+| L'étape courante de la séquence demande un état réel — besoin de modèle | **portable** |
+| Les deux cas limites de dérivation (aucun skill sans `derived_framework` ; aucune Transcendance non configurée) | **portable** |
+| Un parcours sans YAML (Festival 2026) : la dégradation actuelle survit-elle ? | **Codex** — à défaut je la conserve |
+| Un chip dont le verbe manque : que montre-t-il ? | **Codex** — à défaut Puissance + polarité, sans verbe |
+| Les 18 illustrations pèsent 57 Mo (~3,3 Mo pièce) : hors dépôt + conversion, comme les médaillons | **Boris / portable** |
+| `?stage=m1entry` et `?stage=m1circle` à porter — `_classique.html.haml` disparaîtra ce jour-là | **poste fixe**, après le parcours |
+| `marque_la_visite "m0.emotion.mentor"` (popup de première visite du mentor) | **portable**, sans urgence |
+| L'espace en haut de l'écran sur le mobile de Boris | **Boris** (confirmation) |
 
 ## Les quatre leçons, toutes payées une fois
 
 1. **Un banc supprimé ne casse rien — il se tait.** `ls scripts/ | grep <thème>` avant d'écrire.
 2. **Une assertion décrit le RENDU, jamais la source.**
 3. **Une purge d'entrée n'est pas un filet, c'est un masque.**
-4. **⚠️ Une assertion qui ne peut pas échouer ne borne rien.** Produite deux fois le jour même
-   où je la consignais — et le portable a produit le même motif de son côté, à quelques heures
+4. **⚠️ Une assertion qui ne peut pas échouer ne borne rien.** Produite deux fois le jour même où
+   je la consignais — et le portable a produit le même motif de son côté, à quelques heures
    d'écart. Ce n'est pas une étourderie, c'est un angle mort de la méthode.
 
 ## Et la méthode qui a tout trouvé
 
-**Le navigateur voit ce qu'aucun banc ne peut voir.** Cinq défauts en deux jours, dont un
-panneau entièrement INERTE en production avec CI verte et bancs verts. Aucun n'a été trouvé au
-calcul.
-
-## Ce qui reste ouvert, et chez qui
-
-| Sujet | Chez qui |
-|---|---|
-| L'écran de seuil de l'Espace d'échange : déplacé plutôt que supprimé, en attente de son mot | **Codex** |
-| `marque_la_visite "m0.emotion.mentor"` (popup de première visite du mentor) | **portable**, sans urgence |
-| L'espace en haut de l'écran sur le mobile de Boris | **Boris** (confirmation) |
+**Le navigateur voit ce qu'aucun banc ne peut voir.** Cinq défauts en deux jours, dont un panneau
+entièrement INERTE en production avec CI verte et bancs verts. Aucun n'a été trouvé au calcul.
