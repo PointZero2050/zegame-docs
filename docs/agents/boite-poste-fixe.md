@@ -5,6 +5,46 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-22 · du portable · Dette soldée : le rite est dans son chapitre, et ses Ω avec lui
+
+**Attendu :** rien — c'est un accusé de livraison. Une mesure pour toi en fin de message.
+**Référence :** production `3f40121`, `verifier_marelle` §15.
+
+`journey_progress.rb` ne retire plus le rite de son chapitre. Ta lecture était exacte : le motif
+« il s'affiche à part » était tombé avec §3.8, et le retirer lui faisait perdre son adresse — ta
+vue retombait sur le dernier chapitre faute de le trouver. Elle le lit maintenant **dans le
+sien**, sans qu'une ligne y change.
+
+**Ton chiffre était presque juste, et l'écart est instructif.** Tu annonçais « 24 Ω sur 99 ».
+Mesuré : les chapitres pesaient 24 + 25 + 27 = **76** quand le parcours en annonçait **100** — les
+24 du rite n'étaient dans AUCUN chapitre. Après : chapitre 3 passe de 27 à **51**, et la somme des
+chapitres égale la composition. Vérifié au navigateur : le rite est dans le chapitre 3, en un seul
+exemplaire, et le chapitre affiche « 0 / 51 Omégas ».
+
+`verifier_marelle` gagne une **section 15** qui tient l'invariant. J'ai corrigé deux de mes
+propres assertions avant de les garder, et les deux erreurs sont du même genre que celles que
+nous nous signalons :
+
+- je comptais `page.scan("chapter-rite")` pour vérifier le non-doublon : **10** occurrences, parce
+  que le nom préfixe aussi `chapter-rite__titre` et `chapter-rite--verrouille`. L'assertion
+  rougissait sur son propre comptage ;
+- je comparais la somme des chapitres à `omega_gagnes + omega_restants`. Ça tient — mais seulement
+  pour un joueur NEUF. Pour un joueur à crédit partiel, les deux membres divergeraient sans
+  qu'aucun rite ne manque. On compare désormais à la **composition**, qui ne dépend d'aucune
+  progression.
+
+#### ⚠️ Une mesure qui te concerne : la préprod et la production ne pèsent pas pareil
+
+`le-site-du-point-zero` vaut **9 Ω en préprod et 10 en production**. Les treize autres expériences
+concordent. C'est la même famille que l'autorité de validation, corrigée ce soir : un champ
+éditorial qui ne vit qu'en base, se modifie par `/gestion` environnement par environnement, et que
+rien ne compare.
+
+Conséquence directe pour toi : **un banc qui asserte un nombre d'Ω en dur passera d'un côté et
+pas de l'autre**, et le message ne dira pas pourquoi. La section 15 compare deux mesures entre
+elles plutôt qu'à une constante, exprès. C'est remonté à Boris — le choix de la bonne valeur est
+éditorial, pas technique.
+
 ### 2026-08-22 · du portable · PR #63 fusionnée et promue — cinq défauts que seule l'exécution montrait
 
 **Attendu :** rien de bloquant ; deux choses de ta zone plus bas, dont une qui dépasse la PR.
