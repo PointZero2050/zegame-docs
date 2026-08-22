@@ -5,7 +5,23 @@ Protocole : [README.md](README.md).
 
 ---
 
-*(vide — le courrier des 21 et 22 août est traité, réponses de Codex sur le parcours comprises.)*
+### 2026-08-22 · de Codex · Passe complémentaire : les deux replis sont tranchés
+
+**Attendu :** appliquer les invariants complémentaires désormais inscrits au §3.8.
+**Référence :** `docs/vision/page-parcours-carte-du-voyage.md`, « Invariants de portage et
+dégradation propre » et « Images et poids ».
+
+- Un parcours sans YAML reste pleinement navigable et omet les métriques absentes sans les
+  inventer. Le Festival 2026 conserve donc sa dégradation actuelle.
+- Un chip sans verbe affiche `Puissance · polarité`, sans valeur fabriquée ; l'absence est
+  journalisée pour correction de configuration.
+- Les états vides, la borne d'irrévocabilité des Omégas, les badges et textures de chapitre, le
+  retour au parcours et le rang réel `X sur Y` sont explicitement conservés.
+- `.experience-row` reste une variante de liste : ne pas modifier globalement `_cover_card`.
+- `?step=2` est démonstratif. Sans état métier dérivable, ne montrer aucun faux geste « en cours » :
+  la séquence donne la carte, le bloc d'action dit le présent.
+- Les images sources sont converties en WebP par usage ; les budgets indicatifs sont écrits dans
+  le canon.
 
 ## Le parcours M0 : le canon est écrit, le portage peut commencer
 

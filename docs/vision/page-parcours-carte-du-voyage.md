@@ -277,6 +277,34 @@ une attribution d'Omégas.
 - Le titre public du bloc est `Comment ce passage sera reconnu`. À l'intérieur, `Autorité` nomme
   la personne ou le dispositif habilité à reconnaître le passage.
 
+#### Invariants de portage et dégradation propre
+
+- La durée du parcours distingue la durée **obligatoire** du supplément **facultatif**. Elle ne
+  les additionne pas dans un total ambigu.
+- Un parcours sans fiche YAML reste utilisable : il conserve titre, progression réelle, expérience
+  courante et navigation, et omet simplement Puissance globale, intensité, effet et séquence. Il
+  n'invente aucune valeur de remplacement.
+- Deux états vides sont rédigés et testés : `Tout est accompli` lorsque le chemin est terminé ;
+  `Aucune expérience n'est ouverte pour l'instant` lorsque la progression ne fournit pas de suite.
+- Le compte d'Omégas d'un chapitre conserve la borne d'irrévocabilité : le total affiché ne peut
+  jamais être inférieur aux Omégas déjà gagnés par le Joueur. Une évolution éditoriale du parcours
+  ne doit donc jamais produire un affichage du type `27 / 24 Ω`.
+- Le badge de chapitre accompli et la texture ou illustration du chapitre survivent. L'état reste
+  lisible en texte ; le badge et l'image renforcent la lecture sans la remplacer.
+- La ligne `.experience-row` est une variante propre à la liste du parcours. Elle ne remplace pas
+  globalement `_cover_card`, encore utilisé pour `Étape suivante` et d'autres surfaces.
+- La page expérience affiche un lien de retour vers le parcours, le chapitre et le rang réel
+  `Expérience X sur Y`. Ce rang vient de la composition effective du Journey.
+- Si le verbe canonique d'un chip manque, l'interface affiche **Puissance + polarité**, sans blanc
+  disgracieux et sans inventer de verbe. L'absence est journalisée pour corriger la configuration.
+- La maquette `?step=2` illustre la séquence mais ne constitue pas une source d'état. Tant qu'un
+  index courant ne peut pas être dérivé d'une action, d'une preuve ou d'un état métier existant,
+  les trois gestes sont présentés comme une carte de l'expérience sans en déclarer un « en cours ».
+  Aucun `current_step` générique ne doit être créé uniquement pour satisfaire le visuel.
+- Le portage de la page expérience précède ou accompagne le retrait des blocs correspondants de la
+  page parcours. Intensité, effet, séquence et reconnaissance ne connaissent aucune fenêtre de
+  disparition entre deux livraisons.
+
 ## 4. Ton et microcopie
 
 La page suit la [voix Point Zéro](voix-point-zero.md) : adulte, concrète, légèrement décalée et
@@ -318,6 +346,21 @@ Exemples à tester :
 - la liste ne s'étire pas sur toute la largeur ;
 - le chemin vertical ou segmenté reste lisible sans simuler un deck ;
 - aucune image ne redevient un petit médaillon lorsque son rôle est de vendre l'étape courante.
+
+### Images et poids
+
+Les fichiers sources haute définition restent dans `zegame-prototypes`. Le portage applicatif
+utilise des dérivés WebP dimensionnés par usage : miniature ou médaillon, fond de chapitre et
+cover. Une image de plusieurs mégaoctets n'est jamais servie telle quelle dans une liste.
+
+Objectifs initiaux, à vérifier dans le navigateur :
+
+- médaillon : côté utile 256 à 384 px, idéalement moins de 150 Ko ;
+- fond de chapitre : 1280 px de large au maximum, idéalement moins de 300 Ko ;
+- cover : 1600 px de large au maximum, idéalement moins de 500 Ko.
+
+Le poids final se tranche sur la qualité perçue et le chargement mobile. Les images hors écran sont
+chargées paresseusement ; la cover visible au chargement ne l'est pas.
 
 ### Sémantique
 
