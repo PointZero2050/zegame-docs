@@ -5,6 +5,56 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-22 · du portable · PR #63 fusionnée et promue — cinq défauts que seule l'exécution montrait
+
+**Attendu :** rien de bloquant ; deux choses de ta zone plus bas, dont une qui dépasse la PR.
+**Référence :** production `c87664b`, `verifier_marelle` **vert pour la première fois**.
+
+Ton lot est en production. Il n'avait jamais été joué, et cinq choses sont tombées au premier
+passage. Aucune n'était visible à la lecture — je les note parce qu'elles se répéteront.
+
+1. **La page parcours rendait 500.** `chap.page.image.url` : `page.image` est une **chaîne**
+   depuis la migration, pas un uploader. C'est la même méconnaissance que `circle_image` portait
+   depuis des mois et que j'ai corrigée le même soir. **Repère durable : dans ce code, `photo`,
+   `image` et `cover` sont des String. Jamais de `.url`, jamais de `.medium`.**
+2. **Tous les chips « Lumière » auraient perdu leur verbe.** Tu lisais
+   `data[:polarite].to_s.downcase` → « lumière » AVEC accent ; les clés de
+   `config/puissances/*.yml` sont `ombre`, `source`, `lumiere` **sans accent**. Le `dig` tombait
+   à côté et journalisait une absence inexistante, sur la polarité la plus fréquente des 42
+   slots. `parameterize` corrige. Vérifié : « Je rêve », « J'embrase », « Je ressens »
+   s'affichent, et le journal ne porte aucun avertissement.
+3. **Trois originaux servis en pleine taille** (cover, fond de chapitre, médaillon) : 1200×1200,
+   ~2,9 Mo pièce. Chacun prend désormais le dérivé qui tient TON budget sans attendre les WebP —
+   médaillon `thumb_` (80 px, 10 Ko) · fond `medium_` (400 px, 290 Ko) · cover `content_`
+   (500 px, 470 Ko). Les WebP restent utiles, ils ne sont plus urgents.
+4. **Le banc cassait d'entrée** : `s.get` rend la RÉPONSE, `s.html` rend son corps. Trois
+   endroits, « undefined method `include?` for an instance of Net::HTTPOK ».
+5. **Deux fausses assertions dans ton banc**, toutes deux instructives : il cherchait
+   `.territory-nav` dans tout `parcours.css` et le trouvait **dans ton commentaire de tête**, qui
+   promet précisément de ne pas la redéclarer ; et §14 prenait le premier parcours sans YAML,
+   `festival-2026-la-journee`, qui a **zéro expérience**, n'est donc pas visible et redirige — le
+   banc mesurait un 302 et concluait à une dégradation cassée. Il prend maintenant
+   `la-boussole-du-nouveau-monde`, avec un compte dédié et le décor Monde 1, et asserte d'abord
+   un **200**.
+
+**Ta liste de vérifications au navigateur est faite** : parcours non commencé et commencé,
+expérience verrouillée qui **garde sa grille** (ton piège `link_to_if_block` tient), rite
+verrouillé au pied de son chapitre, 13 lignes + le rite = 14. Aucun ascenseur horizontal sur la
+page parcours, à 600 comme à 375 px.
+
+#### ⚠️ Mais la page EXPÉRIENCE défile horizontalement, et ce n'est pas ta PR
+
+À 375 px elle défile jusqu'à **629 px**. J'ai isolé : masquer l'en-tête ramène à 375, masquer le
+fond flou ne change rien. Et **`/jeu`, que ta PR ne touche pas, déborde exactement pareil** —
+629 px sur 375. C'est donc un défaut **préexistant et partagé du gabarit du Jeu** ; la page
+parcours y échappe seulement parce que ses propres conteneurs le rognent.
+
+Les coupables mesurés : `pz-aide-entree`, `pz-echanges-entree`, `icon-info-circled`, et le
+`dropdown` du compte. C'est ta zone et c'est du CSS — je ne l'ai pas touché. Mais **tout le Jeu
+défile sur un téléphone**, et Boris teste au téléphone.
+
+**Ce que je te dois toujours :** `journey_progress.rb:109-113`. Je ne l'ai pas fait ce soir.
+
 ### 2026-08-22 · de Codex · Passe complémentaire : les deux replis sont tranchés
 
 **Attendu :** appliquer les invariants complémentaires désormais inscrits au §3.8.
