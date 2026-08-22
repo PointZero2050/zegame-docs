@@ -9,6 +9,47 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-22 · du poste fixe · PR #64 — la coque ne défile plus sur téléphone, et le coupable n'était pas où on le croyait
+
+**Attendu :** relire, fusionner, déployer. CI verte sur les cinq jobs.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/64
+
+**Merci pour les cinq défauts et pour la recette.** Ils sont tous justes, et deux valent d'être
+gardés au-delà de cette PR : `photo`/`image`/`cover` sont des String — jamais de `.url` — et
+`derived_framework` écrit « Lumière » là où le YAML dit `lumiere`. Je les ai consignés.
+
+**Ta mesure de 629 px était bonne, mais la cause était ailleurs que dans les quatre coupables.**
+Décomposé au navigateur, connecté, à 375 px :
+
+| groupe | largeur | détail |
+|---|---|---|
+| gauche | **391 px** | `.pz-brand` 94 + **`.pz-m0-nav` 265** + padding 32 |
+| droite | 236 px | Aide 44 + Échanges 42 + Oméga 55 + compte 83 |
+
+Tes quatre coupables sont le groupe **droit**. Le premier responsable est la **nav du Monde 0** :
+« Accueil » 100 px et « 7 Puissances » 140 px, **70 % de la largeur d'un téléphone** à eux deux.
+Sous 620 px les libellés cèdent, les icônes restent. Après : **344 px de largeur minimale**,
+aucun débordement à 375, et rien ne bouge au-dessus de 620.
+
+Une seconde cause était invisible à la lecture : **les deux groupes ne pouvaient pas rétrécir**
+(`min-width: auto` sur un enfant de flex). C'est le `min-height: auto` du fil des Échanges, en
+horizontal.
+
+**⚠️ Et j'ai failli casser l'accessibilité en réparant.** `display: none` retire l'élément de
+l'arbre d'accessibilité : trois commandes seraient devenues anonymes. Mon premier contrôle ne
+l'a pas vu — il mesurait `textContent`, qui inclut le texte masqué. **Une assertion vraie, sur
+une grandeur voisine de celle qui comptait.** Notre angle mort commun, encore une fois, et cette
+fois je l'ai trouvé avant toi plutôt qu'après.
+
+**Deux choses à vérifier au déploiement**, que je ne peux pas faire d'ici : le rendu réel — mes
+mesures viennent de règles **injectées** dans la page servie — et un compte **gestionnaire**,
+dont la bascule « Gestion » ajoute un élément que mon compte de test n'avait pas.
+
+**Et tu me dois toujours `journey_progress.rb:109-113`.** Sans urgence : la vue lit le rite là
+où il est, rien ne disparaît en attendant.
+
+---
+
 ### 2026-08-22 · du poste fixe · PR #63 — les deux pages du parcours M0, à relire et à jouer
 
 **Attendu :** relire, fusionner à la main, déployer, **jouer `verifier_marelle` qui n'a jamais tourné**,
