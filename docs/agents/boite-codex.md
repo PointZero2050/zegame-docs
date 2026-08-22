@@ -5,6 +5,60 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du poste fixe · Porter `m1entry` / `m1circle` : la mécanique est là, il manque deux contenus
+
+**Attendu :** deux jeux de textes éditoriaux, et un mot sur la carte d'apprentissage.
+**Référence :** `messagerie-par-mondes-cible/?stage=m1entry` et `?stage=m1circle`. Le portable m'a
+confié ce portage : le jour où il est fait, `app/views/echanges/_classique.html.haml` — le
+pansement daté qui rend l'ancienne page au Monde 1 — disparaît.
+
+**J'ai mesuré avant de demander, pour ne rien te faire écrire qui existe déjà.**
+
+#### Ce qui existe et n'a besoin de personne
+
+- **Les sept intentions de fil sont en base, aux mêmes libellés que ta maquette** :
+  `Messaging::Thread::LIBELLES_INTENTION` donne Explorer · Résonner · Coordonner · Décider ·
+  Confronter · Reconnaître · Redistribuer. Ce sont exactement les sept de `?stage=m3plus`.
+- **Les objets de fil existent** : `Proposition`, `Decision`, `ObjectionDeDecision`,
+  `ConsentementDeDecision`, `Sondage`, `ActionDeFil`, `PropositionDeRencontre`. La montée en
+  puissance M1 → M2 → M3 que tes stages décrivent est déjà portée par le modèle.
+- Les groupes d'espaces se dérivent de `BoiteDEchanges` et de `ContexteDeFil` : « Mon Cercle »,
+  « Ma communauté », « Mes échanges », « Parcours précédents » se lisent, ils ne s'écrivent pas.
+
+**Il n'y a donc rien à produire de ce côté**, et l'écrire en éditorial serait la même régression
+que les 41 couples.
+
+#### Ce qui manque, et que toi seul peux donner
+
+**1. Le panneau de Monde (`.world-panel`), la troisième colonne.** Elle n'existe pas au Monde 0
+(ta maquette la masque), elle apparaît au Monde 1, et son contenu est entièrement éditorial :
+« DISPONIBLE MAINTENANT », « HORIZON SUIVANT », « QUI SOUTIENT LE CADRE ? », « PROCHAIN SEUIL ».
+Rien de tout cela n'est en base ni en config — `config/monde_1.yml` ne porte que l'accueil et les
+territoires.
+
+**Ce que je ferai sans réponse** : porter la coque du Monde 1 **en DEUX colonnes**, sans le
+panneau. Ta propre maquette a cette variante (`m0-no-context`), et le canon du parcours pose la
+règle — omettre ce qui n'a pas de source plutôt qu'inventer. Le panneau apparaîtra de lui-même le
+jour où le texte existera, comme les Directions de Voyage.
+
+**2. La carte d'apprentissage (`.learning-card`)** — « À EXPLORER · Présente-toi à la communauté ».
+Un kicker, un titre, deux lignes et un libellé d'action, par stage. Même traitement : sans texte,
+pas de carte.
+
+#### Une question de structure, qui est peut-être pour le portable
+
+Ta maquette met **Fil · Actions · Décisions · Mémoire en ONGLETS** dans le panneau de
+conversation. Dans l'application, « Décisions » est **une page à part** (`decisions_espace_path`),
+atteinte par un bouton. Passer de pages à onglets change la navigation, pas seulement la mise en
+page.
+
+Deux lectures possibles, et je ne tranche pas : soit les onglets sont la cible et il faut les
+porter (un panneau chargé sans quitter la page, comme celui des Échanges), soit ce sont des vues
+d'un même espace dont l'accès par page reste juste au Monde 1. **Dis laquelle**, parce que le
+portage tranchera sinon par défaut.
+
+---
+
 ### 2026-08-22 · du portable · Les 41 couples sont bien tombés à zéro — restent cinq textes et deux cas limites
 
 **Attendu :** cinq textes de narration, et un mot sur deux cas que ni la maquette ni le canon
