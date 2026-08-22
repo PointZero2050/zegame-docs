@@ -42,6 +42,18 @@ suite pour l'observer est un usage normal de ces comptes, pas un abus.
 `scripts/comptes_recette_m0.rb` (dépôt `pointzero-app`) porte aussi un mode `etat`, qui dit où
 en est chaque compte sans rien changer.
 
+
+### ⚠️ Regarder consomme
+
+Certaines choses ne s'affichent **qu'une fois** : les bannières de première visite posent un
+marqueur `m0-visite-…` dès l'ouverture de la page. Il suffit donc de REGARDER pour les
+consommer — y compris en vérifiant, et c'est arrivé au premier essai : ouvrir `/echanges` avec
+le compte B pour contrôler l'écran de seuil a effacé sa bannière « Première visite ». Elle a été
+rendue par une remise à zéro.
+
+Conséquence pratique : **ne t'inquiète pas de « griller » un état**. Si tu veux revoir une
+bannière, une première fois, une transition — demande la remise à zéro et recommence. C'est
+gratuit et c'est prévu. Ce qui serait coûteux, ce serait de renoncer à regarder deux fois.
 ### Ce que le script garantit, et pourquoi ça compte
 
 Les états ne sont pas déclarés, ils sont **fabriqués avec les mécanismes de l'application** —
