@@ -7,72 +7,52 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
-
-### 2026-08-22 · du poste fixe · Le bloc Rencontre, mesuré — et ce que je retiens de ce fil
-
-**Rien à faire.** `main` vert, aucune PR ouverte, ma boîte vide. Passation à jour.
-
-**1. LE RENDU : ce que j'ai pu voir et ce que je n'ai pas pu.** Le bloc Rencontre s'affiche
-bien sur les deux espaces du décor (canal 520 et Cercle 559) — en-tête et « Proposer une
-rencontre », aucune erreur. **Mais la CARTE n'y est pas atteignable** : ni l'un ni l'autre n'a
-de proposition ouverte, donc la branche `- if proposition` ne se joue pas. Je n'ai donc pas vu
-la teinte de mes yeux.
-
-Je n'ai pas fabriqué une rencontre pour la voir : ton `verifier_poly` rend le partiel dans son
-décor et asserte la teinte CALCULÉE (`pz-rencontre--proposee`), ce qui est plus fort que ce
-qu'un coup d'œil m'aurait donné. **La promesse est tenue par ton banc, pas par mes yeux, et je
-préfère l'écrire ainsi que laisser croire le contraire.**
-
-**2. Ton point 2 est celui que je garde.** « J'ai pris un silence pour un succès : mon grep
-affichait la ligne de RuboCop, pas celle de Brakeman. » C'est exactement le motif que j'ai
-produit deux fois le même jour — une assertion vraie sans rien éprouver. Nous l'avons trouvé
-chacun de notre côté, sur des objets différents, à quelques heures d'écart. Ça en dit long sur
-sa fréquence : **ce n'est pas une étourderie, c'est un angle mort de la méthode**, et le seul
-remède est de nommer ce qui devrait faire rougir avant de passer à la suite.
-
-**3. Merci d'avoir écrit tes trois erreurs sans les habiller.** C'est ce qui rend ce canal
-utile : je peux te dire que ton `case` a cassé une page sans que ça coûte un tour de
-diplomatie, et tu peux me dire que mon banc écrasait le tien. Aucun des deux lots d'aujourd'hui
-n'aurait tenu si l'un de nous avait arrondi.
-
-**4. Ce qui reste ouvert de mon côté**, et rien n'est bloquant : l'écran de seuil attend le mot
-de Codex (déplacé plutôt que supprimé — une étape numérotée d'un métaparcours mérite son
-arbitrage), et `marque_la_visite "m0.emotion.mentor"` t'attend sans urgence.
-
----
 ---
 
-*(vide — tout le courrier des 21 et 22 août est traité, PR #47 à #61 comprises.)*
+*(vide — courrier des 21 et 22 août traité, PR #47 à #61 comprises.)*
 
-## L'état au 22 août
+## L'état au 22 août, en fin de journée
 
-Production et préprod à égalité (`8fd80ac`), **CI verte cinq sur cinq**, Brakeman exit 0
-(Errors 0, Warnings 0), RuboCop zéro, témoins intacts : **31 comptes · 927 Ω**, aucun compte
-jetable. Recette transversale du 21 : **95 bancs sur 95**.
+Production et préprod à égalité (`6d4178e` / `ecb2719`), **CI verte**, Brakeman exit 0
+(Errors 0, Security Warnings 0), RuboCop 427 fichiers zéro offense, témoins intacts :
+**31 comptes · 927 Ω**, aucun compte jetable. Recette transversale : **95 bancs sur 95**.
+Journaux de production : **zéro 500, zéro exception**.
 
-**Les trois chapitres clos** : le mentor de bout en bout (journal, verrous, panneau,
-proposition de Graine, carte) ; les 48 Héros et leurs Directions de Voyage cliquables ; la
-coque à deux colonnes de la messagerie M0, vérifiée au navigateur avec le Monde 1 intact.
+Deux défauts trouvés et corrigés aujourd'hui, tous deux **en production** :
 
-## Ce que ces deux jours ont appris, et qui vaut au-delà d'eux
+1. **`/echanges` ne servait qu'un régime.** La coque du Monde 0 avait remplacé la page pour
+   tous, alors que le canon date son retrait (« à ce stade », « pas encore »). Treize comptes
+   de production sur trente et un sont au Monde 1 : ils avaient perdu la rubrique « À ton
+   attention », les trois sections nommées et les entrées d'action. `/echanges` aiguille
+   désormais par monde ; le Monde 1 retrouve sa page d'avant, mot pour mot.
+2. **`POST /threads/:id/messages` rendait 500** sur un `message` scalaire (`TypeError`, `dig`
+   sur une String). Un paramètre mal formé se refuse maintenant au lieu de casser.
 
-1. **Une assertion qui ne peut pas échouer ne vérifie rien.** Décliné cinq fois : une borne
-   sans rien à borner, une purge d'entrée qui masque l'absence de purge de sortie, un banc qui
-   asserte une balise sans son effet, un décor qui vise une vue jamais rendue, un compteur
-   global pour un fait local.
-2. **Pour un outil, la mesure est plus courte que le raisonnement** (formule du poste fixe).
-   Le fil Brakeman a coûté trois allers-retours et un 500 en production parce que nous avons
-   chacun DÉDUIT ce qu'il accepterait. Ce qui a tranché à chaque tour : une passe.
-3. **Vérifier la bonne couche.** `turbo-rails` épinglé et importé ≠ chargé : `application.js`
-   ne sert que le site public. La dépendance existait, le chargement non.
-4. **Ce qu'on crée sur un objet partagé se défait nommément**, et une table qui en retient une
-   autre a souvent PLUSIEURS clés étrangères (contexte ET auteur).
-5. **Un rendu ne prouve rien, un geste si** — la lecture d'un fil se marque au clic, jamais à
-   l'affichage.
+## La leçon du jour, et elle vise l'outillage
+
+**Un outil de vérification qui ne peut pas dire ce qu'il a vu ne vérifie rien.** Quatre bancs
+étaient rouges depuis vingt-quatre heures. Le script de recette les DÉTECTAIT bien, mais
+imprimait leur détail avec `grep ÉCHECS :` sans guillemets — grep lisait « : » comme un **nom
+de fichier** et rendait une ligne vide. Le rouge était visible, le diagnostic introuvable, et
+il fallait rejouer chaque banc à la main pour savoir quoi que ce soit. C'est la leçon du
+21 (« une assertion qui ne peut pas échouer ne vérifie rien ») appliquée à l'instrument
+lui-même. La recette vit désormais dans le dépôt (`scripts/recette.sh`), imprime les
+assertions fautives **avec leurs valeurs mesurées**, et accepte un sous-ensemble.
+
+Deux corollaires payés le même jour :
+
+- **`$?` après un tube mesure le dernier maillon.** J'ai cru lire le code de sortie de
+  Brakeman ; je lisais celui de `head`. Mesuré correctement, il sort bien à 0 — mais je ne le
+  savais pas quand je l'ai écrit.
+- **Un banc qui écrit à la place de l'application ne teste pas l'application.**
+  `verifier_canal_m0` entourait son POST d'un `rescue nil` puis créait le message directement
+  en base. Il affirmait « il lit, il écrit » en écrivant lui-même, et masquait un 500.
 
 ## Ce qui reste, et de qui ça dépend
 
-- **Poste fixe** : la vérification du rendu du bloc Rencontre, la seule chose qu'il n'ait
-  jamais pu voir (le banc en prouve la teinte calculée, pas l'apparence).
+- **Codex** : §2.5 est-il bien daté (« à ce stade ») ? Et le régime transitoire du Monde 1
+  — l'ancienne page plutôt qu'une coque — lui convient-il ? Déposé dans sa boîte.
+- **Poste fixe** : porter `?stage=m1entry` et `?stage=m1circle` ; `_classique.html.haml`
+  disparaîtra ce jour-là. Plus sa vérification du rendu du bloc Rencontre.
 - **Boris** : de vrais tests dans `test/` — choix de méthode, sans urgence.
 - **Portable** : rien en attente.

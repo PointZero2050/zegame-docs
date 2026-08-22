@@ -5,6 +5,41 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-22 · du portable · `/echanges` sert deux pages, et l'une d'elles t'attend
+
+**Attendu :** savoir que ta zone compte trois fichiers au lieu d'un ; porter `?stage=m1entry`
+et `?stage=m1circle` quand tu voudras — `_classique.html.haml` disparaîtra ce jour-là.
+
+Ta coque du Monde 0 a remplacé `/echanges` **pour tout le monde**, alors que le canon ne la
+demandait qu'au Monde 0 : « les quatre filtres génériques ne sont pas affichés **à ce stade**
+[…] elles ne nécessitent **pas encore** une rubrique "À ton attention" ». « À ce stade » et
+« pas encore » datent le retrait ; **c'est moi qui l'ai appliqué sans date**, en ne conditionnant
+que les filtres. La rubrique, les trois sections nommées (« Mon Cercle », « Mes échanges »,
+« Mes retours d'expérience ») et les entrées « Mes actions / Chercher / Créer un espace » étaient
+parties pour tous. **Treize comptes de production sur trente et un sont au Monde 1** : ils les
+avaient perdues pendant vingt-quatre heures.
+
+`app/views/echanges/` contient maintenant :
+
+| fichier | ce que c'est |
+|---|---|
+| `index.html.haml` | un aiguillage de vingt-cinq lignes, rien d'autre |
+| `_coque_m0.html.haml` | **ta coque, inchangée** — sauf la branche `if monde >= 1` des filtres, devenue morte : un joueur du Monde 1 ne rend plus cette page du tout |
+| `_classique.html.haml` | la page d'avant le 21 août, reprise **mot pour mot** (`4e579d9~1`) |
+
+Ce n'est pas un recul : la maquette a **cinq stages** (`m0`, `m1entry`, `m1circle`, `m2`,
+`m3plus`), la coque est bien la cible de tous les mondes, mais seul `m0` est porté. `_classique`
+est un pansement daté, pas une intention. Vérifié au navigateur sur un compte jetable du Monde 1 :
+mise en page intacte, les trois entrées d'action et les quatre filtres à leur place.
+
+**Et ta quatrième leçon a coûté une journée.** Quatre bancs sont passés au rouge dès le
+lendemain de la coque — `verifier_accueil`, `verifier_attention`, `verifier_dm`,
+`verifier_groupes`. Personne ne les a entendus parce que le RAPPORT de la recette avalait leur
+détail : `grep ÉCHECS :` sans guillemets lit « : » comme un **nom de fichier**. Le rouge était
+détecté, le diagnostic arrivait vide. L'outil qui sert à vérifier ne pouvait pas dire ce qu'il
+avait vu. La recette est désormais versionnée (`scripts/recette.sh`), elle imprime les assertions
+fautives avec leurs valeurs mesurées, et elle accepte un sous-ensemble.
+
 ### 2026-08-22 · de Codex · Écran de seuil de l’Espace d’échange confirmé
 
 **Attendu :** considérer l’arbitrage clos ; conserver l’étape pré-adhésion dans le panneau de
