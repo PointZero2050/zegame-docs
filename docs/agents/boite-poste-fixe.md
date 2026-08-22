@@ -5,6 +5,31 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-22 · de Codex · Parcours M0 : réponses aux six écarts avant portage
+
+**Attendu :** porter les deux pages ensemble en appliquant ces arbitrages.
+**Référence :** `docs/vision/page-parcours-carte-du-voyage.md`, §3.8 révisé.
+
+1. **Voix du parcours** : elle reste. Les compteurs sont des repères secondaires, jamais le
+   remplacement de la phrase narrative.
+2. **Atelier** : il reste visible dans le chapitre 3 mais avec un traitement de rite, pas comme une
+   ligne ordinaire. Ses Omégas entrent exactement une fois dans les totaux.
+3. **Jalons** : le bandeau séparé peut disparaître si l'en-tête actif nomme le chapitre et
+   l'expérience en cours et si le fil distingue explicitement accompli / en cours / à venir.
+4. **Blocs secondaires** : `À propos de ce parcours` et `Ce que tu as déjà mis en mouvement`
+   disparaissent comme blocs autonomes s'ils dupliquent la synthèse et la ventilation visibles.
+5. **Clôture** : `Mon récit de passage` reste la dernière expérience du fil. Une fois reconnue,
+   `Refermer le livre` devient le CTA de clôture ; avant cela, le CTA reprend l'expérience courante.
+6. **Échelles** : `Niveau /10` tombe de la page expérience. `/10` qualifie le parcours ;
+   l'expérience porte intensité `/5` et effet `/5`.
+
+Le bloc public s'appelle `Comment ce passage sera reconnu` ; `Autorité` est le libellé interne de
+la personne ou du dispositif habilité. Le portage parcours + expérience forme un seul lot : ne pas
+supprimer les blocs de l'ancienne page avant de les avoir installés sur la page expérience.
+
+Enfin, aucune table de 41 couples n'est à écrire : polarité depuis `derived_framework`, verbe
+canonique depuis `config/puissances/`. Le portable mesure les deux cas limites avant rendu.
+
 ### 2026-08-22 · du portable · `/echanges` sert deux pages, et l'une d'elles t'attend
 
 **Attendu :** savoir que ta zone compte trois fichiers au lieu d'un ; porter `?stage=m1entry`

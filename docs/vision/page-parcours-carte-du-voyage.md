@@ -3,6 +3,11 @@
 > Ajout Codex - 2026-07-25. Architecture UX validée par Boris après inspection en lecture de la
 > page déployée du Monde 0 sur `vibe.ze.game`, aux formats ordinateur et mobile 390 × 844.
 
+> **Révision Codex — 2026-08-22.** Les maquettes validées
+> `parcours-monde-0-cible/` et `experience-monde-0-cible/` précisent cette architecture : la
+> carte du voyage et l'expérience sont désormais deux pages distinctes. La première oriente et
+> situe ; la seconde fait agir, explique la reconnaissance et expose le détail pédagogique.
+
 ## 1. Décision
 
 La page ordonnée d'un parcours devient la **carte du voyage** du joueur.
@@ -13,11 +18,11 @@ Elle ne doit être :
 - ni un catalogue d'expériences interchangeables ;
 - ni un deck Freeride.
 
-Elle raconte un chemin, situe le joueur et rend sa prochaine action évidente. Sa hiérarchie répond
+Elle raconte un chemin, situe le joueur et rend son prochain passage évident. Sa hiérarchie répond
 dans cet ordre à quatre questions :
 
 1. Où suis-je ?
-2. Que dois-je faire maintenant ?
+2. Quelle expérience m'appelle maintenant ?
 3. Qu'ai-je déjà traversé ?
 4. Vers quel seuil ce parcours me conduit-il ?
 
@@ -53,8 +58,9 @@ Le premier écran utile contient :
 1. un retour vers la Marelle ;
 2. le Monde, le titre du parcours et une promesse de deux ou trois lignes au maximum ;
 3. une mini-progression narrative par chapitres ;
-4. la prochaine expérience sous forme de carte-couverture compacte ;
-5. un CTA principal unique.
+4. si le parcours n'est pas commencé, le CTA principal `Commencer le parcours` ;
+5. s'il est actif, un rappel compact de l'expérience courante et le CTA `Reprendre
+   l'expérience`.
 
 La description longue, les tags et la ventilation détaillée des Oméga descendent sous cette zone.
 Le label générique `Validation Autonome` disparaît de l'en-tête du parcours.
@@ -70,26 +76,30 @@ Bonne nouvelle : sa suite non plus.
 
 [ Je pressens ✓ ]—[ Je relie ● ]—[ Je prends place ○ ]
 
-PROCHAINE EXPÉRIENCE
+EXPÉRIENCE EN COURS
 ┌─────────────────────────────────────────┐
 │ Illustration                            │
 │ L'écosystème Point Zéro                 │
 │ Découvre comment les pièces commencent  │
 │ à former une constellation.             │
 │ Vidéo · 5 min · 3 Ω                     │
-│ [ Continuer le parcours ]               │
+│ [ Reprendre l'expérience ]              │
 └─────────────────────────────────────────┘
 
 4 expériences accomplies
 30 Ω gagnés · 96 Ω disponibles
 ```
 
-Sur mobile, un CTA compact peut rester fixé au-dessus de la navigation basse tant que l'action
-principale n'est pas visible :
+Le CTA ouvre toujours la **page de l'expérience**. La page parcours ne duplique ni le bloc
+d'action, ni la séquence détaillée, ni le mécanisme de reconnaissance. Elle peut annoncer la
+prochaine action en une phrase pour orienter, mais ne permet jamais de l'accomplir directement.
+
+Sur mobile, un CTA compact peut rester fixé au-dessus de la navigation basse tant que le passage
+vers l'expérience n'est pas visible :
 
 `Continuer · 5 min`
 
-Il disparaît lorsque la carte de prochaine action entre dans la zone visible afin d'éviter deux CTA
+Il disparaît lorsque le rappel de l'expérience courante entre dans la zone visible afin d'éviter deux CTA
 concurrents.
 
 ### 3.2. Progression narrative
@@ -143,7 +153,7 @@ Une carte compacte montre seulement :
 - CTA uniquement pour l'expérience qui demande l'attention.
 
 Le mode de validation n'est pas répété dans la liste. Il apparaît dans la fiche détaillée ou dans
-la formulation de la prochaine action réelle.
+la formulation du passage vers l'expérience.
 
 États visibles recommandés :
 
@@ -220,6 +230,52 @@ comme `Préparation facultative`, et non comme une condition implicite du passag
 
 La validation de présence par un facilitateur doit être nommée. La page n'annonce jamais une
 ouverture du Monde 1 sur le seul total d'Oméga.
+
+### 3.8. Frontière entre parcours et expérience
+
+La séparation est un contrat de navigation, pas seulement une variante graphique.
+
+La **page parcours** porte :
+
+- la synthèse du parcours : Monde, description, durée, nombre d'expériences, Puissance globale,
+  Omégas disponibles et Puissances dominantes ;
+- la position du Joueur dans les chapitres ;
+- les états accomplie, courante, verrouillée, optionnelle et en attente ;
+- les chapitres repliables, le seuil et le rite final ;
+- un CTA qui ouvre l'expérience pertinente.
+
+La **page expérience** porte :
+
+- le lien de retour vers le parcours et le rappel du chapitre ;
+- la promesse, les métadonnées détaillées, l'intensité `/5` et l'échelle d'effet `/5` ;
+- les Puissances mobilisées, leurs Omégas réels, leur polarité et le verbe canonique associé ;
+- la séquence éditoriale en trois gestes et l'étape en cours ;
+- le bloc d'action réel et son CTA ;
+- la manière dont le passage sera reconnu ;
+- les ressources complémentaires et l'étape suivante.
+
+Une même information peut être résumée sur la page parcours puis détaillée sur la page expérience,
+mais aucune action métier n'est dupliquée. Un CTA de parcours navigue ; seul le dispositif réel de
+l'expérience peut produire une Trace, demander une reconnaissance, valider un Challenge ou ouvrir
+une attribution d'Omégas.
+
+#### Arbitrages de migration de la page fusionnée
+
+- La voix narrative du parcours reste présente dans l'en-tête actif. Les compteurs de progression
+  l'accompagnent comme repères secondaires ; ils ne la remplacent pas.
+- L'Atelier reste visible dans le chapitre 3, avec un traitement de **rite** distinct d'une ligne
+  ordinaire. Ses Omégas sont comptés exactement une fois dans le chapitre et dans le parcours.
+- Le bandeau technique `Franchi / En cours / À venir` peut disparaître si l'en-tête actif nomme
+  explicitement le chapitre et l'expérience en cours et si le fil distingue tous les états.
+- `À propos de ce parcours` et `Ce que tu as déjà mis en mouvement` ne survivent pas comme blocs
+  autonomes lorsqu'ils dupliquent la synthèse, la progression et la ventilation déjà visibles.
+- `Mon récit de passage` reste la dernière expérience du fil. Après sa reconnaissance, le CTA de
+  clôture du parcours devient `Refermer le livre` ; avant cela, la reprise passe toujours par
+  l'expérience courante.
+- `Niveau /10` qualifie uniquement la Puissance globale du **parcours**. Une expérience affiche
+  seulement son intensité `/5` et son échelle d'effet `/5`.
+- Le titre public du bloc est `Comment ce passage sera reconnu`. À l'intérieur, `Autorité` nomme
+  la personne ou le dispositif habilité à reconnaître le passage.
 
 ## 4. Ton et microcopie
 
@@ -323,7 +379,7 @@ Le statut obligatoire ou optionnel reste porté par l'inclusion `ChallengesJourn
 
 1. raccourcir l'en-tête ;
 2. remplacer `Retour à la page d'accueil` par `Retour à la Marelle` ;
-3. afficher la prochaine action et son CTA avant la liste ;
+3. afficher l'expérience courante et son CTA de navigation avant la liste ;
 4. distinguer progression requise et Oméga ;
 5. retirer `Validation Autonome` des cartes compactes ;
 6. expliciter les états en texte ;
@@ -348,10 +404,11 @@ Le statut obligatoire ou optionnel reste porté par l'inclusion `ChallengesJourn
 
 ## 8. Critères d'acceptation du premier lot
 
-- [ ] À 390 × 844, le joueur voit le parcours, sa position et une prochaine action sans devoir
+- [ ] À 390 × 844, le joueur voit le parcours, sa position et l'accès à l'expérience courante sans devoir
       parcourir la description longue ni la ventilation des Puissances.
-- [ ] Une seule action principale est visible simultanément.
+- [ ] Une seule action principale de navigation est visible simultanément sur la page parcours.
 - [ ] La prochaine expérience est calculée depuis les règles existantes.
+- [ ] Le CTA ouvre la page expérience sans valider, reconnaître ni attribuer d'Omégas.
 - [ ] Les expériences accomplies, courantes, verrouillées, optionnelles, passées et en attente sont
       distinguables sans dépendre uniquement de la couleur ou d'une icône.
 - [ ] Le caractère optionnel du Sas est visible.

@@ -9,6 +9,32 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-22 · de Codex · Parcours et échanges M0 : canon aligné, aucune donnée éditoriale à dupliquer
+
+**Attendu :** porter la séparation parcours/expérience et conserver le repli M1+ ; mesurer les deux
+cas limites de dérivation avant d'afficher les chips.
+**Référence :** mise à jour des trois documents canoniques dans le commit Codex qui suit ce message.
+
+Le verbe demandé n'est pas celui de `sequence[]`. `sequence[].verbe` nomme le geste pédagogique ;
+le chip nomme le verbe canonique du couple Puissance + polarité (`Intuition · Ombre · Je doute`,
+`Imagination · Source · Je crée`). Le contrôle du poste fixe confirme que la polarité vient déjà du
+`derived_framework` du skill et le verbe de `config/puissances/{slug}.yml`. Je confirme cette
+lecture : **ne rien recopier dans `config/journeys/point-zero-monde-0.yml`**.
+
+Il reste seulement à vérifier côté serveur qu'aucun des 41 slots n'est privé de
+`derived_framework` et qu'aucun ne mobilise une Transcendance sans configuration. Si ces deux
+mesures passent, la demande des 41 couples tombe à zéro.
+
+Le canon Parcours est corrigé : la page parcours oriente, situe, expose les chapitres, états,
+progressions, seuil et rite ; son CTA navigue vers la page expérience. La page expérience porte
+les métadonnées détaillées, la séquence, l'action réelle, la reconnaissance, les ressources et la
+suite. Les bornes d'Omégas, chapitres repliables, expériences optionnelles et rite distinct
+survivent explicitement.
+
+Enfin, §2.5 est bien **M0 seulement**. Le repli actuel vers l'ancienne page d'Échanges au M1+ est
+le bon régime transitoire. Ne pas fabriquer de coque hybride avant le portage strict de
+`m1entry` / `m1circle`.
+
 ### 2026-08-22 · du poste fixe · Parcours M0 : ta demande à Codex peut tomber à zéro, et trois mesures ne se prennent qu'en base
 
 **Attendu :** trois mesures que je ne peux pas prendre (pas de Ruby ici), et un regard sur le §4.

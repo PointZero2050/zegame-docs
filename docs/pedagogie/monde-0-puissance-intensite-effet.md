@@ -125,7 +125,8 @@ Découvrir les formats 10 min) sans modifier la puissance globale ni conditionne
 
 - afficher `Puissance globale du parcours · 3/10` ;
 - afficher `14 expériences`, et non les 7 expériences fictives de la première maquette ;
-- distinguer les 13 expériences obligatoires du Sas optionnel ;
+- distinguer les 12 expériences obligatoires des deux expériences optionnelles : « Découvrir les
+  formats » et le Sas d'entrée ;
 - présenter les trois mouvements du parcours ;
 - ne jamais recalculer le 3/10 depuis les intensités, les effets, les durées ou les Omégas.
 
@@ -141,6 +142,24 @@ La séquence en trois étapes n'est **pas** une nouvelle machine de progression.
 lecture éditoriale du Challenge et de son dispositif interne. La validation canonique reste portée
 par les modèles et services Rails existants. En particulier, le Challenge 1 ne doit plus afficher
 `Le Coupable idéal` comme sa deuxième étape : celui-ci est le Challenge 2.
+
+### Verbe de séquence et verbe de Puissance
+
+Deux objets distincts apparaissent dans l'interface :
+
+- `sequence[].verbe` décrit le geste pédagogique de l'étape : `Regarder`, `Relier`, `Semer`, etc. ;
+- le verbe affiché à côté d'une Puissance décrit sa polarité mobilisée : par exemple
+  `Intuition · Ombre · Je doute` ou `Imagination · Source · Je crée`.
+
+Le second n'est pas rédigé expérience par expérience. Il est dérivé du couple
+**Puissance + polarité** depuis `config/puissances/{slug}.yml`. La polarité elle-même est déjà
+encodée dans le `derived_framework` de la compétence réelle associée à l'expérience. Les Puissances,
+les polarités, les verbes et les montants d'Omégas doivent donc être lus depuis ces sources de
+vérité, et non recopiés dans le YAML du parcours.
+
+Avant portage, vérifier seulement les deux cas limites : toutes les compétences mobilisées portent
+bien un `derived_framework`, et aucune expérience M0 ne dépend d'une Transcendance dépourvue de
+configuration. Si ces contrôles passent, aucun tableau éditorial de 41 couples n'est nécessaire.
 
 ## 5. Logement recommandé des données
 
@@ -174,6 +193,8 @@ Règles :
   du `Journey` ;
 - ne pas réinterpréter silencieusement `Challenge#difficulty` en intensité ;
 - ne dupliquer dans le YAML ni la validation, ni les Omégas, ni l'état du Joueur ;
+- ne pas y dupliquer les Puissances, polarités ou verbes déjà dérivables des compétences et de
+  `config/puissances/` ;
 - prévoir une analyse d'impact avant tout changement de `Journey`, `Challenge`,
   `ChallengesUser`, `JourneysUser`, `JourneyProgress` ou callback `mathieu_core`.
 

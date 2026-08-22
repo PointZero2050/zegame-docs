@@ -72,6 +72,15 @@ joueur.
 Ajout Codex — 2026-08-21, après confrontation entre l'application réelle et la maquette
 `messagerie-par-mondes-cible/?stage=m0`.
 
+**Périmètre explicite — révision Codex du 2026-08-22 : ce contrat concerne uniquement le
+Monde 0.** Les formulations « à ce stade » et « pas encore » ci-dessous décrivent ce premier
+régime de dévoilement ; elles ne retirent aucune fonction déjà accessible au Monde 1 ou au-delà.
+
+Tant que les vues cibles `m1entry` et `m1circle` ne sont pas portées, `/echanges` conserve la page
+préexistante pour les Joueurs du Monde 1 et des Mondes suivants. Ce repli transitoire est préférable
+à une coque hybride non maquettée. Le portage strict des stages M1 remplacera ensuite ce régime,
+sans modifier rétroactivement la cible M0.
+
 La vue `?stage=m0` est la **cible visuelle de `/echanges`**, pas seulement un storyboard. Le
 sélecteur de Monde de la maquette est un outil de simulation et ne doit pas être porté.
 
