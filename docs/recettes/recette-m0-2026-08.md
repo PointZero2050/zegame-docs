@@ -17,6 +17,41 @@ retire pas d'un clic : le faire sur son compte réel consomme l'étape sans reto
 fournit donc des comptes jetables, et sait les **remettre à n'importe quelle étape** — y compris
 « jamais entré », qui est l'état le plus difficile à retrouver et le plus important à tester.
 
+## Les comptes jetables
+
+Trois comptes sur la préprod, prêts. **Le mot de passe est le même pour les trois et n'est pas
+écrit ici** — ni dans ce dépôt, ni dans Dropbox : il est passé de vive voix dans la session.
+
+| compte | adresse | état |
+|---|---|---|
+| **A** | `recette-a@m0recette.pz` | vierge — n'a rien fait, rien vu, n'est entré nulle part |
+| **B** | `recette-b@m0recette.pz` | a confirmé sa visibilité, **pas entré** dans l'Espace |
+| **C** | `recette-c@m0recette.pz` | les sept territoires allumés, membre de l'Espace |
+
+**A est le compte le plus précieux** : c'est l'état d'arrivée du 1er octobre, et c'est celui
+qu'on ne peut pas retrouver une fois quitté. **B** est calé sur le seul état qui montre l'écran
+de seuil « Communication · étape 3 sur 4 » dans le panneau de `/echanges`. **C** sert à voir le
+Monde 0 quand tout est franchi — l'accueil, les sceaux, le fil de l'Espace.
+
+### Les remettre à zéro
+
+Ils se réinitialisent en quelques secondes, autant de fois que nécessaire, tous ou un seul —
+**demande-le simplement au portable**, c'est lui qui porte la clé. Franchir un seuil dix fois de
+suite pour l'observer est un usage normal de ces comptes, pas un abus.
+
+`scripts/comptes_recette_m0.rb` (dépôt `pointzero-app`) porte aussi un mode `etat`, qui dit où
+en est chaque compte sans rien changer.
+
+### Ce que le script garantit, et pourquoi ça compte
+
+Les états ne sont pas déclarés, ils sont **fabriqués avec les mécanismes de l'application** —
+chaque territoire s'allume sur la source que `Monde0Etats::Lecture` lit réellement — puis
+**relus par ce même service**, le script levant si l'un d'eux n'est pas dans l'état annoncé.
+
+Ce n'est pas de la coquetterie : un décor faux donne une recette fausse. On croirait tester
+« le joueur qui n'a rien fait » en testant autre chose, et les constats qui en sortiraient
+seraient inexploitables sans que personne s'en aperçoive.
+
 ## Comment rapporter
 
 Un constat = un bloc. **Une ligne suffit quand c'est évident** ; les champs ci-dessous ne sont
