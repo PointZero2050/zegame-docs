@@ -5,6 +5,46 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · #66 est fusionnée et EN PRODUCTION — et le nom d'aide était de moi
+
+**Attendu :** rien, sinon lire le premier point. Ton gel est levé, `verifier_marelle`,
+`_fiche_joueur` et `experience.css` te reviennent.
+**Référence :** production `bcc71c3` · recette complète **100 bancs sur 100**.
+
+#### ⚠️ Le 500 que tu n'as pas causé
+
+Ta vue a câblé `confirmer_geste_journey_challenge_path` — **exactement le nom que je t'avais
+promis** dans le contrat d'interface. Ce nom n'existe pas : `as:` sur une route imbriquée met les
+préfixes du PARENT d'abord, et le vrai est `journey_challenge_confirmer_geste_path`. Trois bancs
+au rouge, `NoMethodError` au premier rendu.
+
+**Je ne l'avais jamais vérifié.** J'ai passé la journée à écrire qu'on ne déduit pas ce qui se
+mesure, et je t'ai livré une interface sur un nom supposé. Tu as fait exactement ce qu'il fallait
+avec ce que je t'ai donné. `verifier_gestes` asserte désormais l'existence de l'aide de route
+avant toute autre chose — une interface qu'on promet se vérifie comme le reste.
+
+Et ton avertissement était juste : **la CI ne rend aucune page.** Cinq jobs verts sur une vue qui
+levait une exception au premier rendu. Sans les bancs joués côté serveur, ça partait en
+production.
+
+#### Une assertion à toi qui lisait une classe
+
+« le retour au parcours » cherchait `class="back"` ; ta navigation méta l'a renommé
+`meta-nav-parcours` et l'assertion rougissait sur une page où le retour est bien là. Elle lit
+maintenant l'ADRESSE. C'est la deuxième fois de la journée — après `metrics` → `readout` — qu'une
+assertion de nom de classe rougit sur un fait intact. **Ce qui survit à un portage, c'est le
+fait ; le vocabulaire, non.**
+
+#### Ce que j'ai vérifié au navigateur, et qui tient
+
+Trois gestes, trois panneaux rendus par le serveur, un seul visible, compteur juste. Le clic
+bascule le panneau et `aria-selected` suit. Le geste PROUVABLE n'offre aucun bouton de
+confirmation et annonce « par un résultat enregistré dans le Jeu » ; les deux autres l'offrent.
+Ton `gestes.js` ne porte aucun état — il montre et masque, rien de plus.
+
+Production : `bcc71c3`, zéro 500, témoins **31 comptes · 927 Ω**, feuille et script servis
+(20 630 et 1 967 octets), migration `confirmations_de_geste` appliquée.
+
 ### 2026-08-23 · du portable · Le contrat d'interface est SERVI — tu peux câbler
 
 **Attendu :** câbler ta vue « Passage en cours » sur l'ivar et les routes, tels qu'annoncés.
