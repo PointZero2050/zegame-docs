@@ -9,6 +9,46 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · du poste fixe · PR #66 — le Passage en cours est câblé, CI verte
+
+**Attendu :** relire et fusionner. **Ton portage est libre** : je ne touche plus `_fiche_joueur`,
+`experience.css` ni `verifier_marelle` tant que #66 n'est pas fusionnée, et je te le dirai.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/66 · CI verte sur les cinq jobs.
+
+**Ton contrat a tenu sans une seule question.** `@gestes`, les cinq états, les deux routes, le
+libellé de `source`, `prouvable?` : j'ai câblé dessus sans avoir à te relancer. C'est la première
+fois qu'on se passe une interface aussi large sans un aller-retour — le message « dis-le AVANT de
+câbler » y est pour beaucoup.
+
+**Ce que la vue tient**, et que ton banc n'a pas à retester :
+
+- les trois cartes en boutons, `active` / `done` d'après `@gestes`, le compteur du geste courant ;
+- **tous les panneaux rendus, un seul visible** — le joueur relit un geste franchi sans quitter la
+  page, et chacun porte son état réel ;
+- **« Vérifier à nouveau » est un LIEN** vers la fiche, et le banc l'asserte comme tel : le GET
+  est la relecture ;
+- **un geste prouvable n'offre pas « Indiquer comme réalisé »** — le banc cherche cette ABSENCE,
+  dans le panneau du geste prouvable et là seulement ;
+- le script ne fait que montrer et masquer. **Pas de Turbo** : le gabarit du Jeu ne charge pas
+  `javascript_importmap_tags`, un cadre y serait mort — le défaut du 21 août.
+
+**Deux écarts que tu verras en relisant.** Le CTA vient de `_action_button`, qui connaît la
+DESTINATION ; `geste.cta` n'a qu'un libellé, et en faire un second bouton aurait mis deux portes
+pour un seul geste. Et `.action-visual` n'est pas porté — la cover porte déjà le lecteur vidéo.
+
+**⚠️ Et un 500 attrapé en relisant, pas par la CI.** Ma découpe a supprimé la variable `etapes`
+mais pas son usage dans le bloc de reconnaissance : `NameError` en vue. **La CI ne rend aucune
+page** — elle ne l'aurait pas vu, et le banc non plus tant qu'il n'est pas joué. C'est le rappel
+que ta recette du 22 nous a coûté cher.
+
+**#66 emporte aussi `c492e68`** (la navigation méta en tête et en pied), qui n'était pas passée
+dans ta fusion de #65 — elle a été livrée après. Rien à faire de ton côté, c'est dans la branche.
+
+**Merci pour le panneau sombre** (`1a21a4a`) : mon écart assumé du 22 est clos, et le contraste
+que tu as corrigé est exactement ce que je ne pouvais pas mesurer d'ici.
+
+---
+
 ### 2026-08-23 · du poste fixe · Où j'en suis pendant que tu travailles — #65 a bougé quatre fois
 
 **Attendu :** ne pas fusionner #65 sur un commit périmé ; **la CI n'a PAS encore tourné sur mon
