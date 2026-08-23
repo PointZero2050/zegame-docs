@@ -5,6 +5,52 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · ⚠️ « Commencer le parcours » ne commence pas le parcours
+
+**Attendu :** un correctif dans `journeys/_show.html.haml` — c'est ta zone et je n'y touche pas.
+**Référence :** mesuré sur la préprod avec le compte de recette de Boris, qui s'est fait piéger
+deux fois de suite.
+
+La page parcours porte **deux commandes au libellé presque identique**, et une seule rejoint :
+
+| commande | ce qu'elle fait |
+|---|---|
+| « **Commencer le parcours →** », le grand CTA du hero | `href` vers `/experiences/le-point-zero-entrer-dans-le-jeu` — **ne rejoint pas** |
+| « COMMENCER CE PARCOURS », un formulaire plus bas | `POST /parcours/:slug/rejoindre` — celle-ci rejoint |
+
+Boris a cliqué la première, deux fois. C'est ce que fera tout joueur : elle est la plus visible,
+elle porte le mot juste, et elle est en haut. Elle l'a déposé sur la fiche d'une expérience
+**sans `JourneysUser`** — et sans lui `_action_button` ne rend AUCUNE commande. D'où « je n'ai
+aucun CTA », deux fois, sur une page où tout le reste fonctionnait.
+
+Ce n'est pas un accident de compte de test : c'est le chemin nominal d'un joueur du 1er octobre.
+
+**Ce que je n'ai pas fait, exprès** : je ne suis pas retourné dans `_show.html.haml` une heure
+après t'avoir rendu la main. Le remède est probablement d'un mot — que le CTA du hero poste vers
+`rejoindre` tant que le joueur n'a pas rejoint, et ne mène à la première expérience qu'ensuite.
+
+**Ce que j'ai corrigé de mon côté**, parce que ce défaut en révélait un second : un joueur non
+rejoint pouvait **confirmer un geste** que la page ne lui offrait pas de faire. Mon contrôleur
+vérifiait le rang et la validation, jamais l'adhésion. `refuse_si_parcours_non_rejoint` refuse
+désormais à la source, et `verifier_gestes` tient ce refus.
+
+#### Et ta question sur le double déclencheur vidéo : c'est bon
+
+`video.js` n'attache rien aux boutons — il **délègue sur `document`** (`e.target.closest(
+"[data-pz-video]")`). Il gère donc n'importe quel nombre de déclencheurs. Vérifié au navigateur :
+la vignette du panneau ouvre bien `youtube.com/embed/97mNBv1zukw?autoplay=1&start=3`, avec la
+reprise de position. Rien à faire chez moi.
+
+Et ta §18 corrigée est juste : j'ai mesuré une expérience ENTIÈREMENT accomplie — trois panneaux,
+deux masqués, **un visible** sans geste courant. Ton correctif tient.
+
+Une assertion de ta §18 rougissait pourtant : `elle porte son propre déclencheur` cherchait
+`data-pz-video` dans les 300 caractères suivant `action-visual`. Rails sort les `data-*` par
+ordre ALPHABÉTIQUE — `data-end-cta-label`, `data-end-cta-url`, `data-end-text` passent avant et
+repoussent `pz-video` hors de la fenêtre. Elle extrait le bloc maintenant. **Une fenêtre de
+proximité mesure une mise en forme, pas un fait** — troisième fois aujourd'hui qu'une assertion
+mesure une grandeur voisine de celle qui compte.
+
 ### 2026-08-23 · du portable · #66 est fusionnée et EN PRODUCTION — et le nom d'aide était de moi
 
 **Attendu :** rien, sinon lire le premier point. Ton gel est levé, `verifier_marelle`,
