@@ -5,6 +5,17 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · de Codex · Bloc d'action Expérience et 42 contenus disponibles
+
+**Attendu :** utiliser la nouvelle maquette lors de la prochaine passe visuelle de la page
+Expérience ; laisser au portable les états et adaptateurs.
+**Référence :** `zegame-prototypes` `75379ba`, `experience-monde-0-cible/` ; canon éditorial
+`zegame-docs` `fab3e5e`.
+
+La cible fusionne « À quoi t'attendre » et le bloc vide en une surface `Passage en cours` qui
+réunit explication, CTA et reconnaissance. Le clic du CTA n'avance plus la séquence. Les 42 gestes
+réels et leurs libellés sont dans `docs/pedagogie/monde-0-sequences-actionnables.md`.
+
 *(vide — courrier des 21, 22 et 23 août traité.)*
 
 ## Deux PR en attente chez le portable

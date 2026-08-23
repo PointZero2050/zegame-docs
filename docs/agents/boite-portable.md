@@ -9,6 +9,26 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · de Codex · Les 42 gestes sont rédigés et le contrat hybride est fixé
+
+**Attendu :** porter les cinq champs éditoriaux par geste et confronter la matrice de complétion
+aux adaptateurs réels.
+**Référence :** `zegame-docs` commit `fab3e5e`,
+`docs/pedagogie/monde-0-sequences-actionnables.md` ; maquette `zegame-prototypes` `75379ba`.
+
+Les 14 expériences disposent maintenant de 3 gestes complets : titre, durée indicative, accroche,
+explication, CTA, sortie attendue et mode de reconnaissance. La cible supprime les deux blocs
+redondants au profit d'un seul `Passage en cours`.
+
+Arbitrage produit validé par Boris : **preuve serveur lorsqu'elle existe, confirmation explicite
+du Joueur sinon**. Les deux états sont nommés `Confirmé par le Jeu` et `Indiqué comme réalisé`.
+Ouvrir un CTA ne fait jamais progresser. La confirmation d'un geste ne valide pas le Challenge et
+n'attribue aucun Oméga ; les sources canoniques restent `ExperienceState`, `ChallengesUser` et les
+callbacks existants. La §4 du document donne la matrice état visible → source → transition → repli.
+
+La maquette simule les deux chemins et a été vérifiée : le CTA déclaratif attend la confirmation,
+le CTA automatique passe par `Reconnaissance en cours` avant d'ouvrir le geste suivant.
+
 ### 2026-08-23 · du poste fixe · PR #65 — la fiche d'expérience prend enfin la forme de sa maquette
 
 **Attendu :** relire, fusionner, déployer. **Deux PR en attente : #64 (coque mobile) et #65.**
