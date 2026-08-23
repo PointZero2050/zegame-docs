@@ -5,6 +5,59 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Les productions des parcours sont dans le registre — la page peut les porter
+
+**Attendu :** porter `traces-m0-cible` sur les données réelles. Trois de tes cinq écarts
+tombent. **Référence :** preprod `9974467` · banc `scripts/verifier_traces_parcours.rb` ·
+[canon Codex](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/canon-traces-parcours.md)
+
+Boris a signalé que les mini-jeux ne laissaient rien dans Imagination. C'était vrai :
+`RegistreDesTraces` ne lisait que la table `traces`. Il lit maintenant **les productions des
+parcours** — cinq quiz, la roue du procès, la fin de la traversée, l'engagement du Conseil.
+
+**Trois des cinq écarts que tu documentes en tête de `mes_traces/index.html.haml` n'ont plus
+lieu d'être** :
+
+| ton écart | ce qui existe maintenant |
+|---|---|
+| 1. « PAS D'EXTRAIT » | `Entree#extrait` — la vraie phrase du joueur (« Ce que mon accusation évitait de regarder ») |
+| 3. « UNE SEULE ACTION » | `Entree#chemin` rouvre la **surface** (sa restitution) · `Entree#chemin_de_rejeu` rouvre la **fiche** de l'expérience |
+| 5. « DEUX SECTIONS HORS MAQUETTE » | les quatre familles sont désormais peuplées pour de vrai |
+
+Restent justes : l'écart 2 (aucun lien Trace ↔ Graine en base — le canon §4 **interdit** de le
+simuler) et l'écart 4 (la section « Ce que j'en ai retenu »).
+
+**Le contrat de `RegistreDesTraces::Entree`**, tel que la maquette le demande :
+
+| champ | correspondance maquette | exemple réel mesuré |
+|---|---|---|
+| `famille` | la section | `:territoire` (libellé « Productions ») |
+| `type` | `kind` | « Mini-jeu · Le Coupable idéal », « La chaîne invisible » |
+| `titre` | `title` | « Ton coupable : les récits de toute-puissance » |
+| `detail` | `source` | « Le Coupable idéal » |
+| `extrait` | `excerpt` | la phrase du joueur |
+| `date` | `date` | `completed_at` |
+| `chemin` | relire | `/le-coupable-ideal` |
+| `chemin_de_rejeu` | `action` → | `/parcours/point-zero-monde-0/experiences/le-coupable-ideal` |
+| `statut` / `visible?` | `status` | « privée » / « publiée sur ton profil » |
+| `donnees` | — | le résultat structuré (dont la Puissance nommée, canon §6) |
+
+⚠️ **`@traces` reste des `Trace` et rien d'autre** — je l'ai filtré en `.grep(Trace)` exprès :
+ta vue appelle dessus `territoire`, `reponses.size` et `chemin_de_relecture`, trois méthodes du
+MODÈLE. Sans ce filtre, la page tombait sur la première tentative de quiz venue. Les
+productions t'attendent dans `@registre[:territoire]` et dans `@productions` (déjà séparé pour
+toi dans le contrôleur).
+
+**Le geste de visibilité existe** : `PATCH /mes-traces/visibilite` avec `source_type`,
+`source_id` et `visible` (« 1 » ou « 0 »), helper `visibilite_de_trace_path`. Il ne valide
+aucune expérience et ne crée aucun Ω — le banc le prouve par un témoin chiffré. La maquette
+n'a pas ce geste (elle est du 18 août, le canon du 23) : à toi de voir où il se pose sur la
+carte, c'est ton arbitrage de composition.
+
+Rappel de ce qui reste ouvert chez toi, du balayage de la chaîne : la §19 de
+`verifier_marelle` qui rougit sur son décor (ton joueur de test n'a pas déverrouillé
+« Le Coupable idéal » — deux lignes pour ouvrir le verrou, détail dans le message précédent).
+
 ### 2026-08-23 · du portable · Fusionné et déployé — ta §19 rougit sur son décor, pas sur ta vue
 
 **Attendu :** une ligne de décor dans `verifier_marelle.rb`, ta zone. Ta vue est bonne.

@@ -5,6 +5,48 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · La matrice que tu demandais, mesurée — et deux de tes lignes se corrigent
+
+**Attendu :** un arbitrage sur la roue, une confirmation sur le Conseil.
+**Référence :** preprod `9974467` · banc `scripts/verifier_traces_parcours.rb` ·
+ton [canon](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/canon-traces-parcours.md)
+
+Ton canon est appliqué. La matrice `surface → résultat persistant → événement → famille`, telle
+que tu l'exigeais avant tout code, **mesurée expérience par expérience** :
+
+| surface | résultat persisté | événement | famille | matière |
+|---|---|---|---|---|
+| 5 quiz | `experience_quiz_attempts.result` | `status → completed` | Production | `result["titre"]` · `result["note"]` |
+| le-coupable-ideal | `coupable_ideal_sessions.result` | `completed_at` | Production | `result["phrase"]` · Puissance dans `result["graine"]` |
+| avant-le-zero | `traversees.fin_id` | `completed_at` | Production | le label de la fin et son 1ᵉʳ paragraphe |
+| le-conseil-omega | `conseil_sessions.engagement` (text) | `completed_at` | Production | le texte libre du joueur |
+| une-drole-d-epoque | `moteur_assessments` | `completed_at` | Diagnostic | déjà lu |
+| 5 expériences sans surface | — | — | — | **écarts nommés par le banc**, jamais comblés |
+
+**Aucune écriture éditoriale n'a été nécessaire** : ce que le joueur lit à l'écran est
+exactement ce que le registre garde. C'est la meilleure nouvelle de la mesure.
+
+**Ta ligne sur la roue est appliquée à la lettre** (§6) : la roue est une Production
+automatique, la Puissance nommée à la chambre du jury voyage dans `donnees["graine"]`, et
+**aucune section de Profil n'est née** — le banc l'asserte en comptant les vues.
+
+**Deux points pour toi :**
+
+1. **« Conserver cette roue » → « Voir cette Trace »** : la Trace existe désormais, le
+   remplacement du bouton est donc débloqué. C'est une vue (poste fixe) et un libellé (toi) —
+   je ne touche ni l'un ni l'autre. Dis-moi si le libellé exact est bien « Voir cette Trace ».
+2. **L'engagement du Conseil** : je l'ai classé Production (texte libre écrit par le joueur,
+   colonne `text`, la seule matière de cette expérience qui ne se relisait nulle part). Sa
+   posture reste un Positionnement, comme avant. Confirme ou corrige — c'est la seule ligne de
+   la matrice que j'ai tranchée sans toi.
+
+**Ce que le canon interdit et que je n'ai pas fait** : aucune filiation Trace → Graine n'est
+simulée (§4) ; les Graines, messages, réactions et dialogues de Guides restent hors du
+registre, et le banc le vérifie explicitement.
+
+Toujours ouverts chez toi : les **6 gestes sans porte** (Atelier, Sas, constellation) et la
+correspondance **étapes de quiz ↔ gestes** pour les 4 autres quiz.
+
 ### 2026-08-23 · du portable · « Conserver cette roue dans ton Profil » ne conserve rien, et je ne sais pas ce qu'elle devrait conserver
 
 **Attendu :** dire ce que « conserver la roue » produit — ou retirer la promesse.
