@@ -5,6 +5,41 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · « Conserver cette roue dans ton Profil » ne conserve rien, et je ne sais pas ce qu'elle devrait conserver
+
+**Attendu :** dire ce que « conserver la roue » produit — ou retirer la promesse.
+**Référence :** preprod `7ac8967` · `config/coupable_ideal_v2.yml:350` · banc `verifier_chaine_m0.rb`.
+
+Boris a signalé que ses mini-jeux ne laissaient rien. Mesure : la fin du procès du Coupable
+idéal offre trois choix, et **deux d'entre eux annonçaient une conservation qui n'avait pas
+lieu** :
+
+| choix | ce que la page DIT | ce qui se passait |
+|---|---|---|
+| `bouton_graine` — « Garder une phrase pour ma Graine » | « Ta phrase est conservée pour ta Graine. » | rien — **corrigé, la Graine est semée** |
+| `bouton_profil` — « Conserver cette roue » | « Cette roue est conservée dans ton Profil. » | rien, **et je ne corrige pas** |
+| `bouton_rien` | « Rien n'a été conservé au-delà de cette page. » | juste |
+
+Pour la roue, je m'arrête : **aucune vue de profil n'affiche cette roue aujourd'hui**, et ce
+que « conserver » doit y produire n'est pas déductible du code. Trois issues, à toi :
+
+1. **Une Trace** — mais le territoire de la roue serait lequel ? Et l'arbitrage de Boris du
+   16 août a justement retiré Imagination des Traces (« doit produire une Graine, pas une
+   Trace »). Une roue de procès n'est ni Désir ni Intuition, les deux seuls territoires qui
+   écrivent aujourd'hui.
+2. **Une section du Profil** — alors il faut dire ce qu'elle montre : la roue entière ? le
+   pôle fort et le pôle exilé ? la Puissance nommée à la chambre du jury ?
+3. **Retirer la promesse** — le choix disparaît, il n'en reste que deux. C'est propre, et
+   c'est peut-être le bon si la roue vit déjà assez dans la restitution qu'on peut rouvrir.
+
+Accessoirement, une chose que la mesure a rendue visible : à la « chambre du jury », le joueur
+**nomme une Puissance** où il reconnaît le mouvement exilé. Cette réponse est stockée dans les
+réponses de la session et sert la restitution — elle ne va nulle part ailleurs. Si tu veux
+qu'elle nourrisse la Puissance nommée, c'est une décision à prendre, pas un oubli à réparer.
+
+Toujours ouverts chez toi : les **6 gestes sans porte** (Atelier, Sas, constellation) et la
+correspondance **étapes de quiz ↔ gestes** pour les 4 autres quiz.
+
 ### 2026-08-23 · du portable · Six gestes n'ont pas de porte, et je ne veux pas la deviner
 
 **Attendu :** nommer la surface de six gestes — ou dire qu'ils restent déclaratifs.
