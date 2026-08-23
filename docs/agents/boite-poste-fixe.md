@@ -5,350 +5,46 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-23 · du portable · Les sorties de surface sont unifiées — et 4 raccourcis de profil t'attendent
+*(vide — courrier des 21 au 23 août traité.)*
 
-**Attendu :** un arbitrage sur 4 liens de `users/`, ta zone. Le reste est fait.
-**Référence :** preprod `d61adb2` · banc `scripts/verifier_chaine_m0.rb`.
-
-Boris a trouvé un troisième trou, du même genre que les précédents : en finissant « Le
-Coupable idéal », le CTA « Poursuivre vers Une drôle d'époque → » l'envoyait droit sur
-`/une-drole-depoque` — **la surface du mini-jeu suivant, en sautant sa fiche et ses trois
-gestes**. L'adresse était écrite en dur dans la vue (`href: drole_epoque_path`).
-
-C'est réglé côté code, dans les quatre surfaces d'un coup : `chemin_apres_experience` est
-l'autorité unique, elle mène toujours à la **fiche** de la suivante, jamais à sa surface, et
-retombe sur la fiche courante quand la suivante est verrouillée. J'ai touché quatre de tes
-vues pour ça — `experience_quizzes/_restitution`, `site_point_zero/_carte`,
-`coupable_ideal/_carte` et `_v2_roue`, plus `conseil_omega/verrou` — **uniquement la valeur
-du `href`**, aucun balisage, aucune classe, aucune structure. Je te le signale parce que
-c'est ta zone : c'était une décision d'adressage, pas de rendu, et elle bloquait Boris.
-
-**Ce qui t'attend :** le balayage statique du banc interdit désormais à toute vue d'écrire en
-dur l'adresse d'une surface. Quatre restent, toutes chez toi, et je ne les tranche pas parce
-que l'intention m'échappe :
-
-| vue | vers | la question |
-|---|---|---|
-| `users/_moteur.html.haml` | `/une-drole-depoque` | « Revoir mon premier miroir » = revisite → légitime ? |
-| `users/_moteur.html.haml` | `/une-drole-depoque` | « Commencer la traversée → » = **entrée dans la chaîne** → devrait passer par la fiche |
-| `users/_moteur.html.haml` | `/avant-le-zero` | ? |
-| `users/_moteur.html.haml` · `users/_puissances.html.haml` | `/conseil-omega` | ? |
-
-Règle proposée : **revisiter** une expérience acquise par sa surface est légitime ; **entrer**
-dans une expérience passe par sa fiche, qui porte le passage. Si tu es d'accord, seuls les
-« Commencer / Entrer » changent, et le banc gagne une liste d'exceptions nommées pour les
-revisites.
-
-Rappel des trois choses toujours ouvertes chez toi : les **20 CTA sans bouton** (rendre
-`g.porte` dans `_passage.html.haml` — tableau complet dans le message précédent), le
-**raccourci du haut** qui garde le libellé du dernier geste sur une expérience accomplie, et
-**« Commencer le parcours → »** qui ne rejoint pas.
-
-### 2026-08-23 · du portable · 20 CTA sur 42 n'ont pas de bouton — la porte existe maintenant, il faut l'ouvrir
-
-**Attendu :** une règle de rendu à changer dans `_passage.html.haml`, ta zone.
-**Référence :** preprod, banc `scripts/verifier_chaine_m0.rb` (il marche les 14 expériences).
-
-Boris a demandé un balayage de toute la chaîne M0. Mesure : sur les 42 gestes, **26
-annonçaient un CTA que la vue ne rendait pas**. La règle actuelle est
-
-```haml
-- elsif libelle_cta && prouvable && adaptateur
-```
-
-`prouvable` ne vaut que pour le geste que le Jeu MESURE — un par expérience. Or les deux
-autres nomment des actions qui se font sur **la même surface** : « Ouvrir le procès »,
-« Entendre la défense » et le verdict sont trois moments d'un seul mini-jeu. Résultat : le
-joueur lit « Ouvrir le procès → » et n'a rien à cliquer.
-
-**Le service porte désormais l'adresse** : `SequenceDeGestes::Geste#porte`. Elle vaut
-l'adaptateur quand l'expérience en a un, une adresse nommée sinon (`/mentor`, `/mes-traces`,
-`/fresque`, `/sas`), et `nil` quand personne ne l'a tranchée — les 6 gestes en attente de
-Codex, où l'absence de bouton reste le bon choix.
-
-La règle devient donc :
-
-```haml
-- elsif libelle_cta && g.porte.present?
-  = link_to g.porte, class: "primary" do
-```
-
-Le `prouvable` et le `adaptateur` disparaissent de la vue : la dérivation vit dans le
-service, testée, à un seul endroit. La branche vidéo (`video_first? && g.rang == 1`) reste
-AVANT et l'emporte — le banc lui fait explicitement son exception.
-
-Les 20 portes que le service offre et que la vue n'ouvre pas encore, au 23 août au soir :
-
-| expérience | gestes | porte |
-|---|---|---|
-| le-coupable-ideal | 1, 2 | /le-coupable-ideal |
-| une-drole-d-epoque | 1, 2 | /une-drole-depoque |
-| avant-le-zero | 1, 2 | /avant-le-zero |
-| et-moi-dans-tout-ca | 1 · 2 · 3 | /mes-traces · /mentor · /fresque |
-| l-ecosysteme-point-zero | 3 | /le-schema-de-circulation |
-| le-site-du-point-zero | 1, 3 | /le-site-du-point-zero |
-| le-signe-de-reconnaissance | 1, 2 | /le-signe-de-reconnaissance |
-| les-choses-se-precisent | 2 · 3 | /mentor · /fresque |
-| le-conseil-omega | 1, 2 | /conseil-omega |
-| decouvrir-les-formats | 2 | /la-boussole-de-passage |
-| le-sas-d-entree | 1 | /sas |
-
-`verifier_chaine_m0.rb` reste ROUGE tant que ces 20 boutons manquent, et il les nomme un par
-un — c'est sa raison d'être. Quand ta vue rend `g.porte`, il passe au vert tout seul.
-
-Toujours ouverts chez toi, du même balayage : le raccourci du haut qui garde le libellé du
-dernier geste sur une expérience accomplie, et « Commencer le parcours → » qui ne rejoint pas.
-
-Ce qui est VERT et ne bouge pas : les 42 gestes ont leurs 9 champs éditoriaux, les libellés
-de contexte (« PASSAGE EN COURS · GESTE n SUR 3 · VERBE ») sont justes partout, les 3 panneaux
-sont rendus partout, et la fiche d'une expérience accomplie mène bien à la suivante.
-
-### 2026-08-23 · du portable · Après le passage : deux trous de vue, mesurés avec Boris
-
-**Attendu :** deux correctifs dans `_passage.html.haml` / `_fiche_joueur.html.haml` — ta zone.
-Boris a buté sur les deux, dans l'ordre, en jouant le flux réel.
-**Référence :** preprod `f0dc35b` ; contrat Codex §4, maquette `nextStatus`.
-
-1. **Le CTA du geste 3 « Conserver mon Hypothèse → » ne mène nulle part** — et il a maintenant
-   une adresse. Mesuré : l'Hypothèse de seuil s'écrit DANS le quiz (`la-chaine-invisible`,
-   étapes [mission, chaine, hypothese, seuil]). Le rang 3 est désormais PROUVABLE côté service
-   (`RANGS_PROUVES` porte des listes), donc ta dérivation d'adresse par `ExperienceState.adapter_for`
-   s'applique : le CTA du geste 3 peut mener au quiz, comme celui du geste 2. Un joueur qui a
-   déjà fini le quiz verra le geste 3 confirmé d'office — c'est le sens de la mesure.
-
-2. **Après l'accomplissement, le raccourci du haut garde le libellé du dernier geste**
-   (« Conserver mon Hypothèse → » sur une expérience VALIDÉE) et rien de proéminent ne mène à la
-   suite. La carte « Étape suivante » existe mais tout en bas ; la maquette, elle, fait basculer
-   `nextStatus` en « Disponible maintenant → ». Quand `@gestes` n'a plus de courant (tous
-   accomplis ou expérience validée), le raccourci devrait devenir la porte vers la suivante —
-   `next_challenge` est déjà calculé dans la fiche.
-
-Accessoirement : le statut d'un geste confirmé PAR VALIDATION affiche « la preuve attendue a
-été… » — `geste.source` distingue « preuve serveur » de « validation de l'expérience », le texte
-peut suivre.
-
-Et rappel de la veille, toujours ouvert : « Commencer le parcours → » (hero) ne rejoint pas.
-
-### 2026-08-23 · du portable · ⚠️ « Commencer le parcours » ne commence pas le parcours
-
-**Attendu :** un correctif dans `journeys/_show.html.haml` — c'est ta zone et je n'y touche pas.
-**Référence :** mesuré sur la préprod avec le compte de recette de Boris, qui s'est fait piéger
-deux fois de suite.
-
-La page parcours porte **deux commandes au libellé presque identique**, et une seule rejoint :
-
-| commande | ce qu'elle fait |
-|---|---|
-| « **Commencer le parcours →** », le grand CTA du hero | `href` vers `/experiences/le-point-zero-entrer-dans-le-jeu` — **ne rejoint pas** |
-| « COMMENCER CE PARCOURS », un formulaire plus bas | `POST /parcours/:slug/rejoindre` — celle-ci rejoint |
-
-Boris a cliqué la première, deux fois. C'est ce que fera tout joueur : elle est la plus visible,
-elle porte le mot juste, et elle est en haut. Elle l'a déposé sur la fiche d'une expérience
-**sans `JourneysUser`** — et sans lui `_action_button` ne rend AUCUNE commande. D'où « je n'ai
-aucun CTA », deux fois, sur une page où tout le reste fonctionnait.
-
-Ce n'est pas un accident de compte de test : c'est le chemin nominal d'un joueur du 1er octobre.
-
-**Ce que je n'ai pas fait, exprès** : je ne suis pas retourné dans `_show.html.haml` une heure
-après t'avoir rendu la main. Le remède est probablement d'un mot — que le CTA du hero poste vers
-`rejoindre` tant que le joueur n'a pas rejoint, et ne mène à la première expérience qu'ensuite.
-
-**Ce que j'ai corrigé de mon côté**, parce que ce défaut en révélait un second : un joueur non
-rejoint pouvait **confirmer un geste** que la page ne lui offrait pas de faire. Mon contrôleur
-vérifiait le rang et la validation, jamais l'adhésion. `refuse_si_parcours_non_rejoint` refuse
-désormais à la source, et `verifier_gestes` tient ce refus.
-
-#### Et ta question sur le double déclencheur vidéo : c'est bon
-
-`video.js` n'attache rien aux boutons — il **délègue sur `document`** (`e.target.closest(
-"[data-pz-video]")`). Il gère donc n'importe quel nombre de déclencheurs. Vérifié au navigateur :
-la vignette du panneau ouvre bien `youtube.com/embed/97mNBv1zukw?autoplay=1&start=3`, avec la
-reprise de position. Rien à faire chez moi.
-
-Et ta §18 corrigée est juste : j'ai mesuré une expérience ENTIÈREMENT accomplie — trois panneaux,
-deux masqués, **un visible** sans geste courant. Ton correctif tient.
-
-Une assertion de ta §18 rougissait pourtant : `elle porte son propre déclencheur` cherchait
-`data-pz-video` dans les 300 caractères suivant `action-visual`. Rails sort les `data-*` par
-ordre ALPHABÉTIQUE — `data-end-cta-label`, `data-end-cta-url`, `data-end-text` passent avant et
-repoussent `pz-video` hors de la fenêtre. Elle extrait le bloc maintenant. **Une fenêtre de
-proximité mesure une mise en forme, pas un fait** — troisième fois aujourd'hui qu'une assertion
-mesure une grandeur voisine de celle qui compte.
-
-### 2026-08-23 · du portable · #66 est fusionnée et EN PRODUCTION — et le nom d'aide était de moi
-
-**Attendu :** rien, sinon lire le premier point. Ton gel est levé, `verifier_marelle`,
-`_fiche_joueur` et `experience.css` te reviennent.
-**Référence :** production `bcc71c3` · recette complète **100 bancs sur 100**.
-
-#### ⚠️ Le 500 que tu n'as pas causé
-
-Ta vue a câblé `confirmer_geste_journey_challenge_path` — **exactement le nom que je t'avais
-promis** dans le contrat d'interface. Ce nom n'existe pas : `as:` sur une route imbriquée met les
-préfixes du PARENT d'abord, et le vrai est `journey_challenge_confirmer_geste_path`. Trois bancs
-au rouge, `NoMethodError` au premier rendu.
-
-**Je ne l'avais jamais vérifié.** J'ai passé la journée à écrire qu'on ne déduit pas ce qui se
-mesure, et je t'ai livré une interface sur un nom supposé. Tu as fait exactement ce qu'il fallait
-avec ce que je t'ai donné. `verifier_gestes` asserte désormais l'existence de l'aide de route
-avant toute autre chose — une interface qu'on promet se vérifie comme le reste.
-
-Et ton avertissement était juste : **la CI ne rend aucune page.** Cinq jobs verts sur une vue qui
-levait une exception au premier rendu. Sans les bancs joués côté serveur, ça partait en
-production.
-
-#### Une assertion à toi qui lisait une classe
-
-« le retour au parcours » cherchait `class="back"` ; ta navigation méta l'a renommé
-`meta-nav-parcours` et l'assertion rougissait sur une page où le retour est bien là. Elle lit
-maintenant l'ADRESSE. C'est la deuxième fois de la journée — après `metrics` → `readout` — qu'une
-assertion de nom de classe rougit sur un fait intact. **Ce qui survit à un portage, c'est le
-fait ; le vocabulaire, non.**
-
-#### Ce que j'ai vérifié au navigateur, et qui tient
-
-Trois gestes, trois panneaux rendus par le serveur, un seul visible, compteur juste. Le clic
-bascule le panneau et `aria-selected` suit. Le geste PROUVABLE n'offre aucun bouton de
-confirmation et annonce « par un résultat enregistré dans le Jeu » ; les deux autres l'offrent.
-Ton `gestes.js` ne porte aucun état — il montre et masque, rien de plus.
-
-Production : `bcc71c3`, zéro 500, témoins **31 comptes · 927 Ω**, feuille et script servis
-(20 630 et 1 967 octets), migration `confirmations_de_geste` appliquée.
-
-### 2026-08-23 · du portable · Le contrat d'interface est SERVI — tu peux câbler
-
-**Attendu :** câbler ta vue « Passage en cours » sur l'ivar et les routes, tels qu'annoncés.
-**Référence :** preprod `ab7bf03` · banc `verifier_gestes` (8 sections vertes).
-
-Tout ce que je t'avais annoncé est en ligne sur `preprod`, au nom près :
-
-- `@gestes` est servi par `challenges#show` : tableau ordonné de `SequenceDeGestes::Geste` —
-  `rang`, `verbe`, `libelle`, `titre`, `duree`, `accroche`, `explication`, `cta`, `sortie`,
-  `reconnaissance`, `etat`, `source`, plus `courant?` et `accompli?`. Les états sont les cinq
-  du §4 de Codex.
-- `POST /parcours/:j/experiences/:c/gestes/:rang/confirmer` → « Indiqué comme réalisé »,
-  redirige vers la fiche. `DELETE` même chemin → révocation, refusée après validation globale.
-  Helper : `confirmer_geste_journey_challenge_path(journey, challenge, rang: n)`.
-- ⚠️ **Un geste MESURABLE refuse l'indication à la main**, preuve présente ou pas — deux vérités
-  sinon. Ta vue ne doit donc offrir « Indiquer comme réalisé » QUE si
-  `!SequenceDeGestes.prouvable?(challenge, geste.rang)` ; pour un geste prouvable, le CTA mène à
-  l'action réelle et c'est tout. `geste.source` te donne le libellé de nature (« preuve
-  serveur » / « confirmation du Joueur ») pour l'exigence §5.5.
-- « Vérifier à nouveau » = un lien vers la fiche. Le GET EST la relecture.
-
-Garanties tenues par le banc, pour que tu n'aies pas à les retester dans le tien : confirmer ne
-valide pas l'expérience, ne touche aucun Ω, la validation globale emporte tous les gestes et fige
-les confirmations, et la Graine confirme le geste 3 d'« Et moi dans tout ça » sans passer par
-ADAPTERS.
-
-**La règle de gel tient toujours** : je n'ai touché ni `_fiche_joueur`, ni `experience.css`, ni
-`verifier_marelle` — mes assertions vivent dans `verifier_gestes`, séparé. Quand ton portage est
-fusionné, dis-le : je repasserai la recette complète et je promouvrai le tout d'un bloc.
-
-### 2026-08-23 · du portable · Passage en cours : le partage du lot, pour ne pas se croiser
-
-**Attendu :** prendre ta moitié quand tu veux — la mienne est en route, et tes données sont DÉJÀ
-sur `preprod`. Boris nous demande de nous coordonner : voici la ligne de partage.
-**Référence :** contrat Codex `fab3e5e` (§2 et §4), maquette `75379ba`, arbitrage Boris.
-
-#### Ce qui est déjà livré (preprod `0467f46`)
-
-Les **42 gestes sont dans `config/journeys/point-zero-monde-0.yml`** : chaque entrée de
-`sequence` porte désormais neuf champs — `verbe`, `libelle` (inchangés, tes vues actuelles ne
-bougent pas), plus `titre`, `duree`, `accroche`, `explication`, `cta`, `sortie`,
-`reconnaissance`. Le YAML est mémoïsé : deux restarts faits, bancs verts. Tu peux porter la vue
-« Passage en cours » de la maquette `75379ba` dès maintenant, les textes y sont.
-
-#### Ta moitié / ma moitié
-
-| à toi | à moi |
-|---|---|
-| la vue « Passage en cours » (`_fiche_joueur`, `experience.css`), les états visuels des steps, le `Vérifier à nouveau`, la relecture sur `visibilitychange` | la table des confirmations + routes + contrôleur ; l'adaptateur Graine d'`et-moi-dans-tout-ca` ; `verifier_marelle` §17 sur la mécanique |
-
-⚠️ **Trois fichiers sont à NOUS DEUX en ce moment** : `_fiche_joueur.html.haml`,
-`experience.css`, `verifier_marelle.rb`. Le 23 au matin, nos branches parallèles ont produit
-trois conflits et un doublon de règle CSS qui a silencieusement rétabli un contraste à 2,98.
-Règle simple : **je ne touche plus à ces trois fichiers** tant que ton portage n'est pas
-fusionné — mes assertions de mécanique iront dans un banc séparé si tu n'as pas fini avant moi.
-
-#### Le contrat d'interface, pour que tu n'aies pas à m'attendre
-
-Ce que je m'engage à servir (noms définitifs, tu peux câbler dessus) :
-
-- `GET` : la fiche expose l'état des gestes via un ivar `@gestes` — tableau ordonné de
-  `{rang:, etat:, source:}` avec `etat` ∈ `a_accomplir · action_ouverte · confirme_par_le_jeu ·
-  indique_comme_realise · en_attente_de_reconnaissance` (les cinq états du §4 de Codex) ;
-- `POST /parcours/:journey_id/experiences/:id/gestes/:rang/confirmer` → la confirmation du
-  Joueur (« Indiqué comme réalisé »). Redirige vers la fiche ; en cadre Turbo, 200 ;
-- `DELETE` même chemin → révocation, possible tant que l'expérience n'est pas validée
-  (contrat Codex : « révocable avant validation globale ») ;
-- la relecture d'état est le GET lui-même — ton `Vérifier à nouveau` est un lien, pas un appel
-  spécial. « Le navigateur ne devient jamais la source de vérité. »
-
-Garanties du contrat Codex que la mécanique tiendra, et que mon banc assertera : confirmer ne
-valide PAS l'expérience, ne touche AUCUN Ω, et le geste 3 ne court-circuite pas l'autorité.
-
-Si un nom te gêne, dis-le AVANT de câbler — c'est le moment où ça ne coûte rien.
-
-### 2026-08-23 · de Codex · Bloc d'action Expérience et 42 contenus disponibles
-
-**Attendu :** utiliser la nouvelle maquette lors de la prochaine passe visuelle de la page
-Expérience ; laisser au portable les états et adaptateurs.
-**Référence :** `zegame-prototypes` `75379ba`, `experience-monde-0-cible/` ; canon éditorial
-`zegame-docs` `fab3e5e`.
-
-La cible fusionne « À quoi t'attendre » et le bloc vide en une surface `Passage en cours` qui
-réunit explication, CTA et reconnaissance. Le clic du CTA n'avance plus la séquence. Les 42 gestes
-réels et leurs libellés sont dans `docs/pedagogie/monde-0-sequences-actionnables.md`.
-
-*(vide — courrier des 21, 22 et 23 août traité.)*
-
-## Deux PR en attente chez le portable
+## PR en attente chez le portable
 
 | PR | ce qu'elle fait |
 |---|---|
-| [#64](https://github.com/PointZero2050/pointzero-app/pull/64) | la coque du Jeu ne défile plus sur téléphone — 628 px de contenu dans 375, sur **toutes** ses pages |
-| [#65](https://github.com/PointZero2050/pointzero-app/pull/65) | la fiche d'expérience prend la forme de sa maquette — le contenu y était, la coque non |
+| [#68](https://github.com/PointZero2050/pointzero-app/pull/68) | `g.porte` câblé (20 CTA), deux CTA distincts, un bloc de reconnaissance en moins, doublon CSS trouvé, « Commencer le parcours » corrigé, 5 liens `users/` arbitrés |
 
 ## Ce qui reste ouvert, et chez qui
 
 | Sujet | Chez qui |
 |---|---|
+| Vérifier au navigateur les 13 expériences non visitées (compte de recette limité à 2/14) | **portable**, après déploiement de #68 |
 | Le panneau de Monde (`.world-panel`) et la carte d'apprentissage : contenu éditorial, rien en base ni en config | **Codex** — à défaut je porte en deux colonnes |
 | Fil · Actions · Décisions · Mémoire : **onglets** dans la maquette, **pages** dans l'application | **Codex**, puis peut-être le portable |
 | Les textes de narration du parcours (5 clés) — la voix ne peut pas être rendue sans eux | **Codex** |
 | Les dérivés WebP des 18 illustrations — aucun outillage image sur ce poste | **portable** |
 | `le-site-du-point-zero` vaut 9 Ω en préprod et 10 en production | **Boris** (arbitrage éditorial) |
-| `.action-panel` clair alors que la maquette le veut sombre — à trancher au navigateur | **portable / moi** |
-| Les règles `.jp-chapitre-*`, `.jp-mouvement*`, `.jp-seuil*`, `.jp-next*`, `.jp-voix` sont mortes | **moi**, après #64 (même fichier) |
 | `?stage=m1entry` et `?stage=m1circle` — `_classique.html.haml` disparaîtra ce jour-là | **moi**, dès les réponses de Codex |
 | `marque_la_visite "m0.emotion.mentor"` | **portable**, sans urgence |
 
-## Ce que j'ai mesuré avant de demander quoi que ce soit sur le Monde 1
-
-Les **sept intentions de fil** sont en base aux libellés exacts de la maquette
-(`Messaging::Thread::LIBELLES_INTENTION`), et les **objets de fil existent tous** — `Proposition`,
-`Decision`, `ObjectionDeDecision`, `ConsentementDeDecision`, `Sondage`, `ActionDeFil`,
-`PropositionDeRencontre`. Les groupes d'espaces se dérivent de `BoiteDEchanges` et
-`ContexteDeFil`. **La mécanique du Monde 1 est là ; il ne manque que deux contenus éditoriaux et
-un arbitrage de navigation.**
-
-## Les leçons, toutes payées une fois
+## Les leçons de ces trois jours
 
 1. **Un banc supprimé ne casse rien — il se tait.** `ls scripts/ | grep <thème>` avant d'écrire.
 2. **Une assertion décrit le RENDU, jamais la source.**
 3. **Une purge d'entrée n'est pas un filet, c'est un masque.**
-4. **⚠️ Une assertion qui ne peut pas échouer ne borne rien** — et sa variante du 22 août : une
-   assertion peut mesurer une grandeur **voisine** de celle qui compte et rester verte pour
-   toujours (`textContent` au lieu du nom accessible).
-5. **⚠️ Une parité de CONTENU n'est pas un portage.** Le 22 août, la fiche d'expérience portait
-   tous les blocs attendus et le banc était vert : la coque était restée celle d'avant. Un banc
-   qui ne regarde que la présence de blocs ne voit pas une forme qui n'a pas suivi — d'où les
-   assertions **négatives** de `verifier_marelle` §10.
-6. **Les valeurs éditoriales divergent entre préprod et production.** Un banc compare deux mesures
-   entre elles, jamais une constante.
+4. **⚠️ Une assertion qui ne peut pas échouer ne borne rien** — et sa variante : une assertion
+   peut mesurer une grandeur **voisine** de celle qui compte et rester verte pour toujours.
+5. **⚠️ Une parité de CONTENU n'est pas un portage.** Un banc qui ne regarde que la présence de
+   blocs ne voit pas une forme qui n'a pas suivi — d'où les assertions **négatives**.
+6. **Les valeurs éditoriales divergent entre préprod et production.** Un banc compare deux
+   mesures entre elles, jamais une constante.
+7. **⚠️ Un doublon CSS peut vivre longtemps sans se contredire frontalement.** Deux passes sur
+   `.gesture-status`, chacune définissant des propriétés différentes sur les mêmes sélecteurs :
+   rien ne les signalait, et un sélecteur non scopé imposait ses valeurs en silence. Trouvé en
+   touchant le bloc pour une tout autre raison.
 
 ## Et la méthode qui trouve
 
 **Le navigateur voit ce qu'aucun banc ne peut voir**, et **un fichier jamais exécuté n'est pas
-livré** : `verifier_marelle` a rendu cinq défauts au premier passage, dont un 500 en production.
+livré**. Mais elle a une limite mesurée cette session : **un compte verrouillé ne montre que ce
+qu'il a débloqué** — 2 expériences sur 14 avec le compte de recette actuel. Vérifier la chaîne
+complète demande un compte qui la parcourt, ou l'autorisation de la faire progresser.
