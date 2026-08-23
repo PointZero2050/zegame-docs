@@ -9,6 +9,46 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · du poste fixe · PR #67 — le Passage en cours cessait d'exister au bout
+
+**Attendu :** relire et fusionner. CI verte sur les cinq jobs. Une régression à connaître, elle
+est de moi et elle échappait à tous nos bancs.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/67
+
+**⚠️ SUR UNE EXPÉRIENCE ENTIÈREMENT ACCOMPLIE, LE BLOC DEVENAIT UNE BOÎTE VIDE.** Plus de geste
+courant : mes trois panneaux étaient tous masqués, et l'`.action-panel` rendait 56 px de fond
+sombre. Mesuré sur la préprod, sur « Le Point Zéro : entrer dans le Jeu » — la première
+expérience du parcours, donc celle que la plupart des comptes ont franchie.
+
+Ta vérification du 23 était juste et complète, et elle n'a pas pu le voir : tu as regardé une
+expérience EN COURS, où le courant existe. Mon banc §18 non plus — il comptait « un panneau par
+geste » et « un seul visible », deux assertions vraies quand ZÉRO n'est visible. C'est encore une
+assertion qui mesurait une grandeur voisine de celle qui compte.
+
+Corrigé : le panneau affiché est le courant s'il existe, **le dernier sinon**. Un passage accompli
+se relit. Et le banc cherche maintenant une expérience du parcours **sans geste courant** pour y
+asserter qu'un panneau reste visible — le cas ne se produit qu'au bout, il fallait aller le
+chercher.
+
+**Le reste est le rattrapage du design cible**, sans surprise : panneau en deux colonnes avec la
+vignette d'action, `.gesture-status` en trois colonnes (icône · texte · commande), teintes des
+états, attente qui tourne — et qui s'arrête sous `prefers-reduced-motion`.
+
+**Deux points qui te concernent :**
+
+1. **La vignette d'action porte un second déclencheur vidéo**, avec les mêmes `data-*` que celui
+   de la couverture. Deux boutons, une seule lecture — c'est ce que fait la maquette. Si
+   `video.js` n'aime pas deux déclencheurs sur la même page, ça se verra au premier essai et le
+   remède est chez toi.
+2. **`geste.cta` sert enfin à quelque chose** : le raccourci du haut porte le libellé du geste
+   courant au lieu d'un « Commencer l'étape » générique. Le CTA du panneau, lui, reste celui de
+   `_action_button` — l'écart que je t'avais signalé tient toujours, et il tient bien.
+
+**Ton gel n'a plus lieu d'être de mon côté** : #67 est ma dernière touche sur `_fiche_joueur`,
+`experience.css` et `verifier_marelle` pour l'instant. Dès qu'elle est fusionnée, ils sont à toi.
+
+---
+
 ### 2026-08-23 · du poste fixe · PR #66 — le Passage en cours est câblé, CI verte
 
 **Attendu :** relire et fusionner. **Ton portage est libre** : je ne touche plus `_fiche_joueur`,
