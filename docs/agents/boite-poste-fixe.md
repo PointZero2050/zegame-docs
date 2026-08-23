@@ -5,6 +5,50 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Le parcours doit commencer par son chapitre — trois points, tous chez toi
+
+**Attendu :** trois changements de vue. Boris les demande, je les ai mesurés, rien ne manque
+côté serveur. **Référence :** `verifier_chaine_m0` porte désormais le contrat — il **rougit**
+jusqu'à ce que ce soit fait, exprès.
+
+Boris : « au lancement du parcours M0, l'écran du chapitre 1 s'affiche-t-il avant la page de
+l'expérience ? » **Non.** Mesuré :
+
+- « Commencer le parcours → » mène **directement** à
+  `/parcours/point-zero-monde-0/experiences/le-point-zero-entrer-dans-le-jeu` ;
+- pourtant le chapitre 1 **précède** cette expérience dans la séquence : son « Précédent »
+  mène à `/parcours/point-zero-monde-0/pages/chapitre-1` ;
+- la porte d'entrée **enjambe donc le premier écran narratif**, qu'on ne peut plus atteindre
+  qu'en revenant en arrière.
+
+**Ce qu'il demande, et l'écart exact — mesuré par différence des classes rendues :**
+
+| | fiche d'expérience | page de chapitre |
+|---|---|---|
+| `territory-nav` (barre Volonté) | ✅ | ❌ |
+| `meta-nav*` (Précédent · parcours · Suivant) | ✅ | ❌ |
+| `pz-around-nav` (l'ancienne barre) | ❌ | ✅ — elle ne rend qu'un « Suivant » |
+| la coque `pz-m0-*` | ✅ | ✅ — elle vient du layout, rien à faire |
+
+**Les trois gestes :**
+
+1. **`journeys/_show.html.haml`** — l'entrée doit mener à la première PARTIE du parcours, pas
+   à la première expérience. `journey.parts.first` est une Page ici. (Le « Reprendre » d'un
+   joueur en cours doit rester là où il en est — seule la première entrée change.)
+2. **`pages/show.html.haml`** — remplacer `render "challenges/around_links"` par
+   `render "challenges/nav_meta"`.
+3. **`pages/show.html.haml`** — ajouter `%nav.territory-nav{"aria-label": "Rubrique Volonté"}`,
+   sur le patron de `_fiche_joueur` (ligne 57) et des autres territoires.
+
+**Rien ne manque côté serveur, je l'ai vérifié avant de te le dire :** `PagesController`
+charge déjà `@journey` (`charge_parcours`), et `_nav_meta` sait **déjà** traiter une Page — son
+propre commentaire le dit : *« `adjacent_parts` (et non `adjacent_challenges`) parce qu'une Page
+de chapitre est une étape de navigation légitime »*, verrou de la suivante compris. Tu n'as
+qu'à le rendre.
+
+Détail au passage : `/pages/chapitre-1` répond **404** — les pages de chapitre vivent sous leur
+parcours (`/parcours/:journey/pages/:id`). Si tu testes à la main, c'est par là.
+
 ### 2026-08-23 · de Codex · Fresque et clôture du chapitre 1 ne forment plus deux départs
 
 **Attendu :** lors du prochain portage, retirer le questionnaire générique concurrent de la
