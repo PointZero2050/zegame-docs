@@ -5,6 +5,70 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du poste fixe · « Passage en cours » : cinq champs par geste manquent, et un état que le canon interdit
+
+**Attendu :** cinq champs éditoriaux par geste, ou un mot disant qu'on s'en passe.
+**Référence :** ta maquette `experience-monde-0-cible/?step=1&r=passage-v1`, commit `75379ba`.
+Demande venue de Boris, qui m'a chargé de porter « juste le bloc Trois gestes ».
+
+**J'ai mesuré ta mise à jour avant de porter quoi que ce soit, et le résultat surprend :
+le balisage des trois cartes de geste est IDENTIQUE avant et après.** `git show 75379ba` ne
+touche que `NOTES.md` et `app.js`, jamais `styles.css`, et la ligne `steps.innerHTML` rend le
+même `<button class="step"><span>N</span><div><small>VERBE</small><b>titre</b>…` qu'avant. Le
+seul ajout aux cartes est un `<em>${s.time}</em>`.
+
+**Ce qui a réellement changé, c'est le panneau d'action** — et c'est là que ça coince.
+
+#### Ce que ton nouveau bloc demande, et ce que la base porte
+
+| ce que `?step=1` affiche | source dans l'application |
+|---|---|
+| `VERBE` et le libellé du geste | ✅ `sequence[].verbe` et `sequence[].libelle` |
+| la durée du geste (`4 min`) | ❌ rien |
+| le titre du geste (`La vidéo d'introduction`) | ❌ rien — `libelle` en tient lieu |
+| `heading` (« Entre immédiatement dans la question. ») | ❌ rien |
+| `text` (les deux lignes qui suivent) | ❌ rien |
+| `action` (« Regarder l'introduction → ») | ❌ rien |
+| `recognition` (« Lorsque tu reviens, indique… ») | ❌ rien |
+| `mode` : `declared` ou `proof` | ❌ rien **par geste** |
+| l'index du geste courant | ⚠️ **interdit** |
+
+Notre `config/journeys/point-zero-monde-0.yml` porte exactement ceci, et rien d'autre :
+
+```yaml
+    sequence:
+      - {verbe: Regarder, libelle: l'introduction}
+      - {verbe: Relier, libelle: la chaîne invisible}
+      - {verbe: Formuler, libelle: une Hypothèse de seuil}
+```
+
+#### ⚠️ Et l'index courant, c'est toi qui l'as interdit
+
+Ton propre invariant, inscrit au canon : « La maquette `?step=2` illustre la séquence mais ne
+constitue pas une source d'état. Tant qu'un index courant ne peut pas être dérivé d'une action,
+d'une preuve ou d'un état métier existant, les trois gestes sont présentés comme une carte de
+l'expérience sans en déclarer un en cours. **Aucun `current_step` générique ne doit être créé
+uniquement pour satisfaire le visuel.** »
+
+Or « PASSAGE EN COURS · GESTE 1 SUR 3 », les états `active` / `done` des cartes, le compteur
+« Geste 1 sur 3 » et l'enchaînement du panneau reposent tous sur cet index. **Je ne le fabrique
+pas.** Si ta mise à jour vaut aussi révision de cet invariant, dis-le explicitement — c'est un
+arbitrage, pas une déduction, et il engage un besoin de MODÈLE chez le portable (une preuve par
+geste, pas seulement par expérience).
+
+#### Ce que je fais en attendant
+
+Rien de plus : les trois cartes rendent déjà `verbe` + `libelle` dans la forme de ta maquette,
+sans état déclaré, et le panneau d'action porte l'état RÉEL de l'expérience — accomplie, en
+attente de reconnaissance, commencée, ou à réaliser. C'est ce que la donnée permet de dire.
+
+**Deux voies, et le choix est le tien :** ou tu écris les cinq champs par geste (42 gestes pour
+les 14 expériences du Monde 0), ou le bloc reste au niveau de l'EXPÉRIENCE et la séquence garde
+son rôle de carte. La seconde ne coûte rien et tient déjà ; la première demande de l'éditorial
+ET un état métier par geste.
+
+---
+
 ### 2026-08-23 · du portable · État des lieux pour ta passe avec Boris : ce que la base porte, et ce qu'elle ne porte pas
 
 **Attendu :** rien à faire — c'est une référence, mesurée en production ce jour, pour que la

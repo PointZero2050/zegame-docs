@@ -9,6 +9,54 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · du poste fixe · Où j'en suis pendant que tu travailles — #65 a bougé quatre fois
+
+**Attendu :** ne pas fusionner #65 sur un commit périmé ; **la CI n'a PAS encore tourné sur mon
+dernier commit** au moment où j'écris. Rien d'autre ne t'attend.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/65 · dernier commit `c492e68`.
+
+**⚠️ #65 A REÇU QUATRE COMMITS DEPUIS QUE TU L'AS DÉPLOYÉE.** Tu as déployé la branche sur la
+préprod pour la relire — merci, c'est ce qui a permis à Boris de la voir et de nous rendre huit
+retours. Mais la version que tu as en main n'est plus celle de la PR. **Redéploie avant de
+relire**, sinon tu jugeras une page que j'ai déjà corrigée.
+
+| commit | ce qu'il corrige |
+|---|---|
+| `1c6a93d` | le lecteur vidéo perdu · le contenu passé sous les gestes · le panneau d'action muet |
+| `a5f837b` | le relevé en une rangée · Mode + Reconnaissance fusionnés · Ω et Puissances réunis |
+| `c492e68` | la navigation méta en tête et en pied |
+
+**Trois choses valent d'être sues au-delà de cette PR :**
+
+1. **`_action_button` peut ne rendre AUCUNE commande.** Il pose son conteneur `#btn-ended` puis
+   s'arrête si le joueur n'a pas de `JourneysUser` sur ce parcours, ou si aucune de ses branches
+   ne correspond. Ma fiche annonçait alors « Quand tu veux » sans offrir de porte. Je capture
+   maintenant son rendu et je teste la présence d'une COMMANDE avant d'annoncer quoi que ce soit
+   — mais **le trou est chez lui, pas chez moi** : une fiche atteignable sans `JourneysUser` reste
+   une fiche sans action. À toi de voir si c'est un cas réel ou impossible.
+
+2. **Le lecteur vidéo aurait pu revenir VISIBLE ET INERTE.** Sans `z-index`, `elementFromPoint` au
+   centre du bouton rend `.experience-art` : le voile `:after`, pseudo-élément positionné donc
+   traité comme dernier enfant, avalait le clic. Mesuré au navigateur, pas déduit. C'est le motif
+   du cadre Turbo mort du 21 août, dans une autre famille de défaut.
+
+3. **`cover_scene` sert le premier plan en 400×225 ; l'en-tête l'affiche en 380×404**, soit 1,8×
+   d'agrandissement. Nos couvertures sont en 16:9 quand celles de la maquette sont carrées : un
+   pavé haut agrandira toujours. Le remède est un dérivé plus large côté helper — **ta zone**. Je
+   ne l'ai pas touché et je n'ai pas non plus rogné la maquette pour masquer le symptôme.
+
+**Ce qui n'avance pas, et pourquoi.** Codex a mis à jour le bloc « Passage en cours » de la
+maquette d'expérience (`75379ba`). Mesuré : **le balisage des trois cartes de geste est IDENTIQUE
+avant et après** — ce qui a changé, c'est le panneau d'action, qui demande par geste un `heading`,
+un `text`, une `action`, une phrase de reconnaissance et un `mode`, plus un index courant. Notre
+YAML ne porte que `verbe` et `libelle`, et le canon interdit d'inventer un `current_step` pour
+satisfaire un visuel. Demande déposée chez Codex.
+
+**#64 t'attend toujours** (la coque du Jeu qui défile sur téléphone) — elle est indépendante de
+celle-ci et ne touche aucun fichier commun.
+
+---
+
 ### 2026-08-23 · de Codex · Les 42 gestes sont rédigés et le contrat hybride est fixé
 
 **Attendu :** porter les cinq champs éditoriaux par geste et confronter la matrice de complétion
