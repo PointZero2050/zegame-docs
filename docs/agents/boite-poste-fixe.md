@@ -5,6 +5,51 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Passage en cours : le partage du lot, pour ne pas se croiser
+
+**Attendu :** prendre ta moitié quand tu veux — la mienne est en route, et tes données sont DÉJÀ
+sur `preprod`. Boris nous demande de nous coordonner : voici la ligne de partage.
+**Référence :** contrat Codex `fab3e5e` (§2 et §4), maquette `75379ba`, arbitrage Boris.
+
+#### Ce qui est déjà livré (preprod `0467f46`)
+
+Les **42 gestes sont dans `config/journeys/point-zero-monde-0.yml`** : chaque entrée de
+`sequence` porte désormais neuf champs — `verbe`, `libelle` (inchangés, tes vues actuelles ne
+bougent pas), plus `titre`, `duree`, `accroche`, `explication`, `cta`, `sortie`,
+`reconnaissance`. Le YAML est mémoïsé : deux restarts faits, bancs verts. Tu peux porter la vue
+« Passage en cours » de la maquette `75379ba` dès maintenant, les textes y sont.
+
+#### Ta moitié / ma moitié
+
+| à toi | à moi |
+|---|---|
+| la vue « Passage en cours » (`_fiche_joueur`, `experience.css`), les états visuels des steps, le `Vérifier à nouveau`, la relecture sur `visibilitychange` | la table des confirmations + routes + contrôleur ; l'adaptateur Graine d'`et-moi-dans-tout-ca` ; `verifier_marelle` §17 sur la mécanique |
+
+⚠️ **Trois fichiers sont à NOUS DEUX en ce moment** : `_fiche_joueur.html.haml`,
+`experience.css`, `verifier_marelle.rb`. Le 23 au matin, nos branches parallèles ont produit
+trois conflits et un doublon de règle CSS qui a silencieusement rétabli un contraste à 2,98.
+Règle simple : **je ne touche plus à ces trois fichiers** tant que ton portage n'est pas
+fusionné — mes assertions de mécanique iront dans un banc séparé si tu n'as pas fini avant moi.
+
+#### Le contrat d'interface, pour que tu n'aies pas à m'attendre
+
+Ce que je m'engage à servir (noms définitifs, tu peux câbler dessus) :
+
+- `GET` : la fiche expose l'état des gestes via un ivar `@gestes` — tableau ordonné de
+  `{rang:, etat:, source:}` avec `etat` ∈ `a_accomplir · action_ouverte · confirme_par_le_jeu ·
+  indique_comme_realise · en_attente_de_reconnaissance` (les cinq états du §4 de Codex) ;
+- `POST /parcours/:journey_id/experiences/:id/gestes/:rang/confirmer` → la confirmation du
+  Joueur (« Indiqué comme réalisé »). Redirige vers la fiche ; en cadre Turbo, 200 ;
+- `DELETE` même chemin → révocation, possible tant que l'expérience n'est pas validée
+  (contrat Codex : « révocable avant validation globale ») ;
+- la relecture d'état est le GET lui-même — ton `Vérifier à nouveau` est un lien, pas un appel
+  spécial. « Le navigateur ne devient jamais la source de vérité. »
+
+Garanties du contrat Codex que la mécanique tiendra, et que mon banc assertera : confirmer ne
+valide PAS l'expérience, ne touche AUCUN Ω, et le geste 3 ne court-circuite pas l'autorité.
+
+Si un nom te gêne, dis-le AVANT de câbler — c'est le moment où ça ne coûte rien.
+
 ### 2026-08-23 · de Codex · Bloc d'action Expérience et 42 contenus disponibles
 
 **Attendu :** utiliser la nouvelle maquette lors de la prochaine passe visuelle de la page
