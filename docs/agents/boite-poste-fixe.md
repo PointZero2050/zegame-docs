@@ -125,13 +125,13 @@ automatiquement conservée comme Trace et CTA final « Voir cette Trace ».
 
 | PR | ce qu'elle fait |
 |---|---|
-| [#68](https://github.com/PointZero2050/pointzero-app/pull/68) | `g.porte` câblé (20 CTA), deux CTA distincts, un bloc de reconnaissance en moins, doublon CSS trouvé, « Commencer le parcours » corrigé, 5 liens `users/` arbitrés |
+| [#69](https://github.com/PointZero2050/pointzero-app/pull/69) | traversée réelle des 14 expériences (compte b, autorisé par Boris) : pages de chapitre qui rendaient 500, raccourci figé sur « Valider » après validation, panneau d'expérience vide après déclaration sur un rite facilitateur |
 
 ## Ce qui reste ouvert, et chez qui
 
 | Sujet | Chez qui |
 |---|---|
-| Vérifier au navigateur les 13 expériences non visitées (compte de recette limité à 2/14) | **portable**, après déploiement de #68 |
+| Porter `traces-m0-cible` sur `@registre`/`@productions` (message du portable du 23, ci-dessus) — pas commencé | **moi**, prochaine session |
 | Le panneau de Monde (`.world-panel`) et la carte d'apprentissage : contenu éditorial, rien en base ni en config | **Codex** — à défaut je porte en deux colonnes |
 | Fil · Actions · Décisions · Mémoire : **onglets** dans la maquette, **pages** dans l'application | **Codex**, puis peut-être le portable |
 | Les textes de narration du parcours (5 clés) — la voix ne peut pas être rendue sans eux | **Codex** |
@@ -155,10 +155,19 @@ automatiquement conservée comme Trace et CTA final « Voir cette Trace ».
    `.gesture-status`, chacune définissant des propriétés différentes sur les mêmes sélecteurs :
    rien ne les signalait, et un sélecteur non scopé imposait ses valeurs en silence. Trouvé en
    touchant le bloc pour une tout autre raison.
+8. **⚠️ Une chaîne `if/elsif` sans `else` rend un état FUTUR muet, pas faux.** Deux fois en une
+   soirée (le raccourci après `validated_at`, le panneau après `end_at` sur un rite facilitateur) :
+   la branche manquante ne produisait aucune erreur, juste un texte incorrect ou un bloc vide. Une
+   lecture du code ne le voit pas — seule la traversée du VRAI état (une expérience qu'on va au
+   bout de valider) le révèle. À chaque nouvel état de `cu` qu'on introduit, vérifier que TOUTES
+   les branches qui le testent ont vraiment un `else`, pas seulement celle qu'on vient d'ajouter.
 
 ## Et la méthode qui trouve
 
 **Le navigateur voit ce qu'aucun banc ne peut voir**, et **un fichier jamais exécuté n'est pas
-livré**. Mais elle a une limite mesurée cette session : **un compte verrouillé ne montre que ce
-qu'il a débloqué** — 2 expériences sur 14 avec le compte de recette actuel. Vérifier la chaîne
-complète demande un compte qui la parcourt, ou l'autorisation de la faire progresser.
+livré**. La limite notée la veille (« un compte verrouillé ne montre que ce qu'il a débloqué,
+2 expériences sur 14 ») est tombée le 23 au soir : Boris a autorisé un compte à progresser
+réellement sur les 14, et trois défauts sont sortis de cette seule traversée — aucun n'aurait été
+visible à la lecture du code, ni sur un compte qui ne dépasse pas les 2 premières expériences.
+**Vérifier une chaîne d'états (`courant`, `validated_at`, `end_at`) demande de la traverser en
+entier au moins une fois, avec l'autorisation de le faire.**

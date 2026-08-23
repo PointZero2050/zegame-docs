@@ -9,6 +9,73 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · du poste fixe · PR #69 — la traversée réelle des 14 expériences, trois défauts trouvés en jouant
+
+**Attendu :** relire, fusionner, déployer, **rejouer `verifier_marelle`** (section 20 neuve — je ne
+peux toujours pas l'exécuter d'ici). Rien d'urgent, mais les trois défauts sont réels et vécus.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/69
+
+**Boris a autorisé le compte de recette B (`recette-b@m0recette.pz`) à progresser réellement sur
+tout le parcours**, pour vérifier ce que ton analyse statique du 23 (PR #68) ne pouvait que
+mesurer sans jouer. J'ai traversé les expériences 1 à 13 pour de vrai — mini-jeux complétés,
+Graines semées, Conseil Oméga joué jusqu'à sa clôture (les six dossiers, les six caps, la
+posture-cible, l'engagement). L'expérience 14 reste hors d'atteinte, et c'est attendu — voir plus
+bas.
+
+#### Trois défauts trouvés en jouant, invisibles à la lecture du code seule
+
+**1. Les pages de chapitre rendaient 500.** `pages/_show.html.haml` appelait `resource.image.url`
+— `image` est une String dans ce dépôt, jamais un uploader (je m'y étais déjà fait prendre une
+fois, mémoire déjà écrite). `NoMethodError` dès qu'une Page de chapitre porte une illustration,
+vécu à l'identique sur chapitre-1 ET chapitre-2 — **le SEUL chemin qu'emprunte « Suivant » à la
+fin d'un chapitre.** Un compte de recette qui ne clique jamais Suivant au bon moment ne le voit
+jamais ; un joueur réel qui traverse un chapitre entier le voit à coup sûr. Corrigé
+(`resource.image.present?` seul, comme `circle_image` le fait déjà juste en dessous). Assertion
+ajoutée : statut HTTP direct sur les deux pages.
+
+**2. Le raccourci restait « Valider cette expérience » après validation.** Ma propre régression du
+soir du 23 (PR #67/#68) : `elsif @gestes.present?` dans `_fiche_joueur.html.haml` ne retestait
+plus `validated_at` une fois la première condition tombée. Toute expérience validée continuait
+d'annoncer une action qui n'existe plus. Il dit maintenant « Revoir cette expérience ». Vérifié au
+navigateur sur trois expériences revisitées après validation (5, 6, 9) — pas d'assertion nouvelle,
+et j'explique pourquoi dans le commentaire du banc : reconstruire cet état par AR sans passer par
+le vrai flux de gestes risquait de fabriquer un `cu` que la vue ne lit pas comme un vrai parcours
+l'aurait laissé, et je préfère le dire plutôt que deviner une manip AR que je ne peux pas vérifier.
+
+**3. Le bloc « CETTE EXPÉRIENCE » restait complètement vide après déclaration**, sur une
+expérience sans adaptateur et d'autorité « facilitateur » (ni `chapter_end`, ni mentor) :
+`_action_button.html.haml` n'avait pas de branche pour `end_at` posé et `validated_at` absent, en
+dehors des cas déjà couverts — **aucun texte, aucun bouton**, après la seule action que l'app
+pouvait offrir. Vécu sur « Vivre l'Atelier Point Zéro » (expérience 13) : j'ai cliqué « J'ai
+réalisé cette expérience », et la page s'est rechargée sur un panneau muet. Nouveau texte « En
+attente de reconnaissance », même style visuel que les autres états désactivés du fichier. Même
+réserve qu'au point 2 pour l'assertion.
+
+#### Ce que la traversée confirme, sans rien à changer
+
+- **`g.porte` (PR #68) est déployé et marche** — vérifié en jouant, pas en lisant : CTA présents
+  sur les 9 premières expériences partout où attendus. Sur `les-choses-se-precisent`, geste 1 n'a
+  PAS de CTA — j'ai vérifié `sequence_de_gestes.rb` avant de conclure : `PORTES` ne mappe QUE les
+  gestes 2 et 3 pour cette expérience, c'est voulu (le geste demande de relire trois surfaces à la
+  fois, aucune destination unique n'existe). Pas un défaut.
+- **Les correctifs de fermeture de boucle tiennent sur cinq transitions consécutives** (1→2→3→4→5→6),
+  y compris un skip facultatif (`le-sas-d-entree`) qui route correctement vers l'expérience
+  suivante après « Passer cette étape ».
+- Un 502 isolé à la première tentative sur `le-sas-d-entree` était une rafale HTTP transitoire
+  (déjà en mémoire de ce côté), pas un lien mort — confirmé par un second essai immédiat, réussi.
+  Rien à corriger.
+
+#### Expérience 14 hors d'atteinte — attendu, pas un défaut
+
+L'expérience 13 est d'autorité facilitateur, sans chemin d'auto-validation dans l'app :
+`validated_at` attend une confirmation réelle, hors app (exactement ce que le point 3 ci-dessus
+documente). Le compte de recette ne peut donc pas débloquer l'expérience 14 par lui-même — je n'ai
+pas cherché de détour côté gestion, l'autorisation de Boris portait sur jouer, pas sur administrer.
+Les deux expériences sans adaptateur ni porte nommée (`vivre-l-atelier-point-zero`,
+`mon-recit-de-passage`) sont confirmées CTA-less par construction, comme tu l'avais déjà annoncé.
+
+---
+
 ### 2026-08-23 · du poste fixe · PR #67 — le Passage en cours cessait d'exister au bout
 
 **Attendu :** relire et fusionner. CI verte sur les cinq jobs. Une régression à connaître, elle
