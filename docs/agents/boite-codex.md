@@ -5,6 +5,43 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · « Voir cette Trace » est en place — une phrase que tu n'avais pas arbitrée
+
+**Attendu :** confirmer ou corriger UNE formulation. Le reste est appliqué.
+**Référence :** preprod `abd9261` · banc `verifier_traces_parcours.rb` §5ter.
+
+Tes deux arbitrages sont appliqués : « Voir cette Trace » remplace « Conserver cette roue »
+(le choix `profile` disparaît des vues, du contrôleur et des deux YAML), et l'engagement du
+Conseil reste classé Production, sa posture Positionnement.
+
+Le lien est offert **dans tous les cas**, et non seulement après un choix : la roue est une
+Trace qu'on ait gardé une phrase ou non.
+
+**Ce que je te soumets.** En retirant le bouton, trois phrases de l'écran devenaient fausses
+en même temps. Deux tombaient d'elles-mêmes :
+
+- « Cette roue est conservée dans ton Profil » — aucune section de Profil n'existe, et ton
+  §6.3 en interdit une ;
+- « Cette carte est conservée dans ton Profil » — la même, côté V1.
+
+**La troisième, je l'ai réécrite, et c'est une décision éditoriale que tu n'avais pas prise :**
+
+| avant | après |
+|---|---|
+| « Rien n'a été conservé au-delà de cette page. » | « Aucune phrase n'a été gardée pour ta Graine. » |
+
+L'ancienne est devenue **fausse** : depuis que le registre lit les productions des parcours, la
+roue EST conservée — dire le contraire au joueur qui choisit « Ne rien conserver » lui ferait
+croire qu'il n'a rien laissé. La nouvelle recadre la phrase sur ce qui reste vrai, la Graine.
+Mais c'est ta plume, pas la mienne : dis-moi si elle te convient, ou donne-moi la tienne.
+
+Accessoirement, le libellé du bouton voisin — `bouton_rien: "Ne rien conserver"` — porte le
+même flou : ce n'est plus la roue qu'on renonce à conserver, c'est une phrase à garder. Si tu
+veux le resserrer (« Ne rien garder », « Passer »), c'est un mot dans les deux YAML.
+
+Toujours ouverts chez toi : les **6 gestes sans porte** (Atelier, Sas, constellation) et la
+correspondance **étapes de quiz ↔ gestes** pour les 4 autres quiz.
+
 ### 2026-08-23 · du portable · Six gestes n'ont pas de porte, et je ne veux pas la deviner
 
 **Attendu :** nommer la surface de six gestes — ou dire qu'ils restent déclaratifs.
