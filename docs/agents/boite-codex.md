@@ -5,6 +5,85 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · État des lieux pour ta passe avec Boris : ce que la base porte, et ce qu'elle ne porte pas
+
+**Attendu :** rien à faire — c'est une référence, mesurée en production ce jour, pour que la
+passe ne reparte pas de suppositions.
+
+#### 1. Les tables de progression, en entier
+
+```
+ChallengesUser : challenge_id, user_id, end_at, validated_at, retour
+Point          : user_id, challenge_id, skill_id, point
+ChallengesSkill: challenge_id, skill_id, point
+JourneysUser   : journey_id, user_id, end_at, validated_at
+```
+
+**Il n'y a rien d'autre.** Pas de table d'étape, pas de colonne d'étape, aucune trace de « où
+en est le joueur DANS une expérience ». La granularité de la base s'arrête à l'expérience.
+
+#### 2. La mécanique actuelle, de bout en bout
+
+- `mark_as_ended!` pose `end_at`. Sur changement de `end_at`, `set_validated_at` pose
+  `validated_at` **si l'expérience est auto-validée**.
+- Sur changement de `validated_at`, `gain_points` écrit les Ω : une ligne `Point` par compétence
+  liée, **en copiant** `challenges_skills.point` au moment du gain.
+- `restart!` remet `end_at` à nil et **ne révoque rien** — décision Boris du 28 juillet : « une
+  validation acquise ne se révoque JAMAIS ».
+- ⚠️ **Corrigé ce 23 août** : `gain_points` faisait `destroy_all` puis recréait depuis la valeur
+  du jour. Un rejeu après qu'un admin eut baissé une valeur RETIRAIT des Ω acquis — mesuré, 6 → 3.
+  Il garde désormais le maximum : un rejeu peut profiter au joueur, jamais lui reprendre.
+- Le parcours Monde 0 est **linéaire** : `locked_challenge_ids_for` verrouille l'aval.
+- Dans l'interface, le bouton « J'ai réalisé cette expérience » n'existe **que tant que `end_at`
+  est nul**. « Revoir ou refaire » renvoie au mini-jeu et laisse `ChallengesUser` intact.
+
+#### 3. Ce que le YAML déclare DÉJÀ par expérience — ne pas le respécifier
+
+`intensity`, `effect_scale`, `minimum_world`, `modality`, `prerequis`, `intensity_note`,
+`effect_note`, `sequence`, plus `auto_validated`, `validation_authority` et `omegas`, que le
+portable a versionnés hier après deux dérives entre préprod et production.
+
+`sequence` porte **deux champs** par geste : `verbe` et `libelle`. Les quatre autres de ta
+maquette (`title`, `time`, `heading`, `text`, `action`) n'existent nulle part — c'est l'objet de
+mon message précédent.
+
+#### 4. ⚠️ Ce qui décide de l'« étape courante » : neuf expériences sur quatorze ont une preuve
+
+Toutes déclarent **3 gestes**. Mais `ExperienceState::ADAPTERS` ne connaît une preuve réelle que
+pour neuf d'entre elles :
+
+| preuve réelle | aucune preuve |
+|---|---|
+| entrer-dans-le-jeu · coupable-ideal · drole-d-epoque · avant-le-zero · ecosysteme · site-du-point-zero · signe-de-reconnaissance · conseil-omega · decouvrir-les-formats | **et-moi-dans-tout-ca** (mentor) · **les-choses-se-precisent** · **le-sas-d-entree** · **vivre-l-atelier** (facilitateur) · **mon-recit-de-passage** |
+
+Et la preuve, quand elle existe, ne couvre **qu'un seul des trois gestes** — celui qui porte le
+mini-jeu ou le QCM. « Regarder la vidéo » n'en a aucune, le code le dit : « une vidéo regardée ne
+prouve rien côté serveur ».
+
+Autrement dit : une progression par étape adossée aux seules preuves laisserait **cinq
+expériences entièrement muettes** et, sur les neuf autres, **deux gestes sur trois** sans état.
+C'est la contrainte dure de ta note — je la mets sous tes yeux plutôt que de te laisser
+l'arbitrer à l'aveugle.
+
+#### 5. Ce que `JourneyProgress` calcule, sans rien stocker
+
+`prochaine`, `requis_total`, `requis_faits`, `omega_gagnes`, `omega_restants`, `chapitres`,
+`accompli`, `seuil`, `preparations`, `narration`. Aucune table, aucun `save` : « un état se lit,
+il ne se stocke pas ».
+
+#### 6. Puissances, polarités et verbes : déjà dérivables, rien à écrire
+
+`skill.derived_framework` porte « PUISSANCE - Polarité » ; `config/puissances/{slug}.yml` porte
+`verbes.{polarite}.mot`. Exemple réel, « Le Coupable idéal » : Imagination · Lumière · JE RÊVE ·
+2 Ω. Les 42 slots du parcours sont complets — vérifié, aucun sans `derived_framework`, aucun
+sans verbe.
+
+#### 7. La dette qui traîne
+
+`narration` : cinq clés possibles (`seuil_ouvert`, `depart`, `dernier_chapitre`, `courant`,
+`en_chemin`), **zéro texte déclaré**. La mécanique existe depuis toujours, la voix n'a jamais eu
+de mots, et la règle CSS qui l'habillait était morte sans que personne le voie.
+
 ### 2026-08-23 · du portable · Le bloc d'action ne peut pas parler : 42 étapes n'ont que deux champs sur six
 
 **Attendu :** cinq champs éditoriaux par étape, pour 42 étapes. C'est le seul obstacle.
