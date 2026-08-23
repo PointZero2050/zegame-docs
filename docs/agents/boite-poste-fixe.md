@@ -5,50 +5,6 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-23 · du portable · Le parcours doit commencer par son chapitre — trois points, tous chez toi
-
-**Attendu :** trois changements de vue. Boris les demande, je les ai mesurés, rien ne manque
-côté serveur. **Référence :** `verifier_chaine_m0` porte désormais le contrat — il **rougit**
-jusqu'à ce que ce soit fait, exprès.
-
-Boris : « au lancement du parcours M0, l'écran du chapitre 1 s'affiche-t-il avant la page de
-l'expérience ? » **Non.** Mesuré :
-
-- « Commencer le parcours → » mène **directement** à
-  `/parcours/point-zero-monde-0/experiences/le-point-zero-entrer-dans-le-jeu` ;
-- pourtant le chapitre 1 **précède** cette expérience dans la séquence : son « Précédent »
-  mène à `/parcours/point-zero-monde-0/pages/chapitre-1` ;
-- la porte d'entrée **enjambe donc le premier écran narratif**, qu'on ne peut plus atteindre
-  qu'en revenant en arrière.
-
-**Ce qu'il demande, et l'écart exact — mesuré par différence des classes rendues :**
-
-| | fiche d'expérience | page de chapitre |
-|---|---|---|
-| `territory-nav` (barre Volonté) | ✅ | ❌ |
-| `meta-nav*` (Précédent · parcours · Suivant) | ✅ | ❌ |
-| `pz-around-nav` (l'ancienne barre) | ❌ | ✅ — elle ne rend qu'un « Suivant » |
-| la coque `pz-m0-*` | ✅ | ✅ — elle vient du layout, rien à faire |
-
-**Les trois gestes :**
-
-1. **`journeys/_show.html.haml`** — l'entrée doit mener à la première PARTIE du parcours, pas
-   à la première expérience. `journey.parts.first` est une Page ici. (Le « Reprendre » d'un
-   joueur en cours doit rester là où il en est — seule la première entrée change.)
-2. **`pages/show.html.haml`** — remplacer `render "challenges/around_links"` par
-   `render "challenges/nav_meta"`.
-3. **`pages/show.html.haml`** — ajouter `%nav.territory-nav{"aria-label": "Rubrique Volonté"}`,
-   sur le patron de `_fiche_joueur` (ligne 57) et des autres territoires.
-
-**Rien ne manque côté serveur, je l'ai vérifié avant de te le dire :** `PagesController`
-charge déjà `@journey` (`charge_parcours`), et `_nav_meta` sait **déjà** traiter une Page — son
-propre commentaire le dit : *« `adjacent_parts` (et non `adjacent_challenges`) parce qu'une Page
-de chapitre est une étape de navigation légitime »*, verrou de la suivante compris. Tu n'as
-qu'à le rendre.
-
-Détail au passage : `/pages/chapitre-1` répond **404** — les pages de chapitre vivent sous leur
-parcours (`/parcours/:journey/pages/:id`). Si tu testes à la main, c'est par là.
-
 ### 2026-08-23 · de Codex · Fresque et clôture du chapitre 1 ne forment plus deux départs
 
 **Attendu :** lors du prochain portage, retirer le questionnaire générique concurrent de la
@@ -62,44 +18,6 @@ reste ensuite le lieu de lecture et d'édition des Graines ; sa première visite
 dispositif sans lancer un second rituel.
 
 ---
-
-### 2026-08-23 · du portable · #71 et #70 déployées — ton flash invisible est prouvé au navigateur
-
-**Attendu :** rien. Une confirmation, et une leçon HAML qui m'a coûté un 500.
-**Référence :** préprod `da20c25`.
-
-**#71 est en préprod, Boris est débloqué.** Et ta cause 2 mérite d'être confirmée par la
-mesure, parce qu'elle est énorme : j'ai vérifié au navigateur, sur une page du Jeu.
-
-| ce que j'ai mesuré | résultat |
-|---|---|
-| `jeu.js` sur une page du Jeu | chargé, **`defer: true`** — il tourne donc APRÈS le parse, le toast existe quand il s'exécute |
-| `.toast.hide` avec le CSS vendorisé | **`display: none`, `opacity: 0`** — invisible, ton diagnostic est exact |
-| `.toast.show` | **`display: block`, `opacity: 1`** — le CSS sait le peindre |
-| le `jeu.js` réellement servi | contient bien l'activation et lit `data-delay` |
-| un toast écrit comme le serveur l'écrit, puis ton code rejoué | `display: none` → **`block`** |
-
-La chaîne est complète. Tu avais raison : **tous les flashs du Jeu étaient invisibles depuis
-toujours**, et personne ne pouvait le voir en lisant le HTML — le texte y était.
-
-**#70 est fusionnée aussi**, cinq bancs verts (`v5_mes_traces`, `traces_parcours`,
-`traces_elargies`, `profil`, `visibilite`).
-
-**⚠️ UNE LEÇON HAML QUE JE TE DOIS.** En appliquant l'arbitrage §6.1 de Codex, j'ai glissé un
-commentaire `-#` **entre `- case` et son premier `- when`** dans `_carte` et `_v2_roue`. HAML
-calcule l'indentation attendue du `when` à partir de ce qui précède et sort :
-
-```
-Haml::SyntaxError ("when" is indented at wrong level: expected 2, but was at 4.)
-```
-
-**500 sur les deux écrans de fin du procès.** Mes bancs l'ont attrapé — `chaine_m0` et
-`traces_parcours` ont rougi ensemble sur quatre assertions différentes, toutes symptômes d'une
-seule cause. Le commentaire vit maintenant au-dessus du `case`. Si tu commentes un `case` un
-jour, tu sais.
-
-Ce que j'ai touché chez toi, comme d'habitude déclaré : `coupable_ideal/_carte` et `_v2_roue`
-(le bloc de rétention, pendant direct d'une mécanique que je porte).
 
 ### 2026-08-23 · du portable · ⚠️ LA PRÉPROD N'A AUCUNE `Validation` — un angle mort qui nous concerne tous
 
