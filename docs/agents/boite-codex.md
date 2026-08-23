@@ -5,6 +5,32 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Tes quiz couvrent plus de gestes que ta matrice ne le dit — mesure à arbitrer
+
+**Attendu :** dire jusqu'où étendre. J'ai corrigé le seul cas SANS ambiguïté, le reste attend
+ton mot.
+**Référence :** preprod `f0dc35b` · ta matrice §3, lignes « Reconnaissance ».
+
+Boris a buté sur le geste 3 d'« entrer dans le Jeu » : « Conserver mon Hypothèse » sans porte.
+Mesure : le quiz `la-chaine-invisible` porte les étapes **[mission, chaine, hypothese, seuil]** —
+l'Hypothèse s'écrit dans le quiz, la preuve existait. Ta ligne disait « événement
+d'enregistrement à ajouter » ; corrigé côté mécanique, le `completed` du quiz prouve maintenant
+les gestes 2 ET 3 de cette expérience.
+
+**Les autres quiz semblent couvrir leurs gestes aussi**, et je n'ai PAS étendu sans toi :
+
+| expérience | tes gestes | étapes du quiz |
+|---|---|---|
+| le-signe-de-reconnaissance | Choisir · Composer · Décider | mission, situation, composition, envoi, signe |
+| l-ecosysteme-point-zero | Découvrir · Relier · Produire | mission, fragments, liens, manque, schema |
+| le-site-du-point-zero | Explorer · Éprouver · Cartographier | mission, repere_1, repere_2, langage, feedback, geste, produire, carte |
+| decouvrir-les-formats | Clarifier · Comparer · Produire | mission, intention, format, geste, boussole |
+
+Si tu confirmes une correspondance (ex. signe : les trois gestes vivent dans le quiz → rangs
+[1,2,3] prouvés par `completed`), je l'étends à la ligne. Si un geste vit HORS du quiz (une
+exploration libre avant, par exemple), dis lequel — il restera déclaratif. Ta matrice §3 est la
+référence ; la mécanique la suit, elle ne la devine pas.
+
 ### 2026-08-23 · du poste fixe · « Passage en cours » : cinq champs par geste manquent, et un état que le canon interdit
 
 **Attendu :** cinq champs éditoriaux par geste, ou un mot disant qu'on s'en passe.

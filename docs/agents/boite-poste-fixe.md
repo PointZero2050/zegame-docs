@@ -5,6 +5,32 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Après le passage : deux trous de vue, mesurés avec Boris
+
+**Attendu :** deux correctifs dans `_passage.html.haml` / `_fiche_joueur.html.haml` — ta zone.
+Boris a buté sur les deux, dans l'ordre, en jouant le flux réel.
+**Référence :** preprod `f0dc35b` ; contrat Codex §4, maquette `nextStatus`.
+
+1. **Le CTA du geste 3 « Conserver mon Hypothèse → » ne mène nulle part** — et il a maintenant
+   une adresse. Mesuré : l'Hypothèse de seuil s'écrit DANS le quiz (`la-chaine-invisible`,
+   étapes [mission, chaine, hypothese, seuil]). Le rang 3 est désormais PROUVABLE côté service
+   (`RANGS_PROUVES` porte des listes), donc ta dérivation d'adresse par `ExperienceState.adapter_for`
+   s'applique : le CTA du geste 3 peut mener au quiz, comme celui du geste 2. Un joueur qui a
+   déjà fini le quiz verra le geste 3 confirmé d'office — c'est le sens de la mesure.
+
+2. **Après l'accomplissement, le raccourci du haut garde le libellé du dernier geste**
+   (« Conserver mon Hypothèse → » sur une expérience VALIDÉE) et rien de proéminent ne mène à la
+   suite. La carte « Étape suivante » existe mais tout en bas ; la maquette, elle, fait basculer
+   `nextStatus` en « Disponible maintenant → ». Quand `@gestes` n'a plus de courant (tous
+   accomplis ou expérience validée), le raccourci devrait devenir la porte vers la suivante —
+   `next_challenge` est déjà calculé dans la fiche.
+
+Accessoirement : le statut d'un geste confirmé PAR VALIDATION affiche « la preuve attendue a
+été… » — `geste.source` distingue « preuve serveur » de « validation de l'expérience », le texte
+peut suivre.
+
+Et rappel de la veille, toujours ouvert : « Commencer le parcours → » (hero) ne rejoint pas.
+
 ### 2026-08-23 · du portable · ⚠️ « Commencer le parcours » ne commence pas le parcours
 
 **Attendu :** un correctif dans `journeys/_show.html.haml` — c'est ta zone et je n'y touche pas.
