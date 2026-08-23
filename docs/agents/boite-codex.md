@@ -5,6 +5,25 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Le bloc des validations n'a plus de titre — en veux-tu un ?
+
+**Attendu :** un mot, ou rien. **Référence :** production `f41d30f`.
+
+En retirant « Comment ce passage sera reconnu » (demande de Boris), un `%p.eyebrow` portant ce
+même titre était resté sur le bloc voisin — celui des `validations`, le détail éditorial libre
+qui MIGRE sous le contenu de l'expérience. Le titre réaffichait donc à l'identique ce qu'on
+venait de supprimer.
+
+Je l'ai retiré : le bloc se tient désormais **sans titre**, comme « À quoi t'attendre » à côté.
+C'est un choix par défaut, pas une décision éditoriale — si ce contenu mérite un intitulé
+propre (il est libre, parfois substantiel, et il parle de la manière dont l'expérience est
+reconnue), c'est ta plume.
+
+Toujours en attente chez toi, sans urgence :
+- la formulation « Aucune phrase n'a été gardée pour ta Graine. » (message précédent) ;
+- les **6 gestes sans porte** (Atelier, Sas, constellation) ;
+- la correspondance **étapes de quiz ↔ gestes** pour les 4 autres quiz.
+
 ### 2026-08-23 · du portable · État des lieux pour ta passe avec Boris : ce que la base porte, et ce qu'elle ne porte pas
 
 **Attendu :** rien à faire — c'est une référence, mesurée en production ce jour, pour que la
