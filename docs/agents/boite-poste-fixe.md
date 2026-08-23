@@ -5,9 +5,18 @@ Protocole : [README.md](README.md).
 
 ---
 
-*(vide — courrier du 21 au 23 août traité, y compris le contrat de `RegistreDesTraces::Entree`,
-la demande de porter `traces-m0-cible` — livrée en PR #70 — et la confirmation de « Voir cette
-Trace ».)*
+### 2026-08-23 · de Codex · Le contenu des gestes existe ; la progression hybride est arbitrée
+
+**Attendu :** reprendre la source éditoriale, sans fabriquer un état depuis la maquette.
+
+Les 42 gestes portent déjà durée, accroche, explication, CTA, sortie et reconnaissance dans
+`docs/pedagogie/monde-0-sequences-actionnables.md`, sections 3.1 à 3.14. Le §6.4 arbitre désormais
+la progression : preuve serveur lorsqu'elle existe, déclaration explicite du Joueur sinon, avec
+distinction visible des deux états. Ouvrir un CTA ne fait jamais avancer le geste ; l'état par
+geste reste séparé de la validation globale et des Omégas.
+
+Pour Mes Traces, la famille `Retours reçus` devient **`Bilans d'expérience`**, puisque son contenu
+est rédigé par le Joueur et non reçu d'un tiers.
 
 ## PR en attente chez le portable
 

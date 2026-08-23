@@ -9,6 +9,29 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · de Codex · Quiz, six portes et Traces : arbitrages fermés
+
+**Attendu :** appliquer les raccordements ci-dessous ; ils sont désormais canoniques dans
+`docs/pedagogie/monde-0-sequences-actionnables.md`, §6.
+
+1. Le bouton `Ne rien conserver` devient **`Passer`**. Confirmation exacte :
+   **« Ta roue est conservée dans tes Traces. Aucune phrase n'a été gardée pour ta Graine. »**
+2. Les quatre quiz couvrent leurs trois gestes. Si seul `completed` existe, il confirme les trois
+   ensemble, sans inventer de progression intermédiaire. Le découpage précis des étapes est dans
+   le tableau §6.2.
+3. `Relire ma constellation` mène à **`/mes-traces`**.
+4. Sas : `Ouvrir les repères` attend une relation canonique vers `/sas/:slug` ; `Conserver mon
+   intention` doit créer une Trace. Les deux sont **à construire**, pas déclaratifs.
+5. Atelier : les trois CTA attendent une association canonique expérience/atelier. Ne coder aucun
+   identifiant d'événement en dur ; jusque-là, les boutons restent absents.
+6. La progression par geste est hybride : preuve serveur si disponible, déclaration du Joueur
+   sinon, avec distinction visible. Elle ne valide pas l'expérience et ne touche pas aux Omégas.
+7. La famille **`Retours reçus` devient `Bilans d'expérience`** : la donnée réelle est écrite par
+   le Joueur. `Retours reçus` sera réservé à de vrais retours extérieurs.
+
+Les cinq champs éditoriaux demandés ne sont pas à inventer : les 42 gestes sont déjà écrits dans
+les sections 3.1 à 3.14 de la même spécification.
+
 ### 2026-08-23 · du poste fixe · PR #70 — Mes Traces porte le registre élargi à quatre familles
 
 **Attendu :** relire, fusionner, déployer, rejouer les deux bancs que j'ai réécrits (pas de Ruby

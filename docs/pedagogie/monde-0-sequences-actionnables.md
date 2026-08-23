@@ -516,3 +516,71 @@ progressive avant la création de nouvelles preuves :
 8. Le rejeu d'une expérience ne révoque aucun Oméga acquis.
 9. L'étape suivante du parcours ne s'ouvre qu'après la validation globale de l'expérience.
 10. Sur mobile, le CTA et l'état de reconnaissance restent visibles sans faire défiler un bloc vide.
+
+## 6. Arbitrages de raccordement du 23 août 2026
+
+> Ajout Codex - 2026-08-23. Ces décisions ferment les écarts constatés pendant la traversée
+> réelle du parcours. Elles n'autorisent ni URL d'événement codée en dur, ni progression fictive.
+
+### 6.1. Une production de mini-jeu reste une Trace, même sans phrase pour la Graine
+
+Dans les restitutions qui proposent de garder une phrase pour une future Graine :
+
+- le bouton de renoncement s'appelle `Passer` ;
+- la production structurée du mini-jeu rejoint toujours les Traces ;
+- la confirmation distingue explicitement les deux objets :
+
+> Ta roue est conservée dans tes Traces. Aucune phrase n'a été gardée pour ta Graine.
+
+### 6.2. Correspondance entre les quatre quiz et les trois gestes
+
+Les quatre quiz couvrent entièrement leur expérience. Leur achèvement peut donc prouver les
+trois gestes. Lorsqu'un état intermédiaire persistant est disponible, la correspondance est :
+
+| Expérience | Geste 1 | Geste 2 | Geste 3 |
+|---|---|---|---|
+| L'écosystème Point Zéro | Découvrir : `mission`, `fragments` | Relier : `liens`, `manque` | Produire : `schema` |
+| Le site du Point Zéro | Explorer : `mission`, `repere_1`, `repere_2` | Éprouver : `langage`, `feedback`, `geste` | Cartographier : `produire`, `carte` |
+| Le signe de reconnaissance | Choisir : `mission`, `situation` | Composer : `composition` | Décider : `envoi`, `signe` |
+| Découvrir les formats | Clarifier : `mission`, `intention` | Comparer : `format`, `geste` | Produire : `boussole` |
+
+Si le moteur n'expose que `completed`, il ne prétend pas connaître un geste courant : la preuve
+globale confirme les trois gestes ensemble. Aucun état intermédiaire n'est déduit de la seule
+ouverture du quiz.
+
+### 6.3. Destinations des six CTA encore sans porte
+
+| Expérience · geste | Arbitrage V1 | Condition de mise en oeuvre |
+|---|---|---|
+| Les choses se précisent · Relire | `/mes-traces` | La constellation est composée de productions déjà conservées. Un filtre ou une ancre pourra préciser cette vue plus tard. |
+| Le Sas d'entrée · Ouvrir les repères | À construire sur `/sas/:slug` | Le Sas doit être relié à l'expérience ou à l'inscription du Joueur. Aucun slug n'est codé en dur. |
+| Le Sas d'entrée · Conserver mon intention | À construire comme saisie intégrée | L'intention est enregistrée comme Trace ; ce geste n'est pas réduit à une confirmation déclarative. |
+| Vivre l'Atelier · les trois gestes | À construire sur la fiche de l'Atelier lié | L'expérience doit résoudre l'événement et l'atelier depuis une association ou une configuration canonique. Aucun identifiant courant n'est codé en dur. |
+
+Tant que les associations métier manquent, les cinq CTA marqués « à construire » restent absents.
+La présence ou le facilitateur reconnaît l'expérience Atelier ; la consultation de sa fiche ne la
+valide pas.
+
+### 6.4. Granularité de progression
+
+Les textes détaillés des 42 gestes figurent dans les sections 3.1 à 3.14 de cette spécification :
+durée, accroche, explication, CTA, sortie attendue et reconnaissance. Ils constituent la source
+éditoriale à verser dans la configuration applicative.
+
+La progression suit une règle hybride :
+
+1. une preuve serveur fait avancer le geste lorsqu'elle existe ;
+2. sinon le Joueur peut indiquer le geste comme réalisé ;
+3. l'interface distingue une réalisation déclarée d'une reconnaissance par le Jeu ;
+4. aucun simple clic d'ouverture ne fait avancer la séquence ;
+5. la validation globale de l'expérience et l'attribution des Omégas restent indépendantes.
+
+Un état persistant par geste est donc légitime pour porter cette séquence, mais il ne constitue
+jamais une seconde validation de l'expérience.
+
+### 6.5. Nom de la famille issue du retour du Joueur
+
+La famille actuellement appelée `Retours reçus` contient les réponses que le Joueur rédige après
+une expérience (`retour_apprecie`, `retour_appris`, `retour_manque`). Elle devient
+**Bilans d'expérience**. Le terme `Retours reçus` est réservé à un futur contenu effectivement
+produit par un pair, un mentor ou un facilitateur.
