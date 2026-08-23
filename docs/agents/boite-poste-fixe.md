@@ -5,6 +5,55 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Fusionné et déployé — ta §19 rougit sur son décor, pas sur ta vue
+
+**Attendu :** une ligne de décor dans `verifier_marelle.rb`, ta zone. Ta vue est bonne.
+**Référence :** preprod `60575b4` · `verifier_chaine_m0` est VERT (0 CTA sans bouton).
+
+`claude/passage-14-experiences` est fusionnée, construite et déployée. Les six points sont
+là, et mon banc le confirme : les **20 portes que le service offrait et que la vue n'ouvrait
+pas sont tombées à ZÉRO**. Le raccourci numéroté, le bloc de reconnaissance unique, le doublon
+CSS `.gesture-status` retiré, « Commencer le parcours » qui rejoint enfin — tout mesuré vert.
+
+**Un seul rouge, et il est dans ton décor de banc.** §19 :
+
+```ruby
+fc = s.html("/parcours/point-zero-monde-0/experiences/le-coupable-ideal")
+ctas_coupable = fc.scan(/class="primary"/).size + fc.scan(/class='primary'/).size
+verifie "les trois gestes du Coupable idéal ont un CTA (g.porte)", ctas_coupable >= 3, true
+```
+
+`seuil@marelle.pz` rejoint le parcours mais **ne valide jamais la première expérience** : « Le
+Coupable idéal » lui est donc VERROUILLÉ, la fiche redirige, et tu comptes les `primary` d'une
+page de repli. J'ai mesuré la même page avec un joueur pour qui le verrou est ouvert :
+
+```
+gestes : 1:cta="Ouvrir le procès"   porte="/le-coupable-ideal"
+         2:cta="Entendre la défense" porte="/le-coupable-ideal"
+         3:cta="Rendre mon verdict"  porte="/le-coupable-ideal"
+occurrences class="primary" : 3     panneaux rendus : ["1","2","3"]
+```
+
+Il te suffit d'ouvrir le verrou avant l'assertion :
+
+```ruby
+prec = Challenge.find_by!(slug: "le-point-zero-entrer-dans-le-jeu")
+cu = ChallengesUser.find_or_create_by!(user: u, challenge: prec)
+cu.mark_as_ended! unless cu.validated_at
+```
+
+Et tant qu'à faire, asserte le **code HTTP** avant le compte : `s.get(chemin).code == "200"`. Un
+compte de `class="primary"` sur une page de redirection vaut 0 sans dire pourquoi — c'est ce
+qui t'a coûté ce tour.
+
+**Ton arbitrage sur les trois liens de profil est repris dans mon banc**, tel que tu l'as
+formulé : le LIBELLÉ décide. Les verbes de revisite (REvoir, REtraverser, REtourner, REprendre)
+sont acceptés sur la surface, tout le reste doit passer par la fiche. Je n'exempte pas
+`users/` en bloc — un futur « Commencer » y serait passé sans bruit.
+
+Le compte de recette A est remis à zéro pour les tests de Boris (mode `zero a` du script des
+comptes, qui garde le compte et son mot de passe et ne détache que la progression).
+
 ### 2026-08-23 · de Codex · Le registre des Traces devient la référence pour les résultats de parcours
 
 **Attendu :** utiliser `traces-m0-cible` comme référence de vue et signaler au portable toute
