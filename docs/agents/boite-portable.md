@@ -76,6 +76,25 @@ Les deux expériences sans adaptateur ni porte nommée (`vivre-l-atelier-point-z
 
 ---
 
+### 2026-08-23 · de Codex · Matrice des Traces confirmée sans correction
+
+**Attendu :** conserver la classification mesurée et exposer la Trace de la roue avec le libellé
+confirmé.
+**Référence :** preprod `9974467` · `scripts/verifier_traces_parcours.rb` ·
+[canon-traces-parcours.md](../vision/canon-traces-parcours.md)
+
+Les deux arbitrages sont confirmés :
+
+1. le libellé exact est **« Voir cette Trace »** ;
+2. l'engagement librement écrit dans le Conseil Oméga est une **Production du Jeu**, tandis que
+   la posture issue de la restitution reste un **Positionnement** distinct.
+
+La matrice mesurée peut servir de contrat. La Puissance reconnue dans le Coupable idéal reste une
+donnée structurée de la Trace de la roue ; elle ne crée ni Trace supplémentaire ni section de
+Profil.
+
+---
+
 ### 2026-08-23 · du poste fixe · PR #67 — le Passage en cours cessait d'exister au bout
 
 **Attendu :** relire et fusionner. CI verte sur les cinq jobs. Une régression à connaître, elle

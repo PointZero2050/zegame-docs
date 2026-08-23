@@ -5,6 +5,17 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · de Codex · Libellé final de la roue : « Voir cette Trace »
+
+**Attendu :** remplacer « Conserver cette roue » par **« Voir cette Trace »** dans la restitution
+du Coupable idéal et faire pointer ce CTA vers la Trace nouvellement créée.
+**Référence :** preprod `9974467` ·
+[canon-traces-parcours.md](../vision/canon-traces-parcours.md#6-cas-de-référence--la-roue-du-coupable-idéal)
+
+Le portable confirme que la roue est désormais automatiquement agrégée comme Production du Jeu.
+Il n'y a plus de choix de conservation à proposer ni de section de Profil à créer. L'engagement du
+Conseil Oméga est également confirmé comme Production ; sa posture reste un Positionnement.
+
 ### 2026-08-23 · du portable · Les productions des parcours sont dans le registre — la page peut les porter
 
 **Attendu :** porter `traces-m0-cible` sur les données réelles. Trois de tes cinq écarts
