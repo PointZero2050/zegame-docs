@@ -60,7 +60,8 @@ contenu et son illustration évoluent ensemble :
 
 Exemple Imagination : première Graine → retour avec compteurs de Graines et Résonances →
 première Trace créée → nouvelle invitation à découvrir `Mes Traces` → carte enrichie avec
-Traces et Traces transformées.
+le nombre de Traces et leurs familles. Une Trace peut nourrir une Graine dans un parcours ou avec
+le mentor, mais la page `Mes Traces` ne propose pas de conversion mécanique.
 
 Chaque page interne reçoit une illustration propre, dans la grammaire de sa Puissance. Lorsque
 cette page devient la destination principale d'une carte au stade `À explorer`, la carte reprend
@@ -196,8 +197,9 @@ suivante.
 
 La première visite explique la Fresque, les Graines et les Résonances. Un court rituel sur
 les récits produit la première Graine. Les Traces ne sont pas un sas obligatoire avant la
-Graine : elles sont produites par les expériences et conservées dans une page dédiée. Une
-Trace peut être relue, rejouée ou transformée ultérieurement en Graine.
+Graine : tout résultat pédagogique significatif généré dans les parcours est récupéré dans une
+page dédiée. Une Trace peut être relue ou sa source rejouée ; elle peut nourrir ultérieurement une
+Graine dans le parcours ou avec le mentor, sans conversion mécanique depuis le registre.
 
 ### Émotion
 

@@ -9,6 +9,23 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · de Codex · Étendre les Traces à tous les résultats générés dans les parcours
+
+**Attendu :** partir de la maquette `traces-m0-cible`, inventorier expérience par expérience les
+résultats persistés et raccorder chaque production pédagogique significative au registre.
+**Référence :** [canon-traces-parcours.md](../vision/canon-traces-parcours.md) ·
+[maquette](https://github.com/PointZero2050/zegame-prototypes/tree/main/traces-m0-cible)
+
+Boris tranche : tout ce qui est généré dans les parcours doit être récupéré sous forme de Trace.
+Le canon fixe les quatre familles, les exclusions, l'idempotence, le rejeu, la visibilité privée
+par défaut et la distinction stricte avec les Graines. Ne branche pas de callback générique sur les
+modèles centraux : commence par une matrice `surface → résultat persistant → événement → famille →
+rejeu`, puis utilise la source de vérité de chaque expérience.
+
+Pour le **Coupable idéal**, la roue complète est automatiquement une `Production du Jeu` ; la
+Puissance nommée est une donnée de cette Trace. « Conserver cette roue » devient « Voir cette
+Trace ». Aucune nouvelle section de Profil n'est attendue.
+
 ### 2026-08-23 · du poste fixe · PR #68 — g.porte câblé, ta règle sur les 5 liens confirmée
 
 **Attendu :** relire, fusionner, déployer. CI verte sur les cinq jobs.

@@ -5,6 +5,18 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · de Codex · Le registre des Traces devient la référence pour les résultats de parcours
+
+**Attendu :** utiliser `traces-m0-cible` comme référence de vue et signaler au portable toute
+production affichée dans un parcours qui n'est pas encore récupérable par le registre.
+**Référence :** [canon-traces-parcours.md](../vision/canon-traces-parcours.md) ·
+[maquette](https://github.com/PointZero2050/zegame-prototypes/tree/main/traces-m0-cible)
+
+Boris acte la capture de tout résultat pédagogique significatif généré dans les parcours. La vue
+reste organisée en Productions, Retours, Diagnostics et Positionnements. Elle n'absorbe ni Graines,
+ni messages bruts, ni badges, ni Omégas. Le Coupable idéal fournit le cas de référence : roue
+automatiquement conservée comme Trace et CTA final « Voir cette Trace ».
+
 *(vide — courrier des 21 au 23 août traité.)*
 
 ## PR en attente chez le portable

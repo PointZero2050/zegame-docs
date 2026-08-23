@@ -29,7 +29,7 @@ Ces lignes passent de « à construire » à « déjà construit ». C'est le c�
 | **E07** Boîte d'échanges unifiée | `N` — « ne sait agréger que Journey/Challenge » | **`E`** — `BoiteDEchanges` + `ContexteDeFil.conteneurs_de` agrègent quatre familles (Experience, Parcours, Candidature, EspaceDeDiscussion). C'est l'« interface polymorphe de conteneur » dite « à concevoir ». |
 | **E08** Espace communautaire M1 | `N` — « aucun modèle d'espace/channel » | **`E`** — `Espace` couvre les trois critères nommés : intention (`finalite`, + `Messaging::Thread#intention` à 7 valeurs), participants (`EspaceMembership`), cycle de vie (`ETATS` à 5 états). Limite réelle : un espace ne sert **qu'un seul fil** aujourd'hui. |
 | **E09** Proposition → objection → consentement → action | `N` — « aucun objet structuré » | **`E`** — sept tables livrées (`propositions`, `versions_de_proposition`, `decisions`, `consentements_de_decision`, `objections_de_decision`, `actions_de_fil`). Le protocole de consentement est câblé : une objection non levée impose « à retravailler », jamais un passage en force. **Seul le mot « mémoire » reste sans objet** (il n'existe que comme réaction sémantique). |
-| **G06** Trace personnelle | `N` — « aucun modèle `Trace` » | **`E` pour le Monde 0** — `Trace` existe (`user_id`, `territoire`, `cle`, `reponses` jsonb, unicité sur le triplet), alimentée par Désir, Intuition et Imagination. **Voir l'arbitrage 1 du §5** : ce n'est pas l'agrégateur universel des mini-jeux. |
+| **G06** Trace personnelle | `N` — « aucun modèle `Trace` » | **`E` pour le registre existant, à étendre** — `Trace` existe (`user_id`, `territoire`, `cle`, `reponses` jsonb, unicité sur le triplet) et `RegistreDesTraces` agrège quatre familles. **Amendement du 23 août :** tout résultat pédagogique significatif généré dans un parcours doit rejoindre ce registre ; voir [canon-traces-parcours.md](canon-traces-parcours.md). |
 | **P03** Boussole disponible non commencée | `R` | **`E`** — le résolveur existe : `Monde0Etats#parcours_rejoint?` et `JourneysController` (`.where.missing(:journeys_users)`). |
 | **P10** Preuve prête | `E/R` | **`E`** — `ExperienceState.evidence_ready?` est en service avec **dix** adaptateurs, pas quatre. |
 | **O02** Ventilation Ω par expérience | `E/R` | **`E`** — calculée et agrégée par chapitre dans `JourneyProgress` (`omega_total`, `omega_gagnes`), rendue par `omega_chapitre`. |
@@ -87,6 +87,14 @@ tient et la ligne reste `N` — les résultats de mini-jeux vivent bien dans des
 > positionnements (posture du Conseil, héros). La page « Mes Traces » le
 > consomme ; sa maquette élargie reste à dessiner (deux sections
 > échafaudées). La ligne passe de `N` à `E`.
+
+> **Étendu par Boris le 23 août.** La distinction « agrégateur des productions » / « agrégateur
+> de tous les mini-jeux » est levée : tout résultat pédagogique significatif généré dans un
+> parcours doit rejoindre le registre, sans absorber les Graines, messages bruts, badges, Omégas
+> ou dialogues de Guides. Les résultats restant répartis dans des tables hétérogènes, cette
+> décision ouvre un travail de raccordement expérience par expérience ; elle n'autorise pas un
+> callback générique ajouté sans analyse d'impact. Voir
+> [canon-traces-parcours.md](canon-traces-parcours.md).
 
 **Arbitrage 2 — le corpus versionné compte-t-il comme source de vérité ?** Une ligne en dépend
 encore : le palier du million d'Ω (`O06`), **écrit et versionné** dans `config/guides/`, servi par

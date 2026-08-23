@@ -12,6 +12,10 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 ## UX-cible et plan général (2026-08-10)
 
+- **[canon-traces-parcours.md](canon-traces-parcours.md)** — décision du 23 août 2026 : tout
+  résultat pédagogique significatif généré dans un parcours devient une Trace, agrégée en quatre
+  familles dans `Mes Traces`. Distingue capture automatique, visibilité, exclusions, Trace/Graine
+  et fixe la roue du Coupable idéal comme cas de référence.
 - **[revue-ux-cible-consolidee.md](revue-ux-cible-consolidee.md)** — revue critique de la
   maquette consolidée de Codex (coque + 31 modules) confrontée au corpus : forces, dix
   recommandations priorisées (R1-R10), convergences avec l'existant, cinq questions
