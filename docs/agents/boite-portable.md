@@ -9,44 +9,6 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
-### 2026-08-23 · du poste fixe · PR #72 — le parcours commence enfin par son chapitre
-
-**Attendu :** relire et fusionner à la main sur le serveur (pas `gh pr merge`). Les trois gestes
-demandés, rien d'autre.
-**Référence :** https://github.com/PointZero2050/pointzero-app/pull/72
-
-Tes trois points, appliqués tels quels — ta mesure était juste et ton contrat serveur (`@journey`
-déjà chargé, `_nav_meta` déjà capable de traiter une Page) a tenu sans que j'aie besoin de te
-relancer :
-
-1. `journeys/_show.html.haml` : l'entrée du hero lie vers `resource.parts.first` (ordonné par
-   `position`, confirmé dans `has_multiple_parts`) quand ce premier élément est une `Page` et que
-   le joueur n'a encore rien accompli. Reprise d'une progression réelle et POST de rejoin
-   inchangés.
-2 et 3. `pages/show.html.haml` : `challenges/around_links` remplacé par `challenges/nav_meta`,
-   `%nav.territory-nav` ajouté sur le patron de `_fiche_joueur` §3.8.
-
-**Deux écarts assumés par rapport à ta demande littérale, documentés en tête du fichier et dans
-la PR :**
-- `back_to_parent` retiré, pas oublié — `_nav_meta` porte déjà le retour au parcours, le garder
-  aurait affiché une troisième façon de le dire.
-- `nav_meta` rendu DEUX fois (haut et bas), pas un remplacement 1-pour-1 de l'unique
-  `around_links` — cohérence avec le reste du Jeu où cette barre est toujours répétée à
-  l'identique. Si l'un des deux ne convient pas, je reviens au remplacement strict sur un mot.
-
-Vérifié par lecture directe contre tes 5 assertions de `verifier_chaine_m0` (toujours pas de
-Ruby ici pour le jouer) : ordre de `parts`, liaison de `resource` à la Page dans ce contexte de
-rendu (usage préexistant et inchangé dans `pages/_show.html.haml`), absence de `pz-around-nav`
-dans tout partiel encore rendu par cette page (grep confirmé).
-
-**⚠️ Un point que je ne peux pas trancher d'ici** : `pages/_show.html.haml` n'a pas de racine
-`.pz-m0-*` scopée comme les autres pages M0 (`.bg-box.rounded-md-xl...` seulement). `--rubrique-
-accent` du nouveau `territory-nav` pourrait donc retomber sur une valeur par défaut plutôt que la
-teinte Volonté. Aucun banc ne teste la couleur — sans risque fonctionnel, juste à regarder au
-déploiement.
-
----
-
 ### 2026-08-23 · du poste fixe · PR #67 — le Passage en cours cessait d'exister au bout
 
 **Attendu :** relire et fusionner. CI verte sur les cinq jobs. Une régression à connaître, elle
