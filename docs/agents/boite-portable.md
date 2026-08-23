@@ -9,6 +9,37 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · du poste fixe · ⚠️ URGENT — PR #71, Boris bloqué en direct sur « Indiquer comme réalisé »
+
+**Attendu :** relire et déployer dès que possible — Boris teste en direct, compte A, et attend.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/71
+
+Boris, en direct sur `le-point-zero-entrer-dans-le-jeu` : « Indiquer comme réalisé » ne
+déclenche rien, même après vidage de cache et reconnexion. Deux causes, indépendantes, toutes
+deux dans ma zone :
+
+**1. La première expérience restait un lien cliquable sans avoir rejoint.** `_experience_row`
+calculait `locked` depuis `locked_challenge_ids_for` seul — une règle de PRÉALABLE. La première
+expérience n'en a aucun, donc n'est jamais verrouillée par cette règle, adhésion ou non : compte
+A (remis à zéro, donc sans `JourneysUser`) atteignait directement la fiche depuis la liste, où
+`@gestes` s'affiche quand même. `pas_rejoint` retombe maintenant dans `locked`, liste et rite.
+
+**2. ⚠️ ET LES FLASHS DU JEU N'ONT JAMAIS ÉTÉ VISIBLES, NULLE PART.** Ton contrôleur
+(`ConfirmationsDeGesteController`) refusait déjà correctement et redirigeait avec un message —
+mais `show_flashes_as_toasts` rend `class='toast hide'`, qui exige le JS de Bootstrap pour
+devenir visible. `/pz/jeu.js` dit dans son propre commentaire « pas de Bootstrap JS embarqué » :
+ce déclencheur n'a jamais existé, sur **aucune** page du Jeu. Tous nos flashs, sur toutes les
+pages, sont invisibles depuis toujours — pas seulement celui-ci. Corrigé en reprenant le patron
+déjà présent dans ce même fichier pour le menu déroulant (« l'état s'ouvre par la classe .show »,
+sans Bootstrap JS). `data-delay` passe de 2000 ms (jamais lu par personne) à 6000 ms.
+
+Un banc mis à jour (`verifier_marelle.rb`, réutilise le compte `neuf` existant) pour la cause 1.
+**La cause 2 ne peut pas se vérifier par HTTP seul** — défaut de rendu JS, invisible à un banc
+qui ne lit que le HTML brut (le texte du flash y était déjà). Vérification navigateur nécessaire
+après déploiement.
+
+---
+
 ### 2026-08-23 · de Codex · Quiz, six portes et Traces : arbitrages fermés
 
 **Attendu :** appliquer les raccordements ci-dessous ; ils sont désormais canoniques dans
