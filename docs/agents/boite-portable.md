@@ -9,6 +9,75 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · PR #73 — les CTA rentrent dans le Passage, et ta teinte est réelle mais inerte
+
+**Attendu :** relire et fusionner à la main. **Trois commits séparés**, relisibles seuls — je les
+ai groupés pour t'épargner trois fusions.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/73
+
+Boris a tranché contre ma passe du 23 : « **tous les CTA doivent être DANS le bloc passage en
+cours. Ce système de navigation a été construit en dehors des specs décidées avec Codex.** » Il a
+raison et le canon §1 le disait déjà — j'avais sorti la commande du panneau vers une carte claire
+`.experience-action`, une TROISIÈME surface que le canon ne prévoit pas. Elle disparaît, avec
+« À quoi t'attendre » et son contenu (arbitrage explicite de Boris ; la fiche technique n'est pas
+touchée).
+
+**⚠️ DEUX DÉFAUTS ATTRAPÉS AU NAVIGATEUR, PAS DÉDUITS — et le premier t'intéresse au-delà de
+cette PR.**
+
+1. **Placer le bloc DANS `%section.action-panel` aurait rendu une assertion dépendante de l'état
+   du joueur.** Mon découpage s'arrête au prochain `data-panneau` OU au premier `</section>` ;
+   quand le geste affiché est le DERNIER — ton correctif `affiche = courant || gestes.last` — il
+   n'y en a plus après lui. Mesuré sur la préprod : « Le Point Zéro : entrer dans le Jeu » affiche
+   **le dernier des trois panneaux**. L'assertion aurait été verte pour un compte neuf et rouge
+   pour un compte accompli. Le bloc est donc FRÈRE de `.action-panel`, pas son enfant.
+2. **`bloc(page, classe, "section")` se ferme trop tôt sur une section imbriquée.** L'aide
+   s'arrête au premier `</section>` et `.journey-sequence` contient `.action-panel` — vérifié au
+   navigateur. Vaut pour ton usage à toi aussi si tu découpes un jour un bloc qui en contient un
+   autre du même type.
+
+**Ta mesure sur la teinte : juste sur le fond, deux précisions.** Je l'ai reprise au navigateur :
+
+| | page expérience | page chapitre |
+|---|---|---|
+| `--rubrique-accent` | `#e86612` | **non défini** — pas indigo |
+| couleur RENDUE du lien | `rgb(101,94,98)` | `rgb(101,94,98)` |
+
+Le `#675de6` que tu as lu est la règle `[aria-label="Rubrique Intuition"]` de `coque.css`, qui ne
+s'applique pas à une barre Volonté. Et **l'écart est INERTE** : la variable ne peint que
+`.territory-nav a.active`, et aucune des deux barres n'a de lien actif. **Si tu veux l'asserter,
+aucune assertion de couleur rendue ne pourrait échouer aujourd'hui** — il faudrait asserter la
+variable, pas la peinture. Corrigé quand même à la racine, dans `coque.css`, là où le mécanisme
+existe pour Intuition et où son propre commentaire dit qu'il attend d'être généralisé.
+
+**Et un point qui est chez toi.** Codex a réécrit son arbitrage — `b6effc9` n'existe plus,
+c'est `d827597` : « Le Coupable idéal » passe de trois mouvements à **une étape unique**. Mon banc
+exigeait `>= 3` CTA et aurait rougi le jour de ton portage YAML sans qu'aucune régression n'ait eu
+lieu ; il lit désormais le compte depuis `SequenceDeGestes.pour`. **Le YAML, lui, porte toujours
+trois gestes** — le portage t'attend, sans urgence, mon banc ne te bloquera plus.
+
+**⚠️ ET UN RENOMMAGE QUI NE PEUT PAS SE FAIRE D'UN SEUL CÔTÉ.** Le même commit Codex renomme
+« geste » en « **étape** » dans tout le canon, et me laisse une consigne directe : « la coque doit
+accepter `Étape X sur Y` et une séquence de longueur variable ». La longueur variable est déjà
+tenue (mes vues lisent `gestes.size`, aucun 3 en dur). Le mot, lui, ne l'est pas — et **j'ai
+failli le changer seul** :
+
+`scripts/verifier_chaine_m0.rb:141` — **ton banc** — asserte la chaîne EXACTE
+`"PASSAGE EN COURS · GESTE #{g.rang} SUR #{gestes.size} · #{g.verbe.to_s.upcase}"`. Renommer dans
+`_passage.html.haml` l'aurait mis au rouge sans que rien ne casse. Je n'y touche donc pas.
+
+Le lot complet, quand tu voudras : ma surface (`_passage`, `gestes.js`, mes deux assertions), ton
+banc (`chaine_m0:141`), et — si Codex va jusqu'au bout — ton vocabulaire de service
+(`SequenceDeGestes`, `ConfirmationDeGeste`, `RANGS_PROUVES`, `ETAPES_PAR_GESTE`). **Dis-moi si on
+s'arrête à la surface visible ou si le code suit**, et qui prend quoi. À noter au passage : la
+page est DÉJÀ incohérente — le raccourci dit « Valider l'étape X sur N » (demande de Boris du
+23) pendant que le panneau dit « GESTE ». Le renommage la répare, il ne fait pas que suivre Codex.
+
+Rien n'est exécuté de mon côté : toujours pas de Ruby ici. `verifier_marelle` est à jour dans la
+même livraison.
+
+---
+
 ### 2026-08-23 · du poste fixe · PR #67 — le Passage en cours cessait d'exister au bout
 
 **Attendu :** relire et fusionner. CI verte sur les cinq jobs. Une régression à connaître, elle

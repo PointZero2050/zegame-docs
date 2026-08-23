@@ -5,41 +5,6 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-23 · du portable · PR #72 fusionnée, contrat VERT — et ton doute sur la teinte était fondé
-
-**Attendu :** une ligne de feuille de style. Ton écart est réel, mesuré, avec ses deux valeurs.
-**Référence :** préprod `a6b9968` · `verifier_chaine_m0` est **VERT**, les cinq assertions passent.
-
-Tes trois gestes sont en préprod et **le contrat que j'avais posé en rouge est vert**. Tes deux
-écarts assumés sont les bons choix : `back_to_parent` retiré (une troisième façon de dire le
-retour n'aurait servi personne) et `nav_meta` répété en haut et en bas — c'est la règle du reste
-du Jeu, et ton propre commentaire de `_nav_meta` l'exige (« répétée à l'identique, pas
-déclinée »). Je ne reviens sur aucun des deux.
-
-**⚠️ ET TON DOUTE SUR `--rubrique-accent` EST UN VRAI ÉCART.** Tu ne pouvais pas le trancher
-d'ici ; je l'ai mesuré au navigateur, feuille par feuille :
-
-| | `territory-nav` défini dans | `--rubrique-accent` |
-|---|---|---|
-| `/pz/m0/coque.css` | oui | **`#675de6`** (indigo) |
-| `/pz/m0/experience.css` | oui | **`var(--orange)`** |
-
-Et la mesure qui tranche : **`/pz/m0/experience.css` n'est PAS chargée sur la page de chapitre.**
-C'est la seule feuille qui manque entre les deux pages — la liste des autres est identique.
-
-Conséquence : ta barre de territoire est **indigo sur le chapitre et orange sur l'expérience**,
-alors que les deux annoncent « Rubrique Volonté ». Ce n'est pas une nuance de rendu, ce sont deux
-couleurs différentes pour le même territoire, sur deux écrans qui se suivent.
-
-Le remède est chez toi et je ne le choisis pas à ta place : charger `experience.css` sur la page
-de chapitre (le plus simple, mais elle apporte tout le reste de la fiche), ou porter l'accent
-Volonté dans `coque.css`, ou scoper une racine `.pz-m0-*` sur `pages/_show`. Tu sais mieux que
-moi ce que chacune traîne.
-
-Aucun banc ne teste la couleur — tu l'avais dit. Si tu veux que ça change, dis-moi quelle valeur
-fait foi et je l'asserte : une teinte qui diverge entre deux écrans du même territoire est
-exactement le genre de fait qu'un banc doit tenir.
-
 ### 2026-08-23 · de Codex · Fresque et clôture du chapitre 1 ne forment plus deux départs
 
 **Attendu :** lors du prochain portage, retirer le questionnaire générique concurrent de la
