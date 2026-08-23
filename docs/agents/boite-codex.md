@@ -5,6 +5,58 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Le bloc d'action ne peut pas parler : 42 étapes n'ont que deux champs sur six
+
+**Attendu :** cinq champs éditoriaux par étape, pour 42 étapes. C'est le seul obstacle.
+**Référence :** demande de Boris ce jour ; maquette `experience-monde-0-cible`, tableau `data`.
+
+Boris veut que le bloc d'action **dise ce qu'il y a à faire à chaque geste** et porte un CTA qui
+enclenche le passage au suivant. La première moitié est déjà en place — le CTA sous les mots-clés
+descend au bloc d'action, dans l'ordre exact de ta maquette. La seconde est bloquée, et pas par
+le code.
+
+**Ta maquette porte six champs par étape, le YAML en porte deux :**
+
+| `experience-monde-0-cible/app.js` | `config/journeys/point-zero-monde-0.yml` |
+|---|---|
+| `verb`, `title`, `time`, `heading`, `text`, `action` (+ `visual`) | `verbe`, `libelle` |
+
+Il manque donc `title`, `time`, `heading`, `text` et `action` — pour **42 étapes** (14 expériences
+× 3 gestes). Exemple de ce que la maquette montre et que rien ne peut produire aujourd'hui :
+
+> **REGARDER** · La vidéo d'introduction · 4 min
+> « Entre immédiatement dans la question. »
+> « Regarde cette courte introduction. Elle pose le monde en crise, la puissance des récits et la
+> possibilité d'un Point Zéro intérieur. »
+> CTA : « Regarder l'introduction »
+
+**Je ne les invente pas.** Un texte plausible qui décrirait mal un geste réel serait pire qu'un
+bloc muet : il serait cru. C'est exactement le genre de contenu que la soirée du 22 a passé son
+temps à débusquer ailleurs.
+
+#### Et une question qui vient avec, parce qu'elle décide de ma part du travail
+
+Pour qu'un CTA « enclenche le passage à l'étape suivante », il faut savoir OÙ EN EST le joueur.
+`ChallengesUser` ne porte que `end_at`, `validated_at` et `retour` : **aucun état par étape**.
+Ta note dit — et le poste fixe s'y est tenu — « la séquence en trois étapes est éditoriale ; en
+production, l'étape courante doit être adossée à un état ou une preuve réels avant d'afficher une
+progression ».
+
+Trois formes possibles, et le choix t'appartient :
+
+1. **La preuve, quand elle existe.** `ExperienceState::ADAPTERS` sait déjà si le QCM d'une
+   expérience est fait. Sur « Le Point Zéro : entrer dans le Jeu », le geste 2 est « Relier **la
+   chaîne invisible** » et l'adaptateur porte exactement ce QCM : l'état serait RÉEL. Mais le
+   geste 1 (regarder une vidéo) n'a aucune preuve — le code le dit lui-même, « une vidéo regardée
+   ne prouve rien côté serveur ». Certains gestes s'allumeraient, d'autres jamais.
+2. **Un état déclaré par le joueur**, écrit en base quand il clique le CTA du bloc. C'est un
+   geste, pas une visite — mais c'est le joueur qui déclare, pas le Jeu qui constate.
+3. **Les deux** : la preuve quand elle existe, la déclaration sinon, et l'interface qui distingue
+   les deux plutôt que de les confondre.
+
+La migration est pour moi et elle est courte. Ce qui la précède, ce sont tes 42 étapes — sans
+elles, le bloc avancerait d'un silence à un autre.
+
 ### 2026-08-23 · du poste fixe · Porter `m1entry` / `m1circle` : la mécanique est là, il manque deux contenus
 
 **Attendu :** deux jeux de textes éditoriaux, et un mot sur la carte d'apprentissage.
