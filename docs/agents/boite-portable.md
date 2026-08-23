@@ -9,6 +9,68 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · du poste fixe · PR #70 — Mes Traces porte le registre élargi à quatre familles
+
+**Attendu :** relire, fusionner, déployer, rejouer les deux bancs que j'ai réécrits (pas de Ruby
+ici pour les jouer moi-même). Rien de bloquant.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/70
+
+Ton message du 23 (« porter `traces-m0-cible` sur les données réelles ») est fait — et j'ai
+découvert en chemin que la maquette elle-même avait bougé sous moi : celle que j'avais portée le
+17-18 août était à une seule famille, groupée par territoire, sans filtre. Codex l'a élargie
+entre-temps (`24122dd`, « Registre élargi ») à quatre familles filtrables avec un design de carte
+unifié — c'est celle-là que j'ai portée, mon premier port était obsolète, pas seulement
+incomplet.
+
+**Le geste de visibilité que tu avais laissé à mon arbitrage est câblé.** `PATCH
+/mes-traces/visibilite` a maintenant un déclencheur réel sur chaque carte, un `button_to` par
+Trace — même patron que celui déjà en production pour les Graines
+(`profils/visibilite.html.haml`, `publier_graine_path`/`depublier_graine_path`), qui dit
+d'ailleurs lui-même dans son propre écart : « les Traces attendront un consommateur réel. Ce
+n'est pas un oubli. » C'est ici, maintenant.
+
+**Pas de modale JS pour « Relire la Trace ».** La maquette en simule une parce qu'elle n'a pas de
+backend ; `entree.chemin` est une vraie page côté Rails pour chaque famille (Immateria, Premières
+Clés, la Fresque, la surface du mini-jeu) — un `link_to` normal suffit. Le seul JS ajouté est un
+filtre par famille, ~15 lignes, patron déjà en production dans `accomplissements.js`.
+
+**Une tension nom/contenu que je n'ai pas tranchée moi-même.** La famille « Retours reçus »
+(`RegistreDesTraces::LIBELLES[:retour]`) porte un nom qui suppose un feedback REÇU — la maquette
+la démontre avec « Retour de Maya », « Synthèse du mentor ». La donnée réelle
+(`ChallengesUser#retour_apprecie/appris/manque`) est un texte que le JOUEUR écrit lui-même après
+une expérience, jamais reçu de personne. J'ai corrigé la phrase d'intro de cette famille pour
+dire ce qui est vraiment là, mais j'ai laissé le NOM de la famille tel quel — c'est ta constante,
+pas la mienne. Si le nom mérite de changer, c'est un arbitrage à vous deux plutôt qu'un
+renommage que j'aurais fait seul dans une vue.
+
+**⚠️ Un piège HAML, attrapé avant de commiter, pas par la CI.** Un hash multiligne
+(`familles_intro = { territoire: ..., ... }`) ouvert par une accolade seule en fin de ligne, sans
+virgule finale : HAML ne poursuit une ligne silencieuse que sur une virgule, jamais sur un `{`
+isolé. Passé en ligne unique. C'est la même famille de piège qu'un `if` multiligne en expression,
+déjà payée cette semaine sur un autre fichier — la prévention est maintenant en commentaire aux
+deux endroits.
+
+**Les deux bancs concernés, réécrits, vérifiés ligne à ligne contre le rendu attendu, jamais
+joués :**
+
+| banc | ce qui change |
+|---|---|
+| `verifier_v5_mes_traces.rb` | réécrit en profondeur — le regroupement PAR TERRITOIRE disparaît par construction (une seule famille Productions désormais) ; le reste survit (état vide honnête, aucun geste de conversion, retours réels, omission propre si vides) |
+| `verifier_traces_parcours.rb` §5bis | renforcée — ton ancienne assertion était un OR permissif écrit avant que la vue sache faire quoi que ce soit ; elle vérifie maintenant le titre/extrait RÉEL de la production du quiz de ton test, et que ses deux chemins (`chemin` ET `chemin_de_rejeu`, peuplés pour cette fixture) rendent bien deux actions distinctes |
+
+`verifier_traces_elargies.rb` reste compatible SANS modification — vérifié ligne à ligne
+(`data-famille` reste sur les sections de famille, jamais sur les boutons de filtre qui rendent
+toujours, même à zéro : sinon une famille vide casserait sa propre assertion négative). Vérifié
+aussi contre `verifier_immateria.rb`, `verifier_fresque.rb`, `verifier_illustrations_m0.rb` et
+`repetition_m0.rb`, qui référencent `/mes-traces` en passant — aucun ne devrait bouger.
+
+**Ce que je n'ai pas pu vérifier d'ici, et pourquoi je te le dis plutôt que de deviner** : rien
+au navigateur (pas de préprod locale), rien en exécutant les bancs (pas de Ruby). Tout ce qui
+précède est une lecture attentive du contrat de `RegistreDesTraces::Entree` et une relecture
+ligne à ligne des trois bancs existants, pas une exécution.
+
+---
+
 ### 2026-08-23 · du poste fixe · PR #67 — le Passage en cours cessait d'exister au bout
 
 **Attendu :** relire et fusionner. CI verte sur les cinq jobs. Une régression à connaître, elle
