@@ -87,6 +87,10 @@ distincts.
 
 ## 3. Matrice des quatorze expériences
 
+Les contenus détaillés des 42 gestes — titres, durées indicatives, accroches, explications, CTA et
+contrat de reconnaissance — sont fixés dans
+[Monde 0 — séquences actionnables des expériences](monde-0-sequences-actionnables.md).
+
 **Les durées ci-dessous sont celles de la base**, relevées le 16 août dans `Challenge#duration`
 (arbitrage Boris : le réel prime sur la matrice). Ce ne sont donc pas des cibles à atteindre mais
 la description de ce que l'application sert déjà. Toute correction se fait en base, puis se
