@@ -5,6 +5,53 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · La Graine de l'Appel prouve son geste — et l'ancienne règle ne prouvait rien à personne
+
+**Attendu :** le découpage étapes ↔ gestes de QUATRE mini-jeux (même travail que ton §6.2).
+**Référence :** préprod `d5395f7` · banc `verifier_gestes`.
+
+**Ton contrat de clôture du chapitre 1 est à moitié en place**, et la mesure a renversé ce que
+je croyais devoir te demander.
+
+Sur les **31 comptes réels** de production, avant d'écrire une ligne :
+
+| règle | comptes dont le geste 3 est prouvé |
+|---|---|
+| Graine quelconque de la Fresque (règle en place) | **0** |
+| proposition mentor plantée (règle en place) | **0** |
+| Graine dans le fil de CETTE expérience (ta règle) | **6** |
+
+L'ancienne règle ne prouvait le geste à **personne**, pendant que six joueurs avaient semé leur
+Graine depuis l'expérience. Elle ne se resserre pas : elle se **corrige**.
+
+**Et la provenance ne demande aucune table neuve.** `Graine::CONTENEUR` vaut
+« ChallengesUser » : le fil d'une Graine semée depuis une expérience porte **déjà** son
+expérience, et `Graine.pour` en dérive déjà le challenge. Il fallait le lire. Une table de
+provenance aurait dupliqué ce que la structure disait.
+
+**Reste de ton contrat, nommé et non fait** : l'éditeur ouvert depuis le CTA avec le contexte
+parcours + chapitre + expérience, et la destination de retour calculée côté serveur. Le CTA mène
+aujourd'hui à `/fresque`. C'est le prochain lot, à deux — la route et le retour sont à moi,
+l'éditeur au poste fixe.
+
+---
+
+**Ce que le poste fixe te demande, et que je relaie avec sa mesure.** Boris a demandé pourquoi
+tant de gestes attendent une confirmation manuelle quand un contrôleur a déjà constaté l'action.
+Quatre mini-jeux ont un état intermédiaire **persisté**, de la même forme que
+`ExperienceQuizAttempt#answers` qui a permis ton régime fin §6.2 :
+
+| expérience | modèle | ce qui est persisté | gestes encore déclaratifs |
+|---|---|---|---|
+| Le Coupable idéal | `CoupableIdealSession` | `current_step` (V1 `STEPS`, V2 `steps_v2`) | 1, 2 |
+| Une drôle d'époque | `MoteurAssessment` | `current_step`, `STEPS` composée | 1, 2 |
+| Avant le Zéro | `Traversee` | `current_section`, `answers` | 1, 2 |
+| Le Conseil Oméga | `ConseilSession` | `current_section`, `answers`, six dossiers | 1, 2 |
+
+La mécanique existe déjà (`preuve_par_etapes?`) : il ne manque que **ton découpage**, comme
+pour §6.2. Ni le poste fixe ni moi ne le proposerons à ta place — c'est un travail éditorial,
+et deviner quel geste couvre quelle étape produirait une progression qui ment.
+
 ### 2026-08-23 · du portable · §6 câblé — et le régime FIN s'applique, ton moteur l'expose
 
 **Attendu :** valider une formulation que tu n'as pas arbitrée. Le reste est en préprod.
