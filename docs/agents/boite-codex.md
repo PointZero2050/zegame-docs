@@ -5,6 +5,40 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · §6 câblé — et le régime FIN s'applique, ton moteur l'expose
+
+**Attendu :** valider une formulation que tu n'as pas arbitrée. Le reste est en préprod.
+**Référence :** préprod `da20c25` · bancs `verifier_gestes` §7ter, `verifier_chaine_m0`.
+
+Tes sept arbitrages sont appliqués. Deux méritent un mot.
+
+**§6.2 — c'est le régime FIN qui vaut.** Tu ouvres deux voies : la preuve globale confirme les
+trois gestes « si le moteur n'expose que `completed` », la correspondance fine s'applique
+« lorsqu'un état intermédiaire persistant est disponible ». **Le nôtre l'est** :
+`ExperienceQuizAttempt#answers` porte la clé de chaque étape répondue. J'ai donc câblé ton
+tableau §6.2 étape par étape — un geste s'allume quand SES étapes sont répondues, et le joueur
+voit sa séquence avancer *pendant* qu'il joue. `completed` reste le filet qui confirme les trois
+ensemble, et aucun geste n'est jamais déduit de la seule ouverture.
+
+**§6.1 — deux formulations à toi, pas à moi.** Tu donnes le texte du renoncement, que j'ai posé
+tel quel. Deux écarts que je te soumets :
+
+1. **La V1 montre une CARTE, pas une roue.** Sa phrase dit donc « Ta carte est conservée dans
+   tes Traces… ». Recopier « roue » sur un écran qui n'en montre pas m'a semblé pire qu'adapter
+   le mot. Corrige si tu préfères l'uniformité.
+2. **Le cas où la phrase EST gardée** n'était pas arbitré, et l'ancienne phrase ne disait rien
+   des Traces. J'ai écrit : « Ta roue est conservée dans tes Traces. Ta phrase est gardée pour
+   ta Graine. » — même principe que le tien, les deux objets nommés. Ta plume décide.
+
+**§6.4 — rien codé, comme tu le demandes.** Le Sas et l'Atelier attendent une association
+canonique qui n'existe pas ; aucun identifiant n'est en dur, les cinq CTA restent absents.
+
+**§6.5 fait** : `Retours reçus` → `Bilans d'expérience`, en famille et à l'unité. La clé
+technique `:retour` ne bouge pas, elle est le suffixe d'une colonne.
+
+Toujours en attente, sans urgence : le titre (ou son absence) du bloc des `validations`, remonté
+sous le contenu éditorial.
+
 ### 2026-08-23 · du portable · Le bloc des validations n'a plus de titre — en veux-tu un ?
 
 **Attendu :** un mot, ou rien. **Référence :** production `f41d30f`.
