@@ -5,6 +5,65 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · 20 CTA sur 42 n'ont pas de bouton — la porte existe maintenant, il faut l'ouvrir
+
+**Attendu :** une règle de rendu à changer dans `_passage.html.haml`, ta zone.
+**Référence :** preprod, banc `scripts/verifier_chaine_m0.rb` (il marche les 14 expériences).
+
+Boris a demandé un balayage de toute la chaîne M0. Mesure : sur les 42 gestes, **26
+annonçaient un CTA que la vue ne rendait pas**. La règle actuelle est
+
+```haml
+- elsif libelle_cta && prouvable && adaptateur
+```
+
+`prouvable` ne vaut que pour le geste que le Jeu MESURE — un par expérience. Or les deux
+autres nomment des actions qui se font sur **la même surface** : « Ouvrir le procès »,
+« Entendre la défense » et le verdict sont trois moments d'un seul mini-jeu. Résultat : le
+joueur lit « Ouvrir le procès → » et n'a rien à cliquer.
+
+**Le service porte désormais l'adresse** : `SequenceDeGestes::Geste#porte`. Elle vaut
+l'adaptateur quand l'expérience en a un, une adresse nommée sinon (`/mentor`, `/mes-traces`,
+`/fresque`, `/sas`), et `nil` quand personne ne l'a tranchée — les 6 gestes en attente de
+Codex, où l'absence de bouton reste le bon choix.
+
+La règle devient donc :
+
+```haml
+- elsif libelle_cta && g.porte.present?
+  = link_to g.porte, class: "primary" do
+```
+
+Le `prouvable` et le `adaptateur` disparaissent de la vue : la dérivation vit dans le
+service, testée, à un seul endroit. La branche vidéo (`video_first? && g.rang == 1`) reste
+AVANT et l'emporte — le banc lui fait explicitement son exception.
+
+Les 20 portes que le service offre et que la vue n'ouvre pas encore, au 23 août au soir :
+
+| expérience | gestes | porte |
+|---|---|---|
+| le-coupable-ideal | 1, 2 | /le-coupable-ideal |
+| une-drole-d-epoque | 1, 2 | /une-drole-depoque |
+| avant-le-zero | 1, 2 | /avant-le-zero |
+| et-moi-dans-tout-ca | 1 · 2 · 3 | /mes-traces · /mentor · /fresque |
+| l-ecosysteme-point-zero | 3 | /le-schema-de-circulation |
+| le-site-du-point-zero | 1, 3 | /le-site-du-point-zero |
+| le-signe-de-reconnaissance | 1, 2 | /le-signe-de-reconnaissance |
+| les-choses-se-precisent | 2 · 3 | /mentor · /fresque |
+| le-conseil-omega | 1, 2 | /conseil-omega |
+| decouvrir-les-formats | 2 | /la-boussole-de-passage |
+| le-sas-d-entree | 1 | /sas |
+
+`verifier_chaine_m0.rb` reste ROUGE tant que ces 20 boutons manquent, et il les nomme un par
+un — c'est sa raison d'être. Quand ta vue rend `g.porte`, il passe au vert tout seul.
+
+Toujours ouverts chez toi, du même balayage : le raccourci du haut qui garde le libellé du
+dernier geste sur une expérience accomplie, et « Commencer le parcours → » qui ne rejoint pas.
+
+Ce qui est VERT et ne bouge pas : les 42 gestes ont leurs 9 champs éditoriaux, les libellés
+de contexte (« PASSAGE EN COURS · GESTE n SUR 3 · VERBE ») sont justes partout, les 3 panneaux
+sont rendus partout, et la fiche d'une expérience accomplie mène bien à la suivante.
+
 ### 2026-08-23 · du portable · Après le passage : deux trous de vue, mesurés avec Boris
 
 **Attendu :** deux correctifs dans `_passage.html.haml` / `_fiche_joueur.html.haml` — ta zone.

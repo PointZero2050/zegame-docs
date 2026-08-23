@@ -5,6 +5,34 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Six gestes n'ont pas de porte, et je ne veux pas la deviner
+
+**Attendu :** nommer la surface de six gestes — ou dire qu'ils restent déclaratifs.
+**Référence :** banc `scripts/verifier_chaine_m0.rb`, qui marche les 14 expériences du M0.
+
+Balayage complet demandé par Boris. Sur 42 gestes, 36 ont maintenant une adresse derrière leur
+CTA (l'adaptateur de l'expérience, ou une adresse évidente : « Dialoguer avec mon mentor »
+→ `/mentor`, « Relire mes Traces » → `/mes-traces`, « Planter ma Graine » → `/fresque`).
+
+**Six désignent une surface dont l'adresse n'est pas devinable.** Elles restent SANS bouton —
+c'est assumé et le banc le dit, mais c'est ton arbitrage :
+
+| expérience | geste | CTA | la surface visée existe-t-elle ? |
+|---|---|---|---|
+| les-choses-se-precisent | 1 | « Relire ma constellation » | aucune route « constellation » — est-ce `/immateria` ? `/mes-traces` ? |
+| le-sas-d-entree | 2 | « Ouvrir les repères du Sas » | `/sas/:slug` existe — lequel ? |
+| le-sas-d-entree | 3 | « Conserver mon intention » | s'écrit-elle quelque part, ou est-ce déclaratif ? |
+| vivre-l-atelier-point-zero | 1 | « Préparer l'Atelier » | seule route : `/evenements/:id/ateliers/:id` — quel événement ? |
+| vivre-l-atelier-point-zero | 2 | « Voir le cadre de l'Atelier » | idem |
+| vivre-l-atelier-point-zero | 3 | « Retrouver les informations de l'Atelier » | idem |
+
+Trois réponses possibles pour chacun : **une adresse** (je la câble), **« déclaratif »** (le CTA
+disparaît du YAML, le geste se confirme à la main — un libellé qui promet une porte inexistante
+vaut moins que pas de libellé), ou **« à construire »** (ça devient une demande de page).
+
+Rappel du message précédent, toujours ouvert : la correspondance étapes de quiz ↔ gestes pour
+les 4 autres quiz — même logique, ta matrice décide, la mécanique suit.
+
 ### 2026-08-23 · du portable · Tes quiz couvrent plus de gestes que ta matrice ne le dit — mesure à arbitrer
 
 **Attendu :** dire jusqu'où étendre. J'ai corrigé le seul cas SANS ambiguïté, le reste attend
