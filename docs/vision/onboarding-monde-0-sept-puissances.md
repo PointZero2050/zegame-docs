@@ -34,7 +34,7 @@ jauge : elle exprime la circulation commune des six autres Puissances.
 |---|---|---|---|
 | **Désir — Je suis** | Créer son jumeau numérique | Immateria, village de départ et premières quêtes solo | Quête en cours, avatar et mana disponible |
 | **Volonté — Je décide** | Entrer dans le premier parcours | Marelle et parcours Monde 0 | Parcours, étape active et prochaine action réelle |
-| **Imagination — Je crée** | Produire une première Graine | Fresque de Récit, puis Mes Traces | Graines, Résonances, Traces et transformations |
+| **Imagination — Je crée** | Découvrir la Fresque ; la première Graine naît à la clôture du chapitre 1 | Fresque de Récit, puis Mes Traces | Graines, Résonances, Traces et transformations |
 | **Émotion — Je ressens** | Choisir un héros inspirant | Catalogue limité des héros et dialogue avec le mentor | Mentor choisi, échanges et parcours associés |
 | **Communication — Je m'exprime** | Composer son Profil communautaire | Profil communautaire, Espace d'échange du Monde 0, puis Annuaire | visibilité choisie, échanges et personnes découvertes |
 | **Intuition — Je discerne** | Choisir le regard de Sirbey ou de Z.E.R.O. | Guides, corpus PZ, événements ; ressources externes annoncées | conversations, clés assimilées et Traces de lecture créées |
@@ -58,7 +58,8 @@ contenu et son illustration évoluent ensemble :
 3. `À explorer` à nouveau : une nouvelle page vient de s'ouvrir dans ce territoire ;
 4. `Appropriée` : les usages découverts sont résumés par quelques indicateurs intelligibles.
 
-Exemple Imagination : première Graine → retour avec compteurs de Graines et Résonances →
+Exemple Imagination : découverte de la Fresque → Graine de l'Appel produite à la clôture du
+chapitre 1 → retour avec compteurs de Graines et Résonances →
 première Trace créée → nouvelle invitation à découvrir `Mes Traces` → carte enrichie avec
 le nombre de Traces et leurs familles. Une Trace peut nourrir une Graine dans un parcours ou avec
 le mentor, mais la page `Mes Traces` ne propose pas de conversion mécanique.
@@ -195,11 +196,12 @@ suivante.
 
 ### Imagination
 
-La première visite explique la Fresque, les Graines et les Résonances. Un court rituel sur
-les récits produit la première Graine. Les Traces ne sont pas un sas obligatoire avant la
-Graine : tout résultat pédagogique significatif généré dans les parcours est récupéré dans une
-page dédiée. Une Trace peut être relue ou sa source rejouée ; elle peut nourrir ultérieurement une
-Graine dans le parcours ou avec le mentor, sans conversion mécanique depuis le registre.
+La première visite explique la Fresque, les Graines et les Résonances. Elle ne produit pas de
+Graine générique : la première Graine réelle est la Graine de l'Appel, créée dans l'expérience
+qui clôt le chapitre 1. Tout résultat pédagogique significatif généré dans les parcours est
+récupéré comme Trace dans une page dédiée. Une Trace peut être relue ou sa source rejouée ; elle
+peut nourrir une Graine dans le parcours ou avec le mentor, sans conversion mécanique depuis le
+registre.
 
 ### Émotion
 

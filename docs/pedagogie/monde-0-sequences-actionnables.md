@@ -200,10 +200,16 @@ ne constituent ni un chronomètre ni une condition de validation.
 
 - **Accroche :** Écris la phrase qui te met en mouvement.
 - **Explication :** Relis la proposition née du dialogue, transforme-la si nécessaire et plante
-  ta première Graine de l'Appel dans la Fresque.
+  ta première Graine de l'Appel dans la Fresque. L'éditeur reprend quatre appuis liés au chapitre :
+  ce qui s'est fissuré dans ta manière de voir le monde ; ce qui t'appelle maintenant ; la
+  croyance que tu as commencé à interroger ; la tension perçue entre ton besoin et celui du
+  système.
 - **CTA :** `Planter ma Graine de l'Appel`
-- **Sortie attendue :** Graine enregistrée dans la Fresque.
-- **Reconnaissance :** preuve serveur à relier à la création de la Graine attendue.
+- **Sortie attendue :** Graine contextualisée enregistrée dans la Fresque, avec provenance
+  parcours + chapitre + expérience, puis retour automatique à cette page d'expérience.
+- **Reconnaissance :** preuve serveur liée à la création effective de cette Graine. Ouvrir la
+  Fresque ou l'éditeur ne suffit pas ; le retour révèle la suite seulement quand le listener
+  retrouve la Graine attendue.
 
 ### 6. L'écosystème Point Zéro — 5 min
 

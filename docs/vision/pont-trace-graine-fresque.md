@@ -1,9 +1,11 @@
 # Le pont Trace → Graine, et le Miroir de la Fresque
 
 *Écrit le 16 août 2026 par l'instance poste fixe, au portage de
-`fresque-recit-m0-cible`. **Arbitré par Boris le 16 août au soir** — les décisions
-sont intégrées ci-dessous et remplacent les questions ouvertes de la première
-version. Destinataire : l'instance portable (modèles, services, contrôleurs).*
+`fresque-recit-m0-cible`. **Arbitré par Boris le 16 août, puis révisé le 23 août**
+après la traversée réelle de l'expérience `Et moi dans tout ça ?`. La révision du
+23 août prévaut : la première Graine n'est plus un rituel générique de la Fresque,
+mais la sortie contextualisée du premier chapitre. Destinataire : l'instance
+portable (modèles, services, contrôleurs).*
 
 ## Le constat d'origine
 
@@ -16,13 +18,26 @@ La maquette de la Fresque et le code divergeaient sur ce qu'**est** une Graine.
 
 ## Ce que Boris a tranché
 
-### 1. La Fresque CRÉE des Graines — c'est bien son rôle
+### 1. La première Graine naît dans le parcours
 
-« Planter ma première Graine » doit **produire une Graine**, pas une Trace. Le libellé
-était juste ; c'est l'implémentation qui ne l'était pas encore.
+L'expérience `Et moi dans tout ça ?` clôt le premier chapitre. Sa sortie est la
+**Graine de l'Appel** : la première Graine réelle du Joueur.
 
-- **La première Graine** naît des **quatre questions** du rituel (déjà portées).
-- **Les suivantes** naissent d'un **champ de saisie libre**.
+Le questionnaire générique de première visite dans la Fresque est donc retiré. La
+première visite de la Fresque explique le Voyage, les Graines et les Résonances ; elle
+peut montrer un état vide, mais elle ne crée pas un objet concurrent avant la clôture
+du chapitre.
+
+Les quatre questions existantes restent utiles, mais deviennent le canevas contextuel
+de la Graine de l'Appel :
+
+1. Qu'est-ce qui s'est fissuré dans ta manière de voir le monde ?
+2. Qu'est-ce qui t'appelle maintenant ?
+3. Quelle croyance as-tu commencé à interroger ?
+4. Quelle tension perçois-tu entre ton besoin et celui du système ?
+
+Après cette première Graine, la Fresque peut accueillir des Graines libres ou les
+Graines structurées produites à la clôture d'autres chapitres.
 
 ### 2. Une Trace ne devient PAS une Graine depuis la page Traces
 
@@ -30,45 +45,52 @@ Le pont n'existe pas comme geste d'interface. La conversion se fait **pédagogiq
 par le dialogue avec le mentor à l'intérieur des parcours. La page Traces reste une
 relecture ; elle ne propose aucune transformation.
 
-### 3. Option souhaitée — récolter la Graine en fin de chapitre
+### 3. Règle canonique — récolter la Graine en fin de chapitre
 
-À la fin d'un dialogue avec un mentor, en clôture de chapitre : le mentor propose
-**« Veux-tu que je publie cette Graine pour toi ? »**. Si le joueur accepte, il est
-basculé vers la **page d'édition de la Graine**, celle-ci étant déjà publiée.
+À la fin du dialogue avec le mentor, le CTA ouvre la **page d'édition de la Graine**
+dans le contexte de l'expérience de clôture. Le mentor propose une formulation ; le
+Joueur la relit, la transforme et la confirme. Le mentor n'écrit ni ne publie à sa place.
 
-Statut : *souhaité, si possible*. Ce n'est pas un bloquant pour la V1 de la Fresque.
+La même mécanique sert les trois sorties du Monde 0 :
 
-### 4. Le Miroir V1 : pas de LLM
+- chapitre 1 : **Graine de l'Appel** ;
+- chapitre 2 : **Graine de relation** ;
+- chapitre 3 : **Graine de passage**.
 
-**Décision révisée.** L'arbitrage précédent (les trois formulations demandées au mentor)
-est **abandonné pour la V1** : passer par le mentor complique l'ensemble. La V1 garde
-**des champs libres remplis par le joueur** pour produire la Graine initiale — c'est-à-dire
-exactement ce qui est déjà porté. L'écran des trois propositions n'a donc pas lieu d'être
-pour l'instant.
+### 4. Un éditeur unique, quatre contextes
+
+Il n'existe pas deux formulaires concurrents. Un seul éditeur de Graine reçoit un
+contexte explicite : `appel`, `relation`, `passage` ou `libre`. Dans un parcours, il
+affiche en permanence la provenance et le chemin de retour :
+
+`Monde 0 · Chapitre 1 · Et moi dans tout ça ?`
+
+Le brouillon est conservé. `Retour à l'expérience` ramène sans perdre la saisie.
+Après `Planter dans ma Fresque`, la Graine est créée puis le Joueur revient
+automatiquement à l'expérience, sur son bloc d'action.
 
 ## Ce que cela demande au portable
 
 L'identité canonique n'est **pas** remise en cause : une Graine reste un message écrit par
-le joueur dans le fil d'une de ses expériences. Ce qui change, c'est qu'un **second point
-d'entrée** doit pouvoir en créer une — la Fresque.
+le Joueur dans le fil d'une de ses expériences. La clôture de chapitre fournit précisément
+ce conteneur ; il n'est plus nécessaire d'inventer un fil technique pour la première Graine.
 
-Questions de modèle, hors zone du poste fixe :
+Contrat d'implémentation, hors zone du poste fixe :
 
-1. **À quel fil rattacher une Graine née dans la Fresque ?** Les Graines existantes vivent
-   dans le fil d'un `ChallengesUser`. La première Graine du rituel n'est liée à aucune
-   expérience. Trois pistes : la rattacher à l'expérience courante du joueur ; créer un
-   conteneur d'un nouveau type (`Graine.CONTENEUR` prévoit explicitement ce cas — « Si un
-   second conteneur apparaît, il s'ajoute ICI, une seule fois ») ; ou introduire un fil
-   « Fresque » propre au joueur.
-2. **L'écriture** : la Fresque devient un point de création, alors que `Graine` est
-   aujourd'hui un service de **lecture** seule.
-3. **Une page d'édition de Graine** est nécessaire pour le point 3 ci-dessus (route +
-   action), et servira aussi à la saisie libre des Graines suivantes.
+1. **Provenance persistée** : parcours, chapitre et expérience de clôture ; la destination
+   de retour est calculée côté serveur, pas fournie comme URL arbitraire par le client.
+2. **Preuve** : seule la création effective de la Graine contextualisée accomplit le geste
+   `Semer`. Ouvrir la Fresque ou l'éditeur ne valide rien.
+3. **Retour de boucle** : après création, redirection vers la page de l'expérience et son
+   ancre d'action. Le listener y constate la Graine attendue et révèle la suite.
+4. **Idempotence** : recharger ou revenir depuis l'éditeur ne crée jamais une seconde Graine.
+   Une Graine déjà plantée rouvre en lecture/édition selon les droits existants.
+5. **Séparation Trace/Graine** : les réponses préparatoires et productions du chapitre
+   restent des Traces ; seule la formulation confirmée devient Graine.
 
 ## Ce que le poste fixe fera ensuite
 
-Porter la vue une fois le mécanisme disponible : le champ de saisie libre, la page
-d'édition, et le remplacement de l'actuel `POST /fresque/bifurquer` (qui crée une Trace)
-par la création d'une Graine. Le banc `verifier_fresque` devra suivre dans la même
-livraison — il asserte aujourd'hui que la page **n'invente aucune Graine**, ce qui cessera
-d'être vrai, et c'est voulu.
+Porter la page de clôture et l'éditeur une fois le mécanisme disponible. Les bancs doivent
+vérifier ensemble : absence du questionnaire générique concurrent dans la Fresque, contexte
+de chapitre visible, absence de validation à l'ouverture, création d'une seule Graine,
+retour à l'expérience et accomplissement du geste seulement après preuve serveur.

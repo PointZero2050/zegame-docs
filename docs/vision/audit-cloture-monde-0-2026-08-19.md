@@ -29,7 +29,7 @@ Le reste peut être traité après le gel du Monde 0 sans rendre son parcours in
 | Désir / Immateria | jeu servi par Rails, tutoriel, Trace idempotente, retour vers le Jeu | **Vert M0** | le résumé vivant de l'avatar reste reporté avec le contrat Immateria |
 | Volonté / parcours | progression structurelle, expériences requises, intensité/effet/puissance éditorialisés, rite facilitateur séparé | **Vert** | rejouer le banc complet après les dernières promotions |
 | Imagination / Traces | registre canonique par familles, relecture et retours d'expérience | **Vert** | conserver la page comme registre ; aucun bouton de conversion directe |
-| Imagination / Fresque | vraies Graines relues et publiables, mais le rituel « Planter ma première Graine » crée encore une Trace | **Rouge** | porter l'arbitrage du 16 août : le rituel et la saisie libre doivent créer une vraie Graine |
+| Imagination / Fresque | vraies Graines relues et publiables, mais le rituel générique concurrence encore la Graine de clôture du chapitre 1 | **Rouge** | retirer ce rituel ; la première Graine devient la Graine de l'Appel créée depuis `Et moi dans tout ça ?`, puis renvoie à l'expérience |
 | Émotion / Héros et mentor | six figures M0, choix réversible, fiche, trois Puissances, lemniscate, mentor Claude et mémoire consentie | **Vert M0** | `parcours_associes` rédigé pour les 48 figures dans `docs/pedagogie/parcours-associes-heros.yml` ; résolution des slugs et portage applicatif ultérieurs |
 | Communication / Guides | deux voix, fil privé continu, suppression et centre de personnalisation | **Vert** | reprendre dans Rails les trois corrections de vérité de la maquette `57960b3` si nécessaire |
 | Communication / Espace d'échange | canal M0, profils, réactions, réponses et échange individuel consentis | **Orange** | fusionner/recetter les PR de fin de lot, puis promouvoir |
@@ -53,10 +53,11 @@ La décision canonique est déjà écrite dans
 - la cristallisation d'une Trace se fait avec le mentor dans un parcours.
 
 Le code courant conserve pourtant `POST /fresque/bifurquer` vers une Trace, tout en affichant
-« Planter ma première Graine ». C'est le seul endroit du Monde 0 où un CTA central promet encore
-un objet différent de celui qu'il produit. Il faut donc choisir un conteneur canonique pour la
-Graine née hors expérience, introduire l'écriture correspondante dans le service `Graine`, puis
-faire suivre vue et banc dans la même livraison.
+« Planter ma première Graine ». L'arbitrage révisé du 23 août supprime cette bifurcation : la
+première Graine naît dans l'expérience de clôture `Et moi dans tout ça ?`, qui fournit déjà son
+conteneur canonique. La Fresque explique et relit ; l'éditeur contextualisé crée la Graine de
+l'Appel, puis renvoie à l'expérience afin que la preuve serveur ferme le geste. Vue, service,
+listener et banc doivent évoluer dans la même livraison.
 
 ### 3.2. Fermer le lot Communication
 

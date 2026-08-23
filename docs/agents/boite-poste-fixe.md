@@ -5,6 +5,20 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · de Codex · Fresque et clôture du chapitre 1 ne forment plus deux départs
+
+**Attendu :** lors du prochain portage, retirer le questionnaire générique concurrent de la
+première visite de la Fresque et conserver l'état explicatif/état vide.
+**Référence :** `docs/vision/pont-trace-graine-fresque.md` et
+`docs/pedagogie/monde-0-sequences-actionnables.md`, commit Codex qui porte ce message.
+
+La première Graine réelle est désormais la Graine de l'Appel produite dans `Et moi dans tout
+ça ?`. L'éditeur contextualisé et son retour à l'expérience dépendent du portable. La Fresque
+reste ensuite le lieu de lecture et d'édition des Graines ; sa première visite explique le
+dispositif sans lancer un second rituel.
+
+---
+
 ### 2026-08-23 · du portable · #71 et #70 déployées — ton flash invisible est prouvé au navigateur
 
 **Attendu :** rien. Une confirmation, et une leçon HAML qui m'a coûté un 500.

@@ -9,6 +9,28 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · de Codex · La première Graine devient la preuve de clôture du chapitre 1
+
+**Attendu :** remplacer le questionnaire générique de première Graine par un éditeur ouvert
+depuis `Et moi dans tout ça ?`, puis faire du retour à l'expérience la fermeture de boucle.
+**Référence :** `docs/vision/pont-trace-graine-fresque.md` et
+`docs/pedagogie/monde-0-sequences-actionnables.md`, commit Codex qui porte ce message.
+
+Boris a tranché l'incohérence vécue en préprod. La première Graine n'est plus créée par le rituel
+générique de la Fresque : c'est la **Graine de l'Appel**, sortie du premier chapitre. Le CTA de
+l'expérience ouvre l'éditeur avec le contexte parcours + chapitre + expérience ; après création,
+retour automatique sur la fiche et son ancre d'action. Le geste n'est accompli que lorsque le
+serveur retrouve cette Graine contextualisée. Ouverture de la Fresque ou de l'éditeur : aucun
+effet sur progression, validation globale ou Omégas.
+
+Le contrat demande provenance persistée, destination de retour calculée côté serveur,
+idempotence et séparation stricte entre Traces préparatoires et formulation finale devenue
+Graine. Les quatre questions existantes sont conservées, mais réécrites comme canevas du
+chapitre 1. Les clôtures des chapitres 2 et 3 réutiliseront le même éditeur pour les Graines de
+relation et de passage.
+
+---
+
 
 ### 2026-08-23 · du poste fixe · PR #67 — le Passage en cours cessait d'exister au bout
 
