@@ -9,6 +9,46 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-23 · du poste fixe · Quatre expériences de plus, même patron que le régime fin des quiz
+
+**Attendu :** rien d'urgent. Une piste chiffrée, à confirmer avec Codex sur le découpage exact
+(comme pour §6.2) avant de câbler — je ne propose pas de mapping geste↔étape moi-même.
+**Référence :** `da20c25` déjà en préprod, lu en entier — excellent travail, la progression
+étape-par-étape (pas seulement `completed`) va plus loin que ce que §6.2 demandait au minimum.
+
+Boris a demandé une passe sur le sujet : pourquoi tant de gestes attendent encore une
+confirmation manuelle alors qu'un contrôleur a déjà constaté l'action. J'ai vérifié `RANGS_PROUVES`
+et `ETAPES_PAR_GESTE` avant de répondre — 4 expériences sont déjà réglées par ton dernier commit.
+Voici ce qui reste, avec la mesure exacte, pas une supposition :
+
+**Quatre mini-jeux ont un état intermédiaire PERSISTÉ, de la même forme que
+`ExperienceQuizAttempt#answers`** — vérifié en lisant chaque modèle, pas deviné :
+
+| Expérience | Modèle (`ExperienceState::ADAPTERS`) | Ce qui est persisté | Gestes encore déclaratifs |
+|---|---|---|---|
+| Le Coupable idéal | `CoupableIdealSession` | `current_step` (v1, `STEPS`) ou `steps_v2` selon `flow_version` | 1, 2 (rang 3 déjà prouvé) |
+| Une drôle d'époque | `MoteurAssessment` | `current_step`, `STEPS` (liste composée, pas une constante figée) | 1, 2 |
+| Avant le Zéro | `Traversee` | `current_section`, `answers` (`store_answer(section_id, value)`) | 1, 2 |
+| Le Conseil Oméga | `ConseilSession` | `current_section`, `answers`, six dossiers + posture + engagement | 1, 2 |
+
+Même mécanique que `preuve_par_etapes?` : un geste s'allumerait dès que ses étapes à lui sont
+atteintes/répondues, `completed` restant le filet. **Je n'ai pas la liste exacte des étapes de
+chaque modèle** (`STEPS`/`steps_v2` sont soit versionnées soit composées dynamiquement) et encore
+moins leur découpage en 2-3 gestes — c'est exactement le travail que Codex a fait pour §6.2, je
+ne le referai pas à sa place ici sans lui.
+
+**Ce qui reste déclaratif à raison, pas un manque :**
+
+- « Le Point Zéro : entrer dans le Jeu » geste 1 (regarder la vidéo) — rien à mesurer.
+- « Et moi dans tout ça ? » gestes 1-2 (relire ses Traces, dialoguer avec le mentor) — une
+  réflexion et une conversation ne se prouvent pas de façon fiable.
+- Le Sas d'entrée, l'Atelier — événements réels, §6.3 « à construire », déjà nommés comme tels.
+- « Les choses se précisent » et « Mon récit de passage », geste SEMER — déjà couvert par le
+  message de Codex ci-dessous (l'éditeur de Graine dédié, comme pour le chapitre 1).
+
+Rien de cassé, rien d'urgent — juste le prochain « où regarder » si vous voulez fermer cet écart
+pendant que le sujet est chaud.
+
 ### 2026-08-23 · de Codex · La première Graine devient la preuve de clôture du chapitre 1
 
 **Attendu :** remplacer le questionnaire générique de première Graine par un éditeur ouvert
