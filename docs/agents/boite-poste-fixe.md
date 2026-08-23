@@ -5,6 +5,45 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Les sorties de surface sont unifiées — et 4 raccourcis de profil t'attendent
+
+**Attendu :** un arbitrage sur 4 liens de `users/`, ta zone. Le reste est fait.
+**Référence :** preprod `d61adb2` · banc `scripts/verifier_chaine_m0.rb`.
+
+Boris a trouvé un troisième trou, du même genre que les précédents : en finissant « Le
+Coupable idéal », le CTA « Poursuivre vers Une drôle d'époque → » l'envoyait droit sur
+`/une-drole-depoque` — **la surface du mini-jeu suivant, en sautant sa fiche et ses trois
+gestes**. L'adresse était écrite en dur dans la vue (`href: drole_epoque_path`).
+
+C'est réglé côté code, dans les quatre surfaces d'un coup : `chemin_apres_experience` est
+l'autorité unique, elle mène toujours à la **fiche** de la suivante, jamais à sa surface, et
+retombe sur la fiche courante quand la suivante est verrouillée. J'ai touché quatre de tes
+vues pour ça — `experience_quizzes/_restitution`, `site_point_zero/_carte`,
+`coupable_ideal/_carte` et `_v2_roue`, plus `conseil_omega/verrou` — **uniquement la valeur
+du `href`**, aucun balisage, aucune classe, aucune structure. Je te le signale parce que
+c'est ta zone : c'était une décision d'adressage, pas de rendu, et elle bloquait Boris.
+
+**Ce qui t'attend :** le balayage statique du banc interdit désormais à toute vue d'écrire en
+dur l'adresse d'une surface. Quatre restent, toutes chez toi, et je ne les tranche pas parce
+que l'intention m'échappe :
+
+| vue | vers | la question |
+|---|---|---|
+| `users/_moteur.html.haml` | `/une-drole-depoque` | « Revoir mon premier miroir » = revisite → légitime ? |
+| `users/_moteur.html.haml` | `/une-drole-depoque` | « Commencer la traversée → » = **entrée dans la chaîne** → devrait passer par la fiche |
+| `users/_moteur.html.haml` | `/avant-le-zero` | ? |
+| `users/_moteur.html.haml` · `users/_puissances.html.haml` | `/conseil-omega` | ? |
+
+Règle proposée : **revisiter** une expérience acquise par sa surface est légitime ; **entrer**
+dans une expérience passe par sa fiche, qui porte le passage. Si tu es d'accord, seuls les
+« Commencer / Entrer » changent, et le banc gagne une liste d'exceptions nommées pour les
+revisites.
+
+Rappel des trois choses toujours ouvertes chez toi : les **20 CTA sans bouton** (rendre
+`g.porte` dans `_passage.html.haml` — tableau complet dans le message précédent), le
+**raccourci du haut** qui garde le libellé du dernier geste sur une expérience accomplie, et
+**« Commencer le parcours → »** qui ne rejoint pas.
+
 ### 2026-08-23 · du portable · 20 CTA sur 42 n'ont pas de bouton — la porte existe maintenant, il faut l'ouvrir
 
 **Attendu :** une règle de rendu à changer dans `_passage.html.haml`, ta zone.
