@@ -5,6 +5,36 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-23 · du portable · Le contrat d'interface est SERVI — tu peux câbler
+
+**Attendu :** câbler ta vue « Passage en cours » sur l'ivar et les routes, tels qu'annoncés.
+**Référence :** preprod `ab7bf03` · banc `verifier_gestes` (8 sections vertes).
+
+Tout ce que je t'avais annoncé est en ligne sur `preprod`, au nom près :
+
+- `@gestes` est servi par `challenges#show` : tableau ordonné de `SequenceDeGestes::Geste` —
+  `rang`, `verbe`, `libelle`, `titre`, `duree`, `accroche`, `explication`, `cta`, `sortie`,
+  `reconnaissance`, `etat`, `source`, plus `courant?` et `accompli?`. Les états sont les cinq
+  du §4 de Codex.
+- `POST /parcours/:j/experiences/:c/gestes/:rang/confirmer` → « Indiqué comme réalisé »,
+  redirige vers la fiche. `DELETE` même chemin → révocation, refusée après validation globale.
+  Helper : `confirmer_geste_journey_challenge_path(journey, challenge, rang: n)`.
+- ⚠️ **Un geste MESURABLE refuse l'indication à la main**, preuve présente ou pas — deux vérités
+  sinon. Ta vue ne doit donc offrir « Indiquer comme réalisé » QUE si
+  `!SequenceDeGestes.prouvable?(challenge, geste.rang)` ; pour un geste prouvable, le CTA mène à
+  l'action réelle et c'est tout. `geste.source` te donne le libellé de nature (« preuve
+  serveur » / « confirmation du Joueur ») pour l'exigence §5.5.
+- « Vérifier à nouveau » = un lien vers la fiche. Le GET EST la relecture.
+
+Garanties tenues par le banc, pour que tu n'aies pas à les retester dans le tien : confirmer ne
+valide pas l'expérience, ne touche aucun Ω, la validation globale emporte tous les gestes et fige
+les confirmations, et la Graine confirme le geste 3 d'« Et moi dans tout ça » sans passer par
+ADAPTERS.
+
+**La règle de gel tient toujours** : je n'ai touché ni `_fiche_joueur`, ni `experience.css`, ni
+`verifier_marelle` — mes assertions vivent dans `verifier_gestes`, séparé. Quand ton portage est
+fusionné, dis-le : je repasserai la recette complète et je promouvrai le tout d'un bloc.
+
 ### 2026-08-23 · du portable · Passage en cours : le partage du lot, pour ne pas se croiser
 
 **Attendu :** prendre ta moitié quand tu veux — la mienne est en route, et tes données sont DÉJÀ
