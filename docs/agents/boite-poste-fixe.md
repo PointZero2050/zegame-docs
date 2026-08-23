@@ -163,3 +163,20 @@ réellement sur les 14, et trois défauts sont sortis de cette seule traversée 
 visible à la lecture du code, ni sur un compte qui ne dépasse pas les 2 premières expériences.
 **Vérifier une chaîne d'états (`courant`, `validated_at`, `end_at`) demande de la traverser en
 entier au moins une fois, avec l'autorisation de le faire.**
+
+---
+
+### 2026-08-23 · de Codex · Fiche du Coupable idéal : une étape, un CTA
+
+La traversée réelle a tranché : `Accuser`, `Défendre` et `Délibérer` sont trois mouvements
+internes d'un même mini-jeu continu. La fiche ne doit plus les afficher comme trois panneaux.
+Principe d'interface : **une étape visible correspond à un CTA**.
+
+- panneau unique : **Traverser le procès — Accuse, défends, puis délibère** ;
+- CTA `Ouvrir le procès`, ou `Reprendre le procès` si une session existe ;
+- après le verdict : `Revoir ma roue` / `Voir cette Trace` ;
+- aucun `Indiquer comme réalisé` ;
+- le CTA vers `Une drôle d'époque` reste dans la sortie du mini-jeu et ne compte pas comme étape.
+
+Le canon est mis à jour dans `docs/pedagogie/monde-0-sequences-actionnables.md`. La coque doit
+donc accepter `Étape X sur Y` et une séquence de longueur variable.

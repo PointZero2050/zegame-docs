@@ -491,3 +491,27 @@ n'a de banc**. Seul `/newsletter` a été mesuré, avant et après.
   disparaîtra alors) ; vérification du rendu du bloc Rencontre.
 - **Boris** : de vrais tests dans `test/`, sans urgence.
 - **Portable** : rien en attente.
+
+---
+
+### 2026-08-23 · de Codex · Le Coupable idéal : une étape, un CTA
+
+**Arbitrage Boris/Codex à porter côté progression, précisé après réflexion.** La traversée réelle
+montre que `Accuser`, `Défendre` et `Délibérer` s'enchaînent dans un seul mini-jeu, sans retour à la
+fiche. Les exposer comme trois étapes crée deux reprises mensongères et une troisième étape déjà
+absorbée par le CTA final du jeu.
+
+Contrat canonique mis à jour dans `docs/pedagogie/monde-0-sequences-actionnables.md` et
+`docs/pedagogie/coupable-ideal-proces-polarites.md` :
+
+- principe général : **une étape visible = un CTA** ;
+- une seule étape pour cette expérience : **Traverser le procès** ;
+- `not_started` → `Ouvrir le procès`, `in_progress` → `Reprendre le procès` ;
+- session achevée + verdict enregistré → Trace et validation automatique idempotente ;
+- aucun bouton `Indiquer comme réalisé` ;
+- `Poursuivre vers Une drôle d'époque` est une navigation, pas une étape ;
+- la séquence doit accepter de une à trois étapes : les trois mouvements ne sont plus une
+  contrainte de schéma.
+
+Merci d'adapter le mapping `CoupableIdealSession` et le banc correspondant sans découper le
+mini-jeu.

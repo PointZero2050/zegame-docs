@@ -12,12 +12,12 @@ Les blocs « À quoi t'attendre » et « Rien à faire ici pour l'instant » son
 surface unique, située sous la séquence : **Passage en cours**.
 
 Avant le commencement, elle présente le premier geste. Pendant l'expérience, elle présente
-uniquement le geste courant. Après le troisième geste, elle devient **Passage franchi** et ouvre
+uniquement le geste courant. Après le dernier geste, elle devient **Passage franchi** et ouvre
 l'étape suivante.
 
 Le bloc contient toujours, dans cet ordre :
 
-1. `Geste X sur 3` et le verbe de séquence ;
+1. `Étape X sur Y` et le verbe de séquence ;
 2. un titre court ;
 3. deux ou trois phrases expliquant le sens du geste et le résultat attendu ;
 4. un CTA décrivant l'action réelle ;
@@ -30,8 +30,8 @@ le geste par sa seule activation.
 ## 2. Contrat de reconnaissance
 
 Il n'existe actuellement aucun état persistant par geste dans `ChallengesUser`. Une expérience
-ne connaît que sa réalisation et sa validation globales. La progression en trois gestes repose
-donc sur la règle suivante :
+ne connaît que sa réalisation et sa validation globales. La progression visible repose donc sur
+la règle suivante :
 
 - **preuve serveur** lorsqu'un état canonique existe : résultat de mini-jeu ou de QCM, Graine,
   inscription, présence, validation du facilitateur ;
@@ -53,7 +53,22 @@ Au retour d'une action interne ou externe, la page relit l'état serveur à l'af
 `visibilitychange`. Le bouton `Vérifier à nouveau` déclenche la même lecture. Le navigateur ne
 devient jamais la source de vérité.
 
-## 3. Matrice éditoriale des 42 gestes
+### 2.1. Granularité : une étape visible, un CTA
+
+Les trois mouvements constituent un rythme pédagogique fréquent, pas un gabarit obligatoire.
+Une expérience peut exposer une, deux ou trois étapes. **Chaque étape visible porte un CTA
+unique**, qui ouvre l'action correspondante. Une phase interne ne devient une étape que si elle
+réunit ces trois conditions :
+
+1. le Joueur s'interrompt réellement entre les deux phases ;
+2. la fiche peut proposer un CTA distinct qui reprend au bon endroit ;
+3. une preuve ou un état fiable permet de reconnaître la transition.
+
+Si le dispositif se joue sans interruption, ses mouvements restent nommés **dans** l'étape :
+ils ne produisent ni panneaux successifs, ni confirmations déclaratives. Un CTA final qui mène
+à l'expérience suivante est une navigation, jamais une étape supplémentaire.
+
+## 3. Matrice éditoriale des étapes
 
 Les durées répartissent la durée réelle de l'expérience afin de donner un ordre de grandeur. Elles
 ne constituent ni un chronomètre ni une condition de validation.
@@ -91,32 +106,18 @@ ne constituent ni un chronomètre ni une condition de validation.
 
 ### 2. Le Coupable idéal — 10 min
 
-#### 1. Accuser — Fais entrer les suspects · 3 min
+#### Étape unique — Traverser le procès · 10 min
 
 - **Accroche :** Qui a cassé le monde ?
-- **Explication :** Entre dans le procès et choisis les forces que tu tiens spontanément pour
-  responsables. Laisse ton premier récit parler sans chercher à être raisonnable.
-- **CTA :** `Ouvrir le procès`
-- **Sortie attendue :** premiers suspects désignés dans le mini-jeu.
-- **Reconnaissance :** événement de phase à ajouter au mini-jeu ; confirmation en repli.
-
-#### 2. Défendre — Écoute l'avocat du Réel · 4 min
-
-- **Accroche :** Chaque accusé protège aussi quelque chose.
-- **Explication :** Examine la fonction vitale contenue dans les forces que tu condamnes. Défendre
-  ne signifie pas absoudre : il s'agit de retrouver la polarité sacrifiée par l'accusation.
-- **CTA :** `Entendre la défense`
-- **Sortie attendue :** fonctions défendues et polarités opposées rencontrées.
-- **Reconnaissance :** événement de phase à ajouter au mini-jeu ; confirmation en repli.
-
-#### 3. Délibérer — Rends un verdict qui ne mutile pas le Réel · 3 min
-
-- **Accroche :** Sors du choix entre condamner et nier.
-- **Explication :** Compose un verdict qui nomme la charge destructive et conserve la puissance
-  utile de chaque force. Tu ne cherches plus un innocent : tu commences à penser en polarités.
-- **CTA :** `Rendre mon verdict`
+- **Explication :** Traverse le procès d'un seul mouvement. Accuse d'abord les forces que tu tiens
+  spontanément pour responsables. Écoute ensuite ce que chacune protège encore, puis rends un
+  verdict qui nomme sa charge destructive sans mutiler la puissance qu'elle contient.
+- **CTA :** `Ouvrir le procès`, remplacé par `Reprendre le procès` lorsqu'une session est en cours.
 - **Sortie attendue :** procès achevé et verdict conservé comme Trace.
-- **Reconnaissance :** preuve serveur existante à la fin du mini-jeu.
+- **Reconnaissance :** preuve serveur issue de la session achevée et du verdict enregistré. La
+  simple ouverture du mini-jeu ne suffit pas. Aucun bouton `Indiquer comme réalisé` n'est affiché.
+- **Après validation :** `Revoir ma roue` ou `Voir cette Trace`. Le CTA `Poursuivre vers Une
+  drôle d'époque` mène à l'expérience suivante ; il ne constitue pas une seconde étape.
 
 ### 3. Une drôle d'époque — 20 min
 
@@ -478,7 +479,7 @@ ne constituent ni un chronomètre ni une condition de validation.
 
 ## 4. Matrice de complétion à vérifier par le portable
 
-Le portage doit établir, pour chacun des 42 gestes, les quatre colonnes suivantes :
+Le portage doit établir, pour chaque étape visible, les quatre colonnes suivantes :
 
 | État visible | Source de vérité | Transition | Repli V1 |
 |---|---|---|---|
@@ -517,7 +518,7 @@ progressive avant la création de nouvelles preuves :
 4. Une preuve serveur fait avancer la séquence après relecture de l'état.
 5. Sans preuve, le Joueur peut indiquer le geste comme réalisé et voit clairement la nature
    déclarative de cet état.
-6. Le troisième geste ne valide l'expérience que si l'autorité canonique l'autorise.
+6. La dernière étape ne valide l'expérience que si l'autorité canonique l'autorise.
 7. Aucun état de geste ne crée, ne retire ou ne recalcule des Omégas.
 8. Le rejeu d'une expérience ne révoque aucun Oméga acquis.
 9. L'étape suivante du parcours ne s'ouvre qu'après la validation globale de l'expérience.
@@ -569,7 +570,7 @@ valide pas.
 
 ### 6.4. Granularité de progression
 
-Les textes détaillés des 42 gestes figurent dans les sections 3.1 à 3.14 de cette spécification :
+Les textes détaillés des étapes figurent dans les sections 3.1 à 3.14 de cette spécification :
 durée, accroche, explication, CTA, sortie attendue et reconnaissance. Ils constituent la source
 éditoriale à verser dans la configuration applicative.
 

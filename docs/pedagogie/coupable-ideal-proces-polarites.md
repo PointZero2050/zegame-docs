@@ -544,6 +544,14 @@ envoyer les réponses à un modèle d'IA dans cette version.
 Sur la fiche vidéo-first : `Regarder la vidéo · 6–7 min`, puis `Ouvrir l'audience`, ensuite
 `Reprendre le procès`, et après complétion `Revoir ma roue` avec `Rejouer` en secondaire.
 
+Ces états pilotent **une seule étape d'expérience**, avec un seul CTA contextuel : `Traverser le
+procès`. Accuser, défendre et délibérer sont trois mouvements internes du mini-jeu, joué sans
+retour à la fiche. Ils ne doivent donc pas apparaître comme trois étapes successives et ne
+demandent aucune confirmation manuelle.
+Le verdict termine la session, produit la Trace et déclenche la reconnaissance automatique de
+l'expérience par le chemin serveur idempotent. Le CTA final vers `Une drôle d'époque` est une
+navigation vers l'expérience suivante, pas une étape de validation supplémentaire.
+
 La vidéo et le mini-jeu appartiennent au même Challenge 257, mais la vidéo seule ne valide pas
 l'expérience. Vérifier ce point dans l'intégration réelle de `primary_video` et `ExperienceState`.
 

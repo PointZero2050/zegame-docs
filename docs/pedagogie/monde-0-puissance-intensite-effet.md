@@ -87,7 +87,7 @@ distincts.
 
 ## 3. Matrice des quatorze expériences
 
-Les contenus détaillés des 42 gestes — titres, durées indicatives, accroches, explications, CTA et
+Les contenus détaillés des étapes — titres, durées indicatives, accroches, explications, CTA et
 contrat de reconnaissance — sont fixés dans
 [Monde 0 — séquences actionnables des expériences](monde-0-sequences-actionnables.md).
 
@@ -96,10 +96,10 @@ contrat de reconnaissance — sont fixés dans
 la description de ce que l'application sert déjà. Toute correction se fait en base, puis se
 reporte ici — jamais l'inverse.
 
-| # | Expérience | Intensité | Effet | Conditions | Séquence éditoriale en trois étapes |
+| # | Expérience | Intensité | Effet | Conditions | Séquence éditoriale |
 |---:|---|---:|---:|---|---|
 | 1 | **Le Point Zéro : entrer dans le Jeu** | 1 — Douce | 1 — Personnel | M0 · obligatoire · solo · 10 min · aucun prérequis | **Regarder** l'introduction → **Relier** la chaîne invisible → **Formuler** une Hypothèse de seuil |
-| 2 | **Le Coupable idéal** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo · 10 min · expérience 1 | **Accuser** les coupables idéaux → **Défendre** leurs fonctions → **Délibérer** avec le Réel |
+| 2 | **Le Coupable idéal** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo · 10 min · expérience 1 | Une étape et un CTA : **Traverser le procès** ; trois mouvements internes : Accuser → Défendre → Délibérer |
 | 3 | **Une drôle d'époque** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo · 20 min · expérience 2 | **Choisir** dans les situations → **Rencontrer** le mouvement inverse → **Lire** le premier miroir |
 | 4 | **Avant le Zéro** | 3 — Profonde | 1 — Personnel | M0 · obligatoire · solo · 15 min · expérience 3 | **Entrer** dans la dispersion → **Traverser** un devenir → **Revenir** avec une Trace |
 | 5 | **Et moi dans tout ça ?** | 2 — Engagée | 1 — Personnel | M0 · obligatoire · solo avec mentor · 20 min · expérience 4 | **Relire** les traces → **Dialoguer** avec le mentor → **Semer** la Graine de l'Appel |
@@ -139,13 +139,16 @@ Découvrir les formats 10 min) sans modifier la puissance globale ni conditionne
 - afficher l'intensité et son libellé ;
 - afficher l'effet et son libellé ;
 - afficher le Monde minimal, la durée, la modalité et les prérequis ;
-- afficher trois étapes éditoriales lorsque le dispositif les rend réellement vécues ;
+- afficher une à trois étapes selon les interruptions réellement vécues dans le dispositif ;
 - conserver séparément `action`, `trace`, `autorité de reconnaissance` et `Omégas`.
 
-La séquence en trois étapes n'est **pas** une nouvelle machine de progression. Elle constitue la
-lecture éditoriale du Challenge et de son dispositif interne. La validation canonique reste portée
-par les modèles et services Rails existants. En particulier, le Challenge 1 ne doit plus afficher
-`Le Coupable idéal` comme sa deuxième étape : celui-ci est le Challenge 2.
+La séquence n'est **pas** une nouvelle machine de progression. Elle constitue la lecture
+éditoriale du Challenge et de son dispositif interne. **Une étape visible correspond à un CTA.**
+Trois mouvements ne deviennent trois étapes que s'ils correspondent à de vraies interruptions,
+à des CTA distincts et à des états fiables.
+La validation canonique reste portée par les modèles et services Rails existants. En particulier,
+le Challenge 1 ne doit plus afficher `Le Coupable idéal` comme sa deuxième étape : celui-ci est le
+Challenge 2.
 
 ### Verbe de séquence et verbe de Puissance
 
