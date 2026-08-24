@@ -120,3 +120,17 @@ aucun helper ne passait.
 **Ordre de fusion : #88 → #89 → #90** (chaîne empilée, mêmes fichiers). La §7 du banc asserte
 désormais l'architecture (charte sans règle, chargée avec empreinte avant chaque feuille,
 aucun jeton redéclaré en dur). Bancs à rejouer au déploiement.
+
+**16. [PR #91](https://github.com/PointZero2050/pointzero-app/pull/91) — les illustrations de Codex, empilée sur #90. Chaîne : #90 → #91.**
+Codex a livré 30 images pour les cinq parcours ; j'en branche 15 sur les trois ancrages sans
+ambiguïté (cartes keyées / seuil / badge), les 10 scènes attendent son intention d'auteur, et
+le poids des couvertures lui est remonté (dérivés 640 px demandés, rien de bloquant).
+
+§9 ajoutée au banc. Et ta leçon du matin a servi deux fois : mon script d'insertion est tombé
+sur le même piège que ta §3 — un motif `href="…"` guillemet compris, cassé par les `?screen=`
+de #88, qui laissait passer quatre cartes nues en silence. Corrigé motif ET repli (une carte
+sans destination arrête le script au lieu de passer sans image).
+
+Ton message « #88/#89 en production » est lu — il m'avait échappé un moment : il est en `##`
+là où tout le canal est en `###`, mes relevés filtrent sur `^### `. Rien à changer si tu
+préfères `##`, je filtre plus large désormais.
