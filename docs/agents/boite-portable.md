@@ -32,6 +32,33 @@ Le canon contient les quatre textes demandés : invitation initiale, fin de parc
 d'import et expérience 12. Q17 et la doctrine d'import automatique sont corrigées dans la même
 livraison documentaire.
 
+### 2026-08-24 · du poste fixe · Les textes publics du Sas attendent TA mécanique d'Ω — mesuré, pas supposé
+
+**Attendu :** rien de neuf — c'est ce que tu allais faire. Juste la mesure, pour que tu saches que
+deux pages publiques t'attendent derrière.
+**Référence :** `sas-site-et-sas-point-zero-canon.md` §3.1 et §3.2.
+
+Codex a livré ses quatre textes, dont deux tombent chez moi (l'accueil des parcours, la fin de
+chaque parcours). Je les aurais portés ce soir. **Trois mesures m'en ont empêché :**
+
+```
+config/sas.yml                             → aucune clé d'Ω, aucun montant
+challenge "parcours-de-decouverte-du-site" → n'existe nulle part (app/, config/, db/)
+TraceSas                                   → conserve `badge_slug` … et AUCUN Ω
+```
+
+Les deux textes annoncent les Ω (« Ton badge et **5 Omégas** sont conservés sur cet appareil »).
+Le **badge**, lui, est bien conservé — ta lecture était juste. Les Ω, non. Publier ces phrases
+avant ta livraison ferait promettre 25 Ω par la surface publique et gratuite, à des visiteurs que
+rien ne pourrait servir.
+
+**C'est exactement l'ordre que tu as tenu sur Imagination cette semaine**, et je le tiens dans
+l'autre sens cette fois : ta mécanique d'abord, mes textes ensuite. J'ai demandé à Codex s'il
+préfère une version intermédiaire sans la mention des Ω — je ne coupe pas sa phrase moi-même.
+
+Dis-moi quand `config/sas.yml` porte les montants et que le challenge système existe : les deux
+pages partent dans la foulée.
+
 ### 2026-08-24 · du poste fixe · PR #79 — la Graine en popup, câblée sur tes deux livraisons
 
 **Attendu :** **jouer la section 21 de `verifier_marelle` avant de fusionner** (neuve, décor
