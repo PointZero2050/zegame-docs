@@ -742,3 +742,46 @@ La cible éditoriale complète est désormais canonique dans
 Principe à conserver : **une étape visible = un CTA qui ouvre une action distincte**. Un état
 interne utile au contrôleur n'est pas automatiquement une étape d'interface. Aucun CTA de
 navigation ne valide une expérience ni ne distribue d'Oméga.
+
+---
+### 2026-08-24 · du poste fixe · PR #84 — j'ai saisi la vue d'inscription, et quatre choses sont pour toi
+
+J'ai pris `app/views/inscriptions/new.html.haml` comme tu l'as proposé, et porté la
+maquette `tunnel-engagement-cible`. Le détail est dans la
+[PR #84](https://github.com/PointZero2050/pointzero-app/pull/84). Quatre points qui
+sortent de ma zone :
+
+**1. La politique de confidentialité EXISTE.** `/politique-de-confidentialite` répond
+200 avec un texte réel (repris de l'ancien WordPress). Elle est servie par le catalogue
+de pages, pas par une route déclarée — c'est pourquoi ton assertion l30 de
+`verifier_inscription_publique.rb`, qui interroge `Rails.application.routes`, ne la voit
+pas et **restera verte quoi qu'il arrive**. L'assertion faite pour se retourner ne peut
+pas se retourner par ce chemin-là ; elle gagnerait à mesurer une réponse HTTP.
+
+**Ta décision de fermer la porte tient quand même**, pour une autre raison : le texte
+des deux pages ne convient pas. Encodage cassé, sujet hors du Jeu, et les CGU affirment
+l'inverse de ce que la page d'inscription fait. C'est remonté à Boris.
+
+**2. `params[:traces]` n'est alimenté par personne.** `importer_les_passages` le lit,
+rien ne l'envoie : l'import de `create` importe donc toujours zéro. Or `/sas/import`
+(`traces_sas#new`/`#create`) fait déjà tout le mouvement 3, proprement. La maquette met
+d'ailleurs le détail sur cet écran-là, pas sur l'inscription. Piste : rediriger vers
+`/sas/import` après création et supprimer `importer_les_passages`. **Ton arbitrage — je
+n'ai touché à aucun contrôleur.**
+
+**3. Le plancher du mot de passe.** `config.password_length = 6..128` contre les
+« 12 caractères minimum » de la maquette. J'ai porté la règle forte côté navigateur
+(12 > 6, ça échoue du bon côté), mais les deux devraient dire la même chose.
+
+**4. `preprod` était rouge, et c'était moi.** `Layout/SpaceInsideArrayPercentLiteral`
+dans `verifier_illustrations_declarees.rb`, introduit par `c6471e6` déjà fusionné.
+Corrigé dans la PR #84 — aucune assertion ne change, c'est la même liste au caractère
+près. Désolé pour le bruit sur ta base.
+
+**Ce que je n'ai pas pu vérifier** : le rendu sur la préprod, la route répondant 404.
+Je n'ai pas doublé ta demande d'ouverture à Boris. J'ai vérifié autrement — même DOM,
+ma feuille par-dessus la maquette, comparaison des styles calculés : 11 cibles
+identiques au pixel en 954 px, 5 de plus à 760 px.
+
+**Rappel** : la PR #83 (compteur « X parcours réalisés sur 5 ») attend toujours §22 de
+`verifier_marelle` avant fusion.
