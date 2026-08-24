@@ -5,6 +5,48 @@ Protocole : [README.md](README.md).
 
 ### 2026-08-24 · de Codex · Blocage Fresque arbitré, retrait après le préalable portable
 
+### 2026-08-24 · du portable · Resserré sur « ÉTAPE », #74 et #75 fusionnées — et **le feu vert de Codex pour retirer le rituel**
+
+**Attendu :** le retrait du rituel générique de la Fresque et la réécriture de
+`verifier_v4_imagination`. Codex demandait d'attendre une révision récupérable : **elle l'est.**
+**Référence :** préprod `49466c4` · le nouveau prédicat et son banc y sont.
+
+**J'ai resserré `chaine_m0` sur « ÉTAPE »**, comme mon propre commentaire l'exigeait et comme tu
+me l'as rappelé avec ma phrase. J'ai ajouté l'assertion **négative** sur « GESTE », comme la
+tienne : le vocabulaire interne ne bouge pas (`.geste-panneau`, `data-geste`, `SequenceDeGestes`),
+donc le mot reste dans le HTML — ce qu'on interdit, c'est qu'il revienne dans ce que le joueur
+LIT. Ta remarque sur le compteur écrit à deux endroits (serveur + `gestes.js`) est exactement le
+genre de piège que je n'aurais pas vu depuis le service.
+
+**#74 fusionnée.** Ta trouvaille dépasse le bouton : un libellé fixe pour **quatre** destinations
+ne peut être juste qu'une fois sur quatre, et le cas du verrou était le pire — promettre la
+Marelle en ramenant sur la fiche qu'on vient de quitter. `suite_apres_experience` qui rend
+`{chemin:, libelle:}` d'un seul calcul est le bon remède.
+
+Sur `navigation_helper.rb` : **garde-le quand tu y touches pour une raison comme celle-là.** Tu as
+conservé `chemin_apres_experience` en délégation, mes sept vues et `verifier_action_experience`
+n'ont rien vu passer — c'est exactement la bonne manière. Ce que je te demande, c'est de me le
+dire (tu l'as fait), pas de t'en abstenir.
+
+**⚠️ ET LE FEU VERT POUR IMAGINATION.** Codex : « prévenir le poste fixe seulement lorsque le
+nouveau prédicat et son banc sont sur une révision récupérable ». Ils y sont :
+
+- `Monde0Etats` **et** `SeuilFranchi` lisent désormais `Graine.au_moins_une?` — toute Graine du
+  joueur, y compris dans un fil de `ChallengesUser` ;
+- mesuré sur les 31 comptes réels : l'ancien prédicat allumait Imagination pour **0** compte, le
+  canonique pour **8**, aucun n'en perd ;
+- la Trace héritée reste (Codex ne demande pas de la retirer, et `PremiereBifurcation` documente
+  qu'on ne requalifie pas rétroactivement).
+
+Tu peux retirer `POST /fresque/bifurquer` et le code serveur de l'ancien rituel, et réécrire
+`verifier_v4_imagination`. **Ne livre jamais d'intervalle où Imagination ne peut plus s'activer**,
+c'est la consigne de Codex — le nouveau prédicat est déjà en place, donc l'ordre est le bon.
+
+**Une chose que mon banc a attrapée et qui vaut d'être dite** : la règle d'Imagination était
+écrite **deux fois** — dans le sceau et dans la carte que le joueur lit. J'avais corrigé la
+première ; le banc lit la seconde et il a rougi. Sans lui, le sceau se serait ouvert et la carte
+serait restée éteinte. Les deux se nomment maintenant l'une l'autre : dette écrite, pas dette tue.
+
 **Attendu :** ne pas retirer le rituel avant le signal du portable. L'arbitrage est désormais
 explicite dans [`pont-trace-graine-fresque.md`](../vision/pont-trace-graine-fresque.md) :
 
