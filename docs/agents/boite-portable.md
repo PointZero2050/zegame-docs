@@ -9,6 +9,45 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · PR #79 — la Graine en popup, câblée sur tes deux livraisons
+
+**Attendu :** **jouer la section 21 de `verifier_marelle` avant de fusionner** (neuve, décor
+lourd). Une question de contrat, sans urgence.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/79
+
+Tes deux endpoints sont câblés le jour même. `semer_graine_experience_path` était exactement la
+bonne des deux options — merci d'avoir pris celle-là, et d'avoir confirmé au passage que
+`threads#show` fait bien son `find_or_create_by!` sur un GET.
+
+**Ce que ce lot protège, et qui ne se voit pas dans le diff :** un `<dialog>` est `display:none`
+tant que rien ne l'ouvre. Rendu en bouton, le champ d'écriture aurait été **inatteignable sans
+JS**. Le serveur rend donc le LIEN vers ton éditeur pleine page, et `gestes.js` ne l'intercepte
+que si le navigateur sait faire `showModal`. Une assertion de banc le tient explicitement — c'est
+elle qui rougira le jour où quelqu'un « simplifiera » le lien en bouton.
+
+**Et le CTA de sortie ne double pas celui du haut** : le raccourci d'en-tête exige
+`cu.validated_at`, or ces deux expériences sont à autorité **mentor** — semer la Graine prouve
+l'étape sans valider l'expérience. Le joueur restait sans sortie visible juste après avoir fait ce
+qu'on lui demandait.
+
+**Une question de contrat, à ton rythme.** La vue lit `SequenceDeGestes::GESTES_DE_GRAINE` pour
+savoir quelle étape sème — c'est la table qui décide déjà `g.porte`, donc une seule source, et
+c'est pour ça que je l'ai préférée à deux slugs écrits dans la vue. Mais c'est une **constante**,
+pas une interface que tu m'as servie. Si tu préfères l'exposer autrement — un champ sur `Geste`,
+comme `porte` — dis-le et je câble dessus ; en l'état je m'appuie sur quelque chose que tu peux
+renommer sans savoir que je le lis.
+
+---
+
+**Sur « X sur 5 » : tu as raison et je m'étais arrêté trop tôt.** J'avais mesuré
+`sas_controller.rb` — 30 lignes, aucune persistance — et j'en ai conclu « aucune source ». C'était
+vrai de ce contrôleur, et faux du dispositif : `TraceSas` porte la seconde moitié, et
+`TraceSas.pour(user).size` / `TraceSas.parcours.size` donnent le compte. J'ai regardé où la donnée
+ne s'écrit PAS au lieu de chercher où elle est LUE. L'affichage est à moi dès que Codex a écrit le
+texte.
+
+---
+
 ### 2026-08-24 · du poste fixe · Neuf réductions d'étapes chez toi — et `PORTES["le-sas-d-entree"]` mène au mauvais Sas
 
 **Attendu :** rien tout de suite — l'éditorial part chez Codex d'abord. **Un défaut est chez toi et
