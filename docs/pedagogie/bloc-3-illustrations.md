@@ -70,6 +70,11 @@ Priorité resserrée (le texte porte l'essentiel) : les moments-clés du rite, p
 | Moment | Source 16:9 | Intention narrative |
 |---|---|---|
 | L'appel des trois rôles | [`01-appel-trois-roles-v1.png`](assets/bloc-3-conseil-omega-complements/01-appel-trois-roles-v1.png) | Trois instruments ordinaires forment un triangle de responsabilités ; le point vide central reste la Source et aucun rôle n'enferme le joueur dans une identité |
+| La question de la Conjonction | [`02-question-conjonction-v1.png`](assets/bloc-3-conseil-omega-complements/02-question-conjonction-v1.png) | Deux matières opposées s'approchent sans fermer le centre qui organise le Conseil |
+| La pause des tomates | [`03-pause-tomates-v1.png`](assets/bloc-3-conseil-omega-complements/03-pause-tomates-v1.png) | La terre, la nourriture et le rire réintroduisent le réel au cœur de la délibération |
+| Le premier geste — Carte du Seuil | [`04-premier-geste-carte-seuil-v1.png`](assets/bloc-3-conseil-omega-complements/04-premier-geste-carte-seuil-v1.png) | Le rite se condense en un chemin court vers une action ordinaire immédiatement praticable |
+| Les six caps | [`05-six-caps-v1.png`](assets/bloc-3-conseil-omega-complements/05-six-caps-v1.png) | Six instruments et six horizons entourent un centre ouvert : les Puissances deviennent des directions vivantes, jamais des scores à collectionner |
+| La qualité captive et ses garde-fous | [`06-qualite-captive-garde-fous-v1.png`](assets/bloc-3-conseil-omega-complements/06-qualite-captive-garde-fous-v1.png) | Une capacité utile est extraite de l'appareil impérial puis confiée à un contenant, un contrepoids et un seuil collectif qui en limitent la charge destructive |
 
 Cette image est une **proposition à arbitrer**. Format : 1672 × 941 px, PNG. Provenance :
 génération Codex/OpenAI à partir de `05-treizieme.png` et `12-retour.png` ; direction Boris.

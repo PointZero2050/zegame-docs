@@ -88,6 +88,16 @@ livrées comme **propositions à arbitrer**, sans remplacer les 21 sources déj�
 | La Bulle — l'aménagement | [`01-bulle-amenagement-v1.png`](assets/bloc-2-avant-le-zero-complements/01-bulle-amenagement-v1.png) | Le confort immobile au centre de futurs qui continuent sans le joueur |
 | Barrière — la rencontre | [`02-barriere-rencontre-v1.png`](assets/bloc-2-avant-le-zero-complements/02-barriere-rencontre-v1.png) | Deux camps séparés par une frontière, mais reliés par une même racine protectrice |
 | Josef — la douceur qui exclut | [`03-josef-douceur-exclut-v1.png`](assets/bloc-2-avant-le-zero-complements/03-josef-douceur-exclut-v1.png) | Un cercle bienveillant produit une frontière tandis que l'exclu porte encore la structure commune |
+| S3 — Le marché de la paix | [`04-marche-paix-v1.png`](assets/bloc-2-avant-le-zero-complements/04-marche-paix-v1.png) | Le refuge intérieur devient une bulle désirable qui transforme l'action extérieure en décor |
+| T3 — Les machines ne saignent pas | [`05-machines-ne-saignent-pas-v1.png`](assets/bloc-2-avant-le-zero-complements/05-machines-ne-saignent-pas-v1.png) | La table commune tient encore tandis que la terre se fend entre jardiniers et défenseurs |
+| P4 — La meute aimante | [`06-meute-aimante-v1.png`](assets/bloc-2-avant-le-zero-complements/06-meute-aimante-v1.png) | L'affection collective devient une mâchoire autonome qui protège l'image de l'orateur |
+| M3 — L'attestation | [`07-attestation-v1.png`](assets/bloc-2-avant-le-zero-complements/07-attestation-v1.png) | Des intentions individuelles sincères convergent vers un appareil que personne ne croit avoir choisi |
+| L3 — Le vieux Bastien | [`08-vieux-bastien-v1.png`](assets/bloc-2-avant-le-zero-complements/08-vieux-bastien-v1.png) | La fréquence commune et les pas des voisins arrivent devant une autonomie devenue porte close |
+| Fil3 — La médiation des Granges | [`09-mediation-granges-v1.png`](assets/bloc-2-avant-le-zero-complements/09-mediation-granges-v1.png) | Le miroir neutre restitue les positions mais efface le témoin au moment de nommer le juste |
+| S4 — La méditation et le loyer | [`10-meditation-loyer-v1.png`](assets/bloc-2-avant-le-zero-complements/10-meditation-loyer-v1.png) | Le rituel spirituel remplace l'aide matérielle tandis qu'une clé offerte réouvre la possibilité de solidarité |
+| T4 — La nuit du hangar | [`11-nuit-hangar-v1.png`](assets/bloc-2-avant-le-zero-complements/11-nuit-hangar-v1.png) | Deux regards nouent un secret sous la table ; la cloche et le cercle vides figurent l'assemblée qui n'a pas eu lieu |
+| P5 — La coulisse | [`12-coulisse-v1.png`](assets/bloc-2-avant-le-zero-complements/12-coulisse-v1.png) | Entre la scène et la porte de sortie, une formule impeccable remplace les dix minutes de présence demandées |
+| M5 — Sentinelle sociale | [`13-sentinelle-sociale-v1.png`](assets/bloc-2-avant-le-zero-complements/13-sentinelle-sociale-v1.png) | Une carte vivante conçue pour le soin est captée par une machine de prédiction et devient grille de surveillance |
 
 **Format :** 1672 × 941 px, PNG. **Provenance :** génération Codex/OpenAI à partir des
 illustrations validées du bloc 2 ; direction Boris. Les dérivés WebP et les branchements écran
