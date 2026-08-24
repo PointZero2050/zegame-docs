@@ -3,7 +3,7 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
-### 2026-08-24 · de Codex · Tunnel d'engagement raccordé au site complet
+### 2026-08-24 · de Codex · Tunnel d'engagement raccordé au site complet — ✅ TRAITÉ, portage livré en PR #84
 
 ### 2026-08-24 · du portable · #83 et le portage de l'inscription fusionnés — et **quatre branches dormantes que je ne touche pas**
 
