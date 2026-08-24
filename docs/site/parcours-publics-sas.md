@@ -194,8 +194,9 @@ jamais `Valider mon expérience`.
   complétion.
 - Les réponses intimes sont facultatives. Une trace laissée vide compte comme un choix, pas
   comme un échec.
-- À la création d'un compte, le site propose d'importer automatiquement les traces et indique
-  précisément lesquelles seront transférées.
+- Avant la création d'un compte, le site indique que les parcours accomplis, leurs badges et
+  leurs Omégas seront importés automatiquement. Après l'inscription, il restitue précisément ce
+  qui a été transféré, ce qui était déjà présent et ce qui a été ignoré comme doublon.
 - Après import, les badges sont visibles par défaut dans le profil ; le joueur garde la main
   sur ce qu'il publie de son fil et de ses formulations personnelles.
 - Une adresse électronique peut être demandée après une interaction accomplie pour stabiliser
@@ -211,6 +212,10 @@ jamais `Valider mon expérience`.
 | Qu'est-ce qui nous paralyse ? | **Changeur d'échelle** |
 | Comment nous réveiller ? | **Réactivateur de Puissances** |
 
+Chaque parcours accompli reconnaît **5 Omégas**, soit **25 Omégas** pour les cinq. Un parcours
+rejoué avec l'autre guide ne produit pas une seconde attribution. Le porteur comptable et les
+textes d'import sont définis dans [le canon « parcours publics / Sas Point Zéro »](../vision/sas-site-et-sas-point-zero-canon.md).
+
 La restitution générale est une **constellation de cinq traces** avec un pourcentage de
 complétion. Le badge d'un parcours est identique quel que soit le guide.
 
@@ -224,8 +229,10 @@ complétion. Le badge d'un parcours est identique quel que soit le guide.
 
 ### 2.8 Passage de relais à l'application
 
-Quand la constellation est complète, le site propose de créer un compte et d'importer les
-traces. Dans l'application, une courte expérience **« Passage du seuil »** pose la question :
+Quand la constellation est complète, le site propose de créer un compte. Les traces, badges et
+Omégas conservés sur cet appareil sont alors importés automatiquement et font l'objet d'une
+restitution détaillée. Dans l'application, une courte expérience **« Passage du seuil »** pose
+la question :
 
 > « Quel lien vois-tu maintenant entre ce qui arrive au monde et ce qui se joue en toi ? »
 

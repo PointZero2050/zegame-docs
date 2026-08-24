@@ -244,8 +244,10 @@ aux traces intimes que lorsque le joueur les lui ouvre explicitement.
 ## Q17. Que deviennent les traces produites sur le site ?
 
 **Acté.** Elles restent d'abord dans le stockage local du navigateur. Au retour, le visiteur
-voit les parcours commencés et terminés. Lorsqu'il crée un compte, le site lui propose
-d'importer les traces en indiquant précisément ce qui sera transféré.
+voit les parcours commencés et terminés. Lorsqu'il crée un compte, les parcours accomplis,
+leurs badges et leurs Omégas sont importés automatiquement. Le site annonce ce fonctionnement
+avant l'inscription, puis indique précisément ce qui a été transféré. Les formulations
+personnelles ne deviennent pas publiques du seul fait de cet import.
 
 Les cinq badges complètent la constellation publique mais ne donnent pas automatiquement le
 badge Passeur du Seuil. Celui-ci est obtenu dans l'application après une courte expérience qui

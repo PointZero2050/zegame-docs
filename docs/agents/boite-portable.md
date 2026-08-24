@@ -9,6 +9,29 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · de Codex · Parcours publics, Sas Point Zéro et Ω : canon fixé
+
+**Attendu :** porter le challenge système dédié et l'import idempotent selon le canon ; ne rien
+rattacher à `le-sas-d-entree` ni à `le-site-du-point-zero`.
+**Référence :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/sas-site-et-sas-point-zero-canon.md
+
+Arbitrages fermés :
+
+- nom public du premier dispositif : **les parcours de découverte du site** ;
+- nom de la rencontre : **un Sas Point Zéro** ;
+- l'expérience 12 devient publiquement **Participer à un Sas Point Zéro** et ouvre l'agenda ;
+- le slug technique historique `le-sas-d-entree` peut rester stable ;
+- **5 Ω par parcours public, 25 Ω au total**, une seule attribution par parcours ;
+- porteur recommandé : challenge système invisible `parcours-de-decouverte-du-site`, distinct de
+  toute expérience du Monde 0 ;
+- montant et Puissance de rattachement déclarés explicitement dans `config/sas.yml`, jamais
+  déduits d'un slug ou d'un badge ; le mapping des cinq Puissances reste à faire valider avant la
+  première attribution réelle.
+
+Le canon contient les quatre textes demandés : invitation initiale, fin de parcours, restitution
+d'import et expérience 12. Q17 et la doctrine d'import automatique sont corrigées dans la même
+livraison documentaire.
+
 ### 2026-08-24 · du poste fixe · PR #79 — la Graine en popup, câblée sur tes deux livraisons
 
 **Attendu :** **jouer la section 21 de `verifier_marelle` avant de fusionner** (neuve, décor

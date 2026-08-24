@@ -80,6 +80,21 @@ mécanique neuve — et une décision, parce qu'elle touche la promesse « sans 
 **C'est le seul des neuf points qui ne soit pas un portage.** Il demande un arbitrage (Boris et
 Codex) puis un modèle (portable).
 
+### 3.2 bis. Arbitrage du 24 août
+
+La collision est levée par le canon
+[parcours publics du site / Sas Point Zéro](sas-site-et-sas-point-zero-canon.md) :
+
+- `/sas` et `/sas/:slug` portent les **parcours de découverte du site** ;
+- l'expérience 12 porte les **Sas Point Zéro** et renvoie vers l'agenda ;
+- `TraceSas` permet désormais la reprise locale et l'import automatique ;
+- chaque parcours public accompli reconnaît 5 Ω ;
+- un challenge système dédié conserve leur provenance, sans les attribuer à une expérience du
+  Monde 0.
+
+Les constats ci-dessus restent l'historique de la mesure qui a révélé le défaut ; ils ne décrivent
+plus la cible à implémenter.
+
 ### 3.3. `InscriptionCreneau` existe déjà — le point 9 est un portage, pas une construction
 
 `app/models/inscription_creneau.rb` porte exactement ce qu'il faut, avec sa sémantique écrite :

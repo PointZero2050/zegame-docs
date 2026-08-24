@@ -388,14 +388,14 @@ ne constituent ni un chronomètre ni une condition de validation.
 - **Reconnaissance :** preuve serveur existante via l'adaptateur ; l'inscription réelle peut
   enrichir l'état sans être confondue avec le choix.
 
-### 12. Le Sas d'entrée — 1 h · facultative
+### 12. Participer à un Sas Point Zéro — 1 h · facultative
 
 #### 1. Se présenter — Entre dans la rencontre · 10 min
 
 - **Accroche :** Arrive avec ce qui est vivant pour toi aujourd'hui.
 - **Explication :** Inscris-toi, rejoins le Sas et présente en quelques mots ce qui t'amène. Tu
   n'as pas à résumer ton parcours ni à produire une identité parfaite.
-- **CTA :** `Rejoindre le Sas`
+- **CTA :** `Choisir un Sas`
 - **Sortie attendue :** inscription puis présence à la rencontre.
 - **Reconnaissance :** inscription ou présence à relier ; confirmation du Joueur en repli.
 
@@ -404,7 +404,7 @@ ne constituent ni un chronomètre ni une condition de validation.
 - **Accroche :** Laisse le collectif déplacer légèrement ton regard.
 - **Explication :** Participe aux échanges et aux pratiques proposées. Observe ce qui devient plus
   clair, plus vivant ou plus inconfortable au contact des autres.
-- **CTA :** `Ouvrir les repères du Sas`
+- **CTA :** `Vivre la rencontre`
 - **Sortie attendue :** participation au temps collectif.
 - **Reconnaissance :** présence confirmée par l'événement ou confirmation du Joueur en repli.
 
@@ -571,8 +571,8 @@ ouverture du quiz.
 | Expérience · geste | Arbitrage V1 | Condition de mise en oeuvre |
 |---|---|---|
 | Les choses se précisent · Relire | `/mes-traces` | La constellation est composée de productions déjà conservées. Un filtre ou une ancre pourra préciser cette vue plus tard. |
-| Le Sas d'entrée · Ouvrir les repères | À construire sur `/sas/:slug` | Le Sas doit être relié à l'expérience ou à l'inscription du Joueur. Aucun slug n'est codé en dur. |
-| Le Sas d'entrée · Conserver mon intention | À construire comme saisie intégrée | L'intention est enregistrée comme Trace ; ce geste n'est pas réduit à une confirmation déclarative. |
+| Sas Point Zéro · Choisir un Sas | Agenda filtré sur les rencontres Sas Point Zéro | L'événement doit être associé canoniquement à l'expérience. `/sas` et `/sas/:slug` désignent les parcours publics du site et ne sont jamais utilisés ici. |
+| Sas Point Zéro · Conserver mon intention | À construire comme saisie intégrée | L'intention est enregistrée comme Trace ; ce geste n'est pas réduit à une confirmation déclarative. |
 | Vivre l'Atelier · les trois gestes | À construire sur la fiche de l'Atelier lié | L'expérience doit résoudre l'événement et l'atelier depuis une association ou une configuration canonique. Aucun identifiant courant n'est codé en dur. |
 
 Tant que les associations métier manquent, les cinq CTA marqués « à construire » restent absents.

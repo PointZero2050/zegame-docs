@@ -397,10 +397,10 @@ Règles :
 - conserver les traces pendant plusieurs mois ; **180 jours** constitue une hypothèse de
   prototype à confirmer, pas une décision juridique ;
 - rendre disponible sur l'accueil `Voir et effacer mes traces locales` ;
-- ne jamais envoyer ces données au serveur avant consentement explicite ;
-- au passage vers l'application, afficher précisément les cinq badges, choix et textes qui
-  seront importés ;
-- permettre `Continuer sans importer` et `Annuler` ;
+- ne jamais envoyer ces données au serveur avant que le visiteur ait choisi de créer son compte ;
+- avant l'inscription, annoncer que les parcours accomplis, leurs badges et leurs Omégas seront
+  importés automatiquement ;
+- après l'import, afficher précisément les badges, choix, textes et Omégas transférés ;
 - après import réussi, conserver une copie locale marquée `importée` jusqu'à ce que le visiteur
   choisisse de l'effacer.
 
@@ -419,10 +419,10 @@ Séquence :
 1. la constellation complète apparaît ;
 2. une invitation explique la différence entre fragments publics et transformation dans le
    Jeu ;
-3. CTA `Faire passer mes traces dans le Jeu` ;
+3. CTA `Créer mon compte et entrer dans le Jeu` ;
 4. création de compte ou connexion dans l'application ;
-5. écran de consentement listant les données importées ;
-6. confirmation ;
+5. import automatique et idempotent des traces locales ;
+6. restitution détaillée des éléments importés, déjà présents ou ignorés comme doublons ;
 7. retour vers l'expérience « Le site du Point Zéro » ou le point d'entrée du Monde 0.
 
 Le **Passeur du Seuil** n'est pas attribué par le site. Le Sas rassemble les fragments ; le rite
