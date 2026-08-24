@@ -404,3 +404,47 @@ rebouclait. Le défaut que Boris avait signalé est désormais gardé, pas seule
 .gsub(...)`) pour la même raison que moi dans `verifier_coque_m0` le même soir. Deux bancs,
 même piège, même remède, trouvés séparément. Ça vaut d'être la règle par défaut : **une
 assertion de bloc CSS mesure `regles`, jamais `css`**.
+
+### #90 et #91 fusionnées — et le défaut du cache n'était pas fini
+
+**Du portable, 25 août.** Deux remarques de protocole d'abord : j'écris désormais en `###`
+comme le reste du canal (tu filtrais sur `^### `, mon message précédent était en `##` — c'est
+réparé de mon côté, pas la peine de filtrer plus large pour moi).
+
+**#90 est une très bonne prise.** J'ai vérifié ton diagnostic avant de fusionner, et il est
+pire que tu ne l'écris : la feuille **et** le script portaient la **même** empreinte figée, et
+`Cache-Control: max-age=31556952` — **un an**. Autrement dit, ma promotion de #88/#89 une heure
+plus tôt était **invisible** pour tout visiteur déjà venu, JavaScript compris. Prouvé par
+l'historique : `git show 62335e1:…` et `git show HEAD:…` donnent la même empreinte alors que
+`git diff` sur la feuille dit qu'elle a changé.
+
+Vérifié après fusion : les dix adresses ont changé, et les empreintes correspondent au
+`md5sum` réel des fichiers — recalculé à la main dans le conteneur, pas cru sur parole. Les
+18 jetons du site sont passés dans la charte **sans perte ni modification** (comparaison jeton
+par jeton entre la production d'avant et la préprod).
+
+**#91 : deux corrections avant promotion.**
+
+**1. Le poids.** Mesuré sur la page servie : **3,7 Mo d'images par parcours**. Ton signalement
+à Codex était juste, voici le chiffre. Et `loading="lazy"` ne sauvait pas le seuil — sa
+couverture n'en porte pas, et **un `<img>` dans une section `display:none` est téléchargé quand
+même** : 558 Ko à chaque ouverture, pour un écran que la plupart des visiteurs n'atteignent
+jamais. C'est le genre de chose qu'un `lazy` sur les voisins fait passer pour réglé.
+
+Dérivés refaits à la taille d'affichage (800 / 1200 / 320 px, qualité 82) — la même image, pas
+un recadrage. **Badge 653 → 35 Ko**, couvertures ~500 → ~150. La page passe à **~1 Mo**.
+Densité mesurée au navigateur : **2,5×** à la taille où les cartes s'affichent, donc rien de
+visible n'est perdu. §10 pose des plafonds au double du dérivé — ils n'arbitrent aucun choix
+d'auteur, ils attrapent une livraison d'originaux non dérivés.
+
+**2. Le cache, encore — et c'est le même défaut que #90, laissé ouvert sur les images.**
+`src="/sas/reveil/illustrations/badge.webp"`, sans empreinte, `max-age=31556952`. Je l'ai
+rencontré **en cherchant autre chose** : mon navigateur m'a servi le badge de 653 Ko pendant
+que le disque portait déjà celui de 35 Ko, et j'ai d'abord cru que mon redimensionnement avait
+échoué. Sans empreinte, ni ma redérivation ni une relivraison de Codex n'atteint un visiteur
+déjà venu — **pendant un an**.
+
+`image_publique` ajouté à `application_helper` (pendant de `feuille_publique` /
+`script_public`, `alt:` obligatoire à l'appel). Les **35** images des cinq vues y passent, et
+deux assertions gardent le fait. **La règle à retenir : dans ces pages autonomes, aucune
+adresse d'asset ne s'écrit à la main — feuille, script ou image.**
