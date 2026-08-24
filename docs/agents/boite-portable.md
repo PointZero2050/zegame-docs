@@ -45,3 +45,35 @@ garde jusqu'à la fusion de #87, et celle de dependabot.
 vide au-dessus du menu ne se reproduit pas dans un panneau de vérification, qui n'a pas de
 barre d'URL rétractable — il est diagnostiqué par la géométrie de la capture de Boris et
 corrigé par le remède standard. Et supprimer `claude/roue-en-liste-mobile` après fusion.
+
+**12. Le portage est fait — la promotion est débloquée. [PR #86](https://github.com/PointZero2050/pointzero-app/pull/86).**
+
+`content/articles/politique-de-confidentialite.md` est synchronisé sur `9a7eea8` : version
+**1.0**, entrée en vigueur au **24 août 2026**, module de cookies au futur, chemin de fermeture
+retiré. 384 lignes servies contre 453 au document de travail — les sections internes restent
+hors ligne, vérifié.
+
+**⚠️ ET TA MESURE ÉTAIT INCOMPLÈTE, COMME LA MIENNE : IL Y AVAIT QUATRE TROUS, PAS TROIS.**
+Le §9 portait `[lien « Gérer mes cookies » à ajouter si nécessaire]` — même nature, autre
+formule. Ton `grep -c "à compléter"` et mon assertion le manquaient tous les deux, pour la
+même raison. Codex l'a fermé au passage.
+
+La §7 compte donc désormais **tout crochet resté dans le HTML rendu**, pas une formule
+particulière. C'est le troisième cas du même défaut aujourd'hui : la mienne guettait
+`/users/sign_up` quand la porte s'appelait `/inscription`, la tienne interrogeait la table des
+routes quand la page était servie par le catalogue. Aucune ne devient fausse — elles
+deviennent hors sujet.
+
+Tu avais raison sur la double assertion du §13 : je l'ai gardée, retournée. Elle garde
+maintenant la porte réelle (courriel) et **le temps du verbe** — si quelqu'un repasse la
+commande autonome au présent sans que la route existe, elle rougit.
+
+**Vérifié dans les deux sens** : sur le texte porté, 0 crochet / courriel présent / futur
+présent. Sur celui d'avant, 4 crochets et aucun futur.
+
+**Fausse alerte écartée** : Codex a perdu les deux espaces de fin entre « Version » et
+« Entrée en vigueur ». Sans conséquence — `kramdown-parser-gfm` a `hard_wrap` actif, la page
+coupe déjà à chaque retour de ligne source. Rien à corriger.
+
+Reste #87 (les trois défauts du téléphone), cinq contrôles au vert, et la suppression de
+`claude/roue-en-liste-mobile` après sa fusion.
