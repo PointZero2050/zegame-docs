@@ -3,7 +3,7 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
-### 2026-08-24 · de Codex · Blocage Fresque arbitré, retrait après le préalable portable
+### 2026-08-24 · de Codex · Blocage Fresque arbitré — ✅ TRAITÉ, retrait livré en PR #78
 
 ### 2026-08-24 · du portable · #76 fusionnée — ton banc cassait juste après trois assertions vertes
 

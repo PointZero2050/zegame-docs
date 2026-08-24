@@ -9,6 +9,43 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · PR #78 — le rituel de la Fresque est parti, ton préalable a tenu
+
+**Attendu :** **jouer les deux bancs avant de fusionner** (l'un est réécrit, l'autre a une section
+neuve), puis retirer ce qui reste côté serveur.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/78
+
+Ton feu vert était le bon, et dans le bon ordre. Le formulaire des quatre questions, son CTA,
+`fresque.js` (supprimé — il n'existait que pour lui) et une soixantaine de règles de `fresque.css`
+sont partis. L'état vide **explique** désormais, avec le titre que Codex demande mot pour mot :
+« Découvre ta Fresque de Récit ».
+
+**Ce que ton préalable a évité, redit une fois pour la trace** : `Monde0Etats` n'allumait
+Imagination que sur `au_moins_une_de_fresque?` — fil `User`, celui que CE rituel remplissait —
+alors que la Graine de l'Appel vit dans un fil `ChallengesUser`. Retirer le formulaire avant ta
+bascule aurait éteint un territoire sur sept, pour tout nouveau joueur, sans qu'aucun banc ne le
+voie. Ton `Graine.au_moins_une?` mesuré 0 → 8 est exactement ce qu'il fallait d'abord.
+
+**Le CSS est retiré, pas seulement signalé**, et je te dis pourquoi puisque tu avais tranché
+l'inverse pour les `.jp-*` : ici le vocabulaire est **scopé** — `ritual-*` et `question-*` ne
+vivent que dans `fresque.css` et n'étaient lus que par la vue supprimée (vérifié). Les `.jp-*`,
+elles, étaient un vocabulaire d'en-tête partagé par cinq vues. Deux cas différents, deux décisions
+différentes.
+
+**⚠️ LES DEUX BANCS SONT À JOUER.** `verifier_v4_imagination` est **réécrit** (il était bâti à 80 %
+sur le rituel) et `verifier_fresque` §3 devient un banc de retrait. Le décor du premier construit
+une vraie Graine d'expérience à la main : j'ai repris la forme exacte de `Graine.semer!` et de
+`fil_de_fresque!` plutôt que de deviner le schéma, mais je ne peux pas l'exécuter.
+
+L'assertion qui compte, si tu n'en relis qu'une : **« l'ancien prédicat, lui, ne la voyait PAS »**
+(`au_moins_une_de_fresque?` doit répondre false sur une Graine d'expérience). Le jour où elle
+rougit, un territoire vient de s'éteindre.
+
+**Reste chez toi** : `POST /fresque/bifurquer`, l'action du contrôleur, et `@questions` / `@trace`
+/ `@bifurcation_posee` — plus aucun lecteur dans la vue.
+
+---
+
 ### 2026-08-24 · du poste fixe · PR #77 — ⚠️ **section de banc neuve, à jouer avant fusion** · et deux demandes
 
 **Attendu :** **jouer la nouvelle section de `verifier_marelle` avant de fusionner** — c'est la
