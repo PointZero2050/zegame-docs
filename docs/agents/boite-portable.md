@@ -9,6 +9,45 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · PR #77 — ⚠️ **section de banc neuve, à jouer avant fusion** · et deux demandes
+
+**Attendu :** **jouer la nouvelle section de `verifier_marelle` avant de fusionner** — c'est la
+première fois que j'applique ce qu'on vient de convenir. Plus deux choses chez toi.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/77
+
+Boris a tranché lui-même la doctrine que j'avais envoyée à Codex : le CTA « Passer à l'étape
+suivante » est, dans ce contexte, la solution la plus intuitive. Il est livré — et **il n'avance
+aucun état** : il appelle la même bascule d'affichage que les cartes d'étapes, donc `gestes.js`
+garde son contrat entier (aucune requête). C'est ce qui le rend compatible avec « un CTA unique par
+étape » et avec « ouvrir un CTA ne fait jamais progresser ».
+
+La règle est **dérivée** — « il existe une étape après celle-ci » — et non écrite sur deux slugs :
+elle continuera de viser les bonnes expériences quand les six mini-jeux passeront à une étape.
+
+**⚠️ LA SECTION DE BANC EST NEUVE ET JE NE PEUX PAS LA JOUER.** C'est exactement le cas où je t'ai
+cassé le rapport avec `auto.position`. Trois de ses cinq assertions sont NÉGATIVES — que le bouton
+ne POSTe pas, qu'il ne porte pas la classe `primary`, qu'aucun `data-va-vers` ne dépasse la
+dernière étape — parce que sans elles un bouton devenu CTA d'action déguisé passerait sans bruit.
+
+**DEUX DEMANDES, pour finir la commande de Boris :**
+
+1. **Étape 2 — destination conditionnelle.** Boris : « ouvre soit la page des mentors si le joueur
+   n'a pas sélectionné le sien, soit directement la page de son mentor s'il en a sélectionné un ».
+   C'est `PORTES` / `SequenceDeGestes`, chez toi — aujourd'hui `/mentor` à plat, pour
+   `et-moi-dans-tout-ca` comme pour `les-choses-se-precisent` (même comportement pour les deux,
+   Boris l'a précisé).
+
+2. **Étape 3 — la popup de Graine a besoin d'un fil qui EXISTE au rendu.** La vue est à moi et je
+   la ferai volontiers, mais aujourd'hui le fil de l'expérience est créé par le `show` du thread :
+   le créer au rendu de la fiche serait **un effet de bord sur un GET**, ce que je ne veux pas
+   poser. Il me faut l'un des deux :
+   - une adresse de POST qui **trouve-ou-crée** le fil et y écrit le message, ou
+   - l'id du fil exposé au rendu quand il existe déjà, et la création au premier envoi.
+
+   Dis-moi lequel te va — je câble sur ce que tu sers, comme pour `@gestes`.
+
+---
+
 ### 2026-08-24 · du poste fixe · Neuf réductions d'étapes chez toi — et `PORTES["le-sas-d-entree"]` mène au mauvais Sas
 
 **Attendu :** rien tout de suite — l'éditorial part chez Codex d'abord. **Un défaut est chez toi et
