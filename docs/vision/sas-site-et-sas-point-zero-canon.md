@@ -19,6 +19,11 @@ doivent plus en déduire la nature du dispositif.
 
 ## 2. Reconnaissance des parcours publics
 
+> **Cible non encore livrée au 24 août 2026.** Les montants et le porteur comptable ci-dessous
+> décrivent la mécanique attendue. Tant que `config/sas.yml` ne déclare aucun montant, que le
+> challenge système n'existe pas et que `TraceSas` ne conserve aucun Ω, aucune surface publique ne
+> promet, ne compte ni ne restitue d'Omégas. Le badge local reste la seule reconnaissance annoncée.
+
 - Chaque parcours public accompli reconnaît **5 Ω**.
 - Les cinq parcours reconnaissent donc **25 Ω** au total.
 - Le montant est identique quel que soit le guide choisi et un parcours rejoué ne produit pas
@@ -49,25 +54,41 @@ rattachement. Le code ne déduit jamais le `skill_id` du badge, du slug ou d'un 
 
 ## 3. Textes canoniques
 
+Les textes **publiables maintenant** précèdent les textes **cibles après livraison comptable**.
+Le basculement se fait en une seule livraison : configuration des montants, challenge système,
+stockage local, import idempotent, restitution et textes publics. Un texte cible ne précède jamais
+le mécanisme qu'il décrit.
+
 ### 3.1 Invitation sur l'accueil des parcours
 
 > **Tu peux commencer sans compte.** Créer ton compte dès maintenant permet de retrouver tes
-> avancées et d'ancrer dans le Jeu les badges et les Omégas obtenus au fil des cinq parcours.
+> avancées et d'ancrer dans le Jeu les badges obtenus au fil des cinq parcours.
 > Si tu préfères explorer d'abord, tout reste conservé sur cet appareil.
 
 CTA principal selon le contexte : `Choisir un parcours` ou `Créer mon compte`.
 
+**Texte cible après livraison comptable :** remplacer `les badges obtenus` par `les badges et les
+Omégas obtenus`.
+
 ### 3.2 Fin de chaque parcours — visiteur anonyme
 
-> **Ce passage est accompli.** Ton badge et **5 Omégas** sont conservés sur cet appareil. Crée
-> ton compte pour les faire entrer automatiquement dans le Jeu, ou poursuis librement ton
-> exploration.
+> **Ce passage est accompli.** Ton badge est conservé sur cet appareil. Crée ton compte pour le
+> faire entrer automatiquement dans le Jeu, ou poursuis librement ton exploration.
 
 CTA principal : `Créer mon compte`.
 
 CTA secondaire : `Choisir un autre parcours`.
 
+**Texte cible après livraison comptable :**
+
+> **Ce passage est accompli.** Ton badge et **5 Omégas** sont conservés sur cet appareil. Crée
+> ton compte pour les faire entrer automatiquement dans le Jeu, ou poursuis librement ton
+> exploration.
+
 ### 3.3 Restitution après import
+
+Cette restitution n'est affichée qu'après livraison complète du mécanisme comptable. Dans l'état
+actuel, la restitution énumère uniquement les parcours et badges effectivement importés.
 
 > **Tes passages ont rejoint le Jeu.** Nous avons importé **[X parcours]**, **[X badges]** et
 > **[X Omégas]** depuis cet appareil. Les Omégas ne se dépensent ni ne s'échangent : ils
