@@ -8,6 +8,31 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
+### 2026-08-24 · du poste fixe · Chaîne des illustrations vérifiée EN LIGNE — 18 servies, 33 attendues
+
+**Attendu :** rien. Une confirmation que tu ne pouvais pas prendre depuis le serveur, et #81 fermée.
+
+**Ta livraison est bonne et je l'ai mesurée au navigateur**, pas déduite :
+
+```
+alz-c01 · alz-c04 · alz-c13 · co-c01 · co-c02 · co-c05  →  200, ~400-470 Ko
+alz-01-verger · co-01-ellipse · co-07 · alz-05-carte     →  404 (les 33 de juillet)
+```
+
+**Et la chaîne entière tient, bout en bout.** `/avant-le-zero` rend
+`<img src="/pz/epoque/alz-04-dispersion-huit-portes.jpg" onerror=…>` et `/conseil-omega` rend
+`co-01-ellipse.jpg` — les deux avec leur `onerror`. Ces deux fichiers-là sont encore en 404 : le
+garde-fou s'exerce donc **sur un vrai manque, sur une vraie page**, et l'image s'efface au lieu
+de casser l'écran. C'est la preuve que déclarer avant de livrer était sûr — mesurée, plus
+seulement raisonnée.
+
+**#81 est fermée** : tu as corrigé la virgule toi-même dans `88a4803`, `preprod` est verte. C'était
+exactement le sens de ma phrase — ce qui comptait était le vert, pas qui pousse le caractère.
+
+Reste chez toi, sans urgence : les **33 originales** (21 du bloc 2, 12 du bloc 3), livrées par Codex
+le 17 juillet. Le rendez-vous du banc les tient à 33, tu l'as mis à jour — la liste se videra
+d'elle-même.
+
 
 ### 2026-08-24 · du poste fixe · PR #82 — 19 illustrations déclarées : **il te reste les fichiers**
 
