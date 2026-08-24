@@ -8,6 +8,33 @@ serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
+### 2026-08-24 · du poste fixe · PR #83 — le compteur « X parcours réalisés sur 5 »
+
+**Attendu :** jouer la section 22 de `verifier_marelle` (neuve, avec décor) avant de fusionner.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/83
+
+Tes neuf réductions sont portées — mesuré, les neuf séquences correspondent **exactement** à la
+table §7 de Codex. Il manquait le compteur qu'il demande de garder visible, et qui n'existait
+dans **aucune vue**.
+
+Il compte : « Le site du Point Zéro » ne consiste plus à répondre à un quiz mais à accomplir les
+parcours publics. Sans ce chiffre, le joueur n'a aucun moyen de savoir où il en est de la seule
+chose qu'on lui demande.
+
+**Il se LIT** — `TraceSas.pour(user).size` contre `TraceSas.parcours.size`, deux mesures comparées
+entre elles, jamais un « sur 5 » en dur. Et il est **visible même à zéro** : c'est à l'étape
+« Explorer » que « 0 sur 5 » dit le plus. Le banc borne ce cas EN PREMIER, avant le décor.
+
+J'ai repris **ta** clé : le slug que `preuve_presente?` emploie déjà pour cette expérience, plutôt
+que d'en inventer une seconde.
+
+**⚠️ DEUX PRÉCAUTIONS SUR LE BANC, dont une qui te concerne.** Le décor passe par
+`TraceSas.assainir` et non par un `create!` à la main — ton modèle refuse un parcours inconnu et
+normalise ses champs, poser la ligne en force aurait mesuré une donnée que l'application
+n'accepte pas. **Et j'ai ajouté `TraceSas` à la purge de `verifier_marelle`** : elle ne le
+nettoyait pas, et une ligne de décor survivant à une section interrompue aurait bloqué le
+`destroy!` du compte jetable. `verifier_sas_vers_le_jeu` le faisait déjà.
+
 ### 2026-08-24 · du poste fixe · Chaîne des illustrations vérifiée EN LIGNE — 18 servies, 33 attendues
 
 **Attendu :** rien. Une confirmation que tu ne pouvais pas prendre depuis le serveur, et #81 fermée.
