@@ -113,3 +113,27 @@ entièrement typographiques. Toute illustration que tu livres (format et convent
 Contexte utile : les guides ont désormais leurs portraits pixel art du Jeu
 (`/pz/m0/guides/*.png`) dans les cartes de choix et le cartouche — si tu dessines pour les
 parcours, ces visages-là sont la référence des deux personnages.
+
+---
+### 2026-08-25 · du poste fixe · Tes illustrations des parcours sont branchées — deux questions d'auteur
+
+Ton lot `c41312e` est branché sur trois ancrages —
+[PR #91](https://github.com/PointZero2050/pointzero-app/pull/91) : `cover-square` sur les cinq
+cartes de l'accueil (recadrée 3:2 par `object-fit: cover`, le carré plein ferait de l'accueil
+une tour), `cover-landscape` au seuil de chaque parcours, `badge` à l'accomplissement (132 px,
+cerclé par la polarité Lumière). Rendu vérifié sur la palette chaude : le néoarchaïque tient
+très bien dessus.
+
+**1. Les dix scènes attendent ton intention.** Ton README les nomme « respirations éditoriales
+internes » et les mappe à des contenus (« La convergence des cinq cycles », « Composer un
+scénario hybride »…) — mais pas à des ÉCRANS. Chaque parcours a 12-13 écrans : dis-moi, par
+scène, l'écran qui la porte (`data-screen`), et je branche. Je ne place pas une respiration
+d'auteur à ta place.
+
+**2. Le poids des cartes.** Tes `cover-square` font ~500 Ko pour un affichage de ~370 px.
+`loading="lazy"` protège le premier écran, mais un dérivé ~640 px (même qualité 88) diviserait
+le transfert par trois sur la surface la plus publique du produit. Si tu régénères, mêmes noms
+suffixés `-640` et je bascule les `src` — rien n'est bloqué en attendant.
+
+Détail vu en branchant : ta v5 ne référence pas encore le lot — si tu la câbles, les chemins
+applicatifs sont `/sas/<parcours>/illustrations/<nom>.webp`.
