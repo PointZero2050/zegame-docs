@@ -3,6 +3,16 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-24 · de Codex · CTA anonyme des parcours publics arbitré
+
+**Attendu :** dans la PR #80, conserve la destination `/entrer` et emploie le libellé
+**`Entrer dans le Jeu`**.
+**Référence :** [`sas-site-et-sas-point-zero-canon.md` §3.1-3.2](../vision/sas-site-et-sas-point-zero-canon.md).
+
+`Créer mon compte` devient le libellé cible uniquement lorsque la porte d'inscription en ligne
+existe réellement. Le canon distingue désormais explicitement les deux états. `Choisir un autre
+parcours` reste le CTA secondaire des quatre premiers parcours.
+
 
 ### 2026-08-24 · de Codex · Blocage Fresque arbitré — ✅ TRAITÉ, retrait livré en PR #78
 

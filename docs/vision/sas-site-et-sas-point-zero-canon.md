@@ -48,9 +48,28 @@ Ne pas rattacher ces Ω à `le-sas-d-entree` : ce challenge désigne les rencont
 Ne pas les rattacher non plus à `le-site-du-point-zero` : cela ferait apparaître l'expérience 7
 comme leur origine, alors qu'ils ont été reconnus avant l'entrée dans l'application.
 
-Chaque parcours doit déclarer explicitement dans `config/sas.yml` son montant et sa Puissance de
-rattachement. Le code ne déduit jamais le `skill_id` du badge, du slug ou d'un libellé. Ce mapping
-éditorial des cinq Puissances doit être validé avant la première attribution réelle.
+Chaque parcours doit déclarer explicitement dans `config/sas.yml` son montant et son **skill
+exact** de rattachement. Le code ne déduit jamais le `skill_id` du badge, du slug, d'un libellé
+ni de la seule Puissance. Une résolution du type « premier skill de la Puissance par ordre d'id »
+est interdite : l'ordre technique n'a aucune signification pédagogique.
+
+Le rattachement canonique forme une première traversée des cinq Puissances centrales. Il reconnaît
+le mouvement principalement exercé par chaque parcours ; il ne transforme ni le badge ni les
+réponses du visiteur en diagnostic personnel.
+
+| Parcours | Badge | Puissance | Skill exact |
+|---|---|---|---|
+| `humanite` | Décodeur des cycles | **Intuition** | **INTUITION : OUVERTURE** |
+| `scenarios` | Prospectiviste | **Imagination** | **IMAGINATION : PROJECTION** |
+| `croyances` | Archéologue des croyances | **Émotion** | **ÉMOTION : DÉTACHEMENT** |
+| `paralysie` | Changeur d'échelle | **Communication** | **COMMUNICATION : ÉCOUTE** |
+| `reveil` | Réactivateur de Puissances | **Volonté** | **VOLONTÉ : INITIATIVE** |
+
+Cette séquence suit le geste réellement demandé : accueillir les signes qui troublent la carte,
+projeter plusieurs futurs, prendre de la distance avec les croyances héritées, recevoir d'autres
+échelles d'action, puis poser un premier acte d'orientation. Le dernier parcours mobilise les cinq
+Puissances dans son contenu ; son rattachement comptable à la Volonté reconnaît le passage de la
+compréhension à l'initiative, sans prétendre résumer le parcours à cette seule Puissance.
 
 ## 3. Textes canoniques
 
@@ -65,7 +84,13 @@ le mécanisme qu'il décrit.
 > avancées et d'ancrer dans le Jeu les badges obtenus au fil des cinq parcours.
 > Si tu préfères explorer d'abord, tout reste conservé sur cet appareil.
 
-CTA principal selon le contexte : `Choisir un parcours` ou `Créer mon compte`.
+CTA principal selon le contexte : `Choisir un parcours` ou **`Entrer dans le Jeu`**, vers
+`/entrer`. Ce libellé nomme la destination réellement disponible : la page de passage du
+visiteur au Joueur.
+
+**Texte cible après ouverture de l'inscription en ligne :** le CTA peut devenir
+`Créer mon compte` et mener directement à cette porte. Ce basculement dépend de l'existence
+effective de la route et du parcours d'inscription ; il ne doit pas être anticipé par le texte.
 
 **Texte cible après livraison comptable :** remplacer `les badges obtenus` par `les badges et les
 Omégas obtenus`.
@@ -75,7 +100,10 @@ Omégas obtenus`.
 > **Ce passage est accompli.** Ton badge est conservé sur cet appareil. Crée ton compte pour le
 > faire entrer automatiquement dans le Jeu, ou poursuis librement ton exploration.
 
-CTA principal : `Créer mon compte`.
+CTA principal actuel : **`Entrer dans le Jeu`**, vers `/entrer`.
+
+CTA cible après ouverture de l'inscription en ligne : `Créer mon compte`, vers la porte
+d'inscription effective.
 
 CTA secondaire : `Choisir un autre parcours`.
 

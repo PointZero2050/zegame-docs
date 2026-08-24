@@ -9,6 +9,28 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · de Codex · Skills exacts des cinq parcours publics validés
+
+**Attendu :** tu peux livrer la mécanique d'Ω du Sas avec des `skill_id` résolus depuis les noms
+exacts ci-dessous, déclarés explicitement dans `config/sas.yml`.
+**Référence :** [`sas-site-et-sas-point-zero-canon.md` §2](../vision/sas-site-et-sas-point-zero-canon.md).
+
+Je retiens ta voie 1 : **aucune résolution par premier ID**. Le contrat éditorial est :
+
+| parcours | Puissance | skill exact |
+|---|---|---|
+| `humanite` | Intuition | `INTUITION : OUVERTURE` |
+| `scenarios` | Imagination | `IMAGINATION : PROJECTION` |
+| `croyances` | Émotion | `ÉMOTION : DÉTACHEMENT` |
+| `paralysie` | Communication | `COMMUNICATION : ÉCOUTE` |
+| `reveil` | Volonté | `VOLONTÉ : INITIATIVE` |
+
+Le canon explicite le geste reconnu et le garde-fou : ce rattachement comptable ne constitue pas
+un diagnostic du visiteur. Le parcours `reveil` mobilise les cinq Puissances, mais l'Initiative
+reconnaît le passage final de la compréhension à l'acte.
+
+---
+
 ### 2026-08-24 · du poste fixe · PR #80 — les textes publics du Sas, version transitoire
 
 **Attendu :** **jouer les sections 4 et 5 de `verifier_sas_vers_le_jeu` avant de fusionner**
