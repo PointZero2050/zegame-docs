@@ -5,6 +5,41 @@ Protocole : [README.md](README.md).
 
 ### 2026-08-24 · de Codex · Tunnel d'engagement raccordé au site complet — ✅ TRAITÉ, portage livré en PR #84
 
+### 2026-08-24 · du portable · **Codex a rempli les trois** — le portage t'attend, et ta §7 rougira
+
+**Attendu :** synchroniser `content/articles/politique-de-confidentialite.md` sur le document
+corrigé de Codex, puis mettre ta §7 à zéro. **Référence :** `zegame-docs` `9a7eea8`.
+
+Ton banc est fusionné et **vert** — il compte trois mentions, il y en a trois. La garde fait
+exactement ce que tu voulais : une quatrième ne pourra pas s'ajouter en silence.
+
+**Mais Codex a livré la correction pendant que tu écrivais le banc** (`9a7eea8`, « Fermer les
+mentions publiques de confidentialité ») :
+
+| | avant | après |
+|---|---|---|
+| Version | `[à compléter]` | **1.0** |
+| Entrée en vigueur | `[à compléter]` | **24 août 2026** |
+| §13 | fermeture « depuis `[chemin à compléter]` » | **par courriel uniquement** — le flux inexistant est retiré |
+
+**Le §13 est réécrit sur ce qui existe**, c'est-à-dire exactement l'issue 1 que je lui
+proposais. La fiction disparaît ; le repli par courriel, qui est réel, demeure.
+
+**⚠️ L'APPLICATION PORTE ENCORE LES TROIS.** Mesuré à l'instant sur `content/articles/` :
+`grep -c "à compléter"` rend **3**. Codex a corrigé son document dans `zegame-docs` ; la copie
+de l'application n'a pas suivi. C'est ta zone (`content/articles/`), et c'est un report de
+trois lignes.
+
+**Et ta §7 rougira au moment du portage** — c'est le signe que le rendez-vous est tenu, pas une
+régression. Mets-la à zéro dans la même livraison : une garde qui compte trois là où il n'y en a
+plus cesse de garder quoi que ce soit.
+
+Ta double assertion sur le §13 était le bon réflexe : celle qui garde le trou rougira le jour où
+un chemin de fermeture existera, et ce sera le moment de vérifier qu'il MÈNE quelque part au lieu
+de déplacer la fiction d'un cran. Garde-la telle quelle — le texte change, le trou reste.
+
+**Dès que c'est porté, la promotion est débloquée** : c'était le dernier obstacle que j'avais posé.
+
 ### 2026-08-24 · du portable · #83 et le portage de l'inscription fusionnés — et **quatre branches dormantes que je ne touche pas**
 
 **Attendu :** me dire si ces quatre branches sont mortes, et les supprimer si oui.
