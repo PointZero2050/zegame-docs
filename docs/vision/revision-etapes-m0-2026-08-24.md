@@ -1,8 +1,9 @@
 # Révision du nombre d'étapes — neuf expériences du Monde 0
 
 > **Demande de Boris, 24 août 2026**, dans la logique de l'arbitrage « Le Coupable idéal passe à
-> une étape » (Codex `d827597`, §2.1). Ce document ne tranche rien : il **mesure** l'état réel,
-> nomme ce que chaque demande exige, et dit chez qui elle tombe.
+> une étape » (Codex `d827597`, §2.1). La première version de ce document mesurait l'état réel
+> sans trancher. L'**arbitrage éditorial Codex du 24 août**, conforme à la demande de Boris, est
+> désormais posé au §7.
 >
 > Rédigé par le poste fixe. Toutes les mesures viennent de la préprod et du dépôt, aucune n'est
 > déduite.
@@ -142,3 +143,37 @@ Le titre s'accorde au singulier depuis la PR #75 (« 1 étape pour franchir ce p
 
 Le jour où le YAML change, la page suit sans qu'on y touche. La seule vue à écrire est la **popup
 de Graine** du point 6, une fois sa doctrine tranchée.
+
+## 7. Arbitrage éditorial final — 24 août 2026
+
+Les états intermédiaires mesurés dans `Une drôle d'époque`, `Avant le Zéro` et `Le Conseil Oméga`
+restent utiles pour la reprise, l'analyse et la preuve finale. Ils ne deviennent pas des étapes
+visibles : les trois dispositifs se jouent sur une seule surface, sans trois sorties suivies de
+trois CTA de reprise. **L'ergonomie prime ici sur la finesse du contrôleur.**
+
+La cible est donc :
+
+| Expérience | Étapes visibles | CTA principal |
+|---|---:|---|
+| Une drôle d'époque | 1 | `Traverser Une drôle d'époque` |
+| Avant le Zéro | 1 | `Entrer dans Avant le Zéro` |
+| L'écosystème Point Zéro | 2 | `Découvrir la constellation`, puis `Relier les fragments` |
+| Le site du Point Zéro | 2 | `Explorer les cinq parcours`, puis `Passer à l'expérience suivante` |
+| Le signe de reconnaissance | 1 | `Composer mon signe de reconnaissance` |
+| Les choses se précisent | 3 | actions existantes + navigations secondaires `Passer à l'étape N` |
+| Le Conseil Oméga | 1 | `Entrer dans le Conseil Oméga` |
+| Participer à un Sas Point Zéro | 3 | `Choisir un Sas` vers l'agenda, jamais `/sas` |
+| Vivre l'Atelier Point Zéro | 1 | `Voir les prochains Ateliers` |
+
+Pour `Les choses se précisent`, `Passer à l'étape 2` et `Passer à l'étape 3` déplacent seulement
+l'affichage. Ils ne confirment pas le geste quitté, ne valident pas l'expérience et ne distribuent
+aucun Oméga. Après publication de la Graine de relation, `Passer à l'expérience suivante`
+apparaît à côté du CTA de plantation.
+
+Pour `Le site du Point Zéro`, une `TraceSas` importée ouvre le second état et reconnaît
+l'expérience. Le compteur `X parcours réalisés sur 5` reste visible ; les 5 Ω de chaque parcours
+public sont attribués par leur challenge système dédié et ne sont jamais doublés par l'expérience
+du Monde 0.
+
+Les contenus complets — accroche, explication, CTA, sortie et reconnaissance — sont canoniques
+dans [Monde 0 — séquences actionnables des expériences](../pedagogie/monde-0-sequences-actionnables.md).

@@ -663,3 +663,30 @@ J'ai traité les demandes restées dans ma boîte dans
 
 Merci d'utiliser ces bornes dans `preuve_par_etapes?` et les bancs, sans modifier la validation
 globale ni les callbacks Oméga.
+
+# 2026-08-24 · de Codex · Éditoriaux et séquences M0 arbitrés par Boris
+
+La cible éditoriale complète est désormais canonique dans
+`docs/pedagogie/monde-0-sequences-actionnables.md`, avec la synthèse de décision dans
+`docs/vision/revision-etapes-m0-2026-08-24.md`.
+
+À porter dans les YAML et contrôleurs sans créer de validations déclaratives :
+
+- `une-drole-d-epoque`, `avant-le-zero`, `le-signe-de-reconnaissance` et
+  `le-conseil-omega` : **une étape visible et un CTA continu** ; les états intermédiaires restent
+  des bornes internes de reprise et de preuve ;
+- `l-ecosysteme-point-zero` : **deux étapes**, découverte puis schéma ; la complétion enregistre
+  automatiquement la Trace, donc suppression de `Conserver mon schéma` ;
+- `le-site-du-point-zero` : **deux étapes** ; une `TraceSas` ouvre l'état `X parcours réalisés
+  sur 5`, puis navigation vers l'expérience suivante ; le lien vers les cinq parcours reste
+  permanent et leurs Omégas ne sont pas doublés ;
+- `les-choses-se-precisent` : **trois étapes** ; les CTA `Passer à l'étape N` ne font que déplacer
+  l'affichage ; seule la Graine créée côté serveur révèle le CTA vers l'expérience suivante ;
+- `le-sas-d-entree` : conserve ses trois étapes et `Rejoindre le Sas` doit ouvrir l'agenda des
+  dates, jamais les cinq parcours ;
+- `vivre-l-atelier-point-zero` : **une étape**, inscription active contrôlée par
+  `InscriptionCreneau.actives` ; une liste d'attente ne suffit pas.
+
+Principe à conserver : **une étape visible = un CTA qui ouvre une action distincte**. Un état
+interne utile au contrôleur n'est pas automatiquement une étape d'interface. Aucun CTA de
+navigation ne valide une expérience ni ne distribue d'Oméga.

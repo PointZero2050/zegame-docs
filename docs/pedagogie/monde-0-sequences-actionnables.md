@@ -68,6 +68,12 @@ Si le dispositif se joue sans interruption, ses mouvements restent nommés **dan
 ils ne produisent ni panneaux successifs, ni confirmations déclaratives. Un CTA final qui mène
 à l'expérience suivante est une navigation, jamais une étape supplémentaire.
 
+**Exception de navigation — `Les choses se précisent`.** Les liens `Passer à l'étape 2` et
+`Passer à l'étape 3` peuvent déplacer l'affichage sans confirmer l'action quittée, valider
+l'expérience ni distribuer d'Omégas. Ils sont visuellement secondaires et ne deviennent jamais
+la preuve du geste. À l'étape 3, la navigation vers l'expérience suivante n'apparaît qu'après la
+preuve serveur de publication de la Graine de relation.
+
 ## 3. Matrice éditoriale des étapes
 
 Les durées répartissent la durée réelle de l'expérience afin de donner un ordre de grandeur. Elles
@@ -121,61 +127,29 @@ ne constituent ni un chronomètre ni une condition de validation.
 
 ### 3. Une drôle d'époque — 20 min
 
-#### 1. Choisir — Prends position dans l'époque · 12 min
+#### Étape unique — Traverser une drôle d'époque · 20 min
 
-- **Accroche :** Tes choix racontent déjà une manière de voir le monde.
-- **Explication :** Traverse les situations proposées et choisis les réponses qui te ressemblent
-  aujourd'hui. Ne cherche pas la bonne réponse : le jeu a besoin de ton mouvement réel.
-- **CTA :** `Entrer dans les situations`
-- **Sortie attendue :** série de choix achevée.
-- **Reconnaissance :** événements intermédiaires à ajouter ; la preuve finale existe déjà.
-
-#### 2. Rencontrer — Laisse revenir le mouvement inverse · 5 min
-
-- **Accroche :** Ce que tu écartes continue d'agir.
-- **Explication :** Découvre la polarité que tes réponses ont laissée dans l'ombre. Observe ce
-  qu'elle pourrait rendre à ton regard si elle cessait d'être un adversaire.
-- **CTA :** `Découvrir le mouvement inverse`
-- **Sortie attendue :** miroir de polarité affiché.
-- **Reconnaissance :** événement d'affichage du résultat à ajouter ; confirmation en repli.
-
-#### 3. Lire — Ton premier miroir · 3 min
-
-- **Accroche :** Regarde une posture, pas une identité.
-- **Explication :** Lis le miroir proposé et choisis ce que tu souhaites en garder. Il décrit une
-  manière ponctuelle de traverser l'époque et pourra évoluer avec toi.
-- **CTA :** `Conserver mon premier miroir`
-- **Sortie attendue :** résultat du mini-jeu conservé comme Trace.
-- **Reconnaissance :** preuve serveur existante à la complétion du mini-jeu.
+- **Accroche :** Tes choix mettent déjà ton Moteur en mouvement.
+- **Explication :** Traverse une semaine de situations ordinaires, donc légèrement explosives.
+  Choisis ton premier mouvement, rencontre celui que tu écartes et rejoins le miroir final. La
+  semaine se traverse d'un seul élan, jusqu'au premier reflet du Moteur.
+- **CTA :** `Traverser Une drôle d'époque`
+- **Sortie attendue :** premier miroir atteint et résultat conservé comme Trace.
+- **Reconnaissance :** preuve serveur existante à la complétion du mini-jeu. Les états
+  intermédiaires peuvent nourrir son affichage et sa reprise, mais ne créent aucune étape visible.
 
 ### 4. Avant le Zéro — 15 min
 
-#### 1. Entrer — Traverse la dispersion · 6 min
+#### Étape unique — Suivre un devenir jusqu'à son terme · 15 min
 
-- **Accroche :** Entre dans un monde qui a perdu son centre.
-- **Explication :** Parcours les fragments proposés et observe comment des récits séparés
-  organisent le réel. Laisse-toi d'abord affecter avant de chercher une explication.
-- **CTA :** `Entrer dans l'expérience`
-- **Sortie attendue :** première phase du mini-jeu parcourue.
-- **Reconnaissance :** événement de phase à ajouter ; confirmation en repli.
-
-#### 2. Traverser — Suis un devenir possible · 6 min
-
-- **Accroche :** Une époque devient ce qu'elle répète.
-- **Explication :** Choisis un chemin parmi les devenirs proposés et observe la logique qui le
-  rend possible. Tu suis un récit jusqu'à ses conséquences.
-- **CTA :** `Choisir un devenir`
-- **Sortie attendue :** chemin parcouru jusqu'à son issue.
-- **Reconnaissance :** événement de phase à ajouter ; la preuve finale existe déjà.
-
-#### 3. Revenir — Rapporte une Trace du passage · 3 min
-
-- **Accroche :** Reviens avec ce que tu ne peux plus ne pas voir.
-- **Explication :** Choisis l'image, la phrase ou la tension qui résume le mieux ta traversée.
-  Elle rejoint tes Traces et pourra nourrir une future Graine.
-- **CTA :** `Conserver ma Trace`
-- **Sortie attendue :** résultat de l'expérience enregistré.
-- **Reconnaissance :** preuve serveur existante à la fin du mini-jeu.
+- **Accroche :** Entre dans un monde qui a perdu son centre et retrouve le chemin du retour.
+- **Explication :** Traverse la dispersion, choisis un devenir et suis sa logique jusque dans ses
+  conséquences. La fin atteinte devient la Trace de ce passage et rejoint automatiquement ton
+  registre.
+- **CTA :** `Entrer dans Avant le Zéro`
+- **Sortie attendue :** première fin atteinte et devenir rencontré conservé comme Trace.
+- **Reconnaissance :** preuve serveur existante lorsque la traversée atteint une fin. Les phases
+  `D` et `R*` restent des repères de reprise internes, pas des étapes de la fiche.
 
 ### 5. Et moi dans tout ça ? — 20 min
 
@@ -216,89 +190,65 @@ ne constituent ni un chronomètre ni une condition de validation.
 
 #### 1. Découvrir — Entre dans la constellation · 2 min
 
-- **Accroche :** Le Point Zéro n'est pas un programme : c'est un écosystème.
-- **Explication :** Explore les grandes fonctions qui relient le Jeu, les Cercles, les ressources
-  et les projets. Cherche les circulations plutôt qu'un organigramme.
+- **Accroche :** Regarde comment le Jeu, les Cercles, les ressources et les projets se répondent.
+- **Explication :** Parcours la présentation de l'écosystème. Cherche ce qui circule entre ses
+  éléments plutôt que le bureau où serait rangé l'organigramme définitif.
 - **CTA :** `Découvrir la constellation`
-- **Sortie attendue :** carte de l'écosystème ouverte.
-- **Reconnaissance :** événement d'ouverture à ajouter ; confirmation en repli.
+- **Sortie attendue :** présentation parcourue jusqu'à son terme.
+- **Reconnaissance :** listener du dispositif à son écran de sortie ; aucune confirmation
+  déclarative si cet événement est disponible.
 
-#### 2. Relier — Recompose trois fragments · 2 min
+#### 2. Relier — Compose ton Schéma de circulation · 3 min
 
 - **Accroche :** Retrouve ce qui nourrit quoi.
-- **Explication :** Relie trois éléments de l'écosystème et observe ce qui circule entre eux :
-  apprentissage, récit, attention, ressources ou capacité d'agir.
+- **Explication :** Relie les fragments proposés et fais apparaître le mouvement que tu comprends
+  aujourd'hui : apprentissage, récit, attention, ressources ou capacité d'agir. Le schéma produit
+  rejoint automatiquement tes Traces.
 - **CTA :** `Relier les fragments`
-- **Sortie attendue :** exercice de mise en relation achevé.
-- **Reconnaissance :** preuve serveur existante via l'adaptateur.
+- **Sortie attendue :** exercice achevé et Schéma de circulation enregistré comme Trace.
+- **Reconnaissance :** preuve serveur existante à la complétion du dispositif. `Conserver mon
+  schéma` disparaît : il ne déclenchait aucune action distincte.
 
-#### 3. Produire — Ton Schéma de circulation · 1 min
+### 7. Le site du Point Zéro — 10 à 50 min
 
-- **Accroche :** Dessine le mouvement que tu as compris.
-- **Explication :** Choisis le circuit qui te paraît aujourd'hui le plus vivant. Ce premier
-  schéma reste provisoire et rejoint tes Traces.
-- **CTA :** `Conserver mon schéma`
-- **Sortie attendue :** schéma choisi et enregistré comme Trace.
-- **Reconnaissance :** événement d'enregistrement à ajouter ; confirmation en repli.
+Le lien `Explorer les cinq parcours` reste visible dans les deux états de l'expérience. Chaque
+parcours public accompli reconnaît ses propres 5 Ω ; l'expérience du Monde 0 ne les attribue pas
+une seconde fois.
 
-### 7. Le site du Point Zéro — 30 min
+#### 1. Explorer — Entre par l'une des cinq questions · 10 min minimum
 
-#### 1. Explorer — Choisis un chemin dans le site · 18 min
+- **Accroche :** Cinq questions ouvrent cinq manières de regarder le basculement.
+- **Explication :** Choisis la question qui t'appelle et accomplis au moins un parcours public.
+  Tu pourras revenir aux quatre autres quand tu le souhaites ; leur progression reste visible ici.
+- **CTA :** `Explorer les cinq parcours`
+- **Sortie attendue :** au moins un des cinq parcours publics accompli.
+- **Reconnaissance :** présence d'au moins une `TraceSas` importée pour le Joueur. La navigation
+  ou la simple ouverture du site ne suffit pas.
 
-- **Accroche :** Entre dans la profondeur sans chercher à tout lire.
-- **Explication :** Parcours les contenus proposés et suis les liens qui déplacent réellement ton
-  regard. Le Jeu conserve les pages visitées dans ce parcours, pas ton activité générale.
-- **CTA :** `Explorer le site`
-- **Sortie attendue :** parcours thématique achevé ou pages requises consultées.
-- **Reconnaissance :** événements de navigation à relier ; confirmation en repli.
+#### 2. Situer — Choisis jusqu'où poursuivre · 1 min
 
-#### 2. Éprouver — Vérifie ce que tu as réellement compris · 7 min
-
-- **Accroche :** Fais passer les idées par tes propres mots.
-- **Explication :** Réponds au questionnaire d'appropriation. Il ne mesure pas une culture du Point
-  Zéro : il révèle les notions qui demandent encore à être reliées.
-- **CTA :** `Répondre au questionnaire`
-- **Sortie attendue :** questionnaire achevé et résultat enregistré.
-- **Reconnaissance :** preuve serveur existante via l'adaptateur.
-
-#### 3. Cartographier — Garde deux résonances · 5 min
-
-- **Accroche :** Choisis deux idées qui continueront de travailler en toi.
-- **Explication :** Sélectionne une idée qui t'ouvre et une idée qui te résiste. Ensemble, elles
-  forment une petite carte de ton exploration.
-- **CTA :** `Conserver mes deux résonances`
-- **Sortie attendue :** deux résonances enregistrées comme Trace.
-- **Reconnaissance :** événement d'enregistrement à ajouter ; confirmation en repli.
+- **Accroche :** `X parcours réalisés sur 5.`
+- **Explication :** Ton premier passage ouvre la suite du Monde 0. Les autres questions restent
+  disponibles : tu peux poursuivre maintenant ou les retrouver plus tard depuis cette page.
+- **CTA :** `Passer à l'expérience suivante`
+- **Action secondaire permanente :** `Explorer les cinq parcours`
+- **Sortie attendue :** expérience reconnue dès l'entrée dans cet état ; le CTA principal est une
+  navigation vers l'expérience suivante, pas une nouvelle preuve.
+- **Reconnaissance :** le compteur provient exclusivement de `TraceSas.pour(joueur)`.
 
 ### 8. Le signe de reconnaissance — 15 min
 
-#### 1. Choisir — Fais apparaître une relation · 3 min
+#### Étape unique — Composer un signe de reconnaissance · 15 min
 
-- **Accroche :** Pense à quelqu'un dont le geste mérite d'être vu.
-- **Explication :** Choisis une relation réelle et nomme ce que cette personne a rendu possible
-  pour toi, pour d'autres ou pour un projet.
-- **CTA :** `Choisir une personne`
-- **Sortie attendue :** destinataire ou relation désignée, sans envoi automatique.
-- **Reconnaissance :** événement de sélection à ajouter ; confirmation en repli.
-
-#### 2. Composer — Écris un signe qui reconnaît précisément · 7 min
-
-- **Accroche :** Reconnais un acte, pas une étiquette.
-- **Explication :** Compose un message bref qui nomme le geste observé, son effet et ce qu'il a
-  éveillé. La précision donne sa force au signe.
-- **CTA :** `Composer mon signe`
-- **Sortie attendue :** message rédigé et conservé en brouillon.
-- **Reconnaissance :** événement de brouillon à ajouter ; confirmation en repli.
-
-#### 3. Décider — Choisis le destin de ton signe · 5 min
-
-- **Accroche :** Envoie-le, change de canal ou garde-le pour toi.
-- **Explication :** Décide librement de transmettre ce signe dans l'application, par un autre
-  moyen, ou de le conserver. Le choix du canal fait partie du geste.
-- **CTA :** `Choisir comment le transmettre`
-- **Sortie attendue :** décision enregistrée ; l'envoi reste facultatif.
-- **Reconnaissance :** preuve serveur existante sur l'achèvement du dispositif, sans exiger
-  l'envoi.
+- **Accroche :** Fais apparaître un geste qui mérite d'être vu.
+- **Explication :** Pense à une relation réelle, nomme précisément ce que l'autre a rendu possible
+  et compose ton signe. Tu décideras dans le dispositif de l'envoyer, de changer de canal ou de le
+  garder pour toi : reconnaître n'oblige pas à publier.
+- **CTA :** `Composer mon signe de reconnaissance`
+- **Sortie attendue :** signe prêt à envoyer et choix de destination enregistré. L'envoi réel
+  reste facultatif.
+- **Reconnaissance :** preuve serveur existante à la complétion du dispositif ; ses phases
+  `situation`, `composition` et `envoi` ne créent pas trois reprises sur la fiche.
 
 ### 9. Les choses se précisent — 30 min
 
@@ -308,6 +258,7 @@ ne constituent ni un chronomètre ni une condition de validation.
 - **Explication :** Relis ton Schéma de circulation, ton signe et les résonances déjà conservées.
   Repère la relation qui pourrait soutenir le prochain mouvement.
 - **CTA :** `Relire ma constellation`
+- **Navigation secondaire :** `Passer à l'étape 2`
 - **Sortie attendue :** éléments transmis au dialogue avec le mentor.
 - **Reconnaissance :** événement de sélection à ajouter ; confirmation en repli.
 
@@ -317,46 +268,36 @@ ne constituent ni un chronomètre ni une condition de validation.
 - **Explication :** Dialogue avec ton mentor sur une personne, un cercle ou une communauté que tu
   pourrais rejoindre, soutenir ou inviter dans ton mouvement.
 - **CTA :** `Explorer cette relation avec mon mentor`
+- **Navigation secondaire :** `Passer à l'étape 3`
 - **Sortie attendue :** échange rattaché à la thématique `Graine`.
 - **Reconnaissance :** preuve à ajouter sur le dialogue thématique ; confirmation en repli.
 
 #### 3. Semer — La Graine de relation · 5 min
 
 - **Accroche :** Formule le lien que tu souhaites rendre possible.
-- **Explication :** Écris une Graine qui nomme la qualité de relation recherchée et le premier
-  geste que tu peux poser sans attendre l'autre.
+- **Explication :** La popup te propose trois appuis : `La relation que je souhaite rendre
+  possible`, `Ce qu'elle rendrait possible` et `Le premier geste que je peux poser`. Compose la
+  formulation finale, puis choisis de la publier dans le fil des Graines.
 - **CTA :** `Planter ma Graine de relation`
-- **Sortie attendue :** Graine enregistrée dans la Fresque.
-- **Reconnaissance :** preuve à relier à la création de la Graine attendue.
+- **Sortie attendue :** Graine publiée dans la Fresque avec la provenance parcours + chapitre +
+  expérience, sans changement de page.
+- **Reconnaissance :** preuve serveur liée à la création effective de cette Graine. Après sa
+  publication, `Passer à l'expérience suivante` apparaît à côté de `Planter ma Graine de
+  relation` ; il reste une navigation, pas une seconde reconnaissance.
 
 ### 10. Le Conseil Oméga — 25 min
 
-#### 1. Être convoqué — Entre dans le Conseil · 3 min
+#### Étape unique — Prendre place au Conseil Oméga · 25 min
 
-- **Accroche :** Le futur te demande de prendre place.
-- **Explication :** Entre dans la scène du Conseil Oméga et découvre les tensions qui traversent
-  la décision. Tu n'es pas invité à commenter le monde, mais à y tenir une fonction.
-- **CTA :** `Entrer dans le Conseil`
-- **Sortie attendue :** introduction du mini-jeu traversée.
-- **Reconnaissance :** événement de phase à ajouter ; confirmation en repli.
-
-#### 2. Arbitrer — Choisis entre plusieurs futurs incomplets · 17 min
-
-- **Accroche :** Aucun futur ne sauvera toutes les polarités à ta place.
-- **Explication :** Examine les scénarios et arbitre les tensions qu'ils révèlent. Tes décisions
-  font apparaître les fonctions de civilisation que tu es prêt à servir.
-- **CTA :** `Participer aux arbitrages`
-- **Sortie attendue :** série d'arbitrages achevée.
-- **Reconnaissance :** événements intermédiaires à ajouter ; la preuve finale existe déjà.
-
-#### 3. Signer — Ton Rôle d'appel et tes caps · 5 min
-
-- **Accroche :** Sors du Conseil avec une fonction à éprouver.
-- **Explication :** Découvre le métier ou rôle Oméga proposé, ajuste les caps associés et signe-le
-  comme une hypothèse d'action. Il préfigure une responsabilité possible, pas une identité figée.
-- **CTA :** `Signer mon Rôle d'appel`
-- **Sortie attendue :** rôle et caps conservés comme Trace.
-- **Reconnaissance :** preuve serveur existante à la fin du mini-jeu.
+- **Accroche :** Le futur a laissé une chaise vide. Elle porte ton nom.
+- **Explication :** Entre dans le Conseil, arbitre plusieurs futurs incomplets et formule tes caps.
+  La restitution fera apparaître un Rôle d'appel à éprouver dans le présent — ainsi qu'une quantité
+  raisonnable de paperasse venue de 2040.
+- **CTA :** `Entrer dans le Conseil Oméga`
+- **Sortie attendue :** restitution finale atteinte, caps conservés et Rôle d'appel choisi ou
+  explicitement laissé ouvert.
+- **Reconnaissance :** preuve serveur existante à la complétion du Conseil. `TREIZIEME` et
+  `cap_desir` restent des bornes internes de reprise, pas des étapes visibles.
 
 ### 11. Découvrir les formats — 10 min · facultative
 
@@ -419,33 +360,17 @@ ne constituent ni un chronomètre ni une condition de validation.
 
 ### 13. Vivre l'Atelier Point Zéro — 3 h
 
-#### 1. Explorer — Compose avec plusieurs futurs · 45 min
+#### Étape unique — S'inscrire à un Atelier Point Zéro · 3 h
 
-- **Accroche :** Entre dans les futurs avant de choisir celui qui te rassure.
-- **Explication :** Traverse les scénarios proposés avec le groupe et observe les forces qu'ils
-  libèrent, les peurs qu'ils réveillent et les impensés qu'ils transportent.
-- **CTA :** `Préparer l'Atelier`
-- **Sortie attendue :** préparation consultée puis participation à la première séquence.
-- **Reconnaissance :** facilitateur et présence ; aucune preuve automatique par geste aujourd'hui.
-
-#### 2. Reconnaître — Retrouve le système en toi · 1 h 30
-
-- **Accroche :** Le monde que tu veux transformer traverse aussi ton Moteur.
-- **Explication :** Participe aux pratiques de l'Atelier et observe comment les polarités
-  collectives se rejouent dans tes propres manières de décider, créer, ressentir, t'exprimer et
-  discerner.
-- **CTA :** `Voir le cadre de l'Atelier`
-- **Sortie attendue :** participation à la séquence centrale.
-- **Reconnaissance :** facilitateur et présence ; confirmation du Joueur en repli d'affichage.
-
-#### 3. Franchir — Passe le seuil en Cercle · 45 min
-
-- **Accroche :** Termine la traversée en présence des autres.
-- **Explication :** Prends part au temps de clôture, partage ce que tu choisis de rendre visible et
-  formule l'engagement minimal avec lequel tu repars.
-- **CTA :** `Retrouver les informations de l'Atelier`
-- **Sortie attendue :** Atelier achevé et présence reconnue par le facilitateur.
-- **Reconnaissance :** autorité du facilitateur ; elle valide l'expérience entière.
+- **Accroche :** Choisis la date à laquelle les concepts devront supporter la présence de vrais
+  humains.
+- **Explication :** Consulte les prochains Ateliers, choisis celui qui correspond à tes
+  disponibilités et réserve ta place. Une inscription en attente ne suffit pas : le Jeu attend une
+  place confirmée.
+- **CTA :** `Voir les prochains Ateliers`
+- **Sortie attendue :** inscription active à un créneau d'Atelier.
+- **Reconnaissance :** preuve serveur sur `InscriptionCreneau.actives`. L'ouverture de l'agenda et
+  une inscription placée en liste d'attente ne franchissent pas cette étape.
 
 ### 14. Mon récit de passage — 30 min
 
@@ -550,21 +475,21 @@ Si une phrase est retenue :
 Ces formulations ne prétendent jamais qu'une Graine existe déjà. La production structurée et la
 phrase retenue restent deux objets distincts.
 
-### 6.2. Correspondance entre les quatre quiz et les trois gestes
+### 6.2. Correspondance avec les dispositifs internes
 
-Les quatre quiz couvrent entièrement leur expérience. Leur achèvement peut donc prouver les
-trois gestes. Lorsqu'un état intermédiaire persistant est disponible, la correspondance est :
+Les quatre dispositifs couvrent entièrement leur expérience. Leur achèvement prouve la sortie
+attendue sans ajouter de confirmation déclarative. Depuis l'arbitrage du 24 août, les phases
+internes ne déterminent plus nécessairement le nombre d'étapes visibles :
 
-| Expérience | Geste 1 | Geste 2 | Geste 3 |
-|---|---|---|---|
-| L'écosystème Point Zéro | Découvrir : `mission`, `fragments` | Relier : `liens`, `manque` | Produire : `schema` |
-| Le site du Point Zéro | Explorer : `mission`, `repere_1`, `repere_2` | Éprouver : `langage`, `feedback`, `geste` | Cartographier : `produire`, `carte` |
-| Le signe de reconnaissance | Choisir : `mission`, `situation` | Composer : `composition` | Décider : `envoi`, `signe` |
-| Découvrir les formats | Clarifier : `mission`, `intention` | Comparer : `format`, `geste` | Produire : `boussole` |
+| Expérience | Étapes visibles | Preuve canonique |
+|---|---:|---|
+| L'écosystème Point Zéro | 2 | sortie de la présentation, puis complétion du dispositif et `schema` conservé automatiquement |
+| Le site du Point Zéro | 2 | au moins une `TraceSas`, puis état de restitution `X parcours réalisés sur 5` |
+| Le signe de reconnaissance | 1 | dispositif achevé avec `signe` prêt et décision de destination |
+| Découvrir les formats | 3 | phases `intention`, `format` puis `boussole` conservées |
 
-Si le moteur n'expose que `completed`, il ne prétend pas connaître un geste courant : la preuve
-globale confirme les trois gestes ensemble. Aucun état intermédiaire n'est déduit de la seule
-ouverture du quiz.
+Si le moteur n'expose que `completed`, il ne prétend pas connaître une phase courante. Aucun état
+intermédiaire n'est déduit de la seule ouverture du dispositif.
 
 ### 6.3. Destinations des six CTA encore sans porte
 
@@ -573,11 +498,11 @@ ouverture du quiz.
 | Les choses se précisent · Relire | `/mes-traces` | La constellation est composée de productions déjà conservées. Un filtre ou une ancre pourra préciser cette vue plus tard. |
 | Sas Point Zéro · Choisir un Sas | Agenda filtré sur les rencontres Sas Point Zéro | L'événement doit être associé canoniquement à l'expérience. `/sas` et `/sas/:slug` désignent les parcours publics du site et ne sont jamais utilisés ici. |
 | Sas Point Zéro · Conserver mon intention | À construire comme saisie intégrée | L'intention est enregistrée comme Trace ; ce geste n'est pas réduit à une confirmation déclarative. |
-| Vivre l'Atelier · les trois gestes | À construire sur la fiche de l'Atelier lié | L'expérience doit résoudre l'événement et l'atelier depuis une association ou une configuration canonique. Aucun identifiant courant n'est codé en dur. |
+| Vivre l'Atelier · étape unique | Agenda filtré sur les Ateliers Point Zéro | L'expérience résout le créneau depuis les données d'événement, sans identifiant codé en dur ; une `InscriptionCreneau.active` est la preuve. |
 
-Tant que les associations métier manquent, les cinq CTA marqués « à construire » restent absents.
-La présence ou le facilitateur reconnaît l'expérience Atelier ; la consultation de sa fiche ne la
-valide pas.
+Tant que les associations métier manquent, les CTA marqués « à construire » restent absents. La
+consultation d'une fiche d'Atelier ne valide rien ; seule une inscription active reconnaît
+l'étape visible.
 
 ### 6.4. Granularité de progression
 
@@ -603,29 +528,23 @@ une expérience (`retour_apprecie`, `retour_appris`, `retour_manque`). Elle devi
 **Bilans d'expérience**. Le terme `Retours reçus` est réservé à un futur contenu effectivement
 produit par un pair, un mentor ou un facilitateur.
 
-### 6.6. Correspondance entre les quatre mini-jeux narratifs et les gestes
+### 6.6. Correspondance entre les quatre mini-jeux narratifs et les étapes visibles
 
-La règle reste : **une étape visible = un CTA réel**. Le Jeu n'invente pas une progression fine
-qu'il ne sait pas observer. Les bornes ci-dessous sont dérivées des états persistés existants ;
-elles ne modifient ni la validation globale de l'expérience ni l'attribution des Omégas.
+La règle reste : **une étape visible = un CTA réel et une reprise distincte**. Les mini-jeux
+exposent plusieurs bornes persistées, mais le Joueur les traverse sur une surface continue. Ces
+bornes servent à reprendre, analyser et reconnaître le terme du jeu ; elles ne produisent plus de
+panneaux successifs sur la fiche.
 
-| Expérience | Geste visible | Événement ou état qui le reconnaît |
+| Expérience | Étape visible unique | Preuve de sortie ; bornes internes conservées |
 |---|---|---|
-| Le Coupable idéal | **Étape unique — Traverser le procès** | première restitution complète du procès ; `current_step` intermédiaire ne crée pas plusieurs gestes, car le mini-jeu se joue sans interruption |
-| Une drôle d'époque | **Choisir — Prends position dans l'époque** | première polarité effectivement choisie, à `jour_1_e2` |
-| Une drôle d'époque | **Rencontrer — Laisse revenir le mouvement inverse** | première réponse au retournement, à `jour_1_e4` |
-| Une drôle d'époque | **Lire — Ton premier miroir** | miroir atteint et passation complétée |
-| Avant le Zéro | **Entrer — Traverse la dispersion** | réponse à `D` et entrée dans une voie, ou choix explicite de la Bulle |
-| Avant le Zéro | **Traverser — Suis un devenir possible** | franchissement du goulot de la voie : arrivée dans sa phase de remontée (`R*`) |
-| Avant le Zéro | **Revenir — Rapporte une Trace du passage** | première fin atteinte et traversée complétée ; le devenir rejoint alors le registre des Traces |
-| Le Conseil Oméga | **Être convoqué — Entre dans le Conseil** | seuil franchi et arrivée à la question commune, après `TREIZIEME` |
-| Le Conseil Oméga | **Arbitrer — Choisis entre plusieurs futurs incomplets** | six dossiers arbitrés et six caps formulés ; sortie de `cap_desir` |
-| Le Conseil Oméga | **Signer — Ton Rôle d'appel et tes caps** | Rôle d'appel choisi ou explicitement laissé ouvert, puis restitution finale atteinte |
+| Le Coupable idéal | **Traverser le procès** | restitution complète ; `current_step` reste interne |
+| Une drôle d'époque | **Traverser une drôle d'époque** | miroir atteint et passation complétée ; `jour_1_e2` et `jour_1_e4` restent des bornes internes |
+| Avant le Zéro | **Suivre un devenir jusqu'à son terme** | première fin atteinte ; `D` et `R*` restent des bornes internes |
+| Le Conseil Oméga | **Prendre place au Conseil Oméga** | restitution finale, caps et Rôle d'appel ; `TREIZIEME` et `cap_desir` restent des bornes internes |
 
-Pour `Une drôle d'époque`, les jours suivants approfondissent les deux premiers gestes sans les
-rouvrir. Pour `Avant le Zéro`, atteindre une fin est la preuve du retour : aucune question
-artificielle n'est ajoutée après la fiction. Pour le Conseil, l'ancien champ `posture_cible` reste
-lisible comme donnée historique mais ne remplace pas le Rôle d'appel dans le nouveau rite.
+Pour `Avant le Zéro`, atteindre une fin est la preuve du retour : aucune question artificielle
+n'est ajoutée après la fiction. Pour le Conseil, l'ancien champ `posture_cible` reste lisible
+comme donnée historique mais ne remplace pas le Rôle d'appel dans le nouveau rite.
 
 ### 6.7. Voix narrative du parcours
 
