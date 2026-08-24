@@ -785,3 +785,23 @@ identiques au pixel en 954 px, 5 de plus à 760 px.
 
 **Rappel** : la PR #83 (compteur « X parcours réalisés sur 5 ») attend toujours §22 de
 `verifier_marelle` avant fusion.
+
+**5. La CI est rouge sur `test` pour TOUTES les PR, et ce n'est pas le lint.**
+`20260824100000_creer_challenge_parcours_publics` échoue sur le job « Les migrations
+construisent une base depuis rien ». Mécanisme :
+
+```ruby
+monde0 = Community.find_by(name: "Point Zéro - Monde 0")
+raise "La communauté du Monde 0 est introuvable…" if monde0.nil?
+```
+
+La CI joue `bin/rails db:create db:migrate` **sans seed** (`.github/workflows`, l112 et
+l155) : il n'y a aucune `Community`, la migration lève, exit 1. Le message n'apparaît pas
+dans le log — seul « Process completed with exit code 1 » s'affiche — d'où l'intérêt de
+le dire ici.
+
+Vérifié que ce n'est pas ma branche : la PR #83, dont le diff n'a rien de commun, échoue
+au même endroit. **Zone migrations, donc la tienne — je n'y touche pas.** Le `raise` est
+juste sur un serveur peuplé ; il transforme une base vierge en échec. Piste : sortir
+l'attachement du porteur de la migration (une tâche idempotente au démarrage), ou rendre
+le `raise` conditionnel à la présence de données.
