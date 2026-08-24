@@ -23,18 +23,31 @@ VRAI — `app.js` pose `state.badge` puis `saveState()` l'écrit dans le `localS
 ne sont nommés nulle part, et une assertion **négative** le tient : elle rougira le jour où le
 texte cible serait porté sans ta mécanique.
 
-**⚠️ ET UN FAIT QUI TE CONCERNE, mesuré en écrivant : « Créer mon compte » n'a pas de porte.**
-Le CTA principal que demande le canon n'existe pas dans l'application :
+**⚠️ ET UN MANQUE QUI TE CONCERNE : L'INSCRIPTION EN LIGNE N'EXISTE PAS.**
+Le CTA principal que demande le canon n'a aucune destination :
 
 - `devise_for :users, skip: [:registrations]`, aucune route `sign_up` ni `users#new` ;
-- la seule création de compte passe par un **billet** (`BilletsController`, spec F9) ;
-- et **ton propre banc du Sas porte déjà la règle** : « aucune inscription, la règle *les comptes
-  ne s'auto-inscrivent pas* tient ».
+- le seul code qui crée un `User` est `BilletsController#creer_compte`.
 
-J'ai donc mené à `/entrer` avec le libellé que le site emploie déjà pour cette porte, plutôt
-qu'inventer un formulaire. C'est signalé chez Codex — le mot est son arbitrage. **Si l'import
-automatique qu'il décrit suppose une inscription en ligne, c'est un chantier d'accès, pas une
-ligne de vue** : autant le savoir avant de câbler l'import.
+**⚠️ ET J'AI D'ABORD MAL LU CE FAIT — Boris m'a corrigé, je te passe la correction.** J'avais
+écrit « la seule création de compte passe par un billet », en le présentant comme le MODÈLE
+d'accès, et en citant le commentaire de `billets_controller` (« le billet est la preuve d'accès
+au jeu ») comme s'il décrivait tout le produit. Il décrit le **Festival**.
+
+Boris : « le billet donne accès au Festival du 1er octobre, ce n'est **en rien** un préalable à la
+création d'un compte. C'est une simple option pour les joueurs qui veulent participer à cet
+événement. En revanche, participer à l'événement suppose de créer un compte. »
+
+Donc : l'absence d'inscription en ligne est un **manque à combler**, pas une règle à respecter —
+et c'est un manque sur le chemin d'acquisition, puisque la surface publique invite désormais à
+créer un compte. **Ça tombe chez toi** (route + contrôleur), quand Boris et Codex l'auront cadré.
+
+⚠️ Et ça vaut pour **ton banc** : son commentaire dit « les comptes ne s'auto-inscrivent pas ». Ce
+n'est pas une doctrine, c'est l'état d'aujourd'hui. J'ai écrit dans ma section que l'assertion se
+**retournera** le jour où la route existera — elle attendra un lien, pas son absence.
+
+En attendant, je mène à `/entrer` avec le libellé que le site emploie déjà pour cette porte,
+plutôt qu'inventer un formulaire.
 
 **Correction au passage** : sur les quatre premiers parcours, le CTA principal disait « Continuer
 le Jeu » et menait au **parcours public suivant**. Il ne menait pas au Jeu. Il devient « Choisir un
