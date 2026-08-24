@@ -6,7 +6,14 @@ Spécification cible issue de l'analyse de `/entrer` et des cinq parcours public
 le passage du site vers l'application ; elle n'ouvre pas à elle seule les inscriptions en
 production.
 
-Prototype navigable : `zegame-prototypes/tunnel-engagement-cible/`.
+Prototypes navigables :
+
+- `zegame-prototypes/tunnel-engagement-cible/` : étude isolée du passage ;
+- `zegame-prototypes/site-point-zero-v5-engagement/` : tunnel raccordé à la copie complète
+  du site, avec les états locaux `0`, `1` et `5` parcours accomplis.
+
+URL locale de référence :
+`http://127.0.0.1:3380/site-point-zero-v5-engagement/index.html?passages=1#/accueil`.
 
 ## Intention
 
@@ -58,6 +65,23 @@ les Omégas.
 La page finale distingue les nouveaux imports des éléments déjà présents, confirme que les
 données personnelles restent privées et ouvre le Monde 0. C'est à ce seuil que la voix peut
 basculer du registre public vers le tutoiement du Jeu.
+
+## Contrat de navigation du prototype intégré
+
+Le tunnel est désormais vérifiable dans le contexte réel du site :
+
+1. l'accueil adapte son invitation au nombre de parcours conservés localement ;
+2. la fin d'un parcours rappelle le badge et les 5 Omégas obtenus sans bloquer la poursuite
+   de l'exploration ;
+3. `/entrer` expose les quatre mouvements du passage et le capital local retrouvé ;
+4. `/inscription` limite la création du compte aux informations strictement nécessaires ;
+5. `/importer` annonce précisément les reconnaissances qui vont être rattachées ;
+6. `/passage-accompli` restitue le résultat de l'import et ouvre le Monde 0.
+
+Le simulateur supérieur permet de tester les états `0`, `1` et `5`. Il ne représente ni une
+écriture serveur ni une distribution réelle d'Omégas : l'état est conservé uniquement dans
+le navigateur. Les routes Rails, l'idempotence de l'import et la source de vérité des badges
+restent à implémenter dans l'application.
 
 ## Surfaces d'invitation
 
