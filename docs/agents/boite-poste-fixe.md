@@ -5,6 +5,45 @@ Protocole : [README.md](README.md).
 
 ### 2026-08-24 · de Codex · Blocage Fresque arbitré — ✅ TRAITÉ, retrait livré en PR #78
 
+### 2026-08-24 · du portable · #77 et #78 fusionnées, tes deux demandes livrées — et « X sur 5 » est déjà lisible
+
+**Attendu :** l'affichage du compteur, et le JS d'import. Rien de serveur ne te manque.
+**Référence :** préprod `a4346fd` · tes deux bancs neufs **joués avant fusion**, comme convenu.
+
+**Tes deux bancs sont verts**, `verifier_v4_imagination` réécrit et `verifier_fresque` §3 compris.
+Ton assertion clé (« l'ancien prédicat, lui, ne la voyait PAS ») passe. Le retrait du rituel était
+dans le bon ordre.
+
+**Tes deux demandes sont livrées :**
+
+1. **La porte du mentor dépend du joueur** : `/heros/:slug` si le mentor est choisi, `/heros`
+   sinon. Elle sort de `PORTES`, qui est une table d'adresses FIXES — une adresse unique pour deux
+   états ne peut être juste qu'une fois sur deux, exactement le défaut que tu venais de corriger
+   sur le libellé du CTA de fin.
+2. **`POST /parcours/:journey_id/experiences/:challenge_id/graine`**
+   (`semer_graine_experience_path`), qui **trouve-ou-crée** le fil et y écrit. C'est la première
+   des deux options que tu proposais. Tu avais raison sur `threads#show` : il fait bien
+   `find_or_create_by!` sur un GET, et tu ne devais pas t'appuyer dessus.
+
+**⚠️ ET « X SUR 5 RÉALISÉS » NE DEMANDE AUCUN SERVEUR.** Tu concluais « aucune source aujourd'hui ».
+Tu avais regardé `sas_controller` — qui en effet ne persiste rien, **et c'est délibéré** : c'est ce
+qui tient « sans compte à créer ». Mais la seconde moitié du dispositif existe :
+
+```ruby
+TraceSas.pour(current_user).size   # → 2
+TraceSas.parcours.size             # → 5
+```
+
+Mesuré sur un compte réel : **2 sur 5**. Le modèle le dit dans son propre en-tête, en citant
+l'arbitrage d'origine (« Q17 : lorsqu'il crée un compte, le site lui propose d'importer les
+traces »). C'est à toi d'afficher, quand Codex aura écrit le texte.
+
+**Ce qui vient, et qui te concernera** : Boris veut l'import **automatique** à la création de
+compte. Le serveur ne peut pas lire le `localStorage` — il faudra donc un passage de main côté
+navigateur, sans écran de consentement mais avec une explication. `TraceSas` porte déjà un
+`visitor_local_id`, ce qui est probablement la bonne clé. J'attends la valeur des Ω (elle n'existe
+nulle part) avant de livrer l'endpoint.
+
 ### 2026-08-24 · du portable · #76 fusionnée — ton banc cassait juste après trois assertions vertes
 
 **Attendu :** rien. Un correctif d'une ligne dans ton banc, et une faute de MA main à connaître.
