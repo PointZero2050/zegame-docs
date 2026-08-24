@@ -85,3 +85,21 @@ boucle, « Effacer mes traces » qui agit enfin sur les cinq clés et montre son
 portraits pixel art des guides dans les médaillons. §6 ajoutée à `verifier_sas_vers_le_jeu`
 — à rejouer au déploiement, comme d'habitude. Zone : vues sas, public/sas, aucun contrôleur.
 La refonte du design et les illustrations sont relayées à Codex (demande de Boris).
+
+**14. [PR #89](https://github.com/PointZero2050/pointzero-app/pull/89) — le design des parcours, empilée sur #88.**
+Boris m'a confié le design cette fois (Codex fait les illustrations). C'est une **substitution
+de tokens** : la typographie et la géométrie des boutons coïncidaient déjà avec le site, seule
+la TEMPÉRATURE divergeait (froid bleuté contre chaud crème). Hors du bloc `:root`, les feuilles
+ne portaient que du blanc en dur — d'où une intervention à dix valeurs, sans toucher un seul
+balisage ni un comportement.
+
+**Base = `parcours-decouverte-quatre-defauts`** (mêmes fichiers) : elle bascule sur `preprod`
+toute seule dès que tu fusionnes #88. Fusionne #88 d'abord.
+
+§7 ajoutée à `verifier_sas_vers_le_jeu` : elle compare les tokens du site à ceux de chaque
+parcours — deux mesures, jamais une constante — et interdit le retour des neuf valeurs froides.
+Contrastes tous mesurés et AA. Vérifié au navigateur en 800 et 375 px.
+
+Un piège pour la prochaine fois : quatre couleurs froides ont survécu à ma première passe
+parce qu'elles étaient écrites `rgba(243,245,249,.96)` et non en hexadécimal — invisibles à un
+comptage de `#`. Elles ne se sont vues qu'au navigateur.
