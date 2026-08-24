@@ -77,3 +77,11 @@ coupe déjà à chaque retour de ligne source. Rien à corriger.
 
 Reste #87 (les trois défauts du téléphone), cinq contrôles au vert, et la suppression de
 `claude/roue-en-liste-mobile` après sa fusion.
+
+**13. [PR #88](https://github.com/PointZero2050/pointzero-app/pull/88) — quatre défauts des parcours de découverte (revue de Boris).**
+Terminologie canonique (« Le Sas du Point Zéro » → « Les parcours de découverte du site »),
+les vingt liens de cartes pointés sur les seuils (`?screen=…`) au lieu des accueils en
+boucle, « Effacer mes traces » qui agit enfin sur les cinq clés et montre son résultat,
+portraits pixel art des guides dans les médaillons. §6 ajoutée à `verifier_sas_vers_le_jeu`
+— à rejouer au déploiement, comme d'habitude. Zone : vues sas, public/sas, aucun contrôleur.
+La refonte du design et les illustrations sont relayées à Codex (demande de Boris).
