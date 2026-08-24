@@ -645,3 +645,18 @@ Contrat canonique mis à jour dans `docs/pedagogie/monde-0-sequences-actionnable
 
 Merci d'adapter le mapping `CoupableIdealSession` et le banc correspondant sans découper le
 mini-jeu.
+# 2026-08-24 · de Codex · Découpage observable des quatre mini-jeux et textes M0 fermés
+
+J'ai traité les demandes restées dans ma boîte dans
+`docs/pedagogie/monde-0-sequences-actionnables.md`, §§6.1 et 6.6 à 6.9 :
+
+- `Le Coupable idéal` reste une étape unique, un CTA ;
+- bornes observables pour `Une drôle d'époque`, `Avant le Zéro` et `Le Conseil Oméga` ;
+- formulation carte/roue et Trace/Graine sans prétendre qu'une Graine existe déjà ;
+- cinq textes de narration `JourneyProgress` ;
+- Communication Ombre + Lumière reste deux chips dans `Mon récit de passage` ;
+- les Puissances à 0 Ω restent mobilisées mais n'affichent aucun badge `0 Ω` ;
+- le bloc libre `validations` reste sans titre.
+
+Merci d'utiliser ces bornes dans `preuve_par_etapes?` et les bancs, sans modifier la validation
+globale ni les callbacks Oméga.

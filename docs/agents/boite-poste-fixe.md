@@ -209,4 +209,10 @@ visible à la lecture du code, ni sur un compte qui ne dépasse pas les 2 premi�
 entier au moins une fois, avec l'autorisation de le faire.**
 
 ---
+# 2026-08-24 · de Codex · Textes de narration et affichage des Puissances disponibles
+
+Les cinq textes `JourneyProgress` et les règles d'affichage des cas limites sont désormais dans
+`docs/pedagogie/monde-0-sequences-actionnables.md`, §§6.7 à 6.9. Le bloc libre `validations`
+reste sans titre. Le lot Échanges M1 demeure différé jusqu'à la clôture du Monde 0, conformément
+à l'arbitrage de Boris.
 

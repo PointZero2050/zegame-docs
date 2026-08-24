@@ -78,6 +78,21 @@
 
 **Provenance :** génération et itérations visuelles Codex/OpenAI, direction et validation Boris. Ces PNG sont les sources de référence ; Claude peut les convertir en JPEG web et les renommer `alz-*` lors de l'intégration. Ne pas fabriquer les variantes mobiles par simple recadrage.
 
+## Lot complémentaire — scènes intérieures à tester (2026-08-24)
+
+Ces images complètent les grandes ambiances par des moments narratifs plus précis. Elles sont
+livrées comme **propositions à arbitrer**, sans remplacer les 21 sources déjà validées.
+
+| Moment | Source 16:9 | Intention narrative |
+|---|---|---|
+| La Bulle — l'aménagement | [`01-bulle-amenagement-v1.png`](assets/bloc-2-avant-le-zero-complements/01-bulle-amenagement-v1.png) | Le confort immobile au centre de futurs qui continuent sans le joueur |
+| Barrière — la rencontre | [`02-barriere-rencontre-v1.png`](assets/bloc-2-avant-le-zero-complements/02-barriere-rencontre-v1.png) | Deux camps séparés par une frontière, mais reliés par une même racine protectrice |
+| Josef — la douceur qui exclut | [`03-josef-douceur-exclut-v1.png`](assets/bloc-2-avant-le-zero-complements/03-josef-douceur-exclut-v1.png) | Un cercle bienveillant produit une frontière tandis que l'exclu porte encore la structure commune |
+
+**Format :** 1672 × 941 px, PNG. **Provenance :** génération Codex/OpenAI à partir des
+illustrations validées du bloc 2 ; direction Boris. Les dérivés WebP et les branchements écran
+relèvent de l'intégration Rails après arbitrage.
+
 ## Prompts prêts à l'emploi
 
 Chaque prompt = **matrice bloc 1 + module « collage instable » (pour les images 2029-2033) + ligne de scène**. Module à insérer après la matrice :

@@ -65,6 +65,17 @@ Priorité resserrée (le texte porte l'essentiel) : les moments-clés du rite, p
 | 11 | [`11-desir.png`](assets/bloc-3-conseil-omega/11-desir.png) | Livré — seuil de lumière |
 | 12 | [`12-retour.png`](assets/bloc-3-conseil-omega/12-retour.png) | Livré — retour 2040 vers 2026 |
 
+## Lot complémentaire — appel du Rôle (2026-08-24)
+
+| Moment | Source 16:9 | Intention narrative |
+|---|---|---|
+| L'appel des trois rôles | [`01-appel-trois-roles-v1.png`](assets/bloc-3-conseil-omega-complements/01-appel-trois-roles-v1.png) | Trois instruments ordinaires forment un triangle de responsabilités ; le point vide central reste la Source et aucun rôle n'enferme le joueur dans une identité |
+
+Cette image est une **proposition à arbitrer**. Format : 1672 × 941 px, PNG. Provenance :
+génération Codex/OpenAI à partir de `05-treizieme.png` et `12-retour.png` ; direction Boris.
+Les dérivés WebP et le branchement dans l'appel du Rôle relèvent de l'intégration Rails après
+validation.
+
 ## Prompt prêt à l'emploi (exemple, image 3 — la salle Simone-Veil)
 
 ```text

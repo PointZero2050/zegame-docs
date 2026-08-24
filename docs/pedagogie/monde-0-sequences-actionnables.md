@@ -537,7 +537,18 @@ Dans les restitutions qui proposent de garder une phrase pour une future Graine 
 - la production structurée du mini-jeu rejoint toujours les Traces ;
 - la confirmation distingue explicitement les deux objets :
 
-> Ta roue est conservée dans tes Traces. Aucune phrase n'a été gardée pour ta Graine.
+Le nom de la production suit ce que l'écran montre réellement : `carte` en V1, `roue` en V2.
+
+Si aucune phrase n'est retenue :
+
+> Ta carte est conservée dans tes Traces. Tu n'as gardé aucune phrase pour une future Graine.
+
+Si une phrase est retenue :
+
+> Ta carte est conservée dans tes Traces. La phrase que tu as choisie reste disponible pour nourrir une prochaine Graine.
+
+Ces formulations ne prétendent jamais qu'une Graine existe déjà. La production structurée et la
+phrase retenue restent deux objets distincts.
 
 ### 6.2. Correspondance entre les quatre quiz et les trois gestes
 
@@ -591,3 +602,55 @@ La famille actuellement appelée `Retours reçus` contient les réponses que le 
 une expérience (`retour_apprecie`, `retour_appris`, `retour_manque`). Elle devient
 **Bilans d'expérience**. Le terme `Retours reçus` est réservé à un futur contenu effectivement
 produit par un pair, un mentor ou un facilitateur.
+
+### 6.6. Correspondance entre les quatre mini-jeux narratifs et les gestes
+
+La règle reste : **une étape visible = un CTA réel**. Le Jeu n'invente pas une progression fine
+qu'il ne sait pas observer. Les bornes ci-dessous sont dérivées des états persistés existants ;
+elles ne modifient ni la validation globale de l'expérience ni l'attribution des Omégas.
+
+| Expérience | Geste visible | Événement ou état qui le reconnaît |
+|---|---|---|
+| Le Coupable idéal | **Étape unique — Traverser le procès** | première restitution complète du procès ; `current_step` intermédiaire ne crée pas plusieurs gestes, car le mini-jeu se joue sans interruption |
+| Une drôle d'époque | **Choisir — Prends position dans l'époque** | première polarité effectivement choisie, à `jour_1_e2` |
+| Une drôle d'époque | **Rencontrer — Laisse revenir le mouvement inverse** | première réponse au retournement, à `jour_1_e4` |
+| Une drôle d'époque | **Lire — Ton premier miroir** | miroir atteint et passation complétée |
+| Avant le Zéro | **Entrer — Traverse la dispersion** | réponse à `D` et entrée dans une voie, ou choix explicite de la Bulle |
+| Avant le Zéro | **Traverser — Suis un devenir possible** | franchissement du goulot de la voie : arrivée dans sa phase de remontée (`R*`) |
+| Avant le Zéro | **Revenir — Rapporte une Trace du passage** | première fin atteinte et traversée complétée ; le devenir rejoint alors le registre des Traces |
+| Le Conseil Oméga | **Être convoqué — Entre dans le Conseil** | seuil franchi et arrivée à la question commune, après `TREIZIEME` |
+| Le Conseil Oméga | **Arbitrer — Choisis entre plusieurs futurs incomplets** | six dossiers arbitrés et six caps formulés ; sortie de `cap_desir` |
+| Le Conseil Oméga | **Signer — Ton Rôle d'appel et tes caps** | Rôle d'appel choisi ou explicitement laissé ouvert, puis restitution finale atteinte |
+
+Pour `Une drôle d'époque`, les jours suivants approfondissent les deux premiers gestes sans les
+rouvrir. Pour `Avant le Zéro`, atteindre une fin est la preuve du retour : aucune question
+artificielle n'est ajoutée après la fiction. Pour le Conseil, l'ancien champ `posture_cible` reste
+lisible comme donnée historique mais ne remplace pas le Rôle d'appel dans le nouveau rite.
+
+### 6.7. Voix narrative du parcours
+
+Les cinq états calculés par `JourneyProgress` reçoivent les textes suivants. Les nombres restent
+dans la phrase : ils renseignent la traversée sans transformer l'en-tête en tableau de bord.
+
+| Clé | Texte canonique |
+|---|---|
+| `depart` | `Le seuil est devant toi. %{total} expériences composent ce voyage ; la première attend ton geste.` |
+| `en_chemin` | `Tu as traversé %{faits} expériences sur %{total}. %{restants} passages restent ouverts, avec %{omega_restants} Omégas encore accessibles.` |
+| `courant` | `Tu avances dans le chapitre en cours : %{faits} expériences sur %{total} sont traversées et %{omega_gagnes} Omégas portent déjà la trace de ton chemin.` |
+| `dernier_chapitre` | `Le dernier chapitre est ouvert. %{restants} passages te séparent encore de la clôture de ce voyage.` |
+| `seuil_ouvert` | `Le parcours est accompli. Le seuil suivant est ouvert ; ce que tu en fais t'appartient.` |
+
+### 6.8. Deux règles d'affichage des Puissances
+
+- Une même Puissance peut apparaître deux fois si deux polarités distinctes sont réellement
+  mobilisées. Dans `Mon récit de passage`, Communication reste donc visible en Ombre et en
+  Lumière : deux polarités, deux verbes, deux lignes lisibles.
+- Une attribution de `0 Ω` n'apparaît pas dans la ventilation des Omégas. La Puissance peut rester
+  visible dans la liste des capacités mobilisées, sans badge `0 Ω` : les Omégas racontent une
+  valeur reconnue, pas un tableau de zéros.
+
+### 6.9. Bloc éditorial de reconnaissance
+
+Le bloc libre historiquement nommé `validations` reste **sans titre**. Il suit directement le
+contenu de l'expérience. Un intitulé générique réintroduirait une explication redondante avec la
+séquence vivante et son texte de reconnaissance contextuel.
