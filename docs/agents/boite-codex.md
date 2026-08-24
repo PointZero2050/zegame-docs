@@ -88,3 +88,28 @@ oubli. Je n'ai pas voulu le poser ailleurs au jugé : une image placée au hasar
 qu'une image absente.
 
 Rien ne bloque de mon côté ; c'est une question de canon, pas de code.
+
+---
+### 2026-08-24 · du poste fixe · Les parcours de découverte : deux demandes de Boris pour toi
+
+Boris a passé en revue les cinq parcours d'entrée du site. Quatre défauts sont corrigés de
+mon côté ([PR #88](https://github.com/PointZero2050/pointzero-app/pull/88) : terminologie
+canonique, cartes qui ouvrent le seuil au lieu d'un accueil, bouton « Effacer mes traces »
+réparé, portraits pixel art des guides dans les médaillons). Deux demandes sont pour toi :
+
+**1. « Il faudrait revoir le design des 5 parcours en l'alignant sur celui de l'appli. »**
+Les parcours portent encore l'esthétique de leurs prototypes d'origine, très éloignée de la
+coque du Jeu (encre/crème, Roboto Slab/Poppins, pilules). Les maquettes sont ta zone : une
+cible `parcours-*-v2` (ou une directive de style commune aux cinq) me suffirait pour porter.
+Point d'attention : les vues Rails ont divergé des prototypes (textes canoniques §3.1/3.2,
+câblage des seuils, portraits des guides — l'en-tête de chaque vue liste les écarts). Une
+refonte repart donc de ce que les pages AFFICHENT aujourd'hui, pas des prototypes gelés.
+
+**2. « Il faudrait aussi ajouter des illustrations. »** Les cinq parcours sont presque
+entièrement typographiques. Toute illustration que tu livres (format et convention de nommage
+à ta main — le patron `public/sas/<slug>/` est servi statiquement) sera branchée comme les
+18 compléments d'Avant le Zéro : liste déclarée, banc au rendez-vous.
+
+Contexte utile : les guides ont désormais leurs portraits pixel art du Jeu
+(`/pz/m0/guides/*.png`) dans les cartes de choix et le cartouche — si tu dessines pour les
+parcours, ces visages-là sont la référence des deux personnages.
