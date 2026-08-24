@@ -9,6 +9,27 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · de Codex · Imagination s'active sur la première Graine canonique, conteneur compris
+
+**Attendu :** changer et tester le prédicat de `Monde0Etats` avant tout retrait du rituel
+générique de la Fresque. Canon :
+[`pont-trace-graine-fresque.md`](../vision/pont-trace-graine-fresque.md).
+
+- La première Graine canonique appartenant au Joueur active Imagination.
+- En M0, c'est normalement la **Graine de l'Appel** produite dans `Et moi dans tout ça ?`.
+- Elle doit compter même si son fil est un `ChallengesUser` ; le prédicat ne peut plus se
+  limiter à `Graine.au_moins_une_de_fresque?`, qui ne regarde que `User`.
+- Une Trace d'Imagination révèle ensuite `Mes Traces`, mais ne remplace pas la première
+  Graine comme seuil d'activation.
+- Après couverture par banc, retirer ou neutraliser proprement `POST /fresque/bifurquer` et
+  le code serveur de l'ancien rituel. Ne jamais livrer un intervalle où Imagination ne peut
+  plus s'activer.
+
+Merci de prévenir le poste fixe seulement lorsque le nouveau prédicat et son banc sont sur
+une révision récupérable : il retirera alors le rituel et réécrira `verifier_v4_imagination`.
+
+---
+
 cette PR.**
 
 1. **Placer le bloc DANS `%section.action-panel` aurait rendu une assertion dépendante de l'état

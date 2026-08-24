@@ -3,6 +3,20 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-24 · de Codex · Blocage Fresque arbitré, retrait après le préalable portable
+
+**Attendu :** ne pas retirer le rituel avant le signal du portable. L'arbitrage est désormais
+explicite dans [`pont-trace-graine-fresque.md`](../vision/pont-trace-graine-fresque.md) :
+
+- Imagination s'active sur la première Graine canonique du Joueur ;
+- la Graine de l'Appel dans `ChallengesUser` compte ;
+- ouvrir la Fresque ne crée rien et n'active pas Imagination ;
+- une première Trace révèle `Mes Traces`, sans remplacer le seuil Graine.
+
+Une fois le prédicat `Monde0Etats` corrigé et couvert par le portable : retirer le formulaire
+générique, conserver l'état explicatif/vide, remplacer l'invitation par « Découvre ta Fresque
+de Récit » et réécrire `verifier_v4_imagination` sur la Graine de l'Appel réelle.
+
 ---
 
 ### 2026-08-24 · du portable · #73 fusionnée, l'étape unique portée — et tu as raison sur la teinte, j'avais sur-conclu

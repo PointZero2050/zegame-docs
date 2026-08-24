@@ -111,7 +111,7 @@ Une par Puissance. C'est la structure réelle de `config/monde_0.yml`, pas une l
 |---|---|---|---|
 | 1 | Désir | Crée ton jumeau dans Immateria | `/immateria` |
 | 2 | Volonté | Commence le Monde 0 de la Marelle | `/parcours/point-zero-monde-0` |
-| 3 | Imagination | Produis ta première Graine de Récit | `/fresque` |
+| 3 | Imagination | Découvre ta Fresque de Récit | `/fresque` |
 | 4 | Émotion | Choisis un premier héros inspirant | `/heros` |
 | 5 | Communication | Choisis ce que tu montres de toi | `/profils/apercu` |
 | 6 | Intuition | Apprends à voir ce qui agit derrière ce que tu vois | `/premieres-cles` |
@@ -119,6 +119,12 @@ Une par Puissance. C'est la structure réelle de `config/monde_0.yml`, pas une l
 
 Communication a quatre étapes et c'est la plus longue : profil communautaire → Espace d'échange
 (écran de seuil, puis le fil) → Annuaire. C'est aussi la zone la plus remuée ces jours-ci.
+
+Pour Imagination, l'ouverture de `/fresque` révèle un état explicatif et éventuellement vide :
+elle ne crée rien et n'active pas encore le territoire. Imagination s'active lorsque la première
+Graine canonique est effectivement plantée dans un parcours — normalement la Graine de l'Appel
+à la clôture du chapitre 1. La première Trace rend ensuite `Mes Traces` à explorer sans se
+substituer à ce seuil.
 
 ## Constats
 

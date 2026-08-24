@@ -65,8 +65,10 @@ when "intuition" then marqueurs.key?("m0-dialogue-guides") || cles_assimilees.po
 
 ⚠️ **Le second terme n'est pas décoratif.** Sans lui, tout joueur ayant assimilé des clés
 sans avoir parlé aux Guides verrait sa carte Intuition s'éteindre — un territoire acquis se
-reprendrait. C'est exactement la précaution déjà prise pour Imagination le 19 août
-(`traces.include?("imagination") || Graine.au_moins_une_de_fresque?`), et elle a servi.
+reprendrait. C'est la même exigence de monotonie que pour Imagination. Depuis l'arbitrage du
+24 août, son prédicat doit reconnaître la première Graine canonique du Joueur, y compris la
+Graine de l'Appel dans un fil `ChallengesUser` ; l'ancien
+`Graine.au_moins_une_de_fresque?` limité au fil `User` ne suffit plus.
 
 Symétriquement pour Communication : un joueur ayant dialogué avec les Guides mais rien
 configuré verrait sa carte s'éteindre.

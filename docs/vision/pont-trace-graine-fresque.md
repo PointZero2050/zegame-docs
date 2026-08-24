@@ -69,6 +69,28 @@ Le brouillon est conservé. `Retour à l'expérience` ramène sans perdre la sai
 Après `Planter dans ma Fresque`, la Graine est créée puis le Joueur revient
 automatiquement à l'expérience, sur son bloc d'action.
 
+### 5. Ce qui active Imagination
+
+Le territoire **Imagination** s'active lorsque le Joueur a effectivement planté sa
+première Graine canonique, quel que soit le conteneur technique de son fil. En Monde 0,
+il s'agit normalement de la **Graine de l'Appel**, produite dans le fil
+`ChallengesUser` de l'expérience `Et moi dans tout ça ?`.
+
+Cette règle ne doit donc plus dépendre exclusivement d'une Graine attachée au fil
+`User` de la Fresque. Elle doit reconnaître les Graines appartenant au Joueur dans les
+conteneurs canoniques autorisés, dont `User` et `ChallengesUser`.
+
+Trois états restent distincts :
+
+- ouvrir la Fresque révèle son rôle et son état vide, sans activer Imagination ;
+- planter la première Graine active Imagination ;
+- produire une première Trace rend la page `Mes Traces` à explorer et incrémente le
+  métaparcours, mais ne remplace pas la première Graine comme seuil d'activation.
+
+L'invitation initiale de la carte devient donc **« Découvre ta Fresque de Récit »**.
+Elle ouvre `/fresque`, qui annonce que la première Graine sera plantée à la clôture du
+premier chapitre. Elle ne promet plus un formulaire générique sur cette page.
+
 ## Ce que cela demande au portable
 
 L'identité canonique n'est **pas** remise en cause : une Graine reste un message écrit par
@@ -87,6 +109,12 @@ Contrat d'implémentation, hors zone du poste fixe :
    Une Graine déjà plantée rouvre en lecture/édition selon les droits existants.
 5. **Séparation Trace/Graine** : les réponses préparatoires et productions du chapitre
    restent des Traces ; seule la formulation confirmée devient Graine.
+6. **Activation d'Imagination** : une Graine canonique appartenant au Joueur compte aussi
+   lorsqu'elle vit dans un fil `ChallengesUser`. La Graine de l'Appel doit donc satisfaire
+   le prédicat utilisé par `Monde0Etats`.
+7. **Ordre de livraison** : modifier et tester ce prédicat avant de retirer le rituel de
+   la Fresque. Traiter ensuite `POST /fresque/bifurquer` et le code serveur devenu mort,
+   sans conserver une route qui créerait encore l'ancien objet concurrent.
 
 ## Ce que le poste fixe fera ensuite
 

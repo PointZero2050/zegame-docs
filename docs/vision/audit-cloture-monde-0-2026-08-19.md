@@ -44,20 +44,25 @@ Le reste peut être traité après le gel du Monde 0 sans rendre son parcours in
 
 ### 3.1. Fermer le contrat Fresque → Graine
 
-La décision canonique est déjà écrite dans
+La décision canonique révisée est écrite dans
 [`pont-trace-graine-fresque.md`](pont-trace-graine-fresque.md) :
 
-- le rituel des quatre questions de la Fresque crée la première **Graine** ;
-- les Graines suivantes peuvent naître d'une saisie libre ;
+- le rituel générique des quatre questions disparaît de la Fresque ;
+- la première **Graine** est la Graine de l'Appel, produite dans l'expérience de clôture
+  `Et moi dans tout ça ?` ;
 - une Trace ne se convertit jamais par un bouton dans `Mes Traces` ;
-- la cristallisation d'une Trace se fait avec le mentor dans un parcours.
+- la cristallisation d'une Trace se fait avec le mentor dans un parcours ;
+- Imagination s'active sur la première Graine canonique du Joueur, y compris lorsqu'elle
+  vit dans un fil `ChallengesUser`, et non plus seulement sur une Graine du fil `User`.
 
 Le code courant conserve pourtant `POST /fresque/bifurquer` vers une Trace, tout en affichant
 « Planter ma première Graine ». L'arbitrage révisé du 23 août supprime cette bifurcation : la
 première Graine naît dans l'expérience de clôture `Et moi dans tout ça ?`, qui fournit déjà son
 conteneur canonique. La Fresque explique et relit ; l'éditeur contextualisé crée la Graine de
-l'Appel, puis renvoie à l'expérience afin que la preuve serveur ferme le geste. Vue, service,
-listener et banc doivent évoluer dans la même livraison.
+l'Appel, puis renvoie à l'expérience afin que la preuve serveur ferme le geste. Le prédicat de
+`Monde0Etats` doit d'abord reconnaître cette Graine dans son conteneur `ChallengesUser` ; le
+rituel et sa route sont retirés ensuite. Vue, service, listener et banc doivent évoluer dans cet
+ordre, sans intervalle où Imagination serait impossible à activer.
 
 ### 3.2. Fermer le lot Communication
 
@@ -77,7 +82,8 @@ Le Monde 0 peut être déclaré bouclé lorsque les contrôles suivants sont tou
 1. chaque carte de l'accueil ouvre une route réelle et revient dans la coque ;
 2. chaque expérience requise possède une action, une preuve et une autorité de validation ;
 3. l'expérience d'intensité 4 ou 5 est impossible avant le Monde 2 ;
-4. une Graine créée depuis la Fresque apparaît immédiatement dans la Fresque ;
+4. une Graine créée depuis une clôture de chapitre apparaît immédiatement dans la Fresque et
+   active Imagination si c'est la première ;
 5. une Trace reste une Trace et ne promet aucune conversion automatique ;
 6. publier sur son profil et partager dans un Espace restent deux gestes distincts ;
 7. le canal M0 ne montre ni sondage, ni Proposition, ni Action, ni Décision, ni financement ;

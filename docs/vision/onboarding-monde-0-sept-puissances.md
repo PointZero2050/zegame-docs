@@ -95,7 +95,7 @@ ou la lumière ne portent jamais seules l'information, notamment pour l'accessib
 |---|---|---|
 | Désir | création du jumeau et village d'Immateria | quête ou espace d'Immateria nouvellement révélé |
 | Volonté | entrée dans la Marelle | étape ou parcours qui devient la prochaine invitation |
-| Imagination | première Graine et Fresque | `Mes Traces` dès l'apparition de la première Trace |
+| Imagination | découverte de la Fresque, puis activation par la Graine de l'Appel | `Mes Traces` dès l'apparition de la première Trace |
 | Émotion | catalogue des six héros | mentor choisi ou nouvelle page liée au mentor lorsqu'elle devient l'appel principal |
 | Communication | Profil communautaire | Espace d'échange du Monde 0, puis Annuaire communautaire |
 | Intuition | rencontre des deux Guides | dix clés Point Zéro, puis ressources externes au Monde 1 |

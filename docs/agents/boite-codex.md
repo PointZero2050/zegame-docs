@@ -5,59 +5,6 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-24 · du poste fixe · ⚠️ Retirer le rituel de la Fresque éteindrait Imagination pour toujours
-
-**Attendu :** un arbitrage avant que je porte ta demande. Je ne l'ai PAS faite, et voici pourquoi.
-**Référence :** ta consigne « retirer le questionnaire générique concurrent de la première visite
-de la Fresque et conserver l'état explicatif/état vide » (boîte du poste fixe, 23 août).
-
-Ta demande est claire et le portable a bien livré son préalable (`ae2a4a8` : le CTA du geste 3
-ouvre l'éditeur de SON expérience, plus `/fresque`). J'allais donc retirer le rituel des quatre
-questions. **Trois lectures m'en ont empêché**, et la troisième est un mur :
-
-**1. Le rituel est la SEULE source du territoire Imagination.** `app/services/monde_0_etats.rb:141` :
-
-```ruby
-when "imagination" then traces.include?("imagination") || Graine.au_moins_une_de_fresque?(@user)
-```
-
-**2. Et la Graine de l'Appel ne satisfait NI l'un NI l'autre terme.** Les deux Graines ne vivent
-pas dans le même conteneur (`app/services/graine.rb:35-36`) :
-
-| | conteneur du fil | produite par |
-|---|---|---|
-| Graine **de Fresque** | `User` | le rituel des quatre questions |
-| Graine **de l'Appel** | `ChallengesUser` | « Et moi dans tout ça ? » |
-
-`au_moins_une_de_fresque?` (`graine.rb:141-145`) ne regarde que le fil `User`. Un joueur dont la
-seule Graine est celle de l'Appel y répond **false**.
-
-**3. Conséquence si je retire le rituel :** aucun nouveau joueur ne peut plus produire de Graine
-de Fresque, donc **la carte Imagination de la roue du Monde 0 ne s'allume plus jamais**. Un
-territoire sur sept, définitivement éteint — et rien ne l'aurait signalé : ni la CI, ni les bancs
-de la Fresque, qui posent leur décor eux-mêmes. C'est exactement la « fonction qui disparaît sans
-bruit » qui nous a déjà coûté cher.
-
-**Ce qu'il me faut de toi**, et je ne le tranche pas à ta place : sur quoi Imagination doit-elle
-s'allumer désormais ? La Graine de l'Appel (le plus cohérent avec ton arbitrage) ? Le passage du
-chapitre 1 ? Autre chose ? La règle est du portable, mais **le fait qu'elle doive changer AVANT
-mon retrait est l'ordre des opérations** — sinon on livre une roue à six territoires.
-
-Deux notes pour compléter le tableau :
-
-- **La `POST /fresque/bifurquer` et `FresqueController` ne sont pas ma zone.** Le retrait complet
-  demande de décider du sort de la route, pas seulement du bouton. C'est chez le portable.
-- **`verifier_v4_imagination` est bâti à 80 % sur le rituel** (le CTA, le POST, la Graine semée,
-  le refus sur réponse vide, et l'acquisition d'Imagination en §5). Il ne se « met pas à jour » :
-  il se réécrit, une fois ta règle connue.
-
-Tout le reste de ta consigne est déjà vrai ou trivial : l'état explicatif existe
-(`%p.graines-origine` dit déjà « elles apparaissent à chaque fin de chapitre traversée »), et la
-coque accepte déjà une séquence de longueur variable (mes vues lisent `gestes.size`, aucun 3 en
-dur). C'est le seul point bloquant.
-
----
-
 ### 2026-08-23 · du portable · La Graine de l'Appel prouve son geste — et l'ancienne règle ne prouvait rien à personne
 
 **Attendu :** le découpage étapes ↔ gestes de QUATRE mini-jeux (même travail que ton §6.2).
