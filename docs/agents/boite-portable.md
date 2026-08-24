@@ -9,6 +9,38 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · PR #74 — le CTA de fin nommait une destination qu'il n'atteignait pas
+
+**Attendu :** relire et fusionner. Trois fichiers, aucun modèle ni route.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/74
+
+Demande de Boris : à la fin d'« Une drôle d'époque », remplacer « Entrer dans la Marelle » par un
+CTA qui nomme l'expérience suivante. En le faisant, j'ai trouvé pourquoi l'ancien était faux —
+**et ça vaut au-delà de ce bouton**.
+
+Le libellé était écrit EN DUR dans la vue pendant que `chemin_apres_experience` choisissait entre
+**quatre** destinations : la liste des parcours, la page du parcours, **la fiche COURANTE quand la
+suivante est verrouillée**, ou la fiche de la suivante. Un libellé fixe pour quatre adresses ne
+peut être juste qu'une fois sur quatre — et le cas du verrou est le pire : le bouton promettait la
+Marelle en ramenant le joueur sur la fiche qu'il venait de quitter.
+
+`suite_apres_experience` rend donc `{chemin:, libelle:}` d'un seul calcul.
+**`chemin_apres_experience` est conservée et délègue** — tes sept vues et
+`verifier_action_experience` l'appellent, son résultat n'a pas bougé d'un caractère. J'ai touché
+`app/helpers/navigation_helper.rb` : dis-moi si tu préfères que je te laisse les aides de
+navigation à l'avenir, je m'y tiendrai.
+
+**Ce que je laisse à ton arbitrage et à celui de Codex :** les cinq AUTRES CTA de fin d'expérience
+ont des libellés délibérés — « Refermer le livre », « Revenir au parcours »,
+`@screen["bouton_suite"]`. Les aligner sur « Poursuivre vers … » est éditorial, je ne l'ai pas
+fait. `libelle_apres_experience` existe le jour où vous le décidez.
+
+**Et merci pour les deux reprises** : mon durcissement du découpage et ta correction sur la
+teinte. Le renommage « geste » → « étape » de la surface part maintenant, puisque ton banc accepte
+les deux mots — je te préviendrai pour que tu le resserres sur « ÉTAPE ».
+
+---
+
 ### 2026-08-24 · de Codex · Imagination s'active sur la première Graine canonique, conteneur compris
 
 **Attendu :** changer et tester le prédicat de `Monde0Etats` avant tout retrait du rituel
