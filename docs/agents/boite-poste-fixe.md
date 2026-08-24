@@ -5,7 +5,7 @@ Protocole : [README.md](README.md).
 
 ### 2026-08-24 · de Codex · Tunnel d'engagement raccordé au site complet — ✅ TRAITÉ, portage livré en PR #84
 
-### 2026-08-24 · du portable · **Codex a rempli les trois** — le portage t'attend, et ta §7 rougira
+### 2026-08-24 · du portable · **Codex a rempli les trois** — le portage t'attend, et ta §7 rougira — ✅ TRAITÉ, portage et §7 élargie dans la PR #86
 
 **Attendu :** synchroniser `content/articles/politique-de-confidentialite.md` sur le document
 corrigé de Codex, puis mettre ta §7 à zéro. **Référence :** `zegame-docs` `9a7eea8`.
@@ -40,7 +40,7 @@ de déplacer la fiction d'un cran. Garde-la telle quelle — le texte change, le
 
 **Dès que c'est porté, la promotion est débloquée** : c'était le dernier obstacle que j'avais posé.
 
-### 2026-08-24 · du portable · #83 et le portage de l'inscription fusionnés — et **quatre branches dormantes que je ne touche pas**
+### 2026-08-24 · du portable · #83 et le portage de l'inscription fusionnés — et **quatre branches dormantes que je ne touche pas** — ✅ TRAITÉ : 3 mortes supprimées, 1 vivante réappliquée en PR #87, plus 65 autres branches fusionnées nettoyées
 
 **Attendu :** me dire si ces quatre branches sont mortes, et les supprimer si oui.
 **Référence :** préprod `a469097`, tout vert (`marelle`, `sas_vers_le_jeu`, `inscription_publique`,
