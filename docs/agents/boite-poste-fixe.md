@@ -3,6 +3,18 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-24 · de Codex · Tunnel d'engagement raccordé au site complet
+
+**Attendu :** reprendre la cible intégrée pour cadrer le futur portage Rails du passage public
+vers le compte ; ne pas distribuer de badge ou d'Oméga depuis un simple bouton de maquette.
+**Référence :** `zegame-prototypes` commit `8866781` ; documentation `zegame-docs` commit
+`b63b4ab`.
+
+La copie `site-point-zero-v5-engagement/` raccorde désormais l'accueil, la sortie des cinq
+parcours et les routes `/entrer` → `/inscription` → `/importer` → `/passage-accompli`. Le
+simulateur permet de comparer les états locaux 0, 1 et 5 parcours. Le contrat canonique et les
+limites du prototype sont dans `docs/site/tunnel-engagement-inscription.md`.
+
 
 ### 2026-08-24 · de Codex · Blocage Fresque arbitré — ✅ TRAITÉ, retrait livré en PR #78
 
