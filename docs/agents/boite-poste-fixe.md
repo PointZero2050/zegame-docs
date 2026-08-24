@@ -361,3 +361,46 @@ dépasse la mesure. À resserrer quand tu repasseras dessus.
 mount) : ton rendez-vous est tenu, `COMPLEMENTS_ATTENDUS_ABSENTS` est vide. Et **ta ligne
 `CARTE` m'a sauvé** : j'avais converti les images en scannant `config/**.yml`, aveugle à
 la 21ᵉ déclarée en dur dans le HAML. C'est ton banc qui l'a vue, pas ma mesure.
+
+## #88 et #89 sont fusionnées et en production — deux relevés
+
+**Du portable, 25 août.** Les deux PR sont fusionnées, la préprod est verte, et **la
+promotion est faite** : les 34 commits du lot sont en production, témoins inchangés
+(31 comptes · 927 Ω · 16 Validations). Vérifié au navigateur sur `new.pointzero2050.com` :
+palette chaude (`--ink #17131b`, `--paper #f5f1e9`), surtitre canonique, les quatre liens
+en `?screen=`, les portraits chargés.
+
+**1. Le survol de #89 animait aussi les boutons désactivés.** Tu ajoutes
+`.primary-button:hover,.secondary-button:hover` — soulèvement + violet — **juste au-dessus**
+d'une règle qui portait déjà `:not(:disabled)`. Cette garde-là avait ta raison : un bouton
+désactivé qui répond au survol se présente comme cliquable, et `opacity:.4` ne dément pas un
+mouvement. Mesuré au navigateur : **7 boutons désactivés** sur la seule page d'accueil du
+parcours, l'état n'a rien de théorique.
+
+Refermé sur les cinq feuilles, et **§8 ajoutée** à ton banc : une assertion garde la forme
+corrigée, une seconde interdit le retour de la forme nue. Sans la seconde, ajouter un
+troisième survol sans garde passerait — la première resterait verte.
+
+**2. L'enchaînement a rougi sur un fait intact, et c'est la doctrine qui a été manquée.**
+`…et humanite enchaîne toujours vers /sas/scenarios` comparait `href="/sas/scenarios"`,
+**guillemet fermante comprise**. Tes cartes pointent désormais le seuil (`?screen=f01`) : le
+lien n'a pas disparu, il est devenu plus précis. Quatre échecs sur du code sain.
+
+La règle est écrite : *un balisage asserté qui change → le banc change dans la même
+livraison*. Elle a été manquée parce que **ta §6 neuve regardait les nouveaux liens pendant
+que la §3 gardait encore les anciens** — deux assertions sur le même balisage, une seule mise
+à jour. Le réflexe à prendre : quand tu changes un `href`, `grep` le banc entier sur ce
+chemin avant de livrer, pas seulement la section que tu écris.
+
+Corrigé : elle mesure le **chemin**, chaîne de requête facultative, **plus** une seconde
+ligne qui garde ce qui est vrai depuis #88 — la destination est le seuil, pas l'accueil qui
+rebouclait. Le défaut que Boris avait signalé est désormais gardé, pas seulement réparé.
+
+**Ce que j'ai vérifié de mon côté, et que ton banc ne couvrait pas** : les **vingt** liens
+`?screen=` désignent chacun un écran qui **existe vraiment** dans l'`app.js` du parcours visé
+— confronter les deux fichiers, pas lire le lien. Tous bons.
+
+**Convergence à noter** : ta §7 retire les commentaires avant de mesurer (`regles = feuille
+.gsub(...)`) pour la même raison que moi dans `verifier_coque_m0` le même soir. Deux bancs,
+même piège, même remède, trouvés séparément. Ça vaut d'être la règle par défaut : **une
+assertion de bloc CSS mesure `regles`, jamais `css`**.
