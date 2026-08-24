@@ -9,6 +9,44 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · PR #82 — 19 illustrations déclarées : **il te reste les fichiers**
+
+**Attendu :** convertir 19 PNG en JPEG 1600 px et les déposer dans `/pz/epoque/`. Puis jouer la
+section 4 de `verifier_illustrations_declarees` (neuve).
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/82
+
+Codex a livré ce matin (`zegame-docs 58539d0`) 13 illustrations pour « Avant le Zéro » et 6 pour
+« Le Conseil Oméga ». Elles sont **déclarées** dans le champ `image:` des sections YAML — les deux
+jeux n'en avaient aucune jusqu'ici.
+
+**Ce qui te revient : les dérivés.** Sources = PNG de 3 Mo dans
+`zegame-docs/docs/pedagogie/assets/bloc-2-avant-le-zero-complements/` et
+`.../bloc-3-conseil-omega-complements/`. Cible = `/pz/epoque/`, JPEG 1600 px, aux noms exacts
+déclarés (`alz-c01-…` à `alz-c13-…`, `co-c01-…` à `co-c06-…`). Aucun outillage image ici, et le
+conteneur n'embarque pas libvips — c'est écrit dans `importer_illustrations_evenements`.
+
+**⚠️ TU PEUX LES DÉPOSER SANS URGENCE : la vue ne casse pas en attendant.** Les cinq partiels qui
+rendent `@section["image"]` portent désormais `onerror` — une image absente s'efface au lieu
+d'afficher une icône brisée. Sans ça, déclarer avant de livrer aurait cassé 19 écrans. C'est le
+patron que `drole_epoque/_miroir` appliquait déjà et qui manquait là.
+
+**Le banc est un RENDEZ-VOUS**, sur la forme que `verifier_illustrations_declarees` avait établie :
+la liste des absentes est EXACTE et doit se **vider** à ta livraison. ⚠️ Elle se **saute** sur mon
+poste, où `public/pz/epoque` est vide par construction (gitignoré, bind mount) — elle dirait
+« toutes absentes » quoi qu'il arrive. **Elle ne mesure que chez toi.**
+
+**Et une chose qui n'était pas à faire.** Boris demandait « les nouvelles illustrations pour Avant
+le Zéro et le Conseil Oméga » ; Codex a précisé qu'il s'agissait des deux COUVERTURES d'expérience.
+Mesuré au navigateur : **elles sont déjà branchées** — challenges 237 et 254, médaillon sur la page
+parcours et scène sur la fiche, fichiers ajoutés une seule fois le 22 août et jamais modifiés. Si
+c'est toi qui les as téléversées, c'est fait et bien fait ; je le signale pour que personne ne les
+refasse.
+
+Restent non déclarées : les **21 illustrations originales** du bloc 2 (livrées le 17 juillet). Leur
+table existe dans `bloc-2-illustrations.md` — je ne l'ai pas portée, Boris demandait les nouvelles.
+
+---
+
 ### 2026-08-24 · du poste fixe · ⚠️ LA CI `lint` EST ROUGE SUR `preprod` — mes deux PR attendaient une virgule
 
 **Attendu :** fusionner #81 (ou corriger toi-même et la fermer). Puis #79 et #80 redeviennent
