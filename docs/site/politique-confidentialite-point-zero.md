@@ -10,8 +10,8 @@
 
 # Politique de confidentialité
 
-**Version :** [à compléter]  
-**Entrée en vigueur :** [à compléter]
+**Version :** 1.0
+**Entrée en vigueur :** 24 août 2026
 
 ## 1. À quoi s’applique cette politique ?
 
@@ -298,8 +298,8 @@ Point Zéro ne dépose pas de traceur publicitaire et ne suit pas votre navigati
 sites.
 
 Si un outil de mesure d’audience non exempté, une vidéo externe, un contenu embarqué ou un autre
-traceur facultatif est activé, il reste bloqué jusqu’à votre choix. Vous pouvez ensuite modifier
-ce choix depuis **[lien « Gérer mes cookies » à ajouter si nécessaire]**.
+traceur facultatif est activé, il reste bloqué jusqu’à votre choix. Un module de gestion des
+cookies vous permettra alors de modifier ce choix à tout moment.
 
 La mémoire locale des parcours publics n’est ni une publicité ni un profil de prospection. Vous
 pouvez l’effacer depuis les réglages de votre navigateur ou depuis la commande proposée par le
@@ -361,8 +361,9 @@ l’informatique et des libertés (CNIL)** : [www.cnil.fr](https://www.cnil.fr/)
 
 ## 13. Fermeture du compte et comptes inactifs
 
-Vous pouvez demander la fermeture de votre compte depuis **[chemin à compléter]** ou à
-**contact@pointzero2050.com**.
+Vous pouvez demander la fermeture de votre compte à **contact@pointzero2050.com**. Lorsqu’une
+commande autonome de suppression sera disponible dans le Service, elle sera également accessible
+depuis les paramètres du compte.
 
 Avant confirmation, le Service vous indique les conséquences sur vos contenus, messages,
 Cercles, Accomplissements et Omégas. Les données actives sont supprimées ou anonymisées dans un

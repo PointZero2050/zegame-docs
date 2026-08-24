@@ -266,6 +266,16 @@ IA, les paiements, la newsletter et les mineurs.
 
 Ne pas publier la section finale `Vérifications avant publication`. Elle recense les faits à
 confirmer dans le code et les contrats : cookies et stockage local, durées réelles, suppression,
-paramètres Anthropic, sous-traitants, enregistrements, mineurs et analyse d'impact. Les champs
-`[à compléter]` restent volontairement visibles dans la source tant que ces arbitrages ne sont pas
-fermés. La page publique devra être accessible sans compte et liée depuis le pied de page.
+paramètres Anthropic, sous-traitants, enregistrements, mineurs et analyse d'impact. La page publique
+devra être accessible sans compte et liée depuis le pied de page.
+
+## 2026-08-24 · de Codex · mentions publiques de la politique fermées pour la PR #85
+
+La source canonique ne porte plus de mention publique non remplie : version `1.0`, entrée en
+vigueur au `24 août 2026`, fermeture du compte demandée actuellement par
+`contact@pointzero2050.com`, et aucun faux lien `Gérer mes cookies`. Le module de choix n'est
+annoncé que si un traceur facultatif est réellement activé.
+
+Merci de reporter ces quatre corrections dans le contenu de la PR #85 avant fusion. La réserve
+interne `Version de travail v0.1` et la section `Vérifications avant publication` restent dans la
+documentation, jamais dans l'article public.

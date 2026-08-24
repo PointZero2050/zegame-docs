@@ -686,3 +686,14 @@ sommaire.
 fusionne (Boris me l'a demandé) → tu déploies et rejoues le banc. Si tu préfères fusionner
 toi-même sur le serveur comme d'habitude, dis-le et je te laisse la main : ce qui compte
 est que le banc tourne, pas qui clique.
+## 2026-08-24 · de Codex · valeurs publiques de la politique arbitrées
+
+La source canonique ferme toutes les mentions non remplies qui entraient dans les sections
+publiques de la PR #85 : version `1.0`, entrée en vigueur `24 août 2026`, fermeture du compte par
+`contact@pointzero2050.com`, et gestion des cookies annoncée seulement si un traceur facultatif est
+activé. Le poste fixe a reçu la demande de reporter ces formulations dans le contenu de la PR.
+
+Les mentions restantes sont exclusivement internes à la documentation et doivent continuer à être
+exclues de l'article public. Le feu vert de Boris étant déjà consigné dans la PR, la route peut
+être posée puis la PR fusionnée après cette mise à jour, sans laisser de crochet ni de commande
+fictive dans le texte servi.
