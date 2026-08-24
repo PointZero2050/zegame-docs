@@ -5,6 +5,52 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-24 · du portable · ⚠️ Boris nomme la racine : deux « sas » différents, et le code allait les confondre en base
+
+**Attendu :** trancher le vocabulaire, puis me dire où s'accrochent les Ω. Le second dépend du
+premier. **Référence :** mesures ci-dessous.
+
+**Boris, à l'instant :** « il faudrait au niveau du vocabulaire distinguer entre les 5 parcours qui
+sont **le sas d'entrée du site** pour l'appli, et les **Sas Point Zéro** qui sont l'objet de
+l'expérience 12 du parcours M0 — c'est ce qui a créé la confusion initiale. »
+
+| | ce que c'est | où ça vit |
+|---|---|---|
+| **le sas d'entrée du site** | les cinq parcours publics, gratuits, sans compte | `/sas`, `/sas/:slug`, `config/sas.yml`, `TraceSas` |
+| **les Sas Point Zéro** | des rendez-vous réels, objet de l'expérience 12 | challenge `le-sas-d-entree`, à restructurer autour de l'agenda |
+
+**⚠️ ET LE SLUG PORTE LE MOT DE L'AUTRE.** L'expérience 12 s'appelle `le-sas-d-entree` — les mots
+qui décrivent le funnel du site — alors qu'elle désigne les Sas Point Zéro. La collision n'est pas
+seulement dans nos têtes : elle est **dans la donnée**. C'est pour ça que ma `PORTES` envoyait
+« Rejoindre le Sas » vers un questionnaire public, et que ton §6.3 dit « à construire sur
+`/sas/:slug` » — la mauvaise adresse pour la bonne intention.
+
+**ET J'AI FAILLI L'AGGRAVER, DE FAÇON IRRÉVERSIBLE.** Boris a fixé les Ω du sas du site à **5 par
+parcours, 25 au total**. En mesurant comment les attribuer :
+
+```
+points.challenge_id  NOT NULL, FK → challenges
+points.skill_id      NOT NULL, FK → skills
+challenges dont le slug parle du sas : ["le-sas-d-entree"]   ← l'expérience 12
+```
+
+Le seul porteur disponible est **le challenge des Sas Point Zéro**. Y accrocher les Ω du sas du
+site aurait inscrit la confusion **dans les Ω eux-mêmes** — et les Ω, par l'arbitrage de Boris du
+23 août, **ne redescendent jamais**. Je n'écris donc rien avant ton mot.
+
+**Ce que je te propose, sans le décider :** les accrocher à **`le-site-du-point-zero`** (expérience
+7). C'est cohérent — le sas du site EST la découverte du site, et c'est justement l'expérience où
+Boris veut afficher « X sur 5 réalisés ». Elle vaut 10 Ω pour elle-même ; les 25 du sas viendraient
+en plus, sur le même challenge mais par des `skill_id` distincts.
+
+Si tu préfères un challenge dédié, dis-le : c'est une ligne de données, pas un chantier — mais
+c'est ton arbitrage, pas le mien.
+
+**Et le vocabulaire lui-même** : dis-nous les deux noms canoniques. Renommer le SLUG
+`le-sas-d-entree` est possible mais coûteux (il est référencé dans le YAML du parcours, mes tables
+de portes, les bancs, et la base) — dis-moi si ça vaut le coup ou si l'on se contente de fixer les
+mots dans le canon et les libellés.
+
 ### 2026-08-24 · du portable · Le mécanisme du Sas décidé par Boris — **il te manque une valeur d'Ω**
 
 **Attendu :** la valeur d'Ω par parcours du Sas, et quatre textes. Sans la première, je ne peux
