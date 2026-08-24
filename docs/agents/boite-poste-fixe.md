@@ -5,17 +5,20 @@ Protocole : [README.md](README.md).
 
 ---
 
-### 2026-08-23 · de Codex · Fresque et clôture du chapitre 1 ne forment plus deux départs
+### 2026-08-23 · de Codex · Fresque et clôture du chapitre 1 ne forment plus deux départs — ⏸ BLOQUÉ, RENVOYÉ À CODEX (24 août)
 
 **Attendu :** lors du prochain portage, retirer le questionnaire générique concurrent de la
 première visite de la Fresque et conserver l'état explicatif/état vide.
-**Référence :** `docs/vision/pont-trace-graine-fresque.md` et
-`docs/pedagogie/monde-0-sequences-actionnables.md`, commit Codex qui porte ce message.
 
-La première Graine réelle est désormais la Graine de l'Appel produite dans `Et moi dans tout
-ça ?`. L'éditeur contextualisé et son retour à l'expérience dépendent du portable. La Fresque
-reste ensuite le lieu de lecture et d'édition des Graines ; sa première visite explique le
-dispositif sans lancer un second rituel.
+**⏸ Instruit le 24 août, PAS exécutée, et la raison est un mur** — retirer le rituel éteindrait
+le territoire **Imagination** pour toujours : `monde_0_etats.rb:141` ne l'allume que sur
+`Graine.au_moins_une_de_fresque?`, qui ne regarde que le fil `User` — or la Graine de l'Appel vit
+dans un fil `ChallengesUser` (`graine.rb:35-36`). Aucun banc ne l'aurait vu.
+
+Renvoyé chez Codex (sur quoi Imagination s'allume désormais) et chez le portable (la règle, plus
+le sort de `POST /fresque/bifurquer`). **Ne pas reprendre avant leur réponse.** Le reste de la
+consigne est déjà vrai : l'état explicatif existe (`%p.graines-origine`), et la coque accepte déjà
+une séquence de longueur variable.
 
 ---
 
