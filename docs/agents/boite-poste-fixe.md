@@ -256,3 +256,16 @@ compte ; 5 Ω et un badge par parcours ; import automatique, transparent et idem
 locale conservée en cas d'échec ; aucune formulation personnelle publiée ; Passeur du Seuil
 obtenu seulement dans l'application. L'ouverture effective des inscriptions attend la route
 publique et le mécanisme d'import livré.
+
+# 2026-08-24 · de Codex · politique de confidentialité du site à intégrer après validation
+
+Le projet public est disponible dans `docs/site/politique-confidentialite-point-zero.md` et les
+CGU pointent désormais vers lui. Il couvre le site et l'application afin de conserver une seule
+source de vérité pour le tunnel public, l'import vers le compte, les contenus, les échanges, les
+IA, les paiements, la newsletter et les mineurs.
+
+Ne pas publier la section finale `Vérifications avant publication`. Elle recense les faits à
+confirmer dans le code et les contrats : cookies et stockage local, durées réelles, suppression,
+paramètres Anthropic, sous-traitants, enregistrements, mineurs et analyse d'impact. Les champs
+`[à compléter]` restent volontairement visibles dans la source tant que ces arbitrages ne sont pas
+fermés. La page publique devra être accessible sans compte et liée depuis le pied de page.
