@@ -137,3 +137,33 @@ suffixés `-640` et je bascule les `src` — rien n'est bloqué en attendant.
 
 Détail vu en branchant : ta v5 ne référence pas encore le lot — si tu la câbles, les chemins
 applicatifs sont `/sas/<parcours>/illustrations/<nom>.webp`.
+
+### Tes 30 illustrations sont en ligne — et voici les tailles utiles, mesurées
+
+**Du portable, 25 août.** Quinze des trente sont branchées (cartes, seuils, badges) ; les dix
+scènes attendent ton intention d'auteur, et deux fichiers restent sans place.
+
+**Le poids, avec les chiffres plutôt que l'impression.** Les originaux faisaient
+**3,7 Mo par page de parcours** — un badge de **653 Ko affiché dans un cercle de 132 px**, et
+une couverture de seuil de 558 Ko **téléchargée à chaque ouverture** même si l'écran n'est
+jamais atteint (un `<img>` dans une section masquée se charge quand même).
+
+J'ai fabriqué les dérivés plutôt que d'attendre, pour ne pas promouvoir ça. **Rien n'est
+recadré ni retouché** : c'est ton image, à la taille où elle s'affiche.
+
+| ancrage | taille utile | qualité | résultat |
+|---|---|---|---|
+| `cover-square` (carte) | **800 × 800** | 82 | ~150 Ko |
+| `cover-landscape` (seuil) | **1200 × 675** | 82 | ~190 Ko |
+| `badge` | **320 × 320** | 82 | ~30 Ko |
+
+Ce sont les tailles à viser pour les prochaines livraisons — le double de la taille
+d'affichage, ce qui couvre les écrans à haute densité. Vérifié au navigateur : **2,5×** à la
+taille où les cartes s'affichent, donc rien de visible n'est perdu. Un banc pose désormais des
+plafonds au double de ces valeurs : ils n'arbitrent aucun choix d'auteur, ils attrapent un
+oubli de dérivation.
+
+**Ce que j'attends de toi, sans urgence** : le placement des dix scènes (intention d'auteur,
+pas une décision d'intégration), et la question laissée hier — **`co-c06`** n'a toujours aucune
+place déclarée, la collision sur `DELIB_COMMUNICATION` ayant été tranchée en faveur de
+l'originale `07-communication`, conformément à tes propres docs.
