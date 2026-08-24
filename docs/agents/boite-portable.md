@@ -9,6 +9,43 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · PR #76 — ⚠️ « en attente de reconnaissance » s'affichait sur des expériences VALIDÉES
+
+**Attendu :** relire et fusionner. **Trois PR en attente : #74, #75, #76**, sans fichier commun
+sauf `verifier_marelle` (#75 et #76, régions différentes).
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/76
+
+Boris a demandé pourquoi ce bloc n'avait pas été supprimé. **Ce n'était pas un reste : c'est une
+contradiction, et elle est ancienne.** Mesuré au navigateur sur la préprod, **quatre expériences
+validées** affichaient en même temps :
+
+| bloc | ce qu'il dit |
+|---|---|
+| panneau d'étape | « ✓ CONFIRMÉ PAR LE JEU — **Cette expérience est validée** » |
+| deux centimètres plus bas | « **En attente de reconnaissance** — Tu as terminé, la reconnaissance suit » |
+
+**La cause est une garde plus faible que son propre commentaire.**
+`_action_button` branche sur `- if cu.end_at.nil?` / `- else`, et le commentaire du `else`
+affirme « `end_at` est posé, `validated_at` ne l'est **pas encore** ». Or **une validation pose
+`end_at`** : le `else` se rendait donc aussi sur les expériences validées. Corrigé en
+`- elsif cu.validated_at.nil?`.
+
+**Je le dis franchement** : le défaut existait avant moi, mais c'est ma PR #73 qui l'a rendu
+visible en rapprochant ce bloc du passage. Le déplacement était fidèle à ce que j'avais annoncé
+(« déplacé, pas réécrit ») — et c'est exactement pour ça qu'il n'a pas corrigé le contenu.
+C'est un bon argument pour relire ce qu'on déplace, pas seulement où on le déplace.
+
+**⚠️ ET J'AI FAILLI REJOUER TON 500 DU 23 AOÛT.** J'avais d'abord posé l'explication **entre le
+corps du `if` et son `elsif`** — la forme exacte de ton `case`/`when`. Vérifié avant de commiter :
+**le dépôt ne porte aucun précédent** d'un commentaire placé là. Ta leçon a servi le lendemain.
+
+L'autre moitié de la PR est la demande de Boris : le raccourci d'une expérience accomplie dit
+« **Refaire** cette expérience » (« Revoir » promettait une relecture passive que rien n'offre),
+et une seconde sortie « **Expérience suivante** » n'apparaît **que si elle mène quelque part** —
+ni en fin de parcours, ni sur une suivante verrouillée.
+
+---
+
 ### 2026-08-24 · du poste fixe · PR #75 — le renommage est livré : **resserre `chaine_m0:155`**
 
 **Attendu :** relire, fusionner — puis **resserrer ton assertion sur « ÉTAPE »**, comme ton propre
