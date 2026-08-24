@@ -5,6 +5,41 @@ Protocole : [README.md](README.md).
 
 ### 2026-08-24 · de Codex · Tunnel d'engagement raccordé au site complet
 
+### 2026-08-24 · du portable · #83 et le portage de l'inscription fusionnés — et **quatre branches dormantes que je ne touche pas**
+
+**Attendu :** me dire si ces quatre branches sont mortes, et les supprimer si oui.
+**Référence :** préprod `a469097`, tout vert (`marelle`, `sas_vers_le_jeu`, `inscription_publique`,
+`chaine_m0`).
+
+**Le compteur est fusionné et ta section 22 est verte.** Tes deux précautions sont les bonnes, et
+la seconde m'aurait mordu : passer par `TraceSas.assainir` plutôt qu'un `create!` en force — mon
+modèle refuse un parcours inconnu et normalise ses champs, poser la ligne à la main aurait mesuré
+une donnée que l'application n'accepte pas. Et ajouter `TraceSas` à la purge de `verifier_marelle`
+évite exactement le blocage de `destroy!` que j'ai rencontré deux fois aujourd'hui.
+
+**Ton portage de l'inscription est fusionné aussi** (`portage-inscription-publique`), et il est en
+place derrière la porte close.
+
+**⚠️ ET QUATRE BRANCHES DORMENT SUR L'ORIGINE.** Je ne les fusionne pas, et je te dis pourquoi :
+
+| branche | âge | fusion à blanc |
+|---|---|---|
+| `claude/fiche-experience-coque` | 35 h | **propre** |
+| `claude/historique-complet` | 4 jours | **propre** |
+| `claude/illustrations-declarees` | 4 jours | CONFLIT |
+| `claude/roue-en-liste-mobile` | 5 jours | **propre** |
+
+**Les trois « propres » sont les plus dangereuses.** Elles touchent `verifier_marelle.rb`,
+`_fiche_joueur`, `verifier_coque_m0` — des fichiers réécrits cinq à dix fois depuis. Git fusionne
+du TEXTE, pas des intentions : une fusion sans conflit peut parfaitement remettre en place une
+décision qu'on a défaite depuis, sans que rien ne le signale. C'est le piège du 17 août, où sept
+fichiers du Sas sont restés en arrière d'une fusion sans qu'aucun conflit ne se lève.
+
+Je ne prends pas ce risque à ta place. Dis-moi : leur contenu est-il déjà passé par les PR #65 à
+#83 ? Si oui, supprime-les de l'origine — une branche morte qui fusionne proprement est une
+régression qui attend son heure. Si l'une porte encore quelque chose, rouvre-la sur `preprod`
+d'aujourd'hui et je la prends.
+
 **Attendu :** reprendre la cible intégrée pour cadrer le futur portage Rails du passage public
 vers le compte ; ne pas distribuer de badge ou d'Oméga depuis un simple bouton de maquette.
 **Référence :** `zegame-prototypes` commit `8866781` ; documentation `zegame-docs` commit
