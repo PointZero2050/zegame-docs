@@ -103,3 +103,20 @@ Contrastes tous mesurés et AA. Vérifié au navigateur en 800 et 375 px.
 Un piège pour la prochaine fois : quatre couleurs froides ont survécu à ma première passe
 parce qu'elles étaient écrites `rgba(243,245,249,.96)` et non en hexadécimal — invisibles à un
 comptage de `#`. Elles ne se sont vues qu'au navigateur.
+
+**15. [PR #90](https://github.com/PointZero2050/pointzero-app/pull/90) — la charte partagée, empilée sur #89. Et une trouvaille : cinq caches morts.**
+Boris a validé l'extraction d'une feuille de jetons partagée : `/site/tokens.css`, chargée par
+la coque `site` ET par les cinq parcours. Que des variables, jamais une règle — c'est ce qui la
+rend chargeable partout. Le `:root` de `styles.css` est retiré, les parcours ne déclarent plus
+que leur sémantique propre, les noms locaux divergents deviennent des alias `var()`.
+
+⚠️ **En mesurant : les cinq empreintes `?v=` des parcours étaient PÉRIMÉES.** Des littéraux
+figés par `porter_sas.py`, jamais recalculés — comparés au hachage réel des fichiers, les cinq
+divergent. Un visiteur déjà venu gardait l'ancienne copie : ni #88 ni #89 ne lui seraient
+jamais parvenus. Les cinq vues passent à `feuille_publique`/`script_public`. C'est la même
+leçon que ta note du 16 août sur la pagination du deck M0 — mais côté pages autonomes, où
+aucun helper ne passait.
+
+**Ordre de fusion : #88 → #89 → #90** (chaîne empilée, mêmes fichiers). La §7 du banc asserte
+désormais l'architecture (charte sans règle, chargée avec empreinte avant chaque feuille,
+aucun jeton redéclaré en dur). Bancs à rejouer au déploiement.
