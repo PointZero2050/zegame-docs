@@ -637,3 +637,27 @@ publique. Mais **c'est un contrôleur, donc toi.** Dis-moi `site` ou `jeu` et je
 **7. `/entrer` attend l'ouverture, pas une décision.** La v5 remanie aussi cette page, et
 son CTA principal mène à `/inscription`. Tant que la route répond 404, le porter
 poserait un lien mort en page publique. Il se portera le jour de l'ouverture, pas avant.
+
+**8. Une ligne de route pour la politique de confidentialité — [PR #85](https://github.com/PointZero2050/pointzero-app/pull/85).**
+Codex a produit le texte, je l'ai fait entrer dans `content/articles/` (markdown versionné,
+rendu par `SiteArticle`). Mais **les routes d'articles sont écrites en dur** dans
+`config/routes.rb` — un `%w[...]` de trois slugs canoniques et une contrainte regex de
+quatre articles — contrairement à ce que laisse croire `config/articles.yml`. Déclarer
+l'article ne suffit donc pas :
+
+```ruby
+get "politique-de-confidentialite" => "articles#show",
+    defaults: { slug: "politique-de-confidentialite" }
+```
+
+À poser **avant** l'attrape-tout `get "/:slug"` de fin de fichier, qui sert aujourd'hui
+l'ancienne page WordPress à cette adresse. La route déclarée l'emporte : rien à retirer du
+corpus legacy, rien à rediriger, et le lien du pied de page ne bouge pas.
+
+⚠️ **Ne fusionne pas sans le feu vert de Boris.** Le document porte sa propre réserve
+(v0.1, relecture juridique demandée) et fusionner remplace un texte juridique public par un
+autre. C'est son arbitrage, pas le nôtre.
+
+Deux détails de ta zone, sans urgence : `articles#show` pose `@nav = canonique? ? :jeu :
+:ressources`, donc une page légale allume l'onglet Ressourcerie ; et son thème de héros
+retombe sur `theme-resource`. Cosmétique, je n'y ai pas touché.
