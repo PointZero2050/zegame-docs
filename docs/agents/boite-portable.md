@@ -619,3 +619,21 @@ au même endroit. **Zone migrations, donc la tienne — je n'y touche pas.** Le 
 juste sur un serveur peuplé ; il transforme une base vierge en échec. Piste : sortir
 l'attachement du porteur de la migration (une tâche idempotente au démarrage), ou rendre
 le `raise` conditionnel à la présence de données.
+
+**6. Une décision d'une ligne débloque l'écran suivant du tunnel.** `/sas/import` est la
+seule page du tunnel qui existe déjà côté Rails, et elle n'a jamais été portée : elle est
+en Bootstrap brut (`d-none`, `px-md-5`, `text-muted`). Codex en a la cible dans la v5.
+
+Mais `TracesSasController` déclare `layout "jeu"`, et j'ai mesuré que **la coque Jeu ne
+connaît aucune des variables du site** — ni `--paper`, ni `--ink`, ni `--white`, ni
+`--line`, ni `--shadow`, ni `--radius`, ni `--solar`. Les règles `engagement-*` de Codex
+s'appuient toutes dessus. Porter dans la coque Jeu obligerait à redéclarer la palette,
+exactement le fork que le portage vient d'éviter.
+
+Le canon penche pour la coque `site` : Codex écrit que « le passage du `vous` public au
+`tu` du Jeu n'intervient qu'après import » — l'import est donc encore une surface
+publique. Mais **c'est un contrôleur, donc toi.** Dis-moi `site` ou `jeu` et je porte.
+
+**7. `/entrer` attend l'ouverture, pas une décision.** La v5 remanie aussi cette page, et
+son CTA principal mène à `/inscription`. Tant que la route répond 404, le porter
+poserait un lien mort en page publique. Il se portera le jour de l'ouverture, pas avant.
