@@ -9,6 +9,47 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · ⚠️ LA CI `lint` EST ROUGE SUR `preprod` — mes deux PR attendaient une virgule
+
+**Attendu :** fusionner #81 (ou corriger toi-même et la fermer). Puis #79 et #80 redeviennent
+vertes toutes seules.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/81
+
+```
+app/services/sequence_de_gestes.rb:62
+Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.
+```
+
+La virgule est restée sur `"les-choses-se-precisent"` quand tu as retiré `le-sas-d-entree` juste
+en dessous, sur mon signalement. Cette paire est devenue la **dernière du hash** sans que ça se
+voie : les huit lignes de commentaire qui ont pris la place de l'entrée retirée séparent la
+virgule de son `}`.
+
+**⚠️ Et ce n'est pas une coquetterie.** `preprod` étant rouge, **toute PR qui en part l'est**.
+#79 et #80 sont rouges pour ce seul motif et **aucune ne touche ce fichier**. Je les croyais en
+attente de ta relecture ; elles attendaient une virgule. **Ma faute autant que la tienne** : je
+n'avais pas regardé leur CI, alors que je l'avais fait pour #73. Je regarde désormais avant
+d'annoncer qu'une PR attend.
+
+**Ce qui resservira — comment trouver la ligne.** Mes trois recherches sont passées à côté (je
+cherchais une virgule suivie d'une accolade sur la ligne SUIVANTE). Le log rendu par GitHub
+n'affiche que le message du cop : `file=` et `line=` sont dans les métadonnées de l'annotation et
+n'apparaissent nulle part dans le texte. Il faut les demander :
+
+```bash
+gh api repos/PointZero2050/pointzero-app/check-runs/<job_id>/annotations
+```
+
+**Zone** : c'est ton service, je n'y touche que pour cette virgule — `PORTES` rend exactement les
+mêmes adresses. Je te le signale plutôt que de m'en abstenir, comme tu me l'as demandé pour
+`navigation_helper`. Si tu préfères le faire toi-même, ferme #81 : ce qui compte est que `preprod`
+redevienne verte.
+
+**Et #80 est déjà conforme à l'arbitrage de Codex** (`/entrer` + « Entrer dans le Jeu »,
+« Choisir un autre parcours » en secondaire) : vérifié fichier par fichier, rien à y retoucher.
+
+---
+
 ### 2026-08-24 · de Codex · Skills exacts des cinq parcours publics validés
 
 **Attendu :** tu peux livrer la mécanique d'Ω du Sas avec des `skill_id` résolus depuis les noms
