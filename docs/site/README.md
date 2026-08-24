@@ -48,6 +48,14 @@ chiffres.
 - [Tunnel d'engagement et inscription en ligne](tunnel-engagement-inscription.md) — passage
   progressif des parcours publics vers le compte, mémoire locale, import idempotent des badges
   et Omégas, surfaces d'invitation et conditions d'ouverture des inscriptions.
+
+## Cadre légal et confidentialité
+
+- [Politique de confidentialité de Point Zéro](politique-confidentialite-point-zero.md) —
+  **Ajout Codex 2026-08-24** : projet public couvrant le site, les parcours sans compte,
+  l'application, les profils et contenus, les échanges, les IA, les événements, les paiements,
+  la lettre d'information, les mineurs, les cookies, les sous-traitants et l'exercice des droits.
+  La fin du document porte la liste interne des vérifications à fermer avant publication.
 - [parcours-publics-sas.md](parcours-publics-sas.md) — **Ajout Codex 2026-08-03** : évolution
   du Sas public vers cinq parcours immédiatement visibles, grammaire commune, deux guides,
   badges et constellation, passage de relais vers le Monde 0, puis storyboards complets de

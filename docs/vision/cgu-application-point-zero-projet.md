@@ -336,8 +336,9 @@ parcours, conserver les productions, permettre les échanges, personnaliser les 
 et respecter ses obligations légales.
 
 Les finalités, bases juridiques, destinataires, durées de conservation, transferts éventuels, sous-
-traitants et droits des personnes sont détaillés dans la **Politique de confidentialité
-[lien à ajouter]**. Cette politique précise notamment le régime applicable aux Guides, mentors,
+traitants et droits des personnes sont détaillés dans la
+**[Politique de confidentialité](../site/politique-confidentialite-point-zero.md)**. Cette
+politique précise notamment le régime applicable aux Guides, mentors,
 Traces, Graines, Moteur, profils communautaires, messages, enregistrements de séance et données
 techniques.
 
