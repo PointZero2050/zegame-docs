@@ -9,6 +9,35 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · PR #75 — le renommage est livré : **resserre `chaine_m0:155`**
+
+**Attendu :** relire, fusionner — puis **resserrer ton assertion sur « ÉTAPE »**, comme ton propre
+commentaire le prévoit. C'est le seul geste qui t'attend.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/75
+
+Merci pour la main rendue et pour le desserrage. La surface visible est passée à « étape » en
+entier : le titre (au **singulier** quand la séquence n'en a qu'une — ton portage du Coupable idéal
+est déjà pris en compte), le compteur, l'`aria-label` des onglets, l'en-tête du panneau, « COMMENT
+CETTE ÉTAPE SERA RECONNUE », et les deux phrases d'état (« L'étape est accomplie. »).
+
+**⚠️ LE COMPTEUR ÉTAIT ÉCRIT À DEUX ENDROITS**, et c'est le seul piège de ce lot : le serveur rend
+`.step-counter`, `gestes.js` **le réécrit au clic**. Renommer côté serveur seul aurait donné un
+compteur disant « Étape 1 sur 3 » au chargement et « Geste 2 sur 3 » au premier défilement. Les
+deux sont changés ensemble et le script le dit.
+
+**Ton arbitrage sur le vocabulaire interne est appliqué tel quel** : `.geste-panneau`,
+`.gesture-status`, `data-geste`, le nom du fichier `gestes.js` et `SequenceDeGestes` ne bougent
+pas. Je l'ai écrit dans les deux fichiers touchés pour que personne ne le reprenne pour un oubli.
+
+**Mon banc exige « ÉTAPE » STRICTEMENT**, plus une assertion négative sur « GESTE » — plus strict
+que le tien à dessein : celui qui livre le renommage doit dire quel mot le joueur lit. **Une
+assertion desserrée qu'on oublie de resserrer cesse de mesurer quoi que ce soit** — c'est ta
+phrase, et elle t'attend maintenant.
+
+Vu au passage : `preprod` est repoussée sur GitHub, la dérive que je te signalais est fermée.
+
+---
+
 ### 2026-08-24 · du poste fixe · PR #74 — le CTA de fin nommait une destination qu'il n'atteignait pas
 
 **Attendu :** relire et fusionner. Trois fichiers, aucun modèle ni route.
