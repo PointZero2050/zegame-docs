@@ -5,6 +5,55 @@ Protocole : [README.md](README.md).
 
 ---
 
+### 2026-08-24 · du poste fixe · Neuf expériences à réduire — et trois mesures qui changent la forme
+
+**Attendu :** l'éditorial des étapes fusionnées (six expériences), et **deux arbitrages** que je ne
+peux pas prendre. Rien n'est écrit dans le code : je n'ai fait que mesurer.
+**Référence :** [`revision-etapes-m0-2026-08-24.md`](../vision/revision-etapes-m0-2026-08-24.md) —
+le détail, expérience par expérience, avec les mesures.
+
+Boris demande d'appliquer ton §2.1 à neuf expériences : `une-drole-d-epoque`, `avant-le-zero`,
+`le-signe-de-reconnaissance`, `le-conseil-omega` → **une** étape ; `l-ecosysteme-point-zero` →
+**deux** ; `vivre-l-atelier` → **une** (inscription) ; `le-site-du-point-zero` → restructuration ;
+`les-choses-se-precisent` et `le-sas-d-entree` → trois, avec corrections.
+
+**La mesure conforte sa lecture.** Sur **six** de ces expériences, les trois CTA pointent tous vers
+**la même surface** — trois moments d'un mini-jeu continu, exactement le cas que ton §2.1 range
+dans « ses mouvements restent nommés **dans** l'étape ». Et sur `l-ecosysteme-point-zero`,
+« Conserver mon schéma » pointe **littéralement sur la même URL** que « Relier les fragments » :
+l'étape 3 ne mène nulle part de neuf.
+
+**⚠️ TROIS CONSTATS QUI TE CONCERNENT DIRECTEMENT.**
+
+**1. Ton §6.3 repose sur une collision de noms.** Tu écris « Le Sas d'entrée · Ouvrir les repères →
+à construire sur `/sas/:slug` ». Or `/sas/:slug` est la route des **cinq parcours de découverte du
+site public** — `/sas`, `/sas/scenarios`, `/sas/croyances`, `/sas/paralysie`, `/sas/reveil`. `/sas`
+rend « Qu'arrive-t-il à l'humanité ? ». C'est aussi la cause du défaut que Boris signale : le CTA
+« Rejoindre le Sas » ouvre un questionnaire public au lieu des **dates du Sas d'entrée**. La
+destination est donc à **rouvrir**, pas à construire là.
+
+**2. Les cinq parcours ne persistent RIEN.** `sas_controller.rb` fait 30 lignes, sans une seule
+occurrence de `current_user`, `save`, `create` ni `session[]` — cohérent avec la promesse affichée
+du site : « **gratuit, sans compte à créer** ». Or Boris demande, pour `le-site-du-point-zero`,
+une étape 2 qui affiche « **X parcours réalisés sur 5** ». **Cette donnée n'existe pas**, et la
+créer touche la promesse « sans compte ». Arbitrage à toi et à Boris avant toute ligne de code.
+
+**3. Bonne nouvelle sur `vivre-l-atelier` :** `InscriptionCreneau` existe déjà, avec un scope
+`actives` qui exclut les listes d'attente. « S'inscrire à un atelier, vérifié par contrôleur » est
+un **portage**, pas une construction.
+
+**ET UNE QUESTION DE DOCTRINE.** Boris demande sur `les-choses-se-precisent` des CTA « **Passer à
+l'étape 2** » / « Passer à l'étape 3 » **à côté** du CTA d'action. Ton §2.1 dit « chaque étape
+visible porte **un CTA unique** », et ton §1 « ouvrir un CTA ne fait jamais progresser ». Est-ce un
+second CTA (que §2.1 interdit), ou une simple navigation d'affichage — ce que les cartes d'étapes,
+déjà cliquables, permettent aujourd'hui ? Je ne trancherai pas cela dans une vue : c'est la même
+limite que le `current_step` en août.
+
+Côté vue, **rien ne bloque** : `_passage` lit `gestes.size` partout, sans aucun 3 en dur, et le
+titre s'accorde au singulier depuis #75. Une séquence d'une, deux ou trois étapes se rend déjà.
+
+---
+
 ### 2026-08-23 · du portable · La Graine de l'Appel prouve son geste — et l'ancienne règle ne prouvait rien à personne
 
 **Attendu :** le découpage étapes ↔ gestes de QUATRE mini-jeux (même travail que ton §6.2).
