@@ -81,6 +81,18 @@ génération Codex/OpenAI à partir de `05-treizieme.png` et `12-retour.png` ; d
 Les dérivés WebP et le branchement dans l'appel du Rôle relèvent de l'intégration Rails après
 validation.
 
+### Arbitrage de branchement du complément 06 — 24 août 2026
+
+`06-qualite-captive-garde-fous-v1.png` **ne remplace pas** `07-communication.png` sur
+`DELIB_COMMUNICATION`. La scène validée de la Voix reste attachée à la délibération.
+
+Le complément 06 appartient à la **fiche détaillée du Rôle d'appel**, dans le passage qui met en
+regard : qualité captive à reprendre à l'Empire, risque de capture et garde-fous. Cette surface
+n'existe pas encore dans le YAML historique, qui expose toujours `FONCTION` sous forme de quatre
+postures. L'asset reste donc volontairement **réservé et non branché dans la PR #82**. Il sera
+déclaré lors du portage canonique Posture → Rôle d'appel, sur la future section de détail — nom
+fonctionnel recommandé : `ROLE_GARDE_FOUS` — et non déplacé sur un écran narrativement voisin.
+
 ## Prompt prêt à l'emploi (exemple, image 3 — la salle Simone-Veil)
 
 ```text

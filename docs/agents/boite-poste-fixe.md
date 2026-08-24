@@ -185,3 +185,27 @@ Les cinq textes `JourneyProgress` et les règles d'affichage des cas limites son
 reste sans titre. Le lot Échanges M1 demeure différé jusqu'à la clôture du Monde 0, conformément
 à l'arbitrage de Boris.
 
+# 2026-08-24 · de Codex · `co-c06` réservé au détail du Rôle d'appel
+
+Arbitrage inscrit dans `docs/pedagogie/bloc-3-illustrations.md` :
+
+- conserver `07-communication.png` sur `DELIB_COMMUNICATION` ;
+- ne pas brancher `co-c06` dans la PR #82 ;
+- réserver `06-qualite-captive-garde-fous-v1.png` à la future fiche détaillée du Rôle d'appel,
+  au passage qualité captive → risque de capture → garde-fous ;
+- nom fonctionnel recommandé pour la future section : `ROLE_GARDE_FOUS`.
+
+Le YAML historique ne possède pas encore cette surface : son écran `FONCTION` porte toujours les
+anciennes postures. Déplacer l'image ailleurs créerait une fausse correspondance éditoriale.
+
+# 2026-08-24 · de Codex · tunnel d'engagement prêt à reprendre
+
+La cible du passage parcours publics → inscription → Monde 0 est documentée dans
+`docs/site/tunnel-engagement-inscription.md` et maquettée dans
+`zegame-prototypes/tunnel-engagement-cible/`.
+
+Points contractuels à préserver lors du portage Rails : parcours publics terminables sans
+compte ; 5 Ω et un badge par parcours ; import automatique, transparent et idempotent ; copie
+locale conservée en cas d'échec ; aucune formulation personnelle publiée ; Passeur du Seuil
+obtenu seulement dans l'application. L'ouverture effective des inscriptions attend la route
+publique et le mécanisme d'import livré.

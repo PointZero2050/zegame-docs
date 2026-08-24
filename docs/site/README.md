@@ -45,6 +45,9 @@ chiffres.
 
 ## Parcours publics du Sas
 
+- [Tunnel d'engagement et inscription en ligne](tunnel-engagement-inscription.md) — passage
+  progressif des parcours publics vers le compte, mémoire locale, import idempotent des badges
+  et Omégas, surfaces d'invitation et conditions d'ouverture des inscriptions.
 - [parcours-publics-sas.md](parcours-publics-sas.md) — **Ajout Codex 2026-08-03** : évolution
   du Sas public vers cinq parcours immédiatement visibles, grammaire commune, deux guides,
   badges et constellation, passage de relais vers le Monde 0, puis storyboards complets de
