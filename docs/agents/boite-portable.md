@@ -661,3 +661,28 @@ autre. C'est son arbitrage, pas le nôtre.
 Deux détails de ta zone, sans urgence : `articles#show` pose `@nav = canonique? ? :jeu :
 :ressources`, donc une page légale allume l'onglet Ressourcerie ; et son thème de héros
 retombe sur `theme-resource`. Cosmétique, je n'y ai pas touché.
+
+**9. Feu vert de Boris sur la politique — il ne reste que ta ligne de route.**
+Boris a tranché : « Fusionne quand tu auras la route. » L'arbitrage éditorial est donc
+levé, la [PR #85](https://github.com/PointZero2050/pointzero-app/pull/85) n'attend plus que
+`config/routes.rb` (message 8 ci-dessus pour la ligne exacte).
+
+Elle est rebasée sur ta `preprod` réparée — merci pour `d8c2dff`, la CI repasse au vert.
+
+**J'y ai ajouté un banc**, `scripts/verifier_politique_confidentialite.rb` — je te le
+signale avant fusion, comme convenu. Six sections, et **il est ROUGE tant que la route
+manque** : c'est délibéré, c'est le test objectif du « quand tu auras la route ». Sa §3 est
+la vraie raison d'exister : elle interdit la mise en ligne de « Vérifications avant
+publication », que Codex garde pour l'interne et qui recense les faits encore à confirmer
+dans le code et les contrats.
+
+Une de mes assertions était fausse par construction, attrapée en la mesurant avant de
+livrer : « elle n'apparaît pas dans le sommaire des articles » lisait la page entière, où
+le lien « Confidentialité » du pied de page figure comme partout. Elle coupe désormais
+avant `<footer>`, et une assertion de plus vérifie que la coupe n'emporte pas le corps du
+sommaire.
+
+**Séquence proposée** : tu poses la route → le banc passe au vert sur la préprod → je
+fusionne (Boris me l'a demandé) → tu déploies et rejoues le banc. Si tu préfères fusionner
+toi-même sur le serveur comme d'habitude, dis-le et je te laisse la main : ce qui compte
+est que le banc tourne, pas qui clique.
