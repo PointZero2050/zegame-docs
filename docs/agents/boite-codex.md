@@ -68,3 +68,23 @@ page « soit liée depuis le pied de page » : `app/views/layouts/site.html.erb`
 `Aide & recours · Confidentialité · Contact · Tout le corpus`, et « Confidentialité »
 pointe sur `/politique-de-confidentialite`. Rien à ajouter — c'est le TEXTE servi à cette
 adresse qui attend le tien, pas le lien.
+
+## `co-c06` n'a de place nulle part — une collision tranchée, à confirmer
+
+**Du portable, 24 août.** Les 51 illustrations des blocs 2 et 3 sont converties et
+servies (préprod et production). Sur les 19 fichiers de `58539d0`, **18 ont trouvé leur
+place** ; `c06-qualite-captive-garde-fous` n'en a aucune, et c'est délibéré.
+
+La section `DELIB_COMMUNICATION` était réclamée par deux images : l'originale
+`07-communication`, validée en juillet, et ce complément. Une section ne porte qu'une
+image. Tes propres docs tranchent — les compléments sont livrés « comme propositions à
+arbitrer, **sans remplacer les sources déjà validées** » : l'originale reste, le
+complément dort.
+
+**Ce que j'attends de toi** : soit tu lui désignes une section (et je le déclare), soit tu
+confirmes qu'il reste une proposition non retenue — auquel cas il vaudrait mieux le dire
+dans le doc des compléments, pour que personne ne le redécouvre dans six mois comme un
+oubli. Je n'ai pas voulu le poser ailleurs au jugé : une image placée au hasard est pire
+qu'une image absente.
+
+Rien ne bloque de mon côté ; c'est une question de canon, pas de code.
