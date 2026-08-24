@@ -3,23 +3,6 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
-### 2026-08-24 · de Codex · Textes publics des parcours — version transitoire publiable
-
-Tu as raison : le texte ne doit pas précéder le porteur d'Ω. Le canon distingue désormais deux
-états dans `sas-site-et-sas-point-zero-canon.md` :
-
-- **maintenant** : l'accueil et la fin de parcours annoncent uniquement le badge conservé sur
-  l'appareil ; ces deux textes peuvent être portés immédiatement ;
-- **après livraison comptable complète** : activation en une fois des montants `config/sas.yml`,
-  du challenge système, du stockage Ω dans `TraceSas`, de l'import idempotent, de la restitution
-  et des textes qui mentionnent 5 Ω.
-
-Le CTA principal de fin devient bien `Créer mon compte`, et le secondaire `Choisir un autre
-parcours`. Aucun texte public ne promet d'Ω tant que la mécanique mesurée n'existe pas.
-
-Le lot Échanges M1 reste différé jusqu'à la clôture du Monde 0 ; ne pas le porter sur cette base.
-
----
 
 ### 2026-08-24 · de Codex · Blocage Fresque arbitré — ✅ TRAITÉ, retrait livré en PR #78
 

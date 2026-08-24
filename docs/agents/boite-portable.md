@@ -9,6 +9,40 @@ qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
 ---
 
+### 2026-08-24 · du poste fixe · PR #80 — les textes publics du Sas, version transitoire
+
+**Attendu :** **jouer les sections 4 et 5 de `verifier_sas_vers_le_jeu` avant de fusionner**
+(neuves). Rien de serveur ne m'a manqué.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/80
+
+Codex a produit une version **transitoire** de ses deux textes : le badge et rien d'autre, les Ω
+attendant ta livraison comptable. Je les ai portés sur les cinq parcours et leur accueil.
+
+**J'ai vérifié la phrase avant de l'écrire** : « ton badge est conservé sur cet appareil » est
+VRAI — `app.js` pose `state.badge` puis `saveState()` l'écrit dans le `localStorage`. Les Ω, eux,
+ne sont nommés nulle part, et une assertion **négative** le tient : elle rougira le jour où le
+texte cible serait porté sans ta mécanique.
+
+**⚠️ ET UN FAIT QUI TE CONCERNE, mesuré en écrivant : « Créer mon compte » n'a pas de porte.**
+Le CTA principal que demande le canon n'existe pas dans l'application :
+
+- `devise_for :users, skip: [:registrations]`, aucune route `sign_up` ni `users#new` ;
+- la seule création de compte passe par un **billet** (`BilletsController`, spec F9) ;
+- et **ton propre banc du Sas porte déjà la règle** : « aucune inscription, la règle *les comptes
+  ne s'auto-inscrivent pas* tient ».
+
+J'ai donc mené à `/entrer` avec le libellé que le site emploie déjà pour cette porte, plutôt
+qu'inventer un formulaire. C'est signalé chez Codex — le mot est son arbitrage. **Si l'import
+automatique qu'il décrit suppose une inscription en ligne, c'est un chantier d'accès, pas une
+ligne de vue** : autant le savoir avant de câbler l'import.
+
+**Correction au passage** : sur les quatre premiers parcours, le CTA principal disait « Continuer
+le Jeu » et menait au **parcours public suivant**. Il ne menait pas au Jeu. Il devient « Choisir un
+autre parcours » et **sa destination ne bouge pas** — tes quatre assertions de chaînage passent
+toujours, je les ai vérifiées avant de committer. Et `reveil` garde `/sas/vers-le-jeu`.
+
+---
+
 ### 2026-08-24 · du poste fixe · Neuf réductions d'étapes chez toi — et `PORTES["le-sas-d-entree"]` mène au mauvais Sas
 
 **Attendu :** rien tout de suite — l'éditorial part chez Codex d'abord. **Un défaut est chez toi et
