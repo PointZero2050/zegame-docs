@@ -314,3 +314,50 @@ annoncé que si un traceur facultatif est réellement activé.
 Merci de reporter ces quatre corrections dans le contenu de la PR #85 avant fusion. La réserve
 interne `Version de travail v0.1` et la section `Vérifications avant publication` restent dans la
 documentation, jamais dans l'article public.
+
+## Ton portage était poussé sur une PR déjà fusionnée — il n'a jamais atteint la préprod
+
+**Du portable, 24 août.** Tes deux livraisons sont fusionnées et vertes. Mais la
+première a failli se perdre, et la manière dont elle a failli se perdre vaut d'être sue.
+
+**Le portage de la politique était invisible.** Tu l'annonces sous « PR #86 » ; or #86,
+c'est le banc que j'avais fusionné à 21h35, et ton commit `fbc4ed8` est arrivé **après**
+sur la branche `banc-politique-rendez-vous`. Pousser sur la branche d'une PR déjà close
+ne rouvre rien : GitHub ne signale rien, la branche s'éloigne en silence, et la préprod
+portait encore les trois crochets quand je suis allé vérifier. Sans la mesure, je te
+croyais sur parole et je promouvais une politique trouée.
+
+Le remède est mécanique : **une livraison, une branche neuve**. Une PR fusionnée est
+close, sa branche est morte.
+
+**Et ma propre mesure était fausse aussi**, dans le même geste : j'ai cherché ton portage
+en comptant « à compléter » sur toutes les branches distantes. Elles rendaient toutes 0 —
+parce que le fichier n'y existe pas, et que `grep -c` sur du vide rend 0. « Aucun trou »
+et « aucun fichier » donnaient le même chiffre. Il a fallu tester l'existence du fichier
+AVANT de compter. Même famille que nos trois autres : mesurer là où il n'y a rien et lire
+le silence comme un résultat.
+
+Au passage : les **69 branches ne s'étaient pas supprimées de mon côté** — mon clone
+serveur gardait les références mortes. `git fetch --prune` : il en reste bien **six**.
+
+## Deux remarques sur #87, aucune ne bloquait
+
+**Un banc voisin a rougi sur un fait intact.** « le cercle canonique reste en filigrane »
+compare `\.pz-m0-liste:before\s*\{[^}]*roue-puissances\.png`. Ton commentaire contient un
+`}` **littéral** — « `.pz-m0-roue { width: min(92vw, 44rem) }` » — et le `[^}]*` s'y
+arrête avant d'atteindre l'image. Le filigrane n'avait pas bougé.
+
+Corrigé chez toi (`cb88650`) : les assertions de bloc mesurent désormais `regles`, le CSS
+**débarrassé de ses commentaires**. Un commentaire n'est pas une règle. Ça protège les
+quatre assertions `{[^}]*}` du banc, pas seulement celle qui a rougi. Vérifié dans les
+deux sens par sonde.
+
+**Ta première assertion promet plus qu'elle ne tient.** « aucune largeur de la coque ne
+peut dépasser le viewport » ne balaye en fait que la forme `min(Nvw` : un `width: 120vw`
+nu passerait sans un bruit. Elle reste utile — c'est la formule du commentaire qui
+dépasse la mesure. À resserrer quand tu repasseras dessus.
+
+**Les 51 illustrations des blocs 2 et 3 sont servies** (préprod et production, même bind
+mount) : ton rendez-vous est tenu, `COMPLEMENTS_ATTENDUS_ABSENTS` est vide. Et **ta ligne
+`CARTE` m'a sauvé** : j'avais converti les images en scannant `config/**.yml`, aveugle à
+la 21ᵉ déclarée en dur dans le HAML. C'est ton banc qui l'a vue, pas ma mesure.
