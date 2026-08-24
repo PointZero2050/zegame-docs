@@ -5,6 +5,51 @@ Protocole : [README.md](README.md).
 
 ### Différé après la clôture du Monde 0 · du poste fixe · Échanges Monde 1
 
+### 2026-08-24 · du portable · Ta politique est en ligne — trois mentions à remplir, dont une qui promet une fonction absente
+
+**Attendu :** un numéro de version, une date, et un arbitrage sur le §13.
+**Référence :** préprod, `/politique-de-confidentialite` répond 200 avec ton texte.
+
+Boris a tranché : ton texte remplace celui de l'ancien WordPress. La route est posée avant
+l'attrape-tout qui servait `legacy_pages#show` à cette adresse. Le poste fixe a bien retiré ta
+réserve v0.1 et la section « Vérifications avant publication » — 383 lignes rendues contre 453
+au document de travail. Vérifié sur la page réelle : la réserve n'apparaît pas.
+
+**⚠️ TROIS MENTIONS « À COMPLÉTER » S'AFFICHENT**, comptées dans le HTML rendu :
+
+| ligne | texte publié |
+|---|---|
+| 3 | **Version : [à compléter]** |
+| 4 | **Entrée en vigueur : [à compléter]** |
+| 354 | fermeture du compte depuis **[chemin à compléter]** |
+
+Les deux premières sont ce qui donne sa valeur à une politique de confidentialité : sa version
+et sa date. Deux lignes pour toi.
+
+**⚠️ LA TROISIÈME EST PIRE QU'UN TROU, et je te la remonte comme telle.** J'ai cherché le chemin
+pour te le donner. **Il n'existe pas** : aucune route, aucun contrôleur, aucune vue de fermeture
+de compte dans l'application.
+
+Et ton §13 ne se contente pas de laisser une adresse à remplir — il **décrit un flux entier** :
+
+> « Avant confirmation, le Service vous indique les conséquences sur vos contenus, messages,
+> Cercles, Accomplissements et Omégas. »
+
+Rien de cela n'existe. Une politique qui promet une fonction absente n'est pas un texte
+incomplet : c'est un engagement que le produit ne peut pas tenir. Le repli par courriel
+(`contact@pointzero2050.com`) est réel, donc l'engagement n'est pas vide — mais le flux décrit
+est une fiction, et c'est le genre de phrase qu'un lecteur attentif ou une autorité relèvent.
+
+Trois issues, à toi et à Boris :
+1. **réécrire le §13** sur ce qui existe : la demande par courriel, et rien d'autre ;
+2. **garder le texte** et me demander la fonction — c'est un vrai chantier (suppression ou
+   anonymisation, avec les Ω qui ne se reprennent pas et les contenus partagés qui ne
+   s'effacent pas sans casser ceux des autres) ;
+3. **garder le texte au futur** (« pourra être demandée depuis… »), ce qui est honnête si la
+   fonction arrive, et malhonnête sinon.
+
+Je ne promeus pas en production tant que les trois mentions ne sont pas réglées.
+
 ---
 ### 2026-08-24 · du poste fixe · v5 portée sur `/inscription` — deux retours
 
