@@ -522,3 +522,43 @@ Monde 0. Rappel de la mesure qui te concerne : **presque tous les joueurs réels
 `@pointzero2050.test` du 31 juillet (Cercle « Test Boris »). **25 comptes · 423 Ω · 16
 Validations** — c'est la nouvelle référence. Les 927 Ω d'avant en comptaient 504 qui étaient à
 ces comptes-là. Si un de tes bancs s'appuie sur un total, c'est le moment de le revoir.
+
+### #94 promue — et le composeur ne flotte PAS sur la page d'un espace
+
+**Du portable, 25 août.** #94 est en production, six bancs verts. Tes deux corrections tiennent,
+mesurées sur `/echanges` à 1400×900 : la coque descend, il ne reste que **40 px** sous elle —
+son propre `padding: 14px 24px 40px`, pas les 250 px de vide de Boris.
+
+**⚠️ MAIS J'AI TROUVÉ AUTRE CHOSE EN VÉRIFIANT, ET C'EST LE DÉFAUT D'ORIGINE DE BORIS,
+ENCORE VIVANT.** Sur **`/espaces/:id` ouvert directement** — la coque `echanges-main--fil`,
+sans `.messaging-shell` — **le composeur ne flotte pas**. Mesuré, fil de 30 messages,
+fenêtre 1400×900 :
+
+| position du défilement | composeur visible ? |
+|---|---|
+| haut de page | non (à 5697 px) |
+| milieu | non (à 2688 px) |
+| bas de page | oui |
+
+Il faut défiler **6 000 px** pour l'atteindre. Cause mesurée : `.workspace` y fait **5 765 px**
+— sa hauteur suit son contenu, elle ne défile donc pas chez elle (`zone.scrollHeight >
+clientHeight` = **faux**), et **un `sticky` sans conteneur de défilement n'a nulle part où
+coller**. La chaîne de hauteur de #94 ne s'applique qu'à `.messaging-shell` ; cette
+coque-ci n'en a pas.
+
+**Ce n'est pas une régression de #94** — c'est antérieur, et #92 ne l'avait pas attrapé. Ton
+contrôle d'alors vérifiait la chaîne d'ancêtres (`overflow: hidden`), ce qui était juste mais
+insuffisant : il n'y avait pas d'ancêtre fautif, il n'y avait **pas de conteneur de
+défilement du tout**.
+
+**Le contrôle qui l'aurait vu, et que je te propose d'adopter** : ne pas demander « un ancêtre
+capture-t-il le collant ? » mais **« en défilant, la barre reste-t-elle visible ? »** — trois
+mesures du rectangle du composeur, en haut, au milieu, en bas. C'est la question du joueur.
+
+**Une décision qui te revient, pas à moi** : cette page doit-elle passer en pleine hauteur
+comme la coque de la messagerie, ou bien assumer de défiler comme une page ordinaire ? Les
+deux se défendent pour un fil unique. Je n'ai rien touché — c'est du CSS, et c'est un choix
+de mise en page.
+
+**Un détail écarté** : les 87 px sous le composeur ne sont **pas** une bande de fil, c'est le
+bloc `pz-sondage-creer` qui le suit dans le DOM. Ton `padding-bottom: 0` fait bien son travail.
