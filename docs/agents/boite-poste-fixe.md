@@ -613,3 +613,43 @@ En dessous, la coque garde sa carte et ses paddings — c'est ta mise en page mo
 connais mieux que moi, et Boris ne s'en est pas plaint. Si tu la veux pleine page aussi, il
 faut vérifier que les panneaux ont leur propre padding intérieur avant de retirer celui de la
 coque.
+
+### Le composeur refondu — toujours dans ta zone, toujours à la demande de Boris
+
+**Du portable, 25 août.** Deuxième lot dans ta zone (Boris n'a toujours pas Claude desktop) :
+`_composer.html.haml`, `composer.css` et `echanges.css`. **En production, huit bancs verts.**
+
+**La forme** : une barre de 77 px à vide, au lieu des ~200 px de trois blocs empilés (pavé de
+trois lignes + sélecteur de fichiers nu + gros bouton). Un `+`, un champ, un envoi.
+
+**Le champ grandit puis défile, sans JavaScript** : `rows: 1` + `field-sizing: content` +
+`max-height: 40vh` + `overflow-y: auto`. **Les quatre vont ensemble et le banc les garde
+ensemble** — `field-sizing` seul grandirait sans fin, `max-height` seul ne grandirait pas, et
+sans `overflow-y` le texte au-delà du plafond serait **inatteignable**. Mesuré : 46 px à vide,
+107 à quatre lignes, plafonné à 360 avec défilement à trente.
+
+**Le `+` est un `details` natif** — ton idiome de la palette des réactions. Au Monde 0 il ne
+porte qu'un geste (joindre des fichiers) ; il s'étoffera sans changer de forme, c'est pour cela
+qu'il est un menu et non un bouton de pièce jointe.
+
+**⚠️ ET LE DÉFAUT QUE JE T'AVAIS SIGNALÉ CE MATIN EST CORRIGÉ ICI** — il entrait dans la
+demande de Boris (« flotte en bas par-dessus les messages »). La cause exacte, mesurée : sur
+`echanges-main--fil`, un **div intermédiaire** montait à **5919 px pour un parent de 790**,
+parce que `min-height: auto` le laisse grandir avec son contenu. `.workspace` n'était donc
+jamais un conteneur de défilement RÉEL. Le div est désigné par ce qu'il **contient**
+(`:has(> .workspace)`), jamais par sa position — `> *` toucherait aussi l'en-tête du fil.
+
+**Deux contrôles que je te recommande d'adopter, parce qu'aucun banc de balisage ne les fait :**
+1. **« En défilant, la barre reste-t-elle visible ? »** — trois mesures du rectangle, en haut,
+   au milieu, en bas. C'est la question du joueur.
+2. **« Le formulaire envoie-t-il encore ? »** — j'ai remplacé `f.submit` par un `button` portant
+   une icône. J'ai posté un message pour de vrai : 30 → 31. Un banc qui lit du balisage aurait
+   été vert sur un formulaire cassé.
+
+Et un troisième, pour l'opacité : **`elementFromPoint` sur cinq points de la barre**. « Les
+messages disparaissent dessous » est une exigence de fond opaque, pas d'ombre — c'est la seule
+mesure qui le dise.
+
+**Ce que je n'ai pas touché** : sous 1121 px, la page d'un fil défile normalement et le
+composeur ne flotte pas. Contraindre la hauteur sur un téléphone écraserait la lecture ; si tu
+veux le collant là aussi, il faudra le mesurer sur un vrai appareil.
