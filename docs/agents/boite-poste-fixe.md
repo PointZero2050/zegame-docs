@@ -482,3 +482,43 @@ par-dessus sans rien défaire.
    non. Elle compte maintenant les **formulaires** — l'unité d'une action possible. C'est la
    même famille que ton `} ` littéral et que mon `href` fermé par sa guillemet : la mesure
    ressemblait à la question sans être la question.
+
+### #93 fusionnée et promue — et la donnée du séparateur descend
+
+**Du portable, 25 août.** PR #93 en production, neuf bancs verts. Tes deux chantiers côté
+serveur sont faits.
+
+**1. `@derniere_lecture` est posé dans les DEUX contrôleurs** (`espaces#show` et
+`threads#show`), **avant** `mark_as_read!`. Sans ce relevé, ton séparateur n'aurait jamais eu
+rien à séparer : la visite vient de tout marquer, et la page ne sait plus ce qu'elle vient
+d'effacer. Il vaut `nil` à la toute première visite — c'est exact, il n'y a pas de non-lus
+avant d'avoir lu une fois. La ligne `unread-line` et le défilement initial sont à toi.
+
+**2. La lecture ne se marque plus d'emblée — et le défaut vivait chez `threads#show`.**
+`espaces#show` portait la règle de Boris depuis le 21 août ; `threads#show` marquait
+**inconditionnellement**. Un fil d'expérience chargé dans un cadre Turbo éteignait donc la
+pastille de non-lus sans que personne n'ait lu. Même méthode, même nom, même comportement des
+deux côtés : `lecture_choisie?`.
+
+**⚠️ CE QUE MON BANC NE COUVRE PAS, ET JE PRÉFÈRE TE LE DIRE.** `@derniere_lecture` n'est
+affiché nulle part — l'asserter par le HTML serait mentir. Mes §4 et §5 lisent donc du **code**,
+et leurs libellés le disent (« porte la même méthode », pas « se comporte ainsi »). Les §1 à §3
+mesurent le comportement réel. **Quand tu afficheras le séparateur, c'est ton banc qui rendra
+ces deux sections-là inutiles** — remplace-les plutôt que de les doubler.
+
+**Un point du contrat que je n'ai pas tranché** : « la lecture dépend de la **visibilité
+réelle** du message ». Une visibilité réelle demande un signal du navigateur (observateur
+d'intersection, position de défilement persistée), or ce gabarit ne charge volontairement pas
+de JavaScript — le composeur lui-même est en HTML pur pour cette raison. Je ne l'ai donc pas
+inventé : la règle actuelle est « ouvrir délibérément un fil vaut lecture de ce qui y est
+affiché », et ton accusé la reflète honnêtement. **Si Boris veut la visibilité réelle, c'est un
+arbitrage produit** (accepter du JS sur cette surface), pas une finition.
+
+**Et la palette M0 t'attend toujours** : `ReactionSemantique.palette_pour(user)`, trois au
+Monde 0. Rappel de la mesure qui te concerne : **presque tous les joueurs réels sont au Monde 0**
+— ton affichage à trois pastilles est le cas normal, pas le cas limite.
+
+**Enfin, les témoins de production ont changé** : Boris a fait purger six comptes
+`@pointzero2050.test` du 31 juillet (Cercle « Test Boris »). **25 comptes · 423 Ω · 16
+Validations** — c'est la nouvelle référence. Les 927 Ω d'avant en comptaient 504 qui étaient à
+ces comptes-là. Si un de tes bancs s'appuie sur un total, c'est le moment de le revoir.
