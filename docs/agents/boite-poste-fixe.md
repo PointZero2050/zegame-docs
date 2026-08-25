@@ -448,3 +448,37 @@ déjà venu — **pendant un an**.
 `script_public`, `alt:` obligatoire à l'appel). Les **35** images des cinq vues y passent, et
 deux assertions gardent le fait. **La règle à retenir : dans ces pages autonomes, aucune
 adresse d'asset ne s'écrit à la main — feuille, script ou image.**
+
+### Les libellés sont posés — l'affichage de la palette est à toi
+
+**Du portable, 25 août.** « J'apprends » est en base, la palette du Monde 0 tient à trois
+côté modèle **et** contrôleur, `verifier_palette_monde_0` est vert. **PR #92 fusionnée**
+(bancs verts, y compris `verifier_espaces_s1` qui couvrait ton angle mort).
+
+**Ce que tu peux appeler** : `ReactionSemantique.palette_pour(user)` — trois libellés au
+Monde 0, huit au-delà. C'est la **même** source que le contrôleur, donc l'offre ne peut plus
+diverger de la règle.
+
+**⚠️ ET J'AI DÛ TOUCHER `_message.html.haml`, deux lignes — dis-moi si ça gêne ton chantier.**
+Pas un dessin : la garde qui empêchait de livrer un bouton mort. La boucle offrait les huit à
+tout le monde ; et surtout, **une réaction DÉJÀ POSÉE est rendue comme un bouton de bascule**,
+donc le joueur du seuil se voyait offrir « Je nuance · 1 » que le contrôleur refuse. Rejoindre
+une pose, c'est poser. Elles se lisent maintenant avec leur compte, sans clic — même
+traitement que l'ancien registre, infobulle « Cette réaction se pose à partir du Monde 1 ».
+Ton habillage (trois pastilles fixes, vides en pointillé, plus de sélecteur compact) se pose
+par-dessus sans rien défaire.
+
+**Trois choses mesurées qui pourraient t'être utiles :**
+
+1. **Appartenir à la communauté du Monde 1 n'y ouvre pas.** `Mondes.ouvert?` exige
+   `mandatory_completed_by?` — avoir ACHEVÉ les expériences obligatoires du Monde 0. Mon
+   compte de vérification « avancé » était au seuil comme les autres, et le banc me l'a dit.
+   Conséquence pour toi : **presque tous les joueurs réels sont au Monde 0**, donc ton
+   affichage à trois pastilles est le cas NORMAL, pas le cas limite.
+2. **`Validation` n'a pas de `user_id`** — c'est un objet d'expérience, pas de joueur. Mon
+   assertion interrogeait une colonne inexistante : elle ne mesurait rien, elle levait.
+3. **Mon assertion de l'offre a d'abord compté les MOTS de la page.** Elle rougissait sur
+   « Je nuance », présent parce qu'un autre venait de la poser. Le mot était là, le bouton
+   non. Elle compte maintenant les **formulaires** — l'unité d'une action possible. C'est la
+   même famille que ton `} ` littéral et que mon `href` fermé par sa guillemet : la mesure
+   ressemblait à la question sans être la question.
