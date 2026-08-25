@@ -562,3 +562,54 @@ de mise en page.
 
 **Un détail écarté** : les 87 px sous le composeur ne sont **pas** une bande de fil, c'est le
 bloc `pz-sondage-creer` qui le suit dans le DOM. Ton `padding-bottom: 0` fait bien son travail.
+
+### ⚠️ J'ai travaillé dans TA zone — la messagerie, à la demande de Boris
+
+**Du portable, 25 août.** Boris n'avait pas accès à Claude desktop et m'a demandé de reprendre
+ton rôle le temps d'un lot. **`public/pz/m0/echanges.css` et `verifier_accueil_echanges` ont
+donc changé sans passer par toi** — c'est en production, et voici exactement quoi, pour que tu
+reprennes sans surprise.
+
+**LA VRAIE CAUSE N'ÉTAIT PAS LE PLAFOND, C'ÉTAIT L'ABSENCE D'ÉTIREMENT — et c'est un effet de
+bord de #94.** Mesuré à 1900 px : la coque faisait **1152 px** avec 374 px de gouttière.
+Depuis que `.pz-m0-echanges` est un flex en colonne, **`margin: auto` absorbe l'espace libre
+au lieu de laisser l'élément s'étirer** : `.echanges-main` prenait sa largeur de CONTENU. Ton
+plafond de 1480 n'était donc **jamais atteint**, et le porter à 1760 n'aurait rien changé sans
+`width: 100%`.
+
+C'est le piège jumeau de celui que tu avais nommé dans #94 (« `min-height` ne contraint rien
+dans une chaîne flex ») : ici, **`margin: auto` n'étire rien**. Même famille, autre propriété.
+Et une largeur ne se propage que si TOUS les maillons s'étirent — j'ai corrigé le premier, puis
+le troisième, avant de comprendre qu'il en fallait trois.
+
+**Ce que j'ai posé :**
+- `.echanges-main` : `width: 100%`, plafond 1760 (au lieu de 1480), colonne de gauche 360 (au
+  lieu de 310 — sur la capture de Boris, « Espace d'échange du Mo… » était tronqué) ;
+- bascule **pleine page** sous 1856 px, avec les **quatre** retraits ensemble (rayon, ombre,
+  bords latéraux, padding) — en retirer trois sur quatre donne une carte cassée ;
+- la gouttière du Jeu tombe aussi : `p-lg-5` est une **utilitaire Bootstrap en `!important`**,
+  48 px sur les quatre côtés. Sans la neutraliser, « pleine page » s'arrêtait à 96 px des bords
+  et la page défilait encore de 48 px. C'est le seul `!important` de la feuille, et il est
+  commenté comme tel ;
+- **le seuil est dérivé** : 1760 + 2×48 = 1856. Une media query ne sait pas lire une `var()`,
+  donc le CSS ne peut pas tenir ce lien — **c'est le banc qui le tient**, et il se retourne
+  (vérifié par sonde). Si tu changes le plafond, change le seuil : le banc rougira sinon.
+
+**L'échelle de texte** (demande de Boris) : 8→11, 9→11, 10→12, 11→13, 12→13, 13→14, 14→15, sur
+**40 règles**. Mesure d'avant : 10 px était la taille **la plus fréquente** de la feuille
+(×11). Le contenu des messages reste à 16 px et le banc le garde — une échelle appliquée à
+l'aveugle l'aurait emporté avec le reste.
+
+Deux éléments remontés à 12 après examen au navigateur : **l'horodatage et le badge** de chaque
+espace. Ils portent de l'information dans une liste cliquable, ce ne sont pas des ornements —
+contrairement aux six surtitres en petites capitales, restés à 11. **Cette distinction ne se
+voit pas dans la feuille**, où les huit avaient la même valeur : elle se voit en regardant ce
+que chaque élément DIT, sur une page rendue.
+
+**Vérifié à 1900 / 1400 / 985 / 375.** Sept bancs verts, linter propre.
+
+**Ce que je n'ai PAS touché, et qui te revient** : la bascule pleine page s'arrête à 1121 px.
+En dessous, la coque garde sa carte et ses paddings — c'est ta mise en page mobile, tu la
+connais mieux que moi, et Boris ne s'en est pas plaint. Si tu la veux pleine page aussi, il
+faut vérifier que les panneaux ont leur propre padding intérieur avant de retirer celui de la
+coque.
