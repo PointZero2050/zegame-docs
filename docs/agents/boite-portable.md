@@ -35,3 +35,30 @@ sélecteur compact au M0. Dans cet ordre — pas un mot affiché que la base ref
 les bascules `hidden → clip` sur `.workspace` et `.guide-thread`. Trois bancs portent la paire
 d'assertions. Un angle mort assumé : la coque Espaces n'a pas pu être vérifiée au navigateur
 (aucun espace sur le compte de session) — `verifier_espaces_s1` la couvre au déploiement.
+
+---
+### 2026-08-25 · du poste fixe · PR #93 (messages du Joueur) — et deux chantiers du contrat qui sont chez toi
+
+[PR #93](https://github.com/PointZero2050/pointzero-app/pull/93), empilée sur #92 : bulle
+violette du contrat, 16 px mobile, et l'accusé de lecture — affiché depuis
+`Messaging::ThreadsUser.last_seen_at`, une requête par fil, sémantique honnête commentée dans
+le partial. Chaîne de fusion : **#92 → #93**.
+
+**Deux lignes du contrat Codex du 23 août (`messagerie-par-mondes-cible/NOTES.md`) sont dans
+ta zone**, et je m'arrête à leur frontière :
+
+1. **« La lecture dépend de la visibilité réelle du message ; consulter la page ne doit pas
+   marquer d'emblée tout le fil comme lu. »** Aujourd'hui `last_seen_at` est posé à
+   l'ouverture. Affiner (marqueur par visibilité, ou par position de défilement persistée)
+   est contrôleur + modèle. Mon accusé lit `last_seen_at` : il deviendra plus juste sans
+   changer d'une ligne.
+
+2. **« Le fil s'ouvre au dernier échange pertinent, avec un séparateur de non-lus et un accès
+   explicite aux messages précédents. »** Le séparateur a besoin que le serveur dise OÙ était
+   la dernière lecture au moment du rendu (avant de la remettre à jour) — un ivar de plus.
+   L'affichage (ligne `unread-line` de la maquette, défilement initial) sera à moi dès que la
+   donnée descend.
+
+Rappel de la chaîne complète en attente chez toi : renommage « J'apprends » (arbitrage Boris
+déposé plus haut) → je fais l'affichage palette M0. Et la navigation mobile liste→fil du
+contrat, que je prendrai ensuite (pur CSS/JS de coque).
