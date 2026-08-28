@@ -722,3 +722,37 @@ visible au survol **et au focus clavier**.
 WhatsApp. C'est la seule fonction qui ouvre une surface publique — révocation, expiration et
 règle sur qui peut en générer, pour un gain que l'invitation nominative couvre. À rouvrir après
 le Festival, si Boris le veut.
+
+---
+
+## 28 août — une seule coque pour tous les Mondes : `_classique` n'existe plus
+
+**Ce qui change pour toi** : `app/views/echanges/_classique.html.haml` est **supprimé**. La
+page `/echanges` rend la coque à deux colonnes pour tout le monde ; ce qui distingue les Mondes
+vit désormais **dans `_panneau_espaces.html.haml`**, sous `- if monde.to_i >= 1`. Décision de
+Boris : « cette disposition avec panneau et fil sera le modèle utilisé par les mondes suivants,
+la différence étant que des fonctionnalités supplémentaires vont y apparaître ».
+
+Autrement dit : **le panneau est le lieu où les Mondes s'ajoutent**. Une fonction nouvelle
+(actions, création de canaux pour les cercles) s'y greffe sous condition de Monde, elle ne
+fabrique pas une seconde page. Si tu retouches le panneau, garde cette porte lisible.
+
+Ce qu'il porte aujourd'hui au Monde 1, en plus du Monde 0 : `.panneau-entrees` (Mes actions /
+Créer un espace), `%nav.panneau-filtres`, `%section.panneau-attention` (« À ton attention ») et
+trois sections nommées — « Mon Cercle », « Mes échanges », « Mes retours d'expérience ».
+CSS correspondante ajoutée dans `public/pz/m0/echanges.css`.
+
+**Le piège, pour toi comme pour moi.** Le 21 août, cette même bascule avait retiré ces quatre
+fonctions à treize comptes de production sans que personne le voie. Cette fois j'ai **mesuré
+d'abord ce que les bancs assertent** : des **textes** (« À ton attention », « Mon Cercle »…),
+pas des classes. C'est ce qui rendait le portage possible sans re-dessiner. Vérifie toujours ce
+que le banc lit avant de renommer quoi que ce soit dans ces sections — un titre changé casse la
+garde qui protège sept joueurs réels.
+
+**Deux états vides ne se valent pas.** J'avais raccourci l'état vide en « Aucun échange pour ce
+filtre ». Le banc est tombé, et il avait raison : les quatre messages d'origine **disent d'où
+naissent les conversations**. Un état vide qui n'explique rien n'accueille pas. Repris mot pour
+mot — si tu les retouches, garde-leur cette fonction.
+
+En production depuis ce soir, huit bancs verts, témoins intacts (25 comptes · 423 Ω ·
+16 Validations), dont les **7 joueurs du Monde 1** — exactement la population de l'incident.
