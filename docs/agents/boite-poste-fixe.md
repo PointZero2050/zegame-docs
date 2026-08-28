@@ -756,3 +756,57 @@ mot — si tu les retouches, garde-leur cette fonction.
 
 En production depuis ce soir, huit bancs verts, témoins intacts (25 comptes · 423 Ω ·
 16 Validations), dont les **7 joueurs du Monde 1** — exactement la population de l'incident.
+
+---
+
+## 28 août (nuit) — l'aperçu de l'espace : le titre ouvre un panneau
+
+**Ce qui te concerne** : `espaces/show.html.haml` a beaucoup maigri, et un partiel
+neuf est apparu — `app/views/espaces/_apercu.html.haml`. Décision de Boris, en mode
+WhatsApp : « le bloc titre et participants est cliquable, et ouvre un panneau avec le
+détail qui recouvre le fil de discussion ».
+
+L'en-tête ne porte plus que **le nom, puis les prénoms par ordre alphabétique** (au-delà
+de sept, le nombre). La nature de l'espace (« Espace d'échange », « Cercle ») a disparu :
+elle est lisible dans les catégories du panneau latéral. Tout le reste — finalité,
+membres, rôles, gestes du gardien, invitation, réglages — vit dans `_apercu`.
+
+**Trois choses à savoir avant d'y toucher :**
+
+1. **LE PANNEAU S'OUVRE PAR UNE FRATRIE CSS, pas par du JavaScript.** La case
+   `.pz-apercu-bascule`, le panneau `.pz-apercu` et le fil `.workspace` doivent rester
+   **frères, dans cet ordre** : le CSS fait `:checked ~ .pz-apercu { display: block }` et
+   `:checked ~ .workspace { display: none }`. ⚠️ **Un simple décalage d'indentation en
+   HAML** ferait tomber le panneau dans `.workspace` : la page rendrait exactement les
+   mêmes mots, et le panneau ne s'ouvrirait plus jamais. `verifier_apercu_espace` §5 lit
+   des **positions** dans le HTML pour cette raison précise.
+
+2. **Aucun calque absolu, et c'est délibéré.** Recouvrir le fil par-dessus obligerait à
+   connaître la hauteur de l'en-tête — variable, il porte des badges qui passent à la
+   ligne. On montre l'un en cachant l'autre : même case du flex, rien à mesurer. Le
+   composeur s'efface avec le fil parce qu'il vit dedans — gratuit, et juste.
+
+3. **La case est invisible mais focalisable** (`opacity: 0`, 1 px). Si tu la passes à
+   `display: none` ou `visibility: hidden`, elle sort de l'ordre de tabulation et le
+   panneau devient **inatteignable au clavier**. Le banc l'interdit.
+
+**Le cadre « Rencontre » vide a disparu** — il se rendait sur tout fil à plus d'un membre,
+proposition ou pas. Le formulaire vit maintenant dans le « + » du composeur.
+⚠️ **Et c'est un LIEN, pas un formulaire** : ce panneau vit dans le `form_with` du
+composeur, et un `form` imbriqué est supprimé en silence par les navigateurs — le geste
+paraîtrait posé et ne partirait jamais.
+
+**Deux leçons de mesure, transposables telles quelles :**
+- J'ai déclaré une finalité « absente » d'une page où elle s'affichait : je comparais une
+  chaîne brute à du HTML **échappé** (l'apostrophe). Un texte de joueur ne se cherche
+  jamais tel quel dans une page.
+- Mon banc a échoué sur « les noms de famille ne sont pas dans l'en-tête » parce que le
+  nom choisi, « Apercu », se cachait dans « ZZApercu », le nom de l'espace. Un témoin doit
+  être reconnaissable entre tous les textes qu'il traverse.
+
+**Ce que je n'ai pas fait** : l'illustration du groupe. Boris l'a nommée comme contenu du
+panneau ; le monogramme (96×96) **tient sa place exacte**, mais le téléversement demande
+son propre lot — stockage, recadrage, modération. Quand l'image arrivera, elle remplacera
+ce bloc sans déplacer une ligne autour.
+
+En production, 12 bancs verts, témoins intacts (25 comptes · 423 Ω · 16 Validations).
