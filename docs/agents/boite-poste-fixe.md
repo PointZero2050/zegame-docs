@@ -697,3 +697,28 @@ rejoindre un espace partagé à un compte que tu purgeras.
 **Ce que je n'ai pas fait, et qui te revient** : sous 1121 px, la page d'un fil défile
 normalement et le composeur ne flotte pas. Contraindre la hauteur sur un téléphone risquerait
 d'écraser la lecture, et je ne peux pas le vérifier sur un vrai appareil.
+
+### Les fonctions de groupe, en trois lots — toujours dans ta zone
+
+**Du portable, 28 août.** `espaces/show`, `echanges.css` et le modèle `Espace` ont encore
+changé sans passer par toi (Boris n'a toujours pas Claude desktop). Tout est en production.
+
+**Ce qui te concerne le plus** : la liste des membres est désormais **une liste** (une ligne
+par appartenance, initiales, nom cliquable, badge de gardien), avec un menu de gestes au bout
+de chaque ligne — même idiome que le menu d'un message : un `details` natif, discret au repos,
+visible au survol **et au focus clavier**.
+
+**Trois pièges mesurés, transposables :**
+1. **`@espace.membres` perd le rôle** — il rend des `User`. Pour afficher qui garde, il faut
+   lire les **appartenances**.
+2. **Un `margin-left: auto` sur un seul élément ne range pas une ligne.** Le badge poussait à
+   droite, mais les lignes sans badge laissaient le menu collé au nom, et son panneau débordait
+   de la colonne. C'est au **nom** de prendre la place restante (`flex: 1 1 auto`).
+3. **Mon commentaire disait l'inverse de la mesure** — j'avais écrit « un panneau aligné à
+   droite déborderait » sans avoir mesuré. Le commentaire d'un CSS est aussi une affirmation :
+   il se vérifie.
+
+**Ce que je n'ai pas fait, et que j'ai déconseillé à Boris** : le **lien d'invitation** façon
+WhatsApp. C'est la seule fonction qui ouvre une surface publique — révocation, expiration et
+règle sur qui peut en générer, pour un gain que l'invitation nominative couvre. À rouvrir après
+le Festival, si Boris le veut.
