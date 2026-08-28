@@ -653,3 +653,47 @@ mesure qui le dise.
 **Ce que je n'ai pas touché** : sous 1121 px, la page d'un fil défile normalement et le
 composeur ne flotte pas. Contraindre la hauteur sur un téléphone écraserait la lecture ; si tu
 veux le collant là aussi, il faudra le mesurer sur un vrai appareil.
+
+### ⚠️ J'ai tenu ta zone sur toute la messagerie — voici ce qui a changé
+
+**Du portable, 26 août.** Boris n'avait pas accès à Claude desktop et m'a demandé de reprendre
+ton rôle. **`_message.html.haml`, `_composer.html.haml`, `_coque_m0`, `espaces/show`,
+`echanges.css`, `composer.css`** ont changé sans passer par toi, et c'est en production. Le
+détail, pour que tu reprennes sans surprise.
+
+**Un partiel neuf est à toi** : `echanges/_panneau_espaces.html.haml`, extrait de `_coque_m0`
+en **extraction pure** (pas une ligne de contenu changée). Il est monté par DEUX appelants
+maintenant — `/echanges` et `espaces/show` — et reçoit ses données **en locales** : il les
+lisait dans le scope de la coque, ce qui marche par accident, pas par contrat.
+
+**Cinq pièges mesurés, tous transposables à ton travail :**
+
+1. **Un `<script>` inséré par `innerHTML` ne s'exécute jamais.** `fil.js` chargé par le
+   composeur arrivait dans le HTML que ton `echanges-panneau.js` injecte : téléchargé, dans le
+   DOM, **inerte**. Mon banc vérifiait qu'il est *chargé* — il l'était. **« Chargé » et
+   « exécuté » ne sont pas la même grandeur.** Tout script utile à la conversation doit être
+   chargé par la COQUE.
+2. **`margin: auto` n'étire pas dans un flex, il centre.** Depuis ta chaîne de hauteur de #94,
+   `.echanges-main` prenait sa largeur de CONTENU : **1152 px pour un plafond de 1480, jamais
+   atteint**. C'est le piège jumeau du `min-height` que tu avais nommé — même famille, autre
+   propriété.
+3. **`scrollTo({behavior: "smooth"})` ne bouge pas d'un pixel** dans ce contexte ; `"auto"`
+   oui. Un gestionnaire branché qui ne fait rien ressemble exactement à un gestionnaire absent.
+4. **Un bouton de 38 × 0 px ne se clique pas** — le cercle était peint hors de sa boîte par un
+   `::before`. ⚠️ Aucun `bouton.click()` par script ne le révèle : il déclenche le gestionnaire
+   quelle que soit la géométrie. **Il faut regarder la boîte, ou `elementFromPoint`.**
+5. **J'ai mesuré au mauvais endroit** : mes contrôles portaient sur `/espaces/:id`, la page de
+   Boris est `/echanges`. Une page qui ressemble à la sienne n'est pas la sienne.
+
+**Trois contrôles que je te recommande d'adopter**, qu'aucun banc de balisage ne fait :
+« en défilant, la barre reste-t-elle visible ? » (trois mesures du rectangle) · « le formulaire
+envoie-t-il encore ? » (poster pour de vrai) · `elementFromPoint` pour l'opacité d'un bandeau.
+
+**Et une leçon qui n'est pas de CSS** : ma purge de compte jetable a **détruit le canal du
+Monde 0 en préprod** parce qu'un compte l'avait REJOINT. Une purge ne détruit que ce qu'elle a
+CRÉÉ — corrigé dans les 18 bancs qui portaient ce motif. Si tu écris un décor, ne fais jamais
+rejoindre un espace partagé à un compte que tu purgeras.
+
+**Ce que je n'ai pas fait, et qui te revient** : sous 1121 px, la page d'un fil défile
+normalement et le composeur ne flotte pas. Contraindre la hauteur sur un téléphone risquerait
+d'écraser la lecture, et je ne peux pas le vérifier sur un vrai appareil.
