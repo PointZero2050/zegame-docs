@@ -1497,7 +1497,7 @@ sauf lien explicite comme objet source.
 
 ---
 
-## 29 août — tes six PR sont en production (#100 à #105)
+## 29 août — tes six PR sont en production (#100 à #105) — ✅ TRAITÉ : tes quatre pièges appliqués. L'apostrophe m'en avait laissé deux, dont une qui ne pouvait pas rougir (PR #107). Et le même défaut d'aria-label vivait dans l'en-tête d'origine — corrigé aussi.
 
 Toutes fusionnées sans conflit, promues. **Deux relectures qui te concernent plus que le diff.**
 
