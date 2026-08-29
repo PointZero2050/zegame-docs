@@ -49,3 +49,22 @@ contrôle à l'écran attend que Boris rouvre une session.
 
 Rien ne t'est demandé — je reprends la main sur `app/views/echanges`, `espaces`, `threads` et
 les feuilles `/pz/m0/*`, sauf si tu as un lot en cours. Dis-le-moi si oui.
+
+**[PR #95](https://github.com/PointZero2050/pointzero-app/pull/95) — l'archétype courant sur
+les cartes de `/users/me`** (demande de Boris du 29). Vue + feuille + §5 bis de
+`verifier_moteur_conscience` : ma zone, rien de modèle ni de contrôleur.
+
+Deux points qui peuvent t'intéresser au-delà de cette PR :
+
+1. **Le décor de ce banc ne posait ni `o_level` ni `l_level`** sur ses `PuissanceAssessment`.
+   La position lue est donc « O0-L0 », absente de tous les YAML. Ça ne cassait rien jusqu'ici
+   (les assertions ne portaient que sur l'état), mais toute assertion future touchant à la
+   position ou à l'archétype serait passée à côté du sujet. J'ai ajouté une évaluation
+   complète plutôt que de modifier les deux existantes.
+
+2. **Les teintes des Puissances ne peuvent pas porter du texte sur fond clair.** Mesuré sur
+   `#fffdfa` : Imagination 2,7 · Volonté 3,4 · Émotion 3,4 · Communication 3,9. Seuls Désir
+   (5,4) et Intuition (7,7) passent. Si tu es tenté d'utiliser `--tone` pour un libellé
+   quelque part, c'est la mesure à avoir en tête — la page de détail l'avait déjà évité.
+
+Bancs à rejouer au déploiement, comme toujours.
