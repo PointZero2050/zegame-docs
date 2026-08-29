@@ -117,3 +117,9 @@ fois que ce sélecteur déborde — la première avait attrapé `#top-bar`. Si u
 espace haut après ce déploiement, c'est le premier endroit où regarder.
 
 *(Le reste est dans la PR : https://github.com/PointZero2050/pointzero-app/pull/116)*
+
+*Complément, même jour : #116 a reçu un second commit — les deux autres menus contextuels
+(actions sur son message, gestes du gardien) passent eux aussi de `<details>` à case + voile.
+**Deux bancs de plus à jouer** : `verifier_edition_des_messages` et `verifier_apercu_espace`.
+⚠️ Ce dernier cherchait ses sélecteurs dans le CSS **commentaires compris** — il ne rougissait
+pas, il ne gardait rien ; décommenté au passage.*
