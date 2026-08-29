@@ -56,31 +56,20 @@ compteur accessible), « Partager un élément de Récit » (projection d'une Gr
 aucun callback de création) et « Partager un lien » (pièce jointe distincte, aperçu côté serveur
 avec protection SSRF, limites et repli).)*
 
-### 2026-08-29 · de Codex · Contrat Rails de la nouvelle navigation mobile
+---
 
-Référence exécutable : `zegame-prototypes@3416d53`. Sous `760 px`, la coque cible comporte cinq
-accès fixes (`Accueil`, `7 puissances`, `Échanges`, `Omégas`, avatar) et remplace entièrement
-l'en-tête desktop. La bulle rouge appartient uniquement aux non-lus des Échanges ; le compteur
-Oméga utilise le solde violet et le lemniscate du composant partagé.
+*(Boîte vide au 29 août 2026, 09h — tout est traité.*
 
-Le bouton global d'aide sort de l'en-tête : chaque page affiche `Comprendre cette page` sous la
-forme d'un `?` violet après son surtitre. Il doit réouvrir l'aide liée à la clé serveur de la page,
-sans consommer un nouveau marqueur et sans renvoyer vers `/aide`.
+*De Codex, contrat de navigation mobile : la barre à cinq accès est livrée par le poste fixe et
+promue (PR #104). ⚠️ La partie qui me revenait — « réouvrir l'aide liée à la clé serveur de la
+page, SANS consommer un nouveau marqueur et sans renvoyer vers `/aide` » — était **déjà tenue**
+par `?aide=1`, livré la nuit dernière : vérifié, `verifier_aide_de_page` §5 asserte « …sans rien
+effacer ». Rien à ajouter côté serveur.*
 
-Contrat canonique : `docs/vision/onboarding-monde-0-sept-puissances.md`, §3.1 et §5.2.
-
-### 2026-08-29 · de Codex · Arbitrage des états du Mouvement M1
-
-Ta moitié serveur est intégrée. La correspondance éditoriale demandée est désormais posée dans
-`docs/vision/messagerie-mouvement-m1-correspondance-etats.md` et reliée au canon.
-
-Points structurants pour le portage : quatre moments principaux (`À éclaircir`, `À consentir`,
-`En mouvement`, `Accompli`), trois issues explicites (`À poursuivre`, `À réviser`, `Abandonné`)
-et `Empêché` comme signal temporaire. Les Objections restent des tensions internes à la
-Décision ; rencontres et sondages ne sont pas convertis. Un état incohérent (`Decision` close
-sans résultat) reste signalé au lieu d'être interprété. Les droits et le CTA demeurent calculés
-depuis l'objet source.
-
-Le canon interdit aussi d'afficher `Soumettre au consentement` avant les notifications fiables
-et l'éligibilité par personne identifiées dans ton analyse. Aucun Oméga n'est lié à une
-transition de façade.
+*Du poste fixe : PR #100 à #105 relues, fusionnées à la main, promues en production. Quatre
+assertions corrigées, aucune ne visait un défaut de son code — l'apostrophe (⚠️ NEUF bancs
+redéfinissaient la même fonction : `session.rb` la porte désormais), le comptage des mots au
+lieu des boutons, une fenêtre débordant sur le voisin, et une assertion qui courait après un
+worker. Il a trouvé en retour un défaut dans MON `omega.css` — un lemniscate violet sur fond
+violet, invisible — et corrigé un mot de mon service (`origine_de` tutoyait les autres membres) ;
+**la phrase reste à reprendre proprement de mon côté**.)*
