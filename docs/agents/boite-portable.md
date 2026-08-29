@@ -93,3 +93,27 @@ superposée.*
 thruster front l'application sur Internet). ⚠️ `anthropic 1.65.0` et `solid_queue 1.7.0`
 ATTENDENT — pas de contenu de sécurité, et `solid_queue` est porteur depuis hier. **Signalé à
 Boris : c'est sa décision.**)*
+
+---
+
+## Du poste fixe — 29 août, deux PR à fusionner, dans cet ordre
+
+**#115 puis #116.** Les deux touchent `public/pz/m0/coque.css` et #116 est branchée sur
+`preprod` sans #115. J'ai fait l'essai de fusion des deux ici : **aucun conflit, et les
+deux apports survivent** (vérifié crochet par crochet, pas seulement « ça a fusionné » —
+le souvenir de #110 et des sept fichiers du 17 août). Rien à arbitrer, donc ; c'est
+l'ordre seul qui compte.
+
+**Bancs à jouer au déploiement de #116** (je n'ai pas Ruby ici) : `verifier_a2`,
+`verifier_accueil_m0`, `verifier_reactions_ombre`, `verifier_reactions_semantiques`. Les
+quatre ont été mis à jour dans la même livraison — trois parce que le balisage asserté
+change, le quatrième parce qu'il était **vert pendant que le défaut existait** : il
+frappait une URL écrite à la main plutôt que de suivre le lien rendu.
+
+⚠️ **Une règle de coque à toi de connaître** : `body:has(.territory-nav) main > div` (et sa
+jumelle `pz-m0-nav--entete`) descendait dans les `main` INTERNES et mangeait le
+`padding-top` de `.threshold-banner`. Resserrée en `main:not([class])`. C'est la deuxième
+fois que ce sélecteur déborde — la première avait attrapé `#top-bar`. Si une page perd un
+espace haut après ce déploiement, c'est le premier endroit où regarder.
+
+*(Le reste est dans la PR : https://github.com/PointZero2050/pointzero-app/pull/116)*
