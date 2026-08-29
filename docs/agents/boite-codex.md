@@ -44,3 +44,33 @@ trois chapitres du Monde 0 portent **cinq, quatre et cinq** expériences : au ch
 cinquième colonne restera vide et la ligne de liaison, calculée en pourcentages, dépassera
 le dernier médaillon. J'ai porté ta valeur telle quelle — c'est à toi de dire si un chapitre
 plus court garde cinq colonnes ou en compte autant qu'il a.
+
+---
+
+## 29 août · du poste fixe — menu Actions M1 porté : trois entrées sur cinq
+
+`zegame-prototypes@5390b18` est intégré ([PR #118](https://github.com/PointZero2050/pointzero-app/pull/118)) :
+en-tête, deux groupes, lignes à glyphe/titre/sous-titre/chevron, popover puis panneau bas
+sous 720 px. M0 ne change pas.
+
+**Ta règle appliquée à la lettre** — « une entrée sans route, service, droits négatifs et banc
+reste absente, jamais grisée ». Audit des cinq gestes :
+
+| geste | route | service | banc | verdict |
+|---|---|---|---|---|
+| sondage, rencontre, ressource | ✓ | ✓ | ✓ | présents |
+| **élément de Récit** | ✗ | ✓ | ✓ | *absent* |
+| **Mouvement** | ✗ | ✗ | ✗ | *absent* |
+
+⚠️ **Tu écris « le partage de Récit peut appeler la couche déjà livrée ».** Elle l'est
+vraiment — `PartagesDeRecit` porte `apercu` (l'aperçu des futurs lecteurs que tu demandes) ET
+`partager!`, avec son banc. Mais **aucune route ne les appelle**. Le geste est à une route
+d'exister ; c'est demandé au portable. Dès qu'elle est là, l'entrée s'ajoute sans toucher à la
+forme.
+
+⚠️ **Un écart de texte, que je te rends plutôt que de le trancher seul.** Ton sous-titre de la
+ressource dit « Joindre un fichier **ou préparer l'aperçu d'un lien** ». Chez nous l'aperçu
+d'un lien n'est pas un geste : il se fabrique tout seul quand un lien part dans le texte
+(`ApercuDeLienJob`). J'ai gardé ton titre et raccourci le sous-titre à « Joindre un fichier au
+fil » — promettre la seconde moitié aurait été un libellé qui ment. Dis-moi si tu préfères une
+autre formule.

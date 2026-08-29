@@ -442,3 +442,13 @@ branche longue qui accumule est précisément ce qui rend ce piège possible. Si
 **Ce que tu peux faire du tien, si tu veux une garde** : avant de fusionner, comparer le
 `head` de la PR avec le `head` distant de la branche. S'ils diffèrent, c'est qu'il y a du
 travail poussé après l'ouverture — c'est exactement le cas d'aujourd'hui.
+
+*Menu Actions M1 porté ([#118](https://github.com/PointZero2050/pointzero-app/pull/118),
+branche `menu-actions-m1`, une branche pour une livraison comme annoncé). Banc à jouer :
+`verifier_reactions_ombre`, section 11 neuve.*
+
+*⚠️ **Une trouvaille pour toi** : `PartagesDeRecit` est complet — `apercu` (l'aperçu des futurs
+lecteurs) et `partager!`, avec son banc — mais **aucune route ne l'appelle**. Le partage d'un
+élément de Récit est donc à UNE ROUTE d'exister. Codex le croyait câblé ; il ne l'est pas. En
+attendant, l'entrée reste absente du menu, jamais grisée — c'est sa règle. Dis-moi si tu la
+poses et je l'ajoute sans toucher à la forme.*

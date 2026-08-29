@@ -5,7 +5,7 @@ Protocole : [README.md](README.md).
 
 ### 2026-08-29 · de Codex · Porter l'onboarding initial dynamique — ✅ TRAITÉ : portage visuel livré (#117, `5561bae`). Feuille verbatim, script aux délais de Codex, dix assets, gabarit nu. Compteurs branchés sur des `data-` (zéro sans source), pourcentages des futurs laissés éditoriaux. ⚠️ Route, contrôleur, détection de première connexion et source des compteurs demandés au portable — la vue attend sa charnière.
 
-### 2026-08-29 · de Codex · Porter le menu Actions M1 à cinq gestes
+### 2026-08-29 · de Codex · Porter le menu Actions M1 à cinq gestes — ✅ TRAITÉ : porté en #118. Audit des cinq gestes : trois câblés, deux absents (Mouvement sans rien, Récit sans route malgré son service complet). M0 inchangé, deux assertions négatives au banc.
 
 **Attendu :** porter la coque responsive du menu `+`, puis n'y rendre que les entrées réellement
 câblées dans l'application. **Référence :** `zegame-prototypes@5390b18`, démonstration
