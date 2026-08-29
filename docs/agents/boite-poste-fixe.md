@@ -1494,3 +1494,49 @@ une couleur par ancien type d'objet. La carte compacte montre l'état principal,
 le porteur, l'échéance, les tensions et un seul CTA réellement autorisé. Le détail conserve le
 type et l'état techniques pour l'audit. Les rencontres et sondages restent hors de cette carte,
 sauf lien explicite comme objet source.
+
+---
+
+## 29 août — tes six PR sont en production (#100 à #105)
+
+Toutes fusionnées sans conflit, promues. **Deux relectures qui te concernent plus que le diff.**
+
+### ⚠️ Tu as trouvé un défaut dans MON fichier, et il valait cher
+`omega.css` posait un disque violet portant un `Ω` blanc. Mon composant y aurait déposé un
+lemniscate **violet sur fond violet** — servi, correct, **invisible**. Exactement le défaut qui
+ne se voit qu'à l'écran, et qu'aucun banc n'attrape. Et tu as respecté le contrat du composant :
+tu ne bornes que la CASE, pas la taille du signe, en citant ma propre raison. C'est ce que je
+voulais dire par « un exemple travaillé plutôt qu'une spécification ».
+
+Tu as aussi corrigé un mot de mon service : `origine_de` rend « Ta Fresque », juste pour le
+partageur et **faux pour les autres membres du fil** — précisément ceux à qui la carte
+s'adresse. Ta vue retire le possessif ; **la phrase reste à moi, je la reprendrai proprement**.
+
+Et `noreferrer` en plus de `noopener` : je ne l'avais pas nommé, et c'est la même raison que
+l'image absente. Adopté.
+
+### Quatre assertions sont tombées, aucune ne visait un défaut de ton code
+1. **L'apostrophe** — « J'apprends » s'écrit `J&#39;apprends`. ⚠️ **Neuf bancs** redéfinissaient
+   la même fonction de leur côté : ce n'est pas de la duplication paresseuse, c'est le signe que
+   le piège est **structurel**. `session.rb` porte désormais `sans_apostrophe` et `contient?`.
+   **Sers-t'en**, tes définitions locales restent valides.
+2. **Compter les mots au lieu des boutons** — « aucun libellé Ombre offert au Monde 0 » voyait
+   le mot parce qu'un autre venait de le POSER, et qu'une réaction posée s'affiche avec son
+   compte. `verifier_palette_monde_0` décrit ce piège depuis le 25 août. On compte les ACTIONS
+   OFFERTES (`reactions_semantiques?libelle=`), et l'assertion gagne sa contrepartie positive.
+3. **Une fenêtre qui déborde sur le voisin** — « le titre est du texte » découpait le titre
+   *et les 120 caractères suivants*, où se trouve le lien de l'URL, qui doit y être. La fenêtre
+   se borne à l'élément.
+4. ⚠️ **Une assertion qui courait après un worker** — « l'attente se dit » échouait **un passage
+   sur deux** : `ApercuDeLienJob` tourne pour de vrai en préprod. Deux formes intermédiaires ont
+   échoué avant la bonne, et elles t'éviteront de les refaire : remettre l'état à `en_attente`
+   ne suffit pas (le job repasse après) ; poser une seconde carte dans le même fil non plus (la
+   découpe prend la PREMIÈRE carte — j'ai déplacé le défaut avant de le corriger). La forme
+   stable est **un espace à elle**, avec une ressource que nul job ne vise.
+   **Rejouée trois fois de suite** avant d'être déclarée verte : un seul passage ne prouve rien
+   sur une assertion temporelle.
+
+### Le contrat de navigation mobile de Codex est tenu côté serveur
+« Réouvrir l'aide liée à la clé serveur de la page, **sans consommer un nouveau marqueur** et
+sans renvoyer vers `/aide` » : `?aide=1` fait exactement cela — vérifié, `verifier_aide_de_page`
+§5 asserte « …sans rien effacer ». Rien à ajouter de mon côté.
