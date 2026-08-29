@@ -1395,3 +1395,46 @@ non plus, si tu la fais autonome.
 clause de consentement du canon (l'auteur et le partageur sont la même personne). Ne propose
 donc pas les éléments d'autrui — le service les refuse, et l'interface ne doit jamais offrir ce
 que le serveur refuse.
+
+---
+
+## 29 août — « Partager un lien » : la couche est en production. La carte est à toi.
+
+Codex §7. Le modèle, le service, la garde d'adresse et le travail de fond sont livrés.
+**Brakeman : aucun avertissement.**
+
+### Ce que tu peux appeler
+`m.ressource_de_lien` → `nil`, ou : `url` · `domaine` · `titre` · `description` · `image_url` ·
+`etat_apercu` (`en_attente` / `obtenu` / `echoue`) · `apercu?` · `libelle`.
+
+### ⚠️ Quatre règles de rendu, et ce ne sont pas des préférences
+
+1. **L'URL reste VISIBLE et la destination ouvrable SÉPARÉMENT de l'aperçu** (§7). Un aperçu
+   cliquable qui masque l'URL est exactement ce que le canon interdit : le lecteur doit voir où
+   il va avant d'y aller.
+2. **Trois états, pas deux.** `en_attente` n'est pas `echoue`. Pendant les quelques secondes du
+   travail de fond, montre le repli — surtout ne fais pas clignoter la carte quand l'aperçu
+   arrive. `libelle` te donne déjà le bon texte dans les trois cas.
+3. **Le repli est `domaine + URL + contexte`, sans inventer de titre** (§7 mot pour mot). Ne
+   mets pas « Lien » ni le domaine en guise de titre : le domaine EST ce qu'on montre.
+4. ⚠️ **NE REND PAS `image_url`.** Elle est conservée en base, assainie, et passée par la même
+   garde d'adresse. Mais l'afficher depuis son hôte d'origine révèlerait **l'adresse IP de chaque
+   lecteur du fil** au site partagé — un pixel de suivi y suffit. La rendre demandera un relais
+   côté serveur. **J'ai signalé la décision à Boris ; ne la prends pas à sa place.**
+
+### Ce que le service garantit déjà, et que tu n'as pas à refaire
+`titre` et `description` **ne contiennent plus de balisage** : le service les RETIRE au lieu de
+les échapper. « Aucun script, iframe ou HTML distant injecté dans le fil » ne se tient pas en
+échappant à l'affichage — il se tient en ne transportant jamais de balisage jusque-là. Tu peux
+donc les rendre comme du texte ordinaire, et **tu ne dois jamais** les passer à `html_safe`.
+
+### La leçon de banc de ce lot, qui vaut au-delà
+Huit assertions de plages privées étaient **vertes pour la mauvaise raison** : ma garde envoyait
+les IP littérales au résolveur DNS, qui ne connaît pas « 127.0.0.1 » comme un nom, et rendait
+« hôte introuvable ». Le refus était juste, sa raison fausse, et **aucune plage privée n'était
+jamais consultée**. Le banc asserte désormais la RAISON du refus, pas le booléen.
+**Une assertion doit échouer pour la bonne raison, pas seulement échouer.**
+
+### Et comme pour le Récit : pas de menu
+Le geste vit dans le composeur M1 parmi cinq, dont quatre relèvent du chantier « Mouvement »
+que Boris n'a pas ouvert. Fais la carte autonome ; le menu viendra avec le reste.
