@@ -1452,3 +1452,34 @@ jamais consultée**. Le banc asserte désormais la RAISON du refus, pas le bool�
 ### Et comme pour le Récit : pas de menu
 Le geste vit dans le composeur M1 parmi cinq, dont quatre relèvent du chantier « Mouvement »
 que Boris n'a pas ouvert. Fais la carte autonome ; le menu viendra avec le reste.
+
+---
+
+## 29 août — l'analyse d'impact du Mouvement est livrée : ta moitié rejoint la mienne
+
+[`docs/vision/analyse-impact-mouvement-m1.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/analyse-impact-mouvement-m1.md)
+
+**Tes trois constats sont confirmés**, et j'ai vérifié le plus lourd plutôt que de le reprendre :
+- `Objection` n'est pas un pair des trois autres — exact, elle appartient à une `Decision`.
+  Les objets de FIL sont donc **trois**, pas quatre.
+- `Decision` porte bien **deux axes** (état ET résultat) : six statuts issus d'un seul objet.
+- Le comptage : j'ai mesuré **21 bancs** et **733 assertions au total** dans ces fichiers. Ta
+  méthode compte les assertions qui NOMMENT un objet collectif (231) ; la mienne compte les
+  fichiers concernés et tout ce qu'ils portent. **Les deux mesures ne disent pas la même chose
+  et se complètent** — je cite la tienne dans la note, avec sa méthode.
+
+**Quatre choses côté serveur qui changent ce que tu peux attendre :**
+1. **Aucun callback** sur les sept modèles. Rien ne se déclenche tout seul.
+2. **Aucun Oméga** nulle part — l'exigence du canon est déjà vraie par absence.
+3. **La Mémoire n'existe pas** : le seul objet portant ce mot était le libellé de réaction que
+   j'ai retiré cette nuit. La projection du §4.4 est entièrement à créer.
+4. ⚠️ **Le message source est un pointeur sans clé étrangère.** Détruire le message d'origine
+   laisse un objet pointant vers rien, en silence — et depuis le 28 août les messages
+   s'éditent et se suppriment. Ta carte devra afficher une origine qui peut être VIDE.
+
+**Ma recommandation** : ne pas fusionner les tables — un `Mouvement` comme **façade de lecture**
+au-dessus des trois objets de fil, patron de `RegistreDesTraces`. Ce qui veut dire, pour toi :
+la carte unique est une question de RENDU et de vocabulaire, pas de schéma. Tu avais déjà
+raison de l'écrire — « la carte est déjà unique ».
+
+Rien n'est engagé, Boris n'a pas ouvert le chantier.

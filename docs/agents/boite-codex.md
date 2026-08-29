@@ -205,3 +205,46 @@ page d'arrivée — celle qu'on n'a pas lue — et laisserait la sienne revenir 
 libellés désignent tous un geste à faire SUR la page (« Explorer ma Fresque », « Lire mon
 Moteur »), ce qui tombe juste : le CTA referme et rend la page. Si l'un d'eux devait vraiment
 mener ailleurs, il faudrait un second contrôle — dis-le-moi plutôt que je l'invente.
+
+---
+
+## 29 août — l'analyse d'impact du Mouvement M1 est livrée (§11)
+
+[`docs/vision/analyse-impact-mouvement-m1.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/analyse-impact-mouvement-m1.md)
+— la moitié SERVEUR, tout mesuré dans le code déployé. Le poste fixe avait livré la moitié
+interface. **Les cinq axes que tu demandais sont couverts**, et voici les quatre constats qui
+changent le chiffrage.
+
+⚠️ **Aucun callback, sur aucun des sept modèles.** Rien ne se déclenche implicitement quand un
+état change. La crainte ordinaire d'une fusion n'a pas d'objet ici.
+
+⚠️ **Aucun Oméga, nulle part** — mesuré sur les sept modèles ET leurs six contrôleurs. Ton
+exigence §9 (« aucun clic, sondage, consentement ou passage d'état ne distribue automatiquement
+d'Oméga ») **est déjà vraie, par absence**. C'est un acquis à protéger, pas à construire.
+
+⚠️ **La Mémoire n'existe pas.** Ton §4.4 écrit « la projection dans la Mémoire pointe vers le
+Mouvement historique et sa Trace ». Il n'y a aucun modèle Mémoire dans l'application ; le seul
+objet portant ce mot était le libellé de réaction « À garder dans la Mémoire », **retiré ce
+29 août** par ton propre arbitrage sur la palette Ombre/Lumière. Cette projection est
+entièrement à créer, et elle n'est chiffrée nulle part.
+
+⚠️ **Deux exigences du canon que le code ne porte pas encore**, et qui ne sont pas des
+finitions :
+- §5 — « des notifications fiables » : aujourd'hui **aucun objet collectif ne notifie**, les
+  notifications ne partent que d'un message. Sans elles, la règle d'absence-vaut-consentement
+  n'est pas seulement risquée, elle est inapplicable.
+- §9 — « seules les personnes réellement impactées et explicitement éligibles participent au
+  consentement » : aujourd'hui tout membre du Cercle peut consentir. **L'éligibilité par
+  personne est un objet nouveau**, pas un filtre.
+
+**Ma recommandation, et elle suit ton §11** : ne pas fusionner les tables. Tu l'autorises
+(« l'implémentation peut conserver plusieurs enregistrements internes ») ; aucun callback ne
+l'exige, l'audit y gagne, et un `Mouvement` peut être une **façade de lecture** au-dessus des
+trois objets de fil existants — le patron de `RegistreDesTraces`, déjà éprouvé ici.
+
+**Le coût réel est ailleurs que là où on le cherche** : 21 bancs et 733 assertions vivent sur
+ces objets, dont les 231 que le poste fixe a comptées nomment un objet collectif. À notre règle,
+ce n'est pas une finition. *Le risque n'est pas dans les tables, il est dans le vocabulaire.*
+
+Rien n'est engagé : Boris n'a pas ouvert ce chantier, et l'analyse ne tranche aucun arbitrage
+éditorial — notamment la correspondance entre les **26 états** actuels et tes quatre.
