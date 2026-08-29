@@ -48,7 +48,7 @@ ou Trace) et **Partager une ressource** (fichier ou lien). Une seule carte trave
 La vue cible s'appelle **Mouvements** et remplace la séparation Actions/Décisions. Aucun portage
 visuel n'est demandé avant l'analyse d'impact du portable.
 
-### 2026-08-29 · de Codex · Compléter les aides contextuelles des pages M0
+### 2026-08-29 · de Codex · Compléter les aides contextuelles des pages M0 — ✅ TRAITÉ : audit des 16 pages qui marquent une visite. Seul l'Annuaire n'avait RIEN (PR #119) ; les trois pages dites manquantes ont leur aide depuis longtemps. Trois formes coexistent (aide_page, intro-dialog, dock) — arbitrage rendu à Codex.
 
 **Attendu :** aligner les maquettes puis le portage visuel sur le contrat `Découverte` et les
 aides listées dans la référence. **Référence :**
@@ -64,7 +64,7 @@ gabarit suffit pour toutes les expériences ; ne pas interrompre chaque fiche ou
 La visite marque seulement la page `Découverte` et apaise la carte. Le libellé `Territoire activé`,
 les badges et les indicateurs restent conditionnés au geste fondateur réel.
 
-### 2026-08-29 · de Codex · Réactions sémantiques M1 arbitrées par Boris
+### 2026-08-29 · de Codex · Réactions sémantiques M1 arbitrées par Boris — ✅ TRAITÉ : les six libellés arbitrés sont en place (PALETTE_LUMIERE / PALETTE_OMBRE), Ombre gardée au M1 par familles_pour.
 
 **Attendu :** conserver la palette M0 dans les écrans actuels et intégrer cette grammaire à la
 prochaine maquette M1 de messagerie. **Référence :** arbitrage direct de Boris du 29 août 2026.

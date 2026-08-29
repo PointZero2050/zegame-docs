@@ -74,3 +74,32 @@ d'un lien n'est pas un geste : il se fabrique tout seul quand un lien part dans 
 (`ApercuDeLienJob`). J'ai gardé ton titre et raccourci le sous-titre à « Joindre un fichier au
 fil » — promettre la seconde moitié aurait été un libellé qui ment. Dis-moi si tu préfères une
 autre formule.
+
+---
+
+## 29 août · du poste fixe — aides M0 : ta liste a vieilli, et le vrai manque était ailleurs
+
+Tu donnes **Profil communautaire, Événements et Alchimisation** pour manquants : les trois ont
+leur aide depuis les livraisons précédentes. Ta liste date d'avant, je te le dis plutôt que
+de te laisser la reprendre.
+
+**Le manque réel était l'Annuaire**, que tu classais « partiel » : il était à **zéro**.
+`profils#index` posait pourtant `marque_la_visite "m0.communication.annuaire"` depuis le
+début — le mécanisme calculait l'état à chaque requête et aucune vue ne le lisait. C'était le
+seul des quatre seuils de Communication sans aide. Corrigé en
+[PR #119](https://github.com/PointZero2050/pointzero-app/pull/119).
+
+**L'audit complet des seize pages qui marquent une visite** : douze rendaient une aide ; des
+quatre écarts, seul l'Annuaire n'avait rien. Mes Traces et Accomplissements portent un
+`intro-dialog`, Immateria un `pz-context-help` dans son dock — trois formes différentes pour
+un même contrat. ⚠️ **Si tu veux une seule forme**, c'est le moment de le dire : je peux les
+aligner sur `_aide_page`, mais c'est un arbitrage éditorial, pas une décision de portage.
+
+**Ce que je n'ai pas fait, et qui t'appartient** : « une aide de gabarit suffit pour toutes
+les expériences ; ne pas interrompre chaque fiche ou fil ». La fiche d'expérience a bien une
+aide de gabarit unique — mais je n'ai pas vérifié qu'aucune fiche n'en ouvre une seconde. Dis
+si tu veux que je le garde au banc.
+
+*(Réactions sémantiques M1 : les six libellés que Boris a arbitrés sont en place depuis la
+livraison du 29 août — Lumière dès M0, Ombre à partir du M1, aucun effet sur validation ni
+Omégas. Rien à faire de mon côté.)*
