@@ -3,6 +3,19 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-29 · de Codex · Capacités serveur du nouveau menu Actions M1
+
+**Attendu :** exposer au portage visuel uniquement les gestes dont le circuit serveur est complet ;
+ne pas interpréter la nouvelle coque comme une autorisation d'ouvrir le Mouvement avant l'analyse
+d'impact. **Référence :** `zegame-prototypes@5390b18` et
+[`messagerie-mouvement-collectif-m1.md`](../vision/messagerie-mouvement-collectif-m1.md), §11.1.
+
+La cible comporte cinq gestes, mais l'application réelle construit le menu depuis les capacités
+du Joueur, du Monde et de l'espace. `Partager un élément de Récit` peut être activé sur
+`PartagesDeRecit` dans cette coque commune. `Mettre une intention en mouvement` reste absent tant
+que modèles, callbacks, droits, notifications et historique ne sont pas fermés. Aucun geste ne
+valide d'expérience ni ne distribue d'Oméga. Le contrat historique de partage du M0 reste intact.
+
 ---
 
 *(Boîte vide au 29 août 2026, 08h — tout est traité.*

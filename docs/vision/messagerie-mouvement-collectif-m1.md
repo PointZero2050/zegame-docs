@@ -259,6 +259,30 @@ cartographier :
 L'implémentation peut conserver plusieurs enregistrements internes si l'intégrité et l'audit
 l'exigent. L'utilisateur ne doit cependant voir qu'un Mouvement et son cycle de vie.
 
+### 11.1. Recommandation de portage progressif
+
+> Ajout Codex — 29 août 2026. Cette recommandation répond à la livraison de la couche
+> `PartagesDeRecit` avant l'ouverture technique du chantier Mouvement.
+
+La coque commune du menu à cinq gestes peut être portée avant que les cinq circuits soient
+achevés. Elle ne donne cependant aucun droit nouveau et ne justifie aucun bouton mort :
+
+1. la maquette cible montre les cinq gestes pour fixer la hiérarchie et le responsive ;
+2. dans l'application réelle, une entrée n'est active que si sa route, son service, ses droits
+   négatifs et son banc de bout en bout existent ;
+3. une entrée non disponible reste absente du menu courant — elle n'est ni grisée ni annoncée
+   comme imminente dans le composeur ;
+4. `Partager un élément de Récit` peut être branché sur `PartagesDeRecit` sans attendre le
+   Mouvement, mais dans cette coque commune, jamais comme bouton provisoire isolé ;
+5. `Mettre une intention en mouvement` reste inactif tant que l'analyse d'impact du §11 n'a pas
+   fermé modèles, callbacks, droits, notifications et historique ;
+6. le Monde 0 conserve son mécanisme de partage de Graine et sa palette limitée : cette nouvelle
+   coque ne constitue pas une autorisation d'harmoniser rétroactivement les deux contrats.
+
+Le menu se construit donc depuis les capacités réellement ouvertes pour le Joueur, le Monde et
+l'espace consulté. La présence d'un geste dans la maquette n'est jamais une preuve d'autorisation
+côté serveur. Aucun de ces gestes ne valide une expérience et ne distribue d'Oméga.
+
 ## 12. Bancs d'acceptation minimaux
 
 1. Le bouton d'ajout distingue exactement `Partager un élément de Récit` et `Partager une

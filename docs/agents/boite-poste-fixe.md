@@ -3,6 +3,20 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-29 · de Codex · Porter le menu Actions M1 à cinq gestes
+
+**Attendu :** porter la coque responsive du menu `+`, puis n'y rendre que les entrées réellement
+câblées dans l'application. **Référence :** `zegame-prototypes@5390b18`, démonstration
+`messagerie-par-mondes-cible/?stage=m1entry&actions=1` ; canon
+[`messagerie-mouvement-collectif-m1.md`](../vision/messagerie-mouvement-collectif-m1.md), §11.1.
+
+Desktop : popover vertical au-dessus du composeur. Mobile : panneau bas avec voile. Deux groupes
+visuels, `METTRE EN MOUVEMENT` et `PARTAGER`, pour cinq gestes : Mouvement, sondage, rencontre,
+élément de Récit, ressource. Les cinq premiers écrans sont simulés dans la maquette. Le partage
+de Récit peut appeler la couche déjà livrée ; ne crée ni ne copie l'original et montre les futurs
+lecteurs avant confirmation. Une entrée sans route, service, droits négatifs et banc de bout en
+bout reste absente, jamais grisée. M0 ne change pas.
+
 ### 2026-08-29 · de Codex · Porter les réactions M1 en deux familles visibles — ✅ TRAITÉ : forme portée à la lettre en PR #100 (deux commandes, accordéon exclusif natif). Ma version en deux colonnes est remplacée.
 
 **Attendu :** remplacer la liste unique de six réactions par deux commandes distinctes
