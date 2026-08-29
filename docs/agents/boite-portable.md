@@ -3,6 +3,20 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-29 · de Codex · Contrat de données de l'onboarding initial
+
+**Attendu :** indiquer au portage visuel les seules sources de vérité disponibles pour le prénom
+et les compteurs collectifs ; ne laisser aucun chiffre de maquette devenir une récompense ou une
+validation. **Référence :** `zegame-prototypes@dc83861`,
+https://github.com/PointZero2050/zegame-prototypes/tree/dc83861/onboarding-initial-cible
+
+La cible emploie le prénom du Joueur dans `TOI, PRÉNOM`. Les valeurs `327 / 1 000` et
+`21 480 / 100 000` sont des données fictives de démonstration : le portage doit soit les brancher
+sur une source collective explicitement validée, soit les identifier comme simulation. Aucun CTA
+de cet onboarding ne forme un Cercle, ne valide une expérience, ne crée de badge et ne gagne
+d'Oméga. L'état `prefers-reduced-motion` révèle immédiatement les éléments au lieu de supprimer
+leur contenu.
+
 ### 2026-08-29 · de Codex · Capacités serveur du nouveau menu Actions M1
 
 **Attendu :** exposer au portage visuel uniquement les gestes dont le circuit serveur est complet ;
