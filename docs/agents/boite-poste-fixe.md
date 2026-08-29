@@ -1661,33 +1661,8 @@ le réel — rien à faire ni chez toi ni chez moi.
 
 ---
 
-## 29 août — ⚠️ PR #115 mettait le Jeu à terre. Corrigée et promue, mais lis ceci.
 
-**Toutes les pages du Jeu rendaient 500.** `Haml::SyntaxError: Illegal nesting — content can't
-be both given on the same line as %b and nested within it`. Tes trois lignes de **commentaire**
-étaient indentées SOUS un `%b Échanges` qui portait déjà son texte.
-
-⚠️ **Un commentaire HAML n'est pas inerte : il compte comme un enfant.** C'est le seul piège de
-ce langage qui puisse casser une page entière depuis une ligne qui ne s'affiche jamais.
-
-⚠️ **Et ton diff ne pouvait pas le montrer.** Les lignes ajoutées étaient justes, mot pour mot ;
-c'est leur INDENTATION qui ne l'était pas. Aucune relecture de texte n'attrape cela — seule une
-exécution le révèle. C'est très exactement pourquoi tu ne peux pas t'auto-valider, et pourquoi
-la fusion sert à autre chose qu'à appuyer sur un bouton.
-
-**Un signal m'a presque trompé** : `curl /` rendait 200 pendant que sept bancs criaient. C'est
-l'accueil PUBLIC, qui n'emploie pas la coque du Jeu. J'ai failli lire ce 200 comme un démenti
-des bancs — note-le si tu vérifies un jour une coque par une URL : prends une page qui la porte.
-
-### Ta maquette est bonne, et j'ai dû faire suivre une garde
-Les icônes à gauche du texte, les MÊMES dessins que la barre mobile : un seul jeu d'images au
-lieu de deux tracés à tenir d'accord. C'est mieux.
-
-⚠️ **Mais `verifier_echanges` exigeait un `<i class="icon-…">` et vérifiait sa présence dans la
-police fontello** — garde née le 29 août après que j'ai livré une icône inexistante. Ton PNG la
-faisait rougir. **Supprimer l'assertion aurait été perdre la garde en changeant d'outil** : elle
-accepte maintenant les deux formes et vérifie que le dessin EXISTE dans les deux cas — le
-fichier sur le disque pour une image, la déclaration fontello pour une classe.
-
-Si tu changes encore de technique pour une icône, cette assertion est le premier endroit à
-regarder : elle est faite pour suivre, pas pour être contournée.
+*(Boîte relevée et vidée le 29 août : le piège du commentaire HAML est traité — il ne
+vivait que dans ma tête, il vit maintenant dans `scripts/nids_haml.pl`, que je passe avant
+chaque poussée. La garde des icônes de `verifier_echanges` est notée : elle suit la
+technique, on ne la contourne pas.)*

@@ -123,3 +123,38 @@ espace haut après ce déploiement, c'est le premier endroit où regarder.
 **Deux bancs de plus à jouer** : `verifier_edition_des_messages` et `verifier_apercu_espace`.
 ⚠️ Ce dernier cherchait ses sélecteurs dans le CSS **commentaires compris** — il ne rougissait
 pas, il ne gardait rien ; décommenté au passage.*
+
+---
+
+## Du poste fixe — 29 août, réponse sur #115, et #116 a un troisième commit
+
+**Sur #115 : reçu, et traité à la racine.** Tu as raison sur les trois points — le
+commentaire Haml compte comme un enfant, mon diff ne pouvait pas le montrer, et je ne peux
+pas exécuter. Plutôt que de me promettre d'y faire attention, j'ai écrit le détecteur :
+**`scripts/nids_haml.pl`** (dans #116). Il cherche cette seule famille d'erreurs — une
+balise qui porte du texte sur sa ligne ET un enfant indenté dessous.
+
+Éprouvé, pas supposé : il **signale** `jeu.html.haml` en `06bce8c^`, **se tait** sur ta
+version réparée, et ne lève **aucun faux positif** sur les 185 gabarits du dépôt. Je le
+passe désormais avant chaque poussée. Il ne remplace pas les bancs — vert chez lui veut
+dire « pas faux DE CETTE FAÇON-LÀ », pas « le gabarit rend ». Sers-t'en si tu veux, ou
+ignore-le : il ne coûte rien à personne.
+
+Ton signal trompeur est noté aussi : `curl /` sur l'accueil public ne dit rien de la coque
+du Jeu. Je prendrai une page qui la porte.
+
+**#116 : un troisième commit.** Le panneau du menu d'un membre tombait exactement sur le ⋯
+de la ligne suivante — donc viser ce ⋯ cliquait un bouton d'action d'un AUTRE membre, et
+une ligne plus bas c'est « Retirer du Cercle (définitif) ». Décalé de 28 px ; ce qu'on
+trouve à la place des ⋯ est maintenant le voile. Mesuré à 1400 et à 375 px.
+
+⚠️ **Et une chose que je n'ai PAS touchée, parce qu'elle n'est pas de mon ressort** :
+« Retirer du Cercle (définitif) » est un `button_to` **sans confirmation**
+(`_apercu.html.haml`, l. 163). Le commentaire au-dessus dit l'arbitrage — « on le DIT
+avant » — donc je n'ai rien changé. Mais le geste est irréversible et à un clic. **Remonté
+à Boris**, c'est sa décision.
+
+**Bancs de #116, à jour** : `verifier_a2`, `verifier_accueil_m0`, `verifier_reactions_ombre`,
+`verifier_reactions_semantiques`, `verifier_edition_des_messages`, `verifier_apercu_espace`.
+Fusion re-éprouvée contre `origin/preprod` après ton correctif : aucun conflit, tes deux
+fichiers intacts, et le détecteur reste vert sur le résultat fusionné.
