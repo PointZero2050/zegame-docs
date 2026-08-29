@@ -1203,3 +1203,52 @@ la structure, pas la scénographie.
 - **Un compte versé dans les deux communautés reste AU SEUIL.** `Mondes.ouvert?` exige d'avoir
   achevé les expériences obligatoires ; le seul autre chemin est le mandat d'administrateur.
   `verifier_palette_monde_0` le documentait depuis le 25 août, et j'ai refait l'erreur.
+
+---
+
+## 29 août — PR #98 et #99 en production. Ta ligne des Guides est posée.
+
+Les deux fusionnées sans conflit, promues, 20 bancs verts en préprod et 9 en production.
+
+**#99 est la meilleure des deux, et c'est la plus petite.** Dépouiller les commentaires avant
+de comparer du CSS, c'est la leçon que je me répète depuis trois jours appliquée là où je ne
+l'avais pas vue — et ta formulation est plus juste que la mienne : une assertion **positive**
+reste verte si la règle disparaît mais qu'un commentaire la cite (or c'est exactement ce qu'on
+écrit en retirant une règle), une **négative** rougit dès qu'un commentaire nomme la valeur
+qu'on vient d'ôter. Même phrase, effet opposé. Je la reprends.
+
+### ⚠️ Ta ligne est posée, et elle a fait rougir ton banc
+
+`marque_la_visite "m0.intuition.guides_page", only: :new` — posée, DISTINCTE de
+`m0.intuition.guides` qui dit « a échangé une première fois ». Ton commentaire de contrôleur
+avait raison sur toute la ligne, et la garde `action_name == "new"` de ta vue devient superflue
+tout en restant juste.
+
+**Mais ton régime 2 portait deux assertions que ton commentaire déclarait valables « dans les
+deux régimes », pour ne pas punir l'amélioration attendue.** L'intention était juste ; la mesure
+l'a démentie. « Le contrôle de réouverture est servi » n'était vrai QUE sans marqueur, parce que
+l'aide restait fermée. Dès qu'un marqueur existe, elle **s'ouvre** à la première visite — et le
+contrôle n'est pas rendu pendant qu'elle l'est. **Ton assertion a rougi à l'instant même où on
+lui donnait ce qu'elle attendait.**
+
+La bonne réalisation de ton intention n'est pas une assertion qui vaudrait des deux côtés :
+c'est de **déplacer la page vers le régime 1**, qui en vérifie sept au lieu de deux. Les Guides
+y sont passés. Il ne reste que le mentor en attente de sa ligne — dis-moi la clé que tu veux
+(`m0.emotion.mentor` ?) et sur quelle action, je la pose.
+
+### Ce que j'ai vérifié à l'écran
+`/jeu/evenements`, une page équipée cette nuit : l'aide s'ouvre, voile 697 × 668, CTA « Voir les
+événements » de 209 × 48 portant `?aide_vue=1`. Et la table rase tient — **0 marque d'aide en
+production** : chaque joueur verra chaque aide une fois.
+
+### Les réactions Ombre t'attendent toujours
+Le modèle porte les deux familles depuis cette nuit (`familles_pour`, `famille_de`). Ta vue rend
+encore **une liste à plat de six**, et tu avais toi-même nommé le risque : « celui qui vient en
+premier sera lu comme le normal ». C'est le seul endroit où la lecture morale peut naître
+maintenant.
+
+### Ton analyse « carte unique / Mouvements »
+Lue. Les trois constats qui changent le chiffrage sont notés — surtout les **231 assertions de
+bancs** qui nomment un objet collectif : à notre règle, ce n'est pas une finition. Je te réponds
+sur les droits, callbacks, notifications et Omégas quand Boris ouvrira ce chantier ; il ne l'a
+pas fait.
