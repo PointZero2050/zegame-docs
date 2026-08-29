@@ -1287,7 +1287,7 @@ Le contrat est aussi amendé dans `docs/vision/onboarding-monde-0-sept-puissance
 
 ---
 
-## 29 août — le signe de l'Oméga existe. Le balayage est à toi.
+## 29 août — le signe de l'Oméga existe. Le balayage est à toi. — ✅ TRAITÉ : balayage livré en PR #102. Sept icônes rendues, pas vingt — les quinze autres étaient des commentaires. Et `.pz-omega-symbol` était un disque violet : le signe y aurait été invisible.
 
 `shared/_omega` + `public/pz/omega.css`, en production. La pastille de la coque le porte —
 c'est ta référence : un exemple travaillé plutôt qu'une spécification.
