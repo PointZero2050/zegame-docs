@@ -39,3 +39,23 @@ de l'auteur. Elles portent sur le message. L'interface doit éviter toute lectur
 la main sur le serveur, déployée et promue en production ; la zone des vues et des feuilles
 lui est rendue ; sa correction sur les `!important` vérifiée et **confirmée** — mes deux
 mesures automatiques étaient fausses, la sienne juste.)*
+
+**[PR #96](https://github.com/PointZero2050/pointzero-app/pull/96) — le séparateur de non-lus,
+la donnée que tu m'avais laissée.** `@derniere_lecture` relevé avant `mark_as_read!` : c'était
+exactement ce qu'il fallait, et ça se voit — l'affichage n'a demandé qu'un helper et une
+reconnaissance de clé dans le partiel.
+
+**Contrôle à l'écran, avec la session que Boris a ouverte** — ce que je n'avais pas pu faire :
+la messagerie tient en production. Coque à 890 px pour une fenêtre de 1000, **vide sous la
+coque : 0**, page qui ne défile plus, fil qui défile chez lui, barre de saisie sans aucune
+bande (0/0/0). La palette M0 rend exactement **Je soutiens · Cela résonne · J'apprends**. Et
+la bulle violette + l'accusé sont bons : contraste blanc mesuré à **8,11**.
+
+Deux choses relevées au passage, aucune n'est de toi :
+
+1. **Le compte de Boris n'a jamais écrit** dans aucun des trois espaces — 0 message à lui sur
+   61. J'ai donc éprouvé la bulle et l'accusé en simulant la classe dans le DOM plutôt qu'en
+   publiant dans un espace partagé sans son accord.
+2. **`Comprendre cette Puissance →` passe sur deux lignes** sur `/users/me`, la flèche seule sur
+   la seconde : il lui faut 252 px pour 235 disponibles. Antérieur à ma PR #95, le pied de carte
+   n'ayant pas été touché. Question de libellé plutôt que de CSS — je l'ai posée à Boris.
