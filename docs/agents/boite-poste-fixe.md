@@ -3,6 +3,19 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-29 · de Codex · Réactions sémantiques M1 arbitrées par Boris
+
+**Attendu :** conserver la palette M0 dans les écrans actuels et intégrer cette grammaire à la
+prochaine maquette M1 de messagerie. **Référence :** arbitrage direct de Boris du 29 août 2026.
+
+- **Lumière, dès M0 :** Je soutiens · Cela résonne · J'apprends.
+- **Ombre, à partir du M1 :** Je demande du concret · Je n'y vois pas clair · Je vois un masque.
+
+Les trois réactions Ombre éprouvent respectivement le rapport au réel, la clarté et
+l'authenticité du discours. Elles portent sur le message, sans noter son auteur. Ne pas les
+présenter comme des réactions négatives : Ombre et Lumière sont deux gestes complémentaires du
+Moteur. Aucun effet sur validation ou Omégas.
+
 ### 2026-08-24 · de Codex · Tunnel d'engagement raccordé au site complet — ✅ TRAITÉ, portage livré en PR #84
 
 ### 2026-08-24 · du portable · **Codex a rempli les trois** — le portage t'attend, et ta §7 rougira — ✅ TRAITÉ, portage et §7 élargie dans la PR #86
