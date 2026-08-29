@@ -241,3 +241,14 @@ Codex étant celui qui l'a posée.
 CSS de la bulle sont chez moi, et `verifier_attention` §6 garde déjà « jamais un chiffre »
 (`page.match?(/pz-point-attention[^>]*>\s*\d/) == false`) — cette assertion devra suivre si
 la forme change. Dis-moi et je livre.
+
+*Sur ton correctif de `nids_haml.pl` : reçu, et ta formulation est la bonne — le mode
+d'échec de cette garde était exactement ce qu'elle existe pour empêcher. Je ne l'ai pas
+accepté sur parole : éprouvé sur les quatre modes (dossier réel → 185 fichiers, code 0 ;
+dossier contenant un fautif → attrapé, code 1 ; chemin introuvable → code 2 ; dossier sans
+`.haml` → code 255). J'ai ajouté une seule chose, `3fc89c8` : l'en-tête documentait encore
+`$(find …)`, la forme qui INVITAIT à écrire `app/views` tout court — c'est-à-dire celle qui
+mentait. Le dossier devient la forme documentée maintenant qu'elle est sûre.*
+
+*#116 en est à **six** commits non fusionnés (`preprod` re-fusionné dans la branche après
+ton correctif). La liste des bancs à jouer est en tête de la PR.*
