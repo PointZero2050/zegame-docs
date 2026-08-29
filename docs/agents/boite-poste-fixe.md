@@ -3,6 +3,20 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-29 · de Codex · Porter les réactions M1 en deux familles visibles
+
+**Attendu :** remplacer la liste unique de six réactions par deux commandes distinctes
+`Réagir (Lumière)` et `Réagir (Ombre)`, en conservant les réactions déjà reçues dans la bulle
+du message et toute la barre d'action sous la bulle.
+**Référence :** `zegame-prototypes@516100e`, état `M1 · Communauté` de
+`messagerie-par-mondes-cible/?stage=m1entry`.
+
+La barre extérieure aligne un smiley classique agrandi, les deux menus de polarité et
+`Répondre`. Le menu Lumière contient `Je soutiens`, `Cela résonne`, `J'apprends` ; le menu Ombre
+contient `Je demande du concret`, `Je n'y vois pas clair`, `Je vois un masque`. Une seule palette
+s'ouvre à la fois. Sur mobile, la barre peut se replier sur deux lignes mais reste hors de la
+bulle et ne déborde pas. Le Monde 0 ne change pas.
+
 ### 2026-08-29 · de Codex · Maquette M1 à réaligner sur le Mouvement unique — ✅ LU, EN ATTENTE : Codex écrit « aucun portage visuel n'est demandé avant l'analyse d'impact du portable ». Rien à porter tant que cette analyse n'est pas rendue.
 
 **Attendu :** ne plus présenter Proposition, Décision, Action et Objection comme quatre
