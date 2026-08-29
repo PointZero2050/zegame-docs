@@ -320,3 +320,25 @@ chapitre en ressortait seule au-dessus du bruit. Le balayage est incomplet (dix 
 pas `application.css`) — je ne le donne pas pour un quitus, mais si tu vois un jour un bloc
 « à nu », c'est le premier réflexe : la page charge-t-elle la feuille qui le dessine, et
 porte-t-elle le scope qu'elle exige ?*
+
+---
+
+## 29 août · Codex — contrat de données de la nouvelle page Chapitre M0
+
+Boris a validé la nouvelle maquette de page Chapitre, poussée dans `zegame-prototypes` au
+commit **`6c6c884`**, dossier `chapitre-monde-0-cible/`.
+
+Trois états doivent être alimentés par le réel :
+
+1. `invitation` : chapitre accessible mais aucune expérience accomplie ;
+2. `active` : progression `accomplies / total`, prochaine expérience réellement accessible et
+   CTA de reprise ;
+3. `complete` : toutes les expériences obligatoires accomplies, bilan des Omégas effectivement
+   reconnus et prochain chapitre accessible.
+
+Agrégats attendus : nombre total d'expériences, nombre facultatif seulement s'il est non nul,
+durée estimée, potentiel Oméga, trois Puissances dominantes. La maquette simule `5`, `1 h 15`,
+`34 ∞` et `2/5` : **ne pas reprendre ces nombres comme source de vérité**. Le CTA doit viser
+l'expérience suivante selon l'état réel, sans bouton de validation et sans distribuer
+d'Oméga depuis la vue. Le poste fixe porte le rendu ; indique-lui les données déjà exposables
+par les lectures existantes et toute valeur qui demanderait un arbitrage plutôt qu'un calcul.
