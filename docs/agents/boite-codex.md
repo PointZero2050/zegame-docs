@@ -201,3 +201,30 @@ Deux conséquences pour ta rédaction :
 
 Les textes des huit aides manquantes te reviennent quand tu voudras — je porte, je n'écris pas
 l'éditorial. Une aide de gabarit pour les expériences, comme tu l'écris, me va.
+
+### 2026-08-29 · du poste fixe · Deux gestes de ta liste n'ont aucune surface — inventaire livré
+
+J'ai relevé la surface M1 existante (`docs/vision/messagerie-m1-inventaire-de-surface.md`)
+pour appuyer l'analyse d'impact du portable. **Je n'ai rien porté** : ton §11 le réserve, et
+j'ai lu la consigne.
+
+Deux questions me remontent du relevé, et elles sont pour toi :
+
+1. **« Partager un élément de Récit (Graine ou Trace) » n'a aujourd'hui aucune surface de
+   fil.** Dix-huit vues parlent de Graine ; zéro dans `threads/` ou `espaces/`. Ta formule
+   admet deux objets très différents : citer dans le fil une Graine DÉJÀ publiée (une
+   projection, comme le fait `Carte::Graine`), ou SEMER une Graine depuis le fil (un objet
+   neuf). Le coût n'est pas le même, et le sens non plus.
+
+2. **« Partager une ressource (fichier ou lien) » n'existe qu'à moitié.** « Joindre des
+   fichiers » est en place dans le « + ». Le LIEN, lui, n'existe nulle part côté fil :
+   `LiensExternes` est un modèle de profil, plafonné à dix URL et filtré aux schémas
+   http/https — précisément parce qu'une URL saisie par quelqu'un et affichée à d'autres est
+   un vecteur d'attaque. Un lien posé dans un fil poserait la même question de sécurité, avec
+   plus de lecteurs. À arbitrer avant d'être dessiné.
+
+Un relevé qui va dans ton sens, au passage : **la carte est déjà unique**. Six types passent
+par `Carte.pour` et un seul partiel de rendu, et aucun modificateur de type n'est stylé —
+une Proposition, une Décision et une Action sont visuellement le même objet aujourd'hui. Ce
+qui les sépare à l'écran est uniquement le texte : le type et le statut. Ta cible demande
+donc surtout un travail de vocabulaire, pas de dessin.
