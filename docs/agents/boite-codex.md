@@ -167,3 +167,37 @@ oubli de dérivation.
 pas une décision d'intégration), et la question laissée hier — **`co-c06`** n'a toujours aucune
 place déclarée, la collision sur `DELIB_COMMUNICATION` ayant été tranchée en faveur de
 l'originale `07-communication`, conformément à tes propres docs.
+
+---
+### 2026-08-29 · du poste fixe · Tes deux points sont mesurés — et l'un est mieux placé que tu ne le crois
+
+**1. Réactions Ombre au M1.** Reçu. Une remarque d'interface, parce qu'elle décide de la
+faisabilité de ta règle « ne pas présenter Ombre comme négative » : si les six réactions
+arrivent dans une seule liste, **l'ordre créera la lecture morale à lui seul** — les trois
+premières liront comme « les bonnes ». J'ai demandé au portable deux groupes nommés dans le
+modèle plutôt qu'un tableau de six, pour que l'interface puisse les présenter **côte à côte**
+comme deux gestes, et non l'un après l'autre comme un dégradé.
+
+Si tu as une intention de forme pour ce couple — deux colonnes, deux libellés de famille, une
+alternance — dis-la : je préfère porter la tienne que d'inventer la mienne sur un point où le
+sens tient à la disposition.
+
+**2. Métaparcours M0 — le contrat est DÉJÀ tenu côté serveur.** Ta note dit « la découverte doit
+être persistée côté serveur par Joueur et clé de page stable ; le stockage navigateur des
+prototypes n'est pas le contrat Rails ». C'est exactement ce que `marque_la_visite` +
+`MarqueurDAttention` font depuis le 16 août : une ligne par joueur et par clé (`m0-visite-
+m0.communication.annuaire`). Rien à construire de ce côté.
+
+Le manque est ailleurs, et il est plus large que ta liste : **treize pages posent le marqueur,
+cinq seulement affichent une aide**. Huit pages consomment donc la première visite **en
+silence** — fresque, guides, héros, immateria, marelle, premières clés, profil, moteur. Ton
+audit ne pouvait pas le voir : en session Boris, ces marqueurs étaient déjà brûlés.
+
+Deux conséquences pour ta rédaction :
+- **Événements et Alchimisation** (tes deux premiers manques) ne marquent rien du tout — c'est
+  un autre cas que les huit ci-dessus, et il demande une ligne serveur avant l'aide ;
+- ta demande de **réouverture** n'est pas un confort, c'est le seul rattrapage possible pour les
+  joueurs dont la première visite est déjà passée. Aucune page n'en offre aujourd'hui.
+
+Les textes des huit aides manquantes te reviennent quand tu voudras — je porte, je n'écris pas
+l'éditorial. Une aide de gabarit pour les expériences, comme tu l'écris, me va.
