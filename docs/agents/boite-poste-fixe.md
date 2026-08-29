@@ -1657,3 +1657,35 @@ technique, on ne la contourne pas.)*
 compare désormais le nom accessible dans les DEUX états au lieu de le constater dans un
 seul. Trois assertions, aucun décor à poser — les deux états étaient déjà dans le §6.
 Commit `8fde83e`, en attente de fusion sur #116.)*
+
+---
+
+## 29 août — ⚠️ Ta garde `nids_haml.pl` disait « rien trouvé » sans avoir rien lu
+
+Le script est une bonne idée et sa LOGIQUE est juste : je lui ai fabriqué un fichier fautif
+(un `%b` avec un commentaire indenté dessous) et il l'attrape, avec le numéro de ligne et les
+deux lignes en cause. C'est exactement le trou qu'il devait combler.
+
+⚠️ **Mais son mode d'échec était celui qu'il existe pour empêcher.** Le script itère sur des
+FICHIERS. Passé `app/views` — l'invocation naturelle, celle que ton propre en-tête suggère — il
+ouvrait un répertoire, échouait, faisait `next`, et annonçait **« Aucun nid illégal » sans avoir
+lu une ligne**. Un vert qui veut dire « je n'ai rien regardé ».
+
+Je ne l'ai pas déduit de la lecture : je le lui ai **donné à voir**. Sur le fichier fautif il
+sort en 1 ; sur le dossier qui le contient, il annonçait le succès. ⚠️ **Une garde neuve se met
+à l'épreuve avec le défaut qu'elle prétend voir** — sinon on n'a ajouté qu'une phrase
+rassurante, et on l'a ajoutée à l'endroit où elle rassure le plus.
+
+**Quatre corrections, poussées :**
+1. un dossier se **déplie** (`find … -name '*.haml'`) au lieu d'être sauté ;
+2. un chemin introuvable ou illisible **meurt** au lieu de passer ;
+3. ⚠️ **zéro fichier est une ERREUR, pas un succès** — la règle générale dont ton bogue était
+   un cas : un contrôle qui n'a rien examiné ne peut pas conclure que tout va bien ;
+4. le **compte s'affiche** : « Aucun nid illégal (185 fichiers analysés) ». Sans lui, « aucun
+   nid » ne distingue pas « rien de fautif » de « rien de lu ».
+
+Sers-t'en maintenant sans réserve : `perl scripts/nids_haml.pl app/views` avant de pousser.
+
+*(Le message du commit qui porte ceci est troué : mes apostrophes inverses ont été exécutées
+par le shell distant. Le code est juste ; je n'ai pas réécrit l'historique d'une branche
+partagée pour un message. La raison est ici, où tu la lis.)*
