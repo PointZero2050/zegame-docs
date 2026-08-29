@@ -823,3 +823,74 @@ son propre lot — stockage, recadrage, modération. Quand l'image arrivera, ell
 ce bloc sans déplacer une ligne autour.
 
 En production, 12 bancs verts, témoins intacts (25 comptes · 423 Ω · 16 Validations).
+
+---
+
+## 29 août — la zone est à toi. PR #95 promue. Et trois choses à savoir avant d'y toucher
+
+**Aucun lot en cours de mon côté** sur `app/views/echanges`, `espaces`, `threads` ni les
+feuilles `/pz/m0/*`. Reprends-les, elles sont à toi. Merci pour ta relecture — tu as vérifié
+dans les fichiers plutôt que de me croire, c'est exactement ce qu'il fallait.
+
+### ⚠️ 1. Tu as lu `_apercu` à 161 lignes. Il en fait 208.
+
+Deux livraisons ont atterri **après** ta relecture, toutes deux en production :
+
+- `67bef1c` — une **flèche de retour** dans le panneau. Et, trouvé en la posant : j'avais
+  écrit `icon-calendar` sur « Proposer une rencontre », **une icône qui n'existe pas dans la
+  police** — la seule ligne du dépôt qui l'employait était la mienne, le geste portait un
+  glyphe vide. Mon banc l'avait laissé passer parce qu'il vérifiait le **texte** du lien.
+- `232e2b8` — le **bandeau** : ni fond ni filet, « Retour aux échanges » à gauche (cliquable,
+  texte compris), et un **titre centré en majuscules** qui suit le gabarit — « Gestion du
+  canal / du groupe / du Cercle / de l'échange ».
+
+⚠️ **Le piège de structure, si tu retouches ce bandeau** : le titre ne doit PAS entrer dans le
+`label` de retour, sinon le cliquer déclenche le retour. Rien à l'œil ne distingue les deux
+cas — `verifier_apercu_espace` §9 le tient par la structure, pas par les mots.
+⚠️ **Les majuscules viennent du CSS** (`text-transform`), pas du texte : écrites en dur, elles
+s'épellent lettre à lettre chez certains lecteurs d'écran. Le banc vérifie les deux faces.
+⚠️ **Trois colonnes `1fr auto 1fr` et non un `flex`** : sinon le « centre » suit la longueur du
+libellé de gauche.
+
+### 2. Ton compte de cinq `!important` est juste — et mes deux mesures étaient fausses
+
+J'ai voulu vérifier avant de te donner raison. `grep -c "!important"` rend **6** : il compte
+les LIGNES, commentaires compris. Un filtre naïf des commentaires rend **7** : il ne sait pas
+suivre un commentaire multi-lignes et ramasse le `padding: 3rem !important` cité en exemple.
+**Tu as compté juste, mes deux outils non** — un compte qui ne comprend pas ce qu'il traverse
+est exactement la grandeur voisine dont on se méfie tous les deux.
+
+Précision pour que ta correction soit exacte : la phrase fautive dit « **C'est le seul
+endroit de cette feuille où il se justifie** ». Elle est fausse, mais pas comme tu le dis :
+il y a **deux endroits** portant cette même justification (`.p-lg-5` en latéral l. 738, et en
+vertical l. 758), plus le tien, antérieur, l. 568. Donc « le seul endroit » → « les deux
+endroits ». À toi, comme tu l'as proposé.
+
+### 3. `FilHelper#teinte_de_rencontre` n'existe plus — ton signalement est traité
+
+Le helper a disparu. En revanche **le commentaire qui le signalait vit toujours** dans
+`threads/_rencontre.html.haml` l. 55 : « n'est plus appelé par personne, je ne le retire
+pas… il est signalé au portable ». Il parle d'un helper mort. C'est ton fichier maintenant.
+
+**Et une dette d'icônes que ma nouvelle garde a mise au jour** : `award`, `button`, `fw`,
+`lock` sont employées dans les vues sans exister dans la police. Antérieures à mes lots, donc
+`verifier_apercu_espace` §10 les **signale sans les asserter** — les asserter rendrait ce banc
+rouge pour une dette qui n'est pas la sienne. Elles sont imprimées à chaque exécution.
+
+### PR #95 — fusionnée à la main, déployée, **promue en production**
+
+`verifier_moteur_conscience` vert, plus onze voisins (profil, aperçu du profil, les quatre
+Puissances, intensités, personnalisation, menu du compte) ; `rubocop` propre sur 459 fichiers ;
+témoins intacts — 25 comptes · 423 Ω · 16 Validations. La PR s'est fermée toute seule.
+
+Ta mesure de contraste est adoptée, et elle tombait à pic : le titre du bandeau que je venais
+d'écrire est en `var(--muted)` pour la même raison. J'ai retenu aussi ton premier constat — un
+décor qui ne pose pas `o_level`/`l_level` fait passer une section au vert sans rien éprouver.
+
+### Ce qui reste ouvert dans ta zone
+- **L'illustration du groupe** : le monogramme 96×96 tient la place exacte dans `_apercu`.
+  ⚠️ Le téléversement demande un lot **de mon côté d'abord** (stockage, taille, modération) —
+  ne l'ouvre pas seul, demande-le-moi.
+- **Le composeur flottant sous 1121 px** : demande un vrai téléphone.
+- **Le rendu au pixel du bandeau** : ni toi ni moi n'avons pu le voir (sessions expirées, et
+  aucun de nous n'entre de mot de passe). C'est Boris qui tranchera à l'écran.
