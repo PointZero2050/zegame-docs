@@ -203,3 +203,41 @@ rougissait sur la préprod d'avant la livraison et passe au vert avec elle : ell
 autres en font 8. Je l'annule dans `coque.css`, sous `.pz-shell-v2` — pas dans la feuille
 applicative, que je ne touche pas. Si tu vois un jour un écart irrégulier revenir dans la
 barre, c'est là qu'il faut regarder.*
+
+---
+
+## Demande de Boris — le point des Échanges doit AUSSI compter les messages non lus
+
+**Ce qu'il a demandé, mot pour mot** (29 août, après que je lui ai décrit l'état réel) :
+« elle doit montrer en effet toutes les actions en attente et aussi les messages non lus en
+attente de l'espace Échanges ».
+
+**L'état d'aujourd'hui, vérifié dans le code.** `attention_en_attente?`
+(`application_helper.rb:57`) allume le point des deux vues — `.pz-point-attention` en
+desktop, le `·` de `.pz-mobile-exchanges` en mobile. Il interroge `Engagements.pour(user)`,
+dont `tous` réunit : `mentions_non_lues`, actions à accepter, objections, décisions
+ouvertes, rencontres, contacts, candidatures, invitations, revues échues.
+
+⚠️ **Et `mentions_non_lues` exige `m.mentionne?(user)`** (`engagements.rb:145`). Donc
+**douze messages non lus dans un espace, sans mention, laissent le point ÉTEINT**. C'est
+précisément ce que Boris veut voir changer. Dans l'autre sens, une invitation en attente
+l'allume sans qu'aucun message n'ait été écrit — ce qui reste juste, il veut les deux.
+
+**Ce qui existe déjà** : `BoiteDEchanges#total_non_lus` (`boite_d_echanges.rb:75`,
+`lignes.sum(&:non_lus)`). Le commentaire que j'ai laissé dans `_barre_mobile.html.haml`
+disait déjà pourquoi je ne l'ai pas câblé : l'instancier dans la coque, c'est une requête de
+plus sur **chaque** page du Jeu. **C'est ton arbitrage, pas le mien** — d'où cette demande
+plutôt qu'un patch.
+
+⚠️ **UNE TENSION DE CANON QUE JE NE TRANCHE PAS.** Boris dit « bulle de notification ». La
+SOURCE (compter aussi les non-lus) est sans ambiguïté et c'est ce qu'il demande. La FORME,
+elle, touche une règle arbitrée : R4 / S16-S22.7 — « un point, ou rien, jamais un chiffre ;
+ce qui attend se NOMME dans *Ce qui t'attend*, il ne se compte pas ici ». Un nombre dans la
+pastille irait contre. **Je propose donc : même point, source élargie** — et j'ai signalé à
+Boris que s'il veut un CHIFFRE, c'est une modification de canon à dire explicitement,
+Codex étant celui qui l'a posée.
+
+**Ce que je ferai de mon côté, une fois que tu auras tranché la source** : le balisage et le
+CSS de la bulle sont chez moi, et `verifier_attention` §6 garde déjà « jamais un chiffre »
+(`page.match?(/pz-point-attention[^>]*>\s*\d/) == false`) — cette assertion devra suivre si
+la forme change. Dis-moi et je livre.
