@@ -348,11 +348,11 @@ situe la page dans le Voyage et le CTA désigne le prochain geste réel.
 | Clé de page | Titre | Corps | CTA principal |
 |---|---|---|---|
 | `m0.imagination.fresque` | **Ta Fresque garde le fil** | Tes Graines rassemblent ce que tu veux mettre en récit. Elles peuvent résonner, évoluer et rester visibles selon tes choix. | `Explorer ma Fresque` |
-| `m0.intuition.guides` | **Deux regards pour discerner** | Le Professeur éclaire les mécanismes. Le Docteur retourne le décor. Tu peux changer de voix sans perdre le fil de tes conversations. | `Choisir un regard` puis `Ouvrir mes conversations` |
+| `m0.intuition.guides` | **Deux regards pour discerner** | Le Professeur éclaire les mécanismes. Le Docteur retourne le décor. Tu peux changer de voix sans perdre le fil de tes conversations. | `Choisir un regard` |
 | `m0.emotion.heros` | **Une figure pour déplacer ton regard** | Ton mentor nourrit une perspective sur ton Voyage. Il ne décide pas à ta place et tu peux en changer. | `Choisir mon mentor` |
 | `m0.desir.immateria` | **Ton Désir prend corps ailleurs** | Dans Immateria, ton jumeau explore le Village, reçoit du Mana et rencontre des quêtes reliées à l'état de ton Moteur. | `Entrer dans le Village` |
 | `m0.volonte.marelle` | **Un parcours se traverse** | Chaque expérience annonce son intensité, son effet et le geste réellement attendu. Les Omégas viennent des passages reconnus, jamais d'un bouton pressé. | `Voir mon prochain passage` |
-| `m0.intuition.point-zero` | **Lire, répondre, garder une Trace** | Chaque clé commence par une fiche Point Zéro. Le questionnaire qui suit conserve ta compréhension dans Mes Traces. | `Lire une première clé` |
+| `m0.intuition.cles` | **Lire, répondre, garder une Trace** | Chaque clé commence par une fiche Point Zéro. Le questionnaire qui suit conserve ta compréhension dans Mes Traces. | `Lire une première clé` |
 | `m0.communication.profil` | **Choisis ce que tu rends visible** | Ton Profil communautaire montre une présence choisie : Accomplissements, Graines et Traces ne deviennent visibles que selon les réglages annoncés. | `Régler ma visibilité` |
 | `m0.transcendance.moteur` | **Regarde ce qui circule** | Le Moteur relie les six Puissances entre Ombre, Source et Lumière. Il montre un état vivant et un cap, jamais une note sur ta valeur. | `Lire mon Moteur` |
 
@@ -367,6 +367,16 @@ Après leur première ouverture, toutes ces aides restent accessibles depuis un 
 `Comprendre cette page`, représenté par un `?` violet après le surtitre de la page. Ce contrôle
 réouvre exactement la même aide ; il ne renvoie pas vers la page générale `Aide et recours` et
 n'occupe plus une place dans le menu principal.
+
+Trois règles ferment les écarts de portage relevés le 29 août 2026 :
+
+- la clé canonique des fiches Point Zéro est `m0.intuition.cles`, déjà persistée par le
+  contrôleur ; aucune migration de marqueur n'est nécessaire ;
+- Immateria ne superpose pas une popup à son écran d'entrée permanent : ce dernier reprend le
+  titre, le corps et le geste de la ligne `m0.desir.immateria`, puis le contrôle contextuel
+  permet de les relire ;
+- l'aide des Guides porte un seul CTA, `Choisir un regard`. L'historique et la création d'une
+  conversation appartiennent à la page ouverte, après ce premier choix.
 
 ## 6. État simulé dans les prototypes
 

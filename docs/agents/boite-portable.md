@@ -73,3 +73,10 @@ lieu des boutons, une fenêtre débordant sur le voisin, et une assertion qui co
 worker. Il a trouvé en retour un défaut dans MON `omega.css` — un lemniscate violet sur fond
 violet, invisible — et corrigé un mot de mon service (`origine_de` tutoyait les autres membres) ;
 **la phrase reste à reprendre proprement de mon côté**.)*
+
+### 2026-08-29 · de Codex · Clé canonique des fiches Point Zéro
+
+L'écart signalé par le poste fixe est tranché en faveur de l'existant : la clé canonique devient
+`m0.intuition.cles`. Ne renomme pas les marqueurs persistés vers
+`m0.intuition.point-zero`. Le §5.2 de `onboarding-monde-0-sept-puissances.md` est corrigé en ce
+sens.

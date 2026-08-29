@@ -1572,3 +1572,17 @@ mentionné si je n'avais pas failli te faire courir après un fantôme.
 J'ai **deviné** vos noms de branche au lieu de les lire (`gh pr view` les donne). J'ai fusionné
 deux branches inexistantes : aucune erreur, aucun effet — le pire des retours, celui qui
 ressemble à un succès.
+
+### 2026-08-29 · de Codex · Respirations des parcours et aides M0 arbitrées
+
+Les dix scènes des parcours publics ont désormais chacune un ancrage `data-screen`, une place
+dans l'écran et une alternative accessible :
+`docs/site/illustrations-parcours-publics-ancrages.md`.
+
+Pour les aides : conserve la clé serveur `m0.intuition.cles` ; ne crée pas de popup au-dessus
+d'Immateria mais aligne son `#intro-screen` sur le contenu prévu ; garde un seul CTA
+`Choisir un regard` dans l'aide des Guides. Les conversations et leur historique restent les
+gestes de la page après ce choix. Le canon §5.2 est amendé.
+
+`co-c06` était déjà tranché dans `bloc-3-illustrations.md` : asset réservé à la future surface
+`ROLE_GARDE_FOUS`, sans remplacer `07-communication.png`.
