@@ -54,9 +54,33 @@ la roue — mais son illustration représente le **seuil fonctionnel actuellemen
 contenu et son illustration évoluent ensemble :
 
 1. `À explorer` : un appel, une promesse et un CTA concret ;
-2. `Activée` : l'expérience a eu lieu et le territoire montre un usage courant ;
-3. `À explorer` à nouveau : une nouvelle page vient de s'ouvrir dans ce territoire ;
-4. `Appropriée` : les usages découverts sont résumés par quelques indicateurs intelligibles.
+2. `Découverte` : la page durable a été visitée, mais le geste fondateur reste à accomplir ;
+3. `Activée` : l'expérience a eu lieu et le territoire montre un usage courant ;
+4. `À explorer` à nouveau : une nouvelle page vient de s'ouvrir dans ce territoire ;
+5. `Appropriée` : les usages découverts sont résumés par quelques indicateurs intelligibles.
+
+### 2.1.1 Accès direct et état `Découverte`
+
+> **Arbitrage Boris — 29 août 2026.** Un Joueur peut atteindre une page depuis un lien direct,
+> une notification, un sous-menu ou l'historique, sans passer par la carte de l'accueil. Cette
+> navigation doit être reconnue sans lui attribuer une action qu'il n'a pas accomplie.
+
+La première visite réussie d'une page durable affiche son aide, puis sa fermeture ou son CTA :
+
+1. enregistre la page comme `Découverte` pour ce Joueur ;
+2. consomme l'invitation correspondante et retire sa surbrillance ;
+3. conserve l'illustration de cette page sur la carte ;
+4. remplace le CTA d'appel par un CTA de retour adapté.
+
+Elle ne franchit pas le seuil pédagogique et n'attribue ni badge, ni Oméga, ni validation. Le
+geste fondateur reste séparé : créer la première Graine pour Imagination, confirmer le Profil pour
+Communication, achever un premier échange Guide pour Intuition, commencer réellement le parcours
+pour Volonté ou renseigner les Puissances pour Transcendance. Ainsi, visiter la Fresque, les Guides
+ou le Profil ne suffit jamais à afficher `Territoire activé`.
+
+La source de vérité de la découverte est un état serveur par Joueur et par clé de page stable. Une
+variable de session ou le stockage du navigateur ne convient que dans les prototypes. L'état n'est
+posé qu'à la fermeture explicite de l'aide ou à son CTA, pas au simple chargement HTTP.
 
 Exemple Imagination : découverte de la Fresque → Graine de l'Appel produite à la clôture du
 chapitre 1 → retour avec compteurs de Graines et Résonances →
@@ -274,6 +298,32 @@ sorties concurrentes.
 
 En production, l'état `aide déjà vue` doit être stocké côté utilisateur, pas seulement dans le
 navigateur.
+
+L'aide concerne les **pages durables et les gabarits**, pas chaque objet : une seule aide pour le
+gabarit `Expérience` couvre les expériences du parcours ; une fiche, un fil de conversation, une
+carte de héros ou un onglet ne provoque pas une nouvelle popup à lui seul. Les pages purement
+techniques ou juridiques peuvent rester auto-explicatives. Après la première visite, la même aide
+doit rester accessible à la demande depuis un contrôle contextuel distinct de la page
+`Aide et recours`, dont la fonction est la protection et l'orientation.
+
+### 5.1 Audit maquettes et préproduction du 29 août 2026
+
+Sont conformes dans les maquettes : Immateria, Fresque, Mes Traces, Héros et mentors, les dix clés
+Point Zéro, le Moteur et les Accomplissements. Leur aide est automatique, mémorisée localement et
+réouvrable.
+
+Restent à compléter :
+
+- présentation du parcours, page d'expérience et dialogue mentor : popup et bouton présents, mais
+  ouverture automatique non mémorisée ;
+- Guides : aide réouvrable, mais non automatique à la première visite ;
+- Annuaire : popup automatique, mais mémoire limitée à la session et aucun rappel contextuel ;
+- Espace d'échange : bandeau non persisté, sans rappel contextuel propre ;
+- Profil communautaire, Événements Point Zéro et Alchimisation autonome : aide absente.
+
+Contrôle en préproduction avec le compte de Boris : l'Annuaire a bien affiché sa popup lors de sa
+première visite. Sur les pages déjà visitées, le lien `Aide` ouvre `/aide`, surface de recours et de
+protection, et non l'explication contextuelle de la page. Il ne remplace donc pas le rappel demandé.
 
 ## 6. État simulé dans les prototypes
 

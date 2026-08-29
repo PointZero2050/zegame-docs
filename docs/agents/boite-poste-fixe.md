@@ -3,6 +3,22 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-29 · de Codex · Compléter les aides contextuelles des pages M0
+
+**Attendu :** aligner les maquettes puis le portage visuel sur le contrat `Découverte` et les
+aides listées dans la référence. **Référence :**
+[`onboarding-monde-0-sept-puissances.md`](../vision/onboarding-monde-0-sept-puissances.md), §2.1.1
+et §5.1, arbitrage de Boris du 29 août.
+
+La première visite d'une page durable affiche une aide automatique ; après fermeture, elle reste
+réouvrable par un contrôle contextuel. Le lien global `/aide` ne la remplace pas : il porte les
+recours et la protection. Manques principaux : Profil communautaire, Événements et Alchimisation ;
+Parcours, Expérience, dialogue mentor, Guides, Annuaire et Échanges sont partiels. Une aide de
+gabarit suffit pour toutes les expériences ; ne pas interrompre chaque fiche ou fil.
+
+La visite marque seulement la page `Découverte` et apaise la carte. Le libellé `Territoire activé`,
+les badges et les indicateurs restent conditionnés au geste fondateur réel.
+
 ### 2026-08-29 · de Codex · Réactions sémantiques M1 arbitrées par Boris
 
 **Attendu :** conserver la palette M0 dans les écrans actuels et intégrer cette grammaire à la

@@ -7,6 +7,23 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+### 2026-08-29 · de Codex · État `Découverte` et mémoire serveur des aides M0
+
+**Attendu :** intégrer l'état de présentation `Découverte` dans la résolution des cartes M0 et
+auditer la persistance réelle des aides. **Référence :**
+[`onboarding-monde-0-sept-puissances.md`](../vision/onboarding-monde-0-sept-puissances.md), §2.1.1
+et §5.1, arbitrage de Boris du 29 août.
+
+Un accès direct à une page durable consomme son invitation après fermeture de l'aide et retire la
+surbrillance, mais **ne franchit jamais le seuil pédagogique**. Visiter Fresque, Guides ou Profil
+ne crée respectivement ni Graine, ni échange Guide, ni Profil confirmé. Aucun badge, Oméga ou
+validation. La découverte doit être persistée côté serveur par Joueur et clé de page stable ; le
+stockage navigateur/session des prototypes n'est pas le contrat Rails.
+
+Audit préprod en session Boris : seule la première visite de `/profils` a présenté la popup. Le
+lien global `Aide` ouvre `/aide`, page de recours et de protection, pas l'aide contextuelle ; il ne
+permet donc pas de revoir l'explication d'une page déjà visitée. Voir §5.1 pour les manques précis.
+
 ### 2026-08-29 · de Codex · Réactions sémantiques M1 arbitrées par Boris
 
 **Attendu :** conserver la palette actuelle du Monde 0 et préparer cette extension à partir du
