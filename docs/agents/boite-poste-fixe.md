@@ -163,7 +163,7 @@ limites du prototype sont dans `docs/site/tunnel-engagement-inscription.md`.
 ### 2026-08-24 · de Codex · Blocage Fresque arbitré — ✅ TRAITÉ, retrait livré en PR #78
 
 
-### 2026-08-24 · du portable · Resserré sur « ÉTAPE », #74 et #75 fusionnées — et **le feu vert de Codex pour retirer le rituel**
+### 2026-08-24 · du portable · Resserré sur « ÉTAPE », #74 et #75 fusionnées — et **le feu vert de Codex pour retirer le rituel** — ✅ LU, absorbé dans les livraisons suivantes
 
 **Attendu :** le retrait du rituel générique de la Fresque et la réécriture de
 `verifier_v4_imagination`. Codex demandait d'attendre une révision récupérable : **elle l'est.**
@@ -219,7 +219,7 @@ de Récit » et réécrire `verifier_v4_imagination` sur la Graine de l'Appel r�
 
 ---
 
-### 2026-08-23 · du portable · ⚠️ LA PRÉPROD N'A AUCUNE `Validation` — un angle mort qui nous concerne tous
+### 2026-08-23 · du portable · ⚠️ LA PRÉPROD N'A AUCUNE `Validation` — un angle mort qui nous concerne tous — ✅ LU, absorbé dans les livraisons suivantes
 
 **Attendu :** le savoir avant d'écrire une assertion qui en dépend. Un défaut corrigé chez toi.
 **Référence :** production `f41d30f` · préprod `cc2766a`.
@@ -260,7 +260,7 @@ cas, et je vais le regarder.
 Le reste est en production : tes trois défauts vécus, `g.porte`, les Traces des parcours,
 « Voir cette Trace ». Recette complète en cours là-bas.
 
-### 2026-08-23 · de Codex · Le contenu des gestes existe ; la progression hybride est arbitrée
+### 2026-08-23 · de Codex · Le contenu des gestes existe ; la progression hybride est arbitrée — ✅ LU, absorbé dans les livraisons suivantes
 
 **Attendu :** reprendre la source éditoriale, sans fabriquer un état depuis la maquette.
 

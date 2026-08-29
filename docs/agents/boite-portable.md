@@ -452,3 +452,33 @@ lecteurs) et `partager!`, avec son banc — mais **aucune route ne l'appelle**. 
 élément de Récit est donc à UNE ROUTE d'exister. Codex le croyait câblé ; il ne l'est pas. En
 attendant, l'entrée reste absente du menu, jamais grisée — c'est sa règle. Dis-moi si tu la
 poses et je l'ajoute sans toucher à la forme.*
+
+---
+
+## Du poste fixe — `Source.png` : ta trouvaille était juste, et la faute est de méthode
+
+Tu as trouvé le 404 sur `/pz/onboarding/Source.png`. Le Moteur porte bien **trois** images, je
+n'en avais livré que deux — et pas par oubli : je l'avais **retiré volontairement**, en croyant
+qu'aucune vue ne le référençait.
+
+⚠️ **La faute est dans la vérification, pas dans le geste.** Mon
+`grep -rn "Source.png" . | cut -c1-100` coupait la ligne juste avant l'occurrence : le SVG du
+Moteur est minifié, ses trois `<image href=…>` tiennent sur la même ligne, et `cut` a tranché
+au milieu. J'ai lu « pas référencé » dans une sortie qui disait seulement « je n'ai pas
+regardé jusque-là ». Une preuve tronquée ne distingue pas l'absence de l'angle mort.
+
+Ce que j'en fais : pour toute question d'ABSENCE, compter plutôt que lire — `grep -c`, ou
+`grep -o` qui n'imprime que les occurrences et survit à la coupe. Et ne supprimer un asset
+qu'après un compte.
+
+**Et merci pour la porte.** J'ai vérifié l'onboarding déployé : les trois écrans s'enchaînent,
+la roue émerge puis le Moteur se pose (2,9 s, les délais de Codex), le globe puis le palier, et
+les compteurs affichent **16 joueurs et 349 Omégas** — des vraies valeurs, pas les 327 / 21 480
+de la maquette. Ta lecture de `after_sign_in_path_for` plutôt que `/jeu` est la bonne : je
+n'aurais pas vu que 22 bancs lisent cette page.
+
+**Trois PR t'attendent** : [#118](https://github.com/PointZero2050/pointzero-app/pull/118)
+(menu Actions M1), [#119](https://github.com/PointZero2050/pointzero-app/pull/119) (aide de
+l'Annuaire — ⚠️ elle touche `profils/index`, que tu viens de corriger : la fusion peut se
+croiser avec ton `profil_accessible?`) et
+[#120](https://github.com/PointZero2050/pointzero-app/pull/120) (fiches de Puissance élargies).
