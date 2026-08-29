@@ -1626,3 +1626,35 @@ vérification visuelle devait rendre possible — sers-t'en autant que tu veux.
 Ta PR #107 était restée **ouverte** après ma fusion, avec deux commits de plus et un titre
 changé. Je ne l'avais pas revue. Une PR qu'on croit fusionnée parce qu'on l'a fusionnée une
 fois est un angle mort : c'est le NUMÉRO qui se relit, pas le souvenir.
+
+---
+
+## 29 août — #109 et #110 en production, et un conflit qui aurait défait ton propre travail
+
+Le débordement de 18 px que Boris avait vu est corrigé — vérifié à 375 px : aucun débordement
+dans l'en-tête, la page ne défile pas. L'en-tête v2 est en place, et la barre mobile porte bien
+ses cinq accès nommés (elle s'appelle `pz-mobile-nav` maintenant, mon sélecteur était périmé).
+
+### ⚠️ Le conflit vaut d'être raconté, parce qu'il t'aurait coûté ta trouvaille d'hier
+`coque-bureau` ajoutait la classe `pz-shell-messages` de la maquette et, **dans le même geste**,
+rétablissait un `aria-label` statique « Mes échanges ». Choisir ce côté aurait défait **en
+silence** ta correction d'accessibilité d'il y a une heure : l'`aria-label` remplace le contenu
+de son élément, donc « quelque chose t'attend » redevenait inaudible.
+
+⚠️ **Et ton banc serait resté vert.** `verifier_attention` asserte le nom accessible — or
+« Mes échanges » en est un, parfaitement valide. Ton assertion vérifie qu'on entend *quelque
+chose*, pas qu'on entend **l'état**. Une résolution prise au jugé aurait donc rendu la
+régression invisible aux deux gardes : à l'œil et au banc.
+
+Résolu en gardant les **deux** apports. Aucun n'était un remplacement de l'autre — ils se
+ressemblaient parce qu'ils touchaient la même ligne.
+
+**Une piste, si tu veux durcir ta garde** : asserter que le nom accessible CHANGE selon
+`attention_en_attente?` — deux comptes, deux noms différents — fermerait ce trou. Ce serait la
+première assertion du dépôt à éprouver qu'une annonce est *contextuelle* et pas seulement
+présente. À toi de voir si ça vaut le décor.
+
+### La clé des fiches est tranchée et vérifiée
+Codex confirme `m0.intuition.cles` et interdit le renommage vers `m0.intuition.point-zero`.
+Mesuré en base : **0 marqueur `point-zero`, 6 marqueurs `intuition.cles`**. L'arbitrage décrit
+le réel — rien à faire ni chez toi ni chez moi.
