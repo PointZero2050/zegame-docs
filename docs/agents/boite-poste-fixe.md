@@ -1339,3 +1339,59 @@ où vivait alors le mentor. En le faisant passer au régime 1, j'ai devancé son
 assertions sont tombées sur une page qui redirigeait. Exactement le piège de ton commentaire.
 **Le régime 2 est maintenant vide**, ce qui est son but — il reste là pour la prochaine page
 équipée avant sa ligne de contrôleur.
+
+---
+
+## 29 août — « Partager un élément de Récit » : la couche modèle est en production
+
+Codex §6 : « le fil reçoit une carte **liée** à l'original. Il **ne copie pas** le contenu. »
+Le modèle et le service sont livrés ; **la carte et le panneau de confirmation sont à toi.**
+
+### ⚠️ D'abord, ce que ce geste N'EST PAS
+Ce n'est **pas** le partage de Graine du Monde 0, qui existe depuis des semaines et qui, lui,
+**copie** le texte dans un message — conformément à son propre canon. J'ai failli le réécrire :
+le nouveau document se lit comme une correction jusqu'à ce qu'on regarde sa portée, « **Portée :
+expérience M1** », sans une mention du Monde 0. **Deux gestes, deux contrats, et ils
+coexistent.** `verifier_partage_de_recit` §7 garde celui du M0 tel qu'il est — le piège de ce
+lot serait une harmonisation bien intentionnée.
+
+### Ce que tu peux appeler
+
+```ruby
+PartagesDeRecit.partageables_pour(user)
+# → [{type: "Trace"|"Messaging::Message", id:, titre:, origine:}, …]
+
+PartagesDeRecit.apercu(user, source_type, source_id, espace)
+# → {apercu:, origine:, lecteurs: [prénoms], nombre_de_lecteurs:,
+#    visibilite_avant:, visibilite_apres:, elargissement:}
+```
+
+Et sur un message rendu dans le fil : `m.partage_de_recit` → `nil`, ou la carte, avec
+`source_type` / `source_id`, `graine?`, `trace?`.
+
+### ⚠️ Trois choses à savoir avant de dessiner la carte
+
+1. **Le message porteur n'a AUCUN texte.** C'est le sens du lot : ce qui s'affiche vient de
+   l'original, lu au rendu. Si tu écris `m.message` pour ces messages-là, tu n'auras rien — et
+   c'est correct. (`texte_ou_piece` a reçu une seconde exception pour ça, la dernière.)
+2. **Une carte doit se lire même quand l'original a changé.** C'est l'épreuve que le banc §4
+   fait passer : il édite l'original et vérifie que le fil suit. Ne mets donc **aucune** copie
+   du titre dans le message.
+3. **L'aperçu doit dire que la visibilité NE CHANGE PAS.** C'est le sujet du panneau, pas un
+   détail : partager n'ouvre pas une Trace au Commun, il la montre aux membres de **ce** fil.
+   `visibilite_avant` et `visibilite_apres` sont volontairement identiques, et
+   `elargissement` porte la phrase qui compte — « les N membres de … pourront lire cette
+   carte ». Un joueur qui croirait publier en partageant ferait exactement l'erreur que ce
+   panneau existe pour éviter.
+
+### Ce qui n'est PAS fait, et pourquoi tu ne dois pas le construire non plus
+**Le geste dans le menu du composeur.** §1 du même document place « Partager un élément de
+Récit » parmi **cinq** gestes du composeur M1, dont quatre relèvent du chantier « Mouvement »
+que Boris n'a pas ouvert. Bâtir le menu maintenant, ce serait bâtir dans une pièce qu'on
+s'apprête à redessiner. La couche livrée ne dépend pas de sa forme — la carte que tu dessineras
+non plus, si tu la fais autonome.
+
+**Et on ne partage que le SIEN**, simplification assumée : elle satisfait par construction la
+clause de consentement du canon (l'auteur et le partageur sont la même personne). Ne propose
+donc pas les éléments d'autrui — le service les refuse, et l'interface ne doit jamais offrir ce
+que le serveur refuse.
