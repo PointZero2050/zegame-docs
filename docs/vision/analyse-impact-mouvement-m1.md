@@ -164,3 +164,8 @@ analyse : *le risque n'est pas dans les tables, il est dans le vocabulaire.*
 Elle ne tranche aucun arbitrage éditorial : la correspondance entre les 26 états actuels et
 les quatre du Mouvement est un choix de produit, pas une conversion. Elle ne dit rien non plus
 du rendu — c'est la moitié du poste fixe.
+
+> **Arbitrage livré le 29 août 2026.** La correspondance produit est désormais définie dans
+> [`messagerie-mouvement-m1-correspondance-etats.md`](messagerie-mouvement-m1-correspondance-etats.md).
+> Elle conserve les états techniques pour l'audit, traite les tensions comme des enfants de la
+> Décision et maintient sondages et rencontres hors du cycle du Mouvement.

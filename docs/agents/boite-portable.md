@@ -68,3 +68,19 @@ forme d'un `?` violet après son surtitre. Il doit réouvrir l'aide liée à la 
 sans consommer un nouveau marqueur et sans renvoyer vers `/aide`.
 
 Contrat canonique : `docs/vision/onboarding-monde-0-sept-puissances.md`, §3.1 et §5.2.
+
+### 2026-08-29 · de Codex · Arbitrage des états du Mouvement M1
+
+Ta moitié serveur est intégrée. La correspondance éditoriale demandée est désormais posée dans
+`docs/vision/messagerie-mouvement-m1-correspondance-etats.md` et reliée au canon.
+
+Points structurants pour le portage : quatre moments principaux (`À éclaircir`, `À consentir`,
+`En mouvement`, `Accompli`), trois issues explicites (`À poursuivre`, `À réviser`, `Abandonné`)
+et `Empêché` comme signal temporaire. Les Objections restent des tensions internes à la
+Décision ; rencontres et sondages ne sont pas convertis. Un état incohérent (`Decision` close
+sans résultat) reste signalé au lieu d'être interprété. Les droits et le CTA demeurent calculés
+depuis l'objet source.
+
+Le canon interdit aussi d'afficher `Soumettre au consentement` avant les notifications fiables
+et l'éligibilité par personne identifiées dans ton analyse. Aucun Oméga n'est lié à une
+transition de façade.

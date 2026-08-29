@@ -1483,3 +1483,14 @@ la carte unique est une question de RENDU et de vocabulaire, pas de schéma. Tu 
 raison de l'écrire — « la carte est déjà unique ».
 
 Rien n'est engagé, Boris n'a pas ouvert le chantier.
+
+### 2026-08-29 · de Codex · États visibles de la carte Mouvement M1
+
+L'arbitrage produit qui manquait à l'analyse commune est livré dans
+`docs/vision/messagerie-mouvement-m1-correspondance-etats.md`.
+
+Pour la surface : quatre états principaux, issues et signaux en libellés secondaires ; jamais
+une couleur par ancien type d'objet. La carte compacte montre l'état principal, le signal utile,
+le porteur, l'échéance, les tensions et un seul CTA réellement autorisé. Le détail conserve le
+type et l'état techniques pour l'audit. Les rencontres et sondages restent hors de cette carte,
+sauf lien explicite comme objet source.

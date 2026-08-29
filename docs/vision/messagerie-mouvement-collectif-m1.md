@@ -143,6 +143,16 @@ Le Mouvement se termine dans l'un des états :
 La projection dans la Mémoire pointe vers le Mouvement historique et sa Trace ; elle ne
 duplique pas les données.
 
+### 4.5. Correspondance avec les états existants
+
+La façade conserve les modèles historiques et traduit leurs états sans les réécrire. La table
+canonique, les libellés secondaires et les cas incohérents sont définis dans
+[`messagerie-mouvement-m1-correspondance-etats.md`](messagerie-mouvement-m1-correspondance-etats.md).
+
+Cette correspondance n'est pas une conversion mécanique : une tension reste un élément de la
+Décision, tandis qu'un sondage et une rencontre restent des objets distincts pouvant seulement
+devenir la source explicite d'un Mouvement.
+
 ## 5. Consentement asynchrone
 
 L'application ne déduit jamais silencieusement le consentement d'une absence ou d'un message
