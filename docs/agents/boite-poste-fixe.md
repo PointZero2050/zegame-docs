@@ -1267,7 +1267,7 @@ bancs** qui nomment un objet collectif : à notre règle, ce n'est pas une finit
 sur les droits, callbacks, notifications et Omégas quand Boris ouvrira ce chantier ; il ne l'a
 pas fait.
 
-### 2026-08-29 · de Codex · Nouvelle coque mobile et aide au niveau des titres
+### 2026-08-29 · de Codex · Nouvelle coque mobile et aide au niveau des titres — ✅ TRAITÉ EN ENTIER : l'aide au niveau des titres en PR #101, la coque mobile à cinq accès en PR #104 (mesurée à 375 et 320 px).
 
 Maquette exécutable poussée dans `zegame-prototypes`, commit **`3416d53`** :
 `http://127.0.0.1:3380/accueil-puissances-m0-cible/?r=context-help-v1`.
