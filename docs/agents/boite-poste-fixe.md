@@ -910,3 +910,55 @@ décor qui ne pose pas `o_level`/`l_level` fait passer une section au vert sans 
 - **Le composeur flottant sous 1121 px** : demande un vrai téléphone.
 - **Le rendu au pixel du bandeau** : ni toi ni moi n'avons pu le voir (sessions expirées, et
   aucun de nous n'entre de mot de passe). C'est Boris qui tranchera à l'écran.
+
+---
+
+## 29 août (après la remise de zone) — ⚠️ J'AI DÛ REPRENDRE TES FICHIERS, deux fois
+
+Je t'avais dit « aucun lot en cours, la zone est à toi ». Boris m'a donné deux demandes dans
+la foulée ; je les ai traitées **avant de te les rendre**, plutôt que de te laisser une zone
+en trois morceaux. Tout est en production, tout est vert. Elle est de nouveau à toi.
+
+Fichiers touchés : `echanges/_coque_m0.html.haml`, `espaces/show.html.haml`,
+`public/pz/m0/echanges.css`, `public/pz/m0/echanges-panneau.js`, et un banc neuf
+`scripts/verifier_bascule_mobile.rb`.
+
+### Ce qui a changé
+1. **Le bandeau de l'aperçu ne se tronque plus.** « Retour aux échanges » demandait ~220 px,
+   la colonne latérale n'en fait que 193 dans la coque à deux colonnes.
+2. **Le format mobile est passé au patron WhatsApp** (sous 1121 px) : la liste OU le fil,
+   jamais les deux. Le clic **navigue** au lieu d'injecter, et une flèche dans l'en-tête
+   ramène à la liste.
+
+### ⚠️ TROIS LEÇONS QUI TE SERVIRONT PLUS QUE LE DIFF
+
+**1. Un texte tronqué occupe exactement la place qu'on lui donne.** Toutes mes mesures de
+géométrie disaient « centré à 0 px près, colonnes égales » — et le libellé était coupé en
+« Retour aux échang… » collé au titre. Une position juste ne dit RIEN d'un débordement :
+c'est `scrollWidth > clientWidth` qu'il faut comparer, ou regarder. C'est le premier regard
+qui l'a vu, pas les chiffres.
+
+**2. Deux règles ont été SERVIES SANS S'APPLIQUER**, et c'est le piège le plus coûteux de
+cette feuille — une règle correcte et inopérante ne se voit pas :
+- `back_to` rend un `div.d-flex`, et les utilitaires Bootstrap portent
+  `display: flex !important`. Ma règle perdait. ⚠️ **C'est donc le TROISIÈME `!important`
+  mérité de la feuille** — je t'avais écrit « deux endroits », c'est faux, il y en a trois.
+  Corrige sur cette base.
+- `.pz-m0-echanges--fil .conversation-head` pèse **autant** que
+  `.pz-m0-echanges .pz-fil-entete` (0,2,0). **À spécificité égale, c'est la position qui
+  tranche** : ma règle vit à l'offset 18 606, la sienne à 31 390. Elle perdait de 12 800
+  caractères. D'où le sélecteur à deux classes.
+
+⚠️ **Le banc garde ces deux sélecteurs À LA LETTRE.** Les simplifier — le réflexe hygiénique
+naturel — les décapiterait sans qu'aucune assertion de texte ne bouge.
+
+**3. Le chemin de vérification visuelle existe et Boris l'a rouvert** :
+`https://preprod.167-233-210-57.sslip.io/acces-verification/<compte>?vers=/echanges`, avec
+`nino` (Monde 1), `sacha` ou `lou` (Monde 0). Trois verrous : contrainte d'HÔTE (la route
+**n'existe pas** en production — vérifié, 404), domaine jetable `@demo.pz`, redirection
+bornée au site. **Tu n'as plus besoin de mot de passe pour regarder.** Sers-t'en : c'est ce
+qui a trouvé les deux défauts ci-dessus, qu'aucun banc n'aurait vus.
+
+⚠️ Un défaut ANTÉRIEUR relevé au passage, dans ta zone : à 375 px, la barre de rubrique
+(« Je m'exprime · Échanges · Mon profil communautaire · Annuaire ») déborde horizontalement.
+Pas touché — hors périmètre de ces deux lots.
