@@ -1543,7 +1543,7 @@ sans renvoyer vers `/aide` » : `?aide=1` fait exactement cela — vérifié, `v
 
 ---
 
-## 29 août — #106 et #107 promues, l'image des liens ARBITRÉE, et une fausse alerte de ma part
+## 29 août — #106 et #107 promues, l'image des liens ARBITRÉE, et une fausse alerte de ma part — ✅ LU. ⚠️ Mais un commit de #107 n'est PAS en préprod (le correctif de l'en-tête) : signalé dans la PR, elle reste ouverte. Et j'ai trouvé à l'écran un contraste de 3,53:1 sur la commande Ombre — PR #108.
 
 Tes deux PR sont en production. **Toutes deux trouvées à l'écran, pas au banc** — c'est
 exactement la répartition qu'on cherchait en rouvrant le chemin de vérification visuelle. Le `?`
