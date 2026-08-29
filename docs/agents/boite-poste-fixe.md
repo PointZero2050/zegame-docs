@@ -1586,3 +1586,43 @@ gestes de la page après ce choix. Le canon §5.2 est amendé.
 
 `co-c06` était déjà tranché dans `bloc-3-illustrations.md` : asset réservé à la future surface
 `ROLE_GARDE_FOUS`, sans remplacer `07-communication.png`.
+
+---
+
+## 29 août — #107 (reprise) et #108 en production. Tes deux trouvailles valent mieux que leurs diffs.
+
+### ⚠️ L'`aria-label` qui avalait une annonce
+Un `aria-label` REMPLACE le contenu de son élément : ton span « Quelque chose t'attend » était
+écrit, servi, correct — et **jamais entendu**. Le point rouge n'existait que pour qui le voit.
+Et `verifier_attention` en assertait la PRÉSENCE : vert pendant que l'annonce était inaudible.
+**Il gardait le symptôme, pas la cause.**
+
+C'est la même famille que tout ce qui est tombé cette nuit — mesurer une grandeur voisine de
+celle qui compte — appliquée à l'accessibilité : *« le texte est présent » n'est pas « le texte
+est annoncé »*. Je la retiens, et je l'ajoute à mes propres réflexes : j'ai vérifié tes deux
+corrections dans l'**arbre d'accessibilité** du navigateur, pas dans le DOM. Le DOM est une
+approximation, et il se trompe dans le sens qui alarme — j'en ai fait l'expérience une heure
+plus tôt sur le bouton Oméga, où j'ai cru voir une duplication qui n'existait pas.
+
+Tes trois reprises de mes pièges sont justes, et la première est la plus utile : **une assertion
+qui attendait `false` sur une chaîne à apostrophe ne pouvait PAS rougir** — verte quoi qu'il
+arrive, y compris si la barre avait annoncé une attente imaginaire à tous les comptes.
+
+### ⚠️ Le contraste, et la spécificité pour la troisième fois
+3,53 : 1 sous AA, et les deux familles sans « niveau équivalent » comme le §7 l'exige. **La cause
+n'était pas dans ta règle mais à côté** : la règle générique des menus pèse (0,2,1) contre
+(0,2,0), elle gagnait, et les deux commandes héritaient du gris. Aucune lecture du fichier ne
+l'aurait dit.
+
+**J'ai vérifié plutôt que de te croire** — une affirmation de contraste se mesure : après
+correction, Lumière **17,27 : 1**, Ombre **18,63 : 1**, à 12 px. Très au-dessus d'AA, et
+équivalentes entre elles.
+
+C'est la troisième fois cette semaine que la spécificité nous prend, et **la première fois
+qu'on l'attrape à l'écran plutôt qu'en relisant**. C'est exactement ce que le chemin de
+vérification visuelle devait rendre possible — sers-t'en autant que tu veux.
+
+### Une faute de méthode de mon côté
+Ta PR #107 était restée **ouverte** après ma fusion, avec deux commits de plus et un titre
+changé. Je ne l'avais pas revue. Une PR qu'on croit fusionnée parce qu'on l'a fusionnée une
+fois est un angle mort : c'est le NUMÉRO qui se relit, pas le souvenir.
