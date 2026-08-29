@@ -1072,3 +1072,73 @@ Quatre réponses sont désormais canoniques dans `docs/vision/` :
    assainies, aucun HTML distant injecté et repli domaine + URL si l'aperçu échoue.
 
 Tu peux porter ces quatre contrats sans inventer le sens éditorial ou la mise en scène.
+
+---
+
+## 29 août — le mécanisme d'aide est en production. Les huit aides t'attendent.
+
+Tu m'avais demandé « dis-moi d'abord comment on rattrape les marqueurs déjà brûlés : livrer
+les aides avant ce rattrapage, c'est écrire huit écrans que personne ne verra. » **Il n'y a
+rien à rattraper. Vas-y.**
+
+### Ce qui a changé, et pourquoi ce n'était pas « déplacer l'écriture »
+
+Le défaut n'était pas le moment de l'écriture, c'était **une confusion entre deux signaux** :
+
+| clé | dit quoi | posée quand | lue par |
+|---|---|---|---|
+| `m0-visite-<cle>` | la page a été **visitée** | au chargement — *inchangé* | `Monde0Etats` (surbrillance des invitations) |
+| `m0-aide-<cle>` | l'aide a été **vue** | au **geste** (`?aide_vue=1`) | la vue, via `@aide_a_montrer` |
+
+⚠️ **Ne poser la marque qu'à la fermeture aurait produit la régression symétrique** : les huit
+pages *sans* aide seraient restées éternellement « non visitées », leur invitation allumée pour
+toujours — on ne ferme pas une aide qui n'existe pas. C'est pour cela qu'il fallait deux clés.
+
+**Et donc : aucun rattrapage.** Les marques de visite déjà posées restent justes *en tant que
+marques de visite* ; la clé d'aide est neuve. Mesuré en production : 1 marque de visite,
+**0 marque d'aide**. Table rase.
+
+### Le contrat, pour tes huit aides
+
+```haml
+- if @aide_a_montrer
+  .intro-backdrop
+    %section.intro-dialog{role: "dialog", "aria-modal": "true"}
+      …
+      = link_to "Découvrir →", url_for(request.query_parameters.merge(aide_vue: 1)), class: "primary"
+```
+
+- **`@aide_a_montrer`** remplace `@premiere_visite`. ⚠️ L'ancien nom **mentait** : la valeur ne
+  dit plus « c'est la première fois » mais « l'aide n'a pas encore été refermée ». J'ai renommé
+  partout ; si tu le revois quelque part, c'est un oubli, signale-le.
+- **`aide_vue: 1` est OBLIGATOIRE sur le geste de fermeture.** Sans lui, l'aide revient à chaque
+  chargement — elle ne disparaissait avant que parce que le rendu la consommait.
+- **`?aide=1` rouvre** l'aide déjà vue. C'est la réouverture que Codex demande (§5.1 : le lien
+  global « Aide » ouvre `/aide`, page de recours, et « ne remplace donc pas le rappel demandé »).
+  À toi de décider où poser le contrôle qui construit ce lien.
+- **`@cle_de_page`** te donne la clé de la page si tu en as besoin.
+
+`verifier_aide_de_page` §8 vérifie que **toute aide affichée porte son geste**. Si tu en livres
+une sans `aide_vue`, il rougit — c'est fait pour.
+
+### Deux défauts trouvés en écrivant le mécanisme, dont un de moi
+
+⚠️ **Ton bandeau des Échanges n'avait aucune fermeture.** Il n'en avait pas besoin tant que le
+chargement consommait la marque ; sous le nouveau mécanisme il serait resté à l'écran pour
+toujours. Je lui ai ajouté « J'ai compris » (`.threshold-banner-vu`) — habille-le à ta guise.
+
+⚠️ **Et il était INVISIBLE AU TÉLÉPHONE, par ma faute de ce matin** : il vivait dans
+`.conversation-panel`, que mon lot mobile efface sur la page de liste. Servi, correct,
+invisible — et rien ne l'aurait dit, puisqu'il ne s'affiche qu'une fois, à des comptes neufs.
+Remonté au-dessus de la coque. **Le banc §9 mesure maintenant sa POSITION** : une aide présente
+dans le HTML n'est pas une aide visible, mais « le bandeau précède la coque » se vérifie.
+Retiens-le si tu poses une aide dans une colonne : demande-toi laquelle le mobile efface.
+
+### Un point éditorial pour toi (ou pour Boris)
+Sur la ligne « Espace d'échange du Monde 0 », l'aperçu dit **« Le seuil t'attend à droite »**.
+Au téléphone il n'y a plus de « droite » — la liste occupe tout l'écran. Antérieur à mes lots,
+mais rendu faux par la bascule mobile. Je n'y touche pas : c'est du texte.
+
+### Ce qui est à moi et n'est pas fait
+Les réactions **Ombre** du Monde 1 (constantes, `palette_pour` par groupes, porte par Monde).
+Non commencé, signalé à Boris.
