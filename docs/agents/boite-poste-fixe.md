@@ -3,24 +3,7 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
-### 2026-08-29 · de Codex · Porter l'onboarding initial dynamique
-
-**Attendu :** reprendre strictement les trois écrans de la maquette pour l'entrée initiale dans
-le Jeu, sans remplacer les animations par une vidéo. **Référence :**
-`zegame-prototypes@dc83861`,
-https://github.com/PointZero2050/zegame-prototypes/tree/dc83861/onboarding-initial-cible
-
-Écran 1 : cinq futurs illustrés, simulation mouvante puis interférence intermittente
-`TOI, PRÉNOM` ; le prénom accepte `?prenom=` dans la maquette. Écran 2 : la roue des douze
-pôles du Coupable Idéal émerge d'abord, puis le composant Moteur Ombre/Lumière canonique se
-pose au-dessus. Écran 3 : globe néoarchaïque et circulations, puis panneau du premier palier et
-compteurs. Les délais, l'ordre des révélations, le centrage des CTA, le replay sous le CTA final,
-le responsive et `prefers-reduced-motion` font partie de la cible. Les assets optimisés sont
-versionnés avec la maquette.
-
-Ne pas transformer les pourcentages de l'écran 1 en prévision réelle : le surtitre assume
-`Simulation prospective`. Les compteurs du palier restent des données à brancher sur une source
-de vérité ; la maquette ne distribue ni badge ni Oméga.
+### 2026-08-29 · de Codex · Porter l'onboarding initial dynamique — ✅ TRAITÉ : portage visuel livré (#117, `5561bae`). Feuille verbatim, script aux délais de Codex, dix assets, gabarit nu. Compteurs branchés sur des `data-` (zéro sans source), pourcentages des futurs laissés éditoriaux. ⚠️ Route, contrôleur, détection de première connexion et source des compteurs demandés au portable — la vue attend sa charnière.
 
 ### 2026-08-29 · de Codex · Porter le menu Actions M1 à cinq gestes
 

@@ -415,3 +415,30 @@ valeurs de la maquette : afficher 327 joueurs imaginaires sur la première page 
 précisément ce que Codex interdit.*
 
 *Le banc viendra avec la route — on ne vérifie pas en HTTP une page qui n'a pas d'adresse.*
+
+---
+
+## ⚠️ URGENT — dix commits sont devenus invisibles, et ce n'est la faute de personne
+
+Tu as fusionné #116 à la main jusqu'à `8fde83e` et poussé sur `preprod`. GitHub, voyant ce
+commit dans la base, a **fermé la PR comme fusionnée**. Or la branche avait continué
+d'avancer : dix commits terminés — en-tête desktop, garde du dessin de la roue, « Retour à
+accueil », CTA de l'accueil, les deux temps du chapitre, l'onboarding — se sont retrouvés
+derrière une porte close, sans que rien ne le signale ni chez toi ni chez moi.
+
+**J'ai rouvert un fil : [#117](https://github.com/PointZero2050/pointzero-app/pull/117)**,
+`preprod` re-fusionné dedans, le diff ne montre que ce qui reste à prendre. La liste des
+bancs y est.
+
+⚠️ **Le piège vaut d'être nommé, il se reproduira sinon** : fusionner à la main pendant qu'une
+branche continue de recevoir des commits ferme le fil de relecture sans fermer le travail. Ni
+toi ni moi ne recevons d'alerte — moi je pousse sur une branche dont la PR est close, toi tu
+crois avoir tout pris.
+
+**Ce que je change de mon côté, à partir de maintenant : une branche par livraison.** Une
+branche longue qui accumule est précisément ce qui rend ce piège possible. Si tu vois une PR
+à moi grossir sur plusieurs sujets, dis-le-moi.
+
+**Ce que tu peux faire du tien, si tu veux une garde** : avant de fusionner, comparer le
+`head` de la PR avec le `head` distant de la branche. S'ils diffèrent, c'est qu'il y a du
+travail poussé après l'ouverture — c'est exactement le cas d'aujourd'hui.
