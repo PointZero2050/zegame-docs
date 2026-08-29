@@ -563,7 +563,7 @@ de mise en page.
 **Un détail écarté** : les 87 px sous le composeur ne sont **pas** une bande de fil, c'est le
 bloc `pz-sondage-creer` qui le suit dans le DOM. Ton `padding-bottom: 0` fait bien son travail.
 
-### ⚠️ J'ai travaillé dans TA zone — la messagerie, à la demande de Boris
+### ⚠️ J'ai travaillé dans TA zone — la messagerie, à la demande de Boris — ✅ LU ET VÉRIFIÉ (29 août)
 
 **Du portable, 25 août.** Boris n'avait pas accès à Claude desktop et m'a demandé de reprendre
 ton rôle le temps d'un lot. **`public/pz/m0/echanges.css` et `verifier_accueil_echanges` ont
@@ -614,7 +614,7 @@ connais mieux que moi, et Boris ne s'en est pas plaint. Si tu la veux pleine pag
 faut vérifier que les panneaux ont leur propre padding intérieur avant de retirer celui de la
 coque.
 
-### Le composeur refondu — toujours dans ta zone, toujours à la demande de Boris
+### Le composeur refondu — toujours dans ta zone, toujours à la demande de Boris — ✅ LU ET VÉRIFIÉ (29 août)
 
 **Du portable, 25 août.** Deuxième lot dans ta zone (Boris n'a toujours pas Claude desktop) :
 `_composer.html.haml`, `composer.css` et `echanges.css`. **En production, huit bancs verts.**
@@ -654,7 +654,7 @@ mesure qui le dise.
 composeur ne flotte pas. Contraindre la hauteur sur un téléphone écraserait la lecture ; si tu
 veux le collant là aussi, il faudra le mesurer sur un vrai appareil.
 
-### ⚠️ J'ai tenu ta zone sur toute la messagerie — voici ce qui a changé
+### ⚠️ J'ai tenu ta zone sur toute la messagerie — voici ce qui a changé — ✅ LU ET VÉRIFIÉ (29 août)
 
 **Du portable, 26 août.** Boris n'avait pas accès à Claude desktop et m'a demandé de reprendre
 ton rôle. **`_message.html.haml`, `_composer.html.haml`, `_coque_m0`, `espaces/show`,
@@ -698,7 +698,7 @@ rejoindre un espace partagé à un compte que tu purgeras.
 normalement et le composeur ne flotte pas. Contraindre la hauteur sur un téléphone risquerait
 d'écraser la lecture, et je ne peux pas le vérifier sur un vrai appareil.
 
-### Les fonctions de groupe, en trois lots — toujours dans ta zone
+### Les fonctions de groupe, en trois lots — toujours dans ta zone — ✅ LU ET VÉRIFIÉ (29 août)
 
 **Du portable, 28 août.** `espaces/show`, `echanges.css` et le modèle `Espace` ont encore
 changé sans passer par toi (Boris n'a toujours pas Claude desktop). Tout est en production.
@@ -725,7 +725,7 @@ le Festival, si Boris le veut.
 
 ---
 
-## 28 août — une seule coque pour tous les Mondes : `_classique` n'existe plus
+## 28 août — une seule coque pour tous les Mondes : `_classique` n'existe plus — ✅ LU ET VÉRIFIÉ (29 août)
 
 **Ce qui change pour toi** : `app/views/echanges/_classique.html.haml` est **supprimé**. La
 page `/echanges` rend la coque à deux colonnes pour tout le monde ; ce qui distingue les Mondes
@@ -759,7 +759,7 @@ En production depuis ce soir, huit bancs verts, témoins intacts (25 comptes · 
 
 ---
 
-## 28 août (nuit) — l'aperçu de l'espace : le titre ouvre un panneau
+## 28 août (nuit) — l'aperçu de l'espace : le titre ouvre un panneau — ✅ LU ET VÉRIFIÉ (29 août)
 
 **Ce qui te concerne** : `espaces/show.html.haml` a beaucoup maigri, et un partiel
 neuf est apparu — `app/views/espaces/_apercu.html.haml`. Décision de Boris, en mode
