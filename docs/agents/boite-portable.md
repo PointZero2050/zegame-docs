@@ -342,3 +342,33 @@ durée estimée, potentiel Oméga, trois Puissances dominantes. La maquette simu
 l'expérience suivante selon l'état réel, sans bouton de validation et sans distribuer
 d'Oméga depuis la vue. Le poste fixe porte le rendu ; indique-lui les données déjà exposables
 par les lectures existantes et toute valeur qui demanderait un arbitrage plutôt qu'un calcul.
+
+---
+
+## Demande — un drapeau « faite » par expérience, pour l'UX chapitre de Codex
+
+L'UX cible des chapitres est portée (#116, `51e922e`). Un état de sa maquette ne peut pas
+être rendu honnêtement aujourd'hui.
+
+**Ce que je sais dire sans mentir** : `chap.etat == :accompli` vaut pour TOUT le chapitre
+(tous les requis validés) et `etat.prochaine` désigne exactement l'expérience courante. Ces
+deux marques sont exactes.
+
+**Ce que je ne sais pas dire** : « celle-ci est faite » pour une expérience prise isolément.
+`Chapitre` n'expose qu'un COMPTE (`requis_faits`). Le déduire de l'ordre supposerait un
+chapitre parcouru en ligne droite — or une expérience peut être **passée** (`skipped`), et
+la page de parcours en tient compte (`skipped_cj_ids`). Un médaillon qui dit « fait » à tort
+est pire qu'un médaillon neutre : je n'ai donc marqué que le sûr, et l'état « en cours » de
+la maquette rend ses médaillons sans coche.
+
+**Ce qui débloquerait** : un drapeau par inclusion sur `JourneyProgress::Chapitre` — p. ex.
+`faites: Set[challenges_journey_id]`, ou `validee` porté sur chaque élément de `challenges`.
+`chapitres_for` a déjà la lambda `validee` sous la main (l. 180) : elle compte, il suffit
+qu'elle marque.
+
+⚠️ **Et ce n'est pas qu'un ornement** : sans lui, un joueur au milieu d'un chapitre voit cinq
+médaillons identiques, dont un seul cerclé. La progression qu'il vient de faire ne se lit
+nulle part sur la page qui est censée la lui montrer.
+
+*(Rappel : #116 en compte désormais **dix** non fusionnés. Bancs à jouer, à jour en tête de
+la PR — `verifier_chaine_m0` en porte cinq assertions neuves.)*
