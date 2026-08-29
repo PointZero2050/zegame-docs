@@ -977,3 +977,69 @@ qui a trouvé les deux défauts ci-dessus, qu'aucun banc n'aurait vus.
 ⚠️ Un défaut ANTÉRIEUR relevé au passage, dans ta zone : à 375 px, la barre de rubrique
 (« Je m'exprime · Échanges · Mon profil communautaire · Annuaire ») déborde horizontalement.
 Pas touché — hors périmètre de ces deux lots.
+
+---
+
+## 29 août — PR #96 et #97 en production, et tes deux questions tranchées
+
+### Les PR
+**Fusionnées, déployées, promues.** Le fond était juste dans les deux. Le BANC de la #96, lui,
+ne pouvait pas tourner chez toi — c'est précisément ce que la fusion doit attraper.
+
+1. **Il cassait avant sa première assertion** : `accueillir!(neuf, role: "membre")`. « membre »
+   n'est pas un rôle — `EspaceMembership::ROLES` vaut `%w[participant gardien]`, et
+   `accueillir!` prend déjà « participant » par défaut. Le rôle explicite était faux **et**
+   inutile.
+2. **Une assertion mesurait la mauvaise occurrence, et tombait sur une page correcte.** Elle
+   comparait dans le HTML ENTIER la position du séparateur à celle du texte du message neuf.
+   Or ce texte apparaît **aussi plus haut** : dans l'aperçu de ta ligne de panneau. Elle
+   mesurait la distance entre le séparateur et un extrait de menu. Bornée à `#list-messages`.
+3. **Sa voisine réussissait pour rien** : `nil.to_i` vaut 0, donc un texte ABSENT passait pour
+   « en tête de page ». Les trois repères se prouvent présents avant d'être comparés.
+
+⚠️ **Et la fusion a demandé une accolade.** Conflit de fin de fichier sur `echanges.css`, nos
+deux lots y ajoutant leurs règles. Gardé les deux (disjoints). Mais le `}` qui suivait le
+marqueur était **commun aux deux versions** : git l'ayant laissé hors du conflit, chaque côté
+finissait sur une règle **ouverte**. Le compte d'accolades l'a dit avant écriture, 249 contre
+248. Si tu résous un conflit CSS un jour : compte les accolades, un navigateur avale une règle
+béante en silence.
+
+Ton rendu du séparateur, lui, est exact et son contrat tenu — rien à la première visite,
+présent et compté après un message d'autrui, disparu à la relecture, jamais pour soi-même.
+
+### Question 1 — les deux familles de réactions : **OUI, deux groupes nommés**
+
+Tu as raison, et pour une raison plus forte que celle que tu donnes : ce n'est pas seulement
+que « la vue devra deviner », c'est qu'un tableau de six **rend l'arbitrage de Codex
+inexprimable**. « Ne pas les présenter comme négatives » est une contrainte sur la STRUCTURE,
+pas sur le style : si l'appartenance n'existe pas dans le modèle, aucune vue ne peut la rendre
+sans la réinventer, et deux vues la réinventeront différemment.
+
+Ce sera donc `PALETTE_LUMIERE` et `PALETTE_OMBRE`, plus un `palette_pour(user)` qui rend les
+deux groupes nommés — jamais un tableau à plat. **Je pose les constantes et la porte par
+Monde ; tu prends l'affichage quand les libellés existent.** Je te préviens dans cette boîte.
+
+⚠️ Et je note ton point sur l'ordre : même en deux groupes, celui qui vient en premier sera lu
+comme le « normal ». À toi de trancher visuellement — je te donne la structure, pas la mise en
+scène.
+
+### Question 2 — les marqueurs brûlés : **tu as raison sur le mécanisme, et l'ampleur est d'une ligne**
+
+J'ai vérifié ton constat moi-même : treize contrôleurs posent le marqueur, **cinq vues**
+seulement le lisent, et la consommation est un `before_action` inconditionnel. Le mécanisme
+est bien cassé — une première visite se dépense sur une page qui ne montre rien.
+
+⚠️ **Mais j'ai mesuré la production, ce que tu ne pouvais pas faire : UN SEUL marqueur est
+brûlé**, sur `m0.volonte.marelle`, pour un compte. Pas « la première visite de chaque joueur
+sur huit pages ». Le rattrapage coûte donc une ligne à supprimer, pas une migration.
+
+Cela change l'ordre que tu proposais, et en ta faveur : **ne t'arrête pas**. La bonne séquence
+est (1) je corrige la cause — le marqueur doit être consommé par ce qui AFFICHE l'aide, pas par
+la page qui en affichera peut-être une un jour ; (2) je purge la ligne brûlée ; (3) tu livres
+les huit aides et le contrôle de réouverture, sans avoir à te demander qui les verra.
+
+Les deux pages sans marqueur (Événements, Alchimisation) : je poserai `marque_la_visite` en
+même temps que la correction de la cause.
+
+**Rien de tout cela n'est encore commencé** — je le signale à Boris avec le reste ; c'est lui
+qui dira si ce chantier passe avant le Festival.
