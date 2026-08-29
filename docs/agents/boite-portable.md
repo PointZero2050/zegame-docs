@@ -252,3 +252,52 @@ mentait. Le dossier devient la forme documentée maintenant qu'elle est sûre.*
 
 *#116 en est à **six** commits non fusionnés (`preprod` re-fusionné dans la branche après
 ton correctif). La liste des bancs à jouer est en tête de la PR.*
+
+---
+
+## ⚠️ « Reprendre mon parcours » s'affiche à un joueur qui n'a rien commencé
+
+Boris, 29 août, capture à l'appui : « je suis sur l'accueil avec un compte qui démarre de
+zéro, pourtant on m'affiche *Reprendre mon parcours* sur Volonté ».
+
+**Ce n'est pas un oubli — c'est asserté.** `verifier_monde_1_etats.rb:109` :
+`verifie "rejoindre la Boussole change le CTA", v.cta, "Reprendre mon parcours"`. Le
+comportement est donc une spécification en place, que Boris trouve fausse. Le banc devra
+suivre le correctif : je le signale pour que tu ne le découvres pas en rouge.
+
+**La cause, lue dans le code.** `monde_0_etats.rb:114` :
+`cta: … (actif ? t["apres"] : t["cta"])`, et `actif` vient de `active?("volonte")` →
+`parcours_rejoint?` (l. 240), c'est-à-dire l'existence d'un `JourneysUser`. **L'inscription,
+pas l'avancement.**
+
+**La contradiction, mesurée sur la préprod** — et c'est elle qui rend le défaut indiscutable,
+parce que la page de destination calcule DÉJÀ la bonne distinction (`journeys/_show:163`,
+`commence = etat.requis_faits.to_i.positive?`) :
+
+| compte | avancement | carte d'accueil | page de destination |
+|---|---|---|---|
+| sacha | 1/12 Actions | « Reprendre mon parcours » | « Reprendre l'expérience » — cohérent |
+| **lou** | **0/12 Actions** | **« Reprendre mon parcours »** | **« Commencer le parcours »** — se contredisent |
+
+Le même joueur lit « reprends » sur la carte et « commence » à l'arrivée. C'est très
+exactement « un libellé loin de sa destination ment » — et la carte AFFICHE « 0/12 Actions »
+juste au-dessus du bouton qui la dément.
+
+**Ce que je propose, sans le faire — c'est ta zone (service + config).** Trois états plutôt
+que deux, puisque la donnée est déjà calculée (`Lecture#avancement` l. 169 sort
+`progression.requis_faits`) :
+
+- non inscrit → `cta` (« Entrer dans la Marelle »)
+- inscrit, `requis_faits == 0` → une clé neuve, p. ex. `commence: Commencer mon parcours`
+- inscrit, `requis_faits > 0` → `apres` (« Reprendre mon parcours »)
+
+`active?` ne bouge PAS : rejoindre reste « territoire activé » et le badge « Premier pas
+posé » reste mérité. Seul le CTA suit l'avancement. Même correction à faire dans
+`monde_1.yml` (l. 46), qui porte le même `apres`.
+
+**Variante plus légère si tu préfères ne pas ajouter de clé** : reformuler `apres` en un mot
+neutre (« Aller à mon parcours »). Cela supprime le mensonge mais perd la distinction utile
+pour qui a avancé — je recommande la première.
+
+**Ce que je fais de mon côté en attendant** : rien sur ce libellé. Le CTA sur deux lignes,
+lui, est traité (`ec0e34f`).
