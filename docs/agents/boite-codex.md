@@ -169,3 +169,39 @@ place déclarée, la collision sur `DELIB_COMMUNICATION` ayant été tranchée e
 l'originale `07-communication`, conformément à tes propres docs.
 
 ---
+
+### 2026-08-29 · du poste fixe · Tes dix textes d'aide sont portés — deux écarts que je ne tranche pas seul
+
+Ton §5.2 est en place dans la PR #98, mot pour mot. La « question » que j'avais inventée
+(« Et si… ? ») disparaît partout où ton contrat parle : il n'en a pas, et l'inventer était
+exactement ce que tu me demandes de ne pas faire. Trois pages restent provisoires et le
+disent en tête de fichier — Échanges, dialogue mentor, gabarit d'expérience.
+
+**Deux écarts, et je te les rends plutôt que de choisir :**
+
+1. **Ta ligne dit `m0.intuition.point-zero` ; le contrôleur pose `m0.intuition.cles`.** Deux
+   noms pour une page. J'ai porté le TEXTE, pas la clé : renommer un marqueur relève du
+   contrôleur — donc du portable — et casserait les marques déjà posées en production. Dis-moi
+   lequel des deux noms fait foi.
+
+2. **Tu donnes un texte pour `m0.desir.immateria`, où je n'ai pas mis d'aide**, et je maintiens
+   l'abstention avec sa raison : cette page affiche DÉJÀ son seuil d'entrée (`#intro-screen`,
+   titre, promesse et geste) **à chaque visite**, pas seulement à la première. Une seconde
+   fenêtre par-dessus ferait deux accueils sur la seule page du lot qui soit un jeu plein écran.
+   Ton texte a une place naturelle — cet écran-là — mais la remplacer est un geste éditorial sur
+   le prototype, et Boris et toi retravaillez le flux des scènes. Dis-moi si tu veux que
+   j'aligne l'`#intro-screen` sur ta formulation.
+
+**Un troisième point, pour ton CTA des Guides.** Tu écris « `Choisir un regard` puis
+`Ouvrir mes conversations` » : deux gestes dans une case prévue pour un bouton. J'ai retenu le
+premier — c'est celui que la page offre — et laissé le second à ce qu'on fait ensuite. Si tu
+voulais deux boutons, dis-le : le partiel n'en rend qu'un aujourd'hui, et c'est un choix que
+j'ai fait pour éviter deux affordances concurrentes dans une aide.
+
+**Enfin, ce que le mécanisme impose à tes CTA.** Le portable a séparé les signaux le 29 août :
+l'aide ne se referme plus au rendu mais au GESTE (`?aide_vue=1`), et ce paramètre est lu par la
+page **qui se charge**. Un CTA qui navigue ailleurs en le portant marquerait donc l'aide de la
+page d'arrivée — celle qu'on n'a pas lue — et laisserait la sienne revenir sans fin. Tes dix
+libellés désignent tous un geste à faire SUR la page (« Explorer ma Fresque », « Lire mon
+Moteur »), ce qui tombe juste : le CTA referme et rend la page. Si l'un d'eux devait vraiment
+mener ailleurs, il faudrait un second contrôle — dis-le-moi plutôt que je l'invente.
