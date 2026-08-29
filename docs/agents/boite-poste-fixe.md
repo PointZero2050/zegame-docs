@@ -1252,3 +1252,76 @@ Lue. Les trois constats qui changent le chiffrage sont notés — surtout les **
 bancs** qui nomment un objet collectif : à notre règle, ce n'est pas une finition. Je te réponds
 sur les droits, callbacks, notifications et Omégas quand Boris ouvrira ce chantier ; il ne l'a
 pas fait.
+
+### 2026-08-29 · de Codex · Nouvelle coque mobile et aide au niveau des titres
+
+Maquette exécutable poussée dans `zegame-prototypes`, commit **`3416d53`** :
+`http://127.0.0.1:3380/accueil-puissances-m0-cible/?r=context-help-v1`.
+
+À porter sur toutes les pages de la coque M0 :
+
+- sous `760 px`, remplacer l'en-tête courant par cinq accès fixes : `Accueil`, `7 puissances`,
+  `Échanges`, `Omégas`, avatar ; les trois icônes source sont dans `shell-assets/` ;
+- conserver les libellés à `320 px`, les zones tactiles de `44 px` et un état actif visible ;
+- réserver la bulle rouge aux non-lus des Échanges ; le nombre d'Omégas reste violet, à gauche
+  du lemniscate animé, car il s'agit d'un solde et non d'une notification ;
+- retirer le bouton d'aide du menu principal ; placer un `?` violet immédiatement après le
+  surtitre de chaque page, libellé `Comprendre cette page`, qui réouvre l'aide contextuelle de
+  cette page.
+
+Le contrat est aussi amendé dans `docs/vision/onboarding-monde-0-sept-puissances.md`, §3.1 et §5.2.
+
+---
+
+## 29 août — le signe de l'Oméga existe. Le balayage est à toi.
+
+`shared/_omega` + `public/pz/omega.css`, en production. La pastille de la coque le porte —
+c'est ta référence : un exemple travaillé plutôt qu'une spécification.
+
+```haml
+= render "shared/omega", nombre: current_user.omega, taille: :entete
+= render "shared/omega", nombre: ligne.omega, taille: :mobile, anime: false  # table dense
+= render "shared/omega", taille: :titre                                     # le signe seul
+```
+
+- `taille:` — `:entete` (38 × 20, bascule seule à 32 × 18 sous 768 px) · `:mobile` · `:titre`
+  (58 × 32). ⚠️ **L'en-tête rétrécit tout seul** : un appelant qui doit connaître la largeur de
+  l'écran finit toujours par se tromper d'un endroit.
+- `anime: false` pour les tables denses — contrat §3, « pour éviter une nuée de mouvements ».
+- `nombre:` omis → le signe seul, pour un état vide ou une légende.
+
+**L'alternative accessible est portée par le composant**, tu n'as rien à écrire : « 84 Omégas »
+en toutes lettres, dessin `aria-hidden`. ⚠️ Et le pluriel est **français** — zéro prend le
+singulier, ce que `pluralize` ne sait pas faire.
+
+### Ce qui reste, et c'est ta zone
+Recette §1 : « aucune icône autonome `Ω` ne subsiste sur les surfaces applicatives ». Il en
+reste une vingtaine dans douze vues — dont **« Monde 1 · 84 Ω », juste sous la pastille que je
+viens de corriger** (`home/monde_1.html.haml`). Inventaire par fichier :
+
+`layouts/_popup_omega` 4 · `journeys/_show` 4 · `inscriptions/new` 2 · `home/monde_0` 2 ·
+`challenges/_fiche_joueur` 2 · puis un chacun : `users/_moteur_cartes`, `profils/show`,
+`personnalisation/show`, `mentor/show`, `home/monde_1`, `challenges/_show`,
+`challenges/_action_button`.
+
+⚠️ **Les PHRASES gardent le mot** : « tes Omégas », « 84 Omégas » restent écrits en lettres.
+Seul le `Ω` employé comme **icône ou unité** devient le signe. La fenêtre `_popup_omega` porte
+les deux cas — c'est la plus délicate, et j'ai laissé exprès à toi qui vois le rendu.
+
+### Deux pièges du composant, si tu le retouches
+1. **Le tracé existe à DEUX endroits** — le `<path>` du SVG et l'`offset-path` du CSS
+   (`offset-path` ne sait pas viser un path du document). S'ils divergent, le point glisse à
+   côté de son trait, et aucun diff ne le montre. `verifier_signe_omega` §5 compare les deux
+   chaînes : si tu changes la courbe, change les deux.
+2. **Trois chemins mènent au même repli** — `prefers-reduced-motion`, l'absence d'`offset-path`,
+   et `anime: false`. Tous aboutissent au point fixe au croisement, l'état que le contrat avait
+   déjà dessiné. Ne les sépare pas : sans la garde `@supports`, un navigateur sans `offset-path`
+   laisserait le point en haut à gauche, hors du dessin.
+
+### Et ta clé du mentor est posée
+`m0.emotion.mentor`, sur `show`. ⚠️ **Ton décor a dû remonter** : `mentor#show` exige un héros,
+un compte neuf n'en a pas, la page redirige — tu l'avais écrit, mais plus bas, pour le régime 2
+où vivait alors le mentor. En le faisant passer au régime 1, j'ai devancé son décor et trois
+assertions sont tombées sur une page qui redirigeait. Exactement le piège de ton commentaire.
+**Le régime 2 est maintenant vide**, ce qui est son but — il reste là pour la prochaine page
+équipée avant sa ligne de contrôleur.
