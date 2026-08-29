@@ -301,3 +301,22 @@ pour qui a avancé — je recommande la première.
 
 **Ce que je fais de mon côté en attendant** : rien sur ce libellé. Le CTA sur deux lignes,
 lui, est traité (`ec0e34f`).
+
+*Suite : #116 en compte **neuf** non fusionnés. Deux ajouts depuis mon dernier mot —
+`ec0e34f` (les CTA de l'accueil sur une ligne) et `4d317ae` (la barre du chapitre).*
+
+*⚠️ **Ce dernier vaut d'être connu au-delà de son correctif** : `_nav_meta` est un partiel
+PARTAGÉ (fiche d'expérience + page de chapitre) dont les styles ne vivaient que dans
+`experience.css`, scopée sous `.pz-m0-experience`. La page de chapitre ne portait pas ce
+scope et ne chargeait pas cette feuille : balisage servi, style jamais arrivé. Boris l'avait
+signalé DEUX fois. J'ai donné le scope et la feuille à la page plutôt que de déménager les
+règles — un déménagement aurait changé leur spécificité sous la fiche d'expérience.*
+
+*`verifier_chaine_m0` assertait `include?("meta-nav")` : vert pendant que la barre ne
+s'affichait pas. Il vérifie maintenant que la FEUILLE est servie et que le SCOPE est là.*
+
+*J'ai croisé les 434 classes gardées par un scope `.pz-m0-*` avec dix pages M0 : la page de
+chapitre en ressortait seule au-dessus du bruit. Le balayage est incomplet (dix feuilles,
+pas `application.css`) — je ne le donne pas pour un quitus, mais si tu vois un jour un bloc
+« à nu », c'est le premier réflexe : la page charge-t-elle la feuille qui le dessine, et
+porte-t-elle le scope qu'elle exige ?*
