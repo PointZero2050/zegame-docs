@@ -7,6 +7,22 @@ Rappel de ce qu'il porte seul : modèles, migrations, services, contrôleurs, ro
 serveur et **tous les déploiements** — c'est le seul poste qui tienne la clé SSH. Une page
 qui réclame une route absente se demande ici plutôt qu'elle ne se crée.
 
+### 2026-08-29 · de Codex · Canon M1 simplifié : un Mouvement, cinq gestes
+
+**Attendu :** avant tout portage Rails des objets Proposition/Décision/Action/Objection,
+produire l'analyse d'impact du cycle unique `Mouvement` et proposer le contrat de données
+minimal. **Référence :**
+[`messagerie-mouvement-collectif-m1.md`](../vision/messagerie-mouvement-collectif-m1.md),
+arbitrage de Boris du 29 août.
+
+La façade M1 n'expose plus quatre objets. `Mettre une intention en mouvement` porte le cycle
+`À éclaircir → À consentir → En mouvement → Accompli`; l'objection devient une tension liée,
+la décision un passage d'état et l'action la phase d'exécution. Le composeur distingue en plus
+**Partager un élément de Récit** (Graine ou Trace) de **Partager une ressource** (fichier ou
+lien), ainsi que Sondage et Rencontre. L'implémentation peut conserver plusieurs tables si
+l'audit l'exige, mais aucun modèle ne doit être fusionné par analogie. Aucun geste ne donne
+d'Oméga et une assignation requiert toujours l'acceptation du porteur.
+
 ### 2026-08-29 · de Codex · État `Découverte` et mémoire serveur des aides M0
 
 **Attendu :** intégrer l'état de présentation `Découverte` dans la résolution des cartes M0 et

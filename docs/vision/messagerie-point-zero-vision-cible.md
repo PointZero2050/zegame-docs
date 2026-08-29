@@ -170,18 +170,24 @@ doit définir explicitement le devenir du Fil, des décisions, des actions et de
 
 ## 5. UX d'un espace collectif
 
-Chaque espace propose quatre vues principales :
+Chaque espace propose trois vues principales. Au Monde 1, l'ancienne séparation entre
+Actions et Décisions est remplacée par un seul cycle visible de **Mouvements** :
 
 | Vue | Contenu |
 |---|---|
 | **Fil** | Messages, médias, réactions, réponses et sous-fils |
-| **Actions** | Missions, responsables, échéances, rendez-vous et dépendances |
-| **Décisions** | Propositions, consultations, objections, résultats et révisions |
+| **Mouvements** | Intentions à éclaircir, consentements, tensions, porteurs, échéances et accomplissements |
 | **Mémoire** | Graines, apprentissages, accords, synthèses et œuvres conservées |
 
 Le composeur reste d'abord un champ de message. Un bouton d'ajout ouvre :
 
-`Message · Graine · Proposition · Action · Décision · Ressource · Rencontre`
+`Mettre une intention en mouvement · Lancer un sondage · Proposer une rencontre ·
+Partager un élément de Récit · Partager une ressource`
+
+`Partager un élément de Récit` ne propose que les objets PZ existants — Graine ou Trace.
+`Partager une ressource` ne propose que les apports techniques — fichier ou lien. Le
+contrat M1 complet est fixé dans
+[Messagerie M1 — mettre une intention en mouvement](messagerie-mouvement-collectif-m1.md).
 
 Sur mobile, le contexte, les lecteurs et l'intention du sous-fil restent accessibles sans occuper
 en permanence la moitié de l'écran. Les actions métier ne doivent pas être dissimulées dans le menu
@@ -248,7 +254,8 @@ action l'exige.
 ### 8.2. États indicatifs
 
 - Mission : `proposée → prise → en cours → achevée / abandonnée` ;
-- Proposition : `brouillon → exploration → décision → adoptée / retirée / à retravailler` ;
+- Mouvement M1 : `à éclaircir → à consentir → en mouvement → accompli / à poursuivre /
+  abandonné / à réviser` ;
 - Rencontre : `proposée → disponibilité recueillie → confirmée → passée / annulée` ;
 - Graine : `privée → partagée dans ce contexte → élevée dans la Mémoire` ;
 - Contribution : `signalée → documentée → examinée → reconnue / à compléter`.
@@ -260,8 +267,7 @@ Ces états sont des exemples de cible et non des noms de colonnes imposés.
 La plupart des messages restent dans le Fil. Les membres autorisés peuvent proposer :
 
 - `Transformer en Graine` ;
-- `Créer une action` ;
-- `Créer une proposition` ;
+- `Mettre une intention en mouvement` ;
 - `Ajouter à la Fresque du Cercle` ;
 - `Ajouter au Pacte-Source` ;
 - `Conserver comme apprentissage` ;

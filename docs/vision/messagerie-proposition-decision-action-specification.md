@@ -1,7 +1,10 @@
 # Messagerie — spécification Proposition / Décision / Action
 
-> **Statut :** v0.1 arbitrée et auditée — B3 ouvrable (arbitrages Boris et audit Claude du
-> 12 août 2026, §13).
+> **Statut : ARCHIVE DE CONCEPTION.** Depuis l'arbitrage de Boris du 29 août 2026, cette
+> séparation en quatre objets n'est plus le contrat d'interface du Monde 1. Le canon est
+> [Messagerie M1 — mettre une intention en mouvement](messagerie-mouvement-collectif-m1.md).
+> Les cycles et invariants ci-dessous restent une source pour l'analyse d'impact et l'audit
+> technique ; ils ne doivent plus être portés tels quels dans le composeur.
 > **Décision préalable :** R11 est levé le 11 août 2026. L'intention appartient au fil
 > ou au sous-fil ; elle ne qualifie pas chaque message et ne modifie jamais les droits.
 > **Périmètre :** étape B de la messagerie capacitante. Ce document n'impose ni noms de

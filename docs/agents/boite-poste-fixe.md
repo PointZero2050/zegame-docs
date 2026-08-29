@@ -3,6 +3,21 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-29 · de Codex · Maquette M1 à réaligner sur le Mouvement unique
+
+**Attendu :** ne plus présenter Proposition, Décision, Action et Objection comme quatre
+commandes ; préparer la prochaine maquette sur le cycle et les libellés canoniques.
+**Référence :**
+[`messagerie-mouvement-collectif-m1.md`](../vision/messagerie-mouvement-collectif-m1.md),
+arbitrage de Boris du 29 août.
+
+Le bouton d'ajout M1 comporte cinq gestes : **Mettre une intention en mouvement**,
+**Lancer un sondage**, **Proposer une rencontre**, **Partager un élément de Récit** (Graine
+ou Trace) et **Partager une ressource** (fichier ou lien). Une seule carte traverse
+`À éclaircir → À consentir → En mouvement → Accompli`; les tensions vivent dans cette carte.
+La vue cible s'appelle **Mouvements** et remplace la séparation Actions/Décisions. Aucun portage
+visuel n'est demandé avant l'analyse d'impact du portable.
+
 ### 2026-08-29 · de Codex · Compléter les aides contextuelles des pages M0
 
 **Attendu :** aligner les maquettes puis le portage visuel sur le contrat `Découverte` et les

@@ -115,7 +115,7 @@ Petit groupe créé librement pour échanger sans structure métier lourde. Il p
 - sondage simple ;
 - participants explicites.
 
-Les vues Actions, Décisions ou Mémoire peuvent être activées ensuite si le groupe se structure. Une
+Les vues Mouvements ou Mémoire peuvent être activées ensuite si le groupe se structure. Une
 transformation en Projet ou Cohorte doit conserver l'historique et rendre visible le changement de
 finalité.
 
@@ -567,7 +567,7 @@ Invariants :
 
 - Projet ou Mission ;
 - Cohorte ;
-- vues Actions et Mémoire ;
+- vues Mouvements et Mémoire ;
 - transitions explicites entre objets et espaces ;
 - parcours des cinq gestes du Monde 1.
 

@@ -485,6 +485,11 @@ décision).
 
 ### F22 — Proposition, Décision et objection
 
+> **Arbitrage du 29 août 2026 :** ces distinctions restent pertinentes pour l'audit et
+> l'historique, mais ne constituent plus quatre entrées UX. Elles sont projetées dans le
+> cycle unique du **Mouvement** : `à éclaircir → à consentir → en mouvement → accompli`.
+> Voir [Messagerie M1 — mettre une intention en mouvement](messagerie-mouvement-collectif-m1.md).
+
 **Origine front** : `messagerie-point-zero-cible` — vues Décisions, composeur `+`, objection
 en trois temps.
 
@@ -507,6 +512,10 @@ spécification Proposition/Décision/Action peut commencer.
 
 ### F23 — Action / mission portée dans un espace
 
+> **Arbitrage du 29 août 2026 :** l'Action ordinaire n'est plus créée comme un objet visible
+> séparé. Elle est la phase `En mouvement` du Mouvement. Une Mission du Commun demeure un
+> objet plus large et ne doit pas être fusionnée par analogie sans analyse dédiée.
+
 **Origine front** : vue `Actions` de la messagerie-cible, `missions-commun-cible`,
 `projet-vivant-cible`.
 
@@ -515,7 +524,7 @@ spécification Proposition/Décision/Action peut commencer.
 | Modèle | `Action` avec porteur, échéance facultative, états `proposée → prise → en cours → achevée / abandonnée` ; distinguer le **besoin borné** (contribution ponctuelle) de la **mission du Commun** (œuvre collective) — la Place de marché est la porte unique (arbitrage Boris, R3) |
 | Droits | Se porter volontaire est un acte de la personne : **aucune affectation** par le système ni par un tiers |
 | Reconnaissance | Une action achevée n'attribue **aucun** Oméga automatiquement — elle alimente le dossier du rituel de reconnaissance (F-horizon) |
-| Front | Carte structurée + vue Actions par espace ; l'intention et le besoin s'affichent avant toute récompense estimée |
+| Front | Carte structurée + vue Mouvements par espace ; l'intention et le besoin s'affichent avant toute récompense estimée |
 | Piège | Une candidature ouvre un échange, elle n'attribue pas une place |
 
 ### F24 — Mémoire d'espace (du Fil à la Mémoire)

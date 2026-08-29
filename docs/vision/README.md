@@ -121,7 +121,9 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 22. **[Profil communautaire et messagerie des Cercles — V1](profil-communautaire-messagerie-cercles-v1.md)** — visibilité progressive entre joueurs, dossier de rencontre, contact interne candidat/référent, e-mail de notification, réemploi de la messagerie des feedbacks, périmètre reporté et analyse d'impact avant code.
 
-   **[Messagerie Point Zéro — vision cible](messagerie-point-zero-vision-cible.md)** — cible souveraine destinée à remplacer WhatsApp puis à relier conversations, médias, réactions, sondages, Cercles, projets, actions, décisions, Mémoire, polarités, cinq Cadres et miroir IA, sans gamification de l'attention ni diagnostic des personnes.
+   **[Messagerie Point Zéro — vision cible](messagerie-point-zero-vision-cible.md)** — cible souveraine destinée à remplacer WhatsApp puis à relier conversations, médias, réactions, sondages, Cercles, projets, Mouvements, Mémoire, polarités, cinq Cadres et miroir IA, sans gamification de l'attention ni diagnostic des personnes.
+
+   **[Messagerie M1 — mettre une intention en mouvement](messagerie-mouvement-collectif-m1.md)** — canon M1 simplifié : un Mouvement unique réunit éclaircissement, consentement, tensions, exécution et accomplissement ; le composeur distingue le partage d'un élément de Récit (Graine ou Trace) du partage technique d'une ressource (fichier ou lien).
 
    **[Espaces de discussion et apprentissage au Monde 1](messagerie-espaces-discussion-monde-1.md)** — distinction espace/fil, dix gabarits d'espaces relationnels, pédagogiques, fonctionnels et décisionnels, création guidée par la finalité, droits, cycle de vie, prévention de la prolifération et apprentissage des cinq gestes collectifs au Monde 1.
 

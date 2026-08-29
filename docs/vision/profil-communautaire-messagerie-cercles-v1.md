@@ -457,5 +457,5 @@ Le contenu détaillé, les garde-fous et la trajectoire de cette V2 sont défini
 [Messagerie Point Zéro — vision cible](messagerie-point-zero-vision-cible.md). Elle distingue :
 
 - souveraineté fonctionnelle pour quitter WhatsApp ;
-- messagerie capacitante reliant Fil, Actions, Décisions et Mémoire ;
+- messagerie capacitante reliant Fil, Mouvements et Mémoire ;
 - messagerie de Conscience avec protocoles de polarités, cinq Cadres et miroir IA.
