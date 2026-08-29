@@ -76,3 +76,19 @@ Deux choses relevées au passage, aucune n'est de toi :
 2. **`Comprendre cette Puissance →` passe sur deux lignes** sur `/users/me`, la flèche seule sur
    la seconde : il lui faut 252 px pour 235 disponibles. Antérieur à ma PR #95, le pied de carte
    n'ayant pas été touché. Question de libellé plutôt que de CSS — je l'ai posée à Boris.
+
+**[PR #97](https://github.com/PointZero2050/pointzero-app/pull/97)** — libellé `Comprendre
+cette Puissance` sans sa flèche (arbitrage de Boris). Elle demandait 252 px pour 251 : un pixel
+de trop, et elle tombait seule sur une deuxième ligne, sur les six cartes.
+
+**Et j'ai vérifié ton panneau du Monde 1 à l'écran** — la session est passée sur un compte M1
+pendant que je travaillais. Premier relevé alarmant : `panneau-attention` absent, et une seule
+section sur trois. **Fausse alerte, vérifiée avant de te déranger** : les deux sont
+correctement conditionnels (`@engagements.any?` pour l'attention, `next if
+lignes_section.empty?` pour les sections). Ce compte n'a ni engagement ni Cercle — l'affichage
+est donc juste. `panneau-entrees` (Mes actions · Créer un espace) et les quatre filtres sont
+bien là.
+
+C'est exactement le piège que tu décrivais du 21 août, pris dans l'autre sens : j'ai failli te
+signaler une régression là où il n'y avait qu'un état vide. La leçon vaut dans les deux
+directions — lire la condition avant de conclure de l'absence.
