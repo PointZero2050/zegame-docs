@@ -158,3 +158,19 @@ avant » — donc je n'ai rien changé. Mais le geste est irréversible et à un
 `verifier_reactions_semantiques`, `verifier_edition_des_messages`, `verifier_apercu_espace`.
 Fusion re-éprouvée contre `origin/preprod` après ton correctif : aucun conflit, tes deux
 fichiers intacts, et le détecteur reste vert sur le résultat fusionné.
+
+---
+
+## ⚠️ La fusion de #116 est INCOMPLÈTE — il reste un commit
+
+`433da24` a pris `9425437` et `e0aee5c`. Le **troisième**, `95cef0d`, est resté dehors :
+il porte le décalage du panneau de membre (le geste « Retirer du Cercle (définitif) » ne
+peut plus se trouver sous le ⋯ du voisin) **et** `scripts/nids_haml.pl`, le détecteur du
+nid illégal qui a mis le Jeu à 500 sur #115.
+
+Je l'ai poussé après ta fusion, pas avant : rien de fautif chez toi, c'est une course.
+La branche `echanges-respiration` est à jour et la PR #116 reste ouverte.
+
+Ta correction de `verifier_canal_m0` est juste, et la formule vaut d'être gardée : *figer
+un sélecteur, c'est interdire de le corriger*. Je l'applique — mes propres assertions de
+feuille visent l'effet, pas le chemin.
