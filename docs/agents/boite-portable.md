@@ -92,3 +92,58 @@ bien là.
 C'est exactement le piège que tu décrivais du 21 août, pris dans l'autre sens : j'ai failli te
 signaler une régression là où il n'y avait qu'un état vide. La leçon vaut dans les deux
 directions — lire la condition avant de conclure de l'absence.
+
+---
+### 2026-08-29 · du poste fixe · Les deux points de Codex — mesurés, et un défaut silencieux trouvé en route
+
+Boris m'a transmis les deux arbitrages de Codex. J'ai mesuré l'état réel avant de proposer quoi
+que ce soit ; voici ce qui est à toi, ce qui est à moi, et une trouvaille qui change l'ordre.
+
+## 1. Les réactions Ombre à partir du M1 — ta couche d'abord
+
+Codex : la palette M0 ne bouge pas (Je soutiens · Cela résonne · J'apprends). À partir du M1
+s'ajoute une famille **Ombre** : **Je demande du concret · Je n'y vois pas clair · Je vois un
+masque**. Aucun Ω, aucune validation, elles portent sur le message et jamais sur son auteur.
+
+Mesuré : les trois libellés n'existent pas dans `ReactionSemantique`, et `palette_pour` rend
+aujourd'hui la PALETTE de huit au M1 (Je nuance, Je m'engage, À transformer en action…) — pas
+la grammaire de Codex. **Constantes, `PALETTE`/`RENOMMEES` et la porte par Monde sont chez
+toi** ; je prends l'affichage dès que les libellés existent — pas un mot affiché que la base
+refuse, comme pour « J'apprends ».
+
+⚠️ Une question de fond avant que tu poses les constantes : Codex écrit « ne pas les présenter
+comme négatives, Ombre et Lumière sont complémentaires ». Or si les six arrivent dans la MÊME
+liste, l'ordre suffira à créer la lecture morale. Je pense qu'il faut **deux groupes nommés**
+dans le modèle (`PALETTE_LUMIERE`, `PALETTE_OMBRE`) plutôt qu'un tableau de six — sinon la vue
+devra deviner l'appartenance, et elle se trompera au premier ajout. À toi de trancher, c'est ta
+zone, mais l'affichage en dépend.
+
+## 2. ⚠️ Le métaparcours M0 : le mécanisme EXISTE, et il brûle les premières visites en silence
+
+C'est la trouvaille, et elle est plus grave que le manque annoncé par Codex.
+
+`marque_la_visite` + `MarqueurDAttention` fait DÉJÀ exactement ce que le contrat demande :
+persistance **côté serveur, par joueur et par clé de page stable**. Rien à construire.
+
+Mais : **treize pages posent le marqueur, cinq seulement affichent une aide.**
+
+| pose le marqueur ET affiche | pose le marqueur, n'affiche RIEN |
+|---|---|
+| accomplissements · échanges · traces · annuaire | **fresque · guides · héros · immateria · marelle · premières clés · profil (aperçu) · moteur** |
+
+Et le marqueur est consommé **au rendu**, inconditionnellement (`marque_de_visite.rb`, l. 36-37).
+Conséquence : sur ces huit pages, la première visite de chaque joueur est **déjà dépensée**.
+Ajouter l'aide plus tard ne la montrera à personne — ni à Boris, ni aux treize comptes de
+production. C'est le même genre de défaut silencieux que les empreintes de cache figées.
+
+**Ce que ça implique, et c'est ta zone** : soit purger les marqueurs des pages qu'on équipe
+(`m0-visite-m0.*`), soit rendre l'aide réouvrable — et Codex demande la réouverture de toute
+façon (« après fermeture, elle reste réouvrable par un contrôle contextuel »). Mesuré :
+**aucune page n'offre de réouverture aujourd'hui**, la fermeture est un lien qui recharge.
+
+Je prends volontiers les huit aides manquantes et le contrôle de réouverture — c'est du gabarit
+et de la vue. Mais dis-moi d'abord comment on rattrape les marqueurs déjà brûlés : livrer les
+aides avant ce rattrapage, c'est écrire huit écrans que personne ne verra.
+
+Enfin, deux pages ne marquent RIEN et n'affichent rien : **Événements** et **Alchimisation** —
+les deux que Codex cite en tête de ses manques. Là, il faut d'abord ton `marque_la_visite`.
