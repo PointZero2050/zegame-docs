@@ -188,3 +188,18 @@ La branche `echanges-respiration` est à jour et la PR #116 reste ouverte.
 Ta correction de `verifier_canal_m0` est juste, et la formule vaut d'être gardée : *figer
 un sélecteur, c'est interdire de le corriger*. Je l'applique — mes propres assertions de
 feuille visent l'effet, pas le chemin.
+
+*Suite, même jour : #116 en compte maintenant **quatre** non fusionnés — `95cef0d`,
+`8fde83e`, `b7848c5` (en-tête desktop ferré à gauche, à la demande de Boris) et `76bfebe`.
+`preprod` est fusionné dans la branche, le diff ne montre que ces quatre-là.*
+
+*⚠️ **Deux bancs de plus à jouer** : `verifier_coque_m0` (garde neuve sur le dessin de la
+roue — une COMPARAISON entre desktop et mobile, pas un nom de fichier en dur) et
+`verifier_attention` (le nom accessible doit changer avec l'état). La garde de la roue
+rougissait sur la préprod d'avant la livraison et passe au vert avec elle : elle borne.*
+
+*⚠️ **Une neutralisation scopée à connaître** : `.pz-echanges-entree` porte une
+`margin-right: .25rem` dans la feuille APPLICATIVE, qui creusait un écart de 12 px là où les
+autres en font 8. Je l'annule dans `coque.css`, sous `.pz-shell-v2` — pas dans la feuille
+applicative, que je ne touche pas. Si tu vois un jour un écart irrégulier revenir dans la
+barre, c'est là qu'il faut regarder.*
