@@ -12,6 +12,10 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 ## UX-cible et plan général (2026-08-10)
 
+- **[symbole-omega-interface.md](symbole-omega-interface.md)** — décision du 29 août 2026 :
+  le glyphe `Ω` disparaît comme icône d'interface au profit d'un lemniscate violet parcouru
+  par un point ; contrat du compteur, dimensions responsive, accessibilité et remplacement
+  sur toutes les surfaces.
 - **[canon-traces-parcours.md](canon-traces-parcours.md)** — décision du 23 août 2026 : tout
   résultat pédagogique significatif généré dans un parcours devient une Trace, agrégée en quatre
   familles dans `Mes Traces`. Distingue capture automatique, visibilité, exclusions, Trace/Graine

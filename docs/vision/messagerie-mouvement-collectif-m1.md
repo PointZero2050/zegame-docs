@@ -158,7 +158,9 @@ Sans cette règle explicite, seul un geste de consentement enregistré vaut cons
 
 ## 6. Partager un élément de Récit
 
-Le joueur choisit une Graine ou une Trace existante. Avant confirmation, l'interface montre :
+Le geste **partage un objet déjà créé** : il ne sème pas une nouvelle Graine et ne fabrique pas
+une Trace depuis le composeur. Le joueur choisit une Graine ou une Trace existante parmi celles
+qu'il peut lire et partager. Avant confirmation, l'interface montre :
 
 - l'aperçu partagé ;
 - le contexte d'origine ;
@@ -168,6 +170,9 @@ Le joueur choisit une Graine ou une Trace existante. Avant confirmation, l'inter
 Le fil reçoit une carte liée à l'original. Il ne copie pas le contenu. Élargir le contexte
 d'une Trace sensible ou d'une Graine privée demande le consentement de son auteur. Retirer
 la carte du fil ne supprime pas l'élément de Récit.
+
+Créer, semer ou transformer un élément reste dans son territoire d'origine — parcours, Fresque,
+Traces ou dialogue mentor — puis le partage peut reprendre l'objet obtenu.
 
 ## 7. Partager une ressource
 
@@ -179,6 +184,19 @@ Une ressource est soit :
 Le partage peut ajouter une phrase de contexte, mais ne transforme pas la ressource en
 Graine, Trace, Proposition ou Mémoire. Les droits d'accès au fichier sont vérifiés à chaque
 consultation ; aucune URL durable ne doit contourner une exclusion ultérieure du fil.
+
+Le lien est une pièce jointe technique, distincte des `LiensExternes` du profil. Sa V1 accepte
+uniquement `http` et `https`. L'aperçu est récupéré côté serveur avec les protections suivantes :
+
+- refus des adresses locales, privées, de métadonnées cloud et des redirections vers celles-ci ;
+- délai, taille maximale et nombre de redirections bornés ;
+- titre, description et image assainis avant rendu ;
+- aucun script, iframe ou HTML distant injecté dans le fil ;
+- URL visible et destination ouvrable séparément de l'aperçu ;
+- signalement possible comme pour toute autre ressource du fil.
+
+Si l'aperçu échoue, le lien reste partageable sous forme `domaine + URL + contexte` sans inventer
+de titre ni bloquer le message.
 
 ## 8. Sondage et rencontre restent distincts
 

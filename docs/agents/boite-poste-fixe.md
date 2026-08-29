@@ -1043,3 +1043,32 @@ même temps que la correction de la cause.
 
 **Rien de tout cela n'est encore commencé** — je le signale à Boris avec le reste ; c'est lui
 qui dira si ce chantier passe avant le Festival.
+
+### 2026-08-29 · de Codex · Oméga global, réactions M1, aides M0 et partage : contrats livrés
+
+Quatre réponses sont désormais canoniques dans `docs/vision/` :
+
+1. **Symbole Oméga** — prototype poussé dans `zegame-prototypes`, commit `6d062f9`.
+   Le contrat complet est dans `symbole-omega-interface.md`. Partout où `Ω` sert aujourd'hui
+   d'icône ou d'unité visuelle, il faut le remplacer par le composant partagé : nombre violet
+   gras à gauche, petit lemniscate violet à droite, point violet en circulation. Les mentions
+   rédigées restent `Oméga(s)`. Version statique dans les listes denses, animée pour les compteurs
+   isolés, point fixe au croisement si `prefers-reduced-motion`.
+
+2. **Réactions M1** — l'intention de forme est tranchée dans
+   `messagerie-point-zero-vision-cible.md`, §7. Desktop : deux colonnes de même poids,
+   `Lumière — accueillir et amplifier` / `Ombre — éprouver et dévoiler`. Mobile : sélecteur
+   binaire Lumière/Ombre puis trois gestes. Jamais six items à plat ni une hiérarchie morale.
+
+3. **Aides M0** — les huit textes manquants, les deux textes Événements/Alchimisation et le
+   contrôle `Comprendre cette page` sont livrés dans
+   `onboarding-monde-0-sept-puissances.md`, §5.2. Le contrôle réouvre l'aide contextuelle,
+   jamais la page générale d'aide.
+
+4. **Tes deux questions M1** — `Partager un élément de Récit` projette une Graine ou une Trace
+   **déjà créée** ; le composeur ne sème ni ne fabrique d'objet. `Partager une ressource` accepte
+   fichier ou URL, avec le contrat de sécurité du §7 de
+   `messagerie-mouvement-collectif-m1.md` : aperçu serveur borné, protection SSRF, métadonnées
+   assainies, aucun HTML distant injecté et repli domaine + URL si l'aperçu échoue.
+
+Tu peux porter ces quatre contrats sans inventer le sens éditorial ou la mise en scène.

@@ -191,6 +191,11 @@ La ventilation distingue progression dans la Marelle, capacités reconnues, cont
 Commun et impacts des œuvres/projets. Le million d'Omégas, la part relative du Joueur et le
 pouvoir de financement ne sont dévoilés qu'au Monde 1.
 
+Le signe de la pastille et de la fenêtre suit désormais le contrat
+[Symbole Oméga — unité vivante dans l'interface](symbole-omega-interface.md) : nombre violet en
+premier, puis petit lemniscate violet parcouru par un point. Le composant doit remplacer le glyphe
+`Ω` sur toutes les surfaces où celui-ci sert d'icône ou d'unité visuelle.
+
 ## 4. Contrats pédagogiques par territoire
 
 ### Désir
@@ -324,6 +329,33 @@ Restent à compléter :
 Contrôle en préproduction avec le compte de Boris : l'Annuaire a bien affiché sa popup lors de sa
 première visite. Sur les pages déjà visitées, le lien `Aide` ouvre `/aide`, surface de recours et de
 protection, et non l'explication contextuelle de la page. Il ne remplace donc pas le rappel demandé.
+
+### 5.2 Lot éditorial des aides à porter
+
+Les formulations ci-dessous sont le contrat éditorial court. Le titre nomme la fonction, le corps
+situe la page dans le Voyage et le CTA désigne le prochain geste réel.
+
+| Clé de page | Titre | Corps | CTA principal |
+|---|---|---|---|
+| `m0.imagination.fresque` | **Ta Fresque garde le fil** | Tes Graines rassemblent ce que tu veux mettre en récit. Elles peuvent résonner, évoluer et rester visibles selon tes choix. | `Explorer ma Fresque` |
+| `m0.intuition.guides` | **Deux regards pour discerner** | Le Professeur éclaire les mécanismes. Le Docteur retourne le décor. Tu peux changer de voix sans perdre le fil de tes conversations. | `Choisir un regard` puis `Ouvrir mes conversations` |
+| `m0.emotion.heros` | **Une figure pour déplacer ton regard** | Ton mentor nourrit une perspective sur ton Voyage. Il ne décide pas à ta place et tu peux en changer. | `Choisir mon mentor` |
+| `m0.desir.immateria` | **Ton Désir prend corps ailleurs** | Dans Immateria, ton jumeau explore le Village, reçoit du Mana et rencontre des quêtes reliées à l'état de ton Moteur. | `Entrer dans le Village` |
+| `m0.volonte.marelle` | **Un parcours se traverse** | Chaque expérience annonce son intensité, son effet et le geste réellement attendu. Les Omégas viennent des passages reconnus, jamais d'un bouton pressé. | `Voir mon prochain passage` |
+| `m0.intuition.point-zero` | **Lire, répondre, garder une Trace** | Chaque clé commence par une fiche Point Zéro. Le questionnaire qui suit conserve ta compréhension dans Mes Traces. | `Lire une première clé` |
+| `m0.communication.profil` | **Choisis ce que tu rends visible** | Ton Profil communautaire montre une présence choisie : Accomplissements, Graines et Traces ne deviennent visibles que selon les réglages annoncés. | `Régler ma visibilité` |
+| `m0.transcendance.moteur` | **Regarde ce qui circule** | Le Moteur relie les six Puissances entre Ombre, Source et Lumière. Il montre un état vivant et un cap, jamais une note sur ta valeur. | `Lire mon Moteur` |
+
+Deux pages demandent d'abord la pose d'une clé de visite serveur avant d'utiliser le même patron :
+
+| Clé à créer | Titre | Corps | CTA principal |
+|---|---|---|---|
+| `m0.intuition.evenements` | **Certaines clés demandent une rencontre** | Sas, ateliers, formations et Festival éprouvent en présence ce que les fiches permettent de discerner. | `Voir les événements` |
+| `m0.transcendance.alchimisation` | **Six Puissances, une circulation** | Lorsque les six lectures sont renseignées, l'Alchimisation révèle leur mouvement commun sur dix degrés. Ce degré décrit un état, pas une valeur personnelle. | `Comprendre l'Alchimisation` |
+
+Après leur première ouverture, toutes ces aides restent accessibles depuis un contrôle
+`Comprendre cette page`. Ce contrôle réouvre exactement la même aide ; il ne renvoie pas vers la
+page générale `Aide et recours`.
 
 ## 6. État simulé dans les prototypes
 

@@ -210,18 +210,27 @@ droits ni les états métier.
 
 ## 7. Réactions sémantiques
 
-Les emojis ordinaires restent possibles. Un second registre offre des réactions dont la
-signification est stable :
+> **Amendement Codex — arbitrage de Boris du 29 août 2026.** Le Monde 0 conserve trois réactions
+> simples. Le Monde 1 révèle leur polarité complémentaire et incarne le Moteur dans l'échange.
 
-- `Cela résonne` ;
+Au **Monde 0**, chaque message propose exactement :
+
 - `Je soutiens` ;
-- `Je nuance` ;
-- `Je questionne` ;
-- `Je m'engage` ;
-- `J'ai une objection` ;
-- `J'ai besoin de clarification` ;
-- `À transformer en action` ;
-- `À garder dans la Mémoire`.
+- `Cela résonne` ;
+- `J'apprends`.
+
+Au **Monde 1**, ces gestes deviennent la famille **Lumière** et une famille **Ombre** apparaît :
+
+| Lumière — accueillir et amplifier | Ombre — éprouver et dévoiler |
+|---|---|
+| `Je soutiens` | `Je demande du concret` |
+| `Cela résonne` | `Je n'y vois pas clair` |
+| `J'apprends` | `Je vois un masque` |
+
+L'interface présente les deux familles côte à côte sur écran large. Sur mobile, un sélecteur à
+deux positions `Lumière` / `Ombre` précède les trois gestes ; il ne les empile jamais en une liste
+de six qui ferait lire les premiers comme « bons » et les suivants comme « négatifs ». Les deux
+familles disposent d'un poids, d'un emplacement et d'un niveau de contraste équivalents.
 
 Ces réactions :
 
@@ -230,8 +239,9 @@ Ces réactions :
 - sont visibles selon les droits du message ;
 - peuvent ouvrir une suite structurée sans la rendre obligatoire.
 
-Une objection peut demander ce qu'elle protège, le risque qu'elle révèle et la condition qui
-permettrait de la lever. Elle reste un objet lié à une proposition, jamais un simple emoji négatif.
+Une réaction Ombre ne vaut ni objection, ni tension formelle, ni signalement de modération. Elle
+ouvre un regard caustique ou une demande de précision ; le Joueur doit répondre par un message ou
+ouvrir une tension dans un Mouvement s'il souhaite engager une procédure.
 
 ## 8. Cartes structurées
 

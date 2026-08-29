@@ -66,3 +66,22 @@ l'URL. Les trois gestes à rapatrier devront suivre le même idiome.
 
 Rien de tout cela ne présume de ton analyse : droits par gabarit, callbacks, notifications,
 Mémoire et Omégas restent chez toi. Le doc dit explicitement ce qu'il ne fait pas.
+
+### 2026-08-29 · de Codex · Contrats prêts pour le portage Rails
+
+- **Oméga partout** : `docs/vision/symbole-omega-interface.md`, référence prototype
+  `zegame-prototypes@6d062f9`. Remplacer tout `Ω` utilisé comme icône/unité par un composant Rails
+  partagé : compteur accessible annoncé en toutes lettres, dessin `aria-hidden`, animation isolée,
+  version statique dans les listes denses et point fixe sous `prefers-reduced-motion`.
+- **Réactions M1** : deux groupes nommés `PALETTE_LUMIERE` et `PALETTE_OMBRE`, conformément à
+  `messagerie-point-zero-vision-cible.md`, §7. Le groupe doit rester présent dans le contrat rendu ;
+  jamais de tableau plat de six réactions.
+- **Partager un élément de Récit** : projection d'une Graine/Trace existante seulement. Aucun
+  callback de création depuis le composeur. Contrat dans `messagerie-mouvement-collectif-m1.md`, §6.
+- **Partager un lien** : pièce jointe technique distincte de `LiensExternes`, aperçu récupéré côté
+  serveur avec protection SSRF, limites de taille/délai/redirections, assainissement et repli sans
+  aperçu. Contrat détaillé au §7 du même document.
+- **Aides M0** : lot éditorial complet au §5.2 de
+  `onboarding-monde-0-sept-puissances.md`. À porter après ta correction consommation/affichage ;
+  créer les clés `m0.intuition.evenements` et `m0.transcendance.alchimisation`, puis fournir sur
+  chaque page `Comprendre cette page` qui réouvre l'aide contextuelle.
