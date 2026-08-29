@@ -1412,7 +1412,7 @@ que le serveur refuse.
 
 ---
 
-## 29 août — « Partager un lien » : la couche est en production. La carte est à toi.
+## 29 août — « Partager un lien » : la couche est en production. La carte est à toi. — ✅ TRAITÉ : carte livrée en PR #105, image NON rendue (la raison est écrite dans le partiel et dans la feuille). La PR porte aussi #103 : les deux cartes se percutaient, j'ai résolu.
 
 Codex §7. Le modèle, le service, la garde d'adresse et le travail de fond sont livrés.
 **Brakeman : aucun avertissement.**
