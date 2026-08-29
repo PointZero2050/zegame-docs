@@ -1142,3 +1142,64 @@ mais rendu faux par la bascule mobile. Je n'y touche pas : c'est du texte.
 ### Ce qui est à moi et n'est pas fait
 Les réactions **Ombre** du Monde 1 (constantes, `palette_pour` par groupes, porte par Monde).
 Non commencé, signalé à Boris.
+
+---
+
+## 29 août — les libellés Ombre existent. Le rendu en deux groupes t'attend.
+
+Tu m'écrivais : « je prends l'affichage dès que les libellés existent — pas un mot affiché que
+la base refuse ». **Ils existent, et la base les accepte.** En production.
+
+### Ce que le modèle porte maintenant
+
+```ruby
+ReactionSemantique::PALETTE_LUMIERE  # Je soutiens · Cela résonne · J'apprends
+ReactionSemantique::PALETTE_OMBRE    # Je demande du concret · Je n'y vois pas clair · Je vois un masque
+
+ReactionSemantique.palette_pour(user)   # → tableau PLAT : ce qu'il a le DROIT de poser
+ReactionSemantique.familles_pour(user)  # → {lumiere: [...], ombre: [...]} : ce qu'il VOIT, groupé
+ReactionSemantique.famille_de(libelle)  # → :lumiere | :ombre | nil
+reaction.famille                        # → idem, sur une pose
+```
+
+**J'ai tranché comme tu le demandais : deux constantes nommées, jamais un tableau de six.** Ta
+raison était la bonne, et il y en a une plus forte : « ne pas les présenter comme négatives »
+est une contrainte sur la **structure**. Sans appartenance dans le modèle, chaque vue la
+réinventerait.
+
+⚠️ **Mais `palette_pour` reste PLATE**, et c'est délibéré — j'avais annoncé l'inverse, je
+corrige. C'est une question de **droit** (« peut-il poser ceci ? »), dont le contrôleur a
+besoin telle quelle ; les familles sont une question de **présentation**. Les confondre aurait
+cassé trois appelants, dont ta vue `threads/_message.html.haml` l. 164 et 222, pour rien.
+Utilise `familles_pour` pour le rendu, `palette_pour` reste ce que tu appelles déjà.
+
+⚠️ **Au Monde 0, `familles_pour` ne rend QU'UN groupe** — pas de groupe Ombre vide. Un intitulé
+sans contenu annoncerait une famille qui n'existe pas encore pour ce joueur.
+
+### Ce qui est à toi, et le piège que tu avais toi-même nommé
+
+Ta vue rend encore **une liste à plat de six**. Tu m'écrivais : « même en deux groupes, celui
+qui vient en premier sera lu comme le normal ». Tu avais raison, et c'est maintenant le seul
+endroit où la lecture morale peut naître. **À toi de trancher la mise en scène** — je te donne
+la structure, pas la scénographie.
+
+### ⚠️ Quatre libellés ont pris leur retraite (arbitrage Boris, sur mesure des données)
+
+`Je nuance` · `Je m'engage` · `À transformer en action` · `À garder dans la Mémoire`, plus
+`J'ai besoin de clarification` (doublon de « Je n'y vois pas clair »). Le Monde 1 passe de huit
+à **six**.
+
+- Ils restent **valides en lecture** : six poses de production les portent, aucune donnée n'est
+  transformée. Vérifié après promotion : les six sont toujours valides.
+- ⚠️ **Ils ne rejoignent PAS `ANCIENNES`** — ta vue s'en sert pour dire « ancien registre » avec
+  une infobulle qui parle d'OBJECTION. Y verser un libellé simplement retiré ferait dire à ta
+  page une chose fausse. Ils ont leur propre liste, `RETIREES`, et un prédicat `retiree?`.
+- Ta ligne 164 calcule déjà `posable = palette_pour(...).include?(libelle)` : elle les rendra
+  donc en lecture seule sans que tu touches à rien. C'est le bon comportement.
+
+### Deux leçons de banc, si tu écris des assertions sur cette palette
+- **Deux bancs ont rougi parce que leur témoin était « Je nuance »**, désormais retiré. Un banc
+  qui garde un témoin retiré ne mesure plus ce qu'il croit — il mesure sa propre péremption.
+- **Un compte versé dans les deux communautés reste AU SEUIL.** `Mondes.ouvert?` exige d'avoir
+  achevé les expériences obligatoires ; le seul autre chemin est le mandat d'administrateur.
+  `verifier_palette_monde_0` le documentait depuis le 25 août, et j'ai refait l'erreur.
