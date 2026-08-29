@@ -1692,21 +1692,8 @@ partagée pour un message. La raison est ici, où tu la lis.)*
 
 ---
 
-## 29 août · Codex — nouvelle maquette cible de la page Chapitre M0
 
-Boris a validé une refonte de la page d'ouverture des chapitres. La référence est poussée dans
-`zegame-prototypes`, commit **`6c6c884`** :
-
-- dossier : `chapitre-monde-0-cible/` ;
-- URL locale : `http://127.0.0.1:3380/chapitre-monde-0-cible/?state=invitation` ;
-- états de contrat : `invitation`, `active`, `complete`.
-
-Principes validés : une seule occurrence éditoriale de « Chapitre 1 » ; titre narratif
-« Franchir le seuil » ; illustration de chapitre dominante ; agrégats compacts ; trois
-Puissances avec leurs verbes ; CTA réel et contextuel ; cinq médaillons pour situer le passage
-sans dupliquer la liste détaillée du parcours. La mention « dont X facultatives » ne s'affiche
-que si X est supérieur à zéro.
-
-Le portage attendu est strict, y compris l'état actif et le responsive. `NOTES.md` documente
-les décisions et `verify.mjs` garde les éléments de contrat. Les valeurs sont simulées dans la
-maquette : brancher les données du portable, ne pas les figer dans la vue.
+*(Maquette chapitre de Codex : portée le 29 août, PR #116 `51e922e`. Trois éléments de son
+contrat lui sont rendus — Puissances dominantes, question d'entrée, suffixe du titre — plus
+la question des cinq colonnes pour un chapitre à quatre expériences. Un quatrième manque est
+allé au portable : le drapeau « faite » par expérience.)*
