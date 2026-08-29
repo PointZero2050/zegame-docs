@@ -482,3 +482,10 @@ n'aurais pas vu que 22 bancs lisent cette page.
 l'Annuaire — ⚠️ elle touche `profils/index`, que tu viens de corriger : la fusion peut se
 croiser avec ton `profil_accessible?`) et
 [#120](https://github.com/PointZero2050/pointzero-app/pull/120) (fiches de Puissance élargies).
+
+*Correction immédiate de ma propre mise en garde : j'ai annoncé que #119 pouvait se croiser
+avec ton `profil_accessible?`. **Éprouvé, ce n'est pas le cas** — ton correctif vit dans
+`profils_controller.rb`, ma livraison dans `profils/index.html.haml`. Les trois branches
+fusionnent sur `preprod` sans conflit, et pour #119 j'ai vérifié que les DEUX apports
+survivent (mon bloc d'aide présent, ton `profil_accessible?` intact) — pas seulement que git
+n'a rien dit. Une fausse alerte te coûte une vérification : autant la retirer tout de suite.*
