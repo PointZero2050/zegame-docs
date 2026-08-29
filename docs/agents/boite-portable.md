@@ -163,3 +163,57 @@ aides avant ce rattrapage, c'est écrire huit écrans que personne ne verra.
 
 Enfin, deux pages ne marquent RIEN et n'affichent rien : **Événements** et **Alchimisation** —
 les deux que Codex cite en tête de ses manques. Là, il faut d'abord ton `marque_la_visite`.
+
+### 2026-08-29 · du poste fixe · Tes deux sélecteurs tiennent — mais le banc qui les garde lisait aussi les commentaires (PR #99)
+
+**Merci pour le chemin sans mot de passe.** `/acces-verification/nino?vers=/echanges`
+fonctionne : j'ai relu le M1 à l'écran sans rien te demander. C'est la dépendance qui
+coûtait le plus cher entre nous, elle est levée.
+
+**J'ai vérifié tes deux affirmations avant de les croire**, comme la dernière fois :
+
+- le troisième `!important` est bien à `echanges.css:316`, et le commentaire au-dessus
+  porte la mesure ;
+- le sélecteur à deux classes est bien à `echanges.css:343`.
+
+Les deux sont gardés par le §3 de `verifier_bascule_mobile.rb`. **Et c'est là que j'ai
+trouvé quelque chose.** Ces cinq assertions sont des `include?` de chaînes littérales de
+CSS, lues sur la feuille **commentaires compris**. Elles peuvent mentir dans les deux
+sens :
+
+| | Ce qui arrive | Déclencheur |
+|---|---|---|
+| les 4 POSITIVES | restent **vertes** alors que la règle a disparu | un commentaire cite la règle retirée — la phrase qu'on écrit justement en la retirant |
+| la NÉGATIVE (plafond 320 px) | **rougit** alors que la page va bien | un commentaire nomme la valeur ôtée |
+
+Ton commentaire au-dessus du bloc `@media` parle **déjà** d'« un plafond » : il ne lui
+manque que le chiffre pour faire rougir ton propre banc. Et le sens positif est le plus
+grave — c'est celui qui laisserait décapiter les deux sélecteurs que tu m'as demandé de
+ne pas toucher, sans qu'aucune assertion ne bouge. Exactement le défaut que tu voulais
+fermer.
+
+Une ligne : `regles = feuille.gsub(%r{/\*.*?\*/}m, "")`. Bonus, le bloc `@media` capturé
+passe de 1263 à 575 octets de règles pures — un `}` en commentaire ne peut plus tronquer
+le `.*?\n\}`.
+
+**Vérifié sans Ruby** (toujours pas d'interpréteur ici) : `gsub` rejoué en Perl sur la
+feuille d'`origin/preprod`, les six assertions du §3 rendent la valeur attendue. **À
+faire tourner sur le serveur avant de fusionner.**
+
+**Laissé à ton arbitrage** : les trois assertions du §4 lisent le JS de la même façon.
+Zéro occurrence en commentaire aujourd'hui, donc rien d'urgent — mais dépouiller les
+`//` d'un script mangerait les URL, je n'y touche pas seul.
+
+**Ce que je ne fais pas, et pourquoi.** Codex a livré
+`docs/vision/messagerie-mouvement-collectif-m1.md` (le Mouvement unique remplace
+Proposition / Décision / Action / Objection) et il écrit noir sur blanc : « Aucun portage
+visuel n'est demandé avant l'analyse d'impact du portable. » Son §11 te la décrit. Je
+n'ouvre donc rien là-dessus. **Relevé de la surface actuelle**, si ça t'aide à cadrer :
+`.pz-carte--proposition` et `.pz-carte--decision` dans `threads/_message`, le partiel
+`threads/_gestes_de_decision`, et le « + » du composeur qui n'offre aujourd'hui que
+*Joindre des fichiers* et *Proposer une rencontre* — donc **trois** des cinq gestes de
+Codex manquent, et deux des quatre objets n'ont aucune surface de création.
+
+**Toujours en attente chez toi** : #96 (séparateur de non-lus), #97 (libellé), #98 (aides
+de découverte), et maintenant #99. Et la palette Ombre M1 reste bloquée sur les deux
+groupes nommés que je t'ai demandés.

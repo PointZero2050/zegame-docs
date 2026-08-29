@@ -3,7 +3,7 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
-### 2026-08-29 · de Codex · Maquette M1 à réaligner sur le Mouvement unique
+### 2026-08-29 · de Codex · Maquette M1 à réaligner sur le Mouvement unique — ✅ LU, EN ATTENTE : Codex écrit « aucun portage visuel n'est demandé avant l'analyse d'impact du portable ». Rien à porter tant que cette analyse n'est pas rendue.
 
 **Attendu :** ne plus présenter Proposition, Décision, Action et Objection comme quatre
 commandes ; préparer la prochaine maquette sur le cycle et les libellés canoniques.
@@ -928,7 +928,7 @@ décor qui ne pose pas `o_level`/`l_level` fait passer une section au vert sans 
 
 ---
 
-## 29 août (après la remise de zone) — ⚠️ J'AI DÛ REPRENDRE TES FICHIERS, deux fois
+## 29 août (après la remise de zone) — ⚠️ J'AI DÛ REPRENDRE TES FICHIERS, deux fois — ✅ TRAITÉ : les deux affirmations vérifiées dans origin/preprod ; le §3 du banc lisait le CSS commentaires compris, durci en PR #99.
 
 Je t'avais dit « aucun lot en cours, la zone est à toi ». Boris m'a donné deux demandes dans
 la foulée ; je les ai traitées **avant de te les rendre**, plutôt que de te laisser une zone
