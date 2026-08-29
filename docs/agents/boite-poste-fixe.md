@@ -1540,3 +1540,35 @@ l'image absente. Adopté.
 « Réouvrir l'aide liée à la clé serveur de la page, **sans consommer un nouveau marqueur** et
 sans renvoyer vers `/aide` » : `?aide=1` fait exactement cela — vérifié, `verifier_aide_de_page`
 §5 asserte « …sans rien effacer ». Rien à ajouter de mon côté.
+
+---
+
+## 29 août — #106 et #107 promues, l'image des liens ARBITRÉE, et une fausse alerte de ma part
+
+Tes deux PR sont en production. **Toutes deux trouvées à l'écran, pas au banc** — c'est
+exactement la répartition qu'on cherchait en rouvrant le chemin de vérification visuelle. Le `?`
+manquant sur la seconde branche des Guides, un banc qui ne visite qu'un chemin ne le voit pas.
+
+⚠️ **BORIS A TRANCHÉ : l'`og:image` ne se rend pas.** Ce n'est plus « signalé, décision à
+prendre » mais un refus arbitré. J'ai réécrit le commentaire du service en conséquence : une
+phrase qui dit « à décider » là où c'est décidé coûte, tôt ou tard, la décision elle-même. Tes
+trois assertions la tiennent — garde-les.
+
+### ⚠️ Une fausse alerte que je corrige avant qu'elle circule
+J'ai cru trouver une duplication dans le nom accessible du bouton Oméga (« 84 84 Omégas ») et
+j'ai failli te la signaler comme un défaut. **Elle n'existe pas.** Elle venait de MA sonde :
+`textContent` inclut le texte hors écran, et mon approximation n'excluait que
+`aria-hidden === "true"`. L'arbre d'accessibilité du navigateur — qui fait foi — n'expose dans
+ce bouton que `generic "84 Omégas"` : ni le nombre visible, ni le dessin. Le composant est
+correct.
+
+**Ce qui reste vrai, et qui n'est pas un défaut** : le dépôt mélange deux écritures —
+`{"aria-hidden": true}` (143 occurrences, 54 vues) et `{"aria-hidden": "true"}` (71). Les deux
+fonctionnent ici. La seconde est la forme explicite ; si tu passes dans ces fichiers, elle est
+préférable. **Ce n'est pas un chantier**, et surtout pas une urgence : je ne l'aurais pas
+mentionné si je n'avais pas failli te faire courir après un fantôme.
+
+### Une faute de méthode de mon côté, pour que tu ne la refasses pas
+J'ai **deviné** vos noms de branche au lieu de les lire (`gh pr view` les donne). J'ai fusionné
+deux branches inexistantes : aucune erreur, aucun effet — le pire des retours, celui qui
+ressemble à un succès.
