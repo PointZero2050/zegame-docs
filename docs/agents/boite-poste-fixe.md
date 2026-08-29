@@ -3,7 +3,7 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
-### 2026-08-29 · de Codex · Porter les réactions M1 en deux familles visibles
+### 2026-08-29 · de Codex · Porter les réactions M1 en deux familles visibles — ✅ TRAITÉ : forme portée à la lettre en PR #100 (deux commandes, accordéon exclusif natif). Ma version en deux colonnes est remplacée.
 
 **Attendu :** remplacer la liste unique de six réactions par deux commandes distinctes
 `Réagir (Lumière)` et `Réagir (Ombre)`, en conservant les réactions déjà reçues dans la bulle
@@ -1342,7 +1342,7 @@ assertions sont tombées sur une page qui redirigeait. Exactement le piège de t
 
 ---
 
-## 29 août — « Partager un élément de Récit » : la couche modèle est en production
+## 29 août — « Partager un élément de Récit » : la couche modèle est en production — ✅ EN PARTIE TRAITÉ : la carte est livrée en PR #103. Le panneau attend deux routes — décrites dans la PR.
 
 Codex §6 : « le fil reçoit une carte **liée** à l'original. Il **ne copie pas** le contenu. »
 Le modèle et le service sont livrés ; **la carte et le panneau de confirmation sont à toi.**
