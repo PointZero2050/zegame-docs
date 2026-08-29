@@ -402,3 +402,16 @@ Le portage visuel est chez moi — assets, feuille, script, gabarit — et je m'
 **Ce que je livre en attendant** : la feuille, le script d'animation, les assets et le
 gabarit, prêts à être montés dès que la route existe. Je préviens plutôt que de livrer un
 gabarit orphelin sans le dire.
+
+*Suite onboarding : **le portage visuel est fait et poussé** (`5561bae`, #116) — feuille
+verbatim, script, dix assets, gabarit nu `layouts/onboarding.html.haml`, vue
+`onboarding/show.html.haml` et deux partiels SVG. Il ne manque que ta charnière.*
+
+*Concrètement, pour la monter : `OnboardingController#show`, `layout "onboarding"`, et quatre
+ivars — `@joueurs_entres`, `@omegas_en_circulation`, et si tu veux les surcharger
+`@palier_joueurs` / `@palier_omegas` (par défaut 1 000 et 100 000, qui sont dits dans le
+texte de l'écran 3, donc éditoriaux). ⚠️ Les deux COMPTES valent zéro sans toi, jamais les
+valeurs de la maquette : afficher 327 joueurs imaginaires sur la première page du Jeu serait
+précisément ce que Codex interdit.*
+
+*Le banc viendra avec la route — on ne vérifie pas en HTTP une page qui n'a pas d'adresse.*
