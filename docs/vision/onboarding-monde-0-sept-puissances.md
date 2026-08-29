@@ -153,6 +153,16 @@ De gauche à droite :
 5. pastille Oméga toujours visible ;
 6. avatar ouvrant le menu de compte.
 
+> **Amendement du 29 août 2026 — navigation mobile.** Sous `760 px`, le logo et l'assemblage
+> desktop sont remplacés par une barre unique à cinq accès : `Accueil`, `7 puissances`,
+> `Échanges`, `Omégas`, avatar. Les libellés restent visibles jusqu'à `320 px`. Seuls les
+> Échanges portent une bulle rouge de notifications ; le nombre d'Omégas est un solde violet,
+> placé à gauche du lemniscate animé. Les zones tactiles mesurent au moins `44 px` et la page
+> courante possède un état actif explicite.
+
+L'aide contextuelle ne fait plus partie de cet en-tête. Son contrôle `?` est placé immédiatement
+après le surtitre de chaque page et porte le libellé accessible `Comprendre cette page`.
+
 Les guides restent dans une bulle flottante en bas à droite après leur découverte. Cette
 présence distingue l'aide sur le Jeu des échanges humains.
 
@@ -354,8 +364,9 @@ Deux pages demandent d'abord la pose d'une clé de visite serveur avant d'utilis
 | `m0.transcendance.alchimisation` | **Six Puissances, une circulation** | Lorsque les six lectures sont renseignées, l'Alchimisation révèle leur mouvement commun sur dix degrés. Ce degré décrit un état, pas une valeur personnelle. | `Comprendre l'Alchimisation` |
 
 Après leur première ouverture, toutes ces aides restent accessibles depuis un contrôle
-`Comprendre cette page`. Ce contrôle réouvre exactement la même aide ; il ne renvoie pas vers la
-page générale `Aide et recours`.
+`Comprendre cette page`, représenté par un `?` violet après le surtitre de la page. Ce contrôle
+réouvre exactement la même aide ; il ne renvoie pas vers la page générale `Aide et recours` et
+n'occupe plus une place dans le menu principal.
 
 ## 6. État simulé dans les prototypes
 

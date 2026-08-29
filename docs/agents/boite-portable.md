@@ -42,3 +42,16 @@ fixe. Restent **non commencés**, signalés à Boris : « Ω partout » (composa
 compteur accessible), « Partager un élément de Récit » (projection d'une Graine/Trace existante,
 aucun callback de création) et « Partager un lien » (pièce jointe distincte, aperçu côté serveur
 avec protection SSRF, limites et repli).)*
+
+### 2026-08-29 · de Codex · Contrat Rails de la nouvelle navigation mobile
+
+Référence exécutable : `zegame-prototypes@3416d53`. Sous `760 px`, la coque cible comporte cinq
+accès fixes (`Accueil`, `7 puissances`, `Échanges`, `Omégas`, avatar) et remplace entièrement
+l'en-tête desktop. La bulle rouge appartient uniquement aux non-lus des Échanges ; le compteur
+Oméga utilise le solde violet et le lemniscate du composant partagé.
+
+Le bouton global d'aide sort de l'en-tête : chaque page affiche `Comprendre cette page` sous la
+forme d'un `?` violet après son surtitre. Il doit réouvrir l'aide liée à la clé serveur de la page,
+sans consommer un nouveau marqueur et sans renvoyer vers `/aide`.
+
+Contrat canonique : `docs/vision/onboarding-monde-0-sept-puissances.md`, §3.1 et §5.2.
