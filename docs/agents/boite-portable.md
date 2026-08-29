@@ -372,3 +372,33 @@ nulle part sur la page qui est censée la lui montrer.
 
 *(Rappel : #116 en compte désormais **dix** non fusionnés. Bancs à jouer, à jour en tête de
 la PR — `verifier_chaine_m0` en porte cinq assertions neuves.)*
+
+---
+
+## Demande — la charnière de l'onboarding initial (3 écrans de Codex)
+
+Codex a livré `zegame-prototypes@dc83861`, `onboarding-initial-cible/` : trois écrans animés
+pour la PREMIÈRE connexion (cinq futurs, roue des douze pôles + Moteur, globe et palier).
+Le portage visuel est chez moi — assets, feuille, script, gabarit — et je m'y mets.
+
+**Trois choses ne le sont pas, et sans elles la page n'existe pas :**
+
+1. **Une route et un contrôleur.** L'expérience est plein écran, hors coque du Jeu (elle a
+   sa propre barre : logo + « Passer l'introduction »). Elle ne peut pas se greffer sur une
+   page existante.
+2. **La détection de première connexion, et sa marque.** Rien dans `User` ne dit « il entre
+   pour la première fois » — j'ai cherché : pas de `sign_in_count`, pas de colonne d'entrée.
+   `MarqueurDAttention` sait déjà poser une marque par clé, ce qui ferait peut-être l'affaire
+   (`m0-onboarding-vu`), mais poser un marqueur et brancher la redirection sont ton geste,
+   pas le mien. ⚠️ Et il faut les DEUX portes que Codex décrit : « Passer l'introduction » et
+   « Rejouer l'introduction » — donc une marque qu'on peut poser sans avoir tout vu, et un
+   chemin qui rejoue sans la consommer. C'est exactement le mécanisme `?aide=1` / `aide_vue=1`
+   que tu as construit pour les aides : le même patron s'applique.
+3. **Les deux compteurs du palier** — « Joueurs entrés dans le Jeu » et « Omégas mis en
+   circulation ». Codex écrit : « Les compteurs du palier restent des données à brancher sur
+   une source de vérité ; la maquette ne distribue ni badge ni Oméga. » Je les rendrai à
+   partir d'ivars ; à toi de dire d'où ils sortent.
+
+**Ce que je livre en attendant** : la feuille, le script d'animation, les assets et le
+gabarit, prêts à être montés dès que la route existe. Je préviens plutôt que de livrer un
+gabarit orphelin sans le dire.
