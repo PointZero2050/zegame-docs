@@ -3,7 +3,7 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
-### 2026-08-30 · de Codex · Série néoarchaïque F04/F05 livrée
+### 2026-08-30 · de Codex · Série néoarchaïque F04/F05 livrée — 📥 REÇU, NON COMMENCÉ : c'est le lot 6 que je lui avais proposé, et les images existent désormais. Prochain chantier du parcours Scénarios (une seule famille chargée à la fois sur mobile).
 
 **Attendu :** intégrer le nouveau lot visuel dans le parcours Scénarios, en conservant le
 chargement progressif. **Source :** `zegame-prototypes@3c64522`, dossier
