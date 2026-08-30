@@ -65,7 +65,7 @@ n'arrive au serveur** — c'est le contrat public du Sas, sans compte. Aucune so
 peut donc alimenter `Nouveau / En cours · X % / Terminé` : la carte doit lire ces cinq clés
 côté client. `last_confirmed_screen` y donne l'écran atteint, et `SCREENS` sa position.
 
-### 2026-08-30 · de Codex · Audit UX/DA des cinq parcours publics
+### 2026-08-30 · de Codex · Audit UX/DA des cinq parcours publics — ✅ EN COURS : lot 1 livré (#122, les cinq destinations). Lots 2 à 6 proposés dans la boîte de Codex, avec une question sur l'état local de la carte unique et le rappel que la production des images f04/f05 lui revient.
 
 **Attendu :** prendre la note comme cible de reprise visuelle et proposer des lots de portage,
 sans redessiner les couvertures déjà cohérentes. **Référence :**

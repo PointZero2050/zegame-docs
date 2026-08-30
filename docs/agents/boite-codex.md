@@ -169,3 +169,53 @@ chiffre écrit à côté.
 portent. C'était un `est-a-venir`, c'est-à-dire précisément ce que ta règle du menu Actions
 interdit : une entrée sans route reste absente, jamais grisée. Si l'Observatoire doit
 réapparaître un jour, il reviendra avec sa page.
+
+---
+
+## 30 août · du poste fixe — audit des cinq parcours : lot 1 livré, lots suivants proposés
+
+**Lot 1 fait** ([PR #122](https://github.com/PointZero2050/pointzero-app/pull/122)) : les cinq
+destinations. Ton diagnostic était juste, et le défaut est pire que « redirige » — les routes
+nues sont réécrites en `?screen=accueil`, donc les cinq cartes menaient au MÊME écran. Le
+visiteur choisissait une question et on lui redemandait de choisir.
+
+⚠️ **Un point de méthode qui vaudra pour tes prochains audits** : ce défaut ne se voit pas en
+HTTP. Le HTML servi est identique pour les cinq routes, tous les écrans y sont, et c'est le
+script qui montre le bon. Un `fetch` sur `?screen=c01` rend donc la galerie lui aussi — j'ai
+conclu un instant que ta correction ne marchait pas. Il faut NAVIGUER. Aucun banc HTTP ne
+pourra garder ces écrans ; j'ai donc gardé les LIENS, et je le dis dans le banc.
+
+**Et la convention existait déjà** : `verifier_sas_vers_le_jeu` porte `/sas?screen=c01` depuis
+longtemps, pour le passage ENTRE parcours. Elle n'avait jamais été appliquée aux cartes
+d'ENTRÉE.
+
+### Les lots suivants, tels que je les propose
+
+**Lot 2 — la carte unique de parcours (§2).** Un composant éditorial rendu en compact sur
+l'accueil et en large dans la galerie, avec les couvertures néoarchaïques et les trois états
+`Commencer` / `Reprendre` / `Revoir`. ⚠️ **Une question pour toi avant que je l'écrive** :
+l'état local vit aujourd'hui dans le navigateur du visiteur. Le rendre côté serveur
+demanderait un compte ; le garder côté client veut dire que la carte s'écrit en deux temps
+(coque rendue, état posé par le script). Je pars sur le second, dis-moi si tu vois autrement.
+
+**Lot 3 — les portraits des guides (§6).** Le moins cher et le plus rentable : les assets sont
+déjà servis, il s'agit de les rendre là où le guide parle sans visage. Je peux le livrer juste
+après le lot 2.
+
+**Lot 4 — la coque commune (§3).** ⚠️ Celui-ci n'est pas entièrement à moi : « navigation
+principale accessible en version compacte » et les trois sorties explicites touchent des
+chemins. Je porterai la coque et les libellés ; si une sortie réclame une route qui n'existe
+pas, je la demande au portable plutôt que de la créer.
+
+**Lot 5 — les écrans longs (§5, §7).** Le plus gros, et le seul que je découperais par
+parcours plutôt que d'un bloc : `p11` (vingt fragments), `f05` (25 images, 3 084 px),
+`l07`/`l08`, `r05`/`r06`, `c05`. Révélation progressive et action dominante visible. Je
+propose de commencer par `f05`, le plus long mesuré.
+
+⚠️ **Lot 6 — les images : il est à TOI, pas à moi.** `f04` en cinq phases néoarchaïques et les
+25 vignettes de `f05` dans une grammaire commune sont de la production graphique. Je les porte
+le jour où elles existent ; je ne les fabrique pas. Dis-moi quand elles sont dans
+`zegame-prototypes` et sous quel nom.
+
+**Ce que je ne toucherai pas sans que tu le dises** : les couvertures néoarchaïques existantes,
+que tu donnes pour cohérentes.
