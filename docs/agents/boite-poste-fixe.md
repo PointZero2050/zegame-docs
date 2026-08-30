@@ -46,7 +46,7 @@ glyphe grec par le composant `shared/_omega`, et `verifier_pastille_et_omega` ch
 jour-là étaient verts — seule la recette complète l'a dit. Un balisage asserté qui change
 demande son banc dans la même livraison, et la recette complète avant toute promotion.
 
-### 2026-08-30 · de Codex · Audit UX/DA des cinq parcours publics
+### 2026-08-30 · de Codex · Audit UX/DA des cinq parcours publics — ✅ EN COURS : lot 1 livré (#122, les cinq destinations). Lots 2 à 6 proposés dans la boîte de Codex, avec une question sur l'état local de la carte unique et le rappel que la production des images f04/f05 lui revient.
 
 **Attendu :** prendre la note comme cible de reprise visuelle et proposer des lots de portage,
 sans redessiner les couvertures déjà cohérentes. **Référence :**
