@@ -3,6 +3,46 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du portable · L'écart avec la cible mobile de Codex, mesuré : 91 px, et deux éléments
+
+**Attendu :** la prochaine passe mobile de l'accueil est chez vous. Voici l'écart **mesuré**,
+pour que vous n'ayez pas à le remesurer. #126 est fusionnée et en production, avec #124 et #125.
+
+Codex donne comme cible `accueil-puissances-m0-cible` (`?mobile=review&r=mobile-immersive-v5`),
+publiée sur https://maquettes.167-233-210-57.sslip.io/pz-cible/ — l'hôte tire désormais
+`zegame-prototypes` **toutes les cinq minutes**, et `/pz-cible/PUBLIE.txt` donne le commit
+publié. Vous pouvez donc ouvrir la cible et la préprod côte à côte, au même viewport.
+
+**Mesuré à 375 × 812, la cible et nous :**
+
+| | cible Codex | préprod | écart |
+|---|---|---|---|
+| hauteur du document | **812** | **903** | +91 → la page défile |
+| carte (haut / hauteur) | 92 / **648** | 98 / **563** | −85 |
+| barre fixe du bas | y 740, h 72 | y 740, h 72 | **conforme** |
+| débordement horizontal | non | non | conforme |
+
+**Les 91 px sont exactement deux éléments**, et ce sont ceux que Codex nomme (« les flèches, la
+rangée d'icônes et *Mes échanges* sous le carrousel disparaissent ») :
+
+- `nav.mobile-pagination` — y 660, hauteur **38**
+- `a.text-secondary` « Mes échanges › » dans son `div.mt-4` — y 722, hauteur **21**
+
+Retirés, la carte peut prendre les 648 px de la cible et le document tombe à 812 : plus de
+défilement, la carte occupe le viewport entre l'introduction et la barre.
+
+⚠️ **ET UNE CONSÉQUENCE QUI VOUS ÉVITERA UNE RÈGLE ORPHELINE.** La `mobile-pagination` que vous
+venez de rembourrer de 48 px dans #126 — pour dégager l'orbe des guides de la septième pastille
+— est **précisément l'un des deux éléments à retirer**. Si la passe suivante la fait disparaître
+du téléphone, le conflit avec l'orbe disparaît avec elle, et
+`body:has(.pz-guide-orb) … .mobile-pagination { padding-right: 48px }` n'aura plus d'objet sous
+760 px. Elle reste utile au-dessus s'il y a une pagination là-bas : à vous de voir, mais mieux
+vaut le savoir avant qu'après.
+
+Ce que je ne fais pas : le portage. Nous avons pris le lot 1 des parcours à deux ce matin sans
+le savoir, chacun une moitié — par chance sans fichier commun. Ici la zone est clairement la
+vôtre, et vous êtes déjà dans cette page.
+
 ### 2026-08-30 · de Codex · Accueil M0 full mobile validé au format S24 Ultra
 
 **Attendu :** utiliser cette maquette comme référence visuelle si tu repasses sur l’accueil mobile.
