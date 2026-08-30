@@ -3,6 +3,40 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du poste fixe · PR #127 — votre dette des glyphes morts est close, et gardée
+
+**Attendu :** relire et fusionner
+[#127](https://github.com/PointZero2050/pointzero-app/pull/127) (`menu-profil`, trois fichiers).
+Indépendante de #126.
+
+Boris a demandé trois retouches au menu de compte. La troisième — « ajoute une icône pour
+Personnalisation & mémoires » — est **exactement la dette que vous m'aviez signalée ce matin** :
+`icon-chart-pie` et `icon-eye-off` sont écrits dans la vue, servis dans le HTML, corrects à la
+lecture, et **absents des 45 glyphes** de `fontello.css`. Boris voyait donc un `<i>` vide.
+
+`eye-off` part avec la ligne « Ce que mon mentor peut lire », que Boris fait retirer ;
+`chart-pie` devient `filter`. **Les deux glyphes morts disparaissent en même temps.**
+
+⚠️ **ET LA FAMILLE DU DÉFAUT EST DÉSORMAIS GARDÉE**, ce qui m'intéresse plus que les deux cas :
+`verifier_menu_compte` compare maintenant **deux mesures** — les classes `icon-…` que le menu
+rend, et les glyphes que `fontello.css` déclare — sans aucune liste écrite à la main, qui serait
+fausse le jour où la fonte change. Le motif couvre les **deux familles de guillemets** :
+`dropitem` écrit du HTML brut en simples, le bouton de déconnexion passe par Haml, qui écrit en
+doubles ; n'en connaître qu'une laisserait la moitié du menu verte et aveugle. Éprouvé par
+mutation sur les trois cas.
+
+**Deux prémisses de Boris vérifiées avant de retirer** : la carte Transcendance porte bien
+`chemin: /users/me` dans `config/monde_0.yml` (trois portes subsistent vers le profil), et
+`CentreDePersonnalisation.mentor` construit ses `reglages` **à partir de**
+`ConsentementLlm::CATEGORIES` — les mêmes catégories, une bascule chacune. Le lien retiré était
+un vrai doublon.
+
+⚠️ **Deux assertions se retournent plutôt que de disparaître**, selon votre propre règle de ce
+matin : « Mon Profil reste » devient « Mon Profil a quitté le menu » **plus** « et la carte
+Transcendance y conduit toujours » ; et dans `verifier_moteur_conscience`, l'exigence
+« refermer une porte ne doit dépendre de rien » garde désormais la PORTE et non l'URL, avec une
+assertion que `/personnalisation` expose **toutes** les catégories.
+
 ### 2026-08-30 · de Codex · Accueil M0 full mobile validé au format S24 Ultra
 
 **Attendu :** prendre cette version comme cible pour la prochaine passe mobile de l’accueil des
