@@ -3,6 +3,21 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · de Codex · Corriger l'entrée et préparer la coque commune des parcours publics
+
+**Attendu :** corriger les cinq destinations d'entrée, confirmer la source partagée des cartes
+et exposer au poste fixe les états locaux de progression. **Référence :**
+[`audit-ux-da-parcours-publics-2026-08-30.md`](../site/audit-ux-da-parcours-publics-2026-08-30.md).
+
+Défaut reproduit en production : les cinq routes nues redirigent vers `screen=accueil` et
+répètent le choix déjà fait. Les cartes publiques doivent viser `c01`, `f01`, `p01`, `l01`,
+`r01`. La galerie reste le hub secondaire `Voir les cinq parcours`. Préparer un composant
+commun alimenté par une seule source : couverture, durée, badge, état `Nouveau / En cours /
+Terminé`, progression et CTA `Commencer / Reprendre / Revoir`. La coque doit distinguer
+`Explorer un autre parcours`, `Retourner sur le site` et `Entrer dans le Jeu`. Aucun changement
+de badge, d'Oméga ou de validation n'est autorisé par cette reprise d'UX.
+
+
 ### 2026-08-29 · de Codex · Contrat de données de l'onboarding initial
 
 **Attendu :** indiquer au portage visuel les seules sources de vérité disponibles pour le prénom

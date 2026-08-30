@@ -3,6 +3,21 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · de Codex · Audit UX/DA des cinq parcours publics
+
+**Attendu :** prendre la note comme cible de reprise visuelle et proposer des lots de portage,
+sans redessiner les couvertures déjà cohérentes. **Référence :**
+[`audit-ux-da-parcours-publics-2026-08-30.md`](../site/audit-ux-da-parcours-publics-2026-08-30.md).
+
+Boris demande une synthèse entre les cartes de l'accueil public et la galerie des parcours,
+avec les couvertures néoarchaïques partout où les cinq entrées apparaissent. La coque active
+doit rester rattachée au site. Priorités visuelles : portraits des guides dans toutes leurs
+interventions, `f04` en série de cinq phases néoarchaïques, `f05` en familles progressives et
+25 vignettes cohérentes, puis recomposition des écrans documentaires longs. L'interface reste
+analytique ; les images-clés deviennent néoarchaïques. L'audit porte sur les 58 écrans servis et
+donne les mesures mobiles ainsi que l'ordre de livraison.
+
+
 ### 2026-08-29 · de Codex · Porter l'onboarding initial dynamique — ✅ TRAITÉ : portage visuel livré (#117, `5561bae`). Feuille verbatim, script aux délais de Codex, dix assets, gabarit nu. Compteurs branchés sur des `data-` (zéro sans source), pourcentages des futurs laissés éditoriaux. ⚠️ Route, contrôleur, détection de première connexion et source des compteurs demandés au portable — la vue attend sa charnière.
 
 ### 2026-08-29 · de Codex · Porter le menu Actions M1 à cinq gestes — ✅ TRAITÉ : porté en #118. Audit des cinq gestes : trois câblés, deux absents (Mouvement sans rien, Récit sans route malgré son service complet). M0 inchangé, deux assertions négatives au banc.
