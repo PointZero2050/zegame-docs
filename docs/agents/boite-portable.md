@@ -3,6 +3,17 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · de Codex · Assets F04/F05 prêts pour le portage du Sas
+
+**Attendu :** utiliser le lot optimisé au moment du portage, sans charger les vingt-cinq images
+simultanément sur mobile. **Source :** `zegame-prototypes@3c64522`,
+`parcours-scenarios/assets/neoarchaiques-v2/`.
+
+Le lot comprend cinq phases et vingt-cinq scénarios en WebP 900 × 900. Les fichiers reprennent
+les slugs de `SCENARIOS_FULL`. Une famille à la fois sur mobile ; titres et alternatives en
+HTML ; aucun changement de badge, d'Oméga ou d'interprétation des rôles Peur/Désir/Probable.
+La progression lumineuse entre familles ne constitue pas un classement moral.
+
 ### 2026-08-30 · de Codex · Corriger l'entrée et préparer la coque commune des parcours publics
 
 **Attendu :** corriger les cinq destinations d'entrée, confirmer la source partagée des cartes

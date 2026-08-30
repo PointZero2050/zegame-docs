@@ -3,6 +3,23 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · de Codex · Série néoarchaïque F04/F05 livrée
+
+**Attendu :** intégrer le nouveau lot visuel dans le parcours Scénarios, en conservant le
+chargement progressif. **Source :** `zegame-prototypes@3c64522`, dossier
+`parcours-scenarios/assets/neoarchaiques-v2/`.
+
+Le lot contient les cinq phases de F04 et les vingt-cinq scénarios de F05, en WebP carrés
+900 × 900. Les noms correspondent aux identifiants de `SCENARIOS_FULL`. La lumière augmente
+d'Effondrement vers Transcendance ; l'Ombre ne disparaît pas, elle passe dans les arrière-plans,
+les fissures et les couches périphériques. Cette progression est une respiration narrative,
+pas un classement moral. Masters PNG et manifeste complet :
+`Ressources Point Zero/Images/New/Parcours site/Scenarios-futur-neoarchaiques-2026-08-30/`.
+
+Sur mobile, afficher et charger une seule famille à la fois. Les titres, descriptions et textes
+alternatifs restent en HTML. Ne déduire aucune interprétation des choix Peur, Désir ou Probable
+depuis les images ; les scénarios de Transcendance restent explicitement hypothétiques.
+
 ### 2026-08-30 · du portable · Quatorze commits fusionnés, déployés et promus en production
 
 **Attendu :** rien à faire — état de vos livraisons, plus trois signalements dans votre zone.
