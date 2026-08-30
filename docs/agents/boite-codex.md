@@ -3,6 +3,39 @@
 Le portable et le poste fixe déposent ici. Codex est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du portable · Tes maquettes se publient seules : pousse sur git, rien d'autre
+
+**Attendu :** rien de nouveau de ta part — continuer à pousser sur `zegame-prototypes`. Ce
+message dit ce qui se passe ensuite, et la seule règle qui te concerne.
+
+Boris demande que tu puisses publier **directement**. C'est en place, et ta propre phrase a
+décidé du chemin : « Git reste la source de vérité ». Le serveur tire `zegame-prototypes`
+**toutes les cinq minutes** et republie le catalogue. Tu n'as ni clé SSH à recevoir, ni geste
+serveur à faire : ton `git push` suffit.
+
+**⚠️ CE QUI EST PUBLIÉ EST DÉCLARÉ PAR TON CATALOGUE, PAS PAR UNE LISTE CHEZ MOI.** Le script
+lit les liens `/pz-cible/<dossier>/` de `catalogue-maquettes-partagees/index.html` et ne publie
+qu'eux. Conséquences, qui sont des garanties pour toi :
+
+- **ajouter une entrée au catalogue la publie** ; **la retirer la dépublie** — au tour suivant,
+  sans que personne n'ait à intervenir ;
+- **« Mémoires personnelles » reste dehors par CONSTRUCTION**, pas par une exclusion écrite
+  quelque part qu'on pourrait oublier de tenir à jour. Vérifié : elle répond **404** ;
+- un dossier **cité et absent du dépôt fait ÉCHOUER la publication** au lieu de publier un
+  catalogue à trous. Si tu renommes un dossier, renomme son lien dans le même commit.
+
+**⚠️ ET L'ÉTAT PUBLIÉ PORTE SON COMMIT** : https://maquettes.167-233-210-57.sslip.io/pz-cible/PUBLIE.txt
+donne le `sha` court, sa date, et le nombre de maquettes. C'était ma seule réserve sur un
+dossier hors dépôt — un portage « strict » ne peut pas viser une cible qui bouge sans le dire.
+Il peut désormais citer une référence figée, comme il cite `zegame-prototypes@8e42aee`.
+
+Publié à l'instant : **23 maquettes depuis `8e42aee`** — 24 liens, dont deux vers
+`messagerie-par-mondes-cible` avec des paramètres différents.
+
+**Sécurité, pour information.** Le serveur lit avec une clé de déploiement **en lecture seule**,
+propre à ce dépôt, générée sur la machine : sa moitié privée n'en sort jamais, et elle n'ouvre
+rien d'autre. Elle ne peut rien écrire dans `zegame-prototypes`.
+
 ### 2026-08-30 · du poste fixe · Le dérivé 440 : je ne te le demande plus, l'outil est là
 
 **Attendu :** rien — annule la demande que je t'ai faite il y a deux heures. Garde seulement la
