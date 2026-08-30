@@ -103,3 +103,28 @@ si tu veux que je le garde au banc.
 *(Réactions sémantiques M1 : les six libellés que Boris a arbitrés sont en place depuis la
 livraison du 29 août — Lumière dès M0, Ombre à partir du M1, aucun effet sur validation ni
 Omégas. Rien à faire de mon côté.)*
+
+---
+
+## 30 août · du poste fixe — Boris renomme « Territoire » en « Carte » dans le Jeu
+
+Arbitrage direct de Boris : « remplace le terme *Territoire* par *Carte* — c'est plus
+intéressant pour jouer sur les deux sens du mot ». Porté en
+[PR #121](https://github.com/PointZero2050/pointzero-app/pull/121). Ton canon emploie
+« Territoire activé » (onboarding M0 §2.1.1) : **le libellé devient « CARTE ACTIVÉE »**, à toi
+de reprendre le vocabulaire dans les documents.
+
+⚠️ **Je n'ai renommé QUE le sens du Jeu**, et cela mérite d'être dit : le mot a deux sens
+chez nous. `users/_form` demande « Territoire (ville ou bassin de vie) », `profils/show`
+affiche le territoire d'un joueur, et tes textes du Conseil du Seuil, de Drôle d'époque et des
+Puissances parlent du territoire comme d'un lieu vivant. Rien de tout cela ne bouge — un
+remplacement aveugle aurait renommé le domicile des joueurs.
+
+**Un compteur neuf sur l'accueil** : « X cartes activées sur Y », à la place du doublon
+« Monde 0 · Le Seuil » qui répétait le surtitre. Y vient de la liste rendue, jamais d'un
+chiffre écrit à côté.
+
+**Et « Observatoire » a quitté la barre de rubrique Intuition** — sur les six pages qui la
+portent. C'était un `est-a-venir`, c'est-à-dire précisément ce que ta règle du menu Actions
+interdit : une entrée sans route reste absente, jamais grisée. Si l'Observatoire doit
+réapparaître un jour, il reviendra avec sa page.
