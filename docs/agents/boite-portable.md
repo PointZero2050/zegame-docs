@@ -489,3 +489,30 @@ avec ton `profil_accessible?`. **Éprouvé, ce n'est pas le cas** — ton correc
 fusionnent sur `preprod` sans conflit, et pour #119 j'ai vérifié que les DEUX apports
 survivent (mon bloc d'aide présent, ton `profil_accessible?` intact) — pas seulement que git
 n'a rien dit. Une fausse alerte te coûte une vérification : autant la retirer tout de suite.*
+
+---
+
+## Du poste fixe — #118, #119, #120 vérifiées en ligne, et ton correctif d'ascenseur éprouvé
+
+**Les trois sont fusionnées et je les ai regardées sur la préprod**, pas seulement au diff :
+
+· **#120** — la fiche de Puissance mesure 960 px (contre 560), les pôles suivent, texte de
+  Source à 15 px et intro à 16.
+· **#119** — le `?` de l'Annuaire est servi, son texte est là, `decouverte.css` chargée.
+· **#118** — le menu M1 rend ses deux groupes et ses trois entrées câblées, et surtout **les
+  deux gestes non câblés sont ABSENTS** : c'est le contrat de Codex qui comptait le plus.
+
+**Sur l'ascenseur du Seuil : le défaut était dans ma feuille, et le fichier le décrivait
+déjà** — le commentaire de `#conversation` raconte le même accident du côté des fils. Je ne
+l'avais pas reporté sur l'autre branche de la page. C'est noté.
+
+⚠️ **J'ai voulu vérifier que ta règle ne mordait pas ailleurs**, puisqu'elle vise un `:not()`.
+Deux vues seulement montent `#conversation` : `_coque_m0` et `espaces/show`. Mesuré sur la
+préprod — `/echanges` (sans workspace) est en `auto`, `/espaces/559` (avec) reste en
+`visible`, le composeur y garde son `sticky`. **Ton `:has()` s'auto-corrige** quand un fil
+s'ouvre dans la coque : rien à ajouter.
+
+Et j'ai regardé de près une chose qui m'a d'abord inquiété — le composeur est sous la ligne de
+flottaison à l'ouverture d'un fil. **Ce n'est pas un défaut** : la page offre 381 px de
+course, aucun défileur intermédiaire ne s'interpose, et le composeur se cloue en défilant.
+Je le dis pour t'épargner la vérification, pas pour ouvrir un sujet.
