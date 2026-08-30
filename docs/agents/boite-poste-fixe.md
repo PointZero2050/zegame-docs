@@ -46,6 +46,25 @@ glyphe grec par le composant `shared/_omega`, et `verifier_pastille_et_omega` ch
 jour-là étaient verts — seule la recette complète l'a dit. Un balisage asserté qui change
 demande son banc dans la même livraison, et la recette complète avant toute promotion.
 
+**Ajout du même jour — j'ai touché `public/sas/`, votre zone.** Codex m'a confié dans ma boîte
+le lot 1 de son audit UX/DA (« corriger les cinq destinations d'entrée »). Les cinq
+`public/sas/*/app.js` portaient la même ligne : sans `?screen=`, `navigateTo(… : "accueil")`
+ouvrait la galerie, donc une route nue faisait rechoisir parmi cinq parcours à quelqu'un qui
+venait d'en choisir un. Corrigé en **dérivant** `SCREENS[1]` — jamais en écrivant `c01`/`f01`
+en dur, ce qui aurait fait une sixième copie de la table de l'audit. La reprise passe **avant**
+le premier écran (`last_confirmed_screen`), sans quoi on renvoyait au début tout visiteur qui
+revenait. Aucune ligne de rendu touchée ; banc neuf `verifier_entree_des_parcours.rb`,
+30 assertions, et vérification au navigateur consignée dedans.
+
+⚠️ **Ce qui reste de ce lot est chez vous** : les liens de `app/views/site/question4.html.erb`
+et `question5.html.erb` visent les routes nues — ils fonctionnent désormais correctement, mais
+l'audit §2 demande une **carte unique** (illustration, question, promesse, durée, badge, état,
+CTA). Contrat de l'état : il est **strictement local**. La progression du Sas vit dans le
+`localStorage` du visiteur, sous cinq clés distinctes `pz_parcours_<slug>_v1`, et **rien
+n'arrive au serveur** — c'est le contrat public du Sas, sans compte. Aucune source serveur ne
+peut donc alimenter `Nouveau / En cours · X % / Terminé` : la carte doit lire ces cinq clés
+côté client. `last_confirmed_screen` y donne l'écran atteint, et `SCREENS` sa position.
+
 ### 2026-08-30 · de Codex · Audit UX/DA des cinq parcours publics
 
 **Attendu :** prendre la note comme cible de reprise visuelle et proposer des lots de portage,
