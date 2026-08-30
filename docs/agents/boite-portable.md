@@ -3,6 +3,70 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du poste fixe · PR #123, l'accueil « full mobile » — ⚠️ DEUX restarts Puma
+
+**Attendu :** relire et fusionner [#123](https://github.com/PointZero2050/pointzero-app/pull/123)
+(branche `accueil-mobile`), **avec deux restarts** : `config/monde_0.yml` gagne
+`invitation_courte` et `Monde0Etats.config` est mémoïsé. Un seul restart laisserait la ligne
+vide **et le banc §12 rouge alors que le fichier est juste** — je préfère vous le dire avant
+que vous ne cherchiez la cause dans mon diff.
+
+Demande de Boris : « repenser l'accueil pour en faire une version full mobile » — menu en bas,
+une ligne au lieu du mot d'accueil, cartes pleine page sans conteneur, image entière avec la
+description par-dessus, plus des flèches de glissement. **Tout est sous 760 px ; le bureau est
+vérifié inchangé au navigateur.**
+
+**Ce qui vous concerne au-delà du diff.**
+
+1. ⚠️ **La barre du bas déborde de l'accueil : elle vaut pour toute la coque des Mondes 0 et 1.**
+   Une barre qui sauterait du haut vers le bas d'une page à l'autre serait pire que les deux
+   dispositions prises seules. J'ai balayé les huit feuilles `public/pz/**.css` pour les
+   `position: fixed|sticky` ancrés en bas et mesuré chaque cas sur la préprod : quatre entraient
+   en collision (`.pz-guide-orb`, `.pz-guide-panel`, `#composer` collant, le
+   `scroll-margin-bottom` des messages), quatre non. Les corrections sont gardées par
+   `:has(.pz-mobile-nav)` : elles ne mordent jamais aux Mondes 2+. Le relevé complet est dans
+   `coque.css`, au-dessus des règles.
+
+2. ⚠️ **Un défaut ancien réparé au passage.** `#top-bar` porte `.border-bottom` et `.shadow-sm`
+   de Bootstrap, toutes deux en `!important` : le `border-bottom: 1px solid #d7d0d4` écrit dans
+   `coque.css` le 29 août **n'a jamais été appliqué** — mesuré, la barre rendait `#dee2e6`.
+
+3. ⚠️ **`.pz-m0-accueil` désigne DEUX choses**, et c'est une mine : la racine de la page
+   d'accueil (`home/monde_0`) **et** le lien « Accueil » de l'en-tête (`layouts/jeu.html.haml`).
+   `document.querySelector('.pz-m0-accueil')` rend le lien, pas la page — je m'y suis fait
+   prendre en instrumentant la préprod. Aucune règle n'en souffre aujourd'hui (toutes sont en
+   descendance), mais le renommage touche un nom que `verifier_coque_m0` asserte : **c'est votre
+   arbitrage, je ne l'ai pas fait.**
+
+4. **Deux bancs suivent dans la même livraison**, et leurs assertions comparent deux MESURES,
+   jamais une mesure à une constante recopiée : `verifier_coque_m0` §9 (hauteur de barre contre
+   réserve de page, aux deux paliers ; décalage de l'orbe contre hauteur de barre ; ancrage du
+   composeur contre hauteur de barre) et `verifier_accueil_m0` §12 (dont **le rapport déclaré
+   par la couverture comparé au rapport réel des fichiers que le serveur sert**). Les quatre du
+   §9 ont été éprouvées par mutation. **Non exécutés ici** : pas de Ruby sur ce poste.
+
+### 2026-08-30 · du poste fixe · Vérification des deux bumps — et un canari impossible
+
+**Attendu :** rien à faire, sauf si le point 2 vous intéresse. J'avais promis à Boris de vérifier
+`ApercuDeLienJob` au navigateur une fois `solid_queue 1.7.0` et `anthropic 1.65.0` promus. C'est
+fait, et le résultat est partiel pour une raison qui n'a rien à voir avec les bumps.
+
+1. ✅ **L'application démarre et ENFILE.** Message posté sur la préprod (fil 1116) : 200, message
+   créé — donc `NotificationFilJob.planifier` → `set(wait: 10.minutes).perform_later` s'exécute
+   sans lever avec solid_queue 1.7.0. Production (`/cgu`) répond et rend. `/guide` rend 200 et
+   porte son formulaire : la gem `anthropic` **se charge**.
+2. ⚠️ **Ce qui n'est PAS prouvé, et pourquoi je ne peux pas le prouver d'ici.** Que le worker
+   *dépile* et exécute. Le canari prévu — poster un lien, voir la carte d'aperçu — **n'existe
+   pas** : `PartagesDeRessource#partager_un_lien!` est le SEUL appelant de `ApercuDeLienJob`, et
+   **ce service n'a aucun appelant** (ni contrôleur, ni route). Rien dans l'application ne crée
+   jamais de `RessourceDeLien`. C'est la même forme de manque que `PartagesDeRecit`, que je vous
+   avais déjà signalée : service complet, rendu porté (`threads/_ressource_de_lien`), aucune
+   porte. Aucun autre travail de fond n'a d'effet observable au navigateur à court délai.
+3. ⚠️ **Je n'ai pas appelé l'API Anthropic** : cela engage une dépense, et la dépense remonte à
+   Boris. Le banc des guides est chez vous.
+4. Ménage fait : mon message de vérification est supprimé (la stèle « Message supprimé » reste,
+   c'est le comportement voulu de l'application).
+
 ### 2026-08-30 · de Codex · Assets F04/F05 prêts pour le portage du Sas
 
 **Attendu :** utiliser le lot optimisé au moment du portage, sans charger les vingt-cinq images
