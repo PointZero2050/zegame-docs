@@ -3,6 +3,63 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du poste fixe · PR #124 — et un défaut qui touchait les CINQ parcours
+
+**Attendu :** relire et fusionner
+[#124](https://github.com/PointZero2050/pointzero-app/pull/124) (branche
+`scenarios-neoarchaiques`). Aucun restart particulier, aucune migration : c'est du
+`public/sas/` et un gabarit. À prendre après #123, elles ne se touchent pas.
+
+Le lot néoarchaïque de Codex (30 WebP) et les deux corrections que son audit demande dans la
+même phrase que les images : la cinquième phase de `f04` n'est plus coupée (108 px hors cadre à
+1 280 px, mesuré), et `f05` passe de 2 945 à 1 266 px sur téléphone — de 2 715 à 1 013 au large,
+car le défaut n'était **pas** mobile.
+
+⚠️ **CE QUI VOUS CONCERNE VRAIMENT : UN DÉFAUT PRÉ-EXISTANT SUR LES CINQ PARCOURS.**
+
+En mesurant avant d'écrire, sur la préprod et sur l'ANCIEN balisage : en arrivant sur
+`?screen=f04`, les cinq illustrations sont dans la fenêtre (haut 221, bas 439 pour 900 de
+hauteur), `scrollY` vaut 0 — et quatre secondes plus tard `naturalWidth` vaut encore **0 pour
+les cinq**. Aucune requête n'était partie.
+
+La cause : les onze écrans vivent dans le DOM avec `hidden`, et le navigateur ne rejoue pas son
+test d'intersection quand le script le retire. **Le visiteur qui ne défile pas ne voit jamais
+l'image.** Les cinq parcours portent le même gabarit et 6 à 11 images `lazy` chacun. Le
+correctif (`reveillerLesImages`, une dizaine de lignes) est posé dans les cinq `app.js`, et ne
+réveille que ce qui est déjà dans la fenêtre — sur `f05` c'est la différence entre cinq images
+et vingt-cinq.
+
+Je touche donc les cinq `app.js` que vous avez modifiés hier pour le lot 1. Ma branche part de
+`origin/preprod` après votre `fceadcc`, il n'y a rien à fusionner à la main.
+
+⚠️ **UNE DÉPENSE À ARBITRER AVANT LA PRODUCTION, PAS AVANT LA PRÉPROD.** Le lot de Codex pèse
+**8,96 Mo contre 1,06** pour les JPEG qu'il remplace (moyenne 305 ko contre 36). Une famille
+coûte 1,3 à 1,7 Mo, `f04` 1,5, les cinq familles 7,5 si le visiteur les ouvre toutes. C'est la
+règle « une famille à la fois » qui rend cela tenable. Les vignettes s'affichent à 220 px : un
+dérivé à 440 diviserait le poids par quatre. Je l'ai demandé à Codex — c'est de la production
+d'image, et ce poste n'a aucun encodeur. Boris tranche.
+
+⚠️ **DEUX PIÈGES DE MESURE, POUR VOUS ÉVITER DE LES REPAYER.**
+
+1. `width`/`height` sur une balise `img` **cassent `aspect-ratio` sans `height:auto`** :
+   l'attribut l'emporte, et mes cartes passaient de 405 à 1 109 px. Invisible à la lecture.
+2. `scroll-behavior:smooth` sur `.phase-strip` **annulait tout défilement programmé** dans le
+   navigateur intégré — clic, `scrollBy`, affectation directe de `scrollLeft`, 0 dans les trois
+   cas. Sans la déclaration : 0 → 228 → 456 → 813. Éprouvé deux fois, images chargées, en
+   réinjectant la règle. ⚠️ **Et je n'explique pas l'asymétrie** : `.lane-track`, juste en
+   dessous dans la même feuille, porte la même déclaration et défile correctement. Consigné dans
+   la feuille plutôt que passé sous silence — si vous avez l'explication, elle m'intéresse.
+
+**Banc neuf** `verifier_scenarios_neoarchaiques.rb`, huit sections. Ses deux assertions
+principales comparent deux mesures : le rapport déclaré par la feuille contre le rapport réel des
+fichiers **servis**, et l'absence des 25 adresses de vignette dans le HTML servi (la seule forme
+vérifiable en HTTP de « une famille à la fois »). Le §8 dit ce qu'il ne prouve pas : il n'a pas
+d'écran. **Non exécuté ici**, comme toujours.
+
+Le rendu a été vérifié sur un banc local — un serveur statique servant la vraie page avec les
+vrais fichiers — à 375 × 812 et 1 280 × 900, parcours complet des trois regards jusqu'à `f06`,
+vue plein écran comprise. Les cinq `app.js` se parsent.
+
 ### 2026-08-30 · du poste fixe · PR #123, l'accueil « full mobile » — ⚠️ DEUX restarts Puma
 
 **Attendu :** relire et fusionner [#123](https://github.com/PointZero2050/pointzero-app/pull/123)

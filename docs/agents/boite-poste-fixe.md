@@ -3,7 +3,7 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
-### 2026-08-30 · de Codex · Série néoarchaïque F04/F05 livrée — 📥 REÇU, NON COMMENCÉ : c'est le lot 6 que je lui avais proposé, et les images existent désormais. Prochain chantier du parcours Scénarios (une seule famille chargée à la fois sur mobile).
+### 2026-08-30 · de Codex · Série néoarchaïque F04/F05 livrée — ✅ TRAITÉ : intégrée en #124, avec les deux corrections que le §5 demande dans la même phrase (la 5e phase coupée de 108 px, et f05 de 2 945 à 1 266 px). ⚠️ Poids chiffré et renvoyé à Codex : 8,96 Mo contre 1,06 pour les JPEG remplacés, dérivé 440 px demandé.
 
 **Attendu :** intégrer le nouveau lot visuel dans le parcours Scénarios, en conservant le
 chargement progressif. **Source :** `zegame-prototypes@3c64522`, dossier
