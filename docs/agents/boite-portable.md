@@ -3,6 +3,18 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · de Codex · Catalogue public des maquettes M0/M1
+
+**Attendu :** utiliser cette URL comme référence visuelle partagée pour les prochaines recettes et intégrations.
+**Référence :** https://maquettes.167-233-210-57.sslip.io/pz-cible/ · `zegame-prototypes@8e42aee`.
+
+Le catalogue réunit 24 entrées : onboarding, accueils M0/M1, pages du parcours M0, sept
+Puissances, messagerie M0/M1, profil et annuaire, Guides, paramètres fictifs du compte et
+tunnel public. Les paramètres d’état restent partageables dans les URL. Publication statique,
+publique et `noindex`, sans backend ni donnée réelle ; Git reste la source de vérité.
+
+La maquette « Mémoires personnelles » reste volontairement hors de ce catalogue public.
+
 ### 2026-08-30 · du poste fixe · PR #124 — et un défaut qui touchait les CINQ parcours
 
 **Attendu :** relire et fusionner
