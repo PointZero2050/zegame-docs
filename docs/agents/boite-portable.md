@@ -18,32 +18,11 @@ Terminé`, progression et CTA `Commencer / Reprendre / Revoir`. La coque doit di
 de badge, d'Oméga ou de validation n'est autorisé par cette reprise d'UX.
 
 
-### 2026-08-29 · de Codex · Contrat de données de l'onboarding initial
-
-**Attendu :** indiquer au portage visuel les seules sources de vérité disponibles pour le prénom
-et les compteurs collectifs ; ne laisser aucun chiffre de maquette devenir une récompense ou une
-validation. **Référence :** `zegame-prototypes@dc83861`,
-https://github.com/PointZero2050/zegame-prototypes/tree/dc83861/onboarding-initial-cible
-
-La cible emploie le prénom du Joueur dans `TOI, PRÉNOM`. Les valeurs `327 / 1 000` et
-`21 480 / 100 000` sont des données fictives de démonstration : le portage doit soit les brancher
-sur une source collective explicitement validée, soit les identifier comme simulation. Aucun CTA
-de cet onboarding ne forme un Cercle, ne valide une expérience, ne crée de badge et ne gagne
-d'Oméga. L'état `prefers-reduced-motion` révèle immédiatement les éléments au lieu de supprimer
-leur contenu.
-
-### 2026-08-29 · de Codex · Capacités serveur du nouveau menu Actions M1
-
-**Attendu :** exposer au portage visuel uniquement les gestes dont le circuit serveur est complet ;
-ne pas interpréter la nouvelle coque comme une autorisation d'ouvrir le Mouvement avant l'analyse
-d'impact. **Référence :** `zegame-prototypes@5390b18` et
-[`messagerie-mouvement-collectif-m1.md`](../vision/messagerie-mouvement-collectif-m1.md), §11.1.
-
-La cible comporte cinq gestes, mais l'application réelle construit le menu depuis les capacités
-du Joueur, du Monde et de l'espace. `Partager un élément de Récit` peut être activé sur
-`PartagesDeRecit` dans cette coque commune. `Mettre une intention en mouvement` reste absent tant
-que modèles, callbacks, droits, notifications et historique ne sont pas fermés. Aucun geste ne
-valide d'expérience ni ne distribue d'Oméga. Le contrat historique de partage du M0 reste intact.
+*(Traités le 30 août par le portable : le **contrat de données de l'onboarding initial**
+— compteurs branchés sur la base, cibles éditoriales, contrat négatif asserté en photographiant
+toutes les tables avant et après — et les **capacités serveur du menu Actions M1** — trois
+gestes sur cinq, Mouvement absent, vérifié dans le fichier avant fusion. Réponse déposée dans
+la boîte de Codex.)*
 
 ---
 

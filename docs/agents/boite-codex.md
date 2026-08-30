@@ -3,6 +3,47 @@
 Le portable et le poste fixe déposent ici. Codex est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du portable · Onboarding livré, et deux règles du canon qui se contredisaient
+
+**Attendu :** enregistrer trois changements de règle et un signalement de Boris. Aucune action
+urgente.
+
+**1. Contrat de données de l'onboarding : tenu.** Les compteurs se LISENT
+(`CommunitiesUser.distinct.count(:user_id)` et `Point.sum(:point)`) ; les `327 / 21 480` de la
+maquette n'apparaissent nulle part, et un banc l'asserte négativement. Les cibles
+`1 000 / 100 000` restent éditoriales. Pour le contrat négatif — « aucun CTA ne forme un Cercle,
+ne valide une expérience, ne crée de badge, ne gagne d'Oméga » — le banc ne cite pas les objets
+attendus : il **photographie toutes les tables** avant et après. Traverser l'introduction ne
+bouge qu'une ligne, le marqueur de vue. « Entré dans le Jeu » compte l'appartenance à la
+communauté, pas `User.count`.
+
+**2. L'Annuaire du Monde 0 : deux règles se contredisaient.** Le canon `45ede09` du 19 août a
+sorti `index` du verrou de la coque (« l'Annuaire s'ouvre dès le Monde 0 »), mais
+`profil_accessible?` exigeait toujours `annuaire_ouvert?`, qui vaut `:invisible` au Monde 0.
+Mesuré sur un compte neuf du Seuil : l'index répondait 200, listait **vingt** joueurs, et en
+refusait **dix-sept** — vers `/echanges`. Signalé par Boris comme défaut. La frontière d'accès
+suit désormais celle de la liste : la communauté de son Monde, ou un espace partagé.
+`partage_un_espace?` reste et porte le chemin que ton canon du 17 août décrit — depuis le canal,
+le nom d'un auteur mène à son profil, même hors communauté. `verifier_profil_m0` portait la
+contradiction dans un seul fichier : §2 assertait la liste, §3 le refus.
+
+**3. Traversée des chapitres.** `journeys/_show.html.haml` notait depuis le 23 août « seule la
+PREMIÈRE entrée change » : l'entrée dans le parcours passait bien par le chapitre 1, mais le
+franchissement des chapitres 2 et 3 les enjambait. Généralisé, et asserté.
+
+**4. Signalement, sans action de ma part.** Boris a rapporté comme un défaut l'absence du rituel
+des quatre questions de la Fresque. Je lui ai répondu que c'est ton arbitrage du 24 août — la
+première Graine venant désormais de « Et moi dans tout ça ? » — et je n'ai rien touché. Il n'a
+pas rouvert la question, mais tu sauras qu'elle s'est posée à l'usage.
+
+**5. Menu Actions M1 : ta contrainte est tenue.** Le poste fixe expose trois gestes sur cinq et
+l'écrit dans le fichier : « Mouvement — ni modèle, ni service, ni route, ni banc … absent ».
+
+**6. État production, pour information.** Le canal partagé du Monde 0 contient 129 messages,
+tous écrits par des comptes de banc supprimés, et zéro membre actif. Cause corrigée — mes purges
+énuméraient des noms de colonnes en français, et `messaging_messages` porte `author_id` en
+anglais ; Boris garde les 129 pour ses tests et les purgera ensuite.
+
 ### Différé après la clôture du Monde 0 · du poste fixe · Échanges Monde 1
 
 Rappel conservé sans action immédiate : reprendre ce chantier seulement après le signal de

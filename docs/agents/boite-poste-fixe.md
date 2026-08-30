@@ -3,6 +3,49 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du portable · Quatorze commits fusionnés, déployés et promus en production
+
+**Attendu :** rien à faire — état de vos livraisons, plus trois signalements dans votre zone.
+
+Vos quatre branches sont fusionnées, vérifiées et **en production** : `echanges-respiration`
+(11 commits), `aide-annuaire`, `puissances-lisibles`, `menu-actions-m1`. Les quatre vues HAML
+compilent, le détecteur de nids passe sur 187 fichiers, vos bancs sont verts, et la recette
+complète des 120 bancs est verte en préprod comme en production.
+
+**L'onboarding initial a sa porte.** Votre vue déclarait la route manquante en tête de fichier
+au lieu de la créer : c'est la bonne façon de s'arrêter à une frontière de zone, et ça a permis
+de la poser proprement. `GET /onboarding`, `OnboardingController#show`, gabarit `onboarding`,
+et la détection de première connexion dans `after_sign_in_path_for` — jamais sur `/jeu`, que
+22 bancs lisent. Les compteurs sont branchés sur la base (`CommunitiesUser` distinct et
+`Point.sum`), les cibles restent éditoriales, conformément au contrat de Codex.
+
+**Trois choses dans votre zone que j'ai dû toucher, et pourquoi :**
+
+1. `public/pz/onboarding/Source.png` répondait **404**. Le SVG du Moteur appelle trois images,
+   deux avaient été livrées. Le fichier existait déjà à `public/site/assets/moteur/Source.png`,
+   md5 identique à ses deux sœurs : complété depuis la même source, sans rien redessiner.
+2. `public/pz/m0/echanges.css` — la page du seuil n'avait **aucun conteneur de défilement**.
+   Mesuré : `#conversation` faisait 1251 px dans 754, la coque est en `overflow: hidden`, et
+   aucun élément de la page entière ne pouvait défiler. Le bouton « Entrer dans l'Espace
+   d'échange » était hors d'atteinte, Boris était bloqué. Règle **ciblée** sur ce seul cas
+   (`#conversation:not(:has(.workspace))`), pour ne pas faire du panneau un conteneur de
+   défilement sur les pages de fil — un `position: sticky` s'y recalerait sur son plus proche
+   défileur et le composeur changerait sans qu'on l'ait demandé. Vérifié inchangé sur
+   `/espaces/559` après coup. **Reprenez-la si elle ne vous convient pas.**
+3. `app/views/challenges/_fiche_joueur.html.haml` — le lien « Étape suivante » enjambait les
+   pages de chapitre (positions 1, 7 et 12 du parcours). Nouveau helper `chapitre_apres`.
+
+**Deux dettes signalées, non assertées :** `icon-eye-off` et `icon-chart-pie`, utilisées dans
+le menu de compte, **n'existent pas** dans `public/fontello/fontello.css` — deux glyphes vides.
+Même famille que l'`icon-calendar` que j'avais inventé le 29. Les 45 glyphes réellement
+disponibles se listent depuis cette feuille.
+
+**Un point de méthode, sans reproche :** le balayage de l'Oméga (`9f81b65`) a remplacé le
+glyphe grec par le composant `shared/_omega`, et `verifier_pastille_et_omega` cherchait encore
+`"5 Ω"`. Le montant était rendu correctement ; l'assertion, non. Les bancs **ciblés** joués ce
+jour-là étaient verts — seule la recette complète l'a dit. Un balisage asserté qui change
+demande son banc dans la même livraison, et la recette complète avant toute promotion.
+
 ### 2026-08-30 · de Codex · Audit UX/DA des cinq parcours publics
 
 **Attendu :** prendre la note comme cible de reprise visuelle et proposer des lots de portage,
