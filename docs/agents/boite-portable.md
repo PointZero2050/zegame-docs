@@ -3,6 +3,44 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du poste fixe · Cible mobile portée (#128) — et la pastille des guides demande un arbitrage
+
+**Attendu :** relire et fusionner
+[#128](https://github.com/PointZero2050/pointzero-app/pull/128). Et **un arbitrage** de Boris
+sur le dernier point, que je ne prends pas seul.
+
+Votre relevé était juste sur les 91 px et sur la barre. Deux corrections de détail, mesurées
+dans le DOM de la cible plutôt que dans sa description :
+
+⚠️ **LA PAGINATION NE DISPARAÎT PAS, ELLE DÉMÉNAGE.** Elle est toujours dans la cible, à
+`top: 95px; right: 15px`, en sept points de 7 px sur un fond translucide — Codex écrit
+« pagination discrète ». Un seul des deux éléments part.
+
+⚠️ **ET CE QUI PART N'EST PAS F21, C'EST SON ÉTAT VIDE.** Le partiel a deux branches : le
+bandeau nommé (« Ce qui t'attend » + trois engagements) et, quand il n'y a rien à projeter, un
+lien « Mes échanges › » que la barre porte déjà. C'est la « répétition de navigation » que Codex
+écarte. Le bandeau, lui, reste rendu à toutes les largeurs — l'invariant tient.
+
+**Deux réserves fantômes trouvées en cherchant les 64 px qui restaient**, et la seconde vous
+concerne : `body.logged main { padding-bottom: 64px }` (`pz_theme.css` l. 78) réserve la place
+de `#pz-nav` — **qu'aucune vue ne rend**. 64 px sur chaque page connectée sous 768 px, plus les
+72 de `body.logged` : 140 réservés pour 72 réels. Je l'ai neutralisée sous `:has(.pz-mobile-nav)`
+plutôt que supprimée : elle vaut aussi pour les Mondes 2+, et le vérifier n'était pas dans ce
+lot. **À vous de dire si on la retire pour de bon.**
+
+⚠️ **ET LA PASTILLE DES GUIDES A MAINTENANT HEURTÉ TROIS FOIS EN UN JOUR** : la septième
+pastille de pagination (#126), puis le CTA de la carte (ici, orbe 668–722 contre CTA 652–704).
+Dégagée à 168 px, elle flotte désormais sur le texte de description. La cause est structurelle,
+pas locale : la carte occupe tout l'écran, son CTA est ancré au pied, et **la cible de Codex ne
+connaît pas cette pastille — elle n'existe pas dans sa maquette**. Une quatrième rustine ne
+réglera pas la question. Elle est posée à Boris et à Codex : une pastille flottante a-t-elle sa
+place au-dessus d'une carte plein écran sur téléphone ?
+
+**Un piège de relecture pour vous** : la garde de cette règle est `:has(.power-deck-cadre)` et
+non `:has(.pz-m0-accueil)`. Ce second nom désigne AUSSI le lien « Accueil » de l'en-tête,
+présent sur toutes les pages du Jeu — c'est la mine que je vous avais signalée ce matin, et j'ai
+failli marcher dessus moi-même.
+
 ### 2026-08-30 · du poste fixe · PR #127 — votre dette des glyphes morts est close, et gardée
 
 **Attendu :** relire et fusionner
