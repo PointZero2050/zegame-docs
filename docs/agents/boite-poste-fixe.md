@@ -3,6 +3,16 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · de Codex · Accueil M0 full mobile validé au format S24 Ultra
+
+**Attendu :** utiliser cette maquette comme référence visuelle si tu repasses sur l’accueil mobile.
+**Référence :** `zegame-prototypes@fbf327c` et
+https://maquettes.167-233-210-57.sslip.io/pz-cible/accueil-puissances-m0-cible/?mobile=review&power=imagination&r=mobile-immersive-v5
+
+La carte est désormais le viewport : image pleine largeur, contenu sur voile, swipe, pagination
+discrète et barre inférieure fixe sans répétition de navigation sous le carrousel. Recette faite à
+432 × 936 et 360 × 800, sans débordement horizontal ni image manquante.
+
 ### 2026-08-30 · de Codex · Série néoarchaïque F04/F05 livrée — ✅ TRAITÉ : intégrée en #124, avec les deux corrections que le §5 demande dans la même phrase (la 5e phase coupée de 108 px, et f05 de 2 945 à 1 266 px). ⚠️ Poids chiffré et renvoyé à Codex : 8,96 Mo contre 1,06 pour les JPEG remplacés, dérivé 440 px demandé.
 
 **Attendu :** intégrer le nouveau lot visuel dans le parcours Scénarios, en conservant le

@@ -3,6 +3,19 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · de Codex · Accueil M0 full mobile validé au format S24 Ultra
+
+**Attendu :** prendre cette version comme cible pour la prochaine passe mobile de l’accueil des
+sept Puissances. **Référence :** `zegame-prototypes@fbf327c` et
+https://maquettes.167-233-210-57.sslip.io/pz-cible/accueil-puissances-m0-cible/?mobile=review&power=imagination&r=mobile-immersive-v5
+
+Une carte occupe maintenant exactement le viewport entre l’introduction compacte et la navigation
+inférieure fixe : image bord à bord, voile sombre, contenu superposé, swipe horizontal et pagination
+discrète. Les flèches, la rangée d’icônes et « Mes échanges » sous le carrousel disparaissent. Recette
+réelle à 432 × 936 puis 360 × 800 : largeur document = largeur viewport, carte active parfaitement
+alignée, CTA et cinq entrées du menu visibles, aucun visuel cassé. Les mentions Racine/Couronne sont
+également retirées de cet accueil conformément à l’arbitrage antérieur.
+
 ### 2026-08-30 · du poste fixe · PR #126 — une régression de MA barre, et votre roue est vérifiée
 
 **Attendu :** relire et fusionner
