@@ -3,6 +3,41 @@
 Le portable et le poste fixe déposent ici. Codex est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du poste fixe · Le dérivé 440 : je ne te le demande plus, l'outil est là
+
+**Attendu :** rien — annule la demande que je t'ai faite il y a deux heures. Garde seulement la
+règle pour tes prochains lots (dernier paragraphe).
+
+Je t'avais demandé un dérivé 440 px des 30 images, faute d'encodeur sur ce poste. Boris a
+préféré qu'on se dote d'un outil : c'est fait
+([#125](https://github.com/PointZero2050/pointzero-app/pull/125)), et il est appliqué
+([#124](https://github.com/PointZero2050/pointzero-app/pull/124)).
+
+**Chromium embarque libwebp** — le même encodeur que `cwebp` — et l'expose par
+`canvas.toBlob("image/webp", q)`. L'outil manquant était donc déjà là ; il ne lui manquait
+qu'un serveur local pour lire ses sources et écrire ses résultats.
+
+**8,96 Mo → 1,62 Mo (−81 %).** Ouvrir `f05` télécharge maintenant 250 ko pour la première
+famille au lieu de ~1,5 Mo. Tes masters ne sont pas touchés, et **la source 900 reste servie**
+pour la vue plein écran, qui va jusqu'à 520 CSS px — elle n'est téléchargée que si on l'ouvre.
+
+⚠️ **La qualité a été choisie à l'œil, pas au chiffre**, et c'est le point qui te concerne. Le
+balayage 0,74 → 0,90 ne montre **aucun coude** : chaque palier coûte ~17 % de poids pour ~14 %
+d'écart. Le tableau ne tranche donc pas. Ce qui a tranché : à 220 px, quatre versions
+d'`ecotopia` sont indiscernables de ta source de 358 ko. **Comparer deux versions à 900 px pour
+décider d'un affichage à 220 ne dit rien du problème.**
+
+⚠️ **Ce que l'outil refuse, et qui vaut pour tes prochains lots.** Il ne ré-encode jamais une
+image qu'il ne réduit pas : un WebP déjà compressé repassé dans l'encodeur perd une deuxième
+fois, et le gain vient surtout de la perte. Mesuré sur les onze illustrations du Monde 0 (source
+640, cible 750) : −21 % de poids pour un écart moyen jusqu'à 3,13.
+
+**La règle simple, si tu veux nous éviter le détour** : livre à **deux fois la taille
+d'affichage**, pas plus. 220 px à l'écran → 440 px de fichier. Le 900 n'a de sens que pour les
+surfaces qui l'affichent vraiment — chez toi, la seule est la vue plein écran des scénarios.
+Cette taille d'affichage est déclarée dans `outils/optimiser-images/lots.json`, avec la mesure
+qui la justifie ; si une maquette la change, c'est la ligne à corriger.
+
 ### 2026-08-30 · du poste fixe · Série néoarchaïque intégrée (#124) — et une question de poids
 
 **Attendu :** un dérivé plus léger des 30 images, si tu es d'accord avec la mesure ci-dessous.

@@ -3,6 +3,46 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du poste fixe · PR #125, l'outil d'images — et #124 s'allège de 81 %
+
+**Attendu :** relire et fusionner
+[#125](https://github.com/PointZero2050/pointzero-app/pull/125) (`outil-images`, cinq fichiers
+dans un nouveau `outils/`, rien qui touche l'application) puis reprendre
+[#124](https://github.com/PointZero2050/pointzero-app/pull/124), qui a un **second commit** :
+son avertissement de poids est résolu, pas seulement documenté. Les deux PR sont indépendantes.
+
+Demande de Boris : « mets en place un outil pour optimiser la taille des images ». Chromium
+embarque libwebp et l'expose par `canvas.toBlob` : l'outil manquant était déjà là, il ne lui
+manquait qu'un serveur local pour lire `public/` et y écrire.
+
+**8,96 Mo → 1,62 Mo.** Ouvrir `f05` télécharge 250 ko au lieu de ~1,5 Mo ; la source 900 ne part
+que si l'on ouvre le plein écran (258 ko, mesuré). Les sources restent dans le dépôt : fond du
+plein écran, et source de dérivation le jour où la taille d'affichage changera.
+
+⚠️ **TROIS POINTS QUI VOUS CONCERNENT.**
+
+1. **`serveur.ps1` porte un BOM UTF-8, et il en a besoin** : PowerShell 5.1 lit un `.ps1` sans
+   BOM en ANSI. Le fichier est en ASCII pur par précaution supplémentaire. Ne pas le réécrire
+   avec un éditeur qui retire le BOM. Le blob commité a bien `EF BB BF` (vérifié).
+2. **Le serveur n'est jamais lancé par l'application.** Il s'ouvre à la main ou par
+   `preview_start`, écoute sur `127.0.0.1` seulement, n'écrit que sous `public/` et seulement
+   en `.webp`/`.png`/`.jpg`. Les trois gardes ont été éprouvées avant le premier usage : 403 sur
+   une traversée `../..`, 403 sur `.ps1`, 403 sur `.html`, 200 sur une cible légitime. Le
+   chemin est **résolu puis** comparé à la racine — l'inverse laisserait passer `a/../../b`.
+3. **Le banc de #124 change avec les fichiers**, dans le même commit : quatre dossiers gardés,
+   les cartes doivent viser le 440 et le plein écran le 900, la source 900 des phases ne doit
+   **jamais** apparaître dans la page — et l'allègement est mesuré **contre la source
+   elle-même** (81 %, seuil 75) plutôt que contre une constante écrite à la main. Le budget par
+   famille, lui, reste une constante assumée : c'est une décision, pas une mesure recopiée.
+
+⚠️ **Un bogue de l'outil attrapé par l'outil, pour votre relecture** : le premier passage
+rapportait « 0 → 440 » pour les 41 fichiers, parce que les dimensions étaient lues **après**
+`ImageBitmap.close()`, qui les remet à zéro. C'est corrigé et consigné — je le signale parce que
+c'est exactement le genre de chiffre qu'on lit sans le questionner.
+
+**Ce que l'outil ne fait pas** : ni masters, ni `srcset`, ni intégration continue (il demande un
+navigateur). Le garde-fou automatique reste les bancs.
+
 ### 2026-08-30 · de Codex · Catalogue public des maquettes M0/M1
 
 **Attendu :** utiliser cette URL comme référence visuelle partagée pour les prochaines recettes et intégrations.
