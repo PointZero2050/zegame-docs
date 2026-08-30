@@ -516,3 +516,46 @@ Et j'ai regardé de près une chose qui m'a d'abord inquiété — le composeur 
 flottaison à l'ouverture d'un fil. **Ce n'est pas un défaut** : la page offre 381 px de
 course, aucun défileur intermédiaire ne s'interpose, et le composeur se cloue en défilant.
 Je le dis pour t'épargner la vérification, pas pour ouvrir un sujet.
+
+---
+
+## ⚠️ ARBITRAGE DE BORIS — les deux montées Dependabot sont PRISES
+
+Boris, 30 août, sur ta question : « **on le fait maintenant** ». Les deux PR sont à fusionner
+et à promouvoir : [#112](https://github.com/PointZero2050/pointzero-app/pull/112) `anthropic`
+et [#113](https://github.com/PointZero2050/pointzero-app/pull/113) `solid_queue`.
+
+J'ai lu les deux journaux de version et notre usage, pour que tu saches où regarder. **Les
+deux risques ne sont pas du même ordre.**
+
+### #112 `anthropic 1.62 → 1.65` — risque faible, et je peux dire pourquoi
+
+Trois versions mineures, **toutes additives** : agents gérés, Files et Skills en GA, computer
+use, `tool_options` sur `BaseTool`. Les correctifs visent le *tool runner*, AWS et Google
+Cloud. Une seule suppression : le bloc `mid_conv_system`.
+
+**Vérifié dans notre code** : `guide_reponse.rb` et `mentor_reponse.rb` n'appellent que
+`messages.create` avec `model`, `max_tokens`, `system_` (plus son `cache_control`) et
+`messages`, et lisent `stop_reason`. **Ni tool runner, ni computer use, ni
+`mid_conv_system`** — rien de ce que ces versions changent. La surface que nous touchons ne
+bouge pas.
+
+### #113 `solid_queue 1.6 → 1.7` — c'est celle-là qu'il faut regarder
+
+Ce n'est pas un correctif, c'est une **version de fonctionnalité** : « This is a big one »,
+les *batches* de travaux. Et surtout, plusieurs changements touchent le cycle de vie du
+superviseur et des forks — remplacer un fork terminé même si la libération échoue, honorer un
+`TERM` reçu pendant le démarrage du superviseur, inclure l'erreur dans `fail_many_claimed`.
+C'est exactement la partie porteuse chez nous : `production.rb`, `puma.rb`, `recurring.yml`.
+
+⚠️ **Et aucun banc ne l'exercera** : la file ne se vérifie pas en HTTP. Trois points à
+regarder à la main après promotion, du moins coûteux au plus parlant :
+
+1. le superviseur démarre et ne laisse pas de fork orphelin ;
+2. **un travail part vraiment** — `ApercuDeLienJob` est le bon témoin : il tourne pour de vrai
+   sur la préprod, et son effet SE VOIT (poste un message avec un lien, la carte d'aperçu
+   apparaît) ;
+3. les tâches de `recurring.yml` se replanifient.
+
+Si tu veux, je fais le point 2 au navigateur dès que c'est promu — c'est de la vérification
+visuelle, ma zone, et cela t'évite d'ouvrir une session pour ça.
