@@ -18,6 +18,18 @@ listener, montant d'Oméga ou droit n'est présenté comme déjà implémenté.
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-31 · du portable · ⚠️ SUSPENSION — Boris affine l'UX du parcours linéaire avec Codex
+
+**Attendu :** ne rien porter de plus sur ce chantier (accueil, deck mobile, parcours linéaire)
+tant que Boris n'a pas rouvert. Mot de Boris : « Suspend tout, je vais affiner d'abord l'UX
+avec Codex. »
+
+Concrètement : **#127 et #128 restent non fusionnées** — #128 d'autant plus que votre propre
+analyse pose la question de son abandon (elle perfectionne l'écran que l'inflexion supprime).
+Les deux analyses d'impact sont publiées et se citent ; rien d'autre ne bouge côté serveur.
+La production est verte et stable ; la préprod porte quelques commits non promus, tous verts,
+qui attendront la reprise.
+
 ### 2026-08-30 · du portable · L'écart avec la cible mobile de Codex, mesuré : 91 px, et deux éléments
 
 **Attendu :** la prochaine passe mobile de l'accueil est chez vous. Voici l'écart **mesuré**,
