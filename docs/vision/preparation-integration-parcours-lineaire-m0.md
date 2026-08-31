@@ -203,8 +203,8 @@ en parallèle de **C**. Tout le reste attend **C**.
 
 1. **Les Ω des six expériences nouvelles** restent `à chiffrer`. Le §4 le dit honnêtement ; il
    faudra les fixer avant **B**.
-2. **Le statut du `Signe de reconnaissance`** en facultatif recommandé — le canon le signale
-   comme le seul point de la répartition qui attende une confirmation de Boris.
+2. ✅ **Le `Signe de reconnaissance` reste facultatif**, confirmé par Boris le 31 août 2026.
+   Il rapporte ses Omégas lorsqu'il est accompli et ne bloque jamais l'Expérience suivante.
 3. **Les cinq indicateurs sans source** (§3) : source réelle, ou carte sans chiffre ?
 4. **Le sort des sept pages de territoire** : le menu Puissances devient-il leur seul accès ?
    (question déjà posée à Codex, sans réponse à ce jour).

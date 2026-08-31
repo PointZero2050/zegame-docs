@@ -110,7 +110,7 @@ jusqu'à validation de la séquence complète.
 | 8 | 2 | **L'écosystème Point Zéro** | essentielle · existante | Découvrir la constellation puis relier ses fragments | dispositif achevé + Schéma de circulation enregistré comme Trace | prépare la rencontre avec les autres | 5 actuel |
 | 9 | 2 | **Choisir ma place parmi les autres** | essentielle · nouvelle, absorbe le métaparcours Communication | Composer le Profil, confirmer sa visibilité, rejoindre l'Espace M0 et produire une première réaction | profil confirmé + appartenance effective + réaction persistée | **Communication** ; Espace ouvert. L'Annuaire est présenté en troisième geste facultatif | à chiffrer |
 | 10 | 2 | **Le site du Point Zéro** | essentielle, extensible | Accomplir au moins un des cinq parcours publics ; les quatre autres restent disponibles | au moins une `TraceSas` importée ; compteur `X/5` | aucun ; les parcours supplémentaires restent facultatifs et gardent leurs propres Ω | 6 actuel |
-| 11 | 2 | **Le signe de reconnaissance** | **facultative recommandée** · existante | Composer un signe précis et choisir de l'envoyer ou de le conserver | dispositif achevé + choix de destination enregistré | approfondit Communication sans nouveau seuil | 6 actuel |
+| 11 | 2 | **Le signe de reconnaissance** | **facultative** · existante | Composer un signe précis et choisir de l'envoyer ou de le conserver | dispositif achevé + choix de destination enregistré | approfondit Communication sans nouveau seuil | 6 actuel |
 | 12 | 2 | **Choisir un double regard** | essentielle · nouvelle, absorbe le métaparcours Intuition | Choisir Sirbey ou Z.E.R.O., mener un premier échange, puis éprouver une première clé | message Joueur + réponse Guide persistés ; questionnaire de clé soumis et Trace créée | **Intuition** ; Guides, première clé et bulle transversale deviennent accessibles | à chiffrer |
 | 13 | 2 | **Les choses se précisent** | essentielle · existante | Relire la constellation, explorer une relation avec le mentor, planter la Graine de relation | Graine de relation réellement créée | aucun ; réemploie Émotion, Imagination et Communication déjà ouvertes | 8 actuel |
 | 14 | 2 | **Lire mon Moteur** | essentielle · nouvelle, absorbe le métaparcours Transcendance | Actualiser une première lecture de Puissance, observer sa circulation et ouvrir la provenance des Omégas | évaluation de Puissance enregistrée | **Transcendance** ; Moteur et Accomplissements deviennent accessibles | à chiffrer |
@@ -156,8 +156,8 @@ fiche lorsque le Joueur les traverse dans un même mouvement.
 | 20 | **Ton espace est prêt** · épilogue | Étape unique : relire les sept Puissances éveillées et confirmer `Ouvrir mon espace`. Ce geste transforme l'accueil en tableau de bord sans ouvrir à lui seul le Monde 1. |
 
 Répartition cible : **7 Expériences au chapitre 1**, **7 au chapitre 2**, **5 au chapitre 3**,
-puis l'épilogue. Le passage du `Signe de reconnaissance` en facultatif recommandé reste le seul
-statut de cette répartition qui demande encore une confirmation explicite de Boris.
+puis l'épilogue. Boris a confirmé le 31 août 2026 que le `Signe de reconnaissance` reste
+facultatif : il ne bloque jamais l'ouverture de l'Expérience essentielle suivante.
 
 ## 5. Absorption de l'ancien métaparcours
 
@@ -274,8 +274,8 @@ chapitre, accessible depuis le chemin de fer et depuis l'historique après la fi
 
 1. **Économie Oméga** : chiffrer les cinq nouvelles expériences d'activation sans attribuer deux
    fois des Omégas aux gestes déjà reconnus par une expérience existante.
-2. **Le signe de reconnaissance** : confirmer son passage en facultatif ; Communication possède
-   désormais déjà un geste réel obligatoire.
+2. **Le signe de reconnaissance** : arbitrage clos ; il reste facultatif et rapporte toujours
+   ses Omégas lorsqu'il est accompli.
 3. **Atelier** : fixer le contrat final entre inscription confirmée et présence validée. Le CTA,
    le listener et le passage Monde 1 doivent décrire la même chose.
 4. **Immateria** : obtenir un événement idempotent de fin de tutoriel et une route de retour vers

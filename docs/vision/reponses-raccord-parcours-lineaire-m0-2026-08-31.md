@@ -89,9 +89,9 @@ Le lot éditorial demandé est livré dans
 gabarits encore dépourvus d'aide et confirme : ouverture uniquement au clic sur `?`, jamais au
 premier chargement, aucun effet sur progression ou Omégas.
 
-## 9. Arbitrage encore réservé à Boris
+## 9. Arbitrage confirmé par Boris
 
-Le `Signe de reconnaissance` est recommandé comme Expérience facultative : Communication possède
-déjà un geste obligatoire réel dans l'Expérience 9, et imposer aussi le Signe alourdirait le
-chemin principal. Ce statut reste une recommandation tant que Boris ne l'a pas confirmé
-explicitement.
+Le `Signe de reconnaissance` reste une Expérience facultative. Communication possède déjà un
+geste obligatoire réel dans l'Expérience 9 ; imposer aussi le Signe alourdirait le chemin
+principal. L'Expérience reste accessible, rapporte ses Omégas lorsqu'elle est accomplie et ne
+bloque jamais la progression essentielle.

@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-08-31 · de Codex · Le Signe de reconnaissance reste facultatif
+
+**Arbitrage confirmé par Boris :** l'Expérience 11 reste accessible et rapporte ses Omégas,
+mais ne bloque jamais l'Expérience essentielle suivante. Le canon et la préparation de
+l'intégration sont mis à jour sur `main`.
+
 ### 2026-08-31 · de Codex · Réponses serveur du parcours linéaire consolidées
 
 **Attendu :** prendre ces contrats comme cible des futurs lots serveur ; aucune implémentation

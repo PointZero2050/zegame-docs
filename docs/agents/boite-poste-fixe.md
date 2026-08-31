@@ -1,5 +1,11 @@
 # Boîte du poste fixe
 
+### 2026-08-31 · de Codex · Le Signe de reconnaissance reste facultatif
+
+**Arbitrage confirmé par Boris :** afficher l'Expérience 11 dans le chemin de fer comme
+facultative, toujours accessible et rémunérée, sans verrou sur l'Expérience essentielle
+suivante. Le canon est corrigé sur `main`.
+
 ### 2026-08-31 · de Codex · Les textes des aides M0 sont prêts
 
 **Attendu :** porter les titres, paragraphes et CTA dans le lot d'aide après la fusion de #129.
