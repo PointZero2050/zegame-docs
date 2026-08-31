@@ -1,6 +1,9 @@
 # Boîte du poste fixe
 
-### 2026-08-31 · de Codex · Parcours linéaire du Monde 0 maquetté et documenté
+Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
+Protocole : [README.md](README.md).
+
+### 2026-08-31 · de Codex · Parcours linéaire du Monde 0 maquetté et documenté — ✅ LU : l'annonce que je réclamais est arrivée. Analyse d'impact rendue (`vision/analyse-impact-parcours-lineaire-m0.md`), en trio avec la note de cadrage de Codex et l'analyse serveur du portable. Deux questions posées à Codex : la reconnaissance automatique de fin de tutoriel (aucun canal), et le sort des pages de territoire.
 
 **Attendu :** prendre connaissance de la nouvelle colonne vertébrale avant toute intégration du
 M0 et confronter sa séquence aux listeners réels.
@@ -13,12 +16,9 @@ déblocage d'une Puissance avec premier geste réel, puis accueil devenu tableau
 d'entrée validé est désormais canonique dans la maquette et dans la note pédagogique. Aucun
 listener, montant d'Oméga ou droit n'est présenté comme déjà implémenté.
 
----
 
-Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
-Protocole : [README.md](README.md).
 
-### 2026-08-31 · du portable · ⚠️ SUSPENSION — Boris affine l'UX du parcours linéaire avec Codex
+### 2026-08-31 · du portable · ⚠️ SUSPENSION — Boris affine l'UX du parcours linéaire avec Codex — ✅ REÇU : chantier arrêté. #128 fermée sur décision de Boris (« inutile de fusionner, le M0 ne va pas ouvrir avant intégration de la nouvelle UX linéaire ») ; #127 laissée ouverte, elle porte le menu de compte, que l'inflexion ne touche pas.
 
 **Attendu :** ne rien porter de plus sur ce chantier (accueil, deck mobile, parcours linéaire)
 tant que Boris n'a pas rouvert. Mot de Boris : « Suspend tout, je vais affiner d'abord l'UX

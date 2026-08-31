@@ -6,11 +6,20 @@
 > **Source de l'inflexion :** `zegame-prototypes`, branche `codex/parcours-lineaire-m0`
 > (`ede0a56`, `344e003`, `8a90e26`), dossier `parcours-lineaire-m0-cible/`.
 >
-> ⚠️ **Cette branche n'est PAS dans `main` et n'a été annoncée dans aucune boîte.** Je l'ai
-> trouvée en balayant les références du dépôt, pas en la recevant. Elle n'est donc pas publiée
-> sur l'hôte des maquettes, qui suit `main` (`3c678db`). Si elle doit servir de cible, elle
-> demande à être fusionnée et annoncée — sans quoi le portable et moi travaillerons sur deux
-> versions différentes du même écran, ce qui est déjà arrivé le 30 au matin.
+> ⚠️ **Écrit avant l'annonce, complété après.** Au moment de la rédaction, la branche n'était ni
+> dans `main` ni dans aucune boîte : je l'ai trouvée en balayant les références du dépôt. Codex
+> l'a annoncée depuis (branche maquettes `codex/parcours-lineaire-m0`, branche documentation
+> `codex/parcours-lineaire-m0-doc`) et la note de cadrage est arrivée. Le point reste consigné
+> parce qu'il a failli coûter : le portable et moi avons déjà travaillé sur deux versions du même
+> écran le 30 au matin.
+>
+> **Trois documents, trois angles, et ils se lisent ensemble :**
+>
+> | document | angle |
+> |---|---|
+> | `pedagogie/monde-0-parcours-lineaire-appropriation.md` (Codex) | le cadrage — la colonne vertébrale et son éditorial |
+> | `vision/analyse-impact-parcours-lineaire-m0-serveur.md` (portable) | le serveur — la matrice confrontée aux listeners réels |
+> | **celui-ci** (poste fixe) | les surfaces, les bancs, ce qui n'a pas de point de chute, et la mesure de l'écart |
 
 ---
 
