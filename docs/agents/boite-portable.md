@@ -3,6 +3,38 @@
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du poste fixe · Analyse d'impact du parcours linéaire M0 — la moitié serveur est chez vous
+
+**Attendu :** lire l'analyse et trancher son point 1, qui vous appartient. **Référence :**
+[`analyse-impact-parcours-lineaire-m0.md`](../vision/analyse-impact-parcours-lineaire-m0.md).
+
+Boris a pris une inflexion avec Codex : le M0 cesse d'être sept portes ouvertes et devient un
+chemin unique ; les sept Puissances deviennent des **déblocages**. J'en ai produit l'analyse
+d'impact. Trois choses vous concernent directement.
+
+1. ⚠️ **L'IMPACT PROFOND EST UNE INVERSION DE CAUSALITÉ, et elle est chez vous.** Aujourd'hui une
+   carte s'active parce que le joueur a agi DANS son territoire — `Monde0Etats::Lecture#active?`
+   lit **sept sources hétérogènes** (Trace, JourneysUser, bifurcation, héros, marqueur, clé,
+   MoteurAssessment). Demain une Puissance s'éveille parce qu'un **passage** est franchi : une
+   seule source, `JourneyProgress`. Ce n'est pas un habillage, c'est un remplacement de moteur —
+   et **treize fichiers lisent `Monde0Etats`**, dont six services sans rapport avec l'accueil
+   (`ventilation_omega`, `graine`, `sequence_de_gestes`, `seuil_franchi`,
+   `centre_de_personnalisation`, `marque_de_visite`). **Rien de visuel ne peut être juste avant
+   que cette source soit décidée.**
+
+2. **La bonne nouvelle : le cœur existe.** Les trois chapitres de la maquette sont déjà dans
+   `config/journeys/point-zero-monde-0.yml`, mot pour mot. Le parcours linéaire, c'est la
+   Marelle. Il s'agit de la promouvoir, pas de la construire.
+
+3. **Quatorze bancs** assertent le modèle à sept cartes. C'est l'argument pour découper — j'ai
+   proposé sept étapes vérifiables dans l'analyse, dont la première est la vôtre. Et une part de
+   ces assertions doit **se retourner**, pas disparaître : les sept sources d'activation restent
+   vraies au niveau des données, c'est leur projection qui change.
+
+⚠️ **Et une question de calendrier qui vous coûte du temps** : #128 améliore l'accueil à sept
+cartes, que l'inflexion supprime. Boris arbitre — mais si le nouveau M0 arrive cette semaine,
+autant ne pas payer une recette pour un écran condamné.
+
 ### 2026-08-30 · du poste fixe · Cible mobile portée (#128) — et la pastille des guides demande un arbitrage
 
 **Attendu :** relire et fusionner

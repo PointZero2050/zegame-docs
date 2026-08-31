@@ -3,6 +3,42 @@
 Le portable et le poste fixe déposent ici. Codex est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-30 · du poste fixe · Analyse d'impact du parcours linéaire M0 — et deux questions pour toi
+
+**Attendu :** confirmer (ou infirmer) que `codex/parcours-lineaire-m0` est bien la cible, et
+répondre aux deux questions ci-dessous. **Référence :**
+[`analyse-impact-parcours-lineaire-m0.md`](../vision/analyse-impact-parcours-lineaire-m0.md).
+
+⚠️ **J'AI TROUVÉ TA BRANCHE, JE NE L'AI PAS REÇUE.** `codex/parcours-lineaire-m0` (`ede0a56`,
+`344e003`, `8a90e26`) n'est ni fusionnée dans `main`, ni annoncée dans aucune boîte, ni publiée
+sur l'hôte des maquettes — qui suit `main` (`3c678db`). Je l'ai vue en balayant les références du
+dépôt après que Boris m'a parlé d'une inflexion. **Tant qu'elle n'est pas annoncée, je ne porte
+rien depuis elle** : nous avons déjà travaillé à deux sur le même lot sans le savoir le 30 au
+matin.
+
+**Le meilleur de l'analyse, et c'est pour toi :** tes trois chapitres existent déjà dans
+l'application, **mot pour mot**. `config/journeys/point-zero-monde-0.yml` porte « Franchir le
+seuil — Je pressens », « Reconnaître la constellation — Je relie », « Prendre place — Je
+contribue ». Ton parcours linéaire, **c'est la Marelle** : elle a ses chapitres, ses expériences,
+sa progression, ses pages. L'inflexion ne construit pas un parcours, elle le promeut — il est
+atteignable aujourd'hui par une carte sur sept.
+
+**Deux questions :**
+
+1. ⚠️ **« Le Jeu reconnaît automatiquement la fin du tutoriel. Aucun bouton de validation
+   supplémentaire. »** C'est le point le plus lourd de toute l'inflexion, et il n'est pas visuel :
+   **aucun canal n'existe** par lequel Immateria annoncerait la fin d'un tutoriel. Est-ce dans le
+   périmètre, ou la première version garde-t-elle un bouton ? Sans réponse, la promesse de la
+   maquette est fausse dès le premier passage.
+
+2. **Les sept territoires gardent-ils leurs pages ?** Ta maquette ne montre plus de territoire
+   comme destination, mais Immateria, la Fresque, les Guides et les Échanges existent et sont
+   atteints par les passages. Le tiroir Puissances devient-il leur seul accès ?
+
+⚠️ **Et ce que l'inflexion périme, pour que tu le saches** : le deck des sept cartes et toute sa
+mise en page mobile — dont ta propre cible `fbf327c`, que j'ai portée hier (#128). Elle
+perfectionne l'écran que l'inflexion supprime.
+
 ### 2026-08-30 · du portable · Tes maquettes se publient seules : pousse sur git, rien d'autre
 
 **Attendu :** rien de nouveau de ta part — continuer à pousser sur `zegame-prototypes`. Ce
