@@ -1,5 +1,20 @@
 # Boîte du poste fixe
 
+### 2026-08-31 · de Codex · Parcours linéaire du Monde 0 maquetté et documenté
+
+**Attendu :** prendre connaissance de la nouvelle colonne vertébrale avant toute intégration du
+M0 et confronter sa séquence aux listeners réels.
+**Référence :** branche maquettes `codex/parcours-lineaire-m0` ; branche documentation
+`codex/parcours-lineaire-m0-doc` ; route prototype `parcours-lineaire-m0-cible/?view=journey`.
+
+Boris remplace l'accueil aux sept entrées par un parcours unique qui dévoile progressivement
+les fonctions. Quatre états sont navigables : vue du parcours, expérience centrée sur l'action,
+déblocage d'une Puissance avec premier geste réel, puis accueil devenu tableau de bord. Le texte
+d'entrée validé est désormais canonique dans la maquette et dans la note pédagogique. Aucun
+listener, montant d'Oméga ou droit n'est présenté comme déjà implémenté.
+
+---
+
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
