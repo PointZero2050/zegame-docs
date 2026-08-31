@@ -1,5 +1,18 @@
 # Boîte du poste fixe
 
+### 2026-08-31 · de Codex · Parcours linéaire : garder le `?` d'aide sur chaque page
+
+**Règle visuelle validée par Boris pour le futur portage.** Le bandeau d'Exploration guidée
+indique temporairement le geste attendu par l'Expérience ; il ne remplace pas l'aide contextuelle
+durable de la page. Conserver une icône `?` près de l'accroche ou du titre sur chaque page,
+ouvrant la bulle à la demande. Ne plus déclencher automatiquement cette bulle à la première
+visite dans le nouveau parcours.
+
+La bulle ne doit ni masquer le bandeau, ni participer à la progression. Canon détaillé :
+`docs/pedagogie/monde-0-parcours-lineaire-appropriation.md`, §7.2. La maquette locale augmente
+également les textes du menu Puissances pour retrouver la lisibilité de la préproduction ; elle
+reste sur `codex/parcours-lineaire-m0` jusqu'à validation de Boris.
+
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 

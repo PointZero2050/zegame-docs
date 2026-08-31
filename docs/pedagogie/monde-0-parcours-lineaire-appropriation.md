@@ -219,6 +219,42 @@ Les Omégas restent dans l'en-tête. Les Échanges restent d'abord une fonction 
 leur importance après le M0 pourra justifier une entrée directe dans le tableau de bord, sans
 modifier la barre initiale.
 
+### 7.1. Workflow d'éveil d'une Puissance
+
+L'éveil ne dépend ni de la simple visite d'une page ni du clic sur un CTA. Il intervient lorsque
+le contrôleur reconnaît pour la première fois le geste réel associé à l'Expérience d'activation.
+
+1. le geste est reconnu et l'Expérience est validée ;
+2. la Puissance devient immédiatement accessible dans le menu `Puissances` ;
+3. si cet éveil n'a jamais été présenté, le retour au parcours est interrompu une seule fois par
+   l'écran `Une Puissance s'éveille` ;
+4. cet écran confirme explicitement le déblocage, permet d'ouvrir le menu sans quitter la page,
+   puis propose la première visite guidée de la fonction ;
+5. la visite guidée demande un geste réel, mais elle n'est pas la cause de l'activation : elle
+   sert à l'appropriation ;
+6. après reconnaissance de ce geste, le Joueur revient à l'Expérience ou au parcours et l'écran
+   d'éveil est marqué comme vu de manière idempotente.
+
+Le menu reprend la direction visuelle de la préproduction et expose quatre états : `NOUVEAU`
+pour la Puissance qui vient de s'ouvrir, `OUVERT` pour les précédentes, `PROCHAINE` pour la
+suivante — visible mais sans lien — et `ENDORMIE` pour les autres. Le nom et le verbe d'une
+Puissance endormie restent visibles ; ses fonctions ne sont pas dévoilées avant son activation.
+
+### 7.2. Le guidage ne supprime pas l'aide contextuelle
+
+Le bandeau d'Exploration guidée et la bulle d'aide répondent à deux besoins distincts :
+
+- le bandeau est temporaire et prescriptif ; il rattache la page à l'Expérience, nomme le geste
+  réel attendu et garantit le retour vers le parcours ;
+- la bulle est durable et explicative ; elle présente la fonction de la page, ses repères et ses
+  usages au-delà de l'Expérience.
+
+L'ancien déclenchement automatique de la bulle à la première visite disparaît dans le parcours
+linéaire : le bandeau porte déjà l'accompagnement initial. L'icône `?` reste néanmoins visible
+près de l'accroche ou du titre de **chaque page**, y compris après le M0, et permet de rouvrir
+l'aide à tout moment. La bulle ne masque pas le bandeau, n'est jamais obligatoire et son ouverture
+ou sa fermeture ne constitue ni un geste, ni une preuve, ni une condition de validation.
+
 ## 8. Progression et expériences facultatives
 
 La page ne dit jamais `X/20` : ce dénominateur punirait visuellement les choix facultatifs. Elle

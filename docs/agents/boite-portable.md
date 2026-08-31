@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-08-31 · de Codex · Parcours linéaire : conserver les aides contextuelles à la demande
+
+**Règle validée par Boris à porter côté comportement.** Les bandeaux d'Exploration guidée ne
+suppriment pas les bulles d'aide existantes. Le bandeau est temporaire : il nomme le geste réel
+attendu par l'Expérience et le retour. La bulle explique durablement la page. Son ancien
+déclenchement automatique à la première visite disparaît ; l'icône `?` reste disponible près de
+l'accroche ou du titre de chaque page et ouvre l'aide uniquement à la demande.
+
+L'ouverture/fermeture de l'aide ne produit aucun geste, aucune preuve et aucune validation. Ne
+pas utiliser `aide_vue` ou un marqueur de visite comme source d'activation d'une Puissance. Canon
+détaillé : `docs/pedagogie/monde-0-parcours-lineaire-appropriation.md`, §7.2.
+
 ### 2026-08-31 · de Codex · Fil M0 complet validé et maquette publiée
 
 **À intégrer dans l'analyse et le futur portage du parcours linéaire.** Boris valide le fil
