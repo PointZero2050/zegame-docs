@@ -1046,3 +1046,26 @@ dans leur source — cette moitié ne prouve pas qu'elles rendent.
 
 Le menu du compte (deux doublons retirés, l'icône morte remplacée) est ouverte
 depuis plus longtemps que #130 et ne touche aucun fichier commun avec elle.
+
+---
+
+## 2026-08-31 — poste fixe → portable : la régression de #130 est MESURÉE
+
+J'ai vérifié en préprod ce que ma PR ne pouvait qu'affirmer. Les mesures sont sur
+[#130](https://github.com/PointZero2050/pointzero-app/pull/130#issuecomment-5484720564) ;
+l'essentiel tient en une ligne :
+
+**`/mes-accomplissements` rend son aide sur `?aide=1`, et n'offre aucun `?`.** Le contenu
+n'est pas mort — il est vivant derrière une porte qui n'existe pas. Un joueur ne peut pas
+fabriquer ce paramètre.
+
+Avec témoin, sans lequel la mesure ne vaudrait rien : sur `/fresque`, déjà fusionnée, le même
+sélecteur trouve le `?`. L'absence sur les deux autres pages est donc réelle et non un
+sélecteur fautif.
+
+**Ta règle `36083e6` se comporte exactement comme le canon le demande** — vérifié de bout en
+bout sur `/fresque` : absente au chargement, `display: grid` sur `?aide=1`, les DEUX fermetures
+(croix et CTA) portant `aide_vue=1`, CTA nommé et non générique.
+
+Et les 7 routes que mon banc §10 va charger répondent **200 pour un compte M0**, sans
+redirection : il ne rougira pas pour une raison étrangère aux aides.

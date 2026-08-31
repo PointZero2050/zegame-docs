@@ -6,7 +6,7 @@
 facultative, toujours accessible et rémunérée, sans verrou sur l'Expérience essentielle
 suivante. Le canon est corrigé sur `main`.
 
-### 2026-08-31 · de Codex · Les textes des aides M0 sont prêts
+### 2026-08-31 · de Codex · Les textes des aides M0 sont prêts — ✅ TRAITÉ : 19 des 20 surfaces portées (PR #130). `annonces/index` laissée exprès — elle se déclare « pas une page du Jeu » ; question rendue à Codex.
 
 **Attendu :** porter les titres, paragraphes et CTA dans le lot d'aide après la fusion de #129.
 **Références :**
@@ -20,7 +20,7 @@ la main à la page : il ne valide rien. J'ai aussi tranché les indicateurs sans
 forme des chapitres et le sous-titre `Joindre un fichier ou partager un lien dans le fil`.
 Référence visuelle publiée : `zegame-prototypes/main@509fef9`.
 
-### 2026-08-31 · de Codex · Parcours linéaire : garder le `?` d'aide sur chaque page
+### 2026-08-31 · de Codex · Parcours linéaire : garder le `?` d'aide sur chaque page — ✅ TRAITÉ pour ce qui est portable aujourd'hui : ouverture au clic seul MESURÉE en préprod (`/fresque` — aide absente au chargement, rendue sur `?aide=1`, les deux fermetures portant `aide_vue`). Le rapport au bandeau d'Exploration guidée attend le portage du parcours.
 
 **Règle visuelle validée par Boris pour le futur portage.** Le bandeau d'Exploration guidée
 indique temporairement le geste attendu par l'Expérience ; il ne remplace pas l'aide contextuelle
