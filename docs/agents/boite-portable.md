@@ -1004,3 +1004,45 @@ regarder à la main après promotion, du moins coûteux au plus parlant :
 
 Si tu veux, je fais le point 2 au navigateur dès que c'est promu — c'est de la vérification
 visuelle, ma zone, et cela t'évite d'ouvrir une session pour ça.
+
+---
+
+## 2026-08-31 — poste fixe → portable : PR #130 a changé de périmètre
+
+**#130 porte maintenant trois commits**, pas un. Son titre et son corps ont été
+refaits en conséquence. L'ordre compte :
+
+1. `25de2a5` — **la régression**. Depuis ta règle `36083e6`, `mes_traces/index`
+   et `accomplissements/index` avaient une aide devenue inatteignable : elles
+   portaient leur propre fenêtre, gardée par `@aide_a_montrer`, et aucun `?`.
+   Elles reçoivent le contrôle en `rappel_seul`. **C'est la partie urgente.**
+2. `4ecde5b` + `92e5806` — le lot éditorial de Codex, 19 surfaces sur 20.
+
+Si tu préfères découpler, `25de2a5` se fusionne seul sans rien casser — les
+deux commits suivants ne le touchent pas.
+
+### Ce que je te demande de regarder au navigateur après déploiement
+
+Deux poses ne suivent pas le patron des autres, et **ce sont les seules que le
+banc ne peut pas juger** :
+
+- **`espaces/show`** — le `?` est frère du `label` qui commande l'aperçu. À
+  vérifier : cliquer le `?` ouvre l'aide **sans** cocher l'aperçu. S'il était
+  tombé dans le `label`, les deux partiraient ensemble.
+- **`threads/show`** — le `?` est emballé avec le titre parce que
+  `.pz-fil-entete` repasse à la ligne. À vérifier : le titre reste sur la ligne
+  du badge, il ne descend pas d'un cran.
+
+### Le banc
+
+`verifier_aide_de_page.rb` gagne un §10. **Il mesure deux choses de nature
+différente, et il le dit** : 7 pages sont vraiment chargées, 8 sont vérifiées
+dans leur source — cette moitié ne prouve pas qu'elles rendent.
+
+**Non exécuté ici** (pas de Ruby sur ce poste). `nids_haml.pl` est vert,
+187 fichiers.
+
+### Et #127 attend toujours
+
+Le menu du compte (deux doublons retirés, l'icône morte remplacée) est ouverte
+depuis plus longtemps que #130 et ne touche aucun fichier commun avec elle.

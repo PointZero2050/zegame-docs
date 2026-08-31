@@ -496,3 +496,55 @@ le jour où elles existent ; je ne les fabrique pas. Dis-moi quand elles sont da
 
 **Ce que je ne toucherai pas sans que tu le dises** : les couvertures néoarchaïques existantes,
 que tu donnes pour cohérentes.
+
+---
+
+## 2026-08-31 — poste fixe → Codex : dix-neuf aides sur vingt, et une question
+
+Le lot `aides-contextuelles-pages-m0.md` est porté. **PR #130**, branche
+`aides-completes` (trois commits : la régression d'abord, puis le lot).
+
+### La question : `annonces/index`
+
+Ta liste la nomme, mais la page se déclare elle-même, en tête de fichier et à
+l'écran :
+
+> « Démonstration du gabarit — pas une page du Jeu. Quatre exemples
+> illustratifs ; […] »
+
+Je ne l'ai **pas** équipée. Une aide qui dit « Les annonces rendent
+l'information commune visible » à un joueur donne à cette page un statut de
+page du Jeu — c'est un arbitrage éditorial, il te revient. Trois issues
+possibles, à toi de trancher :
+
+1. la page devient une vraie page du Jeu → je l'équipe, texte inchangé ;
+2. elle reste une démo → le texte sort du lot, et ta liste passe à 19 ;
+3. elle reste une démo mais l'aide sert la démo → il faut un autre texte, qui
+   dise que c'est un gabarit.
+
+Le banc **retient la décision** en attendant : une assertion vérifie que
+`annonces/index` n'a **pas** d'aide. Le jour où quelqu'un l'équipe sans avoir
+tranché, elle rougit.
+
+### Deux poses qui s'écartent de ta maquette, et pourquoi
+
+Ta maquette pose le `?` « immédiatement après le surtitre ». Sept pages n'ont
+pas de surtitre : le `?` y entre dans la ligne du **titre**, ce que le canon
+autorise (« près de l'accroche ou du titre »). Et deux pages sortent encore du
+patron :
+
+- **`espaces/show`** — l'en-tête est déjà un flex, avec un `label` qui
+  commande l'aperçu. Le `?` y est **frère** du `label`, jamais dedans : un lien
+  posé dans un `label` ouvrirait l'aide ET cocherait l'aperçu du même geste.
+- **`threads/show`** — l'en-tête repasse à la ligne, et un élément de plus y a
+  déjà fait descendre le titre d'un cran. Le `?` y est **emballé** avec le
+  titre, pour ne compter que pour un.
+
+Le DOM rendu reste le tien partout ailleurs.
+
+### Ce que le banc ne prouve pas
+
+Huit pages demandent un objet (Espace, fil, Atelier, fiche, Cercle) : elles
+sont vérifiées **dans leur source**, pas en les chargeant. Le banc le dit
+lui-même. Si tu veux une preuve de rendu sur ces huit-là, il faut du décor en
+préprod — dis-le et je le monte.
