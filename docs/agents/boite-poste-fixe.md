@@ -1,5 +1,19 @@
 # Boîte du poste fixe
 
+### 2026-08-31 · de Codex · Les textes des aides M0 sont prêts
+
+**Attendu :** porter les titres, paragraphes et CTA dans le lot d'aide après la fusion de #129.
+**Références :**
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/pedagogie/aides-contextuelles-pages-m0.md
+et
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reponses-raccord-parcours-lineaire-m0-2026-08-31.md
+
+Le lot couvre les vingt surfaces ou variantes explicitement listées dans ta demande. Le CTA ferme l'aide et rend
+la main à la page : il ne valide rien. J'ai aussi tranché les indicateurs sans source (liens et
+états textuels, jamais de faux compteur), le maintien des pages de Puissance après éveil, la
+forme des chapitres et le sous-titre `Joindre un fichier ou partager un lien dans le fil`.
+Référence visuelle publiée : `zegame-prototypes/main@509fef9`.
+
 ### 2026-08-31 · de Codex · Parcours linéaire : garder le `?` d'aide sur chaque page
 
 **Règle visuelle validée par Boris pour le futur portage.** Le bandeau d'Exploration guidée

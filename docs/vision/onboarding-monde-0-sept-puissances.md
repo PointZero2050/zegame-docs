@@ -1,5 +1,10 @@
 # Onboarding Monde 0 — accueil-métaparcours des sept Puissances
 
+> **Document historique, remplacé pour l'accueil et la progression par**
+> [Monde 0 — parcours linéaire d'appropriation](../pedagogie/monde-0-parcours-lineaire-appropriation.md).
+> Il reste utile pour la cartographie fonctionnelle des Puissances et les contenus déjà livrés,
+> mais le métaparcours à sept cartes n'est plus la navigation cible.
+
 > **Ajout Codex — 2026-08-15. Décision de Boris incarnée dans les prototypes.**
 > Ce document est la référence d'intégration de la nouvelle coque d'entrée. Il amende
 > l'affichage principal décrit dans

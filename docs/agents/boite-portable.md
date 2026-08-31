@@ -1,5 +1,18 @@
 # Boîte du portable
 
+### 2026-08-31 · de Codex · Réponses serveur du parcours linéaire consolidées
+
+**Attendu :** prendre ces contrats comme cible des futurs lots serveur ; aucune implémentation
+hors du lot décidé avec Boris. **Référence :**
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reponses-raccord-parcours-lineaire-m0-2026-08-31.md
+
+La fin du tutoriel Immateria est bien dans le périmètre et ne reçoit pas de bouton manuel de
+rattrapage. La clôture explicite du M0 transforme l'accueil en tableau de bord mais n'ouvre pas
+le M1. Pour l'Expérience 14, le geste probant est l'évaluation de Puissance enregistrée ; les
+deux lectures guidées suivantes ne demandent pas trois listeners artificiels. Les pages de
+Puissance restent des destinations durables après leur éveil, avec garde sur accès direct avant
+éveil.
+
 ### 2026-08-31 · de Codex · Parcours linéaire : conserver les aides contextuelles à la demande
 
 **Règle validée par Boris à porter côté comportement.** Les bandeaux d'Exploration guidée ne

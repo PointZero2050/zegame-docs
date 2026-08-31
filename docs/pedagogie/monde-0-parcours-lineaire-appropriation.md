@@ -8,7 +8,7 @@
 
 ## 1. Décision de produit
 
-Le Monde 0 cesse d'être présenté comme sept territoires à explorer librement. Il devient une
+Le Monde 0 cesse d'être présenté comme sept cartes de Puissance à explorer librement. Il devient une
 traversée guidée qui dévoile l'application au rythme des expériences.
 
 - le métaparcours disparaît comme objet visible ;
@@ -102,7 +102,7 @@ jusqu'à validation de la séquence complète.
 |---:|---|---|---|---|---|---|---:|
 | 1 | 1 | **Façonner mon jumeau** | essentielle · nouvelle | Entrer dans Immateria, créer le jumeau et terminer le tutoriel du Village | jumeau persisté + événement de fin du tutoriel | **Désir** ; visite guidée de l'espace Immateria déjà accomplie par le tutoriel | à chiffrer |
 | 2 | 1 | **Le Point Zéro : entrer dans le Jeu** | essentielle · existante restructurée | Regarder l'introduction, relier la chaîne invisible, conserver l'Hypothèse de seuil | questionnaire achevé + Trace de l'Hypothèse | **Volonté** ; première vue du parcours expliquée, puis retour au passage | 6 actuel |
-| 3 | 1 | **Le Coupable idéal** | essentielle · existante | Traverser le procès d'un seul mouvement | session achevée + verdict enregistré comme Trace | aucun nouveau territoire ; première roue de polarités conservée comme Trace | 6 actuel |
+| 3 | 1 | **Le Coupable idéal** | essentielle · existante | Traverser le procès d'un seul mouvement | session achevée + verdict enregistré comme Trace | aucune nouvelle Puissance ; première roue de polarités conservée comme Trace | 6 actuel |
 | 4 | 1 | **Une drôle d'époque** | essentielle · existante | Traverser la semaine jusqu'au premier miroir | mini-jeu achevé + résultat enregistré | le miroir nourrit le futur Moteur mais **ne l'ouvre pas encore** | 7 actuel |
 | 5 | 1 | **Avant le Zéro** | essentielle · existante | Suivre un devenir jusqu'à une fin | fin atteinte + devenir enregistré comme Trace | aucun ; les devenirs restent rejouables | 7 actuel |
 | 6 | 1 | **Et moi dans tout ça ?** | essentielle · restructurée | Relire les Traces, formuler puis planter la Graine de l'Appel | Graine contextualisée réellement créée | **Imagination** ; ouverture guidée de la Fresque sur cette Graine, puis retour | 8 actuel |
@@ -113,13 +113,13 @@ jusqu'à validation de la séquence complète.
 | 11 | 2 | **Le signe de reconnaissance** | **facultative recommandée** · existante | Composer un signe précis et choisir de l'envoyer ou de le conserver | dispositif achevé + choix de destination enregistré | approfondit Communication sans nouveau seuil | 6 actuel |
 | 12 | 2 | **Choisir un double regard** | essentielle · nouvelle, absorbe le métaparcours Intuition | Choisir Sirbey ou Z.E.R.O., mener un premier échange, puis éprouver une première clé | message Joueur + réponse Guide persistés ; questionnaire de clé soumis et Trace créée | **Intuition** ; Guides, première clé et bulle transversale deviennent accessibles | à chiffrer |
 | 13 | 2 | **Les choses se précisent** | essentielle · existante | Relire la constellation, explorer une relation avec le mentor, planter la Graine de relation | Graine de relation réellement créée | aucun ; réemploie Émotion, Imagination et Communication déjà ouvertes | 8 actuel |
-| 14 | 2 | **Lire mon Moteur** | essentielle · nouvelle, absorbe le métaparcours Transcendance | Actualiser une première lecture de Puissance, observer sa circulation et ouvrir la provenance des Omégas | évaluation de Puissance enregistrée + lecture guidée achevée | **Transcendance** ; Moteur et Accomplissements deviennent accessibles | à chiffrer |
+| 14 | 2 | **Lire mon Moteur** | essentielle · nouvelle, absorbe le métaparcours Transcendance | Actualiser une première lecture de Puissance, observer sa circulation et ouvrir la provenance des Omégas | évaluation de Puissance enregistrée | **Transcendance** ; Moteur et Accomplissements deviennent accessibles | à chiffrer |
 | 15 | 3 | **Le Conseil Oméga** | essentielle · existante | Arbitrer plusieurs futurs, formuler les caps et choisir ou laisser ouvert un Rôle d'appel | Conseil achevé + caps et choix conservés | réemploie le Moteur désormais visible | 8 actuel |
 | 16 | 3 | **Découvrir les formats** | facultative · existante | Clarifier le besoin, comparer les formats, conserver une Boussole | Boussole enregistrée comme Trace | ouvre les fiches de formats sans inscription obligatoire | 5 actuel |
 | 17 | 3 | **Participer à un Sas Point Zéro** | facultative · existante | Choisir un Sas, participer, conserver une intention | inscription ou présence + intention enregistrée | reste disponible après le chapitre et rapporte toujours ses Ω | 7 actuel |
 | 18 | 3 | **Vivre l'Atelier Point Zéro** | essentielle · rite | Choisir un Atelier et accomplir la condition de passage retenue | contrôleur d'inscription ou validation de présence selon le contrat final | prépare la clôture du M0 | 9 actuel |
 | 19 | 3 | **Mon récit de passage** | essentielle · existante | Rassembler les Traces, composer la Graine de passage, sceller la Carte du Seuil | Graine + Carte générées + visibilité enregistrée | produit la restitution finale | 9 actuel |
-| 20 | 3 | **Ton espace est prêt** | passage terminal · nouveau | Relire les sept Puissances éveillées et choisir explicitement d'ouvrir son espace | confirmation idempotente de clôture du M0 | transforme l'accueil en tableau de bord ; aucun nouveau territoire | 0 |
+| 20 | 3 | **Ton espace est prêt** | passage terminal · nouveau | Relire les sept Puissances éveillées et choisir explicitement d'ouvrir son espace | confirmation idempotente de clôture du M0 | transforme l'accueil en tableau de bord ; aucune nouvelle Puissance | 0 |
 
 ### 4.1. Décompte joueur et granularité des étapes visibles
 
@@ -147,7 +147,7 @@ fiche lorsque le Joueur les traverse dans un même mouvement.
 | 11 | **Le signe de reconnaissance** | Étape unique : composer un signe précis et choisir de l'envoyer ou de le conserver. L'envoi reste facultatif. |
 | 12 | **Choisir un double regard** | 1. Choisir Sirbey ou Z.E.R.O. ; 2. Mener un premier échange ; 3. Éprouver une première clé et la conserver comme Trace. La sortie active Intuition. |
 | 13 | **Les choses se précisent** | 1. Relire la constellation ; 2. Explorer une relation avec le mentor ; 3. Planter la Graine de relation dans la popup intégrée. |
-| 14 | **Lire mon Moteur** | 1. Actualiser une première lecture de Puissance ; 2. Observer sa circulation Ombre/Lumière ; 3. Ouvrir la provenance des Omégas. La sortie active Transcendance, le Moteur et les Accomplissements. |
+| 14 | **Lire mon Moteur** | 1. Actualiser une première lecture de Puissance ; 2. Observer sa circulation Ombre/Lumière ; 3. Ouvrir la provenance des Omégas. La première évaluation enregistrée est le geste probant ; les deux lectures suivantes guident l'appropriation sans multiplier les listeners. La sortie active Transcendance, le Moteur et les Accomplissements. |
 | 15 | **Le Conseil Oméga** | Étape unique : arbitrer les futurs, formuler les caps et choisir ou laisser ouvert un Rôle d'appel. |
 | 16 | **Découvrir les formats** · facultative | 1. Clarifier le besoin ; 2. Comparer les formats ; 3. Conserver une Boussole de passage. |
 | 17 | **Participer à un Sas Point Zéro** · facultative | 1. Choisir un Sas et se présenter ; 2. Participer à la rencontre ; 3. Conserver l'intention de passage comme Trace. |
@@ -189,7 +189,7 @@ suivante choisit le mentor et lui donne cette Graine comme premier contexte rée
 ### Le Moteur apparaissait avant Transcendance
 
 `Une drôle d'époque` conserve son premier miroir, mais celui-ci reste une Trace et une donnée
-préparatoire. Le territoire Moteur n'est révélé qu'à l'expérience 14, après l'ouverture des six
+préparatoire. La page du Moteur n'est révélée qu'à l'expérience 14, après l'ouverture des six
 Puissances centrales.
 
 ### Communication formait un second tunnel
@@ -254,6 +254,9 @@ linéaire : le bandeau porte déjà l'accompagnement initial. L'icône `?` reste
 près de l'accroche ou du titre de **chaque page**, y compris après le M0, et permet de rouvrir
 l'aide à tout moment. La bulle ne masque pas le bandeau, n'est jamais obligatoire et son ouverture
 ou sa fermeture ne constitue ni un geste, ni une preuve, ni une condition de validation.
+
+Les textes et CTA de fermeture des surfaces M0 sont fixés dans
+[aides-contextuelles-pages-m0.md](aides-contextuelles-pages-m0.md).
 
 ## 8. Progression et expériences facultatives
 

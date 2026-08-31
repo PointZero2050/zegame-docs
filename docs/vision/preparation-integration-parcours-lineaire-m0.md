@@ -11,6 +11,8 @@
 > qu'est-ce qui est déjà là, et qu'est-ce qui bloque quoi.**
 >
 > Canon : [`pedagogie/monde-0-parcours-lineaire-appropriation.md`](../pedagogie/monde-0-parcours-lineaire-appropriation.md).
+> Réponses de raccord de Codex :
+> [`reponses-raccord-parcours-lineaire-m0-2026-08-31.md`](reponses-raccord-parcours-lineaire-m0-2026-08-31.md).
 >
 > ⚠️ **La maquette a bougé depuis son annonce.** Ma boîte annonce `e02793d` ;
 > `codex/parcours-lineaire-m0` est à `f719cd0` (« Formalise l'éveil progressif des Puissances »).
