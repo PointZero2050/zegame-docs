@@ -1,155 +1,208 @@
-# Analyse d'impact serveur — le parcours linéaire du Monde 0
+# Analyse d'impact — le Monde 0 devient un parcours linéaire
 
-> **Portable, 31 août 2026.** Réponse à
-> [`monde-0-parcours-lineaire-appropriation.md`](../pedagogie/monde-0-parcours-lineaire-appropriation.md)
-> (Codex, 31 août), qui demande que la séquence soit « confrontée aux listeners réels ».
-> Tout ce qui suit est **mesuré** sur `pointzero-app` (préprod, commit `1902114`), pas déduit
-> des souvenirs. Aucune ligne de code n'est modifiée par ce document.
+> **Demandée par Boris le 30 août 2026**, après l'inflexion prise avec Codex pour simplifier
+> l'UX du Monde 0. Rédigée par le poste fixe.
+>
+> **Source de l'inflexion :** `zegame-prototypes`, branche `codex/parcours-lineaire-m0`
+> (`ede0a56`, `344e003`, `8a90e26`), dossier `parcours-lineaire-m0-cible/`.
+>
+> ⚠️ **Cette branche n'est PAS dans `main` et n'a été annoncée dans aucune boîte.** Je l'ai
+> trouvée en balayant les références du dépôt, pas en la recevant. Elle n'est donc pas publiée
+> sur l'hôte des maquettes, qui suit `main` (`3c678db`). Si elle doit servir de cible, elle
+> demande à être fusionnée et annoncée — sans quoi le portable et moi travaillerons sur deux
+> versions différentes du même écran, ce qui est déjà arrivé le 30 au matin.
 
-## 1. La bonne nouvelle, et elle est structurelle
+---
 
-**Le verrou linéaire existe déjà, mot pour mot.** `Journey#locked_challenge_ids_for` implémente
-exactement la règle du §1 : « la première expérience non franchie est ouverte, les suivantes
-sont verrouillées ; une expérience est franchie si elle est validée, OU si elle est optionnelle
-ET explicitement passée ». Et le parcours M0 est **déjà en `progression_mode: lineaire`** —
-mesuré en base. La colonne vertébrale demandée n'est pas à construire : elle porte déjà les
-14 expériences existantes, dont 2 optionnelles.
+## 1. Le changement, en une phrase
 
-Ce qui change n'est donc **pas le moteur de progression**. C'est :
+**Le Monde 0 cesse d'être sept portes ouvertes et devient un chemin unique.** Les sept
+Puissances ne sont plus des entrées : elles deviennent des **déblocages**, révélés au fil des
+passages. « Les espaces encore endormis apparaîtront au fil de ton parcours » (README de la
+maquette).
 
-1. la **source d'activation des Puissances** (aujourd'hui : des lectures de visites ;
-   demain : la validation d'expériences) ;
-2. l'**accueil** (aujourd'hui : sept cartes ; demain : la vue du parcours) — zone poste fixe ;
-3. **cinq expériences nouvelles** et un passage terminal ;
-4. la **garde des fonctions non dévoilées**.
+La maquette décrit quatre états :
 
-## 2. La matrice, listener par listener
+| état | ce qu'il montre |
+|---|---|
+| `?view=journey` | la carte du voyage : prochain passage, 3 chapitres, 16 passages essentiels |
+| `?view=experience` | un seul geste — « TON GESTE MAINTENANT » — détails repoussés sous le pli |
+| `?view=unlock` | « UNE PUISSANCE S'ÉVEILLE » + premier geste guidé |
+| `?view=dashboard` | après le M0, l'accueil devient un tableau de bord |
 
-Codex demande la confrontation aux listeners réels. La voici — colonne « source de vérité
-attendue » contre ce que la base et le code portent aujourd'hui :
+Et la navigation mobile passe de **cinq entrées à trois** : Parcours, Puissances (un tiroir),
+Profil.
 
-| # | Expérience | Source attendue | Mesuré | Verdict |
-|---:|---|---|---|---|
-| 1 | Façonner mon jumeau | jumeau persisté + **événement de fin du tutoriel** | la Trace `desir/immateria` fusionne les POSTs du jeu ; **aucun événement de fin n'existe** | ⚠️ **MANQUE** — l'arbitrage §9.4 de Codex est confirmé côté serveur |
-| 2 | Entrer dans le Jeu | questionnaire + Trace de l'Hypothèse | `experience_quiz_attempts` + `traces` | ✓ |
-| 3 | Le Coupable idéal | session + verdict en Trace | `coupable_ideal_sessions` (verdict dans `result`) | ✓ |
-| 4 | Une drôle d'époque | mini-jeu achevé + résultat | `moteur_assessments.completed_at` | ✓ |
-| 5 | Avant le Zéro | fin atteinte + devenir enregistré | `traversees` porte **`fin_id` + `completed_at`** | ✓ — le devenir EST enregistré ; sa présentation en Trace est un autre chantier (registre) |
-| 6 | Et moi dans tout ça ? | Graine de l'Appel réellement créée | `Graine.semer!` (flux du 24 août) | ✓ |
-| 7 | Choisir qui marchera à mes côtés | mentor choisi + messages persistés | `User#choisir_heros!` (`heros_slug`, réversible) + `mentor_messages` | ✓ — les DEUX listeners existent ; l'expérience est de l'orchestration |
-| 8 | L'écosystème | dispositif + Schéma en Trace | `experience_quiz_attempts` | ✓ |
-| 9 | Choisir ma place | profil confirmé + appartenance + réaction | profil (`users`), `espace_memberships`, `reactions_semantiques` | ✓ — trois listeners existants, aucune table neuve |
-| 10 | Le site du Point Zéro | ≥ 1 `TraceSas` + compteur X/5 | `TraceSas` + import ; le compteur est une lecture | ✓ |
-| 11 | Le signe de reconnaissance | dispositif + choix de destination | `experience_quiz_attempts` | ✓ |
-| 12 | Choisir un double regard | échange Guide + clé éprouvée + Trace | `guide_conversations`/`guide_messages` + `ClesMonde0` | ✓ |
-| 13 | Les choses se précisent | Graine de relation | `Graine` | ✓ |
-| 14 | Lire mon Moteur | évaluation de Puissance + lecture guidée | `puissance_assessments` ; « lecture guidée achevée » n'a **pas de listener** — c'est une visite | ⚠️ à préciser : si la lecture guidée doit compter, il lui faut un marqueur (comme `onboarding-initial`) |
-| 15 | Le Conseil Oméga | Conseil achevé + caps conservés | `conseil_sessions` (`answers`, `engagement`) | ✓ |
-| 16 | Découvrir les formats | Boussole en Trace | `experience_quiz_attempts` | ✓ |
-| 17 | Participer à un Sas | inscription ou présence + intention | `inscription_creneaux` | ✓ |
-| 18 | Vivre l'Atelier | inscription confirmée OU présence validée | **les deux listeners existent** : `inscription_creneaux` ET `emargement_ateliers` | ✓ — l'arbitrage §9.3 est un CHOIX entre deux existants, pas une construction |
-| 19 | Mon récit de passage | Graine + Carte du Seuil + visibilité | existants | ✓ |
-| 20 | Ton espace est prêt | **confirmation idempotente de clôture** | `Journey#completed_by?` LIT l'achèvement, mais le **choix explicite** n'a aucun support | ⚠️ **MANQUE** — voir §4.2 |
+---
 
-**Bilan : 16 sur 20 sont entièrement portées par des listeners existants.** Les quatre points
-ouverts sont : l'événement de fin de tutoriel Immateria (#1), la « lecture guidée » du Moteur
-(#14), le geste de clôture (#20) — et l'économie Ω des cinq nouvelles (§9.1 de Codex).
+## 2. ⚠️ Ce qui existe déjà, et qu'il ne faut surtout pas reconstruire
 
-## 3. Ce que « le métaparcours disparaît » emporte, mesuré
+**Les trois chapitres de la maquette sont déjà dans l'application, mot pour mot.**
+`config/journeys/point-zero-monde-0.yml` :
 
-Le métaparcours n'est pas une vue : c'est un système. Son démontage touche :
+```
+chapitres:
+  - mouvement: Franchir le seuil — Je pressens
+  - mouvement: Reconnaître la constellation — Je relie
+  - mouvement: Prendre place — Je contribue
+```
 
-- **`Monde0Etats`** (256 lignes) — dérive l'état des sept territoires depuis les visites,
-  marqueurs, traces. **25 lecteurs**, dont 13 dans `app/` : `SeuilFranchi`, `Graine`,
-  `VentilationOmega`, `CentreDePersonnalisation`, `MarqueDeVisite`, `Monde1HomeState`, la coque,
-  l'accueil. Il ne disparaît pas : **sa règle de dérivation change** — « actif = visité » devient
-  « actif = l'expérience d'activation est validée ». La doctrine tient : l'activation reste une
-  **lecture** (de `challenges_users`), rien à stocker.
-- **`SequenceDeGestes`** (358 lignes, 8 lecteurs) — les cartes `invitation → découverte →
-  appropriation`. C'est lui que le §5 absorbe. Codex écrit : « leurs marqueurs peuvent survivre
-  comme événements de compatibilité » — c'est la bonne prudence : les marqueurs `m0-visite-*`
-  restent en base et en lecture, seul le PILOTAGE s'éteint.
-- **`SeuilFranchi`** — dérive les badges du métaparcours (`config/seuils.yml`, sept entrées à
-  `puissance`). Le §5 en garde deux (`Présence choisie`, `Première clé de discernement`) et en
-  supprime le principe pour les autres. À rejouer contre le catalogue.
-- **`config/monde_0.yml`** — 7 cartes de territoires. Devient la configuration de la feuille
-  `Puissances` (§7), pas une suppression.
-- **Bancs : 39 scripts** touchent le vocabulaire territoires/accueil/Monde0Etats. Trois lisent
-  le `power-deck` directement. C'est le plus gros poste de travail après les vues.
+La maquette dit « Je pressens », « Je relie », « Je contribue ». **C'est la Marelle.** Le
+parcours linéaire du Monde 0 existe, il a ses chapitres, ses expériences, sa progression
+(`JourneyProgress`, `Chapitre#requis_faits` / `requis_total` / `omega_total`), ses pages de
+chapitre (portées le 29 août) et ses pages d'expérience.
 
-## 4. Les deux vrais manques, et la forme que je propose
+Ce que l'inflexion change n'est donc pas « construire un parcours » : **c'est le promouvoir.**
+Aujourd'hui la Marelle est atteignable par UNE carte sur sept, celle de la Volonté. Demain elle
+est le Monde 0.
 
-### 4.1 L'événement de fin du tutoriel Immateria (exp 1)
+C'est la meilleure nouvelle de cette analyse : le cœur est déjà là et déjà éprouvé par des bancs.
 
-Immateria POSTe ses données au fil du parcours, fusionnées dans UNE Trace — « une Trace est un
-état, pas un journal » (arbitrage du 15 août). Aucun POST ne dit « le tutoriel est fini ».
-Le contrat à demander au front Phaser : **un POST idempotent de fin**, que le contrôleur
-traduit en validation de l'expérience 1. Une clé dans la Trace existante suffit
-(`tutoriel_termine: true`) — pas de table neuve. C'est l'arbitrage §9.4 de Codex, confirmé.
+---
 
-### 4.2 Le geste de clôture (exp 20)
+## 3. ⚠️ L'impact profond : une inversion de causalité
 
-« Choisir explicitement d'ouvrir son espace » est un **choix**, pas un état dérivable — comme
-`aide_vue`, comme `onboarding-initial`. Le support le plus simple et le plus conforme à
-l'existant : un `MarqueurDAttention` (`m0-cloture` ou équivalent), posé par un POST idempotent.
-`HomeController` lirait : clôture posée → tableau de bord ; sinon → vue du parcours. Aucune
-migration.
+C'est le point qui coûtera le plus, et il ne se voit pas dans les maquettes.
 
-**Attention au point de bascule Monde 1** : aujourd'hui `Mondes.ouvert?` lit
-`mandatory_completed_by?`. Si la clôture explicite devient LA porte du M1, c'est un changement
-de règle d'accès — à trancher explicitement (le §1 dit « avant de transformer l'accueil », pas
-« avant d'ouvrir le M1 »). Je recommande de garder `mandatory_completed_by?` pour le M1 et de
-réserver le marqueur au tableau de bord : deux questions, deux réponses.
+**Aujourd'hui**, une carte s'active parce que le joueur a fait quelque chose **dans son
+territoire**. `Monde0Etats::Lecture#active?` lit **sept sources hétérogènes** : une `Trace`
+d'Immateria pour le Désir, un `JourneysUser` pour la Volonté, une bifurcation pour
+l'Imagination, un héros choisi pour l'Émotion, un `MarqueurDAttention` pour la Communication,
+une clé assimilée pour l'Intuition, un `MoteurAssessment` pour la Transcendance.
 
-## 5. La garde des fonctions non dévoilées (§6.4)
+**Demain**, une Puissance s'éveille parce que le joueur a franchi **un passage du parcours**.
+Une seule source : `JourneyProgress`.
 
-« Avant leur expérience d'activation, absentes des liens et sous-menus » — les liens sont au
-poste fixe ; la **garde d'URL** est à moi. Aujourd'hui `verrouille_par_la_coque` ne protège que
-3 contrôleurs, et `Coque.etat` dérive de `Monde0Etats`. Le chantier : brancher `Coque.etat` sur
-la nouvelle dérivation (validation d'expériences), étendre la garde aux contrôleurs des
-fonctions dévoilables (Fresque, Guides, Moteur, Échanges, Annuaire, Accomplissements…), et
-servir la page « Reprendre mon passage » comme réponse de refus — un gabarit, pas une redirection
-muette. La leçon de l'annuaire du 30 août s'applique ici en sens inverse : **la garde et la
-liste doivent dériver de la même règle**, sinon on refabrique « une porte offerte puis refermée ».
+Ce n'est pas un habillage, c'est un **remplacement de moteur**. Et ce moteur ne sert pas que
+l'accueil : **treize fichiers lisent `Monde0Etats`**, dont six services qui n'ont rien à voir
+avec une page d'accueil —
 
-## 6. Cinq expériences nouvelles : des données, pas des tables
+```
+app/services/ventilation_omega.rb          app/services/graine.rb
+app/services/sequence_de_gestes.rb         app/services/monde_1_home_state.rb
+app/services/centre_de_personnalisation.rb app/models/seuil_franchi.rb
+app/controllers/concerns/marque_de_visite.rb
+```
 
-Les expériences 1, 7, 9, 12, 14 sont **de l'orchestration de listeners existants** : cinq
-`Challenge` neufs (des lignes, pas des colonnes), leurs textes, leurs positions dans le
-parcours, et pour chacune un adaptateur de validation (le patron des expériences existantes).
-Il faudra leur donner `total_point` et des skills pour que `Point` valide — c'est l'économie Ω
-du §9.1, **arbitrage de Boris**. Aucune migration de schéma identifiée à ce stade.
+⚠️ **`Monde1HomeState` a la même forme.** L'accueil du Monde 1 est un échafaudage qui reprend
+les classes du M0 ; si le M0 change de modèle, le M1 hérite de la question. Elle n'a pas à être
+traitée dans le même lot, mais elle doit être posée avant, sans quoi on écrira deux fois.
 
-## 7. Ordre de livraison que je recommande (zone portable)
+---
 
-1. **Le contrat Immateria** (4.1) — c'est le seul point qui dépend d'un tiers (le front
-   Phaser) ; le demander tôt.
-2. **La dérivation d'activation** dans `Monde0Etats` — nouvelle règle, anciens lecteurs,
-   énorme couverture de bancs à faire suivre *dans la même livraison*.
-3. **Les cinq Challenges neufs + adaptateurs**, à Ω = 0 tant que Boris n'a pas chiffré —
-   afficher « à chiffrer » plutôt qu'un faux montant.
-4. **La garde d'URL généralisée** + page « Reprendre mon passage ».
-5. **Le marqueur de clôture** et la bascule accueil/tableau de bord (avec le poste fixe).
-6. La **promotion seulement après** que la maquette des cinq états (§10 de Codex) soit portée —
-   ce chantier ne se livre pas en tranches visibles par les joueurs de production.
+## 4. Les surfaces impactées, et à qui elles appartiennent
 
-## 8. Risques nommés
+| surface | ce qui arrive | zone |
+|---|---|---|
+| `app/views/home/monde_0.html.haml` | **remplacée** par la carte du voyage | poste fixe |
+| `public/pz/m0/accueil.css` | **remplacée** (deck, cartes, pagination, flèches) | poste fixe |
+| `app/views/layouts/_coque_m0.html.haml` (la roue) | devient le **tiroir Puissances**, avec états éveillé / prochain / endormi | poste fixe |
+| `app/views/layouts/_barre_mobile.html.haml` | **5 entrées → 3** | poste fixe |
+| `public/pz/m0/coque.css` | suit la barre et le tiroir | poste fixe |
+| `app/views/journeys/_show.html.haml` | devient l'écran principal, pas une page de rubrique | poste fixe |
+| `app/views/challenges/_fiche_joueur.html.haml` | un seul geste, détails sous le pli | poste fixe |
+| `config/monde_0.yml` | les 7 `chemin` ne sont plus des destinations d'accueil | à arbitrer |
+| `app/services/monde_0_etats.rb` | change de source | **portable** |
+| `SeuilFranchi`, `VentilationOmega`, `Graine`, `SequenceDeGestes` | dépendent de l'état des territoires | **portable** |
+| routes `/jeu`, `/parcours/...` | `/jeu` doit rendre le parcours | **portable** |
+| 14 bancs | voir §6 | poste fixe |
 
-- **La fenêtre de bascule** : entre la nouvelle dérivation et les nouvelles expériences, un
-  joueur existant du M0 (25 comptes en production, dont des réels) ne doit pas voir ses
-  Puissances « se désactiver ». Règle de compatibilité à écrire : activé si l'ancienne
-  dérivation OU la nouvelle le dit — puis retrait de l'ancienne quand les données ont migré.
-- **`m0-visite-m0.transcendance.moteur` est posé par la page de PROFIL** (`UsersController#show`)
-  — mesuré le 30 août sur un compte réel. Dans le nouveau modèle, le Moteur ne s'ouvre qu'à
-  l'expérience 14 : cette incohérence (§6.2 de Codex) disparaît d'elle-même avec la nouvelle
-  dérivation, mais le marqueur mal nommé restera en base ; ne pas s'en servir comme preuve.
-- **39 bancs** à faire suivre. Les bancs ciblés ne suffiront pas — deux fois cette semaine la
-  recette complète a vu ce qu'ils ne voyaient pas. Prévoir une passe complète par étape.
-- **L'onboarding sort vers Immateria** (prologue) : une ligne dans la vue du poste fixe, mais
-  `verifier_onboarding` asserte la sortie actuelle vers `/jeu` — à faire suivre ensemble.
+---
 
-## 9. Ce que ce document ne tranche pas
+## 5. Ce qui n'a de point de chute nulle part aujourd'hui
 
-Les six arbitrages du §9 de Codex restent ouverts et sont à Boris/Codex. Ce document y ajoute
-deux questions serveur : la « lecture guidée » de l'expérience 14 (visite marquée ou vrai
-geste ?), et la séparation clôture-tableau-de-bord / porte-du-Monde-1 (§4.2).
+Ce sont les manques réels — à créer, pas à déplacer.
+
+1. **L'écran « UNE PUISSANCE S'ÉVEILLE ».** Aucune surface n'existe. C'est le moment le plus
+   important du nouveau M0 : c'est lui qui transforme un parcours en déblocage.
+2. **Le tableau de bord d'après-M0.** Aucune vue. `Coque.monde_de(user)` sait déjà dire qu'on
+   est passé au Monde 1 ; ce que le joueur voit à ce moment-là reste à définir.
+3. **Les chapitres en horizon** (noms masqués tant que le précédent n'est pas franchi). Rien ne
+   masque un chapitre aujourd'hui — `JourneyProgress` expose tout.
+4. **La reconnaissance automatique** : « Le Jeu reconnaît automatiquement la fin du tutoriel.
+   Aucun bouton de validation supplémentaire. » Il n'existe aucun canal par lequel Immateria
+   annonce la fin d'un tutoriel. ⚠️ **C'est le point le plus lourd de la liste**, et il n'est pas
+   visuel : sans lui, la promesse de la maquette est fausse dès le premier passage.
+5. **Le décompte « 16 passages essentiels · 3 bifurcations facultatives »** existe par chapitre
+   (`requis_total`, et `required` sur chaque expérience) mais pas au niveau du parcours.
+
+---
+
+## 6. Ce que ça coûte aux bancs
+
+**Quatorze fichiers** de `scripts/` assertent le modèle à sept cartes ou lisent `Monde0Etats` :
+
+```
+comptes_recette_m0        repetition_m0             verifier_accueil_m0
+verifier_aide_de_page     verifier_coque            verifier_coque_m0
+verifier_fresque_graines  verifier_gestes           verifier_graine
+verifier_illustrations_m0 verifier_monde_1_etats    verifier_moteur_conscience
+verifier_pastille_et_omega verifier_v4_imagination
+```
+
+⚠️ **La règle de la maison s'applique en grand : un balisage asserté qui change demande son banc
+dans la MÊME livraison.** Quatorze bancs ne se reprennent pas en une passe. C'est l'argument le
+plus fort pour découper la migration (§8) plutôt que de la livrer d'un bloc.
+
+⚠️ Et une part de ces assertions ne doit pas disparaître mais **se retourner** : `verifier_accueil_m0`
+garde aujourd'hui que chaque carte s'active sur SA vraie trace. Ces sept sources restent vraies
+au niveau des données ; c'est leur PROJECTION qui change. Les supprimer perdrait sept garanties
+métier pour une refonte d'écran.
+
+---
+
+## 7. ⚠️ Ce que l'inflexion périme, y compris de très frais
+
+Il faut le dire clairement plutôt que de le découvrir en fusionnant :
+
+- **le deck des sept cartes** et toute sa mise en page mobile — soit les PR **#123**, **#126** et
+  **#128** des 30 et 31 août, c'est-à-dire deux jours de travail sur un écran qui disparaît ;
+- **la matrice d'illustration** (une carte change d'image quand un territoire durable s'ouvre) ;
+- **les seuils et badges par territoire**, si l'éveil devient la récompense ;
+- **la pagination mobile**, les **flèches de glissement**, la **pastille d'état** des cartes ;
+- **la cible mobile `fbf327c`** que Codex a publiée le 30 et que j'ai portée en #128 : elle
+  perfectionne le deck que l'inflexion supprime.
+
+⚠️ **Question directe à Boris : faut-il encore fusionner #128 ?** Elle améliore réellement
+l'accueil d'aujourd'hui (plus de défilement, carte plein écran) et sera jetée avec lui. Mon
+avis : **oui, si le nouveau M0 n'arrive pas cette semaine** — l'accueil actuel reste ce que
+voient les joueurs — **non, s'il arrive tout de suite**, auquel cas autant ne pas payer une
+recette pour un écran condamné.
+
+---
+
+## 8. Ordre de livraison proposé
+
+Découpé pour que chaque étape soit vérifiable seule et n'oblige jamais à reprendre quatorze
+bancs d'un coup.
+
+1. **Décider la source de vérité de l'éveil** (portable) : `JourneyProgress` remplace les sept
+   lectures de `Monde0Etats`, ou coexiste avec elles. Rien de visuel ne peut être juste avant
+   cette décision.
+2. **`/jeu` rend la carte du voyage** (portable pour la route, poste fixe pour la vue). L'accueil
+   à sept cartes reste servi sur `/jeu?deck=1` le temps de la bascule, pour que la recette
+   compare deux écrans plutôt qu'un écran et un souvenir.
+3. **Le tiroir Puissances** remplace la roue, avec ses trois états. La barre passe à trois
+   entrées.
+4. **L'écran d'éveil**, qui n'existe pas — le plus créateur de valeur et le plus court.
+5. **La page d'expérience à un seul geste**, qui est surtout un retrait : les blocs existent, il
+   s'agit de les repousser sous le pli.
+6. **Le tableau de bord d'après-M0.**
+7. **La reconnaissance automatique d'Immateria** — indépendante, longue, et à commencer tôt
+   parce qu'elle ne dépend d'aucune des six autres.
+
+---
+
+## 9. Les questions qui reviennent à Boris
+
+1. **La branche `codex/parcours-lineaire-m0` est-elle la cible validée ?** Elle n'est ni fusionnée
+   ni annoncée. Tant qu'elle ne l'est pas, je ne porte rien depuis elle.
+2. **#128 : fusionner ou abandonner ?** (§7)
+3. **Les sept territoires gardent-ils leurs pages ?** La maquette ne montre plus de « territoire »
+   comme destination, mais Immateria, la Fresque, les Guides, les Échanges existent et sont
+   atteints par le parcours. Le tiroir Puissances devient-il leur seul accès ?
+4. **Les seuils et badges par territoire survivent-ils** à un modèle où c'est le passage qui
+   récompense ?
+5. **Le Monde 1 suit-il ?** Son accueil est bâti sur les mêmes classes.
+6. **La reconnaissance automatique** engage un travail hors interface : est-elle dans le
+   périmètre de cette inflexion, ou la première version demande-t-elle encore un bouton ?

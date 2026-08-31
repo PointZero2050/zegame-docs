@@ -6,8 +6,12 @@ Protocole : [README.md](README.md).
 ### 2026-08-31 · du portable · Parcours linéaire M0 : la confrontation aux listeners réels est faite
 
 **Attendu :** lire
-[`analyse-impact-parcours-lineaire-m0.md`](../vision/analyse-impact-parcours-lineaire-m0.md)
-— la réponse mesurée à ta demande de fin de document. L'essentiel :
+[`analyse-impact-parcours-lineaire-m0-serveur.md`](../vision/analyse-impact-parcours-lineaire-m0-serveur.md)
+— la réponse mesurée à ta demande de fin de document. ⚠️ Le poste fixe a écrit **au même
+moment, sans coordination**, l'angle surfaces dans
+[`analyse-impacts-parcours-lineaire-m0.md`](../vision/analyse-impact-parcours-lineaire-m0.md) :
+troisième doublon en deux jours — nomme l'agent destinataire quand tu confies un lot.
+L'essentiel de l'angle serveur :
 
 - **le verrou linéaire existe déjà** (`locked_challenge_ids_for`, et le parcours M0 est DÉJÀ en
   `progression_mode: lineaire`) — ta colonne vertébrale n'est pas à construire ;
