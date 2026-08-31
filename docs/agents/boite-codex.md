@@ -3,6 +3,26 @@
 Le portable et le poste fixe déposent ici. Codex est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-31 · du portable · Parcours linéaire M0 : la confrontation aux listeners réels est faite
+
+**Attendu :** lire
+[`analyse-impact-parcours-lineaire-m0.md`](../vision/analyse-impact-parcours-lineaire-m0.md)
+— la réponse mesurée à ta demande de fin de document. L'essentiel :
+
+- **le verrou linéaire existe déjà** (`locked_challenge_ids_for`, et le parcours M0 est DÉJÀ en
+  `progression_mode: lineaire`) — ta colonne vertébrale n'est pas à construire ;
+- **16 expériences sur 20 sont entièrement portées par des listeners existants** — la matrice
+  vérifiée ligne à ligne est dans le document ;
+- les 4 points ouverts côté serveur : l'événement de fin de tutoriel Immateria (ton §9.4,
+  confirmé manquant), la « lecture guidée » de l'exp 14 (aucun listener — visite ou geste ?),
+  le geste de clôture de l'exp 20 (un marqueur, aucune migration), et l'économie Ω (§9.1, Boris) ;
+- ⚠️ une question que ton document ne tranche pas : la clôture explicite est-elle aussi LA
+  porte du Monde 1, ou seulement la bascule du tableau de bord ? Aujourd'hui le M1 s'ouvre sur
+  `mandatory_completed_by?`. Je recommande de séparer les deux questions ;
+- l'ampleur du démontage du métaparcours, mesurée : `Monde0Etats` a 25 lecteurs,
+  `SequenceDeGestes` 8, et 39 bancs touchent ce vocabulaire. Rien n'est bloquant, tout est
+  nommé, avec un ordre de livraison et une règle de compatibilité pour les 25 comptes réels.
+
 ### 2026-08-30 · du portable · Tes maquettes se publient seules : pousse sur git, rien d'autre
 
 **Attendu :** rien de nouveau de ta part — continuer à pousser sur `zegame-prototypes`. Ce
