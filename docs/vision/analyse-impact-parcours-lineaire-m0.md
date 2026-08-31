@@ -206,3 +206,32 @@ bancs d'un coup.
 5. **Le Monde 1 suit-il ?** Son accueil est bâti sur les mêmes classes.
 6. **La reconnaissance automatique** engage un travail hors interface : est-elle dans le
    périmètre de cette inflexion, ou la première version demande-t-elle encore un bouton ?
+
+---
+
+## 10. Mesure de l'écart : ce que le parcours rend DÉJÀ, contre la cible
+
+Relevé sur la préprod le 30 août, compte `sacha`, `/parcours/point-zero-monde-0`. C'est la page
+que le Monde 0 est sur le point de devenir : elle existe, elle fonctionne, et voici ce qui la
+sépare de la maquette.
+
+| | aujourd'hui | cible Codex |
+|---|---|---|
+| chapitres | **3**, aux bons noms | 3 |
+| passages | 5 + 4 + 5 = **14** | 5 + 7 + 7 = **19** (16 essentiels + 3 bifurcations) |
+| Omégas | 24 + 25 + 51 = **100 Ω** | 39 + 61 + 74 = **174 Ω** |
+| chapitres 2 et 3 | **entièrement ouverts**, noms des passages visibles | **horizons** : « les noms apparaîtront lorsque tu auras franchi le premier chapitre » |
+| premier passage | « Le Point Zéro : entrer dans le Jeu » | « **Façonner mon jumeau** » (Immateria) |
+| hauteur sur téléphone | **4 019 px** à 375 × 812 | un écran, « Continuer » visible d'emblée |
+
+Trois conclusions :
+
+1. **La charpente est juste, le contenu ne l'est pas.** Cinq passages manquent, 74 Ω manquent, et
+   la cible ouvre par un passage qui n'est pas le nôtre. ⚠️ **C'est de l'éditorial** : il revient
+   à Codex et à Boris, pas à l'intégration.
+2. **Les chapitres en horizon sont un vrai manque**, pas un effet de style : aujourd'hui la page
+   dit tout, tout de suite. C'est l'inverse de la promesse « la route se révèle à mesure ».
+3. ⚠️ **4 019 px sur un téléphone.** La page que le M0 va devenir est aujourd'hui **le plus long
+   écran de l'application** — plus long que `f05` (2 945 px) que l'audit des parcours publics
+   pointait comme défaut majeur. La cible, elle, tient dans un écran. C'est la part la plus
+   lourde du travail d'intégration, et elle est chez le poste fixe.
