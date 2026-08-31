@@ -121,6 +121,44 @@ jusqu'à validation de la séquence complète.
 | 19 | 3 | **Mon récit de passage** | essentielle · existante | Rassembler les Traces, composer la Graine de passage, sceller la Carte du Seuil | Graine + Carte générées + visibilité enregistrée | produit la restitution finale | 9 actuel |
 | 20 | 3 | **Ton espace est prêt** | passage terminal · nouveau | Relire les sept Puissances éveillées et choisir explicitement d'ouvrir son espace | confirmation idempotente de clôture du M0 | transforme l'accueil en tableau de bord ; aucun nouveau territoire | 0 |
 
+### 4.1. Décompte joueur et granularité des étapes visibles
+
+Le chemin de fer contient **19 Expériences** : 16 essentielles et 3 facultatives. Le vingtième
+élément, `Ton espace est prêt`, est un **épilogue terminal** sans Oméga ; il ne doit pas être
+présenté comme une Expérience ordinaire. Les trois écrans d'onboarding restent un prologue hors
+décompte.
+
+La règle d'interface est constante : **une étape visible correspond à un geste réel, un CTA et
+une reprise identifiable**. Les bornes internes d'un mini-jeu ne deviennent pas des étapes de la
+fiche lorsque le Joueur les traverse dans un même mouvement.
+
+| # | Expérience | Étapes visibles proposées |
+|---:|---|---|
+| 1 | **Façonner mon jumeau** | 1. Entrer dans Immateria, créer le jumeau et terminer le tutoriel du Village. La fin reconnue active Désir et ramène au parcours. |
+| 2 | **Le Point Zéro : entrer dans le Jeu** | 1. Regarder l'introduction ; 2. Relier récit, croyance et choix ; 3. Conserver l'Hypothèse de seuil. La sortie active Volonté. |
+| 3 | **Le Coupable idéal** | Étape unique : traverser le procès jusqu'au verdict. La roue et le verdict deviennent une Trace. |
+| 4 | **Une drôle d'époque** | Étape unique : traverser la semaine jusqu'au miroir final. Le résultat prépare le Moteur sans ouvrir encore Transcendance. |
+| 5 | **Avant le Zéro** | Étape unique : suivre un devenir jusqu'à une première fin, automatiquement conservée comme Trace. |
+| 6 | **Et moi dans tout ça ?** | 1. Relire et sélectionner les Traces du chapitre ; 2. Formuler l'Appel sans mentor ; 3. Planter la Graine de l'Appel. La Graine réelle active Imagination et ouvre une visite guidée de la Fresque. |
+| 7 | **Choisir qui marchera à mes côtés** | 1. Choisir le mentor ; 2. Lui adresser une première question à partir de la Graine. Le premier échange réel active Émotion. |
+| 8 | **L'écosystème Point Zéro** | 1. Découvrir la constellation ; 2. Relier les fragments pour produire le Schéma de circulation. |
+| 9 | **Choisir ma place parmi les autres** | 1. Composer le Profil et confirmer sa visibilité ; 2. Rejoindre l'Espace M0 et produire une première réaction ; 3. Découvrir l'Annuaire, facultatif. Le geste essentiel active Communication. |
+| 10 | **Le site du Point Zéro** | 1. Accomplir au moins un parcours public ; 2. Lire `X parcours réalisés sur 5` et choisir de poursuivre. Les autres parcours restent disponibles et gardent leurs propres Omégas. |
+| 11 | **Le signe de reconnaissance** | Étape unique : composer un signe précis et choisir de l'envoyer ou de le conserver. L'envoi reste facultatif. |
+| 12 | **Choisir un double regard** | 1. Choisir Sirbey ou Z.E.R.O. ; 2. Mener un premier échange ; 3. Éprouver une première clé et la conserver comme Trace. La sortie active Intuition. |
+| 13 | **Les choses se précisent** | 1. Relire la constellation ; 2. Explorer une relation avec le mentor ; 3. Planter la Graine de relation dans la popup intégrée. |
+| 14 | **Lire mon Moteur** | 1. Actualiser une première lecture de Puissance ; 2. Observer sa circulation Ombre/Lumière ; 3. Ouvrir la provenance des Omégas. La sortie active Transcendance, le Moteur et les Accomplissements. |
+| 15 | **Le Conseil Oméga** | Étape unique : arbitrer les futurs, formuler les caps et choisir ou laisser ouvert un Rôle d'appel. |
+| 16 | **Découvrir les formats** · facultative | 1. Clarifier le besoin ; 2. Comparer les formats ; 3. Conserver une Boussole de passage. |
+| 17 | **Participer à un Sas Point Zéro** · facultative | 1. Choisir un Sas et se présenter ; 2. Participer à la rencontre ; 3. Conserver l'intention de passage comme Trace. |
+| 18 | **Vivre l'Atelier Point Zéro** | Étape unique : choisir un créneau et obtenir une inscription confirmée. La participation réelle reste la condition ultérieure de validation du passage vers le Monde 1. |
+| 19 | **Mon récit de passage** | 1. Rassembler les Traces ; 2. Composer la Graine de passage avec le mentor ; 3. Sceller la Carte du Seuil et sa visibilité. |
+| 20 | **Ton espace est prêt** · épilogue | Étape unique : relire les sept Puissances éveillées et confirmer `Ouvrir mon espace`. Ce geste transforme l'accueil en tableau de bord sans ouvrir à lui seul le Monde 1. |
+
+Répartition cible : **7 Expériences au chapitre 1**, **7 au chapitre 2**, **5 au chapitre 3**,
+puis l'épilogue. Le passage du `Signe de reconnaissance` en facultatif recommandé reste le seul
+statut de cette répartition qui demande encore une confirmation explicite de Boris.
+
 ## 5. Absorption de l'ancien métaparcours
 
 | Ancienne invitation | Nouveau logement | Effet conservé |

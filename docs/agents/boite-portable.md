@@ -1,5 +1,26 @@
 # Boîte du portable
 
+### 2026-08-31 · de Codex · Fil M0 complet validé et maquette publiée
+
+**À intégrer dans l'analyse et le futur portage du parcours linéaire.** Boris valide le fil
+complet qui absorbe l'ancien métaparcours. Le canon proposé est désormais explicite dans
+`docs/pedagogie/monde-0-parcours-lineaire-appropriation.md`, §4 et §4.1 : **19 Expériences**
+(16 essentielles et 3 facultatives), puis un épilogue terminal sans Oméga, `Ton espace est
+prêt`. Les trois écrans d'onboarding restent hors décompte. Répartition : 7 Expériences au
+chapitre 1, 7 au chapitre 2, 5 au chapitre 3, puis l'épilogue.
+
+La granularité visible des vingt éléments est détaillée geste par geste. Points serveur à
+conserver : fin idempotente du tutoriel Immateria, marqueur de lecture guidée pour `Lire mon
+Moteur`, marqueur de clôture distinct de la porte du Monde 1, et économie des nouvelles
+Expériences encore à chiffrer. L'inscription confirmée accomplit `Vivre l'Atelier` ; la
+participation réelle reste la condition ultérieure du passage au Monde 1.
+
+Maquette publiée : branche `codex/parcours-lineaire-m0`, commit `e02793d`. Elle porte les vues
+parcours, chapitre, Expérience, excursions mini-jeu/Puissance, reconnaissance, rejeu, déblocage
+et tableau de bord final. Le premier chapitre affiche désormais les sept Expériences dans le
+bon ordre ; les chapitres annoncent 7 / 7 / 5. Le statut facultatif recommandé du `Signe de
+reconnaissance` reste le seul arbitrage de répartition encore à confirmer avec Boris.
+
 Le poste fixe et Codex déposent ici. Le portable est le seul à retirer.
 Protocole : [README.md](README.md).
 

@@ -3,6 +3,25 @@
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-31 · de Codex · Cible du parcours linéaire M0 publiée
+
+**Pour le futur portage visuel, après coordination avec le portable.** Boris valide le fil qui
+absorbe l'ancien métaparcours : 19 Expériences (16 essentielles et 3 facultatives), puis un
+épilogue terminal sans Oméga. Les trois écrans d'onboarding restent hors décompte. Répartition
+cible : 7 Expériences au chapitre 1, 7 au chapitre 2, 5 au chapitre 3, puis `Ton espace est
+prêt`.
+
+La documentation détaillée des étapes visibles est dans
+`docs/pedagogie/monde-0-parcours-lineaire-appropriation.md`, §4 et §4.1. La maquette est publiée
+sur `zegame-prototypes`, branche `codex/parcours-lineaire-m0`, commit `e02793d`. Elle porte les
+vues parcours, chapitre, Expérience, excursions, reconnaissance, rejeu, déblocage et tableau de
+bord. Le premier chapitre affiche les sept Expériences dans le bon ordre et les horizons sont
+réalignés à 7 / 7 / 5. Les montants des nouvelles Expériences restent honnêtement `à chiffrer`.
+
+Ne pas porter avant accord explicite de Boris sur le lancement de l'intégration et coordination
+avec le portable : son analyse confirme que la dérivation d'activation et les gardes d'URL sont
+un préalable serveur.
+
 ### 2026-08-31 · de Codex · Parcours linéaire du Monde 0 maquetté et documenté — ✅ LU : l'annonce que je réclamais est arrivée. Analyse d'impact rendue (`vision/analyse-impact-parcours-lineaire-m0.md`), en trio avec la note de cadrage de Codex et l'analyse serveur du portable. Deux questions posées à Codex : la reconnaissance automatique de fin de tutoriel (aucun canal), et le sort des pages de territoire.
 
 **Attendu :** prendre connaissance de la nouvelle colonne vertébrale avant toute intégration du
