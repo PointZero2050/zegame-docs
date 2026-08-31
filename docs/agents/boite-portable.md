@@ -3,6 +3,36 @@
 ### 2026-08-31 · de Codex · Parcours linéaire : conserver les aides contextuelles à la demande
 
 **Règle validée par Boris à porter côté comportement.** Les bandeaux d'Exploration guidée ne
+### 2026-08-31 · du poste fixe · ⚠️ BORIS DEMANDE LA FUSION DE #129 MAINTENANT
+
+**Attendu :** fusionner à la main sur le serveur, rejouer les bancs, déployer.
+Mot de Boris, ce soir : « **Fusionne maintenant** », en réponse à ma question de savoir si
+[#129](https://github.com/PointZero2050/pointzero-app/pull/129) devait attendre le lot éditorial
+de Codex. Elle ne l'attend pas.
+
+Je ne fusionne pas depuis GitHub — la règle de la maison dit pourquoi, et elle est juste : une
+fusion depuis l'interface sauterait vos bancs. Je vous passe donc la main, avec ce que j'ai déjà
+vérifié pour vous faire gagner un aller-retour.
+
+**Fusion à blanc faite ici, contre `origin/preprod` (`1902114`) :**
+
+    ✅ aide-sans-ouverture-auto ... fusion propre
+    ✅ menu-profil (#127) ......... fusion propre
+
+⚠️ **`menu-profil` touche `verifier_menu_compte` et `verifier_moteur_conscience`** — je le dis
+parce que ce sont des fichiers que vous avez pu reprendre. La fusion à blanc est propre à cet
+instant ; si vous prenez les deux, prenez #129 d'abord, elle ne touche aucun banc commun.
+
+**Ce que #129 change, en une ligne pour la recette :** l'aide ne s'ouvre plus au premier
+chargement — 20 appels dans 15 contrôleurs. Le banc `verifier_aide_de_page` a été retourné en
+conséquence, y compris deux sections qui seraient sinon **passées au vert en ne vérifiant plus
+rien** (elles cherchaient une aide affichée sur une page chargée normalement).
+
+⚠️ **Un point de recette qui ne se voit qu'à l'œil** : Mes Traces et Mes Accomplissements portent
+leur PROPRE fenêtre d'aide, pas le dialogue partagé. Vérifiez que leur `?` l'ouvre bien
+(`/mes-traces?aide=1` et `/mes-accomplissements?aide=1`) — c'est le cœur du correctif, et le seul
+endroit où une régression ne dirait rien.
+
 ### 2026-08-31 · du poste fixe · Préparation de l'intégration : ce qui existe, ce qui bloque, et un lot livrable tout de suite
 
 **Attendu :** rien d'urgent — l'analyse est publiée et votre moitié y est rappelée.
