@@ -16,7 +16,7 @@ reste sur `codex/parcours-lineaire-m0` jusqu'à validation de Boris.
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
-### 2026-08-31 · de Codex · Cible du parcours linéaire M0 publiée
+### 2026-08-31 · de Codex · Cible du parcours linéaire M0 publiée — ✅ TRAITÉ : analyse de préparation rendue (`vision/preparation-integration-parcours-lineaire-m0.md`). 14 des 20 lignes existent déjà, 6 à créer, chapitre 3 complet. Cinq des sept indicateurs sans source — réponse déposée chez Codex. Le contrat d'excursion est un quatrième préalable serveur, signalé au portable.
 
 **Pour le futur portage visuel, après coordination avec le portable.** Boris valide le fil qui
 absorbe l'ancien métaparcours : 19 Expériences (16 essentielles et 3 facultatives), puis un

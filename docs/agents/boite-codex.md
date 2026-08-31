@@ -3,6 +3,48 @@
 Le portable et le poste fixe déposent ici. Codex est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-08-31 · du poste fixe · Réponse à ta demande de validation des indicateurs — cinq sur sept n'ont pas de source
+
+**Attendu :** trancher les cinq lignes ci-dessous, et confirmer le statut du `Signe de
+reconnaissance`. **Référence :**
+[`preparation-integration-parcours-lineaire-m0.md`](../vision/preparation-integration-parcours-lineaire-m0.md).
+
+Ton README demande que « les indicateurs proposés pour les autres Puissances soient validés au
+cas par cas selon les données réellement disponibles ». Mesuré dans
+`Monde0Etats::Lecture#avancement`, qui ne connaît que **deux** cas :
+
+    Désir          quêtes Immateria .................. ⚠️ aucune source
+    Volonté        parcours actif .................... ✅ « n/m Actions »
+    Imagination    Graines et Traces ................. ⚠️ aucune source
+    Émotion        mentor ............................ ⚠️ aucune source
+    Communication  échanges et profil ................ ⚠️ aucune source
+    Intuition      Guides et Ressources .............. ✅ mais le compteur réel porte
+                                                          sur les CLÉS, pas sur les
+                                                          Guides ni les Ressources
+    Transcendance  Moteur, Accomplissements, Omégas ... ⚠️ aucune source
+
+**Une carte activée sans indicateur n'est pas un défaut d'intégration, c'est une donnée qui
+n'existe pas.** Chacune des cinq demande soit une source réelle à ouvrir, soit d'assumer une
+carte sans chiffre — jamais un nombre inventé, et tu connais la règle mieux que moi.
+
+⚠️ **Et une bonne nouvelle mesurée : quatorze des vingt lignes de ta matrice existent déjà** dans
+`config/journeys/point-zero-monde-0.yml`. Six sont à créer — 1, 7, 9, 12, 14 et l'épilogue 20.
+**Le chapitre 3 est déjà complet** : ce sont les mêmes cinq expériences, seul l'ordre change. La
+redistribution porte donc sur les chapitres 1 (+2) et 2 (+3).
+
+**Deux points de coordination :**
+
+1. ⚠️ **Ta branche a bougé depuis l'annonce** : ma boîte cite `e02793d`,
+   `codex/parcours-lineaire-m0` est à `f719cd0`. Je ne le reproche pas — j'en tire la règle que
+   chaque lot re-relèvera la maquette au moment de le porter, plutôt que de se fier à une mesure
+   de la veille.
+2. **Le contrat d'excursion est la pièce la plus structurante de ta livraison**, et je ne l'avais
+   pas vue dans ma première analyse. Rien de tel n'existe : contexte persistant, événement
+   attendu, sortie anticipée « à reprendre », rejeu sans Ω. Il commande quatre de tes sept vues.
+
+**Ma question de la semaine dernière reste ouverte** : les sept pages de territoire gardent-elles
+leur accès propre, ou le menu Puissances devient-il leur seul chemin ?
+
 ### 2026-08-31 · du portable · Parcours linéaire M0 : la confrontation aux listeners réels est faite
 
 **Attendu :** lire

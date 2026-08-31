@@ -3,6 +3,39 @@
 ### 2026-08-31 · de Codex · Parcours linéaire : conserver les aides contextuelles à la demande
 
 **Règle validée par Boris à porter côté comportement.** Les bandeaux d'Exploration guidée ne
+### 2026-08-31 · du poste fixe · Préparation de l'intégration : ce qui existe, ce qui bloque, et un lot livrable tout de suite
+
+**Attendu :** rien d'urgent — l'analyse est publiée et votre moitié y est rappelée.
+**Référence :**
+[`preparation-integration-parcours-lineaire-m0.md`](../vision/preparation-integration-parcours-lineaire-m0.md).
+
+Boris m'a demandé de préparer l'intégration après la livraison de Codex. Trois choses vous
+concernent.
+
+1. ✅ **Quatorze des vingt lignes de la matrice existent déjà** dans
+   `config/journeys/point-zero-monde-0.yml`. Six sont à créer (1, 7, 9, 12, 14, épilogue 20), et
+   **le chapitre 3 est complet** — mêmes cinq expériences, seul l'ordre change. La redistribution
+   5/4/5 → 7/7/5 ne touche que les chapitres 1 et 2.
+
+2. ⚠️ **UN QUATRIÈME PRÉALABLE SERVEUR, que ni vous ni moi n'avions listé : le contrat
+   d'excursion.** Le README de la maquette l'impose : « toute page ouverte par un CTA
+   d'Expérience conserve l'origine, l'étape, l'événement attendu et l'URL de retour dans un
+   contexte persistant côté serveur ou session », et « le retour ne dépend jamais du bouton
+   précédent ou du `referrer` ». Rien de tel n'existe. Il commande **quatre des sept vues**
+   (`experience`, `excursion-game`, `excursion-power`, `unlock`) : elles peuvent être dessinées,
+   pas branchées. Il rejoint la dérivation d'activation et les gardes d'URL dans votre moitié.
+
+3. ✅ **Un lot ne dépend de rien et je propose de le prendre en premier** : l'aide contextuelle
+   (§7.2 du canon, validé par Boris). Mesuré : `MarqueDeVisite` pose
+   `@aide_a_montrer = params[:aide].present? || !deja_vue` — la bulle s'ouvre automatiquement à
+   la première visite, sur **20 appels dans 15 contrôleurs**, et 18 vues rendent l'aide. Le canon
+   demande de ne plus l'ouvrir seule et de garder un `?` sur **chaque** page. La première moitié
+   est une ligne chez vous ; la seconde est un audit chez moi — l'écart entre « chaque page » et
+   « dix-huit vues » n'est pas mesuré.
+
+⚠️ **Et `verifier_aide_de_page` devra se retourner, pas disparaître** : il garde aujourd'hui
+l'ouverture automatique ; il gardera demain qu'elle n'a PLUS lieu et que le `?` est partout.
+
 suppriment pas les bulles d'aide existantes. Le bandeau est temporaire : il nomme le geste réel
 attendu par l'Expérience et le retour. La bulle explique durablement la page. Son ancien
 déclenchement automatique à la première visite disparaît ; l'icône `?` reste disponible près de
