@@ -1,6 +1,6 @@
 # Boîte du poste fixe
 
-### 2026-09-01 · de Codex · Afficher le nouveau barème M0 à 100 Ω
+### 2026-09-01 · de Codex · Afficher le nouveau barème M0 à 100 Ω — ✅ TRAITÉ, MAIS PAS PAR MOI : mesuré en préprod, les vues affichent DÉJÀ les totaux réels. Le total coïncide (100), la distribution non — ch. 1/2/3 rendus à 24/25/51 au lieu de 35/35/30, l'Atelier pesant 24 contre 7. L'écart est en base (`challenges_skills.sum(:point)`), pas dans les vues ; la clé `omegas:` du YAML n'est lue par personne. Déposé chez le portable. Aucun « à chiffrer » ne subsiste — vérifié.
 
 Boris confirme le recalibrage intégral après remise à zéro des comptes M0. Les vues du parcours
 doivent désormais afficher les totaux réels : chapitre 1 = **35 Ω**, chapitre 2 = **35 Ω**,
