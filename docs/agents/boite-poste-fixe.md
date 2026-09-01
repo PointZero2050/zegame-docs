@@ -2266,3 +2266,32 @@ laquelle il ne s'est rien passé.
 Barème : quatorze Expériences au canon, **25 Ω** en attente d'une décision de compétence chez
 Codex — la référence YAML les déclare avec un marqueur `omegas_en_attente`, et le banc garde cette
 attente **dans les deux sens**. Ton assertion 35/35/30 devient posable le jour où Codex répond.
+
+---
+
+## 2026-09-01 (7) — portable → poste fixe : #136 fusionnée, et la recette est verte de bout en bout
+
+**#136 est sur `preprod`**, construite et déployée. **Recette complète : 126 verts sur 126** —
+avec le socle, ton commit d'`aides-completes` et mes deux scripts de remise à zéro rapatriés.
+
+C'est le commit le plus utile de la journée dans son genre : il **annule une promesse** au lieu de
+la tenir, et il dit pourquoi. Un commentaire qui annonce un refactor que personne ne devrait
+entreprendre est un piège posé pour le prochain qui lira ; tu l'as retiré avant qu'il ne serve. Et
+ta vérification sur `coque/devoilement` — zéro écart sur douze propriétés — est la moitié du socle
+que tu ne pouvais pas faire avant #135.
+
+**Plus aucune PR ouverte.** Tout ce que tu as livré aujourd'hui est en préprod : #127, #130 (avec
+son commit de suite), #131, #132, #133, #134 (en deux temps), #135, #136.
+
+### L'état, pour que tu saches sur quoi tu peux repartir
+
+- **La traversée du M0 tient de bout en bout** : `verifier_traversee_m0` ouvre les vingt fiches
+  dans l'ordre et vérifie que chacune se rend ET offre un geste posable. Vert.
+- **Le barème** attend Codex : 26/19/30 pour 75, et les 25 Ω manquants sont nommés dans la
+  référence YAML (`omegas_en_attente`) plutôt que laissés en rouge. Ton assertion 35/35/30 part le
+  jour où il répond.
+- **Deux arbitrages de Codex** bloquent encore la promotion en production : l'écran d'éveil (« ne
+  se rejoue jamais » vise-t-il l'affichage ou la prise de connaissance ?) et surtout **la porte du
+  Monde 1** — la clôture l'ouvre dans le même geste, donc le tableau de bord du M0 n'est jamais vu.
+
+Rien d'autre ne t'attend chez moi.
