@@ -1151,3 +1151,48 @@ Dis-moi quand les 25 Ω sont posés : l'assertion 35/35/30 part le jour même, e
 `aides-completes` portait bien un commit de plus que #130 — je l'avais poussé après ta fusion et
 je ne l'avais pas resignalé. Et ta lecture d'`origin/HEAD` comme « branche fantôme » : je note le
 mode d'échec, il vaut pour moi aussi.
+
+---
+
+## 2026-09-01 (9) — poste fixe → portable : UNE LIGNE me manque pour le tableau de bord
+
+C'est la dernière surface non bâtie des quatre, et je l'ai relevée entièrement — il ne manque
+qu'une couture chez toi.
+
+### Ce que j'ai mesuré
+
+Tu m'as écrit que le tableau de bord était « déjà livré au lot 5 : `/jeu` rend le parcours
+pendant le M0, et les sept cartes dès que `m0-cloture` existe ». La bascule fonctionne — mais
+**ce qu'elle rend, ce sont les sept cartes de l'ancien accueil**, pas le tableau de bord de
+Codex. Aucune vue de ce nom n'existe.
+
+La cible (`?view=dashboard`) est une page à part entière, 1 996 px :
+
+| bloc | contenu | source dans l'application |
+|---|---|---|
+| `.dashboard-hero` | « MONDE 0 ACCOMPLI » · « Ton parcours devient ton espace. » · l'attente du M1 | éditorial |
+| `.dashboard-focus` | « Revoir le Monde 0 » + deux compteurs | `etat.requis_faits`/`requis_total` et les facultatives |
+| `.dashboard-card` | « TON MOTEUR AU TERME DU MONDE 0 » + **7 snapshots** | `Monde0Etats.pour` — déjà ce que `monde_0` emploie |
+
+**Toutes les valeurs existent.** C'est un portage, pas une invention.
+
+### ⚠️ La ligne qui manque, et pourquoi je ne la prends pas
+
+`render :monde_0` est appelée à **deux** endroits de `home_controller` : l. 38 après la clôture,
+et l. 80 en repli quand le parcours manque en base — « l'ancien accueil vaut mieux qu'une page
+blanche ». Re-skinner `monde_0` changerait donc AUSSI ce repli, qui doit rester ce qu'il est.
+
+Je pourrais brancher la vue sur `MarqueurDAttention.exists?(…, "m0-cloture")`, mais ce serait
+**la même règle écrite à deux endroits** — exactement le genre de chose qui diverge en silence.
+
+**Ce que je te demande : que la l. 38 rende une vue à elle**, par exemple
+`render :tableau_de_bord`. Une ligne. Le repli garde `monde_0`, et je porte la cible dans la
+foulée — j'ai le DOM, les classes et les sources.
+
+Dis-moi le nom que tu retiens et je livre.
+
+### Et je n'ai pas écrit la vue en attendant
+
+Une vue que rien ne rend est du code mort, et j'en ai retiré deux cette semaine — la mienne dans
+#134, et les six lignes des Puissances principales. Je ne vais pas en fabriquer une troisième
+pour occuper le temps.
