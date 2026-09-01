@@ -2035,3 +2035,57 @@ Je n'ajoute pas de `helper_method`. Ta vue ne connaît PAS la clé de session �
 C'est le voisin exact de la régression #126 (la septième pastille intapable) : l'orbe est posée
 à un endroit fixe, et ce que la page met là passe dessous. Ton diagnostic d'alors — « ça
 disparaît avec la position, pas avec un contournement » — vaut probablement encore.
+
+---
+
+## 2026-09-01 (2) — portable → poste fixe : j'ai touché deux de tes fichiers, voici lesquels et pourquoi
+
+Après la fusion, la recette a rougi. Rien de grave, mais deux choses sont entrées dans ta zone
+et tu dois les savoir — tu as le dernier mot sur les deux.
+
+### 1. Une ligne dans `app/views/layouts/conseil.html.haml`
+
+**Ton bandeau ne pouvait pas atteindre les micro-expériences.** Tu l'as posé dans
+`layouts/jeu` ; Le Coupable idéal, Une drôle d'époque et Avant le Zéro portent la coque
+`conseil`. Ton propre §6 bis l'a trouvé en ouvrant `/le-coupable-ideal` : pas de bandeau, donc
+pas de retour — alors que le canon l'exige sur TOUTE page ouverte par un CTA d'Expérience.
+
+J'ai ajouté `= render "shared/bandeau_excursion"` dans `conseil`, commenté, en haut de
+`%main.conseil-main`. **Le partiel est de toi et le placement te revient** : si tu le veux
+ailleurs dans cette coque, la ligne se déplace sans que rien d'autre bouge.
+
+**Et j'ai transformé ta trouvaille en garde.** `verifier_excursion` §6 quater ouvre maintenant
+**les dix-sept portes**, pas une :
+
+| | |
+|---|---|
+| portes réelles portant le bandeau | **16 / 17** |
+| sans porte (rien à mesurer) | le Sas, l'atelier, le récit de passage |
+| exception nommée | `/immateria` — « le jeu la masque, la Puissance la garde » |
+
+Ta version l'avait attrapé **par chance**, en tombant sur la bonne porte. Celle-ci le dira quelle
+que soit la coque qui bouge.
+
+### 2. Deux assertions de `verifier_marelle`
+
+Les deux avaient raison sur le fond, et c'est ce qui les rendait difficiles à lire.
+
+- **`bloc(page, "journey-stats")` s'arrête au premier `</div>`** — donc au premier des trois
+  `.journey-stat` imbriqués. Trois assertions cherchaient la durée, le supplément facultatif et
+  les Omégas dans un fragment qui ne pouvait pas les contenir, et accusaient ta vue, qui les rend
+  toutes. **L'outil juste était vingt lignes plus haut, `entre()`, que tu avais écrit pour
+  exactement ce piège** — ton commentaire le décrit mot pour mot.
+- **« tout le requis validé » ne veut plus dire « rien n'attend ».** Depuis le lot 1, le M0 porte
+  trois Expériences facultatives : ton bandeau nommait le Signe de reconnaissance, et il avait
+  raison. C'est le décor du banc qui devait changer — il accomplit maintenant TOUT.
+
+### 3. Une purge qui demande la liste au schéma
+
+`verifier_excursion` cassait sur `coupable_ideal_sessions`, absente d'une énumération de six
+tables. Troisième incident de cette forme en deux semaines. Le harnais porte désormais
+`purger_le_compte!` : il demande au schéma quelles tables référencent le joueur, gère les
+colonnes polymorphes (`author_id` + `author_type`) et repasse trois fois pour les dépendances
+croisées. Reprends-le dans tes bancs quand l'un d'eux cassera sur une clé étrangère.
+
+**Recette complète : 125 bancs verts sur 125.** Préprod déployée, PR #132 fermée sur mesure
+(`git log preprod..parcours-cartes-experience` vide), pas sur une impression.
