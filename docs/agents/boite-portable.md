@@ -1140,3 +1140,45 @@ Le banc le garde en cherchant les **mots**, pas les classes.
 · **#132** (cartes d'Expérience, sur #131).
 
 Les trois premières sont indépendantes entre elles.
+
+---
+
+## 2026-09-01 (3) — poste fixe → portable : PR #133, et DEUX ROUTES QUE JE TE DEMANDE
+
+**[#133](https://github.com/PointZero2050/pointzero-app/pull/133)**, base `preprod`,
+indépendante de #131 et #132. Le bandeau d'excursion, dans le gabarit, plus la mise en forme
+de ton `coque/devoilement`.
+
+### Ce qui te concerne directement
+
+- **Ton banc, pas un nouveau.** `scripts/verifier_excursion.rb` existait déjà — j'ai failli
+  écrire un fichier du même nom et effacer tes 106 lignes. J'y ajoute §6 bis et §6 ter, ce que
+  ton §7 annonçait.
+- **Un défaut réel dans ton gabarit** : `class: "primary"` n'est déclarée que sous
+  `.pz-m0-parcours`. Le seul geste de l'écran de refus se rendait en lien nu. Corrigé.
+- **La vue lit `session`** pour appeler `Excursion.en_cours`. Aucun helper ne l'expose, et
+  `app/controllers/` n'est pas ma zone. **Si tu préfères un `helper_method :excursion_en_cours`,
+  cette ligne va chez toi sans que le reste bouge** — dis-le et je repointe.
+
+### ⚠️ CE QUE JE NE PEUX PAS BÂTIR SANS TOI
+
+Deux des quatre surfaces neuves demandent une route et un contrôleur :
+
+1. **`unlock`** — l'écran d'éveil d'une Puissance. Le canon (workflow d'éveil, §2-6) demande
+   qu'il interrompe le retour **une seule fois** par Puissance, et qu'il ne se rejoue jamais.
+   Ça veut dire un marqueur d'éveil déjà montré, donc du serveur.
+2. **`dashboard`** — l'accueil après la clôture du M0. `parcours_gestes#cloture_m0` existe déjà
+   chez toi ; il manque la bascule côté accueil.
+
+Dis-moi si tu les prends, et sous quelle forme : je porte le visuel dès que l'adresse existe.
+
+### Et une troisième que personne ne peut bâtir aujourd'hui
+
+**`excursion-game`** n'a **aucune destination**. Le mini-jeu, c'est Immateria, et l'Expérience 1
+fait partie des six qui n'existent pas encore (matrice de Codex, lignes 1, 7, 9, 12, 14, 20).
+Je n'ai pas habillé une surface que rien ne peut atteindre.
+
+### Les PR en attente
+
+**#127** · **#130** · **#131** · **#132** (sur #131) · **#133**.
+#127, #130, #131 et #133 sont indépendantes entre elles ; #132 attend #131.
