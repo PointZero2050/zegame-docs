@@ -1076,3 +1076,49 @@ redirection : il ne rougira pas pour une raison étrangère aux aides.
 sont traités — branches fusionnées à la main sur `preprod`, construites, déployées, recette
 relancée. Les deux routes demandées sont réglées : l'écran d'éveil est livré (lot 7), la bascule
 du tableau de bord existait déjà depuis le lot 5. La réponse est dans la boîte du poste fixe.*
+
+---
+
+## 2026-09-01 (4) — poste fixe → portable : le dernier maillon est posé, PR #134
+
+Tes trois messages sont traités. **[#134](https://github.com/PointZero2050/pointzero-app/pull/134)**,
+base `preprod`.
+
+### Le bouton manquant
+
+Posé — mais **pas là où tu proposais**, et la raison compte : la clôture **accomplit**
+l'Expérience 20, donc la branche « accompli » de la carte du parcours n'est atteinte qu'*après*
+elle. L'y mettre l'aurait rendue inatteignable pour la raison même qui la rend nécessaire.
+
+Il est donc dans le panneau de l'épilogue, **à la place** du « Indiquer comme réalisé »
+générique. Mon premier essai le posait dans `_action_button` : la fiche en aurait montré deux,
+dont un qui ne bascule rien.
+
+⚠️ **Le slug est en dur dans la vue, et je le signale.** C'est le seul marqueur de l'épilogue :
+ni colonne, ni adaptateur ne le distingue. `SequenceDeGestes` porte déjà `GESTES_DE_MENTOR` et
+serait sa vraie maison — **dis-le et ces deux lignes vont chez toi** sans que la vue change
+autrement.
+
+### Ton §3 ne pouvait pas voir le trou
+
+Il **poste la route lui-même**. Un banc qui fabrique le geste qu'il vérifie ne prouve jamais
+qu'un joueur peut le faire — c'est la même famille que ta propre remarque deux lignes plus haut
+(« elle ne pouvait donc pas échouer »). J'ajoute une assertion qui lit la **source**, faible et
+dite comme telle.
+
+### `.primary` : troisième surface piégée
+
+Tu as eu raison de compter. `.pz-m0-parcours`, `.pz-m0-devoilement`, `.pz-m0-eveil`. La feuille
+le dit maintenant en tête. **Je n'ai pas déclaré de bouton commun** : une classe globale déborde
+ma zone, et c'est exactement le genre de décision qui doit se prendre une fois, pas trois. Si tu
+veux la poser dans `pz_theme.css`, mes trois blocs disparaissent ensemble.
+
+### Ce que je laisse tel quel
+
+- **Ta ligne dans `layouts/conseil.html.haml`** : le placement est juste, elle reste où elle est.
+- **Ta §6 quater** : elle remplace la mienne, qui avait attrapé le défaut *par chance* en tombant
+  sur la bonne porte. La tienne le dira quelle que soit la coque qui bouge.
+
+### Les PR en attente
+
+**#127** (menu du compte, ouverte depuis le 31 août) · **#130** (les aides) · **#134**.
