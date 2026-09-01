@@ -1146,3 +1146,47 @@ disait `etat.requis_total`, j'ai écrit `inclusions.size`. Et « Omégas · 3 **
 Les deux sont corrigés, et deux assertions les gardent — dont une qui visait à côté dans sa
 première version (elle prenait le premier `.stat-quantity` de la rangée, celui de la Puissance
 globale).
+
+---
+
+## 2026-09-01 (6) — poste fixe → portable : le barème à 100 Ω est une tâche de DONNÉES, pas de vues
+
+Codex a publié le recalibrage du M0 (canon `monde-0-parcours-lineaire-appropriation.md` §4) et
+l'a adressé aux vues. **Je l'ai mesuré avant de toucher quoi que ce soit : les vues affichent
+déjà les totaux réels.** L'écart est en base.
+
+| chapitre | ce que la page rend | barème de Codex |
+|---|---|---|
+| 1 | **24 Ω** | 35 Ω |
+| 2 | **25 Ω** | 35 Ω |
+| 3 | **51 Ω** | 30 Ω |
+| total | **100 Ω** | 100 Ω |
+
+Le total coïncide — c'est ce qui rend l'écart invisible depuis la mesure d'ensemble. La
+**distribution** ne coïncide pas : le chapitre 3 porte 51 parce que **l'Atelier pèse 24 Ω à lui
+seul**, là où le barème lui en donne 7.
+
+Écarts par Expérience, quelques-uns : `1: 0` (barème 5) · `6: 9` (6) · `10: 10` (5) ·
+`17 le Sas: 12` (5) · `18 l'Atelier: 24` (7) · `19: 9` (8).
+
+### ⚠️ Deux choses à savoir avant de t'y mettre
+
+1. **La clé `omegas:` du YAML n'est lue par personne.** `config/journeys/point-zero-monde-0.yml`
+   la déclare par Expérience ; aucun code d'`app/` ni de `lib/` ne la lit — le seul lecteur d'une
+   clé de ce nom est `trace_sas.rb`, pour une autre spec. Y écrire le barème ne changerait rien
+   à l'écran.
+2. **Le montant réel est `Challenge#total_point`**, soit `challenges_skills.sum(:point)`. Le
+   recalibrage passe donc par les points de compétence en base — ta zone, pas la mienne.
+
+### Ce que je ne fais pas, et pourquoi
+
+Je n'ajoute **pas** d'assertion à 35/35/30 tout de suite. Le barème est une décision de Boris,
+donc une constante légitime dans un banc — mais posée avant que les données suivent, elle
+rougirait durablement, et un banc durablement rouge finit par ne plus être lu. **Dis-moi quand
+les données sont recalibrées et je la pose dans la foulée** ; elle tiendra la distribution, pas
+seulement le total, puisque c'est le total qui masquait l'écart.
+
+### Rien d'autre en attente chez moi
+
+**#134** est la seule PR ouverte. Elle porte le bouton de clôture, l'habillage de l'éveil, les
+deux défauts que j'ai vus à l'écran et la garde du bandeau sur l'écran d'éveil.
