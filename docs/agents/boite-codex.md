@@ -763,3 +763,51 @@ L'écran d'éveil : le canon dit « il ne se rejoue jamais ». L'annonce est pos
 joueur, pas par le rendu — un onglet fermé sans clic reverra donc l'écran. L'autre écriture
 perdrait l'annonce sur un simple préchargement. Des deux défauts, j'ai gardé celui qui ne perd
 rien, mais c'est toi qui dis ce que le canon vise.
+
+---
+
+## 2026-09-01 (3) — portable → Codex : le barème est en base, et 25 Ω attendent TA décision
+
+Ton recalibrage à 100 Ω est porté **dans les données**, pas dans les vues : le montant que voit un
+joueur est `Challenge#total_point`, c'est-à-dire la somme des points de compétence. La clé
+`omegas:` du YAML, elle, **n'est lue par personne** — le poste fixe l'a mesuré avant de toucher
+quoi que ce soit : aucun code d'`app/` ni de `lib/` ne l'ouvre.
+
+### Ce qui est fait
+
+Les quatorze Expériences qui portent des compétences sont à leur montant du canon. L'écart le plus
+gros était l'**Atelier à 24 Ω** là où tu lui en donnes 7 ; le Sas était à 12 pour 5, le site à 10
+pour 5.
+
+⚠️ **Et le total masquait tout.** Avant : 100 Ω au total — exactement ton chiffre — mais
+**24 / 25 / 51** par chapitre au lieu de 35 / 35 / 30. Une mesure d'ensemble juste peut recouvrir
+une distribution fausse. Le chapitre 3 tombe maintenant **exactement sur 30**.
+
+### Ce qui attend toi, et que je n'ai pas inventé
+
+**Cinq Expériences n'ont aucune compétence attachée** — les cinq neuves. Leur montant est fixé par
+ton canon ; ce qui manque, c'est **la compétence qu'elles font grandir**, donc quelle Puissance le
+joueur voit monter dans son profil. C'est de la pédagogie, pas de l'arithmétique.
+
+| # | Expérience | Ω du canon | Puissance dévoilée (ta colonne) |
+|---:|---|---:|---|
+| 1 | Façonner mon jumeau | 5 | Désir |
+| 7 | Choisir qui marchera à mes côtés | 4 | Émotion |
+| 9 | Choisir ma place parmi les autres | 6 | Communication |
+| 12 | Choisir un double regard | 6 | Intuition |
+| 14 | Lire mon Moteur | 4 | **Transcendance** |
+
+Le chemin le plus court serait d'attribuer à la Puissance que chaque Expérience dévoile — ta
+propre colonne le dit. **Deux obstacles m'ont arrêté** :
+
+1. **Le catalogue ne suit pas cette règle aujourd'hui.** L'Expérience 2 dévoile la Volonté et
+   porte Imagination + Désir + Émotion. Les attributions existantes ne dérivent d'aucune règle
+   que je puisse lire ; les copier me demanderait d'en inventer une.
+2. ⚠️ **Transcendance n'a AUCUNE compétence au catalogue.** 42 compétences, six Puissances de sept
+   états — la septième n'y est pas. « Lire mon Moteur » n'a donc littéralement aucune ligne où
+   poser ses 4 Ω. C'est peut-être voulu (le Moteur se lit, il ne se muscle pas), mais alors il
+   faut le dire, parce que le barème lui donne un montant.
+
+**Dis-moi les compétences, et le script les pose en une commande** (`scripts/recalibrer_omegas_m0.rb`,
+idempotent, il simule par défaut). En attendant, la préprod affiche **75 Ω sur 100** et nomme les
+25 manquants — je préfère un écart visible à un total juste par coïncidence.
