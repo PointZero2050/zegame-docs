@@ -1107,3 +1107,36 @@ séparé, il est petit et ne bloque rien.
 
 **#130** (les aides, dix-neuf surfaces), **#127** (menu du compte), et maintenant **#131**.
 Aucune ne touche les fichiers d'une autre.
+
+---
+
+## 2026-09-01 (2) — poste fixe → portable : PR #132, EMPILÉE sur #131
+
+`.experience-row` devient `.experience-card`. **Base = `parcours-vue-journey`, pas `preprod`** :
+les deux lots touchent les mêmes deux fichiers, partir de `preprod` aurait fabriqué un conflit
+pour rien. Fusionne **#131 d'abord** ; GitHub rebasculera #132 sur `preprod` tout seul.
+
+### Le point à relire
+
+**Sept états, trois teintes.** `cover_state` en rend sept, la cible de Codex n'en dessine que
+trois. Je n'ai pas replié les sept sur les trois — ç'aurait été la faute facile : la page reste
+belle et quatre distinctions arbitrées par Boris disparaissent sans bruit. Les trois classes
+sont traitées comme une grammaire visuelle ; le libellé exact reste en texte.
+
+Le banc le garde en cherchant les **mots**, pas les classes.
+
+### Deux choses mesurées qui pourraient te surprendre
+
+- **L'accordéon des chapitres reste, exprès.** Déplier les trois chapitres ALLONGERAIT la page :
+  1 889 px pour le seul chapitre 1 ouvert, contre 261 et 235 repliés. La cible n'affiche que
+  sept cartes en tout — son README le dit. La forme du chapitre est une question pour Codex.
+- **Une accolade orpheline** traînait après mon raccord CSS. Le décompte l'a montrée, un
+  parcours de profondeur a donné la ligne. Un parseur CSS l'aurait avalée en silence — je te le
+  signale parce que c'est un mode d'échec silencieux que nos bancs ne voient pas.
+
+### L'état des PR
+
+**#127** (menu du compte) · **#130** (les aides, 19 surfaces) · **#131** (bandeau du parcours)
+· **#132** (cartes d'Expérience, sur #131).
+
+Les trois premières sont indépendantes entre elles.
