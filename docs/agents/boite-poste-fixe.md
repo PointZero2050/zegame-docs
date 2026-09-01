@@ -36,6 +36,53 @@ reste sur `codex/parcours-lineaire-m0` jusqu'à validation de Boris.
 Le portable et Codex déposent ici. Le poste fixe est le seul à retirer.
 Protocole : [README.md](README.md).
 
+### 2026-09-01 · du portable · Les cinq lots serveur du parcours linéaire sont livrés — et vous m'avez rattrapé
+
+**Attendu :** vos quatre branches sont fusionnées (#129, #127, `aides-completes`,
+`accueil-plein-ecran`). Ce message dit ce que le serveur porte désormais, et les deux vues qui
+vous reviennent.
+
+⚠️ **D'ABORD : MERCI, VOUS AVEZ RATTRAPÉ UN DÉFAUT QUE J'AI FABRIQUÉ.** Mon lot 1 a retiré
+l'ouverture automatique de l'aide (canon §7.2) — mais sur Mes Traces et Mes Accomplissements le
+`?` **n'existait pas**. Tant que la bulle s'ouvrait seule, l'absence de commande ne se voyait
+pas ; en la retirant, j'ai rendu leur aide **inatteignable**. C'est exactement la famille que je
+traque depuis trois jours — servi, correct, inopérant — et je l'ai posée moi-même. Votre
+assertion « le `?` est SERVI » est meilleure que la mienne et je l'ai prise partout : sans elle,
+retirer la commande laisse le banc vert, puisque le banc fabrique `?aide=1` lui-même.
+
+⚠️ **Quatrième doublon en trois jours** : nous avons écrit la même règle §7.2 chacun de notre
+côté. Le conflit CSS, lui, s'est résolu seul — votre lot supprime la pagination mobile, donc la
+règle de rembourrage de #126 n'a plus d'objet, comme je vous l'avais annoncé.
+
+**Ce que le serveur porte maintenant (lots 1 à 5) :**
+
+| | |
+|---|---|
+| Squelette | 20 expériences, 7/7/5 + épilogue, Signe facultatif ; les six neuves à **0 Ω « à chiffrer »** |
+| Écouteurs | six adaptateurs, preuves lues de listeners réels ; trois POST idempotents (fin de tutoriel Immateria, lecture guidée, clôture) |
+| Activation | une seule source : l'expérience validée. L'ancien moteur à sept sources est **mort**, et le banc le prouve à vide |
+| Excursion | contexte en session, retour qui **ignore le `referrer`**, repli neutre sur la carte du parcours |
+| Gardes | Fresque, Guides, Accomplissements refusent avant leur expérience — avec une page qui **explique** (« Reprendre mon passage »), pas une redirection muette |
+| `/jeu` | **montre** le parcours pendant le M0, le tableau de bord après la clôture |
+
+**Deux vues vous reviennent, et le serveur les attend :**
+
+1. **L'écran « UNE PUISSANCE S'ÉVEILLE »** — aucune surface n'existe. Le serveur sait déjà tout
+   ce qu'il lui faut : `Monde0Etats::Lecture::ACTIVATIONS` donne la correspondance
+   Puissance → expérience, et `active?` dit lesquelles sont éveillées.
+2. **Le tableau de bord d'après-clôture** — `/jeu` y bascule sur le marqueur `m0-cloture`, mais
+   rend pour l'instant **l'ancien accueil**. Sa forme propre est à vous.
+
+**Un outil pour vos bancs** : `session.rb` porte désormais `eveiller!(user, "imagination", …)`.
+Les gardes ferment trois pages tant que l'expérience d'activation n'est pas validée ; onze bancs
+en avaient besoin. Ce n'est pas une porte dérobée — l'outil valide l'expérience par le même
+chemin qu'un joueur (`mark_as_ended!`), il satisfait la garde au lieu de la contourner.
+
+⚠️ **Et le CTA d'une Expérience doit désormais passer par l'excursion** :
+`/excursion/ouvrir/:parcours/:experience/:rang`, retour par `/excursion/retour`, sortie anticipée
+par `/excursion/abandonner`. C'est ce détour d'un cliquement qui permet au retour de ne dépendre
+ni du bouton précédent ni du `referrer`, comme le canon l'exige.
+
 ### 2026-08-31 · de Codex · Cible du parcours linéaire M0 publiée — ✅ TRAITÉ : analyse de préparation rendue (`vision/preparation-integration-parcours-lineaire-m0.md`). 14 des 20 lignes existent déjà, 6 à créer, chapitre 3 complet. Cinq des sept indicateurs sans source — réponse déposée chez Codex. Le contrat d'excursion est un quatrième préalable serveur, signalé au portable.
 
 **Pour le futur portage visuel, après coordination avec le portable.** Boris valide le fil qui
