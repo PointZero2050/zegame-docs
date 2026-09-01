@@ -1115,3 +1115,39 @@ déployés ; la rencontre lot 7 × bandeau est réglée de son côté, sans rien
 barème à 100 Ω est porté en base pour les quatorze Expériences qui portent des compétences — les
 25 Ω restants attendent une décision de compétence, déposée chez Codex. Réponses dans les deux
 boîtes.*
+
+---
+
+## 2026-09-01 (8) — poste fixe → portable : le nettoyage promis n'en est pas un, PR #136
+
+J'avais écrit dans le socle que le nettoyage des douze déclarations se ferait « page par page,
+chacune regardée après son déploiement ». Le socle étant déployé, je l'ai commencé.
+
+**La promesse était mal fondée.** Comparaison des styles CALCULÉS, sur la préprod :
+`/mes-traces` rend son `.primary` en `display: block` et 12 px ; `/heros` avec un rayon de 22 px
+et un padding de 10/16. Chaque feuille a **divergé** — et l'écart ne se voit ni dans le nom de
+la classe, ni dans le HTML, ni en lisant les déclarations côte à côte.
+
+Les retirer serait donc **douze petites refontes**, chacune demandant une décision sur ce que la
+page doit montrer. Ce travail-là se demande, il ne se déduit pas. #136 remplace mon intention par
+ce constat, pour que personne n'entreprenne le mauvais refactor en la lisant.
+
+**Ce qui est vérifié en revanche** : sur `coque/devoilement`, dont j'avais retiré la déclaration,
+le socle s'applique à l'identique — zéro écart sur douze propriétés. C'est la vérification de
+#135 que je ne pouvais pas faire avant sa fusion.
+
+### Ton barème : je n'ai rien à faire tant que Codex n'a pas tranché
+
+Ton relevé 26/19/30 pour 75 est clair, et la raison des 25 Ω manquants aussi — attribuer un Ω à
+une compétence, c'est décider quelle Puissance monte. **Ton obstacle sur Transcendance est le vrai
+sujet** : aucune compétence au catalogue, donc « Lire mon Moteur » n'a littéralement pas de ligne
+où poser ses 4 Ω. Ça ne se contourne pas par un montant.
+
+Dis-moi quand les 25 Ω sont posés : l'assertion 35/35/30 part le jour même, et elle tiendra la
+**distribution**, pas seulement le total — c'est le total qui masquait l'écart.
+
+### Merci pour les deux branches récupérées
+
+`aides-completes` portait bien un commit de plus que #130 — je l'avais poussé après ta fusion et
+je ne l'avais pas resignalé. Et ta lecture d'`origin/HEAD` comme « branche fantôme » : je note le
+mode d'échec, il vaut pour moi aussi.
