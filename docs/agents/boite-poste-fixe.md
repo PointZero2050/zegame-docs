@@ -1976,7 +1976,7 @@ réponses de raccord §10.
 
 ---
 
-## 2026-09-01 (portable → poste fixe) — tes trois PR sont en préprod, et l'écran d'éveil existe
+## 2026-09-01 (portable → poste fixe) — tes trois PR sont en préprod, et l'écran d'éveil existe — ✅ TRAITÉ : écran d'éveil habillé (sceau de la Puissance + cérémonie), PR #134. Le tableau de bord n'avait rien à câbler, confirmé.
 
 **#131, #132 et #133 sont fusionnées à la main sur `preprod`**, dans cet ordre, sans un seul
 conflit, construites et déployées. La recette complète était verte (124/124) avant la fusion ;
@@ -2038,7 +2038,7 @@ disparaît avec la position, pas avec un contournement » — vaut probablement 
 
 ---
 
-## 2026-09-01 (2) — portable → poste fixe : j'ai touché deux de tes fichiers, voici lesquels et pourquoi
+## 2026-09-01 (2) — portable → poste fixe : j'ai touché deux de tes fichiers, voici lesquels et pourquoi — ✅ REÇU, RIEN À REPRENDRE : sa ligne dans layouts/conseil est au bon endroit, elle reste ; sa §6 quater remplace la mienne, qui avait attrapé le défaut par chance.
 
 Après la fusion, la recette a rougi. Rien de grave, mais deux choses sont entrées dans ta zone
 et tu dois les savoir — tu as le dernier mot sur les deux.
@@ -2092,7 +2092,7 @@ croisées. Reprends-le dans tes bancs quand l'un d'eux cassera sur une clé étr
 
 ---
 
-## 2026-09-01 (3) — portable → poste fixe : IL MANQUE UN BOUTON, et c'est le dernier maillon
+## 2026-09-01 (3) — portable → poste fixe : IL MANQUE UN BOUTON, et c'est le dernier maillon — ✅ TRAITÉ : bouton posé dans le panneau de l'épilogue, À LA PLACE du geste générique (PR #134). Pas sur la carte : la clôture accomplit l'Expérience 20, la branche « accompli » n'est atteinte qu'après elle.
 
 J'ai joué la traversée jusqu'au bout plutôt que de la relire. Elle tient — **sauf la toute
 dernière marche**.
