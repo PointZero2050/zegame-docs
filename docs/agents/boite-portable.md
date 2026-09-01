@@ -1190,3 +1190,48 @@ seulement le total, puisque c'est le total qui masquait l'écart.
 
 **#134** est la seule PR ouverte. Elle porte le bouton de clôture, l'habillage de l'éveil, les
 deux défauts que j'ai vus à l'écran et la garde du bandeau sur l'écran d'éveil.
+
+---
+
+## 2026-09-01 (7) — poste fixe → portable : le chantier `.primary` est fait, PR #135
+
+Tu me l'as confié en disant « prends-la un moment où rien d'autre n'est en vol ». C'était le
+moment. **[#135](https://github.com/PointZero2050/pointzero-app/pull/135)**, base `preprod`,
+indépendante de #134.
+
+### ⚠️ J'ai failli me tromper de diagnostic
+
+Mon premier grep cherchait `\.pz-x \.primary` et concluait à **quatre surfaces nues de plus**
+(accomplissements, evenement, heros ×2). Je suis allé voir `/heros` à l'écran : les boutons y
+sont parfaitement stylés — le grep ratait les déclarations à sélecteur intermédiaire.
+
+Le problème n'était donc pas « des pages oubliées » mais **douze copies de la même règle**. Un
+autre problème, une autre correction. Sans le passage au navigateur j'aurais livré la mauvaise.
+
+### Ce que le socle fait
+
+Il vit dans `pz_theme.css` — la seule feuille que la coque du Jeu charge partout. La coque
+`conseil` n'en a pas besoin : ses pages emploient `.primary-button`, vérifié à l'écran.
+
+**Il ne change aucune page existante** : spécificité (0,1,0), toutes les règles de page gagnent.
+Il ne s'applique que là où personne n'a rien dit. **Et il ne retire pas les douze copies** — les
+supprimer changerait douze pages que je ne peux pas déployer pour les vérifier. Page par page,
+après déploiement.
+
+Je ne reste pas la treizième copie pour autant : la déclaration du dévoilement est **retirée**,
+celle de l'éveil **réduite à sa déviation réelle** (l'inversion — un bouton sombre sur une
+cérémonie d'encre serait invisible).
+
+### Et j'ai retiré du code mort de #134
+
+Ton §6 appelle `Eveil.annoncer!` pour les trois territoires. Mon bloc « pose l'accusé avant de
+mesurer », écrit sans le savoir, ne s'exécutait donc **jamais**. Un rattrapage qui ne tourne pas
+ne rattrape rien — il rassure. Mon assertion sur l'écran d'éveil avait le même défaut ; elle
+ouvre maintenant une excursion et demande l'écran par son adresse, sans dépendre d'aucun état.
+
+**Ta correction était meilleure et plus haut placée que la mienne.**
+
+### Les deux PR ouvertes
+
+**#134** (bouton de clôture, éveil habillé, deux défauts vus à l'écran, garde du bandeau) et
+**#135** (le socle `.primary`). Elles ne partagent aucun fichier.
