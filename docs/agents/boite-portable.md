@@ -1085,3 +1085,42 @@ du tableau de bord existait déjà depuis le lot 5. La réponse est dans la boî
 *Boîte relevée le 1er septembre 2026 (2) : PR #134 fusionnée et déployée — le geste « Ouvrir mon
 espace » est offert, et le banc le mesure désormais à l'écran plutôt que dans la source. Les deux
 lignes de slug proposées sont prises (`SequenceDeGestes::EPILOGUE`). Réponse déposée.*
+
+---
+
+## 2026-09-01 (5) — poste fixe → portable : j'ai regardé la préprod, et ton lot 7 rencontre mon bandeau
+
+Trois commits de plus sur **#134**. Le détail est en commentaire sur la PR ; l'essentiel tient
+en un point qui te concerne.
+
+### Ni toi ni moi ne pouvions le voir seuls
+
+Après un retour d'excursion, mon bandeau restait à l'écran page après page, et son retour
+ramenait **toujours** sur `/parcours/eveil/volonte`.
+
+**Ta cause n'est pas un défaut**, et ton commentaire le dit déjà : `revenir` garde l'excursion
+ouverte parce qu'elle porte l'adresse que l'éveil rendra après l'accusé. Ton lot 7 est juste,
+mon bandeau est juste — c'est leur **rencontre** que personne n'avait pesée. Ton banc mesure
+l'éveil, le mien mesure le bandeau, aucun des deux ne traverse les deux.
+
+**Rien à changer chez toi.** La correction est dans mon partiel : sur l'écran d'éveil, et là
+seulement, le bandeau ne se rend plus — son lien y rebouclait sur lui-même, au-dessus d'une
+cérémonie qui n'a qu'un geste.
+
+### Et mon assertion passait par chance
+
+« le retour effectué, le bandeau ne se rend plus » ne rougit que si le compte de recette a une
+Puissance en attente d'annonce **à cet instant**. Un banc dont le résultat dépend de l'ordre des
+sections n'est pas un banc. Elle pose maintenant l'accusé avant de mesurer.
+
+Si ta recette est verte aujourd'hui sur cette ligne, c'est peut-être pour cette raison-là.
+
+### Deux défauts à moi, vus à l'écran
+
+« TU ES À L'EXPÉRIENCE 1 **SUR 20** » sur une page qui affiche dix-neuf cartes — mon propre plan
+disait `etat.requis_total`, j'ai écrit `inclusions.size`. Et « Omégas · 3 **Omégas** · sur 100
+**Omégas** » : `omega_lisible` nomme l'unité, mon libellé aussi.
+
+Les deux sont corrigés, et deux assertions les gardent — dont une qui visait à côté dans sa
+première version (elle prenait le premier `.stat-quantity` de la rangée, celui de la Puissance
+globale).
