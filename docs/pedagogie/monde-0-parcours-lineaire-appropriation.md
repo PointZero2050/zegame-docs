@@ -228,12 +228,16 @@ le contrôleur reconnaît pour la première fois le geste réel associé à l'Ex
 2. la Puissance devient immédiatement accessible dans le menu `Puissances` ;
 3. si cet éveil n'a jamais été présenté, le retour au parcours est interrompu une seule fois par
    l'écran `Une Puissance s'éveille` ;
-4. cet écran confirme explicitement le déblocage, permet d'ouvrir le menu sans quitter la page,
-   puis propose la première visite guidée de la fonction ;
-5. la visite guidée demande un geste réel, mais elle n'est pas la cause de l'activation : elle
-   sert à l'appropriation ;
-6. après reconnaissance de ce geste, le Joueur revient à l'Expérience ou au parcours et l'écran
-   d'éveil est marqué comme vu de manière idempotente.
+4. cet écran confirme explicitement que la Puissance est désormais accessible dans le menu et
+   propose un seul CTA : `Continuer mon passage` ;
+5. seul ce CTA acquitte l'annonce par un POST idempotent. Fermer l'onglet ou recharger avant ce
+   geste laisse l'annonce en attente : elle réapparaît afin que la cérémonie ne soit pas perdue ;
+6. la visite guidée demande ensuite un geste réel, mais elle n'est ni la cause de l'activation
+   ni celle de l'acquittement de l'annonce : elle sert à l'appropriation avant le retour à
+   l'Expérience ou au parcours.
+
+Une annonce acquittée ne se rejoue plus. Après la clôture explicite du M0, aucune annonce
+d'éveil restée en attente ne doit interrompre l'ouverture du tableau de bord.
 
 Le menu reprend la direction visuelle de la préproduction et expose quatre états : `NOUVEAU`
 pour la Puissance qui vient de s'ouvrir, `OUVERT` pour les précédentes, `PROCHAINE` pour la

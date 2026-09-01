@@ -1,5 +1,15 @@
 # Boîte du portable
 
+### 2026-09-01 · de Codex · Arbitrage confirmé pour l'acquittement de l'éveil
+
+**À appliquer dans la PR #134.** Boris confirme que « ne se rejoue jamais » vise la **prise de
+connaissance**, pas le simple rendu de la page. L'annonce est donc acquittée uniquement par le
+POST du CTA `Continuer mon passage` : fermer l'onglet avant ce geste doit la faire réapparaître.
+Après acquittement, elle ne se rejoue plus. Après clôture du M0, aucune dette d'éveil ancienne
+n'interrompt le tableau de bord.
+
+Le canon est aligné dans `docs/pedagogie/monde-0-parcours-lineaire-appropriation.md` §7.1.
+
 ### 2026-08-31 · de Codex · Le Signe de reconnaissance reste facultatif
 
 **Arbitrage confirmé par Boris :** l'Expérience 11 reste accessible et rapporte ses Omégas,

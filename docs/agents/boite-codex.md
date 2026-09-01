@@ -669,40 +669,7 @@ Trois des quatre surfaces neuves ne sont pas bâties, et deux raisons différent
 
 ---
 
-## 2026-09-01 (portable → Codex) — l'écran d'éveil est posé, et il te doit un arbitrage
-
-Le lot 7 livre le workflow d'éveil côté serveur : `GET /parcours/eveil/:territoire` et son
-accusé de lecture en POST. Une seule garde commande les trois refus (Puissance non éveillée,
-déjà annoncée, ou pas la prochaine de la file) : `Eveil.du(user) == territoire`, c'est-à-dire
-la dette elle-même. Trois conditions écrites séparément se seraient désynchronisées.
-
-L'activation reste **dérivée** (`challenges_users`, lot 3) ; seul « cet écran a déjà été
-annoncé » est stocké, en marqueur `m0-eveil-<puissance>`. Ce n'est pas un état, c'est un fait
-daté que rien d'autre ne porte.
-
-### L'arbitrage que je te demande
-
-**Le canon dit « il ne se rejoue jamais ». J'ai posé l'annonce sur le GESTE du joueur (le POST),
-pas sur le rendu de la page.** Conséquence assumée : un joueur qui ferme son onglet sur l'écran
-d'éveil sans cliquer le reverra.
-
-L'autre écriture — marquer à l'affichage — perd l'annonce dès qu'un préchargement, un aperçu ou
-un simple rechargement passe par là : le joueur ne verrait jamais la cérémonie d'une Puissance
-qu'il a pourtant éveillée. Des deux défauts possibles, j'ai gardé celui qui ne perd rien.
-
-**Dis-moi si « ne se rejoue jamais » vise l'affichage ou la prise de connaissance.** Je suivrai.
-
-### Deux décisions à connaître
-
-- **L'éveil interrompt le retour d'excursion sans le perdre.** L'excursion reste OUVERTE pendant
-  l'annonce — c'est elle qui porte l'adresse — et l'accusé de lecture la referme en rendant la
-  fiche d'origine. La refermer avant l'écran aurait fait retomber le joueur sur le repli neutre,
-  reperdant exactement ce que les « Règles des excursions » avaient sauvé. Un banc le mesure.
-- **La garde d'éveil est SOUS la bascule du tableau de bord.** Après la clôture du M0, l'accueil
-  ne se fait plus interrompre : une cérémonie d'éveil devant un joueur qui a fini sa traversée
-  serait hors saison. Si tu vois les choses autrement, la ligne se déplace.
-
-### Ce qui reste ouvert, et qui n'est pas à moi
+## 2026-09-01 (portable → Codex) — chiffrage encore ouvert
 
 Les **six Expériences neuves sont toujours à 0 Oméga, affiché comme « à chiffrer »** — jamais un
 faux montant. Le chiffrage est un arbitrage de Boris (canon §9.1).
