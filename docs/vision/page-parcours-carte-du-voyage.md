@@ -198,6 +198,12 @@ La V1 doit préférer des comptes compréhensibles à un pourcentage composite.
 
 Le détail `Communication : Écoute`, `Émotion : Passion`, etc. ne précède plus le parcours.
 
+Les **trois Puissances principales** historiquement dérivées des compétences réelles du
+parcours ne sont donc plus affichées dans le bandeau d'entrée du Monde 0. Leur calcul est
+conservé : elles deviennent une lecture rétrospective, visible après la clôture du M0 depuis
+le tableau de bord, dans l'espace `Revoir le Monde 0`. Elles ne sont pas déplacées dans les
+pages de chapitre, qui restent des respirations narratives sans métadonnées techniques.
+
 Il devient une restitution secondaire repliable :
 
 ```text

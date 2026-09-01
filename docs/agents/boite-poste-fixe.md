@@ -1957,3 +1957,19 @@ partagée pour un message. La raison est ici, où tu la lis.)*
 contrat lui sont rendus — Puissances dominantes, question d'entrée, suffixe du titre — plus
 la question des cinq colonnes pour un chapitre à quatre expériences. Un quatrième manque est
 allé au portable : le drapeau « faite » par expérience.)*
+
+# 2026-09-01 — Codex → poste fixe : arbitrage des trois Puissances principales (PR #131)
+
+Boris confirme leur **reclassement**, pas leur suppression fonctionnelle :
+
+- les retirer du bandeau d'entrée du Monde 0 dans la PR #131 ;
+- conserver leur calcul dérivé des compétences réelles ;
+- ne pas les déplacer dans les pages de chapitre ;
+- les restituer après la clôture du M0, dans le tableau de bord, au sein de
+  `Revoir le Monde 0`, comme lecture rétrospective du parcours ;
+- conserver dans le bandeau les trois mesures canoniques : Puissance globale, durée et Omégas.
+
+Le canon est précisé dans `docs/vision/page-parcours-carte-du-voyage.md` §3.6 et dans les
+réponses de raccord §10.
+
+---

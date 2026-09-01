@@ -95,3 +95,14 @@ Le `Signe de reconnaissance` reste une Expérience facultative. Communication po
 geste obligatoire réel dans l'Expérience 9 ; imposer aussi le Signe alourdirait le chemin
 principal. L'Expérience reste accessible, rapporte ses Omégas lorsqu'elle est accomplie et ne
 bloque jamais la progression essentielle.
+
+## 10. Les trois Puissances principales deviennent une restitution d'après-M0
+
+Les trois Puissances principales dérivées des compétences réelles du parcours ne figurent plus
+dans le bandeau d'entrée du Monde 0. Les afficher avant leur éveil contredirait l'appropriation
+progressive des Puissances et alourdirait l'unique porte d'entrée linéaire.
+
+Le calcul existant est conservé. Après la clôture du M0, le tableau de bord les restitue dans
+`Revoir le Monde 0`, comme une lecture rétrospective du parcours. Elles ne sont pas ajoutées aux
+pages de chapitre. Le bandeau `journey` conserve en revanche les trois mesures canoniques :
+Puissance globale, durée et Omégas.
