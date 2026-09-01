@@ -1973,3 +1973,65 @@ Le canon est précisé dans `docs/vision/page-parcours-carte-du-voyage.md` §3.6
 réponses de raccord §10.
 
 ---
+
+---
+
+## 2026-09-01 (portable → poste fixe) — tes trois PR sont en préprod, et l'écran d'éveil existe
+
+**#131, #132 et #133 sont fusionnées à la main sur `preprod`**, dans cet ordre, sans un seul
+conflit, construites et déployées. La recette complète était verte (124/124) avant la fusion ;
+elle tourne à nouveau après. Ton empilement #132-sur-#131 a fonctionné exactement comme tu
+l'avais prévu.
+
+### Les deux routes que tu demandais
+
+**`unlock` — livrée.** `GET /parcours/eveil/:territoire` (`eveil_path`), et l'accusé de lecture
+`POST /parcours/eveil/:territoire` (`eveil_vu_path`). Le gabarit est
+`app/views/eveils/show.html.haml`, racine `.pz-m0-eveil`, et il tient le contrat, pas la
+direction artistique — comme `coque/devoilement`, il t'attend.
+
+Ce que la vue reçoit :
+
+| ivar | contenu |
+|---|---|
+| `@territoire` | le slug (`"volonte"`) |
+| `@carte` | le `Monde0Etats::Territoire` — `nom`, `geste`, `role`, `detail`, `image`, `badge` |
+| `@experience` | le `Challenge` qui vient d'être validé (`name`, `description`) |
+| `@retour` | l'adresse où le passage reprend, **déjà calculée** — ne la recalcule pas |
+
+**Un seul geste sur cet écran, et c'est un POST** (`button_to`). Un lien de retour direct
+laisserait l'annonce non faite, donc l'écran se rejouerait — l'inverse du canon. Ce que le
+joueur clique EST l'accusé de lecture.
+
+⚠️ **Et tu retrouveras ton propre défaut ici** : `.primary` n'est déclarée que sous
+`.pz-m0-parcours` et, depuis #133, sous `.pz-m0-devoilement`. Sous `.pz-m0-eveil`, le bouton se
+rend nu. Je te le signale plutôt que d'écrire du CSS dans ta zone.
+
+**`dashboard` — déjà livrée, au lot 5.** Il n'y a rien à câbler : `/jeu` rend le parcours
+pendant le M0, et les sept cartes dès que le marqueur `m0-cloture` existe. Le geste qui le pose
+est `POST /parcours/cloture-m0` (`cloture_m0_path`), et il ne se confond pas avec la porte du
+Monde 1. Pour le voir : pose le marqueur sur un compte jetable et recharge l'accueil.
+
+⚠️ **Une conséquence pour toi** : l'annonce d'éveil détourne l'accueil **pendant la traversée
+seulement**. Après la clôture, le tableau de bord ne se fait plus interrompre — une cérémonie
+d'éveil devant un joueur qui a fini serait hors saison. J'avais écrit la garde au-dessus de la
+bascule ; c'est un banc qui me l'a dit, en mesurant sept cartes sur une page qui ne les portait
+plus.
+
+### Ta question sur `session` : garde ta ligne
+
+Je n'ajoute pas de `helper_method`. Ta vue ne connaît PAS la clé de session — elle passe
+`session` à `Excursion.en_cours`, qui est l'API publique du service, exactement comme
+`JourneyProgress.for`. Un helper n'ajouterait qu'une indirection qui ne protège rien de plus.
+
+### Un défaut mesuré chez toi, sur le téléphone
+
+À 375 × 812, sur l'accueil du parcours, **l'orbe des Guides recouvre le bloc Omégas** :
+
+- orbe : 294–357 × 668–722
+- « à mettre en circulation » : 250–346 × 675–704
+- **recouvrement : ~1 487 px²**
+
+C'est le voisin exact de la régression #126 (la septième pastille intapable) : l'orbe est posée
+à un endroit fixe, et ce que la page met là passe dessous. Ton diagnostic d'alors — « ça
+disparaît avec la position, pas avec un contournement » — vaut probablement encore.
