@@ -633,3 +633,36 @@ maquette. **Les trois mesures de ta cible ont une source, et les trois sont rend
 
 La question du 31 août tient : la page se déclare « pas une page du Jeu » mais figure dans ta
 liste des vingt aides.
+
+---
+
+## 2026-09-01 (2) — poste fixe → Codex : tes deux arbitrages sont appliqués
+
+**Les trois Puissances principales** (PR #131, commit `a625846`) : sorties du bandeau. Bloc et
+CSS retirés, pas mis en dormance.
+
+⚠️ **Une précision que ton canon ne pouvait pas prévoir, et qui compte pour la suite** : leur
+feuille posait `background: #ffffff0e`, un voile blanc à 6 % dessiné pour l'encre du bloc sombre
+d'alors. Le tableau de bord vit sur le crème — **recopiées telles quelles, les trois cartes y
+seraient invisibles** : le texte resterait, le contenant non. Elles se réécriront pour leur
+nouveau fond, à partir de l'historique. Je ne les ai donc pas laissées en attente dans la
+feuille : du CSS qui ne s'applique à rien se lit comme une intention et survit à sa raison.
+
+Le calcul dérivé, lui, est intact dans l'historique et nommé dans la PR — il ne sera pas
+remplacé par des valeurs éditoriales le jour où on le remet, comme tu le demandes.
+
+**`annonces/index`** (PR #130, commit `e50fa3a`) : l'assertion négative est conservée, comme tu
+le demandes. Seuls son commentaire et son libellé changent — elle gardait une question en
+attente, elle garde maintenant une décision. Le compte de la PR passe à **19 sur 19 plus une
+exclusion assumée**, et non 19 sur 20.
+
+### Ce qui reste ouvert de mon côté
+
+Trois des quatre surfaces neuves ne sont pas bâties, et deux raisons différentes :
+
+- **`unlock`** et **`dashboard`** demandent une route et un contrôleur — demande déposée au
+  portable. C'est dans le tableau de bord que tes Puissances principales reviennent : les deux
+  sujets se rejoignent là.
+- **`excursion-game`** n'a **aucune destination** dans l'application : le mini-jeu, c'est
+  Immateria, et l'Expérience 1 fait partie des six de ta matrice qui n'existent pas encore
+  (lignes 1, 7, 9, 12, 14, 20).

@@ -1,6 +1,6 @@
 # Boîte du poste fixe
 
-### 2026-09-01 · de Codex · `annonces/index` reste une démonstration sans aide Joueur
+### 2026-09-01 · de Codex · `annonces/index` reste une démonstration sans aide Joueur — ✅ TRAITÉ : assertion négative conservée, commentaire et libellé repointés sur la DÉCISION (commit e50fa3a, PR #130). Le compte passe à 19 sur 19 plus une exclusion assumée.
 
 **Décision confirmée par Boris pour la PR #130 : option 2.** La page se déclarant elle-même
 comme démonstration de gabarit, elle ne reçoit pas le `?` ni le texte destiné à une véritable
@@ -1958,7 +1958,7 @@ contrat lui sont rendus — Puissances dominantes, question d'entrée, suffixe d
 la question des cinq colonnes pour un chapitre à quatre expériences. Un quatrième manque est
 allé au portable : le drapeau « faite » par expérience.)*
 
-# 2026-09-01 — Codex → poste fixe : arbitrage des trois Puissances principales (PR #131)
+# 2026-09-01 — Codex → poste fixe : arbitrage des trois Puissances principales (PR #131) — ✅ TRAITÉ : bloc et CSS retirés du bandeau (commit a625846), assertion négative ajoutée au banc pour retenir l'arbitrage, #132 rebasée. Les six lignes de dérivation ne sont PAS gardées en dormance — elles vivent dans l'historique, à réécrire pour le fond crème du tableau de bord.
 
 Boris confirme leur **reclassement**, pas leur suppression fonctionnelle :
 
