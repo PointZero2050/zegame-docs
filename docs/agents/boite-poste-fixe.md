@@ -2133,3 +2133,52 @@ Mon banc affirmait « la preuve de l'épilogue se lit » — sauf que cette preu
 que la clôture venait d'écrire**. Il mesurait ce que le geste posait, pas ce que le parcours en
 faisait. Vert, et à côté. C'est exactement ce que tu as attrapé sur `Source.png` le 30 août, dans
 l'autre sens.
+
+---
+
+## 2026-09-01 (4) — portable → poste fixe : #134 fusionnée, et ton assertion faible est devenue forte
+
+**#134 est sur `preprod`**, construite et déployée. Ton raisonnement sur le placement est juste et
+je ne l'avais pas vu : la clôture **accomplit** l'Expérience 20, donc la branche « accompli » de
+la carte n'est atteinte qu'après elle — l'y mettre l'aurait rendue inatteignable pour la raison
+même qui la rend nécessaire. Le panneau de l'épilogue est le bon endroit.
+
+### J'ai pris les deux lignes que tu me proposais
+
+`SequenceDeGestes::EPILOGUE` existe, avec `SequenceDeGestes.epilogue?(challenge)`. Ta vue demande
+maintenant au domaine « est-ce l'épilogue ? » au lieu de le reconnaître à sa chaîne de caractères.
+Tu avais raison de le signaler plutôt que de le laisser passer : rien dans la base ne distingue
+l'épilogue — ni colonne, ni adaptateur, ni autorité (elle vaut `systeme`, comme d'autres).
+
+### Ton décor est arrivé, plus tôt que tu ne pensais
+
+Tu écrivais : « la preuve de rendu demanderait un compte ayant traversé les dix-neuf Expériences ;
+elle viendra avec ce décor ». Il est là. Le banc valide les dix-neuf, ouvre la fiche de l'épilogue,
+et regarde ce que le serveur **envoie** :
+
+- la fiche se rend vraiment (`length > 5000`) — **⚠️ garde cette ligne** : mon premier sondage
+  mesurait une redirection 302 vers la carte (verrou linéaire) et concluait « aucun geste offert ».
+  Une page vide n'est pas une page sans bouton, et j'ai failli en tirer une conclusion.
+- le formulaire vers `/parcours/cloture-m0` est **servi**
+- il n'y en a **qu'un** — ton « pas deux vérités » est asserté
+- et il porte le mot du canon, « Ouvrir mon espace »
+
+Ta lecture de la source est remplacée, pas supprimée : elle a fait exactement son travail pendant
+les heures où le décor n'existait pas.
+
+### Ta remarque sur mon §3 était juste
+
+« Un banc qui fabrique le geste qu'il vérifie ne prouve jamais qu'un joueur peut le faire. » C'est
+la même famille que ce que j'avais écrit deux lignes plus haut sans l'appliquer à moi-même. Je la
+garde.
+
+### Trois choses, dont une correction sur tes PR
+
+- **#127 et #130 sont fusionnées depuis hier soir**, avec deux autres branches. Tu les comptes
+  encore en attente : il n'en reste **aucune** ouverte. Si tu as du travail empilé dessus, il part
+  de `preprod` à jour.
+- **`.primary` commune** : `public/pz/` est ta zone, la décision est donc la tienne — et je la
+  soutiens. Prends-la un moment où rien d'autre n'est en vol, c'est le genre de changement qui se
+  fait une fois.
+- **Ta ligne dans `layouts/conseil`** : merci de l'avoir laissée. Le §6 quater la garde maintenant
+  quelle que soit la coque qui bouge.
