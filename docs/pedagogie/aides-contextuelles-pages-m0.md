@@ -16,9 +16,10 @@
 - Une aide de gabarit suffit aux fiches et aux fils d'une même famille. Elle n'est pas répétée à
   chaque objet.
 
-Les vingt gabarits ci-dessous correspondent aux vingt surfaces et variantes explicitement
-listées dans la demande du poste fixe. Les autres pages déjà dotées d'une aide conservent leur
-contenu spécialisé.
+Les dix-neuf gabarits ci-dessous correspondent aux surfaces durables du Jeu explicitement
+listées dans la demande du poste fixe. `annonces/index` est écartée : elle se déclare comme une
+démonstration de gabarit, pas comme une page destinée aux Joueurs. Les autres pages déjà dotées
+d'une aide conservent leur contenu spécialisé.
 
 ## 2. Accueil et orientation
 
@@ -37,7 +38,6 @@ contenu spécialisé.
 | `espaces/show` | **Cet Espace relie un collectif** | Un Espace rassemble ses membres, ses fils et ses rendez-vous autour d'un contexte commun. Ce que tu y publies reste visible selon les règles de cet Espace. | `Explorer l'Espace` |
 | `cercles/index` | **Les Cercles donnent une forme à l'action commune** | Retrouve les Cercles auxquels tu participes et ceux que tu peux rejoindre. Chacun réunit des personnes autour d'une intention et d'un cadre explicites. | `Voir les Cercles` |
 | `cercles/show` | **Ce Cercle avance autour d'une intention partagée** | Découvre son cap, ses membres et ses gestes en cours avant de choisir comment y prendre part. | `Découvrir le Cercle` |
-| `annonces/index` | **Les annonces rendent l'information commune visible** | Retrouve ici les informations importantes publiées pour ton Espace ou ton Cercle, sans les confondre avec une conversation ou une décision. | `Lire les annonces` |
 | `actions_de_fil/index` | **Les actions prolongent la conversation** | Sondages, rencontres et ressources donnent une suite concrète au fil. Ouvre une action pour voir sa condition, son état et ce qui t'est proposé. | `Voir les actions` |
 
 ## 4. Ressources et recherche
@@ -62,9 +62,9 @@ contenu spécialisé.
 
 ## 6. Surfaces volontairement sans aide
 
-Le `?` n'est pas ajouté à la page d'aide elle-même, aux mentions et CGU, aux interstitiels ni
-aux formulaires qui constituent déjà un geste guidé. Une page vide de contenu éditorial ne reçoit
-jamais un `?` ouvrant une bulle vide.
+Le `?` n'est pas ajouté à la page d'aide elle-même, aux mentions et CGU, aux interstitiels, aux
+démonstrations de gabarit comme `annonces/index`, ni aux formulaires qui constituent déjà un
+geste guidé. Une page vide de contenu éditorial ne reçoit jamais un `?` ouvrant une bulle vide.
 
 Les aides propres à Immateria, la Fresque, Mes Traces, les Héros et mentors, les Guides, les
 Clés et les Accomplissements restent leurs canons spécialisés. Elles doivent suivre le même

@@ -1,5 +1,12 @@
 # Boîte du poste fixe
 
+### 2026-09-01 · de Codex · `annonces/index` reste une démonstration sans aide Joueur
+
+**Décision confirmée par Boris pour la PR #130 : option 2.** La page se déclarant elle-même
+comme démonstration de gabarit, elle ne reçoit pas le `?` ni le texte destiné à une véritable
+page Annonces. Le canon passe à dix-neuf surfaces. Conserver l'assertion négative ; une future
+page Annonces réelle pourra reprendre le texte dans son propre contexte.
+
 ### 2026-08-31 · de Codex · Le Signe de reconnaissance reste facultatif
 
 **Arbitrage confirmé par Boris :** afficher l'Expérience 11 dans le chemin de fer comme
@@ -14,7 +21,7 @@ https://github.com/PointZero2050/zegame-docs/blob/main/docs/pedagogie/aides-cont
 et
 https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reponses-raccord-parcours-lineaire-m0-2026-08-31.md
 
-Le lot couvre les vingt surfaces ou variantes explicitement listées dans ta demande. Le CTA ferme l'aide et rend
+Le lot couvre les dix-neuf surfaces durables retenues après exclusion d'`annonces/index`. Le CTA ferme l'aide et rend
 la main à la page : il ne valide rien. J'ai aussi tranché les indicateurs sans source (liens et
 états textuels, jamais de faux compteur), le maintien des pages de Puissance après éveil, la
 forme des chapitres et le sous-titre `Joindre un fichier ou partager un lien dans le fil`.
