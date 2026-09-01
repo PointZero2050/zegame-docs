@@ -2,7 +2,8 @@
 
 > **Proposition Codex — 31 août 2026.** Ce document traduit les arbitrages de Boris après les
 > retours d'usage sur l'accueil aux sept Puissances. Il propose une nouvelle colonne vertébrale
-> pour le Monde 0 ; il ne modifie encore ni les données, ni les montants d'Omégas, ni les droits.
+> pour le Monde 0 ; il ne modifie encore ni les données ni les droits. Le barème Oméga a été
+> recalibré intégralement le 1er septembre 2026 après remise à zéro des comptes M0.
 > La séquence est matérialisée dans une maquette autonome et doit maintenant être confrontée aux
 > listeners réels.
 
@@ -94,31 +95,31 @@ son espace durable.
 
 ## 4. Matrice proposée
 
-Les montants indiqués comme `actuel` proviennent de la maquette de parcours du 30 août. Ils sont
-des repères, pas un nouvel arbitrage économique. Toute expérience nouvelle reste `à chiffrer`
-jusqu'à validation de la séquence complète.
+Le barème validé totalise exactement **100 Omégas** sur les 19 Expériences : 35 au chapitre 1,
+35 au chapitre 2 et 30 au chapitre 3. Les 16 Expériences essentielles permettent d'obtenir
+87 Omégas ; les trois facultatives en apportent 13. L'épilogue terminal reste à 0.
 
 | # | Chapitre | Expérience | Statut | Passage visible et sortie réelle | Source de vérité attendue | Dévoilement | Ω |
 |---:|---|---|---|---|---|---|---:|
-| 1 | 1 | **Façonner mon jumeau** | essentielle · nouvelle | Entrer dans Immateria, créer le jumeau et terminer le tutoriel du Village | jumeau persisté + événement de fin du tutoriel | **Désir** ; visite guidée de l'espace Immateria déjà accomplie par le tutoriel | à chiffrer |
-| 2 | 1 | **Le Point Zéro : entrer dans le Jeu** | essentielle · existante restructurée | Regarder l'introduction, relier la chaîne invisible, conserver l'Hypothèse de seuil | questionnaire achevé + Trace de l'Hypothèse | **Volonté** ; première vue du parcours expliquée, puis retour au passage | 6 actuel |
-| 3 | 1 | **Le Coupable idéal** | essentielle · existante | Traverser le procès d'un seul mouvement | session achevée + verdict enregistré comme Trace | aucune nouvelle Puissance ; première roue de polarités conservée comme Trace | 6 actuel |
-| 4 | 1 | **Une drôle d'époque** | essentielle · existante | Traverser la semaine jusqu'au premier miroir | mini-jeu achevé + résultat enregistré | le miroir nourrit le futur Moteur mais **ne l'ouvre pas encore** | 7 actuel |
-| 5 | 1 | **Avant le Zéro** | essentielle · existante | Suivre un devenir jusqu'à une fin | fin atteinte + devenir enregistré comme Trace | aucun ; les devenirs restent rejouables | 7 actuel |
-| 6 | 1 | **Et moi dans tout ça ?** | essentielle · restructurée | Relire les Traces, formuler puis planter la Graine de l'Appel | Graine contextualisée réellement créée | **Imagination** ; ouverture guidée de la Fresque sur cette Graine, puis retour | 8 actuel |
-| 7 | 1 | **Choisir qui marchera à mes côtés** | essentielle · nouvelle | Choisir une figure, ouvrir un fil et lui adresser une première question sur la Graine | mentor choisi + message Joueur et réponse mentor persistés | **Émotion** ; le fil devient un usage durable | à chiffrer |
-| 8 | 2 | **L'écosystème Point Zéro** | essentielle · existante | Découvrir la constellation puis relier ses fragments | dispositif achevé + Schéma de circulation enregistré comme Trace | prépare la rencontre avec les autres | 5 actuel |
-| 9 | 2 | **Choisir ma place parmi les autres** | essentielle · nouvelle, absorbe le métaparcours Communication | Composer le Profil, confirmer sa visibilité, rejoindre l'Espace M0 et produire une première réaction | profil confirmé + appartenance effective + réaction persistée | **Communication** ; Espace ouvert. L'Annuaire est présenté en troisième geste facultatif | à chiffrer |
-| 10 | 2 | **Le site du Point Zéro** | essentielle, extensible | Accomplir au moins un des cinq parcours publics ; les quatre autres restent disponibles | au moins une `TraceSas` importée ; compteur `X/5` | aucun ; les parcours supplémentaires restent facultatifs et gardent leurs propres Ω | 6 actuel |
-| 11 | 2 | **Le signe de reconnaissance** | **facultative** · existante | Composer un signe précis et choisir de l'envoyer ou de le conserver | dispositif achevé + choix de destination enregistré | approfondit Communication sans nouveau seuil | 6 actuel |
-| 12 | 2 | **Choisir un double regard** | essentielle · nouvelle, absorbe le métaparcours Intuition | Choisir Sirbey ou Z.E.R.O., mener un premier échange, puis éprouver une première clé | message Joueur + réponse Guide persistés ; questionnaire de clé soumis et Trace créée | **Intuition** ; Guides, première clé et bulle transversale deviennent accessibles | à chiffrer |
-| 13 | 2 | **Les choses se précisent** | essentielle · existante | Relire la constellation, explorer une relation avec le mentor, planter la Graine de relation | Graine de relation réellement créée | aucun ; réemploie Émotion, Imagination et Communication déjà ouvertes | 8 actuel |
-| 14 | 2 | **Lire mon Moteur** | essentielle · nouvelle, absorbe le métaparcours Transcendance | Actualiser une première lecture de Puissance, observer sa circulation et ouvrir la provenance des Omégas | évaluation de Puissance enregistrée | **Transcendance** ; Moteur et Accomplissements deviennent accessibles | à chiffrer |
-| 15 | 3 | **Le Conseil Oméga** | essentielle · existante | Arbitrer plusieurs futurs, formuler les caps et choisir ou laisser ouvert un Rôle d'appel | Conseil achevé + caps et choix conservés | réemploie le Moteur désormais visible | 8 actuel |
-| 16 | 3 | **Découvrir les formats** | facultative · existante | Clarifier le besoin, comparer les formats, conserver une Boussole | Boussole enregistrée comme Trace | ouvre les fiches de formats sans inscription obligatoire | 5 actuel |
-| 17 | 3 | **Participer à un Sas Point Zéro** | facultative · existante | Choisir un Sas, participer, conserver une intention | inscription ou présence + intention enregistrée | reste disponible après le chapitre et rapporte toujours ses Ω | 7 actuel |
-| 18 | 3 | **Vivre l'Atelier Point Zéro** | essentielle · rite | Choisir un Atelier et accomplir la condition de passage retenue | contrôleur d'inscription ou validation de présence selon le contrat final | prépare la clôture du M0 | 9 actuel |
-| 19 | 3 | **Mon récit de passage** | essentielle · existante | Rassembler les Traces, composer la Graine de passage, sceller la Carte du Seuil | Graine + Carte générées + visibilité enregistrée | produit la restitution finale | 9 actuel |
+| 1 | 1 | **Façonner mon jumeau** | essentielle · nouvelle | Entrer dans Immateria, créer le jumeau et terminer le tutoriel du Village | jumeau persisté + événement de fin du tutoriel | **Désir** ; visite guidée de l'espace Immateria déjà accomplie par le tutoriel | 5 |
+| 2 | 1 | **Le Point Zéro : entrer dans le Jeu** | essentielle · existante restructurée | Regarder l'introduction, relier la chaîne invisible, conserver l'Hypothèse de seuil | questionnaire achevé + Trace de l'Hypothèse | **Volonté** ; première vue du parcours expliquée, puis retour au passage | 5 |
+| 3 | 1 | **Le Coupable idéal** | essentielle · existante | Traverser le procès d'un seul mouvement | session achevée + verdict enregistré comme Trace | aucune nouvelle Puissance ; première roue de polarités conservée comme Trace | 4 |
+| 4 | 1 | **Une drôle d'époque** | essentielle · existante | Traverser la semaine jusqu'au premier miroir | mini-jeu achevé + résultat enregistré | le miroir nourrit le futur Moteur mais **ne l'ouvre pas encore** | 5 |
+| 5 | 1 | **Avant le Zéro** | essentielle · existante | Suivre un devenir jusqu'à une fin | fin atteinte + devenir enregistré comme Trace | aucun ; les devenirs restent rejouables | 6 |
+| 6 | 1 | **Et moi dans tout ça ?** | essentielle · restructurée | Relire les Traces, formuler puis planter la Graine de l'Appel | Graine contextualisée réellement créée | **Imagination** ; ouverture guidée de la Fresque sur cette Graine, puis retour | 6 |
+| 7 | 1 | **Choisir qui marchera à mes côtés** | essentielle · nouvelle | Choisir une figure, ouvrir un fil et lui adresser une première question sur la Graine | mentor choisi + message Joueur et réponse mentor persistés | **Émotion** ; le fil devient un usage durable | 4 |
+| 8 | 2 | **L'écosystème Point Zéro** | essentielle · existante | Découvrir la constellation puis relier ses fragments | dispositif achevé + Schéma de circulation enregistré comme Trace | prépare la rencontre avec les autres | 4 |
+| 9 | 2 | **Choisir ma place parmi les autres** | essentielle · nouvelle, absorbe le métaparcours Communication | Composer le Profil, confirmer sa visibilité, rejoindre l'Espace M0 et produire une première réaction | profil confirmé + appartenance effective + réaction persistée | **Communication** ; Espace ouvert. L'Annuaire est présenté en troisième geste facultatif | 6 |
+| 10 | 2 | **Le site du Point Zéro** | essentielle, extensible | Accomplir au moins un des cinq parcours publics ; les quatre autres restent disponibles | au moins une `TraceSas` importée ; compteur `X/5` | aucun ; les parcours supplémentaires restent facultatifs et gardent leurs propres Ω | 5 |
+| 11 | 2 | **Le signe de reconnaissance** | **facultative** · existante | Composer un signe précis et choisir de l'envoyer ou de le conserver | dispositif achevé + choix de destination enregistré | approfondit Communication sans nouveau seuil | 4 |
+| 12 | 2 | **Choisir un double regard** | essentielle · nouvelle, absorbe le métaparcours Intuition | Choisir Sirbey ou Z.E.R.O., mener un premier échange, puis éprouver une première clé | message Joueur + réponse Guide persistés ; questionnaire de clé soumis et Trace créée | **Intuition** ; Guides, première clé et bulle transversale deviennent accessibles | 6 |
+| 13 | 2 | **Les choses se précisent** | essentielle · existante | Relire la constellation, explorer une relation avec le mentor, planter la Graine de relation | Graine de relation réellement créée | aucun ; réemploie Émotion, Imagination et Communication déjà ouvertes | 6 |
+| 14 | 2 | **Lire mon Moteur** | essentielle · nouvelle, absorbe le métaparcours Transcendance | Actualiser une première lecture de Puissance, observer sa circulation et ouvrir la provenance des Omégas | évaluation de Puissance enregistrée | **Transcendance** ; Moteur et Accomplissements deviennent accessibles | 4 |
+| 15 | 3 | **Le Conseil Oméga** | essentielle · existante | Arbitrer plusieurs futurs, formuler les caps et choisir ou laisser ouvert un Rôle d'appel | Conseil achevé + caps et choix conservés | réemploie le Moteur désormais visible | 6 |
+| 16 | 3 | **Découvrir les formats** | facultative · existante | Clarifier le besoin, comparer les formats, conserver une Boussole | Boussole enregistrée comme Trace | ouvre les fiches de formats sans inscription obligatoire | 4 |
+| 17 | 3 | **Participer à un Sas Point Zéro** | facultative · existante | Choisir un Sas, participer, conserver une intention | inscription ou présence + intention enregistrée | reste disponible après le chapitre et rapporte toujours ses Ω | 5 |
+| 18 | 3 | **Vivre l'Atelier Point Zéro** | essentielle · rite | Choisir un Atelier et accomplir la condition de passage retenue | contrôleur d'inscription ou validation de présence selon le contrat final | prépare la clôture du M0 | 7 |
+| 19 | 3 | **Mon récit de passage** | essentielle · existante | Rassembler les Traces, composer la Graine de passage, sceller la Carte du Seuil | Graine + Carte générées + visibilité enregistrée | produit la restitution finale | 8 |
 | 20 | 3 | **Ton espace est prêt** | passage terminal · nouveau | Relire les sept Puissances éveillées et choisir explicitement d'ouvrir son espace | confirmation idempotente de clôture du M0 | transforme l'accueil en tableau de bord ; aucune nouvelle Puissance | 0 |
 
 ### 4.1. Décompte joueur et granularité des étapes visibles
@@ -276,8 +277,8 @@ chapitre, accessible depuis le chemin de fer et depuis l'historique après la fi
 
 ## 9. Points à arbitrer avant le maquettage définitif
 
-1. **Économie Oméga** : chiffrer les cinq nouvelles expériences d'activation sans attribuer deux
-   fois des Omégas aux gestes déjà reconnus par une expérience existante.
+1. **Économie Oméga** : arbitrage clos le 1er septembre 2026. Le barème complet totalise 100 Ω,
+   dont 87 sur les Expériences essentielles et 13 sur les facultatives ; l'épilogue vaut 0.
 2. **Le signe de reconnaissance** : arbitrage clos ; il reste facultatif et rapporte toujours
    ses Omégas lorsqu'il est accompli.
 3. **Atelier** : fixer le contrat final entre inscription confirmée et présence validée. Le CTA,

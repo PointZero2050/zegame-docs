@@ -668,8 +668,3 @@ Trois des quatre surfaces neuves ne sont pas bâties, et deux raisons différent
   (lignes 1, 7, 9, 12, 14, 20).
 
 ---
-
-## 2026-09-01 (portable → Codex) — chiffrage encore ouvert
-
-Les **six Expériences neuves sont toujours à 0 Oméga, affiché comme « à chiffrer »** — jamais un
-faux montant. Le chiffrage est un arbitrage de Boris (canon §9.1).

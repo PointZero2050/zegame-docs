@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-09-01 · de Codex · Barème M0 recalibré à 100 Omégas
+
+**Arbitrage confirmé par Boris après remise à zéro des comptes M0.** Le barème peut être
+entièrement remplacé et doit totaliser exactement 100 Ω : chapitre 1 = 35, chapitre 2 = 35,
+chapitre 3 = 30 ; essentielles = 87, facultatives = 13, épilogue = 0.
+
+Montants par Expérience : `1:5, 2:5, 3:4, 4:5, 5:6, 6:6, 7:4, 8:4, 9:6, 10:5, 11:4,
+12:6, 13:6, 14:4, 15:6, 16:4, 17:5, 18:7, 19:8, 20:0`.
+
+La matrice canonique et la préparation d'intégration sont mises à jour sur `main`. L'application
+doit remplacer les anciens montants, pas ajouter une seconde attribution aux mêmes gestes.
+
 ### 2026-09-01 · de Codex · Arbitrage confirmé pour l'acquittement de l'éveil
 
 **À appliquer dans la PR #134.** Boris confirme que « ne se rejoue jamais » vise la **prise de

@@ -1,5 +1,17 @@
 # Boîte du poste fixe
 
+### 2026-09-01 · de Codex · Afficher le nouveau barème M0 à 100 Ω
+
+Boris confirme le recalibrage intégral après remise à zéro des comptes M0. Les vues du parcours
+doivent désormais afficher les totaux réels : chapitre 1 = **35 Ω**, chapitre 2 = **35 Ω**,
+chapitre 3 = **30 Ω**, soit **100 Ω disponibles**. Plus aucun `à chiffrer` ne subsiste.
+
+Montants par Expérience : `1:5, 2:5, 3:4, 4:5, 5:6, 6:6, 7:4, 8:4, 9:6, 10:5, 11:4,
+12:6, 13:6, 14:4, 15:6, 16:4, 17:5, 18:7, 19:8, 20:0`.
+
+La maquette `parcours-lineaire-m0-cible` est alignée sur ces totaux. Le canon détaillé vit dans
+`docs/pedagogie/monde-0-parcours-lineaire-appropriation.md` §4.
+
 ### 2026-09-01 · de Codex · `annonces/index` reste une démonstration sans aide Joueur — ✅ TRAITÉ : assertion négative conservée, commentaire et libellé repointés sur la DÉCISION (commit e50fa3a, PR #130). Le compte passe à 19 sur 19 plus une exclusion assumée.
 
 **Décision confirmée par Boris pour la PR #130 : option 2.** La page se déclarant elle-même

@@ -201,8 +201,10 @@ en parallèle de **C**. Tout le reste attend **C**.
 
 ## 10. Ce qui reste à arbitrer
 
-1. **Les Ω des six expériences nouvelles** restent `à chiffrer`. Le §4 le dit honnêtement ; il
-   faudra les fixer avant **B**.
+1. ✅ **Le barème Oméga est recalibré sur l'ensemble du parcours**, confirmé par Boris le
+   1er septembre 2026 après remise à zéro des comptes M0 : 100 Ω au total, répartis en 35 / 35 /
+   30 par chapitre ; 87 sur les essentielles, 13 sur les facultatives et 0 pour l'épilogue.
+   La matrice canonique §4 porte le montant de chaque Expérience.
 2. ✅ **Le `Signe de reconnaissance` reste facultatif**, confirmé par Boris le 31 août 2026.
    Il rapporte ses Omégas lorsqu'il est accompli et ne bloque jamais l'Expérience suivante.
 3. **Les cinq indicateurs sans source** (§3) : source réelle, ou carte sans chiffre ?
