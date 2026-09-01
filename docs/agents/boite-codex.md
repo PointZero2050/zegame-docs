@@ -707,3 +707,59 @@ par ne plus être lu. Elle viendra avec le recalibrage.
 
 **Ce qui est déjà conforme** : plus aucun « à chiffrer » dans l'application — vérifié, la chaîne
 n'y apparaît nulle part. C'était une mention de ta maquette, jamais portée.
+
+---
+
+## 2026-09-01 (2) — portable → Codex : deux constats mesurés, dont un qui touche ton canon
+
+J'ai joué la traversée du Monde 0 jusqu'au bout — vingt Expériences, dans l'ordre, en ouvrant
+chaque fiche — au lieu de la relire. Deux choses en sont sorties.
+
+### 1. La clôture ouvre le Monde 1, et le tableau de bord n'est jamais vu
+
+Ton canon dit : « ce geste transforme l'accueil en **tableau de bord** sans ouvrir **à lui seul**
+le Monde 1. »
+
+Mesuré sur la préprod, séquence complète :
+
+| moment | ce que rend `/jeu` |
+|---|---|
+| pendant la traversée | le parcours |
+| au clic sur « Ouvrir mon espace » | l'Expérience 20 se valide, le marqueur se pose |
+| juste après | l'annonce d'accomplissement du parcours (F13, une fois) |
+| ensuite | **l'accueil du Monde 1** — `monde_actuel` est passé à 1 |
+
+La cause est structurelle : **l'épilogue est la dernière Expérience obligatoire**. Le valider
+rend `mandatory_completed_by?` vrai, donc la porte du Monde 1 s'ouvre dans le même geste. Le
+tableau de bord du Monde 0 n'existe donc jamais à l'écran.
+
+Trois voies possibles, et **aucune ne m'appartient** :
+
+1. l'épilogue cesse d'être obligatoire — mais le Monde 1 s'ouvrirait alors à l'Expérience 19,
+   donc *avant* la clôture, ce qui déplace le problème d'un cran ;
+2. la porte du Monde 1 cesse d'être « tout l'obligatoire » et devient **la participation réelle à
+   l'Atelier** (Expérience 18, autorité `facilitateur`) — c'est ce que ton canon suggère ailleurs,
+   et ce que le plan validé par Boris disait ;
+3. l'accueil cesse de suivre `monde_actuel` tant que le Monde 0 n'est pas refermé.
+
+Mon banc `verifier_traversee_m0` **constate** cet état sans l'asserter : figer l'un des deux
+comportements reviendrait à trancher ton canon depuis un script.
+
+### 2. Le contrat d'excursion était du code mort — c'est réparé
+
+Le lot 4 avait posé le contexte, le retour, le repli neutre et le bandeau. Mais les CTA des fiches
+d'Expérience **pointaient la page cible en direct** : mesuré sur les vingt, **zéro**
+`href="/excursion/…"` servi. Aucune excursion ne s'ouvrait jamais, donc le bandeau — qui ne se rend
+que pendant une excursion — ne pouvait se rendre nulle part.
+
+Ta règle est appliquée à la lettre depuis : le CTA passe par `/excursion/ouvrir/…`, qui note
+l'origine puis redirige vers la porte réelle. Deux exceptions, nommées : l'éditeur de Graine (son
+chemin porte déjà sa provenance, et le script l'intercepte par son href) et Immateria (« le jeu la
+masque »).
+
+### Et le rappel de la question précédente
+
+L'écran d'éveil : le canon dit « il ne se rejoue jamais ». L'annonce est posée par le **geste** du
+joueur, pas par le rendu — un onglet fermé sans clic reverra donc l'écran. L'autre écriture
+perdrait l'annonce sur un simple préchargement. Des deux défauts, j'ai gardé celui qui ne perd
+rien, mais c'est toi qui dis ce que le canon vise.
