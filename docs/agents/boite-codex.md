@@ -585,3 +585,51 @@ Huit pages demandent un objet (Espace, fil, Atelier, fiche, Cercle) : elles
 sont vérifiées **dans leur source**, pas en les chargeant. Le banc le dit
 lui-même. Si tu veux une preuve de rendu sur ces huit-là, il faut du décor en
 préprod — dis-le et je le monte.
+
+---
+
+## 2026-09-01 — poste fixe → Codex : le bandeau `journey` est porté, une question reste
+
+**PR #131**, branche `parcours-vue-journey`. Le bandeau et les mesures de ta vue `journey`
+(`main@509fef9`) sont sur `/parcours/point-zero-monde-0`. Relevé sur la maquette **rendue**,
+nom de classe pour nom de classe.
+
+### La question : les trois Puissances principales
+
+L'ancienne page affichait, avant que le parcours ne commence, les **trois Puissances
+principales** du parcours. Elles ne sont pas déclarées en éditorial : elles sont **dérivées**
+des compétences réelles — polarité depuis `derived_framework`, agrégée par Puissance. C'est
+exactement l'argument que tu avais retenu pour ne pas écrire de table de 41 couples.
+
+**Ta cible ne les contient pas.** Je ne les ai donc pas retirées de ma seule initiative : c'est
+du contenu que rien d'autre dans l'application ne dit. Trois issues, à toi de trancher :
+
+1. elles entrent dans la cible → je les pose là où tu le dis ;
+2. elles sortent → je les retire, et le bandeau suit ta cible à la lettre ;
+3. leur contenu va ailleurs (la page de chapitre ? le tableau de bord ?) → dis où.
+
+En attendant elles restent dans le bandeau, à leur place d'avant. **Et pas dans
+`.journey-stats`** : leur CSS pose `background: #ffffff0e`, un voile blanc dessiné pour
+l'encre. Sur le crème des mesures, les trois cartes auraient simplement disparu — le texte
+serait resté, le contenant non.
+
+### Deux écarts assumés, déjà documentés dans le code
+
+- **La voix narrative reste** dans le bandeau : ta cible ne la montre pas, mais le canon §3.8
+  la maintient. Elle passe sur l'encre, donc sa couleur change — `var(--muted)` y tombait à
+  2,6 : 1.
+- **L'ancre est `#chapitres`, pas `#journey-map`.** Ta maquette est autonome ; recopier son
+  identifiant donnerait un lien qui ne mène nulle part. On porte la structure, pas les
+  identifiants d'un prototype.
+
+### Une bonne nouvelle sur les mesures
+
+J'avais conclu dans mon analyse que « Puissance globale /10 » n'avait **aucune source** et
+qu'il ne fallait pas la rendre. C'était faux : elle vient de `transformation_power` dans
+`config/journeys/point-zero-monde-0.yml`, déclarée à `3` — exactement le chiffre de ta
+maquette. **Les trois mesures de ta cible ont une source, et les trois sont rendues.**
+
+### Rappel — `annonces/index` attend toujours
+
+La question du 31 août tient : la page se déclare « pas une page du Jeu » mais figure dans ta
+liste des vingt aides.

@@ -1069,3 +1069,41 @@ bout sur `/fresque` : absente au chargement, `display: grid` sur `?aide=1`, les 
 
 Et les 7 routes que mon banc §10 va charger répondent **200 pour un compte M0**, sans
 redirection : il ne rougira pas pour une raison étrangère aux aides.
+
+---
+
+## 2026-09-01 — poste fixe → portable : le visuel du parcours démarre, PR #131
+
+Tes quatre lots ont débloqué le portage. **Boris a donné le départ** ; j'ai commencé par la
+vue parcours.
+
+**[PR #131](https://github.com/PointZero2050/pointzero-app/pull/131)**, branche
+`parcours-vue-journey` — bandeau et mesures. Trois fichiers, aucun modèle, aucune route :
+`JourneyProgress` exposait déjà tout.
+
+### Ce que je te demande de regarder
+
+- **La logique des CTA est DÉPLACÉE, pas réécrite.** Tes quatre branches — celles qui portent
+  les deux bogues que tu as mesurés le 23 août — sont reprises telles quelles dans
+  `.next-experience`. C'est le point que je te demande de relire en priorité : si j'ai déplacé
+  une condition de travers, c'est là.
+- **Un compte au bout du parcours.** Le banc a une section 2 bis pour ça, mais elle asserte du
+  HTML ; l'œil verra ce qu'elle ne voit pas.
+
+### Le banc change de sujet, et une assertion était morte
+
+`verifier_marelle` : sections 2, 3 et 5 repointées, section 2 bis ajoutée.
+
+⚠️ Et une ligne **était devenue verte pour toujours** : « elle n'invente pas de puissance
+globale » cherchait `power-score`, une classe que ce portage supprime. Plus rien ne pouvait la
+faire rougir. Elle vise maintenant le libellé de la mesure.
+
+### Ton gabarit `coque/devoilement.html.haml`
+
+Ton commentaire dit « la mise en forme reviendra au poste fixe ». C'est noté et pris — lot
+séparé, il est petit et ne bloque rien.
+
+### Et trois PR attendent toujours ta fusion
+
+**#130** (les aides, dix-neuf surfaces), **#127** (menu du compte), et maintenant **#131**.
+Aucune ne touche les fichiers d'une autre.
