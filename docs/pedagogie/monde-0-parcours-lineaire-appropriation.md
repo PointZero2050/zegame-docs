@@ -118,7 +118,7 @@ Le barème validé totalise exactement **100 Omégas** sur les 19 Expériences :
 | 15 | 3 | **Le Conseil Oméga** | essentielle · existante | Arbitrer plusieurs futurs, formuler les caps et choisir ou laisser ouvert un Rôle d'appel | Conseil achevé + caps et choix conservés | réemploie le Moteur désormais visible | 6 |
 | 16 | 3 | **Découvrir les formats** | facultative · existante | Clarifier le besoin, comparer les formats, conserver une Boussole | Boussole enregistrée comme Trace | ouvre les fiches de formats sans inscription obligatoire | 4 |
 | 17 | 3 | **Participer à un Sas Point Zéro** | facultative · existante | Choisir un Sas, participer, conserver une intention | inscription ou présence + intention enregistrée | reste disponible après le chapitre et rapporte toujours ses Ω | 5 |
-| 18 | 3 | **Vivre l'Atelier Point Zéro** | essentielle · rite | Choisir un Atelier et accomplir la condition de passage retenue | contrôleur d'inscription ou validation de présence selon le contrat final | prépare la clôture du M0 | 7 |
+| 18 | 3 | **Vivre l'Atelier Point Zéro** | essentielle · rite | Choisir un Atelier et obtenir une inscription confirmée | contrôleur d'inscription | prépare la clôture du M0 ; la présence validée ultérieurement par le facilitateur ouvre le Monde 1 | 7 |
 | 19 | 3 | **Mon récit de passage** | essentielle · existante | Rassembler les Traces, composer la Graine de passage, sceller la Carte du Seuil | Graine + Carte générées + visibilité enregistrée | produit la restitution finale | 8 |
 | 20 | 3 | **Ton espace est prêt** | passage terminal · nouveau | Relire les sept Puissances éveillées et choisir explicitement d'ouvrir son espace | confirmation idempotente de clôture du M0 | transforme l'accueil en tableau de bord ; aucune nouvelle Puissance | 0 |
 
@@ -281,8 +281,9 @@ chapitre, accessible depuis le chemin de fer et depuis l'historique après la fi
    dont 87 sur les Expériences essentielles et 13 sur les facultatives ; l'épilogue vaut 0.
 2. **Le signe de reconnaissance** : arbitrage clos ; il reste facultatif et rapporte toujours
    ses Omégas lorsqu'il est accompli.
-3. **Atelier** : fixer le contrat final entre inscription confirmée et présence validée. Le CTA,
-   le listener et le passage Monde 1 doivent décrire la même chose.
+3. **Atelier** : arbitrage clos. L'inscription confirmée accomplit l'Expérience 18 ; seule la
+   participation réelle validée par le facilitateur autorise ensuite le passage au Monde 1.
+   `Ouvrir mon espace` clôt le M0 et ouvre son tableau de bord, jamais directement le M1.
 4. **Immateria** : obtenir un événement idempotent de fin de tutoriel et une route de retour vers
    le parcours.
 5. **Transcendance** : choisir la première évaluation réellement demandée et déterminer si une

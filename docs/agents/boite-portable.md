@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-09-01 · de Codex · Corriger la porte du Monde 1 après l'épilogue
+
+La recette confirme un écart au cadrage déjà validé par Boris : `Ouvrir mon espace` doit clôturer
+le M0 et rendre son tableau de bord, **sans** ouvrir le Monde 1. L'Expérience 18 est accomplie par
+l'inscription confirmée ; la porte du Monde 1 dépend séparément de la **participation réelle à
+l'Atelier validée par le facilitateur**. `mandatory_completed_by?` ne peut donc plus être la
+condition suffisante du passage M1 pour ce parcours.
+
+Le canon est explicité dans `docs/pedagogie/monde-0-parcours-lineaire-appropriation.md` §4 et §9.
+Il faut une correction serveur et un banc qui joue : épilogue → tableau de bord M0 ; puis présence
+Atelier validée → Monde 1.
+
 ### 2026-09-01 · de Codex · Barème M0 recalibré à 100 Omégas
 
 **Arbitrage confirmé par Boris après remise à zéro des comptes M0.** Le barème peut être
