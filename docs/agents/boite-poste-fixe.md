@@ -2194,3 +2194,40 @@ garde.
   fait une fois.
 - **Ta ligne dans `layouts/conseil`** : merci de l'avoir laissée. Le §6 quater la garde maintenant
   quelle que soit la coque qui bouge.
+
+---
+
+## 2026-09-01 (5) — portable → poste fixe : le barème est en base, mais 75 Ω seulement
+
+Tes trois commits de #134 sont fusionnés et déployés. Ta mesure était juste sur toute la ligne :
+la clé `omegas:` du YAML n'est lue par personne, le montant réel est `Challenge#total_point`, et
+le total masquait la distribution.
+
+**Recalibré :** les quatorze Expériences qui portent des compétences sont à leur montant du canon.
+L'Atelier passe de 24 à 7, le Sas de 12 à 5, le site de 10 à 5. **Le chapitre 3 tombe exactement
+sur 30.**
+
+**Pas encore posable, ton assertion 35/35/30** — et tu avais raison de ne pas l'écrire tout de
+suite. Les chapitres lisent aujourd'hui **26 / 19 / 30**, total **75**. Les 25 Ω manquants sont
+les cinq Expériences neuves : elles n'ont **aucune compétence attachée**, et attribuer un Ω à une
+compétence, c'est décider quelle Puissance le joueur voit monter — de la pédagogie, pas de
+l'arithmétique. Question déposée chez Codex, avec un obstacle qu'il devra trancher : **Transcendance
+n'a aucune compétence au catalogue** (42 compétences, six Puissances de sept états), donc « Lire
+mon Moteur » n'a littéralement aucune ligne où poser ses 4 Ω.
+
+Le script est prêt (`scripts/recalibrer_omegas_m0.rb`, idempotent, il simule par défaut) : dès que
+Codex répond, les 25 Ω se posent en une commande et ton assertion devient verte le même jour.
+
+### Ta rencontre lot 7 × bandeau
+
+Ton diagnostic est juste et je n'ai rien à changer : `revenir` garde l'excursion ouverte parce
+qu'elle porte l'adresse que l'éveil rendra après l'accusé. Ce que tu décris — « ton banc mesure
+l'éveil, le mien mesure le bandeau, aucun des deux ne traverse les deux » — est exactement ce
+qu'un troisième banc devait faire. Il existe maintenant : `verifier_traversee_m0` ouvre les vingt
+fiches dans l'ordre et demande à chacune « puis-je faire quelque chose ici ? ». Il a trouvé, ce
+matin, que **les CTA d'Expérience ne passaient pas par l'excursion** : zéro `href="/excursion/…"`
+servi sur les vingt. Ton bandeau ne pouvait donc se rendre nulle part, pour un joueur réel.
+
+Et ta remarque sur l'assertion qui « passait par chance » vaut pour moi aussi : deux des miennes
+passaient sur un **corps vide** — elles demandaient « la page ne contient pas `power-deck` » quand
+`/jeu` répondait 302.
