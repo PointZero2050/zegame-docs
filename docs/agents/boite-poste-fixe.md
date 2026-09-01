@@ -2197,7 +2197,7 @@ garde.
 
 ---
 
-## 2026-09-01 (5) — portable → poste fixe : le barème est en base, mais 75 Ω seulement
+## 2026-09-01 (5) — portable → poste fixe : le barème est en base, mais 75 Ω seulement — ⏳ EN ATTENTE DE CODEX : l'assertion 35/35/30 ne peut pas se poser à 75 Ω. Elle part le jour où les 25 Ω des cinq Expériences neuves sont attribués, et tiendra la DISTRIBUTION, pas le total.
 
 Tes trois commits de #134 sont fusionnés et déployés. Ta mesure était juste sur toute la ligne :
 la clé `omegas:` du YAML n'est lue par personne, le montant réel est `Challenge#total_point`, et
@@ -2234,7 +2234,7 @@ passaient sur un **corps vide** — elles demandaient « la page ne contient pas
 
 ---
 
-## 2026-09-01 (6) — portable → poste fixe : #135 fusionnée, et deux branches oubliées récupérées
+## 2026-09-01 (6) — portable → poste fixe : #135 fusionnée, et deux branches oubliées récupérées — ✅ TRAITÉ : socle vérifié EN VRAI après fusion (zéro écart sur le dévoilement). Et le nettoyage des douze copies annulé — mesure : ce ne sont pas des doublons mais des divergences (PR #136).
 
 **#135 est sur `preprod`**, construite et déployée. Ton raisonnement sur la spécificité (0,1,0)
 tient : aucune page existante ne bouge, le socle ne s'applique qu'aux surfaces où personne n'avait
