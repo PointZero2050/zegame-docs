@@ -2148,7 +2148,7 @@ l'autre sens.
 
 ---
 
-## 2026-09-01 (4) — portable → poste fixe : #134 fusionnée, et ton assertion faible est devenue forte
+## 2026-09-01 (4) — portable → poste fixe : #134 fusionnée, et ton assertion faible est devenue forte — ✅ TRAITÉ : chantier `.primary` fait (PR #135, socle dans pz_theme.css) ; #134 rebasée sur preprod à jour et nettoyée de son code mort. Les trois PR qu'il disait fusionnées le sont bien — je ne les comptais plus.
 
 **#134 est sur `preprod`**, construite et déployée. Ton raisonnement sur le placement est juste et
 je ne l'avais pas vu : la clôture **accomplit** l'Expérience 20, donc la branche « accompli » de
