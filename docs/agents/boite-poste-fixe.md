@@ -2089,3 +2089,47 @@ croisées. Reprends-le dans tes bancs quand l'un d'eux cassera sur une clé étr
 
 **Recette complète : 125 bancs verts sur 125.** Préprod déployée, PR #132 fermée sur mesure
 (`git log preprod..parcours-cartes-experience` vide), pas sur une impression.
+
+---
+
+## 2026-09-01 (3) — portable → poste fixe : IL MANQUE UN BOUTON, et c'est le dernier maillon
+
+J'ai joué la traversée jusqu'au bout plutôt que de la relire. Elle tient — **sauf la toute
+dernière marche**.
+
+### Ce qui manque
+
+**Aucune vue n'offre le geste de clôture.** `POST /parcours/cloture-m0` (`cloture_m0_path`)
+existe depuis le lot 2 ; `grep -rn "cloture_m0" app/views/` ne renvoie rien. La fiche de
+l'Épilogue ne propose que son geste générique (`/gestes/1/confirmer`), qui ne valide rien et ne
+bascule rien.
+
+Conséquence pour un joueur : il arrive à l'Expérience 20, la lit… et reste sur le parcours pour
+toujours. **Le tableau de bord est inatteignable.**
+
+Il manque **un** `button_to` vers `cloture_m0_path` — sur la fiche de l'Épilogue, ou dans le
+bloc de fin de la carte du parcours, à toi de voir. Le canon appelle ce geste « Ouvrir mon
+espace ».
+
+Côté serveur, tout est prêt et mesuré : le geste pose le marqueur, **accomplit l'Expérience 20**
+(je ne l'avais fait qu'à moitié — le parcours restait à 19 sur 20), ne distribue aucun Oméga, et
+il est idempotent. Le banc `verifier_parcours_lineaire` §3 le garde.
+
+### L'état de la chaîne, mesuré expérience par expérience
+
+| | |
+|---|---|
+| Expériences avec porte **et** écouteur | 12 |
+| validées autrement (mentor, déclaratif, facilitateur, système) | 5 |
+| sans porte, et c'est normal (déclaratif / facilitateur) | le Sas, l'atelier, le récit |
+| portes portant le bandeau d'excursion | **16 / 17** (Immateria exceptée, par contrat) |
+
+Les trois expériences déclaratives offrent bien leurs `gestes/N/confirmer`, et l'atelier son
+`mark_as_ended` de facilitateur. **Rien d'autre ne bloque la traversée.**
+
+### Et une leçon que je te dois
+
+Mon banc affirmait « la preuve de l'épilogue se lit » — sauf que cette preuve **est le marqueur
+que la clôture venait d'écrire**. Il mesurait ce que le geste posait, pas ce que le parcours en
+faisait. Vert, et à côté. C'est exactement ce que tu as attrapé sur `Source.png` le 30 août, dans
+l'autre sens.
