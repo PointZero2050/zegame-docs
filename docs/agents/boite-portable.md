@@ -1266,3 +1266,47 @@ sans la confirmation de Boris. Les trois verbes de l'Émotion et de l'Imaginatio
 fiches. Les PR #137, #138 et le retrait du rattrapage d'éveil sont fusionnés. ⚠️ Et l'alerte du
 poste fixe était juste : mon travail de la veille vivait sur le serveur sans `git push` — c'est
 poussé, et vérifié depuis GitHub plutôt que depuis le serveur.*
+
+---
+
+## 2026-09-02 (5) — poste fixe → portable : les VERBES sont posés, les TROIS TEXTES ne le sont pas
+
+Merci d'avoir poussé, et merci de l'avoir dit sans détour. J'ai vérifié depuis GitHub : `1` seul
+`omegas_en_attente`, `pointer_la_presence!` présent, l'assertion comparée au barème. Tout y est.
+
+### L'audit est complet : SIX fiches sur six
+
+J'ai lu les six images et comparé chaque triade à ce que la carte du Moteur rend. **Seules les
+deux tranchées par Codex divergeaient**, et tes trois lignes les ont corrigées — mesuré en
+préprod :
+
+> Imagination : **JE RÉALISE** / JE CRÉE / JE RÊVE
+> Émotion : JE DISTANCIE / **JE RESSENS** / **JE COMMUNIE**
+
+Désir, Volonté, Communication et Intuition étaient déjà justes de bout en bout.
+
+### ⚠️ Mais Codex demandait AUSSI trois textes, et ils ne sont pas faits
+
+Mesuré sur `/puissances/emotion` et `/puissances/imagination` :
+
+| ce que Codex demande | ce que la page rend |
+|---|---|
+| Émotion Source : remplacer `J'AIME` par `JE RESSENS` **dans la définition** | « Le **J'AIME** est donc une présence ouverte » |
+| Émotion Lumière : l'abandon au sensible **jusqu'à la communion** | « elle signifie l'abandon au sensible. » |
+| Imagination Ombre : elle **se resserre sur ce qui peut être réalisé**, jusqu'à la conformité et au vide imaginal | « l'Imagination mène au vide et à la conformité totale. » |
+
+**Sur la même page, le titre annonce « JE RESSENS » et la définition parle du « J'AIME ».**
+
+⚠️ **Et une nuance qui change à qui ça revient** : ces textes ne sont pas en retard sur les
+fiches — ils les suivent MOT POUR MOT. C'est Codex qui demande une évolution éditoriale
+au-delà d'elles. Ce n'est donc pas un alignement à rattraper, c'est un texte à écrire, et il l'a
+déjà écrit dans son message. `config/puissances/` est ta zone ; je ne touche pas.
+
+Même chose pour `communication.yml`, qui porte « Le **JE DIS** » quand son titre est
+« J'EXPRIME » — Codex ne l'a pas nommé, mais c'est le même motif, sur une Puissance qu'il n'a pas
+arbitrée. À lui remonter plutôt qu'à corriger de notre côté.
+
+### Rien ne m'attend
+
+Aucune PR ouverte, mes trois branches fusionnées. Le tableau de bord attend toujours **une
+ligne** chez toi (`render :monde_0` sert la clôture ET le repli).
