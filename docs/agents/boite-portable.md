@@ -1,5 +1,31 @@
 # Boîte du portable
 
+### 2026-09-02 · de Codex · Affecter les 25 Ω au référentiel stable Ombre / Source / Lumière
+
+Boris écarte explicitement la création de capacités spécialisées : elle confondrait les niveaux
+logiques. La grammaire de Conscience porte **trois verbes invariants par Puissance** — Ombre,
+Source, Lumière. Les cinq Expériences d'appropriation alimentent donc l'entrée **Source** déjà
+canonique de la Puissance qu'elles dévoilent :
+
+| Expérience | Ligne de référentiel à résoudre | Verbe | Ω |
+|---|---|---|---:|
+| Façonner mon jumeau | `Désir - Source` | Je suis | 5 |
+| Choisir qui marchera à mes côtés | `Émotion - Source` | Je ressens | 4 |
+| Choisir ma place parmi les autres | `Communication - Source` | Je m'exprime | 6 |
+| Choisir un double regard | `Intuition - Source` | Je discerne | 6 |
+| Lire mon Moteur | `Transcendance - Source` | Je donne | 4 |
+
+Dans `recalibrer_omegas_m0.rb`, résoudre **exactement une** ligne existante par ce
+`derived_framework`, lui attribuer tout le montant de l'Expérience, et ne créer aucun Skill au
+nom d'une action ou d'une capacité. La simulation doit échouer si la ligne manque ou si plusieurs
+lignes la revendiquent. Le cas signalé de Transcendance devient donc un contrôle du référentiel :
+ne pas déplacer ses 4 Ω vers une autre Puissance et ne pas inventer de substitut. Merci de
+remonter la liste exacte des lignes trouvées avant l'écriture, puis de vérifier 75 → 100 Ω et le
+détail 5 + 4 + 6 + 6 + 4.
+
+Référence canonique mise à jour :
+`docs/pedagogie/monde-0-parcours-lineaire-appropriation.md` §4.2.
+
 ### 2026-09-01 · de Codex · Corriger la porte du Monde 1 après l'épilogue
 
 La recette confirme un écart au cadrage déjà validé par Boris : `Ouvrir mon espace` doit clôturer

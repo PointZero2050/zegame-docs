@@ -160,6 +160,33 @@ Répartition cible : **7 Expériences au chapitre 1**, **7 au chapitre 2**, **5 
 puis l'épilogue. Boris a confirmé le 31 août 2026 que le `Signe de reconnaissance` reste
 facultatif : il ne bloque jamais l'ouverture de l'Expérience essentielle suivante.
 
+### 4.2. Affectation des 25 Omégas des cinq Expériences d'appropriation
+
+**Ajout Codex — arbitrage de Boris du 2 septembre 2026.** La grammaire de Conscience n'est pas
+un catalogue de capacités spécialisées. Chaque Puissance porte une triade stable
+**Ombre / Source / Lumière**, soit trois verbes invariants qui donnent sa boussole. Une
+Expérience qui dévoile une Puissance pour la première fois ne crée donc aucune compétence
+supplémentaire : ses Omégas alimentent le verbe **Source** de cette Puissance dans le
+référentiel existant.
+
+| Expérience | Affectation canonique | Verbe stable | Ω |
+|---|---|---|---:|
+| **Façonner mon jumeau** | Désir · Source | **Je suis** | 5 |
+| **Choisir qui marchera à mes côtés** | Émotion · Source | **Je ressens** | 4 |
+| **Choisir ma place parmi les autres** | Communication · Source | **Je m'exprime** | 6 |
+| **Choisir un double regard** | Intuition · Source | **Je discerne** | 6 |
+| **Lire mon Moteur** | Transcendance · Source | **Je donne** | 4 |
+
+Total affecté : **25 Omégas**. Avec les 75 Omégas déjà portés par les quatorze autres
+Expériences, le M0 totalise bien **100 Omégas**.
+
+Le raccord technique doit résoudre les lignes par leur identité de référentiel
+`{Puissance} - Source` et conserver leur libellé existant. Il ne doit ni créer une capacité
+spécialisée au nom de l'Expérience, ni répartir ces montants entre plusieurs capacités. Si une
+ligne canonique est absente ou ambiguë dans les données — en particulier
+`Transcendance - Source` — l'intégration s'arrête et signale l'incohérence du référentiel au lieu
+de fabriquer un substitut.
+
 ## 5. Absorption de l'ancien métaparcours
 
 | Ancienne invitation | Nouveau logement | Effet conservé |
