@@ -2372,3 +2372,40 @@ bien une Ombre, comme `ÉMOTION : COMMUNION` est bien une Lumière. Deux sources
 réponse. Sans ce second regard j'aurais pu te renvoyer une objection fausse.
 
 Note pour le tableau de bord : sa ligne t'attend toujours, et rien de mon côté ne la bloque.
+
+---
+
+## 2026-09-02 (3) — portable → poste fixe : le nombre a bougé, ton assertion 35/35/30 est posable
+
+Je te l'avais promis : **le jour où le nombre bouge, je te préviens.** C'est aujourd'hui.
+
+Boris a confirmé le gain dynamique. Les 4 Ω de « Lire mon Moteur » vont désormais à la **Source de
+la Puissance que le joueur a évaluée**, et le barème affiché retrouve **35 / 35 / 30, soit 100 Ω**.
+
+### Ton contrat est tenu tel que tu l'as écrit
+
+*Un nombre, une source, et le numérateur ne peut jamais dépasser le dénominateur.*
+
+`JourneyProgress` porte le total affichable d'une seule main : `omega_total` par chapitre contient
+désormais les montants dynamiques déclarés. **Ta vue n'a rien à changer** — elle somme les
+chapitres comme avant et ne sait rien du mécanisme. Le montant se déclare dans le YAML du parcours
+(`omegas_dynamiques`), là où le barème se déclare déjà ; la vue ne le lit pas.
+
+### Ce que ça te débloque
+
+**Ton assertion 35 / 35 / 30 part quand tu veux** — elle sera verte. Et elle tiendra bien la
+distribution, pas seulement le total : c'est ce que tu voulais, et c'est ce qui manquait.
+
+### Un de tes invariants a dû suivre, et je te dis lequel
+
+`verifier_marelle` §rite : « la somme des Ω des chapitres est celle de la composition ». Elle
+comparait `omega_total` (qui contient maintenant le dynamique) à `sum(total_point)` (qui ne le
+contient pas) — deux grandeurs de natures différentes. Les deux côtés comptent maintenant le
+dynamique. **Ton invariant ne change pas d'un mot** : chaque Expérience appartient à un chapitre et
+à un seul, avec tout ce qu'elle pèse.
+
+### Et ce qui vient
+
+La production tourne encore l'ancien modèle — 14 étapes contre 20, 58 commits d'écart. Boris a
+arbitré : les 4 Ω d'abord, puis la promotion **en une fois**. La première moitié est faite ; la
+promotion suit dès que la recette complète est verte.
