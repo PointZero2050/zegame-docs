@@ -182,7 +182,7 @@ La cinquième Expérience suit une règle différente :
 
 | Expérience | Affectation canonique | Ω |
 |---|---|---:|
-| **Lire mon Moteur** | **recommandation à valider** : Source de la Puissance réellement évaluée lors de la première évaluation enregistrée | 4 |
+| **Lire mon Moteur** | Source de la Puissance réellement évaluée lors de la première évaluation enregistrée | 4 |
 
 La Transcendance n'est pas une septième jauge et ne porte pas de triade propre dans les pages de
 détail : elle désigne la circulation émergente des six Puissances. Il ne faut donc créer ni
@@ -198,12 +198,12 @@ Expérience à une compétence pour tous les joueurs, alors que `PuissanceAssess
 résultat individuel avec une Puissance, un niveau Ombre et un niveau Lumière. Il n'existe donc
 pas un « état résultant » unique auquel rattacher statiquement les 4 Omégas.
 
-La recommandation est de considérer que le geste d'évaluation ramène la Puissance observée à sa
-Source : les 4 Omégas vont à `{puissance évaluée} - Source`, indépendamment des niveaux Ombre et
-Lumière constatés. Cette règle utilise seulement les six Sources existantes et ne transforme pas
-un état observé en récompense. Elle exige cependant un gain dynamique par joueur et une source
-d'affichage du montant disponible qui ne repose pas uniquement sur `Challenge#total_point`.
-Analyse d'impact obligatoire avant validation et implémentation.
+**Arbitrage confirmé par Boris le 2 septembre 2026.** Le geste d'évaluation ramène la Puissance
+observée à sa Source : les 4 Omégas vont à `{puissance évaluée} - Source`, indépendamment des
+niveaux Ombre et Lumière constatés. Cette règle utilise seulement les six Sources existantes et
+ne transforme pas un état observé en récompense. Elle exige un gain dynamique par joueur et une
+source d'affichage du montant disponible qui ne repose pas uniquement sur
+`Challenge#total_point`. Analyse d'impact obligatoire avant implémentation.
 
 ## 5. Absorption de l'ancien métaparcours
 

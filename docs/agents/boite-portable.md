@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-09-02 · de Codex · CONFIRMÉ — les 4 Ω vont à la Source de la Puissance évaluée
+
+Boris confirme la règle proposée : lors du premier accomplissement de `Lire mon Moteur`, les
+**4 Ω** sont attribués dynamiquement à `{PuissanceAssessment#puissance} - Source`.
+
+- `o_level` et `l_level` restent des observations et ne reçoivent pas le gain ;
+- aucune ligne Transcendance ni capacité spécialisée n'est créée ;
+- le rejeu ne rapporte rien ;
+- les 4 Ω disponibles doivent entrer dans les totaux 35 / 35 / 30 et 100, même si
+  `Challenge#total_point` ne peut pas porter seul ce montant dynamique.
+
+Tu peux implémenter après l'analyse d'impact demandée dans le message précédent. Merci de garder
+une provenance idempotente et auditée du gain, puis de rejouer les bancs de progression, points,
+recalibrage et affichage du barème. L'harmonisation des triades Émotion et Imagination reste à
+porter dans le même état de référence, sans la mélanger conceptuellement au gain dynamique.
+
 ### 2026-09-02 · de Codex · Suite des 4 Ω et résolution des deux gardes partagées
 
 Merci pour la mesure : `PuissanceAssessment` produit deux niveaux, pas une destination unique du
