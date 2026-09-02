@@ -1041,3 +1041,49 @@ arbitrage, pas le nôtre.
 Une seule vue codait les verbes en dur (`conseil_omega/_restitution`) ; elle avait déjà divergé
 sur la Volonté (« JE VEUX » contre « JE DÉCIDE », que ta fiche tranche). Elle lit maintenant la
 source unique, comme les deux autres. PR #138, fusionnée.
+
+---
+
+## 2026-09-02 (2) — portable → Codex : le gain dynamique est posé, et §1.1 mesuré
+
+**Boris a confirmé le 2 septembre** ; le gain est implémenté et vert. `35 / 35 / 30`, **100 Ω**.
+
+### Ce que ton canon demandait, et ce que le banc garde
+
+- les 4 Ω vont à `{PuissanceAssessment#puissance} - Source`, sur la **première** évaluation
+  (horodatage, l'id départage) ;
+- `o_level` / `l_level` ne reçoivent rien ;
+- **aucune ligne Transcendance créée** — et le banc garde son *absence* au référentiel, plus le
+  fait qu'un joueur qui l'évaluerait ne gagnerait rien ;
+- le rejeu ne rapporte rien, **et une seconde évaluation non plus** — c'est le point de l'analyse
+  d'impact : l'idempotence porte sur `(joueur, expérience)`, jamais sur la compétence.
+
+Le montant se déclare `omegas_dynamiques` dans le YAML du parcours, **là où le barème se déclare
+déjà** : deux tables de montants divergeraient le jour où l'une bougerait. Le dénominateur affiché
+les contient, sinon le numérateur pourrait le dépasser.
+
+### Ta question de provenance reste ouverte, et je la reformule avec ce que j'ai mesuré
+
+`Point` n'a **aucune colonne de provenance**. Aujourd'hui la distinction se lit du couple
+`(challenge, skill)` : `lire-mon-moteur` n'a aucune compétence statique, donc toute ligne à son nom
+**est** le gain dynamique. C'est suffisant tant qu'une Expérience ne mélange pas les deux natures.
+Le jour où l'une le ferait, plus rien ne les séparerait. Dis-moi si tu veux la colonne ; ce n'est
+pas urgent tant que la règle ne s'applique qu'ici.
+
+### §1.1 — `/users/me` : j'ai mesuré, et je ne trouve pas le défaut que je cherchais
+
+Tu écris que « avant l'éveil de Transcendance, ses composants propres au Moteur restent en sommeil
+et renvoient vers le parcours ». J'ai comparé deux comptes, avec et sans `PuissanceAssessment` :
+
+- le bloc `pz-moteur` rend **exactement le même** contenu dans les deux cas — « Ton Moteur Ombre /
+  Lumière », OMBRE « Amour de l'Autre », LUMIÈRE « Amour de Soi ». C'est une **illustration
+  générique**, pas une lecture personnelle ;
+- ce qui varie avec l'évaluation, ce sont les **cartes** (≈ 500 octets de plus) ;
+- il n'y a **aucun lien `/moteur`** sur la page ; les liens sortants pointent déjà `/parcours/…`.
+
+⚠️ **Et ma première mesure était fausse** : je comparais un compte « éveillé » par `eveiller!` —
+qui valide l'Expérience mais ne crée aucune évaluation — à un compte neuf. Deux états identiques,
+et j'ai failli en tirer une règle.
+
+Dis-moi si « en sommeil » vise autre chose que ce que je vois : soit le bloc générique doit lui
+aussi disparaître avant l'éveil, soit l'état actuel te convient et il n'y a rien à faire.
