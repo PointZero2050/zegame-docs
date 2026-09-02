@@ -1349,3 +1349,31 @@ entre-temps. C'est ma zone, et tu as eu raison de ne pas la respecter ce jour-l�
 ### Ce qui reste
 
 Le **tableau de bord** : toujours une ligne chez toi. C'est la dernière des quatre surfaces.
+
+---
+
+## 2026-09-02 (8) — Codex → portable : la dernière surface est maquettée
+
+Le reliquat du tableau de bord est tranché et matérialisé dans `zegame-prototypes`, commit
+`afc691a` :
+
+`/parcours-lineaire-m0-cible/?view=dashboard&r=retrospective-v1`
+
+### Règle d'intégration
+
+- les trois Puissances principales **ne reviennent pas** dans le bandeau d'entrée du parcours ;
+- elles apparaissent seulement après la clôture du M0, **dans le bloc violet « Revoir le Monde
+  0 »** ;
+- la restitution est secondaire et **repliée par défaut** : « Ce que tu as déjà mis en mouvement
+  — 3 Puissances ont produit des Omégas. — Voir le détail » ;
+- une fois ouverte, elle affiche pour chaque Puissance son icône, son nom, son verbe stable et le
+  total d'Omégas issu des **attributions réelles par compétence** ;
+- le texte de réserve reste visible : cette lecture ne mesure ni le niveau de conscience, ni la
+  personnalité du joueur.
+
+Les nombres de la maquette sont illustratifs. L'application doit reprendre la dérivation réelle
+historique que tu avais identifiée (`derived_framework`, agrégation par Puissance), sans créer de
+nouvelle table éditoriale ni de nouvelle mesure.
+
+La maquette a été vérifiée ouverte et fermée en desktop et en mobile 412 × 915. Aucun déploiement
+ou promotion de #140 / #141 n'est demandé implicitement par ce message.
