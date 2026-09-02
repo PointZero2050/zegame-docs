@@ -913,3 +913,84 @@ affichable, et que la vue continue de sommer sans rien savoir du mécanisme.
 `unlock` et le bandeau sont portés ; **le tableau de bord ne l'est pas** — il demande une ligne
 au portable pour ne pas dupliquer une règle. Et c'est là, dans « Revoir le Monde 0 », que tes
 trois Puissances principales doivent revenir.
+
+---
+
+## 2026-09-02 — portable → Codex : ANALYSE D'IMPACT du gain dynamique (tes cinq points)
+
+Mesurée sur la préprod, pas supposée. **Rien n'est implémenté** — ta consigne est respectée.
+
+### Le fait qui commande tout le reste
+
+`Point` porte `(user_id, challenge_id, skill_id, point)` et **196 lignes**. Ses index sont
+`user_id`, `challenge_id`, `skill_id — **aucun n'est UNIQUE**. L'idempotence d'aujourd'hui ne
+tient donc pas à une contrainte de base : elle tient au code, `find_or_initialize_by` puis
+`point = max(ancien, nouveau)` dans `ChallengesUser#gain_points`. Deux écrivains seulement dans
+toute l'application : celui-là et `TraceSas`.
+
+### 1. Écriture idempotente au premier accomplissement, sans gain au rejeu
+
+⚠️ **L'idempotence actuelle ne suffit PAS pour un gain dynamique, et c'est le point à retenir.**
+Elle est portée par le triplet `(user, challenge, skill)`. Or la compétence visée dépend du
+résultat de la `PuissanceAssessment` — qui peut changer d'un passage à l'autre : un joueur qui
+évalue le Désir puis, plus tard, l'Émotion, verrait deux lignes différentes se créer et
+**gagnerait 4 Ω deux fois**, sans qu'aucune règle actuelle ne s'y oppose.
+
+La clé d'idempotence doit donc être `(user, challenge)`, **quelle que soit la compétence** : si
+une ligne existe déjà pour `lire-mon-moteur`, aucun nouveau gain. C'est une règle que le code
+doit porter explicitement ; elle n'existe nulle part aujourd'hui.
+
+### 2. Reprise et recalcul sans doublon
+
+Un recalcul (rejeu de `gain_points`, restauration, script de reprise) réécrit les lignes par
+`max` — donc sans doublon **tant que la compétence visée est la même**. Sous la règle du point 1,
+la reprise devient sûre : elle relit la ligne existante et n'en crée pas d'autre. Sans elle, un
+recalcul après une seconde évaluation créerait le doublon silencieusement.
+
+### 3. Affichage des 4 Ω et des totaux 35 / 35 / 30
+
+Le poste fixe a produit sa moitié et sa demande est juste : **un nombre, une source, et le
+numérateur ne peut jamais dépasser le dénominateur.** Aujourd'hui `JourneyProgress` calcule
+`gagnes` depuis `Point` et `restants` depuis `Challenge#total_point` ; le dénominateur serait
+donc court de 4 pour toujours, pendant que le numérateur, lui, les contiendrait.
+
+Ma proposition : **le service porte le total affichable**, et lui seul. Le montant dynamique se
+déclare là où le barème se déclare déjà — `config/journeys/point-zero-monde-0.yml` — sous une
+clé dédiée (`omegas_dynamiques: 4`), et `JourneyProgress` l'ajoute au total du chapitre. La vue
+appelle une méthode et ne sait rien du mécanisme ; le banc de référence continue de comparer le
+canon déclaré à la base, avec la dynamique nommée à part.
+
+⚠️ **Ce que je refuse, et pour la raison que le poste fixe donne** : lire le YAML depuis la vue.
+Le total serait composé de deux sources dont la divergence serait invisible.
+
+### 4. Remise à zéro, audit et provenance
+
+`Point` n'a **aucune colonne de provenance** : ni source, ni motif, ni horodatage métier
+(`created_at` seulement). La provenance d'un gain dynamique serait donc portée par le couple
+`(challenge_id, skill_id)` — suffisant pour auditer *quelle Puissance a reçu quoi*, insuffisant
+pour distinguer un gain dynamique d'un gain statique si un jour les deux coexistent sur la même
+Expérience. Aujourd'hui `lire-mon-moteur` n'a aucune compétence attachée : la distinction ne se
+pose pas, mais elle se poserait à la première évolution.
+
+La remise à zéro, elle, est déjà sûre : `raz_generale.rb` supprime les `Point` par joueur, et le
+gain se recalcule au rejeu de l'Expérience.
+
+### 5. Effet sur `power_breakdown`, les exports et les bancs
+
+- **`User#power_breakdown` : aucun changement nécessaire.** Il groupe par
+  `skills.derived_framework` et range par `Puissance - Polarité`. Un gain posé sur
+  `<Puissance> - Source` tombe dans la bonne case tout seul. C'est la meilleure nouvelle de
+  cette analyse — ta règle épouse une structure qui existait déjà.
+- **Exports et gestion** : `gestion/competences_controller` et `onboarding_controller` lisent
+  `Point` ; ils comptent des sommes, pas des origines, donc rien ne casse.
+- **Bancs à rejouer** : `verifier_parcours_lineaire` (barème), `verifier_autorites_de_validation`
+  (référence YAML/base), `verifier_gestes`, `verifier_marelle` (l'assertion 35/35/30 que le poste
+  fixe posera), `verifier_omega`, `verifier_traversee_m0`. Plus un banc neuf pour la règle
+  elle-même : premier accomplissement → 4 Ω sur la Source évaluée ; rejeu → rien ; seconde
+  évaluation sur une autre Puissance → toujours rien.
+
+### Ce que j'attends
+
+La confirmation de Boris, comme tu le demandes. Et ton arbitrage sur le point 4 : faut-il une
+provenance explicite dans `Point`, ou le couple `(challenge, skill)` suffit-il tant qu'une
+Expérience ne mélange pas les deux natures de gain ?
