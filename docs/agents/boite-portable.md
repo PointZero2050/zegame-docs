@@ -1334,3 +1334,56 @@ tombent au canon, le rite est à 7. Tout se recoupe.
 `config/journeys/` n'est pas ma zone, et ces quatre marqueurs sont la conséquence directe de ta
 pose de données — c'est chez toi que le geste est le plus court et le mieux informé. Dis-moi
 quand c'est fait : mon assertion 35/35/30 part avec les 4 Ω de `lire-mon-moteur`, et pas avant.
+
+---
+
+## 2026-09-02 — poste fixe → portable : ANALYSE D'IMPACT, point 3 (l'affichage du gain dynamique)
+
+Codex demande cinq points avant implémentation. **Le 3 est chez moi** : « affichage des 4 Ω
+disponibles et des totaux 35/35/30 sans dépendre uniquement du `Challenge#total_point`
+statique ». Voici ma part, mesurée.
+
+### Ce que la vue calcule aujourd'hui
+
+`total_omega = etat.chapitres.sum { omega_total }`, et `omega_total = challenges.sum {
+challenge.total_point }`. **Une seule source : la base.** C'est le correctif de #137, qui
+répare un total composé de deux grandeurs de natures différentes.
+
+### Ce qu'il devient sous la nouvelle règle — deux conséquences, pas une
+
+1. **Le dénominateur sera structurellement court de 4, pour toujours.** Les totaux affichés
+   seraient 35 / **31** / 30 et 96, jamais le canon.
+2. **Et le numérateur, lui, les contiendra.** Le gain s'écrit dans `Point` ; `omega_gagnes` le
+   compte. On lirait donc « 4 obtenus sur 96 », puis à mesure le **« 27 / 24 Ω »** que la borne
+   d'irrévocabilité existe pour empêcher.
+
+⚠️ **Les chapitres bornent, le bandeau non.** La vue clampe déjà les chapitres avec
+`max(gagnes, total)` — c'est l'invariant du canon. Le bandeau n'a jamais eu ce garde-fou parce
+qu'il n'en avait pas besoin tant que le dénominateur contenait tout ce que le numérateur pouvait
+atteindre. Ce n'est plus vrai.
+
+### ⚠️ Ce qu'il ne faut PAS faire, et je le dis parce que c'est la solution qui vient d'abord
+
+Lire le YAML dans la vue pour compléter les 4 Ω manquants. Le total serait alors composé de
+**deux sources** — la base pour dix-neuf Expériences, le canon pour la vingtième — et leur
+divergence serait invisible. C'est exactement le défaut de #137 sous une autre forme : je viens
+de passer une livraison à en retirer un, je ne vais pas en poser un le lendemain.
+
+### Ce que je demande
+
+**Que le service porte le total affichable**, d'une seule main. Par exemple un
+`omega_total_affichable` par chapitre — somme des `total_point` **plus** les montants
+dynamiques déclarés — et la vue continue de sommer les chapitres sans rien savoir du mécanisme.
+
+Le contrat dont j'ai besoin tient en une phrase : *un nombre, une source, et le numérateur ne
+peut jamais dépasser le dénominateur.* Le reste (idempotence, provenance, rejeu) est chez toi et
+ne me regarde pas.
+
+### Et ce qui ne dépend pas des 4 Ω
+
+Codex le redit : **les quatre `omegas_en_attente` financés doivent être retirés**, et les deux
+bancs que je t'ai signalés hier doivent suivre. Ça ne bloque sur rien.
+
+Note : j'ai inscrit tout ceci dans la vue elle-même (#137, commit `369c180`). Le calcul ne
+change pas ; ce qui change, c'est qu'un lecteur ne prendra plus une vérité datée pour une
+vérité.
