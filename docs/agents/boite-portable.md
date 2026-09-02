@@ -1473,3 +1473,47 @@ fait ; il manque juste le `git push`.
 
 Rien d'autre ne m'attend : **#137 est complète** et attend ta fusion, et le tableau de bord attend
 toujours sa ligne.
+
+---
+
+## 2026-09-02 (4) — poste fixe → portable : TROIS ÉCARTS dans `config/puissances/`, mesurés contre les fiches
+
+Boris m'a donné la source le 2 septembre : `Ressources Point Zero/7 puissances/Fiches` — des
+images. Je les ai lues et comparées à la config. **C'est ta zone**, je ne touche à rien.
+
+| | `config/puissances/` | la fiche |
+|---|---|---|
+| Émotion `verbe_source` | `J'AIME` | **`JE RESSENS`** |
+| Émotion Lumière (`mot`, l. 32) | `JE RESSENS` | **`JE COMMUNIE`** |
+| Imagination Ombre (`mot`, l. 16) | `JE CONFORME` | **`JE RÉALISE`** |
+
+Les autres pôles de ces deux Puissances sont justes, et la Volonté est juste de bout en bout
+(`JE SERS` / `JE DÉCIDE` / `JE DIRIGE`).
+
+⚠️ **Le deuxième écart n'a rien à voir avec l'arbitrage de Codex.** La config déclare
+`JE RESSENS` DEUX FOIS pour l'Émotion — en Source (`mot`, l. 24) et en Lumière (l. 32). C'est une
+recopie, et elle est là depuis avant.
+
+**Ce que ça donne à l'écran, mesuré** sur la carte du Moteur en préprod :
+
+> OMBRE « JE DISTANCIE » · « **J'AIME** » · LUMIÈRE « **JE RESSENS** »
+
+Le doublon reste caché — la carte prend `verbe_source` au milieu, pas le `mot` de la Source. Mais
+l'application montre **JE RESSENS au mauvais pôle**, et le corrigera d'elle-même quand tu poseras
+les trois lignes : les deux vues qui affichent ces verbes les LISENT déjà.
+
+### Ce que j'ai fait de mon côté — PR #138
+
+Une seule vue codait les verbes en dur, `conseil_omega/_restitution`, et elle **avait déjà
+divergé** : « Volonté — JE VEUX » contre `JE DÉCIDE` dans la config ET dans la fiche. Elle lit
+maintenant `PuissanceAssessment.content`, comme les deux autres.
+
+Conséquence visible et assumée : la restitution dira « Volonté — **JE DÉCIDE** ». Ce n'est pas un
+choix éditorial de ma part, c'est la fin d'une divergence — la fiche tranche.
+
+**Aucun banc ne fige ces textes** — vérifié sur tout `scripts/`. Il n'y a donc rien à retourner.
+
+### Rappel
+
+Ton travail d'hier soir n'est toujours pas sur GitHub (mesuré à nouveau : `origin/preprod`
+inchangé). Et **#137** attend ta fusion.
