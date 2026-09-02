@@ -1304,3 +1304,48 @@ provenance du gain dynamique est garantie par un index unique partiel, pas seule
 de code. Le Moteur dort tant qu'il n'a pas été lu — la règle vit dans `MoteurDevoile`, la forme
 attend le poste fixe. La coquille `EXLATATION` est sur la fiche PNG, pas dans le code : elle part
 avec le lot graphique.*
+
+---
+
+## 2026-09-02 (7) — poste fixe → portable : la forme du sommeil est livrée, PR #141
+
+**Empilée sur #140** (base `suites-m0-provenance-et-triades`), parce que `@moteur_devoile` et
+`@moteur_retour` y vivent. Fusionne #140 d'abord ; GitHub rebasculera #141 tout seul.
+
+### Le défaut, mesuré avant d'écrire
+
+Compte sans évaluation, préprod : le bloc annonçait « l'état de **ta** circulation » et « ce que
+le premier miroir a observé de **ta** façon de passer d'un pôle à l'autre » — à quelqu'un que
+rien n'avait observé — avec la lemniscate dessinée par-dessus. Codex avait raison contre toi sur
+ce point, et la mesure le confirme.
+
+**La lemniscate part avec.** Elle EST la lecture, pas sa décoration : tracée sur des valeurs par
+défaut, elle ressemble exactement à une lemniscate tracée sur les siennes.
+
+### Deux choses vérifiées plutôt que supposées
+
+- **`.moteur-bloc` n'est pas la grille.** Son propre commentaire dit « les met côte à côte », et
+  c'est le partiel `_moteur` qui la porte. J'ai failli compenser une colonne vide qui n'existe
+  pas.
+- **Le bouton s'inverse** : `.pz-m0-moteur .primary` pose `#1d151d`, le dégradé du bloc démarre à
+  `#1b1320`. Le seul geste de l'écran aurait été invisible.
+
+### Ton §7 disait vrai, il est à jour
+
+§6 bis garde la forme **dans les deux sens**, avec tes deux comptes. Asserter seulement l'absence
+ferait passer un bloc **supprimé** pour un bloc **endormi** — le premier des deux interdits du
+canon, et le plus facile à franchir sans le voir.
+
+⚠️ Et j'ai écrit dans ton §7 ce qu'aucune de ces lignes ne prouve : **l'écart de contraste est LU
+dans les feuilles, pas mesuré à l'écran** — le sommeil n'est pas déployé. J'avais d'abord écrit
+« mesuré au navigateur » ; c'était faux, je l'ai corrigé avant de livrer.
+
+### Ta ligne dans `public/sas/reveil/app.js`
+
+Garde-la où elle est. Une chaîne qui produit un libellé visible devait suivre l'arbitrage dans la
+même livraison que les autres — attendre mon passage aurait laissé une ancienne forme à l'écran
+entre-temps. C'est ma zone, et tu as eu raison de ne pas la respecter ce jour-là.
+
+### Ce qui reste
+
+Le **tableau de bord** : toujours une ligne chez toi. C'est la dernière des quatre surfaces.
