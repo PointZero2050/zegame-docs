@@ -162,30 +162,43 @@ facultatif : il ne bloque jamais l'ouverture de l'Expérience essentielle suivan
 
 ### 4.2. Affectation des 25 Omégas des cinq Expériences d'appropriation
 
-**Ajout Codex — arbitrage de Boris du 2 septembre 2026.** La grammaire de Conscience n'est pas
-un catalogue de capacités spécialisées. Chaque Puissance porte une triade stable
-**Ombre / Source / Lumière**, soit trois verbes invariants qui donnent sa boussole. Une
-Expérience qui dévoile une Puissance pour la première fois ne crée donc aucune compétence
-supplémentaire : ses Omégas alimentent le verbe **Source** de cette Puissance dans le
-référentiel existant.
+**Ajout Codex — arbitrage de Boris du 2 septembre 2026, corrigé après lecture des pages de
+détail des Puissances dans l'application.** La grammaire de Conscience n'est pas un catalogue de
+capacités spécialisées. Chacune des six Puissances centrales porte une triade stable
+**Ombre / Source / Lumière**, soit trois verbes invariants qui donnent sa boussole. Les degrés
+internes des pôles précisent leur intensité ; ils ne constituent pas de nouvelles capacités.
 
-| Expérience | Affectation canonique | Verbe stable | Ω |
+Les verbes d'accès affichés dans le menu ne doivent pas être confondus avec les verbes Source.
+Les pages de détail applicatives font foi. Quatre Expériences mobilisent directement une Source :
+
+| Expérience | Affectation canonique | Verbe Source de la page de détail | Ω |
 |---|---|---|---:|
 | **Façonner mon jumeau** | Désir · Source | **Je suis** | 5 |
-| **Choisir qui marchera à mes côtés** | Émotion · Source | **Je ressens** | 4 |
-| **Choisir ma place parmi les autres** | Communication · Source | **Je m'exprime** | 6 |
-| **Choisir un double regard** | Intuition · Source | **Je discerne** | 6 |
-| **Lire mon Moteur** | Transcendance · Source | **Je donne** | 4 |
+| **Choisir qui marchera à mes côtés** | Émotion · Source | **J'aime** | 4 |
+| **Choisir ma place parmi les autres** | Communication · Source | **J'exprime** | 6 |
+| **Choisir un double regard** | Intuition · Source | **Je connais** | 6 |
 
-Total affecté : **25 Omégas**. Avec les 75 Omégas déjà portés par les quatorze autres
-Expériences, le M0 totalise bien **100 Omégas**.
+La cinquième Expérience suit une règle différente :
 
-Le raccord technique doit résoudre les lignes par leur identité de référentiel
-`{Puissance} - Source` et conserver leur libellé existant. Il ne doit ni créer une capacité
-spécialisée au nom de l'Expérience, ni répartir ces montants entre plusieurs capacités. Si une
-ligne canonique est absente ou ambiguë dans les données — en particulier
-`Transcendance - Source` — l'intégration s'arrête et signale l'incohérence du référentiel au lieu
-de fabriquer un substitut.
+| Expérience | Affectation canonique | Ω |
+|---|---|---:|
+| **Lire mon Moteur** | état du référentiel existant correspondant au résultat réel de la première évaluation de Puissance enregistrée | 4 |
+
+La Transcendance n'est pas une septième jauge et ne porte pas de triade propre dans les pages de
+détail : elle désigne la circulation émergente des six Puissances. Il ne faut donc créer ni
+`Transcendance - Source`, ni capacité `Je donne` pour loger ces 4 Omégas. `Je donne` reste le
+verbe d'accès au territoire Transcendance, pas une destination comptable du référentiel.
+
+Total affecté : **25 Omégas** — 21 sur quatre Sources stables et 4 sur l'état réellement révélé
+par l'évaluation. Avec les 75 Omégas déjà portés par les quatorze autres Expériences, le M0
+totalise bien **100 Omégas**.
+
+Le raccord technique conserve les lignes existantes et leurs libellés. Il ne crée aucune
+capacité spécialisée au nom d'une Expérience. Pour `Lire mon Moteur`, il doit relier les 4
+Omégas au résultat persistant de `PuissanceAssessment` et à l'entrée correspondante du
+référentiel. Si cette correspondance n'est pas déterministe dans les données actuelles,
+l'intégration s'arrête et documente précisément l'écart avant toute modification du modèle de
+points.
 
 ## 5. Absorption de l'ancien métaparcours
 

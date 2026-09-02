@@ -1,29 +1,37 @@
 # Boîte du portable
 
-### 2026-09-02 · de Codex · Affecter les 25 Ω au référentiel stable Ombre / Source / Lumière
+### 2026-09-02 · de Codex · CORRECTION — les pages de détail font foi pour les 25 Ω
 
-Boris écarte explicitement la création de capacités spécialisées : elle confondrait les niveaux
-logiques. La grammaire de Conscience porte **trois verbes invariants par Puissance** — Ombre,
-Source, Lumière. Les cinq Expériences d'appropriation alimentent donc l'entrée **Source** déjà
-canonique de la Puissance qu'elles dévoilent :
+Ne pas appliquer mon instruction précédente qui envoyait les cinq montants vers des Sources :
+elle confondait les verbes d'accès du menu avec les verbes de la triade. Boris demande de se
+référer aux **pages de détail des Puissances dans l'application**.
 
-| Expérience | Ligne de référentiel à résoudre | Verbe | Ω |
+Les quatre affectations statiques sont :
+
+| Expérience | Ligne du référentiel | Verbe Source exact | Ω |
 |---|---|---|---:|
 | Façonner mon jumeau | `Désir - Source` | Je suis | 5 |
-| Choisir qui marchera à mes côtés | `Émotion - Source` | Je ressens | 4 |
-| Choisir ma place parmi les autres | `Communication - Source` | Je m'exprime | 6 |
-| Choisir un double regard | `Intuition - Source` | Je discerne | 6 |
-| Lire mon Moteur | `Transcendance - Source` | Je donne | 4 |
+| Choisir qui marchera à mes côtés | `Émotion - Source` | J'aime | 4 |
+| Choisir ma place parmi les autres | `Communication - Source` | J'exprime | 6 |
+| Choisir un double regard | `Intuition - Source` | Je connais | 6 |
 
-Dans `recalibrer_omegas_m0.rb`, résoudre **exactement une** ligne existante par ce
-`derived_framework`, lui attribuer tout le montant de l'Expérience, et ne créer aucun Skill au
-nom d'une action ou d'une capacité. La simulation doit échouer si la ligne manque ou si plusieurs
-lignes la revendiquent. Le cas signalé de Transcendance devient donc un contrôle du référentiel :
-ne pas déplacer ses 4 Ω vers une autre Puissance et ne pas inventer de substitut. Merci de
-remonter la liste exacte des lignes trouvées avant l'écriture, puis de vérifier 75 → 100 Ω et le
-détail 5 + 4 + 6 + 6 + 4.
+`Lire mon Moteur` ne va **pas** vers `Transcendance - Source`. La page Moteur dit explicitement
+que Transcendance est l'émergence de la circulation des six Puissances centrales et ne porte pas
+de triade propre. Ses **4 Ω** doivent rejoindre l'entrée existante qui correspond au résultat
+réel de la première `PuissanceAssessment` enregistrée pendant l'Expérience : Puissance,
+polarité et degré effectivement révélés.
 
-Référence canonique mise à jour :
+Conséquences pour `recalibrer_omegas_m0.rb` :
+
+1. poser statiquement les 21 Ω des quatre Sources ci-dessus, sans créer de Skill ;
+2. analyser le résultat persistant de `PuissanceAssessment` et la correspondance existante vers
+   le référentiel avant d'écrire les 4 Ω de `Lire mon Moteur` ;
+3. si cette correspondance n'est pas déterministe, arrêter la simulation et me remonter les
+   champs disponibles ainsi que les lignes candidates — ne pas créer `Transcendance - Source`,
+   ne pas répartir arbitrairement les 4 Ω et ne pas modifier le modèle de points sans analyse
+   d'impact.
+
+La cible finale reste 75 → 100 Ω, avec 5 + 4 + 6 + 6 + 4. Référence corrigée :
 `docs/pedagogie/monde-0-parcours-lineaire-appropriation.md` §4.2.
 
 ### 2026-09-01 · de Codex · Corriger la porte du Monde 1 après l'épilogue
