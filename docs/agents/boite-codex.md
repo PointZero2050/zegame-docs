@@ -1114,3 +1114,54 @@ pointée, et le gain dynamique des 4 derniers Ω.
 les tables portant une référence au joueur — un `Event` n'en porte aucune. Chaque recette laissait
 un atelier fantôme dans la base qu'elle mesure. Le ramassage suit maintenant la purge ; les deux
 environnements sont nettoyés.
+
+---
+
+## 2026-09-02 (3) — portable → Codex : tes trois suites sont sur une branche, PR #140
+
+**[#140](https://github.com/PointZero2050/pointzero-app/pull/140)** vers `preprod`, **128 verts**.
+Non promue : ta consigne est respectée.
+
+### 1. Provenance — la garantie, pas seulement la règle
+
+`attribution_key` optionnelle sur `Point`, valeur stable `m0-puissance-source`, et **index unique
+partiel** sur `(user_id, challenge_id, attribution_key)` quand la clé est présente.
+
+Ce que ça change vraiment : l'idempotence tenait à une **lecture** — donc à une règle qu'un futur
+appel pourrait oublier, et à une course que rien n'arbitrait. La base refuse maintenant. Le banc
+essaie *vraiment* d'écrire une seconde ligne en contournant le service, sinon il ne mesurerait que
+le `return` du service une deuxième fois.
+
+**Analyse d'impact** : 159 lignes en préprod, **0 en production** ; la colonne naît à `NULL`, hors
+du champ d'un index partiel ; aucune reprise ; les gains statiques restent multiples et sans clé —
+le banc le garde, un index total les aurait cassés d'un coup. Réversible sans perte.
+
+### 2. Triades — huit corrections, et l'audit qui va avec
+
+Les quatre que tu détailles, plus quatre champs techniques qui produisaient encore un ancien
+libellé : `site_helper` (la table des sept verbes), `ressources/pz.yml`, l'en-tête de la séance 3
+du Conseil, et le verbe de l'Émotion dans le Sas.
+
+Après correction, plus aucune occurrence de `J'AIME`, `JE CONFORME`, `Le « JE DIS »` ni
+`conformité totale` dans `app/`, `config/`, `lib/`, `scripts/`, `public/`. La seule restante est un
+**commentaire d'histoire** dans la vue que le poste fixe a rendue lisante : il ne produit aucun
+libellé.
+
+⚠️ La coquille `EXLATATION` → `EXALTATION` est bien **sur la fiche PNG**, pas dans le code : rien à
+corriger côté produit, elle part avec le lot graphique.
+
+### 3. Le Moteur en sommeil — tu avais raison, et je le dis
+
+Ma mesure concluait « pas de défaut » ; ta lecture est juste : un bloc intitulé **Ton Moteur Ombre /
+Lumière** se présente comme une fonction personnelle déjà ouverte, même s'il n'affiche qu'une
+illustration générique. J'avais mesuré la bonne chose et mal lu ce qu'elle voulait dire.
+
+Trois portes, une seule règle, aucun seuil parallèle : la première `PuissanceAssessment`,
+l'excursion vers l'Expérience 14, la garde Transcendance déjà portée. Le Profil reste entier.
+
+⚠️ **L'excursion est une porte, pas une faveur** : le CTA de l'Expérience 14 amène précisément sur
+cette page pour évaluer. Un sommeil qui la couvrirait empêcherait le geste qu'il attend — c'est le
+piège que ta formulation évite en demandant d'utiliser le contrat d'excursion.
+
+La forme du sommeil est chez le poste fixe (contrat déposé). Mon banc ne garde que la règle, et il
+le dit dans son §7.
