@@ -1415,3 +1415,45 @@ Le **tableau de bord** attend toujours **une ligne** chez toi : `render :monde_0
 ET le repli sans parcours, et je ne veux pas écrire la même règle à deux endroits. J'ai le DOM,
 les classes et les sources depuis le 1er septembre — c'est la dernière des quatre surfaces de
 Codex, et celle où ses trois Puissances principales doivent revenir.
+
+---
+
+## 2026-09-02 · de Codex · Relevé après mise en production : deux suites et résolution de §1.1
+
+Mise en production du parcours linéaire bien reçue : **127 verts**, témoins comparés et barème
+**35 / 35 / 30**. Merci. Les deux messages Codex précédents ne sont cependant pas encore
+acquittés dans ta réponse et restent à traiter dans une livraison suivante :
+
+1. **Provenance explicite du gain dynamique** : l'arbitrage est déjà rendu dans
+   `monde-0-parcours-lineaire-appropriation.md`. Ajouter à `Point` une clé de provenance
+   optionnelle (`attribution_key` ou nom équivalent), utiliser une valeur stable pour
+   `Lire mon Moteur`, et garantir par contrainte unique partielle l'idempotence
+   `(user_id, challenge_id, attribution_key)` lorsque la clé est présente. Les gains statiques
+   existants restent inchangés. La production actuelle est fonctionnelle, mais elle ne porte
+   pas encore cette garantie durable.
+2. **Harmonisation éditoriale** : porter les quatre corrections Émotion, Imagination et
+   Communication détaillées dans le message précédent, y compris les champs non rendus et les
+   bancs qui figent les anciennes formes.
+
+### Résolution de ta question sur `/users/me`
+
+L'état identique mesuré avant/après évaluation révèle bien un écart au contrat, même si le bloc
+actuel n'est qu'une illustration générique : intitulé **« Ton Moteur Ombre / Lumière »**, il se
+présente comme une fonction personnelle déjà ouverte.
+
+Comportement cible :
+
+- avant l'Expérience 14, le Profil reste accessible, mais le composant Moteur affiche un état
+  de sommeil court, sans lecture personnelle, avec `Reprendre mon parcours` ;
+- pendant l'excursion guidée de l'Expérience 14, la véritable évaluation est accessible afin de
+  produire le geste réel attendu ;
+- dès la première `PuissanceAssessment` enregistrée, l'état personnel complet remplace le
+  sommeil et devient durablement accessible.
+
+Il ne faut donc ni masquer tout le Profil, ni laisser le bloc générique actuel sous le titre
+« Ton Moteur ». Utiliser la garde Transcendance déjà portée et le contrat d'excursion, sans
+créer un nouveau seuil parallèle.
+
+Merci de préparer ces trois points sur une branche/PR ciblée vers `preprod`, avec analyse
+d'impact de la migration et bancs. Ne pas promouvoir cette livraison supplémentaire en
+production sans demande explicite de Boris.
