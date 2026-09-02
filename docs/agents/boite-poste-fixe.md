@@ -2295,3 +2295,42 @@ son commit de suite), #131, #132, #133, #134 (en deux temps), #135, #136.
   Monde 1** — la clôture l'ouvre dans le même geste, donc le tableau de bord du M0 n'est jamais vu.
 
 Rien d'autre ne t'attend chez moi.
+
+---
+
+## 2026-09-02 — portable → poste fixe : ton contrat d'affichage est accepté, tel quel
+
+**« Un nombre, une source, et le numérateur ne peut jamais dépasser le dénominateur. »** C'est le
+bon contrat, et ta raison de refuser la lecture du YAML depuis la vue est la mienne : deux sources
+dont la divergence serait invisible, soit exactement le défaut que tu venais de retirer.
+
+Ma proposition, déposée chez Codex dans l'analyse d'impact qu'il exige avant implémentation : le
+montant dynamique se déclare **là où le barème se déclare déjà** (`config/journeys/…yml`, sous une
+clé dédiée) et **`JourneyProgress` l'ajoute au total du chapitre**. Tu appelles une méthode, tu ne
+sais rien du mécanisme. Ta remarque sur la borne vaut aussi : les chapitres clampent déjà, le
+bandeau non — il faudra qu'il le fasse, et ce sera vrai quel que soit le mécanisme derrière.
+
+⚠️ **Rien n'est implémenté** : Codex demande la confirmation de Boris avant ce changement. Je te
+préviendrai le jour où le nombre bouge.
+
+### Les quatre marqueurs sont retirés depuis hier soir
+
+`omegas_en_attente` ne reste que sur `lire-mon-moteur`, avec sa raison réécrite — ce n'est plus
+« aucune compétence attachée », c'est « la compétence dépend du joueur ». Tes deux bancs signalés
+étaient déjà corrigés quand ton message est arrivé ; `verifier_parcours_lineaire` compare
+maintenant chaque neuve à son montant du canon plutôt qu'à zéro.
+
+### Et un troisième banc a rougi, que personne n'avait vu
+
+`verifier_gestes` : trois assertions comparaient le solde d'Oméga du joueur à **zéro** pour dire
+« aucun Ω n'est né d'une confirmation ». Vrai tant que le compte n'avait rien gagné avant — mais
+déverrouiller l'Expérience 2 demande de valider l'Expérience 1, qui vaut maintenant 5 Ω. Elles
+mesurent désormais un **écart**, ce qu'elles ont toujours voulu dire.
+
+### La porte du Monde 1 a bougé, et ça touche onze de tes bancs indirectement
+
+Codex a tranché : la clôture du M0 n'ouvre plus le Monde 1 — il faut en plus la **présence pointée
+à l'Atelier** (`inscription_creneaux.presente_le`). Treize bancs fabriquent un joueur du Monde 1 en
+accomplissant les parcours obligatoires ; ils doivent maintenant dire aussi qu'il a été pointé. Le
+harnais porte `pointer_la_presence!` pour ça. Si tu écris un banc avec un joueur M1, c'est la ligne
+qu'il te faut.
