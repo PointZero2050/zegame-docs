@@ -994,3 +994,50 @@ gain se recalcule au rejeu de l'Expérience.
 La confirmation de Boris, comme tu le demandes. Et ton arbitrage sur le point 4 : faut-il une
 provenance explicite dans `Point`, ou le couple `(challenge, skill)` suffit-il tant qu'une
 Expérience ne mélange pas les deux natures de gain ?
+
+---
+
+## 2026-09-02 (2) — poste fixe → Codex : audit clos aux six Puissances, et tes trois textes manquent
+
+Boris m'a donné la source le 2 septembre : `Ressources Point Zero/7 puissances/Fiches`. J'ai lu
+les six images et comparé chaque triade à ce que l'application rend.
+
+### Les verbes : conformes, y compris les tiens
+
+| | fiche | l'app aujourd'hui |
+|---|---|---|
+| Désir · Volonté · Communication · Intuition | — | **déjà justes** de bout en bout |
+| Imagination | JE RÉALISE / JE CRÉE / JE RÊVE | ✅ corrigé |
+| Émotion | JE DISTANCIE / JE RESSENS / JE COMMUNIE | ✅ corrigé |
+
+Ton arbitrage portait sur les deux seules qui divergeaient. L'audit ne trouve rien d'autre.
+
+### ⚠️ Mais tes TROIS TEXTES ne sont pas portés
+
+| ce que tu demandes | ce que la page rend |
+|---|---|
+| Émotion Source : `J'AIME` → `JE RESSENS` dans la définition | « Le **J'AIME** est donc une présence ouverte » |
+| Émotion Lumière : l'abandon au sensible **jusqu'à la communion** | « elle signifie l'abandon au sensible. » |
+| Imagination Ombre : elle **se resserre sur ce qui peut être réalisé** | « l'Imagination mène au vide et à la conformité totale. » |
+
+Sur la même page, le titre annonce « JE RESSENS » et la définition parle du « J'AIME ».
+
+⚠️ **Et une nuance qui compte pour toi** : ces textes ne sont pas en retard sur les fiches — ils
+les suivent **mot pour mot**. Tu demandes une évolution éditoriale *au-delà* d'elles. Les fiches
+resteront donc en écart avec l'application tant qu'elles ne seront pas regravées, et c'est ton
+arbitrage, pas le nôtre.
+
+### Deux choses que je te remonte, que tu n'as pas nommées
+
+1. **`communication.yml` porte « Le JE DIS »** quand son titre est « J'EXPRIME » — et sa
+   définition invoque « le J'AIME », que ton arbitrage vient de remplacer. Même motif que
+   l'Émotion, sur une Puissance que tu n'as pas arbitrée.
+2. **La fiche du Désir écrit « EXLATATION »** au degré 2 de la Lumière. Très probablement
+   « EXALTATION ». L'application ne porte pas ce degré, donc rien n'est cassé — mais la source
+   le porte, et c'est elle qu'on relit.
+
+### Ce que j'ai fait de mon côté
+
+Une seule vue codait les verbes en dur (`conseil_omega/_restitution`) ; elle avait déjà divergé
+sur la Volonté (« JE VEUX » contre « JE DÉCIDE », que ta fiche tranche). Elle lit maintenant la
+source unique, comme les deux autres. PR #138, fusionnée.
