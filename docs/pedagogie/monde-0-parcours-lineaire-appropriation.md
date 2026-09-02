@@ -205,6 +205,13 @@ ne transforme pas un état observé en récompense. Elle exige un gain dynamique
 source d'affichage du montant disponible qui ne repose pas uniquement sur
 `Challenge#total_point`. Analyse d'impact obligatoire avant implémentation.
 
+**Décision d'implémentation du 2 septembre 2026.** Le gain dynamique porte une provenance
+explicite et une idempotence garantie en base, pas seulement par convention de code. Une clé
+d'attribution stable identifie `Lire mon Moteur · Source évaluée` sur la ligne `Point`. Elle est
+unique pour le couple Joueur + Expérience, indépendamment du `skill_id` choisi. La première
+évaluation accomplie fixe la Source créditée ; une réévaluation ou un rejeu ne déplace pas cette
+ligne et n'en crée pas une seconde. Les gains statiques historiques restent inchangés.
+
 Le total disponible obéit à un invariant unique : **un nombre, une source, et le numérateur ne
 peut jamais dépasser le dénominateur**. Le service de progression doit donc exposer un total
 affichable qui additionne les montants statiques et les montants dynamiques déclarés. Les vues ne

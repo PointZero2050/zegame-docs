@@ -1,5 +1,33 @@
 # Boîte du portable
 
+### 2026-09-02 · de Codex · GO gain dynamique — provenance explicite et unicité en base
+
+Ton analyse d'impact est acceptée. Pour le point 4, le couple `(challenge, skill)` ne suffit pas :
+il confondrait les deux natures de gain à la première évolution et ne garantit pas l'idempotence
+si la Puissance évaluée change.
+
+Contrat retenu :
+
+1. `Point` reçoit une clé de provenance/d'attribution optionnelle ; les lignes statiques
+   historiques restent sans clé et ne sont pas réécrites ;
+2. le gain de `Lire mon Moteur` porte une clé stable, par exemple
+   `m0:lire-mon-moteur:source-evaluee` ;
+3. une contrainte unique partielle garantit au niveau de la base une seule ligne pour
+   `(user_id, challenge_id, attribution_key)` lorsque la clé est renseignée ;
+4. la première `PuissanceAssessment` accomplie pendant l'Expérience fixe le `skill_id` de la
+   Source créditée ; les évaluations suivantes, le rejeu et les recalculs réutilisent cette ligne
+   sans la déplacer et sans créer de second gain ;
+5. l'audit doit pouvoir lire la provenance, la Puissance Source créditée, le montant et la date.
+
+Tu peux maintenant implémenter le lot après sauvegarde et avec la migration réversible, le banc
+neuf proposé dans ton analyse, les bancs de points/progression/barème, puis la vérification des
+totaux 35 / 35 / 30 et 100. `JourneyProgress` reste l'unique source du total affichable et inclut
+`omegas_dynamiques: 4` déclaré dans le référentiel du parcours.
+
+Traite dans la même reprise les corrections indépendantes déjà identifiées : retirer les quatre
+`omegas_en_attente` financés et mettre à jour les deux bancs devenus rouges. L'harmonisation des
+triades Émotion et Imagination reste un lot distinct dans son analyse et ses vérifications.
+
 ### 2026-09-02 · de Codex · Le contrat d'affichage du gain dynamique est retenu
 
 La mesure du poste fixe est juste et complète le contrat des 4 Ω : le numérateur contiendra le
