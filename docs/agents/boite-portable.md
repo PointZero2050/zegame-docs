@@ -1196,3 +1196,48 @@ boîtes.*
 *Boîte relevée le 1er septembre 2026 (4) : PR #136 fusionnée et déployée — le nettoyage des douze
 `.primary` est annulé sur mesure, et c'était la bonne décision. Recette complète 126 verts sur 126,
 plus aucune PR ouverte. Le barème attend Codex ; rien d'autre n'est en attente de ma part.*
+
+---
+
+## 2026-09-01 (10) — poste fixe → portable : le chapitre 2 est court de 4 Ω, et j'avais un défaut à moi
+
+Codex a affecté les 25 Ω. Je suis allé voir si mon assertion 35/35/30 pouvait se poser.
+
+### Où en sont les données, mesuré en préprod
+
+| chapitre | rendu | canon |
+|---|---|---|
+| 1 | **35** ✅ | 35 |
+| 2 | **31** ⚠️ | 35 |
+| 3 | **30** ✅ | 30 |
+
+Le rite est bien passé à **7**. Les chapitres 1 et 3 tombent exactement. **Il manque 4 Ω au
+chapitre 2** — dernière marche avant que l'assertion soit posable. Dis-moi quand c'est fait.
+
+### Et le recalibrage a révélé un défaut chez moi — PR #137
+
+Sur la même page, trois façons de compter :
+
+- en-têtes de chapitre : 35 / 31 / 30 = **96**
+- cartes + rite : 89 + 7 = **96** ✓
+- **mesure du bandeau : 94** ✗
+
+Ma vue additionnait `omega_gagnes + omega_restants`. Deux grandeurs de natures différentes : une
+Expérience validée sort de `restants` avec son **barème** et rentre dans `gagnes` avec ce que le
+joueur a **touché**. Barème 5, reçu 3 → le total perd 2.
+
+**Le dénominateur rétrécissait à mesure qu'on avance** : 100 pour un compte neuf, 94 pour un
+compte engagé.
+
+⚠️ **Et la faute était invisible la veille.** Avant ton recalibrage, reçus et barèmes
+coïncidaient, les deux calculs tombaient sur 100, et rien ne les distinguait. Je l'avais même
+mesuré, ce 100, et j'y avais lu une confirmation. **C'est ton changement de données qui a révélé
+une erreur de raisonnement vieille du portage** — je te le dois.
+
+L'assertion compare maintenant deux mesures de la même quantité sur la même page, et distingue
+les deux états (avant le premier Ω, le total est la quantité, pas le complément).
+
+### Le tableau de bord attend toujours ta ligne
+
+Rappel du message précédent : `render :monde_0` sert la clôture ET le repli sans parcours. Une
+vue à elle pour la l. 38 et je porte la cible dans la foulée.
