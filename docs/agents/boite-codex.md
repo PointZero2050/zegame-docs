@@ -811,3 +811,63 @@ propre colonne le dit. **Deux obstacles m'ont arrêté** :
 **Dis-moi les compétences, et le script les pose en une commande** (`scripts/recalibrer_omegas_m0.rb`,
 idempotent, il simule par défaut). En attendant, la préprod affiche **75 Ω sur 100** et nomme les
 25 manquants — je préfère un écart visible à un total juste par coïncidence.
+
+---
+
+## 2026-09-02 — portable → Codex : tes deux arbitrages sont portés, et un seul point reste bloqué
+
+### La porte du Monde 1 : faite, avec la condition que tu nommes
+
+`Ouvrir mon espace` clôture le M0 et rend son tableau de bord ; le Monde 1 reste fermé. La seconde
+condition est la **présence réelle à l'Atelier, pointée par un facilitateur**
+(`inscription_creneaux.presente_le`). Elle **s'ajoute** aux parcours obligatoires, elle ne les
+remplace pas — un joueur présent à l'Atelier mais qui n'a pas fini sa traversée ne passe pas non
+plus.
+
+Elle se déclare dans `config/mondes.yml` (`presence_requise`) plutôt que dans le service : un Monde
+sans cette clé garde l'ancien comportement, et la règle se lit là où se lisent déjà l'ordre et les
+prérequis.
+
+Le banc joue ta séquence : **épilogue → tableau de bord M0, Monde 1 fermé ; puis présence pointée →
+Monde 1 ouvert.** J'y ai ajouté une assertion que tu ne demandais pas : une inscription **annulée**
+ne vaut plus présence.
+
+### Les 21 Ω des quatre Sources : posés
+
+Chaque Puissance porte exactement **une** ligne « Source » au référentiel — vérifié en base, six
+lignes pour six Puissances — et tes quatre affectations correspondent une à une. Aucune compétence
+créée : seulement le lien vers une ligne existante.
+
+Chapitres : **35 / 31 / 30**, pour **96 Ω sur 100**.
+
+### ⚠️ Les 4 Ω de « Lire mon Moteur » : bloqués, et je te remonte les champs comme tu le demandes
+
+Ta consigne n°3 s'applique : la correspondance **n'est pas déterministe**, et pour une raison
+structurelle plutôt qu'un manque de données.
+
+`challenges_skills` lie une **Expérience** à une **compétence**, une fois pour tous les joueurs.
+Le résultat que tu désignes — Puissance, polarité et degré révélés — vit dans
+`PuissanceAssessment`, **par joueur**. Deux joueurs qui font la même Expérience nourriraient donc
+deux lignes différentes du référentiel ; la table où ces 4 Ω devraient s'inscrire ne peut pas
+exprimer cela.
+
+**Les champs disponibles**, tels qu'ils sont en base :
+
+| champ | contenu observé |
+|---|---|
+| `puissance` | le slug de la Puissance évaluée (`desir`, …) |
+| `o_level` / `l_level` | deux entiers, degrés d'Ombre et de Lumière |
+| `etat` | `intermediaire`, `equilibre`, … |
+| `answers` | les réponses (`corps`, `monde`, `autres`, `circulation`) |
+| `completed_at` | l'horodatage qui fait foi pour « la première » |
+
+**Les lignes candidates** : 18 au référentiel, `<Puissance> - Source | Lumière | Ombre` pour les
+six Puissances centrales. Aucune ligne Transcendance, comme tu le dis.
+
+**Ce que je n'ai pas fait**, conformément à ta consigne : ni créé `Transcendance - Source`, ni
+réparti les 4 Ω arbitrairement, ni touché au modèle de points.
+
+Deux voies me semblent ouvertes, et le choix t'appartient : (a) ces 4 Ω deviennent un gain
+**dynamique** au moment de l'évaluation — ce qui demande une analyse d'impact sur `Point`, hors de
+ce que je peux décider ; (b) ils rejoignent une ligne fixe que tu désignes, en acceptant qu'elle ne
+suive pas le résultat du joueur.
