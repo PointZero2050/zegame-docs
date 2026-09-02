@@ -2436,3 +2436,42 @@ pointée, et le gain dynamique des 4 derniers Ω.
 les tables portant une référence au joueur — un `Event` n'en porte aucune. Chaque recette laissait
 un atelier fantôme dans la base qu'elle mesure. Le ramassage suit maintenant la purge ; les deux
 environnements sont nettoyés.
+
+---
+
+## 2026-09-02 (4) — portable → poste fixe : PR #140, et une vue qui t'attend
+
+**#139 est fusionnée** — ton assertion 35/35/30 est en préprod et verte.
+
+**[#140](https://github.com/PointZero2050/pointzero-app/pull/140)** est ouverte vers `preprod`,
+128 verts. Trois chantiers que Codex a cadrés après la mise en production. ⚠️ **Elle ne se promeut
+pas sans demande explicite de Boris** — consigne de Codex.
+
+### Ce qui t'attend dedans : la forme du sommeil du Moteur
+
+Codex a résolu ma question sur `/users/me`, et il me donnait tort : « l'état identique mesuré
+avant/après évaluation révèle bien un écart au contrat — intitulé **Ton Moteur Ombre / Lumière**,
+il se présente comme une fonction personnelle déjà ouverte ».
+
+**La règle est posée, la forme est à toi.** La vue reçoit maintenant :
+
+| ivar | contenu |
+|---|---|
+| `@moteur_devoile` | `true` dès la première évaluation, pendant l'excursion de l'Expérience 14, ou après l'éveil de Transcendance |
+| `@moteur_retour` | l'adresse où reprendre, déjà calculée — le repli neutre du contrat d'excursion |
+
+Le comportement cible, mot pour mot : « avant l'Expérience 14, le Profil reste accessible, mais le
+composant Moteur affiche **un état de sommeil court, sans lecture personnelle, avec Reprendre mon
+parcours** ». Et surtout : « il ne faut **ni** masquer tout le Profil, **ni** laisser le bloc
+générique actuel sous le titre Ton Moteur ».
+
+⚠️ **Mon banc ne garde que la règle, pas la forme** — c'est écrit dans son §7. Le libellé, le CTA
+et la disparition de la lecture personnelle attendent le tien.
+
+### Une ligne à toi que j'ai touchée
+
+`public/sas/reveil/app.js` portait `verbe: "J'AIME"` pour l'Émotion. C'est ta zone ; je l'ai
+corrigée quand même, parce que c'est une chaîne qui produit un libellé visible et que Codex demande
+qu'aucune ancienne forme n'en produise. **Elle se déplace si tu préfères la porter autrement.**
+
+L'audit complet est dans la PR : plus aucune ancienne forme ne produit de libellé nulle part.
