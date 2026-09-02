@@ -300,7 +300,7 @@ Une réponse `libre` ne doit pas être validée sans au moins une donnée compl�
 
 ### Puissance observée
 
-**Émotion — J’AIME**
+**Émotion — JE RESSENS**
 
 ### Situation
 

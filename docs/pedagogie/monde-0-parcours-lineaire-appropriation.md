@@ -174,7 +174,7 @@ Les pages de détail applicatives font foi. Quatre Expériences mobilisent direc
 | Expérience | Affectation canonique | Verbe Source de la page de détail | Ω |
 |---|---|---|---:|
 | **Façonner mon jumeau** | Désir · Source | **Je suis** | 5 |
-| **Choisir qui marchera à mes côtés** | Émotion · Source | **J'aime** | 4 |
+| **Choisir qui marchera à mes côtés** | Émotion · Source | **Je ressens** | 4 |
 | **Choisir ma place parmi les autres** | Communication · Source | **J'exprime** | 6 |
 | **Choisir un double regard** | Intuition · Source | **Je connais** | 6 |
 

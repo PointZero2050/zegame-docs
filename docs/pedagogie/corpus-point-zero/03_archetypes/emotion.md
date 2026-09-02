@@ -1,4 +1,4 @@
-# Emotion — J’AIME
+# Emotion — JE RESSENS
 ![Référentiel visuel](../assets/emotion_ombre_lumiere.png)
 ## Intensités
 | Niveau | Ombre | Lumière |

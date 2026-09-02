@@ -11,7 +11,7 @@ Chaque puissance porte un verbe vivant, une fonction, et deux polarités de dés
 | 1 | **Désir** | JE SUIS | Élan vital, vibration originelle (Éros) | Ivresse, démesure (Bacchus) | Honte, retrait, dépression (Thanatos) |
 | 2 | **Volonté** | JE VEUX | Souveraineté, direction, persévérance | Domination, toute-puissance | Soumission, servitude, abdication |
 | 3 | **Imagination** | JE CRÉE | Espace des possibles, rapport au temps | Dissociation délirante | Aphantasie, pragmatisme strict |
-| 4 | **Émotion** | J'AIME | Langage énergétique, retour au présent | Chaos, addiction à l'intensité | Mental : anesthésie, coupure |
+| 4 | **Émotion** | JE RESSENS | Langage énergétique, retour au présent | Chaos, addiction à l'intensité | Mental : anesthésie, coupure |
 | 5 | **Communication** | JE M'EXPRIME | Rendre partageable, exprimer les besoins | Manipulation | Mutisme, attente silencieuse |
 | 6 | **Intuition** | JE DISCERNE | Accès direct à l'implicite | Dogmatisme, certitude totale | Superstition, crédulité |
 | 7 | **Transcendance** | JE DONNE | Redistribution, interface avec le Tout | — (pas de polarité propre : seule l'illusion d'autotranscendance) | — |

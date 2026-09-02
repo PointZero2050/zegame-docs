@@ -7,7 +7,7 @@
 | Désir | JE SUIS | Mettre la vie en mouvement et orienter l’élan par intention. |
 | Volonté | JE DÉCIDE | Choisir, agir, tenir une ligne et porter la souveraineté. |
 | Imagination | JE CRÉE | Ouvrir les possibles et donner forme à ce qui n’existe pas encore. |
-| Émotion | J’AIME | Recevoir l’information de la relation et revenir au présent. |
+| Émotion | JE RESSENS | Recevoir l’information de la relation et revenir au présent. |
 | Communication | JE M’EXPRIME | Rendre partageable l’expérience et coordonner les consciences. |
 | Intuition | JE DISCERNE | Percevoir les cohérences et discerner au-delà des apparences. |
 | Transcendance | JE DONNE | Redistribuer l’information et la valeur vers le Tout. |

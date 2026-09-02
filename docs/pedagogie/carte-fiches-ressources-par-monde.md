@@ -160,7 +160,7 @@ pas faire valider par une vidéo ou un automatisme seul.
 | PUI-DES | Désir — « Je suis » : reconnaître l'énergie de l'existence | M1 | M3, M5 | Repère, Expérience | Nouvelle | `Archétypes-Chakras-Exemples-2.png` |
 | PUI-VOL | Volonté — « Je veux » : agir sans se forcer | M1 | M4, M5 | Repère, Expérience | Nouvelle | `Archétypes-Chakras-Exemples-2.png` |
 | PUI-IMA | Imagination — « Je crée » : ouvrir une forme qui n'existait pas | M1 | M4–M6 | Repère, Expérience | Nouvelle | `Archétypes-Chakras-Exemples-2.png` |
-| PUI-EMO | Émotion — « J'aime » : laisser circuler sans être submergé | M1 | M2, M3, M5 | Repère, Expérience, Humain | Nouvelle | `Emotions.png` |
+| PUI-EMO | Émotion — « Je ressens » : laisser circuler sans être submergé | M1 | M2, M3, M5 | Repère, Expérience, Humain | Nouvelle | `Emotions.png` |
 | PUI-COM | Communication — « J'exprime » : rendre la relation habitable | M1 | M2, M4, M6 | Repère, Expérience | Nouvelle | `Archétypes-Chakras-Exemples-2.png` |
 | PUI-INT | Intuition — « Je connais » : discerner avant de conclure | M0 | M1, M4, M5 | Repère, Expérience | Nouvelle | `Archétypes-Chakras-Exemples-2.png` |
 | PUI-TRA | Transcendance — « Je donne » : relier l'œuvre à plus vaste que soi | M1 | M5–M10 | Repère, Dossier, Transmission | Nouvelle longue | `Archétypes-Chakras.png` |

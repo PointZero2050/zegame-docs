@@ -42,7 +42,7 @@ Le corpus décrit une **architecture conceptuelle et fonctionnelle**. Il ne cons
 - Désir — **JE SUIS**
 - Volonté — **JE DÉCIDE**
 - Imagination — **JE CRÉE**
-- Émotion — **J’AIME**
+- Émotion — **JE RESSENS**
 - Communication — **JE M’EXPRIME**
 - Intuition — **JE DISCERNE**
 - Transcendance — **JE DONNE**

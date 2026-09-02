@@ -81,7 +81,7 @@ L'Imagination devient une puissance consciente lorsqu'elle peut créer loin **et
 ouvrir des mondes, les confronter au réel, les formaliser, les transmettre, puis les laisser
 mourir lorsqu'ils ne servent plus la vie.
 
-### 4. Émotion — J'AIME
+### 4. Émotion — JE RESSENS
 
 L'Émotion informe. Elle signale ce qui, dans l'expérience, touche un besoin, une limite, un
 attachement, une peur ou une orientation profonde.

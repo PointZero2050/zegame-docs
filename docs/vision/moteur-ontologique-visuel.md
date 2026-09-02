@@ -50,6 +50,22 @@ D'après la maquette de Boris et `Evaluation-Puissances.pptx`. Structure (voir `
 2. **État actuel** : label (ex. *Lumière exacerbée*), 5 points, mini-moteur, états par pôle (ex. Blocage / Exaltation) avec croyances, et **archétype actuel** (ex. *l'Ivrogne de Vie*).
 3. **Cap d'évolution** : label visé (ex. *Lumière intégrée*), mini-moteur avec cap pointillé + progression or, croyances cibles, et **archétype visé** (ex. *le Vivant Fécond*).
 
+**Ajout Codex — libellés canoniques harmonisés par Boris le 2 septembre 2026.** Les pages de
+détail des Puissances sont la source éditoriale de cette grammaire. L'ordre est toujours
+**Ombre / Source / Lumière** :
+
+| Puissance | Ombre | Source | Lumière |
+|---|---|---|---|
+| Désir | Je contiens | Je suis | J'embrase |
+| Volonté | Je sers | Je décide | Je dirige |
+| Imagination | **Je réalise** | Je crée | Je rêve |
+| Émotion | **Je distancie** | **Je ressens** | **Je communie** |
+| Communication | J'écoute | J'exprime | Je captive |
+| Intuition | Je doute | Je connais | Je crois |
+
+Les libellés de menu ou de territoire ne redéfinissent pas cette triade. La Transcendance reste
+la résultante du Moteur des six Puissances et ne reçoit pas une triade supplémentaire.
+
 La fiche puissance est le lieu où l'on **définit un cap**.
 
 ### Source du questionnaire

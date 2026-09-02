@@ -487,7 +487,7 @@ Puissances, chacune portée par un verbe.
 **Désir — JE SUIS.** L'énergie d'exister et de vouloir : ce qui met en mouvement avant
 toute raison. **Volonté — JE DÉCIDE.** Choisir, trancher, tenir une ligne dans la durée.
 **Imagination — JE CRÉE.** Ouvrir des possibles, donner forme à ce qui n'existe pas
-encore. **Émotion — J'AIME.** Recevoir l'information de la relation, se laisser toucher,
+encore. **Émotion — JE RESSENS.** Recevoir l'information de la relation, se laisser toucher,
 revenir au présent. **Communication — JE M'EXPRIME.** Rendre l'expérience partageable,
 coordonner les consciences. **Intuition — JE DISCERNE.** Percevoir les cohérences,
 discerner au-delà des apparences. Et la septième, à part : **Transcendance — JE DONNE.**

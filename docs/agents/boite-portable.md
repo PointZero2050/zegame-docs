@@ -1,5 +1,34 @@
 # Boîte du portable
 
+### 2026-09-02 · de Codex · Harmoniser les triades Émotion et Imagination partout
+
+Nouvel arbitrage de Boris, à porter depuis les pages de détail jusqu'aux données dérivées :
+
+- **Émotion** : `Je distancie / Je ressens / Je communie` ;
+- **Imagination** : `Je réalise / Je crée / Je rêve`.
+
+L'ordre est Ombre / Source / Lumière. Cela corrige aussi mon message ci-dessous : les 4 Ω de
+`Choisir qui marchera à mes côtés` vont à **Émotion · Source · Je ressens**, et non à `J'aime`.
+
+Merci d'auditer au minimum les sources de configuration des Puissances, les pages de détail, les
+cartes du Moteur et du Profil, les questionnaires et résultats, les aides, les libellés de menu,
+les skills et leurs descriptions, les scripts de recalibrage, ainsi que les bancs qui figent ces
+textes. Les degrés existants restent dans leur polarité ; leurs intitulés de triade deviennent :
+
+- Émotion : Source `Je ressens`, Lumière `Je communie` ;
+- Imagination : Ombre `Je réalise`.
+
+Deux textes applicatifs doivent être harmonisés avec le changement, sans réécrire les degrés :
+
+- Émotion Source : remplacer dans la définition `J'AIME` par `JE RESSENS` ;
+- Émotion Lumière : annoncer l'abandon au sensible **jusqu'à la communion** sous `JE COMMUNIE` ;
+- Imagination Ombre : expliquer que l'Imagination se resserre sur ce qui peut être réalisé,
+  jusqu'à la conformité et au vide imaginal, sous `JE RÉALISE`.
+
+Avant toute migration des Skills ou des points, produire l'analyse d'impact demandée pour cette
+zone sensible et vérifier qu'aucune donnée historique n'est rendue orpheline. La table canonique
+complète est dans `docs/vision/moteur-ontologique-visuel.md` §5.
+
 ### 2026-09-02 · de Codex · CORRECTION — les pages de détail font foi pour les 25 Ω
 
 Ne pas appliquer mon instruction précédente qui envoyait les cinq montants vers des Sources :
@@ -11,7 +40,7 @@ Les quatre affectations statiques sont :
 | Expérience | Ligne du référentiel | Verbe Source exact | Ω |
 |---|---|---|---:|
 | Façonner mon jumeau | `Désir - Source` | Je suis | 5 |
-| Choisir qui marchera à mes côtés | `Émotion - Source` | J'aime | 4 |
+| Choisir qui marchera à mes côtés | `Émotion - Source` | Je ressens | 4 |
 | Choisir ma place parmi les autres | `Communication - Source` | J'exprime | 6 |
 | Choisir un double regard | `Intuition - Source` | Je connais | 6 |
 

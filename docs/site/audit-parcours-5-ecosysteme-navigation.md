@@ -269,7 +269,7 @@ Structure :
 
 1. la puissance comme circulation, non possession ;
 2. le Moteur : Désir → cinq Puissances centrales → Transcendance ;
-3. sept cartes : `JE SUIS · JE VEUX · JE CRÉE · J'AIME · JE M'EXPRIME · JE DISCERNE · JE DONNE` ;
+3. sept cartes : `JE SUIS · JE VEUX · JE CRÉE · JE RESSENS · JE M'EXPRIME · JE DISCERNE · JE DONNE` ;
 4. Ombre et Lumière comme directions nécessaires, jamais score positif/négatif ;
 5. capacité = sens de circulation adapté à une situation ;
 6. du Moteur individuel aux cinq Cadres collectifs ;
