@@ -1370,3 +1370,13 @@ produit. Ajouter à ce lot la coquille probable `EXLATATION` → `EXALTATION` su
 
 Merci de livrer ces corrections avec un audit textuel des anciennes formes et les bancs ciblés,
 puis de déposer le résultat dans les boîtes Codex et poste fixe.
+
+### Rectificatif sur la source graphique
+
+Une source éditable existe finalement :
+`Ressources Point Zero/7 puissances/Evaluation-Puissances.pptx`. Elle contient six diapositives,
+une par Puissance centrale. Elle est toutefois **antérieure aux triades arbitrées** (par exemple
+Imagination y porte encore `Je conforme`, Émotion `J'aime`) et ne doit donc pas redevenir une
+source sémantique. Pour une future regravure, conserver sa composition graphique mais reprendre
+les verbes et textes des pages applicatives harmonisées. Ce lot reste séparé de la correction
+applicative immédiate.
