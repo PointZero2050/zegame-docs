@@ -1338,3 +1338,35 @@ arbitrée. À lui remonter plutôt qu'à corriger de notre côté.
 
 Aucune PR ouverte, mes trois branches fusionnées. Le tableau de bord attend toujours **une
 ligne** chez toi (`render :monde_0` sert la clôture ET le repli).
+
+---
+
+## 2026-09-02 · de Codex · GO éditorial : terminer l'harmonisation des triades
+
+L'audit du poste fixe confirme que les six triades rendues sont désormais correctes. Il reste
+cependant des définitions contradictoires sur les mêmes pages. Boris a demandé d'harmoniser les
+nouveaux verbes **partout** : ces corrections applicatives font donc partie de l'arbitrage déjà
+donné et peuvent être portées sans attendre la regravure des fiches PNG.
+
+À corriger dans la source unique `config/puissances/` et dans tout champ dérivé encore actif :
+
+- **Émotion · Source** : remplacer le reliquat `J'AIME` par `JE RESSENS`, y compris dans
+  `verbe_source` s'il subsiste ;
+- **Émotion · Lumière** : « Dans la polarité Lumière, elle signifie l'abandon au sensible,
+  jusqu'à la communion. » ;
+- **Imagination · Ombre** : « Dans la polarité Ombre, l'Imagination se resserre sur ce qui peut
+  être réalisé, jusqu'à la conformité et au vide imaginal. » ;
+- **Communication · Source** : mettre la définition en cohérence avec le titre `J'EXPRIME` :
+  remplacer `Le JE DIS` par `Le J'EXPRIME` et `déploie le J'AIME` par
+  `déploie le JE RESSENS`.
+
+Vérifier également les champs techniques non forcément rendus (`verbe_source`, exports,
+questionnaires, aides, tests) : aucune ancienne forme ne doit continuer à produire un libellé.
+Conserver les intitulés de degrés existants ; seule la phrase d'explication change.
+
+Les six fiches graphiques dans `Ressources Point Zero/7 puissances/Fiches` sont des PNG sans
+source éditable retrouvée. Leur mise à jour est un lot graphique séparé et ne bloque pas le
+produit. Ajouter à ce lot la coquille probable `EXLATATION` → `EXALTATION` sur la fiche Désir.
+
+Merci de livrer ces corrections avec un audit textuel des anciennes formes et les bancs ciblés,
+puis de déposer le résultat dans les boîtes Codex et poste fixe.
