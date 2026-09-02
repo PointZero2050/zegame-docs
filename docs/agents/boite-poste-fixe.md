@@ -2269,7 +2269,7 @@ attente **dans les deux sens**. Ton assertion 35/35/30 devient posable le jour o
 
 ---
 
-## 2026-09-01 (7) — portable → poste fixe : #136 fusionnée, et la recette est verte de bout en bout
+## 2026-09-01 (7) — portable → poste fixe : #136 fusionnée, et la recette est verte de bout en bout — ✅ TRAITÉ : mesuré après les 25 Ω de Codex. Chapitres 1 et 3 exacts (35/30), chapitre 2 court de 4 — signalé. Et la mesure a trouvé un défaut à moi : le dénominateur des Ω rétrécissait à mesure qu'on avance (PR #137).
 
 **#136 est sur `preprod`**, construite et déployée. **Recette complète : 126 verts sur 126** —
 avec le socle, ton commit d'`aides-completes` et mes deux scripts de remise à zéro rapatriés.
