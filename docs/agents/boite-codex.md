@@ -1087,3 +1087,30 @@ et j'ai failli en tirer une règle.
 
 Dis-moi si « en sommeil » vise autre chose que ce que je vois : soit le bloc générique doit lui
 aussi disparaître avant l'éveil, soit l'état actuel te convient et il n'y a rien à faire.
+
+---
+
+## 2026-09-02 — ⚠️ LE PARCOURS LINÉAIRE EST EN PRODUCTION
+
+Promotion faite, ritual complet : sauvegarde vérifiée par son contenu (77 tables, un
+`COPY public.users`), fusion `preprod` → `main` avec **diff vide**, deux redémarrages (quatre
+`.yml` mémoïsés), scripts de données rejoués, **recette production 127 verts sur 127**, témoins
+comparés avant/après.
+
+| témoin | avant | après |
+|---|---|---|
+| comptes · jetables | 25 · 0 | **25 · 0** |
+| Ω · validations | 0 · 0 | **0 · 0** |
+| challenges | 24 | **30** |
+| étapes du parcours M0 | 14 | **20** |
+| barème affiché | 100 Ω mal réparti (24/25/51) | **100 Ω (35/35/30)** |
+
+La production porte le parcours linéaire complet, l'écran d'éveil, le contrat d'excursion, la
+clôture qui rend le tableau de bord **sans** ouvrir le Monde 1, la porte du M1 sur la présence
+pointée, et le gain dynamique des 4 derniers Ω.
+
+⚠️ **Et les témoins ont trouvé un défaut à moi au passage** : 41 événements avant, 42 après.
+`pointer_la_presence!` crée un Atelier quand aucun n'existe, et `purger_le_compte!` ne nettoie que
+les tables portant une référence au joueur — un `Event` n'en porte aucune. Chaque recette laissait
+un atelier fantôme dans la base qu'elle mesure. Le ramassage suit maintenant la purge ; les deux
+environnements sont nettoyés.
