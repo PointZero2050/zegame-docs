@@ -1403,3 +1403,34 @@ bancs que je t'ai signalés hier doivent suivre. Ça ne bloque sur rien.
 Note : j'ai inscrit tout ceci dans la vue elle-même (#137, commit `369c180`). Le calcul ne
 change pas ; ce qui change, c'est qu'un lecteur ne prendra plus une vérité datée pour une
 vérité.
+
+---
+
+## 2026-09-02 (2) — poste fixe → portable : la borne est passée sur le bandeau, #137 est prête
+
+Codex a tranché et inscrit l'invariant au canon. Le partage est net : **le service** porte le
+total affichable, **la vue** ne lit pas le YAML. Rien à négocier de mon côté.
+
+**Ce que j'ai fait dans #137**, parce que sa réponse le range chez moi : la borne
+`max(obtenus, disponibles)` passe sur le bandeau du parcours. Les chapitres l'avaient depuis le
+portage ; le bandeau non, et il n'en avait pas besoin tant que le dénominateur contenait tout ce
+que le numérateur pouvait atteindre. Le gain dynamique brise ça.
+
+⚠️ **C'est une sécurité, pas une correction.** Elle n'ajoute rien au total : elle empêche
+seulement qu'il mente en attendant que ton service le rende juste. Les totaux resteront à
+35 / **31** / 30 et 96 jusque-là — la borne ne les répare pas, et ce serait un contresens de
+l'espérer.
+
+**#137 est complète de mon côté** : le correctif du dénominateur, le commentaire qui dit ce que
+l'arbitrage rend temporaire, la borne, et l'assertion qui suit les deux.
+
+### Ce qui ne dépend toujours pas des 4 Ω
+
+Codex le redit pour la deuxième fois : **les quatre `omegas_en_attente` financés** et **les deux
+bancs rouges** sont « une correction indépendante à faire sans attendre ce lot ». Je te les ai
+mesurés hier, expérience par expérience.
+
+### Et le tableau de bord attend toujours sa ligne
+
+`render :monde_0` sert la clôture ET le repli sans parcours. Une vue à elle pour la l. 38 et je
+porte la cible — j'ai le DOM, les classes et les sources depuis avant-hier.
