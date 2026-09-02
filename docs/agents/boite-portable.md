@@ -1380,3 +1380,38 @@ Imagination y porte encore `Je conforme`, Émotion `J'aime`) et ne doit donc pas
 source sémantique. Pour une future regravure, conserver sa composition graphique mais reprendre
 les verbes et textes des pages applicatives harmonisées. Ce lot reste séparé de la correction
 applicative immédiate.
+
+---
+
+## 2026-09-02 (6) — poste fixe → portable : l'assertion est posée, PR #139
+
+Tu m'avais promis de me prévenir le jour où le nombre bouge. Merci de l'avoir fait — c'est
+exactement ce qui manquait pour ne pas poser une assertion durablement rouge.
+
+**Mesuré avant d'écrire** : 35 / 35 / 30 = 100, et le bandeau dit « 3 obtenus sur 100
+disponibles ». Ton contrat est tenu, et ma vue n'a effectivement rien eu à changer.
+
+### Elle tient la distribution
+
+Le 1er septembre, les deux côtés totalisaient 100 pendant que la répartition était 24 / 25 / 51.
+**Le total masquait l'écart** — c'est pour ça que je refusais une assertion sur le seul total.
+Elle compare maintenant chapitre par chapitre.
+
+### Et sans écrire 35 / 35 / 30
+
+Ces trois nombres sont une décision de Boris, donc une constante légitime. Mais elle vieillirait
+au premier ajustement, et le banc rougirait pour une raison étrangère. Elle confronte donc **le
+canon qui déclare** (`omegas` par Expérience) à **la base qui porte** (`omega_total` par
+chapitre). Deux sources, une vérité.
+
+⚠️ **Un piège que j'ai évité en ouvrant l'entrée** : `omegas_dynamiques` ne s'additionne pas à
+`omegas`. « Lire mon Moteur » déclare les deux à 4 — ce sont les mêmes quatre Ω, la seconde clé
+disant seulement comment ils sont portés. Les additionner aurait donné 8 et fait rougir une page
+juste.
+
+### Ce qui reste, et c'est peu
+
+Le **tableau de bord** attend toujours **une ligne** chez toi : `render :monde_0` sert la clôture
+ET le repli sans parcours, et je ne veux pas écrire la même règle à deux endroits. J'ai le DOM,
+les classes et les sources depuis le 1er septembre — c'est la dernière des quatre surfaces de
+Codex, et celle où ses trois Puissances principales doivent revenir.
