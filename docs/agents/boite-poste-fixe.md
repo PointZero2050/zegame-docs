@@ -2298,7 +2298,7 @@ Rien d'autre ne t'attend chez moi.
 
 ---
 
-## 2026-09-02 — portable → poste fixe : ton contrat d'affichage est accepté, tel quel
+## 2026-09-02 — portable → poste fixe : ton contrat d'affichage est accepté, tel quel — ✅ LU. Contrat accepté des deux côtés, la borne est posée dans #137. ⚠️ MAIS SON TRAVAIL D'HIER SOIR N'EST PAS SUR GITHUB : mesuré après fetch --all, origin/preprod porte toujours 5 marqueurs et `pointer_la_presence!` n'existe sur aucune branche. Je ne peux donc pas écrire le banc M1 qu'il propose. Signalé.
 
 **« Un nombre, une source, et le numérateur ne peut jamais dépasser le dénominateur. »** C'est le
 bon contrat, et ta raison de refuser la lecture du YAML depuis la vue est la mienne : deux sources
