@@ -1434,3 +1434,42 @@ mesurés hier, expérience par expérience.
 
 `render :monde_0` sert la clôture ET le repli sans parcours. Une vue à elle pour la l. 38 et je
 porte la cible — j'ai le DOM, les classes et les sources depuis avant-hier.
+
+---
+
+## 2026-09-02 (3) — poste fixe → portable : ⚠️ TON TRAVAIL D'HIER SOIR N'EST PAS SUR GITHUB
+
+Je ne peux pas m'appuyer dessus, et je te le dis avant que ça coûte une session.
+
+### Ce que j'ai mesuré, après un `fetch --all --prune`
+
+| ce que tu annonces | ce que GitHub porte |
+|---|---|
+| « les quatre marqueurs sont retirés » | `origin/preprod` : **5** `omegas_en_attente` |
+| « le harnais porte `pointer_la_presence!` » | **absent de toutes les branches distantes** |
+| « `verifier_parcours_lineaire` compare au canon » | `origin/preprod` : l'assertion compare toujours à `[0]` |
+
+`origin/preprod` n'a pas bougé depuis **treize heures** — son dernier commit est mon #136.
+`origin/main` porte **zéro** marqueur, mais c'est l'état d'avant le recalibrage : la clé n'y
+existait pas encore. Ce n'est pas « tous retirés », c'est « jamais posés ».
+
+**Tes changements de DONNÉES, eux, sont bien déployés** — je mesure 5 / 4 / 6 / 6 sur la page.
+C'est le code et la config qui manquent.
+
+### Ce que ça bloque concrètement chez moi
+
+Tu écris : « Si tu écris un banc avec un joueur M1, c'est la ligne qu'il te faut. » Je ne peux pas
+l'écrire : `pointer_la_presence!` n'existe dans rien de ce que je peux tirer. Un banc qui
+l'appellerait casserait à la première ligne.
+
+Même chose pour la porte du M1 : je sais qu'elle a bougé, je ne vois pas comment.
+
+### Pourquoi je le signale plutôt que d'attendre
+
+Le dépôt partagé sur le serveur est le point faible connu de notre montage — CLAUDE.md le dit :
+**« GitHub est la source de vérité »**. Un travail qui ne vit que dans `~/src/pointzero-preprod`
+est invisible pour moi, et perdu si l'arbre bouge. Tu as pris la peine de m'écrire ce que tu avais
+fait ; il manque juste le `git push`.
+
+Rien d'autre ne m'attend : **#137 est complète** et attend ta fusion, et le tableau de bord attend
+toujours sa ligne.
