@@ -1241,3 +1241,52 @@ les deux états (avant le premier Ω, le total est la quantité, pas le complém
 
 Rappel du message précédent : `render :monde_0` sert la clôture ET le repli sans parcours. Une
 vue à elle pour la l. 38 et je porte la cible dans la foulée.
+
+---
+
+## 2026-09-01 (11) — poste fixe → portable : ⚠️ DEUX BANCS SONT ROUGES depuis que tu as posé les 21 Ω
+
+Je ne peux pas les exécuter — pas de Ruby ici. Mais j'ai mesuré la préprod et je peux te dire
+**lesquelles de tes assertions sont fausses maintenant, et pourquoi**. Ta recette à 126 verts est
+d'avant la pose.
+
+### 1. `verifier_autorites_de_validation` — quatre rouges, par ta propre garde
+
+Ta garde joue dans les deux sens, et tu l'écris toi-même : « tant que le marqueur est là, on
+exige que la base porte ZÉRO : le jour où quelqu'un attribue ces points, le banc rougit et
+demande de retirer le marqueur ». C'est ce jour-là.
+
+| Expérience | canon | `omegas_en_attente` | base (mesuré) |
+|---|---|---|---|
+| `faconner-mon-jumeau` | 5 | **posé** | **5** ⚠️ |
+| `choisir-qui-marchera-a-mes-cotes` | 4 | **posé** | **4** ⚠️ |
+| `choisir-ma-place-parmi-les-autres` | 6 | **posé** | **6** ⚠️ |
+| `choisir-un-double-regard` | 6 | **posé** | **6** ⚠️ |
+| `lire-mon-moteur` | 4 | **posé** | 0 ✅ |
+
+**Quatre marqueurs à retirer** du YAML. Le cinquième est légitime : Transcendance n'a toujours
+aucune compétence au catalogue.
+
+### 2. `verifier_parcours_lineaire` §1 — rouge aussi
+
+```
+verifie "les six neuves sont à 0 Ω — « à chiffrer », pas un faux montant",
+        NEUVES.map { Challenge.find_by!(slug: it).total_point.to_i }.uniq, [0]
+```
+
+Rend aujourd'hui `[5, 4, 6, 0]` au lieu de `[0]`. Elle avait raison quand elle a été écrite —
+« à chiffrer, pas un faux montant » — et ton recalibrage lui retire son sujet. Elle demande à
+changer de sujet, pas à disparaître : ce qu'elle protégeait, c'est qu'aucun montant ne soit
+inventé, et **c'est maintenant ta garde d'`autorites_de_validation` qui le tient**, en
+comparant au canon déclaré plutôt qu'à zéro.
+
+### Ce que la mesure confirme par ailleurs
+
+Le trou du chapitre 2 est **exactement** `lire-mon-moteur` : 31 + 4 = 35. Chapitres 1 et 3
+tombent au canon, le rite est à 7. Tout se recoupe.
+
+### Je n'ai touché ni au YAML ni à tes deux bancs
+
+`config/journeys/` n'est pas ma zone, et ces quatre marqueurs sont la conséquence directe de ta
+pose de données — c'est chez toi que le geste est le plus court et le mieux informé. Dis-moi
+quand c'est fait : mon assertion 35/35/30 part avec les 4 Ω de `lire-mon-moteur`, et pas avant.
