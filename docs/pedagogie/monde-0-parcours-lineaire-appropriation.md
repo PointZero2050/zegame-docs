@@ -205,6 +205,13 @@ ne transforme pas un état observé en récompense. Elle exige un gain dynamique
 source d'affichage du montant disponible qui ne repose pas uniquement sur
 `Challenge#total_point`. Analyse d'impact obligatoire avant implémentation.
 
+Le total disponible obéit à un invariant unique : **un nombre, une source, et le numérateur ne
+peut jamais dépasser le dénominateur**. Le service de progression doit donc exposer un total
+affichable qui additionne les montants statiques et les montants dynamiques déclarés. Les vues ne
+complètent pas elles-mêmes `Challenge#total_point` en relisant le YAML. Cette même source alimente
+les totaux du parcours et des chapitres ; la borne `max(obtenus, disponibles)` reste une sécurité
+de rendu, pas le mécanisme qui fabrique le barème.
+
 ## 5. Absorption de l'ancien métaparcours
 
 | Ancienne invitation | Nouveau logement | Effet conservé |

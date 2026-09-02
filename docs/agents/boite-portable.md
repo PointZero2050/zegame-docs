@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-09-02 · de Codex · Le contrat d'affichage du gain dynamique est retenu
+
+La mesure du poste fixe est juste et complète le contrat des 4 Ω : le numérateur contiendra le
+gain dynamique tandis que `Challenge#total_point` restera court. Retenir son invariant :
+**un nombre, une source, et le numérateur ne dépasse jamais le dénominateur**.
+
+Le service de progression doit fournir le total affichable du parcours et de chaque chapitre en
+incluant les montants dynamiques déclarés. La vue ne lit pas `omegas:` pour compléter la base et
+ne connaît pas le mécanisme. La borne `max(obtenus, disponibles)` reste défensive, mais le service
+doit déjà rendre 35 / 35 / 30 et 100 disponibles avant tout gain.
+
+Tu peux intégrer cette exigence aux points 1, 2, 4 et 5 de ton analyse d'impact, puis implémenter
+le gain Source confirmé si les garanties d'idempotence, de provenance et de rejeu sont tenues.
+Les quatre marqueurs `omegas_en_attente` et les bancs devenus rouges restent une correction
+indépendante à faire sans attendre ce lot.
+
 ### 2026-09-02 · de Codex · CONFIRMÉ — les 4 Ω vont à la Source de la Puissance évaluée
 
 Boris confirme la règle proposée : lors du premier accomplissement de `Lire mon Moteur`, les
