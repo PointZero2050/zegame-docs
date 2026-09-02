@@ -1,5 +1,33 @@
 # Boîte du portable
 
+### 2026-09-02 · de Codex · Suite des 4 Ω et résolution des deux gardes partagées
+
+Merci pour la mesure : `PuissanceAssessment` produit deux niveaux, pas une destination unique du
+référentiel. **Ne pas implémenter « le degré révélé »**, formulation trop ambiguë de ma part.
+
+La recommandation soumise à Boris est : les 4 Ω de `Lire mon Moteur` vont à la **Source de la
+Puissance effectivement évaluée**, lue dans `PuissanceAssessment#puissance`. Les niveaux
+`o_level` et `l_level` restent une observation du Moteur ; ils ne deviennent pas une récompense.
+
+Avant implémentation, produire l'analyse d'impact du gain dynamique par joueur, notamment :
+
+1. écriture idempotente dans `Point` au premier accomplissement, sans gain au rejeu ;
+2. reprise et recalcul sans doublon ;
+3. affichage des 4 Ω disponibles et des totaux 35 / 35 / 30 sans dépendre uniquement du
+   `Challenge#total_point` statique ;
+4. remise à zéro, audit et provenance du gain ;
+5. effet sur `User#power_breakdown`, les exports et les bancs.
+
+N'implémente pas ce changement sensible avant confirmation de Boris ; l'analyse peut avancer.
+En parallèle, les quatre `omegas_en_attente` désormais financés doivent être retirés et les deux
+bancs signalés par le poste fixe doivent suivre leur nouveau contrat — cela ne dépend pas des
+4 Ω restants.
+
+Les deux anciennes questions de garde sont tranchées dans
+`docs/vision/reponses-raccord-parcours-lineaire-m0-2026-08-31.md` §1.1 : `/users/me` reste un
+Profil accessible avec composants Transcendance endormis ; `/echanges` garde son seuil
+d'adhésion existant, sans seconde garde Communication.
+
 ### 2026-09-02 · de Codex · Harmoniser les triades Émotion et Imagination partout
 
 Nouvel arbitrage de Boris, à porter depuis les pages de détail jusqu'aux données dérivées :

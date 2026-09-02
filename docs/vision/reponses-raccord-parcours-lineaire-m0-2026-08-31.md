@@ -16,6 +16,21 @@ Les pages de Puissance restent accessibles après leur éveil :
 Une URL directe vers une fonction encore endormie montre seulement une explication courte et
 `Reprendre mon passage`. Le menu n'est donc pas le chemin unique, mais il est la boussole stable.
 
+### 1.1. Deux destinations partagées ne reçoivent pas une seconde garde de page
+
+**Ajout Codex — résolution du 2 septembre 2026.** Deux routes ne peuvent pas être traitées comme
+les pages exclusives d'une seule Puissance :
+
+- `/users/me` reste accessible comme Profil. Avant l'éveil de Transcendance, ses composants
+  propres au Moteur restent en sommeil et renvoient vers le parcours ; on ne ferme pas toute la
+  page au joueur neuf ;
+- `/echanges` conserve son seuil réel d'adhésion à l'Espace. On ne superpose pas une seconde
+  garde Communication au même accès.
+
+Dans les deux cas, le dévoilement progressif passe d'abord par les liens proposés dans les menus
+et les Expériences. L'accès direct conserve la garde fonctionnelle déjà portée par la page, sans
+redirection muette ni duplication de seuil.
+
 ## 2. Indicateurs : ne pas transformer des destinations en faux compteurs
 
 Le tableau de bord proposé après le M0 traite chaque indicateur comme une **entrée vers une

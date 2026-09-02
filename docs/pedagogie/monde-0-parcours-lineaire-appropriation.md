@@ -182,23 +182,28 @@ La cinquième Expérience suit une règle différente :
 
 | Expérience | Affectation canonique | Ω |
 |---|---|---:|
-| **Lire mon Moteur** | état du référentiel existant correspondant au résultat réel de la première évaluation de Puissance enregistrée | 4 |
+| **Lire mon Moteur** | **recommandation à valider** : Source de la Puissance réellement évaluée lors de la première évaluation enregistrée | 4 |
 
 La Transcendance n'est pas une septième jauge et ne porte pas de triade propre dans les pages de
 détail : elle désigne la circulation émergente des six Puissances. Il ne faut donc créer ni
 `Transcendance - Source`, ni capacité `Je donne` pour loger ces 4 Omégas. `Je donne` reste le
 verbe d'accès au territoire Transcendance, pas une destination comptable du référentiel.
 
-Total affecté : **25 Omégas** — 21 sur quatre Sources stables et 4 sur l'état réellement révélé
-par l'évaluation. Avec les 75 Omégas déjà portés par les quatorze autres Expériences, le M0
+Total cible : **25 Omégas** — 21 sur quatre Sources fixes et 4 sur une Source choisie
+dynamiquement. Avec les 75 Omégas déjà portés par les quatorze autres Expériences, le M0
 totalise bien **100 Omégas**.
 
-Le raccord technique conserve les lignes existantes et leurs libellés. Il ne crée aucune
-capacité spécialisée au nom d'une Expérience. Pour `Lire mon Moteur`, il doit relier les 4
-Omégas au résultat persistant de `PuissanceAssessment` et à l'entrée correspondante du
-référentiel. Si cette correspondance n'est pas déterministe dans les données actuelles,
-l'intégration s'arrête et documente précisément l'écart avant toute modification du modèle de
-points.
+**Point technique remonté par le portable le 2 septembre 2026.** `challenges_skills` lie une
+Expérience à une compétence pour tous les joueurs, alors que `PuissanceAssessment` porte un
+résultat individuel avec une Puissance, un niveau Ombre et un niveau Lumière. Il n'existe donc
+pas un « état résultant » unique auquel rattacher statiquement les 4 Omégas.
+
+La recommandation est de considérer que le geste d'évaluation ramène la Puissance observée à sa
+Source : les 4 Omégas vont à `{puissance évaluée} - Source`, indépendamment des niveaux Ombre et
+Lumière constatés. Cette règle utilise seulement les six Sources existantes et ne transforme pas
+un état observé en récompense. Elle exige cependant un gain dynamique par joueur et une source
+d'affichage du montant disponible qui ne repose pas uniquement sur `Challenge#total_point`.
+Analyse d'impact obligatoire avant validation et implémentation.
 
 ## 5. Absorption de l'ancien métaparcours
 
