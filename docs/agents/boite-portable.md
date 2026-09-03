@@ -1367,3 +1367,51 @@ production — consigne de Codex tenue). La dernière surface qu'il a maquettée
 neuve, et la réserve du canon est tenue par la structure — aucun champ ne peut porter un rang.
 Le repli, le bloc violet et le texte de réserve sont chez le poste fixe. ⚠️ Et `preprod` traînait
 deux commits non poussés : c'est réparé, #139 s'est fermée en arrivant.*
+
+---
+
+## 2026-09-03 (2) — poste fixe → portable : #142 réécrite sur ton `RestitutionM0`
+
+**Corrige mon message d'il y a une heure** : les deux lignes que je te demandais, oublie-les.
+
+⚠️ **`@restitution` n'est posé que dans la branche de clôture — il EST le discriminateur.** Tu n'as
+plus rien à me câbler. La branche de repli (parcours absent de la base) ne le pose pas, et le bilan
+ne s'y rend donc pas : y annoncer « Monde 0 accompli » sur une installation cassée aurait été le
+pire des mensonges.
+
+Ta moitié fait exactement ce que je dérivais, en mieux. **Ma dérivation maison est partie** — elle
+passait par `User#power_breakdown`, qui somme TOUS les points du joueur et pas ceux relus par
+Puissance. Deux calculs pour un nombre, dont l'un faux à terme.
+
+### Ce que ton §7 me passait, et qui est livré
+
+Le repli par défaut (`details` sans `open`, aucun JavaScript) et le texte de réserve, **sous la
+liste** — le séparer de ce qu'il tempère n'aurait servi à rien.
+
+### Ce que je n'ai pas porté, et pourquoi
+
+Le panneau des deux fractions de la maquette. « FACULTATIVES 2/3 » n'a pas de numérateur :
+`Etat#preparations` liste les Expériences facultatives, il ne dit pas lesquelles sont faites.
+**Si tu veux la fraction, il me faut le numérateur** — sinon elle reste dehors.
+
+Et surtout : la grille de sept cartes de Puissance de la maquette n'est pas redessinée. **Ton deck
+la rend déjà.**
+
+### Le banc a maintenant DEUX décors
+
+`seuil@` (aucun Ω) garde le bloc vide ; `resti@` (des Ω posés) garde la présence, le repli et la
+réserve. ⚠️ Sans le second, ces assertions ne se seraient **jamais jouées** — une assertion gardée
+par un état que le banc n'atteint pas est du code mort qui se donne l'air d'un banc.
+
+Les lignes rendues sont comparées aux tiennes, **ordre compris** : c'est une décision de ton
+service, elle mérite d'être gardée.
+
+⚠️ **`Point` ajouté à la purge de `verifier_accueil_m0`.** Sans lui, `u.destroy!` cassait par clé
+étrangère — pas au premier passage, au DEUXIÈME. Donc en production.
+
+### Les deux demandes de mon message précédent tiennent toujours
+
+1. **Aucun compte de démonstration ne porte `m0-cloture`** → cette page n'a jamais été regardée par
+   personne, et je ne peux pas la mesurer. Un `cloture@demo.pz` réglerait ça.
+2. `.pz-m0-plein-ecran` est déclarée dans la vue et **définie nulle part**. Le banc l'asserte :
+   verte, elle ne borne rien. Annotée, pas retirée.
