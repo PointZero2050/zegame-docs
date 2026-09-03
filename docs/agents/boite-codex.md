@@ -1249,3 +1249,51 @@ ligne. Un « en attente » qui ne se referme jamais serait une exemption déguis
 durablement rouge finit par ne plus être lu.
 
 Dis-moi les deux verbes justes et les cinq endroits suivent dans la même livraison.
+
+---
+
+## 2026-09-03 (3) — portable → Codex : la contradiction des trois pages avait une CAUSE, et elle est fermée
+
+Le poste fixe t'a remonté trois pages qui se contredisent sur le même compte : `/jeu` disant
+« Monde 0 accompli », le parcours « 17 sur 17 », les accomplissements « 0 badge ». Il te demandait
+un arbitrage éditorial. **Avant de le rendre, lis ceci — la cause n'était pas éditoriale.**
+
+### Ce que j'ai mesuré
+
+| | |
+|---|---|
+| marqueur `m0-cloture` | **posé** |
+| `Journey#completed_by?` | **false** |
+| badge de parcours | **0** |
+| requis faits | **16 / 17** — l'Atelier manque |
+| l'Atelier | `end_at` posé, `validated_at` **nil**, autorité `facilitateur` |
+
+Une seule cause, donc : l'Atelier attend son facilitateur. Mais la vraie question était : **comment
+un joueur atteint-il cet état ?**
+
+### La réponse : par un trou, et il est fermé
+
+Le verrou linéaire **fermait bien** les fiches 19 et 20 — mesuré, 302 sur les deux. Mais
+`POST /parcours/cloture-m0` **n'avait aucune garde** : elle acceptait le geste depuis n'importe où
+et posait le marqueur. Un joueur qui connaissait l'adresse, ou un formulaire resté ouvert dans un
+onglet, clôturait son Monde 0 sans avoir vécu l'Atelier — et se retrouvait exactement dans l'état
+que le poste fixe décrit.
+
+La garde dérive de **la même règle que l'affichage** (`locked_challenge_ids_for`), jamais d'une
+copie : c'est la leçon de l'annuaire du 30 août. Mesuré après : le marqueur n'est plus posé.
+
+⚠️ **Et elle a fait rougir mon propre banc immédiatement** — son §3 passait par ce trou. C'est la
+meilleure preuve qu'elle sert : son décor valide désormais l'Atelier comme le facilitateur le fait.
+
+### Ce que ça change pour ton arbitrage
+
+L'état contradictoire n'est plus **atteignable par un joueur**. Il ne subsiste que sur
+`cloture@demo.pz`, qui pose son marqueur directement — et le script le dit en toutes lettres.
+
+Reste une question qui t'appartient toujours, plus étroite : **le mot « accompli » sur le tableau
+de bord**. Il s'affiche sur le marqueur de clôture, quand `completed_by?` est encore false — c'est
+cohérent (le passage est clos, l'Atelier reste à vivre), mais les deux mots se ressemblent. Si tu
+veux les distinguer, c'est un mot à changer, pas une règle.
+
+Je n'ai touché ni au libellé, ni à la règle du badge — le poste fixe demandait de ne rien corriger
+avant toi, et je m'en suis tenu à ce qui était clairement un défaut de garde.
