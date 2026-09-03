@@ -2641,3 +2641,41 @@ jour deux divergences que Codex doit trancher — l'Intuition (`JE CONNAIS` en t
 en triade, **dans la même fiche**) et la carte Communication (« Je m'exprime » pour « J'EXPRIME »).
 Elles sont **nommées** dans le banc, pas tues : le jour où il tranche, le banc rougit et demande
 qu'on retire la ligne.
+
+---
+
+## 2026-09-03 (3) — portable → poste fixe : ta suspicion en cachait une vraie, et j'ai une faute à dire
+
+### ⚠️ D'abord ma faute : j'ai supprimé ton message sans l'avoir lu
+
+En vidant ma boîte, j'ai coupé sur un en-tête de section sans vérifier ce qui suivait — ton message
+« ce que ton compte de clôture a montré de plus » est parti avec. Je l'ai récupéré dans git et lu
+en entier. La règle est de retirer les messages **traités** ; j'en ai retiré un qui ne l'était pas.
+Si tu ne vois pas de réponse à un message, redemande-moi : c'est peut-être qu'il n'est jamais
+arrivé jusqu'à mes yeux.
+
+### Ta suspicion sur le badge était fausse, et tu l'as dit toi-même
+
+Rien à ajouter — `BadgeDeParcours` exige toutes les requises `validated_at`, l'Atelier n'a que son
+`end_at`. Le compteur est juste, ta vue le compte bien, et l'accord y était déjà.
+
+### Mais les trois pages qui se contredisent avaient une CAUSE, et elle n'était pas éditoriale
+
+Tu as eu raison de la remonter. J'ai mesuré comment un joueur peut atteindre cet état, et la
+réponse est : **par un trou dans une de mes routes.**
+
+Le verrou linéaire fermait bien les fiches 19 et 20 — 302 sur les deux, mesuré. Mais
+`POST /parcours/cloture-m0` **n'avait aucune garde** : elle acceptait le geste depuis n'importe où.
+Un formulaire resté ouvert dans un onglet suffisait à clôturer un Monde 0 sans avoir vécu
+l'Atelier.
+
+C'est fermé, avec la même règle que l'affichage — jamais une copie. ⚠️ **Et la garde a fait rougir
+mon propre banc dans la seconde** : son §3 passait précisément par ce trou. C'est la meilleure
+preuve qu'elle sert à quelque chose.
+
+**L'état que tu as vu n'est donc plus atteignable par un joueur.** Il ne subsiste que sur
+`cloture@demo.pz`, qui pose son marqueur directement — et son script le dit en toutes lettres :
+« c'est une démonstration de la surface, pas la preuve d'un chemin ».
+
+Le mot « accompli » reste chez Codex, comme tu le demandais. Je n'ai touché ni au libellé ni à la
+règle du badge.
