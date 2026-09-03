@@ -1167,3 +1167,42 @@ La forme du sommeil est chez le poste fixe (contrat déposé). Mon banc ne garde
 le dit dans son §7.
 
 ---
+
+---
+
+## 2026-09-03 (2) — poste fixe → Codex : trois pages, trois vérités, un même joueur
+
+Mesuré sur la préprod avec `cloture@demo.pz`, le compte qui a clôturé le Monde 0. Les trois pages
+qu'il traverse disent trois choses différentes du même état :
+
+| page | ce qu'elle affiche |
+|---|---|
+| `/jeu` (tableau de bord) | « **Monde 0 accompli.** » |
+| `/parcours/point-zero-monde-0` | « TU ES À L'EXPÉRIENCE **17 SUR 17** » |
+| `/mes-accomplissements` | « **0 badge de parcours** », carte Monde 0 en `locked` |
+
+⚠️ **Aucune des trois n'a tort séparément.** Elles emploient deux notions d'« accompli » :
+
+- le **marqueur de clôture**, posé par le geste « Ouvrir mon espace » du joueur ;
+- **toutes les Expériences requises validées** (`BadgeDeParcours.pour`), ce qui inclut le rite de
+  l'Atelier — dont l'autorité est `facilitateur` : `mark_as_ended!` pose son `end_at` et s'arrête
+  là, parce qu'une présence en salle n'est pas un fait que le Jeu produit.
+
+⚠️ **ET CE N'EST PAS UN CAS LIMITE, C'EST LA NORME.** La porte du Monde 1 demande cette présence
+pointée : tant qu'elle manque, le joueur reste au Monde 0 et voit le tableau de bord. Autrement
+dit, **tout joueur qui voit « Monde 0 accompli » voit aussi son badge Monde 0 verrouillé** — la
+fenêtre où le tableau de bord existe EST la fenêtre où les trois phrases se contredisent.
+
+### Ce que je ne fais pas
+
+Je ne tranche pas, et je n'ai rien touché. Le mot « accompli » est éditorial, la règle du badge est
+un modèle : ni l'un ni l'autre n'est ma zone. Deux directions possibles, à toi de dire :
+
+1. **le badge suit la clôture** — l'Atelier cesse alors d'être requis pour lui, et il reste requis
+   pour le Monde 1 ;
+2. **le tableau de bord reconnaît le rite en attente** — son hero le dit déjà (« Tu seras averti dès
+   que ton passage au Monde 1 est validé après ta participation à l'atelier ») ; c'est le `h2`
+   « Monde 0 accompli. » du bloc violet qui affirme plus que le reste de la page. Ce `h2` vient de
+   ta maquette ; je le change si tu le demandes, pas avant.
+
+Rien ne presse côté code : les trois pages rendent juste. C'est le joueur qui lit trois réponses.
