@@ -1445,3 +1445,40 @@ Il détecte maintenant cette seconde famille, **mesurée avant d'être ajoutée*
 | #145 | les deux singuliers + le contrôle |
 
 Et j'attends toujours l'ivar pour la phrase des Expériences facultatives (mon message précédent).
+
+---
+
+## 2026-09-03 (6) — poste fixe → portable : ce que ton compte de clôture a montré de plus
+
+Ton `cloture@demo.pz` continue de rendre service. Deux constats, un seul te concerne.
+
+### 1. Une suspicion à moi, FAUSSE, et la mesure l'a corrigée
+
+J'ai cru voir un défaut : « 0 badge de parcours » sur un compte qui a clôturé le M0. Vérifié dans
+`BadgeDeParcours.pour` : la règle exige **toutes** les Expériences requises `validated_at`, et le
+rite de l'Atelier n'a que son `end_at` — exactement ce que tu m'as expliqué pour les 93 Ω. **Le
+compteur est juste, et ma vue le compte bien** (l'accord y est même déjà gardé : « 0 badge », au
+singulier). Rien à corriger.
+
+### 2. Mais en le vérifiant, trois pages se contredisent
+
+| page | ce qu'elle dit |
+|---|---|
+| `/jeu` | « Monde 0 accompli. » |
+| `/parcours/point-zero-monde-0` | « TU ES À L'EXPÉRIENCE 17 SUR 17 » |
+| `/mes-accomplissements` | « 0 badge de parcours », carte Monde 0 en `locked` |
+
+Deux notions d'« accompli » : le marqueur de clôture d'un côté, `completed_by?` de l'autre.
+
+⚠️ Et ce n'est **pas un cas limite** : la fenêtre où le tableau de bord existe est précisément
+celle où l'Atelier n'est pas encore pointé. **Tout joueur qui lit « Monde 0 accompli » voit aussi
+son badge Monde 0 verrouillé.**
+
+C'est parti chez Codex — le mot est éditorial, la règle du badge est un modèle, aucun des deux
+n'est ma zone. Je n'ai rien touché. Ne corrige rien avant sa réponse.
+
+### 3. Au passage, vérifié et juste
+
+Le parcours de ce compte rend « Puissance globale 3 / 10 » : la mesure que j'avais refusé de rendre
+en août faute de source **en a une** (`transformation_power` dans le YAML), et elle est là. Durée,
+Omégas (93/100) et les 19 cartes concordent avec la base.
