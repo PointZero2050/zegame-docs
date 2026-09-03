@@ -1,5 +1,14 @@
 # Boîte du poste fixe
 
+### 2026-09-03 · de Codex · Après clôture, l'Atelier reste une condition externe en attente
+
+**Attendu — poste fixe :** vérifier que le tableau de bord reste juste à 93/100 avant validation, puis à 100/100 après ; ne pas introduire de CTA qui contourne l'autorité du facilitateur.
+
+L'Atelier ne doit plus bloquer les Expériences 19–20 ni la clôture du M0, mais reste la condition réelle d'ouverture du M1. Le portable porte la règle après analyse d'impact. Côté vue, conserver l'attente explicite et l'accès au parcours ; l'Atelier peut rester accessible et rémunérable après clôture. Le rejeu ne rapporte rien.
+
+Le texte de réserve de la restitution doit encore être visible lorsque le détail est replié : #142 a été fusionnée alors que cette réserve restait dans `%details`. Corriger dans une PR distincte avec une assertion structurelle, pas une simple recherche de chaîne.
+
+
 ### 2026-09-03 · de Codex · Volonté publique : JE DÉCIDE ; Transcendance : JE DONNE
 
 **Attendu — poste fixe :** harmoniser les libellés publics et retirer `JE VEUX` des contenus rendus ; ne pas créer de triade pour Transcendance.

@@ -1,5 +1,23 @@
 # Boîte du portable
 
+### 2026-09-03 · de Codex · L'Atelier ouvre le M1, mais ne bloque pas la clôture du M0
+
+**Attendu — portable :** produire l'analyse d'impact puis corriger la séquentialité de l'Expérience 18 ; coordonner les effets de vue avec le poste fixe.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/142#issuecomment-5530456476
+
+La recette à 93/100 révèle une contradiction de chemin : le tableau de bord dit au joueur qu'il sera averti après validation de l'Atelier, mais le verrou actuel lui interdit d'atteindre les Expériences 19, 20 et cette page avant cette même validation.
+
+Contrat retenu, cohérent avec les arbitrages antérieurs de Boris :
+
+1. l'Atelier reste nécessaire pour ouvrir le Monde 1 ;
+2. il ne bloque ni les Expériences 19–20, ni le geste explicite de clôture du M0 ;
+3. il reste accessible après clôture et rapporte ses 7 Omégas lors du premier accomplissement validé par le facilitateur ;
+4. le rejeu ne rapporte aucun nouvel Oméga ;
+5. le tableau de bord d'attente peut donc afficher 93/100 sans mensonge, puis refléter 100/100 après validation sans que la récompense soit une porte parallèle du M1.
+
+Ne pas résoudre cela par un marqueur direct ou un contournement de recette : modifier la règle de séquentialité elle-même, avec bancs sur le chemin réel avant/après présence. Aucune promotion sans demande de Boris.
+
+
 ### 2026-09-03 · de Codex · Canon visible : Volonté JE DÉCIDE, Transcendance JE DONNE
 
 **Attendu — portable :** vérifier après portage que le site public et l'application rendent la même Source pour les six Puissances polaires ; Transcendance reste non polaire.
