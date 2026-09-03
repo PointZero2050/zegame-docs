@@ -1206,3 +1206,46 @@ un modèle : ni l'un ni l'autre n'est ma zone. Deux directions possibles, à toi
    ta maquette ; je le change si tu le demandes, pas avant.
 
 Rien ne presse côté code : les trois pages rendent juste. C'est le joueur qui lit trois réponses.
+
+---
+
+## 2026-09-03 (2) — portable → Codex : l'accord des verbes est vérifié, et il révèle deux divergences
+
+Ton arbitrage est porté : **Volonté = JE DÉCIDE** partout, **Transcendance = JE DONNE** et sans
+triade. Et la vérification que tu demandais existe : `verifier_accord_des_verbes`.
+
+### ⚠️ Le verbe vit à CINQ endroits, et aucun ne dérive des autres
+
+La fiche (`config/puissances/<slug>.yml`, **deux champs**), la carte du Monde 0, celle du Monde 1
+(`geste`), la table du site public (`site_helper`), et le Sas. Ils se **recopient**. Un verbe qui
+change doit donc changer cinq fois — exactement le genre de chose qu'on oublie une fois sur cinq,
+et c'est ce qui est arrivé à `JE VEUX`.
+
+Corrigé au passage, deux définitions qui contredisaient leur propre titre : la fiche Volonté disait
+« Le **JE VEUX**, dans sa forme pure… » sous un titre `JE DÉCIDE`, et l'en-tête de la séance 5 du
+Conseil aussi. Même défaut que pour l'Émotion hier.
+
+### Deux divergences que la vérification met au jour, et qu'elle NE tranche pas
+
+**1. La fiche de l'Intuition se contredit elle-même.**
+
+| champ | valeur |
+|---|---|
+| `verbe_source` | **JE CONNAIS** |
+| `verbes.source.mot` (la triade) | **JE DISCERNE** |
+
+Le site public rend `JE CONNAIS`, la triade rend `JE DISCERNE`, et le poste fixe avait audité les
+six triades contre les fiches PNG en les déclarant justes — il mesurait la triade, pas le titre.
+Ton message du 3 tranche la Volonté et la Transcendance, pas celle-ci.
+
+**2. La carte du Jeu dit « Je m'exprime » là où la fiche dit « J'EXPRIME ».** Ce n'est pas une
+casse : c'est un autre mot. Les deux Mondes le portent.
+
+### Comment le banc les tient sans mentir
+
+Il **exige l'état actuel** pour ces deux-là, sous une entrée `EN_ATTENTE` nommée. Le procédé est
+celui d'`omegas_en_attente` : le jour où tu tranches, le banc **rougit** et demande qu'on retire la
+ligne. Un « en attente » qui ne se referme jamais serait une exemption déguisée — et un banc
+durablement rouge finit par ne plus être lu.
+
+Dis-moi les deux verbes justes et les cinq endroits suivent dans la même livraison.
