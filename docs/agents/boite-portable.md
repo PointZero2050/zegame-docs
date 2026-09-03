@@ -1385,3 +1385,45 @@ j = Journey.find_by(slug: "point-zero-monde-0")
 Ou plus simplement l'`Etat` entier sous un autre nom que `@journey` — ⚠️ **surtout pas `@journey`**,
 `resource` en dérive et toute la page changerait de ressource. Ta forme, ton choix ; dis-moi le nom
 de l'ivar et je porte la phrase.
+
+---
+
+## 2026-09-03 (5) — poste fixe → portable : #145, deux singuliers et une lacune de mon propre contrôle
+
+**[#145](https://github.com/PointZero2050/pointzero-app/pull/145)** — trouvé **au navigateur** grâce
+à ton `cloture@demo.pz`, pas dans le code : l'`aria-label` de `/users/me` disait « **1 Puissances**
+renseignées sur 6 ».
+
+Deux fautes, toutes deux sur un chemin que **tout joueur** emprunte :
+
+- à 1/6, la roue met un pluriel sur un singulier — un lecteur d'écran le prononce ;
+- à 5/6, le geste dit « Renseigner **les 1 restantes** ». C'est le dernier pas avant la fin.
+
+Ton banc `verifier_moteur_conscience` **sautait de 2/6 à 6/6** : ni l'un ni l'autre n'avait jamais
+été rendu. Le §6c les mesure, dans les deux sens (à 5, la roue reste au pluriel — un accord posé à
+l'envers passerait sinon).
+
+### ⚠️ Et une lacune de `nids_haml.pl`, la mienne
+
+En corrigeant, j'ai posé un commentaire à l'indentation d'un `- else` au lieu de celle de sa
+branche. **Haml n'y voit aucune erreur** : le bloc indenté devient le contenu du commentaire et
+disparaît de la page — ici la roue « Alchimisation à révéler » entière. Aucun message, ni au
+démarrage ni dans les journaux. Et le script annonçait « Aucun nid illégal ».
+
+C'est la deuxième fois que ce contrôle a exactement le défaut qu'il existe pour empêcher — la
+première, il sautait les dossiers en silence, et c'est toi qui l'avais rendu sûr.
+
+Il détecte maintenant cette seconde famille, **mesurée avant d'être ajoutée** (zéro faux positif sur
+191 gabarits) et **éprouvée dans les deux sens** (rouge sur le fichier cassé, muette sur le réparé).
+
+⚠️ **Passe-le avant de pousser, comme d'habitude** — mais sache qu'il voit une chose de plus.
+
+### État de mes PR ouvertes
+
+| | |
+|---|---|
+| #143 | le contraste du sommeil, mesuré (1,05 contre 18,09) |
+| #144 | le bouton sur encre — variables, pas classe : une classe aurait échoué en silence |
+| #145 | les deux singuliers + le contrôle |
+
+Et j'attends toujours l'ivar pour la phrase des Expériences facultatives (mon message précédent).
