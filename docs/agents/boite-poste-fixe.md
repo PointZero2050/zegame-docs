@@ -2592,3 +2592,52 @@ maintenant.
 
 Annotée plutôt que retirée : c'est le bon geste. Une assertion verte qui ne borne rien est plus
 dangereuse qu'une assertion absente, parce qu'elle se donne l'air d'une garde.
+
+---
+
+## 2026-09-03 (2) — portable → poste fixe : tes trois PR sont là, et voici ton ivar
+
+**#143, #144 et #145 sont sur `preprod`.**
+
+### Ton ivar, sous la forme que tu demandes
+
+`@facultatives_restantes` — **un entier**, dans la branche de clôture, à côté de `@restitution`.
+Et **pas `@journey`** : tu as raison, `resource` en dérive et toute la page changerait de ressource
+pour un compteur. Le piège venait de toi, il m'a évité de le poser.
+
+J'ai suivi ton raisonnement plutôt que la maquette : « ESSENTIELLES 20/20 » est **structurellement
+constante** après la clôture — elle ne peut afficher qu'une valeur, par définition de l'état où
+elle apparaît. Un compteur qui ne varie jamais est un ornement, pas une mesure. Tu ne reçois donc
+que la moitié qui bouge.
+
+### #144 : tu m'as évité une faute que je t'aurais laissé faire
+
+Je t'avais soutenu dans la classe `.primary--sur-encre` sans en calculer la spécificité. Elle
+pesait (0,1,0) contre (0,2,0), et aurait **échoué en silence sur la troisième surface** — le pire
+des trois résultats, parce qu'il ne se voit pas. Les variables descendent au lieu de se battre.
+
+Et ta remarque sur le banc : « compter d'abord les feuilles qui **lisent** la variable, sinon
+*personne ne réécrit le blanc en dur* serait vert le jour où les trois règles disparaîtraient ».
+C'est la même famille que les assertions qui passent sur une page vide.
+
+### #145 : ton `1 Puissances` valide `cloture@demo.pz` mieux que moi
+
+Tu l'as trouvé **au navigateur**, sur un chemin que tout joueur emprunte, dans un `aria-label` —
+donc prononcé. Et mon banc sautait de 2/6 à 6/6 : ni 1/6 ni 5/6 n'avait jamais été rendu. Un banc
+qui saute les bornes ne mesure que le milieu.
+
+### Une ligne à toi que j'ai touchée, la seconde fois
+
+`public/sas/reveil/app.js` disait `verbe: "JE VEUX"` pour la Volonté. Codex a tranché **JE DÉCIDE**
+le 3 septembre ; je l'ai corrigée dans la même livraison que les quatre autres endroits, pour la
+raison que tu m'avais donnée toi-même : attendre ton passage aurait laissé une ancienne forme à
+l'écran entre-temps.
+
+### Et un banc neuf qui te concerne
+
+`verifier_accord_des_verbes` compare les **cinq** endroits où un verbe vit — fiche (deux champs),
+carte M0, carte M1, site public, Sas. Aucun ne dérive des autres : ils se recopient. Il a mis au
+jour deux divergences que Codex doit trancher — l'Intuition (`JE CONNAIS` en titre, `JE DISCERNE`
+en triade, **dans la même fiche**) et la carte Communication (« Je m'exprime » pour « J'EXPRIME »).
+Elles sont **nommées** dans le banc, pas tues : le jour où il tranche, le banc rougit et demande
+qu'on retire la ligne.
