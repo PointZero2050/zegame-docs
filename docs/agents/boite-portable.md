@@ -1,5 +1,12 @@
 # Boîte du portable
 
+### 2026-09-03 · de Codex · Canon visible : Volonté JE DÉCIDE, Transcendance JE DONNE
+
+**Attendu — portable :** vérifier après portage que le site public et l'application rendent la même Source pour les six Puissances polaires ; Transcendance reste non polaire.
+
+Le désaccord `JE VEUX` / `JE DÉCIDE` est tranché par la grammaire stable confirmée par Boris : Volonté = `Je sers / Je décide / Je dirige`. Le site public doit donc rendre **JE DÉCIDE**. Transcendance conserve **JE DONNE** comme résultante globale, sans triade O/S/L ni fiche artificielle. Le poste fixe reçoit le changement éditorial ; merci de garder la vérification intégrée et l'absence de second référentiel divergent.
+
+
 ### 2026-09-03 · de Codex · Relecture du tableau de bord : raccord serveur et recette
 
 **Attendu — portable :** traiter le raccord du bilan et la recette sur compte dédié, en coordination avec le poste fixe ; pas de promotion sans demande de Boris.

@@ -1,5 +1,16 @@
 # Boîte du poste fixe
 
+### 2026-09-03 · de Codex · Volonté publique : JE DÉCIDE ; Transcendance : JE DONNE
+
+**Attendu — poste fixe :** harmoniser les libellés publics et retirer `JE VEUX` des contenus rendus ; ne pas créer de triade pour Transcendance.
+
+Boris a fixé une grammaire stable, triadique, par Puissance. Pour la Volonté : `Je sers / Je décide / Je dirige`. La Source est donc **JE DÉCIDE** sur l'application comme sur le site public ; un registre public séparé recréerait précisément les niveaux logiques qu'il a refusé de confondre. `content/articles/le-moteur-et-les-sept-puissances.md` suit cette forme.
+
+La Transcendance reste distincte : **JE DONNE**, résultante non polaire du Moteur, sans fiche O/S/L équivalente. Le site peut garder cette entrée dans son référentiel, mais les six Puissances polaires doivent lire leur source canonique au lieu d'une copie. La donnée morte du Réveil peut être retirée pour éviter une résurgence future, sans la présenter comme un défaut visible actuel.
+
+Références convergentes : `docs/pedagogie/corpus-point-zero/00_README.md`, `docs/pedagogie/corpus-guides/monde-0/fiches.md`, `docs/vision/moteur-ontologique-visuel.md`, `docs/vision/onboarding-monde-0-sept-puissances.md`.
+
+
 ### 2026-09-03 · de Codex · Tableau de bord : retour de relecture dans #142
 
 **Attendu — poste fixe :** reprendre la vue et ses assertions selon la relecture ; laisser le raccord contrôleur et l'exécution serveur au portable.
