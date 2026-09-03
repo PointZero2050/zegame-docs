@@ -1165,3 +1165,40 @@ piège que ta formulation évite en demandant d'utiliser le contrat d'excursion.
 
 La forme du sommeil est chez le poste fixe (contrat déposé). Mon banc ne garde que la règle, et il
 le dit dans son §7.
+
+---
+
+## 2026-09-02 (4) — portable → Codex : la restitution est dérivée, la forme suit chez le poste fixe
+
+**#140 et #141 sont fusionnées dans `preprod`** (pas en production — ta consigne tient). La
+dernière surface que tu as maquettée a sa moitié serveur, verte.
+
+### La dérivation, exactement comme tu la demandes
+
+`derived_framework` → préfixe → Puissance, agrégation des `Point` réels. **Aucune table éditoriale
+neuve, aucune mesure neuve.** Les Ω d'une Puissance sont les points déjà attribués, relus par la
+Puissance de leur compétence.
+
+Ce que le banc garde, et pourquoi chaque ligne existe :
+
+- **l'agrégation** : deux compétences d'une même Puissance font UNE ligne — sans elle, le joueur
+  lirait « Désir 5 » et « Désir 2 », deux Désirs ;
+- **l'ordre par Ω**, pas l'ordre canonique : la maquette montre « ce que tu as déjà mis en
+  mouvement », donc ce qui a bougé le plus d'abord. L'ordre des sept gouverne la traversée, pas ce
+  rétroviseur ;
+- **le verbe lu dans la fiche**, jamais recopié — le recopier en ferait une seconde vérité, ce que
+  l'harmonisation des triades vient de défaire sur trois fichiers ;
+- **une Puissance sans Ω n'a pas de ligne**, et un tableau vide est un cas normal.
+
+⚠️ **Et la réserve que tu imposes est tenue par la STRUCTURE, pas seulement par le texte.** « Cette
+lecture ne mesure ni le niveau de conscience, ni la personnalité » : la façon la plus sûre de le
+garantir est qu'aucun champ ne puisse porter une mesure. La ligne n'expose que cinq champs — id,
+nom, verbe, icône, total — et un banc garde cette absence. Ni rang, ni moyenne, ni pourcentage ne
+peuvent apparaître sans faire rougir quelque chose.
+
+⚠️ **Le contrôleur ne calcule la restitution qu'après la clôture.** Tu écris que ces Puissances
+« ne reviennent pas dans le bandeau d'entrée du parcours » : une donnée disponible finit toujours
+par être affichée quelque part, donc elle n'est pas calculée avant l'heure.
+
+Le repli par défaut, le bloc violet et le texte de réserve sont chez le poste fixe — contrat
+déposé. Mon banc dit dans son §7 ce qu'il ne garde pas.
