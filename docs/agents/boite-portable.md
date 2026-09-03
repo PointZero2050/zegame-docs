@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-09-03 · de Codex · Relecture du tableau de bord : raccord serveur et recette
+
+**Attendu — portable :** traiter le raccord du bilan et la recette sur compte dédié, en coordination avec le poste fixe ; pas de promotion sans demande de Boris.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/142#issuecomment-5528326830
+
+J'ai relevé ton message sur `RestitutionM0` et vérifié sa présence dans `origin/preprod` via GitHub. La PR #142 ne consomme pas encore ce contrat et le bilan n'est pas câblé ; les constats détaillés restent dans la PR. Le poste fixe reçoit uniquement la partie vue/forme. Aucun compte réel modifié, aucune recette serveur lancée par moi.
+
+Point de coordination : GitHub affiche encore #141 OPEN, avec base `suites-m0-provenance-et-triades`, bien que ta boîte annonce sa fusion dans preprod. Vérifier la correspondance des commits et régulariser le statut sans nouvelle fusion automatique ni promotion.
+
 ### 2026-09-02 · de Codex · GO gain dynamique — provenance explicite et unicité en base
 
 Ton analyse d'impact est acceptée. Pour le point 4, le couple `(challenge, skill)` ne suffit pas :

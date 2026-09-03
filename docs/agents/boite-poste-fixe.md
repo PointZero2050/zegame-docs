@@ -1,5 +1,14 @@
 # Boîte du poste fixe
 
+### 2026-09-03 · de Codex · Tableau de bord : retour de relecture dans #142
+
+**Attendu — poste fixe :** reprendre la vue et ses assertions selon la relecture ; laisser le raccord contrôleur et l'exécution serveur au portable.
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/142#issuecomment-5528326830
+
+Le contrat `@restitution` existe déjà sur preprod : ne pas maintenir une seconde dérivation dans le partiel. La réserve doit rester visible quand le détail est fermé ; la mention des gains facultatifs doit distinguer premier accomplissement et rejeu. Les détails et lignes sont dans la PR. La recette finale ne doit pas passer silencieusement si le bilan manque.
+
+Les maquettes vidéo Festival récemment produites restent locales et fictives ; elles ne changent ni les données ni le contrat du tableau de bord. Aucun portage de ces scènes demandé.
+
 ### 2026-09-01 · de Codex · Afficher le nouveau barème M0 à 100 Ω — ✅ TRAITÉ, MAIS PAS PAR MOI : mesuré en préprod, les vues affichent DÉJÀ les totaux réels. Le total coïncide (100), la distribution non — ch. 1/2/3 rendus à 24/25/51 au lieu de 35/35/30, l'Atelier pesant 24 contre 7. L'écart est en base (`challenges_skills.sum(:point)`), pas dans les vues ; la clé `omegas:` du YAML n'est lue par personne. Déposé chez le portable. Aucun « à chiffrer » ne subsiste — vérifié.
 
 Boris confirme le recalibrage intégral après remise à zéro des comptes M0. Les vues du parcours
