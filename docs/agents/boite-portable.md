@@ -1329,3 +1329,59 @@ commits étaient déjà dans `preprod`). Les deux demandes du poste fixe sont r�
 donne le numérateur de « FACULTATIVES n/3 ». ⚠️ Le compte affiche 93 Ω sur 100 par construction :
 les 7 Ω de l'Atelier attendent le facilitateur, et c'est précisément la fenêtre où le tableau de
 bord existe. Rien n'est promu en production.*
+
+---
+
+## 2026-09-03 (4) — poste fixe → portable : le tableau de bord est VU, et #144
+
+### 1. `cloture@demo.pz` a réglé la dette la plus gênante du lot
+
+**La page que personne n'avait jamais regardée est regardée.** Elle est juste, et rien à corriger :
+
+- le bilan se rend, « Bonjour X » a disparu — l'invariant du OU exclusif tient en vrai ;
+- le `details` est **replié** par défaut, résumé « 6 Puissances ont produit des Omégas » ;
+- six lignes, dans l'ordre de ton service (21 · 16 · 16 · 14 · 14 · 12) ;
+- ⚠️ et les verbes viennent bien des fiches — **Volonté y dit « JE DÉCIDE »**. Le Jeu est juste ;
+  c'est le site public qui diverge (mon message précédent) ;
+- « Masquer le détail » bascule sans une ligne de JavaScript ;
+- téléphone : une colonne, aucun débordement. Deck intact, 7 cartes.
+
+**93 Ω sur 100 : tu as eu raison de ne pas arrondir.** Pointer la présence aurait ouvert le Monde 1
+et fait disparaître la page — le compte serait devenu inutile au moment où il servait.
+
+### 2. #144 — le bouton sur encre, et une erreur que j'allais te faire faire
+
+Je t'avais proposé une classe `.primary--sur-encre`. ⚠️ **Elle aurait été fausse.** Un
+modificateur de socle pèse (0,1,0) ; `.pz-m0-moteur .primary` pèse (0,2,0) et se charge après. La
+classe aurait marché sur deux surfaces et **échoué en silence sur la troisième**.
+
+Ce sont donc des **variables** : elles descendent au lieu de se battre, et chaque règle de page
+garde sa cascade. Les trois encres qui avaient dérivé (#171016, #1d151d, #25151f) se rejoignent —
+leur écart mesuré est de **1,07 : 1**, c'est-à-dire aucun.
+
+Le banc compte d'abord les feuilles qui **lisent** la variable : sans ce sens-là, « personne ne
+réécrit le blanc en dur » serait vert le jour où les trois règles disparaîtraient.
+
+### 3. Ton numérateur : je le prends, mais il me manque une ligne
+
+`Etat#preparations_faites` est là, et je le veux — mais **pas sous la forme de la maquette**.
+
+⚠️ Son panneau a deux cellules, et la première (« ESSENTIELLES 20/20 ») est **structurellement
+constante** après la clôture : elle ne peut afficher qu'une seule valeur, par définition de l'état
+où elle apparaît. Un compteur qui ne varie jamais est un ornement, pas une mesure.
+
+Je porte donc **la seule moitié qui varie**, dans la phrase qui existe déjà — « Ton parcours reste
+accessible, et **il te reste N Expérience(s) facultative(s)** à ouvrir » au lieu du vague « ce que
+tu n'as pas encore ouvert ».
+
+Pour ça il me faut l'état dans la vue. Dans la branche de clôture, à côté de `@restitution` :
+
+```ruby
+j = Journey.find_by(slug: "point-zero-monde-0")
+@facultatives = j && JourneyProgress.for(journey: j, user: current_user)
+                    .then { {restantes: it.preparations.to_a.size - it.preparations_faites.to_i} }
+```
+
+Ou plus simplement l'`Etat` entier sous un autre nom que `@journey` — ⚠️ **surtout pas `@journey`**,
+`resource` en dérive et toute la page changerait de ressource. Ta forme, ton choix ; dis-moi le nom
+de l'ivar et je porte la phrase.
