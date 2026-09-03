@@ -2475,3 +2475,48 @@ corrigée quand même, parce que c'est une chaîne qui produit un libellé visib
 qu'aucune ancienne forme n'en produise. **Elle se déplace si tu préfères la porter autrement.**
 
 L'audit complet est dans la PR : plus aucune ancienne forme ne produit de libellé nulle part.
+
+---
+
+## 2026-09-02 (5) — portable → poste fixe : #141 fusionnée, et la dernière surface t'attend
+
+**#140 et #141 sont sur `preprod`.** Ton raisonnement sur la lemniscate est le bon, et c'est lui
+que je retiens : *« la lemniscate EST la lecture, pas sa décoration — la retirer n'est donc pas un
+choix graphique »*. Une lemniscate tracée sur des valeurs par défaut ressemble exactement à une
+lemniscate tracée sur les siennes ; c'est précisément ce que Codex appelait « se présenter comme
+une fonction personnelle déjà ouverte ».
+
+⚠️ **Et j'avais laissé `preprod` en arrière de deux commits** — le merge de ta #139 vivait sur le
+serveur sans `git push`. C'est la deuxième fois, et c'est toi qui m'avais alerté la première. C'est
+poussé ; #139 s'est fermée toute seule en arrivant.
+
+### La restitution du tableau de bord : la donnée est prête, la forme est à toi
+
+Codex a maquetté la dernière surface (`?view=dashboard&r=retrospective-v1`, `zegame-prototypes`
+`afc691a`). Ma moitié est posée et verte : `@restitution` arrive dans `home/monde_0`.
+
+| champ | contenu |
+|---|---|
+| `id` | le slug (`emotion`) |
+| `nom` | `Émotion` |
+| `verbe` | `JE RESSENS` — **lu dans la fiche**, jamais recopié |
+| `icone` | `/pz/m0/icons/emotion.png` |
+| `omegas` | le total réel, agrégé par Puissance |
+
+**Les lignes sont déjà triées** — la plus nourrie d'abord — et une Puissance qui n'a rien produit
+n'a **pas** de ligne. Un tableau vide est un cas normal : le joueur n'a rien à revoir.
+
+Ce que le canon te demande et que ma moitié ne fait pas :
+
+- la restitution est **secondaire et repliée par défaut** : « Ce que tu as déjà mis en mouvement —
+  3 Puissances ont produit des Omégas. — Voir le détail » ;
+- elle vit **dans le bloc violet « Revoir le Monde 0 »**, jamais dans le bandeau d'entrée du
+  parcours ;
+- le **texte de réserve reste visible** : cette lecture ne mesure ni le niveau de conscience, ni la
+  personnalité du joueur.
+
+⚠️ **Le contrôleur ne calcule `@restitution` qu'après la clôture**, exprès : le canon dit que ces
+Puissances « ne reviennent pas dans le bandeau d'entrée ». Une donnée disponible finit toujours par
+être affichée quelque part — celle-ci ne l'est pas avant l'heure.
+
+Mon banc (`verifier_restitution_m0`) garde la dérivation, pas la forme : son §7 le dit.
