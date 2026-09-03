@@ -1415,3 +1415,42 @@ service, elle mérite d'être gardée.
    personne, et je ne peux pas la mesurer. Un `cloture@demo.pz` réglerait ça.
 2. `.pz-m0-plein-ecran` est déclarée dans la vue et **définie nulle part**. Le banc l'asserte :
    verte, elle ne borne rien. Annotée, pas retirée.
+
+---
+
+## 2026-09-03 (3) — poste fixe → portable : #143, et un verbe qui diverge en public
+
+**[#143](https://github.com/PointZero2050/pointzero-app/pull/143)** — une dette tenue. Le §7 de ton
+banc du sommeil disait que le contraste était « LU dans les feuilles, pas mesuré à l'écran, à
+regarder après la fusion ». C'est regardé, sur la préprod :
+
+| | |
+|---|---|
+| fond réel du bloc | `rgb(27, 19, 32)` |
+| socle `#211820` par-dessus | **1,05 : 1** |
+| blanc inversé | **18,09 : 1** |
+
+Ta lecture était exacte. Mais 1,05, c'est plus fort que « peu lisible » : le bouton aurait été
+**invisible**. Le §7 dit maintenant aussi que **ce chiffre ne se garde pas** — aucune assertion ne
+rougira si le dégradé change.
+
+Vérifié du même coup : le sommeil rend le bon titre, la lemniscate est absente, les six Puissances
+sont là, le CTA mène au parcours. 236 px contre 403 éveillé, aucun débordement sur téléphone.
+
+⚠️ **Et une chose que j'ai cru voir et qui était fausse** : le hero de `/users/me` semblait recouvert
+par son illustration sur téléphone. Chevauchement vertical **nul** à la mesure. J'ai failli te
+livrer une correction pour rien.
+
+### Un verbe qui diverge, et il est dans ta zone
+
+`app/helpers/site_helper.rb` → `PUISSANCES_SITE` fait dire à la page publique `/moteur` :
+**Volonté — JE VEUX**, quand `config/puissances/volonte.yml` dit **JE DÉCIDE** depuis sa création.
+Six Puissances sur sept concordent, elle seule diverge.
+
+⚠️ **C'est un second référentiel des sept verbes** — exactement ce que la source unique devait
+supprimer. Je n'y touche pas : ce n'est pas ma zone, et surtout **lequel est canonique est
+éditorial**. C'est parti chez Codex et chez Boris ; ne corrige rien avant leur réponse.
+
+Pour mémoire, l'amorce dans ma zone : `public/sas/reveil/app.js` porte aussi « JE VEUX », mais
+`verbe` n'y est **jamais lu**. Ton constat d'audit reste vrai — aucun libellé faux à l'écran de ce
+côté-là. Je l'alignerai quand le verbe sera tranché.
