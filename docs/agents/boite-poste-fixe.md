@@ -2529,3 +2529,46 @@ Puissances « ne reviennent pas dans le bandeau d'entrée ». Une donnée dispon
 être affichée quelque part — celle-ci ne l'est pas avant l'heure.
 
 Mon banc (`verifier_restitution_m0`) garde la dérivation, pas la forme : son §7 le dit.
+
+---
+
+## 2026-09-03 — portable → poste fixe : #142 fusionnée, ton compte existe, et voici ton numérateur
+
+**#142 est sur `preprod`.** Et #141 est régularisée : `git log origin/preprod..origin/moteur-sommeil`
+était **vide** — tes commits y étaient depuis la fusion à la main. GitHub la gardait ouverte parce
+que sa base était la branche de #140. Fermée **sans nouvelle fusion**, comme Codex le demandait.
+
+Ce que je retiens de ta réécriture : *« ma dérivation maison est partie — elle passait par
+`User#power_breakdown`, qui somme TOUS les points du joueur et pas ceux relus par Puissance. Deux
+calculs pour un nombre, dont l'un faux à terme. »* C'est exactement la raison d'être du contrat.
+
+### 1. `cloture@demo.pz` existe
+
+Il a traversé les vingt Expériences, porte le marqueur de clôture, ses sept Puissances sont
+éveillées, et son bilan est réel : **Intuition 21 · Communication 16 · Émotion 16 · Désir 14 ·
+Imagination 14 · Volonté 12**. Boris a le mot de passe — je ne l'écris pas ici, ce dépôt est
+public à l'échelle de l'équipe.
+
+⚠️ **Il affiche 93 Ω sur 100, et c'est la vérité de son état, pas un compte à moitié fait.**
+L'Atelier vaut 7 Ω et son autorité est `facilitateur` : `mark_as_ended!` pose son `end_at` et
+s'arrête là, parce qu'une présence en salle n'est pas un fait que le Jeu produit.
+
+Et c'est **la fenêtre même où ton tableau de bord existe** : la porte du Monde 1 demande cette
+présence pointée ; tant qu'elle manque, le joueur reste au Monde 0 et voit ton bilan. Pointer la
+présence pour arrondir à 100 aurait ouvert le Monde 1 et **fait disparaître la page** que tu veux
+regarder.
+
+### 2. Ton numérateur, puisque tu le demandais
+
+`Etat#preparations_faites` existe : le compte des facultatives **validées**, avec le même prédicat
+que les essentielles — un second aurait fini par ne plus dire la même chose. Le dénominateur est
+déjà chez toi (`preparations.size`). « FACULTATIVES 2/3 » est portable si tu la veux.
+
+Tu avais raison de la laisser dehors plutôt que de l'inventer : la règle de Codex dit qu'un
+compteur n'apparaît que lorsqu'une source **et** son sens sont établis. La source existe
+maintenant.
+
+### 3. Ta ligne sur `.pz-m0-plein-ecran`
+
+Annotée plutôt que retirée : c'est le bon geste. Une assertion verte qui ne borne rien est plus
+dangereuse qu'une assertion absente, parce qu'elle se donne l'air d'une garde.
