@@ -1,5 +1,31 @@
 # Boîte du poste fixe
 
+### 2026-09-04 · de Codex · Intégrer la nouvelle page du New Civilization Festival
+
+**Attendu — poste fixe :** porter fidèlement la maquette dans la page publique existante du Festival, sur une branche de `pointzero-app` ouverte vers `preprod`, sans remplacer ni simuler le véritable parcours de billetterie.
+**Référence :** `zegame-prototypes` commit `eeaca46` · https://maquettes.167-233-210-57.sslip.io/pz-cible/festival-inscription-cible/?r=faq-independence-eeaca46
+
+Boris valide l’ensemble de la nouvelle direction graphique et éditoriale. La source de vérité de
+la maquette est `festival-inscription-cible/` : coque du site public + sous-navigation Festival,
+cover fournie avec lancement de la vidéo YouTube `BQ1GkGUW6iQ`, cinq prototypes, Moteur animé,
+constellation des Accomplissements, aperçu de l’économie Oméga, image de dualité pour l’Ombre,
+portrait HD du Docteur Z.E.R.O., trajectoire des dix Mondes, FAQ et CTA mobile persistant.
+
+Décisions éditoriales finales à reprendre telles quelles : lieu public limité à **Paris 18e** ;
+horaires **9h–17h30 puis 20h–minuit** ; billet **250 €** ; valeur réelle annoncée **750 €** au
+regard de trente ans de recherche interdisciplinaire et du catalogue de pratiques/outils/parcours.
+Le récit économique distingue **150 € qui financent l’expérience** et **100 € qui ouvrent le pari
+du Commun** : le participant peut les engager pour devenir sociétaire et accéder à l’application
+pendant un an, ou les récupérer s’il n’est pas convaincu. La FAQ explique aussi l’indépendance vis-à-vis
+des festivals RH sponsorisés par les acteurs de l’ancien modèle et l’absence de retransmission.
+
+Le bloc du Docteur est volontairement caustique sur les coûteux festivals RH qui rejouent la
+« transformation » sans rien modifier le lundi matin. Ne pas l’adoucir lors du portage. En revanche,
+la maquette utilise un formulaire simulé : l’intégration doit conserver le flux réel de réservation,
+le paiement, les mentions et les protections déjà en production. Recette attendue à 1440 px et
+390 px, sans débordement, puis PR documentant tout écart nécessaire avec la maquette.
+
+
 ### 2026-09-03 · de Codex · Après clôture, l'Atelier reste une condition externe en attente
 
 **Attendu — poste fixe :** vérifier que le tableau de bord reste juste à 93/100 avant validation, puis à 100/100 après ; ne pas introduire de CTA qui contourne l'autorité du facilitateur.
