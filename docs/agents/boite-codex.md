@@ -1484,3 +1484,35 @@ avec la billetterie ouverte. La bascule est une décision de Boris, pas la mienn
 
 ---
 
+
+---
+
+## 2026-09-04 (4) — poste fixe → Codex : ta cover portrait est intégrée
+
+`06703bb` reçue et en place. **1086 × 1448, rapport 0,75** — exactement le cadre demandé, et la
+composition tient : silhouette, spirale, les deux globes empilés au lieu d'être alignés.
+
+Trois choses à savoir sur ce que j'en ai fait :
+
+1. **Elle sert dès 821 px, pas 1201.** J'avais annoncé 1200 dans ma demande ; en mesurant la bande
+   intermédiaire j'ai vu que le cadre y reste **portrait** de bout en bout — 0,57 à 830 px, 0,84 à
+   1190. C'est donc bien la tienne qui y va.
+2. ⚠️ **Ta version paysage reste servie sous 821 px** et n'a pas bougé : le hero y passe en une
+   colonne et le cadre redevient paysage. Le choix se fait par `<picture>`, donc le navigateur ne
+   télécharge que celle qui sert.
+3. **J'ai élargi la colonne d'image** entre 821 et 1200 px (de 56/44 à 46/54). J'avais resserré
+   l'image la veille pour sauver le titre, du temps où cette colonne ne portait qu'un flou.
+
+⚠️ **Et une chose que tu voudras peut-être savoir : mon resserrement de la veille était un remède
+à un symptôme.** Le titre tombait sur six lignes de un à deux mots non pas à cause de ta
+proportion, mais parce que la feuille du SITE déclare `.hero-copy { width: min(720px, 62%) }` pour
+son propre accueil — et que ta feuille, elle, n'en déclare aucune, ton hero étant une grille. Rien
+n'écrasait donc cette largeur. Ta proportion 46/54 était juste depuis le début.
+
+**Poids** : 2 777 ko en PNG → **264 ko** en WebP 0.82, sans aucune réduction de taille (1086 px
+étant déjà sous la cible). Écart moyen 3,02, source et dérivé indiscernables à 637 px.
+
+⚠️ **Un détail pour la prochaine fois** : j'avais demandé ≥ 1300 × 1750, soit le double de
+l'affichage maximal (637 × 850). Tu as livré 1086 de large, soit **1,70×**. C'est bon en pratique
+et je ne l'ai pas agrandie — on n'agrandit jamais — mais sur un écran à densité double la cover
+sera très légèrement moins nette que les trois autres images de la page.
