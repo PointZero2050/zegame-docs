@@ -1417,3 +1417,67 @@ Stripe.
 **131 bancs verts en préprod**, 23 commits prêts à promouvoir, aucune PR ouverte. Le site public est
 basculé sur `pointzero2050.com` et la billetterie du Festival est ouverte depuis aujourd'hui —
 **l'application, elle, reste fermée** : un acheteur reçoit sa place sans lien d'activation.
+
+---
+
+## 2026-09-04 — portable → Codex : les cinq arbitrages sont appliqués, et l'un d'eux a changé un banc
+
+Merci d'avoir relevé le rappel. Les cinq sont traités.
+
+### 1. L'éveil — ta décision confirme le code, mais elle a changé le BANC
+
+Le code faisait déjà ce que tu tranches : l'annonce est posée au **POST**, jamais au rendu, et
+`EveilsController` porte en commentaire « conséquence assumée : un onglet fermé sur cet écran le
+reverra ».
+
+⚠️ **Mais le banc ne faisait que le NOMMER.** `verifier_eveil` §6 listait ce comportement parmi
+« ce que ce banc ne prouve pas », comme un choix de conception. Ta décision en fait une
+**exigence du canon** — et une exigence se mesure. Le banc asserte maintenant deux rendus
+successifs sans accusé : la dette reste intacte et l'écran s'ouvre encore. Sans cette ligne,
+quelqu'un pourrait « optimiser » l'annonce au GET et perdre la cérémonie sur un préchargement
+sans qu'aucun banc bronche.
+
+### 2 et 3. Les deux verbes suivent le canon — douze formulations
+
+**Intuition = JE DISCERNE**, **Communication = JE M'EXPRIME**, propagés dans les cinq endroits
+et leurs voisins : les deux fiches `config/puissances/` (titre, `verbe_source`, triade et prose),
+`SiteHelper::PUISSANCES_SITE` (le site public), la ressource `pz.yml` et les deux en-têtes de
+séance du Conseil Oméga. L'ancien vocabulaire ne subsiste nulle part.
+
+⚠️ **La fiche de l'Intuition se contredisait elle-même** : `verbe_source: "JE CONNAIS"` alors que
+sa propre triade disait déjà `mot: "JE DISCERNE"`, et son titre aussi. Ton arbitrage tranche donc
+en faveur de ce que le fichier disait déjà deux fois sur trois.
+
+**Et l'attente s'est refermée.** `verifier_accord_des_verbes` portait ces deux divergences dans
+un `EN_ATTENTE` explicite — le procédé d'`omegas_en_attente` : le banc EXIGEAIT l'état actuel, si
+bien que le jour où quelqu'un tranche, il rougit et demande de retirer la ligne. C'est ce qui
+vient de se passer. Les six verbes sont de nouveau comparés nus, sans exception.
+
+### 4. Le tableau de bord — relayé au poste fixe
+
+« Monde 0 accompli » → « Seuil du Monde 0 traversé » vit dans `app/views/home/_bilan_m0.html.haml`,
+zone du poste fixe. Je lui ai déposé la demande avec ta formulation. ⚠️ Le paragraphe juste
+au-dessus dit déjà « Tu as traversé le Seuil du Monde 0 » : la vue se contredisait elle-même.
+
+### 5. Immateria / Phaser — l'endpoint t'attend
+
+`POST /immateria/fin-tutoriel` existe, il est **idempotent**, il pose la clé `tutoriel_termine`
+dans la Trace `desir/immateria` et valide l'expérience 1. Le poste fixe a le raccord client, avec
+ton moment exact. Je garde la recette de bout en bout.
+
+### Le Festival est publié en préprod
+
+Fait après ton autorisation, donnée de préproduction uniquement — ni fusion de #146 vers la
+production, ni promotion :
+https://preprod.167-233-210-57.sslip.io/evenements/new-civilization-festival-2026
+
+⚠️ **Un effet de bord à connaître** : `verifier_rubrique_evenements` exigeait un **404** sur ce
+slug — il mesurait le VRAI Festival, brouillon le jour où le banc a été écrit. Publier l'a fait
+rougir sur une décision parfaitement légitime. Le banc fabrique désormais son propre brouillon,
+et vérifie les deux sens (invisible en brouillon, visible une fois publié). La leçon est à moi :
+un banc qui mesure son voisin rougit quand le voisin change d'avis.
+
+### Ce qui attend encore Boris
+
+La page du Festival n'est **pas** en production : la production sert toujours l'ancienne page,
+avec la billetterie ouverte. La bascule est une décision de Boris, pas la mienne.

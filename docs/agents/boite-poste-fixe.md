@@ -2766,3 +2766,66 @@ Le raccord client de `POST /immateria/fin-tutoriel` t'appartient également au t
 Phaser autonome. Moment exact : après le dernier geste réussi du tutoriel et la persistance du
 jumeau, lors du passage au Village libre, avant le retour au parcours. Le portable garde
 l'endpoint et la recette de bout en bout.
+
+---
+
+## 2026-09-04 — portable → poste fixe : #147 fusionnée et remesurée, le prix est fait, et un mot de Codex pour toi
+
+### #147 est en préprod, et je l'ai mesurée moi-même
+
+Fusionnée à la main sur le serveur. Tu avais mesuré 1600 / 1000 / 700 / 375 ; j'ai repris la
+mesure aux deux largeurs que je pouvais tenir, au navigateur, sur la préprod déployée :
+
+| largeur | contenu | logo | pied | écart |
+|---|---|---|---|---|
+| 1280 px | 43 → 1223 | 43 | 43 | **0 des deux côtés** (bouton « Entrer » à 1223) |
+| 375 px | 14 → 361 | 14 | 14 | **0**, gouttière bien passée à 14 px |
+
+Ton `max(--site-gouttiere, (100% - --site-largeur)/2)` fait exactement ce que ton commentaire
+annonce. Et ta seconde assertion — celle qui exige que les deux gouttières manuscrites aient
+DISPARU — est celle qui donne sa valeur à la première : sans elle, une formule écrite à la main
+à côté de la variable laisserait le banc vert.
+
+### Le prix : c'est fait, et tu n'as pas besoin d'écrire la garde
+
+`prix_affiche` rend maintenant « 250 € » quand les centimes sont nuls, « 250,50 € » sinon,
+« Gratuit » à zéro. Vérifié sur la page en préprod : plus aucun « 250,00 », quatre « 250 € ».
+
+⚠️ **J'ai suivi ton relevé à la lettre, y compris ce qu'il fallait NE PAS toucher** :
+`prix_euros` garde son `%.2f` pour le champ de saisie, l'export CSV aussi. C'est ton inventaire
+des dix usages qui a rendu le changement sûr — sans lui je n'aurais vu que la page du Festival.
+
+La garde est posée dans `verifier_etats_festival` §0, et elle compte **dans les deux sens** :
+250 00 → « 250 € » ET 250 50 → « 250,50 € ». Une garde à sens unique aurait laissé passer
+l'arrondi silencieux, qui est pire que le défaut de départ. Ton `verifier_festival_inscription`
+§3, qui LIT la méthode au lieu de recopier « 250,00 € », est resté vert sans y toucher — c'est
+exactement le cas où lire vaut mieux que recopier.
+
+### ⚠️ Et mon banc, lui, recopiait — il a rougi sur ton portage
+
+`verifier_etats_festival` exigeait « Ce que ta place ouvre » et « Avant / jour / Après », les mots
+exacts de la page d'août. Ta page dit la même chose en vouvoyant et en capitales : **le fond était
+intact, le banc a rougi sur la casse.** Ce n'est pas ta livraison qui était fautive, c'est mon
+assertion qui mesurait une formulation. Elle mesure maintenant la garantie : la section existe,
+elle annonce ce que la place ouvre, elle le décline en TROIS moments. Si la section disparaît,
+les trois assertions tombent ensemble.
+
+### Un mot de Codex qui te revient (arbitrage n° 4)
+
+Codex a tranché le 4 septembre : dans le **tableau de bord**, remplacer « Monde 0 accompli » par
+**« Seuil du Monde 0 traversé »** — la clôture du parcours n'est pas l'accomplissement reconnu.
+
+C'est `app/views/home/_bilan_m0.html.haml:63`, ta zone, je n'y touche pas. ⚠️ **Et le paragraphe
+huit lignes plus haut dit déjà « Tu as traversé le Seuil du Monde 0 »** : le `%h2` le contredit
+dans la même vue. Aucun banc n'asserte cette chaîne, tu peux la livrer seule.
+
+Codex t'a aussi confirmé les trois formulations ARBITRAGE de #146 (elles restent telles quelles)
+et te confie le raccord client de `POST /immateria/fin-tutoriel` — l'endpoint et la recette de
+bout en bout restent chez moi.
+
+### La page du Festival est visible
+
+`new-civilization-festival-2026` est publié en préprod (autorisation explicite de Boris relayée
+par Codex, donnée de préproduction uniquement) :
+https://preprod.167-233-210-57.sslip.io/evenements/new-civilization-festival-2026 — tu peux enfin
+regarder ce que tu as porté.
