@@ -12,6 +12,9 @@
 | `pointzero2050.com` A | `164.132.235.17` (OVH mutualisé — WordPress) · **TTL 3600 s** |
 | `www` A | `164.132.235.17` (enregistrement A, pas un CNAME) |
 | `new` A | `167.233.210.57` (Hetzner — la nouvelle pile) |
+| ⚠️ `pointzero2050.com` **AAAA** | `2001:41d0:301::23` (OVH) — **`new` n'en a aucun** |
+| ⚠️ `www` **AAAA** | `2001:41d0:301::23` (OVH) |
+| IPv6 du serveur Hetzner | `2a01:4f8:c015:16f3::1` — Caddy y répond (vérifié le 4 septembre) |
 | MX | `mx1/mx2/mx3.mail.ovh.net` — **le courrier ne bouge pas** |
 | SPF | `v=spf1 include:mx.ovh.com include:spf.brevo.com -all` — déjà correct |
 | DMARC | `p=none; rua=mailto:rua@dmarc.brevo.com` |
@@ -81,6 +84,15 @@ Chez OVH, zone DNS :
 |---|---|---|
 | `pointzero2050.com` A | `164.132.235.17` | **`167.233.210.57`** |
 | `www` A | `164.132.235.17` | **`167.233.210.57`** |
+| `pointzero2050.com` **AAAA** | `2001:41d0:301::23` | **supprimer** (ou `2a01:4f8:c015:16f3::1`) |
+| `www` **AAAA** | `2001:41d0:301::23` | **supprimer** (ou `2a01:4f8:c015:16f3::1`) |
+
+⚠️ **LES AAAA MANQUAIENT À CE DOCUMENT, ET ÇA A COÛTÉ LA BASCULE DU 4 SEPTEMBRE.** Cette procédure
+ne relevait que les enregistrements A. Résultat mesuré ce jour-là : l'apex basculé en IPv4, mais
+**tout visiteur en IPv6 continuait de voir WordPress** — et surtout, Let's Encrypt valide **en
+priorité par IPv6** quand un AAAA existe. Le défi partait donc vers l'ancienne machine, aucun
+certificat ne pouvait être délivré, et le site est resté injoignable en HTTPS le temps qu'on
+comprenne. Un relevé DNS qui ne regarde qu'une famille d'adresses n'est pas un relevé.
 
 Rien d'autre. Ne pas toucher aux MX, aux DKIM, à `mail`, `ftp`, `autoconfig`, `autodiscover`.
 
@@ -142,6 +154,34 @@ Restent les URL propres à WordPress, qui n'existent plus :
 **Méthode recommandée plutôt qu'un plan exhaustif à l'aveugle** : après la bascule, journaliser
 les 404 pendant une semaine et ajouter les redirections que le trafic réel réclame. C'est plus
 sûr que de deviner, et cela évite d'écrire des règles pour des URL que personne ne visite.
+
+## 7 bis. ⚠️ Le piège du compte ACME de staging
+
+Vécu le 4 septembre, après la correction des AAAA : les certificats échouaient encore, avec
+« *The key authorization file from the server did not match this challenge* » — la bonne étiquette,
+mais **signée d'une autre clé de compte**.
+
+Cause : `preprod.pointzero2050.com` était déclaré dans le Caddyfile **sans exister au DNS**, et
+Caddy tentait son certificat depuis vingt-cinq jours (122 essais). Après tant d'échecs il se rabat
+sur l'endpoint de **staging** de Let's Encrypt pour ne pas brûler les quotas de production — et se
+retrouve avec **deux comptes ACME** dans son magasin. Les deux répondent au même défi, chacun avec
+sa clé : la validation échoue toujours, et les certificats de staging ne sont reconnus par aucun
+navigateur.
+
+Deux gestes, dans cet ordre :
+
+1. **retirer du Caddyfile tout nom qui n'existe pas au DNS** — un nom mort dans un bloc TLS n'est
+   pas inoffensif, il entraîne le client ACME avec lui ;
+2. **supprimer le compte de staging** du magasin, après avoir vérifié qu'aucun certificat n'en
+   dépend :
+
+```bash
+docker compose -f ~/deploy/compose.yml exec -T caddy sh -c \
+  'ls /data/caddy/certificates/ ; rm -rf /data/caddy/acme/acme-staging-v02.api.letsencrypt.org-directory'
+docker compose -f ~/deploy/compose.yml restart caddy
+```
+
+Les certificats sont alors obtenus en moins d'une minute.
 
 ## 8. Retour en arrière
 

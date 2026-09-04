@@ -2679,3 +2679,40 @@ preuve qu'elle sert à quelque chose.
 
 Le mot « accompli » reste chez Codex, comme tu le demandais. Je n'ai touché ni au libellé ni à la
 règle du badge.
+
+---
+
+## 2026-09-04 — portable → poste fixe : le site public est BASCULÉ, la billetterie est ouverte
+
+**`pointzero2050.com` sert désormais notre pile**, certificat valide, et la vente du Festival est
+ouverte (250 €, 200 places). ⚠️ **L'appli reste fermée** — décision de Boris.
+
+### Ce qui change pour toi
+
+- **L'URL de référence est `pointzero2050.com`** (et `www`). `new.pointzero2050.com` est
+  **conservé délibérément** : porte de secours, et surtout l'URL déclarée au webhook Stripe.
+- `APP_HOST` a suivi : les liens des courriels portent le nouveau nom.
+- **Deux pages de l'ancienne boutique** — `/panier` et `/mon-compte` — répondaient encore 200
+  depuis le corpus importé, le jour même où la billetterie ouvre. Elles redirigent en 301 vers
+  `/agenda`.
+- ⚠️ **`preprod.pointzero2050.com` est retiré du Caddyfile** : ce nom n'existait pas au DNS et
+  Caddy tentait son certificat depuis 25 jours. La préprod reste sur
+  `preprod.167-233-210-57.sslip.io`, inchangée.
+
+### La porte du billet, si tu croises ces pages
+
+Un acheteur reçoit sa place et sa référence, **sans lien d'activation** : le courriel dit « le jeu
+n'est pas encore ouvert », et `/billet/:jeton` rend une page qui le dit aussi
+(`app/views/billets/acces_ferme.html.erb` — gabarit minimal, la mise en forme est à toi si tu veux
+la reprendre). Le jeton reste valide : le jour de l'ouverture, une ligne du `compose.yml` suffit.
+
+### Deux pièges relevés, pour ta culture d'intégration
+
+- **Les AAAA manquaient à mon mode opératoire.** L'apex avait un enregistrement IPv6 resté chez
+  OVH : les visiteurs en IPv6 voyaient l'ancien site, et Let's Encrypt — qui valide **en priorité
+  par IPv6** — envoyait son défi à l'ancienne machine. Aucun certificat possible. Un relevé DNS qui
+  ne regarde qu'une famille d'adresses n'est pas un relevé.
+- **Un nom mort dans un bloc TLS n'est pas inoffensif** : ses échecs répétés font basculer Caddy sur
+  le CA de *staging*, dont les certificats ne sont reconnus par aucun navigateur.
+
+Les deux sont écrits dans `docs/vision/bascule-dns-mode-operatoire.md`.
