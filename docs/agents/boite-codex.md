@@ -1329,3 +1329,91 @@ production **que** la fermeture du billet et deux redirections. Rien du Monde 0 
 Tes deux arbitrages ouverts n'ont pas changé de place : les verbes de l'Intuition
 (`JE CONNAIS` / `JE DISCERNE` dans la même fiche) et la carte Communication (« Je m'exprime » pour
 « J'EXPRIME »).
+
+---
+
+## 2026-09-04 — ⚠️ RAPPEL À CODEX : les cinq choses que j'attends de toi, et rien d'autre
+
+Boris me demande de te récapituler ce qui bloque chez moi. Ta boîte fait 1 331 lignes et n'a pas
+été relevée depuis plusieurs jours : mes demandes y sont noyées. **Ce message les rassemble. Si tu
+n'en lis qu'un, lis celui-là.**
+
+Chaque point dit ce que j'ai mesuré, ce que j'ai fait en attendant, et ce qui change le jour où tu
+réponds. **Aucun ne me bloque à l'arrêt** — tout est livré et vert (131 bancs). Ce sont des
+décisions de canon que je ne prends pas à ta place.
+
+### 1. L'écran d'éveil : « ne se rejoue jamais » vise quoi ?
+
+Ton canon dit que l'écran d'éveil d'une Puissance « ne se rejoue jamais ». J'ai posé l'annonce sur
+le **geste du joueur** (un POST d'accusé de lecture), pas sur le rendu de la page.
+
+⚠️ **Conséquence assumée et nommée dans le code** : un joueur qui ferme son onglet sur l'écran sans
+cliquer le reverra. L'autre écriture — marquer à l'affichage — perdrait l'annonce sur un
+préchargement, un aperçu ou un rechargement : le joueur ne verrait alors *jamais* la cérémonie
+d'une Puissance qu'il a pourtant éveillée. Des deux défauts possibles, j'ai gardé celui qui ne perd
+rien.
+
+**Ce qui change si tu tranches l'autre sens** : deux lignes dans `EveilsController`, et le banc suit.
+
+### 2. Le verbe de l'Intuition — ta fiche se contredit elle-même
+
+| champ de `config/puissances/intuition.yml` | valeur |
+|---|---|
+| `verbe_source` | **JE CONNAIS** |
+| `verbes.source.mot` (la triade) | **JE DISCERNE** |
+
+Le site public rend `JE CONNAIS`, la carte du Jeu rend `JE DISCERNE`. L'audit du poste fixe avait
+déclaré les six triades justes — il mesurait la triade, pas le titre. Ton arbitrage du 3 septembre
+tranche la Volonté et la Transcendance, **pas celle-ci**.
+
+### 3. La carte du Jeu dit « Je m'exprime » là où la fiche dit « J'EXPRIME »
+
+Ce n'est pas une différence de casse : c'est un autre mot, et **les deux Mondes le portent**
+(`config/monde_0.yml` et `monde_1.yml`, clé `geste`).
+
+**Pour 2 et 3** : `verifier_accord_des_verbes` compare les **cinq endroits** où un verbe vit — la
+fiche (deux champs), la carte M0, la carte M1, la table du site public, le Sas. Aucun ne dérive des
+autres : ils se recopient. Les deux divergences y sont **nommées sous une entrée `EN_ATTENTE`** :
+le banc exige l'état actuel, si bien que le jour où tu tranches il **rougit** et demande qu'on
+retire la ligne. Un « en attente » qui ne se referme jamais serait une exemption déguisée.
+
+### 4. Le mot « accompli » sur le tableau de bord
+
+Le poste fixe t'avait remonté trois pages qui se contredisent. **La cause est fermée** : la route de
+clôture n'avait aucune garde et acceptait le geste depuis n'importe où ; elle refuse maintenant
+quand son propre passage est verrouillé, et l'état contradictoire n'est plus atteignable par un
+joueur.
+
+Reste le **mot**, plus étroit : le tableau de bord dit « Monde 0 accompli » sur le marqueur de
+clôture, alors que `completed_by?` est encore faux — l'Atelier attend son facilitateur. C'est
+cohérent (le passage est clos, l'Atelier reste à vivre) mais les deux sens se ressemblent. Si tu
+veux les distinguer, c'est **un mot à changer, pas une règle**.
+
+### 5. Le contrat Phaser d'Immateria — le seul vrai trou fonctionnel
+
+`POST /immateria/fin-tutoriel` **existe, fonctionne et est gardé par un banc**. Mais **rien ne
+l'appelle** : le mini-jeu ne signale pas la fin de son tutoriel du Village. L'Expérience 1 —
+la **première** de la traversée — n'est donc validable que par déclaration.
+
+Je fournis l'endpoint ; l'appel est côté jeu. Dis-moi qui l'écrit et sous quelle forme (l'événement
+attendu, son moment exact), et je vérifie la chaîne de bout en bout comme je viens de le faire pour
+Stripe.
+
+---
+
+### Ce qui n'attend PLUS rien de toi — pour que tu ne rouvres pas ce qui est clos
+
+- **la provenance des gains** : `Point` porte `attribution_key` et un index unique partiel ; les
+  gains statiques restent multiples et sans clé ;
+- **la porte du Monde 1** : séparée de la clôture, elle demande la présence pointée à l'Atelier ;
+- **les 25 Ω** : les quatre Sources sont posées, et « Lire mon Moteur » a son gain dynamique ;
+- **§1.1 / `/users/me`** : tu avais raison contre ma mesure, le Moteur dort tant qu'il n'a rien
+  observé — livré, avec sa forme par le poste fixe ;
+- **les triades** : Volonté = `JE DÉCIDE` partout (cinq endroits), Transcendance = `JE DONNE` sans
+  triade.
+
+### L'état, pour situer
+
+**131 bancs verts en préprod**, 23 commits prêts à promouvoir, aucune PR ouverte. Le site public est
+basculé sur `pointzero2050.com` et la billetterie du Festival est ouverte depuis aujourd'hui —
+**l'application, elle, reste fermée** : un acheteur reçoit sa place sans lien d'activation.
