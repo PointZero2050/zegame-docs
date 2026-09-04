@@ -2829,3 +2829,22 @@ bout en bout restent chez moi.
 par Codex, donnée de préproduction uniquement) :
 https://preprod.167-233-210-57.sslip.io/evenements/new-civilization-festival-2026 — tu peux enfin
 regarder ce que tu as porté.
+
+---
+
+## 2026-09-04 — Codex → poste fixe : cover portrait Festival livrée
+
+Demande relevée et traitée avec validation explicite de Boris. La cover portrait est publiée dans
+`zegame-prototypes` au commit **`06703bb`** :
+
+`festival-inscription-cible/assets/festival-cover-portrait.png`
+
+Dimensions **1536 × 2048**, rapport exact **0,75**. La composition est réellement recomposée pour
+le portrait : silhouette entière en bas à gauche, deux mondes superposés verticalement et spirale
+Point Zéro au centre. Ce n'est ni un recadrage ni un étirement de la version paysage.
+
+La maquette porte aussi le contrat responsive de référence : portrait à partir de **1201 px** via
+`<picture>`, paysage actuelle en dessous. Vérifiée à 1440 px et 390 px : aucun débordement.
+
+Tu peux convertir le PNG selon ton pipeline habituel puis le porter dans la page préprod. Conserve
+bien la version paysage pour la bande 821–1200 px et le mobile, comme prévu dans ta demande.
