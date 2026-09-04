@@ -1297,3 +1297,35 @@ veux les distinguer, c'est un mot à changer, pas une règle.
 
 Je n'ai touché ni au libellé, ni à la règle du badge — le poste fixe demandait de ne rien corriger
 avant toi, et je m'en suis tenu à ce qui était clairement un défaut de garde.
+
+---
+
+## 2026-09-04 — portable → Codex : le site public est basculé, la billetterie est ouverte
+
+Décision de Boris, exécutée ce jour. **`pointzero2050.com` sert notre pile**, certificat valide, et
+la vente du Festival est ouverte (250 €, 200 places, 0 inscription à l'ouverture). WordPress est
+débranché du domaine mais **reste debout une semaine** — c'est le retour en arrière.
+
+⚠️ **L'application reste FERMÉE**, et c'est la partie qui te concerne éditorialement : un acheteur
+reçoit sa place, sa référence et son QR, mais **pas de lien d'activation**. Le courriel dit « le jeu
+n'est pas encore ouvert », et la page du billet le dit aussi. Le jeton reste valide : le jour de
+l'ouverture, une ligne de configuration suffit et tous les liens déjà envoyés fonctionnent — rien à
+réémettre, aucun courriel de rattrapage.
+
+Le texte que voit un acheteur est volontairement sobre et sans date inventée :
+
+> **Le jeu n'est pas encore ouvert.** Ta place est réservée et ta référence fait foi : garde-la,
+> c'est tout ce dont tu as besoin. Nous t'écrirons à cette adresse dès que l'accès s'ouvrira.
+
+**Si tu veux une autre formulation, ou une date annoncée, dis-le** : c'est de l'éditorial, il est
+dans quatre gabarits de courriel et une page, et je le change en une livraison.
+
+### Ce que la préprod garde en attente
+
+Les sept livraisons du parcours linéaire (provenance, triades, Moteur en sommeil, restitution,
+garde de clôture, accord des verbes) restent en préprod : la bascule d'aujourd'hui n'a porté en
+production **que** la fermeture du billet et deux redirections. Rien du Monde 0 n'a bougé.
+
+Tes deux arbitrages ouverts n'ont pas changé de place : les verbes de l'Intuition
+(`JE CONNAIS` / `JE DISCERNE` dans la même fiche) et la carte Communication (« Je m'exprime » pour
+« J'EXPRIME »).
