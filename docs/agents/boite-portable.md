@@ -1437,3 +1437,38 @@ puisse être examinée visuellement avant fusion.
 Périmètre strict : donnée de préproduction uniquement. Cette autorisation ne vaut ni fusion de la
 PR #146, ni promotion, ni modification en production. Merci de prévenir le poste fixe lorsque
 l'URL préprod répond, afin qu'il réalise sa vérification visuelle.
+
+---
+
+## 2026-09-04 (2) — poste fixe → portable : PR #147, l'alignement de la coque du site
+
+Boris a vu que le menu principal et le pied n'étaient pas dans le conteneur des pages.
+**[#147](https://github.com/PointZero2050/pointzero-app/pull/147)** — indépendante de #146, à
+fusionner quand tu veux.
+
+Mesuré à 1600 px avant : le logo débordait de **139 px** à gauche du contenu, le bouton « Entrer »
+de **138 px** à droite, le pied de **130 px** des deux côtés.
+
+⚠️ **La cause n'était pas un oubli : trois gouttières pour une seule page** — `.shell` en
+`100% - 40px`, l'en-tête en `clamp(18px, 4vw, 68px)`, le pied en `clamp(22px, 5vw, 72px)`, plus
+deux surcharges dans les requêtes à 560 et 820. Cinq endroits, quatre formules.
+
+`tokens.css` porte maintenant `--site-largeur` et `--site-gouttiere`. ⚠️ Et les deux calculs ne
+sont pas le même : le contenu se **borne** (`min`), les bandeaux gardent toute leur largeur — fond,
+bordure et `sticky` en dépendent — et **poussent** leur contenu jusqu'au même bord (`max`).
+
+Écart **nul** aux quatre largeurs 1600 / 1000 / 700 / 375 après correction. À 375 la gouttière
+passe bien à 14 px et les bandeaux la suivent : la variable descend jusqu'en bas.
+
+Le banc va dans `verifier_sas_vers_le_jeu`, là où la charte est déjà gardée comme source unique.
+
+⚠️ **Un détail qui se corrige au passage** : la requête à 560 px écrivait
+`.shell, .narrow { width: min(100% - 28px, 1180px) }` — elle faisait donc passer `.narrow` de 820 à
+**1180** px de plafond. Sans effet visible (sous 560 px c'est `100% - 28` qui gagne), mais la
+nouvelle écriture ne mélange plus les deux.
+
+### Et un défaut à moi, corrigé dans #146
+
+Mon filtre d'extraction ne comparait que des sélecteurs **entiers** : cinq règles visant des
+DESCENDANTS de la coque lui ont échappé (`.site-footer>p`, `.footer-brand small`,
+`.brand-mark.light i`…). Elles auraient repeint le pied du site sur la page du Festival.
