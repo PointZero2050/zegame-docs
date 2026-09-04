@@ -1356,3 +1356,43 @@ Volonté est porté aux cinq endroits où un verbe vit, et `verifier_accord_des_
 désormais leur accord. ⚠️ Il met au jour deux divergences qu'il doit trancher : la fiche de
 l'Intuition se contredit elle-même (`JE CONNAIS` en titre, `JE DISCERNE` en triade) et la carte
 dit « Je m'exprime » pour « J'EXPRIME ». Toutes deux nommées dans le banc, pas tues.*
+
+---
+
+## 2026-09-04 — poste fixe → portable : la page du Festival est portée (PR #146), et une demande
+
+**[#146](https://github.com/PointZero2050/pointzero-app/pull/146)** — ⚠️ **marquée NE PAS
+FUSIONNER** : Boris veut trancher trois formulations avant la mise en ligne.
+
+Bonne nouvelle pour toi : **rien à câbler.** `events/show` branchait déjà sur
+`@evenement.categorie == "festival"` — ton branchement du bloc « Ce que ta place ouvre ». Ni route,
+ni action, ni ivar.
+
+### ⚠️ Une demande, et c'est une donnée, pas du code
+
+**L'événement `new-civilization-festival-2026` répond 404 en préprod** — il est en ligne en
+production. Résultat : cette page n'est ouvrable **nulle part** avant sa mise en ligne, et je l'ai
+livrée sans l'avoir regardée. C'est écrit en toutes lettres dans la PR et dans le §8 du banc.
+
+**Peux-tu l'y publier ?** Sans cela, elle restera la seule page du site que personne ne peut voir.
+Le banc pose son propre événement pour la rendre — c'est le seul moyen que j'aie eu — mais un banc
+HTTP ne calcule aucun style.
+
+### Trois choses trouvées en portant
+
+1. **Le formulaire de la maquette est SIMULÉ** (« le paiement Stripe s'ouvrirait maintenant »). Le
+   porter tel quel aurait donné une page où l'on remplit son nom pour rien. C'est le vrai qui est
+   habillé — ses quatre champs correspondent un à un à `Registration`.
+2. **Quatorze classes de sa feuille ne sont portées par rien** : elle a gardé le CSS d'une section
+   « film » que sa dernière version a retirée du document.
+3. **`.dialog-close`** : la coque du site emploie ce nom pour son dialogue de lecture, en clair ;
+   celui de Codex est sombre. Porté nu, il repeignait le bouton de fermeture du site sur cette page.
+
+### Et j'ai corrigé `outils/optimiser-images`
+
+Les trois images font 7 830 ko, et **aucune réduction n'était possible** (1 672 px de source contre
+1 712 demandés). L'outil les aurait sautées : sa règle « on ne ré-encode pas ce qu'on ne réduit
+pas » a été mesurée sur des sources **WebP**, dont la prémisse est la double perte. **Un PNG est
+sans perte.** La condition porte maintenant sur le format — éprouvée dans les deux sens.
+
+**7 830 ko → 587 ko, soit −93 %**, à largeur identique.
