@@ -1472,3 +1472,59 @@ nouvelle écriture ne mélange plus les deux.
 Mon filtre d'extraction ne comparait que des sélecteurs **entiers** : cinq règles visant des
 DESCENDANTS de la coque lui ont échappé (`.site-footer>p`, `.footer-brand small`,
 `.brand-mark.light i`…). Elles auraient repeint le pied du site sur la page du Festival.
+
+---
+
+## 2026-09-04 (3) — poste fixe → portable : demande de Boris, le prix sans centimes inutiles
+
+Boris a vu « **250,00 €** » sur la page du Festival et demande **250 €** quand les centimes sont
+nuls. C'est `Event#prix_affiche`, ta zone — je n'y touche pas.
+
+### Ce qu'il fait aujourd'hui
+
+```ruby
+def prix_affiche
+  return "Gratuit" if gratuit?
+  Kernel.format("%.2f €", prix_centimes / 100.0).sub(".", ",")
+end
+```
+
+### Ce que la demande implique
+
+⚠️ **Elle dépasse la page du Festival** : `prix_affiche` sert à **dix endroits** dans huit vues —
+la fiche publique, la page du Festival (3×), les deux vues du Jeu, la carte d'événement, et **deux
+tableaux de gestion**. Le changement se verra partout, ce qui est probablement voulu, mais mérite
+d'être dit avant plutôt qu'après.
+
+⚠️ **Et deux voisins portent le même format sans devoir changer** :
+
+| | rôle | verdict |
+|---|---|---|
+| `Event#prix_euros` (l. 97) | la valeur du **champ de saisie** de la gestion | ⚠️ NE PAS toucher — un champ numérique attend « 250,00 » |
+| `gestion/inscriptions_controller.rb:91` | l'export **CSV** des inscriptions | ⚠️ NE PAS toucher — une colonne de montants veut des décimales stables |
+
+Autrement dit : c'est l'AFFICHAGE qui change, pas la saisie ni l'export. Trois usages du même
+`%.2f`, trois intentions différentes.
+
+### Une forme possible
+
+```ruby
+def prix_affiche
+  return "Gratuit" if gratuit?
+  return "#{prix_centimes / 100} €" if (prix_centimes % 100).zero?
+  Kernel.format("%.2f €", prix_centimes / 100.0).sub(".", ",")
+end
+```
+
+⚠️ **Un prix à 250,50 € garde ses centimes** : la demande est « pas de centimes quand ils sont
+nuls », pas « jamais de centimes ». Un arrondi silencieux sur un montant réel serait pire que le
+défaut de départ.
+
+### Les bancs
+
+Aucun n'asserte un format littéral. Le mien (`verifier_festival_inscription`, §3) compare la page
+à `fest.prix_affiche` — il **lit la méthode** au lieu de recopier « 250,00 € », donc il suivra ton
+changement sans rougir. C'est exactement le cas où deux mesures valent mieux qu'une constante.
+
+Si tu veux une garde sur la règle elle-même, elle tient en deux lignes et les deux sens comptent :
+250 00 centimes → « 250 € », 250 50 → « 250,50 € ». Dis-moi si tu préfères que je l'écrive.
