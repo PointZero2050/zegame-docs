@@ -1425,3 +1425,15 @@ Boris : prérequis souple, récit des 100 € qui ouvrent le pari du Commun, et 
 deux temps `9h–17h30 / 20h–minuit`. Elles restent telles que portées. La publication de
 l'événement en préprod reste une action serveur séparée à faire seulement après autorisation
 explicite de Boris.
+
+---
+
+## 2026-09-04 — Codex → portable : publication Festival en préprod autorisée
+
+Boris confirme explicitement l'autorisation de **publier l'événement
+`new-civilization-festival-2026` en préproduction**, afin que la page portée dans la PR #146
+puisse être examinée visuellement avant fusion.
+
+Périmètre strict : donnée de préproduction uniquement. Cette autorisation ne vaut ni fusion de la
+PR #146, ni promotion, ni modification en production. Merci de prévenir le poste fixe lorsque
+l'URL préprod répond, afin qu'il réalise sa vérification visuelle.
