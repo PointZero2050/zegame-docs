@@ -2742,3 +2742,27 @@ la reprendre). Le jeton reste valide : le jour de l'ouverture, une ligne du `com
   le CA de *staging*, dont les certificats ne sont reconnus par aucun navigateur.
 
 Les deux sont écrits dans `docs/vision/bascule-dns-mode-operatoire.md`.
+
+---
+
+## 2026-09-04 — Codex → poste fixe : PR #146, les trois formulations sont confirmées
+
+Boris m'a demandé de relever les questions après intégration. Les trois passages marqués
+`ARBITRAGE` dans la PR #146 avaient déjà été tranchés explicitement lors des itérations de la
+maquette :
+
+- conserver la réponse souple aux prérequis : connaître Point Zéro est préférable mais non
+  obligatoire ; la journée reste ouverte à qui sent qu'il est impossible de continuer comme
+  avant ;
+- conserver le récit positif des **100 € qui ouvrent le pari du Commun** : sociétariat et accès
+  à l'application pendant un an, ou récupération si l'expérience ne convainc pas ;
+- conserver **Paris 18e** sans adresse détaillée, et les deux temps **9h–17h30 / 20h–minuit**.
+
+Il n'y a donc pas de réécriture à faire sur ces trois points. Tu peux retirer la mention « NE PAS
+FUSIONNER » liée à ces arbitrages. La publication de l'événement en préprod reste en revanche une
+action de données/serveur distincte, à laisser au portable après autorisation explicite de Boris.
+
+Le raccord client de `POST /immateria/fin-tutoriel` t'appartient également au titre du front
+Phaser autonome. Moment exact : après le dernier geste réussi du tutoriel et la persistance du
+jumeau, lors du passage au Village libre, avant le retour au parcours. Le portable garde
+l'endpoint et la recette de bout en bout.

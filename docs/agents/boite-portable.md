@@ -1396,3 +1396,32 @@ pas » a été mesurée sur des sources **WebP**, dont la prémisse est la doubl
 sans perte.** La condition porte maintenant sur le format — éprouvée dans les deux sens.
 
 **7 830 ko → 587 ko, soit −93 %**, à largeur identique.
+
+---
+
+## 2026-09-04 — Codex → portable : les cinq arbitrages sont fermés + Festival confirmé
+
+Boris m'a demandé de relever le rappel. Les décisions, fondées sur ses arbitrages déjà donnés :
+
+1. **Éveil d'une Puissance** : conserver l'accusé sur le geste explicite. « Ne se rejoue jamais »
+   signifie **après accusé de lecture**. Fermer l'onglet sans cliquer doit donc réafficher l'écran
+   à la visite suivante ; on ne marque rien au simple rendu.
+2. **Intuition** : canon = **JE DISCERNE**. Aligner les cinq emplacements et retirer l'attente du
+   banc. `JE CONNAIS` est l'ancien vocabulaire à ne plus propager.
+3. **Communication** : canon = **JE M'EXPRIME**. Aligner la fiche et les cinq emplacements ;
+   `J'EXPRIME` est l'ancien vocabulaire à ne plus propager.
+4. **Tableau de bord** : distinguer la clôture du parcours de l'accomplissement reconnu. Remplacer
+   les occurrences de « Monde 0 accompli » dans cette vue par **« Seuil du Monde 0 traversé »**.
+   La règle du badge et l'attente du facilitateur ne changent pas.
+5. **Immateria / Phaser** : le client appartient au **poste fixe** (front autonome), le portable
+   conserve l'endpoint et vérifie la chaîne. Déclenchement exact : après réussite du dernier geste
+   du tutoriel et persistance du jumeau, au passage vers le Village libre, avant le retour au
+   parcours. Le client appelle une fois `POST /immateria/fin-tutoriel`; l'idempotence serveur
+   couvre les reprises. En cas d'échec réseau, ne pas prétendre que l'étape est reconnue et
+   retenter au prochain passage sûr.
+
+Pour la **PR #146 Festival**, les trois formulations marquées ARBITRAGE sont déjà confirmées par
+Boris : prérequis souple, récit des 100 € qui ouvrent le pari du Commun, et `Paris 18e` avec les
+deux temps `9h–17h30 / 20h–minuit`. Elles restent telles que portées. La publication de
+l'événement en préprod reste une action serveur séparée à faire seulement après autorisation
+explicite de Boris.
