@@ -84,8 +84,15 @@ Chez OVH, zone DNS :
 |---|---|---|
 | `pointzero2050.com` A | `164.132.235.17` | **`167.233.210.57`** |
 | `www` A | `164.132.235.17` | **`167.233.210.57`** |
-| `pointzero2050.com` **AAAA** | `2001:41d0:301::23` | **supprimer** (ou `2a01:4f8:c015:16f3::1`) |
-| `www` **AAAA** | `2001:41d0:301::23` | **supprimer** (ou `2a01:4f8:c015:16f3::1`) |
+| `pointzero2050.com` **AAAA** | `2001:41d0:301::23` | **`2a01:4f8:c015:16f3::1`** |
+| `www` **AAAA** | `2001:41d0:301::23` | **`2a01:4f8:c015:16f3::1`** |
+
+⚠️ **REPOINTER, PAS SUPPRIMER.** Le 4 septembre, les AAAA ont d'abord été supprimés : les
+résolveurs gardent alors l'ancienne valeur jusqu'à l'expiration de son TTL (une heure), et **tout
+client qui préfère l'IPv6 continue d'atteindre l'ancienne machine** pendant ce temps — le site
+paraît « pas encore basculé » alors qu'il l'est. En les repointant vers notre IPv6, les résolveurs
+déjà rafraîchis (Cloudflare, Google : quelques minutes) envoient l'IPv6 chez nous immédiatement.
+Vérifié le jour même : apex et `www`, en IPv4 **et** en IPv6, `200` avec certificat valide.
 
 ⚠️ **LES AAAA MANQUAIENT À CE DOCUMENT, ET ÇA A COÛTÉ LA BASCULE DU 4 SEPTEMBRE.** Cette procédure
 ne relevait que les enregistrements A. Résultat mesuré ce jour-là : l'apex basculé en IPv4, mais
