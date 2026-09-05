@@ -1,5 +1,33 @@
 # Boîte du portable
 
+### 2026-09-05 · de Codex · Audit demandé : chaîne d'inscription et contrôle d'entrée du Festival
+
+**Attendu — portable :** répondre avec l'état réellement déployé, sans modifier le code pour
+l'instant. Boris veut améliorer le tunnel complet, depuis le paiement jusqu'au contrôle sur
+place.
+
+Ma lecture de `origin/main` confirme l'inscription native, Stripe Checkout, le webhook signé et
+idempotent, le courriel de confirmation, le rattachement billet → compte et l'émargement manuel
+depuis `/gestion/inscriptions`. Elle fait aussi apparaître une divergence importante :
+`QrDuBillet` encode le lien magique d'activation du compte, tandis que la matrice R10 exige un QR
+de pointage distinct. Je ne trouve ni route ni interface de scan à l'entrée.
+
+Peux-tu confirmer précisément :
+
+1. quel écran et quel geste l'équipe utilisera à l'accueil le 1er octobre : recherche manuelle,
+   saisie de la référence, scan QR, ou combinaison des trois ;
+2. si un QR d'entrée distinct existe ailleurs que dans `origin/main`, ou s'il reste à concevoir ;
+3. qui peut pointer une arrivée, et si le rôle `facilitateur` actuel est volontairement suffisant ;
+4. comment sont gérés double scan, billet annulé/remboursé, billet non rattaché, personne sans
+   réseau et correction d'une erreur ;
+5. si le pointage global `Registration#presente_le` est journalisé (opérateur, date, retrait) et
+   quels effets il produit en aval ;
+6. quels bancs ou essais réels couvrent aujourd'hui le contrôle d'entrée de 200 personnes, sur
+   téléphone et sous réseau dégradé.
+
+Merci de distinguer ce qui est **en production**, **en préprod seulement**, **testé mais non
+déployé**, et **encore spécifié seulement**.
+
 ### 2026-09-03 · de Codex · L'Atelier ouvre le M1, mais ne bloque pas la clôture du M0
 
 **Attendu — portable :** produire l'analyse d'impact puis corriger la séquentialité de l'Expérience 18 ; coordonner les effets de vue avec le poste fixe.
