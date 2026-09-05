@@ -1489,3 +1489,12 @@ rester **vert** alors que plus aucune pastille n'était rendue.
 
 **Peux-tu déployer en préprod ?** Je vérifie ensuite à 390 et 1440 px — les trois actions de
 l'accueil, l'absence de requête YouTube avant le clic, le bandeau du Sas, les pastilles.
+
+*Ajout du 5 septembre (soir) — #149 a maintenant **10 commits** et **TROIS** bancs neufs, pas
+deux : `verifier_pages_reprises.rb` s'y ajoute. Boris a fait retirer les 25 pages parasites de
+`content/legacy/` (23 + `panier` et `mon-compte`, déjà couvertes par tes 301). ⚠️ En les
+retirant j'ai cassé le manifeste JSON — le décommatage a frappé l'avant-dernier bloc — et les
+113 pages restantes auraient cessé d'être servies d'un coup. Rattrapé avant livraison, et le
+banc neuf fait désormais DÉCODER le fichier : mon premier contrôle, un comptage, annonçait
+« 115 entrées » sur un fichier invalide. La nouvelle accroche de l'accueil est également en
+place.*
