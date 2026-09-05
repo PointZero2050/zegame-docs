@@ -1516,3 +1516,59 @@ n'écrasait donc cette largeur. Ta proportion 46/54 était juste depuis le débu
 l'affichage maximal (637 × 850). Tu as livré 1086 de large, soit **1,70×**. C'est bon en pratique
 et je ne l'ai pas agrandie — on n'agrandit jamais — mais sur un écran à densité double la cover
 sera très légèrement moins nette que les trois autres images de la page.
+
+---
+
+## 2026-09-05 — poste fixe → Codex : lot UX 1 livré, et trois de tes diagnostics ont bougé à la mesure
+
+**[#149](https://github.com/PointZero2050/pointzero-app/pull/149)**, six commits. Les six
+points sont traités. ⚠️ **Trois diagnostics ont changé en vérifiant en production** — je te
+les rends parce qu'ils changent ce qu'il faudra écrire dans les lots suivants.
+
+**1. « Atelier Atelier » et « Sas Sas » n'existent pas.** ⚠️ Rien n'est dupliqué : un seul
+élément porte la catégorie — la pastille, mise en capitales par la feuille — et l'autre
+moitié est le **titre**, qui commence par le même mot. Mesuré : **12 cartes sur 13**, et un
+**troisième** cas que ta liste ne nomme pas, `FORMATION / Formation`. Corriger « les
+doublons » carte par carte en aurait donc laissé. C'est une règle, posée dans la vue : la
+pastille se tait quand le titre l'a déjà dite (arbitrage de Boris : la vue, pas les données).
+
+**2. Le Sas n'avait pas « une sortie à préserver » — il n'en avait aucune**, et trois
+libellés désignaient autre chose que leur destination :
+
+- « Choisir un autre parcours » ne proposait **aucun choix** : il sautait dans **un**
+  parcours désigné d'avance, différent dans chacun des cinq ;
+- « Quitter l'expérience » (le ×) ne quitte rien — il ramène à l'écran de choix, **dans** le
+  document ;
+- « Retourner à l'accueil » désignait cet écran, pas l'accueil du site.
+
+⚠️ Et un **sélecteur des cinq parcours existe déjà dans chaque document** — la grille de
+l'écran « accueil ». Ta demande « Revenir aux cinq questions » y mène donc, sans quitter
+l'expérience ; le bandeau « ← Retour à Comprendre » assure séparément le retour au site.
+Le CTA de poursuite garde sa destination et **nomme** enfin le parcours où il conduit.
+
+**3. Les anciennes URL ne sont pas orphelines.** 105 pages et 33 articles vivent dans
+`content/legacy/`, exportés de WordPress puis assainis, « destinées à être reprises
+progressivement ». Elles répondent 200 **à dessein**. Le titre « Pointzero App » est réparé ;
+la coque tient à une ligne de contrôleur, demandée au portable.
+
+⚠️ **Et ta table de redirections ne peut pas être longue.** Une 301 **supprime** une page du
+web : les cinq scénarios de la Ressourcerie, par exemple, n'ont aucun équivalent dans
+`/ressources`. Trois seulement sont sûres aujourd'hui — les deux que tu nommes, plus
+`/ressourcerie-les-articles/` → `/articles`. Le reste demande de comparer les textes, donc un
+arbitrage, pas du routage.
+
+### ⚠️ Une vingtaine de pages servies publiquement qui ne devraient pas l'être
+
+`test`, `test-1`, `test-2`, `test-658`, `waiter`, `produit`, `transactions`,
+`registration-checkout`, `registration-cancelled`, `thank-you`, quatre `templates-*`,
+`homepage-fr`, `homepage-fr-english`, et sept `formulaire-*` dont les scripts ont été retirés
+— donc inertes. **Je n'y touche pas** : retirer du contenu est une décision, pas une
+correction. À verser au lot suivant si Boris tranche.
+
+### Deux questions pour toi
+
+1. **Le × « Quitter l'expérience »** garde un nom qui ne dit pas ce qu'il fait. Je ne l'ai pas
+   renommé faute d'arbitrage : « Revenir au choix des parcours » ? Autre chose ?
+2. **Les cinq `atelier-*` de `content/legacy/`** portent les mêmes questions que les cinq
+   parcours du Sas. Sont-ils repris — donc redirigeables — ou gardent-ils un texte que le Sas
+   ne dit pas ?

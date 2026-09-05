@@ -1438,3 +1438,54 @@ la v2 ».
 **Le banc n'a toujours pas été exécuté ici** — pas de Ruby. Les deux nouvelles lectures ont été
 vérifiées hors Rails sur la source : les quatre ancres mordent et rendent toutes 100, et
 150 + 100 = 250 contre les 25 000 centimes du décor.
+
+---
+
+## 2026-09-05 (3) — poste fixe → portable : #149, le lot UX 1, et quatre actions pour toi
+
+**[#149](https://github.com/PointZero2050/pointzero-app/pull/149)** — six commits, aucune
+route, aucun modèle, aucun contrôleur. ⚠️ **Et #148 a toujours son `c0e6e7a` non fusionné**,
+qui touche `_festival.html.erb` ; #149 y touche aussi, sur une autre ligne (`script_public`).
+Fusionner dans cet ordre.
+
+### ⚠️ Deux défauts de bancs qui te concernent directement
+
+**1. `pointer_la_presence!` écrivait dans les données réelles.** Elle reprenait
+`Creneau.where(challenge_id: …).first` **sans regarder à quel événement ce créneau
+appartenait**. Sur une base portant un vrai atelier pour ce challenge, le banc pointait son
+compte de test comme **présent** sur l'atelier réel. **Dix-huit bancs** appellent cette
+fonction. Corrigé : la reprise est bornée aux ateliers `atelier-banc-`.
+
+**2. Le ramassage ne se faisait qu'à un bout** — c'est pour ça qu'« Atelier Point Zéro
+(banc) » est visible en production. Il n'existe qu'à la SORTIE ; un banc interrompu laisse
+son atelier **et l'inscription de son compte**, et cette inscription fait croire au
+ramassage du passage suivant qu'un autre banc travaille. Le débris devient permanent.
+Balayage d'entrée ajouté, borné aux ateliers de banc **déjà terminés**.
+
+### Quatre actions, toutes hors de ma zone
+
+1. **`layout "site"` dans `LegacyPagesController`** — une ligne. La vue est déjà écrite pour
+   elle (`@page_title`, `.page`, `.shell`) : c'est ce qui rend la coque aux **138 pages
+   reprises**. Le titre « Pointzero App », lui, est déjà réparé dans la vue.
+2. **Brancher le 404** : `ErrorsController#not_found` + `config.exceptions_app`. La vue est
+   livrée. ⚠️ Le statut 404 est **déjà** correct — c'est la coque qu'on gagne, pas le code.
+3. **Dépublier `atelier-banc-bb1ba6`** : de la donnée. Le correctif empêche le prochain, pas
+   celui-là.
+4. **Trois 301 seulement** — `/ressourcerie-introduction/` → `/ressourcerie`,
+   `/ecosysteme-introduction/` → `/ecosysteme`, `/ressourcerie-les-articles/` → `/articles`
+   — plus canonique et sitemap. ⚠️ **Pas davantage** : une 301 supprime une page du web, et
+   les autres portent du contenu pas encore repris. Détail dans la PR.
+
+ⓘ `panier` et `mon-compte` existent **deux fois** : en 301 (`routes.rb` l. 660-661) et comme
+pages reprises. La redirection gagne parce qu'elle est déclarée avant — mais les deux sont
+là.
+
+### Les bancs
+
+**Non exécutés, ce poste n'a pas Ruby.** Deux neufs — `verifier_agenda_cartes.rb`,
+`verifier_sortie_sas.rb` — et ⚠️ `verifier_rubrique_evenements.rb` a **dû changer dans la
+même livraison** : il cherchait « Conférence » ou « Formation » dans la page, ce qui pouvait
+rester **vert** alors que plus aucune pastille n'était rendue.
+
+**Peux-tu déployer en préprod ?** Je vérifie ensuite à 390 et 1440 px — les trois actions de
+l'accueil, l'absence de requête YouTube avant le clic, le bandeau du Sas, les pastilles.
