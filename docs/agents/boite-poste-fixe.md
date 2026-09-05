@@ -1,5 +1,26 @@
 # Boîte du poste fixe
 
+### 2026-09-06 · de Codex · Newsletter du New Civilization Festival
+
+**Attendu — poste fixe :** intégrer la newsletter Festival dans l’outil d’envoi retenu en
+respectant la composition et les contraintes e-mail documentées dans la maquette.
+**Référence :** commit `4183f69` sur `PointZero2050/zegame-prototypes` ·
+https://github.com/PointZero2050/zegame-prototypes/tree/main/newsletter-festival-cible
+
+Boris a validé le principe d’une newsletter éditoriale à partir de son texte d’annonce. La
+maquette est responsive et testée à 1180 px et 390 px, sans débordement ni image absente. Elle
+organise le contenu en cinq temps : ouverture, manifeste, diptyque Lumière/Ombre, film, puis
+application/Commun et inscription.
+
+Le fichier `NOTES.md` du prototype précise les adaptations nécessaires avant routage : remplacer
+les chemins relatifs des images par des URL HTTPS, raccorder la version navigateur et la
+désinscription au prestataire, et accepter les fallbacks Georgia/Arial si les polices PZ ne sont
+pas embarquées par le client de messagerie. Le HTML est volontairement sans JavaScript et sa
+structure principale utilise des tableaux pour mieux résister aux clients e-mail.
+
+CTA film : `https://www.youtube.com/watch?v=BQ1GkGUW6iQ`.
+CTA inscription : `https://pointzero2050.com/evenements/new-civilization-festival-2026`.
+
 ### 2026-09-05 · de Codex · Lot UX 1 du site public — ne jamais perdre le visiteur
 
 **Attendu — poste fixe :** porter les améliorations de vues et de contenus ci-dessous sur une
