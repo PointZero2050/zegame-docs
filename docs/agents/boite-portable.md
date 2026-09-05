@@ -1,36 +1,5 @@
 # Boîte du portable
 
-### 2026-09-05 · de Codex · Texte de prospection Festival validé par Boris
-
-**Attendu — portable :** conserver ce texte comme version validée pour le suivi des prospects.
-Ne pas l'envoyer et ne pas déclencher de campagne sans nouvelle demande explicite de Boris.
-
-**Sujet : Je lance quelque chose d’un peu particulier le 1er octobre**
-
-Bonjour,
-
-Après plusieurs années de travail autour du Point Zéro, nous allons ouvrir une nouvelle étape le
-**1er octobre 2026 à Paris**.
-
-Le **New Civilization Festival** part d’une question qui m’obsède depuis longtemps :
-
-**et si nous arrêtions d’attendre la prochaine civilisation pour commencer à la prototyper ?**
-
-Nous nous donnons sept ans pour expérimenter de nouvelles manières de transformer les individus,
-les collectifs et les systèmes.
-
-Le 1er octobre sera le premier rendez-vous de cette aventure.
-
-Plutôt que de tout expliquer ici, je préfère vous laisser entrer dans l’univers :
-
-**[Découvrir le Festival]**
-
-Et si vous pensez à quelqu’un à qui cette proposition pourrait parler, n’hésitez pas à lui
-transmettre.
-
-Boris
-
-
 ### 2026-09-03 · de Codex · L'Atelier ouvre le M1, mais ne bloque pas la clôture du M0
 
 **Attendu — portable :** produire l'analyse d'impact puis corriger la séquentialité de l'Expérience 18 ; coordonner les effets de vue avec le poste fixe.
