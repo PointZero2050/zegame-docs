@@ -1356,3 +1356,67 @@ Volonté est porté aux cinq endroits où un verbe vit, et `verifier_accord_des_
 désormais leur accord. ⚠️ Il met au jour deux divergences qu'il doit trancher : la fiche de
 l'Intuition se contredit elle-même (`JE CONNAIS` en titre, `JE DISCERNE` en triade) et la carte
 dit « Je m'exprime » pour « J'EXPRIME ». Toutes deux nommées dans le banc, pas tues.*
+
+---
+
+## 2026-09-05 — poste fixe → portable : PR #148, ton cinquième défaut inclus, et une mesure de moi qui mentait
+
+**[#148](https://github.com/PointZero2050/pointzero-app/pull/148) est prête, deux commits, branchée
+sur `origin/preprod` `7f1e3c2`.** Rien qu'`app/views` et `public/site` plus le banc : ni route, ni
+modèle, ni contrôleur.
+
+### Le défaut signalé par Boris — et il n'était pas seul
+
+Le fond de `.fit` coupé en deux sur téléphone est à moi. Mes corrections des §2 et §3 étaient
+posées **en fin de feuille, sans borne**, et écrasaient donc en silence les valeurs que Codex pose
+explicitement pour le téléphone. ⚠️ **Le §6 portait déjà l'avertissement** — « une règle ajoutée en
+fin de fichier sans borne les écraserait en silence, essayé, mesuré » — je ne l'avais pas appliqué
+aux deux autres sections.
+
+Quatre autres blocs partaient en ligne avec un texte désaxé (40 px d'un côté pour 15 de l'autre)
+sans que rien ne le signale : un fond coupé en deux crie plus fort qu'un texte décentré de 26 px,
+c'est tout ce qui les distinguait. §2 et §3 passent sous `min-width: 821px`, comme le §6.
+
+### ⚠️ Ton cinquième défaut, et pourquoi ma mesure ne pouvait pas le voir
+
+Reproduit avant d'y toucher : `[-1, 376]` dans un `.shell` de `[14, 361]`. Mais mon contrôle de
+débordement rendait **0**, parce que `scrollWidth` **et** `innerWidth` valaient 376 dans une
+fenêtre émulée à 375. **Une soustraction entre deux valeurs issues du même arrondi ne borne rien.**
+Ta méthode — comparer les boîtes entre elles — est la bonne, et je la reprends dans le banc.
+
+Ta forme est retenue, `calc(-1 * var(--site-gouttiere, 15px))`. ⚠️ Et elle répare **un second sens**
+que ni toi ni moi n'avions nommé : **à 580 px, les deux blocs s'arrêtaient CINQ pixels avant le
+bord**. Personne ne l'avait vu parce qu'un blanc ne scrolle pas. Recaler à `-14px` aurait réparé un
+palier et laissé l'autre.
+
+### Les bancs
+
+Deux assertions neuves, toutes deux **prouvées rouges sur la feuille d'avant et vertes sur celle
+d'après**, en rejouant le parcours hors de Rails (ce poste n'a pas Ruby) :
+
+- **§9** — aucune correction hors requête de média, sauf trois **nommées** (le décalage des ancres
+  et les deux fuites du site, qui réparent des règles s'appliquant à toute largeur). 31 règles nues
+  avant, 3 après. ⚠️ Le §10 disait que ce défaut « ne laisse aucune trace dans le texte » : la
+  première moitié était juste — il s'est produit **trois fois**, dont deux après que je l'aie écrite
+  — mais la seconde était fausse, et c'est elle qui le rend saisissable.
+- **§9 bis** — toute marge négative littérale de la maquette doit être reliée à `--site-gouttiere`,
+  et rien d'autre ne doit l'être. Si Codex en ajoute une troisième, elle rougit.
+
+⚠️ **Ce que ces deux-là ne prouvent pas est écrit dans le §10** : ni la justesse d'une règle bornée,
+ni un écrasement entre sélecteurs **différents** — mon `.day-polarities article { background: none }`
+annulait ton `.light-day` que Codex fait pivoter en `0deg`, deux noms sans rapport textuel pour un
+seul élément à l'écran. Celui-là demande la cascade, donc un navigateur.
+
+### ⚠️ Deux choses à savoir avant de fusionner
+
+1. **J'ai d'abord travaillé sur une version périmée du banc.** Je m'en suis aperçu au moment de
+   brancher : tes 37 lignes (purge des inscriptions, `capacite: 1` + inscription
+   `en_attente_paiement`, comptage de `<header>`, exemption `:root`) n'étaient pas sous mes pieds.
+   Mes ajouts sont **reportés sur ta version**, et les cinq marqueurs vérifiés présents — mais
+   relis ce hunk-là en priorité, c'est celui où j'aurais pu effacer ton travail.
+2. **Le banc n'a pas été exécuté**, pas de Ruby ici. Seules les deux nouvelles assertions ont été
+   rejouées, dans les deux sens.
+
+**Les trois marqueurs `ARBITRAGE` restent dans la vue.** Ta boîte me dit que Codex les donne pour
+tranchés par Boris ; je ne les retire pas sur cette base — c'est de l'éditorial, il remonte à
+Boris, à qui je pose la question.
