@@ -1356,3 +1356,57 @@ Volonté est porté aux cinq endroits où un verbe vit, et `verifier_accord_des_
 désormais leur accord. ⚠️ Il met au jour deux divergences qu'il doit trancher : la fiche de
 l'Intuition se contredit elle-même (`JE CONNAIS` en titre, `JE DISCERNE` en triade) et la carte
 dit « Je m'exprime » pour « J'EXPRIME ». Toutes deux nommées dans le banc, pas tues.*
+
+---
+
+## 2026-09-05 (2) — poste fixe → portable : un troisième commit sur #148, et Boris a tranché les arbitrages
+
+**Merci pour la relecture du hunk à risque.** ⚠️ Et ta remarque sur ta propre vérification vaut
+d'être gardée : *un `comm` qui échoue sur l'ordre de tri rend une sortie vide, et une sortie vide
+dit « rien perdu » avec la même assurance qu'une vraie comparaison.* C'est exactement la famille du
+défaut que je viens de corriger — une mesure qui ne peut pas rougir. Ton **38 → 40, aucune perdue**
+est la bonne forme : un ensemble comparé à un ensemble.
+
+### ⚠️ #148 a un TROISIÈME commit, arrivé après ta fusion
+
+Tu as fusionné `a3a28ae` (mes deux premiers, écrasés). `c0e6e7a` est poussé depuis : **c'est le
+seul écart entre la branche et `preprod` aujourd'hui**, vérifié.
+
+**Boris a tranché les arbitrages directement**, pendant que tu posais la question de ton côté — nous
+avons bien fait de ne pas nous les relayer. Les neuf marqueurs `ARBITRAGE` sortent de la vue,
+**aucun texte ne bouge**.
+
+⚠️ **Un des neuf ne disait pas qu'un arbitrage** : celui du bloc du prix portait aussi un fait de
+maintenance — les 100 € sont énoncés à **quatre** endroits, et une retouche à un seul en laisse
+trois faux. Je l'ai gardé, et rendu vérifiable.
+
+### §4 bis — deux assertions, et deux fautes de moi trouvées en mesurant avant d'écrire
+
+La première compare **deux mesures de nature différente** : « 150 € rendent possible l'expérience »
+et « LES 100 € RESTANTS » sont du TEXTE dans le HTML, le prix vient d'une COLONNE. Rien ne les
+tenait ensemble. Changer le prix du Festival en base fait maintenant rougir la ligne.
+
+La seconde exige que les quatre énoncés disent le même montant.
+
+1. ⚠️ **Ma première forme de la seconde était mauvaise.** Je cherchais les montants dans une
+   fenêtre de 220 signes autour de « pari », « restant », « récupérez » — elle ramenait aussi 150 et
+   250, le HTML étant trop dense pour qu'une distance sépare quoi que ce soit. *Une assertion dont la
+   justesse se règle en comptant des caractères finira par rougir à tort.* Les quatre sont ancrés sur
+   leur **phrase**.
+2. ⚠️ **J'avais asserté « quatre occurrences de 100 € ». Compté : sept** — les quatre blocs le
+   citent, certains deux fois. Elle aurait échoué à ton premier passage.
+
+### Une précision qui te servira si tu touches ce fichier
+
+⚠️ **`.ticket-return` ne désigne pas une ligne** : trois paragraphes portent cette classe — les deux
+messages d'état « complet » et « inscriptions closes » l'emploient aussi, pour le style. C'est une
+classe de mise en forme, pas un identifiant de contenu. Mon propre commentaire la citait comme tel ;
+c'est corrigé et noté dans le fichier.
+
+**Deux lignes du §10 devenues fausses** sont réécrites : celle qui annonçait les trois passages en
+attente, et celle qui disait la v3 « mesurée sur un montage local parce que la préprod porte encore
+la v2 ».
+
+**Le banc n'a toujours pas été exécuté ici** — pas de Ruby. Les deux nouvelles lectures ont été
+vérifiées hors Rails sur la source : les quatre ancres mordent et rendent toutes 100, et
+150 + 100 = 250 contre les 25 000 centimes du décor.

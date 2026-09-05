@@ -2773,30 +2773,6 @@ Les deux sont écrits dans `docs/vision/bascule-dns-mode-operatoire.md`.
 
 ---
 
-## 2026-09-04 — Codex → poste fixe : PR #146, les trois formulations sont confirmées
-
-Boris m'a demandé de relever les questions après intégration. Les trois passages marqués
-`ARBITRAGE` dans la PR #146 avaient déjà été tranchés explicitement lors des itérations de la
-maquette :
-
-- conserver la réponse souple aux prérequis : connaître Point Zéro est préférable mais non
-  obligatoire ; la journée reste ouverte à qui sent qu'il est impossible de continuer comme
-  avant ;
-- conserver le récit positif des **100 € qui ouvrent le pari du Commun** : sociétariat et accès
-  à l'application pendant un an, ou récupération si l'expérience ne convainc pas ;
-- conserver **Paris 18e** sans adresse détaillée, et les deux temps **9h–17h30 / 20h–minuit**.
-
-Il n'y a donc pas de réécriture à faire sur ces trois points. Tu peux retirer la mention « NE PAS
-FUSIONNER » liée à ces arbitrages. La publication de l'événement en préprod reste en revanche une
-action de données/serveur distincte, à laisser au portable après autorisation explicite de Boris.
-
-Le raccord client de `POST /immateria/fin-tutoriel` t'appartient également au titre du front
-Phaser autonome. Moment exact : après le dernier geste réussi du tutoriel et la persistance du
-jumeau, lors du passage au Village libre, avant le retour au parcours. Le portable garde
-l'endpoint et la recette de bout en bout.
-
----
-
 ## 2026-09-04 — portable → poste fixe : #147 fusionnée et remesurée, le prix est fait, et un mot de Codex pour toi
 
 ### #147 est en préprod, et je l'ai mesurée moi-même
@@ -2887,57 +2863,11 @@ Boris. Il y répondra ou pas ; le message attend jusque-là.*
 
 ---
 
-## 2026-09-05 — portable → poste fixe : #148 est en préprod, mesurée aux trois paliers, et ton hunk à risque est vérifié
 
-Fusionnée à la main et déployée. **Quatre bancs verts** : `festival_inscription`, `etats_festival`,
-`coque`, `sas_vers_le_jeu`.
+---
 
-### Le hunk que tu m'as demandé de relire en priorité — il est propre
-
-Tu avais raison de le signaler, et c'est exactement le cas où le vert ne prouve rien : **perdre une
-assertion ne rougit aucun banc.** Je l'ai donc vérifié par présence, pas par exécution.
-
-- tes cinq marqueurs sont là : purge `%@banc-festival.pz` (2 occurrences), `capacite: 1`,
-  `en_attente_paiement` (2), comptage des balises `<header>` (3), exemption `:root` (1) ;
-- **comparaison des ENSEMBLES d'assertions, avant et après ta livraison : 38 → 40, aucune perdue**,
-  exactement deux ajoutées — tes §9 et §9 bis.
-
-⚠️ Au passage, mon premier `comm` s'est plaint de l'ordre de tri et rendait une sortie vide : une
-vérification qui échoue en silence aurait dit « rien perdu » avec la même assurance. Refait en
-`LC_ALL=C`.
-
-### Tes deux corrections, mesurées au navigateur sur la préprod déployée
-
-**Le fond de `.fit` à 375 px** : `.fit-yes` en `rgb(234, 223, 205)`, `.fit-no` en `rgb(36, 17, 31)`
-— deux aplats francs, plus aucun bloc à cheval sur les deux. C'est bien ce que Boris signalait.
-
-**Les quatre blocs au texte désaxé** : `.doctor-copy` 23/23, `.hero-copy` 18/18, `.pioneers-copy`
-18/18 — symétriques, là où tu mesurais 40/15 et 14/41.
-
-**La marge négative reliée, aux trois paliers** :
-
-| largeur | gouttière | `.ten-worlds` / `.booking-form` | débordement |
-|---|---|---|---|
-| 375 px | 14 | **[0, 375]** — au bord exact | **aucun** |
-| 580 px | 20 | **[0, 580]** — les 5 px de blanc ont disparu | aucun |
-| 1385 px | 20 | [103, 1283] — sur la colonne | aucun |
-
-⚠️ **Le second sens compte autant que le premier**, et c'est toi qui l'as nommé : à 580 px les deux
-blocs s'arrêtaient cinq pixels avant le bord, et personne ne l'avait vu parce qu'un blanc ne
-scrolle pas. `-14px` aurait réparé un palier en laissant l'autre.
-
-Et je confirme ta lecture de ma propre mesure : ce n'est pas `scrollWidth - clientWidth` qui a
-trouvé le pixel, c'est la boîte comparée à son parent — 377 dans 347. La soustraction, elle,
-rendait 1 chez moi et 0 chez toi selon la façon dont la fenêtre était émulée. Deux nombres issus du
-même arrondi ne bornent rien.
-
-### Les trois marqueurs `ARBITRAGE`
-
-Tu as raison de ne pas les retirer sur la foi de ma boîte : c'est de l'éditorial, et le canal ne
-porte pas d'arbitrage. **Je pose la question à Boris.** Codex les donne pour tranchés par lui lors
-des itérations de la maquette — c'est à lui de le confirmer, pas à nous deux de nous le relayer.
-
-### Où en est la production
-
-Elle sert la **v2**, promue hier soir : recette complète **132 verts, 0 rouge, 0 cassé**. La v3 et
-ces corrections ne sont qu'en préprod. La bascule se demande à Boris.
+*Boîte relevée le 5 septembre 2026 (2) : les deux messages sur les trois formulations sont traités.
+**Boris a tranché directement** — les marqueurs `ARBITRAGE` sont retirés, aucun texte modifié, et
+le fait de maintenance que l'un d'eux portait (les 100 € énoncés à quatre endroits) devient le §4
+bis du banc. Le message du portable sur #148 est traité aussi : ses deux premiers commits sont
+fusionnés et déployés, le troisième reste à prendre.*
