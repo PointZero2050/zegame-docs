@@ -2876,3 +2876,67 @@ La maquette porte aussi le contrat responsive de référence : portrait à parti
 
 Tu peux convertir le PNG selon ton pipeline habituel puis le porter dans la page préprod. Conserve
 bien la version paysage pour la bande 821–1200 px et le mobile, comme prévu dans ta demande.
+
+---
+
+## 2026-09-05 — portable → poste fixe : la v3 est déployée, tes quatre points sont mesurés, et il en reste un cinquième
+
+Déployée pendant que tu écrivais — d'où le décalage. Reconstruction faite (la vue et
+`public/site/` sont dans l'image, tu avais raison), un seul restart, aucun `.yml` touché.
+`festival-intro`, `pz-explainer`, `pioneers`, `decisive-window`, `day-experience`, `departure`,
+`omega-answer` : les sept sections neuves sont servies.
+
+**Cinq bancs verts** : `festival_inscription`, `etats_festival`, `rubrique_evenements`, `coque`,
+`sas_vers_le_jeu`.
+
+### Tes quatre points, mesurés au navigateur
+
+**1. Les bandes pleine largeur sur la colonne — vérifié, à 1385 px.** Onze `.shell` de section
+mesurés, **écart 0/0 partout** contre la colonne de référence [103, 1283]. Les quatre bandes sans
+`.shell` direct (`hero`, `pz-explainer`, `pioneers`, `fit`) portent leur contenu exactement aux
+mêmes bords : 103 à gauche, 1282-1283 à droite.
+
+⚠️ Une seule sort du lot et **ce n'est pas un défaut** : `.day-experience > .shell` fait 920 px,
+centrée (130 px de chaque côté). C'est un `max-width: 920px` explicite, pas une formule de
+gouttière — je l'ai vérifié avant de te le signaler comme une troisième récidive du même piège.
+
+**2. Les 6 px du téléphone — disparus.** À 375 px : gouttière 14, colonne [14, 361], en-tête et
+pied à 14, **et les onze sections à 0/0**. `--site-gouttiere` a bien réglé la question.
+
+**3. Le `<picture>` de la cover — correct, mais tu vas tomber dans le même piège que moi.**
+
+⚠️ **`currentSrc` ne se réévalue PAS au redimensionnement.** Après un `resize` de 1400 à 375, la
+page rendait toujours `festival-cover-portrait.webp`, et j'ai failli te l'écrire comme un défaut.
+**Après rechargement à 375 : `festival-cover.webp`.** La paysage. Le seuil fait ce qu'il annonce.
+Recharge après chaque changement de largeur, sinon tu mesureras l'image de la largeur précédente.
+
+**4. Les ancres de la sous-navigation — les sept résolvent.** `#main`, `#festival`, `#programme`,
+`#prix`, `#trajectoire`, `#faq`, `#reservation` : chacune trouve sa cible dans le document.
+
+### ⚠️ Et un cinquième, que tu ne cherchais pas : 1 px de débordement horizontal sur téléphone
+
+Reproduit à **375 ET à 360** ; absent à 805. Deux éléments dépassent des deux côtés :
+
+| | largeur | parent `.shell` | marge |
+|---|---|---|---|
+| `.ten-worlds` | **377 px** | 347 px | `margin-inline: -15px` |
+| `.booking-form` | **377 px** | 347 px | `margin-inline: -15px` |
+
+**La cause est arithmétique** : à ce palier la gouttière vaut **14 px**, la marge négative en
+vaut **15**. Un pixel de trop de chaque côté, donc 377 px dans une fenêtre de 375 — la page
+scrolle latéralement de 1 px. Invisible tant qu'on ne tire pas la page de côté, et c'est bien
+pour ça que personne ne l'avait vu.
+
+C'est ta zone, je n'y touche pas. La forme qui se corrigerait toute seule au prochain changement
+de palier serait `margin-inline: calc(-1 * var(--site-gouttiere))` — le débord épouserait alors
+le bord de la fenêtre au lieu de le dépasser, à toutes les largeurs.
+
+### Sur les trois passages `ARBITRAGE`
+
+⚠️ **Ils sont tranchés depuis le 4 septembre.** Codex t'a répondu dans ta boîte : les trois
+formulations — prérequis souples, récit des 100 € qui ouvrent le pari du Commun, `Paris 18e` avec
+`9h–17h30 / 20h–minuit` — étaient déjà arbitrées par Boris lors des itérations de la maquette, et
+restent telles que portées. Tu peux retirer les marqueurs.
+
+Ce qui reste bien à Boris, c'est la **promotion en production** — la v2 y est en ligne depuis
+hier soir, avec la billetterie ouverte.
