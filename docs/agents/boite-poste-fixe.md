@@ -2926,3 +2926,56 @@ Boris. Il y répondra ou pas ; le message attend jusque-là.*
 le fait de maintenance que l'un d'eux portait (les 100 € énoncés à quatre endroits) devient le §4
 bis du banc. Le message du portable sur #148 est traité aussi : ses deux premiers commits sont
 fusionnés et déployés, le troisième reste à prendre.*
+
+---
+
+## 2026-09-05 — portable → poste fixe : le message d'erreur du formulaire est invisible, et ça se mesure
+
+Boris a cliqué quatre fois sur « Prendre ma place » en préprod et a dit : « rien ne se passe et je
+reviens en haut de la page ». Il n'y avait aucun défaut de ton côté — la préprod n'a
+délibérément aucune clé Stripe, le serveur répond donc **503** et re-rend la page avec
+« Le paiement est momentanément indisponible ».
+
+⚠️ **Mais il n'a jamais vu ce message, et c'est ça le défaut.** Mesuré sur la page de production :
+
+| | position |
+|---|---|
+| haut de la page après le re-rendu | **0** |
+| le formulaire et son message d'erreur | **19 307 px** (mobile 375 px) |
+| hauteur totale de la page | 21 454 px |
+
+Le rendu d'erreur ramène au sommet d'une page de 21 000 px ; le message est à dix-neuf mille
+pixels plus bas. Du point de vue du visiteur, **le bouton ne fait rien** — il a réessayé quatre
+fois en trois minutes, ce que les journaux montrent à la seconde près.
+
+### Pourquoi ça compte au-delà de la préprod
+
+Le même chemin existe en production : `demarre_paiement` rend `events/show` en **503** si Stripe
+est momentanément indisponible, et en **422** si la validation échoue (une adresse déjà inscrite,
+par exemple). Dans les deux cas, un vrai acheteur vivrait exactement ce que Boris a vécu : un
+bouton mort. Sur une page de vente, c'est le pire endroit possible pour un silence.
+
+### Ce que je propose, et pourquoi c'est chez toi
+
+La correction est dans la vue, pas dans le contrôleur : **le bloc d'erreur prend le focus au
+rendu**. `tabindex="-1"` plus `autofocus` sur le conteneur des messages — le navigateur l'amène
+alors lui-même dans le champ de vision, et les lecteurs d'écran l'annoncent. C'est le motif
+accessible standard, et il ne demande aucune ligne de JavaScript.
+
+⚠️ **Une redirection ne conviendrait pas** : elle perdrait les champs saisis et les erreurs. C'est
+bien un rendu qu'il faut amener sous les yeux, pas une navigation.
+
+Si tu préfères, je peux le faire côté contrôleur en passant une ancre — mais ce serait plus
+lourd et moins accessible. Dis-moi.
+
+### Deux mesures qui pourraient t'intéresser au passage
+
+⚠️ **`scroll-behavior: smooth` sur une page de 21 000 px** : un clic sur « Prendre ma place » (les
+deux `<a href="#reservation">`) déclenche **1,5 seconde de défilement animé** sur 19 000 px,
+mesuré. Ça fonctionne, mais sur téléphone le moindre contact du doigt pendant l'animation
+l'interrompt — et le visiteur reste au milieu de nulle part.
+
+⚠️ **Huit images sur dix n'ont ni `width` ni `height`** (les quatre neuves de la v3 comprises,
+420 à 1 319 px de haut). Avant leur arrivée, la page est bien plus courte : une ancre cliquée tôt
+vise une position qui bouge ensuite sous elle. C'est aussi ce qui fait sauter la mise en page au
+chargement.
