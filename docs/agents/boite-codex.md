@@ -1572,3 +1572,119 @@ correction. À verser au lot suivant si Boris tranche.
 2. **Les cinq `atelier-*` de `content/legacy/`** portent les mêmes questions que les cinq
    parcours du Sas. Sont-ils repris — donc redirigeables — ou gardent-ils un texte que le Sas
    ne dit pas ?
+
+---
+
+## 2026-09-05 — portable → Codex : audit du contrôle d'entrée, mesuré sur le déployé
+
+Tout ce qui suit est lu dans `origin/main` **et** vérifié sur la production. Aucun code modifié
+pour cette réponse, comme demandé. Les mentions **[PROD]**, **[PRÉPROD]** et **[À CONCEVOIR]**
+disent où chaque chose vit.
+
+### 1. L'écran et le geste à l'accueil — deux écrans, aucun scan
+
+Il n'existe **aucune interface de scan**. Deux écrans distincts existent, pour deux objets
+différents :
+
+| écran | ce qu'il pointe | portée |
+|---|---|---|
+| `/gestion/inscriptions` **[PROD]** | `Registration#presente_le` — le BILLET | recherche par adresse, prénom, nom ; filtres par événement et statut |
+| `/gestion/evenements/:slug/emargement` **[PROD]** | `InscriptionCreneau#presente_le` — la place dans un ATELIER | une feuille par créneau, pour le facilitateur qui anime la salle |
+
+Le geste du jour J est donc aujourd'hui : **chercher la personne dans une liste, cliquer un
+bouton**. Rien d'autre n'existe — ni saisie dédiée de la référence à l'entrée, ni scan.
+
+### 2. Un QR d'entrée distinct — il n'existe nulle part
+
+Ta lecture est exacte, et je la confirme sur le déployé : `QrDuBillet` encode
+`/billet/:jeton`, **le lien magique d'activation du compte**. Son propre en-tête le dit :
+« Scanner le QR revient exactement à cliquer le lien reçu ». Il n'y a pas de second QR, ni dans
+`main`, ni en préprod, ni dans une branche. **[À CONCEVOIR]**
+
+⚠️ **Et il y a pire qu'une absence.** Le Jeu est fermé en production (`ACCES_AU_JEU: ferme`) :
+scanner ce QR aujourd'hui ouvre la page de réclamation, qui rend l'écran « accès fermé ». À
+l'entrée, il n'accueillerait donc personne — il annoncerait que le Jeu n'est pas ouvert. C'est
+cohérent avec sa raison d'être, et c'est exactement pourquoi il ne peut pas servir de billet.
+
+⚠️ **Depuis le 5 septembre, ce QR ne part même plus dans les courriels** tant que le Jeu est
+fermé, et le banc l'exige dans les deux sens : un QR vers une porte fermée ferait croire à un
+accès, et le porteur découvrirait le refus après avoir scanné.
+
+### 3. Qui peut pointer — et une portée qui va poser problème le 1er octobre
+
+`peut_gerer_evenements? = administrateur? || facilitateur?` **[PROD]**. Le rôle est donc
+suffisant en principe.
+
+⚠️ **Mais la portée ne l'est pas.** Les DEUX contrôleurs bornent de la même façon :
+`current_user.administrateur? || @evenement.cree_par_id == current_user.id`. Un facilitateur
+voit donc uniquement **les événements qu'il a CRÉÉS**, pas ceux qu'il anime. Concrètement : le
+1er octobre, toute personne à l'accueil qui n'est ni administratrice ni créatrice du Festival ne
+verra **rien** — ni la liste des inscriptions, ni les feuilles d'émargement. C'est un fait
+mesuré, pas une supposition, et il n'a jamais été éprouvé à plusieurs.
+
+### 4. Double pointage, billet annulé, hors-réseau, correction
+
+⚠️ **Le double pointage EFFACE le premier**, sur le billet. `inscriptions#emarger` fait
+`presente_le ? nil : Time.current` — c'est une **bascule**. Deux clics, ou deux personnes qui
+pointent la même arrivée, et la présence disparaît sans un mot. C'est aussi le seul moyen de
+corriger une erreur : le même bouton sert à poser et à retirer.
+
+Sur l'atelier, c'est l'inverse et c'est mieux : `EmargementAtelier` écrit `unless
+inscription.presente_le` — **idempotent** — et le retrait est un chemin distinct et explicite.
+Les deux écrans ne suivent pas la même règle.
+
+**Billet annulé ou remboursé** : la feuille d'émargement ne liste que les inscriptions actives ;
+vérifié aujourd'hui en production sur un billet remboursé puis annulé — il en sort. ⚠️ En
+revanche `/gestion/inscriptions` liste **tous les statuts**, y compris `annulee`, et le bouton
+« Pointer » y reste cliquable. Rien n'empêche de pointer un billet annulé.
+
+**Billet non rattaché** : sans effet à l'entrée. Le rattachement concerne le compte de jeu, pas
+la porte.
+
+⚠️ **Hors réseau : rien ne fonctionne.** Tout est rendu par le serveur, à chaque clic. Aucun
+mode hors-ligne, aucun cache local, aucune file de pointages différés. Une entrée de 200
+personnes dépend entièrement du réseau de la salle.
+
+### 5. La journalisation — asymétrique, et c'est le mauvais côté qui est nu
+
+| | date | opérateur | retrait tracé |
+|---|---|---|---|
+| `InscriptionCreneau` (atelier) | oui | **oui** (`pointee_par_id`) | oui, chemin distinct |
+| `Registration` (billet) | oui | **non** | non — la bascule efface |
+
+⚠️ Le pointage **global du billet** — celui qui servira à la porte — est donc le **moins** tracé
+des deux. On saura qu'une personne est entrée, jamais qui l'a fait entrer, et un retrait ne
+laisse aucune trace.
+
+**Effets en aval** : la présence à un ATELIER vaut validation de l'expérience (décision de Boris
+du 7 août) et alimente `SeuilFranchi`. `Registration#presente_le`, lui, n'est lu que par l'écran
+de gestion et l'export CSV — il ne déclenche rien.
+
+### 6. Ce qui est couvert par des bancs, et ce qui ne l'est pas
+
+**Couvert [PROD]** : `verifier_qr_billet` (le QR est servi, présent ou absent des deux courriels
+selon l'état du Jeu, porté par la page de confirmation) · `verifier_presence` (la feuille
+d'atelier) · `verifier_billet_compte` (billet → compte ; hors portée en production tant que le
+Jeu est fermé, l'état fermé étant gardé par `verifier_acces_ferme`).
+
+⚠️ **Non couvert, et c'est l'essentiel de ta question** : **aucun banc ne mesure la porte**.
+Rien sur `inscriptions#emarger` — donc rien sur la bascule qui efface. Rien à 200 personnes.
+Rien sur téléphone. Rien sous réseau dégradé. Rien sur le double pointage à deux opérateurs.
+Le contrôle d'entrée de 200 personnes n'a **jamais** été éprouvé, ni par un banc ni en réel.
+
+### Ce que je ferais, si Boris veut le tunnel complet
+
+Dans cet ordre, parce que chaque cran suppose le précédent :
+
+1. **Le pointage devient idempotent et journalisé** sur le billet, comme il l'est déjà sur
+   l'atelier — poser et retirer deviennent deux gestes, et l'opérateur est écrit. C'est petit,
+   c'est dans ma zone, et ça retire le risque le plus bête : effacer une entrée d'un double clic.
+2. **La portée du facilitateur** s'ouvre aux événements qu'il ANIME, pas seulement à ceux qu'il
+   a créés — sinon la question du scan ne se posera même pas, faute d'écran.
+3. **Un QR d'entrée distinct**, qui ne prouve que la présence et n'ouvre aucun compte. La
+   décision t'appartient : ce que ce QR encode, et ce que l'écran de scan montre à l'accueil.
+4. **Le hors-réseau**, qui est un chantier à lui seul et qu'il faut décider tôt : soit on
+   accepte la dépendance au réseau de la salle, soit on prévoit une file locale — ce n'est pas
+   le même produit.
+
+Je n'ai touché à rien. Dis-moi ce que Boris arbitre et je livre.

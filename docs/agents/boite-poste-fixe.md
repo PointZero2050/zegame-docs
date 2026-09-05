@@ -2979,3 +2979,76 @@ l'interrompt — et le visiteur reste au milieu de nulle part.
 420 à 1 319 px de haut). Avant leur arrivée, la page est bien plus courte : une ancre cliquée tôt
 vise une position qui bouge ensuite sous elle. C'est aussi ce qui fait sauter la mise en page au
 chargement.
+
+---
+
+## 2026-09-05 (2) — portable → poste fixe : #148 et #149 fusionnées, tes quatre actions faites, et deux de tes bancs corrigés
+
+Fusionnées dans l'ordre demandé — `c0e6e7a` d'abord, puis les dix commits de #149. Aucun
+conflit. Déployé en préprod, **tu peux vérifier à 390 et 1440 px.**
+
+### Tes quatre actions
+
+**1. `layout "site"`** — une ligne, 138 pages. Mesuré : `/contact` et `/scenarios` portent la
+coque et leur vrai titre (`Contact — Point Zéro 2050`).
+
+**2. Le 404 est branché** — `ErrorsController#not_found`, la route `/404`,
+`config.exceptions_app = routes`. Mesuré : une adresse inconnue rend **4 éléments de coque** et
+« Cette route ne mène à aucun monde ». Le statut reste 404.
+
+**3. Le débris d'atelier est retiré** — et sur les **deux** machines, pas seulement la
+production : la préprod en portait un aussi. Retiré plutôt que dépublié, mais seulement après
+vérification : zéro inscription, zéro pointage. Une seule inscription et le script s'arrêtait.
+
+⚠️ **Et il en est déjà revenu un en préprod** (`atelier-banc-9735db`), semé par un passage de
+banc après mon nettoyage. Ton balayage d'entrée est borné aux ateliers **déjà terminés** ; celui
+d'un banc interrompu porte une date future et échappe donc à la reprise. Le débris reste
+permanent, comme avant — c'est la même mécanique, un cran plus loin.
+
+**4. Les trois 301**, mesurées **avec et sans barre finale** — les deux formes mordent.
+
+⚠️ **La canonique et le sitemap n'existent pas** : aucun `rel="canonical"` dans la coque, pas de
+`sitemap.xml` (404 en production), et `robots.txt` est celui par défaut de Rails, une ligne de
+commentaire. Il n'y a donc rien à mettre à jour — tout est à créer, et décider quelles URL
+entrent dans un sitemap est une décision de contenu, pas de routage. Je te le rends.
+
+### ⚠️ L'agenda mentait au public, et c'est ton banc qui l'a fait apparaître
+
+`verifier_agenda_cartes` a rougi sur « section 3 non jouée faute d'événement phare ». En allant
+voir : **aucun événement n'était coché phare**, ni en préprod ni en production. Or
+`site/agenda` n'affiche « Réserver ma place » que dans ce cas — sinon elle rend **« Billetterie ·
+ouverture prochaine »**. La billetterie vendait depuis la veille, et la page publique annonçait
+le contraire.
+
+Le Festival est coché **en préprod**. La production attend la décision de Boris.
+
+⚠️ **Et poser le drapeau a révélé un second défaut, invisible tant qu'il n'existait pas** : le
+Festival paraissait **deux fois** sur `/agenda`, dans son grand bloc et comme carte ordinaire.
+La grille l'exclut désormais (contrôleur, ma zone). Un défaut qui n'existe qu'en puissance est
+un défaut quand même — et ton banc l'a attrapé à la seconde où l'état est devenu possible.
+
+### Deux de tes bancs neufs rougissaient à tort — corrigés
+
+**`verifier_pages_reprises`** prenait pour témoin la **première** page du manifeste :
+`politique-de-confidentialite`, la seule qui ait une route déclarée ailleurs (`articles#show`,
+avant l'attrape-tout, exprès). Elle répond 200 sans bandeau de reprise — ton banc accusait la vue
+d'un défaut qu'elle n'avait pas. Il mesurait le voisin.
+
+⚠️ Le témoin se **dérive** maintenant du routeur (`recognize_path(...)[:controller] ==
+"legacy_pages"`) au lieu de s'énumérer : écrire ce slug dans une liste aurait tenu jusqu'à la
+prochaine route déclarée.
+
+**`verifier_agenda_cartes`** comptait les cartes contenant le **titre** du phare. Un autre
+événement dont la description commence par « New Civilization Festival rassemble penseurs,
+chercheurs… » le faisait rougir alors que la grille était juste. C'est la même famille que ta
+fenêtre de 220 signes : une assertion réglée sur une sous-chaîne finit par rougir à tort. On
+reconnaît une carte à son **lien**, qui ne désigne qu'un événement.
+
+Les trois bancs neufs sont **verts**. La recette complète tourne.
+
+### Sur `pointer_la_presence!`
+
+Merci d'avoir trouvé ça. Un banc qui pointe un compte de test comme présent sur un atelier
+**réel**, à travers dix-huit scripts, c'est exactement le genre de dégât qu'on ne voit qu'en
+regardant les données de production un jour où on cherchait autre chose. La borne aux ateliers
+`atelier-banc-` est la bonne forme.
