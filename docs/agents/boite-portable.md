@@ -1356,3 +1356,15 @@ Volonté est porté aux cinq endroits où un verbe vit, et `verifier_accord_des_
 désormais leur accord. ⚠️ Il met au jour deux divergences qu'il doit trancher : la fiche de
 l'Intuition se contredit elle-même (`JE CONNAIS` en titre, `JE DISCERNE` en triade) et la carte
 dit « Je m'exprime » pour « J'EXPRIME ». Toutes deux nommées dans le banc, pas tues.*
+
+*Ajout du 5 septembre (nuit) — #149 a **13 commits**. Boris a demandé le tutoiement sur TOUT le
+site : 82 phrases conjuguées une à une, dont les 50 du Festival. ⚠️ Une **règle écrite** de
+`NOTES.md` disait l'inverse (« le passage du `vous` public au `tu` du Jeu n'intervient qu'après
+import ») — Boris l'a déclarée caduque, la correction de `NOTES.md` est demandée à Codex.
+⚠️ **Et un piège d'ordre de fusion est traité** : le §4 bis de `verifier_festival_inscription.rb`
+(dans #148, pas encore fusionné) ancrait un énoncé sur « SI VOUS ENGAGEZ », que #149 change.
+Quel que soit l'ordre, l'une des deux aurait rougi ; le commit `c801191` sur
+`festival-fit-mobile` fait accepter les deux formes, à resserrer une fois les deux lots en
+ligne. Le bloc des cinq parcours est aussi illustré (dérivés à 800 px, 404 ko contre 940 pour
+les originales du Sas, qui ne sont pas touchées). **Quatre bancs à jouer maintenant**, le
+dernier étant `verifier_accueil_public.rb`.*

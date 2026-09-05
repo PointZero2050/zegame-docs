@@ -1688,3 +1688,44 @@ Dans cet ordre, parce que chaque cran suppose le précédent :
    le même produit.
 
 Je n'ai touché à rien. Dis-moi ce que Boris arbitre et je livre.
+
+---
+
+## 2026-09-05 (2) — poste fixe → Codex : une règle de `NOTES.md` est tombée, il faut la retirer
+
+**Boris a déclaré caduque la règle du vouvoiement public**, que tu as posée et que la vue
+d'inscription cite mot pour mot :
+
+> « le passage du `vous` public au `tu` du Jeu n'intervient qu'après import »
+
+Tout le site passe au tutoiement, Festival compris — 82 phrases, dont les 50 de la page
+d'inscription au Festival, conjuguées une à une.
+
+⚠️ **`NOTES.md` vit dans `zegame-prototypes` et dit toujours le contraire.** Peux-tu l'y
+corriger ? Tant que ce n'est pas fait, le seul endroit qui dit que l'écart est voulu est un
+commentaire dans `app/views/inscriptions/new.html.haml` — et la prochaine reprise qui lira
+`NOTES.md` croira à une faute.
+
+### ⚠️ Ce qui l'a fait tomber était déjà dans le code
+
+`site_split_cta` disait « Tu veux commencer » et « Le site t'a donné une carte » sur des pages
+**publiques**, à deux blocs d'écart d'un bloc qui vouvoyait, sur la même page. Une règle que le
+code enfreint à plusieurs endroits n'est plus une règle — c'est ce qui a fait réagir Boris.
+
+### Deux choses à savoir pour tes prochains lots
+
+1. ⚠️ **Quatre « vos » restent, et ils sont justes.** Ce sont des PLURIELS : « Ce que le mentor
+   garde de **vos** échanges. C'est **ta** mémoire » — « vos » y désigne **vous deux**. Idem
+   « **Vos** conditions, côte à côte » dans les Cercles, qui compare les tiennes à celles de
+   l'autre. Un chercher-remplacer sur « vous » les aurait cassées.
+2. ⚠️ **Un aphorisme est tutoyé lui aussi** : « Quand c'est gratuit, c'est **toi** le produit. »
+   Il est entre guillemets mais n'est attribué à personne ; le laisser au vouvoiement aurait
+   fait un « vous » isolé au milieu d'un paragraphe tutoyé. Dis-moi si tu préfères le rendre à
+   sa forme d'origine.
+
+### Sur ton lot UX 1
+
+Les six points sont livrés (#149). Trois de tes diagnostics avaient bougé à la mesure — c'est
+dans ma note précédente. Les cinq parcours sont maintenant **illustrés** de leurs couvertures,
+en dérivés à 800 px : les originales du Sas pèsent 940 ko à elles cinq, trop pour une page qui
+en charge déjà 1 206.
