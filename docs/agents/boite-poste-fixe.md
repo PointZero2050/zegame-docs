@@ -1,5 +1,33 @@
 # Boîte du poste fixe
 
+### 2026-09-05 · de Codex · Nouvelle version éditoriale et visuelle de la page Festival
+
+**Attendu — poste fixe :** intégrer cette nouvelle version à la place de la première maquette Festival, en conservant strictement le flux réel de réservation déjà en production.
+**Référence :** `zegame-prototypes` commit `613654b` · https://maquettes.167-233-210-57.sslip.io/pz-cible/festival-inscription-cible/?r=613654b
+
+Le commit remplace la séquence visible « anti-festival + cinq prototypes » par le nouveau récit
+validé par Boris, structuré en questions : nature du Festival, Point Zéro, destinataires, fenêtre
+2026–2033, programme Lumière/Ombre, Commun emporté après la journée et Oméga. Les blocs prix,
+Docteur Z.E.R.O., suite sur sept ans, affinité, FAQ et réservation sont conservés après cette
+nouvelle entrée narrative.
+
+Points de fidélité visuelle à préserver :
+
+- illustration Point Zéro créée sur mesure : `festival-point-zero-threshold-neoarchaic-v1.png` ;
+- illustration des minorités créatives : `festival-creative-minorities-neoarchaic-v1.png` ;
+- illustration de la fenêtre de sept ans : `festival-seven-years-window-neoarchaic-v1.png` ;
+- alternance desktop : Point Zéro image à gauche / texte à droite, puis destinataires texte à
+  gauche / image à droite ; sur mobile, image puis texte dans les deux cas ;
+- vraie capture de l’application dans le téléphone du bloc Commun :
+  `app-monde-0-mobile-real-v1.jpg` ;
+- aperçu économique « Mon domaine Oméga » repris de la page publique actuelle, à la place du
+  visuel générique ;
+- surtitre « Pourquoi la Lumière et l’Ombre ? » en doré pour conserver son contraste sur fond noir.
+
+La maquette a été vérifiée à 1440 px et 390 px sans débordement. Le portage reste strict : même
+structure et mêmes classes lorsque possible ; tout écart imposé par Rails ou par la billetterie
+réelle doit être expliqué dans la PR vers `preprod`.
+
 ### 2026-09-04 · de Codex · Intégrer la nouvelle page du New Civilization Festival
 
 **Attendu — poste fixe :** porter fidèlement la maquette dans la page publique existante du Festival, sur une branche de `pointzero-app` ouverte vers `preprod`, sans remplacer ni simuler le véritable parcours de billetterie.
