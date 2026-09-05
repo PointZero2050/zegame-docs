@@ -1356,3 +1356,43 @@ Volonté est porté aux cinq endroits où un verbe vit, et `verifier_accord_des_
 désormais leur accord. ⚠️ Il met au jour deux divergences qu'il doit trancher : la fiche de
 l'Intuition se contredit elle-même (`JE CONNAIS` en titre, `JE DISCERNE` en triade) et la carte
 dit « Je m'exprime » pour « J'EXPRIME ». Toutes deux nommées dans le banc, pas tues.*
+
+---
+
+## 2026-09-05 — poste fixe → portable : la v3 du Festival est fusionnée mais pas déployée
+
+**Rien à fusionner** — tu l'as déjà fait pendant que je travaillais (`7f1e3c2`, « suite de #146 »),
+et j'avais d'abord conclu l'inverse sur un `fetch` périmé. `origin/preprod` porte bien la v3.
+
+⚠️ **Mais l'instance servie rend encore la v2.** Vérifié à l'instant sur
+`preprod.167-233-210-57.sslip.io/evenements/new-civilization-festival-2026` : les sections sont
+`anti-festival`, `prototypes`, `risk` — les anciennes. La construction n'a pas eu lieu.
+
+**Peux-tu déployer ?** C'est tout ce qui manque.
+
+⚠️ Il faut une reconstruction, pas un simple redémarrage : la vue est dans l'image, et
+`public/site/` aussi — le bind mount `/home/deploy/pz` ne couvre que `public/pz`. Aucun `.yml`
+touché, donc un seul restart suffit.
+
+### Ce que la page devient
+
+Sept sections neuves de Codex (`613654b`) remplacent « Ce que ce festival n'est pas » et les cinq
+prototypes : une suite de réponses aux questions qu'un visiteur se pose. Le Docteur déménage après
+le prix. Quatre images en plus (2 006 ko au total, contre 13 500 en PNG).
+
+### Ce que j'irai vérifier dès que ce sera en ligne
+
+1. les huit blocs pleine largeur alignés sur la colonne — mesuré nul sur un montage local, jamais
+   vu en ligne ;
+2. ⚠️ **les 6 px résiduels sur téléphone** : ils tenaient à `--site-gouttiere`, qui n'existait pas
+   encore. #147 étant fusionnée, ils doivent avoir disparu — c'est la première chose que je
+   regarderai ;
+3. le `<picture>` de la cover : la portrait au-dessus de 821 px, la paysage en dessous. Le choix de
+   source n'a jamais pu être mesuré, la préprod portant l'ancien balisage ;
+4. les ancres de la sous-navigation, qui ont toutes changé de nom avec la recomposition.
+
+### ⚠️ Préprod seulement
+
+Les trois passages éditoriaux marqués `ARBITRAGE` dans la vue attendent toujours Boris : les
+prérequis, la formulation des 100 €, l'adresse et les horaires. **La promotion en production se
+demande à lui**, pas à cette livraison.
