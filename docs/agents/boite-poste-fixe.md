@@ -1,5 +1,60 @@
 # Boîte du poste fixe
 
+### 2026-09-05 · de Codex · Lot UX 1 du site public — ne jamais perdre le visiteur
+
+**Attendu — poste fixe :** porter les améliorations de vues et de contenus ci-dessous sur une
+branche de `pointzero-app` ouverte vers `preprod`, puis remettre au portable les seules actions
+qui relèvent des données, des routes ou du serveur.
+**Référence :** audit en production du 5 septembre 2026 · https://pointzero2050.com/
+
+Boris reporte la refonte du menu à cinq entrées. Le premier lot doit améliorer l’UX actuelle sans
+changer l’architecture de navigation principale.
+
+**1. Accueil — ajouter un troisième CTA vidéo.** Conserver les deux CTA actuels et ajouter une
+action tertiaire, visuellement plus légère, avec icône de lecture : **« Voir la présentation ·
+5 min »**. Elle ouvre la vidéo `https://youtu.be/97mNBv1zukw` dans un dialogue accessible, sur le
+même modèle que la vidéo du Festival : chargement depuis `youtube-nocookie.com` seulement au clic,
+bouton de fermeture, fermeture par Échap et restitution du focus. Sur mobile, les trois actions
+doivent rester lisibles sans donner le même poids visuel à chacune.
+
+**2. Page `/entrer` — distinguer les deux situations.** Garder le titre actuel puis présenter
+immédiatement :
+
+- **Je découvre le Point Zéro** — « Je souhaite vivre une première expérience et rencontrer
+  l’écosystème. » CTA principal **Choisir une expérience** vers `/agenda` ;
+- **Je suis déjà joueur** — « J’ai déjà un compte et je souhaite reprendre mon parcours. » CTA
+  secondaire **Ouvrir l’application** vers `/comptes/sign_in` ;
+- lien discret **Comprendre avant de commencer** vers `/comprendre`.
+
+**3. Mini-parcours du Sas — préserver une sortie claire.** Ajouter un bandeau discret commun aux
+cinq parcours : « POINT ZÉRO · EXPLORATION GUIDÉE » et **← Retour à Comprendre**. À la fin, garder
+le CTA de poursuite contextuel et ajouter « Revenir aux cinq questions ». Ne pas réintroduire le
+menu complet dans l’expérience immersive.
+
+**4. Page 404 — produire la vue de récupération.** Texte proposé : surtitre
+**« CETTE ROUTE NE MÈNE À AUCUN MONDE »**, puis « La page a peut-être changé de trajectoire. »
+Actions : **Revenir à l’accueil**, **Comprendre le Point Zéro**, **Voir les prochains événements**.
+La vue doit reprendre la coque publique et répondre réellement en 404. Le branchement serveur est
+à demander au portable si nécessaire.
+
+**5. Agenda — correctifs de présentation immédiats.** Retirer les doublons visibles « Atelier
+Atelier » et « Sas Sas », retirer la jauge de places du Festival et traiter visuellement le Festival
+comme l’événement principal. Le compte de recette **« Atelier Point Zéro (banc) »**, visible en
+production le 5 septembre à 23 h 23, doit être dépublié par le portable : ne pas supprimer ses
+données depuis les vues.
+
+**6. Anciennes URL indexées — remettre au portable une table de redirections.** Au minimum :
+`/ressourcerie-introduction/` vers `/ressourcerie`, `/ecosysteme-introduction/` vers
+`/ecosysteme`, puis anciennes pages Ressourcerie vers leur nouvelle ressource ou vers le Corpus.
+Elles répondent actuellement 200 sans nouvelle coque, sans canonique, avec le titre « Pointzero
+App ». Les redirections 301, canoniques et sitemap sont côté portable ; le poste fixe peut dresser
+la correspondance éditoriale, mais ne crée pas les routes.
+
+**Recette attendue :** 390 px et 1440 px, clavier compris, aucun débordement ; aucun changement au
+paiement, à l’authentification ou aux règles d’accès ; aucune ancienne page isolée ; aucun contenu
+de recette visible ; tous les dialogues rendent le focus à leur déclencheur. Documenter dans la PR
+les éléments remis au portable au lieu de les implémenter hors périmètre.
+
 ### 2026-09-05 · de Codex · Nouvelle version éditoriale et visuelle de la page Festival
 
 **Attendu — poste fixe :** intégrer cette nouvelle version à la place de la première maquette Festival, en conservant strictement le flux réel de réservation déjà en production.
