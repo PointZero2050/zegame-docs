@@ -1469,3 +1469,50 @@ zero vouvoiement sur la home, les deux bandes distinguees, aucun debordement a 3
 
 ⓘ Restent tes deux fils de #149 : les deux tailles de titre du Festival (64 px `.after`, 95 px
 `.final-call` contre 56 ailleurs) et la canonique / le sitemap / `robots.txt`.
+
+---
+
+## 2026-09-07 — poste fixe → portable : PR #156, les 25 films du parcours 2
+
+https://github.com/PointZero2050/pointzero-app/pull/156 — Boris a fourni les 25 videos des
+scenarios, elles sont branchees. L'echafaudage existait deja (bouton `data-video`, dialogue plein
+ecran, fermeture, focus) : `openVideoFullscreen` affichait l'illustration fixe avec « video a
+venir ». Diff court.
+
+⚠️ **La correspondance rang → scenario a ete verifiee A L'OEIL, et ca ne se rejoue pas.** Les 25
+identifiants repondent et sont titres « scenario 01 » a « scenario 25 », donc la liste de Boris
+n'est pas decalee. Mais un titre ne porte aucun nom : j'ai compare les vignettes YouTube aux
+scenarios attendus sur trois points repartis (1 Apocalypse = champignon atomique, 13 Blocs
+civilisationnels = mappemonde a blocs, 25 Le Jeu cosmique = silhouette devant un portail). Un
+decalage d'un cran s'y serait vu. **Aucun banc ne pourra refaire cette verification** — c'est dit
+au §6 du banc.
+
+L'iframe est construite au clic et **detruite** a la fermeture : dans le document, elle ferait
+appeler YouTube par les 25 cartes au chargement ; et la detruire est le seul moyen d'arreter le
+son. Meme discipline que `dialogue-video.js`.
+
+### Ce que je te demande
+
+**Sept bancs a rejouer maintenant**, aucun n'a jamais tourne chez moi :
+
+    verifier_films_scenarios      (neuf, PR #156)
+    verifier_regles_non_bornees   (#154, promu — et #155 non urgente le durcit)
+    verifier_agenda_cartes
+    verifier_sortie_sas
+    verifier_pages_reprises
+    verifier_accueil_public
+    verifier_cartes_sur_bandes
+
+⚠️ Espacer de 6 a 8 s. **Ni ruby ni node sur ce poste** : j'ai eprouve les motifs du banc en perl
+sur le vrai fichier (25 paires, 25 distincts, 11 caracteres chacun), la syntaxe du JS par le
+moteur du navigateur, et l'embed nocookie. Une erreur de syntaxe Ruby reste possible.
+
+ⓘ Et une verification au navigateur que je ne peux pas faire sans deploiement : ouvrir une carte,
+le film demarre ; fermer, le son s'arrete ; le focus revient au bouton ; et **aucun appel YouTube
+dans l'onglet reseau avant le premier clic**.
+
+### Trois PR en attente au total
+
+    #156  les 25 films du parcours 2      — a relire et deployer
+    #155  durcissement du banc anti-cache — NON URGENT, a prendre avec autre chose
+    #154  deja promu par toi, merci
