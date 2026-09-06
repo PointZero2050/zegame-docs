@@ -1368,3 +1368,60 @@ Quel que soit l'ordre, l'une des deux aurait rougi ; le commit `c801191` sur
 ligne. Le bloc des cinq parcours est aussi illustré (dérivés à 800 px, 404 ko contre 940 pour
 les originales du Sas, qui ne sont pas touchées). **Quatre bancs à jouer maintenant**, le
 dernier étant `verifier_accueil_public.rb`.*
+
+---
+
+## 2026-09-06 (2) — poste fixe → portable : Brevo distingue DEUX abonnements par contact
+
+Boris a fait un envoi de test à trois de ses comptes Gmail. Résultat brut : **1 en boîte, 1 en
+spam, 1 « jamais arrivé »**. En cherchant pourquoi, je suis tombé sur quelque chose qui touche le
+rapprochement que tu viens de construire.
+
+### Ce que j'ai mesuré
+
+Le troisième, `boris@ze.game`, **n'a jamais été envoyé** : Brevo l'a bloqué à la source. Sa fiche
+contact porte **deux abonnements séparés** :
+
+| | |
+|---|---|
+| **Campagnes email** | ❌ **Blocklisté** |
+| **Emails transactionnels** | ✅ **Abonné** (expéditeurs `boris@sirbey.com`, `contact@pointzero2050.com`) |
+
+⚠️ **Et la boîte est vivante** : son historique montre un e-mail transactionnel **délivré, ouvert
+et cliqué** le 5 août — « Définis ton mot de passe ». Ce n'est ni une adresse morte, ni un domaine
+sans MX (vérifié : `ze.game` pointe sur les serveurs de Google).
+
+### La question que ça pose à ton rapprochement
+
+Ton `desabonner!` écrit `emailBlacklisted: true`, et ton rapprochement lit « les désinscrits de
+Brevo ». ⚠️ **Si ces deux-là désignent bien le même drapeau que la colonne « Campagnes email » de
+l'interface, tout va bien et cette note ne t'apprend rien.** Mais si Brevo expose la distinction
+autrement — un contact blocklisté pour les campagnes ET abonné au transactionnel — alors un
+rapprochement qui ne lit qu'un seul état laisserait dans notre base des gens comptés comme
+joignables que Brevo n'enverra jamais.
+
+C'est le « nos chiffres sont faux » de ton §2, sous une autre forme. Et ça expliquerait une part
+de l'écart : **570 contacts chez Brevo** contre **635 confirmés** chez nous.
+
+⚠️ **Je ne tranche pas** : je n'ai pas d'accès API et je ne vais pas déduire le comportement d'un
+drapeau depuis une capture d'écran. Tu as le code et le compte.
+
+### Ce qui n'est PAS en cause, mesuré
+
+Ton protocole disait le domaine authentifié. Vérifié au DNS, il l'est **complètement** :
+
+- SPF `v=spf1 include:mx.ovh.com include:spf.brevo.com -all` — strict ;
+- DKIM `brevo1` et `brevo2` en CNAME vers `dkim.brevo.com` ;
+- DMARC `p=none`, rapports vers Brevo.
+
+⚠️ Et ma première recherche DKIM avait conclu « aucun sélecteur » : ma liste de sélecteurs était
+incomplète, pas le DNS. Corrigé avant d'en tirer quoi que ce soit.
+
+Le contenu non plus : **497 mots**, 4 images, 5 liens, **zéro** mot déclencheur, **zéro** capitale
+criée, **zéro** point d'exclamation.
+
+Ce qui reste, c'est l'absence d'**historique d'envoi** — Gmail juge un expéditeur boîte par boîte.
+D'où ma recommandation à Boris : monter en volume par paliers plutôt qu'envoyer 568 d'un coup.
+
+ⓘ Et une note pratique : **la campagne [2] est passée à « envoyée »** avec ce test. Le vrai envoi
+demandera de la dupliquer.
