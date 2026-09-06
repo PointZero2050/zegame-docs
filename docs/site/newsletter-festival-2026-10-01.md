@@ -7,19 +7,38 @@ chaîne au moment de l'envoi ».*
 
 ---
 
-## ⚠️ Ce qui bloque l'envoi aujourd'hui, et qui n'est pas dans cette lettre
+## Les deux blocages sont levés — 6 septembre 2026, au soir
 
-Le §2 du protocole le dit et je ne fais que le rappeler ici, parce que c'est la seule chose qui
-puisse **coûter quelque chose d'irréversible** : **les désinscriptions ne redescendent pas jusqu'à
-Brevo**. Quelqu'un qui se désinscrit sur `pointzero2050.com` reste dans la liste 3 et continue de
-recevoir.
+*Cette section disait l'inverse il y a deux heures. Elle est réécrite plutôt que complétée : une
+archive qui garde un blocage périmé finit par empêcher un envoi légitime.*
 
-Ce n'est pas un détail de confort : c'est un **retrait de consentement non honoré**, et c'est le
-plus sûr moyen de faire signaler la lettre comme spam. Un taux de plainte se paie ensuite sur
-**tous** les envois — y compris les courriels de billet, qui n'ont rien demandé.
+**1. Le désabonnement redescend jusqu'à Brevo.** Construit et promu en production par le portable :
+`BrevoClient#desinscrire_contact`, un travail de fond, et un rapprochement qui lit Brevo pour
+corriger notre base dans l'autre sens — il ne pousse rien, écrire des deux côtés depuis le même
+endroit fabriquerait une boucle. Le banc fait l'aller-retour **réel** sur le compte, avec un
+contact témoin créé **hors de toute liste** : s'il survivait à un plantage, il ne recevrait aucune
+campagne.
 
-**Cette lettre est prête. La chaîne ne l'est pas.** Les trois chantiers sont nommés dans le
-protocole et appartiennent au portable.
+⚠️ **Et une mesure a corrigé le constat que j'avais repris en tête de ce document.** J'avais écrit
+que les désinscrits continuaient de recevoir. Vérifié personne par personne par le portable : nos
+**36 désabonnés étaient inconnus de Brevo**, jamais poussés. **Personne ne recevait contre son
+gré.** Le trou était réel mais **pas encore rempli** — il se serait rempli à la première personne
+qui confirme puis se désinscrit, donc dans les jours suivant un envoi. La mise en tête restait
+juste sur le fond ; c'est la conséquence qui était annoncée trop fort, et je la corrige ici plutôt
+que de la laisser courir.
+
+**2. Les quatre images sont en production.** Mesuré par moi le 6 septembre au soir, après la
+promotion de `lot-ux-1` :
+
+| fichier | statut | type servi | poids |
+|---|---|---|---|
+| `festival-cover.jpg` | **200** | `image/jpeg` | 172 ko |
+| `festival-ombre.jpg` | **200** | `image/jpeg` | 214 ko |
+| `app-monde-0.jpg` | **200** | `image/jpeg` | 38 ko |
+| `festival-sceau.png` | **200** | `image/png` | 16 ko |
+
+**440 ko servis.** ⚠️ Les `content-type` sont vérifiés, pas seulement les extensions : c'est ce qui
+prouve que le serveur annonce bien du JPEG et du PNG, et non du WebP sous un autre nom.
 
 ---
 
@@ -100,20 +119,20 @@ vouvoiement. Aucune couture entre la lettre et la page qu'elle ouvre.
 
 ## Ce qui reste à faire, et par qui
 
-**Portable — avant tout envoi** (les trois chantiers du §2 du protocole) :
-1. `desabonner!` prévient Brevo ;
-2. un rapprochement périodique dans l'autre sens ;
-3. un banc qui garde les deux sens.
+**Portable — fait le 6 septembre au soir.** Les trois chantiers du §2 du protocole sont construits
+et promus : le désabonnement prévient Brevo, le rapprochement corrige notre base dans l'autre sens,
+et un banc fait l'aller-retour réel sur le compte.
 
 **Boris — au moment du routage** :
-- confirmer les deux balises Brevo ;
+- ⚠️ **les balises Brevo restent à confirmer.** Ni moi ni le portable n'avons de source qui fasse
+  foi, et nous ne la devinerons pas dans un fichier qui part à plusieurs centaines de personnes.
+  Recommandation commune : **laisser Brevo insérer lui-même son pied de désinscription** — c'est le
+  lien que les clients de messagerie reconnaissent (`List-Unsubscribe`) ;
 - **un envoi d'essai à soi-même d'abord**, lu sur téléphone et sur ordinateur ;
 - segment et volume écrits **avant** d'envoyer.
 
-⚠️ **Et les images doivent être en ligne avant l'envoi.** Elles sont livrées dans la branche
-`lot-ux-1` de `pointzero-app` : tant qu'elle n'est pas promue en **production**, les quatre URL de
-la lettre répondent 404. Une lettre partie avant la promotion arriverait sans aucune image.
-
+⚠️ **Les images sont en ligne** depuis la promotion de `lot-ux-1`, et vérifiées en tête de ce
+document. Avant elle, les quatre URL répondaient 404 : la lettre serait arrivée nue.
 ## Après l'envoi
 
 À relever **48 h après** et à consigner ici même, selon le §5 du protocole : taux de plainte
