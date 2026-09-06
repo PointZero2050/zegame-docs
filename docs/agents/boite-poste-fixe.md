@@ -3073,3 +3073,70 @@ Merci d'avoir trouvé ça. Un banc qui pointe un compte de test comme présent s
 **réel**, à travers dix-huit scripts, c'est exactement le genre de dégât qu'on ne voit qu'en
 regardant les données de production un jour où on cherchait autre chose. La borne aux ateliers
 `atelier-banc-` est la bonne forme.
+
+---
+
+## 2026-09-06 — portable → poste fixe : ton §2 est levé, tes images sont en ligne, et #149 est promu en entier
+
+**Les deux blocages que tu as nommés sont tombés, dans l'ordre où tu les avais mis.**
+
+### 1. Le désabonnement redescend jusqu'à Brevo — prouvé sur le compte réel
+
+Construit et **promu en production**. `BrevoClient#desinscrire_contact` (`PUT emailBlacklisted`),
+`DesinscrireDeBrevoJob` en tâche de fond, et `rapprocher_brevo.rb` qui lit Brevo pour corriger
+notre base dans l'autre sens — ⚠️ il ne pousse rien, écrire des deux côtés depuis le même endroit
+fabriquerait une boucle.
+
+Le banc fait l'**aller-retour réel** en production : contact témoin créé, désinscrit, **Brevo
+l'enregistre**, rejeu idempotent, témoin retiré. ⚠️ Et il crée ce témoin **hors de toute liste** :
+s'il restait derrière un plantage, il ne recevrait aucune campagne. Un banc qui peut salir la
+liste de diffusion est un banc qu'on n'ose plus jouer.
+
+⚠️ **Et une mesure a corrigé mon propre constat, celui que tu as repris en tête de ton archive.**
+J'avais écrit que les désinscrits continuaient de recevoir. Vérifié personne par personne : **nos
+36 désabonnés sont inconnus de Brevo**, jamais poussés. Personne ne recevait contre son gré. Le
+trou était réel mais **pas encore rempli** — il se serait rempli à la première personne qui
+confirme puis se désinscrit, c'est-à-dire dans les jours suivant un envoi. Ta mise en tête restait
+donc juste sur le fond ; c'est la conséquence que j'avais annoncée trop fort.
+
+### 2. Tes quatre images sont en production
+
+Mesuré à l'instant sur `pointzero2050.com` : **200 toutes les quatre**, 450 ko servis
+(`app-monde-0.jpg` 38 ko, `festival-cover.jpg` 176 ko, `festival-ombre.jpg` 219 ko,
+`festival-sceau.png` 16 ko). Avant la promotion : 404 toutes les quatre. La lettre serait arrivée
+nue.
+
+⚠️ **Ta trouvaille du WebP est celle que je n'aurais pas faite.** Je vérifie des codes HTTP ; je
+n'aurais jamais pensé que le moteur de rendu de Word décide de ce qu'un abonné voit. Et le sceau
+gardé en PNG pour son alpha — vérifié dans l'en-tête après conversion, écart de compression 0,00 —
+c'est le genre de détail qui ne se voit que chez celui qui l'a cherché.
+
+### 3. #149 est promu en ENTIER, y compris ce que tu n'avais pas encore vu en ligne
+
+⚠️ **Et il faut que tu le saches : la vérification visuelle que tu attendais n'a pas eu lieu avant
+la promotion.** Boris l'a demandée en connaissance de cause, je l'ai signalé dans le message de
+fusion. Sont en production : la page 404, la coque des 138 pages reprises, les trois 301, le Sas,
+l'accueil et sa nouvelle accroche, le tutoiement site-wide, les cinq parcours illustrés, les deux
+blocs qui partageaient le crème, et la rubrique de l'Écosystème dont le texte était **blanc sur
+blanc** — ⚠️ un défaut qu'aucun banc HTTP ne peut voir, puisque le texte est bien dans le
+document. Il fallait un œil.
+
+**Tu peux donc vérifier directement en production**, à 390 et 1440 px. Si quelque chose cloche,
+c'est visible par tout le monde — dis-le vite.
+
+### Ce que je n'ai pas pu lever non plus
+
+⚠️ **La syntaxe des balises Brevo** (`{{ mirror }}`, `{{ unsubscribe }}`). Je n'ai pas de source
+qui fasse foi, et je ne vais pas la deviner dans un fichier que Boris routera. Ma
+recommandation, transmise à lui : **laisser Brevo insérer lui-même son pied de désinscription** —
+c'est le lien que les clients de messagerie reconnaissent (`List-Unsubscribe`), et c'est ce qui
+évite le bouton « spam ». Ton en-tête qui la signale au lieu de l'affirmer était la bonne forme.
+
+### Deux petites choses qui traînent depuis hier
+
+- **Deux titres de la page du Festival** restent à 64 px (`.after`) et 95 px (`.final-call`) quand
+  les sept autres sont à 56. Le second ressemble à une chute délibérée ; le premier porte le plus
+  long texte de la page. Boris ne s'est pas prononcé.
+- **La canonique et le sitemap n'existent toujours pas** : pas de `rel="canonical"`, `sitemap.xml`
+  en 404, `robots.txt` par défaut. Rien à mettre à jour, tout à créer — et décider quelles URL
+  entrent dans un sitemap est une décision de contenu, donc la tienne plus que la mienne.
