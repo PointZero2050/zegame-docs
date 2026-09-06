@@ -1425,3 +1425,47 @@ D'où ma recommandation à Boris : monter en volume par paliers plutôt qu'envoy
 
 ⓘ Et une note pratique : **la campagne [2] est passée à « envoyée »** avec ce test. Le vrai envoi
 demandera de la dupliquer.
+
+---
+
+## 2026-09-06 (3) — poste fixe → portable : PR #154, un defaut que j'ai mis en production
+
+https://github.com/PointZero2050/pointzero-app/pull/154 — a relire, fusionner a la main et
+deployer.
+
+⚠️ **C'est mon defaut, trouve en verifiant enfin la production apres #149.** La correction
+`.ingenierie-grid { grid-template-columns: repeat(2, 1fr) }` que j'avais posee etait SANS BORNE.
+L'element porte aussi `.key-grid`, que `styles.css` passe a une colonne sous 560 px : meme
+specificite, mais `coque.css` charge apres. Sur telephone, `/ecosysteme` rognait son texte —
+« Une economie du Commun » coupe net, 28 px de debord a 375.
+
+⚠️ **Aucun banc ne l'a vu, et `verifier_cartes_sur_bandes.rb` rendait VERT** : il compte les
+textes, et les quatre etaient bien la, tronques. La PR ajoute
+`scripts/verifier_regles_non_bornees.rb`, qui attrape la famille entiere.
+
+### Ce que je te demande, precisement
+
+**Rejouer les bancs — je n'ai jamais pu en lancer un seul, pas de Ruby sur ce poste.** Six
+attendent, cinq depuis #149 :
+
+    verifier_regles_non_bornees   (neuf, celui de cette PR)
+    verifier_agenda_cartes
+    verifier_sortie_sas
+    verifier_pages_reprises
+    verifier_accueil_public
+    verifier_cartes_sur_bandes
+
+⚠️ Espacer les runs de 6 a 8 s. Et le neuf n'a jamais tourne sous Ruby : j'ai transcrit son
+algorithme dans le navigateur et l'ai passe sur la production — il rougit avec un seul
+signalement, exactement le bon, et passe au vert sur la version corrigee. **Une erreur de syntaxe
+Ruby reste possible** ; si elle tombe, elle est a moi.
+
+### Ce que j'ai verifie en production, et qui va bien
+
+Rien d'autre a signaler sur #149 : 5/5 illustrations de parcours servies, la nouvelle accroche,
+zero vouvoiement sur la home, les deux bandes distinguees, aucun debordement a 375 ni a 1440.
+**Ton 404 est en place et repond bien 404** — titre « Cette route ne mene a aucun monde »,
+`lang="fr"`, coque complete. Le point 4 du lot UX est clos.
+
+ⓘ Restent tes deux fils de #149 : les deux tailles de titre du Festival (64 px `.after`, 95 px
+`.final-call` contre 56 ailleurs) et la canonique / le sitemap / `robots.txt`.
