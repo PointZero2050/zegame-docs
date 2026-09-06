@@ -1368,3 +1368,48 @@ Quel que soit l'ordre, l'une des deux aurait rougi ; le commit `c801191` sur
 ligne. Le bloc des cinq parcours est aussi illustré (dérivés à 800 px, 404 ko contre 940 pour
 les originales du Sas, qui ne sont pas touchées). **Quatre bancs à jouer maintenant**, le
 dernier étant `verifier_accueil_public.rb`.*
+
+---
+
+## 2026-09-06 — poste fixe → portable : la newsletter Festival est prête, la chaîne ne l'est pas
+
+Codex a livré la maquette, je l'ai adaptée au routage. **Merci pour ton protocole** : c'est lui qui
+a structuré tout ce travail, et c'est ton §2 qui m'a fait mettre le blocage en TÊTE de l'archive
+plutôt qu'en note de bas de page.
+
+**Archive** : [`docs/site/newsletter-festival-2026-10-01.md`](../site/newsletter-festival-2026-10-01.md)
+· **version de routage** : `zegame-prototypes/newsletter-festival-cible/index-routage.html`
+
+### ⚠️ Deux choses qui te concernent
+
+**1. Ton §2 bloque l'envoi, et je l'ai écrit comme tel.** Les désinscriptions ne redescendent pas
+jusqu'à Brevo. Je n'ajoute rien à ton constat — je le reprends en tête du document parce que c'est
+la seule chose de ce dossier qui puisse coûter quelque chose d'irréversible. Les trois chantiers
+sont les tiens.
+
+**2. Les images de la lettre sont dans `lot-ux-1` et doivent être en PRODUCTION avant l'envoi.**
+Tant que la branche n'est pas promue, les quatre URL répondent **404** : la lettre arriverait sans
+aucune image. Ce n'est pas urgent tant que le §2 tient, mais les deux doivent converger.
+
+### Ce que j'ai trouvé en intégrant
+
+⚠️ **Les huit images du Festival que sert le site sont inutilisables dans un courriel.** Elles sont
+en **WebP**, et Outlook pour Windows rend les images par le moteur de Word, qui ne connaît pas ce
+format — l'abonné verrait quatre cadres vides. Des dérivés dédiés en JPEG/PNG sont produits :
+**7 013 ko de sources pour 439 ko servis**.
+
+⚠️ **Le sceau reste en PNG**, son fond étant transparent — un JPEG l'aurait rempli de blanc ou de
+noir selon le client. Vérifié après conversion dans l'en-tête du fichier : RVB **+ alpha**, écart
+de compression **0,00**.
+
+**L'outil `outils/optimiser-images` s'étend d'un champ `format` par lot** : il n'encodait qu'en
+WebP, en dur. Il existe parce qu'aucun poste n'a d'encodeur ; lui demander un format que le
+courriel accepte est dans son rôle.
+
+### Ce que je n'ai pas pu vérifier
+
+⚠️ **La syntaxe des balises Brevo** (`{{ mirror }}`, `{{ unsubscribe }}`). L'application ne connaît
+de Brevo que l'ajout de contacts, et je n'ai pas d'accès. C'est **signalé dans l'en-tête du fichier
+de routage** plutôt qu'affirmé — si tu la connais, dis-le moi et je la fige.
+
+ⓘ **#149 en est à 16 commits.** Rien n'a encore été déployé depuis mes deux dernières demandes.
