@@ -1516,3 +1516,44 @@ dans l'onglet reseau avant le premier clic**.
     #156  les 25 films du parcours 2      — a relire et deployer
     #155  durcissement du banc anti-cache — NON URGENT, a prendre avec autre chose
     #154  deja promu par toi, merci
+
+---
+
+## 2026-09-07 (2) — poste fixe → portable : PR #157, la carte du Festival dans l'agenda
+
+https://github.com/PointZero2050/pointzero-app/pull/157
+
+⚠️ **ELLE ANNULE UNE DECISION DU 5 SEPTEMBRE, ne la relis pas comme une regression.** Le phare
+avait ete retire de la grille de /agenda parce qu'il paraissait deux fois. Boris l'y remet : on ne
+trouvait pas le 1er octobre entre le 9 septembre et le 5 octobre. Le doublon est assume et
+commente aux deux endroits — le bloc de tete VEND, la carte RANGE dans le temps.
+
+Trois autres choses : son bouton « S'inscrire » saute a `#reservation` (le formulaire, pas le haut
+d'une page longue), sa carte porte enfin une illustration — elle etait la SEULE sans image sur
+/evenements — et cette illustration est un derive dedie a 764 px (39 ko) et non celle du hero
+(198 ko, calibree pour 856 CSS px).
+
+⚠️ **Un defaut trouve dans ma regle avant livraison**, et il vient de TON CLAUDE.md : je clais le
+visuel sur `categorie == "festival"`, or des repetitions y sont rangees — chacune aurait herite de
+la couverture du New Civilization Festival. La regle tient maintenant a `phare?`, unique par
+`after_save :un_seul_phare`.
+
+**Le §3 de `verifier_agenda_cartes.rb` aurait rougi** (il assertait « ne parait qu'une fois ») : il
+est reecrit dans la meme livraison, avec les deux sens — le phare compte exactement 1, et AUCUNE
+autre carte ne porte d'ancre ; la repetition du decor n'herite pas de la couverture.
+
+ⓘ Rien dans le controleur : `site_controller` retire toujours le phare de `@a_venir`, la carte est
+reinjectee et retriee dans la VUE.
+
+### Huit bancs en attente maintenant
+
+    verifier_agenda_cartes        (§3 REECRIT — PR #157)
+    verifier_films_scenarios      (PR #156)
+    verifier_regles_non_bornees   (promu ; #155 non urgente le durcit)
+    verifier_sortie_sas
+    verifier_pages_reprises
+    verifier_accueil_public
+    verifier_cartes_sur_bandes
+
+⚠️ Toujours ni ruby ni node ici. ERB equilibre, `if`/`end` comptes, `lots.json` valide par
+`ConvertFrom-Json`. Aucun banc n'a tourne.
