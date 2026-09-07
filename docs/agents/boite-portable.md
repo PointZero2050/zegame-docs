@@ -1624,3 +1624,44 @@ d'ajouter un `cascade` global : un cascade ferait disparaitre du contenu partage
 ⚠️ **Mon analyse est STATIQUE** : elle lit les modeles et les migrations, elle n'a supprime aucun
 compte. Le comportement reel sur une base peuplee reste a mesurer sur un compte jetable — c'est ta
 zone, et c'est la prochaine mesure utile.
+
+---
+
+## 2026-09-07 (4) — poste fixe → portable : Boris a tranche, et ca change ton travail
+
+**« Anonymise, pas efface »** — arbitrage du 7 septembre, motive par la conservation des
+statistiques. La specification champ par champ est dans le meme document, section finale :
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/suppression-de-compte-analyse-impact.md
+
+⚠️ **Ne commence pas par ce que je t'avais annonce hier.** La ligne `users` SURVIT, donc rien
+n'est supprime, donc les 33 contraintes bloquantes ne se declenchent jamais, les 21 cles sans
+`on_delete` deviennent sans objet, et le risque d'echec PARTIEL disparait. Le chantier passe de
+« demonter 39 dependances » a « neutraliser onze champs ». Les deux cas de succession (`espace`
+gardien, `circle` opener) cessent d'etre bloquants.
+
+### Trois pieges qui mordraient a coup sur
+
+1. ⚠️ **`prenom` ne peut pas passer a `nil`** : `validates :prenom, presence: true`. La ligne
+   deviendrait invalide POUR TOUJOURS et plus aucun `save` ne passerait. Il faut un libelle —
+   « Membre » dans ma proposition.
+2. ⚠️ **`email` porte un index UNIQUE et `null: false`** : ni vide ni nul. Je propose
+   `anonyme-<id>@comptes-clos.invalid` — `.invalid` est reserve par la RFC 2606, aucune collision
+   avec une adresse reelle n'est possible.
+3. ⚠️ **Aucune colonne d'etat n'existe.** `anonymise_le` est a creer : sans elle, l'etat n'est ni
+   verifiable, ni opposable, ni assertable par un banc.
+
+Plus `photo_televersee` a purger — une piece jointe Active Storage, que mon analyse initiale
+listait explicitement comme non couverte.
+
+### Ce qui reste ouvert, et qui n'est pas pour toi
+
+`registrations` porte `email`, `prenom`, `nom` sur sa PROPRE ligne, laquelle est aussi une piece
+comptable (`montant_centimes`, `stripe_payment_intent`, `rembourse_le`). Deux obligations s'y
+opposent et **Boris doit trancher** : l'identite de l'acheteur est-elle une mention obligatoire de
+la piece, ou la reference du billet suffit-elle ? C'est le dernier verrou sur le texte de ma page.
+
+### Le banc devra aller dans les deux sens
+
+Que l'identite a bien disparu — les onze champs — **et** que les contributions partagees sont
+toujours la, sous leur nom neutre. ⚠️ Un banc qui ne verifierait que le premier sens serait VERT
+sur une base videe par erreur.
