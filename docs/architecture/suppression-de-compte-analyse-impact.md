@@ -2,9 +2,13 @@
 
 *Poste fixe, 7 septembre 2026. Mesuré sur `pointzero-app`, branche `preprod`.*
 
-**Ce document ne décide rien.** Il mesure ce qu'une suppression de compte casserait aujourd'hui,
-propose un classement, et isole ce qui doit être arbitré par Boris. L'implémentation — modèles,
-migrations, service — est au portable ; la page et le parcours sont au poste fixe.
+**Ce document mesure d'abord, décide ensuite.** Les sections qui suivent constatent ce qu'une
+suppression casserait aujourd'hui ; la dernière — [« La décision est prise »](#la-décision-est-prise--anonymiser-pas-effacer)
+— porte l'arbitrage de Boris du 7 septembre et sa traduction champ par champ. L'implémentation —
+modèles, migrations, service — est au portable ; la page et le parcours sont au poste fixe.
+
+⚠️ **Lire l'arbitrage avant d'agir sur l'analyse** : il rend une grande partie des obstacles
+ci-dessous sans objet, parce que rien n'est plus supprimé.
 
 ## Pourquoi maintenant
 
@@ -122,3 +126,92 @@ signalé, lui, ne doit pas pouvoir faire disparaître le signalement en supprima
   le portable est le seul canal existant, et il lit, il ne pousse pas.
 - ⚠️ Le classement en cinq régimes est **une proposition de lecture**, pas un arbitrage. Chaque
   ligne peut être déplacée, et deux d'entre elles attendent explicitement une décision.
+
+---
+
+# La décision est prise — anonymiser, pas effacer
+
+*Arbitrage de Boris, 7 septembre 2026 : « Anonymisé, pas effacé, c'est par ailleurs nécessaire
+pour garder des statistiques. »*
+
+## Ce que la décision change, et c'est considérable
+
+**La ligne `users` survit.** Donc rien n'est supprimé, donc :
+
+- les **33 contraintes bloquantes ne se déclenchent jamais** ;
+- les **21 clés étrangères sans `on_delete`** deviennent sans objet ;
+- les 14 `dependent: :destroy` ne s'exécutent pas non plus — plus de risque d'échec **partiel** ;
+- les deux cas de **succession** (`espace`, `circle`) cessent d'être bloquants : le gardien reste
+  gardien, sous un nom neutre. ⓘ Une passation reste souhaitable, mais elle n'est plus un
+  préalable technique.
+
+Le chantier passe de « démonter 39 dépendances » à « neutraliser des champs ». C'est plus petit,
+plus sûr, et réversible tant que rien n'est écrit.
+
+⚠️ **En échange, la promesse faite à la personne change.** On ne peut plus écrire « vos données
+sont effacées ». La page devra dire ce qui se passe vraiment : le compte est fermé, l'identité
+retirée, les contributions restent sous un nom neutre. C'est plus long à écrire et c'est plus
+honnête.
+
+⚠️ **Et « anonymisé » n'est pas un mot libre.** Une donnée réellement anonyme sort du champ des
+données personnelles — c'est ce qui autorise à la garder pour des statistiques. Une donnée dont le
+lien est seulement rompu, mais qui reste rattachable, est **pseudonymisée** et reste dans le champ.
+La différence ne se décrète pas dans la page, elle se gagne champ par champ ci-dessous.
+
+## `users` — ce qui est neutralisé
+
+| champ | devient | pourquoi ce n'est pas `nil` |
+|---|---|---|
+| `email` | `anonyme-<id>@comptes-clos.invalid` | ⚠️ index **UNIQUE** et `null: false`. Ni vide ni nul. `.invalid` est réservé par la RFC 2606 : aucune adresse réelle ne peut collisionner |
+| `prenom` | `Membre` | ⚠️ **`validates :prenom, presence: true`** — à `nil`, la ligne devient invalide POUR TOUJOURS et plus aucun `save` ne passe |
+| `encrypted_password` | aléatoire, non conservé | interdit toute reconnexion |
+| `nom` · `slug` | `nil` | `slug` est unique mais `allow_nil` ; il sert l'URL du profil public |
+| `photo_televersee` | pièce jointe **purgée** | un visage identifie plus sûrement qu'un nom |
+| `liens_externes` | `nil` | un profil externe ramène à la personne |
+| `centres_interet` · `ce_qui_mamene` · `ce_que_je_cherche` · `ce_que_je_rends_possible` | `nil` | texte libre : la ré-identification s'y loge |
+| `current_sign_in_ip` · `last_sign_in_ip` | `nil` | une adresse IP est une donnée personnelle |
+| `reset_password_token` · `confirmation_token` · `jeton_de_session` | `nil` | trois index uniques, et autant de portes |
+| `canal_prefere` · `politique_contact` · `accepte_appels` · `preference_rencontre` | valeurs par défaut | il n'y a plus personne à joindre |
+| `anonymise_le` | horodatage | ⚠️ **colonne à créer** : sans elle, l'état n'est ni vérifiable, ni opposable, ni assertable par un banc |
+
+## `users` — ce qui reste, et c'est la statistique
+
+`role` · `annee_entree` · `heros_slug` · les drapeaux de visibilité et de badges · `sign_in_count`
+et les dates de connexion · `moderation` — et **tout ce qui pend de l'utilisateur** : traces,
+points, assessments, parcours, communautés, contributions anonymisées.
+
+C'est exactement la matière dont les statistiques ont besoin, et plus rien n'y désigne quelqu'un.
+
+## ⚠️ Le cas qui ne se règle pas ici : `registrations`
+
+La table porte `email` **non nul**, `prenom` et `nom` **sur sa propre ligne**. La neutralisation de
+`users` ne l'atteint pas.
+
+Et on ne peut pas simplement la vider : la même ligne porte `montant_centimes`,
+`stripe_payment_intent` et `rembourse_le` — une **pièce comptable**, dont la conservation
+n'obéit pas au même régime que les données de profil.
+
+**C'est le seul point où la décision « anonymiser » ne suffit pas à trancher**, parce que deux
+obligations s'y opposent. ⚠️ Je ne fixe ni délai de conservation ni règle comptable : ce n'est ni
+ma zone ni mon métier. Ce qu'il faut décider, en une phrase : *l'identité de l'acheteur est-elle
+une mention obligatoire de la pièce, ou peut-elle être remplacée par la référence du billet ?*
+La réponse détermine si la page peut promettre l'anonymisation **complète** ou seulement celle du
+profil.
+
+## La limite honnête de l'exercice
+
+⚠️ **Sur une population petite, l'anonymat n'est pas garanti par le retrait du nom.** Une année
+d'entrée rare, un héros peu choisi et deux ou trois traces datées peuvent suffire à reconnaître
+quelqu'un dans un groupe de quelques centaines. C'est une limite structurelle de l'anonymisation,
+pas un défaut d'implémentation — elle mérite d'être connue avant d'être écrite dans une page, et
+elle plaide pour ne publier des statistiques qu'agrégées.
+
+## Ce qu'il reste à faire, dans l'ordre
+
+1. **Trancher `registrations`** (Boris) — c'est le seul verrou restant sur le texte de la page.
+2. **La migration `anonymise_le` et le service d'anonymisation** (portable), transactionnel, avec
+   la purge de la pièce jointe.
+3. **La page et le parcours** (poste fixe), qui diront la vraie promesse.
+4. **Le banc**, dans les deux sens : que l'identité a bien disparu — les onze champs ci-dessus —
+   **et** que les contributions partagées sont toujours là, sous leur nom neutre. ⚠️ Un banc qui ne
+   vérifierait que le premier sens serait vert sur une base vidée par erreur.
