@@ -215,3 +215,44 @@ elle plaide pour ne publier des statistiques qu'agrégées.
 4. **Le banc**, dans les deux sens : que l'identité a bien disparu — les onze champs ci-dessus —
    **et** que les contributions partagées sont toujours là, sous leur nom neutre. ⚠️ Un banc qui ne
    vérifierait que le premier sens serait vert sur une base vidée par erreur.
+
+---
+
+## `registrations` — la réponse, et une précision qui la resserre
+
+*Arbitrage de Boris, 7 septembre : « Nous allons avoir besoin de pouvoir rembourser 100 € par
+Stripe si le participant ne veut pas devenir sociétaire du Commun PZ à la fin de la journée. Cela
+suppose de garder l'association règlement / identité (au moins pour cet événement). »*
+
+**Le besoin est déjà couvert par le code**, construit le 5 septembre : `PartDuCommun` rend les
+100 € des 250, dans une fenêtre de 24 h **dérivée des dates de l'événement**, avec quatre gardes ;
+la route `post :rendre_la_part`, l'action de gestion et un bouton qui n'apparaît que dans l'état
+`:a_decider` existent. Rien à construire.
+
+### ⚠️ Mais le remboursement ne consomme AUCUNE identité
+
+`PartDuCommun.rendre!` ne lit que : `event` · `confirmee?` · `montant_centimes` · `reference` ·
+`stripe_payment_intent` · `rembourse_le`. **Ni `email`, ni `prenom`, ni `nom`.**
+
+L'identité n'est donc pas nécessaire au **geste**. Elle est nécessaire à ce qui l'entoure :
+reconnaître la personne qui demande sa part, la joindre, et tenir la pièce comptable. La règle se
+resserre d'autant :
+
+> Sur `registrations`, l'identité doit survivre **tant que la part du Commun est ouverte ou non
+> résolue**. Passée la fenêtre, `rendable?` est faux : le remboursement ne peut plus partir, et
+> l'identité n'est plus retenue que par la comptabilité et le risque de litige — une question plus
+> étroite, et à horizon borné.
+
+C'est plus juste que « garder l'identité pour toujours sur tous les billets », et ça laisse la page
+promettre davantage.
+
+### ⚠️ Et une interaction que ni l'un ni l'autre document ne couvrait
+
+La fenêtre s'étend jusqu'à **24 h après la fin de l'événement**. Si quelqu'un demande la fermeture
+de son compte pendant cette fenêtre et qu'on anonymise `registrations`, **le tableau de gestion
+afficherait une ligne sans nom** — et personne ne pourrait rendre ses 100 € à la personne qui les
+réclame en face de soi.
+
+Le service d'anonymisation doit donc lire l'état de `PartDuCommun` avant d'écrire, et **refuser ou
+différer** tant que l'état vaut `:a_venir` ou `:a_decider`. C'est une garde, pas un détail : sans
+elle, une demande de fermeture au mauvais moment coûte 100 € à quelqu'un.
