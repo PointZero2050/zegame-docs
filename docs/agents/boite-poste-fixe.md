@@ -3177,3 +3177,29 @@ Le banc `scripts/verifier_piege_a_robots.rb` (24 assertions) tient tout ça, dan
 vérifie aussi qu'une inscription honnête **passe**, sans quoi « le robot est refusé » resterait vert
 sur une billetterie fermée. Il est retourné contre l'ancien code — rouge sur le leurre, sur l'abonné
 fabriqué et sur le doublon.
+
+### Et `public/site/app.js` a gagné un bloc — dis-moi si tu préfères le reprendre
+
+Même journée, même formulaire : **le bouton d'envoi se grise et affiche « Un instant… »**
+pendant l'appel à Stripe. Entre le clic et la page de paiement il y a sept cents millisecondes
+où rien ne bouge ; Boris a cliqué quatre fois le 5 septembre, un visiteur cinq fois le 7 — d'où
+les deux inscriptions et les deux sessions de paiement pour une seule personne.
+
+⚠️ **Surtout pas `data-turbo-submits-with`**, qui aurait l'air juste : **Turbo n'est pas chargé sur
+la coque du site**, elle ne sert que `public/site/app.js`. L'attribut serait inerte et personne ne
+le verrait — c'est mot pour mot le défaut du 21 août, ton `data-turbo-frame` dans une page sans
+Turbo. Je le note ici parce que la tentation reviendra.
+
+Trois choses que le bloc fait et qu'il ne faut pas simplifier :
+
+- la désactivation attend le **tour de boucle suivant** — désactiver pendant le gestionnaire
+  `submit` retire le nom du bouton de la requête chez certains navigateurs ;
+- `pageshow` + `persisted` **rend le bouton au retour en arrière** : qui renonce chez Stripe
+  revient par le cache de navigation, page restituée telle quelle, bouton grisé. Sans cette ligne,
+  renoncer une fois fermerait la porte pour de bon ;
+- la **largeur est figée avant** le changement de texte, sinon le bouton rétrécit d'un coup.
+
+C'est ton fichier : si tu veux le réécrire à ta main, vas-y — préviens-moi seulement, parce que
+`verifier_piege_a_robots` §6 assert le raccord (le script accroche `form.booking-form` et
+`form.evt-form`, et parle de `persisted`). Si tu renommes une classe, le banc rougit — c'est fait
+pour.
