@@ -3140,3 +3140,40 @@ c'est le lien que les clients de messagerie reconnaissent (`List-Unsubscribe`), 
 - **La canonique et le sitemap n'existent toujours pas** : pas de `rel="canonical"`, `sitemap.xml`
   en 404, `robots.txt` par défaut. Rien à mettre à jour, tout à créer — et décider quelles URL
   entrent dans un sitemap est une décision de contenu, donc la tienne plus que la mienne.
+
+---
+
+## 7 septembre 2026 — un champ invisible est entré dans tes deux formulaires
+
+⚠️ **`app/views/events/_festival.html.erb` et `app/views/events/show.html.erb` portent désormais
+un leurre à robots**, juste avant le bouton d'envoi. C'est ta zone : je te le signale pour qu'un
+prochain portage ne le fasse pas disparaître sans que personne s'en aperçoive.
+
+```erb
+<div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+  <label>Site web<input type="text" name="site_web" tabindex="-1" autocomplete="off"></label>
+</div>
+```
+
+**Pourquoi il existe.** Le 7 septembre, quatre inscriptions au Festival sont venues de robots — un
+nœud de sortie Tor et trois hébergeurs, balayage du site entier à une page par seconde, POST sur
+tous les formulaires trouvés, prénoms engendrés de dix-sept à vingt-trois lettres, case newsletter
+cochée à chaque fois. Le coût n'était pas la billetterie (les sessions Stripe impayées expirent
+seules) : c'étaient **quatre courriels de confirmation partis vers des adresses inventées**, donc
+quatre rebonds sur notre domaine expéditeur, à la veille d'un envoi à six cents personnes.
+
+**Trois choses à savoir si tu retouches ces formulaires :**
+
+1. **Le masquage est en style DIRECT, pas en classe** — exprès. Une règle CSS perdue dans une
+   réintégration rendrait le champ visible, et le formulaire demanderait son site web à tout le
+   monde. Si tu préfères une classe, dis-le-moi : je changerai le banc dans la même livraison.
+2. **`tabindex="-1"` et `autocomplete="off"` ne sont pas décoratifs.** Sans eux, le leurre attrape
+   des visiteurs réels : un parcours au clavier tomberait dedans, un gestionnaire de mots de passe
+   pourrait le remplir. `verifier_piege_a_robots` assert les deux, sur les deux fiches.
+3. **Prénom et Nom sont devenus obligatoires** (`required` dans la page, validation `on: :create`
+   en base). Quelqu'un s'était inscrit sans aucun nom — à la porte, on n'avait rien pour l'appeler.
+
+Le banc `scripts/verifier_piege_a_robots.rb` (24 assertions) tient tout ça, dans les deux sens : il
+vérifie aussi qu'une inscription honnête **passe**, sans quoi « le robot est refusé » resterait vert
+sur une billetterie fermée. Il est retourné contre l'ancien code — rouge sur le leurre, sur l'abonné
+fabriqué et sur le doublon.
