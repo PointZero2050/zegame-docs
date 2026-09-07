@@ -1,5 +1,31 @@
 # Boîte du portable
 
+### 2026-09-07 · de Codex · Stores mobiles PZ et remise à niveau ze.game
+
+**Attendu — portable :** préparer un plan de livraison Android/iOS daté, puis faire valider par Boris les choix de compte et le périmètre avant toute écriture, dépense ou soumission.
+**Références :** [tests Google des nouveaux comptes personnels](https://support.google.com/googleplay/android-developer/answer/14151465?hl=fr) · [inscription Apple](https://developer.apple.com/help/account/membership/program-enrollment) · [D-U-N-S Apple](https://developer.apple.com/help/account/membership/D-U-N-S/)
+
+Décision de Boris : **Point Zéro sera créé dans le compte Google Play existant de ze.game**, afin de ne pas mettre les 14 jours de test fermé d'un nouveau compte personnel sur le chemin critique du 1er octobre. Il souhaite en parallèle tenter un **compte Apple séparé pour Point Zéro** et dispose d'un Mac.
+
+Faits observés dans la Play Console, capture du 7 septembre :
+
+- compte personnel `Collectivz`, avec `In&Off` et `ze.game` déjà en production ;
+- bannière rouge « compte de développeur risquant d'être clôturé pour inactivité », action demandée avant le **11 septembre** ;
+- le profil actuellement connecté affiche « Vous n'êtes pas autorisé à créer d'applications » ;
+- mise à niveau du niveau d'API cible demandée depuis le 31 août 2026 pour pouvoir redéployer ze.game.
+
+Recommandations :
+
+1. traiter d'abord l'alerte de clôture et les droits du compte Google ; ne pas supposer que créer PZ suffira, lire le détail exact dans la Console ;
+2. remettre ze.game au niveau Android 16 / API 36, puis créer PZ dans ce même compte dès que le droit est rétabli ;
+3. pour Apple, privilégier un compte **organisation Point Zéro** si PZ est une entité juridique et possède déjà un D-U-N-S : c'est le seul chemin pour afficher l'organisation comme vendeur ; sinon demander le D-U-N-S immédiatement (Apple annonce jusqu'à 5 jours ouvrés, puis jusqu'à 2 jours de propagation) ;
+4. le compte Apple individuel est plus rapide mais affiche le nom civil du titulaire comme vendeur : ne le choisir qu'après accord explicite de Boris ;
+5. viser une première soumission autour du 20–22 septembre et conserver la PWA comme accès garanti pour le Festival.
+
+État technique mesuré sur `pointzero-app` `origin/main` (`9910a7a`, 7 septembre) : Rails/Hotwire responsive, manifeste PWA et icônes présents ; service worker volontairement sans cache ni hors-ligne ; aucun projet natif Android/iOS ; aucun parcours de suppression de compte repéré. Ce dernier est un préalable store : analyse d'impact avant implémentation, car les données joueur, messages, traces, points, inscriptions et paiements sont liées. Pour réduire le risque Apple 4.2, la coque iOS ne doit pas être un simple navigateur : navigation mobile propre, écran hors-ligne, liens externes maîtrisés et au moins une intégration système utile. Le paiement Stripe du Festival concerne un service consommé hors de l'app et peut rester externe.
+
+Ne rien déployer ni soumettre sans validation de Boris. Les alertes Google exigent cependant un diagnostic immédiat, avant le 11 septembre.
+
 ### 2026-09-03 · de Codex · L'Atelier ouvre le M1, mais ne bloque pas la clôture du M0
 
 **Attendu — portable :** produire l'analyse d'impact puis corriger la séquentialité de l'Expérience 18 ; coordonner les effets de vue avec le poste fixe.
