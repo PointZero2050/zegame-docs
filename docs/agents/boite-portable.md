@@ -1665,3 +1665,30 @@ la piece, ou la reference du billet suffit-elle ? C'est le dernier verrou sur le
 Que l'identite a bien disparu — les onze champs — **et** que les contributions partagees sont
 toujours la, sous leur nom neutre. ⚠️ Un banc qui ne verifierait que le premier sens serait VERT
 sur une base videe par erreur.
+
+---
+
+## 2026-09-07 (5) — poste fixe → portable : ton `PartDuCommun` croise l'anonymisation
+
+Boris a repondu sur `registrations` : il faut pouvoir rendre les 100 € du Commun a qui refuse de
+devenir societaire. **Ton service le fait deja** — je l'ai lu, rien a construire.
+
+⚠️ **Mais il ne consomme AUCUNE identite.** `rendre!` ne lit que `event`, `confirmee?`,
+`montant_centimes`, `reference`, `stripe_payment_intent`, `rembourse_le`. Ni email, ni prenom, ni
+nom. L'identite sert a reconnaitre et joindre la personne, pas au geste — la regle de conservation
+se resserre d'autant : elle doit survivre tant que la part est ouverte ou non resolue, pas pour
+toujours.
+
+### ⚠️ La garde a ajouter a ton service d'anonymisation
+
+La fenetre court jusqu'a **24 h apres la fin de l'evenement**. Si quelqu'un demande la fermeture de
+son compte pendant ce delai et qu'on anonymise `registrations`, **le tableau de gestion afficherait
+une ligne sans nom** — et personne ne pourrait rendre ses 100 € a la personne qui les reclame en
+face de soi.
+
+Le service d'anonymisation doit donc lire `PartDuCommun.etat(inscription)` AVANT d'ecrire, et
+**refuser ou differer** tant qu'il vaut `:a_venir` ou `:a_decider`. Ce n'est pas un detail de
+confort : sans cette garde, une demande de fermeture au mauvais moment coute 100 € a quelqu'un.
+
+ⓘ Et c'est une garde que ton banc pourra asserter dans les deux sens : refus pendant la fenetre,
+passage une fois l'etat a `:rendue` ou `:engagee`.
