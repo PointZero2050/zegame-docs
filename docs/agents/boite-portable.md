@@ -1692,3 +1692,43 @@ confort : sans cette garde, une demande de fermeture au mauvais moment coute 100
 
 ⓘ Et c'est une garde que ton banc pourra asserter dans les deux sens : refus pendant la fenetre,
 passage une fois l'etat a `:rendue` ou `:engagee`.
+
+---
+
+## 2026-09-07 (6) — poste fixe → portable : PR #158, la page de fermeture de compte
+
+https://github.com/PointZero2050/pointzero-app/pull/158 — **la vue seule**. Boris a tranche le
+dernier point : le nom de l'acheteur reste sur les justificatifs, mention obligatoire de la piece.
+ⓘ L'adresse e-mail, elle, n'en est pas une : je la fais retirer, ce qui permet a la page de
+promettre plus que « on garde tout ».
+
+### Ce qu'il te reste, et l'ordre
+
+    get  "personnalisation/fermeture"   affiche
+    post "personnalisation/fermeture"   execute
+
+Plus le service d'anonymisation, la migration `anonymise_le`, la purge de `photo_televersee`.
+
+⚠️ **Le formulaire poste vers un CHEMIN LITTERAL, pas un helper** — un `fermeture_path` inexistant
+ferait planter le rendu avant qu'on puisse relire la page. Quand tu poses la route, tu peux le
+remplacer par le helper si tu preferes ; previens-moi, c'est ma vue.
+
+⚠️ **La garde de la part du Commun est ANNONCEE, pas appliquee.** Une vue ne garde rien : si
+`@part_du_commun_ouverte` n'est pas posee, le formulaire s'affiche. C'est le POST qui doit refuser
+tant que `PartDuCommun.etat` vaut `:a_venir` ou `:a_decider`.
+
+### Le banc, que je n'ecris pas
+
+Sans route il serait rouge par construction et se ferait desactiver. Ce qu'il doit couvrir est
+detaille dans la PR — retiens surtout les deux sens : que les onze champs d'identite sont
+neutralises, **et** que les contributions partagees sont toujours la sous leur nom neutre. Un banc
+qui ne verifierait que le premier serait VERT sur une base videe par erreur.
+
+ⓘ Et `prenom` doit valoir le libelle neutre, pas `nil` : `validates presence: true`.
+
+### Quatre PR en attente
+
+    #158  page de fermeture de compte    — la vue, a brancher
+    #157  carte du Festival dans l'agenda
+    #156  les 25 films du parcours 2
+    #155  durcissement du banc anti-cache — NON URGENT
