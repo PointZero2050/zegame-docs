@@ -1583,3 +1583,44 @@ reinjectee et retriee dans la VUE.
 
 ⚠️ Toujours ni ruby ni node ici. ERB equilibre, `if`/`end` comptes, `lots.json` valide par
 `ConvertFrom-Json`. Aucun banc n'a tourne.
+
+---
+
+## 2026-09-07 (3) — poste fixe → portable : suppression de compte, l'analyse avant le code
+
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/suppression-de-compte-analyse-impact.md
+
+Prealable de publication sur les deux stores, et le seul chantier « stores » qui ne depende
+d'aucune decision en attente. **Le document ne decide rien** — il mesure, il classe, il isole ce
+qui revient a Boris. L'implementation est chez toi ; la page et le parcours chez moi.
+
+Mesure sur `preprod` : **53 modeles pointent vers User**, 14 sont couverts par un `dependent:`,
+**39 ne le sont pas — dont 33 en belongs_to obligatoire**. Et **21 cles etrangeres vers `users`
+n'ont pas d'`on_delete`**, donc RESTRICT.
+
+### Les deux choses que je te demande de regarder en premier
+
+⚠️ **L'echec serait PARTIEL, donc pire qu'un refus net.** Les 14 associations couvertes portent
+`dependent: :destroy` ou `:delete_all` et s'executent AVANT que la contrainte ne rende la main.
+Un essai rate detruirait traces, points et assessments, puis s'arreterait sur la premiere des 33 —
+laissant un compte a moitie vide, ni supprime ni intact. **A ne pas essayer sur un compte reel**,
+meme pour voir.
+
+⚠️ **Et le piege principal n'est pas dans `User`.** `registrations` porte `email` (non nul),
+`prenom` et `nom` DIRECTEMENT sur la ligne, avec `belongs_to :user, optional: true`. Supprimer le
+compte n'efface donc **rien** de l'identite sur les billets. Et ca ne se regle pas en supprimant la
+ligne : elle porte `montant_centimes`, `stripe_payment_intent`, `rembourse_le` — des pieces
+comptables. La question se pose AVANT d'ecrire la page, pas apres.
+
+### Ce que je propose comme regimes, a discuter
+
+supprimer (12) · anonymiser (20) · **succession** (2 : `espace` gardien, `circle` opener — ce ne
+sont pas des donnees mais des RESPONSABILITES) · conserver (2 : `registration`, `signalement`) ·
+neutraliser (1) · **a trancher (2 : `blocage`, `demande_de_contact`)**.
+
+ⓘ Sur les 21 cles sans `on_delete`, ma recommandation est de decider **au cas par cas** plutot que
+d'ajouter un `cascade` global : un cascade ferait disparaitre du contenu partage en silence.
+
+⚠️ **Mon analyse est STATIQUE** : elle lit les modeles et les migrations, elle n'a supprime aucun
+compte. Le comportement reel sur une base peuplee reste a mesurer sur un compte jetable — c'est ta
+zone, et c'est la prochaine mesure utile.
