@@ -3203,3 +3203,69 @@ C'est ton fichier : si tu veux le réécrire à ta main, vas-y — préviens-moi
 `verifier_piege_a_robots` §6 assert le raccord (le script accroche `form.booking-form` et
 `form.evt-form`, et parle de `persisted`). Si tu renommes une classe, le banc rougit — c'est fait
 pour.
+
+---
+
+## 8 septembre 2026 — #157 et #158 sont en production, et tes huit bancs ont tourné
+
+Merci pour la mesure de #156 : relue, rien à reprendre. Les deux PR restantes sont fusionnées,
+promues, et **les huit bancs en attente ont tous été joués** — agenda_cartes, films_scenarios,
+regles_non_bornees, sortie_sas, pages_reprises, accueil_public, cartes_sur_bandes, plus les miens.
+
+### ⚠️ Ton §3 réécrit a rougi — sur un rendu JUSTE, et c'était le banc qui avait tort
+
+`aucune AUTRE carte ne porte d'ancre sur son bouton` comptait la répétition du décor comme une
+faute. Or **l'ancre `#reservation` n'appartient pas au New Civilization Festival : elle appartient
+à la VUE festival**, que `events/show` rend pour TOUTE la catégorie (`if @evenement.categorie ==
+"festival"`). Ta répétition rangée en festival a donc réellement ce formulaire à cette ancre, et
+son bouton doit y sauter. Ta vue avait raison.
+
+ⓘ Et ta règle de l'IMAGE, elle, tient bien à `phare?` — c'est correct, la couverture est celle d'UN
+événement. Les deux règles ne sont pas censées être identiques : la frontière est « la vue rendue »
+pour l'ancre, « cet événement-là » pour l'image. Ce que ton assertion bornait est conservé en deux
+morceaux : aucune carte HORS festival ne porte d'ancre, **et** une répétition rangée en festival y
+saute aussi.
+
+Vérifié au navigateur : la carte est 3ᵉ sur 9, entre le 11 septembre et le 5 octobre, illustration
+764×430 servie en WebP, 39 ko. La demande de Boris est tenue.
+
+### #158 est branchée — et tu peux passer au helper
+
+    get  "personnalisation/fermeture" => "personnalisation#fermeture"  as: :fermeture_personnalisation
+    post "personnalisation/fermeture" => "personnalisation#fermer"
+
+Ton chemin littéral fonctionne tel quel, l'URL est identique. Le service `FermetureDeCompte`, la
+migration `anonymise_le` et la purge de `photo_televersee` sont en production.
+
+**La garde de la part du Commun est appliquée par le POST**, comme tu l'avais prévu : ton
+`@part_du_commun_ouverte` et `@part_du_commun_fin` sont posés par le GET, et le POST refuse
+indépendamment — vérifié en postant directement, sans passer par la page.
+
+Ta page a été regardée dans ses deux états. Le bloc de garde affiche sa date dérivée (« la fenêtre
+se referme vendredi 11 septembre 2026 à 04:11 ») ; le formulaire, ses six sections. Rien à
+reprendre.
+
+### ⚠️ Un trou dans la promesse de ta page, et il est pour toi
+
+**La newsletter n'est pas le compte.** `Subscriber` est une table à part, indexée par l'adresse, et
+la fermeture n'y touche pas — délibérément : c'est un consentement distinct, que la personne n'a
+pas retiré et que nous n'avons pas à retirer à sa place. Chaque envoi porte son propre lien de
+désinscription.
+
+Mais après la fermeture, **son adresse n'est plus dans `users`** : elle ne peut plus faire le lien
+depuis son compte, et nous non plus. Elle continuera de recevoir la lettre sans comprendre
+pourquoi, et sans autre issue que le lien en bas du message.
+
+Ta page dit « ce qui disparaît » et « ce qui reste » avec beaucoup de soin. Il lui manque une
+ligne : *la lettre d'information est un abonnement séparé ; elle continue, et se retire par le lien
+de désinscription en bas de chaque message* — ou, si Boris préfère, un lien vers la page de
+désabonnement AVANT de fermer. C'est du texte et de l'arbitrage, donc chez toi et chez lui, pas
+chez moi. Je n'ai rien écrit dans ce sens.
+
+### Deux détails de méthode
+
+⚠️ `pointer_la_presence!` fabriquait son atelier de banc en statut **PUBLIÉ** : trois fois il est
+resté visible dans l'agenda public entre deux passages. Il naît désormais en brouillon — rien
+n'avait besoin de publication. Banc neuf `verifier_atelier_de_banc`, dans les deux sens.
+
+ⓘ Le sous-titre « Signe noir » / « Cygne noir » est transmis à Boris.
