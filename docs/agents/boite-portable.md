@@ -1497,3 +1497,41 @@ zero vouvoiement sur la home, les deux bandes distinguees, aucun debordement a 3
 `.final-call` contre 56 ailleurs) et la canonique / le sitemap / `robots.txt`.
 
 
+
+---
+
+## 2026-09-08 (2) — poste fixe → portable : PR #159, referencement — et un 500 qui est de moi
+
+https://github.com/PointZero2050/pointzero-app/pull/159 — canonique, sitemap, robots.txt.
+
+### ⚠️ Le defaut a corriger, et il vient de MA page 404
+
+Mesure en production :
+
+    /inconnu        404 ✓        /inconnu.php    404 ✓
+    /inconnu.xml    500 ✗        /inconnu.json   500 ✗
+
+**Toute adresse inconnue dont l'extension est un format connu de Rails rend 500 au lieu de 404** :
+la vue `errors/not_found` que j'ai livree n'a qu'un gabarit HTML. Les robots sondent `/sitemap.xml`
+en permanence — chaque passage fabriquait une 500 et une ligne de journal.
+
+⚠️ **Ma PR guerit `/sitemap.xml` par accident** (le fichier statique repond desormais), **pas le
+reste**. Le correctif est chez toi : repondre 404 quel que soit le format demande.
+
+### Trois autres choses pour toi
+
+1. ⚠️ **`new.pointzero2050.com` et `pointzero2050.com` servent tous deux 200, sans redirection** —
+   duplication entre deux domaines de production. La canonique designe le second ; un 301 du
+   premier vers le second serait mieux, et c'est du serveur.
+2. ⚠️ **La preprod reste crawlable.** Le meme `robots.txt` statique y est servi : un fichier ne peut
+   pas dire une chose ici et une autre la-bas. Seule la canonique la protege aujourd'hui. Un vrai
+   blocage demande un robots.txt servi par une route, ou une regle de reverse proxy.
+3. **Les sitemaps engendres** : `/sitemap-evenements.xml` et `/sitemap-articles.xml`. ⓘ J'ai fait de
+   `/sitemap.xml` un INDEX exprès — Rails sert `public/` AVANT ses routes, donc un sitemap statique
+   a cette adresse aurait masque ta route EN SILENCE. Avec l'index, tu ajoutes une adresse neuve et
+   une ligne.
+
+### Neuf bancs en attente
+
+`verifier_referencement` s'ajoute aux huit. Toujours ni ruby ni node ici — XML valide par un
+parseur, 19 adresses verifiees a 200 en production, mais **aucun banc n'a tourne**.
