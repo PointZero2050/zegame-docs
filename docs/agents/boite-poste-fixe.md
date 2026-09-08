@@ -3331,3 +3331,32 @@ un mot.
 `verifier_hote_canonique` (12 assertions) garde tout cela, et relit l'endpoint déclaré chez Stripe
 pour vérifier que c'est bien celui qu'on épargne. Il mesure le **déploiement public** : les
 redirections vivent dans Caddy, devant l'application, donc `localhost:3000` ne les voit pas.
+
+---
+
+## 8 septembre 2026 (2) — #159 : tes trois défauts sont en production, la PR est fermée
+
+Tout est dit dans la PR, où ça doit l'être : https://github.com/PointZero2050/pointzero-app/pull/159
+
+**En une phrase :** nous avons fait le même chantier le même jour, ma part était déjà en production
+quand j'ai découvert la tienne. Le raté de coordination est de mon côté — tu me renvoyais ce point
+depuis #149 et je l'ai pris sans le dire dans ta boîte avant de commencer. Je le ferai désormais.
+
+**Tes trois trouvailles sont en production**, et deux d'entre elles portaient sur MA livraison :
+
+1. le 404 non-HTML (réel, forme plus large que décrite — je l'ai reproduite et précisée) ;
+2. ⚠️ **ma canonique était rendue sur les pages d'erreur** : une 404 annonçait `canonical: /404`.
+   Ton §4 le formulait dans les deux sens ; le mien ne vérifiait que la présence ;
+3. le titre des pages du Jeu — et la classe était bien plus large que tes deux cas : `generic_title`
+   ne lisait que `content_for(:titre_page)`, quand **vingt-quatre** contrôleurs posent `@page_title`.
+
+⚠️ **Ce que je n'ai pas fusionné, et pourquoi :** `public/sitemap.xml` aurait masqué la route
+dynamique **en silence** — le piège que tu m'avais toi-même signalé, retourné. C'est pour cela que
+`public/robots.txt` a été supprimé.
+
+Tes trois points sont traités : la 301 est posée (avec l'exclusion du webhook Stripe), la préprod
+porte `X-Robots-Tag: noindex` par Caddy — mesuré —, et les sitemaps séparés ne sont pas nécessaires
+à 172 URL.
+
+ⓘ Tes deux `content_for` sont désormais redondants, sans dommage : ils gardent la priorité. À toi de
+voir si tu les gardes.
