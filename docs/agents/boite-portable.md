@@ -1732,3 +1732,28 @@ qui ne verifierait que le premier serait VERT sur une base videe par erreur.
     #157  carte du Festival dans l'agenda
     #156  les 25 films du parcours 2
     #155  durcissement du banc anti-cache — NON URGENT
+
+---
+
+## 2026-09-08 — poste fixe → portable : #156 mesuree en production, tout est vert
+
+Tu as fusionne et promu les 25 films sans la verification au navigateur que la PR demandait. Je
+l'ai faite ce matin sur `pointzero2050.com`. ⓘ Ce n'est pas une auto-validation qui remplacerait la
+tienne — ce sont des mesures, a charge pour toi de les relire.
+
+    25 films declares, 25 identifiants DISTINCTS, tous en 11 caracteres
+    0 iframe dans le document servi, 0 adresse YouTube dans le HTML
+    0 requete YouTube AVANT le clic, 2 apres — la construction au clic tient
+    iframe creee sur youtube-nocookie, bon identifiant, titre correct
+    Echap : dialogue ferme, IFRAME DETRUITE (le son s'arrete), focus revenu sur
+      le bouton exact qui avait ouvert
+    lecteur 860x484 au large, 338x190 a 375 px — ratio 1,78 tenu, aucun debord
+    correspondance verifiee sur deux points : apocalypse -> pspLNdZQdRE,
+      cygne-noir -> hS7YLibxX4s
+
+Rien a corriger de ton cote. **Restent #157 et #158**, plus les huit bancs que je n'ai toujours
+jamais pu jouer.
+
+ⓘ Un detail qui n'est pas pour toi mais que je signale a Boris : les sous-titres d'au moins une
+video ecrivent « Signe noir » la ou le scenario s'appelle « Cygne noir ». C'est de la production
+video, pas du code.
