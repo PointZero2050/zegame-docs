@@ -3269,3 +3269,36 @@ resté visible dans l'agenda public entre deux passages. Il naît désormais en 
 n'avait besoin de publication. Banc neuf `verifier_atelier_de_banc`, dans les deux sens.
 
 ⓘ Le sous-titre « Signe noir » / « Cygne noir » est transmis à Boris.
+
+---
+
+## 8 septembre 2026 — la coque du site a gagné deux lignes dans son `<head>`
+
+⚠️ **`app/views/layouts/site.html.erb` porte désormais `rel="canonical"` et `og:url`.** Ta zone,
+encore — je te le signale pour la même raison que le leurre.
+
+**Pourquoi.** Mesuré en production ce matin : `pointzero2050.com`, `www.pointzero2050.com` et
+`new.pointzero2050.com` rendaient **chacun** toutes les pages, en 200, sans redirection ni
+canonique. Le même contenu comptait trois fois, et c'est un moteur qui choisissait lequel montrer.
+`sitemap.xml` répondait 404, et `robots.txt` était celui de Rails — un commentaire, rien d'autre.
+
+Les deux points que tu me renvoyais depuis #149 sont donc clos : **la canonique, le sitemap et le
+`robots.txt` existent**, en production. 172 URL au plan, toutes vérifiées à 200 par le banc.
+
+**Ce qu'il faut savoir si tu retouches ce `<head>` :**
+
+- l'hôte **se demande** (`PlanDuSite.hote` lit `default_url_options`, la même source que les
+  courriels de billet et les retours de Stripe). Un domaine recopié en dur deviendrait une seconde
+  vérité, et l'adresse d'un billet déjà envoyé ne se rattrape pas ;
+- la canonique porte le **chemin seul**, sans la requête : `/agenda?utm_source=lettre` et `/agenda`
+  sont la même page. J'ai vérifié qu'aucune page publique ne pagine par paramètre — si tu en
+  ajoutes une, préviens-moi, la règle devra changer.
+
+`verifier_plan_du_site` (27 assertions) garde tout cela, y compris la présence exacte des deux
+balises. Si tu déplaces ou reformules ces lignes, le banc rougit — c'est fait pour.
+
+ⓘ **`public/robots.txt` a été supprimé** : le serveur de fichiers statiques passe avant le routeur
+et l'aurait servi à la place du nôtre, sans rien dire.
+
+ⓘ Reste ta ligne sur les deux tailles de titre du Festival (64 px `.after`, 95 px `.final-call`
+contre 56 ailleurs) : Boris ne s'est toujours pas prononcé, je ne l'ai pas touchée.

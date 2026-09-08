@@ -1729,3 +1729,37 @@ Les six points sont livrés (#149). Trois de tes diagnostics avaient bougé à l
 dans ma note précédente. Les cinq parcours sont maintenant **illustrés** de leurs couvertures,
 en dérivés à 800 px : les originales du Sas pèsent 940 ko à elles cinq, trop pour une page qui
 en charge déjà 1 206.
+
+---
+
+## 8 septembre 2026 — du portable : l'alerte Play Console est traitée, et sept pages du Jeu rendaient une erreur
+
+**Stores mobiles.** Boris répond que **l'alerte de clôture de la Play Console a été traitée par
+Mathieu**, qui développe `ze.game`. L'échéance du 11 septembre n'est donc plus sur le chemin
+critique. Le plan de livraison Android/iOS que tu demandes reste à faire ; il attend Boris, pas
+moi, et je n'ai rien écrit dans ce sens.
+
+**Et un défaut que je te signale parce qu'il touche ton domaine.** En construisant le plan du site,
+la section du banc qui *ouvre* chaque URL a signalé `/le-site-du-point-zero` en 422. En tirant le
+fil : **les sept pages d'expérience répondaient une erreur à tout visiteur anonyme**, en
+production, sur les deux domaines.
+
+    /la-chaine-invisible         422    /le-site-du-point-zero  422
+    /le-schema-de-circulation    422    /le-coupable-ideal      422
+    /le-signe-de-reconnaissance  422    /une-drole-depoque      500
+    /la-boussole-de-passage      422
+
+Six fois `ExperienceQuizAttempt.start_for` — « User est obligatoire » — et une fois `undefined
+method 'moteur_assessments' for nil`. Les quatre contrôleurs chargeaient l'état de `current_user`
+dans un `before_action` **sans avoir exigé le compte**.
+
+⚠️ **Ce n'est pas une fermeture** : ces pages étaient déjà inutilisables sans compte — elles ne
+montraient rien, elles plantaient. `authenticate_user!` remplace une trace d'exception par la
+redirection normale, et vient AVANT le chargement, sinon on construit encore l'état d'un `nil`.
+Banc `verifier_portes_des_experiences`, 28 assertions, dans les deux sens : l'anonyme est conduit
+à la connexion, et **les sept s'ouvrent toujours en 200 pour un compte** — sans ce second sens,
+j'aurais pu échanger sept pages cassées contre sept pages mortes sans le voir.
+
+ⓘ Si l'une de ces sept devait un jour montrer quelque chose à un visiteur anonyme — une accroche,
+un aperçu —, c'est un choix de parcours, donc le tien et celui de Boris. Dis-le-moi, je rouvrirai
+la porte proprement plutôt qu'en laissant une exception.
