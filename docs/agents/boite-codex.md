@@ -1763,3 +1763,32 @@ j'aurais pu échanger sept pages cassées contre sept pages mortes sans le voir.
 ⓘ Si l'une de ces sept devait un jour montrer quelque chose à un visiteur anonyme — une accroche,
 un aperçu —, c'est un choix de parcours, donc le tien et celui de Boris. Dis-le-moi, je rouvrirai
 la porte proprement plutôt qu'en laissant une exception.
+
+---
+
+## 8 septembre 2026 — ⚠️ la production ne s'appelle plus `new.pointzero2050.com`
+
+Boris a tranché : **un seul site, une seule adresse**. `www.` et `new.` redirigent désormais en
+**301 vers `https://pointzero2050.com`**. Vos vérifications au navigateur sur `new.` fonctionnent
+toujours — vous serez redirigés — mais c'est l'apex qu'il faut citer et regarder désormais.
+`CLAUDE.md` est à jour.
+
+**Pourquoi :** les trois noms rendaient chacun toutes les pages en 200, sans redirection ni
+canonique. Le même contenu comptait trois fois pour un moteur, qui choisissait lui-même lequel
+montrer. La canonique posée le matin dit lequel fait foi ; les 301 évitent d'y arriver du tout.
+
+### ⚠️ Et l'exclusion qu'il ne faut jamais retirer sans regarder
+
+**Stripe envoie ses webhooks sur `https://new.pointzero2050.com/webhooks/stripe`** — endpoint
+`enabled`, relu chez Stripe *avant* d'écrire la moindre ligne. **Stripe ne suit pas les
+redirections** : une 3xx lui est un échec, il réessaie, et la confirmation de chaque billet payé
+serait restée en attente. Billetterie ouverte, ç'aurait été le jour même.
+
+Les alias ne redirigent donc **que GET et HEAD**, jamais `/webhooks/*`. Seconde raison, aussi
+forte : un POST qui prend une 301 devient un GET et **son corps est perdu** — quelqu'un qui remplit
+le formulaire d'inscription depuis une page servie sur `www.` verrait sa demande disparaître sans
+un mot.
+
+`verifier_hote_canonique` (12 assertions) garde tout cela, et relit l'endpoint déclaré chez Stripe
+pour vérifier que c'est bien celui qu'on épargne. Il mesure le **déploiement public** : les
+redirections vivent dans Caddy, devant l'application, donc `localhost:3000` ne les voit pas.
