@@ -227,3 +227,50 @@ Une fois la bascule stable :
 | **Total le jour J** | **environ 1 h 30**, dont beaucoup d'attente |
 
 L'extinction de WordPress, une semaine plus tard, demande une heure de plus.
+
+---
+
+## 11. Le 8 septembre 2026 — un seul nom, et l'exclusion qui va avec
+
+La bascule laissait **trois noms servir le même site**, chacun en 200 : `pointzero2050.com`,
+`www.pointzero2050.com` et `new.pointzero2050.com`. Aucun ne redirigeait, aucune page ne portait de
+canonique. Le même contenu comptait donc trois fois pour un moteur de recherche, qui choisissait
+lui-même lequel montrer.
+
+Deux gestes, le même jour :
+
+1. **La canonique** (`rel="canonical"` + `og:url`) dans la coque du site, dérivée de
+   `default_url_options[:host]` — la source qui sert déjà les courriels de billet et les retours de
+   Stripe. Plus `sitemap.xml` (172 URL, toutes vérifiées vivantes) et un `robots.txt` qui l'annonce.
+2. **Deux 301** : `www.` et `new.` vers l'apex, dans `~/deploy/caddy/Caddyfile`, rechargées à chaud
+   par `caddy reload` — aucune coupure. Sauvegarde : `Caddyfile.avant-301-20260908-2153`.
+
+### ⚠️ La lecture qui a changé la forme de la réponse
+
+**Stripe envoie ses webhooks sur `https://new.pointzero2050.com/webhooks/stripe`** — endpoint
+`enabled`, relu chez Stripe *avant* d'écrire quoi que ce soit. **Stripe ne suit pas les
+redirections** : une 3xx lui est un échec, il réessaie, et la confirmation de chaque billet payé
+serait restée en attente. Une 301 posée sans cette lecture aurait cassé les paiements le jour même,
+billetterie ouverte.
+
+Les deux alias ne redirigent donc **que la navigation — GET et HEAD** — et jamais `/webhooks/*`.
+
+**Seconde raison, aussi forte :** un POST qui prend une 301 est transformé en GET par le navigateur
+et **son corps est perdu**. Quelqu'un qui remplit le formulaire d'inscription depuis une page servie
+sur `www.` verrait sa demande disparaître sans un mot. Les autres méthodes restent servies, et
+l'application renvoie ensuite vers l'apex par ses propres URL absolues.
+
+### Ce qui garde tout cela
+
+`scripts/verifier_hote_canonique.rb` (12 assertions). ⚠️ **Il mesure le déploiement public, pas le
+conteneur qui l'exécute** : les redirections vivent dans Caddy, devant l'application, et
+`localhost:3000` ne les voit pas. Il interroge les vrais noms par l'internet, et dit la même chose
+d'où qu'il soit lancé.
+
+Il existe pour garder **l'exclusion** plus que la 301 : il relit l'endpoint déclaré chez Stripe et
+vérifie que c'est bien celui qu'on épargne. Le jour où l'endpoint sera déplacé sur l'apex — geste
+souhaitable, et qui demande de **vérifier**, pas de supposer —, ce banc dira que l'exclusion peut
+tomber. Et si quelqu'un la retire avant, il rougira le jour même.
+
+⚠️ **`new.pointzero2050.com` n'est donc plus l'adresse de la production** : c'est un alias qui
+redirige. La production se lit sur **https://pointzero2050.com**.
