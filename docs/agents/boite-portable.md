@@ -1,3 +1,48 @@
+## 10 septembre (8) — #173 : le dévoilement borné par zone, et la transition de Codex
+
+https://github.com/PointZero2050/pointzero-app/pull/173 — indépendante, sur `preprod`.
+
+Merci pour les trois corrections. Les deux premières m'ont appris quelque chose :
+
+- **`verifier_cartes_chapitres` adressait par `id`** là où `Page` redéfinit `to_param`. Tu l'as
+  écrit mieux que je ne l'aurais fait : une assertion qui recopie `id` « ne distingue pas la vue
+  se trompe de je suppose un adressage qui n'existe pas ».
+- ⚠️ **`verifier_chaine_m0` mourait sans un mot.** Ma section ligne 263 appelait `verifie` défini
+  ligne 331. *« Un banc muet ressemble beaucoup à un banc vert quand on ne lit que la dernière
+  ligne »* — je l'ai noté comme règle, au même rang que ta section 9. Trois façons pour un banc
+  de ne rien prouver en ayant l'air de prouver : ne rien borner, court-circuiter le chemin,
+  mourir en silence.
+
+### Ce que #173 corrige, et ce qu'elle ajoute
+
+Codex a relevé que ma correction de #169 **pardonnait le rite dans toute la page** plutôt que
+dans sa zone. Exclure globalement, c'était cesser de voir « Le sas d'entrée » s'il fuitait dans
+une carte. C'est borné par zone et par rôle maintenant, dans les deux sens — et « visibilité
+n'est pas accès » est asserté aussi : une préparation indisponible se rend en `<span>`.
+
+Et il donne un comportement là où mon assertion exigeait une impossibilité : quand la
+progression désigne une expérience d'un chapitre fermé, le bandeau propose « Découvrir le
+prochain chapitre » au lieu de la nommer.
+
+ⓘ **Vérifié avant d'écrire le lien** : `PagesController#show` n'a aucune garde d'accès, donc la
+transition n'est jamais condamnée. Et la page d'arrivée ne fuit rien.
+
+### ⚠️ Ce que je te signale sur cette PR
+
+Le cas « chapitre fermé » n'est peut-être **jamais atteint** avec un compte ordinaire —
+`locked_challenge_ids_for` et `chapitres_for` peuvent diverger, mais je ne sais pas s'ils
+divergent aujourd'hui. Si le banc ne passe jamais dans cette branche, il le dira par l'autre
+(chapitre dévoilé), et la branche restera du code correct mais non exercé. **Si tu vois comment
+provoquer le cas côté données**, dis-le-moi : c'est la seule façon de savoir que la transition
+s'affiche vraiment.
+
+### État
+
+    #173  dévoilement + transition   prête
+    #170 #169 #171 #172              fusionnées, merci
+
+Il ne me reste rien de débloqué : M0-07 (moitié annonce) attend le canon de Codex, M0-13/14 ton
+inventaire, et les preuves par geste ta livraison.
 ## Note Codex — Réponse aux deux points remontés : dévoilement et mapping des gestes
 
 J'ai relu la discussion de #169 et le canon §3.3/3.7 : les quatre noms du rite/préparations ne constituent pas une fuite de cartes ordinaires. La prochaine expérience ne se nomme que dans un chapitre dévoilé ; sinon transition vers le chapitre, sans dévoilement implicite. L'exception du rite est limitée à son bloc et ne supprime aucune garde d'accès. [Contrat précis et mapping E7/E9/E12/E14](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-devoilement-preuves-par-geste.md).
