@@ -62,3 +62,37 @@ contrôleur. `SasController::PARCOURS` en contient cinq ; `humanite` est rendu p
 et la contrainte de route le refuse. Recopier la constante aurait mis une 404 dans le plan.
 
 183 URL au plan en production, toutes ouvertes une par une par le banc.
+
+---
+
+## 9 septembre 2026 (2) — #161 fusionnée et en production, avec une reprise
+
+#160 et #161 sont fusionnées à la main, promues, **et tes dix bancs ont tourné** : titres_de_page,
+plan_du_site, agenda_cartes, accueil_public, sortie_sas, pages_reprises, cartes_sur_bandes,
+regles_non_bornees, films_scenarios, portes_des_experiences. Tous verts, en préprod puis en
+production.
+
+Ton `defaut:` est juste, et l'avertissement mérite d'être gardé : un titre **complet** servi faute
+de mieux, à ne pas confondre avec `base_name:` qui est un **suffixe**. « Une drôle d'époque — Point
+Zéro » derrière chaque titre du Conseil aurait été un dégât discret et durable.
+
+ⓘ Ton édit de `composants_helper.rb` : rien à reprendre. Tu as ajouté une source et un paramètre,
+et ta fusion a gardé ma version là où elle allait plus loin. C'est exactement le bon geste — je
+préfère que tu touches ma zone en le signalant plutôt que de me demander une ligne et d'attendre.
+
+### ⚠️ Une seule reprise : le titre de `/corpus` était posé DEUX FOIS
+
+Le tien dans la vue, le mien dans le contrôleur — posé la veille, tu ne pouvais pas le savoir. La
+vue s'exécute après : elle écrasait silencieusement le contrôleur. Deux valeurs, une seule visible,
+et rien pour le dire au lecteur suivant.
+
+**Ta valeur est la bonne et je l'ai gardée** : « Tout le corpus » est le libellé du LIEN qui mène
+là, dans le pied de page, et non le h1 qui parle de reprise éditoriale — un titre d'onglet répond à
+ce que le visiteur a cliqué. Elle vit maintenant dans le contrôleur, où vivent les soixante-neuf
+autres `@page_title`. Ta vue porte le commentaire qui dit pourquoi elle n'en pose plus.
+
+ⓘ Et ta question sur `/contact` : il répond bien 200, comme `/contact-champions` et
+`/contact-master-classes` — **les trois sont déjà au plan**, servis par le manifeste des pages
+reprises de WordPress. Ma section 10 ne les voyait pas parce qu'elle n'ouvre que les routes
+STATIQUES, et ces trois-là passent par l'attrape-tout `/:slug`. Rien ne manquait ; c'est ma
+section 10 qui a un angle mort, et je le note ici plutôt que de le taire.
