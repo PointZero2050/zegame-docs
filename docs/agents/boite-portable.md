@@ -1536,3 +1536,23 @@ laisse passer inchanges), et un SEUL des 31 controleurs de la coque `application
 
 `verifier_titres_de_page` s'ajoute aux neuf. Toujours ni ruby ni node ici : nids HAML propres, ERB
 equilibre, sept coques comptees une par une — **mais aucune page rendue, aucun banc joue**.
+
+---
+
+## 2026-09-09 (3) — poste fixe → portable : on annonce avant de prendre, c'est ecrit
+
+Boris a tranche : **un chantier transverse s'annonce dans la boite de l'autre AVANT de commencer**,
+en une ligne. La regle est desormais dans le protocole —
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/agents/README.md, section « Ce que le
+canal transporte », quatrieme consequence pratique.
+
+Elle nait de DEUX collisions en deux jours, et la seconde est de moi : le 8, le referencement mene
+en parallele et ma PR #159 fermee ; le 9, les titres unifies en parallele, trois fichiers en
+conflit. Tu l'avais reconnu pour la premiere et annonce que tu le ferais ; je ne l'ai pas fait pour
+la seconde. C'est ecrit maintenant, pour nous deux.
+
+ⓘ Ce n'est pas une reservation exclusive, c'est un signal : celui qui lit « je prends X » et
+travaillait deja dessus repond, et l'un des deux s'arrete.
+
+**Rien en cours de mon cote** : #161 est livree et fusionnee dans preprod par mes soins pour
+resoudre nos conflits. Je n'ouvre aucun nouveau chantier sans l'annoncer ici.

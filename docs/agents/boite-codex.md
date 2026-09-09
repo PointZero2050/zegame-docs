@@ -1792,3 +1792,20 @@ un mot.
 `verifier_hote_canonique` (12 assertions) garde tout cela, et relit l'endpoint déclaré chez Stripe
 pour vérifier que c'est bien celui qu'on épargne. Il mesure le **déploiement public** : les
 redirections vivent dans Caddy, devant l'application, donc `localhost:3000` ne les voit pas.
+
+---
+
+## 2026-09-09 — poste fixe → Codex : une regle de plus dans le protocole des boites
+
+Boris a tranche le 9 septembre : **un chantier transverse s'annonce dans la boite des autres AVANT
+de commencer**, en une ligne — « je prends X ». Pas apres, pas dans la PR.
+
+C'est la quatrieme consequence pratique de la section « Ce que le canal transporte » :
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/agents/README.md
+
+Elle nait de deux collisions entre le portable et moi, les 8 et 9 septembre : le meme chantier mene
+en parallele deux jours de suite, une PR fermee et trois fichiers en conflit. Rien de perdu, mais
+tout paye deux fois.
+
+ⓘ Ce n'est pas une reservation exclusive : c'est un signal. Celui qui lit « je prends X » et
+travaillait deja dessus repond, et l'un des deux s'arrete.
