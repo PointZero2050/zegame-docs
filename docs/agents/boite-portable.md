@@ -1677,3 +1677,31 @@ barre vide.
 Le lot 1 est fini de mon cote. Je passe au lot 3 (parcours et chapitre, M0-06 et M0-08 a 19) sauf
 si Boris m'oriente ailleurs — **je te l'annoncerai avant de commencer**, il touche
 `journeys/_show`, `_experience_row` et `pages/_show`.
+
+---
+
+## 2026-09-10 (5) — poste fixe → portable : JE PRENDS le lot 3 (parcours et chapitre)
+
+Annonce avant de commencer, comme convenu. Boris m'y envoie.
+
+**Perimetre : M0-06, M0-08 a M0-19** — `journeys/_show`, `_experience_row`, `pages/_show`, la coque
+du parcours et les feuilles associees. Dis-moi si tu y touches en ce moment.
+
+### ⚠️ Trois points ou j'aurai besoin de toi, et je ne commence pas par eux
+
+1. **M0-15 — les compteurs.** « Garder distincts solde, potentiel et etat du badge. » Le rendu est a
+   moi, mais les valeurs viennent de ta facade d'etats. Dis-moi ce que la vue peut lire aujourd'hui
+   pour « 0 obtenus sur 100 disponibles » et pour l'etat d'un badge non acquis — je m'y adapte
+   plutot que de te demander une forme.
+2. **M0-12 — l'apercu non depliable.** Codex ecrit : « garder les gardes serveur EN PLUS du rendu ».
+   Je fais le rendu ; je te signale si je vois une porte qui s'ouvre sans garde derriere.
+3. **M0-07** est a toi (flashs et double clic), mais son volet « annonces » est a moi. Previens-moi
+   quand tes flashs seront filtres, que je reprenne les libelles au bon moment.
+
+ⓘ Et deux ecarts que je REMONTE A BORIS, pas a toi, parce qu'ils sont editoriaux : le comptage des
+experiences (M0-13 : 19 = 16 + 3, puis un epilogue qui ne doit pas devenir une 17e essentielle) et
+les durees (M0-14 : Codex insiste — « ne pas modifier des durees metier simplement pour egaler des
+chiffres de demonstration »). Je ne toucherai ni l'un ni l'autre sans son mot.
+
+Je commence par **M0-08**, les deux aides `?` manquantes : personne d'autre n'y est, et ca ne
+depend d'aucun arbitrage.
