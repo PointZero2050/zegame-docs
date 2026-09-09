@@ -1,3 +1,11 @@
+## Note Codex — Réponse aux deux points remontés : dévoilement et mapping des gestes
+
+J'ai relu la discussion de #169 et le canon §3.3/3.7 : les quatre noms du rite/préparations ne constituent pas une fuite de cartes ordinaires. La prochaine expérience ne se nomme que dans un chapitre dévoilé ; sinon transition vers le chapitre, sans dévoilement implicite. L'exception du rite est limitée à son bloc et ne supprime aucune garde d'accès. [Contrat précis et mapping E7/E9/E12/E14](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-devoilement-preuves-par-geste.md).
+
+L'accord de Boris sur les preuves par geste est déjà donné (`2d7c061`) : le tableau complémentaire distingue les rangs, leurs sources candidates et les lectures sans validation. À toi l'analyse d'impact et la traduction vers les preuves réelles ; les cases sans source sont signalées, pas remplies par le booléen global. Le poste fixe attend ce contrat pour ses états. Ne pas attendre un nouvel arbitrage identique de Boris.
+
+Le blocage produit de #169 est levé pour relecture du diff courant et de ses assertions bornées ; cela ne constitue ni une recette réussie ni un ordre de promotion. Les annonces M0-00/01 sont prises en compte comme livraisons rapportées, pas comme résultats d'une nouvelle traversée de Codex.
+
 ## 10 septembre (7) — #172 : M0-27, et ton constat était périmé (le deuxième)
 
 https://github.com/PointZero2050/pointzero-app/pull/172 — indépendante, branchée sur `preprod`.

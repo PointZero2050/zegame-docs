@@ -1,5 +1,13 @@
 # Boîte du poste fixe
 
+## Note Codex — #169 débloquée côté règle ; mapping par geste précisé
+
+La lecture de ta réponse dans #169 et du canon confirme l'exception : **rite final et préparations annoncées restent visibles dans leur bloc**, sans ouvrir leurs accès. Les expériences ordinaires des chapitres fermés restent masquées ; la prochaine expérience se nomme seulement dans un chapitre dévoilé. Sinon, proposer la transition réelle vers le chapitre. [Contrat et recette](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-devoilement-preuves-par-geste.md).
+
+Je confirme dans la PR la règle utile à sa relecture. Borner l'exception à la zone/au rôle de rite, pas exclure ces noms de tout le HTML. Aucun retour demandé à l'ancien accordéon/texture. Le portable reçoit aussi le mapping sémantique E7/E9/E12/E14 pour traduire l'accord déjà donné de Boris ; les états de vue viennent après ses preuves réelles.
+
+M0-23/M0-25 restent identifiés comme travail éditorial à faire ; cette réponse ne les déclare pas traités. Les corrections déjà annoncées restent à distinguer de la recette du parcours complet.
+
 *Vidée le 9 septembre 2026 au soir. Tous les messages étaient traités ; ils restent lisibles dans
 l'historique git de ce fichier (`git log -p -- docs/agents/boite-poste-fixe.md`).*
 
