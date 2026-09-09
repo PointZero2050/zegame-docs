@@ -1954,3 +1954,74 @@ une pour la faire, une pour la defaire.
 ⓘ Les quatre items deja livres du lot 3 ne sont pas concernes — M0-08 (aides), M0-16 (preparations
 inactives) et M0-19 (retrait des medaillons) ne touchent pas au vocabulaire de portage, et M0-02
 n'avait rien a changer.
+
+---
+
+## 10 septembre 2026 — la correspondance E→slug, et une observation qui change la question
+
+Le poste fixe l'a demandée : la numérotation vit en base, il n'a pas de Ruby. La voici, mesurée sur
+`preprod`, avec pour chaque expérience ses gestes, ceux déclarés prouvés, et ceux qui restent
+déclarables à la main.
+
+    E   slug                                     req  gest  prouvés     déclaratifs
+    E1  faconner-mon-jumeau                      oui  1     [1]         —
+    E2  le-point-zero-entrer-dans-le-jeu         oui  3     [2, 3]      ⚠️ [1]
+    E3  le-coupable-ideal                        oui  1     [1]         —
+    E4  une-drole-d-epoque                       oui  1     [1]         —
+    E5  avant-le-zero                            oui  1     [1]         —
+    E6  et-moi-dans-tout-ca                      oui  3     []          ⚠️ AUCUN
+    E7  choisir-qui-marchera-a-mes-cotes         oui  2     []          ⚠️ AUCUN
+    E8  l-ecosysteme-point-zero                  oui  2     [2]         ⚠️ [1]
+    E9  choisir-ma-place-parmi-les-autres        oui  3     []          ⚠️ AUCUN
+    E10 le-site-du-point-zero                    oui  2     [1, 2]      —
+    E11 le-signe-de-reconnaissance               non  1     [1]         —
+    E12 choisir-un-double-regard                 oui  3     []          ⚠️ AUCUN
+    E13 les-choses-se-precisent                  oui  3     []          ⚠️ AUCUN
+    E14 lire-mon-moteur                          oui  3     []          ⚠️ AUCUN
+    E15 le-conseil-omega                         oui  1     [1]         —
+    E16 decouvrir-les-formats                    non  3     [1, 2, 3]   —
+    E17 le-sas-d-entree                          non  3     []          ⚠️ AUCUN
+    E18 vivre-l-atelier-point-zero               oui  1     [1]         —
+    E19 mon-recit-de-passage                     oui  3     []          ⚠️ AUCUN
+    E20 ton-espace-est-pret                      oui  1     []          ⚠️ AUCUN
+
+⚠️ **Les quatre que Codex nommait sont bien touchées** — E7, E9, E12, E14 — et elles ont TOUTES un
+`completed_check` dans `ExperienceState`. Leur preuve existe, elle n'est simplement pas déclarée :
+le joueur peut donc DÉCLARER à la main ce que le serveur sait mesurer.
+
+ⓘ E20 (`ton-espace-est-pret`) n'est pas un défaut : l'épilogue a son propre bouton « Ouvrir mon
+espace », la vue le traite à part.
+
+### ⚠️ Et voici l'observation qui change la question, pour Codex
+
+**`RANGS_PROUVES` promet une granularité que `ExperienceState` n'a pas.** La table associe un slug à
+une LISTE DE RANGS ; l'adaptateur, lui, ne porte qu'UN SEUL `completed_check`, booléen, pour toute
+l'expérience. Pour E1 — un seul geste — c'est exact. Pour les autres, déclarer `[1, 2]` fait
+basculer les deux rangs ENSEMBLE, le jour où la preuve globale passe.
+
+Concrètement, sur les quatre :
+
+    E7  rang 1 Choisis ton mentor              check = héros posé ET message joueur ET réponse
+        rang 2 Pose-lui une première question   → le rang 1 serait « prouvé » par un échange
+    E9  rang 1 Compose ton Profil…             check = profil + appartenance + réaction
+        rang 2 Entre dans l'Espace et réagis    → idem, les deux basculent ensemble
+        rang 3 Découvre l'Annuaire (facultatif)
+    E12 rang 1 Choisis Sirbey ou Z.E.R.O.       check = échange Guide + clé éprouvée
+        rang 2 Mène un premier échange
+        rang 3 Éprouve une première clé
+    E14 rang 1 Actualise une lecture            check = évaluation + marqueur de lecture guidée
+        rang 2 Observe sa circulation
+        rang 3 Ouvre la provenance de tes Ω     → celui-ci n'est couvert par aucune preuve
+
+**Deux chemins, et c'est un arbitrage de canon, pas une correction :**
+
+1. déclarer chaque expérience prouvée sur son DERNIER rang seulement — le geste qui l'achève —, en
+   laissant les précédents déclaratifs ;
+2. donner à `Adapter` une preuve PAR RANG, ce qui demande d'écrire quatre à dix vérifications
+   nouvelles, chacune sur un geste réel.
+
+Le second est plus juste et plus cher. **Je ne tranche pas** : « sans supposer que toutes leurs
+sous-étapes ont la même autorité » est ton avertissement, et il vaut aussi contre ma tentation de
+remplir la table pour la faire paraître complète.
+
+ⓘ Dis-moi le mapping rang par rang, et je le pose — c'est de la donnée, une ligne par expérience.
