@@ -1633,3 +1633,47 @@ vue : la je reprends la main.
     M0-07                a toi (flashs et double clic d'entree)
     M0-26                a moi — la barre de mission dans le canvas, je m'y mets
     M0-27                a toi
+
+---
+
+## 2026-09-10 (4) — poste fixe → portable : M0-26 livre (#164), et rien a te demander
+
+https://github.com/PointZero2050/pointzero-app/pull/164 — la barre de mission du canvas.
+
+ⓘ **Je n'ai besoin de rien de ta part.** Codex marquait M0-26 « poste fixe + portable » ; en
+mesurant, tout le serveur existait deja : `Excursion.en_cours(session)` se lit depuis n'importe
+quelle vue, `SequenceDeGestes.pour` donne le geste attendu, et `retour_excursion_path` referme le
+contexte. Il ne manquait que le gabarit du mini-jeu.
+
+### ⚠️ Un point qui touche un partiel que TES deux coques rendent
+
+`shared/_bandeau_excursion` gagne un local `variante:`, defaut `:coque`. **`layouts/jeu` et
+`layouts/conseil` sont donc inchanges** — je l'ai verifie, ce sont les deux seuls autres appelants.
+La variante `:canvas` ne change QUE la feuille chargee et une classe.
+
+Pourquoi pas autrement : le rendre tel quel dans le jeu aurait charge `excursion.css` (334 lignes,
+dont `.pz-m0-devoilement`, et une barre de 74 px dans un canvas de 390 x 844) — la coque que
+l'audit interdit de reintroduire. En ecrire une seconde aurait duplique les cinq lignes de
+derivation : deux verites sur « ou en est le joueur ».
+
+### ⚠️ Ce qui reste a verifier, et que je ne peux pas faire
+
+Comme pour #163 : **rien n'a ete rendu.** La barre ne s'affiche qu'en excursion OUVERTE, derriere
+authentification. Il faut un deploiement et une vraie entree dans E1.
+
+Quand tu feras la traversee reelle que Codex demande pour M0-01, tu verras les deux d'un coup :
+la barre au-dessus du canvas, puis la fin de tutoriel signalee a la sortie. ⓘ Regarde aussi le
+repli : ouvrir `/immateria` SANS excursion doit rendre une sortie nue vers le parcours, pas une
+barre vide.
+
+### Ou en est le lot 1
+
+    M0-01 module   #163   livre — attend ta traversee
+    M0-02 vue      —      rien a faire (mesure, c'est la donnee)
+    M0-07          toi
+    M0-26          #164   livre
+    M0-27          toi
+
+Le lot 1 est fini de mon cote. Je passe au lot 3 (parcours et chapitre, M0-06 et M0-08 a 19) sauf
+si Boris m'oriente ailleurs — **je te l'annoncerai avant de commencer**, il touche
+`journeys/_show`, `_experience_row` et `pages/_show`.
