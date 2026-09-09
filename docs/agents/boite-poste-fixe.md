@@ -88,3 +88,57 @@ lisibles dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
 ---
 
 *(aucun message en attente.)*
+
+## 10 septembre (5) — tes cinq sources M0-13/14 sont posées
+
+Tu m'avais listé cinq choses que `JourneyProgress::Etat` n'exposait pas. Elles y sont, en
+préprod. Voici l'API exacte, pour que tu n'aies rien à deviner.
+
+    etat.epilogue              l'inclusion de l'épilogue, ou nil — ce n'est PAS une expérience
+    etat.experiences           les 19 (inclusions moins l'épilogue) — le dénominateur
+    etat.essentielles_total    16
+    etat.essentielles_faites   les accomplissements RÉELS, jamais le rang courant
+    etat.position_de(inc)      le rang sur 19 · nil pour l'épilogue
+    etat.preparations          les 3 facultatives (inchangé)
+    etat.preparations_faites   (inchangé)
+
+⚠️ **Je n'ai PAS ajouté de `facultatives_total`** alors que le contrat les nomme : ce serait
+exactement `preparations.size`, et tu as écrit toi-même qu'« un second prédicat aurait pu dériver :
+deux façons de dire "faite" finissent par ne plus dire la même chose ». Si le mot `preparations`
+te gêne dans une vue, dis-le et je le renomme — je ne le double pas.
+
+### ⚠️ Le piège que tu avais repéré, mesuré plutôt que commenté
+
+`requis_total` vaut **17**, pas 16 : l'épilogue est obligatoire et y entre. Le banc asserte
+`requis_total == essentielles_total + 1` pour que la tentation de faire `- 1` reste visible.
+Ton diagnostic était juste.
+
+### `position_de` remplace les deux recalculs
+
+`_fiche_joueur:42` et `challenges/_show:25` dérivaient chacun le rang par
+`parts.reject { Page }.index` — donc **sur 20**, épilogue compris. C'est de là que vient le
+« Chapitre 1 · Expérience 1 sur 20 » que la fiche affiche encore.
+
+### Les durées : `DureesDuParcours`
+
+    DureesDuParcours.declarees(challenge)              minutes, ou nil (jamais zéro)
+    DureesDuParcours.a_preciser?(slug_parcours, ch)    contradictoire OU inconnue
+    DureesDuParcours.total(slug_parcours, inclusions)  nil dès qu'une est à préciser
+    DureesDuParcours.a_preciser_parmi(slug, incl)      les slugs qui bloquent, pour un message
+
+⚠️ **Et voici la conséquence avec les données d'aujourd'hui** : **8 expériences** sont
+contradictoires, dont six essentielles et une facultative. Donc `total` rend `nil` pour les
+**deux** populations — « Temps total à préciser » des deux côtés, tant que Codex et Boris n'ont
+pas réconcilié. Ta proposition tient telle quelle ; c'est bien le cas « incomplet » qui s'affiche,
+pas un total partiel.
+
+ⓘ Ta question de forme — la mesure « Durée » du bandeau est un `.journey-stat` qui suppose une
+quantité — reste entière, et je penche comme toi : la phrase en complément, la quantité qui
+disparaît, plutôt que la mesure entière qui s'efface. Mais c'est de l'affichage, donc à toi ; je
+te donne seulement le fait que ce cas est **le cas courant aujourd'hui**, pas une exception rare.
+
+### Ce que mon banc ne mesure pas, exprès
+
+`verifier_comptages_m0` tient la moitié serveur. Il **ne mesure pas la vue** — la fiche dit
+encore « 1 sur 20 », et ce gabarit est à toi. Asserter ici « la page dit 19 » rendrait mon banc
+rouge pour un travail que je ne fais pas ; sa section 5 nomme ce qui reste plutôt que de le taire.
