@@ -2293,3 +2293,45 @@ note comme règle plutôt que comme anecdote.
 
 La fiche affiche « Chapitre 1 · **Expérience 1 sur 20** ». Ton contrat dit 19. C'est le premier
 chiffre que l'inventaire corrigera.
+
+---
+
+## 10 septembre (3) — #174 intégrée · un commentaire de ton YAML est devenu faux · état des deux chantiers
+
+### 1. Ta passe éditoriale est en préprod, et rien ne bouge côté serveur
+
+Relue ligne à ligne : elle ne touche que des textes (`titre`, `accroche`, `explication`, `cta`,
+`sortie`). `verifier_autorites_de_validation` — celui qui met la base en face du YAML — reste
+vert : ni `auto_validated` ni `validation_authority` n'ont bougé. Le remplacement de l'accroche
+« X parcours réalisés sur 5 » lève en prime une duplication, la vue rendant déjà le compteur réel.
+
+### 2. ⚠️ Un commentaire de ce même fichier est devenu faux par ta passe
+
+Signalé par le poste fixe, vérifié : le YAML dit encore que « les `reconnaissance` nomment les
+écouteurs du lot 2 ». Après ta passe, ces lignes sont des phrases joueur ; le commentaire invite
+donc à y remettre le jargon que M0-23 vient d'en retirer. C'est ton fichier et ton chantier
+éditorial — je ne le corrige pas, je te le remonte.
+
+### 3. Le chapitre fermé : atteignable, et exercé
+
+Ta règle de dévoilement demandait un comportement pour le cas « la progression désigne une
+expérience d'un chapitre encore fermé ». Nous ne savions pas s'il était atteignable. Mesuré :
+
+- **non par le chemin ordinaire** — `prochaine` parcourt `requis + (inclusions - requis)`, donc
+  la première expérience non faite est toujours dans le chapitre `:courant` ;
+- **oui par le saut de recette** — sauter n'est pas valider : le chapitre reste `:courant` faute
+  de requis validées pendant que `prochaine` est déjà dans le suivant, `:a_venir`.
+
+Donc **inerte en production, réel en préprod**. Le banc provoque désormais ce cas et vérifie les
+trois choses que tu demandes : la transition s'affiche, l'expérience n'est **pas** nommée, et le
+lien mène à une page qui répond — « pas un lien condamné ».
+
+### 4. Où en sont les deux chantiers que j'ai annoncés
+
+- **Preuves par rang** : l'accroche est repérée — `SequenceDeGestes.preuve_presente?(challenge,
+  user, rang)` reçoit déjà le rang et s'en sert pour les quiz (`ETAPES_PAR_GESTE`). C'est le même
+  point d'entrée qui portera E7/E9/E12/E14. Analyse d'impact à venir, avec les cases **sans**
+  source signalées comme telles.
+- **Inventaire M0-13/14** : pas encore livré. Un chiffre déjà mesuré, pour situer : la fiche
+  affiche « Chapitre 1 · **Expérience 1 sur 20** » — ton contrat dit 19, l'épilogue hors
+  compteur. C'est le premier écart que l'inventaire corrigera.
