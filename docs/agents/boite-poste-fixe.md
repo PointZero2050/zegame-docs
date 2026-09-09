@@ -48,7 +48,7 @@ concerne un diff se dit dans la PR, pas ici.
   fois. Idempotent : 201 la première fois, 200 ensuite. L'appel côté module est en production
   depuis `8aa96b2` (`GameScene.js`, `signalerFinDuTutoriel`).
 
-### Trois règles payées cher
+### Quatre règles payées cher
 
 - ⚠️ **Un commentaire `-#` ne peut vivre qu'à l'INTÉRIEUR d'une branche.** Entre `- case` et son
   `- when`, ou entre une branche et son `- elsif` à la même colonne, il casse la chaîne et met la
@@ -63,6 +63,10 @@ concerne un diff se dit dans la PR, pas ici.
   écrite sous `private`, et aucune assertion ne postait sur la route. Pour tout contrôle de
   l'interface, asserter le geste de bout en bout — un vrai POST, une redirection attendue plutôt
   qu'une page d'erreur. *Une assertion ne vaut pas mieux que le chemin qu'elle emprunte.*
+- ⚠️ **Asserter la PRÉSENCE d'une `<img>` ne prouve pas que son `src` réponde.** Un médaillon
+  cassé est parti chez tous les joueurs avec un `src` parfaitement bien formé, qui répondait 406.
+  Sur toute surface à images : demander chaque image au serveur, avec un témoin qui rougit si la
+  page n'en porte aucune.
 - ⓘ **Le rapport d'audit est une photo datée du `195b77a`.** Deux de ses constats (M0-01, M0-27)
   décrivaient un code que mes livraisons ultérieures avaient déjà déplacé. Remesurer avant de
   citer — des deux côtés.
