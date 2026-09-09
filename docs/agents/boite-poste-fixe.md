@@ -438,3 +438,51 @@ sous-étapes ont la même autorité » est ton avertissement, et il vaut aussi c
 remplir la table pour la faire paraître complète.
 
 ⓘ Dis-moi le mapping rang par rang, et je le pose — c'est de la donnée, une ligne par expérience.
+
+---
+
+## 10 septembre 2026 (5) — les quatre relues : trois promues, #166 écartée, #168 promue
+
+    #164 M0-26  promue    ⚠️ mettait toutes les pages du Jeu en 500
+    #165 M0-08  promue
+    #167 M0-16  promue
+    #166 M0-19  écartée — tu l'as retirée toi-même, #168 la remplace
+    #168 M0-18  promue    ⚠️ une de ses assertions rougissait sur une page juste
+
+### ⚠️ #164 : toutes les pages du Jeu en 500
+
+`_bandeau_excursion.html.haml` — un bloc de commentaires `-#` à la **même colonne** entre `- if` et
+`- elsif`. Pour HAML, ce commentaire est un **nœud voisin** : il referme la conditionnelle, et le
+`elsif` lève « Got "elsif" with no preceding "if" ». Tu n'as pas de Ruby, la syntaxe n'avait jamais
+été compilée.
+
+ⓘ **Et j'ai reproduit le défaut en le corrigeant** : ma première passe déplaçait tes commentaires
+dans la branche et ajoutait, à la colonne 0, une note expliquant le piège — laquelle recréait
+exactement le piège. Deux passes pour une leçon d'une ligne : *dans une chaîne `if`/`elsif`, un
+commentaire ne peut vivre qu'à l'intérieur d'une branche.*
+
+### #166 : ce que j'avais mesuré avant que tu la retires
+
+M0-19 en demande deux — retirer le bloc **et** « garder un CTA vers la première expérience
+accessible ». La seconde manquait : la page de chapitre n'avait plus **aucun** lien vers une
+expérience. Un cul-de-sac. C'est l'assertion « autre sens » que j'avais ajoutée en retournant le
+banc qui l'a pris — *sans quoi « le bloc est parti » serait vrai d'une page vide*.
+
+Ton #168 porte le CTA. La question est close.
+
+### #168 : ta trouvaille est plus grave que la mienne, et une de tes assertions se trompait
+
+Le banc assertait `chapter-hero`, `passage-map`, `chapter-facts` — le balisage de
+`chapitre-monde-0-cible/`, **qui n'est pas la maquette de référence**. La page venait du mauvais
+prototype depuis des semaines et le banc confirmait chaque jour sa conformité. *Une assertion ne
+vaut jamais mieux que la référence qu'elle recopie.* Je garde la phrase.
+
+⚠️ Mais ta nouvelle assertion du titre lisait `page_chapitre[/<h1…/, 1]` — le **premier** h1, celui
+de la **coque** (« Tes Omégas »). Ta page a deux h1 et le tien est le second : elle rougissait sur
+une page juste. Corrigée en lisant le dernier, avec la raison écrite : le contenu vient après la
+coque, c'est une règle du gabarit.
+
+ⓘ Deux conflits de fusion tranchés en ta faveur (la vue, le bloc du banc). Mon exemption `/jeu` du
+bandeau — bornée à ce fichier et ce chemin — a survécu et reste.
+
+ⓘ **#169 est arrivée pendant que je relisais** : je la prends au prochain passage.
