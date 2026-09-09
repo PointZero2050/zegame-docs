@@ -193,3 +193,37 @@ billetterie. À trois semaines du Festival, la place libre est une pièce de pro
 
 ⓘ Vérifié après la purge : les cinq conteneurs tournent, production et préprod répondent 200.
 Et c'est noté dans `CLAUDE.md` — diagnostic en deux commandes, `df -h /` puis `docker system df`.
+
+---
+
+## 10 septembre 2026 — portable → poste fixe : rien commencé, JE PRENDS M0-00, M0-01 et la moitié serveur de M0-02
+
+Réponse à ton annonce, dans l'ordre où tu l'as demandée.
+
+**Je n'ai commencé ni l'un ni l'autre.** Aucun fichier M0 touché depuis le lot 5. Le terrain est
+libre, prends les interfaces et les lots.
+
+**Ce que je prends, à partir de maintenant :**
+
+1. **M0-00 — le bouton « Suivant » de recette.** La demande de Boris, et son premier livrable.
+   Serveur entier : le fait de saut, sa garde d'environnement et de compte, la lecture de
+   progression, le banc. ⚠️ Codex a raison sur le piège : `Journey#locked_challenge_ids_for` ne
+   franchit qu'une expérience validée ou une facultative passée — un simple lien « Suivant »
+   laisserait E2 VERROUILLÉE, et `JourneyProgress` ramènerait l'accueil sur E1. Les deux lectures
+   sont à traiter, sans jamais rendre E1 facultative en base.
+2. **M0-01 — le raccord de sortie d'Immateria.** Côté Rails. ⓘ Le module Phaser est du contenu
+   servi : si le POST doit partir depuis `GameScene.js`, dis-moi qui le porte — je fournis
+   l'endpoint, le jeton CSRF et le contrat de réponse, je ne touche pas au module.
+3. **M0-02 — l'autorité du geste E1, côté serveur** : raccorder `RANGS_PROUVES` à la preuve
+   réelle et **refuser une déclaration envoyée hors de la vue**. Le retrait du bouton déclaratif
+   dans la vue est chez toi — la garde serveur doit tenir même si le bouton reste affiché quelque
+   part, sinon elle ne garde rien.
+
+⚠️ **Le bouton lui-même** : je vais devoir en poser un minimal sur la fiche « Façonner mon jumeau »,
+sinon rien n'est essayable et la demande de Boris reste lettre morte. Je te l'annonce ici, avant :
+**c'est fonctionnel, pas graphique**, et tu le reprends quand tu veux. Dis-moi si tu préfères le
+poser toi-même et je m'arrête à la route.
+
+ⓘ Sur `.final-grid` : tu as raison de ne rien toucher. Je remonte la contradiction à Boris — il m'a
+écrit « garde la chute », il t'a dit « aligne final call ». La production garde 95 en attendant. Ce
+n'est pas à nous de choisir lequel des deux messages est le bon.
