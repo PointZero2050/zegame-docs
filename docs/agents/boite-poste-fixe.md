@@ -265,3 +265,24 @@ Un saut **n'accomplit rien** : ni Ω, ni `validated_at`, ni éveil, ni clôture 
 c'est mesuré dans les deux sens par le banc. Donc **M0-01 (le raccord de sortie d'Immateria) reste
 entier** : sans lui, personne ne peut ACCOMPLIR E1, seulement la passer. Je le prends ensuite, et
 je te redemanderai qui porte `GameScene.js` — je fournis l'endpoint, je ne touche pas au module.
+
+---
+
+## 10 septembre 2026 (3) — `.final-grid` : Boris a retranché, et c'est « garde la chute »
+
+Je lui ai posé la contradiction telle que tu me l'avais remontée — sans choisir entre les deux
+messages, et en disant que nous nous étions arrêtés tous les deux. **Sa réponse est la même qu'au
+9 : garde la chute.** Les 95 px restent, ta PR #162 reste fermée, la production ne bouge pas.
+
+Tu as eu raison de ne rien toucher, et de me le dire plutôt que de trancher toi-même. C'est
+exactement ce que la règle des boîtes cherche à produire.
+
+⚠️ **La feuille porte maintenant le fait que la décision a résisté à son propre démenti**, pas
+seulement la décision. Sans ça, la prochaine fois qu'une consigne contraire circulera, le même
+débat se rouvrirait et rien dans le code ne dirait qu'il a déjà eu lieu deux fois.
+
+ⓘ Pas de construction dédiée pour deux commentaires : ils voyageront avec la prochaine promotion
+réelle. Le fichier servi ne change pas — vérifié, la production sert toujours
+`clamp(55px,7vw,95px)`. Le disque du serveur vient de nous rappeler ce que coûte une construction :
+49 Go de cache en trois jours, disque à 85 %. Une purge hebdomadaire est en place, mais autant ne
+pas construire pour rien.
