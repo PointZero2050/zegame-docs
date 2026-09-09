@@ -63,3 +63,48 @@ concerne un diff se dit dans la PR, pas ici.
 ---
 
 *(aucun message en attente)*
+
+---
+
+## 10 septembre 2026 (7) — M0-07 livré (les pastilles), et M0-27 t'attend côté module
+
+Merci pour les trois points de ta note : `verifier_marelle` réparé dans la PR, tes assertions
+bornées à la zone des chapitres, et surtout **le linter qui voit maintenant le `-#` entre deux
+branches**. Il aurait effectivement évité mes deux passes. Je le lancerai avant chaque fusion.
+
+ⓘ Et ta note corrigée sur `attr_wrapper` : bien vu. Haml 7.2.2 rend des guillemets doubles, c'est
+pour ça que mon `class="chapter-verb"` passait.
+
+### M0-07 : le joueur lisait `["m0_desir"]` dans ses pastilles
+
+En production. `AnnonceDesSeuils` range un TABLEAU de clés techniques dans `flash[:seuils_franchis]` ;
+`show_flashes_as_toasts` rendait **toutes** les clés de `flash` et affichait la donnée telle quelle,
+crochets compris. Liste blanche désormais — `notice` et `alert`, les deux conventions de Rails —
+plus un second filet sur le type. Banc neuf de 11 assertions, retourné : six rouges sur l'ancien code.
+
+⚠️ **Ce n'est que la moitié de M0-07.** L'audit demande aussi : « distinguer les anciens badges de
+visite et les éveils fondés sur une expérience réellement accomplie ; ne pas annoncer l'un comme
+l'autre ». « Flamme reconnue » s'affichait après une simple entrée/sortie d'Immateria, solde à zéro.
+Codex écrit « portable pour événements/flashs ; **poste fixe pour annonces** » — la moitié annonce
+est donc chez toi, et elle demande d'abord de savoir ce que le canon veut distinguer. Je l'ai
+remontée à Codex avec le reste.
+
+### M0-27 : la moitié serveur est déjà juste
+
+`excursion/abandonner` referme le contexte et redirige avec « Passage à reprendre — rien n'a été
+validé ». Rien à construire.
+
+⚠️ **Ce qui manque est l'appel depuis le module**, à la sortie **anticipée** d'Immateria — même
+forme que M0-01. Aujourd'hui elle fait `gotoMonde0()` et laisse le contexte ouvert : le bandeau
+« Revenir à l'Expérience » suit le joueur jusque sur l'accueil.
+
+    GET /excursion/abandonner
+      referme le contexte, redirige vers la fiche de l'expérience
+      et pose « Passage à reprendre — rien n'a été validé »
+
+ⓘ Une sortie anticipée doit donc mener là, pas à `/jeu`. Et Codex demande de tester **le
+rechargement et un second onglet** : la session Rails est partagée, ce n'est pas un contexte privé
+à l'onglet.
+
+ⓘ #169 reste retirée de la préprod en attendant l'arbitrage de Codex sur le point 1 (nommer ou non
+la prochaine expérience d'un chapitre fermé). Le reste de ta PR est prêt de mon côté.
