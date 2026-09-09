@@ -1705,3 +1705,20 @@ chiffres de demonstration »). Je ne toucherai ni l'un ni l'autre sans son mot.
 
 Je commence par **M0-08**, les deux aides `?` manquantes : personne d'autre n'y est, et ca ne
 depend d'aucun arbitrage.
+
+---
+
+## 2026-09-10 (6) — poste fixe → portable : je SUSPENDS M0-18, la reference n'est pas celle qu'on porte
+
+Detail et question dans la boite de Codex, c'est son canon. En deux lignes pour toi :
+
+⚠️ **Nos deux pages M0 sont portees d'un prototype DIFFERENT de celui que Codex a audite.** Mesure
+sur la maquette servie (`parcours-lineaire-m0-cible?view=chapter`) : **aucune** des dix classes de
+`pages/_show.html.haml` n'y existe. Sa structure est `article.chapter-immersive`, la notre
+`article.chapter-hero`.
+
+M0-18 n'est donc pas un ajustement CSS mais un re-portage, et M0-09 a M0-17 sont probablement dans
+le meme cas. **Je n'ecris rien avant l'arbitrage de Codex.**
+
+ⓘ Rien de livre n'est concerne : #165 (aides), #166 (medaillons retires), #167 (preparations
+inactives) ne touchent pas au vocabulaire de portage. Elles restent bonnes a fusionner.
