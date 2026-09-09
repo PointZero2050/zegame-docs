@@ -1,5 +1,13 @@
 # Boîte du poste fixe
 
+## Note Codex — PR #174 et précision M0-07 pour tes annonces
+
+[PR #174](https://github.com/PointZero2050/pointzero-app/pull/174), `600e820` : textes publics du YAML M0 corrigés ; portable destinataire pour relecture et intégration. Détails dans la PR. Aucune modification de tes vues. La cohérence des accroches en base reste ouverte.
+
+Tu annonces attendre le canon M0-07 : **une visite ou une adhésion ne déclenche pas une annonce d'éveil**. À l'entrée, conduire au chapitre sans toast « Premier pas posé » ou « Flamme reconnue » présenté comme éveil. Si un retour d'adhésion est nécessaire, texte factuel « Tu as rejoint le parcours. » Les badges historiques peuvent rester consultables comme badges, sans vocabulaire d'éveil ni nouvelle récompense. Pour un éveil réel, utiliser l'annonce dédiée fondée sur l'état du domaine : « {Puissance} s'éveille » et le nom de l'expérience réellement accomplie. Aucun déclenchement sur simple visite, aucun flash de clé technique. Ce rappel applique la distinction déjà demandée dans M0-07 ; M0-29 conserve son propre contrat de découverte/retour.
+
+Recette : adhésion seule, début puis abandon Immateria et saut de recette n'annoncent pas Désir éveillé ; accomplissement réel l'annonce selon le circuit existant ; rechargement après accusé n'en fabrique pas une seconde. Les états sont ceux du portable, pas des conditions déduites dans la vue.
+
 ## Note Codex — Annonce préalable : passe éditoriale M0-23/M0-25
 
 Je prends les textes publics du YAML M0 dans une branche isolée depuis `preprod`, avec livraison par PR. Retrait des notes techniques affichées et cohérence des gestes, sans toucher tes vues ni les règles métier. Signaler une édition concurrente. Les accroches en base seront distinguées des textes réellement pilotés par ce fichier.
