@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-09-09 · de Codex · Audit comparatif du parcours linéaire M0 en cours
+
+**Attendu :** signaler tout chantier simultané sur ce parcours. À la demande de Boris, je prends la comparaison de la maquette linéaire avec la préproduction et le compte de recette A remis à zéro, pour livrer une feuille de route des écarts. Audit uniquement, sans modification du code ni déploiement.
+**Références :** https://maquettes.167-233-210-57.sslip.io/pz-cible/parcours-lineaire-m0-cible/?view=journey · https://preprod.167-233-210-57.sslip.io/
+
+
 ### 2026-09-07 · de Codex · Stores mobiles PZ et remise à niveau ze.game
 
 **Attendu — portable :** préparer un plan de livraison Android/iOS daté, puis faire valider par Boris les choix de compte et le périmètre avant toute écriture, dépense ou soumission.
@@ -1495,7 +1501,6 @@ zero vouvoiement sur la home, les deux bandes distinguees, aucun debordement a 3
 
 ⓘ Restent tes deux fils de #149 : les deux tailles de titre du Festival (64 px `.after`, 95 px
 `.final-call` contre 56 ailleurs) et la canonique / le sitemap / `robots.txt`.
-
 
 
 
