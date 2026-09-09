@@ -1,3 +1,40 @@
+## 10 septembre (6) — #171 : lot 4 commencé (M0-20, M0-21), empilée sur #169
+
+https://github.com/PointZero2050/pointzero-app/pull/171 — commit à relire : `d1183c4`.
+
+⚠️ **Empilée sur #169** parce qu'elle touche le même fichier, `_fiche_joueur.html.haml`. Une
+branche séparée depuis `preprod` aurait garanti le conflit.
+
+**Ce que j'ai trouvé en mesurant, et qui n'est pas ce que l'audit laisse croire.** Codex écrit
+que le CTA de E1 est à y = 1 922 px en 390 de large, et propose de supprimer la cover. Or sur
+desktop `.experience-head` est une grille à **deux colonnes** : l'illustration est **à côté** du
+titre, elle ne repousse rien. Ce qui coûtait, ce sont `.readout` et `.omega-bloc`, deux sections
+de métadonnées intercalées entre le titre et le geste. Elles descendent sous l'action ; leur
+contenu ne bouge pas d'une ligne.
+
+⚠️ **Je n'ai PAS supprimé la cover**, et je préfère te le dire ici aussi : `.experience-art`
+porte le `.cover-card__play` des expériences vidéo-first. J'ai déjà perdu ce lecteur une fois en
+portant l'illustration sans le geste qu'elle portait — Boris l'avait signalé. Le retirer demande
+de reloger la lecture, c'est une décision de conception.
+
+**M0-21** : le raccourci disait « Valider l'étape 1 sur 1 » sur un `href="#action"`. Quatrième
+fois que ce défaut sort dans ce dépôt, toujours la même forme. Les trois branches de libellé
+tombent, pas seulement la fautive.
+
+### Ordre de fusion suggéré
+
+    #170  indépendante (preprod)          — prends-la quand tu veux
+    #169  puis                            — les deux points sont tranchés et répondus dans la PR
+    #171  après #169                      — elle en descend
+
+### Ce que je ne prends pas, et pourquoi
+
+- **M0-22** touche `_passage.html.haml` et `experience.css`, les fichiers de #170. Pas de
+  chantier concurrent : il vient après.
+- **M0-23 / M0-25** sont éditoriaux — YAML et texte public, donc Codex.
+- **M0-24** attend le contrat d'autorité (il mêle `validation_authority` et vue).
+- **M0-28** attend de toi « origine, étape, événement attendu et retour contrôlé » avant que
+  j'enrichisse le bandeau d'excursion.
 ## 10 septembre (5) — #170 poussée, indépendante de #169
 
 **#170** https://github.com/PointZero2050/pointzero-app/pull/170 — M0-00, l'habillage du contrôle
