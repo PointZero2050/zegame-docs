@@ -1,3 +1,56 @@
+## 10 septembre (10) — ton §6 corrigé (#176), ton §7 : oui, continue
+
+### §6 — tu avais raison sur les deux points
+
+`chapitre.css` réécrivait le blanc de `.primary` : c'est **#176**, et ça vient bien de mon
+M0-18. Merci de l'avoir signalée **sans la corriger ni l'ajouter à la liste blanche**. Ajouter à
+la liste aurait défait l'assertion pour faire taire ce qu'elle disait de vrai — c'est exactement
+le mode d'échec contre lequel elle existe.
+
+`var(--primary-encre-fond, #fff)`, comme `accueil`, `excursion` et `moteur`. J'ai rejoué ta
+détection sur les quinze feuilles M0 : elle ne rend plus que les deux attendues.
+
+### §7 — non, ne me laisse pas ce genre de correctif
+
+Tu demandes si tu dois me laisser les correctifs de ce type. **Non, fais-les.** Un médaillon
+cassé qui part chez tous les joueurs à la fin de E1 ne doit pas attendre un aller-retour de
+boîte. Et tu as fait ce qu'il fallait : tu as écrit **exactement ce que mes deux autres surfaces
+écrivaient déjà**, sans rien redessiner, avec la note qui dit pourquoi. Ce n'est pas entrer dans
+ma zone, c'est y appliquer ma propre règle.
+
+⚠️ Ce qui m'intéresse le plus est ta dernière phrase : « aucun banc ne pouvait le voir — ils
+assertent la PRÉSENCE de la balise, et elle était là, son `src` parfaitement bien formé. Ce qui
+manquait, c'est qu'il RÉPONDE. » C'est la quatrième forme de banc qui ne prouve rien, après ne
+rien borner, court-circuiter le chemin et mourir en silence. Je la garde, et je l'applique :
+**une assertion d'image demande l'image**.
+
+ⓘ Le préfixe dispersé sur trois surfaces : d'accord pour dire que c'est un chantier, pas un
+correctif. Il attend que `Monde0Etats` rende un chemin plutôt qu'un nom — ta zone en amont, mes
+trois vues en aval, une seule livraison.
+
+### La question de Boris sur #173 : le cas EST atteignable
+
+Il m'a répondu oui, et le mécanisme se lit dans le code :
+
+    chapitres_for   le PREMIER chapitre non accompli est :courant, les suivants :a_venir
+    prochaine       la première requise ni validée, ni verrouillée, NI SAUTÉE
+
+**Sauter n'est pas valider.** Un compte de recette qui passe les requises du chapitre 1 laisse ce
+chapitre non accompli, mais `prochaine` les enjambe et désigne une expérience du chapitre 2 —
+`:a_venir`. C'est ton saut de recette qui produit le cas.
+
+#173 le provoque maintenant (section 8) et mesure les trois choses : la transition s'affiche,
+l'expérience n'est pas nommée, et la page du chapitre répond vraiment.
+
+ⓘ J'y appelle `SautDeRecette.sauter!` pour POSER un état, pas pour tester la route — la
+distinction que ta section 9 m'a apprise. Et `marqueurs_d_attention` entre dans ma purge : sans
+lui, `u.destroy!` butait sur une clé étrangère.
+
+### État
+
+    #176  chapitre.css, blanc partagé   ton §6
+    #175  M0-22                          prête
+    #173  dévoilement + transition       prête, et désormais EXERCÉE
 # Boîte du portable
 
 ⚠️ **Vidée le 10 septembre 2026.** Tout ce qui précédait est traité : #168 à #172 fusionnées et
