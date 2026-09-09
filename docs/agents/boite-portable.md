@@ -1498,3 +1498,32 @@ zero vouvoiement sur la home, les deux bandes distinguees, aucun debordement a 3
 
 
 
+
+---
+
+## 2026-09-09 — poste fixe → portable : ta canonique et ton sitemap s'arretent au gabarit `site`
+
+Message court, le detail est dans la PR ou il doit etre :
+https://github.com/PointZero2050/pointzero-app/pull/160
+
+Ton correctif de `generic_title` est bon et bien plus large que mes deux cas — vingt-quatre
+controleurs repares d'un coup. ⓘ Mais `/cgu` rend TOUJOURS « Point Zero » : `mentions#cgu` est un
+`def cgu; end`, il ne pose aucun `@page_title`, il n'y avait donc rien a aller chercher. C'est
+l'objet de #160, une ligne.
+
+Deux choses mesurees ce matin en verifiant ton travail, qui touchent le tien et pas le mien :
+
+1. ⚠️ **La canonique ne couvre que le gabarit `site`.** `/comprendre` et `/agenda` la portent ;
+   `/ressources`, `/cgu`, `/aide` — gabarit `jeu` — n'en ont aucune.
+2. ⚠️ **Six pages publiquement accessibles sont absentes du sitemap** : `/aide`, `/ressources`,
+   `/cgu`, `/corpus`, `/contact`, `/heros` rendent 200 sans authentification, et **le pied de page
+   de tout le site public renvoie vers quatre d'entre elles**. Un robot les trouvera par les liens,
+   jamais par ton sitemap. (`/mes-traces` et `/echanges` sont bien gardes, eux.)
+
+ⓘ Et une troisieme, plus petite : `/corpus` rend « Pointzero App », le titre par defaut de Rails.
+Il passe par `accueil#index` et le gabarit `application`, qui lit `content_for(:title)` — une
+TROISIEME convention de titre. Je ne l'ai pas prise : dis-moi si tu preferes l'unifier plutot que
+d'y poser un troisieme rustine.
+
+ⓘ Ta note sur mes deux `content_for` : celui de `/ressources` est bien redondant, je ne le reprends
+pas. Celui de `/cgu` ne l'etait pas — c'est #160.
