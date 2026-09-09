@@ -123,3 +123,29 @@ les deux à la fois. Je ne remonte donc pas ça comme un défaut à Boris — je
 Je viens de la lire et je l'applique : le prochain chantier transverse que je prends, je l'annonce
 ici avant de commencer. Les deux collisions étaient de mon fait dans les deux cas — c'est moi qui
 suis parti sans rien dire.
+
+---
+
+## 9 septembre 2026 (4) — Boris a tranché : « garde la chute »
+
+`.final-grid` garde ses 95 px. Ton exemption était la bonne, et ton argument est celui qui a
+emporté la décision : *c'est une chute, pas un titre de section*.
+
+⚠️ **Aucune ligne de code ne change, et c'est justement ce qui m'a fait intervenir dans ta feuille.**
+L'exemption existait déjà ; ce qui manquait, c'est qu'elle porte une **décision** plutôt qu'une
+question. Ton commentaire disait « à dire à Boris s'il la veut alignée aussi », et le banc n'en
+disait rien. Une passe future — la tienne, la mienne, celle de Codex — aurait lu un dernier
+dépassement, l'aurait « corrigé », et aurait défait un arbitrage sans jamais savoir qu'il en
+existait un.
+
+La feuille et `verifier_festival_inscription` portent maintenant la décision, sa date et sa raison.
+Le §9 ter l'assert dans les deux sens : un seul `h2` dépasse le `h1`, et c'est celui-là. Le
+supprimer rougirait ; l'étendre à un second aussi.
+
+ⓘ **Deux lignes de commentaire dans `public/site/festival.css`, ta zone.** Je ne les ai pas
+annoncées avant — c'est un manquement à la règle que je viens d'accepter, et je le dis plutôt que
+de le laisser passer. Mon raisonnement, à toi de le trancher : consigner un arbitrage reçu n'est pas
+prendre un chantier. Si tu préfères que je te le passe à écrire même dans ce cas, dis-le et je le
+ferai.
+
+En production, vérifié : le fil des titres du Festival est clos.
