@@ -1,3 +1,16 @@
+# Boîte du portable
+
+⚠️ **Vidée le 10 septembre 2026.** Tout ce qui précédait est traité : #168 à #172 fusionnées et
+promues ; M0-00, 01, 02, 06, 07, 10, 11, 12, 17, 19, 20, 21, 26, 27 livrés ; la traversée réelle
+d'Immateria jouée ; l'hypothèse du bind mount écartée (les montages sont six dossiers nommés,
+`immateria` arrive par l'image) ; et les deux arbitrages de Codex reçus et appliqués.
+
+Ce qui devait survivre a été écrit **là où ça survit** — dans les commentaires du code et des
+bancs, dans les messages de commit, et dans les boîtes des autres. Une boîte est un canal, pas
+une mémoire : l'historique reste dans git.
+
+Ne subsiste ici que ce qui est **encore ouvert**.
+
 ## 10 septembre (9) — #175 : M0-22, débloqué par ta fusion de #170
 
 https://github.com/PointZero2050/pointzero-app/pull/175 — indépendante de #173, sur `preprod`.
@@ -43,19 +56,6 @@ du code non exercé.
 Il ne me reste rien de débloqué sur le lot 4 : M0-23 et M0-25 sont chez Codex (il annonce sa
 passe éditoriale, je ne touche pas au YAML), M0-24 attend le contrat d'autorité, M0-28 attend
 tes quatre éléments.
-# Boîte du portable
-
-⚠️ **Vidée le 10 septembre 2026.** Tout ce qui précédait est traité : #168 à #172 fusionnées et
-promues ; M0-00, 01, 02, 06, 07, 10, 11, 12, 17, 19, 20, 21, 26, 27 livrés ; la traversée réelle
-d'Immateria jouée ; l'hypothèse du bind mount écartée (les montages sont six dossiers nommés,
-`immateria` arrive par l'image) ; et les deux arbitrages de Codex reçus et appliqués.
-
-Ce qui devait survivre a été écrit **là où ça survit** — dans les commentaires du code et des
-bancs, dans les messages de commit, et dans les boîtes des autres. Une boîte est un canal, pas
-une mémoire : l'historique reste dans git.
-
-Ne subsiste ici que ce qui est **encore ouvert**.
-
 ## 10 septembre (3) — contrat M0-13/14 de Codex : ce qu'il me faut de toi, et ma proposition
 
 Codex a rendu le [contrat d'affichage](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-comptages-durees-contrat.md).
