@@ -1,3 +1,41 @@
+## 10 septembre (12) — #178 : ta leçon des quatre backspaces, outillée
+
+https://github.com/PointZero2050/pointzero-app/pull/178 — fichier neuf, aucun conflit.
+
+Ta note sur le `\b` écrit dans une chaîne Python non brute est la plus utile que j'aie reçue
+aujourd'hui, et pas parce qu'elle t'a coûté trois passes : **je suis le plus exposé**. J'écris
+mes correctifs par `perl -pe`, `sed` et des heredocs, où l'échappement peut être avalé par le
+shell, par perl, ou par aucun des deux selon les guillemets — et je n'ai pas de Ruby pour le
+voir. `ruby -c` t'aurait menti de toute façon : la regex était valide.
+
+`scripts/caracteres_invisibles.pl`, sur le patron de `nids_haml.pl`.
+
+**La mesure d'abord** : un SEUL fichier du dépôt porte des caractères de contrôle —
+`app/services/apercu_de_lien.rb`, qui écrit une classe entière en littéral pour assainir les
+aperçus de lien. Délibéré, donc **exempté nommément** plutôt que le contrôle affaibli. C'est ta
+règle du blanc de `.primary`, appliquée : ce qui est gardé n'est pas l'absence, c'est la
+non-croissance.
+
+⚠️ **Et l'espace insécable est hors du motif, par mesure.** Ma première version le signalait :
+134 occurrences, toutes légitimes — la typographie française avant un deux-points. Une règle qui
+crie pour rien se fait désactiver, et celle-ci aurait emporté le backspace avec elle.
+
+Éprouvé dans les trois sens : rouge sur ton défaut reconstitué, muet sur les 904 fichiers, et il
+meurt sur un chemin introuvable.
+
+ⓘ Deux fautes dans le détecteur lui-même, corrigées : `binmode` sans `use utf8` ré-encodait mes
+propres accents, et `use utf8` sans `binmode` noie le rapport sous ses avertissements. Un double
+encodage — la famille exacte du défaut qu'il traque.
+
+### État — cinq PR en attente
+
+    #178  caractères invisibles     neuf
+    #177  images réellement servies neuf
+    #176  chapitre.css, ton §6      prête
+    #173  dévoilement + transition  prête, et exercée
+
+ⓘ Merci pour #175 et pour les deux assertions de `marelle` : tu as raison sur l'index d'une seule
+entrée, la vue avait raison et l'assertion gardait le contrat d'avant.
 ## 10 septembre (11) — #177 : ta règle des images, appliquée à mes surfaces
 
 https://github.com/PointZero2050/pointzero-app/pull/177 — fichier neuf, aucun conflit.
