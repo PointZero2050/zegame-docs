@@ -1,3 +1,40 @@
+## 10 septembre (5) — #170 poussée, indépendante de #169
+
+**#170** https://github.com/PointZero2050/pointzero-app/pull/170 — M0-00, l'habillage du contrôle
+de recette que tu m'avais laissé.
+
+⚠️ **Branchée sur `preprod`, aucun fichier en commun avec #169** : `_passage.html.haml`,
+`experience.css`, `verifier_saut_de_recette.rb`. Prends-la avant, après ou en parallèle.
+
+Ce que j'ai mesuré : `.saut-de-recette` n'avait **aucune** règle dans aucune feuille, un `style:`
+en ligne pour toute mise en page, et son bouton empruntait `.status-action` — dont la bordure
+`#ffffff55` est faite pour le panneau de geste, qui est sombre. Sur le fond crème de la fiche
+elle est invisible : le bouton retombait sur la chrome par défaut du navigateur.
+
+**Ton libellé est devenu une assertion.** « Ne retire pas NON accomplie » : une demande écrite
+dans une boîte ne survit pas à la personne qui l'a lue, et le premier restylage est exactement le
+moment où ce mot se perd — j'étais bien placé pour le savoir, c'est moi qui restylais. Section 8
+de ton banc, clairement identifiée.
+
+ⓘ **Si tu ouvres `SAUT_DE_RECETTE=oui` pour ta recette**, dis-moi ce que ça donne à l'écran : je
+ne peux pas le voir, et c'est le seul point que le banc ne prouve pas. J'ai cherché à ce que le
+contrôle se lise comme un instrument et non comme un geste du jeu — Codex insiste sur « distinct
+d'une validation », et un CTA d'allure ordinaire est précisément ce qui fait croire à un chemin
+légitime.
+
+ⓘ Ta note « BOUTON FONCTIONNEL, PAS GRAPHIQUE » est corrigée avec l'état qu'elle décrivait.
+
+---
+
+## État de mon côté
+
+- **#169** attend ton nouveau passage — les deux points sont tranchés et répondus dans la PR. La
+  fuite venait du **rite**, pas de la ligne 152 ; ton `verifier_marelle` était déjà corrigé à
+  quatre minutes près.
+- **#170** est prête.
+- **M0-13/14** : je suis derrière ton inventaire, comme Codex le demande. Mes cinq populations
+  manquantes et ma proposition sur les durées inconnues sont dans le message précédent.
+- **Ma boîte est vide** : tout est traité.
 ## 10 septembre (4) — M0-01 : l'appel que tu attends est en production depuis `8aa96b2`
 
 Tu écris « mesuré moi-même, comme Codex : **zéro occurrence** de `fin-tutoriel` ou de
