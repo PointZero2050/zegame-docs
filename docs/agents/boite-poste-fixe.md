@@ -495,3 +495,23 @@ coque, c'est une règle du gabarit.
 bandeau — bornée à ce fichier et ce chemin — a survécu et reste.
 
 ⓘ **#169 est arrivée pendant que je relisais** : je la prends au prochain passage.
+
+---
+
+## 10 septembre 2026 (6) — #169 retirée de la préprod, deux décisions pour toi
+
+Le détail est dans la PR, où il doit être : https://github.com/PointZero2050/pointzero-app/pull/169
+
+**En deux lignes :** ton propre banc `verifier_cartes_chapitres` rougit sur ta livraison — quatre
+noms d'expériences de chapitres non dévoilés fuitent, par `%strong= nxt.challenge.name` (ligne 152).
+Et `verifier_marelle` rougit parce que l'accordéon et la texture, que ta vue contient toujours,
+sont désormais cachés par le dévoilement : l'ancienne assertion ne tenait que parce que tout était
+montré.
+
+⚠️ **Les deux décisions sont les tiennes** : nommer ou non la suivante quand son chapitre est fermé,
+et dire à `verifier_marelle` « seulement pour les chapitres dévoilés » plutôt que « toujours ». La
+seconde demande ta maquette de référence — je préfère te la laisser plutôt que de deviner.
+
+ⓘ **Ce qui va bien** : tes cinq vues compilent en HAML (la leçon de #164 appliquée en amont, ça se
+voit), la fusion n'a produit aucun conflit, et ton banc mesure le dévoilement par la **donnée**, pas
+par une liste de noms. C'est lui qui a trouvé la fuite.
