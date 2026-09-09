@@ -1586,3 +1586,50 @@ d'oublier ce qu'elle a saute.
 **Boris a confirme « garde 95 »** — ce commit est donc contraire a la decision. La PR #162 est
 fermee, mais la branche existe. Je la laisse plutot que de la supprimer, et je la signale ici : si
 elle passait, elle deferait ton arbitrage sans que rien ne le dise.
+
+---
+
+## 2026-09-10 (3) — poste fixe → portable : M0-02, la vue n'a RIEN a changer
+
+J'ai attaque le lot 1. Resultat mesure, et il reduit mon perimetre a zero sur ce point.
+
+### La vue traite deja les deux cas, correctement
+
+`_passage.html.haml` ligne 291 : `%b= prouvable ? "Par un resultat enregistre dans le Jeu" : "Par ta
+confirmation"`. Ligne 330 : `- elsif !prouvable` — le bouton « Indiquer comme realise » n'est offert
+QUE si le geste n'est pas prouvable, avec un commentaire qui dit pourquoi.
+
+⚠️ **Le defaut est entierement dans la donnee.** `faconner-mon-jumeau` est ABSENT de
+`RANGS_PROUVES` — verifie a l'instant sur `preprod`. Des que tu l'y ajoutes, le libelle ET le
+bouton basculent tout seuls. Codex ecrivait « poste fixe : supprimer le geste declaratif pour ces
+rangs » : il n'y a rien a supprimer, la regle existe et elle est juste.
+
+ⓘ Donc M0-02 est entierement chez toi. Je ne touche pas `app/services/`.
+
+### ⚠️ Ce que je ne peux PAS auditer d'ici, et qui reste demande
+
+Codex demande aussi : « Auditer E7/E9/E12/E14, sans supposer que toutes leurs sous-etapes ont la
+meme autorite. » **Je ne peux pas faire la correspondance E7 → slug** : le YAML du parcours dit
+lui-meme que « l'ordre se deduit de la composition reelle du Journey, pas de ce fichier ». La
+numerotation vit en BASE, et je n'ai pas de ruby ici.
+
+Ce que je peux te donner, c'est le releve des DIX slugs declares prouvables et de leurs rangs —
+et trois d'entre eux ont deja une autorite PARTIELLE, ce qui est exactement l'inquietude de Codex :
+
+    le-point-zero-entrer-dans-le-jeu  [2, 3]   ⚠️ le rang 1 ne l'est pas
+    le-site-du-point-zero             [1, 2]   ⚠️ partiel si l'experience a 3 rangs
+    decouvrir-les-formats             [1, 2, 3]
+    le-coupable-ideal / une-drole-d-epoque / avant-le-zero / le-signe-de-reconnaissance /
+    le-conseil-omega / vivre-l-atelier-point-zero   [1]
+    l-ecosysteme-point-zero           [2]      ⚠️ le rang 1 ne l'est pas
+
+**Fais la correspondance avec les numeros E depuis la base**, et dis-moi si un ecart tombe dans une
+vue : la je reprends la main.
+
+### Ou j'en suis du lot 1
+
+    M0-01  cote module   LIVRE (#163) — reste ta traversee reelle
+    M0-02  cote vue      RIEN A FAIRE, mesure ci-dessus
+    M0-07                a toi (flashs et double clic d'entree)
+    M0-26                a moi — la barre de mission dans le canvas, je m'y mets
+    M0-27                a toi
