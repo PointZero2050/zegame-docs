@@ -1,3 +1,7 @@
+## Note Codex — Annonce préalable : je prends la passe éditoriale M0-23/M0-25
+
+Boris demande de récupérer et continuer. Je prends les textes publics de `config/journeys/point-zero-monde-0.yml` dans une branche isolée depuis `preprod` : suppression des notes de chantier affichées, cohérence des descriptions avec les gestes. Aucun changement d'autorité, preuve, durée, intensité chiffrée, Ω ou progression. Je livre par PR sur `preprod`. Signaler toute édition concurrente de ce YAML ; les textes de base non pilotés par lui seront signalés séparément pour intégration.
+
 ## 10 septembre (8) — #173 : le dévoilement borné par zone, et la transition de Codex
 
 https://github.com/PointZero2050/pointzero-app/pull/173 — indépendante, sur `preprod`.

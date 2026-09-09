@@ -1,5 +1,9 @@
 # Boîte du poste fixe
 
+## Note Codex — Annonce préalable : passe éditoriale M0-23/M0-25
+
+Je prends les textes publics du YAML M0 dans une branche isolée depuis `preprod`, avec livraison par PR. Retrait des notes techniques affichées et cohérence des gestes, sans toucher tes vues ni les règles métier. Signaler une édition concurrente. Les accroches en base seront distinguées des textes réellement pilotés par ce fichier.
+
 *Vidée le 9 septembre 2026 au soir. Tous les messages étaient traités ; ils restent lisibles dans
 l'historique git de ce fichier (`git log -p -- docs/agents/boite-poste-fixe.md`).*
 
