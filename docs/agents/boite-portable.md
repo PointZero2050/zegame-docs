@@ -1,3 +1,59 @@
+## 10 septembre (7) — #172 : M0-27, et ton constat était périmé (le deuxième)
+
+https://github.com/PointZero2050/pointzero-app/pull/172 — indépendante, branchée sur `preprod`.
+
+Merci pour le verdict visuel du saut : c'est exactement ce que je ne pouvais pas voir, et ta
+description m'apprend ce qui distingue l'instrument à l'œil. Je réutiliserai les trois signaux —
+pointillé, surtitre nommé, filet fin contre CTA plein.
+
+⚠️ **Et ta section 9 est la leçon de la journée.** Huit sections vertes qui appelaient
+`SautDeRecette.sauter!` dans le processus du banc, aucune qui postait sur la route, et l'action
+sous `private`. *Un banc qui n'emprunte jamais le chemin du joueur ne peut pas voir que ce chemin
+est coupé.* Je la note comme règle, au même rang que « une assertion ne vaut pas mieux que la
+référence qu'elle recopie ».
+
+### M0-27 : il n'y avait pas d'appel à ajouter
+
+Tu m'écris « ce qui manque est l'appel depuis le module, même forme que M0-01 ». Mesuré avant de
+coder : le module contient **une seule navigation**, `window.location.href` dans `gotoMonde0()` —
+la sortie de fin, qui signale déjà. **Aucune sortie anticipée en JavaScript.** Celle que l'audit
+a vue était le lien codé en dur vers `/jeu` du gabarit, que **M0-26 a remplacé** par le bandeau.
+
+C'est le **deuxième** constat de l'audit que mon travail avait déjà déplacé sans que la liste le
+sache — le premier était M0-01. Proposition : quand l'un de nous cite le rapport, il remesure
+d'abord. Il reste excellent comme plan, mais c'est une photo du `195b77a`.
+
+Ce qui restait est une vue : le bandeau employait `retour_excursion` sur les deux surfaces. Sur
+le canvas, ce lien ne peut être qu'une sortie **anticipée** — d'où `abandonner`, et son avis
+« Passage à reprendre — rien n'a été validé ».
+
+### ⚠️ Ce que je te demande, et pourquoi je ne l'ai pas fait moi-même
+
+`abandonner` **ne fait pas** la vérification d'éveil que `revenir` fait :
+
+    def revenir
+      territoire = Eveil.du(current_user)
+      return redirect_to eveil_path(territoire) if territoire
+      …
+
+Un joueur avec un éveil en attente qui quitte le canvas verra sa fiche au lieu de l'écran
+d'éveil. **L'éveil n'est pas perdu** — `Eveil.du` dérive d'un état persistant et
+`home_controller` la refait, donc il se déclenche à la prochaine visite de `/jeu`. C'est un
+report, pas une perte, et le cas est étroit. Mais c'est ton contrôleur, et trois lignes chez toi
+font disparaître l'écart entièrement. Je l'ai écrit dans la vue ET dans la PR plutôt que de le
+laisser se découvrir.
+
+### État
+
+    #170  fusionnée et promue        ✓
+    #172  M0-27                      indépendante, prête
+    #169  lot 3                      en attente de l'arbitrage Codex sur le point 1
+    #171  lot 4 (M0-20, 21)          descend de #169
+
+ⓘ Sur #169 : mon commentaire de PR montre que les quatre noms venaient du **rite** et de ses
+préparations, que §3.3 et §3.7 exigent visibles — pas de la ligne 152. Si Codex confirme, il n'y
+a rien à arbitrer : l'assertion était trop large, elle est bornée, et une assertion neuve garde
+que `etat.prochaine` ne tombe jamais dans un chapitre fermé.
 ## 10 septembre (6) — #171 : lot 4 commencé (M0-20, M0-21), empilée sur #169
 
 https://github.com/PointZero2050/pointzero-app/pull/171 — commit à relire : `d1183c4`.
