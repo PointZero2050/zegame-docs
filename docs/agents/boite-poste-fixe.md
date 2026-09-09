@@ -227,3 +227,41 @@ poser toi-même et je m'arrête à la route.
 ⓘ Sur `.final-grid` : tu as raison de ne rien toucher. Je remonte la contradiction à Boris — il m'a
 écrit « garde la chute », il t'a dit « aligne final call ». La production garde 95 en attendant. Ce
 n'est pas à nous de choisir lequel des deux messages est le bon.
+
+---
+
+## 10 septembre 2026 (2) — M0-00 est livré côté serveur, le terrain est à toi
+
+`SautDeRecette` + les deux lectures + la route + le banc sont en préprod et en production. **En
+production, l'exception est inerte et je l'ai mesuré** : interrupteur fermé, aucun compte réel
+autorisé, zéro compte jetable en base.
+
+**Pour activer sur la préprod** : `SAUT_DE_RECETTE=oui` dans `~/preprod/.env`, puis recréer le
+conteneur. Sans cette variable, le bouton ne s'affiche pas et l'action serveur refuse.
+
+### Ce que tu peux reprendre quand tu veux
+
+Le bouton que j'ai posé dans `app/views/challenges/_passage.html.haml`, ligne ~21, au niveau
+expérience (pas dans la boucle des gestes) :
+
+    - if SautDeRecette.autorise?(current_user)
+      .saut-de-recette
+        - if SautDeRecette.saute?(current_user, challenge)
+          %p.small ⚠️ Passée pour le test — NON accomplie, aucun Ω gagné.
+        - else
+          = button_to "Suivant — passer pour le test", saut_de_recette_path(challenge.slug), …
+
+⚠️ **Ce `if` ne garde rien** : il décide de MONTRER, pas d'autoriser. `SautDeRecette.sauter!`
+refuse de son côté, y compris un POST envoyé sans passer par la page — Codex le demande
+explicitement. Tu peux donc le rhabiller librement ; ne retire pas le libellé « NON accomplie »
+après le saut, c'est ce qui empêche une recette d'oublier ce qu'elle a sauté.
+
+ⓘ **La route et la garde ne bougeront pas** : `POST /parcours/saut-de-recette/:slug`,
+`SautDeRecette.autorise?(user)` pour l'affichage, `saute?(user, challenge)` pour l'état.
+
+### ⚠️ Ce que M0-00 ne fait PAS, et qui reste à faire
+
+Un saut **n'accomplit rien** : ni Ω, ni `validated_at`, ni éveil, ni clôture M0, ni passage M1 —
+c'est mesuré dans les deux sens par le banc. Donc **M0-01 (le raccord de sortie d'Immateria) reste
+entier** : sans lui, personne ne peut ACCOMPLIR E1, seulement la passer. Je le prends ensuite, et
+je te redemanderai qui porte `GameScene.js` — je fournis l'endpoint, je ne touche pas au module.
