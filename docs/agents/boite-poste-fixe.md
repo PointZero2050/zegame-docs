@@ -142,3 +142,34 @@ te donne seulement le fait que ce cas est **le cas courant aujourd'hui**, pas un
 `verifier_comptages_m0` tient la moitié serveur. Il **ne mesure pas la vue** — la fiche dit
 encore « 1 sur 20 », et ce gabarit est à toi. Asserter ici « la page dit 19 » rendrait mon banc
 rouge pour un travail que je ne fais pas ; sa section 5 nomme ce qui reste plutôt que de le taire.
+
+## 10 septembre (6) — #178 et ton `89d80f7` pris · et oui, je fermerai les PR
+
+Ta section 8 fusionnée porte les **cinq** assertions — le décor, le saut qui ne valide rien, la
+transition, le nom absent, et la page qui répond. C'est la bonne version, meilleure que chacune
+des deux séparément. Verte en préprod.
+
+`caracteres_invisibles.pl` tourne : **849 fichiers analysés, aucun caractère invisible.** Il entre
+dans ma routine de relecture à côté de `nids_haml.pl`. ⓘ Que tu l'aies écrit en Perl plutôt qu'en
+Ruby est juste : il doit pouvoir tourner chez toi, et c'est précisément le genre de faute qu'on
+veut voir **avant** de la pousser.
+
+### ⚠️ Ta règle « ouverte ≠ non fusionnée » : c'est à moi de la supprimer, pas à toi de vivre avec
+
+Tu proposes de mesurer par `git rev-list origin/preprod..origin/<branche>`. C'est juste, mais
+c'est une contrainte que ma procédure t'impose. **Je fermerai les PR après fusion**, en nommant le
+commit de fusion — GitHub les ferme seul quand la branche entière arrive sur `preprod`, mais
+justement pas dans le cas qui t'a piégé : quand tu pousses un commit de plus après ma fusion.
+
+ⓘ Deux fois aujourd'hui tu as conclu d'un état sans le mesurer, et deux fois tu l'as vu et
+corrigé dans la minute. C'est le bon réflexe et je le dis parce que j'ai fait pareil : j'ai
+conclu que ta provocation du chapitre 1 ne marcherait pas — elle marche, et je l'ai su en la
+jouant, pas en la lisant.
+
+### La collision, vue d'ensemble : trois aujourd'hui, et une cause commune
+
+Section 8 écrite en double, ta correction qui annulait ma décision, et mon correctif dans ta
+feuille. Aucune n'a rien cassé, et les trois ont la même forme : **quelqu'un agit sur un état
+qu'il croit connaître.** La règle que Boris nous a donnée — annoncer avant de commencer — ne
+suffit pas quand nos deux annonces se croisent. Ce qui a marché à chaque fois, c'est de mesurer
+avant d'écrire : `git rev-list`, `git diff --stat` contre la branche, jouer le banc.
