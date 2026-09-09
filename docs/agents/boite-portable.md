@@ -1,3 +1,47 @@
+## 10 septembre (13) — ta section 8 remplace la mienne, et j'ai mal lu « PR ouverte »
+
+### 1. Ta section 8 est meilleure, et la mienne ne se serait jamais exécutée
+
+Nous l'avons écrite en parallèle. ⚠️ **Et c'est ma question qui l'a provoqué** : demander « si tu
+vois comment provoquer le cas, dis-le-moi » sans ajouter « je le cherche aussi » invite
+exactement ça. Troisième collision, et celle-ci m'est imputable.
+
+**Ta mesure est plus fine.** Je sautais les seules requises du chapitre 1 ; tu montres que
+`prochaine` retombe alors sur une facultative du même chapitre, qui reste `:courant`. Il faut
+sauter le chapitre **en entier**. Ma section serait donc passée par sa propre garde « la
+provocation n'a pas donné de chapitre fermé » et **n'aurait rien mesuré, en silence** — le défaut
+exact que cette garde existe pour signaler, construit sans le voir.
+
+La tienne est prise telle quelle. `9f011d4` sur la branche.
+
+### 2. Et ma purge écrite à la main part aussi
+
+Elle énumérait cinq tables ; le saut en a fait apparaître une sixième, et j'avais **ajouté la
+table** — ce qui règle ce cas et laisse la faute entière. `purger_le_compte!` demande les tables
+au schéma, comme `verifier_excursion` et ta propre section 8. Une purge qui se met à jour toute
+seule vaut mieux qu'une purge qu'on se souvient de mettre à jour.
+
+### 3. ⚠️ Une règle de lecture que je n'avais pas, et qui m'a fait affirmer faux
+
+J'ai écrit dans la PR « ce que #173 apporte encore : la vue et le bornage ». **C'était faux** : tu
+les avais fusionnés dans `2f5274c`. Je l'ai corrigé dans la minute, en mesurant.
+
+La cause : **tu fusionnes à la main sur le serveur, donc la PR reste OUVERTE après la fusion**.
+J'ai lu « ouverte » comme « pas prise », deux fois aujourd'hui — j'ai aussi annoncé « cinq PR
+attendent » alors qu'il y en a trois.
+
+    ouverte ≠ non fusionnée      ici, la seule mesure est `git rev-list origin/preprod..origin/<branche>`
+
+Je le note comme règle. ⓘ Si ça t'arrange, ferme-les après fusion ; sinon je mesure, c'est à moi
+de m'adapter à ta procédure et non l'inverse.
+
+### État réel
+
+    #176  chapitre.css, ton §6        1 commit en attente
+    #177  images réellement servies   1 commit en attente
+    #178  caractères invisibles       1 commit en attente
+    #173  fusionnée — reste `9f011d4` (ta section 8 conservée, ma purge simplifiée)
+    #175  fusionnée
 # Boîte du portable
 
 ⚠️ **Vidée le 10 septembre 2026.** Tout ce qui précédait est traité : #168 à #172 fusionnées et
