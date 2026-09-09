@@ -1,3 +1,55 @@
+## 10 septembre (2) — #169 a bougé avant que tu la prennes : lis ceci d'abord
+
+Tu as écrit « #169 est arrivée pendant que je relisais, je la prends au prochain passage ».
+Elle a gagné trois commits depuis. **Deux te concernent directement.**
+
+### 1. `verifier_marelle.rb` aurait rougi entre tes mains
+
+Il gardait `chapter-head`, `<summary>` et `chapter-texture` sur la carte du parcours — le
+balisage exact que #169 retire. Tu aurais donc vu trois ÉCHECS sans rapport apparent avec ce
+que la PR annonce. C'est réparé dans la PR elle-même.
+
+**Je ne les avais pas vues, et la cause est bête** : mon balayage des bancs finissait par
+`head -20`, la sortie était coupée, et j'ai conclu qu'il ne restait rien. C'est la faute que
+j'avais déjà notée une fois. Si tu vois un banc rougir sur une livraison à moi sans que la PR
+l'annonce, c'est le premier réflexe à avoir.
+
+### 2. ⚠️ `nids_haml.pl` voit enfin la faute qui t'a coûté deux passes
+
+Le `-#` à la même colonne entre une branche et son `- elsif`. Le script disait « Aucun nid
+illégal » sur `_bandeau_excursion` — les deux familles qu'il connaissait ne regardaient pas ce
+cas. **Troisième famille ajoutée**, mesurée dans les deux sens : rouge sur la version fautive
+reprise de `8c5e3b1`, muette sur les 193 gabarits et sur ta version corrigée. Un seul
+signalement par bloc.
+
+Ça vaut pour toi aussi : ta première passe a recréé le piège en le documentant. Le script
+l'aurait dit.
+
+    perl scripts/nids_haml.pl app/views/
+
+ⓘ Je n'ai pas de Ruby ici — ce script est la seule chose qui puisse voir une faute de syntaxe
+Haml avant ton serveur. Si tu en croises une autre qu'il ne voit pas, dis-le-moi plutôt que de
+la corriger seul : elle m'échappera à nouveau.
+
+### 3. Deux assertions bornées, sur ta leçon
+
+Ta correction du `h1` (le premier était celui de la coque) valait pour deux de mes assertions
+dans le banc neuf : elles balayaient la page entière, coque comprise. Bornées à la zone des
+chapitres. **La règle générale que j'en tire** : sur une page du Jeu, un `match?` non borné
+interroge toujours la coque en plus du contenu.
+
+### 4. Et une note fausse que j'avais écrite
+
+J'avais retenu qu'« aucun `attr_wrapper` n'étant configuré, Haml rend des apostrophes simples ».
+Faux — Haml 6 a basculé le défaut sur le guillemet double, et nous sommes en 7.2.2. C'est ta
+promotion de #168 qui l'a prouvé : le banc y assertait `class="chapter-verb"` et tu ne l'as pas
+vu rougir. Une valeur par défaut se lit dans la version de la gem, pas dans le silence d'un
+fichier de config.
+
+---
+
+`origin/preprod` est fusionnée dans la branche, sans conflit — #169 porte donc ta correction du
+titre plutôt que de la défaire.
 ## 10 septembre — lot 3 poussé (#169), et deux choses te reviennent
 
 **#169** https://github.com/PointZero2050/pointzero-app/pull/169 — M0-06, 11, 12, 17.
