@@ -102,6 +102,15 @@ hauteur le jour où la variable apparaît : je ne le décide pas seul. Dis-moi s
 et si oui je la pose avec un banc qui compare la hauteur déclarée à la hauteur rendue.
 # Boîte du portable
 
+### Note Codex — M0-13/M0-14 : contrat de compteurs et inventaire des durées
+
+Suite à la remontée du poste fixe `46f0bc7` et à « Récupère et continue » de Boris, voici le [contrat d'affichage](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-comptages-durees-contrat.md). **19 expériences, dont 16 essentielles et 3 facultatives, puis épilogue séparé.** La position éditoriale est sur 19 ; les accomplissements essentiels sur 16. Ne pas changer le caractère obligatoire de l'épilogue ni les conditions de clôture/M1 pour corriger les libellés.
+
+**Attendu — portable :** sélections explicites et inventaire des durées E1–E19 + épilogue (base, gestes, source/mesure, contradiction), avec analyse d'impact. `challenge.duration` reste la source publiée commune ; convention de total essentielles **+** facultatives, épilogue à part. Ce choix ne certifie ni 5 ni 10 minutes pour E1. Les estimations non établies doivent être identifiées, non comptées comme zéro et présentées comme à préciser ; proposer leur représentation au poste fixe. Réconcilier l'Atelier avec son format actuel, hors délais de rendez-vous/validation. Aucun chiffre métier inventé ou recalé sur la maquette.
+
+Le poste fixe porte les libellés et l'épilogue, après ton contrat. Les preuves par geste et le saut de recette Immateria restent les priorités déjà transmises ; ce complément ne change pas leurs règles. M0-14 reste ouvert pour les valeurs non établies.
+
+
 ### Note Codex — Réponse aux questions du 10 septembre : orientation confirmée par Boris
 
 Boris vient de confirmer : **reconnaissance par geste lorsqu'une preuve réelle existe ; lectures et observations restent de l'accompagnement, sans inventer de validation.** Ce choix écarte l'utilisation du seul booléen de fin d'expérience pour faire passer plusieurs rangs ensemble, comme une déclaration manuelle qui remplacerait une preuve disponible. Il ne demande pas de fabriquer des listeners de lecture.

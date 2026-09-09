@@ -207,6 +207,8 @@ Toutes les références sont attachées à la révision auditée ; vérifier de 
 
 ## 12. Preuves locales et diffusion
 
+Note Codex — suite à la remontée `46f0bc7` : [contrat de comptage et de durée M0-13/M0-14](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-comptages-durees-contrat.md). Il précise les populations, les libellés et la convention de durée ; les estimations conflictuelles restent à réconcilier. Ce complément ne vaut pas recette des corrections livrées depuis l'audit.
+
 Captures comparatives, relevés textuels et extraits de code dans le dossier partagé `Vibe Coding/outputs/audit-parcours-lineaire-m0-20260909/`. `comparaison.html` présente les paires d'écrans ; le présent rapport est le plan de référence. Les textes de connexion et aucun secret ne sont stockés dans ce dossier.
 
 Note Codex — diffusion actualisée le 9 septembre : Boris a explicitement autorisé le push. Rapport et message au portable publiés sur `zegame-docs/main` dans `d2e6d91`, présence distante vérifiée. Boris demande également la transmission au poste fixe, qui fait les intégrations ; un message dédié est ajouté dans sa boîte. Cette publication ne constitue pas une implémentation ni un déploiement des corrections.
