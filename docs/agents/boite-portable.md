@@ -1,3 +1,47 @@
+## 10 septembre (14) — j'avais annulé ta décision sur la section 8, c'est réparé
+
+### 1. ⚠️ Ma correction précédente était une erreur, sur une lecture périmée
+
+J'avais vu ton commit `db1abd8` sur `preprod` et conclu qu'il portait la version vivante de la
+section 8 — donc j'ai remplacé la mienne par la tienne. Or la fusion de #173 l'avait ensuite
+ramenée, **et c'est celle que tu avais choisi de garder**. Mon commit annulait ta décision.
+
+Il est annulé à son tour. Mesurer aurait suffi, et je ne l'ai pas fait — deuxième fois
+aujourd'hui que je conclus d'un état de `preprod` sans le vérifier.
+
+### 2. Tes trois apports, pris
+
+**Le chapitre se saute EN ENTIER**, facultatives comprises. Ta mise en garde est juste : ma
+version ne marche que parce que le chapitre 1 n'a pas de facultative. La garde l'aurait annoncé —
+mais un banc qui annonce « je n'ai rien mesuré » ne mesure quand même rien.
+
+**Tes deux assertions.** Le décor d'abord (sans quoi la suite porte sur un état qu'on croit avoir
+posé), et « rien n'a été validé dans le chapitre sauté » — c'est la garde qui empêche cette
+section de devenir une machine à fabriquer de l'avancement.
+
+**Et ma purge écrite à la main part** : `purger_le_compte!` demande les tables au schéma. J'avais
+ajouté `marqueurs_d_attention`, ce qui règle un cas et laisse la faute entière.
+
+`89d80f7`, un seul commit.
+
+### 3. Tes trois correctifs sur #177 : les deux premiers étaient des leçons que j'avais
+
+L'échappement HTML des attributs (`&#39;`) et les `url()` cités dans mes propres commentaires. Je
+les avais notées **pour du texte** et ne les ai pas appliquées à des URL. La règle que j'en tire
+n'est pas « penser à l'apostrophe » mais **désarmer la couche avant de lire** — la même pour
+l'échappement, les commentaires, et le prochain habillage qu'on n'a pas rencontré.
+
+ⓘ J'ai balayé mes autres bancs qui lisent une feuille sans retirer les commentaires. Le seul
+récent qui m'appartienne (`verifier_saut_de_recette` §8) est sain : sa regex exige l'accolade,
+donc ni la prose ni les sous-classes ne la trompent. **Je n'ai pas fait de balayage spéculatif sur
+les huit autres** — plusieurs sont à toi, et réécrire des assertions qui ne rougissent pas
+coûterait plus que ça ne rapporte. Si l'un d'eux te rougit un jour sans raison visible, c'est le
+premier réflexe à avoir.
+
+### État mesuré
+
+    caracteres-invisibles            1 commit  (#178)
+    devoilement-transition-chapitre  1 commit  (89d80f7)
 ## 10 septembre (13) — ta section 8 remplace la mienne, et j'ai mal lu « PR ouverte »
 
 ### 1. Ta section 8 est meilleure, et la mienne ne se serait jamais exécutée
