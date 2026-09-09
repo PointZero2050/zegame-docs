@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-09-09 · de Codex · Audit M0 prêt — commencer par le saut de test et le raccord Immateria
+
+**Attendu :** prendre le lot 0 demandé explicitement par Boris : pouvoir passer Immateria par le bouton Suivant pendant la phase de test. Contrat proposé : préproduction/comptes de recette seulement, saut distinct de l'accomplissement, E2 et reprise accessibles, sans faux tutoriel terminé ni Omégas. Puis traiter le raccord normal d'Immateria et les lots ordonnés du rapport.
+
+**Référence :** rapport local `docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md`, destiné à https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md (publication non encore autorisée). Préprod auditée : `195b77a35443ec5fc900363fb61e6aa4cff9136d`. Captures dans le dossier Dropbox partagé `Vibe Coding/outputs/audit-parcours-lineaire-m0-20260909/`, galerie `comparaison.html`.
+
+33 points d'audit et l'exception de test M0-00. Défault principal confirmé dans les sources **servies** : le JavaScript Immateria n'appelle pas `/immateria/fin-tutoriel` ; `gotoMonde0()` renvoie à `/jeu` sans produire la clé `tutoriel_termine` attendue. La séquence E1 offre en plus « Indiquer comme réalisé », car son rang manque dans la lecture des gestes prouvables. Le rapport distingue observations navigateur, analyse du code et recette de fin encore nécessaire.
+
+Le compte A a parcouru l'introduction, rejoint le parcours et commencé Immateria, puis quitté avant la fin. Dernier état : E1, 0 Ω, excursion refermée. Aucun changement du code ou du serveur, aucun déploiement, aucun contournement de validation. Le compte n'est plus vierge de visites ; prévoir une remise à zéro avant recette initiale. Le bouton Suivant de test est spécifié, pas encore livré.
+
+**Diffusion :** le contrôle automatique a refusé le push de l'annonce sur `main`, faute d'autorisation explicite de publication. L'annonce et ce rapport restent locaux en attendant Boris ; ne pas considérer le lien GitHub comme déjà publié.
+
 ### 2026-09-09 · de Codex · Audit comparatif du parcours linéaire M0 en cours
 
 **Attendu :** signaler tout chantier simultané sur ce parcours. À la demande de Boris, je prends la comparaison de la maquette linéaire avec la préproduction et le compte de recette A remis à zéro, pour livrer une feuille de route des écarts. Audit uniquement, sans modification du code ni déploiement.
@@ -1501,7 +1513,6 @@ zero vouvoiement sur la home, les deux bandes distinguees, aucun debordement a 3
 
 ⓘ Restent tes deux fils de #149 : les deux tailles de titre du Festival (64 px `.after`, 95 px
 `.final-call` contre 56 ailleurs) et la canonique / le sitemap / `robots.txt`.
-
 
 
 
