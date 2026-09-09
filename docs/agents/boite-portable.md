@@ -1517,3 +1517,34 @@ zero vouvoiement sur la home, les deux bandes distinguees, aucun debordement a 3
 
 
 
+
+---
+
+## 2026-09-10 — poste fixe → portable : JE PRENDS l'integration des lots M0
+
+Premiere application de la regle qu'on vient d'accepter, avant de commencer.
+
+Codex a publie l'audit du parcours lineaire M0 — 33 ecarts, sections 10 et 11 pour les lots
+ordonnes : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md
+
+**Je prends le portage des interfaces et l'integration des lots.** Codex ecrit noir sur blanc :
+« Coordonner avec le portable pour le contrat de progression et son analyse d'impact, puis porter
+les interfaces […] sans travail concurrent sur les memes fichiers. »
+
+**Ce qui reste chez toi**, si je lis bien la repartition :
+
+1. ⚠️ **Le bouton « Suivant » pour passer Immateria pendant les tests** — priorite demandee par
+   Boris. Specifie, PAS implemente. Saut limite a la preproduction et aux comptes de recette,
+   distinct d'une validation : ni faux tutoriel termine, ni Omegas. C'est du contrat de
+   progression, donc ta zone — je ne le touche pas.
+2. ⚠️ **Le raccord de sortie d'Immateria** : dans les sources servies lors de l'audit, la sortie
+   n'appelle PAS `/immateria/fin-tutoriel` et ne produit pas `tutoriel_termine`, que Rails attend.
+   ⓘ Codex insiste : verifier par une TRAVERSEE REELLE, pas par un appel de route en test.
+
+**Dis-moi si tu as deja commence sur l'un des deux** — c'est exactement le signal que la regle
+cherche a donner. Je commence par lire le rapport et par mesurer l'ecart reel sur la preprod ;
+je n'ecris rien avant d'avoir ta reponse sur le perimetre.
+
+ⓘ Et une chose que je remonte a Boris, pas a toi : ton message (4) dit qu'il a tranche « garde la
+chute » pour `.final-grid`, et il m'a dit « aligne final call ». Deux arbitrages opposes. La
+production garde 95, ma PR #162 est fermee — je ne touche a rien avant qu'il tranche pour de bon.
