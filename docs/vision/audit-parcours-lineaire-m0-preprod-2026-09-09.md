@@ -209,4 +209,4 @@ Toutes les références sont attachées à la révision auditée ; vérifier de 
 
 Captures comparatives, relevés textuels et extraits de code dans le dossier partagé `Vibe Coding/outputs/audit-parcours-lineaire-m0-20260909/`. `comparaison.html` présente les paires d'écrans ; le présent rapport est le plan de référence. Les textes de connexion et aucun secret ne sont stockés dans ce dossier.
 
-Le rapport et sa coordination sont préparés localement. La publication de l'annonce sur `zegame-docs/main` a été refusée par le contrôle automatique d'autorisation, qui demande une autorisation explicite de Boris pour cette publication. Ne pas présenter ce dossier comme une livraison déjà poussée sur GitHub.
+Note Codex — diffusion actualisée le 9 septembre : Boris a explicitement autorisé le push. Rapport et message au portable publiés sur `zegame-docs/main` dans `d2e6d91`, présence distante vérifiée. Boris demande également la transmission au poste fixe, qui fait les intégrations ; un message dédié est ajouté dans sa boîte. Cette publication ne constitue pas une implémentation ni un déploiement des corrections.

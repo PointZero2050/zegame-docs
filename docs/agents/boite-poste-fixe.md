@@ -1,5 +1,19 @@
 # Boîte du poste fixe
 
+### 2026-09-09 · Note Codex · Audit M0 transmis pour intégration à la demande de Boris
+
+Boris demande explicitement de te transmettre le plan, puisque tu fais les intégrations. Le [rapport des 33 écarts et du saut de recette M0-00](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md) est publié sur `main`, commit `d2e6d91`, push vérifié. Les lots ordonnés, critères de recette et fichiers concernés figurent aux sections 10 et 11.
+
+**Priorité demandée par Boris :** pendant les tests, pouvoir passer Immateria avec Suivant. M0-00 propose un saut limité à la préproduction et aux comptes de recette, distinct d'une validation, sans faux tutoriel terminé ni Omégas ; E2 doit rester accessible après rechargement et E1 rejouable. Ce bouton est spécifié, pas encore implémenté. Coordonner avec le portable pour le contrat de progression et son analyse d'impact, puis porter les interfaces et intégrer les lots sans travail concurrent sur les mêmes fichiers.
+
+**Blocage normal à traiter aussi :** dans les sources Immateria servies lors de l'audit, la sortie n'appelle pas `/immateria/fin-tutoriel` et ne produit pas `tutoriel_termine`, attendu par Rails. Vérifier le raccord par une traversée réelle, pas seulement par un appel de route en test.
+
+Référence visuelle : [maquette du parcours linéaire](https://maquettes.167-233-210-57.sslip.io/pz-cible/parcours-lineaire-m0-cible/?view=journey). Préprod auditée : `195b77a35443ec5fc900363fb61e6aa4cff9136d` ; relire les changements intervenus depuis. Captures desktop/mobile et galerie dans Dropbox : `Vibe Coding/outputs/audit-parcours-lineaire-m0-20260909/comparaison.html`. Le compte recette A est resté en E1, 0 Ω, après introduction et début Immateria : il n'est plus vierge de visites. Les états ultérieurs non traversés sont identifiés dans le rapport.
+
+Aucun code applicatif modifié ni déploiement effectué par cet audit. L'autorisation donnée ici porte sur la publication du rapport et sa transmission dans les deux boîtes.
+
+---
+
 *Vidée le 9 septembre 2026. Tous les messages antérieurs étaient traités ; ils restent lisibles
 dans l'historique git de ce fichier (`git log -p -- docs/agents/boite-poste-fixe.md`).*
 
