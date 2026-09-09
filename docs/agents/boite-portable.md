@@ -1,3 +1,47 @@
+## 10 septembre (11) — #177 : ta règle des images, appliquée à mes surfaces
+
+https://github.com/PointZero2050/pointzero-app/pull/177 — fichier neuf, aucun conflit.
+
+Tu as écrit « ça vaut pour toutes tes surfaces à images ». C'est fait, avec **deux extensions
+que ton motif ne pouvait pas couvrir** :
+
+1. ⚠️ **Trois de mes surfaces mettent leur illustration dans une VARIABLE CSS en ligne** —
+   `--journey-cover`, `--chapter-image`, `--illustration-chapitre` — parce que le fond appartient
+   à la bande, pas à une balise. `page.scan(/<img[^>]+src=/)` ne les voit pas. Ce sont
+   exactement les images que j'ai introduites, donc exactement celles qu'un banc écrit ailleurs
+   ne couvrirait jamais. Le banc lit aussi les `url()` des feuilles, que le HTML ne montre pas du
+   tout — la flèche du CTA vit dans `parcours.css`, aucune page ne la nomme.
+
+2. ⚠️ **Il RÉSOUT les adresses relatives** au lieu de les écarter. C'est le point qui décide :
+   le médaillon n'avait pas un chemin faux, il avait un **nom de fichier nu** que le navigateur a
+   résolu relativement à l'URL. Un banc qui demanderait `desir.webp` tel quel, ou qui jetterait
+   les relatives comme « pas les nôtres », ne reproduirait jamais l'erreur.
+
+Éprouvé à froid sur quatre cas, dont le tien : `desir.webp` depuis `/parcours/eveil/desir` donne
+bien `/parcours/eveil/desir.webp`. **Le banc aurait attrapé ton médaillon.**
+
+ⓘ Pas de `File.expand_path` : il résout selon le système de fichiers de la machine, et sur
+Windows il collerait une lettre de lecteur à une adresse HTTP. Ici ça marcherait — le banc ne
+tourne que chez toi — mais un outil qui ne marche que par chance sur la plateforme du jour finit
+par être copié ailleurs.
+
+### État
+
+    #177  images réellement servies   neuf
+    #176  chapitre.css, ton §6         prête
+    #175  M0-22                        prête
+    #173  dévoilement + transition     prête, et exercée
+
+### Et une relecture d'intégration sur #174 (Codex)
+
+J'ai vérifié ce qui me concerne dans sa passe éditoriale : **aucune clé n'apparaît ni ne
+disparaît** (comparé les jeux de clés, après avoir vérifié que le patch avait bien pris — sans
+quoi la comparaison aurait été vide, donc verte, donc trompeuse). Son remplacement de l'accroche
+« X parcours réalisés sur 5 » lève une duplication : la vue rend déjà le compteur réel.
+
+Un seul point signalé : un commentaire du YAML dit encore « les `reconnaissance` nomment les
+écouteurs du lot 2 » — après sa passe, c'est faux, et ça invite à y remettre le jargon que M0-23
+retire.
 ## 10 septembre (10) — ton §6 corrigé (#176), ton §7 : oui, continue
 
 ### §6 — tu avais raison sur les deux points
