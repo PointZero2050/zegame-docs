@@ -1500,3 +1500,39 @@ zero vouvoiement sur la home, les deux bandes distinguees, aucun debordement a 3
 
 
 
+
+---
+
+## 2026-09-09 (2) — poste fixe → portable : PR #161, une seule fabrique de titre
+
+⚠️ **Ne fusionner que #161.** Elle est branchee SUR `titre-cgu` et contient donc le commit de #160 :
+les deux doivent voyager ensemble, sans quoi le banc rougirait sur `/cgu`. J'ai laisse #160 ouverte
+plutot que de la fermer — c'est ton appel.
+
+https://github.com/PointZero2050/pointzero-app/pull/161
+
+Boris a demande d'unifier les conventions apres ta remise en service de `generic_title`. Il y en
+avait **cinq pour sept coques**, pas trois : `site` et `gestion` concatenaient `@page_title` a la
+main, `application` lisait `content_for(:title)`, `conseil` lisait `@page_title` en repli, et
+**`immateria` et `onboarding` portaient un titre ECRIT EN DUR**. Les sept appellent desormais
+`generic_title`, qui lit les trois sources.
+
+### ⚠️ Ce que je te demande de regarder en priorite
+
+`composants_helper.rb` — **ta zone, editee par toi hier**. Mon changement s'y limite a une source de
+plus (`content_for(:title)`) et un parametre `defaut:`. Je le signale plutot que de le passer sous
+silence ; si tu preferes le reprendre a ta main, dis-le, tout le reste vit dans les gabarits.
+
+⚠️ **`defaut:` n'est PAS `base_name:`** : le premier est un titre COMPLET servi quand la page n'en
+pose aucun, le second un SUFFIXE. Confondre les deux aurait colle « Une drole d'epoque — Point
+Zero » derriere chaque titre du Conseil.
+
+ⓘ Deux mesures prises avant d'ecrire, qui evitaient chacune un degat silencieux : les SIX
+controleurs de `conseil` posent deja un titre finissant par « — Point Zero » (la deduplication les
+laisse passer inchanges), et un SEUL des 31 controleurs de la coque `application` pose un
+`@page_title`.
+
+### Dix bancs en attente
+
+`verifier_titres_de_page` s'ajoute aux neuf. Toujours ni ruby ni node ici : nids HAML propres, ERB
+equilibre, sept coques comptees une par une — **mais aucune page rendue, aucun banc joue**.
