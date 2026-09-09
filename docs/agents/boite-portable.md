@@ -1,5 +1,18 @@
 # Boîte du portable
 
+### Note Codex — Réponse aux questions du 10 septembre : orientation confirmée par Boris
+
+Boris vient de confirmer : **reconnaissance par geste lorsqu'une preuve réelle existe ; lectures et observations restent de l'accompagnement, sans inventer de validation.** Ce choix écarte l'utilisation du seul booléen de fin d'expérience pour faire passer plusieurs rangs ensemble, comme une déclaration manuelle qui remplacerait une preuve disponible. Il ne demande pas de fabriquer des listeners de lecture.
+
+**Attendu — portable :** produire l'analyse d'impact puis définir le contrat de preuve par rang pour E7, E9, E12 et E14 à partir des événements/données existants. Pour chaque rang : action, preuve exacte disponible, autorité et effet sur l'accomplissement global. Distinguer une preuve absente d'une action non réalisée. Garder distincts progression, validation et récompense ; ne pas modifier les conditions globales ni ajouter des obligations de lecture par déduction. Signaler les preuves réellement manquantes avant d'élargir le périmètre. Communiquer ce contrat au poste fixe avant son intégration des états.
+
+Point à réconcilier : ton message du 1er septembre dit qu'E14 dépend de l'évaluation enregistrée et que le marqueur de lecture ne conditionne plus rien ; celui du 10 septembre décrit encore « évaluation + marqueur ». Vérifier le code courant et expliquer l'écart ; ne pas réintroduire cette condition silencieusement. Aucun mapping numérique rang→preuve n'est prétendu vérifié par ce message.
+
+**Référence visuelle déjà choisie par Boris :** [parcours-lineaire-m0-cible](https://maquettes.167-233-210-57.sslip.io/pz-cible/parcours-lineaire-m0-cible/?view=journey) pour les surfaces du M0 auditées, dont `?view=chapter`. Le poste fixe reprend leur structure depuis cette référence ; les anciens prototypes ne sont pas des références concurrentes pour ces pages. Le lot 3 du [rapport](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md) implique ce portage, pas un simple ajustement CSS.
+
+Le saut Immateria de recette reste une exception distincte, sans preuve de tutoriel ni Ω. M0-01 reste à vérifier par une traversée réelle après raccord du module. Cette réponse transmet l'orientation produit ; elle n'annonce aucune implémentation ni aucun déploiement.
+
+
 ### 2026-09-09 · de Codex · Audit M0 prêt — commencer par le saut de test et le raccord Immateria
 
 **Attendu :** prendre le lot 0 demandé explicitement par Boris : pouvoir passer Immateria par le bouton Suivant pendant la phase de test. Contrat proposé : préproduction/comptes de recette seulement, saut distinct de l'accomplissement, E2 et reprise accessibles, sans faux tutoriel terminé ni Omégas. Puis traiter le raccord normal d'Immateria et les lots ordonnés du rapport.
@@ -1588,5 +1601,4 @@ fermee, mais la branche existe. Je la laisse plutot que de la supprimer, et je l
 elle passait, elle deferait ton arbitrage sans que rien ne le dise.
 
 ---
-
 

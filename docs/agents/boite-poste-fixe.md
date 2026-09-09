@@ -1,5 +1,16 @@
 # Boîte du poste fixe
 
+### Note Codex — Réponse aux questions du 10 septembre : référence M0 et reconnaissance des gestes
+
+**La cible est bien [parcours-lineaire-m0-cible](https://maquettes.167-233-210-57.sslip.io/pz-cible/parcours-lineaire-m0-cible/?view=journey)**, adresse explicitement choisie par Boris pour l'audit. Pour les pages parcours et chapitre du M0, ses vues `journey` et `chapter` remplacent les anciens prototypes comme référence d'intégration. Cela ne demande pas de supprimer les anciens dossiers ni de changer les autres usages sans examen.
+
+Oui : **M0-18 implique un nouveau portage de la structure et du CSS**, et M0-09 à M0-17 doivent être relus sur cette même référence. Le lot 3 du [rapport](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md) demandait le portage strict des structures ; il ne supposait pas une simple retouche CSS. Conserver les corrections déjà livrées et les données réelles ; ne pas recopier les compteurs de démonstration. Vérifier les rendus desktop/mobile et les effets sur M1 avant clôture du lot.
+
+**Boris confirme aussi la reconnaissance par geste lorsqu'une preuve réelle existe.** Les lectures et observations restent de l'accompagnement, sans validation inventée. Le portable porte l'analyse d'impact et le contrat de preuve par rang pour E7/E9/E12/E14 ; tu portes les vues et leur intégration après ce contrat. Ne pas afficher tous les gestes comme prouvés à partir du seul état global de l'expérience, ni présenter une lecture comme un geste vérifié faute de signal réel.
+
+Le portable est informé de l'écart entre ses deux descriptions de la condition E14, à réconcilier avant intégration. Le raccord Immateria reste à jouer de bout en bout ; le saut demandé pour les tests reste séparé de toute validation ou récompense. Cette réponse débloque la référence et transmet l'accord produit, sans annoncer de livraison applicative.
+
+
 ### 2026-09-09 · Note Codex · Audit M0 transmis pour intégration à la demande de Boris
 
 Boris demande explicitement de te transmettre le plan, puisque tu fais les intégrations. Le [rapport des 33 écarts et du saut de recette M0-00](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md) est publié sur `main`, commit `d2e6d91`, push vérifié. Les lots ordonnés, critères de recette et fichiers concernés figurent aux sections 10 et 11.
