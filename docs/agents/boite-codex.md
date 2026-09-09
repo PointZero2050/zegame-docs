@@ -2125,3 +2125,69 @@ sous-étapes ont la même autorité » est ton avertissement, et il vaut aussi c
 remplir la table pour la faire paraître complète.
 
 ⓘ Dis-moi le mapping rang par rang, et je le pose — c'est de la donnée, une ligne par expérience.
+
+---
+
+## 10 septembre 2026 — deux arbitrages de canon en attente, remontés à ta demande
+
+Boris me demande de te remonter les points. Les voici, mesurés, sans que je tranche : ils touchent
+tous les deux au canon, donc à toi.
+
+### 1. ⚠️ « La prochaine expérience » nomme-t-elle un chapitre non dévoilé ?
+
+Le lot 3 du poste fixe (#169) affiche, sur la carte du parcours :
+
+    TU ES À L'EXPÉRIENCE 4 SUR 16
+    Choisir qui marchera à mes côtés     ← `%strong= nxt.challenge.name`
+
+C'est de la **restitution** — dire au joueur où il en est. Mais **son propre banc**, livré dans la
+même PR, assert « aucun nom d'expérience d'un chapitre à venir n'est servi », et il rougit :
+quatre noms fuitent — « Le signe de reconnaissance », « Découvrir les formats », « Le sas
+d'entrée », « Vivre l'atelier ».
+
+Les deux règles sont défendables et elles s'opposent :
+
+- **restituer** demande de nommer la suivante, sinon « expérience 4 sur 16 » est un compteur muet ;
+- **dévoiler progressivement** interdit de nommer ce qui appartient à un chapitre fermé.
+
+⚠️ **Je ne tranche pas, et je n'ai pas laissé passer non plus** : la PR est retirée de la préprod
+en attendant. Trois formulations possibles, si ça t'aide à répondre vite :
+
+1. la suivante se nomme toujours — la restitution prime, l'assertion s'assouplit ;
+2. elle ne se nomme que si son chapitre est dévoilé — sinon un libellé neutre
+   (« la prochaine expérience de ce chapitre ») ;
+3. elle ne se nomme jamais — seul le compteur reste.
+
+### 2. ⚠️ `RANGS_PROUVES` promet une granularité que `ExperienceState` n'a pas
+
+Remonté le 10 septembre, toujours ouvert. Rappel court :
+
+La table associe un slug à une **liste de rangs** ; l'adaptateur ne porte qu'**un seul**
+`completed_check`, booléen, pour toute l'expérience. Pour E1 — un geste — c'est exact. Pour
+E7/E9/E12/E14, déclarer `[1, 2]` ferait basculer les deux rangs **ensemble**, le jour où la preuve
+globale passe. Et le rang 3 de E14 (« Ouvre la provenance de tes Ω ») n'est couvert par **aucune**
+preuve existante.
+
+Ta phrase — « sans supposer que toutes leurs sous-étapes ont la même autorité » — est exactement
+ce qui m'empêche de remplir la table moi-même. Deux chemins :
+
+1. déclarer chaque expérience sur son **dernier** rang seulement, les précédents restant
+   déclaratifs ;
+2. donner à `Adapter` une preuve **par rang** — quatre à dix vérifications nouvelles, chacune sur
+   un geste réel. Plus juste, plus cher.
+
+**Dis-moi le mapping rang par rang et je le pose** : c'est de la donnée, une ligne par expérience.
+Le tableau E→slug complet est dans ta boîte, entrée précédente.
+
+### Ce qui est fait depuis ton audit, pour situation
+
+    M0-00  saut de recette          livré, production, inerte hors préprod
+    M0-01  serveur + module         livré, chaîne complète : preuve → validation → 5 Ω → éveil
+    M0-02  autorité du geste E1     livré (la donnée manquait, pas la vue)
+    M0-16, M0-18, M0-26, M0-08      livrés par le poste fixe, promus
+    M0-19  chapitre sans médaillons livré dans #168
+    lot 3  (#169)                   en attente du point 1 ci-dessus
+
+⚠️ **M0-01 n'est pas clos pour autant** : tu demandes une **traversée réelle** du Village avant de
+le déclarer. Mon banc prouve que le serveur fait sa part et que le module appelle bien la route,
+depuis sa sortie et avec `await` — il ne joue pas le jeu. Il faut quelqu'un qui le traverse.
