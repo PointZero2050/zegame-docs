@@ -286,3 +286,73 @@ réelle. Le fichier servi ne change pas — vérifié, la production sert toujou
 `clamp(55px,7vw,95px)`. Le disque du serveur vient de nous rappeler ce que coûte une construction :
 49 Go de cache en trois jours, disque à 85 %. Une purge hebdomadaire est en place, mais autant ne
 pas construire pour rien.
+
+---
+
+## 10 septembre 2026 (4) — M0-01 : la moitié serveur est livrée, l'appel manque toujours
+
+`POST /immateria/fin-tutoriel` **valide désormais l'expérience**. Le trou que Codex avait nommé :
+l'action écrivait `tutoriel_termine` dans la Trace et s'arrêtait là ; `ExperienceState` en tirait un
+état d'AFFICHAGE (`:evidence_ready`), jamais un `ChallengesUser` validé. Le joueur terminait le
+Village, sa fiche disait « prêt », et il ne gagnait ni ses 5 Ω ni l'éveil de Désir.
+
+Vérifié de bout en bout, en production : preuve → validation → **5 Ω une seule fois** → et `/jeu`
+conduit à `/parcours/eveil/desir`. La chaîne dérivée fonctionne.
+
+### ⚠️ Mais personne ne peut encore accomplir E1 en JOUANT
+
+Mesuré moi-même, comme Codex : **zéro occurrence** de `fin-tutoriel` ou de `tutoriel_termine` dans
+tout `public/`. `gotoMonde0()` redirige, sans rien prouver. Le serveur est prêt, **l'appel manque**.
+
+`public/pz/immateria/` est ta zone : je n'y touche pas. Voici le contrat et un extrait qui suit le
+patron de `fetch` déjà présent dans le module (ligne ~780) — à prendre, à jeter ou à réécrire.
+
+### Le contrat, stable
+
+    POST /immateria/fin-tutoriel
+      en-tête   : X-CSRF-Token (le méta de la page)
+      corps     : aucun
+      201 Created  → première fois : preuve posée, expérience validée, 5 Ω
+      200 OK       → déjà fait : rien de plus, aucun Ω supplémentaire
+      422          → jeton CSRF absent ou invalide (rien n'est écrit)
+      302          → pas de session : redirection vers la connexion
+
+⚠️ **Il est idempotent** : rejouer ne double ni les Ω ni le `ChallengesUser`. Le module peut donc
+renvoyer sans crainte après une coupure.
+
+### L'extrait
+
+```js
+  async gotoMonde0() {
+    const url = '/jeu';
+    // ⚠️ LA PREUVE D'ABORD, LA NAVIGATION ENSUITE. Rediriger sans avoir posé la
+    // preuve, c'est ce que faisait cette fonction : le joueur arrivait sur son
+    // parcours avec le Village terminé et l'expérience non accomplie.
+    try {
+      const res = await fetch('/immateria/fin-tutoriel', {
+        method: 'POST',
+        headers: { 'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content || '' }
+      });
+      if (!res.ok) console.warn('[GameScene] fin de tutoriel refusée :', res.status);
+    } catch (e) {
+      // Hors ligne : on n'empêche pas le joueur de sortir. La preuve se
+      // rattrapera — l'appel est idempotent, le renvoyer ne coûte rien.
+      console.warn('[GameScene] fin de tutoriel non envoyée :', e.message);
+    }
+    try { window.dispatchEvent(new CustomEvent('pointzero:goto-monde0', { detail: { playerId: this.playerId, url } })); } catch (e) {}
+    window.location.href = url;
+  }
+```
+
+⚠️ **`gotoMonde0` devient `async`** : son appelant, `GameScene.js:959`, fait `this.gotoMonde0();`
+sans `await`. Ça marche — la navigation se produit dans la promesse — mais **c'est à vérifier chez
+toi**, et c'est le genre de détail qui décide si la preuve part vraiment avant le `window.location`.
+
+⚠️ **Codex demande une TRAVERSÉE RÉELLE**, pas un appel de route en test, avant de déclarer M0-01
+clos. Mon banc ne joue pas le Village : il prouve que le serveur fait sa part, il ne prouve pas que
+la sortie l'appelle. Tant que ce n'est pas joué de bout en bout par quelqu'un, M0-01 reste ouvert.
+
+ⓘ **Reprise en cas d'échec** : le contrat de Codex la demande. L'idempotence la rend simple —
+renvoyer au prochain chargement suffit. Si tu préfères une reprise côté serveur (par exemple à
+l'ouverture de la fiche E1, si la Trace porte la preuve mais que l'expérience n'est pas validée),
+dis-le-moi : c'est ma zone et c'est cinq lignes.
