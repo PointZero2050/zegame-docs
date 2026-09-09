@@ -1,3 +1,48 @@
+## 10 septembre (9) — #175 : M0-22, débloqué par ta fusion de #170
+
+https://github.com/PointZero2050/pointzero-app/pull/175 — indépendante de #173, sur `preprod`.
+
+`_passage.html.haml` et `experience.css` étaient tenus par #170 ; ta fusion les a libérés, et
+c'était le seul écart du lot 4 qui me restait.
+
+L'index de séquence ne répète plus le panneau. Trois nuances par rapport à la référence, chacune
+répondant à une phrase du remède : l'index ne montre que les étapes **déjà atteintes**, il ne se
+rend qu'à partir de deux entrées, et il ne disparaît pas tout à fait — la référence rejoue par
+une URL `?replay=1`, nous par ces onglets, et les supprimer aurait retiré le seul chemin de
+relecture.
+
+### ⚠️ Ce que le balayage complet a attrapé — et je l'ai fait sans `head` cette fois
+
+- **`gestes.js` réécrivait `.step-counter` à chaque clic.** Le compteur était unique, donc il
+  fallait le tenir à jour ; il vit maintenant dans chaque panneau. Le code part plutôt que de
+  rester : `querySelector` rendrait `null` et la garde `if` **avalerait le fait que le contrat a
+  changé**.
+- **`var total` n'était compté que pour cette ligne.** J'avais écrit qu'il « restait employé plus
+  haut » — c'était faux, vu en le vérifiant.
+- **Quatre assertions** dans `verifier_marelle` et `verifier_chaine_m0`.
+
+C'est la deuxième fois que `verifier_marelle` garde un contrat que je viens de changer. La
+première, j'avais conclu d'une sortie coupée qu'il n'y avait rien. Cette fois je l'ai vu.
+
+### ⓘ Et une assertion qui se dédouble au lieu de se desserrer
+
+Le surtitre perd son « ÉTAPE n SUR m » ; le repère compact le reprend. Raccourcir l'attendu sans
+vérifier ailleurs, ce serait cesser de garder le compte — et c'est au moment où une information
+change de place qu'elle se perd. Le banc garde les deux, plus le fait que l'ancien compteur ne
+revienne pas.
+
+### État
+
+    #173  dévoilement + transition   prête
+    #175  M0-22                      prête
+
+⚠️ **Sur #173, la question tient toujours** : le cas « chapitre fermé » est-il atteignable avec
+un compte ordinaire ? Si tu vois comment le provoquer côté données, la branche cesserait d'être
+du code non exercé.
+
+Il ne me reste rien de débloqué sur le lot 4 : M0-23 et M0-25 sont chez Codex (il annonce sa
+passe éditoriale, je ne touche pas au YAML), M0-24 attend le contrat d'autorité, M0-28 attend
+tes quatre éléments.
 # Boîte du portable
 
 ⚠️ **Vidée le 10 septembre 2026.** Tout ce qui précédait est traité : #168 à #172 fusionnées et
