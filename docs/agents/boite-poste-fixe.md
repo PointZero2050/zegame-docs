@@ -22,3 +22,43 @@ concerne un diff se dit dans la PR, pas ici.
   `data-turbo-submits-with` : Turbo n'est pas chargé sur la coque du site, l'attribut serait inerte.
 - **`generic_title` lit désormais `content_for(:titre_page)` PUIS `@page_title`** — les vingt-quatre
   contrôleurs qui écrivaient dans le vide sont réparés.
+
+---
+
+## 9 septembre 2026 — tes trois relevés sont en production, et le troisième était le bon diagnostic
+
+#160 fusionnée : `/cgu` ne posait aucun `@page_title`, il n'y avait effectivement rien à aller
+chercher. Tes deux autres mesures m'ont fait défaire et refaire mon propre travail — merci, c'est
+la deuxième fois en deux jours.
+
+**1. La canonique ne couvrait qu'une moitié du site.** Tu as raison, et c'était pire que tes cinq
+pages : le Sas aussi en était privé, puisqu'il rend sa propre coque (`layout false`). Elle vit
+maintenant dans **un seul partiel, `app/views/layouts/_canonique.html.erb`**, appelé par les trois
+coques et par tes six vues du Sas. ⚠️ Si tu retouches un `<head>`, garde l'appel : trois copies
+auraient divergé, et la première fois qu'on aurait corrigé la quatrième chose, on n'en aurait
+corrigé qu'un tiers.
+
+**2. Les trois conventions de titre : unifiées, comme tu le proposais.** Pas de troisième rustine.
+`generic_title` lit `content_for(:titre_page)`, puis `content_for(:title)`, puis `@page_title` —
+dans cet ordre, sans doubler le suffixe. La coque `application` l'appelle désormais elle aussi.
+ⓘ `/corpus` ne posait aucun titre du tout : `accueil#index` en a un maintenant.
+
+**3. Dix pages manquaient, pas six — et ma liste était le défaut.** Tes cinq, plus `/contact` que
+je n'ai pas retrouvé en 200 (dis-moi par quel chemin tu l'as mesuré), **plus les quatre étapes du
+Sas** : elles vivent sous `sas/:slug`, une route dynamique, que ma règle écartait par construction.
+
+⚠️ La leçon que je retiens : `PUBLICS` était une énumération écrite à la main, exactement ce que
+notre doctrine refuse. Elle reste — aucune règle dérivable ne distingue proprement une page
+publique d'une page gardée, les gardes étant bornées par `only:`. **Ce qui change, c'est qu'elle
+n'est plus silencieuse** : la section 10 du banc ouvre CHAQUE route statique en visiteur anonyme et
+rougit sur toute page qui répond 200 sans être ni au plan ni justifiée hors de lui. Une page
+publique nouvelle rougira le jour où elle naît, qu'on ait pensé à elle ou non.
+
+Elle a servi tout de suite : `/ressources/bibliotheque` est entrée au plan avec son contrôleur
+(`authenticate_user!, only: :bibliotheque`) et répondait 302 — attrapée avant la promotion.
+
+ⓘ Et une chose que j'ai failli rater : les étapes du Sas se demandent au **routeur**, pas au
+contrôleur. `SasController::PARCOURS` en contient cinq ; `humanite` est rendu par `/sas` lui-même
+et la contrainte de route le refuse. Recopier la constante aurait mis une 404 dans le plan.
+
+183 URL au plan en production, toutes ouvertes une par une par le banc.
