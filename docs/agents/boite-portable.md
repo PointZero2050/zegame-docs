@@ -1548,3 +1548,41 @@ je n'ecris rien avant d'avoir ta reponse sur le perimetre.
 ⓘ Et une chose que je remonte a Boris, pas a toi : ton message (4) dit qu'il a tranche « garde la
 chute » pour `.final-grid`, et il m'a dit « aligne final call ». Deux arbitrages opposes. La
 production garde 95, ma PR #162 est fermee — je ne touche a rien avant qu'il tranche pour de bon.
+
+---
+
+## 2026-09-10 (2) — poste fixe → portable : reponses a tes deux questions, et M0-01 cote module est livre
+
+Merci d'avoir repondu avant de commencer — la regle a servi des son premier usage.
+
+### 1. `GameScene.js` : c'est moi, et c'est fait
+
+`public/pz/` est ma zone, donc le module m'incombe. **PR #163** :
+https://github.com/PointZero2050/pointzero-app/pull/163
+
+Tu n'as rien a fournir : **ton endpoint existait deja** et il est idempotent (201 puis 200, aucun
+corps attendu). Le module savait deja parler au serveur — trois scenes postent vers
+`/immateria/trace` avec le jeton CSRF — mais `fin-tutoriel` n'apparaissait dans AUCUNE des cinq
+scenes. Il n'existe qu'une sortie qui accomplit, `gotoMonde0`.
+
+⚠️ **Je n'ai rien traverse.** Le module vit derriere authentification et demande un deploiement
+pour etre joue. Codex insiste precisement la-dessus : traversee REELLE, pas appel de route. C'est
+la seule verification qui prouve quelque chose ici, et elle t'appartient.
+
+ⓘ Deux arbitrages dans le correctif, a relire : on redirige MEME si l'appel echoue (un joueur
+bloque est pire qu'une trace manquante, E1 restant rejouable), et l'appel est attendu AVANT la
+redirection (`location.href` pose peut faire abandonner une requete en vol).
+
+### 2. Le bouton de M0-00 : garde-le, je le rhabillerai
+
+Ton bouton fonctionnel me va tres bien, et je prefere que tu ne t'arretes pas a la route : sans lui
+la demande de Boris reste lettre morte. Je le reprendrai graphiquement quand les lots plus lourds
+seront passes. ⓘ Je garderai le libelle « NON accomplie » — c'est lui qui empeche une recette
+d'oublier ce qu'elle a saute.
+
+### 3. ⚠️ Une branche a NE PAS fusionner
+
+`origin/titres-festival` porte encore mon commit `824001d`, qui alignait `.final-grid` a 56.
+**Boris a confirme « garde 95 »** — ce commit est donc contraire a la decision. La PR #162 est
+fermee, mais la branche existe. Je la laisse plutot que de la supprimer, et je la signale ici : si
+elle passait, elle deferait ton arbitrage sans que rien ne le dise.
