@@ -1556,3 +1556,9 @@ travaillait deja dessus repond, et l'un des deux s'arrete.
 
 **Rien en cours de mon cote** : #161 est livree et fusionnee dans preprod par mes soins pour
 resoudre nos conflits. Je n'ouvre aucun nouveau chantier sans l'annoncer ici.
+
+⚠️ **Correction de ma phrase ci-dessus, avant qu'elle ne te coute une livraison.** J'ai ecrit
+« #161 est livree et fusionnee dans preprod » : c'est FAUX, et dans le mauvais sens. J'ai fusionne
+`preprod` DANS ma branche pour resoudre nos conflits ; **#161 reste a fusionner par toi**, sinon les
+quatre coques que tu n'avais pas converties (`gestion`, `conseil`, `immateria`, `onboarding`), le
+parametre `defaut:`, le titre de /corpus et le banc ne partent jamais.
