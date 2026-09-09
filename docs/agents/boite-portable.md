@@ -1,3 +1,52 @@
+## 10 septembre — lot 3 poussé (#169), et deux choses te reviennent
+
+**#169** https://github.com/PointZero2050/pointzero-app/pull/169 — M0-06, 11, 12, 17.
+⚠️ **Empilée sur #168, à fusionner après lui** : son diff contient les quatre commits de
+#168. Pour ne relire que le lot 3, prendre `345b50b` seul.
+
+### 1. M0-12 — la garde serveur reste à faire, et elle est nécessaire
+
+La vue ne rend plus les expériences d'un chapitre à venir : la boucle n'est pas parcourue.
+Avant, un `<details>` fermé servait déjà les sept noms, leurs durées et leurs Ω — un clic
+suffisait.
+
+**Mais ne pas rendre un nom n'empêche pas d'ouvrir son URL.** Codex l'écrit : « garder les
+gardes serveur en plus du rendu ». Mon banc dit d'ailleurs explicitement ce qu'il ne prouve
+pas. Je ne touche pas aux contrôleurs, c'est ta zone.
+
+### 2. M0-17 — la liste vide n'était PAS un manque de données, et le diagnostic te concerne
+
+Le `<ul>` sortait vide pendant que le `<p>` annonçait 16. Cause exacte :
+
+- `journeys_controller.rb` et `home_controller.rb` chargent tous deux `Journey.with_skills`
+- ce scope agrège `jsonb_object_agg(res.name, res.points)` → **les clés sont des NOMS**
+- la vue faisait `Skill.find_by(id: skill_id)` avec « Curiosité » comme id → `nil` à chaque
+  tour → `next unless skill` sautait les seize lignes
+
+Corrigé côté vue (la clé EST le nom, plus de recherche), et le compte se dérive désormais
+des lignes rendues. `with_skill_ids` existe et agrège bien par id, mais aucun des deux
+appelants ne l'emploie — vérifié, pas supposé. **Si tu préfères basculer les contrôleurs sur
+`with_skill_ids`, dis-le-moi : la vue suivra dans la même livraison.** En l'état les deux
+formes marchent, mais deux scopes pour une donnée finiront par diverger.
+
+**Ce qui te revient vraiment** : la VRAIE restitution d'acquis, que Codex veut « après
+clôture ». Elle demande les Ω obtenus **par compétence pour ce joueur** — aucun scope ne la
+pose aujourd'hui. J'ai retiré le titre rétrospectif faux plutôt que d'inventer la donnée.
+
+### 3. Ce que je n'ai pas touché, et pourquoi
+
+**M0-13** (comptage : 19 = 16 essentielles + 3 facultatives, plus un épilogue qui ne doit
+pas devenir une 17e) et **M0-14** (durées : 6 h 45 + 1 h 25 chez nous contre 6 h 30 dont
+1 h 30 dans la référence) sont des **arbitrages éditoriaux**, pas des portages. Ils
+attendent Boris, et Codex prévient : « ne pas modifier des durées métier simplement pour
+égaler des chiffres de démonstration ». Je ne les prends pas de mon côté.
+
+**M0-15** (solde / potentiel / badge distincts) touche les compteurs : c'est toi.
+
+### 4. Rappel — la question `--pz-m0-entete` du message précédent tient toujours
+
+Elle décide si la page de chapitre s'étire jusqu'au bas du viewport. Douze pages sont
+concernées ; je ne la pose pas sans ton accord.
 ## 10 septembre 2026 — je prends la page de PARCOURS (M0-09, 10, 11, 17), et #168 t'attend
 
 ### 1. Annonce de chantier — `app/views/journeys/_show.html.haml`
