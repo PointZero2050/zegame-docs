@@ -2335,3 +2335,79 @@ lien mène à une page qui répond — « pas un lien condamné ».
 - **Inventaire M0-13/14** : pas encore livré. Un chiffre déjà mesuré, pour situer : la fiche
   affiche « Chapitre 1 · **Expérience 1 sur 20** » — ton contrat dit 19, l'épilogue hors
   compteur. C'est le premier écart que l'inventaire corrigera.
+
+---
+
+## 10 septembre (4) — M0-13/14 : l'inventaire que tu demandes, et la moitié serveur livrée
+
+### 1. L'inventaire E1–E19 + épilogue, mesuré
+
+Colonne `duration` en base, contre la somme des `sequence[].duree` du YAML.
+
+    n°  slug                               nature         base   gestes   écart
+    E1  faconner-mon-jumeau                essentielle    5 min  10 min   5 vs 10
+    E2  le-point-zero-entrer-dans-le-jeu   essentielle   10 min  10 min   =
+    E3  le-coupable-ideal                  essentielle   10 min  10 min   =
+    E4  une-drole-d-epoque                 essentielle   20 min  20 min   =
+    E5  avant-le-zero                      essentielle   15 min  15 min   =
+    E6  et-moi-dans-tout-ca                essentielle   20 min  20 min   =
+    E7  choisir-qui-marchera-a-mes-cotes   essentielle    5 min   8 min   5 vs 8
+    E8  l-ecosysteme-point-zero            essentielle    5 min   5 min   =
+    E9  choisir-ma-place-parmi-les-autres  essentielle    5 min  12 min   5 vs 12
+    E10 le-site-du-point-zero              essentielle   30 min  11 min   30 vs 11
+    E11 le-signe-de-reconnaissance         facultative   15 min  15 min   =
+    E12 choisir-un-double-regard           essentielle    5 min  13 min   5 vs 13
+    E13 les-choses-se-precisent            essentielle   30 min  30 min   =
+    E14 lire-mon-moteur                    essentielle    5 min  10 min   5 vs 10
+    E15 le-conseil-omega                   essentielle   25 min  25 min   =
+    E16 decouvrir-les-formats               facultative  10 min  10 min   =
+    E17 le-sas-d-entree                     facultative   1 min   1 h 00  1 vs 60
+    E18 vivre-l-atelier-point-zero          essentielle   3 min   3 h 00  3 vs 180
+    E19 mon-recit-de-passage                essentielle  30 min  30 min   =
+    —   ton-espace-est-pret                 épilogue      5 min
+
+    20 inclusions = 19 expériences + 1 épilogue · 16 essentielles · 3 facultatives
+    aucune expérience sans durée en base · 8 estimations contradictoires
+
+### 2. ⚠️ Deux des huit ne sont pas un désaccord d'estimation, mais une unité perdue
+
+`le-sas-d-entree` porte **1** quand ses gestes disent **1 h**. `vivre-l-atelier-point-zero` porte
+**3** quand ils disent **3 h**. Le même nombre, une autre unité — pas deux avis sur une durée.
+Je ne tranche pas, c'est éditorial, mais je te le nomme séparément des six autres, qui
+ressemblent plutôt à un « 5 min » par défaut jamais revu (E1, E7, E9, E12, E14).
+
+`le-site-du-point-zero` est le seul dans l'autre sens : 30 en base contre 11 dans les gestes.
+
+### 3. ⚠️ La conséquence de ta règle, avec ces données : AUCUN des deux totaux n'est publiable
+
+Ton contrat dit « si une population contient une telle expérience, son total affiche "Temps total
+à préciser" ». Six essentielles et une facultative sont litigieuses : les **deux** populations en
+contiennent. Tant que les huit ne sont pas réconciliées, la page n'affiche donc **aucun** chiffre
+de total — ce qui est correct, mais mérite d'être su avant que quelqu'un s'en étonne.
+
+ⓘ À titre indicatif seulement, si les huit étaient réglées sur la valeur en base : essentielles
+3 h 43, facultatives 26 min. Je ne publie pas ces chiffres et ne les mets nulle part dans le code.
+
+### 4. Ce qui est livré, et où passe la frontière
+
+`JourneyProgress::Etat` expose désormais `epilogue`, `experiences` (les 19), `essentielles_total`,
+`essentielles_faites`, et `position_de(inclusion)` — le rang **sur 19**, `nil` pour l'épilogue
+(« l'épilogue n'a pas de numéro d'expérience » : `nil` le dit, zéro l'aurait caché).
+
+⚠️ Le piège que tu nommes est mesuré plutôt que commenté : `requis_total` vaut **17**, parce que
+l'épilogue est obligatoire. Un gabarit qui ferait `requis_total - 1` tomberait juste aujourd'hui
+et faux le jour où son statut changerait. Le banc asserte cet écart pour qu'il reste visible.
+
+`DureesDuParcours` porte la règle d'affichage. **La somme des gestes n'est pas une source, c'est
+un détecteur** — elle ne s'affiche jamais et ne corrige jamais `duration` ; elle sert à dire que
+deux chiffres ne racontent pas la même histoire. Et `nil` n'est jamais zéro.
+
+ⓘ Rien de ce qui suit n'a été touché, comme tu le demandes : aucune migration, aucune table
+neuve, aucune progression, validation ou Ω modifiés, et aucun montant de durée métier changé.
+
+### 5. Ce qui reste, et à qui
+
+Les **libellés** sont au poste fixe (« Expérience {rang} sur 19 », « Durée à préciser », le bloc
+épilogue sans numéro) — il attendait ces sources. La **réconciliation des huit** est éditoriale,
+donc à toi et à Boris. M0-14 reste ouvert par ta propre phrase, et rien dans cette livraison ne
+le referme.
