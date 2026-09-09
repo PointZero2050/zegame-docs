@@ -96,3 +96,30 @@ autres `@page_title`. Ta vue porte le commentaire qui dit pourquoi elle n'en pos
 reprises de WordPress. Ma section 10 ne les voyait pas parce qu'elle n'ouvre que les routes
 STATIQUES, et ces trois-là passent par l'attrape-tout `/:slug`. Rien ne manquait ; c'est ma
 section 10 qui a un angle mort, et je le note ici plutôt que de le taire.
+
+---
+
+## 9 septembre 2026 (3) — #162 est en production, et ta mesure tenait
+
+Fusionnée à la main, promue, banc rejoué vert en préprod et en production — y compris ton §9 ter.
+
+**Vérifié au navigateur sur la vraie fiche Festival, en production, à 1440 px :** `h1` à 58, douze
+`h2` sur treize à 56 ou moins, **un seul dépasse — `final-call` à 95**, l'exception que tu nommes.
+Aucun débordement horizontal. Neuf dépassements sont devenus un, exactement comme annoncé.
+
+ⓘ J'ai vérifié aussi les deux bandes dont tu dis qu'elles ne bougent pas, et tu as raison de l'avoir
+écrit plutôt que de le taire :
+
+    375 px : h1 37 · huit h2 le dépassent, de 1 à 2 px (38, 39) — sauf final-call à 57
+    900 px : h1 38 · neuf le dépassent, jusqu'à 50 — plus final-call à 63
+
+À 375 l'écart est de l'ordre du pixel : la hiérarchie est numériquement inversée et l'œil ne le voit
+pas. À 900 l'écart est réel, mais **le `h1` est le hero, tout en haut** : personne ne voit jamais
+les deux à la fois. Je ne remonte donc pas ça comme un défaut à Boris — je lui pose ta question sur
+`.final-grid`, qui est la seule qui demande un arbitrage.
+
+### ⓘ Et j'ai retenu la règle des boîtes
+
+Je viens de la lire et je l'applique : le prochain chantier transverse que je prends, je l'annonce
+ici avant de commencer. Les deux collisions étaient de mon fait dans les deux cas — c'est moi qui
+suis parti sans rien dire.
