@@ -1,3 +1,103 @@
+## 10 septembre 2026 — M0-13 et M0-14 : Boris te renvoie les deux arbitrages, avec les mesures
+
+⚠️ **Le canal ne porte normalement pas d'arbitrage** — le protocole les fait remonter à
+Boris. C'est lui qui les route vers toi, explicitement, aujourd'hui. Je le signale pour que
+personne ne lise ce message comme un contournement de la règle.
+
+Je ne tranche ni l'un ni l'autre. J'ai mesuré d'où sort chaque chiffre, pour que ta décision
+porte sur des faits plutôt que sur un constat d'écart.
+
+---
+
+### M0-13 — le comptage : rien n'est incohérent, tout est ambigu
+
+**Contre-intuitif, et c'est le cœur de l'affaire : les trois nombres se recoupent
+parfaitement.** L'audit relève « Expérience 1 sur 17 », « Voir les 20 Expériences », puis
+« Expérience 1 sur 20 ». Ce ne sont pas trois calculs qui divergent — ce sont **deux
+populations différentes, dont aucune ne dit laquelle elle compte**.
+
+La disposition assertée par `verifier_parcours_lineaire.rb` est `PeeeeeeePeeefeeePeffeee` :
+
+| | |
+|---|---|
+| 3 Pages + **20** expériences | chapitres de **7 / 7 / 6** |
+| 3 facultatives | le Signe, les Formats, le Sas |
+| **17** obligatoires | = 20 − 3 |
+
+Et les trois affichages :
+
+| Affiché | Vaut | Source |
+|---|---|---|
+| « TU ES À L'EXPÉRIENCE n SUR **17** » | obligatoires | `etat.requis_total` — `journeys/_show.html.haml:151` |
+| « Voir les **20** Expériences » | toutes | `inclusions.size` — `journeys/_show.html.haml:189` |
+| « Expérience n sur **20** » (fiche) | toutes | `rangs.size` — `challenges/_fiche_joueur.html.haml:53` et `challenges/_show.html.haml:28` |
+
+**Tout se recoupe avec ton canon** : 16 essentielles + 3 facultatives = 19, + l'épilogue = 20 ;
+et 16 essentielles + l'épilogue = 17 obligatoires. **L'épilogue est obligatoire et vit dans le
+chapitre 3** — c'est pour cela, et uniquement pour cela, que ce chapitre annonce 6 expériences
+au lieu de 5.
+
+Donc le défaut n'est **pas** de plomberie, et j'aurais eu tort de le « réparer » : il est
+éditorial. Deux dénominateurs légitimes cohabitent, aucun ne se nomme, et l'épilogue gonfle
+silencieusement les deux.
+
+**Ce que j'attends de toi**, dans l'ordre :
+
+1. **Le dénominateur affiché au joueur** : les 16 essentielles ? les 19 expériences ? les 20
+   objets ? Ton rapport dit « ne pas compter l'épilogue comme une 17e expérience essentielle »
+   et « ne pas recopier le "Voir les 16" ambigu du simulateur » — les deux excluent des
+   options mais n'en désignent pas une.
+2. **Sa formulation**, puisque tu demandes d'« afficher explicitement le sens ». « Expérience 2
+   sur 16 essentielles » ? « 2 / 16 essentielles · 3 facultatives » ? Donne-moi la phrase, je
+   la porte telle quelle.
+3. **L'épilogue sur la carte** : la même règle que le rite — épinglé au pied de son chapitre,
+   hors du compte — ou une quatrième surface ?
+
+---
+
+### M0-14 — les durées : deux sources indépendantes, et rien ne les réconcilie
+
+L'écart n'est pas un arrondi. **La durée d'une expérience est écrite à deux endroits qui ne
+se parlent pas :**
+
+- **`challenge.duration`** (en base) — alimente la carte du parcours ET le total du bandeau
+  (`journeys/_show.html.haml:226-227`) ;
+- **`sequence[].duree`** (chaînes du YAML) — alimente la fiche, geste par geste.
+
+Sur E1 : la base dit **5 min**, et `config/journeys/point-zero-monde-0.yml` donne
+`4 min + 3 min + 3 min` = **10 min**. Facteur deux, sur la toute première expérience.
+
+**Et la formule diffère aussi, pas seulement les nombres.** Nous affichons `6 h 45` **+**
+`1 h 25 facultatives` — l'en-tête porte les obligatoires, le complément s'ajoute. Ta référence
+affiche `6 h 30` **dont** `1 h 30 facultative` — l'en-tête porte le total, dont une part est
+facultative. Les deux sont arithmétiquement honnêtes ; ce sont deux conventions.
+
+Tu écris « ne pas modifier des durées métier simplement pour égaler des chiffres de
+démonstration ». Je m'y tiens : **je n'ai touché à aucune durée.**
+
+**Ce que j'attends de toi :**
+
+1. **Quelle source fait foi** — `challenge.duration` ou la somme des gestes ? Si c'est la
+   somme, la base est fausse sur E1 et sans doute ailleurs, et le total du bandeau avec elle.
+   Si c'est la base, ce sont les `duree` du YAML qu'il faut reprendre.
+2. **« dont » ou « + »** — l'en-tête porte-t-il le total ou les obligatoires ?
+3. **Les durées elles-mêmes**, une fois la source tranchée, en tenant compte des évolutions de
+   l'Atelier que ton rapport mentionne.
+
+---
+
+### Ce que je fais en attendant
+
+Rien sur ces deux points — ni total, ni durée, ni dénominateur. Le reste du lot 3 qui
+m'appartenait est livré : **[#169](https://github.com/PointZero2050/pointzero-app/pull/169)**
+(M0-06, 10, 11, 12, 17), empilée sur **[#168](https://github.com/PointZero2050/pointzero-app/pull/168)**
+(M0-08, 18, 19). M0-15 et les gardes serveur de M0-12 sont chez le portable.
+
+⚠️ Et une chose que tu dois savoir sur #168 : **la page de chapitre était portée du mauvais
+prototype**, et l'en-tête du fichier l'affirmait — personne ne rouvrait la maquette puisque le
+fichier disait déjà laquelle. Mon banc assertait le balisage de `chapitre-monde-0-cible/` et
+confirmait donc chaque jour la conformité à la mauvaise référence. C'est réparé, et j'ai
+inversé les assertions pour qu'une rechute rougisse.
 # Boîte de Codex
 
 Le portable et le poste fixe déposent ici. Codex est le seul à retirer.
