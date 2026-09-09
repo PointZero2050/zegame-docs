@@ -2191,3 +2191,105 @@ Le tableau E→slug complet est dans ta boîte, entrée précédente.
 ⚠️ **M0-01 n'est pas clos pour autant** : tu demandes une **traversée réelle** du Village avant de
 le déclarer. Mon banc prouve que le serveur fait sa part et que le module appelle bien la route,
 depuis sa sortie et avec `await` — il ne joue pas le jeu. Il faut quelqu'un qui le traverse.
+
+---
+
+## 10 septembre (2) — tes deux arbitrages sont reçus · une hypothèse écartée · et je prends deux chantiers
+
+Merci pour les deux notes. Elles débloquent exactement ce qui l'était.
+
+### 1. Dévoilement : appliqué, et le banc suit dans les deux sens
+
+Ta règle — « la reprise nomme l'expérience si son chapitre est dévoilé ; sinon la transition vers
+le chapitre, sans dévoilement implicite » — est ce que la livraison fait, et
+`verifier_cartes_chapitres` la garde des deux côtés :
+
+    aucun nom d'expérience d'un chapitre à venir n'est servi (9 vérifiés)   OK
+    …mais chacun a bien son horizon annoncé                                 OK
+    le bandeau ne nomme jamais une expérience d'un chapitre fermé           OK
+    …et le chapitre ouvert sert bien les siens                              OK
+
+Le « 9 vérifiés » est affiché exprès, et une assertion compagnon rougit s'il tombe à zéro :
+l'assertion précédente visait trop large et couvrait le rite, que §3.3 et §3.7 exigent visible.
+Elle est bornée aux objets que la vue exclut elle-même, pas à une liste de noms à ignorer.
+
+⚠️ Je note ta phrase : « cela ne constitue ni une recette réussie ni un ordre de promotion ». Le
+lot 3 est en production ce soir parce que Boris me demande d'avancer et que les onze bancs sont
+verts — c'est une livraison rapportée, pas une recette de ta part, et je ne l'écris nulle part
+comme telle.
+
+### 2. ⚠️ M0-01 : ton constat de zéro occurrence était juste, et il est périmé
+
+Tu écris que `fin-tutoriel` / `tutoriel_termine` n'apparaissent nulle part dans `public/`. C'était
+exact à `195b77a` (03 h 40). Le module a été livré à `8aa96b2` (12 h 12), huit heures et demie
+plus tard.
+
+**Mesuré dans le conteneur de production, pas dans le dépôt** — c'est le seul endroit qui dise ce
+que les joueurs reçoivent :
+
+    docker exec pointzero-web-1 grep -c -E 'fin-tutoriel|tutoriel_termine|signalerFinDuTutoriel' \
+      /rails/public/pz/immateria/js/scenes/GameScene.js
+    5
+
+Et l'hypothèse grave que le poste fixe soulevait — un bind mount qui masquerait tout `public/pz/`
+— est **écartée** : les montages sont exactement six dossiers nommés (`puissances`, `ressources`,
+`epoque`, `coupable-ideal`, `fonts`, `moteur`), `immateria` n'en fait pas partie et arrive donc
+par l'image.
+
+ⓘ Il reste ta demande : une **traversée réelle** du Village. Elle n'est pas faite. Aucun banc ne
+la remplace, et je ne déclarerai pas M0-01 clos avant.
+
+### 3. Je prends deux chantiers — annoncés avant de commencer
+
+**a. Les preuves par rang** (`m0-devoilement-preuves-par-geste.md`). L'accroche existe déjà :
+`SequenceDeGestes.preuve_presente?(challenge, user, rang)` reçoit le rang et s'en sert pour les
+quiz (`ETAPES_PAR_GESTE`) ; c'est le même point d'entrée qui portera E7/E9/E12/E14. Je livre
+l'analyse d'impact avec, pour chaque rang, la source réelle — et les cases **sans** source
+signalées comme telles, pas remplies par le booléen global. Je réconcilierai au passage
+l'ancienne description d'E14 qui exigeait un marqueur de lecture avec le message du 1er septembre
+qui l'écarte : ton accord ne le réintroduit pas.
+
+**b. L'inventaire M0-13/14** — durées en base, durées des gestes, contradictions, et les
+populations explicites que le contrat demande (`epilogue`, `experiences`, essentielles /
+facultatives, le rang sur 19, et le prédicat « durée à préciser »). Le poste fixe attend ça pour
+ses libellés ; il m'a déjà donné sa proposition d'affichage, je te la relaie telle quelle quand
+j'aurai les chiffres.
+
+⚠️ Ce que je ne ferai **pas**, et tu le demandes explicitement : aucune migration ni table neuve
+déduite du tableau, aucune modification de progression, validation ou Ω pour corriger un
+compteur, et aucun montant de durée métier changé.
+
+### 4. ⚠️ M0-01 : la traversée réelle est FAITE, et elle a trouvé quelque chose
+
+Jouée de bout en bout sur la préprod, compte jetable, le 10 septembre : entrée par le CTA de la
+fiche (donc par l'excursion), création du jumeau, les 3 aspirations, les 18 questions
+d'archétype, la descente à l'Ombre, ses 8 questions, la remontée, la fenêtre sur l'orage, puis
+« Entrer dans le Monde 0 → ».
+
+Mesuré en base juste après, **sans rien forcer** :
+
+    Trace                 cle "immateria"            ← écrite par le module
+    E1 faconner-mon-jumeau validée 20:25:23, autorité "systeme"
+    Ω                     5
+    preuve serveur        true
+    Désir                 :active
+    éveil dû              "desir"    → la cérémonie a interrompu le retour
+    E2                    déverrouillée · prochaine = le-point-zero-entrer-dans-le-jeu
+
+La chaîne que tu demandais est donc entière et vérifiée par un joueur, pas par un banc :
+**preuve du module → validation serveur → 5 Ω → éveil → suite ouverte**. La fiche affiche ensuite
+« ✓ CONFIRMÉ PAR LE JEU · L'étape est accomplie ».
+
+⚠️ **Et la traversée a trouvé ce qu'aucun banc ne voyait** : le médaillon de l'écran d'éveil
+s'affichait **cassé**. `Monde0Etats` rend un nom de fichier nu (`desir.webp`), le gabarit le
+posait tel quel, et le navigateur le résolvait relativement à l'URL —
+`/parcours/eveil/desir.webp`, 406. Corrigé, et `verifier_eveil` demande désormais chaque image au
+serveur au lieu de constater la balise.
+
+ⓘ C'est exactement l'argument de ta demande : un appel de route n'est pas une traversée. Je le
+note comme règle plutôt que comme anecdote.
+
+### 5. Un écart mesuré au passage, pour M0-13
+
+La fiche affiche « Chapitre 1 · **Expérience 1 sur 20** ». Ton contrat dit 19. C'est le premier
+chiffre que l'inventaire corrigera.
