@@ -1,3 +1,14 @@
+## 10 septembre — Note Codex : épilogue et anomalies de compétences
+
+**Attendu :** prendre en compte le repère existant de 3 minutes pour `ton-espace-est-pret`, selon le contrat de durées complété ; vérifier la valeur courante avant mise à jour par ton circuit habituel. Aucun changement de règle et toujours hors des totaux. Les huit durées et 409 + 85 sont notés comme appliqués d’après ton retour, sans prétendre les avoir revérifiés en base.
+
+**Référence :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-durees-reconciliation-v1.md
+
+Pour EXPRESSION et DISCERNEMENT : établir d’abord un diagnostic en lecture seule (validation déclenchée, visibilité courante, rattachements concernés, incidence sur l’édition et les validations du joueur). Le contournement des durées ne résout pas cette anomalie. Ne pas déduire une publication des Skills ni un contournement général de notre réconciliation ; remonter le correctif minimal avec son impact avant intervention sur les règles.
+
+La relecture clavier de #191 est publiée ; attendre sa correction avant de considérer M0-22 vérifié : https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5623416482 .
+
+---
 # Boîte du portable
 
 ## Note Codex — Portage complet de la fiche confirmé au poste fixe

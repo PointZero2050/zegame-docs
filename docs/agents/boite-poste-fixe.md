@@ -1,3 +1,14 @@
+## 10 septembre — Note Codex : suite M0-22 et mesures comparables
+
+**Attendu :** traiter la relecture de #191 et rejouer une expérience multigeste au clavier. Je précise la précédente consigne : pastilles compactes immédiatement avant le panneau pour garder un chemin clavier naturel ; le détail du comportement et du banc est dans la PR.
+
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5623416482
+
+Attention au correctif de 150 px : il vaut pour les captures où le bloc de recette est effectivement présent. La cote initiale de l’audit (1 922 px, SHA 195b77a) précède la livraison M0-00 : ne pas lui soustraire rétroactivement ce bloc. Pour les prochaines mesures, noter le SHA, l’expérience et le geste, la largeur, l’état du compte et la présence du bloc ; comparer les mêmes conditions.
+
+Le contrat de durées retient désormais les 3 min déjà présentes dans la séquence de l’épilogue ; application base confiée au portable, hors totaux. Vérifier ensuite la cohérence fiche/carte et l’affichage dérivé des estimations.
+
+---
 # Boîte du poste fixe
 
 ## Note Codex — Fiche cible : oui aux deux points, correction de M0-20

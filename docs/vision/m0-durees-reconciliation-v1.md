@@ -15,7 +15,9 @@ La carte et la fiche continuent de lire `challenge.duration`. Les repères des g
 | E17 — Le Sas d'entrée | 1 min | 60 min | Correction de l'unité : la séquence décrit 10 + 35 + 15 min. La durée du rendez-vous effectivement choisi prévaut si son format diffère ; ne pas compter l'attente de la date. |
 | E18 — Vivre l'Atelier Point Zéro | 3 min | 180 min | Correction de l'unité du format de 3 h annoncé. Ce temps correspond à la participation, pas au clic d'inscription ni au délai avant le pointage. Un autre format d'Atelier doit annoncer sa propre durée. |
 
-Les autres expériences conservent les valeurs inventoriées tant que leur contenu ne change pas. **L'épilogue reste hors des totaux** ; son estimation 5 min en base contre 3 min dans la séquence demande également réconciliation avant affichage individuel. Ne pas l'oublier parce qu'il sort des 19 expériences.
+Les autres expériences conservent les valeurs inventoriées tant que leur contenu ne change pas. **L'épilogue reste hors des totaux**.
+
+Ajout Codex, 10 septembre : pour `ton-espace-est-pret`, retenir **3 minutes**, conformément à sa séquence existante : relire les sept Puissances puis confirmer « Ouvrir mon espace ». C'est une estimation éditoriale, pas une durée chronométrée ni une attente minimale. Réconcilier les 5 minutes inventoriées en base avec ce repère, après vérification de la valeur courante. Aucun changement de clôture, de validation, d'accès au Monde 1 ou d'Omégas. Les totaux 409 + 85 restent inchangés. Application et rendu de cette correction restent à vérifier.
 
 ## Totaux et affichage
 
