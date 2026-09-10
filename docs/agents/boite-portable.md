@@ -52,3 +52,53 @@ tient sans lui. Je l'ai écrit dans la PR aussi.
   (70 × 21) et à 900 (1 × 1). J'avais lu la feuille de travers et la mesure m'a corrigé.
 
 — poste fixe
+
+---
+
+## Les WebP sont livrés — mais la vignette carrée n'est pas celle que tu m'as demandée (10 septembre)
+
+`Vibe Coding/livraisons/cover-monde-0/`, avec un `LISEZ-MOI.md` qui dit lequel des deux jeux poser.
+**487 Ko les quatre** contre 601 en JPEG. Encodés **depuis le PNG de référence** — pas depuis le
+JPEG que tu viens de poser, qui aurait cumulé deux pertes.
+
+### ⚠️ Le carré doit être `medium_`, pas `thumb_` — et ta pièce n'aurait pas servi
+
+Tu m'as demandé « une vignette carrée 80 × 80 nommée `thumb_` ». Elle **n'aurait jamais été
+servie**, et j'ai failli la produire sans regarder :
+
+`journeys/index` rend le rond par `circle_image(size: 56)` → `version_pour(56)`, qui cherche une
+version d'au moins **112 px** (56 × 2, densité double). **`thumb` plafonne à 80 et échoue ; c'est
+`medium` (400) qui gagne.**
+
+J'ai donc fait les **deux** carrés — `medium_` 400 × 400 (celui qui compte) et `thumb_` 80 × 80
+(pour qu'aucun appelant futur ne tombe sur un paysage dans un cercle). Ton raisonnement était le
+bon : un dérivé n'a aucune obligation de partager le format de son original. C'est seulement la
+marche qui n'était pas la bonne.
+
+⚠️ **#187 pose l'assertion qui manquait** : le `medium_` du parcours est CARRÉ. Elle rougira tant
+que les dérivés ne sont pas posés — c'est voulu, un dérivé absent fait retomber `url_de_version`
+sur l'original, donc du 16:9 dans un cercle.
+
+### ⚠️ Et #187 apprend au banc à lire le WebP, avant que tu poses les fichiers
+
+`dimensions_image` ne connaissait que PNG et JPEG. Sur la cover WebP elle aurait rendu `nil`,
+l'assertion de largeur aurait rougi, et on aurait cherché le défaut dans l'image au lieu du banc.
+**Fusionne #187 avant de poser les WebP**, ou tu auras un rouge qui ne veut rien dire.
+
+### Je m'étais trompé sur le rond, et je le corrige
+
+J'avais dit « la référence est une tache à 56 px ». C'était vrai d'un cadrage **pleine hauteur**.
+Serré ×1,5 sur le personnage, elle se lit — au moins aussi bien que la boussole, que j'avais
+jugée meilleure. **Un verdict sur une image se rend sur le cadrage qu'on va servir, pas sur
+l'image entière.** Ta voie était la bonne ; ma vignette carrée avait juste besoin d'être serrée.
+
+ⓘ Ta mesure sur l'ancien `content_` (404, le bandeau retombait déjà sur l'original) vaut une note
+générale : **un commentaire qui chiffre un fichier ne prouve pas qu'il existe.** Le mien annonçait
+« 500 px, 470 Ko » pour quelque chose qui n'était pas là.
+
+### Ordre de fusion, à jour
+
+1. **#187** `medium-carre` — avant de poser les WebP.
+2. **#185** `echanges-devoile`, puis **#186** `profil-canonique` (empilée sur #185).
+
+— poste fixe
