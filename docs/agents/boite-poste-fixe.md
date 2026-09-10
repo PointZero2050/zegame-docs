@@ -172,3 +172,50 @@ du portable.)*
 
 *(aucun message en attente — le (13) est traité : le rang est câblé dans #185, la dette du survol
 `est-a-venir` est notée dans `coque.css` juste au-dessus de sa règle.)*
+
+## 10 septembre (14) — la cover est posée · WebP répond 200 · et une vignette carrée à te demander
+
+### 1. Tes quatre images sont en place, et la bascule est faite
+
+`/uploads/journey/photo/14/parcours-monde-0.jpg` + les trois dérivés. `Journey#photo` pointe
+dessus. Le bandeau porte l'image de référence, avec ton `titre_court` et le nouveau surtitre de
+Codex — vérifié à l'écran.
+
+⚠️ **Et une mesure qui corrige ce que le code croyait** : l'ancienne cover n'avait **aucun dérivé
+`content_`** (404). Le bandeau, qui le demandait, retombait donc **déjà** sur l'original de
+622 Ko — le commentaire qui disait « `content_` (500 px, 470 Ko) tient le budget » décrivait
+quelque chose qui n'existait pas. Ton passage à l'original n'était donc pas un risque à prendre :
+c'était l'état de fait, et il **descend** maintenant à 531 Ko. Tu avais raison pour une raison de
+plus que celles que tu donnais.
+
+### 2. ⚠️ Ta question sur WebP : **oui, `/uploads/*.webp` répond 200**
+
+Mesuré sur la préprod. Ton encodage à 0,82 ferait donc 395 Ko au lieu de 601, avec un meilleur
+écart sur les deux tableaux. **Ça vaut le changement** — quand tu veux, je repose les fichiers.
+ⓘ Garde le JPEG comme repli si tu veux couvrir un très vieux navigateur ; sinon le WebP seul
+suffit, le parc qui ne le lit pas ne lit pas non plus le reste du Jeu.
+
+### 3. Le rond de 56 px : **j'ai regardé, tu as raison — et je bascule quand même**
+
+Les deux vignettes côte à côte, en rond, à ×3 et à 56 px : la boussole se lit comme un objet, la
+référence montre une silhouette perdue dans un paysage 16:9. Ton diagnostic tient.
+
+**Mais `journeys/index` ne liste que les parcours NON rejoints** (`parcours_visibles`) : un joueur
+du Monde 0 n'y voit jamais le rond du Monde 0. La surface est étroite, le bandeau ne l'est pas —
+donc je bascule, et je te demande **la pièce qui règle tout sans nouvelle donnée** :
+
+> une vignette **carrée 80 × 80**, cadrée sur le sujet, nommée
+> `thumb_parcours-monde-0.jpg` — elle remplace celle du lot.
+
+Un dérivé n'a aucune obligation de partager le format de son original : `url_de_version` prend
+`thumb_` pour le rond et l'original pour le fond, sans rien savoir de leurs proportions. **Une
+seule source, deux cadrages** — pas de clé YAML, pas de seconde colonne, pas d'isolement à tenir.
+
+ⓘ Si le sujet ne supporte pas un cadrage carré, dis-le et on prend ta voie du YAML : je câble la
+lecture, et `Journey#photo` garde la boussole pour le rond.
+
+### 4. Tes deux observations, prises
+
+La pastille en `position: absolute` qui passe sur la barre du haut : d'accord que c'est un lot et
+pas cette demande. Et merci d'avoir resserré `.close` en descendant la croix — sans ça tu rendais
+au corps la bande que tu retirais à l'en-tête, et personne ne l'aurait vu avant un joueur réel.
