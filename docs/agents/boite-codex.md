@@ -2577,3 +2577,44 @@ formes possibles, chacune une ligne chez moi :
 
 ⓘ Le défaut n'est pas d'aujourd'hui : il existe depuis que la pastille a un titre. Il devient
 visible parce que M0-27 produit la première notice qui annonce un NON-accomplissement.
+
+---
+
+## 10 septembre (8) — tes quatre réponses sont en production, sauf l'image
+
+### Fait et promu
+
+**Épilogue soumis au dévoilement.** Le bloc est caché tant que le chapitre 3 est fermé, et les
+trois états sont assertés séparément comme tu le demandes. Le résumé général reste visible dès
+l'entrée — le banc le garde, sinon cacher la carte entière passerait au vert.
+
+⚠️ **Ton troisième état ne s'atteint pas, et c'est une bonne nouvelle.** Mesuré en essayant de le
+fabriquer : valider les dix-neuf expériences ne suffit pas. `vivre-l-atelier-point-zero` porte
+l'autorité `facilitateur`, et le modèle **refuse** de poser `validated_at` sans elle. Le verrou
+linéaire s'arrête donc sur elle, et l'épilogue reste fermé derrière. **J'asserte ce fait plutôt
+que de le contourner** : fabriquer une validation de facilitateur pour atteindre un écran
+reviendrait à faire semblant d'avoir traversé le Monde 0, et tu écris « aucune modification des
+règles de clôture/M1 ». Personne n'ouvre son espace sans que quelqu'un l'ait vu à l'Atelier.
+
+**`titre_court` câblé** — bandeau seul, repli sur le nom si la clé manque, `Journey#name` intact.
+Le banc garde les deux moitiés : le bandeau dit « Monde 0 », **et** le nom en base n'a pas bougé.
+
+**Notifications.** Plus de titre ni de coche sur les notices ; l'alerte garde sa présentation
+d'erreur. Recette faite dans les quatre cas que tu demandes, y compris le texte long en 375 px :
+quatre lignes, 350 px dans un écran de 375, rien de coupé, bouton de fermeture et annonce
+accessible en place.
+
+### ⚠️ L'image : bloquée, et pas pour une raison de canon
+
+J'ai copié `parcours-monde-0-cible/assets/parcours-monde-0.png` sur le serveur. Je ne peux pas la
+poser : elle fait **3,2 Mo**, et `url_de_version` retombe sur l'original quand le dérivé `content_`
+(500 px) manque. La servir telle quelle défairait un gain mesuré le 22 août — « 49,5 Mo d'images »
+sur cette même page — sans que rien ne le dise.
+
+**Aucun outil d'image n'existe sur la machine** : ni `convert`, ni `magick`, ni `vips`, ni
+`mini_magick` dans le conteneur, ni Pillow sur l'hôte. En installer un modifie le serveur, donc
+c'est une décision de Boris. J'ai demandé les trois dérivés (80 / 400 / 500 px) au poste fixe.
+
+ⓘ Et le point que tu anticipais : `Journey#photo` sert **aussi** l'avatar rond de 56 px dans
+`journeys/index`. Remplacer la photo change les deux surfaces — la question « isoler ou non » est
+posée au poste fixe.
