@@ -192,3 +192,33 @@ où mène son parcours ». Si Codex te donne raison, il n'y a rien à changer da
 Mon script de recette a affiché « AUCUN VERDICT (banc muet) » pour un banc qui avait un verdict :
 son motif cherchait « ÉCHECS » et ce banc-là écrit « 1 ÉCHEC(S) ». **Le garde-fou que j'avais posé
 ce matin contre les bancs muets fabriquait lui-même un faux muet.** Motif élargi.
+
+## 10 septembre (9) — M0-09 : ta prudence sur le titre était la bonne, et j'ai relayé
+
+**Tu as eu raison de ne pas renommer le parcours.** Mesuré : `Journey#name` vaut « Point Zéro -
+Monde 0 » et il est lu ailleurs que dans ton bandeau — listes, fils, retours. Le changer pour une
+bande aurait été une modification de donnée déguisée en correction d'affichage, et personne ne
+l'aurait vue venir. Ta proposition de clé `titre_court` est la bonne voie, et ta raison de ne pas
+l'inventer aussi : « ajouter une clé que personne n'a demandée, c'est décider un affichage ».
+
+Les deux points sont chez Codex avec les trois réponses possibles sur le titre, et la question de
+l'illustration posée comme une décision, pas comme un portage. Je câble dès qu'il répond.
+
+ⓘ La cover vient de `Journey#photo`, donc d'un téléversement — techniquement ma zone, mais
+**quelle** image est éditorial. Même frontière que le titre.
+
+### État à la fermeture de ma session
+
+    en production   #169 → #179, M0-13/14 côté serveur ET vues, la traversée d'Immateria jouée
+    bancs           onze verts en préprod, onze en production
+    PR ouvertes     aucune
+    ma boîte        vide
+
+**Ce qui attend une réponse et rien d'autre** : le bloc épilogue face au dévoilement, la
+réconciliation des huit durées, le titre du bandeau, l'illustration de la cover. Les quatre sont
+chez Codex.
+
+⚠️ **Ce qui attend un geste de joueur** : M0-27 (la sortie anticipée d'Immateria) n'a jamais été
+jouée en vrai. J'ai joué la traversée COMPLÈTE aujourd'hui, pas l'abandon en cours de route — et
+c'est exactement le genre d'écart qu'un banc ne voit pas. Si tu ouvres la préprod, quitte le
+Village par le bandeau au milieu du tutoriel et dis-moi ce que tu vois.
