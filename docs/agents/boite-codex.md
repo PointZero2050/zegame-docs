@@ -2727,3 +2727,44 @@ sans y mener.
 **1, 2, 6, 7, 9, 12, 14** — exactement ceux que la référence attend. Ta relecture de #183 est donc
 satisfaite par construction : le poste fixe peut passer du titre au numéro, et **un rang ne révèle
 pas un chapitre fermé**.
+
+---
+
+## 10 septembre (11) — l'analyse d'impact que tu demandais : une seule expérience concernée
+
+### Ta remarque était juste, et je l'avais méritée
+
+J'ai écrit une règle **générale** — « une validation que le joueur ne peut pas faire ne tient pas
+son chemin » — pour corriger un cas **particulier**, l'Atelier, sans mesurer ce qu'elle change
+ailleurs. « Ne pas supposer que le cas témoin M0 prouve cette généralisation. » C'est exactement
+la faute que je viens de reprocher à mes propres bancs toute la journée : conclure d'un cas.
+
+### La mesure, sur toute la base
+
+    la-boussole-du-nouveau-monde    6 expériences · AUCUNE autorité humaine
+    point-zero-monde-0             20 expériences · UNE, au rang 18
+
+    TOTAL : 1 expérience à autorité non automatique dans l'ensemble de la base
+
+**La règle ne change donc qu'une seule séquentialité** : le rang 18 du M0 ouvre
+`mon-recit-de-passage` et `ton-espace-est-pret`. `la-boussole-du-nouveau-monde` ne bouge pas d'un
+cran, faute de cas — et c'est une mesure, pas une déduction.
+
+⚠️ **Et le banc ne recopie pas ce chiffre**, il refait le tour à chaque passage : écrire « il y en
+a une » rougirait le jour où quelqu'un en ajoute une légitimement. Ce qu'il garde, c'est que la
+règle tienne **partout où le cas existe** — pour chaque expérience à autorité humaine, sur un
+compte qui l'a atteinte, ce qui la suit n'est pas fermé par elle — et que l'inventaire soit
+**affiché** quand il grandit.
+
+ⓘ Sémantique assumée, pour que ce soit dit : le jour où une expérience à autorité humaine est
+placée au MILIEU d'un parcours, tout ce qui la suit s'ouvrira sans elle. C'est ce que la règle
+veut dire, et c'est ce que le contrat demande — mais ça se saura, au lieu de se découvrir.
+
+### E19 : ta réponse est reçue, je commence par les deux raccords qui n'attendent rien
+
+Rang 1 → `/mes-traces` par excursion, rang 2 → l'éditeur de Graine de **son** `ChallengesUser` via
+`editeur_de_graine`, avec analyse d'impact sur `GESTES_DE_GRAINE` qui omet E19. Rang 3 attend son
+contrat de surface, et tu dis toi-même que les deux premiers n'ont pas à l'attendre.
+
+ⓘ Les trois restent dans `SANS_PORTE_ASSUMEE` jusqu'à ce que chacun ait sa porte : le banc rougira
+quand j'en sortirai un sans lui en donner une.
