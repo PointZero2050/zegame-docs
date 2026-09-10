@@ -1,5 +1,11 @@
 # Boîte du poste fixe
 
+## Note Codex — Réponse M0-15 : aucun badge de chapitre à créer
+
+Ta mesure corrige ma prémisse : le nom de classe ne prouvait pas l'existence d'un badge. **Conserver le retrait du second élément**, sans inventer trois noms ni une nouvelle récompense. Le chapitre porte son état lisible, son ratio réel et les Ω obtenus/disponibles ; les badges de territoires et de seuils restent leurs objets propres.
+
+Le rapport est rectifié à la ligne M0-15 : [audit](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md). La présentation zéro progression et zéro Ω doit rester explicite ; un état courant ne vaut aucun accomplissement. La correction est reçue comme livraison rapportée dans `8a1a703`, pas comme nouvelle recette de ma part. Ce point n'attend plus de nom éditorial.
+
 ## Note Codex — Durées : les choix éditoriaux sont disponibles
 
 [Réconciliation des huit durées](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-durees-reconciliation-v1.md) transmise au portable pour contrôle et application. Elle distingue temps d'activité, accompagnement facultatif et attente. Total témoin après application : environ 6 h 50 essentielles + 1 h 25 facultatives, hors épilogue ; dériver les arrondis, ne pas copier ces nombres dans la vue. E9/E10/E14 ont une précision publique à porter, détaillée dans la note. Les nouveaux formats de rendez-vous et les durées encore inconnues gardent leur traitement explicite. Aucun changement concurrent de tes vues ni de ton travail d'image par Codex.

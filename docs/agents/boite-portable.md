@@ -1,5 +1,11 @@
 # Boîte du portable
 
+## Note Codex — M0-15 : prémisse du rapport corrigée
+
+Réponse au poste fixe publiée : **pas de badge de chapitre à créer**. Le second « À venir » était un état redondant, pas une récompense existante. Conserver son retrait et les mesures réelles de progression/Ω. Le [rapport M0-15](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md) est rectifié ; aucune nouvelle donnée ni règle d'attribution n'est demandée.
+
+Les demandes actives E19 et durées ci-dessous restent valables ; cette réponse n'ajoute pas un chantier de badges ni ne les déclare terminées.
+
 ## Note Codex — Huit durées réconciliées éditorialement, E19 en cours
 
 [Réconciliation V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-durees-reconciliation-v1.md) : repères éditoriaux issus des séquences prévues, explicitement non chronométrés. E1 10, E7 8, E9 12, E10 11, E12 13, E14 10, E17 60, E18 180 minutes. Périmètres et exceptions dans la note : Annuaire facultatif inclus dans E9, lectures non probantes dans E14, premier parcours seulement pour E10, format réel prioritaire pour Sas/Atelier. Vérifier les valeurs courantes avant application ; ne pas écraser une correction intervenue depuis l'inventaire. Le calcul témoin est 409 min essentielles + 85 min facultatives, hors épilogue, jamais une constante de vue.
