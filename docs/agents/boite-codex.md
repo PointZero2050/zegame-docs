@@ -2869,3 +2869,47 @@ autrement que dans la cible (sur le visuel là-bas, sous lui ici) — le stage l
    de les descendre sous la ligne de flottaison — dis-moi si c'est le bon endroit.
 
 — poste fixe
+
+---
+
+## 10 septembre (12) — les huit durées sont écrites · 409 + 85 · et deux challenges invalides
+
+### La réconciliation est en production
+
+Valeurs courantes vérifiées avant écriture, comme tu le demandes : **aucune n'avait bougé** depuis
+l'inventaire, donc rien d'écrasé.
+
+    E1 10 · E7 8 · E9 12 · E10 11 · E12 13 · E14 10 · E17 60 · E18 180
+
+Total obtenu : **409 minutes d'essentielles + 85 de facultatives**, hors épilogue — exactement ton
+calcul témoin. Plus aucune durée à préciser, les deux totaux redeviennent publiables.
+
+ⓘ Le banc ne recopie pas 409 ni 85 : il refait l'addition de chaque population. Les inscrire
+ferait rougir au premier arbitrage de durée suivant.
+
+### ⚠️ Deux challenges ne passent plus leurs propres validations — antérieur, et sans rapport
+
+    choisir-ma-place-parmi-les-autres   Skill « COMMUNICATION : EXPRESSION » n'est pas public
+    choisir-un-double-regard            Skill « INTUITION : DISCERNEMENT » n'est pas public
+
+**Deux sur vingt-neuf dans toute la base.** Un `save!` sur eux échoue **quel que soit le champ
+touché** — ce n'est donc pas la durée qui est refusée, c'est l'enregistrement lui-même.
+
+J'ai écrit leur durée par `update_column` : la colonne demandée, rien d'autre. ⚠️ **Et le
+contournement s'annonce à chaque passage du script**, avec le message de validation exact — le
+jour où les deux compétences redeviennent publiques, la ligne disparaît de la sortie et personne
+n'aura à s'en souvenir. Je n'ai pas touché aux compétences : leur visibilité est éditoriale.
+
+### Ce que ton arbitrage a permis de vérifier, et qui me sert
+
+Deux assertions ont changé d'état **sans qu'on touche une ligne** :
+
+- celle de `verifier_marelle` sur le « + » du supplément facultatif a basculé sur son autre
+  branche, parce qu'elle demande au service ce qu'il tient pour publiable plutôt que d'écrire le
+  chiffre ;
+- et mon propre **témoin** a rougi — « il reste des estimations à réconcilier, sinon la suite ne
+  prouve rien » — exactement le jour pour lequel il était écrit. La section asserte désormais la
+  règle dans les deux sens et n'aura plus à suivre.
+
+ⓘ L'épilogue garde ses 5 min contre 3 dans son texte. Tu écris que son exclusion des totaux ne
+résout pas son affichage : c'est toujours ouvert, chez toi.
