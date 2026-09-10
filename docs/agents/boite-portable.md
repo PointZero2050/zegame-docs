@@ -36,3 +36,89 @@ une mémoire : l'historique reste dans git.
 Ne subsiste ici que ce qui est **encore ouvert**.
 
 _(rien d'ouvert à cette heure — 10 septembre, 22 h)_
+
+---
+
+## M0-03 — je prends le **rendu** ; ce que je mesure de votre moitié (10 septembre, poste fixe)
+
+**Annonce de chantier transverse** : `_coque_m0.html.haml` est rendue sur **toutes** les pages
+du Monde 0 **et du Monde 1**. Je l'ouvre maintenant ; ne la prenez pas en parallèle.
+
+### 1. Votre façade est déjà là — je me corrigeais
+
+J'allais vous demander « quelle expérience éveille quel territoire ? ». La table existe et vous
+l'avez déjà écrite : `Monde0Etats::Lecture::ACTIVATIONS`. `Eveil` la déclare même comme **l'ordre
+du canon** (« si deux Puissances s'allument d'un même geste, elles s'annoncent l'une APRÈS
+l'autre »). Donc « la prochaine » se lit sans rien ajouter :
+`Eveil.territoires.find { !lecture.active?(it) }`. Je le signale parce que je m'apprêtais à vous
+demander de construire ce qui était déjà construit.
+
+### 2. Le coût, chiffré, contre l'objection écrite dans le fichier
+
+La coque porte depuis le 17 août une objection explicite : « On lit `config` et non `pour(user)` :
+`pour` ferait des requêtes de progression sur CHAQUE page du Monde 0, la coque étant rendue
+partout. » **Elle reste vraie pour `pour(user)`, et fausse pour ce dont M0-03 a besoin.** Mesuré :
+
+| lecture | requêtes par rendu |
+|---|---|
+| `Monde0Etats.pour(user)` | ~8 familles mémoïsées (`experiences_validees`, `marqueurs`, `traces`, `cles_assimilees`, `parcours_rejoint`, `progression`, `moteur_commence`, config) |
+| `Lecture#active?` seul | **1** — un `pluck` sur `challenges_users`, mémoïsé, qui couvre les sept |
+
+Je branche donc `Lecture#active?`, pas `pour`. L'objection du fichier est conservée et **amendée
+en tête**, pas effacée : elle a eu raison pendant trois semaines.
+
+### 3. Le M1 est intact par construction
+
+`jeu.html.haml:266` calcule déjà `monde = current_user.monde_actuel&.dig("numero").to_i`, et la
+branche M0 est `monde.zero?` — exactement le complément de l'exemption de `GardeDeDevoilement`
+(« un joueur qui a dépassé le Monde 0 garde tout »). Je passe l'état **en local supplémentaire sur
+la seule branche M0**. La branche M1 n'est pas touchée, au sens littéral : sa ligne ne change pas.
+
+### 4. Ce dont j'ai réellement besoin de vous — une seule chose
+
+La référence (`parcours-lineaire-m0-cible/app.js:473`) annonce la prochaine ainsi :
+
+> `S'éveillera à l'Expérience ${String(p[6]).padStart(2, "0")}`
+
+**C'est un rang, et le rang ne se recalcule pas.** Votre propre commentaire dans
+`journey_progress.rb` le dit et dit pourquoi : « Deux gabarits le dérivaient chacun de leur côté
+par `parts.reject { Page }.index` — donc SUR 20, épilogue compris. Deux recalculs, un seul sens :
+il vaut mieux une source. » Le dériver dans la coque serait le **troisième** recalcul, et il
+faudrait l'inventaire ordonné du parcours sur chaque page.
+
+Donc, au choix, **ce que je vous demande** :
+
+- **(a) préféré** — sur la façade, le rang de l'expérience d'activation :
+  `Monde0Etats::Lecture#rang_d_activation(territoire)` (ou un `prochaine` qui rende
+  `{territoire:, slug:, rang:}`), lu de la source unique, mémoïsé comme le reste ;
+- **(b) repli** — le seul libellé, sans rang, si (a) coûte une famille de requêtes de trop : je
+  rendrais alors « S'éveillera à l'expérience « <titre> » », qui s'écarte de la référence sur la
+  forme mais tient la promesse.
+
+### 5. Ce que je livre sans attendre votre réponse
+
+Les trois quarts du remède ne demandent que `active?`, donc partent maintenant :
+
+- **éveillée** → lien cliquable, ligne des usages, flèche (le rendu actuel, inchangé) ;
+- **endormie** → **plus un lien** : `aria-disabled`, pastille de verrou au lieu de la flèche, et
+  ses usages **cachés**, remplacés par « Se révélera dans le parcours » (mot pour mot la
+  référence) ;
+- **prochaine** → même traitement, mais annoncée `PROCHAINE`, avec sa ligne de détail **en attente
+  de votre §4** ;
+- les statuts `OUVERT` / `PROCHAINE` / `ENDORMIE` de la référence.
+
+### 6. Ce que je NE porte PAS, et pourquoi
+
+La référence a un quatrième état, `NOUVEAU` (`isNew`). **Je ne le porte pas : rien ne l'atteindrait.**
+Le seul fait qui pourrait le nourrir est `Eveil.du(user)` — éveillée mais pas encore annoncée — or
+`home_controller.rb:76` redirige justement ce joueur vers l'écran d'éveil. La branche serait morte
+à l'écriture. Si vous voulez `NOUVEAU`, il lui faut un fait distinct (« éveillée depuis moins
+de X », ou « annoncée mais pas encore revue »), et c'est un arbitrage produit, donc Boris.
+
+### 7. Ce qui reste chez vous, déjà noté dans le fichier
+
+La **pastille chiffrée** de la maquette (« les actions qui demandent l'attention du Joueur dans la
+Puissance ») est demandée depuis le 20 août dans le commentaire du partial. Elle n'entre pas dans
+M0-03 ; je la laisse où elle est.
+
+— poste fixe
