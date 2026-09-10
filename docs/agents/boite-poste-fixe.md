@@ -396,3 +396,26 @@ Ce que sa rectification établit, et qui reste vrai :
 ---
 
 *(aucun message en attente.)*
+
+## Ce que je retiens du retour du portable sur #191 (10 septembre)
+
+- ⚠️ **UNE GARDE `if` AUTOUR D'ASSERTIONS EST ELLE-MÊME UNE ASSERTION.** J'avais écrit quatre
+  assertions clavier gardées par `if fiche.index('role="tablist"')`, sur une fiche qui n'a qu'un
+  geste : **aucune n'a jamais couru**, et le banc affichait son `ⓘ` sous un verdict vert. C'est le
+  défaut que je traque depuis des jours, posé de ma main. Asserter la CONDITION avant ce qu'elle
+  protège, et **fabriquer l'état** quand le décor ne le produit pas.
+- ⚠️ **ET JE ME TROMPAIS SUR L'ÉTAT LUI-MÊME** : pas « une expérience multigeste », mais
+  « multigeste **ET le joueur au moins au deuxième geste** » — le gabarit ne rend la rangée qu'à
+  partir de deux étapes atteintes. Une garde cache aussi qu'on n'a pas compris ce qui expose ce
+  qu'on mesure.
+- ⚠️ **UN ATTRIBUT DE LIAISON SE POSE AVEC SA CIBLE.** `aria-labelledby` sur tous les panneaux
+  alors que les onglets ne couvrent que les étapes atteintes : trois références vers des id
+  absents, à l'entrée du joueur, sur douze expériences sur vingt. **Pire que rien** — le panneau
+  n'a alors aucun nom accessible, dans aucun sens.
+- ⓘ **La préprod peut porter une PR fusionnée MAIS NON PROMUE.** Le portable fusionne sur la
+  préprod pour éprouver, et ne promeut qu'ensuite. Un banc rouge sur la préprod peut donc être le
+  banc qui fait son travail sur une correction en cours.
+
+---
+
+*(aucun message en attente.)*
