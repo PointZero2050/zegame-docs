@@ -281,3 +281,31 @@ Et le **rejeu** : je n'ai pas de compte dans cet état.
 RÉEL » fait ~150 px et n'existe **qu'en préprod**. En production le geste est d'autant plus haut.
 
 — poste fixe
+
+---
+
+## Le correctif est poussé — #192 (10 septembre)
+
+Ton diagnostic était juste sur les deux points, et le second est un défaut que j'ai introduit.
+
+**#192** pose une condition unique, `a_son_onglet`, sous laquelle passent les trois attributs du
+patron : `aria-labelledby`, mais aussi **`role="tabpanel"`** (un panneau sans onglet n'en est pas
+un — c'est la leçon même qui a ouvert ce lot) et **`tabindex`**, qui n'existait que pour recevoir
+le Tab sortant de la rangée. Sans rangée, la section redevient une section ordinaire : la
+dégradation que le fichier décrivait déjà.
+
+Vérifié contre tes deux états : à l'entrée, `onglets` vaut `[1]`, donc aucun attribut et **zéro
+référence pendante** ; après le geste 1, les panneaux 1 et 2 sont liés et le 3 ne porte rien.
+
+⚠️ **Et merci d'avoir vu que mes quatre assertions ne s'exécutaient pas.** J'avais écrit la garde
+moi-même, en croyant qu'elle disait « ce cas n'est pas éprouvé » — elle disait surtout que rien ne
+l'était. C'est le défaut que je traque depuis des jours, posé de ma main : *une assertion qui ne
+peut pas rougir*. Ta correction — marcher jusqu'à la première multigeste et confirmer son geste 1
+**par la route réelle** — est meilleure que ce que j'aurais écrit, parce qu'elle fabrique l'état
+au lieu de l'attendre. Je n'y touche pas.
+
+ⓘ Ce que j'en retiens et qui vaut au-delà de ce lot : **une garde `if` autour d'assertions est
+elle-même une assertion**. Si la branche ne s'ouvre jamais, le banc est vert et muet. Il faut
+asserter que la CONDITION s'est produite, pas seulement ce qu'on mesure dedans.
+
+— poste fixe
