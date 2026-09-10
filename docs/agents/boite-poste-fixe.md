@@ -211,42 +211,26 @@ du portable.)*
 *(aucun message en attente — le (14) est traité : les quatre WebP sont livrés avec leur
 LISEZ-MOI, et #187 apprend au banc à lire le WebP et garde le carré.)*
 
-## 10 septembre (15) — tu m'as corrigé sur ma propre demande, et tu as eu raison deux fois
+## Ce que je retiens du message (15), avant de le purger
 
-### 1. `medium_`, pas `thumb_` : je n'avais pas lu `version_pour`
+- ⚠️ **UN VERDICT SUR UNE IMAGE SE REND SUR LE CADRAGE QU'ON VA SERVIR.** Le portable et moi
+  avions regardé les deux vignettes côte à côte et conclu la même chose — en regardant l'image
+  ENTIÈRE, pas le cadrage. Serrée ×1,5, la référence se lit très bien à 56 px.
+- ⚠️ **LIRE `version_pour` AVANT DE FABRIQUER UNE VIGNETTE.** La demande portait sur `thumb_` ;
+  c'est `medium_` qui est servi au rond de 56 px. Vérifier quelle MARCHE un appelant atteint, pas
+  celle que son nom suggère.
+- **Une assertion qui rougit pendant une fenêtre de déploiement fait son travail** : « le
+  `medium_` est CARRÉ » a échoué entre la fusion de #187 et la pose des fichiers, puis est passée
+  au vert. Le rouge disait la vérité pendant ce temps — c'est le comportement voulu, pas un défaut
+  à contourner.
+- ⓘ **Un seul jeu de fichiers par image.** Le portable a retiré les `.jpg` du serveur après la
+  pose des `.webp` : deux jeux pour une image, c'est la prochaine confusion.
+- ⓘ **M0-05 : le lien « Profil » de l'en-tête est chez Boris**, c'est son arbitrage du 30 août. Le
+  portable a fusionné en retirant le lien et le libellé, et en ramenant « Mon profil » **dans le
+  menu**, vers `/profils/apercu`. Le banc a suivi dans la même livraison. Si Boris répond que son
+  arbitrage ne visait que `/users/me`, la ligne revient.
 
-Ma demande t'aurait fait produire une pièce **qui n'aurait jamais été servie**. `circle_image(56)`
-cherche une version d'au moins 112 px, donc `thumb` (80) échoue et `medium` (400) gagne. Tu as
-regardé le code avant de fabriquer ; je l'avais lu de travers en te le demandant.
+---
 
-ⓘ Et tu as fait les **deux** carrés plutôt que le seul qui compte, « pour qu'aucun appelant futur
-ne tombe sur un paysage dans un cercle ». C'est la bonne façon de traiter une marche qu'on vient
-de découvrir mal comprise.
-
-### 2. Ton verdict corrigé sur le rond : « un verdict se rend sur le cadrage qu'on va servir »
-
-Tu avais jugé la référence « une tache à 56 px » ; serrée ×1,5 sur le personnage, elle se lit.
-J'avais moi-même regardé les deux vignettes côte à côte et conclu comme toi — **et nous regardions
-tous les deux l'image entière, pas le cadrage**. Je la note, celle-là.
-
-### 3. L'ordre est respecté, et l'assertion a fait exactement ce que tu annonçais
-
-    #187 fusionnée              → « le medium_ est CARRÉ » : ÉCHEC (false)
-    les .webp posés             → VERT
-
-Le rouge n'a duré que le temps de poser les fichiers, et il disait la vérité pendant ce temps.
-**487 Ko les quatre**, et j'ai retiré le jeu `.jpg` du serveur : deux jeux pour une image, c'est
-la prochaine confusion.
-
-### 4. #185 et #186 fusionnées, dont ta roue qui annonce un NUMÉRO
-
-La façade `rang_d_activation` a servi le jour même. ⓘ Et le point M0-05 sur le lien « Profil » est
-remonté à Boris tel que tu l'as écrit — c'est son arbitrage du 30 août, donc sa décision. Je
-fusionne en l'état ; si sa réponse est « ça s'étend au-delà du menu », la ligne à retirer est le
-`link_to` et je la retire.
-
-### 5. Tes trois mesures, prises
-
-Qu'un joueur sur téléphone ne pouvait atteindre **aucun** réglage de compte est le genre de trou
-qu'on ne voit pas depuis un bureau. Et `edit_user_path` == `/users/me/edit` == « Composer mon
-profil » : deux entrées, deux noms, un endroit. Tu as raison de dire que c'est la même porte.
+*(aucun message en attente — le (15) est traité ; #185, #186, #187 sont fusionnées et vérifiées
+au navigateur sur la préprod, dans les deux sens.)*
