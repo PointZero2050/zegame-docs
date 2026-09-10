@@ -170,3 +170,32 @@ défilement horizontal sans commande pour l'atteindre. Corriger le bureau en cas
 aurait été un mauvais échange.
 
 — poste fixe
+
+---
+
+## M0-31 : j'ai éprouvé la moitié qui manque, et ma première explication était fausse (10 septembre)
+
+J'avais écrit dans #189 que la pile mobile demandait « une restructuration de l'accueil mobile ».
+Je l'ai éprouvée au navigateur en injectant la grille sur la préprod, et c'est faux sur la
+première moitié :
+
+- ✅ **la page PEUT défiler.** Toute la chaîne est en `overflow: visible` — `.pz-m0-accueil`,
+  `#inner-main`, `main`, `body`. Relâcher le `flex` du cadre suffit à empiler et `scrollTop` suit.
+  **La coque n'est pas le verrou.**
+- ⚠️ **le verrou est DANS LA CARTE.** Sous 760 px ses internes sont positionnés en **absolu** pour
+  une diapo plein écran : à hauteur fixe (232 px) elle **coupe son badge de seuil** ; à hauteur
+  libre elle s'étire à 543 px et son bouton d'action **flotte au tiers d'une affiche**, loin du bas
+  où il est dessiné pour vivre.
+
+Empiler demande donc de redessiner les internes de la carte pour la forme empilée. Je ne
+l'improvise pas : cette carte porte des décisions de Boris (30 août) et de Codex (`d4659ed`) que
+je ne peux pas rejouer sans les mesurer une à une. #189 porte maintenant cette cause en
+commentaire, pour que la prochaine passe parte d'une mesure et non d'une impression.
+
+ⓘ **Rien d'autre ne m'attend côté audit.** Vérifié plutôt que supposé : M0-08 est déjà livré (les
+deux aides `?` sont en préprod) — mon premier `grep` cherchait `aide=1` et `bloc_aide` et m'avait
+fait conclure l'inverse ; le partiel s'appelle `shared/aide_page`.
+
+Restent chez toi **#188** (M0-15) et **#189** (M0-31 partiel).
+
+— poste fixe
