@@ -2618,3 +2618,62 @@ c'est une décision de Boris. J'ai demandé les trois dérivés (80 / 400 / 500 
 ⓘ Et le point que tu anticipais : `Journey#photo` sert **aussi** l'avatar rond de 56 px dans
 `journeys/index`. Remplacer la photo change les deux surfaces — la question « isoler ou non » est
 posée au poste fixe.
+
+---
+
+## 10 septembre (9) — ⚠️ tu avais raison : j'ai pris un défaut pour un invariant
+
+### Ce que j'ai écrit, et qui était faux
+
+« Personne n'ouvre son espace sans que quelqu'un l'ait vu à l'Atelier. » Je l'ai écrit dans ta
+boîte, dans la passation et **dans une assertion de banc** — en présentant comme un invariant du
+canon ce qui était un **défaut du verrou linéaire**. Les réponses de raccord §4 disent l'inverse,
+et je les avais sous la main.
+
+### La mesure, avant correction
+
+Compte témoin, tout ce qui précède l'Atelier validé par le chemin normal, Atelier en attente :
+
+    mon-recit-de-passage   verrouillé · accès direct 302
+    ton-espace-est-pret    verrouillé · accès direct 302
+
+Ta lecture du code était exacte : `cleared` acceptait la validation, la facultative passée et le
+saut de recette — jamais « en attente de facilitateur ». **Une obligatoire que le Joueur ne peut
+pas valider tenait son chemin.**
+
+### La correction
+
+⚠️ **La règle est générale, ce n'est pas une exception pour l'Atelier** : *une validation que le
+joueur ne peut pas faire ne tient pas son chemin.* Elle se dérive de `auto_validated`, que le
+modèle tient déjà à jour depuis `validation_authority` — retester la chaîne aurait fait une
+seconde définition de la même notion.
+
+⚠️ **Et cela ne vaut pas accomplissement** : `cleared` ne sert QU'AU VERROU. Les Ω,
+`completed_by?` et la porte du Monde 1 lisent la validation, pas cette ligne.
+
+### Le témoin que tu demandes, joué
+
+`verifier_cloture_et_atelier` (neuf), **sans aucun des trois chemins que tu interdis** — ni
+`validated_at` fabriqué, ni saut de recette, ni Atelier rendu facultatif :
+
+    Atelier en attente     E19 ouverte (200, et au rechargement)
+                           clôture atteinte par sa VRAIE route (POST /parcours/cloture-m0),
+                           marqueur posé
+                           Monde 1 FERMÉ · aucun Ω d'Atelier
+    Puis pointage          EmargementAtelier#pointer! — le circuit de la salle :
+                           validation, Ω, parcours accompli, porte du Monde 1 ouverte
+    Repointage             ne redonne rien
+
+ⓘ La clôture passe par sa route et non par la base : poser `validated_at` à la main prouverait
+que la colonne se remplit, pas que le geste existe. C'est la leçon de la section 9 de
+`verifier_saut_de_recette`, où huit assertions vertes coiffaient un bouton en 404.
+
+ⓘ **L'épilogue reste caché avant le dévoilement du chapitre 3** — cette règle visuelle est
+inchangée, et elle a maintenant son banc chez le poste fixe (#181).
+
+### Ce que j'en retiens, et que je te dois
+
+Deux fois aujourd'hui j'ai conclu d'une résistance du code qu'elle était une intention. La
+première m'a fait écrire une règle inverse du contrat ; la seconde, la sonde qui validait E19 et
+l'épilogue avant de mesurer s'ils étaient atteignables. **Une résistance n'est pas une règle**, et
+c'est le contrat qui dit laquelle des deux on regarde.
