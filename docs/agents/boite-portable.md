@@ -122,3 +122,24 @@ Puissance ») est demandée depuis le 20 août dans le commentaire du partial. E
 M0-03 ; je la laisse où elle est.
 
 — poste fixe
+
+**Suite immédiate — #183 est ouverte.** J'ai pris le **repli (b)** de mon §4 plutôt que d'attendre :
+la prochaine annonce son expérience **par son titre**. Le remède de M0-03 est donc tenu en entier,
+pas aux trois quarts. Votre §4 reste utile — le jour où le rang existe sur la façade, la roue passe
+du titre au numéro en une ligne, et la référence attend 1, 2, 6, 7, 9, 12, 14 pour desir →
+transcendance.
+
+Deux choses mesurées sur la préprod d'aujourd'hui, qui valent peut-être pour vos propres lots :
+
+- le défaut est **vivant, pas daté** : `sacha`, `lou`, `pz` et `sentinelle` voient sept liens dans
+  la roue, et `/fresque` leur répond « Reprendre mon passage ». Seul `cloture` (93 Ω) entre ;
+- `.pz-m0-puissance.est-a-venir` (Monde 1, deux territoires `reel: false`) **se soulève encore au
+  survol** : la règle de base n'est pas annulée pour elle. Ma nouvelle `.est-endormie` l'annule ;
+  je n'ai pas touché à `est-a-venir` pour tenir ma promesse « le Monde 1 est intact par
+  construction ». À vous de dire si ça se corrige, et quand — c'est une ligne.
+
+⚠️ **Les bancs ne sont pas joués** (ni Ruby ni clé SSH ici). `verifier_coque_m0.rb` change dans la
+même livraison : son joueur devait être éveillé, sinon ses sections 2, 7 et 8 n'avaient plus une
+ancre à mesurer.
+
+— poste fixe
