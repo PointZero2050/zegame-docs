@@ -1,3 +1,68 @@
+## 10 septembre — Portable : la recette transversale trouve 7 rouges et 2 muets que ma liste cachait
+
+**Ce qui me concerne d'abord.** Je jouais chaque soir une liste de 20 bancs tenue à la main, en
+l'appelant « recette complète ». Le dépôt porte `scripts/recette.sh` — **161 bancs**, une attente
+d'application prête, et une quatrième issue (`HORS PORTÉE`) que ma liste n'a pas. Jouée sur la
+production : **151 verts, 7 ROUGES, 2 CASSÉS, 1 hors portée**. Un outil de vérification plus
+étroit que la référence ne protège pas, il rassure. Je joue désormais la transversale.
+
+### Une unité perdue — ma faute du matin
+
+En appliquant les huit durées, j'ai écrit les **minutes** du contrat dans une colonne dont
+`duration_unit` valait `hours`, sans la regarder. `le-sas-d-entree` déclarait 60 **heures** et
+`vivre-l-atelier-point-zero` 180 **heures**.
+
+Invisible, parce que la colonne a **deux lecteurs qui ne s'accordent pas** :
+`DureesDuParcours.declarees` ignore `duration_unit` et lisait 60 et 180 minutes — la fiche du
+joueur affichait donc juste sur une donnée fausse. Corrigé : les deux passent en minutes, les
+totaux du service ne bougent pas (409 et 85), et la somme qui honore l'unité passe de 11032 à
+**412**, soit 409 + l'épilogue. `verifier_intensites` n'épingle plus un nombre : il asserte que
+**les deux lectures donnent le même total**.
+
+⚠️ Et la note du banc qui signalait ce piège — « deux d'entre elles ressemblent fort à une unité
+perdue » — **c'est moi qui l'ai effacée** le soir même, en la jugeant périmée parce que les
+chiffres avaient changé. Le piège, lui, ne l'était pas.
+
+### Cinq assertions d'avant la bascule du lot 5
+
+`verifier_coque`, `verifier_immateria`, `verifier_monde_1_etats`, `verifier_traversee_m0`,
+`verifier_v2_intuition_transcendance` lisaient toutes `/jeu` comme s'il rendait encore la roue des
+sept territoires. Aucune n'avait été rejouée depuis le 1er septembre.
+
+**Le dépôt portait déjà le remède** : `session.rb` définit `ouvrir_le_tableau_de_bord!` et son
+commentaire décrit exactement ce piège. Ces bancs ne l'avaient jamais adopté — faute de tourner.
+Ils déclarent maintenant leur décor et lisent la destination **au canon** plutôt que recopiée.
+
+Deux méritent d'être signalées à part :
+
+- **`verifier_coque`** exigeait zéro `aria-disabled` sur `/jeu`. La coque du métaparcours en
+  marque neuf, délibérément. La règle qu'il voulait tenir est plus forte, et le code la tient
+  déjà : **une destination fermée n'est pas un lien** (`content_tag(ouvert ? :a : :span, …)`).
+  J'asserte cela, plus le fait que chacun **dit pourquoi** — `est-endormie` ou `est-a-venir`,
+  distinction posée le 30 août et assertée nulle part.
+- **`verifier_traversee_m0`** cherchait « Invitations des sept Puissances » après la clôture. Il a
+  rougi ce soir et il **avait raison** : M0-31 demande que la carte n'invite plus.
+
+### Une sonde qui mesurait une garde
+
+`verifier_moteur_conscience` cherchait le mot « Graine » sur `/fresque`. La page n'était pas vide,
+elle était **fermée** — la garde de dévoilement du lot 4. Les quatre bancs dédiés à la Fresque et
+aux Graines étaient verts pendant que celui-ci rougissait sur la même page. Il éveille désormais
+Imagination, sème une Graine réelle et asserte les deux sens.
+
+Sa purge gagne `GrainePubliee` : **une Graine de Fresque naît partagée** (opt-out de Boris), et
+sans cette ligne `u.destroy!` cassait au DEUXIÈME passage — vérifié en le rejouant.
+
+### Deux bancs verts, comptés cassés
+
+`verifier_cartes_chapitres` et `verifier_images_servies` disaient « TOUT VERT » quand la recette
+cherche « TOUT EST VERT ». Pire : leur verdict d'échec disait « N ÉCHEC(S) : » au lieu de
+« ÉCHECS : » — **un vrai rouge y aurait été classé CASSÉ et n'aurait figuré dans aucune liste de
+rouges**. C'est la faute que `recette.sh` décrit dans son propre en-tête. Ma liste acceptait les
+deux formes : c'est elle qui l'avait caché.
+
+---
+
 ## 10 septembre — Portable : contrat de la Carte du Seuil déposé (E19 rang 3)
 
 Ta demande : « vérifie d'abord si les mécanismes existants de publication de Graine et de

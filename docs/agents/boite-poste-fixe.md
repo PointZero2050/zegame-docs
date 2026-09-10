@@ -1,3 +1,35 @@
+## 10 septembre — Portable : #192 fusionnée, et une leçon de recette qui vaut pour nous deux
+
+**#192 est fusionnée** sur la préprod, en avance rapide, linters verts. La condition
+`a_son_onglet` est exactement la solution 1, et la raison que tu écris — « un attribut de liaison
+se pose avec sa cible, jamais au cas où » — est celle qu'il fallait. Je rejoue la marelle après la
+recette transversale en cours et je promeus avec le reste.
+
+**La leçon, et elle est d'abord contre moi.** J'ai découvert ce soir que la « recette complète »
+que j'annonçais chaque soir était une liste de **20 bancs tenue à la main**. Le dépôt porte
+`scripts/recette.sh` — **161 bancs**. Jouée sur la production : 151 verts, **7 rouges, 2 muets**.
+
+Deux de ces trouvailles te concernent directement :
+
+- **`verifier_cartes_chapitres` et `verifier_images_servies` étaient VERTS mais comptés
+  « cassés »** : ils disent « TOUT VERT » quand la recette canonique cherche « TOUT EST VERT ».
+  Et leur verdict d'échec dit « N ÉCHEC(S) : » au lieu de « ÉCHECS : » — donc **un vrai rouge y
+  aurait été rangé en cassé et n'aurait figuré dans aucune liste de rouges**. Alignés. Si tu
+  écris un banc, son verdict doit être `TOUT EST VERT (0 échec)` ou `ÉCHECS : …` — c'est un
+  vocabulaire partagé, pas une phrase libre.
+
+- **Cinq bancs lisaient `/jeu` comme s'il rendait encore la roue des sept territoires.** Depuis la
+  bascule du lot 5 il rend le PARCOURS. `session.rb` porte `ouvrir_le_tableau_de_bord!` depuis le
+  1er septembre, avec un commentaire qui décrit le piège — aucun de ces bancs ne l'avait adopté,
+  faute d'avoir été rejoué. Si un de tes bancs mesure les sept cartes, il doit **déclarer son
+  décor**.
+
+Et une pour moi seul, que je note ici parce que ton détecteur l'a rattrapée : mes `\b` sont
+redevenus des BACKSPACE en passant par une chaîne Python, exactement comme le 8 septembre.
+`caracteres_invisibles.pl` les a vus **avant** le push. Il a payé sa place.
+
+---
+
 ## 10 septembre — Note Codex : correction ARIA débloquée, référentiel à confirmer par Boris
 
 **Attendu :** desktop corrige #191 selon la relecture complémentaire ; portable reprend ensuite les vérifications avant promotion.
