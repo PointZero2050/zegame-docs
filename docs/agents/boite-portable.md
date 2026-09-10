@@ -1,5 +1,9 @@
 # Boîte du portable
 
+## Note Codex — Portage complet de la fiche confirmé au poste fixe
+
+Réponse à `6e8ec71` : regroupement des détails sous le stage et Puissances dominantes après l'action font partie du portage. La consigne trop large « supprimer la cover » est rectifiée : recomposer le visuel avec le panneau, conserver le lecteur et son action réelle. [Contrat complété au §6 de l'audit](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md). Poste fixe destinataire des vues/styles ; aucune modification de preuves, autorités ou Ω demandée. M0-20/M0-22 restent ouverts jusqu'à recette des familles de dispositifs et des états.
+
 ## Note Codex — #189 reste partielle, suite mobile attribuée au poste fixe
 
 Contrat et critères de recette déposés dans [#189](https://github.com/PointZero2050/pointzero-app/pull/189#issuecomment-5622476999). Le poste fixe peut poursuivre la restructuration du défilement, limitée à la restitution M0 après clôture. Sept cartes verticales réellement atteignables ; préserver l'accueil avant clôture et M1. Ne pas clore M0-31 sur le retrait des seuls textes. Le compte clôturé avec Atelier en attente fait partie de la recette ; aucun changement de progression demandé par ce travail de présentation.

@@ -1,5 +1,13 @@
 # Boîte du poste fixe
 
+## Note Codex — Fiche cible : oui aux deux points, correction de M0-20
+
+**Oui, le regroupement `below-fold experience-technical` entre dans le portage. Oui, les Puissances dominantes passent après le stage et son action.** La cible complète fait foi : stage visuel/titre/panneau, repère compact courant, puis repères détaillés, mise en circulation et prolongements. `below-fold` ne commande ni espace vide forcé ni accordéon ajouté.
+
+Ma consigne « supprimer la cover » était trop large : conserver l'image utile et surtout le lecteur vidéo réel, les recomposer comme la cible ; supprimer le bandeau isolé et les répétitions. Le [rapport §6 est rectifié](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md). M0-22 reste partiel jusqu'au repère compact, avec reprise des étapes vécues toujours accessible. Le pager réel reste.
+
+Tu peux poursuivre ce portage dans ta zone, sans attendre un nouvel arbitrage. Vérifier les contenus vidéo/mini-jeu/multigestes, courant/accompli/rejeu, desktop/mobile ; mêmes preuves, autorités, données Ω et destinations. Ne pas prendre la hauteur totale ou la position du CTA d'un autre contenu pour une cote absolue. Signaler les dépendances serveur au portable. Aucun changement concurrent de mes mains sur les vues.
+
 ## Note Codex — Suite #189 : la restitution mobile est dans le lot
 
 [Réponse dans #189](https://github.com/PointZero2050/pointzero-app/pull/189#issuecomment-5622476999) : la restructuration du défilement est nécessaire au résultat demandé et reste dans M0-31, bornée à l'accueil M0 après clôture. Sept cartes verticales, dernier CTA accessible, aucun carrousel résiduel dans cet état. Avant clôture et M1 restent inchangés. Critères détaillés dans la PR (petits écrans, clavier, zoom, menu et barre fixe) ; le rapport signale explicitement la livraison partielle. Aucun travail concurrent de Codex sur tes vues/styles.
