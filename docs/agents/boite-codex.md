@@ -2811,3 +2811,61 @@ fait. C'est son ratio « · 0/7 » qui le tient, et un banc le garde désormais 
 un seul libellé pour tous les états, comme la référence.
 
 — poste fixe
+
+---
+
+## La fiche d'expérience contre sa cible — trois écarts, dont deux hors audit (10 septembre, poste fixe)
+
+Boris a signalé un écart substantiel entre `?view=experience` et
+`/parcours/point-zero-monde-0/experiences/…`, et demandé qu'on vise **la cible**, pas seulement la
+lettre de l'audit. Mesuré aux deux bouts, à 390 px, sur E1.
+
+### La composition — c'est M0-20, et l'audit le chiffrait déjà
+
+| | cible | préprod |
+|---|---|---|
+| CTA / panneau d'action | **625** | **1 189** |
+| hauteur de page | **2 000** | **3 216** |
+
+L'audit mesurait le CTA à 1 922 ; il est à 1 189 depuis le déplacement du panneau au-dessus du
+readout. Il reste **544 px**, dont **320 px de cover**.
+
+⚠️ **Mais « supprimer la cover » n'est pas ce que fait la cible.** Elle GARDE un visuel — dans un
+`article.experience-stage` en **grille deux colonnes** : `.experience-visual` à gauche (avec
+`.visual-labels` : « CHAPITRE 1 · EXPÉRIENCE 02 » **et le titre par-dessus**), `.action-panel` à
+droite. Chez nous le visuel est un bandeau pleine largeur, le titre vient dessous en bloc séparé,
+puis les raccourcis, puis la séquence, puis le panneau.
+
+Prototypé sur la préprod : composer le stage fait passer le panneau de **1 189 à 683**, et la page
+de 3 216 à 3 172. Ça lit juste. **Il reste un obstacle que la cible n'a pas** : notre
+`.journey-sequence` affiche la LISTE des trois étapes avant le panneau. La cible ne montre que
+`.action-progress`, un repère compact — c'est le remède de **M0-22**, « les étapes futures
+n'encombrent pas le premier écran », que je croyais clos et qui ne l'est qu'à moitié.
+
+### Le repli technique — dans AUCUN lot
+
+La cible range tout le technique dans une `section.below-fold.experience-technical` :
+`.technical-grid` (quatre `.technical-card` : DURÉE ESTIMÉE, MODE, INTENSITÉ POUR TOI, ÉCHELLE
+D'EFFET — exactement notre `readout`), puis `.circulation-section` sous un `.technical-heading`,
+puis `.experience-continuations`. Chez nous ces blocs sont dans le flux, sans regroupement ni
+titre. **L'audit ne le mentionne nulle part.** Question : entre-t-il dans le portage ?
+
+### Deux « écarts » qui n'en sont pas — je me suis trompé et je le dis
+
+- **le pager existe** : `nav.meta-nav`, « ← Précédent · Point Zéro – Monde 0 · Suivant → », les
+  trois liens réels. Je cherchais `[class*=pager]`, le nom de la CIBLE, dans notre DOM ;
+- **« Ressources complémentaires » et « MISE EN CIRCULATION » existent** sur E1. Absentes de
+  `le-coupable-ideal` parce que son contenu n'en a pas — pas un défaut de gabarit.
+
+ⓘ Et la ligne de situation « Chapitre 1 · Expérience 2 sur 19 · Essentielle » est là, placée
+autrement que dans la cible (sur le visuel là-bas, sous lui ici) — le stage la remet à sa place.
+
+### Ce que je te demande
+
+1. **Le repli technique sous `below-fold` entre-t-il dans le portage ?** Si oui je le porte avec
+   son `technical-heading` ; sinon je laisse nos blocs dans le flux.
+2. **Les « Puissances dominantes » quittent-elles le premier écran ?** M0-20 les cite parmi les
+   blocs qui précèdent inutilement le geste ; la cible ne les montre pas dans le stage. Je propose
+   de les descendre sous la ligne de flottaison — dis-moi si c'est le bon endroit.
+
+— poste fixe
