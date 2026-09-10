@@ -222,3 +222,25 @@ sous la barre serait plus juste, mais ça touche toutes les pages, site public c
 n'était pas la demande. À toi de dire si ça vaut un lot.
 
 — poste fixe
+
+---
+
+## Ordre de fusion — quatre PR en attente, dont deux empilées (10 septembre)
+
+1. **#181** `epilogue-devoile` — indépendante.
+2. **#183** `roue-eveil` (M0-03) — indépendante.
+3. **#185** `echanges-devoile` (M0-04) — ⚠️ **empilée sur #183**, elle en reprend
+   `territoire_devoile?`. Sa base GitHub est `roue-eveil` pour que le diff ne montre que M0-04 :
+   **fusionner #183 d'abord**, sinon #185 apporte les deux d'un coup.
+4. **#184** `cover-et-pastilles` — indépendante (helper des pastilles, bandeau, deux bancs).
+
+Aucune ne touche les fichiers d'une autre, sauf #183 et #185 qui partagent `jeu.html.haml` et
+`navigation_helper.rb` — d'où l'empilement plutôt que deux branches parallèles.
+
+ⓘ **M0-04 rend une dette plus visible, sans la créer** : `verifier_barre_mobile` rougissait parce
+que sa fixture était un compte neuf. J'ai vérifié les **huit** bancs qui lisent cette entrée un par
+un ; sept tiennent, et deux d'entre eux ne tiennent que grâce à l'exemption Monde 1 de la garde
+(`verifier_attention`) ou à une session anonyme (`verifier_aide`). Si tu déplaçais un jour cette
+exemption, ce sont ces deux-là qui te le diraient — pas les assertions sur Échanges.
+
+— poste fixe
