@@ -149,3 +149,76 @@ même livraison : son joueur devait être éveillé, sinon ses sections 2, 7 et 
 ancre à mesurer.
 
 — poste fixe
+
+---
+
+## Tes deux demandes du 10 septembre — #184, et les quatre images sont posées
+
+### Les dérivés : `Vibe Coding/livraisons/cover-monde-0/`
+
+`/public/uploads` est dans le `.gitignore` — ces binaires ne peuvent pas passer par une PR, donc
+c'est le dépôt de fichiers Dropbox, comme prévu pour ce cas.
+
+| fichier | dimensions | poids | écart moyen | écart 99ᵉ |
+|---|---|---|---|---|
+| `thumb_parcours-monde-0.jpg` | 80 × 45 | 1,9 Ko | 5,24 | 23 |
+| `medium_parcours-monde-0.jpg` | 400 × 225 | 26,8 Ko | 4,77 | 21 |
+| `content_parcours-monde-0.jpg` | 500 × 281 | 41,3 Ko | 4,75 | 21 |
+| `parcours-monde-0.jpg` | 1672 × 941 | 530,8 Ko | 3,49 | 16 |
+
+**601 Ko les quatre**, contre 3 145 Ko pour le seul PNG. Les noms suivent déjà la convention de
+`url_de_version` : pose-les à côté de l'original et le helper les trouve.
+
+- **JPEG, délibérément** : l'extension d'un dérivé suit celle de l'original, et un `.jpg` sous
+  `/uploads/` est prouvé servi aujourd'hui. Pour info, **WebP à 0,82 ferait 395 Ko pour un écart
+  de 3,52** — mieux que mon JPEG à 0,88 sur les deux tableaux. Si `/uploads/*.webp` sort en 200
+  chez toi, ça vaut le changement ; je ne l'ai pas parié, c'est ton terrain.
+- Source vérifiée **type 2 (RVB), sans alpha**, avant d'encoder en JPEG — sinon une transparence
+  se serait aplatie sur du noir.
+
+### ⚠️ Une chose que ta demande ne pouvait pas prévoir : 500 px ne suffit pas
+
+`.journey-hero` rend **1136 × 520** à 1440 px de fenêtre, mesuré au navigateur. `content_`
+plafonne à 500 px : **2,3× d'agrandissement**, 4,5× sur un retina. Aucune des trois marches de
+`LARGEUR_DES_VERSIONS` ne convient à une image plein cadre. Dans #184 le bandeau demande donc
+**l'image entière** — ce qui n'a aucun effet aujourd'hui (`content_` n'existait pas, il retombait
+déjà sur l'original) et devient juste dès que tu poses les quatre fichiers.
+
+C'est pour ça que le 1672 px est dans le lot : **il ne remplace pas l'original, il EST l'original**,
+encodé pour être servi. Reposer le PNG brut rouvrirait le trou que `content_` bouchait.
+
+### Ta question sur le rond de 56 px : **oui, il lui faut une autre source**
+
+Regardé, pas raisonné — les deux images en rond de 56 px et en ×3, côte à côte :
+
+- **l'actuelle** est une boussole **centrée et symétrique** : le rond tombe dessus, on lit un
+  objet même à 56 px ;
+- **la référence** est un personnage debout sur une vaste carte, en **paysage 16:9**. Le rond
+  tombe sur la texture de la carte, à côté du sujet. À 56 px, c'est une tache.
+
+La voie qui ne touche à aucune donnée, et que Codex prévoit (« isoler l'habillage du bandeau ») :
+**le bandeau lit son image du YAML M0**, là où il lit déjà `titre_court`, et `Journey#photo` ne
+bouge pas — le rond de `journeys/index` garde celle qui marche. Dis-moi si tu prends cette voie,
+je câble la lecture côté vue dans la foulée. Si tu préfères remplacer `Journey#photo`, il faudra
+une seconde source pour le rond, et c'est une donnée de plus à tenir.
+
+### La bande de 37 px : je prends ta seconde voie
+
+La croix descend **dans le corps**, qui devient une rangée flex — le `mr-auto` passe sur le texte
+et joue le même rôle, sans bande. Mesuré texte court et texte long, à 1440 et 390 px :
+**92 px → 76 px**, et le texte ne passe jamais sous la croix.
+
+⚠️ **La croix se resserre en descendant**, sinon rien n'était gagné : `.close` de Bootstrap 4
+porte `font-size: 1.5rem`, soit 30 px de hauteur de ligne — elle aurait rendu au corps la bande
+qu'on venait de retirer à l'en-tête. Resserrée : 18 px.
+
+⚠️ **J'ai touché `composants_helper.rb`, et je le signale** : le balisage de la pastille y est
+écrit en Ruby, tu m'avais proposé de câbler, mais la forme et le style étaient indissociables ici
+— séparer les deux aurait fait un aller-retour pour six lignes. L'alerte n'est pas touchée.
+
+ⓘ **Deux choses vues au passage, pas corrigées** : la pastille est en `position: absolute; top:
+1rem`, donc elle **passe sur la barre du haut** au desktop et s'en va au défilement ; un `fixed`
+sous la barre serait plus juste, mais ça touche toutes les pages, site public compris, et ce
+n'était pas la demande. À toi de dire si ça vaut un lot.
+
+— poste fixe
