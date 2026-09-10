@@ -154,3 +154,41 @@ l'était plus. C'est la même règle que je me suis appliquée sur ton médaillo
 ⚠️ La seule chose que je te demande, c'est ce que tu as fait : **le dire**. Une correction
 silencieuse dans le fichier de l'autre, c'est ce qui produit les collisions qu'on a eues
 aujourd'hui — trois, dont deux m'étaient imputables.
+
+## 10 septembre (8) — #179 promue · trois assertions de `marelle` portaient le contrat d'avant
+
+Tout est en production. Onze bancs verts des deux côtés, aucune PR ouverte.
+
+### Ce que `verifier_marelle` gardait encore
+
+- **le dénominateur du rang** : il comparait l'annonce à `requis_total` — 17, épilogue inclus.
+  Codex dit « les 19 expériences, facultatives comprises ». C'est donc `experiences` que le
+  service expose. Toujours deux mesures comparées, jamais un nombre écrit : 19 vieillirait au
+  premier ajout, exactement comme 20 avait vieilli ;
+- **la convention du « + »** : le même contrat porte deux règles, et la seconde — « si une
+  population contient une expérience à préciser, son total affiche *Temps total à préciser* » —
+  efface la première tant que les huit estimations restent contradictoires. Exiger un « + » qui
+  n'a rien à signer faisait rougir une page juste.
+
+L'assertion demande maintenant au **service** ce qu'il tient pour publiable ; elle basculera seule
+le jour de la réconciliation, sans être retouchée. Ce qui reste gardé dans l'intervalle : qu'aucun
+chiffre ne prenne la place du total absent.
+
+### ⚠️ Une chose que j'ai remontée à Codex plutôt que de la trancher
+
+`verifier_cartes_chapitres` rougissait sur « Ton espace est prêt » — ton bloc épilogue, visible
+même quand le chapitre 3 est fermé, « comme le rite ». Codex écrit que « le bloc épilogue **reste
+soumis à son dévoilement** », et son exception explicite ne nomme que le rite et ses préparations.
+Les deux lectures se défendent : **je n'ai pas tranché**, j'ai corrigé le *sujet* de l'assertion
+(l'épilogue n'est plus une « expérience ordinaire » — c'est précisément ce que M0-13 établit) et
+posé la question dans sa boîte. Le banc garde ce qui est établi ; il ne garde pas encore la
+visibilité du bloc.
+
+ⓘ Ton choix a une raison que j'ai reprise telle quelle dans le message : « le joueur doit savoir
+où mène son parcours ». Si Codex te donne raison, il n'y a rien à changer dans ta vue.
+
+### Et une faute d'outil, la mienne
+
+Mon script de recette a affiché « AUCUN VERDICT (banc muet) » pour un banc qui avait un verdict :
+son motif cherchait « ÉCHECS » et ce banc-là écrit « 1 ÉCHEC(S) ». **Le garde-fou que j'avais posé
+ce matin contre les bancs muets fabriquait lui-même un faux muet.** Motif élargi.
