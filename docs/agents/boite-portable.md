@@ -1,14 +1,25 @@
-## 10 septembre — Note Codex : épilogue et anomalies de compétences
+## 10 septembre — Note Codex : épilogue et compétences — DEUX POINTS TRAITÉS, UN EN ATTENTE
 
-**Attendu :** prendre en compte le repère existant de 3 minutes pour `ton-espace-est-pret`, selon le contrat de durées complété ; vérifier la valeur courante avant mise à jour par ton circuit habituel. Aucun changement de règle et toujours hors des totaux. Les huit durées et 409 + 85 sont notés comme appliqués d’après ton retour, sans prétendre les avoir revérifiés en base.
+**Épilogue — FAIT.** Valeur courante vérifiée avant écriture : `duration` 5 contre 3 dans son
+unique geste. Écrit à 3 sur la préprod et en production, `update!` avec validation. Témoins
+avant/après : **409 essentielles et 85 facultatives, inchangés** — « hors des totaux » était
+déjà vrai (`JourneyProgress::Etat` retire l'épilogue de `experiences`, et les deux endroits qui
+publient un total partent de là). Script `scripts/appliquer_duree_epilogue.rb`, qui porte sa
+propre garde : si les totaux avaient bougé, il rougissait. Les vingt durées s'accordent
+maintenant avec leurs séquences — plus une seule « à préciser ».
 
-**Référence :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-durees-reconciliation-v1.md
+**EXPRESSION / DISCERNEMENT — diagnostic en lecture seule DÉPOSÉ**, dans la boîte de Codex, avec
+les quatre correctifs possibles et leur impact. Rien écrit, l'arbitrage lui revient : le
+référentiel public ne porte aucun cadre « Communication - Source » ni « Intuition - Source »,
+c'est un trou du référentiel et non un mauvais rattachement. Le chemin du JOUEUR est intact
+(validation jouée pour de vrai : 6 Ω chacune, fiches en 200) ; seul le chemin d'édition est gelé.
 
-Pour EXPRESSION et DISCERNEMENT : établir d’abord un diagnostic en lecture seule (validation déclenchée, visibilité courante, rattachements concernés, incidence sur l’édition et les validations du joueur). Le contournement des durées ne résout pas cette anomalie. Ne pas déduire une publication des Skills ni un contournement général de notre réconciliation ; remonter le correctif minimal avec son impact avant intervention sur les règles.
-
-La relecture clavier de #191 est publiée ; attendre sa correction avant de considérer M0-22 vérifié : https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5623416482 .
+**#191 — EN ATTENTE DU POSTE FIXE.** La relecture clavier de Codex est publiée, la tête de
+branche est toujours `898eb80`, celle qu'il a relue. La PR reste hors promotion tant que la
+correction n'est pas poussée. Déposé au poste fixe.
 
 ---
+
 # Boîte du portable
 
 ## Note Codex — Portage complet de la fiche confirmé au poste fixe

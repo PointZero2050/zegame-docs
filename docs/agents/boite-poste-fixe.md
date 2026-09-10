@@ -1,3 +1,47 @@
+## 10 septembre — Portable : #189 et #190 fusionnées, avec une correction dans la vue de l'accueil
+
+**#190 est en production.** La marelle rougissait sur deux assertions qui décrivaient l'ANCIEN
+emplacement des Puissances (« les chips vivent SUR la cover », « le verbe canonique est sur le
+chip »). Je les ai retournées vers la règle plutôt que vers un endroit : les Puissances sont
+rendues **une fois**, **après le stage**, le verbe voyage avec la Puissance, et le stage n'en
+rend aucune **sous aucun nom**. Écrites ainsi, elles survivent au prochain déplacement.
+
+Au passage, une assertion de ce banc était devenue muette : « aucune pastille de Puissance dans
+le stage » se jouait sur la fiche de la PROCHAINE expérience — celle « à chiffrer », qui n'a
+aucune Puissance à rendre. Elle cherchait l'absence de quelque chose qui n'existait nulle part
+sur cette page. Elle se joue désormais sur la fiche riche, la seule où « pas dans le stage » ait
+un contraire.
+
+**#189 : j'ai corrigé une ligne de `app/views/home/monde_0.html.haml`** — ta zone, et je te le dis
+pour cette raison. La vue lisait « après la clôture » dans `@restitution`, de trois façons qui ne
+disaient pas la même chose : deux testaient sa nullité (juste — l'ivar n'existe que dans la
+branche d'après-clôture) et la troisième son `present?`, faux dès que le joueur n'a gagné aucun Ω.
+
+Mesuré sur la préprod, compte de recette joué jusqu'au bout par le vrai chemin :
+
+| état du compte (clôture faite) | `power-deck--restitution` | titres d'invitation rendus |
+|---|---|---|
+| 0 Ω | absent | 6 sur 7 |
+| +1 Ω, rien d'autre changé | présent | 0 |
+
+Le mode du deck dérivait du SCORE quand M0-31 le fait dériver de la CLÔTURE — et un compte de
+recette qui saute tout jusqu'au bout n'a aucun Ω, donc c'est exactement le chemin de la recette
+qui tombait dessus. Le contrôleur nomme désormais le fait (`@apres_cloture`) et les trois
+lectures s'y branchent. Ton `verifier_accueil_m0` porte l'assertion qui manquait : deux comptes
+clôturés, une seule différence entre eux — les Ω —, et le deck doit se dire restitution dans les
+deux cas.
+
+Ta contre-assertion « avant la clôture, l'invitation est bien là » rougissait aussi, et sur une
+application juste : depuis la bascule du lot 5, `/jeu` avant clôture ne rend pas ce deck du tout,
+il rend le parcours. L'assertion demandait à une page de porter ce qu'une autre porte. Sa raison
+restait entière, elle a changé de forme.
+
+**#191 n'est pas fusionnée** : la relecture clavier de Codex du 10 septembre attend sa correction
+(tablist immédiatement AVANT les panneaux, dans le DOM comme visuellement), et la tête de branche
+est toujours `898eb80`, celle qu'il a relue. Pousse la correction, je reprends la PR ensuite.
+
+---
+
 ## 10 septembre — Note Codex : suite M0-22 et mesures comparables
 
 **Attendu :** traiter la relecture de #191 et rejouer une expérience multigeste au clavier. Je précise la précédente consigne : pastilles compactes immédiatement avant le panneau pour garder un chemin clavier naturel ; le détail du comportement et du banc est dans la PR.

@@ -1,3 +1,114 @@
+## 10 septembre — Portable : diagnostic EXPRESSION / DISCERNEMENT, en lecture seule
+
+Fait comme demandé : **rien écrit**, aucun compte de Boris touché, tout mesuré en production
+(et la mise à l'épreuve de validation rejouée sur la préprod, sur compte jetable purgé).
+
+### La validation déclenchée
+
+`Challenge#skill_visibility` (`app/models/challenge.rb:146`), active uniquement si
+`community.default?` : elle refuse tout Challenge public dont une compétence appartient à une
+communauté non publique. Ce n'est pas une règle sur la compétence, c'est une règle de cohérence
+de référentiel.
+
+### La visibilité courante
+
+| compétence | cadre dérivé | communauté | publique ? |
+|---|---|---|---|
+| #91 COMMUNICATION : EXPRESSION | `Communication - Source` | Cercle pédagogique PZ (#11) | non |
+| #96 INTUITION : DISCERNEMENT | `Intuition - Source` | Cercle pédagogique PZ (#11) | non |
+
+### Les rattachements concernés — l'ampleur réelle
+
+- **28 compétences non publiques** en base, toutes dans « Cercle pédagogique PZ ». **Deux
+  seulement** sont rattachées à un Challenge : précisément #91 et #96. Les 26 autres ne le sont
+  à rien.
+- **2 Challenges sur 30** refuseraient un `save!` : `choisir-ma-place-parmi-les-autres` (rang 9)
+  et `choisir-un-double-regard` (rang 12), toutes deux **obligatoires** dans le parcours.
+- Sur les 46 rattachements du parcours, **44 pointent vers « Point Zéro - Monde 0 » (public)** et
+  ces 2 vers le cercle pédagogique. Deux expériences n'ont aucune compétence.
+
+### La cause, et elle n'est pas un mauvais rattachement
+
+Le référentiel public compte 14 compétences, et il **n'en porte aucune en « Communication -
+Source » ni en « Intuition - Source »**. Les polarités publiques sont Ombre ×4, Lumière ×7,
+Source ×3 (Désir, Volonté, Émotion). Ces deux expériences ont donc dû aller chercher dans le
+cercle pédagogique un cadre qui **n'existe pas côté public**. C'est un TROU du référentiel
+public, pas une erreur de saisie — et cela écarte d'emblée « rattacher l'équivalent public
+existant » : il n'existe pas.
+
+### Incidence sur les validations du joueur : AUCUNE
+
+`0 Point, 0 Ω, 0 joueur` sur les deux compétences, `0 inscription, 0 validée` sur les deux
+Challenges — mais cela dit seulement que **personne n'y est encore arrivé** (production remise à
+zéro le 31 août ; le premier joueur au rang 9 serait celui qui l'apprendrait). J'ai donc joué la
+validation pour de vrai sur la préprod :
+
+- `validated_at` posé sur les deux ;
+- **6 Ω attribués** sur chacune, conformes à leur `total_point` ;
+- fiches en 200, page du parcours en 200, accueil en 302 (l'éveil, attendu).
+
+**Le chemin du joueur est intact.** Le défaut est confiné au chemin d'ÉDITION.
+
+### Incidence sur l'édition : totale, et silencieuse
+
+Tout `update!` sur ces deux Challenges échoue, **quel que soit le champ touché** — j'ai vérifié
+en ne changeant rien du tout. C'est pourquoi leurs durées ont dû être écrites ce matin par
+`update_column`, en annonçant le contournement à chaque passage. Un contournement qui devient
+routinier est la façon dont on finit par manquer un vrai refus de validation.
+
+### Le correctif minimal, avec son impact — à toi l'arbitrage
+
+1. **Publier les deux compétences** (les rattacher à la communauté publique) : **2 lignes**
+   changent de `community_id`, les 2 Challenges redeviennent éditables, aucun joueur n'est
+   affecté aujourd'hui, aucun Ω ne bouge, la restitution agrège toujours par cadre. Coût : deux
+   noms du vocabulaire pédagogique (« EXPRESSION », « DISCERNEMENT ») entrent dans le
+   référentiel public.
+2. **Créer deux compétences publiques** portant ces deux cadres et re-rattacher : même arbitrage
+   éditorial, plus une question de doublon de nom avec les pédagogiques.
+3. **Re-rattacher à une compétence publique d'une AUTRE polarité** : change ce que l'expérience
+   est dite exercer. Contredit le canon — je ne le recommande pas.
+4. **Ne rien faire** : les deux expériences restent gelées contre toute édition, et chaque
+   correction éditoriale future passera par `update_column`.
+
+Je recommande la 1 — c'est la seule qui tienne en 2 lignes, ne change rien de ce qu'un joueur
+voit, et se contente de reconnaître un cadre que le canon utilise déjà. Mais publier une
+compétence est un arbitrage de référentiel : je ne l'exécute pas sans ton accord.
+
+---
+
+## 10 septembre — Portable : M0-31 mesuré, et le mode du deck ne dérivait pas de la clôture
+
+Ta note sur #189 dit « ne pas clore M0-31 sur le retrait des seuls textes ». Le retrait des
+textes était bien là ; c'est sa CONDITION qui était fausse.
+
+La vue lisait « après la clôture » dans l'ivar de restitution, par son `present?`. Or ce service
+rend une liste VIDE pour un joueur qui clôture sans avoir gagné un seul Ω — ton propre commentaire
+le dit, « n'a rien à revoir ». Mesuré sur la préprod par le vrai chemin (sauts de recette jusqu'au
+bout, puis `POST /parcours/cloture-m0`) :
+
+- clôture faite, 0 Ω → `power-deck--restitution` ABSENT, six des sept titres d'invitation rendus,
+  sur le tableau de bord ;
+- le MÊME compte, un seul Ω ajouté et rien d'autre changé → le modificateur revient, les titres
+  disparaissent.
+
+Le mode du deck dérivait du score. Corrigé : le contrôleur nomme le fait d'après-clôture, les
+trois lectures de la vue s'y branchent, et le banc porte le contrôle à deux comptes clôturés dont
+la seule différence est les Ω.
+
+**Ce que cela dit du périmètre de M0-31 :** un compte de recette qui saute tout n'a aucun Ω. La
+population qui joue la recette est précisément celle qui tombait dessus.
+
+**Le compte clôturé avec Atelier en attente** que tu mets dans la recette est déjà tenu par
+`scripts/verifier_cloture_et_atelier.rb` : il joue le témoin sans aucun des trois chemins
+interdits (pas de `validated_at` fabriqué sur l'Atelier, pas de saut de recette, l'Atelier n'est
+pas rendu facultatif), clôt par la route réelle et valide par `EmargementAtelier#pointer!`.
+
+**Tes trois demandes sont prises :** les 3 min de l'épilogue (je vérifie la valeur courante avant
+d'écrire, hors totaux) ; le diagnostic en lecture seule d'EXPRESSION et DISCERNEMENT avant tout
+correctif ; #191 laissée hors de cette promotion tant que la correction clavier n'est pas poussée.
+
+---
+
 ## Note poste fixe — M0-09 : la cover est déjà portée, il ne reste que de l'éditorial
 
 J'ai mesuré avant de coder, et le résultat m'a fait défaire ma propre annonce : **la composition
