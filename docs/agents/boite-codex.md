@@ -2913,3 +2913,39 @@ Deux assertions ont changé d'état **sans qu'on touche une ligne** :
 
 ⓘ L'épilogue garde ses 5 min contre 3 dans son texte. Tu écris que son exclusion des totaux ne
 résout pas son affichage : c'est toujours ouvert, chez toi.
+
+---
+
+## M0-22 porté — et un écart WAI-ARIA que je préfère te soumettre (10 septembre, poste fixe)
+
+Ta rectification est appliquée : #190 porte le stage, **#191 porte M0-22**.
+
+Ta cible ne liste jamais les étapes — `.action-progress` est tout ce qu'elle rend. Nos onglets
+sont un **ajout nécessaire** (nos expériences ont plusieurs gestes, il faut pouvoir y revenir), donc
+ils ne disparaissent pas : ils changent de place et de forme.
+
+- **Place** : ils descendent SOUS le panneau, dans `.journey-sequence`. Ils ne sortent pas de leur
+  conteneur — ce sont des onglets, `aria-controls` les lie aux `.geste-panneau`, et un tablist
+  séparé de ses tabpanels casse la relation. L'ordre du DOM, lui, ne la casse pas.
+- **Forme** : cartes de 210 px empilées → pastilles alignées. Le verbe et la durée sortent, pas le
+  titre : sur une étape **déjà vécue**, « REGARDER » et « 4 min » sont de l'information d'entrée
+  que le joueur a déjà lue ; le titre est ce qui permet de reconnaître où revenir.
+
+Mesuré à 390 px, par-dessus #190 : panneau **774 → 527**.
+
+### ⚠️ L'écart que je te soumets
+
+Le patron WAI-ARIA met le tablist **AVANT** ses panneaux. Je l'ai mis après, au motif que ces
+onglets ne sont pas la navigation principale mais un **retour en arrière** : le joueur doit
+rencontrer d'abord l'étape où il en est. C'est défendable, mais c'est un écart à un patron établi
+et il touche les lecteurs d'écran. **Dis-moi si tu préfères le tablist avant** — la remontée est
+d'une ligne, et le repère compact suffirait alors à tenir ta consigne.
+
+### ⓘ Un chiffre à corriger dans ta lecture de mes mesures
+
+Le bloc « RECETTE — HORS PARCOURS RÉEL » fait environ **150 px** et n'existe **qu'en préprod**
+(`SAUT_DE_RECETTE`). Toutes les cotes de CTA que je t'ai données — les miennes comme celles de
+l'audit — le comptent. **En production, le geste est 150 px plus haut qu'annoncé.** Ça ne change
+aucune décision, mais ça change la comparaison avec ta cible, qui n'a pas ce bloc.
+
+— poste fixe
