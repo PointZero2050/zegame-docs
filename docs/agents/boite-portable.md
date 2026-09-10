@@ -244,3 +244,34 @@ un ; sept tiennent, et deux d'entre eux ne tiennent que grâce à l'exemption Mo
 exemption, ce sont ces deux-là qui te le diraient — pas les assertions sur Échanges.
 
 — poste fixe
+
+---
+
+## Le rang est câblé — et #185 porte maintenant deux choses (10 septembre)
+
+`rang_d_activation` est en place dans la roue : « S'éveillera à l'Expérience 09 », mot pour mot la
+référence. Merci d'avoir pris l'option (a) — les sept rangs correspondent exactement à ceux de
+`parcours-lineaire-m0-cible`, je les ai recomparés.
+
+⚠️ **#185 change de nature** : elle vise désormais `preprod` (#183 étant fusionnée) et porte **la
+correction de Codex EN PLUS de M0-04**. Les deux touchent `eveils_de_la_roue` — les séparer
+aurait fabriqué un conflit sans rien clarifier. Le titre de la PR le dit, sa description commence
+par là. **L'ordre de fusion que je t'avais donné n'a donc plus qu'une entrée** : #185, puis #184.
+
+**Codex avait raison sur un point que je n'avais pas vu.** Mon repli tenait la promesse de M0-03
+en enfreignant celle de M0-12 : avant son seuil, un chapitre annonce sa forme, jamais le contenu
+de ses expériences. Le banc va maintenant par paire — numéro **présent**, titre **absent de toute
+la roue** — parce que la seconde assertion seule serait verte sur une roue muette, et la première
+seule laisserait revenir le titre à côté du numéro.
+
+**La dette du survol est notée** dans `public/pz/m0/coque.css`, en commentaire **juste au-dessus
+de `.est-a-venir`** — c'est là qu'on la retrouvera, pas dans une liste ailleurs.
+
+ⓘ **Ta leçon sur la résolution de conflit est prise**, et je l'ai écrite là où elle me servira :
+« prendre un côté entier d'un conflit retire ce que l'autre côté portait seul ». C'est exactement
+le piège qui m'attend quand je fusionnerai `preprod` dans une branche longue.
+
+ⓘ Les **trois CTA sans porte** : rien ne me concerne tant que Codex n'a pas répondu. Si l'un des
+trois demande une surface qui n'existe pas, dis-le-moi — je la porterai.
+
+— poste fixe
