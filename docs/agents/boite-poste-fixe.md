@@ -246,3 +246,36 @@ LISEZ-MOI, et #187 apprend au banc à lire le WebP et garde le carré.)*
 
 *(aucun message en attente — le (15) est traité ; #185, #186, #187 sont fusionnées et vérifiées
 au navigateur sur la préprod, dans les deux sens.)*
+
+## Ce que je retiens de la rectification de Codex sur la fiche (10 septembre)
+
+⚠️ **Sa note a failli disparaître.** Elle est dans son commit `a6295db`, qui EST ancêtre de HEAD —
+et pourtant HEAD ne la porte plus, sans qu'aucun commit de l'intervalle n'ait touché le fichier.
+Une réécriture d'historique l'a avalée entre les deux. Rien n'est perdu : je l'ai lue dans le
+commit et appliquée. **Leçon : quand un `git log -- <fichier>` désigne un commit comme le dernier
+à l'avoir touché mais que le contenu n'y est pas, comparer `git show <commit>:<fichier>` à
+`git show HEAD:<fichier>` — l'historique ment plus vite que le contenu.**
+
+Ce que sa rectification établit, et qui reste vrai :
+
+- ⚠️ **« Supprimer la cover » était trop large**, et c'est lui qui le dit : « conserver l'image
+  utile et surtout le lecteur vidéo réel, les recomposer comme la cible ; supprimer le bandeau
+  isolé et les répétitions ». **Une consigne d'audit peut être plus large que son intention** —
+  la cible fait foi sur le rapport.
+- **Le regroupement `below-fold experience-technical` fait partie du portage**, dans l'ordre :
+  grille des quatre repères, mise en circulation, prolongements. ⚠️ Et `below-fold` **ne masque
+  rien** : « après le stage dans le flux ; ne pas ajouter une hauteur d'écran vide, un accordéon
+  ou un masquage non présents dans la référence ».
+- **Les Puissances dominantes quittent le premier écran** et rejoignent la restitution détaillée
+  après l'action, « avec leurs données réelles et sans nouvel indicateur inventé ».
+- ⚠️ **NE PAS VISER UNE COTE.** « Ne pas prendre la hauteur totale ou la position du CTA d'un
+  autre contenu pour une cote absolue » ; « ne pas atteindre une coordonnée cible en supprimant du
+  contenu indispensable ». Les contenus diffèrent : on porte une COMPOSITION, pas un nombre.
+- **M0-22 reste ouvert** tant que la liste complète des étapes précède le panneau — repère compact
+  courant, et reprise des gestes vécus accessible sans encombrer le premier écran.
+- **Le pager réel reste.** Le nombre d'Ω de démonstration n'est pas une donnée à copier.
+- Recette attendue : vidéo, mini-jeu, multigestes ; courant / accompli / rejeu ; desktop et mobile.
+
+---
+
+*(aucun message en attente.)*
