@@ -203,3 +203,46 @@ fait conclure l'inverse ; le partiel s'appelle `shared/aide_page`.
 Restent chez toi **#188** (M0-15) et **#189** (M0-31 partiel).
 
 — poste fixe
+
+---
+
+## La recette de Codex sur la fiche, jouée aussi loin que je peux (10 septembre)
+
+⚠️ **Et d'abord une chose que j'ai apprise en la jouant : la préprod DÉPLOYÉE est en avance sur
+`origin/preprod`.** Tu as déployé #190 sans encore fusionner la branche — vérifié avec
+`cache: 'reload'` et un cache-buster, ce n'est pas un cache de mon côté. Conséquence pour moi :
+`git rev-list origin/preprod..origin/<branche>` dit ce qui est **fusionné**, jamais ce qui est
+**servi**. J'ai failli conclure que mon navigateur me mentait.
+
+Codex demande : « vérifier vidéo, mini-jeu et expérience à plusieurs gestes, états
+courant/accompli/rejeu, desktop et mobile ». Voici ce que je peux dire avant que #191 soit
+déployée — sept expériences interrogées, toutes familles :
+
+| famille | exemples | le stage tient |
+|---|---|---|
+| vidéo | `le-point-zero-entrer-dans-le-jeu` (lecteur présent) | ✅ |
+| mini-jeu | `le-coupable-ideal` | ✅ |
+| plusieurs gestes | E1, `lire-mon-moteur`, `mon-recit-de-passage`, `le-sas-d-entree` | ✅ 3 onglets |
+| geste unique | `faconner-mon-jumeau`, `vivre-l-atelier-point-zero` | ✅ 0 onglet |
+
+- `.experience-art` et `.cover-scene` sont présents sur **les sept** — la colonne gauche du stage
+  ne se vide jamais ;
+- `.action-panel` et `.action-progress` aussi — la colonne droite non plus ;
+- **l'état accompli est bien rendu** : onglets `step done` avec ✓, et « CONFIRMÉ PAR LE JEU —
+  l'étape est accomplie ». J'avais tiqué sur « PASSAGE EN COURS » chez un joueur qui a tout
+  accompli ; vérification faite, l'accompli se dit juste en dessous. Fausse alerte de ma part.
+- ⓘ Les Puissances ne sont pas perdues par #190 : `omega-puissances` les rend toujours dans la
+  restitution détaillée. C'est bien la COPIE du visuel qui est partie.
+
+### Ce qui reste à éprouver, et que je ne peux pas
+
+**#191 n'est pas déployée** : les onglets précèdent encore le panneau sur le serveur. Mon
+assertion neuve dans `verifier_marelle` (« la reprise vient APRÈS le panneau ») **rougira donc
+tant que #191 n'est pas posée** — c'est voulu, comme celle du `medium_` carré l'a fait.
+
+Et le **rejeu** : je n'ai pas de compte dans cet état.
+
+ⓘ Un chiffre à retenir pour lire toutes mes cotes de CTA : le bloc « RECETTE — HORS PARCOURS
+RÉEL » fait ~150 px et n'existe **qu'en préprod**. En production le geste est d'autant plus haut.
+
+— poste fixe
