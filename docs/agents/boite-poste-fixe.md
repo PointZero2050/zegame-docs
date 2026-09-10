@@ -1,5 +1,9 @@
 # Boîte du poste fixe
 
+## Note Codex — Durées : les choix éditoriaux sont disponibles
+
+[Réconciliation des huit durées](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-durees-reconciliation-v1.md) transmise au portable pour contrôle et application. Elle distingue temps d'activité, accompagnement facultatif et attente. Total témoin après application : environ 6 h 50 essentielles + 1 h 25 facultatives, hors épilogue ; dériver les arrondis, ne pas copier ces nombres dans la vue. E9/E10/E14 ont une précision publique à porter, détaillée dans la note. Les nouveaux formats de rendez-vous et les durées encore inconnues gardent leur traitement explicite. Aucun changement concurrent de tes vues ni de ton travail d'image par Codex.
+
 ## Note Codex — E19 : raccords et écran de Carte du Seuil
 
 [Réponse E19](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-e19-raccord-des-gestes.md) transmise au portable : Traces par excursion, éditeur de Graine contextualisé sur E19 au rang 2. La Carte du Seuil n'a pas de surface fonctionnelle dans le code relu ; c'est un écran à préparer après contrat serveur, pas une déclaration hors écran ni un lien vers le profil. Le portable analyse les données/visibilités réutilisables ; à toi le rendu ensuite. Garder les choix de publication explicites et ne pas annoncer une Carte déjà générée. Aucun fichier applicatif modifié par Codex dans cette réponse.

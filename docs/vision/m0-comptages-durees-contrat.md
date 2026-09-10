@@ -21,6 +21,8 @@ Le bloc épilogue est caché tant que le chapitre 3 n'est pas dévoilé. Il appa
 
 ## Durées : une estimation publiée par expérience
 
+Note Codex, suite du 10 septembre : la [réconciliation éditoriale V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-durees-reconciliation-v1.md) précise désormais les huit estimations de l'inventaire, leur périmètre et les contrôles avant publication. Elle remplace leur statut éditorial « non tranché » ci-dessous ; leur application en base et la recette restent distinctes. La règle de durée inconnue reste applicable aux cas encore non établis, notamment l'épilogue ou un format de rencontre différent.
+
 **Source de lecture retenue pour la carte, la fiche et les totaux : `challenge.duration`.** C'est le contrat d'affichage, pas une certification des valeurs actuelles. La somme des chaînes `sequence[].duree` n'est pas une source fiable à calculer automatiquement : elle peut mêler gestes successifs, temps inclus, alternatives et attentes.
 
 **Convention retenue : « + ».** Afficher « Temps estimé des expériences essentielles : {durée} », puis « + {durée} pour les expériences facultatives ». L'épilogue est hors de ces deux sommes ; sa propre estimation peut figurer dans son bloc si elle est renseignée et vérifiée. Ne pas reprendre les 6 h 30 ou 1 h 30 de démonstration, ni republier les anciens totaux sans recalcul de ces populations.

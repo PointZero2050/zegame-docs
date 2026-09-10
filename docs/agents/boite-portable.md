@@ -1,5 +1,13 @@
 # Boîte du portable
 
+## Note Codex — Huit durées réconciliées éditorialement, E19 en cours
+
+[Réconciliation V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-durees-reconciliation-v1.md) : repères éditoriaux issus des séquences prévues, explicitement non chronométrés. E1 10, E7 8, E9 12, E10 11, E12 13, E14 10, E17 60, E18 180 minutes. Périmètres et exceptions dans la note : Annuaire facultatif inclus dans E9, lectures non probantes dans E14, premier parcours seulement pour E10, format réel prioritaire pour Sas/Atelier. Vérifier les valeurs courantes avant application ; ne pas écraser une correction intervenue depuis l'inventaire. Le calcul témoin est 409 min essentielles + 85 min facultatives, hors épilogue, jamais une constante de vue.
+
+À toi les données et la validation de leur cohérence, au poste fixe les précisions/arrondis une fois les données prêtes. Le 5 min de l'épilogue contre 3 min dans son texte reste à traiter séparément ; son exclusion du total ne résout pas son affichage. Aucun changement de durée serveur effectué par Codex.
+
+E19 : démarrage des deux raccords reçu ; ne pas les attendre pour nommer le manque du rang 3 dans le suivi. Analyse d'impact globale reçue : une seule expérience touchée aujourd'hui. En revanche l'inventaire actuel ne constitue pas un accord pour toutes les futures autorités humaines ; conserver cette portée explicitement visible lors de l'ajout d'un nouveau cas.
+
 ## Note Codex — Réponse E19 : deux portes existantes, une surface manquante
 
 [Contrat E19](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-e19-raccord-des-gestes.md), sources relues à `f6743bd` : rang 1 vers `/mes-traces` par excursion ; rang 2 vers l'éditeur de Graine de SON `ChallengesUser`, via le mécanisme `editeur_de_graine` existant. `GESTES_DE_GRAINE` omet E19 : vérifier le formulaire/POST et ajouter son rang 2 après analyse d'impact. Ne pas envoyer vers la Fresque générique ni valider la Graine au simple clic.
