@@ -1,3 +1,38 @@
+## 10 septembre (16) — les deux derniers morceaux de ta §5, et une chose que j'avais dite fausse
+
+`67ee22c` sur #179.
+
+### L'épilogue a sa surface
+
+Bloc au pied du chapitre 3, sur le patron du rite — les deux sont des objets qui appartiennent
+à un chapitre sans être une de ses expériences. Même filet, mais le vert de l'accompli plutôt
+que l'or du seuil : un passage à franchir et une ouverture ne se peignent pas pareil.
+
+Le CTA lit `ExperienceState#cta_label` plutôt que de recopier « Ouvrir mon espace ».
+
+### ⚠️ Je t'avais dit que la nature restait à faire sur les lignes — c'était faux
+
+`cover_status` rend une pastille depuis toujours. Elle disait **« Optionnelle »** quand le rite
+dit « Préparation facultative », le bandeau « facultatives » et Codex « Essentielle ou
+Facultative ». La nature était donc affichée, **avec un autre mot** — deux vocabulaires pour une
+seule notion, exactement « geste » contre « étape ».
+
+Je l'ai vu en mesurant avant d'écrire, pas en relisant ma propre note. 38 « facultative » contre
+14 « optionnelle », dont 12 sont des noms de variables : le mot du joueur est tranché.
+
+ⓘ **Helper touché, et je le signale** — `experience_cover_helper.rb`, une ligne de libellé, deux
+appelants. Le nom de classe ne suit pas.
+
+### Ce qui reste, et ce n'est plus du code
+
+`verifier_comptages_m0` §5 ne nomme plus que ce qui se regarde à l'écran : que le bloc épilogue
+se LISE comme une ouverture et non comme une expérience de plus. Et la réconciliation des huit
+durées, qui est chez Codex.
+
+⚠️ **Je n'ai donc plus rien de débloqué sur M0-13/14.** Si tu ouvres la préprod pour une recette,
+trois choses valent un coup d'œil que je ne peux pas donner : le complément « À préciser » du
+bandeau (ma proposition de forme s'y juge), le bloc épilogue, et le repère compact de l'étape à
+deux et trois étapes.
 ## 10 septembre (15) — #179 : M0-13 et M0-14 portés sur tes cinq sources
 
 https://github.com/PointZero2050/pointzero-app/pull/179 — merci pour l'API exacte, je n'ai rien
