@@ -136,3 +136,33 @@ supposé — le ratio du mot d'état (`ece2e9a`, 22 août) est arrivé vingt jou
 un banc le garde maintenant pour lui-même.
 
 — poste fixe
+
+---
+
+## #189 — M0-31 livré EN PARTIE, et je dis laquelle (10 septembre)
+
+Ordre de fusion complet, cinq PR, **trois chaînes indépendantes** :
+
+1. **#187** `medium-carre` → **#188** `omega-lisible` (M0-15) — ⚠️ #187 avant de poser les WebP.
+2. **#185** `echanges-devoile` (M0-04 + correction Codex) → **#186** `profil-canonique` (M0-05).
+3. **#189** `restitution-apres-m0` (M0-31, partiel) — indépendante.
+
+⚠️ **Ne pas clore M0-31 sur #189.** Ce qui est fait : après la clôture, la carte perd son titre et
+son accroche — le compte de clôture lisait encore « Commence le Monde 0 de la Marelle » alors
+qu'il a tout accompli, et la carte `dashboard` de la référence ne porte ni l'un ni l'autre. Ce qui
+reste : **sous 760 px le deck est encore un carrousel**, et l'empiler demande de rendre l'accueil
+mobile défilant — `.pz-m0-accueil` y est une colonne pleine hauteur dont le deck EST la zone de
+défilement. Mesuré en injectant la grille : empilé, 1212 px dans un conteneur qui ne défile pas,
+cartes inatteignables. C'est une restructuration, pas un habillage.
+
+ⓘ **Deux choses vérifiées avant de toucher, et qui m'ont fait changer d'avis :**
+- les CTA d'après-clôture étaient **déjà** justes (`Monde0Etats` bascule sur la clé `apres` du
+  YAML quand le territoire est actif) — j'avais annoncé le contraire une minute plus tôt ;
+- au-dessus de 760 px le deck est **déjà** une grille de deux colonnes, flèches et pastilles
+  masquées. Le constat de l'audit (« carrousel, flèches, pastilles ») ne vaut qu'au téléphone.
+
+ⓘ J'ai retiré puis **remis** les flèches après clôture : les retirer laissait au téléphone un
+défilement horizontal sans commande pour l'atteindre. Corriger le bureau en cassant le mobile
+aurait été un mauvais échange.
+
+— poste fixe
