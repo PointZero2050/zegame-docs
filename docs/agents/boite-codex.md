@@ -1,3 +1,50 @@
+## 10 septembre — Portable : contrat de la Carte du Seuil déposé (E19 rang 3)
+
+Ta demande : « vérifie d'abord si les mécanismes existants de publication de Graine et de
+visibilité couvrent ce besoin. Il expose ce qui manque avant d'ajouter un stockage. » Fait, mesuré
+sur `preprod@f2696a3`, rien écrit. Le contrat complet est ici :
+[`docs/vision/m0-e19-carte-du-seuil-contrat.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-e19-carte-du-seuil-contrat.md).
+
+**Ce qui couvre, et c'est plus que prévu.** `RegistreDesTraces` est complet — cinq familles,
+sources réelles, `entree_de` qui ne cherche que dans le registre du joueur (l'appartenance est
+donc vraie par construction, pas par une vérification qu'on peut oublier). Et `VisibiliteDeTrace`
+est le patron *exact* de « choisir les éléments à montrer » : un pointeur, un booléen, aucune
+association polymorphe, et `regler_visibilite!` qui n'écrit que la dérogation.
+
+**Ce qui manque, et ce n'est pas la sélection.** La sélection existante répond à une AUTRE
+question. `VisibiliteDeTrace.visible = true` veut dire « mon **profil** montre cette production » —
+`phrase_de_visibilite` l'écrit : « publiée sur ton profil » contre « privée ». Composer une Carte
+veut dire « **cette Carte** montre cette production ». Les deux ne se déduisent pas l'une de
+l'autre, et les confondre casse ta consigne dans les deux sens :
+
+- réutiliser la table de visibilité ferait de « Sceller » une **publication implicite au profil** ;
+- dériver la Carte de ce qui est déjà visible donnerait une Carte **vide** pour presque tout le
+  monde — les quatre interrupteurs de famille sont éteints par défaut (mesuré).
+
+**Ce que je propose** : une table `compositions_de_carte` sur le patron `VisibiliteDeTrace` (la
+présence de la ligne EST la sélection, pas de booléen, pas de `carte_id`), le sceau en
+`MarqueurDAttention` — un fait, comme `m0-cloture` —, et **aucun stockage de publication** tant
+qu'aucune surface n'est arbitrée. Une composition est un CHOIX, pas un état : c'est pourquoi elle
+se stocke sans contredire « un état se lit ».
+
+**Deux points que je ne tranche pas, et qui te reviennent :**
+
+1. **Le rang 3 se valide-t-il par le sceau, ou reste-t-il déclaratif ?** En faire une preuve
+   serveur est cohérent — le geste EST l'écran — mais cela change l'autorité du rang.
+2. **Les Graines entrent-elles sur la Carte ?** Le canon dit « Relis la Graine, choisis les
+   éléments » : socle + sélection, donc composition hétérogène. La table le permet, le modèle
+   éditorial se tranche avant le code.
+
+**Et un piège de nom à signaler tout de suite** : `app/models/carte.rb` existe déjà et n'a aucun
+rapport — c'est le contrat d'affichage des cartes de fil (Rencontre, Graine publiée, Sondage).
+
+⚠️ **Pour la recette, un avertissement mesuré en préparant cette note** : un compte dont les 18
+expériences précédentes sont passées par `mark_as_ended!` a **zéro** entrée au registre. Le
+registre liste des productions RÉELLES, pas des validations. Un banc qui monte son décor par
+validations verrait une Carte vide et l'appellerait conforme.
+
+---
+
 ## 10 septembre — Portable : M0-22, un écart WAI-ARIA à arbitrer
 
 Ta consigne clavier sur #191 est portée et **juste** — ordre DOM, ids, `tabindex` roulant : tout
