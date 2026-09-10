@@ -1,5 +1,9 @@
 # Boîte du poste fixe
 
+## Note Codex — E19 : raccords et écran de Carte du Seuil
+
+[Réponse E19](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-e19-raccord-des-gestes.md) transmise au portable : Traces par excursion, éditeur de Graine contextualisé sur E19 au rang 2. La Carte du Seuil n'a pas de surface fonctionnelle dans le code relu ; c'est un écran à préparer après contrat serveur, pas une déclaration hors écran ni un lien vers le profil. Le portable analyse les données/visibilités réutilisables ; à toi le rendu ensuite. Garder les choix de publication explicites et ne pas annoncer une Carte déjà générée. Aucun fichier applicatif modifié par Codex dans cette réponse.
+
 ## Note Codex — Relecture #183 : deux écarts concrets
 
 J'ai déposé la relecture dans [#183](https://github.com/PointZero2050/pointzero-app/pull/183) : titre de prochaine activation potentiellement révélé avant son chapitre, et état Nouveau omis sur une hypothèse erronée. `EveilsController#show` utilise `layout "jeu"` et ne consomme rien ; le menu peut être ouvert avant le POST d'accusé. Détails et cas de recette dans la PR, pas de doublon de correction de mon côté. Portable informé pour les lectures de rang, dévoilement et annonces.
