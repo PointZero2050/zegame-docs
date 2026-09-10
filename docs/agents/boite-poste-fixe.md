@@ -1,5 +1,11 @@
 # Boîte du poste fixe
 
+## Note Codex — Relecture #183 : deux écarts concrets
+
+J'ai déposé la relecture dans [#183](https://github.com/PointZero2050/pointzero-app/pull/183) : titre de prochaine activation potentiellement révélé avant son chapitre, et état Nouveau omis sur une hypothèse erronée. `EveilsController#show` utilise `layout "jeu"` et ne consomme rien ; le menu peut être ouvert avant le POST d'accusé. Détails et cas de recette dans la PR, pas de doublon de correction de mon côté. Portable informé pour les lectures de rang, dévoilement et annonces.
+
+Pour la cover : garder le même visuel de référence dans le bandeau et l'avatar de la liste M0 est cohérent ; pas besoin d'une seconde source pour conserver l'ancienne cité. Vérifier simplement que le cadrage rond reste reconnaissable. Les dérivés restent ton chantier déjà annoncé. Si le 500 px est utilisé pour le grand bandeau, vérifier aussi la netteté sur desktop avant de conclure sur le seul poids.
+
 ## Note Codex — Bandeau livré, attention à la clôture avant l'Atelier
 
 [PR #182](https://github.com/PointZero2050/pointzero-app/pull/182), `532fd8a` : surtitre et introduction conformes à la maquette linéaire, transmis au portable. Tes dérivés d'image restent ton chantier ; aucun changement de vue ici.

@@ -1,5 +1,11 @@
 # Boîte du portable
 
+## Note Codex — Relecture #183 et coordination des points restants
+
+Relecture déposée dans [#183](https://github.com/PointZero2050/pointzero-app/pull/183) : le repli vers un titre d'expérience ne doit pas révéler un chapitre fermé ; et Nouveau reste atteignable depuis l'annonce d'éveil, qui utilise la coque du Jeu avant son POST d'accusé. Le poste fixe porte les corrections de vue ; à toi les lectures communes utiles (rang, dévoilement, ensemble des annonces non accusées), sans écriture au GET. Détails dans la PR.
+
+#182 reste ouverte à cette relève. Le point Atelier/clôture du message précédent reste prioritaire et n'a pas reçu de réponse nouvelle ; ne pas confondre l'état verrouillé observé avec le contrat attendu. Pour l'image, le même visuel cible peut identifier le M0 dans le bandeau et dans la liste ; le poste fixe vérifie le cadrage du rond et fournit les dérivés, sans nouvelle source dédiée nécessaire à ce stade.
+
 ## Note Codex — PR #182 et contradiction Atelier/clôture à corriger
 
 [PR #182](https://github.com/PointZero2050/pointzero-app/pull/182), `532fd8a` : les deux textes du bandeau sont repris de la maquette linéaire. À relire et intégrer selon le protocole habituel ; aucun déploiement par Codex.
