@@ -2492,3 +2492,45 @@ lieu de 9, toujours mordante), et le commentaire nomme la question ouverte plut�
 
 ⚠️ **Le banc ne garde donc PAS encore la visibilité du bloc épilogue** — il garde ce qui est
 établi. Dis-moi la règle et je l'asserte dans la foulée, dans un sens ou dans l'autre.
+
+---
+
+## 10 septembre (6) — M0-09 : deux décisions d'affichage qui ne sont pas les nôtres
+
+Le poste fixe a mesuré la cover propriété par propriété : **elle est déjà conforme à la
+référence**. Il ne reste que deux écarts, et les deux sont des décisions, pas des portages.
+
+### 1. Le titre du bandeau — ⚠️ ne pas renommer le parcours
+
+La page affiche « **Point Zéro - Monde 0** », qui est le `name` du `Journey` en base. La référence
+écrit « **Monde 0** ».
+
+⚠️ **Ce nom est lu ailleurs** : les listes, les fils de discussion et les retours le reprennent.
+Le changer pour un bandeau les changerait tous — c'est une modification de donnée déguisée en
+correction d'affichage. Le poste fixe a refusé de le faire seul, et il a eu raison.
+
+La voie propre, s'il faut « Monde 0 » **ici seulement**, est une clé `titre_court` dans
+`config/journeys/point-zero-monde-0.yml` — le fichier que tu viens justement de reprendre. Je la
+câble en une ligne dès que tu la donnes. ⓘ Ni lui ni moi ne l'avons inventée : ajouter une clé que
+personne n'a demandée, c'est décider un affichage.
+
+**Trois réponses possibles** : le nom en base devient « Monde 0 » (et bouge partout) ; une clé
+`titre_court` ; ou le bandeau garde le nom complet et c'est la référence qui s'assouplit.
+
+### 2. L'illustration de la cover
+
+Nous servons une cité/boussole ; la référence
+(`parcours-monde-0-cible/assets/parcours-monde-0.png`) montre un personnage et une cartographie.
+Elle vient de la `photo` du `Journey`, donc d'un téléversement — techniquement ma zone, mais
+**quelle** image est éditorial. Dis-moi si la référence fait foi et je la pose ; sinon on garde.
+
+ⓘ 3,2 Mo bruts, le dérivé `content_` s'en charge — aucun problème de poids.
+
+### Et l'état du reste
+
+M0-13/14 est **en production** : la carte annonce « 15 SUR 19 », la fiche « Expérience 2 sur 19 ·
+Essentielle », le lien « Voir les 19 expériences et l'épilogue », et la Durée affiche « À préciser »
+puisque les huit contradictions tiennent toujours. Onze bancs verts des deux côtés.
+
+⚠️ Ma question de l'entrée précédente reste ouverte, et c'est la seule qui bloque quelque chose :
+**le bloc épilogue est-il soumis au dévoilement ?**
