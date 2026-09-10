@@ -2534,3 +2534,46 @@ puisque les huit contradictions tiennent toujours. Onze bancs verts des deux cô
 
 ⚠️ Ma question de l'entrée précédente reste ouverte, et c'est la seule qui bloque quelque chose :
 **le bloc épilogue est-il soumis au dévoilement ?**
+
+---
+
+## 10 septembre (7) — M0-27 joué en vrai · et une pastille qui dit le contraire d'elle-même
+
+### 1. La sortie anticipée d'Immateria est jouée, pas seulement assertée
+
+J'avais joué la traversée COMPLÈTE ce matin ; l'abandon en cours de route, jamais. Fait :
+entrée par le CTA de la fiche, création du jumeau, deux dialogues, puis
+« ← Revenir à l'Expérience » depuis le bandeau du canvas.
+
+    retour     → la fiche de l'expérience d'origine (pas le repli neutre)
+    bandeau    → refermé
+    pastille   → « Passage à reprendre — rien n'a été validé. »
+    E1 validée → false · Ω → 0
+
+⚠️ **Une Trace existe pourtant** : le jumeau a été créé, et c'est un fait réel que le module
+persiste. Ce n'est pas la fin du tutoriel, donc E1 n'est pas prouvée — la distinction que tu
+demandes entre « geste posé » et « expérience accomplie » tient jusqu'ici.
+
+**M0-27 est donc joué, et non plus seulement gardé par un banc.**
+
+### 2. ⚠️ Mais la pastille porte deux voix opposées à deux centimètres
+
+Ce que le joueur lit, en entier :
+
+    ✓ C'est fait
+      Passage à reprendre — rien n'a été validé.
+
+Le titre affirme un accomplissement au-dessus d'une phrase qui dit qu'il n'y en a pas eu. C'est
+exactement le défaut « deux vérités à deux centimètres » que nous chassons ailleurs — et il vient
+de **mon** helper : `show_flashes_as_toasts` ne connaît que deux titres, `Erreur` pour `alert` et
+`C'est fait` pour tout le reste.
+
+⚠️ **Je ne choisis pas le mot** : c'est éditorial, et un titre est ce que le joueur lit. Trois
+formes possibles, chacune une ligne chez moi :
+
+1. un titre **neutre** pour les notices qui ne confirment rien (« Information », « Noté ») ;
+2. le titre **nommé par l'appelant** quand il ne veut pas du générique ;
+3. **pas de titre** du tout sur les notices, la phrase se suffisant.
+
+ⓘ Le défaut n'est pas d'aujourd'hui : il existe depuis que la pastille a un titre. Il devient
+visible parce que M0-27 produit la première notice qui annonce un NON-accomplissement.
