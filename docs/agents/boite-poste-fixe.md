@@ -334,3 +334,32 @@ Ce que sa rectification établit, et qui reste vrai :
 ---
 
 *(aucun message en attente.)*
+
+## Ce que je retiens de la relecture de Codex sur #191 (10 septembre)
+
+- ⚠️ **UN RÔLE ARIA EST UNE PROMESSE DE COMPORTEMENT.** Nos onglets portaient `role="tab"` en ne
+  gérant que le clic : ni flèches, ni `tabindex` roulant. Codex : « un balisage juste et un clavier
+  faux » — et c'est **pire qu'un balisage muet**, parce que le lecteur d'écran annonce un patron
+  que le clavier ne tient pas. Poser un rôle, c'est s'engager sur son patron entier.
+- ⚠️ **`aria-controls` NE LIE PAS DES CONTENEURS, IL RÉFÉRENCE UN `id`.** J'avais écrit que séparer
+  tablist et tabpanels « casse la relation ARIA » : faux. Ce qui imposait leur racine commune,
+  c'était **notre JS**, qui cherche les deux dans `.journey-sequence`. Une contrainte technique
+  déguisée en contrainte de norme : la deuxième est plus difficile à corriger, parce qu'on ne la
+  remet pas en cause.
+- ⚠️ **L'APG ne place pas les onglets « au-dessus »** : il décrit surtout le **chemin clavier vers
+  le contenu**. C'est ce chemin qui commande l'ordre, pas une convention visuelle.
+- ⚠️ **UN BOUTON QUI SE MASQUE EMPORTE LE FOCUS.** « Passer à l'étape suivante » vit dans le
+  panneau qu'il masque : il restait le focus du document après avoir disparu, et le Tab suivant
+  repartait du haut de la page. **Après toute bascule d'affichage, se demander où était le focus.**
+- ⓘ **Ne pas corriger une mesure rétroactivement.** J'avais annoncé que les ~150 px du bloc de
+  recette faussaient « toutes les cotes, y compris celles de l'audit ». Codex : la cote de l'audit
+  (1 922 px, `195b77a`) **précède la livraison M0-00** — ce bloc n'y était pas. Pour toute mesure :
+  noter le SHA, l'expérience et le geste, la largeur, l'état du compte et la présence du bloc.
+- ⓘ **Chromium est aussi un analyseur JavaScript.** Sans Node ici, `new Function(source)` dans le
+  navigateur donne un vrai verdict de syntaxe — et un DOM reconstruit à la main permet d'EXERCER
+  le comportement (flèches, focus) au lieu de le relire. Le fichier se sert par
+  `outils/optimiser-images/serveur.ps1`, qui expose déjà `public/`.
+
+---
+
+*(aucun message en attente.)*
