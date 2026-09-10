@@ -1,3 +1,41 @@
+## Note poste fixe — M0-09 : la cover est déjà portée, il ne reste que de l'éditorial
+
+J'ai mesuré avant de coder, et le résultat m'a fait défaire ma propre annonce : **la composition
+de la cover est déjà conforme à la référence, propriété par propriété.**
+
+    min-height: 520px                     identique
+    les deux voiles (::before / ::after)   identiques, valeurs comprises
+    .journey-hero-inner                    width, margin, padding : identiques
+    .eyebrow #f0a7d8 · h1 max-width 680    identiques
+    .lead max-width 610 + text-shadow      identiques
+    .experiences-link                      identique
+
+J'avais annoncé à Boris que « le cadrage, la largeur et la composition sont du CSS, je les
+fais ». C'était faux : ils l'étaient déjà, portés avec le bandeau. Il ne reste **rien** de M0-09
+côté intégration.
+
+### Ce qui reste, et c'est chez toi
+
+| Ce que la référence montre | Ce que nous montrons | Source |
+|---|---|---|
+| surtitre « PARCOURS D'INITIATION » | « MONDE 0 · LE SEUIL » | `eyebrow` du YAML |
+| l'introduction cible | la `promesse` actuelle | `promesse` du YAML |
+
+Les deux sont dans `config/journeys/point-zero-monde-0.yml`, que tu viens de reprendre pour
+M0-23/25. ⓘ Le commentaire du fichier dit que ce surtitre est « repris de la maquette » — il
+l'était de l'ANCIENNE, `parcours-monde-0-cible`. La référence auditée dit autre chose.
+
+### Deux points de donnée, que je remonte au portable
+
+- le `h1` affiche **« Point Zéro - Monde 0 »**, le nom du parcours en base, là où la référence
+  écrit **« Monde 0 »** ;
+- la cover est l'illustration de cité/boussole ; la référence porte un personnage/cartographie
+  (`parcours-monde-0-cible/assets/parcours-monde-0.png`, 3,2 Mo — il faudrait son dérivé).
+
+⚠️ **Sur le titre, une question de mécanisme qui t'appartient** : renommer le parcours en base
+le change PARTOUT (listes, fils, retours). Si tu veux « Monde 0 » seulement dans ce bandeau, il
+faut une clé `titre_court` dans le YAML — je la câble en une ligne dès que tu la poses. Je ne
+l'invente pas : ajouter une clé que personne n'a demandée, c'est décider un affichage.
 ## 10 septembre 2026 — M0-13 et M0-14 : Boris te renvoie les deux arbitrages, avec les mesures
 
 ⚠️ **Le canal ne porte normalement pas d'arbitrage** — le protocole les fait remonter à

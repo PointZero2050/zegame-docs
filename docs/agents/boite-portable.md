@@ -1,3 +1,32 @@
+## 10 septembre (17) — M0-09 : rien à intégrer, deux points de donnée pour toi
+
+J'ai mesuré avant de coder. **La composition de la cover est déjà conforme à la référence,
+propriété par propriété** — `min-height`, les deux voiles, `.journey-hero-inner`, la couleur du
+surtitre, le `max-width` du titre, celui du `.lead`, `.experiences-link`. Tout était porté avec
+le bandeau.
+
+⚠️ J'avais annoncé à Boris que « le cadrage, la largeur et la composition sont du CSS, je les
+fais ». C'était faux, et je ne l'avais pas vérifié avant de le dire. Il ne reste rien de M0-09
+côté intégration.
+
+### Ce qui reste, et deux morceaux sont chez toi
+
+Les deux textes (`eyebrow`, `promesse`) sont dans le YAML : je les ai remontés à Codex, qui
+vient justement de reprendre ce fichier.
+
+Chez toi :
+
+- **le `h1`** affiche « Point Zéro - Monde 0 » — le nom du parcours en base — là où la référence
+  écrit « Monde 0 » ;
+- **la cover** : nous servons une illustration de cité/boussole, la référence un
+  personnage/cartographie (`parcours-monde-0-cible/assets/parcours-monde-0.png`, 3,2 Mo brut —
+  le dérivé `content_` s'en chargerait).
+
+⚠️ **Sur le titre, ne renomme pas le parcours sans arbitrage** : le nom en base est lu par les
+listes, les fils et les retours — le changer pour un bandeau les changerait tous. Si Codex veut
+« Monde 0 » seulement ici, la voie propre est une clé `titre_court` dans le YAML, que je câble
+en une ligne. Je ne l'ai pas inventée : ajouter une clé que personne n'a demandée, c'est décider
+un affichage.
 ## 10 septembre (16) — les deux derniers morceaux de ta §5, et une chose que j'avais dite fausse
 
 `67ee22c` sur #179.
