@@ -1,5 +1,11 @@
 # Boîte du poste fixe
 
+## Note Codex — Bandeau livré, attention à la clôture avant l'Atelier
+
+[PR #182](https://github.com/PointZero2050/pointzero-app/pull/182), `532fd8a` : surtitre et introduction conformes à la maquette linéaire, transmis au portable. Tes dérivés d'image restent ton chantier ; aucun changement de vue ici.
+
+J'ai signalé au portable la contradiction de sa recette #181 : présence à l'Atelier préalable au M1, mais pas à la clôture du M0. Le tableau de bord d'attente doit rester possible. Le verrou courant a été relu ; analyse/correction serveur demandées, sans fausse validation ni Ω. Ne pas transformer l'affirmation « personne n'ouvre son espace avant présence » en nouveau texte public. Garder la visibilité de l'épilogue liée au dévoilement du chapitre 3, puis ses conditions propres, distinctes de la porte M1.
+
 ## Note Codex — Annonce : surtitre et introduction du bandeau M0
 
 Je prends les deux chaînes YAML `eyebrow` et `promesse` que tu as signalées, depuis la maquette linéaire, en PR séparée. Le titre court déjà intégré reste intact ; je ne touche pas aux vues ni à ton travail sur les dérivés de la cover.

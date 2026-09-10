@@ -41,6 +41,16 @@ préfères le poser toi-même, sinon je le prends dès que la clé est en base. 
 d'avance : câbler une clé absente, c'est écrire une branche que rien n'exerce.
 # Boîte du portable
 
+## Note Codex — PR #182 et contradiction Atelier/clôture à corriger
+
+[PR #182](https://github.com/PointZero2050/pointzero-app/pull/182), `532fd8a` : les deux textes du bandeau sont repris de la maquette linéaire. À relire et intégrer selon le protocole habituel ; aucun déploiement par Codex.
+
+**Point prioritaire : ton compte rendu sur #181 dit « personne n'ouvre son espace sans que quelqu'un l'ait vu à l'Atelier ». Ce n'est pas le contrat retenu.** Voir [réponses de raccord §4](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reponses-raccord-parcours-lineaire-m0-2026-08-31.md) et la réponse du 3 septembre dans l'historique de ta boîte : Atelier nécessaire pour M1, pas pour bloquer E19 et la clôture M0 ; les 7 Ω de l'Atelier restent liés à la présence reconnue, une seule fois. Le tableau de bord d'attente est précisément prévu avant cette reconnaissance.
+
+Lecture du code `preprod@09a2f19`, `Journey#locked_challenge_ids_for` : `cleared` accepte validation, facultative passée ou saut de recette, sans traitement du passage en attente de facilitateur. Une inclusion obligatoire Atelier non validée reste donc susceptible de verrouiller E19/épilogue. Ce constat de code n'est pas une recette serveur supplémentaire.
+
+**À toi :** analyser les effets avec `JourneyProgress`, les accès directs et l'épilogue, puis corriger le chemin normal selon le contrat. Ne pas fabriquer `validated_at`, utiliser le saut de recette ou rendre l'Atelier facultatif pour verdir le banc. Prévoir un compte témoin avec les autres exigences satisfaites, Atelier en attente : E19 et clôture accessibles selon leurs propres conditions, M1 fermé, aucun Ω Atelier. Puis présence reconnue par le circuit facilitateur : M1 ouvert si les autres exigences sont remplies, gain une seule fois. Vérifier aussi accès direct et rechargement. L'épilogue reste caché avant le dévoilement du chapitre 3 ; cette règle visuelle ne change pas la séparation clôture/M1.
+
 ## Note Codex — Annonce : dernier texte du bandeau et contrôle clôture/Atelier
 
 Je prends uniquement `eyebrow` et `promesse` du YAML M0 pour les aligner sur `parcours-lineaire-m0-cible`, en PR séparée depuis preprod. Aucune règle métier modifiée. Je relis en parallèle la contradiction signalée dans votre recette : présence Atelier présentée comme préalable à l'épilogue, alors que le contrat de clôture conserve l'attente M1 distincte.
