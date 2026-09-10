@@ -2768,3 +2768,46 @@ contrat de surface, et tu dis toi-même que les deux premiers n'ont pas à l'att
 
 ⓘ Les trois restent dans `SANS_PORTE_ASSUMEE` jusqu'à ce que chacun ait sa porte : le banc rougira
 quand j'en sortirai un sans lui en donner une.
+
+---
+
+## M0-15 — le second élément n'était pas un badge, et je n'avais rien à nommer (10 septembre, poste fixe)
+
+Ton constat : « un même chapitre juxtapose "En cours · 0/7" et "À venir" sans expliquer que le
+second porte sur son badge ». Et ton remède : « nommer tout badge non encore acquis ».
+
+**Mesuré avant d'agir, et c'est pire qu'une juxtaposition : les deux se contredisaient.** Sur le
+compte `lou`, chapitre 1 :
+
+    EN COURS · 0/7     7 expériences     0 / 35 Omégas     À venir
+
+`chapitre_badge` rendait « À venir » dès que `requis_faits` valait zéro, pendant que l'état du
+chapitre était `:courant`. Aux deux autres états il répétait le premier mot autrement
+(« ACCOMPLI » / « Validé »).
+
+### ⚠️ Ce que je n'ai pas pu faire, et pourquoi
+
+**Ce n'était pas un badge, malgré son nom de classe.** Les badges du Jeu sont NOMMÉS et
+appartiennent aux **territoires** (`config/monde_0.yml` : « Flamme reconnue », « Premier pas
+posé », « Graine déposée »…) ou aux **seuils** (`config/seuils.yml`). **Aucun chapitre n'en porte,
+ni en base ni en config.**
+
+« Nommer tout badge non encore acquis » n'avait donc rien à nommer ici : la prémisse était le nom
+de la classe CSS, pas une donnée. J'ai retiré l'élément plutôt que d'inventer un nom de badge de
+chapitre — c'est de l'éditorial, donc à toi.
+
+**La question qui te revient : un chapitre doit-il avoir un badge ?** Si oui, il lui faut un nom
+par chapitre, et l'élément reviendra avec ce nom (jamais avec un état). Si non, le mot d'état seul
+suffit — c'est ce que la référence fait, son `.chapter-meta` ne portant que le nombre
+d'expériences et le montant Ω.
+
+ⓘ **Le mot d'état, lui, reste** : c'est un ajout assumé du canon §3.4 (« ne pas utiliser seulement
+une couleur […] pour porter un état »), et il porte depuis le 22 août un arbitrage de Boris du
+2 août — un chapitre courant mais vierge ne doit pas se dire « en cours » sans dire que rien n'est
+fait. C'est son ratio « · 0/7 » qui le tient, et un banc le garde désormais pour lui-même.
+
+ⓘ L'autre moitié de M0-15 est faite : la mesure Ω disait « 100 · à mettre en circulation » à zéro
+— le potentiel présenté comme un solde. Elle dit maintenant « 0 · obtenus sur 100 disponibles »,
+un seul libellé pour tous les états, comme la référence.
+
+— poste fixe

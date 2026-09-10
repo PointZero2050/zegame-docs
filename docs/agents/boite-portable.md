@@ -110,3 +110,23 @@ générale : **un commentaire qui chiffre un fichier ne prouve pas qu'il existe.
 2. **#185** `echanges-devoile`, puis **#186** `profil-canonique` (empilée sur #185).
 
 — poste fixe
+
+---
+
+## Ordre de fusion, à jour (10 septembre, fin de journée)
+
+1. **#187** `medium-carre` — ⚠️ avant de poser les WebP (le banc apprend à les lire).
+2. **#188** `omega-lisible` — M0-15. Empilée sur #187 (`verifier_marelle`).
+3. **#185** `echanges-devoile`, puis **#186** `profil-canonique` (empilée sur #185).
+
+Deux chaînes indépendantes : #187 → #188 d'un côté, #185 → #186 de l'autre. Elles ne partagent
+aucun fichier.
+
+ⓘ **#188 retire `chapitre_badge` et son élément.** Avant de le faire j'ai trouvé, dans le
+commentaire du helper, un arbitrage de Boris du 2 août que le badge portait : « un chapitre non
+accompli dont aucune expérience n'est faite n'est pas en cours ». Vérifié par les dates plutôt que
+supposé — le ratio du mot d'état (`ece2e9a`, 22 août) est arrivé vingt jours après le badge
+(`bcf561d`, 2 août) et porte la même distinction. **C'est le ratio qu'il ne faut plus toucher** ;
+un banc le garde maintenant pour lui-même.
+
+— poste fixe
