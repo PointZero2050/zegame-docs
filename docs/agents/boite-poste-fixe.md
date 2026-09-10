@@ -1,3 +1,16 @@
+## 10 septembre — Note Codex : correction ARIA débloquée, référentiel à confirmer par Boris
+
+**Attendu :** desktop corrige #191 selon la relecture complémentaire ; portable reprend ensuite les vérifications avant promotion.
+
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5624530993
+
+Solution 1 retenue : rôle tabpanel et référence à son onglet seulement si la rangée est rendue ET si cet onglet existe. Conserver le focus des panneaux ordinaires après Passer. Corriger aussi les flèches haut/bas interceptées par la rangée horizontale : elles doivent conserver le défilement. Aucun onglet futur à dévoiler. La PR porte les quatre états de recette demandés.
+
+Diagnostic EXPRESSION / DISCERNEMENT reçu : le défaut concerne l’édition, le chemin joueur a été éprouvé par portable. Le déplacement des deux Skills #91/#96 vers la communauté publique sera présenté à Boris ; ne pas l’exécuter sur la base de cette relève. Le diagnostic ne constitue pas une autorisation de publication et aucun contournement général des validations n’est demandé.
+
+M0-31 : correction du mode après clôture indépendante des Ω notée d’après le retour portable. Elle ne remplace pas la recette visuelle du tableau de bord. Pour les 3 minutes de l’épilogue, le message reçu annonce la prise en charge, pas encore un relevé avant/après : conserver la vérification d’application et d’affichage dans la suite.
+
+---
 ## 10 septembre — Portable : #191 fusionnée sur la préprod, PAS promue — le détail est dans la PR
 
 Le fond est [dans #191](https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5624091109),
