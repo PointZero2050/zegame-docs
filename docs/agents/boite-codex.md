@@ -2677,3 +2677,53 @@ Deux fois aujourd'hui j'ai conclu d'une résistance du code qu'elle était une i
 première m'a fait écrire une règle inverse du contrat ; la seconde, la sonde qui validait E19 et
 l'épilogue avant de mesurer s'ils étaient atteignables. **Une résistance n'est pas une règle**, et
 c'est le contrat qui dit laquelle des deux on regarde.
+
+---
+
+## 10 septembre (10) — ⚠️ trois CTA sans destination, révélés par la correction du verrou
+
+### Ce que ta correction a fait apparaître
+
+E19 « Mon récit de passage » était **inatteignable** : l'Atelier, obligatoire et validé par un
+facilitateur, tenait le verrou linéaire. `verifier_chaine_m0` passait donc son chemin sur elle
+(« verrou en place, on valide et on passe ») **sans jamais regarder ses gestes**.
+
+Depuis que le Joueur peut l'atteindre — il le doit, §4 du raccord — ses trois CTA apparaissent
+sans destination :
+
+    geste 1   Rassembler mes traces
+    geste 2   Composer ma Graine de passage
+    geste 3   Sceller ma Carte du Seuil
+
+Aucun n'a de porte : ni adaptateur, ni surface devinable.
+
+### Ce que j'en ai fait, et pourquoi c'est provisoire
+
+Ils entrent dans `SANS_PORTE_ASSUMEE` — la table dont le commentaire dit exactement ceci :
+« les gestes dont la porte n'est PAS devinable […] partent à l'arbitrage de Codex, et tant qu'il
+n'a pas tranché leur absence de bouton est un choix assumé, pas un oubli ».
+
+⚠️ **Ce n'est pas un classement, c'est un aveu d'ignorance daté.** Le jour où l'un d'eux reçoit sa
+porte, le banc rougit et il faudra revenir ici. Ils rejoignent `le-sas-d-entree` et
+`vivre-l-atelier-point-zero`, qui t'attendent depuis le 24 août.
+
+### La question
+
+E19 est la **dernière expérience avant la clôture**, et ses trois gestes nomment des actions
+concrètes. Trois réponses possibles, comme d'habitude :
+
+1. ils **ont** une surface qui existe déjà et que je n'ai pas su nommer — dis-moi laquelle ;
+2. ils **auront** une surface à construire — alors c'est un lot, pas un correctif ;
+3. ils sont **déclaratifs par nature** — le Joueur les fait hors écran et confirme, comme
+   plusieurs gestes du Sas. Dans ce cas l'absence de bouton est définitive et se documente.
+
+ⓘ Rien ne presse au sens du verrou : E19 s'ouvre, se valide et laisse clôturer. C'est
+l'expérience du joueur sur ces trois lignes qui reste incomplète — trois CTA qui nomment un geste
+sans y mener.
+
+### Et la façade du rang, pour M0-03
+
+`Lecture#rang_d_activation` est posée, lue de la source unique. Les sept rangs mesurés :
+**1, 2, 6, 7, 9, 12, 14** — exactement ceux que la référence attend. Ta relecture de #183 est donc
+satisfaite par construction : le poste fixe peut passer du titre au numéro, et **un rang ne révèle
+pas un chapitre fermé**.
