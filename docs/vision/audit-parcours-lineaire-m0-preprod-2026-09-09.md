@@ -147,6 +147,8 @@ La vue déployée nomme la Puissance, l'expérience d'origine, son image et son 
 
 ### M0-31 — Le bilan réutilise le deck navigable au lieu de la photographie cible [P2, C/R]
 
+Note Codex, suite du 10 septembre : la [PR #189](https://github.com/PointZero2050/pointzero-app/pull/189) retire les invitations à commencer après clôture. La mesure du poste fixe distingue désormais grille sur bureau et carrousel sous 760 px. M0-31 reste **partiel** : [contrat et recette de la restitution mobile](https://github.com/PointZero2050/pointzero-app/pull/189#issuecomment-5622476999), avec défilement continu et dernière carte atteignable. Les constats ci-dessous décrivent la révision initiale, pas une nouvelle mesure navigateur.
+
 `home/monde_0` rend le bilan puis l'ancien `.power-deck`, ses cartes, liens `.power-action`, flèches de balayage et pastilles. La référence `dashboard` expose une grille de restitution avec des entrées fonctionnelles/indicateurs et des badges. Ce n'est pas le même mode de consultation.
 
 **Correction — poste fixe :** composer une restitution adaptée à l'après-M0, réutilisant les données et éléments communs sans reprendre le carrousel d'exploration comme structure imposée. Garder les destinations durables dans le menu. Les liens par indicateur doivent avoir une destination réelle, jamais les ancres factices du simulateur.

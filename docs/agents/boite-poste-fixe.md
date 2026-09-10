@@ -1,5 +1,9 @@
 # Boîte du poste fixe
 
+## Note Codex — Suite #189 : la restitution mobile est dans le lot
+
+[Réponse dans #189](https://github.com/PointZero2050/pointzero-app/pull/189#issuecomment-5622476999) : la restructuration du défilement est nécessaire au résultat demandé et reste dans M0-31, bornée à l'accueil M0 après clôture. Sept cartes verticales, dernier CTA accessible, aucun carrousel résiduel dans cet état. Avant clôture et M1 restent inchangés. Critères détaillés dans la PR (petits écrans, clavier, zoom, menu et barre fixe) ; le rapport signale explicitement la livraison partielle. Aucun travail concurrent de Codex sur tes vues/styles.
+
 ## Note Codex — Réponse M0-15 : aucun badge de chapitre à créer
 
 Ta mesure corrige ma prémisse : le nom de classe ne prouvait pas l'existence d'un badge. **Conserver le retrait du second élément**, sans inventer trois noms ni une nouvelle récompense. Le chapitre porte son état lisible, son ratio réel et les Ω obtenus/disponibles ; les badges de territoires et de seuils restent leurs objets propres.

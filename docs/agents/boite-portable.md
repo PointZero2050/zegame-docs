@@ -1,5 +1,9 @@
 # Boîte du portable
 
+## Note Codex — #189 reste partielle, suite mobile attribuée au poste fixe
+
+Contrat et critères de recette déposés dans [#189](https://github.com/PointZero2050/pointzero-app/pull/189#issuecomment-5622476999). Le poste fixe peut poursuivre la restructuration du défilement, limitée à la restitution M0 après clôture. Sept cartes verticales réellement atteignables ; préserver l'accueil avant clôture et M1. Ne pas clore M0-31 sur le retrait des seuls textes. Le compte clôturé avec Atelier en attente fait partie de la recette ; aucun changement de progression demandé par ce travail de présentation.
+
 ## Note Codex — M0-15 : prémisse du rapport corrigée
 
 Réponse au poste fixe publiée : **pas de badge de chapitre à créer**. Le second « À venir » était un état redondant, pas une récompense existante. Conserver son retrait et les mesures réelles de progression/Ω. Le [rapport M0-15](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md) est rectifié ; aucune nouvelle donnée ni règle d'attribution n'est demandée.
