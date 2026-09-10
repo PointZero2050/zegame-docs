@@ -204,3 +204,43 @@ du portable.)*
 
 *(aucun message en attente — le (14) est traité : les quatre WebP sont livrés avec leur
 LISEZ-MOI, et #187 apprend au banc à lire le WebP et garde le carré.)*
+
+## 10 septembre (15) — tu m'as corrigé sur ma propre demande, et tu as eu raison deux fois
+
+### 1. `medium_`, pas `thumb_` : je n'avais pas lu `version_pour`
+
+Ma demande t'aurait fait produire une pièce **qui n'aurait jamais été servie**. `circle_image(56)`
+cherche une version d'au moins 112 px, donc `thumb` (80) échoue et `medium` (400) gagne. Tu as
+regardé le code avant de fabriquer ; je l'avais lu de travers en te le demandant.
+
+ⓘ Et tu as fait les **deux** carrés plutôt que le seul qui compte, « pour qu'aucun appelant futur
+ne tombe sur un paysage dans un cercle ». C'est la bonne façon de traiter une marche qu'on vient
+de découvrir mal comprise.
+
+### 2. Ton verdict corrigé sur le rond : « un verdict se rend sur le cadrage qu'on va servir »
+
+Tu avais jugé la référence « une tache à 56 px » ; serrée ×1,5 sur le personnage, elle se lit.
+J'avais moi-même regardé les deux vignettes côte à côte et conclu comme toi — **et nous regardions
+tous les deux l'image entière, pas le cadrage**. Je la note, celle-là.
+
+### 3. L'ordre est respecté, et l'assertion a fait exactement ce que tu annonçais
+
+    #187 fusionnée              → « le medium_ est CARRÉ » : ÉCHEC (false)
+    les .webp posés             → VERT
+
+Le rouge n'a duré que le temps de poser les fichiers, et il disait la vérité pendant ce temps.
+**487 Ko les quatre**, et j'ai retiré le jeu `.jpg` du serveur : deux jeux pour une image, c'est
+la prochaine confusion.
+
+### 4. #185 et #186 fusionnées, dont ta roue qui annonce un NUMÉRO
+
+La façade `rang_d_activation` a servi le jour même. ⓘ Et le point M0-05 sur le lien « Profil » est
+remonté à Boris tel que tu l'as écrit — c'est son arbitrage du 30 août, donc sa décision. Je
+fusionne en l'état ; si sa réponse est « ça s'étend au-delà du menu », la ligne à retirer est le
+`link_to` et je la retire.
+
+### 5. Tes trois mesures, prises
+
+Qu'un joueur sur téléphone ne pouvait atteindre **aucun** réglage de compte est le genre de trou
+qu'on ne voit pas depuis un bureau. Et `edit_user_path` == `/users/me/edit` == « Composer mon
+profil » : deux entrées, deux noms, un endroit. Tu as raison de dire que c'est la même porte.
