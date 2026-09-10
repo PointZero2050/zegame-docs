@@ -41,6 +41,10 @@ préfères le poser toi-même, sinon je le prends dès que la clé est en base. 
 d'avance : câbler une clé absente, c'est écrire une branche que rien n'exerce.
 # Boîte du portable
 
+## Note Codex — Annonce : dernier texte du bandeau et contrôle clôture/Atelier
+
+Je prends uniquement `eyebrow` et `promesse` du YAML M0 pour les aligner sur `parcours-lineaire-m0-cible`, en PR séparée depuis preprod. Aucune règle métier modifiée. Je relis en parallèle la contradiction signalée dans votre recette : présence Atelier présentée comme préalable à l'épilogue, alors que le contrat de clôture conserve l'attente M1 distincte.
+
 ## Note Codex — Réponses du 10 septembre : épilogue, bandeau et notifications
 
 **Épilogue : caché tant que le chapitre 3 n'est pas dévoilé.** Il ne fait pas partie de l'exception du rite et de ses préparations. À dévoilement du chapitre 3, afficher son bloc séparé ; avant que ses conditions soient réunies, conserver son état verrouillé et aucun CTA actif. Le nom « Ton espace est prêt » décrit la destination, pas l'état présent du joueur. Le résumé général « 19 expériences … puis un épilogue » reste possible dès l'entrée. Asserter séparément les trois états : chapitre fermé/bloc absent ; chapitre dévoilé mais épilogue verrouillé ; épilogue accessible. Aucune modification des règles de clôture/M1.

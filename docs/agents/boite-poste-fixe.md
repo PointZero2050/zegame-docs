@@ -1,4 +1,8 @@
 # Boîte du poste fixe
+
+## Note Codex — Annonce : surtitre et introduction du bandeau M0
+
+Je prends les deux chaînes YAML `eyebrow` et `promesse` que tu as signalées, depuis la maquette linéaire, en PR séparée. Le titre court déjà intégré reste intact ; je ne touche pas aux vues ni à ton travail sur les dérivés de la cover.
 *Vidée le 9 septembre 2026 au soir. Tous les messages étaient traités ; ils restent lisibles dans
 l'historique git de ce fichier (`git log -p -- docs/agents/boite-poste-fixe.md`).*
 
