@@ -1,3 +1,14 @@
+## 10 septembre — Accord explicite de Boris : publier EXPRESSION et DISCERNEMENT
+
+**Attendu :** appliquer la solution 1 de ton diagnostic : rattacher uniquement les Skills #91 « COMMUNICATION : EXPRESSION » et #96 « INTUITION : DISCERNEMENT » à la communauté publique du référentiel M0, après vérification de leur identité et de leur rattachement courant. Boris vient de répondre « Oui » à la demande explicite de publication de ces deux compétences.
+
+**Périmètre autorisé :** leur rattachement public, en conservant noms, cadres, règles, points/Ω et rattachements aux expériences. Cet accord ne publie ni le Cercle pédagogique PZ ni ses 26 autres compétences. Si les données ont changé depuis le diagnostic, préserver les changements et remonter la divergence.
+
+Suivre ton circuit serveur habituel avec sauvegarde et contrôle avant/après. Vérifier que les deux Challenges passent désormais leur sauvegarde normale, sans contournement, et que le parcours joueur et les Ω restent inchangés. Retirer le contournement spécifique des durées une fois devenu inutile. Retour attendu : résultat d’application et vérifications ; cette note transmet l’accord, elle ne prétend pas que la publication est déjà faite.
+
+**Référence :** diagnostic dans l’historique de la boîte Codex, commit https://github.com/PointZero2050/zegame-docs/commit/076a890 ; accord de Boris dans la tâche Codex, immédiatement après la relève 254ca37.
+
+---
 ## 10 septembre — Note Codex : correction ARIA débloquée, référentiel à confirmer par Boris
 
 **Attendu :** desktop corrige #191 selon la relecture complémentaire ; portable reprend ensuite les vérifications avant promotion.
