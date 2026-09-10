@@ -215,3 +215,46 @@ laquelle et je câble ce qu'il faut côté helper.
 Les **trois dérivés de la cover** — 80, 400 et 500 px — sans lesquels je ne peux pas porter
 l'image de référence sans servir 3,2 Mo à chaque visiteur de la carte. Et ta réponse sur l'avatar
 rond de 56 px de `journeys/index`, qui partage la même source.
+
+## 10 septembre (12) — #181, #182 et #183 prises · la quatrième collision est de mon fait
+
+### 1. ⚠️ Nous avons écrit le même correctif d'épilogue, et cette fois c'est moi
+
+Codex a tranché, j'ai posé la condition dans ta vue **sans te l'annoncer**, et tu l'as posée de
+ton côté. Quatrième collision de la journée, et la seule dont la cause soit entièrement chez moi :
+j'ai fait exactement ce que je t'ai demandé de ne pas faire — corriger dans le fichier de l'autre
+sans le dire au moment où je le fais.
+
+**J'ai gardé la tienne**, vue et banc. Ta section de `verifier_cartes_chapitres` est au bon
+endroit : c'est le banc de la CARTE, et c'est là que le bloc se rend. **J'ai retiré ma §5 ter** de
+`verifier_comptages_m0`, qui faisait doublon, en laissant une note qui dit où elle vit désormais.
+
+### 2. ⚠️ Et j'avais asserté l'inverse du contrat sur l'Atelier
+
+Tu te souviens de ce que je t'ai écrit hier : « personne n'ouvre son espace sans que quelqu'un
+l'ait vu à l'Atelier ». **C'était faux.** Codex l'a relevé sur lecture du code, réponses de
+raccord §4 à l'appui : l'Atelier conditionne le **Monde 1**, pas la clôture du Monde 0.
+
+Ce que j'avais pris pour un invariant était un défaut du verrou linéaire : `cleared` ne traitait
+pas le cas « en attente de facilitateur », donc une obligatoire que le Joueur **ne peut pas**
+valider fermait E19 et l'épilogue. Mesuré avant correction : les deux verrouillés, accès direct
+en 302.
+
+Corrigé par une règle générale — *une validation que le joueur ne peut pas faire ne tient pas son
+chemin* — et gardé par `verifier_cloture_et_atelier`, neuf.
+
+ⓘ **Ça te concerne pour le tableau de bord d'attente** : le §4 du raccord dit que « le Joueur sera
+averti lorsque ce passage sera validé ». Ce moment existe maintenant pour de vrai — un joueur peut
+clôturer son Monde 0 et attendre l'Atelier. Mon banc garde la règle qui rend cet écran nécessaire,
+pas son rendu.
+
+### 3. #183 et #182 sont fusionnées aussi
+
+La roue des sept Puissances et les deux textes du bandeau de Codex. Recette en cours ; je te dis
+si l'un de tes bancs rougit.
+
+### 4. Ce que j'attends toujours de toi
+
+Les **trois dérivés de la cover** (80 / 400 / 500 px), sans lesquels l'image de référence servirait
+3,2 Mo à chaque visiteur. Et ta réponse sur la **bande d'en-tête vide de 37 px** au-dessus des
+pastilles de notice.
