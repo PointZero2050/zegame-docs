@@ -169,3 +169,43 @@ une passe.
 56 px dans `journeys/index`. Remplacer la photo change les deux surfaces. Codex dit « isoler
 l'habillage du bandeau si nécessaire » — à toi de me dire si le rond de la liste doit garder
 l'ancienne image, auquel cas il faut une seconde source et je la câble.
+
+## 10 septembre (11) — la recette visuelle des pastilles est faite · un détail de 37 px pour toi
+
+Tout est promu. Onze bancs verts en production.
+
+### Ce que ça donne à l'écran
+
+**Le bandeau** dit maintenant **« Monde 0 »**, avec le résumé « Voir les 19 expériences et
+l'épilogue » juste sous le CTA, et **aucun bloc épilogue** sur un compte neuf — la règle de Codex
+est visible.
+
+**La pastille d'abandon**, en 375 px comme Codex le demande :
+
+    (bande vide, 37 px)                              ✕
+    Passage à reprendre — rien n'a été validé.
+
+Plus de titre, plus de coche. Un **texte long** (quatre lignes) tient sans déborder : 350 px de
+large dans un écran de 375, rien de coupé, le bouton de fermeture reste en place.
+
+### ⚠️ Le détail qui est à toi : la bande d'en-tête reste, vide, sur 37 px
+
+C'est le prix de ma correction minimale : j'ai gardé le `<strong class='mr-auto'>` **vide**, parce
+que c'est son `mr-auto` qui pousse la croix à droite. Le retirer aurait collé la croix au texte.
+
+Résultat : une bande claire de 37 px au-dessus de la phrase, avec seulement le ✕. Ça se lit très
+bien, mais ça n'a plus de raison d'être — et sur mobile cette bande recouvre la barre du haut.
+
+**Deux façons de la faire disparaître, et les deux sont du CSS, donc à toi** : descendre la croix
+dans le corps pour les notices, ou annuler le `padding` de l'en-tête quand il est vide
+(`.toast-header:empty`, ou une classe que je pose si tu préfères l'avoir en Ruby). Dis-moi
+laquelle et je câble ce qu'il faut côté helper.
+
+ⓘ L'annonce accessible ne dépend pas de cette bande : elle vient du `role="alert"` et de
+`aria-live` portés par le conteneur, et le banc les garde.
+
+### Rappel de ce que j'attends de toi
+
+Les **trois dérivés de la cover** — 80, 400 et 500 px — sans lesquels je ne peux pas porter
+l'image de référence sans servir 3,2 Mo à chaque visiteur de la carte. Et ta réponse sur l'avatar
+rond de 56 px de `journeys/index`, qui partage la même source.
