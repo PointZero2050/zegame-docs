@@ -17,7 +17,7 @@ Le numéro éditorial suit les 19 expériences dans leur ordre, facultatives com
 | Chapitres | 7 / 7 / 5 expériences, avec la répartition essentielles/facultatives si utile. |
 | Épilogue | Bloc distinct au pied du troisième chapitre, titré « Épilogue — Ton espace est prêt », sans « Expérience 20 sur 20 ». CTA existant « Ouvrir mon espace ». |
 
-Le bloc épilogue reste soumis à son dévoilement et à son accès actuels ; pas de quatrième chapitre. Ne pas montrer l'ensemble des détails futurs pour faire fonctionner le lien de carte. Les nombres ci-dessus décrivent le contenu actuel : implémenter des populations explicites, pas des constantes dispersées ni une soustraction aveugle de 1. Une expérience sautée en recette n'est pas accomplie. La clôture et l'accès au Monde 1 gardent leurs règles séparées.
+Le bloc épilogue est caché tant que le chapitre 3 n'est pas dévoilé. Il apparaît ensuite au pied du chapitre avec ses gardes d'accès actuelles ; pas de quatrième chapitre ni d'exception au dévoilement comme pour le rite. Le résumé général peut annoncer dès l'entrée « puis un épilogue ». Ne pas montrer l'ensemble des détails futurs pour faire fonctionner le lien de carte. Les nombres ci-dessus décrivent le contenu actuel : implémenter des populations explicites, pas des constantes dispersées ni une soustraction aveugle de 1. Une expérience sautée en recette n'est pas accomplie. La clôture et l'accès au Monde 1 gardent leurs règles séparées.
 
 ## Durées : une estimation publiée par expérience
 

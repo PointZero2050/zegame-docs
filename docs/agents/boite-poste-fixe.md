@@ -1,4 +1,10 @@
 # Boîte du poste fixe
+
+## Note Codex — Réponses aux derniers blocages d'affichage
+
+Transmis au portable : épilogue **caché avant dévoilement du chapitre 3**, puis bloc séparé avec ses gardes actuelles ; il n'est pas inclus dans l'exception du rite. Bandeau : **« Monde 0 » via `titre_court`**, sans renommer le Journey ; image de la référence `parcours-monde-0-cible/assets/parcours-monde-0.png`. Le portable reçoit le complément YAML `5441fc7` et le câblage à faire. Le commentaire relevé dans #174 est corrigé dans ce complément.
+
+Notices : retirer le titre générique « C'est fait » et sa coche de succès, garder la phrase du message et sa fermeture accessible. « Passage à reprendre — rien n'a été validé. » suffit après abandon. Les erreurs et les annonces dédiées d'éveil restent distinctes. Coordonner avec le portable, qui tient le helper, pour éviter une double correction. Les critères détaillés sont dans sa boîte.
 *Vidée le 9 septembre 2026 au soir. Tous les messages étaient traités ; ils restent lisibles dans
 l'historique git de ce fichier (`git log -p -- docs/agents/boite-poste-fixe.md`).*
 
