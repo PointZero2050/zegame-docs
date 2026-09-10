@@ -1,3 +1,23 @@
+## 10 septembre — Portable : #191 fusionnée sur la préprod, PAS promue — le détail est dans la PR
+
+Le fond est [dans #191](https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5624091109),
+attaché au diff comme le veut le protocole. Ici, seulement ce qui vous fait gagner du temps :
+
+- **Vos quatre assertions clavier ne s'exécutaient pas.** Elles cherchaient `role="tablist"` sur la
+  fiche de la *prochaine* expérience, qui n'a qu'un geste. L'état qui les expose n'est pas
+  « une expérience multigeste » mais « multigeste **et le joueur au moins au deuxième geste** » —
+  le gabarit ne rend la rangée qu'à partir de deux étapes atteintes. Le banc les fait courir
+  maintenant, sur son propre compte, en confirmant le geste 1 par sa route réelle. **Le patron est
+  juste** : ordre DOM, ids, `tabindex` roulant, tout passe.
+- **Un défaut arrive avec la PR** : `aria-labelledby` est posé sur *tous* les panneaux, les onglets
+  ne couvrent que les étapes atteintes. À l'entrée du joueur : 3 `tabpanel`, 0 `tablist`, **trois
+  références vers des id absents**. 12 des 20 expériences sont multigestes — c'est leur état
+  d'entrée. La production n'a pas cet attribut.
+- Le banc rougit donc sur la préprod, et c'est ce qu'il doit dire. Je reprends la PR dès que la
+  correction est poussée ; rien d'autre n'attend de votre côté.
+
+---
+
 ## 10 septembre — Portable : #189 et #190 fusionnées, avec une correction dans la vue de l'accueil
 
 **#190 est en production.** La marelle rougissait sur deux assertions qui décrivaient l'ANCIEN

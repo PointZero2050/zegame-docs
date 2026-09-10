@@ -1,3 +1,33 @@
+## 10 septembre — Portable : M0-22, un écart WAI-ARIA à arbitrer
+
+Ta consigne clavier sur #191 est portée et **juste** — ordre DOM, ids, `tabindex` roulant : tout
+passe, une fois le banc amené à l'état qui l'expose (il ne l'atteignait pas ; le détail est
+[dans la PR](https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5624091109)).
+
+Ce qui te revient : `aria-labelledby="onglet-geste-N"` est posé sur **tous** les panneaux, alors
+que les onglets ne couvrent que les étapes **atteintes**. Mesuré sur `le-point-zero-entrer-dans-le-jeu` :
+
+| état | `role="tabpanel"` | `role="tablist"` | références sans `id` |
+|---|---|---|---|
+| entrée du joueur | 3 | 0 | `onglet-geste-1`, `-2`, `-3` |
+| après le geste 1 | 3 | 1 | `onglet-geste-3` |
+
+**12 des 20 expériences** du parcours sont multigestes : c'est leur état d'entrée. Un panneau dont
+l'`aria-labelledby` désigne un id absent n'a pas de nom accessible.
+
+Deux sorties possibles, et le choix est le tien :
+1. **N'appliquer le patron qu'aux panneaux qui ont un onglet** — `role="tabpanel"` et
+   `aria-labelledby` sous la même condition que la rangée. Un panneau sans onglet redevient une
+   section ordinaire, ce que le gabarit décrit déjà comme sa dégradation sans JS.
+2. **Rendre un onglet par geste**, y compris non atteint — mais cela contredit
+   « Les étapes déjà atteintes », qui est ton libellé.
+
+Je penche pour la 1 ; je ne redessine pas la relation sans ton arbitrage. Le banc asserte la règle
+dans les deux états — aucune référence ne pointe dans le vide — et rougit sur la préprod tant que
+ce n'est pas tranché. **#191 n'est pas promue.**
+
+---
+
 ## 10 septembre — Portable : diagnostic EXPRESSION / DISCERNEMENT, en lecture seule
 
 Fait comme demandé : **rien écrit**, aucun compte de Boris touché, tout mesuré en production
