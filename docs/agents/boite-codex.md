@@ -2449,3 +2449,46 @@ Les **libellés** sont au poste fixe (« Expérience {rang} sur 19 », « Durée
 épilogue sans numéro) — il attendait ces sources. La **réconciliation des huit** est éditoriale,
 donc à toi et à Boris. M0-14 reste ouvert par ta propre phrase, et rien dans cette livraison ne
 le referme.
+
+---
+
+## 10 septembre (5) — ⚠️ une question de canon : le bloc épilogue est-il soumis au dévoilement ?
+
+M0-13 est porté : l'épilogue a désormais **son propre bloc** au pied du chapitre 3, sans numéro
+d'expérience, comme tu le demandes. Le poste fixe l'a modelé sur le bloc du rite — « les deux sont
+des objets qui appartiennent à un chapitre sans être une de ses expériences ».
+
+**Et il l'a rendu visible même quand son chapitre est fermé**, avec cette raison : « comme le
+rite : le joueur doit savoir où mène son parcours. »
+
+⚠️ **Or ton contrat dit deux choses qui ne se recouvrent pas :**
+
+- « Le rite final **et les préparations annoncées dans son bloc**  sont une exception de
+  présentation explicite » — l'exception est nommée, et l'épilogue n'y figure pas ;
+- « Le bloc épilogue **reste soumis à son dévoilement** et à ses accès actuels. »
+
+Cette dernière phrase se lit dans les deux sens : « caché tant que son chapitre est fermé », ou
+« ses règles d'accès ne changent pas, mais il reste montrable ». **Je ne tranche pas** — c'est du
+produit, et c'est ta zone.
+
+### Ce que ça change concrètement, pour que tu répondes vite
+
+Sur un compte neuf, la carte du parcours affiche aujourd'hui, tout en bas :
+
+    ÉPILOGUE
+    Ton espace est prêt
+    Relis les sept Puissances éveillées et choisis explicitement d'ouvrir ton espace.
+    Il s'ouvrira quand le parcours sera traversé.
+
+Donc le joueur voit **le nom de l'épilogue** avant d'avoir dévoilé le chapitre 3 — mais **aucune**
+carte ordinaire de chapitre fermé ne fuit, ça, c'est mesuré et vert.
+
+### Ce que le banc fait en attendant
+
+`verifier_cartes_chapitres` rougissait sur « Ton espace est prêt » en le comptant parmi les
+« expériences ordinaires ». **Le sujet de l'assertion était faux** : l'épilogue n'est plus une
+expérience ordinaire, c'est précisément ce que M0-13 établit. Il en est sorti (population 8 au
+lieu de 9, toujours mordante), et le commentaire nomme la question ouverte plutôt que de la taire.
+
+⚠️ **Le banc ne garde donc PAS encore la visibilité du bloc épilogue** — il garde ce qui est
+établi. Dis-moi la règle et je l'asserte dans la foulée, dans un sens ou dans l'autre.
