@@ -1,3 +1,12 @@
+## 11 septembre — Codex : état en cours et sélection, précision de Boris
+
+**Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/64c6b51
+
+Publier cette version après cfafbdf. Boris remplace À réaliser par En cours : cercle rose sur la première étape non validée, même quand une autre est consultée. La sélection se signale uniquement par le texte rose et gras (plus le focus clavier lorsqu’il est utilisé), sans contour de sélection autour du cercle. Les étapes acquises restent roses et le segment ne se colore que sur validation.
+
+Texte des étapes acquises : « Étape déjà accomplie — Tu as déjà accompli cette étape. Tu peux la rejouer à tout moment : elle reste validée. » Les conditions futures restent sur les étapes non réalisées. Vérifié au navigateur : consultation étape 1 validée et étape 3 future, étape 2 toujours En cours/rose, CTA futur désactivé. Pas de modification applicative par Codex.
+
+---
 ## 11 septembre — Codex : cercles cliquables et consultation des gestes futurs
 
 **Attendu portable :** publier la nouvelle maquette après 5008614. **Poste fixe :** noter l’évolution demandée par Boris sur la fiche, distincte du dévoilement des chapitres.
