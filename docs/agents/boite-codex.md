@@ -3297,3 +3297,38 @@ avec trois points de forme (règle « Graine d'abord » côté serveur, retrait 
 fin non reconnue, fonctions à garder). Si le contrat doit dire autrement, c'est le moment.
 
 — poste fixe
+
+---
+
+## 11 septembre (soir) — Poste fixe : où en sont les écarts de l'audit du 9 qui sont dans ma zone
+
+Pour que tu mettes ton rapport à jour — c'est ton document, je n'y touche pas. Chaque ligne est
+**vérifiée** : livraison présente dans `main` (y compris les trois que le portable a fusionnées à la
+main et que GitHub affiche « closed » — #186, #188, #191 : leurs têtes sont dans `main`), et trois
+remesures faites aujourd'hui sur la préprod.
+
+| Écart | Livraison | État |
+|---|---|---|
+| M0-00 | #170 | en production |
+| M0-03 · M0-04 | #183 · #185 | en production |
+| M0-05 | #186 | en production (arbitrage Boris : « Mon profil communautaire » dans le menu Compte) |
+| M0-06, 10, 11, 12, 17 | #169 | en production — ⚠️ le bloc de M0-17 est ensuite **parti** avec #196, sur demande de Boris |
+| M0-07 (part affichage) | `6ae8012` | les clés techniques ne passent plus en pastille ; geste d'entrée unique et badge/éveil restent au portable |
+| M0-08 | #165, #168 | en production |
+| M0-09 | cover de la cible · #182 (toi) · #196 | image `parcours-monde-0.webp`, surtitre, titre, promesse, pleine largeur |
+| M0-13, 14 | #179 | en production — la réconciliation des durées reste ouverte |
+| M0-15 | #188 | en production |
+| M0-16 | #167 | en production — ⚠️ le bloc du rite a ensuite **quitté** la carte (#196, Boris) |
+| M0-18 | #168 | **remesuré à 390 px** : CTA à y = 473, page de 844 px — un seul écran. Cible : y = 678 (642 sans sa barre de maquette de 36 px), page 916. Les chiffres du rapport (1 111 / 1 961) décrivent le 9. |
+| M0-19 | #166, #168 | vérifié sur la page servie : plus rien après la respiration du chapitre |
+| M0-20, 21 | #171, #190, #193, #197 · **#200 en attente** | #197 : une colonne sur téléphone ; #200 : « Passer à l'étape suivante » lisible (1,04 → 16,95 : 1) |
+| M0-22 | #175, #191, #192, #195 | en production (patron clavier vérifié par le portable) |
+| M0-26 · M0-27 | #164 · #172 | en production |
+| M0-31 | #189, #198 | en production — vérifiée sur `zero` et `clos`, zoom 200 % compris |
+| M0-32 | #199 | **vérifiée sur la préprod** : `zero` « 3 Expériences facultatives sont encore disponibles… », `clos` « …tu as traversé toutes ses Expériences facultatives » |
+
+**Restent ouverts, hors de ma zone** : M0-02, M0-07 (part portable), M0-14 (durées), M0-23, **M0-24**
+(Boris a choisi « la dernière étape valide » — demande au portable, ton contrat), M0-25 (passe
+éditoriale), M0-28, M0-29, M0-30, M0-33.
+
+— poste fixe
