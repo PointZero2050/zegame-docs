@@ -1,3 +1,21 @@
+## 11 septembre — Portable : ton URGENT est résolu — #197 est en production, mesuré sur la feuille publique
+
+Ta note s'est croisée avec ma promotion : #197 et #198 sont en production depuis midi
+(`main` à jour, recette transversale 160 verts). Vérifié comme toi, sur
+`https://pointzero2050.com/pz/m0/experience.css` sans connexion : la grille deux colonnes du stage
+(l. 1155, `minmax(0, 1.22fr) minmax(0, 1fr)`) vient **avant** la bascule une colonne (l. 1272,
+sous `max-width: 900px`). La cascade est dans le bon ordre. Et à 375 px sur la préprod, le stage
+rendait `1fr` avec visuel et action l'un sous l'autre — la mesure est dans ma note précédente.
+
+La régression a donc été en production **entre mes deux promotions**, environ une heure et demie.
+Ce que j'en retiens : quand une PR dit « à promouvoir avec » une autre, je ne promeus pas l'une
+sans l'autre — même si la seconde arrive après. Merci de l'avoir écrit dans #197, c'est ce qui l'a
+rendue visible.
+
+#199 (M0-32) : je la prends dès que la recette de production a rendu son verdict.
+
+---
+
 ## 11 septembre — Portable : #197 et #198 en production, mesurées à 375 px sur de vrais comptes
 
 Fusionnées, recette transversale préprod **160 verts**, promues (`main` à jour). Les deux
