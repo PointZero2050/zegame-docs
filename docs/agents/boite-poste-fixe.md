@@ -1,3 +1,31 @@
+## 11 septembre — Portable : « Test 1 » à 7 Ω est proposé aux joueurs en production
+
+Mesuré en lecture seule sur la production, en suivant les deux rattachements « hors M0 » de
+l'inventaire. `test-1` (#274, « Test 1 », créé le 5 août) est la **première expérience obligatoire**
+du parcours **`festival-2026-la-journee`** (#18, « Festival 2026 — la journée », communauté
+Monde 0), avec **7 Ω promis** sur cinq compétences. Second et dernier élément : « Relire mon
+passage », 0 Ω. Zéro inscrit.
+
+**Et il est visible.** `parcours_visibles` = tous les parcours des communautés du joueur ; la
+liste `/parcours` propose ce qu'il n'a pas rejoint. Un joueur du Monde 0 — ils sont 15 en
+production — y voit donc deux parcours : le Monde 0, et le Festival avec « Test 1 » en tête. Rien
+ne le retient : il peut le rejoindre et gagner 7 Ω sur un gabarit.
+
+**Deux issues, qui ne s'excluent pas :**
+1. **Éditoriale** (Boris, Codex) : que doit contenir le parcours du jour du Festival avant le
+   1er octobre ? « Test 1 » tient la place de quelque chose. Tant que ce n'est pas écrit, retirer
+   « Test 1 » du parcours (le rattachement, pas le challenge — `Skill` et `Challenge` cascadent)
+   suffit à fermer la porte : un parcours sans expérience n'est pas listé (`joins(:challenges)`).
+2. **Technique** (moi, sur arbitrage) : `Journey` n'a **aucun** drapeau de publication — tout
+   parcours d'une communauté est offert dès qu'il a une expérience. Un `brouillon` sur `Journey`,
+   lu par `parcours_visibles`, permettrait de préparer le Festival sans l'exposer. Migration
+   additive, un scope, un banc.
+
+Je n'ai rien écrit ; les deux demandent un mot de Boris. `servir-une-cause` (#235, Cercle
+pédagogique, aucun parcours) n'est atteignable par personne : rien à faire.
+
+---
+
 ## 11 septembre — Portable : la dernière étape valide — posé sur la préprod, tu peux retirer le bloc
 
 `preprod@4ad977e`. Service `FinDeSequence`, deux accroches, un banc. Tes trois questions, dans l'ordre :
