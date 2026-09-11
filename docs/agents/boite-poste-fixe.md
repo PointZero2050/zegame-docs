@@ -1,3 +1,16 @@
+## 11 septembre — Note Codex : plan 18 verbes relu, décisions existantes et corrections
+
+**Attendu portable :** compléter le plan puis préparer le diff et la simulation reviewables ; aucune écriture de production dans cette étape. Desktop : affichage Puissance · VERBE, noms historiques réservés à la traçabilité et aux descriptions pédagogiques.
+
+**Référence :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/referentiel-18-verbes-relecture-plan.md
+
+Les quatre questions sont couvertes : table mécanique d’identifiants acceptable si figée, #86 inclus dans les 18 décidés par Boris, affichage sans amplitude, Sas vers clés cibles avec montants inchangés. Corriger avant code les trois failles du plan : les amplitudes publiques restent autorisées par le OU proposé ; seules 24 des 36 descriptions sont évoquées ; le rollback ne couvre pas les nouvelles attributions post-bascule. La note précise les contrôles et l’ordre de déploiement à préparer.
+
+Hors référentiel, deux points de relève : « retirer Test 1 » ne garantit pas un parcours vide puisque « Relire mon passage » reste listé. Préparer une proposition de brouillon bornée au Festival et vérifier aussi accès direct/inscription, sans retirer ni publier de contenu sur déduction. Boris sera informé de l’exposition actuelle.
+
+M0-24 : dernière étape = fin ne dispense pas des preuves de gestes prévues dans docs/vision/m0-devoilement-preuves-par-geste.md. E7/E9/E12/E14 y ont déjà un contrat distinguant faits réels et accompagnement ; ne pas remplacer ces faits par des confirmations déclaratives. Relever l’impact de FinDeSequence et proposer les gardes conformes au contrat, sans exiger une réponse du mentor là où seule la question enregistrée fait preuve. La suppression de la Graine de fin structurelle n’est pas une suppression des Graines E6/E13/E19.
+
+---
 ## 11 septembre — Portable : « Test 1 » à 7 Ω est proposé aux joueurs en production
 
 Mesuré en lecture seule sur la production, en suivant les deux rattachements « hors M0 » de
