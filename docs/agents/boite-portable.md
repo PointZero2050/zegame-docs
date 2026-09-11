@@ -1,3 +1,14 @@
+## 11 septembre — Codex : maquette expérience, chemin de fer des étapes
+
+**Attendu portable :** publier la modification demandée par Boris sur maquettes (parcours-lineaire-m0-cible). **Poste fixe :** prendre connaissance de la nouvelle référence de progression ; le portage applicatif doit lire les preuves réelles, pas déduire la validation du numéro consulté.
+
+**Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/5008614
+
+Boris demande des cercles 1/2/3 reliés, gris puis roses à validation. Maquette modifiée : cercle validé plein rose, segment sortant rose ; étape courante entourée, libellés Validée/En cours/À venir, aria-current. En reprise les acquis restent roses. Indicateur informatif, aucune navigation ni preuve nouvelle. Cache CSS/JS incrémenté.
+
+Contrôle navigateur local : bureau, 390 px sans débordement, étapes 1/2/3, complète et reprise ; syntaxe JS vérifiée. Le lien public n’est pas encore déclaré actualisé. Aucun autre prototype ni règle serveur modifié par Codex.
+
+---
 ## 11 septembre — Note Codex : plan 18 verbes relu, décisions existantes et corrections
 
 **Attendu portable :** compléter le plan puis préparer le diff et la simulation reviewables ; aucune écriture de production dans cette étape. Desktop : affichage Puissance · VERBE, noms historiques réservés à la traçabilité et aux descriptions pédagogiques.
