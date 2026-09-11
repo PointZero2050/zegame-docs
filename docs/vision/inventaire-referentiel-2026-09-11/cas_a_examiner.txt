@@ -1,0 +1,13 @@
+doublon par cadre · "Communication - Ombre" → J'ÉCOUTE · 3 Skills : #67 COMMUNICATION : ÉCOUTE (publique, 4 ratt., 0 Ω) | #94 COMMUNICATION : EFFACEMENT (privée, 0 ratt., 0 Ω) | #95 COMMUNICATION : SILENCE (privée, 0 ratt., 0 Ω)
+doublon par cadre · "Communication - Lumière" → JE CAPTIVE · 3 Skills : #93 COMMUNICATION : ENVOÛTEMENT (privée, 0 ratt., 0 Ω) | #68 COMMUNICATION : PERSUASION (publique, 4 ratt., 0 Ω) | #92 COMMUNICATION : SÉDUCTION (privée, 0 ratt., 0 Ω)
+doublon par cadre · "Désir - Lumière" → J'EMBRASE · 3 Skills : #71 DÉSIR : AMPLIFICATION (publique, 1 ratt., 0 Ω) | #72 DÉSIR : EXALTATION (privée, 0 ratt., 0 Ω) | #73 DÉSIR : FERVEUR (publique, 2 ratt., 0 Ω)
+doublon par cadre · "Désir - Ombre" → JE CONTIENS · 3 Skills : #61 DÉSIR : CONTRÔLE (privée, 0 ratt., 0 Ω) | #75 DÉSIR : INHIBITION (privée, 0 ratt., 0 Ω) | #74 DÉSIR : RETENUE (privée, 0 ratt., 0 Ω)
+doublon par cadre · "Émotion - Lumière" → JE COMMUNIE · 3 Skills : #78 ÉMOTION : COMMUNION (privée, 0 ratt., 0 Ω) | #77 ÉMOTION : FUSION (privée, 0 ratt., 0 Ω) | #65 ÉMOTION : PASSION (publique, 4 ratt., 0 Ω)
+doublon par cadre · "Émotion - Ombre" → JE DISTANCIE · 3 Skills : #79 ÉMOTION : DÉTACHEMENT (privée, 0 ratt., 0 Ω) | #66 ÉMOTION : DISSOCIATION (privée, 0 ratt., 0 Ω) | #80 ÉMOTION : GLACIATION (privée, 0 ratt., 0 Ω)
+doublon par cadre · "Imagination - Ombre" → JE RÉALISE · 3 Skills : #89 IMAGINATION : CONFORMITÉ (privée, 0 ratt., 0 Ω) | #63 IMAGINATION : RÉALISME (privée, 0 ratt., 0 Ω) | #90 IMAGINATION : VACUITÉ (privée, 0 ratt., 0 Ω)
+doublon par cadre · "Imagination - Lumière" → JE RÊVE · 3 Skills : #87 IMAGINATION : INSPIRATION (privée, 0 ratt., 0 Ω) | #64 IMAGINATION : PROJECTION (publique, 8 ratt., 0 Ω) | #88 IMAGINATION : VISION FOLLE (privée, 0 ratt., 0 Ω)
+doublon par cadre · "Intuition - Lumière" → JE CROIS · 3 Skills : #97 INTUITION : CERTITUDE (publique, 1 ratt., 0 Ω) | #69 INTUITION : CONVICTION (publique, 4 ratt., 0 Ω) | #98 INTUITION : FOI TOTALE (privée, 0 ratt., 0 Ω)
+doublon par cadre · "Intuition - Ombre" → JE DOUTE · 3 Skills : #102 INTUITION : NON-SAVOIR (privée, 0 ratt., 0 Ω) | #70 INTUITION : OUVERTURE (publique, 6 ratt., 0 Ω) | #99 INTUITION : SUSPENSION (privée, 0 ratt., 0 Ω)
+doublon par cadre · "Volonté - Ombre" → JE SERS · 3 Skills : #82 VOLONTÉ : DÉVOUEMENT (publique, 1 ratt., 0 Ω) | #83 VOLONTÉ : SACRIFICE (privée, 0 ratt., 0 Ω) | #59 VOLONTÉ : SERVICE (publique, 5 ratt., 0 Ω)
+doublon par cadre · "Volonté - Lumière" → JE DIRIGE · 3 Skills : #85 VOLONTÉ : DOMINATION (privée, 0 ratt., 0 Ω) | #81 VOLONTÉ : INITIATIVE (privée, 0 ratt., 0 Ω) | #84 VOLONTÉ : LEADERSHIP (privée, 0 ratt., 0 Ω)
+statuts : correspond × 36 · Source — nom inventorié × 6

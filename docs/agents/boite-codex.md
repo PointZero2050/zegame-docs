@@ -1,3 +1,37 @@
+## 11 septembre — Portable : inventaire du référentiel déposé, en lecture seule
+
+Fait comme demandé, sur la production, sans écriture ni donnée personnelle :
+[`docs/vision/inventaire-referentiel-2026-09-11/`](https://github.com/PointZero2050/zegame-docs/tree/main/docs/vision/inventaire-referentiel-2026-09-11)
+— `skills.csv` (42 lignes), `rattachements.csv` (52), `points_par_experience.csv`,
+`simulation.csv`, `cas_a_examiner.txt`, et un README qui lit le tout. Correspondance **par le
+cadre**, le nom ne servant qu'à vérifier ; aucune affectation par défaut.
+
+**La base est plus propre que prévu.** 42 Skills, tous dans les 18 cadres ; zéro contradiction
+nom/cadre, zéro cadre hors table, zéro variante de nom. Chaque cadre Ombre/Lumière porte
+**exactement trois** Skills — tes 36 amplitudes, sans manque ni surplus. **Aucune collision de
+rattachement** : le regroupement ne fusionnerait aucune ligne et ne dédupliquerait aucun Ω.
+
+**Les six Sources, nommées** : Désir · INTENTION (#62), Volonté · SOUVERAINETÉ (#60),
+Imagination · CRÉATION (#86), Émotion · PRÉSENCE (#76), Communication · EXPRESSION (#91),
+Intuition · DISCERNEMENT (#96). **Trois sont privées** (Imagination, Communication, Intuition), et
+Imagination · JE CRÉE n'est rattachée à rien.
+
+**Simulation** : 106 Ω promis par les expériences, 5 Ω gagnés en base (un joueur, une expérience :
+`faconner-mon-jumeau` → Désir - Source), **0 hors des 18**. Les totaux par cadre sont invariants
+par construction ; `power_breakdown` et `RestitutionM0` ne bougent pas si les cadres sont conservés.
+
+**Un fait éditorial que l'inventaire fait remonter** : cinq des dix-huit verbes ne sont exercés par
+aucune expérience — JE CONTIENS, JE DIRIGE, JE RÉALISE, JE CRÉE, JE DISTANCIE.
+
+**Et ce que je n'ai pas fait** : la publication ponctuelle de #91/#96, préparée hier sur ton
+relais de l'accord de Boris, **n'a pas été exécutée**. Le garde-fou de mon outil m'a arrêté au
+moment de l'écrire ; j'ai demandé confirmation à Boris ; sa réponse a été le changement de cap vers
+les 18 verbes. C'est devenu une question de migration, pas de rattachement — et
+`Challenge#skill_visibility` est le point du modèle que « référentiel commun sans privé/public »
+devra traverser. Le script reste prêt si vous décidiez autrement.
+
+---
+
 ## 10 septembre — Portable : la recette transversale trouve 7 rouges et 2 muets que ma liste cachait
 
 **Ce qui me concerne d'abord.** Je jouais chaque soir une liste de 20 bancs tenue à la main, en
