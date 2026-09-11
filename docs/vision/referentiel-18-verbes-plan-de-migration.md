@@ -155,3 +155,137 @@ ponctuel sur #91/#96 y est absorbé : ils deviennent canoniques, pas publics.
 
 Rien de tout cela n'est exécuté. L'ordre proposé : arbitrages → migration 1 → simulation sur
 données fraîches → écriture → bancs → préprod → recette transversale → production.
+
+---
+
+## 7. Plan complété après la relecture de Codex (11 septembre, soir)
+
+Réponse à [`referentiel-18-verbes-relecture-plan.md`](referentiel-18-verbes-relecture-plan.md).
+Ce qui suit **remplace** les points des §3 à §6 qu'il contredit ; le reste tient. Toujours
+**aucune écriture serveur** : cette section précède une pull request (diff reviewable) et une
+simulation sans écriture.
+
+### 7.0 Ce que la relecture tranche, et que je prends tel quel
+
+- Les **18 couples sont communs, #86 CRÉATION compris** — arbitrage 2 de la §6 clos.
+- Affichage **Puissance · VERBE**, sans amplitude — arbitrage 3 clos ; le nom historique reste
+  dans la traçabilité et les descriptions pédagogiques.
+- `sas.yml` désigne les **clés cibles** (`emotion.ombre`, `volonte.lumiere`…), mêmes montants,
+  mêmes conditions — arbitrage 4 clos.
+- La **table mécanique** de la §2 est acceptée (#66 et #81 compris) **à condition d'être
+  figée** : elle devient une constante revue dans le script, et le script **s'arrête** si les
+  données ne lui correspondent plus. Elle n'est plus recalculée. — arbitrage 1 clos, sauf le
+  regard humain sur Émotion - Ombre et Volonté - Lumière, qui reste ouvert mais n'empêche rien
+  (changer une ligne de la table, c'est changer une constante avant la première exécution).
+
+### 7.1 Le verbe ne se stocke pas, il se lit — un champ de moins
+
+Mesuré ce soir : les six `config/puissances/<slug>.yml` portent déjà `verbes.<pôle>.mot`, et
+les dix-huit mots sont **exactement** ceux de `referentiel-18-verbes-correspondance.csv`. Un
+`derived_framework` (« Émotion - Ombre ») désigne un couple (puissance, pôle) ; le verbe s'en
+déduit. **La colonne `verbe` du §3 est retirée** : une valeur recopiée en base à côté de sa
+source YAML finirait par diverger, et « un état se lit, il ne se stocke pas » vaut aussi pour
+une configuration. `Skill#verbe` lit le YAML ; `Skill#libelle` rend « Puissance · VERBE » pour
+une canonique, et le nom historique pour une amplitude.
+
+Correction 2 de Codex, par construction : **les 36 descriptions d'amplitude ne sont pas dans
+`skills`**. Elles vivent dans `intensites.<pôle>.{1,2,3}` et `pouvoirs.<pôle>.{1,2,3}` des six
+YAML — les trois degrés de chaque pôle, y compris ceux dont le nom sert d'identifiant à une
+canonique (FERVEUR reste le degré 3 de Désir - Lumière, pas la définition de J'EMBRASE). Les 42
+lignes gardent leur `name` et leur `description` ; rien n'y est réécrit.
+
+### 7.2 Correction 1 — un référentiel de 18, pas 18 plus les anciennes
+
+La règle n'est pas « canonique ou publique » mais **« jamais une amplitude remplacée »** — c'est
+`remplacee_par_id` qui exclut, pas `canonique` qui autorise. Ainsi un éventuel référentiel hors
+Point Zéro (aucun aujourd'hui : les 42 Skills sont dans les 18 cadres) n'est pas restreint par
+ricochet.
+
+| producteur | règle après bascule | où elle vit |
+|---|---|---|
+| nouveau rattachement (`ChallengesSkill`) | refuse un Skill remplacé, à la création ou au changement de `skill_id` | validation modèle — donc gestion, saisie directe d'identifiants et import |
+| nouvelle attribution (`Point`) | idem | validation modèle — donc `set_validated_at`, `GainDynamique`, `TraceSas` |
+| sélecteur de gestion | liste `Skill.rattachables` (non remplacées) de la communauté **plus** les canoniques | `Gestion::ExperiencesController` |
+| `Challenge#skill_visibility` | une expérience publique accepte une canonique privée ; refuse toujours une amplitude privée ; une amplitude remplacée est refusée en amont | validation modèle |
+| import | une référence se **résout** : clé cible (`desir.ombre`) → canonique ; nom historique → sa canonique via `remplacee_par_id` (alias explicite) ; inconnue → **l'import s'arrête et nomme la valeur**. Plus jamais de `find_or_create_by!` | `Skill.resoudre!` |
+
+Les lectures historiques (`Point` et `ChallengesSkill` déjà écrits, `skill_origine_id`) restent
+lisibles selon les droits existants ; rien n'est caché.
+
+### 7.3 Correction 3 — deux fenêtres de retour, nommées
+
+- **Fenêtre (a) — avant toute nouvelle écriture.** Le script écrit un **journal** JSON
+  (`tmp/regroupement-18-<env>-<horodatage>.json`) : pour chaque ligne modifiée, table, id,
+  champs **avant** et **après** ; pour chaque Skill, drapeaux avant/après ; l'empreinte de
+  `config/sas.yml` avant/après. `defaire_regroupement_18.rb` relit ce journal, **vérifie que
+  chaque ligne est encore dans son état « après »** — sinon il s'arrête : une activité a eu
+  lieu, on est en fenêtre (b) — puis restaure exactement l'état « avant ». Il ne restaure pas
+  « une clé étrangère » : il restaure le journal.
+- **Fenêtre (b) — après reprise d'activité.** Retour de **code** seulement, schéma additif
+  conservé. Les lignes écrites après la bascule visent une canonique — une compétence ordinaire,
+  avec son cadre : l'ancien code les lit sans rien changer. Elles n'ont pas d'amplitude
+  d'origine et **n'en recevront jamais une inventée**. Aucun `down` de données n'est annoncé
+  pour cette fenêtre ; aucun Point n'est supprimé pour permettre un retour.
+
+Le script est **transactionnel** (une transaction, `LOCK TABLE challenges_skills, points IN
+EXCLUSIVE MODE` le temps de la bascule — 53 lignes, quelques millisecondes — pour qu'aucune
+attribution concurrente ne s'écrive entre les témoins), **rejouable** (une ligne déjà déplacée
+— `skill_origine_id` posé et `skill_id` canonique — est sautée, jamais réécrite ; une seconde
+exécution déplace 0 ligne et rend les mêmes témoins), et **s'arrête sur divergence** (un Skill
+absent de la table figée, un cadre qui ne correspond pas, un Skill apparu depuis).
+
+### 7.4 Correction 4 — ordre de déploiement, environnements nommés, contraintes
+
+**Livraison A — schéma additif + code compatible + script + simulation** (une PR sur
+`preprod`, relue avant fusion) :
+
+- migration : `skills.canonique` (booléen, faux), `skills.remplacee_par_id` (FK → `skills`),
+  `challenges_skills.skill_origine_id` et `points.skill_origine_id` (FK → `skills`) ; index
+  unique partiel `skills(derived_framework) WHERE canonique` ; contraintes `remplacee_par_id <>
+  id` et `NOT (canonique AND remplacee_par_id IS NOT NULL)`. Le « même cadre » et « la cible est
+  canonique » (donc pas de chaîne ni de cycle : une canonique n'est jamais remplacée) sont des
+  validations du modèle **et** des contrôles du script — SQL ne les exprime pas sur deux lignes.
+- code **compatible dans les deux états** : `GainDynamique` et `TraceSas` résolvent par
+  `Skill#cible` (la canonique désignée si elle existe, sinon le Skill lui-même) — avant
+  désignation, comportement **identique** à aujourd'hui, donc aucune requête ne cherche une
+  canonique avant qu'elle existe ; les validations de 7.2 sont inertes tant que
+  `remplacee_par_id` est nul partout.
+- `scripts/regrouper_referentiel_18.rb` — **simulation par défaut**, `ECRIRE=oui` pour écrire.
+  La partie lecture (table figée, divergences, lignes à déplacer, témoins par joueur / par
+  expérience / par Puissance / par polarité) tourne **sans le schéma** : c'est ce qui permet de
+  joindre à la PR une simulation faite sur les données de production, en lecture seule.
+- banc `verifier_referentiel_18` : les **18 cadres attendus** (l'ensemble, pas un compte), une
+  canonique par cadre et l'index qui le tient ; aucune ligne de `points` ni `challenges_skills`
+  ne vise un Skill remplacé ; chaque `skill_origine_id` a le cadre de son `skill_id` ; refus d'un
+  rattachement et d'un Point sur une amplitude remplacée (publique #74, privée #94) ; une
+  expérience publique accepte #91 canonique privée ; la liste de gestion porte les 18 ;
+  `GainDynamique` et les cinq portes du Sas résolvent la cible ; rejeu sans double gain ;
+  seconde exécution du script = 0 ligne.
+
+**Livraison B — bascule des lecteurs** (seconde PR, après A appliquée et données regroupées) :
+`config/sas.yml` vers les cinq clés cibles ; le sélecteur de gestion ; `Skill#libelle` posé sur
+la fiche et la restitution — la vue est au poste fixe, le libellé est fourni.
+
+**Séquence, environnement par environnement :**
+
+| # | où | quoi | témoin |
+|---|---|---|---|
+| 1 | production, lecture seule | simulation du script (données fraîches) jointe à la PR A | 0 divergence, lignes à déplacer, témoins avant |
+| 2 | préprod | fusion A, migration, **simulation**, puis `ECRIRE=oui`, journal, **seconde exécution** | témoins identiques avant/après, 0 ligne au rejeu |
+| 3 | préprod | `defaire_regroupement_18.rb` depuis le journal, puis regroupement à nouveau | retour exact, puis état regroupé |
+| 4 | préprod | fusion B, recette transversale | `TOUT EST VERT` |
+| 5 | production | sauvegarde vérifiée, promotion A, migration, simulation, écriture, journal conservé hors du conteneur | témoins identiques |
+| 6 | production | promotion B, recette transversale | `TOUT EST VERT` |
+
+Les nombres 52 et 5 de l'inventaire ne sont **pas** des attendus du banc : les témoins se
+capturent à chaque exécution, avant et après, sur les données du moment.
+
+### 7.5 Recette (la liste de Codex, reprise telle quelle)
+
+Attributions statiques et dynamiques · cinq portes Sas · import (clé, alias, inconnue) · ancien
+identifiant public et privé refusés pour un nouveau rattachement · provenance historique ·
+conservation des totaux par joueur / expérience / Puissance / polarité · absence de double gain
+au rejeu · simulation puis seconde exécution · retour arrière fenêtre (a) éprouvé, fenêtre (b)
+décrite. Couverture des verbes : statique (13 cadres), dynamique (JE CRÉE par Lire mon Moteur ;
+JE DISTANCIE et JE DIRIGE par le Sas), effectivement enregistrée (à lire en base, jamais
+déduite) — trois lectures distinctes, jamais confondues.
