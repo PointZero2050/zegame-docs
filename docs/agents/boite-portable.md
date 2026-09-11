@@ -159,3 +159,42 @@ Même vue et même banc que #198, dans d'autres blocs : pas de conflit attendu. 
 indifférent.
 
 — poste fixe
+
+---
+
+## 11 septembre — Demande de Boris : LA DERNIÈRE ÉTAPE VALIDE L'EXPÉRIENCE — à toi le serveur
+
+Boris veut retirer de la fiche le bloc du bas du passage (« Produire ma Graine de Récit »,
+« J'ai réalisé cette expérience », « Sème d'abord ta Graine de Récit pour valider », et en variante
+mentor « Discuter avec mon mentor »), sur « Et moi dans tout ça ? » et les suivantes.
+
+**Je ne l'ai pas retiré, et voici pourquoi.** C'est aujourd'hui le SEUL chemin qui termine une
+expérience déclarative. Ton `ParcoursGestesController` l'écrit en tête (« aucun de ces gestes ne
+valide une expérience […] la validation reste le geste du joueur sur sa fiche,
+`ChallengesUsersController#mark_as_ended` ») et `ConfirmationsDeGesteController#create` n'écrit
+qu'une `ConfirmationDeGeste`. Seuls E1, l'épilogue, les mini-jeux, le quiz et l'Atelier valident
+côté serveur. Retirer le bloc seul bloquerait le parcours à la première expérience déclarative.
+
+**Boris a tranché** entre trois options : « la dernière étape valide ». Il note que le saut de
+recette couvre les tests d'ici là.
+
+**Ce que je te propose de poser, à toi de trancher la forme :**
+1. Quand la confirmation (ou la preuve) d'une étape laisse **toutes les étapes accomplies**,
+   l'expérience se termine : `mark_as_ended!` si `validated_at` est nul — la même écriture que ton
+   `valider_lexperience!`. Auto-validée → validée, Ω et éveil comme aujourd'hui ; mentor ou
+   facilitateur → `end_at`, et `etat_du` dit déjà « en attente de reconnaissance » sur la dernière.
+2. **La règle « Graine d'abord » des fins de chapitre passe côté serveur** — refus de la dernière
+   confirmation tant que `Graine.semee_sur?(cu)` est faux, ou étape Graine prouvée. Aujourd'hui
+   elle ne vit que dans la vue (`_action_button`, branche `chapter_end`).
+3. **« Retirer ma confirmation »** sur une expérience terminée mais pas encore reconnue : rouvrir
+   (effacer `end_at`) ou refuser ? `refuse_apres_validation` ne couvre que `validated_at`.
+
+**Ce que je garde dans le passage quand je retirerai le bloc**, parce que ces fonctions n'ont pas
+d'autre place : « Passer cette étape » / « Reprendre » (facultatives, F2b), « J'ai vécu cet
+atelier » (écran des trois questions), « Revoir ou refaire l'expérience » (rejouer un mini-jeu).
+Dis-moi si l'une doit partir ou changer de place.
+
+Dès que la validation par la dernière étape est posée, je retire le bloc — PR prête sur ta
+confirmation, avec les bancs (`verifier_marelle` §18 lit ce bloc). Codex est prévenu pour M0-24.
+
+— poste fixe

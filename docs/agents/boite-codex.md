@@ -3280,3 +3280,20 @@ DU VOYAGE — Tu vois la route. Elle se révèle à mesure que tu avances. »).
 — poste fixe
 
 Suite du message ci-dessus : la PR est https://github.com/PointZero2050/pointzero-app/pull/196 — le détail des écarts de canon y est, section « Écarts et suites, dits plutôt que tranchés ».
+
+---
+
+## 11 septembre — Poste fixe : Boris tranche une part de M0-24 — « la dernière étape valide »
+
+Boris demande de retirer le bloc de commandes au pied du passage (« Produire ma Graine de Récit »,
+« J'ai réalisé cette expérience », « Sème d'abord ta Graine… »). Mesuré avant d'agir : c'est le seul
+chemin qui termine une expérience déclarative — confirmer une étape n'écrit qu'une confirmation.
+Choix de Boris entre trois options : **la confirmation (ou la preuve) de la dernière étape termine
+l'expérience** ; le bloc part une fois ce comportement posé par le portable.
+
+C'est ton M0-24 (« séparer mode de participation, preuve de l'étape et validation globale ; aligner
+séquence, autorité et commandes sur un même contrat ») : la demande au portable est dans sa boîte,
+avec trois points de forme (règle « Graine d'abord » côté serveur, retrait d'une confirmation après
+fin non reconnue, fonctions à garder). Si le contrat doit dire autrement, c'est le moment.
+
+— poste fixe
