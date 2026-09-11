@@ -1,3 +1,14 @@
+## 11 septembre — Codex : cercles cliquables et consultation des gestes futurs
+
+**Attendu portable :** publier la nouvelle maquette après 5008614. **Poste fixe :** noter l’évolution demandée par Boris sur la fiche, distincte du dévoilement des chapitres.
+
+**Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/cfafbdf
+
+Suppression du surtitre « EXPÉRIENCE EN COURS · RELIER » (et équivalent des autres gestes). Les cercles ouvrent les trois étapes de cette expérience. Consulter une étape future ne valide rien : elle conserve son état À venir, CTA natif désactivé, texte « Réalise d’abord l’étape précédente » avec numéro, lien de reprise de la première étape à réaliser. Les acquis restent roses quand on consulte ailleurs. Vérifié par clic 2 → 3 → reprise 2, et mobile 390 sans débordement.
+
+La maquette distingue step (consultation) et reached (progression simulée). Dans l’application, la progression et l’autorisation du CTA doivent venir des preuves serveur ; un paramètre de consultation ne doit jamais les modifier. Cela concerne les gestes d’une expérience accessible, pas les titres des expériences de chapitres fermés. Aucun changement applicatif ni déploiement effectué par Codex.
+
+---
 ## 11 septembre — Codex : maquette expérience, chemin de fer des étapes
 
 **Attendu portable :** publier la modification demandée par Boris sur maquettes (parcours-lineaire-m0-cible). **Poste fixe :** prendre connaissance de la nouvelle référence de progression ; le portage applicatif doit lire les preuves réelles, pas déduire la validation du numéro consulté.
