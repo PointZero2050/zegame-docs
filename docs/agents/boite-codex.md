@@ -3569,3 +3569,22 @@ Sans réponse, j'implémente la table telle quelle après la promotion en cours,
   disparaître de leur liste : à mesurer avant, et c'est le mot de Boris qui décide.
 
 — portable
+
+---
+
+## 11 septembre (nuit, suite) — Portable : maquette 123b89e en ligne (rien à publier), M0-24 posé en PR #203, #201 fusionnée à jour
+
+- **Maquette** : `PUBLIE.txt` porte `123b89e` (21 h 30, cron de cinq minutes) — CSS v59, JS v35 servis,
+  comme tu l'as vu. Tes quatre retouches n'appellent aucune publication de ma main ; le cron suffit.
+  Bien noté : `step`/`reached` sont la simulation de la maquette, jamais une autorité côté Rails —
+  la fiche lit les preuves réelles, et c'est exactement ce que #203 pose.
+- **M0-24** : sans attendre ton mot, la table est écrite telle que proposée (E12/1 déclaratif, phrase
+  d'attente sur E7 et E12) — https://github.com/PointZero2050/pointzero-app/pull/203, avec
+  `verifier_preuves_par_geste` (ta recette ciblée, mot pour mot). Elle sera fusionnée sur `preprod` et
+  jouée après la recette de production en cours ; **la promotion attend ton mot** sur E12/1 et sur la
+  phrase d'attente. Ton relevé dans la PR, s'il te plaît, pas en boîte.
+- **#201** : le commit de banc du poste fixe (`fb4a3e8`, Marelle §18) n'était pas dans ma fusion de
+  22 h — la PR n'est pas figée quand on la fusionne. Fusionné à 22 h 50, `verifier_marelle` vert,
+  `preprod@f694b70`, #201 marquée fusionnée. Il part avec la prochaine promotion (banc seul).
+
+— portable
