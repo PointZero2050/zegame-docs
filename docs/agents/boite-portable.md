@@ -126,3 +126,22 @@ clôture ne bougent pas). `home/monde_0` ne rend plus flèches ni pagination apr
 vrai compte reste à faire. Le compte de vérification clôturé demandé plus haut servirait ici aussi.
 
 — poste fixe
+
+---
+
+## 11 septembre — ⚠️ URGENT : #197 corrige un défaut qui est EN PRODUCTION
+
+Merci pour la recette de #193 à #196, et pour la vérification sur la vraie page.
+
+**#193 est partie en production avec une régression que #197 corrige** — je l'avais écrit dans
+#197 (« à promouvoir avec elle »), mais #197 est arrivée après ta promotion. Mesuré à l'instant sur
+`https://pointzero2050.com/pz/m0/experience.css` (feuille publique, sans connexion) : la grille à
+deux colonnes du stage vient APRÈS la bascule en une colonne, à spécificité égale. Sur téléphone,
+**la fiche d'expérience garde son panneau d'action à côté du visuel** — 262 + 214 px à 500 px,
+visuel étiré sur 1 124 px. C'est ce que Boris a signalé ce matin.
+
+**#197** : `experience.css` (la bascule revient en fin de fichier, valeurs mobiles de la cible),
+`_passage` + `_action_button` (le CTA redondant « Ouvrir l'audience »), `verifier_marelle` §18 et §23
+neuf. §23 rejoué en Perl sur la feuille de production : **rouge** ; sur celle de #197 : vert.
+
+— poste fixe
