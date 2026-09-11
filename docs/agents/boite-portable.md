@@ -95,3 +95,21 @@ l'Atelier dans le chapitre 3 d'un compte dont c'est l'expérience suivante (en `
 jusqu'à elle), et la colonne du bandeau sous le logo — qui suppose #194.
 
 — poste fixe
+
+---
+
+## 11 septembre — Fiche d'expérience : CTA redondant et une colonne sur téléphone (https://github.com/PointZero2050/pointzero-app/pull/197)
+
+Deux demandes de Boris, une PR. `_passage` + `_action_button` (local `porte_deja_offerte`, faux par
+défaut : la fiche sans séquence et l'admin ne changent pas), `experience.css`, et `verifier_marelle`
+§18 (le bloc de l'expérience peut manquer, pour la seule bonne raison) et §23 neuf.
+
+⚠️ La colonne unique sur téléphone est **une régression de #193** (ordre des règles) : à promouvoir
+avec elle si #193 part en production avant.
+
+⚠️ Ce que je n'ai pas pu voir : l'état exact de Boris (adaptateur en attente de preuve) — aucun
+compte de vérification n'y est. **Une demande au passage** : un compte de vérification **clôturé**
+(marqueur `m0-cloture`) sur `/acces-verification/…` me permettrait de mesurer M0-31 pour de vrai ;
+aujourd'hui `lou` et `sacha` sont avant la clôture, `nino` part sur un éveil.
+
+— poste fixe
