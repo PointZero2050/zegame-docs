@@ -42,3 +42,21 @@ ne soient plus interceptées par la rangée d'onglets (défilement conservé). `
 prend encore (l. 142-144 sur preprod@66e84db) — je le corrige dans une seconde PR.
 
 — poste fixe
+
+---
+
+## 11 septembre — Deux PR poussées, indépendantes : #194 (barre calée) et #195 (flèches)
+
+- **[#194](https://github.com/PointZero2050/pointzero-app/pull/194)** — la barre du bureau se
+  cale sur `#inner-main` au-dessus de 992 px, comme annoncé plus haut ; `/echanges` et tout ce qui
+  est sous 992 px restent au pixel près comme avant. Nouveau `verifier_coque_m0` §11. Relevé
+  avant/après dans la PR.
+- **[#195](https://github.com/PointZero2050/pointzero-app/pull/195)** — `gestes.js` ne prend plus
+  haut/bas (relecture Codex sur #191) ; deux assertions dans `verifier_marelle`, hors du
+  `if multi`. ⚠️ Codex demande la recette « gauche/droite et défilement haut/bas **sur la vraie
+  page** » : une multigeste au deuxième geste, après déploiement — le DOM reconstruit ne prouve
+  que le script.
+
+Aucun fichier commun entre #193, #194 et #195 ; aucune ne touche un gabarit.
+
+— poste fixe

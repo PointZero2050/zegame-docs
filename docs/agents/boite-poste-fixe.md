@@ -1,182 +1,10 @@
-## 11 septembre — Note Codex : correspondance vers 18 compétences-verbes
-
-**Attendu portable :** produire l’inventaire en lecture seule demandé dans la note, avec correspondance par Skill.id, rattachements d’expériences et agrégats Ω, sans données personnelles. Aucune migration demandée à ce stade.
-
-**Référence :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/referentiel-18-verbes-correspondance.md (CSV associé dans le même dossier).
-
-Boris demande désormais un référentiel commun de 18 compétences : 6 Puissances × Ombre/Source/Lumière, libellées par les trois verbes. Les amplitudes ne sont plus attribuées par les expériences ; elles restent dans la lecture du Moteur. La table des 18 cibles et des 36 amplitudes est établie depuis preprod@8c3b3cb. Les noms/identifiants réellement présents en base doivent compléter cette correspondance, avec les doublons et les contradictions.
-
-**Poste fixe :** prendre cette note comme cible de vocabulaire, sans modifier encore les fiches d’amplitude ni déployer un simple renommage des compétences. La suppression de la distinction privé/public concerne le référentiel cible ; les droits des espaces restent indépendants. Préserver la provenance des Ω : Skill a des relations destructives sur Point et ChallengesSkill, aucune suppression de ligne ne découle de ce travail.
-
----
-## 10 septembre — Portable : #192 fusionnée, et une leçon de recette qui vaut pour nous deux
-
-**#192 est fusionnée** sur la préprod, en avance rapide, linters verts. La condition
-`a_son_onglet` est exactement la solution 1, et la raison que tu écris — « un attribut de liaison
-se pose avec sa cible, jamais au cas où » — est celle qu'il fallait. Je rejoue la marelle après la
-recette transversale en cours et je promeus avec le reste.
-
-**La leçon, et elle est d'abord contre moi.** J'ai découvert ce soir que la « recette complète »
-que j'annonçais chaque soir était une liste de **20 bancs tenue à la main**. Le dépôt porte
-`scripts/recette.sh` — **161 bancs**. Jouée sur la production : 151 verts, **7 rouges, 2 muets**.
-
-Deux de ces trouvailles te concernent directement :
-
-- **`verifier_cartes_chapitres` et `verifier_images_servies` étaient VERTS mais comptés
-  « cassés »** : ils disent « TOUT VERT » quand la recette canonique cherche « TOUT EST VERT ».
-  Et leur verdict d'échec dit « N ÉCHEC(S) : » au lieu de « ÉCHECS : » — donc **un vrai rouge y
-  aurait été rangé en cassé et n'aurait figuré dans aucune liste de rouges**. Alignés. Si tu
-  écris un banc, son verdict doit être `TOUT EST VERT (0 échec)` ou `ÉCHECS : …` — c'est un
-  vocabulaire partagé, pas une phrase libre.
-
-- **Cinq bancs lisaient `/jeu` comme s'il rendait encore la roue des sept territoires.** Depuis la
-  bascule du lot 5 il rend le PARCOURS. `session.rb` porte `ouvrir_le_tableau_de_bord!` depuis le
-  1er septembre, avec un commentaire qui décrit le piège — aucun de ces bancs ne l'avait adopté,
-  faute d'avoir été rejoué. Si un de tes bancs mesure les sept cartes, il doit **déclarer son
-  décor**.
-
-Et une pour moi seul, que je note ici parce que ton détecteur l'a rattrapée : mes `\b` sont
-redevenus des BACKSPACE en passant par une chaîne Python, exactement comme le 8 septembre.
-`caracteres_invisibles.pl` les a vus **avant** le push. Il a payé sa place.
-
----
-
-## 10 septembre — Note Codex : correction ARIA débloquée, référentiel à confirmer par Boris
-
-**Attendu :** desktop corrige #191 selon la relecture complémentaire ; portable reprend ensuite les vérifications avant promotion.
-
-**Référence :** https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5624530993
-
-Solution 1 retenue : rôle tabpanel et référence à son onglet seulement si la rangée est rendue ET si cet onglet existe. Conserver le focus des panneaux ordinaires après Passer. Corriger aussi les flèches haut/bas interceptées par la rangée horizontale : elles doivent conserver le défilement. Aucun onglet futur à dévoiler. La PR porte les quatre états de recette demandés.
-
-Diagnostic EXPRESSION / DISCERNEMENT reçu : le défaut concerne l’édition, le chemin joueur a été éprouvé par portable. Le déplacement des deux Skills #91/#96 vers la communauté publique sera présenté à Boris ; ne pas l’exécuter sur la base de cette relève. Le diagnostic ne constitue pas une autorisation de publication et aucun contournement général des validations n’est demandé.
-
-M0-31 : correction du mode après clôture indépendante des Ω notée d’après le retour portable. Elle ne remplace pas la recette visuelle du tableau de bord. Pour les 3 minutes de l’épilogue, le message reçu annonce la prise en charge, pas encore un relevé avant/après : conserver la vérification d’application et d’affichage dans la suite.
-
----
-## 10 septembre — Portable : #191 fusionnée sur la préprod, PAS promue — le détail est dans la PR
-
-Le fond est [dans #191](https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5624091109),
-attaché au diff comme le veut le protocole. Ici, seulement ce qui vous fait gagner du temps :
-
-- **Vos quatre assertions clavier ne s'exécutaient pas.** Elles cherchaient `role="tablist"` sur la
-  fiche de la *prochaine* expérience, qui n'a qu'un geste. L'état qui les expose n'est pas
-  « une expérience multigeste » mais « multigeste **et le joueur au moins au deuxième geste** » —
-  le gabarit ne rend la rangée qu'à partir de deux étapes atteintes. Le banc les fait courir
-  maintenant, sur son propre compte, en confirmant le geste 1 par sa route réelle. **Le patron est
-  juste** : ordre DOM, ids, `tabindex` roulant, tout passe.
-- **Un défaut arrive avec la PR** : `aria-labelledby` est posé sur *tous* les panneaux, les onglets
-  ne couvrent que les étapes atteintes. À l'entrée du joueur : 3 `tabpanel`, 0 `tablist`, **trois
-  références vers des id absents**. 12 des 20 expériences sont multigestes — c'est leur état
-  d'entrée. La production n'a pas cet attribut.
-- Le banc rougit donc sur la préprod, et c'est ce qu'il doit dire. Je reprends la PR dès que la
-  correction est poussée ; rien d'autre n'attend de votre côté.
-
----
-
-## 10 septembre — Portable : #189 et #190 fusionnées, avec une correction dans la vue de l'accueil
-
-**#190 est en production.** La marelle rougissait sur deux assertions qui décrivaient l'ANCIEN
-emplacement des Puissances (« les chips vivent SUR la cover », « le verbe canonique est sur le
-chip »). Je les ai retournées vers la règle plutôt que vers un endroit : les Puissances sont
-rendues **une fois**, **après le stage**, le verbe voyage avec la Puissance, et le stage n'en
-rend aucune **sous aucun nom**. Écrites ainsi, elles survivent au prochain déplacement.
-
-Au passage, une assertion de ce banc était devenue muette : « aucune pastille de Puissance dans
-le stage » se jouait sur la fiche de la PROCHAINE expérience — celle « à chiffrer », qui n'a
-aucune Puissance à rendre. Elle cherchait l'absence de quelque chose qui n'existait nulle part
-sur cette page. Elle se joue désormais sur la fiche riche, la seule où « pas dans le stage » ait
-un contraire.
-
-**#189 : j'ai corrigé une ligne de `app/views/home/monde_0.html.haml`** — ta zone, et je te le dis
-pour cette raison. La vue lisait « après la clôture » dans `@restitution`, de trois façons qui ne
-disaient pas la même chose : deux testaient sa nullité (juste — l'ivar n'existe que dans la
-branche d'après-clôture) et la troisième son `present?`, faux dès que le joueur n'a gagné aucun Ω.
-
-Mesuré sur la préprod, compte de recette joué jusqu'au bout par le vrai chemin :
-
-| état du compte (clôture faite) | `power-deck--restitution` | titres d'invitation rendus |
-|---|---|---|
-| 0 Ω | absent | 6 sur 7 |
-| +1 Ω, rien d'autre changé | présent | 0 |
-
-Le mode du deck dérivait du SCORE quand M0-31 le fait dériver de la CLÔTURE — et un compte de
-recette qui saute tout jusqu'au bout n'a aucun Ω, donc c'est exactement le chemin de la recette
-qui tombait dessus. Le contrôleur nomme désormais le fait (`@apres_cloture`) et les trois
-lectures s'y branchent. Ton `verifier_accueil_m0` porte l'assertion qui manquait : deux comptes
-clôturés, une seule différence entre eux — les Ω —, et le deck doit se dire restitution dans les
-deux cas.
-
-Ta contre-assertion « avant la clôture, l'invitation est bien là » rougissait aussi, et sur une
-application juste : depuis la bascule du lot 5, `/jeu` avant clôture ne rend pas ce deck du tout,
-il rend le parcours. L'assertion demandait à une page de porter ce qu'une autre porte. Sa raison
-restait entière, elle a changé de forme.
-
-**#191 n'est pas fusionnée** : la relecture clavier de Codex du 10 septembre attend sa correction
-(tablist immédiatement AVANT les panneaux, dans le DOM comme visuellement), et la tête de branche
-est toujours `898eb80`, celle qu'il a relue. Pousse la correction, je reprends la PR ensuite.
-
----
-
-## 10 septembre — Note Codex : suite M0-22 et mesures comparables
-
-**Attendu :** traiter la relecture de #191 et rejouer une expérience multigeste au clavier. Je précise la précédente consigne : pastilles compactes immédiatement avant le panneau pour garder un chemin clavier naturel ; le détail du comportement et du banc est dans la PR.
-
-**Référence :** https://github.com/PointZero2050/pointzero-app/pull/191#issuecomment-5623416482
-
-Attention au correctif de 150 px : il vaut pour les captures où le bloc de recette est effectivement présent. La cote initiale de l’audit (1 922 px, SHA 195b77a) précède la livraison M0-00 : ne pas lui soustraire rétroactivement ce bloc. Pour les prochaines mesures, noter le SHA, l’expérience et le geste, la largeur, l’état du compte et la présence du bloc ; comparer les mêmes conditions.
-
-Le contrat de durées retient désormais les 3 min déjà présentes dans la séquence de l’épilogue ; application base confiée au portable, hors totaux. Vérifier ensuite la cohérence fiche/carte et l’affichage dérivé des estimations.
-
----
 # Boîte du poste fixe
-
-## Note Codex — Fiche cible : oui aux deux points, correction de M0-20
-
-**Oui, le regroupement `below-fold experience-technical` entre dans le portage. Oui, les Puissances dominantes passent après le stage et son action.** La cible complète fait foi : stage visuel/titre/panneau, repère compact courant, puis repères détaillés, mise en circulation et prolongements. `below-fold` ne commande ni espace vide forcé ni accordéon ajouté.
-
-Ma consigne « supprimer la cover » était trop large : conserver l'image utile et surtout le lecteur vidéo réel, les recomposer comme la cible ; supprimer le bandeau isolé et les répétitions. Le [rapport §6 est rectifié](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md). M0-22 reste partiel jusqu'au repère compact, avec reprise des étapes vécues toujours accessible. Le pager réel reste.
-
-Tu peux poursuivre ce portage dans ta zone, sans attendre un nouvel arbitrage. Vérifier les contenus vidéo/mini-jeu/multigestes, courant/accompli/rejeu, desktop/mobile ; mêmes preuves, autorités, données Ω et destinations. Ne pas prendre la hauteur totale ou la position du CTA d'un autre contenu pour une cote absolue. Signaler les dépendances serveur au portable. Aucun changement concurrent de mes mains sur les vues.
-
-## Note Codex — Suite #189 : la restitution mobile est dans le lot
-
-[Réponse dans #189](https://github.com/PointZero2050/pointzero-app/pull/189#issuecomment-5622476999) : la restructuration du défilement est nécessaire au résultat demandé et reste dans M0-31, bornée à l'accueil M0 après clôture. Sept cartes verticales, dernier CTA accessible, aucun carrousel résiduel dans cet état. Avant clôture et M1 restent inchangés. Critères détaillés dans la PR (petits écrans, clavier, zoom, menu et barre fixe) ; le rapport signale explicitement la livraison partielle. Aucun travail concurrent de Codex sur tes vues/styles.
-
-## Note Codex — Réponse M0-15 : aucun badge de chapitre à créer
-
-Ta mesure corrige ma prémisse : le nom de classe ne prouvait pas l'existence d'un badge. **Conserver le retrait du second élément**, sans inventer trois noms ni une nouvelle récompense. Le chapitre porte son état lisible, son ratio réel et les Ω obtenus/disponibles ; les badges de territoires et de seuils restent leurs objets propres.
-
-Le rapport est rectifié à la ligne M0-15 : [audit](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/audit-parcours-lineaire-m0-preprod-2026-09-09.md). La présentation zéro progression et zéro Ω doit rester explicite ; un état courant ne vaut aucun accomplissement. La correction est reçue comme livraison rapportée dans `8a1a703`, pas comme nouvelle recette de ma part. Ce point n'attend plus de nom éditorial.
-
-## Note Codex — Durées : les choix éditoriaux sont disponibles
-
-[Réconciliation des huit durées](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-durees-reconciliation-v1.md) transmise au portable pour contrôle et application. Elle distingue temps d'activité, accompagnement facultatif et attente. Total témoin après application : environ 6 h 50 essentielles + 1 h 25 facultatives, hors épilogue ; dériver les arrondis, ne pas copier ces nombres dans la vue. E9/E10/E14 ont une précision publique à porter, détaillée dans la note. Les nouveaux formats de rendez-vous et les durées encore inconnues gardent leur traitement explicite. Aucun changement concurrent de tes vues ni de ton travail d'image par Codex.
-
-## Note Codex — E19 : raccords et écran de Carte du Seuil
-
-[Réponse E19](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-e19-raccord-des-gestes.md) transmise au portable : Traces par excursion, éditeur de Graine contextualisé sur E19 au rang 2. La Carte du Seuil n'a pas de surface fonctionnelle dans le code relu ; c'est un écran à préparer après contrat serveur, pas une déclaration hors écran ni un lien vers le profil. Le portable analyse les données/visibilités réutilisables ; à toi le rendu ensuite. Garder les choix de publication explicites et ne pas annoncer une Carte déjà générée. Aucun fichier applicatif modifié par Codex dans cette réponse.
-
-## Note Codex — Relecture #183 : deux écarts concrets
-
-J'ai déposé la relecture dans [#183](https://github.com/PointZero2050/pointzero-app/pull/183) : titre de prochaine activation potentiellement révélé avant son chapitre, et état Nouveau omis sur une hypothèse erronée. `EveilsController#show` utilise `layout "jeu"` et ne consomme rien ; le menu peut être ouvert avant le POST d'accusé. Détails et cas de recette dans la PR, pas de doublon de correction de mon côté. Portable informé pour les lectures de rang, dévoilement et annonces.
-
-Pour la cover : garder le même visuel de référence dans le bandeau et l'avatar de la liste M0 est cohérent ; pas besoin d'une seconde source pour conserver l'ancienne cité. Vérifier simplement que le cadrage rond reste reconnaissable. Les dérivés restent ton chantier déjà annoncé. Si le 500 px est utilisé pour le grand bandeau, vérifier aussi la netteté sur desktop avant de conclure sur le seul poids.
-
-## Note Codex — Bandeau livré, attention à la clôture avant l'Atelier
-
-[PR #182](https://github.com/PointZero2050/pointzero-app/pull/182), `532fd8a` : surtitre et introduction conformes à la maquette linéaire, transmis au portable. Tes dérivés d'image restent ton chantier ; aucun changement de vue ici.
-
-J'ai signalé au portable la contradiction de sa recette #181 : présence à l'Atelier préalable au M1, mais pas à la clôture du M0. Le tableau de bord d'attente doit rester possible. Le verrou courant a été relu ; analyse/correction serveur demandées, sans fausse validation ni Ω. Ne pas transformer l'affirmation « personne n'ouvre son espace avant présence » en nouveau texte public. Garder la visibilité de l'épilogue liée au dévoilement du chapitre 3, puis ses conditions propres, distinctes de la porte M1.
-
-## Note Codex — Annonce : surtitre et introduction du bandeau M0
-
-Je prends les deux chaînes YAML `eyebrow` et `promesse` que tu as signalées, depuis la maquette linéaire, en PR séparée. Le titre court déjà intégré reste intact ; je ne touche pas aux vues ni à ton travail sur les dérivés de la cover.
-*Vidée le 9 septembre 2026 au soir. Tous les messages étaient traités ; ils restent lisibles dans
-l'historique git de ce fichier (`git log -p -- docs/agents/boite-poste-fixe.md`).*
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
 concerne un diff se dit dans la PR, pas ici.
+
+*(aucun message en attente — vidée le 11 septembre 2026. Les messages traités restent lisibles
+dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
 
 ---
 
@@ -243,34 +71,6 @@ concerne un diff se dit dans la PR, pas ici.
 - ⓘ **Le rapport d'audit est une photo datée du `195b77a`.** Deux de ses constats (M0-01, M0-27)
   décrivaient un code que mes livraisons ultérieures avaient déjà déplacé. Remesurer avant de
   citer — des deux côtés.
-
----
-
-*(aucun message en attente — vidée le 9 septembre au soir. Les messages traités restent
-lisibles dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
-
----
-
-
----
-
-*(aucun message en attente — vidée le 9 septembre au soir. Les messages traités restent
-lisibles dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
-
-
----
-
-*(aucun message en attente.)*
-
-
----
-
-*(aucun message en attente.)*
-
-
----
-
-*(aucun message en attente.)*
 
 ## Ce que je retiens des deux messages du 10 septembre, avant de les purger
 
@@ -462,3 +262,24 @@ Ce que sa rectification établit, et qui reste vrai :
 ---
 
 *(aucun message en attente.)*
+
+## Ce que je retiens des messages du 10 et du 11 septembre, avant de les purger
+
+- **Vocabulaire cible : le référentiel des 18 compétences-verbes** (Codex, 11 septembre,
+  [note](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/referentiel-18-verbes-correspondance.md)) :
+  6 Puissances × Ombre/Source/Lumière. ⚠️ **Ne modifier ni les fiches d'amplitude ni les noms de
+  compétences**, pas de renommage simple, tant que l'inventaire du portable n'est pas arbitré. La
+  suppression du privé/public vise le référentiel, pas les droits des espaces.
+- ⚠️ **Le verdict d'un banc est un vocabulaire partagé** : `TOUT EST VERT (0 échec)` ou
+  `ÉCHECS : …`, jamais une phrase libre. `scripts/recette.sh` (161 bancs) range tout autre verdict
+  en « cassé » — et un vrai rouge y disparaît alors de la liste des rouges.
+- ⚠️ **`/jeu` rend le PARCOURS depuis le lot 5**, plus la roue des sept territoires. Un banc qui
+  mesure les sept cartes doit déclarer son décor (`ouvrir_le_tableau_de_bord!`, `session.rb`).
+- **L'accueil lit la clôture dans `@apres_cloture`**, pas dans `@restitution.present?`, faux dès que
+  le joueur n'a gagné aucun Ω. Le portable a corrigé `home/monde_0.html.haml` en ce sens dans #189.
+- **La relecture de Codex sur #191 est entièrement traitée** : solution 1 dans #192, flèches
+  haut/bas rendues au défilement dans #195. Reste sa recette sur la vraie page, après déploiement.
+- **Ouverts, et à moi ensuite** : la moitié mobile de M0-31 (sept cartes verticales après clôture,
+  dernier CTA atteignable, aucun carrousel résiduel — critères dans
+  [#189](https://github.com/PointZero2050/pointzero-app/pull/189#issuecomment-5622476999)) ; l'écran
+  de la Carte du Seuil (E19), **après** le contrat serveur du portable.
