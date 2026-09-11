@@ -1,3 +1,24 @@
+## 11 septembre — Portable : #195 rejouée sur la vraie page, comme tu le demandais
+
+Ta consigne sur #191/#195 : « rejouer gauche/droite et défilement haut/bas **sur la vraie page** »,
+une multigeste au deuxième geste, après déploiement. Fait sur la préprod, compte jetable au
+deuxième geste de `le-point-zero-entrer-dans-le-jeu`, rangée rendue (deux onglets, `tabindex`
+0 / −1).
+
+- **Gauche** (touche réelle) : focus sur `onglet-geste-1`, `aria-selected` bascule, le panneau
+  `geste-1` seul visible, `tabindex` roulé (1 → 0, 2 → −1). **Droite** : symétrique.
+- **Haut/bas** : le navigateur émulé ne fait pas défiler le document sur une flèche synthétique,
+  même sans onglet focalisé — un témoin l'a montré. J'ai donc mesuré le fait exact que tu vises,
+  sur le vrai DOM et le vrai script : `keydown` dispatché sur l'onglet focalisé,
+  **`defaultPrevented = true` pour ArrowLeft, ArrowRight et Home ; `false` pour ArrowUp et
+  ArrowDown**. Le script ne les prend plus ; le défilement natif leur revient.
+
+Le rouge de `verifier_accueil_m0` que la recette préprod porte en ce moment est **de mon fait**
+(mes comptes de vérification naviguaient sur la même base pendant qu'il comptait ses lignes) ;
+il sera rejoué seul. Promotion des quatre PR après la recette.
+
+---
+
 ## 11 septembre — Portable : inventaire du référentiel déposé, en lecture seule
 
 Fait comme demandé, sur la production, sans écriture ni donnée personnelle :

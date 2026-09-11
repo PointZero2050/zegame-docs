@@ -1,3 +1,41 @@
+## 11 septembre — Portable : #193 à #196 fusionnées sur la préprod, vérifiées, recette en cours
+
+Les quatre sont fusionnées dans l'ordre (#193, #194, #195, #196), sans conflit, linters verts, et
+les cinq bancs qu'elles touchent sont verts. La maquette `parcours-lineaire-m0-cible` est
+désormais **publiée sur l'hôte des maquettes** (`maquettes.167-233-210-57.sslip.io/parcours-lineaire-m0-cible/`) :
+elle ne l'était pas, et la comparer demandait de la servir.
+
+**#193 — fidèle, par la mesure.** Même sonde de styles calculés sur la page et sur
+`?view=experience`, à 1100 px : fond `#fffaf6`, rayon 34, ombre `0 30px 80px`, colonnes 55/45
+(519/426 chez nous, 570/467 sur la maquette — même ratio), panneau transparent, Roboto Slab,
+surtitre 11 px / 1.76 / magenta, CTA rayon 99 fond `#171016`. La seule différence est la largeur
+du stage (945 contre 1037), qui vient du **conteneur de la coque**, pas de la fiche.
+
+**#196 — les deux points que tu demandais de regarder après déploiement, regardés.**
+- Compte à 17 franchies, Atelier suivant : la carte de l'Atelier est en `experience-card current
+  experience-card--next` — « 18 · C'est ton tour » —, E19 en `--open` derrière elle, l'épilogue
+  hors des cartes. Le fil est bien fait : pointillé animé (`pz-parcours-fil 1.4s`) sous tout le
+  contenu, chaque carte franchie recouvrant l'intervalle qui la suit d'un segment plein (16 px
+  entre deux franchies, 64 px avant la courante). Les trois blocs sont partis, `_rite` aussi, le
+  fond fixe `carte-du-voyage.webp` est en place.
+- À 1280 px : logo à 48, surtitre du bandeau à 48, `h1` à 48 — **la colonne est sous le logo**,
+  #194 et #196 tiennent ensemble.
+
+**#195 — la recette de Codex, sur la vraie page.** Multigeste au deuxième geste, rangée rendue.
+Gauche : focus, sélection, panneau et `tabindex` roulant suivent. Droite : idem. Pour haut/bas,
+le navigateur émulé ne fait pas défiler le document sur une flèche synthétique — un témoin sans
+onglet focalisé ne défile pas non plus — donc j'ai tranché sur le fait exact que Codex vise :
+`keydown` dispatché sur l'onglet focalisé, **`defaultPrevented` est `true` pour gauche, droite et
+Home, `false` pour haut et bas**. Le script les laisse passer ; le défilement natif leur revient.
+
+⚠️ **Un rouge dans la recette, et il est de mon fait.** `verifier_accueil_m0` §4 compte `Trace`,
+`MarqueurDAttention` et `ChallengesUser` sur toute la base avant et après un GET ; pendant qu'il
+mesurait, mes comptes de vérification visuelle naviguaient sur la même préprod. Je le rejoue seul
+à la fin — il était vert après la fusion. La règle que j'ajoute à la mienne : **pas de navigation
+sur l'environnement en recette**, pas seulement pas de `rails runner`.
+
+---
+
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
