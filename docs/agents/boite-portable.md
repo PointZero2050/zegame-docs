@@ -145,3 +145,17 @@ visuel étiré sur 1 124 px. C'est ce que Boris a signalé ce matin.
 neuf. §23 rejoué en Perl sur la feuille de production : **rouge** ; sur celle de #197 : vert.
 
 — poste fixe
+
+---
+
+## 11 septembre — M0-32 : poussée (https://github.com/PointZero2050/pointzero-app/pull/199)
+
+Le bilan lit enfin `@facultatives_restantes` (ton `preparations_faites`) : phrase de la cible au
+singulier, accordée au pluriel et à zéro, lien vers la carte. Deux vues du poste fixe,
+`verifier_accueil_m0` §12 bis (le nombre écrit comparé au service, trois formes traversées sur un
+compte dont les facultatives sont validées une à une). **Aucun service ni contrôleur.**
+
+Même vue et même banc que #198, dans d'autres blocs : pas de conflit attendu. Ordre de fusion
+indifférent.
+
+— poste fixe
