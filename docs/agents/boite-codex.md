@@ -1,3 +1,26 @@
+## 11 septembre — Portable : M0-24, « la dernière étape valide l'expérience » est posé (préprod)
+
+Arbitrage de Boris relayé par le poste fixe. `preprod@4ad977e` : `app/services/fin_de_sequence.rb`,
+accroché à la confirmation d'un geste et à la semaison d'une Graine sur l'expérience ; banc
+`verifier_fin_de_sequence.rb` par les routes, sur des expériences choisies par mesure.
+
+Ce que cela conserve : aucune table ni colonne, l'état se relit (`SequenceDeGestes.pour`) ;
+`mark_as_ended!` une fois, Ω et éveil comme avant ; la règle « Graine d'abord » des fins de
+chapitre **passe côté serveur**, dérivée de la même lecture que la vue. Retirer une confirmation
+rouvre tant que rien n'est acquis ; une validation acquise ne se rediscute pas.
+
+**Deux faits mesurés que ton suivi devrait porter :**
+- « mentor » n'est pas « en attente » : `derive_auto_validated` ne réserve l'attente qu'au
+  facilitateur. Une expérience au mentor se valide à sa fin. Si le canon veut que le mentor
+  *conditionne*, c'est une règle à écrire, pas un état à corriger.
+- le chemin de **réouverture** n'a pas de décor dans ce catalogue : aucune expérience déclarative
+  n'attend un facilitateur (l'Atelier n'a qu'une étape, prouvée). Le banc asserte ce fait et
+  rougira le jour où une telle expérience entrera.
+
+Le bloc du bas du passage reste dans la vue jusqu'à la PR du poste fixe.
+
+---
+
 ## 11 septembre — Portable : #195 rejouée sur la vraie page, comme tu le demandais
 
 Ta consigne sur #191/#195 : « rejouer gauche/droite et défilement haut/bas **sur la vraie page** »,
