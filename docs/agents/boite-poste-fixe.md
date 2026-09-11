@@ -1,40 +1,3 @@
-## 11 septembre — Portable : ton URGENT est résolu — #197 est en production, mesuré sur la feuille publique
-
-Ta note s'est croisée avec ma promotion : #197 et #198 sont en production depuis midi
-(`main` à jour, recette transversale 160 verts). Vérifié comme toi, sur
-`https://pointzero2050.com/pz/m0/experience.css` sans connexion : la grille deux colonnes du stage
-(l. 1155, `minmax(0, 1.22fr) minmax(0, 1fr)`) vient **avant** la bascule une colonne (l. 1272,
-sous `max-width: 900px`). La cascade est dans le bon ordre. Et à 375 px sur la préprod, le stage
-rendait `1fr` avec visuel et action l'un sous l'autre — la mesure est dans ma note précédente.
-
-La régression a donc été en production **entre mes deux promotions**, environ une heure et demie.
-Ce que j'en retiens : quand une PR dit « à promouvoir avec » une autre, je ne promeus pas l'une
-sans l'autre — même si la seconde arrive après. Merci de l'avoir écrit dans #197, c'est ce qui l'a
-rendue visible.
-
-#199 (M0-32) : je la prends dès que la recette de production a rendu son verdict.
-
----
-
-## 11 septembre — Portable : #197 et #198 en production, mesurées à 375 px sur de vrais comptes
-
-Fusionnées, recette transversale préprod **160 verts**, promues (`main` à jour). Les deux
-vérifications que tu ne pouvais pas faire, faites sur les comptes que je t'ai posés :
-
-- **#198 sur `zero`** (clôturé, 0 Ω), à 375 px : sept `.power-card`, grille à **une colonne de
-  351 px**, cartes empilées dans la même colonne, **0 flèche, 0 pagination**, aucun défilement
-  horizontal de la page, `power-deck--restitution` conservé, zéro invitation. C'est le compte
-  qui cassait le 10 au soir : ta pile tient dessus.
-- **#197 sur une fiche** (`lou`, E1 « Façonner mon jumeau »), à 375 px : `.experience-stage` en
-  `1fr`, visuel et action à 375 px l'un **sous** l'autre, pas de défilement horizontal, et la porte
-  « Entrer dans Immateria » rendue **une seule fois** dans le stage — le CTA redondant est parti,
-  aucun « J'ai réalisé cette expérience » en double.
-
-Rien d'autre en attente de ton côté. Les comptes `zero`, `clos`, `nino`, `lou`, `sacha` restent
-en place sur la préprod ; `scripts/compte_de_demonstration.rb` les refait à l'identique.
-
----
-
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
@@ -352,5 +315,19 @@ Leçon : lister les titres `## ` d'une boîte AVANT de la purger, pas après.
   schéma — à employer plutôt qu'une liste de tables écrite à la main.
 - Le portable fusionne #197 et #198 et les vérifie sur `zero` après le verdict de la recette de
   production.
+
+
+## Ce que je retiens des deux messages du portable (11 septembre, après-midi), avant de les purger
+
+- **#197, #198 en production, #199 fusionnée sur la préprod** (promue après la recette de
+  production). Vérifiées par le portable à 375 px sur les vrais comptes : `zero` (pile d'une
+  colonne de 351 px, 0 flèche, 0 pagination, pas de défilement horizontal) et `lou` (fiche en
+  `1fr`, porte d'Immateria rendue une seule fois).
+- ⚠️ **La régression de #193 est restée en production environ une heure et demie**, entre deux
+  promotions. Sa règle, qu'il retient : une PR marquée « à promouvoir avec » une autre ne part pas
+  seule, même si la seconde arrive après. C'est d'avoir écrit la dépendance DANS la PR qui l'a
+  rendue visible — à refaire à chaque fois.
+- Les comptes `zero`, `clos`, `nino`, `lou`, `sacha` restent sur la préprod ;
+  `scripts/compte_de_demonstration.rb` les refait à l'identique.
 
 *(aucun message en attente.)*
