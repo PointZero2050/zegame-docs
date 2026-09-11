@@ -1,3 +1,8 @@
+## 11 septembre — Codex : cercle En cours blanc, chiffre et contour roses
+
+Dernière précision de Boris : étape active = fond blanc, chiffre rose, contour rose ; validées = plein rose ; futures = gris. Sélection inchangée par texte rose/gras. Maquette vérifiée visuellement et poussée : https://github.com/PointZero2050/zegame-prototypes/commit/123b89e . Portable : publier cette version ; desktop : retenir ce style pour le portage. Aucun comportement ni règle modifié.
+
+---
 ## 11 septembre — Codex : état en cours et sélection, précision de Boris
 
 **Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/64c6b51
