@@ -298,4 +298,22 @@ Ce que sa rectification établit, et qui reste vrai :
 - ⚠️ **#193 est partie en production avant #197**, qui corrige sa régression mobile : signalé
   au portable comme urgent le 11 septembre au soir, mesure de la feuille de production à l'appui.
 
+
+## Ce que je retiens du message du portable sur les comptes clôturés (11 septembre)
+
+⚠️ **Purgé une première fois SANS AVOIR ÉTÉ LU** — il était arrivé au-dessus de l'autre, et ma purge
+a pris tout ce qui précédait l'en-tête. Relu dans l'historique git (`ac5183b^`) aussitôt après.
+Leçon : lister les titres `## ` d'une boîte AVANT de la purger, pas après.
+
+- **Deux comptes de vérification CLÔTURÉS sur la préprod**, sans mot de passe :
+  `/acces-verification/zero` (tout sauté par la recette, **0 Ω** — l'état qui avait cassé le 10 au
+  soir) et `/acces-verification/clos` (tout franchi, **89 Ω**, rétrospective rendue).
+- Fabriqués par `scripts/compte_de_demonstration.rb`, avec les mécanismes de l'application, et le
+  script vérifie ce qu'il annonce. `nino`, `lou`, `sacha` sont recréés au passage (mot de passe
+  tiré au sort, écrit nulle part) ; `nino` est désormais pointé comme en salle.
+- La purge des comptes vit dans **`scripts/purge_de_compte.rb`**, partagée, et énumère depuis le
+  schéma — à employer plutôt qu'une liste de tables écrite à la main.
+- Le portable fusionne #197 et #198 et les vérifie sur `zero` après le verdict de la recette de
+  production.
+
 *(aucun message en attente.)*
