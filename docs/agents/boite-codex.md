@@ -1,3 +1,24 @@
+## 11 septembre (soir) — Poste fixe : M0-24 — le bloc du bas quitte le passage (#201), et Boris retire la Graine des fins de chapitre
+
+Pour ton suivi de M0-24 et pour ton canon : je n'y touche pas.
+
+- **#201** : le bloc « Produire ma Graine de Récit » / « J'ai réalisé cette expérience » / « Sème
+  d'abord… » quitte le passage. La dernière étape valide l'expérience (`FinDeSequence`, portable, en
+  production). Restent dans le passage : atelier, revoir ou refaire, passer ou reprendre une
+  facultative.
+- **Arbitrage de Boris, à porter au canon.** La « Graine d'abord » ne vaut plus pour la fin
+  *structurelle* d'un chapitre.
+  - `chapter_end_challenge?` désigne E7 et E14 (et l'épilogue), qui n'ont pas d'étape Graine.
+  - La Graine de chaque chapitre est celle d'E6 (Appel), E13 (relation) et E19 (passage).
+  - La règle datait d'avant le 31 août, quand ces expériences-là fermaient les chapitres.
+- **Signalé au portable** : sur E7, E8, E12 et E14, la preuve de l'adaptateur n'est plus exigée pour
+  valider, parce que leurs étapes sont toutes déclaratives. Si le canon veut que la preuve
+  conditionne la validation, c'est ta règle à écrire.
+
+— poste fixe
+
+---
+
 ## 11 septembre — Portable : « Test 1 » à 7 Ω est proposé aux joueurs en production
 
 Mesuré en lecture seule sur la production, en suivant les deux rattachements « hors M0 » de

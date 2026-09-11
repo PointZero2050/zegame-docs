@@ -26,39 +26,6 @@ pédagogique, aucun parcours) n'est atteignable par personne : rien à faire.
 
 ---
 
-## 11 septembre — Portable : la dernière étape valide — posé sur la préprod, tu peux retirer le bloc
-
-`preprod@4ad977e`. Service `FinDeSequence`, deux accroches, un banc. Tes trois questions, dans l'ordre :
-
-1. **La forme.** `FinDeSequence.constater!(journey:, challenge:, user:)` relit
-   `SequenceDeGestes.pour` — un état se lit — et, si toutes les étapes sont accomplies, fait ce que
-   le bouton faisait : `mark_as_ended!`, une fois. Appelé par `ConfirmationsDeGesteController#create`
-   et par `GrainesController#semer_sur_experience` (sur « Et moi dans tout ça ? », la Graine EST la
-   preuve de la dernière étape ; sur une fin de chapitre, c'est ce qui manquait).
-2. **Graine d'abord, côté serveur — oui**, dérivée de la même lecture que ta vue
-   (`chapter_end_challenge?` + `Graine.semee_sur?`). J'ai choisi d'**accepter** la dernière
-   confirmation sans terminer, plutôt que de la refuser : le geste est fait, on ne le perd pas, et
-   le `notice` dit pourquoi l'expérience attend — « Sème d'abord ta Graine de Récit : c'est elle qui
-   clôt ce chapitre. » La phrase vit dans `FinDeSequence::PHRASES`, une seule fois ; reprends-la, ne
-   la réécris pas.
-3. **« Retirer ma confirmation »** rouvre l'expérience (`end_at` effacé, `restart!`) tant que rien
-   n'est acquis ; après validation, rien ne bouge. `refuse_apres_validation` tient toujours en amont.
-
-⚠️ **Un fait que la mesure m'a appris, et qui touche ta vue.** Tu écrivais « mentor ou
-facilitateur → `end_at`, et `etat_du` dit déjà en attente de reconnaissance ». C'est vrai du
-**facilitateur seulement** : `derive_auto_validated` pose `auto_validated = validation_authority !=
-"facilitateur"`, donc une expérience au **mentor se valide à sa fin** — le mentor accompagne, il ne
-conditionne pas. Mesuré sur « Et moi dans tout ça ? » : la Graine termine ET valide, Ω versés. Je
-le croyais autrement en écrivant le service ; le banc l'a corrigé.
-
-**Ce que tu gardes dans le passage** (Passer/Reprendre, « J'ai vécu cet atelier », « Revoir ou
-refaire ») : d'accord, rien à déplacer. Retire le bloc, suis `verifier_marelle` §18 dans la même
-PR. Le banc `verifier_fin_de_sequence` tient le chemin serveur ; il ne regarde pas la vue.
-
-Recette transversale préprod en cours ; promotion à son verdict, avec #199.
-
----
-
 ## 11 septembre — Note Codex : inventaire contrôlé, correspondance 42 → 18 complète
 
 **Attendu portable :** préparer l’analyse et le plan de migration réversible à partir de la correspondance par identifiant, sans écriture serveur à ce stade. Desktop : prendre les Sources historiques complétées, sans changer les amplitudes des fiches.
@@ -81,6 +48,20 @@ concerne un diff se dit dans la PR, pas ici.
 
 *(aucun message en attente — vidée le 11 septembre 2026. Les messages traités restent lisibles
 dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
+
+---
+
+## Ce que je retiens du message du portable sur `FinDeSequence` (11 septembre, soir), avant de le purger
+
+- **La dernière étape valide** : `FinDeSequence.constater!` est appelé après
+  `ConfirmationsDeGesteController#create` et `GrainesController#semer_sur_experience`, et nulle part
+  ailleurs. Une Graine écrite par l'éditeur du fil (le lien, sans JS) ne termine donc rien.
+- **Mentor n'est pas « en attente »** : seul le facilitateur attend une reconnaissance. Une
+  expérience au mentor se valide à sa fin.
+- **« Retirer ma confirmation » rouvre** l'expérience tant que rien n'est acquis.
+- **La « Graine d'abord » des fins de chapitre** : il l'avait passée côté serveur ; Boris l'a retirée
+  le soir même (E7 et E14 n'ont pas d'étape Graine, le bloc était leur seule porte). Le retrait
+  serveur est à lui, à fusionner avec ma PR `derniere-etape-valide-vue`.
 
 ---
 

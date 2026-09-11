@@ -22,3 +22,59 @@ commit, et dans les boîtes des autres.
   privées le justifient — il tombera avec le plan des 18.
 - **Boris** : #86 CRÉATION et Émotion - Ombre ; l'accès OVH pour sortir les newsletters MailPoet
   avant d'éteindre WordPress ; l'hébergement — CX43 à 19 €/mois quand la disponibilité revient.
+
+---
+
+## 11 septembre (soir) — Poste fixe : le bloc part (#201), et Boris retire la Graine des fins de chapitre — à toi le serveur
+
+**#201** (`derniere-etape-valide-vue`, base `preprod`) : le bloc du bas quitte le passage, et
+`verifier_marelle` §18 suit. Restent Passer/Reprendre, « J'ai vécu cet atelier » et « Revoir ou
+refaire », comme convenu.
+
+⚠️ **Ne la fusionne pas seule.** En la préparant, la mesure a trouvé un second verrou, dans la règle
+« Graine d'abord » :
+- `chapter_end_challenge?` désigne **E7 « Choisir qui marchera à mes côtés », E14 « Lire mon
+  Moteur »** et l'épilogue (disposition `PeeeeeeePeeefeeePeffeee` de `seed_parcours_lineaire`).
+- E7 et E14 n'ont **aucune étape Graine** (`GESTES_DE_GRAINE` : E6, E13, E19). Leur seule porte
+  d'écriture était « Produire ma Graine de Récit », dans le bloc que #201 retire. C'est d'ailleurs
+  le bloc de la capture de Boris. Sans lui, `FinDeSequence.obstacle` rendrait `:graine_manquante`
+  pour toujours.
+- **Boris a tranché : plus de Graine exigée en fin de chapitre.** La Graine du chapitre reste celle
+  d'E6, E13 et E19. La règle date d'avant le 31 août, quand ces expériences-là fermaient les chapitres.
+
+**À toi :**
+1. Retirer `:graine_manquante` de `FinDeSequence.obstacle` (et de `PHRASES`).
+2. Retirer `graine_manquante?` de `ChallengesUsersController#mark_as_ended` : ce bouton ne sert plus
+   que hors passage (fiche sans séquence, LTI), où la règle n'a plus de raison non plus.
+3. Fusionner #201 avec ce retrait. Ton banc `verifier_fin_de_sequence` (décor B) suivra.
+
+**Deux observations sur `FinDeSequence`, à toi de juger :**
+1. **La preuve d'un adaptateur n'est plus exigée quand toutes les étapes sont déclaratives.**
+   - Concerne E7, E8 « Choisir ma place », E12 « Double regard » et E14 : chacune a un adaptateur avec
+     `completed_check`, mais `rangs_prouves` vide.
+   - Toutes leurs étapes s'« indiquent comme réalisées », et la dernière valide. L'ancien bouton,
+     lui, restait grisé tant que `evidence_ready?` était faux (« Choisis ton mentor et échange un
+     premier message pour valider »…).
+   - `ConfirmationsDeGesteController` ne refuse que les rangs prouvables. Quelques clics suffisent
+     donc pour 20 Ω, sans l'activité.
+   - Peut-être `obstacle` doit-il demander `ExperienceState.evidence_ready?` quand un adaptateur
+     existe. Ou c'est voulu : je ne tranche pas.
+2. **Une Graine écrite par l'éditeur du fil ne déclenche rien.**
+   - Sur « Et moi dans tout ça ? », le lien du geste 3 mène à `…/messaging_thread`. Seul `gestes.js`
+     le promeut en popup vers `semer_sur_experience`.
+   - Sans JS, la Graine est semée et le geste accompli, mais l'expérience ne se termine pas.
+
+**À rejouer avec #201** :
+- `verifier_marelle` ;
+- `verifier_traversee_m0` : il cherche aussi `mark_as_ended` parmi les gestes, mais chaque fiche garde
+  `/confirmer` ou `/excursion/ouvrir/`, donc il devrait rester vert ;
+- `verifier_fin_de_sequence` ;
+- `verifier_action_experience`.
+
+ⓘ **La vignette 80 × 80 de ta liste « Ce qui reste ouvert » est livrée depuis le 10 septembre.**
+- Les quatre WebP sont servis en préprod et en production : `thumb_` 80 × 80 (2,8 Ko) et `medium_`
+  400 × 400 (52 Ko), vérifiés ce soir.
+- C'est `medium_` qui sert le rond de 56 px (#187).
+- Rien n'attend chez moi de ce côté.
+
+— poste fixe
