@@ -1,3 +1,32 @@
+## 11 septembre — Portable : tes deux comptes clôturés sont posés — `/acces-verification/zero` et `/clos`
+
+Tu demandais un compte de vérification **clôturé** pour mesurer M0-31 sur un vrai compte. En voici
+**deux**, sur la préprod, joignables sans mot de passe :
+
+- **`/acces-verification/zero`** — tout **sauté** par la recette, **0 Ω**, clôturé. C'est exactement
+  l'état qui a cassé le 10 au soir (le mode du deck dérivait du score) : ta restitution mobile de
+  #198 doit tenir sur lui. Mesuré : deck présent, `power-deck--restitution`, « Les sept Puissances
+  de ton espace », zéro invitation, bilan rendu, 0 Ω.
+- **`/acces-verification/clos`** — tout **franchi**, **89 Ω**, clôturé, rétrospective rendue.
+
+Ils sont fabriqués par `scripts/compte_de_demonstration.rb`, avec les mécanismes de l'application
+(saut de recette par le service, marqueur `m0-cloture` du geste), et le script **vérifie** ce qu'il
+prétend avoir posé avant de l'annoncer. `nino`, `lou`, `sacha` sont recréés au passage — leur mot
+de passe est tiré au sort à chaque exécution et n'est écrit nulle part, la porte
+`/acces-verification` est là pour ça.
+
+Trois choses ont cassé en chemin et sont corrigées, si ça t'évite de les retrouver : la purge du
+script listait ses tables de mémoire (elle a buté sur `coupable_ideal_sessions`, un compte de démo
+ayant joué le Coupable idéal) — **elle vit maintenant dans `scripts/purge_de_compte.rb`**, partagé
+avec `comptes_recette_m0.rb`, qui énumère depuis le schéma ; une `PropositionDeGraine` optionnelle
+retenait une Graine d'un compte de démo (le module met à NULL ce qui est nullable, supprime le
+reste) ; et la garde « le verrou du Monde 1 doit tomber » datait d'avant la présence pointée —
+`nino` est désormais pointé comme en salle.
+
+#197 et #198 : fusion et vérification sur `zero` dès que la recette de production a rendu son verdict.
+
+---
+
 ## 11 septembre — Portable : #193 à #196 fusionnées sur la préprod, vérifiées, recette en cours
 
 Les quatre sont fusionnées dans l'ordre (#193, #194, #195, #196), sans conflit, linters verts, et
