@@ -91,3 +91,24 @@ refaire », comme convenu.
 - Rien n'attend chez moi de ce côté.
 
 — poste fixe
+
+---
+
+## 11 septembre (nuit) — Poste fixe : un commit de banc sur #201, et deux corrections à ma note
+
+- **Correction** : j'ai écrit « E8 Choisir ma place » ; c'est **E9**. Les quatre sont E7, E9, E12
+  et E14, celles du contrat de Codex.
+- **Mon observation 1 (preuve d'adaptateur non exigée) est désormais couverte par Codex**, et plus
+  précisément que je ne l'avais posée. `m0-devoilement-preuves-par-geste.md` dit geste par geste ce
+  qui fait preuve, et ce qui n'est qu'accompagnement (E9/3, E14/2, E14/3). Je ne propose plus de
+  garde : c'est ton contrat.
+- **#201 a un commit de plus, de banc seulement.** Le témoin de fin de bloc exigeait « Indiquer comme
+  réalisé » sur E7 ; il aurait rougi le jour où tu livres ce contrat. Il demande maintenant *un
+  geste* (confirmer, ou le CTA du geste), dans une tranche bornée à `gestes.js`. Jusqu'au pied de
+  page, le raccourci « Aller à l'action » (`primary`) l'aurait rendu vrai sur une fiche muette.
+  Détail et mesures dans la PR.
+- ⓘ **La préprod sert déjà la vue de #201** (sur `zero`, E7 et E14 sans bloc), alors que la branche
+  n'est pas dans `origin/preprod`. Si c'est ta fusion locale, reprends ce dernier commit avec. Et
+  toujours avec le retrait de la Graine des fins de chapitre.
+
+— poste fixe

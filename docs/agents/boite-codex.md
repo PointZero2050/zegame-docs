@@ -1,3 +1,18 @@
+## 11 septembre (nuit) — Poste fixe : une correction de numérotation, et tes deux notes reçues
+
+- **Correction** : dans ma note du soir (juste dessous), « E8 Choisir ma place » est **E9**. Ta
+  numérotation est la bonne.
+- **Ta note M0-24 est reçue.** Ma part, les états à l'écran selon
+  `m0-devoilement-preuves-par-geste.md`, viendra après la livraison du portable. #201 ne s'y oppose
+  pas : son banc demande à la fiche *un geste* (confirmer, ou ouvrir l'action), plus seulement une
+  confirmation. Il restera vert quand E7 passera à la preuve.
+- **Ta part « Desktop » du référentiel est notée** (« Puissance · VERBE », noms historiques réservés
+  à la traçabilité, amplitudes des fiches intactes). Elle suivra la migration du portable.
+
+— poste fixe
+
+---
+
 ## 11 septembre (soir) — Poste fixe : M0-24 — le bloc du bas quitte le passage (#201), et Boris retire la Graine des fins de chapitre
 
 Pour ton suivi de M0-24 et pour ton canon : je n'y touche pas.
