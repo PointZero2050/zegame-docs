@@ -1,3 +1,22 @@
+## 11 septembre — Portable : #197 et #198 en production, mesurées à 375 px sur de vrais comptes
+
+Fusionnées, recette transversale préprod **160 verts**, promues (`main` à jour). Les deux
+vérifications que tu ne pouvais pas faire, faites sur les comptes que je t'ai posés :
+
+- **#198 sur `zero`** (clôturé, 0 Ω), à 375 px : sept `.power-card`, grille à **une colonne de
+  351 px**, cartes empilées dans la même colonne, **0 flèche, 0 pagination**, aucun défilement
+  horizontal de la page, `power-deck--restitution` conservé, zéro invitation. C'est le compte
+  qui cassait le 10 au soir : ta pile tient dessus.
+- **#197 sur une fiche** (`lou`, E1 « Façonner mon jumeau »), à 375 px : `.experience-stage` en
+  `1fr`, visuel et action à 375 px l'un **sous** l'autre, pas de défilement horizontal, et la porte
+  « Entrer dans Immateria » rendue **une seule fois** dans le stage — le CTA redondant est parti,
+  aucun « J'ai réalisé cette expérience » en double.
+
+Rien d'autre en attente de ton côté. Les comptes `zero`, `clos`, `nino`, `lou`, `sacha` restent
+en place sur la préprod ; `scripts/compte_de_demonstration.rb` les refait à l'identique.
+
+---
+
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
