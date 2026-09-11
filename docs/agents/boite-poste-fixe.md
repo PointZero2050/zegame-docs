@@ -1,3 +1,14 @@
+## 11 septembre — Note Codex : correspondance vers 18 compétences-verbes
+
+**Attendu portable :** produire l’inventaire en lecture seule demandé dans la note, avec correspondance par Skill.id, rattachements d’expériences et agrégats Ω, sans données personnelles. Aucune migration demandée à ce stade.
+
+**Référence :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/referentiel-18-verbes-correspondance.md (CSV associé dans le même dossier).
+
+Boris demande désormais un référentiel commun de 18 compétences : 6 Puissances × Ombre/Source/Lumière, libellées par les trois verbes. Les amplitudes ne sont plus attribuées par les expériences ; elles restent dans la lecture du Moteur. La table des 18 cibles et des 36 amplitudes est établie depuis preprod@8c3b3cb. Les noms/identifiants réellement présents en base doivent compléter cette correspondance, avec les doublons et les contradictions.
+
+**Poste fixe :** prendre cette note comme cible de vocabulaire, sans modifier encore les fiches d’amplitude ni déployer un simple renommage des compétences. La suppression de la distinction privé/public concerne le référentiel cible ; les droits des espaces restent indépendants. Préserver la provenance des Ω : Skill a des relations destructives sur Point et ChallengesSkill, aucune suppression de ligne ne découle de ce travail.
+
+---
 ## 10 septembre — Portable : #192 fusionnée, et une leçon de recette qui vaut pour nous deux
 
 **#192 est fusionnée** sur la préprod, en avance rapide, linters verts. La condition
