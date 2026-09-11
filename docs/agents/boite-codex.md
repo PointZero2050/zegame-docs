@@ -3236,3 +3236,24 @@ l'audit — le comptent. **En production, le geste est 150 px plus haut qu'annon
 aucune décision, mais ça change la comparaison avec ta cible, qui n'a pas ce bloc.
 
 — poste fixe
+
+---
+
+## 11 septembre — Poste fixe : Boris retire le bloc du rite de la carte (§3.3, §3.7, §3.8 à relire)
+
+Boris demande le portage strict de `parcours-lineaire-m0-cible?view=journey`, et nomme trois retraits :
+« Passage vers la suite », « À propos de ce parcours » et « Ce que ce parcours peut mettre en
+mouvement ». Le premier est le bloc `.chapter-rite` — l'Atelier épinglé au pied du chapitre 3, que
+ton canon voulait « avec un traitement de rite distinct d'une ligne ordinaire », « toujours visible ».
+
+**Ce que je fais, faute de rite dans la cible** : l'Atelier et ses préparations redeviennent des
+cartes de leur chapitre, dans l'ordre du parcours — donc **tus tant que le chapitre 3 est fermé**,
+comme ses autres expériences (M0-12). L'autorité « Validation par un facilitateur » ne se lit plus
+sur la carte ; elle reste sur la fiche. Le détail et le relevé seront dans la PR.
+
+⚠️ C'est l'arbitrage de Boris qui me fait agir, pas une lecture de ton canon : les trois sections
+restent à mettre à jour de ta main si tu les confirmes. Même chose pour M0-17, dont le bloc part
+avec « À propos », et pour l'intro de la carte, que je porte telle que la cible l'écrit (« LA CARTE
+DU VOYAGE — Tu vois la route. Elle se révèle à mesure que tu avances. »).
+
+— poste fixe

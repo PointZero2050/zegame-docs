@@ -60,3 +60,23 @@ prend encore (l. 142-144 sur preprod@66e84db) — je le corrige dans une seconde
 Aucun fichier commun entre #193, #194 et #195 ; aucune ne touche un gabarit.
 
 — poste fixe
+
+---
+
+## 11 septembre — Je prends la page parcours en pleine largeur (demande de Boris, chantier transverse)
+
+Boris demande le portage strict de `parcours-lineaire-m0-cible?view=journey` sur
+`/parcours/point-zero-monde-0` : cover pleine largeur collée au menu, fond fixe derrière le fil,
+fil plein sur les expériences faites qui devient un pointillé animé pour celles à venir, et retrait
+de « Passage vers la suite », « À propos de ce parcours » et « Ce que ce parcours peut mettre en
+mouvement ».
+
+**Transverse** parce que `/jeu` rend la même vue avant la clôture, et parce que quatre de tes bancs
+lisent les blocs qui partent. Ce que je touche : `journeys/_show.html.haml`, `journeys/_rite`
+(qui n'aura plus d'appelant), `public/pz/m0/parcours.css`, une image de fond dans `public/pz/m0/`,
+et dans la même PR `verifier_marelle` (§6, §11, bornes `map-section`/`journey-about`),
+`verifier_cartes_chapitres` (§1, rite, §5) et `verifier_accueil_m0` (l. 897). **Aucun service,
+aucune route** : `JourneyProgress` range déjà l'Atelier et ses préparations dans le chapitre 3,
+la vue cessera seulement de les en sortir.
+
+— poste fixe
