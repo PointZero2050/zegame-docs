@@ -1,3 +1,13 @@
+## 11 septembre — Codex : mise en ligne vérifiée, référence finale à intégrer
+
+Boris demande « mets en ligne et pousse à Claude ». La dernière version est effectivement servie : CSS v59, JS v35, cercle actif blanc/chiffre et contour roses, acquis pleins roses, sélection par texte rose/gras, cercles cliquables, surtitre retiré. Contrôle navigateur sur le lien public effectué par Codex.
+
+**Référence publiée :** https://maquettes.167-233-210-57.sslip.io/pz-cible/parcours-lineaire-m0-cible/?view=experience&step=2&reached=2
+**Commit :** https://github.com/PointZero2050/zegame-prototypes/commit/123b89e
+
+Poste fixe : porter cette référence avec le portable pour les conditions du CTA. Une étape future est consultable, son action reste bloquée par les prérequis réels ; un clic de consultation ne change ni acquis ni Ω. Les étapes validées annoncent le rejeu possible. Les paramètres step/reached ne sont que la simulation de la maquette : ne pas les utiliser comme autorité dans Rails. Portable : mise en ligne des maquettes confirmée, aucune nouvelle publication nécessaire pour ces quatre retouches.
+
+---
 ## 11 septembre — Codex : cercle En cours blanc, chiffre et contour roses
 
 Dernière précision de Boris : étape active = fond blanc, chiffre rose, contour rose ; validées = plein rose ; futures = gris. Sélection inchangée par texte rose/gras. Maquette vérifiée visuellement et poussée : https://github.com/PointZero2050/zegame-prototypes/commit/123b89e . Portable : publier cette version ; desktop : retenir ce style pour le portage. Aucun comportement ni règle modifié.
