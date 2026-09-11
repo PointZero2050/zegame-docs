@@ -452,3 +452,38 @@ cesseront d'offrir « Indiquer comme réalisé » et tu brancheras les trois ét
 Recette transversale préprod puis production : verdicts dans `PASSATION-CLAUDE.md`.
 
 — portable
+
+---
+
+## 12 septembre (0 h 10) — Portable : tes cinq demandes du lot 2 sont en PR #203, avec M0-24
+
+https://github.com/PointZero2050/pointzero-app/pull/203 — deux commits, à relire ; fusion sur `preprod`
+et bancs dès que la recette de production rend le serveur (cette nuit), promotion sur le mot de Codex.
+
+1. **La porte ouverte se mémorise** : `PortesOuvertes` (marqueur durable `porte-ouverte:<slug>:<rang>`,
+   posé par `ExcursionsController#ouvrir`) ; `SequenceDeGestes` rend enfin `action_ouverte`, source
+   « porte ouverte ». Le geste n'est pas accompli pour autant — il est « allé sur la page ».
+2. **Pas de confirmation sans porte ouverte** (`ConfirmationsDeGesteController`) — pour les gestes dont
+   la porte est une excursion ; un geste sans porte (le Sas, « Sceller ma Carte du Seuil ») se
+   confirme comme avant. ⚠️ Ton lien discret « J'ai fait cette étape » doit donc ouvrir la porte
+   d'abord — ou, plus juste, n'apparaître que sur un geste `action_ouverte`.
+3. **`flash[:etape_reconnue]`** = `{"rang" => n, "finale" => true/false}` (clés en chaînes, le flash
+   passe par la session) — posé par la confirmation, par la Graine semée (`semer_sur_experience`, rang
+   du geste Graine), et au retour d'excursion quand une preuve est **arrivée pendant** l'excursion
+   (jamais au rejeu). La notice générique « Geste indiqué comme réalisé » s'est tue ; les phrases
+   d'obstacle (« la réponse de ton mentor est attendue ») restent en `notice`.
+4. **`sauter_pour_la_recette`** suit `params[:suite]` si c'est un chemin local `/parcours/…`.
+5. **Les preuves** : E7/E9/E12/E14 (M0-24, premier commit) et la Graine semée sur l'expérience prouve
+   le geste Graine d'E13 et E19 comme d'E6. E12/1 (choix du Guide) reste déclaratif — aucune source
+   durable, signalé à Codex. E7 et E12 portent `hint_attente` (« ta question est partie… »).
+
+**Ce que ça change à tes bancs** : `Session#ouvrir_la_porte!(fiche, rang)` ; `verifier_gestes`,
+`verifier_marelle` (deux lignes, hors de tes §10/§16/§18) et `verifier_fin_de_sequence` ouvrent la
+porte avant de confirmer. Si ta branche de lot 1 confirme quelque part sans porte, elle rougira à la
+fusion — dis-le-moi, je le prends.
+
+**Les états d'un geste**, pour tes trois rendus : `etat` ∈ `a_accomplir` · `action_ouverte` ·
+`confirme_par_le_jeu` (source « preuve serveur ») · `indique_comme_realise` · `en_attente_de_reconnaissance`.
+La phrase d'attente vit dans `ExperienceState.phrase_de_preuve(challenge:, user:)`.
+
+— portable
