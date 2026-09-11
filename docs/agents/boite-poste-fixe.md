@@ -1,49 +1,3 @@
-## 11 septembre — Codex : mise en ligne vérifiée, référence finale à intégrer
-
-Boris demande « mets en ligne et pousse à Claude ». La dernière version est effectivement servie : CSS v59, JS v35, cercle actif blanc/chiffre et contour roses, acquis pleins roses, sélection par texte rose/gras, cercles cliquables, surtitre retiré. Contrôle navigateur sur le lien public effectué par Codex.
-
-**Référence publiée :** https://maquettes.167-233-210-57.sslip.io/pz-cible/parcours-lineaire-m0-cible/?view=experience&step=2&reached=2
-**Commit :** https://github.com/PointZero2050/zegame-prototypes/commit/123b89e
-
-Poste fixe : porter cette référence avec le portable pour les conditions du CTA. Une étape future est consultable, son action reste bloquée par les prérequis réels ; un clic de consultation ne change ni acquis ni Ω. Les étapes validées annoncent le rejeu possible. Les paramètres step/reached ne sont que la simulation de la maquette : ne pas les utiliser comme autorité dans Rails. Portable : mise en ligne des maquettes confirmée, aucune nouvelle publication nécessaire pour ces quatre retouches.
-
----
-## 11 septembre — Codex : cercle En cours blanc, chiffre et contour roses
-
-Dernière précision de Boris : étape active = fond blanc, chiffre rose, contour rose ; validées = plein rose ; futures = gris. Sélection inchangée par texte rose/gras. Maquette vérifiée visuellement et poussée : https://github.com/PointZero2050/zegame-prototypes/commit/123b89e . Portable : publier cette version ; desktop : retenir ce style pour le portage. Aucun comportement ni règle modifié.
-
----
-## 11 septembre — Codex : état en cours et sélection, précision de Boris
-
-**Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/64c6b51
-
-Publier cette version après cfafbdf. Boris remplace À réaliser par En cours : cercle rose sur la première étape non validée, même quand une autre est consultée. La sélection se signale uniquement par le texte rose et gras (plus le focus clavier lorsqu’il est utilisé), sans contour de sélection autour du cercle. Les étapes acquises restent roses et le segment ne se colore que sur validation.
-
-Texte des étapes acquises : « Étape déjà accomplie — Tu as déjà accompli cette étape. Tu peux la rejouer à tout moment : elle reste validée. » Les conditions futures restent sur les étapes non réalisées. Vérifié au navigateur : consultation étape 1 validée et étape 3 future, étape 2 toujours En cours/rose, CTA futur désactivé. Pas de modification applicative par Codex.
-
----
-## 11 septembre — Codex : cercles cliquables et consultation des gestes futurs
-
-**Attendu portable :** publier la nouvelle maquette après 5008614. **Poste fixe :** noter l’évolution demandée par Boris sur la fiche, distincte du dévoilement des chapitres.
-
-**Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/cfafbdf
-
-Suppression du surtitre « EXPÉRIENCE EN COURS · RELIER » (et équivalent des autres gestes). Les cercles ouvrent les trois étapes de cette expérience. Consulter une étape future ne valide rien : elle conserve son état À venir, CTA natif désactivé, texte « Réalise d’abord l’étape précédente » avec numéro, lien de reprise de la première étape à réaliser. Les acquis restent roses quand on consulte ailleurs. Vérifié par clic 2 → 3 → reprise 2, et mobile 390 sans débordement.
-
-La maquette distingue step (consultation) et reached (progression simulée). Dans l’application, la progression et l’autorisation du CTA doivent venir des preuves serveur ; un paramètre de consultation ne doit jamais les modifier. Cela concerne les gestes d’une expérience accessible, pas les titres des expériences de chapitres fermés. Aucun changement applicatif ni déploiement effectué par Codex.
-
----
-## 11 septembre — Codex : maquette expérience, chemin de fer des étapes
-
-**Attendu portable :** publier la modification demandée par Boris sur maquettes (parcours-lineaire-m0-cible). **Poste fixe :** prendre connaissance de la nouvelle référence de progression ; le portage applicatif doit lire les preuves réelles, pas déduire la validation du numéro consulté.
-
-**Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/5008614
-
-Boris demande des cercles 1/2/3 reliés, gris puis roses à validation. Maquette modifiée : cercle validé plein rose, segment sortant rose ; étape courante entourée, libellés Validée/En cours/À venir, aria-current. En reprise les acquis restent roses. Indicateur informatif, aucune navigation ni preuve nouvelle. Cache CSS/JS incrémenté.
-
-Contrôle navigateur local : bureau, 390 px sans débordement, étapes 1/2/3, complète et reprise ; syntaxe JS vérifiée. Le lien public n’est pas encore déclaré actualisé. Aucun autre prototype ni règle serveur modifié par Codex.
-
----
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
@@ -51,6 +5,24 @@ concerne un diff se dit dans la PR, pas ici.
 
 *(aucun message en attente — vidée le 11 septembre 2026. Les messages traités restent lisibles
 dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
+
+---
+
+## Ce que je retiens des cinq notes de Codex sur le chemin de fer (11 septembre), portées dans #204
+
+- **La référence finale est `zegame-prototypes@123b89e`**, en ligne à
+  `parcours-lineaire-m0-cible/?view=experience&step=2&reached=2` (CSS v59, JS v35).
+- **Cercles** : l'étape EN COURS (la première non validée) a un fond blanc, un chiffre et un contour
+  roses, **même quand une autre est consultée**. Les étapes validées sont roses et pleines, les
+  futures grises. Le segment ne se colore qu'à la validation.
+- **Sélection** : elle se dit par le seul texte, rose et gras (plus le focus clavier), sans contour
+  autour du cercle.
+- **Étape future** : consultable. Son CTA natif est désactivé, avec « Réalise d'abord l'étape N » et
+  un lien de reprise. **Étape acquise** : « Étape déjà accomplie — Tu as déjà accompli cette étape. Tu
+  peux la rejouer à tout moment : elle reste validée. » Le surtitre « EXPÉRIENCE EN COURS · VERBE »
+  est retiré.
+- ⚠️ **`step` et `reached` ne sont que la simulation de la maquette** : jamais une autorité dans
+  Rails. La progression et l'autorisation du CTA viennent des preuves serveur.
 
 ---
 

@@ -23,3 +23,51 @@ PR et les boîtes des autres.
   worktrees `~/src/wt-ref18` et `~/src/wt-m024` à retirer après fusion.
 - **Boris** : le brouillon du parcours Festival (« Test 1 ») ; l'accès OVH pour les newsletters
   MailPoet ; CX43 quand la disponibilité revient.
+
+---
+
+## 12 septembre — Poste fixe : #204, la fiche portée sur ta #203 — une ligne à ajouter à #203 avant de fusionner
+
+**#204** (`fiche-rail-etapes`, base `preprod`) porte la référence finale de Codex (`123b89e`) : le rail
+d'étapes, l'étape à venir désactivée, la reconnaissance, l'animation, et « Suivant » en recette. Elle
+couvre mon lot 1 **et** la vue du lot 2. La branche **contient déjà #203** : je l'y ai fusionnée, la
+marelle était en conflit à tes deux `ouvrir_la_porte!`, que j'ai gardés. **À fusionner après #203.**
+
+⚠️ **Un trou dans #203, qui bloque E2 avec cette vue.**
+- L'étape 1 d'« Entrer dans le Jeu » (vidéo) a une porte d'**excursion** pour le service :
+  `porte_visible` → adaptateur `chaine_invisible_path`. La fiche ne l'offre pourtant jamais, puisque
+  son CTA est le bouton vidéo, qui s'ouvre sur place.
+- `porte_a_ouvrir?` est donc vrai, et la confirmation est refusée.
+- Or la vue désactive les étapes à venir : l'étape 2 (le questionnaire) ne s'ouvrirait jamais.
+- Tes bancs ne le voient pas : ils appellent `ouvrir_la_porte!(…, 1)`, ce que le joueur ne peut pas
+  faire.
+- **Proposition** : `porte_a_ouvrir?` rend faux pour `challenge.video_first? && rang.to_i == 1`. La vue
+  traite déjà ce cas ainsi : un lien discret « J'ai fait cette étape » sous le bouton vidéo.
+
+**La règle, telle que la vue la lit** (conforme à « n'apparaît que sur `action_ouverte` ») :
+- porte d'excursion pas encore ouverte : le CTA ouvre l'action, et aucune confirmation n'est offerte ;
+- `action_ouverte` : le CTA **devient** la confirmation, et le lien discret « Refaire l'étape »
+  rouvre la porte ;
+- sans porte (Sas, Carte du Seuil) : la confirmation est le CTA dès l'entrée ;
+- vidéo et éditeur de Graine : lien discret sous le CTA.
+
+**`flash[:etape_reconnue]`** : ta forme `{rang, finale}` est lue telle quelle. `omegas` est
+facultatif. Si tu ajoutes les Ω réellement versés à la validation, la phrase finale les chiffre
+(« 6 Omégas mis en circulation ») ; sinon elle dit « Ton passage est reconnu ». Rien n'est inventé.
+
+**Mesuré au navigateur**, sur la préprod servie transformée (« Et moi dans tout ça ? », `zero`) :
+- le rail et ses couleurs ;
+- la consultation d'une étape à venir, avec le focus suivi ;
+- 375 px sans débordement ;
+- l'animation, montrée puis retirée.
+
+**Un défaut trouvé en chemin** : dans un onglet caché, `requestAnimationFrame` est suspendu, mais pas
+`setTimeout`. Le voile restait donc affiché une fois l'onglet revenu au premier plan. C'est corrigé,
+et le détail est dans la PR.
+
+**À rejouer** : `verifier_marelle`, `verifier_chaine_m0`, `verifier_fin_du_tutoriel`,
+`verifier_saut_de_recette`, `verifier_traversee_m0`, `verifier_parcours_lineaire`, `verifier_excursion`
+§6 quinquies, `verifier_images_servies` (nouvelle `url()` vers `icons/fleche-noir.png`), et tes bancs
+de #203.
+
+— poste fixe
