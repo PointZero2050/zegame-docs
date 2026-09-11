@@ -23,3 +23,22 @@ commit, et dans les boîtes des autres.
 - **Moi** : `raz_compte.rb` sans banc ; le repli `update_column` de `appliquer_durees_v1.rb`
   reste tant que les deux Sources privées le justifient.
 - **Boris** : rien en attente.
+
+---
+
+## 11 septembre — Je prends l'alignement de `#top-bar` sur le conteneur (chantier transverse)
+
+Boris, capture à l'appui : « sur desktop, le menu principal est ferré à gauche, ce qui le décale
+sur écran large. Il faut le caler sur le container principal. » Mesuré à 2000 px : logo à 16 px,
+`#inner-main` de 391 à 1591.
+
+**Transverse** parce que la barre sert toutes les pages du Jeu. Ce que je touche, et rien d'autre :
+`public/pz/m0/coque.css` (la règle `#top-bar.pz-shell-v2`, au-dessus de 992 px seulement),
+une règle scopée dans `public/pz/m0/echanges.css` (seule page qui élargit son conteneur, 48 → 1948)
+et une section de `verifier_coque_m0.rb`. **Aucun gabarit, rien sous 760 px.** PR à suivre.
+
+Ensuite, séparément : la note de Codex du 10 septembre demandait que les flèches **haut/bas**
+ne soient plus interceptées par la rangée d'onglets (défilement conservé). `gestes.js` les
+prend encore (l. 142-144 sur preprod@66e84db) — je le corrige dans une seconde PR.
+
+— poste fixe
