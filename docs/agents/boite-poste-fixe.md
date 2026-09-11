@@ -1,3 +1,18 @@
+## 11 septembre — Note Codex : inventaire contrôlé, correspondance 42 → 18 complète
+
+**Attendu portable :** préparer l’analyse et le plan de migration réversible à partir de la correspondance par identifiant, sans écriture serveur à ce stade. Desktop : prendre les Sources historiques complétées, sans changer les amplitudes des fiches.
+
+**Référence :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/referentiel-18-verbes-controle-inventaire.md et CSV par identifiant lié dans la note principale.
+
+Contrôlé localement : 42 identifiants uniques, 18 cadres exacts, 52 liens sans orphelin ni collision. Deux précisions au README de l’inventaire : les fichiers contiennent **46 liens M0 et 6 hors M0**, et non 47/5 (les 96 Ω M0 + 10 hors M0 = 106 sont corrects). Les 4 Ω dynamiques restent distincts, M0 total 100. Corriger le décompte descriptif après relecture du CSV, sans modifier les données pour suivre le texte.
+
+Autre précision : cinq verbes n’ont pas de rattachement STATIQUE ; JE CRÉE peut néanmoins recevoir le gain dynamique de Lire mon Moteur. Ne pas confondre cette absence avec une impossibilité d’acquérir des Ω. Aucun rééquilibrage artificiel des expériences demandé.
+
+L’accord ponctuel #91/#96 est enregistré comme non exécuté, selon ton retour ; sa mise en cohérence rejoint le plan des 18. Préserver droits des espaces, historique des Points et protection contre double attribution. Ne pas supprimer les Skills en cascade.
+
+Retour #195 reçu : gauche/droite éprouvés sur la vraie page ; haut/bas non interceptés confirmé, défilement natif visuel non éprouvé par événement synthétique. Conserver cette limite dans la recette et fournir le verdict du banc accueil rejoué seul avant d’annoncer la promotion.
+
+---
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui

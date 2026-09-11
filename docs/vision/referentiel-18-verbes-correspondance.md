@@ -4,27 +4,27 @@ Note Codex — 11 septembre 2026. Demande de Boris : six Puissances, trois verbe
 
 ## Table cible
 
-Les verbes et les 36 libellés d’amplitude sont extraits des six fiches `config/puissances/{slug}.yml` à la révision `8c3b3cb5e3b36a0a16854bcf1fbecd99de42df9d` de pointzero-app/preprod. Ce sont des correspondances de vocabulaire, pas la preuve que chaque libellé existe actuellement comme Skill en base. La Source est identifiée par son cadre : ses six noms historiques doivent être inventoriés, sans les deviner depuis les verbes.
+Les verbes et les 36 libellés d’amplitude sont extraits des six fiches `config/puissances/{slug}.yml` à la révision `8c3b3cb5e3b36a0a16854bcf1fbecd99de42df9d` de pointzero-app/preprod. Ce sont des correspondances de vocabulaire, pas la preuve que chaque libellé existe actuellement comme Skill en base. La Source est identifiée par son cadre : ses six noms historiques ont été complétés depuis l'inventaire du portable du 11 septembre.
 
 | Puissance | Orientation | Compétence cible | Anciens libellés regroupés |
 |---|---|---|---|
 | Désir | Ombre | JE CONTIENS | Retenue / Contrôle / Inhibition |
-| Désir | Source | JE SUIS | Compétence existante du cadre Source (nom à inventorier) |
+| Désir | Source | JE SUIS | DÉSIR : INTENTION |
 | Désir | Lumière | J'EMBRASE | Amplification / Exaltation / Ferveur |
 | Volonté | Ombre | JE SERS | Service / Dévouement / Sacrifice |
-| Volonté | Source | JE DÉCIDE | Compétence existante du cadre Source (nom à inventorier) |
+| Volonté | Source | JE DÉCIDE | VOLONTÉ : SOUVERAINETÉ |
 | Volonté | Lumière | JE DIRIGE | Initiative / Leadership / Domination |
 | Imagination | Ombre | JE RÉALISE | Réalisme / Conformité / Vacuité |
-| Imagination | Source | JE CRÉE | Compétence existante du cadre Source (nom à inventorier) |
+| Imagination | Source | JE CRÉE | IMAGINATION : CRÉATION |
 | Imagination | Lumière | JE RÊVE | Projection / Inspiration / Vision folle |
 | Émotion | Ombre | JE DISTANCIE | Détachement / Dissociation / Glaciation |
-| Émotion | Source | JE RESSENS | Compétence existante du cadre Source (nom à inventorier) |
+| Émotion | Source | JE RESSENS | ÉMOTION : PRÉSENCE |
 | Émotion | Lumière | JE COMMUNIE | Passion / Fusion / Communion |
 | Communication | Ombre | J'ÉCOUTE | Écoute / Effacement / Silence |
-| Communication | Source | JE M'EXPRIME | Compétence existante du cadre Source (nom à inventorier) |
+| Communication | Source | JE M'EXPRIME | COMMUNICATION : EXPRESSION |
 | Communication | Lumière | JE CAPTIVE | Persuasion / Séduction / Envoûtement |
 | Intuition | Ombre | JE DOUTE | Ouverture / Suspension / Non-savoir |
-| Intuition | Source | JE DISCERNE | Compétence existante du cadre Source (nom à inventorier) |
+| Intuition | Source | JE DISCERNE | INTUITION : DISCERNEMENT |
 | Intuition | Lumière | JE CROIS | Conviction / Certitude / Foi totale |
 
 ## Règle de rattachement
@@ -66,3 +66,7 @@ La table sémantique est complète pour les six fiches ; l’inventaire id-par-i
 - [Configurations des Puissances à la révision examinée](https://github.com/PointZero2050/pointzero-app/tree/8c3b3cb5e3b36a0a16854bcf1fbecd99de42df9d/config/puissances).
 - [Modèle Skill](https://github.com/PointZero2050/pointzero-app/blob/8c3b3cb5e3b36a0a16854bcf1fbecd99de42df9d/app/models/skill.rb), [agrégation du joueur](https://github.com/PointZero2050/pointzero-app/blob/8c3b3cb5e3b36a0a16854bcf1fbecd99de42df9d/app/models/user.rb), [restitution](https://github.com/PointZero2050/pointzero-app/blob/8c3b3cb5e3b36a0a16854bcf1fbecd99de42df9d/app/services/restitution_m0.rb).
 - Diagnostic portable des Skills #91/#96 : [historique partagé](https://github.com/PointZero2050/zegame-docs/commit/076a890).
+
+## Complément : inventaire reçu et contrôlé
+
+Les 42 identifiants sont désormais reliés aux 18 cibles dans [la correspondance par identifiant](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/referentiel-18-verbes-par-identifiant.csv). Le [contrôle détaillé](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/referentiel-18-verbes-controle-inventaire.md) distingue les 96 Ω statiques de M0, ses 4 Ω dynamiques et les 10 Ω hors parcours. La migration reste à préparer ; la correspondance id-par-id est complète pour cet export.
