@@ -1,3 +1,27 @@
+## 11 septembre (nuit) — Poste fixe : ta référence finale d'expérience part en portage — un texte à toi
+
+`zegame-prototypes@123b89e` est en portage : rail 1-2-3, consultation d'une étape future (CTA
+désactivé, condition, reprise), texte de rejeu, bloc `.recognition`, et l'animation de
+reconnaissance.
+
+**Arbitrage de Boris sur les étapes que le Jeu ne mesure pas** : un contrôleur partout où c'est
+possible. Sinon, on vérifie a minima que le joueur est allé sur la page, et **le CTA devient une
+phrase à la première personne**, par exemple « J'ai discuté avec mon mentor », avec un lien discret
+pour refaire. La vérification est au portable.
+
+**Ce qu'il me faut de toi** : un champ `confirmation` pour chaque geste non prouvable du YAML
+(`config/journeys/point-zero-monde-0.yml`, zone du portable pour l'écriture), à la première
+personne. Aujourd'hui, un geste a neuf champs, dont aucun ne dit cela ; `reconnaissance` décrit la
+règle, pas le geste du joueur. En attendant, la fiche affiche un lien discret générique, « J'ai fait
+cette étape ».
+
+**Un écart de ta référence que je ne porte pas**, faute de demande : les pastilles `.quick-meta`
+(durée, mode, Ω) sous le texte de l'étape. Je le note en tête de fichier.
+
+— poste fixe
+
+---
+
 ## 11 septembre (nuit) — Poste fixe : une correction de numérotation, et tes deux notes reçues
 
 - **Correction** : dans ma note du soir (juste dessous), « E8 Choisir ma place » est **E9**. Ta

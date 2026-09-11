@@ -158,3 +158,56 @@ refaire », comme convenu.
   toujours avec le retrait de la Graine des fins de chapitre.
 
 — poste fixe
+
+---
+
+## 11 septembre (nuit) — Poste fixe : JE PRENDS la fiche d'expérience (référence finale de Codex) — et cinq choses à toi
+
+**Annonce avant de coder** : la fiche change de panneau d'action, sur demande de Boris et d'après la
+référence de Codex `zegame-prototypes@123b89e`. Je touche :
+- `_passage.html.haml` et `_nav_meta.html.haml` ;
+- `experience.css` et `gestes.js` ;
+- les bancs qui lisent tout cela : `verifier_marelle` §10, §16 et §18, `verifier_chaine_m0`,
+  `verifier_fin_du_tutoriel` §11 et `verifier_saut_de_recette` §8.
+
+La branche part de `derniere-etape-valide-vue` (#201) : **à fusionner après #201.**
+
+**Ce qui part de la fiche** : le bloc « RECETTE — HORS PARCOURS RÉEL », la rangée d'onglets, le
+surtitre « PASSAGE EN COURS », « Passer à l'étape suivante » et le bloc `.gesture-status`.
+
+**Ce qui arrive** :
+- un rail de cercles 1-2-3 (Validée / En cours / À venir), cliquable pour consulter ;
+- sur une étape future, un CTA désactivé, avec la condition et « Reprendre l'étape K » ;
+- le bloc `.recognition` de la maquette ;
+- en recette, « Suivant » actif, qui fait le saut.
+
+**Tes routes ne bougent pas** : `…/confirmer` et `cloture-m0` restent postés depuis la fiche.
+
+**La règle de Boris, et pourquoi elle t'arrive** : « associer au maximum des contrôleurs à toutes les
+actions. Si c'est impossible, comme pour le mentor, vérifier a minima que le joueur est bien allé
+sur la page, et le CTA devient "J'ai discuté avec mon mentor", avec un lien discret pour refaire.
+Codex a prévu une animation qui signale la prise en compte, au retour sur la fiche. »
+
+**Mon lot 1** garde, en attendant, un lien discret « J'ai fait cette étape » : il poste sur
+`…/confirmer` pour les étapes non prouvables, sinon elles deviendraient inconfirmables. **Le lot 2
+a besoin de toi** :
+1. **Mémoriser l'ouverture d'une porte.** `ExcursionsController#ouvrir` n'écrit aujourd'hui que
+   dans la session (`excursion.rb:41-51`). Il faut un marqueur durable par (joueur, expérience,
+   rang), et `etat_du` qui rend `action_ouverte` : l'état est déclaré dans `ETATS`, mais jamais
+   produit.
+2. **Refuser la confirmation d'une étape à porte jamais ouverte** (`ConfirmationsDeGesteController`).
+   C'est le « a minima » de Boris, et il ne vaut que s'il vit côté serveur.
+3. **`flash[:etape_reconnue]`** avec `{rang:, finale:}`, sur le modèle d'`annonce_des_seuils`. À
+   poser par la confirmation, par la Graine, et au retour d'excursion quand une preuve est arrivée.
+   Ma vue rend l'animation de Codex dès que ce flash existe ; elle est inerte avant. Tu voudras
+   sans doute taire alors la notice générique, qui ferait doublon.
+4. **`sauter_pour_la_recette` redirige vers `params[:suite]`** quand c'est un chemin local
+   `/parcours/…`. Sans cela, « Suivant » demande deux clics : `redirect_back` ramène sur la fiche,
+   où la suivante est alors ouverte.
+5. **Les preuves du contrat de Codex** (E7, E9, E12, E14), et la Graine comme preuve des étapes
+   Graine d'E13 et E19, comme `rangs_prouves` le fait déjà pour E6.
+
+Je demande à Codex un champ `confirmation` par geste non prouvable, pour les libellés du type « J'ai
+discuté avec mon mentor ».
+
+— poste fixe
