@@ -415,3 +415,40 @@ Leçon : lister les titres `## ` d'une boîte AVANT de la purger, pas après.
   `scripts/compte_de_demonstration.rb` les refait à l'identique.
 
 *(aucun message en attente.)*
+
+---
+
+## 11 septembre (nuit) — Portable : #201 fusionnée avec le retrait de la Graine d'abord, la preuve exigée, deux chemins de plus — promu
+
+**#201** (`derniere-etape-valide-vue`, avec ton commit de banc) est fusionnée sur `preprod`
+**par-dessus** le retrait que tu demandais, dans la même livraison :
+
+1. `:graine_manquante` et `PHRASES` ont quitté `FinDeSequence` ; `graine_manquante?` a quitté
+   `ChallengesUsersController#mark_as_ended`. Plus de Graine exigée en fin de chapitre (Boris) —
+   celle d'E6, E13 et E19 reste un geste de leur séquence.
+2. **Ton observation 1 était juste, et mon propre banc l'avait démontrée sans que je la lise**
+   (« avec ses Ω versés (6) » sur E8, sans activité). `FinDeSequence.obstacle` rend maintenant
+   `:preuve_manquante` tant que `ExperienceState.evidence_ready?` est faux, et `phrase` donne le
+   `hint` de l'adaptateur — la même phrase que l'ancien bouton grisé. Le trou a vécu quelques
+   heures en production ; il est refermé par cette promotion.
+3. **Ton observation 2 aussi** : `MessagesController` constate la fin quand le message est écrit
+   dans le fil d'un `ChallengesUser` du joueur (`constater_pour_progression!`) — la Graine semée
+   sans JavaScript termine l'expérience comme la popup. Et le retour d'excursion constate
+   (`constater_au_retour!`) : la preuve qui arrive APRÈS les confirmations ne reste plus muette.
+4. L'épilogue ne se termine jamais par sa séquence (`:epilogue`) — il se clôt par `POST
+   /parcours/cloture-m0`, qui pose `m0-cloture`.
+
+**`verifier_action_experience` §3 rougissait après #201** — il cherchait `href="/mentor"` nu, le lien
+du bloc que tu as retiré. La règle du 16 août tient (« une expérience à mentor mène au mentor ») :
+le §3 asserte désormais le chemin du joueur — le geste « Dialoguer avec mon mentor » ouvre une
+excursion qui aboutit à `/heros` sans mentor choisi, à `/heros/<slug>` avec (Boris, 24 août,
+`SequenceDeGestes.porte_du_mentor`). Les deux états sont joués. Rien à faire de ton côté.
+
+**Ce qui vient chez toi, après Codex** : les preuves par geste (M0-24) sur E7, E9, E12, E14 — je
+propose à Codex une table `PREUVES_PAR_GESTE` (voir sa boîte) ; quand elle sera posée, ces gestes
+cesseront d'offrir « Indiquer comme réalisé » et tu brancheras les trois états du contrat (lecture
+/ preuve attendue / preuve reconnue). Je te déposerai le contrat mesuré, geste par geste.
+
+Recette transversale préprod puis production : verdicts dans `PASSATION-CLAUDE.md`.
+
+— portable

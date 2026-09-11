@@ -3462,3 +3462,86 @@ remesures faites aujourd'hui sur la préprod.
 éditoriale), M0-28, M0-29, M0-30, M0-33.
 
 — poste fixe
+
+---
+
+## 11 septembre (nuit) — Portable : M0-24, l'impact de `FinDeSequence` sur les preuves par geste — mesuré, et ce que je propose
+
+Réponse à ta note « dernière étape = fin ne dispense pas des preuves de gestes ». Tout est mesuré
+sur le code de `preprod@383bf96` ; rien n'est encore écrit.
+
+**Ce que `FinDeSequence` fait aujourd'hui.** Il relit `SequenceDeGestes.pour` ; quand tous les
+gestes sont accomplis, il exige la preuve GLOBALE de l'adaptateur (`ExperienceState.evidence_ready?`,
+c'est-à-dire `completed_check`) — sinon `:preuve_manquante`, avec la phrase de l'adaptateur. Il ne
+remplace donc pas les faits par des confirmations : il refuse de terminer sans eux. Mais il ne les
+distingue pas non plus geste par geste — c'est exactement ce que ton tableau demande, et c'est là
+que E7, E9, E12 et E14 restent en défaut : leurs gestes s'« indiquent » tous à la main, parce que
+`rangs_prouves` ne connaît aucun de leurs rangs.
+
+**Ce que je propose — une table `PREUVES_PAR_GESTE`, un fait par rang, ton tableau traduit :**
+
+| geste | fait lu | source mesurée |
+|---|---|---|
+| E7/1 | mentor choisi | `User#heros_slug` |
+| E7/2 | question écrite au mentor | `MentorMessage(role: joueur, contenu non vide)` — **sans la réponse** |
+| E9/1 | visibilité confirmée | marqueur `m0-visibilite-confirmee` (posé par `ProfilsController`) |
+| E9/2 | membre actif d'un Espace ET une réaction dans un fil de CET Espace | `EspaceMembership.actifs` + `ReactionSemantique` → message → `Messaging::Thread#container` = cet Espace |
+| E9/3 | accompagnement | — reste déclaratif, aucune obligation de visite |
+| E12/1 | **aucune source durable** | `GuideConversation` le dit en toutes lettres : « aucune colonne ne la porte », un fil peut tenir les deux voix ; la dernière voix qui a parlé n'est pas un choix. **Reste déclaratif, signalé ici comme tu le demandes.** |
+| E12/2 | échange fait | `GuideMessage` joueur ET guide — « en attente de réponse » n'est pas « échange terminé » |
+| E12/3 | clé éprouvée | `Trace(territoire: intuition)` — celle que `PremieresClesController` écrit ; même lecture que l'adaptateur |
+| E14/1 | évaluation enregistrée | `PuissanceAssessment.completed_at` (ton arbitrage du 31 août, seule preuve) |
+| E14/2, E14/3 | accompagnement | — déclaratifs |
+
+Un rang de cette table devient **prouvable** : `ConfirmationsDeGesteController` refuse déjà
+d'« indiquer » un rang prouvable, donc le bouton déclaratif disparaît de ces gestes et l'activité
+redevient le seul chemin — sans toucher la vue (le poste fixe branche ensuite les trois états).
+
+**Ce que ça change à `FinDeSequence`, et ce qui ne change pas.**
+- La règle globale ne bouge pas : E7 exige toujours la réponse du mentor (`completed_check`).
+  Avec la table, un joueur qui a choisi et écrit a ses deux gestes prouvés, et l'expérience attend
+  la réponse — c'est le cas « question envoyée / réponse attendue » que tu nommes. Mesuré : la
+  réponse est écrite dans la MÊME requête (`MentorReponse`), `contenu` nul si le modèle refuse ou
+  échoue ; le cas n'arrive donc qu'à l'échec du modèle. La phrase de `FinDeSequence` dira alors
+  « réponse du mentor attendue » plutôt que « écris à ton mentor » — une phrase de plus, à côté
+  de la règle, pas à sa place.
+- E14 : preuve du geste 1 = preuve globale ; `:preuve_manquante` n'y est plus atteignable, et le
+  banc `verifier_fin_de_sequence` (décor B = E14 aujourd'hui) se rejoue sur E7, où les deux
+  lectures diffèrent réellement.
+- Aucune migration, aucune table : tout se lit.
+
+**Ce que je te demande.** Un mot sur E12/1 (déclaratif faute de source, ou une source à créer —
+ce serait alors une décision de modèle, pas un `update`) et sur la phrase « réponse attendue ».
+Sans réponse, j'implémente la table telle quelle après la promotion en cours, E12/1 déclaratif.
+
+— portable
+
+---
+
+## 11 septembre (nuit) — Portable : plan des 18 verbes complété (§7), maquette publiée, PR A en préparation, brouillon du Festival
+
+- **Ta relecture est intégrée** : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/referentiel-18-verbes-plan-de-migration.md
+  §7. Les quatre arbitrages sont clos par ta note. Trois corrections de fond : (1) **le verbe ne se
+  stocke pas** — mesuré, les six `config/puissances/*.yml` portent déjà `verbes.<pôle>.mot`, et
+  les 18 mots sont exactement ceux de ton CSV ; la colonne `verbe` est retirée du plan, et les 36
+  descriptions d'amplitude (`intensites`, `pouvoirs`) restent dans ces YAML, hors de `skills` ;
+  (2) l'exclusion se fait **par `remplacee_par_id`**, pas par « canonique OU publique » — un
+  référentiel hors Point Zéro n'est pas restreint par ricochet ; (3) **deux fenêtres de retour**
+  nommées, journal JSON avant/après restauré ligne à ligne (a), retour de code seul (b), jamais
+  d'amplitude inventée. Ordre A (schéma + code compatible + script + simulation) / B (bascule
+  des lecteurs, `sas.yml` vers les clés), environnement par environnement.
+- **La PR A arrive cette nuit** (branche `referentiel-18-verbes`, base `preprod`) — à relire, pas
+  à fusionner. La simulation sur données de production y sera jointe dès que la recette de
+  production (en cours) rend le conteneur.
+- **Maquette chemin de fer** : ton commit `5008614` était publié à 21 h 00 par le cron de
+  `publier_maquettes.sh` (`PUBLIE.txt` le porte ; `styles.css?v=56`, `app.js?v=33` servis). Rien
+  à faire de mon côté ; le lien public est à jour.
+- **« Test 1 » / brouillon** — proposition, bornée, pour Boris : un booléen `journeys.brouillon`
+  (faux par défaut) lu par `parcours_visibles` (`JeuBaseController`), qui gouverne DÉJÀ l'index,
+  l'accès direct (`charge_parcours`), l'inscription et les accomplissements — une seule règle,
+  quatre chemins, mesurés ce soir. Seul `festival-2026-la-journee` serait posé en brouillon
+  (donnée, pas code) ; « Relire mon passage » et « Test 1 » disparaissent ensemble sans être ni
+  retirés ni publiés. Les joueurs déjà inscrits à ce parcours (s'il y en a) le verraient
+  disparaître de leur liste : à mesurer avant, et c'est le mot de Boris qui décide.
+
+— portable
