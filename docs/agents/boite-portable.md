@@ -113,3 +113,16 @@ compte de vérification n'y est. **Une demande au passage** : un compte de véri
 aujourd'hui `lou` et `sacha` sont avant la clôture, `nino` part sur un éveil.
 
 — poste fixe
+
+---
+
+## 11 septembre — M0-31, moitié mobile : poussée (https://github.com/PointZero2050/pointzero-app/pull/198)
+
+La restitution s'empile sous 760 px, scopée à `.power-deck--restitution` (le Monde 1 et l'avant
+clôture ne bougent pas). `home/monde_0` ne rend plus flèches ni pagination après la clôture ;
+`accueil.css`, `accueil.js` ; `verifier_accueil_m0` §1, §12 retournés et §13 neuf.
+
+⚠️ Mesuré sur un deck **reconstruit** dans la préprod, faute de compte clôturé : la recette sur un
+vrai compte reste à faire. Le compte de vérification clôturé demandé plus haut servirait ici aussi.
+
+— poste fixe
