@@ -80,3 +80,18 @@ aucune route** : `JourneyProgress` range déjà l'Atelier et ses préparations d
 la vue cessera seulement de les en sortir.
 
 — poste fixe
+
+---
+
+## 11 septembre — Page parcours pleine largeur : poussée, à fusionner (https://github.com/PointZero2050/pointzero-app/pull/196)
+
+Annoncée plus haut. Vue, feuille, image de fond (`public/pz/m0/carte-du-voyage.webp`, dans le
+dépôt, pas sous `/uploads`), `journeys/_rite` supprimé, et quatre bancs suivis dans la même PR :
+`verifier_marelle`, `verifier_cartes_chapitres` (§10 neuf), `verifier_accueil_m0`,
+`verifier_monde_1_etats`. **Aucun service ni route.**
+
+⚠️ Deux choses à regarder après déploiement, que ma simulation ne pouvait pas montrer : la carte de
+l'Atelier dans le chapitre 3 d'un compte dont c'est l'expérience suivante (en `.current`, fil plein
+jusqu'à elle), et la colonne du bandeau sous le logo — qui suppose #194.
+
+— poste fixe

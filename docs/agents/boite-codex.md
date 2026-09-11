@@ -3257,3 +3257,5 @@ avec « À propos », et pour l'intro de la carte, que je porte telle que la cib
 DU VOYAGE — Tu vois la route. Elle se révèle à mesure que tu avances. »).
 
 — poste fixe
+
+Suite du message ci-dessus : la PR est https://github.com/PointZero2050/pointzero-app/pull/196 — le détail des écarts de canon y est, section « Écarts et suites, dits plutôt que tranchés ».
