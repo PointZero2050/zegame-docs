@@ -1,3 +1,46 @@
+## 11 septembre — Portable : plan de migration réversible déposé, README corrigé
+
+**README de l'inventaire corrigé** après relecture du CSV, comme tu le demandais : 46 liens M0 +
+6 hors M0 (`test-1` × 5 — je l'avais compté à 4 —, `servir-une-cause` × 1), 96 + 10 = 106 Ω, les
+4 Ω dynamiques à part, M0 à 100. Et la nuance JE CRÉE / gain dynamique est portée.
+
+**Le plan** : [`referentiel-18-verbes-plan-de-migration.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/referentiel-18-verbes-plan-de-migration.md).
+Aucune écriture. En résumé :
+
+- **18 canoniques parmi les 42, aucune ligne créée, aucune supprimée.** Règle mécanique et
+  consignée (le plus de rattachements, puis de Points, puis l'id le plus bas), avec la table
+  cadre par cadre. Les 24 autres restent des `Skill` lisibles — les descripteurs de degré — mais
+  cessent d'être rattachables.
+- **Additif et journalisé** : `canonique`, `verbe`, `remplacee_par_id` sur `skills` ;
+  `skill_origine_id` sur `challenges_skills` et `points` ; un **index unique partiel** sur le cadre
+  des canoniques — c'est la base qui garantit « une seule par cadre », pas une convention. Le
+  retour est un script qui remet `skill_id = skill_origine_id` ; rien n'ayant été supprimé, il est
+  complet.
+- **Le référentiel commun par le drapeau `canonique`**, pas par la communauté : `skill_visibility`
+  accepte une canonique quelle que soit sa communauté, la gestion liste les 18 en plus des siennes.
+  Les trois Sources privées deviennent canoniques **sans être publiées** ; le cercle pédagogique
+  garde ses droits. L'accord #91/#96 y est absorbé.
+- **Témoins** par joueur, expérience, Puissance et polarité — pas un total global.
+
+**Deux faits nouveaux que la mesure du code fait remonter :**
+- `config/sas.yml` crédite cinq compétences **par leur nom**, dont deux **privées** — ÉMOTION :
+  DÉTACHEMENT (#79) et VOLONTÉ : INITIATIVE (#81). **JE DISTANCIE et JE DIRIGE reçoivent donc des Ω
+  par les parcours du Sas**, comme JE CRÉE par le Moteur : trois des cinq verbes « sans
+  rattachement » ont un chemin d'acquisition. Le plan met le YAML à jour dans la même livraison.
+- `find_by(name:)` est non ambigu aujourd'hui (aucun nom en double) et le resterait si les noms
+  historiques sont conservés — il cesserait de l'être en renommant en verbes.
+
+**Quatre arbitrages avant d'écrire** (§6 du plan) : la désignation des canoniques — la règle
+mécanique, ou un choix éditorial au moins pour Émotion - Ombre (DISSOCIATION vs DÉTACHEMENT,
+crédité par le Sas) et Volonté - Lumière ; **#86 CRÉATION**, que l'accord de Boris ne nomme pas ;
+le nom affiché au joueur ; et `sas.yml`.
+
+Sur #195 : le banc accueil a été rejoué seul, **vert**, avant l'annonce — c'est dans ma note au
+poste fixe et dans le commentaire de la PR. Ta limite sur le défilement natif est conservée telle
+quelle dans le banc (§4 du commentaire).
+
+---
+
 ## 11 septembre — Portable : M0-24, « la dernière étape valide l'expérience » est posé (préprod)
 
 Arbitrage de Boris relayé par le poste fixe. `preprod@4ad977e` : `app/services/fin_de_sequence.rb`,

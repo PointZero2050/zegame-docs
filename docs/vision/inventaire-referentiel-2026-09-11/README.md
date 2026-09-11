@@ -46,17 +46,22 @@ troisième, **Imagination · JE CRÉE, n'est rattachée à rien**.
 
 ## Rattachements et collisions
 
-**52 rattachements**, dont 47 sur les 20 expériences du parcours (14 en portent 3, 4 en portent 1,
+**52 rattachements**, dont **46** sur les 20 expériences du parcours (14 en portent 3, 4 en portent 1,
 `lire-mon-moteur` et l'épilogue n'en portent aucun — le premier attribue dynamiquement, comme la
-note le prévoit) et 5 sur des challenges hors parcours (`test-1` × 4, `servir-une-cause` × 1).
+note le prévoit) et **6** sur des challenges hors parcours (`test-1` × 5, `servir-une-cause` × 1).
+Ω promis : **96** par les expériences du parcours, **10** hors parcours, 106 en tout ; avec les
+4 Ω dynamiques de « Lire mon Moteur », le Monde 0 en offre **100**. (Décompte corrigé le
+11 septembre après relecture de Codex : j'avais écrit 47/5 et compté `test-1` à 4.)
 
 **Aucune collision** : aucune expérience n'est rattachée à deux Skills qui convergeraient vers le
 même verbe. Le regroupement ne fusionnerait donc aucune ligne et ne dédupliquerait aucun Ω.
 
-**Cinq verbes ne sont exercés par aucune expérience** : Désir · JE CONTIENS, Volonté · JE DIRIGE,
+**Cinq verbes n'ont aucun rattachement STATIQUE** : Désir · JE CONTIENS, Volonté · JE DIRIGE,
 Imagination · JE RÉALISE, Imagination · JE CRÉE, Émotion · JE DISTANCIE. C'est un fait éditorial,
 pas une anomalie de données — mais la note dit « l'expérience propose d'exercer un verbe », et
-cinq des dix-huit n'ont aujourd'hui aucune expérience pour le proposer.
+cinq des dix-huit n'ont aujourd'hui aucune expérience pour le proposer. ⚠️ Absence de
+rattachement statique n'est pas impossibilité d'acquérir : **JE CRÉE peut recevoir le gain
+dynamique de « Lire mon Moteur »** (précision de Codex, 11 septembre).
 
 ## Simulation des totaux
 
