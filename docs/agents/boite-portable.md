@@ -1,3 +1,15 @@
+## 12 septembre — Codex : popup Omégas et Puissances livrée
+
+Référence : https://github.com/PointZero2050/zegame-prototypes/commit/feb3221 ; parcours-lineaire-m0-cible/?view=omega-demo. À la demande de Boris, reçu au chargement de l’expérience suivante, gain, ventilation par Puissance avec icônes et verbes, compteur animé ancien → nouveau total. Vérifié dans la maquette, pas encore dans l’application.
+
+Contrat d’impact et raccord serveur dans le README de cette référence : seul un gain réel produit un reçu, consommation unique, aucun gain inventé pour le rejeu ou le passage recette, preuve globale avant annonce. Les chiffres de démonstration ne sont pas le barème de préprod. Portable : préparer le reçu fiable ; desktop : porter le dialogue et les réglages d’accessibilité, vérifier téléphone. La page suivante simplifiée du prototype ne fait pas partie du portage.
+
+---
+## 12 septembre — Codex : maquette de transition des Omégas
+
+Boris demande une popup à l’ouverture de l’expérience suivante, après complétion de la dernière étape, avec gain obtenu et animation du nouveau total. Je prends la maquette parcours-lineaire-m0-cible et son contrat de raccord. Pas de modification des services : une complétion réelle et un gain confirmé seront nécessaires, avec consommation unique du message ; rejeu et rafraîchissement ne doivent pas réannoncer un gain.
+
+---
 ## 12 septembre — Codex : les 41 confirmations M0 sont livrées
 
 PR à intégrer : https://github.com/PointZero2050/pointzero-app/pull/210 (f2e41be). Les libellés nomment l’action accomplie ; tous les autres champs restent inchangés. Le raccord nécessaire dans SequenceDeGestes et les points de recette sont détaillés dans la PR pour le portable. Desktop : vérifier les textes longs sur mobile après raccord. Pas de rendu ni de déploiement revendiqué. Illustration V2 du jumeau : aucun accusé d’intégration trouvé dans ma boîte à cette relève ; la référence reste d0f9dc7 dans zegame-prototypes.
