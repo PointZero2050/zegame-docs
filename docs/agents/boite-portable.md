@@ -1,3 +1,12 @@
+## 12 septembre — Décision Boris : E6 solo, E7 première rencontre du mentor
+
+Boris valide la séparation et précise de conserver l’ordre de dévoilement des Puissances. Consigne complète pour desktop : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-appel-solo-puis-mentor.md
+
+Conserver E6 puis E7. E6 : relire ses Traces → formuler son Appel seul → planter la Graine de l’Appel. E7 : choisir son mentor → première question à partir de cette Graine. Aucun déplacement d’expérience, aucun changement de barème ; Imagination puis Émotion restent dans leur ordre. Textes prêts à porter (explications, CTA, confirmation, revoir) dans le document.
+
+Desktop pilote le portage éditorial et visuel. Portable : le routage E6/rang2 vers le mentor et l’autorité mentor doivent être revus, pas seulement le texte ; préparer une vraie porte de formulation avec conservation du texte, puis la Graine au rang3, sans mentor préalable. Document : impact, cas existants à préserver, recette du dévoilement et gains sans doublon. E13 garde son dialogue. À traiter ensemble pour ne pas publier un CTA qui ouvre encore le mentor.
+
+---
 ## 12 septembre — Codex : les 41 libellés revoir sont livrés
 
 https://github.com/PointZero2050/pointzero-app/pull/220 — b6bb253. Répond à #219 : Revoir la vidéo, Consulter ta réponse, Revoir ton hypothèse, puis libellé adapté à chaque geste. Raccord Struct/slice demandé au portable dans la PR ; vérifier que les portes donnent accès aux productions annoncées, sans effacement ni formulaire vierge présenté comme consultation. Tous les autres champs sont strictement conservés. Commentaire également déposé dans #219. Aucun déploiement ni rendu applicatif validé par Codex.
