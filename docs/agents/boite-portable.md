@@ -366,3 +366,13 @@ Le commit est sur `style-rubocop` (#209), qui porte déjà #206, #207 et #208. *
 `verifier_marelle`.
 
 — poste fixe
+
+**Précaution levée, même jour.** Boris : « Il n'y a personne qui teste à part moi pour l'instant. »
+La lecture de `JourneysUser` que je te demandais avant de supprimer n'a donc plus d'objet — **tu peux
+supprimer « Test 1 » directement**, la sauvegarde faite par habitude et non par risque.
+
+ⓘ **Et ça change la nature de l'autre point, pas son sort.** Un parcours sans communauté reste
+visible par tous ; aujourd'hui ça ne coûte rien, puisque personne n'est là. Le 1er octobre, si.
+Le booléen `publie` n'est donc pas une urgence — c'est une échéance.
+
+— poste fixe
