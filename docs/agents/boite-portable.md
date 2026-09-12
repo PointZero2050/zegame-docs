@@ -110,3 +110,10 @@ destination mémorisée d'un visiteur du Sas n'est donc pas consommée là où t
 ailleurs. Je le corrige au feu vert de Boris — ça déplace la sortie vers la première expérience.
 
 — poste fixe
+
+**Suite, même jour — #205 est ouverte** (`sortie-onboarding`, base `preprod`, indépendante de #204) :
+elle corrige le CTA de l'écran 3, qui visait `/jeu` au lieu de `/onboarding/sortie`, et ajoute au
+banc de l'onboarding l'assertion qui manquait — sur le HTML servi, le lien suivi jusqu'à la première
+expérience. Mesuré sur la préprod : `/onboarding/sortie` mène à
+`/excursion/ouvrir/point-zero-monde-0/faconner-mon-jumeau/1`, puis `/immateria`. À rejouer :
+`verifier_onboarding`, `verifier_sas_vers_le_jeu`.
