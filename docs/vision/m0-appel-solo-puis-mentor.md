@@ -1,65 +1,127 @@
-# M0 — Formuler son Appel, puis rencontrer son mentor
+# M0 — Créer sa Graine, éveiller Imagination, puis rencontrer son mentor
 
-Note Codex — décision de Boris du 12 septembre 2026 : séparation proposée validée, avec maintien explicite de l’ordre de dévoilement des Puissances. Destinataire principal : Claude desktop ; raccord métier : Claude portable.
+Note Codex — décision de Boris du 12 septembre 2026. Cette version remplace le premier contrat du même jour qui séparait une Trace « Appel » et une Graine. La préproduction a confirmé que ces deux productions rendent les rangs 2 et 3 redondants.
 
 ## Décision à appliquer
 
 Conserver l’ordre, les identifiants et les slugs des expériences :
 
-1. E6 `et-moi-dans-tout-ca` : **faire émerger son Appel seul**, à partir des Traces, puis planter sa Graine de l’Appel.
-2. E7 `choisir-qui-marchera-a-mes-cotes` : **choisir son mentor, puis ouvrir un premier échange à partir de cette Graine**.
+1. E6 `et-moi-dans-tout-ca` : relire ses Traces, répondre librement à trois questions dans **une seule Graine de l’Appel**, puis découvrir la Puissance Imagination ;
+2. E7 `choisir-qui-marchera-a-mes-cotes` : choisir son mentor, lui poser une première question, puis découvrir la Puissance Émotion selon son contrat propre.
 
-E6 ne demande plus de mentor choisi ni de dialogue préalable. E7 garde la première rencontre et le premier échange. Préserver le dévoilement Imagination puis Émotion, et toutes les autres portes du M0. Ne pas intervertir les expériences ni avancer l’éveil d’Émotion. Les Graine et échange sont deux réalisations distinctes, pas deux confirmations d’une même action.
+E6 reste entièrement solo. Elle ne demande aucun mentor. La Graine et l’éveil sont deux gestes distincts : la Graine active Imagination ; le sas explique ensuite ce qui vient de s’ouvrir et où le retrouver. L’ordre Imagination puis Émotion reste inchangé.
 
-## E6 — texte cible à porter
+## E6 — séquence cible
 
-Titre inchangé : « Et moi dans tout ça ? ». Modalité : « Solo ». Conserver les trois rangs, les durées existantes 4 / 11 / 5 minutes et le barème actuel 6 Ω : cette décision ne les révise pas.
+Titre inchangé : « Et moi dans tout ça ? ». Modalité : « Solo ». Conserver les trois rangs, les durées 4 / 11 / 5 minutes et le barème actuel de 6 Ω.
 
 | Champ | Rang 1 | Rang 2 | Rang 3 |
 |---|---|---|---|
-| verbe | Relire | Formuler | Semer |
-| libellé | les Traces | ton Appel | la Graine de l’Appel |
-| titre | Rassemble ce que l’époque a réveillé | Qu’est-ce qui t’appelle ? | La Graine de l’Appel |
-| accroche | Tes Traces commencent à former une direction. | Donne une première forme à ce qui cherche à bouger. | Écris la phrase qui te met en mouvement. |
-| CTA | Relire mes Traces | Formuler mon Appel | Planter ma Graine de l’Appel |
-| confirmation | J’ai choisi les Traces à reprendre | J’ai formulé mon Appel | J’ai planté ma Graine de l’Appel |
-| revoir | Relire tes Traces | Revoir ton Appel | Relire ta Graine de l’Appel |
+| verbe | Relire | Semer | Découvrir |
+| libellé | les Traces | ta Graine de l’Appel | la Puissance Imagination |
+| titre | Rassemble ce que l’époque a réveillé | Quelle direction veux-tu faire naître ? | Découvre la Puissance Imagination |
+| accroche | Tes Traces commencent à former une direction. | Trois questions pour donner une forme libre à ton Appel. | Ta Graine vient d’ouvrir un nouvel espace dans le Jeu. |
+| CTA | Relire mes Traces | Écrire ma Graine | Découvrir Imagination |
+| confirmation | J’ai choisi les Traces à reprendre | aucune confirmation déclarative : la Graine enregistrée fait foi | aucune confirmation déclarative : le sas achevé fait foi |
+| revoir | Relire tes Traces | Relire ma Graine | Revoir la découverte d’Imagination |
 
 **Explication rang 1 :** « Relis les choix, miroirs et hypothèses produits depuis le début du parcours. Repère ce qui continue de vibrer ou de résister. »
 
-**Explication rang 2 :** « À partir de tes Traces, formule ce que tu souhaites quitter, ce que tu veux préserver et ce que tu aimerais explorer. Quelques mots suffisent pour faire apparaître une direction. »
+**Explication rang 2 :**
 
-**Explication rang 3 :** « Relis ce que tu viens de formuler et plante ta Graine de l’Appel dans la Fresque. Elle pourra évoluer au fil de tes rencontres. »
+> Trois questions peuvent t’aider à orienter ta Graine :
+>
+> - Qu’est-ce que tu souhaites quitter ?
+> - Qu’est-ce que tu veux préserver ?
+> - Qu’est-ce que tu aimerais explorer ?
+>
+> Laisse-les se répondre dans un seul texte. Ta Graine n’a pas besoin d’être définitive : tu pourras la faire évoluer.
 
-**Sorties/reconnaissances :** rang 1 : Traces repérées pour formuler l’Appel / « Repère les Traces que tu souhaites reprendre dans ta Graine. » ; rang 2 : première formulation de l’Appel / « Formule ce que tu souhaites explorer à partir de tes Traces. » ; rang 3 : Graine enregistrée dans la Fresque / « Enregistre ta Graine de l’Appel dans la Fresque. »
+La surface montre ces trois questions comme repères, puis **un seul champ libre** intitulé « Ma Graine de l’Appel ». Elle ne présente pas trois formulaires séparés et ne crée aucune Trace intermédiaire. L’enregistrement produit directement la Graine contextualisée dans le fil du `ChallengesUser` d’E6. La simple ouverture n’écrit rien.
 
-Remplacer aussi « Un premier récit de soi, tenu par le mentor » par « Un premier récit de soi à partir de ses Traces ». Retirer les mentions d’un échange préalable et d’une proposition née du dialogue, y compris dans les aides et confirmations/revoir récemment livrés (#210/#220). Ne pas retirer les dialogues avec le mentor des expériences ultérieures, notamment E13.
+**Explication rang 3 :** « Tu viens de faire agir Imagination : tu as relié tes Traces pour donner forme à une direction qui n’existait pas encore. Découvre comment cette Puissance circule entre JE RÉALISE, JE CRÉE et JE RÊVE, et où la retrouver dans l’application. »
 
-## E7 — conserver la rencontre, préciser son point de départ
+**Sorties et reconnaissances :**
 
-Les deux étapes restent : choisir le mentor ; lui poser une première question sur la Graine de l’Appel. Rang 2, explication proposée : « Retrouve ta Graine de l’Appel et adresse une première question au mentor que tu as choisi. Ce premier échange ouvre un regard sur ce que tu viens de formuler. »
+- rang 1 : Traces repérées pour nourrir la Graine ;
+- rang 2 : Graine de l’Appel réellement enregistrée ; reconnaissance « Ta Graine de l’Appel est semée. » ;
+- rang 3 : éveil d’Imagination achevé ; reconnaissance « Tu as découvert la Puissance Imagination. » ; ce dernier fait ferme E6.
 
-Conserver les preuves distinctes du choix, de la question envoyée et de la réponse reçue, ainsi que l’état « réponse attendue ». Le gain et l’éveil d’Émotion ne doivent pas être anticipés au simple affichage de la page ou au choix seul. Aucun changement du barème de 4 Ω dans ce lot.
+## Surface de la Graine
 
-## Raccord indispensable — portable
+La page provisoire `/appel` peut garder son adresse pour éviter une rupture de liens, mais sa nature change : elle devient l’éditeur de la Graine d’E6.
 
-Le code lu avant la décision n’est pas seulement redondant dans ses textes : le YAML E6 porte `validation_authority: mentor`, `SequenceDeGestes::GESTES_DE_MENTOR` associe E6 au rang 2 et `porte_du_mentor` ouvre `/heros` ou la fiche du mentor choisi. Les changer visuellement sans modifier ces dépendances laisserait le mauvais parcours actif.
+- une seule Graine par joueur et par E6 ; une reprise modifie cette Graine au lieu d’en créer une deuxième ;
+- le texte existant est prérempli lors d’une reprise ;
+- la visibilité suit les réglages et contrôles actuels des Graines ; elle n’est jamais modifiée par un GET ;
+- l’ancienne Trace `appel-et-moi-dans-tout-ca`, lorsqu’elle existe sans Graine, peut préremplir une fois le nouveau champ, mais elle ne prouve plus le rang 2 ;
+- une Graine E6 déjà présente prouve immédiatement le rang 2, y compris pour un joueur antérieur ;
+- une E6 déjà validée reste validée, sans nouveau gain ni nouveau reçu.
 
-1. Retirer **E6 seulement** du routage vers le mentor ; garder E13. Relever toutes les conditions métier et données de validation E6 qui exigent le mentor. Aligner la configuration de référence et la donnée effective après analyse d’impact.
-2. Donner au rang 2 une surface réelle de formulation, accessible avant l’éveil d’Imagination. Réutiliser la préparation de Graine existante si elle peut garder le texte jusqu’au rang 3. Aucune création automatique de Graine ni publication au rang 2. Si la surface n’existe pas, fournir la porte au desktop ; ne pas laisser « Formuler mon Appel » ouvrir un mentor ou une page inexistante.
-3. Préciser le statut de cette formulation : si elle est enregistrée, lire cette preuve ; sinon ne pas annoncer un texte sauvegardé. Le libellé « Revoir ton Appel » exige que la formulation soit effectivement retrouvable. Ne pas fabriquer une preuve d’écriture à partir d’une visite.
-4. Conserver le rang 3 comme Graine réellement enregistrée, avec les règles de visibilité existantes. La validation E6 et l’éveil d’Imagination doivent être possibles **sans mentor**, puis E7 ouvre le choix et le dialogue qui conduisent à Émotion. Ne pas substituer une simple confirmation à la Graine réelle.
-5. Ne pas remettre à zéro les joueurs existants, leurs Graines, leurs échanges, leurs validations ou leurs Ω. Une ancienne réalisation avec mentor reste acquise. Un joueur en cours peut poursuivre dans la nouvelle séquence sans perte de production. Pas de re-crédit ni de nouveau reçu pour une expérience déjà validée.
+`Graine.semer_sur!` crée aujourd’hui un nouveau message à chaque appel. Le raccord doit donc fournir une écriture idempotente pour cette Graine unique, ou une mise à jour autorisée du message existant appartenant au joueur. La preuve reste `Graine.semee_sur?(ChallengesUser)` ; aucune nouvelle table n’est nécessaire.
 
-Desktop porte les contenus, la surface existante et les états. Portable traite services, routes, autorités, données et tests métier. Une seule livraison coordonnée doit rendre les textes et les portes cohérents.
+## Rang 3 — raccord à l’éveil d’Imagination
 
-## Recette attendue
+Le CTA doit ouvrir le vrai sas `Eveil` pour `imagination`, dans le contexte de l’excursion E6, afin que « Revenir à l’Expérience » ramène à `et-moi-dans-tout-ca`.
 
-- Compte M0 arrivant à E6 sans mentor : Traces accessibles, formulation puis Graine conservée ; aucun détour vers `/heros` avant E7.
-- Avant/après E6 : ordre de dévoilement inchangé ; Imagination s’ouvre au fait prévu, Émotion reste fermée.
-- E7 : Graine E6 retrouvable ; choix puis question ; attente de réponse correctement affichée ; aucune validation anticipée.
-- Joueur déjà engagé : Graine et échanges antérieurs conservés ; aucune régression de validation, de portes ou d’Ω.
-- Consultation/reprise : formulation et Graine retrouvables ; texte saisi non perdu entre rangs 2 et 3 ; pas de gain en double.
-- Vérifier les aides, fiche, boutons `confirmation`/`revoir`, preuve affichée, fin de séquence et reçu Omégas ; E13 conserve son dialogue avec le mentor.
+La preuve du rang 3 est `Eveil.annoncee?(user, "imagination")`, posée seulement lorsque le joueur termine le sas. Le dernier POST du sas doit repasser par la logique de retour d’excursion ou appeler la même constatation de fin de séquence ; sinon le marqueur existe mais E6 ne se ferme pas avant une action supplémentaire.
 
-Décision de produit validée par Boris ; ce document transmet le travail à faire. Aucun changement de base, de validation ou déploiement effectué par Codex dans cette transmission.
+Cas à refuser : accès à l’éveil avant la Graine, simple ouverture de la page, carte seulement consultée, retour anticipé. Ces cas ne ferment pas le rang 3.
+
+## Références visuelles impératives
+
+### Éveil des Puissances
+
+Référence finale : `zegame-prototypes@9ddf784`, dossier `devoilement-emotion-cible/`, variante `?power=imagination`.
+
+Cette tête contient toute la chaîne validée de `82cc796` à `ca0905b`, puis l’alignement sur les couleurs canoniques. Elle remplace les versions intermédiaires déjà portées. En particulier :
+
+- aucun petit paragraphe secondaire sous la description principale des trois verbes ;
+- description principale agrandie et moins indentée ;
+- icônes Ombre sur leur disque noir, sans bordure ajoutée ;
+- icônes alignées sur l’axe médian du lemniscate ;
+- Tao sans cercle blanc ajouté ;
+- trois cartes d’état cliquables sous le lemniscate ;
+- sortie immersive avec l’illustration de la Puissance et un lemniscate vert fin sous halo jaune.
+
+La préproduction contrôlée le 12 septembre affiche encore, par exemple, « Une Trace permet… », « Planter une Graine transforme… » et « La Fresque permet… » sous les verbes d’Imagination : ces trois textes appartiennent à une version antérieure et doivent disparaître.
+
+### Bandeau d’excursion
+
+Référence finale du composant : `zegame-prototypes@57b7a92`, dossier `bandeau-excursion-progression-cible/`. La ligne de progression est sur fond violet presque noir `#20101f`, sous la ligne de contexte et de retour.
+
+Version publique vérifiée : <https://maquettes.167-233-210-57.sslip.io/pz-cible/bandeau-excursion-progression-cible/>.
+
+Le sélecteur et les commandes de démonstration du prototype ne sont pas portés. Le bandeau reçoit le titre, l’Expérience d’origine, le retour et la progression réels.
+
+## Répartition
+
+### Portable
+
+- remplacer la preuve Trace du rang 2 par la Graine contextualisée ;
+- déplacer `GESTES_DE_GRAINE["et-moi-dans-tout-ca"]` du rang 3 au rang 2 ;
+- retirer E6 de `GESTES_D_APPEL` et ne plus faire de `Appel.formulee?` une preuve ;
+- exposer la porte d’éveil Imagination comme excursion du rang 3 ;
+- faire de l’annonce achevée d’Imagination la preuve du rang 3 et constater la fin d’E6 au retour ;
+- préserver les joueurs existants, les Graines, validations et Ω.
+
+### Poste fixe
+
+- remplacer la page provisoire à trois zones par les trois questions et un champ libre de Graine ;
+- porter le sas d’éveil strictement depuis `9ddf784` ;
+- porter le bandeau strictement depuis `57b7a92` ;
+- vérifier ordinateur, mobile, clavier, reprise et réduction du mouvement.
+
+## Recette minimale
+
+- E6 sans mentor : rang 1 accessible, puis Graine libre, puis éveil Imagination ; aucun détour vers `/heros`.
+- Ouvrir ou recharger l’éditeur n’écrit rien.
+- Enregistrer une Graine non vide confirme le rang 2, active Imagination et débloque seulement alors le rang 3.
+- Revenir modifier la Graine ne crée pas un second message et ne crédite rien de plus.
+- Terminer le sas confirme le rang 3, ferme E6 et produit une seule animation de reconnaissance et un seul reçu.
+- Quitter le sas en cours conserve sa progression sans fermer E6.
+- Un ancien Appel préremplit le champ sans valider ; une ancienne Graine valide le rang 2 ; une ancienne E6 validée ne régresse pas.
+- E7 retrouve la Graine E6, puis conserve choix du mentor, question et éveil Émotion.
+- Le rendu d’éveil ne contient plus les trois paragraphes secondaires constatés en préproduction.
+
+Aucun changement de barème, de durée, de slug, d’ordre d’Expérience ou d’autorité E7 n’est compris dans cette décision.

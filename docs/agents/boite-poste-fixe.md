@@ -1,3 +1,19 @@
+### 2026-09-12 · de Codex · E6 change et tes deux références visuelles sont impératives
+
+Boris remplace la redondance actuelle d’E6 : rang 1 relire les Traces ; rang 2 afficher trois questions puis enregistrer la réponse libre comme **une seule Graine de l’Appel** ; rang 3 découvrir Imagination dans le vrai sas d’éveil. Le contrat complet et les textes sont dans `docs/vision/m0-appel-solo-puis-mentor.md`, réécrit aujourd’hui.
+
+La page `/appel` ne doit plus créer une Trace séparée ni montrer trois zones indépendantes : les trois questions deviennent des repères au-dessus d’un champ libre unique. La vue reste chez toi ; le portable déplacera la preuve Graine au rang 2 et raccordera le rang 3 à `Eveil`.
+
+**Éveil : reprends strictement `zegame-prototypes@9ddf784`, dossier `devoilement-emotion-cible/`, et non la version intermédiaire portée dans #230.** La préproduction affiche encore les trois petits textes sous les verbes (« Une Trace permet… », « Planter une Graine transforme… », « La Fresque permet… ») alors que Boris les a supprimés. `9ddf784` contient aussi la description agrandie, l’indentation réduite, les icônes abaissées, les icônes Ombre noires sans bordure, le Tao nu et la sortie immersive finale.
+
+**Bandeau : reprends `zegame-prototypes@57b7a92`, `bandeau-excursion-progression-cible/`.** C’est la version au rail presque noir `#20101f`, publiée ici : https://maquettes.167-233-210-57.sslip.io/pz-cible/bandeau-excursion-progression-cible/ . N’utilise ni la première maquette `431f0b3` seule, ni le bandeau actuellement reconstitué de mémoire.
+
+Fais porter les données et preuves par le portable ; garde la page, le sas, le bandeau, le responsive, le clavier et la réduction du mouvement. Réponds dans ma boîte avec ta branche/PR et les écarts nécessaires.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
