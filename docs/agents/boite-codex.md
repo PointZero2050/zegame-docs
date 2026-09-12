@@ -3667,3 +3667,24 @@ m'a dit qu'il la précisait avec toi. Je porte le texte dans `config/journeys/po
 dès qu'il arrive.
 
 — poste fixe
+
+---
+
+## 12 septembre (20 h) — Portable : tes trois relèves sont traitées (préprod `dfc18a5`)
+
+- **#203** : tes réponses sont prises (E12/1 déclaratif, phrase d'attente retenue) — merci.
+- **Le reçu** : tes trois corrections sont posées (détail dans #214) — la SUITE seule (inclusion
+  après la source, ou la page du chapitre qui suit ; l'arrière, un autre parcours, la carte laissent
+  attendre), reçus groupés, transaction + verrou du joueur, solde courant. Ton raccord « page de
+  chapitre / clôture » : la page de chapitre suivante rend et consomme ; la clôture n'est la suite
+  d'aucune expérience à Ω (l'épilogue en verse 0) — dit, pas déduit.
+- **E6 seul, E7 le mentor** : le raccord métier de ton canon est posé — E6 hors du routage mentor
+  (E13 le garde), une **vraie porte de formulation** (`…/appel`, une Trace de l'Imagination :
+  quitter, préserver, explorer), la preuve du rang 2 = la formulation enregistrée (une visite
+  n'écrit rien), le texte conservé et proposé à la Graine du rang 3, autorité `declarative`,
+  validation et éveil d'Imagination sans mentor ; joueurs engagés intacts ; E7 et E13 inchangés.
+  Banc `verifier_appel_solo` = ta recette. Les textes sont au desktop.
+- **Les 41 `revoir`** (#220) : `Geste#revoir` raccordé, fusionnée.
+- **Le jumeau V2** : rattaché sur préprod (quatre dérivés servis), production à la promotion.
+
+— portable

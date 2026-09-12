@@ -767,3 +767,45 @@ ciblés ; la recette transversale et la promotion viennent après son mot. Ses r
 lui — je te relaie ce qui est de ta zone.
 
 — portable
+
+---
+
+## 12 septembre (20 h) — Portable : tout ce qui t'attendait est sur préprod (`dfc18a5`) — et deux surfaces sont à toi
+
+**Fusionné et construit** : #218 (le rail), #219 (revoir + recommencer — **la route est là**), #220
+(les 41 `revoir` de Codex, `Geste#revoir` raccordé), #221 (le bandeau coiffe le menu).
+
+**« Recommencer »** : `PUT …/recommencer` efface les confirmations et les portes ouvertes, et pose le fait
+« recommencée » — sur une expérience validée, les gestes se relisent alors par leurs seuls faits
+(sinon la validation les emportait tous et le bouton ne changeait rien), et les confirmations
+repassent (pas de second Ω ni de second reçu). `validated_at`, `end_at`, Ω, reçu : intacts ; le verrou
+en aval reste ouvert. Ton §219 de la marelle : **retourné** — bouton, popup, formulaire vers la route.
+`verifier_excursion` : la feuille se lit avant l'assertion (fusion #218/#221).
+
+**E6 se fait seul (décision de Boris, canon `m0-appel-solo-puis-mentor.md`)** — mon raccord est posé :
+E6 hors du mentor (E13 y reste), porte du rang 2 → `/parcours/point-zero-monde-0/experiences/et-moi-dans-tout-ca/appel`,
+preuve du rang 2 = l'Appel formulé (une Trace), autorité `declarative`, `rangs_prouves` en union
+(Appel 2 + Graine 3). **Deux surfaces sont à toi** :
+1. **`app/views/appels/show.html.haml`** — j'y ai posé une vue **provisoire**, sobre et fonctionnelle
+   (trois champs du canon : quitter / préserver / explorer ; `@appel` = la Trace, `@retour` = la fiche ;
+   `POST` sur `journey_challenge_appel_path` avec `appel[quitter|preserver|explorer]`). À porter à la
+   maquette quand Codex l'aura dessinée ; `Appel::INTITULES` porte les trois intitulés.
+2. **L'éditeur de Graine (rang 3)** : `ThreadsController#show` pose `@appel_formule` (la formulation
+   en une phrase, ou nil) — à préremplir dans le champ de la Graine, « texte saisi non perdu ».
+   Et les **textes** d'E6/E7 (CTA, confirmation, revoir, explications, modalité « Solo »,
+   `intensity_note`) sont dans le canon, à porter dans le YAML — je n'ai touché que
+   `validation_authority`.
+
+**Le jumeau V2** : rattaché sur préprod (`challenges.photo` d'E1 → `/uploads/challenge/photo/1163/faconner-mon-jumeau-v2.webp`,
+les quatre dérivés servis) ; les fichiers sont aussi posés sous l'id de production (480), la donnée y
+suivra la promotion.
+
+**Le reçu** (#214, relu par Codex) : la SUITE seule consomme, la page de chapitre qui suit rend et
+consomme (`@recu_omegas` avec `suivante` nil → « Continuer » — ta vue ; **il faut y rendre le partiel**),
+reçus groupés, `solde_apres` = le compteur maintenant (`solde_courant` aussi).
+
+Restent chez toi : `chaine_m0` (×2, #208), `coque_m0` (#207), et la **seconde ligne du bandeau**
+(`excursion` rouge : le bloc est indenté sous `:canvas`, le rail de #218 n'apparaît donc pas sous la
+coque — mesuré sur le procès, `progress-band` × 0).
+
+— portable
