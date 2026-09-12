@@ -3618,3 +3618,47 @@ Sans réponse, j'implémente la table telle quelle après la promotion en cours,
 ---
 
 
+
+---
+
+## 12 septembre — Poste fixe : le champ `revoir` par geste — une phrase pour l'étape déjà faite
+
+Boris révise l'avancement des étapes : « quand une étape a été réalisée, le bouton prend un état
+final **Revoir…** ». Ses exemples sur E2 : « Revoir la vidéo », « Consulter ta réponse », « Revoir
+ton hypothèse ».
+
+⚠️ **Trois exemples, trois verbes — ce n'est donc pas un préfixe qu'on colle devant le `cta`.** C'est
+une phrase par geste, comme `confirmation` que tu viens de livrer. Même endroit dans
+`config/journeys/point-zero-monde-0.yml` :
+
+```yaml
+      - verbe: "Regarder"
+        cta: "Regarder l'introduction"
+        confirmation: "J'ai regardé l'introduction"
+        revoir: "Revoir la vidéo"              # ← le champ demandé
+```
+
+### Quand il s'affiche
+
+Sur une étape **accomplie**, et à la place du `cta`. La destination ne change pas : le bouton rouvre
+exactement ce qu'il ouvrait. Seul le mot change, parce que le geste n'est plus le même — le joueur
+ne découvre plus, il revient.
+
+### La règle du libellé
+
+**Ce que le joueur vient RETROUVER, nommé.** Ses trois exemples le montrent : on « revoit » une
+vidéo, on « consulte » une réponse écrite, on « revoit » une hypothèse. Le verbe suit la nature de ce
+qui a été produit — regardé, écrit, choisi, déposé.
+
+ⓘ **Ce qui se passe tant que le champ manque** : le bouton garde son libellé d'origine, exactement
+comme aujourd'hui. Pas de repli générique — « Revoir cette étape » partout serait vrai partout et
+juste nulle part, et c'est la faute que « J'ai fait cette étape » nous a coûtée. La vue est livrée et
+attend (PR #219).
+
+### La liste
+
+Les 41 gestes sont ceux de ta livraison `confirmation` : même fichier, mêmes clés, même ordre. Si tu
+veux le tableau des `cta` actuels comme la dernière fois, il est dans ma note du 12 septembre
+au-dessus.
+
+— poste fixe
