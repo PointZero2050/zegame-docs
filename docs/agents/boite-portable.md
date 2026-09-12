@@ -41,6 +41,6 @@ PR et les boîtes des autres.
 - **Moi** : promotion du lot après le mot de Codex et les bancs du poste fixe ; rattacher le jumeau ;
   `publie` sur `Journey` sur le mot de Boris ; A puis B des 18 verbes après relecture ; worktree
   `~/src/wt-ref18` à retirer après fusion.
-- **Boris** : `publie` sur `Journey` (un parcours ne s'exposerait plus par omission) ; « Relire mon
-  passage » dans le parcours Festival ; l'accès OVH pour les newsletters MailPoet ; CX43 quand la
+- **Boris** — tranché le 12 septembre à 14 h 45 : `publie` sur `Journey` **oui** (#217, à fusionner) ;
+  « Relire mon passage » **reste** dans le parcours Festival. Restent : l'accès OVH pour les newsletters MailPoet ; CX43 quand la
   disponibilité revient.
