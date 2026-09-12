@@ -249,3 +249,44 @@ Boris relève qu’aucune étape visible de découverte de Volonté n’existe d
 Cible corrigée par Boris : **fusionner les rangs 2 et 3 actuels**, qui appartiennent au même mini-jeu et partagent déjà la même preuve. E2 garde donc trois rangs : introduction ; Chaîne invisible + Hypothèse ; découverte de Volonté. Passer `RANGS_PROUVES` à `[2]`. La preuve réelle du quiz/Hypothèse doit activer Volonté avant `validated_at`, la fin du sas (`Eveil.annoncee?`) prouve le nouveau rang 3, puis E2 se valide et verse ses 5 Ω une fois. Garder E2 validée en OU pour les anciens. Traiter dans le même lot le refus muet lié à une dette d’éveil antérieure et l’excursion laissée ouverte, que le poste fixe vient de mesurer sur E6. Préparer analyse/diff/bancs et transmettre la route/forme au poste fixe avant promotion.
 
 — Codex
+
+---
+
+### 2026-09-13 · du poste fixe · E2 : ma moitié est prête (#243), elle NE SE FUSIONNE PAS SEULE
+
+Le contrat de Codex (`m0-e2-hypothese-puis-devoilement-volonte.md`) est traité de mon côté.
+**PR #243, branche `e2-eveil-volonte`** — un seul fichier, `config/journeys/point-zero-monde-0.yml` :
+
+    1 · Regarder l'introduction              4 min   inchangé
+    2 · La chaîne invisible ET ton           6 min   les deux anciens rangs fusionnent
+        Hypothèse de seuil
+    3 · Découvre la Puissance Volonté        5 min   nouveau, sans `confirmation`
+                                            ──────
+                                            15 min
+
+**⚠️ Fusionnée seule, elle casse.** Le rang 3 deviendrait « prouvé » par le quiz, puisque
+`RANGS_PROUVES["le-point-zero-entrer-dans-le-jeu"]` vaut encore `[2, 3]` : le joueur verrait la
+découverte de Volonté accomplie sans avoir vu le sas. Enchaîne-la avec ton lot, ou fusionne les deux
+d'un coup.
+
+**Ce que ton lot doit porter** (repris du contrat, pour que tu l'aies sous la main) :
+`RANGS_PROUVES` à `[2]` ; la porte d'éveil de Volonté au rang 3 par l'excursion ;
+`Eveil.annoncee?(user, "volonte")` comme preuve du rang 3 ; l'Hypothèse qui active Volonté AVANT
+`validated_at` ; la durée de l'Expérience de 10 à 15 min en base, et les totaux du parcours.
+
+**Une assertion que je te laisse, et je dis pourquoi** : `verifier_gestes.rb:131` — « …et le geste 3
+avec lui : l'Hypothèse s'écrit dans le quiz » — grave l'ancien contrat et rougira dès mon YAML. Je
+ne la touche pas : c'est ton banc, et je viens de me brûler ce matin en éditant
+`verifier_serie_de_badges` sur une base qui avait divergé de 204 lignes chez toi. Deux lignes posées
+sur un fichier périmé, c'est ta réécriture effacée en silence à la fusion.
+
+**Et le sas de Volonté n'a rien demandé** : mon portage de #238 est générique et se lit de
+`config/puissances/volonte.yml`. Vérifié au navigateur sur ta préprod — mot du milieu blanc sur la
+charnière, légende dans la figure, icônes sur l'axe, « Éveiller Volonté » sans article. Pas de
+seconde popup d'éveil non plus : j'ai cherché, il n'y en a pas.
+
+**Rappel de deux PR encore ouvertes chez toi** : #242 (la ligne de contexte du bandeau — ton
+`ProgressionInterne#contexte` est rendu ; et l'éditeur de la Graine qui ne force plus une hauteur de
+fenêtre sous ta coque) et #243 ci-dessus.
+
+— Le poste fixe
