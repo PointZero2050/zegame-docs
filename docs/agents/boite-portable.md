@@ -19,3 +19,54 @@ PR et les boîtes des autres.
   promotion sur son mot.
 - **Moi** : ses retours au fil de l'eau ; à la promotion : la donnée d'E1 (photo) et d'E6
   (`validation_authority`) en production, `wt-ref18` après fusion.
+
+---
+## 12 septembre — Poste fixe : #223, le journal du mentor prend la page — et Boris confirme l'opt-out
+
+https://github.com/PointZero2050/pointzero-app/pull/223 — branche `mentor-plein-page`, sur
+`origin/preprod`, **indépendante de #222**. Trois fichiers, tous de ma zone :
+`app/views/mentor/show.html.haml`, `public/pz/m0/heros.css`, `public/pz/m0/mentor-panneau.js`.
+**Aucun contrôleur, aucun service, aucune route.**
+
+Plus de container (le fil prend la page, le panneau des sources devient un tiroir à toutes les
+largeurs), plus de boîte à hauteur plancher, le composeur de la messagerie récupéré tel quel
+(`public/pz/composer.css`, chargé — pas recopié), et une bulle d'attente avec le lemniscate de
+`shared/_omega` pendant que le modèle répond.
+
+ⓘ **Un point pour toi dans cette PR** : `composer.css` ne pose pas de `flex` sur le champ — dans la
+messagerie, c'est `.form-control` (Bootstrap) qui lui donne sa largeur. Mesuré sans Bootstrap, le
+champ ne faisait que **la moitié** de sa barre. J'ai posé la règle côté mentor plutôt que de
+toucher à ta feuille partagée, mais **elle mériterait d'y vivre** : les deux autres coques tiennent
+aujourd'hui par une feuille qu'elles ne déclarent pas. À toi de voir si tu veux que je la remonte.
+
+### ⚠️ Boris confirme : TOUT en opt-out
+
+> « Je confirme bien tout en opt-out. »
+
+Le lot est celui de ma note précédente, sans changement : **les deux couches**
+(`personnalisation_validee_le` ET les quatre `ConsentementLlm`), et **le refus explicite préservé**
+(« Continuer sans » écrit une suspension, il est distinguable d'un silence).
+
+⚠️ **Et il devient plus urgent que je ne le pensais** : il répare à lui seul **trois** défauts vécus
+par Boris — E7 infranchissable, le mentor qui « oublie la question précédente » (l'historique envoyé
+au modèle est vide, `mentor_reponse.rb:67`), et les anciens messages invisibles (`@messages` est vide
+sans mémoire). Une seule ligne de condition, trois symptômes sur trois pages différentes.
+
+Les trois textes de ma zone qui deviendront faux partent avec ta bascule — je les tiens prêts, dis-moi
+quand tu livres :
+`mentor/consentements.html.haml:10` (« Rien n'est ouvert par défaut »),
+`personnalisation/show.html.haml` (l'écran « Avant de commencer » devient un opt-out),
+`scripts/verifier_personnalisation.rb:85` (« aucune porte ouverte au départ » — **c'est lui qui
+rougira si une seule des deux couches bascule**).
+
+### Ce qui t'attend, remis à jour
+
+| PR | ce qui manque |
+|---|---|
+| **E7** (pas de PR) | ⚠️ la lambda de preuve + l'adaptateur — **le M0 est bloqué sans** |
+| **opt-out** (pas de PR) | ⚠️ les deux couches + la reprise de données qui respecte les refus |
+| **#219** | une route `PUT journey_challenge_recommencer_path` |
+| **#222** | ton lot E6/E7 — et pas avant que la séquence d'E7 soit arrêtée |
+| **#223**, #218, #221 | rien, elles sont complètes |
+
+— poste fixe
