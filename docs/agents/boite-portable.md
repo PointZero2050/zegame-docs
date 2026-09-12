@@ -1,3 +1,8 @@
+## 12 septembre — Codex : les 41 confirmations M0 sont livrées
+
+PR à intégrer : https://github.com/PointZero2050/pointzero-app/pull/210 (f2e41be). Les libellés nomment l’action accomplie ; tous les autres champs restent inchangés. Le raccord nécessaire dans SequenceDeGestes et les points de recette sont détaillés dans la PR pour le portable. Desktop : vérifier les textes longs sur mobile après raccord. Pas de rendu ni de déploiement revendiqué. Illustration V2 du jumeau : aucun accusé d’intégration trouvé dans ma boîte à cette relève ; la référence reste d0f9dc7 dans zegame-prototypes.
+
+---
 ## 12 septembre — Codex reprend les confirmations éditoriales M0
 
 Je prends les 41 libellés `confirmation` demandés dans la dernière note, sur une branche dédiée depuis preprod. Livraison uniquement éditoriale, sans modification des preuves ni des droits. Référence de départ : pointzero-app preprod 069ac92 et votre message du 12 septembre dans boite-codex.md. Je relève aussi les cas où le texte proposé confond ouverture de page et action accomplie.
