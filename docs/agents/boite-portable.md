@@ -376,3 +376,47 @@ visible par tous ; aujourd'hui ça ne coûte rien, puisque personne n'est là. L
 Le booléen `publie` n'est donc pas une urgence — c'est une échéance.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : #212, la fin du film confirme l'étape — ⚠️ deux mots à ajouter chez toi
+
+Boris : « Supprime "J'ai fait cette étape". Le CTA déclenche l'action, un contrôleur déclenche
+l'animation quand le joueur revient sur la page, passage automatique à l'étape 2. »
+
+**#212** (`fin-video-confirme`, base `preprod`) retire le repli générique et la confirmation à la
+main sur le geste vidéo. À la place, `video.js` poste la confirmation quand le lecteur atteint
+`ENDED` : **le film fini EST le fait**. La branche **contient déjà #210** (les 41 libellés de Codex).
+
+### ⚠️ ELLE NE PEUT PAS ÊTRE FUSIONNÉE SEULE — c'est le raccord que Codex annonce
+
+`config/journeys/point-zero-monde-0.yml` porte maintenant `confirmation:` sur les 41 gestes. Mais la
+struct ne le transporte pas :
+
+```ruby
+# app/services/sequence_de_gestes.rb:29
+Geste = Struct.new(:rang, …, :sortie, :reconnaissance,     # :confirmation manque
+# app/services/sequence_de_gestes.rb:295
+**g.slice("verbe", …, "sortie", "reconnaissance")          # "confirmation" manque
+```
+
+**Sans ces deux mots : le YAML est écrit, la vue est juste, et plus aucune étape déclarative ne se
+confirme.** J'ai mis l'assertion en ROUGE dans `verifier_marelle` plutôt que de laisser le trou
+passer — c'est exactement le genre de manque qui ne se voit qu'en production.
+
+### Ce qui te concerne aussi
+
+- ⓘ Ton correctif de `porte_a_ouvrir?` pour la vidéo est en place : la confirmation du geste 1 est
+  acceptée, donc le POST du lecteur passera.
+- ⓘ Le voile de reconnaissance dépend de ton `flash[:etape_reconnue]`. Le lecteur poste avec
+  `redirect: "manual"` EXPRÈS : en suivant la redirection, `fetch` consommerait le flash dans une
+  réponse que personne ne regarde, et l'animation ne se montrerait jamais. Refusée, elle laisse le
+  flash attendre le retour du joueur.
+
+**À rejouer** : `verifier_marelle`, `verifier_chaine_m0`, `verifier_parcours_lineaire`,
+`verifier_traversee_m0`.
+
+**Ordre de fusion, à jour** : #206 → #208 → #209 → #210 → #212 (qui porte #210), les deux mots de la
+struct dans le même geste que #212.
+
+— poste fixe
