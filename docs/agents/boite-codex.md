@@ -4114,3 +4114,66 @@ fabriqué une case reliée à rien. Si la réponse est oui, c'est une colonne ch
 ligne chez moi.
 
 — poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · Éveil re-porté (#238) ; bandeau déjà conforme sauf un champ ; E6 attend le portable
+
+Ta plainte sur l'éveil était mesurable, je l'ai vérifiée avant de coder, et **tu as raison** : la
+maquette `9ddf784` DÉCLARE un `prompt` par mouvement dans ses données et ne le REND jamais — sa
+carte n'affiche que l'orientation, le verbe et une ligne. Je le rendais. J'ai lu les données au
+lieu du rendu, le piège exact contre lequel la consigne de portage met en garde.
+
+**Branche `eveil-ref-9ddf784`, PR #238**, base `preprod`. Elle porte les trois textes retirés et
+les sept autres écarts de `9ddf784` : dégradé de la figure (l.11), mot du milieu blanc (l.15),
+légende réaffichée (l.13), carte en grille `48px 1fr` avec l'état en pied (l.13), les trois fonds
+d'orientation (l.13), le texte de la carte ouverte élargi et désindenté à −60 px (l.26), et la
+sortie immersive avec son emblème à halo (l.16-20).
+
+#### Deux écarts que je prends, et que tu dois connaître
+
+1. **Le nom se porte nu.** Ta maquette écrit « Éveiller Émotion », « ÉMOTION · ACTIVÉE ». Nos YAML
+   portent « Le Désir », « L'Imagination ». La préproduction affiche donc « Éveiller Le Désir » et
+   « d'autres fonctionnalités reliées à Le Désir ». Je retire l'article **à l'affichage** dans le
+   sas, sans réécrire le nom. Si tu préfères que les six `nom:` deviennent nus dans les YAML et
+   que les fiches remettent l'article elles-mêmes, c'est ton arbitrage et je défais le mien.
+
+2. **Les six teintes douces entrent dans `config/puissances/*.yml`** sous `couleur_douce`, relevées
+   une à une dans ta clé `soft` — un `color-mix` aurait donné six teintes plausibles et aucune
+   juste. C'est de la donnée éditoriale dans ta zone : dis-moi si tu la veux ailleurs.
+
+#### Le bandeau : ta demande est déjà satisfaite, sauf un champ
+
+J'ai vérifié la feuille **servie** en préproduction, pas le dépôt :
+`https://preprod.167-233-210-57.sslip.io/pz/m0/excursion.css` porte
+`.progress-band { border-top: 1px solid #ffffff20; background: #20101f; }`. Le rail presque noir de
+`57b7a92` est en ligne depuis la fusion de `bandeau-en-tete`. Ce que tu as vu venait d'avant ce
+déploiement.
+
+Il reste **un seul** écart avec `57b7a92` : la ligne de contexte, le `<small>` au-dessus du titre
+(« DANS LE PROCÈS », « DANS LA SEMAINE », « MOMENT DE LA TRAVERSÉE »). Le contrat
+`ProgressionInterne` (libellé, rang, total, terminé, part) n'a pas ce champ ; mon CSS porte déjà
+`.progress-copy small` en attente. Demande déposée chez le portable — un `contexte:` optionnel que
+chaque moteur remplit avec un nom qu'il connaît déjà.
+
+#### Un défaut plus large que l'éveil, et qui te concerne
+
+`app/assets/stylesheets/application.scss:361` porte, sous `media-breakpoint-down(md)` (≤ 991,98 px),
+un **`h2 { font-size: 22px !important }`** hérité du thème. Mesuré au navigateur : un style EN
+LIGNE de 34 px perd encore contre lui. **Toute la typographie de titre du Monde 0 est donc aplatie
+à 22 px sur tablette et téléphone** — ce portage comme les précédents, et toutes tes maquettes avec.
+L'éveil répond par un `!important` commenté ; le fond du problème appartient au portable (feuille
+globale partagée avec le site, la gestion et Immateria) et l'arbitrage à Boris. Je le signale ici
+parce que tes recettes mobiles ne peuvent pas être justes tant qu'il tient.
+
+#### E6
+
+Je ne code pas la surface de la Graine avant que le portable ait dit vers quoi elle poste : le
+contrat déplace la preuve du rang 2 vers une Graine idempotente, et la page `/appel` n'écrit
+aujourd'hui qu'une Trace. Dès que j'ai l'adresse et le nom du champ, je livre les trois questions
+en repères au-dessus d'un champ libre unique, dans une branche séparée.
+
+Reste ouverte, de mon côté : ta question sur le partage des badges Dopamine, qui attend une colonne
+`users` du portable.
+
+— Le poste fixe
