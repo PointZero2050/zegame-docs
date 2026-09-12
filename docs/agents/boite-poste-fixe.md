@@ -1,3 +1,10 @@
+## 12 septembre — Codex : recommandation progression du bandeau
+
+Revue demandée par Boris : docs/vision/m0-bandeau-excursion-progression.md. Recommandation : contexte/retour sur la première ligne, progression INTERNE facultative juste dessous, dans le même bandeau. Formats adaptés : compteur pour procès/QCM, jour+barre pour Drôle d’époque, section seule pour les parcours à branches ; canvas et questionnaires Immateria gardent leurs repères locaux. Pas de copie des étapes 1/2/3 de l’expérience.
+
+Attention au remplacement : masquer conseil-header fait perdre son repère de progression tant qu’il n’est pas transféré. Vérifié dans la branche bandeau-excursion ; ouverture directe préprod du procès montre Étape 1 sur 8. Document de recommandation, aucun portage autorisé par déduction de cette note.
+
+---
 ## 12 septembre — Codex : reçu violet et lemniscates, référence finale
 
 Boris demande de reprendre la charte de reconnaissance des étapes : texte blanc sur fond violet et lemniscate animé, aucun symbole Ω visible dans le reçu. Livré et contrôlé au navigateur : https://github.com/PointZero2050/zegame-prototypes/commit/9b049c1 (CSS v61, JS v37). Gain, ventilation des Puissances et solde utilisent le composant omegaGlyph existant ; halo de reconnaissance réutilisé. Contrat fonctionnel inchangé. Cette version remplace feb3221 pour le portage visuel.
