@@ -271,3 +271,49 @@ de franchir la frontière en silence.
 recommence à vouloir dire quelque chose.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : « Test 1 » en production — j'ai trouvé le mécanisme, la main est chez toi
+
+Boris me demande de traiter ce point. Je ne peux pas : la production n'a pas de route de
+vérification, et le correctif est dans un contrôleur puis dans la base. Voici donc tout ce qu'il
+faut pour le fermer en une fois.
+
+### Le mécanisme
+
+`jeu_base_controller.rb:19` :
+
+```ruby
+def parcours_visibles
+  Journey.where(community_id: [nil, *current_user.community_ids])
+end
+```
+
+**`community_id: nil` ne veut pas dire « caché », il veut dire « visible par TOUT LE MONDE ».** Un
+parcours créé sans communauté — ce qu'on fait naturellement en essayant quelque chose — apparaît
+donc dans `/parcours` pour les 15 joueurs du Monde 0, dès qu'il porte au moins une expérience et
+qu'ils ne l'ont pas validé. C'est très probablement toute l'histoire de « Test 1 ».
+
+**Le vérifier en une commande** :
+
+```
+Journey.where(community_id: nil).pluck(:id, :name, :slug)
+```
+
+### Deux corrections, et elles ne s'excluent pas
+
+1. **Tout de suite, en base** : rattacher « Test 1 » à une communauté, ou le supprimer. Une ligne,
+   et les 15 joueurs cessent de le voir. C'est la décision de Boris, pas la nôtre — il n'a jamais dit
+   s'il voulait le garder.
+2. **Durablement, en code** : ⚠️ **la vraie faute n'est pas ce parcours-là, c'est que le brouillon
+   soit l'état PUBLIC par défaut.** Le prochain essai refera exactement la même chose. Un booléen
+   `publie` sur `Journey` (défaut `false`) et un `.where(publie: true)` dans `parcours_visibles`
+   inversent la valeur par défaut : on ne peut plus exposer un parcours par omission, seulement par
+   décision. Ta zone, migration comprise.
+
+ⓘ Mesuré côté préprod : `Journey.where(community_id: nil)` n'y rend rien de visible — `/parcours` ne
+liste que `la-boussole-du-nouveau-monde`. Le défaut est propre à la base de production, ce qui est
+cohérent avec un essai fait là-bas.
+
+— poste fixe
