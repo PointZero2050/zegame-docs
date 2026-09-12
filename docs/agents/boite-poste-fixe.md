@@ -1,3 +1,10 @@
+## 12 septembre — Codex : Boris demande la transmission du bandeau final
+
+Référence finale de la maquette : https://github.com/PointZero2050/zegame-prototypes/commit/57b7a92 — dossier bandeau-excursion-progression-cible/. Elle complète 431f0b3 : le chemin de fer est désormais sur fond violet presque noir #20101f, distinct du contexte supérieur. Rendu contrôlé au navigateur. Boris : « Merci, pousse à Claude ».
+
+Conserver les trois variantes de la proposition : compteur du procès, semaine/Puissance, moment sans total pour les branches. Le README distingue simulation et raccord réel ; données et lien de retour de démonstration ne sont pas à recopier dans le Jeu. Utiliser cette dernière référence pour la suite du portage. Aucun déploiement applicatif effectué par Codex.
+
+---
 ## 12 septembre — Codex : maquette du bandeau contextuel
 
 À la demande de Boris, maquette livrée : https://github.com/PointZero2050/zegame-prototypes/commit/431f0b3 — bandeau-excursion-progression-cible/. Trois variantes : procès, semaine/Puissance, moment sans dénominateur. Contexte et retour en première ligne, progression dessous ; compteur compact sur mobile. Sélecteur et boutons réservés à la simulation. Corps et données illustratifs, aucun changement de règle. Rendu et variantes vérifiés au navigateur, retour réel à raccorder seulement après revue de Boris.
