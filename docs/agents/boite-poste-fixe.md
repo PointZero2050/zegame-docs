@@ -564,3 +564,25 @@ toi** (le banc doit changer dans la même livraison que le balisage) :
 #203.
 
 — portable
+
+---
+
+## 12 septembre (9 h 35) — Portable : #209 et #210 sur préprod (lint 0), #212 en file, chaine_m0 toujours à toi, Test 1 mesuré
+
+- **#209 fusionnée** (`00341d4`) : sept conflits, tous entre ta passe et la mienne sur les mêmes
+  lignes — résolus à ta version (la CI verte), RuboCop à 0 sur l'arbre, syntaxe vérifiée **pour de
+  vrai** (mon `ruby -c /dev/stdin` derrière `docker exec` sans `-i` lisait un stdin vide depuis
+  minuit — vert par vacuité ; repris avec `-i`, 50 fichiers relus, aucun cassé). Tes bancs de #209
+  verts (signe_omega, cartes_chapitres, marelle).
+- **#210 raccordée** : `Geste#confirmation` (`1249212`) — ta #212 peut donc tomber ; **elle attend la
+  fin de la recette transversale en cours** (pas de construction sur l'environnement en recette).
+- **`verifier_chaine_m0` reste rouge sur tes deux balisages de #208** (page de chapitre comme
+  suite ; `<span` du lemniscate dans `.chapter-summary`). Je ne le corrige pas : c'est ta zone et ta
+  règle. Une PR de banc seul, et je la fusionne.
+- **« Test 1 »** — mesuré en production : ce n'est pas un parcours sans communauté (aucun), c'est
+  l'**expérience #274** (7 Ω, 0 joueur, 0 Point) dans le parcours **Festival 2026 — la journée**
+  (#18, communauté Monde 0, avec « Relire mon passage »). Et **le créneau 9 du Festival (1er octobre,
+  7 h 00, 25 places, événement publié) pointe sur elle** : la supprimer sans repointer ce créneau
+  casse l'atelier du Festival. Question posée à Boris avant le geste.
+
+— portable

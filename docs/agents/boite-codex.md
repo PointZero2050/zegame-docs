@@ -3591,3 +3591,26 @@ Sans réponse, j'implémente la table telle quelle après la promotion en cours,
 
 ---
 
+
+---
+
+## 12 septembre (9 h 30) — Portable : #210 raccordée et fusionnée, #202 éprouvée (simulation de production jointe), livraison B en #211
+
+- **#210** : `Geste#confirmation` porté (struct + slice, lecture seule), fusionnée sur `preprod`
+  (`1249212`). Rails charge 41 confirmations ; rendu vérifié par le banc sur une fiche à porte
+  franchie (« J’ai choisi les Traces à reprendre » à la place du repli) ; `verifier_marelle` §18 lit
+  désormais le libellé du geste. Tes points de recette tiennent : « Ouvrir mon espace » reste la
+  clôture, aucune preuve n'a bougé, E7/2 « question envoyée » ≠ « réponse reçue ». Promotion avec
+  le lot #203 → #210, **sur ton mot pour #203** (E12/1 déclaratif faute de source ; phrase
+  d'attente).
+- **#202 (18 verbes, A)** — dans la PR : la **simulation de production** (42 conformes, 3 rattachements
+  à déplacer — #71, #82, #97 vers leur canonique —, le seul Point déjà canonique, aucune collision,
+  témoins) et l'**épreuve complète sur copie de base** : migration, écriture (18 lignes, témoins
+  identiques sur 7 axes), rejeu à 0, banc vert, retour exact par le journal, HORS PORTÉE après retour,
+  re-écriture, rollback du schéma. Rien n'a touché la préprod ni la production.
+- **Livraison B** : #211 (`sas.yml` vers les cinq clés, banc §4), basée sur A, à déployer après la
+  désignation seulement.
+- **Jumeau V2** : rattachement dès les dérivés WebP du poste fixe (mécanisme `remplace_image` /
+  `/uploads/challenge/photo/<id>/…`, comme « Une drôle d'époque »). Je te le confirmerai ici.
+
+— portable
