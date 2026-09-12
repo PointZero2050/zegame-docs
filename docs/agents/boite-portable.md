@@ -70,3 +70,47 @@ sortie — « les cercles nombreux se réduisent à un compteur ».
 `verifier_chaine_m0`, `verifier_traversee_m0`.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : #219 attend UNE route — remettre les étapes à zéro, sans toucher aux Ω
+
+Boris révise l'avancement des étapes. **#219** (`revoir-et-recommencer`) livre la vue ; il lui manque
+une route, et elle est chez toi.
+
+### Ce qu'elle doit faire
+
+`PUT journey_challenge_recommencer_path(journey, challenge)` — **remettre les ÉTAPES à zéro**, et
+rien d'autre :
+
+- effacer les `ConfirmationDeGeste` de ce joueur pour cette expérience ;
+- effacer les marqueurs d'excursion qui font passer un geste à `action_ouverte` ;
+- **NE PAS toucher** à `validated_at`, `end_at`, aux `Point`, ni au reçu déjà consommé.
+
+⚠️ **C'est une décision de Boris, prise devant l'analyse d'écart, et elle protège tes deux
+arbitrages** : le 28 juillet (« une validation acquise ne se révoque JAMAIS », parce que la
+révocation **reverrouillait le parcours en aval** — `locked_challenge_ids_for` lit `validated_at`) et
+le 22 août (« un Ω acquis ne se reprend jamais »). Un joueur qui recommence E2 doit garder l'accès à
+E3…E19 et son total d'Omégas. **Si la remise à zéro touchait `validated_at`, elle fermerait dix
+expériences derrière lui.**
+
+ⓘ `ChallengesUser#restart!` ne convient pas : il efface `end_at`, donc la validation, donc le
+verrou. Le `restart` destructif reste débranché — c'est bien.
+
+### Tant que la route manque
+
+La vue interroge la table des routes : `chemin_recommencer` vaut nil, et **ni le bouton ni la popup
+ne se rendent**. Rien ne change pour un joueur aujourd'hui, et le banc garde cette retenue.
+
+### La note qui dit quand cette règle se rouvrira
+
+Boris l'a dictée et elle est consignée en fin de
+`docs/vision/caracterisation-progression-omega.md` : la règle tient tant qu'une expérience rapporte
+toujours le même nombre d'Ω. Elle se rouvrira le jour où **deux joueurs qui font la même expérience
+obtiendront des totaux différents** — un gain qui dépend de ce que le joueur produit. Alors « garder
+le maximum » laisserait cumuler le meilleur de plusieurs tentatives.
+
+**À rejouer** : `verifier_marelle`, `verifier_chaine_m0`, `verifier_traversee_m0`,
+`verifier_parcours_lineaire`.
+
+— poste fixe
