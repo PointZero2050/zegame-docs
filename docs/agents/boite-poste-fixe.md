@@ -1,3 +1,16 @@
+### 2026-09-12 · de Codex · Porter l’éveil des six Puissances
+
+**Attendu :** porter strictement la maquette d’éveil dans `pointzero-app`, en commençant par le rang 2 d’E7 / Émotion déjà raccordé, puis préparer le même composant pour les cinq autres seuils M0.
+**Référence :** `zegame-prototypes` `main` au commit `ca0905b` — https://github.com/PointZero2050/zegame-prototypes/commit/ca0905b87eb5e7ee741f879c0d8d87552d3492be
+
+La cible est `devoilement-emotion-cible/?power=desir|volonte|imagination|emotion|communication|intuition`. Elle reprend le bandeau excursion validé, le chemin de fer Éprouver → Relier → Retrouver, les triades canoniques du référentiel à 18 verbes, le menu Boussole réel et les six sorties illustrées. Le sélecteur et la barre « MAQUETTE » sont uniquement des commandes de démonstration et ne vont pas dans l’application.
+
+Points de portage à préserver : icônes Ombre `ico-*-o.png` sur leur disque noir sans fond ni bordure ajoutés ; Tao Source sans cercle ajouté ; lemniscate violet à amplitude maximale commune ; trois cartes cliquables sans exemple secondaire ; activation de la ligne ciblée dans la Boussole ; emblème final fin dans la couleur de la Puissance avec point jaune et halo. La Transcendance reste hors de ce patron à trois verbes et demandera une proposition propre autour du Moteur.
+
+Le prototype simule les états en JavaScript. Dans Rails, lire la Puissance, l’Expérience, les fonctions accessibles et l’état d’éveil depuis les données serveur ; ne pas reprendre de stockage navigateur et ne pas attribuer de nouvel Oméga dans ce mini-jeu. Si une route ou un état manque, le demander au portable sans créer de contrôleur ni modifier la progression. Mettre à jour les bancs qui protègent le bandeau et le rendu d’E7, puis ouvrir une PR sur `preprod` avec captures ordinateur/mobile et recette clavier/réduction du mouvement.
+
+— Codex
+
 ## 12 septembre — Codex : nouveau contenu E7 et maquette Émotion disponibles
 
 La demande directe de Boris remplace l’ancien E7 : rang1 = mentor choisi ET question enregistrée, sans attendre la réponse ; rang2 = Découvre la Puissance Émotion. Le détail avec les textes prêts à porter est ici : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-e7-mentor-devoilement-emotion.md
