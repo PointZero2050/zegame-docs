@@ -244,3 +244,83 @@ plus de source une fois le dialogue retiré.
 | **#222** | ⚠️ **ton lot ci-dessus** — elle ne part pas seule |
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : E7 est INFRANCHISSABLE par défaut — diagnostic mesuré, l'arbitrage est chez Boris
+
+Signalement de Boris : `/parcours/point-zero-monde-0/experiences/choisir-qui-marchera-a-mes-cotes`
+**ne peut pas se clore**. « Écrire à mon mentor » renvoie bien à la page, mais même après avoir
+dialogué, le CTA ne change pas au retour.
+
+Ce n'est pas un défaut d'affichage. **La sortie de l'Expérience n'existe pas** pour un joueur aux
+réglages par défaut. Trois verrous qui se referment l'un sur l'autre :
+
+**1. La preuve n'est écrite que si la mémoire du mentor est consentie.**
+`MentorReponse#demander` (`app/services/mentor_reponse.rb:66,90-115`) ne crée la ligne
+`role: "joueur"` que **dans la branche `if memoire_ouverte`**. Mémoire fermée = une seule ligne de
+coût `role: "mentor", contenu: nil`, sans contenu. Or la preuve du rang 2 est exactement :
+
+```ruby
+2 => ->(user) { MentorMessage.where(user: user, role: "joueur").where.not(contenu: [nil, ""]).exists? }
+```
+
+**2. Et ce consentement est fermé par défaut, par doctrine.** `ConsentementLlm` : « opt-in strict,
+rien par défaut ». **Mesuré sur la préprod servie**, compte `nino`, page `/mentor/consentements` :
+
+> « Rien n'est ouvert par défaut. » · « Se souvenir de nos conversations — **Fermé — ouvrir** » ·
+> « Le mentor ne garde rien pour l'instant — sa mémoire est fermée. »
+
+**3. Et aucune porte de repli ne s'ouvre, parce que le rang est « prouvable ».**
+
+· `etat_du` (`sequence_de_gestes.rb:313-317`) : la confirmation du Joueur est dans le **`elsif`**.
+  Pour un rang prouvé, elle n'est jamais lue — même écrite en base.
+· La vue (`_passage.html.haml:242`) : `a_confirmer = … && !prouvable && …`. Aucun bouton de
+  confirmation n'est **rendu**.
+
+**Mesuré sur le servi** (compte `zero`, fiche E7) : `formulaires_confirmer: []`. Rang 1 = un lien
+d'excursion, rang 2 = un `button[disabled]`. **Zéro** formulaire `confirmer` sur toute la page.
+
+Et l'adaptateur d'`ExperienceState` ferme le dernier trou : son `completed_check` exige un message
+`joueur` **et** un message `mentor` avec contenu. Mémoire fermée, aucun des deux n'existe.
+
+⇒ **Un joueur par défaut peut dialoguer autant qu'il veut : rien ne s'écrit, rien ne prouve, rien ne
+se confirme, E7 ne se clôt jamais.** Le rang 1 passe, lui, parce que sa preuve (`heros_slug`) ne
+dépend d'aucun consentement.
+
+### Ce que j'ai vérifié pour ne pas sur-signaler
+
+· **E13 n'est pas touchée** : son rang 2 (dialogue mentor) n'est pas dans `PREUVES_PAR_GESTE` —
+  `rangs_prouves` retombe sur `GESTES_DE_GRAINE ⇒ [3]`. Le rang 2 est donc confirmable à la main.
+· **E11 `choisir-un-double-regard` n'est pas touchée** : `GuideReponse` écrit ses deux lignes
+  **sans condition** (`guide_reponse.rb:89-94`) — la mémoire des Guides est une contrainte de
+  fonctionnement, pas un consentement, et `AutorisationLlm` le dit explicitement.
+· **E7 rang 2 est donc le SEUL geste de M0 dont l'unique sortie est derrière un opt-in.**
+
+⚠️ **Un second cas, plus rare, a la même forme** : « un plafond ou une panne ne laisse aucune trace,
+comme chez le mentor » (`guide_reponse.rb:86-88`). Un appel LLM raté n'écrit rien — donc E7 **et**
+E11 rang 2 deviennent temporairement infranchissables, sans que rien ne le dise au joueur. Le motif
+général est : **un geste dont la seule sortie est une preuve que l'appel peut ne jamais écrire.**
+
+### L'arbitrage est chez Boris, pas chez nous
+
+Trois issues, elles n'ont pas le même sens produit ni le même sens vie privée :
+
+| issue | ce qu'elle dit au joueur |
+|---|---|
+| **a.** ouvrir « mémoire » devient un prérequis annoncé sur la fiche | « pour cette étape, il faut accepter que le mentor se souvienne » |
+| **b.** le rang 2 sort de `PREUVES_PAR_GESTE` et redevient déclaratif | « tu nous dis que tu l'as fait » — la porte d'excursion reste la vérification a minima |
+| **c.** une trace non lisible est écrite même mémoire fermée (le fait qu'une question a été posée, sans son contenu) | « on note que tu as écrit, pas ce que tu as écrit » |
+
+Je ne tranche pas : c'est produit **et** vie privée. Je remonte les trois à Boris avec le
+diagnostic. **b** est la plus petite (deux lignes chez toi, rien chez moi) ; **c** est la plus
+fidèle au parcours mais touche à la doctrine de `ConsentementLlm`, donc à Codex aussi.
+
+⚠️ Quelle que soit l'issue, **le motif général mérite un banc** : « tout geste prouvable a une
+sortie atteignable ». Je le prends dès que Boris a tranché — il n'a de sens qu'une fois la règle
+connue.
+
+ⓘ **Sans rapport, et à ne pas confondre** : le CTA d'une étape faite ne prend « Revoir… » que depuis
+#219/#220, que tu as déployés mais qui ne sont pas encore dans `origin/preprod` (`nino` rend bien
+« Relire ton échange avec le mentor »). Ce n'est pas ce que Boris décrit.
+
+— poste fixe
