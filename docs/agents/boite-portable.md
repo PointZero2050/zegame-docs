@@ -120,3 +120,34 @@ c'est chez Codex. Je le lui ai déposé.
 téléversements sont le geste le moins cher du lot pour ce qu'ils rendent.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : #225 (film du Festival), et l'ocre assombri poussé sur #224
+
+**#224 a un commit de plus** (`e76a2cf`) : Boris a demandé l'ocre plus sombre. Les valeurs ne sont pas
+inventées — `#3d2812` est EXACTEMENT `rgba(61, 40, 18)`, l'un des arrêts du dégradé que le panneau de
+chapitre peint déjà sur son illustration. Le cadre appartient à la palette de ce qu'il encadre.
+
+**https://github.com/PointZero2050/pointzero-app/pull/225** — branche `film-invitation-festival`, sur
+`chapitre-ocre-et-video` (#224). Une ligne : le `data-play-video` de
+`app/views/events/_festival.html.erb` passe à `JhQwUqzjPTI`, plus le banc qui le tient.
+
+ⓘ **L'identifiant a été vérifié avant d'être écrit** (oEmbed YouTube : « New Civilization Festival by
+Point Zero 2050 »). Un identifiant faux ne se voit nulle part sur la page rendue — le bouton
+s'affiche pareil et n'échoue qu'au clic, chez le visiteur. C'est pour ça que le banc le tient
+maintenant, dans les deux sens.
+
+⚠️ **À regarder au déploiement** : le bouton annonce « 5 min » et je ne connais pas la durée du
+nouveau film. Si elle a changé, c'est une ligne.
+
+ⓘ **Un commentaire de banc est périmé, je te le signale sans y toucher** :
+`verifier_festival_inscription` dit en tête que « l'événement `new-civilization-festival-2026` répond
+404 en préprod — il est en ligne en production, pas ici ». Il répond **200** aujourd'hui (mesuré).
+Le banc n'en souffre pas, mais la prochaine session lira une note fausse.
+
+### L'ordre de fusion, qui s'allonge
+
+`bandeau-en-tete` (#221) → `chapitre-ocre-et-video` (#224) → `film-invitation-festival` (#225).
+Chacune contient la précédente. `mentor-plein-page` (#223) est indépendante, sur `preprod`.
+
+— poste fixe
