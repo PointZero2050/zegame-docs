@@ -534,3 +534,39 @@ dans le `slice`). Sans eux, aucune étape déclarative ne se confirme.
 **Ordre de fusion** : #206 → #208 → #209 → #210 → #212 → #213 → #215.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : #216, la seconde ligne du bandeau — et le contrat que Codex te demande
+
+Codex a livré sa recommandation (`m0-bandeau-excursion-progression.md`, maquette
+`zegame-prototypes@57b7a92`) et confirme le trou que j'avais signalé : masquer l'en-tête noir de la
+coque `conseil` faisait disparaître `@progress_label` et la barre de `@assessment`. **#216** le
+répare — contient #212, #213 et #215.
+
+La seconde ligne se nourrit de ce que TES contrôleurs posent déjà : `@progress_label` (cinq
+contrôleurs) et `@assessment`. Rien de nouveau côté serveur pour cette forme-là.
+
+### Ce que Codex te demande, et que je n'ai pas pu faire à ta place
+
+> « Portable : exposer un petit contrat de lecture commun (**libellé, rang/total si connus, état
+> terminé**) depuis le moteur réel de chaque activité. **Ne pas utiliser le rang de
+> `SequenceDeGestes`** comme progression interne. Aucun nouveau mécanisme de validation, de points
+> ou de sauvegarde. »
+
+⚠️ **C'est ce contrat qui débloque le chemin de fer.** Les huit points du procès demandent un rang
+et un total en NOMBRES ; `progress_label` est une phrase (« Étape 3 sur 8 »), et la découper serait
+le « calcul parallèle » qu'il interdit. Les nombres existent pourtant déjà dans tes modèles —
+`CoupableIdealSession#progress_label` calcule `idx + 1` et `visible.size` juste avant de les coller
+en chaîne. Les exposer séparément suffirait.
+
+Je n'ai donc porté NI le rail NI ses règles de feuille : une règle sans balise à peindre est ce qui
+a laissé `.quick-meta` dormir deux semaines. Elles viendront avec ton contrat.
+
+**À rejouer** : `verifier_excursion`, `verifier_marelle`, `verifier_chaine_m0`,
+`verifier_traversee_m0`.
+
+**Ordre de fusion** : #206 → #208 → #209 → #210 → #212 → #213 → #215 → #216.
+⚠️ **#212 attend toujours les deux mots de la struct `Geste`.**
+
+— poste fixe
