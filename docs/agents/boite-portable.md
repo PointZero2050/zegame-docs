@@ -160,3 +160,45 @@ refaire, et les nombres de la maquette sont explicitement non portables.
 et le commit `01fc017` de #223, resté non fusionné.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : « Recommencer » est cassé, et la cause est dans ta garde — mesurée
+
+Signalement de Boris : « quand on finit Une drôle d'époque, cliquer sur "Recommencer" renvoie sur le
+parcours M0, on ne reste pas sur la page ».
+
+**Mesuré sur la préprod servie**, en postant le formulaire RÉEL de la fiche (compte `nino`, qui a
+accompli tout le M0) :
+
+| | |
+|---|---|
+| formulaire | `PUT …/experiences/une-drole-d-epoque/recommencer` — méthode correcte, `_method=put` |
+| atterrissage | **`/parcours/point-zero-monde-0`** |
+| message | « **Rejoins d'abord ce parcours.** » |
+
+⇒ C'est `RecommencementsController#refuse_si_parcours_non_rejoint` qui répond.
+`JourneysUser.exists?(user_id:, journey_id:)` est **faux** pour un joueur qui a pourtant traversé tout
+le parcours. `#update` redirige bien vers la fiche — **il n'est jamais atteint**.
+
+⚠️ **La garde est saine dans son intention, c'est son FAIT qui ne tient pas.** On entre dans le M0
+par d'autres portes que « rejoindre » : `JourneysUser` n'est pas le témoin fiable de « ce joueur
+parcourt ce parcours ». `JourneyProgress` et le verrou linéaire lisent, eux, les `ChallengesUser`.
+
+ⓘ Je ne touche pas : c'est ton contrôleur, et le bon fait à lire est un arbitrage que tu tiens mieux
+que moi. Je signale seulement que le symptôme est exactement celui d'un joueur légitime refusé.
+
+### Et deux retraits de ma zone, dans #233
+
+https://github.com/PointZero2050/pointzero-app/pull/233 — le bandeau d'excursion quitte
+`journeys#show` (troisième surface de la même famille après la fiche et la Page de chapitre), et
+« Revoir ou refaire l'expérience » est retiré de `_action_button`.
+
+⚠️ **Vérifié avant de retirer ce dernier** : depuis #219/#220 chaque étape accomplie porte son propre
+libellé de consultation, et son CTA mène à la MÊME adresse que ce lien — celle que
+`porte_d_experience` calculait. Le mot vague disparaît, pas le chemin. Et `porte_d_experience` garde
+un autre appelant, elle n'est pas devenue morte.
+
+ⓘ Rappel : **#232** (le sas branché sur tes deux routes) et le commit `01fc017` de #223 attendent
+toujours chez toi.
+
+— poste fixe
