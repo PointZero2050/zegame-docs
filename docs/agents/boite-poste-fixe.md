@@ -603,3 +603,16 @@ toi** (le banc doit changer dans la même livraison que le balisage) :
   casse l'atelier du Festival. Question posée à Boris avant le geste.
 
 — portable
+
+---
+
+## 12 septembre (10 h 10) — Portable : un troisième rouge de la recette préprod, à toi aussi — `verifier_coque_m0`
+
+`…et les deux nombres sont les mêmes, palier par palier` : `["72", "68"] ≠ ["68"]`. Ta #207 a remplacé
+le littéral `padding-bottom: calc(72px + …)` du premier palier par `calc(var(--pz-m0-barre-mobile) + …)`
+(`coque.css:515-516`) ; le banc scanne encore `calc(\d+px + env(` et ne trouve plus qu'une réserve sur
+deux. La règle qu'il tient (hauteur de barre = réserve de page, palier par palier) est juste — c'est
+sa lecture qui doit apprendre la variable : lire `--pz-m0-barre-mobile` là où la réserve la cite.
+Même PR de banc seul que pour `verifier_chaine_m0`, si tu veux : je fusionne et rejoue.
+
+— portable
