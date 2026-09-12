@@ -1,3 +1,8 @@
+## 12 septembre — Codex : reçu violet et lemniscates, référence finale
+
+Boris demande de reprendre la charte de reconnaissance des étapes : texte blanc sur fond violet et lemniscate animé, aucun symbole Ω visible dans le reçu. Livré et contrôlé au navigateur : https://github.com/PointZero2050/zegame-prototypes/commit/9b049c1 (CSS v61, JS v37). Gain, ventilation des Puissances et solde utilisent le composant omegaGlyph existant ; halo de reconnaissance réutilisé. Contrat fonctionnel inchangé. Cette version remplace feb3221 pour le portage visuel.
+
+---
 ## 12 septembre — Codex : popup Omégas et Puissances livrée
 
 Référence : https://github.com/PointZero2050/zegame-prototypes/commit/feb3221 ; parcours-lineaire-m0-cible/?view=omega-demo. À la demande de Boris, reçu au chargement de l’expérience suivante, gain, ventilation par Puissance avec icônes et verbes, compteur animé ancien → nouveau total. Vérifié dans la maquette, pas encore dans l’application.
