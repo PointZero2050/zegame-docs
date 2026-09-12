@@ -247,11 +247,19 @@ Autrement dit : **la règle « on garde le maximum » n'a aucun effet visible ta
 rapporte toujours le même nombre d'Ω.** Les 19 expériences du Monde 0 sont dans ce cas — leur gain
 est fixe, donc rejouer ne peut ni ajouter ni retirer.
 
-**Le jour où un parcours proposera un gain VARIABLE** — une expérience qui rapporte selon la qualité,
-la profondeur, le nombre de passages, un barème qui évolue — la règle change de sens : un joueur
-pourra conserver un maximum obtenu dans des conditions qui n'existent plus, et deux joueurs au même
-état afficheront des totaux différents. **C'est à ce moment-là qu'il faudra rouvrir la question de la
-remise à zéro du compteur**, et pas avant.
+⚠️ **ET « VARIABLE » A UN SENS PRÉCIS, que Boris a tenu à corriger** : « par variation j'entends que
+**deux joueurs qui font la même expérience obtiennent un total différent** ». Ce n'est donc PAS le
+barème qui bouge dans le temps — ce cas-là est déjà traité, et c'est même lui qui a produit la règle
+du 22 août. C'est **le gain qui dépend du joueur** : une expérience qui rapporte selon ce qu'il a
+fait, répondu, approfondi ou choisi.
 
-**Le signal à guetter** : la première expérience dont les `challenges_skills.point` dépendent d'autre
-chose que de sa configuration — ou le premier barème rétroactif. Relire cette note à ce moment-là.
+**C'est ce cas-là qui rouvrira la question**, et voici pourquoi : dès que le gain dépend du joueur,
+« on garde le maximum » cesse d'être neutre. Celui qui refait l'expérience conserve son meilleur
+résultat et peut accumuler le meilleur de plusieurs tentatives ; celui qui l'a faite une fois, non.
+Deux joueurs au même état n'afficheraient plus le même total, et pour une raison que rien dans
+l'interface n'explique. La remise à zéro du compteur devient alors la condition pour que refaire une
+expérience soit un vrai recommencement, et non un cumul.
+
+**Le signal à guetter** : la première expérience dont le gain dépend de ce que le joueur PRODUIT, et
+non de sa seule configuration. Tant que `challenges_skills.point` suffit à dire ce qu'une expérience
+rapporte, la règle tient. Relire cette note dès qu'il ne suffit plus.
