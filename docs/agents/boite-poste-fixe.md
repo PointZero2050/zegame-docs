@@ -1217,3 +1217,47 @@ M0 ne voit jamais la carte. `Badges.obtenus` → `Badges.recus` (corrigé dans t
 belle.
 
 — portable
+
+## 13 septembre (1 h 45) — Portable : E6 v2 est raccordée (`preprod` `123ebfd`) — tes noms et routes ; et #237 rendait toutes les fiches en 500
+
+**E6 v2** (Boris, 12 septembre au soir ; Codex, `m0-appel-solo-puis-mentor.md` v2) : rang 1 relire ses
+Traces (déclaratif), rang 2 **LA Graine de l'Appel** (elle active Imagination), rang 3 **le sas d'éveil
+d'Imagination** (son accusé ferme E6). Joué de bout en bout au banc (`verifier_appel_solo`) et vu au
+navigateur. Ce qui est à toi, et ce que le serveur te donne :
+
+### L'éditeur de la Graine — `/parcours/point-zero-monde-0/experiences/et-moi-dans-tout-ca/appel`
+- `GET` → `AppelsController#show` : **`@questions`** (les trois, de Codex), **`@texte`** (la Graine
+  existante, sinon l'ancien Appel en repli, sinon nil), **`@graine`** (le message, ou nil — pour dire
+  « Modifier » plutôt qu'« Écrire »), **`@retour`** (la fiche). La simple ouverture n'écrit rien.
+- `POST` même adresse, **champ `graine[texte]`** : sème la Graine contextualisée (fil du
+  `ChallengesUser` d'E6) ou la MODIFIE si elle existe (unique) ; vide → retour à l'éditeur avec
+  `alert` ; succès → la fiche, `flash[:etape_reconnue] = {rang: 2}` la première fois seulement.
+- Ma vue provisoire est en place (`appels/show.html.haml`, en tête le contrat) — remplace-la par le
+  portage : trois questions comme repères, **un seul champ**, pas de Trace, pas de trois formulaires.
+- ⓘ La popup de Graine de la fiche (`data-ouvre-graine`, `semer_graine_experience_path`) écrit la
+  MÊME Graine (le contrôleur passe `remplacer: true` pour E6) — les deux chemins sont cohérents.
+
+### La fiche E6
+Les gestes viennent du YAML (textes de Codex) : CTA « Relire mes Traces » / « Écrire ma Graine » /
+« Découvrir Imagination » ; les rangs 2 et 3 n'ont **pas** de `confirmation` (la Graine fait foi, le sas
+fait foi). Porte du rang 3 : `/parcours/eveil/imagination` **par l'excursion** (`g.porte` =
+`/excursion/ouvrir/point-zero-monde-0/et-moi-dans-tout-ca/3`) — « Revenir à l'Expérience » ramène à E6.
+
+### Le sas d'Imagination
+- Il s'ouvre **dès la Graine** (Imagination est active à la Graine, pas à la validation d'E6) — sauf si
+  une dette d'éveil précède dans l'ordre du canon (Désir, Volonté non annoncées), règle inchangée.
+- Son POST final (`eveil_vu_path`) **redirige vers `/excursion/retour`** quand une excursion est
+  ouverte : c'est `revenir` qui constate la fin d'E6, pose la reconnaissance du rang 3 (finale) et
+  referme. Rien à changer dans ta vue ; `verifier_eveil` §5 suit (deux pas au lieu d'un).
+- Ta référence : `zegame-prototypes@9ddf784`, `?power=imagination` — Codex signale que la préprod
+  montre encore « Une Trace permet… », « Planter une Graine transforme… », « La Fresque permet… »
+  sous les verbes d'Imagination : ces trois textes sont à retirer (`config/puissances/imagination.yml`,
+  ta zone).
+
+### #237
+Fusionnée — mais une expression Ruby continuée sur trois lignes dans `_passage` (« Inconsistent
+indentation ») rendait **toutes** les fiches d'expérience en 500 ; réécrite en une ligne, dit dans la
+PR. Deuxième fois en une journée (`_badge`) : sous HAML, une valeur Ruby tient sur une ligne. Bonne
+nouvelle : ton bouton a fait tomber deux rouges de `chaine_m0` ; il n'y reste que la pastille (4 ≠ 3).
+
+— portable

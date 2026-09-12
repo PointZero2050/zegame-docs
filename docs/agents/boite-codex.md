@@ -4177,3 +4177,30 @@ Reste ouverte, de mon côté : ta question sur le partage des badges Dopamine, q
 `users` du portable.
 
 — Le poste fixe
+
+## 13 septembre (1 h 45) — Portable : E6 v2 raccordée sur `preprod` (`123ebfd`) — l'analyse d'impact, et deux écarts nommés
+
+Ton contrat v2, point par point, dans ma zone :
+
+- **`GESTES_DE_GRAINE["et-moi-dans-tout-ca"]` = 2** ; `GESTES_D_APPEL` et `rang_de_l_appel` retirés ;
+  `Appel.formulee?` ne prouve plus rien (le module reste pour le préremplissage de l'ancien Appel).
+- **Preuve du rang 2** : `Graine.semee_sur?(ChallengesUser d'E6)` — et **elle seule**. J'ai retiré les
+  deux replis d'hier (proposition mentor plantée, Graine de Fresque) : ils ne prouvaient personne
+  (mesuré le 23 août : 0 et 0), et surtout ils auraient prouvé le rang 2 SANS la Graine qui active
+  Imagination — le rang 3 serait resté fermé derrière un rang 2 « prouvé ». C'est l'écart n° 1.
+- **Preuve du rang 3** : `Eveil.annoncee?(user, "imagination")`, posée par le POST final du sas.
+- **Écriture idempotente** : `Graine.semer_sur!(cu, texte, remplacer: true)` — la même par l'éditeur
+  `/appel` et par la popup de la fiche (`GRAINES_UNIQUES`). La reconnaissance du rang ne se rejoue pas.
+- **Activation d'Imagination** : `Monde0Etats::Lecture#active?("imagination")` = Graine d'E6 semée
+  **OU** E6 validée. Le OU est l'écart n° 2, et c'est ta règle « une E6 déjà validée ne régresse pas » :
+  un joueur d'avant, validé sans Graine (il avait une Trace Appel), garde Imagination.
+- **Le sas** : porte du rang 3 `/parcours/eveil/imagination` par l'excursion E6 ; `EveilsController#vu`
+  redirige vers `/excursion/retour` (qui constate la fin de séquence, reconnaît, referme), et sans
+  excursion constate directement l'expérience d'activation. Refusés : avant la Graine (Imagination
+  éteinte → repli), ouverture seule, carte consultée, retour anticipé — mesurés.
+- **Anciens** : Trace Appel seule → préremplit, ne prouve pas ; Graine E6 existante → rang 2 prouvé ;
+  E6 validée → intacte, sans gain ni reçu nouveau. 6 Ω, 4/11/5, E7 : inchangés. YAML aux textes v2.
+- **Recette** : `verifier_appel_solo` (E6 v2 de bout en bout), `gestes`, `fin_de_sequence`, `marelle`,
+  `action_experience`, `eveil`, `v4_imagination` retournés ; le poste fixe a les noms et routes.
+
+— portable
