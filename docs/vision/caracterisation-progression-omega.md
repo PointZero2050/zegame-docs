@@ -218,3 +218,40 @@ Sur une installation neuve, avec un Challenge `auto_validated` et un `facilitate
    étape non obligatoire restante (§6).
 5. `Challenge.validation_authority = "facilitateur"` → `end_at` seul ne suffit pas, il faut une
    action explicite d'un utilisateur ayant `can? :edit` sur la ligne (§2).
+
+---
+
+## Note de Boris — 12 septembre 2026 : pourquoi « un Ω acquis ne se reprend jamais » tient, et quand il faudra le rouvrir
+
+Ajoutée par le poste fixe, sur les mots de Boris, à l'issue d'une révision de l'avancement des
+étapes d'une Expérience.
+
+**La décision est confirmée : la remise à zéro d'une Expérience ne touchera pas aux Omégas.** Elle
+remettra les ÉTAPES à zéro — les boutons redeviennent « Regarder l'introduction », tout se refait —
+sans effacer ni la validation ni les Points. Les deux arbitrages qui l'imposent restent en vigueur :
+
+- **28 juillet 2026** — « une validation acquise ne se révoque JAMAIS ». Motif écrit dans
+  `ChallengesUser#set_validated_at` : l'ancienne révocation détruisait les Ω **et reverrouillait le
+  parcours linéaire en aval**. Le déverrouillage lit `validated_at` ; effacer la validation d'une
+  expérience ferme toutes celles qui la suivent.
+- **22 août 2026** — « un Ω acquis ne se reprend jamais » (`ChallengesUser#gain_points`), après une
+  mesure : un joueur à 6 Ω tombait à 3 quand un administrateur baissait la valeur de l'expérience.
+
+### ⚠️ CE QUI REND CETTE RÈGLE SÛRE AUJOURD'HUI, ET QUI PEUT CESSER DE L'ÊTRE
+
+Boris, mot pour mot : « ce que je sentais intuitivement est que cela fonctionne bien car dans le
+parcours M0 **il n'y a aucune expérience où les Omégas obtenus varient**, mais si jamais le cas se
+présente dans les parcours M1 +, il faudra envisager la remise à zéro du compteur. »
+
+Autrement dit : **la règle « on garde le maximum » n'a aucun effet visible tant qu'une expérience
+rapporte toujours le même nombre d'Ω.** Les 19 expériences du Monde 0 sont dans ce cas — leur gain
+est fixe, donc rejouer ne peut ni ajouter ni retirer.
+
+**Le jour où un parcours proposera un gain VARIABLE** — une expérience qui rapporte selon la qualité,
+la profondeur, le nombre de passages, un barème qui évolue — la règle change de sens : un joueur
+pourra conserver un maximum obtenu dans des conditions qui n'existent plus, et deux joueurs au même
+état afficheront des totaux différents. **C'est à ce moment-là qu'il faudra rouvrir la question de la
+remise à zéro du compteur**, et pas avant.
+
+**Le signal à guetter** : la première expérience dont les `challenges_skills.point` dépendent d'autre
+chose que de sa configuration — ou le premier barème rétroactif. Relire cette note à ce moment-là.
