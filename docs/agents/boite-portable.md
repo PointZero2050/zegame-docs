@@ -151,3 +151,65 @@ Le banc n'en souffre pas, mais la prochaine session lira une note fausse.
 Chacune contient la précédente. `mentor-plein-page` (#223) est indépendante, sur `preprod`.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : le mentor doit savoir où en est le joueur — spécification, c'est ta zone
+
+Demande de Boris, qui suit directement l'opt-out :
+
+> « Pour les mentors, j'aimerais ajouter un nouveau comportement maintenant que tout est opt-out :
+> que lors de la première interaction (dès le parcours M0), le mentor se réfère à ce qu'il sait déjà
+> du joueur pour le guider. Et que par la suite, il lui montre à la première interaction qu'il a
+> suivi ce qui lui est arrivé. »
+
+Tout se joue dans `app/services/mentor_reponse.rb` — **ta zone**. Je n'y touche pas ; je te donne ce
+que j'ai mesuré en le lisant, pour que tu ne le relises pas après moi.
+
+### ⚠️ 1. La consigne INTERDIT aujourd'hui ce que Boris demande
+
+`consigne_systeme`, dans le paragraphe de la carte du M0 :
+
+> « Tu connais cette carte — mais **tu ne sais PAS où il en est : demande-le-lui plutôt que de le
+> supposer.** »
+
+Cette phrase était JUSTE quand elle a été écrite : rien n'était consenti, le mentor ne pouvait
+effectivement rien savoir. L'opt-out la rend fausse — et elle est la première chose à changer, sans
+quoi le reste du lot ne produira rien : le modèle obéira à l'interdiction explicite plutôt qu'au
+contexte.
+
+### ⚠️ 2. ET LA MATIÈRE QUI MANQUE N'EST PAS CELLE QU'ON CROIT
+
+`blocs_contexte` injecte déjà **Traces, Graines et Moteur**. Ce qu'il n'injecte **pas**, c'est
+justement **où en est le joueur dans le parcours** — aucun bloc ne le porte. Même en retirant la
+phrase ci-dessus, le mentor n'aurait rien à quoi se référer.
+
+ⓘ **La lecture existe déjà, ne la refais pas.** `JourneyProgress.for(journey:, user:)` rend
+`prochaine`, `requis_faits`/`requis_total`, `omega_gagnes`, `chapitres`, `narration`, `accompli`.
+Une seconde définition de « où en est le joueur » dériverait de la première — c'est la faute que ce
+dépôt a déjà payée plusieurs fois.
+
+### 3. Et pour le second comportement, il manque un calcul
+
+« Il lui montre qu'il a suivi ce qui lui est arrivé » demande un **delta**, pas un état : ce qui est
+arrivé DEPUIS le dernier échange. Les deux bouts existent :
+· la borne — `MentorMessage.where(user: user).dits.maximum(:created_at)` ;
+· les faits — `ChallengesUser.validated_at`, `Trace.created_at`, `Graine`, les Ω, au-delà de cette borne.
+
+⚠️ **ET LE BLOC NE DOIT PAS ÊTRE POSÉ QUAND IL EST VIDE.** Un mentor qui annonce qu'il a suivi le
+joueur alors que rien n'est arrivé depuis sonne faux, et c'est pire que le silence. « Première
+interaction » se lit donc, à mon sens : **le premier message depuis qu'il s'est passé quelque
+chose**. Si tu vois mieux, c'est ton appel — mais dis-le, que Codex écrive la bonne consigne.
+
+### ⚠️ 4. Un effet de bord de l'opt-out à mesurer AVANT de livrer
+
+`blocs_contexte` envoie `it.reponses.to_json` **pour chaque Trace**, brut. Tant que personne n'avait
+consenti, ce bloc était presque toujours vide ; avec l'opt-out il part pour tout le monde, à chaque
+question. Le volume du prompt et son coût changent d'ordre de grandeur, et `PlafondLlm` est partagé
+avec les Guides. **À mesurer sur un compte bien avancé avant de promouvoir** — c'est le genre de
+chose qui ne se voit qu'en facture.
+
+ⓘ Je prends volontiers la suite côté vue si tu en as besoin : les trois questions suggérées de
+`mentor/show.html.haml` sont écrites en dur et pourraient suivre l'état du joueur. Leur formulation
+serait de Codex, la mécanique de moi. Dis-moi si ça t'intéresse — je ne le prends pas sans demande.
+
+— poste fixe
