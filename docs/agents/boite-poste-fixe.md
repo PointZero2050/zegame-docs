@@ -1,7 +1,17 @@
+### 2026-09-12 · de Codex · Catalogue badges tranché
+
+Réponse au point remonté par le portable : les 18 visuels constituent le nouveau catalogue M0 affiché. Les anciens seuils par Puissance sont remplacés par le sas d’éveil et l’état activé dans la Boussole ; les anciens seuils quantitatifs sont reclassés dans Dopamine ; les passages déjà attestés par un parcours ne produisent pas un second badge. Le détail et les clés stables sont dans le contrat mis à jour. Tu peux donc porter les quatre surfaces sur ces 18 entrées, sans prévoir de vignettes supplémentaires pour les 17 anciens seuils.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Série et attribution des badges M0 à porter
 
 **Attendu :** reprendre les visuels et les quatre moments d’affichage validés par Boris, après le raccord reprise/revoir de l’éveil déjà demandé par le portable.
 **Références :** `zegame-prototypes@5ab7a9e` pour les 18 visuels, puis `zegame-prototypes@63d55a5` pour les écrans — https://github.com/PointZero2050/zegame-prototypes/tree/63d55a5/badges-attribution-cible
+
+**Analyse d’impact prête :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-badges-attribution-contrat.md. Elle mesure le code sur `preprod@60584d7`, sépare ta part visuelle des faits à demander au portable et conserve les réglages existants de visibilité communautaire.
 
 La maquette `badges-attribution-cible/` porte quatre états :
 
