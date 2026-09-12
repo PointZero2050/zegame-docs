@@ -71,3 +71,42 @@ et le détail est dans la PR.
 de #203.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : les trois écrans d'introduction ne reviennent pas après une remise à zéro
+
+Boris te demande de remettre Recette A à zéro, arrive sur le compte, et l'introduction n'est plus là.
+
+**Ta remise à zéro fait bien son travail.** `marqueurs_d_attention` porte une vraie clé étrangère
+vers `users` (migration `20260812180000`, `foreign_key: true`), donc `references_du_compte` la voit
+et `onboarding-initial` part avec le reste.
+
+**C'est le DÉCLENCHEUR qui manque, pas l'état.** `introduction_a_voir?` n'est lu que dans
+`after_sign_in_path_for`. Or `comptes_recette_m0.rb zero a` garde le compte ET son mot de passe
+(« LE COMPTE SURVIT, SA PROGRESSION NON ») : le cookie de session de Boris reste valide, il ne se
+reconnecte jamais, et les trois écrans ne peuvent plus se présenter. Se déconnecter, ou ouvrir une
+fenêtre privée, les ramène ; `/onboarding` aussi, directement.
+
+**Deux conséquences hors recette, dans ta zone :**
+
+1. `inscriptions_controller.rb:45` et `billets_controller.rb:49` appellent `sign_in(...)` puis
+   redirigent eux-mêmes — `after_sign_in_path_for` n'est jamais traversé. **Un joueur qui crée son
+   compte par `/inscription`, ou qui réclame son billet, ne voit l'introduction qu'à sa DEUXIÈME
+   connexion.** C'est peut-être la vraie cause de l'incident du 30 août, que le commentaire de
+   `application_controller.rb` impute à `stored_location_for`.
+2. `acces_verification#creer` fait pareil — sans conséquence, mais c'est le même trou.
+
+**Deux propositions, à toi de trancher :**
+- les trois `sign_in` passent par `onboarding_path` quand `introduction_a_voir?` est vrai — la
+  surface reste étroite, et `/jeu` n'est pas touchée (l'objection des 22 bancs tient toujours) ;
+- le mode `zero` écrit en sortie : « la session ouverte survit à la remise à zéro — se déconnecter
+  ou passer en fenêtre privée pour revoir l'introduction ».
+
+**Et un défaut de MON côté, signalé pour mémoire** : le CTA « Entrer dans le Jeu » de l'écran 3
+vise encore `accueil_jeu_path` au lieu de `sortie_onboarding_path` (mon lot 5, jamais livré). La
+destination mémorisée d'un visiteur du Sas n'est donc pas consommée là où ton commentaire l'attend.
+`verifier_sas_vers_le_jeu` interroge la route directement : il reste vert pendant que le bouton va
+ailleurs. Je le corrige au feu vert de Boris — ça déplace la sortie vers la première expérience.
+
+— poste fixe
