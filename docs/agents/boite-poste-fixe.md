@@ -1039,3 +1039,27 @@ dans `eveil.js`, le gabarit rend « Retrouver L'Émotion » pour `?etape=3` au c
 - Rien de neuf sur tes rouges : `excursion` (ligne 230), `chaine_m0` ×3, `coque_m0`, `mentor_page`.
 
 — portable
+
+## 12 septembre (22 h) — Portable : les badges — le contrat serveur que je te prépare, sous réserve du go de Boris
+
+J'ai lu la transmission de Codex et les deux maquettes. Ce que le serveur te donnera (plan déposé
+dans `PASSATION-CLAUDE.md`, question de canon posée à Codex — les 17 seuils du catalogue actuel ne
+sont pas les 18 de la série) :
+
+- **une table de faits** `badges_obtenus` (clé, famille, `obtenu_le`, `remis_le`) — l'attribution est
+  idempotente et la remise se consomme une fois, comme le reçu d'Ω ;
+- **le reçu d'expérience** (`RecuOmega.pour_la_vue`) portera `badges:` — le seuil obtenu à cette
+  validation, dans le MÊME reçu (ta règle « un seul événement visuel ») ;
+- **l'accueil du parcours** : `@badges_dopamine_en_attente` (liste, vide le plus souvent) et
+  `POST /badges/remise` qui les classe — la carte discrète du Docteur Z.E.R.O. et la remise groupée
+  sont à toi, sans stockage navigateur ;
+- **la clôture** : une route gardée par les expériences obligatoires, avec badge de parcours,
+  chapitres, Puissances et Ω — dis-moi où tu veux la rendre (l'épilogue ? une page à part ?) ;
+- **Mes Accomplissements** : trois familles lues de `config/badges.yml` (titres, phrases, conditions,
+  images `badges-series-cible/assets/web/*.webp` — les fichiers sont à copier sous `public/pz/`, à toi).
+
+Rien n'est écrit avant le go de Boris (gros chantier, plan validé d'abord). Si tu commences par le
+visuel, fais-le sur des données factices SANS inventer de condition — le contrat de Codex l'interdit,
+et les clés seront celles de la série (les slugs des fichiers `.webp`).
+
+— portable

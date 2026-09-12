@@ -3910,3 +3910,45 @@ déjà annoncée). Ni stockage navigateur ni état serveur inventé : l'étape v
 attend ses deux faits serveur. Le sas est jouable d'un trait en attendant.
 
 — poste fixe
+
+## 12 septembre (22 h) — Portable : les badges M0 — ce que le serveur sait déjà, et une question de canon avant d'écrire
+
+J'ai lu ta transmission au poste fixe et les deux maquettes (`badges-series-cible`,
+`badges-attribution-cible`, NOTES.md). Avant de poser une ligne, ce qui est mesuré et ce qui manque.
+
+**Ce qui existe** : les badges de parcours et les seuils sont **dérivés**, sans table
+(`BadgeDeParcours.pour` lit les validations des parcours ; `SeuilFranchi.pour` évalue les conditions
+de `config/seuils.yml`). Ce catalogue compte **17 seuils** : dix généraux (`entrer_dans_le_jeu`,
+`moteur_eveille`, `sas_traverse`, `graine_semee`, `premier_atelier`, `se_presenter`, `cent_omegas`,
+`futur_regarde_en_face`, `futurs_pluriels`, `futur_renvoie_la_balle`) et **sept « un par Puissance » du
+Monde 0** (`m0_desir` « Flamme reconnue » … `m0_transcendance`), affichés aujourd'hui sur Mes
+Accomplissements. La famille **Dopamine n'existe pas**.
+
+**Ta série en compte 18** : 6 parcours, 4 seuils (dont « Les futurs sont pluriels », secret), 8
+Dopamine — et quatre des dix anciens seuils y deviennent des Dopamine ou disparaissent
+(`graine_semee` → « Agriculture narrative », `cent_omegas` → « Cent Omégas et toutes mes dents » ;
+`entrer_dans_le_jeu`, `sas_traverse`, `futur_regarde_en_face`, `futur_renvoie_la_balle` : absents).
+
+### ⚠️ La question, à toi (ou à Boris) : la série REMPLACE-t-elle le catalogue ?
+
+- les sept seuils « un par Puissance » du M0 sont-ils retirés (ils ne sont pas dans les 18) ?
+- les quatre anciens seuils absents de la série disparaissent-ils, ou attendent-ils un visuel ?
+- « Les futurs sont pluriels » : ta règle dit **qualitatif** (une comparaison, une mise en sens). Aucun
+  fait de ce genre n'existe aujourd'hui — `Traversee.fins_for` ne compte que des fins. Je le laisse
+  **déclaré et non câblé** (secret, jamais décerné) tant que le fait n'existe pas, et « Un futur ne
+  suffisait pas » (Dopamine) prend `fins ≥ 2`. Dis-moi si tu vois un fait qualitatif que je ne vois pas.
+
+### Ce que je compte poser (après le go de Boris — c'est un gros chantier, il valide le plan)
+
+- `config/badges.yml` : les 18, trois familles, chacun avec sa condition lue des faits existants ;
+- une table `badges_obtenus` (joueur, clé, famille, `obtenu_le`, `remis_le`, reçu d'Ω lié) — le fait
+  d'attribution, **idempotent**, et sa remise **consommable une seule fois**, comme le reçu ;
+- `Badges.constater!` à chaque validation (dans la transaction du reçu : le seuil obtenu rejoint LE
+  MÊME reçu, jamais une seconde popup), après une Graine, une fin de traversée, un « Recommencer » ;
+- l'accueil du parcours porte les Dopamine en attente, `POST /badges/remise` les classe ;
+- une page de clôture gardée par les expériences obligatoires (les facultatives ne bloquent pas).
+
+Rien n'est écrit tant que la question du catalogue n'est pas tranchée : deux sources pour un même
+badge, c'est exactement ce que ta maquette interdit.
+
+— portable
