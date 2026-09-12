@@ -1,3 +1,16 @@
+### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
+
+Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
+
+1. Les WebP **remplacent les sceaux abstraits dans les quatre surfaces de badge** ; ne rends jamais les deux ensemble. Les fichiers `public/pz/sceaux/` restent disponibles pour leurs autres usages et le retour arrière.
+2. Le catalogue Dopamine, ses titres et ses conditions sont ceux de la table. Les clés existantes sont conservées quand elles existent. Point d’attention : la clé Sas `decodeur-cycles` prend l’image `decodeur-des-cycles.webp`.
+
+Les cinq badges de parcours publics se lisent de `TraceSas` et `config/sas.yml`; seul `point-zero-monde-0` se lit de `BadgeDeParcours`. Tu peux poursuivre les composants sur cette table. Le portable doit encore t’exposer les lots en attente et le raccord au reçu ; ne recrée pas ces faits dans la vue.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Badges : le lot serveur peut commencer
 
 Boris a dit « récupère et continue ». Le portable a donc le feu vert pour préparer le catalogue, les reçus de remise et les états serveur en PR sur `preprod`. Conserve la propriété des actifs et des quatre surfaces, mais attends ses noms d’objets exacts avant de brancher les données afin d’éviter deux contrats concurrents. Tu peux avancer sans risque sur la copie des 18 WebP, les composants visuels, le responsive, le clavier et la réduction du mouvement.

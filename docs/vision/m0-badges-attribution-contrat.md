@@ -72,6 +72,33 @@ Série proposée :
 
 Les quatre paliers nouveaux comptent des identifiants distincts, jamais des requêtes ou des clics. Recharger, revisiter ou rejouer un même résultat ne les incrémente pas.
 
+### Appariement canonique des dix-huit visuels
+
+Le champ `image` ci-dessous remplace le sceau abstrait dans le reçu, la remise du Docteur, la clôture et `Mes Accomplissements`. Il n’est jamais superposé au sceau. Les anciens fichiers de `public/pz/sceaux/` peuvent rester dans le dépôt pour les autres usages et le retour arrière, mais ces dix-huit cartes n’en rendent qu’un seul symbole : leur WebP illustré.
+
+| Famille | Clé métier conservée ou créée | Image | Source du fait |
+|---|---|---|---|
+| Parcours | `decodeur-cycles` | `decodeur-des-cycles.webp` | `TraceSas`, parcours `humanite` |
+| Parcours | `prospectiviste` | `prospectiviste.webp` | `TraceSas`, parcours `scenarios` |
+| Parcours | `archeologue-des-croyances` | `archeologue-des-croyances.webp` | `TraceSas`, parcours `croyances` |
+| Parcours | `changeur-d-echelle` | `changeur-d-echelle.webp` | `TraceSas`, parcours `paralysie` |
+| Parcours | `reactivateur-de-puissances` | `reactivateur-de-puissances.webp` | `TraceSas`, parcours `reveil` |
+| Parcours | `point-zero-monde-0` | `point-zero-monde-0.webp` | `Journey#completed_by?` pour `point-zero-monde-0` |
+| Seuil | `moteur_eveille` | `le-moteur-s-eveille.webp` | première lecture complète du Moteur |
+| Seuil | `premier_atelier` | `premier-atelier-vecu.webp` | présence confirmée par le facilitateur |
+| Seuil | `se_presenter` | `se-presenter-vraiment.webp` | dossier de rencontre déposé |
+| Seuil | `futurs_mis_en_sens` | `les-futurs-sont-pluriels.webp` | non câblé avant un geste qualitatif distinct |
+| Dopamine | `entrer_dans_le_jeu` | `jai-clique-donc-je-suis.webp` | première Expérience validée |
+| Dopamine | `graine_semee` | `agriculture-narrative.webp` | première Graine créée |
+| Dopamine | `cinq_experiences` | `je-devais-juste-regarder.webp` | cinq Expériences distinctes validées |
+| Dopamine | `dix_experiences` | `visiblement-je-reviens.webp` | dix Expériences distinctes validées |
+| Dopamine | `sept_puissances` | `tour-du-proprietaire.webp` | sept états du métaparcours réellement ouverts |
+| Dopamine | `cent_omegas` | `cent-omegas-et-toutes-mes-dents.webp` | solde d’au moins 100 Ω |
+| Dopamine | `futurs_pluriels` | `un-futur-ne-suffisait-pas.webp` | deux fins distinctes dans `Traversee.fins_for` |
+| Dopamine | `premier_rejeu` | `encore-une-derniere-fois.webp` | premier marqueur durable `recommencee:*` |
+
+Les cinq premiers badges ne doivent pas être forcés dans `BadgeDeParcours` : leurs preuves existent déjà dans les imports du Sas. La collection compose donc les badges issus de `TraceSas`, le badge de `Journey` et les deux autres familles, sans inventer une fausse relation de parcours.
+
 ## 3. Collision à résoudre avant le portage
 
 Deux badges ne peuvent pas tomber sur la preuve actuelle de `futurs_pluriels`. Cette preuve compte deux fins distinctes : elle correspond exactement au badge Dopamine `Un futur ne suffisait pas`.

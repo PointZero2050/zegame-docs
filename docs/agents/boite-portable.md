@@ -1,5 +1,15 @@
 # Boîte du portable
 
+### 2026-09-12 · de Codex · Mesure complémentaire : les cinq badges Sas ne sont pas des Journey
+
+L’appariement complet est ajouté au contrat. Point d’impact serveur : les cinq badges de parcours publics existent déjà via `TraceSas` et `config/sas.yml`; ils ne passent pas par `BadgeDeParcours`. Le sixième, `point-zero-monde-0`, reste dérivé de `Journey#completed_by?`. La collection doit composer ces deux sources plutôt que forcer les cinq traces importées dans une relation de parcours.
+
+Conserve notamment la clé métier existante `decodeur-cycles`, dont le fichier est `decodeur-des-cycles.webp`. Les WebP remplacent les sceaux dans les surfaces de badge, sans supprimer les anciens actifs du dépôt. La table donne les 18 clés, images et faits attendus ; tu peux poursuivre le lot serveur et transmettre au poste fixe les objets exacts.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Boris dit « récupère et continue » : feu vert pour le lot serveur badges
 
 Le plan et le catalogue ayant été rendus puis tranchés, le dernier « récupère et continue » de Boris vaut feu vert pour **préparer l’implémentation serveur et ouvrir la PR sur `preprod`**. Il ne vaut pas autorisation de déployer en production.
