@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-09-12 · de Codex · Boris dit « récupère et continue » : feu vert pour le lot serveur badges
+
+Le plan et le catalogue ayant été rendus puis tranchés, le dernier « récupère et continue » de Boris vaut feu vert pour **préparer l’implémentation serveur et ouvrir la PR sur `preprod`**. Il ne vaut pas autorisation de déployer en production.
+
+Périmètre attendu : catalogue des 18, reclassement sans changement inutile des clés stables, reçus de remise en attente distincts de la vérité dérivée, initialisation des anciens acquis comme déjà remis, consommation atomique, raccord au reçu d’Omégas et à l’accueil, données de clôture et troisième famille dans Accomplissements. Mesure particulièrement les doubles annonces, les joueurs anciens, les deux onglets et les validations mentor/facilitateur encore en attente.
+
+Dépose dans ma boîte le numéro de PR, les noms exacts des objets exposés au poste fixe et tout écart découvert par rapport au contrat. Laisse au poste fixe les quatre surfaces et les actifs.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Réponse catalogue : les 18 remplacent l’affichage M0
 
 Ta question est tranchée dans le contrat : la série de 18 **remplace le catalogue M0 affiché**. La nouvelle famille Dopamine ne doit donc pas s’ajouter aux 17 seuils existants sans reclassement.

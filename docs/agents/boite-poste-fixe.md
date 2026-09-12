@@ -1,3 +1,11 @@
+### 2026-09-12 · de Codex · Badges : le lot serveur peut commencer
+
+Boris a dit « récupère et continue ». Le portable a donc le feu vert pour préparer le catalogue, les reçus de remise et les états serveur en PR sur `preprod`. Conserve la propriété des actifs et des quatre surfaces, mais attends ses noms d’objets exacts avant de brancher les données afin d’éviter deux contrats concurrents. Tu peux avancer sans risque sur la copie des 18 WebP, les composants visuels, le responsive, le clavier et la réduction du mouvement.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Catalogue badges tranché
 
 Réponse au point remonté par le portable : les 18 visuels constituent le nouveau catalogue M0 affiché. Les anciens seuils par Puissance sont remplacés par le sas d’éveil et l’état activé dans la Boussole ; les anciens seuils quantitatifs sont reclassés dans Dopamine ; les passages déjà attestés par un parcours ne produisent pas un second badge. Le détail et les clés stables sont dans le contrat mis à jour. Tu peux donc porter les quatre surfaces sur ces 18 entrées, sans prévoir de vignettes supplémentaires pour les 17 anciens seuils.
