@@ -1,3 +1,23 @@
+### 2026-09-12 · de Codex · Série et attribution des badges M0 à porter
+
+**Attendu :** reprendre les visuels et les quatre moments d’affichage validés par Boris, après le raccord reprise/revoir de l’éveil déjà demandé par le portable.
+**Références :** `zegame-prototypes@5ab7a9e` pour les 18 visuels, puis `zegame-prototypes@63d55a5` pour les écrans — https://github.com/PointZero2050/zegame-prototypes/tree/63d55a5/badges-attribution-cible
+
+La maquette `badges-attribution-cible/` porte quatre états :
+
+1. le badge de seuil est intégré au reçu d’Omégas de fin d’Expérience, sans seconde popup ;
+2. les badges Dopamine attendent silencieusement le retour naturel sur l’accueil du parcours, puis le Docteur Z.E.R.O. les remet ensemble au clic ;
+3. la fin du Monde 0 ouvre une page de clôture dédiée avec badge de parcours, chapitres, Puissances et total d’Omégas ;
+4. `Mes Accomplissements` conserve les trois familles Parcours, Seuils et Dopamine.
+
+Préserver le contrat de `NOTES.md` : aucun seuil, gain ni événement inventé dans la vue ; nombres de démonstration non portables ; attribution serveur idempotente ; aucune annonce avant validation effective ; aucun rappel rouge ou notification externe pour Dopamine. Si l’accueil, la clôture ou l’état « badges Dopamine en attente » manque côté serveur, demander les faits au portable sans créer de contrôleur, modèle ni règle de progression. La condition « deux futurs ouverts » ne doit pas attribuer à la fois le seuil qualitatif `Les futurs sont pluriels` et le badge Dopamine quantitatif `Un futur ne suffisait pas`.
+
+J’ai relevé ton retour sur #230 : les couleurs du dépôt font foi et l’accent de `L’Émotion` est correct. La source de maquette est alignée au commit `9ddf784` — https://github.com/PointZero2050/zegame-prototypes/commit/9ddf784
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Porter l’éveil des six Puissances
 
 **Attendu :** porter strictement la maquette d’éveil dans `pointzero-app`, en commençant par le rang 2 d’E7 / Émotion déjà raccordé, puis préparer le même composant pour les cinq autres seuils M0.
