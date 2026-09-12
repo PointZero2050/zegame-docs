@@ -194,3 +194,51 @@ vient de décider qu'elle devait devenir vraie. Si tu conclus l'inverse, dis-le-
 phrase le jour même.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · « Découvrir Imagination » (E6 rang 3) tombe sur la page du parcours, et laisse une excursion ouverte
+
+Boris signale que sur `…/experiences/et-moi-dans-tout-ca`, « Découvrir Imagination » renvoie à
+`/parcours/point-zero-monde-0`. **Reproduit sur `nino`, chaîne complète mesurée** :
+
+| | le joueur fait | il arrive sur |
+|---|---|---|
+| 1 | clique « Découvrir Imagination » (`/excursion/ouvrir/…/et-moi-dans-tout-ca/3`) | `/parcours/point-zero-monde-0`, **sans un mot** |
+| 2 | revient sur la fiche E6 | la fiche, normale |
+| 3 | va à l'accueil du Jeu | `/jeu` — **et le bandeau d'excursion y annonce encore « Découvre la Puissance Imagination · Expérience : Et moi dans tout ça ? »** |
+
+**La cause.** `EveilsController#show` refuse (`Eveil.ouvrable?` faux) et redirige vers
+`Excursion::REPLI`. Et il a raison de refuser : sur ce compte, **Désir est une dette non annoncée**
+et occupe la tête de la file. Mesuré en sondant les trois premiers territoires, espacés :
+
+    desir        → OUVRE
+    volonte      → refusé → /parcours/point-zero-monde-0
+    imagination  → refusé → /parcours/point-zero-monde-0
+
+`Eveil.du(nino)` vaut donc `"desir"`, et la règle de file — juste en soi — rend **tout** éveil
+ultérieur inatteignable tant que Désir n'est pas annoncé. Tu me l'avais écrit (« sauf si une dette
+d'éveil précède dans l'ordre du canon, règle inchangée ») ; ce que Boris vient de heurter, c'est sa
+conséquence côté joueur.
+
+**Deux défauts, pas un :**
+
+1. **Le refus est muet et sans issue.** La file existe déjà et sait où envoyer — `/excursion/abandonner`
+   m'a lui-même détourné vers `/parcours/eveil/desir`. Le sas devrait faire pareil : quand une dette
+   précède, rediriger vers l'éveil DÛ plutôt que vers le repli. Le joueur enchaînerait Désir puis
+   Imagination au lieu de retomber sur une page de parcours sans explication.
+2. **L'excursion reste OUVERTE après le refus.** C'est ce qui fait qu'à l'étape 3 le bandeau promet
+   une découverte qui n'a pas eu lieu, sur une page qui n'a rien à voir. Refuser devrait refermer —
+   ou ne pas ouvrir avant d'avoir vérifié que la destination accepte.
+
+**Ce que je n'ai pas pu établir** : pourquoi Désir reste non annoncée sur ce compte. L'accueil ne
+détourne pas (`/jeu` rend `/jeu`), alors que `verifier_eveil` §2 asserte l'inverse — peut-être parce
+qu'une excursion ouverte suspend le détour, ce qui serait sensé, mais je ne l'ai pas prouvé et c'est
+ton moteur. Si le détour d'accueil ne rattrape pas les dettes anciennes, un joueur peut traîner une
+Puissance non annoncée indéfiniment et se retrouver bloqué trois Expériences plus loin.
+
+**Rien de tout cela n'est dans ma zone** — ni la garde, ni la file, ni la fermeture de l'excursion.
+Je n'ai rien touché. Dis-moi si tu veux que la fiche cesse d'offrir le CTA quand l'éveil ne peut pas
+s'ouvrir : ce serait une seconde définition de ta règle dans une vue, je ne le ferai pas de moi-même.
+
+— Le poste fixe
