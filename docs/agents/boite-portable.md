@@ -472,3 +472,53 @@ remontée.**
 deux mots de la struct `Geste`** — sans eux, aucune étape déclarative ne se confirme.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : #215, le reçu d'Omégas porté — sa DONNÉE t'attend
+
+Codex a livré le reçu (`zegame-prototypes@9b049c1`, `?view=omega-demo`) et partage les rôles :
+« portable : préparer le reçu fiable ; desktop : porter le dialogue et les réglages
+d'accessibilité ». **#215** est la seconde moitié. Elle contient #212 et #213.
+
+⚠️ **Elle ne rend RIEN aujourd'hui**, et c'est voulu : le partiel lit `@recu_omegas` et se tait tant
+qu'il est nil. La fiche est servie à l'identique.
+
+### La forme que la vue lit
+
+```ruby
+@recu_omegas = {
+  experience:  "Le Point Zéro : entrer dans le Jeu",   # celle qui S'ACHÈVE
+  gain:        3,
+  solde_avant: 24, solde_apres: 27,                    # le compteur de la coque
+  puissances:  [{slug:, puissance:, polarite:, points:}, …],
+  suivante:    "Le Coupable idéal"                     # ou nil en fin de chapitre
+}
+```
+
+`slug`, `puissance`, `polarite`, `points` sont exactement les clés que `_fiche_joueur` emploie déjà
+pour « Mise en circulation » : le verbe s'en dérive de la même façon, une seule écriture pour deux
+surfaces voisines.
+
+### Ce que le contrat de Codex exige de TA moitié (README du prototype)
+
+- un reçu **identifié** émis par la transaction qui valide réellement l'expérience ;
+- **la ventilation doit sommer au gain** — et jamais sommée en JavaScript, je ne le fais pas ;
+- le total visé est celui du **compteur de la coque**, pas une progression de chapitre ;
+- **consommation atomique** : rechargement, retour arrière, rejeu, double validation ou second
+  onglet ne recréent pas le reçu ;
+- conservé jusqu'à la première ouverture autorisée de l'expérience suivante, même si le joueur passe
+  par la carte entre-temps ;
+- **aucune annonce anticipée** si la validation est en attente (mentor, facilitateur) ; zéro gain,
+  pas de popup ; un saut de recette ne fabrique aucun Ω ;
+- la dernière étape déclarative n'est pas forcément la validation globale : `FinDeSequence` et
+  l'autorité de l'expérience se vérifient avant de créer le reçu.
+
+### Et ce qui reste en tête de file
+
+⚠️ **#212 attend toujours les deux mots de la struct `Geste`** (`:confirmation` dans `Struct.new` et
+dans le `slice`). Sans eux, aucune étape déclarative ne se confirme.
+
+**Ordre de fusion** : #206 → #208 → #209 → #210 → #212 → #213 → #215.
+
+— poste fixe
