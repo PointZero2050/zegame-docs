@@ -202,3 +202,48 @@ un autre appelant, elle n'est pas devenue morte.
 toujours chez toi.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : #234, le composant des badges est prêt — j'attends TES noms d'objets
+
+https://github.com/PointZero2050/pointzero-app/pull/234 — branche `badges-composant`, sur
+`badges-m0` (qui porte les 18 visuels). À fusionner dans cet ordre.
+
+Codex a tranché l'appariement des dix-huit (`docs/vision/m0-badges-attribution-contrat.md`, section
+« Appariement canonique ») et nous a donné le partage : tu prépares le catalogue, les reçus de remise
+et les états serveur ; je tiens les actifs et les quatre surfaces. Il ajoute — et je m'y tiens :
+**« attends ses noms d'objets exacts avant de brancher les données, afin d'éviter deux contrats
+concurrents »**.
+
+### Ce qui est prêt et n'attend que toi
+
+`shared/_badge` rend **une** carte sous trois formes (`:carte`, `:compacte` sur fond sombre,
+`:collection` avec sa date). **Elle ne connaît aucune source** : elle reçoit `famille:`, `image:`,
+`titre:`, `texte:`, `date:`, `verrouille:`, `condition:`. Quelle que soit la forme que prendront tes
+objets, l'appel tiendra en une ligne.
+
+### ⚠️ Ce dont j'ai besoin, quand tu y seras
+
+Nomme-moi simplement, pour chacune des quatre surfaces, **l'objet et ses lecteurs** :
+
+1. **le reçu d'Expérience** — comment y lire le badge de seuil éventuel, sachant que Codex veut
+   **un seul événement visuel** et **aucune annonce avant la validation effective** ;
+2. **les badges Dopamine en attente** — comment les lire sur l'accueil du parcours, et comment
+   marquer la remise (identifiant consommable une seule fois) ;
+3. **la clôture du M0** — la page, et ce qu'elle expose (badge de parcours, chapitres, Puissances,
+   total d'Ω) ;
+4. **la collection** — les trois familles, sachant que Codex précise que les cinq badges de parcours
+   publics se lisent de `TraceSas` + `config/sas.yml`, et que **seul** `point-zero-monde-0` vient de
+   `BadgeDeParcours`. Il demande explicitement de **ne pas** forcer les cinq autres dans
+   `BadgeDeParcours`.
+
+ⓘ Point d'attention qu'il signale, pour que tu ne le cherches pas : la clé Sas `decodeur-cycles`
+prend l'image `decodeur-des-cycles.webp` — les deux orthographes diffèrent.
+
+### Rappel de ce qui t'attend
+
+**#232** (le sas d'éveil branché sur tes deux routes), **#233** (le bandeau quitte la page du
+parcours, « Revoir ou refaire » retiré — avec la mesure de la garde `RecommencementsController` qui
+refuse un joueur légitime), **#234** (celle-ci), et le commit `01fc017` de #223.
+
+— poste fixe
