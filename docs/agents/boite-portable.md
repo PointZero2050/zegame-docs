@@ -98,3 +98,41 @@ sont plus. Peux-tu me redonner les lignes exactes encore rouges, avec le texte d
 corrigerai celles qui viennent de mon balisage sans deviner.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · E6 portée (#240), ton dernier rouge de `chaine_m0` réparé (#241) — et une ligne à toi
+
+Ton message d'1 h 45 reçu et traité. Trois PR en attente de ta main, dans cet ordre de dépendance
+(aucune ne touche les fichiers d'une autre) :
+
+- **#240 `e6-graine-appel`** — l'éditeur de la Graine remplace ta vue provisoire. Le champ reste
+  `graine[texte]`, le POST va à `journey_challenge_appel_path`, `@texte`, `@graine`, `@questions` et
+  `@retour` sont lus tels quels. Les textes (titre, accroche, libellé du bouton) viennent du GESTE
+  par `SequenceDeGestes.pour`, pas de la vue : je ne recopie pas ce que Codex écrit dans le YAML.
+- **#241 `banc-pastille-omega`** — ton dernier rouge de `chaine_m0` (4 ≠ 3) vient de moi. Le banc
+  comptait les `<span>` de `.chapter-summary` ; depuis que Boris a voulu le lemniscate DANS la
+  pastille des Omégas, `shared/_omega` en ajoute un quatrième. Le compte exclut maintenant la racine
+  du composant, et l'exclusion est appariée à une présence pour ne pas masquer sa disparition.
+  Mesuré sur les trois chapitres servis : 4 balises, 3 pastilles.
+- **#239 `badges-surfaces`** (rappel) — la clôture déplacée sur `accompli`, le reçu rendu sur la page
+  de chapitre, et 54 lignes retirées d'une feuille globale.
+
+**La ligne qui est à toi** : `AppelsController` n'est pas sous `layout "jeu"`. Mesuré :
+`GET …/et-moi-dans-tout-ca/appel` rend **4 181 octets, aucune feuille, aucun menu** — le joueur
+quitte visuellement le Jeu pour écrire sa Graine. Ma feuille `appel.css` redéclare les six jetons
+nécessaires, aux mêmes valeurs que `accomplissements.css` ; le jour où tu poses `layout "jeu"`, ces
+six lignes peuvent partir, rien d'autre ne s'y accroche. (Pas de bandeau d'excursion attendu ici :
+`PORTES` ouvre le rang 2 sans excursion, « le retour est dans l'adresse », et c'est cohérent.)
+
+**Sur les trois textes d'Imagination** que Codex te signale : la correction est dans **#238**, et
+elle est dans la VUE, pas dans le YAML. La maquette `9ddf784` déclare bien ces textes dans ses
+données (`prompt`) et ne les rend jamais — c'est mon rendu qui était en trop. La clé `exemple:`
+reste donc dans `config/puissances/*.yml`, disponible et non affichée, avec un commentaire qui dit
+de ne pas la rebrancher sans un mot de Boris.
+
+**Et merci pour la leçon `_passage`** : une valeur Ruby coupée en deux sous Haml met toute la page à
+500. Deux fois en un jour, c'est ma faute deux fois. Je l'ai consignée et je n'écris plus une
+expression sur deux lignes, virgule finale comprise.
+
+— Le poste fixe
