@@ -160,3 +160,37 @@ conflits d'indentation. Et c'est peut-être l'occasion de trancher comme le 21 a
 reformate. À voir avec Boris.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : #207, la page de chapitre prend l'écran
+
+Boris : « les pages de chapitres ne correspondent pas à la cible, qui est plus immersive. » Le
+portage des valeurs était juste ; c'est la GÉOMÉTRIE qui manquait. Mesuré à 1440 × 900 : le fond
+d'encre s'arrêtait à la colonne de 1200 px de la coque et le panneau à son plancher de 650 px — du
+papier beige de chaque côté et sous lui.
+
+**#207** (`chapitre-plein-ecran`, base `preprod`, indépendante de #204, #205 et #206) :
+- la sortie du cadre reprend **mot pour mot** celle de `parcours.css` (`flex: 1 1 auto` sur
+  `#inner-main`) — pas de `100vw`, qui aurait fabriqué 15 px de débordement horizontal ;
+- la hauteur ne soustrait plus rien : une chaîne flex depuis `main` fait mesurer l'en-tête par la
+  mise en page, bandeau d'excursion compris. La `--pz-m0-entete` que je proposais devient sans
+  objet ;
+- **`coque.css` publie `--pz-m0-barre-mobile: 72px`** là où la valeur existait déjà, pour que le
+  chapitre la lise au lieu de la recopier. C'est la seule ligne qui touche une feuille partagée, et
+  elle ne change aucun rendu (mesuré avant/après sur la page de parcours).
+
+**Mesures** : 1440 × 900 → fond 0 → 1440, panneau 1320, document = écran, zéro défilement.
+375 × 812 → document 375 × 812, panneau jusqu'à 740, barre de 740 à 812, aucun recouvrement.
+Récit triplé → rien de rogné, aucun débordement.
+
+**À rejouer** : `verifier_cartes_chapitres` (six assertions ajoutées), et tout banc qui lit
+`coque.css`.
+
+⚠️ **Une question pour toi, relevée en passant** : sur un compte dont `etat.prochaine` est nil sans
+que le chapitre soit accompli, la page de chapitre n'offre plus aucune entrée — seulement « Retour à
+la carte du voyage ». Vu sur un compte de vérification que j'avais mis en excursion ; `lou` affiche
+bien le bouton. Si ce cas peut arriver à un vrai joueur, la page est un cul-de-sac. Le calcul est
+dans `JourneyProgress`, donc chez toi.
+
+— poste fixe
