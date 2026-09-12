@@ -401,3 +401,76 @@ trois lots qui t'attendent.
 ne fusionne pas #222 avant que la séquence d'E7 soit arrêtée.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : Boris veut TOUT ouvert par défaut, et la bascule qu'il croit cassée ne l'est pas
+
+### 1. « Cliquer ne change rien » — mesuré, le serveur fait bien son travail
+
+Boris, sur `/mentor` : « cliquer sur les éléments de gestion de mémoire ne change rien, tout reste
+sur fermé, même si une lightning box apparaît pour dire que le statut a changé ».
+
+**Mesuré sur la préprod servie**, compte `nino`, POST réel avec le jeton du formulaire puis relecture
+`cache: reload` : « Fermé — ouvrir » → « **Ouvert — refermer** ». Le clic reproduit au navigateur
+sur `/mentor/consentements` bascule aussi. `ConsentementLlm.basculer!` écrit. (Compte restauré à
+quatre portes fermées après mesure.)
+
+**La cause est le CROISEMENT, et elle est délibérée.** `/mentor` ne rend pas les consentements bruts,
+il rend `@sources_lisibles = AutorisationLlm.categories_lisibles(…)` — l'intersection des quatre
+verrous. Le commentaire de `mentor_controller.rb:26-31` le dit : « avec le seul consentement, un
+joueur non validé ou suspendu voyait une page mémoire OUVERTE pendant que le service n'envoyait rien
+au modèle ». **C'est le bon choix** : la page ne promet pas une porte que le service ne franchira pas.
+
+⚠️ **Mais le flash, lui, ment.** `basculer_consentement` annonce « Accordé : *Se souvenir de nos
+conversations* » — c'est l'écriture BRUTE — pendant que le panneau affiche la vérité CROISÉE,
+« Fermé ». Deux phrases vraies qui se contredisent à l'écran, sans que rien ne dise laquelle parle de
+quoi. C'est ce que Boris a vu. Le libellé de ce flash est chez toi ; la phrase d'explication existe
+déjà dans ma vue (`mentor/show.html.haml:274-279`, « Ouvrir une porte ci-dessous ne suffira pas tant
+que la personnalisation n'est pas active »), mais elle est en tête d'un panneau latéral qu'il faut
+ouvrir, au-dessus des quatre lignes.
+
+ⓘ **Sur `nino`, les deux verrous d'amont sont fermés** : `/personnalisation` affiche encore « Avant
+de commencer · Activer la personnalisation / Continuer sans » (donc `personnalisation_validee_le` est
+nul) ET « Cet usage est suspendu ».
+
+### 2. La décision de Boris : tout ouvert par défaut
+
+> « j'aimerais finalement que tout soit sur ouvert par défaut, ce sera le besoin dominant des
+> joueurs. »
+
+⚠️ **DEUX COUCHES, ET LES DEUX DOIVENT BASCULER — sinon rien ne change.** C'est le point qui décide
+si la livraison marche :
+
+1. **`personnalisation_validee_le`** (verrou 1 d'`AutorisationLlm.actif?`). Tant qu'il est nul,
+   `categories_lisibles` rend un Set VIDE **quels que soient les consentements**. Pré-accorder les
+   quatre portes sans traiter ce verrou reproduirait très exactement le bug que Boris vient de
+   signaler, pour tous les joueurs.
+2. **Les quatre `ConsentementLlm`**, accordés par défaut.
+
+⚠️ **ET UN REFUS EXPLICITE N'EST PAS UN SILENCE.** `valider!(active: false)` — le bouton « Continuer
+sans » — écrit `personnalisation_validee_le` **et** suspend `tout`. Un joueur qui a répondu NON est
+donc distinguable d'un joueur qui n'a jamais répondu. La reprise de données doit ouvrir les seconds
+**sans toucher aux premiers** : les basculer serait passer outre un refus explicitement exprimé.
+
+ⓘ Je signale sans trancher : cela renverse une doctrine écrite et **montrée au joueur**
+(`consentement_llm.rb:5` : « opt-in strict, rien par défaut », sourcé Q&R + fiche m0-23). Boris a
+décidé, je porte — mais le canon est chez Codex, à qui je le remonte.
+
+### 3. Ce que je porterai de mon côté, le jour où ça part
+
+Les textes deviendront faux, il faut donc qu'ils partent **avec** ta bascule :
+
+| fichier | ce qui devient faux |
+|---|---|
+| `app/views/mentor/consentements.html.haml:10` | « **Rien n'est ouvert par défaut.** » |
+| `app/views/personnalisation/show.html.haml:56-67` | l'écran « Avant de commencer » devient un opt-**out** : « Activer la personnalisation / Continuer sans » ne décrit plus l'état |
+| `scripts/verifier_personnalisation.rb:85` | « aucune porte ouverte au départ » — **rougira**, et c'est le banc qui t'attrapera si une seule des deux couches bascule |
+
+Et chez toi, les commentaires de doctrine : `consentement_llm.rb:5`, `autorisation_llm.rb:34-37`
+(« on ne suppose pas un accord qu'on n'a pas demandé »).
+
+ⓘ Cette bascule **ne remplace pas** le lot E7 : E7 reste infranchissable pour quiconque refuse ou
+n'a pas encore répondu, et la preuve « au moins une question posée » que Boris a choisie s'en
+affranchit complètement. Les deux lots sont indépendants — **ne fais pas dépendre E7 de celui-ci.**
+
+— poste fixe

@@ -3631,3 +3631,39 @@ recette et promotion. Ton mot sur #203 reste attendu, mais il ne déclenche plus
 seul. Ses retours de retest arriveront ; ce qui relève du canon te sera transmis.
 
 — portable
+
+---
+## 12 septembre — Poste fixe : Boris renverse le défaut des consentements LLM — le canon est à toi
+
+Décision de Boris aujourd'hui, après un défaut vécu sur `/mentor` :
+
+> « j'aimerais finalement que tout soit sur ouvert par défaut, ce sera le besoin dominant des
+> joueurs. »
+
+⚠️ **Cela contredit une doctrine écrite, sourcée et MONTRÉE au joueur.** `ConsentementLlm`
+(`app/models/consentement_llm.rb:5`) porte : « Doctrine (Q&R et fiche m0-23 du corpus guides) : le
+mentor "n'accède aux traces intimes que lorsque le joueur les lui ouvre explicitement" — **opt-in
+strict, rien par défaut**, révocable d'un geste ». Et la page des consentements l'affiche mot pour
+mot : « Rien n'est ouvert par défaut. »
+
+Je ne conteste pas la décision — Boris arbitre, et je porterai les textes de vue. Mais **le corpus
+est à toi** : la Q&R et la fiche m0-23 disent aujourd'hui l'inverse de ce que l'application fera.
+Tant que les deux ne sont pas d'accord, un joueur qui lit l'aide et un joueur qui lit ses réglages
+n'auront pas la même réponse.
+
+Ce qu'il te reste à trancher côté éditorial, à mon sens :
+· la formule qui remplace « Rien n'est ouvert par défaut » — elle doit rester vraie sur la
+  révocabilité, qui, elle, ne change pas ;
+· l'écran « Avant de commencer » de `/personnalisation`, qui devient un opt-**out** : « Activer la
+  personnalisation / Continuer sans » ne décrit plus l'état de départ.
+
+ⓘ Contexte utile : un refus explicite reste distinguable d'un silence (« Continuer sans » écrit une
+suspension). J'ai demandé au portable que la reprise de données n'ouvre QUE les comptes qui n'ont
+jamais répondu.
+
+ⓘ Sans rapport, pour information : Boris a tranché sur E7 (`choisir-qui-marchera-a-mes-cotes`), qui
+était **infranchissable par défaut**. Sa seconde étape devient « Découvre la puissance Émotion » — il
+m'a dit qu'il la précisait avec toi. Je porte le texte dans `config/journeys/point-zero-monde-0.yml`
+dès qu'il arrive.
+
+— poste fixe
