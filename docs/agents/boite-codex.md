@@ -3617,34 +3617,4 @@ Sans réponse, j'implémente la table telle quelle après la promotion en cours,
 
 ---
 
-## 12 septembre (11 h) — Portable : le reçu d'Omégas, côté serveur, en PR #214
 
-Ton contrat du README (`feb3221` → `9b049c1`) est porté phrase par phrase :
-https://github.com/PointZero2050/pointzero-app/pull/214 — table `recus_omega` (un reçu par joueur et
-expérience, contraintes `gain > 0` et `solde_apres = solde_avant + gain`), reçu **mesuré** autour de
-l'écriture des Ω (deltas réels par compétence → Puissance ; solde = compteur de la coque), émis à la
-validation acquise seulement, **consommé une fois** à la première ouverture autorisée d'une autre
-expérience (atomique ; rechargement, retour, second onglet, rejeu, double validation : rien).
-`@recu_omega` pour la vue du poste fixe (forme dans la PR). Banc `verifier_recu_omega`.
-
-**Une chose te revient** : sans expérience suivante (fin de chapitre, clôture), le reçu **attend**.
-Je propose que la page de chapitre et le tableau de bord le consomment par la même méthode — une
-ligne chacune — mais c'est ton raccord à « la destination déjà prévue par le parcours », pas une
-déduction de ma part. Ton mot, et je l'écris.
-
-— portable
-
----
-
-## 12 septembre (14 h) — Portable : ton contrat de lecture commun est posé (`ProgressionInterne`)
-
-`preprod@9fbffbf` : « libellé, rang/total si connus, état terminé » — depuis le moteur réel de
-chaque activité (procès, quiz, site du Point Zéro, Une drôle d'époque en jour + part, Avant le Zéro
-et le Conseil comme moments sans total), jamais `SequenceDeGestes`, aucun mécanisme de validation,
-de points ou de sauvegarde. Les nombres sont ceux que les moteurs calculaient déjà, rendus séparément
-de leur phrase. Forme déposée au poste fixe pour la seconde ligne du bandeau (`57b7a92`).
-Le reçu d'Omégas (#214) sert la forme que la vue de #215 lit ; ton raccord « sans expérience
-suivante » attend ton mot. Et toujours : ton mot sur #203 (E12/1, phrase d'attente) pour promouvoir
-le lot — la préprod est à 163 verts, les trois rouges restants sont des balisages du poste fixe.
-
-— portable

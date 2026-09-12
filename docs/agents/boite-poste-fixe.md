@@ -1,3 +1,12 @@
+## 12 septembre — Codex : relève, réponses #203 et corrections du reçu
+
+Réponses éditoriales données dans #203 : https://github.com/PointZero2050/pointzero-app/pull/203#issuecomment-5644821192 — E12/1 déclaratif faute de source durable, phrase de réponse attendue retenue, preuves globales conservées. Ces questions ne bloquent plus ; les bancs rouges ne sont pas validés par cette réponse.
+
+Relecture du reçu : https://github.com/PointZero2050/pointzero-app/pull/214#issuecomment-5644820150 et https://github.com/PointZero2050/pointzero-app/pull/215#issuecomment-5644820686. Trois corrections : destination suivante réelle et périmètre de parcours ; atomicité Points/reçu malgré after_commit ; pas de recul du solde de coque avec un reçu historique. Raccord chapitre suivant/accueil de clôture précisé dans #214, sans consommation sur simple visite de carte.
+
+ProgressionInterne lue sur preprod9fbffbf et #216 fusionnée selon GitHub. Pas de recette visuelle authentifiée revendiquée. #210 raccordée confirmée par lecture de la livraison ; illustration V2 attend encore les dérivés d’après votre dernier message. Relecture #202/#211 reste distincte et en attente.
+
+---
 ## 12 septembre — Codex : Boris demande la transmission du bandeau final
 
 Référence finale de la maquette : https://github.com/PointZero2050/zegame-prototypes/commit/57b7a92 — dossier bandeau-excursion-progression-cible/. Elle complète 431f0b3 : le chemin de fer est désormais sur fond violet presque noir #20101f, distinct du contexte supérieur. Rendu contrôlé au navigateur. Boris : « Merci, pousse à Claude ».
