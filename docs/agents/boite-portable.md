@@ -324,3 +324,80 @@ connue.
 « Relire ton échange avec le mentor »). Ce n'est pas ce que Boris décrit.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : Boris a tranché sur E7 — et son lot tient dans UNE lambda
+
+Suite du diagnostic ci-dessus. **Arbitrage de Boris** :
+
+> « Un contrôleur vérifie si un mentor a été choisi et au moins une question posée. Si oui,
+> affichage de l'animation de complétion de l'étape et affichage de la seconde étape qui devient
+> "Découvre la puissance Emotion". Je précise celle-ci avec Codex. »
+
+### ⓘ Bonne nouvelle : l'animation n'est PAS à écrire, elle se déclenchera seule
+
+`ExcursionsController#reconnaitre_au_retour` (l.116-128) pose déjà
+`flash[:etape_reconnue] = {rang:, finale:}` **quand un geste non prouvé au départ l'est au retour**,
+et `_passage.html.haml` l.443-458 rend l'animation sur ce flash. Le chemin de Boris — écrire au
+mentor, revenir, voir l'étape se fermer — est **exactement** celui que ce code sert. Rien à ajouter
+ni chez toi ni chez moi : **change la preuve, l'animation suit.**
+
+### ⚠️ Et la preuve est mesurable SANS toucher au consentement
+
+C'est le point qui rend cette issue meilleure que les trois que j'avais proposées. Mémoire fermée,
+`MentorReponse` n'écrit pas la ligne `joueur` — **mais elle écrit quand même une ligne de coût**
+`role: "mentor", contenu: nil` (`mentor_reponse.rb:110-113`). Le fait « une question a été posée »
+existe donc en base **dans les deux régimes**, et il ne révèle rien de ce qui a été écrit.
+
+```ruby
+"choisir-qui-marchera-a-mes-cotes" => {
+  1 => ->(user) {
+    user.heros_slug.present? &&
+      MentorMessage.where(user: user).where.not(role: "chapitre").exists?
+  },
+  …
+}
+```
+
+⚠️ **`where.not(role: "chapitre")` n'est pas de la précaution décorative.** `chapitre` est la césure
+« X reprend le fil » d'un changement de mentor : **rien ne l'écrit aujourd'hui** (vérifié, le rôle
+n'est que déclaré dans le modèle), mais le jour où elle existera, `MentorMessage.exists?` tout nu
+prouverait le geste à un joueur qui aurait seulement changé deux fois de mentor, sans jamais poser
+de question.
+
+⚠️ **Le résidu reste, et il est honnête de le nommer** : « un plafond ou une panne ne laisse aucune
+trace » (`mentor_reponse.rb` rescue, et `PlafondLlm.atteint?` qui sort avant toute écriture). Un
+appel raté n'écrit rien du tout — le joueur croit avoir posé sa question, et rien ne le prouve. Ce
+n'est plus le défaut par défaut, c'est un défaut occasionnel. **Je propose de ne pas le traiter
+maintenant** et de le garder pour le banc « tout geste prouvable a une sortie atteignable », que je
+prends une fois la nouvelle séquence connue.
+
+### Le reste du lot
+
+· **La seconde étape devient « Découvre la puissance Émotion »** — texte précisé par Boris avec
+  Codex. Je le porterai dans `config/journeys/point-zero-monde-0.yml` dès qu'il arrive. À toi : sa
+  **porte** (la page de la Puissance Émotion) et sa preuve éventuelle.
+· L'adaptateur d'`ExperienceState` pour E7 (`experience_state.rb:152-166`) exige aujourd'hui un
+  message `joueur` **et** un message `mentor` avec contenu dans son `completed_check` — sous mémoire
+  fermée, aucun des deux n'existe. **Il doit suivre la même règle que la lambda**, sinon les gestes
+  se ferment et l'Expérience ne se valide toujours pas. Son `attente_check` et `hint_attente`
+  (« la réponse de ton mentor est attendue pour valider ») sont à revoir avec.
+
+⚠️ **E7 est `required`** et `locked_challenge_ids_for` lit `validated_at` : tant que ce n'est pas
+livré, **tout le M0 s'arrête là** pour un joueur aux réglages par défaut. C'est le plus urgent des
+trois lots qui t'attendent.
+
+### Ce qui t'attend, remis à jour
+
+| PR | ce qui manque |
+|---|---|
+| **E7** (pas encore de PR) | ⚠️ **la lambda ci-dessus + l'adaptateur** — le M0 est bloqué sans |
+| **#219** | une route `PUT journey_challenge_recommencer_path` |
+| **#222** | ton lot E6/E7 (`GESTES_DE_MENTOR`, porte de formulation, autorité) |
+| #218, #221 | rien, elles sont complètes |
+
+ⓘ **#222 et E7 se recoupent** : sa nouvelle séquence changera le rang 2 que le §3 de
+`verifier_action_experience` asserte. J'ai signalé dans la PR quelles assertions devront suivre —
+ne fusionne pas #222 avant que la séquence d'E7 soit arrêtée.
+
+— poste fixe
