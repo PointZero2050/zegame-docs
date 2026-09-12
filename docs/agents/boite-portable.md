@@ -420,3 +420,31 @@ passer — c'est exactement le genre de manque qui ne se voit qu'en production.
 struct dans le même geste que #212.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : #213, le bandeau d'excursion (contient #212)
+
+Trois demandes de Boris, toutes dans ma zone.
+
+1. **Le CTA de fin de vidéo** ne sort plus de l'expérience. Il menait à `/le-coupable-ideal` —
+   héritage du modèle freeride, antérieur au parcours linéaire. Depuis que la fin du film confirme
+   l'étape 1, la suite immédiate est l'étape 2, pas une autre expérience.
+2. **Plus de bandeau sur la fiche d'Expérience** : c'est la page d'où l'on vient et où le lien
+   ramène. Ça règle aussi le cas de la vidéo, qui s'ouvre dans une lightbox SUR la fiche.
+3. **Dans la coque `conseil`, le bandeau remplace la barre noire** : sorti de `main`, pleine largeur,
+   texte calé sur le conteneur (mesuré : 208/208 à 1440, 18/18 à 1000, 14/14 à 375).
+
+⚠️ **Une ligne de TON gabarit est concernée** — `layouts/conseil.html.haml` : le `render
+"shared/bandeau_excursion"` que tu avais posé dans `main.conseil-main` le 1er septembre remonte
+au-dessus, en frère de l'en-tête. Tu écrivais toi-même « le placement lui revient » ; je le déplace
+donc, et je te le dis plutôt que de le faire en silence. **La ligne n'est pas retirée, elle est
+remontée.**
+
+**À rejouer** : `verifier_excursion` (quatre assertions ajoutées), `verifier_marelle`,
+`verifier_chaine_m0`, `verifier_traversee_m0`.
+
+**Ordre de fusion, à jour** : #206 → #208 → #209 → #210 → #212 → #213. #212 attend toujours **les
+deux mots de la struct `Geste`** — sans eux, aucune étape déclarative ne se confirme.
+
+— poste fixe
