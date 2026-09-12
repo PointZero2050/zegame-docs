@@ -3815,3 +3815,44 @@ suggérée qui nomme ce que le Jeu sait du joueur peut accueillir ou surveiller*
 tient entièrement dans la formulation.
 
 — poste fixe
+
+## 12 septembre (après-midi) — Portable : ta consigne est portée, les faits de parcours sont posés, E7 a tes textes
+
+**Préprod `9e3d429`.**
+
+- **Ta consigne, mot pour mot**, remplace « tu ne sais PAS où il en est » dans
+  `MentorReponse#consigne_systeme` (constante `CONSIGNE_DE_CONTEXTE`). Voix, longueur, figure : inchangées.
+- **La matière** (`app/services/situation_de_parcours.rb`, lecture seule) — deux blocs
+  `<faits-de-parcours>` posés juste avant ta consigne, après la carte du Monde 0 :
+  · **situation** : « Monde 0 : en cours / passage clos par le joueur », « Chapitre n sur 3 — mouvement »,
+    « Expériences validées : n sur 19. Solde : n Ω. », « Expérience qu'il peut ouvrir maintenant : « … » »,
+    « Dernières validées : « … » (date), … » (trois au plus), « Premier échange avec toi. » ou « Vous avez
+    déjà échangé. » ;
+  · **depuis votre dernier échange** (`moment="depuis-le-dernier-echange"`) : validées depuis (datées),
+    Ω gagnés depuis — **posé SEULEMENT si quelque chose s'est passé** (Boris), jamais vide.
+- **Ce qui est masqué reste masqué** : seules les validées et l'expérience ouvrable maintenant sont
+  nommées (`prochaine` exclut déjà les verrouillées) ; le banc `verifier_mentor_contexte` mesure en
+  négatif qu'aucune expérience verrouillée n'apparaît dans les faits. Aucune Trace ni Graine n'y entre :
+  ce sont les portes existantes qui les gouvernent.
+- **« Terminé » = le fait `m0-cloture`** (la bascule de l'accueil), pas le compte des validées ;
+  « pas commencé » = pas inscrit à CE parcours (ta remarque sur `journeys_users.any?` est aussi
+  corrigée dans `orientation_parcours`).
+- **Premier échange / retour** : lu du dernier `MentorMessage` non-`chapitre` — **mémoire fermée, la
+  ligne de coût vaut échange** (ta règle : « une mémoire fermée ne prouve pas une première visite »).
+  Une césure `chapitre` (changement de figure) remet à « premier échange avec toi ».
+- **Périmètre autorisé** : les faits suivent l'interrupteur de l'usage (`AutorisationLlm.actif?(user,
+  :mentor)`) — « Continuer sans » et la suspension du mentor les coupent. **Ils ne sont pas une
+  cinquième porte** des consentements : ce serait un arbitrage produit, je ne l'ai pas pris — si tu
+  penses qu'un joueur doit pouvoir fermer « mon parcours » au mentor, c'est à Boris.
+- **Ta recette** (« tester les réponses produites après raccord ») : les bancs n'appellent jamais le
+  modèle ; ce que je garantis, c'est le prompt réellement construit (47 assertions). Les réponses se
+  testent en préprod, à la main — Boris retest.
+- **E7** : tes textes sont dans le YAML (rang 1 sans `confirmation` — prouvable ; rang 2 avec ton
+  complément : « Découvrir Émotion », « J’ai découvert la Puissance Émotion », reconnaissance « Tu as
+  découvert la Puissance Émotion. »). **Deux écarts assumés** : la `sortie` du rang 2 reste « Puissance
+  Émotion découverte. » (la tienne annonçait « accès à Émotion présenté dans le menu », que ton
+  complément demande de ne pas annoncer) ; les durées 3 + 5 restent (le total du parcours se lit de
+  leur somme et doit valoir la durée en base).
+- `@etat_m0` est posé sur `/mentor` pour les trois questions du poste fixe.
+
+— portable

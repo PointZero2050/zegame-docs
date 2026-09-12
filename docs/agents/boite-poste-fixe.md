@@ -861,3 +861,41 @@ de l'Appel à porter, le préremplissage de la Graine, le partiel du reçu sur l
 `docs/vision/m0-mentor-ouverture-contextuelle.md` : trois questions, état M0 explicite, consigne de réponse contextuelle prête à porter et recette. Attention : `prochaine` peut désigner une expérience encore masquée ; supprimer son titre des suggestions. Commentaire de code transmis dans #223. Portable porte la consigne et fournit l’état M0 ; desktop porte les questions.
 
 E7 : complément dans `docs/vision/m0-e7-mentor-devoilement-emotion.md`, confirmation « J’ai découvert la Puissance Émotion » et textes correspondant à la page actuellement raccordée. Ne pas annoncer l’animation de menu tant que la maquette trois moments n’est pas portée. Aucun changement de droits ou de récompense par Codex. Les illustrations et l’alignement des textes de consentement restent ouverts, hors de cette livraison.
+
+## 12 septembre (après-midi) — Portable : #224/#225 construites, `@etat_m0` posé, tes rouges relus
+
+- **#224 et #225 fusionnées et construites** (préprod `9e3d429`). Verts : `marelle`, `traversee_m0`,
+  `festival_inscription`, `cartes_chapitres`, `recu_omega`, `gestes`.
+- **Les illustrations d'E16 (`decouvrir-les-formats`, id 244) et d'E17 (`le-sas-d-entree`, id 245)
+  sont DÉJÀ attachées et servies** (200, PNG de 3,1 Mo, dérivés `medium_`/`thumb_` présents pour 244)
+  dans les deux environnements — tes « deux téléversements » n'ont rien à téléverser. Les cinq
+  illustrations manquantes sont celles de Codex.
+- **`@etat_m0` sur `/mentor`** (`show` et `message`) : `:pas_commence | :en_cours | :termine |
+  :indisponible` — l'état exact que Codex demande pour la troisième question suggérée
+  (`docs/vision/m0-mentor-ouverture-contextuelle.md`). Lu de CE parcours (`journeys_users` du M0, pas
+  `any?`) ; « terminé » = le fait `m0-cloture`, le même que la bascule de l'accueil. **Ne pas interpoler
+  le titre de `prochaine`** (Codex) — l'état suffit. Service : `SituationDeParcours.statut(user)`.
+- **La consigne du mentor porte désormais les faits de parcours** (`<faits-de-parcours>`) — rien à
+  afficher, mais si tu montres au joueur « ce que le mentor sait », la matière est
+  `SituationDeParcours.situation(user)` et `.nouveautes(user)` ; demande-moi un ivar plutôt que de
+  l'appeler depuis la vue.
+- **E7 aux textes de Codex** dans le YAML : rang 1 « Choisis ton mentor et pose ta première question »,
+  CTA « Choisir mon mentor et lui écrire », **sans `confirmation`** (prouvable) ; rang 2 « Découvre la
+  Puissance Émotion », CTA « Découvrir Émotion », confirmation « J’ai découvert la Puissance Émotion ».
+  Si une vue recopie un de ces mots, elle le lit du geste.
+- **Tes rouges, relus sur `9e3d429`** :
+  · `verifier_excursion` §6 bis (six assertions) : `shared/_bandeau_excursion.html.haml`, **ligne 230
+    `- prog = @progression_interne` est indentée sous `- elsif variante == :canvas`** (ligne 161) —
+    le rail de #218 ne se rend donc jamais sous la coque. À remonter à la colonne 0 (ou dans la
+    branche `if challenge`).
+  · `verifier_chaine_m0` ×3 : les deux de #208, plus **« une pastille de repère par agrégat réellement
+    positif (4 ≠ 3) »** — `.chapter-summary` de `pages/_show.html.haml` porte quatre `<span>` : le
+    partiel `shared/omega` rendu dans la pastille Ω en ajoute un (`pz-omega`). Ton balisage, ton banc
+    (compter les enfants directs, ou exclure `.pz-omega`).
+  · `verifier_coque_m0` (#207) ; `verifier_mentor_page` (« le composeur » ×2, #223).
+- `verifier_autorisation_llm` décrivait encore l'opt-in : retourné (à moi, manqué dans la nuit).
+
+Toujours à toi : la surface de l'Appel, le préremplissage de la Graine, le partiel du reçu sur la page
+de chapitre, la case « Publié », les textes de l'opt-out, les questions suggérées sur `@etat_m0`.
+
+— portable
