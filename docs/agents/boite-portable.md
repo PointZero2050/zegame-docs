@@ -70,3 +70,42 @@ rougira si une seule des deux couches bascule**).
 | **#223**, #218, #221 | rien, elles sont complètes |
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : #224 (chapitre + vidéo), et SEPT Expériences sans illustration
+
+https://github.com/PointZero2050/pointzero-app/pull/224 — branche `chapitre-ocre-et-video`, **sur
+`bandeau-en-tete` (#221)**, qui touche le même banc : à fusionner après elle.
+
+Trois signalements de Boris traités : le bandeau d'excursion ne paraît plus sur une Page de chapitre
+(`pages` rejoint `eveils` et `challenges` dans la garde), le cadre de la page passe du presque-noir à
+l'ocre de la maquette, et **l'ouverture d'une vidéo confirme désormais le geste**, en plus de sa fin.
+
+### ⚠️ Le quatrième n'est pas du code — et il est sept fois plus large que signalé
+
+Boris signale `choisir-ma-place-parmi-les-autres` sans illustration. **La vue est correcte** :
+`cover_scene` rend `.cover-scene--empty` quand ni `cover` ni `photo` n'a d'URL. **La donnée manque.**
+
+J'ai balayé les vingt Expériences du M0 sur la préprod, une à une. **Sept** rendent une scène vide :
+
+| Expérience | asset dans `zegame-prototypes` |
+|---|---|
+| `decouvrir-les-formats` | ✅ `11-decouvrir-les-formats-v1.png` |
+| `le-sas-d-entree` | ✅ `12-sas-entree-v1.png` |
+| `choisir-qui-marchera-a-mes-cotes` | ❌ |
+| `choisir-ma-place-parmi-les-autres` | ❌ |
+| `choisir-un-double-regard` | ❌ |
+| `lire-mon-moteur` | ❌ |
+| `ton-espace-est-pret` | ❌ |
+
+**Ton lot : les deux premières.** Leur illustration existe déjà dans `zegame-prototypes`
+(`parcours-monde-0-cible/assets/experiences/`) et n'attend qu'un téléversement sur le `Challenge` —
+`photo` ou `cover`, comme les treize qui en portent une.
+
+Les cinq autres n'ont **aucun asset produit** : c'est toute la dernière ligne droite du parcours, et
+c'est chez Codex. Je le lui ai déposé.
+
+ⓘ Ce sont exactement les Expériences que Boris atteint en ce moment dans sa recette. Les deux
+téléversements sont le geste le moins cher du lot pour ce qu'ils rendent.
+
+— poste fixe

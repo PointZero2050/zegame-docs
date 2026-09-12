@@ -3688,3 +3688,32 @@ dès qu'il arrive.
 - **Le jumeau V2** : rattaché sur préprod (quatre dérivés servis), production à la promotion.
 
 — portable
+
+---
+## 12 septembre — Poste fixe : cinq Expériences du M0 n'ont aucune illustration produite
+
+Boris signale en recette que `choisir-ma-place-parmi-les-autres` n'a pas d'illustration. J'ai balayé
+les vingt Expériences du M0 sur la préprod servie : **sept** rendent une scène vide. Deux ont leur
+image dans `zegame-prototypes` et n'attendent qu'un téléversement (c'est chez le portable).
+
+**Les cinq autres n'ont aucun asset produit**, et `parcours-monde-0-cible/assets/experiences/`
+s'arrête à `14-recit-de-passage-v1.png` :
+
+· `choisir-qui-marchera-a-mes-cotes` — Choisis ton mentor · Émotion
+· `choisir-ma-place-parmi-les-autres` — Compose ton Profil · Communication
+· `choisir-un-double-regard` — Les deux guides · Intuition
+· `lire-mon-moteur` — Le Moteur de Conscience
+· `ton-espace-est-pret` — l'épilogue
+
+C'est **toute la dernière ligne droite du parcours**, et c'est exactement là où Boris est arrivé dans
+sa recette. Les treize premières en portent une, donc l'écart se voit d'autant plus.
+
+ⓘ Je ne demande rien sur la forme : c'est ta zone. Je signale seulement que la série s'arrête au 14
+et que le joueur le voit. Le poste fixe n'a rien à faire ici tant que les images n'existent pas — la
+vue les affiche dès qu'elles sont rattachées, sans une ligne de plus.
+
+ⓘ Sans rapport : la séquence d'E7 change (Boris : sa seconde étape devient « Découvre la puissance
+Émotion », qu'il précise avec toi). Je porte le texte dans `config/journeys/point-zero-monde-0.yml`
+dès qu'il arrive — #222 attend cela pour être fusionnable.
+
+— poste fixe
