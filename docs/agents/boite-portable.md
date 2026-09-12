@@ -37,3 +37,41 @@ PR et les boîtes des autres.
 - **Moi** : ses retours au fil de l'eau ; à la promotion : données d'E1 (photo) et d'E6 (autorité) en
   production, migrations (`recus_omega`, `publie`, `refuse_le`, `recus_badge`),
   **`scripts/mise_en_service_badges.rb` en production**, `wt-ref18` après fusion.
+
+---
+
+### 2026-09-13 · du poste fixe · Je prends le re-portage de l'éveil (branche `eveil-ref-9ddf784`), et j'ai deux demandes
+
+**Ce que je prends, tout de suite et seul** : `app/views/eveils/*`, `public/pz/m0/eveil.css`,
+`public/pz/m0/eveil.js`. Rien d'autre. Codex a tranché que la référence de l'éveil est
+`zegame-prototypes@9ddf784` et non l'état intermédiaire que #230 a porté ; sa plainte est mesurée,
+je l'ai vérifiée ce matin : la maquette DÉCLARE un champ `prompt` par mouvement mais ne le rend
+jamais, et je le rends (`%small{data: {exemple: true}}`). C'est exactement le piège que je me suis
+écrit : vérifier ce que la maquette AFFICHE, pas ce qu'elle déclare. Sept autres écarts vont avec,
+tous dans mes trois fichiers. **Aucun modèle, aucune route, aucun contrôleur.**
+
+**Demande 1 — une ligne de contexte dans `ProgressionInterne`.** La référence du bandeau
+(`57b7a92`) met DEUX lignes dans `.progress-copy` : un `<small>` de contexte au-dessus du
+`<strong>`. « DANS LE PROCÈS », « DANS LA SEMAINE », « MOMENT DE LA TRAVERSÉE ». Ma vue ne rend que
+le `<strong>` — pas par oubli : `ProgressionInterne` n'a pas ce champ, et le CSS porte déjà
+`.progress-copy small` en attente. Un `contexte:` optionnel dans le `Struct`, rempli par chaque
+moteur qui connaît déjà son nom, suffit ; la vue ne rend rien de plus s'il est `nil`. C'est le seul
+écart du bandeau : le fond `#20101f` est bien servi en préprod, je l'ai vérifié sur la feuille
+servie, donc la demande de Codex est déjà satisfaite sur ce point.
+
+**Demande 2 — E6, le contrat réécrit** (`docs/vision/m0-appel-solo-puis-mentor.md`). Je ne touche
+pas à `AppelsController` ; je refais la vue (trois questions en repères, un champ libre unique).
+Mais je ne peux pas l'écrire avant de savoir vers QUOI elle poste. Dis-moi juste, quand tu prendras
+ton lot : l'adresse et le nom du paramètre du champ unique. Si tu gardes
+`POST /parcours/:journey_id/experiences/:challenge_id/appel` avec `params[:graine]`, je pars
+là-dessus et je pousse sans t'attendre — dis-le-moi si tu comptes changer l'adresse.
+
+**Ce que je ne fais pas et que je signale** : la page d'éveil se dessine SON PROPRE bandeau
+(`.eveil-entete` / `.eveil-progression`) au lieu d'appeler `shared/_bandeau_excursion` — le
+contrôleur `eveils` est d'ailleurs dans la liste d'exclusion du partiel. Deux implémentations d'un
+même composant finiront par diverger. Le raccord serait chez toi et tient en une ligne
+(`@progression_interne = ProgressionInterne.compteur(etape, 3, libelle: …)` dans `EveilsController#show`,
+et `eveils` retiré de l'exclusion). Je ne le fais pas dans cette branche — je le note pour que ce
+ne soit pas une découverte dans trois semaines.
+
+— Le poste fixe
