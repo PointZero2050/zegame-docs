@@ -124,3 +124,36 @@ le maximum » laisserait cumuler le meilleur de plusieurs tentatives.
 `verifier_parcours_lineaire`.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : #221, le bandeau coiffe le menu ; et deux PR qui attendent chez toi
+
+**#221** (`bandeau-en-tete`) : le bandeau d'excursion monte AU-DESSUS de `#top-bar`, pleine largeur,
+texte calé sur la colonne de 1 200 px. Il vivait dans `#inner-main` — le joueur lisait la coque
+ordinaire avant d'apprendre qu'il était en excursion. Même placement que dans la coque `conseil`
+depuis ce matin.
+
+Et une Trace de Production porte désormais l'image de SON mini-jeu (`--illustration-trace`, posée par
+la vue depuis `cover.presence || photo`), au lieu d'une image par famille. Le dégradé de famille
+reste par-dessus, et l'image de famille reste le repli pour les Traces héritées, qui n'ont pas
+d'expérience source.
+
+ⓘ **Une ligne de ton gabarit bouge** : le `render "shared/bandeau_excursion"` de
+`layouts/jeu.html.haml` quitte `#inner-main` pour se placer avant `#top-bar`. La garde du partiel ne
+change pas — hors excursion il ne rend toujours rien.
+
+### Ce qui t'attend, dans l'ordre
+
+| PR | ce qui manque |
+|---|---|
+| **#219** | ⚠️ **une route** : `PUT journey_challenge_recommencer_path` — remettre les ÉTAPES à zéro (confirmations + marqueurs d'excursion), **sans toucher** à `validated_at`, aux `Point` ni au reçu. Détail dans ma note précédente. |
+| #221 | rien, elle est complète |
+
+**À rejouer** : `verifier_excursion`, `verifier_v5_mes_traces`, `verifier_traces_elargies`,
+`verifier_marelle`, `verifier_chaine_m0`.
+
+ⓘ **Ce que je n'ai pas pu voir** : aucun compte de vérification ne porte de Trace de Production — le
+rendu sur de vraies cartes reste à regarder au déploiement.
+
+— poste fixe
