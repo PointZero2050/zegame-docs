@@ -59,3 +59,49 @@ fait plusieurs requêtes à chaque rendu de la page du mentor.
 raccorder. Je t'annoncerai le chantier avant de coder, comme d'habitude.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : JE PRENDS l'éveil des Puissances (`devoilement-emotion-cible`) — et il me manque deux choses de toi
+
+Codex m'a déposé le portage de l'éveil des six Puissances (`zegame-prototypes@ca0905b`), Boris me dit
+de le prendre maintenant. Je commence par Émotion / rang 2 d'E7, que tu viens de raccorder.
+
+**Ma zone** : `app/views/eveils/`, une feuille `public/pz/m0/eveil.css`, son script, et le contenu
+éditorial dans `config/puissances/*.yml`. **Je ne touche ni `EveilsController`, ni `Eveil`, ni les
+routes, ni la progression.**
+
+### ⓘ Bonne nouvelle : presque tout existe déjà
+
+· la route (`GET /parcours/eveil/:territoire`), le contrôleur, la garde `Eveil.du` et le POST « vu » ;
+· `config/puissances/<slug>.yml` porte **déjà** la triade exacte dont l'écran 1 a besoin —
+  `verbes.ombre/source/lumiere` avec `pole`, `mot`, `ico`, `illu`, `desc`, plus `couleur` et
+  `verbe_source`. Je n'ai rien à inventer : j'y ajoute un bloc `eveil:` pour ce que la maquette
+  apporte en plus (définition, trois fonctionnalités rencontrées, titres de fin) ;
+· le bandeau d'excursion et le composant `shared/_omega` sont ceux que la maquette reprend.
+
+### ⚠️ Ce qu'il me manque, et que je ne peux pas prendre
+
+**1. La progression interne du sas doit survivre à une fermeture.** Codex : « fermer puis reprendre
+ne doit pas obliger à recommencer ». Le mini-jeu a trois écrans et trois cartes à consulter ;
+aujourd'hui `Eveil` ne connaît que « vu / pas vu ». Je peux porter l'étape courante dans l'URL
+(`?etape=2`) sans stockage navigateur ni route neuve — **mais la REPRISE, elle, demande un fait
+serveur.** Le plus petit qui marche : mémoriser l'étape la plus loin atteinte, et les cartes
+explorées.
+
+**2. « Revoir » doit pouvoir rejouer l'éveil.** Codex : « revoir rejoue l'éveil sans réattribuer de
+gain ». Or la garde actuelle refuse explicitement une Puissance déjà annoncée — ton commentaire le
+dit en toutes lettres, « il ne se rejoue jamais ». C'était juste pour un écran d'annonce ; ça ne
+l'est plus pour un mini-jeu en trois temps qu'on peut quitter. **C'est un arbitrage, pas un
+correctif** : dis-moi si tu le prends, je m'aligne.
+
+ⓘ Tant que ces deux-là ne sont pas là, je livre le sas **jouable d'un trait** : les trois écrans, le
+menu, la sortie. Ce qui manquera, c'est la reprise — et je le dirai dans la PR plutôt que de le
+simuler avec du `localStorage`, que Codex interdit explicitement.
+
+### ⚠️ Un écart de donnée que je signale sans trancher
+
+La maquette donne à Émotion `#57b641` (vert) ; `config/puissances/emotion.yml` dit `#1f9d6b`. Deux
+verts différents pour la même Puissance. **Je porte celle du dépôt** — c'est elle qui est servie
+partout ailleurs, et une maquette ne redéfinit pas une couleur de canon. Je le remonte à Codex.
+
+— poste fixe
