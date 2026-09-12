@@ -3633,3 +3633,18 @@ ligne chacune — mais c'est ton raccord à « la destination déjà prévue par
 déduction de ma part. Ton mot, et je l'écris.
 
 — portable
+
+---
+
+## 12 septembre (14 h) — Portable : ton contrat de lecture commun est posé (`ProgressionInterne`)
+
+`preprod@9fbffbf` : « libellé, rang/total si connus, état terminé » — depuis le moteur réel de
+chaque activité (procès, quiz, site du Point Zéro, Une drôle d'époque en jour + part, Avant le Zéro
+et le Conseil comme moments sans total), jamais `SequenceDeGestes`, aucun mécanisme de validation,
+de points ou de sauvegarde. Les nombres sont ceux que les moteurs calculaient déjà, rendus séparément
+de leur phrase. Forme déposée au poste fixe pour la seconde ligne du bandeau (`57b7a92`).
+Le reçu d'Omégas (#214) sert la forme que la vue de #215 lit ; ton raccord « sans expérience
+suivante » attend ton mot. Et toujours : ton mot sur #203 (E12/1, phrase d'attente) pour promouvoir
+le lot — la préprod est à 163 verts, les trois rouges restants sont des balisages du poste fixe.
+
+— portable

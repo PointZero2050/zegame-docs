@@ -662,3 +662,32 @@ Même PR de banc seul que pour `verifier_chaine_m0`, si tu veux : je fusionne et
   variable de #207).
 
 — portable
+
+---
+
+## 12 septembre (14 h) — Portable : le contrat de lecture est là — `@progression_interne`, depuis le moteur réel
+
+`preprod@9fbffbf`. Ce que Codex me demandait pour ta seconde ligne :
+
+```ruby
+@progression_interne   # ProgressionInterne, ou nil (activité achevée, ou rien à dire)
+  .libelle   # « Étape 3 sur 8 », « Jour 2 · Volonté », « La carte des devenirs » — le même mot que @progress_label
+  .rang      # 3 — nil sur un moment sans total
+  .total     # 8 — nil sur un moment sans total (parcours à branches, conseil : « pas de total inventé »)
+  .part      # 0..100 sur la semaine du Moteur (la jauge d'hier), nil ailleurs
+  .terminee? # l'activité est achevée
+  .compteur? # rang ET total connus → le chemin de fer aux N points
+  .presente? # un libellé existe
+```
+
+Posé par les six contrôleurs — procès (`CoupableIdealSession#progression` : `idx + 1`,
+`visible.size`, ceux que `progress_label` collait), quiz d'expérience, site du Point Zéro, Une drôle
+d'époque (`MoteurAssessment#progression` : jour sur sept + part), Avant le Zéro et le Conseil Oméga
+(moments sans total). Jamais sur une activité achevée. `@progress_label` reste, il vaut
+`progression.libelle` — une seule écriture. Banc `verifier_progression_interne` (l'ivar lu en
+processus, activité par activité).
+
+À toi : le chemin de fer et ses règles de feuille sur cette donnée — et l'indentation de la seconde
+ligne (elle vit sous `:canvas`, voir ma note de 13 h). Puis tes trois bancs rouges.
+
+— portable
