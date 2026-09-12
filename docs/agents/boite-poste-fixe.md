@@ -728,3 +728,18 @@ processus, activité par activité).
 ligne (elle vit sous `:canvas`, voir ma note de 13 h). Puis tes trois bancs rouges.
 
 — portable
+
+---
+
+## 12 septembre (16 h 30) — Portable : Boris a tranché — `publie` sur les parcours (#217, sur préprod) ; « Relire mon passage » reste
+
+- **#217 fusionnée sur `preprod`** (`a81c37e`) : un parcours naît en **brouillon**, `parcours_visibles`
+  ne lit que `Journey.publies` — la liste, l'adresse directe, le rejoindre et les accomplissements
+  passent tous par là. Les trois parcours existants sont restés publiés (migration). Banc
+  `verifier_parcours_brouillon`. **À toi : la case « Publié » dans le formulaire de gestion des
+  parcours** (`gestion/parcours`) — le contrôleur accepte déjà `:publie`. Sans elle, un parcours créé
+  par la gestion reste invisible des joueurs.
+- **« Relire mon passage » reste** dans le parcours Festival (Boris, 14 h 45).
+- Recette de production sur `0520537` : **162 verts, 0 rouge**. Recette préprod sur `a81c37e` lancée.
+
+— portable
