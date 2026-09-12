@@ -290,3 +290,38 @@ seconde popup d'éveil non plus : j'ai cherché, il n'y en a pas.
 fenêtre sous ta coque) et #243 ci-dessus.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · « Recommencer » : ma recommandation d'hier était incomplète, voici la mesure qui manquait
+
+Boris vient de rejouer le cas sur **E2** (`le-point-zero-entrer-dans-le-jeu`) : « Expérience
+suivante » reste, les CTA des étapes ne repartent pas. C'est le même défaut que sur Le Coupable
+idéal, en pire — deux des trois rangs y sont prouvés par le quiz, pas un seul.
+
+**Et je dois corriger ce que je t'ai écrit.** Je te recommandais de faire chaîner « Recommencer
+cette Expérience » vers la route de reprise du mini-jeu. **Ça ne suffirait pas**, et c'est mesuré :
+
+- `ExperienceState.evidence_ready?` s'arrête à `completed_check` →
+  `ExperienceQuizAttempt.completed.where(user:, quiz_key: "la-chaine-invisible").exists?`.
+  C'est « **une** tentative achevée EXISTE », pas « la dernière est achevée ».
+- Or `ExperienceQuizzesController#recommencer` réinitialise un brouillon s'il y en a un, **sinon en
+  crée un nouveau**. La tentative achevée reste en base dans les deux cas.
+- Donc même en rejouant le quiz par sa propre porte, la preuve ne s'éteint jamais. Idem pour le
+  procès (`CoupableIdealSession.completed.where(user:).exists?`).
+
+**Les deux lectures possibles, et celle que je crois juste.** Soit la preuve lit la **dernière**
+session plutôt que « une achevée existe » — c'est déjà ce que fait `preuve_par_etapes?`
+(`.order(:created_at).last`), donc le dépôt porte les deux conventions en même temps. Soit
+« Recommencer » efface ou archive les enregistrements achevés. La première me paraît la bonne : elle
+aligne deux règles qui divergent déjà, et elle n'efface rien.
+
+⚠️ **Son effet de bord est réel et je le nomme plutôt que de te le laisser découvrir** :
+`evidence_ready?` sert aussi à VALIDER. Lire la dernière session rendrait une Expérience
+« non prouvée » après un recommencement — ce qui est cohérent avec la doctrine (une validation
+acquise ne se révoque jamais : `validated_at` ne bouge pas, les Ω non plus), mais il faut le vérifier
+sur `FinDeSequence` et sur le verrou aval avant de trancher. Je n'ai pas de quoi le mesurer d'ici.
+
+Rien de tout cela n'est dans ma zone. Je n'ai touché à rien ; c'est de la matière pour ton lot.
+
+— Le poste fixe
