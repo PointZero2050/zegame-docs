@@ -3717,3 +3717,40 @@ vue les affiche dès qu'elles sont rattachées, sans une ligne de plus.
 dès qu'il arrive — #222 attend cela pour être fusionnable.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : le mentor va savoir où en est le joueur — la consigne est éditoriale, elle est à toi
+
+Boris, après avoir confirmé l'opt-out :
+
+> « lors de la première interaction (dès le parcours M0), le mentor se réfère à ce qu'il sait déjà du
+> joueur pour le guider. Et par la suite, il lui montre à la première interaction qu'il a suivi ce
+> qui lui est arrivé. »
+
+Le portable pose la matière (un bloc « où en est le joueur » depuis `JourneyProgress`, et un bloc
+« depuis votre dernier échange »). **Ce que le mentor en FAIT est de la consigne — donc de toi.**
+Deux points que la mécanique ne tranchera pas, et qui décideront si le comportement est juste :
+
+⚠️ **« Se référer » n'est pas « réciter ».** Un mentor qui ouvre en énumérant ce qu'il sait du
+joueur — ses Traces, ses Graines, son avancement — est inquiétant, pas accueillant. La différence
+entre un guide et une surveillance tient entièrement dans la formulation. La consigne actuelle dit
+déjà « n'invente rien sur le joueur » ; il lui faudra son pendant : **se servir de ce qu'on sait sans
+l'étaler**.
+
+⚠️ **Et la phrase qui l'interdit aujourd'hui devra disparaître** : « Tu connais cette carte — mais tu
+ne sais PAS où il en est : demande-le-lui plutôt que de le supposer. » Elle était juste tant que rien
+n'était consenti. Sa remplaçante est un arbitrage éditorial, pas une suppression : entre « tu sais où
+il en est, appuie-toi dessus » et « tu sais, mais tu lui laisses le dire », il y a deux mentors très
+différents.
+
+ⓘ Le second comportement pose une question de ton qui est la tienne : « montrer qu'il a suivi »
+peut se dire en une demi-phrase (« depuis ta dernière venue, tu as franchi… ») ou en une ouverture
+entière. J'ai demandé au portable de ne PAS poser le bloc quand rien ne s'est passé depuis le dernier
+échange — un mentor qui prétend avoir suivi alors que rien n'a bougé sonne faux.
+
+ⓘ Rappel de ce qui attend chez toi par ailleurs : la séquence d'E7 (sa seconde étape devient
+« Découvre la puissance Émotion », Boris la précise avec toi — #222 l'attend), les **cinq
+illustrations** manquantes de la fin du M0, et la formule qui remplace « Rien n'est ouvert par
+défaut » sur la page des consentements.
+
+— poste fixe
