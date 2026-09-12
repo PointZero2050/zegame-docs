@@ -243,3 +243,31 @@ La règle y remonte, et son surtitre suit sa destination.
 `verifier_signe_omega`, `verifier_traversee_m0`, `verifier_parcours_lineaire`, `verifier_ux`.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : #209, `lint` repasse au VERT (46 → 0)
+
+Boris a demandé la mesure avant de trancher : **21 littéraux portent une virgule finale contre 205
+qui n'en portent pas**. Ce n'est donc pas le cas du 21 août — neuf sur dix respectent déjà la règle,
+ce sont des oublis. Il a dit « corrige dans ce cas ».
+
+**#209** (`style-rubocop`) : 21 virgules finales, 8 alignements de `else`/`end`, 3 lignes vides après
+le commentaire magique, une ligne vide en fin de classe, un espace après une virgule, un bloc de
+commentaire au ras de la marge. **`git diff -w` ne montre que les 21 virgules** : tout le reste est
+de l'indentation.
+
+⚠️ **CETTE BRANCHE CONTIENT #206, #207 ET #208.** C'est délibéré : une passe de style pendant que des
+livraisons attendent leur fusion, et chacune récolte des conflits. **Ordre : #206, puis #208 (qui
+porte #207), puis #209.** Les cinq cases de la CI sont vertes sur #209 — `lint` compris, pour la
+première fois depuis longtemps.
+
+⚠️ **Trois fichiers de ta zone y sont touchés** — `app/services/excursion.rb`,
+`app/services/monde_0_etats.rb`, `app/controllers/challenges_users_controller.rb` : **une virgule et
+une ligne vide en tout**, sur demande explicite de Boris. Rien d'autre. Je te le signale plutôt que
+de franchir la frontière en silence.
+
+ⓘ **Ce que ça change pour toi** : une PR dont `lint` rougit porte désormais une vraie faute. La case
+recommence à vouloir dire quelque chose.
+
+— poste fixe
