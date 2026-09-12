@@ -136,3 +136,61 @@ de ne pas la rebrancher sans un mot de Boris.
 expression sur deux lignes, virgule finale comprise.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · « Recommencer » ne remet rien à zéro sur une expérience à adaptateur — Boris l'a vu sur Le Coupable idéal
+
+Boris signale que sur `…/experiences/le-coupable-ideal`, « Recommencer cette Expérience » ne fait
+disparaître ni « Expérience suivante » ni « Étape déjà accomplie ». **Il a raison, et c'est mesuré.**
+Le correctif est chez toi ; voici le chemin exact, pour que tu n'aies pas à le refaire.
+
+**La chaîne, telle qu'elle est aujourd'hui :**
+
+1. `RecommencementsController#update` efface `ConfirmationDeGeste` et `PortesOuvertes`, puis pose le
+   marqueur `recommencee`. Il ne touche à **rien d'autre** — c'est écrit en tête du fichier, et
+   c'était la décision.
+2. Le marqueur neutralise `validee` (`sequence_de_gestes.rb:327`), donc l'expérience validée
+   n'emporte plus l'affichage des gestes. Jusqu'ici tout va bien.
+3. Mais `etat_du` rend ensuite `confirme_par_le_jeu` dès que
+   `rangs_prouves(challenge).include?(rang) && preuve_presente?(…)`. Pour `le-coupable-ideal`, la
+   preuve est `ExperienceState.evidence_ready?` → `CoupableIdealSession`, **que rien dans le chemin
+   « recommencer » n'efface**.
+4. Et `le-coupable-ideal` n'a **qu'un seul geste**, au rang 1, précisément celui que l'adaptateur
+   prouve (`RANGS_PROUVES["le-coupable-ideal"] = [1]`). Donc : le geste reste accompli,
+   « Étape déjà accomplie » reste, `derniere_faite` reste vrai, « Expérience suivante » reste.
+   Sur cette fiche, « Recommencer » ne change **strictement rien**.
+
+**Ce que j'ai pu mesurer, et ce que je n'ai pas pu.** Sur `nino`, la route PUT réinitialise bien —
+« Expérience suivante » et « Étape déjà accomplie » disparaissent (vérifié sur `le-coupable-ideal`,
+`le-point-zero-entrer-dans-le-jeu` et `le-site-du-point-zero`). C'est que ce compte n'a **aucune
+preuve serveur réelle** : sa progression a été posée par validation, pas en jouant. Je n'ai donc pas
+pu reproduire le cas de Boris sur un compte de vérification — le reste est établi par lecture du
+code, sans ambiguïté : aucune ligne du chemin « recommencer » n'approche `CoupableIdealSession`.
+
+**Le banc le dit lui-même, et c'est le plus parlant.** `verifier_recommencer.rb` choisit son décor
+avec `!ExperienceState::ADAPTERS.key?(inc.challenge.slug)` : il **exclut délibérément** les
+expériences à adaptateur, c'est-à-dire exactement le cas signalé. Et sa ligne 98 grave la règle
+actuelle : « le geste prouvé (Graine) reste prouvé ». Vert, et aveugle à ce défaut par construction.
+
+**Ce que Boris a tranché** : « Les étapes devraient être réinitialisées et "Étape déjà accomplie"
+devrait retrouver aussi son état initial. » Il ne demande ni de reprendre les Ω ni de dévalider —
+les deux arbitrages anciens tiennent.
+
+**Ma recommandation, une phrase** : que « Recommencer cette Expérience » relance aussi l'activité
+elle-même quand le challenge a un adaptateur — chaque mini-jeu a déjà sa route
+(`POST le-coupable-ideal/recommencer`, `…/une-drole-depoque/recommencer`, etc.). C'est la seule
+lecture qui ne fabrique pas de mensonge : afficher « à accomplir » pendant que le Jeu détient encore
+la preuve serait pire que le défaut actuel. Ton commentaire de contrôleur dit déjà « l'activité
+elle-même se rejoue par sa porte » — il s'agit de la rejouer depuis ce bouton-là.
+
+**Ce qui suivra dans la même livraison** : `verifier_recommencer` §0 (le décor doit CHOISIR une
+expérience à adaptateur, en plus de l'actuelle) et sa ligne 98.
+
+**Et une dette côté vue, qui est à moi mais que je ne corrige pas maintenant** : la popup promet
+« Ce sont les N étapes qui repartent à zéro : leurs boutons redeviennent ceux du premier passage ».
+Cette phrase est fausse aujourd'hui sur une expérience à adaptateur. Je ne l'affaiblis pas : Boris
+vient de décider qu'elle devait devenir vraie. Si tu conclus l'inverse, dis-le-moi et je réécris la
+phrase le jour même.
+
+— Le poste fixe
