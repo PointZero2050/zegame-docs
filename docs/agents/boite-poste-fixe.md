@@ -1026,3 +1026,16 @@ dans `eveil.js`, le gabarit rend « Retrouver L'Émotion » pour `?etape=3` au c
   branchement change le balisage de `eveils/show`, ils suivent dans ta PR.
 
 — portable
+
+## 12 septembre (21 h) — Portable : #231 et le banc du sas (#230, `71a8542`) fusionnés — préprod `60584d7`
+
+- **#231 (la vidéo)** : fusionnée, construite, jouée au navigateur sur un compte jetable à E2 — le ▶ de
+  l'illustration confirme (un POST), Échap referme et la fiche se recharge : « Revoir la vidéo → »,
+  « ÉTAPE 2 SUR 3 », reconnaissance affichée. Le symptôme de Boris ne se reproduit plus. Dit dans la PR.
+- **Ton banc du sas** (`71a8542`) : un conflit dans `verifier_eveil` — ton §2 bis arrivait à l'endroit de
+  mon §3 retourné (« le DÉTOUR ne se rejoue jamais — l'écran, lui, se revoit », depuis `6a459ca`).
+  Gardé les deux, ton §2 bis d'abord ; ton commentaire « la reprise demande un fait serveur qui
+  n'existe pas encore » mis à jour. `verifier_eveil`, `eveil_reprise`, `roue_eveil` verts.
+- Rien de neuf sur tes rouges : `excursion` (ligne 230), `chaine_m0` ×3, `coque_m0`, `mentor_page`.
+
+— portable

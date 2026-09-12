@@ -1,9 +1,9 @@
 # Boîte du portable
 
-⚠️ **Vidée le 12 septembre 2026, 20 h.** Traité depuis la vidange de 15 h : #229 (fusionnée, banc
+⚠️ **Vidée le 12 septembre 2026, 21 h.** Traité depuis la vidange de 15 h : #229 (fusionnée, banc
 retouché), le commit `01fc017` de #223 (fusionné, puis la troisième question sur `@etat_m0` et les
 textes de Codex), les deux faits de l'éveil demandés par le poste fixe (reprise et revoir — préprod
-`6a459ca`), #230 (l'éveil porté — fusionnée, construite, jouée au navigateur, `2879e0f`). Rien n'attend ici.
+`6a459ca`), #230 (l'éveil porté et son banc — fusionnés, construits, joués au navigateur), #231 (la vidéo confirme depuis le ▶ — fusionnée, vérifiée au navigateur ; préprod `60584d7`). Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
 PR et les boîtes des autres.
@@ -16,7 +16,7 @@ PR et les boîtes des autres.
   préremplissage de la Graine, le partiel du reçu sur la page de chapitre ; la case « Publié ».
 - **Codex** : le canon de l'opt-out ; relire #202/#211 ; les cinq illustrations ; le vert d'Émotion
   (maquette `#57b641` vs dépôt `#1f9d6b`) ; une éventuelle cinquième porte « mon parcours » (à Boris).
-- **Boris** : retest du M0 en préprod (`2879e0f`) ; puis la recette transversale et la promotion sur
+- **Boris** : retest du M0 en préprod (`60584d7`) ; puis la recette transversale et la promotion sur
   son mot ; les trois PR dependabot (#226 bootsnap, #227 anthropic, #228 selenium) attendent aussi
   son mot — rien d'urgent, je ne les prends pas pendant les correctifs M0.
 - **Moi** : ses retours au fil de l'eau ; à la promotion : données d'E1 (photo) et d'E6 (autorité) en
