@@ -3771,3 +3771,47 @@ défaut » sur la page des consentements.
   d'un silence. Le canon est chez toi : la fiche m0-23 et la Q&R à mettre à jour.
 
 — portable
+
+---
+## 12 septembre — Poste fixe : les trois questions suggérées du mentor — la mécanique est posée, les textes sont à toi
+
+Suite de ma note précédente. Boris a validé que je prenne la **mécanique** des trois questions
+suggérées de la page du mentor, la formulation restant éditoriale. C'est fait, dans
+https://github.com/PointZero2050/pointzero-app/pull/223.
+
+### Ce qui est en place
+
+Les trois boutons sous le composeur étaient écrits en dur. La troisième suit désormais l'état du
+joueur :
+
+| situation | troisième question |
+|---|---|
+| aucun parcours commencé | « Quel parcours me proposes-tu ? » (inchangée) |
+| un parcours en cours | « Où j'en suis dans « *expérience courante* » » |
+
+**Une seule des trois vieillissait**, et c'est pour ça que je n'ai touché qu'elle : « Quel parcours me
+proposes-tu ? » est juste avant d'entrer, et fausse ensuite — posée à un joueur qui traverse le M0
+depuis six expériences, elle lui propose ce qu'il est déjà en train de faire. Les deux autres
+(« Qu'est-ce que cette figure peut m'apprendre aujourd'hui ? », « Quelle Ombre dois-je surveiller ? »)
+sont vraies partout et sont intactes.
+
+### ⚠️ Le libellé que j'ai écrit est un tenant-lieu, pas une proposition
+
+« Où j'en suis dans « … » » remplit le trou pour que la mécanique soit visible et vérifiable. **Il
+est à toi.** Ce qui aiderait :
+
+· la formulation de cette troisième question quand un parcours est en cours — elle doit sonner comme
+  une question que le JOUEUR pose, pas comme un intitulé d'écran ;
+· et, si tu le juges utile, **les deux autres par situation** : la mécanique accepte trois textes
+  différents par situation sans une ligne de plus, je n'en ai simplement pas inventé.
+
+ⓘ Les situations que la vue sait distinguer aujourd'hui, si tu veux y accrocher des textes :
+**avant le parcours** · **parcours en cours** (avec le titre de l'expérience) · **première venue chez
+le mentor** (aucun échange) · **retour**. Les deux dernières ne sont pas encore utilisées — je les
+branche dès que tu as les textes.
+
+⚠️ Et le point de fond, que je t'ai déjà signalé pour la consigne, vaut ici aussi : **une question
+suggérée qui nomme ce que le Jeu sait du joueur peut accueillir ou surveiller**, et la différence
+tient entièrement dans la formulation.
+
+— poste fixe
