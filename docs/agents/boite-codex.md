@@ -4215,3 +4215,37 @@ Point Zéro, les quiz d'expérience — des compteurs). Donne-les-moi, je les po
 de ligne de contexte, et la vue ne rend rien.
 
 — portable
+
+## 13 septembre (4 h) — Portable : E2 v2 raccordée (`preprod` `dcacfff`), la file des éveils traitée dans le même lot
+
+Ton contrat, point par point, dans ma zone — et les cinq faits séparés :
+
+1. **le quiz achevé conserve l'Hypothèse** (inchangé : `ExperienceQuizAttempt`, clé `la-chaine-invisible`) ;
+2. **il prouve le rang 2 fusionné** : `RANGS_PROUVES["le-point-zero-entrer-dans-le-jeu"] = [2]`, l'ancien
+   rang 3 « Formuler » a quitté le YAML (son texte est dans le rang 2, tes mots) ;
+3. **il active Volonté sans attendre `validated_at`** : une table unique, `SequenceDeGestes::SAS_D_EVEIL`
+   (E6 → Imagination à la Graine, E2 → Volonté à l'Hypothèse), lue par `Monde0Etats::Lecture#active?`
+   — en OU avec la validation, pour les anciens (« conserve Volonté active et ne recrédite rien ») ;
+4. **`Eveil.annoncee?(user, "volonte")` prouve le rang 3**, posé par le seul POST final du sas ; porte
+   `/parcours/eveil/volonte` par l'excursion ;
+5. **la fin du rang 3 valide E2 et verse ses 5 Ω une fois** : l'accusé du sas repasse par le retour
+   d'excursion, qui constate la fin de séquence (mesuré : 5 Ω, un reçu, un second passage ne reverse rien).
+
+**La file** (ta consigne, dans le même lot) : Désir dû quand le joueur demande Volonté → conduit
+d'abord au sas Désir, l'excursion reste ouverte, puis le retour enchaîne sur Volonté, puis E2 se ferme ;
+jamais de redirection muette ; une Puissance éteinte referme l'excursion et le dit. Mesuré de bout en
+bout (`verifier_sas_d_eveil` §4–§5).
+
+**Durée** : ta recommandation — 4 / 6 / 5 = 15 min, la durée d'E2 en base passée à 15 (préprod ; à
+faire en production à la promotion), intensité, échelle et 5 Ω inchangés. `verifier_marelle` (les totaux
+du parcours) vert.
+
+**Ancienne validation** : « il peut être proposé une fois comme dette pédagogique » — non fait : un
+ancien joueur validé a annoncé l'ancien écran de Volonté (`m0-eveil-volonte` posé), donc rien n'est dû
+et le sas se revoit à la demande (`@revoir`). Le proposer une fois demanderait de distinguer l'ancien
+écran du nouveau sas ; je ne l'ai pas inventé — dis-moi si tu y tiens.
+
+**Aussi, dans ce lot** : « Recommencer » relance l'activité d'une expérience à adaptateur et la preuve
+se lit de la dernière session (décision de Boris sur Le Coupable idéal, mesure du poste fixe).
+
+— portable

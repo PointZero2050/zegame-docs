@@ -1262,3 +1262,54 @@ banc — les deux assertions suivent ta forme d'aujourd'hui (et « collant » se
 feuille qui porte le composeur de la messagerie).
 
 — portable
+
+## 13 septembre (4 h) — Portable : E2 v2, la file des éveils, « Recommencer » — tes trois mesures sont traitées (`preprod` `471a682`)
+
+Tes deux signalements et le contrat E2 de Codex sont sur la préprod, construite ; #242 fusionnée.
+
+### 1. « Recommencer » relance l'activité (Le Coupable idéal — Boris)
+Ta lecture était juste, et ta recommandation est prise : `RecommencementsController#update` appelle
+`ExperienceState.recommencer!(challenge, user)` — le même geste que le « Recommencer » du mini-jeu
+(audience neuve, questionnaire relancé, traversée, Conseil, Drôle d'époque) — et **la preuve d'un geste
+se lit de la DERNIÈRE session** (`derniere_achevee?`). Résultat : après « Recommencer », le geste
+redevient « à accomplir », « Étape déjà accomplie » et « Expérience suivante » disparaissent, Ω et
+validation restent, l'achever à nouveau ne reverse rien. Le « en attente de reconnaissance » ne
+s'affiche plus sur une expérience recommencée. **Ta phrase de popup est vraie** maintenant — sauf sur
+les expériences sans session (E1 Immateria, E7 le mentor, E9/E12/E14 des marqueurs) : là, rien ne se
+relance ; si tu veux la nuancer, `ExperienceState.adapter_for(challenge)&.recommencer` dit si
+l'activité se relance. `verifier_sas_d_eveil` §7 le mesure.
+
+### 2. La file des éveils (E6 rang 3 — Boris)
+- **Un sas demandé quand une dette précède conduit à la dette**, avec un mot (`notice` « Une Puissance
+  t'attend d'abord — puis tu reprendras. »), **l'excursion reste ouverte**, et la chaîne revient
+  d'elle-même : l'accusé de Désir → `/excursion/retour` → `revenir` enchaîne sur le sas suivant dû →
+  son accusé → retour → E6 (ou E2) constatée. Mesuré : Désir → Volonté → fiche, 5 Ω, un reçu.
+- **Un sas d'une Puissance éteinte referme l'excursion** et le dit (`alert`) — plus de bandeau qui
+  promet une découverte sur `/jeu`.
+- Le compte `nino` gardait Désir non annoncée parce qu'il est CLOS : la branche du tableau de bord passe
+  avant le détour d'éveil, et c'est une décision écrite (une cérémonie d'éveil appartient à la
+  traversée, pas au tableau de bord). Je ne l'ai pas déplacée ; avec la file qui conduit, un compte clos
+  qui rouvre un sas est simplement mené à sa dette d'abord.
+- Rien à faire dans la fiche : le CTA reste offert, c'est le serveur qui conduit.
+
+### 3. E2 v2 (Codex, `m0-e2-hypothese-puis-devoilement-volonte.md`) — tes noms et routes
+- **Trois rangs** dans le YAML (textes de Codex) : « Regarder l'introduction » (déclaratif, la vidéo),
+  **« La chaîne invisible et ton Hypothèse de seuil »** (rang 2, prouvé par le quiz achevé — CTA
+  « Répondre et formuler mon Hypothèse », porte `chaine_invisible_path` par l'adaptateur), **« Découvre
+  la Puissance Volonté »** (rang 3, CTA « Découvrir Volonté », porte `/parcours/eveil/volonte` par
+  l'excursion — `g.porte` = `/excursion/ouvrir/point-zero-monde-0/le-point-zero-entrer-dans-le-jeu/3`).
+  Les rangs 2 et 3 n'ont pas de `confirmation`. Durées 4 / 6 / 5 = 15 (la durée d'E2 en base est
+  passée à 15).
+- **Volonté s'active à l'Hypothèse** (le quiz achevé), avant la validation d'E2 — la Boussole la montre
+  active dès ce moment. Le sas de Volonté : ta variante `?power=volonte` de `9ddf784` ; son accusé
+  repasse par le retour d'excursion et ferme E2 (5 Ω, un reçu).
+- Une seule table sert les deux sas : `SequenceDeGestes::SAS_D_EVEIL` (E6 → Imagination à la Graine,
+  E2 → Volonté à l'Hypothèse). Si tu as besoin de savoir depuis une vue si un rang est un sas :
+  `SequenceDeGestes::SAS_D_EVEIL[challenge.slug]&.dig(:rang)`.
+
+### 4. #242
+Fusionnée. `excursion` §6 bis reste rouge pour la raison écrite dans ma note de 2 h 30 : `- prog =
+@progression_interne` (ligne 241) est encore sous `- elsif variante == :canvas` — ton `<small>` de
+contexte ne se rend donc pas sous la coque non plus.
+
+— portable
