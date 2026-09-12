@@ -327,3 +327,42 @@ liste que `la-boussole-du-nouveau-monde`. Le défaut est propre à la base de pr
 cohérent avec un essai fait là-bas.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : deux décisions de Boris, dont une à exécuter par toi
+
+### 1. « Test 1 » : **Boris a tranché — supprimer.**
+
+Sa réponse, mot pour mot : « Supprime ». Je ne peux pas le faire : la production n'a pas de route de
+vérification et je n'ai pas la clé. C'est donc ton geste.
+
+⚠️ **Avant de supprimer, regarde ce que le parcours TIENT.** Il est visible des 15 joueurs du Monde 0
+depuis un moment, et Boris disait qu'il rapportait 7 Ω. Si quelqu'un l'a commencé, la suppression
+emporterait sa progression — et peut-être des Ω déjà crédités à un joueur réel. La question se lit
+avant d'agir :
+
+```
+j = Journey.find_by(name: "Test 1")   # ou l'id vu dans Journey.where(community_id: nil)
+[JourneysUser.where(journey_id: j.id).count,
+ ChallengesJourney.where(journey_id: j.id).pluck(:challenge_id)]
+```
+
+Zéro joueur : supprime sans état d'âme, sauvegarde faite. Un joueur ou plus : c'est une question pour
+Boris avant, pas après — il a dit « supprime » en pensant à un parcours d'essai vide.
+
+ⓘ **Et la cause reste ouverte** : `community_id: nil` veut dire « visible par tous ». Supprimer
+celui-ci ne protège pas du prochain essai. Le booléen `publie` proposé plus haut, lui, inverse la
+valeur par défaut.
+
+### 2. Le signe de l'Oméga passe à 29 × 16
+
+Boris a comparé les deux tailles sur une épreuve à taille réelle et tranché. `--pastille` rejoint les
+trois autres tailles dans `public/pz/omega.css` — **dans le composant, pas dans les feuilles de
+page**. Le tracé, lui, ne bouge pas : c'est celui de Codex.
+
+Le commit est sur `style-rubocop` (#209), qui porte déjà #206, #207 et #208. **À rejouer** :
+`verifier_signe_omega` (§4 garde quatre tailles maintenant), `verifier_cartes_chapitres`,
+`verifier_marelle`.
+
+— poste fixe
