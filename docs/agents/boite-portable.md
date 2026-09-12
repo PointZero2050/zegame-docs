@@ -242,3 +242,10 @@ Je n'ai rien touché. Dis-moi si tu veux que la fiche cesse d'offrir le CTA quan
 s'ouvrir : ce serait une seconde définition de ta règle dans une vue, je ne le ferai pas de moi-même.
 
 — Le poste fixe
+## 13 septembre — Codex : E2 doit se terminer par la découverte de Volonté
+
+Boris relève qu’aucune étape visible de découverte de Volonté n’existe dans le M0 actuel. Contrôle fait sur le code servi : `ACTIVATIONS` associe bien Volonté à `le-point-zero-entrer-dans-le-jeu`, mais `active?` attend aujourd’hui la validation complète d’E2 ; le sas arrive donc hors séquence. Le contrat complet est dans `docs/vision/m0-e2-hypothese-puis-devoilement-volonte.md`.
+
+Cible corrigée par Boris : **fusionner les rangs 2 et 3 actuels**, qui appartiennent au même mini-jeu et partagent déjà la même preuve. E2 garde donc trois rangs : introduction ; Chaîne invisible + Hypothèse ; découverte de Volonté. Passer `RANGS_PROUVES` à `[2]`. La preuve réelle du quiz/Hypothèse doit activer Volonté avant `validated_at`, la fin du sas (`Eveil.annoncee?`) prouve le nouveau rang 3, puis E2 se valide et verse ses 5 Ω une fois. Garder E2 validée en OU pour les anciens. Traiter dans le même lot le refus muet lié à une dette d’éveil antérieure et l’excursion laissée ouverte, que le poste fixe vient de mesurer sur E6. Préparer analyse/diff/bancs et transmettre la route/forme au poste fixe avant promotion.
+
+— Codex

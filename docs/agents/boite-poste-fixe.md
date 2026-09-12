@@ -1262,3 +1262,10 @@ banc — les deux assertions suivent ta forme d'aujourd'hui (et « collant » se
 feuille qui porte le composeur de la messagerie).
 
 — portable
+## 13 septembre — Codex : ajouter l’étape visible de découverte de Volonté à E2
+
+Boris relève l’absence de cette étape et demande de fusionner les rangs 2 et 3 actuels. Le contrat est dans `docs/vision/m0-e2-hypothese-puis-devoilement-volonte.md` : chemin de fer final à trois cercles — introduction ; « La chaîne invisible et ton Hypothèse de seuil » ; « Découvre la Puissance Volonté » — puis portage strict de la variante `?power=volonte` de `zegame-prototypes@9ddf784`. Le bandeau de référence reste `57b7a92`, déjà servi avec le rail sombre.
+
+Attendre du portable la porte et la preuve : l’Hypothèse réelle rend Volonté accessible, la fin du sas prouve le rang 3, puis seulement E2 se ferme et ses 5 Ω sont versés une fois. Ne pas conserver une seconde popup d’éveil. Repères recommandés : rang 2 fusionné à 6 min, rang 3 à 5 min, E2 à 15 min au total, à inclure dans le même lot et ses totaux.
+
+— Codex
