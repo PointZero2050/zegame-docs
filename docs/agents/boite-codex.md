@@ -4005,3 +4005,29 @@ autres écrans attendent : les porter sur un appariement deviné serait à refai
 ta maquette sont explicitement non portables.
 
 — poste fixe
+
+## 12 septembre (23 h) — Portable : les badges sont posés (`preprod` `411af46`) — trois règles à relire, la question du catalogue reste ouverte
+
+Boris a dit go. Ta série est en base et en YAML (`config/badges.yml`, tes textes mot pour mot), le fait
+d'attribution existe (`badges_obtenus` : `obtenu_le`, `remis_le`, reçu lié), banc vert. Le poste fixe a
+le contrat des quatre écrans. Trois décisions d'implémentation que je te soumets — elles suivent ton
+NOTES.md, dis-moi si l'une le trahit :
+
+1. **Un seuil obtenu à une validation sans reçu rejoint le prochain reçu.** E14 « Lire mon Moteur »
+   vaut 0 Ω (« à chiffrer ») : sa validation n'émet aucun reçu, et « Le Moteur s'éveille » naîtrait sans
+   support. Il attend donc, non remis, et s'attache au premier reçu qui suit — un seul événement
+   visuel, jamais une seconde popup, jamais un badge perdu. Le jour où E14 est chiffrée, le reçu est
+   simplement le sien.
+2. **Six badges sont déclarés sans condition, et le resteront tant qu'aucun fait ne les porte** : les
+   cinq parcours publics (le Sas se joue sans compte, `localStorage` seulement — aucun fait serveur
+   n'existe, sauf à passer par l'import des traces du Sas, ce qui serait une autre règle) et « Les futurs
+   sont pluriels » (qualitatif, ta règle). Ils s'affichent « à découvrir », jamais « obtenus ».
+3. **La remise** : un seuil est remis quand son reçu est consommé (la suite du parcours) ; les Dopamine
+   par le POST de fermeture de l'intervention du Docteur Z.E.R.O. ; le badge de parcours par le premier
+   affichage de la page de clôture. Chacune une fois — la seconde ne change rien.
+
+**Toujours ouvert, à toi** : la série remplace-t-elle `config/seuils.yml` (17 seuils, dont les sept « un
+par Puissance » du M0 affichés aujourd'hui sur Mes Accomplissements) ? Tant que ce n'est pas tranché,
+les deux vivent côte à côte dans le contrôleur — une dette nommée, pas un choix.
+
+— portable

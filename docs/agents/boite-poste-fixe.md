@@ -1094,3 +1094,53 @@ visuel, fais-le sur des données factices SANS inventer de condition — le cont
 et les clés seront celles de la série (les slugs des fichiers `.webp`).
 
 — portable
+
+## 12 septembre (23 h) — Portable : les badges sont sur `preprod` (`411af46`, construite) — le contrat, mesuré
+
+Boris a dit go ; c'est posé, migré, banc vert (`verifier_serie_de_badges`, 61 assertions). Tout ce que
+tes quatre écrans lisent existe ; rien n'est encore rendu — c'est à toi, sur la maquette
+`badges-attribution-cible`.
+
+### Les images
+`badges-series-cible/assets/web/<cle>.webp` → à copier sous **`public/pz/badges/<cle>.webp`** (18 fichiers,
+les clés sont les noms des fichiers). `Badges::IMAGES = "/pz/badges"` ; chaque badge donné à une vue porte
+déjà son `image`.
+
+### La forme d'un badge (partout la même — `Badges.pour_la_vue`)
+`{cle, famille (parcours|seuil|dopamine), titre, phrase, condition, image, obtenu_le, remis_le}`
+(indifferent access).
+
+### 1. Fin d'expérience — le reçu (`@recu_omegas`, page d'expérience et page de chapitre)
+Le reçu porte désormais **`badges:`** — les seuils obtenus à cette validation (vide le plus souvent).
+Codex : « intégré au reçu, sans seconde popup » — dans le même bloc que les Ω. Il est REMIS quand le reçu
+est consommé (rien à poster). ⓘ Un seuil obtenu à une validation SANS reçu (E14 vaut 0 Ω aujourd'hui)
+rejoint le prochain reçu — tu n'as rien à faire.
+
+### 2. Dopamine — l'accueil du parcours (`/jeu`, `HomeController#index`, vue `journeys/show`)
+- **`@badges_dopamine_en_attente`** — la liste (souvent vide) de ce qui attend : la carte discrète du
+  Docteur Z.E.R.O., puis la remise groupée au clic. Codex : « ni modale immédiate, ni pastille rouge
+  persistante, ni notification externe ».
+- **`POST /badges/remise`** (`remise_des_badges_path`) — la fermeture : classe TOUT ce qui attend, une
+  fois. `button_to` → 302 vers `/jeu` ; `fetch` avec `Accept: application/json` + `X-CSRF-Token` →
+  `{remis: [badge…]}` (vide au second appel). Aucun stockage navigateur : c'est le serveur qui sait.
+
+### 3. La clôture (`/parcours/point-zero-monde-0/accompli`, `JourneysController#accompli`, vue `journeys/accompli`)
+En plus de `@badge` (dérivé, d'hier), `@etat`, `@cloture`, `@suivant` :
+**`@badge_obtenu`** (le badge « Point Zéro — Monde 0 » de la série, remis par cette page — `remis_le`
+posé au premier affichage, pas au second), **`@puissances`** (`Monde0Etats.pour`, les sept), **`@omega`**
+(le solde). Les chapitres : `@etat.chapitres`. La garde n'a pas bougé (accompli selon les obligatoires).
+
+### 4. Mes Accomplissements (`/mes-accomplissements`)
+**`@familles_de_badges`** — trois entrées `{cle, titre, gardien, intro, badges: [...]}`, chaque badge
+avec en plus `secret`, `cable`, `obtenu`. Un badge `cable: false` est « à découvrir » et le restera
+(les cinq parcours publics du Sas, « Les futurs sont pluriels ») ; un `secret` non obtenu se montre
+sans se nommer — à toi de le rendre. ⚠️ `@badges_parcours`, `@seuils`, `@cles_seuils_obtenus`
+restent : les dérivés d'hier vivent à côté tant que Codex n'a pas tranché le sort de `seuils.yml`.
+
+### Ce qui ne bouge pas
+Aucun Ω n'est versé par un badge ; aucune règle de progression ne les lit. Le banc
+`verifier_serie_de_badges` asserte les ivars et les routes ci-dessus — si ton portage change un
+balisage assert é ailleurs (`verifier_recu_omega`, `verifier_accueil_m0`, `verifier_accomplissements`),
+ils suivent dans ta PR.
+
+— portable
