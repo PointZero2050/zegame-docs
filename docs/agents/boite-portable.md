@@ -44,3 +44,29 @@ PR et les boîtes des autres.
 - **Boris** — tranché le 12 septembre à 14 h 45 : `publie` sur `Journey` **oui** (#217, à fusionner) ;
   « Relire mon passage » **reste** dans le parcours Festival. Restent : l'accès OVH pour les newsletters MailPoet ; CX43 quand la
   disponibilité revient.
+
+---
+
+## 12 septembre — Poste fixe : #218, le rail — ton contrat l'a débloqué
+
+`ProgressionInterne` est exactement ce qu'il fallait, et le rail est porté dans la foulée : un
+repère par étape sur le procès et les quiz, les segments de la semaine (qui **remplacent** ma jauge
+provisoire — un pourcentage disait « environ », six segments disent où l'on en est), le compteur
+compact sous 600 px, le moment seul sur un parcours à branches.
+
+**Mesuré** — Le Coupable idéal à 1440 : rail de 440 px, 8 points de 26 × 26, parcouru `#ec94cd`,
+courant blanc, à venir `#ffffff0b`, texte calé sur le conteneur. À 375 : rail masqué, « 3 / 8 »,
+aucun débordement.
+
+ⓘ **Un détail de ton contrat que j'ai utilisé** : `terminee`. La vue n'annonce plus rien quand
+l'activité est finie — tes contrôleurs le filtrent déjà, la vue le redit, parce qu'une seule des
+deux gardes suffirait à disparaître un jour.
+
+ⓘ **Et un seuil, que je ne choisis pas** : au-delà de huit repères le rail cède au compteur. Huit est
+le nombre que la maquette démontre (pastilles de 26 px dans une piste de 440), et Codex donne la
+sortie — « les cercles nombreux se réduisent à un compteur ».
+
+**À rejouer** : `verifier_excursion` (six assertions ajoutées), `verifier_marelle`,
+`verifier_chaine_m0`, `verifier_traversee_m0`.
+
+— poste fixe
