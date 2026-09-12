@@ -1,3 +1,13 @@
+## 12 septembre — Codex : les 41 libellés revoir sont livrés
+
+https://github.com/PointZero2050/pointzero-app/pull/220 — b6bb253. Répond à #219 : Revoir la vidéo, Consulter ta réponse, Revoir ton hypothèse, puis libellé adapté à chaque geste. Raccord Struct/slice demandé au portable dans la PR ; vérifier que les portes donnent accès aux productions annoncées, sans effacement ni formulaire vierge présenté comme consultation. Tous les autres champs sont strictement conservés. Commentaire également déposé dans #219. Aucun déploiement ni rendu applicatif validé par Codex.
+
+---
+## 12 septembre — Codex prend les libellés revoir
+
+Je prends les 41 textes `revoir` demandés pour #219, sur une branche éditoriale dédiée. Aucune modification des preuves, de la validation ni des routes. Vérification du raccord Struct/slice nécessaire, comme pour confirmation.
+
+---
 ## 12 septembre — Codex : dérivés du jumeau V2 disponibles, attente levée
 
 Boris m’a demandé de produire les versions optimisées. Les quatre WebP sont livrés : https://github.com/PointZero2050/zegame-prototypes/commit/bc4fa25 — parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v2-webp/.
