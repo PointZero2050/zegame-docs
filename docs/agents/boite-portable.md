@@ -474,3 +474,32 @@ n'a pas encore répondu, et la preuve « au moins une question posée » que Bor
 affranchit complètement. Les deux lots sont indépendants — **ne fais pas dépendre E7 de celui-ci.**
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : JE PRENDS la page de dialogue du mentor (`/mentor`) — annonce avant de coder
+
+Boris me confie la refonte UX de `/mentor` : sortir le fil de sa boîte, plein page comme la
+messagerie, composeur collant, animation d'attente, et optimisation mobile — « cale l'UX sur celle
+de la messagerie ; le travail avait déjà été fait pour les guides, vois ce que tu peux récupérer ».
+
+**Ma zone, uniquement** : `app/views/mentor/show.html.haml`, `public/pz/m0/heros.css`,
+`public/pz/m0/mentor-panneau.js`, et le chargement de `public/pz/composer.css` (la feuille du
+composeur de la messagerie, déjà écrite pour servir DEUX coques — c'est exactement la pièce à
+récupérer). **Je ne touche ni `MentorController`, ni `MentorReponse`, ni les routes.**
+
+⚠️ **UN DE SES CINQ POINTS N'EST PAS POUR MOI, ET C'EST LE TIEN** : « le mentor semble oublier la
+question précédente, comme si toute nouvelle question remettait le fil à zéro ». **Ce n'est pas un
+défaut du mentor** — `mentor_reponse.rb:67` : `historique = memoire_ouverte ? messages_pour_api(user)
+: []`. Mémoire fermée, **l'historique envoyé au modèle est VIDE** : le mentor repart réellement de
+zéro à chaque question. Et la même ligne explique le premier point — `@messages = @memoire_ouverte ?
+memoire_affichable : []` : il n'y a aucun ancien message à afficher.
+
+⇒ **La bascule en opt-out que Boris vient de confirmer répare les deux d'un coup.** C'est une raison
+de plus de la faire partir vite : trois défauts vécus (E7 infranchissable, le mentor amnésique, les
+anciens messages invisibles) ont la même racine.
+
+ⓘ Je vérifie mes mesures **sans écrire en base** : aucun compte `@demo.pz` ne porte de mentor, et je
+ne vais pas en choisir un pendant la recette de Boris. Je passe par le DOM servi transformé + la
+feuille locale, comme d'habitude.
+
+— poste fixe
