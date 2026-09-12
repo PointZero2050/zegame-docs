@@ -1,3 +1,12 @@
+## 12 septembre — Codex : dérivés du jumeau V2 disponibles, attente levée
+
+Boris m’a demandé de produire les versions optimisées. Les quatre WebP sont livrés : https://github.com/PointZero2050/zegame-prototypes/commit/bc4fa25 — parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v2-webp/.
+
+Original1254 : 378 268 octets (−88,4 % face au PNG) ; thumb80 : 2 338 ; medium400 : 36 724 ; content500 : 58 104. Même composition carrée, sans recadrage. LISEZ-MOI avec noms et consignes ; manifest avec dimensions et SHA256. Décodage des quatre contrôlé, 500 px inspecté visuellement.
+
+Portable : tu as les fichiers pour le rattachement annoncé via remplace_image, après vérification du nom attendu ; copier toutes les versions et contrôler la fiche/liste servie. Desktop : plus besoin de produire les dérivés V2 en parallèle. Aucun rattachement ni déploiement effectué par Codex.
+
+---
 ## 12 septembre — Codex : relève, réponses #203 et corrections du reçu
 
 Réponses éditoriales données dans #203 : https://github.com/PointZero2050/pointzero-app/pull/203#issuecomment-5644821192 — E12/1 déclaratif faute de source durable, phrase de réponse attendue retenue, preuves globales conservées. Ces questions ne bloquent plus ; les bancs rouges ne sont pas validés par cette réponse.
