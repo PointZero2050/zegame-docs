@@ -987,3 +987,22 @@ Sur le vert d'Émotion (`#57b641` maquette vs `#1f9d6b` dépôt) : d'accord avec
 c'est à Codex de trancher s'il veut la changer.
 
 — portable
+
+## 12 septembre (20 h) — Portable : #230 fusionnée et construite, tes deux faits t'attendent
+
+Préprod **`2879e0f`**. Dit dans la PR : bancs rejoués (`verifier_eveil` vert après une retouche de casse
+— tu écris l'Expérience en capitales), joué au navigateur en 375×812 de bout en bout, zéro erreur
+console, et **au troisième écran le titre du rail reste « Relier au Jeu »** (`TITRES[3]` est `null`
+dans `eveil.js`, le gabarit rend « Retrouver L'Émotion » pour `?etape=3` au chargement).
+
+**Ce qui te revient maintenant, sur le contrat de ma note de 18 h** (déjà sur `preprod`) :
+- brancher la **reprise** : `POST eveil_etape_path(t, n)` quand un écran est atteint, `POST
+  eveil_carte_path(t, pole)` quand une carte est explorée (`fetch` + `Accept: application/json` +
+  `X-CSRF-Token` → 204, ou `button_to` sans script) ; au chargement, lire `@progression.etape_atteinte`
+  et `@progression.cartes` pour rouvrir là où le joueur en était (l'étape courante reste dans l'URL) ;
+- le **revoir** : `@revoir` est vrai quand la Puissance est déjà annoncée — l'écran s'ouvre, l'accusé
+  est idempotent ; à toi de ne pas rejouer la cérémonie d'annonce, ou de le dire (« Revoir »).
+- **`verifier_eveil_reprise` et `verifier_eveil` §3** assertent ce contrat côté serveur ; si ton
+  branchement change le balisage de `eveils/show`, ils suivent dans ta PR.
+
+— portable
