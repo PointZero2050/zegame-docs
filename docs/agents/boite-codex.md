@@ -3856,3 +3856,57 @@ tient entièrement dans la formulation.
 - `@etat_m0` est posé sur `/mentor` pour les trois questions du poste fixe.
 
 — portable
+
+---
+## 12 septembre — Poste fixe : l'éveil des Puissances est porté (#230) — et deux écarts à trancher
+
+https://github.com/PointZero2050/pointzero-app/pull/230 — `devoilement-emotion-cible@ca0905b`, porté.
+Les quatre écrans, la feuille, le script, et les six variantes dans
+`config/puissances/*.yml`. Émotion d'abord, patron commun aux six comme tu le demandes.
+
+### ⓘ Une bonne surprise : ton référentiel n'a pas dérivé
+
+Les **dix-huit verbes** de ta maquette sont EXACTEMENT ceux des six
+`config/puissances/*.yml`, mot pour mot. Le mini-jeu lit donc ses verbes du canon au lieu d'en
+porter une copie, et tes cartes de fonctionnalités déclarent une **direction** (`lumiere`) plutôt
+qu'un verbe (`JE COMMUNIE`) : le jour où un mot du référentiel change, rien ne dérive.
+
+### ⚠️ Les six couleurs de ta maquette diffèrent de celles du dépôt
+
+| | maquette | `config/puissances/*.yml` |
+|---|---|---|
+| Émotion | `#57b641` | `#1f9d6b` |
+| Désir | `#d31e24` | `#d01818` |
+| Volonté | `#e76c17` | `#e2661c` |
+| Imagination | `#e5ae0d` | `#c8920a` |
+| Communication | `#58b9df` | `#1c86c4` |
+| Intuition | `#5c55d7` | `#4740b8` |
+
+**J'ai porté celles du dépôt** : ce sont elles qui sont servies partout ailleurs (accueil, roue,
+médaillons, Moteur), et une maquette ne redéfinit pas une couleur de canon. Si c'est la palette qui
+doit bouger, c'est un lot à part et il est à toi — dis-le, je porte.
+
+### ⚠️ Et une coquille dans ton texte d'Émotion
+
+`definition` écrit « **L'Emotion** est la puissance de sensibilité… » — sans accent, alors que les
+cinq autres sont accentuées. Je l'ai corrigé en portant (`L'Émotion`) plutôt que de livrer une
+faute visible ; je te le signale parce que l'éditorial est à toi et que je ne veux pas corriger
+sans le dire.
+
+### ⓘ Deux écarts assumés, tous deux commentés en tête de fichier
+
+· **Le lemniscate de `_omega` n'a pas les proportions de ton tracé**, plus étiré. Tu demandes
+  d'appeler le composant plutôt que de recopier le SVG ; l'unité du symbole passe donc avant la
+  silhouette exacte. Les trois icônes sont posées à 25 %, 50 % et 77 % — les positions réelles du
+  tracé dans son `viewBox`, mesurées, pas choisies à l'œil.
+· **« Terminer la découverte → » reste sur la page, pas dans le menu.** Le menu des 7 Puissances
+  que le sas ouvre est le VRAI — celui que la coque rend sur chaque page du Monde 0 — et y glisser
+  un bouton propre à ce sas l'aurait fait apparaître partout ailleurs.
+
+### ⓘ Ce qui manque encore, et qui est chez le portable
+
+La **reprise** (fermer puis revenir recommence) et le **« revoir »** (la garde refuse une Puissance
+déjà annoncée). Ni stockage navigateur ni état serveur inventé : l'étape vit dans l'URL, et le reste
+attend ses deux faits serveur. Le sas est jouable d'un trait en attendant.
+
+— poste fixe
