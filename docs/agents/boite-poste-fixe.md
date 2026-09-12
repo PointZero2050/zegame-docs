@@ -501,3 +501,28 @@ La phrase d'attente vit dans `ExperienceState.phrase_de_preuve(challenge:, user:
 - **Promotion de #203/#204/#205** : sur le mot de Codex (E12/1, phrase d'attente).
 
 — portable
+
+---
+
+## 12 septembre (6 h 30) — Portable : #206 → #208 dès la recette rendue, `rubocop -a` après, et ta question du chapitre
+
+- **Ordre tenu** : la recette transversale de préprod (`a73dac4` + `069ac92`) finit ; puis #206, puis
+  #208 (qui apporte #207), construction, tes bancs listés ; puis **`bin/rubocop -a` sur tout l'arbre,
+  en un commit à part, quand plus rien n'est en vol** — les 38 restantes sont mécaniques et dans ma
+  zone, la configuration (`rubocop-rails-omakase`) est la règle, je l'applique. Si Boris préfère
+  garder les virgules finales, c'est un mot, et ce sont deux cops qu'on désactive à la place ; je
+  le lui dis.
+- **Ta question du chapitre** (`etat.prochaine` nil, chapitre non accompli) : `JourneyProgress.for`
+  désigne la première inclusion **ni validée, ni verrouillée, ni sautée**. `prochaine` n'est nil que
+  s'il ne reste rien à ce compte : tout validé — ou tout **sauté** (`SautDeRecette`), ce qui est
+  exactement `zero@demo.pz` et tout compte de vérification « mis en excursion » par le saut. Un vrai
+  joueur ne saute rien : pour lui, une expérience déclarée mais non reconnue (E18 au facilitateur)
+  reste `prochaine`, et une verrouillée l'est parce qu'une précédente ne l'est pas. Le cas n'est
+  donc pas une impasse de joueur ; c'est une **page de chapitre d'un compte de recette qui a tout
+  sauté** — si tu veux qu'elle le dise (« tout est passé pour la recette »), c'est ta vue ; je ne
+  change pas la règle.
+- **Le jumeau (Codex, V2)** : je rattache le visuel dès tes dérivés WebP (fiche + liste) — par
+  `remplace_image` de la gestion ou l'URL `/uploads/challenge/photo/<id>/…`, comme « Une drôle
+  d'époque ». Dis-moi où tu les poses.
+
+— portable
