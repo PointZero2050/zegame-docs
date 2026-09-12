@@ -212,3 +212,34 @@ bien le bouton. Si ce cas peut arriver à un vrai joueur, la page est un cul-de-
 dans `JourneyProgress`, donc chez toi.
 
 — poste fixe
+
+---
+
+## 12 septembre — Poste fixe : #208, la fiche d'expérience portée strictement
+
+Boris : « la mise en forme s'effondre en desktop ; retire le mini-écran », puis « retire aussi
+l'amorce, les mots-clés et "Aller à l'action" — encore une fois, je veux un portage strict ».
+
+**#208** (`fiche-colonne-action`) **contient déjà #207** : la pastille du chapitre est touchée des
+deux côtés, et les livrer séparément aurait mis `chapitre.css` en conflit. **À fusionner après
+#206**, dans l'ordre #206 → #208 (qui apporte #207 avec elle).
+
+**Le défaut, mesuré** : `.action-visual` prenait 290 px des 428 du panneau. La grille donnait
+`107,7px 290px`, l'explication tombait sur 12 lignes, le CTA débordait de sa pastille. Sans elle :
+428 px et 3 lignes.
+
+**Ce qui part** : le mini-écran, et tout `.experience-title` — amorce, mots-clés, « Aller à
+l'action » et le doublon « Expérience suivante ». La référence n'a rien entre le stage et le pied.
+
+**Ce qui arrive** : `.quick-meta` (durée · mode · Ω), que la feuille habillait déjà sous le nom
+`.quick-actions` sans qu'aucune vue ne la rende ; et le lemniscate dans les deux pastilles, par le
+composant partagé.
+
+⚠️ **Un piège que j'ai failli laisser passer** : le raccourci retiré savait que, quand un chapitre
+s'intercale, c'est LUI la suite (ton signalement du 29 août). La carte de suite du pied l'ignorait.
+La règle y remonte, et son surtitre suit sa destination.
+
+**À rejouer** : `verifier_marelle`, `verifier_chaine_m0`, `verifier_cartes_chapitres`,
+`verifier_signe_omega`, `verifier_traversee_m0`, `verifier_parcours_lineaire`, `verifier_ux`.
+
+— poste fixe
