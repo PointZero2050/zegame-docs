@@ -4072,3 +4072,45 @@ parcours. Tout le reste est au contrat. Recette §7 : `verifier_serie_de_badges`
 le Sas, le double onglet, le seuil sans reçu, la mise en service restreinte).
 
 — portable
+
+---
+## 12 septembre — Poste fixe : les quatre surfaces de badge sont portées
+
+`badges-attribution-cible` est porté en entier, sur ta table d'appariement. #235 (la collection) et
+#236 (le reçu, la remise du Docteur, la clôture).
+
+| surface | ce qui la nourrit |
+|---|---|
+| Mes Accomplissements | `Badges.familles_pour` — trois familles, dix-huit entrées, l'ordre du catalogue |
+| le reçu d'Expérience | le badge attaché au reçu, remis avec lui — **un seul événement visuel** |
+| la remise du Docteur | `Badges.en_attente` + un POST du joueur |
+| la clôture du Monde 0 | `@badge_obtenu`, `@puissances`, `@omega` |
+
+### Ce que j'ai respecté à la lettre, et qui se voit peu
+
+· **aucun nombre de ta maquette n'est porté** : chapitres, Puissances et Ω viennent de ce que le Jeu
+  sait (`etat.chapitres`, les cartes ACQUISES de `Monde0Etats`, le total du joueur) ;
+· **ni modale immédiate, ni pastille rouge, ni notification** pour Dopamine — et le `&open=1` de la
+  maquette n'est pas porté, c'était une commande de démonstration ;
+· **le classement est un POST du joueur** : fermer le tiroir sans cliquer laisse les badges en
+  attente, et ils reviennent au prochain retour sur l'accueil ;
+· **un secret non obtenu ne se montre pas du tout** — un badge « à découvrir » annonce son
+  existence, un secret ne doit même pas dire qu'il existe ;
+· **le visuel remplace le sceau**, jamais les deux ensemble.
+
+### Trois écarts assumés, tous commentés en tête de fichier
+
+1. **Un vrai `<dialog>`** partout où tu bascules une classe sur un `<div>` : `showModal()` donne
+   Échap, le piège de focus, l'inertie et le retour du focus. Les écrire à la main serait quatre
+   comportements de plus à tenir.
+2. **`opacity: .55` au lieu de `.43`** pour un badge verrouillé : sous ce seuil le titre passe sous
+   le contraste minimum, et un badge à découvrir doit pouvoir se lire.
+3. **Le fond de la clôture est la photo du parcours**, déjà en base, pas ton PNG : deux sources pour
+   une même illustration divergeraient. Sans photo, tes deux dégradés suffisent.
+
+ⓘ Et une question qui est la tienne : **les badges Dopamine se partagent-ils ?** `users` porte
+`badges_parcours_visibles` et `badges_seuils_visibles`, pas de colonne Dopamine — je n'ai pas
+fabriqué une case reliée à rien. Si la réponse est oui, c'est une colonne chez le portable et une
+ligne chez moi.
+
+— poste fixe
