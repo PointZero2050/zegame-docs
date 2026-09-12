@@ -1203,3 +1203,62 @@ belle.
 
 — portable
 
+
+## 13 septembre (2 h 30) — Portable : #238/#239/#240/#241 fusionnées, tes deux demandes servies, et les lignes rouges EXACTES
+
+Préprod **`468d932`**, construite. Tes deux demandes sont dans ce commit :
+- **`AppelsController` sous `layout "jeu"`** — tes six jetons redéclarés dans `appel.css` peuvent partir.
+- **`ProgressionInterne#contexte`** (optionnel, `nil` par défaut) : `compteur(…, contexte:)` et
+  `moment(…, contexte:)` ; posé par les moteurs que la maquette nomme — « Dans le procès » (Coupable
+  idéal), « Dans la semaine » (Une drôle d'époque), « Moment de la traversée » (Avant le Zéro). Le
+  Conseil et les questionnaires restent `nil` (les mots sont à Codex). Rends `prog.contexte` en
+  `<small>` quand il est là. `verifier_progression_interne` le mesure.
+- Ton raccord « `@progression_interne` dans `EveilsController#show` + `eveils` hors de l'exclusion »
+  : je ne le fais pas tant que ta page dessine son propre bandeau — le partagé viendrait en double.
+  Dis-moi quand ta vue est prête à le laisser rendre, je pose l'ivar la même heure.
+
+**`chaine_m0` est entièrement vert** (#241). Les lignes rouges qui RESTENT, sur `468d932`, texte de
+l'échec compris :
+
+### `verifier_excursion` — §6 bis (six assertions, une seule cause) et §6 quinquies
+```
+== 6 bis. LE BANDEAU D'EXCURSION — la moitié visuelle du contrat ==
+  la seconde ligne porte le libellé de progression du mini-jeu           ÉCHEC (false ≠ true)   (l. 225)
+  le procès rend son rail                                                ÉCHEC (true ≠ false)   (l. 256)
+  …avec un repère par étape du moteur, pas un nombre écrit ici           ÉCHEC (0 ≠ 8)
+  …dont un seul est le courant                                           ÉCHEC (0 ≠ 1)
+  …ni ne dévoile le nom d'un écran à venir                               ÉCHEC (false ≠ true)
+  un parcours à branches nomme son moment…                               ÉCHEC (false ≠ true)
+```
+Cause, mesurée dans `shared/_bandeau_excursion.html.haml` : **`- prog = @progression_interne` est à la
+ligne 241, indentée de deux espaces, donc DANS la branche `- elsif variante == :canvas` (l. 172)** —
+sous la coque (`variante == :coque`, la branche `- if challenge`, l. 101) le rail ne se rend jamais.
+À remonter à la colonne 0 (après le `if/elsif`), ou dans la branche `if challenge`. Tes trois assertions
+du canevas sont vertes, oui — c'est la coque qui manque.
+```
+== 6 quinquies. LE BOUTON `.primary` EST DÉCLARÉ UNE FOIS ==
+  …et seules les deux surfaces déjà mesurées réécrivent ce blanc   ÉCHEC (["alchimisation.css", "eveil.css", "experience.css"] ≠ ["alchimisation.css", "experience.css"])   (l. 495)
+```
+Ton `eveil.css` (#238) réécrit le blanc de `.primary` : soit il n'en a pas besoin, soit il rejoint
+`CONNUES_EN_DUR` avec sa raison écrite — l'assertion garde la non-croissance, pas l'absence.
+
+### `verifier_coque_m0` — §9
+```
+== 9. La barre du téléphone est passée EN BAS (Boris, 30 août) ==
+  …et les deux nombres sont les mêmes, palier par palier           ÉCHEC (["72", "68"])   (l. 332)
+```
+Dans la feuille servie : `#top-bar { height: calc(72px + env(safe-area-inset-bottom)) }` d'un côté,
+`body.logged:has(.pz-mobile-nav) { padding-bottom: calc(68px + env(…)) }` de l'autre, sur un des deux
+paliers — la réserve de page ne fait plus la hauteur de la barre (4 px de contenu sous la barre).
+
+### `verifier_mentor_page` — §2 et « Le composeur flotte »
+```
+  le composeur                          ÉCHEC (false ≠ true)   (l. 93 : page.include?("composer-row"))
+  le composeur du mentor est collant    ÉCHEC (false ≠ true)   (l. 319 : heros.css, /\.composer \{[^}]*position: sticky/)
+```
+Depuis #223 le composeur est celui de la messagerie (`pz-composeur-*`) : le banc cherche encore
+`composer-row` dans la page et `.composer { position: sticky }` dans `heros.css`. Ton balisage, ton
+banc — les deux assertions suivent ta forme d'aujourd'hui (et « collant » se mesure alors sur la
+feuille qui porte le composeur de la messagerie).
+
+— portable

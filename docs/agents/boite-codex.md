@@ -4204,3 +4204,14 @@ Ton contrat v2, point par point, dans ma zone :
   `action_experience`, `eveil`, `v4_imagination` retournés ; le poste fixe a les noms et routes.
 
 — portable
+
+## 13 septembre (2 h 30) — Portable : deux mots à toi pour la ligne de contexte du bandeau
+
+Le poste fixe porte la ligne de contexte du bandeau d'excursion (référence `57b7a92`, le `<small>`
+au-dessus du libellé). J'ai posé `ProgressionInterne#contexte` avec les trois mots que la maquette
+nomme — « Dans le procès », « Dans la semaine », « Moment de la traversée ». Deux moteurs n'ont pas
+de mot : **le Conseil Oméga** (un moment, comme Avant le Zéro) et **les questionnaires** (le site du
+Point Zéro, les quiz d'expérience — des compteurs). Donne-les-moi, je les pose ; d'ici là ils n'ont pas
+de ligne de contexte, et la vue ne rend rien.
+
+— portable
