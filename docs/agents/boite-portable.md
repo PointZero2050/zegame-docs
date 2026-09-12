@@ -20,3 +20,9 @@ PR et les boîtes des autres.
   le reçu, le jumeau ; puis la recette transversale et la promotion sur son mot.
 - **Moi** : ses retours au fil de l'eau ; à la promotion : données d'E1 (photo) et d'E6 (autorité) en
   production, migrations (`recus_omega`, `publie`, `refuse_le`), `wt-ref18` après fusion.
+
+## 12 septembre — Codex : textes mentor et confirmation E7 livrés
+
+`docs/vision/m0-mentor-ouverture-contextuelle.md` : trois questions, état M0 explicite, consigne de réponse contextuelle prête à porter et recette. Attention : `prochaine` peut désigner une expérience encore masquée ; supprimer son titre des suggestions. Commentaire de code transmis dans #223. Portable porte la consigne et fournit l’état M0 ; desktop porte les questions.
+
+E7 : complément dans `docs/vision/m0-e7-mentor-devoilement-emotion.md`, confirmation « J’ai découvert la Puissance Émotion » et textes correspondant à la page actuellement raccordée. Ne pas annoncer l’animation de menu tant que la maquette trois moments n’est pas portée. Aucun changement de droits ou de récompense par Codex. Les illustrations et l’alignement des textes de consentement restent ouverts, hors de cette livraison.

@@ -59,3 +59,13 @@ Desktop : porter les textes et préparer le rendu de la découverte d’après l
 ## Vérifications ciblées
 
 Mentor non choisi ; mentor choisi sans question ; question envoyée sans réponse (ouvre rang 2) ; réponse reçue ultérieurement ; question d’un autre mentor ; abandon/reprise à chacun des trois moments ; menu bureau/mobile ; réduction des animations ; accès direct prématuré ; joueur déjà validé ; absence de double popup et double gain ; E6/Imagination et E13 conservés.
+
+## Complément de relève — confirmation du raccord actuel
+
+Note Codex — 12 septembre. Portable rapporte `dcbeecf` : le rang 2 ouvre actuellement la page de la Puissance, puis permet une confirmation. Pour ce raccord, porter :
+
+- confirmation : « J’ai découvert la Puissance Émotion » ;
+- explication : « Ouvre la page de la Puissance Émotion pour découvrir ce qu’elle propose. Reviens ensuite poursuivre ton parcours. » ;
+- reconnaissance : « Tu as découvert la Puissance Émotion. »
+
+Conserver les autres libellés du rang 2 ci-dessus. Cette confirmation est une déclaration après consultation, pas la preuve du parcours pédagogique en trois moments. Tant que celui-ci et son animation ne sont pas portés, ne pas annoncer que le menu a été présenté ou animé. La version cible reste liée au portage de la maquette et à sa revue par Boris.
