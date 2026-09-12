@@ -3952,3 +3952,56 @@ Rien n'est écrit tant que la question du catalogue n'est pas tranchée : deux s
 badge, c'est exactement ce que ta maquette interdit.
 
 — portable
+
+---
+## 12 septembre — Poste fixe : je prends les badges — et il me manque UN appariement que je ne peux pas inventer
+
+Les 18 visuels sont dans l'application (`public/pz/badges/`, poussés sur la branche `badges-m0`).
+Mesuré avant de copier : 256×256, 71 Ko en moyenne, exactement le double d'un affichage à 128 px —
+aucun ré-encodage nécessaire.
+
+### ⚠️ Ce qui bloque, et pourquoi je ne tranche pas
+
+**L'appariement seuil → visuel n'est pas mécanique.** Sur les **17** seuils de `config/seuils.yml`,
+**quatre** seulement portent un titre qui désigne un visuel sans ambiguïté :
+
+| seuil | visuel |
+|---|---|
+| Le Moteur s'éveille | `le-moteur-s-eveille.webp` |
+| Premier atelier vécu | `premier-atelier-vecu.webp` |
+| Se présenter vraiment | `se-presenter-vraiment.webp` |
+| Les futurs sont pluriels | `les-futurs-sont-pluriels.webp` |
+
+Les **treize autres** n'ont pas de visuel évident — « Entrer dans le Jeu », « Le Sas traversé »,
+« Graine semée », « Les 100 premiers Oméga », « Un futur regardé en face », « Le futur renvoie la
+balle », « Flamme reconnue », « Premier pas posé », « Graine déposée », « Résonance choisie »,
+« Présence choisie », « Première clé de discernement », « Première lecture reliée ».
+
+Et **quatorze des dix-huit visuels ne correspondent à aucun seuil** : `jai-clique-donc-je-suis`,
+`je-devais-juste-regarder`, `encore-une-derniere-fois`, `visiblement-je-reviens`,
+`un-futur-ne-suffisait-pas`, `tour-du-proprietaire`, `agriculture-narrative`, `changeur-d-echelle`,
+`archeologue-des-croyances`, `decodeur-des-cycles`, `prospectiviste`,
+`reactivateur-de-puissances`, `cent-omegas-et-toutes-mes-dents`, `point-zero-monde-0`.
+
+**Deux questions, et elles sont éditoriales :**
+1. **les visuels REMPLACENT-ILS les sceaux abstraits** de `public/pz/sceaux/`, ou les
+   complètent-ils ? La maquette pose les badges illustrés ; les seuils actuels portent un `sceau:`
+   et une `teinte:` avec un rôle documenté dans la DA. Je ne retire pas un système qui a une
+   grammaire sans que tu le dises.
+2. **le catalogue Dopamine**, qui n'existe nulle part : quels badges, quelle condition, quel texte.
+   `cent-omegas-et-toutes-mes-dents` a l'air d'être le pendant Dopamine du seuil « Les 100 premiers
+   Oméga » — mais c'est exactement le genre de doublon que ton `NOTES.md` demande d'éviter, et je ne
+   veux pas le décider.
+
+ⓘ Ton arbitrage sur « Les futurs sont pluriels » est déjà noté : il ne reste un seuil que si sa
+condition reconnaît une comparaison qualitative, le simple fait d'ouvrir deux futurs revenant au
+badge Dopamine « Un futur ne suffisait pas ». La condition actuelle est dans `config/seuils.yml` ;
+c'est au portable de dire ce qu'elle mesure réellement, et à toi de trancher.
+
+### Ce que je fais en attendant
+
+Les visuels sont servis. La structure à trois familles de « Mes Accomplissements » et les trois
+autres écrans attendent : les porter sur un appariement deviné serait à refaire, et les nombres de
+ta maquette sont explicitement non portables.
+
+— poste fixe
