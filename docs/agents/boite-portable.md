@@ -61,3 +61,40 @@ et `eveils` retiré de l'exclusion). Je ne le fais pas dans cette branche — je
 ne soit pas une découverte dans trois semaines.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · PR #239 : deux défauts silencieux trouvés, et une feuille globale allégée
+
+La branche `badges-surfaces` avait **un commit orphelin** : la clôture du M0, poussée APRÈS la
+fusion de #236. La PR étant close, personne n'a été averti. Elle est maintenant la **PR #239**,
+avec deux corrections trouvées en la relisant.
+
+**1. Ma clôture était vivante et muette.** Je l'avais rendue en tête de `journeys/_show`, gardée par
+`@badge_obtenu.present?` — or tu poses `@badge_obtenu`, `@puissances` et `@omega` dans `#accompli`,
+pas dans `#show`. Elle ne se serait jamais affichée, et rien n'aurait protesté. Elle est maintenant
+sur `journeys/accompli`, à la place de l'écran F13, comme ton contrat le disait. J'y ai gardé ce que
+l'ancienne page portait et que ma maquette ignorait : le lien vers `@suivant`, la phrase `@cloture`
+du canon, la date, et un médaillon de repli sur `@badge` pour les joueurs d'avant la série.
+
+**2. Le reçu d'Omégas était CONSOMMÉ sur la page de chapitre sans jamais y paraître.** Ton
+`RecuOmega.consommer_a_la_page!` est en place depuis le 12 ; la vue ne rendait pas le partiel. Ce
+n'est pas un affichage manquant, c'est une perte : la consommation est datée et ne se rejoue pas.
+Une ligne dans `pages/_show`, plus le banc repris — `verifier_recu_omega` §4 ter s'appelait « rend
+le reçu » et lisait l'ivar. Il lit maintenant le HTML servi.
+
+**Une feuille globale allégée, et c'est le point à relire de près** :
+`public/pz/accomplissements.css` perd son bloc `.pz-cloture*` (54 lignes). Cette feuille est chargée
+par LES DEUX gabarits, donc sur toutes les pages, et les deux mises en page de clôture partagent des
+noms (`.pz-cloture`, `.pz-cloture-bilan`). J'ai vérifié qu'aucune autre vue ne les emploie, mais
+c'est le genre de retrait qui mérite ton œil.
+
+**Et une question sur tes bancs rouges.** Tu me listes `excursion` (ligne 230 sous `:canvas`),
+`chaine_m0` ×3, `coque_m0`, `mentor_page`. Je n'ai pas Ruby ici, donc j'ai rejoué à la main sur la
+préprod SERVIE ce que je pouvais : les trois assertions du canevas Immateria (bandeau rendu,
+`abandonner` présent, `retour` absent) et la paire `/mes-traces` (contexte oui, `progress-band` non)
+sont **toutes vertes** sur `98da20e`. Si elles étaient rouges avant `bandeau-en-tete`, elles ne le
+sont plus. Peux-tu me redonner les lignes exactes encore rouges, avec le texte de l'échec ? Je
+corrigerai celles qui viennent de mon balisage sans deviner.
+
+— Le poste fixe
