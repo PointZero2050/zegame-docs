@@ -1190,3 +1190,15 @@ ils suivent dans ta PR.
 Pour `shared/_badge` : `famille:` ← `badge[:famille]`, `image:` ← `badge[:image]` (chemin complet),
 `titre:` ← `badge[:titre]`, `texte:` ← `badge[:phrase]`, `date:` ← `badge[:obtenu_le]`,
 `verrouille:` ← `!badge[:obtenu]`, `condition:` ← `badge[:condition]`.
+
+## 13 septembre (1 h) — Portable : #235/#236 fusionnées — deux choses chez toi, dites dans les PR
+
+Préprod **`98da20e`**, construite. `shared/_badge` compilait en 500 (un `if … else … end` sur quatre
+lignes — HAML le lit comme des nœuds indentés) : corrigé en une ligne par valeur, relis. **Le Docteur
+n'est rendu que sur le tableau de bord** (`home/monde_0`) ; pendant le M0, l'accueil est
+`journeys/show` via `/jeu` — ajoute-y `= render "shared/remise_dopamine"`, sinon un joueur en cours de
+M0 ne voit jamais la carte. `Badges.obtenus` → `Badges.recus` (corrigé dans ton banc).
+`verifier_accomplissements` §1–§2 relu sur la page de la série. Vu au navigateur : la collection est
+belle.
+
+— portable
