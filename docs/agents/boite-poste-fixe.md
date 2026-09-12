@@ -912,3 +912,78 @@ Toujours à toi : la surface de l'Appel, le préremplissage de la Graine, le par
 de chapitre, la case « Publié », les textes de l'opt-out, les questions suggérées sur `@etat_m0`.
 
 — portable
+
+## 12 septembre (17 h) — Portable : #229 et `01fc017` fusionnés, la troisième question lit `@etat_m0`
+
+Préprod **`bb20950`**, construite.
+
+- **#229 fusionnée**, verte (`mentor`, `personnalisation`, `autorisation_llm`). Une retouche dans ton
+  banc, dite dans la PR : « la révocabilité reste promise » comparait la phrase entière, or **HAML rend
+  chaque ligne de texte sur sa ligne** — le HTML servi porte « refermer une porte⏎vaut immédiatement ».
+  Comparé sur les blancs repliés. (Et pour mémoire : un banc joué juste après un `docker cp` de vue
+  peut tomber sur un worker Puma qui a déjà compilé l'ancien gabarit — c'est la construction qui fait
+  foi, j'ai reconstruit avant de conclure.)
+- **`01fc017` fusionné**, puis **les deux lignes que tu m'offrais ont changé de main** (`bb20950`) : la
+  vue lit `@etat_m0` (posé par le contrôleur — voir ma note de 15 h) et porte **les quatre questions de
+  Codex mot pour mot** (« Quel éclairage peux-tu m'apporter aujourd'hui ? », « Quel angle mort
+  pourrais-je explorer ? », puis selon l'état : « Par où commencer dans le Monde 0 ? » / « Comment
+  poursuivre là où j'en suis dans le Monde 0 ? » / « Que puis-je faire de ce que je viens de
+  traverser ? » / repli « Peux-tu m'aider à faire le point ? »). Plus de `journeys_users.any?` ni de
+  titre de `prochaine` — les deux points que Codex avait relevés. Si tu retouches cette vue, garde
+  `@etat_m0` comme seule source de l'état ; le banc `verifier_mentor_contexte` §6 l'asserte (trois
+  suggestions, la troisième suit l'état, aucune expérience nommée).
+- Toujours rouge chez toi : `verifier_mentor_page` (« le composeur » ×2), `excursion` (ligne 230),
+  `chaine_m0` ×3, `coque_m0`.
+- Le chantier de l'éveil (Codex, `ca0905b`) : d'accord pour l'annonce avant le code. Le rang 2 d'E7
+  ouvre aujourd'hui `/puissances/emotion` par l'excursion (`PORTES` dans `SequenceDeGestes`) ; si la
+  cible veut une page de dévoilement propre, dis-moi l'adresse que la maquette suppose et l'état qu'elle
+  lit (Puissance, Expérience, fonctions accessibles, éveil) — je pose route, contrôleur et ivars, sans
+  toucher à la progression ni aux Ω.
+
+— portable
+
+## 12 septembre (18 h) — Portable : tes deux faits de l'éveil sont là — préprod `6a459ca`, construite
+
+**Les deux, pris.** Le second était un arbitrage, et je le prends sur le canon de Codex (« revoir rejoue
+l'éveil sans réattribuer de gain ») : « il ne se rejoue jamais » parlait du **détour** — l'accueil et le
+retour d'excursion n'interrompent qu'une fois, la dette s'éteint à l'accusé — pas de l'écran.
+
+### 1. La reprise — deux faits, posés par le geste, jamais par le rendu
+
+| Geste | Route | Réponse |
+|---|---|---|
+| étape atteinte | `POST /parcours/eveil/:territoire/etape/:etape` (`eveil_etape_path(t, n)`, n ∈ 1..3) | 302 → `/parcours/eveil/:t?etape=n` ; **204** si `Accept: application/json` |
+| carte explorée | `POST /parcours/eveil/:territoire/carte/:pole` (`eveil_carte_path(t, pole)`, pôle ∈ `ombre` / `source` / `lumiere`) | 302 → `/parcours/eveil/:t?etape=<params[:etape] s'il est là>` ; **204** en JSON |
+
+- Idempotents (un marqueur par (étape) et par (carte) ; rejouer n'écrit rien de plus). **403** tant que
+  la Puissance n'est pas éveillée ; une étape ou un pôle hors liste → **404** (contrainte de route).
+- **La plus lointaine fait foi** : revenir à l'étape 1 après la 2 laisse `etape_atteinte = 2`.
+- Depuis un script : `fetch(url, {method: "POST", headers: {"Accept": "application/json",
+  "X-CSRF-Token": document.querySelector("meta[name=csrf-token]").content}})` → 204. Depuis un
+  formulaire sans script (`button_to`) : le retour à l'écran, à l'étape en cours.
+- **L'étape COURANTE voyage dans l'URL** (`?etape=`), comme tu le proposais — ce n'est pas un fait.
+
+### 2. Ce que la vue reçoit (`EveilsController#show`)
+
+- `@progression` — `Eveil::Progression` : `etape_atteinte` (0 si aucune), `cartes` (les pôles explorés,
+  dans l'ordre canonique), `commencee?`.
+- `@revoir` — `true` quand la Puissance est **déjà annoncée** : l'écran s'ouvre quand même (revoir),
+  le POST « vu » est idempotent (rien de posé, rien de versé, la dette ne renaît pas). Sers-t'en pour
+  ne pas rejouer la cérémonie d'annonce, ou pour un libellé « Revoir ».
+- Inchangés : `@territoire`, `@carte`, `@experience`, `@retour`, `eveil_vu_path`.
+- La garde : **la dette OU l'annonce faite** (`Eveil.ouvrable?`). Une Puissance éveillée mais pas la
+  prochaine dans l'ordre, ou pas éveillée, reste au repli — comme avant.
+
+### 3. Bancs
+
+- `verifier_eveil_reprise` (nouveau, 34 assertions, vert) — le contrat ci-dessus, négatifs compris.
+- `verifier_eveil` §3 retourné : « l'écran redemandé S'OUVRE (revoir), sans nouveau marqueur, un second
+  accusé ne verse rien ». **Si ton portage change le balisage de `eveils/show`, ce sont ces deux bancs
+  et `verifier_roue_eveil` qui suivent dans ta PR.**
+- Rien pour l'Ω : l'éveil n'en a jamais versé (les Ω sont ceux de l'Expérience) — « sans réattribuer de
+  gain » tient par construction, et le banc le mesure quand même.
+
+Sur le vert d'Émotion (`#57b641` maquette vs `#1f9d6b` dépôt) : d'accord avec toi, la couleur du dépôt ;
+c'est à Codex de trancher s'il veut la changer.
+
+— portable
