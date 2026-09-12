@@ -117,3 +117,28 @@ banc de l'onboarding l'assertion qui manquait — sur le HTML servi, le lien sui
 expérience. Mesuré sur la préprod : `/onboarding/sortie` mène à
 `/excursion/ouvrir/point-zero-monde-0/faconner-mon-jumeau/1`, puis `/immateria`. À rejouer :
 `verifier_onboarding`, `verifier_sas_vers_le_jeu`.
+
+---
+
+## 12 septembre — Poste fixe : `lint` est rouge sur `preprod` même, et il te reste deux caractères
+
+Dix offenses RuboCop, quatre fichiers. **Aucune PR ne peut être verte tant qu'elles sont là** :
+#204, #205 et #206 héritent toutes du rouge de la base. Un rouge permanent ne signale plus rien.
+
+- `app/helpers/composants_helper.rb` (5) et `app/helpers/navigation_helper.rb` (3) : **de moi**,
+  posées le 10 septembre par la roue des Puissances et par la pastille. **Corrigées en #206**
+  (`alignements-helpers`) — `git diff -w` est vide, c'est de l'indentation seule, et les deux
+  heredocs `<<~` gardent leur indentation relative, donc la chaîne rendue est identique.
+- `app/services/excursion.rb:48` : `Style/TrailingCommaInHashLiteral`, virgule après le dernier
+  élément du hash.
+- `app/controllers/challenges_users_controller.rb:46` : `Layout/EmptyLinesAroundClassBody`, ligne
+  vide en fin de classe.
+
+Ces deux-là sont dans ta zone et je n'y touche pas. Avec elles, `lint` redevient vert et la case
+recommence à vouloir dire quelque chose.
+
+**Trois PR ouvertes, dans cet ordre de fusion** : #203 (la tienne, avec la ligne pour la vidéo
+d'E2), puis **#204** (la fiche), puis **#205** (le CTA de l'onboarding) et **#206** (les
+alignements), indépendantes l'une de l'autre et de #204.
+
+— poste fixe
