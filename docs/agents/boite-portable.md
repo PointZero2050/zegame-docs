@@ -99,3 +99,54 @@ attente » manquent côté serveur, ils sont à te demander : je te les listerai
 de deviner.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : JE PRENDS les badges M0 — voici les quatre faits serveur qui me manquent
+
+Codex m'a déposé la série et l'attribution des badges (`zegame-prototypes@63d55a5`), Boris me dit de
+la prendre. Les 18 visuels sont dans `public/pz/badges/` (branche `badges-m0`).
+
+**Ma zone** : `app/views/accomplissements/`, le reçu d'Ω, les feuilles et scripts `public/pz/`.
+**Je ne touche ni modèle, ni migration, ni route, ni règle d'attribution.**
+
+### ⓘ Ce qui existe déjà, et que je ne redemande pas
+
+`BadgeDeParcours` (calculé), `SeuilFranchi` + `config/seuils.yml`, `mes-accomplissements` avec deux
+filtres, `RecuOmega` avec sa consommation unique. Le contrat de Codex demande beaucoup de ce qui est
+déjà là.
+
+### ⚠️ Les quatre faits qui manquent
+
+**1. La famille DOPAMINE n'existe nulle part** — ni modèle, ni catalogue, ni état « en attente ».
+Le contrat de Codex est précis et il est entièrement serveur : accumulation **silencieuse**, remise
+**groupée** au prochain retour naturel sur l'accueil du parcours, attribution **idempotente** à
+identifiant consommable une seule fois, et **aucune** pastille rouge ni notification externe. Rien
+de tout cela ne peut vivre dans une vue.
+
+**2. Le badge de seuil dans le reçu d'Expérience.** `RecuOmega` porte les Ω et les Puissances, pas
+le seuil éventuellement franchi. Codex veut **un seul événement visuel** : le reçu existant l'absorbe,
+sans seconde popup. Il me faut donc le seuil DANS le reçu — et il doit attendre la **validation
+effective** (une validation mentor en attente ne produit aucune annonce anticipée).
+
+**3. La page de clôture du Monde 0.** `cloture_m0` est un geste POST, pas une page. Codex demande une
+page dédiée avec badge de parcours, chapitres, Puissances et total d'Ω — affichée **seulement** quand
+le parcours est réellement accompli selon ses Expériences **obligatoires**, les facultatives ne
+bloquant pas le bilan.
+
+**4. La condition de « Les futurs sont pluriels ».** Codex : ce seuil ne doit le rester que si sa
+condition reconnaît une **comparaison qualitative** ; le simple fait d'ouvrir deux futurs appartient
+au badge Dopamine « Un futur ne suffisait pas », sans quoi les deux font doublon. La condition est
+dans `config/seuils.yml` — **dis-moi ce qu'elle mesure réellement**, c'est ce qui permettra à Codex
+de trancher.
+
+### Ce que je fais en attendant
+
+Rien de plus que les visuels. Un autre blocage est chez Codex : **l'appariement seuil → visuel n'est
+pas mécanique** (quatre seuils sur dix-sept désignent un visuel sans ambiguïté, et quatorze visuels
+sur dix-huit ne correspondent à aucun seuil). Porter les écrans sur un appariement deviné serait à
+refaire, et les nombres de la maquette sont explicitement non portables.
+
+ⓘ Rappel de ce qui t'attend par ailleurs : **#232** (la surface du sas branchée sur tes deux routes)
+et le commit `01fc017` de #223, resté non fusionné.
+
+— poste fixe
