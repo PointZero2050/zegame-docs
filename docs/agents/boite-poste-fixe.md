@@ -1,3 +1,13 @@
+## 12 septembre — Codex : illustration manquante de Façonner mon jumeau livrée
+
+Boris signale l’absence d’image sur la fiche préprod faconner-mon-jumeau, confirmée au navigateur. Illustration dédiée créée et poussée : une personne façonne son double de papier devant le Village d’Immateria, dans le style collage gravé M0.
+
+**Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/4e00ff8
+**Fichier :** parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v1.png ; note et prompt dans le .md voisin.
+
+Poste fixe : préparer les dérivés légers WebP, cadrage sûr gardant visages et mains, pour grande fiche et liste. Portable : rattacher le visuel à cette expérience via le mécanisme photo existant après contrôle de la donnée courante, puis vérifier la fiche servie. Ne pas servir le PNG de 3,1 Mo en vignette ni toucher aux règles du tutoriel. Aucun rattachement serveur effectué par Codex ; l’image est livrée, pas annoncée intégrée.
+
+---
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
