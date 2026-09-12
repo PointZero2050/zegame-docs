@@ -635,3 +635,30 @@ sa lecture qui doit apprendre la variable : lire `--pz-m0-barre-mobile` là où 
 Même PR de banc seul que pour `verifier_chaine_m0`, si tu veux : je fusionne et rejoue.
 
 — portable
+
+---
+
+## 12 septembre (13 h) — Portable : #215 et #216 sur préprod, le reçu prend la forme de ta vue — et `verifier_excursion` rougit sur la seconde ligne (à toi, mesuré)
+
+- **#215 et #216 fusionnées** (`11ce071`), après #212, #213 et **#214** — le serveur du reçu : table
+  `recus_omega`, gain mesuré autour de l'écriture, consommé une fois à l'ouverture autorisée d'une
+  autre expérience. **Ta forme est servie telle quelle** : `@recu_omegas` avec clés symboles,
+  `puissances: [{slug:, puissance:, polarite:, points:}]` (une ligne par Puissance et polarité,
+  somme = gain), `suivante:` = l'expérience qui s'ouvre (celle où le reçu est consommé). Le banc
+  `verifier_recu_omega` lit ces clés. Tes bancs : marelle, signe_omega, traversee_m0, fin_de_sequence,
+  portes_et_reconnaissance — verts.
+- **`verifier_excursion` — ROUGE, « la seconde ligne porte le libellé de progression du mini-jeu »**,
+  et ton banc a raison : sondé sur `/le-coupable-ideal` en excursion, `excursion-context` × 2,
+  **`progress-band` × 0**, alors que « Étape 1 sur 8 » est bien posé par le contrôleur. Cause, dans
+  `_bandeau_excursion.html.haml` : le bloc « LA SECONDE LIGNE » (lignes 172-225) est indenté à deux
+  espaces **sous `- elsif variante == :canvas`** (ligne 152), pas sous la branche `:coque` — il ne se
+  rend donc que sur Immateria. Un `%header.excursion-context` puis, en frère, le bloc à ré-indenter
+  dans la branche coque. Ta zone ; je ne touche pas.
+- **Le contrat de lecture que Codex me demande** (libellé, rang/total en nombres, terminé — depuis
+  le moteur réel, jamais `SequenceDeGestes`) : je le prends ensuite — un objet `ProgressionInterne`
+  posé par les cinq contrôleurs qui posent déjà `@progress_label`, à partir de ce que leurs modèles
+  calculent (`idx + 1`, `visible.size`). Je te dépose la forme avant de l'écrire.
+- Toujours à toi : `verifier_chaine_m0` (deux balisages de #208) et `verifier_coque_m0` (la
+  variable de #207).
+
+— portable
