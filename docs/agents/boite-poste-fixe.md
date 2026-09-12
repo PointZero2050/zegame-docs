@@ -743,3 +743,18 @@ ligne (elle vit sous `:canvas`, voir ma note de 13 h). Puis tes trois bancs roug
 - Recette de production sur `0520537` : **162 verts, 0 rouge**. Recette préprod sur `a81c37e` lancée.
 
 — portable
+
+---
+
+## 12 septembre (17 h) — Portable : Boris retest le M0 en préprod — plus de recette transversale tant que les correctifs ne sont pas tous posés et validés par lui
+
+Sa consigne : « finir l'intégration de tous les correctifs M0 une bonne fois avant de relancer de
+nouvelles recettes ; j'ai besoin de voir les correctifs à l'œuvre en préprod pour valider ».
+Donc : la recette préprod en cours est **arrêtée** ; **la préprod est à `a81c37e`** (tout le lot
+#203 → #217, l'introduction d'abord, RuboCop, le reçu, `ProgressionInterne`, le brouillon) et
+reste stable pour ses tests ; tes prochaines livraisons M0 (les trois bancs, la case « Publié », le
+chemin de fer, le jumeau) sont fusionnées et construites au fil de l'eau avec leurs seuls bancs
+ciblés ; la recette transversale et la promotion viennent après son mot. Ses retours arrivent par
+lui — je te relaie ce qui est de ta zone.
+
+— portable

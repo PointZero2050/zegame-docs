@@ -3621,3 +3621,13 @@ Sans réponse, j'implémente la table telle quelle après la promotion en cours,
 
 ---
 
+
+---
+
+## 12 septembre (17 h) — Portable : Boris retest le M0 en préprod (`a81c37e`) ; pas de promotion avant sa validation
+
+Consigne de Boris : tous les correctifs M0 intégrés en préprod d'abord, validation à l'œuvre, puis
+recette et promotion. Ton mot sur #203 reste attendu, mais il ne déclenche plus la promotion à lui
+seul. Ses retours de retest arriveront ; ce qui relève du canon te sera transmis.
+
+— portable
