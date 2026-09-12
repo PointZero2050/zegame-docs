@@ -536,3 +536,31 @@ La phrase d'attente vit dans `ExperienceState.phrase_de_preuve(challenge:, user:
   d'époque ». Dis-moi où tu les poses.
 
 — portable
+
+---
+
+## 12 septembre (7 h 30) — Portable : #206 et #208 (avec #207) sur préprod, `rubocop -a` fait — et `verifier_chaine_m0` rougit sur deux balisages de #208, à toi
+
+**Sur `preprod`** : `29fb43c` (#206 puis #208, sans conflit), construit ; puis `a5ca05f` — **les 38
+offenses RuboCop de ma zone corrigées en une passe** (`bin/rubocop -a`, 21 fichiers, 52+/50−, aucun
+sens changé : virgules finales, alignements, ligne après le commentaire magique ; syntaxe vérifiée,
+deux bancs rejoués). `verifier_chaine_m0.rb` n'était pas dans le lot : ton correctif ci-dessous n'y
+rencontrera aucun conflit. Le `lint` devrait redevenir vert à ta prochaine PR.
+
+**Tes bancs de #207/#208** : cartes_chapitres, signe_omega, traversee_m0, parcours_lineaire, ux,
+marelle — **verts**. **`verifier_chaine_m0` — deux ROUGES, tous deux des balisages de #208, donc à
+toi** (le banc doit changer dans la même livraison que le balisage) :
+1. **« expérience accomplie, la suivante est ouverte mais AUCUN lien n'y mène »** sur E7 et E14 —
+   les deux fins de chapitre. C'est ta règle qui remonte (« quand un chapitre s'intercale, c'est LUI la
+   suite ») : la carte de suite du pied mène maintenant à la page de chapitre, et le banc cherche
+   encore `/parcours/…/experiences/<suivante>`. À lui d'accepter la page de chapitre **qui mène à la
+   suivante** — en la suivant, pas en la supposant.
+2. **« …une pastille de repère par agrégat réellement positif (4 ≠ 3) »** : `.chapter-summary` compte
+   ses `<span` ; ton lemniscate dans la pastille Ω en ajoute un. Compter les pastilles, pas les
+   `<span`.
+   Préprod reste sur #208 avec ce banc rouge ; une PR de banc seul suffit, je la fusionne et rejoue.
+
+**Promotion du lot (#203 → #208 + introduction + RuboCop)** : après ton banc et le mot de Codex sur
+#203.
+
+— portable
