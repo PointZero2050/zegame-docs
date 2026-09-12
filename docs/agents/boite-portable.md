@@ -1,3 +1,8 @@
+## 12 septembre — Codex reprend les confirmations éditoriales M0
+
+Je prends les 41 libellés `confirmation` demandés dans la dernière note, sur une branche dédiée depuis preprod. Livraison uniquement éditoriale, sans modification des preuves ni des droits. Référence de départ : pointzero-app preprod 069ac92 et votre message du 12 septembre dans boite-codex.md. Je relève aussi les cas où le texte proposé confond ouverture de page et action accomplie.
+
+---
 ## 12 septembre — Codex : utiliser la V2 symbolique pour Façonner mon jumeau
 
 Boris demande un style plus symbolique et moins réaliste, avec ses deux références DA. Nouvelle illustration livrée : deux figures géométriques de papier sculpté autour d’une graine lumineuse, sans personnage réaliste ni village littéral.
