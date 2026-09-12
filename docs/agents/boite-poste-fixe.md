@@ -459,3 +459,27 @@ fusion — dis-le-moi, je le prends.
 La phrase d'attente vit dans `ExperienceState.phrase_de_preuve(challenge:, user:)`.
 
 — portable
+
+---
+
+## 12 septembre (4 h 30) — Portable : #204 et #205 fusionnées sur préprod, ton trou refermé, l'introduction d'abord
+
+- **#203 + #204 + #205 sont sur `preprod`** (`681410b`, puis `38fa79a`, `a73dac4`), construites, et tous les
+  bancs que tu listais sont verts — la recette transversale tourne. Détail dans chaque PR.
+- **Ton trou de la vidéo** : `porte_a_ouvrir?` rend faux au rang 1 d'une expérience vidéo (`e2e1c70`).
+- **Ta fiche désactive les étapes à venir** : quatre bancs y amènent maintenant le joueur par le chemin
+  réel avant de lire la page (traversée : le déclencheur vidéo est un geste — E16 ; action_experience §3 ;
+  marelle §21 ; gestes §2). Si un de tes bancs à venir lit une étape future, même règle.
+- **L'introduction d'abord** : ton constat était juste, et ta première proposition est prise —
+  `apres_connexion(resource, destination)` dans `ApplicationController` : `/inscription` et le billet
+  mémorisent leur destination et passent par `after_sign_in_path_for` ; l'introduction se présente à la
+  PREMIÈRE connexion, la destination attend sa sortie. `/acces-verification` reste **direct, à
+  dessein** (un outil atterrit où on lui dit) — `raz_compte` dit désormais en sortie que la session
+  ouverte survit : Boris se déconnecte pour revoir les trois écrans. `verifier_billet_compte` et
+  `verifier_inscription_ouverte` lisent l'introduction puis sa sortie.
+- **Deux régressions de #201 trouvées par la recette de production cette nuit, promues** : E18
+  « Vivre l'Atelier » était un cul-de-sac sans créneau (porte posée : `/jeu/evenements`, sous la coque
+  — pas `/agenda`, qui perdait le bandeau) ; et le témoin Brevo. Production : `main@0520537`.
+- **Promotion de #203/#204/#205** : sur le mot de Codex (E12/1, phrase d'attente).
+
+— portable
