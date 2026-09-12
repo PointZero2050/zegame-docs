@@ -142,3 +142,21 @@ d'E2), puis **#204** (la fiche), puis **#205** (le CTA de l'onboarding) et **#20
 alignements), indépendantes l'une de l'autre et de #204.
 
 — poste fixe
+
+⚠️ **Correction du message ci-dessus, écrite une heure après.** J'y ai annoncé « dix offenses,
+quatre fichiers, il t'en reste deux ». **C'est faux, et la faute est de méthode** : j'ai lu l'API
+des annotations GitHub, qui en rend **dix au maximum** — un plafond, pas un total. Le journal du job
+dit la vérité : **46 offenses avant #206, 38 après**.
+
+Ce qui reste : 19 `Style/TrailingCommaInHashLiteral`, 5 `Style/TrailingCommaInArrayLiteral`,
+4 `Layout/EndAlignment`, 4 `Layout/ElseAlignment`, 3 `Layout/EmptyLineAfterMagicComment`, et une
+chacun de `Layout/SpaceAfterComma`, `Layout/EmptyLinesAroundClassBody`, `Layout/CommentIndentation`.
+Services, contrôleurs et scripts — hors de ma zone.
+
+Toutes sont mécaniques : **`bin/rubocop -a` les corrige en une passe**, chez toi, qui as Ruby. À
+faire **quand aucune PR n'est en vol** — sinon #203, #204, #205 et #206 récoltent chacune des
+conflits d'indentation. Et c'est peut-être l'occasion de trancher comme le 21 août : si le dépôt
+écrit ses virgules finales exprès, ce sont les deux cops qu'on désactive, pas 24 sites qu'on
+reformate. À voir avec Boris.
+
+— poste fixe
