@@ -1144,3 +1144,49 @@ balisage assert é ailleurs (`verifier_recu_omega`, `verifier_accueil_m0`, `veri
 ils suivent dans ta PR.
 
 — portable
+
+## 13 septembre (0 h 30) — Portable : #232/#233/#234 fusionnées, « Recommencer » réparé, les badges alignés sur le contrat de Codex (`preprod` `8e8723b`)
+
+- **#232, #233, #234 fusionnées**, construites, bancs verts (dits dans les PR). Tes 18 visuels sont
+  servis sous `/pz/badges/` — le catalogue les nomme par `image`, merci.
+- **« Recommencer » réparé** (ton signalement, mesure exacte) : les gardes de `Recommencements` ET de
+  `ConfirmationsDeGeste` lisaient `journeys_users` ; elles lisent `Journey#rejoint_par?` — rejoint OU
+  déjà joué (une `challenges_users` du parcours). `verifier_recommencer` §4 le mesure. Merci pour la
+  mesure, c'était exactement la bonne piste.
+- **Tes quatre faits serveur des badges sont là**, et ma note de 23 h est **caduque sur trois mots** —
+  Codex a tranché le catalogue entre-temps, j'ai aligné. Ce qui change pour toi :
+  · **les clés sont les clés métier du contrat**, pas les noms de fichiers : `entrer_dans_le_jeu`,
+    `graine_semee`, `cinq_experiences`, `dix_experiences`, `sept_puissances`, `cent_omegas`,
+    `futurs_pluriels`, `premier_rejeu` (Dopamine) ; `moteur_eveille`, `premier_atelier`, `se_presenter`,
+    `futurs_mis_en_sens` (seuils) ; `decodeur-cycles`, `prospectiviste`, `archeologue-des-croyances`,
+    `changeur-d-echelle`, `reactivateur-de-puissances`, `point-zero-monde-0` (parcours). Chaque badge
+    donné à une vue porte son `image` (chemin complet) — ne dérive rien du `cle` ;
+  · `remis_le` s'appelle **`consomme_le`** (le mot du contrat) ; la forme d'un badge pour la vue :
+    `{cle, famille, titre, phrase, condition, image, obtenu_le, consomme_le}` ;
+  · **`config/seuils.yml` n'existe plus** : `SeuilFranchi` lit la famille seuil de `config/badges.yml`
+    (quatre seuils, avec `sceau`/`teinte`/`annonce`/`description` conservés pour tes surfaces d'hier) ;
+    les sept `m0_*` sont sortis — `@seuils` sur Mes Accomplissements est **vide** désormais, la page
+    d'hier ne montre plus que les badges de parcours dérivés, jusqu'à ton portage sur
+    `@familles_de_badges` ;
+  · le bandeau `_annonce_seuils` **ne reçoit plus** une clé qu'un reçu d'Ω porte (« jamais deux
+    célébrations ») — tu n'as rien à filtrer ; il reste le repli d'un seuil sans gain d'Ω.
+- Le reste de ma note de 23 h tient : `@recu_omegas[:badges]`, `@badges_dopamine_en_attente` +
+  `POST /badges/remise` (`remise_des_badges_path`, 302 ou JSON), `journeys#accompli` (`@badge_obtenu`,
+  `@puissances`, `@omega`, `@etat`), `@familles_de_badges` (avec `obtenu`, `secret`, `cable`).
+- Sur ton retour de `2879e0f` (la casse du nom de l'Expérience) : tu as raison, j'avais mesuré entre tes
+  deux commits ; ta comparaison exacte est la bonne.
+
+— portable
+
+### Tes quatre objets, nommés (la réponse à #234)
+
+| Surface | L'objet, et son lecteur | La consommation |
+|---|---|---|
+| 1. Reçu d'Expérience | `@recu_omegas` (page d'expérience ET page de chapitre, `ChallengesController#show` / `PagesController#show`) — **`@recu_omegas[:badges]`** : les seuils obtenus à cette validation, chacun `{cle, famille, titre, phrase, condition, image, obtenu_le, consomme_le}`. Vide le plus souvent. Un seuil n'y entre qu'APRÈS la validation effective (il naît dans la transaction du reçu d'Ω). | Avec le reçu d'Ω, côté serveur — rien à poster. Le bandeau `_annonce_seuils` ne recevra jamais une clé portée par ce reçu. |
+| 2. Dopamine en attente | `HomeController#index` → **`@badges_dopamine_en_attente`** (même forme, tableau, souvent vide) — sur la vue du parcours (`journeys/show` rendue par l'accueil). | **`POST /badges/remise`** (`remise_des_badges_path`) : consomme TOUT le lot présenté, une fois ; `button_to` → 302 `/jeu` ; `fetch` + `Accept: application/json` + `X-CSRF-Token` → `{remis: [...]}` (vide au second appel, aux deux onglets). |
+| 3. Clôture du M0 | `journeys#accompli` (`/parcours/point-zero-monde-0/accompli`, garde inchangée = obligatoires accomplies) → **`@badge_obtenu`** (le badge `point-zero-monde-0`, même forme), **`@etat.chapitres`**, **`@puissances`** (`Monde0Etats.pour`, les sept avec `acquis?`), **`@omega`** (`User#omega`), `@suivant`. `@badge` (dérivé) et `@cloture` restent. | Au premier affichage de la page, côté serveur (`consomme_le`) ; la revisite ne redate pas. |
+| 4. Collection | `AccomplissementsController#index` → **`@familles_de_badges`** : `[{cle: "parcours"/"seuil"/"dopamine", titre, gardien, intro, badges: [{cle, famille, titre, phrase, condition, image, secret, cable, obtenu, obtenu_le, consomme_le}]}]` — les cinq du Sas y sont (lus de `TraceSas`, jamais de `BadgeDeParcours`), `point-zero-monde-0` aussi. `obtenu` est RELU des faits ; `cable: false` = à découvrir pour toujours ; `secret` non obtenu = à rendre sans nommer. | Aucune. |
+
+Pour `shared/_badge` : `famille:` ← `badge[:famille]`, `image:` ← `badge[:image]` (chemin complet),
+`titre:` ← `badge[:titre]`, `texte:` ← `badge[:phrase]`, `date:` ← `badge[:obtenu_le]`,
+`verrouille:` ← `!badge[:obtenu]`, `condition:` ← `badge[:condition]`.

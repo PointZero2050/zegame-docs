@@ -4031,3 +4031,44 @@ par Puissance » du M0 affichés aujourd'hui sur Mes Accomplissements) ? Tant qu
 les deux vivent côte à côte dans le contrôleur — une dette nommée, pas un choix.
 
 — portable
+
+## 13 septembre (0 h 30) — Portable : le lot serveur des badges est sur `preprod` (`8e8723b`), aligné sur ton contrat
+
+Pas de PR : le portable fusionne à la main sur le serveur (protocole), donc deux commits sur `preprod`
+— `411af46` (première pose, avant d'avoir lu ton contrat) puis **`8e8723b`** (l'alignement). Préprod
+construite, migrée, mise en service jouée. Ce que tu demandais, point par point :
+
+**Persistance** — `recus_badge` (ta forme, plus un champ) : `user`, `cle`, `famille`, `challenge`
+(source, nullable), **`recu_omega`** (le reçu d'Ω qui porte un seuil — c'est ce qui rend « intégré au
+reçu, sans seconde popup » mesurable), `obtenu_le`, `consomme_le` ; index unique (joueur, clé), FK en
+`nullify`. Modèle `RecuBadge`. **La collection relit les faits** (`Badges::Lecture`) ; le reçu ne dit que
+« l'annonce reste à faire ». Consommation atomique (`update_all` sur l'attente seule : double clic,
+second onglet, rechargement rendent une liste vide).
+
+**Catalogue** — `config/badges.yml`, tes 18 clés métier telles quelles (`entrer_dans_le_jeu`,
+`graine_semee`, `cent_omegas`, `futurs_pluriels` reclassés Dopamine ; `cinq_experiences`,
+`dix_experiences`, `sept_puissances`, `premier_rejeu` ; `moteur_eveille`, `premier_atelier`,
+`se_presenter` ; `futurs_mis_en_sens` secret, non câblé ; `decodeur-cycles`… ; `point-zero-monde-0`),
+l'image à part. **La série remplace `seuils.yml`** (retiré) : `SeuilFranchi` lit la famille seuil, les
+sept `m0_*` sont sortis. Les cinq parcours du Sas se lisent de `TraceSas` (`path_slug`, `achevee_le`).
+
+**Audit avant bascule** (`scripts/auditer_detenteurs_badges.rb`, joué sur les deux environnements) :
+`futurs_pluriels` **sans détenteur** partout — le reclassement ne change le sens d'aucun badge visible ;
+production : deux comptes sur `m0_desir` / `m0_volonte` (retirés, l'activation reste dans la Boussole).
+
+**Les quatre surfaces** — A. `RecuOmega.pour_la_vue` porte `badges:` (les seuils du reçu) et le
+bandeau `_annonce_seuils` **ne flashe pas** une clé qu'un reçu d'Ω porte ; un seuil sans gain d'Ω
+(E14 vaut 0 Ω aujourd'hui) garde le bandeau comme repli et s'y consomme. B. `@badges_dopamine_en_attente`
+sur l'accueil, `POST /badges/remise` consomme le lot. C. `journeys#accompli` : `@badge_obtenu`
+(consommé au premier affichage), `@puissances`, `@omega`, `@etat`. D. `@familles_de_badges`.
+
+**Mise en service** — `scripts/mise_en_service_badges.rb` : jouée sur la préprod (33 reçus inscrits,
+consommés d'office, 0 en attente) ; à jouer en production à la promotion.
+
+**Écarts mesurés par rapport au contrat** — un seul : `AnnonceDesSeuils` ne compare plus « avant/après »
+pour les seuils, il lit **les reçus en attente sans reçu d'Ω** — plus robuste (un seuil né d'une écriture
+faite ailleurs, par un facilitateur, trouve son bandeau). Le diff avant/après reste pour la clôture de
+parcours. Tout le reste est au contrat. Recette §7 : `verifier_serie_de_badges` (71 assertions, dont
+le Sas, le double onglet, le seuil sans reçu, la mise en service restreinte).
+
+— portable
