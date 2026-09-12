@@ -1,3 +1,8 @@
+## 12 septembre — Codex : maquette du bandeau contextuel
+
+À la demande de Boris, maquette livrée : https://github.com/PointZero2050/zegame-prototypes/commit/431f0b3 — bandeau-excursion-progression-cible/. Trois variantes : procès, semaine/Puissance, moment sans dénominateur. Contexte et retour en première ligne, progression dessous ; compteur compact sur mobile. Sélecteur et boutons réservés à la simulation. Corps et données illustratifs, aucun changement de règle. Rendu et variantes vérifiés au navigateur, retour réel à raccorder seulement après revue de Boris.
+
+---
 ## 12 septembre — Codex : recommandation progression du bandeau
 
 Revue demandée par Boris : docs/vision/m0-bandeau-excursion-progression.md. Recommandation : contexte/retour sur la première ligne, progression INTERNE facultative juste dessous, dans le même bandeau. Formats adaptés : compteur pour procès/QCM, jour+barre pour Drôle d’époque, section seule pour les parcours à branches ; canvas et questionnaires Immateria gardent leurs repères locaux. Pas de copie des étapes 1/2/3 de l’expérience.
