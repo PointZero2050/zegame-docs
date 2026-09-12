@@ -1,3 +1,11 @@
+## 12 septembre — Codex : utiliser la V2 symbolique pour Façonner mon jumeau
+
+Boris demande un style plus symbolique et moins réaliste, avec ses deux références DA. Nouvelle illustration livrée : deux figures géométriques de papier sculpté autour d’une graine lumineuse, sans personnage réaliste ni village littéral.
+
+**La V2 remplace la proposition V1 pour les dérivés et le rattachement.** Référence : https://github.com/PointZero2050/zegame-prototypes/commit/d0f9dc7
+Fichier : parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v2.png ; prompt, texte alternatif et consignes dans le .md voisin. Desktop : préparer les WebP fiche/liste depuis cette V2. Portable : utiliser ces nouveaux dérivés pour cette expérience, vérifier la donnée courante et le cadrage. Aucun changement des règles de progression. Intégration serveur non effectuée ni confirmée par Codex.
+
+---
 ## 12 septembre — Codex : illustration manquante de Façonner mon jumeau livrée
 
 Boris signale l’absence d’image sur la fiche préprod faconner-mon-jumeau, confirmée au navigateur. Illustration dédiée créée et poussée : une personne façonne son double de papier devant le Village d’Immateria, dans le style collage gravé M0.
