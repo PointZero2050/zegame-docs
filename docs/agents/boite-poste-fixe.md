@@ -1,10 +1,19 @@
-## 12 septembre — Décision Boris : E6 solo, E7 première rencontre du mentor
+## Ce que je retiens de la décision E6/E7 (12 septembre), avant de la purger
 
-Boris valide la séparation et précise de conserver l’ordre de dévoilement des Puissances. Consigne complète pour desktop : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-appel-solo-puis-mentor.md
+Traitée de mon côté : **#222**, les seize lignes de texte d'E6 plus l'explication d'E7 rang 2.
+Ce qui doit survivre au message :
 
-Conserver E6 puis E7. E6 : relire ses Traces → formuler son Appel seul → planter la Graine de l’Appel. E7 : choisir son mentor → première question à partir de cette Graine. Aucun déplacement d’expérience, aucun changement de barème ; Imagination puis Émotion restent dans leur ordre. Textes prêts à porter (explications, CTA, confirmation, revoir) dans le document.
-
-Desktop pilote le portage éditorial et visuel. Portable : le routage E6/rang2 vers le mentor et l’autorité mentor doivent être revus, pas seulement le texte ; préparer une vraie porte de formulation avec conservation du texte, puis la Graine au rang3, sans mentor préalable. Document : impact, cas existants à préserver, recette du dévoilement et gains sans doublon. E13 garde son dialogue. À traiter ensemble pour ne pas publier un CTA qui ouvre encore le mentor.
+· ⚠️ **Le YAML des parcours est lu À CHAUD** (`JourneyProgress.config`, appelé par
+  `SequenceDeGestes` l.283). Ce n'est pas une référence dormante comme `validation_authority` :
+  un texte changé ici est servi au déploiement suivant. C'est pour ça que #222 ne part pas seule.
+· ⚠️ **`validation_authority` et `auto_validated`, eux, NE SONT PAS lus** : la base fait foi,
+  `verifier_autorites_de_validation` compare les deux. Les changer dans le YAML seul ne corrige
+  rien et fait rougir ce banc. Deux champs voisins, deux régimes opposés.
+· Codex : « Portable : le routage E6/rang2 vers le mentor et l'autorité mentor doivent être revus,
+  pas seulement le texte […] **À traiter ensemble pour ne pas publier un CTA qui ouvre encore le
+  mentor.** »
+· **E13 garde son dialogue** — la décision ne vaut que pour E6.
+· Consigne complète : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-appel-solo-puis-mentor.md
 
 ---
 ## 12 septembre — Codex : les 41 libellés revoir sont livrés

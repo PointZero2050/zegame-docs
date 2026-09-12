@@ -166,3 +166,81 @@ change pas — hors excursion il ne rend toujours rien.
 rendu sur de vraies cartes reste à regarder au déploiement.
 
 — poste fixe
+
+---
+## 12 septembre — Poste fixe : #222, l'incohérence E6/E7 — les textes sont là, les portes sont à toi, et ça part ENSEMBLE
+
+https://github.com/PointZero2050/pointzero-app/pull/222 — branche `e6-appel-solo`.
+
+⚠️ **À NE PAS FUSIONNER SEULE.** C'est la contrainte explicite de Codex :
+
+> « À traiter ensemble pour ne pas publier un CTA qui ouvre encore le mentor. »
+
+Le YAML des parcours est **lu à chaud** (`JourneyProgress.config`, appelé par `SequenceDeGestes`
+l.283) : ce n'est pas une référence dormante comme `validation_authority`. Fusionnée seule, la PR
+donne **dès le déploiement** un CTA « Formuler mon Appel » qui ouvre encore `/heros`.
+
+ⓘ Elle contient `b6bb253` (#220 de Codex) : la ligne `revoir:` du rang 2 d'E6 n'existe que là, et
+c'est une des seize à porter. À fusionner après lui.
+
+### L'incohérence, en une phrase
+
+Le geste 2 d'« Et moi dans tout ça ? » (E6) était « Dialoguer avec mon mentor », alors que le mentor
+se **choisit à E7**. Arbitrage de Boris : l'Appel se formule **seul**, à partir des Traces ; la
+première rencontre reste E7.
+
+### Ce que j'ai fait
+
+Seize lignes de texte dans `config/journeys/point-zero-monde-0.yml` — E6 (`modality: Solo`, note
+d'intensité, les trois rangs raccordés) et l'explication d'E7 rang 2, qui part désormais de la Graine
+**déjà formulée**. Plus le §3 de `verifier_action_experience`.
+
+⚠️ **`validation_authority: mentor` sur E6, je ne l'ai PAS touché** — c'est une référence comparée à
+la base par `verifier_autorites_de_validation`, et la base fait foi. Le changer ici seul ferait
+rougir ce banc sans rien corriger sur le parcours. Codex te l'assigne.
+
+### Ton lot
+
+1. **`SequenceDeGestes::GESTES_DE_MENTOR`** — retirer `"et-moi-dans-tout-ca" => 2` (l.405).
+2. **Une vraie porte de formulation pour E6/2**, avec conservation du texte (Codex), puis la Graine
+   au rang 3 sans mentor préalable. ⚠️ **Sans porte, le CTA ne se rend pas du tout** :
+   `_passage.html.haml` n'offre le bouton que sur `- elsif libelle_cta && g.porte.present?`. Le §3 le
+   dit dès sa première assertion.
+3. **Une preuve pour E6/2** si elle est possible — sinon la confirmation déclarative suffit,
+   `confirmation: "J'ai formulé mon Appel"` est déjà écrit.
+4. **`validation_authority` d'E6** en base (`/gestion`), puis la ligne du YAML mise en face.
+5. **E7** — la porte du rang 2 vers la fiche du mentor **choisi** (voir ci-dessous).
+
+### ⚠️ Le §3 du banc est ROUGE tant que ton lot n'est pas là — c'est ce qu'on lui demande
+
+| assertion | rouge parce que |
+|---|---|
+| E6/2 · « sa porte n'est PAS celle du mentor » | `GESTES_DE_MENTOR` route encore vers `/heros` |
+| E7/2 · « avec un mentor choisi, elle aboutit à SA fiche » | E7 passe par l'adaptateur `heros_path` : ses **trois** gestes mènent à `/heros` à plat |
+
+Le second n'est pas une invention : c'est **l'arbitrage de Boris du 24 août** (« ouvre soit la page
+des mentors si le joueur n'a pas sélectionné le sien, soit directement la page de son mentor »). Il
+vivait sur le geste 2 d'E6 ; il **suit** le mentor jusqu'à E7, il ne disparaît pas avec lui. C'est
+d'ailleurs pourquoi j'ai porté la règle du 16 août sur E7 au lieu de la retirer : la supprimer aurait
+laissé le banc vert sur un parcours où plus rien ne mène au mentor.
+
+⚠️ **Le banc SUIT la porte, il ne lit pas son attribut.** Avant et après ton lot, l'`href` est le
+même — `/excursion/ouvrir/point-zero-monde-0/et-moi-dans-tout-ca/2`. Seul l'endroit où elle
+**aboutit** change. Un banc qui s'arrêterait à l'attribut serait vert dans les deux cas.
+
+ⓘ Le repli de `PREUVES_PAR_GESTE` pour E6 rang 3 mentionne encore une « proposition mentor plantée »
+(`PropositionDeGraine`, l.517) : il ne prouve rien de faux, je ne l'ai pas touché, mais il n'aura
+plus de source une fois le dialogue retiré.
+
+**À rejouer** : `verifier_action_experience`, `verifier_autorites_de_validation`, `verifier_gestes`,
+`verifier_chaine_m0`, `verifier_marelle`.
+
+### Ce qui t'attend toujours, dans l'ordre
+
+| PR | ce qui manque |
+|---|---|
+| **#219** | ⚠️ **une route** : `PUT journey_challenge_recommencer_path` — les ÉTAPES à zéro, sans toucher à `validated_at`, aux `Point` ni au reçu |
+| #221 | rien, elle est complète |
+| **#222** | ⚠️ **ton lot ci-dessus** — elle ne part pas seule |
+
+— poste fixe
