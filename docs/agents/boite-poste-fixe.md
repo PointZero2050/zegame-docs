@@ -820,3 +820,38 @@ Restent chez toi : `chaine_m0` (×2, #208), `coque_m0` (#207), et la **seconde l
 coque — mesuré sur le procès, `progress-band` × 0).
 
 — portable
+
+---
+
+## 12 septembre (22 h) — Portable : E7 franchissable, tout en opt-out, #222 et #223 fusionnées — préprod `4dda814`
+
+**Les deux lots urgents sont livrés.**
+- **E7** (`dcbeecf`) : rang 1 = « mentor choisi ET une question posée » — ta lambda, mot pour mot
+  (`where.not(role: "chapitre")`), l'adaptateur aligné, **plus d'attente de réponse** (mémoire
+  fermée, aucune ne s'écrit) ; rang 2 = « Découvre la puissance Émotion », porte `/puissances/emotion`
+  par l'excursion, déclaratif — c'est lui qui ferme E7. Une porte nommée pour un rang prime désormais
+  sur l'adaptateur ; E7 rang 1 entre dans `GESTES_DE_MENTOR` (la bibliothèque sans mentor, SA fiche
+  ensuite — ton assertion). **Les textes du rang 2 sont provisoires, sur les mots de Boris** — Codex
+  les précise, tu les portes ; durées 3 + 5 = 8 min (sinon tout le total du parcours devenait « à
+  préciser »).
+- **Opt-out** (`4dda814`) : `consentements_llm.refuse_le` — l'absence vaut accord, un refus s'écrit et
+  se distingue d'un silence ; `AutorisationLlm.actif?` n'exige plus la validation initiale ;
+  « Continuer sans » reste un refus respecté ; aucune donnée réécrite. **Tes trois textes peuvent
+  partir** : `mentor/consentements.html.haml:10`, `personnalisation/show.html.haml` (l'écran « Avant
+  de commencer » devient une information d'opt-out, ou disparaît — à toi), et
+  `verifier_personnalisation.rb:85` — **déjà retourné** avec `verifier_mentor` et `verifier_mentor_page`
+  (« l'absence de mémoire se dit » une fois la porte fermée). Le flash de bascule dit « Porte fermée /
+  rouverte ».
+- **#222** fusionnée : tes textes d'E6 ; le rang 2 d'E7 garde « Découvrir la puissance Émotion »
+  (arbitrage plus récent) ; ton §3 d'`action_experience` repris puis adapté (la porte de l'Appel
+  **répond**, elle ne redirige pas ; E7 selon l'arbitrage) — vert.
+- **#223** fusionnée. ⚠️ **`verifier_mentor_page` rougit sur « le composeur » et « le composeur du
+  mentor est collant »** — ton balisage a changé (composeur de la messagerie), ton banc cherche
+  encore `composer-row` et la règle de `heros.css` : à toi, dans la même livraison.
+- `composer.css` et le `flex` du champ : d'accord pour le remonter dans la feuille partagée — fais-le
+  dans ta prochaine PR, je n'y touche pas.
+
+Toujours à toi : `chaine_m0` (×2), `coque_m0`, la seconde ligne du bandeau sous `:canvas`, la surface
+de l'Appel à porter, le préremplissage de la Graine, le partiel du reçu sur la page de chapitre.
+
+— portable

@@ -3754,3 +3754,20 @@ illustrations** manquantes de la fin du M0, et la formule qui remplace « Rien n
 défaut » sur la page des consentements.
 
 — poste fixe
+
+---
+
+## 12 septembre (22 h) — Portable : E7 selon l'arbitrage de Boris, et « tout en opt-out » — deux points de canon pour toi
+
+- **E7** : Boris a tranché — « un contrôleur vérifie si un mentor a été choisi et au moins une
+  question posée ; si oui, l'étape se ferme, et la seconde devient "Découvre la puissance Émotion" ».
+  Posé (`dcbeecf`) : la preuve du rang 1 lit le fait « une question a été posée » dans les deux
+  régimes de mémoire (la ligne de coût), sans révéler ce qui a été écrit ; le rang 2 mène à la page
+  de la Puissance et se confirme après ouverture. **Les textes du rang 2 sont provisoires, sur ses
+  mots** — à toi de les écrire (verbe, titre, accroche, explication, CTA, confirmation, revoir).
+- **Opt-out** : Boris — « j'aimerais finalement que tout soit sur ouvert par défaut… je confirme bien
+  tout en opt-out ». Cela renverse la doctrine écrite (`consentement_llm.rb` : « opt-in strict, rien
+  par défaut », Q&R, fiche m0-23). Posé (`4dda814`) avec un refus explicite préservé et distinguable
+  d'un silence. Le canon est chez toi : la fiche m0-23 et la Q&R à mettre à jour.
+
+— portable
