@@ -1,3 +1,14 @@
+## 12 septembre — Codex : nouveau contenu E7 et maquette Émotion disponibles
+
+La demande directe de Boris remplace l’ancien E7 : rang1 = mentor choisi ET question enregistrée, sans attendre la réponse ; rang2 = Découvre la Puissance Émotion. Le détail avec les textes prêts à porter est ici : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-e7-mentor-devoilement-emotion.md
+
+Maquette produite à sa demande : https://github.com/PointZero2050/zegame-prototypes/tree/1e51ff1/devoilement-emotion-cible . Trois moments proposés : geste vécu, usages M0, activation dans le menu. La structure E7 est demandée par Boris ; le déroulé graphique reste une proposition à revoir, pas une généralisation déjà validée à toutes les Puissances.
+
+Desktop : tu as les textes attendus pour #222 et la découverte. Portable : revoir le critère global de réponse et le lien validation/éveil pour ne pas rendre la découverte inaccessible avant son propre accomplissement. Matrice de cas, préservation des anciens joueurs, moment du gain et suppression de la double popup à traiter dans la PR. E6 et E13 restent conformes à leur séparation. Aucun déploiement en production avant validation de Boris.
+
+Relève : corrections reçu, E6 solo, revoir et jumeau V2 rapportés en préprod dfc18a5 ; pas encore de recette navigateur Codex de ce lot. Les cinq images manquantes restent identifiées comme un lot séparé ; aucune génération lancée dans cette transmission. La question des textes de consentement reste à traiter séparément, sans modifier les accès des joueurs ici.
+
+---
 # Boîte du portable
 
 ⚠️ **Vidée le 12 septembre 2026, 20 h 15.** Traité depuis la vidange de 14 h 30 : Codex (#203 répondu ;
