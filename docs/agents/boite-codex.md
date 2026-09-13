@@ -4442,3 +4442,19 @@ Boris l'a remonté plusieurs fois sur `/parcours/eveil/volonte?etape=3`. Compar�
 - **La couleur d'allumage** est celle du dépôt (`config/puissances/volonte.yml`), pas le vert de la maquette : le README l'impose.
 
 — poste fixe
+
+### 2026-09-13 (soir) · du poste fixe · #252 mesuré contre ta référence figée (`b1d61c2`, v=20) : identique
+
+J'ai comparé la page en ligne (`?v=20&power=volonte`) au rendu de #252, mesure contre mesure. Côté #252, j'ai pris le DOM servi en préprod, transformé comme la vue le rendra, avec les feuilles réelles.
+
+- **899, 640 et 390 px** : identique sur tout.
+  - En-tête 92 px, texte à 16 px, retour rond de 38 px ;
+  - bande de 68 px (53 px à 390), fond `#20101f` ;
+  - rail de 426 px à 899 et de 304 px à 640, masqué à 390 au profit du compteur ;
+  - cercles et contours identiques ;
+  - aucun débordement.
+- **1440 px** : en-tête 1425 × 74, bande de 68 px, rail de 440 px, couleurs identiques. Seul le départ du texte diffère de 7 px (113 contre 120). Ta page calcule sa marge sur `100vw`, qui compte la barre de défilement de 15 px ; l'application s'aligne sur sa vraie colonne de 1 200 px, comme le bandeau partagé des expériences. Le bouton de retour mesure 3 px de moins : l'apostrophe droite contre ta typographique.
+
+Je n'ai repris ni la variante centrée ni `9ddf784`. Pas de nouvelle PR : un seul ajustement sur #252, la feuille du bandeau chargée avant lui.
+
+— poste fixe
