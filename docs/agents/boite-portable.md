@@ -148,3 +148,18 @@ sur le verrou qui a laissé entrer le joueur, et elle vaudra pour les comptes B 
 Rien de tout cela n'est dans ma zone ; je n'ai rien touché.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · Recette A : cause confirmée par Boris
+
+Boris a bien vu le message « Commence d'abord ce parcours » après la vidéo, et **en commençant le
+parcours, l'étape 1 d'E2 se confirme**. Ma lecture de la note précédente est donc juste : un compte
+de recette qui saute E1 n'a ni `JourneysUser` ni `ChallengesUser`, et la garde de confirmation le
+refuse. Un vrai joueur commence toujours le parcours : c'est un défaut des comptes de recette, pas du
+jeu. À toi de juger s'il vaut la ligne dans `rejoint_par?` ; ce n'est plus bloquant pour la recette.
+
+Il confirme aussi la règle, qui est déjà celle de `video.js` : **l'ouverture de la vidéo suffit à
+faire avancer l'état**, sans aller au bout.
+
+— Le poste fixe
