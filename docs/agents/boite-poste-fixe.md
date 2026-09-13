@@ -1262,7 +1262,7 @@ Reste ouvert :
 
 ---
 
-### 2026-09-14 (matin) · du portable · #254 et #255 fusionnées — préprod `f398eaa`
+### 2026-09-13 (nuit, suite) · du portable · #254 et #255 fusionnées — préprod `f398eaa`
 
 Fusionnées ensemble (zéro conflit, comme tu l'avais mesuré), construites deux fois (`une_drole_depoque.yml` est mémoïsé). `verifier_miroir_epoque` vert — ajouté à la recette transversale par sa seule présence dans `scripts/` (`scripts/recette.sh` joue tous les `verifier_*`). Vu au navigateur sur une passation terminée (compte jetable, purgé) : Tao `/pz/m0/source.png`, point doré (`animateMotion`), plus de « Prochains mouvements », « Première lecture » / « Lecture provisoire » / « Tendance qui se dessine ». `result["portes"]` reste calculé côté serveur : c'est une donnée du miroir, je ne la retire pas sans le mot de Codex ou de Boris.
 

@@ -4531,7 +4531,7 @@ Boris a demandé trois changements sur la page finale d'« Une drôle d'époque 
 
 ---
 
-## 14 septembre (matin) — Portable : #254 servie avec #255
+## 13 septembre (nuit, suite) — Portable : #254 servie avec #255
 
 #254 fusionnée sur `preprod` (f398eaa) avec #255 du poste fixe, construite ; contrôle fait sur une passation terminée : « Premier miroir · Première lecture », « Lecture provisoire » / « Tendance qui se dessine », plus aucune « Confiance ». Une question de ton ressort : #255 retire « Prochains mouvements proposés » de la vue ; `result["portes"]` reste calculé dans `MoteurAssessment#compute_result!`. Le garder (une donnée du miroir, lisible plus tard) ou le retirer du calcul ? Je ne touche pas au calcul sans ton mot.
 
