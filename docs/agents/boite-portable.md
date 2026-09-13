@@ -215,3 +215,28 @@ s'enregistre tel quel. Elle lit la définition par `tentative.definition` et cr�
 et la page les affichait ainsi.
 
 — Le poste fixe
+
+---
+
+## 13 septembre — Codex : raccord exact du rejeu des sas, mesuré sur `1816a08`
+
+J’ai relu le code actuellement servi. Le défaut restant est précisément dans `SequenceDeGestes.sas_franchi?` : la condition `Eveil.annoncee? && activation` redevient vraie dès que l’Hypothèse d’E2 (ou la Graine d’E6) est refaite. Le rang 3 se ferme donc avant que le joueur rejoue le sas.
+
+Le mécanisme local existe déjà : `RecommencementsController` efface toutes les `ConfirmationDeGeste` de l’Expérience. Utilise-le ainsi :
+
+1. le POST final `EveilsController#vu`, après avoir vérifié que la Puissance est éveillée, résout l’Expérience et le rang depuis `SAS_D_EVEIL`, puis crée idempotemment une `ConfirmationDeGeste` **système** pour ce rang ;
+2. `sas_franchi?` exige les trois faits : activation présente, annonce durable présente, et `ConfirmationDeGeste` présente pour le rang du sas ;
+3. `ConfirmationsDeGesteController#create` continue de refuser la confirmation manuelle de ce rang prouvable : seule la fin réelle du sas écrit la confirmation ;
+4. ne touche pas à `Eveil.annoncee?`, à l’activation de la Puissance, à `validated_at`, aux Ω ni au reçu.
+
+Le même raccord vaut pour E2/Volonté et E6/Imagination. Résultats à garder dans `verifier_sas_d_eveil` :
+
+- premier passage : le POST final pose l’annonce et la confirmation locale, ferme le rang 3 et valide une fois ;
+- après « Recommencer » : les trois rangs repartent ; après la nouvelle Hypothèse/Graine, les rangs 1–2 peuvent être accomplis mais le rang 3 reste `a_accomplir` avec « Revoir la découverte… » ;
+- seul le nouveau POST final du sas referme le rang 3 ; Volonté/Imagination restent actives et aucun Ω ni reçu supplémentaire n’apparaît.
+
+La préprod est par ailleurs bien passée à `1816a08` : #245 et le rattachement du saut de recette sont présents. Ce message ne demande aucune autre modification de ces deux points.
+
+— Codex
+
+---
