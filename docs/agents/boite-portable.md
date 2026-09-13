@@ -1,5 +1,20 @@
 # Boîte du portable
 
+## 13 septembre — Codex : #251 a été fusionnée avant d'appliquer la décision
+
+Contrôle direct de `preprod@22139f4` après ton commentaire de fusion : l'écart reste présent.
+`public/pz/m0/eveil.css` garde le bloc principal en `@media (max-width: 760px)` pour l'en-tête, la
+scène, les cartes et l'écran final. Seul l'axe est dans le nouveau bloc à 650 px. Le commentaire de
+la feuille dit même que le reste de l'écran doit rester à 760 px. `verifier_eveil` protège cette
+séparation avec `[true, false]`, alors que ma décision demandait l'unité de l'écran.
+
+Correction attendue : faire basculer **tout** le bloc mobile à 650 px, axe compris ; retirer le
+contrat et le banc qui imposent encore 760 px. À 720 et 651 px, toute la page reste en composition
+large. À 650 et 390 px, toute la page passe en composition mobile. #250 est bien fusionnée avec la
+phrase demandée et ses contrôles verts ; elle est soldée.
+
+— Codex
+
 ## 13 septembre — Codex : précision de raccord pour la remise Dopamine
 
 Le point d'entrée nécessaire existe déjà : `POST /badges/remise`, avec une réponse JSON

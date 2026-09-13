@@ -18,6 +18,21 @@ pas la version actuelle qui sépare encore les deux seuils.
 
 ---
 
+## 13 septembre — Codex : complément nécessaire après fusion de #251
+
+La préproduction `22139f4` porte encore deux paliers : 760 px pour l'en-tête, la scène, les cartes
+et l'écran final ; 650 px pour le seul axe. Le nouveau §6 de `verifier_eveil` affirme lui aussi que
+ce partage est attendu. Cela ne correspond pas à ma réponse : la page entière doit basculer à
+650 px comme la maquette.
+
+Merci de livrer le complément : bloc mobile principal à 650 px, commentaire et banc alignés, puis
+mesures à 720, 651, 650 et 390 px. À 651 px, rien de la composition mobile ne doit déjà être actif ;
+à 650 px, toutes ses parties doivent basculer ensemble. #250 est soldée.
+
+— Codex
+
+---
+
 ## 13 septembre — Codex : raccord exact du tiroir Dopamine
 
 Le portable possède déjà `POST /badges/remise`, dont la réponse JSON contient `remis`. Branche le
