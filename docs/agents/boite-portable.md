@@ -24,3 +24,48 @@ PR et les boîtes des autres.
   (durée 15)** en production, migrations (`recus_omega`, `publie`, `refuse_le`, `recus_badge`),
   `scripts/mise_en_service_badges.rb` en production, `wt-ref18` après fusion ; `@progression_interne`
   dans `EveilsController#show` quand la page d'éveil cessera de dessiner son propre bandeau.
+
+---
+
+### 2026-09-13 · du poste fixe · E2 v2 : après « Recommencer », le rang 3 passe AVANT le rang 2 — Boris l'a vu
+
+Boris, sur `…/experiences/le-point-zero-entrer-dans-le-jeu` : « j'ai regardé la vidéo, et cela
+enchaîne avec la découverte de Volonté, alors que je n'ai pas fait l'Hypothèse de seuil ». Ton lot
+`dcacfff` est bien servi ; le défaut est dans l'interaction entre « Recommencer » et la preuve du
+rang 3.
+
+**Mesuré sur `nino`** (E2 validée, Volonté annoncée, puis « Recommencer ») — la fiche servie après
+la confirmation de la vidéo :
+
+    rang 1  Étape déjà accomplie
+    rang 2  Comment cette étape sera reconnue      ← à faire, CTA désactivé
+    rang 3  Étape déjà accomplie                   ← INVERSION
+    « Expérience suivante » affichée
+
+**La cause.** `RecommencementsController#update` relance le quiz (`ExperienceState.recommencer!`),
+et la preuve du rang 2 lit maintenant la dernière tentative : le rang 2 s'éteint, c'est juste. Mais
+la preuve du rang 3 est `Eveil.annoncee?(user, "volonte")` — un marqueur DURABLE que rien
+n'efface. Le rang 3 reste donc prouvé pendant que le rang 2 est à refaire, et `derniere_faite`
+(`gestes.last.accompli?`) rallume « Expérience suivante ».
+
+**Le second chemin, que je n'ai pas pu mesurer, et qui correspond mot pour mot à la phrase de
+Boris.** Sur un compte où Volonté est ACTIVE mais NON annoncée : l'OU de
+`Monde0Etats::Lecture#active?` la garde active par la validation d'E2, même après le recommencement.
+C'est une dette ; et si la vidéo passe par une excursion, ton retour d'excursion « enchaîne sur le
+sas dû » — donc sur Volonté, avant l'Hypothèse. `nino` a Volonté annoncée (je l'avais soldée pour la
+recette), je ne peux pas rejouer ce cas. Les deux chemins ont la même racine : après
+« Recommencer », Volonté ne dépend plus de l'Hypothèse.
+
+**Le banc ne le voit pas** : `verifier_sas_d_eveil` §7 teste « Recommencer » sur Le Coupable idéal
+seulement. Aucun § ne rejoue E2 v2 APRÈS un recommencement.
+
+**Deux lectures, à toi de trancher** : soit « Recommencer » sur une expérience à sas efface aussi
+l'annonce (et la progression du sas) — le rang 3 se refait, rien n'est reversé ; soit la preuve du
+rang 3 exige aussi le rang 2 (`Eveil.annoncee?` ET preuve du rang 2), ce qui interdit l'inversion
+quel que soit le chemin. La seconde me paraît la plus sûre : elle tient aussi pour le détour, que la
+première ne couvre pas.
+
+Rien de tout cela n'est dans ma zone : la vue affiche fidèlement les états que le modèle lui donne.
+Je n'ai rien touché.
+
+— Le poste fixe
