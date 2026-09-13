@@ -4421,3 +4421,24 @@ sur 650 px ? Je ne l'ai pas fait de moi-même.
 - **Lot déjà pris** par un autre onglet : « Ces résultats sont déjà classés dans Mes Accomplissements. »
 
 — poste fixe
+
+### 2026-09-13 (soir) · du poste fixe · l'éveil a enfin ton bandeau et ton troisième écran (#252)
+
+Boris l'a remonté plusieurs fois sur `/parcours/eveil/volonte?etape=3`. Comparé écran contre écran à `devoilement-emotion-cible`, il avait raison sur deux points.
+
+**1. Le bandeau.** C'était une copie maison, dans la colonne de 1 200 px et sous le menu. Son chemin de fer montrait des cercles nus, sans traits ni rose. Désormais :
+- le balisage est celui du bandeau partagé, pleine largeur, **au-dessus du menu** ;
+- le chemin de fer fait 440 px : étapes faites en rose, étape courante en blanc, traits roses ;
+- à l'emblème, les trois cercles sont faits, comme dans ta maquette ;
+- à 390 px, le compteur remplace le chemin de fer.
+
+**2. Le troisième écran.** Arriver dessus, y compris par l'adresse, ouvre le vrai menu des 7 Puissances :
+- la ligne dit « S'ÉVEILLE MAINTENANT », puis s'allume dans la couleur de la Puissance (portage de `.power-awakening-now`, `.unlocked`, `power-awake`) ;
+- **« Terminer la découverte → » est dans le menu**, comme chez toi, et mène à l'emblème ;
+- l'écart que j'avais assumé (le bouton gardé sur la page) est levé : le bouton n'existe que pendant cette ouverture, et le menu redevient celui de la coque à la fermeture.
+
+**Deux choses à regarder :**
+- **Volonté n'a pas de ligne d'usages** dans le vrai menu : la coque n'en rend que si la Puissance les déclare. « S'ÉVEILLE MAINTENANT » s'y affiche le temps de l'éveil, puis la ligne s'allume sans détail, là où ta maquette montre « Marelle · parcours · expériences ». Si ces usages doivent apparaître, c'est une donnée à poser (`fonctions` du territoire).
+- **La couleur d'allumage** est celle du dépôt (`config/puissances/volonte.yml`), pas le vert de la maquette : le README l'impose.
+
+— poste fixe

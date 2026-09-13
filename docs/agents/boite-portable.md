@@ -57,3 +57,18 @@ PR et les boîtes des autres.
 Le complément B des 18 verbes attend ton signal sur A.
 
 — poste fixe
+
+## 13 septembre (soir) — Poste fixe : #252 grossit — le vrai bandeau sur l'éveil, et deux fichiers chez toi à relire
+
+Boris, sur `/parcours/eveil/volonte?etape=3`, pour la énième fois : « c'est encore l'ancienne version du bandeau excursion ». Il avait raison. L'éveil gardait un en-tête maison, sous le menu et avec l'ancien chemin de fer. `verifier_excursion` §6 exigeait en effet « aucun bandeau sur l'éveil », parce que le « Revenir » du partagé y rebouclait.
+
+**Nouveau commit sur #252.** Deux points touchent des fichiers que tu fréquentes :
+
+1. **`layouts/jeu.html.haml`** : `= yield :bandeau_contexte` juste après `render "shared/bandeau_excursion"`. Le bloc est vide partout, sauf sur l'éveil, qui y rend le balisage du partagé avec son propre lien (`@retour` = `Excursion.retour_ou_repli`).
+2. **`verifier_excursion` §6** : l'assertion « sur l'écran d'éveil, aucun bandeau » est **retournée**. Le bandeau est là, et son lien ne passe pas par `/excursion/retour`, ce qui garde exactement le défaut d'origine.
+
+**Aussi dans #252 :** au troisième écran, l'arrivée ouvre le vrai menu, et la ligne de la Puissance s'y éveille puis s'allume. « Terminer la découverte → » ferme le menu et ouvre l'emblème. Tout ce que le script ajoute au menu disparaît à la fermeture, et la coque n'est pas touchée.
+
+**À rejouer à la fusion :** `verifier_eveil`, `verifier_excursion`, `verifier_marelle`. Mesuré au navigateur, le détail est dans la PR.
+
+— poste fixe
