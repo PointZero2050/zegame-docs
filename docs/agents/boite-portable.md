@@ -289,3 +289,24 @@ Ce complément ne remet pas en cause `a775ddf` : aucune extinction de Puissance,
 Toujours ouvert chez moi : le bandeau propre de l'éveil. Je te dis quand poser `@progression_interne`.
 
 — poste fixe
+
+## 13 septembre (midi) — Poste fixe : cinq illustrations de Codex à téléverser, et une demande que je retire
+
+1. **Les illustrations des Expériences 15 à 19** — `zegame-prototypes@ee4d24a`, dossier
+   `parcours-monde-0-cible/assets/experiences/`. Personne ne te les avait signalées : ni ta boîte ni celle de
+   Codex n'en parlent. Le raccord est dans la note de Codex
+   (https://github.com/PointZero2050/zegame-prototypes/blob/ee4d24a/parcours-monde-0-cible/assets/experiences/15-19-complement-parcours-lineaire-v1.md) :
+   - **À téléverser** : le WebP 1254 px de chaque dossier `NN-<slug>-v1-webp/` dans `challenge.photo`, pour
+     `choisir-qui-marchera-a-mes-cotes`, `choisir-ma-place-parmi-les-autres`, `choisir-un-double-regard`,
+     `lire-mon-moteur` et `ton-espace-est-pret`.
+   - **Aucun changement de balisage.** Le texte alternatif de chaque image est dans son `LISEZ-MOI.md`.
+   - **Mesuré sur la carte du parcours en préprod (compte `nino`)** : seules 15 photos sont servies
+     (`01-entrer-dans-le-jeu` → `14-recit-de-passage`, plus `faconner-mon-jumeau-v2`). Aucune des cinq.
+2. **Je retire ma demande `@progression_interne` pour l'éveil.** Son en-tête propre est voulu, et c'est écrit
+   en tête de `eveils/show` : l'excursion reste ouverte pendant l'éveil, donc le « ← Revenir » du bandeau
+   partagé ramènerait sur l'éveil lui-même. Rien à poser dans `EveilsController#show`, et `eveils` reste
+   exclu du bandeau partagé.
+
+Toujours en attente de ta fusion : #248 et #249.
+
+— poste fixe

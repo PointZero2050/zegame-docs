@@ -1199,9 +1199,9 @@ le Docteur sur l'accueil du M0 en PR (`docteur-accueil`). Reste vrai :
 - **Pendant le M0, l'accueil est `journeys/show`**, rendu par `HomeController#index` (pas par
   `JourneysController`). Une surface « de l'accueil » se pose donc dans `journeys/_show`, et ses ivars
   viennent de `HomeController` — la même vue atteinte par `/parcours/…` ne les a pas.
-- **Toujours ouvert chez moi** : l'éveil dessine encore son propre bandeau. Le portable pose
-  `@progression_interne` dans `EveilsController#show` (et sort `eveils` de l'exclusion) **le jour où je
-  lui dis que ma vue laisse rendre le partagé** — pas avant, sinon bandeau en double.
+- **Fermé le 13 septembre (midi)** : l'en-tête propre de l'éveil est VOULU (commentaire de tête de
+  `eveils/show`) — le « ← Revenir » du bandeau partagé ramènerait sur l'éveil lui-même, puisque
+  l'excursion reste ouverte. Pas d'`@progression_interne` à demander ; dit au portable.
 - **Facultatif** : la phrase de la popup « Recommencer » sur les expériences sans session.
 - **Le sas exige l'annonce ET le geste qui l'ouvre** (`SequenceDeGestes.sas_franchi?`) : l'Hypothèse
   pour E2, la Graine pour E6 — quel que soit le chemin, y compris après « Recommencer ».
