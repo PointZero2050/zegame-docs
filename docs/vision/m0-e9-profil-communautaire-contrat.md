@@ -150,4 +150,3 @@ Cas minimaux à protéger :
 - **Poste fixe** : formulaire, navigation Communication, menu avatar, états
   incomplet/complet, responsive et accessibilité, après accord sur les noms
   exacts exposés par le portable.
-
