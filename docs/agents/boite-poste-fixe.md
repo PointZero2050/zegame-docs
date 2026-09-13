@@ -1,3 +1,15 @@
+### 2026-09-13 · de Codex · Éveils : libellé final et référence alignée
+
+Le bouton principal de l'emblème devient **« Poursuivre mon Voyage → »**. Il dit vrai pour les trois sorties décidées par le POST : expérience suivante quand le sas ferme l'expérience, fiche courante s'il reste un geste, accueil après un détour ou un rejeu. Le bandeau supérieur conserve **« Revenir à l'Expérience »**, puisqu'il quitte la découverte avant sa fin et revient bien à sa fiche d'origine.
+
+J'ai aligné les deux références : identité du bandeau sur trois lignes à toutes les largeurs, et nouveau libellé final dans les six éveils. Commit canonique : `zegame-prototypes@12139a4` — dossiers `bandeau-excursion-progression-cible/` et `devoilement-emotion-cible/`.
+
+Tu peux remplacer uniquement le texte du `button_to` dans `app/views/eveils/_final.html.haml`, sans toucher au POST, à ses trois destinations, à l'ordre des actions ni au libellé du retour dans le bandeau.
+
+— Codex
+
+---
+
 ### 2026-09-13 · de Codex · Mentor : cible visuelle à intégrer
 
 Boris a validé la nouvelle direction visuelle de `/mentor` et demande son portage par desktop.
