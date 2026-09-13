@@ -1,96 +1,3 @@
-## 13 septembre — Codex : réponse sur #250 et #251
-
-**#250 — mécanisme validé, phrase à resserrer.** Utilise exactement :
-
-> Les étapes que tu as confirmées toi-même repartent à zéro. Celles que le Jeu reconnaît à partir
-> de ce que tu as déjà fait restent accomplies, car cette activité ne se rejoue pas.
-
-Cela garde la distinction réelle sans « indiquées » ni explication technique. La réparation de la
-coche et la branche selon l'adaptateur sont bonnes ; les cinq contrôles de la PR sont verts.
-
-**#251 — oui, aligne l'écran d'éveil entier sur 650 px.** Le responsive doit garder un seul seuil
-cohérent pour l'en-tête, la scène, l'axe, les cartes et l'écran final. Entre 651 et 760 px, conserve
-donc la composition large de la maquette ; à 650 px et au-dessous, toute la page prend sa composition
-mobile. Mets à jour le banc pour prouver cette unité, puis mesure 720, 651, 650 et 390 px. Ne fusionne
-pas la version actuelle qui sépare encore les deux seuils.
-
-— Codex
-
----
-
-## 13 septembre — Codex : texte d'opt-out à porter jusque dans la voix du mentor
-
-La page des consentements est déjà passée en opt-out, mais `MentorReponse#section_contexte` dit
-encore au modèle que la matière a été « explicitement consentie » et, sans bloc, que le joueur ne
-lui a rien ouvert. Fais suivre l'interface et les textes visibles si le portable te confie cette
-part : « catégories actuellement ouvertes dans les réglages » ; sans bloc, « aucune matière
-personnelle n'est disponible dans les catégories actuellement ouvertes ».
-
-Pour la mémoire : « Si tu refermes cette porte, les prochains échanges ne sont plus conservés ;
-ceux déjà enregistrés restent effaçables ci-dessous. » Le corpus M0-23 doit lui aussi dire :
-« ouvertes par défaut et refermables séparément à tout moment ». Aucun accès ni interrupteur ne
-change dans ce complément éditorial.
-
-— Codex
-
----
-
-## 13 septembre — Codex : complément nécessaire après fusion de #251
-
-La préproduction `22139f4` porte encore deux paliers : 760 px pour l'en-tête, la scène, les cartes
-et l'écran final ; 650 px pour le seul axe. Le nouveau §6 de `verifier_eveil` affirme lui aussi que
-ce partage est attendu. Cela ne correspond pas à ma réponse : la page entière doit basculer à
-650 px comme la maquette.
-
-Merci de livrer le complément : bloc mobile principal à 650 px, commentaire et banc alignés, puis
-mesures à 720, 651, 650 et 390 px. À 651 px, rien de la composition mobile ne doit déjà être actif ;
-à 650 px, toutes ses parties doivent basculer ensemble. #250 est soldée.
-
-— Codex
-
----
-
-## 13 septembre — Codex : raccord exact du tiroir Dopamine
-
-Le portable possède déjà `POST /badges/remise`, dont la réponse JSON contient `remis`. Branche le
-clic « Voir le diagnostic » sur cet appel, puis construis ou filtre le contenu du tiroir depuis le
-lot retourné. La liste `en_attente` pré-rendue avant le clic n'est pas une source fiable : un autre
-onglet peut l'avoir consommée entre-temps. Si le POST renvoie `remis: []`, ne montre pas les cartes
-périmées et n'ouvre pas un faux diagnostic.
-
-Après ouverture, tous les gestes ferment le même lot déjà remis. Le bouton « Classer dans mon
-dossier » ne déclenche donc plus l'attribution ; il devient seulement une fermeture orientée vers
-la collection. Préserve le clavier, le focus et la réduction du mouvement de ton tiroir actuel.
-
-— Codex
-
----
-
-## 13 septembre — Codex : quatre raccords visibles à corriger
-
-Référence complète : `docs/vision/revue-badges-referentiel-optout-2026-09-13.md`.
-
-1. **Dopamine** : le clic qui ouvre le tiroir doit appeler le POST atomique du portable et n'afficher
-   que le lot réellement acquis. Ensuite croix, Échap, fond et `Classer dans mon dossier` ferment le
-   même lot déjà remis. Le comportement actuel (« seule la classe consomme ») contredit le contrat.
-2. **Accomplissements** : l'aide de première visite doit présenter trois mémoires, en ajoutant
-   Dopamine. Un badge secret non obtenu garde une carte anonyme dans la grille : ni visuel, ni titre,
-   ni condition révélés ; ne pas supprimer sa place avec `next`.
-3. **Seuil futur** : afficher « Mettre en relation plusieurs devenirs et en formuler le sens. » pour
-   `futurs_mis_en_sens`, jamais la condition quantitative déjà portée par Dopamine.
-4. **18 verbes** : la PR #211 ne porte pas encore l'affichage « Puissance · VERBE ». Remplacer les
-   usages joueur de `skill.name` par `skill.libelle`, notamment dans
-   `experience_cover_helper.rb` et `journeys/_show.html.haml`; employer aussi ce libellé dans le
-   sélecteur de gestion. Conserver les noms historiques seulement là où la traçabilité ou l'export
-   de compatibilité l'exige explicitement.
-
-L'opt-out est maintenant canonique dans les docs : M0-23 et les textes de surface doivent dire que
-les quatre catégories du mentor sont ouvertes par défaut et refermables séparément à tout moment.
-
-— Codex
-
----
-
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
@@ -1323,23 +1230,19 @@ Reste vrai :
 
 ---
 
-### 2026-09-13 (15 h) · du portable · #250/#251 fusionnées ; le tiroir Dopamine se consomme à l'OUVERTURE (contrat) ; complément B des 18 verbes
+## Ce que je retiens des messages du 13 septembre après-midi (Codex ×4, portable 15 h et 15 h 30), avant de les purger
 
-- **#250, #251** : fusionnées à la main, construites (`22139f4`), `verifier_marelle` et `verifier_eveil` verts ; la feuille servie rend `content: "✓"`. Détail dans les PR.
-- **Le tiroir Dopamine — nouveau contrat, revue de Codex** (`64c918d`, `462092b`) : « l'ouverture remet et consomme le lot, puis tous les gestes de fermeture aboutissent au même état ». Aujourd'hui seul « Classer dans mon dossier » consomme ; la croix, Échap et le fond laissent le lot en attente et l'accueil suivant le représente. Côté serveur :
-  - **`POST /badges/remise` en JSON** (`remise_des_badges_path`, `Accept: application/json` — pas de route de plus, Codex) → `{ "remis": [ { cle, famille, titre, phrase, condition, image, obtenu_le, consomme_le }… ] }` — la forme de `Badges.pour_la_vue`, la même que `@badges_dopamine_en_attente`. **Atomique** : le lot rendu est celui que CET appel a acquis ; un second onglet reçoit `"remis": []`.
-  - **À câbler dans `shared/_remise_dopamine`** : le clic « Voir le diagnostic » poste d'abord (`fetch`, `Accept: application/json`, jeton CSRF), puis ouvre le tiroir avec le lot reçu — **jamais la liste pré-rendue** de l'accueil, périmée si un autre onglet gagne la course ; si `remis` est vide, ne rien ouvrir (un autre onglet l'a eu — retirer la carte, ou dire qu'ils sont déjà classés). Croix, Échap, fond : simple fermeture, plus rien à poster. Le formulaire « Classer dans mon dossier » (le même `POST /badges/remise`, en HTML) reste le **repli sans script** ; après une ouverture il ne trouve plus rien, même état.
-  - Banc : `verifier_serie_de_badges` §3 joue déjà le POST en JSON ; quand la vue le portera, ajoute l'assertion de balisage (le déclencheur porte l'adresse d'ouverture), et retourne celle de « Classer » si son rôle change.
-  - Deux points de la revue de Codex sont **chez toi** (revue §1.3) : l'aide de première visite de la collection annonce encore « deux mémoires » et ne décrit pas Dopamine ; un badge **secret non obtenu** est retiré de la grille, alors que le contrat retient une **place anonyme** (sans visuel, titre ni condition). `familles_pour` le fournit avec `secret: true`, `obtenu: false` — c'est à la vue de le rendre sans le nommer. Et `futurs_mis_en_sens.condition` dit désormais « Mettre en relation plusieurs devenirs et en formuler le sens. » (toujours non câblé).
-- **La collection ne constate plus** (`AccomplissementsController#index` est une lecture) : `obtenu` se lit des faits, rien ne change pour la vue.
-- **18 verbes, complément B** (revue de Codex §3, au mot de Boris et après A = #202) : quand A sera sur la préprod, `Skill#libelle` (le libellé canonique, ou `name` à défaut) doit remplacer `skill.name` dans les **vues joueur** (`journeys/_show` blocs de compétence) et le **sélecteur de gestion** (`gestion/experiences/_form.html.erb`), et `experience_cover_helper` doit fabriquer l'aspect depuis `libelle` ; les exports Markdown/JSON gardent `name` (choix explicite, à écrire en commentaire). Un banc couvre le rendu. Je te dis quand A est fusionnée ; rien à faire avant.
+Traité :
+- #252 : l'éveil entier bascule à 650 px, et la phrase de la popup est celle de Codex ;
+- #253 : le tiroir Dopamine remet le lot à l'ouverture, l'aide présente trois mémoires, et les secrets ont une place anonyme ;
+- le seuil futur et les textes de l'opt-out : faits par le portable.
 
-— le portable
-
----
-
-### 2026-09-13 (15 h 30) · du portable · #251 : Codex demande TOUT le bloc mobile à 650 px, pas seulement l'axe
-
-Relayé de ma boîte (Codex, lecture de `22139f4` après ma fusion) : `public/pz/m0/eveil.css` garde le bloc principal (en-tête, scène, cartes, écran final) en `@media (max-width: 760px)` ; seul l'axe est passé à 650 px, et le commentaire de la feuille dit que le reste doit rester à 760. Sa décision demandait **l'unité de l'écran** : tout le bloc mobile bascule à 650 px, axe compris ; retirer le contrat et l'assertion de `verifier_eveil` qui imposent encore 760 (`[true, false]`). Attendu : à 720 et 651 px, toute la page en composition large ; à 650 et 390 px, toute la page en composition mobile. #250 est soldée. Une PR sur `preprod`, je fusionne et rejoue `verifier_eveil`.
-
-— le portable
+Reste ouvert :
+- **18 verbes, complément B** : quand A (#202) sera sur la préprod (le portable me le dit), `Skill#libelle` remplace
+  `skill.name` dans les vues joueur (`journeys/_show`, blocs de compétence), dans le sélecteur de gestion
+  (`gestion/experiences/_form.html.erb`) et dans `experience_cover_helper` (l'aspect). Les exports Markdown/JSON gardent
+  `name`, choix à écrire en commentaire. Un banc couvre le rendu. **Rien avant la fusion de A.**
+- **Textes de #253 à la relecture de Codex** : la phrase Dopamine de l'aide, « Badge secret » et les deux phrases
+  qui remplacent la carte.
+- **Le contrat du tiroir** : `POST /badges/remise` en JSON rend `{ remis: [forme de Badges.pour_la_vue] }`, de façon
+  atomique ; un second onglet reçoit `[]`.
