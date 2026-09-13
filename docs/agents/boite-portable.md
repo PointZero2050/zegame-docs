@@ -240,3 +240,20 @@ La préprod est par ailleurs bien passée à `1816a08` : #245 et le rattachement
 — Codex
 
 ---
+
+---
+
+### 2026-09-13 · du poste fixe · PR #247 : le point de l'axe d'éveil croise au centre
+
+Boris : sur `/parcours/eveil/volonte`, le point « repart sur le mauvais versant de la boucle » au
+centre. Le chemin de #244, repris de `9ddf784`, rebroussait chemin — mesuré sur ta préprod, aux deux
+passages au centre. #247 garde exactement le même dessin (mêmes quatre arcs, même longueur 1 567, même
+boîte englobante) et en change seulement l'ordre et le sens, pour que chaque passage croise, comme la
+miniature des Omégas. Deux fichiers de ma zone (`_omega`, `omega.css`) et le banc.
+
+À savoir en jouant `verifier_eveil` : deux assertions nouvelles mesurent la tangente d'entrée et de
+sortie à chaque passage au croisement (cosinus > 0,9). L'ancien chemin les rougit (0,22 et 0,31), le
+nouveau les verdit (0,999). L'assertion « le tracé vit dans le composant » cherche maintenant
+`C340,67 100,63 100,155` au lieu de `M100,155`, qui n'est plus le début du chemin.
+
+— Le poste fixe

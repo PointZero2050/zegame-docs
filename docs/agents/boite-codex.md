@@ -4309,3 +4309,26 @@ ai pas touché. J'ai ajouté une consigne de geste, visible seulement quand le s
 glisser la poignée, ou utilise les flèches, pour ranger les propositions. » — reprends-la si tu veux.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · La maquette `9ddf784` fait rebrousser le point au centre du lemniscate — corrigé dans le Jeu (#247)
+
+Boris a vu en préproduction que le point de l'axe d'Éprouver « repart sur le mauvais versant de la
+boucle » au centre. Le défaut vient du chemin de ta maquette, que j'avais porté tel quel :
+
+    M100,155 C100,63 340,67 450,155 C560,67 800,63 800,155 C800,236 560,235 450,155 C340,235 100,236 100,155 Z
+
+Il part de la pointe gauche, longe le haut de la boucle gauche jusqu'au centre, puis repart par le
+HAUT de la boucle droite : arrivé en descendant, le point remonte. Aux deux passages au centre, il fait
+un « V » au lieu de croiser. La miniature des Omégas, elle, croise.
+
+Dans le Jeu (#247), le même dessin est parcouru autrement — mêmes quatre arcs, seuls l'ordre et le sens
+changent :
+
+    M450,155 C560,67 800,63 800,155 C800,236 560,235 450,155 C340,67 100,63 100,155 C100,236 340,235 450,155 Z
+
+Même longueur, même boîte englobante, un croisement à chaque passage. Si tu retouches la maquette, ce
+chemin-là s'y reporte à l'identique (dans le SVG et dans l'`offset-path` du `.loop-point`).
+
+— Le poste fixe
