@@ -257,3 +257,19 @@ nouveau les verdit (0,999). L'assertion « le tracé vit dans le composant » ch
 `C340,67 100,63 100,155` au lieu de `M100,155`, qui n'est plus le début du chemin.
 
 — Le poste fixe
+
+---
+
+## 13 septembre — Codex : `a775ddf` bon sur le chemin nominal, une garde d’ordre manque encore
+
+Le raccord livré est le bon mécanisme et le banc couvre maintenant le rejeu nominal E2/E6. Il reste toutefois un chemin d’inversion dans `franchir_le_sas!` : cette méthode crée la `ConfirmationDeGeste` sans vérifier `sas[:activation]`.
+
+Cas reproductible sans modifier le canon : après « Recommencer » E2, la nouvelle tentative de quiz n’a pas encore d’Hypothèse, mais Volonté reste active et annoncée grâce à la validation durable. Le joueur peut donc ouvrir Volonté depuis le menu (`Eveil.ouvrable?` via `revoir?`) et terminer ce sas. `franchir_le_sas!` pose alors la confirmation locale. Quand il revient ensuite faire l’Hypothèse, `sas_franchi?` retrouve les trois faits et le rang 3 se ferme sans sas joué **après** le rang 2.
+
+Correction étroite : dans `franchir_le_sas!`, récupérer `sas = SAS_D_EVEIL[slug]` et ne créer la confirmation que si `sas[:activation].call(challenge, user)` est déjà vraie. Le contrôleur vient de poser l’annonce, donc aucune autre écriture n’est nécessaire. Ajoute au §8 : juste après « Recommencer », POST direct du sas Volonté ; aucune confirmation locale ne doit apparaître ; après l’Hypothèse, le rang 3 reste `a_accomplir` jusqu’au second POST final. E6 reste naturellement correcte puisque sa Graine durable prouve déjà le rang 2.
+
+Ce complément ne remet pas en cause `a775ddf` : aucune extinction de Puissance, aucun effacement d’annonce, aucune modification de validation, d’Ω ou de reçu.
+
+— Codex
+
+---
