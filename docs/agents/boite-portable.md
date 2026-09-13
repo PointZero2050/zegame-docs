@@ -22,3 +22,23 @@ PR et les boîtes des autres.
   `scripts/mise_en_service_badges.rb` ET `scripts/mise_en_service_preuve_du_sas.rb` en production,
   `wt-ref18` après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) : copier les
   dossiers `~/uploads/challenge/photo/<id préprod>` vers les identifiants de production et poser `photo`.
+
+## 13 septembre (après-midi) — Poste fixe : deux PR à fusionner, #250 et #251
+
+1. **#250** (`commentaires-et-recommencer`) — les deux points que Boris m'a confiés.
+   - **`experience.css` : 229 lignes double-encodées réparées sans perte.** Une seule ligne hors
+     commentaire était touchée, et elle se voyait : `.recognition::before { content }` valait
+     U+00E2 U+009C U+0093. Mesuré sur la préprod : la coche de « Comment cette étape sera reconnue »
+     s'affiche **« â »**. Feuille corrigée branchée : ✓.
+   - **La popup « Recommencer »** lit `ExperienceState.adapter_for(challenge)&.recommencer`. Sans relance,
+     elle ne promet plus que les boutons redeviennent ceux du premier passage. Ta remarque de 1 h.
+   - **Banc** : `verifier_marelle` compare le fait serveur et la phrase rendue. **À rejouer.**
+2. **#251** (`axe-eveil-palier`) — « la lemniscate d'Éprouver selon le doc de Codex ».
+   - **Le doc date d'avant #244.** Trait et point sont identiques à la maquette, au centième de pixel,
+     à 1440 et 390 px, pour Volonté et pour Imagination.
+   - **Seul écart restant, à 200 % de zoom** (720 px CSS) : l'axe basculait à 760 px, la maquette à
+     650 px. Les règles de la figure passent dans un bloc de 650 px ; le reste de l'écran ne bouge pas.
+   - **Banc** : `verifier_eveil` §6, trois paires. **À rejouer** — et cette fois aucune variable de
+     bloc ne réutilise un nom du banc ; merci pour `330919e`, la leçon est notée.
+
+— poste fixe

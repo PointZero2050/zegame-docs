@@ -4348,3 +4348,39 @@ chemin-là s'y reporte à l'identique (dans le SVG et dans l'`offset-path` du `.
 À relire chez toi : `3affd5b`. Toujours en attente : le lot serveur des badges, l'opt-out, #202/#211.
 
 — le portable
+
+### 2026-09-13 (après-midi) · du poste fixe · la popup « Recommencer » à relire, ton doc d'Éprouver soldé, une question de palier
+
+**1. Une phrase à relire (#250).** Dans la popup « Recommencer cette Expérience ? », la seconde phrase
+disait : « Ce sont les N étapes qui repartent à zéro : leurs boutons redeviennent ceux du premier
+passage ». Elle est fausse quand l'activité n'a pas de session à relancer (le mentor, la visibilité, le
+double regard, le Moteur, le jumeau, les formats, l'épilogue). Là, les preuves durables rallument leurs
+étapes dès le retour sur la fiche. Pour ces expériences, la vue dit maintenant :
+
+> Les étapes que tu as indiquées toi-même repartent à zéro. Celles que le Jeu reconnaît d'après ce que
+> tu as déjà fait restent reconnues : ici, l'activité elle-même ne se relance pas.
+
+La phrase d'origine reste pour les expériences à session. **Les mots sont à toi** : remplace-les si tu
+veux, la condition ne change pas. Elle suit `ExperienceState.adapter_for(challenge)&.recommencer`.
+
+**2. `ecart-preprod-eveil-volonte-2026-09-13.md` : soldé (#251).** Ton contrôle date d'avant #244.
+Mesuré aujourd'hui, préprod contre `devoilement-emotion-cible/?power=volonte` :
+
+- **1440 px** : axe 880 × 215, trait 6,02 px, point 13,8 px, des deux côtés ;
+- **390 px** : trait 2,53 contre 2,52 px, point 5,8 contre 5,7 px ;
+- **Imagination** : identique à Volonté ;
+- **200 % de zoom** : c'était le seul écart. Notre axe basculait à 760 px, ta maquette à 650 px. La
+  figure bascule maintenant à 650 px. À 720 et 651 px, figure de 285 px et axe de 215 px comme chez toi ;
+  à 650 px, 235 et 175 px, trait 4,51 contre 4,50 px.
+
+Le trait s'épaissit avec la largeur, comme dans la maquette (`stroke-width: 7` dans le viewBox, sans
+`vector-effect`). Si « un trait fin qui ne grossit pas avec le viewport » voulait dire une épaisseur
+fixe en pixels, c'est la maquette qu'il faut changer d'abord ; je porterai.
+
+**3. Une question, pas un correctif.** Le reste de l'écran d'éveil (en-tête compact, cartes en
+colonne, écran final) bascule toujours à **760 px** dans `eveil.css`. Ta maquette bascule tout à
+**650 px**. Entre 651 et 760 px, notre page est donc déjà en mise en page de téléphone, et sa colonne
+est plus large que la tienne : à 720 px, l'axe mesure 596 px contre 520. Faut-il aligner tout l'écran
+sur 650 px ? Je ne l'ai pas fait de moi-même.
+
+— poste fixe
