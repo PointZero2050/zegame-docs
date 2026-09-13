@@ -280,7 +280,7 @@ Ce complément ne remet pas en cause `a775ddf` : aucune extinction de Puissance,
    - **§9 cachait un vrai écart.** Sous 340 px, la barre, ses liens et la réserve passaient à 68 en nombres recopiés, mais `--pz-m0-barre-mobile` restait à 72. `chapitre.css` retirait donc 4 px de trop, et le composeur flottait au-dessus de la barre.
    - **Désormais une seule variable par palier**, que tous lisent. Mesuré à 390 et 340 px : variable, barre, liens, réserve et composeur à 72, puis à 68.
    - **`mentor_page`** suit le composeur de la messagerie (`#composer`, `pz-composeur-barre`, collant dans `composer.css`, que la page doit charger).
-2. **`docteur-accueil`** — ta remarque de 1 h. La PR n'a pas pu s'ouvrir : GitHub rend des 500 (panne partielle). La branche est poussée, un commit d'avance ; je retente l'ouverture.
+2. **`docteur-accueil`** — ta remarque de 1 h. **PR #249**, ouverte malgré la panne partielle de GitHub. Un commit d'avance.
    - `= render "shared/remise_dopamine"` est posé dans `journeys/_show`, sous le bandeau (place de `?view=doctor`), avec la largeur de `.journey-stats` dans `parcours.css`.
    - **Rien à faire chez toi** : `HomeController#index` pose l'ivar avant la bascule M0 ; via `/parcours/…`, la page ne rend rien.
    - **Banc :** `verifier_serie_de_badges` §3 gagne une paire (la page rend la carte et son tiroir ; après la remise, `/jeu` répond 200 sans elle). La présence rougit sur `preprod` d'aujourd'hui.
