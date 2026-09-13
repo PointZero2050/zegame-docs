@@ -1319,3 +1319,27 @@ Reste vrai :
   `Journey#rejoint_par?` ne lit aucun marqueur de recette.
 - **Textes alternatifs des illustrations E15–E19** : dans chaque `LISEZ-MOI.md` de
   `zegame-prototypes@ee4d24a`, si une vue veut cesser de rendre `alt: ""`.
+
+
+---
+
+### 2026-09-13 (15 h) · du portable · #250/#251 fusionnées ; le tiroir Dopamine se consomme à l'OUVERTURE (contrat) ; complément B des 18 verbes
+
+- **#250, #251** : fusionnées à la main, construites (`22139f4`), `verifier_marelle` et `verifier_eveil` verts ; la feuille servie rend `content: "✓"`. Détail dans les PR.
+- **Le tiroir Dopamine — nouveau contrat, revue de Codex** (`64c918d`, `462092b`) : « l'ouverture remet et consomme le lot, puis tous les gestes de fermeture aboutissent au même état ». Aujourd'hui seul « Classer dans mon dossier » consomme ; la croix, Échap et le fond laissent le lot en attente et l'accueil suivant le représente. Côté serveur :
+  - **`POST /badges/remise` en JSON** (`remise_des_badges_path`, `Accept: application/json` — pas de route de plus, Codex) → `{ "remis": [ { cle, famille, titre, phrase, condition, image, obtenu_le, consomme_le }… ] }` — la forme de `Badges.pour_la_vue`, la même que `@badges_dopamine_en_attente`. **Atomique** : le lot rendu est celui que CET appel a acquis ; un second onglet reçoit `"remis": []`.
+  - **À câbler dans `shared/_remise_dopamine`** : le clic « Voir le diagnostic » poste d'abord (`fetch`, `Accept: application/json`, jeton CSRF), puis ouvre le tiroir avec le lot reçu — **jamais la liste pré-rendue** de l'accueil, périmée si un autre onglet gagne la course ; si `remis` est vide, ne rien ouvrir (un autre onglet l'a eu — retirer la carte, ou dire qu'ils sont déjà classés). Croix, Échap, fond : simple fermeture, plus rien à poster. Le formulaire « Classer dans mon dossier » (le même `POST /badges/remise`, en HTML) reste le **repli sans script** ; après une ouverture il ne trouve plus rien, même état.
+  - Banc : `verifier_serie_de_badges` §3 joue déjà le POST en JSON ; quand la vue le portera, ajoute l'assertion de balisage (le déclencheur porte l'adresse d'ouverture), et retourne celle de « Classer » si son rôle change.
+  - Deux points de la revue de Codex sont **chez toi** (revue §1.3) : l'aide de première visite de la collection annonce encore « deux mémoires » et ne décrit pas Dopamine ; un badge **secret non obtenu** est retiré de la grille, alors que le contrat retient une **place anonyme** (sans visuel, titre ni condition). `familles_pour` le fournit avec `secret: true`, `obtenu: false` — c'est à la vue de le rendre sans le nommer. Et `futurs_mis_en_sens.condition` dit désormais « Mettre en relation plusieurs devenirs et en formuler le sens. » (toujours non câblé).
+- **La collection ne constate plus** (`AccomplissementsController#index` est une lecture) : `obtenu` se lit des faits, rien ne change pour la vue.
+- **18 verbes, complément B** (revue de Codex §3, au mot de Boris et après A = #202) : quand A sera sur la préprod, `Skill#libelle` (le libellé canonique, ou `name` à défaut) doit remplacer `skill.name` dans les **vues joueur** (`journeys/_show` blocs de compétence) et le **sélecteur de gestion** (`gestion/experiences/_form.html.erb`), et `experience_cover_helper` doit fabriquer l'aspect depuis `libelle` ; les exports Markdown/JSON gardent `name` (choix explicite, à écrire en commentaire). Un banc couvre le rendu. Je te dis quand A est fusionnée ; rien à faire avant.
+
+— le portable
+
+---
+
+### 2026-09-13 (15 h 30) · du portable · #251 : Codex demande TOUT le bloc mobile à 650 px, pas seulement l'axe
+
+Relayé de ma boîte (Codex, lecture de `22139f4` après ma fusion) : `public/pz/m0/eveil.css` garde le bloc principal (en-tête, scène, cartes, écran final) en `@media (max-width: 760px)` ; seul l'axe est passé à 650 px, et le commentaire de la feuille dit que le reste doit rester à 760. Sa décision demandait **l'unité de l'écran** : tout le bloc mobile bascule à 650 px, axe compris ; retirer le contrat et l'assertion de `verifier_eveil` qui imposent encore 760 (`[true, false]`). Attendu : à 720 et 651 px, toute la page en composition large ; à 650 et 390 px, toute la page en composition mobile. #250 est soldée. Une PR sur `preprod`, je fusionne et rejoue `verifier_eveil`.
+
+— le portable

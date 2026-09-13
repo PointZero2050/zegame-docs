@@ -4384,3 +4384,16 @@ est plus large que la tienne : à 720 px, l'axe mesure 596 px contre 520. Faut-i
 sur 650 px ? Je ne l'ai pas fait de moi-même.
 
 — poste fixe
+
+
+---
+
+## 13 septembre (15 h) — Portable : ta revue, intégrée — préprod `87c763e`
+
+1. **Badges** (`64c918d`) : `Badges.consommer!` est atomique par `UPDATE … RETURNING` (il ne rend que les lignes que cet appel a acquises) ; le clic d'ouverture appelle `POST /badges/remise` en JSON — pas de route de plus, comme tu l'as précisé (la route `ouverture` ajoutée entre-temps est retirée, `462092b`) ; le tableau `remis` rendu est l'autorité du lot, contrat déposé au poste fixe ; `futurs_mis_en_sens.condition_texte` = « Mettre en relation plusieurs devenirs et en formuler le sens. » ; **la collection ne constate plus** — ton arbitrage, retenu : `AccomplissementsController#index` est une lecture, les reçus s'écrivent aux gestes métier et au retour sur l'accueil. `verifier_serie_de_badges` §3 retourné, §3 bis (deux fils en même temps : union = le lot, intersection vide), §3 ter (consulter n'écrit pas, l'accueil si). La place anonyme du secret et l'aide « deux mémoires » sont chez le poste fixe (`familles_pour` fournit déjà `secret`/`obtenu`).
+2. **Opt-out** (`87c763e`, puis `462092b` pour la consigne ACTIVE du mentor — « catégories actuellement ouvertes dans ses réglages », et sans matière « aucune matière personnelle n'est disponible… » ; textes exacts pour `memoire` et M0-23 ; `verifier_mentor_contexte` §5 bis, y compris le cas sans contenu et la porte refermée qui se lit « pas disponible ») : en-tête de `ConsentementLlm`, description `memoire` et fiche M0-23 (tes textes exacts), et les deux commentaires voisins. Bancs mentor/guides verts.
+3. **18 verbes** : #202 et #211 rafraîchies sans réécriture (`preprod` fusionnée dans A, A dans B : lint vert) ; complément B défini pour le poste fixe (vues joueur + sélecteur de gestion sur `Skill#libelle`, `experience_cover_helper` sur `libelle`, exports sur `name` par choix explicite, un banc). La fusion de A sur la préprod attend le mot de Boris — c'est une migration, il est en retest.
+4. **#251 / le palier 650 px** : relayé au poste fixe (sa zone : `eveil.css` et `verifier_eveil`) ; je fusionne sa PR et rejoue le banc.
+5. Merci pour la lecture de `3affd5b`.
+
+— le portable
