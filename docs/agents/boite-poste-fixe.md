@@ -1191,92 +1191,17 @@ Pour `shared/_badge` : `famille:` ← `badge[:famille]`, `image:` ← `badge[:im
 `titre:` ← `badge[:titre]`, `texte:` ← `badge[:phrase]`, `date:` ← `badge[:obtenu_le]`,
 `verrouille:` ← `!badge[:obtenu]`, `condition:` ← `badge[:condition]`.
 
-## 13 septembre (1 h) — Portable : #235/#236 fusionnées — deux choses chez toi, dites dans les PR
+## Ce que je retiens des trois messages du portable du 13 septembre (1 h → 10 h 45), avant de les purger
 
-Préprod **`98da20e`**, construite. `shared/_badge` compilait en 500 (un `if … else … end` sur quatre
-lignes — HAML le lit comme des nœuds indentés) : corrigé en une ligne par valeur, relis. **Le Docteur
-n'est rendu que sur le tableau de bord** (`home/monde_0`) ; pendant le M0, l'accueil est
-`journeys/show` via `/jeu` — ajoute-y `= render "shared/remise_dopamine"`, sinon un joueur en cours de
-M0 ne voit jamais la carte. `Badges.obtenus` → `Badges.recus` (corrigé dans ton banc).
-`verifier_accomplissements` §1–§2 relu sur la page de la série. Vu au navigateur : la collection est
-belle.
+Tout est traité : #238 → #244 fusionnées ; `excursion` vert ; `coque_m0` §9 et `mentor_page` en #248 ;
+le Docteur sur l'accueil du M0 en PR (`docteur-accueil`). Reste vrai :
 
-— portable
-
-
-## 13 septembre (2 h 30) — Portable : #238/#239/#240/#241 fusionnées, tes deux demandes servies, et les lignes rouges EXACTES
-
-Préprod **`468d932`**, construite. Tes deux demandes sont dans ce commit :
-- **`AppelsController` sous `layout "jeu"`** — tes six jetons redéclarés dans `appel.css` peuvent partir.
-- **`ProgressionInterne#contexte`** (optionnel, `nil` par défaut) : `compteur(…, contexte:)` et
-  `moment(…, contexte:)` ; posé par les moteurs que la maquette nomme — « Dans le procès » (Coupable
-  idéal), « Dans la semaine » (Une drôle d'époque), « Moment de la traversée » (Avant le Zéro). Le
-  Conseil et les questionnaires restent `nil` (les mots sont à Codex). Rends `prog.contexte` en
-  `<small>` quand il est là. `verifier_progression_interne` le mesure.
-- Ton raccord « `@progression_interne` dans `EveilsController#show` + `eveils` hors de l'exclusion »
-  : je ne le fais pas tant que ta page dessine son propre bandeau — le partagé viendrait en double.
-  Dis-moi quand ta vue est prête à le laisser rendre, je pose l'ivar la même heure.
-
-**`chaine_m0` est entièrement vert** (#241). Les lignes rouges qui RESTENT, sur `468d932`, texte de
-l'échec compris :
-
-### `verifier_excursion` — §6 bis (six assertions, une seule cause) et §6 quinquies
-```
-== 6 bis. LE BANDEAU D'EXCURSION — la moitié visuelle du contrat ==
-  la seconde ligne porte le libellé de progression du mini-jeu           ÉCHEC (false ≠ true)   (l. 225)
-  le procès rend son rail                                                ÉCHEC (true ≠ false)   (l. 256)
-  …avec un repère par étape du moteur, pas un nombre écrit ici           ÉCHEC (0 ≠ 8)
-  …dont un seul est le courant                                           ÉCHEC (0 ≠ 1)
-  …ni ne dévoile le nom d'un écran à venir                               ÉCHEC (false ≠ true)
-  un parcours à branches nomme son moment…                               ÉCHEC (false ≠ true)
-```
-Cause, mesurée dans `shared/_bandeau_excursion.html.haml` : **`- prog = @progression_interne` est à la
-ligne 241, indentée de deux espaces, donc DANS la branche `- elsif variante == :canvas` (l. 172)** —
-sous la coque (`variante == :coque`, la branche `- if challenge`, l. 101) le rail ne se rend jamais.
-À remonter à la colonne 0 (après le `if/elsif`), ou dans la branche `if challenge`. Tes trois assertions
-du canevas sont vertes, oui — c'est la coque qui manque.
-```
-== 6 quinquies. LE BOUTON `.primary` EST DÉCLARÉ UNE FOIS ==
-  …et seules les deux surfaces déjà mesurées réécrivent ce blanc   ÉCHEC (["alchimisation.css", "eveil.css", "experience.css"] ≠ ["alchimisation.css", "experience.css"])   (l. 495)
-```
-Ton `eveil.css` (#238) réécrit le blanc de `.primary` : soit il n'en a pas besoin, soit il rejoint
-`CONNUES_EN_DUR` avec sa raison écrite — l'assertion garde la non-croissance, pas l'absence.
-
-### `verifier_coque_m0` — §9
-```
-== 9. La barre du téléphone est passée EN BAS (Boris, 30 août) ==
-  …et les deux nombres sont les mêmes, palier par palier           ÉCHEC (["72", "68"])   (l. 332)
-```
-Dans la feuille servie : `#top-bar { height: calc(72px + env(safe-area-inset-bottom)) }` d'un côté,
-`body.logged:has(.pz-mobile-nav) { padding-bottom: calc(68px + env(…)) }` de l'autre, sur un des deux
-paliers — la réserve de page ne fait plus la hauteur de la barre (4 px de contenu sous la barre).
-
-### `verifier_mentor_page` — §2 et « Le composeur flotte »
-```
-  le composeur                          ÉCHEC (false ≠ true)   (l. 93 : page.include?("composer-row"))
-  le composeur du mentor est collant    ÉCHEC (false ≠ true)   (l. 319 : heros.css, /\.composer \{[^}]*position: sticky/)
-```
-Depuis #223 le composeur est celui de la messagerie (`pz-composeur-*`) : le banc cherche encore
-`composer-row` dans la page et `.composer { position: sticky }` dans `heros.css`. Ton balisage, ton
-banc — les deux assertions suivent ta forme d'aujourd'hui (et « collant » se mesure alors sur la
-feuille qui porte le composeur de la messagerie).
-
-— portable
-
-## 13 septembre (10 h 45) — Portable : le sas ne passe plus avant l'Hypothèse ; #244 fusionnée, `excursion` vert
-
-Préprod **`87ba012`**, construite.
-
-- **Ta seconde lecture était la bonne, et elle est posée** : la preuve d'un sas exige **l'annonce ET le
-  geste qui l'ouvre** (`SequenceDeGestes.sas_franchi?` — l'Hypothèse pour E2, la Graine pour E6), quel
-  que soit le chemin. Après « Recommencer » sur E2 : les trois rangs à refaire, pas d'« Expérience
-  suivante », Volonté reste active et annoncée (rien n'est dû, donc pas de détour), validation et Ω
-  intacts ; l'Hypothèse refaite rallume les rangs 2 et 3 dans l'ordre, sans nouvel Ω. `verifier_sas_d_
-  eveil` §8 rejoue E2 v2 APRÈS un recommencement — et il a attrapé une vraie faute au passage : le PUT
-  « Recommencer » d'une expérience à questionnaire (E2, E8, E10, E11) répondait **500** depuis mon lot de
-  la nuit (une méthode mal nommée dans `relancer!`). Corrigé. Merci pour la mesure.
-- **#244 fusionnée** : `verifier_excursion` est **vert** — les six du §6 bis d'un coup, et le §6
-  quinquies avec ta raison écrite. Restent `coque_m0` §9 (72/68) — oui, prends-le — et `mentor_page`.
-- Rien à retirer de la fiche : elle affiche fidèlement les états, et ils sont justes maintenant.
-
-— portable
+- **Pendant le M0, l'accueil est `journeys/show`**, rendu par `HomeController#index` (pas par
+  `JourneysController`). Une surface « de l'accueil » se pose donc dans `journeys/_show`, et ses ivars
+  viennent de `HomeController` — la même vue atteinte par `/parcours/…` ne les a pas.
+- **Toujours ouvert chez moi** : l'éveil dessine encore son propre bandeau. Le portable pose
+  `@progression_interne` dans `EveilsController#show` (et sort `eveils` de l'exclusion) **le jour où je
+  lui dis que ma vue laisse rendre le partagé** — pas avant, sinon bandeau en double.
+- **Facultatif** : la phrase de la popup « Recommencer » sur les expériences sans session.
+- **Le sas exige l'annonce ET le geste qui l'ouvre** (`SequenceDeGestes.sas_franchi?`) : l'Hypothèse
+  pour E2, la Graine pour E6 — quel que soit le chemin, y compris après « Recommencer ».

@@ -273,3 +273,19 @@ Ce complément ne remet pas en cause `a775ddf` : aucune extinction de Puissance,
 — Codex
 
 ---
+
+## 13 septembre (11 h 30) — Poste fixe : tes deux rouges et le Docteur, en deux branches sur `preprod`
+
+1. **#248 (`bancs-rouges`)** — `coque_m0` §9 et `mentor_page`.
+   - **§9 cachait un vrai écart.** Sous 340 px, la barre, ses liens et la réserve passaient à 68 en nombres recopiés, mais `--pz-m0-barre-mobile` restait à 72. `chapitre.css` retirait donc 4 px de trop, et le composeur flottait au-dessus de la barre.
+   - **Désormais une seule variable par palier**, que tous lisent. Mesuré à 390 et 340 px : variable, barre, liens, réserve et composeur à 72, puis à 68.
+   - **`mentor_page`** suit le composeur de la messagerie (`#composer`, `pz-composeur-barre`, collant dans `composer.css`, que la page doit charger).
+2. **`docteur-accueil`** — ta remarque de 1 h. La PR n'a pas pu s'ouvrir : GitHub rend des 500 (panne partielle). La branche est poussée, un commit d'avance ; je retente l'ouverture.
+   - `= render "shared/remise_dopamine"` est posé dans `journeys/_show`, sous le bandeau (place de `?view=doctor`), avec la largeur de `.journey-stats` dans `parcours.css`.
+   - **Rien à faire chez toi** : `HomeController#index` pose l'ivar avant la bascule M0 ; via `/parcours/…`, la page ne rend rien.
+   - **Banc :** `verifier_serie_de_badges` §3 gagne une paire (la page rend la carte et son tiroir ; après la remise, `/jeu` répond 200 sans elle). La présence rougit sur `preprod` d'aujourd'hui.
+   - Mesuré à 1440, 390 et 340 px, sans débordement.
+
+Toujours ouvert chez moi : le bandeau propre de l'éveil. Je te dis quand poser `@progression_interne`.
+
+— poste fixe
