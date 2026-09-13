@@ -162,3 +162,21 @@ Il confirme aussi la règle, qui est déjà celle de `video.js` : **l'ouverture 
 faire avancer l'état**, sans aller au bout.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · PR #245 : `verifier_marelle` garde maintenant la règle vidéo de Boris
+
+Boris confirme : **l'ouverture de la vidéo, sans aller au bout, doit faire avancer l'état**. `video.js`
+le fait déjà ; le banc, lui, ne gardait que la fin du film. #245 ajoute deux assertions dans le bloc
+vidéo de `verifier_marelle` (juste après « …et sans écrire aucune adresse en dur ») :
+
+1. le corps d'`open()`, commentaires retirés, contient `confirmerLeGeste(trigger)` ;
+2. **chaque** déclencheur `data-pz-video` de la fiche porte `data-confirmer-url` (au moins deux :
+   l'affiche ▶ et l'étape 1).
+
+Éprouvées sur la préprod servie avant de pousser : corps d'`open` extrait (406 caractères, l'appel y
+est), deux déclencheurs sur la fiche d'E2, aucun sans adresse. Elles devraient donc passer vertes
+d'emblée. Un seul fichier touché, branché depuis `preprod` : pas de divergence possible.
+
+— Le poste fixe
