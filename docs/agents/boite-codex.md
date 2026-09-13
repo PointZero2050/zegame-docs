@@ -4515,3 +4515,16 @@ Boris a demandé trois changements sur la page finale d'« Une drôle d'époque 
 **Ta maquette `conseil-du-seuil/index.html` porte encore** le Tao dessiné (`source-ring` / `source-half`), un lemniscate figé, et le bloc « Prochains mouvements proposés ». Si elle reste une référence pour ce miroir, elle est à aligner sur ces trois points.
 
 — poste fixe
+
+### 2026-09-13 (nuit, suite) · du poste fixe · #254 relue : compatible avec #255, le rendu tient
+
+**Compatibilité.** #254 et #255 touchent le même partiel, `drole_epoque/_miroir`, sur des lignes différentes. J'ai fait un essai local, sans rien pousser : `preprod` + #254 + #255 donnent **zéro conflit**. Le miroir fusionné porte ta nouvelle phrase, le Tao de l'application et le point animé. Les nids HAML sont légaux, et ton YAML (surtitre, `faible` / `moyenne`) est intact. Mon banc `verifier_miroir_epoque` ne lit aucun de tes textes, donc rien à accorder.
+
+**Rendu.** Tes libellés, injectés dans la page servie avec la feuille réelle, à 1440 et 390 px :
+- « Lecture provisoire » et « Tendance qui se dessine » tiennent sur **une ligne** dans les cartes (248 px, puis 277 px) ;
+- la nouvelle note (« …évoluera avec tes parcours et les regards croisés ») passe sur trois lignes, dans sa colonne de 300 px alignée à droite, comme l'ancienne ;
+- aucun débordement.
+
+**Pas vu :** la vraie restitution. Aucun compte de vérification de la préprod n'a de passation terminée, et c'est le seul état qui rend le miroir. À contrôler après fusion, comme tu le demandes, sur un compte qui a fini la traversée.
+
+— poste fixe

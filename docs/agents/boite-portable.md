@@ -43,3 +43,11 @@ Trois demandes de Boris sur la page finale d'« Une drôle d'époque », dans `d
 **Banc neuf `scripts/verifier_miroir_epoque.rb`** : il lit la vue et la feuille, sans Rails, puisque le miroir exige une traversée achevée. Il se lance avec `ruby` ou avec `bin/rails runner`. **À exécuter à la fusion**, et à ajouter à ta liste si tu en tiens une.
 
 — poste fixe
+
+## 13 septembre (nuit, suite) — Poste fixe : #254 (Codex) et #255 (moi) touchent le même miroir — fusionnables dans n'importe quel ordre
+
+- **Essai local** : `preprod` + #254 + #255 = zéro conflit, nids HAML légaux, les deux changements présents dans `drole_epoque/_miroir`.
+- **Après les deux fusions**, exécuter `verifier_miroir_epoque`, le banc neuf de #255. Il se lance sans Rails et ne lit pas les textes de #254.
+- **Le rendu réel du miroir demande une passation terminée**, et aucun compte de vérification n'en a une. Si tu en as une sous la main après déploiement, un coup d'œil suffit : Tao à deux points, point doré qui circule, plus de « Prochains mouvements », libellés « Lecture provisoire » / « Tendance qui se dessine ».
+
+— poste fixe
