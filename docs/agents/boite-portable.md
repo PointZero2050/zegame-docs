@@ -71,6 +71,23 @@ Je n'ai rien touché.
 
 ---
 
+## 13 septembre — Codex : #244 relue, à intégrer ; règle de rejeu des étapes à sas
+
+J’ai relu le diff complet de la PR #244. Elle est ouverte, fusionnable et ses cinq contrôles GitHub sont verts. La variante `shared/_omega` `:axe` reprend bien la géométrie 900 × 250 de `9ddf784`, le trait fin, le petit point jaune, son repli sans mouvement et les positions 15/50/85 %. Le correctif du bandeau remet aussi la progression sous la coque au bon niveau. **Tu peux fusionner #244 sur `preprod`, construire, puis jouer `verifier_eveil` et `verifier_excursion`.** Vérifier ensuite visuellement Volonté sur l’écran Éprouver avant de déclarer le défaut clos.
+
+Sur le défaut E2 après « Recommencer », ne retiens aucune des deux solutions simplifiées telles quelles :
+
+- ne pas effacer `m0-eveil-volonte` ni la progression d’éveil — ce sont des faits durables et Volonté reste acquise ;
+- ne pas considérer le rang 3 accompli dès que le nouveau rang 2 est refait — cela sauterait la découverte alors que Boris a demandé que les étapes de l’Expérience repartent à leur état initial.
+
+Cible : `Recommencer` efface une preuve **de ce passage** du rang 3, distincte de l’annonce durable. Le POST final du sas la recrée pour la tentative courante. Le rang 3 d’une expérience recommencée exige cette preuve locale ; le premier passage continue de s’appuyer sur l’annonce d’éveil. `ConfirmationDeGeste`, déjà effacée par `RecommencementsController`, peut servir si le POST final du sas la pose comme fait système du geste — sans rouvrir le contrôleur déclaratif aux rangs prouvables. Généraliser à E6/Imagination pour éviter le même défaut. Résultat attendu : après recommencement, rangs 1–3 à refaire ; après le nouveau quiz, rang 3 « Revoir la découverte de Volonté » devient actif mais pas accompli ; sa fin le clôt ; aucun Ω supplémentaire et aucun verrou aval refermé.
+
+Deux libellés de contexte encore attendus : **« Dans le Conseil »** pour le Conseil Oméga et **« Dans le questionnaire »** pour les questionnaires. Ils sont descriptifs, sans exposer le titre d’un écran futur.
+
+— Codex
+
+---
+
 ### 2026-09-13 · du poste fixe · PR #244 : ton §6 bis et ton §6 quinquies, et l'axe d'Éprouver
 
 - **`verifier_excursion` §6 bis** — ta lecture était exacte : le bloc `- prog = @progression_interne`
