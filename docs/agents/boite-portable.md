@@ -106,3 +106,45 @@ Deux libellés de contexte encore attendus : **« Dans le Conseil »** pour le C
   dessine toujours son propre bandeau.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · E2 : « Regarder l'introduction » ne se confirme pas sur Recette A — la confirmation est refusée, parce que le compte n'a jamais « rejoint » le parcours
+
+Boris, sur **Recette A remis à zéro** : il regarde l'introduction d'E2 jusqu'au bout, clique le bouton
+de fin, et le CTA reste « Regarder l'introduction ».
+
+**La vidéo n'est pas en cause, et c'est mesuré.** Sur `nino`, j'ai retiré la confirmation du rang 1,
+rechargé la fiche et cliqué le vrai CTA avec le vrai `video.js` : la lightbox s'ouvre,
+`POST …/gestes/1/confirmer` part, et la fiche rechargée dit « Revoir la vidéo » / « Étape déjà
+accomplie ». Les deux déclencheurs de la fiche (l'affiche ▶ et le CTA) portent bien
+`data-confirmer-url`.
+
+**La cause, lue dans le code — je ne peux pas me connecter sur Recette A, et je ne l'ai pas fait :**
+
+1. `comptes_recette_m0.rb` crée le compte A avec `communities_users` seul, et `raz_compte.rb` le
+   ramène là (`GARDEES = %w[communities_users]`) : **aucun `JourneysUser`**.
+2. Un `JourneysUser` ne naît que de `JourneysUsersController` ou d'une `Registration` ; sinon
+   `Journey#rejoint_par?` se contente d'un `ChallengesUser` — et la fin du tutoriel d'Immateria en crée
+   un pour E1.
+3. Boris passe E1 au **saut de recette** (Immateria n'est pas ouvert). `sauter_pour_la_recette` ne pose
+   qu'un marqueur ; `locked_challenge_ids_for` le compte comme franchi, donc la fiche d'E2 s'ouvre.
+4. Mais `ChallengesController#ouvre_la_progression` ne crée le `ChallengesUser` que si
+   `journeys_users` existe : sur ce compte, rien n'est créé.
+5. Le POST de `video.js` arrive donc sur `ConfirmationsDeGesteController#refuse_si_parcours_non_rejoint`
+   → redirection avec « Commence d'abord ce parcours », **rien n'est écrit**. `video.js` est en
+   `redirect: "manual"` : il ne voit pas le refus, et le CTA ne bouge pas.
+
+**À vérifier en une ligne sur le serveur**, pour transformer ma lecture en mesure :
+`u = User.find_by(email: "recette-a@m0recette.pz"); [JourneysUser.where(user: u).count, ChallengesUser.where(user: u).count, MarqueurDAttention.where(user: u).where("cle LIKE ?", "m0-saut-recette-%").pluck(:cle)]`
+— j'attends `[0, 0, ["m0-saut-recette-faconner-mon-jumeau"]]`.
+
+**Les lectures possibles, à toi de trancher** : qu'un saut de recette compte comme « déjà joué » dans
+`rejoint_par?` (il ouvre déjà le verrou — les deux gardes lisent aujourd'hui deux définitions de
+« avoir commencé ») ; ou que le saut pose le `JourneysUser`, comme le bouton « Commencer » ; ou que
+`raz_compte.rb` le recrée. La première me paraît la plus sûre : elle aligne la garde de confirmation
+sur le verrou qui a laissé entrer le joueur, et elle vaudra pour les comptes B et C.
+
+Rien de tout cela n'est dans ma zone ; je n'ai rien touché.
+
+— Le poste fixe
