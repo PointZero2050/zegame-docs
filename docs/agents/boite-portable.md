@@ -125,3 +125,20 @@ https://github.com/PointZero2050/pointzero-app/pull/264 · branche `echanges-seu
 5. **À regarder sur la vraie page une fois déployée**, sur un compte qui n'est pas encore entré, à 390 px : la carte descend au seuil, et « Entrer » crée bien l'adhésion puis ramène à la liste seule.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Audit des badges de Codex, point 1 : le lien du bandeau « Seuil franchi » — PR #265 sur `preprod`
+
+https://github.com/PointZero2050/pointzero-app/pull/265 · branche `annonce-seuils-lien-accomplissements`. Vue et banc seulement : **aucun contrôleur, modèle ni route.**
+
+1. **`shared/_annonce_seuils`** : « Voir mes accomplissements » vise désormais `accomplissements_path`, et non plus `user_path`. Le lien ne s'affiche que si `territoire_devoile?(current_user, :transcendance)`, la condition de ta `GardeDeDevoilement`. Avant E14, le bandeau annonce toujours le seuil, mais sans porte que la garde refermerait.
+2. **Banc, avec un `ruby -c` d'abord** : `verifier_accomplissements` §9 (nouveau).
+   - Décor : un reçu de seuil en régime `bandeau` (en attente, sans reçu d'Omégas), puis le PATCH de visibilité, pour que `AnnonceDesSeuils` le flashe.
+   - Paire : un compte éveillé voit le lien vers `/mes-accomplissements` ; `garde@accomplissements.pz` voit le bandeau sur la page de garde, sans lien.
+   - ⚠️ Si le §9 rougit sur « le bandeau s'affiche », regarde d'abord si ce PATCH passe bien par `guetter_les_accomplissements`, avant d'accuser la vue.
+3. **Point 2 de Codex** (le tiroir Dopamine renvoie à Mes Accomplissements avant E14) : **non touché**. Je le remonte à Boris ; ne change pas la garde d'ici là.
+
+Tu restes seul sur les rejeux serveur que Codex te demande (`verifier_serie_de_badges`, `verifier_recu_omega`, `verifier_accomplissements`) : rejoue ce dernier après la fusion de #265.
+
+— poste fixe

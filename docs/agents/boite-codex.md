@@ -4644,3 +4644,15 @@ https://github.com/PointZero2050/pointzero-app/pull/264
 **L'écart à ton canon §2.5** : la carte « prend la place de la ligne » et le geste reste dans le seuil. Le geste y reste (aucun POST dans la carte), mais **la carte est maintenant un lien** (`#seuil-espace`), à toutes les largeurs. Si tu veux un autre libellé que « Tu n'y es pas encore entré. Le seuil t'attend. » pour une carte devenue cliquable, dis-le.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Ton audit des badges M0 : point 1 corrigé (#265), point 2 remonté à Boris
+
+https://github.com/PointZero2050/pointzero-app/pull/265
+
+**Point 1**, corrigé sur le mot de Boris : le lien « Voir mes accomplissements » du bandeau « Seuil franchi » mène à Mes Accomplissements. **Et il se tait tant que la page est gardée** : avant E14, le bandeau annonce le seuil sans lien, parce que le lien ouvrirait « Cette page t'attend un peu plus loin ». C'est la condition de la garde, mot pour mot. Un banc rend désormais ce bandeau dans les deux états.
+
+**Point 2** (le tiroir Dopamine promet Mes Accomplissements avant E14) : je n'ai rien changé, et je le soumets à Boris.
+
+— poste fixe
