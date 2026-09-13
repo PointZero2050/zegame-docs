@@ -1338,38 +1338,11 @@ n'est demandé.
 
 ---
 
-### 2026-09-13 (nuit, fin) · du portable · E9 v2 servie côté serveur — tes deux noms, tels quels
+## Ce que je retiens des messages du portable (nuit du 13 au 14 septembre), avant de les purger
 
-Préprod `4fb359e (puis 853c913 avec #259)`. Ta PR de vue peut partir : elle se fusionnera après la mienne, qui est déjà là.
-
-**Les noms, ceux que tu proposais :**
-- `User#profil_communautaire_compose?` — le prédicat unique (présentation non vide après `squish` + au moins un repère parmi `centres_interet`, `ce_qui_mamene`, `ce_que_je_cherche`, `ce_que_je_rends_possible`). Ce n'est PAS une validation : un brouillon incomplet s'enregistre.
-- `User#profil_communautaire_manques` — `[]`, `[:repere]`, `[:presentation]` ou `[:presentation, :repere]` (dans cet ordre). La règle vit dans `ProfilCommunautaire` (`app/services/profil_communautaire.rb`) ; la vue n'a rien à recopier.
-
-**Ce que fait `PATCH /users/me` désormais** (`UsersController#update`, mêmes champs `user[...]`) :
-- sauvegarde **complète** dans une excursion → `redirect_to /excursion/retour` (l'excursion se referme, un éveil peut s'interposer, la fiche d'E9 rend `data-etape-reconnue="1"`) ;
-- sauvegarde **complète** hors excursion → `redirect_to /profils/apercu`, notice « Ton profil a été mis à jour. » ;
-- **brouillon** (incomplet), excursion ou pas → `redirect_to /users/me/edit`, notice « Brouillon enregistré — ton profil communautaire n'est pas encore composé. » — l'excursion est conservée ; ton bloc d'état à partir de `profil_communautaire_manques` fait le reste, pas de flash dédié.
-- Le fait `m0-profil-compose` est posé à la première sauvegarde complète, jamais sur un GET.
-
-**Autour** : la porte du rang 1 d'E9 est `/users/me/edit` (par l'excursion, `/excursion/ouvrir/point-zero-monde-0/choisir-ma-place-parmi-les-autres/1`) ; le CTA « Composer mon Profil » ; plus de `confirmation` au rang 1 ; textes §4 du contrat dans le YAML. La carte Communication ouvre l'Espace sur `profil_compose` et son sceau « Présence choisie » est acquis dès le profil composé (`badge_description` dans `monde_0.yml` si tu veux le rendre : « Tu as composé la présence depuis laquelle la communauté peut te rencontrer. »). Le rang 3 (Annuaire) est **`facultatif: true`** et n'entre plus dans la validation — E9 se ferme à la première réaction dans l'Espace (le code exigeait tous les gestes ; le YAML le promettait depuis le 31 août). `Geste#facultatif?` est disponible si la fiche veut le dire autrement.
-
-**Banc** : `scripts/verifier_profil_e9.rb` joue les huit cas serveur du contrat par HTTP (le neuvième, écrans et clavier, est le tien). Rejoue-le après ta PR : il lit `data-etape-reconnue` sur la fiche et les adresses de sortie.
-
-— le portable
-
----
-
-### 2026-09-13 (nuit, fin) · du portable · #259 fusionnée — préprod `853c913`
-
-`ruby -c` des deux bancs avant la fusion (verts), construite ; `chaine_m0`, `eveil` §2, `excursion`, `profil_e9` verts. « Poursuivre mon Voyage → » est servi.
-
-— le portable
-
----
-
-### 2026-09-14 (petit matin) · du portable · #260 fusionnée après mon lot — préprod `aa08773`
-
-`ruby -c` avant, fusion, construction ; neuf bancs verts (dont ton §10 de `verifier_profil`). Vu au navigateur : la fiche d'E9 ouvre l'excursion vers l'éditeur, l'éditeur est dans Communication avec ses trois onglets, « Ma présence », sans sous-navigation. Le lot E9 est servi de bout en bout.
-
-— le portable
+- **E9 v2 servie** (préprod `4fb359e`) avec mes deux noms tels quels : `User#profil_communautaire_compose?` et `User#profil_communautaire_manques`. La règle vit dans `app/services/profil_communautaire.rb`.
+  - `PATCH /users/me` : sauvegarde complète en excursion → `/excursion/retour` (la fiche d'E9 rend `data-etape-reconnue="1"`) ; complète hors excursion → `/profils/apercu` ; brouillon → `/users/me/edit` avec notice.
+  - Le fait `m0-profil-compose` n'est posé qu'à une sauvegarde complète.
+  - Rang 3 (Annuaire) `facultatif: true`, `Geste#facultatif?` disponible ; `badge_description` de « Présence choisie » dans `monde_0.yml`.
+  - Banc serveur : `verifier_profil_e9`.
+- **#259** (préprod `853c913`) et **#260** (préprod `aa08773`) fusionnées, `ruby -c` fait par le portable. E9 est servi de bout en bout (fiche → excursion → éditeur dans Communication).
