@@ -38,10 +38,10 @@ par Monde (`GuideCorpus.pour(monde:)`) et le fil du joueur (`messages_pour_api`,
 tours, les deux voix). Il ne lit **ni Moteur, ni Graines, ni Traces, ni le mentor**. *La
 promesse d'abstinence de la maquette est donc tenue, littéralement.*
 
-**Le mentor.** `MentorReponse` lit ce que le joueur a consenti, catégorie par catégorie
-(`ConsentementLlm` : `memoire`, `traces`, `graines`, `moteur`), et rien d'autre. Sans
-consentement, la consigne ne mentionne même pas la balise de contexte — le banc le vérifie
-en négatif.
+**Le mentor.** `MentorReponse` lit les catégories autorisées, catégorie par catégorie
+(`ConsentementLlm` : `memoire`, `traces`, `graines`, `moteur`), et rien d'autre. Depuis la
+décision du 12 septembre, l'absence de refus vaut autorisation ; un refus explicite retire
+immédiatement la catégorie de la consigne envoyée au mentor.
 
 **Le plafond.** `PlafondLlm` somme `GuideAppel` (anonyme) et `MentorMessage`. Le fil des
 guides livré le 18 août ne porte **aucune colonne de jetons** : le coût reste sans
@@ -189,10 +189,16 @@ sans lire.
 
 **Frontière posée dans la même décision — elle est structurante :**
 
+> **Ajout Codex — 13 septembre 2026.** Boris a renversé le défaut le 12 septembre : les
+> quatre catégories du mentor sont désormais ouvertes par défaut, avec fermeture et
+> réouverture indépendantes à tout moment. Cette décision remplace le régime opt-in du
+> tableau historique ci-dessous ; elle ne change ni les sources possibles, ni leur
+> séparation par catégorie, ni le pouvoir de suppression du joueur.
+
 | | Régime | Pourquoi |
 |---|---|---|
 | **Fil des guides** | Contrainte système, expliquée + suppression | C'est ce que le joueur a écrit lui-même, dans une conversation étroite (son fil, son Monde, sa page). Le conserver relève du fonctionnement du service. |
-| **Mentor** | **Consentement par catégorie, inchangé** | Il lit de la matière intime **déjà existante** : Traces, Graines, Moteur. L'opt-in strict actuel (vérifié en négatif par `verifier_mentor`) n'est pas un excès de prudence, c'est le bon régime. |
+| **Mentor** | **Opt-out par catégorie** | Il peut relier mémoire, Traces, Graines et Moteur tant que le joueur ne referme pas la catégorie correspondante. Chaque refus est explicite, immédiat et révocable. |
 
 **Deux conséquences pratiques :**
 - **la carte « Guides » du centre ne doit pas porter d'interrupteur** — mais une

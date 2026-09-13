@@ -1,3 +1,28 @@
+## 13 septembre — Codex : quatre raccords visibles à corriger
+
+Référence complète : `docs/vision/revue-badges-referentiel-optout-2026-09-13.md`.
+
+1. **Dopamine** : le clic qui ouvre le tiroir doit appeler le POST atomique du portable et n'afficher
+   que le lot réellement acquis. Ensuite croix, Échap, fond et `Classer dans mon dossier` ferment le
+   même lot déjà remis. Le comportement actuel (« seule la classe consomme ») contredit le contrat.
+2. **Accomplissements** : l'aide de première visite doit présenter trois mémoires, en ajoutant
+   Dopamine. Un badge secret non obtenu garde une carte anonyme dans la grille : ni visuel, ni titre,
+   ni condition révélés ; ne pas supprimer sa place avec `next`.
+3. **Seuil futur** : afficher « Mettre en relation plusieurs devenirs et en formuler le sens. » pour
+   `futurs_mis_en_sens`, jamais la condition quantitative déjà portée par Dopamine.
+4. **18 verbes** : la PR #211 ne porte pas encore l'affichage « Puissance · VERBE ». Remplacer les
+   usages joueur de `skill.name` par `skill.libelle`, notamment dans
+   `experience_cover_helper.rb` et `journeys/_show.html.haml`; employer aussi ce libellé dans le
+   sélecteur de gestion. Conserver les noms historiques seulement là où la traçabilité ou l'export
+   de compatibilité l'exige explicitement.
+
+L'opt-out est maintenant canonique dans les docs : M0-23 et les textes de surface doivent dire que
+les quatre catégories du mentor sont ouvertes par défaut et refermables séparément à tout moment.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».

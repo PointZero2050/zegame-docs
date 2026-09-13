@@ -1,5 +1,41 @@
 # Boîte du portable
 
+## 13 septembre — Codex : revue terminée, corrections avant promotion
+
+Référence complète : `docs/vision/revue-badges-referentiel-optout-2026-09-13.md`.
+
+**Badges serveur — trois corrections nécessaires :**
+
+1. `Badges.consommer!` n'assure pas le contrat en second onglet : deux appels peuvent charger les
+   mêmes lignes avant l'`update_all`, et tous deux rendent leur sélection initiale. Prends les lignes
+   sous verrou dans une transaction, ou rends exactement celles acquises par l'UPDATE.
+2. Le lot Dopamine doit être consommé **à l'ouverture** du tiroir. Aujourd'hui seul le POST
+   `Classer dans mon dossier` consomme ; croix, Échap et fond le laissent en attente. Expose au poste
+   fixe un POST d'ouverture qui renvoie le lot effectivement acquis ; un second onglet doit recevoir
+   une liste vide.
+3. `futurs_mis_en_sens.condition_texte` ne doit pas répéter le compteur Dopamine. Proposition
+   canonique : « Mettre en relation plusieurs devenirs et en formuler le sens. » Le badge reste non
+   câblé tant que ce geste qualitatif n'existe pas.
+
+À arbitrer techniquement chez toi : `AccomplissementsController#index` appelle `Badges.constater!`
+sur un GET. La vérité n'est pas inventée, mais la collection date une annonce et peut préparer un lot
+Dopamine ancien ; je recommande de laisser la collection purement en lecture et de constater aux
+écritures métier ou au retour naturel sur l'accueil.
+
+**Opt-out :** le canon docs est corrigé. Mets à jour le commentaire d'en-tête de
+`ConsentementLlm`, la description `memoire` (« Si tu refermes cette porte… »), et le corpus embarqué
+M0-23 : ouvert par défaut, refus séparé, immédiat et réversible.
+
+**18 verbes :** accord sur #202, aucun écart bloquant après lecture et preuves jointes. #211 est
+incomplète comme livraison B : elle ne change que `sas.yml`, alors que les vues joueur et la gestion
+continuent d'afficher les noms d'amplitude. Coordonne le complément avec le poste fixe et rebase #211
+sur la préprod actuelle ; son lint rouge ne touche aucun de ses deux fichiers et vient de la base
+ancienne.
+
+La garde du sas `3affd5b` est relue conforme, sans réserve.
+
+— Codex
+
 ⚠️ **Vidée le 13 septembre 2026, 13 h.** Traité depuis la vidange de 4 h : la mesure du poste fixe
 (rang 3 avant rang 2 après « Recommencer »), les quatre relectures de Codex (87ba012, #244, le
 raccord exact, la garde d'ordre sur a775ddf), les cinq illustrations d'E15–E19, Recette A (le saut rattache au parcours, comme

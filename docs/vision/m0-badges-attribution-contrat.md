@@ -152,6 +152,10 @@ La page d’accueil du parcours demande les reçus Dopamine non consommés. S’
 
 Le panneau s’ouvre uniquement au clic. Son ouverture consomme atomiquement tout le lot présenté ; le rechargement et un second onglet ne le représentent pas. Fermer ou `Classer dans mon dossier` conduit au même état : les badges restent disponibles dans `Mes Accomplissements`.
 
+Concrètement, le clic qui ouvre le panneau réclame le lot au serveur et le consomme avant de
+l'afficher. La croix, Échap, un clic sur le fond et `Classer dans mon dossier` ferment ensuite le
+même lot déjà remis ; aucun de ces gestes ne peut le remettre en attente.
+
 Il n’y a ni modale spontanée, ni pastille rouge persistante, ni notification externe, ni pression de série quotidienne.
 
 ### C. Clôture du Monde 0
@@ -171,6 +175,10 @@ La page reste consultable ensuite. L’animation d’arrivée ne se rejoue que l
 La page ajoute une troisième section et un troisième filtre. Elle reçoit les badges Dopamine obtenus et verrouillés depuis le catalogue, avec le même composant de carte. Les réglages actuels de visibilité communautaire ne sont pas supprimés par cette maquette : la distinction privé/public retirée par Boris concernait les **compétences du référentiel**, pas les badges.
 
 La visibilité publique de Dopamine n’est pas arbitrée dans cette décision. Tant qu’elle ne l’est pas, la famille reste personnelle et aucune troisième colonne n’est ajoutée au profil communautaire.
+
+Un badge `secret` non obtenu conserve une place anonyme dans la constellation : visuel masqué,
+titre et condition non révélés. Il ne disparaît donc pas de la grille, mais la grille ne dit ni ce
+qu'il est ni comment l'obtenir.
 
 ## 6. Répartition
 

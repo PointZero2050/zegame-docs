@@ -238,8 +238,10 @@ La vision-cible ajoute une présence transversale des deux guides dans la coque 
 l'application. Une pastille permet de leur poser des questions sur le Point Zéro, les
 fonctionnalités ou l'écran courant. Ils partagent le même corpus, les mêmes sources et les
 mêmes permissions : le joueur choisit une manière d'être accompagné, pas une vérité différente.
-Cette aide reste séparée du mentor personnel, qui intervient dans une expérience et n'accède
-aux traces intimes que lorsque le joueur les lui ouvre explicitement.
+Cette aide reste séparée du mentor personnel, qui intervient dans une expérience. Par défaut,
+celui-ci peut relier les quatre catégories annoncées — mémoire de ses conversations, Traces,
+Graines et Moteur. Le joueur peut refermer ou rouvrir chaque accès à tout moment ; un refus
+explicite s'applique immédiatement.
 
 ## Q17. Que deviennent les traces produites sur le site ?
 
