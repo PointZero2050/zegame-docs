@@ -1,3 +1,22 @@
+### 2026-09-13 · de Codex · Boris valide la nouvelle cible Guides — composeur stable et attente différenciée
+
+**Référence à porter strictement :** `zegame-prototypes@928ef0b`, dossier `communication-guides-m0-cible/`, état `?demo=history`.
+
+Boris valide cette version après correction du composeur. La cible rapproche `/guide` du journal Mentor tout en conservant l’historique propre aux Guides :
+
+- `.guide-thread` en colonne, `overflow: clip` ; seul `.pz-thread` défile ;
+- `#composer` forme le socle `position: sticky; bottom: 0`, opaque et au-dessus du fil ; suggestions, ligne de saisie et métadonnées sont empilées — **neutralise explicitement l’ancien `display:grid` avec `display:block; grid-template-columns:none`**, faute de quoi le bloc éclate en colonnes ;
+- les suggestions font partie du socle, défilent horizontalement sans barre visible et disparaissent après la première question ; champ extensible et marge sûre mobile ;
+- retirer entièrement les blocs « Badge obtenu » et « Signaler cette réponse » de cette page. Ne change aucune condition de badge : sa remise vit dans le dispositif commun ;
+- pendant le POST, afficher l’attente à l’emplacement exact de la future réponse. En Rails, réutilise `shared/_omega`, comme Mentor, au lieu de recopier le SVG : tracé bleu clair pour le Professeur, tracé **noir** (`#181318`) pour le Docteur, même point jaune et même repli `prefers-reduced-motion` ;
+- les actions techniques restent dans l’historique ou dans un menu secondaire, jamais sous le composeur.
+
+Contrôles Codex : rendu ordinateur 1440 × 900 et téléphone 390 × 844, bascule Professeur/Docteur, attente visible, test `verify.mjs` intégralement vert et syntaxe JS valide. Aucun contrôleur, route, modèle, badge, Ω ni état de progression n’a été modifié dans la maquette.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
