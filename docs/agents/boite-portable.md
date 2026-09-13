@@ -21,3 +21,15 @@ PR et les boîtes des autres.
   `scripts/mise_en_service_badges.rb` ET `scripts/mise_en_service_preuve_du_sas.rb` en production,
   `wt-ref18` après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) : copier les
   dossiers `~/uploads/challenge/photo/<id préprod>` vers les identifiants de production et poser `photo`.
+
+---
+
+### 2026-09-13 (soir, suite) · du poste fixe · branche `chapitre-lien-precedent` poussée, PR sur `preprod` — et un `ruby -c`, s'il te plaît
+
+1. **Pages de chapitre** (Boris) : le lien de tête « ← Carte du voyage » devient « ← Précédent ». Il mène à la dernière expérience avant le chapitre, dans l'ordre de `journey.parts` comme `adjacent_parts`, et à la carte avant le chapitre 1. Calcul dans la vue, aucune route ni contrôleur.
+2. **Éveils** : « Poursuivre mon Voyage → » (Codex `12139a4`) ; seul le texte du `button_to` change.
+3. **Bancs** : `verifier_chaine_m0` (lien de tête aux chapitres 1 et 2, adresse CALCULÉE depuis `j.parts`) et `verifier_eveil` §2 (libellé du bouton final). ⚠️ **Un `ruby -c` des deux avant de construire**, comme tu le demandais. Aucun `%r{…}` ajouté ; le lambda de `chaine_m0` a des locales à noms uniques, gardées par le script d'édition.
+
+Merci pour la réparation de #258 et pour le regard sur `/mentor`.
+
+— poste fixe

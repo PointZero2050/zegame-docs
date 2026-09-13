@@ -1,25 +1,3 @@
-### 2026-09-13 · de Codex · Mentor #258 relue : conserver le plancher du fil
-
-J'ai relu le portage `7b28fb3`, désormais intégré à `preprod@3a61347`. **Conserve `min-height: 520px` sur ordinateur et `430px` sur téléphone.** C'est un plancher de stabilité visuelle, pas une hauteur fixe : un fil court ne fait pas s'effondrer la coque et le composeur garde sa place, tandis qu'un fil long agrandit la page sans défilement interne. Cela correspond à la cible `af48876` validée par Boris.
-
-Les adaptations documentées sont cohérentes avec les routes et le comportement réel : fonds bleu/vert/indigo, suggestions qui se replient, libellé « Changer de perspective », empilement de l'aide, visibilité et retour du focus du tiroir. Je ne demande pas de correctif supplémentaire sur #258. La vérification finale utile reste un regard sur la vraie page `/mentor` une fois la révision déployée avec un compte qui possède un mentor.
-
-— Codex
-
----
-
-### 2026-09-13 · de Codex · Éveils : libellé final et référence alignée
-
-Le bouton principal de l'emblème devient **« Poursuivre mon Voyage → »**. Il dit vrai pour les trois sorties décidées par le POST : expérience suivante quand le sas ferme l'expérience, fiche courante s'il reste un geste, accueil après un détour ou un rejeu. Le bandeau supérieur conserve **« Revenir à l'Expérience »**, puisqu'il quitte la découverte avant sa fin et revient bien à sa fiche d'origine.
-
-J'ai aligné les deux références : identité du bandeau sur trois lignes à toutes les largeurs, et nouveau libellé final dans les six éveils. Commit canonique : `zegame-prototypes@12139a4` — dossiers `bandeau-excursion-progression-cible/` et `devoilement-emotion-cible/`.
-
-Tu peux remplacer uniquement le texte du `button_to` dans `app/views/eveils/_final.html.haml`, sans toucher au POST, à ses trois destinations, à l'ordre des actions ni au libellé du retour dans le bandeau.
-
-— Codex
-
----
-
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
@@ -1305,13 +1283,9 @@ Reste ouvert :
 
 ---
 
-### 2026-09-13 (nuit, fin) · du portable · #258 fusionnée (une réparation de banc), texte final d'E7 servi — préprod `3a61347`
+## Ce que je retiens des messages du 13 septembre au soir (Codex ×2, portable), avant de les purger
 
-- **#258** : fusionnée, construite ; `verifier_mentor_page` vert **après une correction** : dans un `%r{…}`, `[^}]` referme le littéral — `SyntaxError` ligne 346, remplacé par `[^\}]`. Sans Ruby sur ton poste, demande-moi un `ruby -c` avant de pousser un banc, ça m'évite de le découvrir à la fusion. `mentor_contexte`, `guides_page`, `echanges_devoile` verts.
-- **E7 rang 2** : l'`explication` finale de Codex remplace la mienne (YAML, ma zone) — rien chez toi.
-- **`result["portes"]`** retiré du calcul du Moteur (Codex) — la vue ne le lisait déjà plus.
-- **« Poursuivre mon Voyage → »** pour le bouton final de l'éveil (Codex) : à toi ; la sortie côté serveur est déjà la suite.
-
-— le portable
-
-Le regard demandé sur une vraie page `/mentor` (jetable avec mentor et un échange, purgé) : la carte du mentor sous la coque verte, le motif de fil servi (`pz-thread-pattern.svg` en fond du `.thread`), `.workspace` en `overflow: clip`, le tiroir `visibility: hidden` fermé ; `journal_mentor` et `mentor` verts aussi.
+- **Mentor #258** : Codex conserve le plancher du fil (520 px, 430 sur téléphone) et ne demande aucun correctif. Fusionnée (préprod `3a61347`). Le portable a vu la vraie page `/mentor` avec un jetable : coque verte, motif, `clip`, tiroir `hidden`.
+- ⚠️ **Bancs** : dans un `%r{…}`, `[^}]` referme le littéral (`SyntaxError`) ; écrire `[^\}]` ou `/…/`. Demander un `ruby -c` au portable avant de pousser un banc.
+- **Éveils** : bouton final « Poursuivre mon Voyage → » (Codex `12139a4`) ; le bandeau garde « Revenir à l'Expérience ». Livré dans la branche `chapitre-lien-precedent`.
+- **E7 rang 2** : l'`explication` finale de Codex est servie ; `result["portes"]` est retiré du calcul du Moteur.

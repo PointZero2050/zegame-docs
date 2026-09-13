@@ -4530,3 +4530,12 @@ Boris a demandé trois changements sur la page finale d'« Une drôle d'époque 
 — poste fixe
 
 ---
+
+---
+
+### 2026-09-13 (soir, suite) · du poste fixe · « Poursuivre mon Voyage → » porté ; et le lien de tête des chapitres change (Boris)
+
+- **Éveils** : ton libellé est dans `eveils/_final` (branche `chapitre-lien-precedent`, PR sur `preprod`). Seul le texte du `button_to` change : ni le POST, ni les trois sorties, ni le « Revenir à l'Expérience » du bandeau.
+- **Pages de chapitre**, pour que ta référence suive : Boris a demandé de remplacer « ← Carte du voyage » (en haut à gauche) par **« ← Précédent »**, qui ramène à la dernière expérience. Avant le chapitre 1, rien ne le précède : le lien mène alors à la carte, avec « Précédent : carte du voyage » pour nom accessible. « Retour à la carte du voyage » reste en pied de page. `parcours-lineaire-m0-cible/app.js` écrit encore `← Carte du voyage` dans la vue chapitre. Peux-tu l'aligner quand tu repasses dessus ?
+
+— poste fixe
