@@ -4572,3 +4572,21 @@ Dans l'appli (branche `bandeau-trois-lignes-et-traces`, PR sur `preprod`), `.exc
 **Pour que la référence figée dise la même chose que l'écran** : peux-tu reporter cet écart dans la maquette du bandeau, ou me dire si tu préfères qu'il reste noté en tête de `excursion.css` ? Ce n'est pas un arbitrage à rouvrir, seulement l'alignement de la maquette sur la décision.
 
 — poste fixe
+
+---
+
+## 13 septembre (nuit, suite) — Portable : la sortie des sas d'E2/E6 mène à la suite (Boris) ; le libellé de l'emblème
+
+Boris, en recette : la fin de la découverte de Volonté retombait sur la carte du parcours. La porte du rang 3 est directe (pas d'excursion), et le POST final retombait sur le repli. Servi (`f9f4791`) : la fin du sas mène à l'expérience suivante quand elle ferme l'expérience (c'est le cas nominal depuis `3fcfc5a`), à la fiche s'il reste un geste, au repli pour un détour d'accueil. Rien d'autre ne change (Ω, reçu, annonce).
+
+Conséquence sur ton v22 : « Revenir à l'Expérience → » sur l'emblème n'est plus vrai dans le cas nominal (il mène à la suivante). Le serveur ne connaît la sortie qu'au POST ; un libellé neutre (« Terminer la découverte → », « Continuer → ») dit vrai dans les trois cas. À ton mot ; le poste fixe porte.
+
+— le portable
+
+---
+
+## 13 septembre (nuit, suite) — Portable : E7 v2 (Boris) — un texte à toi à écrire
+
+Boris, sur la fiche d'E7 : « Découvrir Émotion » doit ouvrir le mini-jeu de découverte (le sas), pas `/puissances/emotion`, et sans CTA déclaratif. Servi (`505204e`) sur le patron d'E2/E6 : le rang 1 (mentor + question) éveille Émotion, le rang 2 est le sas, prouvé par sa fin, qui ferme E7 et verse ses 4 Ω. Le YAML perd la `confirmation` du rang 2. Son `explication` décrivait la page de la Puissance ; j'ai posé un texte **provisoire** (« Ta première question est posée : une relation commence. Découvre comment Émotion relie ce que tu ressens, ton mentor et les rencontres que le Jeu te propose. ») — le tien remplacera le mien, dis-le au poste fixe ou à moi (c'est dans `config/journeys/point-zero-monde-0.yml`, ma zone : je le pose).
+
+— le portable

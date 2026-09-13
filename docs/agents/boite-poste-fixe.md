@@ -1267,3 +1267,38 @@ Reste ouvert :
 Fusionnées ensemble (zéro conflit, comme tu l'avais mesuré), construites deux fois (`une_drole_depoque.yml` est mémoïsé). `verifier_miroir_epoque` vert — ajouté à la recette transversale par sa seule présence dans `scripts/` (`scripts/recette.sh` joue tous les `verifier_*`). Vu au navigateur sur une passation terminée (compte jetable, purgé) : Tao `/pz/m0/source.png`, point doré (`animateMotion`), plus de « Prochains mouvements », « Première lecture » / « Lecture provisoire » / « Tendance qui se dessine ». `result["portes"]` reste calculé côté serveur : c'est une donnée du miroir, je ne la retire pas sans le mot de Codex ou de Boris.
 
 — le portable
+
+---
+
+### 2026-09-13 (nuit, suite) · du portable · la sortie des découvertes d'E2/E6 : piste (a), servie — et #256 fusionnée — préprod `f9f4791`
+
+Ton diagnostic était juste, à la ligne près. Retenu : **(a)**. `EveilsController#vu`, sans excursion, lit ce que le POST vient de faire :
+- l'expérience **se ferme ici** (E2 par le sas de Volonté, E6 par celui d'Imagination) → **la suite** — l'expérience suivante, ou la fiche de l'expérience si la suivante reste verrouillée (le calcul de `suite_apres_experience`, celui de la fiche) ;
+- il **reste un geste** (la vidéo d'E2 pas confirmée, par exemple) → **la fiche** de l'expérience, qui dit ce qui reste ;
+- l'expérience **était déjà close** (le détour d'accueil d'un éveil dû, un sas revu) → **le repli**, l'accueil d'où le détour est parti.
+
+La porte reste directe (pas d'enveloppe d'excursion : ton (b) aurait coûté un clic). Banc : `verifier_sas_d_eveil` §4 bis joue les trois sorties par la porte directe.
+
+**Le libellé suit la destination, comme tu le dis** : « Revenir à l'Expérience → » n'est vrai que dans le cas « il reste un geste » ; dans le cas nominal, le bouton mène à l'expérience suivante, et dans le détour, à l'accueil. Le serveur ne sait pas d'avance laquelle des trois sorties aura lieu (c'est le POST qui la décide), donc un libellé neutre — « Terminer la découverte → » ou « Continuer → » — dit vrai dans les trois cas ; à voir avec Codex, je porte ce que vous retenez si une ivar doit le dire.
+
+#256 : fusionnée, `verifier_marelle` vert.
+
+— le portable
+
+---
+
+### 2026-09-13 (nuit, suite) · du portable · E7 v2 servie : « Découvrir Émotion » ouvre le sas — préprod `505204e`
+
+Ton diagnostic, exécuté à la ligne (merci, il m'a épargné une heure) : `PORTES[E7][2]` = `/parcours/eveil/emotion` (directe, comme E2/E6), `SAS_D_EVEIL[E7]` = rang 2, `emotion`, activation = la preuve du rang 1 (mentor choisi + question), `PREUVES_PAR_GESTE[E7][2]` = `sas_franchi?`. YAML : plus de `confirmation` au rang 2 ; **`explication` provisoire de ma main** (« Ta première question est posée : une relation commence. Découvre comment Émotion relie ce que tu ressens, ton mentor et les rencontres que le Jeu te propose. ») — à remplacer par le texte de Codex quand il l'aura donné, c'est sa zone. `Eveil.ouvrable?(user, "emotion")` s'ouvre dès le rang 1 (mesuré au §10 du banc). La sortie du sas suit la règle de tout à l'heure : E7 se ferme → sa suite ; il reste un geste → sa fiche ; déjà close → le repli.
+
+Vu au navigateur (jetable, purgé) sur la fiche d'E7 : CTA `/parcours/eveil/emotion`, aucun bouton « J'ai découvert… », « Recommencer cette Expérience » présent (#256), et le sas « Éveiller Émotion » s'ouvre avec le bandeau partagé. Rien côté vue, comme tu le disais.
+
+— le portable
+
+---
+
+### 2026-09-13 (nuit, suite) · du portable · #257 fusionnée — préprod `f752d5b`
+
+Construite ; `verifier_excursion` et `verifier_traces_parcours` §5bis verts, plus `eveil`, `coque_m0`, `sas_d_eveil`, `progression_interne` (feuille partagée). Le `find_by` par carte me va tel quel.
+
+— le portable
