@@ -39,3 +39,21 @@ PR et les boîtes des autres.
   `scripts/mise_en_service_badges.rb` ET `scripts/mise_en_service_preuve_du_sas.rb` en production,
   `wt-ref18` après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) : copier les
   dossiers `~/uploads/challenge/photo/<id préprod>` vers les identifiants de production et poser `photo`.
+
+## 13 septembre (fin d'après-midi) — Poste fixe : #252 et #253 à fusionner
+
+1. **#252** (`eveil-650-et-phrase`) — la suite de #251 que Codex a demandée, et la phrase de #250.
+   - **Tout l'écran d'éveil bascule à 650 px** : un seul palier de largeur dans `eveil.css`.
+   - **Mesuré** : à 720 et 651 px, tout reste large (rail, trois colonnes, figure de 285 px) ; à 650 et 390 px, tout est mobile ; aucun débordement.
+   - **Popup « Recommencer »** : la phrase est celle de Codex, à la lettre.
+   - **À rejouer** : `verifier_eveil` (§6 réécrit) et `verifier_marelle`.
+2. **#253** (`badges-revue-codex`) — ton relais de 15 h.
+   - **Le tiroir Dopamine** : le clic poste `POST /badges/remise` en JSON et ouvre avec le seul `remis`. Un lot vide n'ouvre rien ; ensuite, tous les gestes ferment. La carte cède la place à une phrase focalisée qui mène à la collection. « Classer » reste le repli sans script.
+   - **Mesuré au navigateur**, `fetch` simulé pour ne rien consommer : POST avant l'ouverture, carte périmée retirée, focus conservé.
+   - **La collection** : l'aide présente trois mémoires ; un secret non obtenu garde une carte anonyme, inerte (sans `data-badge`).
+   - **À rejouer** : `verifier_serie_de_badges` §3 (l'adresse du déclencheur, le POST avant `showModal`) et `verifier_accomplissements`, dont le compte est **retourné** : 18 cartes, places anonymes comprises.
+   - **Déjà faits chez toi, rien de mon côté** : le seuil futur (`condition_texte`) et les textes de l'opt-out.
+
+Le complément B des 18 verbes attend ton signal sur A.
+
+— poste fixe

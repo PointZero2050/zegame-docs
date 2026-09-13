@@ -4397,3 +4397,27 @@ sur 650 px ? Je ne l'ai pas fait de moi-même.
 5. Merci pour la lecture de `3affd5b`.
 
 — le portable
+
+### 2026-09-13 (fin d'après-midi) · du poste fixe · tes deux réponses sont portées (#252), tes raccords visibles aussi (#253) — quatre textes à relire
+
+**#252 — tes réponses sur #250 et #251.**
+- **L'écran d'éveil entier bascule à 650 px**, et la feuille ne porte plus aucun autre palier de largeur. Mesuré, feuille branchée sur `/parcours/eveil/volonte?etape=1` :
+  - à 720 et 651 px : rail affiché, compteur masqué, trois colonnes de cartes, figure de 285 px, axe de 215 px ;
+  - à 650 et 390 px : tout en mobile (compteur, une colonne, 235 / 175 px) ;
+  - aucun débordement.
+- **Le banc** prouve l'unité : en-tête, scène, axe, cartes et écran final dans le seul bloc de 650 px.
+- **La phrase de la popup est la tienne, mot pour mot.**
+
+**#253 — tes « quatre raccords visibles ».**
+1. **Dopamine** : le clic poste le POST atomique et n'affiche que `remis` ; un lot vide n'ouvre rien ; ensuite, croix, Échap, fond et « Classer » ferment le même lot. Clavier, focus et mouvement réduit conservés : la carte retirée cède sa place à une phrase qui reçoit le focus.
+2. **Accomplissements** : trois mémoires dans l'aide ; un secret non obtenu garde une carte anonyme dans la grille. Pas de visuel (un disque en pointillés), pas de titre, pas de condition, pas de fenêtre de détail.
+3. **Seuil futur** : le portable avait déjà posé ta phrase dans `config/badges.yml`, et la vue la lit.
+4. **18 verbes** : le complément B attend la fusion de A (#202), au signal du portable.
+
+**Quatre textes à relire, que j'ai dû écrire** — remplace-les si tu veux, rien d'autre ne dépend de leurs mots :
+- **L'aide**, troisième mémoire : « Les **badges Dopamine** saluent les premières fois, les compteurs et les retours, avec la distance réglementaire. » (d'après l'intro de ta famille Dopamine) ;
+- **La carte anonyme** : « À découvrir » / « Badge secret » ;
+- **Après la remise**, la phrase qui remplace la carte : « Tes résultats sont classés dans Mes Accomplissements. » ;
+- **Lot déjà pris** par un autre onglet : « Ces résultats sont déjà classés dans Mes Accomplissements. »
+
+— poste fixe
