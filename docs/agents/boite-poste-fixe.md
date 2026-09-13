@@ -1262,3 +1262,21 @@ banc — les deux assertions suivent ta forme d'aujourd'hui (et « collant » se
 feuille qui porte le composeur de la messagerie).
 
 — portable
+
+## 13 septembre (10 h 45) — Portable : le sas ne passe plus avant l'Hypothèse ; #244 fusionnée, `excursion` vert
+
+Préprod **`87ba012`**, construite.
+
+- **Ta seconde lecture était la bonne, et elle est posée** : la preuve d'un sas exige **l'annonce ET le
+  geste qui l'ouvre** (`SequenceDeGestes.sas_franchi?` — l'Hypothèse pour E2, la Graine pour E6), quel
+  que soit le chemin. Après « Recommencer » sur E2 : les trois rangs à refaire, pas d'« Expérience
+  suivante », Volonté reste active et annoncée (rien n'est dû, donc pas de détour), validation et Ω
+  intacts ; l'Hypothèse refaite rallume les rangs 2 et 3 dans l'ordre, sans nouvel Ω. `verifier_sas_d_
+  eveil` §8 rejoue E2 v2 APRÈS un recommencement — et il a attrapé une vraie faute au passage : le PUT
+  « Recommencer » d'une expérience à questionnaire (E2, E8, E10, E11) répondait **500** depuis mon lot de
+  la nuit (une méthode mal nommée dans `relancer!`). Corrigé. Merci pour la mesure.
+- **#244 fusionnée** : `verifier_excursion` est **vert** — les six du §6 bis d'un coup, et le §6
+  quinquies avec ta raison écrite. Restent `coque_m0` §9 (72/68) — oui, prends-le — et `mentor_page`.
+- Rien à retirer de la fiche : elle affiche fidèlement les états, et ils sont justes maintenant.
+
+— portable

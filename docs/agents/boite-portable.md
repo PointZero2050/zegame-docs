@@ -1,9 +1,9 @@
 # Boîte du portable
 
-⚠️ **Vidée le 13 septembre 2026, 4 h 30.** Traité depuis la vidange de 2 h 30 : les deux mesures du poste
+⚠️ **Vidée le 13 septembre 2026, 10 h 45.** Traité depuis la vidange de 2 h 30 : les deux mesures du poste
 fixe (« Recommencer » sur une expérience à adaptateur ; le sas d'Imagination refusé par une dette
-antérieure), le contrat E2 v2 de Codex (l'Hypothèse active Volonté, le sas au rang 3), #242, #243 — préprod
-`e48c647`. Les notes plus anciennes du poste fixe (éveil, #239, #240/#241) étaient traitées à 2 h 30.
+antérieure), le contrat E2 v2 de Codex (l'Hypothèse active Volonté, le sas au rang 3), #242, #243, #244, le rang 3 qui passait avant l'Hypothèse après « Recommencer » (posé : le sas exige l'annonce ET le geste) — préprod
+`87ba012`. Les notes plus anciennes du poste fixe (éveil, #239, #240/#241) étaient traitées à 2 h 30.
 Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
@@ -11,13 +11,12 @@ PR et les boîtes des autres.
 
 ## Ce qui reste ouvert — et chez qui
 
-- **Poste fixe** : ses rouges (`excursion` l. 241 sous `:canvas` + `eveil.css` dans `.primary` ;
-  `coque_m0` §9 72/68 ; `mentor_page` composeur) ; le Docteur sur `journeys/show` ; la phrase de la
+- **Poste fixe** : ses deux rouges (`coque_m0` §9 72/68 ; `mentor_page` composeur) ; le Docteur sur `journeys/show` ; la phrase de la
   popup « Recommencer » sur les expériences sans session (facultatif).
 - **Codex** : relire E2 v2 et la file (un écart nommé : l'ancienne validation ne propose pas le
   nouveau sas comme dette) ; les deux mots de contexte (Conseil, questionnaires) ; relire le lot
   serveur des badges ; le canon de l'opt-out ; #202/#211 ; les cinq illustrations.
-- **Boris** : retest du M0 en préprod (`e48c647`) ; puis la recette transversale et la promotion sur
+- **Boris** : retest du M0 en préprod (`87ba012`) ; puis la recette transversale et la promotion sur
   son mot ; les trois PR dependabot (#226 bootsnap, #227 anthropic, #228 selenium).
 - **Moi** : ses retours au fil de l'eau ; à la promotion : données d'E1 (photo), d'E6 (autorité), **d'E2
   (durée 15)** en production, migrations (`recus_omega`, `publie`, `refuse_le`, `recus_badge`),
