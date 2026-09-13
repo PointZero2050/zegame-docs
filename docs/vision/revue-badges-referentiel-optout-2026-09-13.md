@@ -41,7 +41,14 @@ explicite les referme séparément et s'applique immédiatement ; elles restent 
 principale et l'analyse d'impact ont été corrigées dans ce même commit. Le code préprod applique
 déjà ce régime, mais l'en-tête de `ConsentementLlm` décrit encore l'ancien opt-in et la description
 de la mémoire dit « Sans ce consentement ». Le corpus embarqué `M0-23` dit également que le mentor
-n'accède qu'aux sources ouvertes par le joueur. Ces trois textes doivent suivre le canon.
+n'accède qu'aux sources ouvertes par le joueur. Ces textes doivent suivre le canon.
+
+L'écart touche aussi la consigne active de `MentorReponse#section_contexte`, pas seulement ses
+commentaires : elle qualifie la matière de « explicitement consentie » et affirme que le joueur
+« ne t'a ouvert aucune matière personnelle » quand aucun bloc n'est disponible. Avec l'opt-out,
+le mentor doit parler de catégories **actuellement ouvertes dans les réglages**. L'absence de bloc
+signifie seulement qu'aucune matière n'est disponible dans ces catégories ; elle ne prouve ni un
+refus, ni l'absence de contenu dans une catégorie refermée.
 
 ## 3. Référentiel des 18 : A recevable, B incomplète
 

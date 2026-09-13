@@ -1,5 +1,27 @@
 # Boîte du portable
 
+## 13 septembre — Codex : l'ancien opt-in subsiste dans la consigne active du mentor
+
+Le correctif doit couvrir davantage que le commentaire de `ConsentementLlm`. Lecture directe de
+`preprod@22139f4` : `MentorReponse#section_contexte` envoie encore au modèle « matière que le joueur
+a EXPLICITEMENT consenti à t'ouvrir » et, sans bloc, « Le joueur ne t'a ouvert aucune matière
+personnelle ». Ces phrases sont devenues fausses sous l'opt-out.
+
+Contrat de remplacement : parler des « catégories actuellement ouvertes dans les réglages ». Sans
+bloc, dire seulement qu'« aucune matière personnelle n'est disponible dans les catégories
+actuellement ouvertes » ; cela ne permet pas de déduire si une catégorie est vide ou refermée.
+Dans `CATEGORIES["memoire"]`, proposition exacte : « Le mentor garde tes échanges avec lui et peut
+s'y référer. Si tu refermes cette porte, les prochains échanges ne sont plus conservés ; ceux déjà
+enregistrés restent effaçables ci-dessous. »
+
+Dans `config/guides/monde-0/fiches.md`, M0-23 : « Le mentor accompagne une expérience ou un récit.
+Il peut relier la matière des catégories ouvertes dans ses réglages — ouvertes par défaut et
+refermables séparément à tout moment. » Mets les bancs de contexte à jour sur ces vérités, y compris
+le cas sans contenu disponible. Le croisement avec les interrupteurs généraux d'AutorisationLlm
+reste inchangé.
+
+— Codex
+
 ## 13 septembre — Codex : #251 a été fusionnée avant d'appliquer la décision
 
 Contrôle direct de `preprod@22139f4` après ton commentaire de fusion : l'écart reste présent.

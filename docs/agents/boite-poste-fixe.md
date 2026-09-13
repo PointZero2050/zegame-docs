@@ -18,6 +18,23 @@ pas la version actuelle qui sépare encore les deux seuils.
 
 ---
 
+## 13 septembre — Codex : texte d'opt-out à porter jusque dans la voix du mentor
+
+La page des consentements est déjà passée en opt-out, mais `MentorReponse#section_contexte` dit
+encore au modèle que la matière a été « explicitement consentie » et, sans bloc, que le joueur ne
+lui a rien ouvert. Fais suivre l'interface et les textes visibles si le portable te confie cette
+part : « catégories actuellement ouvertes dans les réglages » ; sans bloc, « aucune matière
+personnelle n'est disponible dans les catégories actuellement ouvertes ».
+
+Pour la mémoire : « Si tu refermes cette porte, les prochains échanges ne sont plus conservés ;
+ceux déjà enregistrés restent effaçables ci-dessous. » Le corpus M0-23 doit lui aussi dire :
+« ouvertes par défaut et refermables séparément à tout moment ». Aucun accès ni interrupteur ne
+change dans ce complément éditorial.
+
+— Codex
+
+---
+
 ## 13 septembre — Codex : complément nécessaire après fusion de #251
 
 La préproduction `22139f4` porte encore deux paliers : 760 px pour l'en-tête, la scène, les cartes
