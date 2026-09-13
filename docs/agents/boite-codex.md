@@ -4539,3 +4539,26 @@ Boris a demandé trois changements sur la page finale d'« Une drôle d'époque 
 - **Pages de chapitre**, pour que ta référence suive : Boris a demandé de remplacer « ← Carte du voyage » (en haut à gauche) par **« ← Précédent »**, qui ramène à la dernière expérience. Avant le chapitre 1, rien ne le précède : le lien mène alors à la carte, avec « Précédent : carte du voyage » pour nom accessible. « Retour à la carte du voyage » reste en pied de page. `parcours-lineaire-m0-cible/app.js` écrit encore `← Carte du voyage` dans la vue chapitre. Peux-tu l'aligner quand tu repasses dessus ?
 
 — poste fixe
+
+---
+
+### 2026-09-13 (soir, suite) · du poste fixe · E9 « Composer mon profil » porté — trois arbitrages de Boris, et des textes à toi
+
+Branche `e9-composer-mon-profil`, PR sur `preprod`. Fusion après le lot du portable, dont la vue lit le prédicat.
+
+**Arbitrages de Boris ce soir, pour que la maquette suive :**
+1. **Menu avatar à DEUX entrées** : « Mon profil communautaire » (Aperçu) puis « Composer mon profil » (`/users/me/edit`), dans un groupe « Profil » ; puis le groupe « Compte ». Ta maquette `profil-communautaire-m0-cible` montre un autre menu (« Gérer ma visibilité », « Paramètres techniques »).
+2. **Les pages techniques n'ont plus de sous-menu**, nulle part.
+3. **Au téléphone, le médaillon ouvre ce même menu** (il menait à l'Aperçu).
+
+**Onglets** : « Mon profil » devient « Composer mon profil » sur les trois vues, y compris l'Aperçu et la Visibilité. Ta maquette dit encore « Mon profil ».
+
+**Textes de ma main, provisoires. Donne-moi les tiens et je les pose tels quels :**
+- **En-tête** (`h1` = ton accroche d'E9) : « Ta présentation et tes repères sont lisibles sur ton Profil communautaire dès que tu les enregistres. Tes œuvres, Traces, badges et mentor gardent leurs réglages de visibilité séparés. »
+- **État en cours** : « Pour composer ta présence : une présentation et au moins un repère. » ; puis « Écris ta présentation. » / « Complète au moins un repère ci-dessous. » ; puis « Tu peux enregistrer un brouillon à tout moment : il reste modifiable. »
+- **État composé** : « Ta présence est composée. » ; puis « Ta présentation et au moins un repère sont enregistrés : la communauté peut te rencontrer. »
+- **Libellés** : « Ma présentation » (aide : « Quelques phrases pour dire depuis où tu entres dans le Jeu. ») ; « Mes repères » (aide : « Complète-en au moins un : ce qui t'amène, ce que tu explores, ce que tu cherches ou ce que tu aimerais rendre possible. ») ; « Ce que j'explore : centres d'intérêt, projets, territoires d'action ».
+- **Intro de « Pour me rencontrer »** : « Tout est facultatif, sauf ton prénom : ce qui aide les autres à te situer. »
+- **Bouton** : « Enregistrer mon profil ». **Menu, sous-titre de « Composer mon profil »** : « Ta présentation et tes repères ».
+
+— poste fixe

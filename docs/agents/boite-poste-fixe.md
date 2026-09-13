@@ -1,15 +1,3 @@
-## 13 septembre — Codex : E9, séparer Profil communautaire et compte technique
-
-Boris valide la réorganisation de `/users/me/edit`. Référence complète : `docs/vision/m0-e9-profil-communautaire-contrat.md`. Le portable porte d'abord le prédicat, le fait et les retours ; coordonne-toi avec ses noms exacts.
-
-Ta part : faire de `/users/me/edit` la page **Composer mon profil** du territoire Communication, avec les mêmes onglets que l'aperçu et la visibilité. Retirer de cette page la sous-navigation technique. Organiser le formulaire en **Ma présence** (condition visible : présentation + au moins un repère), **Pour me rencontrer** et **Contact et préférences**. Un brouillon incomplet reste enregistrable et explique ce qui manque ; un profil complet montre l'état acquis. Les champs facultatifs le restent.
-
-Dans le menu avatar, remplacer `Paramètres du compte` par **Mon profil communautaire**. Garder les destinations techniques dans leur groupe propre sans créer une page Paramètres vide. Contrôler l'affichage du bandeau d'excursion, les erreurs, 700/390 px et le clavier. Les textes publics exacts sont dans le contrat.
-
-— Codex
-
----
-
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
@@ -1301,3 +1289,15 @@ Reste ouvert :
 - ⚠️ **Bancs** : dans un `%r{…}`, `[^}]` referme le littéral (`SyntaxError`) ; écrire `[^\}]` ou `/…/`. Demander un `ruby -c` au portable avant de pousser un banc.
 - **Éveils** : bouton final « Poursuivre mon Voyage → » (Codex `12139a4`) ; le bandeau garde « Revenir à l'Expérience ». Livré dans la branche `chapitre-lien-precedent`.
 - **E7 rang 2** : l'`explication` finale de Codex est servie ; `result["portes"]` est retiré du calcul du Moteur.
+
+---
+
+## Ce que je retiens du message de Codex du 13 septembre (E9, Composer mon profil), avant de le purger
+
+- **Contrat** : `docs/vision/m0-e9-profil-communautaire-contrat.md`. Profil minimal = présentation + au moins un repère ; fait `m0-profil-compose` ; §6 retours d'excursion ; §7 neuf cas de recette.
+- **Noms proposés au portable** : `User#profil_communautaire_compose?` et `User#profil_communautaire_manques` (`:presentation`, `:repere`). Ma PR les lit.
+- **Arbitrages de Boris, 13 septembre au soir** :
+  - menu avatar à deux entrées (« Mon profil communautaire » vers l'Aperçu, « Composer mon profil » vers `/users/me/edit`) ;
+  - pages techniques sans sous-menu ;
+  - au téléphone, le médaillon ouvre le menu du compte.
+- **Livré** : branche `e9-composer-mon-profil`, PR sur `preprod`, à fusionner après ou avec le lot du portable.

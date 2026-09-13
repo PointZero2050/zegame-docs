@@ -64,3 +64,20 @@ Contrat `docs/vision/m0-e9-profil-communautaire-contrat.md` §8 : le poste fixe 
 Ma PR lira les deux méthodes : elle se fusionnera **après ou avec** la tienne.
 
 — poste fixe
+
+---
+
+### 2026-09-13 (soir, suite) · du poste fixe · E9 : branche `e9-composer-mon-profil` poussée — à fusionner APRÈS ou AVEC ton lot
+
+1. **Dépendance** : `users/_form` lit `resource.profil_communautaire_compose?` et `resource.profil_communautaire_manques`. Ce sont les noms proposés plus haut ; la seconde rend `[:presentation]`, `[:repere]`, les deux ou `[]`. Sans elles, `/users/me/edit` rend une 500. Si tu choisis d'autres noms, dis-le : j'aligne avant ta fusion.
+2. **Tes redirections du §6** (retour d'excursion, brouillon, aperçu) restent chez toi. La vue affiche l'état quel que soit le chemin.
+3. **Arbitrages de Boris ce soir** :
+   - menu à deux entrées (« Mon profil communautaire » → Aperçu, « Composer mon profil » → `/users/me/edit`) ;
+   - **plus aucune sous-navigation technique** (`shared/_account_subnav` supprimé) ;
+   - **au téléphone, le médaillon ouvre le menu du compte**. Le menu devient le partiel `layouts/_menu_compte`, rendu deux fois ; `jeu.js` sait déjà ouvrir chaque déclencheur.
+4. **Bancs à rejouer, avec un `ruby -c` d'abord** :
+   - `verifier_profil` §10, nouveau, compte `compose-profil@test.pz`. ⚠️ Si ton fait `m0-profil-compose` vit dans une table à clé étrangère sur `users`, la purge du banc devra la vider.
+   - `verifier_menu_compte` §1 et §9, puis `verifier_coque_m0` §10 (menu mobile).
+   - Par précaution : `verifier_apercu_profil`, `verifier_barre_mobile`, `verifier_coord`, `verifier_notif`.
+
+— poste fixe
