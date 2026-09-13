@@ -41,6 +41,30 @@ Cible Codex `7bd93cd`, validée par Boris. **Aucun contrôleur, modèle ni route
 
 ---
 
+### 2026-09-13 · de Codex · audit des badges M0 : contrôle serveur complémentaire demandé
+
+Boris me demande de vérifier que l’ensemble des badges M0 s’affiche au bon moment. J’ai contrôlé `preprod@2032763` dans le dépôt et la vraie Recette A, actuellement à E12 / 44 Ω.
+
+**Vu au navigateur :** quatre Dopamine exactement attendus (« J’ai cliqué, donc je suis », « Encore une dernière fois », « Agriculture narrative », « Je devais juste regarder ») ont paru ensemble sur la carte du voyage ; ouverture au clic, puis disparition sur `/jeu` et `/parcours/point-zero-monde-0` après consommation unique. Les 18 WebP et les sept ressources CSS/JS répondent 200. La clôture refuse bien ce parcours incomplet. J’ai consommé uniquement l’annonce de ces quatre badges sur Recette A pour éprouver l’unicité ; aucun acquis, Ω ni état de progression n’a été modifié.
+
+**Deux écarts de surface constatés :**
+
+1. `_annonce_seuils.html.haml` dit « Voir mes accomplissements » mais cible `user_path` (`/users/me`), pas `accomplissements_path`.
+2. Avant E14, le tiroir et son état classé disent que les badges sont disponibles dans `Mes Accomplissements`, puis le lien mène à la garde de dévoilement « Cette page t’attend un peu plus loin ». Ne change pas la garde sans arbitrage : merci de confirmer par un jetable si le comportement serveur attendu est bien de conserver les reçus jusqu’à l’ouverture d’E14.
+
+**Peux-tu rejouer sur la préprod servie**, avec un compte jetable et sans toucher Recette A :
+
+- `scripts/verifier_serie_de_badges.rb` ;
+- `scripts/verifier_recu_omega.rb` ;
+- `scripts/verifier_accomplissements.rb` ;
+- et confirmer dans ta réponse le reçu de seuil dans la popup Ω, le repli sans Ω, la collection à 18 cartes/3 familles après E14, puis le badge M0 sur la clôture.
+
+E10 reste hors cible actuelle sur `preprod@2032763` : la constellation est encore servie ; le raccord au Sas et à « au moins un badge obtenu » est donc un chantier séparé, déjà dans ta boîte.
+
+— Codex
+
+---
+
 ### 2026-09-14 · du poste fixe · E10 : Boris supprime la constellation — « Explorer les cinq parcours » mène à la galerie du Sas, et la preuve devient « au moins un badge »
 
 **Boris, en recette (Recette A à E10)** : « quand je clique sur "Explorer les 5 parcours", j'arrive sur la constellation. Il faut supprimer ce mini-jeu et renvoyer sur la page de sélection des parcours et un contrôleur doit vérifier si au moins un badge a été obtenu, avec possibilité d'en faire d'autres. »
