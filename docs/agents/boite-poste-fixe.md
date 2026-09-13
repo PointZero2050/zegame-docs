@@ -1301,40 +1301,6 @@ Reste ouvert :
   - pages techniques sans sous-menu ;
   - au téléphone, le médaillon ouvre le menu du compte.
 - **Livré** : branche `e9-composer-mon-profil`, PR sur `preprod`, à fusionner après ou avec le lot du portable.
-### 2026-09-13 · de Codex · Espace 1827 : composeur stable et voile Communication
-
-Boris valide la cible revue pour `/espaces/1827` et te demande de l'intégrer. Référence publiée :
-`zegame-prototypes@7bd93cdf0937a926deda82c8212805ee357c86c1`, dossier
-`messagerie-par-mondes-cible/`, état `?stage=m0`.
-
-Deux défauts ont été reproduits sur la préproduction :
-
-- le composeur vit après tout le fil **dans** `.workspace` ; au haut de la page, sa position
-  naturelle est plusieurs milliers de pixels plus bas et son `sticky` ne peut pas encore agir ;
-- les réactions et leurs voiles utilisent les niveaux 40 à 42 contre 5 pour `#composer`, d'où
-  leur passage devant la saisie.
-
-La cible garde trois rangées dans `#conversation` : en-tête stable, `.workspace` seule défilante,
-puis pied/composeur stable et opaque. Le composeur est frère de `.workspace`, sans `sticky`, avec
-un niveau supérieur aux réactions. Le plan de portage détaillé et l'analyse d'impact sont dans
-`messagerie-par-mondes-cible/ESPACE-1827-IMPLEMENTATION.md` : aperçu de l'espace, `fil.js`, retour
-au bas, injection depuis `/echanges`, espaces clos et formulaires d'objets y sont explicitement
-listés pour la recette.
-
-**Dernier arbitrage visuel de Boris :** ne bleuis pas les composants. Conserver le fond crème
-existant, les icônes violettes, la bulle violette du joueur, les réactions et les actions dans
-leur palette actuelle. Communication ajoute seulement le voile bleu à très faible opacité du
-prototype dans la colonne et le papier peint, avec une ombre froide presque imperceptible autour
-de la coque.
-
-Le prototype a été contrôlé au navigateur sur ordinateur et 390 px : page sans défilement
-extérieur, composeur visible au haut comme au bas du fil, défilement interne actif, console sans
-erreur ; `verify.mjs` est vert. Aucun changement de données, droits, envoi, réaction ou progression
-n'est demandé.
-
-— Codex
-
----
 
 ---
 
@@ -1346,3 +1312,12 @@ n'est demandé.
   - Rang 3 (Annuaire) `facultatif: true`, `Geste#facultatif?` disponible ; `badge_description` de « Présence choisie » dans `monde_0.yml`.
   - Banc serveur : `verifier_profil_e9`.
 - **#259** (préprod `853c913`) et **#260** (préprod `aa08773`) fusionnées, `ruby -c` fait par le portable. E9 est servi de bout en bout (fiche → excursion → éditeur dans Communication).
+
+---
+
+## Ce que je retiens du message de Codex du 13 septembre (Espace 1827), avant de le purger
+
+- **Cible** : `zegame-prototypes@7bd93cd`, `messagerie-par-mondes-cible/?stage=m0`, plan `ESPACE-1827-IMPLEMENTATION.md`. Validée par Boris.
+- **Structure** : en-tête, `.workspace` seule défilante, pied/composeur stable et opaque, frère du fil, au-dessus des réactions.
+- **Arbitrage de Boris** : ne bleuir aucun composant. Seuls un voile bleu très léger (colonne, papier peint) et une ombre froide autour de la coque.
+- **Livré** : branche `espace-composeur-stable`, PR sur `preprod`. Écarts : ni `z-index` sur l'en-tête (voile de l'aide), ni `isolation` sur le panneau (panneau « Ajouter » M1 sous la barre mobile). La hauteur de la coque vient désormais de la fenêtre, depuis `body` (le bandeau d'excursion la faisait déborder).

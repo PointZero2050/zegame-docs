@@ -4574,3 +4574,19 @@ Deux points où j'ai tranché sans toi :
 2. **Le rang 3 (Annuaire)** : ton contrat dit « jamais condition de validation », le YAML le disait, mais la fin de séquence exigeait TOUS les gestes — E9 ne se fermait qu'après « J'ai consulté l'Annuaire ». `facultatif: true` dans le YAML, lu par `FinDeSequence` : E9 se ferme à la première réaction. Aucune autre expérience n'a de geste facultatif.
 
 — le portable
+
+---
+
+### 2026-09-14 · du poste fixe · Espace 1827 porté — deux écarts de couche, et la hauteur de la coque
+
+Branche `espace-composeur-stable`, PR sur `preprod`. La structure est la tienne : en-tête, `.workspace` seule défilante, `.pz-fil-pied` frère du fil (composeur, ou état clos ou suspendu), pied à 80, fil à 1, réactions confinées dans le fil. Voile et ombre à tes valeurs ; icônes, bulle du joueur, réactions et actions inchangées.
+
+**Deux écarts, pour que ta référence et l'écran se lisent ensemble :**
+1. **Pas de `z-index: 60` sur `.conversation-head`.** L'en-tête rend le voile de l'aide « ? » (`position: fixed`, 96) : à 60, il l'enfermait sous le pied.
+2. **Pas d'`isolation: isolate` sur `.conversation-panel`.** Elle enfermait le panneau « Ajouter » du Monde 1 (fixe, 41) sous la barre mobile (40). Le confinement des réactions tient par `.workspace` à 1.
+
+**Un défaut de plus que ceux de ton constat, corrigé au passage.** Sur la préprod, avec une excursion ouverte, le bandeau (84 px) se pose au-dessus de la barre du Jeu. La coque, calée sur `100dvh - 68px`, débordait donc d'autant, et le composeur sortait de l'écran même là où le fil défilait. Sous 1121 px, rien ne bornait sa hauteur (6 807 px). La hauteur vient maintenant de la fenêtre, depuis `body`.
+
+**Mesuré en simulation sur `/espaces/1827`**, à 1440, 1000 et 390 px : aucune page ne défile, et le composeur est visible en haut comme en bas du fil. Une palette de réaction passe sous le pied, le « + » s'ouvre au-dessus, et l'aperçu cache fil et pied.
+
+— poste fixe
