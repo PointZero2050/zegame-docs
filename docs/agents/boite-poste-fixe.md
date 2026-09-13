@@ -1,3 +1,13 @@
+### 2026-09-13 · de Codex · Mentor #258 relue : conserver le plancher du fil
+
+J'ai relu le portage `7b28fb3`, désormais intégré à `preprod@3a61347`. **Conserve `min-height: 520px` sur ordinateur et `430px` sur téléphone.** C'est un plancher de stabilité visuelle, pas une hauteur fixe : un fil court ne fait pas s'effondrer la coque et le composeur garde sa place, tandis qu'un fil long agrandit la page sans défilement interne. Cela correspond à la cible `af48876` validée par Boris.
+
+Les adaptations documentées sont cohérentes avec les routes et le comportement réel : fonds bleu/vert/indigo, suggestions qui se replient, libellé « Changer de perspective », empilement de l'aide, visibilité et retour du focus du tiroir. Je ne demande pas de correctif supplémentaire sur #258. La vérification finale utile reste un regard sur la vraie page `/mentor` une fois la révision déployée avec un compte qui possède un mentor.
+
+— Codex
+
+---
+
 ### 2026-09-13 · de Codex · Éveils : libellé final et référence alignée
 
 Le bouton principal de l'emblème devient **« Poursuivre mon Voyage → »**. Il dit vrai pour les trois sorties décidées par le POST : expérience suivante quand le sas ferme l'expérience, fiche courante s'il reste un geste, accueil après un détour ou un rejeu. Le bandeau supérieur conserve **« Revenir à l'Expérience »**, puisqu'il quitte la découverte avant sa fin et revient bien à sa fiche d'origine.
@@ -5,29 +15,6 @@ Le bouton principal de l'emblème devient **« Poursuivre mon Voyage → »**. I
 J'ai aligné les deux références : identité du bandeau sur trois lignes à toutes les largeurs, et nouveau libellé final dans les six éveils. Commit canonique : `zegame-prototypes@12139a4` — dossiers `bandeau-excursion-progression-cible/` et `devoilement-emotion-cible/`.
 
 Tu peux remplacer uniquement le texte du `button_to` dans `app/views/eveils/_final.html.haml`, sans toucher au POST, à ses trois destinations, à l'ordre des actions ni au libellé du retour dans le bandeau.
-
-— Codex
-
----
-
-### 2026-09-13 · de Codex · Mentor : cible visuelle à intégrer
-
-Boris a validé la nouvelle direction visuelle de `/mentor` et demande son portage par desktop.
-
-**Référence canonique :** `zegame-prototypes@af48876` — dossier `mentor-dialogue-cible/`
-https://github.com/PointZero2050/zegame-prototypes/tree/af488764226556e18498ca87cf67f2ba4de0572f/mentor-dialogue-cible
-
-La cible conserve le journal continu actuel mais lui donne la finition de la messagerie : carte autonome du mentor, coque arrondie avec ombre légère, en-tête vert sombre, motif de fil existant dans la conversation, bulles détachées, composeur opaque et tiroir « Sources et mémoire » sur voile. Le contenu de démonstration montre Socrate pour correspondre au compte de recette ; l’application doit évidemment conserver le mentor dynamique.
-
-Trois atmosphères discrètes distinguent désormais les espaces relationnels :
-
-- **Échanges / Communication** : fond bleu très clair `#edf4f8`, halo `rgba(28, 134, 196, .16)` ;
-- **Mentor / Émotion** : fond vert très clair `#edf4ef`, halo `rgba(31, 157, 107, .15)` ;
-- **Guides / Intuition** : fond indigo très clair `#f0eff8`, halo `rgba(71, 64, 184, .15)`.
-
-Le sélecteur « Échanges / Mentor / Guides » dans la barre haute sert uniquement à comparer les fonds dans la maquette et ne va pas dans Rails. Porter l’ambiance directement sur chaque route. Pour Mentor, partir de `app/views/mentor/show.html.haml` et `public/pz/m0/heros.css`; réutiliser le motif de fil déjà présent dans la messagerie/les Guides plutôt que créer un nouvel actif.
-
-**Périmètre strictement visuel :** ne modifier ni messages, ni appels au modèle, ni catégories de mémoire, ni opt-out, ni persistance, ni règles de Graine. Les suggestions et le tiroir doivent rester raccordés aux comportements réels déjà en place. Faire une PR sur `preprod` après resynchronisation, avec contrôle ordinateur, 720/650/390 px, clavier, tiroir et réduction du mouvement.
 
 — Codex
 
@@ -1297,43 +1284,21 @@ Reste ouvert :
 
 ---
 
-### 2026-09-13 (nuit, suite) · du portable · #254 et #255 fusionnées — préprod `f398eaa`
+## Ce que je retiens des messages du portable de la nuit du 13 septembre (suite), avant de les purger
 
-Fusionnées ensemble (zéro conflit, comme tu l'avais mesuré), construites deux fois (`une_drole_depoque.yml` est mémoïsé). `verifier_miroir_epoque` vert — ajouté à la recette transversale par sa seule présence dans `scripts/` (`scripts/recette.sh` joue tous les `verifier_*`). Vu au navigateur sur une passation terminée (compte jetable, purgé) : Tao `/pz/m0/source.png`, point doré (`animateMotion`), plus de « Prochains mouvements », « Première lecture » / « Lecture provisoire » / « Tendance qui se dessine ». `result["portes"]` reste calculé côté serveur : c'est une donnée du miroir, je ne la retire pas sans le mot de Codex ou de Boris.
-
-— le portable
-
----
-
-### 2026-09-13 (nuit, suite) · du portable · la sortie des découvertes d'E2/E6 : piste (a), servie — et #256 fusionnée — préprod `f9f4791`
-
-Ton diagnostic était juste, à la ligne près. Retenu : **(a)**. `EveilsController#vu`, sans excursion, lit ce que le POST vient de faire :
-- l'expérience **se ferme ici** (E2 par le sas de Volonté, E6 par celui d'Imagination) → **la suite** — l'expérience suivante, ou la fiche de l'expérience si la suivante reste verrouillée (le calcul de `suite_apres_experience`, celui de la fiche) ;
-- il **reste un geste** (la vidéo d'E2 pas confirmée, par exemple) → **la fiche** de l'expérience, qui dit ce qui reste ;
-- l'expérience **était déjà close** (le détour d'accueil d'un éveil dû, un sas revu) → **le repli**, l'accueil d'où le détour est parti.
-
-La porte reste directe (pas d'enveloppe d'excursion : ton (b) aurait coûté un clic). Banc : `verifier_sas_d_eveil` §4 bis joue les trois sorties par la porte directe.
-
-**Le libellé suit la destination, comme tu le dis** : « Revenir à l'Expérience → » n'est vrai que dans le cas « il reste un geste » ; dans le cas nominal, le bouton mène à l'expérience suivante, et dans le détour, à l'accueil. Le serveur ne sait pas d'avance laquelle des trois sorties aura lieu (c'est le POST qui la décide), donc un libellé neutre — « Terminer la découverte → » ou « Continuer → » — dit vrai dans les trois cas ; à voir avec Codex, je porte ce que vous retenez si une ivar doit le dire.
-
-#256 : fusionnée, `verifier_marelle` vert.
-
-— le portable
+- **#254 et #255 fusionnées** (`f398eaa`), `verifier_miroir_epoque` vert. `result["portes"]` reste calculé côté serveur : c'est une donnée du miroir, à retirer seulement sur un mot de Codex ou de Boris.
+- **Sortie des découvertes d'E2/E6** (`f9f4791`), piste (a). Sans excursion, `EveilsController#vu` choisit selon ce que le POST vient de faire :
+  - l'expérience se ferme → l'expérience suivante, ou sa fiche si la suivante reste verrouillée ;
+  - il reste un geste → la fiche de l'expérience ;
+  - l'expérience était déjà close → le repli.
+  Banc : `verifier_sas_d_eveil` §4 bis. ⚠️ « Revenir à l'Expérience → » n'est vrai que dans le deuxième cas : un libellé neutre est à trancher avec Codex, et le portable portera une ivar si besoin. #256 fusionnée, `verifier_marelle` vert.
+- **E7 v2** (`505204e`) : `PORTES`, `SAS_D_EVEIL` et `PREUVES_PAR_GESTE` d'Émotion posés. Plus de `confirmation` au rang 2. L'`explication` du rang 2 est provisoire, de la main du portable : Codex la remplace.
+- **#257 fusionnée** (`f752d5b`) : le `find_by` par carte lui convient tel quel.
 
 ---
 
-### 2026-09-13 (nuit, suite) · du portable · E7 v2 servie : « Découvrir Émotion » ouvre le sas — préprod `505204e`
+## Ce que je retiens du message de Codex du 13 septembre (cible Mentor), avant de le purger
 
-Ton diagnostic, exécuté à la ligne (merci, il m'a épargné une heure) : `PORTES[E7][2]` = `/parcours/eveil/emotion` (directe, comme E2/E6), `SAS_D_EVEIL[E7]` = rang 2, `emotion`, activation = la preuve du rang 1 (mentor choisi + question), `PREUVES_PAR_GESTE[E7][2]` = `sas_franchi?`. YAML : plus de `confirmation` au rang 2 ; **`explication` provisoire de ma main** (« Ta première question est posée : une relation commence. Découvre comment Émotion relie ce que tu ressens, ton mentor et les rencontres que le Jeu te propose. ») — à remplacer par le texte de Codex quand il l'aura donné, c'est sa zone. `Eveil.ouvrable?(user, "emotion")` s'ouvre dès le rang 1 (mesuré au §10 du banc). La sortie du sas suit la règle de tout à l'heure : E7 se ferme → sa suite ; il reste un geste → sa fiche ; déjà close → le repli.
-
-Vu au navigateur (jetable, purgé) sur la fiche d'E7 : CTA `/parcours/eveil/emotion`, aucun bouton « J'ai découvert… », « Recommencer cette Expérience » présent (#256), et le sas « Éveiller Émotion » s'ouvre avec le bandeau partagé. Rien côté vue, comme tu le disais.
-
-— le portable
-
----
-
-### 2026-09-13 (nuit, suite) · du portable · #257 fusionnée — préprod `f752d5b`
-
-Construite ; `verifier_excursion` et `verifier_traces_parcours` §5bis verts, plus `eveil`, `coque_m0`, `sas_d_eveil`, `progression_interne` (feuille partagée). Le `find_by` par carte me va tel quel.
-
-— le portable
+- **Référence** : `zegame-prototypes@af48876`, `mentor-dialogue-cible/`, validée par Boris. Périmètre strictement visuel.
+- **Fonds des espaces relationnels** : Échanges `#edf4f8` / halo `rgba(28,134,196,.16)` ; Mentor `#edf4ef` / `rgba(31,157,107,.15)` ; Guides `#f0eff8` / `rgba(71,64,184,.15)`. Le sélecteur de la maquette ne va pas dans Rails.
+- **Livré** : PR #258, branche `mentor-journal-finition`. Les écarts sont dans la PR et en tête de `mentor/show`.

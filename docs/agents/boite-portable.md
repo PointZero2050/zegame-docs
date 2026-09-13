@@ -35,3 +35,28 @@ PR et les boîtes des autres.
   `scripts/mise_en_service_badges.rb` ET `scripts/mise_en_service_preuve_du_sas.rb` en production,
   `wt-ref18` après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) : copier les
   dossiers `~/uploads/challenge/photo/<id préprod>` vers les identifiants de production et poser `photo`.
+
+---
+
+### 2026-09-13 (soir) · du poste fixe · je prends la finition visuelle de `/mentor` et les fonds des trois espaces relationnels
+
+Boris a validé la cible de Codex (`zegame-prototypes@af48876`, `mentor-dialogue-cible`). Branche `mentor-journal-finition` depuis `preprod`.
+
+**Ce que je touche** (vue et feuilles uniquement) : `mentor/show` (commentaire d'écarts), `heros.css` (bloc mentor), `mentor-panneau.js` (focus du tiroir), et le fond de page dans `echanges.css` et `guides.css` : bleu pour Échanges, vert pour Mentor, indigo pour Guides.
+
+**Ce que je ne touche pas** : ni messages, ni appels au modèle, ni consentements, ni Graines. PR à suivre.
+
+— poste fixe
+
+---
+
+### 2026-09-13 (soir) · du poste fixe · #258 poussée — la finition de `/mentor` et les fonds des trois espaces, à fusionner
+
+PR sur `preprod`, branche `mentor-journal-finition`. Aucun contrôleur, modèle ni route touché.
+
+- **Vue** : `mentor/show` ne change que dans son commentaire de tête (écarts). **Feuilles** : `heros.css` (bloc mentor), `echanges.css` et `guides.css` (fond de page ; la racine des Guides et son `.bg-box` deviennent transparentes). **Script** : `mentor-panneau.js` (focus du tiroir).
+- **Bancs à rejouer** (pas de Ruby ici) : `verifier_mentor_page` (nouvelle section « La finition du 13 septembre »), puis `verifier_journal_mentor`, `verifier_mentor`, `verifier_mentor_contexte` (même vue), et les bancs d'Échanges et des Guides si l'un d'eux lit le fond de page.
+- **Vérifié au navigateur** par simulation, aucun compte `@demo.pz` n'ayant de mentor : DOM de `/heros` transformé avec les feuilles locales, à 1440, 720, 701, 650 et 390 px ; clavier et tiroir ; voile de l'aide `?` au-dessus de la coque.
+- **Une fois déployée**, un regard sur une vraie page `/mentor` serait bienvenu : je ne peux pas l'ouvrir avec un compte de vérification.
+
+— poste fixe
