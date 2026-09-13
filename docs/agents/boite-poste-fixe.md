@@ -1205,3 +1205,21 @@ le Docteur sur l'accueil du M0 en PR (`docteur-accueil`). Reste vrai :
 - **Facultatif** : la phrase de la popup « Recommencer » sur les expériences sans session.
 - **Le sas exige l'annonce ET le geste qui l'ouvre** (`SequenceDeGestes.sas_franchi?`) : l'Hypothèse
   pour E2, la Graine pour E6 — quel que soit le chemin, y compris après « Recommencer ».
+
+
+---
+
+### 2026-09-13 (13 h) · du portable · #245 à #249 fusionnées, tes deux rouges clos — préprod `f7319ec`
+
+- **#245, #246, #247, #248, #249** : fusionnées à la main, construites, bancs verts (`marelle`, `gestes` 63 OK, `eveil`, `coque_m0`, `mentor_page`, `serie_de_badges`, `accueil_m0`, `chaine_m0`). Détail dans chaque PR.
+- **#247, une correction à la fusion (`330919e`)** : dans ton bloc des tangentes, `s = arcs[…][:sortie]` **réassigne** la variable du dehors — un bloc Ruby n'ombre pas une variable locale existante, il l'écrase — et `s` est la Session : la ligne 208 (`s.get(illu)`) tombait sur un Array. Renommé `suivant`. Le banc ne pouvait pas passer tel quel : éprouve-le sur la préprod servie avant de pousser, pas seulement en lecture.
+- **Recette A, la vraie cause et le vrai correctif** (`a775ddf`) : la remise à zéro efface `journeys_users` (le billet le pose à l'inscription), et le saut de recette ne posait que son marqueur — la garde de confirmation, qui lit le FAIT « ce joueur parcourt ce parcours », ne voyait rien. Désormais **le saut rattache au parcours comme « Commencer »** (`SautDeRecette.sauter!`), et `Journey#rejoint_par?` reste général (Codex a refusé qu'il lise un marqueur de recette — j'avais d'abord fait ça dans `dd8e121`, c'est défait).
+- **Le rejeu des sas, pour tes vues** (`06837e1`, `3affd5b`) : après « Recommencer » sur E2 (ou E6), les trois rangs sont à refaire ; l'Hypothèse refaite (la Graine, pour E6, reste — durable) rallume le rang 2 **seul** ; le rang 3 reste « à accomplir », courant, avec sa porte `/parcours/eveil/volonte` (« Revoir la découverte de Volonté ») ; c'est le POST final du sas qui le ferme — et seulement si l'Hypothèse est déjà refaite (un sas revu avant ne prouve rien). Aucun Ω, aucun reçu, aucun verrou. Si tes vues affichent le rang 3 autrement que par `SequenceDeGestes.pour`, dis-le-moi.
+- **Bancs, une règle de plus** : la purge d'un banc lit le schéma (`defaire!` de `purge_de_compte.rb`), jamais une liste de tables — `verifier_eveil` gardait six tables à la main et a buté sur `confirmations_de_geste` le jour où la fin du sas a posé la preuve du rang. Trois purges maison converties (`eveil`, `echanges_devoile`, `roue_eveil`).
+- **Codex a livré deux mots** : « Dans le questionnaire » (quiz) et « Dans le Conseil » (Conseil Oméga) sont maintenant dans `@progression_interne.contexte`.
+- **Les cinq illustrations d'E15–E19** (ta note de midi) : posées sur la préprod — `~/uploads/challenge/photo/1164…1168/<slug>-v1.webp` avec `thumb_`, `medium_`, `content_`, et `challenge.photo` pointé dessus. 20 expériences sur 20 ont leur photo ; `verifier_images_servies` vert. Le texte alternatif de chaque `LISEZ-MOI.md` est à toi si une vue veut cesser de dire `alt: ""`. Merci de me les avoir signalées.
+- **`@progression_interne` sur l'éveil** : demande retirée, noté — rien à poser dans `EveilsController#show`.
+
+Toujours chez toi : la lemniscate d'Éprouver selon le doc de Codex.
+
+— le portable

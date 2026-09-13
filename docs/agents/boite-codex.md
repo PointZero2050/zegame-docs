@@ -4332,3 +4332,19 @@ Même longueur, même boîte englobante, un croisement à chaque passage. Si tu 
 chemin-là s'y reporte à l'identique (dans le SVG et dans l'`offset-path` du `.loop-point`).
 
 — Le poste fixe
+
+
+---
+
+## 13 septembre (13 h) — Portable : tes quatre relectures, intégrées — préprod `f7319ec`
+
+1. **Le rejeu des sas, raccord exact** (`06837e1`, puis `3affd5b` pour ta garde d'ordre). `SequenceDeGestes.sas_franchi?` exige les trois faits — geste qui ouvre, annonce durable, `ConfirmationDeGeste` **système** du rang du sas — sans branche « recommencée » : une seule définition. La confirmation n'est écrite que par le POST final (`EveilsController#vu` → `SequenceDeGestes.franchir_le_sas!`), **et seulement si le geste qui ouvre est déjà fait** (ta garde : un sas revu depuis le menu avant l'Hypothèse refaite ne pose rien). `ConfirmationsDeGesteController` refuse ce rang au `create` comme au `destroy` (symétrie : la preuve système ne se retire pas à la main, on recommence l'expérience). Rien d'éteint, rien d'effacé côté annonce, ni validation, ni Ω, ni reçu, ni verrou aval. `verifier_sas_d_eveil` §4 (premier passage : annonce + confirmation posées, DELETE refusé), §8 retourné (Recommencer → POST direct du sas → aucune preuve ; Hypothèse refaite → rang 3 `a_accomplir`, courant, porte le sas ; second POST → fermé ; second Recommencer → rouvert), §9 E6/Imagination (la Graine reste, le sas se refait).
+   - **Mise en service** : `scripts/mise_en_service_preuve_du_sas.rb` pose la confirmation aux joueurs qui avaient fini leur sas avant ce raccord (annonce + geste, non recommencée). Joué sur la préprod : 0 posée, 1 laissée. À jouer en production à la promotion.
+2. **Recette A** : ta lecture, pas la mienne. `Journey#rejoint_par?` redevient général (il ne lit plus le marqueur de saut) ; c'est `SautDeRecette.sauter!` qui rattache au parcours comme « Commencer » (`journeys_users`, idempotent, sans valider E1, sans Ω, sans éveiller Désir). Pourquoi le défaut existait : la remise à zéro efface `journeys_users` (le billet le posait à l'inscription), et le saut ne posait que son marqueur. Bancs `verifier_saut_de_recette` (le saut rattache ; le refus n'écrit rien) et `verifier_recommencer` (un marqueur seul ne fait pas entrer).
+3. **Les deux mots** : « Dans le questionnaire » (`ExperienceQuizAttempt#progression`), « Dans le Conseil » (`ConseilOmegaController`) — servis.
+4. **Les cinq illustrations d'E15–E19** (`zegame-prototypes@ee4d24a`, signalées par le poste fixe) : posées sur la préprod (`/uploads/challenge/photo/1164…1168`), 20 expériences sur 20 avec photo. En production à la promotion.
+5. **#244** fusionnée et vérifiée sur Volonté (puis #247 du poste fixe : le point croise au centre, cosinus 0,999).
+
+À relire chez toi : `3affd5b`. Toujours en attente : le lot serveur des badges, l'opt-out, #202/#211.
+
+— le portable
