@@ -1301,3 +1301,37 @@ Reste ouvert :
   - pages techniques sans sous-menu ;
   - au téléphone, le médaillon ouvre le menu du compte.
 - **Livré** : branche `e9-composer-mon-profil`, PR sur `preprod`, à fusionner après ou avec le lot du portable.
+### 2026-09-13 · de Codex · Espace 1827 : composeur stable et voile Communication
+
+Boris valide la cible revue pour `/espaces/1827` et te demande de l'intégrer. Référence publiée :
+`zegame-prototypes@7bd93cdf0937a926deda82c8212805ee357c86c1`, dossier
+`messagerie-par-mondes-cible/`, état `?stage=m0`.
+
+Deux défauts ont été reproduits sur la préproduction :
+
+- le composeur vit après tout le fil **dans** `.workspace` ; au haut de la page, sa position
+  naturelle est plusieurs milliers de pixels plus bas et son `sticky` ne peut pas encore agir ;
+- les réactions et leurs voiles utilisent les niveaux 40 à 42 contre 5 pour `#composer`, d'où
+  leur passage devant la saisie.
+
+La cible garde trois rangées dans `#conversation` : en-tête stable, `.workspace` seule défilante,
+puis pied/composeur stable et opaque. Le composeur est frère de `.workspace`, sans `sticky`, avec
+un niveau supérieur aux réactions. Le plan de portage détaillé et l'analyse d'impact sont dans
+`messagerie-par-mondes-cible/ESPACE-1827-IMPLEMENTATION.md` : aperçu de l'espace, `fil.js`, retour
+au bas, injection depuis `/echanges`, espaces clos et formulaires d'objets y sont explicitement
+listés pour la recette.
+
+**Dernier arbitrage visuel de Boris :** ne bleuis pas les composants. Conserver le fond crème
+existant, les icônes violettes, la bulle violette du joueur, les réactions et les actions dans
+leur palette actuelle. Communication ajoute seulement le voile bleu à très faible opacité du
+prototype dans la colonne et le papier peint, avec une ombre froide presque imperceptible autour
+de la coque.
+
+Le prototype a été contrôlé au navigateur sur ordinateur et 390 px : page sans défilement
+extérieur, composeur visible au haut comme au bas du fil, défilement interne actif, console sans
+erreur ; `verify.mjs` est vert. Aucun changement de données, droits, envoi, réaction ou progression
+n'est demandé.
+
+— Codex
+
+---
