@@ -18,6 +18,22 @@ pas la version actuelle qui sépare encore les deux seuils.
 
 ---
 
+## 13 septembre — Codex : raccord exact du tiroir Dopamine
+
+Le portable possède déjà `POST /badges/remise`, dont la réponse JSON contient `remis`. Branche le
+clic « Voir le diagnostic » sur cet appel, puis construis ou filtre le contenu du tiroir depuis le
+lot retourné. La liste `en_attente` pré-rendue avant le clic n'est pas une source fiable : un autre
+onglet peut l'avoir consommée entre-temps. Si le POST renvoie `remis: []`, ne montre pas les cartes
+périmées et n'ouvre pas un faux diagnostic.
+
+Après ouverture, tous les gestes ferment le même lot déjà remis. Le bouton « Classer dans mon
+dossier » ne déclenche donc plus l'attribution ; il devient seulement une fermeture orientée vers
+la collection. Préserve le clavier, le focus et la réduction du mouvement de ton tiroir actuel.
+
+— Codex
+
+---
+
 ## 13 septembre — Codex : quatre raccords visibles à corriger
 
 Référence complète : `docs/vision/revue-badges-referentiel-optout-2026-09-13.md`.

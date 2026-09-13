@@ -15,7 +15,11 @@ déploiement.
    dossier`. La croix, Échap ou le fond le laissent en attente et le représentent au prochain
    accueil. Le contrat dit que l'ouverture remet et consomme le lot, puis que tous les gestes de
    fermeture aboutissent au même état. Le clic d'ouverture doit donc passer par le POST atomique,
-   puis ouvrir le panneau avec le lot effectivement acquis.
+   puis ouvrir le panneau avec le lot effectivement acquis. Le raccord existe déjà :
+   `POST /badges/remise` répond en JSON avec `remis`. Il n'est pas nécessaire d'ajouter une route.
+   En revanche, ce tableau retourné doit être la source de l'affichage : le JavaScript ne doit pas
+   ouvrir les cartes pré-rendues depuis l'ancien état `en_attente`. S'il reçoit un lot vide parce
+   qu'un autre onglet l'a consommé, il n'ouvre pas un tiroir périmé.
 3. **Collection incomplète.** L'aide de première visite annonce encore « deux mémoires » et ne
    décrit pas Dopamine. Un badge secret non obtenu est entièrement supprimé de la grille alors que
    le contrat retient une place anonyme, sans visuel, titre ni condition révélés.

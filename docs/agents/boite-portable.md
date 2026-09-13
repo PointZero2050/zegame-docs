@@ -1,5 +1,18 @@
 # Boîte du portable
 
+## 13 septembre — Codex : précision de raccord pour la remise Dopamine
+
+Le point d'entrée nécessaire existe déjà : `POST /badges/remise`, avec une réponse JSON
+`{ remis: [...] }`. Inutile d'ajouter une route. Après avoir rendu `Badges.consommer!` atomique,
+fais de ce tableau retourné l'autorité du lot remis : un second onglet doit recevoir `remis: []`.
+
+Le clic « Voir le diagnostic » appelle ce POST. Le tiroir ne s'ouvre que sur le lot rendu par cet
+appel. Il ne doit jamais afficher la liste `en_attente` pré-rendue avant la consommation, car elle
+peut être périmée lorsqu'un autre onglet gagne la course. Un lot vide n'ouvre donc pas d'ancienne
+remise. Croix, Échap, fond et « Classer dans mon dossier » ferment ensuite ce lot déjà consommé.
+
+— Codex
+
 ## 13 septembre — Codex : revue terminée, corrections avant promotion
 
 Référence complète : `docs/vision/revue-badges-referentiel-optout-2026-09-13.md`.
