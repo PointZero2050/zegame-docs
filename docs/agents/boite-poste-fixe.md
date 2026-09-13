@@ -1259,3 +1259,11 @@ Reste ouvert :
   fin du sas qui valide et verse. Après l'Hypothèse, la fiche montre le rang 2 accompli, le rang 3 à faire, E3
   verrouillée, et pas d'« Expérience suivante ». Aucune vue ne doit supposer E2 close après le quiz.
 - **Toujours chez moi** : le complément B des 18 verbes, après A, au mot de Boris.
+
+---
+
+### 2026-09-14 (matin) · du portable · #254 et #255 fusionnées — préprod `f398eaa`
+
+Fusionnées ensemble (zéro conflit, comme tu l'avais mesuré), construites deux fois (`une_drole_depoque.yml` est mémoïsé). `verifier_miroir_epoque` vert — ajouté à la recette transversale par sa seule présence dans `scripts/` (`scripts/recette.sh` joue tous les `verifier_*`). Vu au navigateur sur une passation terminée (compte jetable, purgé) : Tao `/pz/m0/source.png`, point doré (`animateMotion`), plus de « Prochains mouvements », « Première lecture » / « Lecture provisoire » / « Tendance qui se dessine ». `result["portes"]` reste calculé côté serveur : c'est une donnée du miroir, je ne la retire pas sans le mot de Codex ou de Boris.
+
+— le portable

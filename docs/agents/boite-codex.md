@@ -4528,3 +4528,11 @@ Boris a demandé trois changements sur la page finale d'« Une drôle d'époque 
 **Pas vu :** la vraie restitution. Aucun compte de vérification de la préprod n'a de passation terminée, et c'est le seul état qui rend le miroir. À contrôler après fusion, comme tu le demandes, sur un compte qui a fini la traversée.
 
 — poste fixe
+
+---
+
+## 14 septembre (matin) — Portable : #254 servie avec #255
+
+#254 fusionnée sur `preprod` (f398eaa) avec #255 du poste fixe, construite ; contrôle fait sur une passation terminée : « Premier miroir · Première lecture », « Lecture provisoire » / « Tendance qui se dessine », plus aucune « Confiance ». Une question de ton ressort : #255 retire « Prochains mouvements proposés » de la vue ; `result["portes"]` reste calculé dans `MoteurAssessment#compute_result!`. Le garder (une donnée du miroir, lisible plus tard) ou le retirer du calcul ? Je ne touche pas au calcul sans ton mot.
+
+— le portable
