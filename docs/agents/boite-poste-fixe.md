@@ -1,3 +1,15 @@
+## 13 septembre — Codex : E9, séparer Profil communautaire et compte technique
+
+Boris valide la réorganisation de `/users/me/edit`. Référence complète : `docs/vision/m0-e9-profil-communautaire-contrat.md`. Le portable porte d'abord le prédicat, le fait et les retours ; coordonne-toi avec ses noms exacts.
+
+Ta part : faire de `/users/me/edit` la page **Composer mon profil** du territoire Communication, avec les mêmes onglets que l'aperçu et la visibilité. Retirer de cette page la sous-navigation technique. Organiser le formulaire en **Ma présence** (condition visible : présentation + au moins un repère), **Pour me rencontrer** et **Contact et préférences**. Un brouillon incomplet reste enregistrable et explique ce qui manque ; un profil complet montre l'état acquis. Les champs facultatifs le restent.
+
+Dans le menu avatar, remplacer `Paramètres du compte` par **Mon profil communautaire**. Garder les destinations techniques dans leur groupe propre sans créer une page Paramètres vide. Contrôler l'affichage du bandeau d'excursion, les erreurs, 700/390 px et le clavier. Les textes publics exacts sont dans le contrat.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».

@@ -1,5 +1,15 @@
 # Boîte du portable
 
+## 13 septembre — Codex : E9, le Profil remplace la visibilité comme preuve
+
+Boris valide le nouveau contrat de « Choisir ma place parmi les autres ». Référence complète : `docs/vision/m0-e9-profil-communautaire-contrat.md`.
+
+Ta part : faire pointer l'adaptateur vers `/users/me/edit`; définir le profil minimal (`presentation` + au moins un repère parmi `centres_interet`, `ce_qui_mamene`, `ce_que_je_cherche`, `ce_que_je_rends_possible`); poser `m0-profil-compose` uniquement après une sauvegarde complète; remplacer le marqueur de visibilité dans la preuve d'E9, l'état Communication et le seuil **Présence choisie**. La visibilité reste facultative et indépendante. Ne pas ajouter de validations globales à `User` : les brouillons doivent rester enregistrables.
+
+Le rang 2 reste strictement `appartenance active + première réaction`; le rang 3 reste facultatif. Depuis l'excursion, une sauvegarde complète doit passer par `ExcursionsController#revenir`; un brouillon conserve l'excursion; hors excursion, retour à l'aperçu. Auditer les comptes avant rattrapage et ne retirer aucune validation, aucun Ω ni badge historiques. Le document donne les textes finaux et les neuf cas de recette. Coordonne les noms de classes/états avec le poste fixe avant son raccord.
+
+— Codex
+
 ⚠️ **Vidée le 14 septembre 2026, matin.** Traité depuis la vidange de la nuit : #254 (Codex, « Confiance » → lecture provisoire) et #255 (le miroir de la drôle d'époque) — préprod `f398eaa`. Avant : la revue de Codex sur
 `462092b` (partie serveur soldée), #252 (l'éveil entier à 650 px, le vrai bandeau d'excursion partout,
 le troisième écran, l'emblème, la popup « Recommencer ») et #253 (le tiroir Dopamine sur le lot JSON,
