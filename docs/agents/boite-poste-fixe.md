@@ -1321,3 +1321,24 @@ Reste ouvert :
 - **Structure** : en-tête, `.workspace` seule défilante, pied/composeur stable et opaque, frère du fil, au-dessus des réactions.
 - **Arbitrage de Boris** : ne bleuir aucun composant. Seuls un voile bleu très léger (colonne, papier peint) et une ombre froide autour de la coque.
 - **Livré** : branche `espace-composeur-stable`, PR sur `preprod`. Écarts : ni `z-index` sur l'en-tête (voile de l'aide), ni `isolation` sur le panneau (panneau « Ajouter » M1 sous la barre mobile). La hauteur de la coque vient désormais de la fenêtre, depuis `body` (le bandeau d'excursion la faisait déborder).
+
+---
+
+### 2026-09-13 (soir) · de Codex · mini-jeux d’éveil : 54 « Figures d’incarnation » à porter
+
+Boris précise que ces exemples appartiennent aux **mini-jeux de découverte des Puissances**, dans le premier écran « Éprouver ». Référence canonique publiée : **`zegame-prototypes@ed4f7ee`**, dossier `devoilement-emotion-cible/` (`?power=desir|volonte|imagination|emotion|communication|intuition`).
+
+**Comportement validé :** chaque carte de verbe révèle, seulement lorsqu’elle est sélectionnée, sa définition principale puis trois pastilles sous le titre exact **« Figures d’incarnation »**. Les deux cartes non ouvertes ne montrent aucun nom. Cette couche est strictement pédagogique : elle n’ajoute ni réponse, ni score, ni validation, ni effet sur la progression ou les Omégas.
+
+**Correspondance à reprendre sans réécriture :**
+
+- Désir — JE CONTIENS : Pénélope, Nelson Mandela, Aragorn ; JE SUIS : Frida Kahlo, Diogène, Vaiana ; J’EMBRASE : Jeanne d'Arc, Prométhée, Katniss Everdeen.
+- Volonté — JE SERS : Florence Nightingale, Hanumân, Sam Gamegie ; JE DÉCIDE : Rosa Parks, Arjuna, Neo ; JE DIRIGE : Harriet Tubman, Athéna, Jean-Luc Picard.
+- Imagination — JE RÉALISE : Filippo Brunelleschi, Héphaïstos, Shuri ; JE CRÉE : Ada Lovelace, Orphée, Geppetto ; JE RÊVE : Martin Luther King Jr., Morphée, Anne Shirley.
+- Émotion — JE DISTANCIE : Épictète, Ulysse, Maître Yoda ; JE RESSENS : Rûmî, Psyché, Chihiro ; JE COMMUNIE : François d'Assise, Pachamama, Nausicaä.
+- Communication — J’ÉCOUTE : Carl Rogers, Guanyin, Momo ; JE M’EXPRIME : James Baldwin, Sappho, Cyrano de Bergerac ; JE CAPTIVE : Maya Angelou, Shéhérazade, Atticus Finch.
+- Intuition — JE DOUTE : Montaigne, Socrate, Dana Scully ; JE DISCERNE : Marie Curie, Salomon, Gandalf ; JE CROIS : Gandhi, Antigone, Luke Skywalker.
+
+Le prototype inclut `devoilement-emotion-cible/verify.cjs`, qui contrôle les 18 groupes, les 3 figures par verbe et leur rendu conditionnel. États ouverts d’Émotion et d’Intuition contrôlés au navigateur. La Transcendance reste hors de ce patron à trois verbes.
+
+— Codex
