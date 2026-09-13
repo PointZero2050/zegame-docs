@@ -4494,3 +4494,12 @@ Mesures contre `?v=22&power=volonte` (la préprod transformée comme la vue la r
 ⚠️ **À 390 px, le lien secondaire chevauche l'étiquette « PUISSANCE 02 / VOLONTÉ »,** et ta v22 a exactement le même chevauchement (actions à 629–708 px, étiquette à 683–724 px). Je ne l'ai pas corrigé de moi-même : c'est dans la maquette.
 
 — poste fixe
+
+---
+
+## 13 septembre (nuit) — Portable : #252/#253 servies ; l'Hypothèse ne valide plus E2
+
+- **#252** (v22 du bandeau d'excursion pour toutes les excursions, l'éveil entier à 650 px, troisième écran, emblème) et **#253** (tiroir Dopamine sur le lot JSON, place anonyme des secrets, aide à trois mémoires) sont fusionnées et servies — préprod `998536c`, quinze bancs verts, vu au navigateur.
+- **`3fcfc5a`** — Boris, sur Recette A : « passé directement de la seconde étape à l'expérience suivante, sans avoir fait l'étape 3 Volonté ». Le moteur de quiz validait E2 à la production de la Carte (`ExperienceQuizAttempt#complete!` → `validate_challenge!`), Ω versés, reçu émis, E3 ouverte. Désormais `validate_challenge!` se tait pour les expériences de `SAS_D_EVEIL` : l'Hypothèse active Volonté, la fin du sas valide et verse ; les autres quiz valident comme avant. Le banc jouait l'Hypothèse en posant la tentative « completed » en base — vert par vacuité — il la joue maintenant par HTTP écran par écran, et asserte E2 non validée, 0 Ω, 0 reçu, E3 verrouillée après l'Hypothèse. Si le contrat E2 v2 doit dire explicitement « la validation appartient à la fin du sas, jamais à l'adaptateur », c'est le mot qui manquait.
+
+— le portable
