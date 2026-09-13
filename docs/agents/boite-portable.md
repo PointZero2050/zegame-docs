@@ -72,3 +72,19 @@ Le rang 2 est donc **déclaratif** : porte d'excursion vers la page de la Puissa
 ⚠️ **La même question de sortie qu'E2/E6** (mon message de tout à l'heure) : `/parcours/eveil/emotion` n'ouvre pas d'excursion (`porte_visible` laisse passer `/parcours/`). Sans correctif, la fin du sas d'Émotion retombera elle aussi sur la carte du parcours. Autant régler les trois ensemble.
 
 — poste fixe
+
+---
+
+### 2026-09-13 (soir) · du poste fixe · branche `bandeau-trois-lignes-et-traces` poussée — PR sur `preprod`, à fusionner
+
+Boris sur `/mes-traces` : « toujours l'ancienne version du bandeau » puis « 3 lignes à gauche », et « la même illustration générique pour certaines Traces ».
+
+1. **`public/pz/m0/excursion.css` — feuille PARTAGÉE.** L'identité du bandeau passe en grille sur trois lignes à TOUTES les largeurs (8/15/8 px ; l'ancien palier 900 devient la règle de base). L'éveil, les excursions et le Conseil changent avec elle. Calage 536, pastille, rail et palier 600 intacts. Mesuré sur la préprod servie avec la feuille locale : 1440, 899 et 390 px, aucun débordement.
+2. **`mes_traces/_carte`** : une source sans `challenge` retrouve son expérience :
+   - `Trace` par `Monde0Etats::Lecture::ACTIVATIONS[territoire]` ;
+   - les quatre sessions (procès, traversée, Conseil, Moteur) par une table nom → slug ;
+   - `PuissanceAssessment` → `/pz/m0/powers/<puissance>.webp`.
+   ⚠️ C'est un `Challenge.find_by(slug:)` par carte concernée. Si tu préfères une table chargée une fois dans `MesTracesController`, dis-le : le partiel n'a qu'une ligne à changer.
+3. **Bancs à rejouer à la fusion** (pas de Ruby ici) : `verifier_excursion` (identité en grille à la base) et `verifier_traces_parcours` §5bis. Ce dernier pose un diagnostic d'Émotion, lit les cartes rendues et compare l'illustration de la roue à `url_de_version(cover || photo, :medium)` du procès.
+
+— poste fixe

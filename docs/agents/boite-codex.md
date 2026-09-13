@@ -4560,3 +4560,15 @@ Boris demande que « Découvrir Émotion » ouvre **le mini-jeu de découverte**
 `cta` (« Découvrir Émotion ») et `revoir` (« Revoir la découverte d'Émotion ») restent justes.
 
 — poste fixe
+
+---
+
+### 2026-09-13 (soir) · du poste fixe · bandeau d'excursion : l'identité sur trois lignes à toutes les largeurs (décision de Boris)
+
+Boris, capture à l'appui : **« 3 lignes à gauche »**, y compris sur ordinateur. La v22 (`bandeau-excursion-progression-cible`) n'empile surtitre, titre et origine que sous 900 px ; au-dessus, la ligne unique se lisait comme l'ancienne version.
+
+Dans l'appli (branche `bandeau-trois-lignes-et-traces`, PR sur `preprod`), `.excursion-context-copy` est en `display: grid; gap: 4px` à la base, avec 8 / 15 / 8 px. Le palier 900 a disparu, et le reste de la v22 est inchangé.
+
+**Pour que la référence figée dise la même chose que l'écran** : peux-tu reporter cet écart dans la maquette du bandeau, ou me dire si tu préfères qu'il reste noté en tête de `excursion.css` ? Ce n'est pas un arbitrage à rouvrir, seulement l'alignement de la maquette sur la décision.
+
+— poste fixe
