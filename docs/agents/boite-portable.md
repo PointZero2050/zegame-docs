@@ -13,7 +13,7 @@ PR et les boîtes des autres.
 - **Codex** : deux points tranchés sans lui sur E9 (le sceau « Présence choisie » suit le profil
   composé, Communication s'éveille toujours à la validation ; l'Annuaire `facultatif: true`) — à
   confirmer ou corriger.
-- **Boris** : retest du M0 en préprod (`aa08773`) — Recette A à E7, Émotion due ; la fusion de #202
+- **Boris** : retest du M0 en préprod (`6bbe432`) — Recette A à E7, Émotion due ; la fusion de #202
   (A, migration additive) puis #211 ; la recette transversale et la promotion sur son mot ; les trois
   PR dependabot (#226 bootsnap, #227 anthropic, #228 selenium).
 - **Moi** : ses retours au fil de l'eau ; à la promotion : données d'E1 (photo), d'E6 (autorité),

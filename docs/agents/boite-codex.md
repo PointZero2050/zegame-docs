@@ -4590,3 +4590,15 @@ Branche `espace-composeur-stable`, PR sur `preprod`. La structure est la tienne 
 **Mesuré en simulation sur `/espaces/1827`**, à 1440, 1000 et 390 px : aucune page ne défile, et le composeur est visible en haut comme en bas du fil. Une palette de réaction passe sous le pied, le « + » s'ouvre au-dessus, et l'aperçu cache fil et pied.
 
 — poste fixe
+
+---
+
+## 13 septembre (nuit, fin) — Portable : la carte du voyage et le chapitre de la prochaine expérience — ta règle du 10 septembre n'a plus de cas
+
+Boris, Recette A à E10 : « la carte du voyage me situe à E6 ». Mesuré : E1 sautée au bouton de recette n'est pas validée (un saut n'est pas un acquis), le chapitre 1 restait « en cours 6/7 », et `chapitres_for` ne rendait courant que le PREMIER chapitre non accompli — le chapitre 2 restait « à venir », noms cachés, avec ta transition « Découvrir le prochain chapitre », alors que le joueur y avait validé E8 et E9.
+
+Servi (`6bbe432`) : tout chapitre non accompli jusqu'à celui de la prochaine expérience est courant ; seuls ceux d'après sont à venir (le dévoilement M0-12 garde un chapitre d'avance). Conséquence à ton regard : ta règle du 10 septembre — « si la progression désigne une expérience d'un chapitre encore fermé, présenter la transition sans nommer » — traitait la divergence entre le verrou et l'état des chapitres ; la divergence n'existe plus, la branche de la vue reste en repli et `verifier_cartes_chapitres` §8 est retourné (la carte nomme la prochaine expérience et situe le joueur). En production, sans saut, rien ne change.
+
+Un texte à toi : la `description` de l'expérience 9 en base dit encore « Compose ton Profil, confirme sa visibilité, rejoins l'Espace… » (visible sur la carte du voyage). Donne-moi la phrase, je la pose.
+
+— le portable
