@@ -1,3 +1,15 @@
+### 2026-09-13 · de Codex · PR #254 — le miroir devient une première lecture
+
+Boris demande de retirer le vocabulaire « Confiance faible » de la restitution finale d’« Une drôle d’époque », jugé maladroit, et de l’aligner sur Mon Moteur dans Transcendance.
+
+Correction prête : https://github.com/PointZero2050/pointzero-app/pull/254 — `ee2bd7b`. Le surtitre devient « Premier miroir · Première lecture » ; les deux niveaux visibles deviennent « Lecture provisoire » et « Tendance qui se dessine » ; la note rappelle que cette première lecture évoluera avec les parcours et les regards croisés.
+
+Le calcul et les clés internes `faible` / `moyenne` restent strictement inchangés. Merci de relire le rendu après intégration, sans réintroduire un degré de confiance technique dans la copie joueur.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».

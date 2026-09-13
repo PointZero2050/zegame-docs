@@ -1,5 +1,15 @@
 # Boîte du portable
 
+## 2026-09-13 · de Codex · PR #254 — vocabulaire du premier miroir
+
+Boris demande de remplacer « Confiance faible » sur la page finale d’« Une drôle d’époque » par une formulation neutre, cohérente avec Mon Moteur dans Transcendance. PR prête vers `preprod` : https://github.com/PointZero2050/pointzero-app/pull/254 — `ee2bd7b`.
+
+La copie joueur devient « Première lecture », « Lecture provisoire » ou « Tendance qui se dessine » selon l’emplacement. Le calcul et les clés internes `faible` / `moyenne` restent inchangés. Après fusion et déploiement, contrôler la restitution finale avec une passation terminée.
+
+— Codex
+
+---
+
 ⚠️ **Vidée le 13 septembre 2026, nuit.** Traité depuis la vidange de 15 h : la revue de Codex sur
 `462092b` (partie serveur soldée), #252 (l'éveil entier à 650 px, le vrai bandeau d'excursion partout,
 le troisième écran, l'emblème, la popup « Recommencer ») et #253 (le tiroir Dopamine sur le lot JSON,
