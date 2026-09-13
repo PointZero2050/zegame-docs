@@ -4630,3 +4630,17 @@ Ta correspondance est reprise sans réécriture, dans le canon de chaque Puissan
 **Un seul écart de forme** : Rails rend les trois blocs cachés (`hidden`), et `eveil.js` lève l'attribut sur la carte ouverte. Ta maquette ne fabrique le bloc que pour la carte sélectionnée ; à l'écran, le résultat est le même.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Échanges : la carte « Le seuil t'attend » devient un lien vers le seuil — un écart à ton canon §2.5
+
+https://github.com/PointZero2050/pointzero-app/pull/264
+
+**Boris** : sur `/echanges`, à la première visite, « Entrer dans l'Espace d'échange » est répété sous le texte d'accroche du seuil, et « Revenir aux guides » est retiré. C'est porté, avec le même POST que le bouton des règles.
+
+**Un défaut trouvé en vérifiant, et la solution de Boris** : sous 1121 px, la page de liste masquait le panneau de conversation, donc tout le seuil. Au téléphone, un joueur neuf ne pouvait pas entrer, et la carte « Le seuil t'attend » était inerte. Boris a choisi « seuil sous la liste » : à la première visite seulement, le seuil s'affiche sous la liste, et la carte y descend d'un geste. Une fois entré, la page redevient la liste seule.
+
+**L'écart à ton canon §2.5** : la carte « prend la place de la ligne » et le geste reste dans le seuil. Le geste y reste (aucun POST dans la carte), mais **la carte est maintenant un lien** (`#seuil-espace`), à toutes les largeurs. Si tu veux un autre libellé que « Tu n'y es pas encore entré. Le seuil t'attend. » pour une carte devenue cliquable, dis-le.
+
+— poste fixe

@@ -84,3 +84,20 @@ Demande de Boris portée par Codex (`zegame-prototypes@5ab49fe`) : dans l'écran
 Rien de la reprise, du compteur ni du POST `/carte/…` ne change. Vérifié en simulation à 1440 et 390 px : aucun nom au repos, seules les figures de la carte ouverte, aucune erreur, aucun débordement.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Échanges : CTA répété sur le seuil, et au téléphone le seuil n'était pas atteignable — PR #264 sur `preprod`
+
+https://github.com/PointZero2050/pointzero-app/pull/264 · branche `echanges-seuil-cta-repete`. Vue et feuille seulement : **aucun contrôleur, modèle ni route.**
+
+1. **Demande de Boris** : sur `/echanges`, à la première visite, « Entrer dans l'Espace d'échange » est répété sous le texte d'accroche du seuil (même POST `rejoindre`), et « Revenir aux guides » est retiré.
+2. **Défaut trouvé en vérifiant** : sous 1121 px, la page de liste masquait le panneau de conversation, donc le seuil et ses deux boutons. **Un joueur neuf ne pouvait pas entrer depuis un téléphone**, et la carte « Le seuil t'attend » était inerte. Boris a choisi « seuil sous la liste » :
+   - le panneau reste affiché tant qu'il porte le seuil (`:has(.threshold-hero)`) ;
+   - la carte devient un lien vers `#seuil-espace` ;
+   - le POST reste dans le seuil.
+3. **Bancs, avec un `ruby -c` d'abord** : `verifier_canal_m0` (§3 ter). À rejouer aussi : `verifier_bascule_mobile` (sa règle d'origine est intacte), `verifier_accueil_echanges` et `verifier_echanges`.
+4. **Ordre avec #261** : les deux touchent `echanges.css`, mais dans des blocs différents. Si la fusion entre en conflit, garde les deux côtés.
+5. **À regarder sur la vraie page une fois déployée**, sur un compte qui n'est pas encore entré, à 390 px : la carte descend au seuil, et « Entrer » crée bien l'adhésion puis ramène à la liste seule.
+
+— poste fixe
