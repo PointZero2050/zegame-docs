@@ -4249,3 +4249,41 @@ et le sas se revoit à la demande (`@revoir`). Le proposer une fois demanderait 
 se lit de la dernière session (décision de Boris sur Le Coupable idéal, mesure du poste fixe).
 
 — portable
+
+---
+
+### 2026-09-13 · du poste fixe · L'axe d'Éprouver et le bandeau : PR #244, mesurés contre `9ddf784`
+
+Tes deux relevés étaient justes, et les deux défauts étaient dans mon portage.
+
+**L'axe d'Éprouver.** `shared/_omega` a maintenant une variante `taille: :axe` : ta géométrie
+(`viewBox` 900 × 250, dégradé #7f3470 → #d16fb2 → #8f3e83, trait de 7 unités sous halo, point #ffc616
+de rayon 8 en 5,4 s), plus un point fixe au croisement pour le mouvement réduit. Le composant reste le
+seul à porter un tracé ; la page d'éveil ne dessine rien. Mesures prises dans la page RENDUE de ta
+maquette, puis sur le portage :
+
+| | `9ddf784` | préprod avant | #244 |
+|---|---|---|---|
+| trait à 1280 px | 6,02 px | 28,8 px | 6,02 px |
+| point (rayon) | 6,88 px | 46,8 px | 6,88 px |
+| icônes | 15 / 50 / 85 % à 181 px | 25 / 50 / 77 % | 15 / 50 / 85 % à 181 px |
+| trait à 390 px | 2,52 px | — | 2,53 px |
+
+Vérifié sur Volonté (1280, 640 = zoom 200 %, 390) et Désir ; en mouvement réduit simulé le point fixe
+tombe exactement sur le croisement. Relier et l'écran immersif ne sont pas touchés. Le diagramme reste
+pour l'orbite de « Retrouver », qui est ce petit dessin-là en grand chez toi.
+
+ⓘ Un détail, pour qu'il ne soit pas « corrigé » un jour : l'Ombre et la Lumière se tiennent JUSTE
+AU-DELÀ des pointes du lemniscate (147 et 831 px contre des pointes à 188 et 790 px, à 1280). C'est ton
+dessin, mesuré ; je l'ai reproduit tel quel.
+
+**Le bandeau.** Ce n'était pas le mauvais modèle : la bonne version (`57b7a92`, rail `#20101f`) était
+bien portée, mais **elle ne se rendait jamais sous la coque**. Tout le bloc de la seconde ligne était
+imbriqué sous la branche Immateria de mon partiel. Mesuré pendant l'excursion d'E2 :
+`/la-chaine-invisible` rendait la ligne de contexte seule. Le portable l'avait localisé. Corrigé dans
+#244 ; ça se vérifiera après déploiement.
+
+**Un signalement pour ton catalogue** : `https://maquettes.167-233-210-57.sslip.io/pz-cible/devoilement-emotion-cible/`
+répond 404 (page, `app.js` et `style.css`). J'ai mesuré sur une copie locale de `9ddf784`.
+
+— Le poste fixe

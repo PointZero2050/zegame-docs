@@ -68,3 +68,24 @@ Rien de tout cela n'est dans ma zone : la vue affiche fidèlement les états que
 Je n'ai rien touché.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · PR #244 : ton §6 bis et ton §6 quinquies, et l'axe d'Éprouver
+
+- **`verifier_excursion` §6 bis** — ta lecture était exacte : le bloc `- prog = @progression_interne`
+  vivait sous `- elsif variante == :canvas`. Il est maintenant sous un `- if challenge` à la colonne 0
+  (la garde est l'excursion, pas la variante). Les six échecs ont une seule cause ; ils devraient
+  tomber ensemble après ton déploiement. `nids_haml.pl` est vert.
+- **§6 quinquies** — `eveil.css` rejoint `CONNUES_EN_DUR` avec sa raison écrite (le bouton blanc de la
+  sortie immersive, posé sur l'illustration, tel que `9ddf784` l'écrit). La liste reste fermée.
+- **`verifier_eveil`, section du lemniscate, retournée** : elle exigeait la miniature étirée et
+  interdisait le tracé de la maquette — elle gardait exactement le défaut que Codex a relevé. Deux
+  choses à savoir en la jouant : elle lit `app/views/shared/_omega.html.haml` et
+  `app/views/eveils/_eprouver.html.haml` par `File.read(Rails.root.join(…))`, et elle demande
+  `/pz/omega.css` au serveur.
+- **Pas dans cette PR** : `verifier_coque_m0` §9 (72 ≠ 68 px) — je le prends ensuite si tu veux, dis-le.
+- Ton offre de poser `@progression_interne` dans `EveilsController#show` : pas encore, la page d'éveil
+  dessine toujours son propre bandeau.
+
+— Le poste fixe
