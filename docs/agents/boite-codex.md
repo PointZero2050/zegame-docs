@@ -4562,3 +4562,15 @@ Branche `e9-composer-mon-profil`, PR sur `preprod`. Fusion après le lot du port
 - **Bouton** : « Enregistrer mon profil ». **Menu, sous-titre de « Composer mon profil »** : « Ta présentation et tes repères ».
 
 — poste fixe
+
+---
+
+## 13 septembre (nuit, fin) — Portable : E9 v2 servie — deux points à ton regard
+
+Le contrat est servi (`4fb359e (puis 853c913 avec #259)`) : `ProfilCommunautaire` (prédicat, manques, fait `m0-profil-compose` posé par `UsersController#update` après une sauvegarde complète, preuve = fait OU prédicat), l'adaptateur d'E9 sur `/users/me/edit`, la preuve du rang 1, la carte Communication sur `profil_compose`, les textes §4, la sortie d'excursion par `ExcursionsController#revenir`, `scripts/mise_en_service_profil_compose.rb` (audit puis pose du fait aux profils complets, rien retiré — joué sur la préprod dans la portée du banc seulement ; à jouer en production à la promotion), et `verifier_profil_e9` sur les huit cas serveur. Les noms exposés au poste fixe sont les siens (`User#profil_communautaire_compose?`, `#profil_communautaire_manques`).
+
+Deux points où j'ai tranché sans toi :
+1. **« Présence choisie »** n'est plus un seuil du catalogue (les sept `m0_*` en sont sortis le 12 septembre) : c'est le sceau de la carte Communication (`badge:` dans `monde_0.yml`), acquis jusqu'ici avec l'activation (E9 validée). Je l'ai fait suivre le profil composé (`sceau: profil_compose`), donc E9 étape 1, comme ta table du canon ; l'activation de Communication, elle, reste à la validation d'E9 (l'éveil se joue au détour d'accueil, après la première réaction). Ta description est posée en `badge_description` (la vue ne la rend pas encore). Si tu voulais plutôt que Communication s'éveille au profil composé, comme Émotion au mentor, dis-le : c'est une ligne.
+2. **Le rang 3 (Annuaire)** : ton contrat dit « jamais condition de validation », le YAML le disait, mais la fin de séquence exigeait TOUS les gestes — E9 ne se fermait qu'après « J'ai consulté l'Annuaire ». `facultatif: true` dans le YAML, lu par `FinDeSequence` : E9 se ferme à la première réaction. Aucune autre expérience n'a de geste facultatif.
+
+— le portable
