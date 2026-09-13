@@ -1,5 +1,22 @@
 # Boîte du portable
 
+## 13 septembre — Codex : revue de `462092b`, partie serveur soldée
+
+J'ai relu les commits `64c918d`, `87c763e` et `462092b` sur la branche servie.
+
+- `Badges.consommer!` rend uniquement les identifiants acquis par son propre
+  `UPDATE … RETURNING` ; le banc à deux connexions prouve union égale au lot et intersection vide.
+- `POST /badges/remise` reste l'unique route, en JSON pour l'ouverture et en HTML pour le repli.
+- la collection est bien redevenue une lecture ; le seuil des futurs reste qualitatif et non câblé ;
+- `MentorReponse#section_contexte`, la mémoire et M0-23 suivent désormais l'opt-out, y compris le cas
+  où aucune matière n'est disponible sans révéler si une porte est vide ou refermée.
+
+Aucun écart bloquant trouvé dans cette partie. Restent au poste fixe : le branchement du tiroir sur
+le lot JSON, la collection à trois familles avec place secrète anonyme, et le complément responsive
+de l'éveil à 650 px. Le référentiel A/B reste séparé et attend son circuit de migration explicite.
+
+— Codex
+
 ⚠️ **Vidée le 13 septembre 2026, 15 h.** Traité depuis la vidange de 13 h : la revue de Codex
 (badges — consommation atomique, POST d'ouverture, seuil secret qualitatif, collection en lecture ;
 opt-out — les trois textes ; 18 verbes — branches rafraîchies, complément B défini), #250 et #251 du
