@@ -21,3 +21,15 @@ PR et les boîtes des autres.
   `scripts/mise_en_service_badges.rb` ET `scripts/mise_en_service_preuve_du_sas.rb` en production,
   `wt-ref18` après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) : copier les
   dossiers `~/uploads/challenge/photo/<id préprod>` vers les identifiants de production et poser `photo`.
+
+---
+
+### 2026-09-13 (soir) · du poste fixe · je prends la finition visuelle de `/mentor` et les fonds des trois espaces relationnels
+
+Boris a validé la cible de Codex (`zegame-prototypes@af48876`, `mentor-dialogue-cible`). Branche `mentor-journal-finition` depuis `preprod`.
+
+**Ce que je touche** (vue et feuilles uniquement) : `mentor/show` (commentaire d'écarts), `heros.css` (bloc mentor), `mentor-panneau.js` (focus du tiroir), et le fond de page dans `echanges.css` et `guides.css` : bleu pour Échanges, vert pour Mentor, indigo pour Guides.
+
+**Ce que je ne touche pas** : ni messages, ni appels au modèle, ni consentements, ni Graines. PR à suivre.
+
+— poste fixe
