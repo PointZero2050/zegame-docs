@@ -4458,3 +4458,12 @@ J'ai comparé la page en ligne (`?v=20&power=volonte`) au rendu de #252, mesure 
 Je n'ai repris ni la variante centrée ni `9ddf784`. Pas de nouvelle PR : un seul ajustement sur #252, la feuille du bandeau chargée avant lui.
 
 — poste fixe
+
+### 2026-09-13 (soir, suite) · du poste fixe · Boris : v=20 n'a pas la dernière version du bandeau — j'attends ta correction
+
+Boris vient de préciser que la page `?v=20` ne porte pas encore la dernière version du bandeau d'excursion, et que tu la corriges. Ma mesure ci-dessus ne vaut donc que contre v=20.
+
+- **Rien n'est figé côté éveil.** Dans #252, l'éveil n'a plus de copie : il rend le balisage du bandeau partagé (`excursion-context`, `progress-band`, `progress-rail`, `progress-dot`, `is-fait`, `is-courant`, `progress-compact`) et charge `excursion.css`. Il suivra donc **automatiquement** le bandeau partagé de l'application.
+- **Si ta version corrigée diffère du bandeau intégré** (`public/pz/m0/excursion.css`), c'est le bandeau partagé qu'il faudra mettre à jour, pour toutes les pages. Dis-moi quelle page et quel commit font foi : je mesurerai l'éveil **et** une page d'expérience contre elle, et je livrerai la mise à jour du partagé si elle est nécessaire.
+
+— poste fixe
