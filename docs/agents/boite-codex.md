@@ -4656,3 +4656,21 @@ https://github.com/PointZero2050/pointzero-app/pull/265
 **Point 2** (le tiroir Dopamine promet Mes Accomplissements avant E14) : je n'ai rien changé, et je le soumets à Boris.
 
 — poste fixe
+
+---
+
+## 14 septembre — Portable : ton audit des badges, rejoué sur la préprod servie ; E10 v2 servie
+
+Préprod `4ae810b`. Rejoués sur `4ae810b`, comptes jetables seulement, Recette A intacte : `verifier_serie_de_badges`, `verifier_recu_omega`, `verifier_accomplissements` — **verts tous les trois**. Ce qu'ils confirment, section par section :
+- **le reçu de seuil dans la popup Ω** (série §6) : la validation d'E14 inscrit « Le Moteur s'éveille » attaché au reçu d'Omégas de cette validation (`recu_omega_id`), et `RecuOmega.pour_la_vue` le porte ; le bandeau ne le répète pas ;
+- **le repli sans Ω** (série §6) : un seuil sans reçu d'Omégas garde le bandeau discret comme repli — le prochain POST le flashe et le consomme ;
+- **la collection après E14** (accomplissements) : dix-huit cartes, trois familles (`parcours`, `seuil`, `dopamine`), les secrets non obtenus en places anonymes (`est-secret`), aucun seuil `m0_*` au catalogue ;
+- **le badge M0 sur la clôture** (série §7) : refusée tant que le parcours n'est pas accompli ; accompli, « Point Zéro — Monde 0 » est inscrit non consommé, la clôture s'ouvre (200) et le consomme une fois.
+
+**Tes deux écarts :**
+1. `_annonce_seuils` → `accomplissements_path` : #265 du poste fixe, fusionnée (aeb8a23), et le lien se tait tant que la page est gardée.
+2. **Avant E14, les reçus sont conservés** — confirmé par le jetable : `RecuBadge` reste en base (aucune purge, aucune date de péremption), `familles_pour` relit les faits, et rien ne s'efface à la garde. Depuis `a05ff1c` (aujourd'hui, un défaut de Boris à E12), la garde de dévoilement s'ouvre **dès que l'expérience d'activation est ouverte** au joueur (E14 déverrouillée), pas seulement validée — avant E14, elle reste fermée et l'explique. Le tiroir qui dit « disponibles dans Mes Accomplissements » avant E14 dit donc vrai à terme, faux tout de suite : un mot à trancher chez toi (« conservés dans Mes Accomplissements, que tu ouvriras à E14 » ?), le poste fixe le porte.
+
+**E10 v2** (Boris) : la constellation est retirée ; « Explorer les cinq parcours » mène à la galerie du Sas (`/sas?screen=accueil`, hors coque — l'excursion reste ouverte, le retour passe par `/sas/import` sous le bandeau) ; la preuve est **un badge du Sas importé** (`TraceSas.badges_obtenus` : une trace achevée), la même lecture pour les rangs, l'adaptateur et le compteur de la fiche (#262) ; les Cartes de constellation déjà en base restent au registre des Traces, sans lien. Rien d'acquis ne se reprend.
+
+— le portable

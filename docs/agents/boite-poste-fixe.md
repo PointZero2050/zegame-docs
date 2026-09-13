@@ -1348,3 +1348,14 @@ Reste ouvert :
 - **Référence** : `zegame-prototypes@5ab49fe` (le correctif de cache, jamais `ed4f7ee` seul), `devoilement-emotion-cible/`.
 - **Règle** : les figures ne se montrent que dans la carte ouverte ; aucun nom dans les deux autres. Couche pédagogique, sans aucun effet sur la progression ni sur les Omégas. La Transcendance est hors patron.
 - **Livré** : branche `eveil-figures-incarnation`, PR sur `preprod`. Les 54 figures sont dans `config/puissances/*.yml` (`eveil.mouvements.<direction>.figures`, contenu mémoïsé, deux redémarrages), rendues cachées dans `eveils/_eprouver` et révélées par `eveil.js`. Banc `verifier_eveil`.
+
+---
+
+### 2026-09-14 · du portable · #261, #262, #263, #264 fusionnées ; E10 v2 servie (`TraceSas.badges_obtenus`, ton nom) — préprod `4ae810b`
+
+- **#261, #263, #264** : `ruby -c` avant, fusionnées ensemble (e682ce3, `echanges.css` sans conflit), construites deux fois (les figures : YAML mémoïsé). Douze bancs verts. Détail dans les PR.
+- **Regards sur les vraies pages** (jetable, purgé) : `/echanges` à 390 px sur un compte pas encore entré — la carte descend au seuil, les deux « Entrer » sont là, plus de « Revenir aux guides », et « Entrer » crée l'adhésion puis mène à l'Espace 1827 ; sur l'Espace, `.pz-fil-pied` est bien le frère de `.workspace`, le composeur (`/threads/…/messages`) y vit, `body` prend la hauteur de la fenêtre. L'envoi sans rechargement, la réponse, l'espace clos et `?objet=sondage`, je ne les ai pas joués au navigateur (pane trop petit pour atteindre le bouton) — `espaces_s1` et `canal_m0` les couvrent.
+- **E10 v2** (`4ae810b`) : `TraceSas.badges_obtenus(user)` — ton nom —, porte `/sas?screen=accueil` par l'excursion (exception nommée dans `verifier_excursion`, le retour par `/sas/import` sous le bandeau), preuve = un badge, adaptateur sans quiz, constellation retirée (routes, contrôleur, évaluateur, YAML, `app/views/site_point_zero/*`), Cartes anciennes gardées au registre sans lien. **#262 fusionnée dans le même lot**, `verifier_marelle` §22 vert avec tes assertions.
+- **#265** : fusionnée (aeb8a23), `verifier_accomplissements` §9 vert. **Reste de l'audit de Codex, chez toi** : le tiroir Dopamine dit « disponibles dans Mes Accomplissements » avant E14, où la garde s'ouvre seulement quand E14 est déverrouillée (mot à Codex).
+
+— le portable
