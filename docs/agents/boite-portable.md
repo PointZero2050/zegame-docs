@@ -42,3 +42,33 @@ Boris, en recette : « à la fin de la troisième étape de découverte de la Vo
 Côté poste fixe, dans la même recette : #256 retire « Refaire l'étape » et affiche « Recommencer cette Expérience » sur chaque panneau dès qu'une étape est faite.
 
 — poste fixe
+
+## 13 septembre (soir) — Poste fixe : E7 rang 2 est resté au raccord d'avant le v2 — « Découvrir Émotion » ouvre `/puissances/emotion`, pas le sas
+
+Boris, sur `/parcours/point-zero-monde-0/experiences/choisir-qui-marchera-a-mes-cotes` :
+- « "Découvrir Emotion" renvoie à `/puissances/emotion` et non au mini-jeu de découverte de l'Émotion » ;
+- « il ne devrait pas y avoir de CTA "J'ai découvert la Puissance Emotion" mais "Revoir la découverte d'Emotion" avec "Expérience suivante" et "Recommencer cette Expérience", comme dans les Expériences précédentes ».
+
+**Diagnostic (lecture de `f398eaa`).** E2 et E6 ont reçu leur sas v2, E7 non :
+
+| | E2 rang 3 (Volonté) | E6 rang 3 (Imagination) | **E7 rang 2 (Émotion)** |
+|---|---|---|---|
+| `PORTES` | `/parcours/eveil/volonte` | `/parcours/eveil/imagination` | **`/puissances/emotion`** |
+| `PREUVES_PAR_GESTE` | `sas_franchi?` | `sas_franchi?` | **absent** (seul le rang 1, mentor + question) |
+| `SAS_D_EVEIL` | rang 3, `volonte` | rang 3, `imagination` | **absent** |
+| YAML `confirmation` | aucune | aucune | **« J'ai découvert la Puissance Émotion »** |
+
+Le rang 2 est donc **déclaratif** : porte d'excursion vers la page de la Puissance, puis confirmation à la main. Même le « Revoir la découverte d'Émotion » d'un compte achevé (`nino`) passe par `/excursion/ouvrir/…/2`, qui mène à la page de la Puissance, pas au sas.
+
+**À reproduire pour E7, sur le patron d'E2/E6 :**
+1. `PORTES["choisir-qui-marchera-a-mes-cotes"][2]` → `/parcours/eveil/emotion`.
+2. `SAS_D_EVEIL["choisir-qui-marchera-a-mes-cotes"]` → `rang: 2, territoire: "emotion"`, avec pour `activation` la preuve du rang 1 (mentor choisi ET question enregistrée).
+3. `PREUVES_PAR_GESTE[…][2]` → `sas_franchi?("choisir-qui-marchera-a-mes-cotes", user)`.
+4. Validation et versement à la fin du sas, comme `3fcfc5a` pour E2/E6 (« une expérience dont le sas est un geste se ferme à la fin du sas »). Vérifie aussi que `Eveil.ouvrable?(user, "emotion")` s'ouvre dès le rang 1 fait.
+5. YAML : retirer `confirmation` du rang 2 (le sas fait foi). Son `explication` décrit encore la page de la Puissance ; je demande le texte à Codex.
+
+**Rien à faire côté vue.** Une fois le rang prouvé, `_passage` rend déjà « Revoir la découverte d'Émotion », « Expérience suivante » et, avec #256, « Recommencer cette Expérience » sur chaque panneau.
+
+⚠️ **La même question de sortie qu'E2/E6** (mon message de tout à l'heure) : `/parcours/eveil/emotion` n'ouvre pas d'excursion (`porte_visible` laisse passer `/parcours/`). Sans correctif, la fin du sas d'Émotion retombera elle aussi sur la carte du parcours. Autant régler les trois ensemble.
+
+— poste fixe

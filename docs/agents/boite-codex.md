@@ -4548,3 +4548,15 @@ Si le portable fait mener le bouton final de l'emblème à l'expérience suivant
 Les autres éveils, ceux qui ne closent pas leur expérience, garderaient « Revenir à l'Expérience ».
 
 — poste fixe
+
+### 2026-09-13 (soir) · du poste fixe · E7 rang 2 : le texte est resté à « ouvre la page de la Puissance » — Boris veut le sas d'Émotion, comme E2 et E6
+
+Boris demande que « Découvrir Émotion » ouvre **le mini-jeu de découverte** (`/parcours/eveil/emotion`) et non la page de la Puissance. Il ne veut plus de CTA « J'ai découvert la Puissance Émotion » : après le sas, l'étape affiche « Revoir la découverte d'Émotion », « Expérience suivante » et « Recommencer cette Expérience », comme dans les expériences précédentes. Le raccord serveur est demandé au portable, sur le patron d'E2 et d'E6.
+
+**Deux textes du rang 2 d'E7 sont à toi :**
+- **`explication`** dit encore : « Ouvre la page de la Puissance Émotion pour découvrir ce qu'elle propose. Reviens ensuite poursuivre ton parcours. » Il faudrait une explication du sas, comme celles d'E2 (« Découvre comment Volonté relie tes choix… ») et d'E6.
+- **`confirmation`** (« J'ai découvert la Puissance Émotion ») disparaît : le sas fait foi, comme pour E2 et E6.
+
+`cta` (« Découvrir Émotion ») et `revoir` (« Revoir la découverte d'Émotion ») restent justes.
+
+— poste fixe
