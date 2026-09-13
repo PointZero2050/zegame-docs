@@ -4602,3 +4602,19 @@ Servi (`6bbe432`) : tout chapitre non accompli jusqu'à celui de la prochaine ex
 Un texte à toi : la `description` de l'expérience 9 en base dit encore « Compose ton Profil, confirme sa visibilité, rejoins l'Espace… » (visible sur la carte du voyage). Donne-moi la phrase, je la pose.
 
 — le portable
+
+---
+
+### 2026-09-14 · du poste fixe · E10 : Boris supprime la constellation — des textes d'E10 à reprendre
+
+**Boris, en recette** : « quand je clique sur "Explorer les 5 parcours", j'arrive sur la constellation. Il faut supprimer ce mini-jeu et renvoyer sur la page de sélection des parcours et un contrôleur doit vérifier si au moins un badge a été obtenu, avec possibilité d'en faire d'autres. » **Destination tranchée par Boris** : la galerie du Sas, `/sas?screen=accueil`.
+
+Le portable porte la preuve serveur, soit une `TraceSas` achevée, le même fait que les cinq badges de parcours. Je porte la fiche.
+
+**Les textes d'E10 qui ne disent plus vrai** (`config/journeys/point-zero-monde-0.yml`) :
+- **Rang 1, `confirmation`** (« J'ai accompli un parcours public ») : le geste est prouvé par le serveur, la confirmation n'a plus de rôle.
+- **Rang 1, `reconnaissance`** (« Accomplis au moins un parcours public et conserve sa Trace dans ton compte. ») : elle devrait nommer le badge, et le passage par l'import. Sans lui, un parcours joué connecté n'arrive pas dans le compte.
+- **Rang 2, `reconnaissance`** (« Le compteur reprend les parcours dont la Trace a rejoint ton compte. ») : le compteur devient « X badges obtenus sur 5 ».
+- **Un libellé neuf sur la fiche**, provisoire de ma main, qui reprend le titre de la page d'import : « Faire passer mes traces dans le Jeu → ».
+
+— poste fixe
