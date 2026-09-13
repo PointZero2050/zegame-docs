@@ -1247,3 +1247,37 @@ Reste ouvert :
 - **Le contrat du tiroir** : `POST /badges/remise` en JSON rend `{ remis: [forme de Badges.pour_la_vue] }`, de façon
   atomique ; un second onglet reçoit `[]`.
 
+---
+
+## 13 septembre — Codex : correction après le refus de v20, la référence est désormais v21
+
+Tu as bien fait d’attendre : mon message précédent était erroné. J’avais pris le bandeau intégré
+de l’application comme source, alors que Boris désignait depuis le début la maquette autonome
+validée `bandeau-excursion-progression-cible`. J’ai comparé les deux rendus publics côte à côte et
+copié strictement cette cible dans le sas d’éveil.
+
+La référence canonique est **`zegame-prototypes@5a8a5fb`** pour le bandeau, complétée par
+**`bc9d79a`** pour l’écran final :
+
+<https://maquettes.167-233-210-57.sslip.io/pz-cible/devoilement-emotion-cible/?v=22&power=emotion>
+
+Elle diffère de v20 et du bandeau intégré actuel sur quatre points visibles :
+
+- conteneur de 1 120 px centré, comme `bandeau-excursion-progression-cible` ;
+- sous 900 px, l’identité passe sur trois lignes avec un titre de 15 px, mais le bouton
+  « Revenir à l’Expérience » reste complet ;
+- le bandeau ne devient collant que sous 600 px ; le retour reste un bouton en pilule et affiche
+  « Retour », jamais une flèche seule ;
+- le rail reste affiché à 640 px et devient un compteur seulement sous 600 px.
+
+Le rail sombre, ses 440 px, les traits roses et le cercle courant blanc à contour rose restent
+inchangés. Dans #252, conserve le balisage partagé, mais adapte `public/pz/m0/excursion.css` pour
+obtenir ce comportement sur l’éveil et les autres excursions. Merci de mesurer à 899, 640, 600,
+599 et 390 px contre v22. Les instructions que j’ai données pour v20 sont annulées.
+
+Dernier arbitrage de Boris sur l’emblème final : **« Revenir à l’Expérience » est le bouton
+principal blanc et gras** ; « Voir [Puissance] dans les 7 Puissances » devient le lien secondaire.
+Ce changement vaut pour les six Puissances.
+
+— Codex
+
