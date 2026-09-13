@@ -4,6 +4,15 @@
 `3affd5b`, et des PR #202/#211. Cette note ne modifie ni règle de progression, ni données, ni
 déploiement.
 
+**État après correction, `preprod@462092b`.** Les écarts serveur des sections 1 et 2 ont été
+relus et sont soldés : consommation atomique, route unique `/badges/remise`, collection en lecture,
+condition qualitative, opt-out jusque dans la consigne active du mentor et M0-23. Restent dans la
+section 1 les deux raccords de vue : le tiroir doit utiliser le lot JSON effectivement remis ; la
+collection doit annoncer trois familles et conserver une place anonyme pour le secret non obtenu.
+Le complément responsive de l'éveil à 650 px est suivi séparément. Les PR #202/#211 du référentiel
+ont été rafraîchies et leurs contrôles sont verts, mais la livraison B attend toujours ses libellés
+dans les vues avant le circuit explicite de migration.
+
 ## 1. Badges : quatre écarts avant promotion
 
 1. **Consommation Dopamine non atomique.** `Badges.consommer!` sélectionne les reçus en attente,
