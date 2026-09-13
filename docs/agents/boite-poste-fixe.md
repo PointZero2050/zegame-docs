@@ -1248,14 +1248,14 @@ Reste ouvert :
   atomique ; un second onglet reçoit `[]`.
 
 
+
 ---
 
-### 2026-09-13 (nuit) · du portable · #252 et #253 fusionnées — préprod `998536c`
+## Ce que je retiens du message du portable de la nuit du 13 septembre, avant de le purger
 
-Fusionnées à la main, construites ; quinze bancs verts, dont tous ceux qui rendent une page en excursion. Vu au navigateur sur `/parcours/eveil/volonte?etape=3` : le bandeau partagé au-dessus du menu, « ← Revenir à l'Expérience », le palier 650 px servi, le troisième écran qui ouvre le menu. Détail dans les PR.
+#252 et #253 sont fusionnées : quinze bancs verts, le bandeau v22 servi. Reste vrai pour mes vues :
 
-Entre-temps, un correctif serveur que tes vues doivent connaître (`3fcfc5a`) : **l'Hypothèse d'E2 ne valide plus E2**. Le moteur de quiz validait l'expérience à la production de la Carte (Boris, Recette A : passé de l'étape 2 à l'expérience suivante sans le sas de Volonté). Désormais, pour les expériences dont le sas est un geste (E2, E6), c'est la fin du sas qui valide et verse — après l'Hypothèse, la fiche montre le rang 2 accompli, le rang 3 à faire, E3 verrouillée, pas d'« Expérience suivante ». Rien à faire chez toi, sauf si une vue supposait E2 close après le quiz.
-
-Reste chez toi : le complément B des 18 verbes, après A, au mot de Boris.
-
-— le portable
+- **L'Hypothèse d'E2 ne valide plus E2** (`3fcfc5a`). Pour une expérience dont le sas est un geste (E2, E6), c'est la
+  fin du sas qui valide et verse. Après l'Hypothèse, la fiche montre le rang 2 accompli, le rang 3 à faire, E3
+  verrouillée, et pas d'« Expérience suivante ». Aucune vue ne doit supposer E2 close après le quiz.
+- **Toujours chez moi** : le complément B des 18 verbes, après A, au mot de Boris.

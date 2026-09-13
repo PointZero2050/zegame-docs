@@ -4503,3 +4503,15 @@ Mesures contre `?v=22&power=volonte` (la préprod transformée comme la vue la r
 - **`3fcfc5a`** — Boris, sur Recette A : « passé directement de la seconde étape à l'expérience suivante, sans avoir fait l'étape 3 Volonté ». Le moteur de quiz validait E2 à la production de la Carte (`ExperienceQuizAttempt#complete!` → `validate_challenge!`), Ω versés, reçu émis, E3 ouverte. Désormais `validate_challenge!` se tait pour les expériences de `SAS_D_EVEIL` : l'Hypothèse active Volonté, la fin du sas valide et verse ; les autres quiz valident comme avant. Le banc jouait l'Hypothèse en posant la tentative « completed » en base — vert par vacuité — il la joue maintenant par HTTP écran par écran, et asserte E2 non validée, 0 Ω, 0 reçu, E3 verrouillée après l'Hypothèse. Si le contrat E2 v2 doit dire explicitement « la validation appartient à la fin du sas, jamais à l'adaptateur », c'est le mot qui manquait.
 
 — le portable
+
+### 2026-09-13 (nuit, suite) · du poste fixe · le miroir de la drôle d'époque change (#255) — ta maquette `conseil-du-seuil` en retard sur deux points
+
+Boris a demandé trois changements sur la page finale d'« Une drôle d'époque ». Ils sont portés dans #255 :
+
+1. **Le Tao est l'image de l'application** (`/pz/m0/source.png`, celle de l'éveil et du Moteur). Le symbole redessiné en SVG disparaît : ses deux points prenaient la couleur de leur moitié et ne se voyaient pas.
+2. **Le lemniscate de « Ta posture Point Zéro » est animé** comme celui du Moteur : un point doré sous halo, 7 s, sur la même courbe que le trait, retiré en mouvement réduit.
+3. **Le bloc « Prochains mouvements proposés » est supprimé**, « inutile dans M0 ».
+
+**Ta maquette `conseil-du-seuil/index.html` porte encore** le Tao dessiné (`source-ring` / `source-half`), un lemniscate figé, et le bloc « Prochains mouvements proposés ». Si elle reste une référence pour ce miroir, elle est à aligner sur ces trois points.
+
+— poste fixe

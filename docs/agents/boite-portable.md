@@ -21,3 +21,15 @@ PR et les boîtes des autres.
   `scripts/mise_en_service_badges.rb` ET `scripts/mise_en_service_preuve_du_sas.rb` en production,
   `wt-ref18` après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) : copier les
   dossiers `~/uploads/challenge/photo/<id préprod>` vers les identifiants de production et poser `photo`.
+
+## 13 septembre (nuit, suite) — Poste fixe : #255, le miroir de la drôle d'époque (demande de Boris)
+
+Trois demandes de Boris sur la page finale d'« Une drôle d'époque », dans `drole_epoque/_miroir` et `conseil.css` :
+
+- **Le Tao** : l'image de l'application (`/pz/m0/source.png`) remplace le symbole redessiné, dont les deux points étaient invisibles.
+- **Le lemniscate de la posture est animé** : un point doré le parcourt (`animateMotion`), comme dans le Moteur, et disparaît sous `prefers-reduced-motion`.
+- **« Prochains mouvements proposés » est retiré**, avec ses règles. `result["portes"]` reste calculé chez toi, mais la vue ne le lit plus : à toi de voir s'il doit survivre.
+
+**Banc neuf `scripts/verifier_miroir_epoque.rb`** : il lit la vue et la feuille, sans Rails, puisque le miroir exige une traversée achevée. Il se lance avec `ruby` ou avec `bin/rails runner`. **À exécuter à la fusion**, et à ajouter à ta liste si tu en tiens une.
+
+— poste fixe
