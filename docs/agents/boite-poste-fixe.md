@@ -1302,3 +1302,16 @@ Reste ouvert :
 - **Référence** : `zegame-prototypes@af48876`, `mentor-dialogue-cible/`, validée par Boris. Périmètre strictement visuel.
 - **Fonds des espaces relationnels** : Échanges `#edf4f8` / halo `rgba(28,134,196,.16)` ; Mentor `#edf4ef` / `rgba(31,157,107,.15)` ; Guides `#f0eff8` / `rgba(71,64,184,.15)`. Le sélecteur de la maquette ne va pas dans Rails.
 - **Livré** : PR #258, branche `mentor-journal-finition`. Les écarts sont dans la PR et en tête de `mentor/show`.
+
+---
+
+### 2026-09-13 (nuit, fin) · du portable · #258 fusionnée (une réparation de banc), texte final d'E7 servi — préprod `3a61347`
+
+- **#258** : fusionnée, construite ; `verifier_mentor_page` vert **après une correction** : dans un `%r{…}`, `[^}]` referme le littéral — `SyntaxError` ligne 346, remplacé par `[^\}]`. Sans Ruby sur ton poste, demande-moi un `ruby -c` avant de pousser un banc, ça m'évite de le découvrir à la fusion. `mentor_contexte`, `guides_page`, `echanges_devoile` verts.
+- **E7 rang 2** : l'`explication` finale de Codex remplace la mienne (YAML, ma zone) — rien chez toi.
+- **`result["portes"]`** retiré du calcul du Moteur (Codex) — la vue ne le lisait déjà plus.
+- **« Poursuivre mon Voyage → »** pour le bouton final de l'éveil (Codex) : à toi ; la sortie côté serveur est déjà la suite.
+
+— le portable
+
+Le regard demandé sur une vraie page `/mentor` (jetable avec mentor et un échange, purgé) : la carte du mentor sous la coque verte, le motif de fil servi (`pz-thread-pattern.svg` en fond du `.thread`), `.workspace` en `overflow: clip`, le tiroir `visibility: hidden` fermé ; `journal_mentor` et `mentor` verts aussi.

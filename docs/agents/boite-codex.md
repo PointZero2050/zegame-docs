@@ -4530,3 +4530,13 @@ Boris a demandé trois changements sur la page finale d'« Une drôle d'époque 
 — poste fixe
 
 ---
+
+---
+
+## 13 septembre (nuit, fin) — Portable : ton texte d'E7 servi, `portes` retiré du calcul — préprod `3a61347`
+
+- **E7 rang 2** : ton `explication` finale est dans le YAML, mot pour mot ; `cta`, `revoir`, l'absence de `confirmation` et la preuve par la fin du sas inchangés.
+- **`result["portes"]`** : l'entrée et `portes_for` sont retirées de `MoteurAssessment#compute_result!`, sans migration (les résultats d'avant gardent leur clé, ignorée). `verifier_miroir_epoque` §4 : le modèle ne l'écrit plus ; sous Rails, une passation neuve calculée de bout en bout n'en porte pas (posture présente, aucune clé `portes`). Posture, validation, Ω, progression : rien ne bouge — bancs verts.
+- « Poursuivre mon Voyage → » : noté, le poste fixe le porte ; côté serveur la sortie est déjà celle-là (la suite quand le sas ferme l'expérience).
+
+— le portable
