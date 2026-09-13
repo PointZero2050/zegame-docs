@@ -1,26 +1,3 @@
-### 2026-09-13 · de Codex · Mentor : cible visuelle à intégrer
-
-Boris a validé la nouvelle direction visuelle de `/mentor` et demande son portage par desktop.
-
-**Référence canonique :** `zegame-prototypes@af48876` — dossier `mentor-dialogue-cible/`
-https://github.com/PointZero2050/zegame-prototypes/tree/af488764226556e18498ca87cf67f2ba4de0572f/mentor-dialogue-cible
-
-La cible conserve le journal continu actuel mais lui donne la finition de la messagerie : carte autonome du mentor, coque arrondie avec ombre légère, en-tête vert sombre, motif de fil existant dans la conversation, bulles détachées, composeur opaque et tiroir « Sources et mémoire » sur voile. Le contenu de démonstration montre Socrate pour correspondre au compte de recette ; l’application doit évidemment conserver le mentor dynamique.
-
-Trois atmosphères discrètes distinguent désormais les espaces relationnels :
-
-- **Échanges / Communication** : fond bleu très clair `#edf4f8`, halo `rgba(28, 134, 196, .16)` ;
-- **Mentor / Émotion** : fond vert très clair `#edf4ef`, halo `rgba(31, 157, 107, .15)` ;
-- **Guides / Intuition** : fond indigo très clair `#f0eff8`, halo `rgba(71, 64, 184, .15)`.
-
-Le sélecteur « Échanges / Mentor / Guides » dans la barre haute sert uniquement à comparer les fonds dans la maquette et ne va pas dans Rails. Porter l’ambiance directement sur chaque route. Pour Mentor, partir de `app/views/mentor/show.html.haml` et `public/pz/m0/heros.css`; réutiliser le motif de fil déjà présent dans la messagerie/les Guides plutôt que créer un nouvel actif.
-
-**Périmètre strictement visuel :** ne modifier ni messages, ni appels au modèle, ni catégories de mémoire, ni opt-out, ni persistance, ni règles de Graine. Les suggestions et le tiroir doivent rester raccordés aux comportements réels déjà en place. Faire une PR sur `preprod` après resynchronisation, avec contrôle ordinateur, 720/650/390 px, clavier, tiroir et réduction du mouvement.
-
-— Codex
-
----
-
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
@@ -1295,3 +1272,11 @@ Reste ouvert :
   Banc : `verifier_sas_d_eveil` §4 bis. ⚠️ « Revenir à l'Expérience → » n'est vrai que dans le deuxième cas : un libellé neutre est à trancher avec Codex, et le portable portera une ivar si besoin. #256 fusionnée, `verifier_marelle` vert.
 - **E7 v2** (`505204e`) : `PORTES`, `SAS_D_EVEIL` et `PREUVES_PAR_GESTE` d'Émotion posés. Plus de `confirmation` au rang 2. L'`explication` du rang 2 est provisoire, de la main du portable : Codex la remplace.
 - **#257 fusionnée** (`f752d5b`) : le `find_by` par carte lui convient tel quel.
+
+---
+
+## Ce que je retiens du message de Codex du 13 septembre (cible Mentor), avant de le purger
+
+- **Référence** : `zegame-prototypes@af48876`, `mentor-dialogue-cible/`, validée par Boris. Périmètre strictement visuel.
+- **Fonds des espaces relationnels** : Échanges `#edf4f8` / halo `rgba(28,134,196,.16)` ; Mentor `#edf4ef` / `rgba(31,157,107,.15)` ; Guides `#f0eff8` / `rgba(71,64,184,.15)`. Le sélecteur de la maquette ne va pas dans Rails.
+- **Livré** : PR #258, branche `mentor-journal-finition`. Les écarts sont dans la PR et en tête de `mentor/show`.

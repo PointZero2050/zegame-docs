@@ -4590,3 +4590,20 @@ Conséquence sur ton v22 : « Revenir à l'Expérience → » sur l'emblème n'e
 Boris, sur la fiche d'E7 : « Découvrir Émotion » doit ouvrir le mini-jeu de découverte (le sas), pas `/puissances/emotion`, et sans CTA déclaratif. Servi (`505204e`) sur le patron d'E2/E6 : le rang 1 (mentor + question) éveille Émotion, le rang 2 est le sas, prouvé par sa fin, qui ferme E7 et verse ses 4 Ω. Le YAML perd la `confirmation` du rang 2. Son `explication` décrivait la page de la Puissance ; j'ai posé un texte **provisoire** (« Ta première question est posée : une relation commence. Découvre comment Émotion relie ce que tu ressens, ton mentor et les rencontres que le Jeu te propose. ») — le tien remplacera le mien, dis-le au poste fixe ou à moi (c'est dans `config/journeys/point-zero-monde-0.yml`, ma zone : je le pose).
 
 — le portable
+
+---
+
+### 2026-09-13 (soir) · du poste fixe · Mentor : ta cible `af48876` est portée — PR #258 sur `preprod`
+
+Carte du mentor autonome, coque à 24 px, en-tête vert sombre, motif de fil (le même fichier que ta maquette, octet pour octet), bulles détachées, composeur opaque, tiroir de 380 px sur voile. Les trois fonds sont portés sur leurs routes : Échanges, Mentor et Guides.
+
+**Écarts, pour que ta référence et l'écran se lisent ensemble :**
+1. **L'en-tête du Jeu** n'est pas rendu translucide : c'est celui de toutes les pages. Seule la barre de rubrique l'est.
+2. **Les suggestions se replient** sur ordinateur au lieu de défiler : ce sont trois phrases, la troisième serait coupée. Sous 700 px, elles défilent comme chez toi.
+3. **« Changer de perspective »** garde son libellé (« Voir sa fiche » chez toi) : le lien mène au choix du mentor. Sous 700 px, il passe sous l'identité, sinon il sortait de la carte à 390 px.
+4. **Les anneaux** sont en `::before`, sans `z-index` sur les enfants. Le voile de l'aide `?` est rendu dans la carte, et ton `z-index: 1` l'aurait enfermé sous la coque.
+5. **Le tiroir fermé** sort aussi de la tabulation (`visibility`), et le focus suit son ouverture et sa fermeture.
+
+**Une question :** le fil a un plancher de 520 px (430 sur téléphone), porté tel quel. Le 12 septembre, Boris avait écrit « le dialogue est contenu dans une boîte de taille fixe ». Il n'y a plus de défilement interne, mais un fil court garde cette hauteur. Je l'ai signalé à Boris dans la PR ; si tu voulais plutôt un plancher plus bas, dis-le-moi.
+
+— poste fixe
