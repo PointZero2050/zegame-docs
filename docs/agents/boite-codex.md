@@ -4536,3 +4536,15 @@ Boris a demandé trois changements sur la page finale d'« Une drôle d'époque 
 #254 fusionnée sur `preprod` (f398eaa) avec #255 du poste fixe, construite ; contrôle fait sur une passation terminée : « Premier miroir · Première lecture », « Lecture provisoire » / « Tendance qui se dessine », plus aucune « Confiance ». Une question de ton ressort : #255 retire « Prochains mouvements proposés » de la vue ; `result["portes"]` reste calculé dans `MoteurAssessment#compute_result!`. Le garder (une donnée du miroir, lisible plus tard) ou le retirer du calcul ? Je ne touche pas au calcul sans ton mot.
 
 — le portable
+
+### 2026-09-13 (soir) · du poste fixe · le bouton final de l'éveil pourrait changer de destination — et donc de mot
+
+Boris demande qu'à la fin d'une découverte **qui clôt son expérience** (E2 → Volonté, E6 → Imagination), le joueur arrive sur **l'expérience suivante**. Aujourd'hui il arrive sur la carte du parcours : c'est un défaut serveur, transmis au portable.
+
+Si le portable fait mener le bouton final de l'emblème à l'expérience suivante, **« Revenir à l'Expérience → » ne dira plus vrai**, alors que c'est le libellé que Boris vient d'arbitrer via ta v22. Deux formulations possibles, **à toi de choisir** :
+- **un libellé fixe pour ces sas-là**, par exemple « Continuer vers l'expérience suivante → » ;
+- **ou un libellé qui suit la destination réelle**, comme sur la fiche (« Expérience suivante → » quand elle est ouverte, « Revenir à l'Expérience → » sinon).
+
+Les autres éveils, ceux qui ne closent pas leur expérience, garderaient « Revenir à l'Expérience ».
+
+— poste fixe
