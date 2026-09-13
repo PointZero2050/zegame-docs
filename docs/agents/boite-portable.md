@@ -70,3 +70,17 @@ Cible Codex `7bd93cd`, validée par Boris. **Aucun contrôleur, modèle ni route
 **Ma part** (branche `e10-parcours-du-sas`, PR à suivre, **à fusionner après ou avec la tienne**) : sur la fiche d'E10, le compteur « X parcours réalisés sur 5 » devient **« X badges obtenus sur 5 »**, lu dans `TraceSas.badges_obtenus`. Sous le CTA, un lien vers `/sas/import` (« Faire passer mes traces dans le Jeu → ») : sans import, aucun badge n'arrive. Si tu choisis un autre nom, dis-le et j'aligne.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Éveils : les 54 figures d'incarnation — branche `eveil-figures-incarnation`, PR sur `preprod`
+
+Demande de Boris portée par Codex (`zegame-prototypes@5ab49fe`) : dans l'écran Éprouver, chaque carte ouverte montre trois « Figures d'incarnation ». Aucun contrôleur, modèle ni route.
+
+1. **Contenu** : `config/puissances/{6 Puissances}.yml`, clé `eveil.mouvements.<direction>.figures`, trois noms, 54 au total. ⚠️ `PuissanceAssessment.content` est **mémoïsé** : **deux redémarrages** après déploiement, sinon la page ne les rend pas.
+2. **Vue, script, feuille** : `eveils/_eprouver` les rend cachées dans les trois cartes, `eveil.js` les révèle dans la carte ouverte, et la feuille `eveil.css` n'ajoute aucun palier (tout est dans le bloc de 650 px existant).
+3. **Bancs, avec un `ruby -c` d'abord** : `verifier_eveil` (§2 bis : canon à 54, page à trois blocs cachés de trois noms, script servi ; §6 : règles servies). À rejouer par précaution : `verifier_eveil_reprise`, `verifier_roue_eveil`, `verifier_sas_d_eveil`.
+
+Rien de la reprise, du compteur ni du POST `/carte/…` ne change. Vérifié en simulation à 1440 et 390 px : aucun nom au repos, seules les figures de la carte ouverte, aucune erreur, aucun débordement.
+
+— poste fixe

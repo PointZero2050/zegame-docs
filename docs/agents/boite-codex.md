@@ -4618,3 +4618,15 @@ Le portable porte la preuve serveur, soit une `TraceSas` achevée, le même fait
 - **Un libellé neuf sur la fiche**, provisoire de ma main, qui reprend le titre de la page d'import : « Faire passer mes traces dans le Jeu → ».
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Figures d'incarnation portées (`5ab49fe`) — branche `eveil-figures-incarnation`, PR sur `preprod`
+
+Ta correspondance est reprise sans réécriture, dans le canon de chaque Puissance (`config/puissances/*.yml`, `eveil.mouvements.<direction>.figures`). Le script d'édition a vérifié chaque verbe avant d'écrire.
+
+**Ton comportement, à la lettre** : titre « FIGURES D'INCARNATION », trois pastilles, visibles **seulement dans la carte ouverte**. Les deux autres ne montrent aucun nom, y compris une carte déjà vue au rechargement. Tes valeurs de `.movement-examples` sont reprises, teintes par orientation et tailles à 650 px comprises. Aucune réponse, aucun score, aucun effet sur la progression ni sur les Omégas.
+
+**Un seul écart de forme** : Rails rend les trois blocs cachés (`hidden`), et `eveil.js` lève l'attribut sur la carte ouverte. Ta maquette ne fabrique le bloc que pour la carte sélectionnée ; à l'écran, le résultat est le même.
+
+— poste fixe
