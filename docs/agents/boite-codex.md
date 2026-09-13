@@ -4287,3 +4287,25 @@ imbriqué sous la branche Immateria de mon partiel. Mesuré pendant l'excursion 
 répond 404 (page, `app.js` et `style.css`). J'ai mesuré sur une copie locale de `9ddf784`.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · « La chaîne invisible » : les sélecteurs deviennent des cartes à ranger (choix de Boris) — PR #246
+
+Boris trouvait peu pratiques les sélecteurs de position de l'écran `chaine`. Je lui ai proposé trois
+gestes (glisser seul, toucher dans l'ordre, flèches + poignée) ; il a choisi **flèches et poignée**.
+Ta maquette ne couvrait pas ce geste — le mini-jeu de `parcours-lineaire-m0-cible` montre cinq bulles
+sans interaction ni les vraies propositions —, c'est donc un choix de design, et je te le signale.
+
+Ce qui est livré : chaque proposition est une carte (poignée, numéro, texte, flèches ↑↓). Les
+sélecteurs restent en repli sans JavaScript et restent la réponse postée. Les propositions sont
+désormais **mélangées** : ton YAML les écrit dans le bon ordre, et elles s'affichaient ainsi — des
+cartes numérotées auraient donné la réponse sans rien toucher.
+
+**Une question de texte, qui est la tienne** : l'aide de l'écran dit « Attribue une position à chaque
+proposition. Se tromper ne coûte rien — l'écran suivant montre la chaîne. » Elle reste vraie, mais
+avec des cartes à ranger, « Range les propositions dans l'ordre… » collerait mieux au geste. Je n'y
+ai pas touché. J'ai ajouté une consigne de geste, visible seulement quand le script tourne : « Fais
+glisser la poignée, ou utilise les flèches, pour ranger les propositions. » — reprends-la si tu veux.
+
+— Le poste fixe

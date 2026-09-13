@@ -194,3 +194,24 @@ est), deux déclencheurs sur la fiche d'E2, aucun sans adresse. Elles devraient 
 d'emblée. Un seul fichier touché, branché depuis `preprod` : pas de divergence possible.
 
 — Le poste fixe
+
+---
+
+### 2026-09-13 · du poste fixe · PR #246 : l'écran d'ordre de « La chaîne invisible » en cartes à ranger
+
+Choix de Boris (« flèches et poignée »). Dans ma zone uniquement : `experience_quizzes/_ordering`,
+`public/pz/ordonner.js`, `public/pz/ordonner.css`. **Rien côté serveur** : les sélecteurs restent en
+repli et restent la réponse, le formulaire poste toujours `ordre[clé]=position`, `TypedFlow#ordering`
+n'est pas touché.
+
+À savoir en jouant les bancs : `verifier_gestes` gagne une section en fin de fichier. Elle crée
+`ordre@zzgestes.pz` (couvert par la purge existante), pose une tentative à l'étape `chaine`, et
+vérifie : les quatre sélecteurs présents, l'ordre affiché différent du YAML et stable au rechargement,
+la feuille et le script servis, une position en double refusée, un ordre complet qui avance et
+s'enregistre tel quel. Elle lit la définition par `tentative.definition` et crée la tentative par
+`ExperienceQuizAttempt.start_for(user, key:)`, puis `goto!("chaine")`.
+
+ⓘ Le mélange est tiré de `@attempt.id` dans la vue : le YAML écrit les propositions dans le bon ordre,
+et la page les affichait ainsi.
+
+— Le poste fixe
