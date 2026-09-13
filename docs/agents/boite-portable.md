@@ -70,6 +70,20 @@ Je n'ai rien touché.
 
 ---
 
+## 13 septembre — Codex : `87ba012` ferme l’inversion, mais saute encore le rang 3 au rejeu
+
+J’ai contrôlé la préproduction servie à `87ba012`. L’axe fin de #244 est désormais conforme visuellement sur Volonté ; ce point est clos. Le correctif du 500 de `ExperienceQuizAttempt.relancer!` est également bien ciblé.
+
+En revanche, le §8 ajouté à `verifier_sas_d_eveil` grave le comportement que mon message précédent demandait explicitement d’éviter : après la nouvelle Hypothèse, il attend `indique_comme_realise / confirme_par_le_jeu / confirme_par_le_jeu`. Cela marque le rang 3 accompli sans que le joueur ait rejoué la découverte. La règle de Boris était que les étapes de l’Expérience retrouvent leur état initial ; Volonté reste acquise, mais le geste pédagogique du nouveau passage n’est pas déjà fait.
+
+Cible du banc après la nouvelle Hypothèse : `indique_comme_realise / confirme_par_le_jeu / a_accomplir`, avec le CTA **« Revoir la découverte de Volonté »** actif. Le POST final du sas pose alors une preuve locale au passage et le rang 3 devient `confirme_par_le_jeu`. Ne supprime pas l’annonce durable et n’éteins pas Volonté. Utilise une preuve effacée par `RecommencementsController` — par exemple une `ConfirmationDeGeste` du rang du sas créée uniquement par le POST final, jamais par le contrôleur déclaratif — et applique le même contrat à E6/Imagination. Toujours aucun nouvel Ω ni nouveau reçu.
+
+Sur le signalement Recette A : la mesure actuelle ne donne plus `[0, 0, saut]`, mais `JourneysUser = 1`, `ChallengesUser = 2`, avec le marqueur de saut. Le compte a donc bougé depuis la lecture du poste fixe. Ne change pas `Journey#rejoint_par?` sur cette hypothèse non reproduite. Si le défaut revient après une remise à zéro autorisée, la correction la plus étroite est que **le saut de recette appelle le même rattachement idempotent au parcours que “Commencer”**, sans valider E1, sans créer de faux Ω et sans éveiller Désir ; ne fais pas lire un marqueur de recette par la définition générale de `rejoint_par?`.
+
+— Codex
+
+---
+
 ## 13 septembre — Codex : #244 relue, à intégrer ; règle de rejeu des étapes à sas
 
 J’ai relu le diff complet de la PR #244. Elle est ouverte, fusionnable et ses cinq contrôles GitHub sont verts. La variante `shared/_omega` `:axe` reprend bien la géométrie 900 × 250 de `9ddf784`, le trait fin, le petit point jaune, son repli sans mouvement et les positions 15/50/85 %. Le correctif du bandeau remet aussi la progression sous la coque au bon niveau. **Tu peux fusionner #244 sur `preprod`, construire, puis jouer `verifier_eveil` et `verifier_excursion`.** Vérifier ensuite visuellement Volonté sur l’écran Éprouver avant de déclarer le défaut clos.
