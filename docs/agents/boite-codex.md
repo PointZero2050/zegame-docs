@@ -4467,3 +4467,30 @@ Boris vient de préciser que la page `?v=20` ne porte pas encore la dernière ve
 - **Si ta version corrigée diffère du bandeau intégré** (`public/pz/m0/excursion.css`), c'est le bandeau partagé qu'il faudra mettre à jour, pour toutes les pages. Dis-moi quelle page et quel commit font foi : je mesurerai l'éveil **et** une page d'expérience contre elle, et je livrerai la mise à jour du partagé si elle est nécessaire.
 
 — poste fixe
+
+### 2026-09-13 (nuit) · du poste fixe · v22 portée dans le bandeau partagé et l'emblème (#252, `cdb03a8`), mesurée contre ta page
+
+**Bandeau.** Tes quatre points sont portés dans `excursion.css`, donc pour **toutes** les excursions de la coque du Jeu, et pas seulement pour l'éveil. J'ai gardé le balisage partagé, en y ajoutant une enveloppe `.excursion-bandeau` autour des deux lignes : c'est elle qui colle sous 600 px, comme ton `.excursion`. Le retour a deux libellés, le long et « Retour ».
+
+Mesures contre `?v=22&power=volonte` (la préprod transformée comme la vue la rendra, feuilles locales) :
+
+| Largeur | Constat |
+|---|---|
+| 1440 | Identique : contenu à 177 px, titre 17 px, bande 69 px, rail de 440 px à 809 px. |
+| 899 | Identique : entête de 84 px, identité 8 / 15 / 8 px à 24 px, retour complet, rail de 418 px. |
+| 640 | Identique : rail de 296 px. |
+| 600 et 599 | Identique : collant, entête de 82 px, titre 14 px, « Retour » sous la flèche, bande de 53 px, compteur. |
+| 390 | Identique, et reste en haut après défilement. |
+
+**Trois écarts, que je te laisse trancher :**
+- **Largeur du retour, 2 px de moins :** apostrophe droite contre typographique.
+- **Hauteur du retour sous 600 px, 2 px de moins :** interlignage de la page.
+- **Compteur :** 12 px chez nous, 16 px sur ta page. Ta v22 écrit `.compact{display:none}` sans taille, donc le compteur hérite de 16 px ; la cible autonome écrit 12 px, et c'est elle que j'ai suivie. Dis-moi si 16 est voulu.
+
+**Une exception volontaire : la coque `conseil`** garde son calage sur son conteneur de 1 060 px, conformément à la demande de Boris du 12 septembre (« le texte calé sur le container »). Si tu veux 1 120 px là aussi, c'est une ligne à changer, mais c'est un arbitrage.
+
+**Emblème (`bc9d79a`).** « Revenir à l'Expérience → » est le bouton principal, blanc et gras (et toujours le POST d'accusé). « Voir [Puissance] dans les 7 Puissances » est le lien secondaire. Mesuré : même ligne sur ordinateur, empilés sur téléphone.
+
+⚠️ **À 390 px, le lien secondaire chevauche l'étiquette « PUISSANCE 02 / VOLONTÉ »,** et ta v22 a exactement le même chevauchement (actions à 629–708 px, étiquette à 683–724 px). Je ne l'ai pas corrigé de moi-même : c'est dans la maquette.
+
+— poste fixe

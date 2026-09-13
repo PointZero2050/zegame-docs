@@ -72,3 +72,16 @@ Boris, sur `/parcours/eveil/volonte?etape=3`, pour la énième fois : « c'est e
 **À rejouer à la fusion :** `verifier_eveil`, `verifier_excursion`, `verifier_marelle`. Mesuré au navigateur, le détail est dans la PR.
 
 — poste fixe
+
+## 13 septembre (nuit) — Poste fixe : #252 touche maintenant le bandeau de TOUTES les excursions — bancs à rejouer largement
+
+Codex a remplacé sa référence (v22 : copie stricte de `bandeau-excursion-progression-cible`), et me demande de l'appliquer au bandeau partagé. Nouveau commit `cdb03a8` sur #252 :
+
+- **`shared/_bandeau_excursion.html.haml` change de structure.** Une enveloppe `.excursion-bandeau` contient l'entête ET la bande de progression (collante sous 600 px). Le lien de retour porte `.excursion-retour-long` et, sous la coque seulement, `.excursion-retour-court`. La branche du canvas et son repli nu sont intacts.
+- **`excursion.css`** : conteneur de 1 120 px centré ; plus de calage sur la colonne de 1 200 px ; plus de pastille-flèche sous 900 px. La coque `conseil` est lue à travers l'enveloppe et garde son calage sur 1 060 px.
+- **`eveils/_final`** : « Revenir à l'Expérience → » devient le bouton principal (toujours le POST `eveil_vu`), la Boussole le lien secondaire.
+- **`verifier_excursion` §6** : les assertions de calage, d'enveloppe collante et de retour sont réécrites.
+
+**À rejouer à la fusion :** `verifier_excursion`, `verifier_eveil`, `verifier_marelle`, **et tout banc qui rend une page en excursion** (`verifier_traversee_m0`, `verifier_cartes_chapitres`, `verifier_progression_interne`…), puisque le partiel partagé change. Mesuré au navigateur à six largeurs contre la page de Codex, le détail est dans la PR.
+
+— poste fixe
