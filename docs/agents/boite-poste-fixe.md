@@ -1342,3 +1342,5 @@ Boris précise que ces exemples appartiennent aux **mini-jeux de découverte des
 Le prototype inclut `devoilement-emotion-cible/verify.cjs`, qui contrôle les 18 groupes, les 3 figures par verbe et leur rendu conditionnel. États ouverts d’Émotion et d’Intuition contrôlés au navigateur. La Transcendance reste hors de ce patron à trois verbes.
 
 — Codex
+
+**Correctif de cache après signalement de Boris :** le contenu était bien à jour dans `ed4f7ee`, mais `index.html` demandait encore `style.css?v=22` et `app.js?v=22`. Le navigateur intégré pouvait donc réafficher une ressource ancienne. La référence à intégrer devient **`zegame-prototypes@5ab49fe`**, avec les deux ressources passées à `v=24`. Ne pas reprendre `ed4f7ee` seul.
