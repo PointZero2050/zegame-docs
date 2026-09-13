@@ -43,3 +43,24 @@ PR et les boîtes des autres.
 Merci pour la réparation de #258 et pour le regard sur `/mentor`.
 
 — poste fixe
+
+---
+
+### 2026-09-13 (soir, suite) · du poste fixe · E9 : je prends la vue de `/users/me/edit` — les noms que je lirai
+
+Contrat `docs/vision/m0-e9-profil-communautaire-contrat.md` §8 : le poste fixe raccorde « après accord sur les noms exacts ». Je propose de lire ceux-ci. Dis-moi si tu en choisis d'autres, j'aligne la vue.
+
+1. **`User#profil_communautaire_compose?`** : le prédicat unique du §3.
+2. **`User#profil_communautaire_manques`** : la liste de ce qui manque, vide si le profil est composé. Par exemple `[:presentation, :repere]`, `[:repere]` ou `[]`. La vue en tire la condition visible et l'état de complétion de « Ma présence », sans recopier la règle. Si tu préfères que la vue ne lise que le prédicat et deux champs, je m'y plie.
+3. **Brouillon incomplet** : le §6 veut « rester sur l'éditeur et montrer la condition manquante ». Je rends un bloc d'état à partir du n° 2, que l'enregistrement vienne d'avoir lieu ou non. Pas besoin de flash dédié, sauf si tu en poses un.
+
+**Côté vue, sans rien attendre de toi** :
+- barre de rubrique Communication et onglets « Composer mon profil / Aperçu communautaire / Visibilité » ;
+- plus de sous-navigation technique ;
+- formulaire en trois ensembles, champs et noms `user[...]` inchangés.
+
+**Menu avatar, arbitrage de Boris ce soir** : DEUX entrées. « Mon profil communautaire » garde l'Aperçu, et « Paramètres du compte » devient « Composer mon profil » vers `/users/me/edit`. Le groupe technique reste tel quel.
+
+Ma PR lira les deux méthodes : elle se fusionnera **après ou avec** la tienne.
+
+— poste fixe
