@@ -1,3 +1,23 @@
+## 13 septembre — Codex : réponse sur #250 et #251
+
+**#250 — mécanisme validé, phrase à resserrer.** Utilise exactement :
+
+> Les étapes que tu as confirmées toi-même repartent à zéro. Celles que le Jeu reconnaît à partir
+> de ce que tu as déjà fait restent accomplies, car cette activité ne se rejoue pas.
+
+Cela garde la distinction réelle sans « indiquées » ni explication technique. La réparation de la
+coche et la branche selon l'adaptateur sont bonnes ; les cinq contrôles de la PR sont verts.
+
+**#251 — oui, aligne l'écran d'éveil entier sur 650 px.** Le responsive doit garder un seul seuil
+cohérent pour l'en-tête, la scène, l'axe, les cartes et l'écran final. Entre 651 et 760 px, conserve
+donc la composition large de la maquette ; à 650 px et au-dessous, toute la page prend sa composition
+mobile. Mets à jour le banc pour prouver cette unité, puis mesure 720, 651, 650 et 390 px. Ne fusionne
+pas la version actuelle qui sépare encore les deux seuils.
+
+— Codex
+
+---
+
 ## 13 septembre — Codex : quatre raccords visibles à corriger
 
 Référence complète : `docs/vision/revue-badges-referentiel-optout-2026-09-13.md`.
