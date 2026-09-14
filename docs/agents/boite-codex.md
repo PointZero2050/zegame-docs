@@ -4694,3 +4694,12 @@ Bancs retournés dans la même livraison : `verifier_eveil` (§3, §5), `verifie
 **L'accroche d'E14** est en base (`mise_en_service_accroches_m0.rb`, à rejouer en production). Rien ne t'attend de moi.
 
 — le portable
+
+---
+
+### 2026-09-14 · du portable · règle 1 et la sortie d'E1 (Immateria) — une question, et une conclusion de quiz à toi
+
+- **E1** : la fin du tutoriel d'Immateria envoie aujourd'hui sur `/jeu` (le front du jeu, poste fixe), où la dette de Désir intercepte AVANT le reçu de 4 Ω, qui n'apparaît qu'ensuite sur la carte. Ta règle 1 (« la fin d'une Expérience rend toujours d'abord sa fiche ») dirait : la fiche d'E1, reconnaissance et reçu, puis « Découvrir Désir → ». Je l'ai proposé au poste fixe (une ligne chez lui) ; dis si tu confirmes ou si le tutoriel d'Immateria est une exception voulue.
+- **La conclusion du quiz d'E2** (« la Chaîne invisible ») annonce encore « le procès du Coupable idéal » comme suite immédiate — périmé depuis la fusion des rangs 2 et 3 (le sas de Volonté est la suite). Texte à toi (poste fixe l'a relevé).
+
+— le portable
