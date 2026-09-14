@@ -63,3 +63,38 @@ Ce que j'ai lu, et qui est chez toi :
 Je te propose le contrat de données en passant par le plan, avant de coder. Rien à faire chez toi avant.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · « Dopamine sous le reçu » (Codex `8a89bac`, validée par Boris) : le contrat de données que je te propose AVANT de coder la vue
+
+La cible : https://github.com/PointZero2050/zegame-prototypes/tree/8a89bac/badges-attribution-cible (`?view=receipt-one` et `?view=receipt-many`).
+- Le reçu d'Omégas garde son contenu et son CTA.
+- Si la validation remet des Dopamine, une note du Docteur flotte au bas de la fenêtre (« 1 badge Dopamine obtenu » ou « N badges Dopamine obtenus »). Son clic ouvre le tiroir du lot ; « Revenir au reçu » le referme.
+- L'appel sur l'accueil du parcours disparaît.
+
+Codex en fixe le contrat dans `NOTES.md` : « les Dopamine obtenus pendant une Expérience sont attachés à son reçu de fin […] Fermer le reçu consomme l'ensemble une seule fois, que le diagnostic ait été ouvert ou non ».
+
+**Ce que la vue lira, et rien d'autre** : `recu[:dopamine]`, une liste de `Badges.pour_la_vue(…)`, toujours présente, `[]` si rien. La vue ne pose aucun état, ne fait aucun `fetch` et ne consomme rien.
+
+**Ce qui manque aujourd'hui (lu dans le code)** :
+- `Badges.constater!(joueur, recu:)` pose `challenge_id` sur tous les reçus de badge de la validation, mais `recu_omega_id` sur les seuls seuils ;
+- `RecuOmega.pour_la_vue` ne rend que `badges:` (les seuils, par `Badges.des_recus`) ;
+- les Dopamine obtenus hors validation (`Graine`, `PortesOuvertes`, `Traversee`) n'ont ni reçu ni expérience, et attendent l'accueil (`HomeController` et `JourneysController`, puis `BadgesController#remise`).
+
+**Proposition, la forme est à toi :**
+1. **Attache** : à la validation, les Dopamine du lot reçoivent `recu_omega_id`, comme les seuils. Les Dopamine en attente obtenus pendant l'expérience, sans reçu (Graine, portes ouvertes), s'y rattachent aussi.
+2. **Vue** : `RecuOmega.pour_la_vue` ajoute `dopamine:` à côté de `badges:`.
+3. **Consommation** : dans le même geste que le reçu, au rendu de l'expérience suivante ou de la page de chapitre, pour que rechargement, retour arrière et second onglet ne rejouent rien.
+4. **Accueil** : `@badges_dopamine_en_attente` n'est plus posé. `POST /badges/remise` et `BadgesController#remise` peuvent tomber, puisque ma vue ne les appellera plus. Le sort des Dopamine déjà en attente chez les anciens joueurs (au prochain reçu ?) est ta décision.
+
+**Ma part** (branche `dopamine-sous-le-recu`, PR à suivre, **à fusionner AVEC ton lot**) :
+- la note et le tiroir, rendus DANS `dialog.omega-receipt`, parce que `showModal()` rend le reste de la page inerte ;
+- `shared/_diagnostic_dopamine`, extrait de `_remise_dopamine` ;
+- `recu-omegas.css` et `recu-omegas.js` ;
+- le retrait de l'appel sur l'accueil (`_remise_dopamine`, `dopamine.js`) ;
+- les bancs `verifier_serie_de_badges` (§3 et §7 retournés) et `verifier_recu_omega` (note et tiroir rendus depuis une vue fusionnée de `dopamine:`).
+
+Le chemin réel, de la validation au reçu avec sa note, sans note au rechargement, est à écrire avec toi quand ton lot est là.
+
+— poste fixe
