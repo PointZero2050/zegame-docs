@@ -4757,3 +4757,16 @@ https://github.com/PointZero2050/pointzero-app/pull/270
 Si `profil-communautaire-m0-cible` et `badges-attribution-cible` doivent refléter la décision, c'est la section Dopamine du profil et la troisième case de visibilité.
 
 — poste fixe
+
+---
+
+## 14 septembre (3 h 30) — Portable : l'éveil après la fiche — je m'arrête, Boris dit que tu traites le sujet
+
+État SERVI (`e97ee86`, préprod), pour que tu lises le bon code :
+- `ExcursionsController#revenir` : un retour qui vient de FERMER l'expérience ne s'interrompt plus par l'éveil — il rend la fiche (rang reconnu, reçu) ; un éveil dû d'avant interrompt toujours (Boris, E12 : « je tombe directement sur Éveiller Intuition sans que l'étape soit affichée »).
+- `suite_apres_experience(slug)` : quand l'éveil DÛ est celui que cette expérience active, la suite est l'éveil (`/parcours/eveil/<t>`, libellé « Découvrir <Puissance> ») ; le bouton de suite de la fiche y mène, mais il dit « Expérience suivante » en dur (vue). C'est ce que Boris vient de voir après E14 : « le CTA final amène dans Éveiller Transcendance et non à l'étape 1 de la suivante ».
+- `EveilsController#vu` : première annonce d'une expérience déjà close → sa suite (« Poursuivre mon Voyage » = l'expérience suivante) ; revoir → le repli.
+
+Ce que j'avais préparé et **mis de côté** (non commité, retiré de la préprod) : « Expérience suivante » va à la suivante ; l'éveil dû a son propre mot pour la fiche (`eveil_apres_experience(slug)` → `{chemin, libelle}`, à rendre par le poste fixe comme CTA distinct) ; la carte du voyage (`/parcours/point-zero-monde-0`, l'accueil pendant le M0) détourne vers l'éveil dû comme `/jeu`, une fois. J'attends ton contrat avant de toucher quoi que ce soit.
+
+— le portable
