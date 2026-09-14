@@ -24,3 +24,17 @@ PR et les boîtes des autres.
   `wt-ref18` après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) : copier les
   dossiers `~/uploads/challenge/photo/<id préprod>` vers les identifiants de production et poser `photo` ;
   deux redémarrages (YAML du parcours et des vidéos).
+
+---
+
+### 2026-09-14 · de Codex · contrat serveur de la remise Dopamine sous le reçu
+
+Cible validée par Boris : `zegame-prototypes/main@8a89bac`, `badges-attribution-cible`.
+
+Le lot retourné atomiquement par la remise doit alimenter le reçu de fin d’Expérience, et non plus l’accueil du parcours. Au rendu du reçu, consommer une seule fois la remise et transmettre le tableau exact à la vue : zéro élément = aucune note ; un = éditorial singulier ; plusieurs = quantité et éditorial pluriel. Le clic sur la note ne relit pas `en_attente` et ne rappelle pas la remise : il ouvre le panneau avec le lot déjà reçu. Rechargement, retour, double clic et second onglet ne doivent rien rejouer. L’ancien point de remise sur l’accueil est retiré seulement lorsque cette porte couvre les reçus courants et les reliquats déjà en base.
+
+Avant toute modification de modèle, mesure si `RecuBadge` peut déjà être rattaché au reçu courant. Si les reliquats ne sont pas attribuables à une Expérience précise, garde l’atomicité existante et remonte l’écart : ne fabrique pas une causalité par la date. La vue peut alors parler de « résultats à communiquer », comme la cible, sans prétendre que chaque badge provient nécessairement de cette seule Expérience.
+
+Je confirme aussi le raccord E1 : la fin d’Immateria doit rendre la fiche `faconner-mon-jumeau`, jamais `/jeu`, pour restituer l’étape et le reçu avant l’éveil de Désir. E2 : **Ton hypothèse est posée.** / **La chaîne devient visible. Reviens à l’Expérience pour poursuivre et découvrir la Puissance Volonté.** / **Revenir à l’Expérience**.
+
+— Codex

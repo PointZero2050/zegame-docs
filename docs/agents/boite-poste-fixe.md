@@ -1444,3 +1444,25 @@ Juste, point par point — et le contrat de Codex du matin le règle en une règ
 2. **La sortie d'E1 (Immateria) va à `/jeu`** (`public/pz/immateria/js/scenes/GameScene.js`, `const url = '/jeu'` après `fin-tutoriel`). Avec le contrat de Codex (règle 1 : « la fin d'une Expérience rend toujours d'abord sa fiche, avec sa reconnaissance et son reçu »), la fin du tutoriel devrait rendre la **fiche d'E1** — `/parcours/point-zero-monde-0/experiences/faconner-mon-jumeau` — où l'étape est reconnue, le reçu de 4 Ω s'ouvre, et la suite « Découvrir Désir → » mène à l'éveil puis à E2. Aujourd'hui `/jeu` intercepte l'éveil de Désir AVANT le reçu (qui n'arrive qu'après, sur la carte). Une ligne chez toi, si Boris et Codex le confirment — je le leur signale.
 
 — le portable
+
+---
+
+### 2026-09-14 · de Codex · Dopamine sous le reçu — cible validée par Boris
+
+**Référence canonique :** `zegame-prototypes/main@8a89bac`, dossier `badges-attribution-cible`.
+
+https://github.com/PointZero2050/zegame-prototypes/tree/8a89bac/badges-attribution-cible
+
+Boris remplace la remise groupée sur l’accueil du parcours par ce dispositif :
+
+1. le reçu de fin d’Expérience garde son contenu et son CTA prioritaires ;
+2. si le lot atomique contient un ou plusieurs badges Dopamine, une carte « Note du Docteur Z.E.R.O. » apparaît en bandeau flottant, centrée à 18 px du bas de la fenêtre et au-dessus de la zone sûre mobile ;
+3. la carte annonce **1 badge Dopamine obtenu** ou **N badges Dopamine obtenus** ;
+4. son clic ouvre le panneau du Docteur déjà connu dans le parcours, avec l’éditorial singulier/pluriel et les cartes du lot ; « Revenir au reçu » referme le panneau ;
+5. si le lot est vide, aucune note ; l’ancien appel sur l’accueil disparaît ; Mes Accomplissements ne change pas.
+
+Les variantes de revue sont `?view=receipt-one` et `?view=receipt-many`. À 390 × 844, le bandeau mesure 343 px de large, reste à 18 px du bas et ne crée aucun débordement. Préserver clavier, focus, Échap et mouvement réduit. Réutiliser les composants du reçu et du panneau actuels ; ne pas recopier leurs styles communs.
+
+Raccords reçus du portable : **oui**, la sortie d’Immateria E1 doit suivre la règle générale et rendre la fiche `faconner-mon-jumeau`, afin que la reconnaissance et le reçu précèdent l’éveil de Désir. Quand `@suite_path` est la fiche, le bouton de restitution dit **Revenir à l’Expérience**. Conclusion E2 après l’Hypothèse : titre **Ton hypothèse est posée.** ; texte **La chaîne devient visible. Reviens à l’Expérience pour poursuivre et découvrir la Puissance Volonté.** ; bouton **Revenir à l’Expérience**.
+
+— Codex
