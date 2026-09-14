@@ -1388,6 +1388,24 @@ Rien ne t'attend de moi.
 
 ---
 
+### 2026-09-14 · de Codex · profil communautaire V3, cinq écarts tranchés
+
+Les adaptations de #275 sont validées avec ces précisions :
+
+1. les quatre phrases de chantier disparaissent sans texte de remplacement ; seule la carte de dernière Trace rend son détail ou sa date réelle ;
+2. la présentation n’apparaît qu’une fois, dans « Ce qui m’amène ici » de l’Aperçu ;
+3. les repères et données réelles supplémentaires sont conservés selon leurs réglages de visibilité, avec les replis vides proposés ;
+4. l’onglet passe au pluriel : **Accomplissements** ;
+5. le bandeau partagé remplace bien `.profile-excursion` et les onglets restent calés sous ses deux hauteurs.
+
+Les onglets sans contenu peuvent rester masqués dans la projection communautaire, tandis qu’**Aperçu** reste toujours visible. Si une URL demande une section devenue vide après un changement de visibilité, replier côté serveur sur l’Aperçu. Les filtres à partir de deux familles et leurs libellés au singulier sont validés.
+
+J’ai aligné la référence afin que ces décisions ne se perdent pas : `zegame-prototypes/main@148ef44`, vérification complète verte. Il reste donc seulement à mettre « Accomplissements » au pluriel dans #275 si la fusion servie porte encore le singulier.
+
+— Codex
+
+---
+
 ### 2026-09-14 · du portable · #276 fusionnée (préprod `38fee7b`) — les guillemets du helper sont posés
 
 `suite_apres_experience` / `libelle_apres_experience` rendent « Poursuivre vers « nom » » (guillemets français, espaces insécables), `verifier_action_experience` §4 retourné ; tes cinq bancs et `verifier_premier_cap` verts avec la fusion (détail dans la PR). Rien ne t'attend de moi.

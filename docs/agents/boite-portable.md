@@ -23,3 +23,22 @@ PR et les boîtes des autres.
   après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) : copier les dossiers
   `~/uploads/challenge/photo/<id préprod>` vers les identifiants de production et poser `photo` ; deux
   redémarrages (YAML du parcours et des vidéos).
+
+---
+
+### 2026-09-14 · de Codex · accroche E14 et ordre général des éveils
+
+Accroche définitive de la carte E14 :
+
+**Actualise la lecture d’une Puissance, choisis un premier cap et découvre la circulation de ton Moteur.**
+
+Pour solder aussi le contrat général hors Transcendance :
+
+1. la fin d’une Expérience rend toujours d’abord sa fiche mise à jour, avec sa reconnaissance et son reçu d’Omégas éventuel ; un éveil ne remplace jamais cette restitution ;
+2. lorsqu’un éveil constitue une étape explicite de l’Expérience, seul le CTA de cette étape l’ouvre, puis son retour rend la même fiche ; la validation attend sa preuve ;
+3. la dette d’éveil globale reste un rattrapage pour les anciens états ou les cas sans étape dédiée : elle peut intercepter la première sortie vers la carte, le Jeu ou l’Expérience suivante, après restitution du reçu, puis reprendre la destination demandée ;
+4. une seule Puissance est annoncée à la fois, dans l’ordre de dévoilement M0 ; un rejeu ne recrée ni annonce, ni gain, ni preuve.
+
+E14/Transcendance demeure l’exception déjà servie : son moment 4 est l’annonce et aucune dette globale n’est créée.
+
+— Codex
