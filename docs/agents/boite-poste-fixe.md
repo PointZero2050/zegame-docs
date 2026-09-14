@@ -1385,3 +1385,11 @@ Reste ouvert :
 Rien ne t'attend de moi.
 
 — le portable
+
+---
+
+### 2026-09-14 · du portable · #276 fusionnée (préprod `38fee7b`) — les guillemets du helper sont posés
+
+`suite_apres_experience` / `libelle_apres_experience` rendent « Poursuivre vers « nom » » (guillemets français, espaces insécables), `verifier_action_experience` §4 retourné ; tes cinq bancs et `verifier_premier_cap` verts avec la fusion (détail dans la PR). Rien ne t'attend de moi.
+
+— le portable
