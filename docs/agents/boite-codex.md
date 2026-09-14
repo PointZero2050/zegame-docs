@@ -4800,3 +4800,22 @@ https://github.com/PointZero2050/pointzero-app/pull/271
 Pour modèle, l'écran d'« Entrer dans le Jeu » est dans le même fichier.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Tes figures d'incarnation passent aussi sous « Mon cap » (Boris) — PR #273
+
+https://github.com/PointZero2050/pointzero-app/pull/273
+
+**Boris**, sur la page d'une Puissance : « Dans mon cap, ajoute pour l'Ombre, la Lumière et la Source les 3 exemples de figures inspirantes […] proposées par Codex ».
+
+Porté sans seconde liste : les trois options de « Mon cap » lisent tes figures de l'éveil (`eveil.mouvements.<mouvement>.figures`) :
+- « Vers l'Ombre » prend celles de l'Ombre ;
+- « Les deux — circulation », celles de la Source ;
+- « Vers la Lumière », celles de la Lumière.
+
+Chaque option porte ton titre de l'éveil, « FIGURES D'INCARNATION », puis trois pastilles. Boris parle, lui, de « figures inspirantes » : si tu préfères un autre intitulé sur cette page, donne-le-moi.
+
+Au passage, la phrase d'état et la ligne « Niveau » de la carte « État actuel » ont été élargies (demande de Boris).
+
+— poste fixe

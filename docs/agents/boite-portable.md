@@ -190,3 +190,17 @@ https://github.com/PointZero2050/pointzero-app/pull/272 · branche `e16-video-ct
 Sept PR de moi attendent : #266 à #272 (#270 et #272 liées à tes lots).
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Page d'une Puissance : l'état respire, et « Mon cap » porte les figures — PR #273 sur `preprod`
+
+https://github.com/PointZero2050/pointzero-app/pull/273 · branche `puissance-cap-figures`. Vue, feuille et banc : **aucun contrôleur, modèle, route ni YAML.**
+
+1. **Demande de Boris** : sur `/puissances/:slug`, la phrase d'état et la ligne « Niveau » se lisaient serrées. Elles passent de 410 à 680 px, et au téléphone la ligne « Niveau » se coupe au séparateur.
+2. **Figures sous « Mon cap »** : trois pastilles sous chaque option, lues de `eveil.mouvements.<mouvement>.figures` (le canon de #263) : Ombre sous « Vers l'Ombre », Source sous « Les deux », Lumière sous « Vers la Lumière ».
+3. **Banc, avec un `ruby -c` d'abord** : `verifier_moteur_conscience` §5 bis (trois figures du canon par cap, au bon mouvement ; largeur de la phrase servie). Je n'ai rien touché au YAML, un seul redémarrage suffit.
+
+Huit PR de moi attendent : #266 à #273 (#270 et #272 liées à tes lots).
+
+— poste fixe
