@@ -4848,3 +4848,18 @@ Les quatre moments, tes textes mot pour mot, le bandeau v22 et la sortie avec le
 **Toujours à toi** : les textes du rang 2 d'E14 dans le YAML du parcours (voir mon message précédent), à transmettre au portable.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du portable · E14 v2 servie (préprod `91c2456`) : ton contrat, point par point — et trois textes qui t'attendent
+
+**Ton contrat E14 est tenu**, avec la vue du poste fixe (#274) : le choix seul ne prouve rien ; le rang 1 reste l'évaluation achevée ; le rang 2 « Choisir un premier cap » est prouvé par le fait `m0-premier-cap:<slug>` que seul le POST du tutoriel pose, ET un cap valide dans `moteur_caps` pour CE slug — un vieux cap posé depuis le profil sur une autre Puissance n'accomplit rien, un `?etape=4` tapé ramène au moment 3 ; sans évaluation de la Puissance choisie, le questionnaire, puis retour au tutoriel (le slug voyage en session) ; validation globale et 4 Ω attendent l'évaluation ET le cap (les validés d'hier ne régressent pas) ; **Transcendance s'éveille au cap enregistré, durablement, sans sas** (`SequenceDeGestes::EVEILS_PAR_FAIT`) — ni jauge, ni compétence, ni Ω ; le rang 3 reste la lecture accompagnée, et sa porte va maintenant aux Accomplissements (`/mes-accomplissements`, ton §7 — elle allait au Moteur). Ta recette minimale est le banc `verifier_premier_cap_serveur` (55 OK). Reprise, retour, rejeu, deux onglets : mesurés.
+
+**Trois textes à toi, que j'ai posés provisoirement avec TES mots** (je les remplace à réception, deux redémarrages) :
+1. **YAML d'E14, rang 2** (`config/journeys/point-zero-monde-0.yml`) — le poste fixe te les a demandés : `titre`/`cta` « Choisir un premier cap », `accroche` « Un cap n'est pas un score. », `explication` = les trois phrases du moment 1 de ta cible, `sortie` « premier cap enregistré. » ; `revoir` et `reconnaissance` sont de moi, à ta main. Pas de `confirmation` (rang prouvable). Durée 3 min, comme l'ancien rang — 5 rendait E14 « à préciser ».
+2. **Écran de fin de la vidéo d'E16** (`config/experiences_video.yml`, clé `decouvrir-les-formats`) : le bouton « Préciser mon intention » → la Boussole est servi ; `titre` et `texte` t'attendent (le lecteur rend le seul bouton en attendant).
+3. Rien d'autre — mais **une question pour ton contrat d'éveil** : Transcendance devient DUE au POST du cap, avant la validation d'E14 (rang 3 déclaratif). Au retour du tutoriel, la règle d'aujourd'hui annonce donc l'éveil de Transcendance AVANT de rendre la fiche (`revenir` → `eveil_a_annoncer`) — alors que le moment 4 « Relier » vient de dévoiler Transcendance. Deux dévoilements à la suite : ton contrat tranche (le moment 4 vaut-il annonce ?). Je n'ai rien changé à `revenir` ni à `Eveil`, comme convenu.
+
+**Aussi servi** : une facultative ne bloque plus la suivante (Boris, E16) — `Journey#locked_challenge_ids_for` et « prochaine » (la première non faite après la dernière touchée) ; « Passer cette étape » retiré (poste fixe). Si ton canon des facultatives (§ Signe de reconnaissance) dit autre chose de la carte, dis-le.
+
+— le portable

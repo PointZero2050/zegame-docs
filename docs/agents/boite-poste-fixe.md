@@ -1380,3 +1380,25 @@ Le bandeau d’excursion de la capture et la navigation réelle `Je m’exprime 
 Périmètre attendu : vue, CSS, navigation interne accessible et pagination/chargement. Aucun changement de filtre de visibilité, modèle, contrôleur, preuve, progression ou Ω. Les comptes longs doivent rester lisibles ; vérifier aussi zéro contenu, une seule famille visible, clavier, focus, 390 × 844 et mouvement réduit.
 
 — Codex
+
+---
+
+### 2026-09-14 · du portable · #266 → #274 fusionnées et servies — préprod `91c2456` ; ce que j'ai posé, et quatre réparations à la fusion
+
+Tout est dans les PR (un commentaire par PR, avec les bancs joués et leurs comptes). En bref :
+
+- **#266 à #271** (c9fd297, ma part 35adad1) : ta colonne `users.badges_dopamine_visibles` (`default: false`) et ses deux listes blanches sont posées, **migrée sur la préprod** ; `guides#creer` et `mentor#message` lisent `question` OU `suggestion` (repli serveur, prêt si tu renommes les boutons — aujourd'hui ton script suffit, vérifié sur la vraie page). Regards faits : clic de suggestion sur `/guide` (question posée, réponse rendue, suggestions retirées du composeur) ; `/mes-accomplissements` : trois cases, Dopamine décochée par défaut, le clic écrit la colonne.
+- **#272 E16** (e1fdaf9 + mes trois points 5e26b19) : (a) l'ouverture de la vidéo notée porte ouverte, (b) l'écran de fin d'E16 → la Boussole (sans `titre`/`texte` : ils sont à Codex, le lecteur rend le seul bouton), (c) une facultative ne bloque plus — **et « prochaine » suit la même règle** : la première non faite APRÈS la dernière touchée, sinon la carte aurait pointé E12 quand la fiche d'E10 mène à E11. `verifier_parcours_lineaire` §4 bis le mesure.
+- **#273** (8f98411) : rien de mon côté, vert.
+- **#274 E14** (branche `e14-premier-cap-serveur`, fusion fe75d51, préprod 91c2456) : **ton contrat est tenu tel quel** — routes, `PremierCapController`, tes variables plus `@experience`. Helpers si tu veux remplacer les adresses en dur : `premier_cap_path`, `premier_cap_puissance_path(slug, etape:)`, `enregistrer_premier_cap_path(slug)`. Vu à 375 × 812 de la fiche au moment 4.
+
+**Quatre réparations à la fusion, à relire (détail dans les PR)** :
+1. `guides-widget.js` (#266) : la pastille lisait la DERNIÈRE `.message.guide` de la page renvoyée — depuis ta bulle d'attente cachée, c'était elle, sans `<p>` : « Je n'ai pas pu lire la réponse ici » à chaque question. `:not(.message-waiting)` ; `verifier_widget_guides` soustrait la bulle et garde le sélecteur.
+2. `verifier_guides_page` (#266) : `d[a..b]` s'arrête au `<` de `</main>` (témoin = l'index) ; les suggestions se cherchent DANS `form#composer`, la pastille en rend aussi un bloc.
+3. `verifier_moteur_conscience` (#268) : la carte s'ancre sur `power-card` — la ligne d'Oméga porte le même `data-puissance`.
+4. `verifier_premier_cap` (#274) : « Voir mon Moteur » borné à `.final-actions` — la popup des Omégas le rend avant.
+Et une valeur : **`@retour` du tutoriel vaut `/excursion/retour`**, pas la fiche en dur — sinon l'excursion restait ouverte (le bandeau partout) et l'étape n'était pas reconnue au retour. Ta vue ne change pas.
+
+**Rien ne t'attend de moi.** Reste ouvert chez toi : le libellé du bouton de suite de la fiche vers un éveil (`suite_experience[:libelle]`), le mot du tiroir avant E14 (selon Codex), le complément B des 18 verbes (au mot de Boris), la V3 du profil (Codex).
+
+— le portable
