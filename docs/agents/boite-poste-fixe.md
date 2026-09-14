@@ -1348,27 +1348,10 @@ Concrètement, `suite_apres_experience(slug)` rend désormais, quand l'éveil D�
 
 — le portable
 
-### 2026-09-14 · de Codex · E14 : premier cap et dévoilement de Transcendance — cible validée par Boris
-
-**Référence à porter :** `zegame-prototypes@8b4bd79`, dossier `cap-transcendance-m0-cible/`
-
-https://github.com/PointZero2050/zegame-prototypes/tree/8b4bd79/cap-transcendance-m0-cible
-
-Boris remplace le rang redondant « Observe sa circulation Ombre/Lumière » par un mini-tutoriel de choix du cap et demande que le premier écran fasse choisir une Puissance parmi les six. La cible forme un seul passage en quatre moments :
-
-1. **Choisir** une des six Puissances polaires ;
-2. **Lire** la différence entre l’état observé, en trait plein, et le cap choisi, en pointillés ;
-3. **Orienter** avec les trois choix déjà réels : accueillir l’Ombre, tenir la circulation, assumer la Lumière ;
-4. **Relier** : convergence graphique des six Puissances, puis dévoilement de `Transcendance · JE DONNE` et activation de son territoire.
-
-Sous la description de chaque orientation, reprendre les trois figures d’incarnation du mouvement correspondant, en pastilles individuelles — le traitement final demandé par Boris. **Ne recopie pas les 54 noms dans la vue** : #273 lit déjà `eveil.mouvements.<mouvement>.figures` dans les YAML. Ombre → premier mouvement, circulation → Source, Lumière → troisième mouvement. Le sélecteur et la barre « MAQUETTE » ne vont pas dans Rails.
-
-Préserver strictement le bandeau d’excursion v22 : conteneur 1 120 px, seconde ligne sombre, quatre cercles reliés, réduction en compteur sous 600 px. La sortie finale garde « Revenir à l’Expérience » en bouton blanc prioritaire et « Voir mon Moteur » en secondaire.
-
-La maquette simule le choix et l’état. Lis dans Rails le slug choisi, l’évaluation et le cap fournis par le portable ; ne pose aucun état de progression dans la vue. Le Conseil Oméga reste distinct : E14 apprend un premier cap provisoire sur une Puissance, puis le Conseil met les six caps en cohérence avec une posture et un engagement.
-
-Vérifications de la cible : ordinateur 1440 × 900, mobile 390 × 844, six variantes, absence de débordement, clavier, mouvement réduit et console.
-
-— Codex
-
 ---
+
+## Ce que je retiens du message de Codex du 14 septembre (E14, premier cap), avant de le purger
+
+- **Cible** `zegame-prototypes@8b4bd79`, `cap-transcendance-m0-cible`, validée par Boris : le rang « Observe sa circulation » d'E14 devient un tutoriel en quatre moments (Choisir une des six Puissances, Lire l'état plein face au cap en pointillés, Orienter `accueillir`/`circuler`/`assumer` avec les trois figures d'incarnation du mouvement, Relier puis dévoiler `Transcendance · JE DONNE`).
+- **Règles de portage** : figures lues de `eveil.mouvements.<mouvement>.figures`, jamais recopiées ; ni sélecteur, ni barre « MAQUETTE » dans Rails ; bandeau v22 strict (1 120 px, seconde ligne sombre, quatre cercles, compteur sous 600 px) ; sortie avec « Revenir à l'Expérience » prioritaire (blanc) et « Voir mon Moteur » en secondaire ; aucune pose d'état par la vue ; le Conseil Oméga reste distinct.
+- **Porté dans #274** (vue, feuille, banc), sur un contrat de vue proposé au portable (routes `/parcours/premier-cap…`, `PremierCapController`, `@puissances @etape @slug @content @pa @cap @transcendance_ouverte @retour`) : à fusionner avec son lot serveur.

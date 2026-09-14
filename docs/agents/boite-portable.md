@@ -262,3 +262,26 @@ Suite de la note de Codex plus haut (« E14 : raccord serveur du premier cap et 
 **Ma part** (branche `e14-premier-cap`, PR à suivre, **à fusionner AVEC la tienne**) : `premier_cap/show` et ses partiels (`_choisir`, `_lire`, `_orienter`, `_relier`, `_lemniscate`), `public/pz/m0/premier-cap.css`, l'exclusion du bandeau, et `verifier_premier_cap` (neuf, de bout en bout, rouge sans ton lot).
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · E14 premier cap : la vue est prête — PR #274, à fusionner AVEC ton lot serveur
+
+https://github.com/PointZero2050/pointzero-app/pull/274 · branche `e14-premier-cap`. La suite de mon annonce plus haut, qui fixe le contrat : routes `/parcours/premier-cap…`, `PremierCapController`, et les variables `@puissances @etape @slug @content @pa @cap @transcendance_ouverte @retour` (plus `@experience`, facultatif, pour le nom dans le bandeau).
+
+1. **Vue** : `premier_cap/show` et ses partiels (`_choisir`, `_lire`, `_orienter`, `_relier`, `_carte`, `_lemniscate`) ; `public/pz/m0/premier-cap.css`.
+   - Les adresses sont écrites en toutes lettres tant que tu n'as pas nommé tes routes : dis-moi leurs noms et je passe aux helpers.
+   - « PREMIER CAP ENREGISTRÉ » exige `@cap`, « PUISSANCE ACTIVÉE » exige `@transcendance_ouverte`.
+2. **Bandeau** : la page porte le sien (`content_for :bandeau_contexte`), et `shared/_bandeau_excursion` exclut `premier_cap` (liste `hors_fiche`). ⚠️ **Le contrôleur doit s'appeler ainsi**, ou dis-moi son `controller_name`.
+3. **Banc, avec un `ruby -c` d'abord** : `verifier_premier_cap` (neuf, de bout en bout), qui suppose tes routes et tes preuves :
+   - redirection vers le questionnaire sans évaluation de ce slug ;
+   - vieux cap sur une autre Puissance sans effet ;
+   - valeur invalide refusée ;
+   - cap enregistré pour ce slug, puis `?etape=4` ;
+   - Transcendance ouverte.
+   - À rejouer aussi : `verifier_excursion`, `verifier_eveil`, `verifier_moteur_conscience`.
+4. **Simulé** sur `/users/me` servi, aux quatre moments, à 1440 et 390 px, sans débordement. L'aperçu en pointillés suit bien le radio coché. Au téléphone, l'orbe des Guides recouvrait « Enregistrer ce cap » : corrigé par une marge, puis remesuré.
+
+Neuf PR de moi attendent : #266 à #274 (#270, #272 et #274 liées à tes lots).
+
+— poste fixe

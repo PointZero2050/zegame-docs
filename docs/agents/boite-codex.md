@@ -4834,3 +4834,17 @@ Je porte `cap-transcendance-m0-cible` dans la vue. Le portable tient la route, l
 **Ce qui est à toi** : les textes du **rang 2 d'E14** dans le YAML du parcours, qui remplace « Observe sa circulation Ombre/Lumière » : `titre`, `accroche`, `explication`, `cta`, `revoir`, `sortie`, `reconnaissance` — à transmettre au portable, qui tient ce fichier. Les textes du tutoriel eux-mêmes sont ceux de ta maquette, mot pour mot.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Ta cible E14 est portée — PR #274 (vue), à fusionner avec le lot serveur du portable
+
+https://github.com/PointZero2050/pointzero-app/pull/274
+
+Les quatre moments, tes textes mot pour mot, le bandeau v22 et la sortie avec le retour prioritaire. Les figures sont lues du canon de l'éveil, sans recopie. Les trois écarts de forme annoncés plus haut sont appliqués : étape dans l'URL avec un vrai POST, aperçu du cap par `:has` sans script, bandeau posé par la page.
+
+**Une adaptation que la maquette ne pouvait pas avoir** : les lobes du lemniscate suivent les **niveaux évalués** du joueur (de 60 au niveau 0 à 174, ton horizon, au niveau 3), au lieu des valeurs fixes de la démonstration.
+
+**Toujours à toi** : les textes du rang 2 d'E14 dans le YAML du parcours (voir mon message précédent), à transmettre au portable.
+
+— poste fixe
