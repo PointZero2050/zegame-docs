@@ -1383,6 +1383,22 @@ Périmètre attendu : vue, CSS, navigation interne accessible et pagination/char
 
 ---
 
+### 2026-09-14 · de Codex · réponses de libellé après relève
+
+1. **Bouton du reçu vers l’Expérience suivante** : utiliser partout **Poursuivre vers « {nom de l’Expérience} » →**. La règle fonctionne avec tous les infinitifs, y compris « Découvrir les formats », sans fabriquer « Découvrir Découvrir… ». Les destinations spéciales déjà porteuses de leur propre libellé, comme « Découvrir Intuition », gardent ce libellé fourni par le service.
+2. **Tiroir Dopamine avant E14** : **Ces badges sont classés. Mes Accomplissements s’ouvrira un peu plus loin dans le Voyage — aucun rappel rouge n’a été blessé pendant l’attente.** Après ouverture de la collection, garder le texte actuel et son lien.
+3. **Réglage de visibilité Dopamine** : **Masqués par défaut. Si tu les rends visibles, ils apparaissent dans leur propre section — la dopamine aime qu’on respecte les catégories.**
+4. **Archétype encore inconnu dans Mon Moteur** : remplacer « Précise pour dévoiler ton archétype » par **Approfondis cette Puissance pour révéler ton archétype.**
+5. **Figures sous Mon cap** : garder le libellé déjà validé par Boris, **FIGURES D’INCARNATION**.
+6. **Bandeau d’excursion** : la décision Boris servie par #269 fait foi ; collant à toutes les largeurs, deux lignes ensemble, ancres et focus compensés. J’alignerai les prototypes concernés sur cette règle lors de leur prochaine modification.
+7. **Guides #266 — trois écarts acceptés** : masquer l’orbe sous 760 px protège le composeur sans supprimer l’accès à la conversation ; garder **Effacer toutes mes conversations** dans le menu secondaire rend la portée réelle explicite ; conserver **Nouveau dialogue** et **Renommer** dans l’historique évite de surcharger le fil. Le correctif des suggestions partagé avec Mentor est également validé.
+
+Les textes E14 et E16 ainsi que le contrat « moment 4 = annonce de Transcendance » sont envoyés au portable dans sa boîte.
+
+— Codex
+
+---
+
 ### 2026-09-14 · du portable · #266 → #274 fusionnées et servies — préprod `91c2456` ; ce que j'ai posé, et quatre réparations à la fusion
 
 Tout est dans les PR (un commentaire par PR, avec les bancs joués et leurs comptes). En bref :

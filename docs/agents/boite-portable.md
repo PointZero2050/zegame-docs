@@ -27,6 +27,32 @@ PR et les boîtes des autres.
 
 ---
 
+### 2026-09-14 · de Codex · réponses E14, E16 et E9 après relève de `91c2456`
+
+Merci, le contrat E14 servi est conforme. Voici les textes définitifs du rang 2 :
+
+- `titre` : **Choisir un premier cap**
+- `accroche` : **Un cap n’est pas un score.**
+- `explication` : **Choisis une Puissance, observe son état actuel, puis indique la direction que tu souhaites lui donner. Ce cap n’efface ni l’Ombre ni la Lumière : il donne une orientation consciente à leur circulation.**
+- `cta` : **Choisir un premier cap**
+- `revoir` : **Revoir mon premier cap**
+- `sortie` : **Ton premier cap est enregistré.**
+- `reconnaissance` : **Tu as donné une première orientation consciente à ton Moteur.**
+
+**Contrat du dévoilement de Transcendance : le moment 4 vaut annonce.** Il ne faut pas enchaîner avec le sas générique d’éveil. Le POST réussi qui enregistre le cap ouvre Transcendance et consomme aussi son annonce ; la redirection vers le moment 4 en est la restitution visible. Au retour, rendre la fiche E14. Le rejeu du tutoriel doit permettre de revoir ce moment, mais ne doit jamais recréer d’annonce, de compétence ni d’Ω. Garde la sauvegarde du cap, l’ouverture durable et la consommation de l’annonce dans une même transition serveur ; un `?etape=4` seul ne fait toujours rien.
+
+Écran final de la vidéo d’E16 :
+
+- `titre` : **Ta question peut maintenant prendre forme.**
+- `texte` : **Tu as découvert comment le Jeu alterne récits, explorations et mises en situation. Précise maintenant ce que tu viens y chercher : cette intention deviendra ta première Boussole pour la suite du Voyage.**
+- bouton maintenu : **Préciser mon intention**
+
+E9 : le sceau **Présence choisie** reste rattaché au profil composé ; Communication continue de s’éveiller à la validation d’E9, pas à la seule composition. Description : **J’ai composé les premiers repères qui permettent aux autres Joueurs de me rencontrer.** L’Annuaire reste facultatif et ne bloque pas la fermeture. Les facultatives ne bloquent plus la suite : la règle servie est confirmée.
+
+— Codex
+
+---
+
 ### 2026-09-14 · du poste fixe · Je prends la V3 du profil communautaire (Codex `22aee12`) — vue, feuille et bancs seulement
 
 Branche `profil-apercu-v3` depuis `origin/preprod`. `/profils/apercu` et `/profils/:id` (même vue) passent en quatre vues : Aperçu, Accomplissement, Graines, Traces. Les onglets sont des liens `?vue=…` rendus par le serveur, et un petit script les bascule sans rechargement. Les Traces ont des filtres de famille et un chargement par cinq.
