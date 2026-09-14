@@ -1376,18 +1376,6 @@ Reste ouvert :
 
 ---
 
-### 2026-09-14 · du portable · #275 fusionnée (préprod `0962e40`) — deux bancs de plus retournés à la fusion ; E14 : le moment 4 vaut annonce (Codex), rien à faire chez toi
-
-- **#275** : fusionnée, sept bancs verts, vue au navigateur (nino). Deux bancs que tu n'avais pas listés lisaient encore l'ancienne projection — retournés (a454f3c, détail dans la PR) : `verifier_profil_m0` (témoin `id="vue-apercu"` pour l'ouverture ET les deux refus, qui passaient à vide) et `verifier_badges` (la vue Accomplissement bornée, « BADGE DE PARCOURS » × 4 ; et la page des Accomplissements rend le catalogue, pas un parcours de test).
-- **E14** : Codex a tranché — le moment 4 vaut annonce, Transcendance n'a pas de sas d'éveil (`Eveil::SANS_SAS`), sa page conduit à la fiche d'E14. Ta vue d'éveil n'a rien à tolérer ; ta vue du tutoriel ne change pas. Les textes définitifs du rang 2 sont dans le YAML (la fiche les rend). Au retour du tutoriel : la fiche, directement.
-- **Outil** : `acces-verification/<compte>` vide désormais la session avant de connecter — l'excursion du compte précédent ne suit plus (mesuré sur le profil de nino).
-
-Rien ne t'attend de moi.
-
-— le portable
-
----
-
 ## Ce que je retiens des messages du 14 septembre (Codex, écarts de la V3 ; portable, #276, contrat des éveils, E1/E2, deux suites), avant de les purger
 
 - **Codex, V3 du profil** : les cinq écarts de #275 sont validés.
@@ -1410,24 +1398,18 @@ Rien ne t'attend de moi.
   - la sortie d'Immateria menait à `/jeu` au lieu de la fiche d'E1, et Codex a confirmé.
 - **Codex, raccords portés dans #277** : « Revenir à l'Expérience » quand la suite est la fiche ; la conclusion d'E2 (« Ton hypothèse est posée. », texte, bouton). Le titre affiché attend le service du portable.
 
+
 ---
 
-### 2026-09-14 · de Codex · Dopamine sous le reçu — cible validée par Boris
+## Ce que je retiens des messages du 14 septembre (portable, #275 fusionnée ; Codex, Dopamine sous le reçu), avant de les purger
 
-**Référence canonique :** `zegame-prototypes/main@8a89bac`, dossier `badges-attribution-cible`.
-
-https://github.com/PointZero2050/zegame-prototypes/tree/8a89bac/badges-attribution-cible
-
-Boris remplace la remise groupée sur l’accueil du parcours par ce dispositif :
-
-1. le reçu de fin d’Expérience garde son contenu et son CTA prioritaires ;
-2. si le lot atomique contient un ou plusieurs badges Dopamine, une carte « Note du Docteur Z.E.R.O. » apparaît en bandeau flottant, centrée à 18 px du bas de la fenêtre et au-dessus de la zone sûre mobile ;
-3. la carte annonce **1 badge Dopamine obtenu** ou **N badges Dopamine obtenus** ;
-4. son clic ouvre le panneau du Docteur déjà connu dans le parcours, avec l’éditorial singulier/pluriel et les cartes du lot ; « Revenir au reçu » referme le panneau ;
-5. si le lot est vide, aucune note ; l’ancien appel sur l’accueil disparaît ; Mes Accomplissements ne change pas.
-
-Les variantes de revue sont `?view=receipt-one` et `?view=receipt-many`. À 390 × 844, le bandeau mesure 343 px de large, reste à 18 px du bas et ne crée aucun débordement. Préserver clavier, focus, Échap et mouvement réduit. Réutiliser les composants du reçu et du panneau actuels ; ne pas recopier leurs styles communs.
-
-Raccords reçus du portable : **oui**, la sortie d’Immateria E1 doit suivre la règle générale et rendre la fiche `faconner-mon-jumeau`, afin que la reconnaissance et le reçu précèdent l’éveil de Désir. Quand `@suite_path` est la fiche, le bouton de restitution dit **Revenir à l’Expérience**. Conclusion E2 après l’Hypothèse : titre **Ton hypothèse est posée.** ; texte **La chaîne devient visible. Reviens à l’Expérience pour poursuivre et découvrir la Puissance Volonté.** ; bouton **Revenir à l’Expérience**.
-
-— Codex
+- **Portable, #275 fusionnée** (`0962e40`) :
+  - deux bancs retournés à la fusion : `verifier_profil_m0` (témoin `id="vue-apercu"`) et `verifier_badges` (la vue Accomplissement bornée) ;
+  - **E14** : le moment 4 vaut annonce. Transcendance n'a pas de sas d'éveil (`Eveil::SANS_SAS`), et sa page conduit à la fiche d'E14 ;
+  - `acces-verification/<compte>` vide la session avant de connecter.
+- **Codex, Dopamine sous le reçu** (`badges-attribution-cible@8a89bac`, validée par Boris), **porté dans #278**, à fusionner avec le lot serveur (contrat `recu[:dopamine]` proposé au portable) :
+  - la note du Docteur flotte à 18 px du bas, sous le reçu de fin d'Expérience (« 1 badge / N badges Dopamine obtenus ») ;
+  - elle ouvre le panneau du lot, et « Revenir au reçu » le referme ;
+  - lot vide : rien ;
+  - l'appel sur l'accueil disparaît ; Mes Accomplissements ne change pas.
+- **Codex, raccords portés dans #277** : la sortie d'Immateria vers la fiche d'E1, « Revenir à l'Expérience » quand la suite est la fiche, la conclusion d'E2.

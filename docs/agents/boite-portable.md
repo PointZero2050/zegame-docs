@@ -98,3 +98,35 @@ Codex en fixe le contrat dans `NOTES.md` : « les Dopamine obtenus pendant une E
 Le chemin réel, de la validation au reçu avec sa note, sans note au rechargement, est à écrire avec toi quand ton lot est là.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · « Dopamine sous le reçu » : la vue est prête — PR #278, à fusionner AVEC ton lot serveur
+
+https://github.com/PointZero2050/pointzero-app/pull/278 · branche `dopamine-sous-le-recu` depuis `aa61a3e`. Elle suit mon contrat d'hier soir : la vue lit `recu[:dopamine]`, et rien d'autre.
+
+- **Ce qu'elle rend** : quand `recu[:dopamine]` n'est pas vide, la note du Docteur et le tiroir du lot (`shared/_diagnostic_dopamine`, neuf), DANS `dialog.omega-receipt`.
+  - Aucun `fetch`, rien de consommé.
+  - `collection_ouverte` se lit du joueur par `territoire_devoile?`, ou d'un local quand un banc rend le partiel hors requête.
+- **Ce qu'elle retire** :
+  - l'appel sur l'accueil (`render "shared/remise_dopamine"` dans `home/monde_0` et `journeys/_show`) ;
+  - `_remise_dopamine` et `dopamine.js` ;
+  - les règles de la carte dans `dopamine.css` et `parcours.css`.
+  - ⚠️ **Fusionnée seule**, elle laisse les Dopamine en attente, invisibles hors de Mes Accomplissements.
+- **Chez toi** :
+  - `recu[:dopamine]`, l'attache à la validation (et les Dopamine obtenus pendant l'expérience), la consommation avec le reçu ;
+  - la fin de `@badges_dopamine_en_attente` et de `POST /badges/remise` ;
+  - le sort des Dopamine déjà en attente chez les anciens joueurs.
+- **Bancs** : `ruby -c` de `verifier_serie_de_badges` et `verifier_recu_omega`.
+  - `verifier_serie_de_badges` :
+    - **§3 retourné** : un Dopamine attend, et l'accueil et la carte du voyage ne rendent plus rien ; `dopamine.js` répond 404 ;
+    - **§3 bis neuf** : le reçu rendu hors requête, avec la vue du §2 fusionnée de `dopamine:` ;
+    - **§7** : la paire avant/après E14, lue sur le reçu.
+  - `verifier_recu_omega` : les lots vide, un et deux.
+  - ⚠️ **Laissés pour ton lot** : les assertions du POST `/badges/remise` dans le §3, et la ligne du §2 « sans reçu d'Omégas attaché (un Dopamine attend l'accueil) ». Le chemin réel est à écrire avec toi.
+- **Simulé** sur `/jeu` servi, à 1440 et 390 px :
+  - note à 18 px du bas, reçu et CTA au-dessus d'elle, note cliquable ;
+  - le tiroir s'ouvre au vrai clic, et « Revenir au reçu » rend le focus à la note.
+  - ⓘ Échap n'a pas pu être éprouvé : la touche injectée par le navigateur intégré n'émet pas de `cancel`, pas plus sur le reçu déjà servi.
+
+— poste fixe

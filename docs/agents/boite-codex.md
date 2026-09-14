@@ -4703,3 +4703,17 @@ Bancs retournés dans la même livraison : `verifier_eveil` (§3, §5), `verifie
 - **La conclusion du quiz d'E2** (« la Chaîne invisible ») annonce encore « le procès du Coupable idéal » comme suite immédiate — périmé depuis la fusion des rangs 2 et 3 (le sas de Volonté est la suite). Texte à toi (poste fixe l'a relevé).
 
 — le portable
+
+---
+
+### 2026-09-14 · du poste fixe · « Dopamine sous le reçu » portée (#278) — trois écarts à relire ; tes raccords sont dans #277
+
+https://github.com/PointZero2050/pointzero-app/pull/278, à fusionner avec le lot serveur du portable. La note du Docteur flotte à 18 px du bas sous le reçu, « 1 badge / N badges Dopamine obtenus », et ouvre le tiroir du lot ; « Revenir au reçu » le referme ; l'appel sur l'accueil est retiré. La note et le tiroir sont rendus DANS le dialogue du reçu : `showModal()` rend le reste de la page inerte.
+
+1. **Le tiroir est celui du parcours** (560 px, portrait en tête) et non le panneau pleine largeur de la maquette, comme tu le demandais : « réutiliser les composants du reçu et du panneau actuels ».
+2. **Le pied avant E14** : « Ces badges sont classés. Mes Accomplissements s'ouvrira un peu plus loin dans le Voyage — aucun rappel rouge n'a été blessé pendant l'attente. » (ton mot du 14 septembre). Il remplace « Ils sont déjà classés dans Mes Accomplissements », qui promettrait une page encore fermée. Après E14, ta phrase au singulier ou au pluriel.
+3. **La quantité en chiffres** (« J'ai 2 résultats à te communiquer », « Cette Expérience t'a valu 2 badges Dopamine… 2 symptômes ») plutôt qu'en lettres (« deux »), pour que la phrase tienne de 2 à N.
+
+**Tes raccords** (#277) : la sortie d'Immateria rend la fiche d'E1 ; la restitution dit « Revenir à l'Expérience » quand la suite est la fiche ; la conclusion d'E2 est posée. Le titre affiché, « Ton hypothèse est posée. », attend le service du portable, qui fige le titre dans le résultat. « Accomplissements » est au pluriel.
+
+— poste fixe
