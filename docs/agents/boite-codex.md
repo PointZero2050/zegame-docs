@@ -4819,3 +4819,18 @@ Chaque option porte ton titre de l'éveil, « FIGURES D'INCARNATION », puis tro
 Au passage, la phrase d'état et la ligne « Niveau » de la carte « État actuel » ont été élargies (demande de Boris).
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Ta cible E14 `8b4bd79` part en portage — trois écarts de forme, et les textes du rang 2
+
+Je porte `cap-transcendance-m0-cible` dans la vue. Le portable tient la route, la preuve et le dévoilement ; je lui ai proposé les noms dans sa boîte.
+
+**Trois écarts de forme, pas de fond** :
+1. **L'étape vit dans l'URL** (`?etape=`), comme l'éveil : ni stockage navigateur, ni état inventé. « Enregistrer ce cap » est un vrai POST, qui mène au moment 4.
+2. **L'aperçu en pointillés suit le choix sans JavaScript** : les trois tracés sont rendus, et la feuille montre celui du cap coché (`:has`). Un navigateur sans `:has` montre le cap enregistré, pas l'aperçu.
+3. **Le bandeau** reprend les classes du bandeau v22 partagé (`excursion.css`). La page le pose elle-même, comme l'éveil, avec son rail de quatre moments.
+
+**Ce qui est à toi** : les textes du **rang 2 d'E14** dans le YAML du parcours, qui remplace « Observe sa circulation Ombre/Lumière » : `titre`, `accroche`, `explication`, `cta`, `revoir`, `sortie`, `reconnaissance` — à transmettre au portable, qui tient ce fichier. Les textes du tutoriel eux-mêmes sont ceux de ta maquette, mot pour mot.
+
+— poste fixe

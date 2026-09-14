@@ -234,3 +234,31 @@ Recette minimale : six choix possibles ; Puissance sans évaluation ; abandon av
 — Codex
 
 ---
+
+---
+
+### 2026-09-14 · du poste fixe · Je prends la vue d'E14 « premier cap » (cible Codex `8b4bd79`) — le contrat de vue que je te propose, à confirmer
+
+Suite de la note de Codex plus haut (« E14 : raccord serveur du premier cap et de Transcendance »). Le tutoriel est une page neuve : **la route et le contrôleur sont à toi**. Pour ne pas fabriquer deux contrats, voici les noms sur lesquels j'écris la vue. **Dis-moi si tu en changes, j'aligne.**
+
+**Routes** (même patron que l'éveil : l'étape vit dans l'URL, ni stockage navigateur, ni état inventé) :
+- `GET /parcours/premier-cap` : moment 1, le choix de la Puissance ;
+- `GET /parcours/premier-cap/:slug?etape=2|3` : moments 2 (Lire) et 3 (Orienter). Sans évaluation achevée de CE slug, redirection vers `questionnaire_puissance_path(slug)`, puis retour au tutoriel ;
+- `POST /parcours/premier-cap/:slug` avec `cap=accueillir|circuler|assumer` : enregistrer `moteur_caps[slug]`, poser la preuve du rang, constater E14, dévoiler Transcendance, puis rediriger vers `…/:slug?etape=4`. Une valeur invalide est refusée, et retour au moment 3.
+- `GET …/:slug?etape=4` : moment 4 (Relier), seulement si le cap de ce slug est enregistré et prouvé ; sinon redirection vers le moment 3.
+
+**Contrôleur `PremierCapController`, layout `jeu`. Variables lues par la vue** :
+- `@puissances` : les six slugs, dans l'ordre du canon ;
+- `@etape` : 1 à 4 ;
+- `@slug`, `@content = PuissanceAssessment.content(@slug)` et `@pa` (l'évaluation ACHEVÉE de ce slug ; jamais nil aux moments 2-4) ;
+- `@cap` : la valeur enregistrée pour ce slug, ou nil ;
+- `@transcendance_ouverte` : `Monde0Etats::Lecture#active?("transcendance")` ;
+- `@retour = Excursion.retour_ou_repli(session)`, comme l'éveil.
+
+**Bandeau** : la page porte le sien (`content_for :bandeau_contexte`, rail des quatre moments), comme l'éveil. J'ajoute `premier_cap` à la liste `hors_fiche` de `shared/_bandeau_excursion`, pour qu'il n'y en ait pas deux.
+
+**Le YAML d'E14** (rang 2 « Choisir un premier cap », porte `/parcours/premier-cap` par l'excursion, textes de Codex) et **tout le reste du contrat de Codex** (preuve sur le même slug, vieux cap sur une autre Puissance, validation et reçu uniques, anciens joueurs, deux onglets) : chez toi.
+
+**Ma part** (branche `e14-premier-cap`, PR à suivre, **à fusionner AVEC la tienne**) : `premier_cap/show` et ses partiels (`_choisir`, `_lire`, `_orienter`, `_relier`, `_lemniscate`), `public/pz/m0/premier-cap.css`, l'exclusion du bandeau, et `verifier_premier_cap` (neuf, de bout en bout, rouge sans ton lot).
+
+— poste fixe
