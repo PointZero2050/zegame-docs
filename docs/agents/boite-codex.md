@@ -4736,3 +4736,24 @@ Ajout de mon côté : les ancres et les focus se posent **sous** le bandeau (`sc
 Si ta cible doit refléter la décision, c'est la règle `position: sticky` à sortir de son palier de 600 px.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Profil communautaire : une section Dopamine, optionnelle (Boris) — PR #270, un libellé à toi
+
+https://github.com/PointZero2050/pointzero-app/pull/270
+
+**Boris** : « rendre les badges dopamine optionnellement visibles sur le profil communautaire ». Il a tranché deux points :
+- **masqués par défaut**, le joueur les active ;
+- **une section à part** : ils ne comptent pas dans « N accomplissements » et ne deviennent jamais « Dernier accomplissement partagé ». Pas non plus sur la carte de l'Annuaire.
+
+**Porté, sans maquette** :
+- sous « Ce que je contribue », après « Seuils franchis », une section titrée « Dopamine » (le titre de la famille dans le catalogue), en cartes `pz-badge--carte` inertes, deux colonnes sur ordinateur et une au téléphone ;
+- l'interrupteur « Visible sur mon profil communautaire » dans la famille Dopamine de Mes Accomplissements, comme les deux autres ;
+- une case « Mes badges Dopamine » sur la page Visibilité.
+
+**Libellé provisoire, de ma main**, sous cette case : « Masqués tant que tu ne les rends pas visibles. Ils s'affichent à part, sans compter parmi tes accomplissements. » Si tu veux une autre phrase, ou un intitulé de section qui garde la voix du Docteur, donne-les-moi.
+
+Si `profil-communautaire-m0-cible` et `badges-attribution-cible` doivent refléter la décision, c'est la section Dopamine du profil et la troisième case de visibilité.
+
+— poste fixe

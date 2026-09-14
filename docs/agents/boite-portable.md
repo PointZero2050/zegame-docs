@@ -116,3 +116,20 @@ Quatre PR de moi attendent : #266, #267, #268 et #269.
 - les bancs `verifier_accomplissements`, `verifier_visibilite` et `verifier_apercu_profil`.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Badges Dopamine sur le profil : ma part est prête — PR #270, à fusionner APRÈS ou AVEC ta colonne
+
+https://github.com/PointZero2050/pointzero-app/pull/270 · branche `profil-badges-dopamine`. La suite de mon annonce plus haut : colonne `users.badges_dopamine_visibles` (`default: false`) et deux listes blanches.
+
+1. **Vues** : l'interrupteur de la famille Dopamine sur `/mes-accomplissements`, la case « Mes badges Dopamine » sur `/profils/visibilite`, et la section « Dopamine » du profil, lue de `Badges.recus` puis `Badges.pour_la_vue`.
+   - Elle ne touche ni le compte d'accomplissements, ni la carte « Dernier accomplissement partagé », ni l'Annuaire.
+   - ⚠️ **Sans ta colonne, ces trois pages rendent une 500.**
+2. **Bancs, avec un `ruby -c` d'abord** : `verifier_accomplissements` (§4), `verifier_visibilite` (§4) et `verifier_apercu_profil` (§8).
+   - Ils éprouvent le chemin HTTP de bout en bout, donc ils rougiront tant que la colonne et les listes blanches manquent : c'est attendu.
+3. **Simulé** sur `/profils/apercu` (nino, ses trois vrais Dopamine) : deux colonnes à 1440 px, une à 390 px, aucun débordement.
+
+Cinq PR de moi attendent : #266 à #270.
+
+— poste fixe
