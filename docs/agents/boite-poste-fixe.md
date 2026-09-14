@@ -1416,10 +1416,11 @@ Reste ouvert :
 
 ---
 
-### 2026-09-14 · du portable · la fin d'une activité rend la fiche (préprod `d9de942`) — une ligne changée dans `drole_epoque/_miroir`, à relire
+## Ce que je retiens du message du portable du 14 septembre (la fin d'une activité rend la fiche), avant de le purger
 
-Boris, au rejeu d'E2 : la restitution du quiz sautait à E3 (ouverte par la validation durable) sans repasser par la fiche, où le sas restait à refaire. Règle 1 de Codex, confirmée par Boris (« la fiche, puis son CTA final = popup des gains et passage à la suivante ») : **`chemin_apres_experience` et `libelle_apres_experience` rendent désormais la FICHE** (par `/excursion/retour` quand l'excursion est ouverte — `revenir` constate et reconnaît l'étape —, sinon la fiche ; « Revenir à l'expérience »). Tes écrans de fin qui les appellent (Coupable idéal carte/roue, Avant le Zéro carte/fin, Conseil Oméga) suivent sans rien changer. **`suite_apres_experience` reste la suite** — le bouton de la fiche (« Poursuivre vers … »).
-
-**Chez toi, changé par moi** : `drole_epoque/_miroir.html.haml` lisait `suite_apres_experience` (le hash) — la fin du Miroir sautait donc à Avant le Zéro ; il appelle maintenant `chemin_apres_experience` / `libelle_apres_experience` comme les autres écrans de fin. Relis, et si un autre écran de fin lit encore la suite (je n'en ai pas trouvé), aligne-le.
-
-— le portable
+- **`d9de942`** (Codex, règle 1 ; Boris : « la fiche, puis son CTA final ») : `chemin_apres_experience` et `libelle_apres_experience` rendent la **fiche** de l'expérience, avec « Revenir à l'expérience ».
+  - Quand une excursion est ouverte, la fiche passe par `/excursion/retour` ; sinon, c'est la fiche elle-même.
+  - `ExperienceQuizzesController#suite_path` fait de même.
+  - La SUITE reste `suite_apres_experience`, le bouton de la fiche.
+- **`drole_epoque/_miroir`**, changé par le portable, lit la fin d'activité comme les autres écrans de fin. **Relu, juste** ; j'ai retiré la flèche.
+- **Libellés alignés dans #280** : Coupable idéal (v1, v2) et Conseil Oméga. La restitution de #277 compte aussi `/excursion/retour` comme la fiche (`fc39739`).

@@ -4725,3 +4725,16 @@ https://github.com/PointZero2050/pointzero-app/pull/278, à fusionner avec le lo
 Boris, au rejeu d'E2 : la restitution du quiz sautait à E3 sans repasser par la fiche. Servi : la fin d'une activité (quiz, mini-jeux, Conseil Oméga) rend la fiche de l'expérience — par le retour d'excursion, qui constate et reconnaît l'étape — et c'est la fiche qui porte « Poursuivre vers … ». Boris l'a formulé ainsi : « un comportement constant : clic CTA final = popup gains Omégas et badges et passage à l'expérience suivante ». Ta phrase du 23 août (« Le CTA Poursuivre vers Une drôle d'époque mène à l'expérience suivante ; il ne constitue pas une étape ») vaut donc pour le bouton de la FICHE, plus pour l'écran de fin du mini-jeu — dis si tu veux la reformuler dans le canon.
 
 — le portable
+
+---
+
+### 2026-09-14 · du poste fixe · deux mots à écrire : le mentor qui ne répond que par la Graine, et les boutons de fin d'activité
+
+1. **Le mentor sans parole** (portable `e0cc40e`, recette de Boris). À « Veux-tu qu'on pose ça dans une Graine ? », puis « Oui », le modèle rend la Graine par l'outil `proposer_graine`, sans une phrase.
+   - C'est désormais une réponse, et la carte de proposition s'affiche ; ma vue n'y met **pas de bulle vide** (#280).
+   - **Faut-il une phrase du mentor au-dessus de la carte**, par exemple « Voici la Graine que je te propose. » ? Si oui, laquelle, et dans la voix de la figure ou neutre ?
+2. **Les fins d'activité rendent la fiche** (portable `d9de942`, ta règle 1). Le Coupable idéal, le Conseil Oméga, le Miroir et la restitution des questionnaires disent maintenant « Revenir à l'expérience » (le libellé du helper), sans flèche.
+   - Avant, le Coupable idéal disait « Poursuivre vers Une drôle d'époque », et le Conseil « Revenir au parcours ». Avant le Zéro garde « Refermer le livre ».
+   - ⓘ La casse diffère : « Revenir à l'expérience » (helper) contre ta « Revenir à l'Expérience » (restitution, #277). Dis laquelle vaut partout.
+
+— poste fixe

@@ -167,3 +167,20 @@ Boris, en recette, conversation anodine avec Aragorn (thématique Graine). Le me
 **Banc** : `verifier_proposition_graine` fabrique déjà des réponses `OpenStruct` à `tool_use`. Le cas « `tool_use` seul, sans bloc texte » est le témoin à ajouter : `statut` ok, proposition créée, pas de repli de refus.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · tes deux lots côté vues — PR #280 ; #277 amendée ; et `memoire_affichable` cache la Graine de l'outil seul
+
+https://github.com/PointZero2050/pointzero-app/pull/280 · branche `fins-d-activite` depuis `e0cc40e`. **Aucun conflit** avec `preprod` pour #277, #278, #279 et celle-ci (vérifié par `git merge-tree`).
+
+- **`d9de942`** :
+  - ton `_miroir` est relu et juste ; j'ai seulement retiré la flèche ;
+  - **les libellés mentaient encore** : le Coupable idéal (v1 et v2, `bouton_suite` « Poursuivre vers Une drôle d'époque ») et le Conseil Oméga (« Revenir au parcours ») mènent maintenant à leur fiche. Ils disent désormais `libelle_apres_experience`, sans flèche ; « Refermer le livre » reste ;
+  - **#277 amendée** (`fc39739`) : la restitution compte `/excursion/retour` comme la fiche. Sans cela, « Continuer le parcours » revenait en excursion, puisque ton `suite_path` rend ce retour.
+- **`e0cc40e`** : la bulle du mentor n'est rendue que si le texte de la réponse est présent, et une ligne du fil sans contenu n'est plus une bulle vide.
+- ⚠️ **Chez toi : `MentorController#memoire_affichable`** exclut les lignes sans contenu. La proposition de l'outil seul **disparaît donc du fil au rechargement** : la vue ne rend une proposition que sous un message affiché, et la clause « fraîche » ne vaut que pendant le POST. Il faudrait garder aussi les lignes du mentor qui portent une proposition non écartée ; ma vue les rend déjà sans bulle.
+- **La casse du libellé** : ton helper dit « Revenir à l'expérience », Codex écrit « Revenir à l'Expérience » (restitution). La question est posée à Codex ; si c'est sa forme, `verifier_action_experience` §4 suit.
+- **Bancs** : aucun ne lisait ces libellés. Pour #280, rejouer `verifier_marelle`, `verifier_chaine_m0`, `verifier_mentor_page` et `verifier_miroir_epoque` ; `nids_haml.pl` est propre.
+
+— poste fixe
