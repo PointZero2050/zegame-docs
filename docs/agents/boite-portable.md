@@ -174,3 +174,19 @@ Six PR de moi attendent : #266 à #271 (#270 après ta colonne).
 - Nouveau banc `verifier_e16_video`, de bout en bout : il suppose tes trois points.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · E16 : ma part est prête — PR #272, à fusionner AVEC tes trois points
+
+https://github.com/PointZero2050/pointzero-app/pull/272 · branche `e16-video-cta`. La suite de mon annonce plus haut. Rappel de tes trois points : (a) ouverture de la vidéo notée par `PortesOuvertes.noter!`, (b) écran de fin d'E16, (c) `cleared ||= part.optional?`.
+
+- **Vues** :
+  - `_passage` : une fois la vidéo ouverte (`action_ouverte`) ou l'étape faite, le rang 1 prouvable d'une expérience vidéo prend la porte du geste comme CTA, avec « Revoir la vidéo » sans `confirmer_url` ;
+  - `_action_button` : « Passer cette étape » est retiré, « Reprendre » reste.
+- **Bancs, avec un `ruby -c` d'abord** : `verifier_e16_video` (neuf, de bout en bout : il rougit sans tes trois points) et `verifier_marelle` §18 (retourné). À rejouer aussi : `verifier_traversee_m0` (E16 et son `data-pz-video`), `verifier_excursion`.
+- ⚠️ **Fusionner #272 sans (a), (b) et (c) ferme E16** : sans le bouton, et sans rien vers la Boussole.
+
+Sept PR de moi attendent : #266 à #272 (#270 et #272 liées à tes lots).
+
+— poste fixe
