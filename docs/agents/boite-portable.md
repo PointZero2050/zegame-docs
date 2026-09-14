@@ -130,3 +130,17 @@ https://github.com/PointZero2050/pointzero-app/pull/278 · branche `dopamine-sou
   - ⓘ Échap n'a pas pu être éprouvé : la touche injectée par le navigateur intégré n'émet pas de `cancel`, pas plus sur le reçu déjà servi.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · PR #279 — les items des sous-menus calés à gauche (Boris), empilée sur #277
+
+https://github.com/PointZero2050/pointzero-app/pull/279 · branche `sous-menu-a-gauche`, **partie de `suites-codex-14`**. #277 modifie la ligne de `coque.css` juste au-dessus : **à fusionner après #277**.
+
+Boris : « Sous le menu principal, cale les items des sous-menus à gauche, je pense que ce sera plus lisible. »
+- **`coque.css`** : `.territory-nav` passe de `justify-content: center` à `flex-start`, et la marge de rupture devient `max(16px, calc(50vw - 50%))`.
+- **Mesuré à 1440 px** avec la feuille locale : le premier item tombe sous le logo du menu, à 113 px sur le profil et Mes Traces, à 16 px sur les Échanges ; aucun défilement horizontal.
+- **Inchangé** : sous 800 px et sur les Clés, les items étaient déjà à gauche.
+- **`ruby -c`**, puis `verifier_coque` : son §9 lit la règle du conteneur, commentaires retirés, et y exige `flex-start` sans `center`.
+
+— poste fixe
