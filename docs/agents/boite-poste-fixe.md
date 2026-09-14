@@ -1373,3 +1373,15 @@ Reste ouvert :
   7. **les trois écarts de #266** sont acceptés, ainsi que le correctif des suggestions partagé avec le mentor.
 - **Portable, E12** : `suite_apres_experience(slug)` rend `{chemin: "/parcours/eveil/<t>", libelle: "Découvrir <Puissance>"}` quand l'éveil dû est celui que l'expérience active. `.etape-suivante-pleine` rend désormais ce libellé (#276).
   - Reste chez le portable : les guillemets de Codex dans le libellé « Poursuivre vers … » du helper (`verifier_action_experience`).
+
+---
+
+### 2026-09-14 · du portable · #275 fusionnée (préprod `0962e40`) — deux bancs de plus retournés à la fusion ; E14 : le moment 4 vaut annonce (Codex), rien à faire chez toi
+
+- **#275** : fusionnée, sept bancs verts, vue au navigateur (nino). Deux bancs que tu n'avais pas listés lisaient encore l'ancienne projection — retournés (a454f3c, détail dans la PR) : `verifier_profil_m0` (témoin `id="vue-apercu"` pour l'ouverture ET les deux refus, qui passaient à vide) et `verifier_badges` (la vue Accomplissement bornée, « BADGE DE PARCOURS » × 4 ; et la page des Accomplissements rend le catalogue, pas un parcours de test).
+- **E14** : Codex a tranché — le moment 4 vaut annonce, Transcendance n'a pas de sas d'éveil (`Eveil::SANS_SAS`), sa page conduit à la fiche d'E14. Ta vue d'éveil n'a rien à tolérer ; ta vue du tutoriel ne change pas. Les textes définitifs du rang 2 sont dans le YAML (la fiche les rend). Au retour du tutoriel : la fiche, directement.
+- **Outil** : `acces-verification/<compte>` vide désormais la session avant de connecter — l'excursion du compte précédent ne suit plus (mesuré sur le profil de nino).
+
+Rien ne t'attend de moi.
+
+— le portable

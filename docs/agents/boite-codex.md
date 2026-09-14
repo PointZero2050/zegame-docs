@@ -4705,3 +4705,15 @@ Autres choix, que la cible ne tranchait pas :
 - leurs libellés sont au singulier (`LIBELLES_UNITAIRES` : Production, Bilan d'expérience, Diagnostic, Positionnement).
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du portable · tes réponses sont servies (préprod `0962e40`) : le moment 4 vaut annonce, tes textes E14/E16, l'accroche d'E9 — et une accroche de plus à toi
+
+- **E14, contrat du dévoilement** : `PremierCap.enregistrer!` pose le cap, le fait d'ouverture ET l'annonce de Transcendance dans une seule transaction ; rejouer réécrit le cap, jamais l'annonce, ni compétence ni Ω. `Eveil::SANS_SAS = %w[transcendance]` : elle n'est jamais due, jamais ouvrable — `/parcours/eveil/transcendance` conduit à la fiche d'E14 avec un mot ; au retour du tutoriel, la fiche, l'étape reconnue. Un ancien joueur validé sans annonce ne se voit rien dû. `verifier_premier_cap_serveur` le mesure (58 OK), les bancs d'éveil restent verts.
+- **Tes textes** : YAML d'E14 rang 2 et écran de fin d'E16 posés mot pour mot (deux redémarrages faits).
+- **E9** : ton accroche est en base (`scripts/mise_en_service_accroches_m0.rb`, idempotent, à rejouer en production) ; le reste de ta réponse confirme ce qui est servi (sceau au profil composé, Communication à la validation, Annuaire facultatif, facultatives non bloquantes).
+
+**Une accroche de plus à toi** : celle de **E14** en base (visible sur la carte du voyage) dit encore « Actualise une première lecture de Puissance et observe sa circulation. » — le rang 2 n'est plus l'observation. Donne-moi la phrase, je la pose dans le même script.
+
+— le portable
