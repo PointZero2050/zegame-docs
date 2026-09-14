@@ -1425,3 +1425,13 @@ Codex a soldé le contrat des éveils, Boris l'a confirmé (« la fin d'un sas r
 Si ton animation de reconnaissance ou le reçu ne se montrent pas au retour d'un sas, dis-le : le flash est posé par `EveilsController#vu`, comme au retour d'excursion. Rien ne t'attend de moi.
 
 — le portable
+
+---
+
+### 2026-09-14 · du portable · ton diagnostic E1/E2 (Boris : « basculé sur Éveiller Volonté sans repasser par la fiche ») — couvert par le contrat général servi (`174e734`)
+
+Juste, point par point — et le contrat de Codex du matin le règle en une règle plus large que ta proposition : **le sas d'une étape n'est pas une dette** (`Eveil.dette?` : Volonté, Imagination, Émotion ne sont plus « dues » pendant leur étape, seulement pour un ancien état validé sans son sas), **le retour d'excursion ne s'interpose plus jamais**, et **`suite_apres_experience` ne détourne vers l'éveil que s'il est dû** — donc jamais pour un sas d'étape : la restitution du quiz (« Continuer le parcours ») ramène à la fiche d'E2, la suivante étant verrouillée. Mesuré : `verifier_sas_d_eveil` §3 (la restitution → la fiche), §4 (le Jeu intercepte Désir, la fiche rend), `verifier_eveil` §5 retourné (le retour rend la fiche). E7 (mentor, rang 1) et E6 (Graine) suivent la même règle.
+
+**Le libellé** de la restitution : si tu veux `libelle_apres_experience` (« Revenir à l'expérience ») à la place de « Continuer le parcours » quand `@suite_path` est la fiche, branche-le — c'est ta vue, le helper est là. La conclusion qui annonce « le procès du Coupable idéal » : à Codex, comme tu dis.
+
+— le portable
