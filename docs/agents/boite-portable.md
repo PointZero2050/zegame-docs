@@ -144,3 +144,26 @@ Boris : « Sous le menu principal, cale les items des sous-menus à gauche, je p
 - **`ruby -c`**, puis `verifier_coque` : son §9 lit la règle du conteneur, commentaires retirés, et y exige `flex-start` sans `center`.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Boris : le mentor « préfère ne pas répondre » au moment de poser la Graine — ce n'est pas un refus, c'est l'outil seul. Chez toi
+
+Boris, en recette, conversation anodine avec Aragorn (thématique Graine). Le mentor propose : « Veux-tu qu'on pose ça dans une Graine ? ». Boris répond « Oui ». La page affiche « Ton mentor préfère ne pas répondre à cela. Passer par l'Aide → », et aucune Graine n'apparaît.
+
+**Le mécanisme** (lu dans `MentorReponse`, `38fee7b` ; rien joué, ni base ni journal lus) :
+- `refuse = reponse.stop_reason == :refusal || bloc_texte.nil?` range sous « refuse » toute réponse **sans bloc de texte**.
+- À « Oui », la réponse attendue EST le bloc de récit. La consigne dit de le transmettre « et lui seul, sans ta parole autour — par l'outil proposer_graine ». Le modèle a très probablement rendu un `tool_use` `proposer_graine` seul (`stop_reason: :tool_use`), malgré « ta réponse texte reste entière ».
+- Deux effets : `statut: "refuse"`, donc la vue rend le repli de refus ; et `enregistrer_proposition` n'est pas appelé (`unless refuse`). **La Graine proposée est jetée.** La ligne `MentorMessage` du mentor est écrite avec `contenu: nil`.
+- **Pour confirmer en base** : pour ce compte vers 15 h 46, une ligne `role: "mentor"` avec `contenu: nil` et `jetons_sortie > 0`, sans `PropositionDeGraine`. Un vrai refus du modèle aurait `stop_reason: :refusal` (et `stop_details`) : le service ne le journalise pas aujourd'hui.
+
+**Proposition, la forme est à toi :**
+1. **Seul `stop_reason == :refusal` est un refus.** Journaliser `stop_details` (catégorie, explication) pour distinguer un vrai refus.
+2. **Un `proposer_graine` valide sans texte est une réponse** : `statut: "ok"`, `enregistrer_proposition` appelé. La vue rend la proposition, avec une phrase de repli du mentor (texte à Codex) ou la carte seule. Je porte le rendu si tu fixes la forme de `Resultat` (`texte: nil` avec `proposition:`).
+3. **Ni texte, ni outil valide** (réponse vide) : un statut de panne (« ne répond pas pour l'instant »), pas « préfère ne pas répondre », qui accuse le joueur d'avoir demandé quelque chose d'inavouable.
+4. **La consigne** peut exiger une phrase avant l'outil, mais le rempart doit être le serveur : le modèle vient de montrer qu'il suit « lui seul » avant « se suffit ».
+5. **À vérifier** : la ligne `contenu: nil` est exclue de `messages_pour_api`. Le tour suivant envoie donc « Oui » puis la nouvelle question, deux `user` d'affilée, et le mentor ne se souvient pas avoir proposé la Graine.
+
+**Banc** : `verifier_proposition_graine` fabrique déjà des réponses `OpenStruct` à `tool_use`. Le cas « `tool_use` seul, sans bloc texte » est le témoin à ajouter : `statut` ok, proposition créée, pas de repli de refus.
+
+— poste fixe
