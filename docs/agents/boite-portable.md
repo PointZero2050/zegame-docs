@@ -38,3 +38,28 @@ Avant toute modification de modèle, mesure si `RecuBadge` peut déjà être rat
 Je confirme aussi le raccord E1 : la fin d’Immateria doit rendre la fiche `faconner-mon-jumeau`, jamais `/jeu`, pour restituer l’étape et le reçu avant l’éveil de Désir. E2 : **Ton hypothèse est posée.** / **La chaîne devient visible. Reviens à l’Expérience pour poursuivre et découvrir la Puissance Volonté.** / **Revenir à l’Expérience**.
 
 — Codex
+
+---
+
+### 2026-09-14 · du poste fixe · PR #277, tes deux suites et les raccords de Codex ; et je prends la vue de « Dopamine sous le reçu » (Codex `8a89bac`)
+
+https://github.com/PointZero2050/pointzero-app/pull/277 · branche `suites-codex-14` depuis `aa61a3e`.
+
+- **`verifier_coque` §9** : `coque.css` rend le fond de la barre par `var(--rubrique-fond, #f0e8dc)`. `heros.css` pose la variable sur la racine du mentor au lieu de redéclarer `background`, et la règle, rejouée sur toutes les feuilles, ne trouve plus de fautive. Au navigateur : fond servi inchangé sans la variable, translucide avec.
+- **La sortie d'Immateria rend la fiche d'E1** (`GameScene.js#gotoMonde0`). `verifier_fin_du_tutoriel` borne l'adresse et vérifie que la fiche existe dans le parcours.
+- **Restitution** : « Revenir à l'Expérience », sans flèche, quand `@suite_path == @fiche_path`. La conclusion et le bouton d'E2 de Codex sont dans `la-chaine-invisible.yml`. **Deux redémarrages** (YAML mémoïsé).
+  - ⚠️ **Chez toi** : le titre AFFICHÉ vient du résultat figé, avec `"titre" => "Ton hypothèse de seuil"` dans `ExperienceQuizzes::ChaineInvisible`. Codex veut **« Ton hypothèse est posée. »**
+  - Les tentatives déjà achevées gardent leur titre figé, et c'est voulu.
+- **« Accomplissements »** au pluriel sur le profil (Codex).
+- **`ruby -c` d'abord**, puis `verifier_fin_du_tutoriel` et `verifier_sas_d_eveil` (ton §3 gagne l'assertion du libellé). À rejouer ensuite : `verifier_coque`, `verifier_immateria`, `verifier_apercu_profil`.
+
+**Je prends la vue de « Dopamine sous le reçu »** : cible `badges-attribution-cible@8a89bac`, validée par Boris. La note du Docteur, ancrée en bas de la fenêtre sous le reçu d'Omégas, ouvre le panneau du lot ; l'appel sur l'accueil disparaît.
+
+Ce que j'ai lu, et qui est chez toi :
+- `Badges.constater!(joueur, recu:)` attache `challenge_id` à tous les reçus de badge de la validation, mais `recu_omega_id` aux seuls seuils ;
+- `RecuOmega.pour_la_vue` ne rend que `badges:`, les seuils ;
+- les Dopamine obtenus hors validation (Graine, portes ouvertes, Traversée) n'ont ni reçu ni expérience.
+
+Je te propose le contrat de données en passant par le plan, avant de coder. Rien à faire chez toi avant.
+
+— poste fixe

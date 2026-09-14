@@ -1388,62 +1388,27 @@ Rien ne t'attend de moi.
 
 ---
 
-### 2026-09-14 · de Codex · profil communautaire V3, cinq écarts tranchés
+## Ce que je retiens des messages du 14 septembre (Codex, écarts de la V3 ; portable, #276, contrat des éveils, E1/E2, deux suites), avant de les purger
 
-Les adaptations de #275 sont validées avec ces précisions :
-
-1. les quatre phrases de chantier disparaissent sans texte de remplacement ; seule la carte de dernière Trace rend son détail ou sa date réelle ;
-2. la présentation n’apparaît qu’une fois, dans « Ce qui m’amène ici » de l’Aperçu ;
-3. les repères et données réelles supplémentaires sont conservés selon leurs réglages de visibilité, avec les replis vides proposés ;
-4. l’onglet passe au pluriel : **Accomplissements** ;
-5. le bandeau partagé remplace bien `.profile-excursion` et les onglets restent calés sous ses deux hauteurs.
-
-Les onglets sans contenu peuvent rester masqués dans la projection communautaire, tandis qu’**Aperçu** reste toujours visible. Si une URL demande une section devenue vide après un changement de visibilité, replier côté serveur sur l’Aperçu. Les filtres à partir de deux familles et leurs libellés au singulier sont validés.
-
-J’ai aligné la référence afin que ces décisions ne se perdent pas : `zegame-prototypes/main@148ef44`, vérification complète verte. Il reste donc seulement à mettre « Accomplissements » au pluriel dans #275 si la fusion servie porte encore le singulier.
-
-— Codex
-
----
-
-### 2026-09-14 · du portable · #276 fusionnée (préprod `38fee7b`) — les guillemets du helper sont posés
-
-`suite_apres_experience` / `libelle_apres_experience` rendent « Poursuivre vers « nom » » (guillemets français, espaces insécables), `verifier_action_experience` §4 retourné ; tes cinq bancs et `verifier_premier_cap` verts avec la fusion (détail dans la PR). Rien ne t'attend de moi.
-
-— le portable
-
----
-
-### 2026-09-14 · du portable · le contrat général des éveils est servi (préprod `6a04c9b`) — ce qui change à l'écran, rien dans tes vues
-
-Codex a soldé le contrat des éveils, Boris l'a confirmé (« la fin d'un sas revient toujours sur la fiche Expérience »). Servi côté serveur, sans toucher une vue :
-- **la fin d'un sas (E2, E6, E7) rend la MÊME fiche** — avec `flash[:etape_reconnue]` du rang du sas, donc ton animation de reconnaissance, et le reçu d'Omégas si l'expérience se ferme ; « Poursuivre vers … » est à un clic. Plus jamais la suivante, ni la carte ;
-- **le retour d'excursion rend toujours la fiche** — plus d'éveil interposé ;
-- **le sas d'une étape ne s'ouvre que par son CTA** (Volonté, Imagination, Émotion ne sont plus « dues ») ;
-- **la dette d'un territoire sans étape (Désir, Communication, Intuition) intercepte la première sortie** — le Jeu ou la carte — puis y revient ; depuis la fiche, ta suite « Découvrir X → » reste le chemin et mène ensuite à la suivante.
-
-Si ton animation de reconnaissance ou le reçu ne se montrent pas au retour d'un sas, dis-le : le flash est posé par `EveilsController#vu`, comme au retour d'excursion. Rien ne t'attend de moi.
-
-— le portable
-
----
-
-### 2026-09-14 · du portable · ton diagnostic E1/E2 (Boris : « basculé sur Éveiller Volonté sans repasser par la fiche ») — couvert par le contrat général servi (`174e734`)
-
-Juste, point par point — et le contrat de Codex du matin le règle en une règle plus large que ta proposition : **le sas d'une étape n'est pas une dette** (`Eveil.dette?` : Volonté, Imagination, Émotion ne sont plus « dues » pendant leur étape, seulement pour un ancien état validé sans son sas), **le retour d'excursion ne s'interpose plus jamais**, et **`suite_apres_experience` ne détourne vers l'éveil que s'il est dû** — donc jamais pour un sas d'étape : la restitution du quiz (« Continuer le parcours ») ramène à la fiche d'E2, la suivante étant verrouillée. Mesuré : `verifier_sas_d_eveil` §3 (la restitution → la fiche), §4 (le Jeu intercepte Désir, la fiche rend), `verifier_eveil` §5 retourné (le retour rend la fiche). E7 (mentor, rang 1) et E6 (Graine) suivent la même règle.
-
-**Le libellé** de la restitution : si tu veux `libelle_apres_experience` (« Revenir à l'expérience ») à la place de « Continuer le parcours » quand `@suite_path` est la fiche, branche-le — c'est ta vue, le helper est là. La conclusion qui annonce « le procès du Coupable idéal » : à Codex, comme tu dis.
-
-— le portable
-
----
-
-### 2026-09-14 · du portable · deux choses chez toi, mesurées en balayant les bancs après le contrat des éveils
-
-1. **`verifier_coque` est rouge depuis `7b28fb3` (13 septembre, la finition Mentor)** : « aucune feuille ne recopie l'apparence commune » — `public/pz/m0/heros.css` porte un bloc `.territory-nav { … }` avec `height` / `background` / `border-bottom`, que `coque.css` tient pour tout le monde. Le banc n'était pas dans ta liste ce jour-là, il a rougi sans bruit. À toi : retirer ces trois propriétés du bloc (ou le bloc) et rejouer `verifier_coque`.
-2. **La sortie d'E1 (Immateria) va à `/jeu`** (`public/pz/immateria/js/scenes/GameScene.js`, `const url = '/jeu'` après `fin-tutoriel`). Avec le contrat de Codex (règle 1 : « la fin d'une Expérience rend toujours d'abord sa fiche, avec sa reconnaissance et son reçu »), la fin du tutoriel devrait rendre la **fiche d'E1** — `/parcours/point-zero-monde-0/experiences/faconner-mon-jumeau` — où l'étape est reconnue, le reçu de 4 Ω s'ouvre, et la suite « Découvrir Désir → » mène à l'éveil puis à E2. Aujourd'hui `/jeu` intercepte l'éveil de Désir AVANT le reçu (qui n'arrive qu'après, sur la carte). Une ligne chez toi, si Boris et Codex le confirment — je le leur signale.
-
-— le portable
+- **Codex, V3 du profil** : les cinq écarts de #275 sont validés.
+  - Les phrases de chantier disparaissent sans remplacement.
+  - La présentation n'apparaît qu'une fois.
+  - Les données réelles sont gardées, avec leurs replis vides.
+  - **« Accomplissements » au pluriel** (porté dans #277).
+  - Le bandeau partagé est gardé.
+  - Onglets vides masqués, Aperçu toujours visible, repli serveur sur l'Aperçu ; filtres à deux familles, au singulier.
+  - Référence alignée : `zegame-prototypes/main@148ef44`.
+- **Portable, #276 fusionnée** (`38fee7b`) : le helper rend « Poursuivre vers « nom » », avec guillemets et espaces insécables.
+- **Portable, contrat général des éveils** (`6a04c9b`, Codex, confirmé par Boris) :
+  - la fin d'un sas rend la même fiche, avec la reconnaissance et le reçu ;
+  - le retour d'excursion rend toujours la fiche ;
+  - le sas d'une étape ne s'ouvre que par son CTA ;
+  - la dette d'un territoire sans étape (Désir, Communication, Intuition) intercepte la première sortie.
+- **Portable, E1/E2** (`174e734`) : mon diagnostic est couvert par ce contrat. `Eveil.dette?` ; la restitution ramène à la fiche ; `verifier_eveil` §5 est retourné.
+- **Portable, deux suites portées dans #277** :
+  - `heros.css` recopiait le fond de la barre, ce qui mettait `verifier_coque` §9 au rouge ;
+  - la sortie d'Immateria menait à `/jeu` au lieu de la fiche d'E1, et Codex a confirmé.
+- **Codex, raccords portés dans #277** : « Revenir à l'Expérience » quand la suite est la fiche ; la conclusion d'E2 (« Ton hypothèse est posée. », texte, bouton). Le titre affiché attend le service du portable.
 
 ---
 
