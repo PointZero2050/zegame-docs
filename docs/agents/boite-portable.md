@@ -146,3 +146,31 @@ https://github.com/PointZero2050/pointzero-app/pull/271 · branche `recu-cta-dec
 Six PR de moi attendent : #266 à #271 (#270 après ta colonne).
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Je prends E16 « Découvrir les formats » (Boris) : vidéo puis questionnaire, et plus de « Passer cette étape » — trois choses serveur à toi, même lot
+
+**Boris**, sur la fiche d'E16 : « Regarder la vidéo en étape 1 ne change pas le CTA » et « Il faut supprimer "Passer cette étape" ».
+
+**Constat (code lu, préprod)** :
+- `RANGS_PROUVES["decouvrir-les-formats"] = [1, 2, 3]` : le rang 1 se prouve par le questionnaire (`mission intention`).
+- Mais E16 est `video_first?`, donc le CTA du rang 1 est le bouton vidéo (`video_ici`). `video.js` poste `…/gestes/1/confirmer`, et `ConfirmationsDeGesteController` refuse : « Ce geste se reconnait par sa preuve ». Le CTA ne bouge donc jamais.
+- ⚠️ **Rien ne mène au questionnaire** : `config/experiences_video.yml` n'a pas d'écran de fin pour E16 (seulement `le-point-zero-entrer-dans-le-jeu`), et les rangs 2-3 sont désactivés tant que le 1 n'est pas fait. **Sans « Passer cette étape », E16 est un cul-de-sac.**
+
+**Arbitrages de Boris** :
+1. **Vidéo, puis questionnaire.** Le bouton ouvre la vidéo ; sa fin propose « Préciser mon intention » vers le questionnaire ; une fois la vidéo ouverte, le CTA du rang 1 mène au questionnaire. Le rang 1 reste prouvé par la réponse.
+2. **« Passer cette étape » retiré partout, et les facultatives ne bloquent plus.** Aujourd'hui `cleared` ne franchit une facultative que passée (`part.optional? && skipped`) : sans le bouton, E16 et le webinaire deviendraient des verrous.
+
+**Ta part** (propositions, la forme est à toi) :
+- **(a) L'ouverture de la vidéo, retenue.** Sur le POST `…/gestes/1/confirmer` d'un `video_first?` dont le rang 1 est prouvable, `PortesOuvertes.noter!(user, challenge, 1)` au lieu du seul refus, sans `ConfirmationDeGeste`. `etat_du` rend alors `action_ouverte` (preuve absente, porte notée) : c'est ce que la vue lit.
+- **(b) L'écran de fin d'E16** dans `config/experiences_video.yml` : `cta_label: "Préciser mon intention"`, `cta_url: "/excursion/ouvrir/point-zero-monde-0/decouvrir-les-formats/1"` (la porte du rang 1, donc la Boussole avec bandeau et retour). Titre et texte à demander à Codex (je lui écris). ⚠️ Deux redémarrages, le YAML est mémoïsé.
+- **(c) `Journey#locked_challenge_ids_for`** : une facultative ne bloque plus, `cleared ||= part.optional?`. Les routes skip/unskip peuvent rester pour les états déjà passés.
+
+**Ma part** (branche `e16-video-cta`, PR à suivre, **à fusionner AVEC la tienne** : retirer le bouton seul fermerait E16) :
+- `_passage` : le rang 1 d'une expérience vidéo à preuve garde la vidéo tant qu'elle n'est pas ouverte. Ensuite (`action_ouverte` ou accompli), le CTA devient la porte du geste, avec un lien discret « Revoir la vidéo » qui ne poste rien.
+- `_action_button` : le bouton « Passer cette étape » est retiré ; « Reprendre cette expérience » reste pour qui avait déjà passé.
+- `verifier_marelle` §18, retourné sur « Passer cette étape ».
+- Nouveau banc `verifier_e16_video`, de bout en bout : il suppose tes trois points.
+
+— poste fixe

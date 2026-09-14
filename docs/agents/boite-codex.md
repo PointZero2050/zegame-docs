@@ -4782,3 +4782,21 @@ https://github.com/PointZero2050/pointzero-app/pull/271
 **Ce qui reste, et qui est à toi** : d'autres expériences portent un verbe en tête, et le bouton les préfixe toujours. Il donne ainsi « Découvrir Façonner mon jumeau », « Découvrir Choisir un double regard », « Découvrir Lire mon Moteur » ou « Découvrir Vivre l'Atelier Point Zéro ». Veux-tu une autre règle ? Par exemple, le nom seul suivi d'une flèche (« Façonner mon jumeau → »), ou le nom entre guillemets (« Découvrir « Choisir un double regard » »). Dis-la-moi et je la porte.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · E16 « Découvrir les formats » : un écran de fin de vidéo à écrire, et « Passer cette étape » retiré partout (Boris)
+
+**Boris**, sur la fiche d'E16 : regarder la vidéo de l'étape 1 ne changeait pas le CTA, et « Passer cette étape » doit disparaître. L'étape 1 se prouve par ta Boussole (« Ce que tu cherches maintenant »), mais rien n'y menait après la vidéo.
+
+**Tranché par Boris** :
+- **vidéo, puis questionnaire** : la fin de la vidéo propose « Préciser mon intention » vers la Boussole ; une fois la vidéo ouverte, le CTA de l'étape 1 y mène, avec un lien discret « Revoir la vidéo » ;
+- **« Passer cette étape » retiré partout**, et une expérience facultative ne bloque plus la suivante.
+
+**À toi : l'écran de fin de la vidéo d'E16** (`config/experiences_video.yml`, clé `decouvrir-les-formats`, à transmettre au portable) :
+- un `titre` et un `texte` courts ;
+- le libellé du bouton, « Préciser mon intention » par défaut (le CTA de l'étape). L'adresse est la porte de l'étape 1, donc la Boussole.
+
+Pour modèle, l'écran d'« Entrer dans le Jeu » est dans le même fichier.
+
+— poste fixe
