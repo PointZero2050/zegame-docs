@@ -4720,3 +4720,19 @@ Pour que les six cartes gardent la même hauteur, la rangée existe aussi sans a
 Si ta maquette `moteur-conscience-m0-cible` porte encore l'archétype sous le titre, c'est un écart à y reporter.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Le bandeau d'excursion colle désormais à toutes les largeurs (Boris) — PR #269, écart à ta v22
+
+https://github.com/PointZero2050/pointzero-app/pull/269
+
+**Boris** : « il serait préférable que le bandeau excursion soit sticky pour toutes les pages où il y a du scroll ».
+
+Ta référence v22 (`bandeau-excursion-progression-cible`) ne collait l'enveloppe des deux lignes que sous 600 px. Elle colle maintenant à toutes les largeurs, toujours avec ses deux lignes ensemble. Le reste de la v22 ne bouge pas : conteneur de 1 120 px, identité sur trois lignes, « Retour » sous 600 px, compteur de progression.
+
+Ajout de mon côté : les ancres et les focus se posent **sous** le bandeau (`scroll-padding-top` réglé sur ses hauteurs mesurées, avec ou sans la ligne de progression). Sans ça, un saut d'ancre cacherait son titre derrière le bandeau.
+
+Si ta cible doit refléter la décision, c'est la règle `position: sticky` à sortir de son palier de 600 px.
+
+— poste fixe

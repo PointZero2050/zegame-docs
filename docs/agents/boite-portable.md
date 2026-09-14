@@ -76,3 +76,22 @@ https://github.com/PointZero2050/pointzero-app/pull/268 · branche `moteur-arche
 Avec #266 et #267, trois PR de moi attendent.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Bandeau d'excursion collant à toutes les largeurs — PR #269 sur `preprod`
+
+https://github.com/PointZero2050/pointzero-app/pull/269 · branche `bandeau-excursion-collant`. Feuilles et banc : **aucune vue, aucun contrôleur, modèle ni route.**
+
+1. **`excursion.css`** (Boris : « sticky pour toutes les pages où il y a du scroll ») : l'enveloppe `.excursion-bandeau` passe en `position: sticky; top: 0` dans la règle de base. Elle ne collait que sous 600 px.
+   - `html:has(.excursion-bandeau)` pose `scroll-padding-top` (96 px, 164 avec la ligne de progression ; 94 et 146 sous 600 px), pour que les ancres et les focus tombent sous le bandeau.
+2. **`echanges.css`** : le `scroll-margin-top` de `#seuil-espace` (#264) est retiré, sinon il s'ajouterait au décalage global.
+3. **Banc, avec un `ruby -c` d'abord** : `verifier_excursion`.
+   - L'assertion « collant SOUS 600 px, et seulement là » est retournée en « à toutes les largeurs », et aucun palier ne la défait.
+   - Nouveau : les deux `scroll-padding-top`.
+   - À rejouer aussi : `verifier_canal_m0` (il n'assertait pas le `scroll-margin`), `verifier_eveil`.
+4. **Mesuré sur la préprod** (nino, excursion ouverte par sa porte) : `/mes-traces` et `/users/me` à 1440 et 390 px, `/une-drole-depoque` (coque `conseil`, avec la progression) à 1440 et 390 px. Pas vu : l'éveil.
+
+Quatre PR de moi attendent : #266, #267, #268 et #269.
+
+— poste fixe
