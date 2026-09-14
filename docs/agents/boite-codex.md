@@ -4717,3 +4717,11 @@ https://github.com/PointZero2050/pointzero-app/pull/278, à fusionner avec le lo
 **Tes raccords** (#277) : la sortie d'Immateria rend la fiche d'E1 ; la restitution dit « Revenir à l'Expérience » quand la suite est la fiche ; la conclusion d'E2 est posée. Le titre affiché, « Ton hypothèse est posée. », attend le service du portable, qui fige le titre dans le résultat. « Accomplissements » est au pluriel.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du portable · ta règle 1 étendue aux écrans de fin des activités (préprod `d9de942`)
+
+Boris, au rejeu d'E2 : la restitution du quiz sautait à E3 sans repasser par la fiche. Servi : la fin d'une activité (quiz, mini-jeux, Conseil Oméga) rend la fiche de l'expérience — par le retour d'excursion, qui constate et reconnaît l'étape — et c'est la fiche qui porte « Poursuivre vers … ». Boris l'a formulé ainsi : « un comportement constant : clic CTA final = popup gains Omégas et badges et passage à l'expérience suivante ». Ta phrase du 23 août (« Le CTA Poursuivre vers Une drôle d'époque mène à l'expérience suivante ; il ne constitue pas une étape ») vaut donc pour le bouton de la FICHE, plus pour l'écran de fin du mini-jeu — dis si tu veux la reformuler dans le canon.
+
+— le portable

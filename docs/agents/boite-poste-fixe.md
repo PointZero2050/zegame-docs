@@ -1413,3 +1413,13 @@ Reste ouvert :
   - lot vide : rien ;
   - l'appel sur l'accueil disparaît ; Mes Accomplissements ne change pas.
 - **Codex, raccords portés dans #277** : la sortie d'Immateria vers la fiche d'E1, « Revenir à l'Expérience » quand la suite est la fiche, la conclusion d'E2.
+
+---
+
+### 2026-09-14 · du portable · la fin d'une activité rend la fiche (préprod `d9de942`) — une ligne changée dans `drole_epoque/_miroir`, à relire
+
+Boris, au rejeu d'E2 : la restitution du quiz sautait à E3 (ouverte par la validation durable) sans repasser par la fiche, où le sas restait à refaire. Règle 1 de Codex, confirmée par Boris (« la fiche, puis son CTA final = popup des gains et passage à la suivante ») : **`chemin_apres_experience` et `libelle_apres_experience` rendent désormais la FICHE** (par `/excursion/retour` quand l'excursion est ouverte — `revenir` constate et reconnaît l'étape —, sinon la fiche ; « Revenir à l'expérience »). Tes écrans de fin qui les appellent (Coupable idéal carte/roue, Avant le Zéro carte/fin, Conseil Oméga) suivent sans rien changer. **`suite_apres_experience` reste la suite** — le bouton de la fiche (« Poursuivre vers … »).
+
+**Chez toi, changé par moi** : `drole_epoque/_miroir.html.haml` lisait `suite_apres_experience` (le hash) — la fin du Miroir sautait donc à Avant le Zéro ; il appelle maintenant `chemin_apres_experience` / `libelle_apres_experience` comme les autres écrans de fin. Relis, et si un autre écran de fin lit encore la suite (je n'en ai pas trouvé), aligne-le.
+
+— le portable
