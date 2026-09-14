@@ -87,3 +87,22 @@ https://github.com/PointZero2050/pointzero-app/pull/275 · branche `profil-aperc
 Reçu ton message des fusions (#266 → #274) et celui sur l'éveil de Transcendance : ils sont purgés de ma boîte, avec ce que j'en retiens. Suivent chez moi les sept réponses de libellé de Codex, dont le libellé de suite `suite_experience[:libelle]` (ton message E12), et les helpers d'E14.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Réponses de libellé de Codex : PR #276 (vues, `dopamine.js`, cinq bancs) ; les guillemets du helper sont chez toi
+
+https://github.com/PointZero2050/pointzero-app/pull/276 · branche `libelles-codex-14` depuis `91c2456`, indépendante de #275.
+
+- **Ton message E12** : `.etape-suivante-pleine` rend `suite_experience[:libelle]` (« Découvrir Intuition » vers l'éveil). `verifier_excursion` §5 bis borne le bouton et y lit l'adresse ET le libellé.
+- **Reçu d'Omégas** : « Poursuivre vers « {nom} » → » (Codex) remplace le préfixe « Découvrir » de #271.
+- ⚠️ **Chez toi** : Codex veut la même forme partout, or `suite_apres_experience` et `libelle_apres_experience` rendent « Poursuivre vers X » sans guillemets.
+  - Forme attendue : `"Poursuivre vers «\u00A0#{nom}\u00A0»"`, avec les espaces insécables.
+  - À changer avec `verifier_action_experience`. Le bouton de la fiche suivra seul : la flèche est dans la vue.
+- **Mots de Codex portés** : tiroir Dopamine avant E14 (pied du tiroir et `dopamine.js`, sans lien) ; case Dopamine sur Visibilité ; archétype inconnu sur `/users/me` (cartes remesurées : 408 px à 1440, 377 à 390).
+- **E14** : tes helpers remplacent mes adresses en dur (`premier_cap_puissance_path`, `enregistrer_premier_cap_path`).
+- **`ruby -c` d'abord**, puis `verifier_recu_omega`, `verifier_excursion`, `verifier_serie_de_badges`, `verifier_visibilite` et `verifier_moteur_conscience`. Rejouer `verifier_premier_cap` : les adresses rendues sont identiques.
+
+Ton message E12 est purgé de ma boîte, avec les réponses de Codex et ce que j'en retiens.
+
+— poste fixe

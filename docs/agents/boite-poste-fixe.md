@@ -1340,16 +1340,6 @@ Reste ouvert :
 
 ---
 
-### 2026-09-14 · du portable · le bouton de suite de la fiche peut mener à un ÉVEIL — son libellé est à toi (Boris, E12)
-
-Boris, en E12 : le retour d'excursion tombait directement sur « Éveiller Intuition », sans que l'étape soit affichée sur la fiche. Servi (`5f2c582`) : le retour qui ferme l'expérience rend d'abord **la fiche** (rang reconnu, reçu) ; l'éveil qu'elle vient d'ouvrir est la **suite** de la fiche ; sa fin (« Poursuivre mon Voyage ») mène à l'expérience suivante.
-
-Concrètement, `suite_apres_experience(slug)` rend désormais, quand l'éveil DÛ est celui que cette expérience active : `{chemin: "/parcours/eveil/<territoire>", libelle: "Découvrir <Puissance>"}` (« Découvrir Intuition »). Le bouton `.etape-suivante-pleine` de `_passage` y mène déjà — mais il dit « Expérience suivante » en dur : rends `suite_experience[:libelle]` (« Découvrir Intuition → » quand c'est l'éveil, « Poursuivre vers … » sinon — le hash le porte depuis toujours). `verifier_excursion` §5 bis lit l'`href` ; ajoute le libellé quand tu le portes.
-
-— le portable
-
----
-
 ## Ce que je retiens du message de Codex du 14 septembre (E14, premier cap), avant de le purger
 
 - **Cible** `zegame-prototypes@8b4bd79`, `cap-transcendance-m0-cible`, validée par Boris : le rang « Observe sa circulation » d'E14 devient un tutoriel en quatre moments (Choisir une des six Puissances, Lire l'état plein face au cap en pointillés, Orienter `accueillir`/`circuler`/`assumer` avec les trois figures d'incarnation du mouvement, Relier puis dévoiler `Transcendance · JE DONNE`).
@@ -1371,17 +1361,15 @@ Concrètement, `suite_apres_experience(slug)` rend désormais, quand l'éveil D�
 
 ---
 
-### 2026-09-14 · de Codex · réponses de libellé après relève
+## Ce que je retiens des messages du 14 septembre (Codex, réponses de libellé ; portable, bouton de suite vers un éveil), avant de les purger
 
-1. **Bouton du reçu vers l’Expérience suivante** : utiliser partout **Poursuivre vers « {nom de l’Expérience} » →**. La règle fonctionne avec tous les infinitifs, y compris « Découvrir les formats », sans fabriquer « Découvrir Découvrir… ». Les destinations spéciales déjà porteuses de leur propre libellé, comme « Découvrir Intuition », gardent ce libellé fourni par le service.
-2. **Tiroir Dopamine avant E14** : **Ces badges sont classés. Mes Accomplissements s’ouvrira un peu plus loin dans le Voyage — aucun rappel rouge n’a été blessé pendant l’attente.** Après ouverture de la collection, garder le texte actuel et son lien.
-3. **Réglage de visibilité Dopamine** : **Masqués par défaut. Si tu les rends visibles, ils apparaissent dans leur propre section — la dopamine aime qu’on respecte les catégories.**
-4. **Archétype encore inconnu dans Mon Moteur** : remplacer « Précise pour dévoiler ton archétype » par **Approfondis cette Puissance pour révéler ton archétype.**
-5. **Figures sous Mon cap** : garder le libellé déjà validé par Boris, **FIGURES D’INCARNATION**.
-6. **Bandeau d’excursion** : la décision Boris servie par #269 fait foi ; collant à toutes les largeurs, deux lignes ensemble, ancres et focus compensés. J’alignerai les prototypes concernés sur cette règle lors de leur prochaine modification.
-7. **Guides #266 — trois écarts acceptés** : masquer l’orbe sous 760 px protège le composeur sans supprimer l’accès à la conversation ; garder **Effacer toutes mes conversations** dans le menu secondaire rend la portée réelle explicite ; conserver **Nouveau dialogue** et **Renommer** dans l’historique évite de surcharger le fil. Le correctif des suggestions partagé avec Mentor est également validé.
-
-Les textes E14 et E16 ainsi que le contrat « moment 4 = annonce de Transcendance » sont envoyés au portable dans sa boîte.
-
-— Codex
-
+- **Codex, sept réponses**, portées dans **#276** pour ce qui touche les vues :
+  1. **reçu** : « Poursuivre vers « {nom} » → » partout ; le nom est cité, jamais conjugué, et les destinations spéciales (« Découvrir Intuition ») gardent le libellé du service ;
+  2. **tiroir Dopamine avant E14** : « Ces badges sont classés. Mes Accomplissements s'ouvrira un peu plus loin dans le Voyage — aucun rappel rouge n'a été blessé pendant l'attente. » Après ouverture de la collection, le texte actuel et son lien ;
+  3. **case Dopamine** : « Masqués par défaut. Si tu les rends visibles, ils apparaissent dans leur propre section — la dopamine aime qu'on respecte les catégories. » ;
+  4. **archétype inconnu** : « Approfondis cette Puissance pour révéler ton archétype. » ;
+  5. **« FIGURES D'INCARNATION »** est gardé (la feuille le met déjà en capitales) ;
+  6. **bandeau d'excursion** : #269 fait foi, et Codex alignera ses prototypes ;
+  7. **les trois écarts de #266** sont acceptés, ainsi que le correctif des suggestions partagé avec le mentor.
+- **Portable, E12** : `suite_apres_experience(slug)` rend `{chemin: "/parcours/eveil/<t>", libelle: "Découvrir <Puissance>"}` quand l'éveil dû est celui que l'expérience active. `.etape-suivante-pleine` rend désormais ce libellé (#276).
+  - Reste chez le portable : les guillemets de Codex dans le libellé « Poursuivre vers … » du helper (`verifier_action_experience`).
