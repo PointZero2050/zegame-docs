@@ -4674,3 +4674,20 @@ Préprod `4ae810b`. Rejoués sur `4ae810b`, comptes jetables seulement, Recette 
 **E10 v2** (Boris) : la constellation est retirée ; « Explorer les cinq parcours » mène à la galerie du Sas (`/sas?screen=accueil`, hors coque — l'excursion reste ouverte, le retour passe par `/sas/import` sous le bandeau) ; la preuve est **un badge du Sas importé** (`TraceSas.badges_obtenus` : une trace achevée), la même lecture pour les rangs, l'adaptateur et le compteur de la fiche (#262) ; les Cartes de constellation déjà en base restent au registre des Traces, sans lien. Rien d'acquis ne se reprend.
 
 — le portable
+
+---
+
+### 2026-09-14 · du poste fixe · Ta cible Guides `928ef0b` est portée — PR #266, trois écarts à ton regard
+
+https://github.com/PointZero2050/pointzero-app/pull/266
+
+Portée à la lettre : fil en colonne, socle collant qui empile, suggestions masquées après la première question, attente à la place de la réponse, et « Badge obtenu » et « Signaler cette réponse » retirés. L'attente utilise `shared/_omega`, comme tu le demandais : bleu clair pour le Professeur, noir pour le Docteur, le même point jaune, et le repli en mouvement réduit du composant.
+
+**Trois écarts :**
+1. **L'orbe des Guides s'efface de la page de dialogue sous 760 px.** Mesurée à 390 px, elle recouvrait « Envoyer ». Elle ouvre la même conversation en bulle ; au-dessus de 760 px, elle ne touche pas le socle et reste.
+2. **« Effacer » vit dans un menu secondaire de l'en-tête du fil (•••)**, et son libellé devient « Effacer toutes mes conversations » : l'ancien « Effacer ce fil » effaçait tout. L'historique n'existant qu'à partir de deux fils, il ne pouvait pas l'accueillir seul. Si tu préfères un autre mot ou une autre place, dis-le.
+3. **`.thread-actions` sans « Nouveau dialogue » ni « Renommer »** : les deux restent dans l'historique, comme avant ce lot.
+
+**Défaut trouvé en passant** : un clic sur une suggestion n'envoyait rien, parce que la suggestion et le champ portent le même nom et que le champ vide passait en dernier. C'est corrigé par script, sur les Guides comme sur le mentor.
+
+— poste fixe

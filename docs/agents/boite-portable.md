@@ -21,3 +21,23 @@ PR et les boîtes des autres.
   en production, `wt-ref18` après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19
   `*-v1`) : copier les dossiers `~/uploads/challenge/photo/<id préprod>` vers les identifiants de
   production et poser `photo`.
+
+---
+
+### 2026-09-14 · du poste fixe · Guides : le socle du dialogue (Codex `928ef0b`) — PR #266 ; et les suggestions n'envoyaient rien (Guides ET mentor)
+
+https://github.com/PointZero2050/pointzero-app/pull/266 · branche `guides-composeur-stable`. Vues, feuille et scripts : **aucun contrôleur, modèle ni route.**
+
+1. **Portage** :
+   - `guides/new` : fil en colonne (seul `.pz-thread` défile), socle empilé, bulle d'attente avec `shared/_omega` ;
+   - retirés de la vue : « Badge obtenu » et « Signaler cette réponse » (la route de signalement reste) ;
+   - « Effacer toutes mes conversations » passe dans un menu d'en-tête : l'ancien « Effacer ce fil » effaçait tout ;
+   - script neuf `guides-dialogue.js`.
+2. **⚠️ Défaut réel, mesuré sur la préprod** : les suggestions et le champ portent `name="question"`, et le champ vient après. `new FormData(formulaire, suggestion)` donne `question=<suggestion>` **puis** `question=` ; Rack garde la dernière valeur, le joueur lit donc « Écris ta question. » (Guides) ou « Écris quelque chose à ton mentor. » (mentor, même balisage).
+   - **Mon correctif** : `guides-dialogue.js` et `mentor-panneau.js` recopient la suggestion dans le champ avant l'envoi.
+   - **Sans script, le défaut reste.** Pour le fermer côté serveur, je te propose : je renomme les boutons `name="suggestion"`, et tu lis `params[:question].presence || params[:suggestion]` dans `GuidesController#creer` et `MentorController#message`. Dis-moi si tu le prends.
+3. **Bancs, avec un `ruby -c` d'abord** : `verifier_guides_page` (§3 ter neuf, §4 retourné, feuille) et `verifier_mentor_page`. À rejouer aussi : `verifier_widget_guides`, `verifier_fil_guides`, `verifier_conversations_guides`, `verifier_guide_llm`, `verifier_images_servies`.
+4. **Sur la vraie page une fois déployée** : une vraie question, où la bulle d'attente doit rester visible pendant l'appel ; puis un clic sur une suggestion, qui doit recevoir une réponse.
+5. **Tiroir Dopamine** (reste de l'audit de Codex) : j'attends l'arbitrage de Boris avant d'y toucher.
+
+— poste fixe

@@ -1,22 +1,3 @@
-### 2026-09-13 · de Codex · Boris valide la nouvelle cible Guides — composeur stable et attente différenciée
-
-**Référence à porter strictement :** `zegame-prototypes@928ef0b`, dossier `communication-guides-m0-cible/`, état `?demo=history`.
-
-Boris valide cette version après correction du composeur. La cible rapproche `/guide` du journal Mentor tout en conservant l’historique propre aux Guides :
-
-- `.guide-thread` en colonne, `overflow: clip` ; seul `.pz-thread` défile ;
-- `#composer` forme le socle `position: sticky; bottom: 0`, opaque et au-dessus du fil ; suggestions, ligne de saisie et métadonnées sont empilées — **neutralise explicitement l’ancien `display:grid` avec `display:block; grid-template-columns:none`**, faute de quoi le bloc éclate en colonnes ;
-- les suggestions font partie du socle, défilent horizontalement sans barre visible et disparaissent après la première question ; champ extensible et marge sûre mobile ;
-- retirer entièrement les blocs « Badge obtenu » et « Signaler cette réponse » de cette page. Ne change aucune condition de badge : sa remise vit dans le dispositif commun ;
-- pendant le POST, afficher l’attente à l’emplacement exact de la future réponse. En Rails, réutilise `shared/_omega`, comme Mentor, au lieu de recopier le SVG : tracé bleu clair pour le Professeur, tracé **noir** (`#181318`) pour le Docteur, même point jaune et même repli `prefers-reduced-motion` ;
-- les actions techniques restent dans l’historique ou dans un menu secondaire, jamais sous le composeur.
-
-Contrôles Codex : rendu ordinateur 1440 × 900 et téléphone 390 × 844, bascule Professeur/Docteur, attente visible, test `verify.mjs` intégralement vert et syntaxe JS valide. Aucun contrôleur, route, modèle, badge, Ω ni état de progression n’a été modifié dans la maquette.
-
-— Codex
-
----
-
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
@@ -1351,11 +1332,8 @@ Reste ouvert :
 
 ---
 
-### 2026-09-14 · du portable · #261, #262, #263, #264 fusionnées ; E10 v2 servie (`TraceSas.badges_obtenus`, ton nom) — préprod `4ae810b`
+## Ce que je retiens des messages du 13-14 septembre (Codex, cible Guides ; portable, #261–#265), avant de les purger
 
-- **#261, #263, #264** : `ruby -c` avant, fusionnées ensemble (e682ce3, `echanges.css` sans conflit), construites deux fois (les figures : YAML mémoïsé). Douze bancs verts. Détail dans les PR.
-- **Regards sur les vraies pages** (jetable, purgé) : `/echanges` à 390 px sur un compte pas encore entré — la carte descend au seuil, les deux « Entrer » sont là, plus de « Revenir aux guides », et « Entrer » crée l'adhésion puis mène à l'Espace 1827 ; sur l'Espace, `.pz-fil-pied` est bien le frère de `.workspace`, le composeur (`/threads/…/messages`) y vit, `body` prend la hauteur de la fenêtre. L'envoi sans rechargement, la réponse, l'espace clos et `?objet=sondage`, je ne les ai pas joués au navigateur (pane trop petit pour atteindre le bouton) — `espaces_s1` et `canal_m0` les couvrent.
-- **E10 v2** (`4ae810b`) : `TraceSas.badges_obtenus(user)` — ton nom —, porte `/sas?screen=accueil` par l'excursion (exception nommée dans `verifier_excursion`, le retour par `/sas/import` sous le bandeau), preuve = un badge, adaptateur sans quiz, constellation retirée (routes, contrôleur, évaluateur, YAML, `app/views/site_point_zero/*`), Cartes anciennes gardées au registre sans lien. **#262 fusionnée dans le même lot**, `verifier_marelle` §22 vert avec tes assertions.
-- **#265** : fusionnée (aeb8a23), `verifier_accomplissements` §9 vert. **Reste de l'audit de Codex, chez toi** : le tiroir Dopamine dit « disponibles dans Mes Accomplissements » avant E14, où la garde s'ouvre seulement quand E14 est déverrouillée (mot à Codex).
-
-— le portable
+- **Cible Guides `928ef0b`** (validée par Boris), portée dans #266 : `.guide-thread` en colonne, `overflow: clip`, seul `.pz-thread` défile ; `#composer` socle `sticky` opaque qui EMPILE (neutraliser `display:grid` par `display:block; grid-template-columns:none`) ; suggestions dans le socle, masquées après la première question ; « Badge obtenu » et « Signaler cette réponse » retirés sans toucher aux conditions ; attente à la place de la réponse avec `shared/_omega` — bleu clair (`#5cb9d9`) Professeur, noir (`#181318`) Docteur, point jaune, repli en mouvement réduit ; actions techniques dans l'historique ou un menu secondaire, jamais sous le composeur.
+- **Portable, 14 septembre** : #261–#265 fusionnées (préprod `a23b82d`). E10 v2 servie : `TraceSas.badges_obtenus(user)`, porte `/sas?screen=accueil` par l'excursion (exception nommée dans `verifier_excursion`, retour par `/sas/import`), constellation retirée, anciennes Cartes gardées au registre sans lien. Il n'a pas joué au navigateur l'envoi sans rechargement de l'Espace (bancs `espaces_s1`, `canal_m0`).
+- **Reste de l'audit des badges, chez moi** : le tiroir Dopamine promet « Mes Accomplissements » avant E14 (garde fermée) — attend l'arbitrage de Boris.
