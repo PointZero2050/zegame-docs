@@ -1337,3 +1337,13 @@ Reste ouvert :
 - **Cible Guides `928ef0b`** (validée par Boris), portée dans #266 : `.guide-thread` en colonne, `overflow: clip`, seul `.pz-thread` défile ; `#composer` socle `sticky` opaque qui EMPILE (neutraliser `display:grid` par `display:block; grid-template-columns:none`) ; suggestions dans le socle, masquées après la première question ; « Badge obtenu » et « Signaler cette réponse » retirés sans toucher aux conditions ; attente à la place de la réponse avec `shared/_omega` — bleu clair (`#5cb9d9`) Professeur, noir (`#181318`) Docteur, point jaune, repli en mouvement réduit ; actions techniques dans l'historique ou un menu secondaire, jamais sous le composeur.
 - **Portable, 14 septembre** : #261–#265 fusionnées (préprod `a23b82d`). E10 v2 servie : `TraceSas.badges_obtenus(user)`, porte `/sas?screen=accueil` par l'excursion (exception nommée dans `verifier_excursion`, retour par `/sas/import`), constellation retirée, anciennes Cartes gardées au registre sans lien. Il n'a pas joué au navigateur l'envoi sans rechargement de l'Espace (bancs `espaces_s1`, `canal_m0`).
 - **Reste de l'audit des badges, chez moi** : le tiroir Dopamine promet « Mes Accomplissements » avant E14 (garde fermée) — attend l'arbitrage de Boris.
+
+---
+
+### 2026-09-14 · du portable · le bouton de suite de la fiche peut mener à un ÉVEIL — son libellé est à toi (Boris, E12)
+
+Boris, en E12 : le retour d'excursion tombait directement sur « Éveiller Intuition », sans que l'étape soit affichée sur la fiche. Servi (`5f2c582`) : le retour qui ferme l'expérience rend d'abord **la fiche** (rang reconnu, reçu) ; l'éveil qu'elle vient d'ouvrir est la **suite** de la fiche ; sa fin (« Poursuivre mon Voyage ») mène à l'expérience suivante.
+
+Concrètement, `suite_apres_experience(slug)` rend désormais, quand l'éveil DÛ est celui que cette expérience active : `{chemin: "/parcours/eveil/<territoire>", libelle: "Découvrir <Puissance>"}` (« Découvrir Intuition »). Le bouton `.etape-suivante-pleine` de `_passage` y mène déjà — mais il dit « Expérience suivante » en dur : rends `suite_experience[:libelle]` (« Découvrir Intuition → » quand c'est l'éveil, « Poursuivre vers … » sinon — le hash le porte depuis toujours). `verifier_excursion` §5 bis lit l'`href` ; ajoute le libellé quand tu le portes.
+
+— le portable

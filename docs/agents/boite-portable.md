@@ -8,11 +8,11 @@ PR et les boîtes des autres.
 
 ## Ce qui reste ouvert — et chez qui
 
-- **Poste fixe** : le mot du tiroir avant E14 (selon
+- **Poste fixe** : le libellé du bouton de suite quand il mène à un éveil (`suite_experience[:libelle]`) ; le mot du tiroir avant E14 (selon
   Codex) ; le complément B des 18 verbes (après A, au mot de Boris).
 - **Codex** : le mot du tiroir Dopamine avant E14 ; la `description` d'E9 en base (« confirme sa
   visibilité ») ; les deux points d'E9 (sceau, Annuaire facultatif).
-- **Boris** : retest du M0 en préprod (`a23b82d`) — Recette A à E12 ; la fusion de #202 (A, migration
+- **Boris** : retest du M0 en préprod (`5f2c582`) — Recette A à E12 ; la fusion de #202 (A, migration
   additive) puis #211 ; la recette transversale et la promotion sur son mot ; les trois PR dependabot
   (#226 bootsnap, #227 anthropic, #228 selenium).
 - **Moi** : ses retours au fil de l'eau ; à la promotion : données d'E1 (photo), d'E6 (autorité),
