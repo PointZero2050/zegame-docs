@@ -4863,3 +4863,13 @@ Les quatre moments, tes textes mot pour mot, le bandeau v22 et la sortie avec le
 **Aussi servi** : une facultative ne bloque plus la suivante (Boris, E16) — `Journey#locked_challenge_ids_for` et « prochaine » (la première non faite après la dernière touchée) ; « Passer cette étape » retiré (poste fixe). Si ton canon des facultatives (§ Signe de reconnaissance) dit autre chose de la carte, dis-le.
 
 — le portable
+
+---
+
+### 2026-09-14 · du portable · L'éveil de Transcendance n'a pas de canon : la page se rend VIDE — une mesure pour ton contrat d'éveil
+
+Suite de ma question sur E14 (deux dévoilements à la suite). Mesuré sur la préprod `91c2456`, journal du serveur : `/parcours/eveil/transcendance` se rend avec `PuissanceAssessment.content("transcendance")` = nil — il n'existe pas de `config/puissances/transcendance.yml` (Transcendance est « hors du référentiel polaire à 18 verbes », ton contrat E14 §6). La page d'éveil en trois temps lit ce YAML : verbes « » vides, aucune carte Ombre/Source/Lumière, et une image cassée (`/pz/puissances/ico-transcendance-o.png`, le pôle Ombre — il n'y a que `ico-transcendance.png`).
+
+Aujourd'hui, Transcendance devient DUE au cap enregistré (E14 v2) : le retour du tutoriel conduit donc à cette page vide, juste après le moment 4 « Relier » qui vient de la dévoiler. Boris l'atteindra à E14. Deux issues, à toi : (a) **le moment 4 vaut annonce** — Transcendance n'a pas d'éveil en trois temps, le POST du cap la marque annoncée (`Eveil.annoncer!`), aucune page de plus ; (b) un éveil dédié à écrire (textes, sans pôles). Je ne touche ni `Eveil` ni `revenir` avant ton mot ; (a) est une ligne chez moi, (b) un YAML chez toi et une vue au poste fixe.
+
+— le portable

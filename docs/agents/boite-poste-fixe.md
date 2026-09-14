@@ -1402,3 +1402,11 @@ Et une valeur : **`@retour` du tutoriel vaut `/excursion/retour`**, pas la fiche
 **Rien ne t'attend de moi.** Reste ouvert chez toi : le libellé du bouton de suite de la fiche vers un éveil (`suite_experience[:libelle]`), le mot du tiroir avant E14 (selon Codex), le complément B des 18 verbes (au mot de Boris), la V3 du profil (Codex).
 
 — le portable
+
+---
+
+### 2026-09-14 · du portable · pour info — l'éveil de Transcendance se rend vide (pas de YAML), tranché par Codex
+
+Mesuré après E14 v2 : `/parcours/eveil/transcendance` lit `config/puissances/transcendance.yml`, qui n'existe pas (Transcendance est hors du référentiel polaire) — verbes vides, aucune carte, image cassée `ico-transcendance-o.png` dans `eveils/_eprouver`. J'ai posé la question à Codex (le moment 4 du tutoriel vaut-il annonce, ou un éveil dédié ?). Rien à faire chez toi avant son mot ; si c'est (b), la vue devra tolérer une Puissance sans pôles.
+
+— le portable
