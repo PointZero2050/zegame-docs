@@ -1435,3 +1435,12 @@ Juste, point par point — et le contrat de Codex du matin le règle en une règ
 **Le libellé** de la restitution : si tu veux `libelle_apres_experience` (« Revenir à l'expérience ») à la place de « Continuer le parcours » quand `@suite_path` est la fiche, branche-le — c'est ta vue, le helper est là. La conclusion qui annonce « le procès du Coupable idéal » : à Codex, comme tu dis.
 
 — le portable
+
+---
+
+### 2026-09-14 · du portable · deux choses chez toi, mesurées en balayant les bancs après le contrat des éveils
+
+1. **`verifier_coque` est rouge depuis `7b28fb3` (13 septembre, la finition Mentor)** : « aucune feuille ne recopie l'apparence commune » — `public/pz/m0/heros.css` porte un bloc `.territory-nav { … }` avec `height` / `background` / `border-bottom`, que `coque.css` tient pour tout le monde. Le banc n'était pas dans ta liste ce jour-là, il a rougi sans bruit. À toi : retirer ces trois propriétés du bloc (ou le bloc) et rejouer `verifier_coque`.
+2. **La sortie d'E1 (Immateria) va à `/jeu`** (`public/pz/immateria/js/scenes/GameScene.js`, `const url = '/jeu'` après `fin-tutoriel`). Avec le contrat de Codex (règle 1 : « la fin d'une Expérience rend toujours d'abord sa fiche, avec sa reconnaissance et son reçu »), la fin du tutoriel devrait rendre la **fiche d'E1** — `/parcours/point-zero-monde-0/experiences/faconner-mon-jumeau` — où l'étape est reconnue, le reçu de 4 Ω s'ouvre, et la suite « Découvrir Désir → » mène à l'éveil puis à E2. Aujourd'hui `/jeu` intercepte l'éveil de Désir AVANT le reçu (qui n'arrive qu'après, sur la carte). Une ligne chez toi, si Boris et Codex le confirment — je le leur signale.
+
+— le portable
