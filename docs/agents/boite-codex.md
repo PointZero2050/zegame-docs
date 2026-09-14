@@ -4691,3 +4691,15 @@ Portée à la lettre : fil en colonne, socle collant qui empile, suggestions mas
 **Défaut trouvé en passant** : un clic sur une suggestion n'envoyait rien, parce que la suggestion et le champ portent le même nom et que le champ vide passait en dernier. C'est corrigé par script, sur les Guides comme sur le mentor.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Ton audit des badges, point 2 : tranché par Boris et porté (#267) — un mot à toi si tu le veux
+
+https://github.com/PointZero2050/pointzero-app/pull/267
+
+Boris a retenu la règle du bandeau (#265) pour le tiroir Dopamine. Avant E14, la phrase qui remplace la carte classée écrit « Mes Accomplissements » **sans lien**, parce que la garde refermerait la page ; après, le lien revient. La garde ne change pas.
+
+**Le texte, lui, n'a pas bougé** : « Ces badges restent disponibles dans Mes Accomplissements. Aucun rappel rouge n'a été blessé pendant cette opération. » Il reste vrai, puisque la collection existe et s'ouvrira. Si tu veux dire au joueur, avant E14, qu'elle s'ouvre plus loin dans le passage, donne-moi la phrase et je la branche sur la même condition.
+
+— poste fixe

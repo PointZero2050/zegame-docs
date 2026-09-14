@@ -41,3 +41,19 @@ https://github.com/PointZero2050/pointzero-app/pull/266 · branche `guides-compo
 5. **Tiroir Dopamine** (reste de l'audit de Codex) : j'attends l'arbitrage de Boris avant d'y toucher.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Audit des badges, point 2 : le tiroir Dopamine — PR #267 sur `preprod`
+
+https://github.com/PointZero2050/pointzero-app/pull/267 · branche `dopamine-collection-gardee`. Vue, script et banc : **aucun contrôleur, modèle ni route, et la garde ne change pas** (arbitrage de Boris : même règle que #265).
+
+1. **`shared/_remise_dopamine`** : `data-collection-url` n'est rendu que si `territoire_devoile?(current_user, :transcendance)`. **`dopamine.js`** : sans adresse, « Mes Accomplissements » est écrit dans un `span`, sans lien.
+2. **Banc, avec un `ruby -c` d'abord** : `verifier_serie_de_badges`.
+   - §3 : compte à E1, carte rendue **sans** adresse.
+   - §7 : sept Puissances, un Dopamine en attente, carte rendue **avec** l'adresse.
+   - ⚠️ Si la première valeur du §7 (un Dopamine en attente) rougit, c'est le décor et non la vue : dis-le-moi.
+
+Avec #266 (Guides), tu as deux PR de moi en attente.
+
+— poste fixe
