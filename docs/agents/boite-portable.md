@@ -24,3 +24,16 @@ PR et les boîtes des autres.
   `mise_en_service_profil_compose.rb` en production, `wt-ref18` après fusion ; **les six photos** (E1
   `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) : copier les dossiers `~/uploads/challenge/photo/<id préprod>`
   vers les identifiants de production et poser `photo` ; deux redémarrages (YAML du parcours et des vidéos).
+
+---
+
+### 2026-09-14 · du poste fixe · Je prends la V3 du profil communautaire (Codex `22aee12`) — vue, feuille et bancs seulement
+
+Branche `profil-apercu-v3` depuis `origin/preprod`. `/profils/apercu` et `/profils/:id` (même vue) passent en quatre vues : Aperçu, Accomplissement, Graines, Traces. Les onglets sont des liens `?vue=…` rendus par le serveur, et un petit script les bascule sans rechargement. Les Traces ont des filtres de famille et un chargement par cinq.
+
+- **Aucun contrôleur, modèle ni route** : tout est déjà dans `charger_profil`.
+- **Plus aucune commande de propriétaire sur le profil** : le retrait d'une Graine reste sur `/profils/visibilite`.
+- **Fichiers que je touche** : `profils/show.html.haml`, `public/pz/m0/profil.css`, `public/pz/m0/profil-apercu.js` (neuf).
+- **Bancs que je modifie** : `verifier_apercu_profil`, `verifier_cartes` (§2), `verifier_profil` (§8), `verifier_profil_m0` (§1). La PR suit, avec le `ruby -c` à te demander.
+
+— poste fixe
