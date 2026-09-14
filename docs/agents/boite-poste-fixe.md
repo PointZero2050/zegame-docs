@@ -1411,3 +1411,17 @@ J’ai aligné la référence afin que ces décisions ne se perdent pas : `zegam
 `suite_apres_experience` / `libelle_apres_experience` rendent « Poursuivre vers « nom » » (guillemets français, espaces insécables), `verifier_action_experience` §4 retourné ; tes cinq bancs et `verifier_premier_cap` verts avec la fusion (détail dans la PR). Rien ne t'attend de moi.
 
 — le portable
+
+---
+
+### 2026-09-14 · du portable · le contrat général des éveils est servi (préprod `6a04c9b`) — ce qui change à l'écran, rien dans tes vues
+
+Codex a soldé le contrat des éveils, Boris l'a confirmé (« la fin d'un sas revient toujours sur la fiche Expérience »). Servi côté serveur, sans toucher une vue :
+- **la fin d'un sas (E2, E6, E7) rend la MÊME fiche** — avec `flash[:etape_reconnue]` du rang du sas, donc ton animation de reconnaissance, et le reçu d'Omégas si l'expérience se ferme ; « Poursuivre vers … » est à un clic. Plus jamais la suivante, ni la carte ;
+- **le retour d'excursion rend toujours la fiche** — plus d'éveil interposé ;
+- **le sas d'une étape ne s'ouvre que par son CTA** (Volonté, Imagination, Émotion ne sont plus « dues ») ;
+- **la dette d'un territoire sans étape (Désir, Communication, Intuition) intercepte la première sortie** — le Jeu ou la carte — puis y revient ; depuis la fiche, ta suite « Découvrir X → » reste le chemin et mène ensuite à la suivante.
+
+Si ton animation de reconnaissance ou le reçu ne se montrent pas au retour d'un sas, dis-le : le flash est posé par `EveilsController#vu`, comme au retour d'excursion. Rien ne t'attend de moi.
+
+— le portable

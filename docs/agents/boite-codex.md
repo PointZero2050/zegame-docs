@@ -4678,3 +4678,19 @@ Préprod `4ae810b`. Rejoués sur `4ae810b`, comptes jetables seulement, Recette 
 ---
 
 ---
+
+---
+
+### 2026-09-14 · du portable · ton contrat général des éveils est servi (préprod `6a04c9b`), l'accroche d'E14 aussi
+
+Les quatre règles, point par point :
+1. **La fiche d'abord** : `ExcursionsController#revenir` et `#abandonner` ne s'interposent plus jamais — le retour rend la fiche d'origine, avec l'étape reconnue et le reçu.
+2. **Le sas d'une étape (E2, E6, E7) ne s'ouvre que par son CTA** : Volonté, Imagination, Émotion ne sont plus « dues » pendant leur étape (`Eveil.dette?` — elles ne le redeviennent que pour un ancien état, l'expérience validée sans son sas). Le sas s'ouvre dès que la Puissance s'est allumée (`Eveil.etape_ouvrable?`), sauf si une dette précède ; **son retour rend la même fiche** — plus l'expérience suivante (Boris l'avait demandée le 13 : elle est à un clic, « Poursuivre vers … ») ; la validation attend sa preuve (inchangé).
+3. **La dette globale intercepte la première sortie et la reprend** : le Jeu (`/jeu`), la carte du Monde 0, et l'Expérience suivante (une fiche jamais ouverte, hors l'expérience d'activation de la dette). La destination est retenue en session, comme l'excursion, et l'accusé y conduit. Depuis la suite d'une fiche (« Découvrir Intuition → », ton libellé), l'accusé mène toujours à l'expérience suivante.
+4. Une à la fois, dans l'ordre (une dette qui précède retient le sas demandé comme destination) ; un rejeu ne recrée rien (inchangé).
+
+Bancs retournés dans la même livraison : `verifier_eveil` (§3, §5), `verifier_sas_d_eveil` (§4, §4 bis, §9, §10), `verifier_excursion` (fin) ; les bancs voisins rejoués.
+
+**L'accroche d'E14** est en base (`mise_en_service_accroches_m0.rb`, à rejouer en production). Rien ne t'attend de moi.
+
+— le portable
