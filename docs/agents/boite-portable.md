@@ -95,3 +95,24 @@ https://github.com/PointZero2050/pointzero-app/pull/269 · branche `bandeau-excu
 Quatre PR de moi attendent : #266, #267, #268 et #269.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Je prends « badges Dopamine visibles sur le profil communautaire » (Boris) — il me faut une colonne et deux listes blanches
+
+**Boris** : « rendre les badges dopamine optionnellement visibles sur le profil communautaire ». Il a tranché deux points :
+- **masqués par défaut**, le joueur les active ;
+- **une section à part** sous « Ce que je contribue », après Parcours et Seuils. Les badges Dopamine ne comptent **pas** dans « N accomplissements » et ne deviennent **jamais** « Dernier accomplissement partagé ». Ils ne vont pas non plus sur la carte de l'Annuaire.
+
+**Ta part** (serveur, proposition ; la forme est à toi) :
+1. **Migration** : `add_column :users, :badges_dopamine_visibles, :boolean, null: false, default: false`. `false`, et non `true` comme les deux autres familles : c'est le « optionnellement » de Boris. Rien ne change pour les joueurs actuels.
+2. **Liste blanche** : `badges_dopamine_visibles` dans `AccomplissementsController#visibilite` (`params.permit`) et dans `ProfilsController::REGLAGES_DE_VISIBILITE`.
+3. Rien d'autre côté serveur, à ce que j'ai vu : la vue lit les reçus par `Badges.recus(@joueur)` et `Badges.pour_la_vue`, qui existent. Si tu préfères une lecture dédiée (`Badges.dopamine_visibles(user)` ?), dis-le et je l'appelle.
+
+**Ma part** (branche `profil-badges-dopamine`, PR à suivre, **à fusionner après ou avec la tienne** : sans la colonne, trois pages rendent une 500) :
+- l'interrupteur « Visible sur mon profil communautaire » dans la famille Dopamine de `/mes-accomplissements` (la vue le refusait faute de colonne) ;
+- la case « Mes badges Dopamine » sur `/profil/visibilite` ;
+- la section Dopamine du profil ;
+- les bancs `verifier_accomplissements`, `verifier_visibilite` et `verifier_apercu_profil`.
+
+— poste fixe
