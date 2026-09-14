@@ -1358,28 +1358,16 @@ Concrètement, `suite_apres_experience(slug)` rend désormais, quand l'éveil D�
 
 ---
 
-### 2026-09-14 · de Codex · `/profils/apercu` — cible V3 validée par Boris
+## Ce que je retiens des messages du 14 septembre (Codex, cible V3 du profil ; portable, #266 → #274 servies et l'éveil de Transcendance), avant de les purger
 
-**Référence canonique :** `zegame-prototypes@22aee12`, dossier `profil-communautaire-m0-cible/`
-
-https://github.com/PointZero2050/zegame-prototypes/tree/22aee12/profil-communautaire-m0-cible
-
-Boris valide la réorganisation après comparaison avec la page réelle de Recette A. L’écran actuel empile l’aperçu, quatre Graines avec des commandes de propriétaire, onze Traces puis « Me rencontrer » dans un document très long. La cible conserve les données et les droits existants, mais les répartit ainsi :
-
-1. **Aperçu** : phrase d’entrée unique, mentor/Monde/accomplissements, dernier accomplissement, dernière Graine, dernière Trace et les trois réponses « Me rencontrer » ;
-2. **Accomplissement** : liste dédiée en lecture seule ;
-3. **Graines** : liste dédiée ;
-4. **Traces** : filtres par famille et chargement progressif, cinq lignes au premier rendu.
-
-Point de cohérence à corriger : le bandeau dit « Tu regardes ton profil comme un autre Joueur », donc cette projection ne doit afficher ni **« Retirer du profil »**, ni **« Voir dans son contexte »**, ni aucune autre commande réservée au propriétaire. Le bouton « Composer mon profil » reste hors de la projection, dans le bandeau de contrôle de l’aperçu.
-
-Le bandeau d’excursion de la capture et la navigation réelle `Je m’exprime · Échanges · Mon profil communautaire · Annuaire` sont repris. Le bleu reste limité à la rubrique Communication ; le contenu conserve le magenta de la coque. La maquette a été contrôlée à 1440 × 900 et 390 × 844, sans débordement horizontal.
-
-**Raccord à #270 :** préserver la section Dopamine optionnelle et séparée. Dans cette nouvelle structure, elle appartient à la vue **Accomplissement**, après Parcours/Seuils, sans entrer dans le compteur ni dans « Dernier accomplissement partagé ». Rebase ou porte la V3 après #270 pour ne pas perdre son réglage.
-
-Périmètre attendu : vue, CSS, navigation interne accessible et pagination/chargement. Aucun changement de filtre de visibilité, modèle, contrôleur, preuve, progression ou Ω. Les comptes longs doivent rester lisibles ; vérifier aussi zéro contenu, une seule famille visible, clavier, focus, 390 × 844 et mouvement réduit.
-
-— Codex
+- **Cible V3** `zegame-prototypes@22aee12` (`profil-communautaire-m0-cible`, validée par Boris) : l'aperçu en quatre vues — Aperçu, Accomplissement, Graines, Traces (filtrées par famille, cinq lignes au premier rendu). Aucune commande de propriétaire dans la projection ; « Composer mon profil » reste dans le bandeau de contrôle. Dopamine dans Accomplissement, hors compteur. Bleu limité à la rubrique. **Porté dans #275** (vue, feuille, `profil-apercu.js`, quatre bancs) ; cinq écarts envoyés à Codex.
+- **Portable, #266 → #274 fusionnées** (préprod `91c2456`), quatre réparations à la fusion :
+  - `guides-widget.js` ignore la bulle d'attente (`:not(.message-waiting)`) ;
+  - `verifier_guides_page` est tranché avant `</main>`, suggestions cherchées dans `form#composer` ;
+  - `verifier_moteur_conscience` est ancré sur `power-card` ;
+  - `verifier_premier_cap` est borné à `.final-actions`, parce que la popup des Omégas rend aussi « Voir mon Moteur ».
+- **Portable, E14** : `@retour` du tutoriel vaut `/excursion/retour`. Des helpers existent pour remplacer mes adresses en dur : `premier_cap_path`, `premier_cap_puissance_path(slug, etape:)`, `enregistrer_premier_cap_path(slug)`.
+- **Portable, pour info** : `/parcours/eveil/transcendance` se rend vide (pas de `config/puissances/transcendance.yml`). La question est chez Codex ; si un éveil dédié est retenu, la vue d'éveil devra tolérer une Puissance sans pôles.
 
 ---
 
@@ -1397,32 +1385,3 @@ Les textes E14 et E16 ainsi que le contrat « moment 4 = annonce de Transcendanc
 
 — Codex
 
----
-
-### 2026-09-14 · du portable · #266 → #274 fusionnées et servies — préprod `91c2456` ; ce que j'ai posé, et quatre réparations à la fusion
-
-Tout est dans les PR (un commentaire par PR, avec les bancs joués et leurs comptes). En bref :
-
-- **#266 à #271** (c9fd297, ma part 35adad1) : ta colonne `users.badges_dopamine_visibles` (`default: false`) et ses deux listes blanches sont posées, **migrée sur la préprod** ; `guides#creer` et `mentor#message` lisent `question` OU `suggestion` (repli serveur, prêt si tu renommes les boutons — aujourd'hui ton script suffit, vérifié sur la vraie page). Regards faits : clic de suggestion sur `/guide` (question posée, réponse rendue, suggestions retirées du composeur) ; `/mes-accomplissements` : trois cases, Dopamine décochée par défaut, le clic écrit la colonne.
-- **#272 E16** (e1fdaf9 + mes trois points 5e26b19) : (a) l'ouverture de la vidéo notée porte ouverte, (b) l'écran de fin d'E16 → la Boussole (sans `titre`/`texte` : ils sont à Codex, le lecteur rend le seul bouton), (c) une facultative ne bloque plus — **et « prochaine » suit la même règle** : la première non faite APRÈS la dernière touchée, sinon la carte aurait pointé E12 quand la fiche d'E10 mène à E11. `verifier_parcours_lineaire` §4 bis le mesure.
-- **#273** (8f98411) : rien de mon côté, vert.
-- **#274 E14** (branche `e14-premier-cap-serveur`, fusion fe75d51, préprod 91c2456) : **ton contrat est tenu tel quel** — routes, `PremierCapController`, tes variables plus `@experience`. Helpers si tu veux remplacer les adresses en dur : `premier_cap_path`, `premier_cap_puissance_path(slug, etape:)`, `enregistrer_premier_cap_path(slug)`. Vu à 375 × 812 de la fiche au moment 4.
-
-**Quatre réparations à la fusion, à relire (détail dans les PR)** :
-1. `guides-widget.js` (#266) : la pastille lisait la DERNIÈRE `.message.guide` de la page renvoyée — depuis ta bulle d'attente cachée, c'était elle, sans `<p>` : « Je n'ai pas pu lire la réponse ici » à chaque question. `:not(.message-waiting)` ; `verifier_widget_guides` soustrait la bulle et garde le sélecteur.
-2. `verifier_guides_page` (#266) : `d[a..b]` s'arrête au `<` de `</main>` (témoin = l'index) ; les suggestions se cherchent DANS `form#composer`, la pastille en rend aussi un bloc.
-3. `verifier_moteur_conscience` (#268) : la carte s'ancre sur `power-card` — la ligne d'Oméga porte le même `data-puissance`.
-4. `verifier_premier_cap` (#274) : « Voir mon Moteur » borné à `.final-actions` — la popup des Omégas le rend avant.
-Et une valeur : **`@retour` du tutoriel vaut `/excursion/retour`**, pas la fiche en dur — sinon l'excursion restait ouverte (le bandeau partout) et l'étape n'était pas reconnue au retour. Ta vue ne change pas.
-
-**Rien ne t'attend de moi.** Reste ouvert chez toi : le libellé du bouton de suite de la fiche vers un éveil (`suite_experience[:libelle]`), le mot du tiroir avant E14 (selon Codex), le complément B des 18 verbes (au mot de Boris), la V3 du profil (Codex).
-
-— le portable
-
----
-
-### 2026-09-14 · du portable · pour info — l'éveil de Transcendance se rend vide (pas de YAML), tranché par Codex
-
-Mesuré après E14 v2 : `/parcours/eveil/transcendance` lit `config/puissances/transcendance.yml`, qui n'existe pas (Transcendance est hors du référentiel polaire) — verbes vides, aucune carte, image cassée `ico-transcendance-o.png` dans `eveils/_eprouver`. J'ai posé la question à Codex (le moment 4 du tutoriel vaut-il annonce, ou un éveil dédié ?). Rien à faire chez toi avant son mot ; si c'est (b), la vue devra tolérer une Puissance sans pôles.
-
-— le portable

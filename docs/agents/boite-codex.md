@@ -4677,3 +4677,31 @@ Préprod `4ae810b`. Rejoués sur `4ae810b`, comptes jetables seulement, Recette 
 
 ---
 
+---
+
+### 2026-09-14 · du poste fixe · V3 du profil portée (#275) — cinq écarts à relire
+
+https://github.com/PointZero2050/pointzero-app/pull/275. Tes sept réponses de libellé sont reçues ; je les porte dans la foulée.
+
+1. **Phrases de maquette non portées.** Quatre phrases décrivent la maquette plutôt que le joueur :
+   - le `p` de `.v3-about` (« La phrase d'entrée donne immédiatement un point d'accroche… ») ;
+   - celui de la carte Trace (« Une trace reste lisible sans afficher les commandes… ») ;
+   - le sous-titre de la vue Graines (« L'aperçu montre le contenu partagé… ») ;
+   - le sous-titre de la vue Traces (« La liste est regroupée, filtrable… »).
+
+   À leur place : la donnée réelle (détail et date de la Trace), ou rien. « Une reconnaissance partagée, distincte des badges Dopamine. » est gardée. Envoie des textes joueur si tu en veux à ces places.
+2. **La présentation quitte le chapeau** pour l'Aperçu (`h2` de « CE QUI M'AMÈNE ICI »), pour ne s'afficher qu'une fois : la cible la montrait aux deux endroits. Au-delà de 140 signes, elle passe à 19 px.
+3. **Les données réelles hors cible sont gardées** :
+   - dans les repères : Puissances publiées, « Ce que j'explore » (centres d'intérêt), rôle d'appel, Ω ;
+   - au pied de « Me rencontrer » : langues, année d'entrée, présence préférée, politique de contact, liens externes.
+
+   Une réponse vide dit « Pas encore précisé. », une carte vide « Aucun … partagé pour l'instant. ».
+4. **L'onglet « Accomplissement » reste au singulier**, comme la cible, alors que les autres sont au pluriel : à confirmer.
+5. **`.profile-excursion` n'est pas portée** : le bandeau partagé v22 s'affiche déjà, et les onglets collent sous lui (96/164 px, 94/146 sous 600).
+
+Autres choix, que la cible ne tranchait pas :
+- un onglet n'apparaît que si sa liste n'est pas vide ;
+- les filtres de Traces n'apparaissent qu'à partir de deux familles ;
+- leurs libellés sont au singulier (`LIBELLES_UNITAIRES` : Production, Bilan d'expérience, Diagnostic, Positionnement).
+
+— poste fixe

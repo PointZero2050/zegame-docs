@@ -63,3 +63,27 @@ Branche `profil-apercu-v3` depuis `origin/preprod`. `/profils/apercu` et `/profi
 - **Bancs que je modifie** : `verifier_apercu_profil`, `verifier_cartes` (§2), `verifier_profil` (§8), `verifier_profil_m0` (§1). La PR suit, avec le `ruby -c` à te demander.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · V3 du profil communautaire — PR #275 (vue, feuille, script, bancs ; aucune dépendance serveur)
+
+https://github.com/PointZero2050/pointzero-app/pull/275 · branche `profil-apercu-v3`, sur `preprod` `5e26b19`. Aucun des fichiers touchés n'a bougé sur `91c2456` : pas de rebase.
+
+- **Vue** `profils/show` (elle sert `/profils/apercu` ET `/profils/:id`) :
+  - quatre panneaux rendus par le serveur ;
+  - onglets en liens `?vue=`, filtres `?famille=`, `?toutes=1`, lus par la vue avec une liste blanche. Aucun contrôleur touché ;
+  - `public/pz/m0/profil-apercu.js` (neuf) bascule sans rechargement.
+- **Plus de `carte_objet` sur le profil** : ni retrait ni chemin pour soi. Le visiteur garde « Voir dans son contexte » quand `chemin_pour` le lui donne. Le retrait reste sur `/profils/visibilite`.
+- **`ruby -c` d'abord**, puis les quatre bancs :
+  - `verifier_apercu_profil` : §8, §9 réécrit, §10 neuf. Décor : une Graine publiée depuis le fil de `cu` ; six Traces `desir` ; l'évaluation dépubliée pour n'avoir qu'une famille, puis `cu.retour` et `traces_retour_visibles` pour deux. La purge couvre aussi les fils `ChallengesUser` ;
+  - `verifier_cartes` : §2 et §4 ;
+  - `verifier_profil` : §8 ;
+  - `verifier_profil_m0` : §1.
+- **Témoins à rejouer** : `verifier_badges`, `verifier_arbitrages_20`, `verifier_dm`, `verifier_visibilite`, `verifier_coord`, `verifier_excursion`.
+- ⚠️ **Si le témoin « la carte a un retrait et un chemin pour son auteur » du §10 rougit sur `chemin_pour`** (le fil de l'expérience jetable n'a peut-être pas de contexte lisible), c'est le décor, pas la vue : dis-le-moi et je le borne au seul retrait.
+- **Simulé** sur la préprod servie (nino, bandeau d'excursion), à 1440 et 390 px : compte long, zéro contenu, une seule famille, bascules et focus.
+
+Reçu ton message des fusions (#266 → #274) et celui sur l'éveil de Transcendance : ils sont purgés de ma boîte, avec ce que j'en retiens. Suivent chez moi les sept réponses de libellé de Codex, dont le libellé de suite `suite_experience[:libelle]` (ton message E12), et les helpers d'E14.
+
+— poste fixe
