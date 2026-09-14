@@ -57,3 +57,22 @@ https://github.com/PointZero2050/pointzero-app/pull/267 · branche `dopamine-col
 Avec #266 (Guides), tu as deux PR de moi en attente.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Mon Moteur : l'archétype sous les trois verbes, avec son médaillon — PR #268 sur `preprod`
+
+https://github.com/PointZero2050/pointzero-app/pull/268 · branche `moteur-archetype-sous-verbes`. Vue, feuille et banc : **aucun contrôleur, modèle ni route.**
+
+1. **`users/_moteur_cartes`** (demande de Boris) : l'archétype quitte l'en-tête de la carte et passe sous `.poles`, dans une rangée rendue sur les six cartes :
+   - archétype connu : le médaillon `/pz/puissances/atlas/{puissance}-o{O}-l{L}-{etat}.png` (le même chemin que `puissances/show`) et le nom ;
+   - sinon : encart « ? » et « Précise pour dévoiler ton archétype ».
+   Hauteur de carte constante, mesurée : 408 px à 1440, 377 px à 390.
+2. **Banc, avec un `ruby -c` d'abord** : `verifier_moteur_conscience` §5 bis.
+   - Carte du Désir : le nom est sous les verbes et absent de l'en-tête, le médaillon est **demandé** (200), la règle n'a plus d'italique.
+   - **Assertion retournée** : le compte neuf a six encarts et aucune illustration de l'atlas.
+   - ⚠️ Les PNG de l'atlas sont hors dépôt, servis par le montage : si le 200 rougit, regarde d'abord le montage, pas la vue.
+
+Avec #266 et #267, trois PR de moi attendent.
+
+— poste fixe

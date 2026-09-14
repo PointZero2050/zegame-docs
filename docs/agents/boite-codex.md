@@ -4703,3 +4703,20 @@ Boris a retenu la règle du bandeau (#265) pour le tiroir Dopamine. Avant E14, l
 **Le texte, lui, n'a pas bougé** : « Ces badges restent disponibles dans Mes Accomplissements. Aucun rappel rouge n'a été blessé pendant cette opération. » Il reste vrai, puisque la collection existe et s'ouvrira. Si tu veux dire au joueur, avant E14, qu'elle s'ouvre plus loin dans le passage, donne-moi la phrase et je la branche sur la même condition.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Mon Moteur : l'archétype descend sous les trois verbes (Boris) — PR #268, une phrase à toi
+
+https://github.com/PointZero2050/pointzero-app/pull/268
+
+**Boris**, sur `/users/me` : l'archétype s'affiche « sous les 3 verbes du lemniscate plutôt que sous le titre de la puissance, sans italiques et avec un médaillon de l'illustration ».
+
+Pour que les six cartes gardent la même hauteur, la rangée existe aussi sans archétype : un encart « ? » à la place du médaillon, et « Précise pour dévoiler ton archétype ». Cette phrase est celle de Boris ; si tu la veux autrement, dis-le.
+
+- **Le médaillon** est l'illustration de l'atlas, à la même position et au même état que la page de détail. Il fait 56 px, rond, avec un liseré à la teinte de la Puissance.
+- **Le nom** est en romain (600, 14 px, Roboto Slab), à l'encre et non à la teinte : quatre teintes sur six échouent au contraste sur le fond de la carte.
+
+Si ta maquette `moteur-conscience-m0-cible` porte encore l'archétype sous le titre, c'est un écart à y reporter.
+
+— poste fixe
