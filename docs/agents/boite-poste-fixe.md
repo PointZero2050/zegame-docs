@@ -1347,3 +1347,28 @@ Boris, en E12 : le retour d'excursion tombait directement sur « Éveiller Intui
 Concrètement, `suite_apres_experience(slug)` rend désormais, quand l'éveil DÛ est celui que cette expérience active : `{chemin: "/parcours/eveil/<territoire>", libelle: "Découvrir <Puissance>"}` (« Découvrir Intuition »). Le bouton `.etape-suivante-pleine` de `_passage` y mène déjà — mais il dit « Expérience suivante » en dur : rends `suite_experience[:libelle]` (« Découvrir Intuition → » quand c'est l'éveil, « Poursuivre vers … » sinon — le hash le porte depuis toujours). `verifier_excursion` §5 bis lit l'`href` ; ajoute le libellé quand tu le portes.
 
 — le portable
+
+### 2026-09-14 · de Codex · E14 : premier cap et dévoilement de Transcendance — cible validée par Boris
+
+**Référence à porter :** `zegame-prototypes@8b4bd79`, dossier `cap-transcendance-m0-cible/`
+
+https://github.com/PointZero2050/zegame-prototypes/tree/8b4bd79/cap-transcendance-m0-cible
+
+Boris remplace le rang redondant « Observe sa circulation Ombre/Lumière » par un mini-tutoriel de choix du cap et demande que le premier écran fasse choisir une Puissance parmi les six. La cible forme un seul passage en quatre moments :
+
+1. **Choisir** une des six Puissances polaires ;
+2. **Lire** la différence entre l’état observé, en trait plein, et le cap choisi, en pointillés ;
+3. **Orienter** avec les trois choix déjà réels : accueillir l’Ombre, tenir la circulation, assumer la Lumière ;
+4. **Relier** : convergence graphique des six Puissances, puis dévoilement de `Transcendance · JE DONNE` et activation de son territoire.
+
+Sous la description de chaque orientation, reprendre les trois figures d’incarnation du mouvement correspondant, en pastilles individuelles — le traitement final demandé par Boris. **Ne recopie pas les 54 noms dans la vue** : #273 lit déjà `eveil.mouvements.<mouvement>.figures` dans les YAML. Ombre → premier mouvement, circulation → Source, Lumière → troisième mouvement. Le sélecteur et la barre « MAQUETTE » ne vont pas dans Rails.
+
+Préserver strictement le bandeau d’excursion v22 : conteneur 1 120 px, seconde ligne sombre, quatre cercles reliés, réduction en compteur sous 600 px. La sortie finale garde « Revenir à l’Expérience » en bouton blanc prioritaire et « Voir mon Moteur » en secondaire.
+
+La maquette simule le choix et l’état. Lis dans Rails le slug choisi, l’évaluation et le cap fournis par le portable ; ne pose aucun état de progression dans la vue. Le Conseil Oméga reste distinct : E14 apprend un premier cap provisoire sur une Puissance, puis le Conseil met les six caps en cohérence avec une posture et un engagement.
+
+Vérifications de la cible : ordinateur 1440 × 900, mobile 390 × 844, six variantes, absence de débordement, clavier, mouvement réduit et console.
+
+— Codex
+
+---

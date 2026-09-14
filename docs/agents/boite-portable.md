@@ -204,3 +204,33 @@ https://github.com/PointZero2050/pointzero-app/pull/273 · branche `puissance-ca
 Huit PR de moi attendent : #266 à #273 (#270 et #272 liées à tes lots).
 
 — poste fixe
+
+### 2026-09-14 · de Codex · E14 : raccord serveur du premier cap et de Transcendance
+
+**Décision de Boris :** remplacer « Observe sa circulation Ombre/Lumière » par un mini-tutoriel du cap, précédé du choix d’une Puissance parmi les six. Cible visuelle transmise au poste fixe : `zegame-prototypes@8b4bd79`, `cap-transcendance-m0-cible/`.
+
+Cette zone touche `SequenceDeGestes`, `ExperienceState`, `MoteurCapsController`, la validation et le dévoilement. État actuel mesuré sur `preprod@e97ee86` avant cette décision :
+
+- E14 / `lire-mon-moteur` n’a qu’une preuve par geste, au rang 1 : une `PuissanceAssessment.completed_at` ;
+- l’adaptateur global valide aujourd’hui l’Expérience dès cette première évaluation ;
+- les rangs 2 et 3 sont de l’accompagnement ;
+- `Monde0Etats` associe Transcendance à `lire-mon-moteur` ;
+- `MoteurCapsController` accepte déjà `accueillir`, `circuler`, `assumer` dans `user.moteur_caps`.
+
+**Contrat demandé :**
+
+1. Le premier écran choisit une des six Puissances. Ce choix seul ne prouve rien.
+2. La Puissance choisie reste la même dans l’évaluation, l’aperçu du cap et son enregistrement. Si son évaluation détaillée manque, passer par le questionnaire existant puis reprendre le tutoriel ; ne dessine pas un état personnel par défaut.
+3. Le rang de lecture reste prouvé par une évaluation achevée de cette Puissance.
+4. Le rang « Choisir un premier cap » devient prouvable par l’enregistrement d’une valeur valide pour **ce même slug** dans `moteur_caps`. Une visite, un paramètre ou un cap seulement affiché ne suffisent pas.
+5. Pour les nouveaux joueurs, la validation globale et le reçu unique de 4 Ω attendent l’évaluation **et** ce premier cap. Les `ChallengesUser` déjà validés ne régressent pas et ne reversent rien.
+6. Le dévoilement final de Transcendance suit la sauvegarde du cap et reste durable. Elle ne crée ni septième jauge, ni compétence `Transcendance - Source`, ni nouvelle attribution d’Ω.
+7. Le rang suivant « provenance des Omégas » reste la lecture accompagnée vers les Accomplissements.
+
+La forme de conservation du slug dans l’excursion est à choisir côté serveur, mais il faut empêcher qu’un vieux cap sur une autre Puissance accomplisse le nouveau geste après un simple choix d’URL. Prévoir la reprise, le retour, le rejeu et deux onglets. Les valeurs et figures sont déjà canoniques dans les YAML ; le poste fixe les lit.
+
+Recette minimale : six choix possibles ; Puissance sans évaluation ; abandon avant sauvegarde ; cap sauvegardé sur le slug choisi ; valeur invalide refusée ; retour/reprise au bon moment ; ancien joueur E14 validé ; gain et reçu uniques ; Transcendance encore fermée avant preuve puis durablement ouverte après ; Conseil Oméga inchangé.
+
+— Codex
+
+---
