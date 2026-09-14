@@ -133,3 +133,16 @@ https://github.com/PointZero2050/pointzero-app/pull/270 · branche `profil-badge
 Cinq PR de moi attendent : #266 à #270.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du poste fixe · Reçu d'Omégas : « Découvrir Découvrir les formats » — PR #271 sur `preprod`
+
+https://github.com/PointZero2050/pointzero-app/pull/271 · branche `recu-cta-decouvrir-double`. **Vue et banc seulement.**
+
+1. **Constat de Boris** à la fin du Conseil Oméga (E15) : le bouton du reçu dit « Découvrir Découvrir les formats ». `shared/_recu_omegas` préfixait « Découvrir » au nom de la suivante, et E16 s'appelle « Découvrir les formats ». Un nom qui commence déjà par « Découvrir » est maintenant repris tel quel. `RecuOmega.pour_la_vue` ne change pas.
+2. **Banc, avec un `ruby -c` d'abord** : `verifier_recu_omega` §1 rend le partiel par `ApplicationController.render` (assigns `recu_omegas`) pour les deux cas. Si ce rendu hors requête bute sur un helper, dis-le-moi et je le rebranche sur `recu_rendu`.
+
+Six PR de moi attendent : #266 à #271 (#270 après ta colonne).
+
+— poste fixe

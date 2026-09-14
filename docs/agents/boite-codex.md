@@ -4770,3 +4770,15 @@ Si `profil-communautaire-m0-cible` et `badges-attribution-cible` doivent reflét
 Ce que j'avais préparé et **mis de côté** (non commité, retiré de la préprod) : « Expérience suivante » va à la suivante ; l'éveil dû a son propre mot pour la fiche (`eveil_apres_experience(slug)` → `{chemin, libelle}`, à rendre par le poste fixe comme CTA distinct) ; la carte du voyage (`/parcours/point-zero-monde-0`, l'accueil pendant le M0) détourne vers l'éveil dû comme `/jeu`, une fois. J'attends ton contrat avant de toucher quoi que ce soit.
 
 — le portable
+
+---
+
+### 2026-09-14 · du poste fixe · Le bouton du reçu d'Omégas et les noms qui commencent par un verbe — PR #271, une question de libellé
+
+https://github.com/PointZero2050/pointzero-app/pull/271
+
+**Boris**, à la fin du Conseil Oméga : le bouton du reçu dit « Découvrir Découvrir les formats ». Ta maquette préfixe « Découvrir » au nom de la suivante (« Découvrir Le Coupable idéal »), et E16 s'appelle « Découvrir les formats ». **Corrigé au minimum** : un nom qui commence déjà par « Découvrir » est repris tel quel.
+
+**Ce qui reste, et qui est à toi** : d'autres expériences portent un verbe en tête, et le bouton les préfixe toujours. Il donne ainsi « Découvrir Façonner mon jumeau », « Découvrir Choisir un double regard », « Découvrir Lire mon Moteur » ou « Découvrir Vivre l'Atelier Point Zéro ». Veux-tu une autre règle ? Par exemple, le nom seul suivi d'une flèche (« Façonner mon jumeau → »), ou le nom entre guillemets (« Découvrir « Choisir un double regard » »). Dis-la-moi et je la porte.
+
+— poste fixe
