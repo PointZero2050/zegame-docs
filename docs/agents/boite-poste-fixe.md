@@ -1355,3 +1355,28 @@ Concrètement, `suite_apres_experience(slug)` rend désormais, quand l'éveil D�
 - **Cible** `zegame-prototypes@8b4bd79`, `cap-transcendance-m0-cible`, validée par Boris : le rang « Observe sa circulation » d'E14 devient un tutoriel en quatre moments (Choisir une des six Puissances, Lire l'état plein face au cap en pointillés, Orienter `accueillir`/`circuler`/`assumer` avec les trois figures d'incarnation du mouvement, Relier puis dévoiler `Transcendance · JE DONNE`).
 - **Règles de portage** : figures lues de `eveil.mouvements.<mouvement>.figures`, jamais recopiées ; ni sélecteur, ni barre « MAQUETTE » dans Rails ; bandeau v22 strict (1 120 px, seconde ligne sombre, quatre cercles, compteur sous 600 px) ; sortie avec « Revenir à l'Expérience » prioritaire (blanc) et « Voir mon Moteur » en secondaire ; aucune pose d'état par la vue ; le Conseil Oméga reste distinct.
 - **Porté dans #274** (vue, feuille, banc), sur un contrat de vue proposé au portable (routes `/parcours/premier-cap…`, `PremierCapController`, `@puissances @etape @slug @content @pa @cap @transcendance_ouverte @retour`) : à fusionner avec son lot serveur.
+
+---
+
+### 2026-09-14 · de Codex · `/profils/apercu` — cible V3 validée par Boris
+
+**Référence canonique :** `zegame-prototypes@22aee12`, dossier `profil-communautaire-m0-cible/`
+
+https://github.com/PointZero2050/zegame-prototypes/tree/22aee12/profil-communautaire-m0-cible
+
+Boris valide la réorganisation après comparaison avec la page réelle de Recette A. L’écran actuel empile l’aperçu, quatre Graines avec des commandes de propriétaire, onze Traces puis « Me rencontrer » dans un document très long. La cible conserve les données et les droits existants, mais les répartit ainsi :
+
+1. **Aperçu** : phrase d’entrée unique, mentor/Monde/accomplissements, dernier accomplissement, dernière Graine, dernière Trace et les trois réponses « Me rencontrer » ;
+2. **Accomplissement** : liste dédiée en lecture seule ;
+3. **Graines** : liste dédiée ;
+4. **Traces** : filtres par famille et chargement progressif, cinq lignes au premier rendu.
+
+Point de cohérence à corriger : le bandeau dit « Tu regardes ton profil comme un autre Joueur », donc cette projection ne doit afficher ni **« Retirer du profil »**, ni **« Voir dans son contexte »**, ni aucune autre commande réservée au propriétaire. Le bouton « Composer mon profil » reste hors de la projection, dans le bandeau de contrôle de l’aperçu.
+
+Le bandeau d’excursion de la capture et la navigation réelle `Je m’exprime · Échanges · Mon profil communautaire · Annuaire` sont repris. Le bleu reste limité à la rubrique Communication ; le contenu conserve le magenta de la coque. La maquette a été contrôlée à 1440 × 900 et 390 × 844, sans débordement horizontal.
+
+**Raccord à #270 :** préserver la section Dopamine optionnelle et séparée. Dans cette nouvelle structure, elle appartient à la vue **Accomplissement**, après Parcours/Seuils, sans entrer dans le compteur ni dans « Dernier accomplissement partagé ». Rebase ou porte la V3 après #270 pour ne pas perdre son réglage.
+
+Périmètre attendu : vue, CSS, navigation interne accessible et pagination/chargement. Aucun changement de filtre de visibilité, modèle, contrôleur, preuve, progression ou Ω. Les comptes longs doivent rester lisibles ; vérifier aussi zéro contenu, une seule famille visible, clavier, focus, 390 × 844 et mouvement réduit.
+
+— Codex
