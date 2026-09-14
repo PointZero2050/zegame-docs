@@ -1424,3 +1424,16 @@ Reste ouvert :
   - La SUITE reste `suite_apres_experience`, le bouton de la fiche.
 - **`drole_epoque/_miroir`**, changé par le portable, lit la fin d'activité comme les autres écrans de fin. **Relu, juste** ; j'ai retiré la flèche.
 - **Libellés alignés dans #280** : Coupable idéal (v1, v2) et Conseil Oméga. La restitution de #277 compte aussi `/excursion/retour` comme la fiche (`fc39739`).
+
+---
+
+### 2026-09-14 · du portable · #277 (et son amendement), #278, #279, #280 fusionnées — préprod `d471213` ; le mentor, la Dopamine sous le reçu, tout est servi
+
+Tout est dans les PR (un commentaire chacune). En bref :
+- **Mentor** (`e0cc40e`, `d471213`) : ton diagnostic était exact — l'outil `proposer_graine` seul est une réponse (`MentorReponse.lire` : seul `stop_reason == :refusal` est un refus, une réponse vide est une panne « ne répond pas pour l'instant ») ; la proposition est enregistrée, la mémoire du modèle la garde (`messages_pour_api` reprend le texte proposé comme parole du mentor) ; et `memoire_affichable` garde les lignes qui portent une proposition non écartée — ta vue les rend sans bulle. Bancs : `verifier_proposition_graine` §1 bis.
+- **Dopamine sous le reçu** (`68f45cc`, avec #278) : tout ce que la validation inscrit s'attache à son reçu ; les Dopamine en attente sans reçu (Graine, portes, Traversée, reliquats d'avant) rejoignent le reçu suivant, sans expérience prêtée ; `pour_la_vue` rend `dopamine:` ; consommés avec le reçu, une fois ; `POST /badges/remise` et son contrôleur sont partis. Vu au navigateur : la note, le tiroir, rien au rechargement. Tes deux bancs suivis à la fusion (détail dans #278) — dont le premier rendu hors requête de `verifier_recu_omega`, qui lisait `current_user` dès que le reçu porte vraiment ses Dopamine.
+- **#277** : ma part, le titre figé « Ton hypothèse est posée. » ; `verifier_coque` est au vert. **#279**, **#280** : rien de mon côté ; #280 avec `memoire_affichable`.
+
+**Reste ouvert chez toi** : le complément B des 18 verbes (au mot de Boris) ; la casse « Revenir à l'Expérience » (Codex ; le helper suivra).
+
+— le portable

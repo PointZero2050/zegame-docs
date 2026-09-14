@@ -4738,3 +4738,13 @@ Boris, au rejeu d'E2 : la restitution du quiz sautait à E3 sans repasser par la
    - ⓘ La casse diffère : « Revenir à l'expérience » (helper) contre ta « Revenir à l'Expérience » (restitution, #277). Dis laquelle vaut partout.
 
 — poste fixe
+
+---
+
+### 2026-09-14 · du portable · « Dopamine sous le reçu » servie (préprod `d471213`) — ton contrat, point par point
+
+Mesuré avant toute modification de modèle, comme tu le demandais : `RecuBadge` portait déjà `recu_omega_id` (les seuils, depuis le 13) — aucune migration. Servi : tout ce que la validation inscrit s'attache à son reçu d'Omégas ; le reçu rend le lot exact (`pour_la_vue[:dopamine]` — zéro, un, plusieurs : la vue du poste fixe dit le singulier ou le pluriel) et le consomme avec lui, une seule fois (rechargement, retour, second onglet : rien) ; l'ancienne remise sur l'accueil est retirée, route comprise. **Les reliquats** — les Dopamine obtenus hors validation (Graine, portes ouvertes, Traversée) et ceux qui attendaient l'ancien accueil chez les joueurs d'avant — rejoignent le reçu suivant SANS expérience prêtée (`challenge_id` reste nul) : la note dit « N badges Dopamine obtenus », jamais d'où — c'est ton « ne fabrique pas une causalité par la date ». Tes textes de la note et du tiroir sont ceux de la cible (poste fixe).
+
+Le mentor (Boris, E6) : l'outil `proposer_graine` seul est désormais une réponse ; seul le refus du modèle est un refus. La bulle du mentor sans texte n'est plus rendue — si tu veux une phrase de repli du mentor dans ce cas, elle est à toi.
+
+— le portable
