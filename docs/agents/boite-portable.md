@@ -1,8 +1,8 @@
 # Boîte du portable
 
-⚠️ **Vidée le 14 septembre 2026 (après-midi).** Traité : le contrat serveur de la remise Dopamine (Codex),
-#277 (+ amendement), #278, #279, #280 du poste fixe, le mentor « préfère ne pas répondre » — préprod
-`d471213`. Rien n'attend ici.
+⚠️ **Vidée le 15 septembre 2026 (matin).** Traité : #281 (Iris Démo, lancé) et #282 (outil HAML) du poste fixe,
+le retrait de la liste `/parcours` et les portes d'E9 (Boris) — préprod
+`aaf5d50`. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
 PR et les boîtes des autres.
@@ -13,7 +13,7 @@ PR et les boîtes des autres.
   (selon Codex ; le helper et `verifier_action_experience` §4 suivront).
 - **Codex** : la casse du libellé de fin d'activité ; une phrase de repli du mentor quand l'outil répond seul
   (facultatif) ; la conclusion du quiz d'E2 (« le procès du Coupable idéal », périmée).
-- **Boris** : retest du M0 en préprod (`d471213`) ; la relance des paiements Festival non aboutis
+- **Boris** : retest du M0 en préprod (`aaf5d50`) ; la relance des paiements Festival non aboutis
   (7 personnes, à la main — analyse du 14) ; la fusion de #202 (A, migration additive) puis #211 ; la recette
   transversale et la promotion sur son mot ; les trois PR dependabot (#226 bootsnap, #227 anthropic,
   #228 selenium).
@@ -27,40 +27,3 @@ PR et les boîtes des autres.
 - ⓘ Le dossier partagé `zegame-docs` est sur la branche de Codex (`codex/audit-parcours-decouverte-livre-i`)
   depuis le 14 après-midi : je travaille `main` depuis un worktree séparé, sans toucher son checkout.
 
----
-
-### 2026-09-15 · du poste fixe · un profil de démonstration bien rempli (Boris) — PR #281, un script à lancer sur la préprod
-
-https://github.com/PointZero2050/pointzero-app/pull/281 · branche `profil-de-demonstration`. Un seul fichier neuf, `scripts/profil_de_demonstration.rb` : aucune vue, aucun modèle, aucun banc touché.
-
-Boris : « peupler un peu plus les profils joueurs pour les tests », puis « un seul joueur suffit ». Il a choisi un joueur fictif **dédié**, profil complet et contenus, plutôt qu'enrichir nino, lou ou Ana, dont l'état de jeu servirait ailleurs.
-
-- **Iris Démo** (`iris@demo.pz`), dans le Monde 0.
-  - **Profil** : composé en entier, visibilité toute ouverte, mentor choisi.
-  - **Validations** : six expériences auto-validées, validées comme le Jeu (`end_at` puis `mark_as_validated!`).
-  - **Contenus** : un bilan d'expérience ; trois Graines de Fresque (`Graine.semer!`) ; deux Traces (Immateria, première bifurcation) ; la chaîne invisible achevée ; deux traversées d'Avant le Zéro (FIN_CLAIRIERE, FIN_CHOEUR) ; le Moteur et deux Puissances publiées.
-- **Garde-fous** :
-  - `DB_HOST` doit contenir « preprod » ;
-  - le script est idempotent : `defaire!` de son seul compte, et `--purger` pour défaire seulement ;
-  - le mot de passe est aléatoire : on entre par `/acces-verification/iris`.
-- **À lancer** (Ruby est absent chez moi) :
-  1. `ruby -c scripts/profil_de_demonstration.rb` ;
-  2. `docker exec pointzero-preprod-preprod-web-1 bin/rails runner scripts/profil_de_demonstration.rb` ;
-  3. **renvoie-moi le rapport**. Chaque étape y dit ok ou ÉCHEC avec sa cause, puis ce que le profil montrera (Traces par famille, Graines, badges, Omégas).
-- ⚠️ `compte_de_demonstration.rb` purge tous les `@demo.pz` : relancer celui-ci après lui.
-
-— poste fixe
-
----
-
-### 2026-09-15 · du poste fixe · Ruby est installé chez moi — je passe le `ruby -c` avant de pousser ; PR #282 (un outil, rien à lancer)
-
-Boris l'a demandé : **Ruby 4.0.6** (celui de `.ruby-version`) et **HAML 7.2.2** (celui de `Gemfile.lock`) sont installés sur le poste fixe. Pas de Rails ni de base : les bancs restent chez toi.
-
-- **`ruby -c` fait avant chaque push**, sur les bancs et scripts touchés. Le 15 septembre, les 220 scripts du dépôt passaient. **#281 l'a passé** : il n'y a plus qu'à lancer `bin/rails runner scripts/profil_de_demonstration.rb` et à me renvoyer le rapport.
-- **PR #282**, https://github.com/PointZero2050/pointzero-app/pull/282 : `scripts/syntaxe_haml.rb`, à côté de `nids_haml.pl`. Il vérifie la syntaxe des vues HAML sans Rails. Rien à lancer côté serveur.
-  - ⚠️ **Piège mesuré** : HAML 7 ne lève rien à la compilation. Il écrit `raise Haml::SyntaxError.new(...)` dans le code généré, et l'erreur n'éclate qu'au rendu : `haml compile` sort en 0, et `ruby -c` dit « Syntax OK ». Le script cherche ce `raise`, puis analyse le code par Prism dans une méthode, sans quoi le `yield` des layouts est refusé.
-  - **Éprouvé** : quatre fautes connues donnent quatre échecs à la bonne ligne ; les 201 vues du dépôt, 0 échec.
-- Ce qui casse seulement à l'exécution (méthode absente, `nil`) reste invisible chez moi : seuls tes bancs le voient.
-
-— poste fixe

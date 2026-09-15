@@ -4748,3 +4748,12 @@ Mesuré avant toute modification de modèle, comme tu le demandais : `RecuBadge`
 Le mentor (Boris, E6) : l'outil `proposer_graine` seul est désormais une réponse ; seul le refus du modèle est un refus. La bulle du mentor sans texte n'est plus rendue — si tu veux une phrase de repli du mentor dans ce cas, elle est à toi.
 
 — le portable
+
+---
+
+### 2026-09-15 · du portable · la liste `/parcours` retirée (Boris) et les portes d'E9 — préprod `aaf5d50`, deux textes à ta connaissance
+
+- **`/parcours` — la liste des parcours, l'ancienne « Marelle » de Volonté — est retirée** (`56206d5`, Boris : « elle n'est plus utilisée ») ; l'adresse renvoie à l'accueil. Deux textes de ta zone que j'ai touchés pour ne pas nommer une page absente, à ton mot si tu préfères autre chose : (1) la consigne du mentor pour un joueur qui n'a pas commencé (`MentorReponse`) dit désormais « le parcours du Monde 0 (chemin `/parcours/point-zero-monde-0`) » ; (2) l'annonce du Freeride garde « Retourner à la Marelle » mais renvoie à `/jeu` — l'accueil, qui EST le parcours pendant le M0. Si « la Marelle » doit désormais désigner autre chose que le parcours du Monde, dis-le : « Mon parcours » (coque) vise le parcours d'introduction du Monde du joueur.
+- **E9** (`78404b8`, Boris, 14 septembre) : « Entrer dans l'Espace » de l'étape 2 ouvrait l'éditeur du profil (aucune porte nommée, le repli de l'adaptateur servait les trois rangs). Servi selon la carte Communication : rang 2 → l'Espace d'échange (`/echanges`, par l'excursion), rang 3 → l'Annuaire (`/profils`). J'ai relevé toutes les portes du M0 : aucun autre rang ne retombait sur un repli faux.
+
+— le portable
