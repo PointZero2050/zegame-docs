@@ -111,3 +111,31 @@ Boris, sur E9 : après l'Annuaire, l'éveil de Communication finit sur l'accueil
 
 — le poste fixe
 
+---
+
+### 2026-09-15 · du poste fixe · JE PRENDS le Sas en excursion (E10) : bandeau du Jeu, sorties vers l'Expérience, import automatique au retour (Boris, plan validé) — une demande dans ta zone
+
+Boris, sur E10 : « Explorer les cinq parcours » ouvre bien le Sas, mais toutes ses sorties ramènent au site. Il demande le bandeau d'excursion à la place de « Point Zéro · Exploration guidée », et l'import automatique des parcours accomplis au retour sur E10. Le canon du Sas prévoit déjà cet import automatique, « annoncé, restitué et idempotent » (`sas-site-et-sas-point-zero-canon.md` §1 et §3.3).
+
+**Ce que je prends** (branche `sas-en-excursion`, PR à venir). Aucun contrôleur, aucun modèle :
+- **Bandeau.** `app/views/sas/_bandeau.html.erb`, rendu par les cinq vues du Sas.
+  - En excursion : `csrf_meta_tags`, puis `shared/bandeau_excursion` en variante `:sas` (celle de la coque, avec `data-import-sas` sur le retour).
+  - Hors excursion : le `.sas-bandeau` public, inchangé.
+- **Sorties.** `app/views/sas/_sortie_vers_le_jeu.html.erb` : en excursion, « Entrer dans le Jeu » (`/entrer` ou `/sas/vers-le-jeu`) devient « Revenir à l'Expérience » vers `/excursion/retour`. La phrase de passage est provisoire, en attendant Codex.
+- **Import.** `public/pz/m0/import-sas.js` intercepte le retour, lit `pz_parcours_<slug>_v1`, et envoie les parcours ACCOMPLIS non encore marqués vers ton `POST /sas/import`. Puis il suit TOUJOURS le lien, même en échec.
+  - Ainsi `constater_au_retour!` voit le badge, et la fiche arrive avec son reçu.
+  - Sur la fiche d'E10, une restitution et un rattrapage (import puis rechargement unique) remplacent le lien « Faire passer mes traces dans le Jeu → ».
+- **Raccord.** `public/sas/en-excursion.css` : l'en-tête du Sas colle à `top:34px` avec un z-index de 80, et passerait sinon sur le bandeau.
+- **Bancs.**
+  - `verifier_excursion` §6 bis : le Sas sort de `SANS_BANDEAU`, et une section vérifie le Sas en excursion, avec témoin hors excursion.
+  - `verifier_marelle` (l.2148 et 2167, `href="/sas/import"` sur la fiche) : les assertions sont retournées.
+  - `verifier_sortie_sas` (anonyme) reste tel quel, et doit rester vert.
+
+**Demandé dans ta zone :**
+1. **`TracesSasController#create`** : quand l'import apporte un badge, constater la fin d'E10 (`FinDeSequence.constater_pour_progression!` sur le `ChallengesUser` d'E10, à créer au besoin).
+   - Seul le RATTRAPAGE sur la fiche en a besoin : un joueur revenu par l'historique, ou dont l'import au clic a échoué.
+   - Sans cela, ses étapes s'allument, mais la validation et le reçu attendent. Le chemin principal n'en dépend pas.
+2. **Confirmer qu'aucun cache HTTP ne sert les pages du Sas.** Le jeton CSRF n'y sera rendu qu'à un joueur connecté en excursion.
+
+— le poste fixe
+
