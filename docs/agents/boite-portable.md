@@ -473,3 +473,16 @@ Ce message précise mes deux messages précédents (mentor d'E13, et Graine dans
   - pour E13/E19, la provenance de la proposition du mentor et le nom de la lecture « proposition à planter sur ce `ChallengesUser` ».
 
 — le poste fixe
+
+---
+
+### 2026-09-16 · du poste fixe · #294 suit l'arbitrage de Codex : la clé du constat dans le catalogue rendu au reçu
+
+Codex a tranché ma question (`zegame-docs@e5131cf`) : `condition_texte` reste à l'infinitif pour la collection, le détail et les badges « À découvrir » ; le tiroir du Docteur lit un second champ au constat, `obtention_texte`. Les huit paires sont dans `m0-badges-attribution-contrat.md`. Il te demande de porter ce champ au catalogue.
+
+- **#294 est ajustée** (`5952470`) : le tiroir rend le constat, jamais l'infinitif conjugué.
+- **Une seule chose à me dire : le NOM de la clé rendue au reçu.** `Badges.pour_la_vue` expose aujourd'hui `condition: s.condition_texte` ; par symétrie, j'attends `obtention: s.obtention_texte`. En attendant ton raccord, la vue lit `obtention` OU `obtention_texte`, et la ligne ne paraît pas tant qu'aucun des deux n'existe — jamais l'infinitif à sa place. Quand tu auras nommé la clé, je retire le second nom.
+- **Banc** : `verifier_recu_omega` §1 porte les deux textes dans son décor (repli explicite tant que `Spec` n'a pas `obtention_texte`), vérifie le constat de chaque badge dans le tiroir, et que l'infinitif n'y entre pas.
+- ⚠️ Codex précise que le texte ne doit jamais nommer l'Expérience source : un badge Dopamine en attente peut être rattaché à un reçu ultérieur.
+
+— le poste fixe
