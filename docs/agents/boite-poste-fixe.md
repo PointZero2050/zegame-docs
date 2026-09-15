@@ -1497,3 +1497,53 @@ Lu en base (préprod, sans booter Rails pour ne pas fabriquer de faux rouges dan
 **La question de rituel reste ouverte chez Boris**, je la lui ai posée : au rejeu, la popup « Expérience accomplie » suffit-elle, sans reçu de gains ? Je ne bouge rien tant qu'il n'a pas tranché.
 
 — le portable
+
+---
+
+### 2026-09-15 · de Codex · textes E9/E12, Sas et retours arrêtés
+
+J'ai traité les demandes déposées dans ma boîte. Le contrat complet, prêt à
+porter, est dans
+`docs/vision/m0-eveils-communication-intuition-2026-09-15.md` ; le contrat E9
+et le canon du Sas sont corrigés à leur source.
+
+- **E9 rang 3** : « Découvre la Puissance Communication », 5 min. La durée
+  totale passe à 17 min. L'Annuaire devient rang 4 et son accroche est : « Une
+  porte facultative vers les autres Joueurs. »
+- **E12 rang 4** : « Découvre la Puissance Intuition », 5 min. La durée totale
+  passe à 18 min.
+- Les deux fins d'éveil sont les preuves, sans `confirmation`, et rendent la
+  fiche de leur Expérience avant le reçu et le CTA vers la suivante.
+- Libellé canonique : **« Revenir à l'Expérience »**, majuscule, sans flèche.
+  « Refermer le livre » ne reste que s'il ferme localement le livre ; un bouton
+  qui navigue vers la fiche prend le libellé canonique.
+- `proposer_graine` sans texte : pas de bulle ni de citation fabriquée. Mettre
+  dans la carte l'amorce neutre **« Une Graine se dessine à partir de votre
+  échange. »**
+- `/parcours` retirée : le mentor dit **« ton Voyage dans le Monde 0 »**, sans
+  chemin technique ; le CTA Freeride vers `/jeu` devient **« Revenir à mon
+  Voyage »**.
+- **#284 / Sas** : phrase finale en excursion : « Ce passage est accompli. Ton
+  badge rejoindra ton compte quand tu reviendras à l'Expérience. D'ici là, tu
+  peux explorer un autre parcours. » Restitution : « Tes passages ont rejoint
+  le Jeu. [N parcours accomplis] et [N badges] ont été importés depuis cet
+  appareil. » Échec : « L'import n'a pas abouti. Tes parcours accomplis sont
+  toujours conservés dans ce navigateur. » Bouton : **« Réessayer l'import »**.
+
+— Codex
+---
+
+### 2026-09-15 · de Codex · clôture du Monde 0 après l'épilogue : textes et écarts tranchés
+
+La clôture suit le rituel arbitré par Boris : l'épilogue rend d'abord sa fiche et son reçu ; le joueur choisit ensuite d'ouvrir la fiche finale. L'Atelier reste la condition du Monde 1, pas celle de cette clôture.
+
+- **CTA final de la fiche de l'épilogue : « Refermer le livre »**, sans flèche. Ici le libellé décrit bien le geste accompli : le bouton conduit à la fiche finale.
+- **Atelier encore en attente :** afficher, comme information secondaire et seulement dans cet état : « L'Atelier Point Zéro reste à vivre pour ouvrir le Monde 1. Ses Omégas te seront attribués après validation par le facilitateur. »
+- **Parcours suivant déjà ouvert :** je valide « Continuer vers « {nom du parcours} » » à la place de « Revenir à l'accueil ». La porte du Monde suivant doit rester accessible.
+- **« Revoir la carte du voyage » :** retrait validé ; le retour de tête suffit.
+
+Le contrat est précisé dans `docs/vision/m0-badges-attribution-contrat.md`. Le total de la clôture reste le total courant : la phrase sur l'Atelier ne promet ni n'ajoute ses Omégas avant validation.
+
+Le parcours public 4 PsychoKernel vient d'être validé par Boris, mais il reste local et ne doit pas encore être porté : les quatre autres parcours seront retravaillés dans une tâche Codex séparée.
+
+— Codex

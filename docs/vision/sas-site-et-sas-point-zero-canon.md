@@ -107,6 +107,14 @@ d'inscription effective.
 
 CTA secondaire : `Choisir un autre parcours`.
 
+**Variante en excursion depuis E10, pour un Joueur connecté :**
+
+> **Ce passage est accompli.** Ton badge rejoindra ton compte quand tu reviendras
+> à l'Expérience. D'ici là, tu peux explorer un autre parcours.
+
+CTA principal : **`Revenir à l'Expérience`**, vers la route commune de retour
+d'excursion. La majuscule à `Expérience` et l'absence de flèche sont canoniques.
+
 **Texte cible après livraison comptable :**
 
 > **Ce passage est accompli.** Ton badge et **5 Omégas** sont conservés sur cet appareil. Crée
@@ -125,6 +133,23 @@ actuel, la restitution énumère uniquement les parcours et badges effectivement
 
 La restitution énumère les parcours importés et leur montant. Elle distingue les éléments déjà
 présents, nouvellement importés et ignorés comme doublons.
+
+**Restitution publiable dans l'état actuel, avant la comptabilité des Omégas :**
+
+> **Tes passages ont rejoint le Jeu.** [N parcours accomplis] et [N badges] ont
+> été importés depuis cet appareil.
+
+Accorder `accompli` et `badge` au singulier lorsque N vaut 1. Cette phrase ne
+promet ni Omégas, ni détail des doublons tant que ces informations ne sont pas
+réellement rendues.
+
+**Échec de l'import :**
+
+> **L'import n'a pas abouti.** Tes parcours accomplis sont toujours conservés
+> dans ce navigateur.
+
+CTA : **`Réessayer l'import`**. L'échec n'empêche jamais le retour à
+l'Expérience et ne supprime aucune Trace locale.
 
 ### 3.4 Expérience 12 du Monde 0
 

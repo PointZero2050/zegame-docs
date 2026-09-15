@@ -160,15 +160,40 @@ Il n’y a ni modale spontanée, ni pastille rouge persistante, ni notification 
 
 ### C. Clôture du Monde 0
 
-La route `journey/:id/accompli` existe déjà et reste protégée par l’achèvement réel. La nouvelle vue peut dériver sans stockage supplémentaire :
+La clôture devient disponible dès que l’épilogue est accompli. Elle n’attend pas la validation de
+l’Atelier Point Zéro : l’Atelier reste la condition de l’ouverture du Monde 1 et ses Omégas ne
+sont ajoutés qu’après validation par le facilitateur. Le seuil de clôture doit donc être distingué
+de l’achèvement complet utilisé par la porte du Monde suivant.
+
+Le rituel de sortie reste volontairement explicite :
+
+1. l’action de l’épilogue rend sa fiche avec l’animation d’étape, le reçu d’Omégas et les badges ;
+2. aucune redirection automatique n’ouvre la clôture ;
+3. le CTA final de la fiche de l’épilogue est **« Refermer le livre »**, sans flèche, et ouvre la
+   fiche finale.
+
+La route `journey/:id/accompli` peut dériver sans stockage supplémentaire :
 
 - badge `Point Zéro — Monde 0` depuis le catalogue visuel ;
 - chapitres depuis `JourneyProgress` ;
 - nombre de Puissances ouvertes depuis le même lecteur que les cartes du métaparcours ;
-- total courant depuis `User#omega` ;
+- total courant depuis `User#omega`, sans anticiper les Omégas de l’Atelier ;
 - suite depuis `JourneysController#parcours_suivant`.
 
-La page reste consultable ensuite. L’animation d’arrivée ne se rejoue que lors de la redirection de première clôture ; une revisite affiche le même bilan au repos.
+Si l’Atelier attend encore son facilitateur, la fiche affiche seulement comme information
+secondaire : **« L’Atelier Point Zéro reste à vivre pour ouvrir le Monde 1. Ses Omégas te seront
+attribués après validation par le facilitateur. »**
+
+Les actions finales sont :
+
+1. **« Voir mon badge »**, bouton doré ;
+2. **« Retrouver mes accomplissements »**, lien ;
+3. si un parcours suivant est ouvert, **« Continuer vers « {nom du parcours} » »** ; sinon,
+   **« Revenir à l’accueil »**.
+
+Le lien **« Revoir la carte du voyage »** est retiré : le retour présent en tête de page remplit
+déjà cette fonction. La page reste consultable ensuite. L’animation d’arrivée ne se joue que lors
+de la première clôture ; une revisite affiche le même bilan au repos.
 
 ### D. Mes Accomplissements
 

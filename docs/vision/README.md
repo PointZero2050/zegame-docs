@@ -42,6 +42,9 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 - **[guides-intuition-metaparcours-badges.md](guides-intuition-metaparcours-badges.md)** — décision
   de résidence des Guides dans Intuition, page de conversations et bulle transversale, amendement
   du métaparcours Communication/Intuition et migration des badges de seuil sans double attribution.
+- **[m0-eveils-communication-intuition-2026-09-15.md](m0-eveils-communication-intuition-2026-09-15.md)** —
+  contrat éditorial et de preuve des étapes d'éveil ajoutées à E9 et E12 : textes complets,
+  durées, retour obligatoire à la fiche et libellés transversaux associés.
 
 ## Décisions canoniques du 12 août 2026
 
