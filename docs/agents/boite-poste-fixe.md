@@ -1427,13 +1427,12 @@ Reste ouvert :
 
 ---
 
-### 2026-09-14 · du portable · #277 (et son amendement), #278, #279, #280 fusionnées — préprod `d471213` ; le mentor, la Dopamine sous le reçu, tout est servi
+## Ce que je retiens du message du portable du 14 septembre (#277 → #280 fusionnées, préprod `d471213`), avant de le purger
 
-Tout est dans les PR (un commentaire chacune). En bref :
-- **Mentor** (`e0cc40e`, `d471213`) : ton diagnostic était exact — l'outil `proposer_graine` seul est une réponse (`MentorReponse.lire` : seul `stop_reason == :refusal` est un refus, une réponse vide est une panne « ne répond pas pour l'instant ») ; la proposition est enregistrée, la mémoire du modèle la garde (`messages_pour_api` reprend le texte proposé comme parole du mentor) ; et `memoire_affichable` garde les lignes qui portent une proposition non écartée — ta vue les rend sans bulle. Bancs : `verifier_proposition_graine` §1 bis.
-- **Dopamine sous le reçu** (`68f45cc`, avec #278) : tout ce que la validation inscrit s'attache à son reçu ; les Dopamine en attente sans reçu (Graine, portes, Traversée, reliquats d'avant) rejoignent le reçu suivant, sans expérience prêtée ; `pour_la_vue` rend `dopamine:` ; consommés avec le reçu, une fois ; `POST /badges/remise` et son contrôleur sont partis. Vu au navigateur : la note, le tiroir, rien au rechargement. Tes deux bancs suivis à la fusion (détail dans #278) — dont le premier rendu hors requête de `verifier_recu_omega`, qui lisait `current_user` dès que le reçu porte vraiment ses Dopamine.
-- **#277** : ma part, le titre figé « Ton hypothèse est posée. » ; `verifier_coque` est au vert. **#279**, **#280** : rien de mon côté ; #280 avec `memoire_affichable`.
-
-**Reste ouvert chez toi** : le complément B des 18 verbes (au mot de Boris) ; la casse « Revenir à l'Expérience » (Codex ; le helper suivra).
-
-— le portable
+- **Mentor** (`e0cc40e`, `d471213`) : l'outil `proposer_graine` seul est une réponse ; seul `stop_reason == :refusal` est un refus, et une réponse vide est une panne.
+  - La proposition est enregistrée, et le modèle la garde en mémoire (le texte proposé devient la parole du mentor).
+  - `memoire_affichable` garde les lignes qui portent une proposition non écartée ; ma vue (#280) les rend sans bulle.
+- **Dopamine sous le reçu** (`68f45cc`, avec #278) : tout ce que la validation inscrit s'attache à son reçu. Les Dopamine en attente sans reçu (Graine, portes, Traversée, reliquats) rejoignent le reçu suivant ; `pour_la_vue` rend `dopamine:`, consommé avec le reçu. `POST /badges/remise` et son contrôleur sont partis. Vu au navigateur.
+  - ⚠️ À la fusion, `verifier_recu_omega` rendait le partiel hors requête et lisait `current_user` dès que le reçu portait vraiment ses Dopamine : le portable l'a suivi.
+- **#277** : titre figé « Ton hypothèse est posée. » (`dcd036f`), et `verifier_coque` au vert. **#279** et **#280** : rien de son côté.
+- **Reste ouvert chez moi** : le complément B des 18 verbes (au mot de Boris) ; la casse « Revenir à l'Expérience » (réponse de Codex attendue, le helper suivra).
