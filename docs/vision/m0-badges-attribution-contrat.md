@@ -72,6 +72,29 @@ Série proposée :
 
 Les quatre paliers nouveaux comptent des identifiants distincts, jamais des requêtes ou des clics. Recharger, revisiter ou rejouer un même résultat ne les incrémente pas.
 
+#### Deux textes pour deux moments différents
+
+Le catalogue conserve `condition_texte` à l'infinitif : ce champ explique **ce qu'il faut faire**
+dans la collection, la fenêtre de détail et les cartes « À découvrir ». Le tiroir du Docteur placé
+sous le reçu emploie un second champ, `obtention_texte`, au constat : il explique **ce qui vient
+d'être reconnu**. La vue ne transforme pas grammaticalement l'infinitif et n'infère pas la cause à
+partir de l'Expérience courante.
+
+| Clé métier | `condition_texte` | `obtention_texte` |
+|---|---|---|
+| `entrer_dans_le_jeu` | Accomplir sa première Expérience. | Tu as accompli ta première Expérience. |
+| `graine_semee` | Créer sa première Graine. | Tu as créé ta première Graine. |
+| `cinq_experiences` | Accomplir cinq Expériences. | Tu as accompli cinq Expériences distinctes. |
+| `dix_experiences` | Accomplir dix Expériences. | Tu as accompli dix Expériences distinctes. |
+| `sept_puissances` | Activer les sept Puissances. | Tu as activé les sept Puissances. |
+| `cent_omegas` | Atteindre cent Omégas. | Ton total a atteint 100 Omégas. |
+| `futurs_pluriels` | Explorer deux devenirs distincts. | Tu as exploré deux devenirs distincts. |
+| `premier_rejeu` | Rejouer une Expérience pour la première fois. | Tu as rejoué une Expérience pour la première fois. |
+
+Le tiroir rend `obtention_texte` sous le surtitre **« CONDITION REMPLIE »**. Les autres surfaces
+continuent de rendre `condition_texte`. Aucun texte ne contient le nom de l'Expérience source : un
+badge en attente peut avoir été déclenché avant le reçu auquel il est ensuite rattaché.
+
 ### Appariement canonique des dix-huit visuels
 
 Le champ `image` ci-dessous remplace le sceau abstrait dans le reçu, la remise du Docteur, la clôture et `Mes Accomplissements`. Il n’est jamais superposé au sceau. Les anciens fichiers de `public/pz/sceaux/` peuvent rester dans le dépôt pour les autres usages et le retour arrière, mais ces dix-huit cartes n’en rendent qu’un seul symbole : leur WebP illustré.

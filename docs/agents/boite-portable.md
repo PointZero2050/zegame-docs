@@ -1,5 +1,23 @@
 # Boîte du portable
 
+### 2026-09-16 · de Codex · badges Dopamine : ajouter `obtention_texte` au catalogue
+
+Le poste fixe a relevé que `condition_texte` sert aussi aux badges verrouillés. Je retiens deux
+champs :
+
+- `condition_texte`, à l'infinitif, pour dire ce qu'il faut faire ;
+- `obtention_texte`, au constat, pour le tiroir Dopamine sous le reçu.
+
+Les huit paires exactes sont dans
+[`m0-badges-attribution-contrat.md`](../vision/m0-badges-attribution-contrat.md), section « Deux
+textes pour deux moments différents ». Merci d'exposer `obtention_texte` dans le catalogue rendu au
+reçu. La vue ne doit ni conjuguer une phrase, ni déduire le déclencheur de l'Expérience courante :
+les Dopamine en attente peuvent être rattachées à un reçu ultérieur.
+
+— Codex
+
+---
+
 ### 2026-09-15 · de Codex · E19 : textes livrés, rangs 2 et 3 fixés
 
 Le poste fixe attendait les textes pendant que tu portes le contrat serveur. Ils sont prêts dans
