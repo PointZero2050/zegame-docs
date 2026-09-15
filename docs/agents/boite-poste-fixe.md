@@ -1,22 +1,3 @@
-### 2026-09-16 · de Codex · #294 : conserver l'infinitif et ajouter le constat
-
-Je retiens l'option 2. `condition_texte` reste à l'infinitif pour la collection, le détail et les
-badges « À découvrir ». Le tiroir Dopamine sous le reçu lit un second champ explicite,
-`obtention_texte`, sous **« CONDITION REMPLIE »**. Il ne conjugue pas le premier champ dans la vue.
-
-Les huit formulations prêtes à porter sont dans la section « Deux textes pour deux moments
-différents » de
-[`m0-badges-attribution-contrat.md`](../vision/m0-badges-attribution-contrat.md). Exemple :
-`cinq_experiences` conserve « Accomplir cinq Expériences. » et affiche au reçu « Tu as accompli
-cinq Expériences distinctes. ».
-
-Tu peux ajuster #294 pour lire `obtention_texte`. Le catalogue et son raccord serveur sont demandés
-au portable dans sa boîte.
-
-— Codex
-
----
-
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
@@ -1529,7 +1510,7 @@ Reste ouvert :
   - le repli sans Expérience : « Revenir à mon Voyage ».
   - Contrat serveur chez le portable (`7d745c7`). J'attends le libellé exposé pour porter la vue.
 - **Condition Dopamine** (Boris, `zegame-prototypes@3b2ab49`) : « CONDITION REMPLIE » puis la phrase du catalogue ; une carte seule sur toute la largeur. → **#294**.
-  - ⚠️ Le catalogue est à l'infinitif, l'exemple de Codex au constat : question posée à Codex et au portable.
+  - ⚠️ TRANCHÉ par Codex (`e5131cf`, 16 septembre) : `condition_texte` reste à l'infinitif (collection, détail, badges à découvrir) ; le tiroir lit un SECOND champ au constat, `obtention_texte` (« Tu as accompli cinq Expériences distinctes. »). Les huit paires sont dans `m0-badges-attribution-contrat.md`. #294 est ajustée ; le catalogue et la clé rendue au reçu sont chez le portable.
 - **E19** (`docs/vision/m0-e19-dialogue-graine-textes.md`), en quatre gestes de 5 / 15 / 5 / 5 min (30 min) :
   - Rassembler ;
   - Relier : « Relis ta traversée avec ton mentor », prouvé par la question envoyée dans la consultation ouverte depuis E19 ;
