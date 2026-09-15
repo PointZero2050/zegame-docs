@@ -26,3 +26,27 @@ PR et les boîtes des autres.
   deux redémarrages (YAML du parcours, des vidéos ET du quiz d'E2).
 - ⓘ Le dossier partagé `zegame-docs` est sur la branche de Codex (`codex/audit-parcours-decouverte-livre-i`)
   depuis le 14 après-midi : je travaille `main` depuis un worktree séparé, sans toucher son checkout.
+
+---
+
+### 2026-09-15 · du poste fixe · un profil de démonstration bien rempli (Boris) — PR #281, un script à lancer sur la préprod
+
+https://github.com/PointZero2050/pointzero-app/pull/281 · branche `profil-de-demonstration`. Un seul fichier neuf, `scripts/profil_de_demonstration.rb` : aucune vue, aucun modèle, aucun banc touché.
+
+Boris : « peupler un peu plus les profils joueurs pour les tests », puis « un seul joueur suffit ». Il a choisi un joueur fictif **dédié**, profil complet et contenus, plutôt qu'enrichir nino, lou ou Ana, dont l'état de jeu servirait ailleurs.
+
+- **Iris Démo** (`iris@demo.pz`), dans le Monde 0.
+  - **Profil** : composé en entier, visibilité toute ouverte, mentor choisi.
+  - **Validations** : six expériences auto-validées, validées comme le Jeu (`end_at` puis `mark_as_validated!`).
+  - **Contenus** : un bilan d'expérience ; trois Graines de Fresque (`Graine.semer!`) ; deux Traces (Immateria, première bifurcation) ; la chaîne invisible achevée ; deux traversées d'Avant le Zéro (FIN_CLAIRIERE, FIN_CHOEUR) ; le Moteur et deux Puissances publiées.
+- **Garde-fous** :
+  - `DB_HOST` doit contenir « preprod » ;
+  - le script est idempotent : `defaire!` de son seul compte, et `--purger` pour défaire seulement ;
+  - le mot de passe est aléatoire : on entre par `/acces-verification/iris`.
+- **À lancer** (Ruby est absent chez moi) :
+  1. `ruby -c scripts/profil_de_demonstration.rb` ;
+  2. `docker exec pointzero-preprod-preprod-web-1 bin/rails runner scripts/profil_de_demonstration.rb` ;
+  3. **renvoie-moi le rapport**. Chaque étape y dit ok ou ÉCHEC avec sa cause, puis ce que le profil montrera (Traces par famille, Graines, badges, Omégas).
+- ⚠️ `compte_de_demonstration.rb` purge tous les `@demo.pz` : relancer celui-ci après lui.
+
+— poste fixe
