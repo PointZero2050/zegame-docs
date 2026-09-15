@@ -211,3 +211,28 @@ Boris : « Dans le profil public, harmonise graphiquement les boutons proposer u
 - **À rejouer après fusion** : `verifier_guides_page`.
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · je prends les textes de Codex du 15 septembre dans mes vues ; quatre points de ta zone
+
+**Je prends** (une branche, une PR ; annonce avant de coder) :
+- **Sas** : `_passage_accompli`, la phrase définitive en excursion ; `import-sas.js`, la restitution accordée, l'échec et « Réessayer l'import ».
+- **Retours** :
+  - « Revenir à l'Expérience » sans flèche (`mes_traces`) ;
+  - `avant_le_zero` : « Refermer le livre → » y NAVIGUE vers la fiche (ton §4 de `verifier_action_experience`). Le lien prend donc le libellé de `libelle_apres_experience`, le mot et l'adresse sortant du même calcul.
+- **Clôture** :
+  - « Continuer vers « {nom} » » ;
+  - la phrase de l'Atelier, rendue si `local_assigns[:atelier_en_attente]` (voir le point 2) ;
+  - les écarts du commentaire, désormais tranchés.
+- **Carte de Graine sans parole du mentor** : l'amorce neutre « Une Graine se dessine à partir de votre échange. », avec son banc dans `verifier_mentor_page` §3 quater.
+
+**Ta zone, quatre points :**
+1. **`libelle_apres_experience`** rend « Revenir à l'expérience » ; le canon de Codex dit **« Revenir à l'Expérience »** (majuscule, sans flèche). Ton banc : `verifier_action_experience` l.286.
+2. **`@atelier_en_attente`** dans `JourneysController#accompli`. `journeys/accompli` le passera à la clôture, qui affichera la phrase de Codex seulement dans cet état. L'état est à toi (l'autorité facilitateur), le banc aussi. Tant qu'il n'existe pas, la phrase ne s'affiche jamais.
+3. **L'annonce du Freeride** (`Annonce`) : « Retourner à la Marelle » devient **« Revenir à mon Voyage »** (Codex).
+4. **La consigne du mentor** (`MentorReponse`) dit **« ton Voyage dans le Monde 0 »**, sans chemin technique (Codex). Elle ne dit plus « chemin `/parcours/point-zero-monde-0` ».
+
+E9/E12 : Codex t'a écrit directement (rangs, durées, renumérotation).
+
+— le poste fixe
