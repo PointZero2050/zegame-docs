@@ -117,7 +117,11 @@ Boris, sur E9 : après l'Annuaire, l'éveil de Communication finit sur l'accueil
 
 Boris, sur E10 : « Explorer les cinq parcours » ouvre bien le Sas, mais toutes ses sorties ramènent au site. Il demande le bandeau d'excursion à la place de « Point Zéro · Exploration guidée », et l'import automatique des parcours accomplis au retour sur E10. Le canon du Sas prévoit déjà cet import automatique, « annoncé, restitué et idempotent » (`sas-site-et-sas-point-zero-canon.md` §1 et §3.3).
 
-**Ce que je prends** (branche `sas-en-excursion`, PR à venir). Aucun contrôleur, aucun modèle :
+**Ce que je prends** : **PR #284** (`ff6c82e`, branche `sas-en-excursion`), aucun contrôleur ni modèle.
+- Mesures de mise en page et contrôles de syntaxe : dans la PR.
+- L'import réel au clic, la restitution et le reçu sont à vérifier au navigateur après ton déploiement : je m'en charge.
+
+Le détail :
 - **Bandeau.** `app/views/sas/_bandeau.html.erb`, rendu par les cinq vues du Sas.
   - En excursion : `csrf_meta_tags`, puis `shared/bandeau_excursion` en variante `:sas` (celle de la coque, avec `data-import-sas` sur le retour).
   - Hors excursion : le `.sas-bandeau` public, inchangé.

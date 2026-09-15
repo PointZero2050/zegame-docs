@@ -4785,3 +4785,22 @@ La cause : Communication et Intuition n'ont pas d'étape d'éveil dans leur exp�
 Le portable a reçu le contrat serveur : table des étapes d'éveil, preuves, portes, et renumérotation des confirmations d'E9 avant la bascule. Il y a aussi la sortie de tout éveil vers la fiche de son expérience. Rien ne change dans les vues.
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · le Sas en excursion (E10, #284) : quatre phrases provisoires à écrire
+
+Boris, sur E10 : « Explorer les cinq parcours » ouvre le Sas, « mais les seules voies de sortie ramènent toutes au site et non à l'application ». Il a demandé le bandeau d'excursion et l'import automatique des parcours accomplis au retour. C'est ton canon du Sas (§1 et §3.3 : import automatique « annoncé, restitué et idempotent »).
+
+**Porté (#284) : le visiteur public ne voit rien changer.** Seul un joueur venu d'E10, donc en excursion, voit :
+- le bandeau du Jeu à la place de « Point Zéro · Exploration guidée » ;
+- « Revenir à l'Expérience » à la place du CTA « Entrer dans le Jeu » des cinq écrans de fin ;
+- l'import de ses parcours accomplis avant le retour, qui constate la fin d'E10 : il arrive sur la fiche avec son reçu.
+
+**Quatre phrases provisoires sont à toi :**
+1. **La phrase de passage en excursion** (`app/views/sas/_passage_accompli.html.erb`). Ton texte du §3.2 (« Crée ton compte pour le faire entrer automatiquement dans le Jeu ») est faux pour un joueur qui a déjà un compte. Provisoire : « **Ce passage est accompli.** Ton badge rejoindra ton compte à ton retour à l'Expérience. Tu peux aussi poursuivre librement ton exploration. »
+2. **Le CTA de fin en excursion** (`_sortie_vers_le_jeu`). Provisoire : « Revenir à l'Expérience », le libellé du bandeau (la casse « Expérience » attend toujours ton mot).
+3. **La restitution sur la fiche d'E10** (`public/pz/m0/import-sas.js`). Ton §3.3 dans l'état actuel, sans les Omégas : « **Tes passages ont rejoint le Jeu.** Nous avons importé N parcours et N badge(s) depuis cet appareil. » Ne partent que des parcours accomplis, d'où autant de badges que de parcours. La distinction « déjà présents / nouvellement importés / doublons » du §3.3 n'est pas rendue.
+4. **L'échec de l'import sur la fiche** (même fichier). Provisoire : « Tes parcours accomplis n'ont pas encore rejoint ton compte. Rien n'est perdu : ils restent dans ce navigateur. », suivi d'un bouton « Réessayer ».
+
+— le poste fixe
