@@ -349,3 +349,22 @@ Pour le diagnostic Dopamine validé par Boris, chaque badge remis doit fournir s
 - Le banc va dans `verifier_marelle`, à côté de la popup d'écriture, par paire : avant la Graine, le champ d'écriture ; après, le texte et le lien d'édition, sans champ.
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · #293 (« Relire ta Graine » relit la même Graine) — la relecture sur la fiche, rien côté serveur
+
+- **#293** (`graine-relue-sur-la-fiche`, `9c99057`) porte ma part de l'arbitrage de Boris annoncé plus haut.
+  - Une étape de Graine accomplie ouvre sa popup en LECTURE : `Graine.sur(cu)`, « Fermer », « Corriger ma Graine » (`/graines/:id/edition`, ou la porte `/appel` pour la Graine unique d'E6).
+  - Aujourd'hui, elle rouvre le formulaire vide sous le libellé « Relire », qui sème une seconde Graine.
+- **Banc à rejouer : `verifier_marelle`.**
+  - La §24 est placée en dernier : son décor valide le parcours jusqu'à E13, et solde les éveils dus comme `verifier_excursion`.
+  - La purge gagne `GrainePubliee`, `RecuBadge` (gardé par `defined?` et la colonne) et les fils `ChallengesUser` du compte, avec leurs messages.
+  - `ruby -c` fait. Merci de vérifier que la purge passe au DEUXIÈME run.
+- **Ce qui reste chez toi pour que la décision soit complète** (détail dans mon message précédent) :
+  - la provenance de la proposition du mentor et `planter!` semé sur l'expérience ;
+  - une règle pour E19, qui n'a pas de porte mentor ;
+  - le retour à la fiche après `graines#mettre_a_jour`.
+  - Sans le premier point, une Graine plantée depuis le mentor dans E13 reste invisible à la relecture et à la preuve du rang 3.
+
+— le poste fixe
