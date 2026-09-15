@@ -1439,27 +1439,12 @@ Reste ouvert :
 
 ---
 
-### 2026-09-15 · du portable · #281 lancé (Iris Démo posée), #282 fusionnée, la liste `/parcours` retirée (quatre hrefs de tes vues alignés), les portes d'E9 — préprod `aaf5d50`
+## Ce que je retiens des messages du portable du 15 septembre (#281 lancé, #282 fusionnée, `/parcours` retirée, z-index de l'éveil), avant de les purger
 
-- **#281** (`3ff6b34`) : `ruby -c` refait, lancé sur la préprod — **21 étapes « ok », « Tout est posé »**. Le rapport complet est dans la PR. En bref : `iris@demo.pz`, mentor **antigone**, 6 expériences validées, bilan, 3 Graines publiées, Traces territoire 4 · retour 1 · diagnostic 3 · positionnement 1, seuils 1, reçus Dopamine 4, 31 Ω ; `/acces-verification/iris?vers=/profils/33949`. Vérifié au rendu : `/profils/33949` 200 avec présentation, Croix-Rousse, langues, liens, Antigone, Graines, Traces, Dopamine ; l'Annuaire liste « Iris Démo ». Mes jetables `@demo.pz` se purgent un par un désormais — jamais par domaine.
-- **#282** (`aaf5d50`) : fusionnée. Éprouvé dans le conteneur : `bundle exec ruby scripts/syntaxe_haml.rb` → 200 vues, 0 échec (`bundle exec` obligatoire là-bas, `haml` n'est sur le chemin que par Bundler — noté dans la PR).
-- **La liste des parcours `/parcours` est retirée** (`56206d5`, Boris : « elle n'est plus utilisée ») : `journeys#index` et **`app/views/journeys/index.html.haml` supprimée** ; `GET /parcours` → 301 `/jeu`. **Dans tes vues, quatre hrefs seulement, alignés à la fusion** (à relire, rien d'autre touché) : `accueil/index.html.erb` (« Le Jeu » → `/jeu`), `users/_moteur` (« Découvrir le parcours du Monde 0 » → `/parcours/point-zero-monde-0`), `users/_puissances` (repli → `/jeu`), `journeys/_cloture` (le repli sans parcours suivant : « Voir tous les parcours » → **« Revenir à l'accueil »**, `accueil_jeu_path` — le libellé est à toi si tu veux mieux). Côté serveur : sept contrôleurs, `ContexteDeFil`, `Annonce`, `NavigationHelper` (`chemin_de_fiche`/`suite_apres_experience` sans parcours → `/jeu`, « Revenir à l'accueil ») ; `Coque.chemin` résout « Mon parcours » vers le parcours d'introduction du Monde du joueur (`/parcours/point-zero-monde-0` au M0, la Boussole au M1) ; `monde_1.yml` (Volonté) vise la Boussole. `verifier_menu_compte` (« La Marelle n'est plus dans le menu ») reste vrai ; `verifier_coque` §5/§8, `verifier_coque_m0` §5, `verifier_accueil_m0` (la page sort des aides), `verifier_parcours_brouillon` (trois chemins) suivis — 17 bancs rejoués verts.
-- **E9** (`78404b8`, Boris) : « Entrer dans l'Espace » de l'étape 2 renvoyait à l'édition du profil — E9 n'avait aucune porte nommée, le repli de l'adaptateur (`edit_user_path`) servait les trois rangs. Servi : rang 2 → `/echanges` (par l'excursion), rang 3 → `/profils` ; `verifier_profil_e9` les garde. Rien à changer dans tes vues.
-
-— le portable
-
----
-
-### 2026-09-15 · du portable · z-index de l'écran d'éveil : la roue « 7 Puissances » passe SUR le bandeau au défilement (Boris, 15 septembre) — cause trouvée, correctif d'une ligne confirmé, c'est ta zone
-
-Boris, sur `/parcours/eveil/communication` : « il semble y avoir un problème de z-index avec le menu ». Reproduit et mesuré au navigateur (préprod, 1440 px, compte jetable dédié).
-
-**Le défaut** : au REPOS, rien (bandeau 0→171, `#top-bar` 171→257, aucun chevauchement). Au DÉFILEMENT, le bandeau d'éveil est `sticky top:0` (`.excursion-bandeau`, `excursion.css`, z-index 20) et `#top-bar` (statique) glisse dessous — attendu. Mais la roue « 7 Puissances » peint PAR-DESSUS le bandeau : `elementFromPoint` au centre de la roue, scroll 120, renvoie le `<b>` de la roue au lieu du bandeau.
-
-**La cause** (mesurée) : `.pz-m0-nav--entete` (coque.css) garde **`z-index: 40`** hérité de `.pz-m0-nav` — `--entete` a bien remis `position: static` mais n'a pas touché le z-index. Or `.pz-m0-nav--entete` est un **enfant de grille** (`#top-bar` est `display: grid`), et un item de grille honore son `z-index` même en `position: static`. 40 > 20 du bandeau → la roue passe devant.
-
-**Correctif confirmé au navigateur** (test non destructif, `z-index:auto` sur `.pz-m0-nav--entete` → `elementFromPoint` renvoie de nouveau `progress-band` : le bandeau reprend le dessus) : ajouter `z-index: auto;` à la règle `.pz-m0-nav--entete` (coque.css, ~ligne 42), là où elle remet déjà `position: static; background: none; border-bottom: 0`. Elle ne colle plus, elle n'a plus à réclamer sa couche. (Alternative si tu préfères garder la couche : monter le bandeau au-dessus de 40, mais `z-index:auto` sur `--entete` est le plus juste — c'est un oubli du retrait du sticky.)
-
-C'est `public/pz/m0/coque.css`, ta zone : je ne l'ai pas touché. Pousse quand tu veux, je fusionne et déploie. La boucle fonctionnelle de la même page (« Revenir à l'Expérience » qui gardait sur l'éveil) est corrigée de mon côté, servie (`0e144c8`).
-
-— le portable
+- **#281** (`3ff6b34`) : 21 étapes ok. Iris Démo porte le mentor antigone, 6 validations, 3 Graines, des Traces, des Dopamine et 31 Ω.
+  - Entrée : `/acces-verification/iris?vers=/profils/33949`. Le portable a vérifié le rendu du profil et sa présence dans l'Annuaire.
+  - Ses comptes jetables `@demo.pz` se purgent un par un, jamais par domaine.
+- **#282** (`aaf5d50`) : dans le conteneur, `bundle exec ruby scripts/syntaxe_haml.rb` (sans `bundle exec`, `haml` n'est pas sur le chemin là-bas).
+- **`/parcours` est retirée** (`56206d5`) : 301 vers `/jeu`, et `journeys/index` est supprimée. Le portable a aligné quatre hrefs de mes vues : `accueil/index`, `users/_moteur`, `users/_puissances` et `journeys/_cloture` (« Revenir à l'accueil », libellé à reprendre si je trouve mieux). « Mon parcours » vise le parcours du Monde du joueur.
+- **E9** (`78404b8`) : rang 2 → `/echanges`, rang 3 → `/profils`. Rien dans mes vues.
+- **z-index de l'éveil** : `.pz-m0-nav--entete` gardait le `z-index: 40` du sticky ; enfant de grille, il l'honorait. → **#283** (`z-index: auto`, `verifier_coque` §9, témoin rouge sur `origin/preprod`). La boucle « Revenir à l'Expérience » sur l'éveil est servie de son côté (`0e144c8`).

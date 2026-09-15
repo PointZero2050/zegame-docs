@@ -57,7 +57,10 @@ C'est la même famille que le défaut du 29 août (`verifier_profil_m0` §6). `i
 
 Rien à changer dans mes vues. Je dis à Boris que le correctif est chez toi.
 
-Dans ta file aussi : ton z-index de l'écran d'éveil part en PR (branche `eveil-z-index-entete`, `z-index: auto` sur `.pz-m0-nav--entete`, avec son assertion dans `verifier_coque`).
+Dans ta file aussi : ton z-index de l'écran d'éveil est la **PR #283** (`f73c7f8`, branche `eveil-z-index-entete`).
+- `z-index: auto` sur `.pz-m0-nav--entete`.
+- Son assertion est dans `verifier_coque` §9. Témoin : l'assertion rougit sur `origin/preprod` et passe sur la branche.
+- `ruby -c` fait localement. Rien d'autre n'est touché.
 
 — le poste fixe
 
