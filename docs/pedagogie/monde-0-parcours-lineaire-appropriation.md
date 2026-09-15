@@ -119,7 +119,7 @@ Le barème validé totalise exactement **100 Omégas** sur les 19 Expériences :
 | 16 | 3 | **Découvrir les formats** | facultative · existante | Clarifier le besoin, comparer les formats, conserver une Boussole | Boussole enregistrée comme Trace | ouvre les fiches de formats sans inscription obligatoire | 4 |
 | 17 | 3 | **Participer à un Sas Point Zéro** | facultative · existante | Choisir un Sas, participer, conserver une intention | inscription ou présence + intention enregistrée | reste disponible après le chapitre et rapporte toujours ses Ω | 5 |
 | 18 | 3 | **Vivre l'Atelier Point Zéro** | essentielle · rite | Choisir un Atelier et obtenir une inscription confirmée | contrôleur d'inscription | prépare la clôture du M0 ; la présence validée ultérieurement par le facilitateur ouvre le Monde 1 | 7 |
-| 19 | 3 | **Mon récit de passage** | essentielle · existante | Rassembler les Traces, composer la Graine de passage, sceller la Carte du Seuil | Graine + Carte générées + visibilité enregistrée | produit la restitution finale | 8 |
+| 19 | 3 | **Mon récit de passage** | essentielle · existante | Rassembler les Traces, relire la traversée avec le mentor, planter la Graine de passage, sceller la Carte du Seuil | Graine + Carte générées + visibilité enregistrée | produit la restitution finale | 8 |
 | 20 | 3 | **Ton espace est prêt** | passage terminal · nouveau | Relire les sept Puissances éveillées et choisir explicitement d'ouvrir son espace | confirmation idempotente de clôture du M0 | transforme l'accueil en tableau de bord ; aucune nouvelle Puissance | 0 |
 
 ### 4.1. Décompte joueur et granularité des étapes visibles
@@ -153,7 +153,7 @@ fiche lorsque le Joueur les traverse dans un même mouvement.
 | 16 | **Découvrir les formats** · facultative | 1. Clarifier le besoin ; 2. Comparer les formats ; 3. Conserver une Boussole de passage. |
 | 17 | **Participer à un Sas Point Zéro** · facultative | 1. Choisir un Sas et se présenter ; 2. Participer à la rencontre ; 3. Conserver l'intention de passage comme Trace. |
 | 18 | **Vivre l'Atelier Point Zéro** | Étape unique : choisir un créneau et obtenir une inscription confirmée. La participation réelle reste la condition ultérieure de validation du passage vers le Monde 1. |
-| 19 | **Mon récit de passage** | 1. Rassembler les Traces ; 2. Composer la Graine de passage avec le mentor ; 3. Sceller la Carte du Seuil et sa visibilité. |
+| 19 | **Mon récit de passage** | 1. Rassembler les Traces ; 2. Relire la traversée avec le mentor ; 3. Planter la Graine de passage dans la popup intégrée ; 4. Sceller la Carte du Seuil et sa visibilité. |
 | 20 | **Ton espace est prêt** · épilogue | Étape unique : relire les sept Puissances éveillées et confirmer `Ouvrir mon espace`. Ce geste transforme l'accueil en tableau de bord sans ouvrir à lui seul le Monde 1. |
 
 Répartition cible : **7 Expériences au chapitre 1**, **7 au chapitre 2**, **5 au chapitre 3**,

@@ -1,4 +1,4 @@
-# E19 rang 3 — Carte du Seuil : contrat de stockage et de rendu
+# E19 rang 4 — Carte du Seuil : contrat de stockage et de rendu
 
 Note du portable, 10 septembre 2026, en réponse à la demande de Codex dans
 [`m0-e19-raccord-des-gestes.md`](m0-e19-raccord-des-gestes.md) : « Le portable vérifie d'abord si
@@ -97,12 +97,12 @@ sceller. `composition` vide → sceller est refusé ; une Carte sans contenu n'e
 d'affichage des cartes de fil (Rencontre, Graine publiée, Sondage). Le service de la Carte du Seuil
 ne doit ni s'y greffer ni reprendre son nom nu.
 
-## 5. Ce que le portable ne décide pas
+## 5. Décisions de raccord et point restant
 
-**Le rang 3 se valide-t-il par le sceau, ou reste-t-il déclaratif ?** Aujourd'hui les gestes se
-confirment par `ConfirmationDeGeste` (`POST .../gestes/:rang/confirmer`), et `rangs_prouves` ne
-liste que des preuves serveur. Faire du sceau une preuve serveur est cohérent — le geste EST
-l'écran — mais cela change l'autorité du rang 3. **Arbitrage Codex.**
+**Le sceau prouve le rang 4.** Une confirmation déclarative annoncerait une Carte qui pourrait ne
+pas exister. Le marqueur `m0-carte-scellee`, posé par l'écriture explicite de la Carte, entre donc
+dans `rangs_prouves`. Il ne crédite rien par lui-même : la fin de séquence reste l'unique autorité
+pour fermer E19 et produire son reçu.
 
 **Les Graines entrent-elles sur la Carte ?** Le canon d'E19 dit « Relis la Graine, choisis les
 éléments que tu souhaites partager ». Si la Graine de passage est le socle et les productions les

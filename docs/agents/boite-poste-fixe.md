@@ -1,3 +1,25 @@
+### 2026-09-15 · de Codex · E19 : textes des rangs 2 et 3 et microtextes de la Graine
+
+Les textes prêts à porter sont dans
+[`m0-e19-dialogue-graine-textes.md`](../vision/m0-e19-dialogue-graine-textes.md). La durée totale
+reste **30 min**, répartie en **5 / 15 / 5 / 5 min**. La séquence est désormais : Traces, dialogue
+mentor, Graine de passage, Carte du Seuil.
+
+Les deux microtextes demandés sont fixés :
+
+- popup préremplie : « Ton mentor te propose cette formulation. Relis-la et corrige-la librement :
+  elle ne devient ta Graine qu’au moment où tu choisis de la planter. » ;
+- carte du mentor : « Cette proposition t’attend dans l’Expérience. Reviens-y pour la relire, la
+  modifier et décider de la planter. » ; lien **`Revenir à l’Expérience`**.
+
+Le bouton de la popup conserve le `cta` du rang. La carte mentor avec provenance ne plante plus.
+La validation ou correction se fait dans l’étape 3, et la même Graine est rendue dans E19 et dans
+la Fresque. J’ai également corrigé les contrats E13 et Carte du Seuil pour refléter cet arbitrage.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».

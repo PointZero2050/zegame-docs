@@ -111,7 +111,7 @@ reporte ici — jamais l'inverse.
 | 11 | **Découvrir les formats** | 1 — Douce | 1 — Personnel | M0 · **optionnel** · solo · 10 min · expérience 10 · agenda accessible | **Clarifier** son intention → **Comparer** les formats → **Produire** sa Boussole de passage |
 | 12 | **Le Sas d'entrée** | 3 — Profonde | 2 — Relationnel | M0 · optionnel · collectif accompagné · 1 h · inscription et présence | **Se présenter** → **Éprouver** une première rencontre → **Clarifier** son intention |
 | 13 | **Vivre l'Atelier Point Zéro** | 2 — Engagée | 3 — Collectif | M0 · obligatoire · collectif · 3 h · facilitateur · expériences obligatoires précédentes achevées | **Explorer** les futurs → **Reconnaître** le système en soi → **Franchir** le seuil en Cercle |
-| 14 | **Mon récit de passage** | 3 — Profonde | 2 — Relationnel | M0 · obligatoire · solo avec mentor · 30 min · Atelier confirmé | **Rassembler** les traces → **Composer** la Graine de passage → **Sceller** la Carte du Seuil |
+| 14 | **Mon récit de passage** | 3 — Profonde | 2 — Relationnel | M0 · obligatoire · solo avec mentor · 30 min · Atelier confirmé | **Rassembler** les traces → **Relier** la traversée avec le mentor → **Semer** la Graine de passage → **Sceller** la Carte du Seuil |
 
 Le parcours obligatoire représente **6 h 30 exactement**, Atelier compris — somme des durées de
 base, et non une estimation. Les deux expériences optionnelles ajoutent **1 h 10** (Sas 1 h,

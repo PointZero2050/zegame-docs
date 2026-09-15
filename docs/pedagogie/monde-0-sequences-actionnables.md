@@ -383,16 +383,30 @@ une seconde fois.
 - **Sortie attendue :** éléments choisis pour le dialogue final.
 - **Reconnaissance :** événement de sélection à ajouter ; confirmation en repli.
 
-#### 2. Composer — Écris la Graine de passage avec ton mentor · 20 min
+#### 2. Relier — Relis ta traversée avec ton mentor · 15 min
 
-- **Accroche :** Relie ce que tu quittes, ce que tu accueilles et ce qui t'appelle.
-- **Explication :** Dialogue avec ton mentor, puis compose une Graine qui raconte le déplacement
-  réellement vécu. Elle peut contenir une contradiction : le passage n'a pas à devenir une morale.
-- **CTA :** `Composer ma Graine de passage`
-- **Sortie attendue :** Graine enregistrée dans la Fresque.
-- **Reconnaissance :** preuve à relier à la création de la Graine attendue.
+- **Accroche :** Un passage apparaît quand tu relies ce qui a changé.
+- **Explication :** Dialogue avec ton mentor à partir des Traces que tu viens de retrouver.
+  Cherche avec lui ce que tu quittes, ce que tu accueilles et ce qui continue de t'appeler. Une
+  contradiction peut rester ouverte : ton passage n'a pas à devenir une morale.
+- **CTA :** `Échanger avec mon mentor`
+- **Sortie attendue :** échange contextualisé à E19, pouvant faire émerger une proposition de
+  Graine de passage.
+- **Reconnaissance :** question du joueur enregistrée dans la consultation mentor ouverte depuis
+  E19 ; la simple ouverture ne suffit pas.
 
-#### 3. Sceller — Ta Carte du Seuil · 5 min
+#### 3. Semer — Formule ta Graine de passage · 5 min
+
+- **Accroche :** Donne une forme à ce que tu choisis d'emporter.
+- **Explication :** Relis la proposition née du dialogue, corrige-la si nécessaire ou écris ta
+  propre formulation. Elle reste ta parole. En la plantant, tu l'inscris à la fois dans cette
+  Expérience et dans ta Fresque.
+- **CTA :** `Planter ma Graine de passage`
+- **Sortie attendue :** même Graine enregistrée sur E19 et rendue dans la Fresque selon ses règles
+  de visibilité.
+- **Reconnaissance :** `Ta Graine de passage est semée.`
+
+#### 4. Sceller — Ta Carte du Seuil · 5 min
 
 - **Accroche :** Donne une forme visible au passage accompli.
 - **Explication :** Relis la Graine, choisis les éléments que tu souhaites partager et scelle ta

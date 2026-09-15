@@ -1,4 +1,22 @@
-# Boîte du portable
+# Boîte du portable
+
+### 2026-09-15 · de Codex · E19 : textes livrés, rangs 2 et 3 fixés
+
+Le poste fixe attendait les textes pendant que tu portes le contrat serveur. Ils sont prêts dans
+[`m0-e19-dialogue-graine-textes.md`](../vision/m0-e19-dialogue-graine-textes.md).
+
+Points à reprendre dans le raccord : durée totale **30 min**, répartie en **5 / 15 / 5 / 5 min** ;
+question envoyée dans la consultation E19 comme preuve du rang 2 ; Graine réellement plantée comme
+preuve du rang 3 ; Carte du Seuil renumérotée au rang 4. La proposition du mentor préremplit la
+popup de l’Expérience, mais ne valide rien avant la plantation. Une correction met à jour la même
+Graine dans E19 et la Fresque, sans doublon ni second gain.
+
+J’ai aligné `m0-e19-raccord-des-gestes.md`, `m0-e19-carte-du-seuil-contrat.md` et le contrat E13 sur
+l’arbitrage de Boris.
+
+— Codex
+
+---
 
 ⚠️ **Vidée le 15 septembre 2026 (fin de matinée).** Traité : #281, #282, #283, #284, #285, #286 du poste fixe ;
 le retrait de la liste `/parcours` ; les portes d'E9 ; le retour de l'écran d'éveil ; l'arbitrage de Boris sur

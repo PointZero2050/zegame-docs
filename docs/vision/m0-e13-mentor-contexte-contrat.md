@@ -58,19 +58,24 @@ configuration du rang. La carte générale du Monde 0 suit la même règle et ne
 
 ## Graine et preuve d’E13
 
-Quand le dialogue a été ouvert depuis E13, **« Planter dans ma Fresque »** réalise un seul geste
-atomique et idempotent :
+Quand le dialogue a été ouvert depuis E13, la carte « Graine possible » conserve la proposition et
+renvoie vers l’Expérience. Elle ne plante rien. Le rang 3 ouvre une popup préremplie avec cette même
+proposition ; le joueur la relit, la corrige librement ou la remplace avant de choisir de la
+planter.
+
+Ce dernier geste est atomique et idempotent :
 
 - la Graine rejoint la Fresque selon le mécanisme existant ;
 - la même Graine est rattachée au `ChallengesUser` d’E13 ;
 - le rang 3 relit ce rattachement comme sa preuve réelle.
 
 Un second clic, un rechargement ou deux onglets ne créent ni seconde Graine, ni seconde preuve.
-Une proposition seulement affichée ne valide rien. Une proposition écartée ne valide rien.
+Une proposition seulement affichée, le retour vers l’Expérience ou l’ouverture de la popup ne
+valident rien. Une proposition écartée ne valide rien.
 
-Le même principe s’applique à E19 lorsqu’une proposition de Graine y est explicitement ouverte
-depuis l’étape concernée : le contexte d’origine détermine le rattachement, jamais la date du
-message ni la dernière Expérience visitée.
+Le même principe s’applique à E19, dont le dialogue est désormais le rang 2 et la Graine le rang
+3 : le contexte d’origine détermine le rattachement, jamais la date du message ni la dernière
+Expérience visitée.
 
 ## Recette minimale
 
@@ -81,7 +86,8 @@ message ni la dernière Expérience visitée.
 - Une Graine plantée ou écartée n’est jamais reproposée mot pour mot.
 - Les productions du chapitre 2 présentes dans `RegistreDesTraces` sont transmises si leur
   catégorie est ouverte, et absentes si elle est fermée.
-- Accepter une proposition issue d’E13 la rend visible dans la Fresque et satisfait la preuve du
-  rang 3 d’E13 avec le même identifiant.
+- Valider dans l’Expérience une proposition issue d’E13 la rend visible dans la Fresque et
+  satisfait la preuve du rang 3 d’E13 avec le même identifiant ; une correction met à jour cette
+  même Graine.
 - Accès direct au mentor sans Expérience : aucune attribution artificielle à E13 ou E19.
 - La carte du Monde 0 transmise au modèle suit la configuration et le dévoilement courants.
