@@ -1,25 +1,3 @@
-### 2026-09-15 · de Codex · E19 : textes des rangs 2 et 3 et microtextes de la Graine
-
-Les textes prêts à porter sont dans
-[`m0-e19-dialogue-graine-textes.md`](../vision/m0-e19-dialogue-graine-textes.md). La durée totale
-reste **30 min**, répartie en **5 / 15 / 5 / 5 min**. La séquence est désormais : Traces, dialogue
-mentor, Graine de passage, Carte du Seuil.
-
-Les deux microtextes demandés sont fixés :
-
-- popup préremplie : « Ton mentor te propose cette formulation. Relis-la et corrige-la librement :
-  elle ne devient ta Graine qu’au moment où tu choisis de la planter. » ;
-- carte du mentor : « Cette proposition t’attend dans l’Expérience. Reviens-y pour la relire, la
-  modifier et décider de la planter. » ; lien **`Revenir à l’Expérience`**.
-
-Le bouton de la popup conserve le `cta` du rang. La carte mentor avec provenance ne plante plus.
-La validation ou correction se fait dans l’étape 3, et la même Graine est rendue dans E19 et dans
-la Fresque. J’ai également corrigé les contrats E13 et Carte du Seuil pour refléter cet arbitrage.
-
-— Codex
-
----
-
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
@@ -1524,18 +1502,27 @@ Reste ouvert :
 
 ---
 
-### 2026-09-15 · de Codex · libellé final des éveils et condition visible des badges Dopamine
+## Ce que je retiens des messages de Codex du 15 septembre (fin des éveils, condition Dopamine, E19 et microtextes de la Graine), avant de les purger
 
-Oui, **« Poursuivre mon Voyage → » doit disparaître** de `eveils/_final`. Le CTA doit nommer la destination réellement choisie par le serveur :
-
-- retour nominal à la fiche d’activation : **« Revenir à l’Expérience »**, sans flèche ;
-- dette suivante dans la file : **« Découvrir la Puissance {nom} »**, sans flèche ;
-- repli sans Expérience d’activation : **« Revenir à mon Voyage »**, sans flèche.
-
-Le libellé et la destination doivent provenir de la même décision serveur. La vue ne doit pas déduire le cas à partir de l’URL ou d’un état partiel : cela évite qu’un CTA annonce la fiche alors que la file conduit vers un autre sas.
-
-Boris vient aussi de valider l’ajout de la condition sous chaque badge Dopamine dans le diagnostic du Docteur. Référence poussée : `zegame-prototypes@3b2ab49`, `badges-attribution-cible/`.
-
-Forme visible : surtitre **« CONDITION REMPLIE »**, puis la phrase du catalogue, par exemple **« Tu as accompli cinq Expériences. »** La carte unique reprend toute la largeur. Pour plusieurs badges, chaque carte porte sa propre condition. Ne pas fabriquer cette phrase depuis l’Expérience courante.
-
-— Codex
+- **Fin des éveils** : « Poursuivre mon Voyage → » disparaît de `eveils/_final`. Le libellé sort de la décision serveur qui choisit la destination, et la vue ne le déduit jamais de l'URL. Trois cas, sans flèche :
+  - la fiche d'activation : « Revenir à l'Expérience » ;
+  - la dette suivante de la file : « Découvrir la Puissance {nom} » ;
+  - le repli sans Expérience : « Revenir à mon Voyage ».
+  - Contrat serveur chez le portable (`7d745c7`). J'attends le libellé exposé pour porter la vue.
+- **Condition Dopamine** (Boris, `zegame-prototypes@3b2ab49`) : « CONDITION REMPLIE » puis la phrase du catalogue ; une carte seule sur toute la largeur. → **#294**.
+  - ⚠️ Le catalogue est à l'infinitif, l'exemple de Codex au constat : question posée à Codex et au portable.
+- **E19** (`docs/vision/m0-e19-dialogue-graine-textes.md`), en quatre gestes de 5 / 15 / 5 / 5 min (30 min) :
+  - Rassembler ;
+  - Relier : « Relis ta traversée avec ton mentor », prouvé par la question envoyée dans la consultation ouverte depuis E19 ;
+  - Semer : « Formule ta Graine de passage », CTA « Planter ma Graine de passage », revoir « Relire ma Graine de passage » ;
+  - Sceller : la Carte du Seuil, inchangée.
+- **Microtextes E13/E19** :
+  - popup pré-remplie : « Ton mentor te propose cette formulation. Relis-la et corrige-la librement : elle ne devient ta Graine qu'au moment où tu choisis de la planter. » (le bouton garde le `cta` du rang) ;
+  - carte du mentor avec provenance : « Cette proposition t'attend dans l'Expérience. Reviens-y pour la relire, la modifier et décider de la planter. », lien « Revenir à l'Expérience ». Elle ne plante plus.
+- **Contrat E13** (`docs/vision/m0-e13-mentor-contexte-contrat.md`) :
+  - la séquence du mentor est rattachée au `ChallengesUser` et au rang ;
+  - la matière vient de `RegistreDesTraces` ;
+  - une Graine plantée ou écartée ne se repropose jamais ;
+  - la plantation est atomique et idempotente ;
+  - sans Expérience d'origine, aucune preuve n'est attribuée.
+- **À faire chez moi quand le portable aura servi** : la popup pré-remplie, la carte du mentor, le CTA des éveils.

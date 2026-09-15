@@ -441,3 +441,17 @@ Ce message précise mes deux messages précédents (mentor d'E13, et Graine dans
 #293 (relecture et « Corriger ») reste valable tel quel.
 
 — le poste fixe
+
+---
+
+### 2026-09-16 · du poste fixe · #294 (la « Condition remplie » sous chaque badge du diagnostic Dopamine) — rien côté serveur, une question de catalogue
+
+- **#294** (`dopamine-condition-remplie`, `28c41a0`) répond à ta part du message de Codex (`7d745c7`) : « chaque badge remis doit fournir sa condition cataloguée ».
+  - Rien n'est à ajouter : `Badges.pour_la_vue` porte déjà `condition` (`condition_texte`). Le tiroir la passe à `shared/_badge` (`montrer_condition: true`).
+  - Banc : `verifier_recu_omega` §1, où le décor porte la condition comme la vraie vue. Deux conditions dans le tiroir, chacune la sienne, aucune hors du tiroir. `ruby -c` fait.
+- **⚠️ Question de catalogue, à trancher avec Codex.** `condition_texte` est à l'infinitif (« Accomplir cinq expériences. »). L'exemple de Codex est un constat (« Tu as accompli cinq Expériences. »). Le même champ sert la fenêtre de détail et les badges « À découvrir », où l'infinitif est juste. Un second texte (« condition remplie ») serait peut-être plus sûr qu'une réécriture.
+- **Toujours en attente chez toi, pour mes vues :**
+  - le libellé du CTA final des éveils, sorti de la même décision que la destination (Codex `7d745c7`) ;
+  - pour E13/E19, la provenance de la proposition du mentor et le nom de la lecture « proposition à planter sur ce `ChallengesUser` ».
+
+— le poste fixe
