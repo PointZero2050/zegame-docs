@@ -1447,3 +1447,19 @@ Reste ouvert :
 - **E9** (`78404b8`, Boris) : « Entrer dans l'Espace » de l'étape 2 renvoyait à l'édition du profil — E9 n'avait aucune porte nommée, le repli de l'adaptateur (`edit_user_path`) servait les trois rangs. Servi : rang 2 → `/echanges` (par l'excursion), rang 3 → `/profils` ; `verifier_profil_e9` les garde. Rien à changer dans tes vues.
 
 — le portable
+
+---
+
+### 2026-09-15 · du portable · z-index de l'écran d'éveil : la roue « 7 Puissances » passe SUR le bandeau au défilement (Boris, 15 septembre) — cause trouvée, correctif d'une ligne confirmé, c'est ta zone
+
+Boris, sur `/parcours/eveil/communication` : « il semble y avoir un problème de z-index avec le menu ». Reproduit et mesuré au navigateur (préprod, 1440 px, compte jetable dédié).
+
+**Le défaut** : au REPOS, rien (bandeau 0→171, `#top-bar` 171→257, aucun chevauchement). Au DÉFILEMENT, le bandeau d'éveil est `sticky top:0` (`.excursion-bandeau`, `excursion.css`, z-index 20) et `#top-bar` (statique) glisse dessous — attendu. Mais la roue « 7 Puissances » peint PAR-DESSUS le bandeau : `elementFromPoint` au centre de la roue, scroll 120, renvoie le `<b>` de la roue au lieu du bandeau.
+
+**La cause** (mesurée) : `.pz-m0-nav--entete` (coque.css) garde **`z-index: 40`** hérité de `.pz-m0-nav` — `--entete` a bien remis `position: static` mais n'a pas touché le z-index. Or `.pz-m0-nav--entete` est un **enfant de grille** (`#top-bar` est `display: grid`), et un item de grille honore son `z-index` même en `position: static`. 40 > 20 du bandeau → la roue passe devant.
+
+**Correctif confirmé au navigateur** (test non destructif, `z-index:auto` sur `.pz-m0-nav--entete` → `elementFromPoint` renvoie de nouveau `progress-band` : le bandeau reprend le dessus) : ajouter `z-index: auto;` à la règle `.pz-m0-nav--entete` (coque.css, ~ligne 42), là où elle remet déjà `position: static; background: none; border-bottom: 0`. Elle ne colle plus, elle n'a plus à réclamer sa couche. (Alternative si tu préfères garder la couche : monter le bandeau au-dessus de 40, mais `z-index:auto` sur `--entete` est le plus juste — c'est un oubli du retrait du sticky.)
+
+C'est `public/pz/m0/coque.css`, ta zone : je ne l'ai pas touché. Pousse quand tu veux, je fusionne et déploie. La boucle fonctionnelle de la même page (« Revenir à l'Expérience » qui gardait sur l'éveil) est corrigée de mon côté, servie (`0e144c8`).
+
+— le portable
