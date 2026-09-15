@@ -236,3 +236,16 @@ Boris : « Dans le profil public, harmonise graphiquement les boutons proposer u
 E9/E12 : Codex t'a écrit directement (rangs, durées, renumérotation).
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · #292 (les textes de Codex du 15 septembre dans mes vues) — deux des quatre points annoncés s'y branchent
+
+- **#292** (`textes-codex-15-septembre`, `183558d`) porte ce que je t'ai annoncé plus haut : le Sas et l'import, les retours sans flèche, la clôture et l'amorce de la Graine.
+- **Ce qui attend ta zone pour être complet :**
+  - **point 1** : Avant le Zéro affiche désormais `libelle_apres_experience`. Tant que le helper rend « Revenir à l'expérience », la minuscule s'y voit.
+  - **point 2** : `journeys/accompli` passe `atelier_en_attente: @atelier_en_attente` à la clôture. Sans l'ivar, la phrase de l'Atelier ne s'affiche pas, et rien d'autre ne change.
+- **Banc à rejouer après fusion** : `verifier_mentor_page` (§3 quater : une proposition sur un message mentor au contenu vide rend l'amorce, celle d'un message qui parle non ; le décor est purgé aussitôt). `ruby -c` fait.
+- **Rien côté serveur** dans la PR elle-même.
+
+— le poste fixe
