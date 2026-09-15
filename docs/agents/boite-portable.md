@@ -46,3 +46,40 @@ PR et les boîtes des autres.
   `wt-ref18` après fusion ; **les six photos** (E1 `faconner-mon-jumeau-v2`, E15–E19 `*-v1`) ; **deux
   redémarrages** (YAML du parcours, des vidéos, du quiz d'E2, `coque.yml`, `monde_1.yml`).
 - ⓘ `zegame-docs` est sur la branche de Codex depuis le 14 : je travaille `main` depuis un worktree séparé.
+
+---
+
+### 2026-09-15 · du poste fixe · E10 joué jusqu'au bout avec Nino (Boris : « Teste Nino jusqu'à E10 ») — import, retour et popup finale conformes, mais AUCUN reçu de gains au CTA final : une vérification en base, chez toi
+
+**Déroulé** sur la préprod, compte `nino@demo.pz`, par les vraies routes.
+1. **Fiche d'E10 au départ** : étape 1 « En cours », « 0 badge obtenu sur 5 », **83 Ω** dans la coque ; aucune trace du Sas dans le navigateur.
+2. **CTA « Explorer les cinq parcours »** : `/excursion/ouvrir/…/1`, puis `/sas?screen=accueil`. Bandeau du Jeu, socle d'import (`deja` = `[]`).
+3. **Parcours simulé** : une trace `humanite` ACCOMPLIE posée dans le `localStorage`. Le parcours n'a pas été joué : `visitor_local_id: verification-nino-15-sept`, badge `decodeur-cycles`.
+4. **Clic réel sur « Revenir à l'Expérience »** : `POST /sas/import` répond 200, puis `/excursion/retour` mène à la fiche d'E10.
+5. **Fiche d'E10 à l'arrivée** :
+   - le bandeau est parti ;
+   - « Tes passages ont rejoint le Jeu. Nous avons importé 1 parcours et 1 badge depuis cet appareil. » ;
+   - « 1 badge obtenu sur 5 », « 2 ÉTAPES VALIDÉES » ;
+   - popup rendue par le serveur : `step-recognition-overlay--final`, rang 1, « Expérience accomplie — Ton passage est reconnu » ;
+   - **coque : 88 Ω** ;
+   - CTA final « Poursuivre vers « Le signe de reconnaissance » ».
+6. **Clic sur ce CTA** : la fiche d'E11 s'ouvre **sans aucun `dialog.omega-receipt`**, ni au premier rendu ni au rechargement. La coque reste à 88 Ω.
+
+**Ce qui cloche.** E10 porte 5 Ω en base : sa fiche affiche « 5 Omégas », lu de `total_point`. Le parcours importé en porte 5 aussi, sur le challenge système. Une PREMIÈRE validation aurait dû donner +10 et un `RecuOmega` consommé sur E11. On lit +5, et aucun reçu.
+
+**Mon hypothèse, que je ne peux pas prouver sans la base.** Nino avait DÉJÀ validé E10 : ses Points étaient acquis, puis il y a eu « Recommencer » (ses étapes étaient « En cours / À venir »).
+- `FinDeSequence.constater!` rend nil sur une expérience déjà validée.
+- `RecuOmega.emettre!` n'a donc aucun delta à émettre : « un Ω acquis ne se reprend jamais ».
+- La popup finale vient de ta règle `obstacle` (`0bed931`), qui ne dépend pas de qui a écrit la fin.
+- Les +5 seraient ceux du parcours importé.
+
+**Ce que je te demande de lire, pour `nino@demo.pz` :**
+- le `ChallengesUser` d'E10 : `validated_at` et `end_at` sont-ils antérieurs au 15 septembre ? Le marqueur `recommencee:le-site-du-point-zero` existe-t-il ?
+- les `Point` sur E10, et sur le challenge système du Sas ;
+- le `RecuOmega` d'E10 : existe-t-il, et avec quel `consomme_le` ?
+
+**Si E10 n'avait jamais été validée, le défaut est réel** : la validation au retour d'excursion n'aurait émis aucun reçu, et le rituel perdrait sa popup de gains. **Si c'est un rejeu**, le comportement est cohérent (« le rejeu ne rapporte rien »). Il reste alors une question de rituel pour Boris : au rejeu, la popup « Expérience accomplie » suffit-elle, sans reçu ?
+
+**État laissé chez Nino** : E10 validée ou re-validée ; TraceSas `humanite` importée (+5 Ω) ; porte du rang 1 d'E10 ouverte ; trace locale marquée « importée » dans le navigateur intégré. Rien n'a été fait sur E11.
+
+— le poste fixe
