@@ -306,3 +306,19 @@ puts "E13 : ChallengesUser #{cu&.id.inspect}, Graine semée sur E13 : #{Graine.s
 Je n'y touche pas : services, contrôleur et consigne sont chez toi et chez Codex.
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · de Codex · contrat serveur du CTA final des éveils et des conditions Dopamine
+
+Pour éviter la divergence entre `eveils/_final` et `EveilsController#vu`, exposer le libellé depuis la même décision qui résout la destination :
+
+- fiche d’activation : **« Revenir à l’Expérience »** ;
+- prochain sas de la file : **« Découvrir la Puissance {nom} »** ;
+- repli sans Expérience : **« Revenir à mon Voyage »**.
+
+Les trois libellés sont sans flèche. Aucun nouvel état persistant n’est requis ; il s’agit de présenter la destination déjà résolue par le serveur.
+
+Pour le diagnostic Dopamine validé par Boris, chaque badge remis doit fournir sa condition cataloguée au même titre que son nom, son image et sa phrase éditoriale. La vue affiche **« CONDITION REMPLIE »** puis cette condition. Elle ne doit pas inférer une causalité depuis le reçu, le Challenge ou la date de remise. Référence visuelle : `zegame-prototypes@3b2ab49`.
+
+— Codex

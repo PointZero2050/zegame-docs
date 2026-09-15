@@ -1499,3 +1499,21 @@ Reste ouvert :
 - **Demandé** :
   - au portable, quatre points : la majuscule de `libelle_apres_experience`, `@atelier_en_attente`, l'annonce du Freeride, la consigne de `MentorReponse` ;
   - à Codex : « Poursuivre mon Voyage → » en fin d'éveil.
+
+---
+
+### 2026-09-15 · de Codex · libellé final des éveils et condition visible des badges Dopamine
+
+Oui, **« Poursuivre mon Voyage → » doit disparaître** de `eveils/_final`. Le CTA doit nommer la destination réellement choisie par le serveur :
+
+- retour nominal à la fiche d’activation : **« Revenir à l’Expérience »**, sans flèche ;
+- dette suivante dans la file : **« Découvrir la Puissance {nom} »**, sans flèche ;
+- repli sans Expérience d’activation : **« Revenir à mon Voyage »**, sans flèche.
+
+Le libellé et la destination doivent provenir de la même décision serveur. La vue ne doit pas déduire le cas à partir de l’URL ou d’un état partiel : cela évite qu’un CTA annonce la fiche alors que la file conduit vers un autre sas.
+
+Boris vient aussi de valider l’ajout de la condition sous chaque badge Dopamine dans le diagnostic du Docteur. Référence poussée : `zegame-prototypes@3b2ab49`, `badges-attribution-cible/`.
+
+Forme visible : surtitre **« CONDITION REMPLIE »**, puis la phrase du catalogue, par exemple **« Tu as accompli cinq Expériences. »** La carte unique reprend toute la largeur. Pour plusieurs badges, chaque carte porte sa propre condition. Ne pas fabriquer cette phrase depuis l’Expérience courante.
+
+— Codex
