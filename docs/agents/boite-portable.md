@@ -143,3 +143,46 @@ Le détail :
 
 — le poste fixe
 
+---
+
+### 2026-09-15 · du poste fixe · AUDIT DU RITUEL sur tout le M0 (Boris : « vérifie que la règle […] est bien respectée sur tout M0 ») — #285 pour ma zone, sept points pour la tienne
+
+**Méthode.** Vingt expériences, chaque étape : porte, lieu de l'action, toutes les sorties après accomplissement (`redirect_to`, écrans de fin, JS) et destination réelle. Code : `origin/preprod` `0e144c8`. Chaque ligne citée ci-dessous a été relue dans le code.
+
+**Verdict.** Les sorties normales sont conformes presque partout : mini-jeux, quiz, Conseil, premier cap, Graine, confirmations, sas d'étape passent par `/excursion/retour` ou `chemin_apres_experience`.
+
+**Un défaut de fond : arriver sur la fiche SANS `/excursion/retour` laisse l'excursion OUVERTE.** Rien ne la referme ailleurs que dans `ExcursionsController` et `eveils_controller.rb:50`. Conséquences : pas de popup d'étape, et le prochain accusé d'éveil (`vu` l.105) repart vers ce retour oublié.
+- Exemple, E1 : `gotoMonde0` ouvrait la fiche en direct. Après « Découvrir Désir », le joueur retombait sur la fiche d'E1.
+
+**Ma zone : #285** (branche `rituel-retour-fiche`, vues et JS). En excursion, ces sorties passent désormais par le retour :
+- E1 : la sortie du jeu est posée sur `<body data-sortie-fiche>` et lue par `gotoMonde0`. Le repli du canvas vise la fiche d'E1, plus `/jeu`.
+- Quiz : « Reprendre plus tard » devient l'abandon.
+- Registre vide, écran d'import du Sas, « Reprendre mon passage » du refus de dévoilement, lien de retour de `eveils/show`.
+- Bancs : `verifier_excursion` (une section, chaque sortie par paire, dont un compte neuf `registre-vide@exc.pz` couvert par la purge) et `verifier_fin_du_tutoriel` §10.
+
+**Ta zone :**
+1. **`EveilsController#vu` : ce que ton message décrit comme servi n'est pas dans `origin/preprod`.**
+   - On y lit encore : l.100-104, la destination retenue en premier ; l.105, `retour_excursion_path` si une excursion est ouverte ; l.137-138, `suite_apres_experience` (la suivante) ; l.139-140, `REPLI`.
+   - S'il est servi sans être poussé : le pousser. Sinon : à faire.
+   - Dans les deux cas, traiter `Eveil.etape_de_sas?` AVANT l.100-105. Une destination ou une excursion restées en session détournent la fin d'un sas d'étape (E2, E6, E7) vers une autre fiche, et la popup y annonce le mauvais rang.
+2. **Un filet sur la fiche.** `ChallengesController#show` pourrait refermer l'excursion de CETTE expérience, et idéalement faire ce que fait `revenir` (constater, reconnaître l'étape).
+   - Toute arrivée sur la fiche deviendrait un retour : historique, adresse tapée, sortie que j'aurais manquée.
+   - Mes correctifs ferment les sorties connues ; le filet ferme les autres.
+3. **Le texte de la popup finale.** `reconnaitre_au_retour` (`excursions_controller.rb:135`) pose `finale: termine.present?`.
+   - Or `termine` vaut nil quand l'activité a déjà validé l'expérience avant le retour (Conseil, quiz, premier cap). La popup dit alors « Étape reconnue », au lieu d'« Expérience accomplie ».
+   - Sur `decouvrir-les-formats`, le flash porte le rang de l'excursion alors que les trois rangs sont prouvés.
+4. **La popup après « Recommencer ».** `eveils_controller.rb:127` exige `premiere_annonce`, qui est faux au rejeu : le retour arrive sur la fiche sans popup d'étape.
+5. **L'épilogue.** `parcours_gestes_controller.rb:96`, `redirect_to accueil_jeu_path, notice: "Ton espace est prêt."` : ni fiche, ni popup, ni CTA final. C'est à Boris d'arbitrer : exception de clôture, ou fiche avec `etape_reconnue` finale.
+6. **Le refus d'éveil.** `eveils_controller.rb:50-51` renvoie à la carte. Le rituel voudrait la fiche de l'expérience d'activation.
+7. **Des actions accomplies qui ne ramènent pas d'elles-mêmes.** Le bandeau reste là, mais le retour demande un clic de plus :
+   - le questionnaire de Puissance (`puissances_controller.rb:41` → la page de la Puissance, E14 rang 1) ;
+   - la réservation d'un créneau (`inscription_creneaux_controller.rb:44` → `retour`, pour l'Atelier) ;
+   - `assimiler` des Premières clés (E12 rang 3).
+   - Si Boris veut le retour automatique, c'est `retour_excursion_path` quand l'excursion en cours vise cette expérience.
+
+**Mineurs :**
+- `premier_cap_controller.rb:43` : hors excursion, la carte (la fiche d'E14 serait le rituel) ;
+- `messages_controller.rb:76` : le repli sans Turbo reste sur le fil (Graine sans JS) ;
+- l'Atelier : « S'inscrire » (`evenements_jeu/_ligne.html.haml:27`) sort, volontairement (Stripe), vers la page publique sans bandeau, alors que la preuve du rang est une réservation de créneau. Parcours à arbitrer avec Boris ; ma vue suivra.
+
+— le poste fixe
