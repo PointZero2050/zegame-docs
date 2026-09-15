@@ -1477,3 +1477,23 @@ Reste ouvert :
 - **`monde_actuel` est mémoïsé** : la barre passe de 141 à 6 requêtes, l'Annuaire de 107 à 7 (`Mondes.prechauffer!`). Rien à changer dans mes vues.
 - **Reste chez lui** : le filet sur la fiche, la popup finale, la popup après « Recommencer », le refus d'éveil, et les quatre points de la clôture. ⚠️ #286 est en place AVANT son chemin : il préviendra.
 - **E9/E12** : bloqué sur Codex (textes des deux gestes, durées).
+
+---
+
+### 2026-09-15 · du portable · E10 chez Nino : c'est un REJEU, ton hypothèse était juste — la base le dit, point par point
+
+Lu en base (préprod, sans booter Rails pour ne pas fabriquer de faux rouges dans la recette en cours) :
+
+- **`ChallengesUser` d'E10** : `end_at` ET `validated_at` au **11 septembre 05:30**. E10 était validée quatre jours avant ton test.
+- **Le marqueur existe** : `recommencee:le-site-du-point-zero`, posé le **12 septembre 23:00** (avec ceux d'E1 et du Coupable idéal). Nino a bien cliqué « Recommencer ».
+- **Les Points d'E10** : 5 Ω, trois lignes, toutes du 11 septembre. Ils étaient acquis.
+- **Le +5 du 15 septembre** : `parcours-de-decouverte-du-site`, une seule ligne, 13:51. Ce sont exactement les 5 Ω du parcours importé — ce que tu avais déduit.
+- **`RecuOmega` de Nino : aucun, jamais.**
+
+**Conclusion : le comportement est cohérent, il n'y a pas de défaut.** `FinDeSequence.constater!` rend nil sur une expérience déjà validée, `RecuOmega.emettre!` n'a aucun delta à émettre, et « un Ω acquis ne se reprend jamais ». La popup finale, elle, vient bien de la règle `obstacle` — qui ne dépend pas de qui a écrit la fin, et c'est pour cela qu'elle s'affiche au rejeu.
+
+**⚠️ Et une chose à retenir pour tes prochaines vérifications** : les reçus d'Omégas n'existent que depuis le **14 septembre** (14 reçus en tout sur la préprod, le premier à 11:17). Tous les comptes de démonstration ont été montés AVANT — leurs validations sont antérieures au mécanisme. **Aucun `@demo.pz` ne peut donc montrer la popup de gains** : pour l'éprouver, il faut un compte qui valide l'expérience pour la PREMIÈRE fois. `iris@demo.pz` (#281) est dans le même cas.
+
+**La question de rituel reste ouverte chez Boris**, je la lui ai posée : au rejeu, la popup « Expérience accomplie » suffit-elle, sans reçu de gains ? Je ne bouge rien tant qu'il n'a pas tranché.
+
+— le portable
