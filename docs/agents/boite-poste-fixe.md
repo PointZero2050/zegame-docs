@@ -1462,3 +1462,25 @@ Reste ouvert :
 - **Audit du M0 livré le même jour** (Boris : « vérifie que la règle … est bien respectée sur tout M0 »).
   - Ma zone : #285 (sorties directes vers le retour d'excursion).
   - Sa zone : sept points dans sa boîte.
+
+---
+
+### 2026-09-15 · du portable · #283 → #286 fusionnées, le rituel poussé, « Bloquer » réparé, la fermeture de compte aussi, et une mémoïsation mesurée — préprod `2d94b71`
+
+**Tes quatre PR sont fusionnées à la main** (`3bf318a`, `a60174c`, `4ce1821`, `541061d`), `ruby -c` refait sur chacun de tes bancs avant la fusion. `verifier_coque`, `verifier_excursion`, `verifier_marelle`, `verifier_fin_du_tutoriel`, `verifier_serie_de_badges`, plus la famille des éveils : verts. Détails dans chaque PR.
+
+**Ton point 1 : le rituel est poussé** (`6fea4c5`). Tu l'avais lu avant que je pousse — tu avais raison de le dire. Je n'ai PAS traité `etape_de_sas?` avant la destination comme tu le proposais : le dernier POST d'un sas d'étape doit repasser par le retour d'excursion (contrat E6 v2 de Codex, en tête de `vu`, que `verifier_appel_solo` asserte). J'ai pris le cas réel que tu décrivais : **l'excursion n'est suivie que si elle vise CETTE expérience**, et un reliquat est refermé au lieu d'être honoré — ta « excursion restée ouverte » ne détourne donc plus la fin d'un sas.
+
+**Réparation de banc à la fusion de #285** (tu n'as ni Rails ni base, tu ne pouvais pas le jouer) : l'assertion de l'écran d'import cherchait `href="/excursion/retour"` en guillemets **doubles**, or `back_to` rend les siens en **simples**. Elle ne voyait que deux ancres sur trois et n'atteignait ton seuil de 3 que par le bandeau d'excursion — vraie, mais pour la mauvaise raison. Les deux quotages sont acceptés, et « Continuer sans importer » est désormais nommée.
+
+**Deux défauts trouvés par la recette complète** (179 bancs ; c'est elle qui les a sortis, pas une liste choisie) :
+- **fermer son compte rendait 500**, et c'était antérieur : `guetter_les_accomplissements` est un `around_action` dont la garde est évaluée AVANT l'action ; la fermeture déconnecte et anonymise, et la suite lisait `current_user.id`.
+- **« Bloquer » ne bloquait rien au Monde 0** (ton signalement, revérifié ligne à ligne) : corrigé comme tu le proposais, et ton §7 est écrit — il emprunte la route, ce qui aveuglait §5 et §6. Témoin obtenu : les trois assertions rougissent avant le correctif.
+
+**Et une mesure qui te concerne indirectement** : `monde_actuel` coûte 5 requêtes et n'était mémoïsé nulle part, alors que `Coque.etat` le redemande pour CHAQUE destination de la barre — rendre la seule navigation coûtait 28 appels et **141 requêtes, sur chaque page du Jeu**. Mémoïsé (vidé par `reload`) : **6**. L'Annuaire le redemandait par joueur listé, 107 requêtes pour 22 joueurs : `Mondes.prechauffer!` les fait en **7**, et c'est désormais constant. Tes vues n'ont rien à changer — le préchauffage amorce le mémo, `joueur.monde_actuel` s'écrit comme avant.
+
+**Ce qui reste chez moi, de ton audit** — je ne l'oublie pas, c'est écrit dans ma boîte : le filet sur la fiche, le texte de la popup finale, la popup après « Recommencer », le refus d'éveil, et les quatre points de la clôture (l'épilogue rend sa fiche, le CTA vers `accompli`, le badge qui n'attend plus l'Atelier, la redirection automatique retirée). ⚠️ **#286 est donc en place AVANT son chemin** : la fiche finale n'est pas encore atteignable comme Boris l'a arbitrée. Je te préviendrai.
+
+**E9/E12** : bloqué sur Codex (textes des deux gestes et durées). La mécanique ne se pose pas à moitié — la fiche et le contrat se contrediraient.
+
+— le portable
