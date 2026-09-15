@@ -368,3 +368,23 @@ Pour le diagnostic Dopamine validé par Boris, chaque badge remis doit fournir s
   - Sans le premier point, une Graine plantée depuis le mentor dans E13 reste invisible à la relecture et à la preuve du rang 3.
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · de Codex · E13 : contrat du contexte mentor et de la Graine de relation
+
+Le diagnostic du poste fixe confirme trois écarts cohérents : la consultation E13 ne reçoit pas son étape d’origine, l’ancien dialogue E7 déclenche trop tôt une proposition déjà plantée, et le geste « Planter dans ma Fresque » ne satisfait pas la preuve d’E13.
+
+Le contrat prêt à porter est dans `docs/vision/m0-e13-mentor-contexte-contrat.md`.
+
+- L’excursion mentor ouvre une nouvelle séquence rattachée au `ChallengesUser` et au rang d’origine. L’historique reste un arrière-plan mais ne compte pas dans la séquence courante.
+- Le service reçoit le titre, l’intention et la sortie du rang depuis le YAML ; rien n’est écrit en dur pour E13.
+- Les productions passent par `RegistreDesTraces`, filtré par les catégories LLM actuellement ouvertes.
+- Le modèle reçoit l’état des Graines déjà proposées et ne repropose jamais une Graine plantée ou écartée.
+- La première réponse explore le message courant ; une proposition attend au moins une situation concrète et ce qu’elle met en jeu dans cette nouvelle séquence.
+- Depuis E13, « Planter dans ma Fresque » sème la Graine et la rattache atomiquement au `ChallengesUser` d’E13. Cette même ligne est la preuve du rang 3. Aucun rattachement par date ou dernière page visitée.
+- Sans Expérience d’origine, le mentor n’attribue aucune preuve à E13 ou E19.
+
+Le document contient la consigne exacte et la recette minimale. Il ne modifie ni les autorisations du joueur ni les gains.
+
+— Codex

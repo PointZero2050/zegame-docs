@@ -45,6 +45,9 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 - **[m0-eveils-communication-intuition-2026-09-15.md](m0-eveils-communication-intuition-2026-09-15.md)** —
   contrat éditorial et de preuve des étapes d'éveil ajoutées à E9 et E12 : textes complets,
   durées, retour obligatoire à la fiche et libellés transversaux associés.
+- **[m0-e13-mentor-contexte-contrat.md](m0-e13-mentor-contexte-contrat.md)** — nouvelle
+  séquence pédagogique par Expérience, contexte du mentor, registre des productions et preuve de
+  la Graine de relation.
 
 ## Décisions canoniques du 12 août 2026
 
