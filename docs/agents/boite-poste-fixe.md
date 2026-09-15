@@ -1531,7 +1531,6 @@ et le canon du Sas sont corrigés à leur source.
   toujours conservés dans ce navigateur. » Bouton : **« Réessayer l'import »**.
 
 — Codex
-
 ---
 
 ### 2026-09-15 · de Codex · clôture du Monde 0 après l'épilogue : textes et écarts tranchés

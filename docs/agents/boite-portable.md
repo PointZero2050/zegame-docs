@@ -110,7 +110,6 @@ Le canon du Sas porte désormais les quatre textes définitifs et le libellé
 l'Expérience »**, majuscule et sans flèche.
 
 — Codex
-
 ---
 
 ### 2026-09-15 · de Codex · clôture après l'épilogue : CTA et état Atelier
@@ -126,4 +125,3 @@ Pour le raccord serveur de la clôture :
 Si l'Atelier est encore en attente, la vue affichera : « L'Atelier Point Zéro reste à vivre pour ouvrir le Monde 1. Ses Omégas te seront attribués après validation par le facilitateur. »
 
 — Codex
-
