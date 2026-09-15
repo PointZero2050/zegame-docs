@@ -4757,3 +4757,31 @@ Le mentor (Boris, E6) : l'outil `proposer_graine` seul est désormais une répon
 - **E9** (`78404b8`, Boris, 14 septembre) : « Entrer dans l'Espace » de l'étape 2 ouvrait l'éditeur du profil (aucune porte nommée, le repli de l'adaptateur servait les trois rangs). Servi selon la carte Communication : rang 2 → l'Espace d'échange (`/echanges`, par l'excursion), rang 3 → l'Annuaire (`/profils`). J'ai relevé toutes les portes du M0 : aucun autre rang ne retombait sur un repli faux.
 
 — le portable
+
+---
+
+### 2026-09-15 · du poste fixe · deux étapes d'éveil à écrire (Boris) : « Découvrir Communication » (E9, rang 3) et « Découvrir Intuition » (E12, rang 4)
+
+Boris, sur E9 : après l'Annuaire, l'éveil de Communication finissait sur l'accueil du parcours, pas sur l'expérience. Sa règle : « Les parcours de découverte de puissance doivent toujours ramener à l'expérience pour que le joueur finalise avec un CTA qui affiche la popup de gain omégas + badges et l'amène à l'expérience suivante, jamais de saut automatique. »
+
+La cause : Communication et Intuition n'ont pas d'étape d'éveil dans leur expérience, contrairement à Volonté (E2), Imagination (E6) et Émotion (E7). Leur découverte est un détour, qui ne sait pas où revenir.
+
+**Les arbitrages de Boris (15 septembre)**
+1. **E9** : « Découvrir Communication » devient le **rang 3**, juste après le geste qui éveille (rang 2, « Entre dans l'Espace du Monde 0 et réagis »). L'Annuaire, facultatif, passe en **rang 4**.
+2. **E12** : « Découvrir Intuition » s'ajoute en **rang 4**, après « Éprouve une première clé » (le rang 3, dont l'accroche dit déjà « La sortie active Intuition. »).
+3. **E1 (Désir)** : rien pour l'instant. Boris précisera quand le fonctionnement d'Immateria sera clarifié.
+4. **« Recommencer » garde sa règle** : les étapes que le Jeu reconnaît restent accomplies, et ta phrase de la modale reste vraie.
+
+**Ce qui est à toi** : les deux gestes, dans la forme du rang 2 d'E7 (« Découvre la Puissance Émotion »).
+- Les champs : `verbe`, `libelle`, `titre`, `duree`, `accroche`, `explication`, `cta`, `revoir`, `sortie`, `reconnaissance`.
+- **Sans `confirmation`** : l'étape est prouvée par la fin de la découverte, comme Émotion.
+- Les écrans de la découverte eux-mêmes existent déjà (`config/puissances/communication.yml` et `intuition.yml`, clé `eveil:`). Seule l'étape de la fiche manque.
+
+**Trois raccords que le décalage rend faux ou incertains :**
+- **E9 rang 4 (Annuaire)** : l'accroche « Un troisième geste, facultatif. » devient fausse.
+- **Durées** : E9 vaut 12 min en base (5+5+2) et E12 vaut 13 (3+5+5), et la somme des gestes doit égaler la durée. Soit on garde les durées, comme pour E7, soit tu donnes les nouvelles.
+- **Contrat E9** : `docs/vision/m0-e9-profil-communautaire-contrat.md` §3 dit « rang 3 : Annuaire facultatif, jamais condition de validation ». Il faut ajouter le rang 3 d'éveil et passer l'Annuaire en rang 4.
+
+Le portable a reçu le contrat serveur : table des étapes d'éveil, preuves, portes, et renumérotation des confirmations d'E9 avant la bascule. Il y a aussi la sortie de tout éveil vers la fiche de son expérience. Rien ne change dans les vues.
+
+— le poste fixe

@@ -64,3 +64,50 @@ Dans ta file aussi : ton z-index de l'écran d'éveil est la **PR #283** (`f73c7
 
 — le poste fixe
 
+---
+
+### 2026-09-15 · du poste fixe · E9 et E12 reçoivent leur étape d'éveil (Boris) : « Découvrir Communication » en rang 3 d'E9 (l'Annuaire passe en 4), « Découvrir Intuition » en rang 4 d'E12 — et la sortie d'un éveil ramène toujours à la fiche
+
+Boris, sur E9 : après l'Annuaire, l'éveil de Communication finit sur l'accueil du parcours, pas sur l'expérience. Sa règle : « Les parcours de découverte de puissance doivent toujours ramener à l'expérience pour que le joueur finalise avec un CTA qui affiche la popup de gain omégas + badges et l'amène à l'expérience suivante, jamais de saut automatique. »
+
+**La cause**, lue sur `0e144c8`.
+- `SAS_D_EVEIL` ne connaît qu'E2, E6 et E7 : l'éveil de Communication est une DETTE.
+- Sur `POST eveil_vu`, sans destination retenue ni excursion vivante, `vu` rend :
+  - `suite_apres_experience(E9)[:chemin]` au premier accusé d'une E9 close, soit un saut vers la suivante ;
+  - `Excursion::REPLI` sinon : c'est ce que Boris a vu ;
+  - la destination retenue (`/jeu` ou la carte), quand la dette a été interceptée par `HomeController` ou `JourneysController`.
+- Le contrat E9 de Codex (§6) le disait pourtant : « laisser un éventuel éveil s'interposer, puis revenir à l'expérience ».
+
+**Les arbitrages de Boris (15 septembre)**
+1. **E9** : « Découvrir Communication » devient le rang 3, juste après le geste qui éveille (rang 2, réaction dans l'Espace rejoint), comme Émotion dans E7. L'Annuaire, facultatif, passe en rang 4.
+2. **E12** : « Découvrir Intuition » s'ajoute après « Éprouver une clé » (le rang 3, qui éveille) et devient le rang 4, le dernier.
+3. **E1 (Désir)** : rien pour l'instant. Boris précisera quand le fonctionnement d'Immateria sera clarifié.
+4. **« Recommencer » garde sa règle** : les gestes que le Jeu prouve restent accomplis.
+   - Boris l'avait signalé sur E9 (« je reste sur l'étape 3 ») ; il confirme la règle.
+   - Avec l'éveil en rang 3, la reprise tombera sur « Découvrir Communication » : `sas_franchi?` perd sa confirmation au recommencement.
+
+**Ce que ça demande de ton côté** (la forme est à toi) :
+- **`SAS_D_EVEIL`** :
+  - E9 `{ rang: 3, territoire: "communication" }`, activé par la preuve de son rang 2 ;
+  - E12 `{ rang: 4, territoire: "intuition" }`, activé par la preuve de son rang 3.
+- **`PREUVES_PAR_GESTE`** : E9 `3 => sas_franchi?`, E12 `4 => sas_franchi?`.
+- **Portes** :
+  - E9 `{ 2 => "/echanges", 3 => "/parcours/eveil/communication", 4 => "/profils" }` ;
+  - E12 `{ 3 => "/premieres-cles", 4 => "/parcours/eveil/intuition" }`.
+- **YAML du parcours** : les deux gestes, sans `confirmation`, dans la forme du rang 2 d'E7. Les textes sont demandés à Codex. `facultatif: true` suit l'Annuaire en rang 4.
+- ⚠️ **Le décalage d'E9 déplace des données.**
+  - `ConfirmationDeGeste` (unique par `user, challenge, rang`) et les portes (`porte:<slug>:<rang>`) sont rangées par NUMÉRO.
+  - Une confirmation « J'ai consulté l'Annuaire » en rang 3, ou sa porte ouverte, se lirait comme l'étape d'éveil. Or `sas_franchi?` compte justement une confirmation du rang du sas : un joueur passé par l'Annuaire avant la bascule aurait l'éveil pour franchi sans l'avoir parcouru.
+  - → Renuméroter 3 → 4 pour E9 avant la bascule, en préprod ET en production. E12 ajoute en fin : rien à déplacer.
+- **Durées** : E9 vaut 12 en base (5+5+2) et E12 vaut 13 (3+5+5), et la somme des gestes doit égaler la durée. À régler avec Codex (E7 avait gardé ses durées).
+- **La sortie d'un éveil** (Boris : « toujours »). Dans `vu`, les replis d'une dette doivent rendre la fiche de l'expérience d'activation : `suite_apres_experience`, `REPLI` et la destination retenue par l'accueil ou la carte. Désir (E1) reste une dette en attendant Immateria, et ce repli la couvre.
+- **`suite_apres_experience`** (« Découvrir Intuition → » depuis la fiche d'E12, 14 septembre) : avec leur étape, E9 et E12 ne passent plus par cette branche, qui reste pour Désir.
+- **Bancs qui citent E9 ou E12** : `verifier_profil_e9`, `verifier_excursion`, `verifier_preuves_par_geste`, `verifier_parcours_lineaire`, `verifier_accueil_m0`, `seed_parcours_lineaire`, `appliquer_durees_v1`, `mise_en_service_profil_compose`, `mise_en_service_accroches_m0` et `recalibrer_omegas_m0`.
+
+**De mon côté, rien dans les vues.**
+- La fiche rend les gestes de la séquence (`_passage`, `gestes.each`).
+- Les écrans d'éveil de Communication et d'Intuition existent déjà (`config/puissances/{communication,intuition}.yml`, clé `eveil:`).
+- Je vérifierai le parcours complet au navigateur quand ce sera servi : l'Annuaire, l'éveil, le retour à la fiche, le reçu, puis la suivante.
+
+— le poste fixe
+
