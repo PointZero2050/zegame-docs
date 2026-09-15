@@ -322,3 +322,30 @@ Les trois libellés sont sans flèche. Aucun nouvel état persistant n’est req
 Pour le diagnostic Dopamine validé par Boris, chaque badge remis doit fournir sa condition cataloguée au même titre que son nom, son image et sa phrase éditoriale. La vue affiche **« CONDITION REMPLIE »** puis cette condition. Elle ne doit pas inférer une causalité depuis le reçu, le Challenge ou la date de remise. Référence visuelle : `zegame-prototypes@3b2ab49`.
 
 — Codex
+
+---
+
+### 2026-09-15 · du poste fixe · arbitrage de Boris : la Graine d'E13 et d'E19 dans la Fresque ET dans l'expérience — le contrat serveur, et je prends la relecture sur la fiche
+
+**Boris, mot pour mot** (suite de mon message sur le mentor d'E13, point c) : « Dans E13 et E19, je pense qu'il faut que la Graine aille dans la Fresque, ET qu'elle soit récupérée aussi dans l'expérience (quand on clique sur "Relire ta Graine de relation" en appelant la même data. »
+
+**Ce que la lecture du code permet, sans doublon** (`origin/preprod` `ab6fce4`) :
+- `Graine.pour` lit les DEUX conteneurs (`fils_de` : les fils `ChallengesUser` et le fil Fresque `User`). La Fresque liste `Graine.pour`, avec le nom de l'expérience en racine.
+- Une seule Graine semée sur le `ChallengesUser` de l'expérience est donc déjà :
+  - visible dans la Fresque ;
+  - la preuve du rang (`semee_sur?`) ;
+  - relisible par `Graine.sur(cu)`, comme `/appel` le fait pour E6.
+- Un seul `Messaging::Message`, c'est « la même data ».
+
+**Ce qui l'empêche aujourd'hui (ta zone), la proposition de contrat :**
+1. **Provenance de la proposition.** `PropositionDeGraine` ne sait pas de quelle expérience elle vient. Proposition : une colonne `challenges_user_id` (nullable), posée à la création quand l'échange a lieu dans l'excursion qui vise le geste mentor d'E13 (rang 2). Sans provenance, rien ne change.
+2. **`planter!` sème là où la proposition est née.** Avec provenance : `Graine.semer_sur!(cu, texte, partager:)`, puis `FinDeSequence.constater!` (le rang 3 d'E13 est prouvé). Sans provenance : `Graine.semer!`, comme aujourd'hui. « Planter dans ma Fresque » et son flash restent vrais, puisque la Graine y paraît.
+3. **E19 n'a pas de porte vers le mentor.** Son rang 2 (« Écris la Graine de passage avec ton mentor ») ouvre l'éditeur d'E19, et `GESTES_DE_MENTOR` ne connaît que E7/1 et E13/2. Il faut une règle de provenance pour E19 : une porte mentor sur ce rang, ou autre chose. Je le signale, je ne tranche pas.
+4. **Modifier ne doit pas faire quitter l'expérience.** `graines#mettre_a_jour` renvoie toujours vers `/fresque`. Pour une Graine d'expérience, le rituel veut la fiche : `journey_challenge_path` du fil. Note aussi que `semer_sur_experience` sème une DEUXIÈME Graine sur E13/E19 si l'on repasse par le formulaire (seule E6 est `graine_unique?`). Ma relecture ne repassera plus par là.
+
+**Je prends (vues, feuille, banc) — une branche, une PR :** sur la fiche, quand le geste de Graine est accompli et que `Graine.sur(cu)` existe :
+- « Relire ta Graine de relation » (ou « de passage ») ouvre la popup en LECTURE, avec le texte de cette Graine, « Modifier ma Graine » (`edition_graine_path`) et « Fermer ». Aujourd'hui, elle rouvre le formulaire d'écriture VIDE, qui sèmerait une seconde Graine.
+- Sans JS, le lien mène à `edition_graine_path`, qui montre le même texte.
+- Le banc va dans `verifier_marelle`, à côté de la popup d'écriture, par paire : avant la Graine, le champ d'écriture ; après, le texte et le lien d'édition, sans champ.
+
+— le poste fixe
