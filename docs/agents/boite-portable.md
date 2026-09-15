@@ -249,3 +249,60 @@ E9/E12 : Codex t'a écrit directement (rangs, durées, renumérotation).
 - **Rien côté serveur** dans la PR elle-même.
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · le mentor d'E13 repropose la Graine du chapitre 1 : diagnostic de lecture, une vérification en base pour toi
+
+**Boris, en recette** : « Dans E13, je n'ai envoyé qu'un seul message au mentor et il m'a tout de suite proposé une Graine, mais reliée au chapitre précédent. Vérifie qu'il prend bien en compte ce qui a été réalisé entretemps. »
+
+**La capture** : son message à 20:36 est « J'ai découvert l'écosystème du Point Zéro. ». Le mentor propose aussitôt une « Graine possible » qui reprend mot pour mot le début de la Graine PLANTÉE après l'échange de 20:20-20:22 (« J'ai longtemps cru au récit de l'individu tout-puissant… »). Il n'y a pas de bandeau d'excursion sur la capture.
+
+**Ce que dit la lecture du code (`origin/preprod` `083459b`), rien de modifié :**
+1. **Le mentor ne sait pas qu'il est dans E13.**
+   - La porte du rang 2 (`GESTES_DE_MENTOR`, « Explore une relation possible avec ton mentor ») passe bien par l'excursion.
+   - Mais `MentorController#message` ne lit que la question et la catégorie, et `MentorReponse.demander` ne reçoit ni l'excursion, ni l'étape, ni son explication (« Dialogue avec ton mentor sur une personne, un cercle ou une communauté… »).
+2. **La consultation se compte à travers les chapitres.**
+   - La mémoire (`messages_pour_api`, 20 messages) contient toute la consultation d'E7 et sa Graine proposée, redonnée comme parole du mentor.
+   - La consigne dit « quatre à cinq échanges […] puis la proposition de récit ». Ces échanges sont déjà là, le modèle propose donc au premier message.
+   - La Graine plantée est aussi dans `<contexte-joueur categorie="graines">`. Rien ne lui dit qu'une Graine déjà plantée ne se repropose pas.
+3. **Ce qui a été fait entre-temps n'arrive que par ses NOMS.**
+   - `SituationDeParcours.nouveautes` nomme et date les validées depuis le dernier échange, avec leurs Ω. C'est juste, SI les `validated_at` tombent entre les deux échanges.
+   - Mais les productions du chapitre 2 ne sont pas lues : `blocs_contexte` ne lit que `Trace.where(user:)`, c'est-à-dire Immateria, les clés d'Intuition et l'Appel. Le Schéma de circulation et le signe de reconnaissance sont des `ExperienceQuizAttempt`, et les résonances non plus.
+   - Or E13 rang 1 promet dans sa `sortie` : « éléments transmis au dialogue avec le mentor ». C'est faux dans le code.
+4. **« Planter dans ma Fresque » ne prouve pas E13.**
+   - `PropositionDeGraine#planter!` sème par `Graine.semer!(user, …)`, donc dans la Fresque.
+   - Le rang 3 d'E13 exige une Graine semée sur SON `ChallengesUser` (`graine_de_l_appel?`).
+   - Le joueur qui plante la proposition croit avoir semé sa Graine de relation, et le rang 3 reste à faire.
+5. **La carte du Monde 0 écrite en dur dans `consigne_systeme` est périmée.** Elle nomme 14 expériences, dont « le sas d'entrée ». Le choix du mentor, le profil et l'Annuaire, le double regard, Lire mon Moteur, Façonner mon jumeau et Ton espace est prêt n'y figurent pas.
+
+**La vérification en base, pour trancher le point 3 sur son compte** (lecture seule, sans appel au modèle ; `ruby -c` fait ici) :
+
+```ruby
+# Lecture seule : ce que le mentor savait au moment de la question d'E13.
+u = User.find_by!(email: ENV.fetch("EMAIL"))
+q = MentorMessage.where(user: u, role: "joueur").where("contenu LIKE ?", "J'ai découvert l'écosystème%").order(:created_at).last
+avant = MentorMessage.where(user: u).where.not(role: "chapitre").where("created_at < ?", q.created_at).maximum(:created_at)
+puts "question d'E13 : #{q.created_at} · échange précédent : #{avant}"
+etat = JourneyProgress.for(journey: SituationDeParcours.parcours, user: u)
+entre = SituationDeParcours.validations(u, etat.experiences, apres: avant).select { it[1] < q.created_at }
+puts "validées entre les deux (le bloc « depuis votre dernier échange ») : #{entre.map { "#{it[0]} (#{it[1]})" }.join(', ').presence || 'AUCUNE'}"
+puts "catégories lisibles : #{AutorisationLlm.categories_lisibles(u, usage: :mentor).inspect}"
+puts "Traces lues par le mentor : #{Trace.where(user: u).pluck(:territoire, :cle).inspect}"
+puts "messages dits avant la question : #{MentorMessage.where(user: u, role: %w[joueur mentor]).where('created_at < ?', q.created_at).count} (mémoire envoyée : 20 au plus)"
+PropositionDeGraine.where(user: u).order(:created_at).each { puts "proposition #{it.id} · #{it.etat} · #{it.created_at} · #{it.texte.to_s[0, 70]}" }
+cu = ChallengesUser.find_by(user: u, challenge: Challenge.find_by(slug: "les-choses-se-precisent"))
+puts "E13 : ChallengesUser #{cu&.id.inspect}, Graine semée sur E13 : #{Graine.semee_sur?(cu).inspect}"
+```
+
+À lancer avec `EMAIL=<le compte de Boris> bin/rails runner` sur la préprod (espacer de la recette en cours).
+
+**Piste de correction, à l'arbitrage de Boris (je la lui soumets), ta zone :**
+- a. Passer l'étape d'excursion au service : un bloc « étape en cours » lu du YAML (titre et explication du rang), qui ouvre une NOUVELLE consultation et interdit de reproposer une Graine plantée. Les mots de la consigne sont à Codex.
+- b. Donner au mentor la matière du chapitre : les entrées de `RegistreDesTraces` sous la porte « traces », et plus les seules lignes `Trace`. Cela tiendrait la promesse du rang 1.
+- c. Dans le contexte d'E13 (et d'E19), une proposition plantée sèmerait la Graine SUR le `ChallengesUser` de l'expérience. Décision produit.
+- d. La carte du Monde 0 lue de la configuration, sans nommer ce qui est masqué.
+
+Je n'y touche pas : services, contrôleur et consigne sont chez toi et chez Codex.
+
+— le poste fixe
