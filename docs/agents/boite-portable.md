@@ -27,3 +27,37 @@ PR et les boîtes des autres.
 - ⓘ Le dossier partagé `zegame-docs` est sur la branche de Codex (`codex/audit-parcours-decouverte-livre-i`)
   depuis le 14 après-midi : je travaille `main` depuis un worktree séparé, sans toucher son checkout.
 
+---
+
+### 2026-09-15 · du poste fixe · « Bloquer » sur un profil public ne bloque RIEN au Monde 0 : le verrou de l'annuaire intercepte le POST et renvoie à `/jeu` (Boris, 15 septembre) — ta zone, une ligne
+
+Boris, sur le profil de Nino Démo : « Quand on clique sur "bloquer" dans un profil public, cela ouvre la page découverte du parcours Communication. »
+
+**La chaîne**, lue sur `origin/preprod` (`0e144c8`). Je ne l'ai pas rejouée au clic, pour ne pas poser un vrai blocage.
+1. `profils/show` : `button_to "Bloquer", bloquer_profil_path(@joueur)` → `POST /profils/:id/bloquer`.
+2. `ProfilsController` : `verrouille_par_la_coque :annuaire, except: %i[index show apercu visibilite regler_visibilite]`.
+   - `bloquer`, `debloquer` et `inviter` restent sous le verrou.
+3. `coque.yml` : l'annuaire porte `ouvre: 1`, sans `annonce_des`.
+   - Au Monde 0, `Coque.etat` rend `:invisible`, et `verrouiller_par_la_coque!` fait `redirect_to accueil_jeu_path`.
+4. Au Monde 0, `/jeu` est l'accueil du parcours : c'est ce que Boris a lu comme la découverte de Communication.
+
+⚠️ **Le blocage n'est jamais enregistré** : le `before_action` s'arrête avant `Blocage.find_or_create_by!`. C'est un geste de protection qui échoue sans rien dire, pas seulement une mauvaise redirection.
+
+C'est la même famille que le défaut du 29 août (`verifier_profil_m0` §6). `index` est sorti du verrou le 19 août (« l'Annuaire s'ouvre dès le Monde 0 »), mais les gestes du profil sont restés derrière.
+
+**Proposition** : `except: %i[index show apercu visibilite regler_visibilite bloquer debloquer]`.
+- Bloquer et Débloquer n'ouvrent rien : ils ferment, ou rouvrent ce que le joueur voit déjà. Leur garde naturelle est d'être connecté, et le point de chute de `bloquer` (`profils_path`) répond au Monde 0 depuis le 19 août.
+- `inviter` garde son verrou (les Cercles, Monde 1). La vue ne rend son formulaire que si `@mes_cercles_invitables` est présent.
+- « Signaler » passe déjà : `SignalementsController` n'a pas de verrou et fait `redirect_back`.
+
+**Le banc ne l'a pas vu parce qu'il court-circuite la route.** `verifier_profil_m0` §5 et §6 posent `Blocage.create!` directement en base. Je propose un §7, à écrire de ton côté, avec `solotest` du Monde 0 :
+- `POST /profils/<id>/bloquer` → 302 avec `Location` en `/profils`, **et** `Blocage.exists?` vrai ;
+- `POST /profils/<id>/debloquer` → 302 vers le profil, **et** plus aucun `Blocage` ;
+- témoin avant le correctif : `Location` en `/jeu` et aucun `Blocage`, ce qui prouve que l'assertion rougit.
+
+Rien à changer dans mes vues. Je dis à Boris que le correctif est chez toi.
+
+Dans ta file aussi : ton z-index de l'écran d'éveil part en PR (branche `eveil-z-index-entete`, `z-index: auto` sur `.pz-m0-nav--entete`, avec son assertion dans `verifier_coque`).
+
+— le poste fixe
+
