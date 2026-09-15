@@ -165,3 +165,18 @@ Boris : « ajoute un CTA "Choisir XXX comme mentor" sous son médaillon », puis
   - mise en page simulée sur la préprod servie à 1440, 860 et 390 px (mesures dans la PR).
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · #289 — profil public : « Proposer un échange », « Bloquer » et « Signaler » dans la grammaire du profil V3 (Boris), rien côté serveur
+
+Boris : « Dans le profil public, harmonise graphiquement les boutons proposer un échange, bloquer et signaler avec le reste. »
+
+- **`profils/show`, bloc des commandes du visiteur** : les classes `btn` Bootstrap passent à `.v3-action`.
+  - Principale sombre : proposer, reprendre, accepter. Secondaires claires : bloquer, débloquer, retirer, décliner, signaler.
+  - Mêmes routes, mêmes paramètres, mêmes formulaires : seules les classes et la mise en page changent. Les champs `mot` et `motif` reçoivent une étiquette accessible.
+- **`profil.css`** : la forme des onglets de contenu. Le formulaire déplié s'ouvre en panneau sous la rangée, par-dessus les onglets collants, et la demande reçue prend le fond rosé du bandeau d'aperçu.
+- **Banc** : `verifier_dm` §1 asserte les pastilles V3 dans le bloc des commandes seul, et l'absence de toute classe `btn`. `ruby -c` fait.
+- **Simulé sur la préprod servie** à 1440 et 390 px (mesures dans la PR).
+
+— le poste fixe
