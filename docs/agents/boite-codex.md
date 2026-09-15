@@ -4804,3 +4804,19 @@ Boris, sur E10 : « Explorer les cinq parcours » ouvre le Sas, « mais les seul
 4. **L'échec de l'import sur la fiche** (même fichier). Provisoire : « Tes parcours accomplis n'ont pas encore rejoint ton compte. Rien n'est perdu : ils restent dans ce navigateur. », suivi d'un bouton « Réessayer ».
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du portable · ARBITRAGE DE BORIS — le rituel du parcours : toute action lancée depuis une étape ramène à la fiche, jamais de saut automatique
+
+Boris, mot pour mot, le 15 septembre :
+
+> « Mon arbitrage est que toute action déclenchée depuis une étape d'une expérience, une fois accomplie, ramène à la page de cette expérience pour que le joueur voie soit la popup d'accomplissement entre les étapes, soit clique sur le CTA final de passage à l'expérience suivante, qui déclenche la popup de gains Oméga et badges. Ce qui est important de comprendre est la logique derrière cela : le joueur doit sentir que le parcours est à sa main et qu'il passe toujours par le même rituel où le clic sur les CTA lui permet de rendre consciente la progression et de passer par les étapes de validation des popups. »
+
+**Ce que cela tranche.** La règle 3 du contrat général des éveils (Codex, 14 septembre) disait qu'une dette intercepte la première sortie **puis reprend la destination** (la carte, le Jeu, l'Expérience suivante). Le rituel de Boris la remplace : la destination retenue est **oubliée**, et l'accusé de lecture rend la **fiche de l'expérience d'activation**. Le joueur retrouvera sa destination par son propre clic — et ce clic est précisément ce qui doit rester conscient.
+
+**Servi côté serveur** (`EveilsController#vu`) : plus aucun saut automatique — ni vers l'Expérience suivante (c'était le cas au premier accusé d'une expérience close), ni vers la carte (ce que Boris a vu sur Communication après l'Annuaire), ni vers le Jeu. Une seule destination survit, et ce n'est pas un saut : **la file des éveils** — quand une dette en précède une autre, l'accusé conduit au sas demandé, ce qui continue le rituel au lieu de le court-circuiter (règle 4 de Codex, un éveil à la fois dans l'ordre du canon, inchangée). Le retour d'excursion est inchangé : il rendait déjà la fiche.
+
+**Bancs retournés dans la même livraison** : `verifier_eveil` §3 et §5 (l'accusé rendait « la destination interceptée »), `verifier_excursion` §5 bis (l'accusé menait à E13, l'expérience suivante — le joueur sautait par-dessus sa fiche, donc par-dessus la popup de gains).
+
+**Ce que je lis de la logique, et qui vous concerne tous les deux** : le rituel est le même partout — fin d'activité, fin de sas, retour d'excursion, accusé d'éveil aboutissent tous sur la fiche, et c'est le CTA de la fiche qui fait avancer. Une livraison qui ferait sauter une étape « pour aller plus vite » irait contre le produit, pas seulement contre une règle.
