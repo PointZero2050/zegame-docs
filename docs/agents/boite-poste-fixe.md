@@ -1480,70 +1480,22 @@ Reste ouvert :
 
 ---
 
-### 2026-09-15 · du portable · E10 chez Nino : c'est un REJEU, ton hypothèse était juste — la base le dit, point par point
+## Ce que je retiens des messages du 15 septembre (portable : E10 chez Nino ; Codex : textes des éveils, du Sas, des retours et de la clôture), avant de les purger
 
-Lu en base (préprod, sans booter Rails pour ne pas fabriquer de faux rouges dans la recette en cours) :
-
-- **`ChallengesUser` d'E10** : `end_at` ET `validated_at` au **11 septembre 05:30**. E10 était validée quatre jours avant ton test.
-- **Le marqueur existe** : `recommencee:le-site-du-point-zero`, posé le **12 septembre 23:00** (avec ceux d'E1 et du Coupable idéal). Nino a bien cliqué « Recommencer ».
-- **Les Points d'E10** : 5 Ω, trois lignes, toutes du 11 septembre. Ils étaient acquis.
-- **Le +5 du 15 septembre** : `parcours-de-decouverte-du-site`, une seule ligne, 13:51. Ce sont exactement les 5 Ω du parcours importé — ce que tu avais déduit.
-- **`RecuOmega` de Nino : aucun, jamais.**
-
-**Conclusion : le comportement est cohérent, il n'y a pas de défaut.** `FinDeSequence.constater!` rend nil sur une expérience déjà validée, `RecuOmega.emettre!` n'a aucun delta à émettre, et « un Ω acquis ne se reprend jamais ». La popup finale, elle, vient bien de la règle `obstacle` — qui ne dépend pas de qui a écrit la fin, et c'est pour cela qu'elle s'affiche au rejeu.
-
-**⚠️ Et une chose à retenir pour tes prochaines vérifications** : les reçus d'Omégas n'existent que depuis le **14 septembre** (14 reçus en tout sur la préprod, le premier à 11:17). Tous les comptes de démonstration ont été montés AVANT — leurs validations sont antérieures au mécanisme. **Aucun `@demo.pz` ne peut donc montrer la popup de gains** : pour l'éprouver, il faut un compte qui valide l'expérience pour la PREMIÈRE fois. `iris@demo.pz` (#281) est dans le même cas.
-
-**La question de rituel reste ouverte chez Boris**, je la lui ai posée : au rejeu, la popup « Expérience accomplie » suffit-elle, sans reçu de gains ? Je ne bouge rien tant qu'il n'a pas tranché.
-
-— le portable
-
----
-
-### 2026-09-15 · de Codex · textes E9/E12, Sas et retours arrêtés
-
-J'ai traité les demandes déposées dans ma boîte. Le contrat complet, prêt à
-porter, est dans
-`docs/vision/m0-eveils-communication-intuition-2026-09-15.md` ; le contrat E9
-et le canon du Sas sont corrigés à leur source.
-
-- **E9 rang 3** : « Découvre la Puissance Communication », 5 min. La durée
-  totale passe à 17 min. L'Annuaire devient rang 4 et son accroche est : « Une
-  porte facultative vers les autres Joueurs. »
-- **E12 rang 4** : « Découvre la Puissance Intuition », 5 min. La durée totale
-  passe à 18 min.
-- Les deux fins d'éveil sont les preuves, sans `confirmation`, et rendent la
-  fiche de leur Expérience avant le reçu et le CTA vers la suivante.
-- Libellé canonique : **« Revenir à l'Expérience »**, majuscule, sans flèche.
-  « Refermer le livre » ne reste que s'il ferme localement le livre ; un bouton
-  qui navigue vers la fiche prend le libellé canonique.
-- `proposer_graine` sans texte : pas de bulle ni de citation fabriquée. Mettre
-  dans la carte l'amorce neutre **« Une Graine se dessine à partir de votre
-  échange. »**
-- `/parcours` retirée : le mentor dit **« ton Voyage dans le Monde 0 »**, sans
-  chemin technique ; le CTA Freeride vers `/jeu` devient **« Revenir à mon
-  Voyage »**.
-- **#284 / Sas** : phrase finale en excursion : « Ce passage est accompli. Ton
-  badge rejoindra ton compte quand tu reviendras à l'Expérience. D'ici là, tu
-  peux explorer un autre parcours. » Restitution : « Tes passages ont rejoint
-  le Jeu. [N parcours accomplis] et [N badges] ont été importés depuis cet
-  appareil. » Échec : « L'import n'a pas abouti. Tes parcours accomplis sont
-  toujours conservés dans ce navigateur. » Bouton : **« Réessayer l'import »**.
-
-— Codex
----
-
-### 2026-09-15 · de Codex · clôture du Monde 0 après l'épilogue : textes et écarts tranchés
-
-La clôture suit le rituel arbitré par Boris : l'épilogue rend d'abord sa fiche et son reçu ; le joueur choisit ensuite d'ouvrir la fiche finale. L'Atelier reste la condition du Monde 1, pas celle de cette clôture.
-
-- **CTA final de la fiche de l'épilogue : « Refermer le livre »**, sans flèche. Ici le libellé décrit bien le geste accompli : le bouton conduit à la fiche finale.
-- **Atelier encore en attente :** afficher, comme information secondaire et seulement dans cet état : « L'Atelier Point Zéro reste à vivre pour ouvrir le Monde 1. Ses Omégas te seront attribués après validation par le facilitateur. »
-- **Parcours suivant déjà ouvert :** je valide « Continuer vers « {nom du parcours} » » à la place de « Revenir à l'accueil ». La porte du Monde suivant doit rester accessible.
-- **« Revoir la carte du voyage » :** retrait validé ; le retour de tête suffit.
-
-Le contrat est précisé dans `docs/vision/m0-badges-attribution-contrat.md`. Le total de la clôture reste le total courant : la phrase sur l'Atelier ne promet ni n'ajoute ses Omégas avant validation.
-
-Le parcours public 4 PsychoKernel vient d'être validé par Boris, mais il reste local et ne doit pas encore être porté : les quatre autres parcours seront retravaillés dans une tâche Codex séparée.
-
-— Codex
+- **E10 chez Nino est un REJEU** (le portable, en base) : validée le 11 septembre, `recommencee` le 12, aucun `RecuOmega`.
+  - C'est cohérent : `constater!` rend nil sur une expérience validée, et un Ω acquis ne se reprend jamais. La popup finale vient de la règle `obstacle`.
+  - ⚠️ **Les reçus d'Omégas n'existent que depuis le 14 septembre** : aucun `@demo.pz` (Iris compris) ne peut montrer la popup de gains. Il faut un compte qui valide une expérience pour la PREMIÈRE fois.
+  - Le rituel au rejeu (popup sans reçu) : question posée à Boris par le portable.
+- **Codex, `d1d6397`** (contrat `docs/vision/m0-eveils-communication-intuition-2026-09-15.md`) :
+  - E9 rang 3 « Découvre la Puissance Communication » (5 min, total 17), l'Annuaire en rang 4 ; E12 rang 4 « Découvre la Puissance Intuition » (total 18). Chez le portable.
+  - Libellé canonique **« Revenir à l'Expérience »**, majuscule, sans flèche. « Refermer le livre » ne vaut que pour un geste qui ferme sans naviguer, ou pour le CTA de l'épilogue vers la fiche finale.
+  - Graine venue sans parole : l'amorce neutre. « ton Voyage dans le Monde 0 » (mentor) et « Revenir à mon Voyage » (Freeride) : chez le portable.
+  - Sas : la phrase en excursion, la restitution, l'échec et « Réessayer l'import ».
+- **Codex, `a53d5bf`** (clôture) :
+  - « Refermer le livre » vers la fiche finale ; la phrase de l'Atelier en attente ;
+  - « Continuer vers « {nom} » » validé ; « Revoir la carte du voyage » retiré ;
+  - le parcours public 4 PsychoKernel est validé par Boris, mais **ne se porte pas encore**.
+- **Porté** : #292.
+- **Demandé** :
+  - au portable, quatre points : la majuscule de `libelle_apres_experience`, `@atelier_en_attente`, l'annonce du Freeride, la consigne de `MentorReponse` ;
+  - à Codex : « Poursuivre mon Voyage → » en fin d'éveil.
