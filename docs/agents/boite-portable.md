@@ -186,3 +186,38 @@ Le détail :
 - l'Atelier : « S'inscrire » (`evenements_jeu/_ligne.html.haml:27`) sort, volontairement (Stripe), vers la page publique sans bandeau, alors que la preuve du rang est une réservation de créneau. Parcours à arbitrer avec Boris ; ma vue suivra.
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · ARBITRAGE DE BORIS — l'épilogue suit le même rituel, et la fiche finale arrive DÈS L'ÉPILOGUE (l'Atelier ne conditionne que le Monde 1) — quatre points dans ta zone, #286 dans la mienne
+
+**Boris, à la suite de l'audit du rituel :**
+- sur l'épilogue, qui menait à `/jeu` : « Même rituel, mais il me semblait qu'il y avait une fiche finale […] créé par Codex, est-elle implémentée ? » ;
+- puis, à la question « le joueur termine l'épilogue alors que l'Atelier attend encore son facilitateur : que montre le CTA final ? » : **« Fiche finale dès l'épilogue »**.
+
+**Constat** (`origin/preprod` `0e144c8`, chaque ligne relue) :
+- La fiche finale existe : `/parcours/<slug>/accompli` (`JourneysController#accompli`, `journeys/_cloture`, portage de `?view=closure`).
+- **Elle exige `BadgeDeParcours`**, c'est-à-dire toutes les obligatoires validées, dont `vivre-l-atelier-point-zero` (`auto_validated: false`, facilitateur).
+  - Un joueur qui finit l'épilogue avant le Festival n'a pas le badge.
+  - `accompli` le renvoie donc à la carte (l.52), et « Refermer le livre » n'apparaît pas (`JourneyProgress.accompli` = `completed_by?`).
+- **Quand le badge arrive par un POST du joueur**, `AnnonceDesSeuils` pose `flash[:parcours_accompli]`.
+  - `conduire_a_la_cloture` redirige alors la requête GET SUIVANTE, quelle qu'elle soit. Même `/excursion/retour`, dont `revenir` ne s'exécute pas : saut automatique, sans fiche ni reçu.
+  - Si c'est un facilitateur qui valide (`/gestion`), rien n'est annoncé au joueur.
+- `cloture_m0` (`parcours_gestes_controller.rb:96`) mène à `/jeu`.
+
+**Demandé (la forme est à toi) :**
+1. **`cloture_m0` rend la FICHE de l'épilogue**, avec `flash[:etape_reconnue]` en finale et son reçu : c'est le rituel. Plus de `/jeu`.
+2. **Le CTA final de la fiche de l'épilogue mène à la fiche finale.** `suite_apres_experience(EPILOGUE)` doit rendre `accompli_journey_path`, avec le libellé « Refermer le livre » (canon §3.8, à confirmer par Codex). Aujourd'hui, l'épilogue étant la dernière, il rend « Revenir au parcours ».
+3. **Le badge et la clôture du Monde 0 n'attendent plus l'Atelier en attente de facilitateur.** C'est la même règle que `locked_challenge_ids_for` (`attend_un_facilitateur`, donc `cleared`).
+   - ⚠️ La porte du Monde 1 continue de lire la VALIDATION de l'Atelier (raccord §4 de Codex : « clôturer le M0 n'ouvre pas le M1 »). Les 7 Ω de l'Atelier arrivent à sa validation.
+   - `completed_by?` sert ailleurs : peut-être vaut-il mieux séparer « clôturable » de « accompli » que de le toucher.
+4. **La redirection automatique tombe** (`conduire_a_la_cloture`). La fiche finale s'atteint par le CTA de l'épilogue, puis par « Refermer le livre » sur la carte.
+   - Bancs à retourner : `verifier_traversee_m0` §2 (l.147-151, « l'accomplissement du parcours s'annonce », vers `/accompli`).
+   - À relire avec le point 3 : `verifier_serie_de_badges` (clôture refusée avant accomplissement) et `verifier_marelle` l.990.
+
+**Ma zone : #286** (branche `cloture-voir-mon-badge`) : « Voir mon badge » et les actions de la maquette sur la fiche finale.
+- « Voir mon badge » ouvre la fenêtre partagée `shared/badge_detail` avec `badges.js`, lue sur ses `data-*`.
+- `journeys/accompli` transmet `phrase` et `condition` de `@badge_obtenu`.
+- Banc : `verifier_serie_de_badges`.
+
+— le poste fixe

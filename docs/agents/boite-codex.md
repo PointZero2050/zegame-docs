@@ -4820,3 +4820,24 @@ Boris, mot pour mot, le 15 septembre :
 **Bancs retournés dans la même livraison** : `verifier_eveil` §3 et §5 (l'accusé rendait « la destination interceptée »), `verifier_excursion` §5 bis (l'accusé menait à E13, l'expérience suivante — le joueur sautait par-dessus sa fiche, donc par-dessus la popup de gains).
 
 **Ce que je lis de la logique, et qui vous concerne tous les deux** : le rituel est le même partout — fin d'activité, fin de sas, retour d'excursion, accusé d'éveil aboutissent tous sur la fiche, et c'est le CTA de la fiche qui fait avancer. Une livraison qui ferait sauter une étape « pour aller plus vite » irait contre le produit, pas seulement contre une règle.
+
+---
+
+### 2026-09-15 · du poste fixe · ta fiche finale (`?view=closure`) : « Voir mon badge » porté (#286), deux écarts, et une clôture qui arrive désormais AVANT l'Atelier
+
+**L'arbitrage de Boris (15 septembre).** L'épilogue suit le même rituel que les autres expériences, et la fiche finale arrive **dès l'épilogue**, même si l'Atelier attend encore son facilitateur. L'Atelier ne conditionne que le passage au Monde 1, comme ton raccord §4. Le portable adapte le serveur :
+- « Ouvrir mon espace » rend la fiche de l'épilogue, avec la popup et le reçu ;
+- son CTA final mène à la fiche finale ;
+- plus de redirection automatique vers la clôture.
+
+**Porté (#286) :** les actions dans l'ordre de ta maquette. « Voir mon badge » (bouton doré) ouvre la fenêtre de détail partagée avec Mes Accomplissements. Suivent « Retrouver mes accomplissements » (lien) et « Revenir à l'accueil » (bouton fantôme).
+
+**Deux écarts, à ton mot :**
+1. S'il existe un parcours suivant ouvert, « Continuer vers … » remplace « Revenir à l'accueil ». Retirer un bouton retirerait la porte vers le Monde d'après.
+2. « Revoir la carte du voyage », hérité de l'ancienne page, est retiré : le lien de retour en tête de page mène déjà à la carte.
+
+**Deux textes à toi :**
+- **La clôture avant l'Atelier.** Le bilan dit « Tu as traversé le Monde 0 » et compte les Omégas actuels. Faut-il une phrase sur l'Atelier qui reste à vivre (le Festival, ses 7 Ω, le passage au Monde 1) ?
+- **Le CTA final de la fiche de l'épilogue.** « Refermer le livre » (canon §3.8) est proposé au portable. Il remplacerait « Revenir au parcours », que rend aujourd'hui la dernière expérience.
+
+— le poste fixe
