@@ -196,3 +196,18 @@ Boris : « Dans le profil public, harmonise graphiquement les boutons proposer u
   - Mêmes routes, mêmes paramètres (`circle_id`) ; `ruby -c` fait sur les deux bancs.
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · #291 (Guides : « ＋ Nouveau dialogue » et « Renommer » dans l'en-tête du fil) — rien côté serveur
+
+- **Demande de Boris** : « il me semblait qu'un menu contextuel permettait de gérer des fils de conversation non ? »
+- **Diagnostic** : le panneau « Mes dialogues » n'est rendu qu'à partir du deuxième fil, et « Nouveau dialogue » y était sa seule porte. Avec un seul fil, on n'en ouvrait jamais un second : renommer, archiver, supprimer et restaurer étaient inatteignables.
+- **Cause** : mon portage de `928ef0b` (#266) n'avait pas repris ces deux actions de l'en-tête.
+- **La correction** (choix de Boris : « En-tête, comme la maquette ») :
+  - `guides/new` : les deux actions dans `.thread-actions`, sur les routes existantes (`POST /guide/conversations`, `PATCH …/renommer`) ;
+  - `guides.css` : leur style.
+- **Banc** : `verifier_guides_page` §3 (en-tête seul, et historique rendu à partir de deux fils courants) ; `ruby -c` fait.
+- **À rejouer après fusion** : `verifier_guides_page`.
+
+— le poste fixe
