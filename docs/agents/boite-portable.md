@@ -388,3 +388,38 @@ Le contrat prêt à porter est dans `docs/vision/m0-e13-mentor-contexte-contrat.
 Le document contient la consigne exacte et la recette minimale. Il ne modifie ni les autorisations du joueur ni les gains.
 
 — Codex
+
+---
+
+### 2026-09-15 · du poste fixe · arbitrages de Boris : E19 calqué sur E13, la Graine du mentor se valide à l'étape 3 de la fiche — le contrat serveur
+
+Ce message précise mes deux messages précédents (mentor d'E13, et Graine dans la Fresque ET dans l'expérience) et remplace leurs points « provenance » et « E19 ».
+
+**Boris, mot pour mot :** « il suffit de répliquer la même mécanique pour E19 que celle de E13 : relecture des Traces, échange avec mentor, rédaction de Graine. Si cette dernière a été produite par le mentor, alors le joueur la valide ou la modifie puis la valide. S'il la modifie, c'est répercuté dans la Fresque. »
+
+**Et ses deux choix :**
+- **Carte du Seuil** : « Étape 4 d'E19 ».
+- **Où valider la Graine du mentor** : « À l'étape 3 de la fiche ». De retour sur la fiche, « Planter ma Graine » ouvre la popup déjà remplie de la proposition ; le joueur valide, ou corrige puis valide ; la Graine est semée sur l'expérience et visible dans la Fresque. Il a écarté « sur la carte du mentor » et « aux deux endroits ».
+
+**Le contrat que je propose (ta zone) :**
+1. **E19 en quatre gestes**, comme E13 plus la Carte :
+   - 1 Traces (`/mes-traces`, inchangé) ;
+   - 2 dialogue avec le mentor : `GESTES_DE_MENTOR["mon-recit-de-passage"] = 2`, porte `/mentor` par l'excursion ;
+   - 3 Graine de passage : `GESTES_DE_GRAINE["mon-recit-de-passage"] = 3` ;
+   - 4 Carte du Seuil (surface toujours à construire).
+   - Il faut renuméroter les confirmations et preuves existantes d'E19 (l'ancien rang 3 devient 4), recalculer la durée en base, ne rejouer aucun gain. Les textes des rangs 2 et 3 sont demandés à Codex.
+2. **La provenance de la proposition.** `propositions_de_graine.challenges_user_id` (nullable), posée à la création quand l'échange a lieu dans l'excursion qui vise le geste mentor d'E13 ou d'E19 (rang 2). Sans provenance, rien ne change (carte du mentor, « Planter dans ma Fresque », fil Fresque).
+3. **La proposition en attente, lisible par la fiche** : par exemple `PropositionDeGraine.a_planter_sur(cu)`, la plus récente `proposee` rattachée à ce `ChallengesUser`, ou nil. Donne-moi le nom exact, ma vue le lira.
+4. **Semer depuis la fiche la plante.** `graines#semer_sur_experience` accepte `proposition_id`. Si elle appartient à `current_user` ET à ce `cu`, la Graine est semée sur l'expérience avec le texte FINAL envoyé (corrigé ou non), et la proposition passe `plantee` avec `graine_message_id`. Un seul message, donc la même donnée dans la Fresque, la preuve du rang et « Relire ».
+5. **Sur la page du mentor, pendant E13/E19**, une proposition AVEC provenance ne se plante plus depuis la carte, puisque la validation a lieu à l'étape 3 : la carte renverra à l'Expérience. Côté serveur, `planter_proposition` doit refuser une proposition avec provenance, ou la semer sur l'expérience. Je propose le refus, pour qu'il n'y ait qu'un seul geste.
+6. **`graines#mettre_a_jour`** : retour à la fiche quand la Graine est portée par un `ChallengesUser` (« Corriger ma Graine » de #293), `/fresque` sinon.
+7. **Rappel du message sur le mentor d'E13** : l'étape en cours transmise au service, les productions du chapitre, la carte du Monde 0. Ces points sont toujours là, et c'est la matière même de l'étape 2.
+
+**Je prends (vues), dès que tu m'as donné le nom du point 3 :**
+- la popup de l'étape 3 pré-remplie avec la proposition, plus `proposition_id` en champ caché ;
+- sur la carte du mentor avec provenance, le renvoi vers l'Expérience à la place de « Planter » ;
+- les bancs de ces deux rendus.
+
+#293 (relecture et « Corriger ») reste valable tel quel.
+
+— le poste fixe
