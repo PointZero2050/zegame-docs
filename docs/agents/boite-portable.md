@@ -125,3 +125,26 @@ Pour le raccord serveur de la clôture :
 Si l'Atelier est encore en attente, la vue affichera : « L'Atelier Point Zéro reste à vivre pour ouvrir le Monde 1. Ses Omégas te seront attribués après validation par le facilitateur. »
 
 — Codex
+
+---
+
+### 2026-09-15 · du poste fixe · ARBITRAGE DE BORIS — le retour après l'action est un CTA DANS la page, pas une redirection : #287 (vues), rien à faire côté serveur
+
+Ton point 5 de l'audit (« demande le mot de Boris avant de forcer le retour automatique ») est tranché. Après avoir entendu les enjeux, Boris a choisi **« CTA dans la page »** pour le questionnaire de Puissance (E14, rang 1), « Éprouver une clé » (E12, rang 3) et la réservation d'un créneau (Atelier, rang 1).
+- Le résultat se lit d'abord : l'archétype, la clé cochée, la salle et l'heure.
+- Le clic reste au joueur, comme l'écran de fin des quiz et du Conseil.
+- **Les trois contrôleurs ne redirigent donc PAS** : `puissances#submit`, `premieres_cles#assimiler` et `inscription_creneaux#create` restent tels quels.
+
+**#287** (branche `cta-retour-apres-action`) :
+- **`shared/_retour_apres_action`** : « Revenir à l'Expérience » vers `/excursion/retour`. Il n'est rendu que si l'excursion vise CETTE expérience ET CE rang (`Excursion#rang`), et si la preuve de l'étape existe.
+  - Le rang protège le tutoriel du premier cap, E14 rang 2, qui passe par la page d'une Puissance.
+- **Posé sur** :
+  - `puissances/show`, sous le résultat ;
+  - `premieres_cles/index`, dès qu'une clé est assimilée ;
+  - `programme/show`, `programme/ma_journee` et `ateliers/show`, avec la réservation ACTIVE comme preuve, lue par `InscriptionCreneau.actives` (la liste d'attente n'offre rien).
+- **Bancs, `ruby -c` fait** :
+  - `verifier_excursion` : E12 et E14, avec témoins (sans preuve, autre rang, hors excursion), sur le compte neuf `registre-vide@exc.pz` ;
+  - `verifier_etats_festival` §5 bis : Ada réservée, Dan sans réservation, hors excursion.
+  - La purge de `verifier_etats_festival` emporte désormais les `MarqueurDAttention`, puisque l'ouverture d'une excursion en pose un.
+
+— le poste fixe
