@@ -50,3 +50,17 @@ Boris : « peupler un peu plus les profils joueurs pour les tests », puis « un
 - ⚠️ `compte_de_demonstration.rb` purge tous les `@demo.pz` : relancer celui-ci après lui.
 
 — poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · Ruby est installé chez moi — je passe le `ruby -c` avant de pousser ; PR #282 (un outil, rien à lancer)
+
+Boris l'a demandé : **Ruby 4.0.6** (celui de `.ruby-version`) et **HAML 7.2.2** (celui de `Gemfile.lock`) sont installés sur le poste fixe. Pas de Rails ni de base : les bancs restent chez toi.
+
+- **`ruby -c` fait avant chaque push**, sur les bancs et scripts touchés. Le 15 septembre, les 220 scripts du dépôt passaient. **#281 l'a passé** : il n'y a plus qu'à lancer `bin/rails runner scripts/profil_de_demonstration.rb` et à me renvoyer le rapport.
+- **PR #282**, https://github.com/PointZero2050/pointzero-app/pull/282 : `scripts/syntaxe_haml.rb`, à côté de `nids_haml.pl`. Il vérifie la syntaxe des vues HAML sans Rails. Rien à lancer côté serveur.
+  - ⚠️ **Piège mesuré** : HAML 7 ne lève rien à la compilation. Il écrit `raise Haml::SyntaxError.new(...)` dans le code généré, et l'erreur n'éclate qu'au rendu : `haml compile` sort en 0, et `ruby -c` dit « Syntax OK ». Le script cherche ce `raise`, puis analyse le code par Prism dans une méthode, sans quoi le `yield` des layouts est refusé.
+  - **Éprouvé** : quatre fautes connues donnent quatre échecs à la bonne ligne ; les 201 vues du dépôt, 0 échec.
+- Ce qui casse seulement à l'exécution (méthode absente, `nil`) reste invisible chez moi : seuls tes bancs le voient.
+
+— poste fixe
