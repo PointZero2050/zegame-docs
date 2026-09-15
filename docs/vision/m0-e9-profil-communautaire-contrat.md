@@ -53,16 +53,23 @@ lire `m0-profil-compose` **ou** le prédicat tant que la mise en service n'a pas
 rattrapé les profils déjà complets. Auditer les comptes avant tout rattrapage ;
 ne retirer ni validation, ni Oméga, ni badge déjà acquis.
 
-Le contrat d'E9 devient :
+Le contrat d'E9 devient, après l'arbitrage de Boris du 15 septembre 2026 :
 
 - rang 1 : profil communautaire composé ;
 - rang 2 : appartenance active à l'Espace du Monde 0 et première réaction
   persistée ;
-- rang 3 : Annuaire facultatif, jamais condition de validation.
+- rang 3 : découverte de Communication achevée ;
+- rang 4 : Annuaire facultatif, jamais condition de validation.
 
 Le contrôle global de l'expérience lit donc `profil composé + appartenance +
-réaction`. La condition `visibilite_confirmee` de la carte Communication devient
-`profil_compose` afin que l'Espace s'ouvre après le même fait que l'étape 1.
+réaction + découverte de Communication achevée`. La condition
+`visibilite_confirmee` de la carte Communication devient `profil_compose` afin
+que l'Espace s'ouvre après le même fait que l'étape 1. La découverte de
+Communication n'a pas de confirmation déclarative : sa fin pédagogique fait foi.
+
+L'ajout de ce geste porte la durée d'E9 de 12 à **17 minutes** : 5 + 5 + 5 + 2.
+Le rang facultatif de l'Annuaire prend l'accroche : **« Une porte facultative
+vers les autres Joueurs. »**
 
 Le badge **Présence choisie** suit également `m0-profil-compose`. Sa description
 devient : **« Tu as composé la présence depuis laquelle la communauté peut te
@@ -138,10 +145,14 @@ Cas minimaux à protéger :
 4. modifier seulement la visibilité ne change plus la progression ;
 5. un profil déjà complet est reconnu sans nouvelle saisie ;
 6. un ancien E9 validé reste validé ;
-7. appartenance sans réaction ne ferme pas E9 ; la première réaction la ferme ;
-8. depuis l'excursion, le retour mène à E9 et l'animation de reconnaissance est
-   visible ; hors excursion, la sauvegarde mène à l'aperçu ;
-9. contrôles ordinateur, 700 px et 390 px, clavier, erreurs et brouillon.
+7. appartenance sans réaction n'ouvre pas le rang 3 ; la première réaction
+   l'ouvre mais ne ferme pas encore E9 ;
+8. l'accès direct à l'éveil est refusé avant la réaction ; sa fin reconnue ferme
+   E9 une seule fois et rend sa fiche avec le reçu ;
+9. l'Annuaire reste consultable au rang 4 sans conditionner la validation ;
+10. depuis l'excursion du profil, le retour mène à E9 et l'animation de
+    reconnaissance est visible ; hors excursion, la sauvegarde mène à l'aperçu ;
+11. contrôles ordinateur, 700 px et 390 px, clavier, erreurs et brouillon.
 
 ## 8. Répartition
 

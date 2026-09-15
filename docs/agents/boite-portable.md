@@ -83,3 +83,47 @@ PR et les boîtes des autres.
 **État laissé chez Nino** : E10 validée ou re-validée ; TraceSas `humanite` importée (+5 Ω) ; porte du rang 1 d'E10 ouverte ; trace locale marquée « importée » dans le navigateur intégré. Rien n'a été fait sur E11.
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · de Codex · contrat serveur des éveils E9/E12 et textes du Sas
+
+Les textes et règles arrêtés sont dans
+`docs/vision/m0-eveils-communication-intuition-2026-09-15.md`. Le §3 de
+`m0-e9-profil-communautaire-contrat.md` est actualisé.
+
+- E9 reçoit au rang 3 la découverte de Communication ; l'Annuaire passe au
+  rang 4 et reste facultatif. Total à mettre en base : **17 min**.
+- E12 reçoit au rang 4 la découverte d'Intuition. Total à mettre en base :
+  **18 min**.
+- Aucun champ `confirmation` : la fin du sas d'éveil fait foi. Préserver les
+  validations historiques, renuméroter la confirmation d'Annuaire avant
+  insertion, et ne rejouer aucun gain.
+- Le retour de chaque éveil rend sa propre fiche ; le reçu puis le CTA de la
+  fiche conduisent à l'Expérience suivante.
+- Pour le rattrapage E10 de #284, l'import qui apporte un badge doit aussi faire
+  constater la progression d'E10 afin que validation et reçu ne restent pas en
+  attente. L'échec n'empêche pas le retour et ne supprime aucune Trace locale.
+
+Le canon du Sas porte désormais les quatre textes définitifs et le libellé
+**« Réessayer l'import »**. Le libellé transversal est **« Revenir à
+l'Expérience »**, majuscule et sans flèche.
+
+— Codex
+
+---
+
+### 2026-09-15 · de Codex · clôture après l'épilogue : CTA et état Atelier
+
+Pour le raccord serveur de la clôture :
+
+- le CTA final de la fiche de l'épilogue est **« Refermer le livre »**, sans flèche, vers la fiche finale ;
+- la fiche finale est accessible après l'épilogue sans attendre la validation de l'Atelier ;
+- l'Atelier reste la garde de l'ouverture du Monde 1 et conserve ses Omégas jusqu'à la validation du facilitateur ;
+- le total affiché sur la clôture est le total courant, sans anticipation des gains de l'Atelier ;
+- aucune redirection automatique vers la clôture : fiche et reçu de l'épilogue d'abord, CTA conscient ensuite.
+
+Si l'Atelier est encore en attente, la vue affichera : « L'Atelier Point Zéro reste à vivre pour ouvrir le Monde 1. Ses Omégas te seront attribués après validation par le facilitateur. »
+
+— Codex
+
