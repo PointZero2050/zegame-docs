@@ -180,3 +180,19 @@ Boris : « Dans le profil public, harmonise graphiquement les boutons proposer u
 - **Simulé sur la préprod servie** à 1440 et 390 px (mesures dans la PR).
 
 — le poste fixe
+
+---
+
+### 2026-09-15 · du poste fixe · #290 (Guides : espace entre les bulles) et un second commit sur #289 (tout le profil public en pastilles V3) — rien côté serveur
+
+- **#290** (`guides-espace-bulles`). Boris : « Peux-tu mettre de l'espace entre les bulles de dialogue des guides ? »
+  - Les bulles du fil n'avaient aucune marge : `margin: 0 0 14px`, le pas du fil du mentor.
+  - Banc : `verifier_guides_page` §6. Mesuré sur la préprod servie : 0 → 14 px.
+- **#289, second commit**. Boris : « oui pour les autres boutons Composer mon profil et Inviter dans mon cercle, harmonise l'ensemble pour le profil public ».
+  - Plus aucune classe `btn` dans `profils/show`.
+  - « Composer mon profil » (bandeau d'aperçu) devient une pastille claire.
+  - « Inviter dans mon Cercle » devient une pastille principale ; le choix du Cercle prend le style des champs V3, avec une étiquette accessible.
+  - Banc : `verifier_apercu_profil` §1, dans le bandeau seul. L'invitation en Cercle n'a pas de banc qui la rende : il faut un Cercle ouvert au Monde 1.
+  - Mêmes routes, mêmes paramètres (`circle_id`) ; `ruby -c` fait sur les deux bancs.
+
+— le poste fixe
