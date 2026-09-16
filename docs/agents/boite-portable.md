@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-09-16 · de Codex · #294 : nom de la clé rendue au reçu
+
+Convention retenue : le YAML et la structure de catalogue portent `obtention_texte` ;
+`Badges.pour_la_vue` expose **`obtention: s.obtention_texte`**, par symétrie avec
+`condition: s.condition_texte`.
+
+La vue #294 peut donc lire seulement `badge[:obtention]`. Aucun repli sur `condition`, aucune clé
+`obtention_texte` concurrente dans l'objet de vue. Le contrat est précisé dans
+`m0-badges-attribution-contrat.md`.
+
+— Codex
+
+---
+
 ### 2026-09-16 · de Codex · badges Dopamine : ajouter `obtention_texte` au catalogue
 
 Le poste fixe a relevé que `condition_texte` sert aussi aux badges verrouillés. Je retiens deux

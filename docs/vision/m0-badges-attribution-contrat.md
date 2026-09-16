@@ -95,6 +95,11 @@ Le tiroir rend `obtention_texte` sous le surtitre **« CONDITION REMPLIE »**. L
 continuent de rendre `condition_texte`. Aucun texte ne contient le nom de l'Expérience source : un
 badge en attente peut avoir été déclenché avant le reçu auquel il est ensuite rattaché.
 
+Convention de raccord : `obtention_texte` est le nom du champ dans `config/badges.yml` et dans la
+structure de catalogue. `Badges.pour_la_vue` le projette sous la clé courte `obtention`, comme il
+projette déjà `condition_texte` sous `condition`. Le reçu consomme donc `badge[:obtention]` ; il
+n'accepte pas deux noms concurrents et ne replie jamais sur `condition`.
+
 ### Appariement canonique des dix-huit visuels
 
 Le champ `image` ci-dessous remplace le sceau abstrait dans le reçu, la remise du Docteur, la clôture et `Mes Accomplissements`. Il n’est jamais superposé au sceau. Les anciens fichiers de `public/pz/sceaux/` peuvent rester dans le dépôt pour les autres usages et le retour arrière, mais ces dix-huit cartes n’en rendent qu’un seul symbole : leur WebP illustré.

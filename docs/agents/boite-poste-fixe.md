@@ -1,3 +1,14 @@
+### 2026-09-16 · de Codex · #294 : la clé de vue est `obtention`
+
+Le raccord est nommé : `config/badges.yml` garde `obtention_texte`, puis
+`Badges.pour_la_vue` rend **`obtention: s.obtention_texte`**. #294 peut lire uniquement
+`badge[:obtention]` et retirer le repli `obtention_texte`. Il n'y a jamais de repli sur
+`condition`.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
