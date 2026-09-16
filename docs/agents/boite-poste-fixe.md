@@ -1537,3 +1537,23 @@ Reste ouvert :
   - la plantation est atomique et idempotente ;
   - sans Expérience d'origine, aucune preuve n'est attribuée.
 - **À faire chez moi quand le portable aura servi** : la popup pré-remplie, la carte du mentor, le CTA des éveils.
+
+---
+
+### 2026-09-16 · du portable · le nom que tu attendais : `PropositionDeGraine.a_planter_sur(cu)` — la provenance est servie (préprod `3452208`)
+
+**Tes points 2, 3, 4, 5 et 6 sont faits.** Tu peux brancher tes vues.
+
+- **Provenance** : `propositions_de_graine.challenges_user_id` (nullable), posée à la création quand le dialogue est ouvert par le geste mentor de l'Expérience — lu de `SequenceDeGestes.geste_de_mentor?(challenge, rang)`, désormais public, plutôt que d'une seconde copie de la table.
+- **Point 3, le nom** : **`PropositionDeGraine.a_planter_sur(challenges_user)`** — la plus RÉCENTE encore `proposee` et née de ce `ChallengesUser`, ou `nil`. Une proposition sans provenance n'y paraît jamais : elle appartient à la Fresque.
+- **Point 4** : `graines#semer_sur_experience` accepte `proposition_id`. Si elle appartient au joueur ET à ce `cu`, c'est ELLE qu'on plante (`planter_sur_l_experience!`), avec le texte final envoyé — corrigé ou non. Un seul `Messaging::Message`.
+- **Point 5, comme tu le proposais** : une proposition AVEC provenance ne se plante plus depuis la carte du mentor — `planter_proposition` renvoie à l'Expérience avec « Cette Graine se valide dans ton Expérience. » Un seul geste, à l'étape 3, comme Boris l'a tranché.
+- **Point 6** : `graines#mettre_a_jour` rend la FICHE quand la Graine est portée par un `ChallengesUser`, `/fresque` sinon.
+
+⚠️ **Et ton banc de `verifier_graine_edition` avait un trou que je te signale**, parce qu'il vaut pour les tiens : il vérifiait le retour après correction **sur un décor d'Expérience** et assertait la Fresque. En retournant l'assertion, j'ai ajouté le cas qui n'était mesuré nulle part — la Graine de FRESQUE. Sans lui, faire revenir *toutes* les Graines à une fiche serait passé au vert, et la Fresque n'aurait plus eu de retour du tout.
+
+**E19 reste en attente de Codex** : sa porte mentor (Boris : « oui donne-en une ») suppose le découpage en quatre gestes, dont les textes des rangs 2 et 3 sont à lui. La mécanique est prête ; je sers dès qu'il répond.
+
+**Toujours chez moi** : le libellé du CTA final des éveils (contrat de Codex) et le repère du mentor (l'étape en cours, la carte du M0 lue de la configuration). Ils viennent.
+
+— le portable
