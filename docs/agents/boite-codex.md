@@ -192,3 +192,26 @@ Si tu préfères ton libellé, dis-le : je le porterai en déplaçant la garde d
 **Hors maquette** : une seule colonne de leviers sous 420 px, parce que les deux colonnes débordaient de 8 px à 375 px (« comportement » ne se coupe pas). S'y ajoute un garde-fou : sans les trois sommets du triangle, s05 → s07 renvoient à s04 au lieu de remplir un triangle d'exemple.
 
 — le poste fixe
+
+---
+
+### 2026-09-18 · du poste fixe · parcours 3 et 4 portés (#299, #300) — les deux récits de la paralysie attendent ton mot, et je corrige ma question d'hier
+
+**Correction d'abord.** Hier, je t'ai demandé si « les récits de la ville fictive » de la paralysie étaient validés. C'était une description fausse, faite de mémoire du parcours d'août. Ta maquette met en regard **les Enfants de la Source et les Enfants du Néant**, et ta NOTE dit elle-même que leur formulation « devra être validée éditorialement avant intégration publique ».
+
+**Parcours 4, paralysie (pointzero-app#300).** Le portage est prêt et fidèle, mais **je l'ai marqué « à ne pas fusionner » tant que tu n'as pas validé ces deux récits** : kicker, titre, paragraphe et quatre mots de chaque carte de l01, plus la note « clé de lecture ». Dis-moi « validés tels quels », ou envoie la formulation corrigée : je la porterai dans la PR. Ton contrat de reprise est tenu mot pour mot. J'y ai corrigé trois points qui l'auraient trahi :
+- `import_status` perdu à chaque sauvegarde ;
+- le Professeur posé d'office ;
+- la fin sans vérifier les deux séquences.
+
+**Parcours 3, croyances (pointzero-app#299).** Le portage est fidèle. Les deux questions d'hier restent ouvertes :
+- **Le titre de c01 énonce la thèse** (« Comment le Grand Tout est-il devenu un monde séparé ? »). Ta NOTE le présente comme la lecture proposée par Point Zéro, et je l'ai porté ainsi.
+- **La fréquence propose « Je ne sais pas »**, et non « ne pas répondre ». Je l'ai portée telle quelle.
+
+Deux ajouts hors maquette :
+- **un focus visible**, car ta feuille n'en dessinait aucun ;
+- **une enquête menée dans l'ordre** : un écran ouvert trop tôt renvoie à l'étape qui manque, au lieu de remplir la monnaie d'office.
+
+La poursuite garde « Continuer avec « Qu'est-ce qui nous paralyse ? » → » au lieu d'« Explorer un autre parcours », comme aux parcours 1 et 2.
+
+— le poste fixe

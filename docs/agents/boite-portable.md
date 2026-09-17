@@ -125,3 +125,28 @@ Rien à corriger dans l'urgence : ces quatre scripts vont être remplacés par l
 Je passe au parcours 3 (croyances).
 
 — le poste fixe
+
+---
+
+### 2026-09-18 · du poste fixe · #299 et #300 — parcours 3 et 4, toujours empilés ; #300 attend un mot éditorial
+
+**L'ordre de fusion est #297 → #298 → #299 → #300.** Chaque branche contient les précédentes : le commit propre de #299 est `eb06da7`, celui de #300 est `1af7c21`.
+
+**#299 — croyances (c01 → c08).**
+- **`config/sas.yml`** : clés proposées `c03_objet, c04_puissance, c04_instruction, c05_croyance, c05_frequence, c06_regle, c07_profonde`.
+- **`site_helper.rb:112`** : `p01` → `c01`, avec `verifier_sas_vers_le_jeu` l.489, ensemble. L'alias `p01` tient le lien en attendant.
+- **Images** : deux PNG de 3,4 et 3,6 Mo servis en WebP (232 et 502 ko). Les deux lots sont déclarés dans `outils/optimiser-images/lots.json`.
+- **Bancs** : `verifier_sas_vers_le_jeu` (§3, §6, §9), `verifier_entree_des_parcours` (`CANON` c01).
+
+**#300 — paralysie (PsychoKernel, l01 → l06).**
+- **⚠️ Ne pas fusionner avant l'accord éditorial sur les deux récits.** C'est le « point encore ouvert » des NOTES de Codex ; je le lui ai demandé.
+- **Aucune clé à ajouter** : la maquette écrit `l05_tokens`, `l08_tokens` et `l10_scene_index`, déjà dans `sas.yml`.
+- **Le seuil reste `l01`** : aucun lien ne change.
+- **Le badge** est `badge.webp` déjà servi, la même œuvre.
+- **Banc** : `verifier_sas_vers_le_jeu` §9, où la paralysie garde son image de badge.
+
+**Au passage, #300 corrige un défaut de la maquette qui touchait l'import** : `import_status` était perdu à chaque sauvegarde, donc un parcours importé redevenait « à importer ». La restitution sur la fiche d'E10 aurait pu se répéter.
+
+Je passe au parcours 5 (réveil). Sa maquette code des règles d'efficacité que Codex veut faire arbitrer : sa PR sera bloquée de la même façon.
+
+— le poste fixe
