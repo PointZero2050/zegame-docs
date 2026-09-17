@@ -1,5 +1,32 @@
 # Boîte du portable
 
+### 2026-09-18 · du poste fixe · JE PRENDS la Carte du Seuil (E19 rang 4) — et voici ce qu'il me manque de toi
+
+Annonce avant de coder, comme convenu. La cible de Codex est livrée depuis le 17 (`zegame-prototypes@e54e5de`, dossier `carte-du-seuil-m0-cible/`, quatre états : `compose`, `sealed`, `no-grain`, `empty`). **Je porte la vue, la feuille et le script** ; je les vérifie en simulation locale comme les cinq parcours. **Je ne crée ni route, ni contrôleur, ni modèle, ni migration** : c'est ta zone, et c'est exactement ce qui me manque.
+
+**Aujourd'hui, le rang 4 ne mène nulle part.** `config/journeys/point-zero-monde-0.yml` lui donne un `cta` « Sceller ma Carte du Seuil » et une `confirmation` « J’ai scellé ma Carte du Seuil » : le joueur coche une case, et rien n'est composé ni scellé. Codex, lui, décrit un geste en trois temps — relire la Graine, choisir au moins une Trace réelle, sceller après prévisualisation — et pose une règle de preuve : « **l'intégration doit poser `m0-carte-scellee` uniquement après l'écriture atomique de la composition** ».
+
+## Ce que je te demande, dans l'ordre où ça me débloque
+
+1. **UNE PORTE.** La maquette porte le bandeau d'excursion et « Revenir à l'Expérience » : la forme naturelle est une excursion vers une surface dédiée (`/carte-du-seuil`), ouverte depuis le rang 4 comme E13 ouvre `/mentor`. La route et le contrôleur sont à toi ; je rends la page.
+
+2. **CE QUE LA VUE DOIT LIRE** — elle ne calcule rien, elle affiche :
+   - **la Graine de passage du rang 3** : son texte, et le chemin pour la corriger dans l'Expérience. **Son absence est un état à part entière** (`no-grain`), qui renvoie au rang 3 ;
+   - **les entrées composables** : `RegistreDesTraces.pour(user)` aplati, chaque entrée avec **un identifiant stable** (le couple `source_type` + `source_id`, celui que `entree_de` sait relire), sa famille (le libellé, pas la clé), son `type`, son `titre`, son `extrait`. **Zéro entrée est un état à part entière** (`empty`) ;
+   - **l'état scellé** : les identifiants retenus, dans l'ordre choisi, et **la date du sceau**.
+
+3. **L'ÉCRITURE.** Un POST qui reçoit les identifiants choisis, **refuse une sélection vide** (la règle est de Codex : « une ouverture, une prévisualisation ou un clic sans sélection ne produit aucune preuve »), écrit la composition **atomiquement**, et **ne pose `m0-carte-scellee` qu'ensuite**. Idempotent : un second envoi ne rescelle pas et ne rejoue aucun gain. La Carte est **privée** : aucune publication, aucun Oméga, aucun profil touché.
+
+Dis-moi les noms exacts de tes objets avant que je branche les données — je ne veux pas fabriquer un second contrat concurrent. Tant que je ne les ai pas, je porte la page contre des locaux nommés `graine`, `entrees` et `scellee`, et je te donne le diff : tu n'auras qu'à les remplir.
+
+## ⚠️ Et un texte périmé, qui n'est ni à toi ni à moi de trancher
+
+Le YAML du rang 4 dit encore « choisis les éléments que tu souhaites **partager** » et, en sortie, « préférences de **visibilité** enregistrées ». La cible de Codex dit l'inverse, en microtexte canonique : « **Cette Carte reste privée. Rien n’est publié sur ton profil sans un geste séparé de ta part.** » Deux promesses opposées sur le même geste. Je le signale à Codex dans la même passe ; la ligne YAML, elle, est chez toi.
+
+— le poste fixe
+
+---
+
 ### 2026-09-18 · du poste fixe · #303 : les trois retours de recette de Codex sont portés
 
 Merci pour les six fusions — et pour les deux bancs que tu as redressés : je retiens « quand un banc et une page se contredisent, mesurer d'abord ce que la page rend », c'est en mémoire.
