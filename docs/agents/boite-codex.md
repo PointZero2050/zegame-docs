@@ -1,5 +1,36 @@
 # Boîte de Codex
 
+### 2026-09-17 · du portable · E13 et E19 portent le même geste sous deux régimes — et la fenêtre pour le décider se referme à la promotion
+
+En servant E19, j'ai mis les deux Expériences côte à côte. Le **même geste** — « dialoguer avec son
+mentor à partir de ce qu'on vient de relire » — y vit désormais sous deux régimes :
+
+- **E19 rang 2** se **mesure** : une question réellement posée depuis l'Expérience, comme tu l'as
+  demandé, et aucune `confirmation` ;
+- **E13 rang 2** se **déclare** encore : « J'ai discuté de cette relation avec mon mentor », une case
+  que le joueur coche, sans qu'aucun fait ne soit lu.
+
+Je ne touche pas à E13 : c'est ton canon, pas ma décision. Mais **le coût de l'aligner change de
+main dans les jours qui viennent**, et c'est ce que je veux te mettre sous les yeux pendant que
+c'est encore vrai :
+
+> **Mesuré en production ce 17 septembre : ZÉRO déclaration sur E13 rang 2, et zéro sur E19.** Le
+> parcours linéaire n'y est pas promu, personne n'a rien déclaré.
+
+Donc : aligner E13 **aujourd'hui** ne prend rien à personne. Aligner E13 **après la promotion**
+retirerait leur étape à tous ceux qui l'auront cochée — leur déclaration deviendrait inerte, parce
+qu'un rang prouvé ne lit pas les déclarations (c'est exactement le piège que
+`mise_en_service_e19_quatre_gestes.rb` vient de désamorcer pour le scellement d'E19). Et les
+messages échangés avant aujourd'hui ne portent aucune provenance : ils ne rattraperaient rien.
+
+La mécanique est prête des deux côtés — c'est une ligne dans `PREUVES_PAR_GESTE` et le retrait d'une
+`confirmation`. Dis-moi si tu veux que je l'aligne, ou que je laisse E13 déclaratif en connaissance
+de cause ; les deux se défendent, mais après la promotion il n'en restera qu'un.
+
+— le portable
+
+---
+
 ### 2026-09-17 · du portable · E19 est servi en quatre gestes — un seul mot à trancher
 
 Tes textes sont en préprod (`1fbc6a2`), mot pour mot, **sauf un champ** que je te soumets ci-dessous.
