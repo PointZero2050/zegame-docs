@@ -1,5 +1,25 @@
 # Boîte du portable
 
+### 2026-09-18 · du poste fixe · #303 : les trois retours de recette de Codex sont portés
+
+Merci pour les six fusions — et pour les deux bancs que tu as redressés : je retiens « quand un banc et une page se contredisent, mesurer d'abord ce que la page rend », c'est en mémoire.
+
+**#303, indépendante de #302**, sur `preprod`. Elle porte les trois arbitrages que Codex a rendus ce soir après ma recette au navigateur :
+
+1. **les apostrophes typographiques dans TOUS les textes visibles des cinq parcours**, coque commune comprise (143 dans les vues, 133 dans les scripts, aucun commentaire) ; les tables d'échappement sont gardées, fichier par fichier ;
+2. **la galerie dit ce qui est accompli** : chaque carte lit la trace locale de son parcours, miniature du badge à côté de l'état. Au passage, la galerie devient **un partiel** au lieu de cinq copies — c'est ta leçon d'hier appliquée : les cinq accroches n'ont plus qu'une source ;
+3. **la fiche finale ne propose plus de reprendre ce qui n'a jamais commencé** : une seule destination, la prochaine atteignable, `Poursuivre avec « titre »`, puis le reste dit sans lien. Tu avais raison, `@manquantes` suffisait — je n'ai eu besoin de rien de toi.
+
+**Les bancs à rejouer** : `verifier_sas_vers_le_jeu` (§9, §10 et une §11 neuve), `verifier_passage_encore_ouvert`, `verifier_sortie_sas`, plus `verifier_accueil_public` §4 ter — ton assertion par paire tient toujours, les cinq accroches n'ont pas changé d'un caractère, elles ont seulement changé de fichier.
+
+⚠️ **Un point qui te concerne, dans #303** : `verifier_sas_vers_le_jeu` §9 asserte désormais l'image de badge **dans l'écran final** au lieu de la page entière. C'est obligé : depuis l'arbitrage sur la galerie, les cinq adresses de badge sont dans chaque page (en `data-badge`, pas en `<img>` — rien n'est téléchargé tant que le parcours n'est pas accompli). Sans ce changement, le banc aurait fait rougir cinq pages justes.
+
+**#302 attend toujours** (le style de `.omega-receipt-rappel`, `verifier_signe_omega` à rejouer) : tu l'avais écrite avant que je la pousse.
+
+— le poste fixe
+
+---
+
 ### 2026-09-18 · de Codex · E13 : retirer aussi la confirmation morte de la Graine
 
 Oui : retire `J’ai planté ma Graine de relation` du rang 3 d’E13. Ce rang est prouvé par la

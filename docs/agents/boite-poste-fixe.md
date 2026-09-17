@@ -1,24 +1,3 @@
-### 2026-09-18 · de Codex · Recette : typographie, galerie et passage encore ouvert
-
-Applique la normalisation `’` à tous les textes français visibles des cinq parcours, coque commune
-comprise, en excluant strictement les clés, identifiants et code.
-
-Dans la galerie, lis les cinq traces locales : `Accompli` pour chaque parcours dont
-`completed_at` et le badge existent, `Disponible` sinon. Sur une carte accomplie, montre une
-miniature discrète de son badge à côté de l’état, avec son nom accessible ; aucune popup ni gain.
-
-Pour « Passage encore ouvert », ne rends plus les destinations verrouillées. Affiche seulement la
-prochaine Expérience atteignable avec `Poursuivre avec « [titre de l’Expérience] »`, puis, si
-nécessaire : `Puis une autre Expérience s’ouvrira dans l’ordre.` ou
-`Puis N autres Expériences s’ouvriront dans l’ordre.`
-
-Le contrat complet est mis à jour dans
-`docs/vision/parcours-publics-arbitrages-2026-09-18.md`.
-
-— Codex
-
----
-
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
@@ -1599,6 +1578,16 @@ Reste ouvert :
 - **Les mots de l'écran « pas encore »** sont portés dans #296 (`947405c`) : « Passage encore ouvert », « Une page reste à écrire. » / « {n} pages restent à écrire. », l'explication sur l'Atelier, « Reprendre cette Expérience », « Revenir à la carte du voyage ». #296 attend `@manquantes` du portable.
 - **E19 (portable)** : rang 2 *Relier* par excursion vers `/mentor`, rang 3 *Semer* (la popup pré-remplie de #295 y sert à l'identique), rang 4 *Sceller* (Carte du Seuil). **Les rangs 2 et 3 n'ont pas de bouton « J'ai fait cette étape »**, et c'est voulu : ils sont prouvés par le serveur, une déclaration serait refusée.
 - **Toujours dus au portable** : le style de `.omega-receipt-rappel` (« Déjà distribué au premier accomplissement. ») et le complément B des 18 verbes.
+
+---
+
+## Ce que je retiens du message de Codex du 18 septembre (recette : typographie, galerie, passage encore ouvert), avant de le purger
+
+Les trois sont **portés dans #303**, et le contrat complet est dans `docs/vision/parcours-publics-arbitrages-2026-09-18.md` (sections « État des cartes dans la galerie » et « Fiche finale — Passage encore ouvert »).
+
+- **Apostrophes** : `’` dans **tous** les textes français visibles des cinq parcours, coque commune, bandeau et modale de sortie compris. Exclus : clés, identifiants, code — et, par convention de la maison, les commentaires.
+- **Galerie** : chaque carte lit la trace locale de SON parcours, même quand elle n'est pas la carte active. `Accompli` si `completed_at` **et** badge, `Disponible` sinon. Sur une carte accomplie, **miniature discrète du badge**, nom accessible, **ni popup ni gain**.
+- **Fiche finale** : aucun lien vers une Expérience verrouillée. Une seule destination, la prochaine atteignable, `Poursuivre avec « titre »`, puis `Puis une autre Expérience s’ouvrira dans l’ordre.` / `Puis N autres Expériences s’ouvriront dans l’ordre.`, omis quand il ne reste rien. Titre et texte général inchangés.
 
 ---
 
