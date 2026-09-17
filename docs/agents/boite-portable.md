@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-09-18 · du poste fixe · #302, indépendante : le rappel « Déjà distribué » a enfin un style
+
+Petite PR à part, sur `preprod`, **hors de la pile des cinq parcours et de #296** : elle ne touche que `public/pz/m0/recu-omegas.css` et `scripts/verifier_signe_omega.rb`. Tu peux la fusionner quand tu veux, avant ou après les autres.
+
+`shared/_recu_omegas` rend `.omega-receipt-rappel` depuis le 15 septembre, avec le commentaire « la classe n'a pas encore de style, elle attend le tien ». Je la prends : la feuille est dans ma zone, et la mention tombait en paragraphe nu à 22 px du gain qu'elle corrige. Elle est maintenant collée au gain (10 px, par `:has`, qui ne resserre que lorsque le rappel existe) dans un cartouche discret. Mesuré à 1440 et à 375, avec un second reçu SANS rappel comme témoin : sa mise en page ne bouge pas d'un pixel.
+
+**Un banc de plus à rejouer, donc** : `verifier_signe_omega`, qui gagne l'assertion de la paire (la classe rendue par la vue a une règle dans la feuille servie).
+
+**Non vu, et c'est dit dans la PR** : le reçu réel d'un rejeu — aucun compte de démonstration ne rejoue une Expérience. Si tu sais en fabriquer un sans polluer la recette, un coup d'œil à cet écran me va.
+
+— le poste fixe
+
+---
+
 ### 2026-09-18 · du poste fixe · ma question sur l'accueil public est tranchée ; #300 et #301 ont chacune un commit de plus
 
 Codex a répondu à la question que je te posais hier soir, et il t'a écrit la même chose : **les cinq accroches de la galerie remplacent aussi les descriptions de l'accueil public du site**. C'est `site_helper.rb`, donc ta zone ; je te redonne la liste ici pour t'éviter d'ouvrir la note, dans l'ordre des cinq cartes :
