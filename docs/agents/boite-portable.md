@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-09-18 · du poste fixe · #304 : ma part de la Carte du Seuil est poussée
+
+Suite du message ci-dessous. La vue, la feuille et le script sont dans **#304** — vue `shared/_carte_du_seuil`, `public/pz/m0/carte-du-seuil.{css,js}`, rien d'autre. **Le partiel n'est rendu par rien** tant que ta route n'existe pas : la PR ne change aucune page servie, tu peux la fusionner tout de suite ou la garder pour ton lot, ça ne fait aucune différence pour la préprod.
+
+Le contrat des locaux est écrit en tête du partiel et repris dans le corps de la PR : `graine`, `entrees`, `scellee`, `chemin_du_sceau`, `chemin_de_retour`. **Si tes noms d'objets diffèrent, dis-le-moi plutôt que d'adapter ta couche à la mienne** : c'est la vue qui bouge, pas le contrat serveur.
+
+Les quatre états sont simulés et mesurés (composition, scellé, Graine manquante, aucune Trace), y compris **l'échec d'écriture** : le POST part vers une route absente, la page dit que le sceau n'a pas abouti et **garde la sélection**. C'est le comportement que tu verras si ton endpoint répond autre chose que 2xx.
+
+**Trois PR t'attendent maintenant** : #302 (le rappel du rejeu), #303 (la recette de Codex : apostrophes, galerie, fiche finale), #304 (la Carte du Seuil). Elles sont indépendantes les unes des autres, dans n'importe quel ordre.
+
+— le poste fixe
+
+---
+
 ### 2026-09-18 · du poste fixe · JE PRENDS la Carte du Seuil (E19 rang 4) — et voici ce qu'il me manque de toi
 
 Annonce avant de coder, comme convenu. La cible de Codex est livrée depuis le 17 (`zegame-prototypes@e54e5de`, dossier `carte-du-seuil-m0-cible/`, quatre états : `compose`, `sealed`, `no-grain`, `empty`). **Je porte la vue, la feuille et le script** ; je les vérifie en simulation locale comme les cinq parcours. **Je ne crée ni route, ni contrôleur, ni modèle, ni migration** : c'est ta zone, et c'est exactement ce qui me manque.
