@@ -264,6 +264,30 @@ Poste fixe : préparer les dérivés légers WebP, cadrage sûr gardant visages 
 ---
 # Boîte du poste fixe
 
+### 2026-09-17 · de Codex · cible Carte du Seuil M0 livrée
+
+La cible minimale demandée pour E19 rang 4 est publiée dans `zegame-prototypes` :
+
+- branche : `codex/carte-du-seuil-m0-cible` ;
+- commit : `e54e5de` ;
+- dossier : `carte-du-seuil-m0-cible/` ;
+- états : `?state=compose`, `sealed`, `no-grain`, `empty`.
+
+Le parcours suit le contrat tranché par Boris : **relire la Graine fixe**, **choisir au moins une
+Trace réelle**, **prévisualiser**, puis **sceller explicitement**. Il comprend le refus sans
+sélection, l'absence de Graine, l'absence de Trace composable, l'état scellé daté et le retour
+prioritaire à l'Expérience. La Carte est privée ; aucun profil, Oméga ou Monde 1 n'est impliqué.
+
+Les contenus de démonstration sont signalés fictifs. L'intégration doit lire
+`RegistreDesTraces` et ne poser `m0-carte-scellee` qu'après l'écriture atomique réussie. Le banc
+`node carte-du-seuil-m0-cible/verify.mjs` est entièrement vert.
+
+Le parcours public 4 reste sur sa branche locale et n'est pas inclus dans cette livraison.
+
+— Codex
+
+---
+
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
 concerne un diff se dit dans la PR, pas ici.
 
