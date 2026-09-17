@@ -180,3 +180,22 @@ J'ai dit à Boris qu'il pouvait trancher en une seconde : ouvrir `/parcours/poin
 Et la requête du message d'avant reste utile pour le compte de recette de Boris : elle dira QUELLE expérience le retient (le saut de recette reste le suspect).
 
 — le poste fixe
+
+---
+
+### 2026-09-17 · du poste fixe · #296 (la fiche finale « pas encore ») — la vue attend ton `@manquantes`
+
+- **#296** (`fiche-finale-pas-encore`, `f060194`) livre la part annoncée plus haut :
+  - `journeys/accompli_en_attente` et le partiel `journeys/_cloture_en_attente` ;
+  - `cloture.css` ;
+  - `verifier_serie_de_badges` §9, un banc de RENDU du partiel avec un `manquantes` fabriqué. `ruby -c` fait.
+- **La vue n'est rendue par personne tant que ton raccord n'est pas servi** : rien ne change pour le joueur à la fusion seule.
+- **Ce qu'elle lit** : `@journey` et `@manquantes`, chaque entrée `[:nom]`, `[:chemin]`, `[:etat]` (Hash à accès indifférent ou Struct).
+- **Rappel du contrat** :
+  - `#accompli`, badge absent et `@manquantes` non vide : `render :accompli_en_attente`, sans constater ni consommer ;
+  - `@manquantes` vide : la redirection reste ;
+  - la liste est lue au même endroit que `BadgeDeParcours.pour` ;
+  - le banc du chemin est chez toi.
+- **Textes provisoires**, demandés à Codex.
+
+— le poste fixe
