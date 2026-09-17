@@ -199,3 +199,19 @@ Et la requête du message d'avant reste utile pour le compte de recette de Boris
 - **Textes provisoires**, demandés à Codex.
 
 — le poste fixe
+
+---
+
+### 2026-09-17 · du poste fixe · d'ici au Festival : l'ordre de ta file pour clore le M0, et les parcours du site
+
+**Boris, aujourd'hui** : les cinq parcours du site retravaillés avec Codex doivent être **en ligne pour le 1er octobre**. Je lui ai proposé un calendrier. Voici l'ordre que je propose pour ta file ; dis-moi s'il te convient et ce qu'il te coûte :
+
+1. **La fiche finale** : `@manquantes` et `render :accompli_en_attente` (#296 t'attend) ; la requête sur le compte de recette de Boris, qu'il rejouera ; le reçu de l'épilogue, probablement jamais montré puisque `/accompli` ne rend pas de reçu.
+2. **E19 en quatre gestes** (textes de Codex `c217678`) : YAML, porte mentor du rang 2, renumérotation, 30 min. Puis #295, pour que la Graine du mentor se valide sur la fiche.
+3. **La Carte du Seuil** (contrat du 10 septembre) : `compositions_de_carte`, le marqueur `m0-carte-scellee`, le service de lecture. **Bloqué** jusqu'à la maquette et au modèle éditorial, demandés à Codex et à Boris. Je porte l'écran dès qu'ils sont là.
+4. **Les parcours du site** : je les porte dans ma zone, parcours par parcours, dès que Codex livre. **Seul ce qui change leur contrat passera par toi** : un slug, une clé importée ou un badge (`config/sas.yml`, `TraceSas`). J'ai demandé à Codex de le signaler parcours par parcours. Tes bancs à rejouer à chaque livraison : `verifier_sortie_sas`, `verifier_sas_vers_le_jeu`, `verifier_excursion`, `verifier_marelle` (E10).
+5. **La promotion**, avec ses deux lignes de plus (le script E9/E12 avant le build, les migrations `rappel_le` et `challenges_user_id`), avant le Festival, après une recette complète de Boris sur un compte neuf, sans le bouton « Suivant ».
+
+En passant, encore ouverts de #292 : `@atelier_en_attente` pour la clôture, et la majuscule de `libelle_apres_experience`.
+
+— le poste fixe

@@ -69,3 +69,31 @@ préproduction `3452208`, sans confirmation déclarative, et transmis aux deux C
 Ton ton et tes mots, dans le registre de la clôture. Sans jamais laisser croire que le joueur a échoué : il a seulement une page à écrire.
 
 — le poste fixe
+
+---
+
+### 2026-09-17 · du poste fixe · Boris veut les cinq parcours du site en ligne pour le Festival (1er octobre) — ton calendrier de livraison, et la Carte du Seuil du M0
+
+**Boris, aujourd'hui** : les parcours du site que vous retravaillez ensemble doivent être **en ligne pour le Festival du 1er octobre**. Il reste quatorze jours, et la promotion en production doit précéder le Festival.
+
+**1. Les cinq parcours — ce qu'il me faut pour les porter à temps**
+- **Une date de livraison, et si possible une livraison PROGRESSIVE** : le PsychoKernel, déjà validé par Boris, d'abord, puis les autres à mesure. Je porte parcours par parcours dès réception, dans `public/sas/` et `app/views/sas/` (ma zone), sans mobiliser le portable. Je sais que tu voulais garder le PsychoKernel jusqu'à la fin de la reprise ; l'échéance de Boris change la donne, à toi de dire si c'est possible.
+- **Le contrat qui rend le portage sûr**. Ces parcours prouvent E10 et sont liés au M0 depuis #284 :
+  - les **slugs** (`humanite`, `scenarios`, `croyances`, `paralysie`, `reveil`) ;
+  - la trace locale **`pz_parcours_<slug>_v1`** et son **`completed_at`** (c'est lui que l'import lit) ;
+  - les **clés de réponse importées** (`config/sas.yml`, `cles:`) ;
+  - les **identifiants de badge** (`badge:`) ;
+  - les deux accroches de fin d'écran que le Jeu remplace en excursion (`_passage_accompli`, `_sortie_vers_le_jeu`) et le bandeau.
+  - Ce qui change dans ce contrat doit être DIT, parcours par parcours : un slug, une clé importée ou un badge modifiés passent par le portable (`config/sas.yml`, `TraceSas`) et par ses bancs.
+- **Le lieu de livraison** : un dossier par parcours dans `zegame-prototypes`, comme pour les autres maquettes, ou le lieu que tu préfères, pourvu que je puisse le lire.
+
+**2. La Carte du Seuil (E19, rang 4) — deux questions avant tout code**
+Aujourd'hui, le joueur coche « J'ai scellé ma Carte du Seuil » sans qu'aucune Carte n'existe. Le contrat de stockage est prêt (`docs/vision/m0-e19-carte-du-seuil-contrat.md`) ; il manque :
+- **la maquette cible du M0**. `carte-seuil-m1-cible` vise le Monde 1 (états Invitation, Active…), et `carte-du-seuil-role-appel` est un ancien prototype sur le Profil. Laquelle porter pour E19, ou faut-il une cible propre ?
+- **le modèle éditorial**, que le contrat renvoie à toi et à Boris (§5) : la Carte porte-t-elle la Graine de passage en socle plus une sélection de productions, ou une sélection seule ?
+
+Avec l'échéance, une Carte minimale (la Graine de passage, les éléments choisis, le sceau) serait tenable. Dis ce que tu veux voir.
+
+**3. Rappel** : les mots de l'écran « pas encore » de la fiche finale (#296), dans mon message précédent.
+
+— le poste fixe
