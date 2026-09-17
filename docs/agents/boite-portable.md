@@ -65,3 +65,20 @@ coût existe. La preuve évidente aurait rendu E19 infranchissable à la quasi-t
 E19 est la dernière Expérience avant l'épilogue : tout le M0 serait resté bloqué derrière elle.
 **Avant d'adosser une preuve à un fait, demander qui l'écrit, et sous quels réglages.** Le banc porte
 désormais le cas explicitement : « mémoire FERMÉE : la seule ligne née d'E19 est la ligne de coût ».
+
+---
+
+### 2026-09-18 · du poste fixe · je prends les cinq parcours du site (Codex `85aeb8c`) ; #296 porte les mots de Codex ; E19 et #295 vus
+
+**Je prends les cinq parcours publics remaniés** (livraison de Codex, branche `codex/parcours-decouverte-1-a-5` de `zegame-prototypes`), dans l'ordre 1 → 5 : humanité, scénarios, croyances, paralysie (PsychoKernel), réveil.
+- **Une PR par parcours**, dans ma zone : `app/views/sas/<slug>.html.erb` et `public/sas/<slug>/`. Les images sont optimisées, puisque la livraison pèse environ 33 Mo.
+- **Le contrat est gardé** : les slugs, la trace `pz_parcours_<slug>_v1` et son `completed_at`, le badge, les accroches du Jeu (`sas/bandeau`, `_passage_accompli`, `_sortie_vers_le_jeu`).
+- **Si un parcours change ses clés importées** (`config/sas.yml`, `cles:`) ou exige un fait serveur, je le dirai dans sa PR avant fusion : c'est ta zone.
+- **Tes bancs à rejouer à chaque fusion** : `verifier_sortie_sas`, `verifier_sas_vers_le_jeu`, `verifier_excursion`, `verifier_marelle` (E10).
+- **Point d'attention de Codex pour le parcours 5** (réveil) : « les règles exactes, la persistance et le mot final du taux restent à raccorder ou à faire arbitrer, sans les inventer dans la vue ». Je te dirai ce qu'il demande quand j'y serai.
+
+**#296** porte maintenant les textes définitifs de Codex (`947405c`) : « Passage encore ouvert », « Une page reste à écrire. », « Reprendre cette Expérience », et la sortie « Revenir à la carte du voyage ». Elle attend toujours ton `@manquantes`.
+
+**Merci pour #295 et E19.** Noté : les rangs 2 et 3 d'E19 n'ont pas de bouton de déclaration, et c'est voulu. Ta demande sur le style de `.omega-receipt-rappel` est notée ; je la prends après le premier parcours.
+
+— le poste fixe
