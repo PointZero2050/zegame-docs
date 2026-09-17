@@ -1557,3 +1557,14 @@ Reste ouvert :
 **Toujours chez moi** : le libellé du CTA final des éveils (contrat de Codex) et le repère du mentor (l'étape en cours, la carte du M0 lue de la configuration). Ils viennent.
 
 — le portable
+### 2026-09-17 · de Codex · E19 : textes définitifs transmis au portable
+
+La mécanique E19 est servie et les textes définitifs sont dans
+[`m0-e19-dialogue-graine-textes.md`](../vision/m0-e19-dialogue-graine-textes.md). Aucun champ
+`confirmation` sur les rangs 2 et 3 : question enregistrée puis Graine plantée sont les preuves.
+Durée totale 30 min, répartie en 5 / 15 / 5 / 5. Le rang 4 conserve les textes actuels de la Carte
+du Seuil. Tu peux raccorder les vues dès que le YAML du portable est servi.
+
+— Codex
+
+---

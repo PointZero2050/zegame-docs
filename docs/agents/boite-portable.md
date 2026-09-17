@@ -1,5 +1,27 @@
 # Boîte du portable
 
+### 2026-09-17 · de Codex · E19 : textes définitifs, sans confirmation déclarative
+
+Les textes étaient déjà déposés dans
+[`m0-e19-dialogue-graine-textes.md`](../vision/m0-e19-dialogue-graine-textes.md) ; je les aligne sur
+ta mécanique servie en retirant maintenant tout champ `confirmation` des rangs 2 et 3.
+
+- **Durée totale : 30 min**, soit 5 / 15 / 5 / 5 min.
+- **Rang 2 :** Relier · « ta traversée avec ton mentor » · « Relis ta traversée avec ton mentor » ·
+  CTA « Échanger avec mon mentor » · revoir « Revoir mon échange avec le mentor ».
+- **Rang 3 :** Semer · « ta Graine de passage » · « Formule ta Graine de passage » · CTA « Planter
+  ma Graine de passage » · revoir « Relire ma Graine de passage ».
+- **Rang 4 :** les textes existants de la Carte du Seuil restent inchangés, y compris l'accroche
+  « Donne une forme visible au passage accompli. »
+
+Les accroches, explications, sorties et reconnaissances complètes sont dans la note liée. Le rang 2
+est prouvé uniquement par la question enregistrée dans la consultation E19 ; le rang 3 uniquement
+par la Graine réellement plantée.
+
+— Codex
+
+---
+
 ⚠️ **Vidée le 16 septembre 2026.** Traité : les PR #287 → #294 du poste fixe ; le repère du mentor et le
 diagnostic d'E13 (lu en base) ; la provenance de la Graine ; le libellé du CTA final des éveils ;
 E9/E12 ; `obtention_texte` — préprod `eb7356a`, recette **179/179**. Rien n'attend ici.

@@ -17,14 +17,13 @@ dialogue et 5 minutes de formulation : **5 + 15 + 5 + 5 minutes**.
   accroche: "Un passage apparaît quand tu relies ce qui a changé."
   explication: "Dialogue avec ton mentor à partir des Traces que tu viens de retrouver. Cherche avec lui ce que tu quittes, ce que tu accueilles et ce qui continue de t’appeler. Une contradiction peut rester ouverte : ton passage n’a pas à devenir une morale."
   cta: "Échanger avec mon mentor"
-  confirmation: "J’ai échangé avec mon mentor"
   revoir: "Revoir mon échange avec le mentor"
   sortie: "échange contextualisé à E19, pouvant faire émerger une proposition de Graine de passage."
   reconnaissance: "question du joueur enregistrée dans la consultation mentor ouverte depuis E19 ; la simple ouverture ne suffit pas."
 ```
 
-Le champ `confirmation` est un libellé de repli. Lorsque la preuve serveur de la consultation est
-disponible, elle fait foi et aucune confirmation déclarative supplémentaire n’est demandée.
+Le rang 2 ne porte aucun champ `confirmation`. La question réellement enregistrée dans la
+consultation E19 est sa seule preuve ; une déclaration du joueur ne peut pas la remplacer.
 
 ## Rang 3 — Graine de passage
 
@@ -36,7 +35,6 @@ disponible, elle fait foi et aucune confirmation déclarative supplémentaire n�
   accroche: "Donne une forme à ce que tu choisis d’emporter."
   explication: "Relis la proposition née du dialogue, corrige-la si nécessaire ou écris ta propre formulation. Elle reste ta parole. En la plantant, tu l’inscris à la fois dans cette Expérience et dans ta Fresque."
   cta: "Planter ma Graine de passage"
-  confirmation: null
   revoir: "Relire ma Graine de passage"
   sortie: "même Graine enregistrée sur E19 et rendue dans la Fresque selon ses règles de visibilité."
   reconnaissance: "Ta Graine de passage est semée."
@@ -76,3 +74,5 @@ d’Expérience, le comportement général de la Fresque reste inchangé.
 
 Le rang 4 conserve les textes existants de la Carte du Seuil. Seuls son numéro, les raccords de
 preuve et la durée totale calculée changent avec cette nouvelle séquence.
+
+Son accroche reste donc : **« Donne une forme visible au passage accompli. »**
