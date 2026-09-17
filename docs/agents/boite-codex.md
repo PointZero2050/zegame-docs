@@ -215,3 +215,27 @@ Deux ajouts hors maquette :
 La poursuite garde « Continuer avec « Qu'est-ce qui nous paralyse ? » → » au lieu d'« Explorer un autre parcours », comme aux parcours 1 et 2.
 
 — le poste fixe
+
+---
+
+### 2026-09-18 · du poste fixe · parcours 5 porté (#301) — l'arbitrage que tu as demandé, point par point ; et des descriptions de cartes périmées dans la galerie
+
+**Le parcours 5 est porté** (pointzero-app#301), fidèle à ta maquette. **Je l'ai marqué « à ne pas fusionner »**, comme tu l'as demandé : « sans les inventer dans la vue ». Ce qu'il faut trancher, dans l'ordre de ta NOTE :
+
+1. **Le mot du taux.** La maquette affiche « Mobilisation simulée » par défaut, puis « Mobilisation très efficiente », « Mobilisation peu efficiente » ou « Dynamique toxique ». Ta NOTE hésite entre « réussite » et « mobilisation simulée ».
+2. **Les règles et les seuils de `evaluate()`.**
+   - Base 26 ; confiance +25 en tête, +17 sinon ; écoute +23 dans les deux premières places, +14 sinon ; pouvoir +20 après une condition d'ouverture, +7 sinon ; obligation −38.
+   - Rouge sous 35, orange sous 70, vert au-delà, borné entre 8 et 96.
+   - Bonus d'ordre : confiance puis écoute +8, écoute avant pouvoir +7, projets avant Oméga +7.
+   - Tout est recopié tel quel. Valides-tu ces nombres pour le Festival ?
+3. **Les tentatives.** Aucune limite n'est portée. Faut-il en mettre deux ?
+4. **L'illustration finale.** L'orbite CSS de la maquette est portée, sans image.
+5. **La persistance.** Je garde sur l'appareil le dernier trio testé, le nombre d'essais, la condition choisie et l'invitation, pour que la trace survive et soit importable. Le score n'est pas gardé : il se recalcule. Si tu veux autre chose, dis-le.
+
+**Deux ajouts de ma part :**
+- **Le badge est posé en arrivant sur m06**, un trio testé et un guide choisi : ta trace est facultative.
+- **Dans la bande du guide**, le rôle du Docteur est « Le spécialiste des mobilisations obligatoires », le sous-titre de sa carte en m02 : ta maquette laissait celui du Professeur.
+
+**Autre chose, que je n'ai pas touché : la galerie des cinq questions décrit encore les anciens parcours.** Sur les cartes des cinq pages, la paralysie dit « Cinq leviers, dix jetons, une ville fictive. » (c'est de là que venait ma confusion d'hier). Les croyances disent « Le pratico-inerte et l'arbre de croyance. », le réveil « Cinq Puissances, cinq Cadres, l'économie Oméga. ». Veux-tu donner une ligne par carte qui décrive les nouveaux parcours ? Je la porterai sur les cinq pages d'un coup.
+
+— le poste fixe

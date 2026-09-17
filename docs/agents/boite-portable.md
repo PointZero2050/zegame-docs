@@ -150,3 +150,35 @@ Je passe au parcours 3 (croyances).
 Je passe au parcours 5 (réveil). Sa maquette code des règles d'efficacité que Codex veut faire arbitrer : sa PR sera bloquée de la même façon.
 
 — le poste fixe
+
+---
+
+### 2026-09-18 · du poste fixe · #301 — le parcours 5 (réveil) ; les cinq parcours sont portés, voici tout ce qui t'attend d'un coup
+
+**#301 porte le réveil** (mobilisation citoyenne, m01 → m06). **⚠️ À ne pas fusionner avant l'arbitrage de Codex** sur les règles de `evaluate()`, le mot final du taux et la persistance. Les règles de la maquette sont recopiées sans retouche.
+
+**Deux ajouts tardifs sur les branches déjà ouvertes :**
+- **#299 a un second commit, `5d86347`.** Le §10 de `verifier_sas_vers_le_jeu` attendait 7 illustrations empreintées par page, or les croyances n'en montrent plus que 6 : le compte se lit désormais dans la table du §9. La branche de #300 l'a reçu par une fusion (`d3409b3`).
+- **#297 a un second commit, `a0b1842`** (déjà annoncé).
+
+**L'ordre de fusion : #297 → #298 → #299 → #300 → #301.** #300 attend Codex (les deux récits), #301 aussi (les règles). **#297 à #299 peuvent passer sans attendre.**
+
+**Tout ce qui est chez toi, réuni :**
+
+1. **`config/sas.yml`, clés `cles:`.**
+
+| Parcours | Clés à mettre | Clés anciennes à garder pour les traces d'août |
+|---|---|---|
+| humanité | `h03_signaux, h04_cycles_trouves, h04_carte_revelee, h06_resistances, h06_resistance_libre, h07_possibilites, h07_possibilite_libre` | les `c04_*` à `c10_*` actuelles |
+| scénarios | `s04_triangle, s05_signes, s06_fragments, s06_nom, s07_leviers, s07_signe_veille` | `f05_roles, f06_signes, f07_compose, f08_facteurs, f09_engagement` (réellement écrites, jamais déclarées) |
+| croyances | `c03_objet, c04_puissance, c04_instruction, c05_croyance, c05_frequence, c06_regle, c07_profonde` | les `p0x_*` actuelles, plus `p06_instruction_libre` et `p09_regle_libre` |
+| paralysie | **rien** : `l05_tokens, l08_tokens, l10_scene_index` y sont déjà | — |
+| réveil | `m03_trio, m03_essais, m06_condition, m06_invitation` | aucune : les `r0x_*` déclarées n'ont jamais été écrites |
+
+2. **`app/helpers/site_helper.rb` l.110 à 114**, les seuils des cartes de l'accueil public : `c01` → `h01`, `f01` → `s01`, `p01` → `c01`, `r01` → `m01`, `l01` inchangé. **Avec** la liste de `verifier_sas_vers_le_jeu` (« Les cinq cartes de l'accueil ») dans la même livraison. Chaque script garde l'ancien seuil en alias, donc les liens actuels restent justes en attendant.
+3. **`verifier_accord_des_verbes` §4 devient muet** une fois #301 fusionnée. Il lit les verbes des Puissances dans `public/sas/reveil/app.js` et saute ce qu'il ne trouve pas. À retirer ou à rediriger.
+4. **Les bancs à rejouer** : `verifier_sas_vers_le_jeu`, `verifier_entree_des_parcours`, `verifier_scenarios_neoarchaiques`, `verifier_films_scenarios`, `verifier_sortie_sas`, `verifier_excursion`, `verifier_accueil_public`, `verifier_accord_des_verbes`.
+
+**Les images** : dix PNG ou originaux lourds sont servis en WebP à leur taille d'affichage, par huit lots déclarés dans `outils/optimiser-images/lots.json` avec leurs mesures. Aucun master n'est commité.
+
+— le poste fixe
