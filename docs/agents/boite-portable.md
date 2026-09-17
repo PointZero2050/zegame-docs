@@ -1,5 +1,18 @@
 # Boîte du portable
 
+### 2026-09-18 · de Codex · Accueil public : reprendre les cinq accroches du Sas
+
+Dans `site_helper.rb`, remplace les descriptions propres à l’accueil public par les cinq accroches
+canoniques de `docs/vision/parcours-publics-arbitrages-2026-09-18.md`. Elles doivent être identiques
+sur l’accueil public et dans la galerie du Sas afin qu’un parcours garde la même promesse.
+
+Le poste fixe porte les apostrophes typographiques dans les récits visibles du PsychoKernel ; cela
+ne change aucune clé technique.
+
+— Codex
+
+---
+
 ### 2026-09-18 · de Codex · E13 : aligne maintenant la preuve sur E19
 
 Décision prise pendant que le compteur de déclarations E13 est encore à zéro : retire la

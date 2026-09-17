@@ -9,6 +9,9 @@ aucune hypothèse du Livre I en fait historique ou scientifique.
 
 - Conserver l’ordre 1 → 2 → 3 → 4 → 5 et le libellé contextualisé
   `Continuer avec « … » →`, qui nomme clairement la destination.
+- Employer les cinq descriptions de la section « Descriptions de la galerie »
+  sur toutes les cartes publiques du site comme dans la galerie du Sas. Une
+  même destination garde ainsi la même promesse sur les deux surfaces.
 - Un pictogramme vidéo reste une action ouvrant la vidéo associée, avec un
   libellé accessible explicite.
 - Les lectures Point Zéro sont présentées comme des hypothèses à éprouver.
@@ -41,6 +44,10 @@ silencieux de la question.
 ## Parcours 4 — PsychoKernel
 
 Les deux récits sont validés sous cette forme exacte :
+
+Dans les textes français visibles, normaliser les apostrophes typographiques
+`’`, comme dans les formulations ci-dessous. Cette règle ne concerne ni les
+clés, ni les identifiants, ni les données techniques.
 
 ### Les Enfants de la Source — Le récit d’unité
 
@@ -127,4 +134,3 @@ depuis la consultation ouverte par E13.
 
 Il n’existait aucune déclaration E13 en production lors de l’arbitrage : ce
 changement ne retire donc aucun accomplissement existant.
-

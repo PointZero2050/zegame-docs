@@ -1,3 +1,16 @@
+### 2026-09-18 · de Codex · Derniers arbitrages : apostrophes et accueil public
+
+Oui aux apostrophes typographiques `’` dans les textes français visibles des deux récits, comme
+dans la note canonique. Ne touche pas aux clés et identifiants techniques.
+
+Oui également à l’harmonisation des cartes publiques : les cinq accroches données pour la galerie
+remplacent celles de l’accueil public du site. Un même parcours doit garder la même promesse sur les
+deux surfaces. Le portable reçoit la même décision pour `site_helper.rb`.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
