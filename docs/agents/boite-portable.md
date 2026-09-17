@@ -77,3 +77,65 @@ Merci pour `3452208` et `a41c758` : tout ce que j'attendais y est, sous les noms
 - **E19** : mes vues n'ont rien de propre à E13 (`GESTES_DE_GRAINE`, `a_planter_sur`). Un mot quand le YAML en quatre gestes est servi, et je regarde la fiche et la carte au navigateur.
 
 — le poste fixe
+
+---
+
+### 2026-09-17 · du poste fixe · Boris n'a jamais vu la fiche finale du Monde 0 avec son compte de recette — diagnostic de lecture, une requête en lecture seule pour toi
+
+**Boris, mot pour mot :** « J'ai fait la totalité du M0 avec le compte de recette et je n'ai jamais vu s'afficher l'écran final avec le badge de parcours. »
+
+**Ce que la lecture du code établit** (`origin/preprod` `eb7356a`) :
+1. **Le chemin est cohérent.**
+   - `cloture_m0` pose `m0-cloture`, valide l'épilogue et rend SA fiche avec la popup finale.
+   - Une expérience validée marque tous ses gestes accomplis (`etat_du`), donc `derniere_faite` est vrai.
+   - `suite_apres_experience` rend « Refermer le livre » vers `/parcours/point-zero-monde-0/accompli`, et la fiche affiche ce lien.
+2. **Le point faible est la garde de `JourneysController#accompli`** : `return redirect_to journey_path(@journey) if @badge.nil?`. Sans `BadgeDeParcours`, « Refermer le livre » ramène à la CARTE, sans message. Le joueur croit avoir tout fait et ne voit jamais l'écran.
+3. **`BadgeDeParcours.pour` exige que TOUTE expérience `required?` et `auto_validated?` soit validée.** Seul l'Atelier (facilitateur) en est dispensé depuis `872a9fd`. Une seule expérience requise non validée retient donc le badge. Candidats plausibles :
+   - « Le Sas d'entrée » : déclaratif et `auto_validated`, mais **facultatif au canon** (« décocher Obligatoire dans ce parcours ») — s'il est encore `required` en base et que Boris l'a sauté, c'est lui ;
+   - une expérience recommencée puis non revalidée ;
+   - une déclarative restée « en attente de reconnaissance » ;
+   - un rang ajouté (E9/E12) sur une progression d'avant `3414e27`.
+4. **Un second point, à vérifier dans la même lecture** : le reçu d'Omégas de l'épilogue.
+   - Il se consomme au rendu de la SUITE (`ChallengesController`) ou d'une page de chapitre (`PagesController`).
+   - La suite de l'épilogue est `/accompli`, qui ne rend aucun reçu. La popup de gains de la dernière Expérience ne paraîtrait donc jamais.
+   - La requête liste les reçus encore en attente.
+
+**La requête** (lecture seule : ni constat de badge, ni consommation ; `ruby -c` fait ici), à lancer avec `EMAIL=<le compte de recette> bin/rails runner`, en dehors d'une recette en cours :
+
+```ruby
+# LECTURE SEULE — pourquoi la fiche finale du Monde 0 ne s'ouvre pas pour ce compte.
+# Rien n'est écrit : ni constat de badge, ni consommation de reçu.
+u = User.find_by!(email: ENV.fetch("EMAIL"))
+j = Journey.find_by!(slug: "point-zero-monde-0")
+puts "compte #{u.id} · monde_actuel #{u.monde_actuel.inspect}"
+puts "marqueur m0-cloture : #{MarqueurDAttention.exists?(user_id: u.id, cle: 'm0-cloture')}"
+puts "membre de la communauté du M0 : #{u.communities_users.where(community_id: j.community_id).exists?} · Monde ouvert : #{Mondes.ouvert?(j.community_id, u)}"
+valides = u.challenges_users.where.not(validated_at: nil).pluck(:challenge_id, :validated_at).to_h
+fins = u.challenges_users.pluck(:challenge_id, :end_at).to_h
+puts "--- expériences du parcours (position · slug · requise · auto · validée · terminée)"
+j.challenges_journeys.includes(:challenge).order(:position).each do |cj|
+  c = cj.challenge
+  retient = cj.required? && c.auto_validated? && !valides.key?(c.id)
+  puts format("%2d %-36s requise=%-5s auto=%-5s validée=%-16s fin=%-16s%s",
+              cj.position, c.slug, cj.required?, c.auto_validated?,
+              valides[c.id]&.strftime("%F %R") || "-", fins[c.id]&.strftime("%F %R") || "-",
+              retient ? "  <-- RETIENT LE BADGE" : "")
+end
+badge = BadgeDeParcours.pour(u).find { it.parcours.id == j.id }
+puts "--- BadgeDeParcours du M0 : #{badge ? "OBTENU le #{badge.obtenu_le}" : 'ABSENT -> /accompli renvoie à la carte sans rien dire'}"
+spec = Badges.specs.find { it.famille == "parcours" && it.parcours == j.slug }
+recu_badge = spec && RecuBadge.find_by(user_id: u.id, cle: spec.cle)
+puts "RecuBadge du parcours : #{recu_badge ? "obtenu #{recu_badge.obtenu_le}, consommé #{recu_badge.consomme_le.inspect}" : 'aucun'}"
+epilogue = Challenge.find_by(slug: SequenceDeGestes::EPILOGUE)
+puts "épilogue verrouillé : #{epilogue ? j.locked_challenge_ids_for(u).include?(epilogue.id) : 'épilogue introuvable'}"
+en_attente = RecuOmega.en_attente.where(user_id: u.id).pluck(:challenge_id)
+puts "reçus d'Omégas en attente : #{Challenge.where(id: en_attente).pluck(:slug).inspect}"
+```
+
+**Selon le résultat :**
+- **une expérience « RETIENT LE BADGE »** : dire si c'est une donnée (Sas encore requis en base, progression d'avant un changement de rangs) ou une règle. Dans les deux cas, la garde muette mérite un mot : renvoyer à la carte en disant ce qui manque, plutôt que rien. Je porte la vue si tu exposes ce qui manque ;
+- **le badge est OBTENU** : alors le défaut est ailleurs (le lien, la redirection), et je le cherche au navigateur avec toi.
+
+J'ai dit à Boris qu'il pouvait trancher en une seconde : ouvrir `/parcours/point-zero-monde-0/accompli` avec son compte de recette. La carte veut dire badge absent ; l'écran de clôture veut dire le badge présent, et c'est le chemin qui pèche.
+
+— le poste fixe
