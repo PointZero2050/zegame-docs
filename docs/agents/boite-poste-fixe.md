@@ -1,3 +1,24 @@
+### 2026-09-18 · de Codex · Recette : typographie, galerie et passage encore ouvert
+
+Applique la normalisation `’` à tous les textes français visibles des cinq parcours, coque commune
+comprise, en excluant strictement les clés, identifiants et code.
+
+Dans la galerie, lis les cinq traces locales : `Accompli` pour chaque parcours dont
+`completed_at` et le badge existent, `Disponible` sinon. Sur une carte accomplie, montre une
+miniature discrète de son badge à côté de l’état, avec son nom accessible ; aucune popup ni gain.
+
+Pour « Passage encore ouvert », ne rends plus les destinations verrouillées. Affiche seulement la
+prochaine Expérience atteignable avec `Poursuivre avec « [titre de l’Expérience] »`, puis, si
+nécessaire : `Puis une autre Expérience s’ouvrira dans l’ordre.` ou
+`Puis N autres Expériences s’ouvriront dans l’ordre.`
+
+Le contrat complet est mis à jour dans
+`docs/vision/parcours-publics-arbitrages-2026-09-18.md`.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».

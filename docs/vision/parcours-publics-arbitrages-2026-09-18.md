@@ -12,6 +12,9 @@ aucune hypothèse du Livre I en fait historique ou scientifique.
 - Employer les cinq descriptions de la section « Descriptions de la galerie »
   sur toutes les cartes publiques du site comme dans la galerie du Sas. Une
   même destination garde ainsi la même promesse sur les deux surfaces.
+- Normaliser les apostrophes typographiques `’` dans tous les textes français
+  visibles des cinq parcours, y compris la coque commune, le bandeau et la
+  modale de sortie. Exclure de cette passe les clés, identifiants et code.
 - Un pictogramme vidéo reste une action ouvrant la vidéo associée, avec un
   libellé accessible explicite.
 - Les lectures Point Zéro sont présentées comme des hypothèses à éprouver.
@@ -119,6 +122,37 @@ guide et test d’un trio. La Trace demeure optionnelle.
 4. `Deux récits, cinq cartes et une boucle pour changer d’échelle.`
 5. `Composer une mobilisation et observer les conditions qui la rendent vivante.`
 
+### État des cartes dans la galerie
+
+Chaque carte lit la trace locale de son propre parcours, y compris lorsqu’elle
+n’est pas la carte active :
+
+- `Accompli` lorsque son `completed_at` et son badge sont présents ;
+- `Disponible` dans le cas contraire.
+
+Sur une carte accomplie, afficher une miniature discrète du badge obtenu à
+côté de l’état. Son nom doit rester accessible. Cette reconnaissance remplace
+une nouvelle notification : elle ne déclenche ni popup ni gain.
+
+## Fiche finale — Passage encore ouvert
+
+Ne pas rendre de liens vers les Expériences encore verrouillées. Montrer
+uniquement la prochaine Expérience réellement atteignable, avec le CTA :
+
+> Poursuivre avec « [titre de l’Expérience] »
+
+Puis résumer le reste sans lien :
+
+> Puis une autre Expérience s’ouvrira dans l’ordre.
+
+ou, au pluriel :
+
+> Puis [N] autres Expériences s’ouvriront dans l’ordre.
+
+Omettre cette seconde phrase lorsqu’il n’en reste aucune. Le titre et le texte
+général de l’écran restent inchangés ; l’objectif est de guider sans laisser
+croire qu’une Expérience jamais ouverte peut être « reprise ».
+
 ## E13 — preuve du dialogue mentor
 
 Aligner maintenant E13 sur le régime de preuve d’E19 : le rang concerné est
@@ -126,6 +160,8 @@ reconnu lorsque le joueur a choisi un mentor puis posé au moins une question
 depuis la consultation ouverte par E13.
 
 - retirer la déclaration `J’ai discuté de cette relation avec mon mentor` ;
+- retirer aussi la déclaration morte `J’ai planté ma Graine de relation` du
+  rang prouvé par la Graine ;
 - une simple ouverture ne suffit pas ;
 - une question posée depuis une autre Expérience ou depuis l’accès direct au
   mentor ne valide pas E13 ;

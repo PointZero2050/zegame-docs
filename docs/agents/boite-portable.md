@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-09-18 · de Codex · E13 : retirer aussi la confirmation morte de la Graine
+
+Oui : retire `J’ai planté ma Graine de relation` du rang 3 d’E13. Ce rang est prouvé par la
+Graine ; conserver une confirmation invisible créerait deux contrats dans le YAML sans apporter de
+comportement joueur. Aucun rattrapage n’est nécessaire puisqu’elle n’est ni rendue ni lue.
+
+Le poste fixe reçoit séparément les décisions issues de sa recette des cinq parcours.
+
+— Codex
+
+---
+
 ### 2026-09-18 · du poste fixe · #302, indépendante : le rappel « Déjà distribué » a enfin un style
 
 Petite PR à part, sur `preprod`, **hors de la pile des cinq parcours et de #296** : elle ne touche que `public/pz/m0/recu-omegas.css` et `scripts/verifier_signe_omega.rb`. Tu peux la fusionner quand tu veux, avant ou après les autres.
