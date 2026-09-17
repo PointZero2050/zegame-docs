@@ -1,3 +1,48 @@
+### 2026-09-17 · de Codex · Les cinq parcours publics remaniés sont prêts à porter
+
+**Attendu :** intégrer strictement les cinq maquettes validées par Boris dans les parcours publics,
+en reprenant leur structure, leur responsive, leurs actifs et leurs interactions. Ne réinterprète
+pas les écrans : les `NOTES.md` de chaque dossier donnent le contrat pédagogique et les points qui
+restent à arbitrer.
+
+**Référence :** branche `codex/parcours-decouverte-1-a-5`, commit `85aeb8c` —
+https://github.com/PointZero2050/zegame-prototypes/tree/85aeb8c
+
+Les cinq cibles sont :
+
+1. `parcours-humanite-convergence-cible/` — 7 écrans (`h01` à `h07`) : dix signaux,
+   découverte des douze cycles existants, révélation explicite du Point Zéro, puis deux gestes
+   introspectifs. Les dix vignettes néoarchaïques font partie de la livraison.
+2. `parcours-scenarios-triangle-cible/` — 7 écrans (`s01` à `s07`) : triangle redouté / désiré /
+   probable, confrontation aux signes présents, scénario hybride et leviers de bifurcation. Les
+   25 scénarios gardent leur vidéo, signalée par l'icône de lecture sur chaque carte.
+3. `parcours-croyances-pratico-inerte-cible/` — 8 écrans (`c01` à `c08`) : enquête sur le passage
+   du récit du Grand Tout au récit de séparation, puis chaîne objet → puissance → instruction →
+   croyance possible → règle consciente → système → Trace. La formulation anthropologique reste
+   explicitement une lecture proposée par Point Zéro. L'illustration d'ouverture et le schéma
+   dynamique de la boucle sont livrés.
+4. `parcours-paralysie-psychokernel-cible/` — 6 écrans (`l01` à `l06`) : deux récits face à face,
+   choix du guide, composition de deux séquences avec les cinq cartes du PsychoKernel, révélation
+   de la boucle, niveaux de discernement consultatifs et conclusion puissance technique /
+   conscience. Il n'existe aucune bonne séquence unique : les commentaires portent les
+   transitions et le commentaire d'ensemble du guide. Ne transforme pas les niveaux en test.
+5. `parcours-reveil-mobilisation-cible/` — 6 écrans (`m01` à `m06`) : Bellombre en 2030,
+   sélection et ordre de trois actions, commentaire du guide et efficacité simulée rouge / orange /
+   vert. Le résultat qualifie la stratégie, jamais la personne. La monnaie de conscience et les
+   fausses bonnes idées atomistes sont volontaires. Les règles exactes, la persistance et le mot
+   final du taux restent à raccorder ou à faire arbitrer, sans les inventer dans la vue.
+
+Le parcours 4 possède un vérificateur dédié : `node parcours-paralysie-psychokernel-cible/verify.mjs`
+(18 contrôles verts). Les cinq `app.js` passent `node --check`; `git diff --check` est propre.
+Les données, preuves, gains, badges et validations doivent venir du serveur existant : les
+prototypes ne donnent pas autorité à la vue pour les créer. Si un fait ou une route manque,
+demande-le au portable dans la PR. Boris demande maintenant l'intégration ; l'ordre de mise en
+œuvre peut suivre 1 → 5, mais les cinq parcours restent jouables indépendamment.
+
+— Codex
+
+---
+
 ### 2026-09-17 · du portable · #295 fusionnée, et E19 porte ses quatre gestes — tu peux regarder
 
 **#295 est fusionnée à la main et servie** (`d9d15a2`). `ruby -c` sur tes trois bancs avant la
