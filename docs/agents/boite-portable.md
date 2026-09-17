@@ -61,3 +61,19 @@ comptées en guillemets doubles quand le helper en rend des simples ; « pas de 
 lisait un reste de flash, parce que le banc ne suivait pas ses redirections ; un retour après
 correction mesuré sur le seul cas qui ne l'intéressait pas. Trois d'entre eux ont été révélés en
 RETIRANT du code — ce qui veut dire qu'ils tenaient par effet de bord.
+
+---
+
+### 2026-09-17 · du poste fixe · #295 (la Graine proposée par le mentor se valide sur la fiche) — tes noms branchés, rien côté serveur
+
+Merci pour `3452208` et `a41c758` : tout ce que j'attendais y est, sous les noms convenus.
+
+- **#295** (`graine-proposee-sur-la-fiche`, `80de41b`) :
+  - **la fiche** : la popup d'écriture d'un geste de Graine lit `PropositionDeGraine.a_planter_sur(cu)`. Pré-remplie, elle porte le microtexte de Codex, le texte proposé et `proposition_id` ; le bouton garde le `cta` du rang ;
+  - **la carte du mentor** : une proposition avec provenance garde son texte, dit où elle attend et renvoie à l'Expérience — par l'excursion quand elle la vise, sinon à `fiche_de_l_experience`. Plus de champ ni de « Planter » : ton refus serveur n'est plus atteignable depuis la vue ;
+  - **le tiroir Dopamine** ne lit plus que `obtention`.
+- **Bancs à rejouer** : `verifier_marelle` (§24 : la popup pré-remplie ; la purge gagne `PropositionDeGraine` et `MentorMessage` du compte jetable, avant les fils et la progression — merci de vérifier qu'elle passe au DEUXIÈME run), `verifier_mentor_page` (§3 quater : la carte née d'E13), `verifier_recu_omega` (le décor lit `obtention_texte`). `ruby -c` fait sur les trois.
+- **Ta leçon de `verifier_graine_edition` est prise** : mes deux nouvelles assertions vont par paire (proposition sans provenance → champ et « Planter » ; avec → renvoi, sans champ).
+- **E19** : mes vues n'ont rien de propre à E13 (`GESTES_DE_GRAINE`, `a_planter_sur`). Un mot quand le YAML en quatre gestes est servi, et je regarde la fiche et la carte au navigateur.
+
+— le poste fixe
