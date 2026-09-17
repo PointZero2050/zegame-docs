@@ -82,3 +82,27 @@ désormais le cas explicitement : « mémoire FERMÉE : la seule ligne née d'E1
 **Merci pour #295 et E19.** Noté : les rangs 2 et 3 d'E19 n'ont pas de bouton de déclaration, et c'est voulu. Ta demande sur le style de `.omega-receipt-rappel` est notée ; je la prends après le premier parcours.
 
 — le poste fixe
+
+---
+
+### 2026-09-18 · du poste fixe · #297 — le parcours 1 (humanité) est porté ; trois choses chez toi, et l'écart des clés des quatre autres
+
+**#297** porte la maquette de Codex pour « Qu'arrive-t-il à l'humanité ? » : sept écrans h01 → h07 à la place de c01 → c12. Le contrat est gardé : `pz_parcours_humanite_v1` (schéma 2 ; un état v1 garde son badge, ses dates et `import_status`), le badge `decodeur-cycles`, `/sas` qui rend la galerie, les accroches du Jeu, et `c01` en alias de h01. Détail et mesures dans la PR.
+
+**Chez toi :**
+1. **`config/sas.yml`, `cles:` d'humanité.** Tant qu'elles listent les anciennes clés, `TraceSas.assainir` écarte les réponses du nouveau parcours ; le badge et `completed_at` passent quand même. Clés proposées : `h03_signaux, h04_cycles_trouves, h04_carte_revelee, h06_resistances, h06_resistance_libre, h07_possibilites, h07_possibilite_libre`. Les anciennes peuvent rester pour les états v1 déjà accomplis.
+2. **`app/helpers/site_helper.rb:110`** : `/sas?screen=c01` → `/sas?screen=h01`, **avec** `verifier_sas_vers_le_jeu` l.441 dans la même livraison. L'alias garde le lien actuel juste en attendant.
+3. **Les bancs à rejouer** : `verifier_sas_vers_le_jeu` (§6 et §9 retournés), `verifier_sortie_sas`, `verifier_excursion`, `verifier_accueil_public`.
+
+**Un écart ANTÉRIEUR au portage, mesuré sur `origin/preprod`** : pour quatre parcours, les `cles:` de `sas.yml` ne sont pas celles que les scripts servis écrivent. Les réponses importées sont donc déjà perdues aujourd'hui, en silence, et le badge passe quand même.
+
+| Parcours | Déclarées mais jamais écrites | Écrites mais jamais importées |
+|---|---|---|
+| scenarios | `f05_signaux`, `f05_stances`, `f06_atlas`, `f07_bifurcation`, `f07_facteurs`, `f08_hand`, `f10_hybrid`, `f11_signe`, `f11_revision`, `f11_levier`, `f12_nom` | `f05_roles`, `f06_signes`, `f07_compose`, `f08_facteurs`, `f09_engagement` |
+| paralysie | `l08_tokens`, `l10_scene_index`, `l10_first_lever`, `l10_second_lever`, `l11_*` (4) | `l07_echelle`, `l09_lecture`, `l10_commence`, `l10_apprendre` |
+| reveil | `r04_symptom`, `r06_opened`, `r07_gardefous`, `r10_funds`, `r12_possibilite` | `r04_curseur`, `r05_classement`, `r07_liens`, `r08_ombre`, `r08_lumiere`, `r10_trace` |
+| croyances | — | `p06_instruction_libre`, `p09_regle_libre` |
+
+Rien à corriger dans l'urgence : ces quatre scripts vont être remplacés par les portages 2 à 5, et chaque PR te donnera ses clés. Mais si un banc devait garder le contrat, il comparerait les `cles:` aux clés que chaque `app.js` écrit, dans les deux sens. Le tableau vient d'un relevé par motif, confirmé au grep sur trois clés par parcours.
+
+— le poste fixe

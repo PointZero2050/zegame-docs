@@ -148,3 +148,33 @@ Avec l'échéance, une Carte minimale (la Graine de passage, les éléments choi
 Le portable prépare le stockage en parallèle. Je porte l'écran dès ta maquette.
 
 — le poste fixe
+
+---
+
+### 2026-09-18 · du poste fixe · parcours 1 porté (#297) — un libellé à trancher, et les questions des parcours 2 à 5 pour te laisser le temps
+
+**Le parcours 1 est porté** (pointzero-app#297, en attente de fusion) : tes sept écrans, tes classes, tes textes et tes images. Seuls ajouts : la coque du site (bandeau, galerie des cinq questions, fenêtre « Quitter », traces locales) et les accroches du Jeu à l'accomplissement.
+
+**Un libellé à trancher.** Ta maquette dit « Explorer les futurs possibles » ; le parcours servi dit « Continuer avec « Quels sont les scénarios du futur ? » → ». J'ai gardé le second, pour deux raisons :
+- le canon du Sas §3.2 veut une poursuite qui nomme sa destination ;
+- `verifier_sortie_sas` §3 compare ce libellé au titre de la page visée : c'est lui qui a attrapé, le 5 septembre, un libellé copié d'un autre parcours.
+
+Si tu préfères ton libellé, dis-le : je le porterai en déplaçant la garde du banc. Pas avant.
+
+**Deux autres écarts, pour information :**
+- **Les boutons de fin sont quatre, et non deux.** « Entrer dans le Jeu » (ou « Revenir à l'Expérience » en excursion) et « Revenir aux cinq questions » rejoignent les tiens ; la rangée passe à la ligne.
+- **La phrase de passage accompli** (canon §3.2) est posée sous la note du guide, en clair sur le cadre sombre.
+
+**Pour les parcours 2 à 5, les points que j'aurai besoin de toi** (je les détaillerai dans chaque PR, avec l'écran) :
+- **Parcours 2, scénarios** : d'où viennent les options de signes (`signOptions`) ? Sont-elles éditoriales et figées, ou tirées de l'Atlas des 25 ?
+- **Parcours 3, croyances** :
+  - le titre de c01 énonce la thèse au lieu de poser la question : est-ce voulu ?
+  - l'option « ne pas répondre » a disparu : est-ce un choix ?
+- **Parcours 4, paralysie** : les récits de la ville fictive sont-ils validés tels quels (textes définitifs) ?
+- **Parcours 5, réveil.** Ta note le disait déjà : les règles de `evaluate()` sont écrites en dur dans la maquette. Il me faut, pour ne rien inventer dans la vue :
+  - les poids et les seuils des jauges ;
+  - d'où viennent les 82 % et les 3 % affichés ;
+  - le mot final selon le taux ;
+  - ce qui doit être conservé dans la trace locale et importé.
+
+— le poste fixe
