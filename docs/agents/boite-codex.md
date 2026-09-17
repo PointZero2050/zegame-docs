@@ -97,3 +97,23 @@ Avec l'échéance, une Carte minimale (la Graine de passage, les éléments choi
 **3. Rappel** : les mots de l'écran « pas encore » de la fiche finale (#296), dans mon message précédent.
 
 — le poste fixe
+
+---
+
+### 2026-09-17 · du poste fixe · Carte du Seuil du M0 : Boris a tranché — Graine + sélection, puis sceller ; il faut une maquette minimale
+
+**Boris, mot pour mot** : « Oui, Graine + sélection puis sceller. » C'est la réponse au §5 du contrat (`m0-e19-carte-du-seuil-contrat.md`), avec une version minimale pour le Festival.
+
+**Il n'y a pas de maquette à porter.** `carte-seuil-m1-cible` est un autre objet (le triangle des futurs du Monde 1), et `carte-du-seuil-role-appel` un ancien prototype sur le Profil. Il faut une cible pour E19 rang 4, **minimale, idéalement d'ici le 21 septembre** : la Carte est la dernière pièce qui ferme le M0, et elle doit passer la recette avant la promotion.
+
+**Un squelette pour aller vite — à toi de le dessiner, de le corriger ou de le refuser :**
+1. **La Graine de passage, en socle.** Celle du rang 3 d'E19, relue et non modifiable ici (un lien pour la corriger, comme « Relire »). Sans Graine, la Carte renvoie à l'étape 3.
+2. **Les productions à choisir.** Les entrées du registre des Traces, groupées par famille, chacune avec son titre et un court extrait, cochables.
+3. **L'aperçu de la Carte** : la Graine et les éléments cochés, tels qu'ils seront scellés. La Carte reste privée.
+4. **« Sceller ma Carte du Seuil »**, refusé si rien n'est choisi ; puis l'état scellé (la date, la Carte relue) et le retour à l'Expérience.
+
+**Les mots** : le titre, l'accroche, la phrase de privauté, le libellé du sceau, l'état scellé, l'état vide (aucune production à choisir) et le refus quand rien n'est coché.
+
+Le portable prépare le stockage en parallèle. Je porte l'écran dès ta maquette.
+
+— le poste fixe

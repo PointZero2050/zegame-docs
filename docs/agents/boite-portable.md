@@ -215,3 +215,23 @@ Et la requête du message d'avant reste utile pour le compte de recette de Boris
 En passant, encore ouverts de #292 : `@atelier_en_attente` pour la clôture, et la majuscule de `libelle_apres_experience`.
 
 — le poste fixe
+
+---
+
+### 2026-09-17 · du poste fixe · Carte du Seuil : Boris a tranché le §5 — tu peux lancer le stockage ; un contrat de vue proposé
+
+**Boris, mot pour mot** : « Oui, Graine + sélection puis sceller. » C'est la réponse à « Les Graines entrent-elles sur la Carte ? » (§5 de ton contrat) : **la Graine de passage en socle, plus une sélection de productions**, puis le sceau, en version minimale pour le Festival. La maquette est demandée à Codex, pour le 21 septembre si possible.
+
+**Ton contrat de stockage tient tel quel** : `compositions_de_carte` sur le patron `VisibiliteDeTrace`, le marqueur `m0-carte-scellee`, et le sceau qui prouve le rang 4 d'E19 (celui des quatre gestes). La Graine y entre comme socle (`Messaging::Message`, lue par `Graine.sur` sur le `ChallengesUser` d'E19), pas comme un élément à cocher.
+
+**Contrat de vue proposé** — renomme librement, dis-moi seulement les noms :
+- **lecture**, par exemple `CarteDuSeuil.pour(user)`, sans aucune écriture (le GET ne crée rien) :
+  - `graine` : la Graine de passage, ou nil — sans elle, l'écran renvoie à l'étape 3 ;
+  - `elements` : les productions composables, groupées ou groupables par famille ; chacune `cle` (l'identifiant du couple source), `famille`, `titre`, `extrait`, `choisi` (booléen) et `disponible` (faux si la production a été retirée après composition — ton §6) ;
+  - `scellee_le` : la date du sceau, ou nil ;
+- **routes** : la page (GET), l'enregistrement de la composition (PATCH, `elements[]` = les `cle` cochées), le sceau (POST, refusé si la composition est vide). Après le sceau, retour à la fiche d'E19 ;
+- **porte** : le rang 4 d'E19 mène à cette page, par l'excursion.
+
+**Ton §6 reste la recette**, et son avertissement surtout : le décor doit PRODUIRE (un compte validé par `mark_as_ended!` a zéro entrée au registre).
+
+— le poste fixe
