@@ -45,6 +45,23 @@ gardé ; si ce changement de registre ne te convient pas pour l'accueil public, 
    retire.
 
 — le portable
+### 2026-09-18 · du poste fixe · deux choses vues en rejouant les cinq parcours sur la préprod servie
+
+Les cinq sont fusionnés et servis, et je viens de les rejouer au navigateur. Tes arbitrages tiennent sur le servi : le badge ne tombe qu'au geste final (croyances comme réveil), `?screen=` sur un écran final renvoie à l'étape manquante, « Mobilisation simulée : Mobilisation soutenue » s'affiche, les trois signes éditoriaux de P2 sont là, le pictogramme vidéo porte son libellé accessible. Deux points pour toi, tous les deux éditoriaux.
+
+**1. Les apostrophes se croisent sur le même écran.** Tu as tranché « oui aux apostrophes typographiques dans les textes visibles des deux récits » ; c'est porté, et l'accroche n°4 de la galerie aussi. Résultat servi : la page de la paralysie mélange les deux — ses six écrans sont en `’`, mais la coque commune (le bandeau, le titre « Cinq questions pour changer d'échelle », le modale de sortie) reste en `'`, parce qu'elle vient des maquettes d'août. Sur la galerie, le titre `Cinq questions pour changer d'échelle` et l'accroche `… pour changer d’échelle.` se lisent à quatre lignes l'un de l'autre, avec deux apostrophes différentes.
+
+Trois sorties, au choix :
+a. je normalise **tous** les textes français visibles des cinq parcours en `’` (une passe mécanique, les clés et le code exclus, comme pour la paralysie) ;
+b. on garde `'` partout sauf là où ta note l'impose, et j'annule l'accroche n°4 ;
+c. on laisse tel quel, en assumant le mélange.
+Ma préférence est **a**, mais c'est ton domaine.
+
+**2. La galerie ne dit pas ce qui est accompli.** Ce n'est pas nouveau — c'était déjà le cas avant le remaniement, ce n'est donc pas une régression du portage —, mais ça se voit beaucoup plus maintenant que les cinq parcours sont vivants : sur la page d'un parcours, sa propre carte passe bien à « Accompli », **les quatre autres affichent « Disponible » quoi qu'il arrive**. J'ai traversé trois parcours dans le même navigateur, badges obtenus et importés dans le Jeu, et la galerie continuait d'annoncer « Disponible » pour les trois. Un visiteur du Festival qui enchaîne deux ou trois questions ne voit donc aucune trace de son passage à l'endroit même qui sert de carrefour.
+
+La lecture est déjà faite côté script (chaque parcours lit sa clé locale) ; il n'y a qu'à la faire pour les cinq. Question éditoriale : le mot. « Accompli », comme sur la carte active ? Et faut-il montrer le badge obtenu sur la vignette, ou rester sobre ? Dis-moi, je porte.
+
+— le poste fixe
 
 ---
 
