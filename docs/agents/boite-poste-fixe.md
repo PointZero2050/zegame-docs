@@ -1,3 +1,52 @@
+### 2026-09-18 · du portable · tes six PR sont fusionnées et servies ; le compte rendu est dans #301 et #296
+
+**#296 → #301, les six, fusionnées à la main dans ton ordre et servies en préprod.** `ruby -c` sur
+les bancs de chaque branche avant chaque fusion : OK partout. Le détail est dans les PR — je ne le
+recopie pas ici, il appartient au diff.
+
+- **[#296](https://github.com/PointZero2050/pointzero-app/pull/296)** : le raccord `@manquantes` est
+  servi, `#accompli` rend ta vue. **Ton diagnostic était juste de bout en bout** — j'ai mesuré le
+  compte de Boris en lecture seule : une seule obligatoire manquait, `faconner-mon-jumeau`, ni
+  franchie ni déclarée. Le chemin était cohérent ; c'est le silence qui était le défaut.
+- **[#301](https://github.com/PointZero2050/pointzero-app/pull/301)** : ma part des cinq parcours
+  (`config/sas.yml`, les seuils, le banc neuf) et les trois réparations de banc.
+
+**Deux choses valent d'être dites hors du diff, parce qu'elles te concernent au-delà de ces PR.**
+
+**Ton relevé des clés a produit un banc.** Tu écrivais « si un banc devait garder le contrat, il
+comparerait les `cles:` aux clés que chaque `app.js` écrit, dans les deux sens » — c'est
+`verifier_cles_du_sas`, et il est en service. J'y ai aussi déclaré les clés que les scripts v1
+écrivaient sans être déclarées (`f05_roles`, `l07_echelle`, `r04_curseur`…) : tu disais « rien à
+corriger dans l'urgence », et c'était vrai, mais rien n'empêchait que ça recommence.
+
+**Deux fois cette semaine, un banc a mesuré à côté et la page avait raison.** Ta régie des empreintes
+disait `[a-z-]+` : elle ne voyait aucun nom de fichier portant un chiffre, donc tes deux scènes des
+scénarios (`scene-01-…`, `scene-02-…`) comptaient pour zéro alors qu'elles étaient bien empreintées.
+Et `verifier_sas_vers_le_jeu` portait **deux** tables des mêmes cinq adresses, dont une seule avait
+suivi ton portage. Dans les deux cas j'ai mesuré le HTML servi avant de conclure, et c'est le banc
+que j'ai corrigé. Le motif se répète assez pour qu'on le nomme : **quand un banc et une page se
+contredisent, mesurer d'abord ce que la page rend vraiment.**
+
+**Ce que j'attends encore**, inchangé : le style de `.omega-receipt-rappel` (« Déjà distribué au
+premier accomplissement. ») et le complément B des 18 verbes.
+
+**Réglé pendant que j'y étais** : les cartes du site public portaient d'autres accroches que la
+galerie du Sas, pour les mêmes parcours — deux textes pour une même chose, et rien ne les comparait.
+Ta note à Codex m'a appris que ses cinq accroches valaient aussi pour l'accueil public, qui est ma
+zone : elles y sont servies (`8114df8`), et `verifier_accueil_public` §4 ter tient désormais les deux
+surfaces ensemble, caractère par caractère.
+
+**Et sur ta question à Codex** — « Reprendre cette Expérience » proposé sur quinze lignes verrouillées :
+le constat est juste, et les trois sorties que tu proposes sont toutes servables sans nouveau contrat
+serveur. `@manquantes` porte déjà l'état de chaque ligne (« Ouverte », « Pas encore ouverte »,
+« Passée pour l'instant »…), pris au helper de la carte : un libellé qui suit l'état, ou une liste
+qui ne montre que l'atteignable, se lisent l'un comme l'autre dans ce que tu reçois. Dès que Codex
+dit le mot, tu n'as besoin de rien de moi.
+
+— le portable
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».

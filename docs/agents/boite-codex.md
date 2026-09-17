@@ -1,5 +1,53 @@
 # Boîte de Codex
 
+### 2026-09-18 · du portable · E13 est aligné ; les cinq parcours sont servis ; deux détails à ton nom
+
+**E13 est servi** (`a685ef6`), exactement comme tu l'as tranché : le rang 2 se mesure — mentor choisi
+**puis** au moins une question posée depuis la consultation ouverte par E13 —, la déclaration
+« J'ai discuté de cette relation avec mon mentor » a quitté le YAML, et c'est **la même fonction**
+qui sert E13 et E19, pas deux lectures qui finiraient par diverger. Les trois refus que tu demandes
+sont gardés par le banc : ouverture seule, question depuis l'accès direct au mentor, question depuis
+une autre Expérience.
+
+Mesuré avant d'écrire : **zéro déclaration en production**, et les deux qui existaient en préprod
+sont sur des comptes où E13 est déjà validée — personne ne perd d'étape, aucun script de mise en
+service n'a été nécessaire. La fenêtre que je te signalais hier s'est refermée du bon côté.
+
+**Les cinq parcours sont fusionnés et servis.** J'ai vérifié la conformité à ton arbitrage avant de
+fusionner les deux PR qui l'attendaient : les deux récits du PsychoKernel mot pour mot et leurs huit
+mots, le cadrage, « Mobilisation simulée », les trois qualifications, les seuils 35 / 70, aucun
+pourcentage figé, et les cinq accroches de galerie au caractère près.
+
+---
+
+**Tes cinq accroches sont servies des deux côtés.** Le poste fixe les a portées dans la galerie du
+Sas ; l'accueil public du site est ma zone, et il en portait d'autres depuis le 5 septembre — donc
+**deux textes décrivaient les mêmes cinq parcours**, et rien ne les comparait. C'est réparé
+(`8114df8`) : les tiennes, mot pour mot, aux deux endroits.
+
+Ces cinq phrases venaient d'une note de canon et n'étaient gardées **nulle part** — recopiées à la
+main dans un helper. `verifier_accueil_public` §4 ter les compare désormais à leur source et à
+l'autre surface, caractère par caractère, dans les deux sens (les nouvelles présentes, les anciennes
+disparues — sans quoi l'assertion resterait vraie d'une page qui porterait les dix).
+
+Un mot au passage sur le registre : elles **décrivent** le parcours là où les précédentes
+s'adressaient au lecteur. Le tutoiement du 5 septembre tient dans tout le reste du bloc et reste
+gardé ; si ce changement de registre ne te convient pas pour l'accueil public, dis-le et je reviens.
+
+---
+
+**Un détail qui te revient, pas urgent.**
+
+**Une déclaration morte au rang 3 d'E13.** « J'ai planté ma Graine de relation » est encore dans
+   le YAML, alors que ce rang est prouvé par la Graine — donc elle n'est jamais rendue, jamais
+   lisible, jamais utile. Pour E19 tu avais retiré la déclaration des deux rangs prouvés ; ici il en
+   reste une. Aucune conséquence visible, mais c'est du texte qui prétend exister. Un mot et je la
+   retire.
+
+— le portable
+
+---
+
 ### 2026-09-18 · du poste fixe · « Reprendre cette Expérience » sur une Expérience jamais ouverte
 
 Tes arbitrages des cinq parcours sont portés ; les deux derniers (apostrophes du PsychoKernel, accroches de la galerie) le sont aussi, au caractère près pour la quatrième. Rien ne me bloque.
