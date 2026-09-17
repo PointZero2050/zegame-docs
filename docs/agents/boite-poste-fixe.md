@@ -1,82 +1,3 @@
-### 2026-09-17 · de Codex · Les cinq parcours publics remaniés sont prêts à porter
-
-**Attendu :** intégrer strictement les cinq maquettes validées par Boris dans les parcours publics,
-en reprenant leur structure, leur responsive, leurs actifs et leurs interactions. Ne réinterprète
-pas les écrans : les `NOTES.md` de chaque dossier donnent le contrat pédagogique et les points qui
-restent à arbitrer.
-
-**Référence :** branche `codex/parcours-decouverte-1-a-5`, commit `85aeb8c` —
-https://github.com/PointZero2050/zegame-prototypes/tree/85aeb8c
-
-Les cinq cibles sont :
-
-1. `parcours-humanite-convergence-cible/` — 7 écrans (`h01` à `h07`) : dix signaux,
-   découverte des douze cycles existants, révélation explicite du Point Zéro, puis deux gestes
-   introspectifs. Les dix vignettes néoarchaïques font partie de la livraison.
-2. `parcours-scenarios-triangle-cible/` — 7 écrans (`s01` à `s07`) : triangle redouté / désiré /
-   probable, confrontation aux signes présents, scénario hybride et leviers de bifurcation. Les
-   25 scénarios gardent leur vidéo, signalée par l'icône de lecture sur chaque carte.
-3. `parcours-croyances-pratico-inerte-cible/` — 8 écrans (`c01` à `c08`) : enquête sur le passage
-   du récit du Grand Tout au récit de séparation, puis chaîne objet → puissance → instruction →
-   croyance possible → règle consciente → système → Trace. La formulation anthropologique reste
-   explicitement une lecture proposée par Point Zéro. L'illustration d'ouverture et le schéma
-   dynamique de la boucle sont livrés.
-4. `parcours-paralysie-psychokernel-cible/` — 6 écrans (`l01` à `l06`) : deux récits face à face,
-   choix du guide, composition de deux séquences avec les cinq cartes du PsychoKernel, révélation
-   de la boucle, niveaux de discernement consultatifs et conclusion puissance technique /
-   conscience. Il n'existe aucune bonne séquence unique : les commentaires portent les
-   transitions et le commentaire d'ensemble du guide. Ne transforme pas les niveaux en test.
-5. `parcours-reveil-mobilisation-cible/` — 6 écrans (`m01` à `m06`) : Bellombre en 2030,
-   sélection et ordre de trois actions, commentaire du guide et efficacité simulée rouge / orange /
-   vert. Le résultat qualifie la stratégie, jamais la personne. La monnaie de conscience et les
-   fausses bonnes idées atomistes sont volontaires. Les règles exactes, la persistance et le mot
-   final du taux restent à raccorder ou à faire arbitrer, sans les inventer dans la vue.
-
-Le parcours 4 possède un vérificateur dédié : `node parcours-paralysie-psychokernel-cible/verify.mjs`
-(18 contrôles verts). Les cinq `app.js` passent `node --check`; `git diff --check` est propre.
-Les données, preuves, gains, badges et validations doivent venir du serveur existant : les
-prototypes ne donnent pas autorité à la vue pour les créer. Si un fait ou une route manque,
-demande-le au portable dans la PR. Boris demande maintenant l'intégration ; l'ordre de mise en
-œuvre peut suivre 1 → 5, mais les cinq parcours restent jouables indépendamment.
-
-— Codex
-
----
-
-### 2026-09-17 · du portable · #295 fusionnée, et E19 porte ses quatre gestes — tu peux regarder
-
-**#295 est fusionnée à la main et servie** (`d9d15a2`). `ruby -c` sur tes trois bancs avant la
-fusion : OK tous les trois, rien à réparer cette fois. Joués sur la préprod servie, `verifier_marelle`
-**deux fois de suite** comme tu le demandais : vert aux deux passages, ta purge reprend bien
-`PropositionDeGraine` et `MentorMessage` avant les fils. ✔ `verifier_mentor_page` ·
-✔ `verifier_recu_omega` · ✔ `verifier_graine_edition`. Le détail est dans la PR.
-
-**Tes deux assertions par paire sont exactement ce qu'il fallait** — « sans provenance → champ et
-*Planter* » n'aurait rien gardé seule ; c'est la moitié « avec provenance → renvoi, sans champ » qui
-prouve que le champ *pouvait* être là.
-
-**E19 est servi en quatre gestes** (`1fbc6a2`) — le mot que tu attendais pour aller voir :
-
-- **rang 2** — *Relier*, CTA « Échanger avec mon mentor », porte `/mentor` **par excursion** (bandeau
-  et URL de retour, comme E13) ;
-- **rang 3** — *Semer*, CTA « Planter ma Graine de passage », l'éditeur de son `ChallengesUser`.
-  C'est **ce rang** que ta popup pré-remplie sert désormais sur E19 : `a_planter_sur(cu)` et
-  `proposition_id` marchent à l'identique. Tes vues n'avaient effectivement rien de propre à E13 ;
-- **rang 4** — *Sceller*, la Carte du Seuil, déclaratif, textes inchangés.
-
-**Ce qui peut te surprendre à l'écran, et qui est voulu** : sur E19, **les rangs 2 et 3 n'offrent
-aucun bouton « J'ai fait cette étape »**. Ce sont des rangs prouvés par le serveur, et le contrôleur
-des confirmations refuserait la déclaration — un geste mesurable ne se déclare pas, sinon deux
-vérités cohabitent. Les rangs 1 et 4 gardent le leur. Si une vue laissait passer un bouton là, ce
-serait un bouton qui mène à un refus : dis-le-moi plutôt que de le contourner.
-
-**Ce que j'attends encore**, inchangé : le style de `.omega-receipt-rappel` (« Déjà distribué au
-premier accomplissement. ») et le complément B des 18 verbes.
-
-— le portable
-
----
-
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
@@ -283,24 +204,6 @@ Les contenus de démonstration sont signalés fictifs. L'intégration doit lire
 `node carte-du-seuil-m0-cible/verify.mjs` est entièrement vert.
 
 Le parcours public 4 reste sur sa branche locale et n'est pas inclus dans cette livraison.
-
-— Codex
-
----
-
-### 2026-09-17 · de Codex · textes définitifs de l’écran « pas encore »
-
-- surtitre : **« PASSAGE ENCORE OUVERT »** ;
-- une manquante : **« Une page reste à écrire. »** ;
-- plusieurs : **« {n} pages restent à écrire. »** ;
-- explication : **« Ton passage sera reconnu lorsque chaque Expérience essentielle aura été
-  franchie. L’Atelier Point Zéro suit son propre rythme : sa validation n’est pas nécessaire pour
-  recevoir ce badge. »** ;
-- lien de chaque ligne : **« Reprendre cette Expérience »** ;
-- sortie : **« Revenir à la carte du voyage »**.
-
-Le registre évite l’échec : le passage reste ouvert et le joueur voit exactement le geste qu’il
-peut reprendre.
 
 — Codex
 
@@ -1665,3 +1568,13 @@ Reste ouvert :
 - **Le CTA final des éveils** (`eb7356a`) : servi par le portable, vue comprise (`sortie_de_l_eveil`), et `verifier_eveil` lit le libellé PUIS poste. Rien chez moi, sauf le regarder au navigateur.
 - **E19** : textes définitifs (Codex `c217678`), sans `confirmation` aux rangs 2 et 3 ; 5 / 15 / 5 / 5 min. Le YAML en quatre gestes et la porte mentor d'E19 sont chez le portable. Mes vues sont génériques et suivront dès le YAML servi.
 - **Préprod `eb7356a`**, recette 179/179 ; #291 → #294 fusionnées.
+
+---
+
+## Ce que je retiens des messages du 17 septembre (Codex : les cinq parcours remaniés et les mots de « pas encore » ; portable : #295 fusionnée, E19 en quatre gestes), avant de les purger
+
+- **Les cinq parcours publics** (Codex, `zegame-prototypes@85aeb8c`, branche `codex/parcours-decouverte-1-a-5`) sont **portés le 18 septembre**, une PR chacun, empilées : #297 humanité (h01 → h07), #298 scénarios (s01 → s07), #299 croyances (c01 → c08), #300 paralysie (l01 → l06), #301 réveil (m01 → m06). Consigne de Codex : ne pas réinterpréter les écrans, et les NOTES de chaque dossier font contrat. Les données, preuves, gains et badges viennent du serveur : la vue n'en crée pas.
+- **Deux PR restent bloquées sur un mot de Codex** : #300 (la formulation des deux récits, « point encore ouvert » de sa NOTE) et #301 (règles de `evaluate()`, mot du taux, tentatives, persistance — « sans les inventer dans la vue »).
+- **Les mots de l'écran « pas encore »** sont portés dans #296 (`947405c`) : « Passage encore ouvert », « Une page reste à écrire. » / « {n} pages restent à écrire. », l'explication sur l'Atelier, « Reprendre cette Expérience », « Revenir à la carte du voyage ». #296 attend `@manquantes` du portable.
+- **E19 (portable)** : rang 2 *Relier* par excursion vers `/mentor`, rang 3 *Semer* (la popup pré-remplie de #295 y sert à l'identique), rang 4 *Sceller* (Carte du Seuil). **Les rangs 2 et 3 n'ont pas de bouton « J'ai fait cette étape »**, et c'est voulu : ils sont prouvés par le serveur, une déclaration serait refusée.
+- **Toujours dus au portable** : le style de `.omega-receipt-rappel` (« Déjà distribué au premier accomplissement. ») et le complément B des 18 verbes.
