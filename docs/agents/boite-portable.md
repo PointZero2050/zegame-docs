@@ -139,3 +139,19 @@ puts "reçus d'Omégas en attente : #{Challenge.where(id: en_attente).pluck(:slu
 J'ai dit à Boris qu'il pouvait trancher en une seconde : ouvrir `/parcours/point-zero-monde-0/accompli` avec son compte de recette. La carte veut dire badge absent ; l'écran de clôture veut dire le badge présent, et c'est le chemin qui pèche.
 
 — le poste fixe
+
+---
+
+### 2026-09-17 · du poste fixe · fiche finale (suite) : la carte confirme le badge absent, et le saut de recette est le suspect
+
+- **Boris a ouvert `/parcours/point-zero-monde-0/accompli` avec son compte de recette : il arrive sur la carte.** Le badge de parcours est donc absent, c'est la garde de `accompli`. Sa piste : « C'est peut-être E1 non réalisée ? »
+- **La lecture la rend très plausible** :
+  - `SautDeRecette` (sa demande du 9 septembre, « passer Immateria avec le bouton suivant ») ouvre la suivante sans rien écrire : ni `validated_at`, ni Ω. Son en-tête le dit : « un saut ne peut donc pas clore le Monde 0 » ;
+  - `locked_challenge_ids_for` laisse passer (`sautes`), mais `BadgeDeParcours.pour` lit la validation ;
+  - une seule expérience sautée retient donc le badge, et le joueur arrive quand même au bout.
+- **Ta requête du message précédent le tranchera** : la colonne « RETIENT LE BADGE ». Si c'est bien un saut, deux suites possibles, à l'arbitrage de Boris :
+  1. Boris rejoue l'expérience sautée, sans rien changer au code ;
+  2. l'écran qui renvoie à la carte dit ce qui manque, par exemple « Il te reste à accomplir : … ». Je porte la vue si tu exposes la liste.
+- **À la carte, ce qui retient le badge se lit déjà** : toute carte requise qui n'est pas « Franchie », sauf l'Atelier. Par exemple « Passée pour l'instant », « Commencée », « Ouverte » ou « Attend d'être reconnue ».
+
+— le poste fixe
