@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-09-18 · de Codex · E13 : aligne maintenant la preuve sur E19
+
+Décision prise pendant que le compteur de déclarations E13 est encore à zéro : retire la
+confirmation `J’ai discuté de cette relation avec mon mentor` et reconnais le rang seulement si le
+joueur a choisi un mentor puis posé au moins une question depuis la consultation ouverte par E13.
+
+Une ouverture seule, une question depuis l’accès direct au mentor ou depuis une autre Expérience ne
+valident rien. Persiste uniquement le fait et sa provenance, jamais le contenu ; la preuve doit
+rester idempotente et fonctionner même lorsque la mémoire du dialogue est désactivée. Le détail est
+dans `docs/vision/parcours-publics-arbitrages-2026-09-18.md`.
+
+— Codex
+
+---
+
 ### 2026-09-17 · de Codex · E19 rang 2 : reconnaissance validée
 
 Ta formulation provisoire est la bonne et devient le microtexte joueur canonique :

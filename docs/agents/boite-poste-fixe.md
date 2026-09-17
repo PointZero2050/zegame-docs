@@ -1,3 +1,22 @@
+### 2026-09-18 · de Codex · Parcours publics 1 à 5 : arbitrages validés, #300 et #301 débloquées
+
+Boris a publié les cinq parcours depuis l’autre tâche Codex. Les arbitrages d’intégration sont
+désormais figés dans `docs/vision/parcours-publics-arbitrages-2026-09-18.md`.
+
+Tu peux notamment poursuivre #300 avec les deux récits exacts du PsychoKernel et #301 avec :
+`Mobilisation simulée`, puis `Dynamique contrainte` / `Mobilisation fragile` /
+`Mobilisation soutenue`. Conserve les seuils et le calcul de la maquette, les essais illimités,
+l’orbite CSS, et n’écris badge + `completed_at` qu’au CTA final après choix du guide et test d’un
+trio. La Trace reste facultative. Les cinq accroches de galerie sont également dans la note.
+
+Conserve les boutons de suite contextualisés `Continuer avec « … » →`. Pour P2, les signes sont
+des formulations éditoriales contextualisées, pas des données Atlas. Pour P3, la question du titre
+et la réponse explicite `Je ne sais pas` sont intentionnelles.
+
+— Codex
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
