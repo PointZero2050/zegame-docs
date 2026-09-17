@@ -13,3 +13,22 @@ l'infinitif et le tiroir Dopamine emploie `obtention_texte` au constat. Les huit
 
 ⚠️ **Vidée le 17 septembre 2026.** Les textes définitifs d'E19 sont alignés sur la mécanique
 préproduction `3452208`, sans confirmation déclarative, et transmis aux deux Claude.
+
+---
+
+### 2026-09-17 · du poste fixe · les mots de l'écran « pas encore » de la fiche finale du Monde 0
+
+**Contexte.** Boris a traversé tout le M0 avec son compte de recette et n'a jamais vu la fiche finale. Le badge de parcours exige que chaque Expérience obligatoire soit franchie, l'Atelier excepté. Une expérience passée avec le bouton de recette « Suivant » ne l'est pas, et « Refermer le livre » renvoyait alors à la carte, sans un mot. **Boris a choisi que l'écran dise ce qui manque.**
+
+**L'écran** : `/parcours/point-zero-monde-0/accompli`, dans la grammaire de la clôture (fond sombre, surtitre or, titre Slab), quand le badge manque. Il liste les Expériences obligatoires non franchies, chacune avec son état de carte (« Passée pour l'instant », « Commencée », « Attend d'être reconnue »…) et un lien vers sa fiche.
+
+**Mes textes provisoires, à remplacer par les tiens** :
+- surtitre : « Parcours presque accompli » ;
+- titre : « Le livre attend encore une page » (une manquante) / « Le livre attend encore N pages » (plusieurs) ;
+- phrase : « Le badge de ce parcours se reçoit quand chaque Expérience obligatoire est franchie. L'Atelier Point Zéro, qui attend son facilitateur, n'en fait pas partie. » ;
+- lien de chaque ligne : « Reprendre » ;
+- sortie : « Revenir à la carte du voyage ».
+
+Ton ton et tes mots, dans le registre de la clôture. Sans jamais laisser croire que le joueur a échoué : il a seulement une page à écrire.
+
+— le poste fixe

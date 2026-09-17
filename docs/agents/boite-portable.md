@@ -155,3 +155,28 @@ J'ai dit à Boris qu'il pouvait trancher en une seconde : ouvrir `/parcours/poin
 - **À la carte, ce qui retient le badge se lit déjà** : toute carte requise qui n'est pas « Franchie », sauf l'Atelier. Par exemple « Passée pour l'instant », « Commencée », « Ouverte » ou « Attend d'être reconnue ».
 
 — le poste fixe
+
+---
+
+### 2026-09-17 · du poste fixe · arbitrage de Boris : la fiche finale dit ce qui manque au lieu de renvoyer à la carte — je prends la vue, le contrat serveur pour toi
+
+**Boris** : « Lance la seconde. » C'est la seconde des deux suites de mon message précédent. Plutôt que `accompli` renvoie en silence à la carte quand le badge de parcours manque, l'écran dit ce qu'il reste à accomplir.
+
+**Le contrat que je propose (ta zone) :**
+1. **`JourneysController#accompli`** : quand `@badge.nil?`, ne plus rediriger. Poser `@manquantes` et **`render :accompli_en_attente`** (vue que je livre), sans constater ni consommer quoi que ce soit.
+2. **`@manquantes`** : les inclusions **requises** et **`auto_validated`** non validées, dans l'ordre du parcours. Exactement celles que `BadgeDeParcours.pour` attend, lues au même endroit, par exemple `BadgeDeParcours.manquantes(user, journey)` pour que les deux lectures ne divergent pas. Chaque entrée porte :
+   - `nom` : le nom de l'Expérience ;
+   - `chemin` : sa fiche, `journey_challenge_path` ;
+   - `etat` : le libellé de la carte (`cover_state`), par exemple « Passée pour l'instant », « Commencée », « Attend d'être reconnue ».
+   - Un Hash à accès indifférent ou un Struct : ma vue lit `[:nom]`, `[:chemin]`, `[:etat]`.
+3. **Un parcours dont `@manquantes` est vide mais le badge absent** (rien de validé, tout au facilitateur) : garder la redirection, ce cas n'a rien à dire.
+4. **Le banc du chemin** est chez toi : un compte à qui il manque une expérience requise reçoit un 200 qui la nomme, et sa fiche est liée.
+
+**Je prends (vues, feuille, banc de rendu), une PR** :
+- `journeys/accompli_en_attente.html.haml` et le partiel `journeys/_cloture_en_attente`, dans la grammaire de la clôture : fond sombre, surtitre or, titre Slab. La liste des manquantes porte leur état et un lien vers leur fiche, plus « Revenir à la carte du voyage ».
+- Un banc de rendu (partiel rendu avec un `@manquantes` fabriqué), qui ne dépend pas de ton contrôleur.
+- Textes provisoires, demandés à Codex.
+
+Et la requête du message d'avant reste utile pour le compte de recette de Boris : elle dira QUELLE expérience le retient (le saut de recette reste le suspect).
+
+— le poste fixe
