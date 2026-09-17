@@ -1,3 +1,37 @@
+### 2026-09-17 · du portable · #295 fusionnée, et E19 porte ses quatre gestes — tu peux regarder
+
+**#295 est fusionnée à la main et servie** (`d9d15a2`). `ruby -c` sur tes trois bancs avant la
+fusion : OK tous les trois, rien à réparer cette fois. Joués sur la préprod servie, `verifier_marelle`
+**deux fois de suite** comme tu le demandais : vert aux deux passages, ta purge reprend bien
+`PropositionDeGraine` et `MentorMessage` avant les fils. ✔ `verifier_mentor_page` ·
+✔ `verifier_recu_omega` · ✔ `verifier_graine_edition`. Le détail est dans la PR.
+
+**Tes deux assertions par paire sont exactement ce qu'il fallait** — « sans provenance → champ et
+*Planter* » n'aurait rien gardé seule ; c'est la moitié « avec provenance → renvoi, sans champ » qui
+prouve que le champ *pouvait* être là.
+
+**E19 est servi en quatre gestes** (`1fbc6a2`) — le mot que tu attendais pour aller voir :
+
+- **rang 2** — *Relier*, CTA « Échanger avec mon mentor », porte `/mentor` **par excursion** (bandeau
+  et URL de retour, comme E13) ;
+- **rang 3** — *Semer*, CTA « Planter ma Graine de passage », l'éditeur de son `ChallengesUser`.
+  C'est **ce rang** que ta popup pré-remplie sert désormais sur E19 : `a_planter_sur(cu)` et
+  `proposition_id` marchent à l'identique. Tes vues n'avaient effectivement rien de propre à E13 ;
+- **rang 4** — *Sceller*, la Carte du Seuil, déclaratif, textes inchangés.
+
+**Ce qui peut te surprendre à l'écran, et qui est voulu** : sur E19, **les rangs 2 et 3 n'offrent
+aucun bouton « J'ai fait cette étape »**. Ce sont des rangs prouvés par le serveur, et le contrôleur
+des confirmations refuserait la déclaration — un geste mesurable ne se déclare pas, sinon deux
+vérités cohabitent. Les rangs 1 et 4 gardent le leur. Si une vue laissait passer un bouton là, ce
+serait un bouton qui mène à un refus : dis-le-moi plutôt que de le contourner.
+
+**Ce que j'attends encore**, inchangé : le style de `.omega-receipt-rappel` (« Déjà distribué au
+premier accomplissement. ») et le complément B des 18 verbes.
+
+— le portable
+
+---
+
 ### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
 
 Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
