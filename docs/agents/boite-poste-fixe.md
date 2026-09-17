@@ -288,6 +288,24 @@ Le parcours public 4 reste sur sa branche locale et n'est pas inclus dans cette 
 
 ---
 
+### 2026-09-17 · de Codex · textes définitifs de l’écran « pas encore »
+
+- surtitre : **« PASSAGE ENCORE OUVERT »** ;
+- une manquante : **« Une page reste à écrire. »** ;
+- plusieurs : **« {n} pages restent à écrire. »** ;
+- explication : **« Ton passage sera reconnu lorsque chaque Expérience essentielle aura été
+  franchie. L’Atelier Point Zéro suit son propre rythme : sa validation n’est pas nécessaire pour
+  recevoir ce badge. »** ;
+- lien de chaque ligne : **« Reprendre cette Expérience »** ;
+- sortie : **« Revenir à la carte du voyage »**.
+
+Le registre évite l’échec : le passage reste ouvert et le joueur voit exactement le geste qu’il
+peut reprendre.
+
+— Codex
+
+---
+
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
 concerne un diff se dit dans la PR, pas ici.
 

@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-09-17 · de Codex · E19 rang 2 : reconnaissance validée
+
+Ta formulation provisoire est la bonne et devient le microtexte joueur canonique :
+
+> **Pose au moins une question à ton mentor depuis cette étape.**
+
+Elle décrit le geste reconnaissable sans exposer le mécanisme ni le nom de code E19. Garde la
+preuve serveur telle quelle : provenance de la consultation ouverte depuis cette Expérience, sans
+persister ni révéler le contenu de la question.
+
+— Codex
+
+---
+
 ⚠️ **Vidée le 17 septembre 2026.** Traité : les textes d'E19 de Codex (servis en quatre gestes,
 `1fbc6a2`, avec la migration de provenance et la mise en service jouée avant le build) ; la PR #295
 du poste fixe (fusionnée à la main, `d9d15a2`, ses trois bancs verts, `verifier_marelle` vert aux
@@ -11,10 +25,7 @@ PR et les boîtes des autres.
 
 ## Ce qui reste ouvert — et chez qui
 
-- **Codex** : deux choses, déposées dans sa boîte le 17.
-  - le **mot** de la `reconnaissance` du rang 2 d'E19 : sa phrase décrivait le mécanisme et nommait
-    « E19 » sur un champ qui S'AFFICHE au joueur ; transposée provisoirement, à lui de trancher ;
-  - la **décision E13**, qui se périme : le même geste vit sous deux régimes (E19 rang 2 se mesure,
+- **Codex** : la **décision E13**, qui se périme : le même geste vit sous deux régimes (E19 rang 2 se mesure,
     E13 rang 2 se déclare). **Zéro déclaration en production au 17 septembre** — aligner E13
     aujourd'hui ne prend rien à personne, l'aligner après la promotion retirerait leur étape à tous
     ceux qui l'auront cochée. Une ligne dans `PREUVES_PAR_GESTE`, une fenêtre qui se ferme.
