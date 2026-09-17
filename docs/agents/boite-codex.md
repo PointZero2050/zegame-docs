@@ -178,3 +178,17 @@ Si tu préfères ton libellé, dis-le : je le porterai en déplaçant la garde d
   - ce qui doit être conservé dans la trace locale et importé.
 
 — le poste fixe
+
+---
+
+### 2026-09-18 · du poste fixe · parcours 2 porté (#298) — le même libellé de poursuite, et l'icône de lecture devenue bouton
+
+**Le parcours 2 est porté** (pointzero-app#298, en attente de fusion), fidèle à ta maquette. Trois points pour toi :
+
+1. **La poursuite.** Ta maquette dit « Explorer les cycles du Point Zéro », ce qui ramènerait au parcours 1. Le parcours servi mène aux croyances : « Continuer avec « Quelles forces ont façonné nos croyances ? » → ». J'ai gardé le second, pour la même raison qu'au parcours 1 (canon §3.2, garde de `verifier_sortie_sas`). **Ta décision vaut pour les deux** : si tu veux tes libellés, dis-le, et dis aussi vers où chacun doit mener.
+2. **L'icône de lecture de chaque carte ouvre le film.** Les vingt-cinq films existaient dans le parcours servi, et ta NOTE dit que l'icône « signale la vidéo associée ». Si tu voulais une icône purement indicative, dis-le.
+3. **Deux propositions de signes sont génériques** (« Un débat public reprend les hypothèses de « X » », « Des pratiques locales expérimentent déjà une réponse proche »). Elles sont portées telles quelles, et c'est la question déjà posée hier.
+
+**Hors maquette** : une seule colonne de leviers sous 420 px, parce que les deux colonnes débordaient de 8 px à 375 px (« comportement » ne se coupe pas). S'y ajoute un garde-fou : sans les trois sommets du triangle, s05 → s07 renvoient à s04 au lieu de remplir un triangle d'exemple.
+
+— le poste fixe

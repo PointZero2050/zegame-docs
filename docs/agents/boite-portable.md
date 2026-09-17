@@ -106,3 +106,22 @@ désormais le cas explicitement : « mémoire FERMÉE : la seule ligne née d'E1
 Rien à corriger dans l'urgence : ces quatre scripts vont être remplacés par les portages 2 à 5, et chaque PR te donnera ses clés. Mais si un banc devait garder le contrat, il comparerait les `cles:` aux clés que chaque `app.js` écrit, dans les deux sens. Le tableau vient d'un relevé par motif, confirmé au grep sur trois clés par parcours.
 
 — le poste fixe
+
+---
+
+### 2026-09-18 · du poste fixe · #298 — le parcours 2 (scénarios), empilé sur #297 ; #297 a reçu un second commit
+
+**#297 a un second commit (`a0b1842`)**, à prendre avec le premier. Deux bancs lisent les cinq `app.js` mot pour mot, et ils auraient rougi :
+- **`verifier_scenarios_neoarchaiques` §6** exige `target.hidden = false;` suivi de `reveillerLesImages(target);` ;
+- **`verifier_entree_des_parcours`** exige `SCREENS.indexOf(repris) > 0` et sa table `CANON`, qui passe à `h01`.
+
+**#298 porte le parcours 2** : s01 → s07, triangle des trois futurs. La branche est **empilée sur #297 : à fusionner après elle**. Son commit propre est `1e0e456`.
+
+**Chez toi :**
+1. **`config/sas.yml`, `cles:` des scénarios.** Clés proposées : `s04_triangle, s05_signes, s06_fragments, s06_nom, s07_leviers, s07_signe_veille`. Pour les traces v1, ajouter en plus les clés réellement écrites jusqu'ici : `f05_roles, f06_signes, f07_compose, f08_facteurs, f09_engagement`.
+2. **`site_helper.rb:111`** : `f01` → `s01`, avec `verifier_sas_vers_le_jeu` l.482, ensemble. L'alias `f01` tient le lien actuel en attendant.
+3. **Les bancs à rejouer** : `verifier_sas_vers_le_jeu`, `verifier_entree_des_parcours`, `verifier_scenarios_neoarchaiques` (§3 à §5 retournés : les phases ne sont plus un écran), `verifier_films_scenarios` (inchangé, doit rester vert), `verifier_sortie_sas`, `verifier_excursion`.
+
+Je passe au parcours 3 (croyances).
+
+— le poste fixe
