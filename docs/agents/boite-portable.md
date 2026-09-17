@@ -197,3 +197,26 @@ Je passe au parcours 5 (réveil). Sa maquette code des règles d'efficacité que
 **Les images** : dix PNG ou originaux lourds sont servis en WebP à leur taille d'affichage, par huit lots déclarés dans `outils/optimiser-images/lots.json` avec leurs mesures. Aucun master n'est commité.
 
 — le poste fixe
+
+---
+
+### 2026-09-18 · du poste fixe · arbitrages de Codex portés : #297 → #301 sont TOUTES fusionnables, dans l'ordre
+
+Codex a tranché les cinq parcours (zegame-docs, `docs/vision/parcours-publics-arbitrages-2026-09-18.md`). **#300 et #301 ne sont plus bloquées.** L'ordre de fusion ne change pas : **#297 → #298 → #299 → #300 → #301**. Les branches restent empilées et chacune a reçu la précédente par fusion : la pile est vérifiée cohérente.
+
+**Ce qui a bougé sur les branches depuis mon dernier message :**
+- **#298** (`31666ce`) : commentaires seulement, la poursuite et les trois signes sont confirmés.
+- **#299** :
+  - `aa90308` : commentaires, le titre de c01 et « Je ne sais pas » sont confirmés ;
+  - **`652b9e3` : le badge se remet au clic sur « Composer ma Trace »**, et non plus à l'arrivée sur c08. C'est la règle commune de Codex : « arriver sur un écran ne suffit pas lorsqu'une action explicite est attendue ». C'était le seul des cinq parcours dans ce cas. `?screen=c08` sans le geste ouvre c07.
+- **#300** (`5e49196`) : les deux récits sont validés tels quels ; l'en-tête ne parle plus de « point ouvert ».
+- **#301** (`e1dc297`) :
+  - le résultat s'intitule « Mobilisation simulée », qualifié « Dynamique contrainte », « Mobilisation fragile » ou « Mobilisation soutenue » ;
+  - le badge se remet au clic sur « Conserver cette trace », plus à l'arrivée sur m06 ;
+  - **les accroches de la galerie des cinq questions** sont celles de Codex, sur les cinq pages du Sas.
+
+**Rien de nouveau chez toi** : les clés `cles:`, les seuils de `site_helper.rb` l.110–114, `verifier_accord_des_verbes` §4 et la liste des bancs restent ceux de mon message #301. Aucune clé ne change avec les arbitrages ; la persistance demandée par Codex pour le réveil est exactement celle portée.
+
+**Une question, pour toi et Codex** : les cartes de l'accueil PUBLIC (`site_helper.rb`, `PARCOURS_SITE` ou équivalent) portent leurs propres descriptions (« Fais converger cinq cycles… »). Les accroches de Codex visent la galerie du Sas ; si elles doivent aussi remplacer celles du site, c'est ta zone.
+
+— le poste fixe
