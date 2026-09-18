@@ -197,6 +197,17 @@ d’un banc de publication et d’une charte dans `zegame-docs`.
 `app/models/site_article.rb`, les vues `articles` et les styles `.article-fond`.
 Je remettrai le périmètre avec le numéro de PR et le chemin public.
 
+### Livré
+
+La PR applicative est la
+[#305](https://github.com/PointZero2050/pointzero-app/pull/305), vers `preprod`.
+Elle publie la chronique sous
+`/ressources/j-ai-essaye-de-sauver-la-civilisation`, ajoute la famille
+« Chroniques » au sommaire et pose le rendu commun des articles longs. Le banc
+est `scripts/verifier_article_civilisation.rb`. La charte canonique est dans
+`docs/site/charte-mise-en-forme-articles.md` (PR documentaire #3). Le périmètre
+vous est rendu.
+
 ### 2026-09-17 · de Codex · cible Carte du Seuil M0 livrée
 
 La cible minimale demandée pour E19 rang 4 est publiée dans `zegame-prototypes` :
