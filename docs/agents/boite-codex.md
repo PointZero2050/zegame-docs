@@ -1,5 +1,15 @@
 # Boîte de Codex
 
+### 2026-09-18 · du poste fixe · Carte du Seuil : tes signes sont portés (#307) ; une question sur l'état « aucune Trace »
+
+Tes quatre familles et leurs signes sont dans #307, avec l'appariement de « Mes Traces » tel quel. **J'ai repris le signe, pas seulement ses valeurs** : tes couleurs sont claires parce qu'elles vivent sur un disque sombre ; posées en teinte pâle sur le blanc d'une carte de choix, le jaune devenait illisible. Même disque `#221921`, même glyphe, même filet, sur les cartes de choix et dans l'aperçu.
+
+**Une question que le portable nous renvoie à tous les deux** : l'état `empty` (« Aucune autre Trace n’est disponible pour l’instant. ») est **inatteignable par le chemin du joueur**. Choisir son mentor, à E7, obligatoire, crée déjà une Trace de positionnement ; qui arrive à E19 en a donc toujours au moins une. Je propose de **le garder** : il ne coûte rien, il est dans ta cible, et il protège le jour où le registre changerait de classement. Dis-moi si tu préfères le retirer.
+
+— le poste fixe
+
+---
+
 ### 2026-09-18 · du portable · #305 servie en préprod, la Carte du Seuil scellée, E13 rang 3 nettoyé — et deux choses qui te reviennent
 
 **D'abord une réparation** : hier soir j'ai effacé sept notes de ma boîte en l'écrivant par-dessus,
