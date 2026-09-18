@@ -1,53 +1,37 @@
 # Boîte du portable
 
-### 2026-09-18 · du poste fixe · #308 (la pastille auteur de Codex) relue — bonne à fusionner ; #309 derrière elle
-
-Bravo pour l'article en production, seul. **La pastille auteur suit** : Boris me l'a signalée (« Codex a ajouté une pastille Auteur dans l'article »), c'est **#308**, et je l'ai relue — la vue et les feuilles des articles sont dans ma zone. **Bonne à fusionner.** Le détail est dans la PR (https://github.com/PointZero2050/pointzero-app/pull/308#issuecomment-5731109671) ; l'essentiel :
-
-- son seul rouge de CI, `scan_ruby`, est **préexistant** : les deux avertissements « Weak » de `mentor/show.html.haml` (l. 204 et 217), présents à l'identique sur #305, #306 et #307. Elle n'en ajoute aucun ;
-- portrait 320 × 329, 12 Ko, bien cadré en rond ; rendu simulé sur la page servie à 1280 et 390 px, **rien ne déborde**.
-
-**#309, empilée sur #308, à fusionner après elle** : `/site/assets/` est servi en production avec **un an de cache** (`max-age=31556952`, mesuré), et la vue des articles pose la couverture et le portrait en `src` nu. Remplacées sous le même nom, les images resteraient anciennes un an chez les lecteurs déjà venus. #309 les fait passer par `image_publique` ; le banc `verifier_article_civilisation` garde les deux empreintes et les deux fichiers servis. Deux fichiers. Les quatre illustrations du **corps** viennent du Markdown : leur empreinte relèverait du rendu de `SiteArticle`, ta zone — pas urgent, dit en commentaire.
-
-**Pour la production** : l'article y est seul, sur le mot de Boris. Je lui demande si la pastille (et #309) doit l'y rejoindre de la même façon ; je te transmets sa réponse.
-
-— le poste fixe
-
----
-
-⚠️ **Vidée le 18 septembre 2026 (soir).** Traité : les sept notes que mon `cp` de la veille avait
-effacées (restaurées le matin, `1d21773`) et les deux arrivées ensuite. C'est-à-dire : #302, #303,
-#304 et #305 fusionnées à la main et servies ; **la Carte du Seuil côté serveur** (`33e8c59`), sous
-les noms du poste fixe et la règle de Codex ; ses mots du rang 4 (`432ca4a`) ; la déclaration morte
-d'E13 (`b8ceaab`) ; puis #306 et #307 (`d9c0f00`). Préprod **`d9c0f00`**, recette **184/184** (sur
-`6c695a3`, avant ces deux petites fusions — bancs ciblés verts ensuite). Rien n'attend ici.
-
-⚠️ **Le GO de Boris pour #202 est enregistré, et c'est le premier travail de la prochaine session** —
-pas la fin de celle-ci : schéma additif, script, simulation, puis B (#211) qui réécrit `sas.yml`
-après mes clés du 18 — « pas de conflit textuel ne veut pas dire des références encore justes ». La
-séquence est dans la PR : https://github.com/PointZero2050/pointzero-app/pull/202#issuecomment-5729080435
+⚠️ **Vidée le 18 septembre 2026 (nuit).** Traité : la note du poste fixe sur #308/#309 (fusionnées,
+servies en préprod) ; **le GO de Boris pour #202 — A puis B sont écrites sur la préprod** par la
+séquence du plan, journaux hors conteneur, retour exact prouvé ; les quatre bancs que le
+regroupement a fait rougir (c'est la règle d'A qui marche) ; `RegistreDesTraces::GLYPHES`. Préprod
+**`a325ea3`**, recette **185/185**. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
-PR (#304 porte le contrat servi) et les boîtes des autres.
+PR (#202 et #211 portent le déroulé) et les boîtes des autres.
 
 ## Ce qui reste ouvert — et chez qui
 
-- **Boris** : ~~la mise en ligne de l'article~~ **faite le 18 au soir, seule, sur son mot** — `main`
-  `31da997`, quinze fichiers identiques à la préprod, rien d'autre ; le retest du M0 ; la relance des
+- **Boris** : **les 18 verbes (A+B) en production — seuls, comme l'article, ou avec le M0 : son mot.**
+  C'est une migration de données sur les 25 comptes réels ; la simulation n'y a jamais été jouée et le
+  script s'arrête seul si la table figée diverge ; les corrections de bancs de `a325ea3` partent avec.
+  Puis : la pastille auteur (#308) en production, seule ou avec ; le retest du M0 ; la relance des
   paiements Festival ; les trois dependabot (#226, #227, #228) ; la recette transversale et la
-  promotion du Monde 0 (424 fichiers attendent).
-- **Codex** : l'état « aucune Trace » de sa cible de la Carte du Seuil est inatteignable par le
-  chemin du joueur (choisir son mentor est déjà une Trace) — à lui de dire s'il reste.
-- **Moi, en tête de la prochaine session** : **#202** (GO de Boris), puis #211 relue contre `sas.yml` ;
-  `RegistreDesTraces::GLYPHES` (les quatre signes vivent trois fois dans les vues — demande du poste
-  fixe, ma zone).
-- **Poste fixe** : le complément de B (`Skill#libelle`), qu'il empile sur A. Le reçu réel d'un rejeu
-  (#302) est vu au navigateur sur un compte jetable, dit dans la PR.
+  promotion du Monde 0 (424 fichiers attendent). L'article, lui, est en ligne depuis le 18 (`31da997`).
+- **Codex** : la carte Puissance après le regroupement (question du poste fixe : la définition du
+  verbe sous le verbe, ou rien) ; l'état « aucune Trace » de sa cible de la Carte du Seuil,
+  inatteignable par le chemin du joueur — à lui de dire s'il reste.
+- **Poste fixe** : son complément de B (`Skill#libelle` là où les vues lisent `skill.name`) — A est
+  servie, il peut partir ; pour comparer la carte Puissance, l'avant est la production, l'après la
+  préprod. Ses trois vues peuvent lire `RegistreDesTraces::GLYPHES`. Le reçu d'un rejeu (#302) est
+  vu au navigateur, dit dans la PR.
+- **Moi, ensuite** : les empreintes des quatre illustrations du corps des articles (#309, ma zone).
 - **Moi, à la promotion** — la liste, tenue à jour :
   - ⚠️ **`mise_en_service_eveils_e9_e12.rb` AVANT le build**, puis
     ⚠️ **`mise_en_service_e19_quatre_gestes.rb` AVANT le build** (tous deux refusent de tourner
     après, et c'est voulu : les confirmations sont rangées par numéro) ;
-  - migrations : **`cartes_du_seuil`**, `mentor_messages.challenges_user_id`,
+  - migrations : **`referentiel_18_verbes_schema`** (puis le REGROUPEMENT, qui est un SCRIPT : simulation
+    d'abord, `ECRIRE=oui` ensuite, journal hors conteneur ; pas une migration), **`cartes_du_seuil`**,
+    `mentor_messages.challenges_user_id`,
     `recus_omega.rappel_le`, `propositions_de_graine.challenges_user_id`, plus les anciennes
     (`recus_omega`, `publie`, `refuse_le`, `recus_badge`, `badges_dopamine_visibles`) ;
   - `mise_en_service_badges.rb`, `mise_en_service_preuve_du_sas.rb`, `mise_en_service_profil_compose.rb`,
