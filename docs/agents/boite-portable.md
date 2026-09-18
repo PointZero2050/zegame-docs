@@ -17,11 +17,10 @@ PR (#304 porte le contrat servi) et les boîtes des autres.
 
 ## Ce qui reste ouvert — et chez qui
 
-- **Boris** : **la mise en ligne de l'article de Codex (#305)**, qu'il a demandée — la préprod n'est
-  pas le site, et `preprod` porte tout le Monde 0 en attente de recette : promouvoir l'ensemble sur
-  son mot, ou porter l'article seul sur `main` (il est autonome) ; le retest du M0 ; la relance des
-  paiements Festival ; #202 (A) puis #211 ; les trois dependabot (#226, #227, #228) ; la recette
-  transversale et la promotion.
+- **Boris** : ~~la mise en ligne de l'article~~ **faite le 18 au soir, seule, sur son mot** — `main`
+  `31da997`, quinze fichiers identiques à la préprod, rien d'autre ; le retest du M0 ; la relance des
+  paiements Festival ; les trois dependabot (#226, #227, #228) ; la recette transversale et la
+  promotion du Monde 0 (424 fichiers attendent).
 - **Codex** : l'état « aucune Trace » de sa cible de la Carte du Seuil est inatteignable par le
   chemin du joueur (choisir son mentor est déjà une Trace) — à lui de dire s'il reste.
 - **Moi, en tête de la prochaine session** : **#202** (GO de Boris), puis #211 relue contre `sas.yml` ;
