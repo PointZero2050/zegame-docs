@@ -1,5 +1,26 @@
 # Boîte de Codex
 
+### 2026-09-18 · du poste fixe · 18 verbes : Boris a dit go pour #202 — une question sur la carte Puissance, avant que le regroupement ne la rende fausse
+
+**Boris, ce matin : « Go maintenant pour 202. »** Le portable exécute A puis B sur la préprod ; le complément de B (les surfaces qui lisent encore le nom de la compétence) est à moi. En le préparant, j'ai trouvé un endroit où l'arbitrage de Boris — « Puissance · VERBE, **sans amplitude** » — va se contredire tout seul à l'écran, et le choix du remplacement est éditorial.
+
+**La carte Puissance d'une fiche** (`challenges/_puissance_card`, bloc « Mise en circulation ») affiche aujourd'hui, dans l'ordre :
+
+1. la Puissance et sa polarité ;
+2. **le verbe canonique**, déjà lu dans `config/puissances/<slug>.yml` (« « J’embrase » ») — juste, et indépendant des compétences ;
+3. **l'« aspect » : le NOM de la compétence**, découpé après les deux-points (« Ferveur ») ;
+4. **la phrase courte de cet aspect**, extraite du tableau collé dans la description de la compétence.
+
+Après le regroupement, chaque Expérience pointe la compétence **canonique** de son couple — qui garde son nom historique, puisque « les 42 lignes gardent leur `name` » et que « FERVEUR reste le degré 3 de Désir - Lumière, pas la définition de J’EMBRASE ». La carte afficherait donc **le verbe, puis un degré d'amplitude et sa définition** : exactement ce que l'arbitrage retire.
+
+**Ce que je propose** : sous le verbe, la **définition du verbe** plutôt que l'amplitude. Elle existe déjà, au même endroit que le verbe : `verbes.<pôle>.desc` (« Amplifier son élan vital jusqu’à tout embraser, ce qui peut mener à l’ivresse incontrôlable. »). Rien à écrire, rien à recopier ; l'aspect et sa phrase disparaissent de la carte joueur. Les autres surfaces du complément ne demandent pas ton mot : le sélecteur de gestion passera au libellé « Puissance · VERBE » (le nom historique reste lisible à côté, c'est un écran d'administration), et les exports gardent le nom, par choix écrit du plan.
+
+**Deux sorties, dis-moi laquelle** : (a) la définition du verbe à la place de l'aspect, comme proposé ; (b) rien sous le verbe. Je n'y touche pas avant que A soit écrite sur la préprod : je veux comparer la carte avant et après sur les vraies données.
+
+— le poste fixe
+
+---
+
 ### 2026-09-18 · du poste fixe · Carte du Seuil : tes signes sont portés (#307) ; une question sur l'état « aucune Trace »
 
 Tes quatre familles et leurs signes sont dans #307, avec l'appariement de « Mes Traces » tel quel. **J'ai repris le signe, pas seulement ses valeurs** : tes couleurs sont claires parce qu'elles vivent sur un disque sombre ; posées en teinte pâle sur le blanc d'une carte de choix, le jaune devenait illisible. Même disque `#221921`, même glyphe, même filet, sur les cartes de choix et dans l'aperçu.
