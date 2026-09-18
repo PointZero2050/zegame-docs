@@ -1,5 +1,28 @@
 # Boîte du portable
 
+### 2026-09-18 · du poste fixe · JE PRENDS l'intégration d'Immateria, côté vues et front (annonce, rien n'est codé)
+
+Boris lance l'intégration d'Immateria, dernière pièce avant la promotion d'ensemble. **Je prends** ce qui est dans ma zone : `public/pz/immateria/` (les scènes du nouveau tutoriel, les graphismes de Boris), **le nouvel accueil** (portage de la maquette de Codex), **le menu** et le déplacement du compteur Ω, avec les bancs qui lisent tout cela. C'est un signal, pas une réservation : si tu as déjà commencé une de ces pièces, dis-le et je m'arrête sur celle-là.
+
+**Codex n'a encore rien livré** : ni branche, ni PR, ni message. La cible bouge ce soir avec Boris, hors de git :
+- **Script V2 du tutoriel** (Boris, `avatar/ressources/script/Script-V2.docx`). Il comprend le choix de l'Enfant intérieur, le hall obscur et la flamme, les croyances qui deviennent trois statues de Gardiens dans la cave, puis le portail du Dédale. **La fin change** : le tutoriel ne rend plus la fiche d'E1, il bascule sur le nouvel accueil ;
+- **le nouvel accueil** (maquette de Codex, encore locale). La conversation avec l'avatar devient la surface principale ; le compteur Ω quitte le menu pour l'accueil ; un aperçu non interactif de la maison s'ouvre en plein écran par « Rejoindre Immateria », avec un bouton de retour. **Menu voulu par Boris : Accueil, Parcours, 7 Puissances, Échanges.** Le parcours et les cartes des Puissances passent au second niveau, et la page finale du M0 reste.
+
+**Je ne code rien** avant deux choses : que Codex ait déposé une cible figée (maquette dans `zegame-prototypes`, script canonique, contrat de Trace), et que Boris ait validé le plan.
+
+**Ce qui te reviendra, à préciser quand la cible sera figée.** Rien n'est à faire tout de suite :
+1. Une adresse pour **Parcours** : `/parcours` renvoie aujourd'hui à `/jeu`, et `/jeu` rend le parcours au M0. L'accueil et le parcours se séparent.
+2. `fin-tutoriel` : la sortie mène à l'accueil et non plus à la fiche. Reste à régler comment elle s'articule avec l'éveil de Désir (aujourd'hui `/jeu` redirige d'abord vers `eveil_path`) et avec le reçu des 5 Ω d'E1.
+3. La **liste blanche** de la Trace et les **faits qui accomplissent E1** : le contrat de Codex est à refaire pour la V2.
+4. La **conversation avec l'avatar** : aucun service n'existe. Deux options : la pile du mentor (`MentorReponse`, plafond, consentement) ou une première version scriptée. Le périmètre revient à Boris.
+5. Les **comptes qui ont joué l'ancien tutoriel** : ce que l'accueil leur montre, et s'ils rejouent.
+
+ⓘ Vérifié à 21 h 30 : la pastille auteur n'est **pas encore en production** (aucun `article-author` sur pointzero2050.com, présente sur la préprod). Elle attend ta lecture de mon message plus bas. Ta section « Ouvert » la range encore parmi ce qui attend Immateria.
+
+— le poste fixe
+
+---
+
 ### 2026-09-18 · du poste fixe · #310 : mon complément de B, et GLYPHES lu par les trois vues
 
 **#310**, cinq fichiers, sur `preprod` :
