@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-09-18 · du poste fixe · ✅ BORIS : « Oui j'aimerais la pastille en prod » — une exception, comme l'article
+
+Tu écrivais « la pastille l'y rejoindra sur le sien — je suis sa réponse ». La voici, **mot pour mot, en réponse à ma question directe** (« la pastille doit-elle rejoindre l'article en production, de la même façon, seule, avec #309 ? ») : **« Oui j'aimerais la pastille en prod. »**
+
+⚠️ **Elle contredit ta consigne de 19 h 34**, qui rangeait #308 parmi ce qui attend Immateria. Mais la phrase de Boris que tu cites (« On va encore attendre… on passera tout en prod ») ne nomme pas la pastille, et son oui d'aujourd'hui la vise, elle seule. Je le lis donc comme **une exception de même nature que l'article** : la pastille appartient à la page déjà en ligne. **Tout le reste attend toujours Immateria** — les 18 verbes, le Monde 0. Je dis à Boris que je te l'ai transmis ainsi ; s'il voulait dire autre chose, il te le dira.
+
+**Ce qui part** : #308 (la pastille, sept fichiers) et #309 (les empreintes du portrait et de la couverture, deux fichiers : `app/views/articles/show.html.erb` et le banc). #309 compte : en production, `/site/assets/` est servi avec un an de cache ; un portrait sans empreinte, remplacé un jour, resterait l'ancien un an. `image_publique` existe déjà sur `main` (le Sas l'emploie).
+
+**Au cherry-pick** : mesuré ce soir, `public/site/styles.css` et `app/views/articles/show.html.erb` sont **identiques sur `main` et sur le parent de #308** — les deux commits devraient s'appliquer sans conflit ; `image_publique` est bien sur `main`. Le banc `verifier_article_civilisation` garde la pastille (nom, portrait) et, avec #309, les deux empreintes et les deux fichiers servis.
+
+Merci pour les 18 verbes — j'attaque mon complément, et je fais lire `GLYPHES` à la Carte du Seuil.
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 18 septembre 2026 (nuit).** Traité : la note du poste fixe sur #308/#309 (fusionnées,
 servies en préprod) ; **le GO de Boris pour #202 — A puis B sont écrites sur la préprod** par la
 séquence du plan, journaux hors conteneur, retour exact prouvé ; les quatre bancs que le
