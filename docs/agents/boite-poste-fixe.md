@@ -1,241 +1,9 @@
-### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
-
-Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
-
-1. Les WebP **remplacent les sceaux abstraits dans les quatre surfaces de badge** ; ne rends jamais les deux ensemble. Les fichiers `public/pz/sceaux/` restent disponibles pour leurs autres usages et le retour arrière.
-2. Le catalogue Dopamine, ses titres et ses conditions sont ceux de la table. Les clés existantes sont conservées quand elles existent. Point d’attention : la clé Sas `decodeur-cycles` prend l’image `decodeur-des-cycles.webp`.
-
-Les cinq badges de parcours publics se lisent de `TraceSas` et `config/sas.yml`; seul `point-zero-monde-0` se lit de `BadgeDeParcours`. Tu peux poursuivre les composants sur cette table. Le portable doit encore t’exposer les lots en attente et le raccord au reçu ; ne recrée pas ces faits dans la vue.
-
-— Codex
-
----
-
-### 2026-09-12 · de Codex · Badges : le lot serveur peut commencer
-
-Boris a dit « récupère et continue ». Le portable a donc le feu vert pour préparer le catalogue, les reçus de remise et les états serveur en PR sur `preprod`. Conserve la propriété des actifs et des quatre surfaces, mais attends ses noms d’objets exacts avant de brancher les données afin d’éviter deux contrats concurrents. Tu peux avancer sans risque sur la copie des 18 WebP, les composants visuels, le responsive, le clavier et la réduction du mouvement.
-
-— Codex
-
----
-
-### 2026-09-12 · de Codex · Catalogue badges tranché
-
-Réponse au point remonté par le portable : les 18 visuels constituent le nouveau catalogue M0 affiché. Les anciens seuils par Puissance sont remplacés par le sas d’éveil et l’état activé dans la Boussole ; les anciens seuils quantitatifs sont reclassés dans Dopamine ; les passages déjà attestés par un parcours ne produisent pas un second badge. Le détail et les clés stables sont dans le contrat mis à jour. Tu peux donc porter les quatre surfaces sur ces 18 entrées, sans prévoir de vignettes supplémentaires pour les 17 anciens seuils.
-
-— Codex
-
----
-
-### 2026-09-12 · de Codex · Série et attribution des badges M0 à porter
-
-**Attendu :** reprendre les visuels et les quatre moments d’affichage validés par Boris, après le raccord reprise/revoir de l’éveil déjà demandé par le portable.
-**Références :** `zegame-prototypes@5ab7a9e` pour les 18 visuels, puis `zegame-prototypes@63d55a5` pour les écrans — https://github.com/PointZero2050/zegame-prototypes/tree/63d55a5/badges-attribution-cible
-
-**Analyse d’impact prête :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-badges-attribution-contrat.md. Elle mesure le code sur `preprod@60584d7`, sépare ta part visuelle des faits à demander au portable et conserve les réglages existants de visibilité communautaire.
-
-La maquette `badges-attribution-cible/` porte quatre états :
-
-1. le badge de seuil est intégré au reçu d’Omégas de fin d’Expérience, sans seconde popup ;
-2. les badges Dopamine attendent silencieusement le retour naturel sur l’accueil du parcours, puis le Docteur Z.E.R.O. les remet ensemble au clic ;
-3. la fin du Monde 0 ouvre une page de clôture dédiée avec badge de parcours, chapitres, Puissances et total d’Omégas ;
-4. `Mes Accomplissements` conserve les trois familles Parcours, Seuils et Dopamine.
-
-Préserver le contrat de `NOTES.md` : aucun seuil, gain ni événement inventé dans la vue ; nombres de démonstration non portables ; attribution serveur idempotente ; aucune annonce avant validation effective ; aucun rappel rouge ou notification externe pour Dopamine. Si l’accueil, la clôture ou l’état « badges Dopamine en attente » manque côté serveur, demander les faits au portable sans créer de contrôleur, modèle ni règle de progression. La condition « deux futurs ouverts » ne doit pas attribuer à la fois le seuil qualitatif `Les futurs sont pluriels` et le badge Dopamine quantitatif `Un futur ne suffisait pas`.
-
-J’ai relevé ton retour sur #230 : les couleurs du dépôt font foi et l’accent de `L’Émotion` est correct. La source de maquette est alignée au commit `9ddf784` — https://github.com/PointZero2050/zegame-prototypes/commit/9ddf784
-
-— Codex
-
----
-
-### 2026-09-12 · de Codex · Porter l’éveil des six Puissances
-
-**Attendu :** porter strictement la maquette d’éveil dans `pointzero-app`, en commençant par le rang 2 d’E7 / Émotion déjà raccordé, puis préparer le même composant pour les cinq autres seuils M0.
-**Référence :** `zegame-prototypes` `main` au commit `ca0905b` — https://github.com/PointZero2050/zegame-prototypes/commit/ca0905b87eb5e7ee741f879c0d8d87552d3492be
-
-La cible est `devoilement-emotion-cible/?power=desir|volonte|imagination|emotion|communication|intuition`. Elle reprend le bandeau excursion validé, le chemin de fer Éprouver → Relier → Retrouver, les triades canoniques du référentiel à 18 verbes, le menu Boussole réel et les six sorties illustrées. Le sélecteur et la barre « MAQUETTE » sont uniquement des commandes de démonstration et ne vont pas dans l’application.
-
-Points de portage à préserver : icônes Ombre `ico-*-o.png` sur leur disque noir sans fond ni bordure ajoutés ; Tao Source sans cercle ajouté ; lemniscate violet à amplitude maximale commune ; trois cartes cliquables sans exemple secondaire ; activation de la ligne ciblée dans la Boussole ; emblème final fin dans la couleur de la Puissance avec point jaune et halo. La Transcendance reste hors de ce patron à trois verbes et demandera une proposition propre autour du Moteur.
-
-Le prototype simule les états en JavaScript. Dans Rails, lire la Puissance, l’Expérience, les fonctions accessibles et l’état d’éveil depuis les données serveur ; ne pas reprendre de stockage navigateur et ne pas attribuer de nouvel Oméga dans ce mini-jeu. Si une route ou un état manque, le demander au portable sans créer de contrôleur ni modifier la progression. Mettre à jour les bancs qui protègent le bandeau et le rendu d’E7, puis ouvrir une PR sur `preprod` avec captures ordinateur/mobile et recette clavier/réduction du mouvement.
-
-— Codex
-
-## 12 septembre — Codex : nouveau contenu E7 et maquette Émotion disponibles
-
-La demande directe de Boris remplace l’ancien E7 : rang1 = mentor choisi ET question enregistrée, sans attendre la réponse ; rang2 = Découvre la Puissance Émotion. Le détail avec les textes prêts à porter est ici : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-e7-mentor-devoilement-emotion.md
-
-Maquette produite à sa demande : https://github.com/PointZero2050/zegame-prototypes/tree/1e51ff1/devoilement-emotion-cible . Trois moments proposés : geste vécu, usages M0, activation dans le menu. La structure E7 est demandée par Boris ; le déroulé graphique reste une proposition à revoir, pas une généralisation déjà validée à toutes les Puissances.
-
-Desktop : tu as les textes attendus pour #222 et la découverte. Portable : revoir le critère global de réponse et le lien validation/éveil pour ne pas rendre la découverte inaccessible avant son propre accomplissement. Matrice de cas, préservation des anciens joueurs, moment du gain et suppression de la double popup à traiter dans la PR. E6 et E13 restent conformes à leur séparation. Aucun déploiement en production avant validation de Boris.
-
-Relève : corrections reçu, E6 solo, revoir et jumeau V2 rapportés en préprod dfc18a5 ; pas encore de recette navigateur Codex de ce lot. Les cinq images manquantes restent identifiées comme un lot séparé ; aucune génération lancée dans cette transmission. La question des textes de consentement reste à traiter séparément, sans modifier les accès des joueurs ici.
-
----
-## Ce que je retiens de la décision E6/E7 (12 septembre), avant de la purger
-
-Traitée de mon côté : **#222**, les seize lignes de texte d'E6 plus l'explication d'E7 rang 2.
-Ce qui doit survivre au message :
-
-· ⚠️ **Le YAML des parcours est lu À CHAUD** (`JourneyProgress.config`, appelé par
-  `SequenceDeGestes` l.283). Ce n'est pas une référence dormante comme `validation_authority` :
-  un texte changé ici est servi au déploiement suivant. C'est pour ça que #222 ne part pas seule.
-· ⚠️ **`validation_authority` et `auto_validated`, eux, NE SONT PAS lus** : la base fait foi,
-  `verifier_autorites_de_validation` compare les deux. Les changer dans le YAML seul ne corrige
-  rien et fait rougir ce banc. Deux champs voisins, deux régimes opposés.
-· Codex : « Portable : le routage E6/rang2 vers le mentor et l'autorité mentor doivent être revus,
-  pas seulement le texte […] **À traiter ensemble pour ne pas publier un CTA qui ouvre encore le
-  mentor.** »
-· **E13 garde son dialogue** — la décision ne vaut que pour E6.
-· Consigne complète : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-appel-solo-puis-mentor.md
-
----
-## 12 septembre — Codex : les 41 libellés revoir sont livrés
-
-https://github.com/PointZero2050/pointzero-app/pull/220 — b6bb253. Répond à #219 : Revoir la vidéo, Consulter ta réponse, Revoir ton hypothèse, puis libellé adapté à chaque geste. Raccord Struct/slice demandé au portable dans la PR ; vérifier que les portes donnent accès aux productions annoncées, sans effacement ni formulaire vierge présenté comme consultation. Tous les autres champs sont strictement conservés. Commentaire également déposé dans #219. Aucun déploiement ni rendu applicatif validé par Codex.
-
----
-## 12 septembre — Codex prend les libellés revoir
-
-Je prends les 41 textes `revoir` demandés pour #219, sur une branche éditoriale dédiée. Aucune modification des preuves, de la validation ni des routes. Vérification du raccord Struct/slice nécessaire, comme pour confirmation.
-
----
-## 12 septembre — Codex : dérivés du jumeau V2 disponibles, attente levée
-
-Boris m’a demandé de produire les versions optimisées. Les quatre WebP sont livrés : https://github.com/PointZero2050/zegame-prototypes/commit/bc4fa25 — parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v2-webp/.
-
-Original1254 : 378 268 octets (−88,4 % face au PNG) ; thumb80 : 2 338 ; medium400 : 36 724 ; content500 : 58 104. Même composition carrée, sans recadrage. LISEZ-MOI avec noms et consignes ; manifest avec dimensions et SHA256. Décodage des quatre contrôlé, 500 px inspecté visuellement.
-
-Portable : tu as les fichiers pour le rattachement annoncé via remplace_image, après vérification du nom attendu ; copier toutes les versions et contrôler la fiche/liste servie. Desktop : plus besoin de produire les dérivés V2 en parallèle. Aucun rattachement ni déploiement effectué par Codex.
-
----
-## 12 septembre — Codex : relève, réponses #203 et corrections du reçu
-
-Réponses éditoriales données dans #203 : https://github.com/PointZero2050/pointzero-app/pull/203#issuecomment-5644821192 — E12/1 déclaratif faute de source durable, phrase de réponse attendue retenue, preuves globales conservées. Ces questions ne bloquent plus ; les bancs rouges ne sont pas validés par cette réponse.
-
-Relecture du reçu : https://github.com/PointZero2050/pointzero-app/pull/214#issuecomment-5644820150 et https://github.com/PointZero2050/pointzero-app/pull/215#issuecomment-5644820686. Trois corrections : destination suivante réelle et périmètre de parcours ; atomicité Points/reçu malgré after_commit ; pas de recul du solde de coque avec un reçu historique. Raccord chapitre suivant/accueil de clôture précisé dans #214, sans consommation sur simple visite de carte.
-
-ProgressionInterne lue sur preprod9fbffbf et #216 fusionnée selon GitHub. Pas de recette visuelle authentifiée revendiquée. #210 raccordée confirmée par lecture de la livraison ; illustration V2 attend encore les dérivés d’après votre dernier message. Relecture #202/#211 reste distincte et en attente.
-
----
-## 12 septembre — Codex : Boris demande la transmission du bandeau final
-
-Référence finale de la maquette : https://github.com/PointZero2050/zegame-prototypes/commit/57b7a92 — dossier bandeau-excursion-progression-cible/. Elle complète 431f0b3 : le chemin de fer est désormais sur fond violet presque noir #20101f, distinct du contexte supérieur. Rendu contrôlé au navigateur. Boris : « Merci, pousse à Claude ».
-
-Conserver les trois variantes de la proposition : compteur du procès, semaine/Puissance, moment sans total pour les branches. Le README distingue simulation et raccord réel ; données et lien de retour de démonstration ne sont pas à recopier dans le Jeu. Utiliser cette dernière référence pour la suite du portage. Aucun déploiement applicatif effectué par Codex.
-
----
-## 12 septembre — Codex : maquette du bandeau contextuel
-
-À la demande de Boris, maquette livrée : https://github.com/PointZero2050/zegame-prototypes/commit/431f0b3 — bandeau-excursion-progression-cible/. Trois variantes : procès, semaine/Puissance, moment sans dénominateur. Contexte et retour en première ligne, progression dessous ; compteur compact sur mobile. Sélecteur et boutons réservés à la simulation. Corps et données illustratifs, aucun changement de règle. Rendu et variantes vérifiés au navigateur, retour réel à raccorder seulement après revue de Boris.
-
----
-## 12 septembre — Codex : recommandation progression du bandeau
-
-Revue demandée par Boris : docs/vision/m0-bandeau-excursion-progression.md. Recommandation : contexte/retour sur la première ligne, progression INTERNE facultative juste dessous, dans le même bandeau. Formats adaptés : compteur pour procès/QCM, jour+barre pour Drôle d’époque, section seule pour les parcours à branches ; canvas et questionnaires Immateria gardent leurs repères locaux. Pas de copie des étapes 1/2/3 de l’expérience.
-
-Attention au remplacement : masquer conseil-header fait perdre son repère de progression tant qu’il n’est pas transféré. Vérifié dans la branche bandeau-excursion ; ouverture directe préprod du procès montre Étape 1 sur 8. Document de recommandation, aucun portage autorisé par déduction de cette note.
-
----
-## 12 septembre — Codex : reçu violet et lemniscates, référence finale
-
-Boris demande de reprendre la charte de reconnaissance des étapes : texte blanc sur fond violet et lemniscate animé, aucun symbole Ω visible dans le reçu. Livré et contrôlé au navigateur : https://github.com/PointZero2050/zegame-prototypes/commit/9b049c1 (CSS v61, JS v37). Gain, ventilation des Puissances et solde utilisent le composant omegaGlyph existant ; halo de reconnaissance réutilisé. Contrat fonctionnel inchangé. Cette version remplace feb3221 pour le portage visuel.
-
----
-## 12 septembre — Codex : popup Omégas et Puissances livrée
-
-Référence : https://github.com/PointZero2050/zegame-prototypes/commit/feb3221 ; parcours-lineaire-m0-cible/?view=omega-demo. À la demande de Boris, reçu au chargement de l’expérience suivante, gain, ventilation par Puissance avec icônes et verbes, compteur animé ancien → nouveau total. Vérifié dans la maquette, pas encore dans l’application.
-
-Contrat d’impact et raccord serveur dans le README de cette référence : seul un gain réel produit un reçu, consommation unique, aucun gain inventé pour le rejeu ou le passage recette, preuve globale avant annonce. Les chiffres de démonstration ne sont pas le barème de préprod. Portable : préparer le reçu fiable ; desktop : porter le dialogue et les réglages d’accessibilité, vérifier téléphone. La page suivante simplifiée du prototype ne fait pas partie du portage.
-
----
-## 12 septembre — Codex : maquette de transition des Omégas
-
-Boris demande une popup à l’ouverture de l’expérience suivante, après complétion de la dernière étape, avec gain obtenu et animation du nouveau total. Je prends la maquette parcours-lineaire-m0-cible et son contrat de raccord. Pas de modification des services : une complétion réelle et un gain confirmé seront nécessaires, avec consommation unique du message ; rejeu et rafraîchissement ne doivent pas réannoncer un gain.
-
----
-## 12 septembre — Codex : les 41 confirmations M0 sont livrées
-
-PR à intégrer : https://github.com/PointZero2050/pointzero-app/pull/210 (f2e41be). Les libellés nomment l’action accomplie ; tous les autres champs restent inchangés. Le raccord nécessaire dans SequenceDeGestes et les points de recette sont détaillés dans la PR pour le portable. Desktop : vérifier les textes longs sur mobile après raccord. Pas de rendu ni de déploiement revendiqué. Illustration V2 du jumeau : aucun accusé d’intégration trouvé dans ma boîte à cette relève ; la référence reste d0f9dc7 dans zegame-prototypes.
-
----
-## 12 septembre — Codex reprend les confirmations éditoriales M0
-
-Je prends les 41 libellés `confirmation` demandés dans la dernière note, sur une branche dédiée depuis preprod. Livraison uniquement éditoriale, sans modification des preuves ni des droits. Référence de départ : pointzero-app preprod 069ac92 et votre message du 12 septembre dans boite-codex.md. Je relève aussi les cas où le texte proposé confond ouverture de page et action accomplie.
-
----
-## 12 septembre — Codex : utiliser la V2 symbolique pour Façonner mon jumeau
-
-Boris demande un style plus symbolique et moins réaliste, avec ses deux références DA. Nouvelle illustration livrée : deux figures géométriques de papier sculpté autour d’une graine lumineuse, sans personnage réaliste ni village littéral.
-
-**La V2 remplace la proposition V1 pour les dérivés et le rattachement.** Référence : https://github.com/PointZero2050/zegame-prototypes/commit/d0f9dc7
-Fichier : parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v2.png ; prompt, texte alternatif et consignes dans le .md voisin. Desktop : préparer les WebP fiche/liste depuis cette V2. Portable : utiliser ces nouveaux dérivés pour cette expérience, vérifier la donnée courante et le cadrage. Aucun changement des règles de progression. Intégration serveur non effectuée ni confirmée par Codex.
-
----
-## 12 septembre — Codex : illustration manquante de Façonner mon jumeau livrée
-
-Boris signale l’absence d’image sur la fiche préprod faconner-mon-jumeau, confirmée au navigateur. Illustration dédiée créée et poussée : une personne façonne son double de papier devant le Village d’Immateria, dans le style collage gravé M0.
-
-**Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/4e00ff8
-**Fichier :** parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v1.png ; note et prompt dans le .md voisin.
-
-Poste fixe : préparer les dérivés légers WebP, cadrage sûr gardant visages et mains, pour grande fiche et liste. Portable : rattacher le visuel à cette expérience via le mécanisme photo existant après contrôle de la donnée courante, puis vérifier la fiche servie. Ne pas servir le PNG de 3,1 Mo en vignette ni toucher aux règles du tutoriel. Aucun rattachement serveur effectué par Codex ; l’image est livrée, pas annoncée intégrée.
-
----
 # Boîte du poste fixe
-
-## 18 septembre 2026 — Codex : publication de la nouvelle chronique
-
-Boris m’a demandé de publier **« J’ai essayé de sauver la civilisation. Pour
-l’instant, j’ai vendu vingt places. »** et de fixer une charte de mise en forme
-réutilisable. Je prends temporairement le périmètre éditorial du site dans une
-branche isolée fondée sur `preprod@54d3cc9`. La livraison sera une PR, accompagnée
-d’un banc de publication et d’une charte dans `zegame-docs`.
-
-**Pendant cette passe, merci d’éviter** `content/articles/`, `config/articles.yml`,
-`app/models/site_article.rb`, les vues `articles` et les styles `.article-fond`.
-Je remettrai le périmètre avec le numéro de PR et le chemin public.
-
-### Livré
-
-La PR applicative est la
-[#305](https://github.com/PointZero2050/pointzero-app/pull/305), vers `preprod`.
-Elle publie la chronique sous
-`/ressources/j-ai-essaye-de-sauver-la-civilisation`, ajoute la famille
-« Chroniques » au sommaire et pose le rendu commun des articles longs. Le banc
-est `scripts/verifier_article_civilisation.rb`. La charte canonique est dans
-`docs/site/charte-mise-en-forme-articles.md` (PR documentaire #3). Le périmètre
-vous est rendu.
-
-### 2026-09-17 · de Codex · cible Carte du Seuil M0 livrée
-
-La cible minimale demandée pour E19 rang 4 est publiée dans `zegame-prototypes` :
-
-- branche : `codex/carte-du-seuil-m0-cible` ;
-- commit : `e54e5de` ;
-- dossier : `carte-du-seuil-m0-cible/` ;
-- états : `?state=compose`, `sealed`, `no-grain`, `empty`.
-
-Le parcours suit le contrat tranché par Boris : **relire la Graine fixe**, **choisir au moins une
-Trace réelle**, **prévisualiser**, puis **sceller explicitement**. Il comprend le refus sans
-sélection, l'absence de Graine, l'absence de Trace composable, l'état scellé daté et le retour
-prioritaire à l'Expérience. La Carte est privée ; aucun profil, Oméga ou Monde 1 n'est impliqué.
-
-Les contenus de démonstration sont signalés fictifs. L'intégration doit lire
-`RegistreDesTraces` et ne poser `m0-carte-scellee` qu'après l'écriture atomique réussie. Le banc
-`node carte-du-seuil-m0-cible/verify.mjs` est entièrement vert.
-
-Le parcours public 4 reste sur sa branche locale et n'est pas inclus dans cette livraison.
-
-— Codex
-
----
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
 concerne un diff se dit dans la PR, pas ici.
 
-*(aucun message en attente — vidée le 11 septembre 2026. Les messages traités restent lisibles
+*(aucun message en attente — vidée le 18 septembre 2026. Les messages traités restent lisibles
 dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
 
 ---
@@ -1636,3 +1404,205 @@ Les trois sont **portés dans #303**, et le contrat complet est dans `docs/visio
 - **Apostrophes** (second message) : oui à l'apostrophe typographique `’` dans les **textes français visibles** des deux récits ; **ne pas toucher aux clés ni aux identifiants techniques**. Porté dans #300 (`9fcbe3b`) : les six écrans de la vue, et dans le script les seuls littéraux affichés ; la clé `"'"` de la table d'échappement et l'expression `/[&<>"']/g` sont gardées par le script de reprise.
 - **Accueil public** (second message) : les cinq accroches de la galerie **remplacent celles de l'accueil public du site**, « un même parcours doit garder la même promesse sur les deux surfaces ». C'est `site_helper.rb`, **zone du portable** — la même décision lui a été envoyée par Codex, et je la lui ai redite dans #301 avec la liste exacte. De mon côté, l'accroche n°4 est passée à `’` (#301, `2c17109`) pour être identique au caractère près.
 - **E13** (demandé au portable, pas à moi) : la preuve du dialogue mentor s'aligne sur E19 ; la déclaration « J'ai discuté de cette relation avec mon mentor » disparaît. Quand ce sera servi, vérifier que la fiche d'E13 n'offre plus le bouton.
+
+## Ce que je retiens des deux messages de Codex restés au milieu de ma boîte (17 et 18 septembre), avant de les purger
+
+- **La Carte du Seuil** (cible `zegame-prototypes@e54e5de`, 17 septembre) : **portée dans #304**. Relire la Graine fixe, choisir au moins une Trace RÉELLE de `RegistreDesTraces`, prévisualiser, sceller explicitement ; `m0-carte-scellee` seulement après l'écriture atomique. Carte privée : ni profil, ni Oméga, ni Monde 1. Le lot serveur est demandé au portable.
+- **Les articles** (18 septembre) : Codex a pris puis **rendu** le périmètre éditorial (`content/articles/`, `config/articles.yml`, `site_article.rb`, vues `articles`, `.article-fond`). Il a publié « J’ai essayé de sauver la civilisation. Pour l’instant, j’ai vendu vingt places. » dans **#305** (`/ressources/j-ai-essaye-de-sauver-la-civilisation`, banc `verifier_article_civilisation.rb`), passée au portable.
+- **La charte des articles est canonique** : `docs/site/charte-mise-en-forme-articles.md`. À relire AVANT tout article : un seul `#`, un chapeau, des `##` qui annoncent le mouvement, pas de `<br>`, **deux à quatre phrases pivots** en gras seul, `>` réservé aux paroles citées, un CTA unique déclaré dans `config/articles.yml` (jamais répété dans le corps), typographie française (`’`, capitales accentuées, `œ`, insécables), trois natures (`canonique`, `article`, `chronique`) plus `legal`, et **un banc de publication** qui garde route, titre, sections, CTA et l’absence de `h1` en double.
+
+---
+
+## Archive — messages du 12 septembre restés en tête de boîte
+
+⚠️ **Déplacés ici le 18 septembre, pas effacés.** Ils trônaient au-dessus d'un second en-tête
+« # Boîte du poste fixe » : un message neuf de Codex a été déposé sous cet en-tête, au milieu du
+fichier, et je ne l'ai pas vu. Ces messages portent sur des lots livrés depuis (badges, éveils,
+reçu, libellés, illustration du jumeau) mais **n'ont pas été audités un par un** : à relire avant
+de les supprimer.
+
+### 2026-09-12 · de Codex · Appariement livré : poursuis les quatre surfaces
+
+Tes deux questions sont tranchées et la table des 18 est maintenant dans `docs/vision/m0-badges-attribution-contrat.md`, section « Appariement canonique ».
+
+1. Les WebP **remplacent les sceaux abstraits dans les quatre surfaces de badge** ; ne rends jamais les deux ensemble. Les fichiers `public/pz/sceaux/` restent disponibles pour leurs autres usages et le retour arrière.
+2. Le catalogue Dopamine, ses titres et ses conditions sont ceux de la table. Les clés existantes sont conservées quand elles existent. Point d’attention : la clé Sas `decodeur-cycles` prend l’image `decodeur-des-cycles.webp`.
+
+Les cinq badges de parcours publics se lisent de `TraceSas` et `config/sas.yml`; seul `point-zero-monde-0` se lit de `BadgeDeParcours`. Tu peux poursuivre les composants sur cette table. Le portable doit encore t’exposer les lots en attente et le raccord au reçu ; ne recrée pas ces faits dans la vue.
+
+— Codex
+
+---
+
+### 2026-09-12 · de Codex · Badges : le lot serveur peut commencer
+
+Boris a dit « récupère et continue ». Le portable a donc le feu vert pour préparer le catalogue, les reçus de remise et les états serveur en PR sur `preprod`. Conserve la propriété des actifs et des quatre surfaces, mais attends ses noms d’objets exacts avant de brancher les données afin d’éviter deux contrats concurrents. Tu peux avancer sans risque sur la copie des 18 WebP, les composants visuels, le responsive, le clavier et la réduction du mouvement.
+
+— Codex
+
+---
+
+### 2026-09-12 · de Codex · Catalogue badges tranché
+
+Réponse au point remonté par le portable : les 18 visuels constituent le nouveau catalogue M0 affiché. Les anciens seuils par Puissance sont remplacés par le sas d’éveil et l’état activé dans la Boussole ; les anciens seuils quantitatifs sont reclassés dans Dopamine ; les passages déjà attestés par un parcours ne produisent pas un second badge. Le détail et les clés stables sont dans le contrat mis à jour. Tu peux donc porter les quatre surfaces sur ces 18 entrées, sans prévoir de vignettes supplémentaires pour les 17 anciens seuils.
+
+— Codex
+
+---
+
+### 2026-09-12 · de Codex · Série et attribution des badges M0 à porter
+
+**Attendu :** reprendre les visuels et les quatre moments d’affichage validés par Boris, après le raccord reprise/revoir de l’éveil déjà demandé par le portable.
+**Références :** `zegame-prototypes@5ab7a9e` pour les 18 visuels, puis `zegame-prototypes@63d55a5` pour les écrans — https://github.com/PointZero2050/zegame-prototypes/tree/63d55a5/badges-attribution-cible
+
+**Analyse d’impact prête :** https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-badges-attribution-contrat.md. Elle mesure le code sur `preprod@60584d7`, sépare ta part visuelle des faits à demander au portable et conserve les réglages existants de visibilité communautaire.
+
+La maquette `badges-attribution-cible/` porte quatre états :
+
+1. le badge de seuil est intégré au reçu d’Omégas de fin d’Expérience, sans seconde popup ;
+2. les badges Dopamine attendent silencieusement le retour naturel sur l’accueil du parcours, puis le Docteur Z.E.R.O. les remet ensemble au clic ;
+3. la fin du Monde 0 ouvre une page de clôture dédiée avec badge de parcours, chapitres, Puissances et total d’Omégas ;
+4. `Mes Accomplissements` conserve les trois familles Parcours, Seuils et Dopamine.
+
+Préserver le contrat de `NOTES.md` : aucun seuil, gain ni événement inventé dans la vue ; nombres de démonstration non portables ; attribution serveur idempotente ; aucune annonce avant validation effective ; aucun rappel rouge ou notification externe pour Dopamine. Si l’accueil, la clôture ou l’état « badges Dopamine en attente » manque côté serveur, demander les faits au portable sans créer de contrôleur, modèle ni règle de progression. La condition « deux futurs ouverts » ne doit pas attribuer à la fois le seuil qualitatif `Les futurs sont pluriels` et le badge Dopamine quantitatif `Un futur ne suffisait pas`.
+
+J’ai relevé ton retour sur #230 : les couleurs du dépôt font foi et l’accent de `L’Émotion` est correct. La source de maquette est alignée au commit `9ddf784` — https://github.com/PointZero2050/zegame-prototypes/commit/9ddf784
+
+— Codex
+
+---
+
+### 2026-09-12 · de Codex · Porter l’éveil des six Puissances
+
+**Attendu :** porter strictement la maquette d’éveil dans `pointzero-app`, en commençant par le rang 2 d’E7 / Émotion déjà raccordé, puis préparer le même composant pour les cinq autres seuils M0.
+**Référence :** `zegame-prototypes` `main` au commit `ca0905b` — https://github.com/PointZero2050/zegame-prototypes/commit/ca0905b87eb5e7ee741f879c0d8d87552d3492be
+
+La cible est `devoilement-emotion-cible/?power=desir|volonte|imagination|emotion|communication|intuition`. Elle reprend le bandeau excursion validé, le chemin de fer Éprouver → Relier → Retrouver, les triades canoniques du référentiel à 18 verbes, le menu Boussole réel et les six sorties illustrées. Le sélecteur et la barre « MAQUETTE » sont uniquement des commandes de démonstration et ne vont pas dans l’application.
+
+Points de portage à préserver : icônes Ombre `ico-*-o.png` sur leur disque noir sans fond ni bordure ajoutés ; Tao Source sans cercle ajouté ; lemniscate violet à amplitude maximale commune ; trois cartes cliquables sans exemple secondaire ; activation de la ligne ciblée dans la Boussole ; emblème final fin dans la couleur de la Puissance avec point jaune et halo. La Transcendance reste hors de ce patron à trois verbes et demandera une proposition propre autour du Moteur.
+
+Le prototype simule les états en JavaScript. Dans Rails, lire la Puissance, l’Expérience, les fonctions accessibles et l’état d’éveil depuis les données serveur ; ne pas reprendre de stockage navigateur et ne pas attribuer de nouvel Oméga dans ce mini-jeu. Si une route ou un état manque, le demander au portable sans créer de contrôleur ni modifier la progression. Mettre à jour les bancs qui protègent le bandeau et le rendu d’E7, puis ouvrir une PR sur `preprod` avec captures ordinateur/mobile et recette clavier/réduction du mouvement.
+
+— Codex
+
+## 12 septembre — Codex : nouveau contenu E7 et maquette Émotion disponibles
+
+La demande directe de Boris remplace l’ancien E7 : rang1 = mentor choisi ET question enregistrée, sans attendre la réponse ; rang2 = Découvre la Puissance Émotion. Le détail avec les textes prêts à porter est ici : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-e7-mentor-devoilement-emotion.md
+
+Maquette produite à sa demande : https://github.com/PointZero2050/zegame-prototypes/tree/1e51ff1/devoilement-emotion-cible . Trois moments proposés : geste vécu, usages M0, activation dans le menu. La structure E7 est demandée par Boris ; le déroulé graphique reste une proposition à revoir, pas une généralisation déjà validée à toutes les Puissances.
+
+Desktop : tu as les textes attendus pour #222 et la découverte. Portable : revoir le critère global de réponse et le lien validation/éveil pour ne pas rendre la découverte inaccessible avant son propre accomplissement. Matrice de cas, préservation des anciens joueurs, moment du gain et suppression de la double popup à traiter dans la PR. E6 et E13 restent conformes à leur séparation. Aucun déploiement en production avant validation de Boris.
+
+Relève : corrections reçu, E6 solo, revoir et jumeau V2 rapportés en préprod dfc18a5 ; pas encore de recette navigateur Codex de ce lot. Les cinq images manquantes restent identifiées comme un lot séparé ; aucune génération lancée dans cette transmission. La question des textes de consentement reste à traiter séparément, sans modifier les accès des joueurs ici.
+
+---
+## Ce que je retiens de la décision E6/E7 (12 septembre), avant de la purger
+
+Traitée de mon côté : **#222**, les seize lignes de texte d'E6 plus l'explication d'E7 rang 2.
+Ce qui doit survivre au message :
+
+· ⚠️ **Le YAML des parcours est lu À CHAUD** (`JourneyProgress.config`, appelé par
+  `SequenceDeGestes` l.283). Ce n'est pas une référence dormante comme `validation_authority` :
+  un texte changé ici est servi au déploiement suivant. C'est pour ça que #222 ne part pas seule.
+· ⚠️ **`validation_authority` et `auto_validated`, eux, NE SONT PAS lus** : la base fait foi,
+  `verifier_autorites_de_validation` compare les deux. Les changer dans le YAML seul ne corrige
+  rien et fait rougir ce banc. Deux champs voisins, deux régimes opposés.
+· Codex : « Portable : le routage E6/rang2 vers le mentor et l'autorité mentor doivent être revus,
+  pas seulement le texte […] **À traiter ensemble pour ne pas publier un CTA qui ouvre encore le
+  mentor.** »
+· **E13 garde son dialogue** — la décision ne vaut que pour E6.
+· Consigne complète : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/m0-appel-solo-puis-mentor.md
+
+---
+## 12 septembre — Codex : les 41 libellés revoir sont livrés
+
+https://github.com/PointZero2050/pointzero-app/pull/220 — b6bb253. Répond à #219 : Revoir la vidéo, Consulter ta réponse, Revoir ton hypothèse, puis libellé adapté à chaque geste. Raccord Struct/slice demandé au portable dans la PR ; vérifier que les portes donnent accès aux productions annoncées, sans effacement ni formulaire vierge présenté comme consultation. Tous les autres champs sont strictement conservés. Commentaire également déposé dans #219. Aucun déploiement ni rendu applicatif validé par Codex.
+
+---
+## 12 septembre — Codex prend les libellés revoir
+
+Je prends les 41 textes `revoir` demandés pour #219, sur une branche éditoriale dédiée. Aucune modification des preuves, de la validation ni des routes. Vérification du raccord Struct/slice nécessaire, comme pour confirmation.
+
+---
+## 12 septembre — Codex : dérivés du jumeau V2 disponibles, attente levée
+
+Boris m’a demandé de produire les versions optimisées. Les quatre WebP sont livrés : https://github.com/PointZero2050/zegame-prototypes/commit/bc4fa25 — parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v2-webp/.
+
+Original1254 : 378 268 octets (−88,4 % face au PNG) ; thumb80 : 2 338 ; medium400 : 36 724 ; content500 : 58 104. Même composition carrée, sans recadrage. LISEZ-MOI avec noms et consignes ; manifest avec dimensions et SHA256. Décodage des quatre contrôlé, 500 px inspecté visuellement.
+
+Portable : tu as les fichiers pour le rattachement annoncé via remplace_image, après vérification du nom attendu ; copier toutes les versions et contrôler la fiche/liste servie. Desktop : plus besoin de produire les dérivés V2 en parallèle. Aucun rattachement ni déploiement effectué par Codex.
+
+---
+## 12 septembre — Codex : relève, réponses #203 et corrections du reçu
+
+Réponses éditoriales données dans #203 : https://github.com/PointZero2050/pointzero-app/pull/203#issuecomment-5644821192 — E12/1 déclaratif faute de source durable, phrase de réponse attendue retenue, preuves globales conservées. Ces questions ne bloquent plus ; les bancs rouges ne sont pas validés par cette réponse.
+
+Relecture du reçu : https://github.com/PointZero2050/pointzero-app/pull/214#issuecomment-5644820150 et https://github.com/PointZero2050/pointzero-app/pull/215#issuecomment-5644820686. Trois corrections : destination suivante réelle et périmètre de parcours ; atomicité Points/reçu malgré after_commit ; pas de recul du solde de coque avec un reçu historique. Raccord chapitre suivant/accueil de clôture précisé dans #214, sans consommation sur simple visite de carte.
+
+ProgressionInterne lue sur preprod9fbffbf et #216 fusionnée selon GitHub. Pas de recette visuelle authentifiée revendiquée. #210 raccordée confirmée par lecture de la livraison ; illustration V2 attend encore les dérivés d’après votre dernier message. Relecture #202/#211 reste distincte et en attente.
+
+---
+## 12 septembre — Codex : Boris demande la transmission du bandeau final
+
+Référence finale de la maquette : https://github.com/PointZero2050/zegame-prototypes/commit/57b7a92 — dossier bandeau-excursion-progression-cible/. Elle complète 431f0b3 : le chemin de fer est désormais sur fond violet presque noir #20101f, distinct du contexte supérieur. Rendu contrôlé au navigateur. Boris : « Merci, pousse à Claude ».
+
+Conserver les trois variantes de la proposition : compteur du procès, semaine/Puissance, moment sans total pour les branches. Le README distingue simulation et raccord réel ; données et lien de retour de démonstration ne sont pas à recopier dans le Jeu. Utiliser cette dernière référence pour la suite du portage. Aucun déploiement applicatif effectué par Codex.
+
+---
+## 12 septembre — Codex : maquette du bandeau contextuel
+
+À la demande de Boris, maquette livrée : https://github.com/PointZero2050/zegame-prototypes/commit/431f0b3 — bandeau-excursion-progression-cible/. Trois variantes : procès, semaine/Puissance, moment sans dénominateur. Contexte et retour en première ligne, progression dessous ; compteur compact sur mobile. Sélecteur et boutons réservés à la simulation. Corps et données illustratifs, aucun changement de règle. Rendu et variantes vérifiés au navigateur, retour réel à raccorder seulement après revue de Boris.
+
+---
+## 12 septembre — Codex : recommandation progression du bandeau
+
+Revue demandée par Boris : docs/vision/m0-bandeau-excursion-progression.md. Recommandation : contexte/retour sur la première ligne, progression INTERNE facultative juste dessous, dans le même bandeau. Formats adaptés : compteur pour procès/QCM, jour+barre pour Drôle d’époque, section seule pour les parcours à branches ; canvas et questionnaires Immateria gardent leurs repères locaux. Pas de copie des étapes 1/2/3 de l’expérience.
+
+Attention au remplacement : masquer conseil-header fait perdre son repère de progression tant qu’il n’est pas transféré. Vérifié dans la branche bandeau-excursion ; ouverture directe préprod du procès montre Étape 1 sur 8. Document de recommandation, aucun portage autorisé par déduction de cette note.
+
+---
+## 12 septembre — Codex : reçu violet et lemniscates, référence finale
+
+Boris demande de reprendre la charte de reconnaissance des étapes : texte blanc sur fond violet et lemniscate animé, aucun symbole Ω visible dans le reçu. Livré et contrôlé au navigateur : https://github.com/PointZero2050/zegame-prototypes/commit/9b049c1 (CSS v61, JS v37). Gain, ventilation des Puissances et solde utilisent le composant omegaGlyph existant ; halo de reconnaissance réutilisé. Contrat fonctionnel inchangé. Cette version remplace feb3221 pour le portage visuel.
+
+---
+## 12 septembre — Codex : popup Omégas et Puissances livrée
+
+Référence : https://github.com/PointZero2050/zegame-prototypes/commit/feb3221 ; parcours-lineaire-m0-cible/?view=omega-demo. À la demande de Boris, reçu au chargement de l’expérience suivante, gain, ventilation par Puissance avec icônes et verbes, compteur animé ancien → nouveau total. Vérifié dans la maquette, pas encore dans l’application.
+
+Contrat d’impact et raccord serveur dans le README de cette référence : seul un gain réel produit un reçu, consommation unique, aucun gain inventé pour le rejeu ou le passage recette, preuve globale avant annonce. Les chiffres de démonstration ne sont pas le barème de préprod. Portable : préparer le reçu fiable ; desktop : porter le dialogue et les réglages d’accessibilité, vérifier téléphone. La page suivante simplifiée du prototype ne fait pas partie du portage.
+
+---
+## 12 septembre — Codex : maquette de transition des Omégas
+
+Boris demande une popup à l’ouverture de l’expérience suivante, après complétion de la dernière étape, avec gain obtenu et animation du nouveau total. Je prends la maquette parcours-lineaire-m0-cible et son contrat de raccord. Pas de modification des services : une complétion réelle et un gain confirmé seront nécessaires, avec consommation unique du message ; rejeu et rafraîchissement ne doivent pas réannoncer un gain.
+
+---
+## 12 septembre — Codex : les 41 confirmations M0 sont livrées
+
+PR à intégrer : https://github.com/PointZero2050/pointzero-app/pull/210 (f2e41be). Les libellés nomment l’action accomplie ; tous les autres champs restent inchangés. Le raccord nécessaire dans SequenceDeGestes et les points de recette sont détaillés dans la PR pour le portable. Desktop : vérifier les textes longs sur mobile après raccord. Pas de rendu ni de déploiement revendiqué. Illustration V2 du jumeau : aucun accusé d’intégration trouvé dans ma boîte à cette relève ; la référence reste d0f9dc7 dans zegame-prototypes.
+
+---
+## 12 septembre — Codex reprend les confirmations éditoriales M0
+
+Je prends les 41 libellés `confirmation` demandés dans la dernière note, sur une branche dédiée depuis preprod. Livraison uniquement éditoriale, sans modification des preuves ni des droits. Référence de départ : pointzero-app preprod 069ac92 et votre message du 12 septembre dans boite-codex.md. Je relève aussi les cas où le texte proposé confond ouverture de page et action accomplie.
+
+---
+## 12 septembre — Codex : utiliser la V2 symbolique pour Façonner mon jumeau
+
+Boris demande un style plus symbolique et moins réaliste, avec ses deux références DA. Nouvelle illustration livrée : deux figures géométriques de papier sculpté autour d’une graine lumineuse, sans personnage réaliste ni village littéral.
+
+**La V2 remplace la proposition V1 pour les dérivés et le rattachement.** Référence : https://github.com/PointZero2050/zegame-prototypes/commit/d0f9dc7
+Fichier : parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v2.png ; prompt, texte alternatif et consignes dans le .md voisin. Desktop : préparer les WebP fiche/liste depuis cette V2. Portable : utiliser ces nouveaux dérivés pour cette expérience, vérifier la donnée courante et le cadrage. Aucun changement des règles de progression. Intégration serveur non effectuée ni confirmée par Codex.
+
+---
+## 12 septembre — Codex : illustration manquante de Façonner mon jumeau livrée
+
+Boris signale l’absence d’image sur la fiche préprod faconner-mon-jumeau, confirmée au navigateur. Illustration dédiée créée et poussée : une personne façonne son double de papier devant le Village d’Immateria, dans le style collage gravé M0.
+
+**Référence :** https://github.com/PointZero2050/zegame-prototypes/commit/4e00ff8
+**Fichier :** parcours-monde-0-cible/assets/experiences/00-faconner-mon-jumeau-v1.png ; note et prompt dans le .md voisin.
+
+Poste fixe : préparer les dérivés légers WebP, cadrage sûr gardant visages et mains, pour grande fiche et liste. Portable : rattacher le visuel à cette expérience via le mécanisme photo existant après contrôle de la donnée courante, puis vérifier la fiche servie. Ne pas servir le PNG de 3,1 Mo en vignette ni toucher aux règles du tutoriel. Aucun rattachement serveur effectué par Codex ; l’image est livrée, pas annoncée intégrée.
+
+---
