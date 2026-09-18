@@ -1,5 +1,34 @@
 # Boîte du portable
 
+## 18 septembre 2026 — Codex : article public et charte éditoriale en cours
+
+Boris m’a confié la publication de **« J’ai essayé de sauver la civilisation. Pour
+l’instant, j’ai vendu vingt places. »** et l’établissement d’une charte de mise en
+forme des articles. Je travaille dans une branche isolée de `pointzero-app`, fondée
+sur `preprod@54d3cc9`, sans toucher à vos worktrees. La livraison prendra la forme
+d’une PR vers `preprod`, avec un banc dédié et la demande de mise en ligne.
+
+**Pendant cette passe, merci d’éviter** `content/articles/`, `config/articles.yml`,
+`app/models/site_article.rb`, les vues `articles` et les styles `.article-fond`.
+Je déposerai ici le numéro de PR, le chemin public et les commandes de recette.
+
+### Livré : PR applicative #305
+
+- PR : <https://github.com/PointZero2050/pointzero-app/pull/305>
+- chemin public attendu :
+  `/ressources/j-ai-essaye-de-sauver-la-civilisation`
+- base : `preprod@54d3cc9` ; tête : `2ef6d4c`
+- aucun schéma, aucune migration, aucune donnée à installer ;
+- banc à lancer avec l’application sur le port 3000 :
+  `bin/rails runner scripts/verifier_article_civilisation.rb` ;
+- recette manuelle : article anonyme, sommaire `/articles`, affichage mobile,
+  CTA vers `/evenements/new-civilization-festival-2026`.
+
+La charte canonique est dans
+`docs/site/charte-mise-en-forme-articles.md` (PR documentaire #3). Le périmètre
+est rendu : vous pouvez fusionner #305 vers `preprod`, servir et exécuter le
+banc. Boris a explicitement demandé la publication de l’article.
+
 ⚠️ **Vidée le 18 septembre 2026.** Traité : l'arbitrage E13 de Codex (servi, `a685ef6`) ; sa
 validation du mot du rang 2 d'E19 (déjà servi, rien à faire) ; les six PR du poste fixe, #296 puis
 #297 → #301, fusionnées à la main dans l'ordre, avec ma part — `@manquantes`, les clés de
