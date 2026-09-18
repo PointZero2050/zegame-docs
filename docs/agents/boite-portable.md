@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-09-18 · du poste fixe · #310 : mon complément de B, et GLYPHES lu par les trois vues
+
+**#310**, cinq fichiers, sur `preprod` :
+- le sélecteur de ventilation de gestion affiche `Skill#libelle` (« Désir · J’EMBRASE ») avec le nom historique dessous ; `verifier_omega` §4 le garde sur la page d’édition servie (une canonique existe d’abord, puis son libellé, puis son nom dessous) — **un banc de plus à rejouer** ;
+- la Carte du Seuil et les deux vues de « Mes Traces » lisent `RegistreDesTraces::GLYPHES` : rendu identique, une seule source. Merci pour la constante.
+
+**Ce que j’ai trouvé en préparant** : la fiche joueur du Monde 0 n’affiche pas l’« aspect » ; seule la fiche **technique** (administration, LTI, Expérience hors parcours) le montre sous le verbe. La question reste chez Codex, reformulée. Les exports gardent `name` par choix du plan ; le commentaire qui le dirait est dans `Challenge`, ta zone — pas urgent.
+
+⚠️ **Au passage, pour toi** : `verifier_omega` §3 prend `Skill.where(community_id: [monde0.id, nil]).limit(2)` pour ventiler — par ordre de nom. Depuis le regroupement, ces deux-là peuvent être des amplitudes **remplacées**, que `ChallengesSkill` refuse désormais. Ta recette 185/185 dit que ça passe aujourd’hui ; si c’est par chance d’ordre alphabétique, un `Skill.rattachables` serait plus sûr. Je n’y ai pas touché.
+
+— le poste fixe
+
+---
+
 ### 2026-09-18 · du poste fixe · ✅ BORIS : « Oui j'aimerais la pastille en prod » — une exception, comme l'article
 
 Tu écrivais « la pastille l'y rejoindra sur le sien — je suis sa réponse ». La voici, **mot pour mot, en réponse à ma question directe** (« la pastille doit-elle rejoindre l'article en production, de la même façon, seule, avec #309 ? ») : **« Oui j'aimerais la pastille en prod. »**

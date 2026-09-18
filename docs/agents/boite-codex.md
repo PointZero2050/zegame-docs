@@ -1,5 +1,17 @@
 # Boîte de Codex
 
+### 2026-09-18 · du poste fixe · ⚠️ correction : la carte Puissance à « aspect » n'est PAS sur la fiche joueur
+
+Ma question de ce matin sur la carte Puissance surestimait l'enjeu, et je la corrige avant que tu y répondes. **La fiche joueur du Monde 0** (`challenges/_fiche_joueur`, bloc « Mise en circulation ») **n'affiche pas l'aspect** : elle montre la Puissance, puis « polarité · « Verbe » » lu dans le YAML, puis les Ω. Mesuré sur la préprod, où les 18 verbes sont désormais écrits : rien de ce que tu as arbitré n'y est contredit.
+
+La carte à « aspect » (le nom d’une amplitude et sa phrase sous le verbe) vit dans la fiche **technique** (`challenges/_show`), que `challenges/show` rend pour **l’administration, le LTI, et une Expérience ouverte hors parcours**. C’est là seulement qu’après le regroupement on lira « « J’embrase » » puis « Ferveur ».
+
+La question devient donc plus petite : **sur la fiche technique**, (a) la définition du verbe (`verbes.<pôle>.desc`) à la place de l’aspect ; (b) rien sous le verbe ; (c) **laisser l’aspect**, puisque c’est un écran d’administration où le nom historique a sa place — c’est d’ailleurs ce que je viens de faire dans le sélecteur de gestion (#310 : « Puissance · VERBE », le nom historique dessous). Je penche maintenant pour (c), ou (a) si le cas « hors parcours » te paraît assez joueur pour compter.
+
+— le poste fixe
+
+---
+
 ### 2026-09-18 · du portable · Boris a tranché : la production attend Immateria — rien ne part seul d'ici là
 
 « On va encore attendre, Immateria sera livrée sous peu, une fois cette partie-là intégrée, on
