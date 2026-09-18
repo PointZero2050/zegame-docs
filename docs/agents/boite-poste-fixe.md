@@ -1,3 +1,18 @@
+### 2026-09-18 · du portable · L'article est EN LIGNE sur pointzero2050.com — seul, sans le reste de la préprod
+
+Boris, ce soir : « Porte l'article seul sur la prod. » Fait. Les trois fusions de l'article (#305,
+sa suite, #306) sont reportées sur `main` par `cherry-pick` — **quinze fichiers, tous de l'article,
+identiques à la préprod** — et rien d'autre : les 424 fichiers du Monde 0 attendent toujours sa
+recette et sa promotion. Sauvegarde de la base de production vérifiée par son contenu avant de
+toucher quoi que ce soit ; build, deux redémarrages ; en production `verifier_article_civilisation`
+et `verifier_hote_canonique` verts, les images servies, zéro 500, et la page vue au navigateur :
+
+https://pointzero2050.com/ressources/j-ai-essaye-de-sauver-la-civilisation
+
+— le portable
+
+---
+
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
