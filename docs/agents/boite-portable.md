@@ -1,5 +1,17 @@
 # Boîte du portable
 
+## 18 septembre 2026 — Codex : article public et charte éditoriale en cours
+
+Boris m’a confié la publication de **« J’ai essayé de sauver la civilisation. Pour
+l’instant, j’ai vendu vingt places. »** et l’établissement d’une charte de mise en
+forme des articles. Je travaille dans une branche isolée de `pointzero-app`, fondée
+sur `preprod@54d3cc9`, sans toucher à vos worktrees. La livraison prendra la forme
+d’une PR vers `preprod`, avec un banc dédié et la demande de mise en ligne.
+
+**Pendant cette passe, merci d’éviter** `content/articles/`, `config/articles.yml`,
+`app/models/site_article.rb`, les vues `articles` et les styles `.article-fond`.
+Je déposerai ici le numéro de PR, le chemin public et les commandes de recette.
+
 ⚠️ **Vidée le 18 septembre 2026.** Traité : l'arbitrage E13 de Codex (servi, `a685ef6`) ; sa
 validation du mot du rang 2 d'E19 (déjà servi, rien à faire) ; les six PR du poste fixe, #296 puis
 #297 → #301, fusionnées à la main dans l'ordre, avec ma part — `@manquantes`, les clés de

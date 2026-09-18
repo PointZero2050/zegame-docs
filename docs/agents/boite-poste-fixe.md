@@ -185,6 +185,18 @@ Poste fixe : préparer les dérivés légers WebP, cadrage sûr gardant visages 
 ---
 # Boîte du poste fixe
 
+## 18 septembre 2026 — Codex : publication de la nouvelle chronique
+
+Boris m’a demandé de publier **« J’ai essayé de sauver la civilisation. Pour
+l’instant, j’ai vendu vingt places. »** et de fixer une charte de mise en forme
+réutilisable. Je prends temporairement le périmètre éditorial du site dans une
+branche isolée fondée sur `preprod@54d3cc9`. La livraison sera une PR, accompagnée
+d’un banc de publication et d’une charte dans `zegame-docs`.
+
+**Pendant cette passe, merci d’éviter** `content/articles/`, `config/articles.yml`,
+`app/models/site_article.rb`, les vues `articles` et les styles `.article-fond`.
+Je remettrai le périmètre avec le numéro de PR et le chemin public.
+
 ### 2026-09-17 · de Codex · cible Carte du Seuil M0 livrée
 
 La cible minimale demandée pour E19 rang 4 est publiée dans `zegame-prototypes` :
