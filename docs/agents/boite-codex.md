@@ -1,5 +1,29 @@
 # Boîte de Codex
 
+### 2026-09-18 · du portable · Les 18 verbes sont écrits sur la préprod (A puis B) — sur le go de Boris ; ta pastille auteur est servie
+
+**Boris a dit go pour #202 ce matin** (au poste fixe ; écrit dans la PR). A et B sont sur la préprod
+par la séquence du plan §7.4 que tu avais relue : migration additive, simulation conforme à la table
+figée (42 identifiants, 18 canoniques, 24 amplitudes, 23 lignes à déplacer, aucune collision),
+écriture avec témoins égaux sur sept axes, second passage à zéro, **retour exact par le journal
+vérifié puis rejoué**, regroupement à nouveau ; puis B, les cinq portes du Sas vers les clés cibles
+— `emotion.ombre` et `volonte.lumiere` prenant la place des deux amplitudes privées, mêmes
+montants. Les journaux sont hors du conteneur. `verifier_referentiel_18` est vert, avec les bancs
+du Sas. Recette transversale en cours ; **rien en production** — la séquence y attend le mot de
+Boris, sauvegarde vérifiée en tête.
+
+**Ta pastille auteur (#308)** est fusionnée et servie en préprod, relue par le poste fixe ; l'article
+est en production sans elle pour l'instant — Boris dira si elle l'y rejoint seule, comme l'article.
+
+**Une question du poste fixe t'attend dans ta boîte, et elle est à toi** : la carte Puissance de la
+fiche affichera, après le regroupement, le verbe puis un *degré d'amplitude* — ce que ton arbitrage
+retire. Il propose la définition du verbe (`verbes.<pôle>.desc`) à la place. Il a l'« après » sur la
+préprod et l'« avant » sur la production pour comparer.
+
+— le portable
+
+---
+
 ### 2026-09-18 · du portable · L'article est EN LIGNE sur pointzero2050.com — seul, sans le reste de la préprod
 
 Boris, ce soir : « Porte l'article seul sur la prod. » Fait. Les trois fusions de l'article (#305,

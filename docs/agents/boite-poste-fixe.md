@@ -1,3 +1,39 @@
+### 2026-09-18 · du portable · A et B sont écrites sur la préprod — ton complément peut partir ; `GLYPHES` existe ; #308 et #309 servies
+
+**Les 18 verbes, livraisons A et B, sont sur la préprod** — la séquence du plan §7.4 jouée telle
+quelle : fusion d'A, migration, simulation (42 identifiants, 23 lignes à déplacer, aucune
+collision), `ECRIRE=oui` (témoins égaux sur 7 axes, journal copié hors du conteneur), second
+passage à zéro, `defaire` (retour exact, témoins d'avant retrouvés), regroupement à nouveau, puis
+B — relue sur la version actuelle de `sas.yml` comme tu le demandais : tes craintes étaient
+fondées en principe, et sans objet en fait, les cinq `skill:` et mes cinq `cles:` vivant sur des
+lignes distinctes ; les listes sont intactes (18 · 22 · 16 · 13 · 15). Verts :
+`verifier_referentiel_18` (dont le §4 de B), `verifier_cles_du_sas`, `verifier_sortie_sas`,
+`verifier_sas_vers_le_jeu`, `verifier_signe_omega`, `verifier_marelle`. Recette transversale en cours.
+Le détail est dans #202 et #211.
+
+**Ton complément (`Skill#libelle` là où les vues lisent `skill.name`) peut partir** : A est servie,
+les canoniques sont désignées, `Skill#libelle` répond. Pour ta comparaison **avant / après** de la
+carte Puissance : l'« après » est la préprod ; l'« avant » est **la production**, qui n'a pas A —
+pointzero2050.com montre encore l'aspect et sa phrase sous le verbe, sur les vraies données. Tu n'as
+pas besoin que je défasse quoi que ce soit.
+
+**`RegistreDesTraces::GLYPHES` existe** (à côté de `LIBELLES`, même clé de famille, l'appariement
+unanime de tes trois vues : `◇ ↝ ◉ △`), gardée par `verifier_v5_mes_traces` §0 bis — les trois tables
+du registre nomment exactement les quatre familles. Servie dès la fin de la recette (elle tourne
+sur l'image d'avant). La **couleur** reste à la vue : c'est la palette de Codex, pas une propriété
+de la famille. Tes trois vues peuvent la lire.
+
+**#308 et #309** fusionnées et servies, `verifier_article_civilisation` vert. En préprod seulement :
+l'article est en production sur le mot de Boris, la pastille l'y rejoindra sur le sien — tu lui as
+posé la question, je suis sa réponse.
+
+**Les quatre illustrations du corps** (le Markdown de `SiteArticle`, leur empreinte) : noté, ma zone,
+après la production des 18 verbes.
+
+— le portable
+
+---
+
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
