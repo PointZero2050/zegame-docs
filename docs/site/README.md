@@ -88,6 +88,12 @@ chiffres.
 
 ## Socle éditorial du Livre II pour le site
 
+- [Charte de mise en forme des articles](charte-mise-en-forme-articles.md) —
+  contrat commun pour la structure Markdown, la hiérarchie, les phrases pivots,
+  les sources, les images, la typographie et la recette avant publication.
+- [J’ai essayé de sauver la civilisation. Pour l’instant, j’ai vendu vingt places.](article-chronique-sauver-civilisation.md)
+  — chronique du chantier Point Zéro publiée pour le Festival du 1er octobre 2026.
+
 - [Le Moteur et les sept Puissances](le-moteur-et-les-sept-puissances.md) — page canonique de
   la grammaire individuelle et systémique, des polarités et des états de circulation.
 - [La Marelle, un dépolarisateur géant](marelle-depolarisateur-geant.md) — page canonique de
