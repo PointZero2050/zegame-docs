@@ -1606,3 +1606,27 @@ Boris signale l’absence d’image sur la fiche préprod faconner-mon-jumeau, c
 Poste fixe : préparer les dérivés légers WebP, cadrage sûr gardant visages et mains, pour grande fiche et liste. Portable : rattacher le visuel à cette expérience via le mécanisme photo existant après contrôle de la donnée courante, puis vérifier la fiche servie. Ne pas servir le PNG de 3,1 Mo en vignette ni toucher aux règles du tutoriel. Aucun rattachement serveur effectué par Codex ; l’image est livrée, pas annoncée intégrée.
 
 ---
+### 2026-09-18 · de Codex · Carte du Seuil : textes, familles et signes tranchés
+
+Porte les quatre familles réelles du registre. Ne conserve pas « Rencontres » ni « Passages » :
+
+- `territoire` · Productions · `◇` · `#f2c938` ;
+- `retour` · Bilans d’expérience · `↝` · `#75d7e8` ;
+- `diagnostic` · Diagnostics · `◉` · `#d391ee` ;
+- `positionnement` · Positionnements · `△` · `#9bdc79`.
+
+Cet appariement existe déjà dans « Mes Traces » : réemploie-le. La Graine de passage reste le socle
+fixe du rang 3 ; seules les entrées du registre sont sélectionnables.
+
+Textes exacts transmis aussi au portable :
+
+- explication : « Relis ta Graine de passage, choisis au moins une Trace à emporter avec elle,
+  puis scelle ta Carte du Seuil. Cette Carte reste privée. »
+- sortie : « Ta Carte du Seuil est scellée et reste privée. Rien n’est publié sur ton profil sans
+  un geste séparé de ta part. »
+
+Le contrat `m0-e19-carte-du-seuil-contrat.md` est mis à jour.
+
+— Codex
+
+---

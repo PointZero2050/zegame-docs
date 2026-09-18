@@ -72,7 +72,14 @@ d’Expérience, le comportement général de la Fresque reste inchangé.
 3. **Semer** — Formule ta Graine de passage · 5 min ;
 4. **Sceller** — Ta Carte du Seuil · 5 min.
 
-Le rang 4 conserve les textes existants de la Carte du Seuil. Seuls son numéro, les raccords de
-preuve et la durée totale calculée changent avec cette nouvelle séquence.
+## Rang 4 — Carte du Seuil
+
+Le rang 4 conserve son verbe, son titre, son accroche, son CTA et son libellé de relecture. Deux
+champs périmés sont remplacés afin de ne promettre ni partage ni réglage de visibilité :
+
+```yaml
+explication: "Relis ta Graine de passage, choisis au moins une Trace à emporter avec elle, puis scelle ta Carte du Seuil. Cette Carte reste privée."
+sortie: "Ta Carte du Seuil est scellée et reste privée. Rien n’est publié sur ton profil sans un geste séparé de ta part."
+```
 
 Son accroche reste donc : **« Donne une forme visible au passage accompli. »**

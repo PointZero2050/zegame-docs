@@ -9,7 +9,7 @@ Mesuré sur `preprod@f2696a3`. Rien n'a été écrit : ce document précède l'i
 
 ## 1. Ce qui existe déjà, et qui couvre
 
-**`RegistreDesTraces` est l'agrégateur canonique des productions, et il est complet.** Cinq
+**`RegistreDesTraces` est l'agrégateur canonique des productions, et il est complet.** Quatre
 familles, toutes alimentées par des sources réelles :
 
 | famille | sources |
@@ -79,9 +79,9 @@ pour elle : une colonne `publiee` inutilisée finirait par être lue.
 
 `CarteDuSeuil`, lecture seule sauf deux points d'écriture explicites, comme `Graine` :
 
-- `composables(user)` → ce qui peut entrer sur la Carte : les entrées du registre **plus** les
-  Graines du joueur. ⚠️ Les Graines ne sont **pas** des Traces — le registre l'écrit — la Carte
-  est donc le premier objet qui les rassemble ; c'est un point à trancher, pas à supposer (§5).
+- `graine(user)` → la Graine de passage du rang 3, socle fixe de la Carte ;
+- `composables(user)` → les entrées du registre qui peuvent être choisies en plus de cette
+  Graine. Les autres Graines ne sont pas proposées comme des Traces.
 - `composition(user)` → le sous-ensemble choisi, résolu par `RegistreDesTraces.entree_de`, avec
   une **représentation honnête de ce qui a disparu** : une production supprimée depuis la
   composition doit se dire, jamais se taire (patron `Carte#disponible?`).
@@ -97,18 +97,38 @@ sceller. `composition` vide → sceller est refusé ; une Carte sans contenu n'e
 d'affichage des cartes de fil (Rencontre, Graine publiée, Sondage). Le service de la Carte du Seuil
 ne doit ni s'y greffer ni reprendre son nom nu.
 
-## 5. Décisions de raccord et point restant
+### Grammaire visuelle des quatre familles
+
+La Carte reprend strictement la grammaire déjà servie dans `Mes Traces` :
+
+| clé | libellé joueur | glyphe | couleur |
+|---|---|---:|---:|
+| `territoire` | Productions | `◇` | `#f2c938` |
+| `retour` | Bilans d'expérience | `↝` | `#75d7e8` |
+| `diagnostic` | Diagnostics | `◉` | `#d391ee` |
+| `positionnement` | Positionnements | `△` | `#9bdc79` |
+
+Ces signes viennent de la famille réelle fournie par `RegistreDesTraces`. La vue ne déduit pas
+une identité depuis le type de la Trace et ne recrée pas les familles fictives « Rencontres » ou
+« Passages » de la maquette.
+
+## 5. Décisions de raccord
 
 **Le sceau prouve le rang 4.** Une confirmation déclarative annoncerait une Carte qui pourrait ne
 pas exister. Le marqueur `m0-carte-scellee`, posé par l'écriture explicite de la Carte, entre donc
 dans `rangs_prouves`. Il ne crédite rien par lui-même : la fin de séquence reste l'unique autorité
 pour fermer E19 et produire son reçu.
 
-**Les Graines entrent-elles sur la Carte ?** Le canon d'E19 dit « Relis la Graine, choisis les
-éléments que tu souhaites partager ». Si la Graine de passage est le socle et les productions les
-éléments, alors la Carte porte une Graine + une sélection, et non une sélection homogène. La
-composition ci-dessus le permet (le `source_type` d'une Graine est `Messaging::Message`, déjà
-utilisé par `PartageDeRecit`), mais **le modèle éditorial se tranche avant le code**.
+**La Graine de passage est le socle fixe.** Elle vient du rang 3 et n'entre pas dans la sélection.
+La composition porte ensuite au moins une entrée réelle de `RegistreDesTraces`. Le scellement ne
+modifie aucune visibilité et ne publie rien.
+
+Textes joueurs du rang 4 :
+
+- `explication` : « Relis ta Graine de passage, choisis au moins une Trace à emporter avec elle,
+  puis scelle ta Carte du Seuil. Cette Carte reste privée. »
+- `sortie` : « Ta Carte du Seuil est scellée et reste privée. Rien n’est publié sur ton profil
+  sans un geste séparé de ta part. »
 
 ## 6. Recette de ce lot, quand il viendra
 
