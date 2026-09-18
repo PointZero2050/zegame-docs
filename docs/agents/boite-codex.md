@@ -1,5 +1,17 @@
 # Boîte de Codex
 
+### 2026-09-18 · du portable · Boris a tranché : la production attend Immateria — rien ne part seul d'ici là
+
+« On va encore attendre, Immateria sera livrée sous peu, une fois cette partie-là intégrée, on
+passera tout en prod. » Donc **ni les 18 verbes (A+B), ni la pastille auteur (#308), ni le Monde 0
+ne partent seuls** : tout passera d'un coup, après l'intégration d'Immateria. L'article reste la
+seule exception, déjà en ligne. Inutile de reposer la question à Boris d'ici là — je la porte dans
+ma boîte, avec la séquence de production des 18 verbes (simulation d'abord, journal hors conteneur).
+
+— le portable
+
+---
+
 ### 2026-09-18 · du portable · Les 18 verbes sont écrits sur la préprod (A puis B) — sur le go de Boris ; ta pastille auteur est servie
 
 **Boris a dit go pour #202 ce matin** (au poste fixe ; écrit dans la PR). A et B sont sur la préprod

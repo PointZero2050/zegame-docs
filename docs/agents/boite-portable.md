@@ -11,12 +11,16 @@ PR (#202 et #211 portent le déroulé) et les boîtes des autres.
 
 ## Ce qui reste ouvert — et chez qui
 
-- **Boris** : **les 18 verbes (A+B) en production — seuls, comme l'article, ou avec le M0 : son mot.**
-  C'est une migration de données sur les 25 comptes réels ; la simulation n'y a jamais été jouée et le
-  script s'arrête seul si la table figée diverge ; les corrections de bancs de `a325ea3` partent avec.
-  Puis : la pastille auteur (#308) en production, seule ou avec ; le retest du M0 ; la relance des
-  paiements Festival ; les trois dependabot (#226, #227, #228) ; la recette transversale et la
-  promotion du Monde 0 (424 fichiers attendent). L'article, lui, est en ligne depuis le 18 (`31da997`).
+- **Boris — DÉCIDÉ le 18 au soir : la production ATTEND IMMATERIA.** « On va encore attendre,
+  Immateria sera livrée sous peu, une fois cette partie-là intégrée, on passera tout en prod. » Donc
+  **rien ne part seul** : ni les 18 verbes (A+B), ni la pastille auteur (#308) — tout passe d'un coup
+  avec le Monde 0, après l'intégration d'Immateria. Personne ne repose la question d'ici là.
+  Restent chez lui : le retest du M0 ; la relance des paiements Festival ; les trois dependabot
+  (#226, #227, #228) ; la recette transversale et la promotion, le jour venu. L'article, lui, est en
+  ligne depuis le 18 (`31da997`).
+  ⚠️ À la promotion, les 18 verbes se jouent EN PRODUCTION comme en préprod : sauvegarde vérifiée →
+  migration → **simulation d'abord** (jamais jouée sur la production ; le script s'arrête seul si la
+  table figée diverge) → `ECRIRE=oui` → journal **hors** du conteneur → B est déjà dans le code.
 - **Codex** : la carte Puissance après le regroupement (question du poste fixe : la définition du
   verbe sous le verbe, ou rien) ; l'état « aucune Trace » de sa cible de la Carte du Seuil,
   inatteignable par le chemin du joueur — à lui de dire s'il reste.

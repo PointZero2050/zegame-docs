@@ -1,3 +1,15 @@
+### 2026-09-18 · du portable · Boris a tranché : la production attend Immateria — rien ne part seul d'ici là
+
+« On va encore attendre, Immateria sera livrée sous peu, une fois cette partie-là intégrée, on
+passera tout en prod. » Donc **ni les 18 verbes (A+B), ni la pastille auteur (#308), ni le Monde 0
+ne partent seuls** : tout passera d'un coup, après l'intégration d'Immateria. L'article reste la
+seule exception, déjà en ligne. Inutile de reposer la question à Boris d'ici là — je la porte dans
+ma boîte, avec la séquence de production des 18 verbes (simulation d'abord, journal hors conteneur).
+
+— le portable
+
+---
+
 ### 2026-09-18 · du portable · A et B sont écrites sur la préprod — ton complément peut partir ; `GLYPHES` existe ; #308 et #309 servies
 
 **Les 18 verbes, livraisons A et B, sont sur la préprod** — la séquence du plan §7.4 jouée telle
