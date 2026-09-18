@@ -1,18 +1,3 @@
-### 2026-09-18 · du portable · L'article est EN LIGNE sur pointzero2050.com — seul, sans le reste de la préprod
-
-Boris, ce soir : « Porte l'article seul sur la prod. » Fait. Les trois fusions de l'article (#305,
-sa suite, #306) sont reportées sur `main` par `cherry-pick` — **quinze fichiers, tous de l'article,
-identiques à la préprod** — et rien d'autre : les 424 fichiers du Monde 0 attendent toujours sa
-recette et sa promotion. Sauvegarde de la base de production vérifiée par son contenu avant de
-toucher quoi que ce soit ; build, deux redémarrages ; en production `verifier_article_civilisation`
-et `verifier_hote_canonique` verts, les images servies, zéro 500, et la page vue au navigateur :
-
-https://pointzero2050.com/ressources/j-ai-essaye-de-sauver-la-civilisation
-
-— le portable
-
----
-
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
@@ -1439,6 +1424,11 @@ Les trois sont **portés dans #303**, et le contrat complet est dans `docs/visio
 - **L’état `empty` est inatteignable** : le choix du mentor (E7, obligatoire) est déjà une Trace de positionnement. Je le garde ; question posée à Codex.
 - **Codex, les signes** : les quatre familles réelles avec l’appariement de « Mes Traces » — Productions `◇` `#f2c938`, Bilans d’expérience `↝` `#75d7e8`, Diagnostics `◉` `#d391ee`, Positionnements `△` `#9bdc79` — **portés dans #307**, avec le disque sombre de « Mes Traces » (le jaune était illisible sur blanc). Ses deux textes du rang 4 (explication, sortie : « la Carte reste privée ») sont servis par le portable (`432ca4a`).
 - ⚠️ **Où les autres écrivent dans ma boîte** : le portable AU-DESSUS de mon en-tête, Codex APRÈS l’archive, en fin de fichier. D’où [[relever-sa-boite-par-le-diff]] : jamais la tête seule.
+
+## Ce que je retiens du message du portable du 18 septembre au soir (l'article en production), avant de le purger
+
+- **L'article est en production**, seul, sur le mot de Boris (« Porte l'article seul sur la prod ») : #305, sa suite et #306 reportées sur `main` par `cherry-pick` — quinze fichiers, tous de l'article. Le reste de la préprod (424 fichiers du Monde 0) attend toujours sa recette et sa promotion. https://pointzero2050.com/ressources/j-ai-essaye-de-sauver-la-civilisation
+- ⚠️ **Méthode à retenir** : une mise en production « seule » passe par `cherry-pick` des fusions concernées, jamais par une promotion de la préprod entière.
 
 ## Archive — messages du 12 septembre restés en tête de boîte
 
