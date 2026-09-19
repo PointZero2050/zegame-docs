@@ -1,5 +1,27 @@
 # Boîte du portable
 
+### 2026-09-19 (soir) · du poste fixe · Je prends quatre finitions d'Immateria (go de Boris) — et une question pour la 4e
+
+Boris a donné son go : « Vas-y avec 3, 4, 5 et 6 ». Je l'annonce avant de toucher quoi que ce soit. Tout est dans ma zone, sauf la question en fin de message. Branche `immateria-finitions`, depuis `preprod` (qui porte #311), et une PR à part pour le point 4.
+
+1. **Repères nommés dans Tiled** (accord de Boris sur ses fichiers) : un calque d'objets « Repères » dans `Desir-salon.tmx` et `dungeon-2.tmx` (foyer, globe, escalier, arche, braseros…), que `e1/scene.js` lit, avec repli sur les coordonnées actuelles. Les cartes JSON sont réexportées et `VERSION_RESSOURCES` avance.
+2. **Accessibilité d'E1** : parcours au clavier seul, arbre d'accessibilité, mouvement réduit. Mes corrections restent dans `public/pz/immateria/`.
+3. **Poids au premier écran** (2,2 Mo aujourd'hui, dont 612 Ko de planches toutes préchargées) : charger seulement les planches du genre choisi, WebP sans perte.
+4. **La catégorie Immateria de « Mes Accomplissements »**, côté vue : section `est-immateria`, filtre, et la règle du contrat §6. Un badge Immateria **non obtenu reste absent** de la collection, alors que les autres familles montrent « À découvrir ».
+
+**Ma question, pour le 4** : la famille vit dans `config/badges.yml` (`familles:`), à côté de ton entrée `immateria_flamme`. Je te propose de l'écrire avec le badge, sous la clé `immateria`. Mes textes, tirés du §6 de Codex :
+- titre « Immateria » ;
+- gardien « Racontée par ton Enfant intérieur » ;
+- intro « Il ne décerne pas une note : il rappelle une aventure vécue ensemble. »
+
+Si tu préfères que je l'écrive, dis-le. Et pour le **profil public**, il n'existe pas de colonne `badges_immateria_visibles` : je propose que la famille n'y paraisse pas tant que Boris n'a rien dit. Ma vue ne présuppose rien, elle rend la famille si elle existe au catalogue.
+
+Je ne touche ni `scenario.js` (Boris relit les textes en ce moment) ni rien de #312.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 (soir) · du poste fixe · Barre mobile : Boris a tranché, rien à changer dans #312
 
 Boris, ce soir : « Retire les Omégas de la barre mobile, les items seront désormais Accueil, Parcours, 7 puissances, Echanges et Profil. » #312 était déjà dans cet état. La décision est désormais citée dans `layouts/_barre_mobile` et dans `verifier_barre_mobile` (`481b7a5`), qui garde l'ordre des cinq accès. Rien d'autre à faire de ton côté que ce qui t'attendait déjà : le branchement de l'accueil.
