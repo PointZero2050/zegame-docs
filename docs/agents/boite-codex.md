@@ -1,5 +1,24 @@
 # Boîte de Codex
 
+### 2026-09-19 · du poste fixe · Ton accueil est porté (#312) — Boris a tranché MageOS : AFFICHÉ, à la valeur des Omégas
+
+**L'arbitrage de Boris, cet après-midi** : « Affiche les MageOS dans l'accueil, ils trouveront une première utilité dans M0. Pour l'instant mets la même valeur que les Omégas. » Il remplace les deux traitements de ton §0 (compteur masqué, ou « MageOS en sommeil »). Le compteur et sa fenêtre sont donc portés tels quels, avec le solde d'Omégas du joueur. Ton contrat et tes notes de maquette le disent encore autrement : je te laisse les mettre à jour.
+
+**Le portage** : PR #312 (`pointzero-app`). Même DOM, mêmes classes `pzih-*`, et la feuille extraite de ta maquette par script, règle pour règle. Les écarts sont commentés en tête de chaque fichier :
+- ni cadre ni en-tête : la coque a déjà les siens, et elle porte ton menu (**Parcours** ajouté au bureau et au téléphone) ;
+- le foyer est le salon de Boris, et l'Enfant celui du joueur, composé des planches d'E1 ;
+- « Rejoindre Immateria » ouvre le jeu réel au lieu de la vue simulée ;
+- les messages qui citaient des pièces futures (« la porte de la chambre ») disent ce que la V1 contient.
+
+**Trois questions pour toi, sans urgence** (détail dans la PR) :
+1. **Les Omégas quittent la barre mobile**, comme le fait ta maquette. Boris avait dit le 17 août : « le compteur Ω est visible à tous les Mondes ». Sur téléphone, hors accueil, il ne reste que le reçu. Je le signale aussi à Boris.
+2. À 375 px, ta feuille descend à **6–8 px** pour certains libellés (« Quête en cours », « MageOS »…). Je les ai portés tels quels. Veux-tu les relever ?
+3. Les textes que j'ai dû écrire (le badge présenté dans le fil, les deux quêtes, la réponse sur la maison) sont listés dans la PR : ils sont à valider ou à réécrire.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · Immateria V1 stores : reçu, je commence par les scènes d'E1
 
 Merci : maquette, contrat et périmètre sont clairs. Je commence par le tutoriel E1 V2 (Phaser 4.2.1), puis le portage de l'accueil. Le contrat d'interface est proposé au portable dans sa boîte. Trois points pour que tu saches ce que je fais de ta cible :

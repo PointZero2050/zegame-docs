@@ -1,5 +1,30 @@
 # Boîte du portable
 
+### 2026-09-19 · du poste fixe · #312, le nouvel accueil : il attend ton branchement — et #311 a reçu un correctif de cache indispensable
+
+**1. #311 : un correctif ajouté (`bbd7eda`), à fusionner avec elle.** En production, `public/` est servi avec un an de cache. L'ancien tutoriel vivait **aux mêmes adresses** (`phaser.min.js`, `js/main.js`, `css/style.css`) : un joueur déjà venu aurait gardé Phaser 3 et l'ancien `main.js`, qui importe `./scenes/*`, retirés, et l'écran serait resté noir. Tout porte désormais une empreinte. Une carte d'import (`shared/_modules_immateria`) versionne chaque module, ce que j'ai éprouvé au navigateur : aucune requête nue. Dans `verifier_immateria`, la règle « pas de `/jeu` écrit en dur » aurait rougi sur le retour légitime de la maison habitée : elle est corrigée. Le détail est dans la PR.
+
+**2. #312 : le nouvel accueil** (maquette de Codex, portage strict). Il est empilé sur #311, à fusionner après elle. La vue `home/accueil` **n'est rendue nulle part** : c'est ton branchement.
+- `HomeController#index` la rend pour la coque (Mondes 0 et 1), l'interception d'éveil devant. **C'est à toi de dire** où vont le parcours linéaire et le tableau de bord d'après la clôture, que `/jeu` rend aujourd'hui. « Parcours » (menu, bureau et téléphone) vise déjà `Coque.parcours_du_monde`, qui donne `/parcours/point-zero-monde-0` au M0 ; la redirection de `/parcours` peut donc rester.
+- `@accueil` (Hash ; chaque clé absente a son repli, liste complète en tête de la vue) :
+  - `enfant: {nom:, apparence:}` : la Trace d'E1 V2, nil avant E1 ;
+  - `experience: {titre:, image:, url:}` ;
+  - `immateria_url` : E1 tant que le tutoriel n'est pas fini ;
+  - `quete` ;
+  - `badge: {titre:}` : présenté une seule fois, le reçu est consommé chez toi ;
+  - `actions: [{libelle:, url:}]` : liste blanche.
+- **MageOS = Omégas**, selon l'arbitrage de Boris de cet après-midi (« mets la même valeur que les Omégas »). La vue lit `current_user.omega` : rien à fournir de ton côté.
+- **Bancs** :
+  - `verifier_accueil_immateria` est nouveau. Il s'arrête en §1 tant que `/jeu` ne rend pas l'accueil.
+  - `verifier_barre_mobile` : Parcours y remplace les Omégas, dans le même lot.
+  - À la bascule, `verifier_pastille_et_omega` §1 (la pastille sur `/jeu`) et `verifier_accueil_m0` (qui lit `/jeu` comme parcours) changeront avec toi.
+
+Mesuré sur une simulation (la coque que sert la préprod, plus la vue rendue par HAML 7) : géométrie de la maquette au pixel ; 375 et 320 px sans débordement. **Rien n'a été joué sur un serveur.**
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · #311 : le tutoriel E1 V2 est jouable — ce qu'il attend de toi (rien ne casse d'ici là)
 
 **#311** (`immateria-e1-v2`, sur `preprod`) : le Script V2 de Boris en Phaser 4.2.1, dans ses pièces (`Desir-salon`, `dungeon-2`), traversé deux fois de bout en bout au banc local, reprise en pleine cave éprouvée. L'ancien tutoriel est retiré (27 Mo → 3,9 Mo). Quatre bancs réécrits dans la même PR : `verifier_immateria` (§1, §5 bis, §7), `verifier_fin_du_tutoriel` (§10), `verifier_excursion` (sortie d'E1). Aucun rejoué sur un serveur : c'est toi qui les joues à la fusion.
