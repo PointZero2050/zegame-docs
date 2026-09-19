@@ -1,4 +1,82 @@
 # Boîte du poste fixe
+### 2026-09-20 · de Codex · Carte complète des mini-jeux validés ou préparés
+
+Boris demande un rappel consolidé des **cinq parcours publics** et des **mini-jeux M0** travaillés
+avec Codex. Ce message est un inventaire de références, pas l'ordre de démarrage d'un nouveau lot :
+Immateria reste prioritaire tant que Boris ne réordonne pas les chantiers.
+
+#### 1. Les cinq parcours publics — lot déjà publié
+
+Dépôt `PointZero2050/zegame-prototypes`, branche distante
+`codex/parcours-decouverte-1-a-5`, commit `85aeb8c` :
+
+1. `parcours-humanite-convergence-cible/` — **Qu'arrive-t-il à l'humanité ?** ; signaux, douze
+   cycles, convergence des cinq cycles centraux vers Point Zéro, résistance, possibilité, Trace.
+2. `parcours-scenarios-triangle-cible/` — **Où allons-nous ?** ; futur redouté, désiré et probable,
+   signes présents, scénario hybride et leviers de bifurcation.
+3. `parcours-croyances-pratico-inerte-cible/` — **Quelles forces ont façonné nos croyances ?** ;
+   objet, capacité, instruction implicite, croyance, règle consciente, système, Trace.
+4. `parcours-paralysie-psychokernel-cible/` — **Pourquoi sommes-nous paralysés ?** ; récits Source
+   et Néant, guide choisi, deux séquences libres des cinq cartes, boucle PsychoKernel, cinq niveaux
+   de discernement, écart entre puissance technique et conscience collective.
+5. `parcours-reveil-mobilisation-cible/` — **Comment nous réveiller ?** ; trois actions ordonnées,
+   effets contextuels sur confiance, écoute, pouvoir d'agir, autonomie et contrainte.
+
+Le lot est une référence visuelle et pédagogique. Ne pas inventer depuis les maquettes une route,
+une preuve, un gain, un badge, un état de progression ou une persistance. Le portage doit repartir
+des faits serveur existants et demander au portable ce qui manque.
+
+#### 2. Mini-jeux M0 déjà livrés dans `zegame-prototypes/origin/main`
+
+- `devoilement-emotion-cible/` — patron commun d'éveil des **six Puissances** : Éprouver, Relier,
+  Retrouver, trois verbes et figures d'incarnation, activation dans la Boussole. La Transcendance
+  reste hors de ce patron. Historique final jusqu'à `5ab49fe` ; `README.md` décrit le contrat.
+- `cap-transcendance-m0-cible/` — E14 **premier cap et dévoilement de Transcendance** : Choisir une
+  Puissance, Lire, Orienter, Relier. Version complète `8b4bd79`, avec figures en pastilles ; preuve
+  attendue seulement après évaluation achevée et cap enregistré sur le même slug.
+- `carte-du-seuil-m0-cible/` — E19 **Carte du Seuil** : relire la Graine, choisir des Traces réelles,
+  prévisualiser, sceller atomiquement. Référence `e54e5de`; aucun GET ni aperçu ne constitue une
+  preuve, aucun contenu de remplacement ne doit être inventé.
+
+#### 3. Deux nouvelles maquettes M0 validées par Boris, encore locales
+
+- **E8 · L'écosystème Point Zéro** — branche locale
+  `codex/ecosysteme-point-zero-m0-v2`, commit `98f212e`, dossier
+  `ecosysteme-point-zero-m0-cible/`. Chemin local complet :
+  `C:\Users\pro\Dropbox\Boris\Point Zero 2050\Vibe Coding\.codex-tmp\zegame-prototypes-ecosysteme-m0-20260919\ecosysteme-point-zero-m0-cible\`.
+  Le joueur part d'une Graine réelle, choisit deux ou trois relais, nomme ce qui circule et un
+  prochain mouvement, puis enregistre une Trace privée. Écrans `need`, `relays`, `flow`, `result`.
+- **Conseil Oméga · circulation et futurs évités** — branche locale
+  `codex/conseil-omega-circulation-cible`, commit `71ef441`, dossier
+  `conseil-omega-circulation-cible/`. Chemin local complet :
+  `C:\Users\pro\Dropbox\Boris\Point Zero 2050\Vibe Coding\.codex-tmp\zegame-prototypes-conseil-omega-20260920\conseil-omega-circulation-cible\`.
+  Parcours en sept temps : prologue 2040, constellation et treizième siège, lecture des crises,
+  choix parmi les six Puissances, archive dystopique propre à chacune, réouverture de la
+  circulation, conséquence éditoriale, Atlas. Une archive explorée suffit à ouvrir la conclusion.
+
+Ces deux branches ne sont pas encore poussées. Elles sont complètes, vérifiées et accessibles sur
+le disque partagé. Ne pas les intégrer silencieusement : attendre la priorité de Boris, puis demander
+un push ou une branche de livraison si le travail doit commencer depuis un autre poste.
+
+#### 4. Avant le Zéro — piste conservée, pas encore de prototype
+
+Boris a validé l'idée d'ajouter des devenirs moins lisses au LDVELH : initiation à l'ayahuasca puis
+voie chamanique ; EMI puis accompagnement au sein des « Conscients » ; lecture du plan
+implicite/explicite par la physique et soupçon d'une réalité simulée ; individuation radicale hors
+des collectifs. Aucun dossier cible n'a encore été créé pour ce lot : ne pas chercher un fichier
+manquant et ne pas l'implémenter pendant Immateria. Il faudra d'abord reprendre le corpus actuel
+d'Avant le Zéro et écrire les embranchements complets.
+
+#### 5. Références transversales à ne pas redessiner
+
+- `bandeau-excursion-progression-cible/` : bandeau excursion validé, rail sombre `#20101f`.
+- `parcours-lineaire-m0-cible/` : chemin de fer des étapes et reçu d'Omégas de fin d'Expérience.
+- Les sélecteurs noirs, paramètres de démonstration et données fictives des maquettes ne vont pas
+  dans Rails. Les preuves serveur, l'idempotence et le retour à la fiche restent l'autorité.
+
+— Codex
+
+---
 
 ### 2026-09-20 · du portable · La focale du plan Materia est un zoom (`779a4d6`) — Boris ne voyait pas le décalage
 
@@ -1473,7 +1551,85 @@ Les trois sont **portés dans #303**, et le contrat complet est dans `docs/visio
 ## Archive — messages du 12 septembre restés en tête de boîte
 
 ⚠️ **Déplacés ici le 18 septembre, pas effacés.** Ils trônaient au-dessus d'un second en-tête
-« # Boîte du poste fixe » : un message neuf de Codex a été déposé sous cet en-tête, au milieu du
+« # Boîte du poste fixe
+### 2026-09-20 · de Codex · Carte complète des mini-jeux validés ou préparés
+
+Boris demande un rappel consolidé des **cinq parcours publics** et des **mini-jeux M0** travaillés
+avec Codex. Ce message est un inventaire de références, pas l'ordre de démarrage d'un nouveau lot :
+Immateria reste prioritaire tant que Boris ne réordonne pas les chantiers.
+
+#### 1. Les cinq parcours publics — lot déjà publié
+
+Dépôt `PointZero2050/zegame-prototypes`, branche distante
+`codex/parcours-decouverte-1-a-5`, commit `85aeb8c` :
+
+1. `parcours-humanite-convergence-cible/` — **Qu'arrive-t-il à l'humanité ?** ; signaux, douze
+   cycles, convergence des cinq cycles centraux vers Point Zéro, résistance, possibilité, Trace.
+2. `parcours-scenarios-triangle-cible/` — **Où allons-nous ?** ; futur redouté, désiré et probable,
+   signes présents, scénario hybride et leviers de bifurcation.
+3. `parcours-croyances-pratico-inerte-cible/` — **Quelles forces ont façonné nos croyances ?** ;
+   objet, capacité, instruction implicite, croyance, règle consciente, système, Trace.
+4. `parcours-paralysie-psychokernel-cible/` — **Pourquoi sommes-nous paralysés ?** ; récits Source
+   et Néant, guide choisi, deux séquences libres des cinq cartes, boucle PsychoKernel, cinq niveaux
+   de discernement, écart entre puissance technique et conscience collective.
+5. `parcours-reveil-mobilisation-cible/` — **Comment nous réveiller ?** ; trois actions ordonnées,
+   effets contextuels sur confiance, écoute, pouvoir d'agir, autonomie et contrainte.
+
+Le lot est une référence visuelle et pédagogique. Ne pas inventer depuis les maquettes une route,
+une preuve, un gain, un badge, un état de progression ou une persistance. Le portage doit repartir
+des faits serveur existants et demander au portable ce qui manque.
+
+#### 2. Mini-jeux M0 déjà livrés dans `zegame-prototypes/origin/main`
+
+- `devoilement-emotion-cible/` — patron commun d'éveil des **six Puissances** : Éprouver, Relier,
+  Retrouver, trois verbes et figures d'incarnation, activation dans la Boussole. La Transcendance
+  reste hors de ce patron. Historique final jusqu'à `5ab49fe` ; `README.md` décrit le contrat.
+- `cap-transcendance-m0-cible/` — E14 **premier cap et dévoilement de Transcendance** : Choisir une
+  Puissance, Lire, Orienter, Relier. Version complète `8b4bd79`, avec figures en pastilles ; preuve
+  attendue seulement après évaluation achevée et cap enregistré sur le même slug.
+- `carte-du-seuil-m0-cible/` — E19 **Carte du Seuil** : relire la Graine, choisir des Traces réelles,
+  prévisualiser, sceller atomiquement. Référence `e54e5de`; aucun GET ni aperçu ne constitue une
+  preuve, aucun contenu de remplacement ne doit être inventé.
+
+#### 3. Deux nouvelles maquettes M0 validées par Boris, encore locales
+
+- **E8 · L'écosystème Point Zéro** — branche locale
+  `codex/ecosysteme-point-zero-m0-v2`, commit `98f212e`, dossier
+  `ecosysteme-point-zero-m0-cible/`. Chemin local complet :
+  `C:\Users\pro\Dropbox\Boris\Point Zero 2050\Vibe Coding\.codex-tmp\zegame-prototypes-ecosysteme-m0-20260919\ecosysteme-point-zero-m0-cible\`.
+  Le joueur part d'une Graine réelle, choisit deux ou trois relais, nomme ce qui circule et un
+  prochain mouvement, puis enregistre une Trace privée. Écrans `need`, `relays`, `flow`, `result`.
+- **Conseil Oméga · circulation et futurs évités** — branche locale
+  `codex/conseil-omega-circulation-cible`, commit `71ef441`, dossier
+  `conseil-omega-circulation-cible/`. Chemin local complet :
+  `C:\Users\pro\Dropbox\Boris\Point Zero 2050\Vibe Coding\.codex-tmp\zegame-prototypes-conseil-omega-20260920\conseil-omega-circulation-cible\`.
+  Parcours en sept temps : prologue 2040, constellation et treizième siège, lecture des crises,
+  choix parmi les six Puissances, archive dystopique propre à chacune, réouverture de la
+  circulation, conséquence éditoriale, Atlas. Une archive explorée suffit à ouvrir la conclusion.
+
+Ces deux branches ne sont pas encore poussées. Elles sont complètes, vérifiées et accessibles sur
+le disque partagé. Ne pas les intégrer silencieusement : attendre la priorité de Boris, puis demander
+un push ou une branche de livraison si le travail doit commencer depuis un autre poste.
+
+#### 4. Avant le Zéro — piste conservée, pas encore de prototype
+
+Boris a validé l'idée d'ajouter des devenirs moins lisses au LDVELH : initiation à l'ayahuasca puis
+voie chamanique ; EMI puis accompagnement au sein des « Conscients » ; lecture du plan
+implicite/explicite par la physique et soupçon d'une réalité simulée ; individuation radicale hors
+des collectifs. Aucun dossier cible n'a encore été créé pour ce lot : ne pas chercher un fichier
+manquant et ne pas l'implémenter pendant Immateria. Il faudra d'abord reprendre le corpus actuel
+d'Avant le Zéro et écrire les embranchements complets.
+
+#### 5. Références transversales à ne pas redessiner
+
+- `bandeau-excursion-progression-cible/` : bandeau excursion validé, rail sombre `#20101f`.
+- `parcours-lineaire-m0-cible/` : chemin de fer des étapes et reçu d'Omégas de fin d'Expérience.
+- Les sélecteurs noirs, paramètres de démonstration et données fictives des maquettes ne vont pas
+  dans Rails. Les preuves serveur, l'idempotence et le retour à la fiche restent l'autorité.
+
+— Codex
+
+--- » : un message neuf de Codex a été déposé sous cet en-tête, au milieu du
 fichier, et je ne l'ai pas vu. Ces messages portent sur des lots livrés depuis (badges, éveils,
 reçu, libellés, illustration du jumeau) mais **n'ont pas été audités un par un** : à relire avant
 de les supprimer.
