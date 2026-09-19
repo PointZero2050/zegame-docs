@@ -5,6 +5,81 @@ Boris sur le nouvel accueil et l’Enfant intérieur en un contrat d’intégrat
 Elle ne constate aucun contrôleur, événement ou badge déjà livré. Les preuves serveur restent à
 relire dans `pointzero-app` avant toute implémentation.
 
+## 0. Périmètre de la première version pour les stores
+
+**Décision de Boris, 19 septembre 2026.** La première version publiée porte uniquement le seuil
+nécessaire pour installer Immateria dans l’application :
+
+1. l’introduction obligatoire d’E1 dans le foyer ;
+2. la descente dans la cave et la rencontre des premiers Gardiens ;
+3. la remontée au foyer et la fin réelle du tutoriel ;
+4. le retour vers le nouvel accueil à deux plans ;
+5. le premier badge Immateria **Une flamme à soi**, signalé par l’avatar et classé dans
+   `Mes Accomplissements`.
+
+Les autres pièces, leurs quêtes et les sept autres badges proposés par cette note constituent une
+mise à jour ultérieure. Elles restent décrites afin de préserver la direction d’ensemble, mais ne
+font pas partie du lot de publication initial.
+
+### Contenu minimal du nouvel accueil
+
+La première version doit déjà montrer :
+
+- la moitié Immateria avec l’avatar dans l’aperçu du foyer, son nom, son statut d’Enfant intérieur
+  et le CTA **Rejoindre Immateria** ;
+- la moitié Materia avec l’Expérience en cours, le joueur, ses Omégas et le CTA
+  **Continuer mon parcours** ;
+- le lemniscate animé comme articulation entre les deux plans ;
+- le composeur de dialogue avec un accueil de l’avatar et des amorces liées au désir présent ;
+- le signalement du premier badge, sans modale automatique ;
+- le menu principal **Accueil · Parcours · 7 Puissances · Échanges**.
+
+Le parcours, les cartes de Puissances et la page finale du Monde 0 restent en place. Le nouvel
+accueil ne les remplace pas : il devient le sas quotidien entre Materia et Immateria.
+
+### Dialogue de première version
+
+La validation d’E1 et la remise du badge ne doivent pas dépendre d’un modèle conversationnel. Le
+premier lot peut utiliser un accueil scripté et des réponses de repli déterministes. Si le dialogue
+IA est inclus, il reste une couche d’enrichissement : une indisponibilité réseau ou du service ne
+doit jamais empêcher le joueur de rejoindre Immateria ou de continuer son parcours.
+
+### MageOS dans la première version
+
+L’économie des MageOS n’étant pas encore définie, la première version ne doit pas afficher un
+solde numérique arbitraire ni simuler des gains. Deux traitements restent sûrs : masquer le
+compteur jusqu’à sa première source réelle, ou afficher un état non chiffré **MageOS en sommeil**
+avec une courte explication. Le choix visuel reste à arbitrer avant le portage final de l’accueil.
+
+### Données à conserver dès le premier lot
+
+La première version doit rendre durables, sans inventer les futures pièces :
+
+- l’archétype choisi ;
+- l’apparence et le nom de l’avatar ;
+- le désir fondamental et la réponse sur sa place actuelle ;
+- les formulations protectrices explicitement validées dans la cave ;
+- la fin terminale et idempotente d’E1 ;
+- la date d’obtention et l’état de présentation du badge **Une flamme à soi** ;
+- la version du script E1 ayant produit ces données.
+
+Les éveils de Puissance déjà conservés par Materia suffiront à initialiser les portes lors de la
+mise à jour des autres pièces. Il ne faut pas créer dès maintenant de faux états `visited` ou
+`quest_completed` pour des pièces qui n’existent pas encore.
+
+### Critères de sortie du premier lot
+
+- une traversée complète d’E1 sur mobile et ordinateur revient au nouvel accueil ;
+- quitter puis reprendre le foyer ou la cave retrouve le dernier état durable ;
+- un double clic, un rechargement ou un second onglet ne valide pas deux fois E1 et ne remet pas
+  deux fois le badge ;
+- le premier badge apparaît dans la catégorie Immateria et peut être présenté par l’avatar une
+  seule fois ;
+- continuer le parcours Materia reste possible après E1 sans autre visite d’Immateria ;
+- le dialogue indisponible possède un repli lisible ;
+- clavier, lecteur d’écran, mouvement réduit et petit écran conservent les actions essentielles ;
+- aucune donnée intime de la cave n’est publiée ou rendue communautaire par défaut.
+
 ## 1. Décision directrice
 
 L’entrée dans Immateria est obligatoire en E1 parce que la Marelle reste un jeu d’enfant et que la
