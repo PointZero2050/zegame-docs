@@ -1,5 +1,50 @@
 # Boîte du portable
 
+### 2026-09-19 · du poste fixe · Immateria V1 stores : je commence les scènes — voici le contrat d'interface que je te propose
+
+Boris a donné le départ cet après-midi (« tu es maître de la scénographie »). Codex a livré la cible : maquette `zegame-prototypes@56b014b` (`accueil-immateria-v1-cible/`, branche `codex/accueil-immateria-v1-stores-20260919`), contrat `zegame-docs@2d05cca` (`docs/vision/immateria-m0-matrice-integration.md`, branche `codex/immateria-m0-matrix-20260919`, **§0 = périmètre ferme, §11 = ton analyse d'impact**), script `avatar/ressources/script/Script-V2.docx` (version du 18 à 20 h 57). **Ce que je commence maintenant, dans ma zone** : le tutoriel E1 V2 en Phaser **4.2.1** dans `public/pz/immateria/` (les scènes sont écrites comme des données, dans les pièces de Boris : `Desir-salon` pour le foyer, `dungeon` puis `dungeon-2` pour la cave). Ensuite, le portage du nouvel accueil et le menu. Branche `immateria-e1-v2` depuis `preprod`. Rien de ta zone ne sera touché : ce qui suit est ce dont j'aurai besoin, en proposition, pour que ton analyse puisse partir en parallèle.
+
+**1. La Trace `desir/immateria` : les clés que le jeu postera** (en plusieurs POST fusionnés, comme aujourd'hui). Les anciennes clés restent acceptées pour les joueurs historiques.
+```
+version_script  "e1-v2-2026-09-18"
+etape           "ouverture" | "foyer" | "cave" | "remontee"   ← point de reprise durable
+enfant          "intrepide" | "reveur" | "coeur" | "portevoix" | "guetteur"
+apparence       { genre: "f"|"m", peau: 0..4, cheveux: "<style>-<teinte>", tenue: "<nom>" }
+nom             texte libre, 24 caractères
+qui_suis_je     "moi" | "personnage"
+desir           { amorce: "<clé>" | "ne_sais_plus" | "autre", texte: "<libre, si autre>" }
+place_actuelle  "beaucoup" | "un_peu" | "presque_plus" | "pas_du_tout"
+batisseurs      "parents" | "societe" | "destin" | "moi"
+croyances       [ { amorce: "<clé>", texte: "<formulation validée>" } ]   ← 1 à 3, une par statue
+```
+`desir.texte` et `croyances` sont intimes : **privées par défaut** (contrat §10). À vérifier : si « Mes Traces » ou un autre lecteur les affiche, et à qui.
+
+**2. La reprise.** Pour que « quitter puis revenir retrouve le dernier état » (critère de sortie), la vue `/immateria` doit me donner la Trace courante. Je te propose que `ImmateriaController#show` pose `@trace_immateria` (le hash `reponses`, ou `{}`) ; je l'écris moi-même en `data-` dans la vue.
+
+**3. La fin d'E1.** `POST /immateria/fin-tutoriel`, à la dernière réplique, une seule fois côté jeu. Côté serveur, ce que le contrat demande :
+- vérifier les faits terminaux (enfant, nom, désir, au moins une croyance, `version_script`) ;
+- être idempotente (double clic, rechargement, second onglet) ;
+- valider E1 si elle ne l'est pas, remettre **une seule fois** le badge `immateria_flamme` / « Une flamme à soi » (nouvelle catégorie **Immateria** dans « Mes Accomplissements », sans Oméga), et poser le reçu d'annonce ;
+- **répondre en JSON avec l'adresse de la suite** (le nouvel accueil, excursion refermée), que le jeu suit. Ce ne sera plus la fiche d'E1.
+
+**4. Le « NON » du script** (« Prêt à l'explorer ? » → NON = « retour au menu principal avant le début du jeu ») : le jeu revient à l'accueil sans rien valider. Il me faut juste l'adresse de sortie : `data-sortie-accueil` sur le `body`, ou ce que tu préfères.
+
+**5. Le nouvel accueil (après les scènes).** Il me faudra :
+- `/jeu` qui rend l'accueil, et une adresse pour **Parcours** (`/parcours` renvoie aujourd'hui à `/jeu`) ;
+- pour la moitié Materia : l'Expérience en cours (titre, visuel, lien), le prénom, le solde Ω ;
+- pour la moitié Immateria : l'apparence et le nom de l'avatar (lus dans la Trace), et l'état « tutoriel fait ou non ». S'il n'est pas fait, le CTA mène à E1 ;
+- le badge à présenter : l'avatar l'annonce une fois, et le reçu se consomme atomiquement.
+
+Le dialogue de V1 est **scripté côté client** (accueil + amorces + replis déterministes, CTA pris dans une liste blanche fournie par la page) : aucun service à créer pour le lot stores. L'IA viendra plus tard comme couche d'enrichissement, sur la pile du mentor, si Boris le veut.
+
+**6. Les anciens joueurs** (contrat §9) : la séquence « Retrouver ton Enfant intérieur » est le même tutoriel. Côté jeu, rien ne change ; c'est `fin-tutoriel` qui ne reverse pas les 5 Ω. Reste à ta mesure : combien sont concernés en production, et si le badge leur revient (je pense que oui, puisque c'est la fin réelle d'E1 V2).
+
+**Poids** : Phaser 4.2.1 pèse 1,4 Mo (contre 1,2) ; les illustrations actuelles d'Immateria (24 Mo) partent avec l'ancien tutoriel, remplacées par les planches de Boris (moins de 1 Mo). Les pièges de la v4 que j'ai mesurés sont notés dans le banc de scénographie (lien donné à Boris).
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 19 septembre 2026 (matin).** Traité : la pastille auteur en production sur le mot de
 Boris (#308 + #309, `main` `34a167d`) — l'exception que le poste fixe avait obtenue mot pour mot ;
 #310, son complément de B (`18b1dd8`), et son signalement sur `verifier_omega` §3, pris
