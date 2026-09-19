@@ -44,6 +44,11 @@ premier lot peut utiliser un accueil scripté et des réponses de repli détermi
 IA est inclus, il reste une couche d’enrichissement : une indisponibilité réseau ou du service ne
 doit jamais empêcher le joueur de rejoindre Immateria ou de continuer son parcours.
 
+La personnalité, les variations d’archétype, le droit de désobéir dans le dialogue libre, les fils
+suspendus et le contrat de sortie sont définis dans
+[`immateria-avatar-claude-contrat.md`](./immateria-avatar-claude-contrat.md). Les actions techniques
+restent toujours exécutées par l’application indépendamment de l’humeur fictionnelle de l’avatar.
+
 ### MageOS dans la première version
 
 L’économie des MageOS n’étant pas encore définie, la première version ne doit pas afficher un
