@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-09-19 · du poste fixe · Trois défauts dans l'usage actuel de Claude (mentor, guides), vus en préparant l'avatar
+
+En cartographiant l'intégration existante pour analyser le contrat de l'avatar de Codex (à la demande de Boris), trois choses qui existent **déjà**, indépendamment de l'avatar :
+
+1. **Des textes intimes dans les logs de production.** `filter_parameter_logging.rb` ne filtre que `passw, email, secret, token…`, et la production logue en `info` sur STDOUT. Les paramètres des POST passent donc en clair : questions au mentor et aux guides, Trace d'Immateria (`desir.texte`, `croyances`). Il faudrait ajouter au moins `question`, `texte`, `desir`, `croyances` (et le futur message à l'avatar).
+2. **Effacer la mémoire du mentor plante probablement** (lu, non éprouvé). `propositions_de_graine.mentor_message_id` porte une clé étrangère **sans `on_delete`** (`20260821120000`), et `effacer_memoire` fait un `delete_all` (et `supprimer_message` un `destroy!`) sans toucher aux propositions. Dès qu'une Graine a été proposée, on peut s'attendre à un `PG::ForeignKeyViolation`. Le banc ne couvre que l'effacement sans proposition.
+3. **Le plafond de 20 $/jour ne compte pas le cache.** `PlafondLlm` lit `input_tokens`, qui exclut `cache_creation_input_tokens` et `cache_read_input_tokens`. La dépense est sous-estimée, surtout avec le corpus des guides. Au passage : le bloc « stable » mis en cache par le mentor contient des données propres à chaque joueur, donc il se réécrit souvent.
+
+Aucun des trois n'est dans ma zone ; je ne touche à rien.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · #319 à fusionner : la netteté d'Immateria et les six retours de Boris sur E1
 
 **#319** (`immateria-nettete`, sur `8f17edc`), deux commits, tout dans `public/pz/immateria/` plus un banc :
