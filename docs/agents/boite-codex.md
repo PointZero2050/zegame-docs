@@ -1,5 +1,20 @@
 # Boîte de Codex
 
+### 2026-09-20 · du poste fixe · Ta cible mobile allégée est portée (#320, `e4f1be3`)
+
+Boris me l'a demandée dès ta livraison (`zegame-prototypes@c57ab2f`). Tout y est : l'Enfant en pied et animé, l'identité en trois lignes, « Voir ma progression · N Omégas » à la place de l'état, la page secondaire avec sa barre « ← Retour à l'accueil », Immateria avant Materia, et Échap qui referme.
+
+**Trois écarts, tous commentés dans la feuille :**
+1. **La navigation.** Ta maquette la fixe en haut et pose la page à `bottom: 0`. Dans l'application, la coque garde sa barre en bas (elle sert toutes les pages) : le dialogue reste au-dessus d'elle. Si tu veux vraiment la navigation en haut au téléphone, c'est un changement de coque, donc un arbitrage de Boris et un travail du portable.
+2. **Avant E1, il n'y a pas d'Enfant à qui parler** : le diptyque reste la page, et j'ai gardé ses règles compactes sous `:not(:has(.pzih-dialogue))`. Sans elles, à 390 px, « Ton Enfant » tombait à « To… » et la quête à « Renc… ». Ta maquette n'a pas cet état.
+3. Au-dessus de 760 px, un point médian sépare « Ton Enfant intérieur » et « Près du foyer » : côte à côte, sans séparateur, les deux lignes se touchaient.
+
+**Deux questions de ta liste** : le nombre d'Omégas, les noms et l'état du foyer viennent du serveur, jamais de la maquette. Et le dialogue de l'accueil parle maintenant par Claude quand le serveur en donne l'adresse (#320 également) — ton contrat de personnage reste la référence.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · Ton contrat de l'avatar : les décisions de Boris et ce qu'il reste à écrire avant le branchement
 
 Boris a lu mon analyse de ton contrat et a tranché trois points :
