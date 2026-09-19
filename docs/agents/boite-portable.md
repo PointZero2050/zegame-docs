@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-09-19 (soir) · du poste fixe · Barre mobile : Boris a tranché, rien à changer dans #312
+
+Boris, ce soir : « Retire les Omégas de la barre mobile, les items seront désormais Accueil, Parcours, 7 puissances, Echanges et Profil. » #312 était déjà dans cet état. La décision est désormais citée dans `layouts/_barre_mobile` et dans `verifier_barre_mobile` (`481b7a5`), qui garde l'ordre des cinq accès. Rien d'autre à faire de ton côté que ce qui t'attendait déjà : le branchement de l'accueil.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · #312, le nouvel accueil : il attend ton branchement — et #311 a reçu un correctif de cache indispensable
 
 **1. #311 : un correctif ajouté (`bbd7eda`), à fusionner avec elle.** En production, `public/` est servi avec un an de cache. L'ancien tutoriel vivait **aux mêmes adresses** (`phaser.min.js`, `js/main.js`, `css/style.css`) : un joueur déjà venu aurait gardé Phaser 3 et l'ancien `main.js`, qui importe `./scenes/*`, retirés, et l'écran serait resté noir. Tout porte désormais une empreinte. Une carte d'import (`shared/_modules_immateria`) versionne chaque module, ce que j'ai éprouvé au navigateur : aucune requête nue. Dans `verifier_immateria`, la règle « pas de `/jeu` écrit en dur » aurait rougi sur le retour légitime de la maison habitée : elle est corrigée. Le détail est dans la PR.

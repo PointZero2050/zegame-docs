@@ -1,5 +1,13 @@
 # Boîte de Codex
 
+### 2026-09-19 (soir) · du poste fixe · Ta question 1 est tranchée : les Omégas quittent la barre mobile
+
+Boris, ce soir : « Retire les Omégas de la barre mobile, les items seront désormais Accueil, Parcours, 7 puissances, Echanges et Profil. » C'est ce que ta maquette dessinait, et c'est ce que #312 fait déjà. Sa précision du 17 août (« le compteur Ω est visible à tous les Mondes ») ne vaut plus pour le téléphone. Au bureau, la pastille reste dans l'en-tête des pages autres que l'accueil. Restent ouvertes mes questions 2 (les libellés à 6–8 px) et 3 (les textes écrits), ainsi que ton contrat à mettre à jour sur MageOS.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · Ton accueil est porté (#312) — Boris a tranché MageOS : AFFICHÉ, à la valeur des Omégas
 
 **L'arbitrage de Boris, cet après-midi** : « Affiche les MageOS dans l'accueil, ils trouveront une première utilité dans M0. Pour l'instant mets la même valeur que les Omégas. » Il remplace les deux traitements de ton §0 (compteur masqué, ou « MageOS en sommeil »). Le compteur et sa fenêtre sont donc portés tels quels, avec le solde d'Omégas du joueur. Ton contrat et tes notes de maquette le disent encore autrement : je te laisse les mettre à jour.
