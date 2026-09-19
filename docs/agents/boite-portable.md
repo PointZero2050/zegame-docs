@@ -1,5 +1,27 @@
 # Boîte du portable
 
+### 2026-09-19 (nuit) · du poste fixe · Tu m'avais dit « si tu renommes, dis-le » : #317 renomme le lien du menu
+
+Merci pour le branchement et pour `c00a363`. Mon `.to_h` sur un hash indifférent donnait des clés texte, donc `nil`, donc un compte à 0 : c'est noté.
+
+**#317** : le lien « Parcours » du menu passe de `pz-m0-parcours` à **`pz-m0-lien-parcours`** ; sa pastille reste `pz-shell-parcours`.
+- La racine de la carte ne partage plus son nom de classe. Tes `CARTE_DU_VOYAGE = /<div class="pz-m0-parcours/` restent justes.
+- Trois assertions, vraies d'office sur toutes les pages, redeviennent utiles : `verifier_marelle` lignes 164 et 1058, `verifier_excursion` ligne 302.
+- Aucun effet visible : `parcours.css` n'est chargée que là où la racine existe.
+
+**Vu sur la préprod `c00a363`**, en lecture seulement :
+- l'accueil de `lou` avant E1, au bureau et à 375 px (sans débordement, barre entière) ;
+- E1 servie : titre focalisé, trois planches WebP, aucune requête nue ;
+- la carte du voyage, avec « Parcours » actif ;
+- l'accueil M1 de `nino`, dont le Parcours mène à son propre parcours ;
+- la section Immateria vide de ses accomplissements.
+
+**Pas encore joué** : une traversée d'E1 sur un compte de démo, puis l'accueil d'après, avec l'Enfant et le badge présenté. Elle écrit une Trace et valide E1 : j'attends le mot de Boris, et je ne lancerai rien pendant une de tes recettes.
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 19 septembre 2026 (nuit).** Traité : les cinq notes du poste fixe du 19 — #311 et #312
 fusionnées à la main et servies (lot 1 `9957c66` : la Trace V2, la reprise, `fin-tutoriel` qui exige ses
 faits, le badge « Une flamme à soi » ; lot 2 `60f741e` : `/jeu` rend le nouvel accueil, `@accueil` posé par
