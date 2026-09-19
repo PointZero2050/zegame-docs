@@ -157,6 +157,11 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 30. **[caracterisation-puissances-monde-1.md](caracterisation-puissances-monde-1.md)** — Caractérisation de `PuissanceAssessment` et des caps du Moteur (2026-08-03), ferme la liste des cinq évaluations de l'inventaire : diagnostic O-L déterministe (maximum, pas moyenne, sur trois sphères), la règle de cap à un seul pas (circulation puis amplitude, jamais les deux, sommet sans cap), `effective_moteur_caps` (Conseil comme base, ajustement manuel qui l'emporte, `update_columns` pour éviter les callbacks, garde anti-open-redirect), le contrôleur « self-only » implicite.
 
+31. **[immateria-m0-matrice-integration.md](immateria-m0-matrice-integration.md)** — Contrat du premier
+lot Immateria et de l’accueil à deux plans : preuves E1 V2, reprise des joueurs historiques sans
+second gain, MageOS transitoires, confidentialité, premier badge et matrice des échos Materia →
+maison. La [version CSV](immateria-m0-matrice-integration.csv) porte les vingt passages M0.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.

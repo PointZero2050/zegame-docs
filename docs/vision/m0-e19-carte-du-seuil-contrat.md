@@ -90,8 +90,11 @@ pour elle : une colonne `publiee` inutilisée finirait par être lue.
   `VisibiliteDeTrace`.
 - `sceller!(user)` — pose le marqueur. Aucun Ω, aucune validation, aucun accès M1.
 
-**Le vide se dit** : `composables` vide → l'écran renvoie à sa source, il ne propose pas de
-sceller. `composition` vide → sceller est refusé ; une Carte sans contenu n'est pas une Carte.
+**Le vide se dit et reste défensif**, même s’il est inatteignable dans le parcours M0 actuel : le
+choix obligatoire du mentor produit déjà une Trace de positionnement avant E19. `composables` vide
+→ l’écran ne propose pas de sceller et affiche : « Aucune autre Trace n’est disponible pour
+l’instant. Ta Graine de passage est conservée ; reviens à l’Expérience pour poursuivre ton
+parcours. » `composition` vide → sceller est refusé ; une Carte sans contenu n’est pas une Carte.
 
 ⚠️ **Piège de nom.** `app/models/carte.rb` existe déjà et n'a **aucun** rapport : c'est le contrat
 d'affichage des cartes de fil (Rencontre, Graine publiée, Sondage). Le service de la Carte du Seuil

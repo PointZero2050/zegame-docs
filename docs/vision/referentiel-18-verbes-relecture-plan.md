@@ -6,6 +6,11 @@ Note Codex — 11 septembre 2026. Relecture du plan portable ; précise la mise 
 
 - Les 18 couples Puissance/polarité sont communs, y compris Imagination · JE CRÉE (#86). Le choix de Boris couvre les six Puissances et leurs trois verbes ; inutile de redemander une autorisation pour cette Source. Les droits du cercle restent indépendants.
 - Affichage : **Puissance · VERBE**, sans nom d’amplitude ajouté au libellé courant. Les anciens noms restent dans la traçabilité et les descriptions pédagogiques.
+- La carte Puissance visible par un joueur affiche sous le verbe sa définition canonique
+  (`verbes.<pôle>.desc`), jamais le nom ni la phrase d’une amplitude historique. Les écrans de
+  gestion, les exports et les lectures de traçabilité conservent ces noms historiques. Si un même
+  partiel sert les deux contextes, le contexte d’affichage doit être explicite ; une route ouverte
+  hors parcours ne suffit pas à transformer une surface joueur en écran de gestion.
 - Les cinq destinations de `sas.yml` doivent désigner les clés Puissance/polarité, avec les mêmes montants et conditions. Vérifier chaque correspondance depuis le nom actuel. Une lecture de compatibilité peut servir au déploiement progressif, sans perpétuer les amplitudes comme destinations nouvelles.
 - Le choix de l’identifiant conservé est technique : il ne fait pas de DISSOCIATION une signification privilégiée de JE DISTANCIE. La table mécanique proposée peut être conservée (#66 et #81 compris), à condition que tous les producteurs de points, dont le Sas, résolvent la cible unique. Ne pas recalculer cette désignation à chaque exécution : figer la table revue et arrêter sur divergence de données.
 

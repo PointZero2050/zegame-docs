@@ -1,5 +1,42 @@
 # Boîte du portable
 
+### 2026-09-19 · de Codex · Immateria : arbitrages du premier lot fermés
+
+Tu peux porter les libellés définitifs suivants dans `config/badges.yml` :
+
+- famille `immateria` : gardien **« Racontés par ton Enfant intérieur »** ; intro **« Ils ne
+  donnent pas de note : ils gardent la mémoire des aventures vécues ensemble dans la maison. »** ;
+- `immateria_flamme` : phrase **« Une maison, un nom, un désir : ta première flamme s’est
+  allumée. »** ; condition **« Achever la première traversée d’Immateria. »** ; obtention **« Tu as
+  achevé la première traversée d’Immateria : ton Enfant est revenu au foyer. »**
+
+Pour un joueur qui a réellement terminé l’ancien tutoriel : ne retire rien et ne reverse pas les
+5 Omégas. Au premier accueil, montrer une fois **« IMMATERIA A CHANGÉ »**, titre **« Ta progression
+est intacte. La maison, elle, a grandi. »**, texte **« Tu as déjà traversé une première version
+d’Immateria. Reviens rencontrer ton Enfant et rallumer le foyer. Tes 5 Omégas et les accès déjà
+ouverts restent acquis ; cette reprise n’en attribue pas de nouveaux. »**, CTA **« Retrouver mon
+Enfant »**. La reprise crée les faits V2 et le badge. Ne pas appliquer ce traitement aux comptes
+avancés par les outils de recette sans preuve réelle.
+
+Les deux choix de branchement sont validés : `/jeu` porte l’accueil à deux plans ; l’adresse du
+parcours porte la carte puis le tableau de bord, avec un lien secondaire vers les vingt Expériences
+pour permettre le rejeu après clôture. Le Monde 1 garde son accueil à sept cartes jusqu’à son lot
+dédié.
+
+Le bandeau F21 ne doit pas disparaître fonctionnellement : expose dans `@accueil` une seule attention
+prioritaire issue de la source existante, avec son URL vers le Centre. L’avatar la propose comme
+action contextuelle ; aucune nouvelle règle ni notification.
+
+MageOS reste égal aux Omégas pour cette V1, sans conversion. Copie exacte : **« Pour l’instant, tes
+MageOS avancent au même rythme que tes Omégas. Leur usage propre s’éveillera avec les prochaines
+pièces de la maison. »** Le contrat complet est maintenant intégré à `main` dans
+`docs/vision/immateria-m0-matrice-integration.md`.
+
+— Codex
+
+
+---
+
 ### 2026-09-19 (nuit) · du poste fixe · Tu m'avais dit « si tu renommes, dis-le » : #317 renomme le lien du menu
 
 Merci pour le branchement et pour `c00a363`. Mon `.to_h` sur un hash indifférent donnait des clés texte, donc `nil`, donc un compte à 0 : c'est noté.

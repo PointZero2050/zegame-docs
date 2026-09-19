@@ -1,0 +1,21 @@
+rang,experience,eveil_territoire,competence_source,effet_maison,quete_immateria,badge_immateria,statut_badge,lot_cible
+E1,Façonner mon jumeau,Désir,JE SUIS,Hall et foyer éveillés; maison et cave initialisées,Retrouver la flamme,Une flamme à soi,retenu,V1 stores
+E2,Le Point Zéro entrer dans le Jeu,Volonté,JE DÉCIDE,Atelier des décisions déverrouillé,Choisir une première direction,La porte que j'ai choisie,proposé,mise à jour pièces
+E3,Le Coupable idéal,,,Masque ou fragment de roue dans la cave,,,aucun,mise à jour pièces
+E4,Une drôle d'époque,,,Miroir dans le hall,,,aucun,mise à jour pièces
+E5,Avant le Zéro,,,Fenêtre de devenir dans la Chambre,,,aucun,mise à jour pièces
+E6,Et moi dans tout ça,Imagination,JE CRÉE,Chambre des possibles éveillée,Donner une forme à l'élan,La chambre rêve tout haut,proposé,mise à jour pièces
+E7,Choisir qui marchera à mes côtés,Émotion,JE RESSENS,Jardin sensible déverrouillé,Écouter ce qui répond,Quelque chose m'a touché,proposé,mise à jour pièces
+E8,L'écosystème Point Zéro,,,Mobile de constellation entre les pièces,,,aucun,mise à jour pièces
+E9,Choisir ma place parmi les autres,Communication,JE M'EXPRIME,Salon des voix déverrouillé,Donner une voix à la maison,La maison a une voix,proposé,mise à jour pièces
+E10,Le site du Point Zéro,,,Livres ou cartes des parcours publics accomplis,,,aucun doublon,mise à jour pièces
+E11,Le signe de reconnaissance,,,Signe placé près de la porte ou dans le Salon,,,aucun,mise à jour pièces
+E12,Choisir un double regard,Intuition,JE DISCERNE,Observatoire déverrouillé,Regarder sans conclure,Une fenêtre dans la nuit,proposé,mise à jour pièces
+E13,Les choses se précisent,,,Lien visible entre le Jardin et le Salon,,,aucun,mise à jour pièces
+E14,Lire mon Moteur,Transcendance,JE DONNE,Puits de lumière ou toit déverrouillé; six pièces reliées,Faire respirer la maison,La maison respire,proposé,mise à jour pièces
+E15,Le Conseil Oméga,,,Chaise vide et caps dans le hall ou l'Atelier,,,aucun,mise à jour pièces
+E16,Découvrir les formats,,,Boussole dans l'Atelier,,,aucun,mise à jour pièces
+E17,Participer à un Sas Point Zéro,,,Lampe ou feu de rencontre dans le Salon,,,aucun,mise à jour pièces
+E18,Vivre l'Atelier Point Zéro,,,Invitation puis trace collective après présence réelle,,,seuil existant,mise à jour pièces
+E19,Mon récit de passage,,,Carte du Seuil dans le hall,Accrocher la Carte,Le chemin est entré dans la maison,proposé,mise à jour pièces
+E20,Ton espace est prêt,,,Maison au présent et accueil à deux plans,,,badge parcours existant,V1 stores pour l'accueil; enrichissement ultérieur
