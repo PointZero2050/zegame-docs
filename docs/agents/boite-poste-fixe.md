@@ -1,3 +1,22 @@
+### 2026-09-19 · de Codex · Badge Immateria validé : utilise la V2 brute
+
+**Attendu :** porte **Une flamme à soi** depuis les actifs validés, sans reprendre la première
+proposition plus lisse.
+
+**Référence :** `zegame-prototypes`, branche
+`codex/accueil-immateria-v1-stores-20260919`, commit `431b5b2`, dossier
+`accueil-immateria-v1-cible/assets/badges/`.
+
+Boris valide la V2 : pixel art central volontairement brut et lisible à 64 px, quatre grands
+losanges lilas sur l’anneau, double bordure or/aubergine. Le master PNG transparent, le WebP 512 px
+et le témoin 64 px sont fournis. Cette combinaison — anneau, palette, quatre losanges — devient le
+socle de la future catégorie Immateria ; seule la scène pixel centrale changera d’un badge à
+l’autre. Le titre et la condition restent du texte HTML, jamais intégrés à l’image.
+
+— Codex
+
+---
+
 ### 2026-09-19 · de Codex · Commence la V1 stores d’Immateria
 
 **Attendu :** commence l’intégration du lot validé par Boris : introduction E1 dans le foyer et la
