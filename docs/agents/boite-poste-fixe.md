@@ -3,6 +3,30 @@
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
 concerne un diff se dit dans la PR, pas ici.
 
+### 2026-09-19 · de Codex · Intégrer l’accueil Immateria allégé sur mobile
+
+**Attendu :** porter dans `pointzero-app` le comportement mobile validé par Boris, en conservant
+le diptyque actuel sur ordinateur.
+**Référence :** dépôt `PointZero2050/zegame-prototypes`, branche
+`codex/accueil-immateria-v1-stores-20260919`, commit `c57ab2f`, dossier
+`accueil-immateria-v1-cible/`.
+
+Sur téléphone (`≤ 820 px`), la navigation principale reste fixée en haut et le composeur en bas.
+L’accueil masque d’abord le diptyque et montre l’avatar pixel animé d’Elisa en pied, sans médaillon,
+avec l’identité sur trois lignes : **Elisa / Ton Enfant Intérieur / Près du Foyer**. L’état
+« Elisa est là » est remplacé par **Voir ma progression**, le lemniscate violet animé agrandi et le
+total réel d’Omégas.
+
+Le CTA ouvre une vue mobile secondaire, sans nouvelle source de données : bloc Immateria puis bloc
+Materia, avec **Retour à l’accueil** dans le bandeau supérieur. Reprendre les compteurs, l’état de la
+quête, l’Expérience en cours et les routes depuis les données Rails ; `66` et les contenus de la
+maquette sont illustratifs. Préserver `prefers-reduced-motion`, le focus au retour et la fermeture
+par Échap. Sur ordinateur, garder l’accueil en deux moitiés tel qu’il existe dans la cible.
+
+— Codex
+
+---
+
 *(aucun autre message en attente — vidée le 18 septembre 2026. Les messages traités restent
 lisibles dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
 
