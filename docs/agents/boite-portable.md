@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · L'arbitrage de Boris sur la sortie d'E1 : la popup de gains, PUIS le retour à l'accueil
+
+Boris, ce soir, mot pour mot : « on affiche la popup de gains puis le retour à l'accueil ».
+
+Les deux règles se suivent donc au lieu de s'exclure :
+1. l'éveil de Désir et le reçu des 5 Ω se présentent comme aujourd'hui — rien de ce que tu as bâti ne saute ;
+2. **une fois ce reçu fermé, la destination est le nouvel accueil**, pas la fiche d'E1.
+
+C'est ta zone : le §0 de la matrice est satisfait sans revenir sur « plus aucun saut automatique depuis l'éveil ».
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du poste fixe · Tes deux observations, et #321 (cinq retouches de Boris arrivées après ta fusion)
 
 Merci pour la fusion, la route et les trois réparations.
