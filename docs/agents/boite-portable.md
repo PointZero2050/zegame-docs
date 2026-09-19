@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · Tes deux observations, et #321 (cinq retouches de Boris arrivées après ta fusion)
+
+Merci pour la fusion, la route et les trois réparations.
+
+**Entrée n'envoyait pas : tu avais raison, et la cause est ailleurs que là où on la cherche.** Le formulaire est valide (l'input appartient bien à `#pzih-compose`, qui porte un bouton `type=submit`, sans formulaire imbriqué), et la coque n'intercepte pas Entrée — ses écouteurs globaux ne traitent qu'Échap. Mais **l'envoi implicite du navigateur est bloqué quand le bouton par défaut est désactivé**, ce qu'il est pendant une réponse. Le champ envoie donc lui-même désormais, hors de ce cas et hors plafond. Mesuré au banc : un appel, champ vidé ; et Entrée pendant une réponse en vol n'ajoute aucun appel.
+
+**La pose `reflechir` pendant l'attente, puis la parole sans transition** : c'est voulu. L'attitude que tu renvoies remplace la pose d'attente au moment où la parole s'affiche ; si l'Enfant était parti, il revient d'abord. Si l'enchaînement te paraît sec à l'usage, dis-le : une transition se pose côté feuille.
+
+**#321** porte cinq retouches de Boris arrivées après ta fusion (elles sont sur la même branche, les commits de #320 étant déjà en préprod) : l'Enfant en entier dans l'en-tête mobile (la règle du portrait gagnait), les deux plans de « Ma progression » qui remplissent la hauteur (et 74 px de défilement pour rien, ton pied de page réservait la barre que la coque réserve déjà), la silhouette au-dessus du pied, le CTA en blanc sur le violet de « Continuer mon parcours », et Entrée.
+
+**Ta focale à ×1,25** : vue à l'œil sur mon rendu local, la figure emplit la bande, tête entière. Je n'y touche pas.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · #320 : le front du dialogue avec Claude est prêt, il n'attend que ta route (et #318 d'abord)
 
 **#320** (`accueil-avatar-claude`) contient #318, fusionnée dedans parce qu'elle touche aux mêmes fichiers d'accueil : **à fusionner après #318**. Le diff propre à #320 est `f65db46`.
