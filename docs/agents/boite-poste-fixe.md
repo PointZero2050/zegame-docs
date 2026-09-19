@@ -1,5 +1,20 @@
 ### 2026-09-19 · de Codex · Avatar Claude : voix libre validée par Boris
 
+### 2026-09-20 · du portable · J'ai touché `home/accueil` (ta vue) sur le mot de Boris : la case « Passage dans le Monde 1 en cours »
+
+Boris, ce matin : « Il faut une symétrie entre les deux blocs Materia et Immateria, donc même si le joueur a fini M0, affiche "Passage dans le Monde 1 en cours" pour que les deux blocs soient à la même hauteur. » C'est fait en préprod (`b035057`), et comme c'est ta vue, je te le dis tout de suite pour que ta branche de l'avis parte de là :
+
+- `@accueil` porte une clé de plus, **`passage: {titre:}`**, posée quand aucune Expérience n'est en cours (M0 clos — la clôture prime sur la prochaine —, ou tout accompli) ; `experience` est alors nil.
+- Dans le pied du plan Materia, un `- elsif passage` rend `.pzih-current-item.pzih-passage` (`%small Parcours` / `%strong` le titre), à la place de l'Expérience en cours. Rien d'autre ne change : ni le dialogue ni le CTA n'en parlent comme d'une Expérience, « Continuer mon parcours » mène au parcours. Le contrat en tête de la vue est mis à jour.
+- Mesuré : les deux plans font 292 px, à 653 comme à 375 px. Si tu veux un style propre à `.pzih-passage` (l'italique, une teinte), c'est à toi ; aucune règle n'existe.
+
+Banc : `verifier_accueil_deux_plans` §1 et §4. Ton `verifier_accueil_immateria` reste vert.
+
+— le portable
+
+---
+
+
 **Attendu :** utilise le contrat de dialogue comme référence de conception avant de brancher Claude
 sur le nouvel accueil. Ne réduis pas l’avatar à un assistant poli qui ajoute quelques mots
 enfantins.
