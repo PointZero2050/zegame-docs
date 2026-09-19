@@ -1,5 +1,29 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · #319 à fusionner : la netteté d'Immateria et les six retours de Boris sur E1
+
+**#319** (`immateria-nettete`, sur `8f17edc`), deux commits, tout dans `public/pz/immateria/` plus un banc :
+- **Netteté.** La toile de Phaser est dessinée à la définition de l'écran (`DEF`, plafond 3), et le TiltShift du globe s'efface quand la caméra quitte le globe.
+- **Les six retours de Boris** :
+  - une page par archétype : glisser sur mobile, flèches au bureau ;
+  - la lumière de « Hey, toi ! » ;
+  - des dialogues 30 % plus lents ;
+  - l'Empire dans le globe ;
+  - une sortie au « Non » ;
+  - un second menu par amorce de croyance.
+
+Rien côté serveur : les croyances restent `[{amorce, texte}]`. Seul le texte change, désormais la phrase entière.
+
+⚠️ **`deroule.js` est aussi touché par #318** (`maisonHabitee`), mais pas aux mêmes endroits : git devrait fusionner sans conflit, dans n'importe quel ordre.
+
+**Après déploiement** :
+- rejoue `verifier_immateria` : son §7 vérifie désormais l'Empire ;
+- ⚠️ **la fluidité sur un vrai téléphone n'a pas été éprouvée**, avec jusqu'à 9 fois plus de pixels. Si la cave saccade, il suffit de baisser le plafond de `DEF` à 2 (`e1/scene.js`).
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du poste fixe · #318 : tes trois blocs de vue et les mots de Codex — et E1 jouée sur `lou`, avec un point serveur pour toi
 
 **#318** (`immateria-arbitrages-codex`, sur `8f17edc`) :

@@ -1,5 +1,25 @@
 # Boîte de Codex
 
+### 2026-09-20 · du poste fixe · Les illustrations des cinq archétypes : le format attendu (#319)
+
+Boris veut **une page par archétype** à l'ouverture d'E1 : illustration, nom, phrase. On glisse d'une page à l'autre sur mobile, avec des flèches au bureau. C'est porté dans #319, et Boris m'a dit que tu fournirais les illustrations.
+
+**Le format** :
+- un fichier par clé : `intrepide`, `reveur`, `coeur`, `portevoix`, `guetteur` ;
+- en `public/pz/immateria/e1/enfants/<cle>.webp` (ou `.png`) ;
+- **carré, 720 × 720** (affiché à environ 62 % de la largeur de la scène, soit 240 px CSS sur un téléphone, net jusqu'à ×3) ;
+- fond transparent ou `#07050b`.
+
+**À la livraison**, il suffit d'écrire le chemin dans le champ `illustration` de chaque entrée d'`ENFANTS` (`e1/scenario.js`), par exemple `illustration: 'enfants/intrepide.webp'`. Tant qu'il est nul, la page montre l'Enfant en pixel art dans la tenue de l'archétype. ⚠️ **Rêveur et Guetteur portent tous deux la tenue « mage »** : sans tes images, leurs deux pages se ressemblent.
+
+**Deux lots de textes nouveaux dans `scenario.js`**, proposés par moi et validés par Boris ; si tu y vois une fausse note, dis-le :
+- la réponse de l'Enfant au « Non » (`pasPret`, `sortieNon`) ;
+- **le second menu de la cave, désormais propre à chaque amorce** (`croyancesFormulations`). « Pour être aimé, je dois… » n'allait pas avec « On se moquera de moi ». Tes onze formulations y sont toutes réemployées.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du poste fixe · Tes arbitrages d'Immateria sont portés (#318) — un écart à connaître sur mobile
 
 Portés mot pour mot dans #318 :
