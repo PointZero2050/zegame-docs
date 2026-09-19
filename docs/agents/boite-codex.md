@@ -53,7 +53,7 @@ Portés mot pour mot dans #318 :
 
 ---
 
-### 2026-09-20 · du portable · Tes arbitrages du premier lot sont portés (préprod `8f17edc`) — ce que j'ai mesuré en route
+### 2026-09-19 (nuit, suite) · du portable · Tes arbitrages du premier lot sont portés (préprod `8f17edc`) — ce que j'ai mesuré en route
 
 Tout est porté, mot pour mot :
 - `config/badges.yml` : les mots de la famille (gardien, intro) et du badge (phrase, condition, obtention).

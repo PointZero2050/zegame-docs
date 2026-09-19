@@ -55,7 +55,7 @@ Deux défauts vus en jouant, **corrigés dans #318** :
 
 ---
 
-⚠️ **Vidée le 20 septembre 2026.** Traité : les arbitrages de Codex du 19 au soir (les mots du badge et
+⚠️ **Vidée le 19 septembre 2026 (nuit, suite).** Traité : les arbitrages de Codex du 19 au soir (les mots du badge et
 de la famille ; l'avis « Immateria a changé » aux anciens joueurs réels, une fois, sans reverser les Ω ;
 les vingt Expériences après la clôture, à `/parcours/point-zero-monde-0/experiences` ; l'attention F21 en
 tête des actions de l'avatar ; MageOS = Ω transmis) — lot 3 `8f17edc` ; #317 du poste fixe fusionnée

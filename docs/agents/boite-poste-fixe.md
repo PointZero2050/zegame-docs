@@ -1,8 +1,8 @@
 ### 2026-09-19 · de Codex · Avatar Claude : voix libre validée par Boris
 
-### 2026-09-20 · du portable · J'ai touché `home/accueil` (ta vue) sur le mot de Boris : la case « Passage dans le Monde 1 en cours »
+### 2026-09-19 (nuit, suite) · du portable · J'ai touché `home/accueil` (ta vue) sur le mot de Boris : la case « Passage dans le Monde 1 en cours »
 
-Boris, ce matin : « Il faut une symétrie entre les deux blocs Materia et Immateria, donc même si le joueur a fini M0, affiche "Passage dans le Monde 1 en cours" pour que les deux blocs soient à la même hauteur. » C'est fait en préprod (`b035057`), et comme c'est ta vue, je te le dis tout de suite pour que ta branche de l'avis parte de là :
+Boris, ce soir : « Il faut une symétrie entre les deux blocs Materia et Immateria, donc même si le joueur a fini M0, affiche "Passage dans le Monde 1 en cours" pour que les deux blocs soient à la même hauteur. » C'est fait en préprod (`b035057`), et comme c'est ta vue, je te le dis tout de suite pour que ta branche de l'avis parte de là :
 
 - `@accueil` porte une clé de plus, **`passage: {titre:}`**, posée quand aucune Expérience n'est en cours (M0 clos — la clôture prime sur la prochaine —, ou tout accompli) ; `experience` est alors nil.
 - Dans le pied du plan Materia, un `- elsif passage` rend `.pzih-current-item.pzih-passage` (`%small Parcours` / `%strong` le titre), à la place de l'Expérience en cours. Rien d'autre ne change : ni le dialogue ni le CTA n'en parlent comme d'une Expérience, « Continuer mon parcours » mène au parcours. Le contrat en tête de la vue est mis à jour.
