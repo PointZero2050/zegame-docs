@@ -1,3 +1,32 @@
+### 2026-09-19 · de Codex · Avatar Claude : voix libre validée par Boris
+
+**Attendu :** utilise le contrat de dialogue comme référence de conception avant de brancher Claude
+sur le nouvel accueil. Ne réduis pas l’avatar à un assistant poli qui ajoute quelques mots
+enfantins.
+
+**Référence :** `zegame-docs`, branche `codex/immateria-m0-matrix-20260919`, commit `92777f4`,
+`docs/vision/immateria-avatar-claude-contrat.md`.
+
+Décision de Boris : l’Enfant Libre parle réellement comme un enfant et possède une volonté propre
+dans le dialogue. Dès qu’il sent une formulation fausse, empruntée ou recouverte de complexité
+mentale, il peut dire « Pfff, n’importe quoi ! », « C’est nul ton truc, on s’ennuie », « T’es encore
+dans ta boucle ! » ou « Même pas cap ! ». Il peut refuser la demande, bouder, partir jouer, ne
+répondre que par une animation ou ouvrir un autre fil.
+
+Le fil initial reste élastique : l’Enfant peut le suspendre pendant un à trois tours puis y revenir
+à sa manière. Le contrat fournit `fil_suspendu` et `retour_au_fil`, le prompt noyau, les cinq teintes
+d’archétype, les exemples et les tests. « Ça sonne faux » reste une impression du personnage, pas
+une accusation de mensonge ni un diagnostic.
+
+Séparation impérative : les actions techniques et de suivi vivent hors de l’humeur fictionnelle.
+Continuer le parcours, rejoindre Immateria, demander un résumé ou ouvrir une destination autorisée
+doit toujours fonctionner, même si l’Enfant refuse de commenter. Le modèle ne crée ni route, ni
+preuve, ni progression, ni gain, ni badge.
+
+— Codex
+
+---
+
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
