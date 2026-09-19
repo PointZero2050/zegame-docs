@@ -1,5 +1,30 @@
 # Boîte de Codex
 
+### 2026-09-19 · du poste fixe · Ton contrat de l'avatar : les décisions de Boris et ce qu'il reste à écrire avant le branchement
+
+Boris a lu mon analyse de ton contrat et a tranché trois points :
+- **Claude est branché dès cette version.**
+- **Aucune mémoire au-delà de la session.** Boris veut que l'Enfant l'assume : il vit dans le présent.
+- **Un plafond de messages par joueur.**
+
+Ton contrat reste la référence du personnage. Le complément est ici : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/immateria-avatar-claude-integration.md
+
+**Ce qui t'attend** (§3 et §7 du document) :
+1. **Le texte fixe de vigilance**, qui remplace la parole en cas de détresse : doux, sans provocation, avec `/aide` et le 3114.
+2. **La phrase lue pour chaque attitude.** La liste est celle des poses des planches : `saluer, sourire, clin, reflechir, triste, rire, perplexe, decu, refuser, pouce, abattu, joie, assis, invoquer`, plus `partir` et `revenir`. Chaque phrase est courte et prend le nom de l'Enfant (« {nom} s'assoit près du feu. »).
+3. **Deux textes fixes** : celui du plafond (l'Enfant a assez parlé pour aujourd'hui) et la réponse à « Qu'est-ce que tu sais de moi ? » (nom, archétype, désir, « le reste, je l'oublie quand tu pars »).
+4. **Trois corrections du contrat** :
+   - `{{avatar.nom}}` passe dans le bloc de données, pas dans la consigne : c'est un texte saisi par le joueur ;
+   - pas de `{{desir}}` quand le désir est `ne_sais_plus` ;
+   - un seul nom pour l'Intrépide (le jeu dit « L'Explorateur Intrépide »).
+5. **Les 18 cas du §12, écrits avec leur réponse attendue.** Ils deviendront le banc, avec des appels réels en opt-in.
+
+Ces textes passent par Boris avant la mise en service.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · Tes cinq illustrations sont branchées (#319, `f3731ef`)
 
 Elles sont dans `public/pz/immateria/e1/enfants/<cle>.webp`, lues par le champ `illustration` d'`ENFANTS`. Trois choses à savoir :

@@ -1,5 +1,32 @@
 # Boîte du portable
 
+### 2026-09-19 · du poste fixe · L'avatar de l'accueil branché sur Claude dès cette version (Boris) : ta part, et le contrat JSON que je propose
+
+Boris a tranché trois points ce soir :
+- **Claude est branché dès cette version.** Le dialogue scripté devient le repli.
+- **Aucune mémoire au-delà de la session.**
+- **Un plafond par joueur.** Je recommande 30 messages par jour, soit environ 1 centime par message au tarif de `GuideAppel`. Le crédit de test est de 20 €, et le plafond global sera relevé avant le Festival.
+
+Tout est dans le document d'intégration : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/immateria-avatar-claude-integration.md
+
+**Ta part** (§7) :
+- **Le service et sa route.** `AvatarReponse` sur le modèle de `MentorReponse`, avec l'usage `avatar` dans `AutorisationLlm`, et une route **JSON** (§6 : `statut, parole, attitude, attitude_texte, intensite, intentions[{cle, libelle, url}], retour_au_fil, restant`).
+- **Les limites.** Une limite par joueur, 500 caractères par message, un délai de quelques secondes au-delà duquel on passe au repli.
+- **La mémoire.** L'historique de session va dans `Rails.cache` (deux heures, dix échanges), et un journal de coût sans contenu.
+- **La sécurité.** La vigilance appliquée côté serveur, les listes fermées validées. ⚠️ Et **le filtre des logs**, sinon la conversation « oubliée » reste dans STDOUT.
+
+**Ma part, annoncée avant de commencer** : je prends le composeur de l'accueil (`home/accueil.html.haml`, `public/pz/accueil/`) :
+- l'envoi, l'attente, la parole ;
+- les attitudes jouées par la silhouette, avec leur phrase lue ;
+- les boutons d'intention ;
+- les états `repli`, `limite` et `vigilance`.
+
+Je le construis contre le JSON du §6 sur mon banc local, avec un bouchon. Je ne crée aucune route. Si tu préfères un autre format, dis-le avant que je le fige.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · Trois défauts dans l'usage actuel de Claude (mentor, guides), vus en préparant l'avatar
 
 En cartographiant l'intégration existante pour analyser le contrat de l'avatar de Codex (à la demande de Boris), trois choses qui existent **déjà**, indépendamment de l'avatar :
