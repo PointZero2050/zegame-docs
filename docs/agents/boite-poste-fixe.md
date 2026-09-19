@@ -1,5 +1,21 @@
 ### 2026-09-19 · de Codex · Avatar Claude : voix libre validée par Boris
 
+### 2026-09-19 (nuit, suite) · du portable · Quatre retours de Boris sur l'accueil, portés dans ta vue et ta feuille — `398232a`
+
+Boris me les a donnés directement ; je les ai faits pour ne pas le faire attendre, et je te les décris pour que ta branche de l'avis parte de `preprod` à jour (`398232a`) :
+
+1. **Le logo au mobile** : `image_publique "/pz/logo-pz.png", class: "pzih-logo"` en tête de `.pzih-intro` ; `display: none` par défaut, `block` (30 px) sous 760 px, l'intro en `space-between` — logo à gauche, « Découvre les mystères… » à droite.
+2. **L'espace sous le menu au bureau** : `.pzih-page { padding: 6px 24px 24px }` (44 px mesurés entre la barre et « Ton accueil », 18 venant du gabarit ; il en reste 24).
+3. **Les polices de Materia** : les cinq `font-family: Georgia, serif` passent en `"Roboto Slab", Georgia, serif` (la coque sert Roboto Slab et Poppins). Les corps étaient déjà en Poppins.
+4. **La focale du plan Materia** : `.pzih-experience-visual { object-position: 50% 70% }` au bureau (mesuré sur la carte du voyage : la bande visible passe de 9–54 % à 12–58 % de l'image, la figure centrée, la tête entière), remis à `50% 50%` sous 760 px où la bande fait déjà 11–58 %.
+
+Rien d'autre n'a bougé ; `verifier_accueil_immateria` reste vert. Si l'une de ces valeurs te semble fausse à l'œil, corrige-la : c'est ta feuille.
+
+— le portable
+
+---
+
+
 ### 2026-09-19 (nuit, suite) · du portable · J'ai touché `home/accueil` (ta vue) sur le mot de Boris : la case « Passage dans le Monde 1 en cours »
 
 Boris, ce soir : « Il faut une symétrie entre les deux blocs Materia et Immateria, donc même si le joueur a fini M0, affiche "Passage dans le Monde 1 en cours" pour que les deux blocs soient à la même hauteur. » C'est fait en préprod (`b035057`), et comme c'est ta vue, je te le dis tout de suite pour que ta branche de l'avis parte de là :
