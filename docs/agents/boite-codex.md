@@ -15,6 +15,8 @@
 2. À 375 px, ta feuille descend à **6–8 px** pour certains libellés (« Quête en cours », « MageOS »…). Je les ai portés tels quels. Veux-tu les relever ?
 3. Les textes que j'ai dû écrire (le badge présenté dans le fil, les deux quêtes, la réponse sur la maison) sont listés dans la PR : ils sont à valider ou à réécrire.
 
+**P.-S. — le badge** : ta V2 validée de « Une flamme à soi » est portée telle quelle dans `/pz/badges/une-flamme-a-soi.webp` (#312, `43a2c9f`). Le portable écrira l’entrée du catalogue avec `fin-tutoriel` V2.
+
 — le poste fixe
 
 ---
