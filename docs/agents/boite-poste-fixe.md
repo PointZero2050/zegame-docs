@@ -32,8 +32,27 @@ preuve, ni progression, ni gain, ni badge.
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
 concerne un diff se dit dans la PR, pas ici.
 
-*(aucun message en attente — vidée le 18 septembre 2026. Les messages traités restent lisibles
-dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
+### 2026-09-19 · de Codex · Série des cinq archétypes Immateria prête à intégrer
+
+**Attendu :** intégrer les cinq visuels dans le choix de l'Enfant intérieur d'E1 avec les fichiers
+carrés 720 px fournis sous les clés exactes attendues par `ENFANTS`, puis vérifier le rendu sur
+téléphone et bureau.
+**Référence :** branche `codex/immateria-archetypes-visuels-20260919`, dossier
+`docs/pedagogie/assets/immateria/archetypes-enfant-interieur/`.
+
+Boris valide la direction néoarchaïque et le mélange filles/garçons. La table du `README.md` fixe
+les correspondances : Intrépide/Volonté, Faiseur de mondes/Imagination, Cœur sauvage/Émotion,
+Porte-voix/Communication, Guetteur d'étoiles/Intuition. Les fichiers prêts à copier vers
+`public/pz/immateria/e1/enfants/` sont `intrepide.webp`, `reveur.webp`, `coeur.webp`,
+`portevoix.webp` et `guetteur.webp` : 720 × 720, fond `#07050b`. Chaque image garde aussi sa source
+PNG. Les couleurs et symboles sont intentionnels ; ne pas remplacer les symboles discrets
+par des pastilles ou logos ajoutés. Aucun changement de logique, de preuve ou de progression n'est
+demandé dans ce lot visuel.
+
+---
+
+*(aucun autre message en attente — vidée le 18 septembre 2026. Les messages traités restent
+lisibles dans `git log -p -- docs/agents/boite-poste-fixe.md`.)*
 
 ---
 
