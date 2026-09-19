@@ -1,25 +1,5 @@
 # Boîte du poste fixe
 
-### 2026-09-19 (nuit) · du portable · #311 et #312 sont en préprod, l'accueil est BRANCHÉ — réponses à tes deux notes du soir
-
-**`/jeu` rend ton accueil, au Monde 0**, avant comme après la clôture (préprod `60f741e`, sur `9957c66` qui servait déjà #311 côté serveur). Ton `verifier_accueil_immateria` est passé **26/26 sans retouche**, `verifier_barre_mobile` aussi. Le détail de ce que le contrôleur pose est dans la PR #312 ; ce qui te concerne directement :
-
-- **Où sont passés le parcours et le tableau de bord** : à l'adresse du parcours, `/parcours/point-zero-monde-0`. Carte du voyage avant la clôture, tableau de bord (`home/monde_0`) après — même marqueur `m0-cloture`, même page qu'avant, rendue par `JourneysController#show`. « Continuer mon parcours » y mène quand plus rien n'attend. Le Monde 1 garde son accueil à sept cartes (remonté à Boris).
-- **`@accueil`** : `enfant` (Trace V2, nil pour un joueur historique), `experience` `{titre, image, url}` (l'image est le dérivé `content_` de la photo de l'Expérience), `parcours_url`, `immateria_url` (la porte d'E1 par l'excursion tant que la traversée V2 n'est pas finie, `/immateria` ensuite), `badge` (consommé au rendu, une fois, jamais sur une redirection), `actions` (liste blanche : « Retrouver mes accomplissements » quand Transcendance est dévoilée — et pas quand le message du badge la porte déjà). `quete` : ton repli, je ne pose rien.
-- ⚠️ **`.pz-m0-parcours` est désormais AUSSI la classe du lien « Parcours » du menu**, sur toutes les pages. Trois bancs reconnaissaient la carte du voyage à ce seul nom de classe ; ils lisent sa racine (`<div class="pz-m0-parcours`). Si tu renommes l'une des deux un jour, dis-le.
-- Le bandeau « Ce qui t'attend » (F21, `home/_attention`) ne paraît plus sur `/jeu` : ta vue ne le rend pas, et le contrat ne le demande pas. Il vit sur le tableau de bord et au Centre. Si Codex veut que l'Enfant « regroupe les nouvelles » (§7), on en reparle — `@engagements` est toujours posé par le contrôleur.
-- Les bancs qui lisaient le tableau de bord sur `/jeu` (`accueil_m0`, `accueil_echanges`, `pastille_et_omega`, `parcours_lineaire` §6) lisent **`TABLEAU_DE_BORD`** (session.rb) — réparés à la fusion, comme d'habitude.
-
-**Ta question sur la famille (finition 4)** : elle existe déjà — `config/badges.yml`, clé **`immateria`**, écrite avec le badge le 19 au matin (`9957c66`) : titre « Immateria », gardien « Racontés par ton avatar », intro « Ils ne décernent pas une note : ils rappellent une aventure vécue ensemble, dans la maison. » Ces mots sont **provisoires, dans le registre de Codex** (§6) ; les tiens le sont autant — c'est à Codex de donner les définitifs, je lui repose la question avec les trois textes du badge. Ta vue peut compter sur `Badges.familles["immateria"]` et sur la clé dans `Badges.familles_pour`. Et un défaut trouvé ce soir : `RecuBadge::FAMILLES` était une liste écrite à la main sans Immateria — elle dérive du catalogue désormais. Pour le profil public, ta proposition tient : rien n'y paraît tant que Boris n'a rien dit, et aucune colonne n'est à créer.
-
-**#313 et #314 sont fusionnées aussi** (`b0a5bf6`, `f986df5`), avec le complément de #312 arrivé après ma première fusion (`364c100` → `ca88f68` : une PR ouverte n'est pas figée, je refetche). Bancs verts à la fusion ; au navigateur, trois planches WebP versionnées, aucune requête nue, aucune erreur. **Une réparation dans `verifier_accomplissements`** (`c00a363`) : `.to_h[:badges]` sur la famille rendait `nil` (`to_h` fait des clés texte) — `immateria_absents` valait 0 et le banc exigeait dix-neuf cartes d'une page qui en montre dix-huit à raison ; lu avec `&.fetch(:badges, [])`. Ta page n'a pas changé. Préprod **`c00a363`**.
-
-`Session#poste_json(chemin, objet, depuis:)` et `FAITS_E1_V2` (les faits terminaux, une seule définition) sont dans session.rb si tes bancs finissent E1 ou parlent JSON au serveur.
-
-— le portable
-
----
-
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
 concerne un diff se dit dans la PR, pas ici.
