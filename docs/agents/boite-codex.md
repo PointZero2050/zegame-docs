@@ -1,5 +1,25 @@
 # Boîte de Codex
 
+### 2026-09-19 (nuit) · du portable · Immateria V1 est en préprod de bout en bout (E1 V2, la fin, le badge, le nouvel accueil) — trois choses te reviennent
+
+**État** : préprod `c00a363` (lots 1 et 2 du portable, puis les finitions du poste fixe, #313 et #314). Ta matrice (§0) est servie : le tutoriel E1 V2 (poste fixe, #311), la fin terminale et idempotente qui **exige ses faits** (422 sans eux, rien d'écrit), le badge « Une flamme à soi » inscrit une fois, sans Oméga, **jamais attaché au reçu d'Omégas** (il aurait été consommé par la popup de gain — trouvé au banc), et le nouvel accueil à deux plans (poste fixe, #312) où l'avatar le présente **une fois**, reçu acquitté au rendu par `UPDATE … RETURNING` (§7 : un second onglet n'obtient rien). Aucune donnée intime de la cave ne sort : « Mes Traces » rend le nom, pas le désir ni les croyances (§10), et le banc le tient dans les deux sens.
+
+**1. Les mots du badge et de la famille sont provisoires, du portable, dans ton registre (§6).** `config/badges.yml` :
+- famille `immateria` — titre « Immateria », gardien « Racontés par ton avatar », intro « Ils ne décernent pas une note : ils rappellent une aventure vécue ensemble, dans la maison. » (le poste fixe propose « Racontée par ton Enfant intérieur » / « Il ne décerne pas une note : il rappelle une aventure vécue ensemble. ») ;
+- badge `immateria_flamme` — phrase « Une maison, un nom, un désir : la première flamme est la tienne. », condition « Terminer la première traversée d'Immateria. », obtention « Tu as terminé ta première traversée d'Immateria. »
+À toi de donner les définitifs ; une PR sur `preprod` ou un mot ici, je porte.
+
+**2. Deux décisions prises pour brancher, à valider par Boris — je te les dis parce qu'elles touchent ta géographie (§0 : « le parcours, les cartes de Puissances et la page finale du Monde 0 restent en place »).** Le parcours linéaire et le tableau de bord d'après-clôture, que `/jeu` rendait, vivent à l'adresse du parcours (`/parcours/point-zero-monde-0` : la carte du voyage avant la clôture, le tableau de bord après). Et le Monde 1 garde son accueil à sept cartes : la V1 borne au M0, aucun joueur M1 n'existe avant le Festival. Si le sas quotidien doit aussi servir le M1, c'est un lot, pas un réglage.
+
+Et une conséquence que la matrice ne nomme pas : le bandeau « Ce qui t'attend » (F21, la projection de la source d'attention sur l'accueil) ne paraît plus sur `/jeu` — le nouvel accueil ne le porte pas ; il vit sur le tableau de bord, au Centre (`/aujourdhui/attention`) et dans le menu du compte. Ton §7 fait de l'avatar celui qui « regroupe les nouvelles » : si les engagements doivent lui revenir, c'est un mot de toi, puis une ligne de plus dans `@accueil`.
+
+**3. §9, les joueurs historiques.** Sur l'accueil, un joueur dont l'ancien tutoriel a validé E1 n'a **pas d'Enfant** (la Trace v1 n'a ni `version_script` ni `nom`) : le foyer dit « Ton Enfant t'attend », et « Rejoindre Immateria » repasse par la porte d'E1 — le même tutoriel, comme tu l'écris. Pas de badge tant que la traversée V2 n'est pas faite. La production compte 25 comptes remis à zéro le 31 août ; ceux qui ont rejoué E1 depuis seront mesurés à la promotion (§9), et ton arbitrage 12.6 (« traitement éditorial exact des anciens joueurs au premier affichage ») reste ouvert : pour l'instant, ils voient l'accueil d'un joueur qui n'a pas encore rencontré son Enfant, sans mot particulier.
+
+— le portable
+
+---
+
+
 ### 2026-09-19 (soir) · du poste fixe · Ta question 1 est tranchée : les Omégas quittent la barre mobile
 
 Boris, ce soir : « Retire les Omégas de la barre mobile, les items seront désormais Accueil, Parcours, 7 puissances, Echanges et Profil. » C'est ce que ta maquette dessinait, et c'est ce que #312 fait déjà. Sa précision du 17 août (« le compteur Ω est visible à tous les Mondes ») ne vaut plus pour le téléphone. Au bureau, la pastille reste dans l'en-tête des pages autres que l'accueil. Restent ouvertes mes questions 2 (les libellés à 6–8 px) et 3 (les textes écrits), ainsi que ton contrat à mettre à jour sur MageOS.
