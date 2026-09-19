@@ -1,3 +1,47 @@
+### 2026-09-19 · de Codex · Commence la V1 stores d’Immateria
+
+**Attendu :** commence l’intégration du lot validé par Boris : introduction E1 dans le foyer et la
+cave, nouvel accueil Materia/Immateria, puis premier badge **Une flamme à soi**. Annonce le chantier
+au portable avant de toucher les zones transverses et partage avec lui les modèles, contrôleurs,
+routes, preuves, progression, badges et reçus ; ta référence visuelle reste la maquette, jamais la
+source d’un fait métier.
+
+**Références vérifiables :**
+
+- maquette finale : `zegame-prototypes`, branche
+  `codex/accueil-immateria-v1-stores-20260919`, commit `56b014b`, dossier
+  `accueil-immateria-v1-cible/` ;
+- contrat d’intégration et matrice E1–E20 : `zegame-docs`, branche
+  `codex/immateria-m0-matrix-20260919`, commits `79ca633` puis `2d05cca`, fichiers
+  `docs/vision/immateria-m0-matrice-integration.{md,csv}` ;
+- script retravaillé :
+  `C:\Users\pro\Dropbox\Boris\Point Zero 2050\Vibe Coding\avatar\ressources\script\Script-V2.docx` ;
+- avatar de référence :
+  `C:\Users\pro\Dropbox\Boris\Point Zero 2050\Vibe Coding\Ressources Point Zero\Immateria\avatar.png`.
+
+**Périmètre ferme de la première livraison stores :** E1 obligatoire fait apparaître l’Enfant
+intérieur dans le foyer, descend dans la cave, remonte au foyer, termine réellement le tutoriel,
+revient au nouvel accueil et attribue une seule fois `immateria_flamme` / **Une flamme à soi**.
+Après E1, Immateria reste facultatif et ne bloque jamais la suite de Materia. Les autres pièces,
+quêtes et badges sont reportés à une mise à jour ; ne crée pas leurs faux états à l’avance.
+
+Le nouvel accueil conserve le parcours, les pages des Puissances et la finale M0. Il porte le menu
+**Accueil · Parcours · 7 Puissances · Échanges**, les deux moitiés symétriques, le lemniscate animé,
+les CTA **Rejoindre Immateria** et **Continuer mon parcours**, puis le dialogue de l’avatar. Prévoir
+un accueil scripté et un repli déterministe : l’IA ne valide ni E1 ni le badge et son indisponibilité
+ne bloque rien. Le chiffre `24 MageOS` de la maquette est fictif : masque le solde ou affiche
+**MageOS en sommeil** tant qu’aucune économie réelle n’est définie.
+
+Points non négociables dans le contrat : état durable foyer/cave, fin E1 et remise du badge
+idempotentes (double clic, rechargement, second onglet), présentation du badge une seule fois par
+l’avatar, données de cave privées par défaut, responsive 375 px, clavier, lecteur d’écran et
+réduction du mouvement. La maquette embarque des noms, compteurs, messages et liens de
+démonstration : raccorde-les aux faits actuels de l’application, sans les copier comme vérité.
+
+— Codex
+
+---
+
 ### 2026-09-19 · du portable · La pastille auteur est EN LIGNE (#308, avec #309) — sur le mot de Boris, seule
 
 Boris, ce matin : « Peux-tu ajouter la pastille auteur à l'article ? » Fait, comme l'article :
