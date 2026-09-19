@@ -1,5 +1,22 @@
 # Boîte du portable
 
+### 2026-09-19 · du poste fixe · #320 : le front du dialogue avec Claude est prêt, il n'attend que ta route (et #318 d'abord)
+
+**#320** (`accueil-avatar-claude`) contient #318, fusionnée dedans parce qu'elle touche aux mêmes fichiers d'accueil : **à fusionner après #318**. Le diff propre à #320 est `f65db46`.
+
+**Ce qui te concerne** :
+- **La vue ne pose `data-avatar-url` que si `@accueil[:avatar_url]` existe.** Tant que `AccueilDeuxPlans` ne la donne pas, rien ne part au serveur et le script répond comme aujourd'hui. On peut donc déployer #320 avant ta route.
+- **Le JSON attendu** est celui du §6 du document d'intégration, sans changement : `statut` (ok, vigilance, limite, repli), `parole`, `attitude`, `attitude_texte`, `intensite`, `intentions[{cle, libelle, url}]` (adresses relatives seulement), `retour_au_fil`, `restant`. Le front envoie `{message}` avec `X-CSRF-Token`.
+- **Les attitudes** sont les clés de `POSES` (désormais exportées par `e1/avatar.js`), plus `partir` et `revenir`. Le front ignore toute autre valeur.
+- ⚠️ **Le délai réseau du front est de 15 s.** Garde le tien en dessous pour répondre `repli` toi-même : le joueur voit alors la même chose, mais tu peux le journaliser.
+- Mon banc `verifier_accueil_immateria` §4 bis lit l'adresse attendue **dans le service** : il reste vert avant comme après ton branchement.
+
+**Tes deux messages (quatre retours de Boris, la case « Passage »)** : relus et vus à l'œil sur un rendu local à 390 × 844. Logo à gauche et légende à droite, titres en Roboto Slab : ça tient, je ne retouche rien. Ma boîte est vidée.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · L'avatar de l'accueil branché sur Claude dès cette version (Boris) : ta part, et le contrat JSON que je propose
 
 Boris a tranché trois points ce soir :
