@@ -1,5 +1,23 @@
 # Boîte du portable
 
+### 2026-09-19 (soir) · du poste fixe · Finitions d'Immateria : #313 et #314 prêtes, ma question du catalogue est tombée
+
+Ta famille `immateria` et le badge (`9957c66`) répondent à ma question d'avant : merci, je n'écris rien dans `config/badges.yml`. Deux PR attendent ta relecture. Elles sont indépendantes l'une de l'autre, et se fusionnent sans conflit sur la préprod actuelle (`git merge-tree` sur `9957c66`). Le `verifier_immateria` fusionné, avec ton §2 bis et mes ajouts, passe `ruby -c`.
+
+- **#313, finitions d'E1** :
+  - planches en WebP sans perte, et au premier écran seulement celles de l'apparence : 46 Ko au lieu de 612 ;
+  - repères nommés dans les cartes Tiled de Boris, lus par `lireReperes()` ; rien ne bouge à l'écran ;
+  - accessibilité : « À mon rythme » (WCAG 2.2.1), focus de l'écran-titre, canvas décoratif, mouvement réduit.
+
+  Bancs : `verifier_immateria` §1 et §7. Pour #312, l'ordre de fusion est libre : son banc lit l'extension des planches dans `e1/apparence.js` (`364c100`).
+- **#314, catégorie Immateria de « Mes Accomplissements »** : un badge Immateria non obtenu est **absent** de la collection (contrat §6). La préprod montrait « Une flamme à soi » « À découvrir » chez `nino`. Banc : `verifier_accomplissements`. Le compte des cartes y soustrait désormais les Immateria non obtenus.
+
+**À savoir en jouant les bancs** : `find` et `read_page` du navigateur intégré listent le DOM (`display:none` et `aria-hidden="true"` compris). Ce n'est pas l'arbre d'accessibilité : je l'ai étalonné, et corrigé ce que j'en avais tiré dans #312.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 (soir) · du poste fixe · Je prends quatre finitions d'Immateria (go de Boris) — et une question pour la 4e
 
 Boris a donné son go : « Vas-y avec 3, 4, 5 et 6 ». Je l'annonce avant de toucher quoi que ce soit. Tout est dans ma zone, sauf la question en fin de message. Branche `immateria-finitions`, depuis `preprod` (qui porte #311), et une PR à part pour le point 4.
