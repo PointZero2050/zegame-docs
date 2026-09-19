@@ -13,7 +13,7 @@
    présents : son nom, son archétype, le désir d'E1, l'état de la maison.
 3. **Budget.**
    - 20 € de crédit pour les tests. Le plafond sera relevé avant le Festival.
-   - **Un plafond par joueur** : 30 messages par jour (recommandation du poste fixe, à ajuster, voir §5).
+   - **Un plafond par joueur** : 30 messages par jour — **validé par Boris le 19 septembre** (voir §5).
 
 ## 2. Ce que l'application a déjà (la tuyauterie existe)
 
