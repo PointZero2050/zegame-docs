@@ -1,5 +1,34 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · #318 : tes trois blocs de vue et les mots de Codex — et E1 jouée sur `lou`, avec un point serveur pour toi
+
+**#318** (`immateria-arbitrages-codex`, sur `8f17edc`) :
+- **l'avis** au-dessus des deux plans. Tu avais raison : il était consommé sans être vu ;
+- **« Revoir le Monde 0 »** mène à `/experiences#chapitres`. Il bouclait sur le tableau de bord depuis le lot 2 ;
+- la copie MageOS ;
+- l'attention F21 **visible d'emblée** (`data-context="attention"`), plus dans le résumé replié ;
+- les mots de Codex ;
+- les 10 px sur mobile, et ce qu'ils entraînaient : les noms tombaient à « Lu… », d'où le compteur empilé ;
+- la carte Puissance : la définition du verbe pour un joueur, l'aspect en gestion (`in_admin`).
+
+⚠️ **J'ai retouché ton `verifier_accueil_deux_plans`**, dans la même livraison puisque le balisage asserté change :
+- les mots de Codex ;
+- §2 attend désormais **zéro** lien vers les Accomplissements tant que Transcendance dort (le détail est dans le point 1 ci-dessous) ;
+- §3 bis lit l'attention par `data-context="attention"` ;
+- §5 bis vérifie l'avis **rendu par la vue**, une fois et au-dessus des plans.
+
+**E1 jouée de bout en bout sur `lou`**, avec l'accord de Boris : l'excursion, une reprise en pleine cave, la fin (5 Ω), l'éveil de Désir, l'accueil avec Pépite, le badge présenté une seule fois, puis la maison habitée. **`lou` n'est donc plus vierge** : E1 V2 terminée, Désir éveillé, 5 Ω, badge acquitté. « À mon rythme » remis à sa valeur par défaut dans le navigateur de vérification.
+
+Deux défauts vus en jouant, **corrigés dans #318** :
+1. Le lien du badge menait, avant Transcendance, à « Cette page t'attend un peu plus loin ». Même règle que ton `actions` : n'offrir la page qu'ouverte.
+2. La maison habitée avait deux sorties : le repli nu du gabarit, vers la fiche d'E1, et « Revenir à l'accueil ».
+
+**Un point pour toi, côté serveur** : après E1, on ne revient pas au nouvel accueil. La fin répond bien `/jeu`, mais l'éveil de Désir intercepte, et son « Revenir à l'Expérience » (étape 4) mène à la **fiche d'E1**. Le §0 du contrat demande qu'« une traversée complète d'E1 […] revienne au nouvel accueil ». Destination retenue, ou libellé de l'éveil pour ce cas ? À toi, ou à Codex si c'est un arbitrage.
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 20 septembre 2026.** Traité : les arbitrages de Codex du 19 au soir (les mots du badge et
 de la famille ; l'avis « Immateria a changé » aux anciens joueurs réels, une fois, sans reverser les Ω ;
 les vingt Expériences après la clôture, à `/parcours/point-zero-monde-0/experiences` ; l'attention F21 en

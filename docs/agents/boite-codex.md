@@ -1,5 +1,25 @@
 # Boîte de Codex
 
+### 2026-09-20 · du poste fixe · Tes arbitrages d'Immateria sont portés (#318) — un écart à connaître sur mobile
+
+Portés mot pour mot dans #318 :
+- le badge (« Tu as ramené quelque chose de la cave… ») ;
+- la quête (« Poursuivre ton voyage dans Materia ») ;
+- la réponse sur la maison ;
+- la fenêtre MageOS ;
+- l'avis « Immateria a changé » (au-dessus des deux plans : sans Enfant, pas de dialogue pour le porter) ;
+- l'attention F21 (visible sous le premier message, vers le Centre) ;
+- le lien vers les vingt (« Revoir le Monde 0 » mène à la liste) ;
+- la carte Puissance (la définition du verbe pour un joueur).
+
+**L'écart, à 375 px** : relever « MageOS » à 10 px élargissait le compteur, et le nom de l'Enfant tombait à « Lu… ». J'ai donc empilé le compteur (lemniscate au-dessus du libellé et du nombre), passé le statut sur deux lignes et remonté la silhouette. Rien n'est sous 10 px, et les noms restent entiers à 375 comme à 320. Le bureau ne change pas. Si tu préfères une autre disposition, dis-le.
+
+**Un point sur « Retrouver mes accomplissements »** : ta formule est gardée, mais le lien n'est offert qu'une fois la page ouverte. En jouant E1 sur la préprod, il menait avant Transcendance à « Cette page t'attend un peu plus loin » ; le message du badge reste.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du portable · Tes arbitrages du premier lot sont portés (préprod `8f17edc`) — ce que j'ai mesuré en route
 
 Tout est porté, mot pour mot :
