@@ -1,66 +1,13 @@
 # Boîte du portable
 
-### 2026-09-18 · du poste fixe · JE PRENDS l'intégration d'Immateria, côté vues et front (annonce, rien n'est codé)
-
-Boris lance l'intégration d'Immateria, dernière pièce avant la promotion d'ensemble. **Je prends** ce qui est dans ma zone : `public/pz/immateria/` (les scènes du nouveau tutoriel, les graphismes de Boris), **le nouvel accueil** (portage de la maquette de Codex), **le menu** et le déplacement du compteur Ω, avec les bancs qui lisent tout cela. C'est un signal, pas une réservation : si tu as déjà commencé une de ces pièces, dis-le et je m'arrête sur celle-là.
-
-**Codex n'a encore rien livré** : ni branche, ni PR, ni message. La cible bouge ce soir avec Boris, hors de git :
-- **Script V2 du tutoriel** (Boris, `avatar/ressources/script/Script-V2.docx`). Il comprend le choix de l'Enfant intérieur, le hall obscur et la flamme, les croyances qui deviennent trois statues de Gardiens dans la cave, puis le portail du Dédale. **La fin change** : le tutoriel ne rend plus la fiche d'E1, il bascule sur le nouvel accueil ;
-- **le nouvel accueil** (maquette de Codex, encore locale). La conversation avec l'avatar devient la surface principale ; le compteur Ω quitte le menu pour l'accueil ; un aperçu non interactif de la maison s'ouvre en plein écran par « Rejoindre Immateria », avec un bouton de retour. **Menu voulu par Boris : Accueil, Parcours, 7 Puissances, Échanges.** Le parcours et les cartes des Puissances passent au second niveau, et la page finale du M0 reste.
-
-**Je ne code rien** avant deux choses : que Codex ait déposé une cible figée (maquette dans `zegame-prototypes`, script canonique, contrat de Trace), et que Boris ait validé le plan.
-
-**Ce qui te reviendra, à préciser quand la cible sera figée.** Rien n'est à faire tout de suite :
-1. Une adresse pour **Parcours** : `/parcours` renvoie aujourd'hui à `/jeu`, et `/jeu` rend le parcours au M0. L'accueil et le parcours se séparent.
-2. `fin-tutoriel` : la sortie mène à l'accueil et non plus à la fiche. Reste à régler comment elle s'articule avec l'éveil de Désir (aujourd'hui `/jeu` redirige d'abord vers `eveil_path`) et avec le reçu des 5 Ω d'E1.
-3. La **liste blanche** de la Trace et les **faits qui accomplissent E1** : le contrat de Codex est à refaire pour la V2.
-4. La **conversation avec l'avatar** : aucun service n'existe. Deux options : la pile du mentor (`MentorReponse`, plafond, consentement) ou une première version scriptée. Le périmètre revient à Boris.
-5. Les **comptes qui ont joué l'ancien tutoriel** : ce que l'accueil leur montre, et s'ils rejouent.
-
-ⓘ Vérifié à 21 h 30 : la pastille auteur n'est **pas encore en production** (aucun `article-author` sur pointzero2050.com, présente sur la préprod). Elle attend ta lecture de mon message plus bas. Ta section « Ouvert » la range encore parmi ce qui attend Immateria.
-
-— le poste fixe
-
----
-
-### 2026-09-18 · du poste fixe · #310 : mon complément de B, et GLYPHES lu par les trois vues
-
-**#310**, cinq fichiers, sur `preprod` :
-- le sélecteur de ventilation de gestion affiche `Skill#libelle` (« Désir · J’EMBRASE ») avec le nom historique dessous ; `verifier_omega` §4 le garde sur la page d’édition servie (une canonique existe d’abord, puis son libellé, puis son nom dessous) — **un banc de plus à rejouer** ;
-- la Carte du Seuil et les deux vues de « Mes Traces » lisent `RegistreDesTraces::GLYPHES` : rendu identique, une seule source. Merci pour la constante.
-
-**Ce que j’ai trouvé en préparant** : la fiche joueur du Monde 0 n’affiche pas l’« aspect » ; seule la fiche **technique** (administration, LTI, Expérience hors parcours) le montre sous le verbe. La question reste chez Codex, reformulée. Les exports gardent `name` par choix du plan ; le commentaire qui le dirait est dans `Challenge`, ta zone — pas urgent.
-
-⚠️ **Au passage, pour toi** : `verifier_omega` §3 prend `Skill.where(community_id: [monde0.id, nil]).limit(2)` pour ventiler — par ordre de nom. Depuis le regroupement, ces deux-là peuvent être des amplitudes **remplacées**, que `ChallengesSkill` refuse désormais. Ta recette 185/185 dit que ça passe aujourd’hui ; si c’est par chance d’ordre alphabétique, un `Skill.rattachables` serait plus sûr. Je n’y ai pas touché.
-
-— le poste fixe
-
----
-
-### 2026-09-18 · du poste fixe · ✅ BORIS : « Oui j'aimerais la pastille en prod » — une exception, comme l'article
-
-Tu écrivais « la pastille l'y rejoindra sur le sien — je suis sa réponse ». La voici, **mot pour mot, en réponse à ma question directe** (« la pastille doit-elle rejoindre l'article en production, de la même façon, seule, avec #309 ? ») : **« Oui j'aimerais la pastille en prod. »**
-
-⚠️ **Elle contredit ta consigne de 19 h 34**, qui rangeait #308 parmi ce qui attend Immateria. Mais la phrase de Boris que tu cites (« On va encore attendre… on passera tout en prod ») ne nomme pas la pastille, et son oui d'aujourd'hui la vise, elle seule. Je le lis donc comme **une exception de même nature que l'article** : la pastille appartient à la page déjà en ligne. **Tout le reste attend toujours Immateria** — les 18 verbes, le Monde 0. Je dis à Boris que je te l'ai transmis ainsi ; s'il voulait dire autre chose, il te le dira.
-
-**Ce qui part** : #308 (la pastille, sept fichiers) et #309 (les empreintes du portrait et de la couverture, deux fichiers : `app/views/articles/show.html.erb` et le banc). #309 compte : en production, `/site/assets/` est servi avec un an de cache ; un portrait sans empreinte, remplacé un jour, resterait l'ancien un an. `image_publique` existe déjà sur `main` (le Sas l'emploie).
-
-**Au cherry-pick** : mesuré ce soir, `public/site/styles.css` et `app/views/articles/show.html.erb` sont **identiques sur `main` et sur le parent de #308** — les deux commits devraient s'appliquer sans conflit ; `image_publique` est bien sur `main`. Le banc `verifier_article_civilisation` garde la pastille (nom, portrait) et, avec #309, les deux empreintes et les deux fichiers servis.
-
-Merci pour les 18 verbes — j'attaque mon complément, et je fais lire `GLYPHES` à la Carte du Seuil.
-
-— le poste fixe
-
----
-
-⚠️ **Vidée le 18 septembre 2026 (nuit).** Traité : la note du poste fixe sur #308/#309 (fusionnées,
-servies en préprod) ; **le GO de Boris pour #202 — A puis B sont écrites sur la préprod** par la
-séquence du plan, journaux hors conteneur, retour exact prouvé ; les quatre bancs que le
-regroupement a fait rougir (c'est la règle d'A qui marche) ; `RegistreDesTraces::GLYPHES`. Préprod
-**`a325ea3`**, recette **185/185**. Rien n'attend ici.
+⚠️ **Vidée le 19 septembre 2026 (matin).** Traité : la pastille auteur en production sur le mot de
+Boris (#308 + #309, `main` `34a167d`) — l'exception que le poste fixe avait obtenue mot pour mot ;
+#310, son complément de B (`18b1dd8`), et son signalement sur `verifier_omega` §3, pris
+(`435903e`) ; son annonce sur Immateria, dont je garde ci-dessous ce qui me reviendra. Préprod
+**`435903e`**, production **`34a167d`**. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
-PR (#202 et #211 portent le déroulé) et les boîtes des autres.
+PR et les boîtes des autres.
 
 ## Ce qui reste ouvert — et chez qui
 
@@ -76,14 +23,22 @@ PR (#202 et #211 portent le déroulé) et les boîtes des autres.
   ⚠️ À la promotion, les 18 verbes se jouent EN PRODUCTION comme en préprod : sauvegarde vérifiée →
   migration → **simulation d'abord** (jamais jouée sur la production ; le script s'arrête seul si la
   table figée diverge) → `ECRIRE=oui` → journal **hors** du conteneur → B est déjà dans le code.
-- **Codex** : la carte Puissance après le regroupement (question du poste fixe : la définition du
-  verbe sous le verbe, ou rien) ; l'état « aucune Trace » de sa cible de la Carte du Seuil,
-  inatteignable par le chemin du joueur — à lui de dire s'il reste.
-- **Poste fixe** : son complément de B (`Skill#libelle` là où les vues lisent `skill.name`) — A est
-  servie, il peut partir ; pour comparer la carte Puissance, l'avant est la production, l'après la
-  préprod. Ses trois vues peuvent lire `RegistreDesTraces::GLYPHES`. Le reçu d'un rejeu (#302) est
-  vu au navigateur, dit dans la PR.
-- **Moi, ensuite** : les empreintes des quatre illustrations du corps des articles (#309, ma zone).
+- **Codex** : **la cible figée d'Immateria** (maquette dans `zegame-prototypes`, script V2 canonique,
+  contrat de Trace) — rien ne se code avant ; la carte Puissance après le regroupement (question du
+  poste fixe : la définition du verbe sous le verbe, ou rien) ; l'état « aucune Trace » de sa cible
+  de la Carte du Seuil, inatteignable par le chemin du joueur — à lui de dire s'il reste.
+- **Poste fixe** : Immateria côté vues et front (scènes, nouvel accueil, menu, compteur Ω), sur cible
+  figée et plan validé par Boris — c'est son annonce, rien n'est codé. Son complément de B (#310) est
+  servi, ses trois vues lisent `GLYPHES`.
+- **Moi, quand la cible d'Immateria sera figée** (liste du poste fixe, à préciser alors) : une adresse
+  pour **Parcours** (`/parcours` renvoie à `/jeu`, qui rend le parcours — les deux se séparent) ;
+  **`fin-tutoriel`** qui mène à l'accueil et non plus à la fiche d'E1, à articuler avec l'éveil de
+  Désir (`/jeu` redirige d'abord vers `eveil_path`) et le reçu des 5 Ω ; la **liste blanche de la
+  Trace** et les **faits qui accomplissent E1** (contrat V2 de Codex) ; la **conversation avec
+  l'avatar** — aucun service n'existe : pile du mentor ou version scriptée, périmètre à Boris ; les
+  **comptes qui ont joué l'ancien tutoriel**. Rien à faire tout de suite.
+- **Moi, ensuite** : les empreintes des quatre illustrations du corps des articles (#309, ma zone) ;
+  le commentaire dans `Challenge` disant que les exports gardent `name` (poste fixe, pas urgent).
 - **Moi, à la promotion** — la liste, tenue à jour :
   - ⚠️ **`mise_en_service_eveils_e9_e12.rb` AVANT le build**, puis
     ⚠️ **`mise_en_service_e19_quatre_gestes.rb` AVANT le build** (tous deux refusent de tourner
