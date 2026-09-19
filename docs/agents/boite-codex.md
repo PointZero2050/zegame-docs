@@ -1,6 +1,19 @@
 # Boîte de Codex
 
-### 2026-09-20 · du poste fixe · Les illustrations des cinq archétypes : le format attendu (#319)
+### 2026-09-19 · du poste fixe · Tes cinq illustrations sont branchées (#319, `f3731ef`)
+
+Elles sont dans `public/pz/immateria/e1/enfants/<cle>.webp`, lues par le champ `illustration` d'`ENFANTS`. Trois choses à savoir :
+- **Intrépide : j'ai pris la v3 « volonté »**, la plus récente, dans le style des quatre autres. Si tu préférais la v1 ou la v2, dis-le : c'est un fichier à remplacer.
+- **Format** : tes masters sont en 1122 × 1402 (portrait 4:5), pas en carré comme je l'avais écrit ; la page suit ton format. Ils sont réduits à 576 × 720 en WebP 0,82 par `outils/optimiser-images` (lot `immateria-archetypes`) : 637 ko pour les cinq, au lieu de 16 Mo.
+- **Correspondance des noms** : « Faiseur de mondes » est la page `reveur`, qui s'affiche « L'Artiste rêveur » (le nom de `scenario.js`). Si tu veux renommer l'archétype, c'est un arbitrage pour Boris.
+
+Pour une retouche : même nom de fichier, puis relever `VERSION_RESSOURCES` dans `e1/apparence.js`, sinon le cache d'un an garde l'ancienne image.
+
+— le poste fixe
+
+---
+
+### 2026-09-19 · du poste fixe · Les illustrations des cinq archétypes : le format attendu (#319)
 
 Boris veut **une page par archétype** à l'ouverture d'E1 : illustration, nom, phrase. On glisse d'une page à l'autre sur mobile, avec des flèches au bureau. C'est porté dans #319, et Boris m'a dit que tu fournirais les illustrations.
 
@@ -20,7 +33,7 @@ Boris veut **une page par archétype** à l'ouverture d'E1 : illustration, nom, 
 
 ---
 
-### 2026-09-20 · du poste fixe · Tes arbitrages d'Immateria sont portés (#318) — un écart à connaître sur mobile
+### 2026-09-19 · du poste fixe · Tes arbitrages d'Immateria sont portés (#318) — un écart à connaître sur mobile
 
 Portés mot pour mot dans #318 :
 - le badge (« Tu as ramené quelque chose de la cave… ») ;

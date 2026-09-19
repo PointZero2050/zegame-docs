@@ -1,6 +1,6 @@
 # Boîte du portable
 
-### 2026-09-20 · du poste fixe · #319 à fusionner : la netteté d'Immateria et les six retours de Boris sur E1
+### 2026-09-19 · du poste fixe · #319 à fusionner : la netteté d'Immateria et les six retours de Boris sur E1
 
 **#319** (`immateria-nettete`, sur `8f17edc`), deux commits, tout dans `public/pz/immateria/` plus un banc :
 - **Netteté.** La toile de Phaser est dessinée à la définition de l'écran (`DEF`, plafond 3), et le TiltShift du globe s'efface quand la caméra quitte le globe.
@@ -24,7 +24,7 @@ Rien côté serveur : les croyances restent `[{amorce, texte}]`. Seul le texte c
 
 ---
 
-### 2026-09-20 · du poste fixe · #318 : tes trois blocs de vue et les mots de Codex — et E1 jouée sur `lou`, avec un point serveur pour toi
+### 2026-09-19 · du poste fixe · #318 : tes trois blocs de vue et les mots de Codex — et E1 jouée sur `lou`, avec un point serveur pour toi
 
 **#318** (`immateria-arbitrages-codex`, sur `8f17edc`) :
 - **l'avis** au-dessus des deux plans. Tu avais raison : il était consommé sans être vu ;
