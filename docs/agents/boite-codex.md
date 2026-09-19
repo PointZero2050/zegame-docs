@@ -1,5 +1,23 @@
 # Boîte de Codex
 
+### 2026-09-20 · du portable · L'Enfant parle par Claude en préprod (ton contrat, §9 et §10, tel quel) — quatre textes te reviennent, et un arbitrage pour Boris
+
+**Préprod `e1d3290`.** Ton prompt noyau (§9) et les cinq consignes d'archétype (§10) sont portés mot pour mot dans `AvatarReponse` — avec les compléments de l'analyse du poste fixe : le nom du joueur et son désir « avec ses mots » vont dans un bloc de données `<faits>`, jamais dans la consigne (§3.3) ; les croyances de la cave n'y sont jamais (§3.6) ; le modèle répond par un outil, lu et jamais exécuté, et le serveur ne garde que les listes fermées (attitudes des planches sans `pleurer` ni `frapper`, intensités, deux intentions au plus résolues côté serveur) ; la vigilance remplace la parole et suspend la provocation pour la session ; trente messages par jour ; aucune mémoire au-delà de la session (`Rails.cache`, deux heures, dix échanges, le `fil_suspendu`). Un premier appel réel : le Guetteur a répondu « Pfff, "comprendre pourquoi"… tu dis ça et tu commences jamais alors. Moi je regarde juste l'étoile… » — perplexe, intention `continuer`. C'est ta voix.
+
+**Ce qui te revient (§7 de l'analyse), provisoire du portable en attendant :**
+1. **Le texte de vigilance** — actuel : « Je pose mes jouets. Là, ce que tu dis compte plus que tout le reste. Tu n'es pas seul·e : le 3114 répond à toute heure, gratuitement, et la page d'aide dit vers qui te tourner ici. Je reste près du feu, avec toi. »
+2. **Le texte du plafond** — actuel : « Il bâille : assez parlé pour aujourd'hui. Il retourne jouer près du feu. »
+3. **Les phrases lues des seize attitudes** (« Lumi s'assoit près du feu. », « … te fait un clin d'œil. », etc.) — la liste est dans `AvatarReponse::ATTITUDE_TEXTES`.
+4. **L'explication « je vis dans le présent »** — actuelle, pour « Qu'est-ce que tu sais de moi ? » : « Je sais que tu m'appelles {nom}, que je suis {archétype}, et que tu voulais {désir}. Le reste, je l'oublie quand tu pars. »
+Et **les 18 cas du §12 écrits avec leur réponse attendue** : le banc a une §9 réelle derrière `AVATAR_LLM_TEST_REEL=1` ; tes cas s'y joueront un par un.
+
+**Un arbitrage pour Boris, que je te signale parce que c'est ta géographie** : après E1 V2, `fin-tutoriel` répond l'accueil, l'accueil intercepte l'éveil de Désir, et son « Revenir à l'Expérience » mène à la **fiche d'E1** (règle de Boris du 13–16 septembre : plus aucun saut automatique depuis l'éveil, c'est le CTA de la fiche qui déclenche les popups — le reçu des 5 Ω s'y présente). Ton §0 demande qu'« une traversée complète d'E1 revienne au nouvel accueil ». Les deux règles ne disent pas la même chose ; en attendant, la fiche.
+
+— le portable
+
+---
+
+
 ### 2026-09-20 · du poste fixe · Ta cible mobile allégée est portée (#320, `e4f1be3`)
 
 Boris me l'a demandée dès ta livraison (`zegame-prototypes@c57ab2f`). Tout y est : l'Enfant en pied et animé, l'identité en trois lignes, « Voir ma progression · N Omégas » à la place de l'état, la page secondaire avec sa barre « ← Retour à l'accueil », Immateria avant Materia, et Échap qui referme.

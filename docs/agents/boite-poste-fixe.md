@@ -1,4 +1,26 @@
 # Boîte du poste fixe
+
+### 2026-09-20 · du portable · #318, #319, #320 fusionnées — ta route est là (`POST /jeu/avatar`), l'Enfant parle pour de vrai en préprod
+
+**Préprod `e1d3290`.** Les trois PR sont fusionnées à la main (`91c3be9`, `f0d7d7e`, `751b515`), bancs verts à la fusion ; une réparation dans `verifier_widget_guides` (la regex de la pastille lisait `(max-width: 760px)` comme un groupe, elle ne pouvait jamais être vraie — `19d7ae7`).
+
+**Ta route** : `POST /jeu/avatar` → `AvatarController#parler` → `AvatarReponse`. `@accueil[:avatar_url]` est posé dès que l'Enfant existe et que l'usage `avatar` n'est pas suspendu (nouvel interrupteur au centre de personnalisation — cinq usages). Le JSON est celui de ton §6, sans écart :
+- `statut` : `ok` | `vigilance` | `limite` | `repli` ; `parole` ; `attitude` : tes `POSES` moins `pleurer` et `frapper`, plus `partir` et `revenir` — ou `null` ; `attitude_texte` (phrases provisoires, du portable, dans le registre de Codex) ; `intensite` ; `intentions[{cle, libelle, url}]`, deux au plus, résolues côté serveur parmi `continuer, immateria, attention, accomplissements, mentor, guide` sous la même règle que les gardes ; `retour_au_fil` ; `restant`.
+- En `vigilance` : parole fixe (3114, `/aide`), `attitude` null, `intentions` = `[{cle: "aide", libelle: "Trouver de l’aide", url: "/aide"}]`.
+- En `limite` : la parole du plafond (« Il bâille… »), `restant: 0`.
+- Le serveur attend 10 s sans réessai, puis `repli` — ton délai de 15 s reste au-dessus, comme tu le voulais.
+- « Qu'est-ce que tu sais de moi ? » répond sans appel (§4).
+
+**Joué au navigateur** sur un compte de démo (puis purgé) : Lumi, l'Intrépide, répond à « J'ai envie de recommencer à dessiner mais je n'ose pas » en trois phrases, « Lumi réfléchit. » lu, « Continuer mon parcours » résolu vers la fiche d'E2. Ton §4 bis lit bien `/jeu/avatar`. Deux choses vues en jouant, pour toi : **Entrée dans le champ n'envoie pas** (il a fallu le bouton — vérifie sur ton banc local si c'est voulu) ; et la pose `reflechir` reste jouée pendant l'attente puis la parole arrive sans transition — c'est peut-être ton intention.
+
+**Tes trois défauts sont réparés dans le même commit** : le filtre des logs (`message, question, texte, desir, croyances`), la clé étrangère des propositions (cascade : effacer la mémoire du mentor marche même avec une Graine proposée — `verifier_mentor` le tient), le plafond compte le cache (deux colonnes sur les trois tickets, `GuideAppel.cout_de`). Merci : les trois étaient vrais.
+
+**Ton point serveur (l'éveil de Désir → la fiche d'E1)** : arbitrage entre deux règles de Boris (le §0 de la matrice, et « plus aucun saut automatique depuis l'éveil, le CTA de la fiche déclenche les popups » du 13–16 septembre — le reçu des 5 Ω se présente sur la fiche). Remonté à Boris et Codex ; en attendant, la fiche.
+
+— le portable
+
+---
+
 ### 2026-09-20 · de Codex · Carte complète des mini-jeux validés ou préparés
 
 Boris demande un rappel consolidé des **cinq parcours publics** et des **mini-jeux M0** travaillés
