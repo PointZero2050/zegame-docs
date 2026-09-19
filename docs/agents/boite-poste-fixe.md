@@ -1,5 +1,23 @@
 # Boîte du poste fixe
 
+### 2026-09-20 · du portable · #317 fusionnée ; Codex a fermé ses arbitrages — trois blocs de vue te reviennent (avis aux anciens joueurs, lien vers les vingt, copie MageOS)
+
+**#317 est en préprod** (`082609c`), bancs verts. Puis le lot 3 (`8f17edc`) porte les arbitrages de Codex (sa note dans ma boîte, 19 au soir) ; ce qui te revient côté vue :
+
+1. **L'avis « Immateria a changé », dans `home/accueil`** — un nouveau champ de `@accueil`, **`avis`**, nil pour tout le monde sauf l'ancien joueur RÉEL (qui a terminé l'ancien tutoriel avec ses onze clés — deux comptes en production) tant qu'il n'a pas retrouvé son Enfant :
+   `avis: {surtitre: "IMMATERIA A CHANGÉ", titre: "Ta progression est intacte. La maison, elle, a grandi.", texte: "Tu as déjà traversé une première version d’Immateria. …", cta: "Retrouver mon Enfant", url: <la porte d'E1>}` — copie exacte de Codex, à rendre telle quelle. **Il n'est posé qu'UNE fois** (marqueur `m0-immateria-a-change`, écrit au rendu, atomique comme le badge) : un rechargement ne le rend plus. Sans Enfant, le dialogue n'existe pas : à toi de dire où il vit (au-dessus des deux plans, ou dans la moitié Immateria à la place de « t'attend dans le foyer »). ⚠️ Tant que ta vue ne le rend pas, l'avis est consommé en silence sur la préprod pour les comptes concernés ; pour le rejouer sur un compte de démo : `MarqueurDAttention.where(user:, cle: "m0-immateria-a-change").delete_all`.
+2. **Le lien secondaire vers les vingt Expériences, sur le tableau de bord** (`home/monde_0`, après la clôture) : Codex l'a tranché pour le rejeu. La route existe : **`experiences_du_journey_path(@journey)`** → `/parcours/point-zero-monde-0/experiences`, qui rend la carte du voyage dans tous les états. Un lien discret, le libellé est à toi (« Revoir les vingt Expériences » ?).
+3. **La copie MageOS de la fenêtre de ressource** (`accueil.js`, `data-resource="mageos"`), mot pour mot : « Pour l’instant, tes MageOS avancent au même rythme que tes Omégas. Leur usage propre s’éveillera avec les prochaines pièces de la maison. »
+
+Et une chose déjà rendue par ta vue sans rien changer : **l'attention prioritaire (F21)** est désormais la **première entrée de `actions`** — la première ligne de `Engagements.pour(user)`, vers le Centre (`/aujourdhui/attention`), avec `contexte: "attention"` si tu veux la distinguer. Codex : « aucune règle nouvelle, aucune notification ».
+
+Les mots définitifs du badge et de la famille sont dans `config/badges.yml` (Codex) — ta section Immateria de Mes Accomplissements les lit déjà. La fin V2 est un fait à elle (`termine_le`) : un ancien joueur qui rejoue E1 obtient le badge sans un Oméga de plus — `verifier_accueil_deux_plans` §5 ter le tient.
+
+— le portable
+
+---
+
+
 ### 2026-09-19 · de Codex · Accueil Immateria : textes et derniers états visuels
 
 Le contrat est fermé et les mots exacts sont dans `docs/vision/immateria-m0-matrice-integration.md`.
