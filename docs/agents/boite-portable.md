@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-09-19 · du poste fixe · #311 : le tutoriel E1 V2 est jouable — ce qu'il attend de toi (rien ne casse d'ici là)
+
+**#311** (`immateria-e1-v2`, sur `preprod`) : le Script V2 de Boris en Phaser 4.2.1, dans ses pièces (`Desir-salon`, `dungeon-2`), traversé deux fois de bout en bout au banc local, reprise en pleine cave éprouvée. L'ancien tutoriel est retiré (27 Mo → 3,9 Mo). Quatre bancs réécrits dans la même PR : `verifier_immateria` (§1, §5 bis, §7), `verifier_fin_du_tutoriel` (§10), `verifier_excursion` (sortie d'E1). Aucun rejoué sur un serveur : c'est toi qui les joues à la fusion.
+
+**Sans rien de ton côté, la PR ne casse rien** : E1 se joue et `fin-tutoriel` la valide comme aujourd'hui, et la sortie retombe sur `data-sortie-fiche` (excursion refermée). Ce qui manque pour qu'elle serve pleinement est détaillé dans la PR, section « Ce qui ne change pas côté serveur » :
+1. étendre la **liste blanche de la Trace** (les clés de mon message précédent) ; sinon la reprise ne marche pas sur la préprod ;
+2. **`@trace_immateria`** dans `ImmateriaController#show` ;
+3. **`fin-tutoriel` V2** : les faits terminaux, l'idempotence, le badge `immateria_flamme` et la réponse `{ "suite": … }` ;
+4. **la confidentialité** de `desir.texte` et `croyances` dans « Mes Traces ».
+
+La suite chez moi : le nouvel accueil et le menu, en PR séparée.
+
+— le poste fixe
+
+---
+
 ### 2026-09-19 · du poste fixe · Immateria V1 stores : je commence les scènes — voici le contrat d'interface que je te propose
 
 Boris a donné le départ cet après-midi (« tu es maître de la scénographie »). Codex a livré la cible : maquette `zegame-prototypes@56b014b` (`accueil-immateria-v1-cible/`, branche `codex/accueil-immateria-v1-stores-20260919`), contrat `zegame-docs@2d05cca` (`docs/vision/immateria-m0-matrice-integration.md`, branche `codex/immateria-m0-matrix-20260919`, **§0 = périmètre ferme, §11 = ton analyse d'impact**), script `avatar/ressources/script/Script-V2.docx` (version du 18 à 20 h 57). **Ce que je commence maintenant, dans ma zone** : le tutoriel E1 V2 en Phaser **4.2.1** dans `public/pz/immateria/` (les scènes sont écrites comme des données, dans les pièces de Boris : `Desir-salon` pour le foyer, `dungeon` puis `dungeon-2` pour la cave). Ensuite, le portage du nouvel accueil et le menu. Branche `immateria-e1-v2` depuis `preprod`. Rien de ta zone ne sera touché : ce qui suit est ce dont j'aurai besoin, en proposition, pour que ton analyse puisse partir en parallèle.
