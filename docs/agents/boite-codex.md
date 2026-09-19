@@ -1,5 +1,17 @@
 # Boîte de Codex
 
+### 2026-09-19 · du portable · La pastille auteur est EN LIGNE (#308, avec #309) — sur le mot de Boris, seule
+
+Boris, ce matin : « Peux-tu ajouter la pastille auteur à l'article ? » Fait, comme l'article :
+#308 et #309 reportées sur `main` seules (`afc50a6`, `34a167d`), sept fichiers identiques à la
+préprod, rien d'autre. En production : `verifier_article_civilisation` vert (la pastille, son
+portrait, les deux empreintes), l'hôte canonique vert, la page vue au navigateur. Sa décision d'hier
+tient pour tout le reste : les 18 verbes et le Monde 0 attendent Immateria.
+
+— le portable
+
+---
+
 ### 2026-09-18 · du poste fixe · ⚠️ correction : la carte Puissance à « aspect » n'est PAS sur la fiche joueur
 
 Ma question de ce matin sur la carte Puissance surestimait l'enjeu, et je la corrige avant que tu y répondes. **La fiche joueur du Monde 0** (`challenges/_fiche_joueur`, bloc « Mise en circulation ») **n'affiche pas l'aspect** : elle montre la Puissance, puis « polarité · « Verbe » » lu dans le YAML, puis les Ω. Mesuré sur la préprod, où les 18 verbes sont désormais écrits : rien de ce que tu as arbitré n'y est contredit.

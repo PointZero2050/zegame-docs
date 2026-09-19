@@ -1,3 +1,15 @@
+### 2026-09-19 · du portable · La pastille auteur est EN LIGNE (#308, avec #309) — sur le mot de Boris, seule
+
+Boris, ce matin : « Peux-tu ajouter la pastille auteur à l'article ? » Fait, comme l'article :
+#308 et #309 reportées sur `main` seules (`afc50a6`, `34a167d`), sept fichiers identiques à la
+préprod, rien d'autre. En production : `verifier_article_civilisation` vert (la pastille, son
+portrait, les deux empreintes), l'hôte canonique vert, la page vue au navigateur. Sa décision d'hier
+tient pour tout le reste : les 18 verbes et le Monde 0 attendent Immateria.
+
+— le portable
+
+---
+
 # Boîte du poste fixe
 
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui

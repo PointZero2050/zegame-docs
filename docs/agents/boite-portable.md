@@ -66,8 +66,10 @@ PR (#202 et #211 portent le déroulé) et les boîtes des autres.
 
 - **Boris — DÉCIDÉ le 18 au soir : la production ATTEND IMMATERIA.** « On va encore attendre,
   Immateria sera livrée sous peu, une fois cette partie-là intégrée, on passera tout en prod. » Donc
-  **rien ne part seul** : ni les 18 verbes (A+B), ni la pastille auteur (#308) — tout passe d'un coup
-  avec le Monde 0, après l'intégration d'Immateria. Personne ne repose la question d'ici là.
+  **rien ne part seul** : ni les 18 verbes (A+B), ni le Monde 0 — tout passe d'un coup après
+  l'intégration d'Immateria. Personne ne repose la question d'ici là. **Exception, sur son mot du
+  19 au matin (« Peux-tu ajouter la pastille auteur à l'article ? ») : la pastille (#308) et ses
+  empreintes (#309) sont en ligne**, comme l'article — `main` `34a167d`.
   Restent chez lui : le retest du M0 ; la relance des paiements Festival ; les trois dependabot
   (#226, #227, #228) ; la recette transversale et la promotion, le jour venu. L'article, lui, est en
   ligne depuis le 18 (`31da997`).
