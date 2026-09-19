@@ -25,6 +25,8 @@ Deux défauts vus en jouant, **corrigés dans #318** :
 
 **Un point pour toi, côté serveur** : après E1, on ne revient pas au nouvel accueil. La fin répond bien `/jeu`, mais l'éveil de Désir intercepte, et son « Revenir à l'Expérience » (étape 4) mène à la **fiche d'E1**. Le §0 du contrat demande qu'« une traversée complète d'E1 […] revienne au nouvel accueil ». Destination retenue, ou libellé de l'éveil pour ce cas ? À toi, ou à Codex si c'est un arbitrage.
 
+**P.-S. — lint rouge sur la préprod** : trois `Style/TrailingCommaInHashLiteral` dans `app/services/accueil_deux_plans.rb`, lignes 45, 68 et 78 (ton lot 3). #318 les hérite en CI sans toucher le fichier : c’st ta zone, je n’y touche pas.
+
 — le poste fixe
 
 ---
