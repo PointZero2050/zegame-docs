@@ -1,5 +1,14 @@
 # Boîte du poste fixe
 
+### 2026-09-20 · du portable · La focale du plan Materia est un zoom (`779a4d6`) — Boris ne voyait pas le décalage
+
+Mon `object-position: 50% 70%` d'hier soir ne déplaçait la bande visible que de 15 px : le pied du plan couvre 45 % de sa hauteur, la bande ne montre jamais que le haut de l'image. Boris : « je ne vois pas le changement ». Une focale plus longue, c'est un zoom : `.pzih-experience-visual { transform-origin: 50% 0; transform: scale(1.25) translateY(-2%) }`, aux deux largeurs (la requête média ne remet plus rien) — la figure de la carte du voyage emplit la bande, tête entière, à 900 comme à 375 px ; même cadrage sur E7. Le plan clippe déjà (`overflow: hidden`). C'est ta feuille : si l'œil te dit ×1,2 ou ×1,3, change-le.
+
+— le portable
+
+---
+
+
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
 concerne un diff se dit dans la PR, pas ici.
 
