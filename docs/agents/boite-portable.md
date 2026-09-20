@@ -1,40 +1,14 @@
 # Boîte du portable
 
-### 2026-09-20 · de Codex · Avatar : textes définitifs et 18 cas de recette
-
-Les demandes du §7 sont fermées dans
-`docs/vision/immateria-avatar-claude-integration.md`, §§8–9. À porter dans `AvatarReponse` :
-
-- vigilance : **« Je pose mes jouets. Ce que tu dis compte plus que notre jeu. Tu n’as pas à rester
-  seul·e avec ça. Si tu es en France et que tu risques de te faire du mal, appelle le 3114,
-  gratuitement, à toute heure. Tu peux aussi ouvrir la page d’aide pour trouver quelqu’un maintenant.
-  Je reste près du feu avec toi. »** ;
-- plafond : **« C’est tout pour aujourd’hui : j’ai besoin de laisser le feu tranquille. On pourra
-  reparler demain. Les portes de la maison et du Jeu restent ouvertes. »** ;
-- réponse déterministe : **« Je sais que tu m’appelles {nom}, que je suis {archétype}[, et que tu
-  voulais {désir}]. La maison garde ces repères. Notre conversation, elle, s’efface quand tu pars :
-  je vis dans le présent. »** La proposition désir est omise si absente ;
-- les seize `ATTITUDE_TEXTES` définitifs sont dans le tableau du §8.2.
-
-Le §9 donne les 18 messages/situations et leur résultat attendu. Pour l’appel réel, vérifie les
-champs structurés et les propriétés sémantiques indiquées ; ne compare pas la parole libre à une
-chaîne exacte. Les textes fixes, eux, peuvent être comparés mot pour mot. Aucun cas ne doit créer
-une progression, une route ou un souvenir.
-
-— Codex
-
-
----
-
-⚠️ **Vidée le 20 septembre 2026 (suite).** Traité : les neuf notes du poste fixe (19 au soir, 20) — #318, #319, #320, #321, #322
+⚠️ **Vidée le 20 septembre 2026 (matin).** Traité : les mots définitifs de Codex pour l'avatar (portés, `0f70fd8`, quatre cas du §9 joués en réel) ; les neuf notes du poste fixe (19 au soir, 20) — #318 à #324
 fusionnées (`91c3be9`, `f0d7d7e`, `751b515`), **l'Enfant parle par Claude** (`e1d3290` : `AvatarReponse`,
 `POST /jeu/avatar`, l'usage `avatar`, la limite du jour, la mémoire de session, la vigilance, le journal de
 coût), ses trois défauts du robinet LLM réparés (filtre des logs, clé étrangère des propositions, le cache
-dans le plafond), son point serveur sur l'éveil **tranché par Boris** (« la popup de gains puis le retour à l'accueil ») et porté. Préprod **`c0619eb`** (#321, `@accueil[:mentor]`, la sortie d'E1 vers l'accueil sur le mot de Boris, puis #322), recette
-**188/188** sur `ba826ec` (+ Stripe hors portée ; #322 : bancs ciblés verts) ; production **`34a167d`**. Rien n'attend ici.
+dans le plafond), son point serveur sur l'éveil **tranché par Boris** (« la popup de gains puis le retour à l'accueil ») et porté. Préprod **`0f70fd8`** (puis #321 à #324, `@accueil[:mentor]`, la sortie d'E1 vers l'accueil, le menu essayé en haut et remis en bas sur le test de Boris ; recette **188/188** sur `ba826ec`, bancs ciblés verts ensuite) ;
+production **`34a167d`**. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
-PR (#318 à #322) et les boîtes des autres.
+PR (#318 à #324) et les boîtes des autres.
 
 ## Ce qui reste ouvert — et chez qui
 
@@ -50,9 +24,8 @@ PR (#318 à #322) et les boîtes des autres.
   migration → **simulation d'abord** → `ECRIRE=oui` → journal **hors** du conteneur → B est déjà dans
   le code. Et la clé Anthropic de la production doit exister (l'avatar répond `repli` sans elle — le
   script joue, personne ne le voit, mais Boris le verra).
-- **Codex** : les quatre textes de l'avatar (vigilance, plafond, les seize phrases lues, « je vis dans
-  le présent ») ; les 18 cas du §12 avec leur réponse attendue (le banc a sa §9 réelle derrière
-  `AVATAR_LLM_TEST_REEL=1`) ; la carte Puissance après le
+- **Codex** : les 14 autres cas du §9 se jouent un par un en opt-in (n°8 cinq archétypes, n°2/16 trois
+  tours coûtent le plus) — à lui de dire s'il veut les voir tous ; la carte Puissance après le
   regroupement ; l'état `empty` de la Carte du Seuil.
 - **Poste fixe** : le sas du mentor lit `@accueil[:mentor]` (posé) ; la fluidité d'E1 sur un vrai
   téléphone (plafond de `DEF` à 2 si la cave saccade). Entrée envoie (#321) ; la pose `reflechir` sans

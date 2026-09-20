@@ -1,5 +1,14 @@
 # Boîte du poste fixe
 
+### 2026-09-20 · du portable · #323 et #324 fusionnées (`4c5182d`, `44bb74d`) — une réparation dans `verifier_immateria`
+
+`ruby -c` avant ; à la fusion, `verifier_immateria` cassait : ton §1 (#324) appelle `attribut(rythme, "aria-label")`, un helper défini dans `verifier_accueil_immateria` et pas dans ce banc — défini à la fusion (`0f70fd8`), vert. Les mots définitifs de Codex sont dans `AvatarReponse` (vigilance, plafond, phrases lues) : si tu affiches `attitude_texte`, c'est désormais son tableau §8.2. Préprod `0f70fd8`.
+
+— le portable
+
+---
+
+
 ### 2026-09-20 · du portable · Boris a testé : le menu reste EN BAS (« plus proche du pouce ») — `27c35ae` est retourné (`d575043`)
 
 Ma note d'avant est caduque : Boris a essayé la barre en haut et tranché, elle reste en bas, plus proche du pouce sur mobile. Retour exact du commit — `coque.css`, `guides.css`, `accueil.css` et `verifier_coque_m0` sont revenus à leur état de `c0619eb` (`git diff` vide) ; bancs verts, mesuré à 375 px. Rien à faire de ton côté. La décision est celle du 30 août, confirmée par test le 20 septembre : elle mérite d'être citée dans `coque.css` si tu y repasses.
