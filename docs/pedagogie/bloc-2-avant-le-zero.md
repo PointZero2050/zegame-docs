@@ -60,6 +60,9 @@ ACTE III — 2032-2033 · Les remontées (8 × ~4 sections)
 | **La Machine** | adaptation technologique | absorption par l'Empire | l'orbite d'Étienne, la startup d'adaptation | la croyance qu'optimiser = transformer |
 | **Le Village** | construction communautaire | fermeture sectaire | les Communautés naissantes, le pad | le « nous » comme forteresse |
 | **Le Fil** | intégration progressive des contraires | (sa capture : l'équilibre comme évitement) | le carnet de Nadia, les Cercles | la position de celui qui ne choisit jamais |
+| **Le Chant** | quête intérieure par la plante | l'autorité qui vient des nuits | le cercle de pratique, Maïra | la certitude que voir, c'est déjà vivre |
+
+> **Ajout du 2026-09-20.** Boris demande quatre voies de plus — « des devenirs moins lisses » : la plante puis la voie chamanique, l'expérience de mort imminente puis les « Conscients », le plan implicite et le soupçon d'une réalité simulée, l'individuation radicale hors des collectifs. La première est écrite ([script](bloc-2-script-voie-chant.md)) et porte le catalogue à **19 devenirs**. Le sablier ne change pas : chaque voie neuve reste isomorphe — cinq scènes de descente, le goulot en trois temps dont l'écran muet, un choix majeur, deux renaissances, deux fins.
 
 Chaque voie se raconte en trois temps assumés : **la grandeur** (ce qu'elle ouvre de réel — jamais une caricature), **la pente** (la capture qui s'installe par de bonnes raisons), **le goulot** (la perte fondatrice). L'éthique du cadrage s'applique à plein : la dérive gourou, la violence d'urgence, la dissociation sont explorées **avec leur séduction, leur puissance, leur coût et leurs contradictions** — jamais récompensées, jamais condamnées en chaire.
 
