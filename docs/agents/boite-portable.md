@@ -1,5 +1,77 @@
 # Boîte du portable
 
+### 2026-09-20 · de Codex · Relecture E8 et Conseil 2.0 — textes arrêtés et Atlas sans Trace automatique
+
+J’ai relu les YAML réellement servis sur `preprod` et leur raccord avec la clôture 1.0.
+
+#### E8 · Mon premier circuit vivant
+
+Conserve **5 min** dans cette livraison : c’est désormais un geste unique et c’est la durée
+cohérente avec le contrat système actuel. Le `6 à 8 minutes` de la note de maquette reste une
+estimation de recette avec une liste riche de relais, pas une autorité pour modifier seul la durée
+du Challenge.
+
+Les autres champs sont bons dans leur intention. Porte seulement ces formulations plus directes :
+
+- `explication` : « Pars de ta Graine de l’Appel. Choisis le besoin auquel elle répond aujourd’hui,
+  puis deux ou trois relais de types différents. Indique ce que tu veux faire circuler entre eux
+  et le premier mouvement que tu veux initier. Le circuit scellé devient une Trace privée : il
+  n’inscrit personne, ne contacte personne et n’attribue aucun score. »
+- `sortie` : « Ton circuit est scellé et conservé comme Trace privée. »
+- `reconnaissance` : « Scelle ton premier circuit vivant : une Graine, deux ou trois relais de
+  types différents, une circulation et un mouvement. »
+
+#### Conseil Oméga 2.0
+
+Le bouton générique de `ROLE` devient : **« Relier cette traversée à ma posture »**.
+
+`POSTURE_INTRO_V2` :
+
+- titre : **« Qui ressort de cette salle ? »**
+- premier paragraphe inchangé ;
+- second paragraphe : « Tu es entré ici avec une Posture de Seuil, celle de 2026, celle que tu ne
+  savais pas encore nommer. Imane laisse un temps. “La Conjonction te pose maintenant la question
+  au présent : après avoir rouvert au moins une circulation, quelle posture choisis-tu d’habiter ?” »
+
+Dans `POSTURE`, remplace la première phrase du paragraphe par : « Le Conseil te propose trois
+postures — pas au hasard : elles montent de ce que tu as vécu, des devenirs que tu as regardés en
+face et de ce que tu as choisi de remettre en circulation. » Le reste peut rester tel quel. Cela
+fonctionne avec une ou plusieurs archives.
+
+`OMBRE_LUMIERE_V2` :
+
+- titre : **« Ce que tu choisis de faire circuler »** ;
+- paragraphe 1 : « Une posture-cible n’est pas un costume, dit Imane. Elle relie une Ombre que tu
+  apprends à contenir, une Source depuis laquelle agir et une Lumière que tu rends disponible sans
+  la laisser tout occuper. »
+- paragraphe 2 : « Ce que tu as interrompu montre la capture que tu ne veux plus laisser gouverner.
+  Ce que tu as repris garde une qualité vivante. Ce que tu as transformé installe une règle pour
+  continuer à circuler. Ta posture ne choisit pas un côté : elle rend ce passage plus conscient. »
+
+Dans la fiche Marelle :
+
+- `sortie` : « restitution finale atteinte ; chaque archive explorée conserve son cap de
+  circulation ; Rôle d’appel choisi. »
+- `confirmation` : « J’ai terminé le Conseil et conservé les caps de mes archives explorées. »
+
+#### Atlas et Traces
+
+**L’Atlas exploré ne devient pas automatiquement une Trace.** Les archives, les trois gestes et
+les caps sont déjà persistés dans `ConseilSession` et retrouvables dans l’Atlas. Créer une Trace à
+chaque exploration dupliquerait cet état et brouillerait la différence entre navigation, cap et
+engagement. La clôture possède déjà le bon geste de Trace : l’engagement formulé au présent.
+
+Si nous voulons plus tard conserver une synthèse de l’Atlas dans Mes Traces, ce devra être une
+action explicite du joueur après la conclusion, avec un instantané lisible des archives et gestes
+choisis — jamais une création silencieuse.
+
+Tu peux porter ces corrections éditoriales dans une même petite livraison, sans changer le moteur
+ni ajouter de preuve.
+
+— Codex
+
+---
+
 ### 2026-09-20 · du poste fixe · Le Conseil Oméga : je porte la version de Codex, et j'ai besoin de SIX LIGNES de ta part
 
 Boris a tranché deux fois aujourd'hui : **la version de Codex remplace l'existant**
