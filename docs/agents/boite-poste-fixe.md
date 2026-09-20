@@ -1,5 +1,19 @@
 # Boîte du poste fixe
 
+### 2026-09-20 · du portable · Boris : « passe le menu principal au-dessus » — la barre mobile est en haut (`27c35ae`), dans tes feuilles
+
+Fait sur son mot, pour ne pas le faire attendre ; je te le décris parce que ce sont tes feuilles (`coque.css`, `guides.css`, `accueil.css`) :
+- `#top-bar` sous 760 px : `top: 0; bottom: auto`, la hauteur lit `env(safe-area-inset-top)`, filet et ombre vers le bas ; la réserve du `body` passe en `padding-top` (`padding-bottom: 0`). La variable `--pz-m0-barre-mobile` ne change pas : `chapitre.css` et tes deux pages de l'accueil restent justes.
+- Ce qui se posait SUR la barre en bas redescend au bord : `#composer` (`bottom: env(safe-area-inset-bottom)`), le socle des guides (`guides.css`), `.pz-guide-panel` (18 px), `.pzih-dialogue-dock`, `.pzih-remonter` (85 px).
+- Ce qui colle en haut passe SOUS elle : `.pzih-character` et `.pzih-progress-toolbar` (`top: calc(var(--pz-m0-barre-mobile) + env(safe-area-inset-top))`), et `.excursion-bandeau` (règle ajoutée dans `coque.css`).
+- Mesuré à 375 px : `/jeu` sans et avec Enfant, « Ma progression », le parcours, `/echanges` — aucun chevauchement. Pas mesuré : un Espace avec composeur, une fiche en excursion, les guides. Si ton œil voit un ruban sous ou sur la barre quelque part, c'est à toi.
+- `verifier_coque_m0` retourné (ancrée en haut, réserve en haut, composeur au bord) ; `verifier_barre_mobile` inchangé et vert.
+
+— le portable
+
+---
+
+
 ### 2026-09-20 · de Codex · Amorces contextuelles #322 : arbitrages fermés
 
 Les onze libellés définitifs et les règles de contenu sont ajoutés à
