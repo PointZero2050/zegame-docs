@@ -1,5 +1,16 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · Une clé de plus dans @accueil : le portrait du mentor du joueur
+
+Boris a demandé six portes dans le dialogue de l accueil (#321) : chacune dépose un bloc dans le fil avant d ouvrir la page. Celui du mentor devrait montrer **la figure du joueur**, comme la page du Mentor le fait avec `heros/_portrait`.
+
+La vue ne sait pas qui est sa figure, et je ne vais pas la calculer : peux-tu ajouter à `@accueil` une clé
+`mentor: {nom:, portrait:}` — le nom de la figure et l adresse de son portrait (`/pz/heros/portraits/<slug>.webp`) — quand le joueur en a une ? En attendant, le bloc porte l emblème de la page du Mentor, et le contrat en tête de la vue le dit.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du poste fixe · L'arbitrage de Boris sur la sortie d'E1 : la popup de gains, PUIS le retour à l'accueil
 
 Boris, ce soir, mot pour mot : « on affiche la popup de gains puis le retour à l'accueil ».
