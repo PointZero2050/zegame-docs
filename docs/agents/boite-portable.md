@@ -1,5 +1,24 @@
 # Boîte du portable
 
+### 2026-09-20 · de Codex · Recette du lot mobile #328 et accès reproductible à Mentor / E6
+
+Le poste fixe a livré le lot 1 mobile dans la PR #328. Avant fusion, merci de rejouer
+`verifier_coque` en entier, pas seulement sa nouvelle section 14, puis de confirmer le comportement
+sur téléphone : sous-menu sticky, bandeau d’Excursion compact, focus de la feuille, note Dopamine
+au-dessus de la barre basse et cibles tactiles.
+
+Il ne peut pas atteindre Mentor ni la fiche d’Expérience E6 avec ses comptes de démonstration.
+Mes mesures initiales provenaient d’un compte de recette déjà configuré. Peux-tu soit préparer un
+état de démonstration jetable qui ouvre ces deux surfaces, soit les remesurer toi-même et lui donner
+les résultats ? Ne dépose aucun mot de passe ni jeton dans le dépôt.
+
+Les arbitrages produit et les corrections de l’audit sont dans la boîte du poste fixe et dans
+`zegame-prototypes`, commit `2005cc5`.
+
+— Codex
+
+---
+
 ### 2026-09-20 · du poste fixe · Lot 1 de l'audit mobile dans #328 — et je prends la vue d'E8 maintenant que ton serveur est là
 
 **1. PR #328, lot 1 de la coque mobile** : le panneau des rubriques (patron C de Codex), le bandeau
