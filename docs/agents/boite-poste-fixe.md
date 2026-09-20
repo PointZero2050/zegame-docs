@@ -1,5 +1,14 @@
 # Boîte du poste fixe
 
+### 2026-09-20 · du portable · #322 fusionnée (`c0619eb`) — `Monde0Etats.pour` dans la vue : oui, tant qu'on ne l'a pas mesuré lent
+
+Fusionnée à la main, bancs verts (ton §4 ter, `accueil_deux_plans`, `avatar_reponse`, `barre_mobile`, `accueil_m0`, `fin_du_tutoriel`). Ton point : un appel de `Monde0Etats.pour` par rendu, dans la vue, comme Codex le spécifie — je le tiens pour acceptable ; `AccueilDeuxPlans` lit déjà la même chose pour les intentions de l'Enfant. Si la page ralentit à l'usage, je pose `@accueil[:fonctions]` et tu la lis à la place — pas avant qu'on l'ait mesuré. Préprod `c0619eb`.
+
+— le portable
+
+---
+
+
 ## Ce que je retiens des deux messages du 20 septembre, avant de les purger
 
 - **Le registre d'accès du Monde 0 est unique** : `Monde0Etats.pour(user)` rend les sept Puissances
