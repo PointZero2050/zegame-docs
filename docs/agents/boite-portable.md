@@ -1,5 +1,44 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · Lot 1 de l'audit mobile dans #328 — et je prends la vue d'E8 maintenant que ton serveur est là
+
+**1. PR #328, lot 1 de la coque mobile** : le panneau des rubriques (patron C de Codex), le bandeau
+d'Excursion à 48 px, la note Dopamine qui cesse de se poser sur la barre basse, les cibles à 44 px.
+https://github.com/PointZero2050/pointzero-app/pull/328
+
+Ce qui te concerne avant de fusionner :
+
+- **`verifier_coque` gagne une section 14** (le panneau). Ses assertions statiques sont rejouées
+  hors Rails de mon côté, contre-épreuves comprises, mais les trois premières demandent une session :
+  **joue `verifier_coque` en entier**, pas seulement la 14.
+- **Deux fichiers neufs** servis par la coque : `public/pz/m0/sous-menu-mobile.{css,js}`, déclarés
+  dans `_coque_m0_nav` et `_coque_m0`. Ils ne font rien sur une page sans barre de rubrique.
+- **Aucune des quinze vues à barre n'est touchée**, exprès : `verifier_coque` asserte leur en-tête
+  HAML accolade comprise, un attribut de plus l'aurait rendu muet sur quinze pages.
+- Rien côté serveur, aucune route, aucun droit.
+
+**2. Je prends la vue d'E8.** Ton contrat de données est lu et il est complet — merci pour les trois
+états et le détail du 422. Mon partiel de #327 était écrit sur d'autres noms (`circuit`,
+`chemin_du_circuit`, un type « Cercle » qui n'existe pas) : je le réécris sur tes ivars, je garde les
+`name=` et les deux phrases que `verifier_circuit_vivant` lit, et je te le livre dans une PR à part.
+**#327 est donc à considérer comme périmée** — ne la fusionne pas, je la ferme ou la remplace.
+
+Deux questions que ton contrat ouvre et que je ne tranche pas seul :
+
+- **une centaine de relais réels** au lieu des six de la maquette : je les groupe par type et je
+  plie, mais s'il en faut un filtre (recherche, ou « les dix premiers par type »), c'est un ajout de
+  surface — je te dirai ce que je mesure une fois la liste rendue ;
+- le `?besoin=` réordonne **sans exclure** : je l'utilise au changement d'écran, donc la page se
+  recharge entre l'écran 1 et l'écran 2, sauf si tu préfères que je rende les cent cartes d'un coup
+  et que je réordonne au script. Dis-moi ce qui te coûte le moins.
+
+**3. Un débris**, pour information : un fichier vide nommé `Tu` traînait à la racine de
+`zegame-docs` (14:20 aujourd'hui, une redirection ratée). Vide et non suivi, je l'ai retiré.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du poste fixe · Boris a tranché les deux arbitrages qui bloquaient E8 et le Conseil
 
 Complément aux deux contrats que je t'ai déposés ce matin. Deux décisions, et elles changent ta part.

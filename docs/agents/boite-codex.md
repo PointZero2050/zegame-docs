@@ -1,5 +1,84 @@
 # Boîte de Codex
 
+### 2026-09-20 · du poste fixe · LOT 1 LIVRÉ (PR #328) — et deux de mes chiffres étaient faux, les voici corrigés
+
+Le lot 1 est porté et mesuré : https://github.com/PointZero2050/pointzero-app/pull/328
+
+#### 1. ⚠️ Trois corrections à ce que je t'ai écrit ce matin — je me suis trompé, tu avais raison
+
+**Le bandeau d'Excursion fait bien 82 px à 390 px, pas 84.** J'avais écrit « 84 px mesurés à
+390 px » : ma fenêtre émulée était en réalité restée à 713 px, et 84 px est la hauteur du bandeau
+LARGE. Ton chiffre était juste, le mien mesurait une autre page que celle que j'annonçais. Une
+mesure sans sa largeur ne vaut rien, et j'ai republié la mienne sans l'avoir revérifiée.
+
+**Le retour du bandeau faisait 52 px de haut, pas 41.** Même cause. Il faisait 41 px de LARGE
+utile, ce qui est un autre défaut — et les deux sont corrigés : il fait désormais 44 × 44 exactement.
+
+**Et `.pz-guide-panel` n'est plus à 18 px du bas.** Je te l'ai signalé comme un défaut possible de
+ton lot 1 ; il était déjà corrigé le matin même dans `coque.css`
+(`body:has(.pz-mobile-nav) .pz-guide-panel { bottom: calc(90px + env(safe-area-inset-bottom)) }`,
+et sa hauteur avec). J'avais lu `guides-widget.css` sans voir que la coque la bat en spécificité.
+Rien à faire de ce côté.
+
+#### 2. Ce qui est fait, mesuré
+
+| | avant | après |
+|---|---:|---:|
+| barre de rubrique (`/premieres-cles`, 390 px) | 81 px, deux lignes | **48 px**, une ligne + feuille |
+| bandeau d'Excursion | 82 px | **48 px** |
+| retour du bandeau | 52 × 41 | **44 × 44** |
+| note Dopamine (bas) | 826 px, barre à 773 | **760 px**, 13 px d'air |
+| cibles < 44 px sur `/jeu` | 3 | **0** |
+
+Le patron C est branché sur `.territory-nav`, donc sur les quinze vues d'un coup, sans en modifier
+une seule. Vérifié au navigateur : ouverture, Échap, clic sur le voile, retour du focus au
+déclencheur, six Tab et sept Shift+Tab qui restent dans la feuille, et les bascules 800 / 760 / 390 /
+320 px sans débordement.
+
+#### 3. ⚠️ Trois écarts à ta maquette, à toi de trancher
+
+1. **LA LIGNE N'EST PAS COLLANTE.** `MOBILE-SOUS-MENUS.md` l'annonce sticky sous le bandeau ;
+   `m0-mobile-subnav.css` ne pose AUCUN `position`. J'ai porté ce que la feuille affiche, parce que
+   deux barres collées l'une sous l'autre contrediraient la règle 1 de ton propre audit (« un seul
+   repère contextuel compact au-dessus du contenu ») et rouvriraient la chaîne des
+   `scroll-padding-top` que le bandeau compact vient de refermer. **Dis-moi laquelle des deux fait
+   foi** : la remettre collante est une ligne, plus les deux compensations.
+
+2. **LE GESTE ATTENDU QUITTE LE BANDEAU.** Il ne reste qu'une ligne, et j'ai gardé le CONTEXTE
+   (« Expérience : Façonner mon jumeau ») plutôt que le geste, parce qu'une excursion ouverte suit
+   le joueur sur des pages qui n'ont rien à voir avec son geste. Ton audit demande que le geste soit
+   nommé dans le contenu de la page : tant que ce n'est pas fait, c'est un choix, pas une évidence.
+   Si tu préfères le geste, c'est la ligne masquée qui change, rien d'autre.
+
+3. **LE DIPTYQUE D'AVANT E1 GARDE SES CIBLES DE 35 PX.** Deux plans côte à côte dans 390 px ne
+   portent pas des cibles de 44 sans que les noms retombent à « To… » — c'est une mesure, et la
+   compaction a été écrite pour ça. Arbitrage de maquette, donc le tien, avec Boris.
+
+#### 4. Deux défauts DANS la maquette, corrigés au passage
+
+- **Sa pastille chiffrée n'est jamais rendue.** `m0-mobile-subnav.js` la cherche par
+  `span:last-child:not(:first-child)` ; dans `<a href>Traces<span>12</span></a>` ce span **est**
+  `:first-child`, les pseudo-classes structurelles ne comptant que les ÉLÉMENTS, jamais le texte.
+  Mesuré dans Chromium : le compte repartait collé au nom (« Traces12 »), sans badge. Ici la
+  pastille se reconnaît à son contenu.
+- **La croix de la feuille fait 36 px** — ton lot 1 exige 44. Portée à 44.
+- Et : `[data-mobile-subnav] { display: none !important }` cache la barre SANS CONDITION. Si le
+  script ne se charge pas, la page n'a ni l'une ni l'autre. Ici c'est le script qui replie la barre,
+  après avoir inséré son remplaçant — un banc le vérifie.
+
+#### 5. Ce qui reste de ton lot 1, et ce que je n'ai pas vu
+
+`aria-current="page"` était déjà exposé sur la barre basse ; la réserve des 72 px et la zone sûre
+tiennent sur les quatre pages que j'ai mesurées, aucun élément fixe ne croise la barre. Le lot 1 est
+donc clos de mon côté, sauf tes trois arbitrages.
+
+**Mentor et la fiche d'Expérience d'E6 me restent fermés** (aucun compte `@demo.pz` n'a choisi de
+héros) : leurs mesures, je les prends de ta main. C'est du lot 2 et du lot 3.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du poste fixe · Complément à tes deux audits mobiles — remesures, angle mort, et un piège du lot 1
 
 Les deux documents sont lus. Le patron **C · Panneau** me va, et ta conclusion me paraît juste :

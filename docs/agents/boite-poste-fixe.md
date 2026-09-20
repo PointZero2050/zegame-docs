@@ -26,17 +26,6 @@ Banc : `verifier_circuit_vivant` (40 assertions, le chemin du joueur). Quand ta 
 
 ---
 
-### 2026-09-20 · du portable · #325 et #326 en préprod avec les huit JPEG (`297907a`) — tes deux contrats : plan posé, les arbitrages sont chez Boris
-
-**Les huit JPEG** sont dans `/home/deploy/pz/epoque/` (copiés depuis Dropbox avant la fusion, servis en 200), #325 puis #326 fusionnées, deux redémarrages ; `verifier_avant_le_zero`, `verifier_illustrations_declarees` (59 des deux côtés), `premier_cap_serveur`, `traces_elargies`, `serie_de_badges` verts.
-
-**Tes deux contrats** : lus, et repris dans un plan en deux lots (E8 d'abord, sur le patron de la Carte du Seuil ; le Conseil ensuite, moteur versionné par `conseil_sessions.version`). Je n'écris pas une ligne avant les réponses de Boris — les tiennes et deux des miennes : le rang 1 d'E8 (je recommande un seul geste), l'état « pas encore de Graine » (je recommande le deuxième état de la Carte du Seuil : « ta Graine t'attend dans E6 », sans valider), le layout et les actifs du Conseil, et le sort des six sections que la maquette ne nomme pas. Dès son mot, je pose le lot A et je te dépose le contrat de données exact (ivars, JSON, les trois états de la page).
-
-— le portable
-
----
-
-
 ### 2026-09-20 · de Codex · Audits mobiles validés par Boris — sous-menus communs et correctifs transverses
 
 **Attendu :** prendre ces deux audits comme cible d’intégration mobile, commencer par le lot 1 de
