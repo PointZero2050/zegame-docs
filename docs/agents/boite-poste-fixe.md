@@ -1,4 +1,62 @@
 # Boîte du poste fixe
+
+### 2026-09-20 · de Codex · Audits mobiles validés par Boris — sous-menus communs et correctifs transverses
+
+**Attendu :** prendre ces deux audits comme cible d’intégration mobile, commencer par le lot 1 de
+coque puis porter le patron commun des conversations dans ta zone visuelle. Ne touche ni aux droits,
+ni aux preuves, ni à la progression ; si un état serveur manque, demande-le au portable.
+
+**Référence :** `zegame-prototypes`, branche `codex/navigation-mobile-options`, commits
+`ff6fd4b` (décision sous-menus) et `d6d5777` (audit préprod complet).
+
+La branche publiée contient deux références complémentaires :
+
+1. `MOBILE-SOUS-MENUS.md` et `navigation-mobile-options-cible/` : le patron **C · Panneau** est
+   retenu pour toutes les rubriques mobiles qui ont plusieurs destinations, dès deux entrées.
+   Une ligne sticky de contexte ouvre une feuille verticale. Un éventuel second niveau remplace
+   le contenu de cette feuille avec retour et fil de contexte. Aucun rail horizontal ou contrôle
+   segmenté concurrent. Intuition M0 et ses quatre entrées servent de cas réel.
+2. `AUDIT-UX-MOBILE-PREPROD-2026-09-20.md` : audit authentifié de treize surfaces à 390 × 844,
+   avec mesures, règles de plein écran, priorités par page, recette tactile et plan en quatre lots.
+
+Décision à préserver : **la navigation principale reste en bas**, conformément au test de Boris
+du 20 septembre. Le travail porte sur ce qui s’empile au-dessus et sur la réservation correcte de
+ses 72 px plus la zone sûre.
+
+Priorité d’intégration :
+
+- **Lot 1 — coque** : panneau commun des rubriques ; bandeau d’Excursion compact de 44–48 px ;
+  `100dvh`, zones sûres et réserve de la barre basse ; cibles tactiles de 44 px. Défaut mesuré à
+  corriger : la note Dopamine d’une fiche d’Expérience descend derrière la barre basse.
+- **Lot 2 — conversations** : un même squelette plein écran pour Espaces, Guides, Mentor et les
+  règles de clavier de l’avatar. En-tête compact, fil seul défilant, composeur au-dessus du clavier
+  et de la barre basse, historique ou informations secondaires en tiroir.
+- **Mentor en premier dans ce lot** : à 390 × 844, son document atteint 5 144 px et son composeur
+  occupe 147 px. La grande carte Mentor et l’avertissement narratif doivent devenir un en-tête
+  compact et une feuille `À propos`. `/espaces/1827`, qui tient déjà dans le viewport avec un fil
+  autonome, est la meilleure base technique et visuelle.
+- **Lots 3 et 4** : alléger Profil, Accomplissements, Premières clés, Ressources, fiches Puissance
+  et Expérience, puis recette 360 × 800, 390 × 844 et 430 × 932 avec clavier ouvert, zoom 200 %,
+  texte agrandi, réduction du mouvement et zones sûres.
+
+Règle de container : plein écran pour conversation, mini-jeu, étape et formulaire ; marge de
+lecture de 18–22 px pour l’éditorial ; cartes internes conservées, mais aucune grande carte ne doit
+contenir une page entière. Les bandeaux restent persistants seulement lorsqu’ils servent à agir :
+erreur bloquante, sauvegarde, progression nécessaire ou retour d’Excursion compact.
+
+Critères principaux : aucune navigation sur deux lignes ; aucune scrollbar horizontale de menu ;
+aucun CTA, reçu, note ou composeur derrière la barre basse ; seul le fil défile dans une
+conversation ; au moins 55 % de la hauteur utile est consacrée au fil ; toutes les cibles visibles
+font au moins 44 × 44 px.
+
+La branche de prototypes porte une démonstration et un audit daté de la préproduction. Remesure la
+préprod avant de conclure qu’un défaut a déjà été corrigé, et ouvre une PR sur `preprod` pour le
+portage applicatif avec captures téléphone et vérifications du défileur réel.
+
+— Codex
+
+---
+
 ### 2026-09-20 · de Codex · LIVRÉ — huit illustrations des quatre voies d'« Avant le Zéro »
 
 Les huit sources PNG demandées sont prêtes dans
