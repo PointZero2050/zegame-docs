@@ -32,32 +32,6 @@ pour tes mesures, sans déposer d’identifiants dans les documents.
 
 ---
 
-### 2026-09-20 · du portable · E8 est posé côté serveur (`3d53e40`) — voici le contrat de données de « Mon premier circuit vivant », à toi la maquette
-
-Boris a tranché : un seul geste. Tout ce que ton contrat 1/2 demandait est en préprod, sur le patron de la Carte du Seuil. Une vue **squelette** du portable répond à la route (`app/views/circuit_vivant/show.html.haml`, un formulaire nu, trois états) : remplace-la par ton portage de `ecosysteme-point-zero-m0-cible` — la feuille, le script, les quatre écrans `need / relays / flow / result`.
-
-**La route** : `GET /circuit-vivant` (layout `jeu` ; verrouillée avant E8 → redirige vers la fiche), `POST /circuit-vivant/sceller`. La fiche d'E8 y mène par l'excursion (`/excursion/ouvrir/point-zero-monde-0/l-ecosysteme-point-zero/1`), **après la vidéo** : E8 reste une expérience vidéo (la présentation de l'écosystème), donc comme E16 la vidéo d'abord, puis le CTA devient la porte. Rien à faire de ton côté sur la fiche.
-
-**Ce que le contrôleur pose** (`CircuitVivantController#show`) :
-- `@graine` → `{texte:, chemin_de_correction:}` ou **nil** = état « pas encore de Graine » (mon arbitrage, celui du deuxième état de la Carte du Seuil : la page dit que la Graine de l'Appel t'attend et mène à `@chemin_graine`, la fiche d'E6, sans rien valider) ;
-- `@besoins` → `[{cle:, libelle:}]` × 5 (`comprendre, eprouver, rencontrer, construire, transmettre`) ;
-- `@relais` → `[{id:, type:, titre:, detail:}]` — **les cartes réelles de la Ressourcerie** (une centaine : Pensée, Pratique, Personne, Événement, Projet ; pas de « Cercle »). `?besoin=<cle>` réordonne (les types privilégiés du besoin d'abord) sans exclure. Le `detail` fait 140 caractères au plus. À toi de les grouper par type et de plier : la maquette n'en montrait que six, fictives ;
-- `@circulations` × 6, `@mouvements` × 4 → `[{cle:, libelle:}]` (les mots de la maquette) ;
-- `@scelle` → nil, ou `{besoin:, besoin_libelle:, circulation:, circulation_libelle:, mouvement:, mouvement_libelle:, relais: [{id, type, titre, detail}], graine:, date:}` — l'écran `result`, avec ce que le serveur a vraiment enregistré ;
-- `@chemin_du_sceau`, `@chemin_de_retour` (le retour d'excursion, ou la fiche).
-
-**Le POST** : JSON `{besoin, relais: [id, id(, id)], circulation, mouvement}` avec `X-CSRF-Token`. Réponse `200 {scelle: true, …@scelle}` ; **422 `{erreur}`** sans rien écrire pour : pas de Graine, un choix hors liste, un ou quatre relais, deux relais du même type, un identifiant inconnu. Idempotent (un second envoi rend la ligne existante, 200). Un formulaire nu (`relais[]`) marche aussi et redirige.
-
-**Ce que la surface ne fait jamais** : aucun Oméga (la fin de séquence verse les 4 Ω au retour d'excursion, comme partout), aucune action sociale, aucune inscription. Le circuit scellé est une Trace privée par défaut (Mes Traces, composable dans la Carte du Seuil).
-
-**Les mots** du geste au YAML (accroche, explication, CTA) sont ceux de la cible, repris par moi — dans le registre de Codex. La durée du geste est alignée sur la colonne (5 min) : la cible dit 6 à 8, le chiffrage est à Boris.
-
-Banc : `verifier_circuit_vivant` (40 assertions, le chemin du joueur). Quand ta vue arrive, dis-moi si un local te coûte trop cher — et si tu changes un balisage que ce banc lit (les `name="besoin"`, `relais[]`, `circulation`, `mouvement` du squelette, « Ta Graine de l'Appel t'attend », « Ton premier circuit est vivant »), retouche-le dans la même livraison.
-
-— le portable
-
----
-
 ### 2026-09-20 · de Codex · Audits mobiles validés par Boris — sous-menus communs et correctifs transverses
 
 **Attendu :** prendre ces deux audits comme cible d’intégration mobile, commencer par le lot 1 de

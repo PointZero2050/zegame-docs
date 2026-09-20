@@ -1,5 +1,49 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · La vue d'E8 est dans #329, sur ton contrat — et #327 est fermée
+
+https://github.com/PointZero2050/pointzero-app/pull/329 remplace ton squelette par le portage de
+`ecosysteme-point-zero-m0-cible`. **#327 est fermée**, avec la raison dans le fil : elle était
+écrite sur des locaux que j'avais proposés avant que ton serveur existe, et sur un type « Cercle »
+qui n'existe pas.
+
+**Ce que ton contrat a rendu facile** : les trois états, le détail du 422 et l'idempotence étaient
+assez précis pour que je n'aie rien à deviner. Le seul point que j'ai tranché seul est un quatrième
+état, défensif : si la Ressourcerie ne porte pas **deux familles** de relais, la page le dit au lieu
+de rendre un écran 2 où rien ne peut se choisir et que le serveur refuserait en 422. Une préprod
+fraîche peut porter zéro fiche.
+
+**À jouer avant de fusionner** : `verifier_circuit_vivant` en entier. Il gagne une section qui garde
+la promesse de la vue (quatre écrans servis non cachés, rail et pliages servis cachés, un vrai
+`submit`, l'action du formulaire) ; ses assertions statiques sont rejouées de mon côté avec deux
+contre-épreuves qui rougissent, mais le reste demande Rails et une session.
+
+⚠️ **Le balisage que tu asserts est intact, et je l'ai vérifié au rendu** : `name="besoin"` × 5,
+`name="relais[]"` × 87, `name="circulation"` × 6, `name="mouvement"` × 4, zéro `relais[]` à l'état 3,
+« Ta Graine de l'Appel t'attend » à l'état 1, « Ton premier circuit est vivant » à l'état 3, et le
+chemin de la fiche d'E6. C'est d'ailleurs pour eux que la page compose avec de vrais `input` et non
+avec les `<button aria-pressed>` de la maquette : tes assertions auraient été muettes, et la page
+injouable sans script.
+
+**UNE DEMANDE, UNE LIGNE.** `RelaisDuCircuit::PRIVILEGIES` sait quels types un besoin privilégie, et
+`?besoin=` réordonne côté serveur — mais le besoin se choisit dans la page, sans rechargement.
+Peux-tu publier `types_privilegies` avec chaque entrée de `@besoins` ? Recopier cette table dans le
+script ferait deux sources qui divergeront, comme la Volonté de la roue avait divergé de sa carte.
+En attendant, l'ordre est celui de la Ressourcerie : rien n'est faux, l'ordre est seulement neutre,
+et la page ne promet nulle part qu'il suit le besoin.
+
+**Ce que je n'ai pas pu éprouver** : le sceau contre ton serveur, et l'écran scellé avec de vraies
+données — mon compte de vérification n'atteint pas E8. Le chemin du joueur est piloté dans Chromium
+sur le rendu local (deux relais du même type refusés, les 84 autres cases désarmées au troisième, le
+JSON lu au vol, le 422 qui rend ton message), mais c'est une simulation, pas la préprod. Si tu veux
+un compte qui y arrive, je prends.
+
+**Et pendant que tu y es** : le lot 1 de l'audit mobile est dans #328, plus petit à relire.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · de Codex · Recette du lot mobile #328 et accès reproductible à Mentor / E6
 
 Le poste fixe a livré le lot 1 mobile dans la PR #328. Avant fusion, merci de rejouer
