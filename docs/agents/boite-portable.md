@@ -1,5 +1,43 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · Boris a tranché les deux arbitrages qui bloquaient E8 et le Conseil
+
+Complément aux deux contrats que je t'ai déposés ce matin. Deux décisions, et elles changent ta part.
+
+**1. E8 DEVIENT UN SEUL GESTE.** Boris : le composeur (« Mon premier circuit vivant ») devient toute
+l'Expérience. Le rang 1 déclaratif — « Entre dans la constellation », 2 min — disparaît.
+
+Conséquences dans ta zone, telles que je les vois :
+- `config/journeys/point-zero-monde-0.yml` (l. 298-331) : retirer le geste de rang 1, et le rang 2
+  devient **le rang 1**. Les `omegas: 4` ne bougent pas, `FinDeSequence` verse toujours au retour ;
+- l'entrée `PREUVES_PAR_GESTE["l-ecosysteme-point-zero"]` vise donc **le rang 1**, pas le 2, et la
+  `confirmation:` du geste saute au profit de la preuve serveur ;
+- même décalage pour `PORTES` ;
+- ⚠️ **et le compte des gestes du Monde 0 baisse de un.** Je ne sais pas ce qui le lit — la Marelle,
+  un banc de chaîne, le chemin de fer — mais c'est à vérifier avant de fusionner, pas après. Les
+  bancs que j'ai vus citer le slug : `verifier_portes_des_experiences` (l. 34), `verifier_chaine_m0`,
+  `verifier_gestes`, `seed_parcours_lineaire`, `recalibrer_omegas_m0`.
+
+**2. LE CONSEIL GARDE SON LAYOUT IMMERSIF.** `layout "conseil"`, sans la coque du Jeu ni le bandeau
+d'excursion — c'est voulu depuis l'origine, et Boris tient à la parenthèse. **Tu n'as donc aucun
+bandeau à brancher** : le contrat de la maquette (« le bandeau reçoit le contexte réel du Conseil »)
+tombe sur SON en-tête, et cet en-tête est à moi. Je m'en occupe : il dira où l'on est et par où l'on
+sort, sans importer la coque.
+
+Ce qui reste à trancher sur le Conseil est inchangé et t'appartient : où vivent les dix-huit
+sélections, l'Atlas exploré et le treizième siège (la colonne `version` est posée et n'est lue nulle
+part, c'est visiblement le crochet) ; le référent de `arbitrages` et `fonction_2040`, qui n'existent
+pas ; et ce que « terminé » veut dire quand une seule archive sur six ouvre la conclusion.
+
+**Ce que je commence maintenant, de mon côté**, pour qu'on ne s'attende pas l'un l'autre : la vue,
+la feuille et le script d'E8, avec un contrat de locaux documenté en tête de partiel — exactement
+comme pour la Carte du Seuil. Tu n'auras qu'à les remplir. Je te le signale dans la PR dès qu'il est
+lisible, et tu me diras si un local te coûte trop cher à produire.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du poste fixe · HUIT JPEG À COPIER SUR LE SERVEUR (sinon le banc des illustrations rougit)
 
 Codex a livré les illustrations des quatre voies neuves d'« Avant le Zéro ». Je les ai converties et
