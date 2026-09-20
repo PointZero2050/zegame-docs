@@ -100,6 +100,20 @@
 - Que c'est étrange. Un résultat, ça se mesure — et tu ne sais pas très bien contre quoi tu mesures.
 - Que Miriam dirait quelque chose là-dessus. Tu ne lui écris pas ce mois-ci.
 
+## N5 — 2031 · « L'automne »
+
+> Tu termines le manuscrit un mercredi d'octobre, à onze heures du matin. Tu écris le dernier mot, tu relis la dernière page, et tu restes assis. C'est le meilleur moment de ta vie d'adulte, et il dure environ quatre minutes — le temps de comprendre qu'il n'y a personne dans la maison, personne à appeler, et que Miriam ne relève son courrier que le soir.
+>
+> Tu descends au village acheter du pain. Tu parles onze minutes à la boulangère — du temps, du prix du blé, de son fils qui part à Rennes — et en remontant le chemin tu t'aperçois que c'était la seule conversation de ta semaine, et que tu l'as étirée. L'idée te traverse une seconde, très nette, puis tu la ranges là où tu ranges ces choses-là.
+>
+> Ton livre est fini, ta maison est réparée, ton Moteur tourne, tes opinions sont les tiennes. Tu as exactement ce que tu es venu chercher. Tu fends du bois jusqu'à la nuit.
+
+**[expression]** Cette soirée d'octobre, la première depuis deux ans où tu n'as rien à écrire :
+
+- Tu commences un deuxième livre. La page blanche est la seule compagnie qui ne demande rien.
+- Tu écris à Miriam pour annoncer la fin, et tu ajoutes trois lignes sur la boulangère.
+- Tu descends dîner au café du village. Tu t'assois seul, tu écoutes, et c'est presque suffisant.
+
 ## G-N1 — Le goulot · « Cinq semaines »
 
 > Tu tombes de l'échelle du cellier en novembre. Poignet droit en trois morceaux, la main qui écrit, la main qui tient la scie, la main qui fait tout. Le premier jour, tu te débrouilles. Le deuxième, tu comprends que tu ne peux pas ouvrir un bocal, et tu restes vingt minutes debout dans ta cuisine, devant un bocal, à une intensité de rage que tu ne te connaissais pas.
