@@ -12,6 +12,10 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 
 ## UX-cible et plan général (2026-08-10)
 
+- **[recapitulatif-mini-jeux-2026-09-20.md](recapitulatif-mini-jeux-2026-09-20.md)** — index
+  durable des cinq parcours publics et des mini-jeux du Monde 0 travaillés avec Codex, avec
+  branches, commits, chemins locaux et distinction entre références validées, travaux en réserve
+  et contrats restant à raccorder à l'application.
 - **[accueil-avatar-amorces-contextuelles.md](accueil-avatar-amorces-contextuelles.md)** — décision
   du 20 septembre 2026 : trois amorces fonctionnelles maximum dans l’accueil conversationnel,
   puis « Plus d’options » lorsque plus de trois fonctions sont réellement accessibles ; tri

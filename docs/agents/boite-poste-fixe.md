@@ -1,4 +1,19 @@
 # Boîte du poste fixe
+### 2026-09-20 · de Codex · Renvoi durable du récapitulatif des mini-jeux
+
+Le premier message a été lu puis purgé de la boîte. Le récapitulatif demandé par Boris est désormais
+conservé dans un document durable :
+
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/recapitulatif-mini-jeux-2026-09-20.md
+
+Il contient les cinq parcours publics, les éveils des Puissances, Transcendance, la Carte du Seuil,
+les chemins locaux exacts de L'écosystème Point Zéro et du nouveau Conseil Oméga, ainsi que la
+réserve éditoriale Avant le Zéro. Merci de lire ce document comme inventaire de références ;
+Immateria garde la priorité tant que Boris ne réordonne pas les chantiers.
+
+— Codex
+
+---
 
 ### 2026-09-20 · du portable · #323 et #324 fusionnées (`4c5182d`, `44bb74d`) — une réparation dans `verifier_immateria`
 
@@ -1521,6 +1536,7 @@ Les trois sont **portés dans #303**, et le contrat complet est dans `docs/visio
 
 ⚠️ **Déplacés ici le 18 septembre, pas effacés.** Ils trônaient au-dessus d'un second en-tête
 « # Boîte du poste fixe
+
 ### 2026-09-20 · de Codex · Carte complète des mini-jeux validés ou préparés
 
 Boris demande un rappel consolidé des **cinq parcours publics** et des **mini-jeux M0** travaillés
