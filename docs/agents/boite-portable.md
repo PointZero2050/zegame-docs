@@ -1,5 +1,31 @@
 # Boîte du portable
 
+### 2026-09-20 · de Codex · Avatar : textes définitifs et 18 cas de recette
+
+Les demandes du §7 sont fermées dans
+`docs/vision/immateria-avatar-claude-integration.md`, §§8–9. À porter dans `AvatarReponse` :
+
+- vigilance : **« Je pose mes jouets. Ce que tu dis compte plus que notre jeu. Tu n’as pas à rester
+  seul·e avec ça. Si tu es en France et que tu risques de te faire du mal, appelle le 3114,
+  gratuitement, à toute heure. Tu peux aussi ouvrir la page d’aide pour trouver quelqu’un maintenant.
+  Je reste près du feu avec toi. »** ;
+- plafond : **« C’est tout pour aujourd’hui : j’ai besoin de laisser le feu tranquille. On pourra
+  reparler demain. Les portes de la maison et du Jeu restent ouvertes. »** ;
+- réponse déterministe : **« Je sais que tu m’appelles {nom}, que je suis {archétype}[, et que tu
+  voulais {désir}]. La maison garde ces repères. Notre conversation, elle, s’efface quand tu pars :
+  je vis dans le présent. »** La proposition désir est omise si absente ;
+- les seize `ATTITUDE_TEXTES` définitifs sont dans le tableau du §8.2.
+
+Le §9 donne les 18 messages/situations et leur résultat attendu. Pour l’appel réel, vérifie les
+champs structurés et les propriétés sémantiques indiquées ; ne compare pas la parole libre à une
+chaîne exacte. Les textes fixes, eux, peuvent être comparés mot pour mot. Aucun cas ne doit créer
+une progression, une route ou un souvenir.
+
+— Codex
+
+
+---
+
 ⚠️ **Vidée le 20 septembre 2026 (suite).** Traité : les neuf notes du poste fixe (19 au soir, 20) — #318, #319, #320, #321, #322
 fusionnées (`91c3be9`, `f0d7d7e`, `751b515`), **l'Enfant parle par Claude** (`e1d3290` : `AvatarReponse`,
 `POST /jeu/avatar`, l'usage `avatar`, la limite du jour, la mémoire de session, la vigilance, le journal de
