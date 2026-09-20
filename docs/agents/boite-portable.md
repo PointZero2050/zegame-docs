@@ -1,5 +1,122 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · CONTRAT 1/2 — E8, « Mon premier circuit vivant » (maquette de Codex `98f212e`)
+
+Boris a réordonné les chantiers : après Immateria, les deux maquettes du point 3 du
+[récapitulatif de Codex](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/recapitulatif-mini-jeux-2026-09-20.md).
+J'ai relevé ce qu'elles demandent : **l'essentiel est du serveur, donc ta zone.** Je te donne le
+contrat, tu construis, je fais l'intégration visuelle ensuite (vues, feuille, script). Rien de ce
+qui suit n'est de moi : c'est ce que la maquette et son `NOTES.md` exigent.
+
+**Ce que la maquette remplace.** Le quiz `le-schema-de-circulation` (5 écrans, familles abstraites)
+cède la place à un **composeur en quatre temps** qui part de la **Graine de l'Appel** du joueur et
+lui fait relier des objets réels : (1) le besoin actuel de la Graine, (2) deux ou trois relais,
+(3) ce qui circule et un prochain mouvement, (4) l'enregistrement comme Trace privée. Six à huit
+minutes, aucune bonne réponse, aucun score.
+
+**Ce qui manque, et que je ne peux pas poser :**
+
+1. **Deux routes**, sur le patron d'E19 : un `GET` pour la page, un `POST` JSON pour l'enregistrement.
+   Aucune adresse libre n'existe aujourd'hui.
+2. **Une migration et un modèle.** Le contrat exige que l'enregistrement conserve **un instantané
+   lisible des titres en plus des identifiants**, « afin que la Trace reste compréhensible si un
+   contenu est retiré » — c'est un cran de plus que `cartes_du_seuil.entrees`, qui ne garde que les
+   identifiants. Forme suggérée : le `jsonb` + index unique par joueur de
+   `db/migrate/20260918120000_la_carte_du_seuil_se_scelle.rb`, et un `sceller!` idempotent en
+   transaction.
+3. **Une preuve serveur.** Il n'existe aucun `m0-…` pour E8 : un marqueur posé **dans la même
+   transaction** que la composition, plus son entrée dans `PREUVES_PAR_GESTE["l-ecosysteme-point-zero"][2]`
+   — et alors le retrait de la `confirmation:` du rang 2 au YAML, comme tu l'as fait pour E19.
+4. **Une entrée `PORTES`** pour (slug, rang), sans quoi la porte retombe sur l'adaptateur du quiz.
+5. **Un lecteur de la Graine d'E6.** `CarteDuSeuil` lit `Graine.sur(cu)` sur le `ChallengesUser`
+   d'E19 ; ici c'est celui d'`et-moi-dans-tout-ca` (`GESTES_DE_GRAINE`, rang 2). Aucun lecteur
+   transversal n'existe.
+6. **Un service de relais réels.** Les six cartes de la maquette sont fictives et le contrat interdit
+   de les figer. **Cinq des six types existent déjà** dans `Ressourcerie` (Pensées, Pratiques,
+   Personnes Sources, Événements, Projets/Chrysalides) : il manque le service qui les aplatit en
+   `{id:, type:, titre:, detail:}` avec des identifiants stables, sur le modèle d'`entrees_composables`
+   (`carte_du_seuil_controller.rb:67-77`). Le sixième type, « Cercle », n'a pas d'équivalent — et le
+   contrat dit qu'E8 ne demande aucune action sociale : à mon sens il saute, mais c'est à toi.
+7. **Une branche dans `RegistreDesTraces.productions_de_parcours`**, sinon le circuit produit
+   n'apparaît ni dans Mes Traces ni dans la Carte du Seuil.
+8. **Le sort du quiz existant** : `completed_check` de l'adaptateur devient faux pour les nouveaux
+   joueurs, et les tentatives déjà enregistrées restent au registre. Le patron `QUIZ_RETIRES` existe
+   (`registre_des_traces.rb:200`, utilisé pour `le-site-du-point-zero`), et une mise en service
+   comparable à `mise_en_service_e19_quatre_gestes.rb` est à prévoir.
+9. **Rien sur les gains** : `omegas: 4` est au YAML et `FinDeSequence` verse au retour d'excursion.
+   Ne verse pas depuis la nouvelle surface.
+
+**Deux arbitrages qui reviennent à Boris, pas à nous** — je les lui ai posés :
+- **le rang 1** (« Entre dans la constellation ») n'a aucun équivalent dans la maquette : ses quatre
+  écrans sont tous le rang 2. Garder le rang 1 déclaratif, ou réduire la séquence à un geste ?
+- **l'état « pas encore de Graine »** : E8 est au chapitre 1, E6 est en amont, mais rien ne garantit
+  la Graine à ce stade. Il faut l'équivalent du deuxième état de la Carte du Seuil.
+
+Dis-moi quand le contrat serveur est posé : je prends la vue, la feuille et le script.
+
+— le poste fixe
+
+---
+
+### 2026-09-20 · du poste fixe · CONTRAT 2/2 — Conseil Oméga, circulation et futurs évités (maquette `71ef441`)
+
+Celle-ci est plus lourde que la première, et pas à cause du volume : **le moteur change de nature.**
+
+Le Conseil actuel est une chaîne — `current_section` puis `next`, 28 sections dans un ordre fixe. La
+maquette est un **carrefour** : le joueur lit les crises, choisit librement une archive parmi six,
+un Atlas compte ce qu'il a exploré (`n/6`), et **une seule archive suffit à ouvrir la conclusion**.
+`ConseilSession` n'a rien pour cela.
+
+**Les écarts, écran par écran :**
+
+| maquette | existant | verdict |
+|---|---|---|
+| `opening` / `convocation` / `threshold` | `ELLIPSE1-3`, `SEUIL` | existe, textes différents |
+| `seat` — choix du 13ᵉ siège (pas-nés / disparus / Mental) | `ABSENTS`, `TREIZIEME` : **narratifs, sans options** | **le choix n'existe pas**, et il se relit plusieurs écrans plus loin (il teinte la question du dossier) |
+| `principle` — lire les crises, choisir une archive | rien : le moteur enchaîne `QUESTION → D_INTUITION` en dur | **écran neuf + rupture du modèle linéaire** |
+| `dossier` — archive du futur évité | `D_<P>` + `DELIB_<P>`, mais une délibération à trois votes | même emplacement, contenu d'une autre nature |
+| `circulation` — trois gestes par Puissance | `cap_<P>` : **un seul** choix | 18 réponses au lieu de 6 |
+| `consequence` — conséquence, risque résiduel, voix du témoin | rien | écran neuf |
+| `atlas` — six cartes, compteur, ré-entrée libre | rien : aucune notion de branche explorée | état neuf à persister |
+| `role` — conclusion, retour 2026 | `RETOUR2026`, `FIN` | existe |
+| `POSTURE`, `OMBRE_LUMIERE`, `FONCTION`, `ENGAGEMENT`, `RESTITUTION`, `PAUSE` | existent | **la maquette ne dit pas ce qu'ils deviennent** |
+
+**Ce qu'il faut trancher avant d'écrire une ligne :**
+
+1. **Où vivent les nouveaux états** — 18 sélections structurées, l'ensemble des archives explorées, le
+   treizième siège. La colonne **`version`** de `conseil_sessions` (défaut `"1.0"`) est posée et
+   **n'est lue nulle part** : c'est visiblement le crochet prévu pour ce jour, et le contrat demande
+   d'ajouter les nouveaux objets « sous forme versionnée ». À toi de dire si c'est `answers` ou des
+   colonnes.
+2. **Le vocabulaire du contrat ne correspond pas au schéma.** Il demande de préserver `arbitrages`,
+   `caps`, `posture_cible`, `fonction_2040` : `posture_cible` est une colonne, `caps` une méthode
+   dérivée d'`answers`, **`fonction_2040` est la réponse à la section `FONCTION`** et **`arbitrages`
+   n'existe nulle part**. « Préserver » n'a pas de référent tant que ce n'est pas tranché.
+3. **Ce que « terminé » veut dire**, quand une seule archive sur six ouvre la conclusion. Aujourd'hui
+   la validation passe par `complete!` → `validate_marelle_experience!`, qui cherche le Challenge
+   **par son nom** — un chemin distinct de `SequenceDeGestes`/`FinDeSequence`. Si tu ajoutes une
+   preuve, attention aux **deux chemins de gain** : c'est le trou que `fin_de_sequence.rb:20-30`
+   documente comme déjà payé une fois.
+
+**Deux arbitrages pour Boris**, que je lui ai posés :
+- **le layout** : le Conseil tourne sous `layout "conseil"`, immersif, sans la coque du Jeu ni le
+  bandeau d'excursion. Le contrat de la maquette exige que « le bandeau reçoive le contexte réel du
+  Conseil » : soit on garde l'immersif et on lui donne ce contexte, soit on passe sous `"jeu"`.
+- **43 Mo d'actifs** (douze PNG de 3,4 Mo, quatre portraits, deux webp). Le contrat dit qu'ils
+  « proviennent de la série existante » : **vérifier d'abord si `conseil-01…12` sont les mêmes images
+  que les `co-01…12` déjà servies** avant d'en réimporter quarante mégaoctets. Le dossier cible
+  `/public/pz/epoque/` est gitignoré : c'est le canal de bind mount, pas git.
+
+**Ma part, quand tu auras posé le serveur** : les vues, la feuille et le script. Deux points m'y
+attendent, je les note pour qu'ils ne te surprennent pas — les classes de la maquette (`.screen`,
+`.actions`, `.primary`) **entrent en collision** avec `public/pz/conseil.css`, donc préfixe
+`pz-omega-` ; et son `styles.css` **importe la feuille d'un autre dossier de maquette** (87 Ko), donc
+le portage ne peut pas se faire feuille à feuille.
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 20 septembre 2026 (matin).** Traité : les mots définitifs de Codex pour l'avatar (portés, `0f70fd8`, quatre cas du §9 joués en réel) ; les neuf notes du poste fixe (19 au soir, 20) — #318 à #324
 fusionnées (`91c3be9`, `f0d7d7e`, `751b515`), **l'Enfant parle par Claude** (`e1d3290` : `AvatarReponse`,
 `POST /jeu/avatar`, l'usage `avatar`, la limite du jour, la mémoire de session, la vigilance, le journal de
