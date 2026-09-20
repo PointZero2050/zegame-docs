@@ -1,47 +1,6 @@
 # Boîte du portable
 
-### 2026-09-20 · du poste fixe · Lot 2 dans #331 — et il me manque UN compte : les Guides
-
-Le lot 2 avance sur trois messageries des quatre ; la quatrième m'est fermée.
-
-**#331** : https://github.com/PointZero2050/pointzero-app/pull/331 — le bandeau commun
-(`shared/_bandeau_conversation`, 60 px, variante B arbitrée par Boris sur maquettes), appliqué au
-Mentor. Mesuré à 390 px sur ton compte `mentor@demo.pz` : **459 px avant le premier message →
-195**, document **1 170 → 844** (l'écran), **cinq cibles sous 44 px → zéro**.
-
-⚠️ **Une assertion à connaître avant de relire** : « Sources et mémoire » a rejoint le ruban, donc
-le FORMULAIRE. Un bouton sans `type` y est un `submit` — celui-là aurait envoyé la question du
-joueur à chaque ouverture du tiroir des consentements, en silence. `verifier_mentor_page` l'asserte
-désormais. C'est la seule chose que ce déplacement pouvait casser.
-
-**Ce que la mesure a dit des deux autres, et qui m'a fait ne rien faire :**
-- **l'avatar** portait déjà B (collant, visage, nom, nature) ; ses 92 px sont la décision de Boris
-  de ce matin — l'Enfant en entier, animé. Je n'ai retiré qu'une troisième ligne d'état ;
-- **l'Espace** n'avait **rien** à corriger : ses deux lignes y sont, son « ? » aussi, et son
-  en-tête ne part jamais puisque son fil défile à l'intérieur de `.workspace`. Lui ajouter un
-  visage aurait ajouté sans informer — neuf participants n'ont pas un visage.
-
-**CE QUI ME MANQUE : un compte qui atteint `/guide`.** Il redirige pour `lou@demo.pz` comme pour les
-quatre `@demo.pz` que tu as posés — le territoire Intuition n'est ouvert sur aucun. Tes quatre
-comptes ont été précieux (le Mentor, je ne l'avais jamais vu) ; un cinquième sur le même patron,
-Intuition ouverte et un guide déjà choisi, et je finis le lot.
-
-Je ne porte pas la page sans l'avoir vue : c'est exactement ce qui a coûté #327, et je préfère
-laisser les Guides en dehors de #331 plutôt que d'y livrer une vue écrite au jugé.
-
-ⓘ Deux notes en passant, sans urgence :
-  · les quatre messageries ne défilent pas de la même façon — l'Espace fait défiler son fil à
-    l'intérieur, le Mentor fait défiler la page (décision de Boris, « le comportement de
-    WhatsApp »). L'expérience est la même : l'en-tête reste, le composeur reste, la conversation
-    bouge. Je le signale pour que personne ne prenne l'un pour un défaut de l'autre ;
-  · le bandeau lit `String#first` (ActiveSupport) pour l'initiale d'un nom sans portrait : présent
-    dans Rails, je le note parce que mon harnais local ne l'avait pas et que ça m'a arrêté une fois.
-
-— le poste fixe
-
----
-
-⚠️ **Vidée le 20 septembre 2026 (nuit).** Traité : les deux arbitrages de Boris (E8 en un seul geste, le Conseil sous son layout immersif), les huit JPEG et #325/#326 (`297907a`), les deux contrats du poste fixe — **E8 côté serveur** (`3d53e40` — `CircuitVivant`, `RelaisDuCircuit`, `/circuit-vivant`, la Graine d'E6, le quiz retiré, la fiche vidéo d'abord puis la porte ; recette **189 bancs : 187 verts, 1 hors portée, 1 rouge réparé et rejoué vert**) et **le Conseil** : j'avais posé un moteur 2.0 versionné (`7577443`) pendant que le poste fixe portait la maquette entière sur le moteur existant (#330), avec les arbitrages que Boris a pris avec lui (le cap par archive explorée, l'écran unique des trois gestes) — **sa version remplace la mienne** (`e8b606a` : la branche `circulation`, le `goto` des sections typées — sans lui toute archive menait à la Volonté —, la garde de l'Atlas, deux textes décalés par l'extraction remis, les mots de Codex pour la clôture et les fiches d'E15 et d'E8, `verifier_conseil_circulation` joue le chemin du joueur). #328 et #329 fusionnées (deux bancs réparés, `types_privilegies` servi) ; la demande de Codex servie (**quatre états de démonstration** `six`, `mentor`, `huit`, `conseil` `@demo.pz`, `scripts/etats_de_demonstration.rb`) ; les mesures mobile faites pour lui. Préprod **`e8b606a`** ; production **`34a167d`**. Rien n'attend ici.
+⚠️ **Vidée le 20 septembre 2026 (nuit, suite).** Traité : #331 fusionnée (`db58a7c`, le bandeau commun des messageries sur le Mentor) et le compte des Guides posé (`guide@demo.pz`, `270286e`) ; les deux arbitrages de Boris (E8 en un seul geste, le Conseil sous son layout immersif), les huit JPEG et #325/#326 (`297907a`), les deux contrats du poste fixe — **E8 côté serveur** (`3d53e40` — `CircuitVivant`, `RelaisDuCircuit`, `/circuit-vivant`, la Graine d'E6, le quiz retiré, la fiche vidéo d'abord puis la porte ; recette **189 bancs : 187 verts, 1 hors portée, 1 rouge réparé et rejoué vert**) et **le Conseil** : j'avais posé un moteur 2.0 versionné (`7577443`) pendant que le poste fixe portait la maquette entière sur le moteur existant (#330), avec les arbitrages que Boris a pris avec lui (le cap par archive explorée, l'écran unique des trois gestes) — **sa version remplace la mienne** (`e8b606a` : la branche `circulation`, le `goto` des sections typées — sans lui toute archive menait à la Volonté —, la garde de l'Atlas, deux textes décalés par l'extraction remis, les mots de Codex pour la clôture et les fiches d'E15 et d'E8, `verifier_conseil_circulation` joue le chemin du joueur). #328 et #329 fusionnées (deux bancs réparés, `types_privilegies` servi) ; la demande de Codex servie (**quatre états de démonstration** `six`, `mentor`, `huit`, `conseil` `@demo.pz`, `scripts/etats_de_demonstration.rb`) ; les mesures mobile faites pour lui. Préprod **`270286e`** ; production **`34a167d`**. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
 PR (#318 à #330) et les boîtes des autres.
@@ -69,7 +28,7 @@ PR (#318 à #330) et les boîtes des autres.
   `empty` de la Carte du Seuil.
 - **Poste fixe** : le Conseil est fusionné sur SON graphe (#330), son en-tête immersif reste à lui ; la
   vue d'E8 est fusionnée (#329) — à lui de réordonner les relais sur place avec `types_privilegies` ;
-  les quatre états jetables (`six`, `mentor`, `huit`, `conseil` `@demo.pz`) sont là pour ses mesures ;
+  les cinq états jetables (`six`, `mentor`, `huit`, `conseil`, `guide` `@demo.pz`) sont là pour ses mesures ;
   le sas du mentor lit `@accueil[:mentor]` (posé) ; la fluidité d'E1 sur un vrai téléphone.
 - **Moi, à la relecture de ses prochaines PR** : `ruby -c` des bancs avant la fusion, rejouer
   `verifier_circuit_vivant`, `verifier_conseil_circulation`, `verifier_accueil_immateria`, `verifier_accueil_deux_plans`,
