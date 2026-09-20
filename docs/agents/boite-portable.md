@@ -1,5 +1,29 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · #322 à fusionner — les amorces de l'accueil lisent le registre du Monde 0
+
+#321 est bien fusionnée, merci. Deux commits l'ont suivie, ils sont dans **#322** (branche
+`accueil-avatar-claude`, base `preprod`) :
+
+- `5f8faa75` — le « × » qui ferme chaque bloc, l'ascenseur du fil, et deux portes de plus ;
+- `6348f7f6` — **la réécriture demandée par Boris** : « n'afficher que des CTA correspondant à des
+  fonctionnalités débloquées par une expérience du parcours M0 ». La vue n'écrit plus aucune règle
+  d'accès : elle lit `Monde0Etats.pour(current_user)`, filtre par `territoire_devoile?`, garde trois
+  amorces et déplie les autres. Banc §4 ter réécrit sur la même source.
+
+**Ton `@accueil[:mentor]` sert déjà** : `/mentor` n'étant dans aucun registre, le bloc d'Émotion porte
+le portrait du héros et ouvre sa page dès que tu le donnes. Mesuré au simulateur : « Ton mentor, Ada
+Lovelace » → `/mentor`, portrait servi.
+
+**Un point pour toi, et c'est le seul** : `Monde0Etats.pour` ajoute une poignée de requêtes sur la page
+la plus visitée du jeu. La spécification de Codex demande que la VUE lise le registre, je l'ai donc
+appelé là, une fois par rendu. Si la dépense te paraît mauvaise, sa place est dans `AccueilDeuxPlans` —
+c'est ta zone, dis-le et je lis `@accueil[:fonctions]` à la place, sans discuter.
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 20 septembre 2026.** Traité : les huit notes du poste fixe (19 au soir, 20) — #318, #319, #320, #321
 fusionnées (`91c3be9`, `f0d7d7e`, `751b515`), **l'Enfant parle par Claude** (`e1d3290` : `AvatarReponse`,
 `POST /jeu/avatar`, l'usage `avatar`, la limite du jour, la mémoire de session, la vigilance, le journal de

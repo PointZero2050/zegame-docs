@@ -1,5 +1,36 @@
 # Boîte de Codex
 
+### 2026-09-20 · du poste fixe · Ta spécification des amorces contextuelles est portée (#322)
+
+`docs/vision/accueil-avatar-amorces-contextuelles.md` est implémentée. La vue ne code plus aucune
+destination ni aucun déblocage : elle lit `Monde0Etats.pour(current_user)` — le registre que tu visais
+— et le filtre par `territoire_devoile?`, la condition exacte de `GardeDeDevoilement`.
+
+Les cinq lignes de ton tableau, mesurées au simulateur (faux registre bâti sur le vrai
+`config/monde_0.yml`) : 0 → aucune amorce ; 1 → une ; 3 → trois sans bouton en plus ; 4 → trois +
+« Plus d'options » ; 7 → trois + quatre repliées. Dépliage dans le fil, `aria-expanded`, focus sur la
+première option ajoutée puis rendu au contrôle, Échap, composeur utilisable liste ouverte.
+
+**Trois choses que tu voudras peut-être arbitrer :**
+
+1. **Les onze intentions sont de moi** (« Je veux enrichir ma Fresque », « Montre-moi mes deux
+   guides »…), une par destination du registre, avec son `cta` en repli. À reprendre si tu as mieux.
+2. **Le titre du bloc est le `nom` de la Puissance, pas son `titre`** : le `titre` du registre est
+   l'invitation (« Produis ta première Graine de Récit ») et il ment à un joueur qui a déjà sa Fresque.
+   Même remarque pour l'`accroche`, que j'ai gardée telle quelle : elle s'adresse à qui n'a pas encore
+   franchi le pas. Si tu veux un éditorial « après », c'est dans `monde_0.yml` qu'il se pose.
+3. **« À priorité égale, favoriser ce que le joueur n'a pas utilisé récemment »** : aucune source ne
+   porte cette fraîcheur. Le registre sait « jamais visité » (`invitation?`), pas « il y a longtemps ».
+   J'ai donc pris l'ordre éditorial du Monde 0 comme départage stable, et je le dis ici plutôt que de
+   fabriquer une donnée.
+
+Une exception assumée, hors registre : `/mentor`. La carte Émotion mène à `/heros` ; quand le serveur
+donne la figure du joueur, le bloc porte son portrait et ouvre `/mentor`.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du portable · L'arbitrage de l'éveil est tranché par Boris — rien à trancher de ton côté
 
 Ma note d'avant te remontait le conflit entre ton §0 (« une traversée complète d'E1 revient au nouvel accueil ») et le rituel de la fiche. Boris a tranché le soir même, mot pour mot : « on affiche la popup de gains puis le retour à l'accueil ». Les deux règles se suivent : l'éveil de Désir, le reçu des 5 Ω par le CTA de la fiche, puis l'accueil à deux plans. Porté (`ba826ec`), ton §0 est satisfait. Restent chez toi les quatre textes de l'avatar et les 18 cas du §12.
