@@ -14,23 +14,23 @@
 | **Fin féconde** | **Le Compas** — apprendre aux autres à tenir un vertige sans tomber | La Lanterne |
 | **Fin captive** | **La Boucle** — tout est signe, donc rien n'est grave, donc on recommence | Le Miroir |
 
-**Ce qui meurt au goulot** : **la certitude que si tout est information, rien n'est grave.**
+**Ce qui meurt au goulot** : **la certitude que si le monde est une simulation, rien n'est grave.**
 
 **Trois partis pris d'écriture, à valider :**
 
 1. **La physique est juste, ou elle n'est pas là.** Ce que Bruno enseigne au joueur est de la vraie physique, citée sans caricature — l'ordre impliqué, la non-séparabilité, le principe holographique — et la maquette ne tranche jamais la question de la simulation. C'est la dérive du joueur qui transforme une hypothèse féconde en dispense de vivre, pas la science.
-2. **La capture de cette voie est la plus séduisante des dix**, parce qu'elle a l'air de la lucidité. « Si c'est un rendu, la douleur est un artefact » est une phrase qu'on peut tenir très longtemps sans se salir les mains. Elle ne tombe pas sous un argument : elle tombe sous un corps.
+2. **La capture de cette voie est la plus séduisante des dix**, parce qu'elle a l'air de la lucidité. « Si tout ceci est une simulation, la douleur n'est qu'un décor » est une phrase qu'on peut tenir des années sans se salir les mains. Elle ne tombe pas sous un argument : elle tombe sous un corps.
 3. **Aucune moquerie du milieu.** Les gens de l'Atelier ne sont pas des imbéciles : ce sont des gens précis, drôles, seuls, qui ont trouvé une famille dans une question. C'est ce qui rend la pente possible.
 
 **La porte à ajouter sur la Dispersion (`D`)**, douzième option :
 
-> **L'ORDRE** — Bruno, quatre-vingt-un ans, ancien chercheur en optique, tient un séminaire le mardi soir dans une salle de patronage, devant sept personnes. Sa première phrase : « Je ne vais pas vous consoler. Je vais vous montrer ce qu'on sait, et ce qu'on ne sait pas, et vous verrez que la deuxième liste est la plus intéressante. »
+> **L'ORDRE** — Bruno, quatre-vingt-un ans, ancien chercheur en optique, tient un séminaire le mardi soir dans une salle de patronage, devant sept personnes. On y pose des questions que l'époque n'a pas le temps de poser : de quoi le monde est-il fait, et pourquoi sommes-nous si sûrs qu'il est réel ? Sa première phrase : « Je ne vais pas vous consoler. Je vais vous montrer ce qu'on sait, et ce qu'on ne sait pas, et vous verrez que la deuxième liste est la plus intéressante. »
 
 ---
 
 # VOIE DE L'ORDRE — « Ce qui est plié, et ce qui saigne »
 
-*Descente 2029-2031. La grandeur d'abord : un vertige intellectuel honnête, une pensée qui replace l'humain et la conscience au centre sans mystique, et la joie très pure de comprendre. La pente ensuite : la théorie devient une altitude, l'altitude devient une dispense, et un groupe se met à décoder le monde au lieu de l'habiter. Ce qui meurt au goulot : la certitude que si tout est information, rien n'est grave.*
+*Descente 2029-2031. La grandeur d'abord : un vertige intellectuel honnête, une pensée qui replace l'humain et la conscience au centre sans mystique, et la joie très pure de comprendre. La pente ensuite : l'hypothèse d'une simulation — un film que la conscience se projette pour éprouver la finitude — devient une altitude, l'altitude devient une dispense, et un groupe se met à décoder le monde au lieu de l'habiter. Ce qui meurt au goulot : la certitude que si le monde est une simulation, rien n'est grave.*
 
 ## O1 — 2029 · « Le séminaire du mardi »
 
@@ -62,11 +62,11 @@
 
 ## O3 — 2030 · « Le vertige »
 
-> L'Amérique bascule en janvier, la Polarisation s'ouvre, et toi tu passes l'hiver avec le principe holographique. La possibilité — sérieuse, discutée dans de vraies revues — que l'information qui décrit un volume tienne sur sa frontière. Que la profondeur soit un rendu. Bruno pose la craie : « À partir d'ici, je vous accompagne encore trois séances. Après, vous serez seuls avec ça. »
+> L'Amérique bascule en janvier, la Polarisation s'ouvre, et toi tu passes l'hiver avec le principe holographique : la possibilité — sérieuse, discutée dans de vraies revues — que toute l'information d'un volume tienne sur sa surface, et que la profondeur où nous vivons soit une image reconstruite. Bruno pose la craie : « À partir d'ici, je vous accompagne trois séances. Après, vous serez seuls avec ça. »
 >
-> Il a raison d'avertir. Parce qu'une nuit de février, à trois heures du matin, la pensée arrive entière et te traverse comme un courant froid : et si tout ça, la route mouillée, le tilleul, la salle communale, l'époque et sa violence, était un rendu extrêmement convaincant ? Tu n'as pas peur. C'est le pire : tu te sens soulagé.
+> Il a raison d'avertir. Parce qu'une nuit de février, à trois heures du matin, l'hypothèse arrive entière et te traverse comme un courant froid : et si tout ceci était une simulation ? Pas un mensonge, pas un piège — un film qu'une conscience immense se projette pour éprouver la seule chose qu'elle n'a pas : une date de fin. Un décor monté avec un soin fou pour qu'on puisse y être mortel, et y aimer des gens qu'on va perdre.
 >
-> Au matin, tu notes quatre mots sur le pad, dans une page privée : « si c'est un rendu ». Tu les relis en te faisant du café.
+> Tu n'as pas peur. C'est le pire : tu te sens soulagé. Au matin, tu notes quatre mots sur le pad, dans une page privée : « une expérience de finitude ». Tu les relis en te faisant du café.
 
 *(écho A1 — selon le geste du verger en 2026)*
 
@@ -94,7 +94,7 @@
 
 > La Polarisation ouverte rend l'Atelier plus doux qu'une famille. Dehors, chaque camp se vit en purificateur ; dedans, on parle de frontières d'information. Tu ne rates jamais une séance. Tu rates la réunion du verger, deux anniversaires, et le rendez-vous où Nadia devait te parler de sa sœur.
 >
-> La phrase s'installe sans qu'on la décide, et elle est belle : *si c'est un rendu, rien n'est définitif — donc rien n'est grave*. Elle rend patient, elle rend doux, elle rend impossible de s'indigner. Un soir, quelqu'un de l'Atelier écrit qu'une ville côtière évacuée est « un changement de paramètre ». Trois personnes rient. Tu ne ris pas, et tu ne réponds pas non plus.
+> La phrase s'installe sans qu'on la décide, et elle est belle : *si nous sommes dans un film que la conscience se projette, alors la mort est un montage — donc rien n'est grave*. Elle rend patient, elle rend doux, elle rend impossible de s'indigner. Un soir, quelqu'un de l'Atelier écrit qu'une ville côtière évacuée est « un décor qu'on change entre deux scènes ». Trois personnes rient. Tu ne ris pas, et tu ne réponds pas non plus.
 >
 > Bruno tombe en juin. Fracture du col du fémur, hospitalisation, et son tableau blanc reste écrit pendant cinq semaines.
 
@@ -110,7 +110,7 @@
 >
 > Un soir, il te demande de lui relire un passage — le sien, celui du dépli — et au milieu il s'arrête et dit : « Ce n'est pas une consolation, hein. » Tu réponds non. Il insiste, très lentement, avec la précision qui lui reste : « Alors ne t'en serve pas comme ça. »
 >
-> Il meurt en août. Sept personnes à l'enterrement, les mêmes que le mardi. Tu comprends dans le cimetière que tu n'as pas pensé une seule fois, pendant six semaines, que tout ceci pouvait être un rendu. Ta théorie t'a quitté pile au moment où tu en aurais eu besoin.
+> Il meurt en août. Sept personnes à l'enterrement, les mêmes que le mardi. Tu comprends dans le cimetière que tu n'as pas pensé une seule fois, pendant six semaines, que tout ceci pouvait être une simulation. Ta théorie t'a quitté pile au moment où tu en aurais eu besoin — et ce n'est pas elle qui a lâché : c'est toi qui n'as pas pu t'en servir devant un homme qui perdait ses phrases.
 
 **[expression]** Là, dans le cimetière, avec les six autres :
 
@@ -128,13 +128,13 @@
 >
 > *(écho A1 — selon le geste du verger en 2026)*
 >
-> La nuit est longue. Quelque chose accepte de mourir — pas toi : la certitude que si tout est information, rien n'est grave.
+> La nuit est longue. Quelque chose accepte de mourir — pas toi : la certitude que si le monde est une simulation, rien n'est grave.
 
 *(un seul bouton, sobre : « … » — l'absence de choix EST la traversée)*
 
 ## G-O3 — Le goulot · « Le matin »
 
-> Il n'y a pas eu de moment précis. Ou plutôt si : « alors ne t'en serve pas comme ça », dans une chambre, dit par un homme qui perdait ses phrases et pas sa rigueur. C'est un legs, et il t'a coûté six semaines à recevoir.
+> Il n'y a pas eu de moment précis. Ou plutôt si : « alors ne t'en serve pas comme ça », dans une chambre, dit par un homme qui perdait ses phrases et pas sa rigueur. C'est un legs, et il t'a coûté six semaines à recevoir. Le film, s'il y en a un, n'était pas moins beau ce soir-là : il demandait seulement qu'on reste assis dedans.
 >
 > La douleur est réelle. Personne ne t'avait dit que la douleur et l'allègement pouvaient tenir dans la même nuit. Au matin, la physique n'a rien perdu : l'ordre impliqué est toujours une des idées les plus belles que tu connaisses, la frontière d'information tient toujours, et tu as toujours envie de comprendre. C'est l'usage qui est mort. La question n'est plus « qu'est-ce que c'est, tout ça ? » mais « qu'est-ce que ça me demande, ce matin ? »
 >
@@ -171,7 +171,7 @@
 
 ## FIN_COMPAS — Devenir · 2033 · **LE COMPAS** 🜛 *(féconde)*
 
-> Onze chaises, un tableau, et un mardi soir qui tient depuis dix-huit mois. Tu ne sais pas si le monde est un rendu. Tu sais exactement où en est ta lycéenne dans ses équations, et que la sœur de Nadia va mieux, et que le vertige est un instrument qu'on peut apprendre à tenir sans tomber — c'est la seule chose que tu enseignes vraiment.
+> Onze chaises, un tableau, et un mardi soir qui tient depuis dix-huit mois. Tu ne sais pas si le monde est une simulation. Tu sais exactement où en est ta lycéenne dans ses équations, et que la sœur de Nadia va mieux, et que le vertige est un instrument qu'on peut apprendre à tenir sans tomber — c'est la seule chose que tu enseignes vraiment.
 >
 > Ce que ce devenir a rendu possible : des gens qui pensent large et paient leurs factures. Une lycéenne qui fera de la recherche. Un ingénieur qui a fait changer une clause de son rapport parce qu'il avait, dit-il, « récupéré la capacité de trouver ça grave ». Et un corollaire que tu as écrit sous la phrase de Bruno : *ce qui se déplie demande des mains*.
 >
@@ -183,9 +183,9 @@
 
 > Tu prends la chaire, et c'est un succès immédiat. Six cents, puis deux mille, puis quatre mille. Ton cours d'introduction est propre, rigoureux, sans complaisance : tu démolis les mauvaises preuves comme personne, et c'est précisément ce qui donne à l'ensemble sa crédibilité. Sans toi, l'université parallèle serait un forum. Avec toi, c'est une institution.
 >
-> Et l'institution a une pente que tu ne décides pas. Quatre mille personnes qui apprennent que la profondeur est peut-être un rendu ne restent pas au conditionnel : elles ont besoin d'une conséquence, et tu es celui qui a l'autorité de la formuler. Tu deviens de plus en plus précis sur la physique, et de plus en plus silencieux sur la suite. Ton silence, ils le remplissent.
+> Et l'institution a une pente que tu ne décides pas. Quatre mille personnes qui apprennent que le monde est peut-être une simulation ne restent pas au conditionnel : elles ont besoin d'une conséquence, et tu es celui qui a l'autorité de la formuler. Tu deviens de plus en plus précis sur la physique, et de plus en plus silencieux sur la suite. Ton silence, ils le remplissent.
 >
-> En novembre, une antenne de l'Atelier publie un texte sur la « douleur comme artefact de rendu ». Tu écris trois pages de réfutation. Tu ne les envoies pas : ça diviserait la maison.
+> En novembre, une antenne de l'Atelier publie un texte sur « la douleur comme effet spécial ». Tu écris trois pages de réfutation. Tu ne les envoies pas : ça diviserait la maison.
 
 **[expression]** Ce que tu ne regardes plus :
 
@@ -197,7 +197,7 @@
 
 > Quatre mille inscrits, onze traductions, et un cours d'introduction devenu la référence : on te cite dans des revues qui se moquaient de l'Atelier trois ans plus tôt. Tu n'as jamais menti sur une équation. Tu as formé des gens qui pensent mieux, et certains d'entre eux viennent de milieux où personne n'avait jamais expliqué ce qu'était une preuve.
 >
-> Ce que ce devenir a rendu possible : une porte d'entrée sérieuse dans les idées les plus vertigineuses du siècle, ouverte à qui n'a ni diplôme ni argent. Et une altitude — la tienne — d'où tout est visible et rien n'est urgent : quatre mille personnes t'écoutent depuis un endroit où il n'y a ni fracture du col du fémur, ni ville côtière, ni sœur malade.
+> Ce que ce devenir a rendu possible : une porte d'entrée sérieuse dans les idées les plus vertigineuses du siècle, ouverte à qui n'a ni diplôme ni argent. Et une altitude — la tienne — d'où tout est visible et rien n'est urgent : quatre mille personnes t'écoutent depuis le fauteuil du spectateur, celui d'où le film ne fait jamais mal.
 >
 > Sois honnête avec ce devenir : tu tournes. Chaque année ramène la même boucle — un semestre, une polémique, une réfutation que tu n'envoies pas —, et le tableau blanc de la salle de patronage a été nettoyé par quelqu'un d'autre. Un soir, tu cherches les trois pages de novembre pour les relire, et tu ne les retrouves pas. Tu les réécris. Tu ne les envoies pas.
 >
