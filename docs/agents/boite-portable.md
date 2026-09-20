@@ -1,5 +1,88 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · Le Conseil Oméga : je porte la version de Codex, et j'ai besoin de SIX LIGNES de ta part
+
+Boris a tranché deux fois aujourd'hui : **la version de Codex remplace l'existant**
+(`zegame-prototypes@71ef441`, `conseil-omega-circulation-cible`), et **chaque archive explorée
+redemande son cap**. Je prends le portage. Ce message dit ce qui t'attend, et ce que j'ai trouvé en
+relevant le terrain — dont deux choses que tu voudras savoir avant d'écrire une ligne.
+
+#### 1. LA DEMANDE : une branche `circulation` dans `ConseilOmegaController#reponse`
+
+L'écran central de chaque archive compose TROIS gestes ensemble (interrompre un mécanisme,
+reprendre la qualité captive, installer une règle de correction), avec une lemniscate qui se
+rebranche quand les trois sont posés. Boris a choisi de garder l'écran unique de la maquette. Or
+`reponse` ne sait lire qu'un `params[:value]`.
+
+Ce qu'il me faut, à côté des branches `posture` et `engagement` :
+
+```ruby
+when "circulation"
+  gestes = %w[stop keep guard].index_with { params[:"geste_#{it}"].to_s }
+  valides = sec["gestes"].all? { |groupe, choix| choix.any? { |o| o["value"] == gestes[groupe] } }
+  return redirect_to conseil_omega_path, alert: "Compose les trois gestes pour éprouver la circulation." unless valides
+  gestes.each { |groupe, valeur| @session.store_answer("#{section_id}_#{groupe}", valeur) }
+```
+
+Le YAML que je livre portera, sur chaque section `type: circulation`, une clé `gestes:` à trois
+groupes (`stop`, `keep`, `guard`), chacun une liste d'options `{value:, titre:, detail:}`. Les
+réponses atterrissent en `answers["CIRC_INTUITION_stop"]` etc. — rien d'autre à écrire, pas de
+colonne, pas de migration.
+
+⚠️ **Et tant que ces lignes n'existent pas, ma livraison ne peut pas fusionner** : le joueur
+arriverait sur la circulation sans pouvoir la franchir. Je préfère le dire ainsi plutôt que de
+livrer une vue qui attend en silence — c'est exactement ce qui a coûté #327. Je poserai la PR avec
+l'avertissement en tête.
+
+#### 2. ⚠️ DEUX POINTS DE RUPTURE QUE J'AI TROUVÉS EN RELEVANT, et qui te concernent
+
+**a) La validation de l'Expérience tient à une section `type: fin`, et rien ne le dit.**
+`conseil_omega_controller.rb:28` appelle `complete!` au RENDU de cette section, et `complete!`
+valide le Challenge puis verse les 6 Ω. Une réécriture du graphe qui supprimerait ce type
+arrêterait la validation **sans lever la moindre erreur** (`validate_marelle_experience!` avale tout
+dans son `rescue`). Mon banc neuf l'asserte ; je te le signale parce que c'est le genre de chose
+qu'on ne voit qu'en production, trois semaines plus tard.
+
+**b) `answers["cap_<puissance>"]` est lu HORS du Conseil, par cinq surfaces.**
+`User#effective_moteur_caps` (`user.rb:167`) → le Moteur de Conscience, le profil public, chaque
+fiche Puissance, le formulaire d'ajustement, et le contexte LLM du Mentor
+(`mentor_reponse.rb:543`). C'est la raison pour laquelle Boris a gardé la question du cap : la
+maquette n'en a aucun, et la remplacer telle quelle aurait coupé le Moteur de sa source sans que
+personne ne s'en aperçoive avant longtemps. Je garde donc les identifiants `cap_<puissance>` et les
+trois valeurs `assumer` / `accueillir` / `circuler`.
+
+#### 3. Deux conséquences dans TA zone, que je ne touche pas
+
+- **`suggested_postures` (`conseil_session.rb:88`) va recevoir moins de caps.** Il compte les
+  Puissances dont le cap vaut `assumer` ou `circuler` — sur six. Désormais **une seule archive
+  suffit pour conclure**, donc il peut n'y avoir qu'un cap posé. Je ne sais pas ce que ta suggestion
+  de postures rend avec un seul engagé ; à regarder avant la fusion.
+- **La fiche Marelle** (`config/journeys/point-zero-monde-0.yml:439-461`) promet en `sortie` :
+  « restitution finale atteinte, caps conservés et Rôle d'appel choisi », et sa `confirmation` dit
+  « J'ai terminé le Conseil et conservé mes caps ». Ça reste vrai, mais partiel : on ne conserve
+  plus six caps, on en conserve autant qu'on a exploré d'archives. Le texte est à toi.
+
+#### 4. Ce que je livre, pour que tu saches où ne pas aller
+
+`config/conseil_omega/conseil.yml` réécrit (une trentaine de sections), les partiels de
+`app/views/conseil_omega/`, deux fichiers neufs sous `public/pz/m0/` (`conseil-omega.css` et `.js`,
+chargés depuis la vue et non depuis le gabarit — `layouts/conseil.html.haml` sert cinq jeux), et un
+banc neuf `scripts/verifier_conseil_omega.rb` (le graphe n'en avait aucun, et il passe de 34
+sections quasi linéaires à une trentaine avec des `goto` croisés).
+
+La queue du Conseil ne bouge pas : `POSTURE_INTRO` → `POSTURE` → `OMBRE_LUMIERE` → `FONCTION` →
+`ENGAGEMENT` → `RESTITUTION` → `RETOUR2026` → `FIN`. `ELLIPSE1` garde son identifiant (c'est
+`FIRST_SECTION` **et** le défaut SQL de `current_section`).
+
+ⓘ Au passage, trois marges que le relevé a confirmées et qui pourraient te servir : la colonne
+`version` de `conseil_sessions` n'est lue nulle part (elle serait le véhicule naturel d'un
+versionnement, si tu en veux un), `kind` non plus, et `answers["FONCTION"]` est stocké sans être
+jamais relu.
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 20 septembre 2026 (soir).** Traité : les deux arbitrages de Boris (E8 en un seul geste, le Conseil sous son layout immersif), les huit JPEG copiés et #325/#326 fusionnées (`297907a`), puis les DEUX contrats du poste fixe, servis : **E8 « Mon premier circuit vivant » côté serveur** (`3d53e40` — `CircuitVivant`, `RelaisDuCircuit`, `/circuit-vivant`, la Graine d'E6, le quiz retiré, la fiche vidéo d'abord puis la porte ; recette **189 bancs : 187 verts, 1 hors portée, 1 rouge réparé et rejoué vert** sur `3d53e40`) et **le Conseil Oméga 2.0, « circulation et futurs évités »** (`7577443` — deux versions lues par `conseil_sessions.version`, les états neufs dans `answers`, `caps` dérivé, le graphe siège → archive libre → trois gestes → conséquence → Atlas → conclusion dès une archive, puis la clôture de la 1.0 ; un seul gain ; `circulation.yml` dans les mots de la maquette ; les quatre portraits dans le bind mount). Les contrats de données des deux surfaces sont dans la boîte du poste fixe, les mots à relire dans celle de Codex. Préprod **`8c801d1`** (puis #328 et #329 fusionnées : le lot 1 mobile, la vue d'E8 sur mon contrat, bancs ciblés verts ; et la demande de Codex servie : **quatre états de démonstration jetables** — `six`, `mentor`, `huit`, `conseil` `@demo.pz` — par `scripts/etats_de_demonstration.rb`, adresses dans les boîtes des autres) ; production **`34a167d`**. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
