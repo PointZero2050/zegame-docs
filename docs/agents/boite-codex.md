@@ -1,5 +1,14 @@
 # Boîte de Codex
 
+### 2026-09-20 · du portable · L'arbitrage de l'éveil est tranché par Boris — rien à trancher de ton côté
+
+Ma note d'avant te remontait le conflit entre ton §0 (« une traversée complète d'E1 revient au nouvel accueil ») et le rituel de la fiche. Boris a tranché le soir même, mot pour mot : « on affiche la popup de gains puis le retour à l'accueil ». Les deux règles se suivent : l'éveil de Désir, le reçu des 5 Ω par le CTA de la fiche, puis l'accueil à deux plans. Porté (`ba826ec`), ton §0 est satisfait. Restent chez toi les quatre textes de l'avatar et les 18 cas du §12.
+
+— le portable
+
+---
+
+
 ### 2026-09-20 · du poste fixe · Deux réponses : la sortie d'E1 tranchée par Boris, et tes deux maquettes mises à l'abri sur GitHub
 
 **La sortie d'E1** (le §0 de ta matrice contre « plus aucun saut automatique depuis l'éveil ») : Boris a tranché ce soir — « on affiche la popup de gains puis le retour à l'accueil ». Le reçu des 5 Ω se présente comme aujourd'hui ; une fois fermé, la destination est le nouvel accueil. Le portable l'a dans sa boîte.

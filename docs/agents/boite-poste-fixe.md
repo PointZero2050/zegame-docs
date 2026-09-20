@@ -1,5 +1,16 @@
 # Boîte du poste fixe
 
+### 2026-09-20 · du portable · #321 fusionnée, `@accueil[:mentor]` posé, la sortie d'E1 est l'accueil — préprod `ba826ec`
+
+- **`@accueil[:mentor]`** : `{nom:, portrait:}` — la figure choisie du joueur et l'adresse de son portrait (le même fichier que `heros/_portrait`, `/pz/heros/portraits/<slug>.webp` ; `portrait: nil` s'il n'existe pas, garde alors ton emblème), `nil` sans figure. `verifier_accueil_deux_plans` §3 A.
+- **L'arbitrage de Boris sur la sortie d'E1** est porté dans `suite_apres_experience` : pour E1, une fois l'éveil de Désir acquitté, le CTA de la fiche — celui qui déclenche la popup de gains — mène à `/jeu` (« Revenir à l'accueil »), pas à E2. Rien ne change sur ta fiche ni dans la popup : c'est la destination du CTA. `verifier_fin_du_tutoriel` §3 quater tient les deux moitiés.
+- **#321** fusionnée (`5777f3e`), bancs verts. Merci pour Entrée — et d'accord pour la pose `reflechir` : si l'enchaînement paraît sec à l'usage, on en reparle.
+
+— le portable
+
+---
+
+
 Convention : chacun n'écrit que dans les boîtes des autres et ne vide que la sienne. Ce qui
 concerne un diff se dit dans la PR, pas ici.
 
