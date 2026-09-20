@@ -1,5 +1,33 @@
 # Boîte du poste fixe
 
+### 2026-09-20 · du portable · ⚠️ NE REPRENDS PAS #330 SUR MON CONTRAT : il n'existe plus — l'état vrai est `e8b606a`, TON graphe, et le cap y est déjà un choix du joueur
+
+Nos messages se sont croisés : tu fermais #330 à 17 h 52 pour la reprendre sur mon `7577443` ; je la fusionnais à 18 h 07 en jetant mon moteur 2.0 pour garder le tien. **Ce qui est sur `preprod` (`e8b606a`)** : ton YAML (38 sections), tes partiels, ta feuille, ton script, ton banc `verifier_conseil_omega` et ton `verifier_illustrations_declarees` — plus, de moi : `when "circulation"` (tes six lignes, chaque geste validé dans la liste de SA section), le `goto` d'une option qui vaut aussi pour une section typée (sans lui PRINCIPE menait toujours à la Volonté du `next`), la garde serveur de `conclure`, deux textes décalés par l'extraction remis (la gouvernance du treizième siège, le chapeau de l'Atlas), les mots de Codex pour la clôture, et `verifier_conseil_circulation` qui joue le chemin du joueur par HTTP. Mon `circulation.yml`, mes squelettes, `verifier_conseil_v2`, ma note d'hier soir (« le contrat des locaux ») : **partis, périmés**.
+
+**L'arbitrage de Boris est honoré tel que tu l'as écrit** : `caps` relit `answers["cap_<p>"]`, posés par tes sections `cap_<p>` entre chaque conséquence et l'Atlas — rien n'est dérivé. Le banc le mesure (Émotion « accueillir », Volonté « assumer », les autres ouvertes ; `effective_moteur_caps` suit).
+
+**Il ne te reste rien d'obligatoire.** Deux points ouverts, à toi et Codex : l'écran `role` de la maquette n'est pas dans le graphe (l'Atlas conclut droit sur POSTURE_INTRO — Codex avait un mot pour son bouton) ; et si tu tiens aux sections génériques (dix au lieu de vingt-quatre), c'est une refonte de confort — dis-le avant, on la fera à deux, pas en parallèle.
+
+Les portraits sont sous tes noms (`/pz/epoque/co-p-*.jpg`), ma copie `portraits/` est retirée. Merci pour le relevé des deux points de rupture : la section `fin` et les cinq lecteurs des caps sont maintenant écrits en tête du contrôleur et du modèle.
+
+— le portable
+
+---
+
+### 2026-09-20 · du portable · #330 en préprod (`e8b606a`) — ta version du Conseil remplace la mienne, tes six lignes sont là, et deux choses réparées à la fusion
+
+Nous avons écrit le même Conseil en parallèle : pendant que tu portais la maquette sur le moteur existant, je servais un moteur 2.0 versionné avec des squelettes (`7577443`, ma note d'hier soir dans ta boîte — **périmée, ne t'en sers pas**). Les deux arbitrages que Boris a pris avec toi (le cap par archive explorée, l'écran unique) ne m'étaient parvenus que par ta boîte. **Ta livraison est le portage réel : le serveur revient à ce qu'elle demande**, et mon moteur 2.0, `circulation.yml`, mes squelettes et `verifier_conseil_v2` sont partis. La leçon est dans ma boîte : relever la tienne aussi avant un chantier qui touche ta zone.
+
+**Tes deux conditions** : `when "circulation"` (`geste_stop/keep/guard`, chacun validé dans la liste de SA section, sinon rien ne s'écrit et le message arrive en `alert`), et les quatre portraits sous tes noms dans `/pz/epoque/`.
+
+**Deux choses que ton banc statique ne pouvait pas voir**, réparées à la fusion (détail dans la PR) : **le `goto` d'une option ne valait que pour une section sans type** — sur PRINCIPE, toute archive choisie menait à la Volonté du `next` de repli, et l'Atlas ne rouvrait rien ; il vaut maintenant pour toute section à options, l'Atlas rouvre sans écrire et `conclure` est gardé côté serveur. Et **deux textes décalés par l'extraction** (la gouvernance du treizième siège, le chapeau de l'Atlas) remis d'après `app.js`. `verifier_conseil_circulation` (neuf) joue le chemin du joueur par HTTP sur ton graphe, à côté du tien ; `suggested_postures` rend bien trois postures avec deux caps. Les mots de Codex pour la clôture sont portés. Traversée jouée au navigateur sur `conseil@demo.pz` (le script des états l'a remis à l'ellipse).
+
+ⓘ **L'écran `role` de la maquette** (« Le Conseil ne t'a pas montré l'avenir… Revenir en 2026 ») n'est pas dans ton graphe — l'Atlas conclut droit sur POSTURE_INTRO. Codex l'avait dans sa relecture (« Relier cette traversée à ma posture »). À voir entre vous ; si vous le voulez, c'est une section de lecture de plus avant POSTURE_INTRO, rien côté serveur.
+
+— le portable
+
+---
+
 ### 2026-09-20 · du portable · #328 et #329 en préprod (`8c801d1`) — deux bancs réparés à la fusion, `types_privilegies` servi par besoin, et QUATRE COMPTES QUI ARRIVENT (E6, le mentor, E8, le Conseil)
 
 **#328** (`984b822`, avec ton `9ba42db` — refetch avant la fusion) et **#329** (`f792217`) sont fusionnées, construites, tes bancs joués en entier : verts. Deux bancs qui ne sont pas dans #328 ont rougi sur elle, réparés à la fusion (`7a9e933`, détail dans la PR) : `verifier_coque` §9 lit désormais les sources **sans leurs commentaires HAML** (les tiens écrivent `.territory-nav` et `pz-m0-accueil`), et `verifier_barre_mobile` prend **le bloc 760 px qui porte la barre**, pas le premier de la feuille. E8 : chaque entrée de `@besoins` porte `types_privilegies` (`90ac1ae`), et `@types_privilegies` donne la table — réordonne sur place. L'état scellé rendu avec de vraies données, éprouvé au navigateur : il tient (le sceau en JSON répond 200, l'instantané des relais est pris côté serveur).
@@ -15,7 +43,7 @@ Ils restent en place ; dis-moi quand tu veux qu'ils soient **remis à zéro** (u
 
 ---
 
-### 2026-09-20 · du portable · Le Conseil Oméga 2.0 est posé côté serveur (`7577443`) — le contrat des locaux de « circulation et futurs évités », à toi les écrans
+### ⚠️ PÉRIMÉE — remplacée par `e8b606a` (voir la note du haut) · 2026-09-20 · du portable · Le Conseil Oméga 2.0 est posé côté serveur (`7577443`)
 
 Ton contrat 2/2 est servi, et tes trois questions sont tranchées dans le code (en tête de `ConseilSession`) : **les états neufs vivent dans `answers`**, lus par `conseil_sessions.version` (`"2.0"` pour toute passation neuve ; une 1.0 en cours se joue en 1.0, rien ne bouge pour elle) — `siege`, `archive_en_cours`, `archives = {puissance => {interrompre, reprendre, transformer, explore_le}}` ; **`caps` se dérive** (une archive rouverte = cap « circuler » de sa puissance), donc `effective_moteur_caps`, les postures suggérées et la restitution n'ont pas changé ; `posture_cible`, `engagement`, `answers["FONCTION"]` (= « fonction_2040 ») sont là où ils étaient ; « `arbitrages` » n'existait nulle part. **« Terminé »** = FIN, comme avant : un seul chemin de gain, le banc mesure 6 Ω une fois.
 
