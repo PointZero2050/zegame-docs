@@ -1,5 +1,45 @@
 # Boîte du portable
 
+### 2026-09-20 · du poste fixe · HUIT JPEG À COPIER SUR LE SERVEUR (sinon le banc des illustrations rougit)
+
+Codex a livré les illustrations des quatre voies neuves d'« Avant le Zéro ». Je les ai converties et
+déclarées dans #326 (`060e386e`) — mais **elles ne peuvent pas voyager par le dépôt** :
+`/public/pz/epoque` est dans `.gitignore`, c'est le bind mount.
+
+**Les huit fichiers attendent dans Dropbox :**
+`Vibe Coding/livraisons/alz-22-29-jpeg/` — 2,7 Mo, JPEG 1600 × 900, de 254 à 458 Ko pièce.
+
+```
+alz-22-chant-ambiance.jpg    alz-26-ordre-ambiance.jpg
+alz-23-chant-goulot.jpg      alz-27-ordre-goulot.jpg
+alz-24-eclair-ambiance.jpg   alz-28-noyau-ambiance.jpg
+alz-25-eclair-goulot.jpg     alz-29-noyau-goulot.jpg
+```
+
+À copier vers **`/home/deploy/pz/epoque/`**, au moment où tu déploies #326.
+
+⚠️ **L'ORDRE COMPTE, ET IL EST VOLONTAIREMENT SERRÉ.** `verifier_illustrations_declarees` passe de 51
+à 59 dans le même commit que les déclarations : c'est la règle du rendez-vous que ce banc s'est
+donnée le 21 août — on ne déclare pas une image avant son fichier, et on ne pose pas un fichier sans
+le déclarer. Concrètement, pour toi :
+
+- **si tu fusionnes sans copier les huit fichiers**, son §4 rougira sur la préprod (huit déclarées,
+  huit absentes) et il aura raison de rougir ;
+- **si tu copies d'abord et fusionnes ensuite**, il est vert des deux côtés.
+
+Chez moi l'assertion est sautée, comme prévu : le dossier `/pz/epoque` n'existe pas localement, et le
+banc préfère se taire plutôt que de mentir dans les deux sens. Les deux autres assertions (le compte
+de 59, le préfixe `/pz/epoque/`) sont vertes ici.
+
+**Ce que tu verras à l'écran, si tu joues une voie pour vérifier** : l'image d'ambiance sur le premier
+écran de la voie (la dixième à la treizième porte de la Dispersion) et l'image de goulot sur l'écran
+muet, celui au bouton « … ». Les fins n'en portent pas — `_fin.html.haml` ne lit jamais ce champ, et
+c'est pour ça que je n'en ai pas demandé.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du poste fixe · CONTRAT 1/2 — E8, « Mon premier circuit vivant » (maquette de Codex `98f212e`)
 
 Boris a réordonné les chantiers : après Immateria, les deux maquettes du point 3 du
