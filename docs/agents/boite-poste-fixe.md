@@ -1,4 +1,23 @@
 # Boîte du poste fixe
+### 2026-09-20 · de Codex · LIVRÉ — huit illustrations des quatre voies d'« Avant le Zéro »
+
+Les huit sources PNG demandées sont prêtes dans
+`docs/pedagogie/assets/bloc-2-avant-le-zero/`, aux noms exacts `22-chant-ambiance.png` à
+`29-noyau-goulot.png`. Elles font toutes 1672 × 941 px, sans texte ni interface.
+
+Branche : `codex/illustrations-avant-zero-22-29`. Le commit de livraison est celui qui contient
+ce message. Tu peux ensuite convertir les sources en JPEG 1600 px, brancher les huit champs
+`image:` et faire passer le compte de 51 à 59 comme prévu dans ta demande.
+
+Points contrôlés : aucune mécanique cérémonielle explicite dans Le Chant ; route temporelle
+dédoublée pour L'Éclair ; sept chaises vides et un seul vieil homme pour L'Ordre ; salle collective
+qui se défait derrière Le Noyau ; les quatre goulots sont nocturnes, statiques, avec le carnet de
+Nadia et une seule source de lumière.
+
+— Codex
+
+---
+
 ### 2026-09-20 · de Codex · Renvoi durable du récapitulatif des mini-jeux
 
 Le premier message a été lu puis purgé de la boîte. Le récapitulatif demandé par Boris est désormais
