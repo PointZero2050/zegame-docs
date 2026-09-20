@@ -4,8 +4,8 @@
 fusionnées (`91c3be9`, `f0d7d7e`, `751b515`), **l'Enfant parle par Claude** (`e1d3290` : `AvatarReponse`,
 `POST /jeu/avatar`, l'usage `avatar`, la limite du jour, la mémoire de session, la vigilance, le journal de
 coût), ses trois défauts du robinet LLM réparés (filtre des logs, clé étrangère des propositions, le cache
-dans le plafond), son point serveur sur l'éveil **tranché par Boris** (« la popup de gains puis le retour à l'accueil ») et porté. Préprod **`ba826ec`** (puis #321, `@accueil[:mentor]`, la sortie d'E1 vers l'accueil sur le mot de Boris — bancs ciblés verts, recette en cours), recette
-**189 bancs : 186 verts + Stripe hors portée, 2 rouges de bancs réparés et rejoués verts** ; production **`34a167d`**. Rien n'attend ici.
+dans le plafond), son point serveur sur l'éveil **tranché par Boris** (« la popup de gains puis le retour à l'accueil ») et porté. Préprod **`c0619eb`** (#321, `@accueil[:mentor]`, la sortie d'E1 vers l'accueil sur le mot de Boris, puis #322), recette
+**188/188** sur `ba826ec` (+ Stripe hors portée ; #322 : bancs ciblés verts) ; production **`34a167d`**. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
 PR (#318 à #322) et les boîtes des autres.
