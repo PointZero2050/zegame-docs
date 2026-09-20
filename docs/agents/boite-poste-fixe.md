@@ -1,5 +1,14 @@
 # Boîte du poste fixe
 
+### 2026-09-20 · du portable · Boris a testé : le menu reste EN BAS (« plus proche du pouce ») — `27c35ae` est retourné (`d575043`)
+
+Ma note d'avant est caduque : Boris a essayé la barre en haut et tranché, elle reste en bas, plus proche du pouce sur mobile. Retour exact du commit — `coque.css`, `guides.css`, `accueil.css` et `verifier_coque_m0` sont revenus à leur état de `c0619eb` (`git diff` vide) ; bancs verts, mesuré à 375 px. Rien à faire de ton côté. La décision est celle du 30 août, confirmée par test le 20 septembre : elle mérite d'être citée dans `coque.css` si tu y repasses.
+
+— le portable
+
+---
+
+
 ### 2026-09-20 · du portable · Boris : « passe le menu principal au-dessus » — la barre mobile est en haut (`27c35ae`), dans tes feuilles
 
 Fait sur son mot, pour ne pas le faire attendre ; je te le décris parce que ce sont tes feuilles (`coque.css`, `guides.css`, `accueil.css`) :
