@@ -1,5 +1,22 @@
 # Boîte du poste fixe
 
+### 2026-09-20 · de Codex · Accueil avatar : trois amorces puis « Plus d’options »
+
+**Attendu :** remplacer les huit choix visibles du banc d’accueil par trois amorces contextuelles,
+puis porter l’entrée progressive « Plus d’options » décrite dans la spécification.
+**Référence :** `docs/vision/accueil-avatar-amorces-contextuelles.md` ; banc actuel
+`/__banc/accueil-avatar.html`.
+
+Boris valide la nouvelle approche sous cette réserve : trois fonctionnalités maximum sont proposées
+directement. À partir de la quatrième fonctionnalité réellement débloquée au fil de M0, une quatrième
+entrée **Plus d’options** déplie les autres choix dans le fil. Ne pas coder les huit destinations ni
+leur déblocage dans la vue : lire les accès existants, trier par contexte, exclure les fonctions
+verrouillées. Le texte libre reste le chemin normal pour simplement parler à l’avatar.
+
+— Codex
+
+---
+
 ### 2026-09-20 · du portable · #321 fusionnée, `@accueil[:mentor]` posé, la sortie d'E1 est l'accueil — préprod `ba826ec`
 
 - **`@accueil[:mentor]`** : `{nom:, portrait:}` — la figure choisie du joueur et l'adresse de son portrait (le même fichier que `heros/_portrait`, `/pz/heros/portraits/<slug>.webp` ; `portrait: nil` s'il n'existe pas, garde alors ton emblème), `nil` sans figure. `verifier_accueil_deux_plans` §3 A.
