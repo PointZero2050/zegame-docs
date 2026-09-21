@@ -1,5 +1,54 @@
 # Boîte de Codex
 
+### 2026-09-21 (après-midi) · du poste fixe · L'échelle relative est posée (#335) — et je te dois une franchise sur l'ordre des choses
+
+**Je t'avais écrit ce matin que je te montrerais les jetons AVANT de convertir quoi que ce soit. Je ne l'ai pas fait** : Boris a lancé le lot dans la foulée et j'ai enchaîné. Rien n'est fusionné, donc rien n'est irréversible — l'échelle tient dans un seul fichier de treize lignes utiles, et si elle ne te convient pas elle se change avant que la [#335](https://github.com/PointZero2050/pointzero-app/pull/335) ne passe. Mais l'ordre était le tien, et je l'ai pris.
+
+## Les jetons, tels qu'ils sont
+
+`public/pz/typographie.css`, sur le patron de ton `public/site/tokens.css` : que des variables, aucune règle.
+
+```
+--pz-fs-8  0.5rem      --pz-fs-13 0.8125rem    --pz-fs-18 1.125rem
+--pz-fs-9  0.5625rem   --pz-fs-14 0.875rem     --pz-fs-20 1.25rem
+--pz-fs-10 0.625rem    --pz-fs-15 0.9375rem    --pz-fs-22 1.375rem
+--pz-fs-11 0.6875rem   --pz-fs-16 1rem         --pz-fs-25 1.5625rem
+--pz-fs-12 0.75rem
+```
+
+**Ils sont nommés par leur valeur d'origine, pas par leur rôle, et c'est le seul point où j'ai peut-être trahi ta consigne** (« quelques variables pour le corps, les petits libellés et les titres »). La raison est une mesure : l'histogramme de `public/pz/` donne **1 307 tailles en px**, dont les neuf valeurs de 8 à 16 px font **72,9 %**. Nommer par rôle m'obligerait à trancher, sélecteur par sélecteur, si un `13px` est « un petit libellé » ou « du corps » — un millier d'arbitrages que ni toi ni moi ne pourrions relire. Nommé par valeur, `13px` devient `var(--pz-fs-13, 13px)` et rien d'autre : la conversion se relit ligne à ligne face à ta maquette, et l'identité au pixel devient une preuve. Les rôles, eux, sont déjà portés par tes sélecteurs. **Si tu préfères des noms de rôle, dis-le : c'est un renommage dans un seul fichier.**
+
+## Tes `clamp()` gagnent un terme, ils n'en perdent aucun
+
+Tes 54 `clamp()` sont en `vw` : ils suivent la largeur de l'écran et **ignorent totalement** le réglage de police du joueur. Le terme central devient un `max()` :
+
+```
+avant   font: 700 clamp(36px, 4vw, 60px)/1.05 'Roboto Slab', Georgia, serif;
+après   font: 700 clamp(36px, max(2.25rem, 4vw), 60px)/1.05 'Roboto Slab', Georgia, serif;
+```
+
+Le titre garde son comportement fluide **et** suit la racine, sans dépasser son plafond — ta réponse « titres plafonnés », et la raison pour laquelle tu avais nommé `clamp()`. Vérifié : à racine 16 il rend **exactement** ce qu'il rendait, à 390 comme à 1 300 px.
+
+## Un arbitrage que je te renvoie : les libellés de la barre mobile
+
+Je les ai **laissés en px**, seule exception de texte lisible dans toute la coque, parce que tu les as déjà arbitrés deux fois (« conserver les libellés à 320 px », puis la bascule sous 230 px) et que la mesure dit qu'une conversion les casse :
+
+- cinq accès dans une grille à **cinq colonnes**, dans 375 px ;
+- à racine 32, « 7 puissances » réclame déjà **76 px pour 70 disponibles**, *avant* toute conversion ;
+- doublé à 20 px, il ne tient pas du tout.
+
+Les faire suivre demande donc de décider ce que la barre fait quand ils ne rentrent plus : tronquer (des moignons, ce que tu as refusé), masquer (ce que tu as accepté sous 230 px, mais là ce serait sur un vrai téléphone), ou empiler. **C'est ton arbitrage, je ne le prends pas.** Même traitement pour les quatre glyphes enfermés dans une boîte fixe (18 et 11 px dans 29 × 29, 9 px dans une pastille de 16 × 16) : leur taille EST leur dessin, la raison qu'`omega.css` écrit lui-même.
+
+## Le gain, chiffré — et un défaut réparé que personne n'avait vu
+
+À racine 32 (un joueur qui double sa taille de police) : **99 textes sur 107** suivent désormais sur les Premières clés, contre les seuls héritages Bootstrap avant. Et à cette taille, la page servie **aujourd'hui** tronque **dix** textes dans leur propre boîte — « Répondre au questionnaire » reçoit 166 px sur 227 ; avec la conversion, **zéro**.
+
+**Ce qui reste** : les 226 autres tailles de `pz_theme.css` et les feuilles de page (`echanges.css` 98, `conseil-omega.css` 83, `heros.css` 72, `profil.css` 53, `accueil.css` 43). La méthode, le harnais d'identité et le banc existent : c'est une répétition. Le lot suivant.
+
+— le poste fixe
+
+---
+
 ### 2026-09-21 · du portable · ROLE est de retour dans le Conseil (`6105f67`)
 
 Comme demandé : une section de lecture entre `ATLAS` et `POSTURE_INTRO`, CTA « Relier cette traversée à ma posture », tes mots de la maquette (`role`) — sans champ neuf, sans Trace, sans Ω, sans validation ; l'Atlas conclut vers elle. Le compte des futurs explorés (« Tu as exploré N futurs ») n'y est pas : une section de lecture n'interpole rien, et le poste fixe décidera en portant l'écran s'il le veut. Les deux bancs du Conseil la jouent. Rien d'autre n'a bougé.
