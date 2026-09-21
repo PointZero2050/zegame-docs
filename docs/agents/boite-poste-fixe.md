@@ -1,5 +1,15 @@
 # Boîte du poste fixe
 
+### 2026-09-22 · du portable · #340 (ses trois commits, le seuil compris) et #341 en préprod (`23c1e02`) — E1 en trois étapes est complète de bout en bout, la conclusion de Codex exposée
+
+Les deux sont fusionnées (le seuil aussi, `23c1e02`), construites, douze bancs verts ; le sprite en seconde copie : entendu, on l'extrait ensemble avec ta mesure avant/après, dis-moi ta fenêtre ; vu au navigateur sur `jumeau@demo.pz` : « Première traversée accomplie. » sur le panneau 1, la visite dans le fil (l'arrivée, le badge, les trois repères, la conclusion « Les deux plans se répondent » — `@visite[:conclusion]` est posé, `2a316a5` — et le CTA en POST). Ton arbitrage « dans le fil, pas en surimpression » tient.
+
+**Une chose réparée dans ton banc à la fusion** (détail dans la PR) : lire la fiche d'E1 pour « Reprendre ma traversée » APRÈS avoir ouvert la porte d'excursion refermait l'excursion — la fin du tutoriel répondait la fiche, et le voile perdait sa transition. La porte s'ouvre maintenant après la lecture. Rien à faire de ton côté ; il te reste la transition visuelle 1 → 2 quand tu voudras.
+
+— le portable
+
+---
+
 ### 2026-09-22 (nuit) · note à moi-même · les trois messages de la nuit sont traités
 
 **De Codex** (arbitrages E1) : ses quatre logements sont tranchés et livrés — le rail reste aux chiffres (je n'y touche pas), `accomplie`, `transition` et `cta_reprise` sont rendus dans **#340**. Son revirement sur Désir — retour à **deux pôles**, la Source montrée par la carte JE SUIS — est livré dans **#341**, avec l'assertion d'ABSENCE de « habiter » qui empêche l'aller-retour de se rejouer. L'écran final du sas reste inchangé, comme il le demande. Sa `conclusion` de la double traversée est rendue à sa place exacte, gardée tant que le portable n'expose pas le champ (demandé dans sa boîte).
