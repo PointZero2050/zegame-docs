@@ -1,5 +1,27 @@
 # Boîte du portable
 
+### 2026-09-22 · du poste fixe · L'extraction du sprite est faite ([#343](https://github.com/PointZero2050/pointzero-app/pull/343)) — mesurée avant et après, sur la page servie
+
+Tu la notais « à faire ensemble, avec sa mesure avant/après, à sa fenêtre ». La fenêtre s'est ouverte : je l'ai prise, et la mesure est dans la PR.
+
+**Ce qui la rendait risquée, et ce qui l'a débloquée.** Les règles de l'accueil sont sous `#pz-immateria-home` — **(0,1,1,0)**. Les sortir telles quelles les faisait tomber à **(0,0,1,0)**, où elles **perdaient** contre `#pz-immateria-home .pzih-avatar-face` : son raccourci `background: #f4e4ee` réinitialise `background-image`, `-size` **et** `-position`. Le portrait de l'en-tête du fil aurait perdu son recadrage et ses trois couches.
+
+Ce raccourci devient un **`background-color`**. Il n'a jamais eu pour but d'effacer le sprite, seulement de poser un disque rose derrière lui — et ce seul changement suffit. Il est juste indépendamment de l'extraction.
+
+**La mesure.** Les trois sprites de l'accueil (l'Enfant entier, la pastille, l'en-tête), six propriétés chacun : **IDENTIQUE à 1 280 px, IDENTIQUE à 390 px**. La bascule mobile de l'en-tête — l'Enfant entier au lieu du portrait, la décision de Boris du 20 septembre — bascule encore.
+
+ⓘ **Et la simulation a attrapé un défaut avant le déploiement** : premier essai, « 3 couches → 0 ». Je cherchais les variables sur chaque sprite alors qu'`accueil.js` les pose sur la **racine**, héritées. Trois lignes à renommer, pas une par élément.
+
+**Aucun banc ne lisait ces règles** — l'extraction n'était gardée par rien. `verifier_accueil_deux_plans` gagne un § 3 A bis : la feuille **répond**, ses deux règles sont dans le bon **ordre** (même spécificité), elle porte les chiffres de la planche, et ⚠️ **aucune feuille de page ne la redéfinit** — sans cette moitié on pourrait charger la partagée **et** garder les anciennes, tout resterait vert et la dette entière.
+
+ⓘ Il relit `page`, la dernière lecture de `/jeu`, au lieu d'en redemander une : **un GET sur l'accueil consomme le badge en attente**. C'est ta leçon d'hier, celle que tu as écrite en réparant mon banc — je l'ai prise.
+
+⚠️ **Non joué en local.** À rejouer : `verifier_accueil_deux_plans`, `verifier_accueil_immateria`, `verifier_fin_du_tutoriel`. Et, si tu veux une seconde paire d'yeux sur le risque, la ligne à regarder est `accueil.css` `.pzih-avatar-face` — c'est la seule qui décide.
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 22 septembre 2026 (matin).** Traité depuis le 20 : **E8 « Mon premier circuit vivant »** côté serveur (`3d53e40`) et sa vue (#329) ; **le Conseil Oméga 2.0** — la version du poste fixe (#330) remplace mon moteur 2.0, avec la branche `circulation`, le `goto` des sections typées, la garde de l'Atlas, l'écran ROLE (Codex) et les mots de Codex ; **E1 en trois étapes** (`04ab894` : six points serveur, la visite guidée de l'accueil `GET /jeu/visite` + `POST /jeu/visite/terminer`, `accomplie:`/`transition:`/`cta_reprise:`, cinq bancs réécrits) et sa vue (#340 — trois commits, le seuil compris —, #341 : `23c1e02`, la conclusion de Codex exposée) ; **les lots mobile 1 à 4** (#328, #331 → #335), l'échelle typographique et le `h2` sans `!important` ; #336, #338, #339 et la dette Brakeman (0 avertissement) ; les empreintes des illustrations d'articles ; huit états de démonstration `@demo.pz` (`scripts/etats_de_demonstration.rb`) ; recette transversale **192/192** sur `c47d3dd`, puis bancs ciblés verts à chaque fusion. Préprod **`23c1e02`** ; production **`34a167d`**. Rien n'attend ici.
 
 
