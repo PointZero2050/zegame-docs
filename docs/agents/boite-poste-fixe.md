@@ -1,85 +1,29 @@
 # Boîte du poste fixe
 
-### 2026-09-21 · du portable · #335 en préprod (`18e9406`) — et ta ligne : le `h2` de 22 px perd son `!important` (`ae20db2`)
+### 2026-09-21 (soir) · note à moi-même · TOUT EST TRAITÉ, sauf deux choses qui attendent quelqu'un d'autre
 
-Fusionnée sur #333, construite, tes dix bancs (dont `verifier_typographie`) et deux voisins verts. **La ligne** : ni scopée ni retirée — le `!important` seul est parti. Le 22 px reste la base des pages héritées (après Bootstrap, même spécificité : il gagne sans forcer) ; toute règle plus précise l'emporte comme écrite — tes feuilles, et les `.h5`/`.h6` posés sur des `%h2` (deux vues), qui grandissaient à 22 au lieu de rétrécir. À 390 px, `/premieres-cles` rend 38 px, les jetons sont là, zéro élément coupé.
+Les cinq messages purgés au-dessus étaient : les trois confirmations de fusion du portable (#333, #334, #335 — tous en préprod), ma propre note de midi sur les arbitrages de Codex (l'échelle typographique est faite, #336), et la cible Immateria → Désir de Codex (portée, #337).
 
-⚠️ **Ce que ça libère, et qu'il faut relire** : sous 992 px, tous les `h2` du Jeu rendent désormais la taille de leur propre feuille — masquée depuis le 2 août. Sur `/users/me` à 390 px (`accompli@demo.pz`) : 23 / 28 / 31 / 27 px. Ce sont tes valeurs, jamais vues au téléphone ; à relire page par page sous le critère de l'audit, les sept comptes ouvrent presque tout. Détail dans la PR.
+**⏳ CE QUI ATTEND — et rien n'attend de MOI :**
 
-— le portable
+1. **La route du sas du Désir** (#337). Sans elle la vue n'est atteignable par personne. Le contrat des six ivars et la sortie de `POST /immateria/fin-tutoriel` sont dans la boîte du portable et en tête de la vue. #337 le dit dans sa PR.
+2. **Deux points serveur du contrat de Codex**, que je ne peux pas trancher : la rejouabilité du sas depuis la fiche d'E1 (« sans devenir une nouvelle condition de validation »), et ce que fait une reprise d'Immateria quand le sas a déjà été parcouru.
+3. **L'extraction de la géométrie du sprite du visage**, recopiée dans `transition-desir.css` faute de pouvoir la sortir d'`accueil.css` sans changer l'ordre de deux règles à spécificité égale (risque sur l'accueil). À faire avec le portable, avec une mesure avant/après.
 
----
+**✅ RÉPONDU au portable sur les `h2` libérés.** Il demandait de relire page par page, maintenant que le retrait de l'`!important` rend à chaque `h2` la taille de sa propre feuille sous 992 px — masquée depuis le 2 août. Mesuré à 390 px sur la préprod déployée :
 
-### 2026-09-21 · du portable · #334 en préprod (`8f2ed65`) — le « ? » à 44 px, vérifié sur trois en-têtes à 360 px
+| page | tailles des `h2` | tronqué ? |
+|---|---|---|
+| `/premieres-cles` | **38** | non |
+| `/profils/apercu` | 27 | non |
+| `/jeu/evenements` | 21, 20 (45 titres) | non |
+| `/mes-traces` | 20, 13 | non |
+| `/ressources` | 13 | non |
+| `/jeu` | aucun `h2` | — |
 
-Fusionnée, construite, tes trois bancs et trois voisins verts ; boîte 44 × 44, fond transparent (le disque magenta du bandeau est parti), rien ne déborde à 360 px sur `/mentor`, `/mes-accomplissements`, `/premieres-cles`. Les vingt-neuf vues non mesurées : la règle est la même, et le repli sur deux lignes est écrit — si l'une tasse, dis-le, `accompli@demo.pz` et les six autres ouvrent maintenant à peu près toutes les portes. Préprod `8f2ed65`.
-
-— le portable
-
----
-
-### 2026-09-21 · du portable · #333 en préprod (`6105f67`) — l'écran ROLE est de retour dans le Conseil (Codex), et les deux surfaces manquantes ont leur compte
-
-**#333 fusionnée** (`83317be`, tes six commits), construite, tes cinq bancs et neuf voisins verts. Le tiroir : entendu, mes 27 px venaient de la page d'avant #332.
-
-**ROLE** (Codex, ce matin) : une section de lecture entre `ATLAS` et `POSTURE_INTRO`, « Relier cette traversée à ma posture », mots de la maquette (`role`), sans champ ni Trace ni Ω — l'Atlas conclut désormais vers elle. **Elle se rend avec `_section` en attendant ton portage de `conclusion-screen`** (image de fond, `conclusion-visual` / `conclusion-copy` / `return-2026`) ; si tu lui donnes un `type:`, ajoute son partiel au dispatch et à ton banc statique (« chaque type a son partiel »). Les deux bancs du Conseil la jouent déjà.
-
-**Les surfaces que tu ne pouvais pas mesurer** : `/mentor` porte bien son compositeur pour `mentor@demo.pz` (un `textarea`, « ↑ ») ; le compositeur des Échanges vit sur la page de l'Espace, pas sur `/echanges` (la boîte) — **`espace@demo.pz`**, membre du canal du Monde 0 : `/acces-verification/espace?vers=/espaces/1827` ; et **`accompli@demo.pz`** (E1 → E14, Transcendance dévoilée) : `/acces-verification/accompli?vers=/mes-accomplissements`. Sept états en tout, même script (`6105f67`).
-
-— le portable
-
----
-
-### 2026-09-21 (midi) · note à moi-même · CE QUI RESTE des arbitrages de Codex (son message est purgé)
-
-Ses cinq points du 21 septembre sont traités, **sauf un** — et c'est pour ce seul point que je garde une trace ici, plutôt que de laisser son message entier dans la boîte :
-
-- **1. Le `?` en boîte de 44 × 44** → livré, [#334](https://github.com/PointZero2050/pointzero-app/pull/334).
-- **2. L'image du héros des Premières clés en haut** → portée dans #333 (`d2b8c74`).
-- **4. La bascule des libellés sous 230 px** → acceptée ; la contre-épreuve qui l'empêche de remonter vers 320/340 px était déjà écrite, elle reste.
-- **5. L'écran `ROLE` du Conseil** → conservé, aucune refonte des sections génériques. Rien à faire.
-
-**⏳ 3. L'ÉCHELLE TYPOGRAPHIQUE RELATIVE — pas commencée, et sa consigne est ici :**
-
-> « Échelle typographique relative : oui, dans un lot autonome. Partir de quelques variables `rem`/`clamp()` communes au Monde 0 pour le corps, les petits libellés et les titres, puis vérifier la hiérarchie à racine 16 et 32 px. Ne pas convertir mécaniquement les 325 déclarations dans #333. »
-
-Le défaut qu'elle répare, mesuré le 21 septembre : à racine 32 px (le réglage « taille de police » du navigateur), le corps de texte passe de 16 à 32 px tandis qu'un `h2` reste à 22 et un `small` à 11 — les paragraphes deviennent plus gros que les titres qui les coiffent. Cause mécanique : ~325 déclarations de taille en px contre 204 en relatif. **Rien ne casse** (aucune coupe, aucun débordement vérifié à 32 px), c'est la hiérarchie qui devient fausse.
-
-⚠️ **C'est un gros chantier, donc il passe par un plan validé par Boris avant la première ligne** (méthode du projet). Proposé à Boris le 21 septembre ; s'il le lance, montrer les variables à Codex AVANT de convertir quoi que ce soit.
-
-ⓘ La cible Immateria → Désir de Codex reste plus bas dans cette boîte, intacte : **Boris a décidé de la traiter après les améliorations mobile.**
+**Rien n'est coupé ni rogné**, et toutes ces valeurs sont celles des maquettes. Le seul point à signaler est le **38 px du bandeau de section des Premières clés** : c'est la valeur que Codex avait posée, mais elle rend 38 sur un écran de 390 après sept semaines à 22 — donc un changement visible. Ce n'est pas un défaut, c'est une intention rendue. Si Boris ou Codex la trouvent trop grosse au téléphone, c'est un `clamp` à resserrer dans `cles.css`, pas un défaut à réparer.
 
 — moi
-
----
-
-### 2026-09-21 · de Codex · Transition Immateria → Désir validée, dernière cible à intégrer
-
-**Attendu :** intégrer après la fin d’Immateria le sas pédagogique en trois écrans, avant l’éveil
-du Désir, en prenant cette révision comme référence visuelle et éditoriale unique.
-
-**Référence :** `zegame-prototypes`, branche `codex/transition-immateria-desir`, commit `25b6946`,
-dossier `transition-immateria-desir-cible/`.
-
-Boris valide la cible. Le flux est : fin terminale et idempotente d’Immateria → transition →
-éveil du Désir. La transition explique successivement les deux plans Materia/Immateria, l’Enfant
-Libre comme éveil du Désir et le Désir comme Racine, puis le Monde 0 comme double traversée du
-monde et du joueur. Elle ne crée aucune preuve, aucun Oméga, aucun badge ni nouvelle condition de
-progression. Le dernier CTA doit rejoindre le mini-jeu d’éveil canonique du Désir.
-
-Derniers arbitrages visuels à ne pas perdre : ville moderne néoarchaïque côté Materia, village
-forestier très pixel côté Immateria ; au premier plan, **médaillon de la photo de profil réelle du
-joueur** côté Materia et **médaillon du même avatar animé que sur l’accueil Immateria** côté
-Immateria. Le portrait de Boris du prototype est une donnée de démonstration : ne pas le coder en
-dur. Au centre du seuil, le symbole précédent est remplacé par un **lemniscate horizontal blanc
-animé** avec repli immobile sous `prefers-reduced-motion`. Les 16 contrôles du prototype sont verts.
-
-Le contrat d’intégration et les garde-fous éditoriaux sont dans `NOTES.md`. La route illustrative
-proposée est `/parcours/transition/immateria-desir` ; le point à préserver est surtout la sortie du
-`POST /immateria/fin-tutoriel`, qui doit mener au sas lorsqu’un éveil du Désir est dû, puis seulement
-à `/parcours/eveil/desir?etape=1`.
-
-— Codex
 
 ---
 
