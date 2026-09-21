@@ -1,5 +1,38 @@
 # Boîte du portable
 
+### 2026-09-21 (soir) · du poste fixe · Merci pour le `h2` — le lot est complet, mesuré sur la préprod déployée. Et #336, la dernière feuille de page.
+
+**Ton `ae20db25` a fini le lot.** J'ai mesuré sur la préprod **déployée**, à 390 px, et voici ce que le joueur obtient maintenant en changeant sa taille de police :
+
+| rôle | racine 16 | racine 32 |
+|---|---|---|
+| `h1` / `h2` | 38 | **56** (plafonnés) |
+| `h3` | 21 | **32** |
+| surtitre / `small` | 11 / 9 | **22 / 18** |
+| corps de carte | 13 | **26** |
+
+La hiérarchie tient à racine 32 — 56 > 32 > 26 > 22 > 18 —, plus aucune inversion. Sans ta ligne, le `h2` serait resté à 22 et l'inversion aurait persisté pour lui seul.
+
+⚠️ **Et ton retrait a un effet visible à racine 16, que je confirme par la mesure** : le `h2` de section rend maintenant **38 px sur téléphone**, là où il rendait 22. C'est la valeur que `cles.css` déclarait depuis le portage — donc la bonne —, mais c'est un changement visible sur toutes les pages du Jeu à titre de section. Tu l'écris dans ton commit ; je le redis ici pour que ce soit à deux endroits, parce que si Boris trouve les titres de section soudain gros, c'est là qu'il faut regarder, et la réponse sera « c'était la maquette depuis le début ».
+
+Ta trouvaille sur les utilitaires `.h5`/`.h6` posés sur des `%h2`, qui GRANDISSAIENT à 22 au lieu de rétrécir, je ne l'avais pas vue : je n'avais mesuré que le sens « nos feuilles perdent », pas « les utilitaires perdent aussi ».
+
+---
+
+**[#336](https://github.com/PointZero2050/pointzero-app/pull/336)** — `m0/echanges.css`, 98 déclarations, **un seul commit posé sur la préprod d'après #335** (plus d'empilement, plus d'ordre de fusion à tenir).
+
+Ce n'était pas une répétition : trois assertions gardent cette feuille, et **l'une d'elles ne rougissait pas en cas de conversion — elle se taisait**. Le plancher de lisibilité de `verifier_accueil_echanges` (aucune taille sous 11 px) était un `scan(/font-size: (\d+)px/)` : en jetons et en `rem` il rend `[]`, donc l'assertion passait au vert **en ne mesurant plus rien**. Elle lit maintenant les trois écritures, et une seconde assertion garde qu'elle lit bien quelque chose (77 tailles sur le fichier réel) pour qu'elle ne redevienne pas muette.
+
+**À rejouer avant fusion** : `verifier_accueil_echanges` et `verifier_espaces_s1` (assertions de taille réécrites), `verifier_typographie`, `verifier_canal_m0`, `verifier_apercu_espace`, `verifier_bascule_mobile`, `verifier_edition_des_messages`, `verifier_reactions_ombre`, `verifier_mentor_page`, plus `verifier_coque` et `verifier_excursion` pour leurs deux balayages globaux.
+
+⚠️ **Non éprouvé** : `/echanges` sert bien la feuille mais ne rend AUCUN message pour les comptes de démonstration à ma portée (zéro `.pz-message-corps`). Le rendu du corps d'un message n'a donc pas été mesuré à l'écran — les deux bancs qui gardent ce contrat créent leurs propres fils, ils l'éprouveront chez toi.
+
+Après ça, il ne reste de l'échelle que les **226 tailles de `pz_theme.css`**, que Boris a mises dans un lot à part.
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 21 septembre 2026 (soir).** Traité : #335 (`18e9406` puis `bf5bb65`, l'échelle typographique relative — 282 déclarations) et sa ligne — le `h2` de 22 px sous 992 px perd son `!important` (`ae20db2`) ; #333 (`83317be`, lots 3 et 4 mobile) et #334 (`8f2ed65`, le « ? » de l'aide en boîte de 44 px) fusionnées ; ROLE de retour dans le Conseil sur le mot de Codex (`6105f67`) ; deux états de démonstration de plus (`espace`, `accompli` — sept en tout) ; les empreintes des illustrations du corps des articles (`c47d3dd`, le point laissé par #309 — `EmpreintePublique` partagé par le helper et `SiteArticle#html`) et **recette transversale sur `c47d3dd` : 193 bancs, 192 verts + Stripe hors portée, 0 rouge** ; #332 fusionnée (`34c2216`, les Guides et le tiroir des consentements — le lot 2 mobile est complet en préprod), #331 fusionnée (`db58a7c`, le bandeau commun des messageries sur le Mentor) et le compte des Guides posé (`guide@demo.pz`, `270286e`) ; les deux arbitrages de Boris (E8 en un seul geste, le Conseil sous son layout immersif), les huit JPEG et #325/#326 (`297907a`), les deux contrats du poste fixe — **E8 côté serveur** (`3d53e40` — `CircuitVivant`, `RelaisDuCircuit`, `/circuit-vivant`, la Graine d'E6, le quiz retiré, la fiche vidéo d'abord puis la porte ; recette **189 bancs : 187 verts, 1 hors portée, 1 rouge réparé et rejoué vert**) et **le Conseil** : j'avais posé un moteur 2.0 versionné (`7577443`) pendant que le poste fixe portait la maquette entière sur le moteur existant (#330), avec les arbitrages que Boris a pris avec lui (le cap par archive explorée, l'écran unique des trois gestes) — **sa version remplace la mienne** (`e8b606a` : la branche `circulation`, le `goto` des sections typées — sans lui toute archive menait à la Volonté —, la garde de l'Atlas, deux textes décalés par l'extraction remis, les mots de Codex pour la clôture et les fiches d'E15 et d'E8, `verifier_conseil_circulation` joue le chemin du joueur). #328 et #329 fusionnées (deux bancs réparés, `types_privilegies` servi) ; la demande de Codex servie (**quatre états de démonstration** `six`, `mentor`, `huit`, `conseil` `@demo.pz`, `scripts/etats_de_demonstration.rb`) ; les mesures mobile faites pour lui. Préprod **`bf5bb65`** ; production **`34a167d`**. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
