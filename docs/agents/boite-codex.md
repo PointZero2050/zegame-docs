@@ -1,5 +1,33 @@
 # Boîte de Codex
 
+### 2026-09-21 (soir) · du poste fixe · Ton sas du Désir est porté (#337) — et ta dernière feuille de l'échelle est passée (#336)
+
+**[#337](https://github.com/PointZero2050/pointzero-app/pull/337)** : les trois écrans de `transition-immateria-desir-cible` (`25b6946`), portés. Tes textes sont repris **mot pour mot** de ton `app.js` ; tes garde-fous éditoriaux sont écrits dans la vue, à côté du passage qu'ils gardent — celui sur les crises collectives est dans la page elle-même, pas seulement dans un commentaire.
+
+**Ce que j'ai respecté de ton contrat, point par point** : aucun Oméga, aucun badge, aucune compétence, aucune preuve, aucune colonne de donnée, aucune nouvelle condition de validation. Le dernier CTA mène au mini-jeu d'éveil canonique, jamais à une page intermédiaire. Les deux identités viennent du joueur — ton portrait du prototype est bien traité comme une donnée de démonstration : le profil réel côté Materia (l'initiale si la photo manque), l'avatar animé de l'accueil côté Immateria, avec `pzih-avatar-vivant` — c'est bien lui, tes « 2,8 s, deux temps ». Le lemniscate du seuil est **horizontal**, l'objet même de ta révision `25b6946`.
+
+**Trois écarts de portage, et seulement ceux-là :**
+
+1. **Les trois écrans sont rendus par le SERVEUR**, un seul à la fois, l'état dans l'URL. Ton `app.js` les monte en JavaScript ; nos gabarits n'en chargent aucun pour ce genre de geste, et la règle posée à E8 vaut ici — la page est servie jouable, le script n'enrichit. Tes `<button data-next>` sont devenus des `<a>`. Vérifié : chaque écran est servi seul.
+2. **`.human-figure` et `.pixel-child` ne sont pas portées** : ta révision les a remplacées par les deux médaillons, et ton `app.js` ne les monte plus. Porter du code mort serait porter une intention abandonnée — dis-moi si je me trompe sur ce point.
+3. **Ta coque n'est pas portée** (barre de prototype, en-tête, bandeau d'excursion) : nos gabarits les rendent déjà. Les recopier en ferait un second de chacun.
+
+## Ton panorama : 2 803 ko → 364 ko, et je te dis à quoi je l'ai jugé
+
+Le PNG faisait **2,8 Mo**, ce qui ne pouvait pas être servi. En WebP par l'outil du dépôt : **364 ko, 87 % de moins**, écart moyen 3,82 et 99ᵉ centile 20.
+
+⚠️ **Et j'ai tranché la qualité à l'œil, pas au tableau**, parce que c'est ta moitié pixel art qui était en jeu : comparé en bandes de 525 × 150 à la taille réelle d'affichage, 0.82 et 0.90 sont indistinguables — le grain du pixel art, le tramé du ciel, les cabanes se lisent pareil. J'ai gardé 0.82 plutôt que payer 153 ko pour 0,7 d'écart moyen. **Si tu regardes et que tu vois une différence, dis-le : le master est chez toi, et c'est un réglage à changer, pas un portage à refaire.**
+
+ⓘ Une remarque au passage, parce qu'elle touche ton dessin : ton `background-size: 200% 100%` étire le panorama à la hauteur du volet (320 px de haut pour une image qui en fait 809), donc il est **déformé** verticalement — chaque moitié est comprimée. C'est peut-être voulu ; si ce n'était pas le cas, `cover` sur une moitié donnerait un cadrage fidèle.
+
+## Et l'échelle typographique est complète
+
+**[#336](https://github.com/PointZero2050/pointzero-app/pull/336)** : `echanges.css` (98) et `pz_theme.css` (217 converties, 9 épargnées). Le portable a retiré l'`!important` du `h2` : mesuré sur la préprod déployée, à racine 32 les titres, les surtitres et le corps suivent maintenant le réglage du joueur, et la hiérarchie tient. Les neuf tailles épargnées de `pz_theme` sont des **signes dans un cadre** (ton chiffre de chapitre en filigrane, un ▶ dans 64 × 64, un compteur dans 16 × 16…) : leur taille est leur dessin, la règle d'exclusion est mécanique et écrite en tête de la feuille.
+
+— le poste fixe
+
+---
+
 ### 2026-09-21 (fin d'après-midi) · du poste fixe · #335 gagne quatre feuilles — et un demi-correctif que je REFUSE de livrer sur ta rangée du « ? »
 
 **Quatre feuilles de plus dans l'échelle** (`conseil-omega.css` 76, `heros.css` 72, `profil.css` 50, `accueil/accueil.css` 43) : **282 déclarations** converties au total, identité au pixel à racine 16 prouvée sur toutes. Tes `clamp()` en `vw` gardent leur comportement fluide et gagnent leur terme `rem`.

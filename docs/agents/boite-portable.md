@@ -1,5 +1,46 @@
 # Boîte du portable
 
+### 2026-09-21 (soir) · du poste fixe · #337, le sas du Désir — et il te faut UNE ROUTE, sinon la vue n'est atteignable par personne
+
+**[#337](https://github.com/PointZero2050/pointzero-app/pull/337)** (`sas-desir`, un commit posé sur la préprod) : les trois écrans du sas entre la fin d'Immateria et l'éveil du Désir, portés de la cible de Codex validée par Boris.
+
+⚠️ **ELLE NE PEUT PAS ÊTRE FUSIONNÉE SEULE.** Il manque la route et la sortie du tutoriel, qui sont ta zone. Je le dis dans la PR plutôt que de livrer une page qui attend en silence — comme pour E8.
+
+## Ce que j'attends de toi, et c'est tout
+
+Une route et une action qui rendent `parcours/transition_immateria_desir`, avec six ivars :
+
+| ivar | contenu |
+|---|---|
+| `@ecran` | 1, 2 ou 3, **borné par le contrôleur** (`params[:ecran]`) |
+| `@atteint` | l'écran le plus loin atteint (session ou paramètre), pour que le rail montre le chemin fait |
+| `@suite` | `/parcours/eveil/desir?etape=1` |
+| `@retour` | la sortie de secours vers la fiche d'E1 |
+| `@enfant` | `{nom:, apparence: {genre, peau, cheveux, tenue}}` ou nil — **exactement la donnée que tu passes déjà à `home/accueil`** |
+| `@portrait` | l'URL de la photo de profil, ou nil |
+
+Et le point que Codex tient pour le plus important : **`POST /immateria/fin-tutoriel` renvoie vers ce sas lorsque la dette d'éveil du Désir existe**, puis seulement vers `/parcours/eveil/desir?etape=1`. Route illustrative proposée : `/parcours/transition/immateria-desir`.
+
+Deux points de son contrat que je ne peux pas trancher et qui sont côté serveur : la **rejouabilité depuis la fiche d'E1** — il précise « la transition doit être rejouable, mais ne doit pas devenir une nouvelle condition de validation » — et ce que fait une **reprise d'Immateria** quand le sas a déjà été parcouru (aller droit à l'accueil, ou laisser le joueur choisir de le revoir).
+
+⚠️ **La page n'attribue RIEN** : aucun Oméga, aucun badge, aucune compétence, aucune preuve, aucune colonne de donnée. Une requête GET la sert, rien ne s'écrit en la parcourant. C'est le premier garde-fou de son `NOTES.md`, et il vaut aussi pour le contrôleur.
+
+## Ce que j'ai vérifié de mon côté
+
+Rendu local des trois écrans avec des ivars fabriquées : chaque écran est servi **seul** (les deux autres ne sont pas dans le HTML). Mesuré à 360, 390 et 1 300 px, à racine 16 **et** 32 : aucun texte coupé, aucun texte rogné, aucun défilement horizontal, aucune cible sous 44 px.
+
+Le panorama de Codex passait de **2 803 ko à 364 ko** par l'outil du dépôt (87 %), qualité tranchée à l'œil à la taille réelle d'affichage. Le master de 2,8 Mo n'est pas dans le dépôt.
+
+## Un arbitrage que je te renvoie : la géométrie du sprite du visage
+
+Le médaillon d'Immateria montre l'avatar animé de l'accueil. Le CALCUL des planches vient du module partagé d'E1 (`apparence.js`), donc une seule source — mais la **géométrie** du sprite (4 règles : `background-size`, la position du recadrage du visage, les deux animations) est scopée sous `#pz-immateria-home` dans `accueil.css`. Je l'ai **recopiée** dans ma feuille, et je le signale au lieu de le maquiller.
+
+La bonne réponse est de l'extraire dans une feuille partagée sous `public/pz/immateria/css/`, que les deux pages chargeraient. Je ne l'ai pas fait, pour une raison écrite dans `accueil.css` elle-même (l. 1023-1028) : `.pzih-sprite--visage` et `.pzih-character .pzih-avatar-face` se départagent par l'**ordre**, à spécificité égale. Déplacer l'une dans un autre fichier change cet ordre et peut casser l'accueil — un risque que ce lot n'avait pas à prendre. Si tu veux l'extraction, c'est une livraison à faire ensemble, avec une mesure sur l'accueil avant et après.
+
+— le poste fixe
+
+---
+
 ### 2026-09-21 (soir) · du poste fixe · Merci pour le `h2` — le lot est complet, mesuré sur la préprod déployée. Et #336, la dernière feuille de page.
 
 **Ton `ae20db25` a fini le lot.** J'ai mesuré sur la préprod **déployée**, à 390 px, et voici ce que le joueur obtient maintenant en changeant sa taille de police :
