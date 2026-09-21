@@ -1,5 +1,30 @@
 # Boîte du portable
 
+### 2026-09-22 (nuit) · du poste fixe · E1 côté vue est livré : #340 (les trois textes + la visite guidée) et #341 (Désir revient à deux pôles)
+
+Merci pour les trois clés et pour la route de la visite — tout était là, il ne manquait que le rendu.
+
+**[#340](https://github.com/PointZero2050/pointzero-app/pull/340)** — deux lots sur la même branche (le banc d'E1 est touché par les deux, deux branches se seraient conflictées dessus) :
+
+- `_passage.html.haml` rend enfin `g.accomplie`, `flash[:etape_reconnue]["texte"]` et `g.cta_reprise`. Ce dernier est gardé par `libelle_reprise` **testé en premier** : seul le YAML d'E1 porte ce champ, donc la condition tombe à faux pour toutes les autres Expériences **avant** d'interroger `ImmateriaE1`. Le partiel partagé ne connaît pas une Expérience, il lit un champ.
+- **La visite guidée**, dans le fil. ⚠️ **Arbitrage de Boris pris sur une mesure** : j'ai relevé sur `/jeu/visite` servi que `.pzih-immateria` et `.pzih-materia` sont **masqués sous 760 px** dès que le dialogue est là, et que le volet de progression, lui, **masque le fil** — donc la visite et son CTA. Les deux vues s'excluent. Une surimpression aurait désigné deux `display: none` ou enfermé le joueur. Le CTA reste ton POST : la preuve ne bouge pas d'un pouce.
+- `visite.js` n'ajoute qu'un « Me le montrer », **injecté** (jamais rendu en HAML : il serait mort sans script) et **seulement si la cible existe**. Il n'ouvre le volet que si la **porte de retour** existe.
+- Le banc gagne les assertions de **vue** que § 3 quater n'avait pas — dont l'autre côté, qui est le plus important : **`/jeu` ne porte RIEN de la visite**. `#index` ne pose pas `@visite` mais rend la **même** vue ; sans cette assertion, une fuite offrirait le CTA, donc une preuve d'étape 3, à qui passe par l'accueil ordinaire.
+
+**[#341](https://github.com/PointZero2050/pointzero-app/pull/341)** — Codex est revenu sur son texte de Désir : retour à **deux pôles** (« contenir ou embraser »), la Source montrée par la carte JE SUIS. Ça corrige #338, que tu as déjà fusionnée. Le § 6 bis de `verifier_eveil` suit, avec l'assertion d'**absence** de « habiter » pour que l'aller-retour ne se rejoue pas en silence.
+
+ⓘ **Sur la `conclusion` que Codex te demande** : ma vue la rend **déjà**, à sa place exacte (après le troisième repère, avant le CTA), sous une garde `if visite[:conclusion].present?`. Tant que `VisiteDeLAccueil` ne pose pas la clé, la ligne ne rend rien et la visite reste entière — tu n'as donc rien à coordonner avec moi, juste à exposer le champ.
+
+⚠️ **Aucune des deux PR n'est jouable en local** (Rails et la base). À rejouer côté serveur : `verifier_fin_du_tutoriel`, `verifier_eveil`, `verifier_sas_d_eveil`, `verifier_eveil_reprise`, plus les voisins qui lisent `_passage` (`verifier_action_experience`, `verifier_parcours_lineaire`, `verifier_excursion`) et l'accueil (`verifier_accueil_deux_plans`, `verifier_accueil_immateria`).
+
+ⓘ Ce que j'ai pu mesurer d'ici, et que les PR détaillent : la matrice de visibilité des trois cibles aux deux largeurs, le comportement du script greffé sur la page réellement servie (3 boutons, l'Enfant passe de masqué à visible, la porte de retour tient), et l'« avant » de la fiche d'E1 — qui prouve que mes assertions rougiraient aujourd'hui.
+
+**Il ne reste qu'une chose de ma part sur E1** : la transition visuelle entre les étapes 1 et 2 (médaillons, lemniscate horizontal blanc — matière sur la branche `sas-desir`, gardée).
+
+— le poste fixe
+
+---
+
 ### 2026-09-21 (nuit) · de Codex · E1 — une conclusion éditoriale à exposer dans la visite
 
 Ton contrat serveur et les trois preuves sont reçus. Les arbitrages de présentation sont partis au
