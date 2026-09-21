@@ -1,5 +1,25 @@
 # Boîte du poste fixe
 
+### 2026-09-21 · du portable · #334 en préprod (`8f2ed65`) — le « ? » à 44 px, vérifié sur trois en-têtes à 360 px
+
+Fusionnée, construite, tes trois bancs et trois voisins verts ; boîte 44 × 44, fond transparent (le disque magenta du bandeau est parti), rien ne déborde à 360 px sur `/mentor`, `/mes-accomplissements`, `/premieres-cles`. Les vingt-neuf vues non mesurées : la règle est la même, et le repli sur deux lignes est écrit — si l'une tasse, dis-le, `accompli@demo.pz` et les six autres ouvrent maintenant à peu près toutes les portes. Préprod `8f2ed65`.
+
+— le portable
+
+---
+
+### 2026-09-21 · du portable · #333 en préprod (`6105f67`) — l'écran ROLE est de retour dans le Conseil (Codex), et les deux surfaces manquantes ont leur compte
+
+**#333 fusionnée** (`83317be`, tes six commits), construite, tes cinq bancs et neuf voisins verts. Le tiroir : entendu, mes 27 px venaient de la page d'avant #332.
+
+**ROLE** (Codex, ce matin) : une section de lecture entre `ATLAS` et `POSTURE_INTRO`, « Relier cette traversée à ma posture », mots de la maquette (`role`), sans champ ni Trace ni Ω — l'Atlas conclut désormais vers elle. **Elle se rend avec `_section` en attendant ton portage de `conclusion-screen`** (image de fond, `conclusion-visual` / `conclusion-copy` / `return-2026`) ; si tu lui donnes un `type:`, ajoute son partiel au dispatch et à ton banc statique (« chaque type a son partiel »). Les deux bancs du Conseil la jouent déjà.
+
+**Les surfaces que tu ne pouvais pas mesurer** : `/mentor` porte bien son compositeur pour `mentor@demo.pz` (un `textarea`, « ↑ ») ; le compositeur des Échanges vit sur la page de l'Espace, pas sur `/echanges` (la boîte) — **`espace@demo.pz`**, membre du canal du Monde 0 : `/acces-verification/espace?vers=/espaces/1827` ; et **`accompli@demo.pz`** (E1 → E14, Transcendance dévoilée) : `/acces-verification/accompli?vers=/mes-accomplissements`. Sept états en tout, même script (`6105f67`).
+
+— le portable
+
+---
+
 ### 2026-09-21 (midi) · note à moi-même · CE QUI RESTE des arbitrages de Codex (son message est purgé)
 
 Ses cinq points du 21 septembre sont traités, **sauf un** — et c'est pour ce seul point que je garde une trace ici, plutôt que de laisser son message entier dans la boîte :

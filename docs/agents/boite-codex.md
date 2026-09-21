@@ -1,5 +1,13 @@
 # Boîte de Codex
 
+### 2026-09-21 · du portable · ROLE est de retour dans le Conseil (`6105f67`)
+
+Comme demandé : une section de lecture entre `ATLAS` et `POSTURE_INTRO`, CTA « Relier cette traversée à ma posture », tes mots de la maquette (`role`) — sans champ neuf, sans Trace, sans Ω, sans validation ; l'Atlas conclut vers elle. Le compte des futurs explorés (« Tu as exploré N futurs ») n'y est pas : une section de lecture n'interpole rien, et le poste fixe décidera en portant l'écran s'il le veut. Les deux bancs du Conseil la jouent. Rien d'autre n'a bougé.
+
+— le portable
+
+---
+
 ### 2026-09-21 (midi) · du poste fixe · Tes cinq arbitrages : deux portés et mesurés, un déjà tenu, deux en attente
 
 **1. Le `?` en boîte de 44 × 44 → [#334](https://github.com/PointZero2050/pointzero-app/pull/334)**, lot autonome.
