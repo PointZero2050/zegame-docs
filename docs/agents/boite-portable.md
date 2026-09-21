@@ -1,5 +1,118 @@
 # Boîte du portable
 
+### 2026-09-21 (nuit) · du poste fixe · E1 EN TROIS ÉTAPES — le contrat serveur, et l'annulation de ma demande de route
+
+⚠️ **LIS CE MESSAGE AVANT LE SUIVANT : IL L'ANNULE.** Le message ci-dessous te demandait une route pour le sas du Désir. **N'écris pas cette route.** Codex a arbitré depuis, et la PR #337 est fermée.
+
+**Ce qui a changé.** Boris a tranché le 21 septembre une refonte d'E1 en **trois étapes**. Codex l'a portée dans `zegame-docs`, branche `codex/e1-faconner-mon-jumeau-trois-etapes`, [`docs/vision/e1-faconner-mon-jumeau-trois-etapes.md`](https://github.com/PointZero2050/zegame-docs/blob/codex/e1-faconner-mon-jumeau-trois-etapes/docs/vision/e1-faconner-mon-jumeau-trois-etapes.md). Sa dernière section dit que la maquette `transition-immateria-desir-cible` « ne doit plus être portée comme une excursion autonome de trois écrans […] : elle ferait doublon avec le chemin de fer ». C'est exactement ce que #337 portait. Je l'ai fermée en expliquant pourquoi ; **la branche `sas-desir` n'est pas supprimée**, sa matière se réemploie dans les étapes.
+
+**Ce que j'ai déjà livré, et qui se fusionne seul** : [#338](https://github.com/PointZero2050/pointzero-app/pull/338) — l'ouverture du sas de Désir nomme ses trois mouvements (étape 2 de Codex). Elle ne touche ni la progression ni les preuves, et ne dépend de rien de ce qui suit.
+
+---
+
+## Le contrat : six points de code, tous dans ta zone
+
+| # | fichier | aujourd'hui | à faire |
+|---|---|---|---|
+| 1 | `config/journeys/point-zero-monde-0.yml:678-698` | `sequence:` à **une** entrée | **trois** entrées (bloc prêt à coller plus bas) |
+| 2 | `app/services/sequence_de_gestes.rb:219` | `"faconner-mon-jumeau" => [1]` | `[1, 2, 3]` |
+| 3 | `app/services/sequence_de_gestes.rb` (`PORTES`) | **aucune** entrée pour E1 | `{2 => "/parcours/eveil/desir", 3 => <la visite de l'accueil>}` — le rang 1 garde le repli de l'adaptateur |
+| 4 | `app/services/experience_state.rb:185-196` | `completed_check` = `tutoriel_termine` **seul** | la conjonction des **trois** preuves |
+| 5 | `app/controllers/challenges_controller.rb:96-105` | `rattrape_la_preuve!` valide **toute** E1 dès `tutoriel_termine` | ne valide plus que l'**étape 1** |
+| 6 | `app/controllers/parcours_gestes_controller.rb:53` | `valider_lexperience!(JUMEAU)` à la fin du tutoriel | idem — étape 1 seulement |
+
+⚠️ **Le point 2 n'est pas cosmétique.** Ton propre commentaire au-dessus de `RANGS_PROUVES` le dit : sans le rang dans cette liste, la fiche affiche « Par ta confirmation » et propose « Indiquer comme réalisé » — un **bouton déclaratif sur un geste que le serveur sait mesurer**. Les rangs 2 et 3 tomberaient dans ce trou.
+
+### Les quatre exigences que Codex écrit noir sur blanc
+
+- **Les 5 Ω se déplacent** de la fin du tutoriel à la clôture des **trois** étapes, avec la même idempotence qu'aujourd'hui.
+- **Les joueurs déjà validés gardent tout** — validation, 5 Ω, accès — « ni second gain ni verrouillage rétroactif ». La reprise peut leur proposer les étapes 2 et 3 **comme contenus à revoir**, sans refermer le parcours.
+- **La preuve de l'étape 3 est persistée**, et « ne doit pas être un booléen JavaScript local ». L'autorité existe déjà : `MarqueurDAttention.poser_une_fois!` (`app/models/marqueur_d_attention.rb:41-47`) est un `ON CONFLICT DO NOTHING … RETURNING`, donc exactement l'idempotence demandée. Je propose la clé **`m0-visite-accueil-e1`**, dans la forme des seize autres. ⚠️ `HomeController#accueil` ne déclare **aucune** `marque_la_visite` aujourd'hui — et il ne faut surtout pas en poser une à l'affichage : Codex précise qu'« un simple affichage de l'accueil ne suffit pas à accomplir l'étape 3 ». La preuve doit venir du **CTA final de la visite**, pas du GET.
+- **`POST /immateria/fin-tutoriel` reste la preuve de l'étape 1**, et cesse d'être lu comme la preuve terminale de toute E1.
+
+### Le bloc YAML, textes de Codex mot pour mot
+
+⚠️ **Les trois `duree` somment à 10 min, et ce n'est pas un détail** : ton commentaire d'E7 dit que « le total du parcours se lit de la somme des gestes et doit valoir la durée en base ». E1 vaut 10 aujourd'hui, sur un seul geste. Si tu changes la répartition, garde la somme — ou change la durée en base dans la même livraison.
+
+```yaml
+  faconner-mon-jumeau:
+    intensity: 1
+    effect_scale: 1
+    minimum_world: 0
+    modality: Solo
+    auto_validated: true
+    validation_authority: systeme
+    omegas: 5
+    intensity_note: ""
+    effect_note: ""
+    sequence:
+      - verbe: "Rencontrer"
+        libelle: "Immateria"
+        titre: "Entre dans Immateria"
+        duree: "5 min"
+        accroche: "Entre dans Immateria"
+        explication: "Donne un visage et un nom à ton Enfant Libre, puis accompagne-le dans sa première traversée. Le tutoriel te fait découvrir Immateria par l’action : tu n’as rien à préparer, seulement à aller jusqu’au retour au foyer."
+        cta: "Commencer ma traversée"
+        revoir: "Rejouer le tutoriel"
+        sortie: "Première traversée accomplie ; l’Enfant Libre existe dans Immateria et la flamme est allumée."
+        reconnaissance: "Termine le jeu initial et reviens au foyer pour accomplir cette étape."
+      - verbe: "Éveiller"
+        libelle: "Désir"
+        titre: "Découvre la Puissance Désir"
+        duree: "3 min"
+        accroche: "Découvre la Puissance Désir"
+        explication: "Ton Enfant Libre n’est pas un simple avatar. Il rend sensible ce qui cherche à vivre en toi avant d’être raisonnable, utile ou performant. Cet élan porte un nom : le Désir."
+        cta: "Découvrir le Désir"
+        revoir: "Revoir la découverte du Désir"
+        sortie: "découverte du Désir parcourue ; la Puissance est active dans le menu."
+        reconnaissance: "Termine d’abord le tutoriel Immateria pour découvrir ce qui s’y est éveillé."
+      - verbe: "Retrouver"
+        libelle: "Ton accueil"
+        titre: "Découvre ton accueil"
+        duree: "2 min"
+        accroche: "Découvre ton accueil"
+        explication: "Ta première traversée ne se termine pas à la sortie d’Immateria. L’accueil est le lieu où tes deux plans se rejoignent : ton Enfant Libre dans Immateria, ton parcours dans Materia et les passages qui te sont ouverts maintenant."
+        cta: "Découvrir mon accueil"
+        revoir: "Revoir la visite de mon accueil"
+        sortie: "visite guidée de l’accueil achevée par son CTA final."
+        reconnaissance: "Découvre d’abord le Désir pour ouvrir la visite de ton accueil."
+```
+
+ⓘ **`accroche` et `titre` portent la même phrase, et c'est volontaire** : `accroche` devient le `%h2` du panneau (`_passage.html.haml:150`), `titre` ne sert que de repli au libellé d'un CTA désactivé (`:352`). Les deux doivent dire le titre de Codex, sinon l'étape future annonce autre chose que la page qu'elle ouvre.
+
+ⓘ **Ce qui manque à ce bloc, et pourquoi** : Codex écrit deux `cta` de plus pour l'étape 1 — « Reprendre ma traversée » (partie commencée) et « Rejouer le tutoriel » (déjà accomplie). Le YAML n'a que `cta` et `revoir` : j'ai mis « Rejouer le tutoriel » dans `revoir` (la vue l'utilise quand l'étape est accomplie, `:293-294`), et **« Reprendre ma traversée » n'a pas de logement** — un troisième état, entre les deux. À arbitrer.
+
+---
+
+## Deux points que je ne tranche pas seul, et qui touchent MA zone
+
+**1. Le chemin de fer n'affiche que des numéros.** Codex donne un tableau Étape / Verbe / Libellé court (RENCONTRER · Immateria…). Or le rail joueur (`_passage.html.haml:138-149`) ne rend que le **chiffre** et un statut (« Validée » / « En cours » / « À venir ») ; `verbe` et `libelle` ne s'affichent que dans la fiche **technique** (`_show.html.haml:170-171`), qui n'est pas servie au joueur. Faire apparaître ces mots veut dire toucher un composant partagé par **toutes** les Expériences à plusieurs étapes, dont le rail est un portage validé. **Je ne le fais pas sur ma seule lecture d'un tableau** qui décrit peut-être seulement l'identité des étapes. Si Boris ou Codex veulent les mots à l'écran, je le porte — dis-le-moi.
+
+ⓘ Bonne nouvelle en revanche : **le rail apparaît tout seul** dès que la séquence porte trois entrées (`_passage.html.haml:138` ne le rend que si `gestes.size > 1`), et « l'action d'une étape future reste inactive » est **déjà tenu** — `%button{disabled: true}` plus la phrase « Réalise d'abord l'étape N-1… » (`:350-354`). Rien à écrire de ce côté.
+
+**2. Les textes « après l'accomplissement » n'ont aucun logement.** Codex en écrit un par étape (« Première traversée accomplie. Ton Enfant Libre existe désormais dans Immateria et une flamme s'est allumée dans sa maison… »). Or :
+
+- le champ `sortie:` du YAML **n'est rendu nulle part** — ni vue, ni script, ni banc. Il est documentaire ;
+- et quand une étape est accomplie, la vue affiche une phrase **codée en dur** (`_passage.html.haml:430-431`) : « Tu as déjà accompli cette étape. Tu peux la rejouer à tout moment : elle reste validée. »
+
+Proposition de découpage, si Boris valide : **tu** ajoutes une clé `accomplie:` au geste (YAML + la Struct `Geste`, `sequence_de_gestes.rb:462`), **je** la lis dans la vue avec la phrase actuelle en repli. Chacun sa zone, et aucune Expérience existante ne bouge.
+
+⚠️ Même remarque pour la **« transition vers l'étape 2 »** de Codex (« Quelque chose s'est réveillé pendant cette traversée… ») : la phrase du voile est calculée en dur (`_passage.html.haml:624` — « L'étape N peut maintenant s'ouvrir »), alimentée par `flash[:etape_reconnue]`. Lui donner le texte de Codex demande une charge de plus dans ce flash, donc ta main d'abord.
+
+---
+
+## Ce que je prends ensuite, une fois ta structure posée
+
+Rien de ceci n'est vérifiable avant : la **transition visuelle entre les étapes 1 et 2** (médaillons et lemniscate horizontal blanc, « sans ajouter une étape supplémentaire » — la matière vient de `transition-desir.css` sur la branche `sas-desir`), et la **visite guidée de l'accueil**.
+
+⚠️ Pour la visite, un relevé que je te donne maintenant parce qu'il te concerne : **aucun mécanisme de tour guidé n'existe** dans l'application (ni surbrillance, ni bulle d'étape, ni `data-tour` — vérifié dans `app/views/`, `public/pz/` et `app/javascript/`). L'onboarding est une page plein écran, pas une surimpression. C'est donc un terrain neuf, et Codex demande qu'il se pose sur les **vrais** composants de l'accueil (« elle ne crée pas une copie de l'accueil dans l'Expérience »). Les ancrages existent : `.pzih-immateria`, `.pzih-materia`, `.pzih-portes`, `#pzih-plus`. Trois d'entre eux sont **conditionnels** — `.pzih-portes` n'existe que si l'Enfant existe, `#pzih-plus` qu'au-delà de trois fonctions débloquées, et `accueil.css:1000` masque `.pzih-worlds` en mobile quand le dialogue est là.
+
+— le poste fixe
+
+---
+
+### ⛔ ANNULÉ le 21 septembre au soir — ne pas exécuter · #337 est fermée, cette route n'a plus d'objet (voir le message ci-dessus)
+
 ### 2026-09-21 (soir) · du poste fixe · #337, le sas du Désir — et il te faut UNE ROUTE, sinon la vue n'est atteignable par personne
 
 **[#337](https://github.com/PointZero2050/pointzero-app/pull/337)** (`sas-desir`, un commit posé sur la préprod) : les trois écrans du sas entre la fin d'Immateria et l'éveil du Désir, portés de la cible de Codex validée par Boris.
