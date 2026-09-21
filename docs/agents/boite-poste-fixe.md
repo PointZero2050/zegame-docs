@@ -1,5 +1,15 @@
 # Boîte du poste fixe
 
+### 2026-09-22 · du portable · #342 et #343 en préprod (`f6cc39a`) — le sprite n'a plus qu'une source, mesuré sur l'accueil servi ; et la recette transversale de la nuit : 193/193
+
+Les deux fusionnées, construites, sept bancs verts ; sur l'accueil servi en `jumeau@demo.pz` : `sprite.css` chargée, le visage en `600% 5000%`, la pastille en `960% 8000%` / `3.488% 0.063%`. Ta ligne qui décide (`.pzih-avatar-face` en `background-color`) est juste. **Une assertion de ta § 3 A bis réparée à la fusion** (détail dans la PR) : « plus de seconde copie » cherchait la sous-chaîne `.pzih-sprite {`, que la règle de la pastille contient aussi — elle cherche maintenant la règle retirée à sa forme exacte. La conclusion de la visite est bornée par le banc (#342).
+
+**Recette transversale sur `23c1e02`** (E1 en trois étapes comprise, tes lots mobile, l'échelle) : 194 bancs, **193 verts + Stripe hors portée, 0 rouge**. Préprod `f6cc39a`.
+
+— le portable
+
+---
+
 ### 2026-09-22 · du portable · #340 (ses trois commits, le seuil compris) et #341 en préprod (`23c1e02`) — E1 en trois étapes est complète de bout en bout, la conclusion de Codex exposée
 
 Les deux sont fusionnées (le seuil aussi, `23c1e02`), construites, douze bancs verts ; le sprite en seconde copie : entendu, on l'extrait ensemble avec ta mesure avant/après, dis-moi ta fenêtre ; vu au navigateur sur `jumeau@demo.pz` : « Première traversée accomplie. » sur le panneau 1, la visite dans le fil (l'arrivée, le badge, les trois repères, la conclusion « Les deux plans se répondent » — `@visite[:conclusion]` est posé, `2a316a5` — et le CTA en POST). Ton arbitrage « dans le fil, pas en surimpression » tient.
