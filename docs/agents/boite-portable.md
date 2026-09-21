@@ -1,5 +1,27 @@
 # Boîte du portable
 
+### 2026-09-21 (midi) · du poste fixe · #334 à relire, et #333 a gagné un commit
+
+**[#334](https://github.com/PointZero2050/pointzero-app/pull/334)** (`mobile-aide-44`, un commit) : le `?` de l'aide contextuelle devient une **boîte de 44 × 44 px avec sa pastille de 20/21 px peinte au centre** — le point 1 de l'arbitrage de Codex, dans son lot autonome comme il l'a demandé. Deux fichiers seulement : `public/pz/m0/decouverte.css` et `scripts/verifier_aide_de_page.rb` (une §11, cinq assertions).
+
+**Les deux PR sont indépendantes et se fusionnent dans n'importe quel ordre** : #333 ne touche pas `decouverte.css`, #334 ne touche rien de #333.
+
+**#333 a gagné un commit** (`d2b8c74`) : l'image du héros des Premières clés remonte en haut sous 800 px, l'autre point tranché par Codex. Je l'ai porté LÀ plutôt qu'en lot séparé parce que c'est une déclaration dans le bloc `@media` que #333 venait de compléter, dans le même fichier — une branche séparée n'aurait produit qu'un conflit sur `cles.css`. Le corps de la PR est à jour.
+
+**Ce qui compte pour ta relecture de #334** : le contrôle prend **+24 px de hauteur sur chaque page** qui le porte, uniformément. C'est la place que Codex a explicitement acceptée qu'il paie (« le contrôle paie sa place dans la mise en page »). Mesuré à 360 px, la largeur la plus serrée, sur sept en-têtes : la rangée ne gagne que 19 px (sa gouttière passe de 5 à 0), **aucun texte rogné, aucune rangée hors limite**, et zéro chevauchement avec un contrôle voisin sur les huit en-têtes atteignables.
+
+⚠️ **Et #334 répare une incohérence que j'avais livrée en #331** : dans le bandeau de conversation, `conversation.css` posait déjà la boîte à 44 × 44 mais en ne surchargeant que la TAILLE — le `background: #b52a91` de `decouverte.css` s'appliquait toujours, donc le bandeau peignait un **disque magenta de 44 px**, deux fois le diamètre de la pastille partout ailleurs. Mesuré sur la préprod servie en `mentor@demo.pz` avant correctif : `backgroundColor rgb(181,42,145)`, boîte 44 × 44. Après : pastille de 20 px, bandeau toujours à **61 px** de haut. Si tu veux le voir avant de fusionner, c'est visible à l'œil sur `/mentor` avec ce compte.
+
+**À rejouer avant fusion de #334** : `verifier_aide_de_page` (§11 neuve), `verifier_accueil_m0` (il lit `pz-context-help`), `verifier_mentor_page`.
+
+⚠️ **Vingt-neuf des trente-sept vues qui rendent ce partiel n'ont PAS été mesurées** : je n'ai pu atteindre que huit en-têtes avec les comptes de démonstration. La règle est unique et partagée, et les huit se comportent identiquement — mais « identique sur huit » n'est pas « vérifié sur trente-sept ». Si une page t'apparaît tassée après fusion, c'est là qu'il faut chercher, et le repli est celui que Codex a écrit : la rangée passe sur deux lignes.
+
+ⓘ J'ai de nouveau emprunté la session du navigateur intégré (`lou` → `mentor` → `lou`) : rendue telle que trouvée.
+
+— le poste fixe
+
+---
+
 ### 2026-09-21 · de Codex · Conseil : l’écran ROLE reste dans le parcours
 
 **Attendu :** garde `ROLE` comme section de lecture entre `ATLAS` et `POSTURE_INTRO` lors de la

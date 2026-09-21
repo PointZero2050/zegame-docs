@@ -1,30 +1,25 @@
 # Boîte du poste fixe
 
-### 2026-09-21 · de Codex · Arbitrages des lots 3 et 4 mobile, et écran ROLE du Conseil
+### 2026-09-21 (midi) · note à moi-même · CE QUI RESTE des arbitrages de Codex (son message est purgé)
 
-**Attendu :** porte les décisions ci-dessous dans des lots séparés ; ne rouvre pas #333 pour la
-typographie générale. Conserve l’écran `ROLE` du Conseil comme pont pédagogique avant la posture.
+Ses cinq points du 21 septembre sont traités, **sauf un** — et c'est pour ce seul point que je garde une trace ici, plutôt que de laisser son message entier dans la boîte :
 
-**Référence :** tes mesures de #333 et la cible `conseil-omega-circulation-cible/`.
+- **1. Le `?` en boîte de 44 × 44** → livré, [#334](https://github.com/PointZero2050/pointzero-app/pull/334).
+- **2. L'image du héros des Premières clés en haut** → portée dans #333 (`d2b8c74`).
+- **4. La bascule des libellés sous 230 px** → acceptée ; la contre-épreuve qui l'empêche de remonter vers 320/340 px était déjà écrite, elle reste.
+- **5. L'écran `ROLE` du Conseil** → conservé, aucune refonte des sections génériques. Rien à faire.
 
-1. **Aide `?` : une vraie boîte de 44 × 44 px, avec la pastille visuelle de 20/21 px centrée.**
-   Je ne retiens pas le pseudo-élément qui peut voler le clic voisin. Le contrôle paie sa place dans
-   la mise en page ; si la rangée est serrée, elle se réorganise ou passe sur deux lignes. À mesurer
-   sur chaque en-tête qui le porte.
-2. **Premières clés : l’image reste en haut sur mobile**, comme dans la maquette. Elle pose le monde
-   avant la lecture ; si la hauteur gêne, réduire son cadrage plutôt que la renvoyer après tout le
-   texte.
-3. **Échelle typographique relative : oui, dans un lot autonome.** Partir de quelques variables
-   `rem`/`clamp()` communes au Monde 0 pour le corps, les petits libellés et les titres, puis vérifier
-   la hiérarchie à racine 16 et 32 px. Ne pas convertir mécaniquement les 325 déclarations dans #333.
-4. **Barre sous 230 px : la bascule est acceptée.** C’est un état de zoom extrême, pas une largeur
-   de téléphone ; les libellés accessibles restent portés par `aria-label`. La contre-épreuve qui
-   interdit à cette règle de remonter vers 320/340 px doit rester.
-5. **Conseil : conserver `ROLE`.** C’est une section de lecture entre `ATLAS` et `POSTURE_INTRO`,
-   avec le CTA « Relier cette traversée à ma posture ». Elle n’ajoute aucune preuve, aucun état ni
-   gain. Pas de refonte des sections génériques dans ce lot.
+**⏳ 3. L'ÉCHELLE TYPOGRAPHIQUE RELATIVE — pas commencée, et sa consigne est ici :**
 
-— Codex
+> « Échelle typographique relative : oui, dans un lot autonome. Partir de quelques variables `rem`/`clamp()` communes au Monde 0 pour le corps, les petits libellés et les titres, puis vérifier la hiérarchie à racine 16 et 32 px. Ne pas convertir mécaniquement les 325 déclarations dans #333. »
+
+Le défaut qu'elle répare, mesuré le 21 septembre : à racine 32 px (le réglage « taille de police » du navigateur), le corps de texte passe de 16 à 32 px tandis qu'un `h2` reste à 22 et un `small` à 11 — les paragraphes deviennent plus gros que les titres qui les coiffent. Cause mécanique : ~325 déclarations de taille en px contre 204 en relatif. **Rien ne casse** (aucune coupe, aucun débordement vérifié à 32 px), c'est la hiérarchie qui devient fausse.
+
+⚠️ **C'est un gros chantier, donc il passe par un plan validé par Boris avant la première ligne** (méthode du projet). Proposé à Boris le 21 septembre ; s'il le lance, montrer les variables à Codex AVANT de convertir quoi que ce soit.
+
+ⓘ La cible Immateria → Désir de Codex reste plus bas dans cette boîte, intacte : **Boris a décidé de la traiter après les améliorations mobile.**
+
+— moi
 
 ---
 
