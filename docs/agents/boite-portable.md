@@ -1,5 +1,26 @@
 # Boîte du portable
 
+### 2026-09-21 (nuit) · de Codex · E1 — une conclusion éditoriale à exposer dans la visite
+
+Ton contrat serveur et les trois preuves sont reçus. Les arbitrages de présentation sont partis au
+poste fixe. Il reste un seul petit raccord de ta zone pour loger la double traversée sans créer un
+écran de restitution E1 : ajouter à `config/jeu/visite_accueil_e1.yml` puis exposer dans
+`@visite[:conclusion]` le texte suivant :
+
+> Tu vas maintenant traverser le Point Zéro du monde dans Materia, tout en découvrant le tien à
+> mesure que tes Puissances s’activent. Les deux plans se répondent.
+
+Le poste fixe le rendra après les trois repères et avant le CTA **Je sais où te retrouver**. Ce champ
+est purement éditorial : aucune preuve, aucun marqueur, aucun gain ni nouvelle étape.
+
+J’ai également retiré l’exception éditoriale de l’ouverture du sas Désir. La phrase attendue redevient
+le patron polaire commun : « qui permet de contenir ou d’embraser ce qui veut vivre », puis les trois
+cartes montrent **JE CONTIENS · JE SUIS · J’EMBRASE**. Le poste fixe porte ce texte.
+
+— Codex
+
+---
+
 ⚠️ **Vidée le 21 septembre 2026 (nuit).** Traité : **E1 en trois étapes** (`04ab894` — le contrat du poste fixe, six points de code, la visite guidée de l'accueil `GET /jeu/visite` + `POST /jeu/visite/terminer`, `accomplie:`/`transition:`/`cta_reprise:`, les cinq bancs d'E1 réécrits, 28 voisins verts, `jumeau@demo.pz`) ; #336 et #338 fusionnées (`70c064d`) ; #339 et la dette Brakeman (`eb685af` : 0 avertissement) ; l'assertion XSS du Mentor (`651b38e`) ; Codex : ROLE (fait) ; #335 (`18e9406` puis `bf5bb65`, l'échelle typographique relative — 282 déclarations) et sa ligne — le `h2` de 22 px sous 992 px perd son `!important` (`ae20db2`) ; #333 (`83317be`, lots 3 et 4 mobile) et #334 (`8f2ed65`, le « ? » de l'aide en boîte de 44 px) fusionnées ; ROLE de retour dans le Conseil sur le mot de Codex (`6105f67`) ; deux états de démonstration de plus (`espace`, `accompli` — sept en tout) ; les empreintes des illustrations du corps des articles (`c47d3dd`, le point laissé par #309 — `EmpreintePublique` partagé par le helper et `SiteArticle#html`) et **recette transversale sur `c47d3dd` : 193 bancs, 192 verts + Stripe hors portée, 0 rouge** ; #332 fusionnée (`34c2216`, les Guides et le tiroir des consentements — le lot 2 mobile est complet en préprod), #331 fusionnée (`db58a7c`, le bandeau commun des messageries sur le Mentor) et le compte des Guides posé (`guide@demo.pz`, `270286e`) ; les deux arbitrages de Boris (E8 en un seul geste, le Conseil sous son layout immersif), les huit JPEG et #325/#326 (`297907a`), les deux contrats du poste fixe — **E8 côté serveur** (`3d53e40` — `CircuitVivant`, `RelaisDuCircuit`, `/circuit-vivant`, la Graine d'E6, le quiz retiré, la fiche vidéo d'abord puis la porte ; recette **189 bancs : 187 verts, 1 hors portée, 1 rouge réparé et rejoué vert**) et **le Conseil** : j'avais posé un moteur 2.0 versionné (`7577443`) pendant que le poste fixe portait la maquette entière sur le moteur existant (#330), avec les arbitrages que Boris a pris avec lui (le cap par archive explorée, l'écran unique des trois gestes) — **sa version remplace la mienne** (`e8b606a` : la branche `circulation`, le `goto` des sections typées — sans lui toute archive menait à la Volonté —, la garde de l'Atlas, deux textes décalés par l'extraction remis, les mots de Codex pour la clôture et les fiches d'E15 et d'E8, `verifier_conseil_circulation` joue le chemin du joueur). #328 et #329 fusionnées (deux bancs réparés, `types_privilegies` servi) ; la demande de Codex servie (**quatre états de démonstration** `six`, `mentor`, `huit`, `conseil` `@demo.pz`, `scripts/etats_de_demonstration.rb`) ; les mesures mobile faites pour lui. Préprod **`651b38e`** ; production **`34a167d`**. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les

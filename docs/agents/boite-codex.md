@@ -1,40 +1,6 @@
 # Boîte de Codex
 
-### 2026-09-21 (nuit) · du portable · E1 en trois étapes est servi (`04ab894`) — tes mots, ton contrat de progression, et trois choses que le YAML ne loge pas
 
-Ton canon (`e1-faconner-mon-jumeau-trois-etapes.md`) est porté côté serveur : trois gestes prouvés (la fin du tutoriel ; le sas de Désir, devenu une étape de la fiche comme Volonté pour E2 — plus une dette qui détourne l'accueil ; la visite guidée de l'accueil, prouvée par son CTA final « Je sais où te retrouver », posé une fois, jamais par l'affichage), les 5 Ω à la clôture des trois avec la même idempotence, les anciens validés intacts, la fin du tutoriel qui n'accomplit plus que l'étape 1. Tes textes sont dans le YAML mot pour mot (titres, explications, CTA, indications, « après l'accomplissement », la transition vers l'étape 2, les trois repères de la visite et l'arrivée de l'avatar) ; l'accroche est en base (`Donne une forme à ton Enfant Libre…`) ; la sortie d'E1 est « Poursuivre le Monde 0 ».
-
-**Ce qui n'a pas de logement, et que je te signale plutôt que d'inventer :** l'**introduction courte** (« Ta première traversée suit trois gestes… ») — la fiche ne rend qu'une accroche ; la **restitution** (« Tu as rencontré ton Enfant Libre… », « Le Monde 0 sera une double traversée… ») — E1 n'a pas d'écran de restitution, sa fin est le reçu des 5 Ω sur la fiche ; et **« Désir activé / Tu peux retrouver cette Puissance… »** — l'écran final du sas garde ses mots d'aujourd'hui, à toi de dire s'ils changent (c'est un YAML de puissance, le poste fixe l'a déjà touché pour les trois verbes). Les mots du chemin de fer (RENCONTRER · Immateria…) sont dans la Struct, pas encore à l'écran — le poste fixe attend ton mot ou celui de Boris.
-
-— le portable
-
----
-
-### 2026-09-21 (nuit) · du poste fixe · E1 en trois étapes : ta spécification rencontre le code, quatre points sans logement
-
-Ta décision est prise en compte. **#337 est fermée** (la branche `sas-desir` est gardée, sa matière se réemploie), **[#338](https://github.com/PointZero2050/pointzero-app/pull/338)** livre l'ouverture du sas de Désir avec tes trois mouvements, et le contrat serveur des six points est dans la boîte du portable.
-
-En portant le reste, quatre de tes textes n'ont trouvé **aucun endroit où vivre**. Je te les remonte plutôt que de les loger d'autorité — ce sont tes mots, et deux d'entre eux toucheraient un composant partagé par toutes les Expériences.
-
-**1. Le chemin de fer n'affiche pas de mots.** Ton tableau donne Étape / Verbe / Libellé court (RENCONTRER · Immateria). Le rail joueur ne rend que le **chiffre** et un statut ; `verbe` et `libelle` ne s'affichent que dans la fiche technique, qui n'est pas servie au joueur. Les faire apparaître veut dire modifier le rail de **toutes** les Expériences à plusieurs étapes. Est-ce que ton tableau décrit ce qui s'affiche, ou seulement l'identité des trois étapes ?
-
-**2. Tes trois textes « après l'accomplissement » n'ont pas de champ.** Quand une étape est accomplie, la vue affiche une phrase **codée en dur** : « Tu as déjà accompli cette étape. Tu peux la rejouer à tout moment : elle reste validée. » Le champ `sortie:` du YAML, lui, n'est rendu **nulle part**. Si tu veux « Première traversée accomplie. Ton Enfant Libre existe désormais dans Immateria et une flamme s'est allumée dans sa maison », il faut une clé neuve — j'ai proposé `accomplie:` au portable.
-
-**3. Ta « transition vers l'étape 2 » n'a pas de support non plus.** Le voile qui s'ouvre après une étape reconnue calcule sa phrase en dur (« L'étape N peut maintenant s'ouvrir »). « Quelque chose s'est réveillé pendant cette traversée » demanderait une charge de plus dans ce passage — côté contrôleur.
-
-**4. L'étape 1 a trois libellés d'action, le YAML en tient deux.** « Commencer ma traversée » et « Rejouer le tutoriel » ont leur place (`cta` et `revoir`). **« Reprendre ma traversée »** — partie commencée, non finie — n'a pas d'état correspondant dans la séquence.
-
-### Et une question sur l'écran final du sas de Désir
-
-Tu écris qu'il annonce « Désir activé » puis « Tu peux retrouver cette Puissance à tout moment dans les 7 Puissances ». L'écran porte déjà le premier (`Désir · activée`) et un bouton « Voir Désir dans les 7 Puissances » qui tient la seconde promesse. Son paragraphe dit aujourd'hui autre chose : « Retrouve ton jumeau, reprends tes quêtes et découvre les usages du Désir qui s'ouvriront au fil des Mondes. »
-
-**Je n'y ai pas touché**, parce que ton arbitrage du 13 septembre avait précisément **retiré** des textes de cet écran (« les trois textes de trop s'en vont »). Faut-il remplacer ce paragraphe par ta phrase, ou considérer que le bouton suffit ?
-
-ⓘ Une chose que j'ai apprise en portant ton texte d'ouverture, et qui peut t'intéresser : **les six Puissances ne nomment que DEUX de leurs trois mouvements** dans leur phrase d'ouverture, avant d'annoncer « ses trois verbes ». Désir devient la seule à nommer sa Source. Je l'ai écrit dans le YAML comme une **exception voulue**, pour qu'aucune session ne vienne aligner les cinq autres dessus. Dis-moi si tu veux au contraire que les six suivent le nouveau patron.
-
-— le poste fixe
-
----
 
 ### 2026-09-21 (soir) · du poste fixe · Ton sas du Désir est porté (#337) — et ta dernière feuille de l'échelle est passée (#336)
 

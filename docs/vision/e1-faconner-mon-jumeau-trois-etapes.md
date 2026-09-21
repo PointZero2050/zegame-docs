@@ -27,10 +27,13 @@ la précédente n’est pas accomplie.
 > Donne une forme à ton Enfant Libre, découvre l’élan qu’il rend visible et apprends où le
 > retrouver.
 
-**Introduction courte**
+**Résumé éditorial interne**
 
 > Ta première traversée suit trois gestes : entrer dans Immateria, reconnaître ce qui s’y est
 > réveillé, puis découvrir l’accueil qui relie ce monde-miroir à ton parcours.
+
+Cette phrase résume l’intention du dispositif. Elle ne demande pas un bloc supplémentaire sur la
+fiche, dont l’accroche et le panneau de l’étape courante suffisent.
 
 **Chemin de fer**
 
@@ -39,6 +42,11 @@ la précédente n’est pas accomplie.
 | 1 | **RENCONTRER** | Immateria |
 | 2 | **ÉVEILLER** | Désir |
 | 3 | **RETROUVER** | Ton accueil |
+
+Le tableau nomme les trois identités éditoriales. Le rail joueur conserve sa forme validée : cercles
+numérotés et statuts **Validée · En cours · À venir**. Les verbes et libellés courts ne s’ajoutent
+pas visuellement sous les cercles ; le titre du panneau sélectionné donne le sens de l’étape sans
+alourdir le composant partagé. Ils peuvent enrichir le libellé accessible du bouton.
 
 ## Étape 1 — RENCONTRER
 
@@ -110,17 +118,19 @@ seule, annoncer que Désir est activé ni clore toute l’Expérience.
 Cette action ouvre le mini-jeu commun de découverte des Puissances, décliné pour Désir. Son premier
 écran introduit les trois verbes avec ce texte :
 
-> Le Désir est la puissance d’élan de la Conscience, qui permet de contenir, d’habiter ou
-> d’embraser ce qui veut vivre. Voici ses trois verbes :
+> Le Désir est la puissance d’élan de la Conscience, qui permet de contenir ou d’embraser ce qui
+> veut vivre. Voici ses trois verbes :
 
 **JE CONTIENS · JE SUIS · J’EMBRASE**
 
 Le mini-jeu conserve ses trois moments **Éprouver · Relier au Jeu · Retrouver**, sans répéter la
-présentation de l’Expérience. Son écran final annonce :
+présentation de l’Expérience. Désir suit ainsi le patron éditorial des cinq autres Puissances : la
+phrase d’ouverture nomme les deux directions polaires, puis les trois cartes présentent la Source.
 
-> Désir activé
-
-> Tu peux retrouver cette Puissance à tout moment dans les 7 Puissances.
+L’écran final conserve son contenu actuel : **Désir · activée**, le paragraphe sur le jumeau et les
+usages qui s’ouvriront au fil des Mondes, ainsi que le bouton **Voir Désir dans les 7 Puissances**.
+Ce bouton suffit à indiquer que la Puissance reste accessible ; ne pas ajouter une seconde phrase
+qui répète cette promesse.
 
 ### États de l’étape
 
@@ -181,6 +191,11 @@ fois dans ce fil avant la visite, puis poursuit :
 
 ### Fin de la visite
 
+Après les trois repères et avant le CTA, afficher cette conclusion courte :
+
+> Tu vas maintenant traverser le Point Zéro du monde dans Materia, tout en découvrant le tien à
+> mesure que tes Puissances s’activent. Les deux plans se répondent.
+
 CTA final dans l’accueil :
 
 > **Je sais où te retrouver**
@@ -198,16 +213,10 @@ Après l’accomplissement :
 
 ## Clôture de l’Expérience
 
-### Restitution
-
-> Tu as rencontré ton Enfant Libre, reconnu le Désir qu’il rend sensible et découvert l’accueil qui
-> relie Immateria à Materia.
-
-> Le Monde 0 sera une double traversée : comprendre le Point Zéro du monde dans Materia, et activer
-> peu à peu tes Puissances dans Immateria.
-
-> Le Jeu ne dit pas que les crises du monde viennent de toi. Il montre que les transformer demande
-> aussi une Conscience capable de se transformer.
+E1 ne gagne pas un écran de restitution supplémentaire. La conclusion de la visite porte la double
+traversée ; le CTA final revient à la fiche, où l’animation de complétion et le reçu des 5 Omégas
+reconnaissent l’Expérience. Le garde-fou sur les crises collectives reste une règle de conception,
+pas un paragraphe ajouté à ce premier accueil.
 
 ### Action finale
 
@@ -238,6 +247,19 @@ idempotence qu’aujourd’hui.
 Les joueurs ayant déjà accompli E1 conservent leur validation, leurs 5 Omégas et leurs accès. Ils ne
 doivent recevoir ni second gain ni verrouillage rétroactif. La reprise peut leur proposer la
 découverte de Désir et la visite de l’accueil comme contenus à revoir, sans refermer le parcours.
+
+## Arbitrages de portage
+
+- Le rail reste numérique et commun aux Expériences ; le tableau **RENCONTRER · ÉVEILLER ·
+  RETROUVER** ne devient pas une seconde rangée visible.
+- Lorsqu’un geste est accompli, afficher son texte `accomplie` propre. La phrase générique reste un
+  repli pour les gestes qui n’en possèdent pas.
+- Après la reconnaissance d’un geste non final, le voile emploie son texte `transition` lorsqu’il
+  existe ; sinon il conserve la phrase générique sur l’ouverture de l’étape suivante.
+- **Reprendre ma traversée** apparaît seulement quand l’état durable du tutoriel distingue une
+  partie commencée d’une première entrée. Il ne doit pas être déduit d’une simple visite de page.
+- Le mini-jeu final de Désir conserve son paragraphe et son bouton actuels ; aucune phrase
+  supplémentaire ne répète que la Puissance est accessible.
 
 ## Réemploi de la transition Immateria → Désir
 
