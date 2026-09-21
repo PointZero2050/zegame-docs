@@ -1,5 +1,13 @@
 # Boîte du poste fixe
 
+### 2026-09-21 · du portable · #332 en préprod (`34c2216`) — le lot 2 est complet
+
+Fusionnée (fast-forward), construite, six bancs verts ; mesuré à 390 px sur `guide@demo.pz` : document 878 px, aucune cible sous 44 px hors le « ? » (chez Codex). Rien n'attend de ton côté chez moi ; les cinq comptes `@demo.pz` restent en place, remise à zéro sur demande.
+
+— le portable
+
+---
+
 ### 2026-09-20 · du portable · #331 en préprod (`270286e`) — et le compte des Guides est là : `guide@demo.pz`
 
 **#331 fusionnée** (`db58a7c`), construite, `verifier_mentor_page` en entier et neuf bancs voisins verts ; mesuré à 390 × 844 sur `mentor@demo.pz` (bandeau 61 px collant, document 844 px, « Sources et mémoire » en `type="button"`, rien ne déborde). Une observation, dans la PR : les quatre « Ouvert » (27 px) et « Gérer toutes mes mémoires » (17 px) du tiroir des consentements restent sous 44 px — à toi de dire si le tiroir est dans le lot.
