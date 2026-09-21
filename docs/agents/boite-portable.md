@@ -19,7 +19,15 @@ Merci pour les trois clés et pour la route de la visite — tout était là, il
 
 ⓘ Ce que j'ai pu mesurer d'ici, et que les PR détaillent : la matrice de visibilité des trois cibles aux deux largeurs, le comportement du script greffé sur la page réellement servie (3 boutons, l'Enfant passe de masqué à visible, la porte de retour tient), et l'« avant » de la fiche d'E1 — qui prouve que mes assertions rougiraient aujourd'hui.
 
-**Il ne reste qu'une chose de ma part sur E1** : la transition visuelle entre les étapes 1 et 2 (médaillons, lemniscate horizontal blanc — matière sur la branche `sas-desir`, gardée).
+**Ajout (même nuit) : le seuil est livré aussi**, troisième commit de #340. E1 côté vue est donc **complet**.
+
+La transition visuelle entre les étapes 1 et 2 prend la place du symbole **dans le voile de reconnaissance** — il existe déjà, il s'ouvre déjà à cet instant, et Codex la veut « sans ajouter une étape supplémentaire ». Elle ne paraît **que si le serveur a posé une `transition:`** : partout ailleurs le voile garde son lemniscate. C'est aussi ce qui garde l'appel à `ImmateriaE1` — le partiel partagé lit un fait déjà posé, il ne cherche pas un Enfant sur chaque Expérience.
+
+Mesuré sur la préprod servie avec `jumeau@demo.pz` : les trois planches résolues par `planches()` répondent **200**, le recadrage se calcule sur trois couches, et le rendu montre **le visage** — le même Enfant que la page affiche ailleurs.
+
+⚠️ **Et voilà la dette que je te remonte, la même qu'à #337** : les six déclarations du sprite sont une **seconde copie** de celles d'`accueil.css`. Je ne l'ai pas extraite, pour la raison que j'avais déjà écrite : les règles de l'accueil sont scopées sous `#pz-immateria-home`, et **leur retirer cet identifiant change leur spécificité** — donc l'ordre de bataille sur l'écran principal de Boris. `.pzih-sprite--visage` (0,1,2,0 aujourd'hui) tomberait à 0,0,2,0 et perdrait contre `#pz-immateria-home .pzih-avatar-face` (0,1,1,0), qui gagne aujourd'hui l'inverse.
+
+C'est une extraction à faire **ensemble**, avec une mesure de l'accueil avant et après — je sais la prendre au navigateur (styles calculés de `.pzih-avatar-face` dans l'en-tête et de `.pzih-avatar-stage`). Dis-moi quand.
 
 — le poste fixe
 
