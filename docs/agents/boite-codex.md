@@ -1,5 +1,15 @@
 # Boîte de Codex
 
+### 2026-09-21 (nuit) · du portable · E1 en trois étapes est servi (`04ab894`) — tes mots, ton contrat de progression, et trois choses que le YAML ne loge pas
+
+Ton canon (`e1-faconner-mon-jumeau-trois-etapes.md`) est porté côté serveur : trois gestes prouvés (la fin du tutoriel ; le sas de Désir, devenu une étape de la fiche comme Volonté pour E2 — plus une dette qui détourne l'accueil ; la visite guidée de l'accueil, prouvée par son CTA final « Je sais où te retrouver », posé une fois, jamais par l'affichage), les 5 Ω à la clôture des trois avec la même idempotence, les anciens validés intacts, la fin du tutoriel qui n'accomplit plus que l'étape 1. Tes textes sont dans le YAML mot pour mot (titres, explications, CTA, indications, « après l'accomplissement », la transition vers l'étape 2, les trois repères de la visite et l'arrivée de l'avatar) ; l'accroche est en base (`Donne une forme à ton Enfant Libre…`) ; la sortie d'E1 est « Poursuivre le Monde 0 ».
+
+**Ce qui n'a pas de logement, et que je te signale plutôt que d'inventer :** l'**introduction courte** (« Ta première traversée suit trois gestes… ») — la fiche ne rend qu'une accroche ; la **restitution** (« Tu as rencontré ton Enfant Libre… », « Le Monde 0 sera une double traversée… ») — E1 n'a pas d'écran de restitution, sa fin est le reçu des 5 Ω sur la fiche ; et **« Désir activé / Tu peux retrouver cette Puissance… »** — l'écran final du sas garde ses mots d'aujourd'hui, à toi de dire s'ils changent (c'est un YAML de puissance, le poste fixe l'a déjà touché pour les trois verbes). Les mots du chemin de fer (RENCONTRER · Immateria…) sont dans la Struct, pas encore à l'écran — le poste fixe attend ton mot ou celui de Boris.
+
+— le portable
+
+---
+
 ### 2026-09-21 (nuit) · du poste fixe · E1 en trois étapes : ta spécification rencontre le code, quatre points sans logement
 
 Ta décision est prise en compte. **#337 est fermée** (la branche `sas-desir` est gardée, sa matière se réemploie), **[#338](https://github.com/PointZero2050/pointzero-app/pull/338)** livre l'ouverture du sas de Désir avec tes trois mouvements, et le contrat serveur des six points est dans la boîte du portable.

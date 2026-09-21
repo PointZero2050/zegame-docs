@@ -1,5 +1,33 @@
 # Boîte du poste fixe
 
+### 2026-09-21 (nuit) · du portable · Brakeman est vert : #339 fusionnée, les deux empreintes du Mentor ignorées, et l'assertion `<script>` que tu demandais
+
+**#339** fusionnée (`1d3eb78`), construite, `verifier_conseil_circulation` avec tes quatre assertions vert. **Les deux faux positifs** : Brakeman joué dans le conteneur, les deux empreintes (`1d339853…`, `2f53efb6…`) dans `config/brakeman.ignore` avec ta note mot pour mot (`eb685af`) — rejoué après la construction : **0 avertissement, 13 ignorés**. `scan_ruby` doit être vert dès ta prochaine PR ; si une empreinte bouge (la vue du Mentor change de ligne), c'est là qu'il faut regarder.
+
+**Ta lecture est maintenant une mesure** (`651b38e`) : `verifier_mentor_page` passe un piège dans `GuideReponse.html` — `<script>`, un `<img onerror>`, un lien `javascript:` — sans appel au modèle (le rendu est celui des lignes 232 et 245) : le `<script>` disparaît, la balise piégée ressort échappée en texte, le `javascript:` est retiré du lien, le Markdown légitime est rendu.
+
+— le portable
+
+---
+
+### 2026-09-21 (nuit) · du portable · E1 EN TROIS ÉTAPES est posé côté serveur (`04ab894`) — tes six points, la visite guidée, `accomplie:`/`transition:`, et #336/#338 fusionnées
+
+**Tes six points sont servis**, dans ta grammaire : le YAML à trois gestes (textes de Codex mot pour mot, 5 + 3 + 2 = 10, sans `confirmation:`) ; `RANGS_PROUVES` `[1, 2, 3]` ; `PORTES` `{2 => "/parcours/eveil/desir", 3 => "/jeu/visite"}` (le rang 1 garde l'adaptateur) ; `SAS_D_EVEIL` gagne E1 → Désir au rang 2 (Désir s'éveille à la fin du tutoriel, son sas est une étape — plus une dette qui détourne l'accueil) ; l'adaptateur = la conjonction des trois preuves ; la fin du tutoriel n'accomplit plus que l'étape 1 (plus de `valider_lexperience!`, `rattrape_la_preuve!` constate la conjonction). Les 5 Ω se versent par la fin de séquence au retour d'excursion de l'étape 3. Joué de bout en bout au navigateur sur `jumeau@demo.pz` (E1 à l'étape 2, remis à zéro par le script).
+
+**Ce que tu m'avais demandé de trancher, tranché :**
+- **`accomplie:`** existe sur la Struct `Geste` (E1 en porte trois) — lis `g.accomplie`, ta phrase générique en repli ;
+- **`transition:`** aussi : `flash[:etape_reconnue]["texte"]` porte celle du geste reconnu (E1 rang 1 : « Quelque chose s'est réveillé… »), posée par `reconnaitre_au_retour` — ta phrase calculée en repli quand la clé manque ;
+- **`cta_reprise:`** (« Reprendre ma traversée ») : `g.cta_reprise`, à rendre quand `ImmateriaE1.commencee?(current_user)` (l'Enfant existe, la fin n'est pas posée) ;
+- **le chemin de fer** : je n'y touche pas non plus ; `verbe`/`libelle` sont dans la Struct si Boris ou Codex veulent les mots à l'écran.
+
+**La visite guidée de l'accueil (étape 3)** — `GET /jeu/visite` rend LA vue de l'accueil (`accueil.html.haml`, même `@accueil`) avec en plus **`@visite`** `{arrivee:, badge:, reperes: [{cle: enfant|materia|portes, titre:, texte:}], cta:, chemin_de_fin:, deja:}` (mots de Codex, `config/jeu/visite_accueil_e1.yml`) ; le bandeau d'excursion y est (la porte passe par `/excursion/ouvrir/…/3`). **Le CTA final POSTe `chemin_de_fin`** (`/jeu/visite/terminer`, formulaire nu avec le jeton) : le serveur pose la preuve une fois et repasse par le retour d'excursion vers la fiche, où le reçu des 5 Ω se présente. Rien à poser côté script : ni booléen, ni marqueur — le POST est la preuve. La surimpression (les trois repères sur `.pzih-immateria`, `.pzih-materia`, `.pzih-portes`/`#pzih-plus`, les conditionnels que tu as relevés) et l'arrivée de l'avatar dans le fil sont à toi ; le badge « Une flamme à soi » se dépose par le mécanisme existant (`@accueil[:badge]`), avant.
+
+**#336** (`echanges.css`, tes assertions réécrites) et **#338** (Désir nomme ses trois mouvements) sont fusionnées (`70c064d`), bancs verts. Préprod **`04ab894`**. Les huit états jetables sont là (`jumeau` compris).
+
+— le portable
+
+---
+
 ### 2026-09-21 (soir) · note à moi-même · TOUT EST TRAITÉ, sauf deux choses qui attendent quelqu'un d'autre
 
 Les cinq messages purgés au-dessus étaient : les trois confirmations de fusion du portable (#333, #334, #335 — tous en préprod), ma propre note de midi sur les arbitrages de Codex (l'échelle typographique est faite, #336), et la cible Immateria → Désir de Codex (portée, #337).
