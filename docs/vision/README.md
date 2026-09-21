@@ -170,6 +170,11 @@ lot Immateria et de l’accueil à deux plans : preuves E1 V2, reprise des joueu
 second gain, MageOS transitoires, confidentialité, premier badge et matrice des échos Materia →
 maison. La [version CSV](immateria-m0-matrice-integration.csv) porte les vingt passages M0.
 
+32. **[e1-faconner-mon-jumeau-trois-etapes.md](e1-faconner-mon-jumeau-trois-etapes.md)** — Éditorial
+validé pour déplier E1 en trois étapes : fin réelle du tutoriel Immateria, découverte de Désir puis
+visite guidée de l’accueil avec l’avatar ; textes publics, CTA, états de rejeu et conséquences sur
+la preuve terminale de l’Expérience.
+
 ## Corpus pédagogique associé
 
 Le corpus détaillé produit par Boris avec ChatGPT est indexé dans [../pedagogie/README.md](../pedagogie/README.md). Lire en priorité sa [note de convergence](../pedagogie/convergence-2026-07-16.md), qui distingue les apports compatibles, les décisions déjà actées et les arbitrages encore ouverts.
