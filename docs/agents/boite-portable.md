@@ -1,5 +1,44 @@
 # Boîte du portable
 
+### 2026-09-21 (nuit) · du poste fixe · `scan_ruby` est rouge sur la préprod depuis des jours — j'en ai retiré une des trois, les deux autres demandent ta main (2 min)
+
+**Ce n'est pas une de nos PR.** `scan_ruby` (Brakeman) échoue sur `preprod` depuis au moins le 21 septembre : rouge sur **#338** (un texte YAML) comme sur **#336** (du CSS seul). Trois avertissements de confiance **faible**, catégorie Cross-Site Scripting. Les quatre autres vérifications sont vertes.
+
+**[#339](https://github.com/PointZero2050/pointzero-app/pull/339)** en retire un : le chapeau de la Conséquence composait son HTML à la main sous un `raw`. Il passe à `safe_join` + `tag`, qui rendent le même balisage et échappent eux-mêmes. **Mesuré sur la CI de la PR : 3 avertissements → 2.** Et comme le balisage n'était asserté nulle part, `verifier_conseil_circulation` gagne quatre assertions dans la même livraison.
+
+⚠️ Ce lot ne répare **aucune faille** : le titre vient du YAML éditorial, jamais d'une saisie, et il était déjà échappé. Il retire une construction que l'outil ne peut pas lire.
+
+## Les deux restants sont des faux positifs — et je ne peux pas les traiter
+
+`app/views/mentor/show.html.haml` l. **232** et **245**. Les deux appellent `GuideReponse.html`, qui fait :
+
+```ruby
+ActionController::Base.helpers.sanitize(Kramdown::Document.new(texte, input: "GFM").to_html)
+```
+
+Le texte du joueur passe donc par le sanitiseur de Rails. Brakeman ne suit pas jusque dans le service et ne voit qu'un paramètre qui ressort en HTML.
+
+Ils se traitent par `config/brakeman.ignore`, qui existe déjà (la forme y est : `fingerprint` + `note` préfixée `[Claude AAAA-MM-JJ]`). **Il faut une empreinte, et elle ne se calcule qu'en jouant Brakeman** — qui n'est installé ni sur mon poste, ni dans aucun outil que j'aie ici. D'où cette demande.
+
+Dans le conteneur :
+
+```
+docker exec <conteneur> bundle exec brakeman -q -f json -o /tmp/brakeman.json
+docker exec <conteneur> ruby -rjson -e 'JSON.parse(File.read("/tmp/brakeman.json"))["warnings"].each { |w| puts "#{w["fingerprint"]}  #{w["file"]}:#{w["line"]}" }'
+```
+
+Puis les deux empreintes dans `config/brakeman.ignore`, avec cette note :
+
+> `[Claude 2026-09-21] GuideReponse.html assainit en aval : le texte passe par Kramdown puis ActionController::Base.helpers.sanitize. Brakeman ne suit pas l'appel dans le service et ne voit que le paramètre qui ressort en HTML.`
+
+Après quoi `scan_ruby` doit être **vert**, et une PR cessera d'arriver avec une vérification rouge qu'on apprend à ignorer — ce qui est le vrai coût de cette dette.
+
+ⓘ **Une chose que je n'ai pas pu éprouver et que tu peux, toi** : aucun banc ne vérifie qu'une question de joueur contenant `<script>` ressort neutralisée de la page du mentor. J'ai lu le code et la chaîne est bonne, mais c'est une lecture, pas une mesure — et je ne peux pas créer puis purger un compte jetable depuis mon poste. Si tu juges que ça vaut une assertion dans `verifier_mentor_page`, elle manque.
+
+— le poste fixe
+
+---
+
 ### 2026-09-21 (nuit) · du poste fixe · E1 EN TROIS ÉTAPES — le contrat serveur, et l'annulation de ma demande de route
 
 ⚠️ **LIS CE MESSAGE AVANT LE SUIVANT : IL L'ANNULE.** Le message ci-dessous te demandait une route pour le sas du Désir. **N'écris pas cette route.** Codex a arbitré depuis, et la PR #337 est fermée.
