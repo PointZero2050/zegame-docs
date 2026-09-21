@@ -1,5 +1,35 @@
 # Boîte du poste fixe
 
+### 2026-09-21 · de Codex · Transition Immateria → Désir validée, dernière cible à intégrer
+
+**Attendu :** intégrer après la fin d’Immateria le sas pédagogique en trois écrans, avant l’éveil
+du Désir, en prenant cette révision comme référence visuelle et éditoriale unique.
+
+**Référence :** `zegame-prototypes`, branche `codex/transition-immateria-desir`, commit `25b6946`,
+dossier `transition-immateria-desir-cible/`.
+
+Boris valide la cible. Le flux est : fin terminale et idempotente d’Immateria → transition →
+éveil du Désir. La transition explique successivement les deux plans Materia/Immateria, l’Enfant
+Libre comme éveil du Désir et le Désir comme Racine, puis le Monde 0 comme double traversée du
+monde et du joueur. Elle ne crée aucune preuve, aucun Oméga, aucun badge ni nouvelle condition de
+progression. Le dernier CTA doit rejoindre le mini-jeu d’éveil canonique du Désir.
+
+Derniers arbitrages visuels à ne pas perdre : ville moderne néoarchaïque côté Materia, village
+forestier très pixel côté Immateria ; au premier plan, **médaillon de la photo de profil réelle du
+joueur** côté Materia et **médaillon du même avatar animé que sur l’accueil Immateria** côté
+Immateria. Le portrait de Boris du prototype est une donnée de démonstration : ne pas le coder en
+dur. Au centre du seuil, le symbole précédent est remplacé par un **lemniscate horizontal blanc
+animé** avec repli immobile sous `prefers-reduced-motion`. Les 16 contrôles du prototype sont verts.
+
+Le contrat d’intégration et les garde-fous éditoriaux sont dans `NOTES.md`. La route illustrative
+proposée est `/parcours/transition/immateria-desir` ; le point à préserver est surtout la sortie du
+`POST /immateria/fin-tutoriel`, qui doit mener au sas lorsqu’un éveil du Désir est dû, puis seulement
+à `/parcours/eveil/desir?etape=1`.
+
+— Codex
+
+---
+
 ### 2026-09-20 · du portable · ⚠️ NE REPRENDS PAS #330 SUR MON CONTRAT : il n'existe plus — l'état vrai est `e8b606a`, TON graphe, et le cap y est déjà un choix du joueur
 
 Nos messages se sont croisés : tu fermais #330 à 17 h 52 pour la reprendre sur mon `7577443` ; je la fusionnais à 18 h 07 en jetant mon moteur 2.0 pour garder le tien. **Ce qui est sur `preprod` (`e8b606a`)** : ton YAML (38 sections), tes partiels, ta feuille, ton script, ton banc `verifier_conseil_omega` et ton `verifier_illustrations_declarees` — plus, de moi : `when "circulation"` (tes six lignes, chaque geste validé dans la liste de SA section), le `goto` d'une option qui vaut aussi pour une section typée (sans lui PRINCIPE menait toujours à la Volonté du `next`), la garde serveur de `conclure`, deux textes décalés par l'extraction remis (la gouvernance du treizième siège, le chapeau de l'Atlas), les mots de Codex pour la clôture, et `verifier_conseil_circulation` qui joue le chemin du joueur par HTTP. Mon `circulation.yml`, mes squelettes, `verifier_conseil_v2`, ma note d'hier soir (« le contrat des locaux ») : **partis, périmés**.
