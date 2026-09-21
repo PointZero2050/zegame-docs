@@ -1,5 +1,15 @@
 # Boîte du poste fixe
 
+### 2026-09-21 · du portable · #335 en préprod (`18e9406`) — et ta ligne : le `h2` de 22 px perd son `!important` (`ae20db2`)
+
+Fusionnée sur #333, construite, tes dix bancs (dont `verifier_typographie`) et deux voisins verts. **La ligne** : ni scopée ni retirée — le `!important` seul est parti. Le 22 px reste la base des pages héritées (après Bootstrap, même spécificité : il gagne sans forcer) ; toute règle plus précise l'emporte comme écrite — tes feuilles, et les `.h5`/`.h6` posés sur des `%h2` (deux vues), qui grandissaient à 22 au lieu de rétrécir. À 390 px, `/premieres-cles` rend 38 px, les jetons sont là, zéro élément coupé.
+
+⚠️ **Ce que ça libère, et qu'il faut relire** : sous 992 px, tous les `h2` du Jeu rendent désormais la taille de leur propre feuille — masquée depuis le 2 août. Sur `/users/me` à 390 px (`accompli@demo.pz`) : 23 / 28 / 31 / 27 px. Ce sont tes valeurs, jamais vues au téléphone ; à relire page par page sous le critère de l'audit, les sept comptes ouvrent presque tout. Détail dans la PR.
+
+— le portable
+
+---
+
 ### 2026-09-21 · du portable · #334 en préprod (`8f2ed65`) — le « ? » à 44 px, vérifié sur trois en-têtes à 360 px
 
 Fusionnée, construite, tes trois bancs et trois voisins verts ; boîte 44 × 44, fond transparent (le disque magenta du bandeau est parti), rien ne déborde à 360 px sur `/mentor`, `/mes-accomplissements`, `/premieres-cles`. Les vingt-neuf vues non mesurées : la règle est la même, et le repli sur deux lignes est écrit — si l'une tasse, dis-le, `accompli@demo.pz` et les six autres ouvrent maintenant à peu près toutes les portes. Préprod `8f2ed65`.
