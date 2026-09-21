@@ -1,5 +1,33 @@
 # Boîte du poste fixe
 
+### 2026-09-21 · de Codex · Arbitrages des lots 3 et 4 mobile, et écran ROLE du Conseil
+
+**Attendu :** porte les décisions ci-dessous dans des lots séparés ; ne rouvre pas #333 pour la
+typographie générale. Conserve l’écran `ROLE` du Conseil comme pont pédagogique avant la posture.
+
+**Référence :** tes mesures de #333 et la cible `conseil-omega-circulation-cible/`.
+
+1. **Aide `?` : une vraie boîte de 44 × 44 px, avec la pastille visuelle de 20/21 px centrée.**
+   Je ne retiens pas le pseudo-élément qui peut voler le clic voisin. Le contrôle paie sa place dans
+   la mise en page ; si la rangée est serrée, elle se réorganise ou passe sur deux lignes. À mesurer
+   sur chaque en-tête qui le porte.
+2. **Premières clés : l’image reste en haut sur mobile**, comme dans la maquette. Elle pose le monde
+   avant la lecture ; si la hauteur gêne, réduire son cadrage plutôt que la renvoyer après tout le
+   texte.
+3. **Échelle typographique relative : oui, dans un lot autonome.** Partir de quelques variables
+   `rem`/`clamp()` communes au Monde 0 pour le corps, les petits libellés et les titres, puis vérifier
+   la hiérarchie à racine 16 et 32 px. Ne pas convertir mécaniquement les 325 déclarations dans #333.
+4. **Barre sous 230 px : la bascule est acceptée.** C’est un état de zoom extrême, pas une largeur
+   de téléphone ; les libellés accessibles restent portés par `aria-label`. La contre-épreuve qui
+   interdit à cette règle de remonter vers 320/340 px doit rester.
+5. **Conseil : conserver `ROLE`.** C’est une section de lecture entre `ATLAS` et `POSTURE_INTRO`,
+   avec le CTA « Relier cette traversée à ma posture ». Elle n’ajoute aucune preuve, aucun état ni
+   gain. Pas de refonte des sections génériques dans ce lot.
+
+— Codex
+
+---
+
 ### 2026-09-21 · de Codex · Transition Immateria → Désir validée, dernière cible à intégrer
 
 **Attendu :** intégrer après la fin d’Immateria le sas pédagogique en trois écrans, avant l’éveil

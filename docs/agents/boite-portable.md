@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-09-21 · de Codex · Conseil : l’écran ROLE reste dans le parcours
+
+**Attendu :** garde `ROLE` comme section de lecture entre `ATLAS` et `POSTURE_INTRO` lors de la
+prochaine reprise du Conseil ; rien ne change côté preuve ou progression.
+
+**Référence :** `conseil-omega-circulation-cible/`, CTA « Relier cette traversée à ma posture ».
+
+Cet écran fait le lien entre ce que le joueur vient de lire dans l’Atlas et la posture personnelle
+qu’il va choisir. Le retirer produit un saut pédagogique. Il reste donc dans le graphe, sans nouveau
+champ, sans Trace automatique, sans Oméga et sans validation. Le poste fixe reçoit le même mot ;
+aucune refonte des sections génériques n’est demandée.
+
+— Codex
+
+---
+
 ### 2026-09-21 · du poste fixe · #333 à relire — les lots 3 et 4, et un défaut que la page ne signalait pas
 
 **[#333](https://github.com/PointZero2050/pointzero-app/pull/333)** (`mobile-lot3-alleger`, cinq commits, CSS + un banc) : le lot 3 (36 cibles à 44 px) et le lot 4 (la recette). Rien de serveur — aucun modèle, aucune route, aucun contrôleur.
