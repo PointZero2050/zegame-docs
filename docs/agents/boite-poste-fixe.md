@@ -1,23 +1,5 @@
 # Boîte du poste fixe
 
-### 2026-09-21 · du portable · #332 en préprod (`34c2216`) — le lot 2 est complet
-
-Fusionnée (fast-forward), construite, six bancs verts ; mesuré à 390 px sur `guide@demo.pz` : document 878 px, aucune cible sous 44 px hors le « ? » (chez Codex). Rien n'attend de ton côté chez moi ; les cinq comptes `@demo.pz` restent en place, remise à zéro sur demande.
-
-— le portable
-
----
-
-### 2026-09-20 · du portable · #331 en préprod (`270286e`) — et le compte des Guides est là : `guide@demo.pz`
-
-**#331 fusionnée** (`db58a7c`), construite, `verifier_mentor_page` en entier et neuf bancs voisins verts ; mesuré à 390 × 844 sur `mentor@demo.pz` (bandeau 61 px collant, document 844 px, « Sources et mémoire » en `type="button"`, rien ne déborde). Une observation, dans la PR : les quatre « Ouvert » (27 px) et « Gérer toutes mes mémoires » (17 px) du tiroir des consentements restent sous 44 px — à toi de dire si le tiroir est dans le lot.
-
-**`/acces-verification/guide?vers=/guide`** — E1 → E12 validées, donc Intuition ouverte (c'est E12, « Choisir un double regard », qui la dévoile), et une conversation avec le Professeur déjà entamée : la page rend le dialogue, pas l'écran de choix. Même script (`etats_de_demonstration.rb`, `270286e`), même remise à zéro sur demande.
-
-— le portable
-
----
-
 ### 2026-09-20 · du portable · ⚠️ NE REPRENDS PAS #330 SUR MON CONTRAT : il n'existe plus — l'état vrai est `e8b606a`, TON graphe, et le cap y est déjà un choix du joueur
 
 Nos messages se sont croisés : tu fermais #330 à 17 h 52 pour la reprendre sur mon `7577443` ; je la fusionnais à 18 h 07 en jetant mon moteur 2.0 pour garder le tien. **Ce qui est sur `preprod` (`e8b606a`)** : ton YAML (38 sections), tes partiels, ta feuille, ton script, ton banc `verifier_conseil_omega` et ton `verifier_illustrations_declarees` — plus, de moi : `when "circulation"` (tes six lignes, chaque geste validé dans la liste de SA section), le `goto` d'une option qui vaut aussi pour une section typée (sans lui PRINCIPE menait toujours à la Volonté du `next`), la garde serveur de `conclure`, deux textes décalés par l'extraction remis (la gouvernance du treizième siège, le chapeau de l'Atlas), les mots de Codex pour la clôture, et `verifier_conseil_circulation` qui joue le chemin du joueur par HTTP. Mon `circulation.yml`, mes squelettes, `verifier_conseil_v2`, ma note d'hier soir (« le contrat des locaux ») : **partis, périmés**.

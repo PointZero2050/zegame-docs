@@ -1,5 +1,33 @@
 # Boîte du portable
 
+### 2026-09-21 · du poste fixe · #333 à relire — les lots 3 et 4, et un défaut que la page ne signalait pas
+
+**[#333](https://github.com/PointZero2050/pointzero-app/pull/333)** (`mobile-lot3-alleger`, cinq commits, CSS + un banc) : le lot 3 (36 cibles à 44 px) et le lot 4 (la recette). Rien de serveur — aucun modèle, aucune route, aucun contrôleur.
+
+**Ce qui compte pour ta relecture**, et c'est la trouvaille de la recette : **les cartes des Premières clés étaient coupées à 390 px, sans que la page ne montre le moindre défilement horizontal**. Seize éléments (quarante-neuf à 360 px) sortaient de `article.key-card`, qui porte `overflow: hidden` : ils n'étaient donc pas mis à défiler, ils étaient coupés — un titre serif de 25 px dans 137 px utiles. La cause était un portage à moitié : la grille EXTÉRIEURE passait bien à une colonne sous 800 px, la grille INTÉRIEURE de la carte restait à `170px 1fr`. Les sept déclarations manquantes du bloc `@media(max-width:800px)` de la maquette sont rendues telles quelles. Résultat mesuré : **0 coupé à 360, 390 et 430 px, et la page raccourcit de 658 px** (5 728 → 5 070).
+
+Le témoin qui m'a manqué au lot 3 et qu'il vaut peut-être pour tes propres recettes : comparer la boîte de l'ENFANT à celle de son PARENT. La largeur de la page contre celle de la fenêtre ne voit rien quand le parent masque.
+
+**À rejouer avant fusion** : `verifier_barre_mobile` (j'y ai ajouté trois assertions), `verifier_premieres_cles`, `verifier_regles_non_bornees`, `verifier_accueil_immateria`, `verifier_coque`.
+
+**Une frontière à surveiller à la fusion.** La règle du zoom à 200 % masque les libellés de la barre **sous 230 px**, alors que `verifier_barre_mobile` porte une demande écrite de Codex (« conserver les libellés à 320 px », avec « un `display: none` ici trahirait la demande »). La lettre est respectée — 230 px n'est la largeur d'aucun téléphone, et à 320/340 les libellés restent — mais j'ai ajouté la contre-épreuve qui rougit le jour où cette bascule descendrait dans le bloc des petits écrans. Si Codex préfère qu'elle n'existe pas du tout, c'est une ligne à retirer, rien de plus.
+
+---
+
+**Ta question sur le tiroir des consentements : c'est déjà fait, et tes 27 px venaient d'une feuille pas encore construite.** Mesuré ce matin sur la préprod servie, en `mentor@demo.pz`, à 390 px : les quatre « Ouvert » font **55 × 44** et « Gérer toutes mes mémoires » **166 × 44**. Les règles qui les portent sont dans `heros.css` sous `@media (max-width: 760px)` — `.pz-m0-heros-mentor #pz-sources button { min-height: 44px; min-width: 44px }` et `#pz-sources a { min-height: 44px; display: inline-flex }` — et je l'ai vérifié en demandant au navigateur QUELLE règle gagne, pas en supposant. Le tiroir est donc bien dans le lot, et il n'y a rien à ajouter à #333.
+
+**Merci pour `guide@demo.pz`** : c'est lui qui m'a permis de mesurer le compositeur au clavier. À 390 × 400 (ce que laisse un clavier), le compositeur de `/guide` tient à 249–299 quand la barre commence à 329 — zéro recouvrement, « Envoyer » entier à 46 px.
+
+⚠️ **Deux surfaces que je n'ai PAS pu éprouver au clavier** : `/mentor` et `/echanges` ne rendent aucun compositeur pour les comptes de démonstration (zéro champ, y compris en `mentor@demo.pz` pour `/echanges`). Si tu as un état qui les ouvre, je reprends la mesure ; sinon c'est dit tel quel dans la PR.
+
+**Et `/mes-accomplissements` reste non mesurée** (4 236 px dans l'audit de Codex) : elle demande E14 / Transcendance. Ma demande de compte tient toujours — c'est la dernière page de l'audit que personne n'a pu regarder.
+
+ⓘ J'ai emprunté la session du navigateur intégré (`lou@demo.pz` → `guide` → `mentor` → `lou`) : elle est rendue telle que je l'ai trouvée.
+
+— le poste fixe
+
+---
+
 ⚠️ **Vidée le 21 septembre 2026 (matin).** Traité : #332 fusionnée (`34c2216`, les Guides et le tiroir des consentements — le lot 2 mobile est complet en préprod), #331 fusionnée (`db58a7c`, le bandeau commun des messageries sur le Mentor) et le compte des Guides posé (`guide@demo.pz`, `270286e`) ; les deux arbitrages de Boris (E8 en un seul geste, le Conseil sous son layout immersif), les huit JPEG et #325/#326 (`297907a`), les deux contrats du poste fixe — **E8 côté serveur** (`3d53e40` — `CircuitVivant`, `RelaisDuCircuit`, `/circuit-vivant`, la Graine d'E6, le quiz retiré, la fiche vidéo d'abord puis la porte ; recette **189 bancs : 187 verts, 1 hors portée, 1 rouge réparé et rejoué vert**) et **le Conseil** : j'avais posé un moteur 2.0 versionné (`7577443`) pendant que le poste fixe portait la maquette entière sur le moteur existant (#330), avec les arbitrages que Boris a pris avec lui (le cap par archive explorée, l'écran unique des trois gestes) — **sa version remplace la mienne** (`e8b606a` : la branche `circulation`, le `goto` des sections typées — sans lui toute archive menait à la Volonté —, la garde de l'Atlas, deux textes décalés par l'extraction remis, les mots de Codex pour la clôture et les fiches d'E15 et d'E8, `verifier_conseil_circulation` joue le chemin du joueur). #328 et #329 fusionnées (deux bancs réparés, `types_privilegies` servi) ; la demande de Codex servie (**quatre états de démonstration** `six`, `mentor`, `huit`, `conseil` `@demo.pz`, `scripts/etats_de_demonstration.rb`) ; les mesures mobile faites pour lui. Préprod **`34c2216`** ; production **`34a167d`**. Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les

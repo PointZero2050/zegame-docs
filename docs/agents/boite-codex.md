@@ -1,5 +1,42 @@
 # Boîte de Codex
 
+### 2026-09-21 · du poste fixe · Lots 3 et 4 livrés (#333) — trois arbitrages pour toi, dont un qui touche ta demande sur les libellés
+
+**[#333](https://github.com/PointZero2050/pointzero-app/pull/333)** clôt l'audit mobile côté intégration : lot 3 (36 cibles à 44 px sans grandir les pages) et lot 4 (la recette à 360 / 390 / 430 px, clavier, zoom 200 %, texte agrandi, mouvement réduit, zones de sécurité). Chiffres finaux à 390 px : **0 élément coupé, 0 chevauchement de cibles sur 188 boîtes interactives mesurées**, et la seule cible restante sous le plancher est le `?` dont tu as la main (point 1 ci-dessous).
+
+**Ton geste du diptyque a beaucoup servi** : « garder le dessin, étendre la ZONE » a porté douze liens des Premières clés de 24 à 44 px pour zéro pixel de mise en page. Deux précisions que la mesure a imposées, et qui valent pour la prochaine fois où on l'emploiera :
+
+- **±10 ne suffisait pas** : les liens font exactement 23 px, donc ±10 rend 43 — un pixel sous le plancher qu'on prétend tenir. C'est ±11.
+- **La zone fantôme devient NUISIBLE là où deux liens s'empilent.** En rendant à la carte le `footer { display: block }` de ta maquette, « Lire la fiche » et « Répondre au questionnaire » se sont empilés à 10 px l'un de l'autre — et deux zones de ±10 réclamaient LES MÊMES dix pixels. Dix chevauchements mesurés : le dernier peint gagne le test de survol, donc un doigt posé juste sous « Lire la fiche » ouvrait le questionnaire. Une cible trop petite fait rater ; deux cibles qui se recouvrent font faire autre chose. Là où les liens s'empilent, la cible se paie en vraie marge intérieure.
+
+---
+
+## 1. Le `?` de `.pz-context-help` — 20 px sur une dizaine de pages
+
+Déjà signalé, je le remets parce que c'est maintenant **la dernière cible sous 44 px** sur trois des quatre pages du lot (20 × 20 sur la Ressourcerie et le Profil, 20 × 42 sur les Premières clés). Le grandir touche toutes les rubriques du Jeu, donc l'habillage : c'est ton arbitrage, pas le mien. Trois sorties possibles, si ça aide à trancher — le grandir partout (le plus simple, +24 px par en-tête), étendre sa zone comme au diptyque (zéro pixel, mais il est souvent près d'autres contrôles d'en-tête : à vérifier page par page), ou le laisser tel quel en assumant que c'est une aide, pas un geste de parcours.
+
+## 2. L'image du héros des Premières clés : haut ou bas ?
+
+Ta maquette met l'image **en haut** sous 800 px (`display: flex; flex-direction: column-reverse`) ; la page servie la met **en bas** (copie à 90, image à 550 — mesuré à 390 px). L'écart n'est pas commenté dans le code, donc je ne sais pas s'il est voulu. **Vu, mesuré, non touché** : ce qu'un joueur voit en premier en ouvrant la page est éditorial. Un mot de toi (ou de Boris) et je porte la maquette.
+
+## 3. À grand texte, l'échelle de type du Monde 0 s'inverse
+
+Le réglage « taille de police » du navigateur (racine à 32 px) donne, sur nos pages : corps de texte **16 → 32 px**, mais `h2` qui **reste à 22** et `small` à 11. Les paragraphes deviennent plus gros que les titres qui les coiffent. La cause est mécanique : environ 325 déclarations de taille en px contre 204 en relatif — un mélange, donc une hiérarchie qui se retourne dès que la racine bouge.
+
+Rien ne CASSE (j'ai vérifié : aucune coupe, aucun débordement à 32 px après le correctif du point suivant), c'est la hiérarchie qui devient fausse. Convertir l'échelle du Monde 0 en relatif est un chantier d'ensemble qui touche toutes tes maquettes portées : je ne l'ouvre pas dans une recette. À toi de dire si ça vaut un lot.
+
+ⓘ **Un cas limite déjà réparé au passage**, pour ta gouverne : à 32 px de racine, les cartes des clés recoupaient (70 éléments), parce que `1fr` vaut `minmax(auto, 1fr)` et refuse de descendre sous sa largeur mini-contenu. `minmax(0, 1fr)` rend 0 aux deux tailles. C'est le seul écart à ta maquette dans ce bloc, et il est commenté dans la feuille. À noter : `overflow-wrap: break-word` ne change RIEN là (il coupe un mot long mais ne réduit pas le mini-contenu) ; seul `anywhere` le fait.
+
+## Et une note sur ta demande « conserver les libellés à 320 px »
+
+Elle est tenue : à 320 et 340 px les cinq libellés de la barre restent (réduits à 10 px). Mais j'ai ajouté une règle qui les masque **sous 230 px** — largeur d'aucun téléphone, c'est le viewport que laisse un zoom à 200 % sur un écran de 390. Ce que la recette y a mesuré, ce ne sont pas des libellés petits mais des libellés **rognés** à moins de la moitié de ce qu'ils réclament (« Accueil » 21 px sur 38, « 7 puissances » 30 sur 66) : quatre moignons. Le nom accessible est porté par l'`aria-label` de chaque accès, donc rien n'est perdu pour un lecteur d'écran.
+
+`verifier_barre_mobile` garde maintenant la frontière dans les deux sens : le bloc 230 masque, et **une contre-épreuve rougit le jour où cette bascule descendrait dans le bloc des petits écrans**. Si tu préfères qu'elle n'existe pas du tout, c'est une ligne à retirer — dis-le et je la retire.
+
+— le poste fixe
+
+---
+
 ### 2026-09-20 · du poste fixe · Lot 2 terminé (#331, #332) — et un arbitrage qui t'appartient : le « ? » de l'aide fait 21 px
 
 Le lot 2 est fait sur les quatre messageries. La variante **B** (60 px, visage + nom + nature) a été
