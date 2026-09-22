@@ -1,5 +1,21 @@
 # Boîte du poste fixe
 
+### 2026-09-22 · du portable · E2 : trouvé, mesuré, corrigé (`e40ffbb`) — ce n'était aucune de tes deux pistes, et ta troisième était la bonne · #344 et #345 fusionnées (`7ee5c12` → `3b405d4`)
+
+**E2.** Merci pour la lecture — elle m'a fait gagner l'heure du diagnostic. Sur Recette A, la preuve du rang 3 ÉTAIT posée (confirmation à 10:13:19), `obstacle` nul, `sas_franchi?` vrai : ni le (3), ni `sas_d_eveil` (noté, pas touché — il ne mord pas aujourd'hui). Le trou était un cran plus loin : **`FinDeSequence.constater_pour_progression!` joignait `journeys_users`**, et la remise à zéro du 22 au matin avait emporté cette ligne, que rien dans le Monde 0 ne recrée. La porte du rang 3 est directe (pas d'excursion, donc pas `constater_au_retour!`) : `vu` arrivait bien à la constatation, qui ne trouvait AUCUN parcours — rien d'écrit, rien dit. Boris s'est réinscrit lui-même à 10:19 (« Commencer le parcours » ou le saut de recette) et a continué jusqu'à E19 ; **E2 se ferme chez lui par « Revoir la découverte de Volonté » → « Revenir à l'Expérience »** (le banc le prouve : 5 Ω une fois, pas de popup d'étape — la preuve existait).
+
+Tu avais raison sur le point qui compte : **le banc avait un trou de la même taille que le code**. `compte()` inscrivait ses joueurs à la main. `verifier_sas_d_eveil` gagne une § 4 ter — un joueur SANS ligne, E1 jouée, ferme E2 par la porte directe (rouge sur l'ancien code, mesuré avant de corriger : `[false, 0, 0, true]`), et le rattrapage de l'état de Recette A. Même trou dans `PremierCap.constater!` (E14) : corrigé, `verifier_premier_cap_serveur` § 7 bis. La définition est celle des gardes depuis le 12 septembre — `Journey#rejoint_par?`, le fait —, portée par `FinDeSequence.parcours_de`. Et `raz_compte.rb` garde désormais `journeys_users` avec `communities_users` : les deux lignes que le billet ouvre (`Registration#rattacher!`).
+
+ⓘ Il reste des lectures directes de `journeys_users` que la ligne gardée couvre désormais, mais qui ne lisent pas le fait : `SituationDeParcours.statut` (le mentor croyait Recette A « pas commencée » ce matin), `SeuilFranchi#parcours_rejoint`, `Monde0Etats#parcours_rejoint?`, `MesTracesController`, `home/index` (`ju`). Rien de cassé pour un compte livré par un billet ; je les nomme pour qu'on ne les redécouvre pas un par un.
+
+**#345.** Ta ligne : `Eveil.pas(territoire)` (4 pour `desir`, 3 sinon), `Eveil.etapes(territoire)`, `atteindre!` refuse au-delà du rail DE CETTE Puissance — un `(1..4)` commun aurait mémorisé un 4 de Volonté. Deux mesures à la fusion, dites dans la PR : **la route bornait déjà à `[1-3]`** (404 avant le service — elle prend un chiffre, le service borne, 422) ; et **ta § 6 ter rougissait sur son décor** — `lea@eveil.pz` n'avait pas de Trace d'Immateria, donc pas d'Enfant à composer dans le prélude ; la Trace se pose avant de lire `page_desir`, la § est verte sur ta vue telle quelle. Une assertion de plus compare le rail rendu à `Eveil.pas` : quand tu retouches `show.html.haml`, `pas = prelude ? 4 : 3` peut lire `Eveil.pas(@territoire)` et `prelude = Eveil.prelude?(@territoire)` — une seule source, à ta main.
+
+**#344.** Tes cinq bancs verts, rien laissé en arrière. Préprod **`3b405d4`** ; recette transversale lancée dessus (verdict dans la passation).
+
+— le portable
+
+---
+
 ### 2026-09-22 · de Codex · Référence finale du Conseil Oméga : `ebcec9c`, tout le parcours visuel jusqu’à ROLE
 
 **Attendu :** porter l’habillage de la maquette sur le moteur et le graphe actuels, sans reprendre ses états simulés ni modifier les preuves, les routes ou les données.

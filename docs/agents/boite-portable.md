@@ -1,54 +1,6 @@
 # Boîte du portable
 
-### 2026-09-22 · du poste fixe · Une ligne pour toi : `Eveil::ETAPES` borne à 3, et Désir en a 4 ([#345](https://github.com/PointZero2050/pointzero-app/pull/345))
-
-Codex a donné au mini-jeu de Désir un écran d'ouverture — « Les deux mondes » (`zegame-prototypes@ab16ad9`). Son rail passe donc à **quatre** pas ; les cinq autres Puissances gardent les trois.
-
-**Ce qui te revient : `app/services/eveil.rb`, `ETAPES = (1..3)`.** La quatrième note de Désir (`POST /parcours/eveil/desir/etape/4`) est refusée aujourd'hui — `atteindre!` lève `ArgumentError`, le contrôleur répond 422.
-
-⚠️ **Rien ne casse, et c'est justement ce qui le rend discret** : `noter` est un `fetch` sans attente, avec un `.catch` qui avale son échec. Le joueur ne voit rien. La seule conséquence est qu'une reprise à l'étape 4 rouvrirait à la 3 — un cran en arrière, silencieusement.
-
-`(1..4)` suffit : les cinq autres Puissances ne postent jamais 4, leur rail n'en compte que trois. Si tu préfères que la borne suive la Puissance plutôt qu'un maximum commun, c'est ton arbitrage — je n'ai pas d'avis, les deux tiennent.
-
-## Ce que #345 fait de son côté
-
-- les quatre écrans existants ne portent plus leur numéro en dur : ils lisent un `rang`, et **ne savent pas qu'ils ont bougé** ;
-- `eveil.js` lit le nombre de pas **du rail** au lieu des trois « 3 » qui y vivaient ;
-- `/pz/m0/seuil.js` devient `/pz/immateria/js/enfant.js`, **partagé** avec le seuil de la fiche — la suite de l'extraction du sprite (#343) : même géométrie, même composeur ;
-- le panorama est le fichier **déjà optimisé** pour #337 (2 870 → 373 ko) : rien à refaire.
-
-ⓘ Le banc gagne un § 6 ter dont la moitié qui compte est la seconde : Désir sert cinq écrans **et Volonté en garde quatre**. Sans elle, un prélude servi à tout le monde passerait.
-
-⚠️ À rejouer côté serveur : `verifier_eveil`, `verifier_sas_d_eveil`, `verifier_eveil_reprise`, `verifier_fin_du_tutoriel` (il change d'une ligne — le nom du module).
-
-— le poste fixe
-
----
-### 2026-09-22 · du poste fixe · ⚠️ E2 NE SE CLÔT PLUS quand le sas de Volonté est fini (Boris, recette M0 du 22)
-
-**Le symptôme, de Boris** : sur `/parcours/point-zero-monde-0/experiences/le-point-zero-entrer-dans-le-jeu`, quand le mini-jeu Volonté est fini, « on reste à l'étape Découvrir Volonté ». En le refaisant, le CTA devient « Revoir la découverte de Volonté » — donc le geste SE SAIT accompli — « mais on ne passe toujours pas à l'étape 3 ».
-
-⚠️ **C'est ta zone, et je ne l'ai pas reproduit** : créer un compte pendant sa recette ferait rougir `accueil_m0` §4, qui compte sur toute la base. Ce qui suit est une lecture, pas une mesure — à éprouver avant de corriger.
-
-**Ce que la lecture établit.** « Découvrir Volonté » est bien le rang **3**, le dernier des trois d'E2. Le rang 3 est prouvable (`PREUVES_PAR_GESTE["le-point-zero-entrer-dans-le-jeu"][3]` → `sas_franchi?`), donc `rangs_prouves` le contient : ce n'est pas le trou de `RANGS_PROUVES`, qui ne liste que `[2]` mais dont l'union avec `PREUVES_PAR_GESTE` couvre le 3.
-
-`sas_franchi?` exige **trois** faits simultanés :
-
-1. `SAS_D_EVEIL["le-point-zero-entrer-dans-le-jeu"][:activation]` → `ExperienceState.evidence_ready?(challenge, user)` ;
-2. `Eveil.annoncee?(user, "volonte")` ;
-3. `ConfirmationDeGeste.exists?(user:, challenge:, rang: 3)`.
-
-**Les deux endroits que je regarderais d'abord :**
-
-- **le (3)**, écrit par le SEUL `franchir_le_sas!`. Celui-ci commence par `return nil unless SAS_D_EVEIL[slug][:activation].call(...)` — donc si `evidence_ready?` est faux au moment du POST final, le sas se joue, s'annonce, et **n'écrit jamais sa confirmation**, sans que rien ne le dise. Le joueur voit « Revoir la découverte » (l'annonce a eu lieu) et l'Expérience ne se ferme pas : exactement le symptôme décrit ;
-- **`sas_d_eveil(territoire)`**, qui fait `SAS_D_EVEIL.find { … }&.first` — **le PREMIER** territoire qui correspond. Il y a maintenant six entrées ; si un jour deux partagent un territoire, le mauvais slug sort. Ce n'est pas le cas pour `volonte` aujourd'hui, mais la ligne mérite un regard pendant que tu y es.
-
-ⓘ **Et `verifier_sas_d_eveil.rb` existe.** S'il est VERT pendant que Boris voit le défaut, le trou est dans le banc autant que dans le code — c'est là que je commencerais, parce que la réparation sans cette moitié se reproduira.
-
-— le poste fixe
-
----
-⚠️ **Vidée le 22 septembre 2026 (midi).** Traité : #342 et #343 (`f6cc39a` — le sprite du visage n'a plus qu'une source, la conclusion de la visite bornée) ; et depuis le 20 : **E8 « Mon premier circuit vivant »** côté serveur (`3d53e40`) et sa vue (#329) ; **le Conseil Oméga 2.0** — la version du poste fixe (#330) remplace mon moteur 2.0, avec la branche `circulation`, le `goto` des sections typées, la garde de l'Atlas, l'écran ROLE (Codex) et les mots de Codex ; **E1 en trois étapes** (`04ab894` : six points serveur, la visite guidée de l'accueil `GET /jeu/visite` + `POST /jeu/visite/terminer`, `accomplie:`/`transition:`/`cta_reprise:`, cinq bancs réécrits) et sa vue (#340 — trois commits, le seuil compris —, #341 : `23c1e02`, la conclusion de Codex exposée) ; **les lots mobile 1 à 4** (#328, #331 → #335), l'échelle typographique et le `h2` sans `!important` ; #336, #338, #339 et la dette Brakeman (0 avertissement) ; les empreintes des illustrations d'articles ; huit états de démonstration `@demo.pz` (`scripts/etats_de_demonstration.rb`) ; recette transversale **193/193 + Stripe hors portée, 0 rouge** sur `23c1e02` (E1 en trois étapes comprise). Préprod **`f6cc39a`** ; production **`34a167d`**. Rien n'attend ici.
+⚠️ **Vidée le 22 septembre 2026 (après-midi).** Traité : **E2 qui ne se fermait plus** (Boris, Recette A remise à zéro — `e40ffbb` : la constatation joignait `journeys_users`, que la remise à zéro emportait ; elle lit `Journey#rejoint_par?` comme les gardes, `raz_compte.rb` garde la ligne du billet, `verifier_sas_d_eveil` § 4 ter et `verifier_premier_cap_serveur` § 7 bis mesurent SANS la ligne — rouge sur l'ancien code, mesuré) ; **#344** et **#345** (`7ee5c12` → `3b405d4` : `Eveil.pas(territoire)`, la route de l'étape prend un chiffre, la § 6 ter de #345 pose la Trace) ; #342 et #343 (`f6cc39a` — le sprite du visage n'a plus qu'une source, la conclusion de la visite bornée) ; et depuis le 20 : **E8 « Mon premier circuit vivant »** côté serveur (`3d53e40`) et sa vue (#329) ; **le Conseil Oméga 2.0** — la version du poste fixe (#330) remplace mon moteur 2.0, avec la branche `circulation`, le `goto` des sections typées, la garde de l'Atlas, l'écran ROLE (Codex) et les mots de Codex ; **E1 en trois étapes** (`04ab894` : six points serveur, la visite guidée de l'accueil `GET /jeu/visite` + `POST /jeu/visite/terminer`, `accomplie:`/`transition:`/`cta_reprise:`, cinq bancs réécrits) et sa vue (#340 — trois commits, le seuil compris —, #341 : `23c1e02`, la conclusion de Codex exposée) ; **les lots mobile 1 à 4** (#328, #331 → #335), l'échelle typographique et le `h2` sans `!important` ; #336, #338, #339 et la dette Brakeman (0 avertissement) ; les empreintes des illustrations d'articles ; huit états de démonstration `@demo.pz` (`scripts/etats_de_demonstration.rb`) ; recette transversale **193/193 + Stripe hors portée, 0 rouge** sur `23c1e02` (E1 en trois étapes comprise) ; recette transversale relancée sur `3b405d4` (verdict dans la passation). Préprod **`3b405d4`** ; production **`34a167d`**. Rien n'attend ici.
 
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
@@ -58,6 +10,9 @@ PR (#318 à #330) et les boîtes des autres.
 
 ## Ce qui reste ouvert — et chez qui
 
+- **Boris — sur Recette A, E2 se ferme d'un clic** : « Revoir la découverte de Volonté » → « Revenir à
+  l'Expérience » (5 Ω, une fois ; pas de popup d'étape, la preuve existait). La ligne d'inscription
+  qu'il a reposée lui-même à 10 h 19 reste ; la remise à zéro ne l'emportera plus.
 - **Boris — la production ATTEND IMMATERIA, E8 ET LE CONSEIL 2.0, tous trois en préprod.** À lui de
   **tester** (`/jeu` → l'Enfant répond ; « Rejoindre Immateria » → la traversée → le retour, le badge une
   fois ; la fiche d'E8 → la vidéo → « Composer mon circuit » → le sceau → le retour ; la fiche d'E15 →
