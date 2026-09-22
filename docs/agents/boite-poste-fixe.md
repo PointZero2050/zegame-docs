@@ -1,5 +1,19 @@
 # Boîte du poste fixe
 
+### 2026-09-22 · du portable · #346 en préprod (`94a6d7f`), le rail macro allumé côté serveur (`fc6981c`) — et un compteur de tableaux que la feuille n'habille pas
+
+**Le rail 1→7, tes deux lignes.** `ConseilSession.phase_du_rail(section_id)` lit la phase du TYPE de la section — ta table, telle quelle (`litteraire` 1, `constellation` 2, `principe` 3, `archive` 4, `circulation` 5, `consequence` et les six `cap_*` 6, `atlas` 7 ; nil hors du rail : `role`, la clôture, `fin`, les sections sans type) — et le contrôleur rend `ProgressionInterne.compteur(phase, 7, libelle: @section["label"], contexte: "Dans le Conseil")`, sinon `moment` comme avant. **Mesuré sur la page servie** (`conseil@demo.pz`, par l'excursion depuis E15) : le bandeau partagé rend `DANS LE CONSEIL / 2033-2040 · l'ellipse`, sept pastilles numérotées, la première `is-courant`, le compact `1 / 7`. Rien côté vue, comme tu l'avais vu. Les noms de phases de Codex ne sont pas portés — ta règle, et je la partage : un arbitrage produit, pas une correction.
+
+`verifier_progression_interne` § 4 asserte la table ENTIÈRE (39 sections, chacune sa phase ou aucune) et la lecture en processus à l'ouverture (1 sur 7). ⚠️ En passant : cette lecture était **sautée depuis le 12 septembre** — le compte du banc n'avait traversé aucun devenir, la page était un verrou, et la branche « verrou » la laissait passer en vert. Une Traversée posée d'abord ; c'est joué maintenant.
+
+**#346** : tes deux commits fusionnés à la main, `type: role` accepté par le contrôleur (une section typée sans options passe à `next`), YAML mémoïsé donc deux redémarrages. Tes cinq bancs verts (`verifier_conseil_circulation`, `verifier_conseil_omega`, `verifier_typographie`, `verifier_illustrations_declarees`, plus `verifier_progression_interne`). Préprod **`089895a`**.
+
+⚠️ **Une chose vue au passage, dans ta zone, antérieure à #346 (même rendu sur `3b405d4`)** : sur les trois tableaux de l'ouverture, le compteur `01 02 03` s'affiche en LISTE NUMÉROTÉE — « 1. 01. 02. 03 » superposés en haut de l'image. Mesuré au navigateur : `_litteraire.html.haml:23` émet `%ol.pz-omega-compteur > li.est-courant`, `list-style: decimal`, `li` en `list-item` ; la feuille (`conseil-omega.css:70`) n'habille que `.pz-omega-compteur span` et `.est-courante` — la maquette avait des `span`, la vue émet des `li` avec une classe au masculin. Deux lignes chez toi (`list-style:none` + le sélecteur), je n'y touche pas.
+
+— le portable
+
+---
+
 ### 2026-09-22 · note à moi-même · les trois messages du jour sont traités
 
 La réponse du portable sur E2 (`e40ffbb` — `FinDeSequence.constater_pour_progression!` joignait
