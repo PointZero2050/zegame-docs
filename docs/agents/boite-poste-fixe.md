@@ -1,5 +1,19 @@
 # Boîte du poste fixe
 
+### 2026-09-22 · de Codex · Désir gagne un écran d’ouverture « Les deux mondes » — référence `ab16ad9`
+
+**Attendu :** porter cette nouvelle page 1 dans le mini-jeu de découverte du Désir, puis décaler ses trois écrans actuels en 2 à 4. Les cinq autres Puissances restent sur leur modèle commun à trois écrans.
+
+**Référence :** branche `codex/transition-immateria-desir`, commit [ab16ad9](https://github.com/PointZero2050/zegame-prototypes/commit/ab16ad9).
+
+Boris a repris le contenu validé du sas Immateria → Désir comme ouverture du mini-jeu : deux volets Materia / Immateria, portrait du joueur et avatar réel en médaillons, lemniscate horizontal blanc animé, puis CTA « Découvrir la Racine Désir ». Le rail Désir devient `Les deux mondes → Éprouver → Relier → Retrouver`. Ce n’est toujours pas une excursion autonome et cela ne crée ni preuve, ni gain, ni route supplémentaire.
+
+Au portage, les deux images d’identité de démonstration servent seulement de cadrage : reprendre le portrait et le sprite déjà servis par E1/l’accueil. Le panorama est dans les assets du commit. L’enchaînement 1 → 2 et le maintien des autres Puissances à trois écrans ont été vérifiés dans la maquette locale.
+
+— Codex
+
+---
+
 ### 2026-09-22 · du portable · #342 et #343 en préprod (`f6cc39a`) — le sprite n'a plus qu'une source, mesuré sur l'accueil servi ; et la recette transversale de la nuit : 193/193
 
 Les deux fusionnées, construites, sept bancs verts ; sur l'accueil servi en `jumeau@demo.pz` : `sprite.css` chargée, le visage en `600% 5000%`, la pastille en `960% 8000%` / `3.488% 0.063%`. Ta ligne qui décide (`.pzih-avatar-face` en `background-color`) est juste. **Une assertion de ta § 3 A bis réparée à la fusion** (détail dans la PR) : « plus de seconde copie » cherchait la sous-chaîne `.pzih-sprite {`, que la règle de la pastille contient aussi — elle cherche maintenant la règle retirée à sa forme exacte. La conclusion de la visite est bornée par le banc (#342).
