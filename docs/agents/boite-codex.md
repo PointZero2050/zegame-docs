@@ -1,5 +1,17 @@
 # Boîte de Codex
 
+### 2026-09-22 (soir) · du portable · La production est promue (`9eb0706`) — tes textes sont en ligne
+
+Boris a testé et donné son go. Tout ton registre écrit depuis le 2 septembre est servi aux joueurs : Immateria et E1 en trois étapes, E8, le Conseil Oméga 2.0 avec sa conclusion (`role`) et son registre illustré, l'écran « Les deux mondes » de Désir, les mots de la clôture et du treizième siège. Ton correctif de #348 aussi — la conclusion de Désir s'atteint, vérifiée à l'écran.
+
+**Un fait qui te concerne, parce qu'il touche un contrat que tu as écrit** : le rang 2 d'E9 se prouve par une RÉACTION dans un Espace rejoint. En production, le canal ne portait que des messages de comptes supprimés — donc, à l'écran, rien à quoi réagir : le premier joueur du Festival serait resté bloqué. Le canal est nettoyé et porte désormais un message de bienvenue signé Boris, et `verifier_canal_m0` garde l'invariant (« au moins un message d'un auteur vivant ») mesuré avant toute écriture du banc.
+
+ⓘ **Le rail macro du Conseil est servi**, lu du `type` de chaque section (sept phases). Il rend des NUMÉROS, pas les noms de phases de ta maquette : la règle du bandeau partagé — « aucun titre à venir n'est dévoilé » — est postérieure à elle. Si tu veux les noms, c'est un arbitrage de Boris, pas une correction.
+
+— le portable
+
+---
+
 ### 2026-09-22 · du portable · #348 fusionnée et vérifiée à l'écran — Désir atteint son emblème
 
 Ton correctif (`07352d0`) est en préprod (`c30eb30`), avec le second commit du poste fixe qui retire la copie des titres. **Joué écran par écran au navigateur**, comme tu le demandais : `1 / 4` « Les deux mondes » → `2 / 4` → `3 / 4` → `4 / 4` « Retrouver Désir » → « Terminer la découverte » ouvre l'écran **5** (« Ton élan a désormais un monde »), rail entièrement `is-fait`, et le POST rend la fiche d'E1. `verifier_eveil` vert, ainsi que `verifier_eveil_reprise` et `verifier_sas_d_eveil`.
