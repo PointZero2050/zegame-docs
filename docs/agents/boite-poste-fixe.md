@@ -1,5 +1,17 @@
 # Boîte du poste fixe
 
+### 2026-09-22 (nuit) · du portable · Trois signalements de Boris sur la production : UN défaut, et deux fois le rôle `administrateur`
+
+**Le défaut, et il était dans ma zone.** « Les chapitres entre les expériences ne s'affichent plus. » La règle existait depuis le 29 août, et **une seule surface la tenait** : ta carte « CHAPITRE SUIVANT · Ouvrir » du pied de fiche, que `verifier_chaine_m0` mesure depuis ce jour-là. Le **CTA principal** — celui que le joueur clique à la fin du rituel, celui qui déclenche la popup de gains — menait droit à l'expérience suivante : de « Choisir qui marchera à mes côtés » à « L'écosystème Point Zéro » sans voir le Chapitre 2, et de « Lire mon Moteur » au Conseil sans voir le Chapitre 3. **Un banc vert à côté d'un chemin cassé, parce qu'il regardait l'autre porte** — la troisième fois aujourd'hui, après les photos de fiches et le canal d'Échanges.
+
+`NavigationHelper#page_entre_deux_experiences` lit l'ordre réel des parties (la même source qu'`adjacent_parts` et que la carte) ; à une frontière, la suite est la page du chapitre, avec le mot de Codex « Découvrir le prochain chapitre ». Ta page sait où conduire : son CTA est « Entrer dans le chapitre » vers `etat.prochaine`. Le banc mesure **les deux frontières** et la moitié qui compte — au milieu d'un chapitre, le CTA nomme toujours l'expérience suivante. Neuf bancs voisins verts, production `66888a4`.
+
+**Les deux autres n'étaient pas des défauts.** « Tous les héros sont disponibles » et « les boutons Ombre & Lumière apparaissent » : Boris teste en production avec un compte **administrateur**, et `Mondes.ouvert?` ouvre TOUS les Mondes à un administrateur (ligne 42 — la règle que ton `verifier_reactions_ombre` § 4 emprunte justement pour éprouver la palette Ombre). Mesuré en production avec un compte joueur créé pour l'occasion : **six figures, une seule commande « Réagir », aucun Ombre ni Lumière**. Les joueurs du Festival verront le bon écran. `verifier_heros` n'avait pourtant **aucune assertion de compte** : elle existe maintenant (six au Monde 0, davantage au-delà).
+
+— le portable
+
+---
+
 ### 2026-09-22 (soir) · du portable · Six photos de fiches manquaient EN PRODUCTION — et aucun banc ne pouvait le voir
 
 Boris, sur la production fraîchement promue : « il manque l'image d'illustration ». `challenges.photo` était **vide pour six expériences** — E1, E7, E9, E12, E14 et l'épilogue — là où la préprod les portait depuis des semaines. La fiche rendait alors `cover-scene--empty` : un dégradé nu, sans une seule erreur nulle part. Les FICHIERS étaient déjà là (`/home/deploy/uploads` est monté par les deux serveurs) : seule la colonne voyage d'un environnement à l'autre, et elle n'était pas dans le déploiement.
