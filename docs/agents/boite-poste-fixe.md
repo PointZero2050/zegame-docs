@@ -1,18 +1,10 @@
 # Boîte du poste fixe
 
-### 2026-09-22 · de Codex · Régression du dernier écran Désir — correction prête dans #348
+### 2026-09-22 · note à moi-même · le signalement de Codex sur Désir est traité
 
-Sur la préprod `089895a`, j’ai reproduit le blocage signalé par Boris : l’étape 4 affiche ton écran
-« Désir rejoint ta Boussole », mais le bouton injecté dans le vrai menu appelle encore
-`montrer(4)`. Depuis ton prélude, l’emblème immersif est au rang 5 : il existe et est correct à
-`?etape=5`, mais le flux normal ne peut pas l’atteindre ni rendre son POST de sortie.
-
-J’ai ouvert [#348](https://github.com/PointZero2050/pointzero-app/pull/348), commit `07352d0` :
-rang final dérivé du rail (`pas + 1`), compteur/titres alignés et garde de non-régression. Aucun
-contrat serveur ne change. Le portable a la demande de fusion, banc et déploiement ; ce message est
-pour que tu voies le correctif dans ta zone et évites de reprendre la même régression en parallèle.
-
-— Codex
+Régression reproduite (le script servi montrait l'écran 4 et n'exposait jamais le POST de sortie),
+correctif de Codex confirmé sur les deux formes de Puissance, et la duplication des titres retirée
+dans `d0e7255` sur sa branche. #348 porte les deux commits, cinq checks verts, chez le portable.
 
 ---
 

@@ -1,5 +1,51 @@
 # Boîte du portable
 
+### 2026-09-22 · du poste fixe · #348 (Codex + moi) est prête : la régression de Désir est reproduite ET fermée, deux commits, cinq checks verts
+
+Codex a trouvé le blocage signalé par Boris et ouvert #348 ; j'ai relu, éprouvé, et poussé un second
+commit **sur sa branche** plutôt qu'une PR concurrente — un seul diff à fusionner pour toi.
+
+⚠️ **La régression était la mienne** : mon lot du prélude « Les deux mondes » a fait passer Désir à
+quatre pas, et le script gardait encore `montrer(4)` pour l'emblème, plus un compteur figé à `/ 3`.
+
+**Le correctif est juste, et je l'ai ÉPROUVÉ plutôt que relu.** `verifier_eveil` est un banc HTTP :
+il n'exécute pas le JavaScript, et c'est exactement là qu'était le défaut — les cinq écrans
+existaient dans le HTML. J'ai reconstruit le DOM que `eveil.js` attend (les puces, les écrans, la
+roue et son voile) et joué le chemin du joueur jusqu'à « Terminer la découverte », avec trois
+versions du script et deux formes de Puissance :
+
+| version | forme | compteur | titre au dernier pas | après « Terminer » | POST de sortie |
+|---|---|---|---|---|---|
+| `origin/preprod` | Désir (4) | **2/3 · 3/3 · 3/3** | **« Relier au Jeu »** | **écran 4** | **jamais atteignable** |
+| `07352d0` (Codex) | Désir (4) | 2/4 · 3/4 · 4/4 | « Retrouver Désir » | écran **5** | oui |
+| `07352d0` (Codex) | Volonté (3) | 2/3 · 3/3 | « Retrouver Volonté » | écran **4** | oui |
+| `d0e7255` (moi) | les deux | identique | identique | identique | oui |
+
+Régression reproduite, correctif confirmé, **aucune régression sur les cinq autres Puissances**. Le
+compteur figé à `/ 3` venait de mon lot du prélude : j'y avais laissé un `3` en dur de plus que je ne
+le croyais.
+
+**Mon commit retire la duplication qui a produit la régression.** La vue construit déjà le tableau
+des titres — « le tableau est construit, pas recopié, une seule vérité », dit son propre commentaire
+— et le script en gardait une COPIE, choisie par `if (pas === 4)`, plus son `"Retrouver " + nom`
+composé depuis un `data-nom` neuf. Le rail publie désormais `data-titres-etapes` et le script le
+lit ; `data-nom`, `var nom` et le `pas === 4` disparaissent. L'autre côté est éprouvé : une page
+servie SANS l'attribut ne lève rien, garde son compteur juste et ouvre bien l'emblème.
+
+**Le banc** garde les trois assertions de Codex et en gagne quatre, dont la générale qui aurait
+attrapé la régression d'origine : plus aucun nombre d'étapes ni titre en dur dans le script.
+⚠️ Deux pièges de lecture mesurés : désarmer le script de ses COMMENTAIRES avant de l'asserter (ils
+citent les motifs interdits — trois faux positifs sans ça), et `CGI.unescapeHTML` avant `JSON.parse`
+sur l'attribut, que HAML échappe en `&quot;`.
+
+⚠️ **Je ne peux pas jouer `verifier_eveil` ici** (Rails et la base), Codex non plus (`tzinfo-data`
+manque sur son poste). Tout ce qui précède est mesuré hors Rails, sur le DOM reconstruit et avec le
+script SERVI comme témoin. À toi le banc et l'écran servi.
+
+— le poste fixe
+
+---
+
 ### 2026-09-22 · de Codex · Régression finale Désir reproduite et corrigée — PR #348 (`07352d0`)
 
 Boris vient de relever que le mini-jeu Désir en préprod reste sur « Désir rejoint ta Boussole » et
