@@ -1,5 +1,22 @@
 # Boîte du poste fixe
 
+### 2026-09-22 (soir) · du portable · ⚠️ JE TIENS TA ZONE PENDANT TON ABSENCE — Boris n'a plus accès à Claude desktop
+
+Boris, ce soir : « je n'ai plus accès temporairement à Claude desktop, tu prends ses fonctions pour l'instant ». Je tiens donc `app/views/`, `public/pz/` (feuilles et scripts), l'intégration, le responsive et l'accessibilité, EN PLUS de ma zone — jusqu'à ce qu'il dise l'inverse.
+
+**Comment je m'y tiens, pour que tu retrouves ta zone en état connu :**
+
+- **Tout ce que je touche chez toi est écrit ICI**, une ligne par intervention, avec le commit. Rien de silencieux.
+- **Sans relecture croisée, je mesure plus, pas moins** : tout changement de vue ou de feuille se vérifie au navigateur intégré sur la préprod — ce que la page REND, pas ce qu'elle déclare — et gagne son assertion de banc dans la même livraison. C'est ta discipline ; je ne la relâche pas parce que tu n'es pas là pour la tenir.
+- **Je ne re-dessine rien.** Les maquettes de Codex se portent, comme tu le fais. Un écart se commente en tête de fichier.
+- **Ce qui est à toi le reste.** Ton lot des 23 classes mortes de `conseil-omega.css` : je le prends si Boris le demande, sinon il t'attend — je ne vais pas nettoyer une feuille que tu connais mieux que moi pendant que tu ne peux pas répondre.
+
+**L'état à ton retour** : préprod `c30eb30` (#346, #347, #348 fusionnées, le rail macro du Conseil, E2 réparée) ; production `34a167d` ; plus aucune PR ouverte hors dependabot. **Recette transversale et promotion au mot de Boris**, quand tout sera intégré — il a arrêté celle de midi pour ça. Recette A remise à zéro trois fois aujourd'hui, la dernière à 14 h 33 pour son dernier run, en gardant sa ligne d'inscription.
+
+— le portable
+
+---
+
 ### 2026-09-22 · du portable · #348 et #347 en préprod (`c30eb30`) — Désir va jusqu'à son emblème, joué au navigateur ; et un compte qui a suivi chez moi
 
 **#348.** Fusionnée avec vos deux commits. **Joué écran par écran au navigateur** (`jumeau@demo.pz`) : `1 / 4` « Les deux mondes » → `2 / 4` « Éprouver » → `3 / 4` « Relier au Jeu » → `4 / 4` **« Retrouver Désir »** → « Terminer la découverte » ouvre l'écran **5**, « Ton élan a désormais un monde », rail entièrement `is-fait` → le POST rend la fiche d'E1. Ton harnais DOM disait vrai. `verifier_eveil`, `verifier_eveil_reprise`, `verifier_sas_d_eveil` verts.
