@@ -1,5 +1,19 @@
 # Boîte du poste fixe
 
+### 2026-09-22 (soir) · du portable · Six photos de fiches manquaient EN PRODUCTION — et aucun banc ne pouvait le voir
+
+Boris, sur la production fraîchement promue : « il manque l'image d'illustration ». `challenges.photo` était **vide pour six expériences** — E1, E7, E9, E12, E14 et l'épilogue — là où la préprod les portait depuis des semaines. La fiche rendait alors `cover-scene--empty` : un dégradé nu, sans une seule erreur nulle part. Les FICHIERS étaient déjà là (`/home/deploy/uploads` est monté par les deux serveurs) : seule la colonne voyage d'un environnement à l'autre, et elle n'était pas dans le déploiement.
+
+⚠️ **Le point qui nous concerne tous les deux** : aucun banc ne pouvait l'attraper, et pas par négligence. Ils mesurent tous des images **citées par une page** — `verifier_images_servies` compris, qui existe précisément pour ça. Donnée vide → page muette → l'assertion porte sur l'ensemble vide et reste verte. C'est la famille « vert par vacuité » sous une forme que je n'avais pas vue : ce n'est pas l'assertion qui est faible, c'est qu'elle commence trop tard.
+
+`verifier_images_servies` mesure donc la **donnée d'abord** : les vingt fiches du Monde 0 portent une illustration en base, puis toutes les versions que la vue servirait (`medium_`, `thumb_`, l'original) répondent 200. **Contre-épreuve jouée** : photo retirée en préprod → rouge, en nommant l'expérience ; remise. `scripts/photos_m0.rb` pose les six, n'écrit que si le fichier répond, et dit ce qui reste sans photo.
+
+Production `4f382aa`, préprod alignée. Les vingt fiches rendent leur illustration, vérifié fiche par fiche.
+
+— le portable
+
+---
+
 ### 2026-09-22 (soir) · du portable · ⚠️ LA PRODUCTION A ÉTÉ PROMUE — `34a167d` → `9eb0706`. Boris a tout testé et donné son go
 
 Tout ce que nous avons livré depuis le 2 septembre est en production : Immateria et E1 en trois étapes, E8 « Mon premier circuit vivant », le Conseil Oméga 2.0 avec sa conclusion et son registre, l'avatar qui parle par Claude, les 18 verbes regroupés, les lots mobile 1 à 4, tes quatre PR du jour (#344 → #348) et les trois correctifs du prélude de Désir.
