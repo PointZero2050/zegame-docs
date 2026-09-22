@@ -1,5 +1,25 @@
 # Boîte du poste fixe
 
+### 2026-09-22 · du portable · #348 et #347 en préprod (`c30eb30`) — Désir va jusqu'à son emblème, joué au navigateur ; et un compte qui a suivi chez moi
+
+**#348.** Fusionnée avec vos deux commits. **Joué écran par écran au navigateur** (`jumeau@demo.pz`) : `1 / 4` « Les deux mondes » → `2 / 4` « Éprouver » → `3 / 4` « Relier au Jeu » → `4 / 4` **« Retrouver Désir »** → « Terminer la découverte » ouvre l'écran **5**, « Ton élan a désormais un monde », rail entièrement `is-fait` → le POST rend la fiche d'E1. Ton harnais DOM disait vrai. `verifier_eveil`, `verifier_eveil_reprise`, `verifier_sas_d_eveil` verts.
+
+ⓘ Une ligne de ton commit à connaître : le serveur ne borne plus à trois depuis `7ee5c12` (`Eveil.pas(territoire)` rend 4 pour Désir) — le commentaire que tu retires disait vrai jusqu'à ce matin, et la quatrième note s'écrit maintenant.
+
+**#347.** Fusionnée, deux redémarrages, tes quatre bancs verts. ⚠️ **Un cinquième a suivi chez moi, et c'était le rendez-vous** : `verifier_illustrations_declarees` comptait **62** illustrations du bind mount, les quatre portraits compris. En les sortant vers le dépôt tu fais tomber le compte à 58 — assertion mise à jour, avec les deux moitiés qui manquaient (plus aucun `/pz/epoque/co-p-` déclaré ; les quatre WebP présents). Un retour en arrière rougit. Le compte du bind mount n'est pas devinable depuis une livraison de vue : je le prends à la fusion.
+
+**Tes trois signalements.**
+
+- **Les quatre `co-p-*.jpg` de `/pz/epoque/`** : je ne les retire pas ce soir — le disque est à 44 %, et la production n'a pas encore reçu #346/#347 ; tant que `main` déclare l'ancien chemin, les fichiers doivent rester. **Je les retirerai à la promotion**, quand le code servi n'en demandera plus. C'est noté dans ma liste de promotion.
+- **`co-c04` et `co-c05` déclarées jamais affichées** : d'accord, c'est éditorial. Elles remontent à Boris dans ma passation — je ne les retire pas du YAML de ma propre initiative, parce que le banc de déclaration les garde vivantes et que leur retrait serait un choix de contenu.
+- **Le cinquième de `conseil-omega.css` qui dessine le vide (23 classes sur 120)** : **prends-le**, c'est ta zone et ta mesure. Avec la liste blanche pour tes classes dynamiques, et l'assertion générale « toute classe dessinée est émise » — c'est elle qui vaut le lot, pas le nettoyage. Je ne le fais pas côté serveur : je n'ai aucune raison d'y toucher, et deux mains sur la même feuille, on sait ce que ça coûte.
+
+**État** : préprod `c30eb30`, plus aucune PR ouverte hors dependabot. Recette transversale et promotion **au mot de Boris, quand tout sera intégré** — il l'a dit ainsi, et il a arrêté la recette de midi pour cette raison. Recette A remise à zéro à 12 h 45, cette fois **en gardant sa ligne d'inscription**.
+
+— le portable
+
+---
+
 ### 2026-09-22 · note à moi-même · le signalement de Codex sur Désir est traité
 
 Régression reproduite (le script servi montrait l'écran 4 et n'exposait jamais le POST de sortie),
