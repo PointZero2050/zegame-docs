@@ -1,5 +1,25 @@
 # Boîte du poste fixe
 
+### 2026-09-22 (soir) · du portable · ⚠️ LA PRODUCTION A ÉTÉ PROMUE — `34a167d` → `9eb0706`. Boris a tout testé et donné son go
+
+Tout ce que nous avons livré depuis le 2 septembre est en production : Immateria et E1 en trois étapes, E8 « Mon premier circuit vivant », le Conseil Oméga 2.0 avec sa conclusion et son registre, l'avatar qui parle par Claude, les 18 verbes regroupés, les lots mobile 1 à 4, tes quatre PR du jour (#344 → #348) et les trois correctifs du prélude de Désir.
+
+**Le déroulé, pour que tu saches ce que la base a vu** : sauvegarde vérifiée par son contenu (78 tables, 9 568 lignes) → les deux mises en service qui refusent de tourner après le build (E9/E12, E19) → fusion `preprod` dans `main`, **un conflit** (`verifier_article_civilisation.rb`, ajouté des deux côtés — la version de préprod, plus récente, l'emporte) → `git diff --stat origin/preprod HEAD` **vide** → build, migrations (cartes du Seuil, l'avatar, le circuit vivant), **deux redémarrages** → cinq mises en service → les 18 verbes (**simulation d'abord**, puis `ECRIRE=oui` : 3 lignes déplacées, 42 skills, témoins identiques sur 7 axes, journal sorti du conteneur) → la durée d'E2 portée à 15 → **treize bancs verts en production**.
+
+**Deux choses que Boris a demandées, et la seconde était un vrai défaut de données :**
+
+1. **Le « Suivant » de recette est bien fermé en production** — mesuré, pas supposé : `SAUT_DE_RECETTE` absent de l'environnement, `SautDeRecette.ouvert?` faux, `verifier_saut_de_recette` vert. Le bouton rend son état verrouillé (« Termine d'abord cette expérience pour continuer »), et le service refuserait même si quelqu'un forçait la route.
+2. **Le canal d'Échanges portait SOIXANTE messages de recette** (« Un message non lu. », « Message d'un joueur bien vivant. »), tous de comptes purgés — des restes de bancs joués **en production** entre le 2 et le 12 septembre. Un joueur qui rejoignait l'Espace les voyait, et **aucun message d'auteur vivant** ne lui était offert : le rang 2 d'E9, qui se prouve par une réaction, était inatteignable. Sauvegarde JSON hors conteneur, puis retrait (`scripts/nettoyer_canal.rb`, `ECRIRE=oui`, et **seulement** les messages dont l'auteur n'existe plus). Message de bienvenue posé, signé Boris (son choix, demandé). **Éprouvé en production** : rejoindre → réagir → rang 2 `confirme_par_le_jeu`.
+   ⓘ `verifier_canal_m0` gagne un § 0 qui mesure l'invariant **avant** que le banc n'écrive : le canal porte au moins un message d'un auteur vivant, et lisible. Vert en préprod et en production.
+
+ⓘ **Les quatre `co-p-*.jpg` de `/pz/epoque/` sont retirés** des deux serveurs (déplacés dans `~/sauvegardes/portraits-conseil-epoque/`, pas supprimés) : plus rien ne les déclare, l'ancien chemin répond 404, le WebP du dépôt répond 200, et tes trois bancs d'images restent verts. Cache Docker purgé : 43 %.
+
+**Ce qui t'attend au retour** : ton lot des 23 classes mortes de `conseil-omega.css` (avec l'assertion générale), et mes valeurs de mise en page du prélude si tu veux les reprendre. La préprod est sur `be14bda`, la production sur `9eb0706` — alignées.
+
+— le portable
+
+---
+
 ### 2026-09-22 (soir) · du portable · ⚠️ DANS TA ZONE, EN TON ABSENCE : `eveil.css` et `eveils/show.html.haml` (`82da066`) — trois défauts du prélude, mesurés au navigateur
 
 Boris, capture à 375 px : « la première page du mini-jeu Désir a une mise en forme cassée ». Je l'ai reproduite, et ce n'était pas une règle manquante.
