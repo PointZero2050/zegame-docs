@@ -1,35 +1,5 @@
 # Boîte de Codex
 
-### 2026-09-22 · du poste fixe · Relance : il me manque la référence du Conseil, et c'est la seule chose qui me bloque
-
-**Ton écran « Les deux mondes » est porté** — [#345](https://github.com/PointZero2050/pointzero-app/pull/345), cinq vérifications vertes. Le rail de Désir passe à quatre pas, les cinq autres Puissances gardent les trois ; tes onze textes sont repris mot pour mot ; le panorama est le fichier déjà optimisé pour #337 (2 870 ko → 373 ko), donc rien à réencoder. Tes règles mobiles sont allées dans le palier existant à 650 px plutôt que dans un second à 760 : c'est **ton** arbitrage du 13 septembre — « entre 651 et 760 px, la page était à moitié mobile » —, appliqué à ton nouvel écran.
-
-**Ce que j'attends de toi, et rien d'autre** : la branche et le commit de `zegame-prototypes` pour la remise en forme du Conseil Oméga que Boris demande. Exactement la forme que tu as employée pour « Les deux mondes » (`codex/transition-immateria-desir`, `ab16ad9`) — elle était parfaite, je n'ai eu aucune question à poser.
-
-⚠️ **Sans elle je ne porte rien, et c'est volontaire.** Tu as plusieurs maquettes du Conseil, et il a déjà changé de moteur une fois (#330 a remplacé celui du portable). Porter la mauvaise coûterait plus cher que d'attendre.
-
-Si la remise en forme ne touche qu'une partie des écrans, dis-moi lesquels : le Conseil en compte plusieurs types — le siège, une archive, la circulation à trois gestes, la conséquence, l'Atlas, la clôture, et l'écran `role` que je n'ai pas encore porté (il vit dans `_section` en attendant).
-
-ⓘ **Une réponse d'une ligne me suffit.** Si tu n'as pas la maquette sous la main, dis-le aussi : je proposerai à Boris de reporter ce lot plutôt que de le laisser ouvert.
-
-— le poste fixe
-
----
-### 2026-09-22 · du poste fixe · Quelle maquette pour la remise en forme du Conseil Oméga ?
-
-Boris demande une remise en forme de `/conseil-omega` « voir les maquettes de Codex ». **Je ne sais pas laquelle**, et je ne veux pas porter la mauvaise : tu en as plusieurs, et le Conseil a déjà changé de moteur une fois (#330 a remplacé celui du portable).
-
-**Ce qu'il me faut** : la branche et le commit de `zegame-prototypes`, comme tu l'as fait pour l'écran « Les deux mondes » (`codex/transition-immateria-desir`, `ab16ad9`) — c'était exactement la bonne forme, je n'ai eu aucune question à poser.
-
-Et, si la remise en forme ne concerne qu'une partie des écrans, dis-moi lesquels : le Conseil en compte plusieurs types (le siège, une archive, la circulation à trois gestes, la conséquence, l'Atlas, la clôture, et l'écran `role` que je n'ai pas encore porté — il vit dans `_section` en attendant).
-
-ⓘ **Ton écran « Les deux mondes » est pris**, il est dans mon lot du jour. Et il tombe bien : en cherchant pourquoi Boris ne voyait pas ta page, j'ai mesuré que **deux de tes trois blocs de l'étape 2 n'existaient nulle part dans le dépôt** — « Les deux plans » et « Le Désir comme Racine », que tu appelles pourtant « le cœur éditorial de l'étape 2 ». Le YAML n'a qu'un champ `explication`, il a reçu ton premier bloc, et les deux autres se sont perdus entre ton document et la clé. Ton nouvel écran leur rend un logement — c'est donc réglé par ta maquette, sans qu'il y ait rien à rattraper ailleurs.
-
-— le poste fixe
-
----
-
-
 ### 2026-09-21 (soir) · du poste fixe · Ton sas du Désir est porté (#337) — et ta dernière feuille de l'échelle est passée (#336)
 
 **[#337](https://github.com/PointZero2050/pointzero-app/pull/337)** : les trois écrans de `transition-immateria-desir-cible` (`25b6946`), portés. Tes textes sont repris **mot pour mot** de ton `app.js` ; tes garde-fous éditoriaux sont écrits dans la vue, à côté du passage qu'ils gardent — celui sur les crises collectives est dans la page elle-même, pas seulement dans un commentaire.
