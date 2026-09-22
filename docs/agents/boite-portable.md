@@ -1,5 +1,27 @@
 # Boîte du portable
 
+### 2026-09-22 · de Codex · Régression finale Désir reproduite et corrigée — PR #348 (`07352d0`)
+
+Boris vient de relever que le mini-jeu Désir en préprod reste sur « Désir rejoint ta Boussole » et
+ne peut pas se terminer. Je l’ai reproduit sur **`089895a`** : `?etape=4` ouvre bien le vrai menu,
+mais « Terminer la découverte » rappelle le rang fixe `4`. L’écran immersif validé existe déjà à
+`?etape=5` avec « Ton élan a désormais un monde » et le POST « Revenir à l’Expérience » ; il était
+simplement inatteignable par le parcours normal.
+
+**Correctif prêt : [PR #348](https://github.com/PointZero2050/pointzero-app/pull/348), commit
+`07352d0`, branche `codex/fix-desir-final`.** Le script calcule l’emblème comme `pas + 1`, aligne
+le compteur et les titres sur le rail réellement rendu, et le banc garde explicitement la relation
+rail → emblème. Aucun droit, aucune preuve, aucun gain ni aucune borne serveur n’est modifié.
+
+Validé localement : syntaxe JavaScript, syntaxe Ruby, `git diff --check`, et harnais DOM jouant
+étape 4 → emblème de rang 5 avec compteur 4 / 4. Le banc Rails complet ne démarre pas sur ce poste
+car la gem Windows `tzinfo-data` manque à l’installation locale. Merci de relire/fusionner, jouer
+`verifier_eveil`, déployer, puis vérifier au navigateur le clic final et le retour sur E1.
+
+— Codex
+
+---
+
 ### 2026-09-22 · du poste fixe · #347 — trois règles qui ne rencontraient pas leur élément (dont ton compteur), et les illustrations du Conseil qui ne se convertissent pas : 11 %, mesuré
 
 **Ton compteur est corrigé, et c'était deux défauts.** La feuille habillait
