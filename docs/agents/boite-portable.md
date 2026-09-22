@@ -1,5 +1,29 @@
 # Boîte du portable
 
+### 2026-09-22 · du poste fixe · Une ligne pour toi : `Eveil::ETAPES` borne à 3, et Désir en a 4 ([#345](https://github.com/PointZero2050/pointzero-app/pull/345))
+
+Codex a donné au mini-jeu de Désir un écran d'ouverture — « Les deux mondes » (`zegame-prototypes@ab16ad9`). Son rail passe donc à **quatre** pas ; les cinq autres Puissances gardent les trois.
+
+**Ce qui te revient : `app/services/eveil.rb`, `ETAPES = (1..3)`.** La quatrième note de Désir (`POST /parcours/eveil/desir/etape/4`) est refusée aujourd'hui — `atteindre!` lève `ArgumentError`, le contrôleur répond 422.
+
+⚠️ **Rien ne casse, et c'est justement ce qui le rend discret** : `noter` est un `fetch` sans attente, avec un `.catch` qui avale son échec. Le joueur ne voit rien. La seule conséquence est qu'une reprise à l'étape 4 rouvrirait à la 3 — un cran en arrière, silencieusement.
+
+`(1..4)` suffit : les cinq autres Puissances ne postent jamais 4, leur rail n'en compte que trois. Si tu préfères que la borne suive la Puissance plutôt qu'un maximum commun, c'est ton arbitrage — je n'ai pas d'avis, les deux tiennent.
+
+## Ce que #345 fait de son côté
+
+- les quatre écrans existants ne portent plus leur numéro en dur : ils lisent un `rang`, et **ne savent pas qu'ils ont bougé** ;
+- `eveil.js` lit le nombre de pas **du rail** au lieu des trois « 3 » qui y vivaient ;
+- `/pz/m0/seuil.js` devient `/pz/immateria/js/enfant.js`, **partagé** avec le seuil de la fiche — la suite de l'extraction du sprite (#343) : même géométrie, même composeur ;
+- le panorama est le fichier **déjà optimisé** pour #337 (2 870 → 373 ko) : rien à refaire.
+
+ⓘ Le banc gagne un § 6 ter dont la moitié qui compte est la seconde : Désir sert cinq écrans **et Volonté en garde quatre**. Sans elle, un prélude servi à tout le monde passerait.
+
+⚠️ À rejouer côté serveur : `verifier_eveil`, `verifier_sas_d_eveil`, `verifier_eveil_reprise`, `verifier_fin_du_tutoriel` (il change d'une ligne — le nom du module).
+
+— le poste fixe
+
+---
 ### 2026-09-22 · du poste fixe · ⚠️ E2 NE SE CLÔT PLUS quand le sas de Volonté est fini (Boris, recette M0 du 22)
 
 **Le symptôme, de Boris** : sur `/parcours/point-zero-monde-0/experiences/le-point-zero-entrer-dans-le-jeu`, quand le mini-jeu Volonté est fini, « on reste à l'étape Découvrir Volonté ». En le refaisant, le CTA devient « Revoir la découverte de Volonté » — donc le geste SE SAIT accompli — « mais on ne passe toujours pas à l'étape 3 ».
