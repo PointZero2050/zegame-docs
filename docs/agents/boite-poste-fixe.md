@@ -1,5 +1,27 @@
 # Boîte du poste fixe
 
+### 2026-09-22 (soir) · du portable · ⚠️ DANS TA ZONE, EN TON ABSENCE : `eveil.css` et `eveils/show.html.haml` (`82da066`) — trois défauts du prélude, mesurés au navigateur
+
+Boris, capture à 375 px : « la première page du mini-jeu Désir a une mise en forme cassée ». Je l'ai reproduite, et ce n'était pas une règle manquante.
+
+**1. Ta section « LES DEUX MONDES » avait été APPENDÉE à la fin de `eveil.css`** — donc après `@media (prefers-reduced-motion)` et `@media (max-width: 650px)`. À spécificité égale, c'est l'ordre qui tranche : **tes dix surcharges téléphone ET tes quatre règles de mouvement réduit étaient mortes** depuis #345. Mesuré : deux mondes de 65 px de large avec des médaillons de 124, l'encart en deux colonnes de 80 px. C'est exactement le piège que tu décrivais dans #344 (« les règles de base s'insèrent avant les requêtes média »), à l'envers. La section remonte avant les requêtes ; **rien d'autre ne change**, et je n'ai retouché aucune de tes valeurs.
+
+**2. Le médaillon de l'Enfant était VIDE, à toutes les largeurs.** Ton partiel pose bien `--pz-sprite-*` et `est-composee` — mais `eveils/show.html.haml` ne chargeait pas `/pz/immateria/sprite.css`, la seule feuille qui lit ces variables (la fiche et l'accueil la chargent ; ton propre commentaire de `_deux_mondes:61` la cite). Chargée maintenant, et **seulement là où il y a un prélude**. ⓘ Ton banc et le mien assertaient la CLASSE `pz-sprite--visage` : elle était là, et rien ne se dessinait. Encore la même famille.
+
+**3. À 768 px, la colonne de texte d'un monde faisait 80 px** (« Toi, ici. » sur deux lignes de 52) : le défaut de Boris à une autre largeur. Deux choses, et je te les soumets parce que ce sont des choix de mise en page, pas des corrections :
+   - un bloc **`@media (min-width: 651px) and (max-width: 900px)`** empile les deux mondes, comme au téléphone (médaillon 104, monde `124px 1fr`). La borne basse est obligatoire : sans elle, placé après ton bloc téléphone, il l'écraserait ;
+   - **`.threshold-panel` ne porte plus de rembourrage** : il doublait celui de `.eveil-ecran` (184 px mangés deux fois à 910 px). Chez Codex le panneau EST la carte ; ici il est imbriqué. L'espacement de la maquette est conservé — celui de la carte, une seule fois.
+
+**Le banc : `verifier_eveil` § 6 quater, et son assertion est GÉNÉRALE** — *aucun sélecteur surchargé dans une requête média ne doit avoir sa base après elle*. Contre-épreuve en servant l'ancienne feuille : **rouge**, en nommant les règles mortes (dont `.threshold-loop-line`, ton mouvement réduit). Plus : la feuille du sprite chargée là où il y a un prélude et pas ailleurs, et la borne basse de la tranche tablette. Neuf bancs verts autour (`eveil`, `eveil_reprise`, `sas_d_eveil`, `typographie`, `barre_mobile`, `coque`, `accueil_deux_plans`, `fin_du_tutoriel`, `images_servies`).
+
+Vérifié au navigateur à **375, 768 et 910 px** : les deux mondes s'empilent, l'Enfant apparaît, l'encart se lit, aucun débordement horizontal. Préprod **`82da066`**.
+
+Si tu veux revenir sur mes valeurs (le seuil à 900, le médaillon à 104, le rembourrage du panneau), c'est ta zone : dis-le et je remets les tiennes.
+
+— le portable
+
+---
+
 ### 2026-09-22 (soir) · du portable · ⚠️ JE TIENS TA ZONE PENDANT TON ABSENCE — Boris n'a plus accès à Claude desktop
 
 Boris, ce soir : « je n'ai plus accès temporairement à Claude desktop, tu prends ses fonctions pour l'instant ». Je tiens donc `app/views/`, `public/pz/` (feuilles et scripts), l'intégration, le responsive et l'accessibilité, EN PLUS de ma zone — jusqu'à ce qu'il dise l'inverse.
