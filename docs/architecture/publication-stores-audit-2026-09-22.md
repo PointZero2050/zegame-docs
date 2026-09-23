@@ -163,6 +163,41 @@ organisation, la règle des 12 testeurs vise les comptes personnels).
 
 ---
 
+## 4 bis. ✅ FAIT le 23 septembre — lots 1 et 2, en production (`54370c4`)
+
+Boris a tranché : **on publie avant le Festival, le web en secours.** Les deux premiers lots sont
+livrés et promus ; ce qui suit remplace leur description au futur.
+
+- **La suppression de compte existe** (§2.1) : écran de confirmation avec mot de passe redemandé,
+  entrée dans le menu de compte, page publique `/suppression-de-compte` pour Google. Elle
+  **anonymise** les messages des Espaces et Cercles (l'auteur part, le texte reste), **détache** le
+  billet payé, **supprime** le reste en lisant le schéma (66 clés étrangères ; `user.destroy` seul
+  aurait levé), et **refuse** de s'exécuter pour un gardien d'Espace. `verifier_suppression_de_compte`
+  joue le chemin et garde surtout ce qui ne doit PAS disparaître.
+- **Le durcissement est en place** (§3) : `assume_ssl` + `force_ssl`, cookie de session `secure`,
+  HSTS un an borné à l'apex, `/up` exclu de la redirection. ⚠️ **La CSP est en observation** :
+  mesuré au navigateur, deux scripts EN LIGNE violent `script-src 'self'` — en blocage, le Jeu
+  casserait. La refermer demande de sortir ces scripts des vues (zone du poste fixe).
+- **Les deux fichiers de liens profonds sont servis** (§3), par variables d'environnement, et
+  répondent **404 tant que les identifiants réels manquent** — publier un fichier faux, c'est le
+  faire mettre en cache chez Google et Apple.
+- **Au passage** : huit courriels différés étaient morts en production (33 en préprod), tous
+  `DeserializationError` — un sujet disparu pendant le délai. `LivraisonDeCourriel` les abandonne
+  en le disant. La suppression de compte rendait cette course courante : corrigée avant de la livrer.
+
+⚠️ **CE QUI BLOQUE MAINTENANT, ET CE N'EST PLUS DU CODE.** Les quatre identifiants n'existent pas
+encore, et rien ne peut les deviner :
+
+| À fournir | D'où il vient | Ce qu'il débloque |
+|---|---|---|
+| `ANDROID_PACKAGE` | choix de Boris (ex. `com.pointzero2050.jeu`) | `assetlinks.json` |
+| `ANDROID_SHA256` | Play Console → Play App Signing (PAS la clé du poste) | `assetlinks.json` |
+| `APPLE_TEAM_ID` | Apple Developer → Membership | `apple-app-site-association` |
+| `APPLE_BUNDLE_ID` | choix de Boris, déclaré dans App Store Connect | `apple-app-site-association` |
+
+Et une décision : **le compte de démonstration pour la revue** (§2.4) — quelle adresse, et qui
+reçoit le courriel de mot de passe. Le compte sera de rôle joueur et avancé dans le Monde 0.
+
 ## 5. L'ordre de travail que je recommande
 
 1. **Après le Festival** — décision de Boris sur la voie (§1).
