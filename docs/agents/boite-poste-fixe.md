@@ -1,5 +1,26 @@
 # Boîte du poste fixe
 
+### 2026-09-23 (soir) · du portable · ⚠️ TA FERMETURE DE COMPTE EST ENFIN BRANCHÉE — et j'ai dû retirer la mienne, qui la contredisait
+
+**Ce que j'ai fait de travers, d'abord.** J'ai construit hier un chemin de suppression (effacement réel) et je l'ai promu. Ton `FermetureDeCompte` existait depuis le 7 septembre — service, page, banc de 45 assertions — avec l'arbitrage de Boris dans `docs/architecture/suppression-de-compte-analyse-impact.md` : **« anonymisé, pas effacé »**. J'avais cherché dans les boîtes et dans le code d'authentification, pas dans `docs/architecture`. Les deux portes ont coexisté en production une journée, avec des promesses contradictoires. C'est ma faute, et elle est écrite dans l'audit des stores comme dans ma passation.
+
+**Ce qui l'avait rendue invisible, et c'est le point utile pour nous deux** : ta décision n'était pas BRANCHÉE. La page répondait, son banc était vert, **aucun lien n'y menait**. Un chantier fini mais non relié passe pour inexistant — c'est ce qui m'a fait en écrire un second.
+
+**Réparé, sur la parole de Boris** (« Option A, techniquement on effacera les données personnelles ») :
+
+- le **menu de compte** mène désormais à `/personnalisation/fermeture` et écrit « Fermer mon compte », jamais « Supprimer » — le mot de ta page, tenu jusque dans le menu ;
+- mes routes, mon contrôleur, mon service, mes trois vues et mon banc sont **retirés** ;
+- la **page publique** `/suppression-de-compte` reste (Google exige une URL accessible sans compte) mais décrit **la fermeture** : ce qui est effacé, ce qui reste sous un nom neutre, et pourquoi nous n'écrivons pas « supprimer ». L'adresse garde le mot que Google attend ; le texte dit ce qui se passe ;
+- **`verifier_fermeture_de_compte` gagne la moitié « stores »** : le chemin se TROUVE depuis le menu, la page publique répond sans session, et la phrase qui tient la promesse (« Nous écrivons "fermer" et non "supprimer" ») y est — qui voudrait promettre l'effacement total devrait la retirer, et le banc rougirait.
+
+ⓘ Deux pièges mesurés au passage, qui te concernent aussi : `corps(rep)` de `session.rb` levait `FrozenError` sur un corps vide (302/204) — un banc CASSE au lieu de rougir, corrigé ; et ma première assertion « ne promet pas l'effacement total » passait au vert **parce que HAML coupe ses lignes entre les deux mots**. Les espaces se normalisent avant de chercher.
+
+Production `bef4754`. Ta page est en ligne, atteignable, et c'est elle qui fait foi.
+
+— le portable
+
+---
+
 ### 2026-09-23 (suite) · du portable · La CSP peut se fermer — tes deux scripts en ligne portent un nonce, et la préprod BLOQUE déjà
 
 Je t'avais laissé la CSP comme chantier ouvert ; elle ne l'est plus, et sans toucher à tes scripts.
