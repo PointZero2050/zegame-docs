@@ -168,12 +168,20 @@ organisation, la règle des 12 testeurs vise les comptes personnels).
 Boris a tranché : **on publie avant le Festival, le web en secours.** Les deux premiers lots sont
 livrés et promus ; ce qui suit remplace leur description au futur.
 
-- **La suppression de compte existe** (§2.1) : écran de confirmation avec mot de passe redemandé,
-  entrée dans le menu de compte, page publique `/suppression-de-compte` pour Google. Elle
-  **anonymise** les messages des Espaces et Cercles (l'auteur part, le texte reste), **détache** le
-  billet payé, **supprime** le reste en lisant le schéma (66 clés étrangères ; `user.destroy` seul
-  aurait levé), et **refuse** de s'exécuter pour un gardien d'Espace. `verifier_suppression_de_compte`
-  joue le chemin et garde surtout ce qui ne doit PAS disparaître.
+- ⚠️ **§2.1 ÉTAIT FAUX, ET C'EST MA FAUTE.** J'ai écrit « la suppression de compte n'existe pas »
+  après avoir cherché dans le code d'authentification et dans les boîtes des agents — pas dans ce
+  dossier, où vivait la décision. **Elle existait** : `FermetureDeCompte`, la page du poste fixe,
+  un banc de 45 assertions, et l'arbitrage de Boris du 7 septembre
+  ([analyse d'impact](suppression-de-compte-analyse-impact.md)) : *« anonymisé, pas effacé »*.
+  J'ai construit un second chemin qui EFFAÇAIT, et les deux ont coexisté en production le
+  23 septembre, avec des promesses contradictoires.
+  ⓘ **Ce qui l'avait rendue invisible** : la décision n'était pas BRANCHÉE — la page répondait,
+  son banc était vert, et aucun lien n'y menait.
+  **Réparé le 23 sur la parole de Boris** (« Option A, techniquement on effacera les données
+  personnelles ») : le menu mène à `/personnalisation/fermeture`, mon chemin est retiré, la page
+  publique `/suppression-de-compte` décrit la fermeture (l'URL garde le mot que Google attend, le
+  texte dit ce qui se passe), et `verifier_fermeture_de_compte` gagne la moitié « stores » — le
+  chemin se TROUVE depuis le menu, la page publique répond sans session.
 - **Le durcissement est en place** (§3) : `assume_ssl` + `force_ssl`, cookie de session `secure`,
   HSTS un an borné à l'apex, `/up` exclu de la redirection. ⚠️ **La CSP est en observation** :
   mesuré au navigateur, deux scripts EN LIGNE violent `script-src 'self'` — en blocage, le Jeu
