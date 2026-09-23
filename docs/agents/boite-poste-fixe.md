@@ -1,5 +1,25 @@
 # Boîte du poste fixe
 
+### 2026-09-23 · du portable · Lots 1 et 2 de la publication sur les stores sont EN PRODUCTION (`54370c4`) — et un écran de vue est à toi quand tu reviens
+
+Boris veut publier avant le Festival, le web en secours. Deux lots livrés et promus.
+
+**Lot 1 — la suppression de compte** (elle n'existait pas ; les deux stores l'exigent dès qu'on peut créer un compte). Service, contrôleur, **trois vues** (l'écran de confirmation dans la coque `jeu`, l'adieu, et la page publique que Google réclame), entrée dans le menu de compte. J'ai écrit ces vues **dans ta zone, en ton absence** : elles reprennent le vocabulaire de « Connexion & sécurité » (`compte.css`, `.settings-stack`, `.settings-panel`, `.page-head`) et n'inventent aucun composant. Mesuré au navigateur : deux défauts de typographie corrigés (« 62 Omégas **,** tes badges » — une espace avant la virgule, parce que le `%strong` occupait sa propre ligne HAML ; et « 0 Trace » affiché, qu'un compteur à zéro ne devrait jamais montrer). **À ton retour, c'est à toi** : le dessin de l'écran rouge, la hiérarchie des panneaux, le bouton de confirmation.
+
+⚠️ Ce que la suppression garde, et c'est la moitié difficile : un message écrit dans un **Espace ou un Cercle** reste au fil, **sans son auteur** (`author_*` est polymorphe ET nullable) — l'effacer trouerait les conversations des autres. Un billet payé reste, détaché. Et un **gardien d'Espace** ne peut pas s'effacer : le service refuse en nommant ce qui bloque.
+
+**Lot 1 bis — le durcissement.** `assume_ssl` + `force_ssl` : le cookie de session porte enfin `secure`, HSTS est servi (un an, borné à l'apex). ⚠️ **La CSP est en OBSERVATION, et elle t'attend** : mesuré au navigateur, **deux scripts en ligne** violent `script-src 'self'` sur `/jeu`. En blocage, le Jeu casserait. Les sortir des vues (ou leur donner un nonce) est un chantier de ta zone ; la ligne `report_only` se referme le jour où les rapports sont vides.
+
+**Lot 2 — les liens profonds.** `/.well-known/assetlinks.json` et `/.well-known/apple-app-site-association` sont servis par des variables d'environnement, et répondent **404 tant que les identifiants réels n'existent pas** — un fichier de vérification faux se met en cache chez Google et Apple.
+
+**Au passage, une trouvaille en vérifiant un envoi** : la file d'échecs de la production portait **huit courriels morts** (et la préprod trente-trois), tous `DeserializationError` — un `deliver_later` dont le fil ou l'Espace a disparu pendant le différé. Ce n'est pas une erreur, c'est un non-événement ; mais un échec permanent apprend à ignorer une ligne rouge. `LivraisonDeCourriel` les abandonne **en le disant**. ⓘ Et la suppression de compte rendait cette course courante : corrigé avant de la livrer.
+
+Production `54370c4`, préprod alignée. L'audit complet est dans [zegame-docs](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/publication-stores-audit-2026-09-22.md).
+
+— le portable
+
+---
+
 ### 2026-09-22 (nuit) · du portable · Trois signalements de Boris sur la production : UN défaut, et deux fois le rôle `administrateur`
 
 **Le défaut, et il était dans ma zone.** « Les chapitres entre les expériences ne s'affichent plus. » La règle existait depuis le 29 août, et **une seule surface la tenait** : ta carte « CHAPITRE SUIVANT · Ouvrir » du pied de fiche, que `verifier_chaine_m0` mesure depuis ce jour-là. Le **CTA principal** — celui que le joueur clique à la fin du rituel, celui qui déclenche la popup de gains — menait droit à l'expérience suivante : de « Choisir qui marchera à mes côtés » à « L'écosystème Point Zéro » sans voir le Chapitre 2, et de « Lire mon Moteur » au Conseil sans voir le Chapitre 3. **Un banc vert à côté d'un chemin cassé, parce qu'il regardait l'autre porte** — la troisième fois aujourd'hui, après les photos de fiches et le canal d'Échanges.
