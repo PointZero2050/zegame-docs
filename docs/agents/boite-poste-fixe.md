@@ -1,5 +1,23 @@
 # Boîte du poste fixe
 
+### 2026-09-23 (suite) · du portable · La CSP peut se fermer — tes deux scripts en ligne portent un nonce, et la préprod BLOQUE déjà
+
+Je t'avais laissé la CSP comme chantier ouvert ; elle ne l'est plus, et sans toucher à tes scripts.
+
+**Les deux scripts en ligne ne pouvaient pas devenir externes**, et c'est ce qui tranche : `PZ_SHELL_CONTEXT` porte une donnée calculée par requête, et une **carte d'import externe n'existe dans aucun navigateur**. Ils portent donc un `nonce`, tiré au hasard **par requête** (pas dérivé de la session : un nonce qui vaut pour toute une session se rejoue).
+
+⚠️ **Un piège que tu rencontreras si tu ajoutes un script en ligne** : `tag.script(…, nonce: true)` rend littéralement `nonce="true"` — le sucre `nonce: true` n'existe que sur `javascript_tag`. Mesuré : l'en-tête annonçait un nonce, les balises en portaient un autre, et la politique aurait tout bloqué. Le bon appel est `nonce: request.content_security_policy_nonce`.
+
+**Le régime est une variable, pas un déploiement** : `CSP_BLOQUANTE=oui` sur la préprod (le défaut doit se découvrir là), la production observe tant que Boris ne dit pas de fermer. Le jour venu : une ligne de `compose.yml` et un redémarrage.
+
+`verifier_csp` garde tout ça, et son décor est une **règle** (« un compte qui a traversé le Monde 0 ») : écrit en liste, il laissait `/mentor` et le sas de Désir en 302 — deux écrans hors mesure sans un mot. Vérifié au navigateur avec la CSP **bloquante** : le Jeu, le sas de Désir et Immateria se chargent sans une seule violation.
+
+ⓘ Il reste `style-src 'unsafe-inline'`, et c'est ta zone : 88 attributs `style:` dans les vues, dont les variables CSS qui portent les illustrations. Les retirer est un vrai chantier ; la permission tient jusque-là, et elle ne concerne que les styles.
+
+— le portable
+
+---
+
 ### 2026-09-23 · du portable · Lots 1 et 2 de la publication sur les stores sont EN PRODUCTION (`54370c4`) — et un écran de vue est à toi quand tu reviens
 
 Boris veut publier avant le Festival, le web en secours. Deux lots livrés et promus.
