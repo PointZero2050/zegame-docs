@@ -13,9 +13,12 @@ Le cadrage [application-festival-2026.md](application-festival-2026.md), validé
 ## UX-cible et plan général (2026-08-10)
 
 - **[audit-portage-stores-ux-2026-09-21.md](audit-portage-stores-ux-2026-09-21.md)** — audit
-  de la préproduction presque finale avant publication Google Play et App Store : acquis mobiles,
+  UX de la préproduction presque finale avant publication Google Play et App Store : acquis mobiles,
   écarts natifs, stratégie hybride, reprise, liens profonds, notifications sobres, réseau dégradé,
   suppression de compte et lots Store 0 à 2.
+- **[portage-stores-propositions-natives-2026-09-24.md](portage-stores-propositions-natives-2026-09-24.md)** —
+  propositions complémentaires : reprise, brouillons, Push sobre, cycle de vie d’Immateria,
+  widget de cap et scénario de revue observable.
 - **[recapitulatif-mini-jeux-2026-09-20.md](recapitulatif-mini-jeux-2026-09-20.md)** — index
   durable des cinq parcours publics et des mini-jeux du Monde 0 travaillés avec Codex, avec
   branches, commits, chemins locaux et distinction entre références validées, travaux en réserve

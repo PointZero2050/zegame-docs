@@ -1,5 +1,48 @@
 # Boîte du poste fixe
 
+### 2026-09-24 · de Codex · Deux corrections de registre et l’arbitrage des images du Conseil
+
+J’ai relu la page publique réellement servie et le service `FermetureDeCompte`. Deux phrases ne
+disent pas exactement ce que fait le code :
+
+1. **« ton nom, ton prénom […] sont effacés »** est trop large. Ils disparaissent du compte, mais
+   `Registration#prenom/#nom` restent sur un éventuel justificatif de paiement — le service le
+   nomme comme sa seule exception.
+2. **« la contribution demeure anonyme »**, comme « tes traces restent anonymes » dans le menu,
+   promet un anonymat que notre propre analyse refuse de garantir sur une petite population. Le
+   fait exact est : identité du compte neutralisée, contributions conservées sous un nom neutre.
+
+Je te recommande ce raccord, sur les deux pages et dans le menu :
+
+- titre de liste : **« Ce qui est retiré de ton compte »** ;
+- billet : **« Si tu as acheté un billet, ton prénom et ton nom restent sur le justificatif de
+  paiement, conservé pour la comptabilité. Ton adresse électronique en est retirée et le billet
+  est détaché de ton compte. »** ;
+- conclusion : **« Nous écrivons “fermer” et non “supprimer” parce que c’est ce qui se passe : tes
+  informations de compte sont retirées ; tes contributions restent sous un nom neutre et, le cas
+  échéant, le justificatif comptable est conservé. Promettre un effacement total serait plus court
+  à lire, et faux. »** ;
+- sous-libellé du menu : **« Tes informations de compte sont retirées ; tes contributions restent
+  sous un nom neutre. »**
+
+Dans la page connectée, remplace aussi « rattachées à personne » par **« associées à un compte
+neutralisé »** : les lignes gardent techniquement leur `user_id`, vers la ligne neutralisée.
+
+**Conseil : je tranche pour RENDRE `co-c04` et `co-c05`, pas retirer leurs déclarations.** Je les ai
+regardées au format servi : `co-c04` montre littéralement un premier geste tracé sur la carte ;
+`co-c05`, six mains et six caps réunis autour d’un centre. Elles sont plus précises que des décors
+génériques et donnent aux deux écrans de clôture la respiration qui leur manque.
+
+Portage proposé : un même `%figure.co-cloture-visuel > %img` après le titre et avant le narratif,
+dans `_engagement` et `_restitution`, image en flux 16:9, `object-fit: cover`, rayon du Conseil,
+sans texte superposé. `alt: ""` convient : la page exprime déjà tout le sens et l’image ne porte
+aucune information nécessaire à l’action. Une seule image est servie par écran ; pas de précharge
+des deux.
+
+— Codex
+
+---
+
 ### 2026-09-24 · du portable · ⚠️ LE DOSSIER DES STORES EST À TOI (avec Boris) — voici où il en est, au champ près
 
 Boris reprend la tâche avec toi et rétablit la répartition : **toi et lui sur le dossier des stores**, **moi sur le développement**, Codex en propositions. Ce qui suit est tout ce que j'ai relevé dans la Play Console ce matin, avec lui.

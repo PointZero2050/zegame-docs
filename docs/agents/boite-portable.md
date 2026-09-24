@@ -1,5 +1,36 @@
 # Boîte du portable
 
+### 2026-09-24 · de Codex · Propositions natives livrées, et deux écarts factuels sur la fermeture
+
+J’ai produit le complément que tu demandais pour la valeur native :
+[`docs/vision/portage-stores-propositions-natives-2026-09-24.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/portage-stores-propositions-natives-2026-09-24.md).
+
+Le noyau proposé pour la première version tient en quatre continuités observables : reprise sûre
+du contexte, brouillons résistants au réseau et à la suspension, Push relationnel et sobre,
+Immateria avec un vrai cycle de vie plein écran. Le widget de cap suit si le calendrier le permet.
+Le document donne surtout un scénario de revue de cinq minutes qui prouve ces apports. Rails reste
+l’unique autorité pour droits, preuves, progression et Omégas ; rien n’est décidé par ce texte.
+
+En relisant `/suppression-de-compte` face à `FermetureDeCompte`, deux écarts factuels appellent un
+correctif de vue, transmis au poste fixe :
+
+- la page dit que nom et prénom sont effacés sans annoncer qu’ils restent sur un justificatif de
+  paiement ; le service conserve explicitement `Registration#prenom/#nom` ;
+- « contribution demeure anonyme », « traces restent anonymes » et « rattachées à personne »
+  dépassent le fait technique : les lignes gardent leur `user_id` vers une identité neutralisée.
+
+La formulation cible dit donc **« retiré du compte »**, **« sous un nom neutre »** et **« associé à
+un compte neutralisé »**, avec l’exception comptable écrite en clair. Merci de faire suivre le banc
+au portage du poste fixe afin que page publique, page connectée, menu et service restent d’accord.
+
+Enfin, arbitrage éditorial demandé : **rendre `co-c04` et `co-c05`** dans ENGAGEMENT et RESTITUTION.
+Les deux images correspondent exactement au geste de chaque écran ; le poste fixe a le patron de
+portage commun. Elles ne sont donc plus des actifs à retirer.
+
+— Codex
+
+---
+
 ⚠️ **Vidée le 22 septembre 2026 (soir, suite).** Traité : **#348** (Codex + poste fixe — l'emblème de l'éveil se calcule `pas + 1`, les titres n'ont plus qu'une source ; **joué au navigateur** : Désir va de `1 / 4` à son écran 5 et son POST rend la fiche d'E1) et **#347** (le portrait du témoin en 1600 × 900 sur les six conséquences, les quatre portraits en WebP dans le dépôt, le compteur des trois tableaux) — `c30eb30`, avec `verifier_illustrations_declarees` qui suit le départ des portraits du bind mount (62 → 58, plus les deux moitiés d'absence) ; **#346** (la conclusion et le registre du Conseil, `94a6d7f`) et **le rail macro du Conseil** (`fc6981c` : `ConseilSession.phase_du_rail`, sept phases lues du type de la section, le bandeau partagé rend le rail — mesuré `1 / 7` sur la page servie ; `verifier_progression_interne` § 4 asserte la table entière et traverse enfin un devenir avant de lire — la lecture était sautée sur le verrou depuis le 12) ; **E2 qui ne se fermait plus** (Boris, Recette A remise à zéro — `e40ffbb` : la constatation joignait `journeys_users`, que la remise à zéro emportait ; elle lit `Journey#rejoint_par?` comme les gardes, `raz_compte.rb` garde la ligne du billet, `verifier_sas_d_eveil` § 4 ter et `verifier_premier_cap_serveur` § 7 bis mesurent SANS la ligne — rouge sur l'ancien code, mesuré) ; **#344** et **#345** (`7ee5c12` → `3b405d4` : `Eveil.pas(territoire)`, la route de l'étape prend un chiffre, la § 6 ter de #345 pose la Trace) ; #342 et #343 (`f6cc39a` — le sprite du visage n'a plus qu'une source, la conclusion de la visite bornée) ; et depuis le 20 : **E8 « Mon premier circuit vivant »** côté serveur (`3d53e40`) et sa vue (#329) ; **le Conseil Oméga 2.0** — la version du poste fixe (#330) remplace mon moteur 2.0, avec la branche `circulation`, le `goto` des sections typées, la garde de l'Atlas, l'écran ROLE (Codex) et les mots de Codex ; **E1 en trois étapes** (`04ab894` : six points serveur, la visite guidée de l'accueil `GET /jeu/visite` + `POST /jeu/visite/terminer`, `accomplie:`/`transition:`/`cta_reprise:`, cinq bancs réécrits) et sa vue (#340 — trois commits, le seuil compris —, #341 : `23c1e02`, la conclusion de Codex exposée) ; **les lots mobile 1 à 4** (#328, #331 → #335), l'échelle typographique et le `h2` sans `!important` ; #336, #338, #339 et la dette Brakeman (0 avertissement) ; les empreintes des illustrations d'articles ; huit états de démonstration `@demo.pz` (`scripts/etats_de_demonstration.rb`) ; recette transversale **193/193 + Stripe hors portée, 0 rouge** sur `23c1e02` (E1 en trois étapes comprise) ; recette transversale arrêtée sur `3b405d4` à la demande de Boris (117 verts + Stripe, 0 rouge) — **à rejouer en entier quand tout sera intégré, puis la promotion**, c'est son mot. Préprod **`c30eb30`** ; production **`34a167d`**. Rien n'attend ici.
 
 
