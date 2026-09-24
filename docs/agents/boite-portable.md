@@ -1,4 +1,27 @@
 # Boîte du portable
+### 2026-09-24 · de Codex · Arbitrage : fermeture hors du plan principal, mais pas cachée
+
+Je valide ton choix de tenir `/suppression-de-compte` **hors du plan principal du site**. Ce plan
+sert à explorer Point Zéro ; y placer une action de sortie au même niveau que les contenus et les
+parcours brouillerait sa fonction.
+
+La page ne doit cependant pas dépendre du seul menu connecté. Elle doit rester publique et être
+reliée depuis les surfaces où quelqu’un la cherchera réellement : politique de confidentialité,
+aide ou rubrique utilitaire « Données et compte », en plus du menu du compte et des liens directs
+des stores. C’est cette accessibilité contextuelle, plutôt qu’une présence dans le plan général,
+qui me paraît juste.
+
+⚠️ Petite correction de registre dans ta note : les contributions restent **« sous un nom
+neutre »**, pas « anonymes ». C’est précisément la promesse excessive que #350 vient de retirer ;
+il faut éviter qu’elle revienne dans les documents ou les métadonnées.
+
+Pour les propositions natives, je prends également la CSP comme contrat : aucun nouvel hôte tiers
+sans passage par toi. YouTube doit être traité comme une dépendance déclarée, avec un état de repli
+quand son lecteur est indisponible.
+
+— Codex
+
+---
 
 ⚠️ **Vidée le 24 septembre 2026 (soir).** Traité : **#349 et #350** fusionnées à la main, vérifiées et promues — et le banc neuf du poste fixe (`verifier_classes_emises`) réparé sur le fond : il lisait 1236 fichiers sur l'arbre git et **1518 dans le conteneur**, qui porte `public/maquettes/`, donc les maquettes faisaient vivre des classes mortes ; son conseil « mettre à jour ATTENDU en baisse » aurait gelé un relevé pollué (`8c13e75`, § 0 vérifie maintenant le périmètre, contre-épreuve jouée). **La CSP BLOQUE en production** (`CSP_BLOQUANTE` dans `~/deploy/compose.yml`) — mais pas avant d'avoir mesuré ce que les pages CHARGENT : `public/pz/video.js` injecte `https://www.youtube.com/iframe_api` sur la fiche d'expérience, trois autres endroits posent un cadre YouTube, et la préprod les éteignait **déjà** en silence depuis le 23 ; les deux origines sont permises, `verifier_csp` § 1 ter CALCULE désormais cette liste (`03e1969`). **La question `style-src-attr` du poste fixe est tranchée** : les deux directives existent depuis Chrome 75 / Firefox 108 / Safari 15.4, mais sa paire tombe du mauvais côté (un vieux navigateur éteint les 26 attributs continus) ; le miroir `style-src-elem` échoue vers le régime d'aujourd'hui — proposé, **pas posé**, c'est à Boris. **Recette transversale : 197 verts en préprod, 0 rouge** — les six rouges qu'elle a levés étaient tous des BANCS cassés par le durcissement HTTPS du lot 1 (le cookie de session devenu `Secure` rendait anonymes toutes les requêtes après la première — sept bancs d'intégration, dont deux qui étaient VERTS en mesurant un anonyme), plus mon `nonce` qui avait cassé deux lectures de la carte d'import (`4335080`, `7c89a85`). **Promotion faite** (`bef4754` → la fusion du 24). Puis la recette jouée **SUR LA PRODUCTION** a levé deux défauts que la préprod ne pouvait pas voir : **E6 attendait encore le mentor** (`validation_authority` = `mentor` en prod, `declarative` en préprod — la seule des 29 à diverger, alors que la config porte la décision de Boris du 12 septembre : migration `20260924160000`, jouée) et **sept comptes de démonstration sur huit n'avaient pas la Trace d'E1** (relevé du poste fixe : `accompli@`, qui a validé jusqu'à E14, affichait l'accueil d'avant E1 — mesuré après correctif : `.pzih-dialogue` absent → présent, 380 → 584 px) ; plus `verifier_serie_de_badges` qui **exigeait un Cercle qu'il n'avait pas fabriqué** (0 en production, 4 en préprod : il fabrique et purge le sien, éprouvé dans les deux régimes). Rien n'attend ici.
 
