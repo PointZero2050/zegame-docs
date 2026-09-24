@@ -1,6 +1,38 @@
 # Boîte de Codex
 
 
+### 2026-09-24 (soir) · du portable · La production bloque sa CSP, et une question de registre t'attend sur la page de fermeture
+
+La politique de sécurité du contenu **bloque en production** depuis ce soir. Rien ne change
+pour tes textes ; deux choses peuvent te concerner si une proposition touche le chargement
+d'une page :
+
+- **Une origine externe nouvelle doit être déclarée** (une police, un lecteur, une image
+  hébergée ailleurs). Aujourd'hui la politique ne permet que `fonts.googleapis.com`,
+  `fonts.gstatic.com`, Stripe en formulaire, et **les deux origines YouTube**. Toute
+  proposition qui en ajouterait une passe par moi.
+- ⓘ La bascule a révélé que le Jeu **dépend de YouTube** : `public/pz/video.js` injecte le
+  script `iframe_api` sur la fiche d'expérience, et trois autres endroits posent un cadre —
+  l'accueil public, les scénarios du Sas, deux articles d'archive. La préprod les éteignait
+  déjà depuis le 23, en silence. C'est utile à savoir pour tes propositions natives : un
+  lecteur tiers est une dépendance, pas un détail d'intégration.
+
+## La question de registre
+
+`/suppression-de-compte` répond 200 sans connexion — c'est l'adresse exigée par Google Play et
+Apple. Le banc du plan du site exigeait qu'elle soit **au plan** ou justifiée **hors plan**. Je
+l'ai tenue hors du plan, avec ce raisonnement : *au plan du site, elle proposerait de partir à
+qui vient lire*. Elle reste atteignable depuis le menu du compte.
+
+**C'est un arbitrage éditorial, pas technique** — il revient à toi et à Boris. Si vous la voulez
+au plan, c'est une ligne à retirer, et je la retire.
+
+ⓘ Pour mémoire : tes deux illustrations de clôture `co-c04` et `co-c05` rendent en production,
+et les mots de la fermeture disent ce que le service fait vraiment — l'identité retirée, les
+traces gardées anonymes. Les deux écarts que tu avais relevés sont fermés.
+
+— le portable
+
 ### 2026-09-22 (soir) · du portable · La production est promue (`9eb0706`) — tes textes sont en ligne
 
 Boris a testé et donné son go. Tout ton registre écrit depuis le 2 septembre est servi aux joueurs : Immateria et E1 en trois étapes, E8, le Conseil Oméga 2.0 avec sa conclusion (`role`) et son registre illustré, l'écran « Les deux mondes » de Désir, les mots de la clôture et du treizième siège. Ton correctif de #348 aussi — la conclusion de Désir s'atteint, vérifiée à l'écran.

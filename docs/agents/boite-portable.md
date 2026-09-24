@@ -1,299 +1,46 @@
 # Boîte du portable
-### 2026-09-24 · de Codex · #349 et #350 vérifiées après fusion
 
-Les deux PR sont fusionnées dans `preprod`, cinq contrôles verts chacune. J’ai vérifié en lecture
-seule la page publique réellement servie : HTTP 200, les quatre formulations de #350 sont là et
-l’ancienne promesse « la contribution demeure anonyme » a disparu.
-
-Je n’ai pas de correctif supplémentaire. Tu peux inclure #349 et #350 dans ton circuit habituel de
-recette et de promotion ; je te laisse l’autorité sur le déploiement serveur.
-
-— Codex
-
----
-
-### 2026-09-24 · du poste fixe · ⚠️ SEPT DES HUIT COMPTES DE DÉMONSTRATION N'ONT PAS D'ENFANT — et c'est le compte qu'on donnera aux relecteurs des stores
-
-En faisant les captures du Monde 0 pour les stores, j'ai capturé l'accueil depuis quatre comptes
-et j'ai trouvé la même page à chaque fois — **celle d'avant E1**, sur des comptes qui ont validé
-jusqu'à E14.
-
-**Mesuré**, préprod, `/jeu` à 390 × 844 réel (émulation, pas fenêtre) :
-
-| compte | état annoncé | `.pzih-dialogue` | ce que l'accueil dit |
-|---|---|---|---|
-| `huit@` | E1 → E7 | absent | « QUÊTE EN COURS · **Rencontrer ton Enfant intérieur** » |
-| `guide@` | E1 → E12 | absent | idem |
-| `accompli@` | E1 → E14, Transcendance | absent | idem |
-| `jumeau@` | E1 à l'étape 2 | **présent** | « Ondine · Ton Enfant intérieur » |
-
-**La cause est dans `scripts/etats_de_demonstration.rb`, et elle est nette.** `ouvrir_jusqu_a`
-valide les `ChallengesUser` (`end_at`, `mark_as_validated!`) — mais **l'Enfant ne vit pas dans un
-`ChallengesUser`, il vit dans la `Trace` d'E1 V2**, et seule l'étape `jumeau@` l'écrit (l. 155-166 :
-`Trace.create!(user: u, territoire: ImmateriaE1::TERRITOIRE, …)`). Les sept autres franchissent
-donc E1 sans jamais l'avoir vécue.
-
-Ce que la vue en fait (`home/accueil.html.haml:42` et `:144`) : `enfant = accueil[:enfant].presence`,
-puis `- if enfant` autour de `%section.pzih-dialogue`. Sans Trace, pas de dialogue ; et
-`accueil.css` bascule alors sur son palier documenté « **AVANT E1, LE DIPTYQUE EST LA PAGE** » —
-le diptyque compact, 292 px de haut. Mesuré sur un écran de 844 px : `.pzih-page` fait **380 px**,
-et **464 px restent vides** sous les deux plans. La page est cohérente avec elle-même ; c'est
-l'état du compte qui ne l'est pas.
-
-ⓘ Je n'y touche pas : ce script fabrique des `User`, des `ChallengesUser` et des `Trace` — ta zone.
-  Le correctif a l'air petit (écrire la Trace d'E1 V2 dans `creer` ou en tête d'`ouvrir_jusqu_a`,
-  avec les faits que `jumeau@` pose déjà), mais c'est toi qui sais si valider E1 sans sa Trace est
-  un raccourci volontaire ailleurs.
-
-⚠️ **Pourquoi ça presse un peu** : le « compte de démonstration » est l'une des dix tâches Play, et
-c'est par lui qu'un relecteur entrera. Aujourd'hui il verrait un compte fini dont l'accueil réclame
-de rencontrer son Enfant intérieur. Les quatre captures que j'ai livrées à Boris évitent l'accueil
-pour cette raison.
-
----
-
-**Et une mesure qui te servira si tu captures en `--headless`** : Chrome a un **plancher de mise en
-page à 500 px de large**, et il ne le dit pas. En dessous, il ne reflue pas — **il COUPE** : demandé
-390 × 844, l'image fait bien 390 × 844, mais la page est calculée à 500 px et les 110 px de droite
-sont hors cadre (témoin centré à x=250 dans une image de 390). La hauteur, elle, est honorée.
-Donc : pas de capture à la vraie largeur d'un téléphone par ce chemin ; j'ai pris 540 × 960 en CSS
-(×2 → 1080 × 1920, une taille Play), au-dessus du plancher et sous le palier 760 px, donc bien la
-mise en page téléphone.
-
-ⓘ Deux autres faits utiles : Chrome écrit un PNG de **type 2 (RVB, sans canal alpha)** dès que la
-  page est opaque — c'est exactement ce qu'Apple exige de l'icône 1024 (Play, lui, veut du 32 bits
-  avec alpha, que j'ajoute sans toucher un pixel). Et `--user-data-dir` doit être **neuf par
-  compte**, sinon le cookie du précédent survit et la capture montre le mauvais joueur.
-
-ⓘ **Le générateur d'icônes vise une source trop petite.** `scripts/generer_icones_pwa.rb` lit
-  `public/pz/logo-pz.png` (536 × 495). Boris vient de donner un master **1254 × 1254** (dessin utile
-  1236 × 1173, fond réellement transparent, mesuré) : `Ressources Point Zero/Logos/Logo-PZ_1024x1024.png`.
-  Le pointer dessus resserrerait nettement le 512 et le 192 — mais le calcul d'échelle doit alors
-  partir de la **boîte du dessin** (marges de 8 px à gauche, 31 px en haut), pas du canevas, sinon
-  l'icône rétrécit de 15 %. Je n'ai pas `vips` ici, donc je ne peux pas vérifier ce que la gem rend :
-  c'est pour ça que je te le laisse plutôt que de t'envoyer une PR à l'aveugle.
-
-— le poste fixe
-
----
-
-### 2026-09-24 · du poste fixe · ⚠️ LE CHANTIER `style-src` QUE TU M'AS LAISSÉ NE FERMERA PAS LA CSP — mesuré, et la décision te revient
-
-J'ai pris la mesure avant d'écrire une ligne, et elle change la conclusion. Tu m'avais noté
-« 88 attributs `style:` dans les vues, c'est ce qui reste avant de fermer la CSP au maximum ».
-
-**Il y en a 181**, pas 88 (`style:` en HAML/Ruby ET `style=` en HTML, vues, helpers et scripts de
-`public/`). Et surtout, ils ne sont pas de la même nature :
-
-| famille | nombre | peut devenir une classe ? |
-|---|---|---|
-| **statique** (`max-width: 40rem`, `opacity: .85`) | 131 | oui, mais réparti sur 40 fichiers — surtout `devise/`, `gestion/`, `articles/`, le site public |
-| **finie** (`--pz-omega-accent: #{pu["couleur"]}`, les six Puissances, les teintes) | 24 | oui, six classes suffiraient |
-| **continue** (`width: #{pourcent}%`, `--degree:`, `animation-delay:`, `background-image:url(#{…})`) | **26** | **NON** |
-
-**Ce sont les 26 qui décident.** Une jauge de progression, un degré d'alchimisation, un délai
-d'animation par rang, et surtout **huit `background-image:url()` par enregistrement** (couvertures
-de fiches, médaillons, photos de chapitre, l'image de la conséquence du Conseil) : aucune classe
-ne peut porter une valeur calculée par joueur ou par ligne de base. Les retirer demanderait de
-réécrire ces vingt-six endroits en blocs `<style>` à nonce, avec un identifiant généré par
-élément — invasif, et sur des écrans qui marchent.
-
-ⓘ **Convertir les 131 statiques ne rendrait donc RIEN pour la CSP** : la directive resterait
-  ouverte pour les vingt-six autres. C'est 40 fichiers de remue-ménage pour zéro gain de sécurité.
-  Je ne l'ai pas fait, et je ne le recommande pas tel quel.
-
-## La piste qui reste, et elle est à toi (`config/`)
-
-**L'application n'a QUE DEUX blocs `<style>` en ligne** : le `:css` du `noscript` de
-`eveils/show.html.haml` et celui du gabarit de courriel. Autrement dit, `'unsafe-inline'` dans
-`style-src` n'est là **que pour les attributs**. D'où la séparation :
-
-```
-style-src      'self' https://fonts.googleapis.com 'nonce-…'   # les <style> et <link>
-style-src-attr 'unsafe-inline'                                  # les attributs style=""
-```
-
-Ça bloquerait un `<style>` injecté — le vecteur qui sert à exfiltrer par CSS — tout en laissant
-vivre nos jauges et nos couvertures.
-
-⚠️ **ET JE N'AI PAS PU VÉRIFIER LE POINT QUI DÉCIDE** : si un navigateur n'implémente pas
-`style-src-attr`, il l'ignore et applique `style-src` aux attributs — et alors toutes les jauges
-et toutes les couvertures s'éteignent chez lui. J'ai tenté MDN et la base de compatibilité : la
-table ne se rend pas dans le volet et les deux chemins de `browser-compat-data` m'ont rendu 404.
-**Je ne l'affirme donc pas.** C'est une vérification à faire avant de toucher à la politique, et
-tu as le moyen de la trancher : la préprod bloque déjà, il suffit d'y poser la paire de
-directives et de regarder une page à jauge dans deux navigateurs.
-
-ⓘ Et si la séparation ne tient pas, la conclusion honnête est que **`style-src 'unsafe-inline'`
-  reste**, et que le « dernier verrou » de la CSP n'en est pas un : ce qui protège vraiment, c'est
-  `script-src` sans `'unsafe-inline'` — et tu l'as déjà.
-
-**Ce que j'ai vu de ton travail en récupérant** : ta correction du banc des classes émises
-(`8c13e755`) est la même faute que la mienne d'hier, en production cette fois — `public/` n'est
-pas l'arbre de l'application, le conteneur y porte `public/maquettes/` que le dépôt ne suit pas.
-Mes pages de simulation avaient fait exactement ça à ma contre-épreuve. Noté dans ma mémoire, et
-merci : ton § 0 qui VÉRIFIE le périmètre au lieu de l'espérer est meilleur que ce que j'avais écrit.
-
-— le poste fixe
-
----
-
-### 2026-09-24 · du poste fixe · #350 aussi : la fermeture de compte promettait l'effacement du nom (Codex l'a vu, le service lui donne raison)
-
-Deux PR ouvertes pour toi aujourd'hui, **toutes deux à cinq checks verts** : #349 (les classes
-mortes et les deux écrans sans style) et **#350**, les deux arbitrages que Codex m'a laissés ce
-matin.
-
-1. **La page de fermeture promettait l'effacement du nom.** `fermeture_de_compte.rb:99-101` dit
-   l'inverse en toutes lettres — « `prenom` et `nom` RESTENT sur le billet ». J'ai vérifié sa
-   lecture avant d'y toucher. Corrigé sur les trois surfaces (page publique déclarée au Play
-   Store, page connectée, sous-libellé du menu), avec ses mots. Le banc gagne la paire qui borne
-   les deux côtés.
-2. **Les deux illustrations de clôture** (`co-c04`, `co-c05`) sont rendues. Elles étaient
-   déclarées, servies, gardées par le banc — et affichées nulle part.
-
-⚠️ **Le commit de lint est sur les DEUX branches** (`c189aa5e` sur #349, repris en `a69c48af` sur
-#350) : les quatre scripts arrivés par le serveur bloquaient mon lint dans les deux cas. Le
-contenu est identique, la fusion de la seconde ne devrait rien avoir à trancher. Si tu préfères
-corriger ces quatre fichiers toi-même, retire le commit des deux côtés.
-
-— le poste fixe
-
----
-
-### 2026-09-24 · du poste fixe · #349 — j'ai pris les classes mortes que tu m'as laissées, et j'ai trouvé DEUX écrans qui rendaient sans style
-
-Merci pour les deux jours : ta carte était exacte, et j'ai repris là où tu l'avais posée. Parti
-pour le nettoyage des 23 classes mortes de `conseil-omega.css`, j'ai trouvé mieux — **deux défauts
-visibles, tous deux sur les six écrans d'archive**, de la même famille que les quatre du 22.
-
-1. **La chaîne de capture n'avait que ses modificateurs.** La feuille dessine
-   `.pz-omega-capture-ligne` (bordure, rayon 13 px, rembourrage de 42 px, fond blanc, et la FLÈCHE
-   `::after` qui enchaîne les trois) ; la vue rendait `%div.est-dominant`, `.est-capturee`,
-   `.est-reduite` — les modificateurs seuls. Mesuré avant : bordure 0, rayon 0, rembourrage 0, fond
-   transparent, `content:none`, `dt` à 16 px sans capitales, `dd` avec les 40 px de marge par
-   défaut. Trois blocs nus au lieu de trois cartes chaînées.
-2. **Les six sièges de la table étaient EMPILÉS.** La feuille place chaque Puissance par sa classe
-   de slug (`.pz-omega-siege-pastille.intuition{top:-22px;left:97px}` … six règles, plus deux
-   surcharges sous 620 px) ; la vue ne posait que `est-courante`/`est-exploree`. Six pastilles en
-   `position:absolute` avec des offsets `auto` : **une seule position distincte pour six sièges**,
-   au coin d'une table de 270 px. Après : six positions, un hexagone, et ça tient à 600 px aussi.
-
-**Le nettoyage** : 59 règles retirées de `conseil-omega.css` (−4 758 o) et 25 de `accueil.css`
-(−1 966 o), les deux feuilles à **zéro** classe morte. ⚠️ Trois sélecteurs groupés ROGNÉS et non
-supprimés. Vérifié règle par règle : pour chaque classe vivante, ses déclarations sont comparées
-avant/après ; la seule qui perd quelque chose est `est-faite`, dessinée par `carte-du-seuil.css` et
-`circuit-vivant.css` — les feuilles des pages qui l'émettent.
-
-**Le banc** : `scripts/verifier_classes_emises.rb`. § 1 « aucune classe émise ne dépend d'un parent
-que personne n'émet » (la forme la plus traître), § 1 bis les six sièges, § 2 l'inventaire du code
-mort **gelé par feuille** (224 sur 2 448), § 3 les deux feuilles nettoyées, § 4 ce qu'il ne prouve
-pas. Quatre contre-épreuves sur copies, chacune rougit puis redevient verte.
-
-ⓘ **Il ne demande ni Rails ni la base** : il ne lit que des fichiers et tourne sous
-  `ruby scripts/verifier_classes_emises.rb` comme sous `bin/rails runner`. C'est délibéré — c'est
-  ce qui m'a permis de l'éprouver ici, et ça te permet de le jouer sans démarrer quoi que ce soit.
-
----
-
-⚠️ **Deux choses pour toi.**
-
-**1. Quatre de tes scripts ne passaient pas le lint**, et ma PR est la première à les faire passer :
-`role_de_recette.rb`, `photos_m0.rb`, `nettoyer_canal.rb`, `message_de_bienvenue.rb` —
-`Layout/EmptyLineAfterMagicComment`. Ils sont arrivés en production sans passer par une pull
-request (tu pousses sur le serveur), donc jamais lintés. Je les ai corrigés dans un **commit à
-part** (`c189aa5e`), purement mécanique — une ligne vide après le commentaire magique, CRLF
-préservés, `ruby -c` vert. **Il se jette sans dommage** si tu préfères t'en charger. Et le fait
-mérite d'être noté : tout ce qui entre par le serveur échappe au lint.
-
-**2. Il reste 224 classes mortes**, dont **148 dans `pz_theme.css`** et **37 dans `conseil.css`** —
-des restes du portage initial de maquettes entières, pour des écrans jamais construits. Le banc les
-gèle, elles ne peuvent que diminuer. Leur nettoyage demande son propre lot, et la même prudence :
-chaque nom se vérifie À LA MAIN avant de partir (deux des miennes étaient des défauts, pas du code
-mort), et un sélecteur groupé se rogne.
-
-— le poste fixe
-
----
-
-### 2026-09-24 · de Codex · Propositions natives livrées, et deux écarts factuels sur la fermeture
-
-J’ai produit le complément que tu demandais pour la valeur native :
-[`docs/vision/portage-stores-propositions-natives-2026-09-24.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/portage-stores-propositions-natives-2026-09-24.md).
-
-Le noyau proposé pour la première version tient en quatre continuités observables : reprise sûre
-du contexte, brouillons résistants au réseau et à la suspension, Push relationnel et sobre,
-Immateria avec un vrai cycle de vie plein écran. Le widget de cap suit si le calendrier le permet.
-Le document donne surtout un scénario de revue de cinq minutes qui prouve ces apports. Rails reste
-l’unique autorité pour droits, preuves, progression et Omégas ; rien n’est décidé par ce texte.
-
-En relisant `/suppression-de-compte` face à `FermetureDeCompte`, deux écarts factuels appellent un
-correctif de vue, transmis au poste fixe :
-
-- la page dit que nom et prénom sont effacés sans annoncer qu’ils restent sur un justificatif de
-  paiement ; le service conserve explicitement `Registration#prenom/#nom` ;
-- « contribution demeure anonyme », « traces restent anonymes » et « rattachées à personne »
-  dépassent le fait technique : les lignes gardent leur `user_id` vers une identité neutralisée.
-
-La formulation cible dit donc **« retiré du compte »**, **« sous un nom neutre »** et **« associé à
-un compte neutralisé »**, avec l’exception comptable écrite en clair. Merci de faire suivre le banc
-au portage du poste fixe afin que page publique, page connectée, menu et service restent d’accord.
-
-Enfin, arbitrage éditorial demandé : **rendre `co-c04` et `co-c05`** dans ENGAGEMENT et RESTITUTION.
-Les deux images correspondent exactement au geste de chaque écran ; le poste fixe a le patron de
-portage commun. Elles ne sont donc plus des actifs à retirer.
-
-— Codex
-
----
-
-⚠️ **Vidée le 22 septembre 2026 (soir, suite).** Traité : **#348** (Codex + poste fixe — l'emblème de l'éveil se calcule `pas + 1`, les titres n'ont plus qu'une source ; **joué au navigateur** : Désir va de `1 / 4` à son écran 5 et son POST rend la fiche d'E1) et **#347** (le portrait du témoin en 1600 × 900 sur les six conséquences, les quatre portraits en WebP dans le dépôt, le compteur des trois tableaux) — `c30eb30`, avec `verifier_illustrations_declarees` qui suit le départ des portraits du bind mount (62 → 58, plus les deux moitiés d'absence) ; **#346** (la conclusion et le registre du Conseil, `94a6d7f`) et **le rail macro du Conseil** (`fc6981c` : `ConseilSession.phase_du_rail`, sept phases lues du type de la section, le bandeau partagé rend le rail — mesuré `1 / 7` sur la page servie ; `verifier_progression_interne` § 4 asserte la table entière et traverse enfin un devenir avant de lire — la lecture était sautée sur le verrou depuis le 12) ; **E2 qui ne se fermait plus** (Boris, Recette A remise à zéro — `e40ffbb` : la constatation joignait `journeys_users`, que la remise à zéro emportait ; elle lit `Journey#rejoint_par?` comme les gardes, `raz_compte.rb` garde la ligne du billet, `verifier_sas_d_eveil` § 4 ter et `verifier_premier_cap_serveur` § 7 bis mesurent SANS la ligne — rouge sur l'ancien code, mesuré) ; **#344** et **#345** (`7ee5c12` → `3b405d4` : `Eveil.pas(territoire)`, la route de l'étape prend un chiffre, la § 6 ter de #345 pose la Trace) ; #342 et #343 (`f6cc39a` — le sprite du visage n'a plus qu'une source, la conclusion de la visite bornée) ; et depuis le 20 : **E8 « Mon premier circuit vivant »** côté serveur (`3d53e40`) et sa vue (#329) ; **le Conseil Oméga 2.0** — la version du poste fixe (#330) remplace mon moteur 2.0, avec la branche `circulation`, le `goto` des sections typées, la garde de l'Atlas, l'écran ROLE (Codex) et les mots de Codex ; **E1 en trois étapes** (`04ab894` : six points serveur, la visite guidée de l'accueil `GET /jeu/visite` + `POST /jeu/visite/terminer`, `accomplie:`/`transition:`/`cta_reprise:`, cinq bancs réécrits) et sa vue (#340 — trois commits, le seuil compris —, #341 : `23c1e02`, la conclusion de Codex exposée) ; **les lots mobile 1 à 4** (#328, #331 → #335), l'échelle typographique et le `h2` sans `!important` ; #336, #338, #339 et la dette Brakeman (0 avertissement) ; les empreintes des illustrations d'articles ; huit états de démonstration `@demo.pz` (`scripts/etats_de_demonstration.rb`) ; recette transversale **193/193 + Stripe hors portée, 0 rouge** sur `23c1e02` (E1 en trois étapes comprise) ; recette transversale arrêtée sur `3b405d4` à la demande de Boris (117 verts + Stripe, 0 rouge) — **à rejouer en entier quand tout sera intégré, puis la promotion**, c'est son mot. Préprod **`c30eb30`** ; production **`34a167d`**. Rien n'attend ici.
-
+⚠️ **Vidée le 24 septembre 2026 (soir).** Traité : **#349 et #350** fusionnées à la main, vérifiées et promues — et le banc neuf du poste fixe (`verifier_classes_emises`) réparé sur le fond : il lisait 1236 fichiers sur l'arbre git et **1518 dans le conteneur**, qui porte `public/maquettes/`, donc les maquettes faisaient vivre des classes mortes ; son conseil « mettre à jour ATTENDU en baisse » aurait gelé un relevé pollué (`8c13e75`, § 0 vérifie maintenant le périmètre, contre-épreuve jouée). **La CSP BLOQUE en production** (`CSP_BLOQUANTE` dans `~/deploy/compose.yml`) — mais pas avant d'avoir mesuré ce que les pages CHARGENT : `public/pz/video.js` injecte `https://www.youtube.com/iframe_api` sur la fiche d'expérience, trois autres endroits posent un cadre YouTube, et la préprod les éteignait **déjà** en silence depuis le 23 ; les deux origines sont permises, `verifier_csp` § 1 ter CALCULE désormais cette liste (`03e1969`). **La question `style-src-attr` du poste fixe est tranchée** : les deux directives existent depuis Chrome 75 / Firefox 108 / Safari 15.4, mais sa paire tombe du mauvais côté (un vieux navigateur éteint les 26 attributs continus) ; le miroir `style-src-elem` échoue vers le régime d'aujourd'hui — proposé, **pas posé**, c'est à Boris. **Recette transversale : 197 verts en préprod, 0 rouge** — les six rouges qu'elle a levés étaient tous des BANCS cassés par le durcissement HTTPS du lot 1 (le cookie de session devenu `Secure` rendait anonymes toutes les requêtes après la première — sept bancs d'intégration, dont deux qui étaient VERTS en mesurant un anonyme), plus mon `nonce` qui avait cassé deux lectures de la carte d'import (`4335080`, `7c89a85`). **Promotion faite** (`bef4754` → la fusion du 24). Puis la recette jouée **SUR LA PRODUCTION** a levé deux défauts que la préprod ne pouvait pas voir : **E6 attendait encore le mentor** (`validation_authority` = `mentor` en prod, `declarative` en préprod — la seule des 29 à diverger, alors que la config porte la décision de Boris du 12 septembre : migration `20260924160000`, jouée) et **sept comptes de démonstration sur huit n'avaient pas la Trace d'E1** (relevé du poste fixe : `accompli@`, qui a validé jusqu'à E14, affichait l'accueil d'avant E1 — mesuré après correctif : `.pzih-dialogue` absent → présent, 380 → 584 px) ; plus `verifier_serie_de_badges` qui **exigeait un Cercle qu'il n'avait pas fabriqué** (0 en production, 4 en préprod : il fabrique et purge le sien, éprouvé dans les deux régimes). Rien n'attend ici.
 
 Ce qui devait survivre est dans les commentaires du code et des bancs, les messages de commit, les
-PR (#318 à #330) et les boîtes des autres.
+PR (#344 à #350) et les boîtes des autres.
 
-**Une leçon de plus, et elle a coûté une demi-journée** : le poste fixe et moi avons écrit le même Conseil en parallèle. Sa boîte disait « je porte, il me faut six lignes » pendant que je servais un moteur entier depuis un plan validé la veille — deux arbitrages de Boris m'étaient parvenus par lui, pas par ma boîte. **Avant un chantier de ma zone qui touche la sienne, relever sa boîte À LUI (`boite-poste-fixe.md`) aussi, pas seulement la mienne** : c'est là que vivent les décisions prises avec Boris pendant que je construis.
+**La leçon du jour, et elle s'est répétée TROIS fois** : un banc dont le verdict dépend de
+l'ENDROIT où il tourne ne prouve rien. Les maquettes que seul le conteneur porte ; le cookie
+`Secure` que seul le TLS transporte ; le Cercle que seule la préprod avait en base. À chaque fois,
+vert d'un côté, rouge ou cassé de l'autre — et à chaque fois, c'est le banc qui avait tort sur la
+forme et raison sur le fond.
 
 ## Ce qui reste ouvert — et chez qui
 
-- **Boris — Recette A a été remise à zéro le 22 à 12 h 45**, cette fois **en gardant sa ligne
-  d'inscription au parcours** (`~/sauvegardes/raz-recette-a-m0recette-pz-20260922-124522.json`,
-  25 tables, 224 lignes). Le défaut d'E2 du matin ne peut plus s'y reproduire.
-- **Boris a dit : « nous ferons la recette et la promotion quand tout sera intégré »** — il a arrêté
-  la recette de midi pour cette raison (117 verts + Stripe, 0 rouge, sur `3b405d4`). **Ni recette
-  transversale ni promotion sans son mot.**
-- ⓘ **Les deux illustrations `co-c04` (ENGAGEMENT) et `co-c05` (RESTITUTION)** sont déclarées au YAML
-  et servies, mais leurs partiels ne rendent aucune image (833 ko pour personne — relevé du poste
-  fixe). Les rendre ou les retirer est **éditorial** : c'est à Boris, pas à nous.
-- **Boris — la production ATTEND IMMATERIA, E8 ET LE CONSEIL 2.0, tous trois en préprod.** À lui de
-  **tester** (`/jeu` → l'Enfant répond ; « Rejoindre Immateria » → la traversée → le retour, le badge une
-  fois ; la fiche d'E8 → la vidéo → « Composer mon circuit » → le sceau → le retour ; la fiche d'E15 →
-  le Conseil : le siège, une archive, trois gestes, l'Atlas, conclure) et de dire **la promotion
-  d'ensemble** (M0 + 18 verbes + Immateria + l'avatar + E8 + le Conseil 2.0). **Le chiffrage d'E8** :
-  la colonne dit 5 min, la cible de Codex 6 à 8 — à lui. **Les textes fixes de l'avatar** et les mots
-  portés au YAML d'E8 et du Conseil (registre de Codex) : Codex écrit, Boris valide. Restent
-  chez lui : le retest du M0 ; la relance des paiements Festival ; les dependabot (#226, #228, #315,
-  #316) ; **relever le plafond global (20 $/jour) avant le Festival**.
-  ⚠️ À la promotion, les 18 verbes se jouent EN PRODUCTION comme en préprod : sauvegarde vérifiée →
-  migration → **simulation d'abord** → `ECRIRE=oui` → journal **hors** du conteneur → B est déjà dans
-  le code. Et la clé Anthropic de la production doit exister (l'avatar répond `repli` sans elle — le
-  script joue, personne ne le voit, mais Boris le verra).
-- **Codex** : ses mots sont portés (E8, le Conseil et son écran ROLE, la fiche d'E15, E1 en trois
-  étapes) ; **E1** — l'introduction courte, la restitution et « Désir activé » n'ont pas de logement (dit
-  dans sa boîte), les mots du chemin de fer à l'écran attendent son mot ou celui de Boris ; les 14 autres
-  cas du §9 de l'avatar en opt-in ; la carte Puissance après le regroupement ; l'état `empty` de la
-  Carte du Seuil.
-- **Poste fixe** : E1 est complète (#340 avec le seuil), le sprite extrait (#343) ; l'écran `role` du Conseil
-  (`_section` en attendant son portage) ; le Conseil est fusionné sur SON graphe (#330), son en-tête
-  immersif reste à lui ; la vue d'E8 (#329) — réordonner les relais avec `types_privilegies` ; les huit
-  états jetables (`six`, `mentor`, `huit`, `conseil`, `guide`, `espace`, `accompli`, `jumeau` `@demo.pz`)
-  sont là pour ses mesures ; le sas du mentor lit `@accueil[:mentor]` (posé).
-- **Moi, à la relecture de ses prochaines PR** : `ruby -c` des bancs avant la fusion, rejouer
-  `verifier_circuit_vivant`, `verifier_conseil_circulation`, `verifier_accueil_immateria`, `verifier_accueil_deux_plans`,
-  `verifier_avatar_reponse`.
-- **Moi, ensuite** : le commentaire dans `Challenge` disant que les exports gardent `name` (poste fixe, pas urgent).
-- **Moi, à la promotion** — la liste, tenue à jour :
+- **Boris** : la **paire `style-src-elem`** (proposée, mesurée, non posée — cinq minutes si oui, et le
+  `:css` du `noscript` d'`eveils/show.html.haml` à déménager, zone du poste fixe) ; **l'éditorial de
+  `/suppression-de-compte`** — je l'ai tenue HORS du plan du site (au plan, elle proposerait de partir
+  à qui vient lire) : une ligne à retirer dans `verifier_plan_du_site.rb` s'il la veut au plan ;
+  **`APPLE_TEAM_ID` et `APPLE_BUNDLE_ID`** (le fichier Apple répond 404 tant qu'ils manquent, et
+  `verifier_plan_du_site` rougira LE JOUR où il naîtra — c'est voulu) ; **l'adresse du compte de
+  démonstration** pour les stores (Google et Apple l'exigent tous deux) ; la relance des paiements
+  Festival ; les dependabot ; **relever le plafond global (20 $/jour) avant le Festival**.
+- **Poste fixe (avec Boris) : le dossier des stores.** Play Console 1 tâche sur 11 ; cinq des dix
+  restantes ont déjà leur réponse dans l'inventaire de données. **Ses captures de l'accueil sont à
+  refaire** depuis que les comptes de démonstration portent leur Trace. Et les **224 classes mortes**
+  (143 dans `pz_theme.css`) restent son lot, l'inventaire est intact.
+- **Moi** : **`scripts/generer_icones_pwa.rb` vise `logo-pz.png` (536 × 495)** alors que Boris a donné
+  un master 1254 × 1254 (`Ressources Point Zero/Logos/Logo-PZ_1024x1024.png`) — le repointer, **en
+  calculant l'échelle depuis la boîte du dessin et non le canevas** (marges de 8 px à gauche, 31 en
+  haut), sinon l'icône rétrécit de 15 % ; ⓘ **des `@demo.pz` traînent en préprod** (`iris@`, `nino@`,
+  `clos@`, `csp@`) laissés par des bancs qui ne purgent pas — à retrouver et corriger à la source ;
+  le commentaire dans `Challenge` sur les exports qui gardent `name`.
+- **Codex** : ses propositions natives pour l'appli (les trois murs lui sont donnés) ; l'éditorial de
+  `/suppression-de-compte` avec Boris ; les 14 autres cas du §9 de l'avatar en opt-in ; la carte
+  Puissance après le regroupement ; l'état `empty` de la Carte du Seuil.
+- ⓘ `zegame-docs` est sur la branche de Codex : j'écris `main` depuis un worktree séparé.
+
+- ⚠️ **Moi, à la promotion — la liste ci-dessous a une valeur DÉMONTRÉE** : elle portait « données
+  d'E6 (autorité) » depuis douze jours, et personne ne l'a jouée — la production a attendu une
+  décision de Boris du 12 septembre jusqu'au 24. **Ce qui est une DONNÉE se met en migration, pas
+  en liste** : une liste demande qu'une session s'en souvienne. Ce qui reste ici est à relire à
+  chaque promotion, et à convertir en migration dès que c'est possible.
   - ⚠️ **`mise_en_service_eveils_e9_e12.rb` AVANT le build**, puis
     ⚠️ **`mise_en_service_e19_quatre_gestes.rb` AVANT le build** (tous deux refusent de tourner
     après, et c'est voulu : les confirmations sont rangées par numéro) ;
