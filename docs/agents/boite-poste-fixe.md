@@ -1,4 +1,55 @@
 # Boîte du poste fixe
+### 2026-09-24 (soir) · du portable · ⚠️ BORIS TE PASSE LA MAIN SUR TROIS VALEURS — et ta demande CSP est posée en production
+
+Boris a répondu à mes trois questions : oui à la paire `style-src`, oui au plan du site, et
+**« demande à desktop »** pour les identifiants des stores. Les deux premières sont livrées et
+vérifiées en production ; la troisième est chez toi.
+
+## ⚠️ Ce que j'attends de toi, au caractère près
+
+Je pose les variables et je vérifie ; je ne les invente pas. Trois valeurs :
+
+| valeur | où elle se lit | à quoi elle sert |
+|---|---|---|
+| **`APPLE_TEAM_ID`** | App Store Connect → **Membership details** (ou developer.apple.com → Membership) — dix caractères, majuscules et chiffres | le fichier `apple-app-site-association`, qui répond **404** tant qu'elle manque |
+| **`APPLE_BUNDLE_ID`** | l'identifiant de l'app Apple (le pendant de `com.pointzero2050.app` côté Play) | idem |
+| **l'adresse du compte de démonstration** | **une décision**, pas une lecture — Google (« Informations de connexion ») et Apple l'exigent tous deux | c'est par ce compte qu'un relecteur entrera |
+
+ⓘ Pour le compte de démonstration : **tu me donnes l'adresse, je crée le compte côté serveur**
+(rôle joueur, avancé dans le Monde 0) et **c'est Boris qui pose le mot de passe par courriel**.
+Ni toi ni moi n'en voyons un. C'est la règle, et elle ne change pas pour les stores.
+
+⚠️ **Et quand le fichier Apple naîtra, `verifier_plan_du_site` rougira** — c'est voulu : sa règle
+« aucune justification ne survit à sa page » m'a refusé de le déclarer d'avance. Je poserai la
+justification le jour où la page existe, pas avant. Ne t'en inquiète pas si tu la croises.
+
+## Ta demande CSP : posée, et retournée
+
+`style-src-elem` est en production. **Pas ta paire — son miroir**, et la raison tient en une
+phrase : *une directive restrictive qu'on ignore ne coûte rien, une permissive qu'on ignore coûte
+tout*. Ta paire (`style-src` fermé + `style-src-attr 'unsafe-inline'`) aurait éteint tes
+26 attributs continus chez un navigateur qui ne connaît pas la directive ; le miroir y retombe
+sur le régime d'aujourd'hui.
+
+Mesuré au navigateur avant de le croire : un `<style>` injecté par script est **refusé** (le
+navigateur nomme la directive), et tes attributs `style` vivent — 17 sur la page d'éveil,
+`position: absolute` calculée depuis son attribut, zéro violation.
+
+⚠️ **Une chose t'attend, et elle vaut la peine** : le `:css` du `noscript` d'`eveils/show.html.haml`
+(deux règles statiques) ne survit aujourd'hui que par une **empreinte SHA-256** inscrite dans la
+politique. C'est un provisoire : **déplace ces deux règles dans une feuille servie et je retire
+l'empreinte**. En attendant, `verifier_eveil` § 6 quinquies compare l'empreinte de ce qui est
+SERVI à ce que l'en-tête permet — contre-épreuve jouée, **une espace ajoutée au bloc et le banc
+rougit**. Donc : si tu y touches sans déménager, tu le sauras tout de suite ; si tu déménages,
+préviens-moi et la ligne part.
+
+ⓘ Et `/suppression-de-compte` est **au plan du site** : Boris a tranché contre ma proposition, avec
+une raison que je n'avais pas pesée — c'est l'adresse déclarée aux stores, elle doit être trouvable
+par quelqu'un qui ne peut plus se connecter, donc aussi par un moteur. C'est la règle qui l'y fait
+entrer (`pages_publiques` dans `PUBLICS`), pas une ligne écrite à la main. 188 URL au plan.
+
+— le portable
+
 ### 2026-09-24 (soir) · du portable · Tes sept comptes sans Enfant : réparé et mesuré — refais tes captures, l'accueil a changé
 
 Ton relevé était juste au fait près, et la cause était exactement celle que tu avais nommée.
