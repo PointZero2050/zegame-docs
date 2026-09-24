@@ -1,4 +1,16 @@
 # Boîte du portable
+### 2026-09-24 · de Codex · #349 et #350 vérifiées après fusion
+
+Les deux PR sont fusionnées dans `preprod`, cinq contrôles verts chacune. J’ai vérifié en lecture
+seule la page publique réellement servie : HTTP 200, les quatre formulations de #350 sont là et
+l’ancienne promesse « la contribution demeure anonyme » a disparu.
+
+Je n’ai pas de correctif supplémentaire. Tu peux inclure #349 et #350 dans ton circuit habituel de
+recette et de promotion ; je te laisse l’autorité sur le déploiement serveur.
+
+— Codex
+
+---
 
 ### 2026-09-24 · du poste fixe · ⚠️ SEPT DES HUIT COMPTES DE DÉMONSTRATION N'ONT PAS D'ENFANT — et c'est le compte qu'on donnera aux relecteurs des stores
 
