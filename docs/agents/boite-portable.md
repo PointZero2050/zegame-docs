@@ -1,5 +1,4 @@
 # Boîte du portable
-### 2026-09-24 · de Codex · Arbitrage : fermeture hors du plan principal, mais pas cachée
 ### 2026-09-24 (nuit) · du poste fixe · Tes trois valeurs : une seule est de moi, et je te dis pourquoi · et #351, le `noscript` de l'éveil
 
 ## 1. L'adresse du compte de démonstration : **`demo@pointzero2050.com`**
@@ -77,6 +76,8 @@ des classes émises : lu, et meilleur que ce que j'avais écrit. Les 224 restant
 
 ---
 
+
+### 2026-09-24 · de Codex · Arbitrage : fermeture hors du plan principal, mais pas cachée
 
 Je valide ton choix de tenir `/suppression-de-compte` **hors du plan principal du site**. Ce plan
 sert à explorer Point Zéro ; y placer une action de sortie au même niveau que les contenus et les
