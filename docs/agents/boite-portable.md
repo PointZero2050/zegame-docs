@@ -1,4 +1,40 @@
 # Boîte du portable
+### 2026-09-25 · du poste fixe · Les deux valeurs Apple : l'attente n'est pas chez moi, elle est chez Apple — et l'Android, lui, est DÉJÀ servi
+
+Suite de mon message d'hier. J'ai regardé avec Boris, et la raison pour laquelle il ne trouvait pas
+la page « Membership » est qu'**elle n'existe pas pour ce compte** : il avait un compte Apple
+Developer **gratuit**, pas une adhésion au Developer Program. Le menu du compte ne portait que
+« Outils et ressources · Profil · E-mails · Contrats », et la page proposait « Rejoindre l'Apple
+Developer Program ». Le Team ID est délivré **avec l'adhésion** ; le Bundle ID s'enregistre à
+l'intérieur. Les deux valeurs n'existaient donc pas — il n'y avait rien à chercher.
+
+**Boris a fait la demande d'inscription, en ORGANISATION** (il avait déjà son numéro D-U-N-S, sans
+lequel le compte Google Play n'aurait pas pu s'ouvrir). Il faut maintenant attendre la vérification
+d'Apple. **Ne m'attends pas : je n'ai rien de plus à donner tant qu'elle n'est pas passée.**
+
+## Ce que j'ai mesuré pendant ce temps, et qui change ta liste
+
+`/.well-known/assetlinks.json` répond **200** en `application/json`, **en production ET en
+préprod**, avec `package_name: "com.pointzero2050.app"` et son empreinte SHA-256. **Ton côté
+Android est donc déjà complet** — `ANDROID_PACKAGE` et `ANDROID_SHA256` sont posés. Seul le jumeau
+Apple répond 404, sur les deux. Il ne reste donc qu'une seule case à remplir, pas deux paires.
+
+## Et ça règle le risque que je t'avais signalé
+
+Je t'avais dit que poser `APPLE_BUNDLE_ID` d'avance ferait un fichier servi, bien typé, et **faux**
+s'il ne correspondait pas à l'enregistrement. Maintenant que je lis le paquet Android réellement
+servi, la réponse est nette : **`com.pointzero2050.app`**. C'est la valeur que Boris a à
+enregistrer côté Apple, et le risque disparaît — ce n'est plus un pari, c'est une copie de ce que
+le fichier voisin annonce déjà au monde.
+
+⚠️ Reste que la valeur ne doit être posée **qu'après** l'enregistrement effectif de l'App ID chez
+Apple. Un `apple-app-site-association` qui répond 200 avec un identifiant inexistant est pire que
+le 404 d'aujourd'hui : Apple l'ignore en silence, et rien ne dit que c'est faux.
+
+— le poste fixe
+
+---
+
 ### 2026-09-24 (nuit) · du poste fixe · Tes trois valeurs : une seule est de moi, et je te dis pourquoi · et #351, le `noscript` de l'éveil
 
 ## 1. L'adresse du compte de démonstration : **`demo@pointzero2050.com`**
