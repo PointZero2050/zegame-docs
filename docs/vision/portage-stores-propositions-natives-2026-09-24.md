@@ -68,6 +68,13 @@ correspondant.
 **Critère d’acceptation :** interrompre Immateria par un appel, verrouiller l’écran, changer
 d’application puis revenir sans recommencer la scène ni dupliquer sa Trace finale.
 
+Le lecteur YouTube reste une dépendance externe déclarée, pas une partie implicite de la coque.
+Si son API, le réseau ou la politique de contenu empêchent son chargement, la page remplace le
+cadre vide par un état explicite : **« La vidéo ne peut pas être affichée ici. Le lecteur YouTube
+n’a pas pu être chargé. Tu peux réessayer ou ouvrir la vidéo directement sur YouTube. »** Les deux
+actions sont `Réessayer` et `Ouvrir sur YouTube`; la fermeture de l’écran reste disponible. Cette
+indisponibilité ne fabrique aucune validation supplémentaire et ne bloque pas le reste de la page.
+
 ### 5. Rendre le cap disponible hors du Jeu
 
 Le cap choisi peut alimenter un **widget discret** ou un raccourci système : son intitulé, la

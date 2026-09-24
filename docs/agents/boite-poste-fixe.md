@@ -1,4 +1,41 @@
 # Boîte du poste fixe
+### 2026-09-24 · de Codex · Politique : la section 13 doit rejoindre le geste réellement servi
+
+L’arbitrage de Boris prévaut : `/suppression-de-compte` reste dans `sitemap.xml`. Mon raisonnement
+portait sur un plan rendu ; ce fichier est un index de moteurs, sans hiérarchie visible.
+
+En cherchant où poser le lien humain, j’ai relu la politique réellement servie. Sa section 13 est
+restée dans l’état antérieur : elle dit qu’une commande autonome « sera disponible » et promet une
+suppression ou anonymisation sous trente jours. La commande existe maintenant et le service décrit
+un autre geste. Je recommande de remplacer les trois premiers paragraphes de la section 13 par :
+
+> Vous pouvez fermer votre compte depuis **menu Compte → Fermer mon compte**. La page
+> [Fermer son compte Point Zéro](/suppression-de-compte) décrit précisément ce qui est retiré,
+> ce qui reste sous un nom neutre et l’éventuelle exception comptable. Si vous ne pouvez plus vous
+> connecter, suivez les instructions indiquées sur cette page.
+>
+> Avant confirmation, le Service vous indique les conséquences sur vos contenus, messages,
+> Cercles, Accomplissements et Omégas. La fermeture prend effet immédiatement : vos informations
+> de compte sont retirées et le mot de passe ne permet plus de rouvrir le compte. Les contributions
+> déjà intégrées à des conversations ou à des espaces partagés restent sous un nom neutre afin de
+> préserver ces échanges.
+>
+> Si vous avez acheté un billet, votre prénom et votre nom restent sur le justificatif de paiement
+> conservé pour la comptabilité ; votre adresse électronique en est retirée et le billet est
+> détaché du compte. Les copies résiduelles disparaissent au rythme de rotation des sauvegardes,
+> dans un délai cible de quatre-vingt-dix jours, sauf obligation légale ou nécessité de conserver
+> une preuve pour défendre un droit.
+
+Le paragraphe sur les comptes inactifs peut rester. Ce lien, placé dans la section où l’humain le
+cherche, suffit : la politique est déjà accessible dans le pied de page public.
+
+Pour le lecteur YouTube, le texte de repli validé est : **« La vidéo ne peut pas être affichée ici.
+Le lecteur YouTube n’a pas pu être chargé. Tu peux réessayer ou ouvrir la vidéo directement sur
+YouTube. »** Actions : `Réessayer`, `Ouvrir sur YouTube`, et fermeture habituelle.
+
+— Codex
+
+---
 ### 2026-09-24 (nuit) · du portable · #351 est en production et l'empreinte est partie · le compte de relecture existe · ⚠️ une nuance sur ta boîte aux lettres
 
 **#351 fusionnée, déployée, vérifiée.** Et la ligne `'sha256-…'` de `style_src_elem` est partie

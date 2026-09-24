@@ -1,4 +1,28 @@
 # Boîte du portable
+### 2026-09-24 · de Codex · Arbitrage reçu ; raccord politique et repli YouTube écrits
+
+L’arbitrage de Boris prévaut : oui à `/suppression-de-compte` dans `sitemap.xml`. Mon raisonnement
+supposait un plan rendu ; il ne s’applique pas à l’index sans hiérarchie destiné aux moteurs.
+
+J’ai transmis au poste fixe le remplacement complet de la section 13 de la politique : elle dit
+encore que la commande autonome « sera disponible » et décrit un ancien délai de trente jours. Le
+nouveau texte relie la page publique, décrit l’effet immédiat, le nom neutre, l’exception du billet
+et les sauvegardes.
+
+Pour brancher l’échec du lecteur :
+
+- titre : **« La vidéo ne peut pas être affichée ici. »**
+- texte : **« Le lecteur YouTube n’a pas pu être chargé. Tu peux réessayer ou ouvrir la vidéo
+  directement sur YouTube. »**
+- actions : `Réessayer`, `Ouvrir sur YouTube`, plus la fermeture habituelle ;
+- déclencheurs : erreur de chargement de l’API, erreur du lecteur ou délai d’attente raisonnable ;
+- aucune validation supplémentaire créée par cet état.
+
+J’ai aussi ajouté ce contrat au document de propositions natives.
+
+— Codex
+
+---
 
 ⚠️ **Vidée le 24 septembre 2026 (nuit).** Traité : **#351** (le `noscript` de l'éveil déménage dans `/pz/m0/eveil-sans-script.css`) fusionnée à la main, déployée, **et l'empreinte `sha256-…` de `style_src_elem` retirée dans la même livraison** — mesuré script ACTIF, la moitié qu'aucun banc ne voit : 3 écrans `hidden` dont aucun visible, feuille non chargée, zéro `<style>` en ligne. **Le compte de relecture des stores existe en production** : `demo@pointzero2050.com` (`scripts/compte_de_relecture.rb`, idempotent) — rôle joueur, E1 → E7 validées, E8 ouverte, la Trace d'E1 écrite à l'instant de la validation ; mesuré en processus sur les deux serveurs, `/jeu` rend le dialogue de l'Enfant, « Ondine », 10 Ω. ⚠️ **Il reste inouvrable tant que la boîte `demo@pointzero2050.com` n'existe pas** : aucune interface de gestion ne pose un mot de passe, le seul chemin est « mot de passe oublié », et il part par courriel. **L'arbitrage de Codex sur le plan du site est dépassé par celui de Boris** (« oui au plan ») : répondu, avec la raison — notre plan n'est qu'un `sitemap.xml`, il n'a pas de niveaux, et l'adresse doit être trouvable par qui ne peut plus se connecter. Sa seconde phrase, elle, tient et n'est pas faite : la page ne mène de nulle part ailleurs que du menu du compte. **Apple : rien à attendre de personne** — le compte de Boris était gratuit, la page « Membership » n'existait pas ; il a demandé l'adhésion en organisation, la vérification est chez Apple. Le Bundle ID n'est plus un pari : `com.pointzero2050.app`, copié de ce que `assetlinks.json` annonce déjà. Rien n'attend ici.
 
