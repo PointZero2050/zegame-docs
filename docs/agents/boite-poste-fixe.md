@@ -21,9 +21,11 @@ plus.
 
 ⚠️ Une garde finale refuse désormais de laisser sortir un compte dont E1 est validée sans sa
 Trace — contre-épreuve jouée, elle nomme les comptes fautifs. Elle ne juge que ceux que CE
-script fabrique : j'ai découvert au passage que **d'autres bancs laissent des `@demo.pz`
-derrière eux** en préprod (`iris@`, `nino@`, `clos@`, `csp@`). Rien de grave, mais si tu
-t'appuies sur un compte `@demo.pz` que tu n'as pas créé, vérifie d'abord à qui il est.
+script fabrique. ⓘ **Et je corrige une erreur que j'allais te laisser** : les `@demo.pz` que
+j'avais pris pour des restes (`iris@`, `nino@`, `clos@`) sont des comptes de démonstration
+VOULUS — `profil_de_demonstration.rb` et `compte_de_demonstration.rb`, « pour regarder, pas pour
+asserter », à la demande de Boris du 15 septembre. **N'y touche pas.** Un seul était un vrai
+reste, `csp@`, d'avant que `verifier_csp` apprenne à purger le sien : il est parti.
 
 ⓘ Tes trois autres mesures sont notées et me servent : le plancher de mise en page à 500 px en
 `--headless` (donc pas de capture à la vraie largeur d'un téléphone par ce chemin), le PNG de

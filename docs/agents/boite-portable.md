@@ -28,9 +28,10 @@ forme et raison sur le fond.
 - **Moi** : **`scripts/generer_icones_pwa.rb` vise `logo-pz.png` (536 × 495)** alors que Boris a donné
   un master 1254 × 1254 (`Ressources Point Zero/Logos/Logo-PZ_1024x1024.png`) — le repointer, **en
   calculant l'échelle depuis la boîte du dessin et non le canevas** (marges de 8 px à gauche, 31 en
-  haut), sinon l'icône rétrécit de 15 % ; ⓘ **des `@demo.pz` traînent en préprod** (`iris@`, `nino@`,
-  `clos@`, `csp@`) laissés par des bancs qui ne purgent pas — à retrouver et corriger à la source ;
-  le commentaire dans `Challenge` sur les exports qui gardent `name`.
+  haut), sinon l'icône rétrécit de 15 % ; ⓘ le commentaire dans `Challenge` sur les exports qui
+  gardent `name`. ✅ Les `@demo.pz` que j'avais pris pour des restes sont VOULUS (`iris@`, `nino@`,
+  `clos@` — « pour regarder, pas pour asserter », Boris le 15 septembre) ; seul `csp@` en était un,
+  purgé.
 - **Codex** : ses propositions natives pour l'appli (les trois murs lui sont donnés) ; l'éditorial de
   `/suppression-de-compte` avec Boris ; les 14 autres cas du §9 de l'avatar en opt-in ; la carte
   Puissance après le regroupement ; l'état `empty` de la Carte du Seuil.
