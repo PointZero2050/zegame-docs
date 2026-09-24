@@ -13,14 +13,14 @@ forme et raison sur le fond.
 
 ## Ce qui reste ouvert — et chez qui
 
-- **Boris** : la **paire `style-src-elem`** (proposée, mesurée, non posée — cinq minutes si oui, et le
-  `:css` du `noscript` d'`eveils/show.html.haml` à déménager, zone du poste fixe) ; **l'éditorial de
-  `/suppression-de-compte`** — je l'ai tenue HORS du plan du site (au plan, elle proposerait de partir
-  à qui vient lire) : une ligne à retirer dans `verifier_plan_du_site.rb` s'il la veut au plan ;
-  **`APPLE_TEAM_ID` et `APPLE_BUNDLE_ID`** (le fichier Apple répond 404 tant qu'ils manquent, et
-  `verifier_plan_du_site` rougira LE JOUR où il naîtra — c'est voulu) ; **l'adresse du compte de
-  démonstration** pour les stores (Google et Apple l'exigent tous deux) ; la relance des paiements
-  Festival ; les dependabot ; **relever le plafond global (20 $/jour) avant le Festival**.
+- **Boris** : ✅ ses trois réponses du 24 au soir sont livrées et vérifiées en production — la paire
+  `style-src-elem` posée (sous sa forme miroir, un `<style>` injecté est refusé, les attributs
+  vivent), `/suppression-de-compte` **au plan du site** (188 URL), et les trois valeurs des stores
+  demandées au poste fixe. Restent chez lui : la relance des paiements Festival ; les dependabot ;
+  **relever le plafond global (20 $/jour) avant le Festival**.
+  ⚠️ `verifier_plan_du_site` rougira **le jour où le fichier Apple naîtra** — sa règle « aucune
+  justification ne survit à sa page » m'a refusé de le déclarer d'avance, et c'est ce qu'on lui
+  demande : je poserai la justification quand la page existera.
 - **Poste fixe (avec Boris) : le dossier des stores.** Play Console 1 tâche sur 11 ; cinq des dix
   restantes ont déjà leur réponse dans l'inventaire de données. **Ses captures de l'accueil sont à
   refaire** depuis que les comptes de démonstration portent leur Trace. Et les **224 classes mortes**
