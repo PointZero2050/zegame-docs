@@ -1,5 +1,83 @@
 # Boîte du portable
 
+### 2026-09-24 · du poste fixe · #350 aussi : la fermeture de compte promettait l'effacement du nom (Codex l'a vu, le service lui donne raison)
+
+Deux PR ouvertes pour toi aujourd'hui, **toutes deux à cinq checks verts** : #349 (les classes
+mortes et les deux écrans sans style) et **#350**, les deux arbitrages que Codex m'a laissés ce
+matin.
+
+1. **La page de fermeture promettait l'effacement du nom.** `fermeture_de_compte.rb:99-101` dit
+   l'inverse en toutes lettres — « `prenom` et `nom` RESTENT sur le billet ». J'ai vérifié sa
+   lecture avant d'y toucher. Corrigé sur les trois surfaces (page publique déclarée au Play
+   Store, page connectée, sous-libellé du menu), avec ses mots. Le banc gagne la paire qui borne
+   les deux côtés.
+2. **Les deux illustrations de clôture** (`co-c04`, `co-c05`) sont rendues. Elles étaient
+   déclarées, servies, gardées par le banc — et affichées nulle part.
+
+⚠️ **Le commit de lint est sur les DEUX branches** (`c189aa5e` sur #349, repris en `a69c48af` sur
+#350) : les quatre scripts arrivés par le serveur bloquaient mon lint dans les deux cas. Le
+contenu est identique, la fusion de la seconde ne devrait rien avoir à trancher. Si tu préfères
+corriger ces quatre fichiers toi-même, retire le commit des deux côtés.
+
+— le poste fixe
+
+---
+
+### 2026-09-24 · du poste fixe · #349 — j'ai pris les classes mortes que tu m'as laissées, et j'ai trouvé DEUX écrans qui rendaient sans style
+
+Merci pour les deux jours : ta carte était exacte, et j'ai repris là où tu l'avais posée. Parti
+pour le nettoyage des 23 classes mortes de `conseil-omega.css`, j'ai trouvé mieux — **deux défauts
+visibles, tous deux sur les six écrans d'archive**, de la même famille que les quatre du 22.
+
+1. **La chaîne de capture n'avait que ses modificateurs.** La feuille dessine
+   `.pz-omega-capture-ligne` (bordure, rayon 13 px, rembourrage de 42 px, fond blanc, et la FLÈCHE
+   `::after` qui enchaîne les trois) ; la vue rendait `%div.est-dominant`, `.est-capturee`,
+   `.est-reduite` — les modificateurs seuls. Mesuré avant : bordure 0, rayon 0, rembourrage 0, fond
+   transparent, `content:none`, `dt` à 16 px sans capitales, `dd` avec les 40 px de marge par
+   défaut. Trois blocs nus au lieu de trois cartes chaînées.
+2. **Les six sièges de la table étaient EMPILÉS.** La feuille place chaque Puissance par sa classe
+   de slug (`.pz-omega-siege-pastille.intuition{top:-22px;left:97px}` … six règles, plus deux
+   surcharges sous 620 px) ; la vue ne posait que `est-courante`/`est-exploree`. Six pastilles en
+   `position:absolute` avec des offsets `auto` : **une seule position distincte pour six sièges**,
+   au coin d'une table de 270 px. Après : six positions, un hexagone, et ça tient à 600 px aussi.
+
+**Le nettoyage** : 59 règles retirées de `conseil-omega.css` (−4 758 o) et 25 de `accueil.css`
+(−1 966 o), les deux feuilles à **zéro** classe morte. ⚠️ Trois sélecteurs groupés ROGNÉS et non
+supprimés. Vérifié règle par règle : pour chaque classe vivante, ses déclarations sont comparées
+avant/après ; la seule qui perd quelque chose est `est-faite`, dessinée par `carte-du-seuil.css` et
+`circuit-vivant.css` — les feuilles des pages qui l'émettent.
+
+**Le banc** : `scripts/verifier_classes_emises.rb`. § 1 « aucune classe émise ne dépend d'un parent
+que personne n'émet » (la forme la plus traître), § 1 bis les six sièges, § 2 l'inventaire du code
+mort **gelé par feuille** (224 sur 2 448), § 3 les deux feuilles nettoyées, § 4 ce qu'il ne prouve
+pas. Quatre contre-épreuves sur copies, chacune rougit puis redevient verte.
+
+ⓘ **Il ne demande ni Rails ni la base** : il ne lit que des fichiers et tourne sous
+  `ruby scripts/verifier_classes_emises.rb` comme sous `bin/rails runner`. C'est délibéré — c'est
+  ce qui m'a permis de l'éprouver ici, et ça te permet de le jouer sans démarrer quoi que ce soit.
+
+---
+
+⚠️ **Deux choses pour toi.**
+
+**1. Quatre de tes scripts ne passaient pas le lint**, et ma PR est la première à les faire passer :
+`role_de_recette.rb`, `photos_m0.rb`, `nettoyer_canal.rb`, `message_de_bienvenue.rb` —
+`Layout/EmptyLineAfterMagicComment`. Ils sont arrivés en production sans passer par une pull
+request (tu pousses sur le serveur), donc jamais lintés. Je les ai corrigés dans un **commit à
+part** (`c189aa5e`), purement mécanique — une ligne vide après le commentaire magique, CRLF
+préservés, `ruby -c` vert. **Il se jette sans dommage** si tu préfères t'en charger. Et le fait
+mérite d'être noté : tout ce qui entre par le serveur échappe au lint.
+
+**2. Il reste 224 classes mortes**, dont **148 dans `pz_theme.css`** et **37 dans `conseil.css`** —
+des restes du portage initial de maquettes entières, pour des écrans jamais construits. Le banc les
+gèle, elles ne peuvent que diminuer. Leur nettoyage demande son propre lot, et la même prudence :
+chaque nom se vérifie À LA MAIN avant de partir (deux des miennes étaient des défauts, pas du code
+mort), et un sélecteur groupé se rogne.
+
+— le poste fixe
+
+---
+
 ### 2026-09-24 · de Codex · Propositions natives livrées, et deux écarts factuels sur la fermeture
 
 J’ai produit le complément que tu demandais pour la valeur native :
