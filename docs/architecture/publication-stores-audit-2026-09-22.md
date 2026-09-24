@@ -193,18 +193,39 @@ livrés et promus ; ce qui suit remplace leur description au futur.
   `DeserializationError` — un sujet disparu pendant le délai. `LivraisonDeCourriel` les abandonne
   en le disant. La suppression de compte rendait cette course courante : corrigée avant de la livrer.
 
-⚠️ **CE QUI BLOQUE MAINTENANT, ET CE N'EST PLUS DU CODE.** Les quatre identifiants n'existent pas
-encore, et rien ne peut les deviner :
+⚠️ **CE QUI BLOQUE, ET CE N'EST PLUS DU CODE.** État au 24 septembre, relevé dans la Play Console
+avec Boris :
 
-| À fournir | D'où il vient | Ce qu'il débloque |
+| À fournir | D'où il vient | État |
 |---|---|---|
-| `ANDROID_PACKAGE` | choix de Boris (ex. `com.pointzero2050.jeu`) | `assetlinks.json` |
-| `ANDROID_SHA256` | Play Console → Play App Signing (PAS la clé du poste) | `assetlinks.json` |
-| `APPLE_TEAM_ID` | Apple Developer → Membership | `apple-app-site-association` |
-| `APPLE_BUNDLE_ID` | choix de Boris, déclaré dans App Store Connect | `apple-app-site-association` |
+| `ANDROID_PACKAGE` | Play Console | ✅ **`com.pointzero2050.app`**, posé les 24 septembre sur les deux serveurs |
+| `ANDROID_SHA256` | Play Console → Signature d'application | ✅ **posée**, et le fichier servi est **identique au bloc que Google génère** (comparé programme contre programme) |
+| `APPLE_TEAM_ID` | Apple Developer → Membership | ⏳ manquant |
+| `APPLE_BUNDLE_ID` | choix de Boris, déclaré dans App Store Connect | ⏳ manquant |
 
 Et une décision : **le compte de démonstration pour la revue** (§2.4) — quelle adresse, et qui
 reçoit le courriel de mot de passe. Le compte sera de rôle joueur et avancé dans le Monde 0.
+⚠️ Côté Google, ce compte n'est pas optionnel non plus : la tâche « **Informations de connexion** »
+de la configuration attend des identifiants de test.
+
+### L'état de la fiche Play, au 24 septembre
+
+L'application **« Point Zero » existe en BROUILLON** (`com.pointzero2050.app`, créée le
+9 septembre, 0 installation) sous le compte d'organisation « Point Zero 2050 ». Le nom de paquet
+est **enregistré** au titre de la validation des développeurs Android (échéance du 30 septembre
+2026 : une appli non enregistrée est retirée de Play — ce point-là est donc tenu).
+
+**Configuration : 1 tâche sur 11.** Seule « Définir les règles de confidentialité » est faite.
+Restent : *Informations de connexion* (le compte de démonstration), *Annonces*, *Classification du
+contenu*, *Cible* (public visé), **Sécurité des données**, *Applis gouvernementales*,
+*Fonctionnalités financières*, *Santé*, la *catégorie et les coordonnées*, et la *fiche Play
+Store*. Tout le reste (tests fermés, production) reste **verrouillé** tant que ces tâches ne sont
+pas faites.
+
+ⓘ **Cinq de ces onze tâches sont déjà répondues** par
+[l'inventaire de données](donnees-formulaires-stores-2026-09-23.md) : sécurité des données,
+classification (les trois surfaces d'IA), annonces (aucune), fonctionnalités financières (billet
+d'événement réel, hors achat intégré), santé (aucune donnée).
 
 ## 5. L'ordre de travail que je recommande
 
