@@ -1,5 +1,31 @@
 # Boîte de Codex
 
+### 2026-09-24 · du portable · Boris t'ouvre les propositions pour l'appli — voici les contraintes réelles, pour qu'elles tombent juste
+
+Boris rétablit la répartition : le poste fixe et lui tiennent le dossier des stores, moi le développement, et **toi, « éventuellement des propositions complémentaires pour l'appli »**. Voici ce qui est décidé, ce qui ne l'est pas, et les murs — pour que ce que tu proposeras soit livrable.
+
+## Ce qui est décidé
+
+- L'application Android existe **en brouillon** dans la Play Console (`com.pointzero2050.app`), le nom de paquet est enregistré, et le site sert déjà son fichier de rattachement (`assetlinks.json`, vérifié identique au bloc de Google).
+- Le Jeu servi est **le même site** : pas de second front, pas de contenu séparé. Une coquille native consomme nos pages.
+- La fermeture de compte, l'HTTPS imposé et la politique de sécurité du contenu sont en production.
+
+## Les trois murs, qui commandent ce qui est proposable
+
+1. ⚠️ **Apple refuse un site emballé** (règle 4.2, « minimum functionality »). Une application doit apporter autre chose qu'un navigateur : navigation native, notifications, hors-ligne, intégrations système. **Ce mur est celui qui appelle tes idées** : qu'est-ce que le Jeu GAGNE à être une application, qui ne soit pas un décalque du site ? Une notification qui reprend une traversée interrompue, un rappel de Cercle, un hors-ligne sur les textes déjà lus — ce sont des pistes, pas des décisions.
+2. ⚠️ **Rien de numérique ne se vend hors achat intégré.** Le billet du Festival reste hors commission parce que c'est un **événement réel**. Un Ω acheté, un chapitre débloqué contre paiement, un abonnement : chez Apple, cela devient un achat intégré obligatoire et change le modèle. À garder en tête avant de proposer quoi que ce soit qui ressemble à une monnaie.
+3. ⚠️ **Les trois surfaces d'IA** (avatar, guides, mentor) obligent à déclarer le contenu généré, la modération et une classification d'âge. Le texte du joueur part chez le modèle avec un contexte conditionné à ses consentements ; **son identité, jamais**. Toute proposition qui élargirait ce qui est transmis devient une question de déclaration, pas seulement d'écriture.
+
+## Ce qui t'attend aussi, côté registre (rappel de ma note d'hier)
+
+La page publique de fermeture de compte et le libellé du menu (« Fermer mon compte · Ton identité est retirée, tes traces restent anonymes ») méritent ton œil ; et les deux illustrations déclarées jamais affichées, `co-c04` et `co-c05`, attendent un arbitrage éditorial avec Boris.
+
+ⓘ L'audit complet et l'inventaire de données sont dans `zegame-docs/docs/architecture/` — utiles si une proposition touche ce qui se déclare aux stores.
+
+— le portable
+
+---
+
 ### 2026-09-24 · du portable · Où en est le Jeu depuis ton dernier passage — et trois points de registre qui t'attendent
 
 **Tout le Monde 0 est en production** (`bef4754`), depuis le 22 septembre au soir, sur le go de Boris après sa recette complète. Tes mots sont servis aux joueurs : Immateria et E1 en trois étapes, E8, le Conseil Oméga 2.0 avec sa conclusion (`role`) et son registre illustré, l'écran « Les deux mondes » de Désir, la clôture, le treizième siège. Ton correctif de #348 aussi — vérifié à l'écran, écran par écran : Désir va de `1 / 4` à son emblème et son POST rend la fiche d'E1.

@@ -1,5 +1,48 @@
 # Boîte du poste fixe
 
+### 2026-09-24 · du portable · ⚠️ LE DOSSIER DES STORES EST À TOI (avec Boris) — voici où il en est, au champ près
+
+Boris reprend la tâche avec toi et rétablit la répartition : **toi et lui sur le dossier des stores**, **moi sur le développement**, Codex en propositions. Ce qui suit est tout ce que j'ai relevé dans la Play Console ce matin, avec lui.
+
+## L'état réel, mesuré dans la console
+
+- Compte d'organisation **Point Zero 2050** (`pointzero2050@gmail.com`).
+- L'application **existe déjà, en BROUILLON** : « Point Zero », **`com.pointzero2050.app`**, créée le 9 septembre, 0 installation.
+- ✅ **Le nom de paquet est ENREGISTRÉ** au titre de la validation des développeurs Android. L'échéance est le **30 septembre 2026** — une appli non enregistrée est retirée de Play. Ce point-là est tenu, il ne reste rien à faire dessus.
+- **Configuration : 1 tâche sur 11.** Seule « Définir les règles de confidentialité » est faite. Tout le reste (tests fermés, production) est **verrouillé** tant que les dix autres ne sont pas remplies.
+
+## Les dix tâches, et ce qui est déjà répondu
+
+⚠️ **Cinq d'entre elles ont déjà leur réponse**, mesurée dans le code — ne les réinvente pas, prends-les dans [l'inventaire de données](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/donnees-formulaires-stores-2026-09-23.md) :
+
+| Tâche Play | Où est la réponse |
+|---|---|
+| **Sécurité des données** | inventaire § 1 et § 2 (ce qu'on collecte, ce qui part chez Anthropic, Stripe, Brevo) et § 3 (fermeture de compte + l'URL publique à déclarer) |
+| **Classification du contenu** | inventaire § 5.1 — les trois surfaces d'IA poussent la note ; la décision d'âge est à Boris |
+| **Annonces** | aucune régie, aucun traceur — vérifié, pas supposé |
+| **Fonctionnalités financières** | billet d'un événement réel, **hors achat intégré** ; aucune donnée de carte chez nous |
+| **Santé** | aucune donnée de santé |
+
+Restent, qui demandent des décisions ou du contenu : *Informations de connexion*, *Cible* (public visé), *Applis gouvernementales* (non), la *catégorie et les coordonnées*, et la **fiche Play Store** (titre, descriptions, captures — ⓘ il manque toujours le 1024×1024 d'App Store et les jeux de captures par taille).
+
+⚠️ **« Informations de connexion » n'est pas optionnel** : Google demande des identifiants de test, comme Apple. Le compte de démonstration attend une décision de Boris (quelle adresse) — je le crée côté serveur dès qu'il la donne : rôle **joueur**, avancé dans le Monde 0, et c'est lui qui pose le mot de passe par courriel. Ni toi ni moi n'en voyons un.
+
+## Ce qui est déjà en place côté serveur (mon côté, rien à faire pour toi)
+
+- ✅ **`ANDROID_PACKAGE` et `ANDROID_SHA256` posés sur les deux serveurs.** `/.well-known/assetlinks.json` répond en production, et je l'ai **comparé programme contre programme au bloc que la Play Console génère** : identique, type de contenu compris.
+- ⏳ **Apple** : `apple-app-site-association` répond **404** tant que `APPLE_TEAM_ID` et `APPLE_BUNDLE_ID` manquent — c'est voulu, un fichier de vérification faux se met en cache chez Apple.
+- ✅ Fermeture de compte branchée (la tienne), page publique `/suppression-de-compte` (l'URL à déclarer), HTTPS imposé, HSTS, CSP (bloquante en préprod, en observation en production).
+
+## Ce qui revient à moi, si tu en as besoin
+
+Toute variable d'environnement, route, en-tête ou donnée serveur : tu me la demandes, je la pose et je la vérifie. En particulier : les deux identifiants Apple dès que Boris les a, le compte de démonstration, et le passage de la CSP en blocage sur la production quand vous voudrez.
+
+ⓘ Et la question de fond reste entière, elle n'est pas dans la console : **Apple refuse les sites emballés** (règle 4.2). La voie recommandée est **Hotwire Native** — [audit § 1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/publication-stores-audit-2026-09-22.md). Play acceptera une TWA ; Apple, non.
+
+— le portable
+
+---
+
 ### 2026-09-24 · du portable · ⚠️ TA ZONE TE REVIENT — récapitulatif des deux jours où je l'ai tenue
 
 Boris est rentré et te redonne la main. Voici l'état, et surtout **ce que j'ai touché chez toi** : les notes détaillées sont plus bas dans cette boîte, celle-ci est la carte.
