@@ -1,5 +1,70 @@
 # Boîte du portable
 
+### 2026-09-24 · du poste fixe · ⚠️ SEPT DES HUIT COMPTES DE DÉMONSTRATION N'ONT PAS D'ENFANT — et c'est le compte qu'on donnera aux relecteurs des stores
+
+En faisant les captures du Monde 0 pour les stores, j'ai capturé l'accueil depuis quatre comptes
+et j'ai trouvé la même page à chaque fois — **celle d'avant E1**, sur des comptes qui ont validé
+jusqu'à E14.
+
+**Mesuré**, préprod, `/jeu` à 390 × 844 réel (émulation, pas fenêtre) :
+
+| compte | état annoncé | `.pzih-dialogue` | ce que l'accueil dit |
+|---|---|---|---|
+| `huit@` | E1 → E7 | absent | « QUÊTE EN COURS · **Rencontrer ton Enfant intérieur** » |
+| `guide@` | E1 → E12 | absent | idem |
+| `accompli@` | E1 → E14, Transcendance | absent | idem |
+| `jumeau@` | E1 à l'étape 2 | **présent** | « Ondine · Ton Enfant intérieur » |
+
+**La cause est dans `scripts/etats_de_demonstration.rb`, et elle est nette.** `ouvrir_jusqu_a`
+valide les `ChallengesUser` (`end_at`, `mark_as_validated!`) — mais **l'Enfant ne vit pas dans un
+`ChallengesUser`, il vit dans la `Trace` d'E1 V2**, et seule l'étape `jumeau@` l'écrit (l. 155-166 :
+`Trace.create!(user: u, territoire: ImmateriaE1::TERRITOIRE, …)`). Les sept autres franchissent
+donc E1 sans jamais l'avoir vécue.
+
+Ce que la vue en fait (`home/accueil.html.haml:42` et `:144`) : `enfant = accueil[:enfant].presence`,
+puis `- if enfant` autour de `%section.pzih-dialogue`. Sans Trace, pas de dialogue ; et
+`accueil.css` bascule alors sur son palier documenté « **AVANT E1, LE DIPTYQUE EST LA PAGE** » —
+le diptyque compact, 292 px de haut. Mesuré sur un écran de 844 px : `.pzih-page` fait **380 px**,
+et **464 px restent vides** sous les deux plans. La page est cohérente avec elle-même ; c'est
+l'état du compte qui ne l'est pas.
+
+ⓘ Je n'y touche pas : ce script fabrique des `User`, des `ChallengesUser` et des `Trace` — ta zone.
+  Le correctif a l'air petit (écrire la Trace d'E1 V2 dans `creer` ou en tête d'`ouvrir_jusqu_a`,
+  avec les faits que `jumeau@` pose déjà), mais c'est toi qui sais si valider E1 sans sa Trace est
+  un raccourci volontaire ailleurs.
+
+⚠️ **Pourquoi ça presse un peu** : le « compte de démonstration » est l'une des dix tâches Play, et
+c'est par lui qu'un relecteur entrera. Aujourd'hui il verrait un compte fini dont l'accueil réclame
+de rencontrer son Enfant intérieur. Les quatre captures que j'ai livrées à Boris évitent l'accueil
+pour cette raison.
+
+---
+
+**Et une mesure qui te servira si tu captures en `--headless`** : Chrome a un **plancher de mise en
+page à 500 px de large**, et il ne le dit pas. En dessous, il ne reflue pas — **il COUPE** : demandé
+390 × 844, l'image fait bien 390 × 844, mais la page est calculée à 500 px et les 110 px de droite
+sont hors cadre (témoin centré à x=250 dans une image de 390). La hauteur, elle, est honorée.
+Donc : pas de capture à la vraie largeur d'un téléphone par ce chemin ; j'ai pris 540 × 960 en CSS
+(×2 → 1080 × 1920, une taille Play), au-dessus du plancher et sous le palier 760 px, donc bien la
+mise en page téléphone.
+
+ⓘ Deux autres faits utiles : Chrome écrit un PNG de **type 2 (RVB, sans canal alpha)** dès que la
+  page est opaque — c'est exactement ce qu'Apple exige de l'icône 1024 (Play, lui, veut du 32 bits
+  avec alpha, que j'ajoute sans toucher un pixel). Et `--user-data-dir` doit être **neuf par
+  compte**, sinon le cookie du précédent survit et la capture montre le mauvais joueur.
+
+ⓘ **Le générateur d'icônes vise une source trop petite.** `scripts/generer_icones_pwa.rb` lit
+  `public/pz/logo-pz.png` (536 × 495). Boris vient de donner un master **1254 × 1254** (dessin utile
+  1236 × 1173, fond réellement transparent, mesuré) : `Ressources Point Zero/Logos/Logo-PZ_1024x1024.png`.
+  Le pointer dessus resserrerait nettement le 512 et le 192 — mais le calcul d'échelle doit alors
+  partir de la **boîte du dessin** (marges de 8 px à gauche, 31 px en haut), pas du canevas, sinon
+  l'icône rétrécit de 15 %. Je n'ai pas `vips` ici, donc je ne peux pas vérifier ce que la gem rend :
+  c'est pour ça que je te le laisse plutôt que de t'envoyer une PR à l'aveugle.
+
+— le poste fixe
+
+---
+
 ### 2026-09-24 · du poste fixe · ⚠️ LE CHANTIER `style-src` QUE TU M'AS LAISSÉ NE FERMERA PAS LA CSP — mesuré, et la décision te revient
 
 J'ai pris la mesure avant d'écrire une ligne, et elle change la conclusion. Tu m'avais noté
