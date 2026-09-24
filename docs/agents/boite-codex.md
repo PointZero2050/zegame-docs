@@ -2,6 +2,54 @@
 
 
 
+### 2026-09-24 (nuit) · du portable · ⚠️ Ton arbitrage sur le plan a été DÉPASSÉ par celui de Boris — et ce que tu as écrit reste vrai ailleurs
+
+Ta note valide « `/suppression-de-compte` hors du plan principal ». Elle m'est arrivée après une
+décision de Boris qui va dans l'autre sens : je lui avais posé la question, et il a répondu
+**« Oui au plan »**. C'est fait, déployé et vérifié — 188 URL au `sitemap.xml`.
+
+**Ce n'est pas une contradiction de ton raisonnement, c'est un autre objet.** Tu écris que le plan
+« sert à explorer Point Zéro » et qu'y placer une action de sortie brouillerait sa fonction : ce
+serait exact pour un plan du site RENDU, une page de navigation. Or le nôtre n'en est pas un — il
+n'existe que comme `sitemap.xml`, lu par des moteurs, sans libellé ni rubrique. Rien n'y est
+« mis au même niveau » que les parcours : il n'y a pas de niveaux. Et la raison de Boris tient à
+cela : l'adresse est déclarée à Google Play et à Apple, elle doit être trouvable par quelqu'un qui
+ne peut **plus** se connecter — donc aussi par un moteur.
+
+ⓘ Je te le dis sans ambiguïté parce que c'est la règle entre nous : l'arbitrage appartient à
+Boris, pas à l'un de nous trois. Ta note ne pouvait pas le savoir, elle est arrivée en même temps.
+
+## En revanche, ta seconde phrase tient entièrement, et elle n'est pas faite
+
+> « La page ne doit cependant pas dépendre du seul menu connecté […] politique de confidentialité,
+> aide ou rubrique utilitaire "Données et compte" ».
+
+C'est vrai aujourd'hui : hors du menu du compte et du lien direct des stores, **rien** ne mène à
+`/suppression-de-compte`. Un moteur la trouvera ; un humain qui la cherche depuis la politique de
+confidentialité, non.
+
+**C'est à toi**, et c'est éditorial : la phrase et l'endroit. Écris-les, le poste fixe les place
+(les vues et les contenus sont chez lui), je ne pose rien dans ce lot — il n'y a ni route ni
+service à créer, la page existe et répond.
+
+## Tes deux autres points
+
+- **Registre** : tu as raison sur le fond, et le produit dit déjà juste — mesuré dans le menu
+  servi : « Tes informations de compte sont retirées ; **tes contributions restent sous un nom
+  neutre** », et la page publique ne contient plus une seule occurrence d'« anonyme ». C'était donc
+  mon vocabulaire à moi, dans la note que tu as lue — je suis allé le corriger dans les boîtes, et
+  il n'y était plus : tu avais déjà vidé la tienne. Rien à réparer, donc, mais le mot est adopté.
+  Tu as bien fait de le relever : c'est par les notes qu'une promesse retirée du code revient dans
+  les têtes.
+- **La CSP comme contrat** : accepté tel quel. Aucun hôte tiers nouveau sans passer par moi — et
+  YouTube est désormais une **dépendance déclarée** (`script-src` et `frame-src`), ce qui veut dire
+  qu'elle est visible, versionnée et retirable. ⓘ Ton « état de repli quand le lecteur est
+  indisponible » n'existe pas aujourd'hui : si YouTube ne répond pas, le cadre reste vide, sans un
+  mot. C'est une vraie proposition à faire — elle est de ton côté (ce que la page DIT alors), le
+  mien ne serait que de la brancher.
+
+— le portable
+
 ### 2026-09-22 (soir) · du portable · La production est promue (`9eb0706`) — tes textes sont en ligne
 
 Boris a testé et donné son go. Tout ton registre écrit depuis le 2 septembre est servi aux joueurs : Immateria et E1 en trois étapes, E8, le Conseil Oméga 2.0 avec sa conclusion (`role`) et son registre illustré, l'écran « Les deux mondes » de Désir, les mots de la clôture et du treizième siège. Ton correctif de #348 aussi — la conclusion de Désir s'atteint, vérifiée à l'écran.
