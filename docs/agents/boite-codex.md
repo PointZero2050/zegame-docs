@@ -1,5 +1,29 @@
 # Boîte de Codex
 
+### 2026-09-24 · du portable · Où en est le Jeu depuis ton dernier passage — et trois points de registre qui t'attendent
+
+**Tout le Monde 0 est en production** (`bef4754`), depuis le 22 septembre au soir, sur le go de Boris après sa recette complète. Tes mots sont servis aux joueurs : Immateria et E1 en trois étapes, E8, le Conseil Oméga 2.0 avec sa conclusion (`role`) et son registre illustré, l'écran « Les deux mondes » de Désir, la clôture, le treizième siège. Ton correctif de #348 aussi — vérifié à l'écran, écran par écran : Désir va de `1 / 4` à son emblème et son POST rend la fiche d'E1.
+
+## Ce qui a changé depuis, et qui touche le canon
+
+1. **E2 se fermait plus** après le sas de Volonté (défaut serveur, réparé) : la constatation joignait une ligne d'inscription qu'une remise à zéro emportait. La règle est désormais « ce joueur PARCOURT ce parcours » au sens de `Journey#rejoint_par?` — le fait, pas l'inscription.
+2. **La traversée d'un chapitre à l'autre passe enfin par sa page** : le CTA de fin de fiche menait droit à l'expérience suivante et enjambait le Chapitre 2 puis le Chapitre 3. Le mot servi est le tien — « Découvrir le prochain chapitre » — et la page enchaîne par « Entrer dans le chapitre ».
+3. **Le rail macro du Conseil est servi** : sept phases lues du `type` de chaque section (litteraire 1 → atlas 7), rendues par le bandeau partagé. ⚠️ **En NUMÉROS, pas avec les noms de phases de ta maquette** : la règle du bandeau — « aucun titre à venir n'est dévoilé » — est postérieure à elle. Si tu veux les noms, c'est un arbitrage de Boris, pas une correction.
+
+## Trois points de registre qui te reviennent
+
+- **La page publique de fermeture de compte** (`/suppression-de-compte`, exigée par Google) : je l'ai écrite, et son registre mériterait ton œil. Elle dit ce qui est effacé, ce qui reste sous un nom neutre, et **pourquoi nous n'écrivons pas « supprimer »** — en écho à la page du Jeu, dont la phrase est du poste fixe. Deux pages pour un seul geste : si l'une flatte, elle ment.
+- **Le libellé du menu** : « Fermer mon compte · Ton identité est retirée, tes traces restent anonymes ». Même registre à valider.
+- **Deux illustrations déclarées et jamais affichées** — `co-c04` (ENGAGEMENT) et `co-c05` (RESTITUTION), 833 ko servis pour personne. Les rendre ou les retirer est éditorial : c'est à toi et à Boris, pas à nous.
+
+## Le chantier des stores, pour contexte
+
+Boris veut publier avant le Festival, le web en secours. L'audit et l'inventaire de données sont dans `zegame-docs/docs/architecture/`. Deux lots sont en production (fermeture de compte branchée, HTTPS imposé, politique de sécurité du contenu, fichiers de liens profonds). ⓘ **Ce qui t'intéresse peut-être** : les trois surfaces d'IA (avatar, guides, mentor) obligent à déclarer le contenu généré, la modération et la classification d'âge. Le texte du joueur part chez le modèle avec un contexte conditionné à ses consentements ; **son identité, jamais** — vérifié dans les trois services.
+
+— le portable
+
+---
+
 ### 2026-09-22 (soir) · du portable · La production est promue (`9eb0706`) — tes textes sont en ligne
 
 Boris a testé et donné son go. Tout ton registre écrit depuis le 2 septembre est servi aux joueurs : Immateria et E1 en trois étapes, E8, le Conseil Oméga 2.0 avec sa conclusion (`role`) et son registre illustré, l'écran « Les deux mondes » de Désir, les mots de la clôture et du treizième siège. Ton correctif de #348 aussi — la conclusion de Désir s'atteint, vérifiée à l'écran.

@@ -1,5 +1,39 @@
 # Boîte du poste fixe
 
+### 2026-09-24 · du portable · ⚠️ TA ZONE TE REVIENT — récapitulatif des deux jours où je l'ai tenue
+
+Boris est rentré et te redonne la main. Voici l'état, et surtout **ce que j'ai touché chez toi** : les notes détaillées sont plus bas dans cette boîte, celle-ci est la carte.
+
+**Production `bef4754`, préprod `cd18a25`, arbres propres, zéro compte jetable, zéro échec en file, disque à 42 %.**
+
+## Ce qui est parti en production (22 → 24 septembre)
+
+Tout le Monde 0, en deux promotions : `34a167d` → `9eb0706` (Immateria, E1 en trois étapes, E8, le Conseil 2.0, l'avatar par Claude, les 18 verbes, les lots mobile, tes #344 → #348), puis les lots « stores » (§ suivant). Recette transversale arrêtée par Boris à 117 verts / 0 rouge, à rejouer en entier quand tu voudras.
+
+## Ce que j'ai fait DANS TA ZONE, et qu'il faut que tu saches
+
+1. **Le prélude « Les deux mondes » (`eveil.css`, `eveils/show`)** — trois défauts. Ta section avait été **appendée après les requêtes média** : tes dix surcharges téléphone et tes quatre règles de mouvement réduit étaient **mortes depuis #345**. Remontée avant les requêtes, sans toucher une valeur. Le médaillon de l'Enfant était **vide à toutes les largeurs** (la page ne chargeait pas `/pz/immateria/sprite.css`). Et à 768 px la colonne de texte faisait 80 px : bloc `@media (min-width: 651px) and (max-width: 900px)`, et `.threshold-panel` ne double plus le rembourrage de `.eveil-ecran`. **Mes valeurs de mise en page sont à toi** : seuil à 900, médaillon à 104, rembourrage du panneau — reprends-les si elles ne te vont pas.
+2. **Le CTA de fin de fiche enjambait la page de chapitre** (`NavigationHelper`) : de « Choisir qui marchera à mes côtés » à « L'écosystème » sans voir le Chapitre 2. Ta carte « CHAPITRE SUIVANT · Ouvrir » du pied, elle, y menait — le banc la mesurait, et restait vert pendant que le chemin réel sautait le chapitre.
+3. **Le compteur des trois tableaux du Conseil** (`ol > li` que la feuille n'habillait pas) : signalé, tu l'as corrigé dans #347.
+4. **La CSP porte des nonces sur tes deux scripts en ligne** (`PZ_SHELL_CONTEXT`, la carte d'import). ⚠️ Piège pour tes prochains scripts : `tag.script(…, nonce: true)` rend littéralement `nonce="true"` — le bon appel est `nonce: request.content_security_policy_nonce`. **La préprod BLOQUE** (`CSP_BLOQUANTE=oui`), la production observe.
+5. **Trois vues neuves chez toi** : la page publique de fermeture de compte (`pages_publiques/`), et — retirées depuis — mes écrans de suppression. Voir le point suivant.
+6. ⚠️ **Mon erreur de la journée** : j'ai construit une suppression de compte alors que **ta `FermetureDeCompte` existait depuis le 7 septembre**, avec l'arbitrage de Boris (« anonymisé, pas effacé »). Deux portes contradictoires ont coexisté en production une journée. Réparé sur sa parole : **ta page est branchée au menu** (« Fermer mon compte »), la mienne est retirée, et `verifier_fermeture_de_compte` garde désormais que le chemin **se trouve**. ⓘ Ce qui l'avait rendue invisible : elle n'était reliée à rien.
+
+## Ce qui t'attend, et que je n'ai pas pris
+
+- **Les 23 classes mortes de `conseil-omega.css`** (ton relevé) et l'assertion générale « toute classe dessinée est émise ».
+- **`style-src 'unsafe-inline'`** : 88 attributs `style:` dans les vues, dont les variables CSS des illustrations. C'est ce qui reste avant de fermer la CSP au maximum — chantier de vue, à ton rythme.
+- **Les icônes et captures des stores** : il manque le 1024×1024 d'App Store et les jeux par taille d'écran.
+- L'écran `role` du Conseil est porté (#346), le registre aussi ; rien ne t'attend de mon côté dessus.
+
+## Le chantier « stores », pour que tu saches où on en est
+
+Audit et inventaire de données dans `zegame-docs/docs/architecture/` (`publication-stores-audit-2026-09-22.md`, `donnees-formulaires-stores-2026-09-23.md`). Lots 1 et 2 en production : fermeture de compte branchée, HTTPS imposé (cookie `secure`, HSTS), CSP, et les deux fichiers de liens profonds servis par variables d'environnement (404 tant que les identifiants réels manquent). **Ce qui bloque n'est plus du code** : `ANDROID_PACKAGE`, `ANDROID_SHA256`, `APPLE_TEAM_ID`, `APPLE_BUNDLE_ID`, et l'adresse du compte de démonstration — Boris les fournit. La voie recommandée reste **Hotwire Native** (Apple refuse les sites emballés, règle 4.2).
+
+— le portable
+
+---
+
 ### 2026-09-23 (soir) · du portable · ⚠️ TA FERMETURE DE COMPTE EST ENFIN BRANCHÉE — et j'ai dû retirer la mienne, qui la contredisait
 
 **Ce que j'ai fait de travers, d'abord.** J'ai construit hier un chemin de suppression (effacement réel) et je l'ai promu. Ton `FermetureDeCompte` existait depuis le 7 septembre — service, page, banc de 45 assertions — avec l'arbitrage de Boris dans `docs/architecture/suppression-de-compte-analyse-impact.md` : **« anonymisé, pas effacé »**. J'avais cherché dans les boîtes et dans le code d'authentification, pas dans `docs/architecture`. Les deux portes ont coexisté en production une journée, avec des promesses contradictoires. C'est ma faute, et elle est écrite dans l'audit des stores comme dans ma passation.
