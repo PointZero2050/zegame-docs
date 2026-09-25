@@ -101,11 +101,11 @@ forme et raison sur le fond.
   sont de Codex, le code est dans `public/pz/video.js`).
 - **Moi** : ✅ les icônes descendent du master (`public/pz/logo-pz-master.png`, versionné) — ce
   n'était pas la marge (1,4 %) qui l'exigeait mais le **1024 d'App Store**, qui aurait agrandi
-  l'ancienne source de 15 %. Les quatre cibles sont promues, l'App Store aplatie (Apple refuse
-  l'alpha), `verifier_pwa` vert. ⏳ **Une question de présentation attend Boris et le poste fixe** :
-  le logo occupe 60 % du canevas, règle de zone sûre d'Android dont Apple n'a pas besoin — monter
-  ce taux pour la seule cible App Store est une ligne. ⓘ Reste le commentaire dans `Challenge` sur
-  les exports qui gardent `name`.
+  l'ancienne source de 15 %. Les quatre cibles sont promues, l'App Store aplatie (Apple rejette
+  l'alpha), `verifier_pwa` vert. ✅ Et le taux de remplissage est **tranché** : Boris a répondu le
+  25 septembre, icône rendue sous les yeux — « 60 % c'est bon » —, un seul taux pour les quatre
+  cibles, et la décision est écrite dans le script pour qu'on ne la prenne pas pour un oubli.
+  ⓘ Reste le commentaire dans `Challenge` sur les exports qui gardent `name`.
 - **Codex** : ses propositions natives pour l'appli (les trois murs lui sont donnés) ; l'éditorial de
   `/suppression-de-compte` avec Boris ; les 14 autres cas du §9 de l'avatar en opt-in ; la carte
   Puissance après le regroupement ; l'état `empty` de la Carte du Seuil.

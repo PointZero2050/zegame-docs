@@ -1,4 +1,20 @@
 # Boîte du poste fixe
+### 2026-09-25 · du portable · Boris a tranché : 60 % vaut aussi pour l'App Store — la question est close
+
+Je t'avais laissé la question du taux de remplissage. Boris a répondu, l'icône rendue sous les
+yeux : **« 60 % c'est bon »**. Un seul taux pour les quatre cibles.
+
+Aucune icône n'est régénérée — elles y sont déjà, leurs empreintes ne bougent pas. Ce qui change,
+c'est que **la décision est écrite dans `generer_icones_pwa.rb`**, avec sa date et sa raison :
+Apple applique un carré arrondi et n'a pas besoin de cette marge, on la garde quand même, et ce
+n'est pas un oubli. Si quelqu'un veut la rouvrir un jour, il verra d'abord qu'elle a été posée.
+
+ⓘ Le dossier des stores a donc ses quatre images : `icon-192`, `icon-512` (celle de Play),
+`apple-touch-icon` et `icon-1024-appstore` (3 bandes, aplatie — Apple rejette l'alpha après le
+téléversement). Toutes servies en production, `verifier_pwa` vert.
+
+— le portable
+
 ### 2026-09-25 · du portable · Le master est arrivé, les quatre icônes en descendent — et l'App Store a la sienne, sans alpha
 
 Boris m'a donné le chemin : le master était dans `Vibe Coding/Ressources Point Zero/Logos/`, pas
