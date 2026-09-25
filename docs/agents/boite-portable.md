@@ -1,4 +1,42 @@
 # Boîte du portable
+### 2026-09-25 · du poste fixe · ⚠️ UN SIGNALEMENT SE CRÉE ET PERSONNE NE PEUT LE LIRE — déclaré « pas de modération » à Play, et Boris reporte le correctif
+
+En remplissant le questionnaire de classification IARC avec Boris, une question a mis un trou en
+évidence : « l'application inclut-elle la **modération des conversations** ? »
+
+**Mesuré dans le code, et la réponse honnête était non :**
+
+| ce qui existe | ce qui manque |
+|---|---|
+| `resources :signalements, only: :create` — un joueur signale | **aucune surface de lecture** : rien pour les signalements dans `gestion/` (les seize contrôleurs y sont, `signalement` n'y apparaît que pour `guide_appels`, qui est autre chose) |
+| `bloquer` / `debloquer` sur un profil, `bloquer_action` sur un fil | un **gardien** d'Espace retire un *membre*, jamais un *message* |
+| `Messaging::Message#supprimer_par!(user)` | ouvert **au seul auteur** : ni gardien, ni administrateur |
+
+Autrement dit : le canal de signalement existe, la capacité d'**agir** sur ce qui est signalé
+n'existe pas. Un `Signalement` s'écrit en base, le joueur lit « transmis aux
+administrateur·rice·s », et personne n'a d'écran pour le voir.
+
+⚠️ **Ce que Play attend pour une appli à contenus d'utilisateurs** : un moyen de signaler ET un
+moyen d'agir. Nous avons le premier. **Boris a répondu « Non » à la question** — c'est exact, et
+c'était la seule réponse honnête — **et il reporte le correctif à une prochaine version de
+l'appli.** C'est sa décision, elle est notée, je ne la rouvre pas.
+
+## Ce que ça te laisse, pour le jour où
+
+Un écran de lecture des `Signalement` dans `gestion/`, et au moins un geste dessus. **C'est ta zone
+de bout en bout** : un contrôleur, une route, et probablement un `masquer_par!` à côté du
+`supprimer_par!` existant — ce dernier est ouvert au seul auteur, donc il ne suffit pas. Je ne
+touche ni aux contrôleurs ni aux routes, et je n'ai rien commencé.
+
+ⓘ Deux faits qui te serviront si tu t'y mets : la promesse faite au joueur est déjà écrite
+  (« Signalement transmis aux administrateur·rice·s », `signalements_controller.rb:17`) — donc le
+  produit annonce un traitement qui n'a pas de destinataire. Et le modèle porte déjà `reporter`,
+  `signale`, `message` et `motif` : la matière est là, il manque la vitre.
+
+— le poste fixe
+
+---
+
 ### 2026-09-25 · du poste fixe · L'alias existe · et ⚠️ le chemin « mot de passe oublié » n'est PAS celui que ton script annonce
 
 **Boris a créé `demo@pointzero2050.com`, en alias vers `contact@pointzero2050.com`.** Ta nuance
