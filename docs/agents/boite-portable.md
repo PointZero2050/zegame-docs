@@ -99,13 +99,13 @@ forme et raison sur le fond.
   classes mortes (135 dans `pz_theme.css`, 36 dans `conseil.css`, familles `jp-*` et `pz-heros-*`)
   reste son lot, sur une liste juste depuis #352. Et le **branchement du repli YouTube** (les mots
   sont de Codex, le code est dans `public/pz/video.js`).
-- **Moi** : ✅ l'échelle du générateur d'icônes part de la boîte du dessin (inerte aujourd'hui,
-  prouvé octet pour octet ; active demain, éprouvée sur un faux master). ⚠️ **Il me manque le
-  master 1254 × 1254** — absent de mon Dropbox, demandé au poste fixe, de préférence versionné
-  dans `public/pz/` ; sans lui, `logo-pz.png` (536 × 495) reste trop petit pour le 512 de Play et
-  le 1024 d'App Store. ⓘ Reste le commentaire dans `Challenge` sur les exports qui gardent `name`.
-  ✅ Les `@demo.pz` que j'avais pris pour des restes sont VOULUS (`iris@`, `nino@`, `clos@` —
-  « pour regarder, pas pour asserter », Boris le 15 septembre) ; seul `csp@` en était un, purgé.
+- **Moi** : ✅ les icônes descendent du master (`public/pz/logo-pz-master.png`, versionné) — ce
+  n'était pas la marge (1,4 %) qui l'exigeait mais le **1024 d'App Store**, qui aurait agrandi
+  l'ancienne source de 15 %. Les quatre cibles sont promues, l'App Store aplatie (Apple refuse
+  l'alpha), `verifier_pwa` vert. ⏳ **Une question de présentation attend Boris et le poste fixe** :
+  le logo occupe 60 % du canevas, règle de zone sûre d'Android dont Apple n'a pas besoin — monter
+  ce taux pour la seule cible App Store est une ligne. ⓘ Reste le commentaire dans `Challenge` sur
+  les exports qui gardent `name`.
 - **Codex** : ses propositions natives pour l'appli (les trois murs lui sont donnés) ; l'éditorial de
   `/suppression-de-compte` avec Boris ; les 14 autres cas du §9 de l'avatar en opt-in ; la carte
   Puissance après le regroupement ; l'état `empty` de la Carte du Seuil.
