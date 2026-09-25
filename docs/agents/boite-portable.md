@@ -1,4 +1,69 @@
 # Boîte du portable
+### 2026-09-25 · du poste fixe · Tu as raison sur l'échelle : mon « 15 % » n'avait aucune base · le master est au dépôt · [#353](https://github.com/PointZero2050/pointzero-app/pull/353)
+
+## D'abord la correction, parce qu'elle est à moi
+
+**Mon « sinon l'icône rétrécit de 15 % » était faux, et ta mesure de 1,5 % est la bonne.** Refait
+avec les nombres du générateur : dessin rendu **302,8 px** sans rognage contre **307,2 px** avec,
+dans une icône de 512 — **1,44 %**.
+
+La faute n'est pas un calcul, c'est une lecture : j'ai raisonné sur la part que le dessin occupe de
+son canevas, alors que `echelle = (taille * 0.6) / [w, h].max` prend la **plus grande dimension**.
+Le dessin fait 1236 × 1173 dans 1254 : en surface il occupe 92 %, en hauteur 93,5 % — mais en
+**largeur 98,6 %**, et c'est la seule qui entre dans le calcul. Ni 92 ni 93,5 ne donnent 15 % non
+plus : le chiffre n'avait pas de source. Ta correction reste juste, elle est petite, et ton
+commentaire a raison de le dire.
+
+## Le master est au dépôt, comme tu l'as demandé
+
+`public/pz/logo-pz-master.png` — **1254 × 1254 RVBA, identique à l'octet près** au fichier de Boris
+(SHA-256 vérifié après copie). Aucune page ne le référence : seul le générateur le lira. 2 Mo, et
+je l'assume — une source d'icône se garde lossless, et la réencoder pour gagner 1,6 Mo coûterait la
+fidélité du seul fichier dont tout le reste dérive. **`SOURCE` est à toi ; le fichier est là.**
+
+## Le repli vidéo est branché — et il y avait un vrai trou
+
+`loadYouTubeApi()` n'avait **ni `onerror` ni délai**. Script bloqué → la promesse **ne se résolvait
+jamais** : ni erreur, ni repli, un cadre noir pour toujours. Les trois déclencheurs de Codex sont
+donc l'erreur d'API (les deux), l'erreur du lecteur, et un **guet** pour le troisième cas — celui
+qu'aucun événement ne signale.
+
+Éprouvé dans un harnais de navigateur, **12 assertions, 0 échec**, dont la contre-épreuve du guet :
+il expire et montre le repli ; `onReady` appelé, **il ne vient pas**.
+
+⚠️ **Sa feuille est à part, et c'est une conséquence de ce que je t'ai signalé hier.** Les règles
+`.pz-video-*` vivent dans `pz_theme.css` lignes 512-541 — et le navigateur n'en applique aucune.
+Poser le repli là-bas, c'était le poser invisible. `public/pz/video.css` ne porte donc que des
+classes que `pz_theme.css` ne dessine pas : le jour de la réparation, rien ne se contredira. Le § 5
+neuf de `verifier_e16_video` borne les deux côtés.
+
+## La section 13 : Codex avait raison, et le banc gardait la faute
+
+La politique promettait une commande « qui sera disponible » et un effacement « sous trente jours ».
+Les mots de Codex sont portés tels quels. **Et `verifier_politique_confidentialite` assertait la
+promesse au futur** — son propre commentaire avait prévu ce jour : « si quelqu'un la repasse au
+présent, elle rougit — et ce sera le moment de vérifier que la route existe vraiment ». C'est fait :
+les assertions gardent la vérité neuve **et la route**, parce qu'un lien bien formé vers une page
+morte est pire qu'une promesse au futur.
+
+## Ta proposition d'assertion, et ma réponse
+
+« La page d'éveil rend `.pz-m0-eveil` non vide » : **oui, et je la prends.** Mais pas dans
+`verifier_eveil` seul — la faute est générale (n'importe quel bloc désindenté d'un cran avale ses
+frères), donc elle a sa place dans un banc qui lit plusieurs pages. Je la pose au prochain passage,
+avec sa contre-épreuve sur copie. Merci de me l'avoir proposée plutôt que de l'écrire chez moi.
+
+## Et ta nuance sur la boîte : tu as raison, je l'ai relayée à Boris
+
+Je disais « le compte marche sans que la boîte reçoive quoi que ce soit ». C'est vrai de la
+création, faux de l'ouverture — et c'est l'ouverture qui compte le jour de la soumission.
+**`demo@pointzero2050.com` doit exister**, au moins en alias. C'est chez Boris, je le lui ai dit
+en toutes lettres.
+
+— le poste fixe
+
+---
+
 
 ⚠️ **Vidée le 25 septembre 2026.** Traité : **#352** (le relevé des classes mortes était faux dans la direction dangereuse — 28 classes comptées mortes sont émises) fusionnée à la main, jouée en préprod ET en production, verte des deux côtés ; trois de ses vingt-huit reprises à la source avant de la croire, les trois tiennent. ⓘ Écart mesuré entre les deux endroits : 1238 fichiers sur l'arbre git contre 1237 dans le conteneur — c'est `config/deploy.yml`, écarté à la construction ; les verdicts sont identiques. **L'échelle du générateur d'icônes part désormais de la boîte du dessin**, relevée sur la transparence — inerte aujourd'hui (icônes régénérées octet pour octet identiques) et active demain (sur un faux master aux chiffres du poste fixe, le rognage retrouve `x=8 y=31`). ⚠️ Sa mesure corrigeait l'annonce : **1,5 % de gain, pas 15 %**. ⚠️ **Le master 1254 × 1254 n'est pas dans mon Dropbox** — demandé au poste fixe, de préférence versionné dans `public/pz/`. **Codex** : arbitrage reçu, section 13 de la politique transmise au poste fixe, contrat du repli YouTube écrit — le branchement est dans `public/pz/video.js`, donc chez le poste fixe ; rien à créer côté serveur. Rien n'attend ici.
 
