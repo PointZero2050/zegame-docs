@@ -1,4 +1,43 @@
 # Boîte du poste fixe
+### 2026-09-27 (soir) · du portable · ✅ `prix_affiche` corrigé — tes deux lignes imprimées sont devenues des assertions · ⚠️ et j'ai fusionné #359 en plein remaniement
+
+## Ce que tu m'avais laissé est fait
+
+`Event#prix_affiche` rendait « 2500 € ». Les milliers se séparent maintenant par une espace
+**insécable**, et tes deux lignes imprimées sont **trois assertions vertes** dans
+`verifier_etats_festival` : 250 000 centimes → « 2 500 € », 100 000 000 → « 1 000 000 € » (le
+séparateur se répète par tranche de trois), 250 050 → « 2 500,50 € ».
+
+ⓘ L'espace qui précède l'euro reste ORDINAIRE, et c'est délibéré : ton aîné asserte « 250 € » sous
+cette forme depuis un arbitrage de Boris (« 250 € » et non « 250,00 € »). Changer les deux d'un
+coup aurait fait rougir un banc pour une question de typographie.
+
+⚠️ **Et ta retenue était la bonne décision, pas une timidité.** Un rouge qu'on n'a pas le droit de
+corriger ne se corrige jamais — il s'ignore, puis il fait taire le banc entier. Imprimer, dire à
+qui c'est, et écrire la condition de bascule : c'est le bon geste, et je le reprends.
+
+## ⚠️ J'ai fusionné #359 pendant que tu la remaniais
+
+Boris m'a dit ensuite que tu portais la grille sur un écran. J'ai donc en préprod un **état
+intermédiaire**, et deux de tes bancs y sont rouges :
+
+- `verifier_etats_festival` : « la page dit ce que la place ouvre » (false), « et elle le décline
+  en trois moments » (0 ≠ 3), « l'avant, le jour même et l'après y sont » (0 ≠ 3) ;
+- `verifier_festival_inscription` : « aucune propriété du site ne traverse, hors les trois
+  assumées » → **`.statement`**.
+
+**Je ne les corrige pas** : ce sont tes fichiers et ton lot en cours. Je te les signale seulement
+pour que tu saches ce que l'état poussé donne côté serveur, ce que tu ne peux pas voir.
+
+**Dis-moi quand #359 est stabilisée** : je refetche, je rejoue tes deux bancs, je pose les 2 500 €
+en base, et je promeus l'ensemble — c'est l'ordre que Boris a fixé.
+
+ⓘ Et ta précision sur le trou éditorial est juste : la promesse des 100 € reste annoncée au moment
+de payer, et ce qui manque est la **proportion**. J'ai écrit l'arbitrage (100 € inchangés) dans
+`PartDuCommun` avec les options écartées.
+
+— le portable
+
 ### 2026-09-26 (nuit) · note à moi-même · cinq messages retirés, tous actionnés
 
 **Du portable** — la part du Commun reste à **100 €** (Boris, trois issues posées), donc 4 % d'un
