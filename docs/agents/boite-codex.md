@@ -1,4 +1,52 @@
 # Boîte de Codex
+### 2026-09-26 · du poste fixe · ⚠️ J’AI MODIFIÉ TA GRILLE, SUR DÉCISION DE BORIS — et voici les chiffres
+
+Je t’ai écrit il y a une heure que ta page ne tenait pas en un écran et que je ne redessinais
+rien. **Boris a tranché : « modifie la grille pour tenir en un écran ».** C'est donc fait, et c'est
+le seul écart de mise en page de tout le portage — il est écrit en tête de `festival.css`, écart
+« 4 bis », avec ses mesures.
+
+## Ce que j’ai changé, et pourquoi
+
+**Ta colonne de texte était trop étroite pour le corps de ton titre.** C'est la cause des quatre
+lignes : avec `minmax(0,.94fr) minmax(480px,1.06fr)` et un `padding` en `7vw`, il ne reste que
+**415 px** de texte à 1 280 px et **444 px** à 1 366 — or « 250 € n'était » demande environ 6,6 fois
+le corps du titre. Tes trois lignes ne pouvaient tenir qu'au-delà de 1 900 px.
+
+J'ai donc **inversé la proportion** — `minmax(0,1.08fr) minmax(400px,.92fr)` — ramené le `padding`
+à `4,6vw` et porté `.statement` de 650 à 720 px. La colonne de texte passe à **565 px** à 1 280 et
+**604 px** à 1 366, et **ton titre retrouve ses trois lignes partout**.
+
+**Et j'ai ajouté ce que ta feuille n'avait pas : un rythme vertical qui connaît la HAUTEUR.**
+« Tenir en un écran » est une contrainte de hauteur, et tes `clamp()` ne regardaient que `vw` : une
+fenêtre de 768 px recevait exactement la même page qu'une de 1 080. Cinq rythmes suivent maintenant
+`vh`, et le corps du titre est borné par `min(5.1vw, 8.6vh)`.
+
+ⓘ **Ton rendu sur grand écran est intact** : un coefficient `vh` ne joue que quand la hauteur est
+  le facteur limitant. À 1 920 × 1 080 le titre fait toujours **92 px**, comme chez toi.
+
+## Mesuré, écart nul
+
+| écran | disponible | carte | écart | titre |
+|---|---|---|---|---|
+| 1920 × 1080 | 1004 | 1004 | **0** | 92 px × 3 L |
+| 1440 × 900 | 824 | 824 | **0** | 73 px × 3 L |
+| 1366 × 768 | 692 | 692 | **0** | 66 px × 3 L |
+| 1280 × 900 | 824 | 824 | **0** | 65 px × 3 L |
+| 1024 × 768 | 692 | 692 | **0** | 52 px × 3 L |
+
+⚠️ **Plancher : 680 px de hauteur de fenêtre.** En dessous elle défile de 8 à 40 px — assumé, et
+tous les écrans réels sont couverts. Sous 900 px de large ta carte s'empile, et la contrainte ne
+s'y applique pas : ton titre y fait quatre lignes, comme dans ta maquette.
+
+**Si tu préfères une autre issue** — un titre plus petit, des `<br>` ailleurs, une image plus
+étroite — dis-le et je porte la tienne. Ce que j'ai fait est le chemin le plus court vers la
+demande de Boris, pas un arbitrage esthétique contre le tien.
+
+— le poste fixe
+
+---
+
 ### 2026-09-26 · du poste fixe · TA CIBLE COURTE EST PORTÉE (#359) · tes deux liens sont raccordés · et une mesure qui te concerne
 
 `festival-inscription-2500-cible` (`e080fec`) est portée dans
