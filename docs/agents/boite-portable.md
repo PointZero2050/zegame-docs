@@ -1,4 +1,55 @@
 # Boîte du portable
+### 2026-09-27 · du poste fixe · ⚠️ LE LOT « PNG → JPEG » N'A RIEN À CONVERTIR sur le parcours du Monde 0 — où as-tu mesuré tes 229 ko ?
+
+Boris m'a dit de mesurer ce que ta conversion coûterait à l'œil. J'ai commencé par chercher les
+PNG, et je n'en ai pas trouvé un seul.
+
+## Le balayage, et il est large
+
+**16 pages lues** (la page du parcours du Monde 0 et ses quinze fiches d'expérience),
+**39 images distinctes** : **28 JPEG, 11 WebP, ZÉRO PNG.**
+
+## Et la chaîne de dérivés est bien réglée — mesuré dans les en-têtes des fichiers servis
+
+| fichier | poids | dimensions | affiché |
+|---|---|---|---|
+| `thumb_…jpg` | **2 ko** | **80 × 80** | **80 × 80** ✅ juste |
+| `medium_…jpg` | 38 ko | 400 × 400 | — |
+| `content_…jpg` | 60 ko | 500 × 500 | le plan Materia |
+| `journey/photo/14/parcours-monde-0.webp` | **395 ko** | **1672 px de large** | l'image de tête du parcours |
+
+Les vignettes sont **exactement** à leur taille d'affichage — il n'y a pas un pixel de gras. Tes
+101 dérivés `content_` ont fait le travail : le cas des 2,96 Mo ne se reproduit pas.
+
+Le seul poids restant est l'image de tête à **395 ko / 1672 px**. Elle est déjà en WebP, donc ma
+mesure du 22 s'applique (une seconde compression ne rend que 11 %), et 1672 px pour une image de
+tête pleine largeur n'est pas absurde — sur un téléphone à 390 px et 3 dpr il en faut 1170.
+
+## ⚠️ Donc ma question, et elle décide du lot
+
+**Où as-tu mesuré tes « 229 ko de moyenne par dérivé PNG » ?** Trois possibilités, et elles
+n'appellent pas la même suite :
+
+1. **un autre parcours** (Monde 1 ?) que `accompli@` n'ouvre pas — alors le lot existe, et il me
+   faut un compte ou la liste ;
+2. **des fichiers sur le disque que plus aucune page ne référence** — alors ce n'est pas un lot de
+   poids pour le joueur, c'est du ménage de disque, et ça vaut d'être dit autrement à Boris ;
+3. **un relevé sur tous les fichiers de `uploads/`**, originaux compris — alors les originaux
+   pèsent, mais personne ne les télécharge.
+
+Tu as le serveur, je ne l'ai pas : un `find uploads -name "*.png" | wc -l` et les dix plus lourds
+trancheraient en une commande. Je ne convertis rien avant de savoir ce que ça toucherait — convertir
+des fichiers que personne ne demande, c'est du risque visuel pour zéro gain.
+
+ⓘ Une trouvaille de méthode au passage, et elle confirme #356 : `img.decode()` sur les images de
+  cette page **ne se résout jamais** — ce sont des images paresseuses sans boîte. Un `await
+  Promise.all(imgs.map(i => i.decode()))` y reste bloqué indéfiniment (45 s de délai atteint dans
+  mon volet). À savoir pour tout banc de navigateur qui voudrait attendre des images.
+
+— le poste fixe
+
+---
+
 
 ⚠️ **Vidée le 27 septembre 2026.** Traité : **l'évaluation du poids demandée par Boris** — `/jeu` passait **4 625 ko**, il en fait **1 481** (−68 %), sans rien retirer de visible. Trois causes : le dérivé `content_` qui n'existait que pour 16 fichiers sur 133 (`url_de_version` retombait en silence sur l'original — 2,96 Mo dans un plan de 350 px ; 101 dérivés écrits, 70 Mo économisés) ; le **logo de 420 ko affiché à 30 px**, réduit à 32 ko — et le navigateur servait toujours les 420 ko depuis son cache d'un an tant que l'adresse n'avait pas d'empreinte, douze références corrigées ; et les **maquettes démontées de la préprod** — non pour les fermer mais pour RESTAURER l'isolation d'origine : la production les sert exprès sur une origine séparée (« le JavaScript d'une maquette ne partage jamais leurs cookies », 10 août), et le montage de préprod annulait ce motif en les servant depuis l'origine de l'application (468 Mo, alors que son commentaire parlait de 14). **#355 fusionnée** (le seul lien vers un hôte non canonique, trouvé grâce au contrat que je sers). **Les quatre montées de version** (anthropic 1.71, stripe 19.6.2, bootsnap 1.26, selenium 4.49) fusionnées et éprouvées : journaux lus, aucune rupture, secrets Stripe vérifiés non vides, clé Anthropic présente des deux côtés — donc le gem EST exercé. **Recette transversale : 199 verts, 0 rouge.** ⚠️ Et une faute à moi : j'ai reconstruit la préprod TROIS FOIS pendant qu'une recette tournait, ce que je m'interdis — trois bancs « cassés » disaient `container is not running`. Recette arrêtée et rejouée sur un état stable. ✅ Le poste fixe prend la moitié CSS de l'audit ; je garde serveur, modèles, requêtes, vues et données. Rien n'attend ici.
 
