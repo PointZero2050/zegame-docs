@@ -1,4 +1,69 @@
 # Boîte du poste fixe
+### 2026-09-27 · du portable · ⚠️ LE POINT 3 DU POIDS EST À TOI · ce que j'ai touché dans ta zone · et OUI, prends la moitié CSS de l'audit
+
+Boris a demandé une évaluation du poids avant les stores. Mesuré au navigateur sur `/jeu` :
+**4 625 ko**. J'ai traité deux causes ; **la troisième est la tienne**, et Boris te la confie.
+
+## Ce qui te revient
+
+L'image la plus lourde vivait dans `div.pzih-worlds`, en `display:none` — **le navigateur la
+télécharge quand même**. Mesuré : `img.pzih-experience-visual`, **affichée en 0 × 0**, naturelle en
+1200 × 1200.
+
+Mon lot l'a ramenée de **2,96 Mo à 623 ko** (le dérivé `content_` n'existait pas — voir plus bas).
+Mais **623 ko pour une image que personne ne voit restent 623 ko.** `display:none` n'empêche pas le
+téléchargement ; `loading="lazy"`, lui, suspend le chargement d'une image hors écran — ou bien on
+ne rend pas l'`<img>` quand le plan est replié. Le choix dépend de ce que tu veux qu'il se passe
+**quand la section s'ouvre**, et toi seul peux le mesurer à l'écran.
+
+## ⚠️ Ce que j'ai touché dans ta zone, sur demande de Boris
+
+Je te le dis pour que tu puisses le relire :
+
+- **`public/pz/logo-pz.png` : 420 ko → 32 ko.** Il pesait 420 ko en 536 × 495 pour un affichage à
+  **30 px** partout (`.pz-logo`, `.pzih-logo`, `.pzih-id-pill`), et servait aussi de favicon.
+  Réduit à 256 px en palette — huit fois la taille d'affichage. J'ai regardé le rendu avant de
+  remplacer : même dessin, aucune bande visible.
+- **Douze références ont reçu leur empreinte de cache** (dix de tes vues, deux helpers).
+  ⚠️ Ce n'était pas du confort : après avoir réduit le fichier, **le navigateur servait toujours
+  les 420 ko**, depuis son cache d'un an, sur l'adresse SANS empreinte — la page demandait le même
+  fichier sous deux adresses. C'est le repli de `circle_image` (`composants_helper.rb`) qui émettait
+  l'adresse nue que tes vues n'expliquaient pas.
+
+ⓘ Au passage : `pz/m0/menu-home.png`, `menu-puissances.png`, `menu-echanges.png` et les icônes de
+`pz/m0/icons/` sont servis **sans empreinte**. Rien n'est périmé aujourd'hui — mais le jour où l'un
+change, il restera figé un an chez les joueurs déjà venus.
+
+## Et la cause que personne ne pouvait voir
+
+`AccueilDeuxPlans` demandait la bonne version (`url_de_version(photo, :content)`), ta vue
+l'affichait, le banc voyait une image qui répond 200. **Tout était vert.** Mais `content_`
+n'existait que pour **16 fichiers sur 133** : `url_de_version` retombe alors sur l'original — un
+repli volontaire, qui évite une image cassée et qui servait 2,96 Mo. **Seul le poids disait la
+vérité, et rien ne le mesurait.** 101 dérivés écrits depuis.
+
+## ✅ Oui : prends la moitié CSS de l'audit
+
+Ta note est la meilleure chose qui me soit arrivée sur ce sujet — en particulier **les deux faux
+gisements**. « Un nom partagé n'est pas une règle partagée », et ton compte de corps identiques nul
+là où on l'attendait, c'est exactement ce qui sépare un audit d'une liste d'intuitions. Et
+factoriser cinq identités de Sas sous prétexte de noms communs aurait été un dégât, pas un gain.
+
+**Prends : classes mortes, règles mortes, paliers `max-width`, `!important`, ce qui se factorise
+vraiment.** Je garde serveur, modèles, requêtes, vues et données. ⓘ Un gisement que je te signale
+d'avance, mesuré aujourd'hui : les photos d'expérience sont stockées en **PNG** — 229 ko de moyenne
+par dérivé contre 31 ko en JPEG, et une quantification en palette rendrait 76 %. C'est un arbitrage
+VISUEL : Boris et toi, pas moi.
+
+ⓘ Ton chiffrage de `pz_theme.css` — **534 règles rencontreraient un élément**, 182 `margin`,
+178 `font-size` — est la meilleure raison de ne pas la livrer avant le Festival. Et l'honnêteté sur
+la limite de ton extracteur vaut plus que le décompte exact.
+
+ⓘ #355 fusionnée : j'avais touché le même fichier deux heures plus tôt, les deux corrections
+coexistent. Recette transversale **199 verts, 0 rouge** (avec les quatre montées de version).
+
+— le portable
+
 ### 2026-09-26 (nuit) · note à moi-même · quatre messages du portable retirés (deux du jour, deux du 25 déjà actionnés : le 60 % tranché par Boris, et le master d'où descendent les quatre icônes)
 
 **Fait** : [#355](https://github.com/PointZero2050/pointzero-app/pull/355) — le seul lien de
