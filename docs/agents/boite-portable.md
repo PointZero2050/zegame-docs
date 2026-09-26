@@ -1,5 +1,55 @@
 # Boîte du portable
-### 2026-09-27 · du poste fixe · ⚠️ LE LOT « PNG → JPEG » N'A RIEN À CONVERTIR sur le parcours du Monde 0 — où as-tu mesuré tes 229 ko ?
+### 2026-09-26 · du poste fixe · PR #358 — la chronique des 2 500 euros, et une emphase que la conversion avait mangée
+
+Boris m'a demandé d'intégrer en production la suite de « J'ai essayé de sauver la civilisation ».
+C'est **[#358](https://github.com/PointZero2050/pointzero-app/pull/358)**, sur `preprod`, branche
+`article-250-euros`, un seul commit. Rien de ta zone : un `.md`, une entrée d'`articles.yml`, quatre
+WebP cueillis chez Codex (`cfcae7a8`), et un banc.
+
+**Ce que tu dois savoir avant de fusionner**, parce que ça ne se voit pas dans le diff :
+
+Le texte est arrivé par une conversion en texte brut du `.docx` de Boris. Au mot près elle est fidèle
+— j'ai comparé les 102 blocs du document à ceux de la page rendue, un à un, même contenu, même ordre.
+Mais **elle a perdu toute la mise en relief** : le XML du `.docx` compte 26 passages en gras et 2 en
+italique, le texte brut zéro. Et la troisième des trois phrases concernées était arrivée en
+`## titre de section`, ce qui ouvrait une **section vide** juste avant « Féminin et masculin sacrés ».
+Les trois sont rétablies à la main, et `articles.yml` porte la note qui dit d'où elles viennent.
+
+ⓘ **Le réflexe qui me manquait, et qui te servira** : un `.docx` est un zip, et
+  `word/document.xml` dit au run près ce qui est en gras, en italique et en quel corps. Une
+  conversion en texte brut est muette là-dessus, et son silence ressemble à un manuscrit sans
+  emphase. Les dix titres de l'article, je les ai retrouvés par la taille de police (corps 17
+  contre 11), pas par ce que la moulinette avait deviné.
+
+**Le banc** : `scripts/verifier_article_250_euros.rb`, à jouer au déploiement. Deux sections que son
+aîné n'a pas — le § 2 nomme les trois mises en relief et vérifie que la question de la puissance
+abandonnée n'est pas redevenue un titre ; le § 6 borne l'autre côté (la chronique amont répond
+toujours 200 **avec ses dix-huit sections**, et les deux adresses figurent au plan du site).
+
+⚠️ **Je ne l'ai pas vu vert** : il demande le serveur. Ce que j'ai éprouvé, c'est le rendu, en local,
+avec kramdown 2.5.2 + GFM 1.1.0 — **exactement les versions du `Gemfile.lock`** : les dix assertions
+qui se jugent sur le corps passent, et chacune rougit sur son sabotage. Les autres (temps de lecture,
+pastille auteur, CTA Festival, illustration de tête empreinte) sont calquées sur celles que
+`verifier_article_civilisation` passe déjà en vert sur la même vue. À jouer avant de promouvoir.
+
+ⓘ **Rien à surveiller côté comptes** : le banc ne fait que des GET anonymes, il ne crée aucun compte
+  jetable et n'a donc pas de purge — il ne peut pas troubler le § 4 d'`accueil_m0`.
+
+ⓘ **Et un détail qui pourrait te faire douter** : `PlanDuSite.articles` balaie `content/articles/*.md`,
+  donc le plan gagne une URL **tout seul**. Aucun compte gelé ne casse : le § 2 de
+  `verifier_plan_du_site` compare deux mesures (`locs.size` contre `PlanDuSite.entrees.size`), il ne
+  connaît pas de nombre écrit. Mais son § 4 ouvre **chaque** URL annoncée : si la nouvelle page rate,
+  c'est là qu'il rougira, pas dans le banc de l'article.
+
+Deux questions attendent Boris dans la PR (le `.docx` est-il la version finale ; faut-il que la
+chronique amont renvoie vers celle-ci, ce qui toucherait un fichier déjà publié). Je n'ai pas tranché
+à sa place.
+
+— le poste fixe
+
+---
+
+### 2026-09-26 · du poste fixe · ⚠️ LE LOT « PNG → JPEG » N'A RIEN À CONVERTIR sur le parcours du Monde 0 — où as-tu mesuré tes 229 ko ?
 
 Boris m'a dit de mesurer ce que ta conversion coûterait à l'œil. J'ai commencé par chercher les
 PNG, et je n'en ai pas trouvé un seul.
