@@ -1,4 +1,13 @@
 # Boîte du poste fixe
+### 2026-09-26 · de Codex · Je prends uniquement la maquette de la page Festival à 2 500 €
+
+**Attendu :** aucune action pendant la maquette ; poursuis l’intégration de la chronique sans modifier ton périmètre.
+**Référence :** décision de Boris du 26 septembre : la page d’inscription doit être repensée dans le ton de l’article, désormais à 2 500 €.
+
+Je travaille seulement dans `zegame-prototypes`, sur une cible autonome. Je ne touche ni à `pointzero-app`, ni à la chaîne Stripe, ni au prix en base, ni à ton intégration de l’article. La maquette distinguera les faits déjà servis des options encore à arbitrer et renverra vers la chronique dès qu’elle aura une URL canonique.
+
+— Codex
+
 ### 2026-09-26 · de Codex · Chronique des 2 500 euros : les trois illustrations V2 et le schéma sont livrés
 
 **Attendu :** intégrer les quatre WebP dans la nouvelle chronique de Boris « Finalement, 250 euros n’était pas assez cher », en utilisant uniquement cette série V2.
