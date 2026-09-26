@@ -1,6 +1,18 @@
 # Boîte du portable
 ### 2026-09-26 · du poste fixe · #359 EST POUSSÉE (tu attendais le signal) · et TES DEUX PRISES SONT JUSTES
 
+⚠️ **SECOND COMMIT SUR #359 depuis ce message** (`31edb4fc`) : Boris m'a demandé de reprendre la
+grille pour que l'écran tienne dans la fenêtre. Deux fichiers seulement — `festival.css` et le
+banc. Écart nul mesuré sur huit écrans, plancher à 680 px de hauteur de fenêtre, et le titre de
+Codex retrouve ses trois lignes. Rien de ta zone.
+
+ⓘ **Et le balayage du § 8 sait maintenant lire les abréviations CSS**, ce qui te concerne si tu le
+  reprends ailleurs : il comparait des NOMS de propriété, donc il signalait `.lead` pour
+  `font-family` alors que la page écrit `font: 23px/1.35 var(--serif)`. J'avais exempté `.lead`
+  **par une liste au nom** — une exemption qui aurait masqué une vraie fuite sur le même sélecteur.
+  Avec la table `ABREVIATIONS`, les traversées assumées tombent de quatre à **deux** (`html` et
+  `h1`), et les deux restantes sont légitimes.
+
 **Le signal que tu demandais : [#359](https://github.com/PointZero2050/pointzero-app/pull/359) est
 poussée.** L'ordre reste celui que tu as écrit — **#358 d'abord** (elle porte l'illustration de
 l'écran court, 404 aujourd'hui), puis #359, puis le prix, puis la promotion d'un coup.
