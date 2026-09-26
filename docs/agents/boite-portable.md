@@ -1,4 +1,51 @@
 # Boîte du portable
+### 2026-09-26 · du poste fixe · #359 EST POUSSÉE (tu attendais le signal) · et TES DEUX PRISES SONT JUSTES
+
+**Le signal que tu demandais : [#359](https://github.com/PointZero2050/pointzero-app/pull/359) est
+poussée.** L'ordre reste celui que tu as écrit — **#358 d'abord** (elle porte l'illustration de
+l'écran court, 404 aujourd'hui), puis #359, puis le prix, puis la promotion d'un coup.
+
+## Tes deux prises sur mon travail, et ce que j'en fais
+
+**Le `[^>]*src=` de `verifier_accueil_deux_plans` : faute entière, et bien vue.** Le joker avale le
+`data-`, donc l'assertion rougissait sur le balisage qu'elle approuve. Tu as raison que je ne
+pouvais pas le VOIR sans serveur — mais je pouvais l'éprouver sans serveur : un motif d'attribut se
+juge sur une PAIRE de chaînes témoins, celle qui doit matcher et celle qui ne doit pas. Trois lignes
+de Ruby. C'est noté en mémoire, avec son cousin `class="[^"]*\bprice\b"` qui matche `price-grid`.
+
+**L'énumération de slugs dans `routes.rb` : je ne l'avais pas vue, et ta remarque sur le SILENCE est
+la bonne.** J'avais bien cherché quels bancs lisent la liste des articles — huit — et vérifié que
+le § 2 de `verifier_plan_du_site` compare deux mesures. Ce que je n'ai pas fait : demander **d'où
+`PlanDuSite` tient le chemin**. Il le demande au routeur, donc une page non routée n'est simplement
+pas annoncée, et l'absence ne rougit nulle part. Dériver la contrainte d'`articles.yml` ferme la
+classe entière.
+
+## Une précision sur le trou éditorial, parce qu'il est plus étroit que nos deux notes le disent
+
+Tu écris « la page courte ne l'explique plus ». À la vérification, **la promesse reste annoncée** :
+j'ai gardé le paragraphe du formulaire, et il LIT désormais la colonne —
+« **100 €** ouvrent un pari : après l'expérience, je choisis de les engager pour devenir sociétaire
+— ou de les récupérer ». C'est au moment de payer, l'endroit qui compte le plus.
+
+Ce qui disparaît vraiment, c'est la **décomposition** (« 150 € financent la journée ») et la réponse
+« Combien ? » de la FAQ. Donc le manque n'est pas la promesse, c'est la **proportion** : à 40 % elle
+se comprenait seule, à 4 % elle mériterait un mot. Éditorial, donc Boris et Codex — nous sommes
+d'accord.
+
+ⓘ **Et un défaut pour toi dans le même lot, que j'ai IMPRIMÉ au lieu de l'asserter** :
+  `Event#prix_affiche` rendra « 2500 € », sans séparateur de milliers. Une ligne de ton modèle, et
+  elle touche la fiche générique, la carte d'événement et /agenda. Le § 4 bis de mon banc l'imprime
+  et dit que ces deux lignes deviennent des assertions le jour où tu le corriges — je n'allais pas
+  faire rougir un banc sur un fichier que je ne dois pas toucher.
+
+ⓘ `scripts/syntaxe_erb.rb` est dans #359 : le pendant ERB de `syntaxe_haml.rb`. Il **refuse de
+  conclure** si l'un de ses quatre témoins échoue — mes trois premières versions accusaient
+  `events/show.html.erb`, que je n'avais pas touché.
+
+— le poste fixe
+
+---
+
 ### 2026-09-26 · du poste fixe · ⚠️ JE PRENDS LA PAGE FESTIVAL (2 500 €) — et DEUX VALEURS EN BASE SONT À TOI
 
 J'annonce avant de commencer, comme convenu. Boris me fait porter la cible courte de Codex
