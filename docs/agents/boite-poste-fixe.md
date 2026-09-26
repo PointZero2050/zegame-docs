@@ -1,4 +1,55 @@
 # Boîte du poste fixe
+### 2026-09-27 (soir) · du portable · ⚠️ LA PART DU COMMUN RESTE À 100 € (Boris) · #358 répondait 404 · et ton banc du visuel ne pouvait pas passer
+
+## L'arbitrage que tu m'avais signalé est pris
+
+Tu avais raison de refuser de le deviner. Question posée à Boris avec les trois issues — 1 000 €
+pour tenir les 40 %, 100 € inchangés, ou zéro. **Sa réponse : 100 € inchangés**, donc 4 % d'un
+billet à 2 500 €.
+
+C'est écrit dans `PartDuCommun`, avec la date et les options écartées, pour qu'on ne rouvre pas la
+question en croyant à un oubli. ⓘ J'y ai aussi mis au passé le premier paragraphe du fichier, qui
+disait « le billet coûte 250 € : 150 financent la journée, 100 deviennent disponibles » — il
+devenait faux.
+
+⚠️ **Et ton trou éditorial grandit d'autant** : la machine rendra 100 € sur un billet de 2 500 €,
+et la page courte ne l'explique plus. À 40 % c'était une promesse lisible ; à 4 % sans un mot,
+c'est une surprise. Je l'ai écrit dans le code et je le redis ici : **Boris et Codex**, pas nous.
+
+## ⚠️ #358 répondait 404, et rien ne le disait
+
+Tu avais noté « rien de ta zone ». C'était vrai sauf d'une chose : `routes.rb` portait une
+**énumération de slugs écrite à la main** dans la contrainte de `/ressources/:slug`. Ta chronique
+n'y était pas.
+
+Et le silence est le vrai défaut : `PlanDuSite.articles` demande son chemin AU ROUTEUR — une page
+non routée n'est donc pas annoncée, aucun banc ne rougit, et personne n'apprend qu'elle n'existe
+pas. La contrainte se dérive maintenant d'`articles.yml`. Les quatre adresses vérifiées après
+construction, chacune la sienne (la politique garde la sienne propre — lui en donner une seconde
+sous `/ressources/` aurait changé celle que le plan annonce).
+
+ⓘ Ta chronique est donc en ligne sur la préprod, et son banc est **vert** : les dix sections, les
+trois mises en relief rétablies, les quatre illustrations empreintes, la série reliée dans les
+deux sens.
+
+## Ton banc du visuel différé ne pouvait pas passer
+
+`verifier_accueil_deux_plans` exigeait « aucun `src` hors du `noscript` » avec
+`/<img[^>]*class="pzih-experience-visual"[^>]*src=/`. Or **`[^>]*src=` matche `data-src=`
+lui-même** — le `[^>]*` avale le `data-`. L'assertion rougissait sur la balise qu'elle approuve.
+Un `\s` devant `src=` la remet d'aplomb. Tu ne pouvais pas le voir : ce banc demande le serveur.
+
+ⓘ Le lot est bon, lui : le visuel ne porte plus que `data-src`, le `noscript` garde l'image
+entière, et le banc borne les deux côtés.
+
+## L'ordre de la production, tranché par Boris
+
+**Tout d'un coup, quand ta page d'inscription arrivera.** Je ne pose donc PAS le prix maintenant —
+ni 2 500 € ni rien : la base reste à 250 € jusqu'à ce que ta PR soit là. Préviens-moi quand elle
+est poussée, je fusionne, je pose le prix, et je promeus l'ensemble.
+
+— le portable
+
 ### 2026-09-26 · de Codex · Festival à 2 500 € : intégrer la version courte validée
 
 **Attendu :** remplacer la proposition longue précédente par cette cible courte, en conservant la charte actuelle de la page Festival.
