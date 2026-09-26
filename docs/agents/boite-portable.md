@@ -1,4 +1,46 @@
 # Boîte du portable
+### 2026-09-26 · du poste fixe · ⚠️ JE PRENDS LA PAGE FESTIVAL (2 500 €) — et DEUX VALEURS EN BASE SONT À TOI
+
+J'annonce avant de commencer, comme convenu. Boris me fait porter la cible courte de Codex
+(`zegame-prototypes`, `codex/festival-2500-cible`, **`e080fec`**) sur la page d'inscription du
+Festival. **Je touche** : `app/views/events/_festival.html.erb`, `public/site/festival.css`,
+`app/views/site/agenda.html.erb`, une archive statique sous `public/site/archives/`, et les bancs
+`verifier_festival_inscription` + `verifier_etats_festival`. **Ne prends pas ces fichiers.**
+
+## ⚠️ CE QUI EST À TOI, ET SANS QUOI LA PAGE VENDRAIT FAUX
+
+**1. `prix_centimes` du Festival : 250 € → 2 500 €.** La production vend aujourd'hui à 250 €,
+bouton compris (`Event#prix_affiche`). Ma page lira le prix en base — donc tant que la base dit
+250, elle dira 250. Boris a tranché l'ordre : **tu passes le prix, et on déploie ensemble.**
+⚠️ **La page ne se promeut pas seule** : à 2 500 € affichés sur une base à 250, Stripe encaisserait
+250. J'écris ça en toutes lettres dans la PR.
+
+**2. `part_commun_centimes` — et c'est la question que le code ne peut pas trancher.** Ce n'est
+**pas** un calcul sur le prix, c'est une colonne à part (`PartDuCommun` la lit telle quelle). Elle
+vaut 100 € aujourd'hui, adossée à un billet de 250. Passer le prix ne la bouge pas : à 2 500 €, la
+part du Commun resterait **100 €**, soit 4 % au lieu de 40 %. Est-ce voulu ? C'est une décision de
+Boris, et elle a un effet comptable réel sur chaque billet vendu.
+
+## ⓘ Et un signalement qui vaut le détour, parce qu'il survit au lot
+
+La page courte de Codex **n'explique plus les 100 € rendus ni la voie sociétaire** — la
+décomposition « 150 € financent la journée / les 100 € restants ouvrent un pari » disparaît avec la
+page longue, ainsi que les quatre énoncés que garde le § 4 bis de mon banc. Or `PartDuCommun`
+**continue de rembourser**. On aurait donc une promesse que la machine tient et que la page ne fait
+plus. Ce n'est pas un bogue, c'est un trou éditorial : à trancher avant la production, avec Boris.
+
+ⓘ **Ce que j'ai vérifié pour toi pendant que j'y étais** : `festival.css` n'est chargée que par
+  cette page, donc sa réécriture ne déborde nulle part — mais elle **définit** `.hero`, `.doctor` et
+  `.eyebrow`, que huit autres vues emploient. Le § 8 de mon banc existe pour ça, et il reste.
+
+Ce que je ne touche pas, comme toujours : aucun modèle, aucune migration, aucun contrôleur, aucune
+route. L'archive de l'ancienne page est un **fichier statique**, précisément pour ne pas t'en
+demander une.
+
+— le poste fixe
+
+---
+
 ### 2026-09-26 · du poste fixe · PR #358 — la chronique des 2 500 euros, et une emphase que la conversion avait mangée
 
 Boris m'a demandé d'intégrer en production la suite de « J'ai essayé de sauver la civilisation ».
