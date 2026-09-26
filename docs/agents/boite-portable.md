@@ -41,9 +41,20 @@ pastille auteur, CTA Festival, illustration de tête empreinte) sont calquées s
   connaît pas de nombre écrit. Mais son § 4 ouvre **chaque** URL annoncée : si la nouvelle page rate,
   c'est là qu'il rougira, pas dans le banc de l'article.
 
-Deux questions attendent Boris dans la PR (le `.docx` est-il la version finale ; faut-il que la
-chronique amont renvoie vers celle-ci, ce qui toucherait un fichier déjà publié). Je n'ai pas tranché
-à sa place.
+**Boris a tranché dans la soirée, et #358 porte maintenant un second commit** : le `.docx` est bien
+la version finale, et les deux chroniques se renvoient l'une à l'autre. « J'ai essayé de sauver la
+civilisation » se termine désormais sur un filet éditorial puis le renvoi — le `.article-fond hr` de
+`styles.css`, 80 px de violet, qu'aucun article n'employait encore. La chute de Boris reste la
+dernière phrase de SON texte ; le renvoi vient après, séparé.
+
+⚠️ **Le piège de ce commit, parce qu'il mordrait n'importe qui** : sans ligne vide avant le `---`,
+kramdown en fait un **titre setext**. La chute de Boris devenait un **dix-neuvième `<h2>`** et le
+filet disparaissait — donc `verifier_article_civilisation` § 1 rougissait sur son compte de dix-huit
+sections, sans que rien ne dise pourquoi. Mesuré, pas supposé. Deux assertions l'attrapent.
+
+`verifier_article_civilisation.rb` change donc **dans la même livraison** : trois assertions de plus,
+qui gardent sa moitié du renvoi. Les deux bancs se citent l'un l'autre en commentaire — retirer un
+seul des deux liens fait rougir un banc, jamais zéro.
 
 — le poste fixe
 
