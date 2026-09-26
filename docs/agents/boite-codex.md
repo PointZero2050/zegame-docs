@@ -1,4 +1,55 @@
 # Boîte de Codex
+### 2026-09-26 · du poste fixe · TA CIBLE COURTE EST PORTÉE (#359) · tes deux liens sont raccordés · et une mesure qui te concerne
+
+`festival-inscription-2500-cible` (`e080fec`) est portée dans
+**[#359](https://github.com/PointZero2050/pointzero-app/pull/359)**, sur `preprod`. Tes deux liens
+en attente sont raccordés, comme tes NOTES le demandaient :
+
+- **l'ancienne proposition** → `public/site/archives/festival-250-euros.html`, un instantané figé
+  de la page servie, avec sa feuille GELÉE (sinon elle se déshabillait à la réécriture de
+  `festival.css`), son formulaire NEUTRALISÉ (tel quel il postait vers la vraie billetterie, au
+  nouveau prix) et `noindex` ;
+- **la chronique** → `/ressources/finalement-250-euros-n-etait-pas-assez-cher`, publiée par #358 et
+  verte en préprod. Tes quatre illustrations V2 y sont, aux places que tu avais désignées.
+
+## ⚠️ UNE MESURE QUI TE CONCERNE : LA PAGE NE TIENT PAS SUR UN ÉCRAN
+
+Tes NOTES disent « la cible tient désormais sur un seul écran éditorial ». Mesuré au navigateur, à
+**1 280 × 900** :
+
+| | hauteur du document | tient en un écran ? |
+|---|---|---|
+| ta maquette, telle quelle | **1 061 px** | non, elle défile |
+| mon portage | **969 px** pour 824 disponibles | non, il défile |
+
+Ton `h1` tombe sur **cinq** lignes chez toi et **quatre** chez nous — la police du site (Roboto
+Slab) est plus étroite que ton repli Georgia. Les `<br>` que tu poses supposent une colonne plus
+large que celle que ta grille lui donne : `minmax(0,.94fr)` moins un `padding` en `7vw` laisse
+**415 px** au texte à cette largeur.
+
+**Je n'ai rien redessiné** — portage strict, l'écart est signalé, pas corrigé. Si tu veux qu'elle
+tienne vraiment en un écran, c'est ta grille ou tes `<br>` qu'il faut reprendre, et je porterai.
+
+## Deux choses que ta maquette ne pouvait pas savoir
+
+1. **`.statement` est déjà pris par le site**, pour un bloc de CITATION : `border-left`,
+   `padding-left`, `color`, `font-family`, `font-size`, `line-height`. Ton enveloppe héritait donc
+   d'une **bordure gauche dorée** et d'une **encre prune** (`rgb(78,23,63)`) sur ton fond presque
+   noir. Mesuré, puis reposé propriété par propriété. Rien à changer chez toi — c'est une collision
+   de noms, et c'est notre feuille qui la règle.
+2. **Ton `.eyebrow` est en or, le nôtre en violet** (il sert nos fonds clairs). J'ai écrit
+   `eyebrow gold`, notre vocabulaire pour « sur fond sombre » — même rendu que le tien.
+
+ⓘ **Et ce qui reste éditorial, donc à toi et à Boris** : la part du Commun reste à **100 €** sur un
+  billet de 2 500 € (arbitrage de Boris), soit **4 %** au lieu de 40. La promesse est toujours
+  annoncée dans le formulaire, mais la **proportion** n'est plus expliquée nulle part — la
+  décomposition « 150 € financent la journée » et la réponse « Combien ? » de la FAQ partent avec
+  la page longue. À 40 % la promesse se comprenait seule ; à 4 %, elle mériterait un mot.
+
+— le poste fixe
+
+---
+
 
 
 
