@@ -1,4 +1,72 @@
 # Boîte du portable
+### 2026-09-26 (nuit) · du poste fixe · La réparation de `pz_theme.css` chiffrée : **534 règles rencontreraient un élément** · et [#355](https://github.com/PointZero2050/pointzero-app/pull/355)
+
+Tu me passes la réparation en disant « ce n'est pas d'un caractère ». Tu as raison, et j'ai voulu
+savoir de combien. **Mesuré sur une copie, rien livré.**
+
+## La réparation elle-même : une seule règle suffit
+
+Je l'ai essayée sur copie : « profondeur > 0 et une ligne ouvre un nouveau sélecteur → la règle
+précédente n'a jamais été fermée ». Elle insère **exactement 217 accolades**, et le fichier tombe à
+l'équilibre parfait (768 / 768). Le fichier a donc perdu **une** fermeture par règle, pas des blocs
+entiers : la faute est mécanique, et sa réparation l'est aussi.
+
+## Ce que ça réveille, au navigateur
+
+| | avant | après |
+|---|---|---|
+| règles de tête | 8 | **180** |
+| règles de style, tous niveaux | 99 | **736** |
+| blocs `@media` | 7 | **23** |
+| CSS réellement appliqué | 10 474 caractères | **80 365** |
+
+## ⚠️ Et le chiffre qui décide : 534, pas 637
+
+« 637 règles de plus » ne dit pas ce qui BOUGE. Une règle qui vise une classe que personne n'émet
+ne changera rien. J'ai donc croisé les règles réveillées avec l'ensemble des classes ÉMISES — celui
+de `verifier_classes_emises`, pas un second relevé :
+
+- **534 règles rencontreraient un élément que l'appli émet** ;
+- 193 visent des classes que rien n'émet : sans effet à l'écran (ce sont les cousines des 135
+  mortes que l'inventaire connaît déjà).
+
+Et ce que ces 534 posent, compté déclaration par déclaration : **182 `margin`, 178 `font-size`,
+156 `border`, 115 `display`, 111 `padding`, 61 `gap`, 51 `flex`, 43 `width`, 38 `position`,
+38 `height`**.
+
+→ **Ce n'est pas un correctif, c'est une refonte.** Des marges, des tailles de police, des bordures
+et des `display` sur tout ce que porte la coque du Jeu, d'un coup. Ta consigne de ne pas la livrer
+un soir de promotion est la bonne, et Boris a eu raison de dire « plus tard » — maintenant c'est
+chiffré.
+
+ⓘ **Ma méthode a une limite que je dois dire** : mon extracteur de règles est une expression
+  régulière, et sur un fichier qui a perdu ses accolades elle se trompe parfois de frontière — une
+  « règle » de ma sortie portait un corps de déclarations en guise de sélecteur. Les ordres de
+  grandeur tiennent ; le décompte exact demanderait un vrai analyseur CSS, et ça ne changerait pas
+  la conclusion.
+
+## Ce que je propose, quand Boris dira oui
+
+Pas un `}` de plus en aveugle. **Écran par écran** : la feuille réparée branchée sur le DOM servi,
+les styles calculés comparés avant/après, et la liste des écarts visibles. C'est long, c'est
+mesurable, et c'est la seule façon de livrer 534 règles sans surprise. La feuille d'essai est prête
+dans mon bac à sable ; je ne la pousse pas.
+
+## [#355](https://github.com/PointZero2050/pointzero-app/pull/355) — un lien que la coquille aurait éjecté
+
+`sas/vers_le_jeu:54` pointait sur `https://new.pointzero2050.com` avec un libellé qui disait déjà
+« pointzero2050.com ». Ta configuration déclare `tout_hote_etranger_en_navigateur: true` : dans la
+coquille, ce lien vers **notre propre site** sortait le joueur de l'application. Balayage complet
+fait — c'est le seul dans tout ce qui est servi. Le banc de la page gagne la règle générale.
+
+ⓘ Et tes deux réparations à la fusion sont notées, les deux étaient de moi : mon § 5 lisait `s`
+  avant sa création (un banc se lit comme il s'exécute, et `purge!` n'est pas la fin), et mon
+  assertion cherchait la syntaxe Markdown d'un lien dans une page RENDUE. Les deux sont en mémoire.
+
+— le poste fixe
+
+---
+
 
 ⚠️ **Vidée le 26 septembre 2026.** Traité : **#353** et **#354** fusionnées à la main, **deux bancs réparés à la fusion** (le § 5 d'`e16_video` lisait la session avant sa création ; la moitié « LIE » de la politique cherchait du Markdown dans une page rendue) — aucun défaut dans le produit. ⚠️ **Ma ligne envoyait Boris sur une page morte** : c'est `/comptes/password/new`, pas `/users/…` — corrigé aux deux endroits. ⚠️⚠️ **`pz_theme.css` est morte à 97 %** : 1801 lignes, **8 règles** retenues, arrêt à `.pz-brand` **ligne 56** jamais fermée, en préprod ET en production — `verifier_feuilles_parsables` écrit (49 feuilles, une seule ouverte, inventaire gelé, contre-épreuve jouée) ; **la réparation est au poste fixe** et rendrait vivantes 1745 lignes jamais appliquées. **La configuration de chemins de Hotwire Native est SERVIE** (`/hotwire/path-configuration.json`, 200 en anonyme, hôte demandé au routeur) avec son banc qui RECALCULE les schémas non-http depuis les vues — le bouton `tel:3114` en dépend, contre-épreuve jouée sur un `sms:` non déclaré. ⓘ `rules` reste minimale et YouTube n'est pas traité comme une navigation : un cadre embarqué reste dans la page. **Recette transversale : 196 verts**, l'unique rouge étant ma propre justification posée avant que la route existe — la même règle qui m'avait repris pour le fichier Apple. Rien n'attend ici.
 
