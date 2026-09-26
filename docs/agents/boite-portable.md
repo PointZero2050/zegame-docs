@@ -37,6 +37,48 @@ Ce que je ne touche pas, comme toujours : aucun modèle, aucune migration, aucun
 route. L'archive de l'ancienne page est un **fichier statique**, précisément pour ne pas t'en
 demander une.
 
+## ✅ LIVRÉ — [#359](https://github.com/PointZero2050/pointzero-app/pull/359), branche `festival-2500`
+
+Un commit, sept fichiers. **⚠️ L'ORDRE DE FUSION COMPTE, ET IL EST STRICT :**
+
+1. **[#358](https://github.com/PointZero2050/pointzero-app/pull/358) D'ABORD** (la chronique) — elle
+   livre `article-250-euros-balance-valeur.webp`, l'illustration de l'écran court, qui **répond 404
+   aujourd'hui** : absente de `preprod` ET de `main`. `EmpreintePublique.de` rend `"0"` sur un
+   fichier manquant, donc pas de 500 — une image cassée, et deux assertions du § 7 qui rougissent.
+2. **#359 ensuite.**
+3. **`prix_centimes` → 250 000 AVANT de promouvoir en production.** La page LIT le prix : promue
+   seule, elle afficherait « 250 € » sous un titre qui dit « 250 € n'était pas assez cher ».
+
+ⓘ **Un défaut pour toi, mesuré et IMPRIMÉ par le banc au lieu d'être asserté** :
+  `Event#prix_affiche` écrit `"#{prix_centimes / 100} €"`, donc à 250 000 centimes il rend
+  **« 2500 € »**, sans séparateur de milliers. Invisible pendant un an à 250 €, voyant dès 2 500 —
+  je l'ai vu à l'écran. C'est **une ligne de ton modèle**, et elle touche toutes les pages qui
+  affichent un prix (la fiche générique, la carte d'événement, /agenda). Je ne l'ai pas assertée
+  pour ne pas faire rougir un banc sur ta zone ; le § 4 bis l'imprime, et son commentaire dit que
+  ces deux lignes deviennent des assertions le jour où tu le corriges.
+
+ⓘ **Et un outil neuf qui te servira** : `scripts/syntaxe_erb.rb`, le pendant ERB de
+  `syntaxe_haml.rb`. **Trois versions fausses avant la bonne**, et chaque fois c'est un TÉMOIN qui
+  m'a arrêté — `events/show.html.erb`, que je n'avais pas touché. `ERB` nu casse sur un commentaire
+  `<%# … %>` multiligne ; `Erubi` nu casse sur `<%= form_with … do |f| %>`, parce que l'ouverture
+  de bloc se retrouve dans les parenthèses de `append=(…)`. Rails reconnaît ce cas (`BLOCK_EXPR`)
+  et omet les parenthèses. **Le script refuse de rendre un verdict si l'un de ses quatre témoins
+  échoue** — les 106 gabarits ERB du dépôt compilent.
+
+## Ce que j'ai trouvé en portant, et qui vaut pour la suite
+
+**`styles.css` emploie `.statement` pour un bloc de CITATION** — `border-left`, `padding-left`,
+`color`, `font-family`, `font-size`, `line-height`. Codex s'en sert comme d'une enveloppe nue.
+Mesuré au navigateur avant correction : bordure gauche dorée et encre `rgb(78,23,63)` sur un fond
+presque noir. C'est le § 8 dans son rôle exact, et la faute était dans ce qui MANQUE.
+
+Les huit images du Festival **servent encore** : sept ne servent plus qu'à l'archive, et
+`festival-shadow` uniquement par sa feuille gelée, en fond. La page vivante n'en demande qu'UNE. Si
+une passe de nettoyage compte les images de la page, elle conclura que sept sont mortes — le § 7
+les garde nommément.
+
+— le poste fixe
+
 — le poste fixe
 
 ---
