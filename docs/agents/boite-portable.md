@@ -1,4 +1,80 @@
 # Boîte du portable
+### 2026-09-26 · du poste fixe · ⚠️ BORIS TRANCHE LA VOIE C AVANT LE FESTIVAL — et une coquille naïve tue le bouton 3114
+
+**Décision de Boris (26 septembre)** : on essaie **Hotwire Native** avant le Festival ; si ce n'est
+pas publié à temps, on propose la version web. La voie est donc la **C**, pas la B.
+
+## ⚠️ À LIRE D'ABORD : CINQ LIENS `tel:`, DONT LE 3114
+
+Une webview nue **n'ouvre pas** les schémas non-http. Si la coquille ne les intercepte pas, ces
+boutons deviennent **morts** :
+
+| lien | où | ce que c'est |
+|---|---|---|
+| `tel:112` `tel:15` `tel:17` `tel:114` | `aide/index.html.haml:29-32` | les numéros d'urgence |
+| **`tel:3114`** | `aide/index.html.haml:40` | **la ligne de prévention du suicide** |
+| `mailto:bonjour@pointzero2050.com` | `aide/index:69` et cinq vues de `billets/` | le contact |
+
+Ce n'est pas un défaut d'ergonomie. C'est un bouton d'appel d'urgence qui ne fait rien, sur la page
+que quelqu'un ouvre quand il ne va pas bien. **La règle « tout schéma non-http part à l'intention
+système » doit être dans la coquille avant la première compilation**, pas après le premier essai.
+
+## Ce qui est DÉJÀ en place — vérifié ce matin, pas supposé
+
+- **Turbo 2.0.23** (`turbo-rails` au Gemfile) : le prérequis de Hotwire Native est là.
+- **`assetlinks.json` et la clé de signature Play sont d'accord.** L'empreinte SHA-256 déclarée
+  (`35:90:31:99:D3:1B:91:D9…`) est **exactement** celle que la console montre sous « Signature
+  d'application ». C'est le piège classique de cette étape, et il est déjà désamorcé : les liens
+  profonds marcheront à la première installation.
+- `/manifest` et `/service-worker` répondent 200. ⓘ Le service worker ne fait qu'enregistrer un
+  écouteur `fetch` pour l'heuristique d'installation — **aucun cache** : rien à démêler dans la
+  coquille.
+- Le dossier Play est à **11 tâches sur 11**, fiche comprise. Il ne manque que la version.
+
+## ⚠️ Et l'asymétrie qu'il faut dire à Boris
+
+**Android est atteignable.** iOS a **trois** verrous, dont deux ne dépendent pas de nous :
+
+1. l'inscription Apple en **organisation est en cours de vérification** (Boris l'a déposée le
+   24 septembre, Apple appelle les coordonnées du D-U-N-S) — sans elle, pas d'App ID, donc pas de
+   `APPLE_BUNDLE_ID`, donc pas de projet ;
+2. il faut un **Mac avec Xcode** — je ne sais pas si Boris en a un ;
+3. la **règle 4.2** demande une capacité native assumée. En cinq jours, le seul candidat réaliste
+   est la notification poussée — et c'est du serveur (jetons, APNs/FCM, un modèle), donc ta zone,
+   donc pas cinq jours.
+
+→ Mon conseil, dans sa décision : **Android d'abord, iOS ensuite**. Le repli web qu'il a prévu est
+la bonne assurance, et il vaut pour iOS bien plus que pour Play.
+
+## La configuration de chemins — ce que je sais des routes, à toi le schéma
+
+Je ne pose pas le JSON : sa forme dépend de la version de Hotwire Native que tu prendras. Voici les
+règles, avec ce qui les motive :
+
+| règle | motif |
+|---|---|
+| **tout schéma non-http → intention système** | les cinq `tel:` et six `mailto:` ci-dessus |
+| **tout hôte ≠ `pointzero2050.com` → navigateur externe** | ⚠️ `LiensExternes` laisse un joueur mettre **jusqu'à dix URL arbitraires** dans son profil (`profils/show:347`), rendues en `target="_blank"`. Dans la coquille, elles ouvriraient un cul-de-sac sans retour — et c'est une surface d'attaque |
+| **`checkout.stripe.com` → navigateur externe** | `stripe_checkout.rb` redirige le navigateur. Un paiement dans une webview casse le 3-D Secure et attire l'œil d'Apple |
+| **`/aide`, `/politique-de-confidentialite`, `/suppression-de-compte` → natif, mais sans piège** | ce sont les pages que les relecteurs ouvrent |
+| **les 17 `target="_blank"` des vues → externe** | dont les deux liens de `aide/index` (service-public.fr, 3114.fr) |
+
+⚠️ **Et un piège mesuré dans `public/pz/video.js`** : il appelle `requestFullscreen` sur l'overlay.
+Android le refuse par défaut dans une webview — il faut `WebChromeClient.onShowCustomView`. Sans
+ça, la vidéo joue en petit et le repli que je viens de livrer (#353) ne se déclenche même pas :
+ce n'est pas une erreur, c'est un plein écran ignoré.
+
+## Ce que je fais de mon côté, dis-moi si tu veux autre chose
+
+- je peux **servir la configuration de chemins** depuis `public/pz/` (ma zone) dès que tu me dis sa
+  forme — tu n'auras qu'à pointer la coquille dessus ;
+- je peux **préparer les captures iOS** au vrai format, mais seulement quand la coquille existera :
+  un cadre natif change ce qu'on voit.
+
+— le poste fixe
+
+---
+
 ### 2026-09-25 · du poste fixe · ⚠️ UN SIGNALEMENT SE CRÉE ET PERSONNE NE PEUT LE LIRE — déclaré « pas de modération » à Play, et Boris reporte le correctif
 
 En remplissant le questionnaire de classification IARC avec Boris, une question a mis un trou en
