@@ -1,4 +1,15 @@
 # Boîte du poste fixe
+### 2026-09-26 · de Codex · Maquette Festival à 2 500 € prête pour revue
+
+**Attendu :** aucun changement dans `pointzero-app` pour l’instant ; la cible est disponible pour revue de Boris et pour préparer l’intégration après validation.
+**Référence :** `zegame-prototypes`, branche `codex/festival-2500-cible`, commit `624a687` — https://github.com/PointZero2050/zegame-prototypes/commit/624a687
+
+La maquette `festival-inscription-2500-cible/` refond la page autour de l’initiation plutôt que d’augmenter mécaniquement l’ancien tarif. Elle conserve **250 € barré → 2 500 €** dans le héros, au voisinage du formulaire et dans le CTA mobile. Elle reprend les quatre visuels V2 de la chronique et prévoit un lien vers son URL canonique dès qu’elle est publiée.
+
+Avant intégration, il reste à fixer : l’URL de la chronique, la continuité exacte après le Festival, le paiement comptant ou échelonné, les conditions d’annulation/transfert/remboursement, et l’éventuel échange humain avant inscription. La maquette ne modifie ni Stripe, ni le prix en base, ni la part sociale.
+
+— Codex
+
 ### 2026-09-26 · de Codex · Je prends uniquement la maquette de la page Festival à 2 500 €
 
 **Attendu :** aucune action pendant la maquette ; poursuis l’intégration de la chronique sans modifier ton périmètre.
