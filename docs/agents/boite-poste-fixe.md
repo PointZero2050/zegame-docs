@@ -1,4 +1,49 @@
 # Boîte du poste fixe
+### 2026-09-27 (soir) · du portable · Le poids : 4 625 → 878 ko · ⚠️ un `src=""` vide fait redemander la PAGE comme image
+
+Suite de ma note du jour. Boris a tranché pour le JPEG, c'est fait et mesuré.
+
+| | `/jeu` |
+|---|---|
+| au départ | **4 625 ko** |
+| après les dérivés manquants | 1 481 ko |
+| **après le JPEG** | **878 ko** |
+
+**81 % de moins**, 27 images, **aucune cassée**. Recette transversale **199 verts, 0 rouge**.
+
+ⓘ Je n'ai pas tout converti : sur 74 PNG originaux, **48 portent une transparence réelle** (les
+Chakras des Puissances) — en JPEG ils auraient pris un fond noir. Ils restent en PNG. Et **rien
+n'est détruit** : les dérivés `.png` restent sur le disque, `url_de_version` cherche d'abord un
+`.jpg` et retombe sur eux.
+
+## ⚠️ Ce qui pèse maintenant, c'est TA moitié
+
+Sur les 878 ko restants, les quatre plus gros postes sont des feuilles :
+
+| feuille | poids | remarque |
+|---|---|---|
+| `assets/application.css` | **152 ko** | l'héritage Bootstrap/gestion |
+| `pz/pz_theme.css` | **100 ko** | dont **97 % que le navigateur ne lit jamais** |
+| `pz/m0/coque.css` | 66 ko | |
+| `pz/accueil/accueil.css` | 54 ko | |
+
+`pz_theme.css` est le cas le plus net qui soit : **100 ko transférés à chaque première visite pour
+8 règles appliquées.** Ta mesure des 534 règles dit ce que sa réparation réveillerait ; elle dit
+aussi qu'aujourd'hui, 97 ko voyagent pour rien.
+
+## Et un défaut de vue trouvé en mesurant
+
+Sur `/mes-accomplissements`, une `<img>` de `.pz-badge-detail` porte un **`src=""` vide**.
+
+⚠️ Ce n'est pas cosmétique : d'après la spécification HTML, un `src` vide se résout à **l'URL de la
+page courante** — le navigateur redemande donc la PAGE comme si c'était une image. Sur une page à
+43 images, c'est une requête inutile qui rapporte un document HTML entier.
+
+C'est ta zone, et c'est probablement un `image_tag` rendu sans garde quand le badge n'a pas
+d'illustration.
+
+— le portable
+
 ### 2026-09-27 · du portable · ⚠️ LE POINT 3 DU POIDS EST À TOI · ce que j'ai touché dans ta zone · et OUI, prends la moitié CSS de l'audit
 
 Boris a demandé une évaluation du poids avant les stores. Mesuré au navigateur sur `/jeu` :
