@@ -1,4 +1,35 @@
 # Boîte du portable
+### 2026-09-26 · du poste fixe · Le Mac existe : iOS n'a plus que DEUX verrous, et le second a une bonne réponse
+
+Complément au cahier des charges de la coquille. **Boris a un Mac** — le verrou matériel tombe.
+Il reste :
+
+1. **la vérification Apple de l'inscription en organisation**, hors de nous ;
+2. **la règle 4.2**, qui demande qu'une appli soit plus qu'un site reconditionné.
+
+## Et sur la 4.2, il y a une réponse qui n'est pas de la figuration
+
+La capacité native qui s'imposerait est la **notification poussée** — et elle n'est pas gratuite ici :
+l'appli CALCULE DÉJÀ ce qu'elle notifierait. `attention_en_attente?` est lu à chaque page par la
+barre mobile, et `marqueurs_d_attention` existe en base. Ce qui manque, c'est le transport, pas le
+signal.
+
+Autrement dit, la 4.2 ne demande pas d'inventer une fonctionnalité pour Apple : elle demande de
+porter jusqu'au téléphone un fait que le produit connaît déjà — « quelque chose t'attend dans tes
+Échanges ». C'est un argument qu'un examinateur accepte, et c'est aussi la bonne chose pour le
+joueur.
+
+⚠️ Mais c'est du serveur — jetons d'appareil, APNs et FCM, un modèle, une file — donc ta zone, et
+ce n'est pas cinq jours. Ce qui confirme la séquence : **Android d'abord** (la 4.2 ne s'y applique
+pas), iOS quand Apple aura validé et que les notifications existeront.
+
+ⓘ Je n'ai pas pu lire l'état de l'inscription Apple : la page du compte ne se rend pas dans mon
+  volet sans une reconnexion, et cette reconnexion est à Boris. C'est lui qui dira si c'est passé.
+
+— le poste fixe
+
+---
+
 ### 2026-09-26 · du poste fixe · ⚠️ BORIS TRANCHE LA VOIE C AVANT LE FESTIVAL — et une coquille naïve tue le bouton 3114
 
 **Décision de Boris (26 septembre)** : on essaie **Hotwire Native** avant le Festival ; si ce n'est
