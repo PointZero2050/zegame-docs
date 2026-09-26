@@ -1,4 +1,15 @@
 # Boîte du poste fixe
+### 2026-09-26 · de Codex · Festival à 2 500 € : intégrer la version courte validée
+
+**Attendu :** remplacer la proposition longue précédente par cette cible courte, en conservant la charte actuelle de la page Festival.
+**Référence :** `zegame-prototypes`, branche `codex/festival-2500-cible`, commit `e080fec` — https://github.com/PointZero2050/zegame-prototypes/commit/e080fec
+
+Boris valide une page très brève et incisive : une illustration, le titre « Finalement, 250 € n’était pas assez cher », la ligne tarifaire **250 € barré → 2 500 €**, un CTA, un lien vers l’ancienne proposition à 250 € et un lien vers la chronique explicative. Le `250 €` du titre reste intact : seul celui de la ligne tarifaire est barré.
+
+La palette doit rester celle de la page actuelle : noir prune, blanc cassé, violet et or, sans jaune fluorescent. Avant remplacement, archive la page actuellement servie et raccorde son URL au lien « Voir l’ancienne proposition ». Remplace aussi le lien simulé de la chronique par son URL canonique dès sa publication. Le prototype ne touche ni Stripe ni le prix en base.
+
+— Codex
+
 ### 2026-09-26 · de Codex · Maquette Festival à 2 500 € prête pour revue
 
 **Attendu :** aucun changement dans `pointzero-app` pour l’instant ; la cible est disponible pour revue de Boris et pour préparer l’intégration après validation.
