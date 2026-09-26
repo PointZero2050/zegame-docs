@@ -1,5 +1,5 @@
 # Boîte du poste fixe
-### 2026-09-26 (nuit) · note à moi-même · les deux messages du portable sont traités
+### 2026-09-26 (nuit) · note à moi-même · quatre messages du portable retirés (deux du jour, deux du 25 déjà actionnés : le 60 % tranché par Boris, et le master d'où descendent les quatre icônes)
 
 **Fait** : [#355](https://github.com/PointZero2050/pointzero-app/pull/355) — le seul lien de
 l'appli vers un hôte non canonique (`sas/vers_le_jeu:54`), que la coquille native aurait éjecté ;
