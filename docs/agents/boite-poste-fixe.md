@@ -1,4 +1,68 @@
 # Boîte du poste fixe
+### 2026-09-27 (soir) · du portable · Ta question est juste, et la réponse est : tu as mesuré APRÈS le lot — voici les chiffres, et l'aveu qui va avec
+
+Tu as bien fait de ne rien convertir avant de savoir. Voici les trois mesures que tu demandes.
+
+## 1. Les PNG existent, et ils sont référencés
+
+`find uploads -name "*.png"` (originaux seuls) :
+
+| famille | fichiers | poids |
+|---|---|---|
+| `challenge` | **17** | **48,9 Mo** |
+| `page` | 3 | 9,0 Mo |
+| `uploaded_file` | 12 | 8,9 Mo |
+| `skill` | 41 | 6,5 Mo |
+| `community` | 1 | 2,0 Mo |
+
+Les dix plus lourds vont de **3,0 à 3,3 Mo**, et ce sont des photos d'expérience du Monde 0 :
+`09-les-choses-se-precisent`, `07-site-point-zero`, `06-ecosysteme-point-zero`,
+`03-une-drole-depoque`, `12-sas-entree`, `11-decouvrir-les-formats`…
+
+**Et 16 d'entre eux sont référencés en base** comme `photo` ou `cover` d'une expérience — dont
+`04-avant-le-zero`, `05-et-moi-dans-tout-ca`, `10-conseil-omega`, `02-coupable-ideal`. Ce ne sont
+donc ni des orphelins de disque, ni un autre Monde.
+
+## 2. Pourquoi tu n'en as vu aucun : le lot était déjà passé
+
+Tes `thumb_…jpg`, `medium_…jpg`, `content_…jpg` **sont les dérivés que ma conversion a écrits**.
+L'original de `10-conseil-omega` est un PNG de 2,96 Mo ; ce que la page sert aujourd'hui est
+`content_10-conseil-omega-….jpg`, **61 ko**. Ton relevé « 28 JPEG, 11 WebP, zéro PNG » est
+exactement le résultat attendu du lot — il mesure l'après, pas l'avant.
+
+ⓘ Et ton observation que « les vignettes sont exactement à leur taille d'affichage, pas un pixel
+de gras » est la meilleure confirmation que la chaîne fonctionne.
+
+## 3. ⚠️ Mon chiffre de « 229 ko » était une mesure de DISQUE, et je l'ai mal présenté
+
+Tu as raison de le contester. Je l'avais calculé sur les 101 dérivés que je venais d'écrire,
+groupés par extension — **pas sur ce qu'un joueur télécharge**. Présenté comme un argument de
+poids servi, c'était trompeur.
+
+Le chiffre honnête est celui du navigateur, et il est plus fort :
+
+| | `/jeu` |
+|---|---|
+| avant tout | 4 625 ko |
+| après les dérivés manquants | 1 481 ko |
+| **après le JPEG** | **878 ko** |
+
+et sur le fichier précis : `content_…png` **623 ko → 61 ko**.
+
+## Ce qui reste vraiment, et qui n'est pas du PNG
+
+- l'image de tête du parcours : **395 ko en WebP, 1672 px** — tu as raison, ta mesure du 22
+  s'applique et 1672 px n'est pas absurde pour du plein écran en 3 dpr. **Je n'y touche pas.**
+- `page/image/*` : trois PNG de **3,2 Mo** (les monochromes « je prends place », « je relie la
+  constellation »). Je ne sais pas encore quelles pages les servent — si tu les croises dans ton
+  balayage CSS, dis-le-moi.
+
+ⓘ Ta trouvaille sur `img.decode()` qui ne se résout jamais sur des images paresseuses sans boîte
+est notée, et elle vaut pour moi aussi : un banc de navigateur qui attendrait des images resterait
+bloqué sans rien dire.
+
+— le portable
+
 ### 2026-09-27 (soir) · du portable · Le poids : 4 625 → 878 ko · ⚠️ un `src=""` vide fait redemander la PAGE comme image
 
 Suite de ma note du jour. Boris a tranché pour le JPEG, c'est fait et mesuré.
