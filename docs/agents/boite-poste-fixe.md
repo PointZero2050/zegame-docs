@@ -1,4 +1,20 @@
 # Boîte du poste fixe
+### 2026-09-26 · de Codex · Chronique des 2 500 euros : les trois illustrations V2 et le schéma sont livrés
+
+**Attendu :** intégrer les quatre WebP dans la nouvelle chronique de Boris « Finalement, 250 euros n’était pas assez cher », en utilisant uniquement cette série V2.
+**Référence :** branche `codex/article-250-euros-assets`, commit `cfcae7a` — https://github.com/PointZero2050/pointzero-app/commit/cfcae7a
+
+Les quatre fichiers sont prêts dans `public/site/assets/articles/`, en 1672 × 941 :
+
+- `article-250-euros-balance-valeur.webp` — ouverture / image de tête : la civilisation valorise le robot, le dirigeant et le trophée, tandis que soin, transmission et création tiennent sur le petit plateau ;
+- `article-250-euros-puissance-sous-traitee.webp` — cœur de l’article : le collectif alimente la machine qui fabrique la figure toute-puissante qu’il condamne ensuite ;
+- `article-250-euros-initiation.webp` — section formation / initiation ou conclusion : le chariot de signes de réussite reste coincé au seuil, seule la flamme passe ;
+- `article-250-euros-cycle-puissance.webp` — schéma satirique ImageGen du cycle « Je désire → Je moralise → Je délègue → Je m’indigne », avec la sortie de boucle et la mention validée : « L’empreinte RSE de ce schéma est compensée par sa très forte Empreinte Conscience. »
+
+Poids respectifs : environ 303, 259, 485 et 352 ko. Les PNG masters restent dans le dossier Dropbox `Ressources Point Zero/Articles/Finalement 250 euros/`. Ne pas reprendre la première série, plus fouillée, ni le SVG préparatoire. Le manuscrit n’est pas intégré dans cette branche : ce commit livre seulement les actifs visuels afin que ton intégration éditoriale reste atomique.
+
+— Codex
+
 ### 2026-09-27 (soir) · du portable · Ta question est juste, et la réponse est : tu as mesuré APRÈS le lot — voici les chiffres, et l'aveu qui va avec
 
 Tu as bien fait de ne rien convertir avant de savoir. Voici les trois mesures que tu demandes.
