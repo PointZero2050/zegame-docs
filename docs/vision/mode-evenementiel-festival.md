@@ -128,3 +128,53 @@ Investir *donne droit* ; le libellé ne doit pas annoncer une porte qui n'est pa
 formulaire de sécurité des données de Play (`PSL_PHOTOS` = collectée, non partagée, optionnelle,
 finalité « fonctionnalité »). Seule réserve à regarder : l'**archétype** est une donnée de profil
 psychologique, et il n'est pas établi que Play n'attende pas une ligne propre pour elle.
+
+---
+
+## 8. Ce qui EXISTE déjà et ne doit PAS être redessiné — mesuré le 27 septembre
+
+Trois composants de la maquette ont déjà leur équivalent dans l'application, et deux d'entre eux
+sont **des portages antérieurs de maquettes de Codex**. Les porter une seconde fois créerait
+exactement la « seconde vérité » que son propre contrat interdit.
+
+| dans la maquette | ce qui existe | ce que ça change |
+|---|---|---|
+| ses 12 classes `omega-*` (`omega-glyph`, `omega-orbit-track`, `omega-moving-dot`…) | **`app/views/shared/_omega.html.haml`** — le lemniscate, avec ses locales documentées (`nombre`, `taille` en six valeurs dont `:pastille`, `anime`, `libelle`) | ses notes demandent « le lemniscate Oméga animé **de l'application** » : ses classes sont une doublure de simulation. ⚠️ Le composant dit lui-même pourquoi : « UN COMPOSANT, PAS UN SVG RECOPIÉ — recopiées vingt fois, elles divergeraient à la première retouche » |
+| « la fenêtre se rouvre après validation pour confirmer le crédit » | **`app/views/shared/_recu_omegas.html.haml`** — déjà un portage de SON `dialog.omega-receipt` | rien à dessiner : il faut **alimenter `@recu_omegas`** à la validation d'un atelier ou d'un défi. Sa forme est documentée dans le partiel (expérience, gain, solde avant/après, puissances, suivante) |
+| « Mon Moteur de Conscience » et les six cartes de Puissance | **`app/views/users/_moteur.html.haml`** et **`_moteur_cartes.html.haml`** — ce dernier est déjà un « PORTAGE STRICT de la `.power-grid` de `moteur-conscience-m0-cible` » | et il est **déjà nourri par le réel** : `o_level`/`l_level` (`PuissanceAssessment`), `etat` (circulation), `verbes` et `couleur` du YAML, `power_breakdown` (les Omégas) |
+
+ⓘ `eveils/_deux_mondes.html.haml` n'est PAS réutilisable : c'est « l'écran d'ouverture du sas de
+  **Désir**, et de lui seul ».
+
+### ⚠️ Et la règle de rapprochement ne demande AUCUNE donnée neuve
+
+| ce que la règle exige | où ça vit déjà |
+|---|---|
+| l'**amplitude** dans une direction | `moteur_assessments` → `result["powers"][slug]["declared_amplitude"]`, borné 1..3 |
+| la **direction** (Ombre / Lumière) | le même `result` → `spontaneous_polarity` (`ombre` / `lumiere`) |
+| l'état **`intégré`** pour un cap Source | `PuissanceAssessment#etat == "libre"` — et `etat_label` le rend déjà **« Intégré »** |
+
+**Le vocabulaire de Codex et le nôtre disent la même chose** : notre modèle fait déjà la traduction.
+Le moteur de suggestion est donc **une requête, pas un modèle** — plus le drapeau de consentement
+Festival, qui est la seule donnée réellement nouvelle.
+
+### Le gabarit : zéro collision, et ce n'est pas une chance
+
+La maquette émet **186 classes** (trois de mes 189 premières étaient du bruit d'extraction : `&&`,
+`===`, `?`, pris dans les conditions de ses gabarits littéraux). Contre TOUTES les feuilles du dépôt,
+14 collisions. Mais **contre les feuilles qu'une coque dédiée charge réellement, ZÉRO** — le
+précédent est `layouts/conseil.html.haml`, qui charge sa feuille, fontello, `accomplissements.css` et
+`typographie.css`, et **ni `styles.css`, ni `coque.css`, ni `pz_theme.css`**.
+
+Les onze collisions évitées par ce seul choix : `button`, `button-light`, `dialog-close`, `info-card`,
+`is-disabled`, `left`, `light`, `prototype-bar`, `right`, `skip-link`, `text-link`.
+
+ⓘ `dialog-close` est **exactement** la collision que le portage de la page Festival avait déjà
+  documentée — « la coque du site emploie ce même nom pour son dialogue de lecture, en clair ; celui
+  de Codex est sombre ». Le remède est écrit, il se rejoue.
+
+⚠️ **Et la mesure demande sa contre-épreuve, parce que la première était fausse** : j'ai d'abord
+vérifié « le gabarit ne charge pas `pz_theme.css` » par un `include?` sur le fichier — qui a matché
+le **commentaire disant qu'il ne le charge pas**. Troisième fois dans la même journée qu'un
+commentaire est lu comme du code. La bonne mesure ne regarde que les lignes `feuille_publique` et
+`rel: "stylesheet"`, commentaires retirés.
