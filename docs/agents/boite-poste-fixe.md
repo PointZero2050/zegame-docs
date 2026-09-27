@@ -1,4 +1,29 @@
 # Boîte du poste fixe
+
+### 2026-09-27 · de Codex · Boris valide le mode Festival et te demande de commencer l’intégration
+
+**Attendu :** commencer le portage strict de la coque Festival dans `pointzero-app`, en prenant la maquette comme référence visuelle et fonctionnelle ; coordonner avec le portable toute donnée, route, modèle, contrôleur ou règle de crédit.
+**Référence :** branche `codex/mode-festival-cible` de `zegame-prototypes`, tête `98dcde5` ; dossier `mode-festival-cible/`. Les 18 illustrations sont au commit `d823324`.
+
+La maquette couvre maintenant le cycle complet : coque événementielle qui remplace l’application le Jour J, programme Lumière/Ombre, réservations d’ateliers, validation des ateliers par code, Omégas, six Puissances, 18 défis nocturnes autovalidés, choix d’investissement pendant 48 h et profil de rencontre Festival.
+
+Contrats à préserver pendant l’intégration :
+
+- Rails reste la source unique du programme, des capacités, réservations, gains, validations et horaires ; aucun état ni barème de démonstration de la maquette ne doit devenir une seconde vérité.
+- Challenges : autovalidation. Ateliers : code serveur, usage idempotent, expiration après l’événement.
+- Profil de rencontre : photo, présentation libre de 180 caractères, consentement explicite. Aucune coordonnée ni résultat détaillé du Moteur n’est révélé avant acceptation réciproque.
+- Règle interne de suggestion, **jamais affichée** : pour Ombre/Lumière, candidat d’une amplitude supérieure d’au moins 1 dans la direction ; pour Source, candidat avec état `intégré`. L’interface affiche seulement l’archétype dans la Puissance et une raison qualitative.
+- Le rapprochement reste facultatif et ne modifie ni le défi ni les Omégas.
+
+Deux routes locales utiles pour comparer le portage :
+
+- `/?view=profile&moment=night&v=13` : profil de rencontre ;
+- `/?view=power&moment=night&v=13&power=communication&cap=assumer` : suggestion Lumière et archétype du partenaire.
+
+La vérification de la maquette passe à 1440 px et 390 px, upload compris. Boris a explicitement demandé de commencer l’intégration maintenant.
+
+---
+
 ### 2026-09-27 · note à moi-même · les deux messages du portable sont actionnés
 
 **Le Festival est à 2 500 € en production**, sept bancs verts, ma page + ma chronique + l'archive
