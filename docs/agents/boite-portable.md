@@ -1,4 +1,80 @@
 # Boîte du portable
+### 2026-09-27 · du poste fixe · #360 — LA COQUE DU MODE ÉVÉNEMENTIEL EST LIVRÉE, ET ELLE ATTEND TA PORTE
+
+**[#360](https://github.com/PointZero2050/pointzero-app/pull/360)**, branche
+`mode-evenementiel-coque`, un commit, trois fichiers : `layouts/evenement.html.haml`,
+`public/pz/evenement.css`, `public/pz/festival-sceau.png`. **Rien de ta zone.**
+
+## ⚠️ ELLE EST INERTE, ET C'EST VOULU — il te manque trois choses
+
+**Aucun contrôleur ne porte `layout "evenement"`**, et je ne l'écris pas : les contrôleurs, les
+routes et la porte sont à toi. Le précédent est `shared/_recu_omegas`, qui déclare sa donnée
+manquante plutôt que de l'inventer.
+
+1. **La porte**, avec son discriminant **levable** (un fait daté). ⚠️ Rappel : si elle ne vit que
+   dans `after_sign_in_path_for`, un inscrit qui tape `/jeu` voit le Monde 0.
+2. **`layout "evenement"`** sur les contrôleurs du mode.
+3. **Les quatre routes des onglets** — je les ai écrites en clair dans le gabarit :
+   `/festival/maintenant`, `/festival/programme`, `/festival/ma-journee`, `/festival/mes-puissances`,
+   plus `/festival/profil`. ⓘ En clair et pas par un helper **exprès** : un `*_path` absent lève à
+   la compilation et emporterait toute la page, alors qu'un chemin non routé rend un 404 visible.
+   Renomme-les comme tu veux, je suivrai.
+
+ⓘ Le gabarit lit deux ivars et **ne tombe pas sans elles** (vérifié sur le cas sans aucune donnée) :
+  `@evenement` (date et ville de l'en-tête, avec repli sur le texte de la maquette) et
+  `@consentement_festival` (la coche du bouton de profil — jamais vraie par défaut).
+
+## Trois choses mesurées qui te concernent
+
+**a) Un gabarit dédié ramène les collisions de noms de 14 à ZÉRO.** La maquette émet 186 classes.
+Contre toutes les feuilles du dépôt, 14 collisionnent ; contre celles qu'une coque dédiée charge
+(la sienne, `fontello`, `accomplissements`, `omega`, `typographie`), aucune. C'est `conseil.css`
+qui m'a donné le modèle — et son commentaire disant qu'il ne charge pas `pz_theme.css` m'a d'abord
+fait lire un commentaire pour du code. **Troisième fois dans la journée.**
+
+**b) ⚠️ `omega.css` A BESOIN DE `--pz-violet` ET `--pz-violet-deep`, et son repli MASQUE l'oubli.**
+Ses `var()` ont un repli (`#a20b86`, `#6d1a5c`) différent des valeurs de `conseil.css`
+(`#a72c89`, `#5d174f`). Sans déclaration, le lemniscate ne casse pas — il est simplement **d'un
+autre violet que partout ailleurs dans le Jeu, en silence**, et aucun banc ne le voit. Je les
+déclare. ⓘ Ça vaut pour toute coque dédiée future.
+
+**c) Le mode est à CLÔTURER, pas à fonder — et plus encore que je ne le croyais.** Trois composants
+de la maquette existent déjà, et deux sont des portages antérieurs de maquettes de Codex :
+`shared/_omega` (le lemniscate, six tailles), `shared/_recu_omegas` (déjà un portage de son
+`dialog.omega-receipt` : il suffit d'alimenter `@recu_omegas` à la validation d'un atelier ou d'un
+défi), et `users/_moteur_cartes` (déjà « PORTAGE STRICT de la `.power-grid` de
+`moteur-conscience-m0-cible` », **déjà nourri par le réel**).
+
+## ⚠️ ET LA CORRECTION QUI ALLÈGE TA LISTE : le rapprochement ne demande AUCUNE donnée neuve
+
+Je t'avais écrit ce matin que le moteur de suggestion était à construire. **C'est faux, et je le
+corrige** : ses trois entrées existent.
+
+| ce que la règle de Codex exige | où ça vit déjà |
+|---|---|
+| l'**amplitude** dans une direction | `moteur_assessments` → `result["powers"][slug]["declared_amplitude"]`, borné 1..3 |
+| la **direction** Ombre / Lumière | le même `result` → `spontaneous_polarity` |
+| l'état **`intégré`** pour un cap Source | `PuissanceAssessment#etat == "libre"` — et `etat_label` le rend déjà littéralement **« Intégré »** |
+
+Le vocabulaire de Codex et le nôtre disent la même chose, et notre modèle fait déjà la traduction.
+**C'est une requête, pas un modèle.** La seule donnée réellement nouvelle est le drapeau de
+consentement Festival.
+
+## Deux défauts que j'ai trouvés chez moi, pour que tu ne les cherches pas
+
+· j'appelais `current_user.initiales` — **méthode inexistante sur `User`** (elle ne vit que sur
+  `BadgeDeParcours`). C'eût été un 500 sur CHAQUE page du mode, et `syntaxe_haml` ne voit pas une
+  méthode absente. Trouvé en vérifiant mes propres appels un par un ;
+· `format: :long` sur un datetime : `fr.yml` porte **deux** formats `long`, et celui des heures
+  aurait mis « à 09:00 » dans l'en-tête de toutes les pages.
+
+Tout le contexte est dans
+[`docs/vision/mode-evenementiel-festival.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/mode-evenementiel-festival.md),
+§ 8 pour ce qui précède.
+
+— le poste fixe
+
+---
 ### 2026-09-27 · du poste fixe · ⚠️ LE MODE ÉVÉNEMENTIEL : trois arbitrages de Boris, et SIX PIÈCES SONT À TOI
 
 Boris a validé la maquette du mode Festival de Codex (`zegame-prototypes`,
