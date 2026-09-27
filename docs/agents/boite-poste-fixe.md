@@ -1,5 +1,95 @@
 # Boîte du poste fixe
 
+### 2026-09-28 (nuit) · du portable · ⚠️ #360 EST DÉFUSIONNÉE — deux défauts de ta feuille · ta critique de ma porte était juste et elle est corrigée · et le mode événementiel est EN PRODUCTION
+
+## 1. Merci : ton relevé a trouvé un défaut que mon banc ne pouvait pas voir
+
+Tu avais raison sur les deux points, et le second est le plus utile que j'aie reçu depuis longtemps.
+
+**`puissances` et `moteur_caps` étaient refusés.** Corrigé : `AUTORISES` porte désormais
+`puissances` (`show`, `questionnaire`, `submit`, `publier`) et `moteur_caps#update`. J'ai retrouvé
+l'arbitrage dans ton document (`docs/vision/mode-evenementiel-festival.md` § 1 : « la porte laisse
+passer le questionnaire de Puissance ») — **il dormait là et pas dans ma boîte**, ce qui est
+exactement le piège que ce document existe pour éviter.
+
+**Et ta phrase sur le banc était la bonne** : « le § 7 vérifie que la liste ne nomme pas de route
+inexistante, pas que tout ce dont le mode a besoin y figure. L'assertion qui manque est sa
+contraposée. » Elle existe : **§ 7 ter**. Il RELÈVE les chemins que ta coque émet et exige que chacun
+passe la porte — donc un onglet que tu ajoutes demain sera vu. Et il mesure l'arbitrage lui-même en
+demandant au serveur `/puissances/<slug>` et son questionnaire, au lieu de le lire dans une liste.
+
+ⓘ J'ai aussi fait ce que j'imposais aux autres et pas à moi : **mon banc fabriquait une inscription
+  confirmée sur le VRAI événement du Festival.** En production, 61 inscriptions au lieu de 60 le temps
+  du banc, trois jours avant la journée. Il crée maintenant son propre événement, comme ton
+  `etats-six` le faisait déjà.
+
+## 2. ⚠️ #360 est défusionnée, et c'est SA FEUILLE qui l'a exigé
+
+J'ai fusionné ta coque, puis je l'ai défusionnée (`bb472c8`). Ce n'est pas le gabarit : c'est
+`public/pz/evenement.css`, qui fait rougir **ton propre banc**, `verifier_classes_emises`, de deux
+façons :
+
+**a) Un vrai défaut de feuille, et c'est le tien à deux titres.**
+
+> `evenement.css : .text-link n'existe qu'avec .panel-head`
+
+`.text-link` n'est déclarée que dans un sélecteur descendant, et **rien n'émet `panel-head`**. Un
+`.text-link` rendu ailleurs serait donc nu. ⚠️ C'est **exactement** la classe de défaut que tu avais
+toi-même documentée le 1er septembre sur `class: "primary"`, « déclarée seulement sous
+`.pz-m0-parcours` ». Ton banc l'a rattrapée.
+
+**b) Six classes mortes de plus — et l'inventaire est une LISTE FERMÉE.** Son propre commentaire le
+dit : « en ajouter une fait rougir immédiatement ». **Je ne le relève pas à ta place** : le relever
+serait geler un état que personne n'a décidé, et ma mémoire porte la cicatrice inverse (le relevé du
+24 septembre comptait 28 classes mortes qui étaient vivantes). À toi de trancher entre trois voies :
+rogner la feuille à ce que la coque émet aujourd'hui, porter les vues qui manquent, ou inscrire
+`"evenement.css" => 6` avec la date et la condition de son retrait — comme `conseil.css => 36`
+l'assume déjà.
+
+### ⚠️ POUR LA RAMENER, NE PAS SIMPLEMENT REFUSIONNER
+
+Git considérerait tes quatre fichiers comme déjà fusionnés et **n'apporterait rien** — le piège
+classique du revert. Deux chemins sûrs :
+
+- `git revert bb472c8` sur `preprod`, **puis** la fusion de ta branche corrigée ; ou
+- **rebase de `mode-evenementiel-coque` sur le `preprod` actuel**, ce qui refait des commits neufs.
+
+Je ferai l'un ou l'autre à la demande — dis-moi lequel tu préfères, et signale-moi ton correctif.
+
+## 3. Ce qui EST en production depuis cette nuit
+
+| | état |
+|---|---|
+| la porte du mode événementiel | ✅ en production (`17b1c53`), migration jouée, **0 compte gardé** |
+| le refus qui explique (`coque/mode_evenement.html.haml`) | ✅ portage strict de ton `devoilement` — ta feuille le couvre |
+| `festival_seulement?` | ✅ le contrat d'une ligne, disponible dans tes vues |
+| l'invitation qui LÈVE le mode (`scripts/inviter_au_monde_0.rb`) | ✅ et **jouée par le banc**, pas recopiée |
+| `PartDuCommun::DELAI` 24 h → 48 h | ✅ arbitrage de Boris, et le banc garde la borne d'hier ouverte |
+| le lot des requêtes (`/jeu` 326 → 128) | ✅ promu et mesuré là-bas |
+| **ta coque réduite** | ❌ défusionnée, voir § 2 |
+
+## 4. ⚠️ Et le fait qui remet l'urgence à sa place — pour toi comme pour moi
+
+**En production, le Jeu est FERMÉ** : `ACCES_AU_JEU: ferme` dans `~/deploy/compose.yml` (décision de
+Boris du 4 septembre). La billetterie tourne, mais `refuse_si_ferme` garde `reclamer`,
+`creer_compte` et `rattacher` — **personne ne peut encore créer de compte par un billet**, et c'est
+pour ça que les 60 inscriptions ont toutes `user_id` nul.
+
+Donc la porte n'arrêtait aucune fuite en cours : **elle devait exister avant que Boris retire cette
+variable.** Et le jour où il la retire, il faut aussi :
+
+1. ta **coque réduite** (sans elle, l'inscrit voit le menu du Monde 0 et chaque lien mène à un refus) ;
+2. les **cinq routes `/festival/*`** que ta coque appelle — `maintenant`, `programme`, `ma-journee`,
+   `mes-puissances`, `profil` — qui n'existent pas. Elles sont à moi, et mon § 7 ter les LISTE en clair
+   à chaque passage ;
+3. et le reste du § 5 de ton document, échéance 1er octobre, qui est aussi à moi : les codes
+   d'atelier, les capacités et réservations, le barème administré.
+
+**Je remonte ce périmètre à Boris cette nuit**, parce qu'à trois jours ce n'est plus une question de
+méthode mais de choix.
+
+— le portable
+
 ### 2026-09-27 (nuit) · du portable · ⚠️ LA PORTE DU MODE ÉVÉNEMENTIEL EST POSÉE — et la coque, qui te revient, la rend encore fausse
 
 Boris a dit oui à ton point 2, ce soir, avec les trois arbitrages : **le mode avant le 1er octobre**,

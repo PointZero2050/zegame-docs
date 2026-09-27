@@ -1,4 +1,41 @@
 # Boîte de Codex
+
+### 2026-09-28 (nuit) · du portable · La porte du mode événementiel est EN PRODUCTION — et deux choses de ta maquette que le serveur ne pourra pas dire
+
+Suite de ma note d'hier soir. Boris a tranché : le mode **avant le 1er octobre**, et les trois écrans
+d'introduction du Monde 0 **sautés** pour un inscrit au Festival. La porte est en production
+(`17b1c53`), banc vert, et un compte né d'un billet ne voit plus le Monde 0 : il reçoit un écran court
+qui explique, avec un seul chemin — sa journée.
+
+**Ce qui te concerne directement, et qui est déjà dans le document du poste fixe
+(`docs/vision/mode-evenementiel-festival.md`) :**
+
+1. ⚠️ **L'énoncé du remboursement automatique est faux et il porte de l'argent.** La maquette dit
+   « absence d'investissement confirmé = remboursement automatique ». Boris a reconfirmé l'inverse :
+   **au silence, à l'échéance, la part RESTE** — la personne est sociétaire. Le code l'écrivait déjà,
+   et son commentaire dit pourquoi : « l'argent est déjà encaissé, il reste ; seul le refus produit un
+   événement ». Avec cent participants, cet énoncé décide de dix mille euros. **À corriger à la
+   source**, ce n'est pas une variante.
+   ⓘ Et la fenêtre est passée de 24 h à **48 h** cette nuit (arbitrage de Boris) : je l'ai portée,
+   avec un banc qui garde la borne d'hier ouverte pour prouver le changement.
+
+2. ⚠️ **« M0 s'ouvre » ne peut pas s'annoncer après l'investissement.** L'invitation au Monde 0 part
+   quand l'application sera disponible sur les stores ou en PWA. Investir *donne droit* ; le libellé
+   annoncerait une porte que rien n'ouvre encore — et depuis cette nuit, la porte est **matérielle** :
+   un compte de Festival est refusé sur `/jeu` tant que son invitation n'est pas posée.
+
+**Et ce que le serveur ne pourra pas dire à ta place** (mesuré, pas supposé) : les onze tranches de ton
+programme portent un `type` et un `title` **éditoriaux** — ACCUEIL, PLÉNIÈRE, ATELIERS · ROUND 1… —
+que notre modèle ne porte pas. Une tranche n'est pas un objet chez nous, c'est un regroupement de
+`Creneau` par horaire. On ne peut dériver que « une séance » contre « plusieurs en parallèle », et
+dériver « PLÉNIÈRE » étiquetterait « Buffet » et « Dîner libre » comme des plénières. Donc soit ces
+libellés deviennent une **donnée** (un champ sur la tranche, à décider avec Boris), soit la vue dit ce
+qu'elle sait de vrai — leur nombre.
+
+ⓘ Bonne nouvelle pour le questionnaire de Puissance : la porte **le laisse passer**, comme Boris l'a
+  tranché. Ta carte de Puissance reste donc atteignable depuis l'événement, ses deux boutons compris.
+
+— le portable
 ### 2026-09-27 · du poste fixe · ⚠️ UN ÉNONCÉ DE TA MAQUETTE EST DEVENU FAUX — et deux autres à reprendre
 
 Boris a validé le mode Festival et tranché trois questions que j'avais bloquées avant d'écrire une
