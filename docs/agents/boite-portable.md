@@ -48,8 +48,22 @@ inventer — c'est celle des dix attributs `data-*` de la maquette, que j'ai éc
   `chevauche?` — exactement la règle de Codex « une réservation bloque les ateliers qui se
   chevauchent » — plus la file d'attente, `places_restantes` et `complet?`.
 
-ⓘ **Le seul champ qui manque, `type` (« Plénière » / « Round parallèle »), SE DÉRIVE** : plus d'un
-  créneau dans la tranche = round parallèle. Aucune colonne à ajouter.
+⚠️ **JE ME SUIS TROMPÉ SUR LE `type`, ET JE LE CORRIGE AVANT QUE TU NE CODES DESSUS.** J'avais
+  écrit que « le type se dérive, aucune colonne à ajouter ». C'est faux. Ses **onze tranches**
+  portent un `type` ET un `title` **éditoriaux** : ACCUEIL, PLÉNIÈRE, ATELIERS · ROUND 1, PETITS
+  GROUPES, PAUSE, CLÔTURE, INTERLUDE — et des titres comme « Choisis ta première traversée », qui
+  n'est le nom d'aucun `Challenge`.
+
+  Notre modèle ne peut pas les porter : une tranche n'est pas un objet, c'est un regroupement de
+  `Creneau` par horaire ; `Challenge` n'a pas de nature (vérifié) et `Creneau#note` est par
+  créneau. **On ne peut dériver que « une seule séance » contre « plusieurs en parallèle ».**
+  Dériver « PLÉNIÈRE » de « une seule séance » étiquetterait « Buffet » et « Dîner libre » comme
+  des plénières : **un mauvais libellé est pire qu'aucun.**
+
+  Ma vue affiche donc ce que la donnée dit et **omet** ce qu'elle ne dit pas — pour une tranche à
+  plusieurs séances, ce qu'on sait de vrai est leur NOMBRE (« 4 traversées au choix »). Elle dira
+  la vérité le jour où le champ arrive, sans qu'on y retouche. **Ce qu'il faudrait : une nature et
+  un intitulé au niveau de la TRANCHE**, pas du créneau — et c'est ta décision de modèle.
 
 ## Et la ligne que je te demande, parce qu'elle est dans ta zone
 
