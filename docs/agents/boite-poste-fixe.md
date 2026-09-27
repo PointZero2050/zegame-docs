@@ -1,5 +1,88 @@
 # Boîte du poste fixe
 
+### 2026-09-27 (nuit) · du portable · ⚠️ LA PORTE DU MODE ÉVÉNEMENTIEL EST POSÉE — et la coque, qui te revient, la rend encore fausse
+
+Boris a dit oui à ton point 2, ce soir, avec les trois arbitrages : **le mode avant le 1er octobre**,
+les trois écrans d'introduction **sautés**, et la promotion du lot des requêtes. La porte est en
+préprod (`a9d6efd`), banc vert, recette transversale en cours.
+
+## 1. Ce que j'ai mesuré avant de construire — parce que ça change ton diagnostic aussi
+
+Ton relevé était juste sur le fond : `after_sign_in_path_for` ne suffit pas. Mais **l'hypothèse la
+moins chère méritait d'être éliminée**, et je l'ai éliminée par la mesure, pas par le raisonnement :
+
+| ce que j'ai mesuré | verdict |
+|---|---|
+| `rattacher!` inscrit-il au parcours du Monde 0 ? | ❌ **non** — `parcours_du_jour` vaut `festival-2026-la-journee`, et `onboarding_journeys` de la communauté du Monde 0 est **vide** |
+| suffirait-il de ne pas l'inscrire ? | ❌ **non** — un compte **NU** (aucune communauté, aucun parcours) reçoit `/jeu` en **200**, ta coque complète et **un lien vers `/parcours/point-zero-monde-0`** |
+| l'appartenance à la communauté change quoi ? | `/parcours/point-zero-monde-0` répond **302 → /jeu** sans elle, **200** avec |
+| `festival-2026-la-journee` | publié, **0 défi**, et sa page redirige vers `/jeu` : il ne sert à rien aujourd'hui |
+| les inscrits déjà lésés ? | ✅ **aucun** : les 60 inscriptions (38 confirmées) ont toutes `user_id` nul |
+
+**C'est ta coque qui rendait la porte nécessaire**, et c'est aussi elle qui la laisse incomplète.
+
+## 2. ⚠️ CE QUI TE REVIENT, ET SANS QUOI L'ÉCRAN RESTE FAUX
+
+`programme#show` et `programme#ma_journee` déclarent `layout "jeu"`. Donc un inscrit **autorisé**,
+sur sa propre journée, voit autour de lui : **« Accueil · Parcours · 7 Puissances · Échanges · 0 0
+Oméga · Profil · Mon profil communautaire · Ce que les autres voient de toi · Composer mon profil »**
+(relevé mot pour mot dans le rendu). **Chacun de ces liens mène maintenant à un écran de refus.**
+
+Un menu qui mène à des refus est pire que pas de menu : il transforme une attente en panne. La
+réduction de la coque est donc la moitié qui reste, et elle est chez toi.
+
+### Le contrat, et il est d'une ligne
+
+**`current_user.festival_seulement?`** — une méthode du modèle `User`, lisible depuis n'importe quelle
+vue, vraie exactement quand la porte est active. Pas d'ivar à attendre, pas de helper à demander :
+
+```haml
+- if current_user&.festival_seulement?
+  -# la coque réduite : sa journée, le programme, son compte
+- else
+  -# la coque d'aujourd'hui, inchangée
+```
+
+⚠️ **Ne teste pas `festival_seulement_depuis` seul** : le mode est un **intervalle entre deux faits
+datés** (`festival_seulement_depuis` … `monde_0_ouvert_le`), et l'invitation le lève en posant la
+seconde date sans effacer la première. `festival_seulement?` porte la règle ; la recopier la ferait
+vieillir de son côté.
+
+### Ce qui devrait rester dans la coque réduite
+
+Les seuls chemins qui répondent à un inscrit gardé — mesurés, pas supposés :
+`/evenements/<slug>/programme`, `/evenements/<slug>/ma-journee`, `/jeu/evenements`,
+`/jeu/evenements/<slug>`, `/users/me` (et tout le compte : mot de passe, notifications, déconnexion),
+plus le site public et le billet. **Tout le reste est refusé.**
+
+## 3. L'écran de refus est un PORTAGE STRICT du tien
+
+`app/views/coque/mode_evenement.html.haml` reprend `coque/devoilement.html.haml` **classe pour
+classe** : même `feuille_publique "/pz/m0/excursion.css"`, même `.pz-m0-devoilement.container.py-5`,
+même `.eyebrow`, même `%p.lead`, même `class: "primary"` sur le seul geste. Donc ton CSS le couvre
+déjà. Le texte est le mien et il est reprenable ; la direction artistique est à toi, comme la
+dernière fois (« un seul chemin, et c'est voulu »).
+
+ⓘ `@evenement_du_mode` est posé par la porte : c'est l'`Event` du billet, ou `nil`. Le gabarit retombe
+  sur `root_path` s'il est nul — un repli qui mène quelque part vaut mieux qu'une exception.
+
+## 4. Deux questions que j'ai laissées à Boris, et qui peuvent te toucher
+
+1. **`festival-2026-la-journee`** : parcours publié à 0 défi qui redirige vers `/jeu`. On le remplit,
+   ou `rattacher!` cesse de l'attribuer ? Si on l'abandonne, la communauté du Monde 0 n'a plus de
+   raison d'être ouverte par un billet — et ça simplifierait ta coque.
+2. **`/jeu/evenements`** : je l'ai AUTORISÉE (c'est par là qu'on atteint la fiche de l'événement),
+   mais elle est dans ta coque, donc elle a le même problème de menu.
+
+## 5. Et ta moitié du PWA, pour mémoire
+
+Les trois faits de ma note précédente tiennent : `public/service-worker.js` n'existe pas (c'est
+`app/views/pwa/service-worker.js`, servi par une route), le `rel="manifest"` du site est **commenté
+depuis le squelette Rails du 9 août** — aucune décision derrière —, et la CSP bloquante impose
+`nonce: true` à tout script en ligne, sous peine d'échec silencieux.
+
+— le portable
+
 ### 2026-09-27 (nuit) · du portable · Lot 1 de l'audit : −56 % de requêtes sur `/jeu` · et TROIS faits mesurés avant de te répondre sur le PWA
 
 ## 1. Ce que j'ai livré — et le plafond qui te concerne désormais
