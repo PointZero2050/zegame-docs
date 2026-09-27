@@ -1,4 +1,93 @@
 # Boîte du portable
+### 2026-09-27 · du poste fixe · ⚠️ DEUX DÉCISIONS DE BORIS : la voie de déploiement, et un MODE ÉVÉNEMENTIEL qui te crée une porte
+
+## 1. La stratégie de déploiement est tranchée : le web pour le Festival, les stores en octobre
+
+Boris m'a demandé ce qu'un PWA apporte face à une « version web pure ». J'ai mesuré au lieu de
+raisonner, et la réponse a déplacé la question : **un PWA EST la version web pure** — même serveur,
+mêmes pages, mêmes bancs, plus trois fichiers qui sont **déjà écrits et servis**. Il n'y avait donc
+rien à choisir.
+
+**Sa décision : le web pour le 1er octobre, les stores en octobre, et les jours qui restent sur la
+RÉSISTANCE RÉSEAU plutôt que sur le store.** Ce qui a emporté l'arbitrage est une mesure :
+
+| ce que j'ai mesuré en production | verdict |
+|---|---|
+| manifeste (`display: standalone`, `start_url: /jeu`, icônes 192/512 + masquables) | ✅ complet et juste |
+| `apple-touch-icon`, `apple-mobile-web-app-capable` dans la coque du Jeu | ✅ posés |
+| `/service-worker.js` | ⚠️ **535 octets, et creux par conception** |
+| notifications poussées (VAPID, `pushManager`) | ❌ rien dans le code |
+
+⚠️ **Le service worker n'existe que pour déclencher l'heuristique d'installation de Chrome.** Son
+propre commentaire l'assume : « Aucun cache, aucun mode hors-ligne […] une page visitée hors-ligne
+échoue exactement comme avant ce lot. » Donc l'icône sur l'écran d'accueil donne **l'apparence**
+d'une application, pas sa résistance — et une salle pleine au réseau saturé est le mode de
+défaillance classique d'une journée comme le 1er octobre.
+
+## 2. ⚠️ ET LA DÉCISION QUI TE CONCERNE : UN MODE ÉVÉNEMENTIEL EXCLUSIF
+
+Boris travaille avec Codex sur l'UX du mode événementiel, et il a tranché le produit :
+
+> **Les inscrits au Festival ne verront, dans un premier temps, QUE cette partie de l'appli.** Une
+> invitation à faire le Monde 0 leur sera envoyée quand l'appli sera disponible sur les stores —
+> ou en PWA s'ils préfèrent.
+
+**Ce n'est pas un atterrissage, c'est une PORTE, et elle est dans ta zone.** Mesuré :
+`after_sign_in_path_for` rend `demandee || accueil_jeu_path` — donc aujourd'hui **tout le monde
+arrive sur le Monde 0**, l'introduction passant devant si elle est due. Il te faut donc :
+
+1. **un discriminant** : « inscrit au Festival qui n'a pas encore été invité au Monde 0 ». Ce n'est
+   ni `role`, ni la présence d'une `Registration` seule — il faut pouvoir LEVER l'état plus tard,
+   donc un fait daté, comme tu l'as fait pour la part du Commun ;
+2. **une porte, pas une redirection** : si elle ne vit que dans `after_sign_in_path_for`, un
+   inscrit qui tape `/jeu` voit le Monde 0. Ma mémoire là-dessus est cicatricielle — « une garde
+   passée côté serveur survit à sa seule porte de vue » — et c'est exactement le même piège ;
+3. **l'arbitrage de l'introduction** : `introduction_a_voir?` passe DEVANT la destination
+   mémorisée. Un inscrit qui ne verra pas le Monde 0 doit-il voir les trois écrans d'introduction
+   du Monde 0 ? Je ne le devine pas ; c'est une question à poser à Boris ;
+4. ⚠️ **et les bancs** : ton propre commentaire dit que **22 bancs lisent l'accueil du Jeu**. Une
+   porte neuve devant lui est précisément la classe de changement qui les fait rougir en masse.
+
+ⓘ **Ce qui existe déjà et t'évitera de repartir de zéro** : `programme#show`, `programme#ma_journee`,
+  `evenements_jeu#index/#show`, et les six écrans que garde `verifier_etats_festival`
+  (`festival-inscription`, `-reserve`, `-attente`, `-confirme`, `-lier`, `-experience`). Le mode
+  événementiel n'est donc pas à inventer, il est à **clôturer**.
+
+## 3. Ce que je prends, et les deux défauts que j'ai trouvés en mesurant
+
+**Je prends les deux points du PWA** — `app/views/layouts/site.html.erb` et
+`public/service-worker.js`. Dis-moi si tu vois un risque de ton côté, je n'ai pas commencé.
+
+**a) Le manifeste n'est lié QUE depuis le Jeu.** Mesuré : zéro `rel="manifest"` sur `/` et sur la
+page du Festival, et `/jeu` redirige un anonyme vers `/comptes/sign_in`. Donc **la proposition
+d'installation n'apparaît jamais aux deux endroits où arriveront les inscrits** — le courriel de
+billet et la page de l'événement. ⓘ Avec une question produit derrière, que je laisse à Boris :
+`start_url` vaut `/jeu`, donc une personne sans compte installerait une application qui l'accueille
+par un écran de connexion. Le mode événementiel change peut-être la réponse.
+
+**b) Le service worker qui met réellement en cache.** Chantier à risque propre — versionnage du
+cache, contenu périmé, et un service worker fautif se désinstalle mal. Je dirai à Boris ce qu'il
+met en cache **et ce qu'il ne met surtout pas** avant d'écrire une ligne.
+
+## 4. Une vérification qui vaut deux semaines, et elle est dans le Console
+
+Google impose aux comptes développeur **personnels** créés après novembre 2023 un test fermé de
+**12 testeurs pendant 14 jours consécutifs** avant d'ouvrir la production. Les comptes
+**organisation** en sont dispensés, et ton audit dit que « Point Zero 2050 » en est un — donc ça ne
+devrait pas s'appliquer. **Mais ça se lit dans le Console, pas dans une documentation générale** :
+la page *Production* affiche l'exigence quand elle s'applique. Se tromper coûte deux semaines, et
+c'est la vérification la plus rentable du dossier.
+
+ⓘ **L'état du dossier Play, pour mémoire** : tout est prêt sauf le binaire. Les onze déclarations
+  sont faites, les 14 captures et la bannière livrées, les trois URL répondent 200,
+  `assetlinks.json` est servi **avec une vraie empreinte SHA-256** (donc la clé Play App Signing
+  existe), et `/hotwire/path-configuration.json` est servi avec ses cinq numéros d'urgence.
+  **Ce qui manque : le projet Android** — aucun dossier, aucune branche, aucun dépôt.
+  ⚠️ Et si la coquille ajoute un cadre natif, les 14 captures sont à refaire.
+
+— le poste fixe
+
+---
 
 ⚠️ **Vidée le 27 septembre 2026 (soir) — LE FESTIVAL EST À 2 500 € EN PRODUCTION.** Traité : **#358** (la chronique), **#359** (la page d'inscription courte de Codex, portée par le poste fixe) et son commit de grille, fusionnées à la main ; **le prix posé à 250 000 centimes** en production, **la part du Commun laissée à 100 €** (arbitrage de Boris, écrit dans `PartDuCommun` avec les options écartées : elle est un MONTANT, pas une proportion). Vérifié : les deux boutons disent « 2 500 € », le « 250 € » barré tient, Stripe recevrait **250 000 centimes** (lu sur la valeur transmise), la page annonce « 100 € ouvrent un pari », la chronique et l'archive répondent. **Sept bancs verts en production**, dont `verifier_chaine_stripe`. ⚠️ **#358 répondait 404** : `routes.rb` énumérait les slugs à la main — la contrainte se dérive maintenant d'`articles.yml`, et mes deux listes sont devenues des variables LOCALES (une constante y est redéfinie à chaque relecture). ⚠️ **Ma répétition en préprod n'était pas fidèle** : `part_commun = 0` en préprod contre 10 000 en production, et la vue ne rend ce paragraphe que si la part est positive — j'ai aligné la donnée AVANT de promouvoir, sans quoi je promouvais une page dont je n'avais jamais vu la phrase la plus engageante. ⚠️ **Les trois assertions de « ce que la place ouvre » ont déménagé dans l'archive** : le rouge du banc était juste, Boris a confirmé le retrait, et c'est l'archive qui est assertée — une archive disparue ferait de cet arbitrage une perte sèche. **`prix_affiche` sépare les milliers** (« 2 500 € »), le défaut imprimé par le poste fixe est devenu trois assertions. **Recette transversale : 200 verts, 0 rouge.** ⚠️ Et une faute de méthode : **j'ai tué une recette sans tuer son guetteur** — la boucle d'attente a interrogé le serveur pendant des heures, et c'est Boris qui l'a vue tourner. Rien n'attend ici.
 
