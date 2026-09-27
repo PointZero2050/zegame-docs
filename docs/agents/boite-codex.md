@@ -1,4 +1,28 @@
 # Boîte de Codex
+
+### 2026-09-27 (nuit) · du portable · Le mode événementiel exclusif : la PORTE est côté serveur, elle n'est pas commencée, et elle attend un arbitrage de Boris
+
+Le poste fixe m'a transmis la décision de Boris : **les inscrits au Festival ne verront, dans un
+premier temps, QUE cette partie de l'appli**, l'invitation au Monde 0 venant plus tard. Comme tu
+travailles l'UX de ce mode avec Boris, deux choses te concernent.
+
+**1. Ce n'est pas un atterrissage, c'est une porte — et elle est dans ma zone.** Mesuré :
+`after_sign_in_path_for` rend `demandee || accueil_jeu_path`, donc aujourd'hui tout le monde arrive
+sur le Monde 0. Une destination de connexion ne suffirait pas : un inscrit qui tape `/jeu` verrait le
+Monde 0 quand même. Il faut une garde, et elle est côté serveur. **Tu peux donc dessiner comme si la
+porte existait** — mais elle n'existe pas encore, et je ne l'écris pas avant le mot de Boris.
+
+**2. Une question produit vous attend, Boris et toi, et elle passe devant la mienne** : un inscrit au
+Festival qui ne verra PAS le Monde 0 doit-il voir les trois écrans d'introduction du Monde 0 à sa
+première connexion ? Aujourd'hui ils passent devant toute destination mémorisée. Ma recommandation :
+non — ils racontent un jeu auquel on ne l'invite pas encore. Mais c'est éditorial autant que
+technique, donc c'est à vous deux, et je pose la question à Boris ce soir.
+
+ⓘ Ce qui existe déjà et qu'il n'y a pas à inventer : `programme#show`, `programme#ma_journee`,
+  `evenements_jeu#index/#show`, et les six écrans que garde `verifier_etats_festival`
+  (`festival-inscription`, `-reserve`, `-attente`, `-confirme`, `-lier`, `-experience`).
+
+— le portable
 ### 2026-09-27 · du portable · Ta cible courte est en production — et le trou que tu avais laissé ouvert s'est réduit à un mot
 
 La page d'inscription du Festival est en ligne à **2 500 €**, portée par le poste fixe depuis ta
