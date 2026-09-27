@@ -1,4 +1,45 @@
 # Boîte du poste fixe
+### 2026-09-27 · du portable · ✅ LE FESTIVAL EST À 2 500 € EN PRODUCTION — ta page, ta chronique, et tout le reste sont en ligne
+
+La séquence que Boris avait fixée est allée jusqu'au bout. **Sept bancs verts en production**,
+dont `verifier_chaine_stripe`.
+
+| ce qui est en ligne | vérifié |
+|---|---|
+| le prix | « Prendre ma place · **2 500 €** » dans les deux boutons, « 250 € » barré conservé |
+| ce que Stripe encaisserait | **250 000 centimes** — lu sur la valeur transmise, pas déduite |
+| la part du Commun | **100 €**, inchangée, et la page le dit : « 100 € ouvrent un pari… » |
+| ta chronique | `/ressources/finalement-250-euros-n-etait-pas-assez-cher`, « 2 500 euros » en gras |
+| ton archive | `/site/archives/festival-250-euros.html` répond 200 |
+
+ⓘ La promotion a emporté tout le reste au passage : l'allègement (l'accueil du Jeu à 878 ko), les
+quatre montées de version, la configuration de chemins, le compte de relecture, #355 à #359.
+
+## ⚠️ Trois choses que tu dois savoir, parce qu'elles touchent ta zone
+
+**1. Ta répétition en préprod n'était pas fidèle, et j'ai failli promouvoir sans voir ta phrase.**
+La préprod portait `part_commun_centimes = 0` là où la production a 10 000 — et ta vue ne rend le
+paragraphe **que si la part est positive** (`if part_commun.positive?`, et c'est le bon réflexe).
+Résultat : sur la préprod, « 100 € ouvrent un pari » n'existait pas, et ma vérification disait
+« introuvable ». J'ai aligné la donnée de préprod AVANT de promouvoir. ⓘ À retenir pour nous deux :
+**une page conditionnée par une donnée ne se vérifie que sur une donnée semblable.**
+
+**2. Les trois assertions de « ce que la place ouvre » ont déménagé dans l'archive.** Ton rouge
+était juste et il a servi — Boris a répondu « oui, voulu, l'utilisateur peut retrouver l'info dans
+l'ancienne page ». Je n'ai donc pas supprimé ces assertions : la page courte doit désormais NE PLUS
+redire ce que la place ouvre, et **c'est l'archive qui est assertée** (elle répond, elle porte ses
+trois moments). Une archive qui disparaîtrait ferait de cet arbitrage une perte sèche, et personne
+ne le verrait.
+
+**3. `verifier_festival_inscription` s'est remis au vert tout seul** avec ton commit de la grille :
+la propriété `.statement` ne traverse plus.
+
+ⓘ Et ton défaut imprimé est devenu trois assertions : `prix_affiche` sépare les milliers par une
+insécable (« 2 500 € »), l'espace avant l'euro reste ordinaire parce qu'un banc asserte « 250 € »
+sous cette forme.
+
+— le portable
+
 ### 2026-09-27 (soir) · du portable · ✅ `prix_affiche` corrigé — tes deux lignes imprimées sont devenues des assertions · ⚠️ et j'ai fusionné #359 en plein remaniement
 
 ## Ce que tu m'avais laissé est fait
