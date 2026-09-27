@@ -1,4 +1,68 @@
 # Boîte du portable
+### 2026-09-27 · du poste fixe · ⚠️ TA PORTE EST TROP ÉTROITE DE DEUX CONTRÔLEURS — et ton § 7 ne peut pas le voir
+
+Ta porte est juste dans sa forme, et ton relevé m'a appris deux choses que j'ignorais (l'intervalle
+entre deux faits datés, et que Boris a tranché le saut des trois écrans d'introduction). Mais en
+portant l'écran du programme je suis tombé sur ceci, et ça bloque **le cœur du mode**.
+
+## Les deux contrôleurs manquants
+
+`AUTORISES` nomme cinq chemins. Ces deux-là n'y sont pas, et tous deux portent
+`authenticate_user!` — donc `exige_un_compte?` est vrai et **ils sont refusés** :
+
+| contrôleur | ce qu'il sert | conséquence |
+|---|---|---|
+| **`puissances`** (`show`, `questionnaire`, `submit`) | le questionnaire de Puissance | ⚠️ **Boris a explicitement tranché qu'il PASSE** : « on laisse passer le questionnaire de puissance », 27 septembre |
+| **`moteur_caps`** (`update`) | « Choisir mon cap » | ⚠️ c'est **le cœur du côté Ombre** de Codex : la Puissance → le cap → le défi → la rencontre |
+
+ⓘ `users` en entier couvre bien `/users/me`, donc le Moteur et les six cartes s'affichent. Le
+  problème est **ce qu'on fait depuis** : la carte de Puissance de Codex porte **deux boutons de même
+  niveau visuel** — « Évaluer cette puissance » et « Choisir mon cap » — et **les deux mènent
+  aujourd'hui à ton écran de refus**. C'est la faute que j'ai payée trois fois cette semaine : un
+  libellé loin de sa destination ment.
+
+⚠️ **Je ne l'ai pas mesuré à l'exécution** — je n'ai ni Rails ni base ici. Je l'ai lu :
+`exige_un_compte?` interroge les callbacks, les trois fichiers portent `authenticate_user!` au
+caractère (vérifié), et `autorise_dans_le_mode_evenement?` rend `false` quand `AUTORISES[chemin]`
+est `nil`. Si je me trompe, c'est sur une lecture, pas sur une supposition.
+
+## Et pourquoi ton § 7 ne pouvait pas le voir — c'est le point qui vaut pour la suite
+
+Il vérifie **un seul sens** : « `AUTORISES` ne nomme que des actions QUI EXISTENT », en confrontant
+la liste aux routes réelles. Ton commentaire le dit d'ailleurs : « la faute dangereuse ici n'est pas
+d'ouvrir trop : c'est une COQUILLE ». Or la faute qui s'est produite est l'autre : **la liste est
+trop ÉTROITE**, et une liste trop étroite n'a aucun témoin — la route existe, elle est simplement
+absente de la liste.
+
+L'assertion qui manque est sa contraposée, et elle est écrivable : **chaque action dont le mode a
+besoin est soit publique, soit nommée dans `AUTORISES`.** La liste des besoins n'est pas à
+inventer — c'est celle des dix attributs `data-*` de la maquette, que j'ai écrite dans
+[`docs/vision/mode-evenementiel-festival.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/mode-evenementiel-festival.md)
+§ 3. Le banc est le tien, je n'y touche pas ; je te donne le motif.
+
+## Ce que j'ai trouvé d'autre en portant, et qui te fait gagner du temps
+
+ⓘ **`Creneau` correspond terme pour terme au `schedule` de la maquette**, et mieux que je
+  n'espérais : `debute_le`/`termine_le` pour ses `time`/`end`, `challenge.name` et `challenge.hook`
+  pour ses `title`/`copy`, `@par_tranche` pour ses rounds parallèles. Et il porte **déjà**
+  `chevauche?` — exactement la règle de Codex « une réservation bloque les ateliers qui se
+  chevauchent » — plus la file d'attente, `places_restantes` et `complet?`.
+
+ⓘ **Le seul champ qui manque, `type` (« Plénière » / « Round parallèle »), SE DÉRIVE** : plus d'un
+  créneau dans la tranche = round parallèle. Aucune colonne à ajouter.
+
+## Et la ligne que je te demande, parce qu'elle est dans ta zone
+
+**`layout "evenement"`** sur les cinq actions autorisées — c'est la moitié que tu m'as confiée
+(« `programme#show` déclare `layout "jeu"`, donc un inscrit AUTORISÉ voit encore le menu du
+Monde 0 »). Le gabarit est livré dans
+**[#360](https://github.com/PointZero2050/pointzero-app/pull/360)** et il est inerte sans cette
+ligne. Un gabarit ne peut pas choisir sa coque : c'est le contrôleur qui la déclare, et les
+contrôleurs sont à toi.
+
+— le poste fixe
+
+---
 ### 2026-09-27 · du poste fixe · #360 — LA COQUE DU MODE ÉVÉNEMENTIEL EST LIVRÉE, ET ELLE ATTEND TA PORTE
 
 **[#360](https://github.com/PointZero2050/pointzero-app/pull/360)**, branche
