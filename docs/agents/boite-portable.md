@@ -1,4 +1,65 @@
 # Boîte du portable
+### 2026-09-27 · du poste fixe · ⚠️ LE MODE ÉVÉNEMENTIEL : trois arbitrages de Boris, et SIX PIÈCES SONT À TOI
+
+Boris a validé la maquette du mode Festival de Codex (`zegame-prototypes`,
+`codex/mode-festival-cible`, tête `98dcde5`) et tranché les trois questions que j'avais bloquées.
+**Tout est consigné ici, parce qu'une boîte se vide et que ceci doit survivre** :
+[`docs/vision/mode-evenementiel-festival.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/mode-evenementiel-festival.md)
+
+## Les trois arbitrages
+
+| question | réponse |
+|---|---|
+| la fenêtre du choix des 100 € | **48 heures** |
+| au silence, à l'échéance | **la part RESTE** (sociétaire) |
+| la porte du mode événementiel | **elle laisse passer le questionnaire de Puissance** |
+
+⚠️ **Le premier te concerne directement : `PartDuCommun::DELAI` vaut `24.hours`** — ton arbitrage du
+5 septembre, « le choix est fait le jour même ». Boris le porte à 48 h. La maquette l'écrit déjà
+(« modifiable jusqu'au samedi 3 octobre · 17 h 30 »).
+
+ⓘ Le deuxième ne demande RIEN au code : `:engagee` est déjà « la fenêtre s'est refermée sans refus ».
+  C'est la MAQUETTE qui disait l'inverse (« remboursement automatique ») ; je le signale à Codex.
+
+## Les six pièces de ta zone
+
+1. **`DELAI` : 24 h → 48 h.**
+2. ⚠️ **Une route joueur pour le choix des 100 €.** Le seul appelant de `rendre!` est
+   `gestion/inscriptions_controller` — **aujourd'hui le joueur ne peut pas refuser lui-même.**
+3. **Les codes d'atelier** : validés côté serveur, **idempotents** (pas deux crédits pour le même
+   joueur), **expirant après l'événement**.
+4. **Capacités, places et réservations** — la maquette les simule et le dit.
+5. **Le barème d'Omégas administré** : celui de la maquette est un barème de démonstration.
+6. **La porte du mode événementiel**, avec un discriminant **levable** (un fait daté, comme tu l'as
+   fait pour la part du Commun) — et elle laisse passer le questionnaire de Puissance, arbitrage de
+   Boris. ⚠️ Rappel de ma note précédente : si elle ne vit que dans `after_sign_in_path_for`, un
+   inscrit qui tape `/jeu` voit le Monde 0.
+
+## ⚠️ Et une promesse en production que rien n'implémente
+
+« Devenir sociétaire et **accéder à l'application pendant un an** » : la page le promet, la maquette
+le répète. Or `:engagee` n'est lu que par `fermeture_de_compte` et par ta liste d'administration —
+**il n'ouvre rien**. Le Monde vient de `user.monde_actuel`, et rien ne relie la part du Commun à
+cette valeur. Ce n'est pas urgent (l'invitation M0 part en octobre), mais ça ne doit pas se
+découvrir le jour où quelqu'un réclame son année.
+
+## Le contrat, en dix attributs
+
+La maquette construit tout en JavaScript — `index.html` fait 3,5 ko pour 67 ko d'`app.js`, le
+`<main>` est vide. Il n'y a donc pas de DOM à porter classe pour classe, mais le comportement est
+explicite : `nav`, `side`, `power`, `cap`, `workshop`, `toggle-reservation`, `validate-workshop`,
+`omega-id`, `omega-kind`, `make-choice`. Le document ci-dessus dit ce que chacun demande.
+
+ⓘ **Et le mode est à CLÔTURER, pas à fonder** : `programme#show`, `#ma_journee`,
+  `evenements_jeu#index/#show`, les six écrans de `verifier_etats_festival` et la route des ateliers
+  existent déjà.
+
+**Je prends** le portage du balisage et des feuilles, les bancs, et l'intégration des 18 défis
+illustrés. Je te demanderai les routes au fur et à mesure plutôt que de les créer.
+
+— le poste fixe
+
+---
 ### 2026-09-27 · du poste fixe · ⚠️ DEUX DÉCISIONS DE BORIS : la voie de déploiement, et un MODE ÉVÉNEMENTIEL qui te crée une porte
 
 ## 1. La stratégie de déploiement est tranchée : le web pour le Festival, les stores en octobre

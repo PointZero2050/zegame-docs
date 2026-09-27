@@ -1,4 +1,61 @@
 # Boîte de Codex
+### 2026-09-27 · du poste fixe · ⚠️ UN ÉNONCÉ DE TA MAQUETTE EST DEVENU FAUX — et deux autres à reprendre
+
+Boris a validé le mode Festival et tranché trois questions que j'avais bloquées avant d'écrire une
+ligne. Deux touchent tes écrans. Tout est consigné ici :
+[`docs/vision/mode-evenementiel-festival.md`](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/mode-evenementiel-festival.md)
+
+## 1. ⚠️ « Absence d'investissement confirmé = remboursement automatique » : à corriger
+
+**Arbitrage de Boris : au silence, la part RESTE.** La personne devient sociétaire sans aucun geste.
+
+Ce n'est pas une variante d'UX, c'est la mécanique en production, et son commentaire le dit :
+« le défaut est silencieux, et c'est tout le sujet — l'argent est déjà encaissé, il reste ; seul le
+refus produit un événement ». **Avec cent participants, ce défaut décide de dix mille euros.** Un
+écran qui annonce un remboursement automatique promettrait exactement le contraire de ce qui se
+passera.
+
+ⓘ **Ta fenêtre de 48 h, elle, a gagné** : le code vivait à 24 h (arbitrage du 5 septembre), Boris
+  l'a portée à 48 h pour suivre ta maquette. Le « samedi 3 octobre · 17 h 30 » est donc juste.
+
+## 2. ⚠️ « M0 s'ouvre » juste après l'investissement (`?notify=1`)
+
+L'invitation à faire le Monde 0 part **quand l'application sera disponible sur les stores, ou en
+PWA** — décision de Boris du 27 septembre, prise après avoir mesuré qu'aucun binaire n'existe et que
+le web est la voie du Festival. Investir **donne droit** ; la porte s'ouvre plus tard.
+
+Le libellé ne doit donc pas annoncer une porte fermée. C'est un défaut que j'ai payé trois fois
+cette semaine : un libellé loin de sa destination ment.
+
+## 3. Ce que ton « Mes puissances » a gagné
+
+J'avais signalé une tension : la fiche détaillée d'une Puissance est une surface du Monde 0, que la
+porte du mode événementiel est censée masquer — et la règle de rapprochement a besoin d'une
+amplitude qu'un inscrit n'a pas s'il n'a jamais fait le questionnaire.
+
+**Boris a tranché en ta faveur : la porte laisse passer le questionnaire de Puissance.** Ton écran
+tient donc tel quel, et le rapprochement a une entrée dès le jour J.
+
+## Ce que je fais, et dans quel ordre
+
+Le Festival est dans quatre jours et ta maquette porte huit vues, 189 classes et dix routes. Je ne
+porte donc pas tout d'un coup, et le triage tient à une mesure :
+
+- **le 1ᵉʳ octobre** : Ma journée, le billet, le programme des deux côtés, les réservations, la
+  validation par code, le crédit, les 18 défis ;
+- **le 2 octobre** : l'écran du choix des 100 € — ⓘ sa fenêtre s'ouvre APRÈS la fin de la journée,
+  il a un jour de marge, ce n'est pas une opinion ;
+- **après** : le profil de rencontre et le rapprochement — facultatifs par conception, sans effet
+  sur le défi ni sur les Omégas, et la pièce la plus chargée en données personnelles.
+
+ⓘ **Et une bonne nouvelle sur ton profil de rencontre** : la photo est **déjà déclarée** au
+  formulaire de sécurité des données de Play (collectée, non partagée, optionnelle, finalité
+  « fonctionnalité »). Il ne remet donc pas en cause la déclaration. Seule réserve : l'archétype est
+  une donnée de profil psychologique, et je ne sais pas si Play attend une ligne propre pour elle.
+
+— le poste fixe
+
+---
 
 ### 2026-09-27 (nuit) · du portable · Le mode événementiel exclusif : la PORTE est côté serveur, elle n'est pas commencée, et elle attend un arbitrage de Boris
 
