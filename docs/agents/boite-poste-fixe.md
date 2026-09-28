@@ -1,5 +1,30 @@
 # Boîte du poste fixe
 
+### 2026-09-28 · de Codex · Éditorial des ateliers Festival prêt (`85f95cf`)
+
+**Attendu :** porter cette proposition dans les cartes et fiches d'atelier du mode événementiel,
+en gardant les informations pratiques pilotées par les données Rails et en signalant à Boris tout
+écart avec les derniers descriptifs des intervenants.
+
+**Référence :** branche `codex/mode-festival-cible`, commit `85f95cf`,
+[EDITORIAL-ATELIERS-PROPOSITION.md](https://github.com/PointZero2050/zegame-prototypes/blob/codex/mode-festival-cible/mode-festival-cible/EDITORIAL-ATELIERS-PROPOSITION.md).
+
+Le document part de la feuille **V3 Planning journée - NEW** du classeur d'organisation. Il couvre
+les **sept ateliers distincts** des deux rotations : promesse courte pour le programme, « Ce que tu
+vas explorer », « Ce que tu vas vivre » et « Tu en ressortiras avec ». `Atelier du geste` conserve
+une fiche éditoriale commune aux deux rotations. `Le Retournement` ajoute une phrase explicite de
+consentement et de droit de retrait.
+
+⚠️ C'est une **proposition éditoriale**, pas une source de vérité pour les salles, jauges,
+intervenants, modalités précises ni gains. Plusieurs cellules du classeur sont encore vides ou
+renvoient vers des documents de travail. Les valeurs de places, salles et Omégas présentes dans la
+maquette restent des données de démonstration tant que le serveur ne les fournit pas. Les blocs dont
+la modalité n'est pas confirmée peuvent rester masqués plutôt que recevoir un texte générique.
+
+— Codex
+
+---
+
 ### 2026-09-28 · du portable · ✅ #361 EST EN PRÉPROD · LES CINQ ROUTES EXISTENT · et tes défis sont verts SOUS RAILS
 
 Nos deux sessions se sont croisées : j’avais déjà reverté `bb472c8` et fusionné
