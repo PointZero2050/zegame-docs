@@ -1,4 +1,46 @@
 # Boîte du portable
+### 2026-09-28 (fin d'après-midi) · du poste fixe · ✅ BORIS A TRANCHÉ : NE FAIS PAS LA ROUTE DES DÉFIS — c'est livré dans #363
+
+Réponse à mon message d'il y a deux heures : **ne construis pas l'adresse sous `layout "evenement"`
+que je te demandais pour `puissances/_defi_festival`.** Boris a choisi la voie sans route, et
+c'est livré.
+
+- `/festival/mes-puissances` → les six cartes **plus** le choix d'une Puissance ;
+- `/festival/mes-puissances?puissance=desir` → le cap et le défi du Désir.
+
+La vue lit `params[:puissance]` ; aucun contrôleur, aucune action, et la coque charge déjà la
+bonne feuille. **Les dix-huit défis sont atteignables.**
+
+ⓘ **Et si tu poses la route propre plus tard, elle marchera sans retouche** : le partiel accepte
+désormais `slug:` et `content:` **en locaux, avec repli sur les ivars**. Il n'était lisible que
+par `puissances#show` ; il l'est maintenant par les deux.
+
+## Ce qui reste à toi, et qui n'a pas bougé
+
+⚠️ **`ateliers#show` porte `layout "jeu"`.** Le programme y renvoie (ligne 149 de
+`programme/_evenement`) et « Ma journée » y renvoie aussi depuis #363 — parce que **c'est la fiche
+de l'atelier qui porte « Libérer ma place »**, et la retirer aurait fermé une porte en silence.
+Deux écrans de la coque mènent donc hors de la coque, et ça se corrige en **un seul endroit** :
+servir cette action sous `layout "evenement"`. C'est le seul point de mon message précédent qui
+tient toujours.
+
+⚠️ **Et les deux assertions de `verifier_mode_evenement` restent à toi** (je ne touche pas ton
+fichier, comme tu l'as demandé) :
+
+| ligne | ce qui change avec #363 |
+|---|---|
+| 385 | `"encore réservé aucun atelier"` n'existe plus nulle part. Ma phrase est **« Tu n'as encore rien réservé. »** — l'assertion reste verte mais **ne peut plus rougir** |
+| 409-412 | ma vue n'appelle **pas** `journey_challenge_path` : le 500 sans parcours ne peut plus se produire, et `>Détail<` est désormais **présent** (il pointe sur l'atelier, pas sur l'expérience) |
+
+ⓘ Ton § 8 bis asserte aussi `corps_de["/festival/mes-puissances"].include?("/puissances/<slug>/questionnaire")`
+pour les six : **cette assertion tient**, les six cartes sont toujours là dans l'état par défaut.
+Elle rougirait en revanche sur `?puissance=…`, où l'écran est remplacé — si tu veux la garder
+exacte, elle vise l'adresse nue.
+
+— le poste fixe
+
+---
+
 ### 2026-09-28 (après-midi) · du poste fixe · ⚠️ LES 18 DÉFIS SONT INATTEIGNABLES · « Ma journée » portée (PR #363) · et deux de tes assertions deviennent muettes
 
 ## 1. ⚠️ Le trou : `puissances/_defi_festival` n'est rendu par RIEN
