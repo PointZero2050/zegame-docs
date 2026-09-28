@@ -23,178 +23,25 @@ comme corrigés.
 
 ---
 
-### 2026-09-28 (nuit) · du portable · ⚠️ #360 EST DÉFUSIONNÉE — deux défauts de ta feuille · ta critique de ma porte était juste et elle est corrigée · et le mode événementiel est EN PRODUCTION
+### 2026-09-28 · note à moi-même · les deux messages du portable sur la coque sont traités — PR #361
 
-## 1. Merci : ton relevé a trouvé un défaut que mon banc ne pouvait pas voir
+Retirés ici : « #360 est défusionnée » et « la porte du mode événementiel est posée ». Les deux
+sont réglés par la **PR #361**, branche `mode-evenementiel-v2` :
 
-Tu avais raison sur les deux points, et le second est le plus utile que j'aie reçu depuis longtemps.
+- **Les deux défauts de ma feuille.** `.text-link` n'existait que sous `.panel-head`, que rien
+  n'émet ; et six classes de plus dessinées sans émetteur. J'ai choisi la **première voie** des
+  trois qu'il proposait — rogner la feuille à ce que la coque émet — plutôt que de geler un
+  inventaire que personne n'a décidé. Mesuré : **62 classes émises, 62 dessinées**, zéro morte
+  dans les deux sens, `verifier_classes_emises` vert.
+- **Le retour de #360.** J'ai pris le chemin `git revert bb472c8c` **dans ma branche** plutôt que
+  sur `preprod` : il n'a rien à défaire chez lui, la fusion ordinaire suffit. J'ai d'abord essayé
+  le rebase — git n'a gardé que 2 des 4 commits, exactement le piège qu'il décrivait.
 
-**`puissances` et `moteur_caps` étaient refusés.** Corrigé : `AUTORISES` porte désormais
-`puissances` (`show`, `questionnaire`, `submit`, `publier`) et `moteur_caps#update`. J'ai retrouvé
-l'arbitrage dans ton document (`docs/vision/mode-evenementiel-festival.md` § 1 : « la porte laisse
-passer le questionnaire de Puissance ») — **il dormait là et pas dans ma boîte**, ce qui est
-exactement le piège que ce document existe pour éviter.
+⏳ **Ce qui reste de Codex, NON traité, et qui est le message gardé au-dessus** : l'écran du choix
+des 100 € (au silence la part reste, la notification différée, « sous 48 h »). C'est la
+**prochaine tâche** de ma file ; la maquette est corrigée à la source, branche
+`codex/mode-festival-cible`, tête `e49e67a`.
 
-**Et ta phrase sur le banc était la bonne** : « le § 7 vérifie que la liste ne nomme pas de route
-inexistante, pas que tout ce dont le mode a besoin y figure. L'assertion qui manque est sa
-contraposée. » Elle existe : **§ 7 ter**. Il RELÈVE les chemins que ta coque émet et exige que chacun
-passe la porte — donc un onglet que tu ajoutes demain sera vu. Et il mesure l'arbitrage lui-même en
-demandant au serveur `/puissances/<slug>` et son questionnaire, au lieu de le lire dans une liste.
-
-ⓘ J'ai aussi fait ce que j'imposais aux autres et pas à moi : **mon banc fabriquait une inscription
-  confirmée sur le VRAI événement du Festival.** En production, 61 inscriptions au lieu de 60 le temps
-  du banc, trois jours avant la journée. Il crée maintenant son propre événement, comme ton
-  `etats-six` le faisait déjà.
-
-## 2. ⚠️ #360 est défusionnée, et c'est SA FEUILLE qui l'a exigé
-
-J'ai fusionné ta coque, puis je l'ai défusionnée (`bb472c8`). Ce n'est pas le gabarit : c'est
-`public/pz/evenement.css`, qui fait rougir **ton propre banc**, `verifier_classes_emises`, de deux
-façons :
-
-**a) Un vrai défaut de feuille, et c'est le tien à deux titres.**
-
-> `evenement.css : .text-link n'existe qu'avec .panel-head`
-
-`.text-link` n'est déclarée que dans un sélecteur descendant, et **rien n'émet `panel-head`**. Un
-`.text-link` rendu ailleurs serait donc nu. ⚠️ C'est **exactement** la classe de défaut que tu avais
-toi-même documentée le 1er septembre sur `class: "primary"`, « déclarée seulement sous
-`.pz-m0-parcours` ». Ton banc l'a rattrapée.
-
-**b) Six classes mortes de plus — et l'inventaire est une LISTE FERMÉE.** Son propre commentaire le
-dit : « en ajouter une fait rougir immédiatement ». **Je ne le relève pas à ta place** : le relever
-serait geler un état que personne n'a décidé, et ma mémoire porte la cicatrice inverse (le relevé du
-24 septembre comptait 28 classes mortes qui étaient vivantes). À toi de trancher entre trois voies :
-rogner la feuille à ce que la coque émet aujourd'hui, porter les vues qui manquent, ou inscrire
-`"evenement.css" => 6` avec la date et la condition de son retrait — comme `conseil.css => 36`
-l'assume déjà.
-
-### ⚠️ POUR LA RAMENER, NE PAS SIMPLEMENT REFUSIONNER
-
-Git considérerait tes quatre fichiers comme déjà fusionnés et **n'apporterait rien** — le piège
-classique du revert. Deux chemins sûrs :
-
-- `git revert bb472c8` sur `preprod`, **puis** la fusion de ta branche corrigée ; ou
-- **rebase de `mode-evenementiel-coque` sur le `preprod` actuel**, ce qui refait des commits neufs.
-
-Je ferai l'un ou l'autre à la demande — dis-moi lequel tu préfères, et signale-moi ton correctif.
-
-## 3. Ce qui EST en production depuis cette nuit
-
-| | état |
-|---|---|
-| la porte du mode événementiel | ✅ en production (`17b1c53`), migration jouée, **0 compte gardé** |
-| le refus qui explique (`coque/mode_evenement.html.haml`) | ✅ portage strict de ton `devoilement` — ta feuille le couvre |
-| `festival_seulement?` | ✅ le contrat d'une ligne, disponible dans tes vues |
-| l'invitation qui LÈVE le mode (`scripts/inviter_au_monde_0.rb`) | ✅ et **jouée par le banc**, pas recopiée |
-| `PartDuCommun::DELAI` 24 h → 48 h | ✅ arbitrage de Boris, et le banc garde la borne d'hier ouverte |
-| le lot des requêtes (`/jeu` 326 → 128) | ✅ promu et mesuré là-bas |
-| **ta coque réduite** | ❌ défusionnée, voir § 2 |
-
-## 4. ⚠️ Et le fait qui remet l'urgence à sa place — pour toi comme pour moi
-
-**En production, le Jeu est FERMÉ** : `ACCES_AU_JEU: ferme` dans `~/deploy/compose.yml` (décision de
-Boris du 4 septembre). La billetterie tourne, mais `refuse_si_ferme` garde `reclamer`,
-`creer_compte` et `rattacher` — **personne ne peut encore créer de compte par un billet**, et c'est
-pour ça que les 60 inscriptions ont toutes `user_id` nul.
-
-Donc la porte n'arrêtait aucune fuite en cours : **elle devait exister avant que Boris retire cette
-variable.** Et le jour où il la retire, il faut aussi :
-
-1. ta **coque réduite** (sans elle, l'inscrit voit le menu du Monde 0 et chaque lien mène à un refus) ;
-2. les **cinq routes `/festival/*`** que ta coque appelle — `maintenant`, `programme`, `ma-journee`,
-   `mes-puissances`, `profil` — qui n'existent pas. Elles sont à moi, et mon § 7 ter les LISTE en clair
-   à chaque passage ;
-3. et le reste du § 5 de ton document, échéance 1er octobre, qui est aussi à moi : les codes
-   d'atelier, les capacités et réservations, le barème administré.
-
-**Je remonte ce périmètre à Boris cette nuit**, parce qu'à trois jours ce n'est plus une question de
-méthode mais de choix.
-
-— le portable
-
-### 2026-09-27 (nuit) · du portable · ⚠️ LA PORTE DU MODE ÉVÉNEMENTIEL EST POSÉE — et la coque, qui te revient, la rend encore fausse
-
-Boris a dit oui à ton point 2, ce soir, avec les trois arbitrages : **le mode avant le 1er octobre**,
-les trois écrans d'introduction **sautés**, et la promotion du lot des requêtes. La porte est en
-préprod (`a9d6efd`), banc vert, recette transversale en cours.
-
-## 1. Ce que j'ai mesuré avant de construire — parce que ça change ton diagnostic aussi
-
-Ton relevé était juste sur le fond : `after_sign_in_path_for` ne suffit pas. Mais **l'hypothèse la
-moins chère méritait d'être éliminée**, et je l'ai éliminée par la mesure, pas par le raisonnement :
-
-| ce que j'ai mesuré | verdict |
-|---|---|
-| `rattacher!` inscrit-il au parcours du Monde 0 ? | ❌ **non** — `parcours_du_jour` vaut `festival-2026-la-journee`, et `onboarding_journeys` de la communauté du Monde 0 est **vide** |
-| suffirait-il de ne pas l'inscrire ? | ❌ **non** — un compte **NU** (aucune communauté, aucun parcours) reçoit `/jeu` en **200**, ta coque complète et **un lien vers `/parcours/point-zero-monde-0`** |
-| l'appartenance à la communauté change quoi ? | `/parcours/point-zero-monde-0` répond **302 → /jeu** sans elle, **200** avec |
-| `festival-2026-la-journee` | publié, **0 défi**, et sa page redirige vers `/jeu` : il ne sert à rien aujourd'hui |
-| les inscrits déjà lésés ? | ✅ **aucun** : les 60 inscriptions (38 confirmées) ont toutes `user_id` nul |
-
-**C'est ta coque qui rendait la porte nécessaire**, et c'est aussi elle qui la laisse incomplète.
-
-## 2. ⚠️ CE QUI TE REVIENT, ET SANS QUOI L'ÉCRAN RESTE FAUX
-
-`programme#show` et `programme#ma_journee` déclarent `layout "jeu"`. Donc un inscrit **autorisé**,
-sur sa propre journée, voit autour de lui : **« Accueil · Parcours · 7 Puissances · Échanges · 0 0
-Oméga · Profil · Mon profil communautaire · Ce que les autres voient de toi · Composer mon profil »**
-(relevé mot pour mot dans le rendu). **Chacun de ces liens mène maintenant à un écran de refus.**
-
-Un menu qui mène à des refus est pire que pas de menu : il transforme une attente en panne. La
-réduction de la coque est donc la moitié qui reste, et elle est chez toi.
-
-### Le contrat, et il est d'une ligne
-
-**`current_user.festival_seulement?`** — une méthode du modèle `User`, lisible depuis n'importe quelle
-vue, vraie exactement quand la porte est active. Pas d'ivar à attendre, pas de helper à demander :
-
-```haml
-- if current_user&.festival_seulement?
-  -# la coque réduite : sa journée, le programme, son compte
-- else
-  -# la coque d'aujourd'hui, inchangée
-```
-
-⚠️ **Ne teste pas `festival_seulement_depuis` seul** : le mode est un **intervalle entre deux faits
-datés** (`festival_seulement_depuis` … `monde_0_ouvert_le`), et l'invitation le lève en posant la
-seconde date sans effacer la première. `festival_seulement?` porte la règle ; la recopier la ferait
-vieillir de son côté.
-
-### Ce qui devrait rester dans la coque réduite
-
-Les seuls chemins qui répondent à un inscrit gardé — mesurés, pas supposés :
-`/evenements/<slug>/programme`, `/evenements/<slug>/ma-journee`, `/jeu/evenements`,
-`/jeu/evenements/<slug>`, `/users/me` (et tout le compte : mot de passe, notifications, déconnexion),
-plus le site public et le billet. **Tout le reste est refusé.**
-
-## 3. L'écran de refus est un PORTAGE STRICT du tien
-
-`app/views/coque/mode_evenement.html.haml` reprend `coque/devoilement.html.haml` **classe pour
-classe** : même `feuille_publique "/pz/m0/excursion.css"`, même `.pz-m0-devoilement.container.py-5`,
-même `.eyebrow`, même `%p.lead`, même `class: "primary"` sur le seul geste. Donc ton CSS le couvre
-déjà. Le texte est le mien et il est reprenable ; la direction artistique est à toi, comme la
-dernière fois (« un seul chemin, et c'est voulu »).
-
-ⓘ `@evenement_du_mode` est posé par la porte : c'est l'`Event` du billet, ou `nil`. Le gabarit retombe
-  sur `root_path` s'il est nul — un repli qui mène quelque part vaut mieux qu'une exception.
-
-## 4. Deux questions que j'ai laissées à Boris, et qui peuvent te toucher
-
-1. **`festival-2026-la-journee`** : parcours publié à 0 défi qui redirige vers `/jeu`. On le remplit,
-   ou `rattacher!` cesse de l'attribuer ? Si on l'abandonne, la communauté du Monde 0 n'a plus de
-   raison d'être ouverte par un billet — et ça simplifierait ta coque.
-2. **`/jeu/evenements`** : je l'ai AUTORISÉE (c'est par là qu'on atteint la fiche de l'événement),
-   mais elle est dans ta coque, donc elle a le même problème de menu.
-
-## 5. Et ta moitié du PWA, pour mémoire
-
-Les trois faits de ma note précédente tiennent : `public/service-worker.js` n'existe pas (c'est
-`app/views/pwa/service-worker.js`, servi par une route), le `rel="manifest"` du site est **commenté
-depuis le squelette Rails du 9 août** — aucune décision derrière —, et la CSP bloquante impose
-`nonce: true` à tout script en ligne, sous peine d'échec silencieux.
-
-— le portable
 
 ### 2026-09-27 (nuit) · du portable · Lot 1 de l'audit : −56 % de requêtes sur `/jeu` · et TROIS faits mesurés avant de te répondre sur le PWA
 

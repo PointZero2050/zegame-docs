@@ -77,6 +77,63 @@ illustrés** (un par verbe de chaque Puissance).
 
 ---
 
+## 4 bis. LES DIX-HUIT DÉFIS — livrés le 28 septembre (PR #361)
+
+Le catalogue éditorial (`CATALOGUE-DEFIS-FESTIVAL.md`, zegame-prototypes branche
+`codex/mode-festival-cible`) vit désormais dans **`verbes.<pôle>.defi_festival`** des six
+`config/puissances/<slug>.yml`. Neuf champs par défi : `cap`, `id`, `titre`, `format`, `duree`,
+`illustration`, `alt`, `consigne`, `accompli`.
+
+**Aucun modèle, aucun service, aucune migration, aucune route** : `PuissanceAssessment.content`
+charge déjà ces fichiers, et aucun consommateur n'itère sur les clés d'un verbe.
+
+### ⚠️ La jointure traverse TROIS nomenclatures — et c'est `cap` qui la porte
+
+| le catalogue nomme | le Moteur range | la config range |
+|---|---|---|
+| un **verbe** — `festival.desir.contenir` | un **cap** — `moteur_caps["desir"] = "accueillir"` | un **pôle** — `verbes.ombre` |
+
+Rien ne garantissait leur correspondance ; un décalage d'un cran aurait donné au joueur le défi du
+verbe voisin, sur une page belle et complète. Chaque bloc porte donc son `cap`, **dans la donnée**,
+ce qui évite une quatrième table cap↔pôle dans le code (`premier_cap/_orienter.html.haml` en porte
+déjà une en littéral). `verifier_defis_festival` § 2 asserte la correspondance dans les deux sens,
+contre `PremierCap::CAPS`.
+
+Les deux sources ont été **croisées, pas recopiées** : zéro écart sur titre, format, durée,
+consigne et condition ; et les 18 verbes concordent avec `verbes.<pôle>.mot`.
+
+### Les images : 1180 px, pas 540
+
+⚠️ **Une erreur de lecture à retenir.** `.challenge-reveal{grid-template-columns:270px 1fr}`
+appartient à la branche **sans** illustration. Dès qu'un défi en porte une, la maquette ajoute
+`challenge-reveal-immersive` (`display:block`) et l'image occupe **toute la largeur**. Les dix-huit
+en portent une : cette colonne de 270 px ne rend **jamais**, et les deux familles qui en dépendent
+(`.challenge-visual`, `.meeting-sign`) sont hors du portage, ni émises ni dessinées.
+
+Dérivés à **1180 px** (`.screen{max-width:1180px}`) : 5 889 → 2 800 ko, **156 ko par défi**, et un
+seul s'affiche à la fois. Sur téléphone, 358 CSS × 3 = 1074 — le même dérivé couvre les deux.
+
+### Ce qui reste au portable
+
+1. les cinq routes `/festival/*` et `layout "evenement"` — **sans elles rien n'est atteignable** ;
+2. les deux gestes du défi (« j'accepte », « j'ai accompli »), **autovalidés** selon le catalogue,
+   avec attribution idempotente des Ω ;
+3. rejouer `verifier_defis_festival` sous `bin/rails runner` (ses § 4 à 7 demandent Rails).
+
+⓵ **Le choix du cap, lui, est déjà un vrai geste** : `PATCH /moteur-caps` existe et accepte
+`caps[<puissance>]` + `return_to`.
+
+### ⚠️ Et une gouttière que nos deux bancs ne pouvaient pas voir
+
+`public/pz/evenement.css` n'avait **aucune** règle `#main` là où la maquette en a deux : tout le
+mode événementiel rendait **bord à bord**, à toutes les largeurs, depuis #360 — programme et
+atelier compris. `verifier_classes_emises` ne compare que des **classes** ; `#main` est un **ID**.
+Les sélecteurs d'ID et d'attribut sont un angle mort commun à nos bancs de mise en page.
+
+
+
+---
+
 ## 5. Le triage par date, et il tient à une mesure
 
 | ce qui doit exister | quand | pourquoi |
