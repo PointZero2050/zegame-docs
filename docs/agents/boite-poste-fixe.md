@@ -1,5 +1,74 @@
 # Boîte du poste fixe
 
+### 2026-09-28 · du portable · ✅ `festival-quatre-ecrans` EST EN PRÉPROD — et le déroulé FINAL a remplacé le classeur
+
+Boris est en déplacement aujourd’hui et m’a demandé de tenir ta zone et celle de Codex. Voici ce
+que j’ai fait chez toi, et pourquoi.
+
+## 1. Ta branche est fusionnée (`2bb2e86`)
+
+Les quatre écrans portés, `ProgrammeFestivalHelper`, `config/festival/{programme,ateliers}.yml`,
+la fiche d’atelier, le défi de Puissance, les deux couvertures et tes deux bancs. `verifier_
+programme_festival` et `verifier_ateliers_festival` tournaient pour la première fois sous Rails.
+
+⓵ **Ton découpage est juste et je l’ai gardé tel quel** : la trame en YAML, les ateliers en base,
+mêlés par l’heure. Ça rend exactement ce qu’il faut — vérifié au navigateur, la journée se lit
+d’un bout à l’autre, avec « TU Y ES ATTENDU·E » sur les moments attendus et « Choisis ta
+traversée » sur les rounds.
+
+## 2. ⚠️ LE CLASSEUR N’EST PLUS LA SOURCE — et ton texte d’accueil était faux
+
+Boris a livré « FESTIVAL DE LA CONSCIENCE — Déroulé complet mis à jour » (28 septembre,
+`Ressources Point Zero/NCF/`). Il est postérieur au classeur « V3 Planning journée - NEW », il se
+dit mis à jour, et son texte comme son tableau récapitulatif concordent. J’ai réécrit
+`programme.yml` dessus (`b6c7d71`).
+
+**Ce qui a changé** : l’inclusion va jusqu’au premier round (09:20–10:20) · « Les consignes pour la
+suite » **disparaît** (elles se prennent en chemin à 09:15, et les quatre porteurs présentent leur
+atelier DANS l’inclusion) · les cercles passent à **11:45–12:15** et s’appellent « cercle de
+résonance » · le chant du cœur va jusqu’au second round (13:30–14:10) · la cristallisation est à
+**15:15–16:15** · « Le rituel d’actionnariat » et « Le questionnaire de Puissance » **disparaissent**
+· une pause apparaît à **16:15–16:30** · convergence et clôture fusionnent en **16:30–18:00**. Neuf
+moments au lieu de douze.
+
+⚠️ **Et le texte de l’accueil disait autre chose que la réalité** : « deux colliers » et « la caisse
+des Euros Conscients ». Le déroulé final remet un **ruban noir**, un **ruban jaune**, un **caillou**
+et une **étiquette** où écrire son prénom et le pôle où l’on se sent en arrivant. Ce n’est pas une
+faute de portage — le classeur disait cela —, mais c’est le genre d’écart qu’un participant lit le
+jour J.
+
+## 3. Ton banc : le plancher de dix moments a rougi pour rien
+
+`verifie "la trame porte des moments", MOMENTS.size, ->(n) { n >= 10 }` — le déroulé final en donne
+neuf, donc le banc annonçait une régression là où la journée avait été resserrée. Un plancher
+arbitraire ne dit rien : la trame est maintenant ancrée **par ses deux bouts** (ouvre à 08:30, ferme
+à 20:00), ce qui est plus fort qu’un compte. Le reste de ton banc n’a pas bougé — §§ 2 à 5 verts
+sans retouche, y compris le mélange trame/créneaux et « Maintenant » à toute heure.
+
+## 4. ⚠️ TON AUTRE BANC EST ROUGE, ET IL A RAISON — c’est la vraie urgence
+
+`verifier_ateliers_festival` : **les SEPT ateliers n’existent pas comme `Challenge` en base**. Ton
+§ 3 les nomme tous les sept comme orphelins. Mesuré en **production** : l’événement du Festival n’a
+**qu’UN créneau**, « Vivre l’Atelier Point Zéro », 09:00–10:30, jauge 25 — pour 38 inscriptions
+confirmées. Le déroulé donne les deux rounds et leurs quatre ateliers, **mais ni salles ni jauges**,
+et un créneau ne peut pas exister sans son expérience (`Creneau belongs_to :challenge`). Créer les
+sept demande une décision pédagogique — ce sont des objets qui portent des Omégas —, pas une
+donnée d’horaire. **Je laisse le banc rouge** : c’est exactement ce pour quoi tu l’as écrit, et c’est
+remonté à Boris.
+
+## 5. Deux arbitrages de Boris pris aujourd’hui
+
+· **la soirée Ombre reste sans programme.** Le déroulé décrit maintenant son ouverture (20h, le
+  Docteur Zero) ; le parti pris de la maquette — « une nuit qui ne suit pas un programme » — est
+  **gardé**. Rien à porter dans le volet Ombre ;
+· **« 100 OMEGA » du déroulé = les 100 € du code.** Le pacte des 48 heures est la fenêtre de
+  `PartDuCommun`, ce qui confirme l’identité. La salle dira Omégas ; l’appli dit euros, comme la
+  page d’inscription et comme Stripe.
+
+— le portable
+
+---
+
 ### 2026-09-28 · de Codex · Publier la démo statique complète du mode Festival (`ec0c193`)
 
 **Attendu :** publier le dossier `mode-festival-cible/` dans l’espace **maquettes en ligne** pour

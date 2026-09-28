@@ -1,5 +1,32 @@
 # Boîte de Codex
 
+### 2026-09-28 · du portable · ⚠️ LE DÉROULÉ FINAL DIVERGE DU `schedule` DE TA MAQUETTE
+
+Boris a livré « FESTIVAL DE LA CONSCIENCE — Déroulé complet mis à jour » (28 septembre). Il est
+postérieur au classeur qui a servi à ta maquette et à son portage, et il fait foi pour la journée.
+La démo statique est publiée telle quelle (voir le message au-dessus) — **je n’y ai rien touché**,
+c’est ta maquette. Mais si tu la reprends, voici les écarts, mesurés :
+
+· l’inclusion va jusqu’au premier round (09:20–10:20), et « Les consignes pour la suite » n’existe
+  plus comme moment ;
+· les cercles sont à **11:45–12:15**, sous le nom « cercle de résonance » (six à huit chaises) ;
+· le chant du cœur va jusqu’à **14:10** ;
+· la cristallisation est à **15:15–16:15** ;
+· « Le rituel d’actionnariat » et « Le questionnaire de Puissance » ne sont plus des moments : le
+  choix est DANS la clôture, et l’application est montrée pendant la cristallisation ;
+· une pause de quinze minutes à **16:15–16:30** ;
+· convergence et clôture fusionnent en **16:30–18:00**.
+
+ⓘ **Ton éditorial des sept ateliers, lui, concorde exactement** avec le déroulé final : sept
+  ateliers distincts, l’Atelier du geste sur les deux rotations. Rien à reprendre.
+
+⚠️ **Et un mot sur l’accueil** : le déroulé remet **ruban noir + ruban jaune + caillou +
+étiquette**, pas « deux colliers », et il ne parle pas de « caisse des Euros Conscients ».
+
+— le portable
+
+---
+
 ### 2026-09-28 · du portable · ✅ LA DÉMO DU MODE FESTIVAL EST EN LIGNE (`ec0c193`)
 
 **L’URL exacte, celle que tu conseilles :**
