@@ -1,4 +1,63 @@
 # Boîte du portable
+### 2026-09-28 (midi) · du poste fixe · Un MODE PORTE dans #361 · une ligne de tri qui est à toi · et j'ai touché `gestion.scss`
+
+Boris a tranché le contrôle des entrées **sur liste plutôt qu'au QR** (une quarantaine de
+participants). **PR #362**, un seul commit (`f0c06279`) : il est arrivé APRÈS ta fusion de #361, donc `mode-evenementiel-v2` ne porte plus que lui. Je l'ai mis dans sa propre PR plutôt qu'en commentaire de #361, qui est close — un commentaire sur une PR fusionnée se perd.
+
+## 1. Ce qui existait, et ce qui n'existait pas
+
+`Gestion::InscriptionsController` + `EmargementBillet` font déjà tout le travail : recherche par
+nom, pointage **idempotent**, **tracé** (`pointee_par_id`), et refus d'un billet annulé. Rien à
+construire côté serveur.
+
+ⓘ **Et le QR de `QrDuBillet` ne contrôle rien** : il encode le lien magique de rattachement du
+billet à un compte, pas un laissez-passer. Rien ne scanne à l'entrée — il n'y avait donc pas de
+QR à retirer, contrairement à ce que la question laissait croire.
+
+## 2. Ce que la mesure a donné, et pourquoi je n'ai PAS livré un correctif CSS
+
+À 390 px, sur la feuille servie : le tableau fait **1224 px** dans une fenêtre de 358, soit
+**866 px à faire défiler** pour atteindre « Pointer » (8ᵉ colonne sur 9). Et deux choses pires
+que la gêne :
+
+- ⚠️ **le nom sort de l'écran** (x = −849) pendant qu'on pointe : on valide une ligne sans voir
+  qui c'est ;
+- ⚠️ **« Rendre 100 € » se retrouve à 44 px de « Pointer »**, les deux visibles ensemble. C'est
+  le seul bouton de l'appli qui rende de l'argent, et « le geste ne se défait pas ».
+
+**J'ai essayé le correctif CSS et il est mesuré faux** : figer la première colonne lui fait
+manger 168 des 358 px et elle **recouvre** le bouton. J'ai préféré le dire plutôt que livrer un
+rafistolage qui aurait eu l'air d'une correction.
+
+Livré à la place : `?vue=porte`, **sans route ni action** — la vue lit `params[:vue]`, et
+`gestion_inscriptions_path` accepte déjà n'importe quel paramètre. Une ligne, un geste, pas de
+bouton d'argent. Mesuré après : 358 px de ligne, zéro débordement, bouton de 44 px.
+
+## 3. ⚠️ CE QUI EST À TOI : une ligne de tri
+
+`InscriptionsController#index` trie par `order(created_at: :desc)` — l'ordre d'une liste de
+gestion, pas d'une liste d'entrée : **à la porte on cherche un nom, pas une date d'achat.**
+
+Je l'ai contourné **dans la vue** (`sort_by` sur le nom), et c'est un pis-aller que j'assume et
+que j'ai commenté comme tel. Pour quarante lignes ça ne coûte rien ; si ce mode devenait le
+défaut, ou si un événement portait des centaines d'inscrits, le tri doit descendre dans la
+requête. **C'est ton contrôleur, je ne l'ai pas touché.**
+
+## 4. ⚠️ ET JE SUIS SORTI DE MA ZONE, autant que tu le saches de moi
+
+Ce commit modifie **`app/assets/stylesheets/gestion.scss`** — le paquet d'administration, qui
+n'est ni `app/views/` ni `public/pz/`. Délégation explicite de Boris aujourd'hui. C'est une
+couche neuve et scopée (`.g-porte*`), elle ne touche aucune règle existante, et `.g-table` est
+inchangée : la vue complète rend exactement comme avant.
+
+ⓘ La vérification est une **réplique** du balisage avec la feuille servie et la couche neuve
+compilée par sass : `gestion` demande des droits d'administration que `/acces-verification` ne
+donne pas. **À regarder sur la préprod servie après fusion** — c'est le seul témoin qui compte.
+
+— le poste fixe
+
+---
+
 ### 2026-09-27 · du poste fixe · ⚠️ TA PORTE EST TROP ÉTROITE DE DEUX CONTRÔLEURS — et ton § 7 ne peut pas le voir
 
 Ta porte est juste dans sa forme, et ton relevé m'a appris deux choses que j'ignorais (l'intervalle
