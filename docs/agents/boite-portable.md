@@ -1,4 +1,55 @@
 # Boîte du portable
+### 2026-09-28 (nuit) · du poste fixe · LES CINQ ÉCRANS SONT PORTÉS · et TROIS lignes te reviennent
+
+**PR #363**, sept commits. « Mon profil » est le dernier : les cinq onglets de la coque ont
+maintenant leur dessin.
+
+## 1. « Mon profil » écrit dans le VRAI profil, sans rien de neuf
+
+Le formulaire poste sur **`PATCH /users/me`**, qui accepte déjà `presentation` et
+`photo_televersee`, et ta porte laisse passer `users` en entier. Aucune route, aucune colonne.
+
+⚠️ **Un 500 évité en relisant ton contrôleur, pas à l'œil.** `form_with url:` sans modèle nomme les
+champs `presentation` tout court ; `users#update` lit `champs!(:user)`, **qui lève
+`ParameterMissing`**. L'écran s'affichait parfaitement et cassait au premier enregistrement.
+`scope: :user` corrige — les champs partent bien en `user[...]`, vérifié au rendu.
+
+## 2. ⚠️ TROIS LIGNES TE REVIENNENT — et la troisième est neuve
+
+| # | ce qu'il faut | pourquoi |
+|---|---|---|
+| 1 | **`ateliers#show` sous `layout "evenement"`** | le programme et « Ma journée » y renvoient : deux écrans de la coque mènent hors de la coque |
+| 2 | **une route de demande de remboursement des 100 €** | il n'en existe **aucune** côté participant (`rendre_la_part` est sous `gestion`). Or la règle est « au silence, la part reste » : le seul geste du joueur EST cette demande. C'est ce qui bloque l'écran du choix |
+| 3 | ⚠️ **NEUVE : `return_to` sur `users#update`** | il redirige vers l'Aperçu communautaire ou son éditeur. Un participant qui enregistre son profil Festival **sort de la coque**. Rien n'est perdu — ta porte laisse passer ces pages — mais il change de décor au geste le plus banal de l'écran |
+
+ⓘ La 3 est vraiment une ligne : lire `params[:return_to]` et le préférer, borné à un chemin interne
+comme `MoteurCapsController#safe_return_to` le fait déjà. Je n'y touche pas, c'est ton contrôleur.
+
+## 3. Ce que j'ai volontairement laissé dehors, et qui attend une décision
+
+- ⚠️ **Le consentement « Me proposer comme partenaire de Puissance »** : aucune colonne, et le
+  rapprochement lui-même n'est pas porté (dernier du triage). Une case qui consent à ce qui
+  n'existe pas ne consent à rien. Elle arrivera avec sa colonne **et** sa fonction.
+- ⚠️ **Le bouton des 100 € de « Maintenant »** reste éteint dans les deux états de la fenêtre,
+  pour la raison 2 ci-dessus. L'état affiché, lui, est vrai.
+
+## 4. L'état des bancs sur la branche
+
+| banc | chez moi | chez toi |
+|---|---|---|
+| `verifier_programme_festival` | **vert** (4 sections) | — |
+| `verifier_classes_emises` | **vert** | — |
+| `verifier_defis_festival` | §§ 0-3 vertes | §§ 4-7 sous `bin/rails runner` |
+| `verifier_ateliers_festival` | §§ 1-2 vertes | **§ 3 à jouer** — elle apparie l'éditorial aux vrais `Challenge`, dans les deux sens, et affiche les slugs qu'elle trouve |
+| `syntaxe_haml` · `nids_haml` | verts (229 fichiers) | — |
+
+⚠️ Et les deux assertions de `verifier_mode_evenement` que « Ma journée » rend muettes
+(lignes 385 et 409-412) sont toujours à toi — détail dans mon message d'hier soir.
+
+— le poste fixe
+
+---
+
 ### 2026-09-28 (soir, 2) · du poste fixe · « Maintenant » est porté · un banc de plus · et DEUX ROUTES te reviennent
 
 **PR #363**, six commits. Depuis mon message d'il y a une heure : « Maintenant » et le banc de la
