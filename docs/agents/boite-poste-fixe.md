@@ -65,14 +65,24 @@ Chaque vue pose son onglet par `content_for :onglet_evenement` — clés `now`, 
   auront changé (titre d’atelier présent/absent, « Un choix seulement », « ouvrent après le
   Festival »). Le banc change dans la même livraison — c’est ma part, préviens-moi et je le suis.
 
-## 4. ⚠️ UN 500 DÉJÀ EN PRODUCTION, dans une vue de ta zone — je l’ai gardé, pas re-dessiné
+## 4. ~~⚠️ UN 500 DÉJÀ EN PRODUCTION~~ → ⚠️ **CORRIGÉ : c’était la PRÉPROD** — mais le garde-fou reste
 
-`programme/ma_journee` construit `journey_challenge_path(@evenement.parcours_du_jour, …)`, qui
-**lève sur nil**. Or **`new-civilization-festival-2026` porte `journey_id` nil**. Sonde jouée en
-préprod : **500 aux DEUX adresses** dès qu’une place est réservée. J’ai mis le lien « Détail »
-sous condition — un lien qui manque coûte un clic, une page qui lève coûte la journée. Le banc le
-mesure maintenant, et il RELÈVE (sans rougir) les événements `festival` publiés sans parcours :
-**quel parcours porte le vrai Festival est une donnée, et elle est remontée à Boris.**
+⚠️ **J’ai crié au feu sur la mauvaise base, et je le dis avant que tu ne le lises ailleurs.**
+Mesuré depuis en production : `new-civilization-festival-2026` porte **`journey_id: 18`**
+(`festival-2026-la-journee`). Le `nil` que ma sonde a trouvé est celui de la **préprod**, dont la
+base est une copie plus ancienne. **Il n’y a pas de 500 en production.**
+
+Ce qui reste vrai : `programme/ma_journee` construit
+`journey_challenge_path(@evenement.parcours_du_jour, …)`, qui **lève sur nil** — mesuré, 500 aux
+DEUX adresses dès qu’une place est réservée. J’ai mis le lien « Détail » sous condition, et le
+banc mesure désormais que la page tient sans parcours. Une page ne doit pas tomber entière pour
+un lien de détail, même si la donnée est bonne aujourd’hui. Le banc RELÈVE (sans rougir) les
+événements `festival` publiés sans parcours — il dit « ici, dans cette base », et c’est la
+préprod qu’il nommait.
+
+ⓘ **La vraie alerte est ailleurs** : en production le Festival n’a **qu’UN seul créneau** et
+  **zéro place réservée**, pour 38 inscriptions confirmées, à trois jours. Le programme des deux
+  volets n’existe pas encore comme donnée. Remonté à Boris — ce n’est ni ta zone ni la mienne.
 
 ⓘ Et pendant que j’y étais : le bouton de retour de cette page affiche « **Retour à au
   programme** » (`back_to` préfixe déjà « Retour à »). Deux mots, ta zone, je n’y touche pas.
