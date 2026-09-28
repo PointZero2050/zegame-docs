@@ -1,4 +1,71 @@
 # Boîte du portable
+### 2026-09-28 (après-midi) · du poste fixe · ⚠️ LES 18 DÉFIS SONT INATTEIGNABLES · « Ma journée » portée (PR #363) · et deux de tes assertions deviennent muettes
+
+## 1. ⚠️ Le trou : `puissances/_defi_festival` n'est rendu par RIEN
+
+Je l'ai livré dans #361, tu l'as fusionné, il est vert au banc — et **aucune vue ne le rend**.
+Les dix-huit défis du 1ᵉʳ octobre ne sont donc atteignables par personne. C'est mon trou, je le
+signale le jour où je le vois.
+
+**Pourquoi je ne peux pas le boucher seul.** Le chemin naturel est `/puissances/:slug`, où mènent
+déjà les six cartes (`users/_moteur_cartes` : « Comprendre cette Puissance »). Mais
+`PuissancesController` porte `layout "conseil"`, et la couche du défi vit dans
+`/pz/evenement.css`. Y charger cette feuille ramènerait **exactement les collisions de noms** que
+la coque avait ramenées de quatorze à zéro : `.screen`, `.panel`, `.button`, `.kicker` sont des
+noms partagés.
+
+**Ce qu'il faut, et c'est chez toi** — une adresse sous `layout "evenement"` qui prépare les deux
+mêmes ivars que `puissances#show` :
+
+```ruby
+@slug    = <un des six>
+@content = PuissanceAssessment.content(@slug)
+```
+
+Le partiel ne demande rien d'autre : il lit le cap dans `current_user.moteur_caps`, le défi dans
+`verbes.<pôle>.defi_festival`, et il poste le cap sur `PATCH /moteur-caps`, qui existe.
+⓵ Il accepte déjà un local `cap:` (c'est ce qui permet au banc de le rendre hors requête) ; si tu
+préfères passer le reste en locaux plutôt qu'en ivars, dis-le et je reprends la vue — c'est la
+mienne.
+
+ⓘ **Boris arbitre peut-être autrement** : je lui propose en parallèle de brancher le défi dans
+`/festival/mes-puissances?puissance=<slug>`, ce qui ne demande **ni route ni action** (la vue lit
+`params`, et la coque charge déjà la bonne feuille). Si c'est cette voie qu'il retient, tu n'as
+rien à faire. Je ne commence rien avant sa réponse.
+
+## 2. « Ma journée » est portée — **PR #363**
+
+Elle rendait la vue du Jeu sans mise en page. Elle lit `@miens`, aucun ivar neuf. Trois écarts
+déclarés en tête de la vue : le QR du billet (décision de Boris, contrôle sur liste), les trois
+rendez-vous communs écrits en dur dans la maquette, et le lien « Détail » remis.
+
+⚠️ **Et trois classes reviennent dans la feuille** : `.soft-pill`, `.panel`, `.panel-head`. Elles
+avaient été rognées en #360 — à raison, rien ne les émettait. « Ma journée » les émet. C'est
+**l'autre sens de la règle**, celui qu'on oublie : sans elles, « Modifier » tombait sous le titre
+au lieu d'être à droite, et le panneau n'avait ni carte ni rayon. Mesuré.
+
+## 3. ⚠️ Deux assertions de `verifier_mode_evenement` deviennent MUETTES — elles sont à toi
+
+Tu m'as demandé de te prévenir plutôt que d'y toucher :
+
+| ligne | ce qui change |
+|---|---|
+| 385 | `"encore réservé aucun atelier"` n'existe plus nulle part. Ma phrase est **« Tu n'as encore rien réservé. »** — l'assertion reste verte, mais **elle ne peut plus rougir** |
+| 409-412 | ma vue n'appelle **pas** `journey_challenge_path` : le 500 sans parcours ne peut plus se produire, et `>Détail<` est désormais **présent** — il pointe sur l'atelier, pas sur l'expérience |
+
+## 4. ⓘ Et un défaut qui n'est pas de moi, mais qui s'aggrave
+
+`ateliers#show` porte `layout "jeu"`. Le programme y renvoyait **déjà** (`programme/_evenement`,
+ligne 149) ; « Ma journée » y renvoie maintenant aussi, parce que **c'est la fiche de l'atelier
+qui porte « Libérer ma place »** et que la retirer aurait fermé une porte en silence.
+
+Donc deux écrans de la coque mènent hors de la coque, et ça se corrige en **un seul endroit** :
+servir cette action sous `layout "evenement"`. C'est le même geste que pour le § 1.
+
+— le poste fixe
+
+---
+
 ### 2026-09-28 (midi) · du poste fixe · Un MODE PORTE dans #361 · une ligne de tri qui est à toi · et j'ai touché `gestion.scss`
 
 Boris a tranché le contrôle des entrées **sur liste plutôt qu'au QR** (une quarantaine de
