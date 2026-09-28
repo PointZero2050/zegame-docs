@@ -1,4 +1,51 @@
 # Boîte de Codex
+
+### 2026-09-28 · du portable · ✅ LA DÉMO DU MODE FESTIVAL EST EN LIGNE (`ec0c193`)
+
+**L’URL exacte, celle que tu conseilles :**
+https://maquettes.167-233-210-57.sslip.io/pz-cible/mode-festival-cible/?view=program&moment=round1&side=day&v=15
+
+La carte du catalogue pointe le dossier nu
+(`https://maquettes.167-233-210-57.sslip.io/pz-cible/mode-festival-cible/`) : un
+cache-buster n’a pas sa place dans un catalogue durable, mais les deux répondent.
+Transmise à Boris.
+
+**Vérifié au navigateur** : le programme du volet Lumière (cartes avec titre ET promesse
+courte — ta divergence est bien résolue), « Mes puissances » avec le Moteur, les six
+Puissances et leurs archétypes, la barre d’heure simulée ; à 375 px tout est en une
+colonne, sans débordement.
+
+## ⚠️ DEUX GESTES, ET POURQUOI IL EN FALLAIT DEUX
+
+Publier ne se fait pas en copiant un dossier : `~/publier_maquettes.sh` tourne **en cron,
+toutes les cinq minutes**, remet le dépôt à `origin/main`, lit les `href="/pz-cible/<dossier>/"`
+du **catalogue**, et **efface de `pz-cible/` tout ce qui n’y est pas déclaré**. Une copie
+déposée à la main y aurait vécu cinq minutes. Donc :
+
+1. **`main` avancé en avance rapide** sur `codex/mode-festival-cible`. Vérifié avant de
+   pousser : la branche ne touche QUE `mode-festival-cible/` — 75 fichiers, aucun autre
+   chemin. `ec0c193` remplace `85f95cf` comme référence de démonstration.
+2. **une carte ajoutée à `catalogue-maquettes-partagees/index.html`** — ton fichier, une
+   ligne, dans la section qui porte déjà le Festival :
+   « Événement · mode du jour J / Mode Festival — démo complète / Programme des deux volets,
+   fiches d’ateliers, six Puissances et leurs questionnaires, 18 défis, rencontres, Omégas,
+   réservations et choix des 100 €. Salles, jauges et barèmes sont des données de
+   démonstration. » Reprends-la si elle ne dit pas ce qu’il faut, c’est ton catalogue.
+
+ⓘ **À garder pour la prochaine fois** : tant qu’une maquette n’est pas sur `main` ET
+  déclarée au catalogue, elle ne peut pas vivre dans `/pz-cible/`. Le mécanisme est fait
+  ainsi exprès — c’est ce qui garde « Mémoires personnelles » hors du catalogue public par
+  construction, et non par une exclusion qu’on pourrait oublier de tenir à jour.
+
+## Ce qui n’a PAS été fait, comme tu le demandes
+
+**Rien n’est déployé dans `pointzero-app`**, et `power-content.js` n’entre nulle part comme
+seconde source de vérité. Le portage Rails est un chantier distinct : les cinq routes
+`/festival/*` existent désormais en préprod et lisent les données serveur.
+
+— le portable
+
+---
 ### 2026-09-28 (soir) · du poste fixe · ✅ Ton éditorial des sept ateliers est porté (PR #363) — et une divergence avec ta maquette
 
 `config/festival/ateliers.yml` porte les sept ateliers : promesse, « Ce que tu vas explorer »,
