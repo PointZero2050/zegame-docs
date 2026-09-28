@@ -1,12 +1,13 @@
 # Le mode événementiel du Festival — arbitrages, contrat et répartition
 
 Relevé du poste fixe, **27 septembre 2026**. Référence de la maquette :
-`zegame-prototypes`, branche `codex/mode-festival-cible`, tête `98dcde5`, dossier
+`zegame-prototypes`, branche `codex/mode-festival-cible`, tête `e49e67a`, dossier
 `mode-festival-cible/` (illustrations au commit `d823324`).
 
-Ce document existe parce que trois arbitrages de Boris **invalident des éléments de la maquette**
-et parce qu'une question est explicitement reportée à octobre. Une boîte aux lettres se vide ; ceci
-doit survivre.
+Ce document existe parce que trois arbitrages de Boris ont **invalidé des éléments de la maquette**
+et parce qu’une question est explicitement reportée à octobre. Une boîte aux lettres se vide ; ceci
+doit survivre. Les deux incohérences de la maquette ont été corrigées à sa source au commit
+`e49e67a`.
 
 ---
 
@@ -14,14 +15,14 @@ doit survivre.
 
 | question | réponse | ce qu'elle change |
 |---|---|---|
-| la fenêtre du choix des 100 € | **48 heures** | ⚠️ `PartDuCommun::DELAI` vaut **24.hours** en production (arbitrage du 5 septembre, « le choix est fait le jour même »). **À porter à 48 h** — zone du portable. |
-| au silence, à l'échéance | **la part RESTE** (la personne est sociétaire) | ✅ le code est déjà juste. ⚠️ **La maquette dit l'inverse** — « absence d'investissement confirmé = remboursement automatique » : cet énoncé ne doit PAS être porté. |
+| la fenêtre du choix des 100 € | **48 heures** | ✅ `PartDuCommun::DELAI` vaut désormais **48.hours** en production (`17b1c53`) et son banc protège la nouvelle borne. |
+| au silence, à l’échéance | **la part RESTE** (la personne est sociétaire) | ✅ le code est juste. ✅ La maquette l’indique désormais explicitement (`e49e67a`) ; seul un refus demandé produit un remboursement. |
 | la porte du mode événementiel | **elle laisse passer le questionnaire de Puissance** | le mode n'est donc pas hermétique : `powers` et la fiche d'une Puissance restent atteignables depuis l'événement. |
 
 ⚠️ **Le deuxième est celui qui porte de l'argent.** Le code l'écrit en commentaire : « le défaut est
 silencieux, et c'est tout le sujet — l'argent est déjà encaissé, il reste ; seul le refus produit un
-événement ». Avec cent participants, ce défaut décide de dix mille euros. L'énoncé de la maquette est
-donc une **erreur éditoriale à corriger à la source**, pas une variante.
+événement ». Avec cent participants, ce défaut décide de dix mille euros. Cet énoncé a donc été
+corrigé à la source de la maquette, et son banc protège maintenant ce comportement.
 
 ⓘ Et un manque que la maquette comble à juste titre : **aujourd'hui le joueur ne peut pas refuser
 lui-même.** Le seul appelant de `PartDuCommun.rendre!` est `gestion/inscriptions_controller` — un
@@ -115,14 +116,14 @@ Ce qu'il faut avoir en tête le jour où on l'ouvre, et qui est déjà mesuré :
 | qui | quoi |
 |---|---|
 | **Boris** | les arbitrages produit et éditoriaux ; la question du § 6 |
-| **Codex** | la maquette ; ⚠️ **corriger l'énoncé du remboursement automatique** (§ 1) et le libellé « M0 s'ouvre » (voir ci-dessous) |
-| **le portable** | `PartDuCommun::DELAI` 24 h → 48 h ; la route joueur du choix ; les codes d'atelier (serveur, idempotents, expirants) ; les capacités et réservations ; le barème administré ; la porte du mode événementiel et son discriminant **levable** ; la mécanique de l'« an inclus » |
+| **Codex** | la maquette ; ✅ l’énoncé du remboursement automatique et le libellé « M0 s’ouvre » ont été corrigés au commit `e49e67a` |
+| **le portable** | ✅ `PartDuCommun::DELAI` porté à 48 h et porte événementielle livrée ; restent la route joueur du choix, les codes d'atelier (serveur, idempotents, expirants), les capacités et réservations, le barème administré et la mécanique de l'« an inclus » |
 | **le poste fixe** | le portage du balisage et des feuilles, les bancs, l'intégration des 18 défis illustrés |
 
-⚠️ **Un libellé à reprendre avec la décision de déploiement.** La maquette notifie « M0 s'ouvre »
-juste après l'investissement (`?notify=1`). Or l'invitation à faire le Monde 0 part **quand
-l'application sera disponible sur les stores, ou en PWA** (décision de Boris du 27 septembre).
-Investir *donne droit* ; le libellé ne doit pas annoncer une porte qui n'est pas encore ouverte.
+✅ **Libellé repris avec la décision de déploiement.** La maquette distingue maintenant le droit
+acquis de l’ouverture effective. Elle ne déclenche plus de notification après l’investissement ;
+`?notify=1` prévisualise l’invitation ultérieure, envoyée **quand l’application sera disponible sur
+les stores, ou en PWA** (décision de Boris du 27 septembre).
 
 ⓘ **Ce que le consentement ne casse pas** : la photo du profil de rencontre est **déjà déclarée** au
 formulaire de sécurité des données de Play (`PSL_PHOTOS` = collectée, non partagée, optionnelle,

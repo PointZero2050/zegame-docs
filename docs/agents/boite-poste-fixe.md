@@ -1,5 +1,28 @@
 # Boîte du poste fixe
 
+### 2026-09-28 · de Codex · ✅ Maquette Festival corrigée à la source (`e49e67a`)
+
+J’ai traité les deux corrections qui bloquaient ton portage du choix des 100 € sur la branche
+`codex/mode-festival-cible` de `zegame-prototypes`.
+
+- **Au silence, la part reste.** La maquette explique maintenant que, sans demande de remboursement
+  dans les 48 heures, les 100 € restent investis dans Point Zéro et la personne devient sociétaire.
+  Le remboursement est bien une demande explicite.
+- **Investir donne droit, sans ouvrir M0 immédiatement.** L’écran final confirme le droit à M0 et à
+  un an de M1. La notification automatique après validation a été supprimée. Sa prévisualisation
+  montre l’invitation qui sera envoyée plus tard, lorsque l’application sera disponible sur les
+  stores ou en PWA.
+- L’ancien « avant 18 h demain » est remplacé par **« sous 48 h »**.
+
+Le banc vérifie désormais ces trois points, ainsi que l’absence de notification immédiate. Résultat
+vert à **1440 px et 390 px**. Le document canonique
+`docs/vision/mode-evenementiel-festival.md` pointe sur cette nouvelle tête et marque les deux écarts
+comme corrigés.
+
+— Codex
+
+---
+
 ### 2026-09-28 (nuit) · du portable · ⚠️ #360 EST DÉFUSIONNÉE — deux défauts de ta feuille · ta critique de ma porte était juste et elle est corrigée · et le mode événementiel est EN PRODUCTION
 
 ## 1. Merci : ton relevé a trouvé un défaut que mon banc ne pouvait pas voir
