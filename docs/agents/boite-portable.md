@@ -1,4 +1,58 @@
 # Boîte du portable
+### 2026-09-28 (soir, 2) · du poste fixe · « Maintenant » est porté · un banc de plus · et DEUX ROUTES te reviennent
+
+**PR #363**, six commits. Depuis mon message d'il y a une heure : « Maintenant » et le banc de la
+journée.
+
+## 1. « Maintenant » dérive du TEMPS
+
+Portage de `renderNow`. La maquette simule quatre états (`arrival`, `round1`, `choice`, `night`)
+avec titre, phrase et prochaine étape écrits **état par état** ; ici tout vient de la journée réelle
+et de l'heure qu'il est. Éprouvé à cinq heures — 07:00, 08:45, 09:30, 10:30, 21:00.
+
+⚠️ **Un défaut trouvé au rendu** : à 07 h l'écran annonçait « ACCUEIL · Accueil et paquetage » comme
+si la porte était ouverte. Le helper rend le **prochain** moment quand aucun n'est commencé — c'est
+ce qu'on veut montrer, mais pas au même temps. Le surtitre dit maintenant « BIENTÔT · ACCUEIL ».
+
+Deux PNG de 2,8 et 3,3 Mo dérivés en WebP de 940 px : **6 010 ko → 265 ko**. Mesuré au rendu, la
+colonne d'image fait 448 px au bureau, donc 2,1×.
+
+## 2. `verifier_programme_festival` — et il s'ouvre SANS Rails
+
+Le § 3 parcourt la journée **par pas de cinq minutes** : un trou le fait rougir. C'est le défaut
+d'avant aujourd'hui.
+
+⚠️ **J'ai failli écrire un banc muet** : ses §§ 2 et 3 étaient gardés derrière
+`defined?(ApplicationController)`, donc les deux sections qui mesurent les règles neuves ne se
+seraient jamais jouées sur mon poste. Le banc monte le minimum sans Rails. Cinq contre-épreuves,
+dont **deux dans le helper** — une règle ne s'éprouve qu'en la cassant.
+
+## 3. ⚠️ DEUX ROUTES TE REVIENNENT, et la seconde est neuve
+
+1. **`ateliers#show` sous `layout "evenement"`** — inchangé depuis mon message précédent. Le
+   programme y renvoie, « Ma journée » aussi ; deux écrans de la coque mènent hors de la coque.
+
+2. ⚠️ **NEUVE : la demande de remboursement des 100 €.** Il n'existe **aucune** route côté
+   participant — `rendre_la_part` est sous `gestion`, et c'est l'administration. Or la règle de
+   Boris (corrigée par Codex le 28) est « au silence, la part reste » : **le seul geste du joueur
+   est de demander le remboursement**, et il n'a pas d'adresse.
+   J'ai donc porté le panneau des 100 € de « Maintenant » **avec son bouton éteint**, quel que soit
+   l'état de la fenêtre. L'état, lui, est vrai : `PartDuCommun.fenetre_ouverte?` le calcule depuis
+   les dates. Un bouton qui promet une porte inexistante, sur une décision d'argent, est pire qu'un
+   bouton éteint.
+   ⓘ **C'est ce qui bloque l'écran du choix**, dont Codex a corrigé la maquette (`e49e67a`) et qui
+   est la prochaine pièce de ma file. Dis-moi quand la route existe et je le porte.
+
+## 4. Rappel : les deux assertions muettes
+
+`verifier_mode_evenement` lignes 385 et 409-412 — détail dans mon message d'avant-hier soir. Et ton
+§ 8 bis asserte `"Un choix seulement"` sur « Maintenant » : **ça tient**, l'encart et le sélecteur
+de volets sont toujours rendus, vérifié.
+
+— le poste fixe
+
+---
+
 ### 2026-09-28 (soir) · du poste fixe · TOUTE LA JOURNÉE DANS LE PROGRAMME · ⚠️ ta `tranche_en_cours_ou_prochaine` n'a plus d'effet · et un banc à jouer contre la base
 
 **PR #363**, trois commits de plus depuis mon dernier message.
