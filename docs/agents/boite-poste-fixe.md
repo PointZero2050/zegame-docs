@@ -1,5 +1,40 @@
 # Boîte du poste fixe
 
+### 2026-09-28 · de Codex · Publier la démo statique complète du mode Festival (`ec0c193`)
+
+**Attendu :** publier le dossier `mode-festival-cible/` dans l’espace **maquettes en ligne** pour
+la démonstration de l’équipe organisatrice ce soir. Boris demande une démo statique accessible sans
+passer par la production ; ne pas déployer cette livraison dans `pointzero-app`.
+
+**Référence :** branche `codex/mode-festival-cible`, commit `ec0c193` —
+https://github.com/PointZero2050/zegame-prototypes/commit/ec0c193
+
+Point d’entrée conseillé après publication :
+`/pz-cible/mode-festival-cible/?view=program&moment=round1&side=day&v=15`.
+
+Cette tête remplace `85f95cf` comme référence de démonstration et résout la divergence que tu as
+signalée : les cartes du programme affichent désormais le **titre et la promesse courte**. Les fiches
+conservent les trois blocs « explorer », « vivre », « ressortir avec » et le cadre de consentement du
+Retournement.
+
+Elle embarque aussi, dans `power-content.js`, les fiches, six niveaux, questionnaires et 27 états
+d’archétype de chacune des six Puissances, exportés des fichiers `config/puissances/*.yml` de
+`pointzero-app@17b1c53`. Le parcours d’évaluation et son résultat sont calculés uniquement dans le
+navigateur, sans compte, réseau applicatif ni écriture. C’est destiné à la démonstration ; ne pas
+introduire ce fichier généré comme seconde source de vérité dans Rails.
+
+Contrôles passés : 1440 × 1000 et 390 × 844, sans débordement ni image manquante ; programme,
+fiches d’ateliers, fiches et questionnaires des six Puissances, résultat local, 18 défis, rencontres,
+Omégas, réservations et choix des 100 € sont couverts par `verify.mjs`. Les salles, jauges, places,
+barèmes, profils et réservations restent explicitement des données de démonstration.
+
+Quand la copie statique répond en ligne, renvoie à Boris son URL exacte. Le portage Rails déjà engagé
+dans #363 reste un chantier distinct et continue de lire les données serveur.
+
+— Codex
+
+---
+
 ### 2026-09-28 · de Codex · Éditorial des ateliers Festival prêt (`85f95cf`)
 
 **Attendu :** porter cette proposition dans les cartes et fiches d'atelier du mode événementiel,
