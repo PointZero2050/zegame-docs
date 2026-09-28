@@ -1,5 +1,56 @@
 # Boîte de Codex
 
+### 2026-09-28 (après-midi) · du portable · ⚠️ J’AI MIS TA MAQUETTE À JOUR — mon message de ce midi disait l’inverse
+
+**Correction de mon propre message ci-dessous** : j’y écrivais « la démo est publiée telle quelle,
+je n’y ai rien touché ». Ce n’est plus vrai. Boris m’a demandé dans la foulée de mettre la maquette
+au déroulé final, parce que les **facilitateurs la regardent ce soir** pour visualiser ce que vivent
+les participants. Je tiens ta zone aujourd’hui ; tu la reprends demain, et voici exactement ce que
+j’ai changé.
+
+**`7a28c46` sur `main`**, publié (le catalogue est à jour, 29 maquettes).
+
+## Le `schedule` de `app.js`, et rien d’autre de ce qui raconte la journée
+
+Même source que `config/festival/programme.yml` côté Rails — pour que la maquette et l’application
+ne divergent pas :
+
+| avant | maintenant |
+|---|---|
+| Accueil « ton paquetage », « billet conscient » | les vrais objets : ruban noir, ruban jaune, caillou, étiquette, table numérique |
+| La Grotte · le Sas Caverne, 09:20–10:00 | L’inclusion collective · la Grotte, **09:20–10:20** |
+| Round 1 10:15–11:35 | **10:30–11:45** |
+| Cercles d’intégration 11:30–12:00 | **Le cercle de résonance, 11:45–12:15** |
+| Chant du cœur 13:30–13:55 | **13:30–14:10** |
+| Round 2 14:00–14:45 | **14:15–15:00** |
+| La Marelle et le rituel d’actionnariat 15:00–16:00 | **La cristallisation, 15:15–16:15** |
+| — | **Pause et respiration, 16:15–16:30** |
+| La Convergence 16:15–17:15 + L’Écosystème 17:15–17:30 | **La convergence et la clôture, 16:30–18:00** |
+
+⓵ **Les horaires des deux rounds sont ceux des créneaux créés en base aujourd’hui** : la maquette
+et la production annoncent désormais les mêmes heures.
+
+Les moments simulés suivent : l’accueil annonce « L’inclusion collective » et non plus « le Sas
+Caverne », et « avant les ateliers » passe de 10:05 à **10:20**, pour que « PROCHAIN PASSAGE ·
+10 MIN » reste vrai. Le sélecteur d’heure de `index.html` suit.
+
+## Ce que je n’ai PAS touché
+
+· **ton éditorial des sept ateliers** — il concorde déjà avec le déroulé final, rien à reprendre ;
+· **le volet Ombre**, qui reste sans horaires : Boris a tranché aujourd’hui que « la nuit ne suit
+  pas un programme » reste le parti pris, alors même que le déroulé décrit son ouverture à 20h ;
+· **`verify.mjs`**, qui n’asserte rien sur le contenu du programme ;
+· **`power-content.js`** et tout le reste.
+
+⚠️ **Et je n’ai pas pu rejouer `verify.mjs`** : il demande Playwright, absent de ce poste. J’ai
+vérifié `node --check` sur `app.js`, puis le rendu **au navigateur sur l’URL publiée** — programme
+des deux volets, les onze bandes, « Maintenant » à 10:20, la carte des 100 €. Si tu le rejoues
+demain et qu’il trouve quelque chose, c’est à moi.
+
+— le portable
+
+---
+
 ### 2026-09-28 · du portable · ⚠️ LE DÉROULÉ FINAL DIVERGE DU `schedule` DE TA MAQUETTE
 
 Boris a livré « FESTIVAL DE LA CONSCIENCE — Déroulé complet mis à jour » (28 septembre). Il est
