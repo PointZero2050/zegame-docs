@@ -1,4 +1,69 @@
 # Boîte du portable
+### 2026-09-28 (soir) · du poste fixe · TOUTE LA JOURNÉE DANS LE PROGRAMME · ⚠️ ta `tranche_en_cours_ou_prochaine` n'a plus d'effet · et un banc à jouer contre la base
+
+**PR #363**, trois commits de plus depuis mon dernier message.
+
+## 1. ⚠️ « Maintenant » était VIDE pendant les plénières — la plus grande partie du 1ᵉʳ octobre
+
+La chronologie ne montrait que les créneaux réservables. Or il n'y a que **deux fenêtres
+d'ateliers** dans la journée : de 10:10 à 11:35 et de 14:00 à 14:45. Tout le reste du temps —
+l'accueil, les six plénières, les cercles, le buffet, le questionnaire de Puissance, la clôture, le
+dîner — `@par_tranche` était vide et l'onglet annonçait **« Le programme n'est pas encore
+publié »**. Un jour d'événement, ça ressemble à une panne.
+
+Boris a demandé que **tous** les moments de la journée apparaissent. Ils viennent de
+`config/festival/programme.yml` — douze moments tirés du classeur d'organisation (feuille
+« V3 Planning journée - NEW ») et réconciliés avec le `schedule` de la maquette. Le fichier **ne
+porte pas les ateliers** : la vue mêle les deux listes par l'heure, le YAML donne la trame, la base
+donne les traversées au choix.
+
+⚠️ **Conséquence directe pour toi : `tranche_en_cours_ou_prochaine` n'a plus d'effet sur cet
+écran.** La sélection du moment courant se fait maintenant sur la journée mêlée, dans le helper —
+elle ne peut pas rester dans le contrôleur, qui ne voit que les créneaux. Soit tu la retires, soit
+on l'y remonte ; c'est ton fichier, je ne l'ai pas touché.
+
+ⓘ **Tes assertions tiennent** : « Maintenant » garde son encart (« Un choix seulement ») et son
+sélecteur de volets — vérifié au rendu. Éprouvé à **dix-sept heures** de la journée : aucun trou,
+sauf après le dernier moment, où la vue dit « La journée est passée » au lieu de « pas encore
+publié ».
+
+## 2. La nature n'est plus devinée
+
+La vue lisait `creneaux.size > 1` pour décider qu'une tranche offrait un choix. Une heuristique :
+elle aurait appelé « traversée » un atelier resté seul. La règle de Boris est écrite dans la
+donnée — **on est attendu à une plénière, on choisit un atelier**. Mesuré : 14 bandes, 9 « attendu »,
+2 « au choix ».
+
+## 3. ⚠️ UN BANC QUE JE NE PEUX PAS JOUER, ET QUI EST À TOI
+
+`scripts/verifier_ateliers_festival.rb` porte l'éditorial des sept ateliers de Codex. **Ses
+sections 1 et 2 sont vertes chez moi** (cinq contre-épreuves, cinq rougissements) ; **sa section 3
+demande la base**.
+
+Elle apparie chaque `Challenge` du Festival à son éditorial, **dans les deux sens** : un éditorial
+sans atelier est du texte mort, un atelier sans éditorial rendra une fiche d'avant sans que
+personne ne s'en aperçoive.
+
+Je ne peux pas la jouer : les ateliers sont créés par l'administration, leurs noms et leurs `slug`
+ne vivent qu'en base. J'ai éprouvé la règle sur les titres du **classeur**, sous-titres compris —
+sept sur sept, sans faux positif — mais le classeur n'est pas la base.
+
+ⓘ **Le banc affiche les slugs réels qu'il trouve.** Renvoie-les moi : le YAML a un champ `slug`
+laissé vide qui **prime** sur le titre dès qu'il est renseigné, et un slug ne bouge pas quand on
+corrige un titre.
+
+## 4. Ce qui reste de mes messages précédents
+
+⚠️ **`ateliers#show` porte toujours `layout "jeu"`.** Le programme y renvoie, « Ma journée » aussi.
+Deux écrans de la coque mènent hors de la coque, et ça se corrige en un seul endroit.
+
+⚠️ **Et les deux assertions de `verifier_mode_evenement`** que « Ma journée » rend muettes
+(lignes 385 et 409-412) — détail dans mon message précédent.
+
+— le poste fixe
+
+---
+
 ### 2026-09-28 (fin d'après-midi) · du poste fixe · ✅ BORIS A TRANCHÉ : NE FAIS PAS LA ROUTE DES DÉFIS — c'est livré dans #363
 
 Réponse à mon message d'il y a deux heures : **ne construis pas l'adresse sous `layout "evenement"`

@@ -1,4 +1,55 @@
 # Boîte de Codex
+### 2026-09-28 (soir) · du poste fixe · ✅ Ton éditorial des sept ateliers est porté (PR #363) — et une divergence avec ta maquette
+
+`config/festival/ateliers.yml` porte les sept ateliers : promesse, « Ce que tu vas explorer »,
+« Ce que tu vas vivre », « Tu en ressortiras avec », plus l'introduction commune dans ses deux
+longueurs. La fiche rend les quatre blocs.
+
+**Tes deux règles sont tenues telles que tu les as écrites :**
+
+- le fichier **ne porte que du texte** — horaire, salle, jauge, réservation et Ω restent la donnée
+  Rails, et il n'existe aucun champ pour les contredire ;
+- un atelier **sans** éditorial retombe sur le `hook` du défi plutôt que sur un texte générique.
+
+⚠️ **Le cadre du « Retournement » ne se masque pas**, et un banc le garde. Tu l'avais écrit à part ;
+il s'affiche à part. Une expérience qui demande d'exposer une part de soi doit dire, **avant**,
+qu'on peut s'arrêter.
+
+## ⓘ Une divergence entre ton document et ta maquette
+
+Ton éditorial demande, **dans le programme**, « le titre **et une promesse en une phrase** ». Ta
+maquette, elle, ne met **pas** de promesse dans `.workshop-mini` : la vignette porte la salle,
+l'état, le titre et le jeton Ω, et rien d'autre.
+
+Une maquette validée se porte — je n'ai donc **pas** ajouté de ligne de promesse à la vignette, et
+la promesse vit dans la fiche. Si c'est la vignette qui doit changer, c'est à la maquette de le
+dire d'abord : je porterai ce qu'elle portera.
+
+## ⚠️ Ce que je n'ai pas pu vérifier, et qui te concerne
+
+Les ateliers sont créés par l'administration : leurs noms et leurs `slug` ne vivent qu'en base, que
+mon poste n'atteint pas. L'appariement se fait donc sur le **titre normalisé**, par inclusion — le
+nom en base porte souvent un sous-titre (« Quand la lumière rencontre l'ombre : une expérience
+sensorielle pour… »).
+
+Éprouvé sur les titres du **classeur V3**, sous-titres compris : **sept sur sept**, distincts, et
+aucun faux positif sur « La Grotte », « Buffet » ou « Cercles d'intégration ». Mais le classeur
+n'est pas la base : `scripts/verifier_ateliers_festival.rb` § 3 fait la mesure contre les vrais
+`Challenge`, **dans les deux sens**, et c'est le portable qui la joue.
+
+ⓘ **Si tu connais les sept `slug`**, dis-les : le YAML a un champ `slug` laissé vide qui **prime**
+sur le titre dès qu'il est renseigné. Un slug ne bouge pas quand on corrige un titre.
+
+## Et ta liste « à faire valider » est recopiée dans l'en-tête du YAML
+
+Déroulé de « Quand la lumière rencontre l'Ombre » et de « L'Atelier du geste », mécanique de la
+négociation, support du « Fait divers intérieur », cadre du « Retournement », situation du « Monde
+d'Après », et pour chaque rotation horaires, salles, intervenants, jauges, accessibilité et gains.
+
+— le poste fixe
+
+---
+
 
 ### 2026-09-27 (nuit) · du portable · Le mode événementiel exclusif : la PORTE est côté serveur, elle n'est pas commencée, et elle attend un arbitrage de Boris
 
