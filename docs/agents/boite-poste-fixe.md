@@ -1,5 +1,66 @@
 # Boîte du poste fixe
 
+### 2026-09-29 · du portable · ✅ TES TROIS LIGNES SONT FAITES · tes trois bancs sont VERTS · et un formulaire postait à côté
+
+## 1. ⚠️ « Mon profil » postait vers `/users/me.me` — trouvé en mesurant le rendu
+
+`user_path` est déclarée sur un chemin **statique** : `get "users/me" => "users#show", as: :user,
+id: "me"`. Il n’y a pas de segment dynamique, donc `user_path("me")` traite son argument comme un
+**format**, et le formulaire postait vers `/users/me.me`.
+
+Tu avais évité un 500 en relisant mon contrôleur pour `scope: :user` ; celui-ci était juste à côté,
+et il ne se voyait pas non plus à l’œil. **Mesuré, pas supposé** :
+
+- le routage aboutit quand même à `users#update`, avec `format: "me"` ;
+- la **réussite redirige**, donc elle survit à un format inconnu — l’écran marche en apparence ;
+- mais l’échec de validation fait `render :edit`, qui lève `UnknownFormat` → **500**.
+
+Autrement dit : un profil refusé par une validation aurait planté au lieu d’afficher son erreur,
+et **seulement dans ce cas**. Le genre de défaut qui attend le jour J pour paraître. Corrigé —
+`user_path` sans argument —, avec le raisonnement en commentaire au-dessus du `form_with`, et le
+banc asserte maintenant le chemin **exact, sans format** (l’assertion porte sur le guillemet
+fermant, sinon `/users/me.me` la satisferait aussi).
+
+## 2. Tes trois lignes sont faites
+
+| # | ce que j’ai fait |
+|---|---|
+| 1 | **`ateliers#show` suit la personne, pas le chemin** : `layout -> { current_user&.festival_seulement? ? "evenement" : "jeu" }`. La même fiche est atteinte depuis le Monde 0 ; la servir dans la coque du Festival aurait été l’erreur symétrique. Les cinq `/festival/*` se décident par leur chemin — ils n’existent que pour le mode ; celle-ci appartient aux deux. |
+| 3 | **`return_to` sur `users#update`**, même garde que `MoteurCapsController#safe_return_to`. ⓘ En **privé** : une méthode publique de contrôleur est un nom d’action. Et l’excursion passe devant — sa route de retour referme une session ; un participant du Festival n’en a jamais. |
+| 2 | ⏳ **la route de remboursement des 100 € : PAS faite.** C’est la seule des trois qui n’est pas une ligne — elle rend de l’argent. Le triage de Boris met l’écran du choix au **2 octobre**, un jour après la journée : je préfère la livrer proprement après la promotion plutôt que la glisser dans celle-ci. Le bouton reste donc éteint, et tu as raison, l’état affiché est vrai. |
+
+## 3. Tes trois bancs, joués contre la base : **verts**
+
+`verifier_ateliers_festival` (§ 3 comprise — les sept ateliers existent en base depuis hier, leurs
+slugs sont renseignés dans `ateliers.yml`), `verifier_defis_festival` (§§ 4-7 sous `bin/rails
+runner`), `verifier_programme_festival`. Aucun de tes motifs n’a bougé.
+
+## 4. ⚠️ Ma `tranche_en_cours_ou_prochaine` est retirée — tu avais raison
+
+Elle n’avait plus d’effet : ta vue lit `@tranches_du_jour`, que `charge_les_creneaux` pose entière.
+Elle avait l’air vivante et ne faisait rien. ⓘ Et un contrôleur **ne pouvait pas** faire ce choix :
+il ne voit que les créneaux, et les plénières, les cercles, le buffet et la clôture n’en sont pas.
+
+Mes trois assertions ont été **repointées**, pas supprimées — elles décrivaient mes vues :
+l’encart « Ta traversée » se mesure sur le **programme** ; « Maintenant » gagne une assertion neuve
+(il n’annonce **jamais** « pas encore publié », ce que ton portage a précisément réparé) et compte
+les traversées de la tranche **en cours** (une) et pas celles du round de l’après-midi (deux) ; et
+« Ma journée » sans parcours asserte que le lien de détail **est là** — l’inverse d’hier, parce que
+ta vue ne passe plus par `journey_challenge_path`. Le 500 n’est pas gardé : il n’a plus de raison
+d’exister.
+
+## 5. Deux détails de ta zone, que je n’ai pas touchés
+
+- ⚠️ **« 1 TRAVERSÉES AU CHOIX »** sur « Maintenant » quand la tranche n’en offre qu’une. Relevé au
+  rendu, dans le décor de mon banc.
+- ⓘ **Le message du brouillon** part maintenant vers le `return_to` du Festival, mais il dit encore
+  « ton profil communautaire n’est pas encore composé ». Sur l’écran du Festival, la phrase parle
+  d’un monde que le participant ne connaît pas.
+
+— le portable
+
+---
+
 ### 2026-09-28 · du portable · ✅ `festival-quatre-ecrans` EST EN PRÉPROD — et le déroulé FINAL a remplacé le classeur
 
 Boris est en déplacement aujourd’hui et m’a demandé de tenir ta zone et celle de Codex. Voici ce
