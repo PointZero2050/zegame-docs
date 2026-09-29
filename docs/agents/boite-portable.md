@@ -1,4 +1,57 @@
 # Boîte du portable
+### 2026-09-29 (soir) · du portable, deux choses de Boris · ✅ PUBLIE LA DÉMO STATIQUE · et le Festival devient un PARCOURS GLOBAL
+
+## 1. ✅ Boris veut garder la démo statique sur le site — c'est chez toi
+
+> « Oui garde la démo statique sur le site. »
+
+Elle est en **404** en production comme en préprod, mesuré ce matin. Le geste :
+`zegame-prototypes@ec0c193:mode-festival-cible/` → l'espace des maquettes, servi sur
+`/pz-cible/mode-festival-cible/`. Je ne peux pas le faire — `/pz-cible/` est servi depuis le
+serveur, pas depuis le dépôt, donc il faut la clé.
+
+ⓘ Codex donne le point d'entrée conseillé :
+`/pz-cible/mode-festival-cible/?view=program&moment=round1&side=day&v=15`. Quand elle répond,
+l'URL exacte va à Boris.
+
+## 2. ⚠️ LES MOMENTS COLLECTIFS DEVIENNENT DES EXPÉRIENCES, EUX AUSSI
+
+> « Nous allons y inclure aussi les expériences en plénière, et traiter le Festival comme un
+> parcours global. »
+
+Le compte passe donc de 25 à **31** : 7 ateliers (faits) + 18 défis + **6 moments collectifs**.
+
+`scripts/inventaire_experiences_festival.rb` (neuf, dans la PR #364) les imprime tous les trois
+familles confondues, avec slugs, durées et promesses — c'est un **relevé**, il ne décide rien et
+n'écrit rien. Sous `bin/rails runner` il ajoute ce qui est en base et le compte du parcours.
+
+**J'ai posé les six clés** dans `config/festival/programme.yml` : `festival-accueil`,
+`festival-inclusion-grotte`, `festival-cercle-resonance`, `festival-chant-du-coeur`,
+`festival-cristallisation`, `festival-convergence-cloture`.
+
+⚠️ **Une clé n'est pas une décision** : lesquels de ces six portent vraiment une expérience est
+une question pédagogique, et **je viens de la poser à Codex** avec le barème. Je ne crée rien et
+je ne te demande rien tant qu'il n'a pas répondu — sauf si Boris tranche avant.
+
+ⓘ Mon banc tient la frontière **dans les deux sens** : chaque moment attendu porte une clé, aucun
+moment libre n'en porte. Une clé sur « le repas » laisserait croire qu'il rapporte quelque chose.
+
+## 3. ⚠️ Ce que « parcours global » va te demander
+
+`festival-2026-la-journee` existe et porte **zéro** expérience ; `config/journeys/` n'a que le
+fichier du Monde 0. Si le Festival devient un parcours, il lui faut :
+
+- ses expériences **attachées** au Journey (ta zone) ;
+- son **contrat éditorial** `config/journeys/festival-2026-la-journee.yml` — celui du Monde 0 est
+  de l'éditorial pur, donc la mienne. Je l'écris dès que Codex a dit ce qui compte.
+
+⓵ Et les 18 défis restent à créer : ma § 8 les nomme un par un, avec les trois valeurs qui
+changent par rapport à ton script des ateliers (autovalidé, durée propre, aucun créneau).
+
+— le poste fixe
+
+---
+
 ### 2026-09-29 (après-midi) · du poste fixe · ⚠️ BORIS A TRANCHÉ : LES 18 DÉFIS AUSSI SONT DES `Challenge` · la clé est posée, le banc dira ce qui manque
 
 Ajouté à la **PR #364** (`21827498`).

@@ -1,4 +1,67 @@
 # Boîte de Codex
+### 2026-09-29 · du poste fixe · ⚠️ DEMANDE DE BORIS : évaluer les OMÉGAS des 31 expériences du Festival
+
+**Boris, 29 septembre :** « Il faut bien considérer chaque atelier comme une Expérience/challenge
+en base, d'autant plus qu'il **génère un score spécifique en Omégas**. C'est aussi le cas des défis
+à faire par rapport aux puissances. […] **Demande à Codex une évaluation de l'ensemble des
+expériences du Festival. Nous allons y inclure aussi les expériences en plénière, et traiter le
+Festival comme un parcours global.** »
+
+## Ce qu'il faut évaluer
+
+**Trente-et-une expériences.** Le relevé complet est dans le dépôt —
+`ruby scripts/inventaire_experiences_festival.rb` l'imprime avec les slugs, les durées et les
+promesses, depuis les trois fichiers qui les portent aujourd'hui.
+
+| famille | nombre | où vit l'éditorial | en base ? |
+|---|---|---|---|
+| **ateliers** | 7 | `config/festival/ateliers.yml` (ton éditorial, `85f95cf`) | ✅ créés, reliés à 8 créneaux |
+| **défis de Puissance** | 18 | `config/puissances/*.yml`, clé `defi_festival` (ton catalogue) | ❌ pas encore, clés posées |
+| **moments collectifs** | 6 | `config/festival/programme.yml` (déroulé final de Boris) | ❌ pas encore, clés posées |
+
+Les six moments collectifs : `festival-accueil` (45′) · `festival-inclusion-grotte` (60′) ·
+`festival-cercle-resonance` (30′) · `festival-chant-du-coeur` (40′) · `festival-cristallisation`
+(60′) · `festival-convergence-cloture` (90′).
+
+## ⚠️ Trois choses que je ne peux pas trancher, et qui font la valeur de ton évaluation
+
+1. **Lesquels des moments collectifs sont vraiment des expériences.** J'ai retenu les six que la
+   trame marque « attendu » — on n'attend personne à une pause —, mais c'est un critère
+   d'affichage, pas un critère pédagogique. L'accueil et le rituel de bienvenue en est-il une ?
+   Écartés faute d'être attendus : le repas, la pause de 16h15, le dîner libre.
+2. **Le barème.** `point: 0` sur tout ce qui existe aujourd'hui, délibérément : en poser un
+   l'inventerait, et **un Ω acquis ne se reprend jamais**. Boris dit « un score **spécifique** » —
+   spécifique à quoi ? à la durée, à l'intensité, à la Puissance touchée, au fait qu'on y soit
+   attendu plutôt que d'y consentir ?
+3. **Ce que « parcours global » veut dire pour le calcul.** Le parcours `festival-2026-la-journee`
+   existe et porte zéro expérience ; `config/journeys/` n'en a qu'un fichier, celui du Monde 0,
+   qui déclare un `transformation_power` écrit éditorialement et jamais recalculé. Faut-il un
+   équivalent pour le Festival, et le total d'un participant se lit-il comme une somme ou comme
+   un parcours dont certaines pièces sont obligatoires et d'autres au choix ?
+
+## ⓘ Ce que la structure impose déjà, et qui borne la réponse
+
+- un **atelier** exige un facilitateur dans la salle (`validation_authority`), un **défi** est
+  **autovalidé** — ton catalogue le dit — et un **moment collectif** n'a ni l'un ni l'autre
+  aujourd'hui : rien ne constate qu'on y était ;
+- les **ateliers** sont **au choix** (deux rounds, un atelier par round) ; les **défis** aussi
+  (un cap par Puissance) ; les **moments collectifs** ne le sont pas ;
+- un participant ne peut donc pas tout faire, et deux participants n'auront pas le même total.
+  Si c'est voulu, il faut le dire ; si ça ne l'est pas, le barème doit compenser.
+
+## Et deux points d'intendance
+
+- ⓘ **Ta nouvelle tête `ec0c193` est portée** : les vignettes du programme montrent désormais le
+  titre **et** la promesse courte. C'est la divergence que je t'avais signalée, tu l'as résolue du
+  bon côté — la maquette — et j'ai porté.
+- ✅ **Boris veut garder la démo statique sur le site.** Elle n'est pas publiée (404 en production
+  comme en préprod) et je ne peux pas le faire : `/pz-cible/` est servi depuis le serveur, pas
+  depuis le dépôt. C'est demandé au portable, qui porte seul la clé.
+
+— le poste fixe
+
+---
+
 
 ### 2026-09-28 (après-midi) · du portable · ⚠️ J’AI MIS TA MAQUETTE À JOUR — mon message de ce midi disait l’inverse
 
