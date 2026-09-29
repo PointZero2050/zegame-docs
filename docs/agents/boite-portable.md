@@ -1,4 +1,58 @@
 # Boîte du portable
+### 2026-09-29 (nuit) · du poste fixe · ⚠️ LE BARÈME OMÉGA EST DANS LES FICHIERS — il te reste la base, et un banc qui te la liste
+
+Boris a validé le barème de Codex (`docs/vision/mode-evenementiel-festival.md` § 4 ter, commit
+`d4352e2` de ce dépôt). **Je l'ai écrit dans les fichiers de ma zone**, avec son banc. Ce qui
+reste est en base, donc à toi — et tu n'as pas à relire le § 4 ter pour savoir quoi faire :
+`scripts/verifier_bareme_festival.rb` § 5 **nomme** chaque expérience manquante et chaque montant
+qui diverge, sous `bin/rails runner`.
+
+## Ce qui est fait, et où
+
+| famille | où | valeurs |
+|---|---|---|
+| 18 défis | `config/puissances/*.yml`, clé `omegas` à côté de `duree` | 4 à 3 Ω · 9 à 4 Ω · 5 à 5 Ω |
+| 6 moments collectifs | `config/festival/programme.yml`, clé `omegas` sous le `slug` | 3 · 7 · 6 · 5 · 6 · 7 = **34 Ω** |
+| 7 ateliers | **nulle part**, volontairement | **8 Ω**, uniforme |
+
+⚠️ **Le champ absent d'`ateliers.yml` est une décision, pas un oubli.** Son en-tête déclare qu'il
+ne porte que du texte — « l'horaire, la salle, la jauge, les réservations et les Omégas restent la
+donnée Rails ». Le barème étant uniforme, un champ par atelier n'ajouterait rien et fabriquerait
+une seconde vérité. Le § 3 du banc garde cette promesse dans les deux sens.
+
+## Ce qui te revient
+
+1. **Les sept ateliers sont en base avec `point: 0`** (ton `creer_ateliers_festival.rb` du
+   28 septembre). Il leur faut **8 Ω chacun**, quel que soit l'atelier : le contrat le dit
+   explicitement — « une salle, une capacité ou une réservation imposée ne doit jamais faire
+   gagner moins qu'un autre choix ».
+2. **Les 18 défis et les 6 moments collectifs n'existent pas encore comme `Challenge`.** Leurs
+   slugs sont posés et stables ; les montants sont dans les YAML ci-dessus, lisibles par un script
+   de création sans être recopiés à la main.
+3. **La règle des cinq.** « Seuls les cinq premiers défis distincts sont rétribués, puis les défis
+   restent jouables sans nouveau gain. Un même défi ne crédite jamais deux fois. » Elle vit dans le
+   service qui crédite — mon banc vérifie que le **plafond de 75 Ω découle des montants**, il ne
+   peut pas vérifier qu'elle est appliquée.
+4. **La preuve idempotente** des moments collectifs et des ateliers. Le contrat pose le repli :
+   « un code propre à chaque moment, communiqué à sa fin, sur le modèle des ateliers ».
+5. **Ce qui vaut 0 Ω** : repas, pause, dîner libre, navigation, réservation, questionnaire seul, et
+   **le choix financier** — « ni avantage ni pénalité en Omégas ». Mon § 2 le garde pour la trame ;
+   un gain posé sur une réservation se verrait en base, pas dans un YAML.
+
+## Les deux nombres à ne pas confondre
+
+Le catalogue des 31 expériences pèse **163 Ω**. Le parcours d'**une personne** vaut **50 Ω** côté
+Lumière (6 moments + 2 ateliers) et **70 à 75 Ω** avec cinq défis. Le contrat prévient lui-même :
+« Ce nombre décrit le catalogue ; il ne doit jamais devenir le total qu'un participant peut
+gagner. » Le § 4 du banc calcule les deux depuis les fichiers et les garde écartés.
+
+## Et une question qui n'est ni à toi ni à moi
+
+La fiche d'un atelier affiche « DURÉE ET GAIN ». **La carte d'un défi n'affiche que sa durée.**
+Maintenant que le gain existe, faut-il l'y montrer ? La maquette ne tranche pas, alors je n'ai rien
+ajouté — c'est une question pour Boris, pas un oubli de portage.
+
+---
 ### 2026-09-29 (soir) · du portable, deux choses de Boris · ✅ PUBLIE LA DÉMO STATIQUE · et le Festival devient un PARCOURS GLOBAL
 
 ## 1. ✅ Boris veut garder la démo statique sur le site — c'est chez toi
