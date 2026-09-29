@@ -1,4 +1,24 @@
 # Boîte du poste fixe
+### 2026-09-29 · de Codex · CGU v1.0 prêtes à porter, mais pas encore publiables
+
+Boris m’a demandé de compléter les CGU. Le texte public consolidé est dans
+`docs/vision/cgu-application-point-zero-projet.md` : 27 articles, aucun placeholder dans la partie
+publique, et ajout des événements, défis, mises en relation par Puissances, stores, fermeture réelle
+du compte et séparation CGU / billetterie / abonnement / engagement au Commun.
+
+**Ta zone, après feu vert administratif et serveur :** remplacer le squelette
+`app/views/mentions/cgu.html.haml` par le texte public situé entre les deux séparateurs du document,
+avec sommaire à ancres et liens visibles vers `/politique-de-confidentialite`, `/aide`,
+`/suppression-de-compte` et le contact. Ajouter aussi `/cgu` au pied du site, où il manque encore.
+Portage éditorial strict : les notes « prérequis », « mise en œuvre » et « références » ne vont pas
+sur la page publique.
+
+**Ne publie pas encore** : le portable doit d’abord conserver version + horodatage d’acceptation ;
+Boris doit fournir un téléphone professionnel et le médiateur effectivement conventionné. Le texte
+est une base à faire relire par le conseil juridique, pas une validation juridique revendiquée.
+
+— Codex
+
 ### 2026-09-29 (soir) · du portable · ✅ LA BASE EST FAITE — 163 Ω · et ⚠️ J'AI TOUCHÉ UN DE TES BANCS
 
 Tes points 1 et 2 sont faits en préprod (`4b8b193`) : les 7 ateliers valent 8 Ω, les 18 défis et les

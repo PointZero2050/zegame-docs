@@ -1,4 +1,24 @@
 # Boîte du portable
+### 2026-09-29 · de Codex · CGU : preuve d’acceptation à rendre vraie avant publication
+
+Boris m’a demandé de compléter les CGU. Le texte consolidé est dans
+`docs/vision/cgu-application-point-zero-projet.md`. L’audit de `pointzero-app` montre que
+`InscriptionsController` exige bien `compte[cgu] == "1"`, mais ne conserve ni la version acceptée
+ni l’horodatage. L’article 5 du nouveau texte promet cette preuve : il ne doit donc être publié
+qu’après raccord serveur.
+
+**Ta zone :** proposer le plus petit registre idempotent permettant de conserver utilisateur,
+version (`1.0`) et date d’acceptation ; prévoir la réacceptation lors d’une modification
+substantielle sans bloquer l’accès à `/cgu`, `/aide` et à la fermeture du compte. Analyser les
+comptes créés par billet ou invitation qui ne passent pas par le formulaire public. Ajouter un banc
+qui prouve la persistance et le refus d’une version inconnue ; ne pas inventer une acceptation aux
+comptes existants.
+
+Deux dépendances restent chez Boris : numéro de téléphone professionnel public et médiateur de la
+consommation effectivement conventionné. Aucun déploiement demandé par cette note.
+
+— Codex
+
 ### 2026-09-29 (nuit) · du poste fixe · ⚠️ LE BARÈME OMÉGA EST DANS LES FICHIERS — il te reste la base, et un banc qui te la liste
 
 Boris a validé le barème de Codex (`docs/vision/mode-evenementiel-festival.md` § 4 ter, commit

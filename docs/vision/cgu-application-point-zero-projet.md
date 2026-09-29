@@ -1,37 +1,37 @@
 # Conditions générales d’utilisation de Point Zéro — projet
 
-> **Ajout Codex — 2026-08-18. Version de travail v0.1.**
+> **Ajout Codex — 2026-09-29. Version de travail v0.2.**
 > Ce texte est une proposition éditoriale et fonctionnelle, et non un avis juridique. Il doit
-> être relu par un professionnel du droit avant publication. Les mentions entre crochets doivent
-> être complétées ou arbitrées. Une politique de confidentialité, une politique relative aux
-> cookies et, pour les offres payantes, des conditions générales de vente doivent être publiées
-> séparément.
+> être relu par un professionnel du droit avant publication. La politique de confidentialité et,
+> pour les offres payantes, les conditions générales de vente ou conditions particulières de
+> l’offre doivent rester séparées des présentes CGU.
 
-## Informations à compléter avant publication
+## Derniers prérequis avant publication
 
 - numéro de téléphone professionnel distinct à créer pour l’éditeur : le numéro personnel de
   Boris Sirbey ne doit pas être publié ;
-- adresse exacte des pages couvertes par les CGU ;
 - modalités opérationnelles d’autorisation et d’information des mineurs selon leur âge et leur
   contexte d’accès, notamment dans les établissements scolaires ;
-- date d’entrée en vigueur et numéro de version ;
-- URL de la politique de confidentialité et de la politique relative aux cookies ;
-- modalités effectives d’export, de suppression du compte et de signalement ;
-- coordonnées du médiateur de la consommation dans les futures CGV, si des services sont vendus
-  à des consommateurs.
+- coordonnées du médiateur de la consommation auquel POINT ZERO 2050 a effectivement adhéré ;
+- enregistrement en base de la version des CGU acceptée et de la date d’acceptation.
+
+Le texte ci-dessous retient comme périmètre `https://pointzero2050.com`, l’application web et les
+applications mobiles Point Zéro. La politique de confidentialité est servie à l’adresse
+`https://pointzero2050.com/politique-de-confidentialite` et la fermeture du compte à l’adresse
+`https://pointzero2050.com/suppression-de-compte`.
 
 ---
 
 # Conditions générales d’utilisation
 
-**Version :** [à compléter]  
-**Entrée en vigueur :** [à compléter]
+**Version :** 1.0
+**Entrée en vigueur proposée :** 30 septembre 2026
 
 ## 1. Objet
 
 Les présentes conditions générales d’utilisation, ci-après les « CGU », encadrent l’accès et
-l’utilisation du site, de l’application et des services numériques Point Zéro, ci-après le
-« Service ».
+l’utilisation du site `pointzero2050.com`, de l’application web, des applications mobiles et des
+services numériques Point Zéro, ci-après le « Service ».
 
 Point Zéro est un écosystème d’apprentissage, de mise en relation et d’action collective. Le
 Service permet notamment, selon le niveau d’accès du Joueur, de suivre des parcours, vivre des
@@ -57,9 +57,10 @@ entreprises sous le numéro **SIREN 930 722 061**.
 - courrier électronique : **contact@pointzero2050.com** ;
 - directeur de la publication : **Boris Sirbey**, joignable à l’adresse du siège social.
 
-> **Note avant publication — ne pas intégrer à la page publique :** l’article 1-1 de la LCEN
-> prévoit la publication d’un numéro de téléphone pour une société éditrice. Créer un standard ou
-> numéro VoIP professionnel dédié ; ne pas publier le numéro personnel de Boris Sirbey.
+> **Note avant publication — ne pas intégrer à la page publique :** les mentions obligatoires d’un
+> site professionnel comprennent un numéro de téléphone permettant de contacter la société. Créer
+> un standard ou numéro VoIP professionnel dédié ; ne pas publier le numéro personnel de Boris
+> Sirbey.
 
 ## 3. Hébergement
 
@@ -89,7 +90,12 @@ Dans les présentes CGU :
   consacrés au Service et à l’univers Point Zéro ;
 - le **Mentor** désigne un assistant conversationnel choisi pour accompagner le parcours du
   Joueur ;
-- l’**Oméga** désigne l’unité non fongible de reconnaissance décrite à l’article 12.
+- l’**Oméga** désigne l’unité non fongible de reconnaissance décrite à l’article 12 ;
+- un **Événement** désigne une rencontre physique ou hybride organisée ou présentée dans le
+  Service, notamment le New Civilization Festival ;
+- une **Mise en relation** désigne une suggestion de rencontre fondée sur les choix et les
+  informations rendues disponibles par des Joueurs ; elle ne constitue ni une recommandation
+  professionnelle ni une garantie de compatibilité.
 
 ## 5. Acceptation des CGU
 
@@ -99,6 +105,11 @@ compte.
 
 L’acceptation est personnelle. Le Joueur ne peut accepter les CGU au nom d’une autre personne sans
 mandat valable.
+
+POINT ZERO 2050 conserve la version acceptée, la date et le compte concerné afin de pouvoir établir
+le cadre applicable. Une nouvelle acceptation est demandée lorsqu’une modification substantielle
+change les droits ou obligations du Joueur. L’accès aux informations légales, à l’aide et à la
+fermeture du compte demeure possible lorsqu’une nouvelle acceptation est en attente.
 
 ## 6. Conditions d’accès, mineurs et compte
 
@@ -260,7 +271,39 @@ rémunération, un pouvoir de veto ou une responsabilité.
 Les règles d’attribution doivent rester compréhensibles, traçables et contestables. Une attribution
 collégiale peut s’appuyer sur une analyse automatisée, mais la décision suit le processus annoncé.
 
-## 13. Comportements attendus
+## 13. Événements, défis et mises en relation
+
+Le Service peut adopter temporairement un mode événementiel donnant accès au programme, aux
+inscriptions, à des ateliers, à des défis, à des validations de présence et à des contenus propres
+à un Événement. Les horaires, lieux, jauges, intervenants et contenus peuvent être adaptés pour des
+raisons d’organisation, de sécurité ou de force majeure. Toute modification substantielle est
+portée à la connaissance des participants par un moyen approprié.
+
+Une inscription dans le Service ne garantit pas une place à un atelier dont la capacité est
+limitée. Lorsque la participation ou l’attribution d’Omégas dépend d’une présence, d’un code remis
+sur place, d’une validation par un intervenant ou d’une auto-validation, l’interface indique le
+mécanisme applicable. Une auto-validation engage le Joueur à déclarer sincèrement l’action
+réalisée.
+
+Certains défis invitent à rencontrer, questionner ou agir avec d’autres participants. Chacun reste
+libre d’accepter, de refuser ou d’interrompre une interaction. Un défi n’autorise jamais à franchir
+le consentement, à enregistrer une personne sans son accord ni à exposer un tiers.
+
+Lorsqu’il active une fonction de rencontre, le Joueur peut rendre visibles une photographie, une
+courte présentation et un archétype ou état de Puissance. Le Service peut alors suggérer un profil
+à partir de la Puissance et de la direction que le Joueur souhaite développer. La suggestion ne
+communique pas les valeurs individuelles détaillées, ne certifie pas la personnalité de la personne
+proposée et ne garantit ni sa disponibilité ni la qualité de la rencontre. La prise de contact
+reste volontaire des deux côtés et la fonction peut être désactivée.
+
+Les conditions d’achat du billet, d’annulation, de remboursement, d’accès à une offre ultérieure
+ou d’engagement d’une somme au bénéfice du Commun relèvent des conditions générales de vente et,
+le cas échéant, d’un document d’information ou d’un acte d’adhésion spécifique accepté avant la
+décision. L’absence de demande de remboursement ne peut produire les effets d’une souscription ou
+d’une adhésion que si ces effets, leurs délais et leurs conséquences ont été présentés clairement
+dans ce cadre distinct.
+
+## 14. Comportements attendus
 
 Le Joueur s’engage à :
 
@@ -279,10 +322,12 @@ Le Joueur s’engage à :
 Le désaccord, l’objection et la confrontation argumentée sont autorisés. Ils ne justifient ni
 l’attaque personnelle ni le franchissement du consentement d’autrui.
 
-## 14. Signalement, modération et sanctions
+## 15. Signalement, modération et sanctions
 
-Tout Joueur peut signaler un contenu, un comportement ou une situation sensible par **[mécanisme
-de signalement à préciser]** ou à l’adresse **contact@pointzero2050.com**.
+Tout Joueur peut signaler un contenu, un comportement ou une situation sensible depuis l’action de
+signalement proposée sur le contenu ou le profil concerné, depuis la page **Aide et recours** du
+Service, ou à l’adresse **contact@pointzero2050.com**. Le signalement doit être de bonne foi et
+contenir les éléments nécessaires à son examen. Son auteur reçoit une confirmation de transmission.
 
 POINT ZERO 2050 peut, de façon proportionnée :
 
@@ -297,7 +342,7 @@ la loi. Hors urgence, le Joueur est informé du motif et peut demander un réexa
 **contact@pointzero2050.com**. Les sanctions ne doivent pas modifier silencieusement son Moteur ni
 retirer automatiquement des Omégas sans règle spécifique, contradictoire et publiée.
 
-## 15. Propriété intellectuelle de Point Zéro
+## 16. Propriété intellectuelle de Point Zéro
 
 Sauf mention contraire, POINT ZERO 2050 ou ses partenaires détiennent les droits sur le Service et
 ses éléments : logiciels, interfaces, marques, dénominations, textes, parcours, méthodes,
@@ -312,7 +357,7 @@ Les conditions de création de parcours par des facilitateurs, de filiation des 
 reversement au Commun et de partage de revenus font l’objet d’un contrat distinct. Elles ne doivent
 pas être déduites des présentes CGU.
 
-## 16. Droits du Joueur sur ses contenus
+## 17. Droits du Joueur sur ses contenus
 
 Le Joueur conserve les droits qu’il détient sur ses Graines, Traces, messages, images, documents
 et autres créations.
@@ -329,7 +374,7 @@ fondement juridique spécifiques.
 Le Joueur garantit disposer des droits nécessaires sur les contenus qu’il publie. Lorsqu’il cite
 ou représente un tiers, il respecte ses droits, sa vie privée et, le cas échéant, son consentement.
 
-## 17. Données personnelles et mémoires
+## 18. Données personnelles et mémoires
 
 POINT ZERO 2050 traite des données personnelles pour créer et sécuriser les comptes, fournir les
 parcours, conserver les productions, permettre les échanges, personnaliser les fonctions choisies
@@ -351,7 +396,7 @@ Les réglages de visibilité communautaire ne remplacent pas les autorisations d
 par intelligence artificielle : publier un contenu ne signifie pas automatiquement qu’un mentor
 peut l’utiliser, et confier un contenu à un mentor ne le rend pas public.
 
-## 18. Enregistrements de séances
+## 19. Enregistrements de séances
 
 Une séance ou un événement ne peut être enregistré pour l’analyse pédagogique, la facilitation ou
 la production de contenus qu’après une information spécifique précisant la finalité, les lecteurs,
@@ -362,14 +407,20 @@ Le refus d’un enregistrement ne doit pas priver une personne de son droit de p
 l’enregistrement est indispensable à une prestation expressément choisie et qu’une solution
 alternative raisonnable n’est pas possible.
 
-## 19. Liens et services de tiers
+## 20. Applications mobiles, boutiques et services de tiers
 
-Le Service peut renvoyer vers des sites, contenus, outils de visioconférence, prestataires de
-paiement ou autres services tiers. Ces services appliquent leurs propres conditions et politiques
-de confidentialité. POINT ZERO 2050 n’en contrôle pas le contenu ni la disponibilité, sauf lorsqu’il
-agit comme responsable de leur intégration au Service.
+Le Service peut être distribué par une boutique d’applications et renvoyer vers des sites,
+contenus, outils de visioconférence, prestataires de paiement ou autres services tiers. Les
+conditions de la boutique et de ces services peuvent également s’appliquer. Elles ne remplacent
+pas les présentes CGU dans la relation entre le Joueur et POINT ZERO 2050.
 
-## 20. Disponibilité, maintenance et sécurité
+La disponibilité d’une version mobile, d’un moyen de paiement ou d’une fonction liée au système
+d’exploitation peut dépendre du terminal, du pays, de la boutique ou du prestataire concerné. Les
+notifications sont facultatives et peuvent être désactivées dans le Service ou dans les réglages
+du terminal selon leur nature. POINT ZERO 2050 ne contrôle pas le contenu ni la disponibilité des
+services tiers, sauf lorsqu’il agit comme responsable de leur intégration au Service.
+
+## 21. Disponibilité, maintenance et sécurité
 
 POINT ZERO 2050 met en œuvre des moyens raisonnables pour assurer la disponibilité et la sécurité
 du Service. Il peut interrompre temporairement tout ou partie du Service pour maintenance,
@@ -382,7 +433,7 @@ préalable raisonnable est fournie lorsque les circonstances le permettent.
 Aucun service en ligne ne peut être garanti sans erreur, interruption ou vulnérabilité. Le Joueur
 est invité à conserver une copie des contenus auxquels il attache une importance particulière.
 
-## 21. Responsabilité
+## 22. Responsabilité
 
 Chaque partie répond des dommages directs qu’elle cause par sa faute, dans les limites prévues par
 la loi.
@@ -396,31 +447,49 @@ usage contraire aux CGU, d’informations fournies par le Joueur, d’un service
 force majeure. Aucune stipulation ne limite les responsabilités qui ne peuvent légalement l’être,
 notamment en cas de faute lourde, de dol ou d’atteinte à l’intégrité physique.
 
-## 22. Services payants
+## 23. Services payants
 
 Certaines offres, formations, événements, abonnements ou interventions peuvent être payants. Leur
-prix, contenu, durée, renouvellement, annulation et remboursement sont régis par l’offre concernée
-et par des conditions générales de vente distinctes, acceptées avant paiement.
+prix, contenu, durée, renouvellement, annulation, droit de rétractation lorsqu’il existe et
+remboursement sont régis par l’offre concernée et par des conditions générales de vente ou
+conditions particulières distinctes, acceptées avant paiement.
+
+Une billetterie donnant accès à un événement réel, un abonnement à un service numérique et une
+adhésion ou souscription au Commun sont des engagements différents. L’interface doit les nommer
+sans ambiguïté et présenter, avant chaque décision, le bénéficiaire du paiement, le montant, les
+droits obtenus, la durée, les conditions de sortie et le sort de la somme versée. Les présentes CGU
+ne valent ni bulletin de souscription, ni pacte d’associés, ni promesse de titres ou de rendement.
 
 Les Omégas ne constituent pas un moyen de paiement. Lorsqu’ils influencent l’orientation d’un fonds
 commun, l’argent demeure détenu et engagé selon les règles juridiques, comptables et de gouvernance
 applicables au fonds concerné.
 
-## 23. Durée, suspension et suppression du compte
+## 24. Durée, suspension et fermeture du compte
 
 Les CGU s’appliquent pendant toute la durée d’utilisation du Service.
 
-Le Joueur peut demander la fermeture de son compte depuis **[chemin à préciser]** ou à l’adresse
-**contact@pointzero2050.com**. Les conséquences de la fermeture lui sont présentées avant
-confirmation : perte d’accès, sort des contenus, messages, participations aux Cercles, Omégas et
-données soumises à une obligation légale de conservation.
+Le Joueur peut fermer son compte depuis **Compte → Fermer mon compte**, ou en faire la demande à
+**contact@pointzero2050.com** depuis l’adresse liée à son compte s’il ne peut plus se connecter. Une
+page publique expliquant ce geste est disponible à l’adresse
+`https://pointzero2050.com/suppression-de-compte`. Les conséquences lui sont présentées avant
+confirmation : perte d’accès, retrait de ses informations de compte, maintien sous un nom neutre
+des contributions nécessaires à la compréhension des espaces partagés et conservation des pièces
+exigées par la loi.
 
-La fermeture entraîne la suppression ou l’anonymisation des données selon la Politique de
-confidentialité, sous réserve des obligations légales, de la défense de droits en justice et des
-délais de rotation des sauvegardes. Les contenus intégrés avec accord à une œuvre collective ou à
-un Commun peuvent relever d’un contrat distinct.
+La fermeture est irréversible. Elle retire notamment le nom, la photographie, l’adresse
+électronique, les réponses libres, les préférences de contact et les identifiants d’accès. Les
+contributions demeurant dans un échange collectif et les traces statistiques sont dissociées de
+l’identité courante du Joueur. Lorsqu’un billet a été acheté, le nom peut rester sur la pièce
+comptable pendant la durée légale applicable, tandis que l’adresse électronique est retirée du
+compte. Les copies résiduelles disparaissent au rythme de rotation des sauvegardes, avec une cible
+de quatre-vingt-dix jours, sauf obligation légale ou nécessité de défendre un droit.
 
-## 24. Modification des CGU
+Lorsque le sort d’une somme versée au Commun est encore à décider, la fermeture peut être différée
+jusqu’à ce que le Joueur ait exercé son choix ou que la fenêtre prévue par les conditions de
+l’offre soit close. Ce délai protège sa faculté d’obtenir le remboursement annoncé ; il ne peut
+servir à prolonger artificiellement l’accès au Service.
+
+## 25. Modification des CGU
 
 POINT ZERO 2050 peut modifier les CGU pour tenir compte d’une évolution du Service, de la loi ou de
 ses pratiques.
@@ -429,20 +498,25 @@ La version en vigueur, sa date et l’historique des changements substantiels re
 Le Joueur est informé des modifications importantes. Une nouvelle acceptation est demandée lorsque
 la modification change substantiellement ses droits ou obligations.
 
-## 25. Droit applicable et règlement des différends
+## 26. Droit applicable et règlement des différends
 
 Les CGU sont régies par le droit français.
 
 En cas de difficulté, le Joueur est invité à contacter POINT ZERO 2050 à
 **contact@pointzero2050.com** afin de rechercher une solution amiable.
 
-Pour les services payants conclus avec un consommateur, les coordonnées du médiateur de la
-consommation compétent et les modalités de saisine figurent dans les conditions générales de vente.
+Lorsqu’un différend porte sur un contrat de vente ou de prestation conclu avec un consommateur, ce
+dernier peut saisir gratuitement le médiateur de la consommation auquel POINT ZERO 2050 a adhéré,
+après avoir adressé une réclamation écrite restée sans solution. Les coordonnées et modalités de
+saisine du médiateur figurent sur le site et dans les conditions générales de vente. Elles doivent
+être insérées ici dès l’adhésion effective ; aucun médiateur ne doit être présenté sans convention
+préalable avec POINT ZERO 2050.
+
 À défaut de résolution amiable, les juridictions compétentes sont déterminées selon les règles de
 droit commun. Aucun choix de juridiction ne prive un consommateur des protections impératives dont
 il bénéficie.
 
-## 26. Contact
+## 27. Contact
 
 Pour toute question concernant les CGU, le Service ou un signalement :
 
@@ -461,11 +535,25 @@ La page de CGU doit :
 - afficher un sommaire avec ancres sur mobile et desktop ;
 - porter un numéro de version et une date d’entrée en vigueur ;
 - conserver l’historique des versions publiées ;
-- enregistrer la version acceptée par le Joueur lorsque cette preuve devient disponible ;
-- distinguer clairement `CGU`, `Politique de confidentialité`, `Cookies` et futures `CGV` ;
-- ne pas afficher comme réelles les fonctions encore absentes : export, suppression autonome,
-  journal d’accès, consentement enregistré, médiation ou parcours mineurs institutionnels ;
+- enregistrer la version acceptée, l’horodatage et le compte concerné avant de publier la phrase
+  correspondante de l’article 5 ; le formulaire actuel ne conserve encore que la case reçue lors
+  de la requête d’inscription ;
+- distinguer clairement `CGU`, `Politique de confidentialité`, information sur les traceurs et
+  futures `CGV` ou conditions particulières ;
+- relier la fermeture au chemin réel `Compte → Fermer mon compte` et à la page publique
+  `/suppression-de-compte` ;
+- ne pas présenter comme complet un export limité à certains contenus ;
+- ne pas afficher de coordonnées de médiateur avant l’adhésion effective de POINT ZERO 2050 ;
 - proposer un lien permanent vers le signalement et le contact.
+
+La première couche présentée à l’inscription peut résumer les CGU ainsi :
+
+> Point Zéro est un espace d’apprentissage et d’échange. Tes indicateurs sont des repères, pas un
+> diagnostic. Tu gardes tes droits sur tes contenus et choisis leur audience. Les Guides et mentors
+> utilisent une intelligence artificielle qui peut se tromper. Les Omégas n’ont pas de valeur
+> monétaire. Les rencontres restent volontaires et soumises au consentement. Tu peux fermer ton
+> compte ; tes informations de compte sont retirées et les contributions nécessaires aux espaces
+> partagés restent sous un nom neutre. Lire les CGU complètes.
 
 Pour les accès de mineurs, la mise en œuvre doit en outre prévoir :
 
@@ -489,4 +577,7 @@ Pour les accès de mineurs, la mise en œuvre doit en outre prévoir :
 - [CNIL — RGPD, chapitre III : droits de la personne concernée](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre3) ;
 - [CNIL — qu’est-ce qu’une donnée personnelle ?](https://www.cnil.fr/fr/definition/donnee-personnelle) ;
 - [CNIL — rechercher le consentement d’un parent pour les mineurs de moins de 15 ans](https://www.cnil.fr/fr/recommandation-4-rechercher-le-consentement-dun-parent-pour-les-mineurs-de-moins-de-15-ans) ;
-- [CNIL — identifier les rôles de responsable de traitement et de sous-traitant](https://www.cnil.fr/fr/rgpd-comment-bien-identifier-son-role).
+- [CNIL — informer les personnes lors d’un traitement par intelligence artificielle](https://www.cnil.fr/fr/ia-informer-les-personnes-concernees) ;
+- [CNIL — identifier les rôles de responsable de traitement et de sous-traitant](https://www.cnil.fr/fr/rgpd-comment-bien-identifier-son-role) ;
+- [DGCCRF — la médiation de la consommation](https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/la-mediation-de-la-consommation-ce-que-vous-devez-savoir) ;
+- [EUR-Lex — règlement (UE) 2022/2065 sur les services numériques](https://eur-lex.europa.eu/eli/reg/2022/2065/oj?locale=fr).
