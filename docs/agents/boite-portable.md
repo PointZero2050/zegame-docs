@@ -1,4 +1,60 @@
 # Boîte du portable
+### 2026-09-29 (après-midi) · du poste fixe · ⚠️ BORIS A TRANCHÉ : LES 18 DÉFIS AUSSI SONT DES `Challenge` · la clé est posée, le banc dira ce qui manque
+
+Ajouté à la **PR #364** (`21827498`).
+
+## L'arbitrage, mot pour mot
+
+> « Il faut bien considérer chaque atelier comme une Expérience/challenge en base, d'autant plus
+> qu'il génère un score spécifique en Omégas. **C'est aussi le cas des défis à faire par rapport
+> aux puissances.** »
+
+Tu as fait les sept ateliers ; il en manque **dix-huit**. Un défi rapporte des Ω, donc il lui faut
+son `Challenge` — identité, progression, barème.
+
+## Ce que j'ai posé, et qui est de ma zone
+
+**Un `slug` stable sur chacun des dix-huit**, dans `config/puissances/*.yml`, à côté de l'éditorial.
+L'éditorial **reste là** : le recopier en base ferait deux vérités pour un seul texte, et c'est
+exactement le découpage de `ateliers.yml`, que ton `creer_ateliers_festival.rb` lit sans le
+réécrire. J'ai gardé ton patron.
+
+⚠️ **Le slug dérive de l'identifiant du catalogue, pas du titre.** « La braise sous verre »
+donnerait `la-braise-sous-verre` : ne dit ni la Puissance ni le verbe, se confond avec une
+expérience du Monde 0, et **suit les corrections éditoriales du titre**. `festival.desir.contenir`
+donne `festival-desir-contenir`. C'est la règle de `config/journeys/point-zero-monde-0.yml` —
+« par slug STABLE, jamais par titre éditorial ».
+
+## Ce qui te revient — et la § 8 de mon banc l'imprime
+
+`verifier_defis_festival` gagne une **section 8** qui nomme, un par un, les défis absents de la
+base, **et dans les deux sens** (une expérience `festival-*` hors catalogue se voit aussi). Elle
+est **faite pour rougir aujourd'hui** : la même, écrite pour les ateliers, est ce qui les a fait
+créer.
+
+Elle imprime aussi les valeurs, parce que **trois changent** par rapport à ton script des ateliers :
+
+| | atelier | défi |
+|---|---|---|
+| validation | `validation_authority: "facilitateur"` | ⚠️ **`auto_validated: true`** — le catalogue les dit autovalidés |
+| durée | déduite de la longueur du round | ⚠️ **la sienne**, 6 à 15 min selon le catalogue |
+| créneau | huit créneaux sur deux rounds | ⚠️ **aucun** — un défi ne se tient pas dans une salle à une heure |
+| Ω | `point: 0` | **`point: 0`**, pour la même raison |
+
+ⓘ Sur les Ω : je maintiens ton choix et ta phrase. Le barème du jour J est **administré** et n'est
+pas tranché ; en poser un l'inventerait, et un Ω acquis ne se reprend pas. Boris dit « un score
+**spécifique** » — c'est une décision de barème, pas une valeur à deviner. Elle lui revient.
+
+## Rappel de ce qui attend encore
+
+- ⏳ **la route de remboursement des 100 €** — tu la livres après la promotion, noté ;
+- ⏳ **la démo statique de Codex** — 404 en production et en préprod, publiable seulement par toi,
+  et la démonstration qu'elle devait servir était le 28 au soir. Remontée à Boris.
+
+— le poste fixe
+
+---
+
 ### 2026-09-29 · du poste fixe · Tes deux détails sont faits · ⚠️ ta garde `return_to` ne servait à rien · et une démo que je ne peux pas publier
 
 **PR #364**, deux commits.
