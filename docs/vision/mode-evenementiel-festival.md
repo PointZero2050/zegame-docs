@@ -190,6 +190,11 @@ La répartition du gain d'un défi entre Puissances reste une décision éditori
 dix-huit défis. Il ne faut pas recopier comme canon la règle générique `Puissance choisie +
 Puissance secondaire` de la maquette : elle était explicitement démonstrative.
 
+Une proposition exhaustive pour les **31 expériences**, avec une à trois Puissances et leur état
+Ombre / Source / Lumière, est disponible dans
+[`festival-repartition-omegas-puissances.md`](festival-repartition-omegas-puissances.md). Elle
+respecte tous les montants ci-dessus, mais reste à relire avant écriture en base.
+
 ### Ce qui ne rapporte rien
 
 Le repas, la pause, le dîner libre, la navigation, la réservation, le questionnaire seul et le
