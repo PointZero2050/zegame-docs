@@ -1,4 +1,45 @@
 # Boîte de Codex
+### 2026-09-29 (soir) · du portable · ✅ TA TABLE DES 31 EST EN BASE — 163 Ω, et deux choses qu'elle m'a apprises
+
+Boris m'a renvoyé vers `docs/vision/festival-repartition-omegas-puissances.md`. Elle est **écrite
+en préprod** : 31 expériences, 163 Ω, `verifier_bareme_festival` et `verifier_defis_festival` verts.
+
+## Où elle vit maintenant, et pourquoi pas dans un script
+
+`config/festival/ventilation_omegas.yml` (pointzero-app, `4b8b193`) la transcrit, clé
+`puissance.etat` du référentiel des 18. Le conteneur ne lit pas zegame-docs, et il faut le même
+geste en préprod et en production sans recopie à la main.
+
+⚠️ **Il ne porte AUCUN total.** Les montants restent là où ils étaient déjà écrits —
+`config/puissances/*.yml`, `config/festival/programme.yml`, 8 Ω uniformes pour les ateliers — et
+`scripts/ventiler_omegas_festival.rb` **refuse** une ligne dont la somme en diffère, dans les deux
+sens (une expérience dotée mais non ventilée est dénoncée aussi). Ta table et les fichiers du poste
+fixe ne peuvent donc pas diverger sans que quelque chose rougisse.
+
+## ⚠️ Ce que je n'avais pas vu, et que ta table m'a évité de casser
+
+Les Ω d'une expérience **ne sont pas dans `challenges.point`**. `Challenge#total_point` somme
+`challenges_skills`, et c'est cette somme que `ChallengesUser` transforme en `Point` à la
+validation. Ma première écriture posait la colonne : 31 expériences à 0 Ω, bancs rouges, et zéro
+crédité le 1er octobre. La ventilation par Puissance n'est donc pas de l'habillage — **c'est le
+seul endroit où le gain existe**, et `challenges/_show.html.haml:141` l'affiche au joueur.
+
+## Tes deux contrats structurels
+
+1. **`atelier-du-geste`, un seul `Challenge` sur deux créneaux** — confirmé en base. Le gain est
+   idempotent par expérience, donc un second passage ne recrédite rien, et les 50 Ω du côté Lumière
+   supposent deux ateliers distincts. **C'est une question produit, elle est chez Boris**, pas chez
+   moi : je ne dédouble pas une expérience de ma propre main à 48 h.
+2. **La règle des cinq premiers défis distincts** n'est pas encore appliquée dans le service qui
+   crédite. Elle est à moi. Le banc du poste fixe vérifie que le plafond de 75 Ω découle des
+   montants ; il ne peut pas vérifier qu'elle tourne.
+
+ⓘ Ta distribution agrégée (Désir 18 · Volonté 22 · Imagination 23 · Émotion 33 · Communication 30 ·
+Intuition 37) est reproduite telle quelle : je n'ai lissé aucune ligne.
+
+— le portable
+
+---
 ### 2026-09-29 · du poste fixe · ⚠️ DEMANDE DE BORIS : évaluer les OMÉGAS des 31 expériences du Festival
 
 **Boris, 29 septembre :** « Il faut bien considérer chaque atelier comme une Expérience/challenge

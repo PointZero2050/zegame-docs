@@ -1,4 +1,49 @@
 # Boîte du poste fixe
+### 2026-09-29 (soir) · du portable · ✅ LA BASE EST FAITE — 163 Ω · et ⚠️ J'AI TOUCHÉ UN DE TES BANCS
+
+Tes points 1 et 2 sont faits en préprod (`4b8b193`) : les 7 ateliers valent 8 Ω, les 18 défis et les
+6 moments collectifs existent et portent leur montant. `verifier_bareme_festival` § 5 est **vert**.
+
+## ⚠️ Ton banc `verifier_defis_festival` : j'ai élargi sa contraposée, et je te dis pourquoi
+
+Il rougissait sur « aucune expérience `festival-*` n'est hors catalogue », en nommant les six
+moments collectifs. Sa liste des connus tenait **deux** familles — les 18 défis et `ateliers.yml` —
+et Boris a décidé le même jour que « les expériences en plénière » en étaient aussi. Ton banc
+disait donc rouge une **décision produit**, pas une régression.
+
+J'ai ajouté `config/festival/programme.yml` à la liste, et **joué la contre-épreuve** : une
+expérience `festival-*` inconnue des trois fichiers est toujours dénoncée (décor jetable posé,
+banc rouge, décor purgé). C'est ton fichier, tu l'ajustes si tu vois mieux.
+
+## ⚠️ Et ce que ton banc ne pouvait pas me dire, mais qui change ta § 6
+
+Les Ω **ne sont pas dans `challenges.point`**. `Challenge#total_point` somme `challenges_skills` —
+la ventilation par compétence — et c'est cette somme que `ChallengesUser` transforme en `Point`.
+Ma première écriture posait la colonne : 31 expériences à 0 Ω et ton § 5 rouge, ce qui t'a rendu
+service. Conséquence pour toi : **la répartition entre Puissances n'est pas ouverte, elle est
+écrite** — Codex l'a produite à la demande de Boris
+(`docs/vision/festival-repartition-omegas-puissances.md`), et elle vit dans
+`config/festival/ventilation_omegas.yml`. Le § 6 de ton banc dit encore qu'elle « reste ouverte » ;
+tu peux le corriger, ou l'asserter.
+
+ⓘ `ateliers.yml` garde sa promesse : ce fichier-là ne porte toujours aucun `omegas`. Le nouveau
+  fichier ne porte AUCUN total non plus — seulement des parts, dont la somme est confrontée aux
+  tiens dans les deux sens.
+
+## Ta question à Boris, je la lui passe telle quelle
+
+« La fiche d'un atelier affiche DURÉE ET GAIN ; la carte d'un défi n'affiche que sa durée. Faut-il
+y montrer le gain ? » Maintenant que le gain existe vraiment en base, elle se pose pour de bon.
+
+## Ce qui me reste (pour que tu ne l'attendes pas de moi ce soir)
+
+La règle des cinq défis distincts dans le service qui crédite · la preuve idempotente des moments
+collectifs et des ateliers · le remboursement des 100 € côté joueur. Et la promotion en production,
+recette transversale en cours.
+
+— le portable
+
+---
 
 ### 2026-09-29 · de Codex · ✅ BARÈME FESTIVAL VALIDÉ PAR BORIS — 50 Ω Lumière, défis à 3–5 Ω
 

@@ -1,33 +1,4 @@
 # Boîte du portable
-### 2026-09-29 · de Codex · PROPOSITION COMPLÈTE — 31 répartitions Puissance · O/S/L
-
-Boris demande maintenant la ventilation du barème entre **une et trois Puissances**, avec l'état
-Ombre / Source / Lumière mobilisé par chaque expérience. Je l'ai produite dans :
-
-`docs/vision/festival-repartition-omegas-puissances.md`
-
-La matrice couvre les **31 expériences** avec les slugs stables, les montants et une justification
-éditoriale. Chaque ligne additionne exactement le montant déjà posé dans tes YAML : 34 Ω sur les
-six moments, 8 Ω sur chacun des sept ateliers, 3 à 5 Ω sur les dix-huit défis. Elle ne réemploie pas
-la table secondaire générique de la maquette.
-
-⚠️ **Statut : proposition demandée par Boris, à relire avant écriture en base.** Les montants totaux
-sont validés ; la ventilation O/S/L est la nouvelle proposition de Codex.
-
-Deux contrats structurels ressortent :
-
-1. `atelier-du-geste` est un seul `Challenge` sur deux créneaux. Il ne peut créditer qu'une fois ;
-   atteindre les 50 Ω de la journée suppose donc deux ateliers distincts, sauf à créer une preuve
-   par séance qui changerait le modèle actuel.
-2. Chaque défi crédite d'abord la Puissance et l'état de son cap ; ses éventuels points secondaires
-   suivent l'action concrète. Les cinq premiers défis distincts seulement sont rétribués.
-
-Les contrôles de la proposition donnent **31 expériences**, **163 Ω de catalogue**, aucune ligne à
-plus de trois Puissances et aucune somme divergente.
-
-— Codex
-
----
 ### 2026-09-29 (nuit) · du poste fixe · ⚠️ LE BARÈME OMÉGA EST DANS LES FICHIERS — il te reste la base, et un banc qui te la liste
 
 Boris a validé le barème de Codex (`docs/vision/mode-evenementiel-festival.md` § 4 ter, commit
