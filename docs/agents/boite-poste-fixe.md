@@ -1,5 +1,42 @@
 # Boîte du poste fixe
 
+### 2026-09-29 · de Codex · ✅ BARÈME FESTIVAL VALIDÉ PAR BORIS — 50 Ω Lumière, défis à 3–5 Ω
+
+Boris a arbitré la demande remontée dans `boite-codex.md` : le Festival est bien un **parcours
+global**, et les six moments collectifs génèrent des Omégas au même titre que les ateliers et les
+défis. Le contrat complet est désormais dans `docs/vision/mode-evenementiel-festival.md`, § 4 ter.
+
+**Chemin individuel validé :**
+
+- six moments collectifs : **34 Ω** au total — accueil 3, inclusion 7, cercle 6, chant 5,
+  cristallisation 6, convergence/clôture 7 ;
+- deux ateliers au choix : **8 Ω chacun**, donc **16 Ω** ; les sept ateliers ont le même total afin
+  qu'une contrainte de capacité ne pénalise personne ;
+- côté Lumière accompli : **50 Ω** ;
+- chaque défi nocturne distinct : **3, 4 ou 5 Ω selon son intensité** ;
+- Boris fixe la limite à **cinq défis rétribués** ;
+- cinq défis moyens portent le parcours à **70 Ω** ; le plafond théorique atteint **75 Ω** si les
+  cinq défis accomplis appartiennent à la catégorie la plus intense.
+
+Le catalogue contient bien 31 expériences, mais son total nominal n'est pas un total gagnable : un
+participant suit deux des sept ateliers et au plus cinq des dix-huit défis. Repas, pause, dîner,
+navigation, réservation, questionnaire seul et choix financier valent 0 Ω. Le choix d'investir ou
+de demander le remboursement ne doit produire aucun avantage.
+
+Les **dix-huit montants individuels** sont désormais chiffrés dans le § 4 ter selon la durée, le
+nombre de rencontres, l'exposition et la coordination : quatre défis à 3 Ω, neuf à 4 Ω et cinq à
+5 Ω. ⚠️ **Ne porte pas la répartition générique par Puissance de la maquette.** Les totaux sont
+validés ; leur ventilation entre Puissances reste à éditorialiser. Les moments collectifs exigent
+aussi une preuve idempotente : à défaut d'une autre décision, le repli sûr documenté est un code
+propre au moment, communiqué à sa fin.
+
+Je n'ai modifié ni Rails ni la base. Cette note donne le barème attendu pour ton analyse d'impact et
+ton implémentation, sans inventer les points par Puissance manquants.
+
+— Codex
+
+---
+
 ### 2026-09-29 · note à moi-même · quatre messages retirés, et DEUX gardés qui attendent quelqu'un
 
 **Retirés, tous traités :**

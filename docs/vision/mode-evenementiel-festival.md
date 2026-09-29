@@ -131,6 +131,86 @@ atelier compris. `verifier_classes_emises` ne compare que des **classes** ; `#ma
 Les sélecteurs d'ID et d'attribut sont un angle mort commun à nos bancs de mise en page.
 
 
+## 4 ter. Le barème Oméga du Festival — validé par Boris le 29 septembre
+
+Le Festival forme un parcours global de **31 expériences définies** : six moments collectifs,
+sept ateliers alternatifs et dix-huit défis de Puissance alternatifs. Ce nombre décrit le
+catalogue ; il ne doit jamais devenir le total qu'un participant peut gagner, puisqu'une personne
+ne suit que deux ateliers et au plus cinq défis rétribués.
+
+### Le chemin individuel : 50 Ω le jour, puis des défis à 3, 4 ou 5 Ω
+
+| expérience accomplie | gain total |
+|---|---:|
+| `festival-accueil` | **3 Ω** |
+| `festival-inclusion-grotte` | **7 Ω** |
+| atelier choisi au round 1 — quel que soit l'atelier | **8 Ω** |
+| `festival-cercle-resonance` | **6 Ω** |
+| `festival-chant-du-coeur` | **5 Ω** |
+| atelier choisi au round 2 — quel que soit l'atelier | **8 Ω** |
+| `festival-cristallisation` | **6 Ω** |
+| `festival-convergence-cloture` | **7 Ω** |
+| **maximum du côté Lumière** | **50 Ω** |
+
+Les sept ateliers ont donc tous le même montant de **8 Ω**. Leur répartition entre Puissances peut
+différer, mais une salle, une capacité ou une réservation imposée ne doit jamais faire gagner moins
+qu'un autre choix.
+
+Un défi nocturne rapporte **3, 4 ou 5 Ω** selon son intensité. La durée seule ne décide pas : le
+nombre de rencontres, l'exposition personnelle, la coordination et la production d'une trace
+comptent aussi.
+
+| Puissance · cap | défi | intensité | gain |
+|---|---|---|---:|
+| Désir · accueillir | La braise sous verre | soutenue · attente, relevé et témoin | **4 Ω** |
+| Désir · circuler | Le portrait sans étiquette | soutenue · trois rencontres | **4 Ω** |
+| Désir · assumer | Le désir en chœur | forte · quatre personnes et action collective | **5 Ω** |
+| Volonté · accueillir | Le geste utile invisible | soutenue · service réel de dix minutes | **4 Ω** |
+| Volonté · circuler | Pile, face, vérité | légère · un choix et un premier geste | **3 Ω** |
+| Volonté · assumer | Le conseil debout | forte · cinq personnes, décision et rôles | **5 Ω** |
+| Imagination · accueillir | Objet trouvé en 2050 | soutenue · prototype et démonstration | **4 Ω** |
+| Imagination · circuler | La collision impossible | forte · quatre rencontres et création | **5 Ω** |
+| Imagination · assumer | Le bulletin de 2050 | soutenue · production audio et deux retours | **4 Ω** |
+| Émotion · accueillir | Caméra sans commentaire | légère · une interaction en deux récits | **3 Ω** |
+| Émotion · circuler | Cartographie minute | légère · exercice bref en binôme | **3 Ω** |
+| Émotion · assumer | Même battement | soutenue · binôme, accordage et témoin | **4 Ω** |
+| Communication · accueillir | L'histoire avec témoin | soutenue · écoute, transmission et correction | **4 Ω** |
+| Communication · circuler | Trois phrases nettes | légère · échange bref en binôme | **3 Ω** |
+| Communication · assumer | L'émissaire de 2050 | forte · personnage et deux rencontres | **5 Ω** |
+| Intuition · accueillir | Le procès de l'évidence | soutenue · trio et critère de réfutation | **4 Ω** |
+| Intuition · circuler | La chasse aux trois signaux | forte · quatre rencontres et contre-signe | **5 Ω** |
+| Intuition · assumer | Le pari du quart d'heure | soutenue · engagement, geste et témoin | **4 Ω** |
+
+Seuls les **cinq premiers défis distincts** sont rétribués, puis les défis restent jouables sans
+nouveau gain. Un même défi ne crédite jamais deux fois. Cinq défis d'intensité moyenne portent le
+parcours très engagé à **70 Ω** ; le plafond théorique est de **75 Ω** si les cinq défis accomplis
+valent chacun 5 Ω.
+
+La répartition du gain d'un défi entre Puissances reste une décision éditoriale propre à chacun des
+dix-huit défis. Il ne faut pas recopier comme canon la règle générique `Puissance choisie +
+Puissance secondaire` de la maquette : elle était explicitement démonstrative.
+
+### Ce qui ne rapporte rien
+
+Le repas, la pause, le dîner libre, la navigation, la réservation, le questionnaire seul et le
+choix d'investir ou de demander le remboursement valent **0 Ω**. Le choix financier ne doit produire
+ni avantage ni pénalité en Omégas. Les six moments collectifs et les ateliers ne sont crédités
+qu'après une preuve de participation idempotente ; en l'absence d'une autre preuve décidée, le
+repli sûr est un code propre à chaque moment, communiqué à sa fin, sur le modèle des ateliers.
+
+### Comparaison avec M0 et conséquences visibles
+
+M0 totalise **100 Ω** sur dix-neuf expériences récompensées, pour environ sept heures. Le Festival
+représente donc 50 à 75 % de ce volume pour une journée et une soirée entières. Le rapport reste
+cohérent : le Festival est un prologue majeur, avec un rendement horaire inférieur à M0 et une part
+variable qui dépend d'actions nocturnes réellement accomplies.
+
+Les Omégas du Festival rejoignent le total général du joueur, mais la progression de M0 doit rester
+locale au parcours et commencer à **0 / 100**. Le badge Dopamine des 100 Ω pourra être atteint après
+25 à 50 Ω gagnés dans M0 par un participant au Festival : c'est une conséquence assumée d'un seuil
+global, pas un signal de complétion de M0.
+
+
 
 ---
 
