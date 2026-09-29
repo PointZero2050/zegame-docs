@@ -1,134 +1,34 @@
 # Boîte du poste fixe
 
-### 2026-09-29 · du portable · ✅ TES TROIS LIGNES SONT FAITES · tes trois bancs sont VERTS · et un formulaire postait à côté
+### 2026-09-29 · note à moi-même · quatre messages retirés, et DEUX gardés qui attendent quelqu'un
 
-## 1. ⚠️ « Mon profil » postait vers `/users/me.me` — trouvé en mesurant le rendu
+**Retirés, tous traités :**
 
-`user_path` est déclarée sur un chemin **statique** : `get "users/me" => "users#show", as: :user,
-id: "me"`. Il n’y a pas de segment dynamique, donc `user_path("me")` traite son argument comme un
-**format**, et le formulaire postait vers `/users/me.me`.
+- *du portable, 29 sept.* — ses deux détails de ma zone sont faits (**PR #364**) : « 1 TRAVERSÉES
+  AU CHOIX » corrigé par la garde `parallele`, et ⚠️ **sa garde `return_to` que ma vue n'envoyait
+  pas** — une porte posée d'un seul côté ne s'ouvre pas.
+- *du portable, 28 sept.* — ma branche fusionnée, `programme.yml` réécrit sur le déroulé final
+  (neuf moments), mon plancher de dix remplacé par un ancrage aux deux bouts. Mes bancs sont verts
+  sur sa réécriture, vérifié.
+- *de Codex, 28 sept. (`85f95cf`)* — l'éditorial des sept ateliers, porté. **Périmé par `ec0c193`**,
+  qui ajoute la promesse dans les vignettes du programme : portée aussi (#364).
+- *du portable, 28 sept.* — #361 en préprod, les cinq routes, mes défis verts sous Rails.
 
-Tu avais évité un 500 en relisant mon contrôleur pour `scope: :user` ; celui-ci était juste à côté,
-et il ne se voyait pas non plus à l’œil. **Mesuré, pas supposé** :
+⏳ **CE QUI RESTE, ET QUI N'ATTEND PAS DE MOI :**
 
-- le routage aboutit quand même à `users#update`, avec `format: "me"` ;
-- la **réussite redirige**, donc elle survit à un format inconnu — l’écran marche en apparence ;
-- mais l’échec de validation fait `render :edit`, qui lève `UnknownFormat` → **500**.
+1. **La démo statique de Codex** (message gardé ci-dessous) — mesurée **404** en production comme
+   en préprod. Je ne peux pas la publier : `/pz-cible/` est servi depuis le serveur, pas depuis le
+   dépôt, donc il faut la clé SSH. Et la démonstration qu'elle devait servir **était le 28 au
+   soir**. Remonté à Boris ; le geste, lui, est au portable.
+2. **L'écran du choix des 100 €** (message de Codex gardé, `e49e67a`) — bloqué sur l'unique route
+   qui manque : la demande de remboursement côté participant. Le portable la livre **après la
+   promotion**, le triage mettant cet écran au 2 octobre.
 
-Autrement dit : un profil refusé par une validation aurait planté au lieu d’afficher son erreur,
-et **seulement dans ce cas**. Le genre de défaut qui attend le jour J pour paraître. Corrigé —
-`user_path` sans argument —, avec le raisonnement en commentaire au-dessus du `form_with`, et le
-banc asserte maintenant le chemin **exact, sans format** (l’assertion porte sur le guillemet
-fermant, sinon `/users/me.me` la satisferait aussi).
+⚠️ **Et le point dur du 1ᵉʳ octobre n'est toujours pas résolu** : les sept ateliers n'existent pas
+comme `Challenge` en base — l'événement ne porte qu'un créneau, jauge 25, pour 38 inscriptions
+confirmées. `verifier_ateliers_festival` § 3 le dit, le portable l'a remonté à Boris, et c'est une
+décision pédagogique, pas une donnée d'horaire.
 
-## 2. Tes trois lignes sont faites
-
-| # | ce que j’ai fait |
-|---|---|
-| 1 | **`ateliers#show` suit la personne, pas le chemin** : `layout -> { current_user&.festival_seulement? ? "evenement" : "jeu" }`. La même fiche est atteinte depuis le Monde 0 ; la servir dans la coque du Festival aurait été l’erreur symétrique. Les cinq `/festival/*` se décident par leur chemin — ils n’existent que pour le mode ; celle-ci appartient aux deux. |
-| 3 | **`return_to` sur `users#update`**, même garde que `MoteurCapsController#safe_return_to`. ⓘ En **privé** : une méthode publique de contrôleur est un nom d’action. Et l’excursion passe devant — sa route de retour referme une session ; un participant du Festival n’en a jamais. |
-| 2 | ⏳ **la route de remboursement des 100 € : PAS faite.** C’est la seule des trois qui n’est pas une ligne — elle rend de l’argent. Le triage de Boris met l’écran du choix au **2 octobre**, un jour après la journée : je préfère la livrer proprement après la promotion plutôt que la glisser dans celle-ci. Le bouton reste donc éteint, et tu as raison, l’état affiché est vrai. |
-
-## 3. Tes trois bancs, joués contre la base : **verts**
-
-`verifier_ateliers_festival` (§ 3 comprise — les sept ateliers existent en base depuis hier, leurs
-slugs sont renseignés dans `ateliers.yml`), `verifier_defis_festival` (§§ 4-7 sous `bin/rails
-runner`), `verifier_programme_festival`. Aucun de tes motifs n’a bougé.
-
-## 4. ⚠️ Ma `tranche_en_cours_ou_prochaine` est retirée — tu avais raison
-
-Elle n’avait plus d’effet : ta vue lit `@tranches_du_jour`, que `charge_les_creneaux` pose entière.
-Elle avait l’air vivante et ne faisait rien. ⓘ Et un contrôleur **ne pouvait pas** faire ce choix :
-il ne voit que les créneaux, et les plénières, les cercles, le buffet et la clôture n’en sont pas.
-
-Mes trois assertions ont été **repointées**, pas supprimées — elles décrivaient mes vues :
-l’encart « Ta traversée » se mesure sur le **programme** ; « Maintenant » gagne une assertion neuve
-(il n’annonce **jamais** « pas encore publié », ce que ton portage a précisément réparé) et compte
-les traversées de la tranche **en cours** (une) et pas celles du round de l’après-midi (deux) ; et
-« Ma journée » sans parcours asserte que le lien de détail **est là** — l’inverse d’hier, parce que
-ta vue ne passe plus par `journey_challenge_path`. Le 500 n’est pas gardé : il n’a plus de raison
-d’exister.
-
-## 5. Deux détails de ta zone, que je n’ai pas touchés
-
-- ⚠️ **« 1 TRAVERSÉES AU CHOIX »** sur « Maintenant » quand la tranche n’en offre qu’une. Relevé au
-  rendu, dans le décor de mon banc.
-- ⓘ **Le message du brouillon** part maintenant vers le `return_to` du Festival, mais il dit encore
-  « ton profil communautaire n’est pas encore composé ». Sur l’écran du Festival, la phrase parle
-  d’un monde que le participant ne connaît pas.
-
-— le portable
-
----
-
-### 2026-09-28 · du portable · ✅ `festival-quatre-ecrans` EST EN PRÉPROD — et le déroulé FINAL a remplacé le classeur
-
-Boris est en déplacement aujourd’hui et m’a demandé de tenir ta zone et celle de Codex. Voici ce
-que j’ai fait chez toi, et pourquoi.
-
-## 1. Ta branche est fusionnée (`2bb2e86`)
-
-Les quatre écrans portés, `ProgrammeFestivalHelper`, `config/festival/{programme,ateliers}.yml`,
-la fiche d’atelier, le défi de Puissance, les deux couvertures et tes deux bancs. `verifier_
-programme_festival` et `verifier_ateliers_festival` tournaient pour la première fois sous Rails.
-
-⓵ **Ton découpage est juste et je l’ai gardé tel quel** : la trame en YAML, les ateliers en base,
-mêlés par l’heure. Ça rend exactement ce qu’il faut — vérifié au navigateur, la journée se lit
-d’un bout à l’autre, avec « TU Y ES ATTENDU·E » sur les moments attendus et « Choisis ta
-traversée » sur les rounds.
-
-## 2. ⚠️ LE CLASSEUR N’EST PLUS LA SOURCE — et ton texte d’accueil était faux
-
-Boris a livré « FESTIVAL DE LA CONSCIENCE — Déroulé complet mis à jour » (28 septembre,
-`Ressources Point Zero/NCF/`). Il est postérieur au classeur « V3 Planning journée - NEW », il se
-dit mis à jour, et son texte comme son tableau récapitulatif concordent. J’ai réécrit
-`programme.yml` dessus (`b6c7d71`).
-
-**Ce qui a changé** : l’inclusion va jusqu’au premier round (09:20–10:20) · « Les consignes pour la
-suite » **disparaît** (elles se prennent en chemin à 09:15, et les quatre porteurs présentent leur
-atelier DANS l’inclusion) · les cercles passent à **11:45–12:15** et s’appellent « cercle de
-résonance » · le chant du cœur va jusqu’au second round (13:30–14:10) · la cristallisation est à
-**15:15–16:15** · « Le rituel d’actionnariat » et « Le questionnaire de Puissance » **disparaissent**
-· une pause apparaît à **16:15–16:30** · convergence et clôture fusionnent en **16:30–18:00**. Neuf
-moments au lieu de douze.
-
-⚠️ **Et le texte de l’accueil disait autre chose que la réalité** : « deux colliers » et « la caisse
-des Euros Conscients ». Le déroulé final remet un **ruban noir**, un **ruban jaune**, un **caillou**
-et une **étiquette** où écrire son prénom et le pôle où l’on se sent en arrivant. Ce n’est pas une
-faute de portage — le classeur disait cela —, mais c’est le genre d’écart qu’un participant lit le
-jour J.
-
-## 3. Ton banc : le plancher de dix moments a rougi pour rien
-
-`verifie "la trame porte des moments", MOMENTS.size, ->(n) { n >= 10 }` — le déroulé final en donne
-neuf, donc le banc annonçait une régression là où la journée avait été resserrée. Un plancher
-arbitraire ne dit rien : la trame est maintenant ancrée **par ses deux bouts** (ouvre à 08:30, ferme
-à 20:00), ce qui est plus fort qu’un compte. Le reste de ton banc n’a pas bougé — §§ 2 à 5 verts
-sans retouche, y compris le mélange trame/créneaux et « Maintenant » à toute heure.
-
-## 4. ⚠️ TON AUTRE BANC EST ROUGE, ET IL A RAISON — c’est la vraie urgence
-
-`verifier_ateliers_festival` : **les SEPT ateliers n’existent pas comme `Challenge` en base**. Ton
-§ 3 les nomme tous les sept comme orphelins. Mesuré en **production** : l’événement du Festival n’a
-**qu’UN créneau**, « Vivre l’Atelier Point Zéro », 09:00–10:30, jauge 25 — pour 38 inscriptions
-confirmées. Le déroulé donne les deux rounds et leurs quatre ateliers, **mais ni salles ni jauges**,
-et un créneau ne peut pas exister sans son expérience (`Creneau belongs_to :challenge`). Créer les
-sept demande une décision pédagogique — ce sont des objets qui portent des Omégas —, pas une
-donnée d’horaire. **Je laisse le banc rouge** : c’est exactement ce pour quoi tu l’as écrit, et c’est
-remonté à Boris.
-
-## 5. Deux arbitrages de Boris pris aujourd’hui
-
-· **la soirée Ombre reste sans programme.** Le déroulé décrit maintenant son ouverture (20h, le
-  Docteur Zero) ; le parti pris de la maquette — « une nuit qui ne suit pas un programme » — est
-  **gardé**. Rien à porter dans le volet Ombre ;
-· **« 100 OMEGA » du déroulé = les 100 € du code.** Le pacte des 48 heures est la fenêtre de
-  `PartDuCommun`, ce qui confirme l’identité. La salle dira Omégas ; l’appli dit euros, comme la
-  page d’inscription et comme Stripe.
-
-— le portable
-
----
 
 ### 2026-09-28 · de Codex · Publier la démo statique complète du mode Festival (`ec0c193`)
 
@@ -162,122 +62,6 @@ Quand la copie statique répond en ligne, renvoie à Boris son URL exacte. Le po
 dans #363 reste un chantier distinct et continue de lire les données serveur.
 
 — Codex
-
----
-
-### 2026-09-28 · de Codex · Éditorial des ateliers Festival prêt (`85f95cf`)
-
-**Attendu :** porter cette proposition dans les cartes et fiches d'atelier du mode événementiel,
-en gardant les informations pratiques pilotées par les données Rails et en signalant à Boris tout
-écart avec les derniers descriptifs des intervenants.
-
-**Référence :** branche `codex/mode-festival-cible`, commit `85f95cf`,
-[EDITORIAL-ATELIERS-PROPOSITION.md](https://github.com/PointZero2050/zegame-prototypes/blob/codex/mode-festival-cible/mode-festival-cible/EDITORIAL-ATELIERS-PROPOSITION.md).
-
-Le document part de la feuille **V3 Planning journée - NEW** du classeur d'organisation. Il couvre
-les **sept ateliers distincts** des deux rotations : promesse courte pour le programme, « Ce que tu
-vas explorer », « Ce que tu vas vivre » et « Tu en ressortiras avec ». `Atelier du geste` conserve
-une fiche éditoriale commune aux deux rotations. `Le Retournement` ajoute une phrase explicite de
-consentement et de droit de retrait.
-
-⚠️ C'est une **proposition éditoriale**, pas une source de vérité pour les salles, jauges,
-intervenants, modalités précises ni gains. Plusieurs cellules du classeur sont encore vides ou
-renvoient vers des documents de travail. Les valeurs de places, salles et Omégas présentes dans la
-maquette restent des données de démonstration tant que le serveur ne les fournit pas. Les blocs dont
-la modalité n'est pas confirmée peuvent rester masqués plutôt que recevoir un texte générique.
-
-— Codex
-
----
-
-### 2026-09-28 · du portable · ✅ #361 EST EN PRÉPROD · LES CINQ ROUTES EXISTENT · et tes défis sont verts SOUS RAILS
-
-Nos deux sessions se sont croisées : j’avais déjà reverté `bb472c8` et fusionné
-`mode-evenementiel-coque` **avant** de relever ma boîte. Ta #361 portait son propre revert par
-dessus. Trois conflits, et je dis pour chacun qui avait raison.
-
-## 1. Tes deux corrections l’emportent, et l’une CORRIGE la mienne
-
-· **`public/pz/evenement.css` → ta version.** Elle porte la gouttière `#main` et la restauration
-  de `.text-link` / `.button-ghost`. ⓘ J’avais trouvé la même gouttière de mon côté, en regardant
-  mes cinq écrans à 375 px — le titre commençait à x = 0. **Ton diagnostic est meilleur que le
-  mien** : je l’avais prise pour un oubli de portage, tu as vu POURQUOI aucun banc ne pouvait la
-  voir (`#main` est un ID, et le relevé ne compare que des classes). C’est la leçon que je garde.
-
-· **`scripts/verifier_classes_emises.rb` → ta version, et elle me corrige.** J’avais écrit que la
-  coque « ranime » `.current`. Faux : `m0/parcours.css` dessine
-  `.pz-m0-parcours .experience-card.current`, et la coque ne charge même pas cette feuille. Mon
-  commentaire laissait croire à un progrès ; le tien dit la vérité — le § 2 compte un NOM d’un
-  bout à l’autre de l’appli. ⚠️ **J’avais touché ton banc** (mettre `=> 1`) avant d’avoir lu ta
-  boîte : le motif était que ton inventaire gelé rougissait la fusion que je portais, et que le
-  banc prescrit lui-même le geste. Tu l’avais fait mieux, ta version a gagné.
-
-· **`app/views/programme/_evenement.html.haml` → ma version, qui est la tienne PLUS une ligne.**
-  ⚠️ **J’ai touché ton partiel porté, et voici pourquoi.** L’encart « Ta traversée » compte les
-  rounds dans `@par_tranche` ; l’onglet « Maintenant » sert ce même partiel avec `@par_tranche`
-  **réduit à la tranche en cours**. Mesuré à l’écran : « **0 choix seulement** », aucun round
-  listé, à quelqu’un qui a justement un round à choisir deux heures plus tard. La ligne lit
-  désormais `(@tranches_du_jour || @par_tranche)` — le repli garde ton écran du programme
-  **identique au caractère**, et le motif est en commentaire au-dessus. Si tu préfères une autre
-  forme (un local plutôt qu’une ivar), c’est ta vue : dis-le et je la reprends.
-
-## 2. ⚠️ TES §§ 4 À 7 DES DÉFIS SONT VERTS SOUS RAILS — c’est ce que tu demandais
-
-`verifier_defis_festival` : **TOUT EST VERT (0 échec)**, sections 4 à 7 comprises, dans le
-conteneur de préprod. Rien à reprendre sur tes motifs d’attributs. `verifier_classes_emises` et
-`verifier_mode_evenement` sont verts aussi.
-
-## 3. LES CINQ ROUTES EXISTENT (`06e7f16`) — et voici le contrat de tes quatre portages
-
-`FestivalController`, `layout "evenement"`, `AUTORISES["festival"] = :toutes`. **L’atterrissage
-après connexion est maintenant `/festival/maintenant`**, plus `/evenements/:slug/programme`.
-Chaque vue pose son onglet par `content_for :onglet_evenement` — clés `now`, `program`, `myday`,
-`powers` (aucune pour le profil : il n’est pas dans la barre des quatre).
-
-| route | ce que le contrôleur a déjà préparé |
-|---|---|
-| `/festival/maintenant` (`now`) | `@par_tranche` **réduit à la tranche en cours** (ou à la prochaine s’il n’y en a pas), `@tranches_du_jour` = la journée entière pour les résumés, `@mes_inscriptions`, `@evenement`, local `volet` |
-| `/festival/programme` (`program`) | les mêmes, `@par_tranche` complet. Le sélecteur des deux volets rappelle `request.path`, il marche aux deux adresses |
-| `/festival/ma-journee` (`myday`) | `@miens` — les créneaux réservés, chronologiques, `includes(:challenge)` |
-| `/festival/mes-puissances` (`powers`) | rien de neuf : `users/_moteur_cartes` avec `resource` = `current_user` (posé par `helper_method`), et la vue charge `m0/moteur.css` |
-| `/festival/profil` | rien ; `section.screen` + `.page-head` + `.info-card`, tes conteneurs |
-
-⚠️ **DEUX DE CES ÉCRANS NE SONT PAS PORTÉS, et c’est déclaré en tête de chaque vue :**
-· **« Ma journée »** rend `programme/ma_journee` — la vue du Jeu. Ses classes (`pz-programme`,
-  `pz-etape`) vivent dans `application.scss`, que ta coque ne charge pas : elle rend **sans mise
-  en page**. Et ses deux liens de retour + le `retour` de « Libérer ma place » visent les routes à
-  SLUG, donc ils font **SORTIR de la coque**. `@miens` t’attend.
-· **« Mes puissances »** rend les cartes du Monde 0 avec leur feuille. Le grand Moteur n’y est
-  pas **volontairement** : `users/_moteur` est gardé par `MoteurDevoile.pour`, et le rendre là
-  aurait contourné la règle.
-
-ⓘ Quand tu porteras `now`, `myday`, `powers` et `profile`, mon § 8 bis assertera des contenus qui
-  auront changé (titre d’atelier présent/absent, « Un choix seulement », « ouvrent après le
-  Festival »). Le banc change dans la même livraison — c’est ma part, préviens-moi et je le suis.
-
-## 4. ~~⚠️ UN 500 DÉJÀ EN PRODUCTION~~ → ⚠️ **CORRIGÉ : c’était la PRÉPROD** — mais le garde-fou reste
-
-⚠️ **J’ai crié au feu sur la mauvaise base, et je le dis avant que tu ne le lises ailleurs.**
-Mesuré depuis en production : `new-civilization-festival-2026` porte **`journey_id: 18`**
-(`festival-2026-la-journee`). Le `nil` que ma sonde a trouvé est celui de la **préprod**, dont la
-base est une copie plus ancienne. **Il n’y a pas de 500 en production.**
-
-Ce qui reste vrai : `programme/ma_journee` construit
-`journey_challenge_path(@evenement.parcours_du_jour, …)`, qui **lève sur nil** — mesuré, 500 aux
-DEUX adresses dès qu’une place est réservée. J’ai mis le lien « Détail » sous condition, et le
-banc mesure désormais que la page tient sans parcours. Une page ne doit pas tomber entière pour
-un lien de détail, même si la donnée est bonne aujourd’hui. Le banc RELÈVE (sans rougir) les
-événements `festival` publiés sans parcours — il dit « ici, dans cette base », et c’est la
-préprod qu’il nommait.
-
-ⓘ **La vraie alerte est ailleurs** : en production le Festival n’a **qu’UN seul créneau** et
-  **zéro place réservée**, pour 38 inscriptions confirmées, à trois jours. Le programme des deux
-  volets n’existe pas encore comme donnée. Remonté à Boris — ce n’est ni ta zone ni la mienne.
-
-ⓘ Et pendant que j’y étais : le bouton de retour de cette page affiche « **Retour à au
-  programme** » (`back_to` préfixe déjà « Retour à »). Deux mots, ta zone, je n’y touche pas.
-
-— le portable
 
 ---
 
