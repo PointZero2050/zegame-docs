@@ -55,7 +55,7 @@ est une route à demander :
 | `side` | les deux volets du programme : Lumière (journée, horaires) / Ombre (soirée, émergente) |
 | `power` · `cap` | la Puissance et le cap choisi → le défi nocturne correspondant |
 | `workshop` · `toggle-reservation` | capacités, places, état de réservation — **vérité serveur** |
-| `validate-workshop` | ⚠️ code communiqué sur place, **validé côté serveur, idempotent, expirant après l'événement** |
+| `validate-workshop` | code de **5 lettres** propre au créneau, communiqué sur place, validé côté serveur et idempotent |
 | `omega-id` · `omega-kind` | le barème **administré** (celui de la maquette est un barème de démonstration) |
 | `make-choice` | le choix des 100 € — **route joueur inexistante à ce jour** |
 
@@ -199,9 +199,81 @@ respecte tous les montants ci-dessus, mais reste à relire avant écriture en ba
 
 Le repas, la pause, le dîner libre, la navigation, la réservation, le questionnaire seul et le
 choix d'investir ou de demander le remboursement valent **0 Ω**. Le choix financier ne doit produire
-ni avantage ni pénalité en Omégas. Les six moments collectifs et les ateliers ne sont crédités
-qu'après une preuve de participation idempotente ; en l'absence d'une autre preuve décidée, le
-repli sûr est un code propre à chaque moment, communiqué à sa fin, sur le modèle des ateliers.
+ni avantage ni pénalité en Omégas. Les règles de preuve des six moments collectifs et des ateliers
+sont fixées ci-dessous ; une réservation ou l'ouverture d'une page ne valent jamais participation.
+
+### Validation des expériences du Festival — décision du 30 septembre
+
+Trois familles d'expériences suivent trois gestes lisibles pour le joueur :
+
+| famille | preuve | moment de validation | garde-fou |
+|---|---|---|---|
+| moment collectif / plénière | billet Festival **pointé à l'entrée** | automatiquement à la clôture du moment | aucun gain pour un billet seulement acheté ou réservé |
+| atelier | code de **5 lettres** propre au créneau | lorsque le participant saisit le code communiqué à la fin | inscription active au créneau ; pointage facilitateur conservé en secours |
+| défi nocturne | déclaration du joueur | lorsqu'il confirme avoir accompli le défi | seuls les cinq premiers défis distincts sont rétribués |
+
+#### Plénières : automatique signifie « après émargement », pas « après ouverture de la page »
+
+`registrations.presente_le`, posé à l'entrée par l'équipe, est la preuve commune aux moments
+collectifs. `festival-accueil` est validé par ce pointage lui-même. Les cinq moments suivants sont
+validés à leur heure de fin pour les participants dont l'arrivée a été pointée avant cette fin.
+Une arrivée tardive n'ouvre donc pas rétroactivement les moments déjà terminés. En revanche,
+l'application ne prétend pas mesurer un départ anticipé : l'émargement d'entrée vaut présence aux
+moments collectifs postérieurs. C'est une preuve volontairement proportionnée à des séquences
+plénières communes, sans QR code, géolocalisation ni geste supplémentaire.
+
+La clôture doit appeler un service serveur idempotent. Il doit aussi pouvoir être rejoué depuis
+l'administration afin de rattraper un traitement différé ou une coupure réseau. Les gains ne sont
+jamais attribués au simple chargement de la page Festival et une relance ne recrédite rien.
+
+#### Ateliers : un code court par créneau, avec le pointage existant en secours
+
+Le code contient exactement **5 lettres majuscules**. Il exclut les lettres ambiguës `I`, `O` et
+`L`, accepte indifféremment minuscules et majuscules à la saisie, et reste valable jusqu'à 23 h le
+jour du Festival. Il est propre au **créneau**, pas seulement au titre de l'atelier : le même atelier
+programmé dans deux rotations ne partage pas son code. Le facilitateur le montre ou le dicte à la
+fin de la séance.
+
+La saisie n'est proposée qu'à un participant rattaché au Festival et inscrit activement à ce
+créneau. Une personne accueillie sans réservation est d'abord ajoutée par la fonction
+`accueillir` de la feuille de présence. Le facilitateur peut aussi pointer directement une présence
+si un téléphone ou le réseau fait défaut. Code et pointage appellent **la même validation** de
+l'expérience ; leur répétition ne produit ni nouvelle progression ni nouveaux Omégas. Pour freiner
+les essais au hasard sans gêner la salle : cinq tentatives par participant et par créneau sur quinze
+minutes, avec un message d'échec qui ne révèle rien du code attendu.
+
+Le reçu de gain Oméga existant s'affiche après succès. L'application peut conserver le mode de
+preuve (`code`, `facilitateur`, `automatique`) et l'heure pour l'audit, mais ne doit pas afficher ce
+détail technique au joueur.
+
+#### Analyse d'impact avant implémentation
+
+- `EmargementBillet` sait déjà poser de façon idempotente `registrations.presente_le`, mais son
+  contrat actuel dit explicitement qu'il ne valide aucune expérience : l'automatisation des
+  plénières doit vivre dans un service Festival distinct, appelé après le pointage et aux clôtures ;
+- `EmargementAtelier` valide déjà le `Challenge`, pose `end_at` et `validated_at`, puis laisse
+  `gain_points` attribuer les Omégas. La confirmation par code doit réutiliser ce chemin et ne pas
+  créer un second moteur de points ;
+- la vérification doit viser le `Creneau`, car `atelier-du-geste` est un seul `Challenge` relié à
+  deux créneaux. Un second passage au même atelier reste sans second gain ;
+- les 31 expériences sont actuellement déclarées avec une autorité facilitateur et sans
+  autovalidation. Il faut distinguer l'autorité `systeme` des moments collectifs, la preuve par
+  code/facilitateur des ateliers et la déclaration des défis, sans rendre les plénières
+  autovalidables par simple visite ;
+- la limite des cinq défis rétribués appartient au service de crédit, pas seulement à l'interface.
+  Les défis suivants peuvent être marqués accomplis avec **0 Ω**, en l'annonçant avant confirmation ;
+- dépointer une présence posée par erreur ne révoque pas une validation ni des Omégas déjà acquis,
+  conformément à la règle générale déjà appliquée aux ateliers.
+
+#### Recette minimale
+
+1. billet confirmé mais non pointé : aucune plénière n'est créditée ;
+2. billet pointé avant la fin d'une plénière : un seul gain à la clôture, même après relance ;
+3. arrivée après la fin : aucun rattrapage de la plénière passée ;
+4. bon code et inscription active : atelier validé, reçu affiché, un seul gain ;
+5. mauvais code, code d'un autre créneau ou participant non inscrit : aucun effet ;
+6. validation par code puis pointage facilitateur, ou l'inverse : aucun doublon ;
+7. sixième défi accompli : expérience reconnue, aucun Oméga supplémentaire.
 
 ### Comparaison avec M0 et conséquences visibles
 
@@ -223,7 +295,7 @@ global, pas un signal de complétion de M0.
 
 | ce qui doit exister | quand | pourquoi |
 |---|---|---|
-| Ma journée, le billet, le programme des deux côtés, les réservations, la validation par code et le crédit, les 18 défis | **1ᵉʳ octobre** | c'est ce qu'on ouvre dans la salle |
+| Ma journée, le billet, le programme des deux côtés, les réservations, les codes d'atelier, l'automatisation des plénières et le crédit, les 18 défis | **1ᵉʳ octobre** | c'est ce qu'on ouvre dans la salle |
 | l'écran du choix des 100 € | **2 octobre** | ⓘ sa fenêtre s'ouvre APRÈS la fin de la journée : un jour de marge, ce n'est pas une opinion |
 | le profil de rencontre et le rapprochement | après | facultatif par conception, sans effet sur le défi ni sur les Omégas, et la pièce la plus chargée en données personnelles |
 
