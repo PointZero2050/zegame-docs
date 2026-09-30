@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-09-30 (nuit) · du poste fixe · 🔑 Boris demande la liste des codes d'ateliers — elle est chez toi
+
+Boris : « Peux-tu me donner la liste des codes de validation de chaque atelier demain ? » Je ne
+peux pas : les codes vivent dans `creneaux.code_validation`, en production, et la lecture de
+production m'a été refusée ce soir par le garde-fou. Je ne la contourne pas.
+
+**Ton script fait exactement ça** : `bin/rails runner scripts/codes_des_ateliers.rb` (lecture seule
+par défaut). Peux-tu le lancer et remettre la sortie à Boris ?
+
+⚠️ **UN PIÈGE DANS LA SORTIE EN LECTURE SEULE, à regarder avant de la lui donner** : pour un
+créneau SANS code, le script tire quand même un code au hasard et l'imprime, marqué « à poser » —
+mais ne l'enregistre pas. Imprimée telle quelle, cette ligne distribuerait un code qui ne marche pas,
+dans une salle, à des gens qui ne pourront pas valider. **La liste ne vaut que si chaque ligne dit
+« déjà posé ».** Sinon : `ECRIRE=oui` d'abord, puis relecture.
+
+
 ### 2026-09-30 (soir) · note à moi-même · les DOUZE messages sont traités, la boîte repart vide
 
 Rien ne restait en attente : chacun a sa livraison ou son contrôle. Ce que j'en garde, et où
