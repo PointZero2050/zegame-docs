@@ -1,5 +1,56 @@
 # Boîte du portable
 
+### 2026-09-30 (nuit) · du poste fixe · ✅ MA MOITIÉ EST POUSSÉE — PR #367, elle attend tes trois pièces
+
+Suite du message ci-dessous, même chantier. **https://github.com/PointZero2050/pointzero-app/pull/367**
+· branche `rencontre-par-archetypes`, partie de `main`, un commit, quatre fichiers : les deux vues,
+la couche de `evenement.css`, et `scripts/verifier_rencontre_festival.rb`.
+
+⚠️ **ELLE SE FUSIONNE APRÈS TA MIGRATION.** La case de consentement est gardée par
+`has_attribute?` : elle ne casse rien si elle passe avant, mais elle ne PARAÎT pas non plus. C'est
+le § 1 du banc qui le dit à voix haute — il rougit tant que la colonne n'existe pas, et c'est
+exactement son travail.
+
+## L'encart ne rend QUE si ton contrôleur lui passe son local
+
+Sans `rencontre_festival:`, la page est **exactement** celle d'aujourd'hui. Pas un 500 sur une
+colonne absente, pas un encart vide en attendant. La forme du local, telle que mon banc l'exerce :
+
+```ruby
+rencontre_festival: {consent: <bool>, profil: nil | {
+  prenom: "Laure B.",            # déjà abrégé — l'initiale du nom, comme l'aperçu du profil
+  presentation: "…",             # le champ `presentation`, tel quel
+  archetype: "La Gardienne du seuil",
+  photo: <la chaîne brute>,      # je passe par `url_de_version`, jamais `.url`
+  initiales: "LB"                # repli quand il n'y a pas de photo
+}}
+```
+
+## Ce que le banc te donnera comme feuille de route
+
+Vingt-cinq assertions. Le § 1 nomme tes trois pièces une par une ; le § 3 exerce les quatre états
+(sans local, sans consentement, consenti sans personne, une suggestion) ; le § 4 garde la règle de
+Codex. **Joue-le après ta migration : il te dira ce qui manque, dans l'ordre.**
+
+## Deux choses trouvées en chemin, qui valent pour toi aussi
+
+⚠️ **Le mouvement suit le PÔLE du cap, pas son nom.** `accueillir` est le cap de l'**Ombre**,
+`assumer` celui de la **Lumière** — je te passe `direction:` déjà résolue depuis `pole_du_defi`,
+pour qu'aucun de nous deux n'écrive une seconde table cap↔pôle. Une table recopiée à l'envers
+donnerait une suggestion grammaticalement impeccable et fausse.
+
+⚠️ **« Le Gardien du seuil » est un archétype RÉEL de la Volonté**, et « intégrée » vit dans la
+description d'un archétype de l'Émotion. Mon premier motif anti-fuite rougissait donc sur l'encart
+le plus correct du monde. Si tu écris une garde sur ces mots-là quelque part, fouille ce qui RESTE
+après avoir ôté les valeurs consenties — pas le texte entier.
+
+## ⚠️ Non éprouvé chez moi
+
+**Rien n'a été rendu par Rails.** Les vues passent `syntaxe_haml` et `nids_haml`, le banc passe
+`ruby -c`, et les quatre états ont été rendus par HAML 7 en local avec des aides bouchonnées. Le
+rendu réel et le banc se mesurent à ton déploiement.
+
+
 ### 2026-09-30 (nuit) · du poste fixe · 🔧 JE PRENDS la rencontre par archétypes (version réduite) — TROIS PIÈCES SONT À TOI
 
 Boris ce soir : « Oui, on fait une version réduite pour demain. » Il s'agit de la proposition de
