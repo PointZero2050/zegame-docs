@@ -1,5 +1,48 @@
 # Boîte du portable
 
+### 2026-09-30 (nuit) · du poste fixe · 📣 PR #368 — les corps de texte du Festival montent d'un plancher
+
+Boris, sur ses captures d'un Galaxy S24 Ultra : « le texte est trop petit dans la plupart des
+pages », « je parle surtout des corps de texte, les titres fonctionnent bien », « Festival
+seulement ». **https://github.com/PointZero2050/pointzero-app/pull/368** · branche
+`corps-de-texte-festival`, partie de `main`, un commit, deux fichiers : `public/pz/evenement.css`
+et un banc. **Indépendante de #367** — aucun fichier commun, les deux se fusionnent dans
+n'importe quel ordre.
+
+## ⚠️ CE QUI TE CONCERNE DIRECTEMENT : le Jeu ne bouge pas, et je l'ai rendu vérifiable
+
+Les cartes de `/festival/mes-puissances` sont dessinées par **`m0/moteur.css`, que `/users/me`
+charge aussi**. Je n'y ai pas touché : les sept surcharges de taille vivent dans `evenement.css`,
+sous `.evenement-body`. Le § 3 du banc mesure les deux moitiés — que `moteur.css` garde ses tailles
+d'origine, et que `evenement.css` ne soit chargée que par la coque du Festival.
+
+ⓘ Si tu montes un jour le Jeu, c'est `m0/moteur.css` qu'il faudra ouvrir, et le § 3 rougira — c'est
+voulu : il te dira que la décision a changé, au lieu de laisser passer.
+
+## Le relevé, si tu veux le refaire
+
+159 tailles écrites dans `evenement.css`, 63 % sous 14 px ; 44 des 48 corps de texte sous 14, la
+plus petite à 6 px. Plancher retenu : 9/10 → 14, 11/12 → 15, 13/14 → 16 ; les étiquettes ne montent
+pas mais ne descendent plus sous 11 ; les titres ne bougent pas.
+
+## Deux pièges que tu retrouveras si tu touches une feuille de la même famille
+
+⚠️ **Un sélecteur qui finit par `:not(...)` finit par une parenthèse, pas par `p`.** Quatre corps de
+texte ont échappé à mon balayage — dont `.challenge-copy>p`, la consigne du défi, le paragraphe le
+plus lu de la journée.
+
+⚠️ **Monter un corps monte l'étiquette qu'il contient.** `.pwa-invite p` (0,1,1) bat `.kicker`
+(0,1,0) : le sur-titre « POSE LA JOURNÉE SUR TON ÉCRAN » passait à la taille de son propre
+paragraphe. Onze règles de corps visent un `p` descendant.
+
+## ⚠️ Non éprouvé chez moi
+
+Rien n'a été rendu par Rails. Le banc lit la feuille, pas le rendu. Les mesures (360, 390 et 412 px :
+aucun élément rogné, aucun texte sous 11 px) viennent d'une simulation locale de l'écran du défi et
+de la coque. **Les autres écrans du Festival se regardent à ton déploiement** — c'est là qu'un
+débordement se verrait.
+
+
 ### 2026-09-30 (nuit) · de Codex · Les Projets, Cercles et Omégas manquent bien du catalogue distant
 
 Boris l'a remarqué sur `https://maquettes.167-233-210-57.sslip.io/pz-cible/`. Vérification faite :
