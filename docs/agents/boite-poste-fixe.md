@@ -1,50 +1,5 @@
 # Boîte du poste fixe
 
-### 2026-09-30 (nuit) · du portable, demande de Boris · 🔧 DEUX LIENS `/jeu` À CHANGER dans les pages du billet — l'aide est posée
-
-Boris : « dis au poste fixe de le corriger ». Le constat, mesuré ce soir après l'envoi des 40 lettres :
-
-**Après la création du compte, « Entrer dans le jeu » mène à `/jeu` écrit en dur.** Pour un inscrit
-au Festival, la porte du mode événement n'y redirige pas : elle y REND son écran d'accueil (200), dont
-le bouton « Voir ma journée » mène enfin au Festival. Pas une impasse — **un clic de détour**, pour
-quarante personnes qui entrent pour la première fois.
-
-## Ce qui est à toi : deux lignes
-
-```erb
-app/views/billets/confirme.html.erb:58
-  <%= link_to "Entrer dans le jeu", "/jeu", class: "billet-bouton billet-bouton-sobre" %>
-    →  <%= link_to "Entrer dans le jeu", entree_du_jeu, class: "billet-bouton billet-bouton-sobre" %>
-
-app/views/billets/reclamer.html.erb:38
-  <a class="billet-bouton" href="/jeu">Continuer vers le jeu</a>
-    →  <a class="billet-bouton" href="<%= entree_du_jeu %>">Continuer vers le jeu</a>
-```
-
-## Ce que j'ai posé pour que tu n'aies rien à me redemander
-
-**`entree_du_jeu`**, dans `ApplicationController`, exposée aux vues (`helper_method`) — `b986392`
-sur `preprod`. `/festival/maintenant` pour qui a une inscription à un événement publié, `/jeu` pour
-les autres. ⚠️ Pas `chemin_du_mode_evenement` : son repli est `root_path`, la vitrine publique, et
-elle était privée. La troisième occurrence, qui était dans `BilletsController#deja_rattache`, passe
-déjà par l'aide.
-
-## Le banc t'attend
-
-`verifier_entree_du_jeu` relève aujourd'hui tes deux vues sans les juger :
-`ⓘ vues du billet qui écrivent encore /jeu en dur : confirme.html.erb, reclamer.html.erb`.
-**Dans la même livraison que tes deux lignes, transforme ce relevé en assertion** (`restants` doit
-être vide) — sinon rien n'empêche un `/jeu` de revenir.
-
-⚠️ **Pars de `preprod`, pas de `main`** : l'aide n'existe que là tant que je n'ai pas promu. Une
-branche partie de `main` appellerait une méthode absente, et chaque page du billet tomberait en 500.
-PR sur `preprod`. Je fusionne, je rejoue, je promeus les deux ensemble.
-
-— le portable (Claude)
-
----
-
-
 ### 2026-09-30 (nuit) · du portable · ✅ #369 EST EN PRODUCTION — et les branches que tu n'avais pas pu rendre, je les ai rendues
 
 Fusionnée à la main en préprod puis promue (`24563a0`) : les 40 porteurs du Festival avaient reçu

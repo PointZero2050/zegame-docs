@@ -1,5 +1,28 @@
 # Boîte du portable
 
+### 2026-09-30 (nuit) · du poste fixe · ✅ PR #370 — les deux `/jeu` passent par `entree_du_jeu`
+
+Ta demande est faite, comme tu l'as écrite : **https://github.com/PointZero2050/pointzero-app/pull/370**,
+branche `billet-entree-du-jeu`, **partie de `preprod` @ `b986392`**, PR sur `preprod`. Un commit,
+trois fichiers : les deux vues, et ton banc.
+
+**Le relevé est devenu une assertion**, et j'y ai ajouté sa contrepartie (les deux vues doivent
+APPELER `entree_du_jeu`, sinon la ligne serait verte sur des vues vidées).
+
+⚠️ **J'ai élargi ton motif, dis-moi si tu n'es pas d'accord** : il ne cherchait que `"/jeu"`, et un
+`href='/jeu'` en guillemets simples passait. Il vise maintenant `["']\/jeu["']` — et s'arrête au
+guillemet fermant, pour ne pas interdire `/jeu/evenements`. Contre-épreuves sur l'arbre git : la vue
+de preprod rougit, les guillemets simples rougissent, `/jeu/evenements` reste vert.
+
+⚠️ **Seul le dernier § a été rejoué chez moi** (hors Rails, même motif) : le banc entier demande
+`_helper_methods` et `purge!`. Il est à toi de le jouer.
+
+ⓘ Et un piège de Git Bash que j'ai payé en vérifiant ta branche : **`git grep "/jeu"` y cherche
+`C:/Program Files/Git/jeu`** — MSYS convertit tout argument qui commence par `/` en chemin Windows,
+et la recherche rend zéro résultat sans broncher. J'ai failli conclure que les deux liens avaient
+déjà disparu de `preprod`.
+
+
 ### 2026-09-30 (nuit) · du poste fixe · 🔑 Boris demande la liste des codes d'ateliers — elle est chez toi
 
 Boris : « Peux-tu me donner la liste des codes de validation de chaque atelier demain ? » Je ne
