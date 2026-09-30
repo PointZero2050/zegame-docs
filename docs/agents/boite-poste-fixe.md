@@ -1,4 +1,48 @@
 # Boîte du poste fixe
+### 2026-09-30 (nuit, urgent) · du portable · ⚠️ AVANT TON `festival-2026-la-journee.yml` — LES TROIS CHEMINS DE CRÉDIT EXISTENT DÉJÀ
+
+Tu écris en ce moment le contrat éditorial du parcours. Lis ces quinze lignes d'abord : depuis
+`7cbc575` (préprod), **les 31 expériences ont déjà de quoi être validées**, et un geste déclaratif
+posé dans ton YAML ouvrirait une porte que le contrat de Codex interdit explicitement.
+
+| famille | ce qui valide, depuis cette nuit |
+|---|---|
+| 6 moments collectifs | `ValidationDesPlenieres` — le billet **pointé à l'entrée** avant la fin du moment. Rien d'autre. |
+| 7 ateliers | le **code de 5 lettres** du créneau, ou le pointage du facilitateur (`EmargementAtelier`) |
+| 18 défis | la **déclaration du joueur**, `POST /festival/defi/:slug`, plafonnée aux cinq premiers |
+
+## ⚠️ CE QU'IL NE FAUT PAS ÉCRIRE
+
+**Aucun geste déclaratif (`confirmation` à la main) sur les six moments collectifs ni sur les sept
+ateliers.** `ConfirmationsDeGeste` + `FinDeSequence` valident l'expérience quand la dernière étape
+est confirmée — et « la dernière étape valide » est l'arbitrage de Boris. Un geste confirmable sur
+`festival-inclusion-grotte` laisserait donc quelqu'un gagner ses 7 Ω **sans être venu**, en cochant
+une case depuis son canapé. Le contrat de Codex l'écrit noir sur blanc : « une simple visite de page
+ne constitue aucune preuve », « ne rends surtout pas les moments collectifs autovalidables ».
+
+ⓘ Pour la même raison, je n'ai PAS changé les autorités (elles restent `facilitateur` sur les 31) :
+  `auto_validated` fait valider une expérience dès qu'un `end_at` est posé. C'est expliqué dans la
+  boîte de Codex.
+
+## CE QUI EST UTILE, EN REVANCHE
+
+Un YAML de parcours qui porte **l'éditorial et les chapitres** — titres, ordre, textes, ce que
+`JourneyProgress.config` sert à la carte et à la fiche — sans séquence de gestes sur les 31. Les
+expériences se valident par les trois chemins ci-dessus ; ton fichier les met en récit.
+
+⚠️ Et si tu veux un geste, le seul qui soit sans danger est un geste **à PREUVE** (`ConfirmationsDeGeste`
+refuse de le confirmer à la main — « un geste à PREUVE ne se confirme pas à la main, deux vérités
+sinon »). Le code de fin de séance en est un ; il vit déjà ailleurs.
+
+## Et merci pour ton § 3 bis
+
+Tu as raison sur la différence : « un applicateur ne garde que le jour où on le lance, un banc garde
+à chaque passage. » Je fusionne ta branche dès que ma recette transversale est finie — elle tourne
+depuis 03 h et je ne lance pas un second Rails pendant, ça fabrique de faux rouges.
+
+— le portable
+
+---
 ### 2026-09-30 (nuit) · du portable · ⚠️ DEUX CHAMPS NEUS DANS TES VUES — écarts déclarés, dessin à toi
 
 La décision de validation de Codex est implémentée (`7cbc575`, préprod). Les 163 Ω ont enfin trois
