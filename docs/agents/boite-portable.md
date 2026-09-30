@@ -1,110 +1,77 @@
 # Boîte du portable
 
-### 2026-09-30 · du poste fixe · 📣 PR #366 — le billet passe à UN MILLIARD, et la billetterie ne suit pas
+### 2026-09-30 · du poste fixe · 📣 PR #366 — le billet à UN MILLIARD, la billetterie annonce SON montant
+
+⚠️ **Ce message remplace celui que j'avais déposé il y a une heure** (même PR, même branche) :
+Boris a tranché entre-temps, et la branche a été réécrite. Ne te fie pas à une copie plus ancienne.
 
 Boris ce soir : « L'article sur le milliard est en ligne mais il sert toujours la page à
 250 000 euros. Modifie-la pour barrer les 250 000 et mettre un milliard. Le texte pour voir
-le film est en noir sur cette page, il faut le passer en blanc. » Puis : « Il faut
-probablement passer par portable, mais prépare la page. » — donc **c'est à toi de déployer**.
+le film est en noir sur cette page, il faut le passer en blanc. » Puis, après que je lui ai
+remonté l'écart : **« La billetterie annonce son propre montant. »** Et : « Il faut
+probablement passer par portable, mais prépare la page » — **c'est à toi de déployer**.
 
 **https://github.com/PointZero2050/pointzero-app/pull/366** · branche
-`prix-du-billet-un-milliard`, **partie de `main`**, un seul commit, quatre fichiers. Les
-quatre sont identiques entre `main` et `festival-details-j-1` : elle s'applique des deux
+`prix-du-billet-un-milliard`, **partie de `main`**, un commit (`4c27b53`), quatre fichiers.
+Les quatre sont identiques entre `main` et `festival-details-j-1` : elle s'applique des deux
 côtés, et la promotion n'emporte rien d'autre.
 
-## ⚠️ CE QUI N'EST PAS UN DÉTAIL D'INTÉGRATION, ET QUI EST À BORIS
+## Ce que l'arbitrage donne, et pourquoi il fallait l'arbitrage
 
-Le prix annoncé **ne peut plus venir de la base**. `prix_centimes` est un `integer` de
-4 octets : **21 474 836,47 € au maximum**, un milliard en est quarante-sept fois trop loin.
-Et Stripe ne le prendrait pas davantage — `unit_amount` plafonne à 99 999 999, soit
-**999 999,99 € la ligne**. Le montant s'écrit donc dans la vue ; la base garde le sien.
+Le prix annoncé **ne peut pas venir de la base** : `prix_centimes` est un `integer` de
+4 octets — **21 474 836,47 € au maximum**, un milliard en est quarante-sept fois trop loin —
+et Stripe plafonne à **999 999,99 € la ligne**. La page porte donc deux nombres :
 
-**Conséquence, en clair : la page annonce un milliard, la billetterie prélèverait
-250 000 €.** C'est le seul endroit du site où « ce qu'on annonce » et « ce qu'on prélève »
-divergent — et c'est exactement ce que le commentaire du formulaire interdit depuis le
-tarif privé. L'écart est **déclaré** (en-tête du partiel, écart 4 ; note finale du banc),
-pas dissimulé, mais il attend un arbitrage. Trois suites, au choix de Boris :
+| | valeur | d'où elle vient | où elle paraît |
+|---|---|---|---|
+| **prix annoncé** | 1 000 000 000 € | **écrit** dans la vue | la ligne tarifaire, et **là seulement** |
+| **montant prélevé** | 250 000 € | **lu** en base (ou le tarif privé) | la note de cette ligne, le CTA, le bouton d'envoi |
 
-1. fermer les inscriptions — le Festival est demain ;
-2. laisser la billetterie annoncer son propre montant, distinct du prix affiché ;
-3. migrer la colonne en `bigint` — **ça ne règle que la moitié** : Stripe reste à
-   999 999,99 €, donc la session de paiement échouerait.
+La note dit : « La billetterie, elle, s'arrête à 250 000 €. »
 
-Je n'ai tranché aucune des trois : `montant_centimes`, la migration et Stripe sont chez toi,
-et le choix est à Boris. **Je le lui ai dit dans la même réponse que la livraison.**
-⚠️ Si tu déploies avant qu'il ait répondu, la billetterie est ouverte sous un titre à un
-milliard. Ça ne prélève jamais plus que ce qui est en base — mais il faut le savoir.
+⚠️ **Aucun montant prélevé n'est écrit dans une vue** — ta règle du tarif privé ne bouge pas.
+L'écart se **dit** sur la page, il ne se subit pas au débit. Boris a écarté les deux autres
+suites : fermer les inscriptions, ou migrer la colonne en `bigint` (qui n'aurait réglé que la
+moitié, Stripe restant à 999 999,99 €). **Rien à migrer, rien à toucher côté Stripe.**
+ⓘ Un tarif privé n'a qu'UN montant : la personne paie un prix réel, la page l'annonce, la
+note ne paraît pas. Branche inchangée, assertion par assertion.
 
-## Ce que la branche fait, et ce que j'ai mesuré
+## Le reste
 
-| | avant | après |
-|---|---|---|
-| titre | Finalement, **2 500 €** n'étaient… | Finalement, **250 000 €** n'étaient… |
-| barré | 2 500 € | **250 000 €** |
-| prix annoncé (×3) | 250 000 €, lu en base | **1 000 000 000 €**, écrit |
-| lien de contexte | chronique de 2 500 € | **chronique du milliard** |
-| libellé du film | `var(--ink)` sur fond `--night` | **blanc** |
+Le titre abandonne 250 000 € ; le barré vaut 250 000 € ; le lien de contexte renvoie à la
+chronique du jour ; le libellé du film passe en blanc.
 
-Marge entre le nombre et le bord de sa colonne, page servie en production avec la feuille
-locale branchée : **6 px à 320, 11 à 375, 31 à 414, 40 à 600, 111 à 1280**. Aucun
-défilement horizontal. Quinze signes là où « 250 000 € » en faisait neuf : le bloc passe à
-la ligne, et sous 600 px le nombre descend avec `min(44px,11.8vw)` — une taille fixe à
-44 px ne laissait que 4 px à 360.
+## Mesures
 
-⚠️ `dialogue-video.css` est **partagée avec l'accueil**, qui est sur fond clair : je ne l'ai
-pas touchée. La surcharge passe par `.festival-card .button-video`, (0,2,0) contre (0,1,0) —
-l'ordre de chargement ne décide de rien et l'accueil ne bouge pas d'un pixel.
+Page servie en production, feuille locale branchée. Marge entre le nombre et le bord de sa
+colonne : **6 px à 320, 11 à 375, 31 à 414, 40 à 600, 111 à 1280**, aucun défilement
+horizontal. Quinze signes là où « 250 000 € » en faisait neuf : le bloc passe à la ligne, et
+sous 600 px le nombre descend avec `min(44px,11.8vw)` — une taille fixe à 44 px ne laissait
+que 4 px à 360.
 
-## Les bancs, et ce qu'ils ne gardent plus
+⚠️ **`.price-note` n'avait AUCUNE règle**, et `.price span { color:var(--gold) }` la peignait
+en or en (0,1,1) : le montant prélevé serait sorti dans la couleur du prix annoncé, les deux
+nombres se confondant — exactement ce que cette note existe pour éviter. La nouvelle règle est
+en (0,2,0) et ne touche pas la page à tarif privé.
+⚠️ `dialogue-video.css` est **partagée avec l'accueil** (fond clair) : pas touchée, la
+surcharge passe par `.festival-card` en (0,2,0).
 
-`verifier_festival_inscription` § 4 bis gardait « les trois endroits LISENT la base ». **La
-contre-épreuve est retournée, pas perdue** : le banc pose toujours deux prix différents en
-base et exige que les deux pages annoncent le **même** montant — une vue retombée sur la
-base en rendrait deux et la boucle rougirait. Assertion neuve : « le montant de la base
-n'est plus annoncé », la **première à retourner** le jour où la colonne pourra le porter.
-Le barré et le prix annoncé sont désormais **lus dans la page** et comparés entre eux.
-`verifier_tarif_prive` §§ 5 et 6 suivent ; la branche « tarif privé » est inchangée,
-assertion par assertion — un tarif privé reste LU, c'est un montant qu'on prélève vraiment.
+## Bancs
+
+`verifier_festival_inscription` § 4 bis garde **les deux régimes à la fois** : deux prix
+différents en base, l'annonce doit être le **même** sur les deux pages, le prélevé **différent**.
+Une assertion que j'avais d'abord écrite comparait `e.prix_affiche` à la constante — elle
+n'aurait **jamais pu rougir**, la colonne ne pouvant pas porter un milliard ; elle est
+remplacée par une lecture du fort et de la note *dans* la page. Les treize motifs ont été
+éprouvés hors ligne et **les trois contre-épreuves rougissent** (note retirée, note recopiant
+l'annonce, fort retombé sur la base). `verifier_tarif_prive` §§ 5 et 6 suivent.
 
 ## ⚠️ NON ÉPROUVÉ CHEZ MOI
 
 **Le gabarit n'a pas été rendu par Rails.** Il compile (Erubi, blocs `do` traités comme le
-fait le gestionnaire de Rails) et la seule expression Ruby touchée a été évaluée — mais le
-rendu et les bancs se mesurent au déploiement. Les deux bancs passent `ruby -c`.
+fait le gestionnaire de Rails) et l'expression Ruby ajoutée a été évaluée — mais le rendu et
+les bancs se mesurent au déploiement. Les deux bancs passent `ruby -c`.
 
-## 2026-09-30 · du poste fixe · 📣 PR #365 — l'article du milliard, SEUL, sur `main`
-
-Boris m'a dit « Publie » pour le dernier article de la série sur le prix du billet.
-
-⚠️ **Publier depuis `festival-details-j-1` aurait déplacé DIX-HUIT commits en production, la veille
-du Festival.** J'ai donc ouvert une branche qui part de `origin/main` et n'en porte que **trois** :
-les cinq illustrations dérivées, la chronique, la cédille du premier mot. Le cherry-pick est passé
-sans un conflit — ces trois-là ne touchent que du contenu, des assets, un banc et l'outil de
-dérivation.
-
-**[PR #365](https://github.com/PointZero2050/pointzero-app/pull/365) → `main`.** La promotion est à
-toi ; rien n'est déployé.
-
-## Deux choses que la branche NE porte pas, et la seconde n'est pas mon arbitrage
-
-1. Le contrat de parcours, la coque PWA, les trois bascules de coque, la page de repli : ils
-   demandent ta recette, et ce n'est pas le soir.
-2. ⚠️ **Les CGU** — Codex écrit « Ne publie pas encore » : téléphone professionnel, régime des
-   mineurs, médiateur effectivement conventionné, et **l'enregistrement en base de la version
-   acceptée, qui est chez toi**. Les faire partir avec l'article les publierait contre son avis.
-
-## Ce qui attend toujours dans `festival-details-j-1` (15 commits)
-
-Rien n'a changé depuis mon message précédent, sauf que l'article en est maintenant retiré de fait
-(il partira par #365, et la fusion se fera sans conflit — même contenu, même empreinte).
-
-ⓘ `scripts/verifier_article_milliard_euros.rb` se joue l'application en marche : il demande la page
-  publique, les cinq images **et leur réponse HTTP**, et vérifie que les deux aînées n'ont pas
-  bougé (10 et 15 sections, comptées dans les fichiers).
-
-— le poste fixe
-
----
 ### 2026-09-30 (soir) · du poste fixe · ⚠️ LE COMPTE FACILITATEUR EST TRAITÉ COMME UN JOUEUR MI-E1, SANS ÊTRE INSCRIT NULLE PART
 
 Boris teste la vue facilitateur et signale : « si un facilitateur veut aller directement dans
