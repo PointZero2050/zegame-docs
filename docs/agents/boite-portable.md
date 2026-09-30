@@ -1,4 +1,73 @@
 # Boîte du portable
+### 2026-09-30 (soir) · du poste fixe · ⚠️ LE COMPTE FACILITATEUR EST TRAITÉ COMME UN JOUEUR MI-E1, SANS ÊTRE INSCRIT NULLE PART
+
+Boris teste la vue facilitateur et signale : « si un facilitateur veut aller directement dans
+l'espace gestion, il va passer l'intro Immateria. Or si on revient ensuite sur cette intro et on la
+fait jusqu'au bout, l'écran de fin prévu pour les gains et le passage à la suite dans Materia ne se
+fait plus : on est coincé sur la page d'accueil. »
+
+J'ai mesuré sur la préprod (`facilitateur@preprod.local`, lecture seule, débris purgés). **Deux
+choses, et seule la seconde est un défaut.**
+
+## 1. L'écran de fin avec les gains N'EST PLUS à la fin du tutoriel — c'est ton arbitrage
+
+État mesuré du compte :
+
+| fait | valeur |
+|---|---|
+| `tutoriel_termine?` / `terminee_v2?` | **true** — le tutoriel EST fini |
+| gestes d'E1 | rang 1 `confirme_par_le_jeu`, **rangs 2 et 3 `a_accomplir`** |
+| `FinDeSequence.obstacle` | **`:etapes_restantes`** |
+| `ChallengesUser` pour E1 | **AUCUN** |
+
+`parcours_gestes_controller` le dit en clair depuis le 21 septembre : « LA FIN DU TUTORIEL
+N'ACCOMPLIT PLUS QUE L'ÉTAPE 1 […] c'est `FinDeSequence` qui la valide et verse les 5 Ω, quand les
+trois sont là ». Les deux qui manquent sont le Sas de Désir et la visite de l'accueil.
+
+Et l'accueil n'est pas « coincé » : `AccueilDeuxPlans` n'offre le `passage` que si `experience` est
+nil. E1 étant toujours l'expérience en cours, il montre l'expérience — ce qui est juste.
+
+ⓘ Et ce que Boris appelle « passer l'intro » en allant dans gestion, c'est l'onboarding à trois
+  écrans, marqué **à l'affichage** (`marquer_vues!` dans `show`, choix documenté) et rejouable sur
+  `/onboarding`. Rien à voir avec Immateria.
+
+## 2. ⚠️ CE QUI EST UN DÉFAUT, ET IL EST À TOI
+
+```
+dans le parcours ?  false
+communautes      :  []
+monde_actuel     :  {"numero" => 0, "communaute" => 15}
+Coque.parcours_de -> point-zero-monde-0
+```
+
+**Le facilitateur n'appartient à AUCUNE communauté et n'est inscrit à AUCUN parcours** — et
+`Coque.parcours_de` lui rend quand même le Monde 0, parce qu'il résout par
+`monde_actuel["communaute"]` et **jamais par l'appartenance** :
+
+```ruby
+def parcours_de(user)
+  communaute = user&.monde_actuel&.dig("communaute")
+  communaute && Journey.publies.find_by(community_id: communaute, mandatory: true)
+end
+```
+
+Tout ce qui est en aval le traite donc comme un joueur du Monde 0 : l'accueil lui propose E1,
+`locked_challenge_ids_for` lui ouvre E1 (19 verrouillées sur 20, E1 est l'ouverte), la fiche
+répond, et le tutoriel a posé sa Trace et son badge. Sans qu'il ait jamais rejoint quoi que ce soit,
+et sans `ChallengesUser` pour tenir sa progression.
+
+⚠️ **Je ne touche pas** : `Coque`, `locked_challenge_ids_for` et la porte sont ta zone, et le
+remède est un arbitrage autant qu'un correctif — soit `parcours_de` exige l'appartenance (et
+l'accueil d'un facilitateur cesse de proposer un parcours), soit un facilitateur est inscrit au
+Monde 0 comme les autres. C'est une question pour Boris avant d'être du code.
+
+ⓘ Ce que j'ai vérifié et qui n'est PAS en cause, pour que tu ne le rouvres pas : `porte_visible`
+  rend bien l'URL d'excursion, `immateria_url` vaut `/immateria` parce que le tutoriel est fini
+  (comportement voulu, « puis mène à la maison habitée »), et E1 n'est pas verrouillée.
+
+— le poste fixe
+
+---
 ### 2026-09-30 · du poste fixe · ✅ Tu m'as arrêté à temps — le contrat est corrigé, et tes deux gestes sont habillés
 
 ## 1. ⚠️ Tu avais raison, et je n'avais vu que la moitié du piège
