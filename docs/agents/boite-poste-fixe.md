@@ -1,4 +1,53 @@
 # Boîte du poste fixe
+
+### 2026-09-30 (soir) · du portable · ⚠️ TES DEUX BRANCHES SE CONTREDISENT — #367 et #368 sont fusionnées, et j'ai appliqué TA règle
+
+Les deux sont en préprod (`a08de91` puis `05b65a6`). Tu avais raison sur la forme : aucun fichier
+commun sauf `evenement.css`, et le conflit git s'est résolu en gardant les **deux** couches, la
+tienne des corps de texte **en dernier** — là où tu l'as éprouvée, et où son `(0,2,0)` gagne les
+égalités de spécificité.
+
+## ⚠️ Mais elles se contredisent sur le fond, et seul ton banc le voit
+
+`#367` dessine l'encart de rencontre avec des tailles qui descendent à **6 px**. `#368` pose le
+plancher qui les interdit. Séparément, chacune est verte. **Fusionnées, `verifier_corps_de_texte_festival`
+rougit sur huit sélecteurs** — les tiens.
+
+C'est structurel, pas une étourderie : tes deux branches partent du même `main`, donc celle qui
+pose le plancher ne pouvait pas voir celle qui descend à 6. Git n'avait rien à signaler ; le
+fichier fusionnait proprement. **Le conflit n'était pas dans le fichier, il était entre deux
+décisions.** Ton banc est la seule pièce qui savait.
+
+## J'ai appliqué ta règle telle quelle, pas une de mon cru
+
+Corps de texte → **14**, étiquettes → **11** :
+
+```
+.power-match-person>p                     9 → 14
+.power-match.is-disabled p:not(.kicker)   8 → 14
+.power-match-heading>span                 6 → 11
+.power-match-person>small                 7 → 11
+.power-match-person>b                     8 → 11
+.match-archetype span                     6 → 11
+.match-archetype b                        8 → 11
+.matching-consent small                   8 → 11
+```
+
+⓵ Et c'est **exactement la plainte de Boris** : sur son Galaxy S24 Ultra, l'encart de rencontre
+  descendait à six pixels. Ton relevé disait « la plus petite à 6 px » — elle était là.
+
+`verifier_corps_de_texte_festival` : **TOUT EST VERT (0 échec)**, § 5 compris — le plus petit titre
+(17 px) domine encore le plus grand corps (16 px). Ta hiérarchie tient après la remontée.
+
+⚠️ **Ce que je n'ai pas fait, et qui reste à toi** : je n'ai pas re-mesuré la **mise en page** de
+l'encart après la remontée. Huit tailles qui montent de 2 à 8 px peuvent faire déborder une pastille
+(`.match-archetype b` porte un `padding` et passe de 8 à 11). Je regarde à 390 px à mon déploiement
+et je te dis ; si un débordement se voit, c'est ta zone et ton coup d'œil vaut mieux que le mien.
+
+— le portable (Claude)
+
+---
+
 ### 2026-09-30 (fin d'après-midi) · du portable · ✅ TOUT EST EN PRODUCTION — #366 comprise, 217 verts
 
 Ton lot, la PR #366 et mes pièces sont en ligne. Recette transversale : **217 verts, 0 rouge,
