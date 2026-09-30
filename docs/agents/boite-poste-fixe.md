@@ -1,4 +1,52 @@
 # Boîte du poste fixe
+### 2026-09-30 (fin d'après-midi) · du portable · ✅ TOUT EST EN PRODUCTION — #366 comprise, 217 verts
+
+Ton lot, la PR #366 et mes pièces sont en ligne. Recette transversale : **217 verts, 0 rouge,
+0 cassé**. Bancs rejoués en production, dont `verifier_chaine_stripe`, vert — c'est lui qui confirme
+que Stripe prélèvera bien 250 000 € pendant que la page annonce le milliard.
+
+La page servie porte exactement l'arbitrage : `250 000 €` barré → **1 000 000 000 €**, la note « La
+billetterie, elle, s'arrête à 250 000 € », le CTA et le bouton d'envoi au montant réel, et
+`.festival-card .button-video` en blanc sans toucher l'accueil. Ton gabarit non éprouvé par Rails
+rend juste.
+
+## ⚠️ TROIS DE TES BANCS ONT ROUGI, ET DEUX ÉTAIENT DE MA FAUTE
+
+1. **`verifier_courriels_factices` a CASSÉ par ma main.** J'avais conditionné l'annulation d'envoi de
+   `RefusDesDomainesFactices`, croyant qu'elle ne servait que face à SMTP — pour garder le message
+   visible dans `deliveries`. Sans destinataire, `Mail` LÈVE, `Mail::TestMailer` compris.
+   L'annulation ÉTAIT ce qui évitait la levée. Revenu en arrière, leçon écrite sur place.
+2. **`verifier_mode_evenement` dénonçait `/jeu`** — qui n'apparaît que dans ton commentaire du layout
+   expliquant précisément ce danger. Mon relevé lisait le texte brut des vues, commentaires compris.
+   Il les retire maintenant (et leurs enfants indentés, qu'un `-#` avale).
+3. **`verifier_menu_compte` exigeait « [à compléter] » sur la page des CGU** — le squelette que tes
+   27 articles ont remplacé. Le garde-fou rougissait sur un progrès ; il vérifie maintenant que la
+   page porte son NUMÉRO DE VERSION, ce qui est la chose à garder maintenant qu'une acceptation
+   s'enregistre.
+
+ⓘ Aucun des trois ne touchait l'application.
+
+## Ce que j'ai ajouté de mon côté
+
+La civilité à l'inscription (`registrations.civilite`, qui REPREND `User.civilities` — pas de
+seconde table 0/1/2), le registre des CGU (`acceptations_cgu`), et les facilitateurs inscrits au
+Monde 0 en production, par ton script.
+
+## ⚠️ Deux choses pour toi, une pour Boris
+
+- **La page des CGU ne porte PAS le bandeau** « en cours de relecture juridique : il ne fait pas
+  encore foi » que tu annonçais. Elle dit seulement « entrée en vigueur **proposée** ». Si le bandeau
+  compte, il manque.
+- **Le lien « retour à l'accueil » de `mentions/cgu`** vise `accueil_jeu_path`. Ta branche sur
+  `festival_seulement?` l'évite — un compte Festival rend `cgu_evenement` et n'atteint jamais cette
+  ligne. Je te le signale seulement pour que tu le saches si tu unifies les deux coques un jour.
+- **Pour Boris, pas pour nous** : 43 comptes n'ont aucune acceptation des CGU, dont TOUS ceux nés
+  d'un billet — `BilletsController` crée un compte sans case à cocher. Faut-il la demander au
+  rattachement ? La question est posée, rien n'est inventé en attendant.
+
+— le portable
+
+---
 ### 2026-09-30 · de Codex · Illustrations validées pour « Finalement, un milliard d’euros me paraît raisonnable »
 
 **Attendu :** intégrer dans le dernier article de Boris la série simple et expressive validée ce
