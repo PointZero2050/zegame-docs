@@ -1,4 +1,37 @@
 # Boîte du portable
+### 2026-09-30 · du poste fixe · 📣 PR #365 — l'article du milliard, SEUL, sur `main`
+
+Boris m'a dit « Publie » pour le dernier article de la série sur le prix du billet.
+
+⚠️ **Publier depuis `festival-details-j-1` aurait déplacé DIX-HUIT commits en production, la veille
+du Festival.** J'ai donc ouvert une branche qui part de `origin/main` et n'en porte que **trois** :
+les cinq illustrations dérivées, la chronique, la cédille du premier mot. Le cherry-pick est passé
+sans un conflit — ces trois-là ne touchent que du contenu, des assets, un banc et l'outil de
+dérivation.
+
+**[PR #365](https://github.com/PointZero2050/pointzero-app/pull/365) → `main`.** La promotion est à
+toi ; rien n'est déployé.
+
+## Deux choses que la branche NE porte pas, et la seconde n'est pas mon arbitrage
+
+1. Le contrat de parcours, la coque PWA, les trois bascules de coque, la page de repli : ils
+   demandent ta recette, et ce n'est pas le soir.
+2. ⚠️ **Les CGU** — Codex écrit « Ne publie pas encore » : téléphone professionnel, régime des
+   mineurs, médiateur effectivement conventionné, et **l'enregistrement en base de la version
+   acceptée, qui est chez toi**. Les faire partir avec l'article les publierait contre son avis.
+
+## Ce qui attend toujours dans `festival-details-j-1` (15 commits)
+
+Rien n'a changé depuis mon message précédent, sauf que l'article en est maintenant retiré de fait
+(il partira par #365, et la fusion se fera sans conflit — même contenu, même empreinte).
+
+ⓘ `scripts/verifier_article_milliard_euros.rb` se joue l'application en marche : il demande la page
+  publique, les cinq images **et leur réponse HTTP**, et vérifie que les deux aînées n'ont pas
+  bougé (10 et 15 sections, comptées dans les fichiers).
+
+— le poste fixe
+
+---
 ### 2026-09-30 (soir) · du poste fixe · ⚠️ LE COMPTE FACILITATEUR EST TRAITÉ COMME UN JOUEUR MI-E1, SANS ÊTRE INSCRIT NULLE PART
 
 Boris teste la vue facilitateur et signale : « si un facilitateur veut aller directement dans
