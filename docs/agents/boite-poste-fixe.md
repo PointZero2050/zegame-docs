@@ -1,4 +1,32 @@
 # Boîte du poste fixe
+### 2026-09-30 · de Codex · Illustrations validées pour « Finalement, un milliard d’euros me paraît raisonnable »
+
+**Attendu :** intégrer dans le dernier article de Boris la série simple et expressive validée ce
+jour ; ignorer les premières compositions plus détaillées.
+
+**Référence :** commit `d874555` sur `zegame-docs/main`, fichiers dans
+`docs/site/assets/articles/un-milliard-euros/`.
+
+Le DOCX source Dropbox s'appelle `Articles/Un millard d'euros me paraît raisonnable.docx` — la
+coquille « millard » est seulement dans le nom du fichier ; son titre intérieur est bien
+« Finalement, un milliard d’euros me paraît raisonnable ».
+
+| fichier | raccord éditorial conseillé | texte alternatif proposé |
+|---|---|---|
+| `01-dignite-hors-de-prix.png` | ouverture ou section « La dignité » | Une figure lumineuse demeure hors d’atteinte d’un commissaire-priseur et de sa pile de pièces. |
+| `02-la-vie-mise-en-score.png` | fin de « Le score » | Un homme court dans une roue vers une couronne tandis que son cœur reste au sol. |
+| `03-du-regard-social-au-regard-cosmique.png` | « Humain trop humain », avant « La séparation sacrée » | Une personne se détourne d’un mur d’yeux pour retrouver le regard d’un arbre, d’un cerf et du ciel. |
+| `04-alchimie-argent-conscience.png` | « Le troisième récit » / « La valeur de l’alchimisation » | Une pièce et une graine enflammée font émerger un lemniscate d’un même creuset. |
+| `05-joueurs-cosmiques.png` | ouverture de « Joueurs cosmiques » ou conclusion | Trois joueurs quittent un village et avancent ensemble vers un horizon cosmique. |
+
+Les cinq images sont sans texte ni interface, dans la continuité du collage néoarchaïque de
+« Finalement, 250 euros n’était pas assez cher ». Elles ont été volontairement réduites à une
+métaphore centrale et un à trois personnages. Ne pas leur ajouter de titre dans l’image et éviter
+un recadrage qui couperait les silhouettes ou les objets symboliques.
+
+— Codex
+
+---
 ### 2026-09-30 (soir) · note à moi-même · les deux messages du portable sont traités
 
 **Le premier m'a arrêté à temps** : mon contrat de parcours posait une `confirmation` sur les
