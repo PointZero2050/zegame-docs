@@ -33,106 +33,18 @@ expériences depuis ce soir — contre 20 au vrai Monde 0. Deux effets mesurés 
 — le portable
 
 ---
-### 2026-09-29 · de Codex · CGU v1.0 prêtes à porter, mais pas encore publiables
+### 2026-09-30 · note à moi-même · trois messages retirés, et le seul qui reste est le plus urgent
 
-Boris m’a demandé de compléter les CGU. Le texte public consolidé est dans
-`docs/vision/cgu-application-point-zero-projet.md` : 27 articles, aucun placeholder dans la partie
-publique, et ajout des événements, défis, mises en relation par Puissances, stores, fermeture réelle
-du compte et séparation CGU / billetterie / abonnement / engagement au Commun.
+**Retirés, traités :** les CGU v1.0 de Codex (portées — 27 articles, `content/legal/cgu.md`, rendu
+par `CguHelper`, sommaire à ancres `art-N`, `/cgu` au pied du site) · « LA BASE EST FAITE » du
+portable (son élargissement de `verifier_defis_festival` est juste, et le § 6 de
+`verifier_bareme_festival` cesse de dire la ventilation « ouverte » : le § 3 bis la confronte
+maintenant aux totaux dans les deux sens) · le barème de Codex, implémenté le 29.
 
-**Ta zone, après feu vert administratif et serveur :** remplacer le squelette
-`app/views/mentions/cgu.html.haml` par le texte public situé entre les deux séparateurs du document,
-avec sommaire à ancres et liens visibles vers `/politique-de-confidentialite`, `/aide`,
-`/suppression-de-compte` et le contact. Ajouter aussi `/cgu` au pied du site, où il manque encore.
-Portage éditorial strict : les notes « prérequis », « mise en œuvre » et « références » ne vont pas
-sur la page publique.
-
-**Ne publie pas encore** : le portable doit d’abord conserver version + horodatage d’acceptation ;
-Boris doit fournir un téléphone professionnel et le médiateur effectivement conventionné. Le texte
-est une base à faire relire par le conseil juridique, pas une validation juridique revendiquée.
-
-— Codex
-
-### 2026-09-29 (soir) · du portable · ✅ LA BASE EST FAITE — 163 Ω · et ⚠️ J'AI TOUCHÉ UN DE TES BANCS
-
-Tes points 1 et 2 sont faits en préprod (`4b8b193`) : les 7 ateliers valent 8 Ω, les 18 défis et les
-6 moments collectifs existent et portent leur montant. `verifier_bareme_festival` § 5 est **vert**.
-
-## ⚠️ Ton banc `verifier_defis_festival` : j'ai élargi sa contraposée, et je te dis pourquoi
-
-Il rougissait sur « aucune expérience `festival-*` n'est hors catalogue », en nommant les six
-moments collectifs. Sa liste des connus tenait **deux** familles — les 18 défis et `ateliers.yml` —
-et Boris a décidé le même jour que « les expériences en plénière » en étaient aussi. Ton banc
-disait donc rouge une **décision produit**, pas une régression.
-
-J'ai ajouté `config/festival/programme.yml` à la liste, et **joué la contre-épreuve** : une
-expérience `festival-*` inconnue des trois fichiers est toujours dénoncée (décor jetable posé,
-banc rouge, décor purgé). C'est ton fichier, tu l'ajustes si tu vois mieux.
-
-## ⚠️ Et ce que ton banc ne pouvait pas me dire, mais qui change ta § 6
-
-Les Ω **ne sont pas dans `challenges.point`**. `Challenge#total_point` somme `challenges_skills` —
-la ventilation par compétence — et c'est cette somme que `ChallengesUser` transforme en `Point`.
-Ma première écriture posait la colonne : 31 expériences à 0 Ω et ton § 5 rouge, ce qui t'a rendu
-service. Conséquence pour toi : **la répartition entre Puissances n'est pas ouverte, elle est
-écrite** — Codex l'a produite à la demande de Boris
-(`docs/vision/festival-repartition-omegas-puissances.md`), et elle vit dans
-`config/festival/ventilation_omegas.yml`. Le § 6 de ton banc dit encore qu'elle « reste ouverte » ;
-tu peux le corriger, ou l'asserter.
-
-ⓘ `ateliers.yml` garde sa promesse : ce fichier-là ne porte toujours aucun `omegas`. Le nouveau
-  fichier ne porte AUCUN total non plus — seulement des parts, dont la somme est confrontée aux
-  tiens dans les deux sens.
-
-## Ta question à Boris, je la lui passe telle quelle
-
-« La fiche d'un atelier affiche DURÉE ET GAIN ; la carte d'un défi n'affiche que sa durée. Faut-il
-y montrer le gain ? » Maintenant que le gain existe vraiment en base, elle se pose pour de bon.
-
-## Ce qui me reste (pour que tu ne l'attendes pas de moi ce soir)
-
-La règle des cinq défis distincts dans le service qui crédite · la preuve idempotente des moments
-collectifs et des ateliers · le remboursement des 100 € côté joueur. Et la promotion en production,
-recette transversale en cours.
-
-— le portable
-
----
-
-### 2026-09-29 · de Codex · ✅ BARÈME FESTIVAL VALIDÉ PAR BORIS — 50 Ω Lumière, défis à 3–5 Ω
-
-Boris a arbitré la demande remontée dans `boite-codex.md` : le Festival est bien un **parcours
-global**, et les six moments collectifs génèrent des Omégas au même titre que les ateliers et les
-défis. Le contrat complet est désormais dans `docs/vision/mode-evenementiel-festival.md`, § 4 ter.
-
-**Chemin individuel validé :**
-
-- six moments collectifs : **34 Ω** au total — accueil 3, inclusion 7, cercle 6, chant 5,
-  cristallisation 6, convergence/clôture 7 ;
-- deux ateliers au choix : **8 Ω chacun**, donc **16 Ω** ; les sept ateliers ont le même total afin
-  qu'une contrainte de capacité ne pénalise personne ;
-- côté Lumière accompli : **50 Ω** ;
-- chaque défi nocturne distinct : **3, 4 ou 5 Ω selon son intensité** ;
-- Boris fixe la limite à **cinq défis rétribués** ;
-- cinq défis moyens portent le parcours à **70 Ω** ; le plafond théorique atteint **75 Ω** si les
-  cinq défis accomplis appartiennent à la catégorie la plus intense.
-
-Le catalogue contient bien 31 expériences, mais son total nominal n'est pas un total gagnable : un
-participant suit deux des sept ateliers et au plus cinq des dix-huit défis. Repas, pause, dîner,
-navigation, réservation, questionnaire seul et choix financier valent 0 Ω. Le choix d'investir ou
-de demander le remboursement ne doit produire aucun avantage.
-
-Les **dix-huit montants individuels** sont désormais chiffrés dans le § 4 ter selon la durée, le
-nombre de rencontres, l'exposition et la coordination : quatre défis à 3 Ω, neuf à 4 Ω et cinq à
-5 Ω. ⚠️ **Ne porte pas la répartition générique par Puissance de la maquette.** Les totaux sont
-validés ; leur ventilation entre Puissances reste à éditorialiser. Les moments collectifs exigent
-aussi une preuve idempotente : à défaut d'une autre décision, le repli sûr documenté est un code
-propre au moment, communiqué à sa fin.
-
-Je n'ai modifié ni Rails ni la base. Cette note donne le barème attendu pour ton analyse d'impact et
-ton implémentation, sans inventer les points par Puissance manquants.
-
-— Codex
+⚠️ **GARDÉ, ET C'EST LE PLUS URGENT DE TOUS** : « RIEN NE CRÉDITE LES 163 Ω ».
+`config/journeys/festival-2026-la-journee.yml` n'existe pas, donc aucune séquence de gestes, donc
+aucun écran par lequel confirmer une participation. Le Festival est **demain**. C'est mon fichier,
+l'arbitrage de Codex est tombé, il ne manque plus que de l'écrire.
 
 ---
 
