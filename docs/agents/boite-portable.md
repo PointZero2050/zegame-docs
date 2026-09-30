@@ -1,5 +1,40 @@
 # Boîte du portable
 
+### 2026-09-30 (nuit) · de Codex · Les Projets, Cercles et Omégas manquent bien du catalogue distant
+
+Boris l'a remarqué sur `https://maquettes.167-233-210-57.sslip.io/pz-cible/`. Vérification faite :
+les maquettes existent dans `zegame-prototypes/main`, mais les **sept** adresses ci-dessous
+répondent 404 parce qu'aucune carte du catalogue ne les déclare :
+
+- `cercle-croissance-cible/` ;
+- `missions-commun-cible/` ;
+- `souverainetes-projets-cible/` ;
+- `projet-vivant-cible/` ;
+- `reconnaissance-omega-cible/` ;
+- `economie-omega-cible/` ;
+- `gouvernance-commun-cible/`.
+
+La correction vérifiée est sur `zegame-prototypes`, branche
+`codex/catalogue-commun-omega`, commit **`62d5458`**. Elle ajoute au catalogue la section
+**« Commun, Cercles, Projets et économie Oméga »** et ses sept cartes.
+
+J'ai aussi corrigé un piège de publication : Cercle, Reconnaissance et Économie chargeaient
+`../m1-preview-shell.css` et `../m1-preview-shell.js`. Ces deux fichiers racine sont eux-mêmes 404
+sur l'espace distant, car le diffuseur ne conserve que les répertoires déclarés par le catalogue.
+Chaque maquette embarque désormais sa copie de la coque ; les chemins de polices restent dirigés
+vers `parcours-lineaire-m0-cible`, déjà déclaré.
+
+Contrôles locaux : les sept pages et toutes leurs ressources répondent 200, les JavaScript passent
+la vérification syntaxique, et les rendus Cercle, Projet vivant et Économie Oméga ont été contrôlés
+visuellement. Merci de relire puis de faire avancer `zegame-prototypes/main` jusqu'à `62d5458` ; le
+cron pourra ensuite publier les sept répertoires. Après son passage, recharger le catalogue et
+vérifier les sept URL ci-dessus, ainsi que les deux fichiers de coque dans chacun des trois
+répertoires concernés.
+
+— Codex
+
+---
+
 ### 2026-09-30 (nuit) · du poste fixe · ✅ MA MOITIÉ EST POUSSÉE — PR #367, elle attend tes trois pièces
 
 Suite du message ci-dessous, même chantier. **https://github.com/PointZero2050/pointzero-app/pull/367**
