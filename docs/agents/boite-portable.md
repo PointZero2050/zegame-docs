@@ -1,5 +1,78 @@
 # Boîte du portable
-### 2026-09-30 · du poste fixe · 📣 PR #365 — l'article du milliard, SEUL, sur `main`
+
+### 2026-09-30 · du poste fixe · 📣 PR #366 — le billet passe à UN MILLIARD, et la billetterie ne suit pas
+
+Boris ce soir : « L'article sur le milliard est en ligne mais il sert toujours la page à
+250 000 euros. Modifie-la pour barrer les 250 000 et mettre un milliard. Le texte pour voir
+le film est en noir sur cette page, il faut le passer en blanc. » Puis : « Il faut
+probablement passer par portable, mais prépare la page. » — donc **c'est à toi de déployer**.
+
+**https://github.com/PointZero2050/pointzero-app/pull/366** · branche
+`prix-du-billet-un-milliard`, **partie de `main`**, un seul commit, quatre fichiers. Les
+quatre sont identiques entre `main` et `festival-details-j-1` : elle s'applique des deux
+côtés, et la promotion n'emporte rien d'autre.
+
+## ⚠️ CE QUI N'EST PAS UN DÉTAIL D'INTÉGRATION, ET QUI EST À BORIS
+
+Le prix annoncé **ne peut plus venir de la base**. `prix_centimes` est un `integer` de
+4 octets : **21 474 836,47 € au maximum**, un milliard en est quarante-sept fois trop loin.
+Et Stripe ne le prendrait pas davantage — `unit_amount` plafonne à 99 999 999, soit
+**999 999,99 € la ligne**. Le montant s'écrit donc dans la vue ; la base garde le sien.
+
+**Conséquence, en clair : la page annonce un milliard, la billetterie prélèverait
+250 000 €.** C'est le seul endroit du site où « ce qu'on annonce » et « ce qu'on prélève »
+divergent — et c'est exactement ce que le commentaire du formulaire interdit depuis le
+tarif privé. L'écart est **déclaré** (en-tête du partiel, écart 4 ; note finale du banc),
+pas dissimulé, mais il attend un arbitrage. Trois suites, au choix de Boris :
+
+1. fermer les inscriptions — le Festival est demain ;
+2. laisser la billetterie annoncer son propre montant, distinct du prix affiché ;
+3. migrer la colonne en `bigint` — **ça ne règle que la moitié** : Stripe reste à
+   999 999,99 €, donc la session de paiement échouerait.
+
+Je n'ai tranché aucune des trois : `montant_centimes`, la migration et Stripe sont chez toi,
+et le choix est à Boris. **Je le lui ai dit dans la même réponse que la livraison.**
+⚠️ Si tu déploies avant qu'il ait répondu, la billetterie est ouverte sous un titre à un
+milliard. Ça ne prélève jamais plus que ce qui est en base — mais il faut le savoir.
+
+## Ce que la branche fait, et ce que j'ai mesuré
+
+| | avant | après |
+|---|---|---|
+| titre | Finalement, **2 500 €** n'étaient… | Finalement, **250 000 €** n'étaient… |
+| barré | 2 500 € | **250 000 €** |
+| prix annoncé (×3) | 250 000 €, lu en base | **1 000 000 000 €**, écrit |
+| lien de contexte | chronique de 2 500 € | **chronique du milliard** |
+| libellé du film | `var(--ink)` sur fond `--night` | **blanc** |
+
+Marge entre le nombre et le bord de sa colonne, page servie en production avec la feuille
+locale branchée : **6 px à 320, 11 à 375, 31 à 414, 40 à 600, 111 à 1280**. Aucun
+défilement horizontal. Quinze signes là où « 250 000 € » en faisait neuf : le bloc passe à
+la ligne, et sous 600 px le nombre descend avec `min(44px,11.8vw)` — une taille fixe à
+44 px ne laissait que 4 px à 360.
+
+⚠️ `dialogue-video.css` est **partagée avec l'accueil**, qui est sur fond clair : je ne l'ai
+pas touchée. La surcharge passe par `.festival-card .button-video`, (0,2,0) contre (0,1,0) —
+l'ordre de chargement ne décide de rien et l'accueil ne bouge pas d'un pixel.
+
+## Les bancs, et ce qu'ils ne gardent plus
+
+`verifier_festival_inscription` § 4 bis gardait « les trois endroits LISENT la base ». **La
+contre-épreuve est retournée, pas perdue** : le banc pose toujours deux prix différents en
+base et exige que les deux pages annoncent le **même** montant — une vue retombée sur la
+base en rendrait deux et la boucle rougirait. Assertion neuve : « le montant de la base
+n'est plus annoncé », la **première à retourner** le jour où la colonne pourra le porter.
+Le barré et le prix annoncé sont désormais **lus dans la page** et comparés entre eux.
+`verifier_tarif_prive` §§ 5 et 6 suivent ; la branche « tarif privé » est inchangée,
+assertion par assertion — un tarif privé reste LU, c'est un montant qu'on prélève vraiment.
+
+## ⚠️ NON ÉPROUVÉ CHEZ MOI
+
+**Le gabarit n'a pas été rendu par Rails.** Il compile (Erubi, blocs `do` traités comme le
+fait le gestionnaire de Rails) et la seule expression Ruby touchée a été évaluée — mais le
+rendu et les bancs se mesurent au déploiement. Les deux bancs passent `ruby -c`.
+
+## 2026-09-30 · du poste fixe · 📣 PR #365 — l'article du milliard, SEUL, sur `main`
 
 Boris m'a dit « Publie » pour le dernier article de la série sur le prix du billet.
 
