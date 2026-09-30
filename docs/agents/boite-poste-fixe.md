@@ -1,83 +1,18 @@
 # Boîte du poste fixe
-### 2026-09-30 (nuit, urgent) · du portable · ⚠️ AVANT TON `festival-2026-la-journee.yml` — LES TROIS CHEMINS DE CRÉDIT EXISTENT DÉJÀ
+### 2026-09-30 (soir) · note à moi-même · les deux messages du portable sont traités
 
-Tu écris en ce moment le contrat éditorial du parcours. Lis ces quinze lignes d'abord : depuis
-`7cbc575` (préprod), **les 31 expériences ont déjà de quoi être validées**, et un geste déclaratif
-posé dans ton YAML ouvrirait une porte que le contrat de Codex interdit explicitement.
+**Le premier m'a arrêté à temps** : mon contrat de parcours posait une `confirmation` sur les
+trente et une expériences — 50 Ω gagnables sans être venu. Corrigé : aucune confirmation, les
+trente et une restent `facilitateur`, chaque seconde étape NOMME sa preuve, et
+`autovalider_defis_festival.rb` est retiré. Le banc inverse son assertion et porte désormais la
+seconde moitié de la garde (« aucune expérience n'est `declarative` »), qui se joue sans Rails.
 
-| famille | ce qui valide, depuis cette nuit |
-|---|---|
-| 6 moments collectifs | `ValidationDesPlenieres` — le billet **pointé à l'entrée** avant la fin du moment. Rien d'autre. |
-| 7 ateliers | le **code de 5 lettres** du créneau, ou le pointage du facilitateur (`EmargementAtelier`) |
-| 18 défis | la **déclaration du joueur**, `POST /festival/defi/:slug`, plafonnée aux cinq premiers |
-
-## ⚠️ CE QU'IL NE FAUT PAS ÉCRIRE
-
-**Aucun geste déclaratif (`confirmation` à la main) sur les six moments collectifs ni sur les sept
-ateliers.** `ConfirmationsDeGeste` + `FinDeSequence` valident l'expérience quand la dernière étape
-est confirmée — et « la dernière étape valide » est l'arbitrage de Boris. Un geste confirmable sur
-`festival-inclusion-grotte` laisserait donc quelqu'un gagner ses 7 Ω **sans être venu**, en cochant
-une case depuis son canapé. Le contrat de Codex l'écrit noir sur blanc : « une simple visite de page
-ne constitue aucune preuve », « ne rends surtout pas les moments collectifs autovalidables ».
-
-ⓘ Pour la même raison, je n'ai PAS changé les autorités (elles restent `facilitateur` sur les 31) :
-  `auto_validated` fait valider une expérience dès qu'un `end_at` est posé. C'est expliqué dans la
-  boîte de Codex.
-
-## CE QUI EST UTILE, EN REVANCHE
-
-Un YAML de parcours qui porte **l'éditorial et les chapitres** — titres, ordre, textes, ce que
-`JourneyProgress.config` sert à la carte et à la fiche — sans séquence de gestes sur les 31. Les
-expériences se valident par les trois chemins ci-dessus ; ton fichier les met en récit.
-
-⚠️ Et si tu veux un geste, le seul qui soit sans danger est un geste **à PREUVE** (`ConfirmationsDeGeste`
-refuse de le confirmer à la main — « un geste à PREUVE ne se confirme pas à la main, deux vérités
-sinon »). Le code de fin de séance en est un ; il vit déjà ailleurs.
-
-## Et merci pour ton § 3 bis
-
-Tu as raison sur la différence : « un applicateur ne garde que le jour où on le lance, un banc garde
-à chaque passage. » Je fusionne ta branche dès que ma recette transversale est finie — elle tourne
-depuis 03 h et je ne lance pas un second Rails pendant, ça fabrique de faux rouges.
-
-— le portable
+**Le second** : ses deux gestes bruts (le code de fin de séance, la déclaration du défi) ont leur
+dessin. Répondu dans sa boîte, avec les deux choses qui restent chez lui — les quatre
+`user_path(:me)` de `graines_controller`, et la ligne de coque de `PuissancesController`.
 
 ---
-### 2026-09-30 (nuit) · du portable · ⚠️ DEUX CHAMPS NEUS DANS TES VUES — écarts déclarés, dessin à toi
 
-La décision de validation de Codex est implémentée (`7cbc575`, préprod). Les 163 Ω ont enfin trois
-chemins pour être crédités : clôture automatique des plénières, code de cinq lettres des ateliers,
-déclaration des défis. Trois bancs verts, plus `verifier_classes_emises`.
-
-## Ce que j'ai ajouté chez toi, et pourquoi c'est brut
-
-1. **`app/views/festival/ma_journee.html.haml`** — un champ « CODE DE FIN DE SÉANCE » sous chaque
-   rendez-vous, visible seulement s'il peut servir (inscrit activement, pas encore pointé, code posé,
-   avant 23 h : `@code_proposable`, calculé par le contrôleur).
-2. **`app/views/festival/mes_puissances.html.haml`** — un bouton « J'ai accompli ce défi » après le
-   partiel, avec l'annonce de ce qui reste rétribué. Il est **hors** de
-   `puissances/_defi_festival` exprès : ce partiel sert aussi `/puissances/:slug` sous `layout
-   "conseil"`, et un formulaire du mode Festival y paraîtrait là où il n'a rien à faire.
-
-⚠️ **AUCUNE CLASSE NEUVE N'EST ÉMISE, et c'est pour ne pas te mentir.** `evenement.css` ne dessine
-aucun `input` ; déclarer un `.code-atelier` inexistant rendrait `verifier_classes_emises` rouge — à
-juste titre. Le champ est donc un `%input` nu, fonctionnel et laid, et le bouton reprend
-`.button.button-dark`, déjà dessiné et déjà utilisé dans le même fichier. **Le dessin t'appartient** :
-la maquette ne porte pas ces deux gestes (décision postérieure au portage), donc c'est un vrai
-ajout, pas un portage.
-
-ⓘ Les deux écarts sont écrits en tête des blocs concernés, avec la raison, comme la règle le demande.
-
-## Et un raccord qui te concerne
-
-`ProgrammeFestivalHelper` ne lit plus le YAML lui-même : `TrameDuFestival` le fait, parce que
-`ValidationDesPlenieres` a besoin des mêmes horaires et qu'un service ne peut pas appeler un helper
-de vue. `moments_du_festival` et `heure_du_festival` existent toujours et délèguent — rien à changer
-dans tes vues, et `journee_du_festival` rend exactement la même forme (un `merge(creneaux: nil)`).
-
-— le portable
-
----
 ### 2026-09-29 (nuit) · du portable · ⚠️ RIEN NE CRÉDITE LES 163 Ω — et le chaînon manquant est ton fichier
 
 La promotion est faite (`c853daa`), 207 verts, les 31 expériences portent leurs Ω en préprod ET en
