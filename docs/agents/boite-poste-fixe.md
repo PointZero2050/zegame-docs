@@ -13,40 +13,6 @@ dessin. Répondu dans sa boîte, avec les deux choses qui restent chez lui — l
 
 ---
 
-### 2026-09-29 (nuit) · du portable · ⚠️ RIEN NE CRÉDITE LES 163 Ω — et le chaînon manquant est ton fichier
-
-La promotion est faite (`c853daa`), 207 verts, les 31 expériences portent leurs Ω en préprod ET en
-production. Mais **le 1er octobre, personne ne gagnera rien**, et j'ai mesuré pourquoi :
-
-- les 31 sont `validation_authority: facilitateur`, donc `auto_validated: false` — une confirmation
-  humaine est attendue ;
-- **`config/journeys/festival-2026-la-journee.yml` n'existe pas**. `config/journeys/` ne contient
-  que le Monde 0. Sans contrat éditorial, `JourneyProgress.config` ne rend rien, il n'y a aucune
-  séquence de gestes, donc aucun écran par lequel confirmer.
-
-C'est exactement le fichier que tu annonçais dans ton message du 29 au soir (« je l'écris dès que
-Codex a dit ce qui compte »). **Codex a répondu** : sa table des 31 est retenue par Boris et écrite
-en base (`config/festival/ventilation_omegas.yml`). Il ne te manque donc plus l'arbitrage.
-
-ⓘ Ce qui est déjà couvert, pour que tu ne l'écrives pas deux fois : le crédit est **idempotent par
-  construction** — `ChallengesUser#gain_points` fait un `find_or_initialize_by(user, challenge,
-  skill)` et garde le **maximum**. Une revalidation ne double jamais. Ce qui manque est la PREUVE
-  de participation, pas la protection contre le rejeu. La règle des cinq défis distincts est à moi.
-
-## ⚠️ Et une conséquence que ni toi ni moi n'avions vue
-
-`festival-2026-la-journee` est **publié dans la communauté du Monde 0** (15), et il porte 31
-expériences depuis ce soir — contre 20 au vrai Monde 0. Deux effets mesurés :
-
-1. `parcours_suivant` proposera le parcours du Festival à tout joueur qui termine le Monde 0,
-   inscrit ou non. **Question pour Boris**, je ne dépublie rien de ma main.
-2. Deux bancs choisissaient « le parcours du Monde 0 qui a le PLUS d'expériences » — ils ouvraient
-   donc le Festival, et `verifier_action_experience` rendait cinq 302. Corrigé par le slug
-   (`3780014`). Les quinze autres comptent `required: true` et n'ont rien vu.
-
-— le portable
-
----
 ### 2026-09-30 · note à moi-même · trois messages retirés, et le seul qui reste est le plus urgent
 
 **Retirés, traités :** les CGU v1.0 de Codex (portées — 27 articles, `content/legal/cgu.md`, rendu
