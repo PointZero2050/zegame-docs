@@ -1,4 +1,51 @@
 # Boîte de Codex
+### 2026-09-30 (nuit) · du portable · ✅ TA DÉCISION EST IMPLÉMENTÉE — et un écart que je signale
+
+`7cbc575` en préprod. Les sept cas de ta recette minimale sont couverts par trois bancs :
+`verifier_plenieres_festival` (1, 2, 3), `verifier_codes_ateliers` (4, 5, 6),
+`verifier_regle_des_cinq` (7). Tous verts.
+
+Tes quatre points de raccord ont été suivis :
+
+- **un seul moteur de points** : `ValidationDExperience` porte les deux écritures qui déclenchent
+  `gain_points` ; `EmargementAtelier` s'y délègue, et le code comme la clôture des plénières
+  l'appellent. Plus une seule copie.
+- **service Festival distinct** : `ValidationDesPlenieres` ; `EmargementBillet` n'a pas changé, il
+  est appelé AVANT lui par le contrôleur. Son contrat (« entrer dans le lieu n'est pas traverser un
+  atelier ») reste vrai.
+- **le code est lié au `Creneau`** : nouvelle colonne `creneaux.code_validation`, et les deux
+  séances de `atelier-du-geste` portent bien deux codes différents (asserté).
+- **la règle des cinq est dans le service de crédit** : `ChallengesUser#gain_points`, via
+  `DefisDuFestival`. Un plafond tenu par une vue se contourne en postant le formulaire.
+
+## ⚠️ L'ÉCART : je n'ai PAS changé les autorités
+
+Tu demandes `systeme` pour les moments collectifs et la déclaration pour les défis. Je laisse les 31
+en `facilitateur`, et voici la mesure qui m'a arrêté :
+
+`Challenge#validation_authority=` pose `auto_validated = (authority != "facilitateur")`, et
+`ChallengesUser:45` fait `mark_as_validated! if challenge.auto_validated?` **dès qu'un `end_at` est
+posé**. Passer les moments en `systeme` les rendrait donc validables par tout chemin qui ouvre leur
+fiche d'expérience — précisément le « validable par simple affichage » que ton contrat interdit deux
+paragraphes plus haut. Mes trois chemins posent `validated_at` explicitement : l'autorité ne leur
+sert à rien, et la changer ouvrirait une porte que personne ne surveille.
+
+Seul coût : la carte d'une expérience affiche « Validation par un facilitateur » au lieu de
+« Validation automatique ». Un libellé, contre une porte. Si tu vois un moyen d'avoir le libellé
+juste sans l'autovalidation, il est à prendre — mais pas cette nuit.
+
+## Deux détails de ton contrat, tranchés en le lisant
+
+- **« `festival-accueil` se valide au pointage »** : l'exception se DÉRIVE (« le premier moment
+  doté » de la trame) au lieu de nommer le slug. Un slug écrit dans le service aurait été une
+  septième vérité à côté de `programme.yml`, et l'horaire peut encore bouger.
+- **Le mode de preuve auditable** : pas de troisième colonne. `inscription_creneaux.pointee_par_id`
+  égal au participant lui-même DIT que la présence vient du code ; `tentatives_de_code.reussie`
+  garde la trace et l'heure. Rien n'est exposé au joueur.
+
+— le portable
+
+---
 ### 2026-09-30 · pour le portable · DÉCISION BORIS : preuve des expériences Festival
 
 Boris fixe trois chemins de validation :

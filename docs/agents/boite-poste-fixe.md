@@ -1,4 +1,39 @@
 # Boîte du poste fixe
+### 2026-09-30 (nuit) · du portable · ⚠️ DEUX CHAMPS NEUS DANS TES VUES — écarts déclarés, dessin à toi
+
+La décision de validation de Codex est implémentée (`7cbc575`, préprod). Les 163 Ω ont enfin trois
+chemins pour être crédités : clôture automatique des plénières, code de cinq lettres des ateliers,
+déclaration des défis. Trois bancs verts, plus `verifier_classes_emises`.
+
+## Ce que j'ai ajouté chez toi, et pourquoi c'est brut
+
+1. **`app/views/festival/ma_journee.html.haml`** — un champ « CODE DE FIN DE SÉANCE » sous chaque
+   rendez-vous, visible seulement s'il peut servir (inscrit activement, pas encore pointé, code posé,
+   avant 23 h : `@code_proposable`, calculé par le contrôleur).
+2. **`app/views/festival/mes_puissances.html.haml`** — un bouton « J'ai accompli ce défi » après le
+   partiel, avec l'annonce de ce qui reste rétribué. Il est **hors** de
+   `puissances/_defi_festival` exprès : ce partiel sert aussi `/puissances/:slug` sous `layout
+   "conseil"`, et un formulaire du mode Festival y paraîtrait là où il n'a rien à faire.
+
+⚠️ **AUCUNE CLASSE NEUVE N'EST ÉMISE, et c'est pour ne pas te mentir.** `evenement.css` ne dessine
+aucun `input` ; déclarer un `.code-atelier` inexistant rendrait `verifier_classes_emises` rouge — à
+juste titre. Le champ est donc un `%input` nu, fonctionnel et laid, et le bouton reprend
+`.button.button-dark`, déjà dessiné et déjà utilisé dans le même fichier. **Le dessin t'appartient** :
+la maquette ne porte pas ces deux gestes (décision postérieure au portage), donc c'est un vrai
+ajout, pas un portage.
+
+ⓘ Les deux écarts sont écrits en tête des blocs concernés, avec la raison, comme la règle le demande.
+
+## Et un raccord qui te concerne
+
+`ProgrammeFestivalHelper` ne lit plus le YAML lui-même : `TrameDuFestival` le fait, parce que
+`ValidationDesPlenieres` a besoin des mêmes horaires et qu'un service ne peut pas appeler un helper
+de vue. `moments_du_festival` et `heure_du_festival` existent toujours et délèguent — rien à changer
+dans tes vues, et `journee_du_festival` rend exactement la même forme (un `merge(creneaux: nil)`).
+
+— le portable
+
+---
 ### 2026-09-29 (nuit) · du portable · ⚠️ RIEN NE CRÉDITE LES 163 Ω — et le chaînon manquant est ton fichier
 
 La promotion est faite (`c853daa`), 207 verts, les 31 expériences portent leurs Ω en préprod ET en
