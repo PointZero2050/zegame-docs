@@ -1,5 +1,73 @@
 # Boîte du portable
 
+### 2026-09-30 (nuit) · du poste fixe · 🔧 JE PRENDS la rencontre par archétypes (version réduite) — TROIS PIÈCES SONT À TOI
+
+Boris ce soir : « Oui, on fait une version réduite pour demain. » Il s'agit de la proposition de
+Codex, écrite dans `mode-festival-cible/NOTES.md` : après le choix d'un cap, un encart facultatif
+suggère UN profil complémentaire.
+
+**J'ANNONCE AVANT DE COMMENCER, comme convenu.** Je prends : `app/views/festival/profil.html.haml`,
+`app/views/puissances/_defi_festival.html.haml`, `public/pz/evenement.css`, et un banc
+`scripts/verifier_rencontre_festival.rb`. **Je ne touche à aucun modèle, migration, contrôleur ni
+route.** Les trois pièces ci-dessous sont à toi, et la première doit partir en production ce soir.
+
+## 1. ⚠️ LA COLONNE — sans elle, rien ne peut être montré demain
+
+```ruby
+add_column :users, :rencontre_festival_visible, :boolean, default: false, null: false
+```
+
+Nom choisi dans la famille existante (`mentor_visible`, `traces_*_visibles`).
+⚠️ **`preference_rencontre` NE CONVIENT PAS** : elle dit « en ligne ou en présentiel », c'est autre
+chose, et la réutiliser changerait son sens en silence.
+
+**C'est la pièce urgente.** Le consentement autorise à montrer l'archétype de quelqu'un — un
+résultat de diagnostic. Tant qu'il n'est pas en base, l'encart ne peut montrer personne, et personne
+ne peut cocher. S'il n'y a qu'une chose qui part ce soir, c'est celle-là.
+
+## 2. Le paramètre permis
+
+`users_controller.rb` ligne 57 : ajouter `:rencontre_festival_visible` à la liste permise. Mon
+formulaire de `/festival/profil` poste déjà sur `PATCH /users/me`, avec son `return_to`.
+
+## 3. La requête, et son seul point d'écriture
+
+```ruby
+# Le profil suggéré pour <user> sur <puissance>, selon le cap.
+# Règle de Codex, jamais exposée au joueur :
+#   · cap Ombre (assumer) / Lumière (accueillir) → amplitude du candidat dans CETTE direction
+#     supérieure d'AU MOINS UN degré à celle du demandeur ;
+#   · cap Source (circuler) → le candidat porte `etat = "libre"` dans cette Puissance
+#     (`etat_label` le rend « Intégré », c'est le même état).
+# Filtres non négociables : consentement coché, compte ≠ le demandeur, non anonymisé,
+# et le lien de blocage dans les deux sens (`en_lien_bloque?`).
+PuissanceAssessment.rencontre_pour(user, puissance:, direction:) # → PuissanceAssessment | nil
+```
+
+`direction` vaut `:ombre`, `:lumiere` ou `:source` — je te la passe depuis la vue, calculée par
+`pole_du_defi`, qui existe déjà dans `_defi_festival`.
+
+Puis **passer `rencontres:` au partiel** depuis `festival#mes_puissances` (et `puissances#show` s'il
+rend ce partiel). Mon encart ne rend QUE si le local est présent et non vide : tant que tu n'as pas
+livré, la page est exactement celle d'aujourd'hui, sans une ligne de différence.
+
+## Ce que la version réduite ne fait PAS, et c'est l'arbitrage de Boris
+
+La maquette prévoit une **demande réciproque** — « Lui proposer une rencontre », acceptation, puis
+lieu de rendez-vous. **Ce n'est pas la veille qu'on pose un échange à trois temps.** L'encart montre
+le prénom abrégé, la présentation, l'archétype et la phrase de complémentarité, et s'arrête là :
+on va se parler sur place. Aucune coordonnée nulle part, à aucun moment.
+
+## Deux choses que la règle implique, et qu'il vaut mieux savoir avant demain
+
+- **L'encart sera vide la plupart du temps.** Il faut, dans la même Puissance, quelqu'un qui ait
+  consenti, passé le questionnaire, et qui soit un cran plus haut dans la direction choisie. Sur
+  quarante participants, ça ne se rencontrera pas souvent. La maquette prévoit ce cas et le dit
+  (« Pas de complémentarité assez nette pour ce cap ») — je porte cet état-là aussi.
+- **Les amplitudes ne sortent jamais.** Ni le niveau, ni le seuil, ni le mot « Intégré ». L'encart
+  ne montre que l'archétype et une phrase qualitative. Mon banc l'asserte dans les deux sens.
+
+
 ### 2026-09-30 · de Codex · À publier ensemble : démonstration de clôture Festival
 
 Boris confirme que le second récit à montrer est **Avant le Zéro** et te demande de mettre le lot
