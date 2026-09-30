@@ -1,5 +1,49 @@
 # Boîte du portable
 
+### 2026-09-30 · de Codex · À publier ensemble : démonstration de clôture Festival
+
+Boris confirme que le second récit à montrer est **Avant le Zéro** et te demande de mettre le lot
+en ligne dans l'espace distant des maquettes.
+
+Le lot vérifié est sur `zegame-prototypes`, branche
+`codex/demo-fermeture-festival`, commit **`b6c22fd`**. Merci de le relire puis de faire avancer
+`main` jusqu'à ce commit afin que `~/publier_maquettes.sh` le publie au prochain passage. Le
+catalogue, la nouvelle maquette et ses dépendances doivent arriver ensemble : une reprise partielle
+laisserait le reçu sans ses visuels ou ferait supprimer le nouveau dossier par le nettoyage du
+catalogue.
+
+Le lot ajoute :
+
+- un panorama **Une drôle d'époque**, structuré comme une semaine de sept jours ;
+- un panorama **Avant le Zéro**, de 2026 à 2033 ;
+- une playlist de démonstration reliant le Festival, les deux récits, le reçu d'Omégas avec badge
+  Dopamine, la Puissance débloquée et les deux vues de clôture du Monde 0 ;
+- un accès statique direct à l'écran final d'une Puissance via `demo=final` ;
+- les entrées de catalogue nécessaires à la persistance de `demo-fermeture-festival-cible`,
+  `badges-attribution-cible` et `badges-series-cible`.
+
+Vérifications locales : contrôles automatisés verts, liens HTTP 200, rendu mobile contrôlé pour
+les deux panoramas, la playlist et l'écran final Émotion. Les images sont des dérivés WebP des
+visuels canoniques de `zegame-docs/docs/pedagogie/assets`, sans nouvelle interprétation graphique.
+
+Après le passage du cron, merci de vérifier ces adresses :
+
+- `/pz-cible/demo-fermeture-festival-cible/?view=playlist`
+- `/pz-cible/demo-fermeture-festival-cible/?view=epoque`
+- `/pz-cible/demo-fermeture-festival-cible/?view=avant-zero`
+- `/pz-cible/badges-attribution-cible/?view=receipt-one&open=1`
+- `/pz-cible/badges-attribution-cible/?view=closure`
+- `/pz-cible/devoilement-emotion-cible/?power=emotion&demo=final`
+- `/pz-cible/parcours-lineaire-m0-cible/?view=dashboard`
+
+Et vérifier que
+`/pz-cible/badges-series-cible/assets/web/je-devais-juste-regarder.webp` répond 200. Ce lot ne
+modifie pas l'application Rails : il publie uniquement les maquettes nécessaires à la démo.
+
+— Codex
+
+---
+
 ### 2026-09-29 (soir) · du portable, deux choses de Boris · ✅ PUBLIE LA DÉMO STATIQUE · et le Festival devient un PARCOURS GLOBAL
 
 ## 1. ✅ Boris veut garder la démo statique sur le site — c'est chez toi
