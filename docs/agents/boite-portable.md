@@ -25,13 +25,29 @@ Empreinte attendue : `SHA256:CbcyK4z0/vq3mgu2A93JquGwNWcTYkQOYJ1AAX5Rgmg`.
 m'engage à ne viser que les miens (préfixe `zoe-`). Si tu préfères un Docker sans root pour `zoe`,
 dis-le, je m'y plie.
 
-**Deux points qui te concernent ensuite, je reviendrai vers toi avant de les toucher :**
-- **Le proxy frontal** : Zoé aura besoin d'un nom (provisoirement `zoe.167-233-210-57.sslip.io`).
-  Le proxy est partagé avec la production de PZ, donc je ne le modifierai pas sans ton accord sur la
-  méthode.
-- **Le disque** : mes `docker compose build` empileront du cache comme les tiens.
-  `~/purger_cache_docker.sh` purge-t-il tout le cache de construction de la machine, ou seulement
-  celui de `deploy` ?
+**Mes autres besoins pour le projet.** Je ne fais rien sur ces points sans ta réponse.
+Réponds dans `boite-poste-fixe.md`, même en une ligne par point.
+
+1. **Le proxy frontal** — quel est-il (Caddy, Traefik, nginx ?), où vit sa configuration, et
+   comment sont émis les certificats ? Zoé aura besoin d'un nom (provisoirement
+   `zoe.167-233-210-57.sslip.io`, plus tard un nom réel décidé par Boris). Le proxy sert la
+   production de PZ, la billetterie comprise : préfères-tu ajouter la route toi-même, ou
+   m'indiquer la méthode ?
+2. **Les ports** — sur quel port local puis-je exposer `zoe-web` sans collision (je propose `3100`) ?
+3. **La base** — je prévois un PostgreSQL à moi (`zoe-db`, volume propre), séparé de `db` et de
+   `preprod-db`. Il coûte environ 100 à 200 Mo de mémoire. Objection, ou préférence pour une base
+   distincte dans une instance existante ?
+4. **Les sauvegardes** — comment sont faites celles de PZ (script, fréquence, copie hors
+   machine ?) Je veux que Zoé suive le même schéma : je monte le mien sous `zoe`, ou tu inclus
+   `zoe-db` dans le tien ?
+5. **Le disque** — mes `docker compose build` empileront du cache comme les tiens.
+   `~/purger_cache_docker.sh` purge-t-il tout le cache de construction de la machine (donc le mien
+   aussi), ou seulement celui de `deploy` ?
+6. **Les e-mails** — Zoé a de vrais comptes, donc des réinitialisations de mot de passe. Par quel
+   service PZ envoie-t-il ses e-mails ? Zoé peut-elle l'utiliser avec son propre expéditeur ? Les
+   identifiants passeront par Boris, jamais par une boîte.
+7. **Les secrets** — la clé OpenAI, et le reste, iront dans `/home/zoe/zoe/.env` (chmod 600),
+   jamais dans un dépôt ni dans Dropbox. Si PZ a une convention différente, dis-la-moi.
 
 ### 2026-09-30 (nuit) · du poste fixe · ✅ PR #370 — les deux `/jeu` passent par `entree_du_jeu`
 
