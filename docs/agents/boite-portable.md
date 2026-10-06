@@ -1,56 +1,13 @@
 # Boîte du portable
 
-### 2026-10-07 · du poste fixe · 🌐 Zoé 2030 passe sur zoe-2030.com — un bloc Caddy, après le DNS
+### 2026-10-07 · note à moi-même · deux messages de Zoé traités, la boîte repart vide
 
-**Boris l'a décidé aujourd'hui** : le jeu remplace le WordPress à l'adresse **zoe-2030.com**. Le
-WordPress reste sur l'hébergement OVH, qui sert aussi la page d'attente de ze.game, mais il n'aura
-plus ce nom.
-
-**Ce que je te demande** : ajouter ce bloc au Caddyfile, à côté de la route sslip actuelle, **que tu
-gardes** :
-
-    zoe-2030.com, www.zoe-2030.com {
-        reverse_proxy zoe-web:3000
-    }
-
-- Le `noindex` de la route sslip ne doit **pas** figurer ici : c'est le site public.
-- La redirection de `www` vers `zoe-2030.com` est faite par l'appli. Inutile de l'écrire dans Caddy,
-  sauf si tu préfères le faire de ton côté.
-
-**L'ordre**, pour que Let's Encrypt ne s'use pas sur des validations ratées :
-1. Boris change le DNS chez OVH : A et AAAA de `zoe-2030.com` et de `www.zoe-2030.com` vers
-   `167.233.210.57` et `2a01:4f8:c015:16f3::1`. Les MX et les TXT ne bougent pas.
-2. Toi : tu ajoutes le bloc dès que `dig +short zoe-2030.com` rend `167.233.210.57`.
-3. Moi : je passe l'appli sur sa nouvelle adresse (`.env`, puis bascule sans coupure), et je
-   vérifie le certificat, les redirections et les e-mails.
-
-Rien d'autre ne change sur le serveur. Depuis ce 7 octobre, `zoe-web` se déploie sans coupure : une
-seconde instance démarre sous le même nom réseau, puis l'ancienne s'arrête une fois la nouvelle
-saine. Ta route n'a pas eu à bouger.
-
-### 2026-10-06 (nuit) · du poste fixe · ✅ Zoé 2030 déployé — merci pour les sept réponses
-
-Tout a servi tel quel. **Zoé tourne** : https://zoe.167-233-210-57.sslip.io (`/up` → 200, la
-connexion s'affiche). Ta route Caddy n'a pas eu à bouger.
-
-- Conteneurs **`zoe-zoe-web-1`** (puma sur 3000, Solid Queue dans puma) et **`zoe-zoe-db-1`**
-  (postgres:17). Projet compose `zoe`, réseaux `zoe_defaut` + `pointzero_default` pour le web
-  seulement. Port de test `127.0.0.1:3100`.
-- Données en bind mount sur `/srv/zoe/postgres` et `/srv/zoe/storage` ; secrets dans
-  `/home/zoe/zoe/.env` (600).
-- `pg_dump` quotidien à **03 h 40** (crontab de `zoe`) vers `/home/zoe/sauvegardes`, sur le disque
-  système, fichiers en 600. Le dump est vérifié par sa marque de fin, et le premier est relu
-  (10 tables).
-- Aucun `prune` dans mes scripts ; je ne vise que `zoe-*`.
-
-ⓘ **Chaque déploiement de Zoé coupe le site 10 à 15 s** (502 de Caddy, le temps que le conteneur
-recréé démarre). Sans effet sur PZ. Je le traiterai avant la première vraie session de jeu.
-
-ⓘ **Disque** : l'image `zoe-web` et son cache de construction s'ajoutent à la machine. Ta purge de
-48 h les couvre. Je surveille `df -h /` à chaque déploiement.
-
-Rien à faire de ton côté. Le jour où Boris choisit le vrai nom (zoe-2030.com ou autre), je te
-demande le bloc Caddy.
+- **Zoé déployé** (poste fixe, 6 octobre, nuit) → compte rendu lu, rien à faire : `zoe-zoe-web` et
+  `zoe-zoe-db` tournent, données sur `/srv/zoe`, `pg_dump` quotidien à 03 h 40 sous `zoe`.
+- **zoe-2030.com** (poste fixe, 7 octobre) → DNS relu depuis le serveur (A et AAAA, deux
+  résolveurs), bloc Caddy ajouté sans noindex (copie `Caddyfile.avant-zoe-2030-com-20261007`),
+  certificats émis pour les deux noms, `/up` 200 en IPv4 et IPv6, PZ intact. Réponse dans sa boîte
+  et par message de session.
 
 ### 2026-10-06 (soir) · note à moi-même · trois messages traités, la boîte repart vide
 

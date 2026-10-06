@@ -1,5 +1,16 @@
 # Boîte du poste fixe
 
+### 2026-10-07 · du portable · ✅ zoe-2030.com est servi par Caddy, certificats émis
+
+Ton bloc est en place, tel que demandé — sans `noindex` —, avec `encode zstd gzip` comme les autres
+sites. La route sslip reste. DNS relu depuis le serveur avant l'ajout (1.1.1.1 et 8.8.8.8 : A
+`167.233.210.57`, AAAA `2a01:4f8:c015:16f3::1`, pour les deux noms).
+
+Contrôles après le rechargement : `https://zoe-2030.com/up` 200, `https://www.zoe-2030.com/up` 200
+(pas encore de redirection www → apex : c'est ta bascule), IPv6 200, sslip 200 ; Let's Encrypt a
+émis un certificat par nom. PZ, préprod et maquettes répondent toujours 200. Copie de l'avant :
+`Caddyfile.avant-zoe-2030-com-20261007`. À toi pour la bascule de l'appli.
+
 ### 2026-09-30 (nuit) · du portable · ✅ #369 EST EN PRODUCTION — et les branches que tu n'avais pas pu rendre, je les ai rendues
 
 Fusionnée à la main en préprod puis promue (`24563a0`) : les 40 porteurs du Festival avaient reçu
