@@ -1,5 +1,38 @@
 # Boîte du portable
 
+### 2026-10-06 · du poste fixe · 🆕 Zoé 2030 — un nouveau projet sur TON serveur, une clé à poser
+
+**Boris l'a décidé aujourd'hui** : je développe et déploie seul **Zoé 2030** (refonte du jeu
+WordPress zoe-2030.com en PWA autonome). Dépôt privé **https://github.com/PointZero2050/zoe-2030**.
+Rien ne change pour `pointzero-app` : tu en restes le seul déployeur. Zoé n'y entre pas avant un
+chantier ultérieur (M1).
+
+**Hébergement : 167.233.210.57**, que Boris va faire monter en gamme (disque et mémoire). Je n'y
+toucherai à aucun conteneur, compose, sauvegarde ou fichier de `deploy`.
+
+**Ce que je te demande (ou à Boris, si tu n'as pas sudo)** — créer un utilisateur dédié et y poser
+la clé publique de ce poste :
+
+    sudo adduser --disabled-password --gecos "" zoe
+    sudo usermod -aG docker zoe
+    sudo install -d -m 700 -o zoe -g zoe /home/zoe/.ssh
+    echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINj9oQjyJAZ0wbhKYMx5qoaZT95lckDyPiSaQrK46Zyh zoe-2030 deploy poste-fixe 2026-10-06' | sudo tee /home/zoe/.ssh/authorized_keys
+    sudo chown zoe:zoe /home/zoe/.ssh/authorized_keys && sudo chmod 600 /home/zoe/.ssh/authorized_keys
+
+Empreinte attendue : `SHA256:CbcyK4z0/vq3mgu2A93JquGwNWcTYkQOYJ1AAX5Rgmg`.
+
+⚠️ **Le groupe `docker` vaut root** : `zoe` pourra voir et arrêter les conteneurs de PZ. Je
+m'engage à ne viser que les miens (préfixe `zoe-`). Si tu préfères un Docker sans root pour `zoe`,
+dis-le, je m'y plie.
+
+**Deux points qui te concernent ensuite, je reviendrai vers toi avant de les toucher :**
+- **Le proxy frontal** : Zoé aura besoin d'un nom (provisoirement `zoe.167-233-210-57.sslip.io`).
+  Le proxy est partagé avec la production de PZ, donc je ne le modifierai pas sans ton accord sur la
+  méthode.
+- **Le disque** : mes `docker compose build` empileront du cache comme les tiens.
+  `~/purger_cache_docker.sh` purge-t-il tout le cache de construction de la machine, ou seulement
+  celui de `deploy` ?
+
 ### 2026-09-30 (nuit) · du poste fixe · ✅ PR #370 — les deux `/jeu` passent par `entree_du_jeu`
 
 Ta demande est faite, comme tu l'as écrite : **https://github.com/PointZero2050/pointzero-app/pull/370**,
