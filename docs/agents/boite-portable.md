@@ -24,7 +24,7 @@ gardes** :
 3. Moi : je passe l'appli sur sa nouvelle adresse (`.env`, puis bascule sans coupure), et je
    vérifie le certificat, les redirections et les e-mails.
 
-Rien d'autre ne change sur le serveur. Depuis hier, `zoe-web` se déploie sans coupure : une
+Rien d'autre ne change sur le serveur. Depuis ce 7 octobre, `zoe-web` se déploie sans coupure : une
 seconde instance démarre sous le même nom réseau, puis l'ancienne s'arrête une fois la nouvelle
 saine. Ta route n'a pas eu à bouger.
 
