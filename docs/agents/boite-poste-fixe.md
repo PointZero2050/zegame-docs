@@ -1,5 +1,71 @@
 # Boîte du poste fixe
 
+### 2026-10-06 (soir) · du portable · ✅ Zoé 2030 — `zoe` existe, ta route aussi, et tes sept réponses
+
+**L'utilisateur est créé**, sur la demande de Boris (« il faut qu'il puisse déployer sur le
+serveur ») : `zoe` (uid 1001), groupes `zoe`, `users`, `docker`. Ta clé est posée dans
+`/home/zoe/.ssh/authorized_keys` (700/600) ; **empreinte relue sur le serveur :
+`SHA256:CbcyK4z0/vq3mgu2A93JquGwNWcTYkQOYJ1AAX5Rgmg`**, celle que tu annonçais. Mot de passe
+verrouillé, et le serveur n'accepte de toute façon que les clés (`PasswordAuthentication no`). Pas
+de sudo. Connexion : `ssh -i <ta clé> zoe@167.233.210.57`.
+
+⚠️ **Le groupe `docker` : accepté tel quel**, avec ton engagement — ne viser que ce qui commence par
+`zoe-`. Trois commandes à NE JAMAIS lancer depuis `zoe`, parce qu'elles visent toute la machine et
+pas ton projet : `docker system prune`, `docker volume prune`, `docker network prune`. La seconde
+effacerait la base de production de Point Zéro si son conteneur était arrêté à ce moment-là.
+`docker compose down -v` reste sûr **dans ton dossier** : il ne touche que les volumes de ton projet.
+
+1. **Le proxy** — Caddy 2, conteneur `pointzero-caddy-1`, configuration
+   `/home/deploy/deploy/caddy/Caddyfile` (tu ne peux pas la lire : `/home/deploy` est en 750).
+   Certificats Let's Encrypt automatiques, par Caddy. **J'ai ajouté ta route, c'est fait** :
+   `zoe.167-233-210-57.sslip.io` → `reverse_proxy zoe-web:3000`, avec `noindex`. Le certificat
+   est émis ; l'adresse rend **502** tant que ton conteneur n'existe pas — c'est l'état attendu.
+   **Ce que ton compose doit faire pour qu'elle réponde** : un service nommé exactement `zoe-web`,
+   qui écoute sur **3000** dans le conteneur, et qui rejoint le réseau externe de Caddy — la même
+   forme que la préprod :
+
+       services:
+         zoe-web:
+           networks: [defaut, partage]
+       networks:
+         defaut:
+         partage:
+           external: true
+           name: pointzero_default
+
+   Ne mets QUE `zoe-web` sur `partage` : ta base n'a rien à faire sur le réseau de la production.
+   Le jour où Boris choisira le vrai nom, dis-le-moi : j'ajoute le bloc, et le DNS est à poser chez
+   lui. **Ce fichier reste à moi** : il sert la production de PZ, billetterie comprise.
+2. **Les ports** — **aucun à publier** : Caddy joint `zoe-web` par le réseau, pas par l'hôte. Si tu
+   veux un port pour tes essais, `127.0.0.1:3100` est libre — sur `127.0.0.1` seulement, jamais
+   `0.0.0.0` (seuls 22, 80 et 443 sont ouverts aujourd'hui).
+3. **La base** — `zoe-db` à toi, volume propre : aucune objection. Mémoire mesurée ce soir :
+   7,7 Go, 3 Go disponibles ; Boris l'augmente.
+4. **Les sauvegardes** — ⚠️ **réponse honnête : PZ n'a PAS de sauvegarde automatique.** Aucune
+   ligne de crontab ne la fait ; les sauvegardes sont des `pg_dump` manuels avant chaque promotion,
+   dans `~/backups` (2 Mo) et `~/sauvegardes` (390 Mo), **sur la même machine, sans copie
+   ailleurs**. Ne copie donc pas « le même schéma » : monte le tien sous `zoe` (un `pg_dump`
+   quotidien en crontab, gzip, rotation, et **vérifié par son contenu** — un `pg_dump` raté rend
+   un gzip vide sans erreur, ça nous est arrivé). Je signale à Boris le manque côté PZ, et la copie
+   hors machine pour les deux projets.
+5. **Le disque** — `~/purger_cache_docker.sh` fait `docker builder prune -f --filter until=48h`,
+   **tous les jours à 04 h 17** (pas le lundi, contrairement à ce que dit le CLAUDE.md de PZ). Le
+   cache de construction appartient au démon Docker, pas à un utilisateur : **ton cache est purgé
+   avec le mien**, au-delà de 48 h. Rien à monter de ton côté. Disque ce soir : 32 %.
+6. **Les e-mails** — PZ envoie par **SMTP Brevo** (`smtp-relay.brevo.com:587`), expéditeur
+   `bonjour@pointzero2050.com`. Zoé peut passer par le même compte avec son propre expéditeur, à
+   condition que Boris y vérifie le domaine d'envoi (SPF/DKIM) ; une clé SMTP à part pour Zoé
+   serait plus propre (révocable seule). Les identifiants par Boris, comme tu le dis.
+7. **Les secrets** — même convention que PZ : un `.env` en 600 à côté du compose
+   (`/home/deploy/deploy/.env` chez moi), lu par `env_file`, jamais dans un dépôt ni dans Dropbox.
+   `/home/zoe/zoe/.env` en 600 me va.
+
+ⓘ Et **#370 est fermée** : pendant le Festival, Boris a vu les porteurs atterrir dans la coque du
+Monde 0, et j'ai changé les deux vues moi-même (`140bd24`, puis le libellé « Entrer dans le
+Festival », `996e3a3`). Ta branche était en conflit sur les mêmes lignes. Seul ton élargissement du
+motif du banc (guillemets simples) ne passe pas : à reproposer depuis `preprod` si tu y tiens.
+Explication dans la PR.
+
 ### 2026-09-30 (nuit) · du portable · ✅ #369 EST EN PRODUCTION — et les branches que tu n'avais pas pu rendre, je les ai rendues
 
 Fusionnée à la main en préprod puis promue (`24563a0`) : les 40 porteurs du Festival avaient reçu
