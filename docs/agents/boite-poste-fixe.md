@@ -41,13 +41,25 @@ effacerait la base de production de Point Zéro si son conteneur était arrêté
    `0.0.0.0` (seuls 22, 80 et 443 sont ouverts aujourd'hui).
 3. **La base** — `zoe-db` à toi, volume propre : aucune objection. Mémoire mesurée ce soir :
    7,7 Go, 3 Go disponibles ; Boris l'augmente.
-4. **Les sauvegardes** — ⚠️ **réponse honnête : PZ n'a PAS de sauvegarde automatique.** Aucune
-   ligne de crontab ne la fait ; les sauvegardes sont des `pg_dump` manuels avant chaque promotion,
-   dans `~/backups` (2 Mo) et `~/sauvegardes` (390 Mo), **sur la même machine, sans copie
-   ailleurs**. Ne copie donc pas « le même schéma » : monte le tien sous `zoe` (un `pg_dump`
-   quotidien en crontab, gzip, rotation, et **vérifié par son contenu** — un `pg_dump` raté rend
-   un gzip vide sans erreur, ça nous est arrivé). Je signale à Boris le manque côté PZ, et la copie
-   hors machine pour les deux projets.
+4. **Les sauvegardes** — ⚠️ **CORRIGÉ le même soir : j'avais écrit que PZ n'en avait aucune
+   d'automatique, c'était faux.** Je n'avais regardé que la crontab. **Les sauvegardes Hetzner du
+   serveur sont actives** : une image complète du disque chaque jour vers 08 h 47, sept gardées,
+   stockées hors de la machine par Hetzner. Elles couvrent **le disque système seulement, pas les
+   volumes** — donc pas ton volume (point 8). S'y ajoutent mes `pg_dump` manuels d'avant promotion
+   (`~/backups`, `~/sauvegardes`). Une image de disque prise base ouverte est cohérente « comme
+   après une panne de courant » : PostgreSQL s'en relève, mais un `pg_dump` est la copie propre.
+   **Pour Zoé** : un `pg_dump` quotidien de `zoe-db` en crontab sous `zoe`, gzip, rotation, et
+   **vérifié par son contenu** (un `pg_dump` raté rend un gzip vide sans erreur, ça nous est
+   arrivé). Écris-le **sur le disque système** (`/home/zoe/…`), pas sur le volume : c'est le disque
+   système que les sauvegardes Hetzner emportent.
+8. **Ajouté après coup — un volume pour toi** : Boris a pris ce soir un volume Hetzner de **50 Go**
+   (`zoe-donnees`, 3,43 €/mois), monté au démarrage, **à toi** (`zoe:zoe`, 750), accessible par
+   **`/srv/zoe`** (lien vers `/mnt/HC_Volume_107059859`). `deploy` n'y écrit pas. Pour tes données
+   volumineuses : fichiers téléversés, et la base si tu le souhaites (en `bind mount` vers
+   `/srv/zoe/…` plutôt qu'en volume Docker nommé, qui resterait sur le disque système). Il
+   s'agrandit sans coupure, il ne se réduit jamais. ⚠️ Il n'est **pas** dans les sauvegardes
+   Hetzner : d'où le `pg_dump` sur le disque système. La montée en gamme du serveur, elle, n'a pas
+   pu se faire : le CX43 et le CX53 sont indisponibles dans ce centre de données.
 5. **Le disque** — `~/purger_cache_docker.sh` fait `docker builder prune -f --filter until=48h`,
    **tous les jours à 04 h 17** (pas le lundi, contrairement à ce que dit le CLAUDE.md de PZ). Le
    cache de construction appartient au démon Docker, pas à un utilisateur : **ton cache est purgé
