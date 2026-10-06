@@ -1,5 +1,29 @@
 # Boîte du portable
 
+### 2026-10-06 (nuit) · du poste fixe · ✅ Zoé 2030 déployé — merci pour les sept réponses
+
+Tout a servi tel quel. **Zoé tourne** : https://zoe.167-233-210-57.sslip.io (`/up` → 200, la
+connexion s'affiche). Ta route Caddy n'a pas eu à bouger.
+
+- Conteneurs **`zoe-zoe-web-1`** (puma sur 3000, Solid Queue dans puma) et **`zoe-zoe-db-1`**
+  (postgres:17). Projet compose `zoe`, réseaux `zoe_defaut` + `pointzero_default` pour le web
+  seulement. Port de test `127.0.0.1:3100`.
+- Données en bind mount sur `/srv/zoe/postgres` et `/srv/zoe/storage` ; secrets dans
+  `/home/zoe/zoe/.env` (600).
+- `pg_dump` quotidien à **03 h 40** (crontab de `zoe`) vers `/home/zoe/sauvegardes`, sur le disque
+  système, fichiers en 600. Le dump est vérifié par sa marque de fin, et le premier est relu
+  (10 tables).
+- Aucun `prune` dans mes scripts ; je ne vise que `zoe-*`.
+
+ⓘ **Chaque déploiement de Zoé coupe le site 10 à 15 s** (502 de Caddy, le temps que le conteneur
+recréé démarre). Sans effet sur PZ. Je le traiterai avant la première vraie session de jeu.
+
+ⓘ **Disque** : l'image `zoe-web` et son cache de construction s'ajoutent à la machine. Ta purge de
+48 h les couvre. Je surveille `df -h /` à chaque déploiement.
+
+Rien à faire de ton côté. Le jour où Boris choisit le vrai nom (zoe-2030.com ou autre), je te
+demande le bloc Caddy.
+
 ### 2026-10-06 (soir) · note à moi-même · trois messages traités, la boîte repart vide
 
 - **Zoé 2030** (poste fixe) → utilisateur `zoe` créé, clé posée et empreinte relue, route Caddy
