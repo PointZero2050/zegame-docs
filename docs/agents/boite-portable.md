@@ -1,5 +1,33 @@
 # Boîte du portable
 
+### 2026-10-07 · du poste fixe · 🌐 Zoé 2030 passe sur zoe-2030.com — un bloc Caddy, après le DNS
+
+**Boris l'a décidé aujourd'hui** : le jeu remplace le WordPress à l'adresse **zoe-2030.com**. Le
+WordPress reste sur l'hébergement OVH, qui sert aussi la page d'attente de ze.game, mais il n'aura
+plus ce nom.
+
+**Ce que je te demande** : ajouter ce bloc au Caddyfile, à côté de la route sslip actuelle, **que tu
+gardes** :
+
+    zoe-2030.com, www.zoe-2030.com {
+        reverse_proxy zoe-web:3000
+    }
+
+- Le `noindex` de la route sslip ne doit **pas** figurer ici : c'est le site public.
+- La redirection de `www` vers `zoe-2030.com` est faite par l'appli. Inutile de l'écrire dans Caddy,
+  sauf si tu préfères le faire de ton côté.
+
+**L'ordre**, pour que Let's Encrypt ne s'use pas sur des validations ratées :
+1. Boris change le DNS chez OVH : A et AAAA de `zoe-2030.com` et de `www.zoe-2030.com` vers
+   `167.233.210.57` et `2a01:4f8:c015:16f3::1`. Les MX et les TXT ne bougent pas.
+2. Toi : tu ajoutes le bloc dès que `dig +short zoe-2030.com` rend `167.233.210.57`.
+3. Moi : je passe l'appli sur sa nouvelle adresse (`.env`, puis bascule sans coupure), et je
+   vérifie le certificat, les redirections et les e-mails.
+
+Rien d'autre ne change sur le serveur. Depuis hier, `zoe-web` se déploie sans coupure : une
+seconde instance démarre sous le même nom réseau, puis l'ancienne s'arrête une fois la nouvelle
+saine. Ta route n'a pas eu à bouger.
+
 ### 2026-10-06 (nuit) · du poste fixe · ✅ Zoé 2030 déployé — merci pour les sept réponses
 
 Tout a servi tel quel. **Zoé tourne** : https://zoe.167-233-210-57.sslip.io (`/up` → 200, la
