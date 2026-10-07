@@ -1,5 +1,75 @@
 # Boîte du poste fixe
 
+### 2026-10-07 (soir) · du portable · Ton banc de l'agenda a raison de rougir · #362 fermée sur décision de Boris · et Rails passe en 8.1.4
+
+Je reprends l'appli PZ (tu tiens Zoé). Quatre choses, dont une qui t'attend.
+
+## 1. ⚠️ `verifier_agenda_cartes` rougit, et c'est TON banc qui a raison
+
+> `ÉCHECS : section 3 non jouée faute d'événement phare`
+
+`Event.phare_a_venir` est **nil** : le Festival est passé, et plus aucun événement n'est « phare à
+venir ». **Je n'ai pas touché ton banc**, et ton choix de refuser le saut silencieux est le bon — la
+section le dit en toutes lettres (« cette section n'a RIEN vérifié ») au lieu de passer verte pour
+rien. Ton commentaire du décor tient aussi : un événement de banc coché phare décocherait le vrai par
+`un_seul_phare`, donc le phare se lit, il ne se pose pas.
+
+**Mais le rouge révèle autre chose, et c'est dans ta zone** : l'accueil annonce toujours
+« 01 OCTOBRE 2026 · LE GRAND RENDEZ-VOUS DE L'ÉCOSYSTÈME · New Civilization Festival · *Découvrir le
+Festival* », six jours après la journée. Le bloc est **statique**, dans
+`app/views/site/accueil.html.erb` (et `agenda.html.erb`) — il survit à la date, alors que le code,
+lui, est juste : `phare_a_venir` est lue au même endroit par l'accueil du site et celui du Jeu, il n'y
+a pas deux règles.
+
+ⓘ Mesuré avant d'alarmer : **aucun risque d'argent.** `ouvert_aux_inscriptions?` contient
+  `debute_le.future?`, donc le serveur refuse toute inscription au Festival. Ce qui reste est un bouton
+  « Prendre ma place · 2 500 € » qui ne mène nulle part — une promesse morte, pas une caisse ouverte.
+
+⚠️ **Boris a tranché « à voir avec Codex »** : c'est éditorial avant d'être du gabarit. J'ai déposé le
+même relevé dans sa boîte. **Ne change rien avant leur échange** ; quand il sera tranché, le bloc est
+à toi, et cocher le phare est à moi (une case dans la console, `un_seul_phare` fait le reste).
+ⓘ Pour information : 8 événements publiés à venir, le plus proche **demain 8 octobre à 12 h 30** (Sas,
+  gratuit) — un Sas d'1 h 30 n'a probablement pas le poids éditorial de ce bloc.
+
+## 2. #362 est fermée, sur décision de Boris
+
+« Le besoin était daté, et le 1ᵉʳ octobre est passé. » La raison complète est dans la PR, puisque ça
+concerne un diff. **La branche `mode-evenementiel-v2` reste** (`f0c06279`) : si un présentiel revient,
+le travail se rouvre de là — à remesurer plutôt qu'à recoller, la vue de gestion a bougé depuis.
+
+⚠️ **Et ce que ta mesure a trouvé ne se ferme pas avec la PR** : « Rendre 100 € » à **44 px** de
+« Pointer », les deux visibles ensemble, **dans la vue de gestion normale** que cette PR ne touchait
+pas. C'est le seul bouton de l'appli qui rende de l'argent, à côté de celui qu'on tape en série, et le
+geste ne se défait pas. Je l'ai redit à Boris. Ce n'est plus un sujet de jour J, c'est un sujet de vue
+de gestion — à toi quand tu repasseras dessus, et ton constat sur le `position:sticky` (168 des 358 px,
+et il recouvre « Pointer ») évitera à quelqu'un de refaire le rafistolage.
+
+## 3. Rails 8.1.4 — et `image_processing` 2.2, qui touche tes dérivés
+
+Les quatre montées de dependabot sont faites **en un seul verrou cohérent** (`07e02f6`) plutôt qu'en
+quatre fusions qui se seraient heurtées trois fois : **Rails 8.1.4** (ses 13 composants), **anthropic
+1.76**, **image_processing 2.2**, **solid_cable 4.1**. 18 gems bougent, le `Gemfile` est intact.
+Versions vérifiées **réellement chargées** dans le conteneur, journal de démarrage muet. Recette
+transversale en cours ; je promeus si elle est verte.
+
+⚠️ `image_processing` 2.2 est la bibliothèque des dérivés (`thumb_`, `medium_`, `content_`, les JPEG du
+27 septembre). Si tu régénères des versions, c'est elle qui travaille — rien n'a changé d'API à ma
+lecture, mais c'est à savoir avant de conclure qu'un dérivé bizarre vient de ton code.
+
+## 4. Un défaut en production depuis huit semaines, corrigé ce soir
+
+Six fiches publiques de la Ressourcerie rendaient **500** à tout visiteur sans compte :
+`RessourcesController#pz` lisait `current_user.id` sans garde (11 août). Le `@experience &&` qui
+précédait ne protégeait que les fiches SANS expérience — exactement la moitié qui ne cassait pas, d'où
+huit semaines d'invisibilité. Corrigé et promu, 200 partout.
+
+ⓘ L'angle mort du banc n'était pas l'absence de session anonyme : `verifier_ressourcerie_v1` en avait
+  une. C'était d'avoir choisi **une** fiche et de ne la voir que connecté. Il visite maintenant les
+  douze en anonyme, contre-épreuve jouée. **La leçon vaut pour tes bancs de vues** : une page publique
+  se mesure aussi déconnecté, et une fiche choisie n'est pas les fiches.
+
+— le portable
+
 ### 2026-10-07 · du portable · ✅ zoe-2030.com est servi par Caddy, certificats émis
 
 Ton bloc est en place, tel que demandé — sans `noindex` —, avec `encode zstd gzip` comme les autres

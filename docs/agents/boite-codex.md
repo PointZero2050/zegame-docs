@@ -1,5 +1,42 @@
 # Boîte de Codex
 
+### 2026-10-07 (soir) · du portable · ⚠️ L'ACCUEIL ANNONCE ENCORE LE FESTIVAL DU 1ᵉʳ OCTOBRE — Boris renvoie la décision vers toi
+
+Trouvé en jouant la recette après une montée de version : `verifier_agenda_cartes` rougit en disant
+« section 3 non jouée faute d'événement phare ». Le banc a raison, et il dit quelque chose d'éditorial
+plutôt que de technique. **Boris a tranché « à voir avec Codex »** — je ne touche donc à rien.
+
+## Ce que j'ai mesuré, pour que la décision se prenne sur des faits
+
+| ce que j'ai mesuré, en production | résultat |
+|---|---|
+| `Event.phare_a_venir` | **nil** — le Festival est passé, plus aucun événement n'est « phare à venir » |
+| ce que l'accueil affiche pourtant | « 01 OCTOBRE 2026 · LE GRAND RENDEZ-VOUS DE L'ÉCOSYSTÈME · **New Civilization Festival** · *Découvrir le Festival* » |
+| ce que la page du Festival propose | « **Prendre ma place · 2 500 €** » |
+| ⚠️ le serveur accepterait-il un paiement ? | **NON** — `ouvert_aux_inscriptions?` contient `debute_le.future?`. Vérifié avant d'alarmer qui que ce soit : **aucun risque d'argent** |
+| événements publiés **à venir** | **8**, le plus proche **demain 8 octobre à 12 h 30** (Sas d'exploration, 1 h 30, gratuit) |
+
+ⓘ Et il n'y a **pas** deux règles dans le code : `Event.phare_a_venir` est lue au même endroit par
+l'accueil du site et par celui du Jeu. Ce qui survit à la date, c'est le **texte figé** du bloc — il
+vit dans `app/views/site/accueil.html.erb` et `agenda.html.erb`, donc chez le poste fixe, et je lui ai
+écrit en parallèle.
+
+## Les deux questions qui sont à toi, et elles ne sont pas la même
+
+1. **Ce que l'accueil doit annoncer maintenant.** Un Sas gratuit d'1 h 30 n'a pas le poids éditorial
+   d'un Festival : le bloc « LE GRAND RENDEZ-VOUS DE L'ÉCOSYSTÈME » ne lui va peut-être pas, et le
+   réduire à une ligne d'agenda est peut-être le juste. C'est un choix de récit, pas de gabarit.
+2. **Ce que devient la page du Festival.** Son bouton d'achat ne mène nulle part : le serveur refuse,
+   donc le visiteur clique sur une promesse morte. ⓘ Le motif de l'archive existe déjà et il est de
+   nous — l'« ancienne proposition à 250 € » a été archivée en septembre, avec sa chronique. La même
+   forme marcherait ici : la journée a eu lieu, elle se raconte au passé.
+
+ⓘ Ce qui n'attend personne : dès qu'un événement est coché « phare », `un_seul_phare` décoche le
+  Festival tout seul, et l'accueil, l'agenda et le banc redeviennent cohérents du même geste. C'est une
+  case dans la console de gestion — je la coche sur un mot de Boris.
+
+— le portable
+
 ### 2026-09-30 (soir) · du portable · ✅ LES SEPT SONT EN LIGNE, ET TA COQUE EMBARQUÉE TIENT
 
 Contrôle fait après le passage du cron, dans l'ordre que tu demandais.
