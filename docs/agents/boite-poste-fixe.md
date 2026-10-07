@@ -1,5 +1,57 @@
 # Boîte du poste fixe
 
+### 2026-10-08 (nuit) · du portable · ⚠️ J'AI TOUCHÉ `gestion/inscriptions/index.html.erb` sur demande de Boris — deux personnes attendaient 100 € depuis cinq jours
+
+Je te le dis d'abord, parce que c'est ta zone : j'ai ajouté **onze lignes** à
+`app/views/gestion/inscriptions/index.html.erb`, une branche `<% when :restitution_demandee %>`, sur
+demande de Boris. La branche reprend **exactement** le libellé et le `button_to` de `:a_decider` —
+aucune règle n'est recopiée dans la vue, elle reste dans `PartDuCommun`. Le commentaire en tête de la
+branche le dit et m'attribue l'ajout.
+
+## Pourquoi je n'ai pas attendu que tu passes
+
+Deux participantes du Festival ont demandé la restitution de leurs 100 € le **2 octobre**. La fenêtre
+du choix s'est refermée le **3**. Depuis, trois verrous se refermaient ensemble :
+
+| | ce qui se passait |
+|---|---|
+| l'état | `PartDuCommun.etat` rendait `:engagee` — « la personne est sociétaire » |
+| **ton écran** | affichait « **engagée au Commun** », l'inverse de leur demande, et **aucun bouton** |
+| le service | `rendable?` exigeant `:a_decider`, `rendre!` **levait** — même en console |
+
+Cinq jours, et `rembourse_le` nul pour les deux. Boris ne pouvait pas les rembourser dans l'appli.
+
+ⓘ **Ton instinct dans cette vue était juste et je l'ai suivi.** Ton commentaire dit : « Recopier la
+  règle ici en aurait fait une seconde, et deux règles pour une seule question finissent par
+  diverger. » C'est exactement pour ça que j'ai ajouté un ÉTAT dans `PartDuCommun` plutôt qu'une
+  condition dans la vue. ⚠️ Et la contrepartie à garder en tête : **un `case` sur un état dérivé est un
+  contrat** — tout état neuf a besoin de sa branche, sinon il tombe dans le `else` et la page mentit.
+
+## Une faute à moi, parce qu'elle touche ta zone et qu'elle pourrait te mordre aussi
+
+J'avais d'abord annoncé à Boris que ton écran montrait « restitution demandée » et son bouton. **Faux.**
+J'avais grepé la ligne du libellé **sans lire le `case` qui l'entoure**. Un `grep` rend une ligne,
+jamais la condition qui la gouverne — et ici l'erreur portait sur ce que Boris pouvait FAIRE. Le
+remède que j'ai appliqué ensuite vaut pour tes vues : **rendre la page pour le cas réel** plutôt que la
+lire. `scripts/mesurer_bouton_restitution.rb` fabrique le cas exact (événement passé portant une part,
+billet confirmé « restituer », administrateur), rend `/gestion/inscriptions` et vérifie le bouton —
+⚠️ **une faute d'ERB ne se voit pas à la construction**, seulement au rendu.
+
+## Et le reste de la nuit, pour mémoire
+
+- **Les facilitateurs et les administrateurs étaient renvoyés au Festival** à chaque connexion : les
+  deux atterrissages étaient posés sur « a-t-il un billet », et un billet ne périme pas. Corrigé —
+  c'est `evenement_en_cours` qui décide (les JOURS de l'événement). 11 comptes touchés, dont 7
+  facilitateurs. ⓘ Ton banc `verifier_entree_du_jeu` encodait l'ancienne règle (décor à 20 jours) : il
+  porte maintenant trois journées et mesure aussi l'atterrissage de connexion. Il signale en passant
+  que **tes vues du billet n'écrivent plus `/jeu` en dur** — le point ouvert depuis le 2 octobre est
+  réglé, merci.
+- **Rails 8.1.4**, anthropic 1.76, image_processing 2.2, solid_cable 4.1 : en production.
+- Les **deux bancs rouges** par la date du Festival (`verifier_agenda_cartes`, `verifier_tarif_prive`)
+  attendent toujours la décision éditoriale renvoyée à Codex. Je n'y ai pas touché.
+
+— le portable
+
 ### 2026-10-07 (nuit) · du portable · Complément : il y a DEUX bancs rouges, pas un — et c'est la même faute de décor
 
 La recette transversale a fini : **221 verts, 2 rouges, 0 cassé.** Mon message précédent ne parlait que

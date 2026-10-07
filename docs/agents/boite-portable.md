@@ -1,5 +1,49 @@
 # Boîte du portable
 
+### 2026-10-08 (nuit) · note à moi-même · suite de la reprise : l'atterrissage, puis les 100 € qu'on ne pouvait pas rendre
+
+Tout est en production. Deux demandes de Boris en fin de session, et les deux étaient des défauts réels.
+
+- ⚠️ **Les facilitateurs et les administrateurs étaient renvoyés au Festival.** Pas la porte — son
+  compte n'est pas gardé. **Deux atterrissages posés sur « a-t-il une inscription à un événement
+  publié »**, commodes le jour J et pièges le lendemain : **un billet ne périme pas**. La question
+  juste est `evenement_en_cours` (les JOURS de l'événement, bornes incluses). **11 comptes touchés** :
+  Boris, 7 facilitateurs, 3 joueurs. ⚠️ La contre-épreuve a révélé un second défaut : un compte GARDÉ
+  sans billet partait sur `/jeu`, où la porte lui rend un refus — un détour vers un mur.
+- ⚠️⚠️ **DEUX RESTITUTIONS DE 100 € IMPOSSIBLES À HONORER.** Demandées le 2 octobre, fenêtre refermée
+  le 3 : `etat` rendait `:engagee`, l'écran affichait « engagée au Commun » (l'inverse), et `rendable?`
+  exigeant `:a_decider`, **`rendre!` levait même en console**. Cinq jours. Nouvel état
+  `:restitution_demandee` — **la date limite est celle du participant, pas celle de l'administrateur**.
+  À l'intérieur de la fenêtre rien ne change (une déclaration n'est pas un ordre). `EN_SUSPENS` gagne
+  l'état : cent euros dus ne se ferment pas avec le compte. Banc avec **contre-épreuve d'argent**.
+  ⓘ Le geste reste à Boris : je ne fais pas partir d'argent.
+
+### Trois fautes à moi, cette nuit, et elles se ressemblent
+
+1. ⚠️ **J'ai dit à Boris que le bouton de remboursement était à l'écran. Il n'y était pas** : j'avais
+   grepé la ligne du libellé **sans lire le `case` qui l'entoure**. Un grep rend une ligne, jamais sa
+   garde — et l'erreur portait sur ce qu'il pouvait FAIRE. C'est lui qui m'a reprise.
+2. ⚠️ **Ma première contre-épreuve de l'atterrissage était NULLE** : `docker cp` du correctif avant de
+   jouer le banc « d'avant », donc six OK rassurants sur le code neuf. Rejouée avec l'ancienne version
+   remise dans le conteneur : **trois échecs**, dont exactement le cas de Boris.
+3. **Mon script de greffe pointait l'arbre de PRODUCTION** (`~/src/pointzero-app`) au lieu de la
+   préprod. Rattrapé avant exécution.
+
+**Le fil commun : j'ai cru voir au lieu de mesurer.** Le remède appliqué les trois fois est le même —
+rendre la page, remettre l'ancien code, relire le chemin.
+
+### Ce qui attend
+
+- **Boris** : presser les deux boutons de restitution (`/gestion/inscriptions`) ; « Le troisième
+  enfant » (arbitrage ouvert depuis le 2 octobre) ; les 16 billets Sas/ateliers sans lien ; **l'état du
+  dossier stores**, qui tient les 29 comptes gardés — il a choisi d'attendre les stores pour les
+  inviter au Monde 0. **Et le prochain lot décidé : le dossier stores.**
+- **Codex + poste fixe** : l'événement phare et le devenir de la page du Festival — les deux bancs
+  rouges (`verifier_agenda_cartes`, `verifier_tarif_prive`) en dépendent, et une recette durablement
+  rouge apprend à ignorer le rouge.
+- **Poste fixe** : prévenu que j'ai touché onze lignes de `gestion/inscriptions/index.html.erb` ; et
+  les 44 px entre « Rendre 100 € » et « Pointer » dans la vue de gestion normale.
+
 ### 2026-10-07 (nuit) · note à moi-même · reprise de PZ : un 500 vieux de huit semaines, Rails 8.1.4, et deux bancs périmés par une date
 
 Boris m'a rendu l'appli PZ (le poste fixe tient Zoé). Boîte vide à la reprise, `main` = `preprod`, rien
