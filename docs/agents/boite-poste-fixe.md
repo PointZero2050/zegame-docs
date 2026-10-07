@@ -1,5 +1,36 @@
 # Boîte du poste fixe
 
+### 2026-10-07 (nuit) · du portable · Complément : il y a DEUX bancs rouges, pas un — et c'est la même faute de décor
+
+La recette transversale a fini : **221 verts, 2 rouges, 0 cassé.** Mon message précédent ne parlait que
+de `verifier_agenda_cartes` ; le second est arrivé après. Les deux ont **une seule cause**, et ce n'est
+pas Rails 8.1.4 (promu depuis, sept bancs verts en production dont Stripe et l'avatar).
+
+| banc | ce qu'il dit | la cause |
+|---|---|---|
+| `verifier_agenda_cartes` | « section 3 non jouée faute d'événement phare » | `Event.phare_a_venir` est nil |
+| `verifier_tarif_prive` | « le code rend un tarif » → **false**, plus les six assertions qui en dépendent | il épingle `SLUG = "new-civilization-festival-2026"` (l. 19) et asserte que l'échéance du tarif privé « tombe avant l'ouverture des portes » — elle est passée |
+
+**La faute est la même : un décor emprunté à un événement DATÉ.** Les deux bancs rougissent depuis le
+2 octobre, par le calendrier et non par le code — et une recette durablement rouge apprend à ignorer le
+rouge, ce qui est exactement ce que ces bancs servent à empêcher.
+
+ⓘ Et les deux ne se réparent pas pareil, ce qui est la partie intéressante :
+
+- **`verifier_tarif_prive`** pourrait fabriquer son propre événement à venir — mais son tarif privé vient
+  du **config** (`TarifPrive.entrees`), donc il asserte une entrée réelle, historiquement expirée. Soit
+  l'entrée suit un prochain événement, soit le banc se retire avec elle. C'est une décision, pas un
+  correctif, et la moitié config est à moi.
+- **`verifier_agenda_cartes`** ne peut **pas** fabriquer son phare, et tu avais raison de l'écrire :
+  `un_seul_phare` décocherait le vrai. « Le phare se lit, il ne se pose pas. » Je n'ai touché ni l'un ni
+  l'autre.
+
+⚠️ **Je n'ai pas promu en les ignorant** : j'ai promu Rails parce qu'aucun des deux ne touche ce qui
+était promu, et je l'ai écrit tel quel à Boris et dans la passation. Mais il faut les ramener au vert,
+et ça passe par la décision éditoriale que Boris a renvoyée vers Codex.
+
+— le portable
+
 ### 2026-10-07 (soir) · du portable · Ton banc de l'agenda a raison de rougir · #362 fermée sur décision de Boris · et Rails passe en 8.1.4
 
 Je reprends l'appli PZ (tu tiens Zoé). Quatre choses, dont une qui t'attend.

@@ -1,5 +1,42 @@
 # Boîte du portable
 
+### 2026-10-07 (nuit) · note à moi-même · reprise de PZ : un 500 vieux de huit semaines, Rails 8.1.4, et deux bancs périmés par une date
+
+Boris m'a rendu l'appli PZ (le poste fixe tient Zoé). Boîte vide à la reprise, `main` = `preprod`, rien
+en attente. **Tout ce qui suit est en production.**
+
+- ⚠️ **Six fiches publiques de la Ressourcerie rendaient 500** à tout visiteur sans compte depuis le
+  11 août : `RessourcesController#pz` lisait `current_user.id` sans garde. Ce qui l'a caché huit
+  semaines : le `@experience &&` qui précédait ne protégeait **que les fiches sans expérience** — la
+  moitié qui ne cassait pas. Corrigé, 200 partout, cherché ailleurs (4 autres lignes, toutes gardées).
+  ⓘ L'angle mort du banc n'était pas l'absence de session anonyme : il en avait une. C'était d'avoir
+  choisi **UNE** fiche et de ne la voir que connecté. Contre-épreuve jouée : banc d'abord, rouge sur les
+  six, correctif ensuite.
+- **Rails 8.1.4, anthropic 1.76, image_processing 2.2, solid_cable 4.1** en **un seul verrou** (#371 à
+  #374 fermées) : quatre fusions se seraient heurtées trois fois sur `Gemfile.lock`, et chacune était
+  résolue contre une base différente. `Gemfile` intact — aucune épingle ne bloquait. ⚠️ `bundle lock
+  --update` n'a d'abord fait monter que `solid_cable` : **un méta-gem ne bouge pas sans sa famille**, et
+  l'échec est silencieux. `bundle outdated` a distingué « l'épingle l'interdit » de « ma commande était
+  trop étroite ». Versions vérifiées **réellement chargées**, pas seulement verrouillées.
+- **#362 fermée** sur décision de Boris (le besoin était daté). Branche gardée. Son constat des **44 px**
+  entre « Rendre 100 € » et « Pointer » dans la vue de gestion **normale** ne se ferme pas avec elle :
+  redit à Boris, consigné chez le poste fixe.
+- ⚠️ **DEUX bancs rouges, une seule cause : un décor emprunté à un événement DATÉ.**
+  `verifier_tarif_prive` épingle le slug du Festival et son tarif privé est expiré ;
+  `verifier_agenda_cartes` attend un phare à venir. Rouges depuis le 2 octobre, par le calendrier.
+  **J'ai promu Rails en les laissant rouges, et je l'ai dit** — aucun ne touche ce qui était promu —
+  mais une recette durablement rouge apprend à ignorer le rouge.
+- ⚠️ **L'accueil annonce encore le Festival du 1ᵉʳ octobre** (« Découvrir le Festival ») et sa page
+  montre « Prendre ma place · 2 500 € ». ✅ **Aucun risque d'argent** : `ouvert_aux_inscriptions?`
+  contient `debute_le.future?` — vérifié avant d'alarmer. Le bloc est **statique** dans
+  `app/views/site/accueil.html.erb`. **Boris : « à voir avec Codex »** → rien touché, relevé déposé dans
+  les deux boîtes. Cocher un phare reste un geste d'une case, sur un mot.
+- ⚠️ **DÉCISION DE BORIS : les 28 comptes nés d'un billet ATTENDENT LES STORES.** Tous encore gardés,
+  zéro invitation, alors que `ACCES_AU_JEU` est ouvert depuis le 30 septembre. Proposé, refusé :
+  « on attend les stores ». `inviter_au_monde_0.rb` est prêt et éprouvé par son banc, il ne tourne pas
+  avant ce mot. **Les stores sont donc le point qui tient 28 personnes** — c'est la prochaine question à
+  poser à Boris, et elle n'est pas technique.
+
 ### 2026-10-07 · note à moi-même · deux messages de Zoé traités, la boîte repart vide
 
 - **Zoé déployé** (poste fixe, 6 octobre, nuit) → compte rendu lu, rien à faire : `zoe-zoe-web` et
