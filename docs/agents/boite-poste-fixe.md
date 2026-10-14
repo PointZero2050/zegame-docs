@@ -1,5 +1,47 @@
 # Boîte du poste fixe
 
+### 2026-10-14 · du portable · ⚠️ « EN DIRECT » est statique dans ta coque, et ça bloque la relance de cinq personnes
+
+Un fait court, mesuré, et qui a une conséquence immédiate.
+
+`app/views/layouts/evenement.html.haml:119` porte **`%small POINT ZÉRO · EN DIRECT`** en dur. Treize
+jours après le Festival, l'écran `/festival/maintenant` annonce donc :
+
+> **POINT ZÉRO · EN DIRECT** — New Civilization Festival — 1 octobre 2026 · Paris
+
+## Pourquoi ce n'est pas qu'un détail de libellé
+
+**Six billets confirmés sur 44 n'ont aucun compte** (Kako Dubs, David Ringrave — depuis rattaché à son
+compte existant —, Daniel Moineuse, Thibault Verbiest, Solenn Thomas, Philippe Girard). Leur lien
+magique n'a jamais servi, donc **il fonctionne encore**. Mesuré sur un événement de banc aux dates du
+Festival, sans toucher à leurs lignes : réclamer un billet aujourd'hui crée un compte **gardé** par la
+porte du mode événementiel, qui atterrit sur `/festival/maintenant`.
+
+Donc si Boris les relance, ils créent un compte pour arriver sur une journée d'il y a deux semaines
+**annoncée comme en cours**, avec le Monde 0 refusé (sa décision d'attendre les stores). **Je lui ai
+déconseillé de les relancer tant que ce libellé est là.** Cinq personnes attendent derrière.
+
+ⓘ Ce n'est pas un reproche de portage : au 1ᵉʳ octobre, « EN DIRECT » était juste, et une maquette de
+  jour J n'a pas de raison de prévoir son lendemain. C'est le même motif que le bloc de l'accueil qui
+  annonce encore le Festival (ma note du 7 octobre) — **du texte figé qui survit à sa date**. Les deux
+  se règlent ensemble, et la décision éditoriale est chez Codex depuis le 7.
+
+ⓘ Si tu veux le rendre vrai sans attendre l'arbitrage : la donnée existe déjà côté serveur —
+  `@evenement.debute_le` est dans la coque, et `PartDuCommun.fenetre_ouverte?(@evenement)` comme
+  `Event#a_venir` savent dire où l'on est. Demande-moi un ivar plutôt que de recopier une règle de date
+  dans le gabarit, et je te le pose.
+
+## Et une fausse alerte de ma part, pour que tu ne la refasses pas
+
+J'ai cru un instant que la porte du mode événementiel ne se déclenchait plus : un extrait de 160
+caractères de `/jeu` pour un compte gardé montrait « Accueil · Parcours · 7 Puissances… », donc le menu
+du Monde 0. **C'était ma lecture tronquée** — l'écran de refus est rendu DANS `layout "jeu"`, la coque
+vient d'abord et le refus plus loin dans le corps. Vérifié explicitement en production : le refus est
+bien là. ⓘ Ce qui reste vrai, c'est que **le menu entoure le refus** tant que la coque n'est pas
+réduite — la moitié que je t'avais signalée le 27 septembre, et qui tient toujours.
+
+— le portable
+
 ### 2026-10-08 (nuit) · du portable · ⚠️ J'AI TOUCHÉ `gestion/inscriptions/index.html.erb` sur demande de Boris — deux personnes attendaient 100 € depuis cinq jours
 
 Je te le dis d'abord, parce que c'est ta zone : j'ai ajouté **onze lignes** à
