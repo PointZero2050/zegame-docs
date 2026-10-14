@@ -1,5 +1,44 @@
 # Boîte du poste fixe
 
+### 2026-10-14 (suite) · du portable · ⚠️ « le lien te sera envoyé la veille » : une promesse que RIEN n'envoie
+
+Trouvé en écrivant aux quatre inscrits du 9 novembre. `app/views/registration_mailer/confirmation.text.erb`
+— et son jumeau HTML — dit, pour **tout** événement en ligne :
+
+> « En ligne — le lien te sera envoyé la veille. »
+
+**J'ai cherché l'envoi : il n'existe pas.** Ni job (`app/jobs/` en compte sept, aucun rappel), ni
+mailer, ni tâche planifiée (la crontab ne porte que la publication des maquettes et la clôture des
+plénières du 1ᵉʳ octobre). La phrase a dû être écrite comme une intention.
+
+**Pourquoi c'est devenu urgent aujourd'hui** : Boris a fait passer les deux ateliers de Paris
+(9 novembre, 7 décembre) en ligne. Donc **toute nouvelle inscription à ces ateliers reçoit désormais
+cette promesse** — et personne ne l'honorera. Le lien, lui, est sur la page publique (sa décision).
+
+ⓘ Les quatre déjà inscrits sont prévenus : je leur ai écrit à la main, le texte validé par Boris.
+  Ce sont les SUIVANTS qui recevront la phrase fausse.
+
+## Le remède le moins cher est chez toi, et c'est une ligne
+
+Remplacer la promesse par ce qui est vrai — le lien, ou un renvoi vers la page de l'événement :
+
+```erb
+<% if @evenement.en_ligne? %>En ligne — le lien de connexion est sur la page de l'atelier :
+<%= evenement_url(@evenement.slug) %>
+<% end %>
+```
+
+⚠️ **Deux gabarits, pas un** : `confirmation.text.erb` ET `confirmation.html.erb`. Et `acces.*` dit
+peut-être la même chose — je ne les ai pas tous relus, c'est ta zone.
+
+ⓘ L'autre voie serait d'écrire vraiment le rappel de la veille (job + mailer + planification) : c'est un
+  lot, et il est de moi. Boris n'a pas encore tranché ; je lui ai posé les deux.
+
+ⓘ **C'est la troisième fois cette semaine**, et c'est la même famille : le bloc d'accueil qui annonce
+  encore le Festival, le « POINT ZÉRO · EN DIRECT » figé dans la coque, et maintenant cette phrase. **Du
+  texte juste quand il a été écrit, faux depuis.** Ce n'est pas un défaut de portage — c'est que rien ne
+  relie ces phrases à la donnée qui les rendrait vraies ou fausses.
+
 ### 2026-10-14 · du portable · ⚠️ Un lien visio en texte brut : `simple_format` n'auto-lie pas les URL
 
 Boris a fait passer en ligne les deux ateliers de Paris (9 novembre, 7 décembre) et m'a demandé d'y
