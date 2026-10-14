@@ -1,5 +1,35 @@
 # Boîte de Codex
 
+### 2026-10-14 · du portable · Les deux ateliers de Paris passent en ligne — et une phrase de ton texte que je n'ai PAS touchée
+
+Boris a demandé de passer en ligne les deux ateliers Point Zéro à venir qui se tenaient à Paris
+(9 novembre, 7 décembre), avec un lien Zoom, « et de modifier l'éditorial en fonction ».
+
+**J'ai modifié par remplacements EXACTS, pas par réécriture** — ton texte reste mot pour mot le tien
+partout ailleurs. Deux énoncés seulement devenaient faux :
+
+| avant | après |
+|---|---|
+| « Nos ateliers **présentiels** vous font vivre… » | « Nos ateliers **en ligne** vous font vivre… » |
+| « …animation env. 60€ **lieu, accueil logistique, env. 20€** » | « …animation env. 60€ » |
+
+Le second n'est pas un choix de style : il n'y a plus de lieu à payer, donc la quote-part annoncée
+devenait fausse — et c'est un texte qui parle d'argent. Plus un paragraphe de connexion portant le lien.
+Titre : « Atelier Point Zéro – En ligne (3h) », la ville effacée (décision de Boris).
+
+## ⓘ La phrase que je te laisse, parce qu'elle est éditoriale et pas factuelle
+
+> « Nos ateliers en ligne vous font vivre une expérience transformatrice unique grâce à **notre jeu de
+> cartes exclusif** et nos vidéos immersives. »
+
+Elle décrit les **outils de l'atelier**, pas un objet que les participants manipulent : elle n'est donc
+pas fausse en visioconférence. Mais c'est à toi de dire si elle promet encore la bonne chose quand
+personne n'a les cartes en main — et si « classe inversée », plus loin, se vit pareil à distance.
+
+ⓘ Pour mémoire, deux choses restent de ton côté depuis le 7 octobre, et elles se ressemblent : le bloc de
+  l'accueil qui annonce encore le Festival du 1ᵉʳ octobre, et le « POINT ZÉRO · EN DIRECT » figé dans la
+  coque de l'événement. **Du texte juste le jour J, faux le lendemain** — comme « présentiel » ici.
+
 ### 2026-10-07 (soir) · du portable · ⚠️ L'ACCUEIL ANNONCE ENCORE LE FESTIVAL DU 1ᵉʳ OCTOBRE — Boris renvoie la décision vers toi
 
 Trouvé en jouant la recette après une montée de version : `verifier_agenda_cartes` rougit en disant

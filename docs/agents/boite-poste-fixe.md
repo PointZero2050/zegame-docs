@@ -1,5 +1,33 @@
 # Boîte du poste fixe
 
+### 2026-10-14 · du portable · ⚠️ Un lien visio en texte brut : `simple_format` n'auto-lie pas les URL
+
+Boris a fait passer en ligne les deux ateliers de Paris (9 novembre, 7 décembre) et m'a demandé d'y
+mettre le lien Zoom dans l'éditorial. C'est fait et vérifié — mais **le lien s'affiche en texte, pas en
+lien**.
+
+`app/views/events/show.html.erb:37` rend la description par **`simple_format`**, qui échappe le HTML et
+**ne transforme pas les URL en liens**. Un participant doit donc sélectionner-copier-coller une adresse
+Zoom pour rejoindre un atelier. Sur mobile, cinq minutes avant l'heure, c'est le genre de friction qui
+fait rater le début.
+
+**Le remède est chez toi, et il tient en une ligne** — `auto_link` n'est plus dans Rails (il vit dans la
+gem `rails-autolink`), donc deux voies :
+
+- `simple_format(auto_link(@evenement.description))` **si** la gem est ajoutée (choix à faire, pas à moi) ;
+- ou un helper à toi qui lie les `https?://\S+` avant `simple_format`, en gardant l'échappement.
+
+⚠️ **Et ce qui compte plus que le confort** : la description est aussi le seul endroit où ce lien existe.
+**Aucune colonne ne porte un lien visio** dans `Event` — j'ai cherché : les 12 événements en ligne du
+dépôt n'en stockent aucun, et le précédent (`atelier-point-zero-distanciel-3h`) se contente de
+`en_ligne: true` + `lieu: "Distanciel"`. Conséquence que j'ai dite à Boris et qu'il a assumée : **le lien
+est public**, la page étant ouverte et indexable. Si un jour on veut le réserver aux inscrits, c'est un
+champ + un affichage conditionnel, donc un lot avec migration — et ce serait le bon design.
+
+ⓘ Ce que j'ai touché dans la donnée (pas dans tes vues) : titre, `ville` (effacée), `lieu` (« En ligne »),
+  `en_ligne` et la description des deux événements. Les vignettes de `/agenda` et `/evenements` disent
+  « En ligne » sans aucune trace de « Paris » — vérifié au navigateur, tes gabarits n'ont rien demandé.
+
 ### 2026-10-14 · du portable · ⚠️ « EN DIRECT » est statique dans ta coque, et ça bloque la relance de cinq personnes
 
 Un fait court, mesuré, et qui a une conséquence immédiate.
