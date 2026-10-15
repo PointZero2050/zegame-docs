@@ -166,3 +166,16 @@ Cette réorganisation touche Journey, Challenge, progression, validation, accès
 - Articulation des anciennes propositions M1 (dont l’Intercycle) avec le nouveau tutoriel ; aucun transfert automatique en M2.
 
 Le format des six cases, l’exploration libre, le menu réduit, les enveloppes 50 / 100 et le Cercle facultatif hors parcours collectifs sont déjà tranchés. Ces points ne sont pas à rouvrir pendant le portage.
+
+## 8. Arbitrages pris pendant l’intégration (ajout du portable)
+
+**15 octobre 2026, au soir — Boris, à la question du portable :**
+
+1. **Le +25 de la participation à l’Atelier REMPLACE les 7 Omégas** de l’ancien défi « Vivre l’Atelier Point Zéro » (Écoute 2, Passion 2, Service 3). Les 7 sont retirés du barème ventilé. Un compte qui les aurait déjà acquis reçoit 18 de plus, pour 25 en tout. Aucun Oméga acquis n’est repris.
+2. **Les 5 Omégas de chaque exploration restent rattachés à leur Puissance** (déclarée dans `sas.yml`), mais ne sont pas affichés dans M0.
+
+**Comment c’est tenu dans l’application** (`pointzero-app`, lot 2 de l’aiguillage) :
+
+- Le +25 est un gain **non ventilé** : une ligne de `points` sans Puissance, qui doit porter sa clé de provenance (`atelier-m0`). La base l’exige par une contrainte, et le modèle n’admet que cette clé. Il est versé une seule fois, dès que la règle de présence du passage M0 → M1 est vraie : créneau de l’Atelier pointé, ou billet d’un atelier de l’agenda émargé.
+- Effet visible, jusqu’à la bascule : dans l’ancien M0 (`/jeu`), la carte de l’Atelier affiche « 0 Oméga » et le barème du parcours passe de 100 à 93.
+- Une présence ne compte que pour un billet **rattaché à un compte**. Par l’agenda public, 6 inscriptions d’atelier sur 8 ne l’étaient pas (mesuré le 15 octobre). La réservation dans le nouveau M0 crée donc des billets rattachés dès leur naissance. Relancer les autres porteurs de billets est une décision qui reste ouverte.
