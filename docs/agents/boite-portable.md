@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-10-15 · de Codex · Décision Boris : nouveau M0 Livre I, ancien M0 repris dans M1
+
+**Attendu :** récupérer le cadrage et préparer l’analyse d’impact / plan de migration, en coordination avec le poste fixe pour le portage. Boris demande de transmettre la maquette et les notes de réorganisation à Claude.
+
+**Références :** [note de réorganisation M0 / M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md), [PR maquette #2](https://github.com/PointZero2050/zegame-prototypes/pull/2), branche `codex/m0-panorama-20261015`, commit `fab05ec`, dossier `monde-0-panorama-cible/`. Les anciennes notes M0 / M1 et l’index portent désormais un renvoi vers le nouveau cadrage.
+
+Décisions : M0 = cinq questions du Livre I, librement explorables dans l’ordre conseillé ; trois entrées Accueil / Progression / Profil ; Atelier verrouillé jusqu’à 5/5, qui reste le rite de passage M0 → M1. 5 × 5 Omégas + 25 à la participation = 50, sans ventilation en Puissances visible dans M0. Réservation seule : aucun +25, aucune ouverture de M1. Sas gratuit de 1 h 30 indépendant, sans obligation de parcours. Inscription aux Ateliers via compte dans l’application.
+
+L’ancien M0 devient le contenu du nouveau M1, sans les cinq parcours de découverte, le Sas et l’Atelier ; éditorial et transitions à reprendre. Enveloppe M1 de 100 Omégas, répartition encore à établir. Cercle facultatif hors des parcours collectifs. Productions des cinq parcours et journaling préparatoire conservés, privés, révélés comme Traces dans M1.
+
+La note détaille les contrôles à faire avant écriture : composition réelle, preuves, soldes / acquis Festival, identités et anciennes URL, idempotence des gains, présence distincte de l’inscription, accès par Monde et prérequis des parcours collectifs. Boris indique peu d’usage de l’ancien M0 et pas encore d’accès à la suite pour les participants Festival ; cela ne vaut pas autorisation d’effacer les acquis.
+
+La maquette est locale / statique et simulée pour réservation et présence, pas un moteur de preuve à porter tel quel. Aucun changement de base, de modèle ou de droit n’a été effectué. Dernière présentation demandée : corps 16 px minimum, CTA blancs sur pastilles violettes arrondies. Ne pas réintroduire l’ancienne coque M0 avancée en suivant les documents historiques.
+
 ### 2026-10-08 (nuit) · note à moi-même · suite de la reprise : l'atterrissage, puis les 100 € qu'on ne pouvait pas rendre
 
 Tout est en production. Deux demandes de Boris en fin de session, et les deux étaient des défauts réels.

@@ -1,5 +1,7 @@
 # Onboarding du Monde 1 par les sept Puissances
 
+> Note Codex — 2026-10-15 : lire d’abord la [réorganisation M0 / M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md). Les Puissances ne sont plus révélées dans le nouveau M0, mais progressivement dans M1 qui reprend l’ancien M0. Les formulations supposant des sept territoires déjà ouverts à l’entrée de M1 doivent être reprises. Le Cercle est facultatif hors des parcours collectifs.
+
 > Ajout Codex — 2026-08-15. Spécification produit et pédagogique prolongeant
 > [l’onboarding du Monde 0](onboarding-monde-0-sept-puissances.md). Elle organise la révélation
 > fonctionnelle du Monde 1 sans autoriser à elle seule une modification des modèles de progression,

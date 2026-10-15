@@ -1,5 +1,7 @@
 # Monde 1 : cadre de conception des parcours
 
+> Note Codex — 2026-10-15 : la [réorganisation M0 / M1 validée par Boris](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md) prévaut sur les prescriptions remplacées ici. Le nouveau M1 reprend l’ancien M0 après retrait des cinq parcours de découverte, du Sas et de l’Atelier. Le Cercle devient facultatif après le tutoriel, requis seulement pour les parcours collectifs. Les propositions ci-dessous sont à réarticuler ; elles ne sont pas automatiquement déplacées dans M2.
+
 > Ajout Codex - 2026-07-14. Synthèse opérationnelle de `Synthese_Monde_1_Point_Zero.docx` fourni par Boris, croisée avec l'état documenté de `vibe.ze.game` au 14 juillet 2026. Cette note prépare la production des parcours sans intervenir dans la zone de code actuellement travaillée par Claude.
 
 > **Mise à jour canonique - 2026-07-31.** Le Monde 1 ne prépare plus seulement un Cercle futur :

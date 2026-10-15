@@ -1,5 +1,7 @@
 # Onboarding Monde 0 — accueil-métaparcours des sept Puissances
 
+> Note Codex — 2026-10-15 : cette organisation est désormais une source pour le nouveau M1. La [réorganisation M0 / M1 validée par Boris](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md) fixe le nouveau M0 : cinq questions du Livre I, Atelier et trois entrées Accueil / Progression / Profil. Ne pas réintroduire la roue des Puissances et les fonctions avancées dans M0 en appliquant cette ancienne note.
+
 > **Document historique, remplacé pour l'accueil et la progression par**
 > [Monde 0 — parcours linéaire d'appropriation](../pedagogie/monde-0-parcours-lineaire-appropriation.md).
 > Il reste utile pour la cartographie fonctionnelle des Puissances et les contenus déjà livrés,

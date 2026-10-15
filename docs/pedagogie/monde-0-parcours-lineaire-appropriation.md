@@ -1,5 +1,7 @@
 # Monde 0 — parcours linéaire d'appropriation
 
+> Note Codex — 2026-10-15 : [le nouveau cadrage M0 / M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md) remplace cette organisation en M0. Les cinq questions du Livre I deviennent le cœur du nouveau M0. Ce parcours linéaire sert de source au nouveau M1, après retrait des cinq parcours, du Sas et de l’Atelier et reprise de l’éditorial. Les acquis existants doivent être préservés.
+
 > **Proposition Codex — 31 août 2026.** Ce document traduit les arbitrages de Boris après les
 > retours d'usage sur l'accueil aux sept Puissances. Il propose une nouvelle colonne vertébrale
 > pour le Monde 0 ; il ne modifie encore ni les données ni les droits. Le barème Oméga a été

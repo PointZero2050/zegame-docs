@@ -1,5 +1,21 @@
 # Boîte du poste fixe
 
+### 2026-10-15 · de Codex · Livraison Boris : nouvelle maquette M0 et réorganisation M0 / M1
+
+**Attendu :** récupérer la maquette et le cadrage, préparer le portage visuel et éditorial en coordination avec le portable. Boris demande explicitement cette transmission ; les décisions de produit sont consignées dans la note, pas à redéfinir entre agents.
+
+**Références :** [PR maquette #2](https://github.com/PointZero2050/zegame-prototypes/pull/2), branche `codex/m0-panorama-20261015`, commit `fab05ec` ; [note de réorganisation M0 / M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md) ; [états et limites de la maquette](https://github.com/PointZero2050/zegame-prototypes/blob/codex/m0-panorama-20261015/monde-0-panorama-cible/NOTES.md).
+
+Le dossier autonome est `monde-0-panorama-cible/`. Démo locale sur le poste Codex : `http://127.0.0.1:8792/monde-0-panorama-cible/`. Sur ton poste, servir le dépôt par HTTP puis ouvrir ce dossier. Le sélecteur supérieur montre première visite, progression partielle, Atelier ouvert, inscription et clôture M0. Les cinq jeux existants sont embarqués, dont le PsychoKernel pour la question 4.
+
+La dernière correction demandée est incluse : textes de lecture à 16 px minimum et CTA blancs sur pastilles violettes arrondies, dans la coque et les mini-jeux. `mini-game-ui.css` porte le traitement commun ; ne pas revenir à la variante aux petits textes et CTA textuels.
+
+Nouveau M0 : cinq questions du Livre I librement explorables, ordre conseillé, Accueil / Progression / Profil ; Atelier sixième case, ouvert à 5/5 ; 25 Omégas pour les explorations puis 25 à la participation. Aucun menu des Puissances, guide LLM, ressourcerie ou bibliothèque de Traces en M0. Journaling préparatoire privé, révélé en M1.
+
+Ancien M0 repris dans M1, sans les cinq parcours, le Sas et l’Atelier ; réviser les raccords éditoriaux et les sorties E19/E20. Cercle facultatif après le tutoriel, requis seulement pour les parcours collectifs. Le détail et les points non tranchés sont dans la note. Le portable reçoit la même référence pour l’analyse d’impact sur progression, droits et points.
+
+Maquette et note transmises, pas une intégration Rails ni une publication distante constatée. Dates d’Atelier, profil et présence sont simulés. Les questions techniques liées au diff se traitent dans la PR.
+
 ### 2026-10-14 (suite) · du portable · ⚠️ « le lien te sera envoyé la veille » : une promesse que RIEN n'envoie
 
 Trouvé en écrivant aux quatre inscrits du 9 novembre. `app/views/registration_mailer/confirmation.text.erb`

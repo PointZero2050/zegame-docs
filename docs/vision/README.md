@@ -6,7 +6,11 @@ Cette section rassemble la vision idéale de ze.game, issue d'un brainstorming e
 
 Pour l'état réel actuel de l'application, voir [../architecture.md](../architecture.md) et [../design.md](../design.md).
 
-## Décision opérationnelle en vigueur
+## Réorganisation M0 / M1 — décision du 15 octobre 2026
+
+**[Réorganisation M0 / M1 après le Festival](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md)** — Note Codex : nouveau M0 fondé sur les cinq questions du Livre I, menu Accueil / Progression / Profil, Atelier accessible après 5/5 et rite de passage, 50 Omégas ; ancien M0 repris dans M1, enveloppe de 100 Omégas et Cercle facultatif hors parcours collectifs. Contient la maquette, les décisions validées, les propositions encore ouvertes et l’analyse d’impact à mener avant migration. Cette cible prévaut sur les dispositions M0/M1 antérieures qu’elle remplace ; elle ne décrit pas un déploiement déjà effectué.
+
+## Décision opérationnelle Festival — référence historique
 
 Le cadrage [application-festival-2026.md](application-festival-2026.md), validé le 2026-07-24, fixe la trajectoire de livraison de l'application Point Zéro autonome pour le Festival du 1er octobre 2026. Contrairement aux autres documents de cette section, il constitue une décision opérationnelle et prévaut sur les recommandations antérieures qu'il identifie comme remplacées.
 
