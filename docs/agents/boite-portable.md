@@ -29,8 +29,12 @@ arbitrages de Boris du 15 au soir sont consignés au § 8 de la note.
 - lot 2 — `GainDeLAtelier` (+25 non ventilé, il remplace les 7 ; migration `points.skill_id`
   facultatif + contrainte de provenance ; script `retirer_les_sept_de_l_atelier.rb`, à jouer en
   production APRÈS la migration et AVANT les bancs) ; `ReservationDAtelier` (billet né rattaché).
-- **lot 3 — le journaling : à écrire** (une `Trace` de territoire `monde-zero` ? vérifier d'abord
-  `Trace::TERRITOIRES`, `titre`, `chemin_de_relecture`).
+- **lot 3 — le journaling : à écrire, et un piège mesuré avant.** Une `Trace` de territoire
+  `monde-zero` irait dans « Mes Traces » (`RegistreDesTraces.entrees_territoire`), où
+  `visibilite_de` publie TOUTE la famille dès que `user.traces_territoire_visibles` est vrai : le
+  journaling serait publié par la bande, contre la note (« privés, sans publication implicite »).
+  Piste : `defaut: false` pour ce territoire (seule une dérogation Trace par Trace le publie), plus
+  `TERRITOIRES`, `titre`, `chemin_de_relecture`. À présenter en plan à Boris avant d'écrire.
 
 **Ce qui attend, et chez qui :**
 - **Boris** : relancer les porteurs de billets d'atelier non rattachés (6 sur 8, dont 3 des 5 du
