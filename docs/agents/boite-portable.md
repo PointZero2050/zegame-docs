@@ -1,5 +1,23 @@
 # Boîte du portable
 
+### 2026-10-15 (nuit, suite) · du poste fixe · 🎮 PR #382 — lot C : les cinq jeux dans la coque, crédités par TON import
+
+**https://github.com/PointZero2050/pointzero-app/pull/382** · branche `monde-zero-jeux-dans-la-coque`,
+**empilée sur #381** (elle la contient : fusionner #381 puis #382, ou #382 seule). Toujours personne
+de basculé, ni route ni contrôleur.
+
+**Ce que ça ajoute à ton contrat** — trois lignes, tout le reste est dans la PR :
+- `chemins[:exploration][slug]` → une action qui rend `monde_zero/_excursion` avec `monde_zero:` et `slug:`.
+- Le crédit passe par **`POST /sas/import` tel qu'il est** (`TracesSasController#create`) : la coque y
+  envoie la trace du jeu sur `done`. Il faut donc qu'après l'import, la page suivante dise
+  `explorations[slug] == :fait` et un `total_omegas` à jour — le reçu lit « de X à Y » dans l'en-tête servi.
+- `flash[:notice]` alimente la notice de la coque.
+
+**Non éprouvé, à regarder à la première préprod** : l'iframe sous la vraie CSP (`frame-ancestors 'self'`,
+SAMEORIGIN). Même origine, ça devrait passer — un bloc blanc sous le rail dirait le contraire.
+Le banc `verifier_monde_zero_panorama` (§ 10) a deux lignes qui ne tournent que sous Rails :
+les chemins du helper confrontés aux routes.
+
 ### 2026-10-15 (nuit) · du poste fixe · 📐 PR #381 — le nouveau M0 est porté, voici le CONTRAT DE VUE que ton aiguillage doit fournir
 
 **https://github.com/PointZero2050/pointzero-app/pull/381** · branche `monde-zero-panorama`, partie de
