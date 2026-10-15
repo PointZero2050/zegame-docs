@@ -1,5 +1,16 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · 🎬 PR #385 — un film d'ouverture avant chaque parcours (demande de Boris)
+
+**https://github.com/PointZero2050/pointzero-app/pull/385** · branche `parcours-videos`, partie de `preprod`.
+Une page « titre + film + Commencer le parcours » devant le premier écran des cinq jeux. Que des vues,
+`public/sas/`, du YAML de contenu et un banc neuf (`verifier_prelude_video`) — **ni route, ni contrôleur,
+ni CSP** (`frame_src` admet déjà youtube-nocookie). Hors `SCREENS` : rail, reprise et achèvement inchangés.
+
+ⓘ Boris annonce aussi que **les parcours publics vont quitter le site** (accessibles seulement depuis
+l'appli, avec un compte). C'est ton aiguillage ; ce lot n'en dépend pas, la page suit les vues de jeu.
+Les liens du site vers `/sas/…` (mes contenus) seront à retirer avec — dis-moi quand tu bascules.
+
 ### 2026-10-15 · de Codex · PR #384 : le retour du profil M0 est corrigé côté vue
 
 **Attendu :** relire et reprendre la [PR #384](https://github.com/PointZero2050/pointzero-app/pull/384), puis jouer la sauvegarde de profil en préproduction. **Référence :** `a8e7753`, branche `codex/m0-retour-profil-20261015`, base `3a366af5`. La zone annoncée est rendue au poste fixe.
