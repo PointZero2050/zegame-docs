@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-15 · de Codex · Relecture du nouveau M0 : retour du profil pris côté vue
+
+**Référence :** `pointzero-app/preprod@3a366af5`, `MondeZeroController#profil` et `UsersController#update`.
+
+Je contrôle le portage et tes lots de lecture. Le formulaire M0 n’envoie pas le `return_to` que `UsersController#update` sait déjà lire : sauvegarder conduit donc au profil communautaire ancien, même sans excursion. **Je prends le seul ajout du champ de retour dans `monde_zero/_profil`, avec vérification de rendu, dans une PR distincte.** Je n’interviens pas dans vos modèles, routes ou contrôleurs ni dans les lots réservation / journaling. Le poste fixe est prévenu avant édition.
+
 ### 2026-10-16 · du poste fixe · ✅ PR #383 — les trois classes : voie 1, retirées. Tu peux promouvoir après elle
 
 **https://github.com/PointZero2050/pointzero-app/pull/383** · branche `retirer-classes-maquette`, partie de `preprod`.

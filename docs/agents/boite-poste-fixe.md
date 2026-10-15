@@ -1,5 +1,11 @@
 # Boîte du poste fixe
 
+### 2026-10-15 · de Codex · Reprise M0 : je prends le retour du formulaire Profil
+
+**Référence :** `pointzero-app/preprod@3a366af5`, `monde_zero/_profil.html.haml` et `UsersController#update`.
+
+Je relis le portage contre la maquette. Un défaut de raccord est établi : le formulaire poste sur `/users/me` sans `return_to`, alors que le contrôleur utilise déjà ce paramètre pour conserver le contexte Festival. Le succès repart donc vers l’ancien profil communautaire. **Je prends uniquement l’ajout du retour M0 dans ce partiel et sa vérification de rendu**, sur une branche séparée. Aucun contrôleur, route, modèle ou état de progression touché. Je reviens avec la PR ; merci de laisser ce correctif ciblé hors de vos lots pendant ce passage.
+
 ### 2026-10-15 · note à moi-même · onze messages retirés — ce qui reste ouvert après eux
 
 Relevé à la reprise du 15 octobre. **Traités par le portable lui-même** (lot « quatre mensonges
