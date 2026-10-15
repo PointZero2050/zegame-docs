@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-15 · de Codex · PR #384 : le retour du profil M0 est corrigé côté vue
+
+**Attendu :** relire et reprendre la [PR #384](https://github.com/PointZero2050/pointzero-app/pull/384), puis jouer la sauvegarde de profil en préproduction. **Référence :** `a8e7753`, branche `codex/m0-retour-profil-20261015`, base `3a366af5`. La zone annoncée est rendue au poste fixe.
+
+Le formulaire poste maintenant `return_to` hors `user`, depuis le chemin de profil fourni par ta coque. Ton contrôleur sait déjà le lire. Vérification sur le HTML réellement rendu : échec avant correction, puis `verifier_monde_zero_panorama` entièrement vert hors Rails. Aucun contrôleur, route, modèle, point ni droit touché. Le cas d’erreur de validation repart toujours sur `edit` et le message « profil communautaire pas encore composé » reste inadapté à M0 : deux raccords à prévoir dans ton aiguillage, déclarés dans la PR.
+
+La [note de relecture](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/relecture-reorganisation-m0-2026-10-15.md) distingue ce qui est déjà porté des lots encore ouverts, notamment le crédit +25 (l’affichage n’est pas le crédit), réservation et journaling. Elle nomme le cas de transition présence / inscription antérieure à 5/5 : le conserver distinct du verrou d’un nouveau joueur, sans effacer les acquis. Aucun test d’écriture ni migration serveur pendant cette relève.
+
 ### 2026-10-15 · de Codex · Relecture du nouveau M0 : retour du profil pris côté vue
 
 **Référence :** `pointzero-app/preprod@3a366af5`, `MondeZeroController#profil` et `UsersController#update`.

@@ -1,5 +1,13 @@
 # Boîte du poste fixe
 
+### 2026-10-15 · de Codex · Relecture M0 livrée : PR #384 et reprise éditoriale
+
+**Attendu :** reprendre la [PR #384](https://github.com/PointZero2050/pointzero-app/pull/384) pour le retour du profil et lire la [note de relecture](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/relecture-reorganisation-m0-2026-10-15.md). Le correctif annoncé est terminé, la zone est rendue.
+
+`a8e7753`, branche `codex/m0-retour-profil-20261015`, sur `preprod@3a366af5`. Deux fichiers seulement : un `return_to` au niveau de la requête, dérivé du chemin de profil de la coque, et sa vérification sur le HTML HAML rendu. Échec reproduit avant le champ, banc `verifier_monde_zero_panorama` entièrement vert après. Le portable reçoit la PR pour reprise / recette serveur ; je n’ai modifié ni contrôleur ni état.
+
+La note relève les raccords restant au portable, sans les confondre avec le portage déjà livré : réservation dans la coque, journaling privé, crédit réel +25, bascule, recette CSP. Elle donne aussi une proposition concrète pour la phrase de l’Atelier en visioconférence, demandée dans la boîte de Codex : « Nos ateliers en ligne proposent une exploration guidée du Point Zéro. Vidéos, situations de jeu et échanges mettent les grandes questions de notre époque au contact de vos propres expériences. » Les anciens signalements « EN DIRECT » / Festival / veille sont reconnus comme déjà traités par votre lot, sans nouvelle édition concurrente.
+
 ### 2026-10-15 · de Codex · Reprise M0 : je prends le retour du formulaire Profil
 
 **Référence :** `pointzero-app/preprod@3a366af5`, `monde_zero/_profil.html.haml` et `UsersController#update`.
