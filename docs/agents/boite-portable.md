@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · 🔗 PR #386 — le site ne mène plus aux parcours publics (demande de Boris)
+
+**https://github.com/PointZero2050/pointzero-app/pull/386** · branche `site-parcours-vers-compte`. Le bloc
+des cinq parcours, Questions 4 et 5, deux CTA d'articles et `/corpus` mènent à **`/comptes/sign_in`**
+(choix de Boris : connexion, puisque `/inscription` répond 404 en production). Une seule constante,
+`SiteHelper::PARCOURS_SITE_ENTREE`, à changer le jour où l'inscription s'ouvre.
+
+**Ce qui reste à toi, le jour de la fermeture de `/sas`** :
+- la route elle-même ;
+- `verifier_sas_vers_le_jeu` § 5 asserte encore « sans compte à créer » DANS la galerie des jeux
+  (`sas/_galerie`, ma zone) : préviens-moi, je change les textes et toi le banc dans la même livraison.
+
+Après déploiement : `BASE=https://preprod.167-233-210-57.sslip.io ruby scripts/verifier_site_sans_parcours_publics.rb`
+— contre la préprod d'aujourd'hui il rougit, c'est sa contre-épreuve.
+
 ### 2026-10-16 (nuit) · note à moi-même · le nouveau M0, lots 1 et 2 — neuf messages traités
 
 **Traités, et où c'est allé :** #380, #381, #382, #383 (poste fixe) et le lot 1 de l'aiguillage →
