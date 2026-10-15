@@ -1,40 +1,26 @@
 # Boîte du portable
 
-### 2026-10-16 · du poste fixe · 🔗 PR #386 — le site ne mène plus aux parcours publics (demande de Boris)
+### 2026-10-16 (nuit, suite) · note à moi-même · le nouveau M0, lots 1 à 3 — dix messages traités
 
-**https://github.com/PointZero2050/pointzero-app/pull/386** · branche `site-parcours-vers-compte`. Le bloc
-des cinq parcours, Questions 4 et 5, deux CTA d'articles et `/corpus` mènent à **`/comptes/sign_in`**
-(choix de Boris : connexion, puisque `/inscription` répond 404 en production). Une seule constante,
-`SiteHelper::PARCOURS_SITE_ENTREE`, à changer le jour où l'inscription s'ouvre.
-
-**Ce qui reste à toi, le jour de la fermeture de `/sas`** :
-- la route elle-même ;
-- `verifier_sas_vers_le_jeu` § 5 asserte encore « sans compte à créer » DANS la galerie des jeux
-  (`sas/_galerie`, ma zone) : préviens-moi, je change les textes et toi le banc dans la même livraison.
-
-Après déploiement : `BASE=https://preprod.167-233-210-57.sslip.io ruby scripts/verifier_site_sans_parcours_publics.rb`
-— contre la préprod d'aujourd'hui il rougit, c'est sa contre-épreuve.
-
-### 2026-10-16 (nuit) · note à moi-même · le nouveau M0, lots 1 et 2 — neuf messages traités
-
-**Traités, et où c'est allé :** #380, #381, #382, #383 (poste fixe) et le lot 1 de l'aiguillage →
-**production** le 16 à 00 h 50 (sauvegarde vérifiée avant, sept bancs verts en production). #384
-(Codex), #385 (poste fixe), mon lot 2 et les deux raccords du profil → **préprod**, promus après la
-recette en cours. La décision Codex/Boris du 15 et la note de réorganisation → lots 1 et 2 ; les deux
-arbitrages de Boris du 15 au soir sont consignés au § 8 de la note.
+**Traités, et où c'est allé :** #380, #381, #382, #383 (poste fixe) et le lot 1 → **production** le 16
+à 00 h 50. #384 (Codex), #385 et #386 (poste fixe), mes lots 2 et 3 → **préprod** (`408b5eb`), promus
+ensemble après la recette transversale en cours. Les arbitrages de Boris du 15 au soir → § 8 de la
+note de réorganisation.
 
 **État de l'aiguillage (`/monde-zero`, personne n'est basculé) :**
-- lot 1 — l'état (`EtatDuMondeZero`) et les écrans en lecture ; total = celui de la TRAVERSÉE ;
-  verrou à 5/5 sur la route ; un compte « Festival seulement » est refusé (mesuré).
-- lot 2 — `GainDeLAtelier` (+25 non ventilé, il remplace les 7 ; migration `points.skill_id`
-  facultatif + contrainte de provenance ; script `retirer_les_sept_de_l_atelier.rb`, à jouer en
-  production APRÈS la migration et AVANT les bancs) ; `ReservationDAtelier` (billet né rattaché).
-- **lot 3 — le journaling : à écrire, et un piège mesuré avant.** Une `Trace` de territoire
-  `monde-zero` irait dans « Mes Traces » (`RegistreDesTraces.entrees_territoire`), où
-  `visibilite_de` publie TOUTE la famille dès que `user.traces_territoire_visibles` est vrai : le
-  journaling serait publié par la bande, contre la note (« privés, sans publication implicite »).
-  Piste : `defaut: false` pour ce territoire (seule une dérogation Trace par Trace le publie), plus
-  `TERRITOIRES`, `titre`, `chemin_de_relecture`. À présenter en plan à Boris avant d'écrire.
+- lot 1 — `EtatDuMondeZero` et les écrans en lecture ; total de la TRAVERSÉE ; verrou à 5/5 sur la
+  route ; un compte « Festival seulement » est refusé.
+- lot 2 — `GainDeLAtelier` (+25 non ventilé, il remplace les 7) ; migration `20261016090000`
+  (`points.skill_id` facultatif + contrainte de provenance) ; `ReservationDAtelier` (billet né
+  rattaché). ⚠️ **En production : migration copiée et jouée AVANT le build, puis
+  `retirer_les_sept_de_l_atelier.rb` (simulation, puis `ECRIRE=oui`) AVANT les bancs.**
+- lot 3 — `JournalDePreparation` : une `Trace` « monde-zero », absente du registre avant le passage
+  en M1, jamais publiée par l'interrupteur de famille (contre-épreuve : l'ancien registre la
+  publiait). Lancé par Boris (« attaque le lot 3 »).
+- À la fusion : `verifier_autorites_de_validation` (la référence YAML de l'Atelier → 0) et six
+  rouges de bancs de #385/#386, tous mécaniques, corrigés et dits au poste fixe.
+- **#386, reste à moi le jour où `/sas` ferme** : la route, et `verifier_sas_vers_le_jeu` § 5
+  (« sans compte à créer » dans la galerie) avec le poste fixe, dans la même livraison.
 
 **Ce qui attend, et chez qui :**
 - **Boris** : relancer les porteurs de billets d'atelier non rattachés (6 sur 8, dont 3 des 5 du
