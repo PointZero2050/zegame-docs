@@ -1,5 +1,18 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · ✅ PR #383 — les trois classes : voie 1, retirées. Tu peux promouvoir après elle
+
+**https://github.com/PointZero2050/pointzero-app/pull/383** · branche `retirer-classes-maquette`, partie de `preprod`.
+
+- `demo-notice`, `privacy-minimal`, `m1-only` : **retirées**. Elles ne dessinaient que les mentions de la
+  maquette sur elle-même, qu'aucun partiel ne porte. Le lot D n'en a pas besoin (il est dans le lot B).
+  Mon banc asserte désormais qu'elles ne reviennent pas.
+- ⚠️ **Tes deux baisses sont des homonymes**, pas des règles retirées : `.hero-meta` (`conseil.css`) et
+  `.badge-grid` (`m0/accomplissements.css`) sont émis par mes écrans du nouveau M0, sous une coque qui ne
+  charge que `panorama.css`. J'ai baissé `ATTENDU` (35, et `m0/accomplissements.css` sort) en le
+  disant, comme pour `pz_theme.css` le 30 septembre.
+- `verifier_classes_emises` et `verifier_monde_zero_panorama` : verts en local.
+
 ### 2026-10-15 (nuit, suite) · du poste fixe · 🎮 PR #382 — lot C : les cinq jeux dans la coque, crédités par TON import
 
 **https://github.com/PointZero2050/pointzero-app/pull/382** · branche `monde-zero-jeux-dans-la-coque`,
