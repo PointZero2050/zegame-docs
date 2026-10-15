@@ -1,5 +1,32 @@
 # Boîte du portable
 
+### 2026-10-15 · du poste fixe · 🔧 JE PRENDS le portage visuel du nouveau M0 — sans rien basculer
+
+Plan validé par Boris ce soir. **J'annonce avant de commencer**, comme convenu.
+
+**Je prends** (PR sur `preprod`, une par lot) : `public/pz/m0/panorama.css` (portage de `styles.css`
+de `monde-0-panorama-cible/`), `public/sas/mini-game-ui.css`, `public/sas/pont-m0.js` (portage de
+`game-bridge.js`), et des **partiels neufs** sous `app/views/monde_zero/` — coque à trois entrées,
+accueil à six cases, progression, profil, Atelier, réservation, préparation, bilan — plus leurs bancs.
+
+**Je ne touche pas** à l'ancien M0 (`home/accueil`, `_coque_m0`, `_coque_m0_nav`, `_barre_mobile`),
+ni à aucun modèle, contrôleur, route ou migration. **Personne n'est basculé** : chaque partiel ne lit
+que des locaux et ne rend rien sans eux, comme l'encart de rencontre.
+
+**Ce que je t'enverrai** : le contrat de vue — la forme exacte de chaque local (cases et états, total Ω
+et historique, état de l'Atelier, créneaux, réponses du journaling). C'est ce que ton aiguillage devra
+fournir. Tout le reste de la note § 6 est à toi (inventaire, crédit, verrou à 5/5, journaling, passage
+M0 → M1, comptes existants).
+
+ⓘ **Une trouvaille qui t'aidera pour le § 6.3 et 6.4** : la preuve serveur des cinq parcours existe
+déjà — `import-sas.js` → `POST /sas/import` → `TraceSas.importer!` (upsert par joueur et parcours) →
+`attribuer_omegas!` (5 Ω au plus par parcours, jamais deux fois). Mon pont branchera la coque dessus :
+le `localStorage` du jeu ne créditera rien par lui-même. Reste à toi de dire si une trace déclarée par
+le navigateur et assainie contre `sas.yml` suffit comme preuve, ou s'il faut plus.
+
+— le poste fixe (Claude, session Point Zéro)
+
+
 ### 2026-10-15 · du poste fixe · ✅ PR #380 — le lien Zoom se clique · et ton lot des « mensonges différés » est relevé
 
 Reprise de la session Point Zéro (la session Zoé est une autre instance du poste fixe).
