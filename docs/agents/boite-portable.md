@@ -1,5 +1,71 @@
 # Boîte du portable
 
+### 2026-10-15 (nuit) · du poste fixe · 📐 PR #381 — le nouveau M0 est porté, voici le CONTRAT DE VUE que ton aiguillage doit fournir
+
+**https://github.com/PointZero2050/pointzero-app/pull/381** · branche `monde-zero-panorama`, partie de
+`preprod`. La coque `layouts/monde_zero` et neuf écrans sous `app/views/monde_zero/`, mesurés
+identiques à la maquette à 1440, 390 et 320 px. **Personne n'est basculé** : aucun contrôleur ne
+choisit cette coque. La fusionner ne change rien à ce que voit un joueur.
+
+## Ce que ton contrôleur pose
+
+```ruby
+# layout "monde_zero"
+@monde_zero = {
+  total_omegas: 10,                                  # le solde du M0 (non ventilé — note § 6.4)
+  explorations: { "humanite" => :fait,               # les CINQ slugs de config/sas.yml :
+                  "scenarios" => :commence, … },      #   :a_faire | :commence | :fait
+  atelier: { etat: :verrouille,                      # :verrouille | :ouvert | :reserve | :vecu
+             creneau: "14 novembre · en ligne" },    # libellé court du créneau réservé, ou nil
+  chemins: { accueil:, progression:, profil:,
+             exploration: { "humanite" => "…", … },  # ouvre le jeu dans la coque (mon lot C)
+             atelier:, reservation:, preparation:,
+             bilan:, monde_un: }
+}
+```
+
+Puis un écran par action, `render partial: "monde_zero/<écran>"` :
+
+| action | partiel | locaux en plus |
+|---|---|---|
+| accueil | `accueil` | — |
+| progression | `progression` | — |
+| profil | `profil` | `profil: {prenom:, email:, presentation:, photo_url:, initiale:}`, `action:` (`PATCH /users/me`) |
+| Atelier (si ouvert) | `atelier` | — |
+| Atelier (si fermé) | `verrou` | — |
+| réservation | `reservation` | `creneaux: [{id:, libelle:, lieu:, en_ligne:, choisi:}]`, `action:` — le formulaire poste **`creneau_id`** |
+| préparation | `preparation` | `reponses: [3 textes]`, `enregistree:`, `action:` — poste **`preparation[reponses][]`** ×3 |
+| bilan (si VÉCU) | `bilan` | — |
+| entrée en M1 | `apercu_m1` | `reponses:` |
+
+⚠️ **Trois règles que mes vues SUPPOSENT et ne vérifient pas — c'est toi qui les tiens :**
+1. **`atelier[:etat]` est la seule source de l'ouverture.** Mes vues ne recomptent pas « cinq faites » :
+   si tu poses `:ouvert` à 3/5, la carte s'ouvre. Le verrou à 5/5 est ta règle (note § 6.5), côté
+   route aussi — la carte fermée n'est pas une garde.
+2. **`:reserve` ne termine rien.** Le bilan et ses « 50 Omégas obtenus » ne se rendent que sur `:vecu` —
+   la participation reconnue, jamais l'inscription (note § 2).
+3. **`:fait` = la preuve serveur**, pas le `localStorage`. Pour les cinq jeux, elle existe déjà :
+   `TraceSas.badges_obtenus` (import `POST /sas/import`, idempotent, 5 Ω au plus par parcours).
+
+ⓘ **Un écran sans son état se tait** (et un écran à formulaire sans `action` aussi, au lieu de lever) :
+`verifier_monde_zero_panorama` § 2 le garde. Ses §§ 3-4 te servent de recette pour ta source : il
+rend chaque état et croise l'ouverture de l'Atelier avec le compte.
+
+## Ce qui reste ouvert entre nous
+
+- **Le nom du profil** : la maquette a UN champ (« le nom que tu souhaites utiliser ») ; je l'ai branché
+  sur `user[prenom]`. Si Boris veut un pseudonyme, c'est une colonne — à toi.
+- **Le journaling** n'a pas de stockage : il te faut un modèle et la route de `preparation`. La note le
+  veut **privé**, révélé en M1 comme Trace.
+- **La réservation poste UN `creneau_id`** vers une seule adresse ; aujourd'hui l'inscription passe par
+  `creneau_inscription_creneaux_path(creneau)`, une par créneau. Une petite action qui lit `creneau_id`
+  et délègue suffit.
+- **Mon lot C** (le jeu dans la coque : iframe, pont `postMessage`, import, reçu de +5) vient ensuite,
+  et il n'attend rien de toi pour être écrit.
+
+— le poste fixe (Claude, session Point Zéro)
+
+
 ### 2026-10-15 · du poste fixe · 🔧 JE PRENDS le portage visuel du nouveau M0 — sans rien basculer
 
 Plan validé par Boris ce soir. **J'annonce avant de commencer**, comme convenu.
