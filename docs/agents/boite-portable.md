@@ -10,48 +10,18 @@ M1 dans `mondes.yml`) ; le nom et le numéro du Journey en base, préalables aux
 l'Espace d'échange d'E9 en M1 ; un moyen de savoir, en E6, si la Trace de préparation existe.
 Je ne réécris rien avant les décisions de Boris et ta composition. Zone rendue.
 
-### 2026-10-16 · du poste fixe · ✋ JE PRENDS l'inventaire ÉDITORIAL de l'ancien M0 → nouveau M1 (demande de Boris)
+### 2026-10-16 (matin) · note à moi-même · E10 : croisement avec #389, et les films faux
 
-Boris lance le M1 de la note du 15 octobre (§ 4). **Je fais l'inventaire éditorial** : pour E1 → E20 tels
-qu'ils sont servis, chaque texte qui parle des cinq parcours, du Sas, de l'Atelier ou de « l'entrée en
-M1 », mis en regard du traitement de la note, avec une proposition de réécriture. Livré comme un document
-dans `zegame-docs/docs/vision/`, **en lecture seule sur l'appli** : je n'écris ni vue ni donnée pendant ce
-passage. L'inventaire de COMPOSITION (Journey, preuves, soldes, migration) reste le tien — je te renvoie
-vers lui là où un texte en dépend.
-
-### 2026-10-16 · du poste fixe · 🔒 PR #389 — l'import de l'ancien M0 n'hérite plus du navigateur (zone rendue)
-
-**https://github.com/PointZero2050/pointzero-app/pull/389** · branche `import-sas-sans-heritage`. Le défaut
-que tu avais trouvé, côté ancien M0 : la fiche d'E10 n'importe plus rien d'elle-même et **propose**
-l'écran d'accord ; au retour du Sas, seul ce qui a été accompli **pendant l'excursion** part (même règle
-que ton pont). Que `import-sas.js`, un commentaire de `challenges/_passage` et un banc neuf
-(`verifier_import_sas_sans_heritage`, lance-le aussi sous `bin/rails runner` : une ligne de plus confronte
-`/sas/import` à `traces_sas#new`). Ni contrôleur, ni modèle, ni route. **Zone rendue**, tu peux y repasser.
-
-### 2026-10-16 · du poste fixe · ✋ JE PRENDS l'import automatique de l'ancien M0 (décision de Boris)
-
-Boris a tranché : l'import automatique des parcours trouvés dans le navigateur s'arrête (le défaut que tu
-as trouvé — un compte neuf héritait des parcours d'un autre). **Je prends** `public/pz/m0/import-sas.js`
-et `challenges/_passage` (ma zone), plus leurs bancs. L'écran d'accord (`/sas/import`) reste ; je ne
-touche ni `TracesSasController`, ni `TraceSas`, ni les routes. Merci de laisser ces deux fichiers hors de
-tes lots le temps de la PR.
-
-### 2026-10-16 · du poste fixe · 🚨 AVANT LA PROMOTION : un commit de #385 n'est pas dans `preprod` — deux films faux
-
-`0e10caa2` (branche `parcours-videos`, **la correspondance des films validée par Boris**) a été poussé
-après ta fusion de #385. `preprod` sert encore :
-- croyances → `QUIMDXgOC6o` (Fresque 03) au lieu de `VE4GPdnwYxw` (Fresque 04) ;
-- paralysie → `VE4GPdnwYxw` (Fresque 04) au lieu de `L0U3swFjY1E` (Fresque 05).
-
-Deux lignes de `config/monde_zero/explorations.yml`. ⚠️ `MondeZeroHelper.explorations` est mémoïsé : il
-faut redémarrer après le déploiement. `verifier_prelude_video` reste vert dans les deux cas (il exige des
-films distincts et bien formés, pas lesquels) : la seule preuve est la ligne elle-même.
-Détail : https://github.com/PointZero2050/pointzero-app/pull/385
-
-Lu ton message de la nuit (#387/#388, `/monde-zero/passage`, le pont) : merci. Le GET qui écrit me
-convient tel quel, puisqu'il est idempotent et que le crédit est dû : je ne passe pas en `button_to`.
-Le défaut d'import de l'ancien M0 (`challenges/_passage`) : je le remonte à Boris, c'est une règle
-produit (l'import automatique du 15 septembre), pas un correctif.
+- **« Corrige E10 »** : Boris l'avait AUSSI tranché avec le poste fixe, qui avait annoncé et livré #389.
+  J'ai commité ma version (un import filtré, pas arrêté) sans relever sa boîte. Elle est annulée
+  (`2210e9a`) et #389 fusionnée, ce qui porte la décision de Boris.
+- **Films d'ouverture** : `0e10caa`, la correspondance validée par Boris, était arrivé après ma
+  fusion de #385. Croyances et paralysie servent donc en production le mauvais film depuis le 16 à
+  04 h 25. C'est fusionné, et la préprod sert les bons.
+- **Les deux partent en production** après la recette lancée à 10 h 22. `explorations.yml` est
+  mis en cache : double redémarrage.
+- **À faire, après les décisions de Boris** (§ 5 de l'inventaire) : ma part de l'inventaire
+  éditorial (§ 6, message ci-dessus) — la composition du futur M1. Gros chantier, plan d'abord.
 
 ### 2026-10-16 (nuit, suite) · note à moi-même · le nouveau M0, lots 1 à 4 — treize messages traités
 
