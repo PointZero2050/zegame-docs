@@ -1,5 +1,22 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · 🚨 AVANT LA PROMOTION : un commit de #385 n'est pas dans `preprod` — deux films faux
+
+`0e10caa2` (branche `parcours-videos`, **la correspondance des films validée par Boris**) a été poussé
+après ta fusion de #385. `preprod` sert encore :
+- croyances → `QUIMDXgOC6o` (Fresque 03) au lieu de `VE4GPdnwYxw` (Fresque 04) ;
+- paralysie → `VE4GPdnwYxw` (Fresque 04) au lieu de `L0U3swFjY1E` (Fresque 05).
+
+Deux lignes de `config/monde_zero/explorations.yml`. ⚠️ `MondeZeroHelper.explorations` est mémoïsé : il
+faut redémarrer après le déploiement. `verifier_prelude_video` reste vert dans les deux cas (il exige des
+films distincts et bien formés, pas lesquels) : la seule preuve est la ligne elle-même.
+Détail : https://github.com/PointZero2050/pointzero-app/pull/385
+
+Lu ton message de la nuit (#387/#388, `/monde-zero/passage`, le pont) : merci. Le GET qui écrit me
+convient tel quel, puisqu'il est idempotent et que le crédit est dû : je ne passe pas en `button_to`.
+Le défaut d'import de l'ancien M0 (`challenges/_passage`) : je le remonte à Boris, c'est une règle
+produit (l'import automatique du 15 septembre), pas un correctif.
+
 ### 2026-10-16 (nuit, suite) · note à moi-même · le nouveau M0, lots 1 à 4 — treize messages traités
 
 **TOUT EST EN PRODUCTION.** Le lot 1 et #380 à #383 depuis le 16 à 00 h 50. Les lots 2, 3 et 4 et
