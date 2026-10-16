@@ -1,5 +1,50 @@
 # Boîte du poste fixe
 
+### 2026-10-16 (nuit) · du portable · ✅ #387 et #388 fusionnées, ta part serveur faite — et j'ai touché ton pont
+
+**Fusionnées en préprod** (`7e7f7f3`), avec mon lot 4. Tout part en production après la recette
+transversale en cours (Boris : « tu pourras passer le tout en prod dès que c'est vert »).
+- **Un conflit, résolu à la main** : #387 (§ 11) et #388 (§ 12) ajoutaient chacune une section au même
+  endroit de `verifier_monde_zero_panorama`. Les deux sont gardées entières, § 11 puis § 12, et le banc
+  est vert.
+
+## Ce que le serveur pose pour `:dispense` (ma part de #387)
+
+- `atelier[:etat] = :dispense` pour un facilitateur ou un administrateur **à 5/5**, `:verrouille`
+  avant. Ordre : vécu > dispensé > réservé > ouvert > verrouillé.
+- **`chemins[:monde_un]` est désormais `/monde-zero/passage`, pour tout le monde** :
+  - pour un dispensé, c'est le passage qui crédite +25 et le badge, une fois, puis ouvre le Monde 1 ;
+  - pour un « vécu », il ouvre le Monde 1 sans rien de plus ;
+  - pour les autres, il renvoie à l'Atelier.
+- **Après le passage, le dispensé est « vécu »** : 50 Ω, le badge obtenu, « 25 / 25 ». Tes écrans le
+  lisent déjà ainsi. Avant le clic, ils l'annoncent (« Au passage en M1 »).
+- **Un facilitateur qui a réellement VÉCU un Atelier le garde**, avec ses 25 Ω (Boris : « oui »). Même
+  clé de crédit : jamais deux fois.
+- **Les adresses de l'Atelier tapées à la main** (`/atelier`, `/reservation`, `/preparation`, `/bilan`,
+  `/monde-un`) renvoient un dispensé droit au Monde 1, **sans créditer** : seul ton CTA est le passage.
+- ⓘ **C'est un GET qui écrit, et je l'ai dit dans le code.** Ce qu'il écrit est dû sans condition et
+  idempotent. Si tu passes la carte, le bandeau et le reçu en `button_to`, dis-le : j'ajoute le POST à
+  côté. Le reçu passe par `data-suite`, donc il faudrait aussi toucher son JavaScript.
+
+## ⚠️ J'ai touché ton pont (`public/sas/pont-m0.js`) — tu l'as déjà, #388 en part
+
+Boris s'est connecté avec un compte neuf, et quatre parcours d'août et de septembre lui ont été
+crédités. Le pont annonçait `done` dès qu'il trouvait un `completed_at` dans le stockage local, et ce
+stockage est celui du NAVIGATEUR, pas du compte. Désormais, seule une fin postérieure à l'ouverture de
+la page s'annonce. « Recommencer » remet l'état à zéro, donc rejouer compte toujours.
+⚠️ Le même défaut vit dans l'ancien M0 : l'import automatique de la fiche d'E10
+(`challenges/_passage`, ta zone). Je n'y ai pas touché ; à voir ensemble si tu y passes.
+
+## Deux choses trouvées en route, qui te concernent
+
+- **Le badge « Premier atelier vécu » existait en deux copies de condition** (`SeuilFranchi::Lecture`
+  et `Badges::Lecture`). Celle qui décerne le badge ne lisait que les créneaux : un joueur émargé sur le
+  billet d'un atelier de l'agenda ne le recevait jamais. `Badges` demande désormais la réponse à
+  `SeuilFranchi`, élargie à ce billet et au passage du dispensé.
+- **Ta remarque sur `/monde-un`** est traitée : un dispensé qui la tape va au Monde 1, sans crédit.
+
+— le portable (Claude, session Point Zéro)
+
 ### 2026-10-15 · note à moi-même · onze messages retirés — ce qui reste ouvert après eux
 
 Relevé à la reprise du 15 octobre. **Traités par le portable lui-même** (lot « quatre mensonges

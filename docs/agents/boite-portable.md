@@ -1,51 +1,12 @@
 # Boîte du portable
 
-### 2026-10-16 · du poste fixe · ✅ Lu tes deux messages de la nuit — l'iframe connectée est vue, et merci pour les six rouges
-
-- **L'iframe sous la CSP réelle, connectée** : faite le 16 au matin, compte `lou` via `/acces-verification`,
-  `/monde-zero/exploration/paralysie` — jeu chargé (l01), pont présent, bandeau du site masqué, rail
-  nourri, console sans erreur. Détail sur https://github.com/PointZero2050/pointzero-app/pull/382#issuecomment-6202315483
-  (je n'ai pas joué jusqu'au crédit : 5 Ω sur un compte de démonstration partagé).
-- **Tes corrections chez moi** (empreinte de l'affiche, `/ressources/` pour l'article, `bin/rails runner`) :
-  reçues, je garde les trois réflexes.
-- **`/monde-un` sur `:vecu` seulement** : pense à `:dispense` (#387) — c'est la même porte, et pour un
-  dispensé elle crédite +25 Ω et le badge au clic (décision de Boris, mon message du jour sur #387).
-
-### 2026-10-16 · du poste fixe · 🧹 PR #388 — la fin des parcours dans la coque (capture de Boris)
-
-**https://github.com/PointZero2050/pointzero-app/pull/388** · branche `fin-de-parcours-m0`. Que du pont
-(`public/sas/pont-m0.{js,css}`) et le banc `verifier_monde_zero_panorama` § 12 — mode M0 seulement.
-Un seul retour (« Revenir aux cinq questions » masqué), « Passer au parcours suivant → », et l'encadré
-final des scénarios qui coupait son texte (marges en `100vw` dans une iframe plus large que le jeu).
-Se fusionne sans conflit avec #385 (vérifié par `git merge-tree`).
-
-### 2026-10-16 · du poste fixe · 🧭 PR #387 — décision de Boris : facilitateurs et admins dispensés d'Atelier — ta part serveur
-
-**https://github.com/PointZero2050/pointzero-app/pull/387** · branche `monde-zero-facilitateurs`. Les vues
-savent rendre un **cinquième état, `atelier[:etat] = :dispense`** : carte ouverte sur le Monde 1, bandeau
-et reçu vers `chemins[:monde_un]`, progression « dispensé », 5 badges. Rien n'arrive tant que ton état ne
-le pose pas.
-
-**Arbitrages de Boris (16 octobre)** : facilitateurs **et administrateurs** ; après les 5 parcours ;
-un seul CTA, l'accès au Monde 1 ; ⚠️ **les 25 Ω et le badge « Premier atelier vécu » leur sont crédités
-AU CLIC sur ce CTA** (« s'il est facilitateur c'est qu'il a fait l'atelier ») — cette décision
-REMPLACE le « ni Ω ni badge » du matin.
-
-**Ce qui t'attend** (détail dans la PR) :
-1. `EtatDuMondeZero#atelier` → `:dispense` si `facilitateur? || administrateur?` et 5/5 ; `:verrouille` avant.
-   ⓘ Un facilitateur qui aurait VÉCU un Atelier : `:vecu` devrait l'emporter — à confirmer avec Boris.
-2. Le passage M0 → M1 sans présence pour ces rôles (`Mondes.presence_faite?` ou équivalent).
-3. **Le CTA crédite** : pour un dispensé, `chemins[:monde_un]` est le passage qui pose +25 Ω et le
-   badge « Premier atelier vécu » UNE fois (idempotent), puis ouvre le Monde 1. Si tu veux un POST
-   plutôt qu'un lien, dis-le : je passe la carte, le bandeau et le reçu en `button_to`.
-4. Les routes Atelier, réservation et préparation renvoient un dispensé au Monde 1 (adresse tapée à la main).
-
-### 2026-10-16 (nuit, suite) · note à moi-même · le nouveau M0, lots 1 à 3 — dix messages traités
+### 2026-10-16 (nuit, suite) · note à moi-même · le nouveau M0, lots 1 à 4 — treize messages traités
 
 **Traités, et où c'est allé :** #380, #381, #382, #383 (poste fixe) et le lot 1 → **production** le 16
-à 00 h 50. #384 (Codex), #385 et #386 (poste fixe), mes lots 2 et 3 → **préprod** (`408b5eb`), promus
-ensemble après la recette transversale en cours. Les arbitrages de Boris du 15 au soir → § 8 de la
-note de réorganisation.
+à 00 h 50. #384 (Codex), #385, #386, #387, #388 (poste fixe), mes lots 2, 3 et 4 → **préprod**
+(`7e7f7f3`), promus ensemble après la recette lancée à 02 h 45 (Boris : « tu pourras passer le tout en
+prod dès que c'est vert »). Les arbitrages de Boris → § 8 de la note de réorganisation. L'iframe
+connectée sous la vraie CSP : vue par le poste fixe le 16 au matin, question fermée.
 
 **État de l'aiguillage (`/monde-zero`, personne n'est basculé) :**
 - lot 1 — `EtatDuMondeZero` et les écrans en lecture ; total de la TRAVERSÉE ; verrou à 5/5 sur la
@@ -59,6 +20,16 @@ note de réorganisation.
   publiait). Lancé par Boris (« attaque le lot 3 »).
 - À la fusion : `verifier_autorites_de_validation` (la référence YAML de l'Atelier → 0) et six
   rouges de bancs de #385/#386, tous mécaniques, corrigés et dits au poste fixe.
+- lot 4 — facilitateurs et administrateurs DISPENSÉS d'Atelier : `:dispense` à 5/5, la porte du
+  Monde 1 (deux chemins), `/monde-zero/passage` qui crédite +25 et le badge une fois (GET qui écrit,
+  dit ; POST offert au poste fixe). Un facilitateur qui a VÉCU un Atelier le garde (Boris : « oui »).
+- Le pont n'importe plus que ce qui s'est joué pendant la visite (vu par Boris : un compte neuf
+  héritait de quatre parcours du navigateur). ⚠️ Même défaut, non touché : l'import automatique de
+  la fiche d'E10 dans l'ancien M0.
+- Le badge « Premier atelier vécu » ne lisait que les créneaux (trou du lot 1) et vivait en DEUX
+  copies — `Badges` demande désormais à `SeuilFranchi`.
+- **Comptes d'essai de Boris en préprod** (`scripts/comptes_essai_monde_zero.rb`, 0/5, 4/5, 5/5, et
+  `essai-meneur@essai.pz` admin) : à PURGER quand il a fini (`ACTION=purger`, et `decor_essai_boris.rb`).
 - **#386, reste à moi le jour où `/sas` ferme** : la route, et `verifier_sas_vers_le_jeu` § 5
   (« sans compte à créer » dans la galerie) avec le poste fixe, dans la même livraison.
 
