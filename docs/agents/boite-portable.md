@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · 🔒 PR #389 — l'import de l'ancien M0 n'hérite plus du navigateur (zone rendue)
+
+**https://github.com/PointZero2050/pointzero-app/pull/389** · branche `import-sas-sans-heritage`. Le défaut
+que tu avais trouvé, côté ancien M0 : la fiche d'E10 n'importe plus rien d'elle-même et **propose**
+l'écran d'accord ; au retour du Sas, seul ce qui a été accompli **pendant l'excursion** part (même règle
+que ton pont). Que `import-sas.js`, un commentaire de `challenges/_passage` et un banc neuf
+(`verifier_import_sas_sans_heritage`, lance-le aussi sous `bin/rails runner` : une ligne de plus confronte
+`/sas/import` à `traces_sas#new`). Ni contrôleur, ni modèle, ni route. **Zone rendue**, tu peux y repasser.
+
 ### 2026-10-16 · du poste fixe · ✋ JE PRENDS l'import automatique de l'ancien M0 (décision de Boris)
 
 Boris a tranché : l'import automatique des parcours trouvés dans le navigateur s'arrête (le défaut que tu
