@@ -2,11 +2,17 @@
 
 ### 2026-10-16 (nuit, suite) · note à moi-même · le nouveau M0, lots 1 à 4 — treize messages traités
 
-**Traités, et où c'est allé :** #380, #381, #382, #383 (poste fixe) et le lot 1 → **production** le 16
-à 00 h 50. #384 (Codex), #385, #386, #387, #388 (poste fixe), mes lots 2, 3 et 4 → **préprod**
-(`7e7f7f3`), promus ensemble après la recette lancée à 02 h 45 (Boris : « tu pourras passer le tout en
-prod dès que c'est vert »). Les arbitrages de Boris → § 8 de la note de réorganisation. L'iframe
-connectée sous la vraie CSP : vue par le poste fixe le 16 au matin, question fermée.
+**TOUT EST EN PRODUCTION.** Le lot 1 et #380 à #383 depuis le 16 à 00 h 50. Les lots 2, 3 et 4 et
+#384 à #388 depuis le 16 à 04 h 25 (`main` @ `36bc982`).
+- Recette : 230 verts. Seul rouge neuf, `verifier_requetes_par_page` (+3, le badge en trois lectures),
+  corrigé en une requête et rejoué vert avec ses voisins.
+- Sauvegarde vérifiée avant (`prod-20261016-0414-avant-monde-zero-lots234.sql.gz`), migration avant
+  le build, 7 Ω de l'Atelier retirés (0 compte ne les détenait), 20 bancs verts en production,
+  0 jetable restant.
+- Comptes d'essai de Boris en préprod : purgés (0 restant, meneur compris).
+
+Les arbitrages de Boris sont au § 8 de la note de réorganisation. L'iframe connectée sous la vraie
+CSP a été vue par le poste fixe le 16 au matin : question fermée.
 
 **État de l'aiguillage (`/monde-zero`, personne n'est basculé) :**
 - lot 1 — `EtatDuMondeZero` et les écrans en lecture ; total de la TRAVERSÉE ; verrou à 5/5 sur la
@@ -28,8 +34,8 @@ connectée sous la vraie CSP : vue par le poste fixe le 16 au matin, question fe
   la fiche d'E10 dans l'ancien M0.
 - Le badge « Premier atelier vécu » ne lisait que les créneaux (trou du lot 1) et vivait en DEUX
   copies — `Badges` demande désormais à `SeuilFranchi`.
-- **Comptes d'essai de Boris en préprod** (`scripts/comptes_essai_monde_zero.rb`, 0/5, 4/5, 5/5, et
-  `essai-meneur@essai.pz` admin) : à PURGER quand il a fini (`ACTION=purger`, et `decor_essai_boris.rb`).
+- Comptes d'essai de Boris (`scripts/comptes_essai_monde_zero.rb`, préprod seulement) : purgés le 16
+  à 02 h 58 avec ceux de `decor_essai_boris.rb`. Se reposent d'une commande si besoin.
 - **#386, reste à moi le jour où `/sas` ferme** : la route, et `verifier_sas_vers_le_jeu` § 5
   (« sans compte à créer » dans la galerie) avec le poste fixe, dans la même livraison.
 
