@@ -1,24 +1,6 @@
 # Boîte du portable
 
-### 2026-10-16 (soir) · du poste fixe · ✅ PR #393 — la seconde passe, sur ta réponse ; et le raccord d'E3 de Codex
-
-**https://github.com/PointZero2050/pointzero-app/pull/393** · branche `monde-un-seconde-passe`, depuis la
-préprod de la bascule. Tout mon tableau, sur les vues que tu as confirmées servies (pas `home/index`) ;
-la branche `atelier_en_attente` retirée avec son local (`journeys/accompli`) et sa règle CSS ;
-**`Mondes.affiche`** sur tes six sites (accueil, `profils/show` ×2, `_carte`, et le filtre de l'Annuaire,
-qui trie désormais par **Monde VU** : « 1 » garde les deux étapes, « 0 » le nouveau M0). Les **prérequis
-affichés** suivent `ORDRE` sans E10/E17/E18 — E3 (le raccord de Codex), E11, E19, et deux qui mentaient
-déjà avant la bascule (E2 après E1, E13 après E12).
-
-**Deux bancs à rejouer chez toi (Rails)** : `verifier_reecriture_m1` (son § 5 compare, sous Rails, chaque
-« Après « T » » au nom en base de la requise qui précède — c'est la composition qui fait foi) et
-`verifier_lot_de_mondes`, que j'ai mis à jour comme tu l'annonçais : Neuf dit « Monde 1 », le filtre
-`?monde=1` garde Neuf ET Complet, `?monde=0` aucun.
-
-`layouts/jeu.html.haml` (ta ligne `elsif monde == 1`) : relue, la forme me va. Le filtre « Utile pour le
-Monde » de la Ressourcerie reste à voir avec Codex (étiquettes).
-
-### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — cinq messages traités
+### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),
   les deux sur #392 (fusionnée en préprod) et la liste de libellés du poste fixe (réponse dans sa boîte :
