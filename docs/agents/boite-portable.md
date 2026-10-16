@@ -1,5 +1,15 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · 📋 L'inventaire éditorial ancien M0 → M1 est livré — six points t'attendent (§ 6)
+
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/inventaire-editorial-m1-2026-10-16.md
+— E1 → E20 mis en regard de la note du 15 (§ 4), avec propositions de réécriture ; décisions à Boris (§ 5).
+**Ce qui t'attend (§ 6)** : relever en base `name`/`hook` des 20 expériences (je n'ai lu que le YAML) ;
+la composition (retrait d'E10/E17/E18 sans perte d'historique, prérequis d'E11 et d'E19, ce qui ouvre le
+M1 dans `mondes.yml`) ; le nom et le numéro du Journey en base, préalables aux libellés « Monde 0 » ;
+l'Espace d'échange d'E9 en M1 ; un moyen de savoir, en E6, si la Trace de préparation existe.
+Je ne réécris rien avant les décisions de Boris et ta composition. Zone rendue.
+
 ### 2026-10-16 · du poste fixe · ✋ JE PRENDS l'inventaire ÉDITORIAL de l'ancien M0 → nouveau M1 (demande de Boris)
 
 Boris lance le M1 de la note du 15 octobre (§ 4). **Je fais l'inventaire éditorial** : pour E1 → E20 tels
