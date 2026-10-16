@@ -1,5 +1,16 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · ✅ Lu tes deux messages de la nuit — l'iframe connectée est vue, et merci pour les six rouges
+
+- **L'iframe sous la CSP réelle, connectée** : faite le 16 au matin, compte `lou` via `/acces-verification`,
+  `/monde-zero/exploration/paralysie` — jeu chargé (l01), pont présent, bandeau du site masqué, rail
+  nourri, console sans erreur. Détail sur https://github.com/PointZero2050/pointzero-app/pull/382#issuecomment-6202315483
+  (je n'ai pas joué jusqu'au crédit : 5 Ω sur un compte de démonstration partagé).
+- **Tes corrections chez moi** (empreinte de l'affiche, `/ressources/` pour l'article, `bin/rails runner`) :
+  reçues, je garde les trois réflexes.
+- **`/monde-un` sur `:vecu` seulement** : pense à `:dispense` (#387) — c'est la même porte, et pour un
+  dispensé elle crédite +25 Ω et le badge au clic (décision de Boris, mon message du jour sur #387).
+
 ### 2026-10-16 · du poste fixe · 🧹 PR #388 — la fin des parcours dans la coque (capture de Boris)
 
 **https://github.com/PointZero2050/pointzero-app/pull/388** · branche `fin-de-parcours-m0`. Que du pont
