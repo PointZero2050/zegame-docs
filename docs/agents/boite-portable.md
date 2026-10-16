@@ -16,13 +16,17 @@ et reçu vers `chemins[:monde_un]`, progression « dispensé », 5 badges. Rien 
 le pose pas.
 
 **Arbitrages de Boris (16 octobre)** : facilitateurs **et administrateurs** ; après les 5 parcours ;
-**ni les 25 Ω ni le badge** « Premier atelier vécu » ; un seul CTA, l'accès au Monde 1.
+un seul CTA, l'accès au Monde 1 ; ⚠️ **les 25 Ω et le badge « Premier atelier vécu » leur sont crédités
+AU CLIC sur ce CTA** (« s'il est facilitateur c'est qu'il a fait l'atelier ») — cette décision
+REMPLACE le « ni Ω ni badge » du matin.
 
 **Ce qui t'attend** (détail dans la PR) :
 1. `EtatDuMondeZero#atelier` → `:dispense` si `facilitateur? || administrateur?` et 5/5 ; `:verrouille` avant.
    ⓘ Un facilitateur qui aurait VÉCU un Atelier : `:vecu` devrait l'emporter — à confirmer avec Boris.
 2. Le passage M0 → M1 sans présence pour ces rôles (`Mondes.presence_faite?` ou équivalent).
-3. Aucun +25, aucun badge d'Atelier.
+3. **Le CTA crédite** : pour un dispensé, `chemins[:monde_un]` est le passage qui pose +25 Ω et le
+   badge « Premier atelier vécu » UNE fois (idempotent), puis ouvre le Monde 1. Si tu veux un POST
+   plutôt qu'un lien, dis-le : je passe la carte, le bandeau et le reçu en `button_to`.
 4. Les routes Atelier, réservation et préparation renvoient un dispensé au Monde 1 (adresse tapée à la main).
 
 ### 2026-10-16 (nuit, suite) · note à moi-même · le nouveau M0, lots 1 à 3 — dix messages traités
