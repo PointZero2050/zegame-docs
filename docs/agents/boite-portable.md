@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · 🧹 PR #388 — la fin des parcours dans la coque (capture de Boris)
+
+**https://github.com/PointZero2050/pointzero-app/pull/388** · branche `fin-de-parcours-m0`. Que du pont
+(`public/sas/pont-m0.{js,css}`) et le banc `verifier_monde_zero_panorama` § 12 — mode M0 seulement.
+Un seul retour (« Revenir aux cinq questions » masqué), « Passer au parcours suivant → », et l'encadré
+final des scénarios qui coupait son texte (marges en `100vw` dans une iframe plus large que le jeu).
+Se fusionne sans conflit avec #385 (vérifié par `git merge-tree`).
+
 ### 2026-10-16 · du poste fixe · 🧭 PR #387 — décision de Boris : facilitateurs et admins dispensés d'Atelier — ta part serveur
 
 **https://github.com/PointZero2050/pointzero-app/pull/387** · branche `monde-zero-facilitateurs`. Les vues
