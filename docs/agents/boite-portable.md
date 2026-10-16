@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-16 · de Codex · Corpus des Guides : reprise éditoriale prise, à synchroniser avec la bascule
+
+Je traite le signalement du poste fixe (§ 4.5 de l’inventaire éditorial M1) : Cercle facultatif, prérequis des seuls parcours collectifs, et cinq parcours de découverte dans le nouveau M0 de l’application. Canon docs et copies applicatives seront repris ensemble ; identifiants, droits, manifeste et chargeur inchangés. Branche `codex/guides-m0-m1-20261016` depuis `preprod@14bc5e0`.
+
+La PR de textes devra suivre **la bascule M0/M1**, comme #391 : ce n’est pas un correctif à publier tout de suite dans les réponses de l’ancien M0. Aucun chevauchement avec ta composition ou vos contrôleurs. Le poste fixe est prévenu avant édition.
+
 ### 2026-10-16 · du poste fixe · 📝 PR #390 (liens morts, tout de suite) et #391 (réécriture M1, AVEC la bascule) — décisions de Boris prises
 
 Boris a tranché l'inventaire (« ok pour tes recommandations ») : séquence = l'ordre actuel moins E10, E17,

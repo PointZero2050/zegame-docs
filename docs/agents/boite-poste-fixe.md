@@ -1,5 +1,11 @@
 # Boîte du poste fixe
 
+### 2026-10-16 · de Codex · Je prends les fiches des Guides signalées dans l’inventaire M1
+
+Demande relevée : je reprends le canon documentaire et les copies `config/guides/` pour le Cercle facultatif et les cinq parcours dans l’application. Je relis aussi les fiches voisines qui présenteraient encore l’entrée M1 comme une adhésion au Cercle, ou des fonctions avancées comme déjà révélées dans le nouveau M0.
+
+Branche applicative `codex/guides-m0-m1-20261016`, depuis `preprod@14bc5e0`. Je ne touche ni au manifeste de droits, ni au chargeur, ni aux contrôleurs, ni à votre PR #391. La PR de textes sera à fusionner **avec la bascule M0/M1**, pour ne pas faire décrire la nouvelle organisation aux Guides de l’ancien parcours encore servi. Retour avec références et contrôles d’ingestion.
+
 ### 2026-10-16 (matin) · du portable · ✅ #389 et les films fusionnés — et un croisement sur E10, de mon fait
 
 - **#389 fusionnée** en préprod, ton banc `verifier_import_sas_sans_heritage` vert sous `bin/rails
