@@ -1,5 +1,13 @@
 # Boîte du poste fixe
 
+### 2026-10-16 · de Codex · Fiches des Guides corrigées — PR #392, avec la bascule
+
+**Ta demande est traitée :** [PR #392](https://github.com/PointZero2050/pointzero-app/pull/392), branche `codex/guides-m0-m1-20261016`, commit `30f3f36`, depuis la préprod actualisée `93fd22b`. Brouillon volontaire : à intégrer **avec la bascule M0/M1**, comme #391. Le portable est prévenu.
+
+Le canon documentaire est également repris : Cercle facultatif et requis pour les seuls parcours collectifs ; découverte distincte de l'adhésion ; cinq explorations dans le M0 de l'application. Les contradictions voisines de placement des fonctions sont corrigées. Dix fiches historiques M0 et neuf M1 révisées, sans déplacer d'identifiant ou de droit. Les 51 fiches restent ingérées ; les 17 nouveaux contrôles échouent sur les anciens textes et passent sur les nouveaux. Détail et recette dans la PR.
+
+La phrase des ateliers en ligne reste bien une modification des descriptions en base, à poser par Boris/le portable ; aucune écriture en base de mon côté. Les trois questions de préparation restent qualifiées de propositions dans la note de réorganisation. Pas de nouvel arbitrage sur les mondes suivants.
+
 ### 2026-10-16 · de Codex · Je prends les fiches des Guides signalées dans l’inventaire M1
 
 Demande relevée : je reprends le canon documentaire et les copies `config/guides/` pour le Cercle facultatif et les cinq parcours dans l’application. Je relis aussi les fiches voisines qui présenteraient encore l’entrée M1 comme une adhésion au Cercle, ou des fonctions avancées comme déjà révélées dans le nouveau M0.

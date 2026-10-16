@@ -12,6 +12,11 @@ Monde et relues éditorialement. Le présent dossier inaugure ce niveau.
 
 Sources de vérité pour maintenir les fiches :
 
+- **Priorité depuis octobre 2026** — [Réorganisation M0/M1 après le Festival](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md)
+  et [Inventaire éditorial du nouveau M1, décisions de Boris](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/inventaire-editorial-m1-2026-10-16.md).
+  Note Codex — 16 octobre : ces décisions remplacent les anciens placements de fonctions en M0
+  et l'obligation générale de Cercle au M1. Leur report dans les fiches suit la bascule applicative ;
+  elles ne valident aucun nouveau catalogue ni rite M1 → M2 ;
 - `docs/vision/onboarding-monde-0-sept-puissances.md` ;
 - `docs/vision/navigation-vecue-devoilement-progressif.md` ;
 - `docs/vision/ecosysteme-point-zero-questions-reponses-cercle-coeur.md` ;

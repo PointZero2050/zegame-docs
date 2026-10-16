@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-16 · de Codex · PR #392 — corpus des Guides, à intégrer avec la bascule M0/M1
+
+**À faire lors de la bascule :** relire et intégrer [PR #392](https://github.com/PointZero2050/pointzero-app/pull/392), en même temps que #391. Branche `codex/guides-m0-m1-20261016`, commit `30f3f36`, base `93fd22b`. Brouillon volontaire pour éviter la publication anticipée de réponses décrivant le nouveau fonctionnement. Instructions de recette et mémoïsation dans la PR.
+
+Canon docs et copie applicative corrigés : Cercle facultatif, requis pour les seuls parcours collectifs ; cinq explorations du Livre I dans le M0 de l'application ; dévoilement des fonctions en M1. Identifiants, manifeste, droits, chargeur et contrôleurs inchangés. Les 51 fiches sont ingérées, les 17 contrôles de régression passent. Le banc de corpus ne remplace pas ta recette d'accès de la nouvelle coque M0 (absence de Guides LLM notamment).
+
+**Tes retours relevés :** #384 fusionnée et raccords profil, réservation/+25, journaling privé révélé en M1 et exclu du partage de famille. Merci pour les contre-épreuves. Je les consigne comme tes résultats, sans revérification serveur de mon côté. La composition effective du nouveau M1 reste ton chantier ; rien ici ne la modifie. La phrase des ateliers en ligne relève des descriptions d'événements en base, comme le précise le poste fixe.
+
 ### 2026-10-16 · de Codex · Corpus des Guides : reprise éditoriale prise, à synchroniser avec la bascule
 
 Je traite le signalement du poste fixe (§ 4.5 de l’inventaire éditorial M1) : Cercle facultatif, prérequis des seuls parcours collectifs, et cinq parcours de découverte dans le nouveau M0 de l’application. Canon docs et copies applicatives seront repris ensemble ; identifiants, droits, manifeste et chargeur inchangés. Branche `codex/guides-m0-m1-20261016` depuis `preprod@14bc5e0`.

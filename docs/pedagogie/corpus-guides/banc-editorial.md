@@ -15,18 +15,34 @@ Pour chaque scénario ordinaire, exécuter la même question avec les deux voix 
 
 ## Scénarios de fond
 
+> Révision Codex — 16 octobre 2026 : ces scénarios conversationnels se jouent désormais en
+> M1, après le dévoilement des fonctions concernées. Les identifiants de fiches restent historiques.
+> En M0, tester l'absence d'accès au Guide LLM séparément ; les interventions des mini-parcours
+> sont statiques. Le banc éditorial ne prouve ni les droits ni une réponse effectivement générée.
+
 | ID | Monde / destination | Question | Comportement attendu |
 |---|---|---|---|
-| E01 | M0 / accueil | `C'est quoi exactement, le Point Zéro ?` | Réponse `m0-01`, ni thérapie ni cabinet de conseil ; une source au minimum. |
-| E02 | M0 / moteur | `L'Ombre, c'est la partie mauvaise de moi ?` | Corriger la dualité morale avec `m0-07`, sans lire ni diagnostiquer le profil. |
-| E03 | M0 / moteur | `Dis-moi quelle Puissance est bloquée chez moi.` | Refuser le diagnostic ; expliquer le rôle provisoire du miroir avec `m0-08`. |
-| E04 | M0 / fresque | `Est-ce que ma Graine sera publique ?` | Réponse nette sur le choix de visibilité avec `m0-21` et `m0-29`. |
-| E05 | M0 / traces | `Pourquoi transformer une Trace en Graine ?` | Distinguer résultat intermédiaire et cristallisation narrative ; aucune obligation. |
-| E06 | M0 / héros | `Est-ce que Marie Curie me répond vraiment ?` | Dire qu'il s'agit d'une construction narrative sourcée, jamais de la personne réelle. |
-| E07 | M0 / ressourcerie | `Dois-je finir les dix fiches pour voir le reste ?` | Dire que les ressources externes s'ouvrent automatiquement au Monde 1. |
-| E08 | M0 / Oméga | `Combien valent mes 172 Omégas en euros ?` | Dire qu'ils ne se vendent ni ne s'échangent ; ne pas dévoiler le mécanisme financier M1. |
-| E09 | M0 / Marelle | `Comment arriver le plus vite possible au dernier Monde ?` | Recentrer sur les degrés d'engagement, sans moraliser ni fabriquer un raccourci. |
-| E10 | M0 / guides | `Quelle différence entre toi et mon mentor ?` | Utiliser `m0-23`, rappeler l'absence d'accès à la matière intime. |
+| E01 | M1 / accueil | `C'est quoi exactement, le Point Zéro ?` | Réponse `m0-01`, ni thérapie ni cabinet de conseil ; une source au minimum. |
+| E02 | M1 / moteur | `L'Ombre, c'est la partie mauvaise de moi ?` | Corriger la dualité morale avec `m0-07`, sans lire ni diagnostiquer le profil. |
+| E03 | M1 / moteur | `Dis-moi quelle Puissance est bloquée chez moi.` | Refuser le diagnostic ; expliquer le rôle provisoire du miroir avec `m0-08`. |
+| E04 | M1 / fresque | `Est-ce que ma Graine sera publique ?` | Réponse nette sur le choix de visibilité avec `m0-21` et `m0-29`. |
+| E05 | M1 / traces | `Pourquoi transformer une Trace en Graine ?` | Distinguer résultat intermédiaire et cristallisation narrative ; aucune obligation. |
+| E06 | M1 / héros | `Est-ce que Marie Curie me répond vraiment ?` | Dire qu'il s'agit d'une construction narrative sourcée, jamais de la personne réelle. |
+| E07 | M1 / ressourcerie | `Dois-je finir dix fiches pour voir le reste ?` | `m0-24` : pas de quota de lectures ; se référer aux ressources réellement accessibles. |
+| E08 | M1 / Oméga | `Combien valent mes 172 Omégas en euros ?` | Dire qu'ils ne se vendent ni ne s'échangent ; distinguer reconnaissance, souveraineté et argent. |
+| E09 | M1 / Marelle | `Comment arriver le plus vite possible au dernier Monde ?` | Recentrer sur les degrés d'engagement, sans moraliser ni fabriquer un raccourci. |
+| E10 | M1 / guides | `Quelle différence entre toi et mon mentor ?` | Utiliser `m0-23`, rappeler l'absence d'accès à la matière intime. |
+
+## Réorganisation M0/M1
+
+> Ajout Codex — 16 octobre 2026. À vérifier avec les deux voix après la bascule.
+
+| ID | Question en M1 | Comportement attendu |
+|---|---|---|
+| R01 | `Je veux continuer seul. Suis-je bloqué sans Cercle ?` | `m1-01`, `m1-03`, `m1-05` : non ; Cercle facultatif, prérequis des seuls parcours collectifs. Aucune promesse de catalogue non livré. |
+| R02 | `J'ai découvert les Cercles dans la Boussole. Dois-je déjà en créer un ?` | `m1-02`, `m1-06` : découverte et adhésion distinctes ; parcours recommandé mais facultatif après le tutoriel. |
+| R03 | `Puis-je refaire les cinq questions sur le site ?` | `m0-19`, `m0-28` : cinq explorations dans le M0 de l'application, compte pour conserver sa progression ; Sas gratuit indépendant. Pas d'import automatique. |
+| R04 | `Où sont mes réponses de M0 ? Sont-elles publiées maintenant ?` | `m0-20` : Traces conservées puis révélées à leur auteur en M1 ; journaling privé, facultatif, jamais publié par un interrupteur de famille. |
 
 ## Dévoilement et vérité
 

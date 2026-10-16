@@ -37,7 +37,30 @@ Le premier lot comprend :
 7. vingt-et-une [fiches du Monde 1](monde-1/fiches.md), dont les fonctions non livrées sont
    explicitement marquées `horizon` ou `hypothese` ;
 8. un [`manifest.yml`](manifest.yml) destiné au filtrage déterministe ;
-9. un [banc éditorial](banc-editorial.md) de vingt scénarios ordinaires, limites et sensibles.
+9. un [banc éditorial](banc-editorial.md) de scénarios ordinaires, limites et sensibles.
+
+### Réorganisation M0/M1 — octobre 2026
+
+> Note Codex — 16 octobre 2026. Les fiches révisées suivent la
+> [décision de réorganisation](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md)
+> et les arbitrages de l'[inventaire éditorial M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/inventaire-editorial-m1-2026-10-16.md).
+
+Les noms de dossiers et identifiants `M0-*` / `M1-*` restent historiques : ils ne constituent
+pas une permission d'afficher une fonction dans la nouvelle coque M0. Les trente fiches
+historiques contiennent la grammaire générale, désormais principalement découverte en M1.
+Le nouveau M0 garde les interventions **statiques** des Guides dans les cinq explorations ;
+les conversations LLM et les mentors sont dévoilés dans le nouveau M1.
+
+Le Cercle est facultatif après le tutoriel M1, requis pour les seuls parcours collectifs.
+La Boussole des formats fait découvrir les Cercles ; créer ou rejoindre un Cercle relève d'un
+parcours recommandé mais facultatif distinct. Les cinq découvertes du Livre I se vivent dans
+le M0 de l'application. Les Traces y sont conservées et révélées en M1, sans publication implicite.
+
+**Intégration :** synchroniser les fiches dans `pointzero-app/config/guides/` **avec la bascule
+M0/M1**, comme les textes d'expériences de la PR #391. Cette livraison éditoriale ne change
+ni le manifeste, ni le filtre historique du corpus, ni les droits ou routes applicatifs.
+Le portable doit vérifier les accès du nouveau M0 lors de la bascule ; le banc d'ingestion
+du corpus ne constitue pas cette recette d'accès. Les règles des mondes suivants restent inchangées.
 
 ## Règle de priorité
 

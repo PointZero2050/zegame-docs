@@ -4,6 +4,9 @@
 > fond commun aux deux guides ; les profils de voix ne peuvent ni les contredire ni ajouter
 > une révélation absente.
 
+> Révision Codex — 2026-10-16. Fonctionnement cible après la réorganisation M0/M1.
+> À intégrer avec la bascule ; les identifiants historiques des fiches sont conservés.
+
 ## M0-01 — Le Point Zéro
 
 `status: canonique` · `min_world: 0` · `destinations: accueil, intuition, guides`
@@ -281,7 +284,7 @@ devenir.
 Communiquer ne consiste pas seulement à parler. La Lumière exprime, nomme et rend visible ;
 l'Ombre écoute, garde le silence et laisse la parole de l'autre modifier la sienne. Une parole
 sans écoute devient occupation du champ. Une écoute sans expression devient disparition. Au
-Monde 0, les guides introduisent cette circulation ; l'Espace du Seuil ouvre ensuite une
+Monde 1, les guides introduisent cette circulation ; l'Espace du Seuil ouvre ensuite une
 première possibilité de présence avec d'autres Joueurs.
 
 **Version courte.** Exprimer sans envahir, écouter sans disparaître.
@@ -348,7 +351,7 @@ circulation et l'amplitude observées dans les six Puissances polaires. Sa conve
 les six Puissances sont bloquées à leur amplitude minimale — à 10 — elles circulent librement
 jusqu'à leur pleine amplitude. Il indique une disponibilité provisoire de la Conscience dans
 l'action, jamais un rang humain ou spirituel. Le calcul dépend des informations que le Joueur a
-choisi de renseigner et évoluera avec les expériences puis les regards croisés. Au Monde 0,
+choisi de renseigner et évoluera avec les expériences puis les regards croisés. Au Monde 1,
 l'indicateur demande donc d'abord de préciser les six Puissances avant de proposer une lecture
 globale.
 
@@ -412,20 +415,23 @@ accomplir le parcours.
 
 **Question principale — Que dois-je accomplir au Monde 0 ?**
 
-Le Monde 0 est un seuil et un tutoriel narratif. Il te fait rencontrer la crise des récits, les
-polarités, les sept Puissances, la Marelle, les Graines, les héros, la Ressourcerie et les
-Omégas. Il produit des premiers miroirs et des premières actions, sans demander l'intensité
-collective du Monde 1 ni l'engagement durable du Monde 2. Tu peux explorer les sept territoires
-dans l'ordre qui t'appelle ; les cartes évoluent à mesure que tu découvres leurs fonctions.
+Le Monde 0 propose cinq explorations des grandes questions du Livre I : l'histoire humaine,
+les scénarios du futur, les croyances, les mécanismes qui nous paralysent et les voies du réveil.
+Tu les explores librement ; leur ordre est conseillé pour construire progressivement une vision
+d'ensemble. Chaque exploration accomplie rapporte cinq Omégas et son badge. L'Atelier Point Zéro
+prolonge ce panorama par une rencontre vécue et constitue le rite de passage vers le Monde 1.
+La participation reconnue à l'Atelier rapporte vingt-cinq Omégas ; sa réservation seule ne valide
+ni cette participation ni le passage.
 
-**Version courte.** Goûter la grammaire, produire les premières traces et franchir le seuil du
-Jeu.
+**Version courte.** Cinq questions pour lire notre époque, puis un Atelier pour franchir le seuil.
 
-**Ce que cela change ici.** L'accueil fonctionne comme un métaparcours de sept invitations.
+**Ce que cela change ici.** Trois entrées : Accueil, Progression, Profil. L'Accueil montre les
+cinq explorations et l'Atelier ; accomplir les cinq explorations ouvre l'inscription à l'Atelier.
 
-**À ne pas affirmer.** Le Monde 0 réalise un diagnostic complet ou oblige à rejoindre un Cercle.
+**À ne pas affirmer.** Le Monde 0 impose un Cercle, un diagnostic personnel des Puissances,
+des lectures de la Ressourcerie ou une conversation avec une IA. Une réservation vaut participation.
 
-**Sources.** *Accueil par les Puissances — Monde 0* ; *Questions-réponses de l'écosystème — Le Monde 0*.
+**Sources.** *Réorganisation des Mondes 0 et 1 après le Festival* ; *Le Point Zéro — Livre I*.
 
 ## M0-20 — Les Traces
 
@@ -435,19 +441,22 @@ Jeu.
 
 Une Trace est un résultat intermédiaire produit par une expérience : choix, scénario, réponse,
 posture, image, tension ou prise de conscience. Elle conserve ce qui s'est passé sans exiger
-qu'il soit déjà compris ou raconté. Les Traces restent consultables dans leur espace ; certaines
-peuvent être rejouées, reliées ou transformées en Graines lorsque le Joueur souhaite leur donner
-une forme narrative plus durable.
+qu'il soit déjà compris ou raconté. Les Traces des explorations du Monde 0 sont conservées,
+puis révélées dans le Monde 1. Le journaling de préparation à l'Atelier suit ce même passage :
+ses questions peuvent rester ouvertes et ses textes restent privés. Dans le Monde 1, certaines
+Traces peuvent être reliées ou transformées en Graines lorsque tu souhaites leur donner une
+forme narrative plus durable.
 
 **Version courte.** Ce qu'une expérience laisse derrière elle avant que tu saches encore quoi
 en faire.
 
-**Ce que cela change ici.** La page Traces rassemble les productions dispersées des jeux et
-parcours.
+**Ce que cela change ici.** Le Monde 0 ne montre pas de bibliothèque de Traces. Au Monde 1,
+tu peux retrouver ce que tu as produit ; révéler une Trace à son auteur ne la publie pas.
 
 **À ne pas affirmer.** Toute Trace doit être publiée, interprétée ou transformée en Graine.
+Remplir le journaling conditionne le passage, ou un partage global publie cette préparation privée.
 
-**Sources.** *Accueil par les Puissances — Imagination* ; *Relations entre récits collectifs*.
+**Sources.** *Réorganisation des Mondes 0 et 1 après le Festival* ; *Relations entre récits collectifs*.
 
 ## M0-21 — Graines et Résonances
 
@@ -481,7 +490,7 @@ par défaut.
 Une figure inspirante donne une impulsion narrative au voyage du héros. Ses Puissances-phares,
 ses tensions Ombre-Lumière et son œuvre offrent une perspective depuis laquelle interroger tes
 propres choix. Elle n'est ni un saint à imiter ni une personnalité que l'application t'attribue.
-Au Monde 0, une première sélection permet de goûter cette mécanique ; la bibliothèque et les
+Au Monde 1, une première sélection permet de goûter cette mécanique ; la bibliothèque et les
 associations de parcours s'élargissent ensuite.
 
 **Version courte.** Une figure pour déplacer ton regard, pas un modèle auquel te conformer.
@@ -500,6 +509,10 @@ Zéro.
 
 **Question principale — Quelle différence entre un guide, un mentor et l'Aide ?**
 
+Dans les cinq explorations du Monde 0, les interventions du Professeur et du Docteur sont
+statiques. Au Monde 1, leurs versions conversationnelles et les mentors sont dévoilés
+progressivement.
+
 Le Professeur et le Docteur expliquent le Point Zéro, la page courante et les fonctions déjà
 accessibles. Ils partagent un corpus public filtré et ne lisent pas ta matière intime. Le mentor
 accompagne une expérience ou un récit et n'accède qu'aux sources que tu lui ouvres. L'Aide donne
@@ -509,11 +522,11 @@ service d'IA ne répond plus.
 **Version courte.** Le guide explique le Jeu ; le mentor accompagne une expérience ; l'Aide
 protège l'accès aux informations et recours essentiels.
 
-**Ce que cela change ici.** Choisir le Professeur ou le Docteur change le regard, jamais la
-vérité, les droits ou les sources.
+**Ce que cela change ici.** Au Monde 1, choisir le Professeur ou le Docteur change le regard,
+jamais la vérité, les droits ou les sources.
 
 **À ne pas affirmer.** Les guides connaissent le Joueur, remplacent un humain ou disposent
-d'actions dans l'application.
+d'actions dans l'application. Une conversation avec un guide ou un mentor est accessible au Monde 0.
 
 **Sources.** *Les guides LLM transversaux du Point Zéro* ; *La navigation vécue du Jeu*.
 
@@ -525,20 +538,21 @@ d'actions dans l'application.
 
 La Ressourcerie relie deux familles. Les ressources Point Zéro transmettent sa grammaire :
 Puissances, Cadres, Marelle, PsychoKernel et autres modèles. Les ressources externes présentent
-des pensées, pratiques et Chrysalides qui existent indépendamment du projet. Au Monde 0, dix
-clés Point Zéro et les événements sont proposés en premier ; les ressources externes deviennent
-automatiquement disponibles à partir du Monde 1.
+des pensées, pratiques et Chrysalides qui existent indépendamment du projet. Sa découverte se
+fait au Monde 1, selon le dévoilement des fonctions de l'application. Le Monde 0 se concentre
+sur ses cinq explorations ludiques ; il ne comporte pas de rubrique Ressourcerie ni de liste
+de lectures à terminer.
 
 **Version courte.** La grammaire Point Zéro d'un côté ; les pensées, pratiques et Chrysalides du
 monde de l'autre.
 
-**Ce que cela change ici.** Lire une fiche peut être suivi d'une courte question d'appropriation
-qui devient une Trace.
+**Ce que cela change ici.** Au Monde 1, tu peux approfondir une notion depuis les ressources
+accessibles ; une courte question d'appropriation peut prolonger la lecture par une Trace.
 
-**À ne pas affirmer.** Il faut assimiler les dix fiches pour mériter l'accès aux ressources
-externes.
+**À ne pas affirmer.** Il faut assimiler dix fiches pour terminer le Monde 0, entrer au
+Monde 1 ou mériter l'accès aux ressources externes.
 
-**Sources.** *La Ressourcerie du Point Zéro* ; *Accueil par les Puissances — Intuition*.
+**Sources.** *La Ressourcerie du Point Zéro* ; *Réorganisation des Mondes 0 et 1 après le Festival*.
 
 ## M0-25 — Les Omégas
 
@@ -557,8 +571,10 @@ souveraineté et de financement sont dévoilés plus tard.
 **Version courte.** Une monnaie non échangeable qui reconnaît la Conscience manifestée dans
 l'action et fonde progressivement un domaine de souveraineté.
 
-**Ce que cela change ici.** La pastille ouvre une explication et la ventilation de ce qui a été
-reconnu.
+**Ce que cela change ici.** Au Monde 0, Progression affiche le total et la provenance des
+gains, sans ventilation par Puissance. Les cinq explorations représentent vingt-cinq Omégas,
+auxquels s'ajoutent vingt-cinq Omégas à la participation reconnue à l'Atelier. Les acquis
+antérieurs restent distincts de ce total de traversée.
 
 **À ne pas affirmer.** L'Oméga est une cryptomonnaie, une somme à dépenser, un prix de la
 personne ou une lecture directe de son état intérieur.
@@ -593,22 +609,24 @@ le Fonds du Commun est déjà accessible au Monde 0.
 
 **Question principale — Qu'est-ce qu'un Cercle de croissance ?**
 
-À partir du Monde 1, le Cercle devient le collectif de soutien dans lequel les expériences
-individuelles sont partagées, les cadres sont appris par la pratique et une quête commune peut
-émerger. Il réunit en principe cinq à huit personnes. Le Monde 1 commence en autofacilitation
-avec des rôles tournants et un Pacte-Source léger ; l'engagement annuel accompagné par un
-facilitateur certifié appartient au Monde 2. Au Monde 0, le Cercle est seulement annoncé.
+Au Monde 1, un Cercle peut devenir ton collectif de soutien : partager des expériences,
+apprendre les Cadres par la pratique et faire émerger une quête commune. Le rejoindre est une
+suite facultative du tutoriel d'entrée ; tu décides si et quand tu souhaites le faire.
+L'appartenance à un Cercle est un prérequis des seuls parcours collectifs. Les parcours solo
+et les autres fonctions accessibles du Monde 1 peuvent être explorés sans Cercle.
+Un Cercle réunit en principe cinq à huit personnes et apprend une autofacilitation légère,
+avec des rôles tournants. L'engagement annuel accompagné par un facilitateur certifié appartient
+au Monde 2.
 
-**Version courte.** Un collectif stable pour relier croissance individuelle, cadres
-capacitants et action commune.
+**Version courte.** Un collectif de soutien à rejoindre quand tu choisis d'explorer avec d'autres.
 
-**Ce que cela change ici.** L'Espace du Seuil permet une première présence collective sans
-faire encore de ses membres un Cercle.
+**Ce que cela change ici.** La découverte des Cercles se fait dans le tutoriel du Monde 1.
+Créer ou rejoindre un Cercle relève ensuite d'un parcours recommandé mais facultatif.
 
-**À ne pas affirmer.** Le channel du Monde 0 est déjà un Cercle, ou rejoindre un Cercle est
-obligatoire pour terminer le Monde 0.
+**À ne pas affirmer.** Un espace de discussion suffit à former un Cercle, ou rejoindre un
+Cercle conditionne la fin du Monde 0, l'entrée au Monde 1 ou toutes ses fonctionnalités.
 
-**Sources.** *Les Cercles de croissance* ; *Questions-réponses de l'écosystème — Les Cercles*.
+**Sources.** *Les Cercles de croissance* ; *Réorganisation des Mondes 0 et 1 après le Festival*.
 
 ## M0-28 — Site public et application
 
@@ -616,22 +634,23 @@ obligatoire pour terminer le Monde 0.
 
 **Question principale — Quelle différence entre le site et l'application ?**
 
-Le site est un Sas public : il donne accès aux livres, articles, événements et parcours légers
-qui aident à naviguer dans la profondeur du Point Zéro. L'application est le Jeu : elle conserve
-une progression, des Traces, des Graines, des Accomplissements et des droits qui se dévoilent au
-fil des Mondes. On peut explorer le site sans entrer dans le Jeu ; dès qu'une contribution ou une
-transformation doit être durablement conservée, elle passe par l'application.
+Le site public présente le Point Zéro, ses livres, ses articles et ses rencontres.
+Les cinq parcours de découverte se vivent dans le Monde 0 de l'application, avec un compte
+qui conserve ta progression. L'inscription à l'Atelier passe également par l'application.
+Le Sas découverte reste un format gratuit d'une heure et demie, à inscription libre et
+indépendant de ces parcours. Dans l'application, les fonctions se dévoilent au fil des Mondes :
+le Monde 0 propose Accueil, Progression et Profil ; le Monde 1 ouvre progressivement les
+Puissances et les autres espaces de jeu, et révèle les Traces conservées pendant le Monde 0.
 
-**Version courte.** Le site aide à comprendre et entrer ; l'application permet de jouer,
-conserver et progresser.
+**Version courte.** Le site présente le Point Zéro ; l'application accueille les cinq explorations et conserve ton voyage.
 
-**Ce que cela change ici.** Une expérience du Monde 0 pourra te renvoyer vers le site avec une
-boussole de lecture.
+**Ce que cela change ici.** Pour accomplir les cinq explorations et réserver l'Atelier,
+tu passes par ton compte dans l'application. Le Sas découverte peut se vivre indépendamment.
 
-**À ne pas affirmer.** Tout le site est un tutoriel obligatoire ou ses interactions publiques
-alimentent automatiquement le profil.
+**À ne pas affirmer.** Les cinq parcours se jouent encore sur le site public, leurs anciennes
+complétions sont automatiquement importées, ou le Sas découverte conditionne le Monde 0.
 
-**Sources.** *Le site public du Point Zéro* ; *Questions-réponses de l'écosystème — L'entrée dans le Jeu*.
+**Sources.** *Le site public du Point Zéro* ; *Réorganisation des Mondes 0 et 1 après le Festival*.
 
 ## M0-29 — Données et visibilité
 

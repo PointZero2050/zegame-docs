@@ -4,69 +4,78 @@
 > Docteur Z.E.R.O. aux fonctions révélées au Monde 1. Il décrit la vision canonique ; lorsqu'un
 > objet applicatif n'existe pas encore, la fiche le dit et interdit au guide de simuler son accès.
 
+> Révision Codex — 2026-10-16. Fonctionnement cible après la réorganisation M0/M1.
+> À intégrer avec la bascule ; les identifiants historiques des fiches sont conservés.
+
 ## M1-01 — La fonction du Monde 1
 
 `status: canonique` · `min_world: 1` · `destinations: accueil, boussole, cercle`
 
 **Question principale — Qu'est-ce qui change en entrant au Monde 1 ?**
 
-Le Monde 0 t'a fait rencontrer la grammaire du Jeu. Le Monde 1 te fait chercher un collectif de
-soutien. Tu poursuis des expériences individuelles, mais tu apprends aussi à les déposer dans un
-Cercle, à tenir des cadres capacitants et à relier une puissance personnelle à une finalité
-concrète. L'intensité reste volontairement modérée : il s'agit d'apprendre les codes du voyage
-collectif avant l'engagement annuel et la facilitation certifiée du Monde 2.
+Le Monde 0 t'a proposé un panorama de l'histoire humaine et de ses futurs. Le Monde 1
+rapproche cette lecture de ton histoire, de tes choix et de tes Puissances. Son tutoriel
+introduit progressivement l'avatar, le Moteur de Conscience, les mentors, les Guides, les
+ressources et les échanges. Tu peux ensuite poursuivre les voies individuelles qui te sont
+accessibles. Rejoindre un Cercle est une suite possible et facultative ; tu décides si et quand
+tu souhaites le faire. L'appartenance à un Cercle est un prérequis des seuls parcours collectifs.
 
-**Version courte.** Passer de « je découvre le Jeu » à « je trouve mon collectif de soutien ».
+**Version courte.** Du panorama de notre histoire à l'exploration de tes Puissances et de tes possibilités d'action.
 
-**Ce que cela change ici.** Une Boussole obligatoire guide les premiers pas, puis le catalogue
-s'ouvre sans imposer un seul chemin.
+**Ce que cela change ici.** Le tutoriel accompagne le dévoilement des fonctions. La création
+ou l'adhésion à un Cercle est proposée dans un parcours recommandé mais facultatif qui le prolonge.
 
-**À ne pas affirmer.** Le Monde 1 exige déjà un engagement annuel, un abonnement ou un
-facilitateur certifié.
+**À ne pas affirmer.** Il faut rejoindre un Cercle pour entrer au Monde 1, terminer son
+tutoriel ou utiliser toutes ses fonctionnalités. Le Monde 1 exige déjà un engagement annuel
+ou un facilitateur certifié.
 
-**Sources.** *Architecture pédagogique du Monde 1* ; *Questions-réponses de l'écosystème — Les Mondes*.
+**Sources.** *Réorganisation des Mondes 0 et 1 après le Festival* ; *Le Point Zéro — Livre II*.
 
-## M1-02 — La Boussole du Monde 1
+## M1-02 — Le tutoriel d'entrée du Monde 1
 
 `status: canonique` · `min_world: 1` · `destinations: boussole, marelle, accueil`
 
-**Question principale — Pourquoi la Boussole est-elle obligatoire ?**
+**Question principale — À quoi sert le tutoriel d'entrée du Monde 1 ?**
 
-La Boussole est le tutoriel d'entrée du Monde 1. Elle relie ce que tu veux faire grandir, l'impact
-que tu souhaites produire et les conditions collectives qui peuvent soutenir les deux. Elle te
-fait goûter la traversée de l'Intercycle en solo puis avec d'autres, présente les cinq Cadres et
-prépare la création ou l'adhésion à un Cercle. Elle n'attribue pas une identité définitive et ne
-choisit pas ton Cercle à ta place.
+Le tutoriel d'entrée relie ce que tu as découvert de l'histoire collective au Monde 0
+à ton propre récit et à tes Puissances. Tu rencontres progressivement les espaces et les
+gestes de l'application, avec une découverte distincte pour chaque Puissance. La Boussole
+des formats présente notamment les Cercles : cette découverte te permet de comprendre ce
+qu'ils proposent, sans te faire créer ou rejoindre un groupe. Si tu souhaites poursuivre
+dans cette direction, un parcours recommandé mais facultatif prolonge le tutoriel.
 
-**Version courte.** Un parcours commun pour apprendre à relier puissance, impact et collectif.
+**Version courte.** Une entrée progressive dans tes Puissances et les espaces du Jeu.
 
-**Ce que cela change ici.** Le catalogue libre s'ouvre lorsque les expériences requises de la
-Boussole sont réellement validées.
+**Ce que cela change ici.** Chaque étape se termine selon l'action qu'elle demande. Le
+choix d'un Cercle reste distinct de la découverte des formats et du tutoriel d'entrée.
 
-**À ne pas affirmer.** Ouvrir une fiche, cliquer un CTA ou recevoir des Omégas termine la Boussole.
+**À ne pas affirmer.** Ouvrir une fiche ou cliquer un CTA valide une expérience, découvrir
+les Cercles fait adhérer à un groupe, ou le tutoriel impose une traversée collective de l'Intercycle.
 
-**Sources.** *Onboarding du Monde 1 par les Sept Puissances* ; *Le jeu de l'Intercycle*.
+**Sources.** *Réorganisation des Mondes 0 et 1 après le Festival* ; *Le Point Zéro — Livre II*.
 
 ## M1-03 — Catalogue et liberté de parcours
 
 `status: canonique` · `min_world: 1` · `destinations: marelle, parcours, freeride`
 
-**Question principale — Que puis-je choisir après la Boussole ?**
+**Question principale — Que puis-je explorer après le tutoriel d'entrée ?**
 
-Le Monde 1 ouvre un catalogue riche de parcours solo, mixtes et collectifs, avec une dominante de
-sensibilisation. Tu peux filtrer par durée, Puissance, finalité, intensité et échelle d'effet. Le
-système recommande des premiers pas à partir de ce que tu as choisi de partager, mais ses raisons
-doivent rester visibles et ton choix reste prééminent. Une même expérience peut nourrir plusieurs
-parcours ou être proposée plus tard en Freeride.
+Après le tutoriel, tu peux poursuivre les voies individuelles accessibles : pixel game,
+Guides, mentors, Ressourcerie, échanges et parcours solo. Les parcours ayant une dimension
+collective s'appuient sur un Cercle : son appartenance est un prérequis des seuls parcours
+collectifs. Tu peux choisir de rejoindre un Cercle plus tard et continuer entre-temps ton
+exploration individuelle. Les propositions doivent expliquer leur intention et leurs
+conditions d'accès ; le catalogue réellement ouvert fait foi.
 
 **Version courte.** Des chemins recommandés, jamais un chemin imposé.
 
-**Ce que cela change ici.** Les recommandations expliquent pourquoi elles apparaissent et peuvent
-être ignorées.
+**Ce que cela change ici.** Consulte les conditions du parcours choisi. Une recommandation
+de Cercle ne doit pas fermer les voies solo.
 
-**À ne pas affirmer.** Un algorithme connaît mieux que toi le parcours que tu dois accomplir.
+**À ne pas affirmer.** Un algorithme connaît mieux que toi le parcours à accomplir, tous
+les parcours exigent un Cercle, ou un catalogue encore prévu est déjà disponible.
 
-**Sources.** *Architecture pédagogique des parcours* ; *Cartes d'expériences et Freeride*.
+**Sources.** *Réorganisation des Mondes 0 et 1 après le Festival* ; *Architecture pédagogique des parcours*.
 
 ## M1-04 — Intensité, effet et puissance d'un parcours
 
@@ -96,20 +105,23 @@ et un facilitateur certifié.
 
 **Question principale — Qu'est-ce qu'un Cercle de croissance ?**
 
-Le Cercle est une cellule-souche dont la finalité est l'individuation de ses membres, comprise
-comme leur progression dans la Marelle. Il relie les expériences individuelles, le soutien des
-pairs et une quête commune. Selon le besoin, il peut temporairement fonctionner comme Cercle de
-médiation, de stratégie, d'apprenance ou de redistribution sans changer de nature. Il ne possède
-pas ses membres : à la fin d'un cycle, chacun peut rester, changer de Cercle ou quitter le Jeu.
+Le Cercle est une cellule-souche dont la finalité est l'individuation de ses membres,
+comprise comme leur progression dans la Marelle. Il relie les expériences individuelles,
+le soutien des pairs et une quête commune. Le rejoindre est une suite facultative du tutoriel
+du Monde 1 ; son appartenance est un prérequis des seuls parcours collectifs. Tu peux continuer
+les parcours solo et les autres fonctions accessibles sans Cercle. Selon le besoin, le Cercle
+peut fonctionner comme lieu de médiation, de stratégie, d'apprenance ou de redistribution.
+À la fin d'un cycle, chacun peut rester, changer de Cercle ou quitter le Jeu.
 
-**Version courte.** Un collectif stable qui aide chacun à grandir et à agir sans l'enfermer.
+**Version courte.** Un collectif de soutien facultatif pour approfondir ton voyage avec d'autres.
 
-**Ce que cela change ici.** Le Cercle devient un lieu de partage et de mise en capacité, pas une
-nouvelle identité à défendre.
+**Ce que cela change ici.** Tu choisis quand rejoindre un Cercle. Ce choix ouvre les parcours
+qui demandent un collectif ; les voies solo restent accessibles selon leurs propres conditions.
 
-**À ne pas affirmer.** Un groupe de discussion, un channel ou une communauté suffit à former un Cercle.
+**À ne pas affirmer.** Un groupe de discussion suffit à former un Cercle, ou l'adhésion à
+un Cercle conditionne l'entrée au Monde 1, la fin de son tutoriel ou toutes ses fonctionnalités.
 
-**Sources.** *Les Cercles de croissance* ; *Les Cadres organisationnels du Point Zéro*.
+**Sources.** *Les Cercles de croissance* ; *Réorganisation des Mondes 0 et 1 après le Festival*.
 
 ## M1-06 — Créer, rejoindre ou être suggéré à un Cercle
 
@@ -117,20 +129,23 @@ nouvelle identité à défendre.
 
 **Question principale — Comment trouve-t-on son Cercle ?**
 
-Tu peux ouvrir un Cercle, demander à en rejoindre un ou répondre à une invitation. Des suggestions
-peuvent rapprocher des personnes selon leurs disponibilités, intentions et complémentarités, mais
-elles doivent rester expliquées et ne produisent jamais une affectation automatique. Avant toute
-acceptation, la mise en relation reste contextuelle : le candidat et l'ouvreur disposent d'un fil
-dédié et choisissent ce qu'ils rendent visible.
+Le tutoriel du Monde 1 te fait découvrir les Cercles. Créer ou rejoindre un Cercle
+fait ensuite l'objet d'un parcours recommandé mais facultatif. Quand tu choisis cette voie,
+tu peux ouvrir un Cercle, demander à en rejoindre un ou répondre à une invitation. Des
+suggestions peuvent rapprocher des personnes selon leurs disponibilités, intentions et
+complémentarités ; elles doivent rester expliquées et ne produisent jamais une affectation
+automatique. Avant toute acceptation, le candidat et l'ouvreur disposent d'un fil dédié et
+choisissent ce qu'ils rendent visible.
 
 **Version courte.** Le système rapproche ; les personnes choisissent.
 
-**Ce que cela change ici.** Une demande ouvre une conversation, pas une adhésion automatique.
+**Ce que cela change ici.** Découvrir un Cercle ne crée pas d'adhésion. Une demande ouvre une
+conversation ; l'adhésion reste un choix explicite.
 
-**À ne pas affirmer.** Partager une communauté par défaut donne accès aux messages ou aux données
-d'un autre Joueur.
+**À ne pas affirmer.** Il faut demander un Cercle pour terminer le tutoriel. Partager une
+communauté par défaut donne accès aux messages ou aux données d'un autre Joueur.
 
-**Sources.** *Profil communautaire et messagerie des Cercles* ; *Analyse d'impact Cercles et Intercycle*.
+**Sources.** *Profil communautaire et messagerie des Cercles* ; *Réorganisation des Mondes 0 et 1 après le Festival*.
 
 ## M1-07 — Taille, appartenance et reventilation
 
@@ -146,8 +161,9 @@ Mondes augmente. Les appartenances se reventilent entre les cycles.
 
 **Version courte.** Cinq à huit pour tenir ensemble diversité et qualité de présence.
 
-**Ce que cela change ici.** Une demande en attente ne réserve pas une place et un départ conserve
-son histoire sans confisquer l'avenir du Cercle.
+**Ce que cela change ici.** Ces repères concernent le Cercle que tu choisis de rejoindre.
+Ils ne conditionnent pas ton exploration solo du Monde 1. Une demande en attente ne réserve pas
+une place ; un départ conserve son histoire sans confisquer l'avenir du Cercle.
 
 **À ne pas affirmer.** Le Cercle doit attendre cinq membres avant toute activité ou un membre est
 attaché à vie au premier Cercle rejoint.
@@ -160,16 +176,16 @@ attaché à vie au premier Cercle rejoint.
 
 **Question principale — Qui facilite le Cercle au Monde 1 ?**
 
-Le Cercle apprend d'abord une autofacilitation légère. Les membres font tourner cinq rôles, peuvent
-les tenir en binôme et s'accoutument aux Cadres par la pratique. Un accompagnateur spécialisé ou
+Si tu choisis de rejoindre un Cercle, ses membres apprennent d'abord une autofacilitation
+légère. Ils font tourner cinq rôles, peuvent les tenir en binôme et s'accoutument aux Cadres par la pratique. Un accompagnateur spécialisé ou
 une facilitation payante peut être demandé ponctuellement, avec une contribution consciente. Le
 facilitateur certifié devient nécessaire au Monde 2, lorsque l'intensité et l'engagement annuel
 augmentent.
 
 **Version courte.** Apprendre ensemble à tenir le cadre avant de confier la traversée à un tiers.
 
-**Ce que cela change ici.** Un rôle sert la séance ; il ne donne pas un statut permanent ni un
-pouvoir général sur les autres.
+**Ce que cela change ici.** Si tu choisis de rejoindre un Cercle, chaque rôle peut être
+tenu pour une séance puis transmis. Les parcours solo ne demandent pas de tenir ces rôles.
 
 **À ne pas affirmer.** L'autofacilitation signifie absence de cadre, ou toute personne tenant un
 rôle devient facilitatrice certifiée.
@@ -245,8 +261,8 @@ pas automatiquement le sujet arrivé en tête en ordre du jour obligatoire.
 
 **Question principale — Pourquoi jouer deux fois à l'Intercycle ?**
 
-La première traversée est solitaire : elle te fait rencontrer les sept années décisives, les
-menaces, les communautés, les œuvres et les Puissances depuis tes propres arbitrages. La seconde
+Quand tu choisis cette exploration, la première traversée est solitaire : elle te fait rencontrer
+les sept années décisives, les menaces, les communautés, les œuvres et les Puissances depuis tes propres arbitrages. La seconde
 est collaborative : le même monde devient un laboratoire de coordination où la réussite dépend
 de la circulation des capacités entre les joueurs. L'écart entre les deux parties rend sensible
 ce qu'un collectif capacitant change réellement.
@@ -256,10 +272,11 @@ ce qu'un collectif capacitant change réellement.
 **Ce que cela change ici.** Les résultats sont comparés comme matière d'apprentissage, jamais
 comme classement des personnes.
 
-**À ne pas affirmer.** Une partie collective est validée par le clic d'un seul participant ou
-gagne automatiquement des Omégas pour tous.
+**À ne pas affirmer.** Ces deux traversées sont obligatoires pour l'entrée dans le Monde 1.
+Une partie collective est validée par le clic d'un seul participant ou gagne automatiquement
+des Omégas pour tous.
 
-**Sources.** *Le jeu de l'Intercycle* ; *Tutoriel d'entrée du Monde 1*.
+**Sources.** *Le jeu de l'Intercycle* ; *Réorganisation des Mondes 0 et 1 après le Festival*.
 
 ## M1-13 — Les espaces d'échange
 
@@ -434,8 +451,8 @@ livrés, aucune somme réelle ne doit être promise.
 
 **Question principale — Dois-je quitter le Monde 1 pour aller au Monde 2 ?**
 
-Non. Tu peux rester dans un Cercle du Monde 1 et continuer à explorer ses parcours. Le passage au
-Monde 2 est une proposition renouvelée à chaque fin de cycle, jamais une expulsion du monde
+Non. Tu peux rester dans le Monde 1 et continuer à explorer ses parcours, seul ou dans un Cercle.
+Le passage au Monde 2 est une proposition renouvelée à chaque fin de cycle, jamais une expulsion du monde
 précédent. Son rite autour de l'Intention souveraine est obligatoire pour ouvrir ce nouvel
 engagement. Il introduit un facilitateur certifié, un cycle annuel, un contrat, des rencontres
 mensuelles et une intensité significative. La décision reste la tienne.
