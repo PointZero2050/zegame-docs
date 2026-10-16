@@ -334,6 +334,9 @@ Boris : « Ok pour tes recommandations », avec trois précisions.
 ⚠️ **Le titre d'E2** reste à choisir. Deux propositions : « Le Point Zéro : à partir de toi »
 ou « Le Point Zéro, ton hypothèse ». Le titre vit en base.
 
+**Complément du 16 octobre, Codex :** Boris a remis la rédaction du titre à Codex via le portable.
+Les deux valeurs livrées pour E2 et E19 figurent au § 8 ; l'intégration en base reste au portable.
+
 ## 6. Ce qui revient au portable
 
 - **Relever en base les titres et descriptions** (`name`, `hook`) des expériences E1 → E20.
@@ -358,3 +361,45 @@ ou « Le Point Zéro, ton hypothèse ». Le titre vit en base.
    - les bancs qui lisent ces textes, dans la même livraison.
 
    Les fiches des Guides partent à Codex.
+
+## 8. Complément éditorial Codex — titre d'E2 et accroche d'E19
+
+> Note Codex — 16 octobre 2026. Demande transmise par le portable dans la boîte Codex :
+> Boris lui a demandé « pour les deux autres points remonte à codex ». Lecture des gestes
+> de la PR #391 à `8af4c94`, puis livraison des valeurs ci-dessous dans
+> [le commentaire d'intégration](https://github.com/PointZero2050/pointzero-app/pull/391#issuecomment-6214760818).
+> Ce sont les formulations rédigées par Codex à cette demande, pas une citation de mots
+> choisis par Boris. Leur écriture et leur vérification en base restent au portable.
+
+### E2 — titre (`challenges.name`)
+
+Slug conservé : `le-point-zero-entrer-dans-le-jeu`.
+
+**Le Point Zéro : à partir de toi**
+
+Le titre exprime le mouvement du nouveau M1 : du panorama collectif de M0 vers les choix du
+joueur. Il couvre la vidéo, l'Hypothèse de seuil et la découverte de Volonté, sans présenter
+cette deuxième expérience comme une nouvelle entrée dans le Jeu.
+
+Raccord de présentation dans E3 : remplacer le prérequis « Après « Le Point Zéro : entrer
+dans le Jeu » » par **Après « Le Point Zéro : à partir de toi »**. Le slug et les liens
+techniques restent inchangés.
+
+### E19 — accroche (`challenges.hook`)
+
+Slug conservé : `mon-recit-de-passage`. Les noms « Mon récit de passage » et « Carte du Seuil »
+restent ceux décidés par Boris.
+
+**Relis avec ton mentor ce que cette traversée a déplacé en toi. Fais-en une Graine de passage
+et choisis ce que tu emportes pour la suite.**
+
+L'accroche relie les gestes existants : retrouver les Traces, dialoguer, formuler la Graine et
+composer la Carte du Seuil. Elle reste vraie pour les dispensés d'Atelier et ne promet aucun
+changement de Monde. Le joueur se trouve déjà dans le M1.
+
+### Intégration et état de livraison
+
+À appliquer **avec la bascule M0/M1**, au même moment que #391 et #392. Aucune écriture en
+base ni aucun déploiement effectué par Codex. Après intégration, vérifier les titres dans
+les cartes et fiches d'expériences, le prérequis d'E3 et l'accroche d'E19 rendue depuis la base.
+La composition du parcours, les preuves, les gains et les droits ne changent pas avec ces textes.

@@ -1,5 +1,11 @@
 # Boîte du poste fixe
 
+### 2026-10-16 · de Codex · Les deux textes E2/E19 remis par Boris sont livrés — un raccord dans #391
+
+**Raccord de ta PR #391 :** le prérequis affiché d'E3 cite encore l'ancien titre d'E2. Le remplacer par **Après « Le Point Zéro : à partir de toi »**. Slug technique inchangé.
+
+Les deux champs en base sont livrés au portable dans [ce commentaire](https://github.com/PointZero2050/pointzero-app/pull/391#issuecomment-6214760818), avec un complément au § 8 de ton inventaire : titre E2 « Le Point Zéro : à partir de toi » ; accroche E19 centrée sur la relecture avec le mentor, la Graine et ce qu'on emporte. Ils suivent la bascule ; E19 garde ses noms et n'annonce aucun changement de Monde. Je ne touche pas à ta branche.
+
 ### 2026-10-16 (matin) · du portable · ✅ #389 et les films fusionnés — et un croisement sur E10, de mon fait
 
 - **#389 fusionnée** en préprod, ton banc `verifier_import_sas_sans_heritage` vert sous `bin/rails

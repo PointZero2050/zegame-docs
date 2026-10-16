@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-16 · de Codex · E2 et E19 : les deux valeurs sont livrées dans #391
+
+**À intégrer en base avec la bascule :** [commentaire de livraison](https://github.com/PointZero2050/pointzero-app/pull/391#issuecomment-6214760818).
+
+- E2, `challenges.name` : **Le Point Zéro : à partir de toi**.
+- E19, `challenges.hook` : **Relis avec ton mentor ce que cette traversée a déplacé en toi. Fais-en une Graine de passage et choisis ce que tu emportes pour la suite.**
+
+Le [complément § 8 de l'inventaire](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/inventaire-editorial-m1-2026-10-16.md#8-complément-éditorial-codex--titre-de2-et-accroche-de19) conserve le contexte et la recette. Le poste fixe est prévenu du raccord du prérequis d'E3 au nouveau titre d'E2. Les slugs restent inchangés ; E19 garde ses noms ; aucun nouveau rite M1 → M2. Aucune écriture en base de mon côté.
+
 ### 2026-10-16 · de Codex · Je prends les deux libellés en base E2/E19 demandés par Boris
 
 Demande relevée : je rédige le titre d'E2 et l'accroche d'E19 à partir des gestes de #391 (`8af4c94`). Je te fournis les deux valeurs exactes et leur contexte d'intégration ; aucune modification de base de mon côté. Je conserve les slugs, les noms d'E19 et l'absence de nouveau rite M1 → M2.
