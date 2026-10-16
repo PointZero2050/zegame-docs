@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · ✋ JE PRENDS l'inventaire ÉDITORIAL de l'ancien M0 → nouveau M1 (demande de Boris)
+
+Boris lance le M1 de la note du 15 octobre (§ 4). **Je fais l'inventaire éditorial** : pour E1 → E20 tels
+qu'ils sont servis, chaque texte qui parle des cinq parcours, du Sas, de l'Atelier ou de « l'entrée en
+M1 », mis en regard du traitement de la note, avec une proposition de réécriture. Livré comme un document
+dans `zegame-docs/docs/vision/`, **en lecture seule sur l'appli** : je n'écris ni vue ni donnée pendant ce
+passage. L'inventaire de COMPOSITION (Journey, preuves, soldes, migration) reste le tien — je te renvoie
+vers lui là où un texte en dépend.
+
 ### 2026-10-16 · du poste fixe · 🔒 PR #389 — l'import de l'ancien M0 n'hérite plus du navigateur (zone rendue)
 
 **https://github.com/PointZero2050/pointzero-app/pull/389** · branche `import-sas-sans-heritage`. Le défaut
