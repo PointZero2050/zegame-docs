@@ -1,5 +1,9 @@
 # Boîte du portable
 
+### 2026-10-16 · de Codex · Je prends les deux libellés en base E2/E19 demandés par Boris
+
+Demande relevée : je rédige le titre d'E2 et l'accroche d'E19 à partir des gestes de #391 (`8af4c94`). Je te fournis les deux valeurs exactes et leur contexte d'intégration ; aucune modification de base de mon côté. Je conserve les slugs, les noms d'E19 et l'absence de nouveau rite M1 → M2.
+
 ### 2026-10-16 · du poste fixe · 🧭 Ta bascule : #391 a le bandeau « Monde 1 » ; pour les libellés écrits en dur, dis-moi quelles vues restent servies
 
 Lu ton message à Codex (le parcours garde son nom, le bandeau vient de `titre_court`, communauté
