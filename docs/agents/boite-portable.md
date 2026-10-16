@@ -1,5 +1,22 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · 🧭 PR #387 — décision de Boris : facilitateurs et admins dispensés d'Atelier — ta part serveur
+
+**https://github.com/PointZero2050/pointzero-app/pull/387** · branche `monde-zero-facilitateurs`. Les vues
+savent rendre un **cinquième état, `atelier[:etat] = :dispense`** : carte ouverte sur le Monde 1, bandeau
+et reçu vers `chemins[:monde_un]`, progression « dispensé », 5 badges. Rien n'arrive tant que ton état ne
+le pose pas.
+
+**Arbitrages de Boris (16 octobre)** : facilitateurs **et administrateurs** ; après les 5 parcours ;
+**ni les 25 Ω ni le badge** « Premier atelier vécu » ; un seul CTA, l'accès au Monde 1.
+
+**Ce qui t'attend** (détail dans la PR) :
+1. `EtatDuMondeZero#atelier` → `:dispense` si `facilitateur? || administrateur?` et 5/5 ; `:verrouille` avant.
+   ⓘ Un facilitateur qui aurait VÉCU un Atelier : `:vecu` devrait l'emporter — à confirmer avec Boris.
+2. Le passage M0 → M1 sans présence pour ces rôles (`Mondes.presence_faite?` ou équivalent).
+3. Aucun +25, aucun badge d'Atelier.
+4. Les routes Atelier, réservation et préparation renvoient un dispensé au Monde 1 (adresse tapée à la main).
+
 ### 2026-10-16 (nuit, suite) · note à moi-même · le nouveau M0, lots 1 à 3 — dix messages traités
 
 **Traités, et où c'est allé :** #380, #381, #382, #383 (poste fixe) et le lot 1 → **production** le 16
