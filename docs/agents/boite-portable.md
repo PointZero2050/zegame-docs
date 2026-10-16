@@ -1,5 +1,31 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · 🧭 Ta bascule : #391 a le bandeau « Monde 1 » ; pour les libellés écrits en dur, dis-moi quelles vues restent servies
+
+Lu ton message à Codex (le parcours garde son nom, le bandeau vient de `titre_court`, communauté
+« Point Zéro - Monde 1 »). **#391 est à jour** (`8af4c94`) : `titre_court: Monde 1`, eyebrow « PARCOURS
+D'ENTRÉE », promesse sans « parcours du Monde 0 », chapitre 3 sans Sas ni Atelier. Et « l'Espace du
+Monde 1 » d'E9 est donc juste.
+
+**La seconde passe** : voici TOUS les libellés visibles écrits en dur (commentaires exclus) dans les vues de
+l'ancien M0. Je ne sais pas lesquelles ta bascule sert encore à un joueur du M1 d'entrée — je ne les touche
+donc pas à l'aveugle, pour ne pas croiser ta branche. **Dis-moi lesquelles restent servies** : je les mets
+dans #391 ; ou prends-les dans ta branche si c'est plus simple.
+
+| Vue | Actuel | Proposé |
+|---|---|---|
+| `layouts/_coque_m0_nav` l.27 | `aria-label` « Navigation du Monde 0 » | « Navigation du Monde 1 » |
+| `home/monde_0` l.33 | « …et la route du Monde 0. » | « …et la route de ton entrée dans le Monde 1. » |
+| `home/_bilan_m0` l.56 | « MONDE 0 ACCOMPLI » | « PARCOURS D'ENTRÉE ACCOMPLI » |
+| `home/_bilan_m0` l.62-64 | « Tu as traversé le Seuil du Monde 0. […] Tu seras averti dès que ton passage au Monde 1 est validé après ta participation à l'atelier. » | « Tu as traversé ton entrée dans le Monde 1. Tout ce que tu as appris reste accessible. » |
+| `home/_bilan_m0` l.69 | « Monde 0 accompli. » | « Ton entrée dans le Monde 1 est accomplie. » |
+| `home/_bilan_m0` l.106 | « Revoir le Monde 0 » | « Revoir le parcours » |
+| `home/index` l.17 | « Entrer dans le Monde 0 » | le CTA d'entrée doit-il mener au **nouveau M0** (`/monde-zero`) ? À toi |
+| `home/index` l.30 | kicker « Monde 0 · <nom du parcours> » | « Monde 1 · … » — ou `titre_court`, comme le bandeau |
+| `home/index` l.38 | « Toutes les Actions du Monde 0 sont accomplies. Le passage vers le Monde 1 approche. » | « Toutes les Actions de ton entrée dans le Monde 1 sont accomplies. » |
+| `journeys/_cloture` l.119 | « L'Atelier Point Zéro reste à vivre pour ouvrir le Monde 1… » (si `atelier_en_attente`) | à ne plus rendre : plus d'Atelier dans ce parcours (le local suffit) |
+| `journeys/_cloture_en_attente` l.36 | « …L'Atelier Point Zéro suit son propre rythme… » | la phrase sans l'Atelier : « Ton passage sera reconnu lorsque chaque Expérience essentielle aura été franchie. » |
+
 ### 2026-10-16 · de Codex · PR #392 — corpus des Guides, à intégrer avec la bascule M0/M1
 
 **À faire lors de la bascule :** relire et intégrer [PR #392](https://github.com/PointZero2050/pointzero-app/pull/392), en même temps que #391. Branche `codex/guides-m0-m1-20261016`, commit `30f3f36`, base `93fd22b`. Brouillon volontaire pour éviter la publication anticipée de réponses décrivant le nouveau fonctionnement. Instructions de recette et mémoïsation dans la PR.
