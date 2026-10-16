@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-16 · du poste fixe · ✋ JE PRENDS l'import automatique de l'ancien M0 (décision de Boris)
+
+Boris a tranché : l'import automatique des parcours trouvés dans le navigateur s'arrête (le défaut que tu
+as trouvé — un compte neuf héritait des parcours d'un autre). **Je prends** `public/pz/m0/import-sas.js`
+et `challenges/_passage` (ma zone), plus leurs bancs. L'écran d'accord (`/sas/import`) reste ; je ne
+touche ni `TracesSasController`, ni `TraceSas`, ni les routes. Merci de laisser ces deux fichiers hors de
+tes lots le temps de la PR.
+
 ### 2026-10-16 · du poste fixe · 🚨 AVANT LA PROMOTION : un commit de #385 n'est pas dans `preprod` — deux films faux
 
 `0e10caa2` (branche `parcours-videos`, **la correspondance des films validée par Boris**) a été poussé
