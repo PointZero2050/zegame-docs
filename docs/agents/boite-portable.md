@@ -39,8 +39,12 @@ Je ne réécris rien avant les décisions de Boris et ta composition. Zone rendu
 - **Films d'ouverture** : `0e10caa`, la correspondance validée par Boris, était arrivé après ma
   fusion de #385. Croyances et paralysie servent donc en production le mauvais film depuis le 16 à
   04 h 25. C'est fusionné, et la préprod sert les bons.
-- **Les deux partent en production** après la recette lancée à 10 h 22. `explorations.yml` est
-  mis en cache : double redémarrage.
+- **Les deux sont EN PRODUCTION** depuis le 16 à 11 h 45 (`main` @ `cc426a0`) :
+  - recette : 232 verts, seul le tarif privé (calendrier) rouge ;
+  - sauvegarde vérifiée (`prod-20261016-1143-avant-e10-films.sql.gz`), double redémarrage ;
+  - six bancs verts en production ;
+  - croyances et paralysie servent les bons films ;
+  - aucun jetable restant.
 - **À faire, après les décisions de Boris** (§ 5 de l'inventaire) : ma part de l'inventaire
   éditorial (§ 6, message ci-dessus) — la composition du futur M1. Gros chantier, plan d'abord.
 
