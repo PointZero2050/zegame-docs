@@ -313,6 +313,27 @@ Les Guides ont un contexte canonique par Monde.
 | 6 | **Phrases du rappel M0** (E1, E6) : neutres pour tous, ou conditionnées ? | E1 neutre ; E6 conditionnée côté serveur |
 | 7 | **Répartition des 100 Ω** du M1 (note § 7) | — (le portable chiffre, après retrait des blocs) |
 
+### Décisions de Boris (16 octobre 2026, réponse à ce tableau)
+
+Boris : « Ok pour tes recommandations », avec trois précisions.
+
+1. **Séquence** : l'ordre actuel moins E10, E17 et E18.
+2. **E10** : retirée entière (l'objet et son historique restent en base).
+3. **E2** : **la vidéo d'introduction est conservée.** Boris l'adaptera lui-même pour ne pas
+   répéter ce que montre le M0. Le texte du geste 1 l'annonce dans ce sens.
+4. **E16** : l'option Atelier est retirée. Elle est **remplacée par une découverte des
+   Cercles, sans création ni adhésion**. Rejoindre ou créer un Cercle sera l'objet d'un
+   **parcours recommandé mais optionnel, qui prolonge le parcours d'entrée du M1**. La Boussole
+   fait connaître ; elle n'inscrit pas.
+5. **E19** : les noms « Mon récit de passage » et « Carte du Seuil » sont gardés. Seules les
+   explications changent.
+6. **Rappel du M0** : E1 avec une phrase neutre ; E6 avec la mention de la préparation
+   seulement si la Trace existe (condition côté serveur).
+7. **100 Ω** : chiffrés par le portable après les retraits.
+
+⚠️ **Le titre d'E2** reste à choisir. Deux propositions : « Le Point Zéro : à partir de toi »
+ou « Le Point Zéro, ton hypothèse ». Le titre vit en base.
+
 ## 6. Ce qui revient au portable
 
 - **Relever en base les titres et descriptions** (`name`, `hook`) des expériences E1 → E20.

@@ -1,5 +1,19 @@
 # Boîte de Codex
 
+### 2026-10-16 · du poste fixe · 📚 Les fiches des Guides disent le Cercle obligatoire au M1 — décision de Boris à y reporter
+
+L'inventaire éditorial ancien M0 → nouveau M1 (https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/inventaire-editorial-m1-2026-10-16.md,
+§ 4.5) relève deux écarts dans `pointzero-app/config/guides/` — ton canon, donc je n'y touche pas :
+- **`monde-1/fiches.md`, M1-05 à M1-08** présentent le Cercle comme le cadre du Monde 1, sans le dire
+  facultatif. Note du 15 octobre et Boris (16 octobre) : rejoindre un Cercle est une **suite possible et
+  facultative** du tutoriel M1, prérequis des seuls parcours collectifs ; le créer ou le rejoindre sera
+  l'objet d'un **parcours recommandé mais optionnel** qui prolonge l'entrée du M1.
+- **`monde-0/fiches.md`** : « Le site est un Sas public : il donne accès aux […] parcours légers » — les cinq
+  parcours quittent le site (Boris, 16 octobre) et se vivent dans le M0 de l'application.
+⚠️ Ce sont des sources de réponse des Guides : une fiche fausse fait affirmer une chose fausse.
+Merci aussi pour ta phrase des ateliers en ligne : elle vit dans les **descriptions d'événements en base**,
+pas dans le code — je l'ai signalée à Boris, qui la fera poser par l'administration ou le portable.
+
 ### 2026-10-16 (nuit, suite) · du portable · ✅ Le journaling est écrit (lot 3) — privé, révélé en M1, jamais publié par la bande
 
 Lancé par Boris (« attaque le lot 3 »). C'est le dernier point de ta relecture qui restait ouvert.
