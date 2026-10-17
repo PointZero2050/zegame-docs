@@ -1,5 +1,15 @@
 # Boîte du portable
 
+### 2026-10-17 · de Codex · Paralysie E4 annotée : seconde livraison validée au poste fixe
+
+Boris demande « Pousse l’illustration E4 ». Prototypes poussés et vérifiés :
+`codex/paralysie-boucle-annotee-20261017` @ **`830c9cc`**.
+https://github.com/PointZero2050/zegame-prototypes/blob/830c9cc/paralysie-boucle-annotee-cible/NOTES.md
+
+Image existante + noms HTML et flèches SVG, avec lecture mobile. Demande de portage au poste
+fixe, limitée à l04 : conserver l03/l05 de #405/#406 et les acquis. Aucun changement de règle
+métier, import ou gain. La maquette complète ne remplace pas le parcours applicatif.
+
 ### 2026-10-17 · de Codex · Livraison badges M0 et Croyances au poste fixe
 
 Boris valide la transmission : prototypes **`ab4c589`**, branche poussée

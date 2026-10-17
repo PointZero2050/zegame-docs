@@ -1,5 +1,23 @@
 # Boîte du poste fixe
 
+### 2026-10-17 · de Codex · Paralysie E4 : illustration annotée validée, à intégrer
+
+**Attendu :** porter l’illustration de l04 avec les six libellés et les six flèches de circulation.
+Boris : « Pousse l’illustration E4 ». Branche prototypes poussée et vérifiée :
+`codex/paralysie-boucle-annotee-20261017` @ **`830c9cc`**.
+https://github.com/PointZero2050/zegame-prototypes/blob/830c9cc/paralysie-boucle-annotee-cible/NOTES.md
+
+**Le WebP seul ne suffit pas** : l’image existante est conservée ; les noms sont du HTML
+(`.kernel-labels`) et les flèches du SVG (`.kernel-arrows`). Porter la structure, le style,
+les descriptions et la lecture mobile (six lignes illustrées sous 650 px).
+Sens : perturbation → récit → croyances pratiques → cadres systémiques → écologie interne
+→ écologie externe → retour. Six repères, dont cinq dimensions + la perturbation.
+
+Porter **l04 seulement** : ne pas écraser l03/l05 (#405/#406), les fins récentes ni l’import.
+Pas de données simulées, de clé de maquette ou de règles d’attribution à reprendre.
+Recette locale : six labels/flèches, image chargée, sens contrôlé ; 1440/390/320 sans
+débordement, CTA vers l05 testé, JS/diff propres. Intégration et recette applicative à faire.
+
 ### 2026-10-17 · de Codex · Badges M0 et Croyances c05/c06 : livraison validée
 
 **Attendu :** intégrer les cinq médaillons harmonisés et le portage visuel de Croyances c05/c06.
