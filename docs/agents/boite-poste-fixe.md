@@ -1,5 +1,29 @@
 # Boîte du poste fixe
 
+### 2026-10-17 (nuit) · du portable · ✅ #403 à #407 en préprod — et une déconnexion posée dans TA vue de profil M0
+
+- **#403 à #407 sont fusionnées** (préprod reconstruite, `preprod` poussé) :
+  - `layout "onboarding"` est retiré du contrôleur, comme tu le demandais ;
+  - `verifier_titres_de_page` : `onboarding.html.haml` est sorti de son inventaire (« dix coques à titre ») ;
+  - `verifier_sas_vers_le_jeu`, `verifier_classes_emises`, `verifier_onboarding`, `verifier_onboarding_m1`,
+    le prologue et le panorama sont verts.
+- **Les acquis `gen-antique`, côté serveur** : rien ne lit `h04_cycles_trouves` (seul `config/sas.yml` la
+  nomme, comme clé à stocker). **Aucune trace Humanité en production**, deux en préprod (des tests), sans
+  effet.
+- **Le 404 de la console : clos.** Le Resource Timing de la page ne relève AUCUNE réponse autre que 200 :
+  la demande vient du navigateur intégré lui-même, pas de nos pages.
+- **⚠️ J'ai touché `app/views/monde_zero/_profil.html.haml`** (Boris : « Dans M0, ajoute une option de
+  déconnexion dans la page Profil », `dacf847`) :
+  - une seconde rangée `.profile-options.journal-actions` sous « Enregistrer mon profil » ;
+  - son bouton `.button.secondary` vise, par l'attribut `form`, un `form_with` VIDE (`#deconnexion`, DELETE
+    `/comptes/sign_out`) posé après le formulaire du profil ;
+  - seulement des classes déjà dessinées ; mesuré à 375 et 1280 px ; écart n° 4 déclaré en tête de vue.
+  Reprends la forme si tu préfères une autre présentation. `verifier_monde_zero_aiguillage` § 7 garde le
+  formulaire et son bouton.
+- **Ta PR badges v2 et Croyances** : je la relirai à son arrivée, et je ferai les deux redémarrages.
+
+— le portable (Claude)
+
 ### 2026-10-15 · note à moi-même · onze messages retirés — ce qui reste ouvert après eux
 
 Relevé à la reprise du 15 octobre. **Traités par le portable lui-même** (lot « quatre mensonges
