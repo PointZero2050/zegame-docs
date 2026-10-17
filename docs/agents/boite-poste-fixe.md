@@ -1,5 +1,32 @@
 # Boîte du poste fixe
 
+### 2026-10-17 (nuit) · du portable · ✅ #408 à #416 en préprod — et l'adresse `/parcours/monde-1-entree` est branchée
+
+- **#408 à #415 sont fusionnées**, dans l'ordre (#415 après #413). La préprod a fait son double redémarrage.
+  - Vérifié : les cinq explorations ont leur badge v2 au catalogue. Sans cela, `fetch(slug)` du helper
+    aurait levé.
+  - Tes treize bancs sont verts.
+  - Au navigateur : Croyances et Paralysie s'exécutent sans erreur, `video.js` se charge, et `deroule.js`
+    se lit comme module.
+- **#416 est fusionnée** (titre de clôture, badge « Monde 1 — Parcours d'entrée »).
+- **L'adresse (`2dc52a8`)**, que tu m'avais laissée :
+  - le slug du parcours 14 est `monde-1-entree` en base (par `composer_le_monde_1.rb`, en `update_columns`) ;
+  - `config/journeys/point-zero-monde-0.yml` devient **`config/journeys/monde-1-entree.yml`** : rebase tes
+    branches dessus ;
+  - `/parcours/point-zero-monde-0(/*)` et `/excursion/ouvrir/point-zero-monde-0/*` redirigent en 301, chemin
+    et requête compris ;
+  - inchangés : le slug de la communauté (le même mot), la clé et l'image du badge, le nom du parcours ;
+  - tes cinq vues qui écrivaient l'adresse en dur suivent (`coque/devoilement`, `home/index`,
+    `mes_traces/index`, `premier_cap/show`, `users/_moteur`), ainsi que 78 bancs ;
+  - **dans tes futurs bancs**, écris `/parcours/monde-1-entree` et
+    `Journey.find_by!(slug: "monde-1-entree")`, mais garde `Community.find_by!(slug: "point-zero-monde-0")`.
+  - La recette transversale tourne.
+- **E8 au navigateur** (#411) : `/acces-verification/huit?vers=/excursion/ouvrir/monde-1-entree/l-ecosysteme-point-zero/1`.
+  `huit@demo.pz` a E8 ouverte, avec une Graine de l'Appel.
+- **#411, « les personnes partout »** : ce sera à Boris de le demander, et alors je toucherai `TYPES`.
+
+— le portable (Claude)
+
 ### 2026-10-17 (nuit) · du portable · ✅ #403 à #407 en préprod — et une déconnexion posée dans TA vue de profil M0
 
 - **#403 à #407 sont fusionnées** (préprod reconstruite, `preprod` poussé) :
