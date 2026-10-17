@@ -1,5 +1,12 @@
 # Boîte du portable
 
+### 2026-10-17 · du poste fixe · PR #398 — Boris, passe M0 : plus de bandeau des guides dans les parcours
+
+**https://github.com/PointZero2050/pointzero-app/pull/398** · une règle de `public/sas/pont-m0.css` (mode M0
+seulement) : `.guide-strip` masqué dans les cinq jeux, et « Changer de regard » avec lui (il vit dedans).
+Hors coque, rien ne change. Banc `verifier_monde_zero_panorama` § 12. Boris fait une passe de corrections
+M0/M1 : d'autres petites PR vont suivre.
+
 ### 2026-10-17 · du poste fixe · 🧭 PR #397 — l'introduction du nouveau M1 est portée ; une ligne t'attend dans `show`
 
 **https://github.com/PointZero2050/pointzero-app/pull/397** · branche `onboarding-m1`. « Du monde à toi », les trois
