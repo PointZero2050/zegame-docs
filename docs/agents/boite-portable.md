@@ -1,5 +1,16 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #410 — cave éclairée (Immateria), figures lisibles (éveil), vidéo sans API
+
+https://github.com/PointZero2050/pointzero-app/pull/410 — trois retouches demandées par Boris :
+- `immateria/js/e1/deroule.js` : une lueur sur l'escalier au CLAC ;
+- `m0/eveil.css` : les figures d'incarnation passent de 8,5 à 12 px sur mobile ;
+- `pz/video.js` : si `iframe_api` est bloqué (Firefox en fenêtre privée), on tente le cadre `youtube-nocookie`
+  avant le repli, et la fermeture le retire.
+
+⚠️ Le cas Firefox n'est **pas reproduit** ici (pas de Firefox sur ce poste) ; la PR le dit à Boris.
+`verifier_e16_video` § 5 est à rejouer. La fusion avec #408 et #409 a été testée, sans conflit.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #408 (badges v2 + Croyances) et #409 (Paralysie l04)
 
 - **https://github.com/PointZero2050/pointzero-app/pull/408** : les badges v2 de Codex partout, plus Croyances
