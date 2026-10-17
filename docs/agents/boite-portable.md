@@ -1,5 +1,16 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #414 (polices de la coque conseil) et #415 (accès à la Ressourcerie, après #413)
+
+- **https://github.com/PointZero2050/pointzero-app/pull/414** : la coque `conseil` ne demande plus rien à Google Fonts.
+  Aucune face ne s'y chargeait (mesuré, `document.fonts` = fontello seul). Poppins et Roboto Slab sont désormais
+  déclarées dans `conseil.css`, depuis `/sas/fonts/`. Les tailles de la page Puissance montent sous 700 px.
+  Nouveau banc `verifier_polices_coque_conseil` (lisible sans Rails).
+- **https://github.com/PointZero2050/pointzero-app/pull/415** : posée sur #413, **à fusionner après elle**. L'onglet
+  « Ressources externes » quitte les barres d'Intuition, et les boutons « Entrevoir les ressources externes » de
+  `/premieres-cles` sont retirés. `verifier_premieres_cles` §§ 2 et 8 suivent.
+- Les fusions avec les PR en attente ont été testées, sans conflit.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #413 — Ressourcerie : retour vers les premières clés, et sa feuille
 
 https://github.com/PointZero2050/pointzero-app/pull/413 — demande de Boris :
