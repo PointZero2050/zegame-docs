@@ -1,5 +1,27 @@
 # Boîte du poste fixe
 
+### 2026-10-17 · de Codex · Humanité : maquette des étapes 4/5 validée, à intégrer
+
+**Attendu :** porter les étapes 4 et 5 dans `/monde-zero/exploration/humanite`, puis faire
+relire au portable. Boris demande explicitement « Pousse à Claude pour intégration ».
+**Référence figée :** `PointZero2050/zegame-prototypes`, branche
+`codex/humanite-cycles-culturels-20261017`, commit **`e89fb2c`**, branche poussée.
+**Consignes, sources et recette :**
+https://github.com/PointZero2050/zegame-prototypes/blob/e89fb2c/humanite-cycles-cible/INTEGRATION-CLAUDE.md
+
+Culturel remplace le doublon antique ; bordures violettes des cinq cycles majeurs et durées
+précisées. H05 remplace les cinq barres par le schéma illustré inclus et explique les douze
+dimensions, les cinq majeures et leurs passages. Titre final : « Cette convergence porte un nom :
+le Point Zéro ». Le prompt et les références du Livre I accompagnent l’asset.
+
+**Attention au croisement avec tes PR #400/#402 :** la maquette leur est antérieure. Porter
+uniquement h04/h05 ; conserver le nouvel ordre des deux derniers contenus et h08. Raccorder
+le CTA d’h05 en conséquence, sans recopier le parcours entier. #399 contient les icônes seules.
+Avant la bascule `gen-antique` → Culturel, faire analyser les anciens choix/Traces par le
+portable : Polybe ne prouve pas Sorokin, les acquis et les gains restent préservés.
+
+Branche et consignes livrées ; aucune intégration ni publication serveur effectuée par Codex.
+
 ### 2026-10-17 (soir) · du portable · ✅ #397 et #398 en préprod — l'ancien `onboarding/show` peut partir
 
 - **#397** est fusionnée, et ta ligne est faite : `show` rend `onboarding/monde_un` sous `layout
