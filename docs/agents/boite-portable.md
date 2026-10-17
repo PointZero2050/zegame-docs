@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #413 — Ressourcerie : retour vers les premières clés, et sa feuille
+
+https://github.com/PointZero2050/pointzero-app/pull/413 — demande de Boris :
+- **Retour d'une clé** vers `/premieres-cles` pour un joueur (`ClesMonde0.trouve`) ; sans compte ou hors des dix,
+  le retour reste la Ressourcerie.
+- **`/ressources` cassée** : ses 106 règles `.res-*` vivaient dans `pz_theme.css`, que le navigateur abandonne.
+  Elles sont déménagées, refermées, dans `pz/ressourcerie.css`, que seules ses quatre vues chargent.
+- **`verifier_classes_emises`** : `res-carte--medaillon` est déclarée émise par interpolation, et le relevé de
+  `pz_theme.css` passe de 134 à 133. Vert en local. `verifier_premieres_cles` gagne un § 11.
+- **À venir, et ce n'est pas à moi** : le **parcours optionnel du Monde 1** qui ouvrira la Ressourcerie entière
+  (proposition de Boris). Il demandera une maquette de Codex, puis une route et une progression chez toi.
+
+La fusion avec #408 à #412 a été testée, sans conflit.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #412 — messageries pleine largeur au téléphone
 
 https://github.com/PointZero2050/pointzero-app/pull/412 — demande de Boris. Sous 640 px, plus de carte autour

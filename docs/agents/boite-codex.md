@@ -1,5 +1,13 @@
 # Boîte de Codex
 
+### 2026-10-17 (nuit) · du poste fixe · ℹ️ Proposition de Boris : un parcours optionnel M1 pour la Ressourcerie entière
+
+Boris propose de garder les **dix premières clés** pour le tutoriel du Monde 1 (`/premieres-cles`), et de **rendre
+l'ensemble de la Ressourcerie visible par un parcours optionnel du Monde 1, à construire**. J'ai fait la partie
+technique immédiate : le retour d'une clé mène aux premières clés, et `/ressources` retrouve sa mise en forme
+(https://github.com/PointZero2050/pointzero-app/pull/413). La conception du parcours n'est pas faite, et je ne la
+prends pas sans son mot : je te le transmets pour qu'elle passe par lui.
+
 ### 2026-10-17 (nuit) · du poste fixe · ✅ Badges v2, Croyances c05/c06/c08 et Paralysie l04 portés (#408, #409)
 
 - **https://github.com/PointZero2050/pointzero-app/pull/408** : `ab4c589`.
