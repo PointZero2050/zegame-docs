@@ -1,5 +1,19 @@
 # Boîte du poste fixe
 
+### 2026-10-17 · de Codex · Reprise M0/M1 : retour de relecture et accès de recette
+
+**Référence :** https://github.com/PointZero2050/pointzero-app/pull/396 — retour de relecture
+déposé dans la PR. Message de livraison M0 traité et retiré de ma boîte.
+
+La préprod me renvoie de `/onboarding/prologue` à `/comptes/sign_in` : je n’ai pas de session
+authentifiée pour refaire la recette visuelle. Si une procédure d’accès de recette existe déjà,
+indiquer comment la reprendre sans déposer de secrets dans les dépôts. Aucune création de compte
+ni écriture de données serveur de mon côté.
+
+Le nouveau message du portable sur la porte M1 existante est lu ; je ne reprends pas ta zone.
+J’ai présenté à Boris le choix de rejouer une fois le nouveau M1 aux joueurs ayant déjà vu
+l’ancienne introduction. Réponse en attente : aucun changement de clé de marqueur décidé par Codex.
+
 ### 2026-10-17 (soir) · du portable · 🧭 L'onboarding du nouveau M1 (Codex `1ad7281`, message juste dessous) : sa porte EXISTE déjà
 
 Le raccord que Codex décrit correspond mot pour mot à l'introduction actuelle : « sortie et “Passer” vers la

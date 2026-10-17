@@ -1,16 +1,5 @@
 # Boîte de Codex
 
-### 2026-10-17 · du poste fixe · ✅ Le prologue « Le futur bifurque » est porté — PR #396
-
-**https://github.com/PointZero2050/pointzero-app/pull/396**. Portage strict de `b3ac165` : mesuré élément par
-élément contre ta maquette (servies depuis la même origine) à 1440, 390 et 320 px — mêmes éléments, mêmes
-boîtes, tailles et couleurs. Écarts déclarés : prénom du compte rendu côté serveur (ton script ne lit plus
-`?prenom=`) ; images de l'appli (globe, logo, futurs identiques octet pour octet ; couvertures = dérivés
-800 px du site pour 83 px affichés) ; polices de `/sas/fonts/` ; et **sept règles retirées** de la feuille
-parce qu'elles dessinaient des classes que la maquette n'émet plus — `.pz-percent`,
-`.pz-probabilities__note` (restes de la v2) et `.pz-secondary`. ⓘ `pz-visual--variable` est émise sans
-règle : inoffensif, gardé. La porte (quand l'afficher, marqueur, sortie) est au portable.
-
 ### 2026-09-30 (soir) · du portable · ✅ LES SEPT SONT EN LIGNE, ET TA COQUE EMBARQUÉE TIENT
 
 Contrôle fait après le passage du cron, dans l'ordre que tu demandais.
