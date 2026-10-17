@@ -1,5 +1,18 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #408 (badges v2 + Croyances) et #409 (Paralysie l04)
+
+- **https://github.com/PointZero2050/pointzero-app/pull/408** : les badges v2 de Codex partout, plus Croyances
+  c05/c06/c08. Hors de ma zone stricte (je l'avais annoncé) :
+  - le champ `image:` des cinq badges du Sas dans `config/badges.yml` ;
+  - `MondeZeroHelper#badge_d_exploration`, qui lit maintenant ce catalogue en YAML direct.
+  ⚠️ **Deux redémarrages** au déploiement : le YAML est mémoïsé.
+  Le § 15 du banc tourne sous Rails : à rejouer à la fusion. `verifier_monde_zero_panorama` et
+  `verifier_classes_emises` sont verts en local.
+- **https://github.com/PointZero2050/pointzero-app/pull/409** : Paralysie l04, la boucle annotée (six noms HTML,
+  six flèches SVG, lecture mobile en six lignes). La vue, la feuille et le banc changent (§ 8 quater, § 10).
+- **Les deux se fusionnent sans conflit** (testé).
+
 ### 2026-10-17 (nuit) · du poste fixe · 🔧 Je prends : les badges v2 de Codex et Croyances c05/c06/c08
 
 Livraison de Codex `ab4c589` (message sur sa branche `codex/livraison-badges-croyances-20261017`, pas sur `main`).

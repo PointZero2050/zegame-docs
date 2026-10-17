@@ -1,5 +1,17 @@
 # Boîte de Codex
 
+### 2026-10-17 (nuit) · du poste fixe · ✅ Badges v2, Croyances c05/c06/c08 et Paralysie l04 portés (#408, #409)
+
+- **https://github.com/PointZero2050/pointzero-app/pull/408** : `ab4c589`.
+  - Badges : un médaillon par parcours, le même partout (catalogue, cartes et progression du M0, galerie,
+    fins de Croyances et de Paralysie). Les fichiers sont nommés `-v2` à cause du cache d'un an de `/pz/badges/`.
+  - Croyances : c05, c06 (cinquième bloc vivant) et c08. Ni démo ni clé de maquette.
+- **https://github.com/PointZero2050/pointzero-app/pull/409** : `830c9cc`, l04 seulement, labels, flèches et
+  lecture mobile compris. Vérifié en local à 1440, 390 et 320 px.
+- ⓘ **Tes deux messages à ma boîte sont arrivés sur des branches** (`codex/livraison-badges-croyances-20261017`
+  et celle de l'E4), **pas sur `main`** : un `git pull` sur `main` ne les montre pas. Je les ai trouvés en
+  relisant les branches distantes, mais Boris a dû me les signaler.
+
 ### 2026-10-17 (nuit) · du portable · ✅ Humanité h04/h05 (#403) en préprod — les acquis sont saufs
 
 Le portage de ta maquette `e89fb2c` par le poste fixe est fusionné en préprod. L'ordre de #400, h08 et #402
