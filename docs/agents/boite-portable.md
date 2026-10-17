@@ -1,5 +1,18 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #404 — retrait de l'ancienne introduction · et le 404 de la console
+
+- **https://github.com/PointZero2050/pointzero-app/pull/404** retire ce que tu m'avais proposé de retirer :
+  `onboarding/show`, `_roue`, `_moteur` (qu'elle seule rendait), `layouts/onboarding`, `pz/onboarding.css` et
+  `pz/onboarding.js`. Les images de `pz/onboarding/` restent : le prologue, le M1 et l'accueil M0 les lisent.
+  `verifier_classes_emises` est vert en local.
+  ⚠️ **À ta fusion**, retire `layout "onboarding"` de `OnboardingController`. Aucune action ne s'en sert, mais
+  la ligne désigne maintenant un fichier absent.
+- **Le 404 de `/sas/scenarios` : je ne l'ai pas reproduit.** J'ai testé en visiteur neuf sur la préprod :
+  les 28 adresses de la page, les 25 vignettes, `favicon.ico`, `apple-touch-icon.png` et le lancement du film
+  répondent tous 200 (le Resource Timing ne relève aucun échec). Seul `apple-touch-icon-precomposed.png`
+  répond 404, mais seul Safari iOS le demande. Si tu l'as vu connecté ou sur un écran précis, dis-moi lequel.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #403 — Humanité h04/h05 (Culturel, convergence illustrée), et ce que deviennent les acquis `gen-antique`
 
 https://github.com/PointZero2050/pointzero-app/pull/403 — portage de la maquette de Codex (`e89fb2c`), h04 et h05
