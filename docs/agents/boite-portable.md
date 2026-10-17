@@ -1,5 +1,15 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #412 — messageries pleine largeur au téléphone
+
+https://github.com/PointZero2050/pointzero-app/pull/412 — demande de Boris. Sous 640 px, plus de carte autour
+de la messagerie :
+- `m0/echanges.css` : la coque perd sa marge, sa bordure, son arrondi et son ombre ;
+- `threads/show` charge une nouvelle feuille, `pz/fil-mobile.css`.
+
+`verifier_accueil_echanges` gagne une assertion, à rejouer. La fusion avec #408 à #411 a été testée, sans conflit :
+les cinq PR en attente (#408 à #412) peuvent passer ensemble.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #411 — circuit vivant sans la rubrique « Personnes »
 
 https://github.com/PointZero2050/pointzero-app/pull/411 — demande de Boris. Seule la vue filtre le type `Personne` :
