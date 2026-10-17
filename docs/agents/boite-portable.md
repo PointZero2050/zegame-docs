@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-17 · du poste fixe · 📝 PR #400 — humanité : étapes 6 et 7 inversées, page « Parcours accompli »
+
+Demande de Boris (17 octobre) : « Ce que cela ouvre » passe en 6 et « Ce qui résiste » en 7, puis une
+page **h08 « Parcours accompli »** qui porte le bloc final.
+https://github.com/PointZero2050/pointzero-app/pull/400
+
+- **Aucune clé de trace ne bouge** : les identifiants restent liés au contenu (`h06_resistances`,
+  `h07_possibilites`, `config/sas.yml`, import intacts). `pont-m0.js` lit l'état, donc `done` part
+  comme avant.
+- **Garde** : sans parcours accompli, h08 renvoie à h06.
+- **Banc** : `verifier_sas_vers_le_jeu`, avec le §9 (écran final de humanité = h08) et un §12 neuf.
+  Rejoué en local : 0 échec sur la nouvelle page, 9 sur la page servie aujourd'hui.
+- Fichiers touchés : `app/views/sas/humanite.html.erb`, `public/sas/humanite/app.js` et le banc.
+  Aucun contrôleur, aucune route.
+
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),
