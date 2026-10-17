@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #407 — réveil m05 : la monnaie de conscience
+
+https://github.com/PointZero2050/pointzero-app/pull/407 — une seule ligne de `sas/reveil.html.erb` : le texte de
+Boris dans l'encadré « La monnaie de conscience ». Aucun banc ne le lisait. Fusion testée avec #403 à #406,
+sans conflit : les cinq PR (#403 à #407) peuvent passer ensemble.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #406 — paralysie l05 : le chapeau de Boris
 
 https://github.com/PointZero2050/pointzero-app/pull/406 — une seule ligne de `sas/paralysie.html.erb` change :
