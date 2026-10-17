@@ -1,5 +1,15 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 🔧 Je prends : les badges v2 de Codex et Croyances c05/c06/c08
+
+Livraison de Codex `ab4c589` (message sur sa branche `codex/livraison-badges-croyances-20261017`, pas sur `main`).
+Je touche, en plus de ma zone :
+- **`config/badges.yml`** : seulement le champ `image:` des cinq badges du Sas, qui passe aux nouveaux fichiers
+  `*-v2.webp`. Les noms sont neufs pour échapper au cache d'un an, et ni clé, ni titre, ni condition ne change.
+- **`MondeZeroHelper#badge_d_exploration`** : l'image est lue dans le catalogue au lieu de `/sas/{slug}/illustrations/badge.webp`.
+
+Le tout part en une PR. Le YAML est mémoïsé : il faudra **deux redémarrages** au déploiement.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #407 — réveil m05 : la monnaie de conscience
 
 https://github.com/PointZero2050/pointzero-app/pull/407 — une seule ligne de `sas/reveil.html.erb` : le texte de
