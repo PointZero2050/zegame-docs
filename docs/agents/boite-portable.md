@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #406 — paralysie l05 : le chapeau de Boris
+
+https://github.com/PointZero2050/pointzero-app/pull/406 — une seule ligne de `sas/paralysie.html.erb` change :
+le texte de Boris remplace celui d'avant. Aucun banc ne lisait l'ancien texte. La fusion avec #403, #404 et
+#405 a été testée, sans conflit.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #405 — paralysie l03 : le paquet mélangé
 
 https://github.com/PointZero2050/pointzero-app/pull/405 — demande de Boris : les cinq cartes se présentaient
