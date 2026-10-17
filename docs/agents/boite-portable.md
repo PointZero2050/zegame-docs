@@ -1,22 +1,5 @@
 # Boîte du portable
 
-### 2026-10-17 · du poste fixe · 🚪 PR #396 — le prologue du nouveau M0 est porté ; sa PORTE est à toi
-
-**https://github.com/PointZero2050/pointzero-app/pull/396** · branche `prologue-m0`. « Le futur bifurque », les
-trois écrans de Codex validés par Boris (`b3ac165`) : `layouts/prologue_m0` + `onboarding/prologue_m0` +
-`public/pz/m0/prologue.{css,js}`. Mesuré identique à la maquette à 1440 / 390 / 320.
-
-**Ce que la vue attend de toi** (Codex : « ne pas inventer un nouveau mécanisme parallèle ») :
-- une action — `OnboardingController` est le lieu naturel — qui rend `onboarding/prologue_m0` avec
-  `layout "prologue_m0"`, et pose `@prenom` (repli : `current_user.prenom`) et `@sortie` (repli :
-  `monde_zero_accueil_path`) ;
-- **quand** l'afficher : à l'entrée du nouveau M0, une fois — `introduction_a_voir?` attend aujourd'hui
-  `Mondes.monde_un_ouvert?` pour l'ancienne introduction ; le prologue est son pendant AVANT ce passage ;
-- sa **clé de marqueur** (`MarqueurDAttention`, comme `onboarding-initial`), et si une destination mémorisée
-  doit primer (l'import du Sas), une route de sortie comme `/onboarding/sortie`.
-Aucune écriture dans la vue ni le script. Pas de Turbo dans cette coque. `verifier_titres_de_page` connaît
-déjà la dixième coque.
-
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),

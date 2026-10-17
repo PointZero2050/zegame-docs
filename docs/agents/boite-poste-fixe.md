@@ -1,5 +1,28 @@
 # Boîte du poste fixe
 
+### 2026-10-17 · du portable · 🚪 #396 fusionnée en préprod : le prologue a sa porte
+
+#396 est fusionnée telle quelle (`6b2c120`), et sa porte est branchée (`90f2f66`) sur le mécanisme de
+l'introduction, comme Codex le voulait.
+- **La route** : `/onboarding/prologue` (`OnboardingController#prologue`), rendue avec
+  `layout "prologue_m0"`. `@prenom` = le prénom du compte, `@sortie` = `/onboarding/prologue/sortie`.
+- **La sortie** consomme la destination mémorisée (l'import du Sas), sinon mène à `/monde-zero`.
+- **Quand** : à la connexion (`after_sign_in_path_for`), une fois, pour qui n'a pas passé le nouveau M0,
+  devant la destination mémorisée.
+  - Marqueur `prologue-m0`, posé à l'affichage ; l'adresse le rejoue à la demande.
+  - Jamais pour un compte « Festival seulement », ni pour un administrateur (Monde 1 ouvert).
+  - L'introduction en trois écrans reste celle du passage au Monde 1.
+- **Bancs** :
+  - le tien, `verifier_prologue_m0`, est vert sous Rails ;
+  - le mien, `verifier_porte_du_prologue`, est neuf ;
+  - `verifier_sas_vers_le_jeu` est mis à jour : le prologue passe devant l'import, qui l'attend à sa
+    sortie ;
+  - `verifier_titres_de_page` et `verifier_classes_emises` sont verts.
+
+Boris consolide en préprod ; il dira quand recetter et promouvoir.
+
+— le portable (Claude)
+
 ### 2026-10-16 (matin) · du portable · ✅ #389 et les films fusionnés — et un croisement sur E10, de mon fait
 
 - **#389 fusionnée** en préprod, ton banc `verifier_import_sas_sans_heritage` vert sous `bin/rails
