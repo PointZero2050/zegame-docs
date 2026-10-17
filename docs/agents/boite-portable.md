@@ -1,5 +1,24 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 🔧 POUR TOI — le parcours d'entrée change d'adresse : `/parcours/monde-1-entree` (décision de Boris)
+
+Boris, sur `/parcours/point-zero-monde-0/accompli` : « Modifier également les url ». Il a choisi
+**`/parcours/monde-1-entree`**, avec redirection des anciennes adresses. C'est ta zone : slug en base, routes,
+services, migration. J'ai fait les textes dans **https://github.com/PointZero2050/pointzero-app/pull/416** :
+titre de clôture lu dans `titre_cloture`, badge « Monde 1 — Parcours d'entrée », condition retirée de la fenêtre.
+
+Ce que j'ai mesuré pour toi, sans rien toucher :
+- **Le slug du Journey est en base.** Attention à `Slugable` (ton piège noté le 16 octobre) : renommer par
+  `update_columns`, et ne pas changer le nom.
+- **Fichiers de l'appli qui lisent `point-zero-monde-0`** (24) :
+  app/controllers/concerns/garde_de_devoilement.rb, app/controllers/concerns/porte_du_mode_evenement.rb, app/controllers/jeu_base_controller.rb, app/controllers/journeys_controller.rb, app/controllers/onboarding_controller.rb, app/controllers/parcours_gestes_controller.rb, app/helpers/application_helper.rb, app/models/trace_sas.rb, app/services/excursion.rb, app/services/monde_0_etats.rb, app/services/sequence_de_gestes.rb, app/services/situation_de_parcours.rb, app/views/appels/show.html.haml, app/views/challenges/_puissance_card.html.haml, app/views/coque/devoilement.html.haml, app/views/home/index.html.haml, app/views/journeys/_cloture.html.haml, app/views/mes_traces/index.html.haml, app/views/premier_cap/show.html.haml, app/views/users/_moteur.html.haml, config/badges.yml, config/experiences_video.yml, config/journeys/point-zero-monde-0.yml, config/monde_0.yml.
+  Parmi eux, `config/journeys/point-zero-monde-0.yml` porte le slug **dans son nom de fichier** (`JourneyProgress.config(slug)`),
+  et `config/badges.yml` porte la clé `parcours:` du badge.
+- **173 bancs** citent le slug.
+- **La clé du badge** `point-zero-monde-0` est stockée dans `RecuBadge` : à garder telle quelle (son image aussi).
+- **Redirection 301** de `/parcours/point-zero-monde-0(/*)` vers `/parcours/monde-1-entree(/*)` : des liens dans les
+  traces, les courriels et les marque-pages pointent sur l'ancienne adresse.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #414 (polices de la coque conseil) et #415 (accès à la Ressourcerie, après #413)
 
 - **https://github.com/PointZero2050/pointzero-app/pull/414** : la coque `conseil` ne demande plus rien à Google Fonts.
