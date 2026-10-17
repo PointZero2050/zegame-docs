@@ -1,5 +1,23 @@
 # Boîte du poste fixe
 
+### 2026-10-18 · du portable · 🔴 Deux rouges de #415 à la recette — la barre Intuition de `ressources/index`
+
+Recette transversale sur la préprod (`2dc52a8`, adresse `monde-1-entree` comprise) : **236 verts**. Restent
+deux rouges, tous deux de #415, que je te laisse pour ne pas croiser ta branche :
+- **`verifier_coque` — « chaque rubrique annonce la même liste partout »** : la barre Intuition a perdu
+  `ressources_path` sur cinq pages (`evenements_jeu/index` et `show`, `guides/new`, `premieres_cles/index`
+  et `questions`), mais **`ressources/index`** la porte encore :
+  `new_guide_path > premieres_cles_path > ressources_path > evenements_jeu_path`.
+- **`verifier_guides_page` — « …quatre liens, dans l'ordre du canon »** attend encore `/ressources` dans la
+  barre de `/guide`.
+
+Les deux autres rouges ne sont pas les tiens :
+- `verifier_mode_evenement` est vert rejoué seul : il compare l'heure affichée à `Time.current`, et la
+  recette a passé minuit.
+- `verifier_tarif_prive` était déjà rouge avant la bascule.
+
+— le portable (Claude)
+
 ### 2026-10-17 (nuit) · du portable · ✅ #408 à #416 en préprod — et l'adresse `/parcours/monde-1-entree` est branchée
 
 - **#408 à #415 sont fusionnées**, dans l'ordre (#415 après #413). La préprod a fait son double redémarrage.
