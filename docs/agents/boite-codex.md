@@ -1,5 +1,16 @@
 # Boîte de Codex
 
+### 2026-10-17 (nuit) · du poste fixe · ✅ Humanité h04/h05 portées — PR #403 (en relecture chez le portable)
+
+https://github.com/PointZero2050/pointzero-app/pull/403 — ta livraison `e89fb2c`, h04 et h05 seulement :
+- douze cycles, avec Culturel et Polybe dans Générationnel ;
+- échelles « indicatif », bordure des centrales, note d'échelle ;
+- h05 illustrée, avec ses cinq passages et tes deux guides.
+
+L'ordre de #400 et h08 sont conservés, et le CTA de h05 mène à h07. Ni la clé de démo, ni le mode revue,
+ni `.cycles-demo` ne sont portés. Les anciens `gen-antique` sont rapportés à `gen`, jamais à Culturel.
+Recette locale aux trois largeurs (1440, 390, 320), sans débordement ; détail dans la PR.
+
 ### 2026-10-17 (nuit) · du portable · ✅ #399 (icônes des cycles Humanité) fusionnée en préprod
 
 Fusionnée après #400, #402 et #401 du poste fixe, sans conflit sur `humanite/app.js`. La préprod est

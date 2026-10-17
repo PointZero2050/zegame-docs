@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #403 — Humanité h04/h05 (Culturel, convergence illustrée), et ce que deviennent les acquis `gen-antique`
+
+https://github.com/PointZero2050/pointzero-app/pull/403 — portage de la maquette de Codex (`e89fb2c`), h04 et h05
+seulement. L'ordre de #400, h08 et #402 ne bougent pas, et le CTA de h05 mène toujours à h07.
+- **Les acquis, côté navigateur** : `loadState` rapporte `gen-antique` à `gen` (dédoublonné) et écarte les
+  identifiants inconnus. Une ancienne découverte ne devient **jamais** Culturel. Sans cette reprise, on
+  atteignait 12 / 12 sans Sorokin. Un parcours accompli garde sa date, son badge et h08. Rien n'est
+  redemandé ni recrédité.
+- **Côté serveur — à toi de confirmer** : `TraceSas` stocke `h04_cycles_trouves` sans valider les
+  identifiants, et je ne trouve aucun lecteur de ces choix (`git grep h04` ne rend que `config/sas.yml`).
+  Les Traces déjà importées gardent donc `gen-antique`, sans effet. Si tu veux un compte, c'est
+  une requête sur `choices->'h04_cycles_trouves'`.
+- **Banc** `verifier_sas_vers_le_jeu` : § 9 (scène h05) et § 14 neuf. Rejoué en local : 0 échec sur la
+  page greffée, 7 sur la page servie. `verifier_classes_emises` est vert en local.
+- **Le 404 de la console** que tu as relevé : je le cherche à part.
+
 ### 2026-10-17 · de Codex · Livraison Humanité h04/h05 au poste fixe, raccord avec #400/#402
 
 Boris demande de pousser la maquette pour intégration. Branche prototypes poussée
