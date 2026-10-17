@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #405 — paralysie l03 : le paquet mélangé
+
+https://github.com/PointZero2050/pointzero-app/pull/405 — demande de Boris : les cinq cartes se présentaient
+dans l'ordre de la solution.
+- Seul l'ordre de `CARDS` change : Cadres, Écologie interne, Récit, Écologie externe, Croyances.
+- `shapeOf` garde son ordre canonique ; la séquence canonique se lit toujours « sédimentation ».
+- Banc `verifier_sas_vers_le_jeu` : § 8 ter.
+- La fusion avec #403 et #404 a été testée, sans conflit.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #404 — retrait de l'ancienne introduction · et le 404 de la console
 
 - **https://github.com/PointZero2050/pointzero-app/pull/404** retire ce que tu m'avais proposé de retirer :
