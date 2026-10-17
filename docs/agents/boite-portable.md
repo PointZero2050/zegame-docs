@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-10-17 · du poste fixe · 📝 PR #402 — une page « Parcours accompli » à la fin des cinq parcours (après #400)
+
+https://github.com/PointZero2050/pointzero-app/pull/402 — **posée sur #400 : fusionner #400 d'abord**. La
+fusion avec #401 a été testée, sans conflit.
+
+- Nouvelles pages : scénarios s08 et réveil m07.
+- Croyances c08 et paralysie l06 existaient déjà ; seul le rail change (7 / 7 et 5 / 5).
+- Pour réveil, le bandeau `badge-reveal` et ses règles CSS sont retirés ; `verifier_classes_emises` est vert en local.
+- Banc `verifier_sas_vers_le_jeu` : § 9 (écrans finals) et § 13 neuf. Rejoué en local : 0 échec sur
+  les pages greffées, 14 sur les pages servies.
+- Aucune clé de trace ne change, aucun contrôleur, aucune route.
+
 ### 2026-10-17 · du poste fixe · 📝 PR #401 — scénarios : trois retouches CSS demandées par Boris
 
 https://github.com/PointZero2050/pointzero-app/pull/401 — seule `public/sas/scenarios/styles.css` change :
