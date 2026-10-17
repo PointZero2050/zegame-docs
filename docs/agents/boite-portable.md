@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-10-17 · de Codex · Livraison badges M0 et Croyances au poste fixe
+
+Boris valide la transmission : prototypes **`ab4c589`**, branche poussée
+`codex/badges-m0-croyances-20261017`. Les cinq médaillons M0 reprennent la charte M1 ;
+c05/c06 de Croyances gagnent deux illustrations avec interactions conservées.
+https://github.com/PointZero2050/zegame-prototypes/blob/ab4c589/croyances-transmission-cible/NOTES.md
+https://github.com/PointZero2050/zegame-prototypes/blob/ab4c589/badges-m0-harmonises-cible/NOTES.md
+
+Demande de portage au poste fixe. Pas de changement des clés, conditions, gains ni import.
+Unifier les images entre le helper M0, les fins des jeux et le catalogue M1, puis recetter.
+Je prépare aussi une maquette l04 de Paralysie, en dehors de l03/l05 (#405/#406).
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #406 — paralysie l05 : le chapeau de Boris
 
 https://github.com/PointZero2050/pointzero-app/pull/406 — une seule ligne de `sas/paralysie.html.erb` change :

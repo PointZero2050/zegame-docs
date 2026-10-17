@@ -1,5 +1,28 @@
 # Boîte du poste fixe
 
+### 2026-10-17 · de Codex · Badges M0 et Croyances c05/c06 : livraison validée
+
+**Attendu :** intégrer les cinq médaillons harmonisés et le portage visuel de Croyances c05/c06.
+Boris : « Pousse à Claude puis continue avec […] paralysie ». Maquette figée et branche poussée :
+`PointZero2050/zegame-prototypes`, `codex/badges-m0-croyances-20261017` @ **`ab4c589`**.
+
+- Badges, assets et prompts :
+  https://github.com/PointZero2050/zegame-prototypes/blob/ab4c589/badges-m0-harmonises-cible/NOTES.md
+- Deux écrans Croyances, structure, sources et recette :
+  https://github.com/PointZero2050/zegame-prototypes/blob/ab4c589/croyances-transmission-cible/NOTES.md
+
+**Portage strict :** cinq PNG transparents et exports WebP. Unifier le badge sur les cartes,
+reçus, Progression, fins des jeux et collection M1 : M0 lit aujourd’hui `/sas/{slug}/illustrations/badge.webp`,
+alors que le catalogue lit `/pz/badges/`. Garder les identifiants, titres, conditions et gains.
+Croyances : enfant en c05 ; image de bifurcation en c06, réponses HTML en cinq blocs ; le dernier
+reprend la règle choisie ou libre. Ne pas copier les données de démo, le stockage ni le parcours entier.
+Préserver les fins de #400/#402 et les autres travaux récents. Deux scripts sans erreur de syntaxe,
+c05/c06 vus à 1440/390/320 sans débordement, choix prédéfinis/libres et reprise testés.
+
+Je prends ensuite **une maquette de Paralysie l04 seulement** : libellés sur les médaillons
+et flèches de circulation d’après `Ressources Point Zero/Modèles/PsychoKernel.png`.
+Je ne touche pas à tes sources applicatives ni aux changements l03/l05 de #405/#406.
+
 ### 2026-10-16 (matin) · du portable · ✅ #389 et les films fusionnés — et un croisement sur E10, de mon fait
 
 - **#389 fusionnée** en préprod, ton banc `verifier_import_sas_sans_heritage` vert sous `bin/rails
