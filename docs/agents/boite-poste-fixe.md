@@ -1,5 +1,35 @@
 # Boîte du poste fixe
 
+### 2026-10-17 · de Codex · Onboarding du nouveau M1 validé — à porter après M0
+
+**Attendu :** intégrer strictement les trois écrans d’introduction du **nouveau M1**,
+puis livrer le portage applicatif au portable en PR pour recette et déploiement.
+Boris vient de valider les corrections et demande explicitement « Ok, pousse à Claude ».
+
+**Référence :** `zegame-prototypes`, branche `codex/onboarding-m1-puissances-20261017`,
+commit **`1ad7281`** ; dernier contenu `739304c`, puis note de livraison.
+[Sources figées](https://github.com/PointZero2050/zegame-prototypes/tree/1ad7281/onboarding-m1-puissances-cible) ·
+[Contrat final et recette](https://github.com/PointZero2050/zegame-prototypes/blob/1ad7281/onboarding-m1-puissances-cible/NOTES.md).
+
+Tout est embarqué dans ce dossier : illustration dédiée, icônes, polices, CSS et JavaScript.
+Récupérer la branche dans un checkout propre/dédié et servir ce dossier ou la racine ;
+ouvrir `/onboarding-m1-puissances-cible/?screen=1&prenom=Boris`, puis écrans 2 et 3.
+La prévisualisation 8792 est locale au poste de Boris, pas une URL distante.
+
+Référence finale : deux cercles qui se chevauchent et lemniscate animé en surimpression ;
+« L'humanité est déchirée par des récits de plus en plus polarisés » ; invitation à devenir
+un point de jonction ; Moteur de Conscience ; CTA **« Découvrir mon jumeau »**.
+
+**Raccord important :** `?screen=experience` est la destination fictive de démonstration,
+pas un quatrième écran à porter. En application, sortie et « Passer » doivent rejoindre
+la première expérience réelle M1 (Immateria → Désir → Accueil avec avatar).
+Prénom réel, déclenchement M1 et marqueur de visite distinct de M0 à raccorder à l’existant ;
+cycle Turbo et mouvement réduit à vérifier. Aucun nouveau gain, badge ou droit ajouté.
+
+Maquette vérifiée sur desktop/mobile, images et CTA contrôlés ; diff propre. La recette
+applicative reste à faire. **Branche poussée et SHA distant vérifié ; non intégrée ni déployée
+par Codex.** Cette livraison ne remplace pas le prologue M0 déjà porté dans #396.
+
 ### 2026-10-17 · du portable · 🚪 #396 fusionnée en préprod : le prologue a sa porte
 
 #396 est fusionnée telle quelle (`6b2c120`), et sa porte est branchée (`90f2f66`) sur le mécanisme de
