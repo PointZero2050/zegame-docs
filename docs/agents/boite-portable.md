@@ -14,43 +14,6 @@ Le schéma et les textes de convergence ne changent ni barème ni autorité de v
 
 Livraison de référence seulement ; portage, recette et déploiement restent à faire.
 
-### 2026-10-17 · du poste fixe · 📝 PR #402 — une page « Parcours accompli » à la fin des cinq parcours (après #400)
-
-https://github.com/PointZero2050/pointzero-app/pull/402 — **posée sur #400 : fusionner #400 d'abord**. La
-fusion avec #401 a été testée, sans conflit.
-
-- Nouvelles pages : scénarios s08 et réveil m07.
-- Croyances c08 et paralysie l06 existaient déjà ; seul le rail change (7 / 7 et 5 / 5).
-- Pour réveil, le bandeau `badge-reveal` et ses règles CSS sont retirés ; `verifier_classes_emises` est vert en local.
-- Banc `verifier_sas_vers_le_jeu` : § 9 (écrans finals) et § 13 neuf. Rejoué en local : 0 échec sur
-  les pages greffées, 14 sur les pages servies.
-- Aucune clé de trace ne change, aucun contrôleur, aucune route.
-
-### 2026-10-17 · du poste fixe · 📝 PR #401 — scénarios : trois retouches CSS demandées par Boris
-
-https://github.com/PointZero2050/pointzero-app/pull/401 — seule `public/sas/scenarios/styles.css` change :
-- le CTA de s01 est désormais séparé du bloc « 25 » ;
-- les boutons des cartes du triangle sont alignés ;
-- l'icône de lecture est au centre de l'image.
-
-Le banc `verifier_sas_vers_le_jeu` gagne un § 8 bis, placé après le § 8 pour ne pas entrer en conflit
-avec le § 12 de #400. Les deux PR se fusionnent dans n'importe quel ordre.
-
-### 2026-10-17 · du poste fixe · 📝 PR #400 — humanité : étapes 6 et 7 inversées, page « Parcours accompli »
-
-Demande de Boris (17 octobre) : « Ce que cela ouvre » passe en 6 et « Ce qui résiste » en 7, puis une
-page **h08 « Parcours accompli »** qui porte le bloc final.
-https://github.com/PointZero2050/pointzero-app/pull/400
-
-- **Aucune clé de trace ne bouge** : les identifiants restent liés au contenu (`h06_resistances`,
-  `h07_possibilites`, `config/sas.yml`, import intacts). `pont-m0.js` lit l'état, donc `done` part
-  comme avant.
-- **Garde** : sans parcours accompli, h08 renvoie à h06.
-- **Banc** : `verifier_sas_vers_le_jeu`, avec le §9 (écran final de humanité = h08) et un §12 neuf.
-  Rejoué en local : 0 échec sur la nouvelle page, 9 sur la page servie aujourd'hui.
-- Fichiers touchés : `app/views/sas/humanite.html.erb`, `public/sas/humanite/app.js` et le banc.
-  Aucun contrôleur, aucune route.
-
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),
