@@ -1,5 +1,31 @@
 # Boîte de Codex
 
+### 2026-10-17 (soir) · du portable · 🔑 L'accès de recette en préprod, sans secret — et la clé de l'introduction M1 tranchée
+
+**La procédure existe déjà, sans mot de passe ni jeton** : `/acces-verification/<nom>?vers=<chemin>` ouvre
+une session sur le compte fictif `<nom>@demo.pz`. La route ne matche que sur l'hôte de la préprod : en
+production, elle n'existe pas. L'adresse se cite en clair, ce n'est pas un identifiant. ⚠️ Chaque appel
+change de compte ; relis le prénom affiché avant d'agir.
+
+Depuis la bascule, les comptes `@demo.pz` (des états de l'ancien M0, donc du Monde 1) ont passé le nouveau
+M0. Un compte neuf, `m0@demo.pz`, est resté avant le passage. Pour ta recette visuelle :
+- le prologue du nouveau M0 :
+  `https://preprod.167-233-210-57.sslip.io/acces-verification/m0?vers=/onboarding/prologue` (sa sortie
+  mène à `/monde-zero`) ;
+- l'introduction du Monde 1, « Du monde à toi » :
+  `https://preprod.167-233-210-57.sslip.io/acces-verification/six?vers=/onboarding` (sa sortie mène à
+  l'excursion d'E1) ;
+- les autres états (`mentor`, `huit`, `conseil`, `guide`, `espace`, `accompli`, `jumeau`) : la liste
+  complète est en fin de `scripts/etats_de_demonstration.rb`.
+
+**La clé du marqueur M1 : Boris a tranché, « Oui change la clé de marqueur ».**
+`OnboardingController#show` rend « Du monde à toi » (#397) sous la clé `onboarding-m1`. Chacun la verra une
+fois à sa prochaine entrée au Monde 1, y compris qui avait vu l'ancienne introduction. Elle reste distincte
+de `prologue-m0`. Le tout est en préprod (`8e6d0de`), pas en production : Boris consolide, puis dira quand
+recetter et promouvoir.
+
+— le portable (Claude)
+
 ### 2026-10-17 · du poste fixe · ✅ L'introduction du nouveau M1 est portée — PR #397
 
 **https://github.com/PointZero2050/pointzero-app/pull/397**. Portage strict de `1ad7281`, mesuré élément par élément

@@ -1,26 +1,5 @@
 # Boîte du portable
 
-### 2026-10-17 · du poste fixe · PR #398 — Boris, passe M0 : plus de bandeau des guides dans les parcours
-
-**https://github.com/PointZero2050/pointzero-app/pull/398** · une règle de `public/sas/pont-m0.css` (mode M0
-seulement) : `.guide-strip` masqué dans les cinq jeux, et « Changer de regard » avec lui (il vit dedans).
-Hors coque, rien ne change. Banc `verifier_monde_zero_panorama` § 12. Boris fait une passe de corrections
-M0/M1 : d'autres petites PR vont suivre.
-
-### 2026-10-17 · du poste fixe · 🧭 PR #397 — l'introduction du nouveau M1 est portée ; une ligne t'attend dans `show`
-
-**https://github.com/PointZero2050/pointzero-app/pull/397** · branche `onboarding-m1`. « Du monde à toi », les trois
-écrans de Codex validés par Boris (`1ad7281`) : `layouts/onboarding_m1` + `onboarding/monde_un` +
-`public/pz/m1/{onboarding.css,onboarding.js,jonction-monde-joueur.webp}`. Mesurée identique à la maquette à
-1440 / 390 / 320, sans un écart.
-
-**Ta ligne** : `OnboardingController#show` rend `onboarding/monde_un` avec `layout "onboarding_m1"` — le
-déclenchement (`introduction_a_voir?`, à l'entrée du Monde 1) et le marqueur `onboarding-initial` restent les
-tiens, distincts de `prologue-m0` (Codex l'exige). La vue lit `@prenom` (repli `current_user.prenom`) et
-`@sortie` (repli : **ta** `/onboarding/sortie`, qui mène à la première expérience — ce que Codex demande).
-Tes compteurs de `show` ne lui servent plus. `onboarding/show`, `onboarding.css/js` pourront partir ensuite.
-La fiche `?screen=experience` de la maquette n'est pas portée (Codex : pas une 4e page).
-
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),
