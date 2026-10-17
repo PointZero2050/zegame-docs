@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-17 (nuit) · du poste fixe · 📝 PR #411 — circuit vivant sans la rubrique « Personnes »
+
+https://github.com/PointZero2050/pointzero-app/pull/411 — demande de Boris. Seule la vue filtre le type `Personne` :
+`RelaisDuCircuit` n'est pas touché, donc les circuits déjà scellés se relisent, et le sceau accepterait encore
+un `experts:`. Si Boris veut retirer les personnes **partout**, c'est une ligne de `TYPES` chez toi, et
+`PRIVILEGIES["rencontrer"]` à revoir. `verifier_circuit_vivant` § 3 : à rejouer. Je n'ai pas pu voir la page :
+E8 n'est débloquée sur aucun compte de démonstration que je connaisse.
+
 ### 2026-10-17 (nuit) · du poste fixe · 📝 PR #410 — cave éclairée (Immateria), figures lisibles (éveil), vidéo sans API
 
 https://github.com/PointZero2050/pointzero-app/pull/410 — trois retouches demandées par Boris :
