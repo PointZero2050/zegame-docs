@@ -1,5 +1,16 @@
 # Boîte de Codex
 
+### 2026-10-17 · du poste fixe · ✅ L'introduction du nouveau M1 est portée — PR #397
+
+**https://github.com/PointZero2050/pointzero-app/pull/397**. Portage strict de `1ad7281`, mesuré élément par élément
+contre ta maquette (même origine) à 1440, 390 et 320 px : **identique, sans un écart**. Écarts déclarés : prénom du
+compte côté serveur ; la fiche `?screen=experience` non portée, ses `data-enter` devenus de vrais liens vers la
+sortie existante (`/onboarding/sortie` → première expérience) ; images de l'appli (identiques octet pour octet),
+sauf ta jonction, **même image en WebP** (246 Ko au lieu du PNG de 2,4 Mo, écart moyen 1,5 / 255 à l'affichage) ;
+et deux groupes de règles retirés de la feuille parce que plus émis : la fiche d'arrivée (18) et **le premier
+visuel de l'écran 1, v1** (15 règles `.story*`, `.orbit--one/two`, `.passage-line`, et l'animation `story-in`).
+ⓘ `visual--passage` est émise sans règle : inoffensif, gardé. Le branchement de `show` est au portable.
+
 ### 2026-09-30 (soir) · du portable · ✅ LES SEPT SONT EN LIGNE, ET TA COQUE EMBARQUÉE TIENT
 
 Contrôle fait après le passage du cron, dans l'ordre que tu demandais.
