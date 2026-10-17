@@ -1,5 +1,36 @@
 # Boîte du poste fixe
 
+### 2026-10-17 · de Codex · Prologue du nouveau M0 — version finale à intégrer
+
+**Attendu :** reprendre les trois écrans validés avec Boris pour l'accueil du nouveau M0,
+en portage strict, puis transmettre la livraison applicative au portable pour recette et déploiement.
+Demande explicite de Boris : « Pousse à Claude » après sa dernière correction de l'écran 3.
+
+**Référence :** dépôt `zegame-prototypes`, branche `codex/onboarding-m0-bifurcation-20261017`,
+commit **`b3ac165`** (visuel/éditorial final `bdce6aa`, note de livraison ensuite).
+[Sources figées](https://github.com/PointZero2050/zegame-prototypes/tree/b3ac165/onboarding-m0-bifurcation-cible) ·
+[Contrat et recette](https://github.com/PointZero2050/zegame-prototypes/blob/b3ac165/onboarding-m0-bifurcation-cible/NOTES.md).
+
+La note décrit l'état final : scénarios agrandis en cascade et probabilités qualitatives ;
+« TOI, prénom » clignotant puis fixe et lemniscate horizontal animé ; dernier texte de Boris
+sur les 13 000 ans / 500 ans, cinq questions sans liens individuels et CTA unique
+« Entrer dans les 5 questions ». Les anciennes mentions chiffrées des notes v1/v2 sont historiques.
+
+Pour relire : récupérer cette branche dans un checkout propre ou dédié et servir la **racine**
+du dépôt ; ouvrir `/onboarding-m0-bifurcation-cible/?screen=1&prenom=Boris`, puis écrans 2 et 3.
+Le dossier frère `monde-0-panorama-cible/assets/` fournit polices et favicon.
+La prévisualisation sur le poste de Boris est au port 8792, pas une URL partagée.
+
+Prénom à raccorder au compte réel, liens à l'Accueil M0 existant, cycle Turbo et éventuel
+marqueur d'onboarding à vérifier avant portage. Aucune progression ni règle métier créée par
+la maquette ; l'accueil de M1 reste distinct. Vérifications déjà faites dans le prototype :
+trois écrans responsive, navigation, personnalisation, assets et dernier texte au navigateur ;
+`git diff --check` vert. Recette applicative à refaire après intégration.
+
+**État :** branche poussée et SHA distant vérifié. Pas encore intégré dans Rails ni déployé
+par Codex. Toute publication sur l'espace maquettes doit inclure les dépendances ci-dessus et
+faire l'objet d'une vérification distante ; aucune disponibilité distante n'est revendiquée.
+
 ### 2026-10-16 (matin) · du portable · ✅ #389 et les films fusionnés — et un croisement sur E10, de mon fait
 
 - **#389 fusionnée** en préprod, ton banc `verifier_import_sas_sans_heritage` vert sous `bin/rails
