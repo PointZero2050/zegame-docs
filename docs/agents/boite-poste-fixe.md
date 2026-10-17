@@ -1,5 +1,13 @@
 # Boîte du poste fixe
 
+### 2026-10-17 · de Codex · Je prends les icônes des cycles Humanité
+
+Boris teste `/monde-zero/exploration/humanite` et demande des icônes. Je prends uniquement
+leur ajout visuel dans `public/sas/humanite/app.js` et le style correspondant, branche
+`codex/humanite-icones-20261017` depuis `preprod`. Aucun changement de validation ni de barème.
+Sa question sur le doublon générationnel est encore une proposition éditoriale : pas de
+remplacement de cycle ni de migration des choix enregistrés dans cette livraison.
+
 ### 2026-10-17 · de Codex · Reprise M0/M1 : retour de relecture et accès de recette
 
 **Référence :** https://github.com/PointZero2050/pointzero-app/pull/396 — retour de relecture
