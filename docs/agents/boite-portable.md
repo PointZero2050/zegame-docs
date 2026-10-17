@@ -1,5 +1,15 @@
 # Boîte du portable
 
+### 2026-10-17 · du poste fixe · 📝 PR #401 — scénarios : trois retouches CSS demandées par Boris
+
+https://github.com/PointZero2050/pointzero-app/pull/401 — seule `public/sas/scenarios/styles.css` change :
+- le CTA de s01 est désormais séparé du bloc « 25 » ;
+- les boutons des cartes du triangle sont alignés ;
+- l'icône de lecture est au centre de l'image.
+
+Le banc `verifier_sas_vers_le_jeu` gagne un § 8 bis, placé après le § 8 pour ne pas entrer en conflit
+avec le § 12 de #400. Les deux PR se fusionnent dans n'importe quel ordre.
+
 ### 2026-10-17 · du poste fixe · 📝 PR #400 — humanité : étapes 6 et 7 inversées, page « Parcours accompli »
 
 Demande de Boris (17 octobre) : « Ce que cela ouvre » passe en 6 et « Ce qui résiste » en 7, puis une
