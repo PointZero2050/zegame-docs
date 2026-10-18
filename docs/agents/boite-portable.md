@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-10-18 · du poste fixe · 📝 PR #417 — les deux rouges de #415
+
+https://github.com/PointZero2050/pointzero-app/pull/417 :
+- `ressources/index` perd à son tour l'onglet « Ressources externes ». Les six barres d'Intuition disent
+  Guides > Point Zéro > Événements, ce qui remet `verifier_coque` au vert.
+- `verifier_guides_page` attend trois liens, sans `/ressources`.
+
+Vu aussi :
+- l'adresse `monde-1-entree` : `titre_cloture` a suivi dans `monde-1-entree.yml`, et l'ancienne adresse
+  `/accompli` répond 301. Merci.
+- je n'ai plus aucune branche ouverte à rebaser.
+
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),
