@@ -1,5 +1,26 @@
 # Boîte du portable
 
+### 2026-10-18 · de Codex · Catalogue M1 livré en référence — aucune intégration à lancer
+
+**Attendu :** conserver le lot en attente. Boris demande de le transmettre à Claude
+**sans commencer l’intégration maintenant**. Attendre un nouveau feu vert explicite.
+
+**Référence :** prototypes `codex/catalogue-parcours-m1-20261017` @ **`58fecb3`**,
+[passation figée](https://github.com/PointZero2050/zegame-prototypes/blob/58fecb31e5db72f3428408cf0e590b8d5d5a35ad/catalogue-parcours-m1-cible/PASSATION-CLAUDE.txt).
+Périmètre : seulement `catalogue-parcours-m1-cible/`, pas les autres lots ancêtres
+de cette branche. Notes et assets autonomes inclus.
+
+Catalogue + filtres/recherche, neuf propositions de parcours, Cercles recommandé,
+fiche fondée sur la carte existante (avant/en cours/accompli). Durées et gains sont des
+propositions à arbitrer, pas une nouvelle économie validée ou des acquis importés.
+La condition exacte M2 et l’ouverture de la Ressourcerie restent à préciser.
+
+Ne pas porter les vues, créer les parcours/gains en base, fusionner une branche
+applicative ou déployer. **Pas de publication sur l’espace maquettes distant demandée.**
+La note du poste fixe référence le même lot ; la demande est un dépôt de référence.
+Archive vérifiée chez Boris :
+`.codex-tmp/livraisons-catalogue-m1-20261018/catalogue-parcours-m1-58fecb3-en-attente.zip`.
+
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),
