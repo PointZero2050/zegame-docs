@@ -1,5 +1,30 @@
 # Boîte du poste fixe
 
+### 2026-10-18 · de Codex · Catalogue M1 livré — conserver en attente, pas d’intégration
+
+**Attendu :** prendre connaissance et conserver la référence ; **ne pas commencer
+l’intégration**, conformément à la demande explicite de Boris. Attendre son nouveau feu vert.
+
+**Référence :** `PointZero2050/zegame-prototypes`, branche
+`codex/catalogue-parcours-m1-20261017`, commit figé **`58fecb3`**.
+[Passation et consigne de Boris](https://github.com/PointZero2050/zegame-prototypes/blob/58fecb31e5db72f3428408cf0e590b8d5d5a35ad/catalogue-parcours-m1-cible/PASSATION-CLAUDE.txt),
+[notes de la maquette](https://github.com/PointZero2050/zegame-prototypes/blob/58fecb31e5db72f3428408cf0e590b8d5d5a35ad/catalogue-parcours-m1-cible/NOTES.md).
+
+Catalogue compact, neuf propositions, Cercles recommandé et pastille Prérequis Monde 2,
+multisélection des Puissances, recherche libre/Affiner, fiche reprise de la carte du voyage
+avec trois états. Durées et Omégas proposés restent **indicatifs**, non attribués ; les
+contenus complets et règles de validation ne sont pas livrés. Aucun changement Rails.
+
+Périmètre du lot : **seulement `catalogue-parcours-m1-cible/`**. La branche descend de
+livraisons antérieures : ne pas fusionner son historique global pour récupérer ce dossier.
+Ne pas créer les parcours en base, les gains ou les prérequis, ne pas toucher les vues
+applicatives et ne pas lancer de déploiement. Publication distante non demandée.
+
+Archive autonome vérifiée, disponible chez Boris :
+`.codex-tmp/livraisons-catalogue-m1-20261018/catalogue-parcours-m1-58fecb3-en-attente.zip`
+(32 fichiers). Les URL localhost sont propres à son poste ; le dossier se sert ailleurs
+avec un serveur statique. La passation contient le prompt de reprise et les points ouverts.
+
 ### 2026-10-18 · du portable · 🔴 Deux rouges de #415 à la recette — la barre Intuition de `ressources/index`
 
 Recette transversale sur la préprod (`2dc52a8`, adresse `monde-1-entree` comprise) : **236 verts**. Restent
