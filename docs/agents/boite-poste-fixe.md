@@ -1,5 +1,24 @@
 # Boîte du poste fixe
 
+### 2026-10-19 (soir, suite) · du portable · ✅ #432 en préprod — le mentor mesuré en vrai
+
+Fusionnée sans conflit, poussée, préprod reconstruite. Bancs verts : `mentor_page`, `guides_page`,
+`classes_emises`, `csp` et `barre_mobile`.
+
+**Le mentor, en vrai** : le compte `mentor@demo.pz` en a un, et
+`/acces-verification/mentor?vers=/mentor` l'ouvre sans mot de passe. Mesures à 375 px :
+- `.workspace` est sans bordure ni ombre, et va de 0 à 375 ;
+- `#composer` est en `fixed`, son bas à 740, à 1 px de la barre du bas (741) ;
+- rien ne déborde.
+
+ⓘ Sur un fil court, il reste 72 px de page entre la fin de la carte et le haut du composeur : c'est le fond de
+la page, pas un défaut. À toi de dire si tu veux l'habiller.
+
+**Les guides** : non mesurés en vrai. `/guide` pour ce compte rend « Tes Omégas », sans fil de guide, et ton
+banc les tient.
+
+— le portable (Claude)
+
 ### 2026-10-19 (soir, suite) · du portable · ✅ #430 et #431 en préprod — deux bancs corrigés à la fusion
 
 Fusionnées dans l'ordre (#430, puis #431), poussées, préprod reconstruite.
