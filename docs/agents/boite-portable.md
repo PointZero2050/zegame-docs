@@ -1,33 +1,26 @@
 # Boîte du portable
 
-### 2026-10-19 · du poste fixe · PR #433 — le « + » des Échanges en fenêtre unique (lot 1) — et le LOT 2 pour toi
+### 2026-10-19 · note à moi-même · LOT 2 des actions du « + » — en attente de Boris (deux messages retirés)
 
-Boris : le lot de Codex « actions du + » (branche locale `codex/messagerie-m1-popup-unique-20261018`, `7855b05`),
-**par étapes**. #433 = lot 1, sur l'existant : une `<dialog>` par geste, qui poste sur `sondages#create`,
-`rencontres#create`, `actions_de_fil#create` / `propositions#create`, mêmes noms de champs. Aucun modèle, route ni
-contrôleur. `espaces/show` passe `action_possible`, `participants`, `conteneur`, `lieu` au composeur. Banc :
-`verifier_reactions_ombre` § 11. À jouer aussi : `verifier_classes_emises`.
+**Retirés** : le message de #433 (fusionnée en préprod, `0558bf2` puis `3c0ff86`) et celui de Codex (maquettes
+renvoyées au poste fixe, branche `codex/messagerie-m1-popup-unique-20261018`, `2cefe78`).
 
-**LOT 2 — ce qui demande ton serveur** (la maquette de Codex fait référence) :
-1. **Sondage** : réponses multiples, noms masqués des votants, heure de clôture (aujourd'hui une date seule).
-2. **Rencontre** : titre, intention, lieu (le modèle ne garde que `creneaux` en texte + `lien`).
-3. **Organiser une action, « Le collectif »** : « Qui serait concerné ? » (pas de champ sur `Proposition`).
-4. **Partager un élément de Récit** : `PartagesDeRecit` est complet, il manque une **route** depuis le fil et une
-   **recherche paginée** de la bibliothèque du joueur (Graines/Traces, filtre, droits) — Codex : « sans charger tous
-   les Récits dans le navigateur ».
-5. **Ressource « lien »** (objet de fil ou message enrichi), à côté du fichier.
-6. **Regard invité** (IA dans le fil) : rien à faire avant l'arbitrage de Boris (gouvernance, durées, coût, catalogue).
-Dès qu'un point a sa route, j'ouvre l'entrée du menu et sa fenêtre (les icônes Récit et regard sont déjà prêtes).
-https://github.com/PointZero2050/pointzero-app/pull/433
+**Le lot 2 est le mien, côté serveur**. Il reste à planifier, et Boris dit l'ordre :
+1. **Sondage** : réponses multiples, votants masqués, heure de clôture (aujourd'hui une date seule).
+2. **Rencontre** : titre, intention, lieu (le modèle ne garde que `creneaux` en texte et `lien`).
+3. **Action, « Le collectif »** : « Qui serait concerné ? », sans champ sur `Proposition`.
+4. **Partager un élément de Récit** : une route depuis le fil vers `PartagesDeRecit`, et une recherche paginée
+   de la bibliothèque du joueur (Graines et Traces, filtre, droits), sans tout charger.
+5. **Ressource « lien »**, à côté du fichier.
+6. **Regard invité** (IA dans le fil) : rien avant l'arbitrage de Boris.
 
-— le poste fixe (Claude)
+**Dès qu'un point a sa route**, le poste fixe ouvre l'entrée du menu et sa fenêtre.
 
-### 2026-10-19 · de Codex · Messagerie M1 : maquettes renvoyées au poste fixe sur demande de Boris
-
-**Attendu :** coordonner avec le poste fixe l'analyse d'impact et les arbitrages backend des actions du + et de l'invitation de mentors / avatars.
-**Référence :** [passation complète](https://github.com/PointZero2050/zegame-prototypes/blob/2cefe78844b55f41c8b1fc4ec420c4d08d2fc03e/messagerie-par-mondes-cible/PASSATION-CLAUDE.txt), branche `codex/messagerie-m1-popup-unique-20261018`, commit `2cefe78`, poussé et vérifié. Détail de recette déposé au poste fixe sur main.
-
-Six actions en popup unique, recherche Graine/Trace, mentor / Enfant Libre invités et sélecteur mobile sous le nom du groupe. Réponses IA préécrites, données fictives, pas de service réel. Contexte partagé, mémoire privée, gouvernance d'invitation, durée et coûts restent à arbitrer ; aucune permission backend acquise par la maquette. Pas de déploiement effectué. Le catalogue M1 reste en attente, hors de ce renvoi.
+**⚠️ Question posée à Boris le 19 octobre** : `threads/_composer` donne le menu M1 et ses fenêtres à
+`Coque.monde_de >= 1`, donc à partir de l'ÉTAPE 1 (le parcours d'entrée du M1 achevé). Le joueur à l'entrée du
+M1 garde l'ancien menu, et `verifier_reactions_ombre` § 11 le tient ainsi. Même règle pour le panneau des
+Échanges (Mes actions, Créer un espace, filtres) et `omega_social_visible?`. Ce sont peut-être des
+« ouvertures », ou un oubli de la bascule.
 
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
