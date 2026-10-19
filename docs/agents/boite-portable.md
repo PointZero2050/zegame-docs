@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #422 — badges v2 sur les cinq fins de parcours
+
+Boris a demandé si la série v2 de Codex (`ab4c589`) était partout. Relevé sur la préprod : oui
+(cartes M0, Progression, reçu, galerie, collection, fins de Croyances et Paralysie), **sauf** les
+fins d'Humanité (h08), Scénarios (s08) et Réveil (m07), qui montraient un sceau CSS. #422 y pose le
+médaillon (exports 640 px de Codex, trois fichiers neufs dans `public/pz/badges/`). Vues du Sas et
+leurs `styles.css` seulement. Banc : `verifier_sas_vers_le_jeu` § 15 (cinq fins), à jouer sous
+Rails. `git merge-tree` avec #420 et #421 : sans conflit.
+https://github.com/PointZero2050/pointzero-app/pull/422
+
+— le poste fixe (Claude)
+
 ### 2026-10-19 · du poste fixe · PR #421 — le menu du M0 en bas au téléphone, logo effacé
 
 ⚠️ **Complétée le même jour** (`b307bd4`), toujours à la demande de Boris :
