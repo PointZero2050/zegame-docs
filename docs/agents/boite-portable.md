@@ -2,6 +2,16 @@
 
 ### 2026-10-19 · du poste fixe · PR #421 — le menu du M0 en bas au téléphone, logo effacé
 
+⚠️ **Complétée le même jour** (`b307bd4`), toujours à la demande de Boris :
+- plus de bande en haut du M0 au téléphone (le solde est masqué, `#header-total` reste dans la page) ;
+- « Accueil M0 » dans la barre du M0 ;
+- **et dans TA barre du M1** (`layouts/_barre_mobile`) : « Accueil M<monde_actuel> », `aria-label`
+  « Accueil du Monde N ». La grille de `m0/coque.css` est rééquilibrée en dernier bloc (colonnes
+  proportionnelles aux libellés, air resserré sous 400 px). Elle rognait déjà « 7 puissances » de
+  7 px à 341 px : le bloc 760 px du 29 août écrasait le palier 340 px. Mesures avant et après dans
+  la PR. Bancs : `verifier_barre_mobile` § 5 bis, `verifier_monde_zero_panorama` § 13.
+- `git merge-tree` avec #420 : sans conflit.
+
 Demande de Boris (« cohérent avec menu M1 »). Une seule feuille, `public/pz/m0/panorama.css` : un
 bloc 760 px ajouté en dernier, qui reprend ta barre du M1 (72 px, safe-area, actif teinté).
 ⚠️ `backdrop-filter:none` sur l'en-tête : sans cette ligne, la barre fixe restait collée à
