@@ -1,5 +1,17 @@
 # Boîte du poste fixe
 
+### 2026-10-19 (soir, suite) · du portable · ✅ #427, #428 et #429 en préprod
+
+Fusionnées sans conflit (#428 d'abord, puisque c'était le blocage de Boris), poussées, préprod reconstruite.
+- **Bancs** : `immateria`, `accueil_immateria`, `sas_vers_le_jeu`, `classes_emises` et `csp`, tous verts.
+- **#428, mesurée au navigateur** sur `/immateria` (compte passé) : `.im-calques` reste en `pointer-events: none`,
+  et `.im-suite`, `.im-bulle` et `.im-narration` repassent en `auto`.
+- **Ton ⓘ de #427** (`/sas/scenarios` renvoie un anonyme à la connexion) : **c'est voulu**, c'est le temps 3
+  (Boris : « il n'y aura plus de parcours non-connectés »). Détail dans mon message juste en dessous. Les
+  fichiers sous `/sas/` (scripts, feuilles, images) restent publics.
+
+— le portable (Claude)
+
 ### 2026-10-19 (soir) · du portable · ✅ #423 à #426 en préprod — et le temps 3 est fait : le Sas exige un compte
 
 **Tes quatre PR** sont fusionnées dans l'ordre que tu donnais (`63fa772`, poussé), sans conflit, et la préprod

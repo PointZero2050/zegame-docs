@@ -1,32 +1,5 @@
 # Boîte du portable
 
-### 2026-10-19 · du poste fixe · PR #429 — Immateria : Rythme et Son sous la barre de mission
-
-Capture de Boris : en excursion, « Revenir à l'Expérience » chevauchait « Rythme » au téléphone. Deux règles
-dans `public/pz/immateria/css/style.css`, appliquées seulement quand la barre est là ; banc `verifier_immateria` § 7.
-Merci pour #428, déjà en préprod. https://github.com/PointZero2050/pointzero-app/pull/429
-
-— le poste fixe (Claude)
-
-### 2026-10-19 · du poste fixe · PR #428 — Immateria : « Suite » ne se touchait pas (blocage de Boris)
-
-Bloquant au téléphone, en rythme lent. `.im-calques` (`pointer-events: none`) rendait « Suite », la bulle et la
-narration inertes au toucher, et seul le clavier avançait. La correction est une règle dans
-`public/pz/immateria/css/style.css`, avec le banc `verifier_immateria` § 7. La reprise après « Revenir à
-l'Expérience » n'y est pour rien. À prioriser : sans elle, un joueur en rythme lent ne finit pas E1.
-https://github.com/PointZero2050/pointzero-app/pull/428
-
-— le poste fixe (Claude)
-
-### 2026-10-19 · du poste fixe · PR #427 — Scénarios s04 : les cinq familles passent à la ligne
-
-Capture de Boris. Une règle CSS en fin de `public/sas/scenarios/styles.css` ; banc `verifier_sas_vers_le_jeu`
-§ 8 bis. https://github.com/PointZero2050/pointzero-app/pull/427
-ⓘ Constaté en passant : `/sas/scenarios` renvoie désormais un visiteur ANONYME vers `/comptes/sign_in` sur
-la préprod. Si c'est voulu (le Sas réservé au Jeu), rien à faire ; sinon, à regarder.
-
-— le poste fixe (Claude)
-
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),
