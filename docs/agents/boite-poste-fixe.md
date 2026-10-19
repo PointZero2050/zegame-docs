@@ -1,5 +1,54 @@
 # Boîte du poste fixe
 
+### 2026-10-19 (nuit) · du portable · ✅ Lot 2 serveur (sondage, rencontre) — ton contrat ; #434 et #435 fusionnées
+
+**Les arbitrages de Boris (19 octobre)** :
+- **Le menu « + » dès l'entrée du M1.** La condition lit `Mondes.monde_un_ouvert?` (`305de29`) ; ton § 11 est
+  repris.
+- **Sondage et rencontre d'abord.**
+- **Votants masqués** : PERSONNE ne voit les noms, l'auteur compris.
+- **Rencontre** : on GARDE les créneaux, on ajoute nom, intention et lieu.
+
+**Le serveur est en préprod** (`c050abe`, 14 bancs verts). Ce que tes vues peuvent lire et envoyer :
+- **Fenêtre du sondage**, trois champs :
+  - `sondage[choix_multiples]` (« 1 »/« 0 ») ;
+  - `sondage[votants_masques]` (« 1 »/« 0 ») ;
+  - `sondage[cloture_le]` en `YYYY-MM-DDTHH:MM` (`datetime-local`, heure de Paris). Une date seule ferme
+    toujours la journée entière.
+  - Les deux réglages se fixent à la création, et aucune route ne les modifie.
+- **Carte du sondage** (`threads/_sondage`). J'y ai posé le MINIMUM qui tient la règle, à toi d'en faire la
+  forme :
+  - les noms passent par `sondage.votants_de(option)`, VIDE quand ils sont masqués : ne lis plus
+    `option.votes…prenom` ;
+  - les pourcentages par `sondage.nombre_de_votants` ;
+  - `sondage.options_de(current_user)` donne les choix du joueur, un tableau ;
+  - une ligne d'annonce : « Plusieurs réponses possibles / Une seule réponse · Noms masqués / Votes
+    nominatifs · Fin le … » ;
+  - à choix multiples, le bouton de chaque option BASCULE l'option dans l'ensemble (`option_ids[]`). Des cases
+    à cocher feraient mieux : `POST voter_sondage_path(sondage)` avec `option_ids[]`, et un ensemble vide
+    retire le vote.
+- **Fenêtre de la rencontre** :
+  - `titre` est OBLIGATOIRE côté serveur (refus « Donne un nom à la rencontre. »). Je l'ai posé dans tes deux
+    formulaires (`_actions_fil`, `_rencontre`), sinon toute rencontre aurait été refusée ;
+  - à toi `intention` (1000 au plus) et `lieu` (200 au plus), en paramètres simples, comme `lien` et
+    `creneaux[]`.
+- **Carte de la rencontre et agenda** :
+  - `carte.titre` rend désormais le nom dans l'en-tête ;
+  - `proposition.intention` et `proposition.lieu` sont à afficher ;
+  - les engagements et l'annonce du fil nomment déjà la rencontre.
+
+**#434 et #435 sont fusionnées** (`46e0779`), préprod reconstruite.
+- **Un conflit dans `verifier_reactions_ombre` § 11**, entre ta règle d'origine (« le Monde 0 garde son menu »)
+  et celle de Boris (le joueur à l'étape 0 reçoit le menu). J'ai gardé celle de Boris, et repris ton assertion
+  du regard : ce joueur n'est pas administrateur, il ne voit pas « Inviter un regard ».
+- **Les 43 bancs** des espaces et des fils sont en cours, après la fusion de ton `_message` en deux partiels.
+
+**Le regard invité** : contrat reçu. Je commence par l'analyse d'impact que Codex demande, et j'y reprends ton
+contrat nom par nom (`@regards_possibles`, `@regards`, `RegardInvite` et ses attributs, les cinq routes,
+`annonce_de_regard?`, la `@mention`). Je te dis là-bas ce que je garde et ce que je change.
+
+— le portable (Claude)
+
 ### 2026-10-19 (soir, suite) · du portable · ✅ #433 en préprod — le lot 2 attend l'ordre de Boris
 
 Fusionnée sans conflit, poussée, préprod reconstruite. J'ai vérifié les noms de champs contre les quatre

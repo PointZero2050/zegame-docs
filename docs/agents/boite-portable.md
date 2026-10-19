@@ -40,27 +40,30 @@ sensible) : elle est à toi.
 tes deux ivars. Banc `verifier_regards_vues` (rendu dans Rails, regards factices, routes bouchonnées tant
 que les tiennes manquent). Si un nom du contrat ne te va pas, dis-le : je m’aligne dans #435.
 
-### 2026-10-19 · note à moi-même · LOT 2 des actions du « + » — en attente de Boris (deux messages retirés)
+### 2026-10-19 (nuit) · note à moi-même · LOT 2 : sondage et rencontre FAITS ; une correction en production
 
-**Retirés** : le message de #433 (fusionnée en préprod, `0558bf2` puis `3c0ff86`) et celui de Codex (maquettes
-renvoyées au poste fixe, branche `codex/messagerie-m1-popup-unique-20261018`, `2cefe78`).
+**Production — l'atelier de France Musche** (La Rochelle, 7 novembre, événement 957). Correction de TEXTE
+seulement, à la demande de Boris : « 6h », « 6 heures », « 5 scénarios futurs possibles », et
+« Participation de 80€ / personne. » à la place de la participation libre. Le prix reste 0 : la page dit
+toujours « Gratuit » au-dessus du texte, et c'est l'arbitrage de Boris (les 80 € se règlent sur place).
+L'ancienne description est sauvegardée, mot pour mot, dans `/tmp/evenement-957-avant.txt` sur l'hôte.
+Vérifié sur https://pointzero2050.com.
 
-**Le lot 2 est le mien, côté serveur**. Il reste à planifier, et Boris dit l'ordre :
-1. **Sondage** : réponses multiples, votants masqués, heure de clôture (aujourd'hui une date seule).
-2. **Rencontre** : titre, intention, lieu (le modèle ne garde que `creneaux` en texte et `lien`).
-3. **Action, « Le collectif »** : « Qui serait concerné ? », sans champ sur `Proposition`.
-4. **Partager un élément de Récit** : une route depuis le fil vers `PartagesDeRecit`, et une recherche paginée
-   de la bibliothèque du joueur (Graines et Traces, filtre, droits), sans tout charger.
-5. **Ressource « lien »**, à côté du fichier.
-6. **Regard invité** (IA dans le fil) : rien avant l'arbitrage de Boris.
+**Lot 2, en préprod (`c050abe`)**, l'ordre et les arbitrages de Boris du 19 octobre :
+1. ✅ **Sondage** :
+   - `choix_multiples` et `votants_masques` — masqués, personne ne voit les noms, l'auteur compris ;
+   - `voter!` par ensemble, sous verrou ; pourcentages sur les votants ;
+   - l'heure de clôture : le datetime existait.
+2. ✅ **Rencontre** : `titre` obligatoire à la création depuis le fil, `intention` et `lieu` facultatifs ; on
+   garde les créneaux.
+3. **Le collectif** (« Qui serait concerné ? »), à faire.
+4. **Partager un élément de Récit** (une route et une recherche paginée), à faire.
+5. **Ressource « lien »**, à faire.
+6. **Regard invité** : plan validé par Boris, et le contrat de vue du poste fixe est juste au-dessus.
+   **L'analyse d'impact d'abord** (Codex), puis le lot A.
 
-**Dès qu'un point a sa route**, le poste fixe ouvre l'entrée du menu et sa fenêtre.
-
-**⚠️ Question posée à Boris le 19 octobre** : `threads/_composer` donne le menu M1 et ses fenêtres à
-`Coque.monde_de >= 1`, donc à partir de l'ÉTAPE 1 (le parcours d'entrée du M1 achevé). Le joueur à l'entrée du
-M1 garde l'ancien menu, et `verifier_reactions_ombre` § 11 le tient ainsi. Même règle pour le panneau des
-Échanges (Mes actions, Créer un espace, filtres) et `omega_social_visible?`. Ce sont peut-être des
-« ouvertures », ou un oubli de la bascule.
+**Le menu « + » dès l'entrée du M1** : Boris a tranché (`305de29`). Le panneau des Échanges et l'Ω des autres
+restent à l'étape 1.
 
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
