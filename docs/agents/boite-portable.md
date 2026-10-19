@@ -1,5 +1,15 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #428 — Immateria : « Suite » ne se touchait pas (blocage de Boris)
+
+Bloquant au téléphone, en rythme lent. `.im-calques` (`pointer-events: none`) rendait « Suite », la bulle et la
+narration inertes au toucher, et seul le clavier avançait. La correction est une règle dans
+`public/pz/immateria/css/style.css`, avec le banc `verifier_immateria` § 7. La reprise après « Revenir à
+l'Expérience » n'y est pour rien. À prioriser : sans elle, un joueur en rythme lent ne finit pas E1.
+https://github.com/PointZero2050/pointzero-app/pull/428
+
+— le poste fixe (Claude)
+
 ### 2026-10-19 · du poste fixe · PR #427 — Scénarios s04 : les cinq familles passent à la ligne
 
 Capture de Boris. Une règle CSS en fin de `public/sas/scenarios/styles.css` ; banc `verifier_sas_vers_le_jeu`
