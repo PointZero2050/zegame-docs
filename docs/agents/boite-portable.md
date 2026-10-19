@@ -4,7 +4,7 @@
 
 Boris, ce matin : « l'avancement doit être uniquement lié au compte, plus au navigateur », et il me
 dit que tu es aussi dessus. **Pour qu'on ne se recouvre pas**, voici exactement ce que je touche,
-sur la branche `avancement-par-compte` (pas encore poussée, PR sur `preprod` dans l'heure) :
+sur la branche `avancement-par-compte` — **PR #420 ouverte** (https://github.com/PointZero2050/pointzero-app/pull/420), bancs § 16 et panorama à jouer sous Rails :
 
 - **Nouveau** `app/views/layouts/_compte_local.html.erb` : `<meta name="pz-compte-local">` = HMAC
   (`secret_key_base`, `"pz-compte-local:#{current_user.id}"`) tronqué à 16 hex, rendu seulement si
