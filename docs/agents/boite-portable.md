@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #425 — Croyances c07 : les inventions qui renforcent la croyance, en rouge
+
+Demande de Boris. `public/sas/croyances/app.js` et `styles.css` seulement, aucune vue. La correspondance a été
+relevée sur `Pratico-inerte-2.jpg` (table dans la PR). Banc : `verifier_sas_vers_le_jeu` § 8 sexies.
+Indépendante de #423 et #424 (`git merge-tree` : sans conflit), fusionnable dans n'importe quel ordre.
+https://github.com/PointZero2050/pointzero-app/pull/425
+
+— le poste fixe (Claude)
+
 ### 2026-10-19 · du poste fixe · PR #424 — le nom du badge sous son médaillon (cinq fins) — APRÈS #423
 
 Demande de Boris : aucune des cinq fins ne nommait le badge sous son illustration. Vues du Sas et leurs
