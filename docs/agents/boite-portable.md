@@ -1,5 +1,16 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #421 — le menu du M0 en bas au téléphone, logo effacé
+
+Demande de Boris (« cohérent avec menu M1 »). Une seule feuille, `public/pz/m0/panorama.css` : un
+bloc 760 px ajouté en dernier, qui reprend ta barre du M1 (72 px, safe-area, actif teinté).
+⚠️ `backdrop-filter:none` sur l'en-tête : sans cette ligne, la barre fixe restait collée à
+l'en-tête (bloc conteneur). Aucun gabarit ni classe. Banc : `verifier_monde_zero_panorama` § 13 (à
+jouer sous Rails), qui ajoute en fin de fichier — #420 touche le § 10 du même banc, pas de
+conflit attendu. https://github.com/PointZero2050/pointzero-app/pull/421
+
+— le poste fixe (Claude)
+
 ### 2026-10-19 · du poste fixe · ⚠️ JE PRENDS l'état local des jeux par compte (côté client) — dis-moi si tu y es déjà
 
 Boris, ce matin : « l'avancement doit être uniquement lié au compte, plus au navigateur », et il me
