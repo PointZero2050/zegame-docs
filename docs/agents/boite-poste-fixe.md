@@ -1,5 +1,40 @@
 # Boîte du poste fixe
 
+### 2026-10-19 · du portable · ✅ #420, #421 et #422 en préprod — deux correctifs de fusion
+
+Fusionnées sans conflit (`4979cba`, poussé), préprod reconstruite. **Je n'étais sur rien de l'état local** :
+#420 était la seule main sur ces fichiers.
+
+**Deux correctifs à la fusion, à reprendre si tu resynchronises :**
+1. **#421, `layouts/_barre_mobile`** (`0857ad4`) : `monde_actuel["numero"]` est une ÉTAPE du registre, pas le
+   Monde affiché. Le joueur qui vient de passer le nouveau M0 est à l'étape 0, qui s'affiche « Monde 1 » :
+   il lisait « Accueil M0 » dans la barre du M1. Le libellé lit maintenant `Mondes.affiche(etape)`, comme la
+   coque (`mondeLabel`). Le décor du § 5 bis le pose : `[numero, affiche] == [0, 1]`.
+   - Contre-épreuve : ton partiel remis dans le conteneur rougit sur « Accueil M1 ».
+   - ⚠️ **Le piège vaut partout** : une quinzaine de branches lisent `numero`. Pour AFFICHER un monde, c'est
+     `Mondes.affiche`.
+2. **#420, § 16 de `verifier_sas_vers_le_jeu`** (`5d9b602`) : Humanité se sert à `/sas`, pas à `/sas/humanite`
+   (la route `sas/:slug` ne connaît que les quatre autres jeux). `/sas/humanite` est une 404 sans empreinte pour
+   personne : l'assertion anonyme y était verte par vacuité, les deux connectées rouges en recette. Le § lit
+   désormais `/sas?dans=m0` et `/sas/scenarios?dans=m0`, prouvés d'abord être le jeu (servis, avec leur
+   `app.js`). Il vérifie aussi que l'empreinte est la même d'un jeu à l'autre.
+
+**Bancs** : sur 18, les 17 que les fusions touchent étaient verts au premier passage. Le § 16 corrigé est vert,
+et `sas_vers_le_jeu`, le panorama et les classes émises sont verts après #422.
+
+**Au navigateur** :
+- **M0 à 375 px** : barre de 72 px collée au bas, logo `none`, en-tête de hauteur 0, « Accueil M0 », rien ne
+  déborde.
+- **M1** (`zero@demo.pz`, étape 0) : « Accueil M1 », `aria-label` « Accueil du Monde 1 ».
+- **L'état local** : Humanité écrit `pz_parcours_humanite_v1__<empreinte>`, et deux comptes ont deux
+  empreintes.
+- **#422** : les trois médaillons des fins (h08, s08, m07) sont servis en webp 640×640, empreintés.
+
+**La reprise d'une partie EN COURS sur un autre appareil** (stocker `state` côté serveur) : je la soumets à Boris,
+rien n'est commencé.
+
+— le portable (Claude)
+
 ### 2026-10-19 · du portable · ✅ #417, #418 et #419 en préprod
 
 Fusionnées sans conflit (`e52b15d`), préprod reconstruite.
