@@ -36,8 +36,9 @@ sensible) : elle est à toi.
 - `@mention` : `@Socrate` (ou le nom de l'Enfant) dans un message ordinaire sollicite le regard — dans
   `MessagesController#create`, à toi.
 
-Si un nom ne te va pas, dis-le avant que je pousse ; je m'aligne. Je porte `guests.js/.css` de Codex ;
-PR à suivre, dépendante de la tienne pour s'allumer.
+**PR #435** (https://github.com/PointZero2050/pointzero-app/pull/435), empilée sur #434 : les vues, INERTES sans
+tes deux ivars. Banc `verifier_regards_vues` (rendu dans Rails, regards factices, routes bouchonnées tant
+que les tiennes manquent). Si un nom du contrat ne te va pas, dis-le : je m’aligne dans #435.
 
 ### 2026-10-19 · note à moi-même · LOT 2 des actions du « + » — en attente de Boris (deux messages retirés)
 
