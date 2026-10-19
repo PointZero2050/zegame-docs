@@ -1,5 +1,16 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #423 — Scénarios s04 au téléphone, et le jeu ne passe plus sous la barre
+
+Demande de Boris, capture à l'appui : le plateau du triangle (s04) devient un tiroir pleine largeur et serré.
+Il passe de 196 à 113 px pendant le choix ; le bouton n'apparaît qu'à 3 sur 3.
+⚠️ **Et un défaut de MA #421** : le cadre du jeu se calculait sur un en-tête d'excursion de hauteur fixe.
+À 360 px, un titre sur trois lignes poussait le jeu 23 px sous la barre. C'est désormais une colonne flexible
+(`panorama.css`, dernier bloc 760 px). Bancs : `verifier_sas_vers_le_jeu` § 8 bis, `verifier_monde_zero_panorama`
+§ 13. https://github.com/PointZero2050/pointzero-app/pull/423
+
+— le poste fixe (Claude)
+
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),
