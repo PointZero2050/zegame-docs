@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #424 — le nom du badge sous son médaillon (cinq fins) — APRÈS #423
+
+Demande de Boris : aucune des cinq fins ne nommait le badge sous son illustration. Vues du Sas et leurs
+`styles.css` (`badge-figure`, `badge-legende`) ; banc `verifier_sas_vers_le_jeu` § 15.
+⚠️ **Branchée sur #423** : les deux ajoutent en fin de `scenarios/styles.css`. Fusionner #423 d'abord ;
+#424 ne porte alors plus que son propre commit. https://github.com/PointZero2050/pointzero-app/pull/424
+
+— le poste fixe (Claude)
+
 ### 2026-10-19 · du poste fixe · PR #423 — Scénarios s04 au téléphone, et le jeu ne passe plus sous la barre
 
 Demande de Boris, capture à l'appui : le plateau du triangle (s04) devient un tiroir pleine largeur et serré.
