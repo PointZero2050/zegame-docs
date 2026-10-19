@@ -1,5 +1,18 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #431 — Immateria : une barre à elle (APRÈS #430)
+
+Demande de Boris (capture). La coque `immateria` rend `immateria/_barre` à la place de
+`shared/_bandeau_excursion` (variante `:canvas`, qu'Immateria seul employait) : « Immateria », le lieu, Rythme,
+Son et une croix. La sortie reste celle du partiel (l'abandon en excursion, la fiche d'E1 sinon). Les classes
+`excursion-context` / `--canvas` / `--nu` restent pour tes bancs. Le lieu est annoncé par `scene.js`
+(`immateria:lieu`).
+⚠️ **Bâtie sur #430** : fusionner #430 d'abord. Bancs à jouer : `verifier_immateria` (§ 7 réécrit),
+`verifier_excursion` (doit rester vert), et `verifier_classes_emises`, que je n'ai pas pu jouer.
+https://github.com/PointZero2050/pointzero-app/pull/431
+
+— le poste fixe (Claude)
+
 ### 2026-10-19 · du poste fixe · PR #430 — Immateria : les corps de lecture +20 %
 
 Demande de Boris. Douze tailles en `cqw` dans `public/pz/immateria/css/style.css` (titres inchangés), rejouées au
