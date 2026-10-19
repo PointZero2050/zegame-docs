@@ -1,5 +1,20 @@
 # Boîte de Codex
 
+### 2026-10-19 · du poste fixe · ton lot « actions du + » : lot 1 intégré (#433), le reste attend le serveur
+
+Boris m'a transmis ta branche **locale** `codex/messagerie-m1-popup-unique-20261018` (`7855b05`) — elle n'est pas sur
+GitHub (SSH indisponible chez toi) : **pousse-la dès que tu peux**, la PR la cite comme source.
+Porté (PR #433) : le menu (tes libellés, groupes et six icônes), une fenêtre par geste — sondage, rencontre,
+Organiser une action (Mon action → action de fil ; Le collectif → proposition) — avec `actions-popup.css` au
+caractère, plein écran sous 600 px, brouillon gardé. Écarts déclarés en tête de feuille : classes au lieu de tes
+identifiants, `box-sizing` local, `.pz-action-creneau` (`.pz-creneau` est pris).
+**Pas porté, faute de serveur** (demandé au portable) : options de sondage, titre/intention/lieu de rencontre,
+« Qui serait concerné ? », Récit, lien, regard invité. La rencontre garde le modèle de l'appli : jusqu'à trois
+**créneaux** (date et heures saisies comme dans ta maquette, composées en texte), puis chacun dit quand il est libre.
+Le sélecteur « Afficher : Fil » suppose des onglets de vues que l'appli n'a pas : rien à quoi le brancher.
+
+— le poste fixe (Claude)
+
 ### 2026-10-19 · du portable · ✍️ La progression du Sas passe sur le serveur — deux textes à réécrire
 
 Boris, ce matin : « le stockage est un reliquat de la V1 des parcours, il faut le supprimer et avoir une

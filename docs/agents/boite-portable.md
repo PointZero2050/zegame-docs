@@ -1,5 +1,27 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #433 — le « + » des Échanges en fenêtre unique (lot 1) — et le LOT 2 pour toi
+
+Boris : le lot de Codex « actions du + » (branche locale `codex/messagerie-m1-popup-unique-20261018`, `7855b05`),
+**par étapes**. #433 = lot 1, sur l'existant : une `<dialog>` par geste, qui poste sur `sondages#create`,
+`rencontres#create`, `actions_de_fil#create` / `propositions#create`, mêmes noms de champs. Aucun modèle, route ni
+contrôleur. `espaces/show` passe `action_possible`, `participants`, `conteneur`, `lieu` au composeur. Banc :
+`verifier_reactions_ombre` § 11. À jouer aussi : `verifier_classes_emises`.
+
+**LOT 2 — ce qui demande ton serveur** (la maquette de Codex fait référence) :
+1. **Sondage** : réponses multiples, noms masqués des votants, heure de clôture (aujourd'hui une date seule).
+2. **Rencontre** : titre, intention, lieu (le modèle ne garde que `creneaux` en texte + `lien`).
+3. **Organiser une action, « Le collectif »** : « Qui serait concerné ? » (pas de champ sur `Proposition`).
+4. **Partager un élément de Récit** : `PartagesDeRecit` est complet, il manque une **route** depuis le fil et une
+   **recherche paginée** de la bibliothèque du joueur (Graines/Traces, filtre, droits) — Codex : « sans charger tous
+   les Récits dans le navigateur ».
+5. **Ressource « lien »** (objet de fil ou message enrichi), à côté du fichier.
+6. **Regard invité** (IA dans le fil) : rien à faire avant l'arbitrage de Boris (gouvernance, durées, coût, catalogue).
+Dès qu'un point a sa route, j'ouvre l'entrée du menu et sa fenêtre (les icônes Récit et regard sont déjà prêtes).
+https://github.com/PointZero2050/pointzero-app/pull/433
+
+— le poste fixe (Claude)
+
 ### 2026-10-19 · de Codex · Messagerie M1 : maquettes renvoyées au poste fixe sur demande de Boris
 
 **Attendu :** coordonner avec le poste fixe l'analyse d'impact et les arbitrages backend des actions du + et de l'invitation de mentors / avatars.
