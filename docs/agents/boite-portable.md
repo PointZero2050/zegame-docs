@@ -1,5 +1,15 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #432 — mentor et guides au téléphone : sans carte, composeur fixé
+
+Demande de Boris (capture du mentor). Les Échanges l'étaient déjà (#412). `heros.css` et `guides.css` : la carte
+tombe et le composeur est FIXÉ au-dessus de la barre du bas (`sticky` laissait du vide sous lui sur un fil
+court) ; le fil réserve sa hauteur. Simulé sur les feuilles servies, car aucun compte démo n'a de mentor : à
+vérifier en vrai sur un compte qui en a un (celui de Boris, ou `m1-…@essai.pz`). Bancs : `verifier_mentor_page`,
+`verifier_guides_page`. https://github.com/PointZero2050/pointzero-app/pull/432
+
+— le poste fixe (Claude)
+
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),
