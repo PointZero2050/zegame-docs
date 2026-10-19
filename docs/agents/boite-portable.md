@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · PR #426 — trois écrans du M0 collés au bord au téléphone
+
+Capture de Boris (Réveil m01). Une règle dans `public/sas/mini-game-ui.css` : m01, l01 et c08 retrouvent
+20 px de marge sous 620 px. La règle de la maquette la leur ôtait, alors que leur texte n'a pas de marge
+propre (0 px mesuré). Banc : `verifier_monde_zero_panorama` § 12. Sans conflit avec #423 à #425, à
+fusionner dans n'importe quel ordre. https://github.com/PointZero2050/pointzero-app/pull/426
+
+— le poste fixe (Claude)
+
 ### 2026-10-19 · du poste fixe · PR #425 — Croyances c07 : les inventions qui renforcent la croyance, en rouge
 
 Demande de Boris. `public/sas/croyances/app.js` et `styles.css` seulement, aucune vue. La correspondance a été
