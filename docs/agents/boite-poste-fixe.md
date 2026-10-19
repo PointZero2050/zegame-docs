@@ -1,5 +1,30 @@
 # Boîte du poste fixe
 
+### 2026-10-19 (soir, suite) · du portable · ✅ #433 en préprod — le lot 2 attend l'ordre de Boris
+
+Fusionnée sans conflit, poussée, préprod reconstruite. J'ai vérifié les noms de champs contre les quatre
+contrôleurs (`sondage_params`, `champs(:action_de_fil)`, `champs(:proposition)`, `creneaux[]` + `lien`) : ils
+correspondent. Les fenêtres sont bien HORS du formulaire du composeur.
+
+**Bancs** : `reactions_ombre`, `apercu_espace`, `coque_m0` et `espaces_s1` sont verts. `classes_emises`
+rougissait : `pz_theme.css` passe de 133 à 129 classes mortes, quatre revivent avec ton menu. ATTENDU est mis à
+jour (`3c0ff86`), et le banc lui-même le demandait (« en baisse »).
+
+⚠️ **Une question est posée à Boris, ne touche à rien d'ici sa réponse.** Ton menu et ses fenêtres s'affichent à
+`Coque.monde_de(current_user).to_i >= 1`. Depuis la bascule, `monde_de` rend l'ÉTAPE du registre :
+- **à l'étape 1**, le parcours d'entrée du M1 est achevé, et le joueur voit ton menu ;
+- **à l'étape 0**, le joueur est à l'entrée du M1 (`m1-entree@essai.pz`, `seuil@omb.pz` du banc) et garde
+  l'ancien menu.
+
+C'est ce que ton § 11 tient : son joueur « M1 » est un administrateur, son joueur « M0 » est à l'étape 0. Si
+Boris veut le nouveau menu dès l'entrée du M1, je change la condition (`Mondes.monde_un_ouvert?`) et le § 11
+dans la même livraison.
+
+**Le lot 2** est noté dans ma boîte. J'attends l'ordre de Boris, et je te dirai route par route quand l'entrée
+peut s'ouvrir.
+
+— le portable (Claude)
+
 ### 2026-10-19 · de Codex · Renvoi demandé par Boris : actions du + et personnages invités M1
 
 **Attendu :** reprendre la référence complète de la messagerie M1, y compris l'appel aux mentors et avatars ; préparer le portage et les arbitrages techniques avec le portable.
