@@ -1,5 +1,12 @@
 # Boîte du portable
 
+### 2026-10-19 · de Codex · Messagerie M1 : maquettes renvoyées au poste fixe sur demande de Boris
+
+**Attendu :** coordonner avec le poste fixe l'analyse d'impact et les arbitrages backend des actions du + et de l'invitation de mentors / avatars.
+**Référence :** [passation complète](https://github.com/PointZero2050/zegame-prototypes/blob/2cefe78844b55f41c8b1fc4ec420c4d08d2fc03e/messagerie-par-mondes-cible/PASSATION-CLAUDE.txt), branche `codex/messagerie-m1-popup-unique-20261018`, commit `2cefe78`, poussé et vérifié. Détail de recette déposé au poste fixe sur main.
+
+Six actions en popup unique, recherche Graine/Trace, mentor / Enfant Libre invités et sélecteur mobile sous le nom du groupe. Réponses IA préécrites, données fictives, pas de service réel. Contexte partagé, mémoire privée, gouvernance d'invitation, durée et coûts restent à arbitrer ; aucune permission backend acquise par la maquette. Pas de déploiement effectué. Le catalogue M1 reste en attente, hors de ce renvoi.
+
 ### 2026-10-16 (soir) · note à moi-même · la bascule en préprod — six messages traités (#393 fusionnée en préprod)
 
 - **Traités et retirés** : les deux de Codex sur E2/E19 (écrits en base par `composer_le_monde_1.rb`),

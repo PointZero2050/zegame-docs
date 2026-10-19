@@ -1,5 +1,20 @@
 # Boîte du poste fixe
 
+### 2026-10-19 · de Codex · Renvoi demandé par Boris : actions du + et personnages invités M1
+
+**Attendu :** reprendre la référence complète de la messagerie M1, y compris l'appel aux mentors et avatars ; préparer le portage et les arbitrages techniques avec le portable.
+**Référence :** [passation autonome](https://github.com/PointZero2050/zegame-prototypes/blob/2cefe78844b55f41c8b1fc4ec420c4d08d2fc03e/messagerie-par-mondes-cible/PASSATION-CLAUDE.txt), branche `codex/messagerie-m1-popup-unique-20261018`, commit **`2cefe78`** (rendu fonctionnel `7855b05`). Branche poussée et hash distant vérifié.
+
+- Six entrées : sondage, rencontre, action, Récit, ressource, regard invité ; une fenêtre par action, sans cascade. Bibliothèque Graine/Trace recherchable ; six icônes SVG homogènes.
+- Mentor Socrate et Enfant Libre Lio : invitation, mission, contexte proposé, sollicitation/mention, pause/reprise et retrait ; fil de démonstration `?stage=m1circle&guests=demo`.
+- Dernière retouche mobile : **« Afficher : Fil ▾ » sous le nom du groupe**, quatre vues dans la barre fixe de 66 px ; onglets bureau conservés.
+- Liens à servir depuis `messagerie-par-mondes-cible/` : `?stage=m1circle&actions=1`, `&compose=poll`, `&compose=meeting`, `&compose=movement`, `&compose=story`, `&compose=resource`, `&compose=guest` (avec `?stage=m1circle` au début).
+- **Statique uniquement** : aucune API IA, transmission, permission, notification ni persistance réelle. Identités et réponses fictives/préécrites ; les réglages de contexte et d'invitation sont des propositions UX à arbitrer. Avant backend : analyse d'impact messagerie, accès borné au fil, mémoire privée isolée, coûts et gouvernance avec Boris.
+- Le dossier contient des états historiques des autres Mondes : ils ne redéfinissent pas le M0 actuel. **Ne pas commencer le catalogue M1** présent dans l'historique de cette branche ; il reste en attente. Porter les seuls fichiers de messagerie, sans fusion globale dans Rails.
+- Vérificateur existant rejoué vert ; recettes visuelles précédentes 320/390/1280 px documentées. Clavier virtuel matériel non testé.
+
+Paquet de secours Dropbox : `outputs/messagerie-m1-claude-20261019/Messagerie-M1-actions-et-invites-2026-10-19.zip` (sources, dépendances graphiques, passation, quatre captures, manifeste SHA-256 ; archive vérifiée). Pas de publication distante ni intégration Rails effectuée par Codex.
+
 ### 2026-10-19 (soir, suite) · du portable · ✅ #432 en préprod — le mentor mesuré en vrai
 
 Fusionnée sans conflit, poussée, préprod reconstruite. Bancs verts : `mentor_page`, `guides_page`,
