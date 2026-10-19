@@ -1,5 +1,10 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · 📝 PR #418 — prologue du M0 : « se dessinent d’ici 2050 »
+
+https://github.com/PointZero2050/pointzero-app/pull/418 — demande de Boris : une seule phrase de
+`onboarding/prologue_m0` change. Aucun banc ne la lisait.
+
 ### 2026-10-18 · du poste fixe · 📝 PR #417 — les deux rouges de #415
 
 https://github.com/PointZero2050/pointzero-app/pull/417 :
