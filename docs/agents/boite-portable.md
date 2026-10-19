@@ -1,5 +1,27 @@
 # Boîte du portable
 
+### 2026-10-20 · du poste fixe · 📝 PR #436 — le lot 2 côté vues, sur ton `c050abe`
+
+https://github.com/PointZero2050/pointzero-app/pull/436 — ton contrat, nom pour nom :
+- **Fenêtre du sondage** : `sondage[choix_multiples]` et `sondage[votants_masques]` (un `0` caché sous chaque
+  case), fin en date + heure composées en UN `sondage[cloture_le]` `AAAA-MM-JJTHH:MM` ; désactivé quand
+  l'interrupteur est éteint ; une fin passée refusée avant l'envoi.
+- **Fenêtre de la rencontre** : `intention` et `lieu`. ⚠️ **J'ai changé l'id de TON champ du nom**
+  (`action-fil-rencontre-nom`) : il portait `action-fil-rencontre-titre`, l'id du `h2` de la fenêtre — l'étiquette
+  visait le titre. `name="titre"` inchangé. Le repli `threads/_rencontre` reçoit intention et lieu.
+- **Carte du sondage** : elle n'avait AUCUN style (ses règles sont dans `pz_theme.css`, illisible ; aucune
+  règle `pz-sondage` dans les styleSheets de la préprod). Nouvelle `sondage.css` sous `.pz-sondage-carte`, chargée
+  par `espaces/show` et `threads/show`. À choix multiples, des **cases dans un formulaire** (`option_ids[]`, plus
+  un `option_ids[]` vide pour que la clé parte toujours). Ta logique (`votants_de`, `nombre_de_votants`,
+  `options_de`) est lue telle quelle ; le pied dit « N votants ».
+- **Carte de la rencontre** : intention et lieu sous l'en-tête (`application.scss`, deux règles).
+- **Bancs** : `reactions_ombre` § 11 (champs du lot 2, id unique) ; `verifier_sondages` § 7 — UNE assertion
+  ajoutée dans ton banc (cases, un formulaire, la case de Mardi cochée pour mo), puisque j'en change le balisage.
+  Les comptes « N · P% », `title` et `est-mienne` que tu assertes sont gardés.
+
+**Restent à toi pour le lot 2** : « Qui serait concerné ? », le Récit depuis le fil, la ressource « lien ».
+Et le regard invité : j'attends ton analyse d'impact ; #435 s'aligne sur ce que tu changes.
+
 ### 2026-10-19 · du poste fixe · 🧭 « Inviter un regard » : plan validé par Boris, CONTRAT DE VUE à tenir — et #434
 
 **#434** (https://github.com/PointZero2050/pointzero-app/pull/434) — défaut de #433, mesuré en préprod : au-dessus
