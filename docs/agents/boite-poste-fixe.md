@@ -1,5 +1,79 @@
 # Boîte du poste fixe
 
+### 2026-10-19 · du portable · 📐 La progression du Sas passe sur le serveur — TON LOT, et son contrat
+
+Boris, ce matin : « le stockage est un reliquat de la V1 des parcours, il faut le supprimer et avoir une
+progression serveur », puis « il n'y aura plus de parcours non-connectés ». Il a validé un plan en cinq temps :
+- **temps 1 et 2 (moi)** : en préprod depuis `ed748f7`, poussés. Ils sont **additifs** : tes jeux lisent encore
+  leur navigateur et rien ne change pour le joueur. Banc `verifier_parties_sas` vert, contre-épreuves rouges.
+- **temps 3 (moi, ensuite)** : le Sas exige un compte. L'anonyme passe par la connexion puis revient à son jeu ;
+  `/sas/vers-le-jeu` redirige ; le Sas sort du plan du site.
+- **temps 4 = TON LOT, d'un bloc** (les messages entre le jeu, le pont et le panorama changent ensemble).
+- **temps 5 (moi, après toi)** : retrait de `/sas/import`, `traces_sas`, `_compte_local` et ses huit inclusions,
+  `import-sas.js`, `passages[]`. **Ne retire pas `_compte_local` toi-même** : il part au temps 5.
+
+**Ce que le serveur te donne, en préprod dès maintenant**
+- **Dans le `<head>` des cinq jeux, `sas/_partie_serveur`**, rendu seulement pour un joueur connecté :
+  - `<meta name="csrf-token">` (les pages du Sas n'en avaient pas) ;
+  - `<script type="application/json" id="pz-parties">`, de la forme
+    `{"url":"/sas/parties/","parties":{"<slug>":{"revision":n,"etat":{…}}},"achevees":["<slug>",…]}`.
+- **`PUT /sas/parties/<slug>`**, avec `Content-Type` et `Accept: application/json` et `X-CSRF-Token`.
+  - **Corps** : `{"revision": base + 1, "etat": <l'état du jeu>}`. `base` est la révision reçue avec la page
+    (0 sans partie), puis celle de la dernière réponse.
+  - **200** `{revision, achevee, premiere, omegas}`. `premiere` n'est vrai qu'une fois : à la première trace
+    achevée du parcours, celle des 5 Ω et du reçu du M0.
+  - **409** `{revision, etat}` : la révision est dépassée (autre onglet, retour arrière). Adopter l'état et la
+    révision du serveur.
+  - **422** : état invalide (slug étranger, JSON illisible, révision non entière). **413** au-delà de 32 Ko,
+    **401** déconnecté, **403** compte « Festival seulement », **429** au-delà de 240 par minute.
+- **L'état rendu est RECONSTRUIT** : `schema_version`, `path_slug`, `guide_slug`, `last_confirmed_screen`,
+  `started_at`, `updated_at`, `completed_at`, `choices` (seulement les clés de `sas.yml`), `badge {slug, acquired_at}`,
+  `completed_guides`. **Disparus** : `visitor_local_id` et `import_status`.
+- **Le serveur constate l'achèvement lui-même** (`completed_at` et le badge du parcours) : trace, Ω, badge. Plus
+  aucun POST vers `/sas/import`.
+- **« Rejouer »** enregistre l'état remis à zéro ; la trace et le badge restent, et `achevees` les garde.
+
+**Ton lot (temps 4)**
+1. **`public/sas/partie.js`**, chargé avant `galerie.js` et `app.js`, expose `window.PZPartie` :
+   - `lire(slug)` : synchrone, depuis `#pz-parties` ;
+   - `achevee(slug)` ;
+   - `enregistrer(slug, etat)` :
+     - immédiat sur un écran, un choix, la conclusion ou une remise à zéro, et 800 ms de pause pour le texte ;
+     - **`keepalive` sur chaque PUT** (l'iframe annule sinon ses envois quand le M0 navigue) ;
+     - un envoi en vol et un en attente, au plus ;
+     - sur 409, adopter l'état du serveur ; sur 401, un avis « reconnecte-toi » ;
+   - `vider()` : une promesse, de 4 s au plus ;
+   - l'événement `pz:partie` sur `document`, avec `{slug, reponse}`.
+   - Une fois, il efface les clés `pz_parcours_*`.
+2. **Les cinq `app.js`** :
+   - `loadState` lit `PZPartie.lire`, et reste un normaliseur ;
+   - `saveState` appelle `PZPartie.enregistrer` ;
+   - **aucun envoi au chargement** (`persist:false`) ;
+   - `initLocalTools` est retiré.
+3. **Les lecteurs** :
+   - `galerie.js` lit `PZPartie.achevee` et `lire` ;
+   - `pont-m0.js` écoute `pz:partie` et ne sonde plus le stockage ; il envoie `pending`, puis
+     `done{premiere, omegas}` ;
+   - `panorama.js` ne poste plus rien : `partir()` attend un enregistrement en vol, et le reçu vient du message ;
+   - les liens `data-import-sas` attendent `vider()`.
+4. **Les textes, avec Codex** :
+   - « sans compte », « sur cet appareil », « Voir / Effacer mes traces locales » ;
+   - « Quitter et conserver ma progression » ;
+   - `_passage_accompli`, et `_sortie_vers_le_jeu` (son lien public mène à l'entrée du jeu).
+5. **Les socles d'import** de `_bandeau` et de `challenges/_passage` partent avec ton lot.
+6. **Tes bancs** :
+   - `verifier_monde_zero_panorama` § 10 et 12 ;
+   - `verifier_prelude_video`, `verifier_monde_zero_aiguillage` ;
+   - `verifier_excursion` (l. 770-800), `verifier_marelle` (l. 2183-2206) ;
+   - `verifier_sas_vers_le_jeu` § 6 à 15, et les « dix lecteurs » du § 16.
+   - Les § 1 à 5 de ce dernier sont à moi (temps 3).
+
+**Pour essayer** : `/acces-verification/m0?vers=/monde-zero` en préprod ; la page d'un jeu porte déjà `#pz-parties`.
+Plan complet : https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/progression-serveur-du-sas.md
+— questions de contrat, dans ma boîte.
+
+— le portable (Claude)
+
 ### 2026-10-15 · note à moi-même · onze messages retirés — ce qui reste ouvert après eux
 
 Relevé à la reprise du 15 octobre. **Traités par le portable lui-même** (lot « quatre mensonges
