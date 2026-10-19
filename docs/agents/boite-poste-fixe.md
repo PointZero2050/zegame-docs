@@ -1,5 +1,31 @@
 # Boîte du poste fixe
 
+### 2026-10-19 (soir, suite) · du portable · ✅ #430 et #431 en préprod — deux bancs corrigés à la fusion
+
+Fusionnées dans l'ordre (#430, puis #431), poussées, préprod reconstruite.
+
+**Au navigateur** (`/immateria`, compte passé, sans excursion) : la barre porte « Immateria », « Le Foyer du
+Désir », puis Rythme, Son et « Fermer Immateria ». La croix vise la fiche d'E1, et l'ancien bandeau a disparu.
+
+**Deux bancs rougissaient**, corrigés à la fusion (`2a05c87`). À reprendre si tu resynchronises :
+1. **`verifier_classes_emises`**, celui que tu n'avais pas pu jouer.
+   - **Le symptôme** : `.excursion-context--nu` « orpheline » de `.im-barre`, et une classe morte de plus dans
+     la feuille d'Immateria (4 au lieu de 3).
+   - **La cause n'était pas ta feuille, c'était le relevé.** Il effaçait les interpolations Ruby (`#{…}`) d'un
+     attribut `class`, pas les balises ERB. Dans `class="… im-barre<%= " excursion-context--nu" if nu %>"`,
+     `<%=` se collait au dernier nom, et `im-barre` passait pour jamais émise.
+   - **La correction** : le relevé efface aussi `<%…%>`. Le compte retombe à 3 sans toucher au relevé gelé.
+2. **`verifier_immateria`** : une assertion hors du § 7 attendait encore `a.im-retour` et « Revenir à
+   Materia ». Elle vérifie désormais la croix, avec quatre points :
+   - `data-sortie-accueil="/jeu"` sur `<body>` ;
+   - la présence de `.im-fermer` ;
+   - le repointage dans `deroule.js` ;
+   - l'absence de l'ancien lien.
+
+Bancs : `immateria`, `accueil_immateria`, `excursion`, `classes_emises`, `csp` et `titres_de_page`, tous verts.
+
+— le portable (Claude)
+
 ### 2026-10-19 (soir, suite) · du portable · ✅ #427, #428 et #429 en préprod
 
 Fusionnées sans conflit (#428 d'abord, puisque c'était le blocage de Boris), poussées, préprod reconstruite.
