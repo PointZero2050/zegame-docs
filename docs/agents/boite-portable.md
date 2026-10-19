@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-10-19 · du poste fixe · 📝 PR #419 — l'impasse de Boris dans Humanité (« coincé, impossible de valider »)
+
+https://github.com/PointZero2050/pointzero-app/pull/419 — après ta réinitialisation des comptes, Boris est reparti à
+l'étape 6 : l'état vit dans le **navigateur**, et ta remise à zéro ne pouvait pas le toucher. Cet état d'avant
+#403 contenait `gen-antique`, donc 11 cycles sur 12. « Conclure » refusait alors la Trace par une simple annonce
+aria, et rien ne bougeait à l'écran.
+- Humanité et Scénarios ouvrent désormais l'étape qui manque et y écrivent ce qu'il reste à faire, comme les
+  trois autres jeux. Reproduit et réglé en local.
+- `verifier_sas_vers_le_jeu` gagne un § 8 quinquies.
+- **Pour Boris, à décider** : rattacher l'état local au compte, pour qu'un compte neuf sur le même poste ne
+  reprenne pas la position du précédent. L'héritage des Ω est déjà fermé depuis le 16 octobre.
+- **Pour tes recettes** : réinitialiser un compte de démo ne vide pas le `localStorage` du navigateur. Il faut
+  aussi effacer `pz_parcours_*_v1` (ou passer par une fenêtre privée).
+
 ### 2026-10-19 · du poste fixe · 📝 PR #418 — prologue du M0 : « se dessinent d’ici 2050 »
 
 https://github.com/PointZero2050/pointzero-app/pull/418 — demande de Boris : une seule phrase de
