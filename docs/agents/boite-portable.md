@@ -1,45 +1,5 @@
 # Boîte du portable
 
-### 2026-10-19 · du poste fixe · 🧭 « Inviter un regard » : plan validé par Boris, CONTRAT DE VUE à tenir — et #434
-
-**#434** (https://github.com/PointZero2050/pointzero-app/pull/434) — défaut de #433, mesuré en préprod : au-dessus
-de 1120 px, `/echanges` injecte le fil en `innerHTML`, `actions-fil.js` n'y tournait pas (`PZActionsFil` indéfini),
-le « + » retombait sur ses `href`. La coque charge le script, comme `fil.js`. Une ligne de banc § 11.
-
-**Regard invité — arbitrages de Boris (19 octobre)** : préprod seulement, derrière un interrupteur ; voix = les
-six mentors (`Heros.monde_0`) + l'Enfant de l'inviteur (`ImmateriaE1.avatar_de`) ; **V1 : seuls les
-administrateurs** (`administrateur?`) invitent, sollicitent, mettent en pause, retirent ; lecture **depuis son
-arrivée**, 8 messages humains au plus, ni Récit ni mémoire privée ni message d'IA. Plan complet (lot A = toi) :
-interrupteur `REGARDS_INVITES=1` + admin, modèle `RegardInvite`, service `RegardReponse` (fiche `Heros` +
-`GuideVoix.politique_de_reponse` / voix d'`AvatarReponse` + garde `vigilance`, historique `[Prénom]` à la
-`GuideReponse`), une voix par message, **jamais d'IA déclenchée par une IA**, ticket de coût compté dans
-`PlafondLlm`, plafond par fil, benches. Codex demande une **analyse d'impact** avant le code (messagerie = zone
-sensible) : elle est à toi.
-
-**Ce que mes vues lisent** (branche `echanges-regard-invite`, inerte tant que ces deux ivars sont nil) :
-- `EspacesController#show` : `@regards_possibles` (bool : interrupteur ET `administrateur?` ET Monde ≥ 1) et
-  `@regards` (les `RegardInvite` du fil au statut `present` ou `pause`, ordre d'arrivée).
-- Je calcule moi-même `Heros.monde_0` et `ImmateriaE1.avatar_de(current_user)` dans la vue ; **le serveur doit
-  refuser** un `figure_slug` hors de `Heros::FIGURES_MONDE_0`, un second regard du même genre, un Enfant absent.
-- `RegardInvite` : `id`, `genre` (`"mentor"`|`"enfant"`), `figure_slug`, `nom_complet` (« Socrate », ou le nom de
-  l'Enfant), `etiquette` (« Mentor invité » / « Enfant Libre de Boris »), `mission` + `mission_libelle`
-  (`questionner` « Questionner nos évidences », `perspective` « Apporter une autre perspective », `concretiser`
-  « Nous aider à concrétiser »), `en_pause?`, `apparence` (Hash d'Immateria, pour l'Enfant ; `{}` sinon),
-  `contexte_lisible` → `[{auteur:, texte:}]` (exactement ce que l'IA lira : la fenêtre l'affiche).
-- Messages : auteur `RegardInvite` → je lis `m.author_type == "RegardInvite"` (pas la constante : rien ne casse
-  avant ta migration) ; une **annonce** (invitation, pause, reprise, retrait) se reconnaît par
-  `m.annonce_de_regard?` (je garde par `respond_to?`). Le texte des annonces est le tien ; Codex :
-  « <Nom> quitte le fil. Ses interventions restent dans la conversation. »
-- Routes : `thread_regards_path(fil)` POST `regard[genre]`, `regard[figure_slug]`, `regard[mission]` ;
-  `solliciter_regard_path(r)` POST `question` (1200 max) ; `pause_regard_path(r)`, `reprendre_regard_path(r)`,
-  `retirer_regard_path(r)` POST. Retour : redirection vers le fil, `#message-<id>` de la réponse.
-- `@mention` : `@Socrate` (ou le nom de l'Enfant) dans un message ordinaire sollicite le regard — dans
-  `MessagesController#create`, à toi.
-
-**PR #435** (https://github.com/PointZero2050/pointzero-app/pull/435), empilée sur #434 : les vues, INERTES sans
-tes deux ivars. Banc `verifier_regards_vues` (rendu dans Rails, regards factices, routes bouchonnées tant
-que les tiennes manquent). Si un nom du contrat ne te va pas, dis-le : je m’aligne dans #435.
-
 ### 2026-10-19 (nuit) · note à moi-même · LOT 2 : sondage et rencontre FAITS ; une correction en production
 
 **Production — l'atelier de France Musche** (La Rochelle, 7 novembre, événement 957). Correction de TEXTE
@@ -59,8 +19,21 @@ Vérifié sur https://pointzero2050.com.
 3. **Le collectif** (« Qui serait concerné ? »), à faire.
 4. **Partager un élément de Récit** (une route et une recherche paginée), à faire.
 5. **Ressource « lien »**, à faire.
-6. **Regard invité** : plan validé par Boris, et le contrat de vue du poste fixe est juste au-dessus.
-   **L'analyse d'impact d'abord** (Codex), puis le lot A.
+6. ✅ **Regard invité, lot A en préprod** (`85d40f7` à `45fea86`, 20 octobre ; message du poste fixe retiré, son
+   contrat tenu nom pour nom).
+   - **L'analyse d'impact** : `docs/architecture/regards-invites-analyse-impact.md`.
+   - **L'interrupteur** `REGARDS_INVITES=1` est dans `~/preprod/compose.yml` seulement (l'ancien fichier est
+     dans `/tmp/compose-preprod-avant-regards.yml`).
+   - **Un appel réel** : statut ok, 0,014 $.
+   - **⚠️ Le seul administrateur de la préprod est `demo@preprod.local`** : Boris a besoin d'un compte
+     administrateur pour essayer.
+   - **⚠️ Avant toute production** :
+     - la politique de confidentialité (Codex) ;
+     - le masquage d'un message d'IA ;
+     - l'ouverture au-delà des administrateurs.
+   - **⚠️ Piège du 20 octobre** : la préprod relance ses migrations au DÉMARRAGE (`db:prepare`). Une migration
+     cassée la fait boucler : quelques minutes de 502, jusqu'au correctif (`t.references :regard_invite` devinait
+     `regard_invites`).
 
 **Le menu « + » dès l'entrée du M1** : Boris a tranché (`305de29`). Le panneau des Échanges et l'Ω des autres
 restent à l'étape 1.

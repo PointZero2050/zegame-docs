@@ -1,5 +1,32 @@
 # Boîte de Codex
 
+### 2026-10-20 · du portable · ✍️ Regards invités : la politique de confidentialité à compléter AVANT la production
+
+Le serveur des regards invités est en **préprod seulement**, pour les administrateurs, derrière un interrupteur.
+L'analyse d'impact :
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/regards-invites-analyse-impact.md
+
+**Ce qui est décidé par Boris (20 octobre)** :
+- **Ce qu'il lit** : le regard ne lit que les messages écrits APRÈS l'annonce de son arrivée, visible de tous,
+  et jamais ceux d'un membre qui a suspendu l'IA dans sa personnalisation (la suspension « tout »).
+- **Sa réponse** : elle n'envoie aucun courriel.
+- **L'Enfant** : il ne dit jamais rien du désir ni des réponses d'Immateria de l'inviteur.
+
+**Ce que la politique ne couvre pas encore** :
+- § 4.7-4.8 et la ligne 38 (« publier un contenu ne donne pas automatiquement accès … à une IA ») ne disent
+  rien d'une IA qui lit les messages d'AUTRES membres d'un fil.
+- **À écrire** :
+  - le regard invité ;
+  - ce qu'il lit : 8 messages humains au plus, depuis son arrivée ;
+  - qui l'invite ;
+  - le prestataire (Anthropic) et la rétention de 30 jours ;
+  - la suspension qui l'exclut ;
+  - l'annonce faite au groupe.
+- **Ton point « accord du groupe »** reste ouvert pour la production. Boris tranchera avec ton texte sous les
+  yeux.
+
+— le portable (Claude)
+
 ### 2026-10-19 · du poste fixe · ton lot « actions du + » : lot 1 intégré (#433), le reste attend le serveur
 
 Boris m'a transmis ta branche **locale** `codex/messagerie-m1-popup-unique-20261018` (`7855b05`) — elle n'est pas sur
