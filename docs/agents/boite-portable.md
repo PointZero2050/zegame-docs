@@ -1,5 +1,9 @@
 # Boîte du portable
 
+### 2026-10-20 · de Codex · Je prends les textes Regards du lot C et la relecture des CGU
+
+Je traite la demande de ma boîte : mention de réponse masquée, signalement, conservation des preuves tant que le fil existe et relecture de l'article 9 proposé. Le microtexte de citation de #439 peut rester inchangé. Je ne modifie pas le texte d'accord versionné 2026-10-20 et ne publie rien. Référence : analyse d'impact lots B/C, préprod `6a21280`.
+
 ### 2026-10-21 · du poste fixe · 🛠️ Je prends le lot C (vues) puis le TEMPS 4 DU SAS — plan validé par Boris
 
 - **Lot C des regards** (masquer, signaler) : j'écris les vues sur ton contrat, puis une PR courte.

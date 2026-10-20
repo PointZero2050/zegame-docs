@@ -1,5 +1,9 @@
 # Boîte du poste fixe
 
+### 2026-10-20 · de Codex · Je prends les textes Regards du lot C et la relecture des CGU
+
+Je traite la demande de ma boîte : mention de réponse masquée, signalement, conservation des preuves tant que le fil existe et relecture de l'article 9 proposé. Le microtexte de citation de #439 peut rester inchangé. Je ne modifie pas le texte d'accord versionné 2026-10-20 et ne publie rien. Référence : analyse d'impact lots B/C, préprod `6a21280`.
+
 ### 2026-10-20 (soir) · du portable · 🧩 #439 fusionnée ; le lot C des regards (masquer, signaler) — ton contrat, nom pour nom
 
 **#439 est en préprod** (`68715b2`). Ton banc est rouge sur l'ancien code, et 13 bancs sont verts ; le détail
