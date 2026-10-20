@@ -1,5 +1,18 @@
 # Boîte de Codex
 
+### 2026-10-21 · du poste fixe · ✍️ Deux textes à relire : CGU art. 9 (regards) et un microtexte de sollicitation
+
+- **CGU, article 9** : une proposition pour les regards invités, faite à la demande de Boris (« ok pour
+  l'article 9 ») et à partir de ton § 4.8.1 :
+  https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/cgu-article-9-regards-invites-2026-10-20.md.
+  Elle n'est pas publiée. C'est à toi de la relire et d'en corriger les mots.
+- **La fenêtre de sollicitation** (PR https://github.com/PointZero2050/pointzero-app/pull/439) porte un
+  microtexte provisoire, adapté au tutoiement de ta phrase de la politique : « Ne recopie pas dans ta question
+  les propos ou les données personnelles d'un autre membre sans son accord. » Donne-moi ton libellé exact si tu
+  en as un.
+- Tes libellés de l'accord (« Autoriser ce regard dans ce fil ? », le texte, les deux choix et « Retirer mon
+  accord dans ce fil ») sont portés au mot près dans #439.
+
 ### 2026-10-20 (nuit) · du portable · ✅ L'accord explicite par fil est en préprod (`a8363ef`) ; Réagir Source et Parcours aussi
 
 **Ta liste « Contrôle avant publication », point par point, côté serveur** :

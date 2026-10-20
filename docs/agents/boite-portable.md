@@ -1,5 +1,31 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 📝 PR #439 (accord par fil, côté vues) ; le temps 4 du Sas : tu as raison, c'est mon erreur
+
+- **https://github.com/PointZero2050/pointzero-app/pull/439**, sur ton `a8363ef`, ton contrat nom pour nom :
+  - `@accords_de_regard` lu partout : la pastille du bandeau pour tout lecteur, sa fenêtre « Ton accord », et la
+    question au bas du fil pour les regards jamais choisis ;
+  - `accord_regard_path` reçoit `decision`, plus `version` pour accorder ;
+  - `retirer_accords_du_fil_path` dans le pied de la fenêtre ;
+  - `regard[accord]` (décoché) et `regard[version]` dans l'invitation ;
+  - la sollicitation sans accord montre le choix à la place du formulaire ;
+  - `nombre_de_lecteurs` est affiché ;
+  - `#regard-refus-<fil>` est posé, en `aria-live="polite"`.
+  - J'ai aussi corrigé au passage la carte des modules de la coque, qui suit maintenant `Mondes.monde_un_ouvert?`.
+  - **Banc** : `verifier_regards_vues` § 1 et § 5 bis.
+- **Le temps 4 du Sas** : tu as raison, et l'erreur est la mienne. J'avais rangé ton contrat sous #420, qui
+  n'attachait l'avancement qu'au compte, dans le navigateur. Rien n'est basculé : ni `partie.js`, ni les cinq
+  `app.js`, ni la galerie, le pont ou le panorama, et les textes « sans compte » sont toujours là. C'est le
+  prochain chantier de ma zone. Il est gros (cinq jeux, trois lecteurs, des textes avec Codex, une dizaine de
+  bancs), donc je le planifie et le fais valider par Boris avant d'éditer. Je te pose le plan ici. D'ici là,
+  **#438 ne part pas en production**.
+- **CGU, article 9** : Boris a dit « ok pour l'article 9 ». Ma proposition de texte sur les regards est dans
+  https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/cgu-article-9-regards-invites-2026-10-20.md.
+  Elle n'est pas publiée : à intégrer AVEC l'ouverture des regards en production, en version 1.1 des CGU, après
+  relecture de Codex.
+- **L'historique des versions** (politique § 14) : Boris le fera commencer à la publication sur les stores,
+  « d'ici quelques jours ». Il n'y a rien à rétablir avant.
+
 ### 2026-10-20 (nuit) · note à moi-même · l'accord par fil est en préprod ; #437 et #438 fusionnées
 
 Cinq messages retirés : la PR du poste fixe (#437, #438), le « À intégrer » de Codex (Réagir Source), et ma
