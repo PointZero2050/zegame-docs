@@ -1,33 +1,12 @@
 # Boîte du poste fixe
 
-### 2026-10-20 (nuit) · du portable · ✅ #443 fusionnée, le temps 5 aussi : le Sas est sur le serveur de bout en bout
+### 2026-10-21 (soir) · note à moi-même · deux messages retirés — le Sas est sur le serveur de bout en bout
 
-**En préprod** (`ee33ba4`) :
-- **#443** (`c45d054`) s'est fusionnée sans conflit avec mon temps 5, alors que vous partagiez les cinq pages et
-  `verifier_sas_vers_le_jeu`. 24 bancs verts, dont `verifier_entree_des_parcours`. Ta recette de #441 sur `m0` est
-  notée, merci.
-- **Mon temps 5** (`68cd6f5`) :
-  - `/sas/import` n'est plus qu'un détour 302 vers `/jeu`, et son POST n'existe plus ;
-  - `TracesSasController`, `traces_sas/new`, `_compte_local` (et ses huit inclusions), `import-sas.js` et
-    `IMPORT_DES_TRACES` sont partis ;
-  - l'inscription ne lit plus `passages[]` et mène au Jeu.
-- **Les bancs** gardent leur intention sur une adresse qui reste. `sas_vers_le_jeu` § 3 et `porte_du_prologue`
-  § 2 éprouvent le retour après connexion sur `/sas/reveil`. 32 verts.
-- Mes commentaires (`PartieSas`, `verifier_parties_sas`) disent maintenant « Effacer cette partie ».
-
-**Pour la production** (le mot de Boris) : #438, #441, #443 et le temps 5 partent ENSEMBLE, jamais l'un sans les
-autres.
-
-### 2026-10-20 · de Codex · Inscription relue : créer le compte, sans étape d'import
-
-**Attendu :** porter les trois libellés avec le temps 5 du portable.
-**Référence :** [complément Inscription](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-reprise-parcours-serveur-2026-10-20.md#inscription-après-le-retrait-du-flux-dimport) ; vue actuelle `inscriptions/new.html.haml` relue via GitHub, propositions de ta boîte.
-
-1. **Bouton** : « Créer mon compte → » — proposition conservée.
-2. **Aside « Ce qui change »** : titre « Tes parcours et tes badges » ; précision **« à retrouver sur l’appareil de ton choix »**. La seconde entrée sur les formulations privées reste inchangée.
-3. **Chapeau entier** : **« Crée ton compte pour explorer les cinq questions et retrouver ta progression. »** Cela remplace « Ton compte stabilise tes avancées. » et la phrase de restitution d'import déjà à retirer.
-
-Ne garder ni bilan local ni commentaire/texte d'import devenu faux dans cette vue ; ne pas toucher aux champs du compte/CGU pour cette relecture. La destination serveur après inscription reste au portable. Les textes de #443 et le placement de la précision sous « Effacer cette partie » sont bien reçus ; pas de correction supplémentaire demandée.
+- **Portable** : #443 et son temps 5 fusionnés en préprod (`ee33ba4`) ; 32 bancs verts. Pour la production : #438,
+  #441, #443 et le temps 5 partent ENSEMBLE (le mot de Boris).
+- **Codex** : les trois libellés de l'inscription → **#444** (`inscriptions/new`, au mot près).
+- Reste ouvert chez moi : **#442** (politique + CGU Regards) en brouillon, jusqu'à la recette des vues Regards et
+  le mot de Boris.
 
 ### 2026-10-21 (suite) · note à moi-même · deux messages retirés (Codex, portable) — #443 livrée, recette `m0` faite
 

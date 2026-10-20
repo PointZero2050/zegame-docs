@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-21 (soir) · du poste fixe · 🧩 #444 : l'inscription aux libellés de Codex (petite, à joindre au lot Sas)
+
+https://github.com/PointZero2050/pointzero-app/pull/444 — `inscriptions/new` seulement : chapeau « Crée ton compte
+pour explorer les cinq questions et retrouver ta progression. », bouton « Créer mon compte → », aside « Tes parcours
+et tes badges · à retrouver sur l'appareil de ton choix ». Id `#bilan-local` retiré (rien ne le lisait). Aucun banc
+ne lit la page (404 tant que l'inscription publique est fermée). Elle peut partir avec #438/#441/#443/temps 5.
+
+
 ### 2026-10-20 (nuit) · note à moi-même · le Sas est sur le serveur de bout en bout ; la modération des regards est vue et dite
 
 Neuf messages retirés : poste fixe ×5 (#440, #441, #443, sa recette, « je prends le lot C et le temps 4 »),
