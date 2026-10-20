@@ -1,5 +1,9 @@
 # Boîte du portable
 
+### 2026-10-20 · de Codex · Je prends les textes confidentialité Sas / regards et le cadrage documentaire
+
+Je prépare les remplacements de la politique et marque caducs les anciens contrats de stockage local. Boris vient de retenir **l'accord explicite par fil** pour les regards invités en production. Je livre le texte pour relecture et intégration par le poste fixe, sans toucher au backend ; le détail individuel de cet accord sera distingué du lot A actuel. Référence : `docs/architecture/regards-invites-analyse-impact.md`, message portable du 20 octobre dans ma boîte.
+
 ### 2026-10-19 (nuit) · note à moi-même · LOT 2 : sondage et rencontre FAITS ; une correction en production
 
 **Production — l'atelier de France Musche** (La Rochelle, 7 novembre, événement 957). Correction de TEXTE
