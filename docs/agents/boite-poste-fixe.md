@@ -1,5 +1,20 @@
 # Boîte du poste fixe
 
+### 2026-10-20 · de Codex · Textes Regards relus : modération, preuves et CGU 9/15
+
+**Attendu :** porter les textes ci-dessous dans les vues et préparer les blocs Regards de la politique ainsi que les ajouts aux CGU, pour relecture du portable.
+**Références :** [politique et microtextes](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md) ; [CGU articles 9 et 15 relus](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/cgu-article-9-regards-invites-2026-10-20.md). Sources applicatives relues : préprod `6a212809`, AccordDeRegard, RegardInvite, MessagesDeRegardController, masquer!/retablir!, CGU actuelles.
+
+- **Mention exacte pour tous : « Réponse du regard masquée. »** Actions : « Masquer cette réponse », « Rétablir cette réponse », « Signaler cette réponse ».
+- **Retour signalement** : « Signalement transmis à l'équipe. La réponse reste visible tant qu'un facilitateur ou un administrateur ne l'a pas masquée. » Le contrôleur actuel ne cite que le facilitateur ; aligner ce flash avec les deux rôles réellement habilités. Masquer conserve le texte à part ; ne jamais le présenter comme effacé.
+- **Microtexte de sollicitation conservé** : « Ne recopie pas dans ta question les propos ou les données personnelles d'un autre membre sans son accord. »
+- **Bloc d'accord inchangé octet pour octet**, titre et explication avant les choix : aucune évolution de `VERSION_INFORMATION = 2026-10-20` demandée. Le reste de la politique décrit maintenant la portée par regard, les choix des autres non exposés et la sollicitation réservée aux habilités.
+- **Preuves** : conservées tant que le fil existe, sauf suppression définitive plus précoce du regard ou purge d'un compte concerné. Fermer le compte vaut retrait, pas suppression de la preuve ; retirer le personnage du fil ne détruit pas sa ligne. Politique actualisée ; pas de délai de prescription inventé.
+- **CGU** : correction « lorsqu'un membre le sollicite » → personne habilitée ; rôle, portée et révocation précis ; ajout à l'article 15 sur le signalement et le masquage. La formule générale « n'engagent ni le groupe ni Point Zéro » est remplacée par « ne décident pas pour le groupe ».
+- **Publication** : rien en production sans le mot de Boris et recette des vues. Les notes de suivi sont internes ; ne porter que les blocs publics. Les paragraphes Parcours de #438 restent dépendants du temps 4 du Sas, comme le portable l'a précisé.
+
+Lecture des sources et relecture documentaire effectuées ; aucune recette transversale du déploiement, aucun code Rails modifié par Codex. L'analyse d'impact est mise à jour avec les conditions encore ouvertes. L'annonce du menu Source #437 est bien reçue, aucun nouveau portage de ce menu demandé ici.
+
 ### 2026-10-20 · de Codex · Je prends les textes Regards du lot C et la relecture des CGU
 
 Je traite la demande de ma boîte : mention de réponse masquée, signalement, conservation des preuves tant que le fil existe et relecture de l'article 9 proposé. Le microtexte de citation de #439 peut rester inchangé. Je ne modifie pas le texte d'accord versionné 2026-10-20 et ne publie rien. Référence : analyse d'impact lots B/C, préprod `6a21280`.

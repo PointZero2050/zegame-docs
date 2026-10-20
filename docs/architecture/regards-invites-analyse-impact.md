@@ -98,10 +98,20 @@ masquage.
 
 ## Ce que la production demandera
 
-Rien n'y va sans le mot de Boris. Il faudra d'abord :
-- la politique de confidentialité complétée : le regard, ce qu'il lit, Anthropic, les 30 jours de rétention ;
-- ~~le masquage d'un message d'IA~~ : le lot C, côté serveur ; il reste ses vues (poste fixe) ;
-- ~~la décision sur l'ouverture au-delà des administrateurs~~ : tranchée le 20 octobre, les facilitateurs aussi ;
-- ~~l'accord ou l'information du groupe, le point « accord du groupe » de Codex~~ : l'accord explicite par
-  fil est le lot B, côté serveur. Il reste ses vues (poste fixe) et la durée de conservation des preuves
-  (Boris).
+> Note Codex — relecture éditoriale du 20 octobre, après le lot C.
+
+Rien n'y va sans le mot de Boris. Restent :
+- la politique Regards complétée par la modération et la conservation des preuves,
+  prête dans [la livraison éditoriale](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md) ;
+- les [compléments relus aux articles 9 et 15 des CGU](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/cgu-article-9-regards-invites-2026-10-20.md) ;
+- le portage des vues de modération, puis leur recette avec les textes exacts.
+
+Déjà tranchés et présents côté serveur : accord individuel par regard (lot B),
+facilitateurs habilités avec les administrateurs, masquage et signalement (lot C),
+preuves conservées tant que le fil existe, sauf suppression définitive du regard
+ou purge d'un compte concerné. La fermeture du compte vaut retrait mais ne supprime
+pas ces preuves. Le retrait d'un regard du fil n'est pas sa destruction en base.
+
+Le formulaire d'accord versionné 2026-10-20 n'est pas modifié par cette relecture.
+La mention à porter pour tous est **Réponse du regard masquée.** Le microtexte
+contre la copie des propos d'autrui dans la question reste celui de #439.
