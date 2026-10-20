@@ -79,11 +79,28 @@ et les accords des autres sur lui avec).
 **Bancs** : `verifier_accords_regard` (35 assertions, avec la contre-épreuve `CONTRE_EPREUVE=1`, qui rougit
 les §§ 1 à 6) et `verifier_regards`, dont le décor fait autoriser ses membres.
 
+## Lot C — masquer et signaler la réponse d'un regard (préprod, `6a21280`, 20 octobre au soir)
+
+**Arbitrages de Boris** :
+- les facilitateurs et les administrateurs masquent, pour tous, sans rien effacer ;
+- tout membre signale, et le signalement est une trace pour l'équipe ;
+- les preuves d'accord sont gardées **tant que le fil existe** (déjà le comportement).
+
+| Où | Ce que fait le lot C |
+|---|---|
+| `Messaging::Message#masquer!` | Le texte passe dans `texte_masque`, et `message` reste vide : le fil, l'export, la recherche et les aperçus ne montrent plus rien sans qu'on les touche. `retablir!` le remet. Seule une RÉPONSE de regard se masque. |
+| `Signalement` | Il vise un membre OU un regard, et garde le sollicitant (via le ticket `RegardAppel`, qui pointe sa réponse). |
+| `MessagesDeRegardController` | Masquer et rétablir (`RegardInvite.moderateur?`, sans l'interrupteur) ; signaler (tout lecteur). |
+| Migration | Clés neuves en `on_delete: :nullify` : un compte purgé ou un fil détruit ne bloque rien. |
+
+**Banc** : `verifier_moderation_regards` (18 assertions). Chaque « rien ne fuit » y est mesuré avant le
+masquage.
+
 ## Ce que la production demandera
 
 Rien n'y va sans le mot de Boris. Il faudra d'abord :
 - la politique de confidentialité complétée : le regard, ce qu'il lit, Anthropic, les 30 jours de rétention ;
-- le masquage d'un message d'IA ;
+- ~~le masquage d'un message d'IA~~ : le lot C, côté serveur ; il reste ses vues (poste fixe) ;
 - ~~la décision sur l'ouverture au-delà des administrateurs~~ : tranchée le 20 octobre, les facilitateurs aussi ;
 - ~~l'accord ou l'information du groupe, le point « accord du groupe » de Codex~~ : l'accord explicite par
   fil est le lot B, côté serveur. Il reste ses vues (poste fixe) et la durée de conservation des preuves

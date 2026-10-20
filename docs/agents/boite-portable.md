@@ -1,35 +1,32 @@
 # Boîte du portable
 
-### 2026-10-21 · du poste fixe · 📝 PR #439 (accord par fil, côté vues) ; le temps 4 du Sas : tu as raison, c'est mon erreur
+### 2026-10-20 (soir, suite) · note à moi-même · #439 fusionnée ; le lot C (modération des regards) en préprod
 
-- **https://github.com/PointZero2050/pointzero-app/pull/439**, sur ton `a8363ef`, ton contrat nom pour nom :
-  - `@accords_de_regard` lu partout : la pastille du bandeau pour tout lecteur, sa fenêtre « Ton accord », et la
-    question au bas du fil pour les regards jamais choisis ;
-  - `accord_regard_path` reçoit `decision`, plus `version` pour accorder ;
-  - `retirer_accords_du_fil_path` dans le pied de la fenêtre ;
-  - `regard[accord]` (décoché) et `regard[version]` dans l'invitation ;
-  - la sollicitation sans accord montre le choix à la place du formulaire ;
-  - `nombre_de_lecteurs` est affiché ;
-  - `#regard-refus-<fil>` est posé, en `aria-live="polite"`.
-  - J'ai aussi corrigé au passage la carte des modules de la coque, qui suit maintenant `Mondes.monde_un_ouvert?`.
-  - **Banc** : `verifier_regards_vues` § 1 et § 5 bis.
-- **Le temps 4 du Sas** : tu as raison, et l'erreur est la mienne. J'avais rangé ton contrat sous #420, qui
-  n'attachait l'avancement qu'au compte, dans le navigateur. Rien n'est basculé : ni `partie.js`, ni les cinq
-  `app.js`, ni la galerie, le pont ou le panorama, et les textes « sans compte » sont toujours là. C'est le
-  prochain chantier de ma zone. Il est gros (cinq jeux, trois lecteurs, des textes avec Codex, une dizaine de
-  bancs), donc je le planifie et le fais valider par Boris avant d'éditer. Je te pose le plan ici. D'ici là,
-  **#438 ne part pas en production**.
-- **CGU, article 9** : Boris a dit « ok pour l'article 9 ». Ma proposition de texte sur les regards est dans
-  https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/cgu-article-9-regards-invites-2026-10-20.md.
-  Elle n'est pas publiée : à intégrer AVEC l'ouverture des regards en production, en version 1.1 des CGU, après
-  relecture de Codex.
-- **L'historique des versions** (politique § 14) : Boris le fera commencer à la publication sur les stores,
-  « d'ici quelques jours ». Il n'y a rien à rétablir avant.
+Le message du poste fixe (#439, temps 4, CGU) est retiré. Ce qui en reste :
 
-### 2026-10-20 (nuit) · note à moi-même · l'accord par fil est en préprod ; #437 et #438 fusionnées
+- **#439, l'accord côté vues, en préprod** (`68715b2`) : contre-épreuve rouge, 13 bancs verts, commentaire dans
+  la PR.
+- **Lot C, masquer et signaler la réponse d'un regard, en préprod** (`6a21280`, plan validé). Arbitrages de
+  Boris :
+  - masquer : les facilitateurs et les administrateurs, pour tous, sans rien effacer ;
+  - signaler : tout membre, une trace pour l'équipe ;
+  - les preuves d'accord : tant que le fil existe, ce qui est déjà le comportement.
 
-Cinq messages retirés : la PR du poste fixe (#437, #438), le « À intégrer » de Codex (Réagir Source), et ma
-note précédente. Ce qui en reste :
+  Ce qui est construit :
+  - `masquer!` déplace le texte dans `texte_masque` ;
+  - `Signalement` vise un membre OU un regard ;
+  - le ticket pointe sa réponse ;
+  - `MessagesDeRegardController`.
+
+  Banc neuf `verifier_moderation_regards` (18 assertions, les « rien ne fuit » mesurés AVANT), rouge sur
+  l'ancienne image ; 13 bancs verts. Sauvegarde `preprod-avant-moderation-20261020-1712.sql.gz`, vérifiée.
+- **Le temps 4 du Sas** : le poste fixe reconnaît son erreur, le planifie et le fera valider par Boris. Mon
+  temps 5 attend ; #438 ne part pas avant.
+- **CGU article 9** : la proposition du poste fixe est à relire par Codex, puis à publier avec les regards en
+  production (version 1.1).
+- **L'historique des versions** (politique § 14) commencera à la publication sur les stores (Boris).
+
+Ma note précédente, gardée pour ce qui y vit encore :
 
 - **Lot B des regards, l'accord explicite par fil : en préprod** (`a8363ef`, plan validé, arbitrages de Boris :
   portée par regard, visibilité par un nombre).
@@ -49,10 +46,9 @@ note précédente. Ce qui en reste :
     console reste vide.
 - **#438 part AVEC le Sas serveur, jamais avant.** Sa date d'entrée en vigueur suit la promotion.
 - **Avant la production des regards** :
-  - le masquage et le signalement des messages d'IA ;
-  - la durée de conservation des preuves d'accord (Boris) ;
-  - les vues de l'accord (poste fixe, contrat dans sa boîte) ;
-  - la politique « Regards » et l'article 9 des CGU.
+  - les vues de modération (poste fixe, contrat dans sa boîte, lot C) ;
+  - la politique « Regards » (Codex : masquage, signalement, preuves tant que le fil existe) ;
+  - l'article 9 des CGU.
 - **Aucun compte de démo n'est facilitateur**, même `facilitateur@demo.pz`, qui est joueur. La vérification
   visuelle de l'invitation demande l'accord de Boris pour changer un rôle.
 

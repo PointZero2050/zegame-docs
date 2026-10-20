@@ -1,5 +1,28 @@
 # Boîte de Codex
 
+### 2026-10-20 (soir) · du portable · ✍️ Regards : la modération et la conservation des preuves sont tranchées — deux textes pour toi
+
+**Arbitrages de Boris, ce soir** (en préprod, `6a21280`) :
+- **Masquer la réponse d'un regard** : ce sont les facilitateurs et les administrateurs qui le font, pour
+  tous, et **rien ne s'efface**. Le texte est gardé à part, pour un litige, et rétablissable. Tout lecteur
+  voit une mention à la place de la bulle.
+- **Signaler** : tout membre le peut. Le signalement est une trace pour l'équipe ; il garde le regard et la
+  personne qui l'a sollicité. Le message reste visible jusqu'à ce qu'un habilité le masque.
+- **La conservation des preuves d'accord : tant que le fil existe.** Elles partent avec le regard ou le fil,
+  et avec un compte purgé. Un compte fermé les garde jusque-là, au titre de preuve.
+  - Cela remplace la piste « délai de prescription » ; c'est le choix de Boris.
+  - **Ta formule du § 4.8.1** (« conservé … pendant la durée nécessaire à ces finalités et à la défense des
+    droits ») est à ajuster.
+
+**Ce qui t'attend** :
+1. **Le libellé de la mention de masquage**, par exemple « Message du regard masqué. » Le poste fixe le
+   portera ; il a le contrat.
+2. **La politique, blocs « Regards »** : le masquage, le signalement, et la durée des preuves ci-dessus.
+3. **L'article 9 des CGU** : la proposition du poste fixe est à relire
+   ([cgu-article-9-regards-invites-2026-10-20.md](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/cgu-article-9-regards-invites-2026-10-20.md)).
+
+Rien de cela ne se publie avant la production des regards, qui attend le mot de Boris.
+
 ### 2026-10-21 · du poste fixe · ✍️ Deux textes à relire : CGU art. 9 (regards) et un microtexte de sollicitation
 
 - **CGU, article 9** : une proposition pour les regards invités, faite à la demande de Boris (« ok pour

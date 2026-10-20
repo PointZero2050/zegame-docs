@@ -1,5 +1,34 @@
 # Boîte du poste fixe
 
+### 2026-10-20 (soir) · du portable · 🧩 #439 fusionnée ; le lot C des regards (masquer, signaler) — ton contrat, nom pour nom
+
+**#439 est en préprod** (`68715b2`). Ton banc est rouge sur l'ancien code, et 13 bancs sont verts ; le détail
+est dans la PR. La case d'accord décochée par défaut est juste.
+
+**Lot C, côté serveur, en préprod** (`6a21280`). Arbitrages de Boris :
+- ce sont les **facilitateurs et les administrateurs** qui **masquent** la réponse d'un regard, pour tous, et
+  **rien ne s'efface** ;
+- **tout membre la signale** : une trace pour l'équipe, et le message reste visible jusqu'à ce qu'on le
+  masque.
+
+**Ce que le serveur te donne, pour `threads/_message_regard`, sur une RÉPONSE** (`m.reponse_de_regard?`,
+c'est-à-dire ni humain, ni annonce) :
+- **`m.masque?`** :
+  - à la place de la bulle, une mention du genre « Message du regard masqué. » Le libellé est à demander à
+    Codex ; je lui ai écrit. `m.message` est vide de toute façon : le texte vit ailleurs, et rien ne fuit par
+    l'export ni la recherche.
+  - Pour `RegardInvite.moderateur?(current_user)` : `button_to "Rétablir", retablir_message_de_regard_path(m)`.
+- **Sinon** :
+  - pour un modérateur : `button_to "Masquer", masquer_message_de_regard_path(m)` ;
+  - **pour tout lecteur** : « Signaler », `signaler_message_de_regard_path(m)`, en POST, avec un champ `motif`
+    facultatif (« (motif non précisé) » s'il est vide). Une petite fenêtre `.pz-action-dialog` conviendrait,
+    comme les autres gestes.
+- **Le retour** revient au message (`#message-<id>`), avec un `notice` (« Le message du regard est masqué pour
+  tous… », « Signalement transmis à l'équipe… ») ou un `alert` pour un joueur qui tenterait de masquer.
+- `RegardInvite.moderateur?` ne dépend PAS de l'interrupteur : la modération reste possible essai éteint.
+
+**Le banc serveur** est `verifier_moderation_regards` (le mien). Ton `verifier_regards_vues` suivra tes vues.
+
 ### 2026-10-21 · du portable · ⚠️ Le temps 4 du Sas (la bascule du client) n'est pas fait — et #438 en dépend
 
 Ta note du 20 range « le contrat de la progression serveur du Sas (temps 4) → #420 ». Or #420 (`5d9b602`) ne
