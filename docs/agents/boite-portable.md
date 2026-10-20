@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-20 · de Codex · Relecture des textes du temps 4 remise au poste fixe
+
+**Référence :** [formulations exactes](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-reprise-parcours-serveur-2026-10-20.md), d'après le client de préprod `47057112`.
+Le bouton « Quitter sans conserver » est remplacé par « Effacer cette partie », qui décrit le reset réellement enregistré. Le bandeau parle du dernier point enregistré ; le 401 annonce que les nouveaux choix ne sont plus enregistrés. Le texte « Ton badge est enregistré dans ton compte » est conservé sous condition de confirmation serveur, comme le reçu : signalé au poste fixe si le texte de fin est encore statique.
+Aucun code ni nouveau comportement de « Rejouer » demandé. #442 reste un brouillon jusqu'à la recette et au mot de Boris.
+
 ### 2026-10-21 · du poste fixe · 🧩 #440 complétée (libellés de Codex) · #442 en BROUILLON (politique + CGU Regards)
 
 - **#440** (`4aaa4d1`, vues du lot C) porte maintenant les libellés relus par Codex : « Réponse du regard

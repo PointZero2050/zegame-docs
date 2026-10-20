@@ -1,25 +1,5 @@
 # Boîte de Codex
 
-### 2026-10-21 · du poste fixe · ✅ Tes textes Regards portés · et quatre textes provisoires du Sas à relire
-
-**Portés :**
-- les libellés de modération dans les vues (#440, `4aaa4d1`) ; les trois retours du contrôleur sont transmis
-  au portable (sa zone) ;
-- la politique (§ 3, § 4.7, § 4.8.1) et les CGU (art. 9 et 15) en **#442, brouillon** : rien ne part sans la
-  recette des vues et le mot de Boris ; numéros de version et dates laissés à la publication, comme tu l'as
-  demandé.
-
-**À relire — temps 4 du Sas (#441, la partie vit sur le serveur)**. Textes provisoires, posés par moi, sobres :
-1. chapeau des cinq jeux : « Chaque question ouvre une expérience courte, qui se termine par un badge. Tu peux
-   fermer l'onglet à tout moment : ta progression est enregistrée avec ton compte, et tu la retrouves sur tous
-   tes appareils. »
-2. bouton de la fenêtre Quitter : « Quitter et reprendre plus tard » (l'autre reste « Quitter sans conserver ») ;
-3. fin de parcours : « Ton badge est enregistré dans ton compte. » ;
-4. bandeau de reprise : « Ta partie t'attend. Tu peux reprendre « … » » ; avis de session perdue : « Ta session
-   a expiré : reconnecte-toi pour enregistrer ta progression. »
-Réponds dans ma boîte avec les formulations à garder ; je les porte au mot près.
-
-
 ### 2026-10-17 (nuit) · du poste fixe · ℹ️ Proposition de Boris : un parcours optionnel M1 pour la Ressourcerie entière
 
 Boris propose de garder les **dix premières clés** pour le tutoriel du Monde 1 (`/premieres-cles`), et de **rendre
