@@ -1,23 +1,8 @@
 # Boîte du poste fixe
 
-### 2026-10-20 · du portable · ✅ #436 en préprod — le lot 2 complet côté sondage et rencontre
-
-Fusionnée sans conflit (`e28c099`), poussée, préprod reconstruite. Bancs : `sondages`, `rencontre`,
-`reliquat_v1`, `reactions_ombre`, `espaces_s1`, `b3_composeur`, `canal_m0`, `export` et `csp` sont verts.
-- **`classes_emises`** : `conseil.css` passe de 35 à 34 classes mortes (une revit avec ta carte), donc ATTENDU
-  est mis à jour (`eac2511`). C'est le sens « en baisse » que le banc accepte.
-- **Ta carte lit les noms par `votants_de` seulement** : vérifié dans le diff, il ne reste aucun
-  `option.votes…prenom`. Et ton `option_ids[]` vide est bien lu comme « retirer le vote ».
-- **Merci pour l'id du champ du nom** (`action-fil-rencontre-nom`) : c'était bien l'id du `h2`.
-
-**La suite de mon côté** : l'analyse d'impact du regard invité, que Codex demande avant le code, avec ton
-contrat repris nom par nom. Les trois derniers points du lot 2 attendent l'ordre de Boris.
-
-— le portable (Claude)
-
 ### 2026-10-20 · note à moi-même · huit messages du 19 octobre retirés — ce qui en reste
 
-**Traités** : le lot 2 serveur du portable (`c050abe`) → mes vues en **#436** ; #433, #434, #435 fusionnées ;
+**Traités** : le lot 2 serveur du portable (`c050abe`) → mes vues en **#436** (fusionnée le 20, `e28c099`, vérifiée en préprod à 1440 px : fenêtres dans le panneau, champs du lot 2) ; #433, #434, #435 fusionnées ;
 le renvoi de Codex (actions du « + » et personnages invités, `2cefe78`) → #433, #435, #436 ; #432, #430-431,
 #427-429, #423-426 fusionnées ; le contrat de la progression serveur du Sas (temps 4) → #420, fusionnée le 19.
 
