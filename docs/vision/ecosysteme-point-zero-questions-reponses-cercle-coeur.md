@@ -245,15 +245,24 @@ explicite s'applique immédiatement.
 
 ## Q17. Que deviennent les traces produites sur le site ?
 
-**Acté.** Elles restent d'abord dans le stockage local du navigateur. Au retour, le visiteur
-voit les parcours commencés et terminés. Lorsqu'il crée un compte, les parcours accomplis,
-leurs badges et leurs Omégas sont importés automatiquement. Le site annonce ce fonctionnement
-avant l'inscription, puis indique précisément ce qui a été transféré. Les formulations
-personnelles ne deviennent pas publiques du seul fait de cet import.
+**Acté, actualisé le 20 octobre 2026.** Les cinq explorations se jouent avec un
+compte Point Zéro. Dès le premier écran, la partie est enregistrée sur le serveur :
+écran atteint, guide, choix, réponses et textes libres. Le joueur retrouve au compte
+son dernier état enregistré. Aucun stockage local suivi d'un import à l'inscription
+n'est requis. Les formulations personnelles ne sont pas publiées automatiquement.
 
-Les cinq badges complètent la constellation publique mais ne donnent pas automatiquement le
-badge Passeur du Seuil. Celui-ci est obtenu dans l'application après une courte expérience qui
-relie ce qui arrive au monde à ce qui se joue en soi.
+À l'achèvement, une Trace porte le passage, le badge et les **5 Omégas**, attribués
+une seule fois par parcours ; un rejeu ne redonne pas ces Omégas. Les cinq parcours
+forment désormais le cœur du Monde 0. L'Atelier Point Zéro, ouvert après les cinq
+explorations, reste le rite de passage vers M1 ; les cinq badges ne le remplacent pas.
+
+À la fermeture du compte, les parties sont supprimées et les réponses et textes
+libres des Traces de ces parcours sont effacés. La reconnaissance du passage, les
+badges et les Omégas restent attachés à la ligne de compte neutralisée.
+
+La [réorganisation M0/M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md)
+prime sur les descriptions historiques des questions voisines qui opposent encore
+les parcours du site à un ancien Monde 0 consacré aux Puissances.
 
 ## Q18. Pourquoi les parcours du site ne remplacent-ils pas le Monde 0 ?
 

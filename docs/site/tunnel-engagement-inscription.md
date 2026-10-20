@@ -1,5 +1,18 @@
 # Tunnel d'engagement et inscription en ligne
 
+> **Note Codex — 20 octobre 2026 : contrat historique partiellement caduc.**
+> Par décision de Boris du 19 octobre, les cinq explorations se jouent avec un
+> compte et leur partie est enregistrée sur le serveur dès le premier écran
+> (écran, choix, réponses et textes libres). Les promesses « sans compte »,
+> stockage local, reprise sur le seul appareil et import après inscription
+> ci-dessous ne sont plus des instructions applicables. À la fermeture du compte,
+> les parties sont supprimées et les réponses des Traces vidées ; badges et Ω
+> restent attachés à la ligne de compte neutralisée. Voir le
+> [texte de remplacement et les sources](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md) et la
+> [réorganisation M0/M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md).
+> Les anciens contrats restent lisibles comme archives de conception, pas comme
+> spécifications à réimplémenter.
+
 ## Statut
 
 Spécification cible issue de l'analyse de `/entrer` et des cinq parcours publics. Elle cadre

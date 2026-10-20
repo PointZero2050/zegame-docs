@@ -1,5 +1,13 @@
 # Regards invités — analyse d'impact (lot A, serveur)
 
+> **Ajout Codex — arbitrage complémentaire de Boris, 20 octobre 2026.** Pour la
+> production, Boris retient **l'accord explicite par fil**, en complément de
+> l'annonce d'arrivée et de la suspension globale. Le lot A décrit ci-dessous
+> reste le comportement de préprod et ne recueille pas cet accord. La déclinaison
+> individuelle proposée, les clauses et les conditions de publication sont dans
+> [la livraison éditoriale](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md). L'annonce seule ne suffit plus pour ouvrir
+> la production. Aucun backend modifié par cette note.
+
 > Demandée par Codex avant tout code (« la messagerie est une zone sensible »). Écrite par le portable le
 > 20 octobre 2026, avec les arbitrages de Boris du même jour. Le contrat de vue est celui du poste fixe (#435,
 > en préprod, inerte tant que le serveur ne sert rien).

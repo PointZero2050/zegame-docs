@@ -1,9 +1,24 @@
 # Parcours publics du site et Sas Point Zéro — vocabulaire et reconnaissance
 
+> **Note Codex — 20 octobre 2026 : contrat historique partiellement caduc.**
+> Par décision de Boris du 19 octobre, les cinq explorations se jouent avec un
+> compte et leur partie est enregistrée sur le serveur dès le premier écran
+> (écran, choix, réponses et textes libres). Les promesses « sans compte »,
+> stockage local, reprise sur le seul appareil et import après inscription
+> ci-dessous ne sont plus des instructions applicables. À la fermeture du compte,
+> les parties sont supprimées et les réponses des Traces vidées ; badges et Ω
+> restent attachés à la ligne de compte neutralisée. Voir le
+> [texte de remplacement et les sources](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md) et la
+> [réorganisation M0/M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md).
+> Les anciens contrats restent lisibles comme archives de conception, pas comme
+> spécifications à réimplémenter.
+
 > Ajout Codex — 2026-08-24. Canon produit et éditorial demandé par Boris pour lever la
 > collision entre les cinq parcours publics du site et l'expérience 12 du Monde 0.
 
 ## 1. Deux dispositifs, deux noms
+
+> **Caduc pour l’accès, le stockage et l’import** — voir la note du 20 octobre en tête.
 
 | Nom canonique | Définition | Emplacement |
 |---|---|---|
@@ -18,6 +33,8 @@ renommage coûterait davantage que sa conservation. Les titres, CTA, textes et d
 doivent plus en déduire la nature du dispositif.
 
 ## 2. Reconnaissance des parcours publics
+
+> **Caduc pour l’accès, le stockage et l’import** — voir la note du 20 octobre en tête.
 
 > **Cible non encore livrée au 24 août 2026.** Les montants et le porteur comptable ci-dessous
 > décrivent la mécanique attendue. Tant que `config/sas.yml` ne déclare aucun montant, que le
@@ -72,6 +89,8 @@ Puissances dans son contenu ; son rattachement comptable à la Volonté reconna�
 compréhension à l'initiative, sans prétendre résumer le parcours à cette seule Puissance.
 
 ## 3. Textes canoniques
+
+> **Caduc pour l’accès, le stockage et l’import** — voir la note du 20 octobre en tête.
 
 Les textes **publiables maintenant** précèdent les textes **cibles après livraison comptable**.
 Le basculement se fait en une seule livraison : configuration des montants, challenge système,
@@ -171,6 +190,8 @@ La consultation de l'agenda, l'inscription seule ou l'ouverture d'une page ne va
 l'expérience et n'attribuent aucun Ω.
 
 ## 4. Critères de cohérence
+
+> **Caduc pour l’accès, le stockage et l’import** — voir la note du 20 octobre en tête.
 
 - `/sas` ne doit jamais être la destination d'un CTA relatif à une rencontre Sas Point Zéro.
 - Un CTA `Choisir un Sas` mène vers l'agenda ou l'événement associé.

@@ -1,5 +1,18 @@
 # Parcours publics du Sas — grammaire commune et cinq parcours détaillés
 
+> **Note Codex — 20 octobre 2026 : contrat historique partiellement caduc.**
+> Par décision de Boris du 19 octobre, les cinq explorations se jouent avec un
+> compte et leur partie est enregistrée sur le serveur dès le premier écran
+> (écran, choix, réponses et textes libres). Les promesses « sans compte »,
+> stockage local, reprise sur le seul appareil et import après inscription
+> ci-dessous ne sont plus des instructions applicables. À la fermeture du compte,
+> les parties sont supprimées et les réponses des Traces vidées ; badges et Ω
+> restent attachés à la ligne de compte neutralisée. Voir le
+> [texte de remplacement et les sources](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md) et la
+> [réorganisation M0/M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/reorganisation-m0-m1-2026-10-15.md).
+> Les anciens contrats restent lisibles comme archives de conception, pas comme
+> spécifications à réimplémenter.
+
 > **Ajout Codex — 2026-08-03 · Spécification éditoriale et UX à destination de Claude.**
 >
 > **Statut** : cadrage issu des arbitrages de Boris des 2 et 3 août 2026. La grammaire
@@ -188,6 +201,8 @@ jamais `Valider mon expérience`.
 
 ### 2.6 Traces, données et reprise
 
+> **Caduc pour l’accès, le stockage et l’import** — voir la note du 20 octobre en tête.
+
 - État, réponses et badges sont conservés dans le stockage local du navigateur pendant
   plusieurs mois, dans les limites techniques de celui-ci.
 - Au retour, l'accueil montre les parcours commencés ou terminés et leur pourcentage de
@@ -228,6 +243,8 @@ complétion. Le badge d'un parcours est identique quel que soit le guide.
   **« Passeur du Seuil »**.
 
 ### 2.8 Passage de relais à l'application
+
+> **Caduc pour l’accès, le stockage et l’import** — voir la note du 20 octobre en tête.
 
 Quand la constellation est complète, le site propose de créer un compte. Les traces, badges et
 Omégas conservés sur cet appareil sont alors importés automatiquement et font l'objet d'une
@@ -1982,6 +1999,8 @@ des fiches Point Zéro.
 ---
 
 ## 11. Critères d'acceptation éditoriaux et UX
+
+> **Caduc pour l’accès, le stockage et l’import** — voir la note du 20 octobre en tête.
 
 Les cinq parcours détaillés sont prêts à prototyper si :
 
