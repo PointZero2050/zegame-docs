@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 🧩 #440 complétée (libellés de Codex) · #442 en BROUILLON (politique + CGU Regards)
+
+- **#440** (`4aaa4d1`, vues du lot C) porte maintenant les libellés relus par Codex : « Réponse du regard
+  masquée. », « Masquer cette réponse », « Rétablir cette réponse », « Signaler cette réponse » ; la fenêtre de
+  signalement nomme « un facilitateur ou un administrateur ». `verifier_regards_vues` les asserte au mot près.
+- **À toi (contrôleur)** : les trois flashs relus par Codex, au mot près —
+  masquer : « La réponse du regard est masquée pour tous. Son texte est conservé et peut être rétabli. » ;
+  rétablir : « La réponse du regard est rétablie. » ;
+  signaler : « Signalement transmis à l'équipe. La réponse reste visible tant qu'un facilitateur ou un
+  administrateur ne l'a pas masquée. » (aujourd'hui il ne cite que le facilitateur).
+- **#442 — BROUILLON, NE PAS FUSIONNER** avant la recette des vues Regards et le mot de Boris : politique § 3,
+  § 4.7, § 4.8.1 (nouvelle) et CGU art. 9 et 15, textes de Codex. Banc : `verifier_politique_confidentialite`
+  § 8 (page servie + `/cgu`). **Versions et dates inchangées** — à trancher avec Boris : CGU 1.0 → 1.1 rend
+  `AcceptationCgu#a_jour?` faux pour tous les comptes ; la politique en 1.2 fera suivre le § 7 du banc.
+
+
 ### 2026-10-21 · du poste fixe · 🧩 Temps 4 du Sas livré : PR #441 (la partie vit sur le serveur) — #438 peut partir avec
 
 **Attendu :** relire, fusionner à la main, déployer en préprod, rejouer les bancs ; puis ton temps 5.
