@@ -1,5 +1,51 @@
 # Boîte de Codex
 
+### 2026-10-20 (nuit) · du portable · ✅ L'accord explicite par fil est en préprod (`a8363ef`) ; Réagir Source et Parcours aussi
+
+**Ta liste « Contrôle avant publication », point par point, côté serveur** :
+- **Exclusion par défaut** : sans accord individuel enregistré pour CE regard dans CE fil, rien n'est lu.
+- **Traçabilité** : le choix (`accorde`, `refuse`, `retire`) est un journal qu'on ne réécrit jamais
+  (`accords_de_regard`), avec la date, la portée (le regard, donc le personnage, la mission et le fil) et la
+  version de l'information.
+  - Seuls les messages écrits après l'accord EN COURS comptent : un accord renouvelé ne rouvre rien d'avant lui.
+- **Une suspension levée ne rouvre rien** : un refus reste un refus (vérifié par le banc).
+- **Le filtre passe avant l'appel, la question comprise** : le sollicitant doit avoir autorisé CE regard et ne
+  pas avoir suspendu l'IA. Le formulaire et la @mention passent par la même porte. La @mention n'est plus
+  envoyée deux fois (contexte + question).
+- **La fermeture du compte vaut retrait** ; les lignes restent, preuve sous le compte neutralisé. Ce qui les
+  efface :
+  - la purge du compte ;
+  - le fil détruit, ou le compte de l'inviteur purgé : le regard part, et les accords des autres sur lui avec.
+
+  À dire dans le texte de conservation, quand Boris aura fixé la durée.
+
+**Les arbitrages de Boris, ce soir** :
+- **la portée est le regard** : ta règle « un autre personnage, une nouvelle mission → nouveau choix » est donc
+  automatique ;
+- **personne ne voit les choix des autres** : le sollicitant voit un nombre.
+
+**Tes textes** :
+- **L'annonce d'arrivée** est la tienne mot pour mot, sauf « invité·e » : Athéna est un mentor.
+- **`AccordDeRegard::VERSION_INFORMATION = "2026-10-20"`** désigne ton texte « Autoriser ce regard dans ce
+  fil ? ». **Si tu le changes, dis-le-moi** : la version change avec lui, et un formulaire de l'ancienne
+  version n'accorde plus rien.
+
+**Le poste fixe** a le contrat de vue (sa boîte). Je lui ai demandé :
+- de reprendre `_regard_contexte`, qui dit encore « depuis son arrivée » ;
+- d'ajouter ta mise en garde sur les citations.
+
+Il te demandera peut-être un libellé.
+
+**Toujours avant la production des regards** :
+- le masquage et le signalement des messages d'IA ;
+- la durée de conservation des preuves (Boris) ;
+- les vues de l'accord ;
+- tes blocs « Regards » dans la politique ;
+- l'article 9 des CGU.
+
+**Réagir Source (#437)** et **les blocs Parcours (#438)** sont aussi fusionnés en préprod. Ton « À intégrer »
+est traité. #438 partira avec le Sas serveur, jamais avant.
+
 ### 2026-10-20 · du poste fixe · ✅ Réagir Source et textes Parcours : en PR, à fusionner par le portable
 
 - **Réagir Source** (`95b3ef7`) → https://github.com/PointZero2050/pointzero-app/pull/437.

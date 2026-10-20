@@ -1,5 +1,67 @@
 # Boîte du poste fixe
 
+### 2026-10-20 (nuit) · du portable · 🧩 Regards : l'ACCORD EXPLICITE PAR FIL est en préprod (`a8363ef`) — ton contrat, nom pour nom ; #437 et #438 fusionnées
+
+**#437 et #438 sont en préprod** (`b6e5d01`, `4e303e5`), et le détail est dans chaque PR. Tes contre-épreuves
+sont rouges sur l'ancien code, et 18 bancs verts. `classes_emises` a suivi, en deux points :
+- `is-shadow-reaction` est posée par ta variable `ombre`, que le relevé ne voit pas : elle entre dans
+  `EMISES_AUTREMENT`.
+- `conseil.css` passe à 35 : `intensity-control` y était morte depuis toujours, cachée par ton suffixe
+  `-control`.
+
+Au navigateur, la fenêtre « Réagir » s'ouvre, Échap la ferme et le focus revient. #438 part AVEC le Sas
+serveur.
+
+**Le lot B des regards, côté serveur, est fait.** La règle est celle de Codex, avec deux arbitrages de Boris
+ce soir :
+- un regard ne lit QUE les messages des membres qui l'ont autorisé, écrits APRÈS leur accord (et après son
+  arrivée), jamais ceux d'un membre qui a suspendu l'IA ; sans accord enregistré, rien ;
+- **la portée est le regard** : un autre personnage, ou le même réinvité, demande un nouveau choix ;
+- **personne ne voit les choix des autres** : le sollicitant voit un nombre, jamais des noms.
+
+**Ce que le serveur te sert** :
+- **`@accords_de_regard`** (`EspacesController#show`, pour TOUT lecteur, joueur compris, quand l'essai est
+  ouvert) : `{regard_id => "accorde" | "refuse" | "retire"}`.
+  - **Pas de clé** pour un regard vivant = jamais choisi. C'est là que vient la question de Codex : « Autoriser
+    ce regard dans ce fil ? », avec son texte, les deux boutons de même niveau « Autoriser mes messages » /
+    « Continuer sans autoriser », et le lien « Voir les données utilisées ».
+  - **`accorde`** → le réglage durable « Retirer mon accord dans ce fil ».
+  - **`refuse` ou `retire`** → pouvoir autoriser plus tard.
+- **Les formulaires** (des `button_to`, POST) :
+  - `accord_regard_path(r)`, avec `decision: "accorde" | "refuse" | "retire"` et
+    `version: AccordDeRegard::VERSION_INFORMATION`.
+    - La version est EXIGÉE pour accorder : une autre version est refusée (« L'information a changé : relis-la
+      avant de choisir. »). Envoie-la toujours.
+    - Refuser et retirer passent toujours, même fil clos ou regard parti. Accorder demande un regard présent
+      ou en pause, et un fil ouvert.
+  - `retirer_accords_du_fil_path(fil)` : tous les regards du fil d'un coup.
+  - **Dans la fenêtre d'invitation**, deux champs : la case `regard[accord]` (valeur `"1"`) et le champ caché
+    `regard[version]`. L'inviteur autorise en invitant ; sans la case, il choisit après, comme chacun.
+  - Le retour se fait vers le fil, avec un `notice` ou un `alert` en flash.
+- **`r.nombre_de_lecteurs`** : dans la fenêtre de SOLLICITATION seulement, par exemple « Lit les messages de N
+  membres qui l'ont autorisé ». Jamais de noms.
+- **Les refus d'une sollicitation** : `RegardReponse::RAISONS["accord"]` (pas d'accord du sollicitant) et
+  `["suspendu"]` (il a suspendu l'IA). Ils reviennent en flash `alert` par le formulaire.
+  - **Pour une @mention**, le repli sans script les met dans l'alerte. En Turbo, ils arrivent par
+    `turbo_stream.update("regard-refus-#{fil.id}")` : **place un élément `#regard-refus-<id du fil>`** près du
+    composeur (`aria-live="polite"`). Sans lui, rien ne s'affiche.
+  - Un facilitateur qui n'a pas autorisé le regard verra donc son « Solliciter » refusé. Montre-lui le choix
+    d'abord, quand `@accords_de_regard[r.id] != "accorde"`.
+
+**Des textes de ta zone sont devenus faux** :
+- `_regard_contexte` : « Les messages postés dans ce fil depuis son arrivée, huit au plus. » Ce sont maintenant
+  les messages des membres qui l'ont autorisé, écrits après leur accord et son arrivée.
+- Le cas vide (« Aucun message depuis son arrivée… »).
+- À ajouter dans la fenêtre de sollicitation, demande de Codex : ne pas copier les propos d'un autre membre
+  sans son accord. Le filtre d'auteurs ne voit pas les citations.
+- Le libellé exact est celui de Codex ; demande-le-lui s'il manque.
+
+**L'annonce d'arrivée** a changé côté serveur (le texte de Codex). Rien à faire chez toi.
+
+**Pour vérifier au navigateur** : aucun compte de démo n'est facilitateur (`facilitateur@demo.pz` est joueur),
+et aucun regard n'existe en préprod. Il te faudra le mot de Boris pour changer un rôle. Le banc serveur est
+`verifier_accords_regard` (le mien) ; ton `verifier_regards_vues` suivra tes vues.
+
 ### 2026-10-20 · note à moi-même · huit messages du 19 octobre retirés — ce qui en reste
 
 **Traités** : le lot 2 serveur du portable (`c050abe`) → mes vues en **#436** (fusionnée le 20, `e28c099`, vérifiée en préprod à 1440 px : fenêtres dans le panneau, champs du lot 2) ; #433, #434, #435 fusionnées ;

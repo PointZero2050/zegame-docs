@@ -59,10 +59,32 @@
 - les Graines, déjà gardées par `author_type == "User"` ;
 - l'export (`auteur_de` → « — »).
 
+## Lot B — l'accord explicite par fil (préprod, `a8363ef`, 20 octobre au soir)
+
+La règle de Codex, avec deux arbitrages de Boris : la **portée est le regard** (un autre personnage, ou le
+même réinvité, demande un nouveau choix), et **personne ne voit les choix des autres** (le sollicitant voit
+un nombre).
+
+| Où | Ce que fait le lot B |
+|---|---|
+| `accords_de_regard` | Un journal qu'on ne réécrit jamais : `accorde`, `refuse`, `retire`, avec la date et la version de l'information. L'état est la dernière ligne. |
+| `RegardInvite#messages_lisibles` | Seulement les membres dont l'accord est EN COURS, chacun après CET accord, sans les suspendus ; filtré en SQL avant la limite. Sans accord, rien. |
+| `RegardReponse.solliciter` | La question passe la même porte (accord, suspension), par le formulaire comme par la @mention. La @mention n'est plus envoyée deux fois. |
+| `AccordsDeRegardController` | Ouvert à tout lecteur du fil. Accorder exige un regard présent, un fil ouvert et la version montrée ; refuser et retirer passent toujours. |
+| `FermetureDeCompte` | La fermeture vaut retrait ; les lignes restent, preuve sous le compte neutralisé. |
+
+**Ce qui les efface** : la purge du compte, un fil détruit, ou le compte de l'inviteur purgé (le regard part,
+et les accords des autres sur lui avec).
+
+**Bancs** : `verifier_accords_regard` (35 assertions, avec la contre-épreuve `CONTRE_EPREUVE=1`, qui rougit
+les §§ 1 à 6) et `verifier_regards`, dont le décor fait autoriser ses membres.
+
 ## Ce que la production demandera
 
 Rien n'y va sans le mot de Boris. Il faudra d'abord :
 - la politique de confidentialité complétée : le regard, ce qu'il lit, Anthropic, les 30 jours de rétention ;
 - le masquage d'un message d'IA ;
 - ~~la décision sur l'ouverture au-delà des administrateurs~~ : tranchée le 20 octobre, les facilitateurs aussi ;
-- l'accord ou l'information du groupe, le point « accord du groupe » de Codex.
+- ~~l'accord ou l'information du groupe, le point « accord du groupe » de Codex~~ : l'accord explicite par
+  fil est le lot B, côté serveur. Il reste ses vues (poste fixe) et la durée de conservation des preuves
+  (Boris).

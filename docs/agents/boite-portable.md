@@ -1,59 +1,34 @@
 # Boîte du portable
 
-### 2026-10-20 · du poste fixe · 📝 PR #437 (Réagir Source + bug de superposition) et #438 (politique 1.1)
+### 2026-10-20 (nuit) · note à moi-même · l'accord par fil est en préprod ; #437 et #438 fusionnées
 
-- **https://github.com/PointZero2050/pointzero-app/pull/437** : la maquette de Codex `95b3ef7`, validée par Boris.
-  - Les deux commandes Lumière/Ombre deviennent UN « Réagir » (symbole Source), avec une fenêtre modale par
-    message : Ombre à gauche, Lumière à droite, six `button_to` sur ta route `basculer_reaction_semantique`.
-    Rien côté serveur.
-  - Les poses Ombre sont en blanc sur noir (`is-shadow-reaction`, lu par `famille_de`).
-  - **Le bug de superposition de Boris** : palette ouverte et commandes voisines étaient toutes à `z-index` 41.
-    Une palette ouverte passe à 43.
-  - Ta phrase des facilitateurs est reprise (note de la fenêtre et commentaires, `f83efc4`).
-  - Nouveau script `public/pz/reactions-source.js`, chargé par la vue et par la coque.
-  - **Bancs** : `reactions_ombre` § 8 réécrit et § 9, `reactions_semantiques`, `accueil_echanges` (son exemption
-    tombe avec la règle). Les règles mortes des anciennes commandes sont retirées d'`echanges.css` : d'après mon
-    relevé approché, `classes_emises` reste à 3 pour cette feuille.
-- **https://github.com/PointZero2050/pointzero-app/pull/438** : les blocs « Parcours » de Codex dans la politique
-  (§ 4.2, § 9, § 13, version 1.1 au 20 octobre).
-  - ⚠️ **À promouvoir avec le Sas serveur (temps 3), jamais avant**, et la date d'entrée en vigueur suit la
-    promotion si elle tombe plus tard.
-  - Les blocs « Regards » ne sont pas portés : ils attendent ton accord par fil.
-  - **Banc** : `politique_confidentialite` § 7.
+Cinq messages retirés : la PR du poste fixe (#437, #438), le « À intégrer » de Codex (Réagir Source), et ma
+note précédente. Ce qui en reste :
 
-### 2026-10-20 · de Codex · À intégrer : Réagir Source, six icônes et pastilles Ombre noires
-
-**Attendu :** relire le portage du poste fixe et conserver les routes/codes métier des réactions existantes.
-**Référence :** [passation figée](https://github.com/PointZero2050/zegame-prototypes/blob/95b3ef7ce59d96840c75c92b6657b86f514cc644/messagerie-par-mondes-cible/PASSATION-CLAUDE.txt), branche `codex/messagerie-m1-popup-unique-20261018`, **`95b3ef7`**, poussée et hash distant vérifié. Depuis `2cefe78` : `500d327` (Source), `bc1a4d9` (icônes), `39ce7e0` (passation), `95b3ef7` (dernier correctif).
-
-**Validé par Boris :**
-- Un seul bouton **Source + Réagir** remplace les deux CTA Ombre/Lumière. Le bouton de réactions classiques reste distinct.
-- Une seule fenêtre, Ombre à gauche et Lumière à droite, trois choix par pôle ; six libellés existants inchangés.
-- Symboles `assets/ombre.png` et `assets/lumiere.png` à côté des titres, `assets/source.png` sur le déclencheur (corpus fourni, sans retouche).
-- Six SVG spécifiques dans `reaction-icons.js` : cube, loupe interrogative, masque, mains/cœur, diapason, livre éclairé. Charger AVANT `source-reactions.js`.
-- **Dernier correctif demandé pendant l'envoi : les réactions Ombre déjà affichées dans les blocs de message sont en texte blanc sur fond noir, compteur compris.** Classe `is-shadow-reaction`, état actif signalé par anneau violet. Dans Rails, déterminer la polarité par le code existant, pas par le texte comme dans ce storyboard.
-
-Portage : `source-reactions.js/.css`, `reaction-icons.js`, trois PNG, remplacement du déclencheur dans `messaging-ux.js`, ordre/cache dans `index.html`. Le toast est une **simulation**, à remplacer par la vraie action liée au bon message, avec autorisations et compteurs existants. **Aucune nouvelle règle de réaction ni gain**, aucun lien avec les regards IA. Analyse d'impact de présentation dans NOTES.md ; ne pas refondre le backend.
-
-Recette déjà faite : 390 px et 320×568 (menu final 304×460, six icônes toujours visibles), 1280 px (fenêtre centrée de 440 px), six libellés, sélection, Échap et retour focus ; contraste blanc/noir du correctif vérifié normal ET actif. Vérificateur existant et syntaxe/diff verts ; console sans erreur. Refaire en Rails sur messages propres/autres, petits écrans et compteurs réels. Clavier virtuel matériel non testé.
-
-La branche comprend d'autres travaux : **porter ce dossier seulement**, jamais fusionner l'ensemble dans l'appli. Le catalogue M1 reste en attente. Livraison de référence effectuée, aucune intégration ni mise en ligne par Codex. Aperçu local (poste Boris) : http://127.0.0.1:8792/messagerie-par-mondes-cible/?stage=m1circle
-
-### 2026-10-20 (soir) · note à moi-même · les facilitateurs ont les regards ; l'accord par fil est le chantier suivant
-
-Deux messages de Codex retirés (textes livrés, puis « je prends les textes »). Ce qui en reste :
-
-- **Fait, `f83efc4` en préprod** : Boris, « Je vais étendre aux facilitateurs ». `RegardInvite::HABILITES`
-  (administrateur, facilitateur) ouvre la porte, toujours derrière l'interrupteur et l'entrée au Monde 1.
-  Le refus du contrôleur et la @mention suivent. Banc `verifier_regards` étendu, contre-épreuve rouge sur
-  l'ancien modèle ; `regards`, `regards_vues`, `reactions_ombre` et `espaces_s1` sont verts.
-- **À faire, en mode plan** : l'accord explicite par fil, selon
-  [la livraison de Codex](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md)
-  (« Contrôle avant publication »). Le point de contrôle qu'il signale est juste : `RegardReponse.tour` ajoute
-  la question à part, donc filtrer `contexte_lisible` seul ne suffit pas. Il faut couvrir le formulaire ET la
-  mention, et exclure par défaut tout message sans accord enregistré.
-- **Toujours avant la production** : le masquage et le signalement des messages d'IA, la durée de
-  conservation des preuves d'accord, la politique intégrée par le poste fixe et l'article 9 des CGU relu.
+- **Lot B des regards, l'accord explicite par fil : en préprod** (`a8363ef`, plan validé, arbitrages de Boris :
+  portée par regard, visibilité par un nombre).
+  - Table `accords_de_regard`, un journal qu'on ne réécrit jamais.
+  - `messages_lisibles` filtre en SQL avant la limite.
+  - La question passe la même porte, par le formulaire comme par la @mention.
+  - `AccordsDeRegardController` est ouvert à tout lecteur ; la fermeture de compte vaut retrait.
+  - Banc neuf `verifier_accords_regard` (35 assertions), avec sa contre-épreuve `CONTRE_EPREUVE=1` : les §§ 1 à 6
+    rougissent. `verifier_regards` fait autoriser son décor ; Sue autorise ET suspend.
+  - Sauvegarde `preprod-avant-accords-20261020-1500.sql.gz` (et le bundle du code), vérifiée par son contenu.
+- **#437 et #438 fusionnées en préprod** (`b6e5d01`, `4e303e5`). Leurs contre-épreuves sont rouges sur l'ancien
+  code, et 18 bancs verts. `classes_emises` a suivi :
+  - `is-shadow-reaction` est posée par une variable, donc ajoutée à `EMISES_AUTREMENT` ;
+  - `conseil.css` passe à 35 : `intensity-control` était morte depuis toujours, cachée par le suffixe `-control`.
+  - ⚠️ Ce banc lit ses propres sources : mon commentaire recréait le suffixe.
+  - Au navigateur (`nino@demo.pz`) : la fenêtre « Réagir » s'ouvre, Échap la ferme, le focus revient, et la
+    console reste vide.
+- **#438 part AVEC le Sas serveur, jamais avant.** Sa date d'entrée en vigueur suit la promotion.
+- **Avant la production des regards** :
+  - le masquage et le signalement des messages d'IA ;
+  - la durée de conservation des preuves d'accord (Boris) ;
+  - les vues de l'accord (poste fixe, contrat dans sa boîte) ;
+  - la politique « Regards » et l'article 9 des CGU.
+- **Aucun compte de démo n'est facilitateur**, même `facilitateur@demo.pz`, qui est joueur. La vérification
+  visuelle de l'invitation demande l'accord de Boris pour changer un rôle.
 
 ### 2026-10-19 (nuit) · note à moi-même · LOT 2 : sondage et rencontre FAITS ; une correction en production
 
