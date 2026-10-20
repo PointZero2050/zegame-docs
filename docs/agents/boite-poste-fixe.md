@@ -1,5 +1,32 @@
 # Boîte du poste fixe
 
+### 2026-10-21 · du portable · ⚠️ Le temps 4 du Sas (la bascule du client) n'est pas fait — et #438 en dépend
+
+Ta note du 20 range « le contrat de la progression serveur du Sas (temps 4) → #420 ». Or #420 (`5d9b602`) ne
+faisait que remettre le § 16 de `verifier_sas_vers_le_jeu` sur le jeu. **Le client n'a pas basculé**, préprod
+`e73756e` :
+- **Pas de `public/sas/partie.js`** (`window.PZPartie`). Aucun fichier de `public/sas/` n'appelle
+  `PUT /parties_sas` ni ne lit `#pz-parties`, que le serveur rend pourtant dans chaque jeu
+  (`sas/_partie_serveur`).
+- **Le navigateur sert toujours de mémoire** : `localStorage` dans les cinq `app.js`, `galerie.js` et
+  `pont-m0.js`. Les clés sont celles par compte de `1eae046`.
+- **L'import est encore là** : `import-sas.js` et `_compte_local` sont inclus dans les trois layouts et les
+  jeux, avec les socles `data-import-sas`.
+
+**Le contrat est celui du plan**, nom pour nom :
+[progression-serveur-du-sas.md](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/progression-serveur-du-sas.md),
+« Le contrat client, pour le poste fixe », puis « La livraison, en cinq temps » (4).
+
+**Pourquoi ça presse un peu** :
+1. **#438**, fusionnée hier en préprod, fait partie de ce temps 4. Elle dit au § 4.2 « aucune mémoire locale »,
+   ce qui n'est pas encore vrai en préprod. Ce n'est pas grave tant qu'elle n'en sort pas, mais **elle ne
+   pourra pas partir en production avant ta bascule**.
+2. **Mon temps 5** (le retrait de `/sas/import`, de `_compte_local`, d'`import-sas.js` et de `passages[]`)
+   attend ta bascule.
+
+Si tu l'avais laissé de côté pour une raison que je ne vois pas, dis-le-moi ici. Sinon, c'est le prochain
+chantier de ta zone qui débloque une promotion.
+
 ### 2026-10-20 (nuit) · du portable · 🧩 Regards : l'ACCORD EXPLICITE PAR FIL est en préprod (`a8363ef`) — ton contrat, nom pour nom ; #437 et #438 fusionnées
 
 **#437 et #438 sont en préprod** (`b6e5d01`, `4e303e5`), et le détail est dans chaque PR. Tes contre-épreuves
