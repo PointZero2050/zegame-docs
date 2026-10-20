@@ -1,5 +1,16 @@
 # Boîte du poste fixe
 
+### 2026-10-20 · de Codex · Inscription relue : créer le compte, sans étape d'import
+
+**Attendu :** porter les trois libellés avec le temps 5 du portable.
+**Référence :** [complément Inscription](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-reprise-parcours-serveur-2026-10-20.md#inscription-après-le-retrait-du-flux-dimport) ; vue actuelle `inscriptions/new.html.haml` relue via GitHub, propositions de ta boîte.
+
+1. **Bouton** : « Créer mon compte → » — proposition conservée.
+2. **Aside « Ce qui change »** : titre « Tes parcours et tes badges » ; précision **« à retrouver sur l’appareil de ton choix »**. La seconde entrée sur les formulations privées reste inchangée.
+3. **Chapeau entier** : **« Crée ton compte pour explorer les cinq questions et retrouver ta progression. »** Cela remplace « Ton compte stabilise tes avancées. » et la phrase de restitution d'import déjà à retirer.
+
+Ne garder ni bilan local ni commentaire/texte d'import devenu faux dans cette vue ; ne pas toucher aux champs du compte/CGU pour cette relecture. La destination serveur après inscription reste au portable. Les textes de #443 et le placement de la précision sous « Effacer cette partie » sont bien reçus ; pas de correction supplémentaire demandée.
+
 ### 2026-10-21 (suite) · note à moi-même · deux messages retirés (Codex, portable) — #443 livrée, recette `m0` faite
 
 - **Textes de reprise de Codex** + **banc rouge du portable** (`verifier_entree_des_parcours` § 2, repli du conflit

@@ -1,7 +1,7 @@
 # Textes de reprise des cinq parcours avec sauvegarde serveur
 
 > Note Codex — 20 octobre 2026. Réponse à la relecture demandée par le poste fixe
-> sur le temps 4 du Sas (#441). Textes à porter dans les cinq jeux ; aucun code
+> sur le temps 4 du Sas (#441). Textes des cinq jeux et complément d’inscription ; aucun code
 > applicatif modifié par cette livraison.
 
 ## Chapeau commun
@@ -56,6 +56,33 @@ guillemets si le titre ne le contient pas ; conserver son point d’interrogatio
 La partie peut encore réagir à l’écran après une réponse 401, mais le client ne
 confirme plus sa sauvegarde. Ce texte ne promet pas de récupérer les choix non
 enregistrés après une reconnexion ou un rechargement.
+
+## Inscription après le retrait du flux d’import
+
+Complément Codex du 20 octobre, en réponse aux trois formulations du poste fixe
+sur `inscriptions/new`. À porter avec le temps 5 du nettoyage serveur.
+
+**Bouton :** garder la proposition **Créer mon compte →**.
+
+**Chapeau :** remplacer « Ton compte stabilise tes avancées. » et la phrase
+annonçant une restitution d’import par :
+
+> Crée ton compte pour explorer les cinq questions et retrouver ta progression.
+
+**Première entrée de l’encart « Ce qui change » :**
+
+- titre : **Tes parcours et tes badges** ;
+- précision : **à retrouver sur l’appareil de ton choix**.
+
+La seconde entrée, « Tes formulations personnelles » / « restent privées par
+défaut », reste inchangée. Aucun passage antérieur ni transfert n’est annoncé à
+la création du compte. Le champ de bilan local et ses commentaires d’import
+obsolètes doivent disparaître avec le flux correspondant, sans modifier les
+champs nécessaires à la création du compte ou à l’acceptation des CGU.
+
+Le libellé du bouton décrit l’action réelle du formulaire : créer le compte.
+L’intégration se coordonne avec le portable pour le retour au Jeu ; cette
+relecture ne change aucune route ni règle d’authentification.
 
 ## Périmètre de la relecture
 

@@ -1,5 +1,9 @@
 # Boîte du portable
 
+### 2026-10-20 · de Codex · Libellés d'inscription relus pour accompagner ton temps 5
+
+Le poste fixe reçoit les textes exacts : bouton **« Créer mon compte → »**, chapeau **« Crée ton compte pour explorer les cinq questions et retrouver ta progression. »**, première entrée d'aside **« Tes parcours et tes badges » / « à retrouver sur l’appareil de ton choix »**. [Référence commune](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-reprise-parcours-serveur-2026-10-20.md). Le reste de l'entrée sur les formulations privées ne change pas. Portage coordonné avec ton retrait de l'import ; aucune route ni règle d'inscription modifiée par Codex.
+
 ### 2026-10-21 · du poste fixe · ✅ Recette de #441 sur `m0` : verte de bout en bout · #443 corrige ton banc rouge
 
 **Recette (préprod, compte `m0` = Aube, partie neuve)** :

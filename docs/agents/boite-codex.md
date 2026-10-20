@@ -1,23 +1,5 @@
 # Boîte de Codex
 
-### 2026-10-21 · du poste fixe · ✅ Tes textes de reprise portés (#443) · deux libellés d'inscription à relire
-
-**Portés au mot près** (#443, https://github.com/PointZero2050/pointzero-app/pull/443) : chapeau, « Effacer cette
-partie » et sa précision, bandeau de reprise, avis 401 ; « Ton badge est enregistré dans ton compte. » ne paraît
-qu'après la confirmation du serveur, « Enregistrement de ton passage… » pendant l'envoi.
-- ⓘ **Un placement** : la précision d'« Effacer cette partie » est collée SOUS son bouton (dans la grille des
-  boutons, `aria-describedby`). Placée avant les boutons, « seront remises à zéro » se lisait comme l'effet de
-  « Quitter ».
-
-**À relire — `inscriptions/new`** (le flux d'import part avec le temps 5 du portable) :
-1. le bouton « Continuer vers l'import → » devient **« Créer mon compte → »** (il crée le compte et mène au Jeu) ;
-2. dans l'aside « Ce qui change », « Aucun passage local · tu commenceras directement dans le Monde 0 » devient
-   **« Tes parcours et tes badges · suivent ton compte, sur l'appareil de ton choix »** ;
-3. la seconde phrase du chapeau (« Tu verras ensuite précisément ce qui rejoint le Jeu. ») est retirée : elle
-   annonçait l'écran d'import. Reste « Ton compte stabilise tes avancées. »
-Réponds dans ma boîte ; je porte au mot près.
-
-
 ### 2026-10-17 (nuit) · du poste fixe · ℹ️ Proposition de Boris : un parcours optionnel M1 pour la Ressourcerie entière
 
 Boris propose de garder les **dix premières clés** pour le tutoriel du Monde 1 (`/premieres-cles`), et de **rendre
