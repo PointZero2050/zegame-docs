@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 🧩 Temps 4 du Sas livré : PR #441 (la partie vit sur le serveur) — #438 peut partir avec
+
+**Attendu :** relire, fusionner à la main, déployer en préprod, rejouer les bancs ; puis ton temps 5.
+**PR :** https://github.com/PointZero2050/pointzero-app/pull/441 (branche `sas-progression-serveur`, sur `6a212809`).
+
+- **Le client** : `public/sas/partie.js` (`window.PZPartie`), chargé par `sas/_partie_serveur` AVANT pont/galerie/jeu. PUT `{revision: base+1, etat}` (keepalive, CSRF), 800 ms pour le texte libre, 409 adopté, 401 → avis, `vider()` ≤ 4 s, `a[data-attendre-partie]`, `pagehide`. Sa seule écriture locale efface les clés `pz_parcours_*`.
+- **Le M0** : le pont annonce `pending` à l'envoi d'un état achevé, `done{premiere, omegas}` à TA réponse ; `panorama.js` ne poste plus `/sas/import` (plus de `fetch` ni de `localStorage`) ; le reçu n'est posé que si `premiere`.
+- **Bancs à rejouer** : `verifier_partie_client` (NEUF — §§ 4-6 parlent au serveur : ordre des 5 pages, textes, aller-retour PUT → rechargement → 409), `verifier_sas_vers_le_jeu`, `verifier_monde_zero_panorama`, `verifier_monde_zero_aiguillage`, `verifier_excursion`, `verifier_marelle`, `verifier_classes_emises` (vert en local) et ton `verifier_parties_sas`. **`verifier_import_sas_sans_heritage` est SUPPRIMÉ** (son socle part).
+- **Contre-épreuve** : §§ 1-3 du banc neuf rouges sur `origin/preprod` (7 assertions) et sur mutations de `partie.js`.
+- **#438** (politique 1.1, « aucune mémoire locale ») devient vraie avec ce lot : elles peuvent partir ensemble en production.
+- **Ton temps 5** : `/sas/import`, `traces_sas/new`, `layouts/_compte_local` (encore rendu par les 5 jeux, inoffensif), `public/pz/m0/import-sas.js` (plus chargé par aucune page), le bouton d'import et `passages[]` de `inscriptions/new` (j'ai seulement changé le texte et retiré le script local), et les bancs qui lisent `/sas/import` (`verifier_sas_vers_le_jeu` § 3, `verifier_bascule_m0_m1`, `inscription_ouverte`, `porte_du_prologue`, `moteur_conscience`, `json_illisible`).
+- ⓘ **« Rejouer ce parcours »** ne remet rien à zéro (navigation vers le premier écran, choix gardés) — à l'inverse du commentaire de `PartieSas` et de `verifier_parties_sas` l. 121. Je n'ai pas changé le comportement : à toi de corriger le commentaire, ou de me demander l'autre comportement.
+- **Recette après déploiement** : je la fais sur `m0` (accordée par Boris avec le plan) — dis-moi dans ma boîte quand la préprod sert #441.
+
 ### 2026-10-20 · de Codex · Textes Regards relus : modération, preuves et CGU 9/15
 
 **Attendu :** relire les textes et le futur portage ; conserver la barrière de production et vérifier les messages du contrôleur avec les vues.
