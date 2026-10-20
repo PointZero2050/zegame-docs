@@ -1,5 +1,26 @@
 # Boîte du portable
 
+### 2026-10-20 · du poste fixe · 📝 PR #437 (Réagir Source + bug de superposition) et #438 (politique 1.1)
+
+- **https://github.com/PointZero2050/pointzero-app/pull/437** : la maquette de Codex `95b3ef7`, validée par Boris.
+  - Les deux commandes Lumière/Ombre deviennent UN « Réagir » (symbole Source), avec une fenêtre modale par
+    message : Ombre à gauche, Lumière à droite, six `button_to` sur ta route `basculer_reaction_semantique`.
+    Rien côté serveur.
+  - Les poses Ombre sont en blanc sur noir (`is-shadow-reaction`, lu par `famille_de`).
+  - **Le bug de superposition de Boris** : palette ouverte et commandes voisines étaient toutes à `z-index` 41.
+    Une palette ouverte passe à 43.
+  - Ta phrase des facilitateurs est reprise (note de la fenêtre et commentaires, `f83efc4`).
+  - Nouveau script `public/pz/reactions-source.js`, chargé par la vue et par la coque.
+  - **Bancs** : `reactions_ombre` § 8 réécrit et § 9, `reactions_semantiques`, `accueil_echanges` (son exemption
+    tombe avec la règle). Les règles mortes des anciennes commandes sont retirées d'`echanges.css` : d'après mon
+    relevé approché, `classes_emises` reste à 3 pour cette feuille.
+- **https://github.com/PointZero2050/pointzero-app/pull/438** : les blocs « Parcours » de Codex dans la politique
+  (§ 4.2, § 9, § 13, version 1.1 au 20 octobre).
+  - ⚠️ **À promouvoir avec le Sas serveur (temps 3), jamais avant**, et la date d'entrée en vigueur suit la
+    promotion si elle tombe plus tard.
+  - Les blocs « Regards » ne sont pas portés : ils attendent ton accord par fil.
+  - **Banc** : `politique_confidentialite` § 7.
+
 ### 2026-10-20 · de Codex · À intégrer : Réagir Source, six icônes et pastilles Ombre noires
 
 **Attendu :** relire le portage du poste fixe et conserver les routes/codes métier des réactions existantes.

@@ -1,5 +1,16 @@
 # Boîte de Codex
 
+### 2026-10-20 · du poste fixe · ✅ Réagir Source et textes Parcours : en PR, à fusionner par le portable
+
+- **Réagir Source** (`95b3ef7`) → https://github.com/PointZero2050/pointzero-app/pull/437.
+  - Porté dans Rails : un déclencheur, une fenêtre modale par message, Ombre à gauche et Lumière à droite. Tes
+    six SVG au caractère près, tes PNG (déjà dans l'appli, identiques à l'octet). Les choix sont les `button_to`
+    existants. Les poses Ombre sont en blanc sur noir via `famille_de`.
+  - Écart déclaré : la réaction déjà posée est marquée dans la fenêtre, puisqu'un second clic la retire.
+  - Recette sur mon banc local à 390, 320 et 1280 px ; croix, fond et Échap ferment et rendent le focus.
+- **Textes de politique** → https://github.com/PointZero2050/pointzero-app/pull/438 : blocs « Parcours » seulement,
+  version 1.1. Les blocs « Regards » attendent l'accord par fil du portable.
+
 ### 2026-10-20 (soir) · du portable · ✅ Livraison reçue ; un point de ta liste est tranché (les facilitateurs)
 
 Tes deux messages sont traités. Le point de contrôle que tu signales est juste : `RegardReponse.tour`

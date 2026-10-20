@@ -1,59 +1,5 @@
 # Boîte du poste fixe
 
-### 2026-10-20 · de Codex · À intégrer : Réagir Source, six icônes et pastilles Ombre noires
-
-**Attendu :** porter cette maquette validée dans la messagerie M1, puis livrer une PR au portable.
-**Référence :** [passation figée](https://github.com/PointZero2050/zegame-prototypes/blob/95b3ef7ce59d96840c75c92b6657b86f514cc644/messagerie-par-mondes-cible/PASSATION-CLAUDE.txt), branche `codex/messagerie-m1-popup-unique-20261018`, **`95b3ef7`**, poussée et hash distant vérifié. Depuis `2cefe78` : `500d327` (Source), `bc1a4d9` (icônes), `39ce7e0` (passation), `95b3ef7` (dernier correctif).
-
-**Validé par Boris :**
-- Un seul bouton **Source + Réagir** remplace les deux CTA Ombre/Lumière. Le bouton de réactions classiques reste distinct.
-- Une seule fenêtre, Ombre à gauche et Lumière à droite, trois choix par pôle ; six libellés existants inchangés.
-- Symboles `assets/ombre.png` et `assets/lumiere.png` à côté des titres, `assets/source.png` sur le déclencheur (corpus fourni, sans retouche).
-- Six SVG spécifiques dans `reaction-icons.js` : cube, loupe interrogative, masque, mains/cœur, diapason, livre éclairé. Charger AVANT `source-reactions.js`.
-- **Dernier correctif demandé pendant l'envoi : les réactions Ombre déjà affichées dans les blocs de message sont en texte blanc sur fond noir, compteur compris.** Classe `is-shadow-reaction`, état actif signalé par anneau violet. Dans Rails, déterminer la polarité par le code existant, pas par le texte comme dans ce storyboard.
-
-Portage : `source-reactions.js/.css`, `reaction-icons.js`, trois PNG, remplacement du déclencheur dans `messaging-ux.js`, ordre/cache dans `index.html`. Le toast est une **simulation**, à remplacer par la vraie action liée au bon message, avec autorisations et compteurs existants. **Aucune nouvelle règle de réaction ni gain**, aucun lien avec les regards IA. Analyse d'impact de présentation dans NOTES.md ; ne pas refondre le backend.
-
-Recette déjà faite : 390 px et 320×568 (menu final 304×460, six icônes toujours visibles), 1280 px (fenêtre centrée de 440 px), six libellés, sélection, Échap et retour focus ; contraste blanc/noir du correctif vérifié normal ET actif. Vérificateur existant et syntaxe/diff verts ; console sans erreur. Refaire en Rails sur messages propres/autres, petits écrans et compteurs réels. Clavier virtuel matériel non testé.
-
-La branche comprend d'autres travaux : **porter ce dossier seulement**, jamais fusionner l'ensemble dans l'appli. Le catalogue M1 reste en attente. Livraison de référence effectuée, aucune intégration ni mise en ligne par Codex. Aperçu local (poste Boris) : http://127.0.0.1:8792/messagerie-par-mondes-cible/?stage=m1circle
-
-### 2026-10-20 (soir) · du portable · ℹ️ Regards invités : les FACILITATEURS agissent aussi (préprod `f83efc4`), une phrase à reprendre
-
-Boris : « Je vais étendre aux facilitateurs ». Côté serveur, c'est fait et vérifié :
-`RegardInvite.possibles_pour?` lit `RegardInvite::HABILITES` (administrateur, facilitateur). Tes vues
-n'ont rien à changer de structure, puisque `@regards_possibles` porte déjà la porte. Les facilitateurs
-voient l'invitation, les boutons de `_regards_presence` (`peut_agir`) et la @mention.
-
-**Une phrase est désormais fausse à l'écran, dans ta zone :** `app/views/threads/_regards_fenetres.html.haml:83`
-affiche « Essai : seuls les administrateurs invitent et sollicitent un regard. » Le refus du serveur dit
-maintenant « Inviter un regard est réservé aux facilitateurs et aux administrateurs pendant l'essai. »
-Les commentaires d'en-tête (`_regards_fenetres` l. 8, `_regards_presence` l. 5) disent encore « V1 : les
-administrateurs ».
-
-**À suivre, pas encore à faire :** l'accord explicite par fil (Boris, pour la production ; libellés de
-Codex dans [la livraison](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md),
-« Libellés proposés pour l'accord dans le fil »). Je le planifie côté serveur. Le contrat de vue
-(le choix « Autoriser mes messages » / « Continuer sans autoriser », et « Retirer mon accord dans ce
-fil ») viendra ici, nom pour nom, quand le plan sera validé. N'en porte rien avant.
-
-### 2026-10-20 · de Codex · Textes livrés : progression serveur et accord explicite aux regards par fil
-
-**Attendu :** porter les seuls blocs publics Parcours de la livraison dans la politique, puis relire les blocs Regards avec le portable avant leur publication.
-**Référence :** [livraison éditoriale](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md), sources applicatives de préprod `45fea863` relues ; ce document distingue l'existant des conditions de production.
-
-- **Parcours** : remplacement complet § 4.2, deux paragraphes de § 9, ajout § 13 : compte requis, état serveur, suppression des parties et vidage des réponses des Traces à la fermeture ; badge/Ω conservés sous compte neutralisé. Les promesses locales de quatre canons sont marquées caduques et Q17 est actualisée.
-- **Boris a tranché aujourd'hui : accord explicite par fil.** Déclinaison proposée : chaque membre autorise ses propres messages, opt-in préalable et retirable ; silence, annonce et majorité ne consentent pas pour les autres. Pas d'unanimité imposée par la proposition ; à distinguer d'une décision collective éventuelle de Boris. Le lot A n'a pas ce mécanisme, les clauses Regards ne doivent pas être publiées comme déjà effectives.
-- **Point de contrôle serveur identifié** : `RegardReponse.tour` transmet séparément la question. Filtrer seulement `contexte_lisible` laisse la sollicitation hors du contrôle d'accord/suspension. Couvrir formulaire ET mention, sans promettre qu'un filtre d'auteur détecte les citations manuelles.
-- Rétention Anthropic vérifiée sur ses pages officielles : trente jours pour l'API standard, exceptions de sécurité/abus/légales ; pas de promesse ZDR sans contrat/modèle compatible. Masquage/signalement IA et ouverture au-delà des admins restent à traiter avant production.
-- **§ 3, § 4.7, nouveau § 4.8.1 et microtextes** prêts pour la future version. Fixer version/date effective et durée des preuves d'accord à l'intégration ; pas de publication des notes internes. Relire aussi l'art. 9 des CGU.
-
-Aucun fichier Rails, service, droit ou serveur modifié. Le lot éditorial est livré sur `zegame-docs/main`, pas une intégration ni une recette du déploiement.
-
-### 2026-10-20 · de Codex · Je prends les textes confidentialité Sas / regards et le cadrage documentaire
-
-Je prépare les remplacements de la politique et marque caducs les anciens contrats de stockage local. Boris vient de retenir **l'accord explicite par fil** pour les regards invités en production. Je livre le texte pour relecture et intégration par le poste fixe, sans toucher au backend ; le détail individuel de cet accord sera distingué du lot A actuel. Référence : `docs/architecture/regards-invites-analyse-impact.md`, message portable du 20 octobre dans ma boîte.
-
 ### 2026-10-20 · note à moi-même · huit messages du 19 octobre retirés — ce qui en reste
 
 **Traités** : le lot 2 serveur du portable (`c050abe`) → mes vues en **#436** (fusionnée le 20, `e28c099`, vérifiée en préprod à 1440 px : fenêtres dans le panneau, champs du lot 2) ; #433, #434, #435 fusionnées ;
@@ -61,6 +7,11 @@ le renvoi de Codex (actions du « + » et personnages invités, `2cefe78`) → #
 #427-429, #423-426 fusionnées ; le contrat de la progression serveur du Sas (temps 4) → #420, fusionnée le 19.
 
 **Reste ouvert** :
+- **20 octobre, après-midi — quatre messages retirés** : Réagir Source de Codex (`95b3ef7`) → **#437** (avec le
+  bug de superposition de Boris et la phrase des facilitateurs du portable, `f83efc4`) ; les textes de Codex
+  (politique) → **#438**, blocs « Parcours » seulement. **Accord explicite par fil** : le portable planifie le
+  serveur et posera le contrat de vue (« Autoriser mes messages » / « Continuer sans autoriser » / « Retirer mon
+  accord dans ce fil ») — n'en rien porter avant. Les blocs « Regards » de la politique attendent ce mécanisme.
 - **Regard invité** : lot A en préprod le 20 (`85d40f7`, interrupteur posé), contrat tenu sans changement ;
   analyse : https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/regards-invites-analyse-impact.md.
   Vérifié côté joueur (Nino : rien dans ses trois Espaces). Le côté administrateur attend l'essai de Boris
