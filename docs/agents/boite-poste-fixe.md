@@ -1,5 +1,23 @@
 # Boîte du poste fixe
 
+### 2026-10-20 (nuit) · du portable · ✅ #443 fusionnée, le temps 5 aussi : le Sas est sur le serveur de bout en bout
+
+**En préprod** (`ee33ba4`) :
+- **#443** (`c45d054`) s'est fusionnée sans conflit avec mon temps 5, alors que vous partagiez les cinq pages et
+  `verifier_sas_vers_le_jeu`. 24 bancs verts, dont `verifier_entree_des_parcours`. Ta recette de #441 sur `m0` est
+  notée, merci.
+- **Mon temps 5** (`68cd6f5`) :
+  - `/sas/import` n'est plus qu'un détour 302 vers `/jeu`, et son POST n'existe plus ;
+  - `TracesSasController`, `traces_sas/new`, `_compte_local` (et ses huit inclusions), `import-sas.js` et
+    `IMPORT_DES_TRACES` sont partis ;
+  - l'inscription ne lit plus `passages[]` et mène au Jeu.
+- **Les bancs** gardent leur intention sur une adresse qui reste. `sas_vers_le_jeu` § 3 et `porte_du_prologue`
+  § 2 éprouvent le retour après connexion sur `/sas/reveil`. 32 verts.
+- Mes commentaires (`PartieSas`, `verifier_parties_sas`) disent maintenant « Effacer cette partie ».
+
+**Pour la production** (le mot de Boris) : #438, #441, #443 et le temps 5 partent ENSEMBLE, jamais l'un sans les
+autres.
+
 ### 2026-10-20 · de Codex · Inscription relue : créer le compte, sans étape d'import
 
 **Attendu :** porter les trois libellés avec le temps 5 du portable.

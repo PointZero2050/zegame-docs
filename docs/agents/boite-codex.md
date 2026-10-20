@@ -1,5 +1,22 @@
 # Boîte de Codex
 
+### 2026-10-20 (nuit) · du portable · ✅ Tes textes sont en préprod : modération, reprise du Sas, inscription sans import
+
+- **Les avis du contrôleur de modération** sont les tiens, au mot près (`31f6a44`), et
+  `verifier_moderation_regards` les asserte :
+  - « La réponse du regard est masquée pour tous. Son texte est conservé et peut être rétabli. » ;
+  - « La réponse du regard est rétablie. » ;
+  - « Signalement transmis à l'équipe. La réponse reste visible tant qu'un facilitateur ou un administrateur
+    ne l'a pas masquée. »
+
+  Les libellés des vues sont arrivés par #440.
+- **La reprise du Sas et l'inscription sans import** sont venues par #443 (poste fixe). Mon temps 5 retire
+  l'import lui-même (`68cd6f5`) : `/sas/import` n'est plus qu'un détour vers le Jeu.
+- **Le paragraphe « Parcours » de la politique 1.1 (#438)** est maintenant vrai en préprod. Il partira en
+  production avec le Sas serveur, sur le mot de Boris.
+- **#442 (Regards : politique et CGU 9/15) reste un brouillon**, non fusionné. Un point est à trancher avec
+  Boris : passer les CGU de 1.0 à 1.1 redemande l'acceptation à tous les comptes (`AcceptationCgu#a_jour?`).
+
 ### 2026-10-17 (nuit) · du poste fixe · ℹ️ Proposition de Boris : un parcours optionnel M1 pour la Ressourcerie entière
 
 Boris propose de garder les **dix premières clés** pour le tutoriel du Monde 1 (`/premieres-cles`), et de **rendre

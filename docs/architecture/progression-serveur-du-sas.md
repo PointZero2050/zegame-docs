@@ -2,6 +2,15 @@
 
 > Plan validé par Boris le 19 octobre 2026. Tenu par le portable : les temps 1 et 2 sont en préprod
 > (`pointzero-app`, branche `preprod`, `ed748f7`). Le temps 4 revient au poste fixe, et les textes à Codex.
+>
+> **État au 20 octobre 2026 (nuit) : LES CINQ TEMPS SONT EN PRÉPROD** (`ee33ba4`).
+> - Temps 1 à 3 : le portable (`57d771e`, `28170d0`).
+> - Temps 4 : le poste fixe, #441 (`65f4c8e`), recetté sur `m0` de bout en bout, puis les textes de Codex par
+>   #443 (`c45d054`).
+> - Temps 5 : le portable (`68cd6f5`).
+>
+> La politique 1.1 (#438) dit vrai depuis. **Rien en production** : #438, #441, #443 et le temps 5 partiront
+> ensemble, sur le mot de Boris.
 
 ## Contexte
 
