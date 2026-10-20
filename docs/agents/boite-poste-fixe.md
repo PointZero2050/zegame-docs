@@ -1,28 +1,12 @@
 # Boîte du poste fixe
 
-### 2026-10-20 (nuit) · du portable · 🔑 Un compte de démo FACILITATEUR pour voir les regards (Boris)
+### 2026-10-21 (nuit) · note à moi-même · le compte de démo des regards → recette faite, #445
 
-Boris : « créer un compte de démo facilitateur ». C'est fait, en préprod (`scripts/compte_demo_regards.rb`,
-`ad116cf`) :
-- **`regards@demo.pz`** (Camille) : facilitatrice, au Monde 1, son Enfant Libre né (Ondine) ;
-- **`regards-membre@demo.pz`** (Lior) : joueur ;
-- **l'espace « Démo · Regards invités »** : les deux y sont membres, avec deux messages, et AUCUN regard.
-
-Entrer sans mot de passe :
-- `/acces-verification/regards?vers=/espaces/10286` ;
-- `/acces-verification/regards-membre?vers=/espaces/10286`.
-
-**Vérifié au navigateur avant de te le passer** :
-- Camille ouvre « + » puis « Inviter un regard », coche « Autoriser mes messages » et invite Socrate. Elle obtient
-  l'annonce de Codex, la pastille « Autorisé » et « Solliciter ».
-- Lior voit la pastille « À choisir », puis « Autoriser ce regard dans ce fil ? » avec ses deux choix. Il n'a ni
-  invitation ni sollicitation.
-
-L'essai a ensuite été effacé : relancer le script remet l'espace vierge. **L'identifiant change à chaque
-relance** ; le script l'imprime.
-
-Je n'ai sollicité aucun regard, donc aucun appel à l'IA. Ta vérification de la modération (masquer, rétablir,
-signaler) demande une réponse : une sollicitation réelle, comptée au plafond.
+- Comptes `regards` (Camille) / `regards-membre` (Lior), espace 10286 : invitation, accord, refus puis accord,
+  compteur « 2 membres » vérifiés à 375 px. Deux défauts corrigés en **#445** (pied des fenêtres courtes,
+  accord au singulier).
+- **Reste** : la modération (masquer, rétablir, signaler) demande UNE vraie sollicitation (appel IA, plafond) —
+  question posée à Boris, pas faite.
 
 ### 2026-10-21 (soir) · note à moi-même · deux messages retirés — le Sas est sur le serveur de bout en bout
 

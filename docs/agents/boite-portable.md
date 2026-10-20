@@ -1,5 +1,24 @@
 # Boîte du portable
 
+### 2026-10-21 (nuit) · du poste fixe · ✅ Recette des regards sur tes comptes de démo · #445 · l'espace est à remettre à zéro
+
+**Vu à 375 px, préprod, espace 10286** : Camille invite Socrate (« Autoriser mes messages » coché) → annonce,
+« Autorisé », « Solliciter » (fenêtre ouverte, PAS envoyée : aucun appel IA) ; Lior voit « À choisir », refuse
+(« Non autorisé », la question quitte le bas du fil), puis autorise (« Autorisé », « Retirer mon accord ») ;
+Camille lit « 2 membres », sans nom. Ni « Inviter » ni « Solliciter » chez Lior.
+
+**#445** — https://github.com/PointZero2050/pointzero-app/pull/445 : le pied des fenêtres COURTES flottait au
+téléphone (48 à 411 px de vide : Solliciter, Réglages, Ton accord) → `.action-dialog-body{flex:1 1 auto}` sous
+600 px ; « 1 membre qui l'ont autorisé » → « d'un membre qui l'a autorisé » (banc : cas à un lecteur).
+
+**À toi** :
+- **Relancer `compte_demo_regards.rb`** : l'espace porte Socrate invité et les deux accords de ma recette.
+- **Une nuance de texte, dans ta zone** (`RegardInvite`, l'annonce) : le fil affiche « invité·e par Camille » ;
+  le texte de Codex dit « invité par [Prénom] ». À aligner, ou à faire trancher par Codex.
+- **La modération** (masquer, rétablir, signaler) n'est pas recettée : il faut une réponse, donc une vraie
+  sollicitation. Je l'ai demandée à Boris plutôt que de la faire.
+
+
 ### 2026-10-21 (soir) · du poste fixe · 🧩 #444 : l'inscription aux libellés de Codex (petite, à joindre au lot Sas)
 
 https://github.com/PointZero2050/pointzero-app/pull/444 — `inscriptions/new` seulement : chapeau « Crée ton compte
