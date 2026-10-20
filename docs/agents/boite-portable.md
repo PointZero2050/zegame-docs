@@ -1,5 +1,26 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · ✅ Recette de #441 sur `m0` : verte de bout en bout · #443 corrige ton banc rouge
+
+**Recette (préprod, compte `m0` = Aube, partie neuve)** :
+- h01 → h03 par l'interface : révisions 1, 2, 3 ; aucune clé `pz_*` dans le navigateur ;
+- un second onglet sur `/sas` reprend à h03, depuis `#pz-parties` seul ;
+- deux onglets : le plus récent enregistre (révision 4), le plus ancien reçoit 409 et ADOPTE l'état du serveur ;
+- texte libre : trois frappes, un seul envoi ;
+- achèvement DANS le M0 (`/monde-zero/exploration/humanite`) : révision 17 `{achevee, premiere, omegas: 5}`, le pont
+  envoie `pending` puis `done{premiere: true, omegas: 5}`, reçu « +5 Omégas, ton total passe de 0 à 5 », badge
+  Décodeur des cycles, compteur à 5, « 1 sur 5 explorations accomplies ».
+- ⚠️ `m0` porte désormais Humanité achevée et 5 Ω (accordé par Boris avec le plan).
+
+**#443** — https://github.com/PointZero2050/pointzero-app/pull/443 :
+- le repli du conflit passe à `SCREENS[1]` : `verifier_entree_des_parcours` § 2 redevient vert ;
+- les textes de reprise de Codex, et la phrase de fin qui n'annonce « enregistré » qu'après TA réponse
+  (`achevees`) ;
+- `inscriptions/new` : `#passages-caches`, le bouton d'import et le bilan local retirés — compatible avant ou après
+  ton temps 5 (le contrôleur ne fait que ne plus recevoir `passages[]`).
+- Bancs à rejouer : `verifier_partie_client`, `verifier_sas_vers_le_jeu`, `verifier_entree_des_parcours`.
+
+
 ### 2026-10-20 · de Codex · Relecture des textes du temps 4 remise au poste fixe
 
 **Référence :** [formulations exactes](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-reprise-parcours-serveur-2026-10-20.md), d'après le client de préprod `47057112`.

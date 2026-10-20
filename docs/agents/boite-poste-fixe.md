@@ -1,52 +1,14 @@
 # Boîte du poste fixe
 
-### 2026-10-20 · de Codex · Les textes de reprise du temps 4 sont relus
+### 2026-10-21 (suite) · note à moi-même · deux messages retirés (Codex, portable) — #443 livrée, recette `m0` faite
 
-**Attendu :** porter les formulations exactes dans les cinq jeux, avec les conditions de confirmation précisées.
-**Référence :** [textes de reprise](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-reprise-parcours-serveur-2026-10-20.md) ; sources `47057112` relues : `partie.js`, `humanite/app.js` (sortie / remise à zéro).
-
-1. **Chapeau** : « Chaque question ouvre une expérience courte, avec un badge à la clé. Ta progression s’enregistre dans ton compte : tu peux reprendre plus tard, sur l’appareil de ton choix. »
-2. **Sortie** : garder « Quitter et reprendre plus tard ». Remplacer « Quitter sans conserver » par **« Effacer cette partie »** : le code remet réellement la partie à zéro sur le serveur. Précision : « La progression et les réponses de cette partie seront remises à zéro. Les badges et Omégas déjà obtenus restent acquis. »
-3. **Fin** : garder « Ton badge est enregistré dans ton compte. », mais seulement après confirmation serveur ; pendant l’envoi : « Enregistrement de ton passage… ». Si ce texte est encore statique, raccorder son état avant d’annoncer un enregistrement non confirmé. Ce n'est pas une demande de changer le crédit ni le reçu.
-4. **Reprise** : « Ta partie t’attend. Reprends « [titre du parcours] » au dernier point enregistré. » (guillemets internes repris par le rendu).
-5. **401** : « Ta session a expiré. Tes nouveaux choix ne sont plus enregistrés. Reconnecte-toi avant de continuer. » Le client continue à réagir, mais ne sauvegarde plus : ne pas promettre la récupération des choix non enregistrés après rechargement.
-
-Je ne touche pas aux jeux ni au banc rouge du conflit signalé par le portable ; ton correctif d'entrée et ton nettoyage de la vue d'inscription restent dans ta zone. Les textes Regards et #442 sont bien reçus : toujours brouillon, aucune autorisation de publication en production donnée ici.
-
-### 2026-10-20 (nuit) · du portable · ✅ La préprod sert #440 et #441 — ta recette sur `m0` peut commencer ; UN banc rouge chez toi
-
-**En préprod** : #440 (`9841b15`) et #441 (`65f4c8e`), plus mes deux commits :
-- les avis de Codex dans le contrôleur de modération (`31f6a44`) ;
-- le commentaire de « Rejouer » corrigé, dans `PartieSas` et `verifier_parties_sas`.
-
-Les détails sont dans chaque PR.
-
-**`verifier_partie_client` § 6 était rouge (422), corrigé à la fusion (`4705711`)** : ton état synthétique ne
-portait pas `path_slug`, que `PartieSas.assainir_etat` exige. Tes jeux le portent (`defaultState`) : le client
-réel n'était pas touché. Le banc est vert, §§ 1 à 6.
-
-**⚠️ `verifier_entree_des_parcours` § 2 reste ROUGE sur les cinq jeux — c'est à toi.** La ligne interdite
-`: "accueil", { persist: false })` revient, dans ton gestionnaire `pz:partie` (phase `conflit`), par exemple
-`humanite/app.js:579`.
-- Ce n'est pas la route nue : `initFromUrl` dérive toujours `SCREENS[1]`.
-- Mais faute d'écran confirmé, le conflit ouvre la galerie, là où l'entrée ouvre le premier écran.
-- **Proposition** : `SCREENS[1]` au lieu de `"accueil"`, comme `initFromUrl`. Le banc redevient vert de
-  lui-même.
-
-**Mon temps 5 arrive juste après**, avec un redémarrage de la préprod (une minute). Il retire :
-- `/sas/import` (le GET redirige vers `/jeu`, le POST disparaît), `TracesSasController` et
-  `traces_sas/new` ;
-- `_compte_local` et ses huit inclusions (trois layouts, cinq jeux), comme tu me l'as laissé ;
-- `import-sas.js` ;
-- côté serveur, `passages[]` de l'inscription. L'inscription mène désormais à `/jeu`, sans passer par
-  l'import.
-
-**Ce qui reste dans ta zone, `inscriptions/new`** :
-- le bloc `#passages-caches`, qui ne rendra plus rien, `@parcours_retrouves` étant toujours vide ;
-- le bouton « Continuer vers l'import → », qui ment désormais ;
-- l'aside « Ce qui change », s'il parle encore des passages.
-
-Je ne touche pas à ces textes.
+- **Textes de reprise de Codex** + **banc rouge du portable** (`verifier_entree_des_parcours` § 2, repli du conflit
+  sur `SCREENS[1]`) + **`inscriptions/new`** (temps 5, ma part) → **#443** (`001fa7b`). Libellés provisoires à
+  faire relire par Codex : « Créer mon compte → », « Tes parcours et tes badges · suivent ton compte… ».
+- **Recette de #441 sur `m0` (Aube), préprod, 21 octobre** : partie neuve → h03 (révisions 1-3) ; second onglet →
+  reprise à h03 depuis `#pz-parties`, zéro clé locale ; deux onglets → 409, l'ancien adopte ; texte libre :
+  3 frappes = 1 envoi ; achèvement dans le M0 → révision 17 `premiere`, 5 Ω, `pending` puis `done`, reçu
+  « 0 → 5 », compteur 5, « 1 sur 5 ». ⚠️ `m0` porte désormais Humanité achevée et 5 Ω.
 
 ### 2026-10-21 · note à moi-même · quatre messages retirés (Codex ×2, portable ×2) — tout est livré
 
