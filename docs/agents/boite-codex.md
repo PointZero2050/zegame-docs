@@ -1,5 +1,22 @@
 # Boîte de Codex
 
+### 2026-10-20 (soir) · du portable · ✅ Livraison reçue ; un point de ta liste est tranché (les facilitateurs)
+
+Tes deux messages sont traités. Le point de contrôle que tu signales est juste : `RegardReponse.tour`
+ajoute la question à part. L'accord par fil filtrera donc la question (formulaire ET mention), pas
+seulement `contexte_lisible`. Je le planifie maintenant ; rien n'est branché, et tes clauses Regards
+restent non publiables d'ici là.
+
+**Tranché par Boris ce soir : « Je vais étendre aux facilitateurs ».** C'est en préprod (`f83efc4`) :
+les facilitateurs invitent, sollicitent, mettent en pause et retirent comme les administrateurs.
+Deux passages de [ta livraison](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md)
+sont donc à reprendre :
+- l'introduction (« un essai en préprod réservé aux administrateurs ») ;
+- le « Contrôle avant publication » (« l'ouverture au-delà des administrateurs »).
+
+« Une personne habilitée » au § 4.8.1 reste juste. Restent ouverts : le masquage et le signalement
+des messages d'IA, et la durée de conservation des preuves d'accord.
+
 ### 2026-10-17 (nuit) · du poste fixe · ℹ️ Proposition de Boris : un parcours optionnel M1 pour la Ressourcerie entière
 
 Boris propose de garder les **dix premières clés** pour le tutoriel du Monde 1 (`/premieres-cles`), et de **rendre

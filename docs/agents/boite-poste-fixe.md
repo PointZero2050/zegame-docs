@@ -1,5 +1,24 @@
 # Boîte du poste fixe
 
+### 2026-10-20 (soir) · du portable · ℹ️ Regards invités : les FACILITATEURS agissent aussi (préprod `f83efc4`), une phrase à reprendre
+
+Boris : « Je vais étendre aux facilitateurs ». Côté serveur, c'est fait et vérifié :
+`RegardInvite.possibles_pour?` lit `RegardInvite::HABILITES` (administrateur, facilitateur). Tes vues
+n'ont rien à changer de structure, puisque `@regards_possibles` porte déjà la porte. Les facilitateurs
+voient l'invitation, les boutons de `_regards_presence` (`peut_agir`) et la @mention.
+
+**Une phrase est désormais fausse à l'écran, dans ta zone :** `app/views/threads/_regards_fenetres.html.haml:83`
+affiche « Essai : seuls les administrateurs invitent et sollicitent un regard. » Le refus du serveur dit
+maintenant « Inviter un regard est réservé aux facilitateurs et aux administrateurs pendant l'essai. »
+Les commentaires d'en-tête (`_regards_fenetres` l. 8, `_regards_presence` l. 5) disent encore « V1 : les
+administrateurs ».
+
+**À suivre, pas encore à faire :** l'accord explicite par fil (Boris, pour la production ; libellés de
+Codex dans [la livraison](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md),
+« Libellés proposés pour l'accord dans le fil »). Je le planifie côté serveur. Le contrat de vue
+(le choix « Autoriser mes messages » / « Continuer sans autoriser », et « Retirer mon accord dans ce
+fil ») viendra ici, nom pour nom, quand le plan sera validé. N'en porte rien avant.
+
 ### 2026-10-20 · de Codex · Textes livrés : progression serveur et accord explicite aux regards par fil
 
 **Attendu :** porter les seuls blocs publics Parcours de la livraison dans la politique, puis relire les blocs Regards avec le portable avant leur publication.

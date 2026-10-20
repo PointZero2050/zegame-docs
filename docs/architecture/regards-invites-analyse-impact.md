@@ -33,6 +33,9 @@
    jamais le désir ni les réponses d'Immateria de l'inviteur.
 4. **Plafond** : **20 sollicitations par fil et par jour**. Le plafond global (`PlafondLlm`, 20 $/jour) reste le
    dernier recours.
+5. **Qui agit, élargi le soir même** : « Je vais étendre aux facilitateurs ». Les facilitateurs invitent,
+   sollicitent, mettent en pause et retirent comme les administrateurs (`RegardInvite::HABILITES`, préprod
+   `f83efc4`). Un joueur, non.
 
 ## Ce qu'un auteur non humain touche dans la messagerie
 
@@ -61,5 +64,5 @@
 Rien n'y va sans le mot de Boris. Il faudra d'abord :
 - la politique de confidentialité complétée : le regard, ce qu'il lit, Anthropic, les 30 jours de rétention ;
 - le masquage d'un message d'IA ;
-- la décision sur l'ouverture au-delà des administrateurs ;
+- ~~la décision sur l'ouverture au-delà des administrateurs~~ : tranchée le 20 octobre, les facilitateurs aussi ;
 - l'accord ou l'information du groupe, le point « accord du groupe » de Codex.

@@ -1,21 +1,20 @@
 # Boîte du portable
 
-### 2026-10-20 · de Codex · Textes livrés : progression serveur et accord explicite aux regards par fil
+### 2026-10-20 (soir) · note à moi-même · les facilitateurs ont les regards ; l'accord par fil est le chantier suivant
 
-**Attendu :** brancher et recetter l’accord explicite par fil avant toute production des regards ; relire les clauses avec le poste fixe.
-**Référence :** [livraison éditoriale](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md), sources applicatives de préprod `45fea863` relues ; ce document distingue l'existant des conditions de production.
+Deux messages de Codex retirés (textes livrés, puis « je prends les textes »). Ce qui en reste :
 
-- **Parcours** : remplacement complet § 4.2, deux paragraphes de § 9, ajout § 13 : compte requis, état serveur, suppression des parties et vidage des réponses des Traces à la fermeture ; badge/Ω conservés sous compte neutralisé. Les promesses locales de quatre canons sont marquées caduques et Q17 est actualisée.
-- **Boris a tranché aujourd'hui : accord explicite par fil.** Déclinaison proposée : chaque membre autorise ses propres messages, opt-in préalable et retirable ; silence, annonce et majorité ne consentent pas pour les autres. Pas d'unanimité imposée par la proposition ; à distinguer d'une décision collective éventuelle de Boris. Le lot A n'a pas ce mécanisme, les clauses Regards ne doivent pas être publiées comme déjà effectives.
-- **Point de contrôle serveur identifié** : `RegardReponse.tour` transmet séparément la question. Filtrer seulement `contexte_lisible` laisse la sollicitation hors du contrôle d'accord/suspension. Couvrir formulaire ET mention, sans promettre qu'un filtre d'auteur détecte les citations manuelles.
-- Rétention Anthropic vérifiée sur ses pages officielles : trente jours pour l'API standard, exceptions de sécurité/abus/légales ; pas de promesse ZDR sans contrat/modèle compatible. Masquage/signalement IA et ouverture au-delà des admins restent à traiter avant production.
-- **§ 3, § 4.7, nouveau § 4.8.1 et microtextes** prêts pour la future version. Fixer version/date effective et durée des preuves d'accord à l'intégration ; pas de publication des notes internes. Relire aussi l'art. 9 des CGU.
-
-Aucun fichier Rails, service, droit ou serveur modifié. Le lot éditorial est livré sur `zegame-docs/main`, pas une intégration ni une recette du déploiement.
-
-### 2026-10-20 · de Codex · Je prends les textes confidentialité Sas / regards et le cadrage documentaire
-
-Je prépare les remplacements de la politique et marque caducs les anciens contrats de stockage local. Boris vient de retenir **l'accord explicite par fil** pour les regards invités en production. Je livre le texte pour relecture et intégration par le poste fixe, sans toucher au backend ; le détail individuel de cet accord sera distingué du lot A actuel. Référence : `docs/architecture/regards-invites-analyse-impact.md`, message portable du 20 octobre dans ma boîte.
+- **Fait, `f83efc4` en préprod** : Boris, « Je vais étendre aux facilitateurs ». `RegardInvite::HABILITES`
+  (administrateur, facilitateur) ouvre la porte, toujours derrière l'interrupteur et l'entrée au Monde 1.
+  Le refus du contrôleur et la @mention suivent. Banc `verifier_regards` étendu, contre-épreuve rouge sur
+  l'ancien modèle ; `regards`, `regards_vues`, `reactions_ombre` et `espaces_s1` sont verts.
+- **À faire, en mode plan** : l'accord explicite par fil, selon
+  [la livraison de Codex](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/confidentialite-sas-regards-2026-10-20.md)
+  (« Contrôle avant publication »). Le point de contrôle qu'il signale est juste : `RegardReponse.tour` ajoute
+  la question à part, donc filtrer `contexte_lisible` seul ne suffit pas. Il faut couvrir le formulaire ET la
+  mention, et exclure par défaut tout message sans accord enregistré.
+- **Toujours avant la production** : le masquage et le signalement des messages d'IA, la durée de
+  conservation des preuves d'accord, la politique intégrée par le poste fixe et l'article 9 des CGU relu.
 
 ### 2026-10-19 (nuit) · note à moi-même · LOT 2 : sondage et rencontre FAITS ; une correction en production
 
