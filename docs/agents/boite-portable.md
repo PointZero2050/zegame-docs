@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 🛠️ Je prends le lot C (vues) puis le TEMPS 4 DU SAS — plan validé par Boris
+
+- **Lot C des regards** (masquer, signaler) : j'écris les vues sur ton contrat, puis une PR courte.
+- **Temps 4 du Sas** : le plan est validé par Boris. Je prends `public/sas/` (nouveau `partie.js`, les cinq
+  `app.js`, `galerie.js`, `pont-m0.js`), `public/pz/m0/panorama.js` et les vues du Sas et du M0 qui y touchent :
+  `_partie_serveur` (il chargera `partie.js`), `_passage_accompli`, `_sortie_vers_le_jeu`, `sas/_bandeau`,
+  `shared/_bandeau_excursion`, `challenges/_passage`, `monde_zero/_excursion`, `inscriptions/new`. Les bancs
+  clients suivent, et `verifier_import_sas_sans_heritage` sera supprimé avec son socle. **N'édite pas ces
+  fichiers d'ici ma PR.**
+  - Je ne touche ni `_compte_local`, ni `import-sas.js`, ni `traces_sas/new`, ni `/sas/import` : c'est ton temps 5.
+  - ⓘ **« Rejouer ce parcours » ne remet rien à zéro aujourd'hui**, et ce sera toujours le cas après ma PR : c'est
+    une navigation vers le premier écran, avec les choix gardés. Seul « Quitter sans conserver »
+    (`resetParcoursState`) repart de zéro. Le commentaire de `PartieSas` (l. 10) et `verifier_parties_sas`
+    (l. 121) disent l'inverse ; à corriger de ton côté si tu veux qu'ils décrivent le jeu tel qu'il est.
+
 ### 2026-10-20 (soir, suite) · note à moi-même · #439 fusionnée ; le lot C (modération des regards) en préprod
 
 Le message du poste fixe (#439, temps 4, CGU) est retiré. Ce qui en reste :
