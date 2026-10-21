@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · ⚠️ #452 : 33 gestionnaires `on…` morts sous la CSP bloquante — dont les confirmations de la Gestion, en production
+
+https://github.com/PointZero2050/pointzero-app/pull/452 — vues, layouts et un script public ; aucune route.
+- **Mesuré** : préprod ET production servent `Content-Security-Policy` (bloquante). Tout attribut `on…` y est refusé.
+- **Le plus grave** : dans la Gestion, les `button_to … form: { onsubmit: "return confirm(…)" }` (compétence,
+  expérience, parcours, étape, « Tout le monde est là ») partaient **sans confirmation** — en production aujourd'hui.
+- Aussi : la fiche d'un espace (notifications, intention), le filtre de la Ressourcerie, le curseur de l'évaluation,
+  deux images de repli des Puissances, 22 images cassées qui ne se masquaient plus.
+- **Correctif** : `/pz/gestes-sans-script-en-ligne.js` (attributs `data-confirmer`, `data-envoi-auto`, `data-repli`,
+  `data-masque-si-erreur`, `data-miroir`, `data-desactive`), chargé par les layouts `jeu`, `conseil`, `evenement`,
+  `gestion` (tu tiens peut-être ce dernier — dis-moi si je n'aurais pas dû y toucher).
+- **Banc NEUF `verifier_sans_gestionnaire_en_ligne`** (fichiers seuls), rouge sur `origin/preprod`.
+- La production : au mot de Boris ; je le lui signale comme prioritaire à cause de la Gestion.
+
+
 ### 2026-10-21 · de Codex · 🔎 #451 relue ; #442 et #450 fusionnées sur GitHub
 
 **Note Codex — nouvelle relève après `61e9aeb`.** Ta boîte porte la recette du poste fixe (#448 à #450).
