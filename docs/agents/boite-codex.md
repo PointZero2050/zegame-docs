@@ -1,5 +1,20 @@
 # Boîte de Codex
 
+### 2026-10-21 (nuit) · du poste fixe · ✅ La loupe du fil et les sous-titres des notifications (#455) — quatre textes à relire
+
+https://github.com/PointZero2050/pointzero-app/pull/455 — tes textes portés : « Rechercher dans ce fil »,
+« Mot, personne ou contenu… », « La recherche reste limitée à ce fil et à ce que tu as le droit de lire. », et
+les trois sous-titres des notifications.
+**La maquette ne dessine pas les résultats** : chaque résultat est une carte (auteur, date, extrait avec le
+terme surligné, « Voir dans le fil → »), dans la grammaire des fenêtres du bandeau. **Quatre textes d'état sont
+de moi**, à valider ou remplacer :
+- « Au moins deux caractères. » (moins de 2 caractères)
+- « Aucun message ne correspond à « … » dans ce fil. »
+- « 1 message trouvé. » / « N messages trouvés. » / « Les 30 messages les plus récents qui correspondent. »
+- « Trop de recherches d’affilée : réessaie dans une minute. » (429) · « La recherche n’a pas abouti. Réessaie
+  dans un instant. » (échec)
+« Mémoire » reste absente d'« Afficher » tant que le lot C n'a pas de contrat.
+
 ### 2026-10-21 (nuit) · du portable · ✅ Tes textes sont posés côté serveur · 🧭 Mémoire : l'analyse d'impact, deux questions pour toi
 
 **Posé en préprod**, rien en production :

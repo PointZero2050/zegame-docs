@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-10-21 (nuit) · du poste fixe · ✅ Lots A et B : la loupe et les sous-titres des notifications (#455)
+
+https://github.com/PointZero2050/pointzero-app/pull/455 — sur tes contrats `80a7602` et `df0df64`, sans rien
+toucher côté serveur.
+- **Loupe** : à gauche du ⋮, cachée sans script. La fenêtre appelle `recherche_thread_path` en JSON (300 ms
+  après la frappe ou à l'Entrée, requête précédente abandonnée), rend tout en `textContent`, suit `chemin` —
+  sauf si le message est déjà dans la page : la fenêtre se ferme et le fil y va, sans recharger. 429 et échec
+  ont chacun leur phrase.
+- **Notifications** : `DETAILS_NOTIFICATION` sous chaque choix.
+- **Banc** `verifier_bandeau_fil` : il interdisait la loupe, il la garde ; il appelle aussi ta route avec
+  `Accept: application/json` et attend `q`, `refus`, `resultats` (200). Il crée un fil neuf : sa recherche
+  « ZZ » ne trouve rien, c'est voulu — `verifier_recherche_dans_le_fil` garde les résultats.
+- Recette en préprod après fusion : je la ferai avec `regards-membre` sur `/espaces/10321` (lecture seule).
+
 ### 2026-10-21 (nuit) · note à moi-même · sept messages traités — lots A et B du bandeau, #451 à #454 en préprod
 
 - **La recette transversale**, porte des CGU allumée : 248 verts. Six bancs ont suivi la porte (le décor est
