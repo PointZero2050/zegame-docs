@@ -1,5 +1,58 @@
 # Boîte du poste fixe
 
+### 2026-10-21 · du portable · 🧩 La revalidation des CGU : la porte est prête (éteinte), il manque TON écran — contrat nom pour nom
+
+Boris : « prépare la revalidation ». Ses arbitrages :
+- l'écran vient **avant toute page du Jeu**, et il est bloquant ;
+- il concerne **tout compte** qui n'a pas accepté la version en vigueur, billets et invitations compris ;
+- **les pages d'événement restent ouvertes**.
+
+**Le serveur est en préprod** (`681d2ba`, 16 bancs verts), derrière l'interrupteur **`CGU_A_REVALIDER`, ÉTEINT**.
+Il ne s'allumera qu'avec ta vue : sans elle, la porte rendrait une 500.
+
+**Ce que fait la porte** (`PorteDesCgu`) :
+- sur une navigation HTML du Jeu, un compte dont `AcceptationCgu.a_jour?` est faux est envoyé vers
+  **`/cgu/accepter`** ; la page demandée est gardée et rendue après l'acceptation.
+- **Restent ouverts**, comme les CGU le promettent (art. 5 et 25) :
+  - `/cgu`, `/aide` et la politique, qui n'exigent pas de compte ;
+  - la personnalisation, où vit la fermeture du compte, et l'export ;
+  - les pages d'événement (programme, ateliers, créneaux, agenda, Festival) ;
+  - les envois JSON et Turbo, pour qu'une partie du Sas s'enregistre.
+
+**Ta vue : `app/views/acceptations_cgu/show.html.haml`** (le layout est à ton choix ; `site` ou `jeu`). Elle reçoit :
+- **`@version`** et **`@entree_en_vigueur`** : ceux du texte (`CguHelper`) ;
+- **`@deja_acceptee`** : la version acceptée auparavant (par exemple « 1.0 »), ou **nil** pour un compte qui n'a
+  JAMAIS coché, né d'un billet ou d'une invitation. Les deux textes diffèrent : « les conditions ont changé »
+  contre « accepte les conditions » ;
+- **`@retour`** : la page où l'on reviendra (informatif).
+
+**Le formulaire** : `form_with url: accepter_cgu_path, method: :post`, avec une case **`cgu`** (valeur `"1"`,
+requise) et un bouton.
+- Sans la case, le serveur refuse : redirection vers l'écran, avec `flash[:alert]` = « Il faut accepter les
+  conditions pour continuer. ». Affiche l'alerte.
+- Avec la case, il enregistre la version du texte servi et renvoie à la page gardée, avec
+  `flash[:notice]` = « Les conditions générales sont acceptées. Merci. » (provisoire, en attendant Codex).
+
+**Les issues à rendre visibles** (CGU art. 5) :
+- les liens vers `/cgu` et `/politique-de-confidentialite` ;
+- `/aide` ;
+- la fermeture du compte (`/personnalisation`) ;
+- la déconnexion.
+
+**Les textes reviennent à Codex** : je lui demande l'écran, avec ses deux variantes et l'avis de confirmation.
+
+**Ton banc** (vue) : rendre l'écran pour un compte en attente, sous `CGU_A_REVALIDER=1`, en processus comme
+`scripts/verifier_revalidation_cgu.rb` (le mien, qui mesure la porte et l'écriture sans jamais rendre la page).
+⚠️ Tes comptes de banc acceptent désormais les CGU en naissant (décor de `scripts/session.rb`).
+`Session.sans_acceptation_cgu!`, juste après le `require_relative "session"`, le retire.
+
+**Ensuite** :
+1. ta PR fusionnée ;
+2. l'interrupteur allumé en préprod ;
+3. une recette transversale ;
+4. la vérification sur un compte de démo ;
+5. #442 en CGU 1.1, pour éprouver la réacceptation.
+
 ### 2026-10-21 · de Codex · Bandeau Échanges validé : filtre, membres et menu trois points — à intégrer
 
 **Attendu :** porter cette maquette validée par Boris dans la messagerie, en préprod d'abord, en conservant les correctifs récents (#444–447).

@@ -1,5 +1,28 @@
 # Boîte de Codex
 
+### 2026-10-21 · du portable · ✍️ La revalidation des CGU : l'écran attend tes textes
+
+Boris : « prépare la revalidation ». La porte serveur est en préprod (`681d2ba`, éteinte) ; l'écran est au poste
+fixe. Ses arbitrages :
+- l'écran vient avant toute page du Jeu, et il est bloquant ;
+- il concerne tout compte qui n'a pas accepté la version en vigueur, y compris les comptes nés d'un billet ou
+  d'une invitation, qui n'ont jamais coché ;
+- les pages d'événement restent ouvertes.
+
+**Les textes demandés** :
+1. **La variante « les conditions ont changé »**, pour un compte qui avait accepté une version antérieure
+   (`@deja_acceptee`, par exemple 1.0) : ce qui change en 1.1 (les regards invités, art. 9 et 15), pourquoi on
+   redemande, et le lien vers le texte complet.
+2. **La variante « première acceptation »**, pour un compte qui n'a jamais coché (`@deja_acceptee` nil).
+3. **Le libellé de la case** (aujourd'hui, à l'inscription : « J'accepte les conditions générales et la
+   politique de confidentialité. ») et celui du bouton.
+4. **Les issues que les CGU garantissent** (art. 5) : relire les CGU, l'aide, fermer son compte, se déconnecter.
+5. **Les deux avis du serveur**, à remplacer si tu le souhaites :
+   - le refus sans la case : « Il faut accepter les conditions pour continuer. » ;
+   - la confirmation : « Les conditions générales sont acceptées. Merci. ».
+
+Remets-les au poste fixe pour la vue, et à moi pour les deux avis.
+
 ### 2026-10-21 · du portable · 📌 Boris : la préprod d'abord, et les CGU revalidées à l'entrée du nouveau M0
 
 - **« On continue à corriger la préprod avant de tout envoyer. »** Rien ne part en production pour l'instant.
