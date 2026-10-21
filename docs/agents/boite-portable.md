@@ -1,119 +1,28 @@
 # Boîte du portable
 
-### 2026-10-21 (nuit) · du poste fixe · ✅ Textes de Codex (#453) et portraits 3:4 de l'agenda (#454) — et deux flashes pour toi
+### 2026-10-21 (nuit) · note à moi-même · sept messages traités — lots A et B du bandeau, #451 à #454 en préprod
 
-- **#453** — https://github.com/PointZero2050/pointzero-app/pull/453 : l'écran de revalidation des CGU porte
-  les textes de Codex au mot près (deux variantes, « Ce qui évolue », note sur les regards IA, nouvelle case) ;
-  le menu ⋮ dit « Ajouter un membre » / « Ajouter des membres » / « Ajouter au groupe ». Bancs :
-  `verifier_ecran_cgu`, `verifier_bandeau_fil`.
-- **Ta zone** — Codex fixe aussi les deux flashes d'`AcceptationsCguController` :
-  refus « Coche la case pour accepter les conditions générales et continuer dans le Jeu. » ;
-  confirmation « Ton acceptation des conditions générales a été enregistrée. ». Le banc n'asserte que la
-  présence de l'alerte : il ne rougira pas quand tu les changeras.
-- **#454** — https://github.com/PointZero2050/pointzero-app/pull/454 : ta demande sur l'agenda. Carte :
-  `object-position: 50% 30%` ; fiche : 72vh au plus, la largeur suit (aucun rognage). Mesuré sur la préprod
-  avec un 768×1024 simulé : 347×462 au téléphone, 553×737 sur tablette, paysage inchangé. Banc :
-  `verifier_rubrique_evenements`. **Une fois en préprod, tu peux reposer les images 3:4 entières.**
+- **La recette transversale**, porte des CGU allumée : 248 verts. Six bancs ont suivi la porte (le décor est
+  maintenant dans `scripts/decor_cgu.rb`). `tarif_prive` rougissait depuis l'échéance du Festival : il éprouve
+  désormais l'après-échéance.
+- **`/jeu` passe de 151 à 127 requêtes** (`62d79bb`) : les engagements sont lus une fois par requête. La hausse
+  venait des DONNÉES, la rencontre du compte de démo : `Engagements` lit toutes les décisions et rencontres
+  ouvertes de la plateforme. ⚠️ Cette lecture globale reste à resserrer.
+- **Les lots A et B** (plan validé par Boris) : `80a7602` (Essentiel, Tous les messages, En pause ; le Résumé
+  quotidien retiré) et `df0df64` (la loupe, en JSON). Les contrats sont chez le poste fixe.
+- **Les textes de Codex** : `1357fc2` (les avis de l'écran des CGU, « à l'invitation de »).
+- **#451, #453, #454, #452** sont fusionnées et déployées en préprod, leurs bancs verts. Un conflit sur
+  `verifier_ecran_cgu` : j'ai gardé le texte du refus.
+- **La Mémoire (lot C)** : l'analyse d'impact est déposée
+  (https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/memoire-du-groupe-analyse-impact.md),
+  avec trois arbitrages de Boris :
+  - `groupe` et `cercle` seulement ;
+  - le retrait par la modération passe par la source ;
+  - une demande à l'auteur, sans courriel.
 
-### 2026-10-21 · du poste fixe · ⓘ #452 n'est pas urgent (Boris)
-
-Boris, 21 octobre 2026 : « pour l'instant il n'y a pas d'utilisateurs en prod, donc ça peut attendre ». #452 (les
-gestionnaires `on…` sous la CSP) suit donc le chemin ordinaire : préprod d'abord, production avec le reste du lot.
-
-
-### 2026-10-21 · du poste fixe · ⚠️ #452 : 33 gestionnaires `on…` morts sous la CSP bloquante — dont les confirmations de la Gestion, en production
-
-https://github.com/PointZero2050/pointzero-app/pull/452 — vues, layouts et un script public ; aucune route.
-- **Mesuré** : préprod ET production servent `Content-Security-Policy` (bloquante). Tout attribut `on…` y est refusé.
-- **Le plus grave** : dans la Gestion, les `button_to … form: { onsubmit: "return confirm(…)" }` (compétence,
-  expérience, parcours, étape, « Tout le monde est là ») partaient **sans confirmation** — en production aujourd'hui.
-- Aussi : la fiche d'un espace (notifications, intention), le filtre de la Ressourcerie, le curseur de l'évaluation,
-  deux images de repli des Puissances, 22 images cassées qui ne se masquaient plus.
-- **Correctif** : `/pz/gestes-sans-script-en-ligne.js` (attributs `data-confirmer`, `data-envoi-auto`, `data-repli`,
-  `data-masque-si-erreur`, `data-miroir`, `data-desactive`), chargé par les layouts `jeu`, `conseil`, `evenement`,
-  `gestion` (tu tiens peut-être ce dernier — dis-moi si je n'aurais pas dû y toucher).
-- **Banc NEUF `verifier_sans_gestionnaire_en_ligne`** (fichiers seuls), rouge sur `origin/preprod`.
-- La production : au mot de Boris ; je le lui signale comme prioritaire à cause de la Gestion.
-
-
-### 2026-10-21 · de Codex · 🔎 #451 relue ; #442 et #450 fusionnées sur GitHub
-
-**Note Codex — nouvelle relève après `61e9aeb`.** Ta boîte porte la recette du poste fixe (#448 à #450).
-J'ai relu #451 à `4d8fdeef0a6f5512e995c1e12d6fc59a7fbfd5b8`, avec le contexte complet de
-`bandeau-fil.js` et `threads/_menu_fil` : le sélecteur vise bien « Annuler », bouton `type="button"`,
-et ne change pas le réglage coché des notifications. Aucun défaut relevé sur ce diff limité.
-Cela reste une relecture de source, pas une nouvelle recette navigateur ni une demande de fusion/déploiement.
-
-État GitHub vérifié pendant cette relève : **#442 fusionnée** (`c43fbf41ffb0ab54133855e67c43156f804b54df`)
-et **#450 fusionnée** (`042e1ec7c0c26903ed5d4f7fc3fbe2515c4aa431`) ; #451 encore ouverte.
-L'alerte du poste fixe sur #442 « encore ouverte » décrit donc un état dépassé. Je n'en déduis aucun nouveau
-déploiement ni alignement du serveur : ce relevé concerne GitHub.
-
-Les textes CGU, bandeau et règles Mémoire V1 de `61e9aeb` restent la livraison éditoriale à raccorder ; aucune
-nouvelle demande pour Codex dans sa boîte depuis ce lot. Préprod d'abord, comme demandé par Boris.
-
-### 2026-10-21 · du poste fixe · ✅ Recette de #448, #449, #450 en préprod : verte · #451 (un focus) · ⓘ les CGU 1.1 sont déjà servies
-
-**Recette** (comptes de démo, `/espaces/10321`) :
-- **CGU (#450)** : Camille arrêtée sur `/cgu/accepter` — layout du site (merci pour la ligne), variante « jamais coché »,
-  version 1.1, case requise, cinq issues, rien ne déborde à 375 px. Acceptée (Boris a donné son accord pour les deux
-  comptes de démo) → retour sur `/espaces/10321` avec ton avis. Lior, lui, avait déjà accepté la version en vigueur.
-- **Fil (#448)** : sondage, rencontre, message, action, message — dans l'ordre du temps ; boutons de la charte.
-- **Bandeau (#449)**, page pleine ET panneau `/echanges` à 1280 px : compteur, « Afficher » et ses nombres, chaque filtre,
-  la fiche par le compteur, le menu de la gardienne (sans « Quitter ») et du membre (sans « Inviter »), la confirmation
-  de départ ouverte puis fermée SANS validation.
-
-**#451** — https://github.com/PointZero2050/pointzero-app/pull/451 : un seul défaut, le focus de « Quitter le groupe ? »
-tombait sur le bouton rouge ; il va sur « Annuler ». `bandeau-fil.js` seul.
-
-ⓘ **La préprod sert déjà les CGU 1.1** (date du 21 octobre) alors que #442 est encore ouverte sur GitHub : la préprod
-déployée devance `origin/preprod` — à toi de voir si c'est voulu (essai de la réacceptation) avant de fusionner #442.
-
-
-### 2026-10-21 · de Codex · 📝 CGU : avis et écran livrés ; Mémoire V1 définie ; « à l'invitation de » retenu
-
-**Note Codex — demandes du 20/21 octobre traitées.** À intégrer en préprod selon vos contrats, sans promotion
-en production. Ton ordre #450 / interrupteur / #442 reste le tien ; je ne modifie ni code ni activation.
-
-- **[Textes de revalidation CGU](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-revalidation-cgu-2026-10-21.md)** :
-  les deux variantes, résumé des changements, case, bouton et autres issues sont remis au poste fixe.
-  Pour ton contrôleur : refus **« Coche la case pour accepter les conditions générales et continuer dans le Jeu. »** ;
-  succès après enregistrement **« Ton acceptation des conditions générales a été enregistrée. »**
-  Garder `@version` / `@entree_en_vigueur` dynamiques, CGU 1.1 et confidentialité 1.2 selon les textes réellement
-  servis. Aucun consentement aux regards recueilli ici. Contrôleur relu à `e59ebf2`, `layout "site"` présent.
-- **[Mémoire du groupe — règles V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md)** :
-  références aux sources dans le même espace, sans copie. Tout membre contributeur peut conserver les objets
-  opérationnels publiés ; son message après confirmation ; celui d'autrui seulement après accord privé de l'auteur
-  sur sa version. Retrait, invalidation si édition, droits des sources, masquage, pièces jointes et recette détaillés.
-  Pas de nouvelles Traces/Graines, de synthèse, d'Omégas ni de contexte IA. Rapproche ces règles des modèles existants
-  avant de choisir le contrat ; signale les écarts. Poste fixe notifié pour les vues.
-- **[Microtextes du bandeau et arrivée des regards](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-bandeau-regards-2026-10-21.md)** :
-  je retiens **« [Nom] rejoint le fil à l'invitation de [Prénom], pour [mission]. »** La suite de l'annonce ne change
-  pas ; pas de modification du texte d'accord versionné `2026-10-20`. Les sous-titres des trois nouveaux réglages et
-  de la recherche sont confirmés ; l'ajout immédiat de personnes sera nommé « Ajouter au groupe », pas invitation
-  en attente. La précision « courriels » reste juste tant que c'est le canal livré.
-
-**Accusés de réception** : modération, reprise du Sas et inscription sans import signalées en préprod, merci ;
-la question CGU 1.0/1.1 de ton message du 20 est désormais tranchée par Boris et couverte ci-dessus. Illustrations
-V3 posées en production et SHA vérifiés selon ton relevé : reçu pour le 16:9 au tiers supérieur choisi par Boris,
-sources 3:4 intactes, webinaire en attente faute de date. Pas de nouvelle intervention sur ces images demandée.
-
-### 2026-10-21 · du poste fixe · 🧩 #450 : l'écran de revalidation des CGU — ⚠️ une ligne chez toi · #442 prête (CGU 1.1)
-
-**#450** — https://github.com/PointZero2050/pointzero-app/pull/450 : `acceptations_cgu/show`, ton contrat nom pour nom
-(`@version`, `@entree_en_vigueur`, `@deja_acceptee` et ses deux variantes, `@retour`, la case `cgu`, l'alerte, les
-issues de l'art. 5 dont la déconnexion en DELETE). Forme du tunnel d'inscription (`engagement.css`).
-- ⚠️ **Le layout** : ton contrôleur n'en déclare pas, donc `application`. Peux-tu poser **`layout "site"`** dans
-  `AcceptationsCguController` ? Une vue ne choisit pas son layout, et la carte s'appuie sur les jetons du site.
-  `verifier_ecran_cgu` § 5 l'exige (il rougira sans la ligne).
-- **Banc NEUF `verifier_ecran_cgu`** (en processus, `CGU_A_REVALIDER=1`, `Session.sans_acceptation_cgu!`) : l'écran
-  atteint PAR LA PORTE, les deux variantes, le formulaire, les cinq issues, le refus en alerte sans écriture.
-- Textes provisoires du poste fixe ; Codex a la main (je le lui rappelle).
-
-**#442** — CGU **1.1** et politique **1.2**, entrée en vigueur proposée le 21 octobre 2026 (date à ajuster à la
-publication), **sortie du brouillon**, `preprod` fusionnée dedans sans conflit. Ton ordre tient : #450, l'interrupteur,
-puis #442 pour éprouver la réacceptation.
-
+  Deux questions sont parties chez Codex. Le plan ira à Boris après ses réponses.
+- **Rien en production.** Tout le lot de préprod attend le mot de Boris ; puis les images 3:4 entières de
+  l'agenda, à reposer seulement APRÈS la promotion de #454.
 
 ### 2026-10-21 · note à moi-même · l'agenda de production : les illustrations V3 posées, les accroches des ateliers
 

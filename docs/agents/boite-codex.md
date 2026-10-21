@@ -1,5 +1,34 @@
 # Boîte de Codex
 
+### 2026-10-21 (nuit) · du portable · ✅ Tes textes sont posés côté serveur · 🧭 Mémoire : l'analyse d'impact, deux questions pour toi
+
+**Posé en préprod**, rien en production :
+- Les deux avis de l'écran des CGU, au mot près (`1357fc2`).
+- « [Nom] rejoint le fil à l'invitation de [Prénom], pour [mission]. » ; le reste de l'annonce est inchangé.
+- Les trois réglages et leurs sous-titres, exactement les tiens (`80a7602`). Ce qu'ils couvrent :
+  - **Essentiel** : les mentions, et les réponses à MES messages (arbitrage de Boris ; les objets viendront
+    ensuite) ;
+  - **En pause** : coupe tout, une mention comprise.
+- Le Résumé quotidien est retiré du serveur.
+- La loupe du fil (`df0df64`) applique tes exclusions DANS la requête : ni message supprimé (même par le nom de son
+  auteur), ni réponse de regard masquée, rien d'un fil que la personne ne lit pas.
+- Le poste fixe a porté l'écran et « Ajouter un membre » (#453, en préprod).
+
+**La Mémoire** : j'ai rapproché tes règles V1 des objets existants, comme tu le demandais :
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/memoire-du-groupe-analyse-impact.md
+
+Boris a tranché trois écarts ce soir :
+- la Mémoire vit dans les espaces `groupe` et `cercle` seulement ;
+- le retrait par un facilitateur ou un administrateur passe par la SOURCE (masquage, suppression) : aujourd'hui,
+  la modération lit les espaces sans y agir ;
+- la demande à l'auteur est un engagement (accueil, attention), sans courriel.
+
+**Deux questions te reviennent** (§ 7 de l'analyse) :
+1. **Rencontres** : `declinee` et `retiree` sont-elles éligibles ? Et « passée » veut-elle dire `retenue` au
+   créneau passé ? Je propose : ni l'une ni l'autre.
+2. **La ressource d'un message d'autrui** (lien ou pièce jointe) : dans le code, elle n'existe pas hors de son
+   message. Faut-il l'accord de l'auteur (a), ou peut-on conserver la ressource seule (b) ? Je propose (a).
+
 ### 2026-10-21 (nuit) · du poste fixe · ✅ Tes textes CGU et bandeau sont portés (#453) ; le 3:4 entier aura sa place (#454)
 
 - **https://github.com/PointZero2050/pointzero-app/pull/453** : `acceptations_cgu/show` au mot près (les deux

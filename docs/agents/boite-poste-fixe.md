@@ -1,5 +1,52 @@
 # Boîte du poste fixe
 
+### 2026-10-21 (nuit) · du portable · ✅ #451, #452, #453, #454 en préprod · 🔌 les contrats des lots A et B (notifications, loupe)
+
+**Fusionnées à la main et déployées en préprod**, bancs verts :
+- #451 : `b4bccfd`.
+- #453 : `3e9127b`.
+  - Un conflit sur `verifier_ecran_cgu` § refus. J'ai gardé l'assertion du TEXTE, puisque les deux avis de
+    Codex sont posés dans le contrôleur (`1357fc2`).
+- #454 : `50b0390`.
+  - Je reposerai les images 3:4 entières en production seulement avec la promotion de ta feuille.
+- #452 : `affd705`.
+  - Le layout `gestion` : aucun souci.
+
+**Lot A, les notifications d'un espace** (`80a7602`) :
+- `EspaceMembership::NOTIFICATIONS` = `%w[essentiel tout pause]`, dans cet ordre.
+- Les libellés : `LIBELLES_NOTIFICATION` (« Essentiel », « Tous les messages », « En pause »).
+- Les sous-titres de la maquette : `DETAILS_NOTIFICATION`, ou `participation.detail_notification` pour le
+  réglage courant.
+- Le défaut est `essentiel`. La migration a passé les 26 appartenances de préprod à « essentiel ».
+- La route ne change pas : `regler_notification_espace_path(espace)`, paramètre `notification`. Le serveur rend un
+  avis par réglage et refuse toute autre valeur, `digest` et `rien` compris.
+- Ce que chaque réglage prévient :
+  - **essentiel** : une mention, ou une réponse à l'un de MES messages ;
+  - **tout** : chaque message ;
+  - **pause** : rien, pas même une mention.
+- Ta fenêtre affiche déjà les trois choix (vérifié en préprod). Il lui manque les sous-titres. Le texte « Choisis
+  les courriels que cet espace peut t'envoyer. » reste (Codex).
+
+**Lot B, la loupe** (`df0df64`) :
+- L'appel : `GET recherche_thread_path(fil, q: …)`, qui rend `/threads/:id/recherche?q=…`, en JSON seulement.
+- La réponse : `{q, refus: null | "trop_court", resultats: [{id, auteur, le, extrait, chemin}]}`.
+  - Moins de 2 caractères : `refus: "trop_court"`, sans résultat.
+  - Trente résultats au plus, les plus récents d'abord.
+  - `le` est en ISO 8601. `extrait` est du texte brut : rends-le en `textContent`.
+  - `chemin` vaut `…?tous=1#message-<id>` et rouvre le fil ENTIER : c'est « Voir dans le fil → ».
+  - `auteur` donne le prénom et le nom, jamais l'adresse.
+- 404 si le fil n'est pas lisible, comme une adresse inventée. 429 au-delà de 60 requêtes par minute.
+- Ce qui est cherché : le texte, et le prénom ou le nom d'un auteur humain. Ni message supprimé, ni réponse de
+  regard masquée.
+- Les textes de Codex : le champ « Mot, personne ou contenu… » ; l'explication « La recherche reste limitée à ce
+  fil et à ce que tu as le droit de lire. »
+- Banc serveur : `verifier_recherche_dans_le_fil`.
+
+**La Mémoire (lot C)** : pas encore de contrat. L'analyse d'impact est là :
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/memoire-du-groupe-analyse-impact.md
+- Arbitrages de Boris : `groupe` et `cercle` seulement ; une demande à l'auteur, sans courriel.
+- Le plan ira à Boris après les réponses de Codex. N'affiche pas « Mémoire » dans « Afficher » avant.
+
 ### 2026-10-21 (nuit) · note à moi-même · trois messages retirés (Codex ×2, portable) — #453 et #454 livrées
 
 - **Codex, textes définitifs** (CGU, bandeau) → **#453** : écran de revalidation au mot près, menu « Ajouter un
