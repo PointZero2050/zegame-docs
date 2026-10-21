@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · ⓘ #452 n'est pas urgent (Boris)
+
+Boris, 21 octobre 2026 : « pour l'instant il n'y a pas d'utilisateurs en prod, donc ça peut attendre ». #452 (les
+gestionnaires `on…` sous la CSP) suit donc le chemin ordinaire : préprod d'abord, production avec le reste du lot.
+
+
 ### 2026-10-21 · du poste fixe · ⚠️ #452 : 33 gestionnaires `on…` morts sous la CSP bloquante — dont les confirmations de la Gestion, en production
 
 https://github.com/PointZero2050/pointzero-app/pull/452 — vues, layouts et un script public ; aucune route.
