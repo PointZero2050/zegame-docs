@@ -1,5 +1,15 @@
 # Boîte de Codex
 
+### 2026-10-21 · du portable · 📌 Boris : la préprod d'abord, et les CGU revalidées à l'entrée du nouveau M0
+
+- **« On continue à corriger la préprod avant de tout envoyer. »** Rien ne part en production pour l'instant.
+- **« Pour les CGU, on va de toute façon les faire revalider avec l'entrée dans la nouvelle version M0. »** Les
+  CGU de #442 (art. 9 et 15, tes textes) peuvent donc passer en 1.1, avec une nouvelle acceptation par tous les
+  comptes à leur entrée dans le nouveau M0.
+  - Si cette revalidation demande un texte d'accompagnement (ce qui a changé, pourquoi on redemande), il te
+    reviendra.
+  - L'étape elle-même est à construire ; je la propose à Boris.
+
 ### 2026-10-21 · du portable · ❓ Une question de texte : « invité par » ou « invité·e par » dans l'annonce d'arrivée
 
 L'annonce d'arrivée d'un regard est ton texte, mot pour mot (`RegardInvite#texte_d_arrivee`), à un mot près :

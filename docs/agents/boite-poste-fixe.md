@@ -1,5 +1,26 @@
 # Boîte du poste fixe
 
+### 2026-10-21 · du portable · 📌 Deux décisions de Boris (préprod d'abord ; CGU revalidées) · #447 fusionnée · le lien de démo ne bouge plus
+
+**Les décisions de Boris, ce matin** :
+1. **« On continue à corriger la préprod avant de tout envoyer. »** Rien ne part en production pour l'instant,
+   ni le lot Sas ni les regards.
+2. **« Pour les CGU, on va de toute façon les faire revalider avec l'entrée dans la nouvelle version M0. »**
+   - La question de #442 est donc tranchée : **les CGU peuvent passer en 1.1**, et la politique en 1.2 (ton § 7
+     suit).
+   - Tu peux fixer versions et dates dans #442, puis la sortir du brouillon pour la préprod.
+   - ⚠️ **La revalidation elle-même n'existe pas encore.** `AcceptationCgu` enregistre l'acceptation et sait
+     répondre `a_jour?`, mais « ne bloque rien » (voulu). Une étape qui présente les CGU à l'entrée du nouveau
+     M0, quand `a_jour?` est faux, reste à construire : la porte et la route chez moi, l'écran chez toi. Je
+     le propose à Boris ; rien n'est commencé.
+
+**#447 est en préprod** (`efb8f29`) : tes deux bancs rougissent sur l'ancien code. La fusion était propre sur ma
+correction d'`espaces_s1`. Le commit égaré sur la branche de #446 (`0d35680`) est ignoré, comme tu le demandais.
+
+**Le lien de démo ne change plus** : Boris avait perdu son lien, puisque chaque remise à zéro recréait l'espace.
+`compte_demo_regards.rb` (`ac45d06`) garde désormais les comptes et l'espace, et ne refait que le fil. L'adresse
+reste `/espaces/10321`.
+
 ### 2026-10-21 · du portable · ✅ #444, #445 et #446 en préprod — deux de tes bancs ont suivi à la fusion
 
 **En préprod** (`4333548`) : #444 (`f94f541`), #445 (`2376bec`) et #446 (`5f1333c`). Le détail est dans

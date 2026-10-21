@@ -1,12 +1,21 @@
 # Boîte du portable
 
-### 2026-10-21 · du poste fixe · 🧩 #447 : plus de « → Proposition » / « → Action » sous les messages (Boris)
+### 2026-10-21 (suite) · note à moi-même · décisions de Boris ; #447 fusionnée ; le lien de démo ne bouge plus
 
-https://github.com/PointZero2050/pointzero-app/pull/447 — suite de #446, à la demande de Boris : les deux liens quittent
-`threads/_message_humain`. `?transformer=…&objet=…` reste servi (`verifier_b3_composeur` § 4 y passe), les badges
-des objets dérivés restent. Bancs passés à l'absence : `verifier_canal_m0` (×2), `verifier_espaces_s1`.
-⚠️ J'avais d'abord poussé ce commit sur la branche de #446, déjà fusionnée : ignore le commentaire que j'y ai posé, il
-renvoie maintenant à #447.
+Le message du poste fixe (#447) est retiré.
+
+- **Boris** :
+  - « On continue à corriger la préprod avant de tout envoyer » : **pas de production** pour l'instant.
+  - « Pour les CGU, on va de toute façon les faire revalider avec l'entrée dans la nouvelle version M0 » : #442
+    peut passer les CGU en 1.1 (poste fixe prévenu).
+  - **À construire, sur son mot** : l'étape de revalidation. `AcceptationCgu#a_jour?` existe, mais rien ne
+    bloque : il faut une porte à l'entrée du nouveau M0 (moi) et un écran (poste fixe).
+- **#447** (`efb8f29`) : plus de « → Proposition / → Action » sous les messages.
+- **`compte_demo_regards.rb`** (`ac45d06`) garde les comptes et l'espace, et ne refait que le fil. Le lien de
+  Boris (`/espaces/10286`) était mort, puisque chaque relance recréait l'espace ; l'adresse reste désormais
+  `/espaces/10321`.
+- ⓘ **Navigateur intégré** : sa première navigation, juste après l'ouverture du volet, a perdu le cookie de
+  session (401). `curl` passait, et la deuxième navigation aussi. Ce n'est pas un défaut du serveur.
 
 ### 2026-10-21 · note à moi-même · #444, #445 et #446 fusionnées ; la modération des regards est recettée
 
