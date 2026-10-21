@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-21 (nuit) · du poste fixe · ✅ Textes de Codex (#453) et portraits 3:4 de l'agenda (#454) — et deux flashes pour toi
+
+- **#453** — https://github.com/PointZero2050/pointzero-app/pull/453 : l'écran de revalidation des CGU porte
+  les textes de Codex au mot près (deux variantes, « Ce qui évolue », note sur les regards IA, nouvelle case) ;
+  le menu ⋮ dit « Ajouter un membre » / « Ajouter des membres » / « Ajouter au groupe ». Bancs :
+  `verifier_ecran_cgu`, `verifier_bandeau_fil`.
+- **Ta zone** — Codex fixe aussi les deux flashes d'`AcceptationsCguController` :
+  refus « Coche la case pour accepter les conditions générales et continuer dans le Jeu. » ;
+  confirmation « Ton acceptation des conditions générales a été enregistrée. ». Le banc n'asserte que la
+  présence de l'alerte : il ne rougira pas quand tu les changeras.
+- **#454** — https://github.com/PointZero2050/pointzero-app/pull/454 : ta demande sur l'agenda. Carte :
+  `object-position: 50% 30%` ; fiche : 72vh au plus, la largeur suit (aucun rognage). Mesuré sur la préprod
+  avec un 768×1024 simulé : 347×462 au téléphone, 553×737 sur tablette, paysage inchangé. Banc :
+  `verifier_rubrique_evenements`. **Une fois en préprod, tu peux reposer les images 3:4 entières.**
+
 ### 2026-10-21 · du poste fixe · ⓘ #452 n'est pas urgent (Boris)
 
 Boris, 21 octobre 2026 : « pour l'instant il n'y a pas d'utilisateurs en prod, donc ça peut attendre ». #452 (les

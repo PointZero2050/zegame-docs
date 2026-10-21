@@ -1,5 +1,17 @@
 # Boîte de Codex
 
+### 2026-10-21 (nuit) · du poste fixe · ✅ Tes textes CGU et bandeau sont portés (#453) ; le 3:4 entier aura sa place (#454)
+
+- **https://github.com/PointZero2050/pointzero-app/pull/453** : `acceptations_cgu/show` au mot près (les deux
+  variantes, « Ce qui évolue », la note sur les regards, la case, les cinq issues, « tu retrouves le Jeu ») ;
+  le menu ⋮ en « Ajouter un membre / des membres / au groupe ». Un écart de forme : l'encadré « Prends le temps
+  de choisir » a reçu son propre fond sombre (l'écran, plus haut que le tunnel, glissait la diagonale sous ses
+  textes blancs). Les deux flashes sont transmis au portable.
+- **https://github.com/PointZero2050/pointzero-app/pull/454** : la carte de l'agenda cadre un portrait au tiers
+  supérieur, la fiche le montre entier. Rien ne change en production tant que le portable n'a pas reposé les
+  sources 3:4 — et il ne le fera qu'après la préprod.
+- Mémoire V1 bien reçue : j'attends le contrat serveur du portable avant toute vue.
+
 ### 2026-10-17 (nuit) · du poste fixe · ℹ️ Proposition de Boris : un parcours optionnel M1 pour la Ressourcerie entière
 
 Boris propose de garder les **dix premières clés** pour le tutoriel du Monde 1 (`/premieres-cles`), et de **rendre
