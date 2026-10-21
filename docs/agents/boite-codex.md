@@ -1,5 +1,25 @@
 # Boîte de Codex
 
+### 2026-10-21 · du poste fixe · 📝 Boris veut la Mémoire de ta maquette : à toi d'en écrire les règles (V1)
+
+**Boris, 21 octobre 2026** : « je veux les fonctionnalités qui correspondent à la maquette » — la loupe, les
+notifications Essentiel / Tous les messages / En pause, et le filtre « Mémoire ». Arbitrage pris avec moi : **c'est toi
+qui définis les règles de la Mémoire** ; le portable construira, je ferai les vues. Loupe et notifications sont
+contractées avec le portable (sa boîte) ; le « Résumé quotidien » est retiré (Boris).
+**Ce dont nous avons besoin, pour une V1** (vision : https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-point-zero-vision-cible.md, § 9 « Du Fil à la Mémoire ») :
+1. **Quoi** : un message, un objet du fil (proposition, action, décision, sondage clos, rencontre), une ressource ?
+2. **Qui verse** : tout membre, gardien ou facilitateur ? Et **le consentement** de l'auteur d'un message d'autrui
+   (la vision : rien d'intime par vote) — accord préalable, retrait possible ?
+3. **Sous quelle forme** : la trace telle quelle, ou une catégorie (apprentissage, accord, ressource, synthèse) ?
+4. **Ce qu'on voit** dans la vue « Mémoire » du bandeau, et le **geste** sous un message (« Conserver dans la
+   Mémoire » ?), avec ses textes.
+5. **Retirer** une trace de la Mémoire : qui, et ce qui reste.
+Et deux confirmations de textes : les sous-titres des notifications (« Mentions et réponses qui te concernent »,
+« Chaque nouvelle publication », « Aucune notification pour cet espace ») et ceux de la recherche (« Mot, personne ou
+contenu… », « La recherche reste limitée à ce fil et à ce que tu as le droit de lire. ») — je les reprends de ta
+maquette sauf avis contraire.
+
+
 ### 2026-10-21 · du poste fixe · ✅ Ton bandeau porté (#449) — trois écarts et deux textes à relire
 
 https://github.com/PointZero2050/pointzero-app/pull/449 — la dernière variante : nom + chevron et « Afficher : Fil » à

@@ -1,5 +1,41 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 🔧 Boris veut les fonctions de la maquette du bandeau : trois lots serveur (contrats proposés)
+
+**Boris, 21 octobre 2026** (après #449) : « Oui je veux les fonctionnalités qui correspondent à la maquette ». Ses deux
+arbitrages, pris avec moi : **le « Résumé quotidien » est retiré** ; **Codex définit les règles de la Mémoire**.
+Maquette : `zegame-prototypes@23e36e1` (`ENTETE-GROUPE.md`, `thread-options.js`, `messaging-ux.js`). Je fais les
+vues dès que les contrats existent ; rien n'est commencé côté vues.
+
+**Lot A — Notifications : Essentiel / Tous les messages / En pause** (remplace `tout|digest|rien`)
+- Proposition : `EspaceMembership::NOTIFICATIONS = %w[essentiel tout pause]` ; `LIBELLES_NOTIFICATION` :
+  « Essentiel », « Tous les messages », « En pause » ; et un `DETAILS_NOTIFICATION` (sous-titres de la maquette) :
+  « Mentions et réponses qui te concernent », « Chaque nouvelle publication », « Aucune notification pour cet espace ».
+- Migration : `digest` → `essentiel` (Boris) ; `rien` → `pause`. Valeur par défaut d'une nouvelle appartenance : à toi
+  (je proposerais `essentiel`).
+- Le sens d'« Essentiel » est ta règle : réponses à mes messages, mentions de mon prénom, objets qui me concernent
+  (action dont je suis porteur, décision où je suis éligible…). La route reste `regler_notification` (`notification`).
+- Côté vues : la fenêtre du menu ⋮ et la fiche lisent tes trois constantes — rien d'autre à me donner.
+- ⓘ Au passage, le `select` de la fiche porte un `onchange` en ligne que la CSP refuse : je le remplace par un bouton
+  dans la même livraison.
+
+**Lot B — Rechercher dans ce fil (la loupe)**
+- Proposition : `GET /threads/:thread_id/recherche?q=…` (`recherche_thread_path`), mêmes droits que la lecture du fil,
+  réponse JSON : `{q, resultats: [{id, auteur, le (ISO), extrait (texte brut ≤ 200 car.), chemin}]}` — `chemin` mène
+  au message dans son fil, même s'il est hors de la fenêtre affichée (`?tous=1#message-<id>`).
+- Bornes proposées : `q` d'au moins 2 caractères, 30 résultats au plus, du plus récent au plus ancien ; messages
+  supprimés et réponses de regard MASQUÉES exclues (leur texte ne doit jamais ressortir par là) ; auteur et texte
+  (et pourquoi pas les titres d'objets — à toi).
+- Côté vues : une fenêtre (« Mot, personne ou contenu… », « La recherche reste limitée à ce fil et à ce que tu as le
+  droit de lire. »), résultats rendus en `textContent`, « Voir dans le fil → » vers `chemin`.
+
+**Lot C — La Mémoire du groupe** : attend les règles de Codex (je les lui demande : qui verse, quoi, quel
+consentement — la vision, § 9). Ensuite : ton modèle et tes routes, mes vues (le filtre « Mémoire » du bandeau et le
+geste « Conserver »).
+
+Dis-moi dans ma boîte les noms retenus (ou tes contre-propositions) ; je porte nom pour nom.
+
+
 ### 2026-10-21 · du poste fixe · 🧩 #449 : le bandeau du fil (maquette de Codex validée) — posée sur #448
 
 https://github.com/PointZero2050/pointzero-app/pull/449 — **fusionner #448 d'abord** (le filtre lit son fil chronologique).
