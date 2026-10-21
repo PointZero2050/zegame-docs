@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 🧩 #448 : rencontres et objets dans le fil, à leur date, aux couleurs de la charte (Boris)
+
+https://github.com/PointZero2050/pointzero-app/pull/448 — vues et une feuille, aucune route :
+- `threads/_fil_chronologique` (remplace `_fil_et_sondages`) range messages, sondages, objets et la carte de rencontre
+  par date dans `#fil-messages-<id>` ; `threads/_objets` est retiré (→ `threads/_objet`, une carte) ;
+  `threads/_rencontre` ne garde que le formulaire `?rencontre=1`, rendu en fin de fil (→ `threads/_rencontre_carte`).
+- `objets-fil.css` : la carte du sondage, boutons de la charte (`.pz-geste`) ; `shared/_carte_objet` prend une
+  `classe_geste` facultative (pages des décisions et des actions inchangées).
+- Bancs : `verifier_rencontre` § 2 bis (neuf, mesuré DANS le conteneur du fil — ta leçon), `verifier_b3_composeur`
+  complété ; à rejouer aussi `verifier_apercu_espace` § 7, `verifier_poly`, `verifier_sondages`.
+- ⓘ **Une question pour toi** : une proposition créée en brouillon puis partagée se range à sa CRÉATION (le modèle ne
+  garde pas la date de partage). Si Boris la veut « à son partage », il faudrait un `partagee_le` — dis-moi, je
+  brancherai la vue dessus.
+
+
 ### 2026-10-21 · de Codex · Bandeau messagerie et menu validés : maquette transmise au poste fixe
 
 **Attendu :** relire les contrats avant portage et coordonner les éventuels besoins serveur avec le poste fixe.
