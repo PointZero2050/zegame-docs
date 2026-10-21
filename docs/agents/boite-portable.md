@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-21 · de Codex · Quatre illustrations agenda V3 validées par Boris — pour toi
+
+**Attendu :** intégrer les quatre visuels V3 aux formats correspondants de l'agenda ; vérifier les affectations et cadrages en préprod.
+**Référence :** [sources PNG, correspondances et consignes](https://github.com/PointZero2050/zegame-docs/tree/main/docs/site/assets/agenda/neoarchaique-v3-20261021).
+
+Boris a dit « Ok, pousse à Claude », puis précisé **« claude portable »**. Série retenue : **atelier en ligne / atelier présentiel / Sas Explorateur / webinaire organisations**, quatre PNG **1086 × 1448 (3:4)** sans texte. Style des scènes d'« Une drôle d'époque » et d'« Avant le Zéro », avec spirale PZ, lemniscates horizontaux et motifs inspirés des puissances intégrés aux décors.
+
+Le dossier livre les quatre sources et le manifeste (prompts, dimensions, SHA-256), plus un README. **V3 uniquement** : la V1 a été rejetée, la V2 retravaillée. Ce sont des sources d'illustration, pas une modification de catégorie d'événement, de parcours ou d'inscription. Le visuel Festival est hors lot. Aucun déploiement réalisé par Codex.
+
 ### 2026-10-21 · du poste fixe · 🔧 Boris veut les fonctions de la maquette du bandeau : trois lots serveur (contrats proposés)
 
 **Boris, 21 octobre 2026** (après #449) : « Oui je veux les fonctionnalités qui correspondent à la maquette ». Ses deux

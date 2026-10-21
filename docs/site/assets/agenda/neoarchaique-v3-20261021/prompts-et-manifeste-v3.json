@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-21",
+  "version": "v3-epoque-symboles",
+  "outil": "image_gen intégré avec références visuelles locales",
+  "format": "3:4 vertical",
+  "statut": "V3 validée par Boris le 21 octobre 2026 ; transmise à Claude portable pour intégration. Aucun déploiement effectué par Codex.",
+  "demande": "Se rapprocher des scènes d’Une drôle d’époque et d’Avant le Zéro, avec symboles inspirés du Point Zéro.",
+  "direction_artistique": "Personnages expressifs, décors contemporains, tessellation en mosaïque, texture minérale et lignes dorées. Symboles PZ intégrés aux éléments du décor.",
+  "images": [
+    {
+      "type": "atelier_presentiel",
+      "fichier": "atelier-presentiel-epoque-symboles-v3.png",
+      "cible_v2": "atelier-presentiel-neoarchaique-v2.png",
+      "references": [
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\epoque-vendredi.webp",
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\avant-2026.webp",
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\avant-2033.webp",
+        "Ressources Point Zero\\Logos\\Logo-PZ_1024x1024.png"
+      ],
+      "prompt": "COMPLETE STYLE REVISION of image 1, an event image whose SUBJECT is retained but whose origami figure rendering must be abandoned. Images 2 and 3 are the actual narrative scenes from the Point Zéro journeys 'Une drôle d’époque' and 'Avant le Zéro' and are the PRIMARY art direction: expressive, approachable contemporary people with believable faces and human emotions, slightly angular drawing, small tessellated mosaic facets across the whole scene, subtle mineral pigment and paper grain, thin warm-gold networks and cracks woven into the environment. Match the illustrated facial expressiveness, modern clothes, dimensional lived-in rooms and restrained atmospheric light of these two references. NOT the huge folded-paper angular masks and sculptural paper dolls of image 1; NOT photorealism, NOT cute cartoon, NOT cozy ochre lifestyle. Deep teal, blue, plum, muted rust and olive with antique gold accents and warm human skin, a balance of shadow and light. Image 4 is a reference for integrating Point Zéro power symbols into the setting; image 5 is the recognizable colored PZ spiral emblem, use its circular swirling form as a meaningful in-scene mosaic/inlay, not a pasted branding sticker. A few large clear narrative elements, readable at thumbnail size. Contemporary event context with neoarchaic visual language. NO title, NO captions, NO lettering, NO watermark. EXACT vertical 3:4 full bleed. These are FOUR distinct event illustrations; create only the single event requested here. EVENT: ATELIER PRESENTIEL. Five expressive adults of varied genders and ages around one round table in a modern simple workshop room. Two are placing large symbolic cards, one speaks with open hands, the others actively listen. The surface of the round table is a detailed but readable mosaic of the PZ spiral emblem, adapted from image 5, muted jewel colors embedded into the material. Around its central Source point lie six modest colored power tokens, each with a simple engraved emblem inspired by image 4, no words. In the background one unobtrusive horizontal golden infinity curve connects two large overlapping circles on a workshop board. Keep focus on mutual attention, faces and gestures; no ceremony, no cloaks. Simple strong composition.",
+      "largeur": 1086,
+      "hauteur": 1448,
+      "sha256": "cf5e3755e8a4b7a90f734bde8348579be747df642c26f821865c47e157c42b63"
+    },
+    {
+      "type": "atelier_en_ligne",
+      "fichier": "atelier-en-ligne-epoque-symboles-v3.png",
+      "cible_v2": "atelier-en-ligne-neoarchaique-v2.png",
+      "references": [
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\epoque-vendredi.webp",
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\avant-2026.webp",
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\avant-2033.webp",
+        "Ressources Point Zero\\Logos\\Logo-PZ_1024x1024.png"
+      ],
+      "prompt": "COMPLETE STYLE REVISION of image 1, an event image whose SUBJECT is retained but whose origami figure rendering must be abandoned. Images 2 and 3 are the actual narrative scenes from the Point Zéro journeys 'Une drôle d’époque' and 'Avant le Zéro' and are the PRIMARY art direction: expressive, approachable contemporary people with believable faces and human emotions, slightly angular drawing, small tessellated mosaic facets across the whole scene, subtle mineral pigment and paper grain, thin warm-gold networks and cracks woven into the environment. Match the illustrated facial expressiveness, modern clothes, dimensional lived-in rooms and restrained atmospheric light of these two references. NOT the huge folded-paper angular masks and sculptural paper dolls of image 1; NOT photorealism, NOT cute cartoon, NOT cozy ochre lifestyle. Deep teal, blue, plum, muted rust and olive with antique gold accents and warm human skin, a balance of shadow and light. Image 4 is a reference for integrating Point Zéro power symbols into the setting; image 5 is the recognizable colored PZ spiral emblem, use its circular swirling form as a meaningful in-scene mosaic/inlay, not a pasted branding sticker. A few large clear narrative elements, readable at thumbnail size. Contemporary event context with neoarchaic visual language. NO title, NO captions, NO lettering, NO watermark. EXACT vertical 3:4 full bleed. These are FOUR distinct event illustrations; create only the single event requested here. EVENT: ATELIER EN LIGNE. One expressive modern woman at a desk participates actively through a laptop with four large video portraits, contemporary natural expressive people in the style of images 2/3. She holds a teal power-symbol card while another participant holds a plum counterpart. An elegant HORIZONTAL gold lemniscate is inlaid into the desk surface; its two loops visibly connect her card and the laptop, an intentional metaphor of circulation across distance. On a small shared board visible behind one video participant, show a recognizable understated multicolored PZ spiral emblem from image 5, like a mosaic. Two or three geometric power symbols engraved on the cards inspired by image 4, no writing. Online participation, hands and faces clearly readable; no extra objects or ornamental clutter.",
+      "largeur": 1086,
+      "hauteur": 1448,
+      "sha256": "1514cd9c144a447bb37772ef39fa4537b57b798828944b14bdfb2ddd3a5cfd78"
+    },
+    {
+      "type": "sas_explorateur",
+      "fichier": "sas-explorateur-epoque-symboles-v3.png",
+      "cible_v2": "sas-explorateur-neoarchaique-v2.png",
+      "references": [
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\epoque-mardi.webp",
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\avant-2026.webp",
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\avant-2033.webp",
+        "Ressources Point Zero\\Logos\\Logo-PZ_1024x1024.png"
+      ],
+      "prompt": "COMPLETE STYLE REVISION of image 1. Retain its event SUBJECT but replace its origami paper-doll figures. Images 2 and 3 are the actual narrative images from 'Une drôle d’époque' and 'Avant le Zéro' and the PRIMARY STYLE GUIDANCE. Match their expressive believable human faces, contemporary clothes and present-day environments, subtly angular illustration, small mosaic tessellation facets across the whole image, mineral pigment/paper grain, thin glowing antique-gold cracks and flowing networks. NOT the large folded-paper geometric masks of image 1; NOT photorealistic; NOT generic corporate vector illustration. Invite viewers into a human lived experience. Deep teal, navy, plum, muted rust and olive with warm human skin and antique-gold accents, controlled chiaroscuro, some luminous air. Image 4 shows the language of the Point Zéro power symbols. Image 5 is the PZ spiral emblem: integrate its recognizable swirling circular form into the scene as a meaningful inlaid/mosaic motif rather than a pasted logo. Also use an elegant HORIZONTAL lemniscate, never a vertical figure-eight, as a subtle connective line where requested. Keep composition simple, one dominant action, legible at small thumbnail size. NO lettering, titles, captions or watermark. Full-bleed portrait EXACT 3:4 aspect ratio. Create ONE standalone event illustration, not a collage of multiple events. EVENT: SAS EXPLORATEUR, an online first encounter with Point Zéro, curiosity and widening perspective. One modern adult, expressive face visible in three-quarter profile, at an open laptop. The laptop opens onto a panoramic globe with paths of human history flowing toward a luminous horizon, creating a sense of discovery like the landscape depth of image 3. A horizontal thin gold lemniscate orbit joins the person's foreground viewpoint to the globe. At the far horizon, a small luminous PZ spiral based on image 5 is the sun-like point of convergence. A few power emblems are engraved discreetly along the paths as milestones, inspired by image 4, never a wall of symbols. Person, laptop, globe/horizon are the three main elements. No hooded mystic, no giant folded-paper head, no apocalyptic city, no busy multiple scenes.",
+      "largeur": 1086,
+      "hauteur": 1448,
+      "sha256": "089a1d1257f7ab55e5986ac155887712def27222f3e43c1a04f193fb1c3337fc"
+    },
+    {
+      "type": "webinaire_organisations",
+      "fichier": "webinaire-organisations-epoque-symboles-v3.png",
+      "cible_v2": "webinaire-organisations-neoarchaique-v2.png",
+      "references": [
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\epoque-mardi.webp",
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\avant-2026.webp",
+        "tmp\\zegame-prototypes-demo-fermeture\\demo-fermeture-festival-cible\\assets\\avant-2033.webp",
+        "Ressources Point Zero\\Logos\\Logo-PZ_1024x1024.png"
+      ],
+      "prompt": "COMPLETE STYLE REVISION of image 1. Retain its event SUBJECT but replace its origami paper-doll figures. Images 2 and 3 are the actual narrative images from 'Une drôle d’époque' and 'Avant le Zéro' and the PRIMARY STYLE GUIDANCE. Match their expressive believable human faces, contemporary clothes and present-day environments, subtly angular illustration, small mosaic tessellation facets across the whole image, mineral pigment/paper grain, thin glowing antique-gold cracks and flowing networks. NOT the large folded-paper geometric masks of image 1; NOT photorealistic; NOT generic corporate vector illustration. Invite viewers into a human lived experience. Deep teal, navy, plum, muted rust and olive with warm human skin and antique-gold accents, controlled chiaroscuro, some luminous air. Image 4 shows the language of the Point Zéro power symbols. Image 5 is the PZ spiral emblem: integrate its recognizable swirling circular form into the scene as a meaningful inlaid/mosaic motif rather than a pasted logo. Also use an elegant HORIZONTAL lemniscate, never a vertical figure-eight, as a subtle connective line where requested. Keep composition simple, one dominant action, legible at small thumbnail size. NO lettering, titles, captions or watermark. Full-bleed portrait EXACT 3:4 aspect ratio. Create ONE standalone event illustration, not a collage of multiple events. EVENT: WEBINAIRE ORGANISATIONS. Three expressive contemporary colleagues around a modest meeting table, watching and discussing with a single remote presenter on a large screen. Readable natural illustrated faces and engaged gestures, modern everyday professional clothing as in image 2, no robe-like costumes. On the presenter's board within the screen, one simple rosette of six colored power-symbol medallions around a central Source point conveys an organization as a living system, inspired by image 4 without any words. A horizontal gold lemniscate connects two sides of this board and echoes subtly in an inlay on the real meeting table. A small recognizable PZ spiral from image 5 is carved as a discrete round medallion on the screen frame. No tiny charts or many video tiles; keep three colleagues, one presenter and one symbolic board as the dominant composition.",
+      "largeur": 1086,
+      "hauteur": 1448,
+      "sha256": "cd2b61280c85e2eccffa44c60f996420e97229d63f2eae0af78acb7720fdcab2"
+    }
+  ]
+}
