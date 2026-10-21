@@ -11,6 +11,12 @@ La Mémoire permet de retrouver ce que le groupe choisit de garder : un message
 utile, une décision, une action, une rencontre ou une ressource. Le Fil reste
 la conversation complète ; la Mémoire en est une sélection explicite.
 
+**Ajout Codex — 21 octobre, nuit.** Après l'analyse d'impact du portable et les
+trois arbitrages de Boris, la V1 concerne seulement les espaces `groupe` et
+`cercle`. Ni les échanges à deux (`echange`) ni les canaux de Monde (`canal`)
+n'ont de Mémoire dans ce lot. La demande à l'auteur apparaît comme un engagement
+privé dans ses surfaces existantes (accueil, attention, Centre), sans courriel.
+
 Une entrée pointe vers sa source dans **le même espace**. Elle n'en crée pas une
 copie indépendante. Elle ne publie rien dans le Récit personnel, la Ressourcerie,
 un autre groupe ou un espace public. Elle ne crée ni Trace ni Graine et ne
@@ -28,8 +34,38 @@ les gestes suivants. Un regard IA ne verse rien dans la Mémoire.
 | Le message humain d'un autre membre | Demander à son auteur de le conserver | Accord explicite sur ce message et sa version ; ni silence ni vote collectif. |
 | Proposition, action ou décision déjà publiée dans le groupe | Conserver le lien vers l'objet | Son statut réel reste affiché ; une proposition ne devient pas une décision. |
 | Sondage clos | Conserver le lien vers ses résultats | Pas de copie de votes individuels ; droits de lecture inchangés. |
-| Rencontre publiée, confirmée ou passée | Conserver le lien vers la rencontre | Ni brouillon privé ni récapitulatif de présences ajouté. |
-| Ressource déjà partagée au groupe | Conserver le lien ou la carte de fichier | Aucun fichier recopié ; les autorisations restent contrôlées à chaque ouverture. |
+| Rencontre publiée, confirmée ou passée | Conserver le lien vers la rencontre | États `proposee`, `disponibilites`, `retenue` seulement ; précisions ci-dessous. |
+| Message humain contenant une ressource partagée au groupe | Conserver le message avec son lien ou fichier | Accord de l'auteur si c'est le message d'autrui ; aucune extraction autonome de la ressource. |
+
+### Correspondance avec les sources existantes — précisions du 21 octobre, nuit
+
+Pour une rencontre, **« passée » signifie `retenue` avec son créneau retenu dans
+le passé**. Cela décrit son calendrier, pas une preuve de présence ni un
+accomplissement. Les rencontres `declinee` et `retiree` ne sont pas éligibles.
+Si une rencontre conservée prend l'un de ces états, son entrée devient
+indisponible dans la Mémoire ; aucun ancien extrait n'est présenté à sa place.
+Son historique reste dans le Fil selon ses droits habituels. Ne pas créer un
+nouvel état serveur « passée » ni une validation de participation.
+
+Les propositions `brouillon` et `retiree`, ainsi que les décisions en
+`preparation`, sont exclues à l'ajout. Les autres états publiés correspondent
+aux règles du tableau ; une action n'acquiert aucun statut nouveau en étant conservée.
+
+Un lien ou une pièce jointe appartient à son message : **règle (a)** de l'analyse
+d'impact. Pour le message d'autrui, même si l'intérêt porte seulement sur le
+fichier ou le lien, l'accord de l'auteur est nécessaire. Une seule entrée pointe
+vers le message ; ni contournement par une entrée « ressource », ni copie de
+fichier. Le texte et les ressources concernés sont visibles dans la demande.
+Lorsqu'il y a une ressource, ajouter au corps de la confirmation/demande :
+
+> Ce message contient aussi les liens ou fichiers affichés ci-dessous.
+
+L'autorisation porte sur cette version du message **avec ses ressources**.
+Une modification de lien dans le texte, un ajout, un retrait ou un remplacement
+de pièce jointe invalide aussi cet accord. Si ces mutations sont possibles,
+l'empreinte ne doit donc pas se limiter au texte : le contrat doit identifier
+les ressources comprises dans la version présentée, sans recopier leur contenu.
+Les droits de téléchargement restent vérifiés à chaque ouverture.
 
 Si un objet structuré porte un texte personnel distinct de ses informations
 opérationnelles, ce texte n'est pas aspiré comme extrait : conserver la référence
@@ -111,10 +147,13 @@ la carte, pas d'affichage public des refus ou des demandes en attente.
 
 ## Retrait, modification et accès
 
-Peuvent retirer une entrée : l'auteur de la source, la personne qui l'a
-conservée, et un facilitateur/gardien/administrateur **ayant réellement ce droit
-de gestion dans cet espace**. Ne pas inventer un rôle ni donner le droit à tout
-membre. Tout lecteur peut signaler un problème par le mécanisme existant.
+Peuvent retirer directement une entrée : l'auteur de la source, la personne qui
+l'a conservée et le gardien de l'espace. Un facilitateur ou administrateur qui
+n'est pas gardien ne reçoit pas de nouveau droit de retrait dans cette V1 :
+**le retrait par la modération passe par la source**, selon l'arbitrage de Boris.
+Son masquage ou sa suppression rend l'entrée indisponible, dans la limite des
+droits de modération existants. Tout lecteur peut signaler un problème par le
+mécanisme existant, sans créer une nouvelle cible de signalement arbitraire.
 
 Retirer une entrée supprime sa présence dans la Mémoire, pas le message,
 la ressource, les votes, la décision ou l'action d'origine. Après retrait, ne
@@ -165,6 +204,7 @@ Cas à vérifier :
 - [Vision de messagerie, § 9](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-point-zero-vision-cible.md).
 - [Mouvement collectif M1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-mouvement-collectif-m1.md).
 - [Accord des regards invités](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/cgu-article-9-regards-invites-2026-10-20.md).
+- [Analyse d'impact du portable et réponses aux écarts](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/memoire-du-groupe-analyse-impact.md).
 
 Cette V1 ne remplace pas la vision de long terme : Fresque, apprentissages et
 synthèses restent possibles ensuite, avec des règles de transformation distinctes.

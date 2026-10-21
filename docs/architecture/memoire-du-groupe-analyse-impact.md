@@ -25,7 +25,7 @@ personnes) et dans un `canal` (le canal d'un Monde, ouvert à tous ses joueurs) 
 | --- | --- | --- | --- |
 | Son propre message humain | `Messaging::Message`, `author_type = "User"` | non supprimé (`supprime_le`), auteur = moi | — |
 | Message d'un autre membre | idem | après accord de l'auteur (§ 3) | aucun mécanisme de demande privée : à créer |
-| Proposition | `Proposition` (B3), six états | `en_exploration`, `soumise`, `adoptee`, `a_retravailler` | `brouillon` et `retiree` exclus — à confirmer pour `retiree` |
+| Proposition | `Proposition` (B3), six états | `en_exploration`, `soumise`, `adoptee`, `a_retravailler` | `brouillon` et `retiree` exclus — confirmé par Codex, § 7 |
 | Action | `ActionDeFil`, six états | tous (aucune n'est un brouillon) | — |
 | Décision | `Decision`, cinq états | tout sauf `preparation` | — |
 | Sondage clos | `Sondage#clos?` | clos seulement | les votants masqués (lot 2) restent masqués : la carte lit `Carte::DeSondage` |
@@ -34,14 +34,14 @@ personnes) et dans un `canal` (le canal d'un Monde, ouvert à tous ses joueurs) 
 
 ⚠️ **Écart 2 — la rencontre.** « Passée » n'est pas un statut : c'est une rencontre `retenue` dont la date est
 derrière nous. La carte (`Carte::Rencontre`) le sait déjà via ses créneaux. Les rencontres `declinee` et `retiree`
-sont-elles éligibles ? Proposition : non (« ni brouillon » s'étend à ce qui n'a pas eu lieu). → **Codex.**
+sont-elles éligibles ? Proposition : non (« ni brouillon » s'étend à ce qui n'a pas eu lieu). → **Réponse de Codex au § 7.**
 
 ⚠️ **Écart 3 — la ressource.** Dans le code, un lien partagé (`RessourceDeLien`) et une pièce jointe appartiennent
 à un MESSAGE ; ils n'ont ni auteur propre ni existence séparée. Conserver « la ressource » d'un message d'autrui,
 c'est conserver une partie de ce message. Deux lectures possibles :
 - (a) la ressource suit la règle de son message : la conserver demande l'accord de l'auteur si ce n'est pas le mien ;
 - (b) la ressource se conserve SANS le texte du message, sans accord (la carte montre le lien ou le fichier seul).
-Proposition : (a) en V1 — une seule règle, pas de découpage d'un message. → **Codex.**
+Proposition : (a) en V1 — une seule règle, pas de découpage d'un message. → **Confirmé par Codex au § 7.**
 
 Les objets structurés sont **des liens vers leur état courant** : la carte de Mémoire relit l'objet (le modèle
 `Carte` le fait déjà pour le fil), jamais une copie. Aucun extrait de texte personnel n'est aspiré d'un objet.
@@ -111,9 +111,27 @@ et ses messages ne sont pas éligibles.
   aucun droit nouveau sur la Mémoire hors du gardien ;
 - **la demande à l'auteur est un engagement seulement** (accueil, attention, Centre) ; aucun courriel en V1.
 
-**Restent à Codex** :
+**Réponses de Codex — 21 octobre 2026, nuit** :
 
-| # | Question |
-| --- | --- |
-| 2 | Rencontres `declinee` / `retiree` : éligibles ? « Passée » = `retenue` au créneau passé ? |
-| 3 | Ressource d'un message d'autrui : accord de l'auteur (a) ou conservation seule (b) ? |
+| # | Question | Réponse |
+| --- | --- | --- |
+| 2 | Rencontres `declinee` / `retiree` : éligibles ? « Passée » = `retenue` au créneau passé ? | Non aux deux états exclus. Oui : « passée » = `retenue` dont le créneau retenu est passé ; aucun fait de présence ou d'accomplissement déduit. |
+| 3 | Ressource d'un message d'autrui : accord de l'auteur (a) ou conservation seule (b) ? | **(a)** : accord de l'auteur du message, ressources comprises dans la version présentée ; une seule entrée liée au message, pas de conservation autonome pour contourner l'accord. |
+
+### Précisions de conception — ajout Codex
+
+Une rencontre déjà conservée devenue `declinee` ou `retiree` est indisponible
+dans la Mémoire, sans ancien extrait en remplacement. Son histoire reste dans
+le Fil selon les droits habituels. Les propositions `brouillon` / `retiree`
+restent exclues à l'ajout, comme les décisions en `preparation`.
+
+Le texte de la demande montre aussi les ressources du message concerné.
+Si les pièces jointes peuvent être ajoutées, retirées ou remplacées après
+l'accord, leur composition fait partie de la version à contrôler : l'empreinte
+du seul texte ne suffit pas. Pas de fichier recopié ni de droit de téléchargement
+élargi par la conservation. La règle, ses microtextes et les trois arbitrages
+de Boris sont maintenant repris dans les règles V1 liées en introduction.
+
+Ces réponses complètent l'analyse ; elles ne valent pas validation du plan
+technique par Boris ni construction du lot C. Le portable garde la préparation
+de ce plan, puis son implémentation après l'arbitrage prévu avec Boris.

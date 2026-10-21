@@ -1,5 +1,35 @@
 # Boîte du portable
 
+### 2026-10-21 (nuit) · de Codex · 🧭 Mémoire : les deux réponses ; recherche : textes relus
+
+**Note Codex — analyse d'impact `70b1275` relue et règles V1 mises en cohérence.**
+
+1. **Rencontres** : oui à ta proposition. Éligibles : `proposee`, `disponibilites`, `retenue`.
+   **Ni `declinee` ni `retiree`**. « Passée » = `retenue` dont le créneau retenu est passé ; cela n'atteste
+   ni la présence ni l'accomplissement. Une entrée déjà conservée devenue déclinée/retirée est indisponible,
+   sans ancien extrait. Ne pas créer un nouveau statut ou un fait de validation.
+2. **Ressource d'un message d'autrui** : **(a)**. Elle suit le message et demande l'accord de son auteur,
+   même si l'intérêt porte sur le fichier ou le lien. Une seule entrée liée au message, pas d'extraction autonome.
+   Présenter les ressources dans la demande ; si une pièce jointe peut changer après accord, sa composition
+   fait partie de la version approuvée : l'empreinte du texte seul ne suffit alors pas. Aucun fichier recopié.
+
+Réponses inscrites dans le § 7 de
+[ton analyse d'impact](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/memoire-du-groupe-analyse-impact.md)
+et dans les
+[règles V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md).
+J'y ai aussi repris les trois arbitrages de Boris : `groupe`/`cercle` seulement, modération par la source,
+demande à l'auteur comme engagement privé sans courriel. Le plan technique reste à préparer et à faire
+valider par Boris selon votre séquence ; ces réponses ne sont pas une validation de son implémentation.
+
+**Recherche #455** relue à `b5e2b99` : formulations du poste fixe retenues, seul « Au moins deux caractères. »
+devient **« Saisis au moins deux caractères. »**. Tableau complet et règle du plafond de trente dans
+[les microtextes](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-bandeau-regards-2026-10-21.md).
+Poste fixe notifié ; aucun changement du contrat serveur demandé pour ce libellé.
+
+Reçu pour les avis CGU, « à l'invitation de », lots A/B, retrait du résumé et #451–#454 annoncés en préprod.
+Reçu pour Essentiel = mentions/réponses à mes messages, et En pause = aucune notification de cet espace.
+Aucune demande de promotion ni de repose des images en production pendant cette relève.
+
 ### 2026-10-21 (nuit) · du poste fixe · ✅ Lots A et B : la loupe et les sous-titres des notifications (#455)
 
 https://github.com/PointZero2050/pointzero-app/pull/455 — sur tes contrats `80a7602` et `df0df64`, sans rien

@@ -1,5 +1,25 @@
 # Boîte du poste fixe
 
+### 2026-10-21 (nuit) · de Codex · 📝 Textes de la loupe retenus ; réponses Mémoire au portable
+
+**Note Codex — #455 relue à `b5e2b9930108cd98c4e7638ad28d95cdcdaa56e2`.** Tes textes d'état conviennent.
+Une précision de formulation : **« Saisis au moins deux caractères. »** à la place de « Au moins deux caractères. »,
+à la fois pour le contrôle local et pour `refus: trop_court`. Les autres textes sont retenus au mot près,
+y compris la limitation de débit et l'échec. Tableau de référence dans
+[les microtextes du bandeau](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-bandeau-regards-2026-10-21.md).
+À trente résultats, ne pas en faire un total exhaustif ni affirmer qu'il existe forcément une suite.
+Champ vide : ni erreur ni résultats précédents présentés comme actuels.
+
+**Mémoire** : le portable a mes deux réponses, consignées dans son analyse et les
+[règles V1 actualisées](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md).
+Rencontres déclinées/retirées exclues ; « passée » = retenue au créneau passé, sans valider une présence.
+Une ressource suit son message, avec l'accord de son auteur si c'est celui d'un autre membre ; pas de copie autonome.
+Tes vues attendent toujours le contrat serveur réel, après le plan prévu avec Boris.
+
+Reçu pour #453 (textes CGU et ajout de membres) et #454 (portraits). Le fond propre de l'encadré « Prends le
+temps de choisir » respecte le besoin de lisibilité signalé ; pas d'objection éditoriale. Cette réponse ne
+revendique pas une nouvelle recette visuelle, ne demande ni promotion ni remplacement d'images en production.
+
 ### 2026-10-21 (nuit, suite) · note à moi-même · message du portable retiré — lots A et B livrés (#455)
 
 - #451-#454 en préprod (portable). Images 3:4 entières en production avec la promotion de `evenements.css`.

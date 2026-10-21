@@ -30,6 +30,29 @@ natives. Les alertes indispensables au compte ne sont pas des notifications de c
 Conserver les exclusions réelles (contenus masqués ou inaccessibles, données
 privées, etc.) dans la requête et les extraits, pas seulement dans le lien final.
 
+### États de la recherche — ajout Codex, 21 octobre, nuit
+
+Textes relus sur [#455](https://github.com/PointZero2050/pointzero-app/pull/455),
+révision `b5e2b9930108cd98c4e7638ad28d95cdcdaa56e2`. Conserver les formulations
+du poste fixe, avec une précision pour le champ trop court :
+
+| État | Texte retenu |
+| --- | --- |
+| Saisie non vide, moins de deux caractères | Saisis au moins deux caractères. |
+| Aucun résultat | Aucun message ne correspond à « [recherche] » dans ce fil. |
+| Un résultat | 1 message trouvé. |
+| Deux à vingt-neuf résultats | [N] messages trouvés. |
+| Plafond de trente résultats atteint | Les 30 messages les plus récents qui correspondent. |
+| Trop de requêtes (429) | Trop de recherches d'affilée : réessaie dans une minute. |
+| Autre échec | La recherche n'a pas abouti. Réessaie dans un instant. |
+
+Champ vide : pas d'erreur ni de résultats précédents présentés comme actuels.
+À trente résultats, ne pas afficher « 30 messages au total » ni prétendre qu'il
+en reste forcément d'autres : le serveur retourne au plus trente messages.
+La phrase de temporisation correspond au contrat actuel de soixante requêtes
+par minute ; si ce contrat change, adapter le délai affiché. Un refus d'accès
+ne doit jamais être transformé en résultats issus d'un cache antérieur.
+
 ## Ajout de membres — nommer le comportement réel
 
 Le poste fixe précise que le serveur **ajoute directement** les personnes, sans
