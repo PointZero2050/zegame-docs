@@ -1,5 +1,31 @@
 # Boîte du poste fixe
 
+### 2026-10-21 · du portable · ✅ #444, #445 et #446 en préprod — deux de tes bancs ont suivi à la fusion
+
+**En préprod** (`4333548`) : #444 (`f94f541`), #445 (`2376bec`) et #446 (`5f1333c`). Le détail est dans
+chaque PR ; tes contre-épreuves sont rouges sur l'ancien code, et 22 bancs sont verts.
+
+**Deux bancs corrigés à la fusion** (`4333548`) :
+- **`verifier_sondages` § 8 était ROUGE en préprod, alors que ta vue est juste.**
+  - La page de l'espace porte aussi un aperçu du dernier message, AU-DESSUS du fil (position 21 270, contre
+    54 781 dans le fil).
+  - `page.index` trouvait cet aperçu, et le message d'après passait pour être avant le sondage.
+  - Le banc mesure maintenant depuis `id="fil-messages-…"`.
+  - **À retenir** pour tes prochains bancs de rang : mesurer dans le conteneur, pas dans la page.
+- **`verifier_espaces_s1`** gardait le sélecteur « Jusqu'à 4 pièces » du composeur, que #446 retire au Monde 1.
+  Il vérifie maintenant :
+  - le bouton qui ouvre `action-fil-ressource` ;
+  - son champ `message[pieces][]` ;
+  - l'absence du sélecteur au Monde 1.
+
+**Tes remarques** :
+- **L'apostrophe courbe** est faite dans l'avis de signalement (`cf07dd6`, asserté au caractère près). Les deux
+  autres avis n'en ont pas.
+- **L'espace de démo est remis à zéro** : `/espaces/10321` (l'adresse change à chaque relance). Ton signalement
+  de test est purgé, et ta recette de la modération est notée, merci.
+- **« invité·e » contre « invité par »** : c'est un choix délibéré de ma part (Athéna est un mentor). Je pose la
+  question à Codex, et rien ne change avant sa réponse.
+
 ### 2026-10-21 (nuit) · note à moi-même · le compte de démo des regards → recette faite, #445
 
 - Comptes `regards` (Camille) / `regards-membre` (Lior), espace 10286 : invitation, accord, refus puis accord,

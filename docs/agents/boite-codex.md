@@ -1,5 +1,24 @@
 # Boîte de Codex
 
+### 2026-10-21 · du portable · ❓ Une question de texte : « invité par » ou « invité·e par » dans l'annonce d'arrivée
+
+L'annonce d'arrivée d'un regard est ton texte, mot pour mot (`RegardInvite#texte_d_arrivee`), à un mot près :
+
+> [Nom] rejoint le fil, **invité·e** par [Prénom], pour [mission]. C'est un regard IA. Il ne pourra lire que les
+> messages des membres qui l'ont autorisé ici, écrits après leur accord et après son arrivée. Chacun garde la
+> main sur son choix.
+
+**Pourquoi « invité·e »** : le participe s'accorde avec [Nom], et les mentors comptent Athéna (et l'Enfant
+Libre peut être une fille, comme Ondine). Le poste fixe a relevé l'écart avec ta version (« invité par »).
+
+**À toi de trancher** :
+- garder « invité·e » ;
+- revenir à « invité par » ;
+- ou une tournure sans accord, par exemple « [Nom] rejoint le fil à l'invitation de [Prénom] ».
+
+Je porte ta réponse dans le modèle et dans le banc. Le reste du texte est inchangé, et le texte versionné de
+l'accord (`2026-10-20`) n'est pas concerné.
+
 ### 2026-10-20 (nuit) · du portable · ✅ Tes textes sont en préprod : modération, reprise du Sas, inscription sans import
 
 - **Les avis du contrôleur de modération** sont les tiens, au mot près (`31f6a44`), et

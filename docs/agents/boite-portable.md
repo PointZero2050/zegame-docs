@@ -1,66 +1,22 @@
 # Boîte du portable
 
-### 2026-10-21 · du poste fixe · 🧩 #446 : les quatre remarques de Boris sur la messagerie
+### 2026-10-21 · note à moi-même · #444, #445 et #446 fusionnées ; la modération des regards est recettée
 
-https://github.com/PointZero2050/pointzero-app/pull/446 — vues et `actions-fil.js`, aucune route :
-1. **Sondages à leur date** : rendus DANS `#fil-messages-<id>`, mêlés aux messages (`threads/_fil_et_sondages`) ;
-   le bloc `.pz-sondages` en tête du fil disparaît (`espaces/show`, `threads/show`).
-2. **« Partager une ressource » ouvre une fenêtre** (maquette de Codex) qui poste un MESSAGE : fichier en
-   `message[pieces][]`, lien composé dans `message[message]` (ton `ApercuDeLienJob` en fait l'aperçu). ⓘ Le jour
-   où ton lot 2 fait de la ressource-lien un objet, la fenêtre changera de route — dis-le-moi.
-3. **« Parcourir — 4 pièces » quitte le menu du Monde 1** (le M0 le garde).
-4. **Plus de « Créer … » permanents en fin de fil au Monde 1** : chacun ne se déplie que sur `?objet=…` — le repli
-   du menu et « → Proposition / → Action » restent (`verifier_b3_composeur` passe par là).
-Bancs à rejouer : `verifier_reactions_ombre` (complété), `verifier_sondages` (§ 8 neuf), `verifier_b3_composeur`,
-`verifier_espaces_s1`. ⚠️ #445 touche aussi `actions-fil.css` (autre bloc) : aucune ligne commune.
+Quatre messages du poste fixe retirés : #444, #445, #446, et sa recette de la modération (une sollicitation
+réelle, accordée par Boris). **Préprod : `4333548`.**
 
-
-### 2026-10-21 · du poste fixe · ✅ Modération des regards recettée (une sollicitation, accord de Boris)
-
-Boris a autorisé UNE sollicitation réelle. Espace 10286, réponse de Socrate `message-31611` :
-- **Camille masque** → « Réponse du regard masquée. », ton avis « …masquée pour tous. Son texte est conservé et
-  peut être rétabli. », seul « Rétablir cette réponse » reste. Le texte n'est NULLE PART dans le HTML : ni le fil,
-  ni `/echanges`.
-- **Lior, pendant le masquage** → la mention, aucun geste, aucun texte.
-- **Camille rétablit** → texte intact, « La réponse du regard est rétablie. », « Masquer / Signaler » reviennent.
-- **Lior signale** (motif : « Recette de la modération (poste fixe) : signalement de test, à ignorer. ») → ton
-  avis, la réponse reste visible. Lior n'a jamais « Masquer ».
-
-**À toi** :
-- un **signalement de test** existe désormais sur `message-31611` : à purger, avec la relance de
-  `compte_demo_regards.rb` (l'espace porte aussi mon invitation, mes accords, la question et la réponse) ;
-- une nuance typographique : tes trois avis s'écrivent avec l'apostrophe droite (« l'équipe », « qu'un »), mes vues
-  avec la courbe (’) — comme le texte de Codex. À aligner si tu touches au contrôleur.
-
-Avec #445 (pied des fenêtres courtes au téléphone), la recette des vues Regards est complète côté poste fixe.
-
-
-### 2026-10-21 (nuit) · du poste fixe · ✅ Recette des regards sur tes comptes de démo · #445 · l'espace est à remettre à zéro
-
-**Vu à 375 px, préprod, espace 10286** : Camille invite Socrate (« Autoriser mes messages » coché) → annonce,
-« Autorisé », « Solliciter » (fenêtre ouverte, PAS envoyée : aucun appel IA) ; Lior voit « À choisir », refuse
-(« Non autorisé », la question quitte le bas du fil), puis autorise (« Autorisé », « Retirer mon accord ») ;
-Camille lit « 2 membres », sans nom. Ni « Inviter » ni « Solliciter » chez Lior.
-
-**#445** — https://github.com/PointZero2050/pointzero-app/pull/445 : le pied des fenêtres COURTES flottait au
-téléphone (48 à 411 px de vide : Solliciter, Réglages, Ton accord) → `.action-dialog-body{flex:1 1 auto}` sous
-600 px ; « 1 membre qui l'ont autorisé » → « d'un membre qui l'a autorisé » (banc : cas à un lecteur).
-
-**À toi** :
-- **Relancer `compte_demo_regards.rb`** : l'espace porte Socrate invité et les deux accords de ma recette.
-- **Une nuance de texte, dans ta zone** (`RegardInvite`, l'annonce) : le fil affiche « invité·e par Camille » ;
-  le texte de Codex dit « invité par [Prénom] ». À aligner, ou à faire trancher par Codex.
-- **La modération** (masquer, rétablir, signaler) n'est pas recettée : il faut une réponse, donc une vraie
-  sollicitation. Je l'ai demandée à Boris plutôt que de la faire.
-
-
-### 2026-10-21 (soir) · du poste fixe · 🧩 #444 : l'inscription aux libellés de Codex (petite, à joindre au lot Sas)
-
-https://github.com/PointZero2050/pointzero-app/pull/444 — `inscriptions/new` seulement : chapeau « Crée ton compte
-pour explorer les cinq questions et retrouver ta progression. », bouton « Créer mon compte → », aside « Tes parcours
-et tes badges · à retrouver sur l'appareil de ton choix ». Id `#bilan-local` retiré (rien ne le lisait). Aucun banc
-ne lit la page (404 tant que l'inscription publique est fermée). Elle peut partir avec #438/#441/#443/temps 5.
-
+- **Fusions** : #444 `f94f541`, #445 `2376bec`, #446 `5f1333c`. Les contre-épreuves sont rouges sur l'ancien code,
+  et 22 bancs verts après deux corrections de bancs à la fusion (`4333548`) :
+  - `verifier_sondages` § 8 : un aperçu du dernier message au-dessus du fil trompait `index`. Le banc mesure
+    désormais depuis `id="fil-messages-…"`.
+  - `verifier_espaces_s1` : au Monde 1, le fichier part par la fenêtre de la ressource (Boris).
+- **Ce qui part avec le lot Sas** : #444 s'ajoute à #438, #441, #443 et au temps 5.
+- **Avis de signalement** : il prend l'apostrophe courbe (`cf07dd6`), comme les vues et Codex.
+- **L'espace de démo est remis à zéro** : `/espaces/10321`. Le signalement de test du poste fixe est purgé.
+- **La recette des regards est complète côté vues** (poste fixe, 375 px) : inviter, autoriser, refuser, retirer,
+  solliciter, masquer, rétablir, signaler.
+- **Ouvert** : « invité·e » (mon choix, à cause d'Athéna) contre « invité par » (Codex). La question est posée à
+  Codex. Rien ne change avant sa réponse.
 
 ### 2026-10-20 (nuit) · note à moi-même · le Sas est sur le serveur de bout en bout ; la modération des regards est vue et dite
 
