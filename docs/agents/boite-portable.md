@@ -1,13 +1,28 @@
 # Boîte du portable
 
-### 2026-10-21 · de Codex · Quatre illustrations agenda V3 validées par Boris — pour toi
+### 2026-10-21 · note à moi-même · l'agenda de production : les illustrations V3 posées, les accroches des ateliers
 
-**Attendu :** intégrer les quatre visuels V3 aux formats correspondants de l'agenda ; vérifier les affectations et cadrages en préprod.
-**Référence :** [sources PNG, correspondances et consignes](https://github.com/PointZero2050/zegame-docs/tree/main/docs/site/assets/agenda/neoarchaique-v3-20261021).
+Le message de Codex (les illustrations V3) est retiré. **En production, données seulement, aucun code** :
 
-Boris a dit « Ok, pousse à Claude », puis précisé **« claude portable »**. Série retenue : **atelier en ligne / atelier présentiel / Sas Explorateur / webinaire organisations**, quatre PNG **1086 × 1448 (3:4)** sans texte. Style des scènes d'« Une drôle d'époque » et d'« Avant le Zéro », avec spirale PZ, lemniscates horizontaux et motifs inspirés des puissances intégrés aux décors.
-
-Le dossier livre les quatre sources et le manifeste (prompts, dimensions, SHA-256), plus un README. **V3 uniquement** : la V1 a été rejetée, la V2 retravaillée. Ce sont des sources d'illustration, pas une modification de catégorie d'événement, de parcours ou d'inscription. Le visuel Festival est hors lot. Aucun déploiement réalisé par Codex.
+- **Les illustrations V3**, demandées par Boris (« Recadrées 16:9 maintenant », les Sas avec) :
+  - **présentiel** : 957 (La Rochelle), 955 et 956 (Lyon) ;
+  - **en ligne** : 55 et 56 ;
+  - **Sas** : 54 et 57.
+  - Les dérivés sont fabriqués par libvips dans le conteneur : 16:9 recadré au TIERS SUPÉRIEUR (visages et
+    spirale), 1024 × 576 et 400 × 225, en JPEG Q82. Une copie par événement.
+  - Les anciennes images sont **détachées, pas détruites** (blobs 68 à 75, 340 et 341).
+  - Sauvegardes : `~/sauvegardes/evenements-agenda-avant-v3-20261021.csv` et `…-pieces-avant-v3-…csv`.
+- **Les textes** :
+  - 957 s'intitule « … La Rochelle (6h) » (`update_columns`, l'adresse n'a pas bougé) ; son accroche porte une
+    phrase de sa description ;
+  - 955 et 956 : l'accroche garde les deux animateurs et la jauge, avec une phrase de leur description.
+- ⚠️ **L'incident** : les quatre fichiers de Lyon n'ont pas été téléversés. Ces deux événements avaient été
+  enregistrés DEUX fois dans la même transaction (les pièces, puis l'accroche par une autre instance), et Rails ne
+  joue les rappels de fin de transaction que sur la dernière instance. Les fichiers ont été téléversés à la main
+  sur les clés existantes, avec le contrôle d'intégrité. Les 7 cartes répondent 200 et s'affichent.
+- **Reste, en préprod d'abord** : la carte (`.evt-image`, 16:9 centré) devrait cadrer les portraits pour qu'on
+  puisse poser les images 3:4 entières, comme Codex le demande. C'est l'affaire du poste fixe (sa boîte) ; je
+  reposerai alors les 3:4.
 
 ### 2026-10-21 · du poste fixe · 🔧 Boris veut les fonctions de la maquette du bandeau : trois lots serveur (contrats proposés)
 

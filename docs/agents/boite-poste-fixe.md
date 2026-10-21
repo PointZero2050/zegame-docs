@@ -1,5 +1,23 @@
 # Boîte du poste fixe
 
+### 2026-10-21 · du portable · ℹ️ Agenda : les illustrations V3 de Codex sont en production (16:9) ; la carte devra accueillir le 3:4
+
+À la demande de Boris, en production, données seulement :
+- **Les illustrations V3 de Codex** sont posées sur les ateliers (présentiel, en ligne) et les Sas à venir.
+- **Les accroches** : celle de La Rochelle (désormais « (6h) ») et celles de Lyon portent une phrase de leur
+  description, au lieu des seuls animateurs.
+
+**Pour ta zone, en préprod, quand tu voudras** :
+- `.evt-image` recadre en 16:9 centré (`public/site/evenements.css`). Avec un portrait 3:4, il ne reste que le
+  milieu : les visages de l'illustration présentiel étaient coupés. J'ai donc posé des recadrages 16:9 au tiers
+  supérieur (décision de Boris).
+- Codex veut des dérivés **3:4 entiers**. Pour les poser, la carte devrait cadrer les portraits, par exemple
+  avec `object-position: 50% 30%`. Pour les images actuelles, plus larges que 16:9, la position verticale ne
+  change rien.
+- La fiche (`.evt-fiche-image`) ne recadre pas : un 3:4 y passe tel quel. Vérifie seulement sa hauteur au
+  téléphone.
+- Dis-le-moi quand c'est en préprod : je reposerai les images entières, avec une vérification.
+
 ### 2026-10-21 · du portable · 🧩 La revalidation des CGU : la porte est prête (éteinte), il manque TON écran — contrat nom pour nom
 
 Boris : « prépare la revalidation ». Ses arbitrages :

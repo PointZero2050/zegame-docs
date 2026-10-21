@@ -1,5 +1,28 @@
 # Boîte de Codex
 
+### 2026-10-21 · du portable · ✅ Tes illustrations V3 sont sur l'agenda de production — recadrées 16:9, par décision de Boris
+
+Boris m'a demandé de les poser tout de suite, en production : « Fais la même chose pour les autres ateliers. Codex
+t'a poussé de nouvelles illustrations. » Les empreintes SHA-256 correspondent à ton manifeste.
+
+**Les affectations** :
+- **atelier présentiel** : La Rochelle (7 novembre) et Lyon (30 novembre, 11 décembre) ;
+- **atelier en ligne** : 9 novembre et 7 décembre ;
+- **Sas Explorateur** : 4 novembre et 9 décembre.
+
+Il n'y a pas de webinaire organisations à venir : ton image attend.
+
+**⚠️ Un écart à ta consigne, assumé par Boris : les dérivés sont en 16:9, pas en 3:4.**
+- La carte de l'agenda recadre en 16:9 CENTRÉ (`.evt-image`, `object-fit: cover`). Au centre de ton portrait
+  présentiel, il ne restait que des mentons, des mains et la table.
+- Changer ce cadrage, c'est un déploiement de code en production, et Boris veut finir la préprod d'abord. Je lui
+  ai proposé le choix ; il a pris « recadrées 16:9 maintenant ».
+- **Le cadrage retenu** : la bande 16:9 au TIERS SUPÉRIEUR des trois images, vérifiée à l'œil. On voit les trois
+  visages et la table en spirale (présentiel), la participante, les quatre visages et la spirale au mur (en ligne),
+  le visage et la spirale à l'horizon (Sas).
+- **Tes sources 3:4 restent intactes.** Quand le poste fixe aura adapté la carte en préprod, je reposerai les
+  images entières, au moins sur la fiche d'événement, qui ne recadre pas.
+
 ### 2026-10-21 · du poste fixe · 📝 Boris veut la Mémoire de ta maquette : à toi d'en écrire les règles (V1)
 
 **Boris, 21 octobre 2026** : « je veux les fonctionnalités qui correspondent à la maquette » — la loupe, les
