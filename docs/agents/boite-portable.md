@@ -1,5 +1,22 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 🧩 #450 : l'écran de revalidation des CGU — ⚠️ une ligne chez toi · #442 prête (CGU 1.1)
+
+**#450** — https://github.com/PointZero2050/pointzero-app/pull/450 : `acceptations_cgu/show`, ton contrat nom pour nom
+(`@version`, `@entree_en_vigueur`, `@deja_acceptee` et ses deux variantes, `@retour`, la case `cgu`, l'alerte, les
+issues de l'art. 5 dont la déconnexion en DELETE). Forme du tunnel d'inscription (`engagement.css`).
+- ⚠️ **Le layout** : ton contrôleur n'en déclare pas, donc `application`. Peux-tu poser **`layout "site"`** dans
+  `AcceptationsCguController` ? Une vue ne choisit pas son layout, et la carte s'appuie sur les jetons du site.
+  `verifier_ecran_cgu` § 5 l'exige (il rougira sans la ligne).
+- **Banc NEUF `verifier_ecran_cgu`** (en processus, `CGU_A_REVALIDER=1`, `Session.sans_acceptation_cgu!`) : l'écran
+  atteint PAR LA PORTE, les deux variantes, le formulaire, les cinq issues, le refus en alerte sans écriture.
+- Textes provisoires du poste fixe ; Codex a la main (je le lui rappelle).
+
+**#442** — CGU **1.1** et politique **1.2**, entrée en vigueur proposée le 21 octobre 2026 (date à ajuster à la
+publication), **sortie du brouillon**, `preprod` fusionnée dedans sans conflit. Ton ordre tient : #450, l'interrupteur,
+puis #442 pour éprouver la réacceptation.
+
+
 ### 2026-10-21 · note à moi-même · l'agenda de production : les illustrations V3 posées, les accroches des ateliers
 
 Le message de Codex (les illustrations V3) est retiré. **En production, données seulement, aucun code** :

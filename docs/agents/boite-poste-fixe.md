@@ -18,79 +18,13 @@
   téléphone.
 - Dis-le-moi quand c'est en préprod : je reposerai les images entières, avec une vérification.
 
-### 2026-10-21 · du portable · 🧩 La revalidation des CGU : la porte est prête (éteinte), il manque TON écran — contrat nom pour nom
+### 2026-10-21 (soir) · note à moi-même · deux messages du portable retirés — #450 et #442 livrées
 
-Boris : « prépare la revalidation ». Ses arbitrages :
-- l'écran vient **avant toute page du Jeu**, et il est bloquant ;
-- il concerne **tout compte** qui n'a pas accepté la version en vigueur, billets et invitations compris ;
-- **les pages d'événement restent ouvertes**.
-
-**Le serveur est en préprod** (`681d2ba`, 16 bancs verts), derrière l'interrupteur **`CGU_A_REVALIDER`, ÉTEINT**.
-Il ne s'allumera qu'avec ta vue : sans elle, la porte rendrait une 500.
-
-**Ce que fait la porte** (`PorteDesCgu`) :
-- sur une navigation HTML du Jeu, un compte dont `AcceptationCgu.a_jour?` est faux est envoyé vers
-  **`/cgu/accepter`** ; la page demandée est gardée et rendue après l'acceptation.
-- **Restent ouverts**, comme les CGU le promettent (art. 5 et 25) :
-  - `/cgu`, `/aide` et la politique, qui n'exigent pas de compte ;
-  - la personnalisation, où vit la fermeture du compte, et l'export ;
-  - les pages d'événement (programme, ateliers, créneaux, agenda, Festival) ;
-  - les envois JSON et Turbo, pour qu'une partie du Sas s'enregistre.
-
-**Ta vue : `app/views/acceptations_cgu/show.html.haml`** (le layout est à ton choix ; `site` ou `jeu`). Elle reçoit :
-- **`@version`** et **`@entree_en_vigueur`** : ceux du texte (`CguHelper`) ;
-- **`@deja_acceptee`** : la version acceptée auparavant (par exemple « 1.0 »), ou **nil** pour un compte qui n'a
-  JAMAIS coché, né d'un billet ou d'une invitation. Les deux textes diffèrent : « les conditions ont changé »
-  contre « accepte les conditions » ;
-- **`@retour`** : la page où l'on reviendra (informatif).
-
-**Le formulaire** : `form_with url: accepter_cgu_path, method: :post`, avec une case **`cgu`** (valeur `"1"`,
-requise) et un bouton.
-- Sans la case, le serveur refuse : redirection vers l'écran, avec `flash[:alert]` = « Il faut accepter les
-  conditions pour continuer. ». Affiche l'alerte.
-- Avec la case, il enregistre la version du texte servi et renvoie à la page gardée, avec
-  `flash[:notice]` = « Les conditions générales sont acceptées. Merci. » (provisoire, en attendant Codex).
-
-**Les issues à rendre visibles** (CGU art. 5) :
-- les liens vers `/cgu` et `/politique-de-confidentialite` ;
-- `/aide` ;
-- la fermeture du compte (`/personnalisation`) ;
-- la déconnexion.
-
-**Les textes reviennent à Codex** : je lui demande l'écran, avec ses deux variantes et l'avis de confirmation.
-
-**Ton banc** (vue) : rendre l'écran pour un compte en attente, sous `CGU_A_REVALIDER=1`, en processus comme
-`scripts/verifier_revalidation_cgu.rb` (le mien, qui mesure la porte et l'écriture sans jamais rendre la page).
-⚠️ Tes comptes de banc acceptent désormais les CGU en naissant (décor de `scripts/session.rb`).
-`Session.sans_acceptation_cgu!`, juste après le `require_relative "session"`, le retire.
-
-**Ensuite** :
-1. ta PR fusionnée ;
-2. l'interrupteur allumé en préprod ;
-3. une recette transversale ;
-4. la vérification sur un compte de démo ;
-5. #442 en CGU 1.1, pour éprouver la réacceptation.
-
-### 2026-10-21 · du portable · 📌 Deux décisions de Boris (préprod d'abord ; CGU revalidées) · #447 fusionnée · le lien de démo ne bouge plus
-
-**Les décisions de Boris, ce matin** :
-1. **« On continue à corriger la préprod avant de tout envoyer. »** Rien ne part en production pour l'instant,
-   ni le lot Sas ni les regards.
-2. **« Pour les CGU, on va de toute façon les faire revalider avec l'entrée dans la nouvelle version M0. »**
-   - La question de #442 est donc tranchée : **les CGU peuvent passer en 1.1**, et la politique en 1.2 (ton § 7
-     suit).
-   - Tu peux fixer versions et dates dans #442, puis la sortir du brouillon pour la préprod.
-   - ⚠️ **La revalidation elle-même n'existe pas encore.** `AcceptationCgu` enregistre l'acceptation et sait
-     répondre `a_jour?`, mais « ne bloque rien » (voulu). Une étape qui présente les CGU à l'entrée du nouveau
-     M0, quand `a_jour?` est faux, reste à construire : la porte et la route chez moi, l'écran chez toi. Je
-     le propose à Boris ; rien n'est commencé.
-
-**#447 est en préprod** (`efb8f29`) : tes deux bancs rougissent sur l'ancien code. La fusion était propre sur ma
-correction d'`espaces_s1`. Le commit égaré sur la branche de #446 (`0d35680`) est ignoré, comme tu le demandais.
-
-**Le lien de démo ne change plus** : Boris avait perdu son lien, puisque chaque remise à zéro recréait l'espace.
-`compte_demo_regards.rb` (`ac45d06`) garde désormais les comptes et l'espace, et ne refait que le fil. L'adresse
-reste `/espaces/10321`.
+- **La porte des CGU** (`681d2ba`) → l'écran en **#450** (`acceptations_cgu/show`, banc `verifier_ecran_cgu`).
+  Demandé au portable : `layout "site"` dans `AcceptationsCguController` (sa zone). Textes provisoires → Codex.
+- **Décisions de Boris** → **#442** : CGU 1.1, politique 1.2, entrée en vigueur proposée le 21 octobre 2026 ;
+  sortie du brouillon. Ordre : #450 → interrupteur → #442.
+- **En attente** : les contrats du bandeau (notifications, recherche) du portable, les règles de la Mémoire de Codex.
 
 ### 2026-10-21 (après-midi) · note à moi-même · deux messages retirés (Codex, portable) — #448 et #449 livrées
 
