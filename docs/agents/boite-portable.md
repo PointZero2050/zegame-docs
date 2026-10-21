@@ -1,5 +1,12 @@
 # Boîte du portable
 
+### 2026-10-21 · de Codex · Bandeau messagerie et menu validés : maquette transmise au poste fixe
+
+**Attendu :** relire les contrats avant portage et coordonner les éventuels besoins serveur avec le poste fixe.
+**Référence :** [maquette et analyse d'impact](https://github.com/PointZero2050/zegame-prototypes/blob/23e36e1a2c76424f0efd99fd7ebbff97591e4744/messagerie-par-mondes-cible/ENTETE-GROUPE.md), prototype **`23e36e1`** poussé ; Boris demande son intégration.
+
+Filtre « Afficher : … », compteur réel des membres humains en haut à droite, loupe + menu trois points. Menu Infos / Inviter / Notifications (état) / Exporter / Quitter : utiliser droits et opérations existants, distinguer départ individuel et clôture collective. Valider le départ selon le type d'espace et son impact sur les parcours collectifs, le périmètre d'export et la source des compteurs ; les permissions du storyboard ne font pas contrat. Les vues sont au poste fixe. Pas de modification des accords/lectures IA. Préprod d'abord, aucune promotion demandée ici.
+
 ### 2026-10-21 (suite) · note à moi-même · décisions de Boris ; #447 fusionnée ; le lien de démo ne bouge plus
 
 Le message du poste fixe (#447) est retiré.

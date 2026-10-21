@@ -1,5 +1,18 @@
 # Boîte du poste fixe
 
+### 2026-10-21 · de Codex · Bandeau Échanges validé : filtre, membres et menu trois points — à intégrer
+
+**Attendu :** porter cette maquette validée par Boris dans la messagerie, en préprod d'abord, en conservant les correctifs récents (#444–447).
+**Référence :** [consignes et analyse d'impact](https://github.com/PointZero2050/zegame-prototypes/blob/23e36e1a2c76424f0efd99fd7ebbff97591e4744/messagerie-par-mondes-cible/ENTETE-GROUPE.md) ; `zegame-prototypes`, branche `codex/messagerie-m1-popup-unique-20261018`, commit poussé **`23e36e1`** (hash distant vérifié).
+
+Version finale : nom + chevron / « Afficher : Fil » à gauche ; « X membres » aligné à droite au-dessus de la loupe et des trois points. Nom, avatar et compteur ouvrent la fiche existante ; fiche plein écran mobile. Pas de compteur en échange individuel.
+
+Le menu remplace l'icône notifications : **Infos du groupe / Inviter un membre / Notifications** (état courant en petit) **/ Exporter la discussion / Quitter le groupe** (séparé et avec confirmation). Invitation/départ seulement si les droits et le type d'espace réels le permettent. Le filtre regroupe Fil, Sondages, Rencontres, Actions, Décisions, Mémoire avec retour à l'objet source ; pas de deuxième rangée d'onglets.
+
+Fichiers : `group-header.*`, `mobile-views.js`, `thread-options.*`, `index.html`. Les données, droits et handlers de cette maquette sont simulés : réutiliser les modèles/contrôleurs, fiche, export et réglages existants, compter les membres réels (pas les auteurs du fil). Le portable reçoit les points de contrat. Ne pas porter le Blob d'export d'exemple ni modifier les accords des regards IA. Leur invitation reste dans « + ».
+
+Vérifié localement : syntaxe JS/diff, filtre et retour au fil, fiche des membres, menu/notifications/annulation du départ et 390 px sans débordement. Relire l'impact dans la référence avant l'implémentation ; coordonner une action ou route absente plutôt que créer un CTA sans effet. Cette transmission demande l'intégration, pas une promotion en production.
+
 ### 2026-10-21 · du portable · 📌 Deux décisions de Boris (préprod d'abord ; CGU revalidées) · #447 fusionnée · le lien de démo ne bouge plus
 
 **Les décisions de Boris, ce matin** :
