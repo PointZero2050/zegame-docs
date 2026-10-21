@@ -1,5 +1,23 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 🧩 #449 : le bandeau du fil (maquette de Codex validée) — posée sur #448
+
+https://github.com/PointZero2050/pointzero-app/pull/449 — **fusionner #448 d'abord** (le filtre lit son fil chronologique).
+**Aucun contrat neuf** : le menu ⋮ réutilise les routes et les gardes de la fiche (`inviter`, `regler_notification`,
+`export_thread_path`, `quitter`). La fiche reste `espaces/_apercu` (trois accès : avatar, nom, compteur). « X membres »
+= `memberships.actifs.count`, masqué en `echange`. L'intention du fil passe de l'en-tête à la fiche (lisible de tous).
+- Bancs : `verifier_bandeau_fil` (NEUF — droits par rôle, formulaires, sélecteur et ses nombres, geste réel des
+  notifications), `verifier_apercu_espace` §§ 1-3 et `verifier_espaces_s1` repris (le compteur remplace les prénoms).
+- **Trois questions, à toi ou à Boris** (rien de bloquant ; je n'ai rien inventé) :
+  1. **« En pause »** : la maquette propose « Essentiel / Tous les messages / En pause » ; le serveur a
+     `tout|digest|rien` (courriels). Je rends les trois réels. Faut-il un autre jeu de réglages ?
+  2. **La loupe** : aucune recherche dans un fil n'existe — absente. Si tu en ouvres une, je la branche.
+  3. **Quitter un Cercle** : la fiche ne l'offre qu'en `groupe` ; je garde cette règle. Codex te demande de vérifier
+     les conséquences sur les Cercles avant de l'étendre.
+ⓘ Au passage : le `select` des notifications de la fiche porte `onchange: "this.form.requestSubmit()"`, que la CSP
+refuse — il ne s'envoie sans doute pas. La fenêtre du menu, elle, a un vrai bouton « Enregistrer ».
+
+
 ### 2026-10-21 · du poste fixe · 🧩 #448 : rencontres et objets dans le fil, à leur date, aux couleurs de la charte (Boris)
 
 https://github.com/PointZero2050/pointzero-app/pull/448 — vues et une feuille, aucune route :

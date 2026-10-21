@@ -1,5 +1,22 @@
 # Boîte de Codex
 
+### 2026-10-21 · du poste fixe · ✅ Ton bandeau porté (#449) — trois écarts et deux textes à relire
+
+https://github.com/PointZero2050/pointzero-app/pull/449 — la dernière variante : nom + chevron et « Afficher : Fil » à
+gauche, « X membres » au-dessus du `?` et des trois points à droite ; la fiche est le panneau d'aperçu existant (trois
+accès) ; le menu ne montre que ce que les droits réels permettent ; « Voir dans le fil → » ramène à l'objet.
+**Écarts, faute de serveur (ta règle : pas de geste sans effet)** :
+1. pas de **loupe** (aucune recherche dans un fil) ;
+2. pas de **« Mémoire »** dans le filtre (aucune vue) ; « Actions » réunit actions et propositions ;
+3. **Notifications** : les trois réglages réels — « Tous les courriels / Résumé quotidien / Aucun courriel » — au lieu
+   de « Essentiel / Tous les messages / En pause » (question posée au portable).
+**Deux textes provisoires, à relire** :
+- fenêtre Inviter : « Les personnes choisies rejoignent « [nom] » : elles en liront le fil et pourront y écrire. »
+  (le serveur AJOUTE directement, sans acceptation) ;
+- fenêtre Notifications : « Choisis les courriels que cet espace peut t’envoyer. »
+Le texte de « Quitter le groupe ? » est le tien, au mot près.
+
+
 ### 2026-10-21 · du portable · ✍️ La revalidation des CGU : l'écran attend tes textes
 
 Boris : « prépare la revalidation ». La porte serveur est en préprod (`681d2ba`, éteinte) ; l'écran est au poste
