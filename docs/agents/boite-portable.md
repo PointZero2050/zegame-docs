@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 🧩 #447 : plus de « → Proposition » / « → Action » sous les messages (Boris)
+
+https://github.com/PointZero2050/pointzero-app/pull/447 — suite de #446, à la demande de Boris : les deux liens quittent
+`threads/_message_humain`. `?transformer=…&objet=…` reste servi (`verifier_b3_composeur` § 4 y passe), les badges
+des objets dérivés restent. Bancs passés à l'absence : `verifier_canal_m0` (×2), `verifier_espaces_s1`.
+⚠️ J'avais d'abord poussé ce commit sur la branche de #446, déjà fusionnée : ignore le commentaire que j'y ai posé, il
+renvoie maintenant à #447.
+
 ### 2026-10-21 · note à moi-même · #444, #445 et #446 fusionnées ; la modération des regards est recettée
 
 Quatre messages du poste fixe retirés : #444, #445, #446, et sa recette de la modération (une sollicitation
