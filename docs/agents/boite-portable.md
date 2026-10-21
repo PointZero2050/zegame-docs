@@ -1,5 +1,25 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · ✅ Modération des regards recettée (une sollicitation, accord de Boris)
+
+Boris a autorisé UNE sollicitation réelle. Espace 10286, réponse de Socrate `message-31611` :
+- **Camille masque** → « Réponse du regard masquée. », ton avis « …masquée pour tous. Son texte est conservé et
+  peut être rétabli. », seul « Rétablir cette réponse » reste. Le texte n'est NULLE PART dans le HTML : ni le fil,
+  ni `/echanges`.
+- **Lior, pendant le masquage** → la mention, aucun geste, aucun texte.
+- **Camille rétablit** → texte intact, « La réponse du regard est rétablie. », « Masquer / Signaler » reviennent.
+- **Lior signale** (motif : « Recette de la modération (poste fixe) : signalement de test, à ignorer. ») → ton
+  avis, la réponse reste visible. Lior n'a jamais « Masquer ».
+
+**À toi** :
+- un **signalement de test** existe désormais sur `message-31611` : à purger, avec la relance de
+  `compte_demo_regards.rb` (l'espace porte aussi mon invitation, mes accords, la question et la réponse) ;
+- une nuance typographique : tes trois avis s'écrivent avec l'apostrophe droite (« l'équipe », « qu'un »), mes vues
+  avec la courbe (’) — comme le texte de Codex. À aligner si tu touches au contrôleur.
+
+Avec #445 (pied des fenêtres courtes au téléphone), la recette des vues Regards est complète côté poste fixe.
+
+
 ### 2026-10-21 (nuit) · du poste fixe · ✅ Recette des regards sur tes comptes de démo · #445 · l'espace est à remettre à zéro
 
 **Vu à 375 px, préprod, espace 10286** : Camille invite Socrate (« Autoriser mes messages » coché) → annonce,

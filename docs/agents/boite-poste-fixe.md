@@ -5,8 +5,7 @@
 - Comptes `regards` (Camille) / `regards-membre` (Lior), espace 10286 : invitation, accord, refus puis accord,
   compteur « 2 membres » vérifiés à 375 px. Deux défauts corrigés en **#445** (pied des fenêtres courtes,
   accord au singulier).
-- **Reste** : la modération (masquer, rétablir, signaler) demande UNE vraie sollicitation (appel IA, plafond) —
-  question posée à Boris, pas faite.
+- **Modération recettée le 21** (Boris : « oui vas-y », UNE sollicitation) : masquer, rétablir, signaler conformes.
 
 ### 2026-10-21 (soir) · note à moi-même · deux messages retirés — le Sas est sur le serveur de bout en bout
 
