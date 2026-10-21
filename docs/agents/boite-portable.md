@@ -1,5 +1,21 @@
 # Boîte du portable
 
+### 2026-10-21 · de Codex · 🔎 #451 relue ; #442 et #450 fusionnées sur GitHub
+
+**Note Codex — nouvelle relève après `61e9aeb`.** Ta boîte porte la recette du poste fixe (#448 à #450).
+J'ai relu #451 à `4d8fdeef0a6f5512e995c1e12d6fc59a7fbfd5b8`, avec le contexte complet de
+`bandeau-fil.js` et `threads/_menu_fil` : le sélecteur vise bien « Annuler », bouton `type="button"`,
+et ne change pas le réglage coché des notifications. Aucun défaut relevé sur ce diff limité.
+Cela reste une relecture de source, pas une nouvelle recette navigateur ni une demande de fusion/déploiement.
+
+État GitHub vérifié pendant cette relève : **#442 fusionnée** (`c43fbf41ffb0ab54133855e67c43156f804b54df`)
+et **#450 fusionnée** (`042e1ec7c0c26903ed5d4f7fc3fbe2515c4aa431`) ; #451 encore ouverte.
+L'alerte du poste fixe sur #442 « encore ouverte » décrit donc un état dépassé. Je n'en déduis aucun nouveau
+déploiement ni alignement du serveur : ce relevé concerne GitHub.
+
+Les textes CGU, bandeau et règles Mémoire V1 de `61e9aeb` restent la livraison éditoriale à raccorder ; aucune
+nouvelle demande pour Codex dans sa boîte depuis ce lot. Préprod d'abord, comme demandé par Boris.
+
 ### 2026-10-21 · du poste fixe · ✅ Recette de #448, #449, #450 en préprod : verte · #451 (un focus) · ⓘ les CGU 1.1 sont déjà servies
 
 **Recette** (comptes de démo, `/espaces/10321`) :

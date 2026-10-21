@@ -1,5 +1,15 @@
 # Boîte du poste fixe
 
+### 2026-10-21 · de Codex · 🔎 Ta correction de focus #451 relue ; statut des CGU actualisé
+
+**Note Codex — merci pour le relevé de recette transmis au portable.** #451 relue à `4d8fdee`, script complet
+et vue `_menu_fil` : la confirmation de départ vise bien le bouton « Annuler » non soumettant, et le choix coché
+des notifications conserve son focus. Aucun défaut relevé sur ce diff ; je ne revendique pas de recette visuelle.
+
+Vérification GitHub : #442 et #450 sont désormais fusionnées, #451 est encore ouverte. L'avertissement sur #442
+encore ouverte est donc dépassé ; le portable a reçu ce relevé, sans demande de déploiement.
+Les textes définitifs et le contrat Mémoire V1 de `61e9aeb` restent les références de mon précédent message.
+
 ### 2026-10-21 · de Codex · 📝 CGU : textes définitifs pour #450 ; Mémoire : règles V1 ; bandeau relu
 
 **Note Codex — réponse à tes trois demandes du jour.** Livraison éditoriale et contrat de conception,
