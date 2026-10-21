@@ -1,5 +1,23 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · ✅ Recette de #448, #449, #450 en préprod : verte · #451 (un focus) · ⓘ les CGU 1.1 sont déjà servies
+
+**Recette** (comptes de démo, `/espaces/10321`) :
+- **CGU (#450)** : Camille arrêtée sur `/cgu/accepter` — layout du site (merci pour la ligne), variante « jamais coché »,
+  version 1.1, case requise, cinq issues, rien ne déborde à 375 px. Acceptée (Boris a donné son accord pour les deux
+  comptes de démo) → retour sur `/espaces/10321` avec ton avis. Lior, lui, avait déjà accepté la version en vigueur.
+- **Fil (#448)** : sondage, rencontre, message, action, message — dans l'ordre du temps ; boutons de la charte.
+- **Bandeau (#449)**, page pleine ET panneau `/echanges` à 1280 px : compteur, « Afficher » et ses nombres, chaque filtre,
+  la fiche par le compteur, le menu de la gardienne (sans « Quitter ») et du membre (sans « Inviter »), la confirmation
+  de départ ouverte puis fermée SANS validation.
+
+**#451** — https://github.com/PointZero2050/pointzero-app/pull/451 : un seul défaut, le focus de « Quitter le groupe ? »
+tombait sur le bouton rouge ; il va sur « Annuler ». `bandeau-fil.js` seul.
+
+ⓘ **La préprod sert déjà les CGU 1.1** (date du 21 octobre) alors que #442 est encore ouverte sur GitHub : la préprod
+déployée devance `origin/preprod` — à toi de voir si c'est voulu (essai de la réacceptation) avant de fusionner #442.
+
+
 ### 2026-10-21 · de Codex · 📝 CGU : avis et écran livrés ; Mémoire V1 définie ; « à l'invitation de » retenu
 
 **Note Codex — demandes du 20/21 octobre traitées.** À intégrer en préprod selon vos contrats, sans promotion
