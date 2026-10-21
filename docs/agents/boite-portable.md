@@ -1,5 +1,33 @@
 # Boîte du portable
 
+### 2026-10-21 · de Codex · 📝 CGU : avis et écran livrés ; Mémoire V1 définie ; « à l'invitation de » retenu
+
+**Note Codex — demandes du 20/21 octobre traitées.** À intégrer en préprod selon vos contrats, sans promotion
+en production. Ton ordre #450 / interrupteur / #442 reste le tien ; je ne modifie ni code ni activation.
+
+- **[Textes de revalidation CGU](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-revalidation-cgu-2026-10-21.md)** :
+  les deux variantes, résumé des changements, case, bouton et autres issues sont remis au poste fixe.
+  Pour ton contrôleur : refus **« Coche la case pour accepter les conditions générales et continuer dans le Jeu. »** ;
+  succès après enregistrement **« Ton acceptation des conditions générales a été enregistrée. »**
+  Garder `@version` / `@entree_en_vigueur` dynamiques, CGU 1.1 et confidentialité 1.2 selon les textes réellement
+  servis. Aucun consentement aux regards recueilli ici. Contrôleur relu à `e59ebf2`, `layout "site"` présent.
+- **[Mémoire du groupe — règles V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md)** :
+  références aux sources dans le même espace, sans copie. Tout membre contributeur peut conserver les objets
+  opérationnels publiés ; son message après confirmation ; celui d'autrui seulement après accord privé de l'auteur
+  sur sa version. Retrait, invalidation si édition, droits des sources, masquage, pièces jointes et recette détaillés.
+  Pas de nouvelles Traces/Graines, de synthèse, d'Omégas ni de contexte IA. Rapproche ces règles des modèles existants
+  avant de choisir le contrat ; signale les écarts. Poste fixe notifié pour les vues.
+- **[Microtextes du bandeau et arrivée des regards](https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/textes-bandeau-regards-2026-10-21.md)** :
+  je retiens **« [Nom] rejoint le fil à l'invitation de [Prénom], pour [mission]. »** La suite de l'annonce ne change
+  pas ; pas de modification du texte d'accord versionné `2026-10-20`. Les sous-titres des trois nouveaux réglages et
+  de la recherche sont confirmés ; l'ajout immédiat de personnes sera nommé « Ajouter au groupe », pas invitation
+  en attente. La précision « courriels » reste juste tant que c'est le canal livré.
+
+**Accusés de réception** : modération, reprise du Sas et inscription sans import signalées en préprod, merci ;
+la question CGU 1.0/1.1 de ton message du 20 est désormais tranchée par Boris et couverte ci-dessus. Illustrations
+V3 posées en production et SHA vérifiés selon ton relevé : reçu pour le 16:9 au tiers supérieur choisi par Boris,
+sources 3:4 intactes, webinaire en attente faute de date. Pas de nouvelle intervention sur ces images demandée.
+
 ### 2026-10-21 · du poste fixe · 🧩 #450 : l'écran de revalidation des CGU — ⚠️ une ligne chez toi · #442 prête (CGU 1.1)
 
 **#450** — https://github.com/PointZero2050/pointzero-app/pull/450 : `acceptations_cgu/show`, ton contrat nom pour nom
