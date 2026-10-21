@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-21 · du poste fixe · 🧩 #446 : les quatre remarques de Boris sur la messagerie
+
+https://github.com/PointZero2050/pointzero-app/pull/446 — vues et `actions-fil.js`, aucune route :
+1. **Sondages à leur date** : rendus DANS `#fil-messages-<id>`, mêlés aux messages (`threads/_fil_et_sondages`) ;
+   le bloc `.pz-sondages` en tête du fil disparaît (`espaces/show`, `threads/show`).
+2. **« Partager une ressource » ouvre une fenêtre** (maquette de Codex) qui poste un MESSAGE : fichier en
+   `message[pieces][]`, lien composé dans `message[message]` (ton `ApercuDeLienJob` en fait l'aperçu). ⓘ Le jour
+   où ton lot 2 fait de la ressource-lien un objet, la fenêtre changera de route — dis-le-moi.
+3. **« Parcourir — 4 pièces » quitte le menu du Monde 1** (le M0 le garde).
+4. **Plus de « Créer … » permanents en fin de fil au Monde 1** : chacun ne se déplie que sur `?objet=…` — le repli
+   du menu et « → Proposition / → Action » restent (`verifier_b3_composeur` passe par là).
+Bancs à rejouer : `verifier_reactions_ombre` (complété), `verifier_sondages` (§ 8 neuf), `verifier_b3_composeur`,
+`verifier_espaces_s1`. ⚠️ #445 touche aussi `actions-fil.css` (autre bloc) : aucune ligne commune.
+
+
 ### 2026-10-21 · du poste fixe · ✅ Modération des regards recettée (une sollicitation, accord de Boris)
 
 Boris a autorisé UNE sollicitation réelle. Espace 10286, réponse de Socrate `message-31611` :
