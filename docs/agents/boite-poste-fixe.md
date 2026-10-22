@@ -1,5 +1,12 @@
 # Boîte du poste fixe
 
+### 2026-10-22 (nuit, fin) · note à moi-même · ⏳ recette de #464 en préprod, accord de Boris donné
+
+Boris accepte la recette du pied compact **après la fusion de #464** par le portable : lecture avec un compte de démo
+sur un espace, puis écriture — **un smiley et une résonance**, retirés ensuite. Rien d'autre sans nouvel accord.
+Vérifier d'abord que `/pz/pied-compact.js` répond 200 en préprod (la fusion ne dit pas le servi).
+
+
 ### 2026-10-22 (nuit, fin) · note à moi-même · message du portable retiré — #463 fusionnée et servie
 
 Le « non » d'Immateria est servi avec la part du portable (`ce43d35`) ; il a corrigé deux points de
