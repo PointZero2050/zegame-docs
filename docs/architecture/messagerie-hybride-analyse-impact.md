@@ -69,8 +69,8 @@ dévoile un masque » dans la base, ce serait précisément la requalification s
 - **Les trois Ombre d'avant** (`concret`, `pas_clair`, `masque`) **prennent leur retraite** : lisibles sous leur
   libellé d'origine, plus posables, **jamais converties**. C'est le patron déjà en place pour `RETIREES`.
 - **En production, il n'y a rien à convertir** : 0 pose, Ombre comprise. En préprod, il y a 6 poses de test.
-- **Le Monde 0** garde la Lumière seule. → **question 3** : « Point Zéro » est-elle posable dès le Monde 1
-  seulement ?
+- **Le Monde 0** : la Lumière et « Point Zéro » (Boris, 22 octobre : question 3 tranchée). La famille Ombre reste
+  au Monde 1.
 - **Les bancs à suivre** : `verifier_reactions_ombre`, `verifier_palette_monde_0`. E9 et `ExperienceState` ne
   lisent pas le libellé.
 
@@ -101,10 +101,16 @@ Codex : « lecture partielle sans saut ni marquage global des éléments cachés
 locale, pas une règle serveur ».
 
 **Proposition** :
-- **Une table `lectures_de_discussion`** (`user_id`, `racine_id`, `lu_jusqua`), écrite par un **geste** : ouvrir la
-  discussion, `POST /messages/:id/discussion/lue` avec la dernière réponse vue.
-- **Les non-lus d'une discussion** : les réponses d'autrui, non supprimées, postérieures à `lu_jusqua`. Sans
-  marqueur, on les compte depuis le `last_seen_at` du fil.
+- **Une table `lectures_de_discussion`** (`user_id`, `racine_id`, `lu_jusqua`), écrite par un **geste** :
+  `POST /messages/:id/discussion/lue` avec `de` et `jusqua`, la suite de réponses vue d'une traite.
+- **Les non-lus d'une discussion** : les réponses d'autrui (regards compris), ni supprimées ni masquées, postérieures
+  à `lu_jusqua`.
+  - **Sans marqueur, un repère FIGÉ** : la première venue du membre dans le fil (`messaging_threads_users.created_at`
+    — première lecture, premier message, ou première tournée de notification). ~~Le `last_seen_at` du fil~~ : il
+    avance à chaque visite, et deux visites auraient éteint une discussion jamais ouverte (relecture de Codex).
+  - **Un seul repère par discussion, jamais en arrière** (`GREATEST`). Il n'avance que si la suite vue commence au
+    plus tard à la **première non lue** : un saut vers la fin n'avale pas la plage sautée (le geste répond 409). Choix
+    prudent, dit : les réponses vues après un saut restent non lues tant que la plage n'a pas été parcourue.
 - **Lire le fil ne marque pas les discussions** : pas de marquage global. → **question 4**.
 - **Inchangés** : l'ouverture à la première non lue du FIL (`@derniere_lecture`, déjà là) et l'accusé « Lu »
   (niveau fil).
@@ -137,9 +143,15 @@ message en moins (le préchargement des résonances). Pas de temps réel : rien 
 | --- | --- | --- | --- |
 | 1 | Codex | Le total de réponses compte-t-il les réponses de regard ? les supprimées ? | regards oui, supprimées et masquées non |
 | 2 | Codex | Le total Source compte-t-il les libellés hérités ? | oui : ce sont des poses réelles |
-| 3 | Boris | Les trois Ombre d'avant : retraite lisible (aucune conversion), et « Point Zéro » dès le Monde 1 seulement ? | oui et oui |
+| 3 | Boris | Les trois Ombre d'avant : retraite lisible (aucune conversion), et « Point Zéro » dès quel Monde ? | retraite lisible : oui ; Point Zéro : **dès le Monde 0** (Boris) |
 | 4 | Codex | Non-lus : marquer une discussion seulement en l'ouvrant, jamais en lisant le fil ? | oui |
 | 5 | Codex | Une réponse à une réponse prévient l'auteur du message cité, et lui seul ? | oui |
+
+**Relecture de Codex (22 octobre 2026, [la note](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-hybride-relecture-codex-2026-10-22.md))** :
+accord sur 1, 2 et 5 ; accord sur 4 avec trois corrections, appliquées au § 7 — la lecture vise les réponses
+effectivement présentées, un saut n'avale rien, le repère initial est figé. Sur 5, « lui seul » vaut pour la
+notification **de réponse** : les mentions et les autres réglages restent (c'était déjà le code, `EspaceMembership`
+lit le message cité ; banc `verifier_discussions` § 7).
 
 ## 11. Lots proposés
 
@@ -154,3 +166,48 @@ message en moins (le préchargement des résonances). Pas de temps réel : rien 
 - **Lot 3** : les non-lus par discussion (la table, le geste, les comptes).
 - **Bancs** : un par contrat, et la recette de Codex (deux comptes, parent hors page et supprimé, réponse à une
   réponse, sept résonances et historique).
+
+## 12. Servi en préprod (22 octobre 2026) — le contrat des vues
+
+Lots 2 et 3 côté serveur, en préprod. Bancs : `verifier_discussions`, `verifier_resonances`,
+`verifier_non_lus_discussion`, `verifier_aide_messagerie` (neufs), `verifier_reactions_ombre`,
+`verifier_palette_monde_0` (suivis).
+
+**Les pages de fil** (`espaces#show`, `threads#show`) posent :
+
+| Variable | Forme | Usage |
+| --- | --- | --- |
+| `@nombres_de_reponses` | `{racine_id => n}` | le pied lit `@nombres_de_reponses[m.racine_id \|\| m.id].to_i` ; une racine sans réponse est ABSENTE (0). Sous une réponse, c'est le total de SA discussion (celle de sa racine), pas des réponses qui lui sont adressées (Codex) |
+| `@non_lus_par_discussion` | `{racine_id => n}` | les non-lus de chaque discussion (§ 7) ; absente = 0 |
+| `@aide_messagerie_vue` | booléen | l'aide de première visite se replie si vrai |
+
+`RenduDuMessage` pose aussi `@nombres_de_reponses` pour un message rendu seul. Les résonances sont préchargées.
+
+**Les résonances** :
+- `ReactionSemantique.catalogue_pour(current_user)` → `[{cle:, libelle:, famille:}]`, dans l'ordre : les trois
+  Lumière, les trois Ombre (Monde 1), `point_zero` (famille `:point_zero`). Au Monde 0 : Lumière et Point Zéro.
+- La bascule : `basculer_reaction_semantique_path(m, cle: "plonger")`. `libelle:` reste accepté le temps du portage.
+- Les poses héritées (`m.reactions_semantiques`) se lisent sous leur `libelle` d'origine ; `pose.cle`,
+  `pose.famille`, `pose.retiree?` (vrai pour les trois Ombre d'avant et les anciennes retirées).
+- `familles_pour` et `palette_pour` gardent leur forme d'avant (six offerts par la fenêtre d'avant) ; les dessins
+  des trois nouvelles Ombre manquent (`_icone_reaction` ne rend rien pour elles).
+
+**La discussion** — `GET /messages/:id/discussion` (`discussion_message_path(m)`, JSON ; `:id` peut être une réponse,
+c'est sa racine qui répond) :
+- `racine` et `reponses` : `{id, auteur, le, extrait, cite_id, cite_etat, etat, mien}` ; `etat` et `cite_etat` valent
+  `"supprime"`, `"masque"` ou `null` — une réponse retirée garde sa place sans auteur ni texte ;
+- `suivant` (curseur : `?apres=<suivant>`), `total` (celui du pied) ;
+- `premiere_non_lue` (id ou `null`) et `non_lues` : la fenêtre s'ouvre sur la première non lue
+  (`?apres=<la réponse d'avant>`).
+- Lire n'écrit rien. Non-membre, message inconnu : 404.
+
+**La lecture** — `POST /messages/:id/discussion/lue` (`lue_discussion_message_path(m)`), un GESTE, jamais au rendu :
+- `de` et `jusqua` : la première et la dernière réponse **effectivement vues d'une traite** (la racine vaut pour le
+  haut de la fenêtre ; `de` absent = `jusqua` seule) ;
+- 204 si le repère avance ; **409** si la suite commence après la première non lue (un saut : rien n'est avalé) ;
+- jamais en arrière ; limité à 120 par minute.
+
+**L'aide vue** — `POST /messagerie/aide/vue` (`aide_messagerie_vue_path`) : 204, idempotente. Consultation ou
+fermeture de l'aide, jamais le rendu.
+
+**L'heure** — `l(m.created_at, format: :heure)` (`"%H:%M"`).

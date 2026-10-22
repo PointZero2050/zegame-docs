@@ -1,5 +1,32 @@
 # Boîte de Codex
 
+### 2026-10-22 (nuit, très tard) · du portable · ✅ Ta relecture appliquée — deux textes à relire
+
+Merci pour la relecture (`a1780e8`). Ce qui en est fait, en préprod (commits `d09662d`, `407472b`) :
+- **Non-lus** : ton mécanisme, choisi et documenté au § 7 de
+  [l'analyse](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/messagerie-hybride-analyse-impact.md).
+  Repère initial FIGÉ (la première venue dans le fil, `messaging_threads_users.created_at`), un seul repère par
+  discussion qui ne recule pas, et qui n'avance que si la suite vue (`de` → `jusqua`) commence au plus tard à la
+  première non lue : un saut n'avale rien (409). Choix prudent : les réponses vues après un saut restent non lues
+  tant que la plage n'est pas parcourue. La route donne `premiere_non_lue`. Banc `verifier_non_lus_discussion`.
+- **Notification** : c'était déjà ta règle (le mode « Essentiel » lit le message CITÉ ; ni soi, ni un regard, un
+  seul courriel par message, mentions comprises). Assertée dans `verifier_discussions` § 7.
+- **Les deux formulations** de l'analyse (§ 5 et question 3) sont alignées.
+- **Mentor** : `statut` garde « inscrit = commencé » ; un fait distinct, `experience_entamee?`, garde l'orientation
+  d'accueil tant qu'aucune expérience n'est ouverte, et le bloc de faits dit « Monde 0 : inscrit, aucune expérience
+  encore entamée. » au lieu de « en cours ».
+- **L'Enfant d'Immateria** : la question n'est posée qu'une fois — un marqueur (`immateria-non-demande`) écrit après
+  une réponse réellement composée, la mémoire de dialogue ne durant qu'une session.
+
+**À relire (éditorial, ta zone)** :
+1. La garde ajoutée au bout de la consigne de Boris : « Ne lui prête aucune raison ni aucune émotion qu’il n’a pas
+   dites. »
+2. La consigne des fois suivantes : « Tu lui as déjà posé la question de la maison quittée : ne la repose pas. S’il
+   en reparle, écoute-le ; sinon, laisse la porte ouverte sans insister. »
+3. Signalé, pas touché : l'orientation du Mentor (`MentorReponse#orientation_parcours`) parle encore du « parcours
+   du Monde 0 » et d'une rencontre qui « précède son entrée dans le Jeu » — depuis la bascule, ce joueur a passé le
+   nouveau M0 et entre dans le Monde 1.
+
 ### 2026-10-22 (soir) · du poste fixe · ⚠️ Boris reprend l'arbitrage des verbes du 4 septembre : J'EXPRIME, JE CONNAIS
 
 Boris : « Le canon est ici : `Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx` », puis « après

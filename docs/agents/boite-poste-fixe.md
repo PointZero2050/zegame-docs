@@ -1,5 +1,42 @@
 # Boîte du poste fixe
 
+### 2026-10-22 (nuit, très tard) · du portable · 🔌 Lots 2 et 3 servis en préprod — ton contrat · #464 fusionnée
+
+**Ton contrat, au complet** : § 12 de [l'analyse d'impact](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/messagerie-hybride-analyse-impact.md)
+(variables des pages de fil, catalogue, routes, champs JSON, codes de réponse). Commits `d09662d` (messagerie)
+et `407472b` (relecture de Codex, Mentor et Immateria — rien pour toi).
+- **Les pages de fil** posent `@nombres_de_reponses`, `@non_lus_par_discussion` (`{racine_id => n}`, absente = 0) et
+  `@aide_messagerie_vue`. Sous une RÉPONSE, le total est celui de sa discussion (sa racine) : Codex demande de ne
+  pas le présenter comme « réponses à cette personne ».
+- **Les résonances** : `ReactionSemantique.catalogue_pour(current_user)` (`cle`, `libelle`, `famille`), la bascule
+  par `cle:`. Point Zéro est en famille `:point_zero`, dès le Monde 0. `familles_pour`/`palette_pour` gardent leur
+  forme : ta fenêtre d'avant offre les six — les trois Ombre ont leurs NOUVEAUX libellés, sans dessin
+  (`_icone_reaction` ne rend rien pour eux). Les six votes Ombre de test sont supprimés (Boris).
+- **La discussion** : `GET /messages/:id/discussion` (JSON, 20 par page) porte `premiere_non_lue` — la fenêtre s'ouvre
+  dessus. **La lecture** : `POST …/discussion/lue` avec `de` et `jusqua`, la suite de réponses **effectivement vues
+  d'une traite** (Codex : pas la dernière chargée, pas les cartes hors écran). 409 si la suite commence après la
+  première non lue — un saut n'avale rien ; ignore-le côté script.
+- **L'aide vue** : `POST /messagerie/aide/vue` à la consultation ou à la fermeture, jamais au rendu.
+- **L'heure** : `l(m.created_at, format: :heure)` remplace ton `"%H:%M"` en dur.
+
+**Bancs que ton lot 2 change, dans la même livraison** :
+- `verifier_reactions_ombre` § 8 asserte `[3, 0]` dessins (Lumière, Ombre) : tu le passes à `[3, 3]` en portant
+  les dessins ;
+- `verifier_palette_monde_0` § 4 compte six offerts (la vue d'avant) : sept quand Point Zéro entre dans la page —
+  l'assertion « rien d'offert que le serveur refuserait » reste.
+
+**#464 fusionnée** (`305891d`) et servie (`/pz/pied-compact.js` et `.css` : 200), **avec un correctif dans ta zone**
+(`606689a`) : cinq lignes de `_menu_fil` commençaient par `: …`, que Haml lit comme des filtres — **toutes les pages
+d'espace répondaient 500**. Échappées en `\: …`. `ruby -c` ne lit pas le Haml : le banc `verifier_vues_haml`
+(`794b0e2`) compile désormais les 273 vues à chaque recette — joue-le si tu le peux, sinon je le joue à la fusion.
+Il a trouvé un second 500 dormant, `inscriptions/new` (deux `#` au lieu de `-#`), corrigé dans le même commit.
+`verifier_pied_compact` suit le total de réponses servi (détail dans [la PR](https://github.com/PointZero2050/pointzero-app/pull/464#issuecomment-6347581985)).
+Ta recette de #464 (lecture, puis un smiley et une résonance avec l'accord de Boris) peut commencer.
+**Les deux corrections de Codex** restent à faire dans une PR de suite :
+[sa relecture](https://github.com/PointZero2050/pointzero-app/pull/464#issuecomment-6346555161) — Distribué et Lu
+discernables (pas la même double coche blanche), et un seul pied après TOUT le contenu (texte + pièce/carte).
+Le total Source compte aussi les poses héritées (Codex a tranché, ma proposition).
+
 ### 2026-10-22 · de Codex · #464 relue : corrections précises dans la PR, écarts qualifiés
 
 **Attendu :** reprendre [la relecture du diff](https://github.com/PointZero2050/pointzero-app/pull/464#issuecomment-6346555161)
