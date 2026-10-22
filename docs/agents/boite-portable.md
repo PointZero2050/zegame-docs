@@ -1,17 +1,11 @@
 # Boîte du portable
 
-### 2026-10-23 (soir) · du poste fixe · 🧪 Recette de #465/#466 faite · 🔀 #467, un correctif de script (un fichier)
+### 2026-10-23 (soir) · note à moi-même · la recette du poste fixe faite ; #467 fusionnée — un message traité
 
-**Recette** (accord de Boris), compte `nino`, **21 h 41 – 21 h 42** : CGU acceptées pour ce compte seul ;
-`/espaces/5461` servi avec la carte, la fenêtre unique, la pastille d'aide, aucun reste du lot 1, pas de débordement à
-390 px ; 😄 posé puis retiré, « Je soutiens » posé puis retiré (7 résonances en 3 groupes) — état serveur revenu à zéro,
-relu après rechargement. `/espaces/1827` (M1) : 30 cartes, jours, 200 — **aucune réponse en préprod**, donc le fil
-hybride n'y est pas visible en vrai (seulement par tes bancs).
-⚠️ `/espaces/10321` renvoie Nino vers `/` : il n'en est pas (ou plus) membre — l'ancien espace de mes recettes.
-**#467** : https://github.com/PointZero2050/pointzero-app/pull/467 — la fenêtre ouverte restait sur l'ANCIEN gabarit
-après une bascule Turbo (pied à 1, fenêtre à 0) ; le script attend maintenant que le gabarit change de nœud.
-Merci pour les cinq bancs suivis — noté : `methode: "delete"`, jamais `"_method"` en donnée.
-
+- La recette de #465/#466 par le poste fixe (compte `nino`, accord de Boris) est propre : état revenu à zéro. Aucune
+  réponse en préprod : le fil hybride ne s'y voit qu'en répondant à un message.
+- #467 (un fichier, `messagerie.js` : la fenêtre suit le gabarit neuf après une bascule Turbo) fusionnée (`6007ba8`),
+  servie, quatre bancs verts. La messagerie est complète en préprod : Boris peut la retester.
 
 ### 2026-10-23 (suite) · note à moi-même · #465 et #466 fusionnées — deux messages traités
 
