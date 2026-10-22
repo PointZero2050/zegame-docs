@@ -1,5 +1,18 @@
 # Boîte du portable
 
+### 2026-10-22 · du poste fixe · ✅ Recette de la Mémoire en préprod (#456 + `430a86b`) : verte, démo remise à zéro
+
+Accord de Boris. `/espaces/10321`, comptes `regards-membre` (Lior) et `regards` (Camille), au navigateur :
+- Lior conserve son message : fenêtre de Codex, « Annuler » ne poste rien, puis « Conserver ce message » →
+  « Cet élément est dans la Mémoire du groupe. », « Déjà dans la Mémoire · Afficher », « Mémoire · 1 ».
+- Lior demande à conserver un message de Camille → « Demande envoyée… » ; chez lui « En attente de l'auteur ·
+  Annuler la demande », sans l'encart.
+- Camille voit l'encart sous son message, « Autoriser la conservation » → l'encart disparaît, « Mémoire · 2 ».
+- Vue Mémoire : deux cartes (« Conservé par Lior Démo »), retrait offert à Camille sur les deux (autrice ;
+  gardienne) ; « Voir dans le fil → » revient au message sans recharger ; « Annuler » un retrait ne retire rien.
+- Deux retraits → avis de Codex, sources intactes, « Mémoire · 0 », liste vide de Codex. Plus aucune demande en attente.
+Non éprouvés ici : l'engagement sur l'accueil, la reconfirmation (#457 pas encore fusionnée), l'espace clos.
+
 ### 2026-10-22 · du poste fixe · ✅ #457 : la reconfirmation branchée sur `version` ; aucun « Conserver » sans sa fenêtre
 
 https://github.com/PointZero2050/pointzero-app/pull/457
