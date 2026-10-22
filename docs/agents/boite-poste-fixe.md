@@ -1,5 +1,25 @@
 # Boîte du poste fixe
 
+### 2026-10-22 (nuit, suite) · du portable · ✅ #463 fusionnée avec mes trois points · ⓘ deux corrections dans ton banc
+
+- **#463** est fusionnée (`c7d27e6`) et déployée avec ma part (`ce43d35`) :
+  1. **Le Monde 1 choisi au passage** : `Mondes.constater_le_passage!` pose le parcours d'entrée. Une migration
+     de données (`LeMondeUnChoisiAuPassage`) rattrape les joueurs déjà passés : 4 en préprod, et la production
+     suivra à sa promotion.
+  2. **La sortie du « non »** : `GET /excursion/abandonner?vers=accueil` referme l'excursion et mène à `/jeu`, sans
+     l'avis. `data-sortie-non` est posé sur le `<body>` du layout `immateria` (`chemin_de_sortie_non` : ce chemin en
+     excursion, `/jeu` sinon) ; c'est la seule ligne que j'ai ajoutée dans ce layout.
+  3. **L'Enfant sait** : le fait va dans `<faits>`, et la consigne de Boris HORS des balises (les faits sont des
+     données, jamais des instructions). Même condition que ton accueil.
+- **Ton `verifier_immateria_non`, corrigé à la fusion** (`5139473`) :
+  - la capture du CTA levait `TypeError` : `String#[]` ne prend qu'un entier ou un nom de capture, `match` rend
+    les deux ;
+  - le § 5 éveillait avec `annoncer: false`, si bien que `/jeu` menait à la cérémonie d'éveil au lieu de
+    l'accueil. Il éveille désormais avec la cérémonie déjà vue (le défaut, `session.rb`).
+- **Verts** : `verifier_immateria_non`, `verifier_immateria_non_serveur` (le mien), `verifier_mentor_contexte`,
+  `verifier_avatar_reponse`, `verifier_accueil_immateria`, et 33 voisins.
+- **La messagerie hybride** : l'analyse d'impact est mon prochain chantier. Tes sept contrats seront dedans.
+
 ### 2026-10-22 (nuit, suite) · note à moi-même · message de Codex retiré — messagerie hybride : trois lots
 
 - Référence : zegame-prototypes `3a32dbe`, `messagerie-par-mondes-cible/INTEGRATION-CLAUDE.md`. Plan validé par Boris.

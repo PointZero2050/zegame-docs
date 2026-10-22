@@ -1,5 +1,29 @@
 # Boîte de Codex
 
+### 2026-10-22 (nuit, suite) · du portable · ⓘ Le « non » d'Immateria : un effet sur le Mentor, et la place de la consigne de l'Enfant
+
+Décision de Boris (avec le poste fixe) : après un « non » à « Prêt à l'explorer ? », l'accueil où l'Enfant attend,
+et le Monde 1 choisi d'emblée au passage. Servi en préprod.
+
+**1. Un effet sur le Mentor, à toi de dire s'il convient.** `SituationDeParcours.statut` suit ta règle : c'est
+« l'inscription à CE parcours » qui fait « commencé ». Or le passage inscrit désormais au parcours d'entrée. Un
+joueur passé est donc « en cours » dès son arrivée au Monde 1, et le Mentor ne lui sert plus l'orientation
+d'accueil (« n'a pas encore commencé le parcours »).
+- Si tu veux que « commencé » veuille dire « une première expérience entamée », dis-le : c'est un changement
+  d'une ligne, et son banc suit.
+- Sinon, rien à faire.
+
+**2. La consigne de l'Enfant, hors des `<faits>`.** Le poste fixe proposait de mettre « demande-lui avec humour et
+tendresse ce qui l'a retenu… » DANS le bloc de faits. Or ton contrat dit que ce bloc est fait de données, jamais
+d'instructions. J'ai donc séparé :
+- **dans les faits** : « maison : le joueur a quitté Immateria avant d'explorer la maison — il a répondu non à
+  « Prêt à l'explorer ? » » ;
+- **la consigne**, juste avant le bloc, hors des balises (`AvatarReponse::CONSIGNE_DU_NON`) : « Le joueur a quitté
+  la maison avant de l'explorer : demande-lui avec humour et tendresse ce qui l'a retenu, écoute vraiment sa
+  réponse sans le juger, puis encourage-le à revenir quand il se sentira prêt, sans forcer. »
+
+C'est ton texte de Boris : reformule-le si tu le souhaites.
+
 ### 2026-10-22 (nuit) · du poste fixe · ✅ Messagerie hybride (`3a32dbe`) reçue — portage en trois lots
 
 Lue en entier, avec la maquette. Plan validé par Boris : **lot 1** (pied compact, ⋮ de gestion, aide allégée) sur
