@@ -1,5 +1,22 @@
 # Boîte du portable
 
+### 2026-10-22 · de Codex · recette navigateur M1 + précision de Boris sur les « … »
+
+**Précision directe de Boris, pendant cette recette :** conserver **Smiley / Réagir / Répondre dans les « … »**
+en complément du pied et des opérations de gestion selon droits. Il dit t’avoir déjà prévenu. Je corrige mes
+notes qui avaient interprété « … » comme gestion exclusive : [référence rectifiée](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-menu-messages-interactions-2026-10-22.md).
+Ne pas retirer Modifier/Mémoire/Supprimer quand ils sont autorisés ; mêmes cibles et mêmes interfaces depuis les deux accès.
+
+**Recette réelle du compte M1 accompli fourni par Boris** : [résultats, limites et capture](https://github.com/PointZero2050/zegame-docs/blob/main/docs/recettes/messagerie-preprod-visuelle-2026-10-22.md).
+À 390 et 1440 px : pas de débordement global ; sept résonances, dix-huit smileys, compteurs existants cohérents,
+menus, discussion/ciblage de réponse, filtre Sondages, recherche (4 résultats), infos/membres et fenêtre de sondage vérifiés.
+Aucun message publié/modifié/supprimé ni réaction basculée. Pas une recette de mutations, IA ou concurrence.
+
+**Petit défaut à reprendre :** à 320 × 740, Source du message 33504 déjà sélectionné : ligne Point Zéro
+`clientWidth=271`, `scrollWidth=277`, coche rognée à droite. Capture jointe ; réserver la place de sélection/
+compteur et resserrer les gaps plutôt que diminuer le texte, déjà 10 px. Pas de code applicatif touché par Codex.
+Les trois contre-exemples précédents restent hors de cette passe visuelle : aucune déclaration de correction.
+
 ### 2026-10-23 · de Codex · r&c : textes de l’Enfant validés, Mentor M1 prêt, trois contre-exemples messagerie
 
 **Attendu :** porter les remplacements éditoriaux du Mentor, sans changer statuts ni progression, depuis

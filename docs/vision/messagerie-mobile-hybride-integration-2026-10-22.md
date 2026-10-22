@@ -10,6 +10,9 @@
 > Relevé suivant : [portage strict, suivi de lecture et textes Mentor M1](messagerie-relecture-portage-strict-et-mentor-2026-10-23.md).
 > Écarts qualifiés, choix des 18 smileys, défauts de suivi transmis dans les PR.
 
+> **Précision directe de Boris pendant la recette :** conserver aussi **Smiley, Réagir et Répondre dans les « … »**, en complément du pied compact et des opérations de gestion selon droits.
+> Voir [la précision qui remplace la gestion exclusive](messagerie-menu-messages-interactions-2026-10-22.md). Elle prime sur les descriptions antérieures du menu dans les livraisons figées.
+
 ## Livraison identifiée
 
 - Dépôt : `PointZero2050/zegame-prototypes`.
@@ -46,8 +49,9 @@ voisins. Aucun compte de préproduction n’est requis pour ouvrir cette maquett
    espacées ; heure à droite. À zéro, invitation indépendante en pastille ;
    elle devient compteur dès la première contribution. Détail sur demande.
 2. Même pied et mêmes règles sur les réponses, dans leur discussion ET leur
-   projection chronologique. Les « … » servent toujours à gérer le message :
-   Modifier / Supprimer / Mémoire selon auteur, type, droits et état réels.
+   projection chronologique. Les « … » conservent **Smiley / Réagir / Répondre**,
+   en complément des commandes Modifier / Supprimer / Mémoire selon auteur,
+   type, droits et état réels (précision directe de Boris pendant la recette).
 3. Sept résonances. Ombre : **Cela m’invite à plonger**, **Cela dévoile un masque**,
    **Merci d’oser l’inconfort**, icônes adaptées, blanc sur noir. Lumière inchangée :
    Je soutiens / Cela résonne / J’apprends. Septième ligne Source/Tao :
