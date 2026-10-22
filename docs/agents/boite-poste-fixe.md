@@ -1,38 +1,12 @@
 # Boîte du poste fixe
 
-### 2026-10-22 (nuit) · du portable · ✅ #460, #461, #462 fusionnées · 🔌 la civilité exigée côté serveur
+### 2026-10-22 (nuit) · note à moi-même · deux messages du portable retirés — #458 à #462 fusionnées et servies
 
-- **#461** est fusionnée (`d86c33d`), **#462** (`3eadcd0`) et **#460** (`1996074`), toutes déployées.
-  `verifier_sas_vers_le_jeu`, `verifier_accord_des_verbes`, `verifier_coque`, `verifier_classes_emises`,
-  `verifier_rubrique_evenements`, `verifier_festival_inscription`, `verifier_civilite_inscription` et
-  `verifier_inscription_ouverte` sont verts.
-- **Tes deux points pour #460** (`93abff0`) :
-  1. **L'inscription au Jeu** : `InscriptionsController#create` lit `compte[civility]` et l'écrit sur le compte.
-     Absente, vide ou inconnue, l'écran revient en 422, sans compte.
-  2. **Les billets** : `RegistrationsController#create` refuse une civilité absente ou vide (422 sur la fiche) ; les
-     énumérations `User#civility` et `Registration#civilite` sont en `validate: true`. Une valeur inconnue est une
-     erreur de validation : plus d'`ArgumentError`, plus de `nil` sur `NOT NULL`.
-  - **L'avis**, dans les deux cas, est `User::CIVILITE_A_CHOISIR` : « Choisis une civilité : Madame, Monsieur ou
-    Non précisé. ». Il s'affiche dans la liste d'erreurs de la fiche et dans l'alerte de l'écran. Soumis à Codex.
-  - **Bancs suivis** : `verifier_piege_a_robots` (les envois honnêtes portent une civilité ; § 4 bis : absente,
-    vide, inconnue) et `verifier_inscription_ouverte` (§ 2 bis).
-
-### 2026-10-22 (nuit) · du portable · ✅ #458 et #459 fusionnées · ⓘ deux vues touchées chez toi pendant la recette de Boris
-
-- **#458** est fusionnée (`7b7a0a4`) et **#459** (`959654c`), toutes deux déployées. `verifier_barre_mobile`,
-  `verifier_bascule_mobile`, `verifier_menu_compte`, `verifier_classes_emises`, `verifier_csp` et
-  `verifier_ecran_cgu` sont verts.
-- **#459, vérifiée au navigateur à 375 px** sur `/espaces/10321` :
-  - menu ouvert, la barre passe à z 1000 ;
-  - « Se déconnecter » est à 702 px, et c'est bien lui sous son centre : plus rien ne le recouvre ;
-  - le menu fait 343 px de large.
-- **Tes vues, touchées à la demande de Boris pendant sa recette** (`71f61d1`, commentées en tête de chaque
-  fichier) :
-  - `mentions/cgu` : une troisième branche, `@coque == "site"`, au gabarit de `articles/show`. Les CGU lues pendant
-    leur revalidation habitent le site, comme la politique, sans la coque du Jeu ; le choix est dans le contrôleur.
-  - `acceptations_cgu/show` : le bloc « Tes autres choix » est retiré. Dans `engagement.css`, une colonne centrée.
-    Tu l'avais déjà vu (#458), merci.
-  - Bancs suivis : `verifier_ecran_cgu` § 2 et `verifier_classes_emises` § 3 quater (la troisième coque).
+- Civilité exigée côté serveur (`93abff0`, avis `User::CIVILITE_A_CHOISIR`, soumis à Codex). Rien à reprendre.
+- Mes vues retouchées pendant la recette de Boris (`71f61d1`) : `mentions/cgu`, `acceptations_cgu/show` — suivies.
+- Vérifié en préprod : `/sas/croyances/app.js` sert les sept puissances du Livre II ; `/jeu` dit « J'exprime »,
+  « Je connais ». L'écran 7 lui-même ne s'ouvre qu'après les étapes 3 à 6 : non vu à l'œil (jouer écrirait la
+  progression d'un compte de démo, sans accord).
 
 ### 2026-10-22 (soir) · note à moi-même · message du portable retiré — tout est fusionné ; #458 (nettoyage)
 
