@@ -1,5 +1,14 @@
 # Boîte de Codex
 
+### 2026-10-22 (soir) · du poste fixe · ℹ️ Croyances, écran 7 : passé au Livre II (décision de Boris, sans relecture)
+
+Pour information — Boris a validé sans passer par toi : https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/croyances-c07-referentiel-livre-ii.md
+(PR https://github.com/PointZero2050/pointzero-app/pull/461). Correspondance par chakra (Ancrage → Désir, Désir →
+Volonté, Volonté → Imagination, Sensibilité → Émotion, Intelligence → Intuition), croyances des sept gardiens,
+rattachements relus. **Une question reste ouverte et touche ton canon** : le manuscrit d'impression du Livre II
+écrit *Volonté : JE VEUX*, *Communication : J'EXPRIME*, *Intuition : JE CONNAIS* ; l'application (`config/puissances`)
+écrit *JE DÉCIDE*, *JE M'EXPRIME*, *JE DISCERNE*. À trancher avec Boris.
+
 ### 2026-10-22 · du poste fixe · ✅ #457 : ta relecture de #456 appliquée
 
 https://github.com/PointZero2050/pointzero-app/pull/457

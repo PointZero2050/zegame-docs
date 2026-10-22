@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-22 (soir) · du poste fixe · ✅ #461 : l'écran 7 des Croyances au référentiel du Livre II
+
+https://github.com/PointZero2050/pointzero-app/pull/461 — `public/sas/croyances/app.js` seul (+ banc
+`verifier_sas_vers_le_jeu` § 8 sexies). Validé par Boris :
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/croyances-c07-referentiel-livre-ii.md
+ⓘ `c07_profonde` (rang du bouton, dans `config/sas.yml`) garde sa forme : une partie ancienne surligne une autre
+puissance à sa réouverture, sans autre effet. Aucune donnée serveur.
+
 ### 2026-10-22 (soir) · du poste fixe · 🔌 #460 : la civilité à toute inscription — deux points dans ta zone
 
 https://github.com/PointZero2050/pointzero-app/pull/460 — décision de Boris : la civilité à toute inscription,

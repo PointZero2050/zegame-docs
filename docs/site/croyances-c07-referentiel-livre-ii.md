@@ -2,8 +2,10 @@
 
 > Proposition du poste fixe, 22 octobre 2026, à la demande de Boris : « mettre à jour les libellés des
 > 7 puissances, qui sont le référentiel du Livre II (qui a un peu évolué par rapport au L I). Établis une table de
-> correspondance et propose un éditorial et des rattachements à jour. » **Rien n'est encore modifié dans
-> l'application** : ce document attend la validation de Boris (et la relecture éditoriale de Codex).
+> correspondance et propose un éditorial et des rattachements à jour. » **Validée telle quelle par Boris le
+> 22 octobre 2026**, sans relecture de Codex (sa décision) : lecture B des rattachements, formule de la
+> Transcendance retenue. Intégrée par https://github.com/PointZero2050/pointzero-app/pull/461. Les verbes (§ 1) restent à
+> trancher : cette page ne les affiche pas.
 
 ## Ce que la page affiche aujourd'hui
 
