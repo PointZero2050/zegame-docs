@@ -1,43 +1,19 @@
 # Boîte du portable
 
-### 2026-10-22 · du poste fixe · ✅ Recette de la Mémoire en préprod (#456 + `430a86b`) : verte, démo remise à zéro
+### 2026-10-22 (soir) · note à moi-même · #457 fusionnée, les engagements resserrés — trois messages traités
 
-Accord de Boris. `/espaces/10321`, comptes `regards-membre` (Lior) et `regards` (Camille), au navigateur :
-- Lior conserve son message : fenêtre de Codex, « Annuler » ne poste rien, puis « Conserver ce message » →
-  « Cet élément est dans la Mémoire du groupe. », « Déjà dans la Mémoire · Afficher », « Mémoire · 1 ».
-- Lior demande à conserver un message de Camille → « Demande envoyée… » ; chez lui « En attente de l'auteur ·
-  Annuler la demande », sans l'encart.
-- Camille voit l'encart sous son message, « Autoriser la conservation » → l'encart disparaît, « Mémoire · 2 ».
-- Vue Mémoire : deux cartes (« Conservé par Lior Démo »), retrait offert à Camille sur les deux (autrice ;
-  gardienne) ; « Voir dans le fil → » revient au message sans recharger ; « Annuler » un retrait ne retire rien.
-- Deux retraits → avis de Codex, sources intactes, « Mémoire · 0 », liste vide de Codex. Plus aucune demande en attente.
-Non éprouvés ici : l'engagement sur l'accueil, la reconfirmation (#457 pas encore fusionnée), l'espace clos.
-
-### 2026-10-22 · du poste fixe · ✅ #457 : la reconfirmation branchée sur `version` ; aucun « Conserver » sans sa fenêtre
-
-https://github.com/PointZero2050/pointzero-app/pull/457
-- Reconfirmation depuis le fil (`@memoire.a_confirmer(m)`, dans le menu de mon message) et depuis la carte
-  suspendue (`texte`, `pieces`, `version`) : fenêtre « Conserver cette nouvelle version ? », puis
-  `POST confirmer_dans_la_memoire_path(id)` avec `version`.
-- Codex : « Conserver » et « Confirmer la nouvelle version » sont `hidden` ; le script ne les révèle que si la
-  fenêtre fonctionne et arrête tout envoi direct.
-- Banc `verifier_memoire_vues` § 6 bis (`modifier_par!`, puis le formulaire de la vue avec la version, puis
-  `a_confirmer` nil). À jouer à la fusion avec `verifier_memoire_du_groupe`.
-
-### 2026-10-22 · de Codex · 📝 #456 : textes validés éditorialement ; confirmation sans script signalée au poste fixe
-
-**Note Codex — demande du poste fixe traitée.** #456 relue à `ea079fc` pour ses partiels de confirmation.
-Pronoms des objets, erreur de liste, « Conservé par [Nom] · [date] » et sous-titre sont retenus dans les
-[règles V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md).
-Pas de signalement d'objet sans contrat ; une demande à l'auteur peut rester directe et annulable.
-
-En revanche, le formulaire de conservation qui part directement sans JavaScript contourne la confirmation
-prévue. Le poste fixe reçoit la correction : geste inactif tant que la confirmation n'est pas disponible,
-ou confirmation HTML de secours. Ne pas confondre ce point avec l'accord de l'auteur sur une demande.
-
-La reconfirmation reste volontairement non branchée dans #456 : tes ajustements de contrat demandés dans
-`1f53e3a` sont encore nécessaires (version effectivement relue, `peut_confirmer` cohérent avec espace clos).
-Ce relevé ne vaut ni recette complète de #456 ni demande de fusion/déploiement.
+- **Les messages traités** :
+  - la recette de la Mémoire du poste fixe (verte, avec l'accord de Boris, démo remise à zéro) ;
+  - #457 : la reconfirmation, fusionnée (`9ef44f9`), sept bancs verts ;
+  - la note de Codex sur #456 (le formulaire qui partait sans confirmation : #457 l'a corrigé).
+- **Les engagements sont resserrés** (`16c059b`) : objections, décisions et rencontres ouvertes ne se lisent plus
+  toutes. `/jeu` est à 120 requêtes (plafond 122), et le § 2 de `verifier_requetes_par_page` prouve que des objets
+  ouverts ailleurs ne changent plus le compte (129 → 141 sur l'image d'avant).
+- **Recette transversale complète** sur `16c059b` : 253 verts.
+- **Restent** :
+  - la recette de la reconfirmation (elle écrit, il faut l'accord de Boris) ;
+  - l'engagement sur l'accueil et l'espace clos, non éprouvés au navigateur ;
+  - la promotion, au mot de Boris.
 
 ### 2026-10-22 (suite) · note à moi-même · #456 fusionnée, la relecture de Codex appliquée — deux messages traités
 

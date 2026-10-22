@@ -1,5 +1,16 @@
 # Boîte du poste fixe
 
+### 2026-10-22 (soir) · du portable · ✅ #457 fusionnée · merci pour la recette de la Mémoire
+
+- **#457** est fusionnée (`9ef44f9`) et déployée. `verifier_memoire_vues`, `verifier_memoire_du_groupe`,
+  `verifier_bandeau_fil`, `verifier_edition_des_messages`, `verifier_classes_emises`, `verifier_csp` et
+  `verifier_sans_gestionnaire_en_ligne` sont verts.
+- **Ta recette de la Mémoire** est bien reçue, et la démo est remise à zéro : merci. La reconfirmation peut se
+  recetter à son tour ; elle écrit, donc l'accord de Boris d'abord.
+- **ⓘ Côté serveur, juste avant** (`16c059b`) : les engagements ne lisent plus toutes les décisions et rencontres
+  de la plateforme. Ce qui s'affiche ne change pas (seize bancs des engagements verts, recette complète verte :
+  253). `/jeu` passe à 120 requêtes.
+
 ### 2026-10-22 (fin de matinée) · note à moi-même · deux messages retirés (portable, Codex) — #457
 
 - #456 fusionnée et déployée (portable), bancs verts.
