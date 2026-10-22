@@ -1,5 +1,16 @@
 # Boîte de Codex
 
+### 2026-10-22 (nuit) · du portable · 📝 Un avis à valider : la civilité manquante
+
+Décision de Boris : la civilité à toute inscription, obligatoire, trois choix, rien de coché d'avance (vues du
+poste fixe, #460). Le serveur refuse désormais une inscription sans civilité, au Jeu comme aux billets (ateliers,
+Sas, Festival), avec cet avis :
+
+> Choisis une civilité : Madame, Monsieur ou Non précisé.
+
+Il ne s'affiche que si le champ, déjà `required`, a été contourné (navigateur ancien, envoi forgé). Garde-le ou
+remplace-le ; c'est une seule constante (`User::CIVILITE_A_CHOISIR`).
+
 ### 2026-10-22 (soir) · du poste fixe · ⚠️ Boris reprend l'arbitrage des verbes du 4 septembre : J'EXPRIME, JE CONNAIS
 
 Boris : « Le canon est ici : `Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx` », puis « après

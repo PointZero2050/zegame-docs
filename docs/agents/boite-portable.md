@@ -1,32 +1,16 @@
 # Boîte du portable
 
-### 2026-10-22 (soir) · du poste fixe · ✅ #462 : les verbes au canon (J'EXPRIME, JE CONNAIS), partout
+### 2026-10-22 (nuit) · note à moi-même · #460, #461, #462 fusionnées ; la civilité exigée côté serveur — trois messages traités
 
-https://github.com/PointZero2050/pointzero-app/pull/462 — décision de Boris : le canon est
-`Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx`, « on aligne tout ». 38 occurrences, 25 fichiers :
-fiches `config/puissances`, `SiteHelper::PUISSANCES_SITE`, `pz.yml`, Conseil Ω, gestes `monde_{0,1}.yml`, guides
-M0-13/14, et les rubriques de navigation (« J'exprime », « Je connais »). Bancs à jouer à la fusion :
-`verifier_accord_des_verbes` (non joué ici, il demande Rails), `verifier_coque`, `verifier_classes_emises`.
-
-### 2026-10-22 (soir) · du poste fixe · ✅ #461 : l'écran 7 des Croyances au référentiel du Livre II
-
-https://github.com/PointZero2050/pointzero-app/pull/461 — `public/sas/croyances/app.js` seul (+ banc
-`verifier_sas_vers_le_jeu` § 8 sexies). Validé par Boris :
-https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/croyances-c07-referentiel-livre-ii.md
-ⓘ `c07_profonde` (rang du bouton, dans `config/sas.yml`) garde sa forme : une partie ancienne surligne une autre
-puissance à sa réouverture, sans autre effet. Aucune donnée serveur.
-
-### 2026-10-22 (soir) · du poste fixe · 🔌 #460 : la civilité à toute inscription — deux points dans ta zone
-
-https://github.com/PointZero2050/pointzero-app/pull/460 — décision de Boris : la civilité à toute inscription,
-obligatoire, trois choix (Madame, Monsieur, Non précisé), rien de coché d'avance. Vues : ateliers et Sas
-(`events/show`, le champ manquait), Festival (devient obligatoire), inscription publique (`compte[civility]`).
-**Pour toi** :
-1. `InscriptionsController#create` doit lire `compte[civility]`, refuser une valeur absente ou inconnue (422 sur
-   l'écran) et l'écrire sur le compte — sinon le champ de l'inscription publique est ignoré à l'ouverture.
-2. Une civilité VIDE postée hors navigateur deviendrait `nil` sur une colonne `NOT NULL` (`registrations`,
-   `users`) : un 500 au lieu d'un refus. Une validation sur `Registration` (et sur la création de compte).
-Bancs ajustés : `verifier_rubrique_evenements`, `verifier_festival_inscription`, `verifier_inscription_ouverte`.
+- **#461** (Croyances, écran 7) : fusionnée (`d86c33d`).
+- **#462** (les verbes au canon) : fusionnée (`3eadcd0`).
+- **#460** (civilité, vues) : fusionnée (`1996074`). Ses deux points serveur sont faits (`93abff0`) :
+  - `InscriptionsController` lit et exige `compte[civility]` ;
+  - `RegistrationsController` refuse une civilité absente ou vide ;
+  - énumérations `validate: true` : jamais un 500.
+- **Bancs** : `verifier_piege_a_robots` et `verifier_inscription_ouverte` suivent. Douze bancs verts.
+- **#462 touche 25 fichiers** : une recette transversale serait utile, mais pas pendant la recette de Boris (la
+  charge). L'avis de refus est soumis à Codex.
 
 ### 2026-10-22 (nuit) · note à moi-même · #458 et #459 fusionnées ; la recette de Boris en cours — deux messages traités
 

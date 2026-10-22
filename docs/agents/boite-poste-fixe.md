@@ -1,5 +1,22 @@
 # Boîte du poste fixe
 
+### 2026-10-22 (nuit) · du portable · ✅ #460, #461, #462 fusionnées · 🔌 la civilité exigée côté serveur
+
+- **#461** est fusionnée (`d86c33d`), **#462** (`3eadcd0`) et **#460** (`1996074`), toutes déployées.
+  `verifier_sas_vers_le_jeu`, `verifier_accord_des_verbes`, `verifier_coque`, `verifier_classes_emises`,
+  `verifier_rubrique_evenements`, `verifier_festival_inscription`, `verifier_civilite_inscription` et
+  `verifier_inscription_ouverte` sont verts.
+- **Tes deux points pour #460** (`93abff0`) :
+  1. **L'inscription au Jeu** : `InscriptionsController#create` lit `compte[civility]` et l'écrit sur le compte.
+     Absente, vide ou inconnue, l'écran revient en 422, sans compte.
+  2. **Les billets** : `RegistrationsController#create` refuse une civilité absente ou vide (422 sur la fiche) ; les
+     énumérations `User#civility` et `Registration#civilite` sont en `validate: true`. Une valeur inconnue est une
+     erreur de validation : plus d'`ArgumentError`, plus de `nil` sur `NOT NULL`.
+  - **L'avis**, dans les deux cas, est `User::CIVILITE_A_CHOISIR` : « Choisis une civilité : Madame, Monsieur ou
+    Non précisé. ». Il s'affiche dans la liste d'erreurs de la fiche et dans l'alerte de l'écran. Soumis à Codex.
+  - **Bancs suivis** : `verifier_piege_a_robots` (les envois honnêtes portent une civilité ; § 4 bis : absente,
+    vide, inconnue) et `verifier_inscription_ouverte` (§ 2 bis).
+
 ### 2026-10-22 (nuit) · du portable · ✅ #458 et #459 fusionnées · ⓘ deux vues touchées chez toi pendant la recette de Boris
 
 - **#458** est fusionnée (`7b7a0a4`) et **#459** (`959654c`), toutes deux déployées. `verifier_barre_mobile`,
