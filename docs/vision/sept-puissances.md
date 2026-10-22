@@ -6,14 +6,20 @@
 
 Chaque puissance porte un verbe vivant, une fonction, et deux polarités de déséquilibre (Lumière exacerbée / Ombre). L'équilibre n'est pas un juste milieu statique : c'est la **circulation** entre les pôles en passant par le Point Zéro.
 
+> ⚠️ **Verbes au canon (Boris, 22 octobre 2026).** Le canon des puissances est
+> `Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx` : JE SUIS, JE DÉCIDE, JE CRÉE, JE RESSENS,
+> **J'EXPRIME**, **JE CONNAIS**, JE DONNE. Il remplace l'arbitrage du 4 septembre (JE M'EXPRIME, JE DISCERNE) ;
+> l'application est alignée partout, rubriques de navigation comprises
+> (https://github.com/PointZero2050/pointzero-app/pull/462).
+
 | # | Puissance | Verbe | Fonction | Lumière exacerbée | Ombre |
 |---|---|---|---|---|---|
 | 1 | **Désir** | JE SUIS | Élan vital, vibration originelle (Éros) | Ivresse, démesure (Bacchus) | Honte, retrait, dépression (Thanatos) |
-| 2 | **Volonté** | JE VEUX | Souveraineté, direction, persévérance | Domination, toute-puissance | Soumission, servitude, abdication |
+| 2 | **Volonté** | JE DÉCIDE | Souveraineté, direction, persévérance | Domination, toute-puissance | Soumission, servitude, abdication |
 | 3 | **Imagination** | JE CRÉE | Espace des possibles, rapport au temps | Dissociation délirante | Aphantasie, pragmatisme strict |
 | 4 | **Émotion** | JE RESSENS | Langage énergétique, retour au présent | Chaos, addiction à l'intensité | Mental : anesthésie, coupure |
-| 5 | **Communication** | JE M'EXPRIME | Rendre partageable, exprimer les besoins | Manipulation | Mutisme, attente silencieuse |
-| 6 | **Intuition** | JE DISCERNE | Accès direct à l'implicite | Dogmatisme, certitude totale | Superstition, crédulité |
+| 5 | **Communication** | J'EXPRIME | Rendre partageable, exprimer les besoins | Manipulation | Mutisme, attente silencieuse |
+| 6 | **Intuition** | JE CONNAIS | Accès direct à l'implicite | Dogmatisme, certitude totale | Superstition, crédulité |
 | 7 | **Transcendance** | JE DONNE | Redistribution, interface avec le Tout | — (pas de polarité propre : seule l'illusion d'autotranscendance) | — |
 
 **Correspondance avec l'app existante (décision Boris 2026-07-12)** : on part du référentiel déjà en place dans ze.game. Les compétences actuelles suivent le format `PUISSANCE : ASPECT` (ex. « ÉMOTION : PASSION », « COMMUNICATION : ÉCOUTE ») avec un framework `Point Zéro - {Puissance} - {Lumière|Ombre}`. Ce nommage encode déjà puissance + polarité — pas de nouveau modèle de données à créer pour la V1.
@@ -77,7 +83,7 @@ Le livre associe la traversée des Mondes de la Marelle à des « gardiens » �
 
 | Gardien | Puissance | Croyance à traverser | Monde(s) | Fil rouge du Monde |
 |---|---|---|---|---|
-| 1 | Intuition | « Je dois comprendre avant d'agir » | 0-1 | Réflexivité, discernement, cartographie intérieure — **mantra des Mondes 0-1 : « JE DISCERNE » (Boris, 2026-07-13)** |
+| 1 | Intuition | « Je dois comprendre avant d'agir » | 0-1 | Réflexivité, discernement, cartographie intérieure — **mantra des Mondes 0-1 : « JE DISCERNE » (Boris, 2026-07-13) — devenu « JE CONNAIS » avec le canon du 22 octobre 2026** |
 | 2 | Communication | « M'exprimer pleinement est impossible » | 2 | Cadre de sécurité : cercles, parole authentique, écoute réelle |
 | 3 | Émotion (cœur) | « Si j'ouvre mon cœur, je vais souffrir » | 3 | Confrontation à l'Ombre, accueil des émotions |
 | 4 | Imagination | « Je peux créer des mondes, mais pas transformer celui-ci » | 4 | Incarnation de la création dans l'Empire (art, rituel, œuvre) |

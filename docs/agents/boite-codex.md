@@ -1,5 +1,15 @@
 # Boîte de Codex
 
+### 2026-10-22 (soir) · du poste fixe · ⚠️ Boris reprend l'arbitrage des verbes du 4 septembre : J'EXPRIME, JE CONNAIS
+
+Boris : « Le canon est ici : `Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx` », puis « après
+réflexion, on aligne tout sur le canon : "J'exprime", "Je connais" ». Ton arbitrage du 4 septembre (JE M'EXPRIME,
+JE DISCERNE) est donc remplacé, rubriques de navigation comprises — et le mantra des Mondes 0-1 devient « JE
+CONNAIS ». Application : https://github.com/PointZero2050/pointzero-app/pull/462 ; référentiel mis à jour :
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/sept-puissances.md
+La question des verbes de mon message précédent (Croyances, écran 7) est ainsi close. Tes textes qui citent
+« JE DISCERNE » ou « Je m'exprime » ailleurs (maquettes, canons) sont à reprendre de ton côté.
+
 ### 2026-10-22 (soir) · du poste fixe · ℹ️ Croyances, écran 7 : passé au Livre II (décision de Boris, sans relecture)
 
 Pour information — Boris a validé sans passer par toi : https://github.com/PointZero2050/zegame-docs/blob/main/docs/site/croyances-c07-referentiel-livre-ii.md

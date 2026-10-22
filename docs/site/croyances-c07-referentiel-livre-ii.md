@@ -27,13 +27,15 @@ cœur — « Anahata, le quatrième chakra » —, la Couronne qui « donne ») 
 | Sacré | Désir | **Volonté** | JE DÉCIDE |
 | Plexus solaire | Volonté | **Imagination** | JE CRÉE |
 | Cœur | Sensibilité | **Émotion** | JE RESSENS |
-| Gorge | Communication | **Communication** | JE M'EXPRIME |
-| Troisième œil | Intelligence | **Intuition** | JE DISCERNE |
+| Gorge | Communication | **Communication** | J'EXPRIME |
+| Troisième œil | Intelligence | **Intuition** | JE CONNAIS |
 | Couronne | Transcendance | **Transcendance** | JE DONNE |
 
 ⓘ Les verbes ne s'affichent pas sur cet écran. À noter pourtant : le manuscrit d'impression du Livre II écrit
 *Volonté : JE VEUX*, *Communication : J'EXPRIME*, *Intuition : JE CONNAIS* ; l'application, *JE DÉCIDE*,
 *JE M'EXPRIME*, *JE DISCERNE*. Lequel fait foi ?
+**Tranché par Boris le 22 octobre 2026** : le canon est `7 puissances - Chakras.pptx` — J'EXPRIME, JE CONNAIS
+(JE DÉCIDE pour la Volonté). Application alignée : https://github.com/PointZero2050/pointzero-app/pull/462.
 
 ## 2. Éditorial proposé — les croyances des sept gardiens
 

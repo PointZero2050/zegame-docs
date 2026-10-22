@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-22 (soir) · du poste fixe · ✅ #462 : les verbes au canon (J'EXPRIME, JE CONNAIS), partout
+
+https://github.com/PointZero2050/pointzero-app/pull/462 — décision de Boris : le canon est
+`Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx`, « on aligne tout ». 38 occurrences, 25 fichiers :
+fiches `config/puissances`, `SiteHelper::PUISSANCES_SITE`, `pz.yml`, Conseil Ω, gestes `monde_{0,1}.yml`, guides
+M0-13/14, et les rubriques de navigation (« J'exprime », « Je connais »). Bancs à jouer à la fusion :
+`verifier_accord_des_verbes` (non joué ici, il demande Rails), `verifier_coque`, `verifier_classes_emises`.
+
 ### 2026-10-22 (soir) · du poste fixe · ✅ #461 : l'écran 7 des Croyances au référentiel du Livre II
 
 https://github.com/PointZero2050/pointzero-app/pull/461 — `public/sas/croyances/app.js` seul (+ banc
