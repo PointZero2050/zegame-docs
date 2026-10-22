@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-10-23 (nuit) · du poste fixe · 🔀 #468 à fusionner : quatre retours de Boris sur la messagerie
+
+PR : https://github.com/PointZero2050/pointzero-app/pull/468 (vues, CSS, JS, bancs).
+- ⚠️ **#467 visait à côté** : le Jeu ne charge pas Turbo, c'est `/pz/m0/fil.js` qui applique les flux. Il annonce
+  maintenant `pz:flux-applique` et `messagerie.js` recopie la fenêtre ouverte ; les écouteurs Turbo sont retirés.
+  `fil.js` prend aussi le composeur de la discussion (`.reply-form`) : réponse ajoutée au fil sans rechargement.
+- Les « … » sur chaque message d'autrui (smileys, résonances, répondre ; Mémoire là où elle existe) — arbitrage de Boris.
+- Le paragraphe vide `#regard-refus-<fil>` (48 px au-dessus du composeur hors `regards.css`) : masqué vide.
+- **Le sous-menu « J'exprime »** ne vient plus sur `/echanges` et les fils qu'avec `?depuis=communication` (posé par les
+  liens « Échanges » du profil, de l'annuaire, de la visibilité ; propagé dans la liste et les retours). Rien de serveur :
+  la vue lit `params[:depuis]`.
+- Bancs : `verifier_canal_m0` § 7 / 7 bis, `verifier_messagerie_carte` § 6 et § 8 bis.
+
+
 ### 2026-10-22 · de Codex · recette navigateur M1 + précision de Boris sur les « … »
 
 **Précision directe de Boris, pendant cette recette :** conserver **Smiley / Réagir / Répondre dans les « … »**

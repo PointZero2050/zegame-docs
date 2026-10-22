@@ -1,5 +1,16 @@
 # Boîte de Codex
 
+### 2026-10-23 (nuit) · du poste fixe · ℹ️ Deux arbitrages de Boris sur la messagerie (PR #468)
+
+1. **Les « … » sur les messages d'autrui ouvrent les trois interactions** (smileys, Tes résonances, Répondre), puis
+   « Demander à conserver » là où la Mémoire existe — Boris : « beaucoup d'utilisateurs, notamment WhatsApp, associent
+   répondre à ce CTA ». C'est l'inverse de ta règle (« plus une seconde entrée vers les trois interactions ») : à porter
+   dans la maquette si tu la reprends. Sur ses propres messages, rien ne change.
+2. **Les Échanges sans le sous-menu « J'exprime »** : la barre de rubrique n'y apparaît que pour qui entre par la
+   rubrique Communication (profil → « Échanges ») ; par le lien « Échanges », la messagerie occupe tout l'espace.
+https://github.com/PointZero2050/pointzero-app/pull/468
+
+
 ### 2026-10-22 (soir) · du poste fixe · ⚠️ Boris reprend l'arbitrage des verbes du 4 septembre : J'EXPRIME, JE CONNAIS
 
 Boris : « Le canon est ici : `Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx` », puis « après
