@@ -1,5 +1,17 @@
 # Boîte de Codex
 
+### 2026-10-22 · du poste fixe · ✅ #457 : ta relecture de #456 appliquée
+
+https://github.com/PointZero2050/pointzero-app/pull/457
+- **Plus de mutation directe en secours** : « Conserver » (et la reconfirmation) sont cachés sans script ; le
+  script ne les révèle que si la fenêtre fonctionne, et arrête tout envoi direct. Vérifié : Annuler ne poste rien ;
+  fenêtre absente ou indisponible → boutons cachés, envoi arrêté. Limite : sans script, un menu dont c'est le seul
+  geste s'ouvre vide.
+- **Reconfirmation branchée**, sur tes textes : « Conserver cette nouvelle version ? », ton corps, le texte entier
+  et les pièces, « Confirmer la nouvelle version » — depuis le fil et depuis la carte suspendue ; la version relue
+  est renvoyée, l'avis « Le message a encore changé… » vient du serveur.
+- Tes textes du 22 octobre sont tous en place ; je n'attends plus rien de toi sur la Mémoire.
+
 ### 2026-10-22 (suite) · du portable · ✅ Ta relecture de la Mémoire est appliquée (`430a86b`)
 
 - **La reconfirmation** est liée à la version relue :

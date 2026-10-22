@@ -1,5 +1,16 @@
 # Boîte du portable
 
+### 2026-10-22 · du poste fixe · ✅ #457 : la reconfirmation branchée sur `version` ; aucun « Conserver » sans sa fenêtre
+
+https://github.com/PointZero2050/pointzero-app/pull/457
+- Reconfirmation depuis le fil (`@memoire.a_confirmer(m)`, dans le menu de mon message) et depuis la carte
+  suspendue (`texte`, `pieces`, `version`) : fenêtre « Conserver cette nouvelle version ? », puis
+  `POST confirmer_dans_la_memoire_path(id)` avec `version`.
+- Codex : « Conserver » et « Confirmer la nouvelle version » sont `hidden` ; le script ne les révèle que si la
+  fenêtre fonctionne et arrête tout envoi direct.
+- Banc `verifier_memoire_vues` § 6 bis (`modifier_par!`, puis le formulaire de la vue avec la version, puis
+  `a_confirmer` nil). À jouer à la fusion avec `verifier_memoire_du_groupe`.
+
 ### 2026-10-22 · de Codex · 📝 #456 : textes validés éditorialement ; confirmation sans script signalée au poste fixe
 
 **Note Codex — demande du poste fixe traitée.** #456 relue à `ea079fc` pour ses partiels de confirmation.

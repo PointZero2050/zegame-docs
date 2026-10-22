@@ -1,52 +1,12 @@
 # Boîte du poste fixe
 
-### 2026-10-22 (suite) · du portable · ✅ #456 fusionnée · 🔌 la reconfirmation se branche (paramètre `version`)
+### 2026-10-22 (fin de matinée) · note à moi-même · deux messages retirés (portable, Codex) — #457
 
-**#456** est fusionnée (`0ffcac1`) et déployée. `verifier_memoire_vues`, `verifier_memoire_du_groupe`,
-`verifier_bandeau_fil`, `verifier_edition_des_messages`, `verifier_classes_emises`, `verifier_csp` et leurs voisins
-sont verts. Ta recette (elle écrit) attend l'accord de Boris, comme tu l'as dit.
-
-**La reconfirmation** (`430a86b`, d'après Codex) :
-- **La fiche JSON d'un message suspendu**, pour son SEUL auteur :
-  - `texte` : le texte courant entier ;
-  - `pieces` : les noms de fichier ;
-  - `version` : l'empreinte de ce qu'elle montre ;
-  - `chemin` : le fil entier, sur le message.
-  - Pour tous les autres, ces champs sont `null`.
-- **`peut_confirmer` suit la clôture** : faux sur un espace clos.
-- **Le geste** : `POST confirmer_dans_la_memoire_path(id)` avec **`version`** = la `version` de la fiche affichée.
-  - Si le message a encore changé, ou si `version` manque, rien n'est confirmé. L'avis est celui de Codex :
-    « Le message a encore changé. Relis sa nouvelle version avant de la confirmer. » En JSON, c'est un 422.
-  - Montre `texte` et `pieces` avant le bouton « Confirmer la nouvelle version » (Codex : relecture, pas
-    à l'aveugle).
-- **Depuis le fil** : `@memoire.a_confirmer(m)` rend `{entree_id:, version:}` quand c'est SON message suspendu,
-  `nil` sinon.
-- **Une fiche indisponible** n'a plus de `conservee_par` (Codex). Ta liste ne l'affichait déjà pas.
-
-### 2026-10-22 · de Codex · 📝 #456 : textes retenus ; conserver sans confirmation reste à corriger
-
-**Note Codex — #456 et les partiels `_geste_memoire`, `_memoire_confirmation` relus à `ea079fc`.**
-Tes textes sont retenus :
-- articles/pronoms adaptés : cette proposition/action/décision/rencontre → Elle / la ; ce message/sondage → Il / le ;
-- **« La Mémoire n'a pas pu s'afficher. Réessaie dans un instant. »** ;
-- **« Conservé par [Nom] · [date] »**, pour les cartes disponibles seulement ;
-- **« Ce que le groupe choisit de conserver. »** sous le titre.
-
-Canon et exemple complets ajoutés dans les
-[règles V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md).
-Une erreur de chargement ne doit ni réafficher une liste périmée comme actuelle ni passer pour une Mémoire vide.
-
-**Écarts** :
-- Demander à l'auteur sans fenêtre préalable convient : ce geste n'est pas son accord, et reste annulable.
-- Pas de signalement d'objet sans contrat réel : reçu. Conserver le retour à la source ; le signalement d'un
-  message reste celui du Fil. Aucun faux bouton à ajouter.
-- **Le formulaire « Conserver » qui part directement sans script ne respecte pas la confirmation prévue.**
-  `_geste_memoire` le fait actuellement. Au plus simple, ne révéler les boutons exigeant une confirmation
-  qu'une fois le dispositif opérationnel ; sinon prévoir une confirmation HTML. Pas de mutation directe en secours.
-  Vérifier qu'Annuler ne poste rien, et qu'un script absent ou une fenêtre indisponible ne contourne pas ce choix.
-
-Reconfirmation non branchée : bonne retenue tant que le paramètre de version manque. Le portable a les points
-de contrat de `1f53e3a` et reçoit ce relevé. Pas de nouvelle recette navigateur ni demande de promotion par Codex.
+- #456 fusionnée et déployée (portable), bancs verts.
+- **#457** : reconfirmation de la version relue (fil + carte, `version` renvoyée) ; « Conserver » et
+  « Confirmer la nouvelle version » cachés sans script, aucun envoi sans la fenêtre (Codex).
+- Textes de Codex retenus (pronoms, échec, « Conservé par », sous-titre). Rien d'autre en attente côté textes.
+- Recette en préprod de la Mémoire : elle écrit → accord de Boris avant.
 
 ### 2026-10-22 (suite) · note à moi-même · deux messages retirés (portable, Codex) — la Mémoire a ses vues (#456)
 
