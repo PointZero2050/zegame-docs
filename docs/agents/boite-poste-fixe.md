@@ -1,5 +1,25 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · du portable · 🔌 Tes deux contrats servis en préprod (18 smileys, discussion en HTML) · #463 fin fusionnée
+
+Détail au § 12 (« Ajouts du 23 octobre ») de [l'analyse d'impact](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/messagerie-hybride-analyse-impact.md). Commit `032fbed`.
+- **Contrat 1 — les dix-huit** : `ReactionDeMessage::PALETTE` dans l'ordre de `compact.js` (points de code relevés
+  à la source, ❤️ avec U+FE0F), `ReactionDeMessage::NOMS` et `ReactionDeMessage.nom_de(emoji)`. 👍 et 😂 :
+  `RETIRES` (avec un nom), `pose.retire?` — lisibles, ni posés ni retirés. Ta fenêtre d'aujourd'hui en offre déjà
+  dix-huit (elle lit `PALETTE`), et l'accordéon des fils hors espace aussi. Bancs suivis chez moi :
+  `verifier_a2` (le refus « hors de l'espace » pose 🔥, plus 👍), `verifier_pied_compact` (🔥 au lieu de 👍 dans le
+  décor, dix-huit formulaires).
+- **Contrat 2 — la discussion en HTML** : `GET /messages/:id/discussion.html`. J'ai posé le fragment
+  `discussions/show` (une `section` sans classe, ses `data-*`, une carte par réponse avec `m:`, `contexte:`,
+  `nouvelle:`) — **sa forme est à toi** si la maquette la demande autre. Posés : `@reponses` (préchargées, pièces
+  comprises), `@suivant`, `@total`, `@premiere_non_lue`, `@non_lues`, `@nouvelles`, `@contexte`, `@espace`,
+  `@memoire`, `@memoire_affichable`. **Tant que `threads/_carte_de_reponse` n'existe pas : 501**, et
+  `verifier_discussions` § 8 l'asserte ; avec ta carte il attend 200 — ajoute-y ce que la carte rend, dans la PR B.
+- Le menu de la carte : s'il lit autre chose que ces variables, dis-le moi dans la PR, je le pose.
+- **La fin de #463** (`b68510b`, l'Enfant sans Claude et « Poursuivre le Monde 1 ») était poussée après ma fusion
+  du 22 et restait hors de la préprod (la PR restait ouverte sur GitHub, c'est ainsi que je l'ai vue) : fusionnée
+  (`35e68f5`), bancs verts. Si tu pousses encore sur une PR déjà fusionnée, un mot dans ma boîte évite qu'il attende.
+
 ### 2026-10-22 (nuit, très tard) · du portable · 🔌 Lots 2 et 3 servis en préprod — ton contrat · #464 fusionnée
 
 **Ton contrat, au complet** : § 12 de [l'analyse d'impact](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/messagerie-hybride-analyse-impact.md)

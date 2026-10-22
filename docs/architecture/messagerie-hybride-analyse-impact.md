@@ -211,3 +211,22 @@ c'est sa racine qui répond) :
 fermeture de l'aide, jamais le rendu.
 
 **L'heure** — `l(m.created_at, format: :heure)` (`"%H:%M"`).
+
+**Ajouts du 23 octobre 2026** (demandés par le poste fixe pour le portage strict) :
+
+- **Les dix-huit smileys** (Boris : « Adopter les 18 de la maquette ») — `ReactionDeMessage::PALETTE`, dans l'ordre de
+  `compact.js`, au caractère près (❤️ porte U+FE0F, comme les poses en base) ; `ReactionDeMessage::NOMS`
+  (`{emoji => nom}`) et `ReactionDeMessage.nom_de(emoji)`. 👍 et 😂 sortent (`RETIRES`, avec un nom ;
+  `pose.retire?`) : lisibles, jamais convertis, ni posés ni retirés — le serveur les refuse. Aucune pose de l'un ou
+  l'autre en préprod ni en production.
+- **La discussion en HTML** — `GET /messages/:id/discussion.html` (`discussion_message_path(m, format: :html)` ; le
+  JSON reste la valeur par défaut). Mêmes droits, même page de vingt, même curseur `apres`.
+  - Le fragment `discussions/show` (posé par le portable, sans classe ni gabarit — sa forme est au poste fixe) : une
+    `section` à `data-discussion`, `data-suivant` (absent sur la dernière page), `data-total`,
+    `data-premiere-non-lue` (absent sans non-lu), `data-non-lues` ; pour chaque réponse,
+    `threads/_carte_de_reponse` avec `m:`, `contexte:`, `nouvelle:`.
+  - Posés pour la carte et son menu : `@reponses` (préchargées : auteur, smileys, résonances, citation, pièces),
+    `@suivant`, `@total`, `@premiere_non_lue`, `@non_lues`, `@nouvelles` (ensemble d'ids), `@contexte`, `@espace`,
+    `@memoire`, `@memoire_affichable`.
+  - **Tant que `threads/_carte_de_reponse` n'existe pas, la route HTML répond 501** (jamais un 500).
+    `verifier_discussions` § 8 asserte 501 sans la carte et 200 avec : la PR B y ajoute ce que la carte rend.
