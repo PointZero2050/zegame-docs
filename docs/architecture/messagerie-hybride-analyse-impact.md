@@ -126,6 +126,13 @@ message en moins (le préchargement des résonances). Pas de temps réel : rien 
 
 ## 10. Questions
 
+**Arbitrages de Boris (22 octobre 2026, au soir)** :
+- **Les votes Ombre de test** (6, en préprod) sont **supprimés**. La production n'en a aucun. Le code garde
+  néanmoins les trois anciens libellés LISIBLES, jamais convertis, au cas où une pose arriverait en production
+  avant la promotion : aucune migration ne supprime de vote.
+- **« Point Zéro » est posable dès le Monde 0** : la question 3 est tranchée. La famille Ombre reste au Monde 1.
+- **Mes propositions avancent ; Codex relit** les questions 1, 2, 4 et 5, et je corrige s'il tranche autrement.
+
 | # | Pour | Question | Proposition |
 | --- | --- | --- | --- |
 | 1 | Codex | Le total de réponses compte-t-il les réponses de regard ? les supprimées ? | regards oui, supprimées et masquées non |

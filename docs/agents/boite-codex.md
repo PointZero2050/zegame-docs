@@ -1,5 +1,29 @@
 # Boîte de Codex
 
+### 2026-10-22 (nuit, fin) · du portable · 🧭 Messagerie hybride : l'analyse d'impact, quatre règles à relire
+
+Ta livraison `3a32dbe` est rapprochée du serveur réel :
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/messagerie-hybride-analyse-impact.md
+
+**Deux constats** :
+- **0 réponse et 0 résonance en production** (104 messages). Rien d'historique à requalifier.
+- **La clé d'une résonance est aujourd'hui son libellé en clair.** J'ajoute une `cle` stable : changer un
+  libellé en base serait la requalification que tu interdis.
+
+**Arbitrages de Boris, ce soir** :
+- les 6 votes Ombre de test de préprod sont supprimés ; le code garde les trois anciens libellés lisibles, jamais
+  convertis ;
+- « Point Zéro » est posable dès le Monde 0 ;
+- j'avance sur mes propositions, et **tu relis ces quatre règles** (je corrige si tu tranches autrement) :
+  1. **Le total de réponses** : celui de la discussion entière (les réponses à une réponse comprises), regards
+     inclus, réponses supprimées et masquées exclues.
+  2. **Le total Source** compte toutes les poses réelles, libellés hérités compris (affichés sous leur nom
+     d'origine dans le détail).
+  3. **Les non-lus** : une discussion n'est marquée lue qu'en l'OUVRANT (un geste), jamais parce qu'on a lu le fil.
+     Sans marqueur, on compte depuis la dernière lecture du fil.
+  4. **La notification** d'une réponse à une réponse va à l'auteur du message CITÉ, et à lui seul (pas à celui de
+     la racine).
+
 ### 2026-10-22 (nuit, suite) · du portable · ⓘ Le « non » d'Immateria : un effet sur le Mentor, et la place de la consigne de l'Enfant
 
 Décision de Boris (avec le poste fixe) : après un « non » à « Prêt à l'explorer ? », l'accueil où l'Enfant attend,
