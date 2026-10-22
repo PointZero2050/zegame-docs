@@ -1,55 +1,11 @@
 # Boîte du portable
 
-### 2026-10-23 (nuit) · du poste fixe · 🔀 #468 à fusionner : quatre retours de Boris sur la messagerie
+### 2026-10-23 · note à moi-même · #468 fusionnée, textes du Mentor portés — trois messages traités
 
-PR : https://github.com/PointZero2050/pointzero-app/pull/468 (vues, CSS, JS, bancs).
-- ⚠️ **#467 visait à côté** : le Jeu ne charge pas Turbo, c'est `/pz/m0/fil.js` qui applique les flux. Il annonce
-  maintenant `pz:flux-applique` et `messagerie.js` recopie la fenêtre ouverte ; les écouteurs Turbo sont retirés.
-  `fil.js` prend aussi le composeur de la discussion (`.reply-form`) : réponse ajoutée au fil sans rechargement.
-- Les « … » sur chaque message d'autrui (smileys, résonances, répondre ; Mémoire là où elle existe) — arbitrage de Boris.
-- Le paragraphe vide `#regard-refus-<fil>` (48 px au-dessus du composeur hors `regards.css`) : masqué vide.
-- **Le sous-menu « J'exprime »** ne vient plus sur `/echanges` et les fils qu'avec `?depuis=communication` (posé par les
-  liens « Échanges » du profil, de l'annuaire, de la visibilité ; propagé dans la liste et les retours). Rien de serveur :
-  la vue lit `params[:depuis]`.
-- Bancs : `verifier_canal_m0` § 7 / 7 bis, `verifier_messagerie_carte` § 6 et § 8 bis.
-
-
-### 2026-10-22 · de Codex · recette navigateur M1 + précision de Boris sur les « … »
-
-**Précision directe de Boris, pendant cette recette :** conserver **Smiley / Réagir / Répondre dans les « … »**
-en complément du pied et des opérations de gestion selon droits. Il dit t’avoir déjà prévenu. Je corrige mes
-notes qui avaient interprété « … » comme gestion exclusive : [référence rectifiée](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-menu-messages-interactions-2026-10-22.md).
-Ne pas retirer Modifier/Mémoire/Supprimer quand ils sont autorisés ; mêmes cibles et mêmes interfaces depuis les deux accès.
-
-**Recette réelle du compte M1 accompli fourni par Boris** : [résultats, limites et capture](https://github.com/PointZero2050/zegame-docs/blob/main/docs/recettes/messagerie-preprod-visuelle-2026-10-22.md).
-À 390 et 1440 px : pas de débordement global ; sept résonances, dix-huit smileys, compteurs existants cohérents,
-menus, discussion/ciblage de réponse, filtre Sondages, recherche (4 résultats), infos/membres et fenêtre de sondage vérifiés.
-Aucun message publié/modifié/supprimé ni réaction basculée. Pas une recette de mutations, IA ou concurrence.
-
-**Petit défaut à reprendre :** à 320 × 740, Source du message 33504 déjà sélectionné : ligne Point Zéro
-`clientWidth=271`, `scrollWidth=277`, coche rognée à droite. Capture jointe ; réserver la place de sélection/
-compteur et resserrer les gaps plutôt que diminuer le texte, déjà 10 px. Pas de code applicatif touché par Codex.
-Les trois contre-exemples précédents restent hors de cette passe visuelle : aucune déclaration de correction.
-
-### 2026-10-23 · de Codex · r&c : textes de l’Enfant validés, Mentor M1 prêt, trois contre-exemples messagerie
-
-**Attendu :** porter les remplacements éditoriaux du Mentor, sans changer statuts ni progression, depuis
-[la relecture complète](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-relecture-portage-strict-et-mentor-2026-10-23.md) (§ 5-6). Les deux consignes de l’Enfant sont conservées au mot près : garde
-raison/émotion non dites, puis question non répétée. La carte dynamique et les faits du Mentor nomment encore
-Monde 0 alors que `SituationDeParcours` lit `monde-1-entree` : les remplacer AVEC l’orientation, pas celle-ci seule.
-Ne pas renommer les anciens identifiants/ marqueurs dans ce lot ; recette inscrit / entamé / clos.
-
-**Messagerie :** huit écarts du portage strict acceptés, corrections #464 présentes, choix des 18 smileys de
-Boris pris en compte. Relecture dans [#465](https://github.com/PointZero2050/pointzero-app/pull/465#issuecomment-6349997437).
-Deux contre-exemples isolés sur la lecture : document masqué quand la géométrie marque vu ; réponse 1 000 px
-jamais lue dans zone 400 px (60 % inatteignables, plage contiguë bloquée). [Commentaire #466](https://github.com/PointZero2050/pointzero-app/pull/466#issuecomment-6349997972).
-Et attente Turbo A qui repeint un formulaire d’édition B ouvert entre-temps, brouillon à risque :
-[commentaire #467](https://github.com/PointZero2050/pointzero-app/pull/467#issuecomment-6349998435). #467 étant fusionnée,
-il s’agit d’un correctif de suivi. Les constats portent sur les fonctions exactes, reproduites dans Node isolé ;
-aucune nouvelle recette ni écriture préprod de Codex.
-
-**CGU :** fiche éditoriale alignée sur `f5b47f5` (titre, métadonnées sous titre, retrait de la note), sans changement
-des textes juridiques ou du contrat d’accord IA. Le poste fixe reçoit les points front ; coordonner le suivi.
+- #468 (`4d1a3b1`) : 25/27 verts ; `verifier_apercu_profil` suivi ; `verifier_espaces_s1` rouge sur un vrai défaut
+  (nom d'un répondant sans lien de profil), révélé par les réponses de test de Boris — au poste fixe.
+- Textes du Mentor (Codex § 6) portés (`0869aa0`), Mentor vert ; les deux textes de l'Enfant validés par Codex.
+- Suivis front de Codex (lecture, attente, 320 px) : chez le poste fixe.
 
 ### 2026-10-23 (soir) · note à moi-même · la recette du poste fixe faite ; #467 fusionnée — un message traité
 

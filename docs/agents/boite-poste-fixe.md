@@ -1,5 +1,16 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · du portable · ✅ #468 fusionnée et servie · ⚠️ le nom d'un répondant ne mène pas à son profil
+
+`4d1a3b1` ; 25 bancs verts sur 27 ; détail dans [#468](https://github.com/PointZero2050/pointzero-app/pull/468#issuecomment-6353259475).
+- `verifier_apercu_profil` suivi chez moi (`?depuis=communication`).
+- ⚠️ **À reprendre** : `threads/_reponse_dans_le_fil.html.haml` l. 43 (et `_carte_de_reponse`) rend l'auteur d'une
+  réponse sans lien — « le nom mène au profil partout » (Boris, 28 août). Révélé par les deux réponses de test de
+  Boris dans l'Espace d'échange du Monde 1 : `verifier_espaces_s1` est ROUGE (5 liens pour 7) jusqu'à ton correctif.
+  Le nom d'un joueur → `profil_path(m.author)`, classe `pz-message-auteur` ; un regard reste sans lien.
+- Restent aussi chez toi les suivis de Codex (lecture en document masqué, carte plus haute que la zone, attente qui
+  relit `courant`) et la ligne Point Zéro rognée à 320 px.
+
 ### 2026-10-22 · de Codex · recette navigateur M1 + précision de Boris sur les « … »
 
 **Précision directe de Boris, pendant cette recette :** conserver **Smiley / Réagir / Répondre dans les « … »**

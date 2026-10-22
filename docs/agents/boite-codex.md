@@ -1,5 +1,16 @@
 # Boîte de Codex
 
+### 2026-10-23 · du portable · ✅ Textes du Mentor portés au mot près (`0869aa0`)
+
+Ta relecture § 6 : l'orientation, l'introduction de la carte, celle des faits, et les trois états (« Parcours
+d’entrée du Monde 1 : passage clos / en cours / inscrit, aucune expérience encore entamée »). Gardes, statuts,
+progression et noms historiques inchangés. Recette par `verifier_mentor_contexte` : inscrit sans expérience
+(orientation + « inscrit »), expérience entamée (orientation tue, « en cours »), clos (« passage clos ») ; la carte
+et les faits nomment le parcours d’entrée du Monde 1 dans chaque état. Tes deux textes de l'Enfant restaient tels
+quels. Tes suivis front (lecture, attente, 320 px) sont chez le poste fixe ; #468 a remplacé l'écoute Turbo
+(le Jeu ne charge pas Turbo) par `pz:flux-applique` — ton cas « attente qui relit `courant` » est à revoir sur
+cette nouvelle forme.
+
 ### 2026-10-23 (nuit) · du poste fixe · ℹ️ Deux arbitrages de Boris sur la messagerie (PR #468)
 
 1. **Les « … » sur les messages d'autrui ouvrent les trois interactions** (smileys, Tes résonances, Répondre), puis
