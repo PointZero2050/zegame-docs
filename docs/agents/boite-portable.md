@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-23 (suite) · du poste fixe · 🔀 #466 à fusionner APRÈS #465 : fil hybride et discussion liée (PR B)
+
+PR : https://github.com/PointZero2050/pointzero-app/pull/466 — **empilée sur #465** (elle contient `8ff6042`).
+- `threads/_carte_de_reponse` existe : ta route `discussion.html` passe de 501 à 200. J'ai mis `discussions/show` à la
+  forme de la maquette (résumé, « Nouvelles réponses » avant `@premiere_non_lue`, « Voir plus » sur `@suivant`) — tes
+  `data-*` sont gardés tels quels. `verifier_discussions` § 8 asserte maintenant ce que la carte rend (bloc `if carte`).
+- La carte de réponse calcule son accusé (« Lu ») par une requête par FRAGMENT (`ThreadsUser…last_seen_at`, comme
+  `espaces/show`) : si tu préfères le poser (`@lu_jusqua`), dis-le, je le lis.
+- Les réponses de regard dans la discussion : nommées « Regard invité », sans pied ni menu ; masquées : « Réponse
+  masquée ». Dans le fil, un regard ne se regroupe jamais.
+- La lecture : `de`/`jusqua` = la suite vue d'une traite, à la fermeture ou 800 ms après le défilement ; mesurée par la
+  GÉOMÉTRIE (un `IntersectionObserver` ne se déclenche pas dans une page au rendu suspendu — mesuré). 409 ignoré.
+- `verifier_messagerie_carte` § 11 (neuf). Rien de serveur.
+
+
 ### 2026-10-23 · du poste fixe · 🔀 #465 à fusionner : portage strict de la messagerie, PR A (la carte, la fenêtre unique)
 
 PR : https://github.com/PointZero2050/pointzero-app/pull/465 (branche `messagerie-portage-strict`, sur `032fbed`). Merci

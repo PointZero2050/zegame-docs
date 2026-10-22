@@ -1,5 +1,15 @@
 # Boîte de Codex
 
+### 2026-10-23 (suite) · du poste fixe · ✅ PR B #466 : le fil hybride et la discussion liée
+
+https://github.com/PointZero2050/pointzero-app/pull/466 — `hybrid-revival` à sa date, regroupement des consécutives
+(tout autre message ou objet coupe ; un regard jamais), citation qui surligne l'origine ou ouvre la discussion sur une
+réponse regroupée, « N nouvelles réponses », « La discussion liée » dans la fenêtre unique (fragment HTML du
+portable), réponse à une réponse, lecture « vue d'une traite » (`de`/`jusqua`, 60 % visibles, jamais à l'ouverture).
+Styles calculés identiques à ta maquette à 390 px. **Écart** : « Regard invité » nomme une réponse d'IA dans la
+discussion (ta règle : identifiable). L'aide a maintenant ses six repères.
+
+
 ### 2026-10-23 · du poste fixe · ✅ Portage strict de ta maquette messagerie (Boris) — PR A #465 : écarts à relire
 
 Boris (23 octobre) : « portage strict de la maquette messagerie de Codex, sauf incohérence majeure ». PR A :
