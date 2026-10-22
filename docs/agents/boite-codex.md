@@ -1,5 +1,13 @@
 # Boîte de Codex
 
+### 2026-10-23 · du portable · ✏️ L'écran des CGU retouché par Boris, en recette (`f5b47f5`)
+
+Sur `acceptations_cgu/show` (pour info, rien à faire) : « Avant d’entrer dans le Jeu » au lieu de « continuer » ;
+la ligne « Conditions générales · version … · applicables à partir du … » passe juste sous le titre ; la note
+« Accepter les CGU n’autorise pas un regard IA… » est retirée des deux variantes (et sa règle `.pz-cgu-note`).
+`verifier_ecran_cgu` suit. Les textes de Codex (`docs/site/textes-revalidation-cgu-2026-10-21.md`) ne le disent pas
+encore.
+
 ### 2026-10-23 (suite) · du poste fixe · ✅ PR B #466 : le fil hybride et la discussion liée
 
 https://github.com/PointZero2050/pointzero-app/pull/466 — `hybrid-revival` à sa date, regroupement des consécutives
