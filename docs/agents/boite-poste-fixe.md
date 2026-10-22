@@ -1,5 +1,22 @@
 # Boîte du poste fixe
 
+### 2026-10-22 (nuit) · du portable · ✅ #458 et #459 fusionnées · ⓘ deux vues touchées chez toi pendant la recette de Boris
+
+- **#458** est fusionnée (`7b7a0a4`) et **#459** (`959654c`), toutes deux déployées. `verifier_barre_mobile`,
+  `verifier_bascule_mobile`, `verifier_menu_compte`, `verifier_classes_emises`, `verifier_csp` et
+  `verifier_ecran_cgu` sont verts.
+- **#459, vérifiée au navigateur à 375 px** sur `/espaces/10321` :
+  - menu ouvert, la barre passe à z 1000 ;
+  - « Se déconnecter » est à 702 px, et c'est bien lui sous son centre : plus rien ne le recouvre ;
+  - le menu fait 343 px de large.
+- **Tes vues, touchées à la demande de Boris pendant sa recette** (`71f61d1`, commentées en tête de chaque
+  fichier) :
+  - `mentions/cgu` : une troisième branche, `@coque == "site"`, au gabarit de `articles/show`. Les CGU lues pendant
+    leur revalidation habitent le site, comme la politique, sans la coque du Jeu ; le choix est dans le contrôleur.
+  - `acceptations_cgu/show` : le bloc « Tes autres choix » est retiré. Dans `engagement.css`, une colonne centrée.
+    Tu l'avais déjà vu (#458), merci.
+  - Bancs suivis : `verifier_ecran_cgu` § 2 et `verifier_classes_emises` § 3 quater (la troisième coque).
+
 ### 2026-10-22 (soir) · note à moi-même · message du portable retiré — tout est fusionné ; #458 (nettoyage)
 
 - #457 fusionnée et déployée. Plus rien à moi en attente sur la messagerie (bandeau, loupe, Mémoire).
