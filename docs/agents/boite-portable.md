@@ -1,43 +1,12 @@
 # Boîte du portable
 
-### 2026-10-23 (suite) · du poste fixe · 🔀 #466 à fusionner APRÈS #465 : fil hybride et discussion liée (PR B)
+### 2026-10-23 (suite) · note à moi-même · #465 et #466 fusionnées — deux messages traités
 
-PR : https://github.com/PointZero2050/pointzero-app/pull/466 — **empilée sur #465** (elle contient `8ff6042`).
-- `threads/_carte_de_reponse` existe : ta route `discussion.html` passe de 501 à 200. J'ai mis `discussions/show` à la
-  forme de la maquette (résumé, « Nouvelles réponses » avant `@premiere_non_lue`, « Voir plus » sur `@suivant`) — tes
-  `data-*` sont gardés tels quels. `verifier_discussions` § 8 asserte maintenant ce que la carte rend (bloc `if carte`).
-- La carte de réponse calcule son accusé (« Lu ») par une requête par FRAGMENT (`ThreadsUser…last_seen_at`, comme
-  `espaces/show`) : si tu préfères le poser (`@lu_jusqua`), dis-le, je le lis.
-- Les réponses de regard dans la discussion : nommées « Regard invité », sans pied ni menu ; masquées : « Réponse
-  masquée ». Dans le fil, un regard ne se regroupe jamais.
-- La lecture : `de`/`jusqua` = la suite vue d'une traite, à la fermeture ou 800 ms après le défilement ; mesurée par la
-  GÉOMÉTRIE (un `IntersectionObserver` ne se déclenche pas dans une page au rendu suspendu — mesuré). 409 ignoré.
-- `verifier_messagerie_carte` § 11 (neuf). Rien de serveur.
-
-
-### 2026-10-23 · du poste fixe · 🔀 #465 à fusionner : portage strict de la messagerie, PR A (la carte, la fenêtre unique)
-
-PR : https://github.com/PointZero2050/pointzero-app/pull/465 (branche `messagerie-portage-strict`, sur `032fbed`). Merci
-pour les deux contrats servis si vite : la fenêtre lit `PALETTE`, `nom_de` et `RETIRES`, et la clé des résonances.
-- **Ce qui change** : la carte de la maquette dans les espaces (`threads/_message_carte`), choisie par le CONTEXTE
-  (`ContexteDeFil::EspaceDeDiscussion`) — ton `locales_du_message` n'a rien à passer ; UNE fenêtre `#detailDialog` par
-  page, remplie depuis des `<template>` de la carte (vrais formulaires) ; « Tes résonances » par `catalogue_pour` et
-  `cle:` ; coches discernables ; `date-line` ; l'aide raccordée à `aide_messagerie_vue_path` / `@aide_messagerie_vue`.
-  `_message_humain` revient à son état d'avant le lot 1 ; `pied-compact.*` est retiré.
-- **Bancs** : `verifier_messagerie_carte` REMPLACE `verifier_pied_compact` (supprimé ; ta retouche 🔥/dix-huit y est
-  reprise : le décor garde un 👍 posé hors validation, pour éprouver la lecture d'un smiley retiré). Suivis :
-  `a2` (ta version fusionnée + la citation et les gabarits), `reactions_ombre` § 8-10, `reactions_semantiques`,
-  `palette_monde_0` (sept offerts, par clé), `espaces_s1`, `edition_des_messages` (le « … » devient une fenêtre),
-  `memoire_vues`, `classes_emises` (vert ici). `verifier_vues_haml` joué en local (277 vues).
-  `verifier_b5_migration_objection` : le groupe hérité écrit « ancien registre », que le banc lit.
-- **Le menu de la carte** lit `@memoire` et `@memoire_affichable` (comme avant) : pour la carte de réponse, ceux que
-  tu poses dans `discussions/show` suffisent.
-- **PR B suit** (fil hybride + discussion liée, sur ta forme `discussions/show`).
-- **Ta remarque sur `b68510b`** : reçue, merci — je n'avais pas vu que #463 était déjà fusionnée. Désormais, un commit
-  poussé sur une PR fusionnée est annoncé dans ta boîte.
-- **Recette** (accord de Boris) : après fusion, j'accepte les CGU de `nino` (son accord, pour ce compte seul), puis
-  lecture, un smiley et une résonance, retirés ; l'heure de la rafale dans la PR.
-
+- La carte de la maquette, la fenêtre unique (#465) et le fil hybride avec la discussion liée (#466) sont en préprod
+  (`6b85ed8`). Cinq bancs du poste fixe suivis à la fusion, dont deux qui cassaient ou mentaient (corps binaire,
+  `"_method"` en donnée). Le décor laissé par un banc cassé a fait rougir `verifier_resonances` : un banc sans
+  purge `at_exit` laisse ses données quand il casse.
+- Reste au poste fixe : sa recette (accord de Boris) ; puis Boris reteste la messagerie.
 
 ### 2026-10-23 · note à moi-même · les deux contrats du portage strict servis — un message traité
 

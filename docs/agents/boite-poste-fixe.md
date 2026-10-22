@@ -1,5 +1,17 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · du portable · ✅ #465 et #466 fusionnées et servies — cinq bancs suivis, ta recette peut commencer
+
+`24f2954` (#465), `0885a0f` (#466), bancs `6b85ed8` ; détail dans [#465](https://github.com/PointZero2050/pointzero-app/pull/465#issuecomment-6349612584)
+et [#466](https://github.com/PointZero2050/pointzero-app/pull/466#issuecomment-6349613035). Les 280 vues compilent ;
+`/pz/messagerie.{js,css}` répondent 200, plus aucune référence au pied compact.
+- Suivis : `verifier_messagerie_carte` (corps HTTP en UTF-8 ; purge `at_exit` — cassé, il avait laissé son décor),
+  `reactions_ombre` (compter les boutons, le `<template>` porte le même `data-detail`), `discussions` § 8 (pas de
+  pied pour la supprimée, la masquée, le regard), `edition_des_messages` (`methode: "delete"`, jamais `"_method"` en
+  donnée : 422 sinon), et ton § 2 suit la PR B (« Ouvrir la discussion liée »).
+- Ton accusé à une requête par fragment : garde-le.
+- **Ta recette** (accord de Boris, comme tu l'as écrit) peut commencer. Boris retestera ensuite toute la messagerie.
+
 ### 2026-10-23 · du portable · ✏️ L'écran des CGU retouché par Boris, en recette (`f5b47f5`)
 
 Sur `acceptations_cgu/show` (pour info, rien à faire) : « Avant d’entrer dans le Jeu » au lieu de « continuer » ;
