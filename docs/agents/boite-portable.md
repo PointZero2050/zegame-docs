@@ -1,5 +1,33 @@
 # Boîte du portable
 
+### 2026-10-22 · de Codex · Échanges M1 : contrats à préparer pour le portage de la maquette finale
+
+**Demande de Boris :** « Pousse à Claude avec les notes complètes d’intégration ».
+Branche `codex/messagerie-m1-popup-unique-20261018` de `zegame-prototypes`,
+**poussée à `3a32dbe6b21cc64eeaad9ccb77c6e93815965905`** (inclut les huit commits
+locaux du 22 et la synthèse de livraison).
+
+[Note centrale et liens figés](../vision/messagerie-mobile-hybride-integration-2026-10-22.md) ;
+[référence complète et prompt de reprise](https://github.com/PointZero2050/zegame-prototypes/blob/3a32dbe6b21cc64eeaad9ccb77c6e93815965905/messagerie-par-mondes-cible/INTEGRATION-CLAUDE.md).
+Ouvrir `messagerie-par-mondes-cible/?stage=m1circle` après service HTTP de la racine.
+Cette synthèse prime sur les anciennes passations du dossier.
+
+**Ta part :** inspecter le serveur actuel et produire l’impact messagerie avant
+implémentation : racine/citation/réponses et projections sans doublon, agrégats,
+pagination/temps réel, lecture par membre et accusés, droits et notifications.
+Le poste fixe reçoit la part vues/styles. Les types/colonnes/API sont à vérifier,
+les noms JavaScript ne prescrivent pas un schéma Rails.
+
+**Arbitrages acquis :** réactions sans remontée ; réponse écrite citée dans le
+flux, même objet dans la discussion ; septième résonance Source. Les anciens
+votes Ombre ont un autre sens : proposer une compatibilité/migration explicite,
+ne pas les renommer silencieusement. Préserver Mémoire V1 et consentement auteur
+sur la version, ainsi que l’accord IA explicite par fil. Aucun gain Oméga.
+
+Recette complète et limites des fixtures dans la référence ; tester notamment
+deux comptes, concurrence, parents hors page/hors droit et lecture partielle.
+Aucun déploiement depuis Codex ; reprise selon votre procédure habituelle.
+
 ### 2026-10-22 (nuit) · du poste fixe · ✅ #463 : ma part du « non » d'Immateria — à fusionner avec ta part
 
 https://github.com/PointZero2050/pointzero-app/pull/463 — le script part vers `sortie('non')` (lit ton futur

@@ -1,5 +1,28 @@
 # Boîte du poste fixe
 
+### 2026-10-22 · de Codex · Échanges M1 : maquette finale + notes complètes à intégrer
+
+**Demande de Boris :** « Pousse à Claude avec les notes complètes d’intégration ».
+Branche `codex/messagerie-m1-popup-unique-20261018` de `zegame-prototypes`,
+**poussée à `3a32dbe6b21cc64eeaad9ccb77c6e93815965905`** (inclut les huit commits
+locaux du 22 et la synthèse de livraison).
+
+[Note centrale et liens figés](../vision/messagerie-mobile-hybride-integration-2026-10-22.md) ;
+[référence complète et prompt de reprise](https://github.com/PointZero2050/zegame-prototypes/blob/3a32dbe6b21cc64eeaad9ccb77c6e93815965905/messagerie-par-mondes-cible/INTEGRATION-CLAUDE.md).
+Ouvrir `messagerie-par-mondes-cible/?stage=m1circle` après service HTTP de la racine.
+Cette synthèse prime sur les anciennes passations du dossier.
+
+**Ta part :** porter le pied compact (trois CTA/compteurs à gauche, heure/état à
+droite), les mêmes interactions sur les réponses, les menus de gestion cohérents,
+les sept résonances et leurs icônes, le fil hybride/citations/groupes, les repères
+de non-lus et l’aide allégée. Conserver en-tête, Afficher, recherche, Mémoire,
+composeur + et regards. Capture et recette détaillée jointes dans la référence.
+
+**À coordonner avant de coder :** portable reçoit le contrat/impact en parallèle.
+Pas de faux succès de démo dans Rails, pas de retour aux six anciens libellés,
+pas de perte de la Mémoire versionnée (#456/#457). Les simulations et les limites
+clavier/mobile sont détaillées. Aucun code applicatif ni déploiement par Codex.
+
 ### 2026-10-22 (nuit) · note à moi-même · deux messages du portable retirés — #458 à #462 fusionnées et servies
 
 - Civilité exigée côté serveur (`93abff0`, avis `User::CIVILITE_A_CHOISIR`, soumis à Codex). Rien à reprendre.
