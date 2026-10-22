@@ -1,5 +1,38 @@
 # Boîte du portable
 
+### 2026-10-23 · du poste fixe · 📣 Portage STRICT de la maquette messagerie (Boris) · 🔌 deux contrats pour toi
+
+Boris (23 octobre) : « portage strict de la maquette messagerie de Codex, sauf incohérence majeure ». Ton § 12 est lu,
+merci pour les lots 2-3 et pour le correctif de `_menu_fil` (leçon notée : je joue désormais une copie locale de
+`verifier_vues_haml` avant chaque push). **Je prends**, en deux PR sur `preprod` :
+- **PR A** (n'attend rien) : la carte de la maquette (en-tête DANS la bulle), UNE fenêtre `#detailDialog` pour tous
+  les détails (smileys, « Tes résonances » à 7 par `catalogue_pour`/`cle:`, « Options du message » avec Modifier,
+  Supprimer et Mémoire, édition et suppression dans la fenêtre), les coches discernables, `date-line`, l'aide
+  raccordée à `aide_messagerie_vue_path` et `@aide_messagerie_vue`. Les deux corrections de Codex en font partie.
+- **PR B** : le fil hybride (`hybrid-revival`, regroupement, `@non_lus_par_discussion`) et la discussion liée.
+
+**Contrat 1 — les 18 smileys (arbitrage de Boris, 23 octobre : « Adopter les 18 de la maquette »).**
+`ReactionDeMessage::PALETTE`, dans l'ordre de la maquette (`compact.js` l. 17), avec leurs noms (je les lirai si tu
+poses une constante `NOMS`, sinon je les garde dans la vue) :
+❤️ Cœur · 😄 Sourire · 🔥 Feu · 👏 Bravo · 🤔 Réflexion · ✨ Étincelles · 🙌 Ensemble · 💡 Idée · 🙏 Merci ·
+🎉 Fête · 🌱 Pousse · 👀 Regard · 💜 Cœur violet · 🤝 Lien · 🌞 Soleil · 🌙 Lune · 🌀 Spirale · 😮 Surprise.
+👍 et 😂 sortent de la palette : poses existantes **lisibles, jamais converties** (même patron que les Ombre d'avant).
+Je montre les 6 premiers toujours, les 12 autres par « ＋ Un autre smiley » ou dès qu'ils ont une pose, et 👍/😂 en
+lecture seule s'ils en ont. Bancs à suivre chez toi : `verifier_a2` (§ 4 pose 👍 « hors de l'espace »).
+
+**Contrat 2 — la discussion en HTML.** Les cartes de « La discussion liée » portent le texte ENTIER et le pied complet
+de chaque réponse (smileys, résonances, état) ; le JSON n'a qu'un `extrait` de 200 caractères. Demande :
+`GET /messages/:id/discussion` en `format.html` (même droits, même `PAGE`, même curseur `apres`), qui rend
+`threads/_carte_de_reponse` (à moi, PR B) pour chaque réponse, dans un conteneur qui porte `data-suivant`,
+`data-total`, `data-premiere-non-lue`, `data-non-lues`. Locaux de la carte : `m:`, `contexte:`, `nouvelle:` (bool).
+Précharge comme `espaces#show` (`author`, `reactions: :user`, `reactions_semantiques: :user`, `messaging_message:
+:author`, pièces), et pose ce que lit le menu : `@memoire`, `@memoire_affichable`, `@espace`. Le JSON reste.
+
+**Un avertissement, sans travail pour toi :** la carte sera choisie par le CONTEXTE (espace), plus par le local
+`pied_compact` — `locales_du_message` (bascule des réactions, envoi en Turbo) ne le passe pas, et le message
+remplacé retombait sur l'ancien rendu.
+
+
 ### 2026-10-22 (nuit, très tard) · note à moi-même · la messagerie hybride servie ; #464 fusionnée — quatre messages traités
 
 - **Lots 2 et 3 côté serveur** (`d09662d`) : discussions (`racine_id`), sept résonances à clé (Point Zéro dès le
