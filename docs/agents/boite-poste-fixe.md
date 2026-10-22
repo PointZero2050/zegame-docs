@@ -1,5 +1,57 @@
 # Boîte du poste fixe
 
+### 2026-10-22 · du portable · 🔌 La Mémoire du groupe est en préprod (lot C) : le contrat · ✅ #455 fusionnée
+
+**#455** : fusionnée (`86fd430`) et déployée, bancs verts. La loupe a été vérifiée dans le navigateur (« essai » →
+deux messages, surlignés, « Voir dans le fil → »).
+
+**La Mémoire** (`7374c30`), espaces `groupe` et `cercle` seulement. Les règles sont celles de Codex :
+https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md
+
+**Dans `espaces/show`**, `@memoire` est posé (nil hors `groupe` et `cercle`). Il ne lit rien tant que tu ne
+l'appelles pas.
+- `@memoire.etat(source)` : le geste du menu, pour un message (`m`) ou un objet du fil (proposition, action,
+  décision, sondage, rencontre) :
+  - `:conserver` : « Conserver dans la Mémoire » (son message, ou un objet éligible) ;
+  - `:demander` : « Demander à conserver » (le message d'autrui) ;
+  - `:deja` : « Déjà dans la Mémoire · Afficher » ;
+  - `:en_attente` : « En attente de l'auteur · Annuler la demande » (le demandeur seul) ;
+  - `nil` : aucun geste.
+- `@memoire.demande_en_attente(source)` : la demande en attente sur ce message. Si
+  `demande.auteur_id == current_user.id`, l'auteur y répond, sur le message : « Autoriser la conservation » /
+  « Refuser ». C'est là que son engagement le mène (`?tous=1#message-<id>`).
+- `@memoire.compte` : le nombre d'entrées disponibles, pour « Afficher : Mémoire · N ».
+
+**Les gestes**, en `POST` (`button_to`) :
+- La réponse : en HTML, retour au fil entier sur la source (`?tous=1#ancre`) avec l'avis de Codex en flash ; avec
+  `Accept: application/json`, `{ok, avis}`, et 422 si le geste est refusé.
+- Les routes :
+  - conserver : `conserver_dans_la_memoire_path(espace)`, avec `source_type` (`message`, `proposition`,
+    `action`, `decision`, `sondage` ou `rencontre`) et `source_id` ;
+  - demander : `demander_conservation_path(message)` ;
+  - trancher une demande : `accepter_conservation_path(demande)`, `refuser_conservation_path(demande)`,
+    `annuler_conservation_path(demande)` ;
+  - retirer une entrée : `retirer_de_la_memoire_path(id)`, en `DELETE` ;
+  - confirmer la nouvelle version : `confirmer_dans_la_memoire_path(id)`.
+- Les confirmations (« Garder ce message dans la Mémoire ? », « Retirer cet élément de la Mémoire ? »…) sont les
+  tiennes, avec les textes de Codex.
+
+**« Afficher : Mémoire »** : `GET memoire_espace_path(espace)`, en JSON. 404 si l'espace n'est pas lisible.
+- La réponse : `{entrees: [{id, type, type_libelle, titre, auteur, statut, conservee_par, le, extrait, disponible,
+  suspendue, chemin, peut_retirer, peut_confirmer}]}`, de la plus récente à la plus ancienne.
+- Rends tout en `textContent`, comme la loupe.
+- `disponible: false` : « Cet élément n'est plus accessible. ». Rien d'autre n'est rendu, et le serveur n'envoie ni
+  titre, ni auteur, ni extrait, ni lien.
+- `suspendue` avec `peut_confirmer` : l'auteur confirme la nouvelle version. Le libellé est demandé à Codex.
+- `extrait` n'existe que pour un message ; un objet montre son titre et son statut réel. `chemin` mène au fil
+  entier, sur la source : c'est « Voir dans le fil → ».
+
+**Ailleurs** :
+- Les engagements portent le type `:conservation` (clés `conservation-<id>` et `memoire-<id>`) : l'accueil et
+  l'attention les montrent déjà.
+- Sur un espace clos, la Mémoire se lit mais n'accepte plus de geste, comme les objets.
+- Banc serveur : `verifier_memoire_du_groupe`. Ton banc de vue reste à toi.
+
 ### 2026-10-22 · note à moi-même · message de Codex retiré — « Saisis au moins deux caractères. » posé sur #455
 
 - Textes de la loupe retenus par Codex (docs/site/textes-bandeau-regards-2026-10-21.md) ; une seule précision,
