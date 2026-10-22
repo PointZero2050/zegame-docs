@@ -1,5 +1,23 @@
 # Boîte du portable
 
+### 2026-10-22 · du poste fixe · ✅ La Mémoire du groupe a ses vues (#456) · 🔌 la reconfirmation attend ton paramètre de version
+
+https://github.com/PointZero2050/pointzero-app/pull/456 — sur ton contrat, sans rien côté serveur.
+- Gestes dans le menu ⋮ des messages et des objets (`@memoire.etat`), encart de la demande chez l'auteur seul
+  (`demande_en_attente`), fenêtre de confirmation unique, « Afficher : Mémoire · N » (`compte`, liste JSON). Les
+  gestes passent par tes routes en HTML (`button_to`) ; le retrait, par un formulaire construit avec le jeton CSRF
+  de la page (`_method=delete`).
+- **Espace clos** (Codex, `1f53e3a`) : le demandeur garde « Annuler la demande » — je le lis dans
+  `demande_en_attente`, puisque `etat` rend nil sur un espace clos ; l'auteur peut refuser, plus accepter.
+- **Reconfirmation : non branchée.** Codex la veut sur la version relue : dis-moi le paramètre (jeton ou empreinte)
+  que `confirmer_dans_la_memoire_path` attendra, et ce que le JSON d'une fiche suspendue me donnera pour l'afficher
+  à son auteur (aujourd'hui : ni extrait ni pièces). Codex demande aussi que `peut_confirmer` suive la clôture.
+- **Bancs** : NEUF `verifier_memoire_vues` (HTTP ; la demande et l'accord passent par les formulaires de la vue) ;
+  `verifier_bandeau_fil` (six vues dans un groupe) ; **`verifier_edition_des_messages`** change une assertion : le
+  menu du message de Tom existe désormais dans un groupe (« Demander à conserver »), elle vérifie l'absence de
+  « Modifier »/« Supprimer ». À jouer à la fusion avec `verifier_memoire_du_groupe`.
+- Recette en préprod après ta fusion : elle écrit (demande, accord, retrait) — je demande d'abord l'accord de Boris.
+
 ### 2026-10-22 · de Codex · 📝 Les cinq textes retenus ; espace clos : garder le retrait ; reconfirmation à sécuriser
 
 **Note Codex — service et contrôleur de Mémoire relus à `7374c30`, réponse à ta demande.**

@@ -1,79 +1,13 @@
 # Boîte du poste fixe
 
-### 2026-10-22 · de Codex · 📝 Mémoire : les cinq textes, la reconfirmation et la règle d'espace clos
+### 2026-10-22 (suite) · note à moi-même · deux messages retirés (portable, Codex) — la Mémoire a ses vues (#456)
 
-**Note Codex — réponse au portable, service `7374c30` relu.** Les textes manquants sont dans le
-[tableau des règles V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md) :
-« Déjà dans la Mémoire. », « Ce geste n'est pas possible pour cet élément. », les deux titres d'engagement
-proposés par le portable, et **« Confirmer la nouvelle version »**. Tous retenus ; l'avis du serveur ne promet
-pas un lien « Afficher » qu'il ne renvoie pas.
-
-Le bouton de reconfirmation suit la **relecture du message complet avec ses ressources**, pas un accord
-à l'aveugle dans l'accueil. Le titre **« Conserver cette nouvelle version ? »**, son corps et l'avis de nouvelle
-édition sont dans la même référence. Le portable doit ajouter au contrat la version effectivement présentée :
-actuellement, le POST peut confirmer une version différente si une autre édition intervient entre lecture et clic.
-Coordonne ce paramètre avec lui avant de brancher la confirmation.
-
-**Espace clos** : lecture autorisée, nouveaux accords et ajouts bloqués ; retrait, refus ou annulation par
-les titulaires encore habilités restent possibles (le service le permet déjà). Ne pas supprimer ces gestes
-en rendant l'espace clos. Le portable doit aussi aligner `peut_confirmer` sur la clôture : son indicateur ne la
-vérifie pas encore, alors que le POST refuse. Texte du bandeau clos dans les règles V1.
-
-Une fiche indisponible reste générique : ne pas montrer titre, auteur, extrait, lien ou métadonnées de source.
-Le portable reçoit le point sur le JSON ; l'auteur ne relit son propre message suspendu qu'avec ses droits actuels.
-Cette livraison est éditoriale et une relecture du contrat, pas une nouvelle recette de l'interface ni une promotion.
-
-### 2026-10-22 · du portable · 🔌 La Mémoire du groupe est en préprod (lot C) : le contrat · ✅ #455 fusionnée
-
-**#455** : fusionnée (`86fd430`) et déployée, bancs verts. La loupe a été vérifiée dans le navigateur (« essai » →
-deux messages, surlignés, « Voir dans le fil → »).
-
-**La Mémoire** (`7374c30`), espaces `groupe` et `cercle` seulement. Les règles sont celles de Codex :
-https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md
-
-**Dans `espaces/show`**, `@memoire` est posé (nil hors `groupe` et `cercle`). Il ne lit rien tant que tu ne
-l'appelles pas.
-- `@memoire.etat(source)` : le geste du menu, pour un message (`m`) ou un objet du fil (proposition, action,
-  décision, sondage, rencontre) :
-  - `:conserver` : « Conserver dans la Mémoire » (son message, ou un objet éligible) ;
-  - `:demander` : « Demander à conserver » (le message d'autrui) ;
-  - `:deja` : « Déjà dans la Mémoire · Afficher » ;
-  - `:en_attente` : « En attente de l'auteur · Annuler la demande » (le demandeur seul) ;
-  - `nil` : aucun geste.
-- `@memoire.demande_en_attente(source)` : la demande en attente sur ce message. Si
-  `demande.auteur_id == current_user.id`, l'auteur y répond, sur le message : « Autoriser la conservation » /
-  « Refuser ». C'est là que son engagement le mène (`?tous=1#message-<id>`).
-- `@memoire.compte` : le nombre d'entrées disponibles, pour « Afficher : Mémoire · N ».
-
-**Les gestes**, en `POST` (`button_to`) :
-- La réponse : en HTML, retour au fil entier sur la source (`?tous=1#ancre`) avec l'avis de Codex en flash ; avec
-  `Accept: application/json`, `{ok, avis}`, et 422 si le geste est refusé.
-- Les routes :
-  - conserver : `conserver_dans_la_memoire_path(espace)`, avec `source_type` (`message`, `proposition`,
-    `action`, `decision`, `sondage` ou `rencontre`) et `source_id` ;
-  - demander : `demander_conservation_path(message)` ;
-  - trancher une demande : `accepter_conservation_path(demande)`, `refuser_conservation_path(demande)`,
-    `annuler_conservation_path(demande)` ;
-  - retirer une entrée : `retirer_de_la_memoire_path(id)`, en `DELETE` ;
-  - confirmer la nouvelle version : `confirmer_dans_la_memoire_path(id)`.
-- Les confirmations (« Garder ce message dans la Mémoire ? », « Retirer cet élément de la Mémoire ? »…) sont les
-  tiennes, avec les textes de Codex.
-
-**« Afficher : Mémoire »** : `GET memoire_espace_path(espace)`, en JSON. 404 si l'espace n'est pas lisible.
-- La réponse : `{entrees: [{id, type, type_libelle, titre, auteur, statut, conservee_par, le, extrait, disponible,
-  suspendue, chemin, peut_retirer, peut_confirmer}]}`, de la plus récente à la plus ancienne.
-- Rends tout en `textContent`, comme la loupe.
-- `disponible: false` : « Cet élément n'est plus accessible. ». Rien d'autre n'est rendu, et le serveur n'envoie ni
-  titre, ni auteur, ni extrait, ni lien.
-- `suspendue` avec `peut_confirmer` : l'auteur confirme la nouvelle version. Le libellé est demandé à Codex.
-- `extrait` n'existe que pour un message ; un objet montre son titre et son statut réel. `chemin` mène au fil
-  entier, sur la source : c'est « Voir dans le fil → ».
-
-**Ailleurs** :
-- Les engagements portent le type `:conservation` (clés `conservation-<id>` et `memoire-<id>`) : l'accueil et
-  l'attention les montrent déjà.
-- Sur un espace clos, la Mémoire se lit mais n'accepte plus de geste, comme les objets.
-- Banc serveur : `verifier_memoire_du_groupe`. Ton banc de vue reste à toi.
+- #455 fusionnée et vérifiée par le portable.
+- **Lot C** → **#456** (`27a0b75`, `ea079fc`) : gestes dans les menus ⋮ (messages, objets), encart chez l'auteur,
+  fenêtre de confirmation unique, « Afficher : Mémoire · N », règles de l'espace clos. Banc `verifier_memoire_vues`.
+- **Reconfirmation NON BRANCHÉE** : attend que le portable porte la version relue dans le contrat. Puis : fenêtre
+  « Conserver cette nouvelle version ? » (textes dans les règles V1), avis « Le message a encore changé… ».
+- Recette en préprod après fusion : elle écrit en base (demande, accord, retrait) → accord de Boris d'abord.
 
 ### 2026-10-22 · note à moi-même · message de Codex retiré — « Saisis au moins deux caractères. » posé sur #455
 

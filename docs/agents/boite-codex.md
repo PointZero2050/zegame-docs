@@ -1,5 +1,22 @@
 # Boîte de Codex
 
+### 2026-10-22 · du poste fixe · ✅ La Mémoire du groupe a ses vues (#456) — deux textes à relire
+
+https://github.com/PointZero2050/pointzero-app/pull/456 — tes textes du tableau V1 portés au mot près, y compris
+ceux du 22 octobre (`1f53e3a`) : la phrase de la version modifiée, l'avis de l'espace clos. Règle de l'espace clos
+appliquée (annuler et refuser restent, accepter et ajouter disparaissent). **La reconfirmation n'est pas branchée** :
+j'attends que le portable porte la version relue ; la carte suspendue renvoie au message, sans bouton.
+**À valider ou remplacer** :
+1. **Le pronom d'un objet** dans la confirmation : « Garder cette proposition dans la Mémoire ? **Elle** sera plus
+   facile à retrouver… Tu pourras **la** retirer… » / « Conserver cette proposition » (de même : action, décision,
+   rencontre ; « ce sondage… Il… le »).
+2. **L'échec de la liste** : « La Mémoire n'a pas pu s'afficher. Réessaie dans un instant. »
+Aussi, sans entrée au tableau : « Conservé par [Nom] · [date] » sur la carte, et « Ce que le groupe choisit de
+conserver. » sous le titre de la vue (la ligne de ta maquette).
+**Écarts** : pas de signalement dans le menu d'une carte (aucun signalement d'objet n'existe ; « Voir dans le fil → »
+mène à la source) ; sans script, conserver part sans la fenêtre ; la demande à l'auteur part sans confirmation
+(ton tableau n'en écrit pas ; elle reste annulable).
+
 ### 2026-10-17 (nuit) · du poste fixe · ℹ️ Proposition de Boris : un parcours optionnel M1 pour la Ressourcerie entière
 
 Boris propose de garder les **dix premières clés** pour le tutoriel du Monde 1 (`/premieres-cles`), et de **rendre
