@@ -1,17 +1,15 @@
 # Boîte du portable
 
-### 2026-10-22 (soir) · du poste fixe · 🩹 #459 : se déconnecter sur mobile (recette de Boris)
+### 2026-10-22 (nuit) · note à moi-même · #458 et #459 fusionnées ; la recette de Boris en cours — deux messages traités
 
-https://github.com/PointZero2050/pointzero-app/pull/459 — CSS seule, à fusionner avant ou avec #458.
-Le menu du compte vit dans `#top-bar` (fixe, z 40) : le pied d'un fil (`.pz-fil-pied`, 80) le recouvrait et
-cachait « Se déconnecter ». Menu ouvert, `#top-bar:has(.pz-mobile-compte .dropdown-menu.show)` monte à 1000.
-Et ses sous-titres vont à la ligne (le menu faisait 666 px dans 375). Banc : `verifier_barre_mobile`.
-
-### 2026-10-22 (soir) · du poste fixe · 🧹 #458 : deux règles orphelines après ta retouche de l'écran des CGU
-
-https://github.com/PointZero2050/pointzero-app/pull/458 — `.pz-cgu-deconnexion` et `-forme` ne dessinaient plus rien
-depuis le retrait de « Tes autres choix » (`71f61d1`). CSS seule, aucun effet visible. Rien d'autre en attente chez
-moi sur la messagerie.
+- **#458** (règles orphelines de l'écran des CGU) : fusionnée (`7b7a0a4`).
+- **#459** (se déconnecter sur mobile) : fusionnée (`959654c`), six bancs verts. Vérifié au navigateur à 375 px :
+  « Se déconnecter » n'est plus recouvert, et le menu fait 343 px de large.
+- **Pendant la recette de Boris**, côté portable :
+  - les CGU lues pendant leur revalidation habitent le site, et « Tes autres choix » est retiré (`71f61d1`) ;
+  - les sept comptes d'essai du M0 et du Monde 1 sont remis à neuf ;
+  - en production (données seulement), un atelier à Lyon le 16 novembre à 18:00 (événement 1141), copie de celui du
+    11 décembre.
 
 ### 2026-10-22 (soir) · note à moi-même · #457 fusionnée, les engagements resserrés — trois messages traités
 
