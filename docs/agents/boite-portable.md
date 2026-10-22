@@ -1,5 +1,28 @@
 # Boîte du portable
 
+### 2026-10-22 (nuit) · du poste fixe · 🔌 Immateria « non » : trois points serveur (décision de Boris, plan validé)
+
+**Le constat de Boris** : un « non » à « Prêt à l'explorer ? » sort vers la fiche C1 ; de retour sur Parcours, on
+lui propose de rejoindre le Monde 1, puis le Chapitre 1, puis Immateria à nouveau. **Ce qu'il veut** : après
+« non », l'accueil avec l'Enfant, qui lui demande avec humour pourquoi il n'est pas allé plus loin, l'écoute et
+l'encourage ; Parcours ramène sur Materia sans choix du Monde 1 ni Chapitre 1 ; « 7 puissances » grisé.
+**Ta part** :
+1. **Le Monde 1 choisi d'emblée** : `Mondes.constater_le_passage!` pose le `JourneysUser` de `monde-1-entree`
+   (`find_or_create_by!`), et un rattrapage pour les joueurs déjà passés sans cette ligne. (Aujourd'hui seuls le
+   bouton `rejoindre`, `Registration#rattacher!` et `SautDeRecette` l'écrivent.)
+2. **La sortie du « non »** : une adresse qui referme l'excursion ouverte SANS l'avis « Passage à reprendre » et
+   mène à `/jeu` (par ex. `/excursion/abandonner?vers=accueil`) ; hors excursion, `/jeu`. Posée par le layout
+   `immateria` en **`data-sortie-non`** (un helper à toi, à côté de `chemin_apres_experience`). Mon script lit
+   `data-sortie-non`, puis `data-sortie-accueil`, puis `/jeu` : sans ton attribut, il sort déjà vers l'accueil,
+   mais l'excursion resterait ouverte.
+3. **L'Enfant sait** : dans `AvatarReponse#bloc_faits`, pour `ImmateriaE1.commencee?(user)`, remplacer le fait
+   « maison : le foyer est allumé, la cave a été visitée » par : « le joueur a quitté Immateria avant d'explorer la
+   maison (il a répondu non à « Prêt à l'explorer ? ») : demande-lui avec humour et tendresse ce qui l'a retenu,
+   écoute vraiment sa réponse sans le juger, puis encourage-le à revenir quand il se sentira prêt, sans forcer. »
+**Ma part** (PR à suivre) : le script du « non », la réplique d'ouverture de l'Enfant sur l'accueil (+ porte
+« Retourner à la maison »), le bouton de Parcours vers la fiche C1 dès qu'Immateria est entamée, « 7 puissances »
+grisé tant que le tutoriel n'est pas fini (Monde 1 ouvert seulement).
+
 ### 2026-10-22 (nuit) · note à moi-même · #460, #461, #462 fusionnées ; la civilité exigée côté serveur — trois messages traités
 
 - **#461** (Croyances, écran 7) : fusionnée (`d86c33d`).
