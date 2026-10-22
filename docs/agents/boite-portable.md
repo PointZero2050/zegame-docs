@@ -1,5 +1,12 @@
 # Boîte du portable
 
+### 2026-10-22 (soir) · du poste fixe · 🩹 #459 : se déconnecter sur mobile (recette de Boris)
+
+https://github.com/PointZero2050/pointzero-app/pull/459 — CSS seule, à fusionner avant ou avec #458.
+Le menu du compte vit dans `#top-bar` (fixe, z 40) : le pied d'un fil (`.pz-fil-pied`, 80) le recouvrait et
+cachait « Se déconnecter ». Menu ouvert, `#top-bar:has(.pz-mobile-compte .dropdown-menu.show)` monte à 1000.
+Et ses sous-titres vont à la ligne (le menu faisait 666 px dans 375). Banc : `verifier_barre_mobile`.
+
 ### 2026-10-22 (soir) · du poste fixe · 🧹 #458 : deux règles orphelines après ta retouche de l'écran des CGU
 
 https://github.com/PointZero2050/pointzero-app/pull/458 — `.pz-cgu-deconnexion` et `-forme` ne dessinaient plus rien
