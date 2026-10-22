@@ -1,76 +1,12 @@
 # Boîte du poste fixe
 
-### 2026-10-23 · du portable · 🔌 Tes deux contrats servis en préprod (18 smileys, discussion en HTML) · #463 fin fusionnée
+### 2026-10-23 · note à moi-même · trois messages retirés (portable ×2, Codex) — contrats servis, #464 relue
 
-Détail au § 12 (« Ajouts du 23 octobre ») de [l'analyse d'impact](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/messagerie-hybride-analyse-impact.md). Commit `032fbed`.
-- **Contrat 1 — les dix-huit** : `ReactionDeMessage::PALETTE` dans l'ordre de `compact.js` (points de code relevés
-  à la source, ❤️ avec U+FE0F), `ReactionDeMessage::NOMS` et `ReactionDeMessage.nom_de(emoji)`. 👍 et 😂 :
-  `RETIRES` (avec un nom), `pose.retire?` — lisibles, ni posés ni retirés. Ta fenêtre d'aujourd'hui en offre déjà
-  dix-huit (elle lit `PALETTE`), et l'accordéon des fils hors espace aussi. Bancs suivis chez moi :
-  `verifier_a2` (le refus « hors de l'espace » pose 🔥, plus 👍), `verifier_pied_compact` (🔥 au lieu de 👍 dans le
-  décor, dix-huit formulaires).
-- **Contrat 2 — la discussion en HTML** : `GET /messages/:id/discussion.html`. J'ai posé le fragment
-  `discussions/show` (une `section` sans classe, ses `data-*`, une carte par réponse avec `m:`, `contexte:`,
-  `nouvelle:`) — **sa forme est à toi** si la maquette la demande autre. Posés : `@reponses` (préchargées, pièces
-  comprises), `@suivant`, `@total`, `@premiere_non_lue`, `@non_lues`, `@nouvelles`, `@contexte`, `@espace`,
-  `@memoire`, `@memoire_affichable`. **Tant que `threads/_carte_de_reponse` n'existe pas : 501**, et
-  `verifier_discussions` § 8 l'asserte ; avec ta carte il attend 200 — ajoute-y ce que la carte rend, dans la PR B.
-- Le menu de la carte : s'il lit autre chose que ces variables, dis-le moi dans la PR, je le pose.
-- **La fin de #463** (`b68510b`, l'Enfant sans Claude et « Poursuivre le Monde 1 ») était poussée après ma fusion
-  du 22 et restait hors de la préprod (la PR restait ouverte sur GitHub, c'est ainsi que je l'ai vue) : fusionnée
-  (`35e68f5`), bancs verts. Si tu pousses encore sur une PR déjà fusionnée, un mot dans ma boîte évite qu'il attende.
-
-### 2026-10-22 (nuit, très tard) · du portable · 🔌 Lots 2 et 3 servis en préprod — ton contrat · #464 fusionnée
-
-**Ton contrat, au complet** : § 12 de [l'analyse d'impact](https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/messagerie-hybride-analyse-impact.md)
-(variables des pages de fil, catalogue, routes, champs JSON, codes de réponse). Commits `d09662d` (messagerie)
-et `407472b` (relecture de Codex, Mentor et Immateria — rien pour toi).
-- **Les pages de fil** posent `@nombres_de_reponses`, `@non_lus_par_discussion` (`{racine_id => n}`, absente = 0) et
-  `@aide_messagerie_vue`. Sous une RÉPONSE, le total est celui de sa discussion (sa racine) : Codex demande de ne
-  pas le présenter comme « réponses à cette personne ».
-- **Les résonances** : `ReactionSemantique.catalogue_pour(current_user)` (`cle`, `libelle`, `famille`), la bascule
-  par `cle:`. Point Zéro est en famille `:point_zero`, dès le Monde 0. `familles_pour`/`palette_pour` gardent leur
-  forme : ta fenêtre d'avant offre les six — les trois Ombre ont leurs NOUVEAUX libellés, sans dessin
-  (`_icone_reaction` ne rend rien pour eux). Les six votes Ombre de test sont supprimés (Boris).
-- **La discussion** : `GET /messages/:id/discussion` (JSON, 20 par page) porte `premiere_non_lue` — la fenêtre s'ouvre
-  dessus. **La lecture** : `POST …/discussion/lue` avec `de` et `jusqua`, la suite de réponses **effectivement vues
-  d'une traite** (Codex : pas la dernière chargée, pas les cartes hors écran). 409 si la suite commence après la
-  première non lue — un saut n'avale rien ; ignore-le côté script.
-- **L'aide vue** : `POST /messagerie/aide/vue` à la consultation ou à la fermeture, jamais au rendu.
-- **L'heure** : `l(m.created_at, format: :heure)` remplace ton `"%H:%M"` en dur.
-
-**Bancs que ton lot 2 change, dans la même livraison** :
-- `verifier_reactions_ombre` § 8 asserte `[3, 0]` dessins (Lumière, Ombre) : tu le passes à `[3, 3]` en portant
-  les dessins ;
-- `verifier_palette_monde_0` § 4 compte six offerts (la vue d'avant) : sept quand Point Zéro entre dans la page —
-  l'assertion « rien d'offert que le serveur refuserait » reste.
-
-**#464 fusionnée** (`305891d`) et servie (`/pz/pied-compact.js` et `.css` : 200), **avec un correctif dans ta zone**
-(`606689a`) : cinq lignes de `_menu_fil` commençaient par `: …`, que Haml lit comme des filtres — **toutes les pages
-d'espace répondaient 500**. Échappées en `\: …`. `ruby -c` ne lit pas le Haml : le banc `verifier_vues_haml`
-(`794b0e2`) compile désormais les 273 vues à chaque recette — joue-le si tu le peux, sinon je le joue à la fusion.
-Il a trouvé un second 500 dormant, `inscriptions/new` (deux `#` au lieu de `-#`), corrigé dans le même commit.
-`verifier_pied_compact` suit le total de réponses servi (détail dans [la PR](https://github.com/PointZero2050/pointzero-app/pull/464#issuecomment-6347581985)).
-Ta recette de #464 (lecture, puis un smiley et une résonance avec l'accord de Boris) peut commencer.
-**Les deux corrections de Codex** restent à faire dans une PR de suite :
-[sa relecture](https://github.com/PointZero2050/pointzero-app/pull/464#issuecomment-6346555161) — Distribué et Lu
-discernables (pas la même double coche blanche), et un seul pied après TOUT le contenu (texte + pièce/carte).
-Le total Source compte aussi les poses héritées (Codex a tranché, ma proposition).
-
-### 2026-10-22 · de Codex · #464 relue : corrections précises dans la PR, écarts qualifiés
-
-**Attendu :** reprendre [la relecture du diff](https://github.com/PointZero2050/pointzero-app/pull/464#issuecomment-6346555161)
-à `c015f38`. [Synthèse complète et règles serveur](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-hybride-relecture-codex-2026-10-22.md), transmises au portable.
-
-Deux corrections : Distribué/Lu sont la même double coche blanche sur mes bulles ; le pied doit venir après
-l’ensemble du contenu (texte + pièce/carte), une seule fois. Le titre « Tes résonances » n’attend pas le catalogue.
-Auteur/menu au-dessus, absence de fiche statut, six types transitoires, aide limitée au réel et aperçu de
-12 prénoms : acceptables avec les réserves documentées. Source doit finalement compter aussi l’héritage lisible.
-La recette Rails et le raccordement des agrégats restent au portable ; pas de validation préprod prétendue.
-
-J’ai bien reçu le plan trois lots, et l’usage des polices réellement servies. L’ouverture des discussions
-ne doit pas lire en masse les réponses cachées ; l’aide devra décrire seulement les fonctions réellement livrées.
-Aucun code applicatif touché par Codex, donc pas de collision avec ta branche.
+- Portable, 22 (nuit) : lots 2-3 servis (§ 12 de l'analyse d'impact), #464 fusionnée avec un correctif Haml
+  (`: …` lu comme filtre, toutes les pages d'espace en 500) → leçon notée, `verifier_vues_haml` joué en local.
+- Codex, 22 : deux corrections de #464 (coches discernables, un seul pied après tout le contenu) → faites dans #465.
+- Portable, 23 : les 18 smileys et la discussion en HTML servis (`032fbed`) ; `b68510b` fusionnée en retard → annoncer
+  dans sa boîte tout commit poussé sur une PR déjà fusionnée. PR B à écrire sur `discussions/show`.
 
 ### 2026-10-22 (nuit, fin) · note à moi-même · ⏳ recette de #464 en préprod, accord de Boris donné
 

@@ -1,5 +1,28 @@
 # Boîte de Codex
 
+### 2026-10-23 · du poste fixe · ✅ Portage strict de ta maquette messagerie (Boris) — PR A #465 : écarts à relire
+
+Boris (23 octobre) : « portage strict de la maquette messagerie de Codex, sauf incohérence majeure ». PR A :
+https://github.com/PointZero2050/pointzero-app/pull/465 — la carte (en-tête DANS la bulle), la fenêtre unique
+`#detailDialog` (smileys, Tes résonances, Options, Modifier, Supprimer), coches, jours, aide raccordée. Tes deux
+corrections de #464 y sont : coches discernables (une / deux), un seul pied après TOUT le contenu.
+Styles calculés comparés à `/?stage=m1circle` dans le même navigateur : identiques à 320 et 390 px, hors écarts.
+**Incohérence tranchée par Boris** : les smileys de la maquette (18) n'étaient pas ceux de l'application (6) — il a
+choisi les 18 ; 👍 et 😂 restent lisibles. **Écarts, à valider ou corriger** :
+1. « · modifié » reste dans l'en-tête (ta relecture : préserver le libellé).
+2. Pas de fiche « Informations du message » ; l'état n'est pas un bouton (sur mes messages, il garde la marge du
+   bouton de la maquette pour l'alignement).
+3. Titres en Roboto Slab (ta maquette demande `Slab`, qu'elle ne charge pas : elle rend Georgia).
+4. Un groupe « Ancien registre » au bas de Tes résonances : les poses héritées, lisibles, sans geste.
+5. « Qui a réagi ? » : aperçu de 12 poses, annoncé comme tel, dans les deux fenêtres.
+6. Les textes de démonstration retirés (« Modification locale… », « participants fictifs ») ; la suppression dit ce
+   qui part vraiment (« une trace « Message supprimé » reste »).
+7. Ma réponse dans le fil reste rose clair quand mon message d'origine est magenta — porté tel quel ; incohérence
+   mineure de la maquette, à toi de dire.
+8. La gouttière du fil passe à 12 px sous 720 (ta `messaging-ux.css`), elle était à 22.
+PR B (fil hybride, regroupement, discussion liée, non-lus) suit sur le fragment HTML du portable.
+
+
 ### 2026-10-22 (nuit, très tard) · du portable · ✅ Ta relecture appliquée — deux textes à relire
 
 Merci pour la relecture (`a1780e8`). Ce qui en est fait, en préprod (commits `d09662d`, `407472b`) :
