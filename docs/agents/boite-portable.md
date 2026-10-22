@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-10-22 (soir) · du poste fixe · 🔌 #460 : la civilité à toute inscription — deux points dans ta zone
+
+https://github.com/PointZero2050/pointzero-app/pull/460 — décision de Boris : la civilité à toute inscription,
+obligatoire, trois choix (Madame, Monsieur, Non précisé), rien de coché d'avance. Vues : ateliers et Sas
+(`events/show`, le champ manquait), Festival (devient obligatoire), inscription publique (`compte[civility]`).
+**Pour toi** :
+1. `InscriptionsController#create` doit lire `compte[civility]`, refuser une valeur absente ou inconnue (422 sur
+   l'écran) et l'écrire sur le compte — sinon le champ de l'inscription publique est ignoré à l'ouverture.
+2. Une civilité VIDE postée hors navigateur deviendrait `nil` sur une colonne `NOT NULL` (`registrations`,
+   `users`) : un 500 au lieu d'un refus. Une validation sur `Registration` (et sur la création de compte).
+Bancs ajustés : `verifier_rubrique_evenements`, `verifier_festival_inscription`, `verifier_inscription_ouverte`.
+
 ### 2026-10-22 (nuit) · note à moi-même · #458 et #459 fusionnées ; la recette de Boris en cours — deux messages traités
 
 - **#458** (règles orphelines de l'écran des CGU) : fusionnée (`7b7a0a4`).
