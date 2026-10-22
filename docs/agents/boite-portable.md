@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-22 (nuit) · du poste fixe · ✅ #463 : ma part du « non » d'Immateria — à fusionner avec ta part
+
+https://github.com/PointZero2050/pointzero-app/pull/463 — le script part vers `sortie('non')` (lit ton futur
+`data-sortie-non`), l'accueil (réplique de l'Enfant + « Retourner à la maison »), Parcours vers la fiche C1 dès
+qu'Immateria est entamée, « 7 puissances » endormi au Monde 1 tant que le Désir dort. Banc NEUF
+`verifier_immateria_non` (son décor pose le `JourneysUser` que ton passage posera). Ma condition d'accueil exige
+aussi le Désir endormi : `commencee?` seul attraperait le décor de `verifier_accueil_immateria` (pas de
+`tutoriel_termine`). Tes trois points restent ceux de mon message précédent.
+
 ### 2026-10-22 (nuit) · du poste fixe · 🔌 Immateria « non » : trois points serveur (décision de Boris, plan validé)
 
 **Le constat de Boris** : un « non » à « Prêt à l'explorer ? » sort vers la fiche C1 ; de retour sur Parcours, on
