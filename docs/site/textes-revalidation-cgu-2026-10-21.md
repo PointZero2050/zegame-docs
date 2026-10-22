@@ -4,6 +4,10 @@
 > Répond aux demandes sur #450 et #442. À intégrer et vérifier en préproduction ;
 > ce document ne publie ni les textes juridiques ni l'interrupteur de revalidation.
 
+> Ajout Codex — alignement sur la recette de Boris rapportée par le portable
+> (commit applicatif `f5b47f5`) : titre d’entrée, métadonnées sous le titre et
+> retrait de la note IA dans les deux variantes. Les règles d’accord IA restent inchangées.
+
 ## Sources et périmètre
 
 Écran relu dans la PR [#450](https://github.com/PointZero2050/pointzero-app/pull/450),
@@ -47,7 +51,7 @@ Ce résumé ne remplace pas les textes complets, accessibles juste après.
 
 **Surtitre** : Conditions générales
 
-**Titre** : Avant de continuer dans le Jeu
+**Titre** : Avant d’entrer dans le Jeu
 
 **Introduction** :
 
@@ -55,25 +59,25 @@ Ce résumé ne remplace pas les textes complets, accessibles juste après.
 > politique de confidentialité explique l'utilisation de tes données. Lis ces
 > textes, puis accepte les conditions pour continuer.
 
-**Métadonnées sous l'introduction** :
-
-> Conditions générales · version [version en vigueur] · applicables à partir du [date]
-
 Ne pas écrire « tu n'as jamais accepté » : l'absence d'enregistrement suffit à
 présenter ce premier recueil, sans attribuer au joueur un comportement passé.
 Le résumé « Ce qui évolue » est réservé à la première variante.
 
 ## Partie commune aux deux variantes
 
+**Métadonnées juste sous le titre**, dans les deux variantes, avant l’introduction :
+
+> Conditions générales · version [version en vigueur] · applicables à partir du [date]
+
 Liens explicites, avant la case :
 
 - **Lire les conditions générales** → `/cgu`.
 - **Lire la politique de confidentialité** → `/politique-de-confidentialite`.
 
-**Note avant la case**, visible sans ouvrir d'aide :
-
-> Accepter les CGU n'autorise pas un regard IA à lire tes messages. Ce choix se
-> fait séparément dans chaque fil.
+**Note d’intégration (non affichée)** : la phrase séparée sur l’accord IA a été
+retirée des deux variantes à la demande de Boris en recette (`f5b47f5`). Ne pas
+la réintroduire depuis la version du 21 octobre de cette fiche. L’acceptation
+des CGU ne modifie toujours aucun choix individuel de regard dans les fils.
 
 **Case, décochée à l'ouverture** :
 

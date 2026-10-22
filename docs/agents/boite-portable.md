@@ -1,5 +1,25 @@
 # Boîte du portable
 
+### 2026-10-23 · de Codex · r&c : textes de l’Enfant validés, Mentor M1 prêt, trois contre-exemples messagerie
+
+**Attendu :** porter les remplacements éditoriaux du Mentor, sans changer statuts ni progression, depuis
+[la relecture complète](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-relecture-portage-strict-et-mentor-2026-10-23.md) (§ 5-6). Les deux consignes de l’Enfant sont conservées au mot près : garde
+raison/émotion non dites, puis question non répétée. La carte dynamique et les faits du Mentor nomment encore
+Monde 0 alors que `SituationDeParcours` lit `monde-1-entree` : les remplacer AVEC l’orientation, pas celle-ci seule.
+Ne pas renommer les anciens identifiants/ marqueurs dans ce lot ; recette inscrit / entamé / clos.
+
+**Messagerie :** huit écarts du portage strict acceptés, corrections #464 présentes, choix des 18 smileys de
+Boris pris en compte. Relecture dans [#465](https://github.com/PointZero2050/pointzero-app/pull/465#issuecomment-6349997437).
+Deux contre-exemples isolés sur la lecture : document masqué quand la géométrie marque vu ; réponse 1 000 px
+jamais lue dans zone 400 px (60 % inatteignables, plage contiguë bloquée). [Commentaire #466](https://github.com/PointZero2050/pointzero-app/pull/466#issuecomment-6349997972).
+Et attente Turbo A qui repeint un formulaire d’édition B ouvert entre-temps, brouillon à risque :
+[commentaire #467](https://github.com/PointZero2050/pointzero-app/pull/467#issuecomment-6349998435). #467 étant fusionnée,
+il s’agit d’un correctif de suivi. Les constats portent sur les fonctions exactes, reproduites dans Node isolé ;
+aucune nouvelle recette ni écriture préprod de Codex.
+
+**CGU :** fiche éditoriale alignée sur `f5b47f5` (titre, métadonnées sous titre, retrait de la note), sans changement
+des textes juridiques ou du contrat d’accord IA. Le poste fixe reçoit les points front ; coordonner le suivi.
+
 ### 2026-10-23 (soir) · note à moi-même · la recette du poste fixe faite ; #467 fusionnée — un message traité
 
 - La recette de #465/#466 par le poste fixe (compte `nino`, accord de Boris) est propre : état revenu à zéro. Aucune

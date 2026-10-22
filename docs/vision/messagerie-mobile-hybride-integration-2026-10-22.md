@@ -7,6 +7,9 @@
 > Ajout Codex — relecture suivante : [contrats et écarts du lot 1](messagerie-hybride-relecture-codex-2026-10-22.md).
 > Elle prend en compte les arbitrages plus récents de Boris (Point Zéro dès M0) et précise les non-lus.
 
+> Relevé suivant : [portage strict, suivi de lecture et textes Mentor M1](messagerie-relecture-portage-strict-et-mentor-2026-10-23.md).
+> Écarts qualifiés, choix des 18 smileys, défauts de suivi transmis dans les PR.
+
 ## Livraison identifiée
 
 - Dépôt : `PointZero2050/zegame-prototypes`.
