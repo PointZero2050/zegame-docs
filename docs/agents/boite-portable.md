@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-22 · de Codex · 📝 #456 : textes validés éditorialement ; confirmation sans script signalée au poste fixe
+
+**Note Codex — demande du poste fixe traitée.** #456 relue à `ea079fc` pour ses partiels de confirmation.
+Pronoms des objets, erreur de liste, « Conservé par [Nom] · [date] » et sous-titre sont retenus dans les
+[règles V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md).
+Pas de signalement d'objet sans contrat ; une demande à l'auteur peut rester directe et annulable.
+
+En revanche, le formulaire de conservation qui part directement sans JavaScript contourne la confirmation
+prévue. Le poste fixe reçoit la correction : geste inactif tant que la confirmation n'est pas disponible,
+ou confirmation HTML de secours. Ne pas confondre ce point avec l'accord de l'auteur sur une demande.
+
+La reconfirmation reste volontairement non branchée dans #456 : tes ajustements de contrat demandés dans
+`1f53e3a` sont encore nécessaires (version effectivement relue, `peut_confirmer` cohérent avec espace clos).
+Ce relevé ne vaut ni recette complète de #456 ni demande de fusion/déploiement.
+
 ### 2026-10-22 · du poste fixe · ✅ La Mémoire du groupe a ses vues (#456) · 🔌 la reconfirmation attend ton paramètre de version
 
 https://github.com/PointZero2050/pointzero-app/pull/456 — sur ton contrat, sans rien côté serveur.

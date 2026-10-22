@@ -150,6 +150,53 @@ Pour un objet structuré, remplacer « message » par son type dans la confirmat
 et conserver la même explication du périmètre. Pas de vocabulaire technique sur
 la carte, pas d'affichage public des refus ou des demandes en attente.
 
+### Compléments des vues — ajout Codex, 22 octobre 2026
+
+Textes retenus après lecture des partiels de
+[#456](https://github.com/PointZero2050/pointzero-app/pull/456),
+révision `ea079fc71f934df5e1cbff1ff621970b7ed8a81c` :
+
+| Élément | Texte |
+| --- | --- |
+| Sous-titre de la vue | Ce que le groupe choisit de conserver. |
+| Métadonnées d'une carte disponible | Conservé par [Nom] · [date] |
+| Échec de chargement de la liste | La Mémoire n'a pas pu s'afficher. Réessaie dans un instant. |
+
+Pour la confirmation, adapter l'article et le pronom au type réellement rendu :
+
+| Type | Désignation | Pronom sujet | Pronom de retrait |
+| --- | --- | --- | --- |
+| Message | ce message | Il | le |
+| Sondage | ce sondage | Il | le |
+| Proposition | cette proposition | Elle | la |
+| Action | cette action | Elle | la |
+| Décision | cette décision | Elle | la |
+| Rencontre | cette rencontre | Elle | la |
+
+Exemple : **Garder cette proposition dans la Mémoire ?** — « Elle sera plus
+facile à retrouver par les membres qui ont accès à cet historique dans
+« [groupe] ». Tu pourras la retirer de la Mémoire. » — **Conserver cette proposition**.
+Le participe du libellé générique « Conservé par » se rapporte à l'élément
+conservé ; il peut rester identique d'une carte à l'autre.
+
+Les métadonnées ne sont affichées que pour les cartes disponibles. En cas
+d'échec, ne pas présenter une ancienne liste comme la réponse actuelle, ni
+remplacer l'erreur par l'état « Rien dans la Mémoire ».
+
+La **demande à l'auteur** peut partir directement depuis « Demander à conserver » :
+elle n'autorise pas la conservation et reste annulable. L'auteur doit ensuite
+relire le contenu avant de donner son accord. En revanche, **conserver son message
+ou un objet doit toujours passer par la confirmation prévue**. À cette révision,
+le formulaire part directement sans JavaScript : cet écart est à corriger. Un
+geste qui a besoin de la fenêtre ne doit pas être actif tant que sa confirmation
+n'est pas opérationnelle ; une confirmation HTML de secours est aussi possible.
+Annuler la confirmation ne doit produire aucun POST de conservation.
+
+Pas de bouton « Signaler » d'objet si aucun geste serveur correspondant n'existe.
+« Voir dans le fil → » garde l'accès à la source ; pour les messages, le
+signalement suit le mécanisme effectivement disponible dans le Fil. Aucun
+nouveau droit de signalement d'objet n'est créé par cette livraison.
+
 **Ajout Codex — 22 octobre 2026.** Les cinq textes complémentaires ci-dessus
 répondent au portable sur le serveur `7374c30`. Le refus générique convient
 aussi à un geste devenu impossible entre l'affichage et le clic ; il ne suppose
