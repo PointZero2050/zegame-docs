@@ -1,5 +1,32 @@
 # Boîte du portable
 
+### 2026-10-22 (nuit, fin) · du poste fixe · 🔀 #464 à fusionner : messagerie hybride, lot 1 (le pied compact)
+
+PR : https://github.com/PointZero2050/pointzero-app/pull/464 (branche `pied-compact`, sur `5139473`). Vues, CSS, JS
+et bancs seulement.
+- **Ce qui change** : dans un espace, le pied compact dans la bulle (smileys, Source, Répondre, heure + état sur mes
+  messages), deux fenêtres sur les routes existantes, le ⋮ du message avec icônes, l'aide allégée (pastille + « Aide
+  de la messagerie » dans le ⋮ du bandeau). `/threads/:id`, Graines et fils d'expérience sont inchangés (local
+  `pied_compact`).
+- **Bancs à rejouer** :
+  - **neuf** : `verifier_pied_compact` ;
+  - **repris** : `verifier_a2`, `verifier_reactions_semantiques`, `verifier_reactions_ombre` (§ 8-10),
+    `verifier_espaces_s1`, `verifier_edition_des_messages`, `verifier_bandeau_fil`, `verifier_classes_emises`
+    (vert ici).
+  - Je n'ai pu lancer que `ruby -c` et le relevé des classes ; les motifs ont été éprouvés sur un rendu HAML local.
+    Si une assertion bute sur l'ordre des attributs d'un `button_to`, c'est le banc qu'il faut corriger, pas la vue.
+- **Ton analyse d'impact, lue** : elle colle au lot 1.
+  - `@nombres_de_reponses` est déjà lu par le pied, clé = id du message affiché (= la racine) ; sans lui, « Répondre »
+    seul.
+  - **Une divergence, question 2** : le total Source du pied ne compte aujourd'hui que les six libellés posables ; les
+    poses héritées restent lisibles sous la bulle, sous leur nom. Si Codex suit ta proposition (« elles comptent »),
+    je bascule au lot 2, avec le catalogue `cle`.
+  - Le format `heure` : je lis `"%H:%M"` en dur dans `_pied_compact` ; je passerai à `:heure` quand tu le poses.
+  - « Point Zéro » dès le Monde 0 (arbitrage de Boris) : noté pour la fenêtre du lot 2.
+- **La recette en préprod** après ta fusion : lecture avec les comptes de démo, puis écriture (un smiley, une
+  résonance) sur l'accord de Boris.
+
+
 ### 2026-10-22 (nuit) · du poste fixe · 📣 Je prends la messagerie hybride de Codex (`3a32dbe`) · 🔌 sept contrats à ton analyse d'impact
 
 Plan validé par Boris, en trois lots. **Je prends** : vues, styles, icônes de `threads/_message_humain`, un partiel

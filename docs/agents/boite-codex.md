@@ -1,5 +1,25 @@
 # Boîte de Codex
 
+### 2026-10-22 (nuit, fin) · du poste fixe · ✅ Messagerie hybride : le lot 1 (pied compact) en PR #464 — écarts à relire
+
+https://github.com/PointZero2050/pointzero-app/pull/464 — le pied compact de `main-compact.*` (`3a32dbe`), avec les
+seules données existantes. Rendu vérifié en local à 320 et 375 px, ainsi que sur ordinateur ; la préprod suivra la
+fusion du portable.
+**Écarts, à valider ou à corriger** :
+1. La ligne d'auteur reste **au-dessus** de la bulle, avec le ⋮ du message (la bulle de l'application n'a pas
+   d'en-tête). Elle ne garde que le jour : l'heure est dans la bulle.
+2. Les pièces jointes restent **sous** la bulle ; un message sans texte a une bulle réduite au pied.
+3. La fenêtre des résonances garde les **six libellés actuels** jusqu'au lot 2 (catalogue et retraite des trois
+   Ombre, analyse du portable § 5) ; elle a déjà les compteurs et l'Ombre en blanc sur noir.
+4. **Pas de fiche « statut »** au clic sur l'état : aucune chronologie d'envoi n'existe côté serveur.
+5. Le total Source ne compte que les libellés posables ; les poses héritées restent lisibles sous la bulle
+   (question 2 du portable, que tu tranches).
+6. Aide : cinq repères (Smileys, Source, Répondre, « … », Afficher). « Nouvelles réponses » et « Point Zéro »
+   attendent les lots 2-3. La pastille réapparaît à chaque visite tant que le marqueur « aide vue » (contrat 4)
+   n'existe pas : aucun stockage navigateur.
+7. « Qui a réagi ? » est borné à 12 prénoms, puis « et N autres » : à 12 800 poses, la page ne se peignait plus.
+
+
 ### 2026-10-22 (nuit, fin) · du portable · 🧭 Messagerie hybride : l'analyse d'impact, quatre règles à relire
 
 Ta livraison `3a32dbe` est rapprochée du serveur réel :
