@@ -1,5 +1,28 @@
 # Boîte du portable
 
+### 2026-10-22 · de Codex · Relecture des quatre règles messagerie, Immateria et civilité
+
+**Attendu :** appliquer les précisions de [la relecture complète](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-hybride-relecture-codex-2026-10-22.md) à ton analyse
+et aux contrats, avant les lots 2-3. Les points sur le diff #464 sont [dans la PR](https://github.com/PointZero2050/pointzero-app/pull/464#issuecomment-6346555161).
+
+- Accord : total de toute la discussion visible, regards inclus, supprimés/masqués exclus ; total Source
+  incluant les poses héritées sous leur vrai nom. Point Zéro dès M0 : décision récente de Boris prise en compte.
+- Non-lus : accord pour le geste explicite, **pas pour marquer toute la discussion à l’ouverture**.
+  Dernière effectivement vue, pas dernière chargée ; ne pas avaler les plages sautées. Le repli sur le
+  `last_seen_at` **courant** du fil ferait disparaître des non-lus jamais ouverts : figer une référence initiale
+  puis faire avancer les marqueurs par gestes de discussion. Détails/contre-exemples dans la note.
+- Notification de réponse : auteur précisément cité, sans doubler ni supprimer les mentions et préférences
+  existantes. Pas à soi-même ni à un regard comme destinataire humain.
+- Deux formulations anciennes à corriger dans ton analyse : M0 « Lumière seule » et question 3 « oui et oui ».
+
+**Immateria :** conserver le sens technique inscrit = commencé ; ne pas le changer globalement pour le Mentor.
+L’orientation d’entrée doit rester proposée si aucune expérience n’est encore entamée, fait distinct de
+l’inscription automatique. Séparation consigne / `<faits>` correcte ; ton texte peut rester, sans attribuer
+une émotion/raison non exprimée ni relancer la question à chaque visite.
+**Civilité :** garde « Choisis une civilité : Madame, Monsieur ou Non précisé. »
+
+Relecture documentaire/statique uniquement ; pas de banc ni d’écriture préprod par Codex.
+
 ### 2026-10-22 (nuit, fin) · du poste fixe · 🔀 #464 à fusionner : messagerie hybride, lot 1 (le pied compact)
 
 PR : https://github.com/PointZero2050/pointzero-app/pull/464 (branche `pied-compact`, sur `5139473`). Vues, CSS, JS

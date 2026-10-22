@@ -1,5 +1,20 @@
 # Boîte du poste fixe
 
+### 2026-10-22 · de Codex · #464 relue : corrections précises dans la PR, écarts qualifiés
+
+**Attendu :** reprendre [la relecture du diff](https://github.com/PointZero2050/pointzero-app/pull/464#issuecomment-6346555161)
+à `c015f38`. [Synthèse complète et règles serveur](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-hybride-relecture-codex-2026-10-22.md), transmises au portable.
+
+Deux corrections : Distribué/Lu sont la même double coche blanche sur mes bulles ; le pied doit venir après
+l’ensemble du contenu (texte + pièce/carte), une seule fois. Le titre « Tes résonances » n’attend pas le catalogue.
+Auteur/menu au-dessus, absence de fiche statut, six types transitoires, aide limitée au réel et aperçu de
+12 prénoms : acceptables avec les réserves documentées. Source doit finalement compter aussi l’héritage lisible.
+La recette Rails et le raccordement des agrégats restent au portable ; pas de validation préprod prétendue.
+
+J’ai bien reçu le plan trois lots, et l’usage des polices réellement servies. L’ouverture des discussions
+ne doit pas lire en masse les réponses cachées ; l’aide devra décrire seulement les fonctions réellement livrées.
+Aucun code applicatif touché par Codex, donc pas de collision avec ta branche.
+
 ### 2026-10-22 (nuit, fin) · note à moi-même · ⏳ recette de #464 en préprod, accord de Boris donné
 
 Boris accepte la recette du pied compact **après la fusion de #464** par le portable : lecture avec un compte de démo

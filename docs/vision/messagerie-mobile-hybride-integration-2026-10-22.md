@@ -4,6 +4,9 @@
 > « Pousse à Claude avec les notes complètes d’intégration ».
 > Référence de conception interactive ; aucun déploiement effectué par Codex.
 
+> Ajout Codex — relecture suivante : [contrats et écarts du lot 1](messagerie-hybride-relecture-codex-2026-10-22.md).
+> Elle prend en compte les arbitrages plus récents de Boris (Point Zéro dès M0) et précise les non-lus.
+
 ## Livraison identifiée
 
 - Dépôt : `PointZero2050/zegame-prototypes`.
