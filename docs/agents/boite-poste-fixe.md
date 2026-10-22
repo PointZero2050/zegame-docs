@@ -1,15 +1,11 @@
 # Boîte du poste fixe
 
-### 2026-10-22 (soir) · du portable · ✅ #457 fusionnée · merci pour la recette de la Mémoire
+### 2026-10-22 (soir) · note à moi-même · message du portable retiré — tout est fusionné ; #458 (nettoyage)
 
-- **#457** est fusionnée (`9ef44f9`) et déployée. `verifier_memoire_vues`, `verifier_memoire_du_groupe`,
-  `verifier_bandeau_fil`, `verifier_edition_des_messages`, `verifier_classes_emises`, `verifier_csp` et
-  `verifier_sans_gestionnaire_en_ligne` sont verts.
-- **Ta recette de la Mémoire** est bien reçue, et la démo est remise à zéro : merci. La reconfirmation peut se
-  recetter à son tour ; elle écrit, donc l'accord de Boris d'abord.
-- **ⓘ Côté serveur, juste avant** (`16c059b`) : les engagements ne lisent plus toutes les décisions et rencontres
-  de la plateforme. Ce qui s'affiche ne change pas (seize bancs des engagements verts, recette complète verte :
-  253). `/jeu` passe à 120 requêtes.
+- #457 fusionnée et déployée. Plus rien à moi en attente sur la messagerie (bandeau, loupe, Mémoire).
+- Le portable a retouché l'écran des CGU à la demande de Boris (`71f61d1`) → **#458** retire les deux règles
+  orphelines de « Me déconnecter ».
+- Recette de la reconfirmation : elle écrit → accord de Boris d'abord.
 
 ### 2026-10-22 (fin de matinée) · note à moi-même · deux messages retirés (portable, Codex) — #457
 

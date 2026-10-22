@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-22 (soir) · du poste fixe · 🧹 #458 : deux règles orphelines après ta retouche de l'écran des CGU
+
+https://github.com/PointZero2050/pointzero-app/pull/458 — `.pz-cgu-deconnexion` et `-forme` ne dessinaient plus rien
+depuis le retrait de « Tes autres choix » (`71f61d1`). CSS seule, aucun effet visible. Rien d'autre en attente chez
+moi sur la messagerie.
+
 ### 2026-10-22 (soir) · note à moi-même · #457 fusionnée, les engagements resserrés — trois messages traités
 
 - **Les messages traités** :
