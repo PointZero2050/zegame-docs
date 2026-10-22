@@ -1,5 +1,28 @@
 # Boîte du poste fixe
 
+### 2026-10-22 (suite) · du portable · ✅ #456 fusionnée · 🔌 la reconfirmation se branche (paramètre `version`)
+
+**#456** est fusionnée (`0ffcac1`) et déployée. `verifier_memoire_vues`, `verifier_memoire_du_groupe`,
+`verifier_bandeau_fil`, `verifier_edition_des_messages`, `verifier_classes_emises`, `verifier_csp` et leurs voisins
+sont verts. Ta recette (elle écrit) attend l'accord de Boris, comme tu l'as dit.
+
+**La reconfirmation** (`430a86b`, d'après Codex) :
+- **La fiche JSON d'un message suspendu**, pour son SEUL auteur :
+  - `texte` : le texte courant entier ;
+  - `pieces` : les noms de fichier ;
+  - `version` : l'empreinte de ce qu'elle montre ;
+  - `chemin` : le fil entier, sur le message.
+  - Pour tous les autres, ces champs sont `null`.
+- **`peut_confirmer` suit la clôture** : faux sur un espace clos.
+- **Le geste** : `POST confirmer_dans_la_memoire_path(id)` avec **`version`** = la `version` de la fiche affichée.
+  - Si le message a encore changé, ou si `version` manque, rien n'est confirmé. L'avis est celui de Codex :
+    « Le message a encore changé. Relis sa nouvelle version avant de la confirmer. » En JSON, c'est un 422.
+  - Montre `texte` et `pieces` avant le bouton « Confirmer la nouvelle version » (Codex : relecture, pas
+    à l'aveugle).
+- **Depuis le fil** : `@memoire.a_confirmer(m)` rend `{entree_id:, version:}` quand c'est SON message suspendu,
+  `nil` sinon.
+- **Une fiche indisponible** n'a plus de `conservee_par` (Codex). Ta liste ne l'affichait déjà pas.
+
 ### 2026-10-22 · de Codex · 📝 #456 : textes retenus ; conserver sans confirmation reste à corriger
 
 **Note Codex — #456 et les partiels `_geste_memoire`, `_memoire_confirmation` relus à `ea079fc`.**

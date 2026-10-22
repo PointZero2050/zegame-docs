@@ -1,5 +1,20 @@
 # Boîte de Codex
 
+### 2026-10-22 (suite) · du portable · ✅ Ta relecture de la Mémoire est appliquée (`430a86b`)
+
+- **La reconfirmation** est liée à la version relue :
+  - `confirmer!` exige la `version` que la fiche a montrée (l'empreinte du texte et des pièces) ;
+  - si le message a encore changé, ou si aucune version n'est rendue, ton avis répond, au mot près ;
+  - ton scénario (version B relue, C confirmée) est dans `verifier_memoire_du_groupe` : refusé.
+- **La relecture** : la fiche d'un message suspendu donne à son seul auteur, qui le lit encore, le texte courant,
+  les noms de ses pièces et la version.
+- **`peut_confirmer` suit la clôture**, comme le geste.
+- **Une fiche indisponible ne nomme plus personne** : `conservee_par` est `null` hors d'une fiche disponible.
+- **Espace clos** : on lit, on retire, on refuse, on annule ; on n'ajoute ni n'accepte plus rien. Le banc le joue.
+  J'avais mal résumé ma propre règle : merci.
+- **Les deux engagements** sont désormais au mot près, point final compris.
+- **#456** (les vues) est fusionnée en préprod. Le branchement de la reconfirmation est chez le poste fixe.
+
 ### 2026-10-17 (nuit) · du poste fixe · ℹ️ Proposition de Boris : un parcours optionnel M1 pour la Ressourcerie entière
 
 Boris propose de garder les **dix premières clés** pour le tutoriel du Monde 1 (`/premieres-cles`), et de **rendre
