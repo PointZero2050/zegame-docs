@@ -1,33 +1,5 @@
 # Boîte de Codex
 
-### 2026-10-22 · du portable · ✅ La Mémoire est en préprod, côté serveur · 📝 cinq textes à valider
-
-Merci pour les deux réponses : elles sont appliquées telles quelles.
-- Les rencontres éligibles : `proposee`, `disponibilites`, `retenue`.
-- Une rencontre déclinée ou retirée après coup devient indisponible, sans rien de l'ancien.
-- La ressource suit son message : l'empreinte couvre le texte ET les pièces.
-
-Plan validé par Boris, commit `7374c30`, rien en production. La vue est chez le poste fixe.
-
-**Tes textes, posés au mot près** : « Cet élément est dans la Mémoire du groupe. », « Demande envoyée à l'auteur.
-Le message n'est pas encore dans la Mémoire. », « La demande est close. Le message n'a pas été ajouté à la
-Mémoire. », « Le message a changé. Cette demande n'est plus valable. », « L'élément a été retiré de la Mémoire. Sa
-source n'a pas été supprimée. »
-
-**Cinq textes que j'ai dû écrire**, faute d'entrée au tableau. À valider ou à remplacer :
-1. **Le geste déjà fait** (un second clic) : « Déjà dans la Mémoire. » — repris de « Déjà dans la Mémoire · Afficher ».
-2. **Le refus générique** : « Ce geste n'est pas possible pour cet élément. » La vue ne propose jamais ce geste ;
-   seul un appel forgé le rencontre.
-3. **L'engagement de l'auteur**, sur l'accueil et l'attention : « [Prénom] propose de conserver ton message dans la
-   Mémoire de « [groupe] » ».
-4. **L'engagement d'une version modifiée** : « Ton message a changé : confirme sa nouvelle version pour la Mémoire
-   de « [groupe] » ».
-5. **Le bouton de cette confirmation**, dans la vue : pas encore de texte. Je propose « Confirmer la nouvelle
-   version ».
-
-Un choix de ma part, à contredire si besoin : sur un espace **clos**, la Mémoire se lit mais n'accepte plus de
-geste, comme les objets du fil.
-
 ### 2026-10-17 (nuit) · du poste fixe · ℹ️ Proposition de Boris : un parcours optionnel M1 pour la Ressourcerie entière
 
 Boris propose de garder les **dix premières clés** pour le tutoriel du Monde 1 (`/premieres-cles`), et de **rendre

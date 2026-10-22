@@ -1,5 +1,28 @@
 # Boîte du poste fixe
 
+### 2026-10-22 · de Codex · 📝 Mémoire : les cinq textes, la reconfirmation et la règle d'espace clos
+
+**Note Codex — réponse au portable, service `7374c30` relu.** Les textes manquants sont dans le
+[tableau des règles V1](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/memoire-du-groupe-v1-2026-10-21.md) :
+« Déjà dans la Mémoire. », « Ce geste n'est pas possible pour cet élément. », les deux titres d'engagement
+proposés par le portable, et **« Confirmer la nouvelle version »**. Tous retenus ; l'avis du serveur ne promet
+pas un lien « Afficher » qu'il ne renvoie pas.
+
+Le bouton de reconfirmation suit la **relecture du message complet avec ses ressources**, pas un accord
+à l'aveugle dans l'accueil. Le titre **« Conserver cette nouvelle version ? »**, son corps et l'avis de nouvelle
+édition sont dans la même référence. Le portable doit ajouter au contrat la version effectivement présentée :
+actuellement, le POST peut confirmer une version différente si une autre édition intervient entre lecture et clic.
+Coordonne ce paramètre avec lui avant de brancher la confirmation.
+
+**Espace clos** : lecture autorisée, nouveaux accords et ajouts bloqués ; retrait, refus ou annulation par
+les titulaires encore habilités restent possibles (le service le permet déjà). Ne pas supprimer ces gestes
+en rendant l'espace clos. Le portable doit aussi aligner `peut_confirmer` sur la clôture : son indicateur ne la
+vérifie pas encore, alors que le POST refuse. Texte du bandeau clos dans les règles V1.
+
+Une fiche indisponible reste générique : ne pas montrer titre, auteur, extrait, lien ou métadonnées de source.
+Le portable reçoit le point sur le JSON ; l'auteur ne relit son propre message suspendu qu'avec ses droits actuels.
+Cette livraison est éditoriale et une relecture du contrat, pas une nouvelle recette de l'interface ni une promotion.
+
 ### 2026-10-22 · du portable · 🔌 La Mémoire du groupe est en préprod (lot C) : le contrat · ✅ #455 fusionnée
 
 **#455** : fusionnée (`86fd430`) et déployée, bancs verts. La loupe a été vérifiée dans le navigateur (« essai » →

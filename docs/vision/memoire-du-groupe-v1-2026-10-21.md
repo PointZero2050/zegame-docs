@@ -132,6 +132,11 @@ donne le retrait aux personnes habilitées et le signalement aux autres.
 | Demande close sans entrée | La demande est close. Le message n'a pas été ajouté à la Mémoire. |
 | Succès de conservation | Cet élément est dans la Mémoire du groupe. |
 | Déjà conservé | Déjà dans la Mémoire · Afficher |
+| Second clic, avis du serveur sans lien | Déjà dans la Mémoire. |
+| Geste refusé, sans exposer la cause ni le contenu | Ce geste n'est pas possible pour cet élément. |
+| Engagement privé de l'auteur | [Prénom] propose de conserver ton message dans la Mémoire de « [groupe] ». |
+| Engagement privé après modification | Ton message a changé : confirme sa nouvelle version pour la Mémoire de « [groupe] ». |
+| Bouton après relecture de la version modifiée | Confirmer la nouvelle version |
 | Liste vide : titre | Rien dans la Mémoire pour le moment. |
 | Liste vide : corps | Depuis le menu d'un message ou d'un élément du fil, choisis ce que le groupe pourra retrouver ici. Pour le message d'un autre membre, son accord est nécessaire. |
 | Menu de retrait | Retirer de la Mémoire |
@@ -144,6 +149,36 @@ donne le retrait aux personnes habilitées et le signalement aux autres.
 Pour un objet structuré, remplacer « message » par son type dans la confirmation
 et conserver la même explication du périmètre. Pas de vocabulaire technique sur
 la carte, pas d'affichage public des refus ou des demandes en attente.
+
+**Ajout Codex — 22 octobre 2026.** Les cinq textes complémentaires ci-dessus
+répondent au portable sur le serveur `7374c30`. Le refus générique convient
+aussi à un geste devenu impossible entre l'affichage et le clic ; il ne suppose
+pas que le joueur a forgé un appel. « Déjà dans la Mémoire. » est l'avis d'un
+geste idempotent ; « Afficher » reste un vrai lien dans la vue, pas du texte
+qui promet un lien absent du retour serveur.
+
+### Reconfirmer un message modifié
+
+Le bouton **Confirmer la nouvelle version** suit une relecture du message
+complet et de ses ressources, dans le Fil ou dans la fenêtre de confirmation.
+La fenêtre peut reprendre :
+
+**Titre** : Conserver cette nouvelle version ?
+
+> Tu autorises la conservation de la version affichée de ton message dans la
+> Mémoire de « [groupe] », avec les liens ou fichiers présentés. Tu pourras la
+> retirer de la Mémoire.
+
+**CTA** : Confirmer la nouvelle version
+
+L'accord doit viser cette version relue. Si le contenu change encore avant le
+POST, ne pas confirmer silencieusement la dernière version du serveur. Avis :
+
+> Le message a encore changé. Relis sa nouvelle version avant de la confirmer.
+
+Le contrat serveur doit permettre ce contrôle de version ; la phrase seule ne
+le remplace pas. Le choix d'un jeton ou d'une empreinte et sa vérification
+reviennent au portable. Aucun texte de CGU ou d'accord aux regards ne change.
 
 ## Retrait, modification et accès
 
@@ -181,6 +216,30 @@ La Mémoire ne devient pas un nouveau contexte transmis aux regards IA. Cette
 V1 ne change aucun accord par regard/par fil, aucune limite de date, ni la
 suspension globale. Un accord de conservation n'est pas un accord de lecture IA.
 
+### Espace clos — précision du 22 octobre
+
+La Mémoire reste lisible selon les droits du Fil. La clôture bloque les
+nouveaux ajouts, les nouvelles demandes, leur acceptation et la confirmation
+d'une nouvelle version. Elle **ne bloque pas le retrait** par les personnes
+déjà habilitées, ni le refus ou l'annulation d'une demande existante par la
+personne concernée, tant qu'elle a encore les droits nécessaires dans l'espace.
+Fermer la conversation ne rend pas un accord de conservation irrévocable.
+
+Le service `7374c30` laisse déjà retirer, refuser et annuler ; conserver ces
+exceptions dans les vues. Son indicateur `peut_confirmer` doit aussi respecter
+la clôture, comme le POST `confirmer!`, pour éviter un bouton qui ne peut aboutir.
+
+**Information dans une Mémoire close** :
+
+> Cet espace est clos. Tu peux consulter sa Mémoire et retirer les éléments
+> pour lesquels tu en as le droit.
+
+Pour une fiche indisponible, la vue n'affiche pas les métadonnées de la source :
+seulement le texte générique et le retrait si le lecteur y est habilité. Le
+retour JSON doit préserver la même limite, même si la vue cache un champ.
+La source suspendue reste relisible par son auteur seulement si son droit de
+lecture actuel le permet ; une clôture ne réactive ni source ni accord.
+
 ## Analyse d'impact et recette avant implémentation
 
 Le lot touche la messagerie et les droits : le portable doit rapprocher ces
@@ -192,6 +251,8 @@ Cas à vérifier :
 - membre / non-membre / ancien membre ; droits réels de gestion et d'historique ;
 - message propre, message d'autrui : attente, accord, refus, retrait, annulation ;
 - unicité en cas de clics concurrents ; modification avant ou après accord ;
+- reconfirmation d'une version relue, puis nouvelle édition avant le POST ;
+- espace clos : retrait/refus/annulation possibles, aucun nouvel accord ni CTA de confirmation ;
 - source masquée, supprimée, inaccessible ou rétablie, fichiers compris ;
 - visibilité correcte des sondages clos et de leurs résultats, sans vote privé ;
 - statut courant des objets et retour à la bonne source depuis la Mémoire ;
