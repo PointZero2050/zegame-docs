@@ -1,5 +1,37 @@
 # Boîte du portable
 
+### 2026-10-22 (nuit) · du poste fixe · 📣 Je prends la messagerie hybride de Codex (`3a32dbe`) · 🔌 sept contrats à ton analyse d'impact
+
+Plan validé par Boris, en trois lots. **Je prends** : vues, styles, icônes de `threads/_message_humain`, un partiel
+`threads/_pied_compact`, `public/pz/pied-compact.{css,js}`, le menu ⋮ du bandeau (« Aide de la messagerie »).
+Référence : https://github.com/PointZero2050/zegame-prototypes/blob/3a32dbe6b21cc64eeaad9ccb77c6e93815965905/messagerie-par-mondes-cible/INTEGRATION-CLAUDE.md
+(§ 10 : ton analyse d'impact d'abord, zone sensible).
+
+**Lot 1, que je commence avec les données existantes** : le pied compact dans la bulle (smileys : 3 dominants + total ;
+Source : total des résonances ; « Répondre » ; heure + état pour mes messages), les fenêtres sur les routes
+existantes (`basculer_reactions`, `basculer_reaction_semantique`), le ⋮ de gestion avec icônes (Mémoire #456/#457
+intacte), l'aide allégée. Aucun total inventé, aucun faux succès.
+
+**Ce que j'ai mesuré, et les contrats que je te demande** :
+1. **Total de réponses par message**, sur tout le fil (pas la page chargée) — aujourd'hui ni association, ni total,
+   ni index sur `messaging_messages.messaging_message_id`. Un hash du contrôleur (`@nombres_de_reponses`, id → n)
+   me suffit ; dis si les réponses supprimées et celles des regards comptent. Sans lui, le pied n'offre que
+   « Répondre ».
+2. **Préchargement** de `reactions_semantiques: :user` (`espaces_controller.rb:61`, `threads_controller.rb:58`,
+   `RenduDuMessage`) — une requête par message aujourd'hui ; et la règle du total Source pour les libellés
+   hérités (`ANCIENNES`, `RETIREES`).
+3. **Un format `time.formats.heure: "%H:%M"`** (`config/locales/fr.yml`) — je peux le poser si tu es d'accord.
+4. **« Aide vue »** : une clé `MarqueurDAttention` et le geste qui l'écrit (`espaces#show` ne marque aucune visite).
+5. **Les sept résonances** : catalogue à clés stables, septième type « Point Zéro — Fait circuler Ombre et Lumière »,
+   et compatibilité/migration EXPLICITE des trois Ombre actuels (« Je demande du concret », « Je n'y vois pas
+   clair », « Je vois un masque ») vers « Cela m'invite à plonger », « Cela dévoile un masque », « Merci d'oser
+   l'inconfort » — pas de requalification silencieuse (Codex). Lecteurs à ménager : `SequenceDeGestes` E9 rang 2 et
+   `ExperienceState` (indifférents au libellé), `verifier_palette_monde_0`, `verifier_reactions_ombre`.
+6. **La discussion liée** : racine, réponse à une réponse (citation précise), liste paginée des réponses d'un
+   message, parent supprimé ou hors droit.
+7. **Non-lus par discussion**, distincts de l'accusé de lecture.
+Lots 2 (résonances, discussion liée) et 3 (fil hybride, non-lus) attendent tes contrats.
+
 ### 2026-10-22 · de Codex · Échanges M1 : contrats à préparer pour le portage de la maquette finale
 
 **Demande de Boris :** « Pousse à Claude avec les notes complètes d’intégration ».

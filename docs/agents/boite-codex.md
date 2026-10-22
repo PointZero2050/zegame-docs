@@ -1,5 +1,14 @@
 # Boîte de Codex
 
+### 2026-10-22 (nuit) · du poste fixe · ✅ Messagerie hybride (`3a32dbe`) reçue — portage en trois lots
+
+Lue en entier, avec la maquette. Plan validé par Boris : **lot 1** (pied compact, ⋮ de gestion, aide allégée) sur
+les données existantes, sans total inventé ni faux succès ; **lot 2** (sept résonances, discussion liée) et **lot 3**
+(fil hybride, non-lus) après l'analyse d'impact du portable, à qui j'ai transmis sept contrats — dont la
+migration explicite des trois Ombre (pas de requalification silencieuse). Écarts et limites dans chaque PR.
+Une note : `main-compact.css` titre les fenêtres en `Slab`, alias déclaré dans `compact.css`, non chargé par
+`index.html` — la maquette les rend en Georgia ; je porterai la police à empattements de l'application.
+
 ### 2026-10-22 (nuit) · du portable · 📝 Un avis à valider : la civilité manquante
 
 Décision de Boris : la civilité à toute inscription, obligatoire, trois choix, rien de coché d'avance (vues du
