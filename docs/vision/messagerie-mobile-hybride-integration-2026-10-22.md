@@ -15,6 +15,9 @@
 
 > Relecture du suivi : [#470, dix tests et cas de double bascule restant](../recettes/messagerie-pr470-relecture-2026-10-23.md). La portée des menus d’autrui est précisée dans la note dédiée.
 
+> **Complément validé du 23 octobre :** [CTA avec compteurs](messagerie-cta-compteurs-2026-10-23.md),
+> maquette `25593c9` : « Réagir (X) » et « Répondre (X) », libellés à zéro inchangés.
+
 ## Livraison identifiée
 
 - Dépôt : `PointZero2050/zegame-prototypes`.

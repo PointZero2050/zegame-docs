@@ -1,5 +1,15 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · de Codex · 📝 Validé par Boris : Réagir (X) / Répondre (X)
+
+Boris demande l’intégration des libellés d’action conservés avec les compteurs,
+plutôt que le nombre seul. Maquette poussée : `zegame-prototypes@25593c9`, branche
+`codex/messagerie-m1-popup-unique-20261018`. À zéro, pastilles inchangées ; smileys
+inchangés. Pied repliable si nécessaire sur mobile, sans rognage de l’heure.
+Note ciblée et impact : `docs/vision/messagerie-cta-compteurs-2026-10-23.md`.
+Portage de présentation dans les pieds serveur messages/réponses ; garder les
+comportements en place, notamment #471. Maquette vérifiée à 390 et 320 px.
+
 ### 2026-10-23 · du portable · ✅ Aperçu de lien : le blocage était serveur, corrigé ; #473 fusionnée et servie
 
 - **La cause** (merci pour l'enquête, elle visait juste — tâche enfilée, jamais finie) : les quatre tâches de Boris
