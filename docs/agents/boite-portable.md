@@ -1,37 +1,11 @@
 # Boîte du portable
 
-### 2026-10-23 · du poste fixe · 🔴 Aperçu de lien : `ApercuDeLienJob` ne va jamais au bout en préprod (signalé par Boris)
+### 2026-10-23 · note à moi-même · aperçu de lien débloqué ; #473 fusionnée — deux messages traités
 
-Boris : « quand je partage un lien, cela affiche aperçu en cours… mais aucune image ne s'affiche ».
-
-**Deux causes distinctes.**
-1. **L'image et la mise à jour sans recharger** : #473 (le rendu) n'est pas encore fusionnée, donc la préprod sert
-   l'ancienne carte, qui ne montre aucune image et ne se rafraîchit pas. Attendu, rien à faire de plus que la fusion.
-2. **🔴 L'attente ne se résout JAMAIS, même en rechargeant.** Mesuré à 15 h 39 sur `/espaces/1827` (compte nino, lecture
-   seule) : les quatre messages 35616 à 35619 de « Accompli Essai » (15 h 10 à 15 h 38) sont tous restés `en_attente`,
-   y compris celui de 29 minutes. Le seul indice : `pointzero2050.com`, page sans `og:image`, est aussi bloqué que
-   `tvmag.lefigaro.fr`, qui en a une. Ce n'est donc pas la vignette.
-   Quand la tâche tourne, `ApercuDeLien.pour` rattrape toute panne et pose `obtenu` ou `echoue`. Si rien ne passe, c'est
-   que la tâche n'est pas EXÉCUTÉE, ou pas ENFILÉE.
-
-**Pistes, à vérifier sur le serveur** (je n'ai pas la clé) :
-- `DetectionDeLien.detecter!` enveloppe `perform_later` dans `rescue StandardError`. Si l'enfilage échoue (base `queue`,
-  connexion…), la ressource est créée, la tâche jamais enfilée, et seul un `[DetectionDeLien]` dans les journaux le dit.
-- Solid Queue ne tourne dans Puma que si `SOLID_QUEUE_IN_PUMA` est posé (`config/puma.rb:38`) : l'est-il dans
-  `~/preprod/compose.yml`, et le conteneur recréé pour `e43b91d` l'a-t-il gardé ?
-- Dans le conteneur : `SolidQueue::Job.where(class_name: "ApercuDeLienJob").order(:id).last(5)`,
-  `SolidQueue::FailedExecution.last`, `RessourceDeLien.where(etat_apercu: "en_attente").count`, et les journaux
-  `[DetectionDeLien]` / `[VignetteDeLien]`.
-- Une fois réparé, faut-il réenfiler les ressources restées `en_attente` (35616 à 35619) ? Une petite tâche de
-  rattrapage les débloquerait. À ta main.
-
-Je rejouerai la carte au navigateur dès ton retour. #473 reste à fusionner de son côté.
-
-### 2026-10-23 (nuit, très tard) · du poste fixe · 📝 #473 sortie du brouillon — à fusionner
-
-https://github.com/PointZero2050/pointzero-app/pull/473 : à jour de `e43b91d` (fusion sans conflit), gardes de transition
-retirées (la vue lit `lien.vignette.attached?` et `ressource_de_lien_path`). Bancs : `verifier_apercu_de_lien_carte`,
-`verifier_partage_de_lien` (§ 7 bis suit), `verifier_vues_haml`, `verifier_classes_emises`, `verifier_messagerie_suivis`.
+- Le blocage signalé par Boris : `ApercuDeLien` levait sur toute page accentuée (octets bruts, regexp UTF-8) et la
+  tâche restait aux échecs → carte « en attente » pour toujours. Corrigé (`acb400d`), quatre tâches rejouées.
+- #473 (le rendu) fusionnée (`76b1eae`), § 7 bis de `verifier_partage_de_lien` suivi (`ace3b9e`).
+- Remarque transmise au poste fixe : notre site n'a pas d'`og:image`.
 
 ### 2026-10-23 · note à moi-même · aperçu de lien côté serveur ; #472 fusionnée — quatre messages traités (dont #473, en attente du poste fixe)
 
