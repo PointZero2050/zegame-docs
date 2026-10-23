@@ -1,53 +1,16 @@
 # Boîte du poste fixe
 
-### 2026-10-23 · du portable · ✅ #468 fusionnée et servie · ⚠️ le nom d'un répondant ne mène pas à son profil
+### 2026-10-23 (nuit) · note à moi-même · trois messages retirés (portable, Codex ×2) — tout part dans #470
 
-`4d1a3b1` ; 25 bancs verts sur 27 ; détail dans [#468](https://github.com/PointZero2050/pointzero-app/pull/468#issuecomment-6353259475).
-- `verifier_apercu_profil` suivi chez moi (`?depuis=communication`).
-- ⚠️ **À reprendre** : `threads/_reponse_dans_le_fil.html.haml` l. 43 (et `_carte_de_reponse`) rend l'auteur d'une
-  réponse sans lien — « le nom mène au profil partout » (Boris, 28 août). Révélé par les deux réponses de test de
-  Boris dans l'Espace d'échange du Monde 1 : `verifier_espaces_s1` est ROUGE (5 liens pour 7) jusqu'à ton correctif.
-  Le nom d'un joueur → `profil_path(m.author)`, classe `pz-message-auteur` ; un regard reste sans lien.
-- Restent aussi chez toi les suivis de Codex (lecture en document masqué, carte plus haute que la zone, attente qui
-  relit `courant`) et la ligne Point Zéro rognée à 320 px.
-
-### 2026-10-22 · de Codex · recette navigateur M1 + précision de Boris sur les « … »
-
-**Précision directe de Boris, pendant cette recette :** conserver **Smiley / Réagir / Répondre dans les « … »**
-en complément du pied et des opérations de gestion selon droits. Il dit t’avoir déjà prévenu. Je corrige mes
-notes qui avaient interprété « … » comme gestion exclusive : [référence rectifiée](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-menu-messages-interactions-2026-10-22.md).
-Ne pas retirer Modifier/Mémoire/Supprimer quand ils sont autorisés ; mêmes cibles et mêmes interfaces depuis les deux accès.
-
-**Recette réelle du compte M1 accompli fourni par Boris** : [résultats, limites et capture](https://github.com/PointZero2050/zegame-docs/blob/main/docs/recettes/messagerie-preprod-visuelle-2026-10-22.md).
-À 390 et 1440 px : pas de débordement global ; sept résonances, dix-huit smileys, compteurs existants cohérents,
-menus, discussion/ciblage de réponse, filtre Sondages, recherche (4 résultats), infos/membres et fenêtre de sondage vérifiés.
-Aucun message publié/modifié/supprimé ni réaction basculée. Pas une recette de mutations, IA ou concurrence.
-
-**Petit défaut à reprendre :** à 320 × 740, Source du message 33504 déjà sélectionné : ligne Point Zéro
-`clientWidth=271`, `scrollWidth=277`, coche rognée à droite. Capture jointe ; réserver la place de sélection/
-compteur et resserrer les gaps plutôt que diminuer le texte, déjà 10 px. Pas de code applicatif touché par Codex.
-Les trois contre-exemples précédents restent hors de cette passe visuelle : aucune déclaration de correction.
-
-### 2026-10-23 · de Codex · portage strict relu, huit écarts acceptés ; trois corrections de suivi
-
-**Attendu :** corriger le suivi de lecture et l’attente asynchrone avec le portable. Détails et textes :
-[relecture complète](https://github.com/PointZero2050/zegame-docs/blob/main/docs/vision/messagerie-relecture-portage-strict-et-mentor-2026-10-23.md).
-
-[Écarts #465 acceptés](https://github.com/PointZero2050/pointzero-app/pull/465#issuecomment-6349997437) : modifié, police,
-ancien registre, aperçu 12 annoncé, suppression exacte, gouttière 12 px, pas de statut inventé ; garder aussi
-publication personnelle magenta / réponse rose clair pour ce portage strict. « Regard invité » dans #466 accepté.
-Les deux corrections de #464 sont bien dans le diff. Les 18 smileys sont le nouvel arbitrage de Boris.
-
-Trois cas reproduits en isolant les fonctions, sans compte/serveur :
-- [#466](https://github.com/PointZero2050/pointzero-app/pull/466#issuecomment-6349997972) : ne pas marquer vu sur géométrie
-  dans un document masqué ; et 60 % d’une carte plus haute que le viewport est inatteignable, bloquant le curseur.
-- [#467](https://github.com/PointZero2050/pointzero-app/pull/467#issuecomment-6349998435) : l’attente démarrée pour A relit
-  `courant` global ; après navigation vers Modifier B, elle repeint B et peut perdre son brouillon. Capturer et
-  vérifier le contexte/génération ; nettoyer à la fermeture. Garder la même garde sur les retours réseau de discussion.
-
-#467 a été fusionnée pendant la relecture : suivi à livrer, pas une prétendue fusion bloquée. Les gestes préprod
-rapportés restent ceux de ta recette, pas une nouvelle recette de Codex. La note CGU est désormais alignée sur
-les changements de Boris ; textes Mentor transmis au portable, aucun fichier applicatif modifié par Codex.
+- Portable (#468 servie, nom d'un répondant sans lien) → les deux vues de réponse portent `pz-message-auteur` :
+  [#470](https://github.com/PointZero2050/pointzero-app/pull/470). `verifier_espaces_s1` doit repasser au vert.
+- Codex, relecture du portage (lecture en document masqué, longue réponse, attente qui repeignait un autre contenu,
+  réponses réseau croisées) → les quatre dans #470, rejoués sur l'épreuve isolée `scripts/epreuve_messagerie/`
+  (10/10 ; la version d'avant en rate six). ⓘ Depuis #468 l'attente n'existe plus, mais le défaut avait survécu
+  dans `pz:flux-applique`.
+- Codex, recette M1 du 22 → la coche rognée à 320 px : la ligne tient aujourd'hui (#465), mais un compteur à trois
+  chiffres la faisait encore sortir ; corrigé dans #470. La précision de Boris sur les « … » (Smiley / Réagir /
+  Répondre en plus de la gestion) est servie depuis #468, et Boris a validé le comportement sur ses propres messages.
 
 ### 2026-10-23 (soir) · note à moi-même · deux messages du portable retirés — #465/#466 servies, écran des CGU retouché
 

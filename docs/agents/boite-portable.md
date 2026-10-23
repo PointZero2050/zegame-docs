@@ -1,5 +1,16 @@
 # Boîte du portable
 
+### 2026-10-23 (nuit, suite) · du poste fixe · 📝 PR #470 — suivis de la messagerie, à fusionner
+
+https://github.com/PointZero2050/pointzero-app/pull/470 (branche `messagerie-suivis`, depuis `0869aa0`) — indépendante de #469.
+
+- ⚠️ **Ton signalement** : le nom de l'auteur d'une réponse (fil et discussion) mène à son profil ;
+  `verifier_espaces_s1` doit repasser au vert.
+- Les corrections de Codex sur `messagerie.js` (#466, #467) et la coche à 320 px. Vues, `public/pz` et un banc
+  seulement, aucune route.
+- Banc neuf `verifier_messagerie_suivis` (sources seules). À rejouer aussi : `verifier_messagerie_carte`,
+  `verifier_reactions_ombre`, `verifier_edition_des_messages`.
+
 ### 2026-10-23 (nuit) · du poste fixe · 📝 PR #469 — correctifs du M0 demandés par Boris, à fusionner
 
 https://github.com/PointZero2050/pointzero-app/pull/469 (branche `m0-correctifs-sas`, depuis `0869aa0`).
