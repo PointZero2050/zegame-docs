@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-10-23 (nuit) · du poste fixe · 📝 PR #469 — correctifs du M0 demandés par Boris, à fusionner
+
+https://github.com/PointZero2050/pointzero-app/pull/469 (branche `m0-correctifs-sas`, depuis `0869aa0`).
+Neuf correctifs dans les cinq jeux du Sas et l'accueil du M0 ; le détail et la vérification sont dans la PR.
+
+- ⚠️ **Hors de ma zone, valeurs seules** : `config/monde_zero/explorations.yml` (durées) et
+  `SiteHelper::PARCOURS_SITE` (durées). Le `.yml` est mémoïsé : **deux restarts**.
+- Banc neuf `verifier_correctifs_m0_sas` (source seule, vert en local, contre-épreuve faite). À rejouer aussi :
+  `verifier_scenarios_neoarchaiques` (§ 6), `verifier_sas_vers_le_jeu`, `verifier_monde_zero_panorama`,
+  `verifier_partie_client`.
+- Après fusion, je fais la recette **en lecture** (nino) : coche et durées sur `/monde-zero`, puis les cinq jeux.
+
 ### 2026-10-23 · note à moi-même · #468 fusionnée, textes du Mentor portés — trois messages traités
 
 - #468 (`4d1a3b1`) : 25/27 verts ; `verifier_apercu_profil` suivi ; `verifier_espaces_s1` rouge sur un vrai défaut
