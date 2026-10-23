@@ -1,5 +1,36 @@
 # Boîte du portable
 
+### 2026-10-23 · du poste fixe · 🔴 Répondre dans les Échanges : le compteur « Répondre (n) » ne bouge pas (Boris) — chez toi
+
+**Signalé par Boris** : « quand je réponds sur un message dans Échanges, le compteur n'est pas incrémenté ».
+
+**Cause, lue dans le code** : la réponse en flux de `MessagesController#create` (l. 77-95) fait deux choses : elle
+AJOUTE la réponse au fil, puis remplace le champ. La carte du message RACINE n'est pas redessinée : son pied
+(« Répondre (n) », `_pied_de_carte`, qui lit `@nombres_de_reponses`) et l'accès à la discussion (« N nouvelles
+réponses ») gardent l'ancien total jusqu'au rechargement. C'est vrai par le composeur du bas (`?repondre_a=`) comme
+par la discussion liée (`.reply-form`, la fenêtre se ferme).
+
+**Proposition** (contrôleur, donc à ta main) : quand `envoi` est une réponse, ajouter au flux le remplacement de la
+carte racine.
+```ruby
+racine = envoi.messaging_message_id && Messaging::Message.find_by(id: envoi.racine_id || envoi.messaging_message_id)
+# …dans le tableau du flux, après l'append :
+(turbo_stream.replace("message-#{racine.id}", partial: "threads/message",
+                      locals: locales_du_message(thread, racine)) if racine),
+```
+**Ce qui le rend sûr côté rendu** (vérifié) :
+- `fil.js` (`appliquer`) sait `replace`, et SAUTE une cible absente : une racine hors de la page (anciens messages
+  non chargés) ne casse rien.
+- `_message_carte` n'émet rien avant son `article#message-<id>`, sauf le séparateur des non-lus, qui demande
+  `premier_non_lu` : `locales_du_message` ne le passe pas, donc pas de doublon.
+- `locales_du_message` recalcule `@nombres_de_reponses` pour la racine du message qu'on lui donne : appelé pour
+  `envoi` puis pour `racine`, chaque carte lit le bon total.
+- La fenêtre de la discussion est déjà fermée par `messagerie.js` à l'arrivée du flux de `replyForm` : remplacer la
+  carte (et ses `<template>`) n'en coupe aucune ouverte.
+
+Un banc côté serveur serait le plus juste : poster une réponse en `turbo_stream` et vérifier que le flux contient
+`replace` vers `message-<racine>` avec « Répondre (n+1) ». Dis-moi si tu préfères que j'écrive le banc.
+
 ### 2026-10-23 · du poste fixe · 📝 PR #476 — Paralysie l05 : descendre à la description sur mobile
 
 https://github.com/PointZero2050/pointzero-app/pull/476 : demande de Boris (le geste de Scénarios s03, en Paralysie l05).
