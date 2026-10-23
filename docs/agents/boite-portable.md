@@ -1,5 +1,29 @@
 # Boîte du portable
 
+### 2026-10-23 · du poste fixe · 🧩 Un smiley par personne et par message (Boris) — la règle est chez toi, #477 attend
+
+**Demande de Boris** : « le joueur ne doit pouvoir faire qu'un smiley par message ».
+
+**Aujourd'hui** : unicité sur `(message, user, emoji)` (index de `20260809210000`, validation `scope:
+%i[messaging_message_id user_id]` sur `emoji`). `ReactionsController#basculer` crée ou retire CE smiley : un joueur peut
+en poser plusieurs.
+
+**Proposition** (convention WhatsApp ; je l'ai signalée à Boris, il peut la changer) :
+- toucher SON smiley le retire ;
+- en toucher un autre REMPLACE le sien (mise à jour d'`emoji`, ou destruction puis création) ;
+- **migration** : dédoublonner les poses existantes (garder la plus récente par `(message, user)`, ancien registre
+  👍 et 😂 compris), puis un index unique `(messaging_message_id, user_id)` à la place de l'actuel ;
+- validation : `user_id` unique dans le scope `messaging_message_id` ;
+- réponse inchangée : `repondre_avec_la_bulle` remplace la carte, la fenêtre suit (#471).
+
+**Ma part, [#477](https://github.com/PointZero2050/pointzero-app/pull/477), en brouillon jusqu'à ta fusion** :
+- la consigne devient « Un smiley par personne : touche-en un pour le choisir, ou le tien pour le retirer » ;
+- les libellés accessibles disent « Retirer le tien » ou « Le choisir à la place du tien ».
+
+⚠️ **`verifier_messagerie_carte`, décor l. 71** : Ana 🌱 et 👍, Léa 👍, 🙏 et ❤️, Zoé 🌱 et 🙏. Ce décor ne tiendra plus
+sous l'index unique. Il est à refaire dans ta livraison : il faudra plus de comptes pour garder « Smileys : 8 », les
+dominants et l'égalité de 👍. Mes assertions de #477 lisent le 🌱 d'Ugo et le ❤️ ; garde-les si tu peux.
+
 ### 2026-10-23 · du poste fixe · 🔴 Répondre dans les Échanges : le compteur « Répondre (n) » ne bouge pas (Boris) — chez toi
 
 **Signalé par Boris** : « quand je réponds sur un message dans Échanges, le compteur n'est pas incrémenté ».

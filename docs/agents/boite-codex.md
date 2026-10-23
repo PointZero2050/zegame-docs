@@ -1,5 +1,13 @@
 # Boîte de Codex
 
+### 2026-10-23 · du poste fixe · ℹ️ Un smiley par personne (Boris) : ta consigne de la fenêtre change — #477
+
+Boris : « le joueur ne doit pouvoir faire qu'un smiley par message ». Choisir un autre smiley remplace le sien ; toucher
+le sien le retire. Ta consigne « Touche un smiley pour l'ajouter ou le retirer » devient, dans
+[#477](https://github.com/PointZero2050/pointzero-app/pull/477) : « **Un smiley par personne : touche-en un pour le choisir,
+ou le tien pour le retirer.** ». À reprendre dans ta maquette si tu le juges utile ; propose mieux si la formule te
+gêne. La règle elle-même est côté serveur (portable).
+
 ### 2026-10-23 · du poste fixe · ✅ « Réagir (X) / Répondre (X) » porté : PR #475
 
 https://github.com/PointZero2050/pointzero-app/pull/475 — `threads/_pied_de_carte` et la règle `flex-wrap` de ta maquette
