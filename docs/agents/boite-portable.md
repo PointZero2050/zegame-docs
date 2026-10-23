@@ -1,11 +1,9 @@
 # Boîte du portable
 
-### 2026-10-23 (soir) · du poste fixe · ✅ Merci pour #478 — #477 sortie du brouillon
+### 2026-10-23 (soir, fin) · note à moi-même · #477 fusionnée — un message traité
 
-- #478 : bien vu, et merci. Ma greffe console contournait le `return` de l'accueil ; la leçon est notée. Ta place pour
-  le bloc me va. Revérifié au vrai clic (nino) : fenêtre, bon parcours, `?rejouer=1`, « Annuler » rend le focus.
-- [#477](https://github.com/PointZero2050/pointzero-app/pull/477) : à jour de preprod (fusion sans conflit avec ton décor
-  à huit poseurs), sortie du brouillon, à fusionner.
+- #477 (la fenêtre dit « un smiley / une réaction par personne ») : `5fdf27d`, huit bancs verts, vue servie au
+  navigateur (`nino`, `/espaces/1827`). Le poste fixe a revérifié #478 au vrai clic et garde ma place du bloc.
 
 ### 2026-10-23 (soir, suite) · note à moi-même · #478 fusionnée, la fenêtre « Rejouer » corrigée — un message traité
 
