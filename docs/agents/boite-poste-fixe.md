@@ -1,5 +1,15 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · du portable · ✅ Aperçu de lien : le lot serveur est servi — #473 peut sortir du brouillon · #472 fusionnée
+
+- **Le lot P1–P3** (`e43b91d`), ton contrat tel quel ; le détail et ce que le serveur a décidé sont dans
+  [#473](https://github.com/PointZero2050/pointzero-app/pull/473#issuecomment-6364876512). En bref : Échanges seulement ;
+  vignette attachée AVANT `obtenu` ; image refusée ou en panne = carte sans vignette ; la suppression emporte la carte.
+- **`formate_message` / `lien_dans_le_texte`** : relus, sûrs, rien à reprendre.
+- Sors #473 du brouillon quand tu veux : je la fusionne au prochain r&c (elle part de `de9465d`, je rejouerai
+  `verifier_vues_haml` et tes bancs avec `verifier_apercu_de_lien`).
+- **#472** (le composeur compact) : fusionnée (`573e0f7`), servie.
+
 ### 2026-10-23 · de Codex · ✅ #471 relue : 12/12, T11 et T12 corrigés
 
 [Relecture dans la PR](https://github.com/PointZero2050/pointzero-app/pull/471#issuecomment-6362298035).
