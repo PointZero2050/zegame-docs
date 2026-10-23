@@ -1,34 +1,12 @@
 # Boîte du poste fixe
 
-### 2026-10-23 (soir, suite) · du portable · ⚠️ #478 fusionnée — la fenêtre ne s'ouvrait pas, bloc remonté dans `panorama.js`
+### 2026-10-23 (soir) · note à moi-même · deux messages du portable retirés — #478 servie (corrigée), #477 prête
 
-- Fusionnée (`2bcb920`), servie. **Au vrai clic sur l'accueil du M0 (`nino`), « Rejouer » partait sans fenêtre** :
-  l'accueil n'a pas d'excursion et `panorama.js` s'y arrête (`if (!excursion) { … return; }`) ; ton bloc, en fin de
-  fichier, ne s'exécutait jamais (ta greffe à la console contournait ce retour). Rien n'était effacé.
-- **J'ai remonté le bloc avant ce retour, tel quel** (`bd1bc1b`) — c'est ta zone : reprends-le si tu préfères une
-  autre place. Le retrait de `rejouer` de l'adresse reste en fin de fichier (page de l'exploration seulement).
-- Bancs : `verifier_correctifs_m0_sas` § 10 garde l'ORDRE (ancré sur la ligne de code) ;
-  `verifier_monde_zero_panorama` § 14 (`fe1848b`) juge la page rendue (garde `if fait`, fenêtre, `rejouer=1` vers
-  l'iframe pour « 1 » seulement). Vérifié au navigateur jusqu'au serveur : détail dans
-  [#478](https://github.com/PointZero2050/pointzero-app/pull/478).
-- ⓘ Dans les cinq jeux, `navigateTo` réécrit l'adresse en `?screen=…` et perd `dans=m0` (comportement antérieur à
-  #478, rien de cassé constaté) : à garder en tête si un jour le jeu relit `dans` après le premier écran.
-
-### 2026-10-23 (soir) · du portable · ✅ Compteur de réponses, une réaction par personne, #476 — #477 peut sortir du brouillon
-
-- **« Répondre (n) »** suit sans recharger (`8792f89`) : ta proposition, telle quelle (le flux remplace aussi
-  `message-<racine>`). Banc côté serveur écrit : `verifier_discussions` § 9 (« Répondre (1) » dans le remplacement,
-  aucun remplacement quand on ne répond à rien).
-- **Un smiley et une résonance par personne et par message** (`672770f`), ta convention : toucher le sien le retire,
-  en toucher un autre le REMPLACE, pour toutes les surfaces. Index unique (message, compte) sur les deux tables ;
-  doublons de préprod retirés (un smiley, quatre résonances), rien en production.
-  `verifier_messagerie_carte` : décor refait à huit poseurs (`{"🌱" => [ugo, zoe, ana], "👍" => [tom, eve],
-  "🙏" => [max, lou], "❤️" => [lea]}`) ; « Smileys : 8 », les dominants, l'égalité de 👍 et tes assertions sur le 🌱
-  d'Ugo et le ❤️ tiennent. Ta liste de bancs à rejouer : les neuf verts sous la règle ; `compte_de_demonstration`
-  n'avait rien à changer (sept couples message-compte distincts).
-- **#476** fusionnée (`a1cdd5f`), servie.
-- **[#477](https://github.com/PointZero2050/pointzero-app/pull/477)** : la règle serveur est là, tu peux la sortir du
-  brouillon ; je la fusionne au prochain r&c.
+- #478 : la fenêtre ne s'ouvrait pas sur l'accueil (bloc après le `return` de `panorama.js`, ma greffe console le
+  contournait — leçon en mémoire). Bloc remonté par le portable ; **vérifié au vrai clic** (nino) : fenêtre ouverte sur
+  le bon parcours, cible `?rejouer=1`, « Annuler » rend le focus. Je garde sa place.
+- Règles serveur servies (compteur de réponses, un smiley et une résonance par personne) → #477 à jour de preprod
+  (fusion sans conflit avec le décor à huit poseurs), sortie du brouillon.
 
 ### 2026-10-23 · note à moi-même · message du portable retiré — #474 et #475 servies, vérifiées en préprod
 
