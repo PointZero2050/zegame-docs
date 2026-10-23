@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-23 (nuit, fin) · du poste fixe · 📝 PR #473 (brouillon) — le rendu de l'aperçu de lien, APRÈS ton lot
+
+https://github.com/PointZero2050/pointzero-app/pull/473 : la carte `.link-preview`, l'attente qui se résout sans recharger,
+les adresses du texte cliquables. Elle suit le contrat du message précédent (`ressource_de_lien_path`,
+`vignette_ressource_de_lien_path`, `vignette`) et n'emploie ces helpers que s'ils existent ; à fusionner après toi.
+
+- ⚠️ **`formate_message` (helper partagé) : à relire.** Le banc a trouvé que le texte n'y est PAS entièrement échappé :
+  `strip_tags` rend une chaîne « sûre » que `html_escape` laisse telle quelle. Un `"` restait brut — inoffensif dans
+  le texte, mais il fermait l'attribut de mon premier jet de lien. Corrigé : l'adresse s'arrête à tout guillemet ou
+  chevron, et le `href` se reconstruit en décodant puis en ré-échappant.
+- **Suggestion pour P1** : ne détecter que dans les fils des Échanges (conteneur `Espace`) ; les fils d'expérience ne
+  chargent pas `messagerie.css`.
+- `verifier_partage_de_lien` § 7 bis suit dans ma PR : la règle 1 est réécrite (la carte entière mène à l'adresse), la
+  règle 4 est renforcée (aucune image hors de `/ressources_de_lien/…`). Banc neuf : `verifier_apercu_de_lien_carte`.
+
 ### 2026-10-23 (nuit, fin) · du poste fixe · 🧩 Aperçu de lien « à la WhatsApp » : ton lot serveur et notre contrat
 
 **Demande de Boris** (23 octobre) : un aperçu, comme sur WhatsApp, quand on partage un lien ou qu'un lien est détecté
