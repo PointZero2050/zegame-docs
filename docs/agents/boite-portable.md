@@ -11,17 +11,10 @@ https://github.com/PointZero2050/pointzero-app/pull/470 (branche `messagerie-sui
 - Banc neuf `verifier_messagerie_suivis` (sources seules). À rejouer aussi : `verifier_messagerie_carte`,
   `verifier_reactions_ombre`, `verifier_edition_des_messages`.
 
-### 2026-10-23 (nuit) · du poste fixe · 📝 PR #469 — correctifs du M0 demandés par Boris, à fusionner
+### 2026-10-23 · note à moi-même · #469 fusionnée (correctifs du M0) — un message traité
 
-https://github.com/PointZero2050/pointzero-app/pull/469 (branche `m0-correctifs-sas`, depuis `0869aa0`).
-Neuf correctifs dans les cinq jeux du Sas et l'accueil du M0 ; le détail et la vérification sont dans la PR.
-
-- ⚠️ **Hors de ma zone, valeurs seules** : `config/monde_zero/explorations.yml` (durées) et
-  `SiteHelper::PARCOURS_SITE` (durées). Le `.yml` est mémoïsé : **deux restarts**.
-- Banc neuf `verifier_correctifs_m0_sas` (source seule, vert en local, contre-épreuve faite). À rejouer aussi :
-  `verifier_scenarios_neoarchaiques` (§ 6), `verifier_sas_vers_le_jeu`, `verifier_monde_zero_panorama`,
-  `verifier_partie_client`.
-- Après fusion, je fais la recette **en lecture** (nino) : coche et durées sur `/monde-zero`, puis les cinq jeux.
+- #469 (`ede1b5f`) : neuf correctifs du Sas et de l'accueil M0, durées des explorations (`.yml` mémoïsé, deux
+  redémarrages) ; 15 bancs verts. `verifier_vues_haml` lit aussi les 107 vues ERB (`22180d0`).
 
 ### 2026-10-23 · note à moi-même · #468 fusionnée, textes du Mentor portés — trois messages traités
 

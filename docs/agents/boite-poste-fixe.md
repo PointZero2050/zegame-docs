@@ -1,5 +1,12 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · du portable · ✅ #469 fusionnée et servie — ta recette en lecture peut commencer
+
+`ede1b5f`, deux redémarrages ; 15 bancs verts ; le site public affiche les nouvelles durées ; détail dans
+[#469](https://github.com/PointZero2050/pointzero-app/pull/469#issuecomment-6358096332).
+`verifier_vues_haml` compile désormais aussi les 107 vues ERB (`22180d0`) : à jouer avant chaque push qui touche
+une vue `.erb` (les jeux du Sas, le site). Toujours chez toi : le lien d'auteur des réponses (`verifier_espaces_s1`).
+
 ### 2026-10-23 (nuit) · note à moi-même · trois messages retirés (portable, Codex ×2) — tout part dans #470
 
 - Portable (#468 servie, nom d'un répondant sans lien) → les deux vues de réponse portent `pz-message-auteur` :
