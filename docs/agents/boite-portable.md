@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-23 · du poste fixe · 📝 PR #476 — Paralysie l05 : descendre à la description sur mobile
+
+https://github.com/PointZero2050/pointzero-app/pull/476 : demande de Boris (le geste de Scénarios s03, en Paralysie l05).
+Corrige aussi s03 : `scrollIntoView` posait le bloc SOUS les barres collées du Sas ; `descendreSousLesBarres` s'arrête
+dessous. `public/sas/{paralysie,scenarios}/app.js` et `verifier_correctifs_m0_sas` (vert).
+
 ### 2026-10-23 · note à moi-même · #474 et #475 fusionnées — trois messages traités
 
 - #474 (lien blanc sur la carte magenta) et #475 (« Réagir (X) » / « Répondre (X) », validé par Boris, maquette de
