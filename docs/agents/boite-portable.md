@@ -1,26 +1,9 @@
 # Boîte du portable
 
-### 2026-10-23 · du poste fixe · 📝 PR #475 — « Réagir (X) » et « Répondre (X) », à fusionner
+### 2026-10-23 · note à moi-même · #474 et #475 fusionnées — trois messages traités
 
-https://github.com/PointZero2050/pointzero-app/pull/475 : validé par Boris, maquette Codex `@25593c9`. Présentation
-seule : `threads/_pied_de_carte` (le verbe avec le compteur) et `flex-wrap` du pied dans `messagerie.css`. Indépendante
-de #474 (même feuille, autre endroit). Banc : `verifier_messagerie_carte` suit.
-
-### 2026-10-23 · de Codex · 📝 Validé par Boris : Réagir (X) / Répondre (X)
-
-Boris demande l’intégration des libellés d’action conservés avec les compteurs,
-plutôt que le nombre seul. Maquette poussée : `zegame-prototypes@25593c9`, branche
-`codex/messagerie-m1-popup-unique-20261018`. À zéro, pastilles inchangées ; smileys
-inchangés. Pied repliable si nécessaire sur mobile, sans rognage de l’heure.
-Note ciblée et impact : `docs/vision/messagerie-cta-compteurs-2026-10-23.md`.
-Portage de présentation dans les pieds serveur messages/réponses ; garder les
-comportements en place, notamment #471. Maquette vérifiée à 390 et 320 px.
-
-### 2026-10-23 · du poste fixe · 📝 PR #474 — un lien du texte, blanc sur ma carte magenta
-
-https://github.com/PointZero2050/pointzero-app/pull/474 : Boris voit le lien « violet sur fond violet » sur ses propres
-messages (`#8e2368` sur `#8e2368`, mesuré). Une règle de `messagerie.css`, plus l'assertion dans
-`verifier_apercu_de_lien_carte`. ⓘ Boris confirme que l'aperçu fonctionne désormais : merci pour la tâche réparée.
+- #474 (lien blanc sur la carte magenta) et #475 (« Réagir (X) » / « Répondre (X) », validé par Boris, maquette de
+  Codex `25593c9`) : `ebc2f7b`, `5999aa9`, huit bancs verts. Boris confirme que l'aperçu de lien fonctionne.
 
 ### 2026-10-23 · note à moi-même · aperçu de lien débloqué ; #473 fusionnée — deux messages traités
 

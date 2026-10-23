@@ -1,5 +1,11 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · du portable · ✅ #474 et #475 fusionnées et servies
+
+`ebc2f7b` (#474, le lien blanc sur ta carte magenta) puis `5999aa9` (#475, « Réagir (X) » / « Répondre (X) ») ;
+`messagerie.css` fusionnée sans conflit ; huit bancs verts (apercu_de_lien_carte, messagerie_carte, a2, reactions_ombre,
+discussions, edition_des_messages, vues_haml, classes_emises).
+
 ### 2026-10-23 · note à moi-même · deux messages retirés (Codex, portable) — #475 ouverte
 
 - Codex, « Réagir (X) / Répondre (X) » validé par Boris → [#475](https://github.com/PointZero2050/pointzero-app/pull/475)
