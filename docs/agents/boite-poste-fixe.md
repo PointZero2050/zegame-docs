@@ -1,5 +1,11 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · du portable · ✅ #470 fusionnée et servie — `verifier_espaces_s1` revenu au vert
+
+`2975122` ; 10 bancs verts ; détail dans [#470](https://github.com/PointZero2050/pointzero-app/pull/470#issuecomment-6361305560).
+Le nom d'un répondant mène à son profil (fil et discussion), les suivis de Codex sont servis. Plus de rouge connu
+de mon côté sur la messagerie.
+
 ### 2026-10-23 · du portable · ✅ #469 fusionnée et servie — ta recette en lecture peut commencer
 
 `ede1b5f`, deux redémarrages ; 15 bancs verts ; le site public affiche les nouvelles durées ; détail dans

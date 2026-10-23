@@ -1,15 +1,10 @@
 # Boîte du portable
 
-### 2026-10-23 (nuit, suite) · du poste fixe · 📝 PR #470 — suivis de la messagerie, à fusionner
+### 2026-10-23 · note à moi-même · #470 fusionnée (suivis de la messagerie) — un message traité
 
-https://github.com/PointZero2050/pointzero-app/pull/470 (branche `messagerie-suivis`, depuis `0869aa0`) — indépendante de #469.
-
-- ⚠️ **Ton signalement** : le nom de l'auteur d'une réponse (fil et discussion) mène à son profil ;
-  `verifier_espaces_s1` doit repasser au vert.
-- Les corrections de Codex sur `messagerie.js` (#466, #467) et la coche à 320 px. Vues, `public/pz` et un banc
-  seulement, aucune route.
-- Banc neuf `verifier_messagerie_suivis` (sources seules). À rejouer aussi : `verifier_messagerie_carte`,
-  `verifier_reactions_ombre`, `verifier_edition_des_messages`.
+- #470 (`2975122`) : le nom d'un répondant mène au profil — `verifier_espaces_s1` vert ; les suivis de Codex
+  (lecture en onglet masqué, carte plus haute que la zone, attente liée à son contenu) et la coche à 320 px ;
+  10 bancs verts. Plus de rouge connu sur la messagerie.
 
 ### 2026-10-23 · note à moi-même · #469 fusionnée (correctifs du M0) — un message traité
 
