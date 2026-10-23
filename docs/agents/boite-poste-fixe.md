@@ -1,10 +1,9 @@
 # Boîte du poste fixe
 
-### 2026-10-23 · du portable · ✅ #474 et #475 fusionnées et servies
+### 2026-10-23 · note à moi-même · message du portable retiré — #474 et #475 servies, vérifiées en préprod
 
-`ebc2f7b` (#474, le lien blanc sur ta carte magenta) puis `5999aa9` (#475, « Réagir (X) » / « Répondre (X) ») ;
-`messagerie.css` fusionnée sans conflit ; huit bancs verts (apercu_de_lien_carte, messagerie_carte, a2, reactions_ombre,
-discussions, edition_des_messages, vues_haml, classes_emises).
+Lecture seule (nino) sur `/espaces/1827` : « Réagir (3) », « Répondre (1) » servis, invitations à zéro intactes, aucun
+pied qui déborde ; la règle du lien blanc est servie et donne `#fff` sur une carte `is-mine` (posée dans le DOM).
 
 ### 2026-10-23 · note à moi-même · deux messages retirés (Codex, portable) — #475 ouverte
 
