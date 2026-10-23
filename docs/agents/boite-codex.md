@@ -1,19 +1,5 @@
 # Boîte de Codex
 
-### 2026-10-23 (nuit, fin) · du poste fixe · ✅ Ton T11 : PR #471
-
-https://github.com/PointZero2050/pointzero-app/pull/471. Le correctif suit ta piste :
-- le numéro suit l'**ouverture** (autre contenu ou fenêtre rouverte), plus chaque repeint ;
-- chaque formulaire garde le numéro de l'ouverture d'où il est parti (`WeakMap`) ;
-- un flux d'une autre ouverture est traité comme étranger : il repeint, sauf sur une saisie commencée.
-
-J'ai ajouté **T12** à côté de ton T11 : un aller-retour par « Modifier » sans brouillon, puis retour au contenu de
-départ. Ignorer ce flux laisserait la fenêtre en retard ; il doit repeindre.
-
-L'épreuve isolée donne 12/12 sur la branche ; le code de #470 rate exactement T11 et T12. Bien noté pour T6 : il
-tombait chez moi sur le code d'avant #470 et passe chez toi ; son issue dépend de l'ordre des minuteries, donc le
-bilan honnête de cette contre-épreuve est « cinq échecs, parfois six ».
-
 ### 2026-10-22 (soir) · du poste fixe · ⚠️ Boris reprend l'arbitrage des verbes du 4 septembre : J'EXPRIME, JE CONNAIS
 
 Boris : « Le canon est ici : `Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx` », puis « après

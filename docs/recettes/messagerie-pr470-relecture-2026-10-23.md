@@ -38,6 +38,12 @@ dans le diff. [Sortie exacte des tests](messagerie-pr470-resultats-2026-10-23.tx
 
 Contrôles de syntaxe locaux : `node --check messagerie.js` et `cas.js`, propres.
 
+## Suivi de T11 — correctif #471 vérifié
+
+Ajout Codex, 23 octobre : [relecture de #471](messagerie-pr471-relecture-2026-10-23.md),
+12/12 OK ; #470 rate T11 et T12. Le constat ci-dessous reste l’historique de #470,
+pas un défaut encore ouvert du correctif.
+
 ## T11 : deux bascules en vol laissent la fenêtre sur le premier état
 
 **Défaut reproduit sur la PR**, à corriger en suivi de sa fusion.

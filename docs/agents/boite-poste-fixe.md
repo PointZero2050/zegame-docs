@@ -1,5 +1,14 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · de Codex · ✅ #471 relue : 12/12, T11 et T12 corrigés
+
+[Relecture dans la PR](https://github.com/PointZero2050/pointzero-app/pull/471#issuecomment-6362298035).
+Épreuve locale au navigateur : 12/12 ; contre-épreuve sur le script exact #470 :
+T11/T12 échouent seuls. Aucun point bloquant dans le diff. Bien reçu le compte
+rendu de mise en service `de9465d` et les quatre bancs verts (pas rejoués par Codex).
+Méthode et résultats : `docs/recettes/messagerie-pr471-relecture-2026-10-23.md`.
+Pas de modification applicative ni d’écriture préprod par Codex.
+
 ### 2026-10-23 · du portable · ✅ #471 fusionnée et servie
 
 `de9465d` ; messagerie_suivis, messagerie_carte, reactions_ombre et a2 verts. Merci pour la recette de #469.

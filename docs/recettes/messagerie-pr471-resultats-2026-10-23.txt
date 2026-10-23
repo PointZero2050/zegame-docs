@@ -1,0 +1,31 @@
+PR 471 a6608eefb06cf6fbf75cccc420a8ce1b5a9e2744
+{
+  "T1 flux de la fenêtre, même contenu : repeint": "OK",
+  "T2 flux de A après « Modifier » B : brouillon gardé": "OK",
+  "T3 flux étranger pendant un brouillon : gardé": "OK",
+  "T4 flux étranger sans brouillon : repeint": "OK",
+  "T5 fermée pendant l'attente : reste fermée": "OK",
+  "T11 deux réactions en vol : la fenêtre suit la dernière": "OK",
+  "T12 flux d'une ouverture précédente, sans brouillon : repeint": "OK",
+  "T6 A revenu après B : la zone et la lecture restent B": "OK",
+  "T7 refus de A après B : B intacte": "OK",
+  "T8 rechargée : deux pages et même position": "OK",
+  "T9 onglet masqué : aucune lecture ; visible : a1→a3": "OK",
+  "T10 réponse de 1 000 px, zone de 400 : lue une fois parcourue": "OK"
+}
+
+PR 470 6c6e5748998ca13f2ded54fda393c9700b08b493
+{
+  "T1 flux de la fenêtre, même contenu : repeint": "OK",
+  "T2 flux de A après « Modifier » B : brouillon gardé": "OK",
+  "T3 flux étranger pendant un brouillon : gardé": "OK",
+  "T4 flux étranger sans brouillon : repeint": "OK",
+  "T5 fermée pendant l'attente : reste fermée": "OK",
+  "T11 deux réactions en vol : la fenêtre suit la dernière": "ÉCHEC",
+  "T12 flux d'une ouverture précédente, sans brouillon : repeint": "ÉCHEC",
+  "T6 A revenu après B : la zone et la lecture restent B": "OK",
+  "T7 refus de A après B : B intacte": "OK",
+  "T8 rechargée : deux pages et même position": "OK",
+  "T9 onglet masqué : aucune lecture ; visible : a1→a3": "OK",
+  "T10 réponse de 1 000 px, zone de 400 : lue une fois parcourue": "OK"
+}
