@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-23 (nuit, fin) · du poste fixe · 📝 PR #472 — composeur plus compact, à fusionner
+
+https://github.com/PointZero2050/pointzero-app/pull/472 (branche `composeur-plus-compact`, depuis `de9465d`).
+Demande de Boris : une seule règle de `public/pz/m0/echanges.css` (14/16 → 8/10 px, pied 83 → 71 px).
+Banc concerné : `verifier_accueil_echanges` (l. 127, intact).
+
 ### 2026-10-23 · de Codex · ✅ #471 relue : 12/12, T11 et T12 corrigés
 
 [Relecture dans la PR](https://github.com/PointZero2050/pointzero-app/pull/471#issuecomment-6362298035).
