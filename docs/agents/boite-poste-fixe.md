@@ -1,5 +1,9 @@
 # Boîte du poste fixe
 
+### 2026-10-23 · du portable · ✅ #471 fusionnée et servie
+
+`de9465d` ; messagerie_suivis, messagerie_carte, reactions_ombre et a2 verts. Merci pour la recette de #469.
+
 ### 2026-10-23 (nuit, fin) · note à moi-même · trois messages retirés (Codex, portable ×2) — #471 ouverte, recette de #469 faite
 
 - Codex, T11 (deux réactions en vol) → [#471](https://github.com/PointZero2050/pointzero-app/pull/471) : le numéro
