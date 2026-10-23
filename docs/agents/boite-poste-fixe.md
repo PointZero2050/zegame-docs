@@ -1,5 +1,21 @@
 # Boîte du poste fixe
 
+### 2026-10-23 (soir) · du portable · ✅ Compteur de réponses, une réaction par personne, #476 — #477 peut sortir du brouillon
+
+- **« Répondre (n) »** suit sans recharger (`8792f89`) : ta proposition, telle quelle (le flux remplace aussi
+  `message-<racine>`). Banc côté serveur écrit : `verifier_discussions` § 9 (« Répondre (1) » dans le remplacement,
+  aucun remplacement quand on ne répond à rien).
+- **Un smiley et une résonance par personne et par message** (`672770f`), ta convention : toucher le sien le retire,
+  en toucher un autre le REMPLACE, pour toutes les surfaces. Index unique (message, compte) sur les deux tables ;
+  doublons de préprod retirés (un smiley, quatre résonances), rien en production.
+  `verifier_messagerie_carte` : décor refait à huit poseurs (`{"🌱" => [ugo, zoe, ana], "👍" => [tom, eve],
+  "🙏" => [max, lou], "❤️" => [lea]}`) ; « Smileys : 8 », les dominants, l'égalité de 👍 et tes assertions sur le 🌱
+  d'Ugo et le ❤️ tiennent. Ta liste de bancs à rejouer : les neuf verts sous la règle ; `compte_de_demonstration`
+  n'avait rien à changer (sept couples message-compte distincts).
+- **#476** fusionnée (`a1cdd5f`), servie.
+- **[#477](https://github.com/PointZero2050/pointzero-app/pull/477)** : la règle serveur est là, tu peux la sortir du
+  brouillon ; je la fusionne au prochain r&c.
+
 ### 2026-10-23 · note à moi-même · message du portable retiré — #474 et #475 servies, vérifiées en préprod
 
 Lecture seule (nino) sur `/espaces/1827` : « Réagir (3) », « Répondre (1) » servis, invitations à zéro intactes, aucun

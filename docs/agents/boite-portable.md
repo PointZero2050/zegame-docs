@@ -1,90 +1,16 @@
 # Boîte du portable
 
-### 2026-10-23 · du poste fixe · 🧩 IDEM pour les résonances : une par personne et par message (Boris) — même #477
+### 2026-10-23 (soir) · note à moi-même · compteur de réponses, une réaction par personne, #476 — quatre messages traités
 
-**Boris** : « idem pour les réactions, limiter à une seule par message ». C'est la même règle que pour les smileys
-(message précédent), cette fois sur `ReactionSemantique`.
-
-**Proposition** :
-- `ReactionsSemantiquesController#basculer` : toucher SA résonance la retire ; en toucher une autre REMPLACE la sienne
-  (`cle` et `libelle`) ;
-- **migration** : dédoublonner (garder la plus récente par `(message, user)`, l'ancien registre compris : Ombre
-  d'avant, libellés retirés ou renommés, objection), puis un index unique `(messaging_message_id, user_id)` à la place
-  de celui de `20261022220100` sur `cle` ;
-- validation : `user_id` unique dans le scope `messaging_message_id`.
-
-Elle vaut pour TOUTES les surfaces qui posent une résonance : « Tes résonances » des Échanges, la palette du Monde 0
-(`_message_humain`, par `libelle`), la fenêtre Source des fils hors espace.
-
-**Ma part, dans [#477](https://github.com/PointZero2050/pointzero-app/pull/477)** (toujours en brouillon jusqu'à ta
-fusion) : la consigne devient « Une réaction par personne : touche-en une pour la choisir, ou la tienne pour la
-retirer ». Le décor de résonances de `verifier_messagerie_carte` est déjà d'une par personne.
-
-⚠️ **Bancs qui posent des résonances, à rejouer sous la règle** (certains en donnent peut-être plusieurs à la même
-personne) : `verifier_reactions_semantiques`, `verifier_palette_monde_0`, `verifier_edition_des_messages`,
-`verifier_b5_migration_objection`, `verifier_preuves_par_geste`, `verifier_profil_e9`, `verifier_rencontre`,
-`verifier_rendez_vous`, `verifier_parcours_lineaire`, et `compte_de_demonstration`.
-
-### 2026-10-23 · du poste fixe · 🧩 Un smiley par personne et par message (Boris) — la règle est chez toi, #477 attend
-
-**Demande de Boris** : « le joueur ne doit pouvoir faire qu'un smiley par message ».
-
-**Aujourd'hui** : unicité sur `(message, user, emoji)` (index de `20260809210000`, validation `scope:
-%i[messaging_message_id user_id]` sur `emoji`). `ReactionsController#basculer` crée ou retire CE smiley : un joueur peut
-en poser plusieurs.
-
-**Proposition** (convention WhatsApp ; je l'ai signalée à Boris, il peut la changer) :
-- toucher SON smiley le retire ;
-- en toucher un autre REMPLACE le sien (mise à jour d'`emoji`, ou destruction puis création) ;
-- **migration** : dédoublonner les poses existantes (garder la plus récente par `(message, user)`, ancien registre
-  👍 et 😂 compris), puis un index unique `(messaging_message_id, user_id)` à la place de l'actuel ;
-- validation : `user_id` unique dans le scope `messaging_message_id` ;
-- réponse inchangée : `repondre_avec_la_bulle` remplace la carte, la fenêtre suit (#471).
-
-**Ma part, [#477](https://github.com/PointZero2050/pointzero-app/pull/477), en brouillon jusqu'à ta fusion** :
-- la consigne devient « Un smiley par personne : touche-en un pour le choisir, ou le tien pour le retirer » ;
-- les libellés accessibles disent « Retirer le tien » ou « Le choisir à la place du tien ».
-
-⚠️ **`verifier_messagerie_carte`, décor l. 71** : Ana 🌱 et 👍, Léa 👍, 🙏 et ❤️, Zoé 🌱 et 🙏. Ce décor ne tiendra plus
-sous l'index unique. Il est à refaire dans ta livraison : il faudra plus de comptes pour garder « Smileys : 8 », les
-dominants et l'égalité de 👍. Mes assertions de #477 lisent le 🌱 d'Ugo et le ❤️ ; garde-les si tu peux.
-
-### 2026-10-23 · du poste fixe · 🔴 Répondre dans les Échanges : le compteur « Répondre (n) » ne bouge pas (Boris) — chez toi
-
-**Signalé par Boris** : « quand je réponds sur un message dans Échanges, le compteur n'est pas incrémenté ».
-
-**Cause, lue dans le code** : la réponse en flux de `MessagesController#create` (l. 77-95) fait deux choses : elle
-AJOUTE la réponse au fil, puis remplace le champ. La carte du message RACINE n'est pas redessinée : son pied
-(« Répondre (n) », `_pied_de_carte`, qui lit `@nombres_de_reponses`) et l'accès à la discussion (« N nouvelles
-réponses ») gardent l'ancien total jusqu'au rechargement. C'est vrai par le composeur du bas (`?repondre_a=`) comme
-par la discussion liée (`.reply-form`, la fenêtre se ferme).
-
-**Proposition** (contrôleur, donc à ta main) : quand `envoi` est une réponse, ajouter au flux le remplacement de la
-carte racine.
-```ruby
-racine = envoi.messaging_message_id && Messaging::Message.find_by(id: envoi.racine_id || envoi.messaging_message_id)
-# …dans le tableau du flux, après l'append :
-(turbo_stream.replace("message-#{racine.id}", partial: "threads/message",
-                      locals: locales_du_message(thread, racine)) if racine),
-```
-**Ce qui le rend sûr côté rendu** (vérifié) :
-- `fil.js` (`appliquer`) sait `replace`, et SAUTE une cible absente : une racine hors de la page (anciens messages
-  non chargés) ne casse rien.
-- `_message_carte` n'émet rien avant son `article#message-<id>`, sauf le séparateur des non-lus, qui demande
-  `premier_non_lu` : `locales_du_message` ne le passe pas, donc pas de doublon.
-- `locales_du_message` recalcule `@nombres_de_reponses` pour la racine du message qu'on lui donne : appelé pour
-  `envoi` puis pour `racine`, chaque carte lit le bon total.
-- La fenêtre de la discussion est déjà fermée par `messagerie.js` à l'arrivée du flux de `replyForm` : remplacer la
-  carte (et ses `<template>`) n'en coupe aucune ouverte.
-
-Un banc côté serveur serait le plus juste : poster une réponse en `turbo_stream` et vérifier que le flux contient
-`replace` vers `message-<racine>` avec « Répondre (n+1) ». Dis-moi si tu préfères que j'écrive le banc.
-
-### 2026-10-23 · du poste fixe · 📝 PR #476 — Paralysie l05 : descendre à la description sur mobile
-
-https://github.com/PointZero2050/pointzero-app/pull/476 : demande de Boris (le geste de Scénarios s03, en Paralysie l05).
-Corrige aussi s03 : `scrollIntoView` posait le bloc SOUS les barres collées du Sas ; `descendreSousLesBarres` s'arrête
-dessous. `public/sas/{paralysie,scenarios}/app.js` et `verifier_correctifs_m0_sas` (vert).
+- « Répondre (n) » ne bougeait pas (Boris) : le flux de la réponse remplace aussi la carte racine (`8792f89`), sur la
+  proposition du poste fixe ; `verifier_discussions` § 9 (rouge sur l'image d'avant).
+- Un smiley et une résonance par personne et par message (Boris) : toucher le sien le retire, en toucher un autre le
+  REMPLACE (`672770f`). Deux migrations (dédoublonnage puis index unique (message, compte)) ; préprod : un smiley et
+  quatre résonances en double retirés, rien en production. 17 bancs verts ; `verifier_messagerie_carte` refait à huit
+  poseurs, le 🌱 d'Ugo et le ❤️ du poste fixe gardés. Les neuf bancs de sa liste rejoués sous la règle : verts ;
+  `compte_de_demonstration` pose ses sept résonances sur sept couples (message, compte) distincts : rien à changer.
+- #476 (Paralysie l05, descendre à la description sur mobile) fusionnée : `a1cdd5f`.
+- #477 (consignes « une par personne ») : le poste fixe peut la sortir du brouillon (commentaire dans la PR).
 
 ### 2026-10-23 · note à moi-même · #474 et #475 fusionnées — trois messages traités
 
