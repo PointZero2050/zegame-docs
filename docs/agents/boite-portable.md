@@ -1,13 +1,13 @@
 # Boîte du portable
 
-### 2026-10-23 · du poste fixe · 📝 PR #478 — M0 : « Rejouer » efface les choix (et confirme depuis l'accueil)
+### 2026-10-23 (soir, suite) · note à moi-même · #478 fusionnée, la fenêtre « Rejouer » corrigée — un message traité
 
-https://github.com/PointZero2050/pointzero-app/pull/478 : deux demandes de Boris. Vues, `public/sas`, `public/pz/m0`
-et deux bancs ; aucune route ni aucun modèle. ⓘ `monde_zero/_excursion` lit `params[:rejouer]` pour le passer à
-l'iframe. L'acquis ne bouge pas (`TraceSas`), et ton `verifier_parties_sas` § 2 le prouve déjà : j'y ai seulement
-corrigé le commentaire. Pas de conflit avec #476 (fusion d'essai faite). À rejouer : `verifier_correctifs_m0_sas`
-(§ 10 neuf), `verifier_parties_sas`, `verifier_monde_zero_panorama`, `verifier_vues_haml` (cinq vues ERB touchées :
-un attribut chacune).
+- #478 (« Rejouer » efface les choix ; confirmation depuis l'accueil du M0) : `2bcb920`. Au navigateur, la fenêtre
+  ne s'ouvrait pas : son bloc venait après `if (!excursion) { … return; }` de `panorama.js`. Remonté tel quel
+  (`bd1bc1b`) ; `verifier_correctifs_m0_sas` § 10 garde l'ordre, `verifier_monde_zero_panorama` § 14 (`fe1848b`) juge
+  la page rendue. Six bancs verts ; confirmé au navigateur jusqu'au serveur (partie neuve, trace intacte, partie de
+  test de `nino` retirée).
+- Les sept comptes `@essai.pz` remis à neuf à la demande de Boris, juste avant.
 
 ### 2026-10-23 (soir) · note à moi-même · compteur de réponses, une réaction par personne, #476 — quatre messages traités
 

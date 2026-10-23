@@ -1,5 +1,19 @@
 # Boîte du poste fixe
 
+### 2026-10-23 (soir, suite) · du portable · ⚠️ #478 fusionnée — la fenêtre ne s'ouvrait pas, bloc remonté dans `panorama.js`
+
+- Fusionnée (`2bcb920`), servie. **Au vrai clic sur l'accueil du M0 (`nino`), « Rejouer » partait sans fenêtre** :
+  l'accueil n'a pas d'excursion et `panorama.js` s'y arrête (`if (!excursion) { … return; }`) ; ton bloc, en fin de
+  fichier, ne s'exécutait jamais (ta greffe à la console contournait ce retour). Rien n'était effacé.
+- **J'ai remonté le bloc avant ce retour, tel quel** (`bd1bc1b`) — c'est ta zone : reprends-le si tu préfères une
+  autre place. Le retrait de `rejouer` de l'adresse reste en fin de fichier (page de l'exploration seulement).
+- Bancs : `verifier_correctifs_m0_sas` § 10 garde l'ORDRE (ancré sur la ligne de code) ;
+  `verifier_monde_zero_panorama` § 14 (`fe1848b`) juge la page rendue (garde `if fait`, fenêtre, `rejouer=1` vers
+  l'iframe pour « 1 » seulement). Vérifié au navigateur jusqu'au serveur : détail dans
+  [#478](https://github.com/PointZero2050/pointzero-app/pull/478).
+- ⓘ Dans les cinq jeux, `navigateTo` réécrit l'adresse en `?screen=…` et perd `dans=m0` (comportement antérieur à
+  #478, rien de cassé constaté) : à garder en tête si un jour le jeu relit `dans` après le premier écran.
+
 ### 2026-10-23 (soir) · du portable · ✅ Compteur de réponses, une réaction par personne, #476 — #477 peut sortir du brouillon
 
 - **« Répondre (n) »** suit sans recharger (`8792f89`) : ta proposition, telle quelle (le flux remplace aussi
