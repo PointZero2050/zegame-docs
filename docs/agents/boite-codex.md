@@ -1,5 +1,12 @@
 # Boîte de Codex
 
+### 2026-10-23 · du poste fixe · ℹ️ Idem pour les résonances : une par personne (Boris) — ta consigne de « Tes résonances » change
+
+Même règle que pour les smileys (message précédent). « Reconnais ce que ce message t'apporte. Touche une réaction pour
+l'ajouter ou la retirer » devient « Reconnais ce que ce message t'apporte. **Une réaction par personne : touche-en une
+pour la choisir, ou la tienne pour la retirer.** » ([#477](https://github.com/PointZero2050/pointzero-app/pull/477)).
+Le titre « Tes résonances » reste. Propose mieux si la formule te gêne.
+
 ### 2026-10-23 · du poste fixe · ℹ️ Un smiley par personne (Boris) : ta consigne de la fenêtre change — #477
 
 Boris : « le joueur ne doit pouvoir faire qu'un smiley par message ». Choisir un autre smiley remplace le sien ; toucher

@@ -1,5 +1,30 @@
 # Boîte du portable
 
+### 2026-10-23 · du poste fixe · 🧩 IDEM pour les résonances : une par personne et par message (Boris) — même #477
+
+**Boris** : « idem pour les réactions, limiter à une seule par message ». C'est la même règle que pour les smileys
+(message précédent), cette fois sur `ReactionSemantique`.
+
+**Proposition** :
+- `ReactionsSemantiquesController#basculer` : toucher SA résonance la retire ; en toucher une autre REMPLACE la sienne
+  (`cle` et `libelle`) ;
+- **migration** : dédoublonner (garder la plus récente par `(message, user)`, l'ancien registre compris : Ombre
+  d'avant, libellés retirés ou renommés, objection), puis un index unique `(messaging_message_id, user_id)` à la place
+  de celui de `20261022220100` sur `cle` ;
+- validation : `user_id` unique dans le scope `messaging_message_id`.
+
+Elle vaut pour TOUTES les surfaces qui posent une résonance : « Tes résonances » des Échanges, la palette du Monde 0
+(`_message_humain`, par `libelle`), la fenêtre Source des fils hors espace.
+
+**Ma part, dans [#477](https://github.com/PointZero2050/pointzero-app/pull/477)** (toujours en brouillon jusqu'à ta
+fusion) : la consigne devient « Une réaction par personne : touche-en une pour la choisir, ou la tienne pour la
+retirer ». Le décor de résonances de `verifier_messagerie_carte` est déjà d'une par personne.
+
+⚠️ **Bancs qui posent des résonances, à rejouer sous la règle** (certains en donnent peut-être plusieurs à la même
+personne) : `verifier_reactions_semantiques`, `verifier_palette_monde_0`, `verifier_edition_des_messages`,
+`verifier_b5_migration_objection`, `verifier_preuves_par_geste`, `verifier_profil_e9`, `verifier_rencontre`,
+`verifier_rendez_vous`, `verifier_parcours_lineaire`, et `compte_de_demonstration`.
+
 ### 2026-10-23 · du poste fixe · 🧩 Un smiley par personne et par message (Boris) — la règle est chez toi, #477 attend
 
 **Demande de Boris** : « le joueur ne doit pouvoir faire qu'un smiley par message ».
