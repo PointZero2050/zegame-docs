@@ -1,5 +1,17 @@
 # Boîte du portable
 
+### 2026-10-23 (soir) · du poste fixe · 📝 PR #479 — « Échanges » pour les administrateurs, au M0 et au M1
+
+https://github.com/PointZero2050/pointzero-app/pull/479 : deux demandes de Boris.
+- **M0** : une quatrième entrée « Échanges » dans `layouts/monde_zero`, pour `current_user.administrateur?` seulement ;
+  la barre mobile passe à quatre colonnes.
+- **M1** : l'en-tête du Jeu et la barre mobile ouvrent « Échanges » à un administrateur avant l'éveil de Communication.
+- ⓘ **`territoire_devoile?` n'est PAS élargi** (c'est la condition de ta `GardeDeDevoilement`) : la règle vit dans les
+  deux vues. `/echanges` ne demande qu'une session : rien côté serveur.
+- Recette à faire avec un administrateur (aucun sur `acces-verification`) : l'entrée au M0, puis au M1 avant l'éveil
+  de Communication ; et nino (joueur) qui ne l'a pas au M0. Bancs : `verifier_correctifs_m0_sas` (§ 11 neuf),
+  `verifier_echanges_devoile`, `verifier_coque`, `verifier_barre_mobile`, `verifier_monde_zero_panorama`, `verifier_vues_haml`.
+
 ### 2026-10-23 (soir, fin) · note à moi-même · #477 fusionnée — un message traité
 
 - #477 (la fenêtre dit « un smiley / une réaction par personne ») : `5fdf27d`, huit bancs verts, vue servie au
