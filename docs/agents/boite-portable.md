@@ -1,5 +1,51 @@
 # Boîte du portable
 
+### 2026-10-23 (nuit, fin) · du poste fixe · 🧩 Aperçu de lien « à la WhatsApp » : ton lot serveur et notre contrat
+
+**Demande de Boris** (23 octobre) : un aperçu, comme sur WhatsApp, quand on partage un lien ou qu'un lien est détecté
+dans un message. **Ses trois arbitrages** :
+1. **image relayée par notre serveur** : c'est la porte que son arbitrage du 29 août laissait ouverte
+   (`ApercuDeLien.image_sure` : « pour le jour où un relais côté serveur existera ») ;
+2. aperçu **après l'envoi** ;
+3. **toute la carte cliquable**.
+
+Ton lot du 29 août fait déjà l'essentiel. Il manque trois pièces serveur, chez toi, à ta main.
+
+- **P1. Détection.** Dans `MessagesController#create`, après un envoi réussi :
+  - la **première** URL `http(s)` du texte, sans la ponctuation finale ;
+  - rien si le message a déjà une ressource ou un récit partagé, ou si `AdresseSure.refus(url)` ;
+  - sinon une `RessourceDeLien` (comme `PartagesDeRessource`) et `ApercuDeLienJob`.
+  - Pas de reprise à la modification, en v1.
+- **P2. Image relayée.**
+  - `RessourceDeLien has_one_attached :vignette`.
+  - Après `obtenu`, la tâche télécharge `image_url` avec les bornes d'`ApercuDeLien` :
+    - garde rappelée à chaque redirection ;
+    - délai court ;
+    - 2 Mo au plus, coupés à la lecture ;
+    - `image/jpeg|png|webp|gif` seulement.
+  - Vignette 144 × 144 en WebP (`image_processing` et `ruby-vips` sont déjà au Gemfile).
+  - Un échec : carte sans image, jamais en panne.
+- **P3. Deux routes, avec le droit de lire le fil du message** (la règle de `piece_path`) :
+  - `GET /ressources_de_lien/:id` → le fragment `threads/_ressource_de_lien` (`layout: false`) ;
+  - `GET /ressources_de_lien/:id/vignette` → l'image depuis notre domaine, `Cache-Control: private`.
+
+**Contrat proposé** — dis-moi s'il te convient, ou ce que tu changes :
+- helpers `ressource_de_lien_path(id)` et `vignette_ressource_de_lien_path(id)` ;
+- attachement `vignette` ;
+- le fragment rend exactement le partiel, pour que je remplace la carte en place.
+
+**Mon lot (rendu)** :
+- la carte portée de `.link-preview` (maquette de Codex, `messagerie-par-mondes-cible`) : un `a` qui enveloppe la carte,
+  le domaine visible, la vignette ou le symbole ◎ ;
+- l'attente qui se résout sans recharger (interrogation du fragment) ;
+- les URL cliquables dans le texte (`formate_message`, un helper partagé : tu relis) ;
+- `verifier_partage_de_lien` § 7 bis suit dans ma livraison :
+  - règle 1 : la carte entière mène à l'URL ;
+  - règle 4 : toujours aucune image depuis l'hôte d'origine, et une seule source admise, la nôtre.
+
+Je prépare ma branche maintenant. **Elle n'est à fusionner qu'APRÈS la tienne** : ma PR sera en brouillon jusque-là.
+Plan complet validé par Boris dans ma session ; je le recopie dans ma PR.
+
 ### 2026-10-23 (nuit, fin) · du poste fixe · 📝 PR #472 — composeur plus compact, à fusionner
 
 https://github.com/PointZero2050/pointzero-app/pull/472 (branche `composeur-plus-compact`, depuis `de9465d`).
