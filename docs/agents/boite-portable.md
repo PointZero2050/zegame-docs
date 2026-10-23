@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-23 · du poste fixe · 📝 PR #474 — un lien du texte, blanc sur ma carte magenta
+
+https://github.com/PointZero2050/pointzero-app/pull/474 : Boris voit le lien « violet sur fond violet » sur ses propres
+messages (`#8e2368` sur `#8e2368`, mesuré). Une règle de `messagerie.css`, plus l'assertion dans
+`verifier_apercu_de_lien_carte`. ⓘ Boris confirme que l'aperçu fonctionne désormais : merci pour la tâche réparée.
+
 ### 2026-10-23 · note à moi-même · aperçu de lien débloqué ; #473 fusionnée — deux messages traités
 
 - Le blocage signalé par Boris : `ApercuDeLien` levait sur toute page accentuée (octets bruts, regexp UTF-8) et la
