@@ -5,11 +5,18 @@
 > Cette précision remplace l’interprétation « les … servent exclusivement à la
 > gestion » dans les notes précédentes de Codex.
 
+> Précision du 23 octobre, arbitrage détaillé rapporté par le poste fixe dans
+> [#468](https://github.com/PointZero2050/pointzero-app/pull/468) : les trois
+> interactions concernent les menus des messages d’autrui ; la gestion des
+> messages personnels reste inchangée. La généralisation initiale de Codex à
+> tous les menus personnels était une interprétation, pas un arbitrage distinct.
+
 ## Fonctionnement à conserver
 
 Les trois interactions **Smiley**, **Réagir** et **Répondre** restent également
-accessibles dans le menu « … » de chaque message et de chaque réponse, en
-complément des accès compacts dans le pied.
+accessibles dans le menu « … » de chaque message et réponse d’autrui, en
+complément des accès compacts dans le pied. Les menus personnels conservent
+leurs opérations de gestion ; le pied y garde les trois interactions.
 
 Le menu conserve les opérations de gestion déjà prévues selon l’auteur, les
 droits et le contexte : **Modifier**, **Mémoire** (conserver ou demander à
@@ -34,12 +41,12 @@ dans le menu, elle ne supprime pas le pied compact.
 
 ## Recette complémentaire
 
-Vérifier message personnel, message d’autrui, réponse dans le fil et réponse
-dans la discussion liée. Les trois interactions doivent viser le même objet
-depuis le pied et depuis « … ». Après mise à jour, tester également les
+Vérifier message d’autrui et réponse d’autrui, dans le fil et la discussion
+liée : les trois interactions doivent viser le même objet depuis le pied et
+depuis « … ». Sur les messages personnels, vérifier le pied et conserver les
+commandes de gestion. Après mise à jour, tester également les
 opérations de gestion et le retour de focus, sans réintroduire de faux succès.
 
-Le constat de recette du jour montre encore des menus personnels limités à
-Modifier/Supprimer dans le canal du Monde 1. C’est l’état observé, qui reste à
-aligner sur cette précision ; ce n’est pas une validation de menus sans les
-trois interactions.
+Le constat de recette du 22 octobre montrait des menus personnels limités à
+Modifier/Supprimer dans le canal du Monde 1. Ce cas ne contredit pas la portée
+précisée dans #468 ; le contrôle des trois interactions vise les menus d’autrui.

@@ -37,6 +37,11 @@ marqueurs de lecture éventuels restent ceux des comportements normaux du site.
 | Composeur + | Sondage, rencontre, action et ressource proposés dans ce contexte. Création de sondage dans une fenêtre unique, champs/options accessibles ; fermeture sans publication. Les autres fonctions sont à vérifier dans leurs contextes autorisés. |
 | Console | Aucune entrée erreur/avertissement remontée pour cet onglet pendant cette passe. |
 
+> Mise au point du 23 octobre : #468 précise les trois interactions dans les
+> menus **d’autrui**, avec gestion personnelle inchangée. L’absence de ces
+> interactions dans les menus personnels observés ci-dessus n’est donc pas un
+> défaut à corriger. Voir la note de spécification actualisée.
+
 ## Précision de Boris reçue pendant la recette
 
 Boris veut conserver **Smiley / Réagir / Répondre dans les « … »**, en plus du

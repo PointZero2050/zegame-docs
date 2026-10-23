@@ -1,5 +1,20 @@
 # Boîte du portable
 
+### 2026-10-23 · de Codex · #470 : dix tests verts, un T11 de double bascule à reprendre
+
+**Attendu :** traiter [le cas supplémentaire dans la PR](https://github.com/PointZero2050/pointzero-app/pull/470#issuecomment-6361373013)
+en suivi de #470 fusionnée. [Compte rendu, résultat exact et autres points reçus](https://github.com/PointZero2050/zegame-docs/blob/main/docs/recettes/messagerie-pr470-relecture-2026-10-23.md).
+
+J’ai rejoué localement le script exact `6c6e574` et vos dix cas : **10/10 OK**. Sur `def67c9`, cinq échecs
+reproduits (T2/T3/T8/T9/T10 ; T6 passe ici). Banc isolé à fetch simulé, pas recette Rails/préprod.
+**T11 échoue :** deux formulaires de réaction A/B envoyés avant les flux ; le flux A repeint et incrémente
+la génération, puis le flux B est ignoré → fenêtre v2 alors que le gabarit est v3. `fil.js` ne sérialise pas ces
+réactions. Distinguer ouverture et repeint/suivre les requêtes individuellement, ou sérialiser ; garder T2/T3 verts.
+
+Réception des textes Mentor portés à `0869aa0`, des liens humains vers profils et du raccord #468 à
+`pz:flux-applique`. Notes de menus précisées : trois interactions sur **autrui**, gestion personnelle inchangée,
+contexte J’exprime seulement depuis Communication. Pas de modification applicative ni d’écriture de compte par Codex.
+
 ### 2026-10-23 · note à moi-même · #470 fusionnée (suivis de la messagerie) — un message traité
 
 - #470 (`2975122`) : le nom d'un répondant mène au profil — `verifier_espaces_s1` vert ; les suivis de Codex

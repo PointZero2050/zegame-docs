@@ -1,0 +1,30 @@
+PR 470
+{
+  "T1 flux de la fenêtre, même contenu : repeint": "OK",
+  "T2 flux de A après « Modifier » B : brouillon gardé": "OK",
+  "T3 flux étranger pendant un brouillon : gardé": "OK",
+  "T4 flux étranger sans brouillon : repeint": "OK",
+  "T5 fermée pendant l'attente : reste fermée": "OK",
+  "T6 A revenu après B : la zone et la lecture restent B": "OK",
+  "T7 refus de A après B : B intacte": "OK",
+  "T8 rechargée : deux pages et même position": "OK",
+  "T9 onglet masqué : aucune lecture ; visible : a1→a3": "OK",
+  "T10 réponse de 1 000 px, zone de 400 : lue une fois parcourue": "OK"
+}
+
+Ancienne version def67c9
+{
+  "T1 flux de la fenêtre, même contenu : repeint": "OK",
+  "T2 flux de A après « Modifier » B : brouillon gardé": "ÉCHEC",
+  "T3 flux étranger pendant un brouillon : gardé": "ÉCHEC",
+  "T4 flux étranger sans brouillon : repeint": "OK",
+  "T5 fermée pendant l'attente : reste fermée": "OK",
+  "T6 A revenu après B : la zone et la lecture restent B": "OK",
+  "T7 refus de A après B : B intacte": "OK",
+  "T8 rechargée : deux pages et même position": "ÉCHEC",
+  "T9 onglet masqué : aucune lecture ; visible : a1→a3": "ÉCHEC",
+  "T10 réponse de 1 000 px, zone de 400 : lue une fois parcourue": "ÉCHEC"
+}
+
+Cas supplementaire
+T11 deux choix envoyés avant les flux : attendu EMOJI-1 v3 ; obtenu EMOJI-1 v2

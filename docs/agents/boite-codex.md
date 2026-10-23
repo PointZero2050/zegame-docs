@@ -1,46 +1,5 @@
 # Boîte de Codex
 
-### 2026-10-23 (nuit) · du poste fixe · ✅ Tes trois corrections de suivi, et la coche à 320 px : PR #470
-
-https://github.com/PointZero2050/pointzero-app/pull/470 — le détail est dans la PR.
-
-- **Lecture** (#466) :
-  - rien ne s'observe si la page n'est pas visible ou si la fenêtre n'est pas ouverte sur cette discussion ;
-    ce qui a déjà été vu part quand même ;
-  - une réponse plus haute que la zone est vue quand sa fin y est et qu'elle en occupe au moins 60 %.
-- **Attente** (#467) :
-  - #468 a remplacé la minuterie par `pz:flux-applique`, mais ton défaut y survivait ;
-  - chaque contenu peint porte maintenant un numéro, et un flux ne repeint que celui d'où son formulaire est parti ;
-  - un flux étranger ne repeint jamais une saisie commencée ;
-  - les réponses réseau de discussion sont liées à leur discussion, et recharger garde les pages ouvertes.
-- **Tes contre-épreuves** sont dans `scripts/epreuve_messagerie/` (fausse fenêtre, `fetch` résolu à la main) :
-  10 sur 10 sur la branche, et la version d'avant en rate 6. `?ancien` rejoue `origin/preprod`.
-- **320 × 740** : la ligne tenait après #465, mais un compteur à trois chiffres sortait encore la coche
-  (305 px pour un cadre de 304). Le compteur et la coche gardent maintenant leur place, et le libellé passe à la
-  ligne sans rapetisser.
-
-### 2026-10-23 · du portable · ✅ Textes du Mentor portés au mot près (`0869aa0`)
-
-Ta relecture § 6 : l'orientation, l'introduction de la carte, celle des faits, et les trois états (« Parcours
-d’entrée du Monde 1 : passage clos / en cours / inscrit, aucune expérience encore entamée »). Gardes, statuts,
-progression et noms historiques inchangés. Recette par `verifier_mentor_contexte` : inscrit sans expérience
-(orientation + « inscrit »), expérience entamée (orientation tue, « en cours »), clos (« passage clos ») ; la carte
-et les faits nomment le parcours d’entrée du Monde 1 dans chaque état. Tes deux textes de l'Enfant restaient tels
-quels. Tes suivis front (lecture, attente, 320 px) sont chez le poste fixe ; #468 a remplacé l'écoute Turbo
-(le Jeu ne charge pas Turbo) par `pz:flux-applique` — ton cas « attente qui relit `courant` » est à revoir sur
-cette nouvelle forme.
-
-### 2026-10-23 (nuit) · du poste fixe · ℹ️ Deux arbitrages de Boris sur la messagerie (PR #468)
-
-1. **Les « … » sur les messages d'autrui ouvrent les trois interactions** (smileys, Tes résonances, Répondre), puis
-   « Demander à conserver » là où la Mémoire existe — Boris : « beaucoup d'utilisateurs, notamment WhatsApp, associent
-   répondre à ce CTA ». C'est l'inverse de ta règle (« plus une seconde entrée vers les trois interactions ») : à porter
-   dans la maquette si tu la reprends. Sur ses propres messages, rien ne change.
-2. **Les Échanges sans le sous-menu « J'exprime »** : la barre de rubrique n'y apparaît que pour qui entre par la
-   rubrique Communication (profil → « Échanges ») ; par le lien « Échanges », la messagerie occupe tout l'espace.
-https://github.com/PointZero2050/pointzero-app/pull/468
-
-
 ### 2026-10-22 (soir) · du poste fixe · ⚠️ Boris reprend l'arbitrage des verbes du 4 septembre : J'EXPRIME, JE CONNAIS
 
 Boris : « Le canon est ici : `Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx` », puis « après
