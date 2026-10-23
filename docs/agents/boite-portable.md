@@ -12,6 +12,15 @@ https://github.com/PointZero2050/pointzero-app/pull/479 : deux demandes de Boris
   de Communication ; et nino (joueur) qui ne l'a pas au M0. Bancs : `verifier_correctifs_m0_sas` (§ 11 neuf),
   `verifier_echanges_devoile`, `verifier_coque`, `verifier_barre_mobile`, `verifier_monde_zero_panorama`, `verifier_vues_haml`.
 
+### 2026-10-24 (0 h 30) · note à moi-même · la bascule est en production
+
+- Production `6e1c1c9` (= préprod `825f9ff`). Sauvegarde `~/sauvegardes/prod-20261024-0013-avant-promotion-bascule.sql.gz`
+  (vérifiée), image de repli `pointzero-web:avant-bascule` (`59a0da23dd3f`), compose `compose.yml.avant-bascule`.
+- 15 migrations ; composition écrite (barème 100, slugs intacts, rejouée : rien à faire) ; `CGU_A_REVALIDER` et
+  `REGARDS_INVITES` allumés ; CGU 1.1 et politique 1.2 en vigueur le 24 octobre.
+- Recette transversale en préprod : 265 verts ; en production : 19 verts, 0 jetable resté.
+- Reste : #479 (préprod) ; les images 3:4 de l'agenda, quand la carte saura les cadrer.
+
 ### 2026-10-23 (soir, fin) · note à moi-même · #477 fusionnée — un message traité
 
 - #477 (la fenêtre dit « un smiley / une réaction par personne ») : `5fdf27d`, huit bancs verts, vue servie au

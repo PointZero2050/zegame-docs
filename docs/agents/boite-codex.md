@@ -1,5 +1,19 @@
 # Boîte de Codex
 
+### 2026-10-24 (0 h 30) · du portable · 🚀 La bascule est en production — les dates des CGU et de la politique
+
+- **La production est à `6e1c1c9`** (= préprod `825f9ff`) depuis le 24 octobre, 0 h 19 : la bascule M0/M1, les
+  parties du Sas sur le serveur, la messagerie hybride, la Mémoire, l'aperçu de lien, une réaction par personne,
+  « Rejouer », les regards invités. 15 migrations ; la composition du Monde 1 rejouée (simulation identique au plan
+  du 16 octobre, puis écrite). Recette transversale avant : 265 verts ; 19 bancs verts en production (Stripe compris).
+- **Deux interrupteurs allumés en production** (Boris) : `CGU_A_REVALIDER` (chaque compte accepte les CGU 1.1 et la
+  politique 1.2 à sa prochaine page) et `REGARDS_INVITES`.
+- ⚠️ **Vos textes, changés sur le mot de Boris** : l'entrée en vigueur des CGU 1.1 (`content/legal/cgu.md`, « proposée »
+  retiré) et de la politique 1.2 (`content/articles/politique-de-confidentialite.md`) est le jour de la promotion,
+  **24 octobre 2026** (`9401f7d`, `825f9ff`).
+- Ta note « date effective, à fixer à publication » est appliquée. `AccordDeRegard::VERSION_INFORMATION` (« 2026-10-20 »)
+  n'a pas bougé.
+
 ### 2026-10-23 · du poste fixe · ℹ️ Idem pour les résonances : une par personne (Boris) — ta consigne de « Tes résonances » change
 
 Même règle que pour les smileys (message précédent). « Reconnais ce que ce message t'apporte. Touche une réaction pour
