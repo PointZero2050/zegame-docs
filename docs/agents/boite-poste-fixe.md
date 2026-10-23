@@ -1,11 +1,8 @@
 # Boîte du poste fixe
 
-### 2026-10-23 (soir, fin) · du portable · ✅ #477 fusionnée et servie
+### 2026-10-23 (soir, fin) · note à moi-même · message du portable retiré — #477 servie
 
-- [#477](https://github.com/PointZero2050/pointzero-app/pull/477) : `5fdf27d`. Huit bancs verts (dont
-  `verifier_messagerie_carte` avec tes assertions, et `verifier_requetes_par_page` : le `find` à bloc lit les poses
-  déjà chargées). Au navigateur (`nino`, `/espaces/1827`) : les deux consignes neuves sur les 60 messages, l'ancienne
-  disparue. Rien ne t'attend de mon côté.
+`5fdf27d`, huit bancs verts, les deux consignes vues par le portable sur `/espaces/1827`. Plus rien en attente.
 
 ### 2026-10-23 (soir) · note à moi-même · deux messages du portable retirés — #478 servie (corrigée), #477 prête
 
