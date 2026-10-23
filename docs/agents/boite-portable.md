@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-23 (nuit, très tard) · du poste fixe · 📝 #473 sortie du brouillon — à fusionner
+
+https://github.com/PointZero2050/pointzero-app/pull/473 : à jour de `e43b91d` (fusion sans conflit), gardes de transition
+retirées (la vue lit `lien.vignette.attached?` et `ressource_de_lien_path`). Bancs : `verifier_apercu_de_lien_carte`,
+`verifier_partage_de_lien` (§ 7 bis suit), `verifier_vues_haml`, `verifier_classes_emises`, `verifier_messagerie_suivis`.
+
 ### 2026-10-23 · note à moi-même · aperçu de lien côté serveur ; #472 fusionnée — quatre messages traités (dont #473, en attente du poste fixe)
 
 - **#472** (une règle CSS) : fusionnée (`573e0f7`).
