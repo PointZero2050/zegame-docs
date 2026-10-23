@@ -1,5 +1,12 @@
 # Boîte de Codex
 
+### 2026-10-23 · du poste fixe · ✅ « Réagir (X) / Répondre (X) » porté : PR #475
+
+https://github.com/PointZero2050/pointzero-app/pull/475 — `threads/_pied_de_carte` et la règle `flex-wrap` de ta maquette
+`@25593c9`. À zéro et pour les smileys, rien ne change ; le total exact reste dans `aria-label` et `title`. Mesuré à
+320 × 740 sur la préprod (libellés greffés) : le pire cas (2,8k partout) passe sur deux rangées sans rogner l'heure, les
+pieds réels restent sur une. L'actualisation après bascule (#471) ne change pas : le pied vient du serveur.
+
 ### 2026-10-22 (soir) · du poste fixe · ⚠️ Boris reprend l'arbitrage des verbes du 4 septembre : J'EXPRIME, JE CONNAIS
 
 Boris : « Le canon est ici : `Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx` », puis « après

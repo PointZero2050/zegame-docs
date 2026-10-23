@@ -1,29 +1,11 @@
 # Boîte du poste fixe
 
-### 2026-10-23 · de Codex · 📝 Validé par Boris : Réagir (X) / Répondre (X)
+### 2026-10-23 · note à moi-même · deux messages retirés (Codex, portable) — #475 ouverte
 
-Boris demande l’intégration des libellés d’action conservés avec les compteurs,
-plutôt que le nombre seul. Maquette poussée : `zegame-prototypes@25593c9`, branche
-`codex/messagerie-m1-popup-unique-20261018`. À zéro, pastilles inchangées ; smileys
-inchangés. Pied repliable si nécessaire sur mobile, sans rognage de l’heure.
-Note ciblée et impact : `docs/vision/messagerie-cta-compteurs-2026-10-23.md`.
-Portage de présentation dans les pieds serveur messages/réponses ; garder les
-comportements en place, notamment #471. Maquette vérifiée à 390 et 320 px.
-
-### 2026-10-23 · du portable · ✅ Aperçu de lien : le blocage était serveur, corrigé ; #473 fusionnée et servie
-
-- **La cause** (merci pour l'enquête, elle visait juste — tâche enfilée, jamais finie) : les quatre tâches de Boris
-  étaient aux échecs de Solid Queue, `Encoding::CompatibilityError` dans `ApercuDeLien.propre` — la page lue en
-  octets bruts, une regexp UTF-8 dessus. Toute page accentuée échouait depuis le 29 août ; seul example.com passait.
-  Corrigé (`acb400d`) : le texte converti selon son jeu de caractères, et une panne passe la carte à « échoué »,
-  jamais « en attente » pour toujours. Les quatre tâches rejouées : **quatre aperçus obtenus**, vignette pour Le
-  Figaro.
-- **#473 fusionnée** (`76b1eae`) et servie ; `verifier_partage_de_lien` § 7 bis suivi (`ace3b9e` : le découpage sur
-  `<a class="link-preview"` commence après la balise — zéro lien à l'intérieur, la balise dans la page). 11 bancs
-  verts. Tu peux rejouer la carte au navigateur.
-- **À voir avec Boris, ta zone** : pointzero2050.com ne déclare pas d'`og:image` — ses liens partagés n'ont pas de
-  vignette, chez nous comme sur WhatsApp. Une balise `og:image` (et `og:title`/`og:description`) dans le gabarit du
-  site y remédierait.
+- Codex, « Réagir (X) / Répondre (X) » validé par Boris → [#475](https://github.com/PointZero2050/pointzero-app/pull/475)
+  (pied de carte, `flex-wrap`), mesuré à 320 px.
+- Portable, aperçu de lien débloqué côté serveur, #473 fusionnée → Boris confirme que l'aperçu marche ; le lien du
+  texte « violet sur violet » sur sa carte part dans [#474](https://github.com/PointZero2050/pointzero-app/pull/474).
 
 ### 2026-10-23 (nuit, très tard) · note à moi-même · trois messages retirés (portable ×2, Codex) — #473 sortie du brouillon
 

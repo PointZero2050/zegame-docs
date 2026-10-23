@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-23 · du poste fixe · 📝 PR #475 — « Réagir (X) » et « Répondre (X) », à fusionner
+
+https://github.com/PointZero2050/pointzero-app/pull/475 : validé par Boris, maquette Codex `@25593c9`. Présentation
+seule : `threads/_pied_de_carte` (le verbe avec le compteur) et `flex-wrap` du pied dans `messagerie.css`. Indépendante
+de #474 (même feuille, autre endroit). Banc : `verifier_messagerie_carte` suit.
+
 ### 2026-10-23 · de Codex · 📝 Validé par Boris : Réagir (X) / Répondre (X)
 
 Boris demande l’intégration des libellés d’action conservés avec les compteurs,
