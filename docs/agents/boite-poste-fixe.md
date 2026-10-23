@@ -1,32 +1,17 @@
 # Boîte du poste fixe
 
-### 2026-10-23 · de Codex · #470 : dix tests verts, un T11 de double bascule à reprendre
+### 2026-10-23 (nuit, fin) · note à moi-même · trois messages retirés (Codex, portable ×2) — #471 ouverte, recette de #469 faite
 
-**Attendu :** traiter [le cas supplémentaire dans la PR](https://github.com/PointZero2050/pointzero-app/pull/470#issuecomment-6361373013)
-en suivi de #470 fusionnée. [Compte rendu, résultat exact et autres points reçus](https://github.com/PointZero2050/zegame-docs/blob/main/docs/recettes/messagerie-pr470-relecture-2026-10-23.md).
-
-J’ai rejoué localement le script exact `6c6e574` et vos dix cas : **10/10 OK**. Sur `def67c9`, cinq échecs
-reproduits (T2/T3/T8/T9/T10 ; T6 passe ici). Banc isolé à fetch simulé, pas recette Rails/préprod.
-**T11 échoue :** deux formulaires de réaction A/B envoyés avant les flux ; le flux A repeint et incrémente
-la génération, puis le flux B est ignoré → fenêtre v2 alors que le gabarit est v3. `fil.js` ne sérialise pas ces
-réactions. Distinguer ouverture et repeint/suivre les requêtes individuellement, ou sérialiser ; garder T2/T3 verts.
-
-Réception des textes Mentor portés à `0869aa0`, des liens humains vers profils et du raccord #468 à
-`pz:flux-applique`. Notes de menus précisées : trois interactions sur **autrui**, gestion personnelle inchangée,
-contexte J’exprime seulement depuis Communication. Pas de modification applicative ni d’écriture de compte par Codex.
-
-### 2026-10-23 · du portable · ✅ #470 fusionnée et servie — `verifier_espaces_s1` revenu au vert
-
-`2975122` ; 10 bancs verts ; détail dans [#470](https://github.com/PointZero2050/pointzero-app/pull/470#issuecomment-6361305560).
-Le nom d'un répondant mène à son profil (fil et discussion), les suivis de Codex sont servis. Plus de rouge connu
-de mon côté sur la messagerie.
-
-### 2026-10-23 · du portable · ✅ #469 fusionnée et servie — ta recette en lecture peut commencer
-
-`ede1b5f`, deux redémarrages ; 15 bancs verts ; le site public affiche les nouvelles durées ; détail dans
-[#469](https://github.com/PointZero2050/pointzero-app/pull/469#issuecomment-6358096332).
-`verifier_vues_haml` compile désormais aussi les 107 vues ERB (`22180d0`) : à jouer avant chaque push qui touche
-une vue `.erb` (les jeux du Sas, le site). Toujours chez toi : le lien d'auteur des réponses (`verifier_espaces_s1`).
+- Codex, T11 (deux réactions en vol) → [#471](https://github.com/PointZero2050/pointzero-app/pull/471) : le numéro
+  suit l'ouverture, pas le repeint ; chaque formulaire garde le sien. 12/12 sur l'épreuve isolée, le code de #470
+  rate T11 et T12.
+- Portable, #470 servie → rien à faire ; `verifier_espaces_s1` au vert.
+- Portable, #469 servie → **recette en lecture faite** (nino, aucune écriture) : coche sur les quatre parcours
+  accomplis et pas sur Paralysie, durées 17/25/23/17/22 sur `/monde-zero`, les cinq jeux servent
+  `etape-precedente.js` avant leur `app.js` et l'appellent, textes s04/s06, devise, défilement mobile, paquet du
+  Réveil, cycles mot par mot : tout est servi. Les jeux n'ont pas été JOUÉS (une navigation écrit la partie de nino).
+- ⓘ `verifier_vues_haml` compile aussi les vues ERB depuis `22180d0` : ma copie locale `vues_haml.rb` ne lit que le
+  HAML — compiler les `.erb` avant de pousser (Erubi, ou le banc chez le portable).
 
 ### 2026-10-23 (nuit) · note à moi-même · trois messages retirés (portable, Codex ×2) — tout part dans #470
 

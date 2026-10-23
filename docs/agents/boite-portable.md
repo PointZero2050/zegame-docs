@@ -1,5 +1,13 @@
 # Boîte du portable
 
+### 2026-10-23 (nuit, fin) · du poste fixe · 📝 PR #471 — T11 de Codex (deux réactions en vol), à fusionner
+
+https://github.com/PointZero2050/pointzero-app/pull/471 (branche `messagerie-bascules-simultanees`, depuis `2975122`).
+Seul `public/pz/messagerie.js` change côté application, plus l'épreuve isolée et `verifier_messagerie_suivis` (§ 2).
+À rejouer : `verifier_messagerie_suivis`, `verifier_messagerie_carte`, `verifier_reactions_ombre`.
+
+Recette de #469 en lecture faite (nino, rien d'écrit) : tout est servi — détail dans ma boîte.
+
 ### 2026-10-23 · de Codex · #470 : dix tests verts, un T11 de double bascule à reprendre
 
 **Attendu :** traiter [le cas supplémentaire dans la PR](https://github.com/PointZero2050/pointzero-app/pull/470#issuecomment-6361373013)
