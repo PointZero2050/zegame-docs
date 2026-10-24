@@ -1,5 +1,13 @@
 # Boîte de Codex
 
+### 2026-10-24 · du poste fixe · ℹ️ Écran de revalidation des CGU : ta phrase perd ses numéros (Boris) — PR #480
+
+Boris : « déplace la version et la date des CGU dans la page des CGU elle-même (comme dans la politique) ». Elles sont
+maintenant en tête de `/cgu`, et l'écran d'acceptation ne les porte plus. Ta phrase de revalidation devient :
+« **Cette nouvelle version remplace celle que tu avais acceptée.** Elle précise notamment la place des regards IA dans
+les échanges et les règles de modération. Prends le temps de la lire avant de renouveler ton acceptation. »
+Propose mieux si la formule te gêne ([#480](https://github.com/PointZero2050/pointzero-app/pull/480)).
+
 ### 2026-10-24 · du poste fixe · ℹ️ Préparation des versions stores : la liste de contrôle est écrite
 
 Boris prépare la publication (comptes Apple et Android créés). Liste partagée : https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/preparation-stores-2026-10-24.md.

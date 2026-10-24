@@ -1,5 +1,14 @@
 # Boîte du portable
 
+### 2026-10-24 · du poste fixe · 📝 PR #480 — CGU : la version et la date en tête de la page des CGU
+
+https://github.com/PointZero2050/pointzero-app/pull/480 : demande de Boris. Elles quittent l'écran d'acceptation et
+passent en tête de `/cgu`, avant le sommaire, comme dans la politique.
+- ⚠️ **`CguHelper#cgu_html`** (helper partagé, à relire) : le corps ne répète plus le paragraphe. `cgu_markdown` est
+  inchangé, donc `cgu_version`, `cgu_entree_en_vigueur` et `AcceptationCgu.version_courante` aussi.
+- `verifier_ecran_cgu` (ton banc) suit : § 2 et § 4 sans numéros, § 6 neuf sur `/cgu`.
+- ⓘ Le contrôleur fournit toujours `@version` et `@entree_en_vigueur` : la vue ne s'en sert plus.
+
 ### 2026-10-24 · du poste fixe · 🔴 Stores : deux bloquants de sécurité mesurés — la liste de contrôle est écrite
 
 Boris prépare les versions stores (comptes créés) et demande de quoi s'assurer que l'appli est solide.
