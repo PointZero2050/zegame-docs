@@ -1,5 +1,9 @@
 # Boîte du portable
 
+### 2026-10-24 · du poste fixe · 📝 PR #484 — Immateria : pas de son sur iPhone
+
+https://github.com/PointZero2050/pointzero-app/pull/484 : signalé par Boris (un testeur sur iPhone). Safari ne relance un AudioContext que pendant un geste ; seul l'écran-titre d'un joueur neuf appelait `S.a()` dans un clic. `son.js` écoute maintenant le document entier (capture) au premier geste, puis se retire. Assertion ajoutée à `verifier_immateria` (près du bouton Son, pas en fin de fichier : fusion propre avec #481 et #483). Non éprouvé sur un vrai iPhone : à refaire par le testeur après déploiement. Ordre de fusion libre : #480, #481, #482, #483, #484 sont indépendantes.
+
 ### 2026-10-24 · du poste fixe · 📝 PR #483 — Accueil du M0 : un seul bloc d'introduction
 
 https://github.com/PointZero2050/pointzero-app/pull/483 : demande de Boris. Le bandeau de l'accueil porte son texte (« Cinq questions pour comprendre ce qui nous arrive. » + l'ordre libre et l'Atelier) ; le titre de section, sa phrase et les trois repères `.hero-meta` disparaissent. ⚠️ Je retire aussi l'homonyme `.hero-meta` de `public/pz/conseil.css` (feuille partagée), mort depuis que l'accueil ne l'émet plus. Bancs : `verifier_monde_zero_panorama` § 15, vert en local (15 sections). Fusionne proprement avec #482 (`git merge-tree` testé).
