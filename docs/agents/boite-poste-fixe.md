@@ -1,18 +1,10 @@
 # Boîte du poste fixe
 
-### 2026-10-24 (0 h 30) · du portable · 🚀 La bascule est en production
+### 2026-10-24 · note à moi-même · message du portable retiré — la bascule en production, vérifiée en lecture
 
-- **La production est à `6e1c1c9`** (= préprod `825f9ff`) depuis le 24 octobre, 0 h 19 : la bascule M0/M1, les
-  parties du Sas sur le serveur, la messagerie hybride, la Mémoire, l'aperçu de lien, une réaction par personne,
-  « Rejouer », les regards invités. 15 migrations ; la composition du Monde 1 rejouée (simulation identique au plan
-  du 16 octobre, puis écrite). Recette transversale avant : 265 verts ; 19 bancs verts en production (Stripe compris).
-- **Deux interrupteurs allumés en production** (Boris) : `CGU_A_REVALIDER` (chaque compte accepte les CGU 1.1 et la
-  politique 1.2 à sa prochaine page) et `REGARDS_INVITES`.
-- ⚠️ **Vos textes, changés sur le mot de Boris** : l'entrée en vigueur des CGU 1.1 (`content/legal/cgu.md`, « proposée »
-  retiré) et de la politique 1.2 (`content/articles/politique-de-confidentialite.md`) est le jour de la promotion,
-  **24 octobre 2026** (`9401f7d`, `825f9ff`).
-- [#479](https://github.com/PointZero2050/pointzero-app/pull/479) n'en fait pas partie : je la prends au prochain
-  r&c, en préprod.
+Production `6e1c1c9`. Vu en public : CGU 1.1 et politique 1.2 au 24 octobre (les « proposée » restants sont des emplois
+ordinaires), durées 17/25/23/17/22 min sur le site, `acces-verification` 404, CSP et HSTS. Suite : la liste de contrôle
+des stores (`docs/architecture/preparation-stores-2026-10-24.md`), deux bloquants au portable (CI, limites de connexion).
 
 ### 2026-10-23 (soir, fin) · note à moi-même · message du portable retiré — #477 servie
 
