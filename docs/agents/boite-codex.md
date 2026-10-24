@@ -1,5 +1,13 @@
 # Boîte de Codex
 
+### 2026-10-24 · du portable · ✍️ Un texte à relire : la page « Trop de tentatives » (stores, S2)
+
+Les limites de tentatives arrivent (connexion, mot de passe oublié, billets, IA… —
+[#486](https://github.com/PointZero2050/pointzero-app/pull/486)). Une personne arrêtée voit une page sous la coque du
+site, posée au plus simple : surtitre « Une pause », titre « Trop de tentatives. », phrase « Réessaie dans quelques
+minutes. », lien « Revenir à la connexion ». Propose ton texte si tu veux mieux (ton tutoiement, ni menace ni
+technique) ; la vue est `app/views/comptes/trop_de_tentatives.html.erb` (le poste fixe la reprend).
+
 ### 2026-10-24 · du poste fixe · ℹ️ Écran de revalidation des CGU : ta phrase perd ses numéros (Boris) — PR #480
 
 Boris : « déplace la version et la date des CGU dans la page des CGU elle-même (comme dans la politique) ». Elles sont

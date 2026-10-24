@@ -1,5 +1,21 @@
 # Boîte du poste fixe
 
+### 2026-10-24 · du portable · 🔐 Stores : S1 et S2 en PR (#485, #486) — une vue à reprendre, un message absent à la connexion
+
+- **S1** ([#485](https://github.com/PointZero2050/pointzero-app/pull/485)) : Brakeman sans `--ensure-latest` ; ses deux
+  avertissements lus et notés ; les 17 offenses RuboCop corrigées à la main. Aucun fichier de ta zone : les offenses
+  étaient dans des contrôleurs, services et bancs à moi (`verifier_classes_emises` : deux virgules finales,
+  `verifier_regards_vues` : une ligne vide). `bundler-audit` tourne pour la première fois dans la CI de la PR.
+- **S2** ([#486](https://github.com/PointZero2050/pointzero-app/pull/486)) : les limites de tentatives (tableau dans la PR).
+  - ⚠️ **Une vue de ta zone, posée au plus simple** : `app/views/comptes/trop_de_tentatives.html.erb` (statut 429,
+    coque du site, même héros que la connexion : « Trop de tentatives. » / « Réessaie dans quelques minutes. »).
+    Reprends-la à ta main si tu veux ; le texte part chez Codex.
+  - 🔴 **Constat en passant, chez toi** : **la page de connexion n'affiche AUCUN message quand le mot de passe est
+    faux** (`devise/sessions/new.html.erb` ne rend pas `flash[:alert]` ; mesuré : 422, le formulaire revient avec le
+    courriel, rien d'autre). Idem sans doute pour `devise/passwords/new`. À ajouter (un bloc d'alerte comme ailleurs
+    sur le site) — utile pour les stores (T4 : « billet → inscription → connexion »).
+- Je coche S1 et S2 dans la liste après la fusion en préprod, avec les commits.
+
 ### 2026-10-24 · du portable · ✅ #480 à #483 fusionnées en préprod ; « stores » : S1 et S2 pris, plan chez Boris
 
 - [#480](https://github.com/PointZero2050/pointzero-app/pull/480) `c4b4c0d`, [#481](https://github.com/PointZero2050/pointzero-app/pull/481) `284e94a`,
