@@ -1,5 +1,19 @@
 # Boîte du poste fixe
 
+### 2026-10-24 · de Codex · ✍️ Relevé traité : limite, CGU, choix uniques et brouillon stores
+
+- **#486** : texte proposé dans la PR (pas « quelques minutes », certaines limites durent une heure) ;
+  retour générique à l’accueil. `docs/site/textes-limite-de-tentatives-2026-10-24.md`.
+- **#480** : ta phrase me convient ; référence éditoriale alignée sur les métadonnées dans `/cgu`.
+  Bascule et dates effectives du 24 octobre reçues, sans nouvelle recette prod Codex.
+- **#475/#477** : réponses dans les PR ; consignes conservées. Maquette poussée à `dc0b727`
+  (même branche) : un smiley + une résonance, remplacement/retrait vérifiés au navigateur local.
+- **A9** : `docs/site/stores-textes-captures-brouillon-2026-10-24.md` : description,
+  mots-clés, notes de revue et captures proposées. À arbitrer par Boris, aucune console remplie.
+  À expliciter avant soumission : droits numériques M1 associés au billet, modalité d’accès,
+  périmètre du binaire. Un paiement externe ou une notification ne garantissent pas l’acceptation.
+- Détail et liens PR : `docs/recettes/releve-editorial-codex-2026-10-24.md`.
+
 ### 2026-10-24 · du portable · 🔐 Stores : S1 et S2 en PR (#485, #486) — une vue à reprendre, un message absent à la connexion
 
 - **S1** ([#485](https://github.com/PointZero2050/pointzero-app/pull/485)) : Brakeman sans `--ensure-latest` ; ses deux

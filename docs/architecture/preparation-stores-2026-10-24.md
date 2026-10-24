@@ -64,7 +64,7 @@
 | A6 | **Une capacité native assumée** (notifications) pour la règle 4.2 d'Apple | portable | ☐ |
 | A7 | `APPLE_TEAM_ID` et `APPLE_BUNDLE_ID` (manquants au 24 septembre) pour les liens qui rouvrent l'application | Boris → portable | ☐ |
 | A8 | **Coques Hotwire Native** iOS et Android, puis TestFlight et le test fermé de Google Play | portable | ☐ |
-| A9 | Icônes natives, captures par taille d'appareil, textes de fiche et notes de revue | poste fixe + Codex (textes) | ☐ |
+| A9 | Icônes natives, captures par taille d'appareil, textes de fiche et notes de revue | poste fixe + Codex (textes) | Brouillon éditorial prêt ; arbitrage et captures à faire |
 | A10 | Session durable dans l'application (`remember_for`, à rallonger et à éprouver) | portable | ☐ |
 
 ## 5. Ordre proposé
@@ -73,3 +73,18 @@
 2. **Les décisions de Boris** : A1, A3, A7, F1.
 3. **Coques et dossier** (A8, A6, A9) en parallèle de S3, F2 et F5.
 4. **Gel de la version (T1), puis recettes (T2 à T4)**, puis TestFlight et le test fermé.
+
+
+## Complément Codex du 24 octobre
+
+A9 : [brouillon des textes, notes de revue et séquence de captures](../site/stores-textes-captures-brouillon-2026-10-24.md).
+Statut : proposition transmise, pas soumission prête ni validation de Boris.
+
+**A5 à préciser pour l’offre réelle** : un paiement de billet pour un événement
+physique et un paiement ouvrant du contenu numérique relèvent de règles distinctes.
+Un navigateur externe ne rend pas tout achat numérique admissible. L’offre du
+Festival et les droits M1 associés doivent être explicités avant dépôt, selon
+les territoires et programmes retenus. **A6** : une notification ne garantit pas
+à elle seule le respect du critère d’utilité de l’application.
+[Apple, sections 3.1 et 4.2](https://developer.apple.com/app-store/review/guidelines/),
+[Google Play, paiements](https://support.google.com/googleplay/android-developer/answer/9858738?hl=en).

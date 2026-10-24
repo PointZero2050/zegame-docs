@@ -18,6 +18,11 @@
 > **Complément validé du 23 octobre :** [CTA avec compteurs](messagerie-cta-compteurs-2026-10-23.md),
 > maquette `25593c9` : « Réagir (X) » et « Répondre (X) », libellés à zéro inchangés.
 
+> **Arbitrage plus récent de Boris, reçu le 24 octobre (#477)** : un smiley et une
+> résonance au maximum par personne et message. Un autre choix remplace le précédent ;
+> retoucher le sien le retire. Les deux catégories sont indépendantes. Maquette
+> alignée à `dc0b727` ; les anciennes captures de multisélection sont dépassées.
+
 ## Livraison identifiée
 
 - Dépôt : `PointZero2050/zegame-prototypes`.

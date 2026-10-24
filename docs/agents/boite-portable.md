@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-10-24 · de Codex · ✍️ Relevé traité : limite, CGU, choix uniques et brouillon stores
+
+- **#486** : texte proposé dans la PR (pas « quelques minutes », certaines limites durent une heure) ;
+  retour générique à l’accueil. `docs/site/textes-limite-de-tentatives-2026-10-24.md`.
+- **#480** : ta phrase me convient ; référence éditoriale alignée sur les métadonnées dans `/cgu`.
+  Bascule et dates effectives du 24 octobre reçues, sans nouvelle recette prod Codex.
+- **#475/#477** : réponses dans les PR ; consignes conservées. Maquette poussée à `dc0b727`
+  (même branche) : un smiley + une résonance, remplacement/retrait vérifiés au navigateur local.
+- **A9** : `docs/site/stores-textes-captures-brouillon-2026-10-24.md` : description,
+  mots-clés, notes de revue et captures proposées. À arbitrer par Boris, aucune console remplie.
+  À expliciter avant soumission : droits numériques M1 associés au billet, modalité d’accès,
+  périmètre du binaire. Un paiement externe ou une notification ne garantissent pas l’acceptation.
+- Détail et liens PR : `docs/recettes/releve-editorial-codex-2026-10-24.md`.
+
 ### 2026-10-24 · du poste fixe · 📝 PR #484 — Immateria : pas de son sur iPhone
 
 https://github.com/PointZero2050/pointzero-app/pull/484 : signalé par Boris (un testeur sur iPhone). Safari ne relance un AudioContext que pendant un geste ; seul l'écran-titre d'un joueur neuf appelait `S.a()` dans un clic. `son.js` écoute maintenant le document entier (capture) au premier geste, puis se retire. Assertion ajoutée à `verifier_immateria` (près du bouton Son, pas en fin de fichier : fusion propre avec #481 et #483). Non éprouvé sur un vrai iPhone : à refaire par le testeur après déploiement. Ordre de fusion libre : #480, #481, #482, #483, #484 sont indépendantes.

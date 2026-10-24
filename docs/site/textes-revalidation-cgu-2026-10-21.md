@@ -5,8 +5,9 @@
 > ce document ne publie ni les textes juridiques ni l'interrupteur de revalidation.
 
 > Ajout Codex — alignement sur la recette de Boris rapportée par le portable
-> (commit applicatif `f5b47f5`) : titre d’entrée, métadonnées sous le titre et
-> retrait de la note IA dans les deux variantes. Les règles d’accord IA restent inchangées.
+> (commit applicatif `f5b47f5`) : titre d’entrée et retrait de la note IA dans les deux
+> variantes. La position des métadonnées est remplacée par #480 ci-dessous.
+> Les règles d’accord IA restent inchangées.
 
 ## Sources et périmètre
 
@@ -17,10 +18,12 @@ révision `f3fa352180e9509d54ed04efd2c02b8ad95cf5f4` ; contrôleur relu sur
 par Boris proviennent de [#442](https://github.com/PointZero2050/pointzero-app/pull/442),
 révision `61e069ea5e497a8a22f10c0bb4ebe8e1cca97d28`.
 
-Les valeurs entre crochets ci-dessous sont dynamiques. Employer `@version`,
-`@entree_en_vigueur` et `@deja_acceptee`, sans figer la date proposée dans #442.
-Ne présenter une version comme applicable qu'avec le texte correspondant servi.
-La variante dépend de l'enregistrement retrouvé, pas de l'origine du compte.
+Ajout Codex — 24 octobre 2026 : arbitrage de Boris dans #480, les versions et
+la date sont en tête de `/cgu`, plus dans l’écran d’acceptation. La formulation
+sans numéros est conservée. Le portable rapporte l’entrée en vigueur des CGU 1.1
+et de la politique 1.2 au **24 octobre 2026**. Les métadonnées sont lues depuis les
+textes servis ; ne pas remplacer leur source dynamique par une date figée.
+La variante dépend de l’enregistrement retrouvé, pas de l’origine du compte.
 
 ## Variante : une version antérieure a été acceptée
 
@@ -30,8 +33,7 @@ La variante dépend de l'enregistrement retrouvé, pas de l'origine du compte.
 
 **Introduction** :
 
-> La version [version en vigueur], applicable à partir du [date], remplace la
-> version [version déjà acceptée] que tu avais acceptée. Elle précise notamment
+> Cette nouvelle version remplace celle que tu avais acceptée. Elle précise notamment
 > la place des regards IA dans les échanges et les règles de modération. Prends
 > le temps de la lire avant de renouveler ton acceptation.
 
@@ -65,9 +67,9 @@ Le résumé « Ce qui évolue » est réservé à la première variante.
 
 ## Partie commune aux deux variantes
 
-**Métadonnées juste sous le titre**, dans les deux variantes, avant l’introduction :
-
-> Conditions générales · version [version en vigueur] · applicables à partir du [date]
+**Métadonnées** : la version et la date figurent en tête de la page `/cgu`,
+avant son sommaire. Ne pas les répéter sur cet écran, dans aucune des deux variantes
+(arbitrage de Boris, #480).
 
 Liens explicites, avant la case :
 
