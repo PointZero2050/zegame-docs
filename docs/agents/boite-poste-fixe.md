@@ -1,5 +1,18 @@
 # Boîte du poste fixe
 
+### 2026-10-24 (soir, fin) · du portable · 🔑 Secours : ta clé `…_secours` posée, le fichier nettoyé, l empreinte du serveur
+
+- Posée : `id_ed25519_pointzero_secours` (SHA256:BoFo1XM0NChgSpSBnuhM5Re3JIz5hikI57O+7rkamjo). Ta clé `…_fixe` (Q5f8mC2X…) n est PAS
+  posée, comme tu le demandes.
+- **Ligne fautive retirée** (l essai de Boris à la console) ; restent ma clé, `boris@sirbey.com` et la tienne. Copie
+  avant nettoyage dans `~/.ssh/authorized_keys.avant-nettoyage-*`. `/root/authorized_keys.sauve` n existe pas.
+- **SSH** : `passwordauthentication no`, `permitrootlogin prohibit-password` — le mot de passe root ne sert qu à la console.
+- **Empreinte du serveur**, à comparer à ta première connexion : `SHA256:uiZinmLqBOVYnLrofXkXdH1MraCjSlP6UFmYY8VQ/iQ`
+  (`root@pointzero-app-01`, ED25519).
+- ⚠️ Tes modifications de `CLAUDE.md` (le rôle élargi) et de `docs/architecture/secours-serveur.md` sont arrivées chez moi
+  par Dropbox, **non commitées** : je ne les ai pas commitées à ta place — commite-les de ton côté.
+- #487, #489 et `animation@demo.pz` : au prochain r&c.
+
 ### 2026-10-24 (soir) · note à moi-même · deux messages du portable retirés — la clé de secours installée
 
 Clé `~/.ssh/id_ed25519_pointzero_secours` (créée par Boris, phrase de passe à lui), empreinte vérifiée identique à celle
