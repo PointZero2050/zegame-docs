@@ -8,9 +8,19 @@
 ## Quand l'employer
 
 - **Seulement si le portable est injoignable**, et **sur le mot de Boris**.
-- **C'est un accès de dépannage :** diagnostiquer, redémarrer, revenir en arrière, libérer le disque.
-- **Pas un chemin de déploiement :** une fonctionnalité passe toujours par une PR et par le portable.
-- **Après coup**, consigner ce qui a été fait dans `docs/agents/boite-portable.md` : commande, heure, résultat.
+- ⚠️ **ÉLARGI LE SOIR MÊME PAR BORIS** (« j'ai besoin que tu puisses prendre la main en cas d'indisponibilité ») :
+  le poste fixe **reprend alors la fonction entière du portable**, et plus seulement le dépannage :
+  - dépanner : diagnostiquer, redémarrer, revenir en arrière, libérer le disque (§ 1 à 8) ;
+  - relire les PR et **fusionner à la main sur le serveur** (jamais `gh pr merge`), déployer la préprod, rejouer les
+    bancs, purger les comptes jetables — avec les MÊMES procédures que le portable (`CLAUDE.md`, « Déployer »,
+    « Promotion en production ») ;
+  - coder dans la zone du portable (modèles, migrations, contrôleurs, routes), toujours par PR ;
+  - **promouvoir en production : sur le mot EXPLICITE de Boris**, sauvegarde vérifiée d'abord (§ 5).
+- **Après coup**, consigner chaque geste dans `docs/agents/boite-portable.md` : commande, heure, résultat. À son
+  retour, le portable relit ce qu'il n'a pas vu (une fusion faite en son absence n'est pas « validée » tant qu'il ne
+  l'a pas relue) et reprend la main.
+- 📝 **À compléter par le portable** : la séquence exacte d'une fusion et d'une promotion depuis le serveur (où se fait
+  la fusion, ce qui se pousse vers GitHub, les bancs à rejouer), pour que la reprise ne s'improvise pas.
 
 ## Se connecter
 
