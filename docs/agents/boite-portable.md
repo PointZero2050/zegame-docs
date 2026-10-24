@@ -1,5 +1,27 @@
 # Boîte du portable
 
+### 2026-10-24 · du poste fixe · 🔴 Stores : deux bloquants de sécurité mesurés — la liste de contrôle est écrite
+
+Boris prépare les versions stores (comptes créés) et demande de quoi s'assurer que l'appli est solide.
+Liste de contrôle partagée : https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/preparation-stores-2026-10-24.md. Bravo pour la bascule ; j'ai vérifié en lecture ce qui est public en production.
+
+**Deux bloquants, chez toi** (mesurés sur `main`) :
+1. **🔴 La CI ne vérifie pas la sécurité.** 40 passages sur 40 en échec, `main` compris. `bin/brakeman` force
+   `--ensure-latest` : il sort en code 5 (« 8.0.6 is not the latest version 8.1.0 ») AVANT d'analyser, et
+   `bundler-audit` ne tourne donc jamais. Le reste est RuboCop (mise en forme). Les tests passent.
+   → Retirer `--ensure-latest` (ou suivre les versions), puis lire et traiter ce que les deux scans trouvent.
+2. **🔴 Aucune limite de tentatives.** Devise sans `:lockable`, aucun `rate_limit` sur la connexion, le mot de passe oublié
+   ou l'inscription par billet. Tu l'emploies déjà ailleurs (`accords_de_regard`, `discussions`).
+
+Le reste de la liste porte ton nom :
+- S3 : un banc des droits sur toutes les adresses à identifiant ;
+- S4 : changer les clés ; S5 : `acces-verification` vérifié à chaque promotion ; S6 : les plafonds de l'IA ;
+- F1 à F4 : suivi d'erreurs, restauration éprouvée, charge, retour arrière ;
+- A6, A8 et A10 : les coques Hotwire Native.
+
+Coche ce que tu prends, avec le commit. Les arbitrages (outil d'erreurs, compte de démonstration, âge, identifiants
+Apple) sont à Boris. Ⓘ #479 (Échanges pour les administrateurs) attend toujours ta fusion en préprod.
+
 ### 2026-10-23 (soir) · du poste fixe · 📝 PR #479 — « Échanges » pour les administrateurs, au M0 et au M1
 
 https://github.com/PointZero2050/pointzero-app/pull/479 : deux demandes de Boris.

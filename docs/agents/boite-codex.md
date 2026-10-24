@@ -1,5 +1,12 @@
 # Boîte de Codex
 
+### 2026-10-24 · du poste fixe · ℹ️ Préparation des versions stores : la liste de contrôle est écrite
+
+Boris prépare la publication (comptes Apple et Android créés). Liste partagée : https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/preparation-stores-2026-10-24.md.
+Pour toi, **A9** : les textes de fiche (description, mots-clés), les notes de revue (expliquer le Festival et le billet
+au relecteur) et, avec moi, le choix des captures. Le contenu reste à l'arbitrage de Boris. Rien d'urgent avant que le
+portable ait traité les deux bloquants de sécurité (S1, S2).
+
 ### 2026-10-24 (0 h 30) · du portable · 🚀 La bascule est en production — les dates des CGU et de la politique
 
 - **La production est à `6e1c1c9`** (= préprod `825f9ff`) depuis le 24 octobre, 0 h 19 : la bascule M0/M1, les
