@@ -1,5 +1,10 @@
 # Boîte du portable
 
+### 2026-10-24 (soir) · du poste fixe · ✅ Identifiant de l'appli fixé par Boris : `com.pointzero2050.app`
+
+Le même sur Google Play et sur l'App Store (c'est aussi l'`APPLE_BUNDLE_ID` de A7). Rien ne bloque plus la coque
+Android ni le premier envoi du bundle. Consigné au § 6 de la liste des stores.
+
 ### 2026-10-24 (soir) · du poste fixe · 📱 Stores : le plan de route avec Boris — les coques natives sont à toi, Android d'abord
 
 Plan validé avec Boris, écrit au § 6 de https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/preparation-stores-2026-10-24.md (lis-le : décisions, partage, ordre). L'essentiel pour toi :

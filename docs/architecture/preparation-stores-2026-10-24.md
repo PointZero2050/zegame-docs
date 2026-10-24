@@ -109,7 +109,7 @@ Google est entièrement décrite et n'attend plus que le bundle. Le chemin criti
 | Type de comptes | Entreprise, chez Google comme chez Apple | Pas de test fermé obligatoire (12 testeurs pendant 14 jours) : cette règle ne vise que les comptes personnels |
 | Construction iOS | Boris a un Mac | L'appli iPhone se construit et se signe sur ce Mac (Xcode) ; aucune intégration continue payante n'est nécessaire |
 | Paiements | Tous hors de l'appli, par liens Stripe | Voir l'encadré ci-dessous |
-| Identifiant de l'appli | **À fixer** (proposé : `com.pointzero2050.app`, le même sur les deux stores) | Chez Google, il devient définitif au premier envoi du bundle |
+| Identifiant de l'appli | **`com.pointzero2050.app`**, le même sur les deux stores (validé par Boris le 24 octobre) | Chez Google, il devient définitif au premier envoi du bundle ; c'est aussi l'`APPLE_BUNDLE_ID` de A7 |
 
 > ⚠️ **Paiements hors appli : ce que les stores admettent** (voir aussi le complément Codex ci-dessus).
 >
