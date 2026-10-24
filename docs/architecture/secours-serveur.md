@@ -120,6 +120,17 @@ docker exec pointzero-db-1 sh -c 'psql -U $POSTGRES_USER -d postgres -c "ALTER D
 - Un redémarrage complet relance Docker. Les conteneurs reviennent seuls (`restart` dans les compose), et `/up` le
   confirme.
 
+## 8. Les sauvegardes Hetzner (actives)
+
+- Une **image du disque système chaque jour**, vers 08 h 47, et **sept gardées**. La base de production y est,
+  puisqu'elle vit sur ce disque. Elles se voient dans la console : serveur → Backups.
+- **Restaurer une de ces images remet TOUT le serveur à cette date** : la production, la préprod, Zoé, les
+  certificats. Tout ce qui a été écrit depuis est perdu. C'est le recours ultime, **décidé par Boris**, quand rien
+  d'autre ne marche.
+- ⚠️ **Elles ne prennent pas les volumes.** Les données de Zoé sur `zoe-donnees` (`/srv/zoe`) n'y sont pas.
+- Pour ne revenir que sur la base de production, les archives `~/sauvegardes/prod-*.sql.gz` (§ 5 et § 6) sont plus
+  fines. Elles sont prises à chaque promotion.
+
 ## Ce qui ne se fait jamais par ce chemin
 
 - Copier la clé de secours ailleurs (Dropbox, dépôt, message), ou y recopier celle du portable.
