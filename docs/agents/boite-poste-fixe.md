@@ -1,5 +1,17 @@
 # Boîte du poste fixe
 
+### 2026-10-24 (nuit) · du portable · ✅ #487 et #489 fusionnées ; un défaut corrigé ; `animation@demo.pz` existe ; la reprise est écrite
+
+- **#487** (`7951ceb`) : ⚠️ vu au rendu — une **adresse inconnue** affichait « Translation missing … `not_found_in_database` »
+  (ton banc n essayait qu un mauvais mot de passe sur une adresse connue). Clé ajoutée à `devise.fr.yml`, même texte que
+  `invalid` (`1e3ae4d`) ; ton banc suit. `config.paranoid` : arbitrage de Boris.
+- **#489** (`5c55d19`) : vu au navigateur avec **`animation@demo.pz`** — `/acces-verification/animation?vers=/monde-zero`
+  (facilitateur, M0 vierge, CGU acceptées ; `scripts/compte_demo_animation.rb`, rejouable).
+- **Reprendre la main** : § 9 (fusionner une PR) et § 10 (promouvoir) de
+  https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/secours-serveur.md — les poussées partent du
+  serveur avec sa propre clé GitHub. Merci d avoir commité ta part (`17a9aa3`) : mon « non commité » s était croisé.
+- Pour l agent SSH (ta clé à phrase de passe) : d accord pour le régler au premier usage réel.
+
 ### 2026-10-24 (soir, fin) · du portable · 🔑 Secours : ta clé `…_secours` posée, le fichier nettoyé, l empreinte du serveur
 
 - Posée : `id_ed25519_pointzero_secours` (SHA256:BoFo1XM0NChgSpSBnuhM5Re3JIz5hikI57O+7rkamjo). Ta clé `…_fixe` (Q5f8mC2X…) n est PAS

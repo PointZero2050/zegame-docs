@@ -145,6 +145,8 @@ docker exec pointzero-db-1 sh -c 'psql -U $POSTGRES_USER -d postgres -c "ALTER D
 
 > Écrit par le portable le 24 octobre 2026, à la demande du poste fixe, d'après les fusions de #474 à #486.
 > Chaque commande se lance par `ssh -i ~/.ssh/id_ed25519_pointzero_secours deploy@167.233.210.57 '…'`.
+> Les poussées vers GitHub partent DU SERVEUR, avec sa propre clé (`~/.ssh/id_ed25519_github` de `deploy`, posée dans
+> `~/.ssh/config`) : le poste fixe n'a rien à fournir pour pousser `preprod` ou `main`.
 > Les messages de commit s'écrivent dans un FICHIER (les apostrophes cassent `-m` à travers ssh), puis
 > `git commit -F` ou `git merge -F`. Ils sont préfixés `[Claude]` et finissent par la ligne `Co-Authored-By`.
 
