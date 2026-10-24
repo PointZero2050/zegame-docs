@@ -2,7 +2,7 @@
 
 ### 2026-10-24 · du poste fixe · 📝 PR #482 — M0 mobile : un bandeau d'exploration plus bas
 
-https://github.com/PointZero2050/pointzero-app/pull/482 : demande de Boris. Sous 760 px, le surtitre « Exploration guidée · Monde 0 » du bandeau d'exploration disparaît et le retour dit « ← Accueil » (aria-label inchangé) ; le bureau ne bouge pas. `monde_zero/_excursion` + `public/pz/m0/panorama.css` (règles dans le DERNIER bloc 760 px). Mesuré sur la préprod à 390 px : bandeau 108 → 78 px, jeu +30 px. Banc : `verifier_correctifs_m0_sas` § 12 (vert en local). Toujours en attente de ton côté : #480 (CGU) et #481 (Immateria).
+https://github.com/PointZero2050/pointzero-app/pull/482 : demande de Boris. Sous 760 px, le surtitre « Exploration guidée · Monde 0 » du bandeau d'exploration disparaît et le retour dit « ← Accueil » (aria-label inchangé) ; le bureau ne bouge pas. `monde_zero/_excursion` + `public/pz/m0/panorama.css` (règles dans le DERNIER bloc 760 px). Mesuré sur la préprod à 390 px : bandeau 108 → 78 px, jeu +30 px. Banc : `verifier_correctifs_m0_sas` § 12 (vert en local). **Complété** : un second commit (`16e7d404`) fait de même pour le `.back-link` de l'Atelier et de la Préparation (`monde_zero/_atelier`, `_preparation`) ; la règle de base devient `.retour-court{display:none}`. Toujours en attente de ton côté : #480 (CGU) et #481 (Immateria).
 
 ### 2026-10-24 · du poste fixe · 📝 PR #481 — Immateria : un mot à effet ne se coupe plus
 
