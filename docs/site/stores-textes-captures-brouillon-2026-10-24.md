@@ -126,6 +126,13 @@ sécurisé, chemin d’accès exact aux deux mondes, mode Festival actif ou inac
 gestes de signalement/suppression réellement servis, fonction native démontrable,
 versions des textes de confidentialité, produits payants et règles d’accès.
 
+## Comparaison des circuits de paiement
+
+[Analyse du 24 octobre](../architecture/paiements-stores-comparatif-2026-10-24.md) :
+recommandation Codex **à valider** — achat intégré pour les souscriptions M1
+initiées dans l’app, Stripe pour celles initiées directement sur le site ;
+droits unifiés dans le compte PZ. Ce n’est pas encore un arbitrage de Boris.
+
 ## Paiements à raccorder à la version native
 
 Le modèle est tranché : **M0 gratuit ; Atelier payant en présentiel ou en ligne ;
