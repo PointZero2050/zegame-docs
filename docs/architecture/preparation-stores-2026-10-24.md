@@ -94,3 +94,54 @@ les territoires et programmes retenus. **A6** : une notification ne garantit pas
 présentiel ou en ligne ; M1 par abonnement mensuel ou paiement annuel avec
 réduction. Les tarifs et le renouvellement annuel ne sont pas arrêtés dans
 ce relevé. La fiche A9 reprend le positionnement validé de jeu en réalité alternée.
+
+
+## 6. Plan de route (24 octobre au soir, avec Boris)
+
+**Où on en est** : les comptes Google Play et Apple sont validés, **tous deux au nom d'une entreprise**. La fiche
+Google est entièrement décrite et n'attend plus que le bundle. Le chemin critique, ce sont donc **les coques natives
+(A8)**.
+
+### Décisions de Boris
+
+| Sujet | Décision | Conséquence |
+| --- | --- | --- |
+| Type de comptes | Entreprise, chez Google comme chez Apple | Pas de test fermé obligatoire (12 testeurs pendant 14 jours) : cette règle ne vise que les comptes personnels |
+| Construction iOS | Boris a un Mac | L'appli iPhone se construit et se signe sur ce Mac (Xcode) ; aucune intégration continue payante n'est nécessaire |
+| Paiements | Tous hors de l'appli, par liens Stripe | Voir l'encadré ci-dessous |
+| Identifiant de l'appli | **À fixer** (proposé : `com.pointzero2050.app`, le même sur les deux stores) | Chez Google, il devient définitif au premier envoi du bundle |
+
+> ⚠️ **Paiements hors appli : ce que les stores admettent** (voir aussi le complément Codex ci-dessus).
+>
+> - **Admis** : un lien Stripe pour un service consommé dans le monde réel, comme l'**Atelier en présentiel** ou le
+>   Festival.
+> - **Refusé en général** : un lien ou un bouton qui envoie vers un paiement externe pour un **contenu numérique**
+>   (l'abonnement M1, et probablement l'Atelier en ligne collectif). Les exceptions dépendent du territoire
+>   (États-Unis, Union européenne sous conditions).
+> - **Proposé pour la v1** : dans les applis, des liens Stripe pour l'Atelier en présentiel seulement. Pour le M1,
+>   **aucun bouton, aucun lien, aucun prix**, juste une mention neutre. Le M1 s'achète sur le site, et le joueur qui
+>   l'a payé le retrouve en se connectant dans l'appli.
+> - **La suite** : Codex rédige la note de conformité avec ses sources, Boris tranche. Le portable expose
+>   « suis-je dans l'appli ? » (`hotwire_native_app?`), et le poste fixe masque les appels à l'achat concernés.
+
+### Qui fait quoi
+
+| Qui | Lot |
+| --- | --- |
+| **Portable** | A8 : coques Hotwire Native, Android d'abord puisque Google attend, puis iOS sur le Mac. Construction, signature, test interne Google et TestFlight. A7 : liens qui rouvrent l'appli (`assetlinks.json`, `apple-app-site-association`). A6 : notifications. A10 : session durable. Le reste de la sécurité et de la fiabilité (S3, S4, S6, F1, F2, F4). T2. |
+| **Poste fixe** | Le « mode appli » des vues : ce qui fait doublon avec la coque, zones sûres de l'écran, retours, appels à l'achat masqués selon la règle ci-dessus. F5 : alléger le fil des Échanges. A4 : signalement depuis chaque surface d'IA. A9 : icônes natives et captures à toutes les tailles. T3 et T4 avec Boris. |
+| **Codex** | A9 : textes définitifs et notes de revue. A2 et A3 : brouillons des formulaires de confidentialité et de classification d'âge. **La note de conformité des paiements** pour chaque produit (Atelier présentiel, Atelier en ligne, M1), avec ses sources. |
+| **Boris** | L'identifiant de l'appli. A1 : le compte de démonstration. Validation de A2, A3 et A9. Les clés de signature et les comptes, qui restent entre ses mains : jamais un agent. T1 : le gel de la version. Les tests sur ses téléphones, puis « Soumettre ». |
+
+### Ordre
+
+1. **Maintenant** :
+   - l'identifiant (Boris) ;
+   - la coque Android, jusqu'au test interne Google (portable) ;
+   - le « mode appli » et les icônes (poste fixe) ;
+   - la note de paiements et les formulaires (Codex).
+2. **Ensuite** : la coque iOS sur TestFlight, les notifications, la fin de S3 à F4, les captures.
+3. **Enfin** : gel (T1), recettes (T2 à T4), puis soumission sur les deux stores.
+
+**Coordination** : cette liste reste la référence, et chacun y coche ses points avec la preuve. Les passations se
+font dans les boîtes, le code dans les PR. Le code des coques vit dans un dépôt neuf, que le portable crée.

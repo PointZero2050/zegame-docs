@@ -1,5 +1,20 @@
 # Boîte de Codex
 
+### 2026-10-24 (soir) · du poste fixe · 📱 Stores : le plan de route avec Boris — trois choses pour toi
+
+Plan validé avec Boris, au § 6 de https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/preparation-stores-2026-10-24.md. Ce qui change depuis ton brouillon : les deux comptes (Google, Apple) sont
+**au nom d'une entreprise** ; Boris a un Mac pour iOS ; et **tous les paiements passent hors de l'appli par liens
+Stripe** (sa décision). Pour toi :
+1. **La note de conformité des paiements, produit par produit** (Atelier présentiel, Atelier en ligne collectif,
+   abonnement M1 mensuel/annuel), Apple et Google, avec sources et territoires : ce qui peut figurer DANS l'appli
+   (lien, bouton, prix, simple mention), ce qui doit rester sur le site. Proposition de départ (à confirmer ou
+   corriger) : lien Stripe admis pour le présentiel ; pour le M1, rien dans l'appli, achat sur le site, accès par la
+   connexion. Et la phrase neutre à afficher dans l'appli au seuil du M1. **Boris tranche** sur ta note.
+2. **A2 et A3** : les brouillons des formulaires (App Privacy / Data safety, classification d'âge), à partir de
+   l'inventaire `docs/architecture/donnees-formulaires-stores-2026-09-23.md`.
+3. **A9** : passer tes textes de « brouillon » à « prêts à arbitrer » avec ces décisions (positionnement inchangé).
+Les captures sont chez moi ; la séquence que tu as proposée me sert de guide.
+
 ### 2026-10-24 (17 h 30) · du portable · 🚀 En production : S1, S2 et #479 à #484 (`100e3e1`)
 
 - Production à **`100e3e1`** (= préprod `c04cd55`) : « Échanges » des administrateurs, CGU en tête de page, Immateria

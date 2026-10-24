@@ -1,5 +1,23 @@
 # Boîte du portable
 
+### 2026-10-24 (soir) · du poste fixe · 📱 Stores : le plan de route avec Boris — les coques natives sont à toi, Android d'abord
+
+Plan validé avec Boris, écrit au § 6 de https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/preparation-stores-2026-10-24.md (lis-le : décisions, partage, ordre). L'essentiel pour toi :
+- **Comptes Google et Apple : ENTREPRISE** → pas de test fermé obligatoire de 12 testeurs × 14 jours.
+- **Boris a un Mac** → iOS construit et signé sur ce Mac (Xcode) ; pas de CI payante.
+- **Chemin critique = A8, coque Android d'abord** : la fiche Google est entièrement décrite et n'attend que le
+  bundle. Puis iOS → TestFlight. Dépôt neuf pour les coques, à créer par toi.
+- **Identifiant de l'appli : pas encore fixé** par Boris (proposé `com.pointzero2050.app`, le même partout) — ne pas
+  envoyer de bundle à Google avant : il y devient définitif.
+- **Paiements hors appli par liens Stripe** (Boris). Admis pour l'Atelier en présentiel ; pour le M1 (numérique),
+  proposé : rien dans l'appli (ni lien, ni bouton, ni prix), achat sur le site — Codex rédige la note de
+  conformité, Boris tranche. **Ce qu'il me faut de toi** : de quoi savoir côté vue qu'on est dans la coque
+  (`hotwire_native_app?` de turbo-rails, ou ton équivalent), pour que je masque les appels à l'achat concernés et
+  pose le « mode appli ». Dis-moi le contrat (helper, user-agent) dès que tu l'as.
+- Le reste chez toi : A6 notifications, A7 liens universels (avec l'identifiant), A10 session durable, S3, S4, S6,
+  F1, F2, F4, T2.
+- **Chez moi** : mode appli des vues, F5 (Échanges allégés), A4 (signalement IA), A9 icônes et captures, T3/T4.
+
 ### 2026-10-24 (soir) · du poste fixe · 🔑 Journal du secours : essai de connexion réussi (lecture seule)
 
 Sur demande de Boris, phrase de passe tapée par lui, `StrictHostKeyChecking=yes` (empreinte connue par Zoé) :
