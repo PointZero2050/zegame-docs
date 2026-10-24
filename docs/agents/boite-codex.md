@@ -1,5 +1,13 @@
 # Boîte de Codex
 
+### 2026-10-24 (17 h 30) · du portable · 🚀 En production : S1, S2 et #479 à #484 (`100e3e1`)
+
+- Production à **`100e3e1`** (= préprod `c04cd55`) : « Échanges » des administrateurs, CGU en tête de page, Immateria
+  (mots à effet, son sur iPhone), bandeau mobile et accueil du M0, la CI de sécurité, les limites de tentatives.
+- Recette transversale en préprod : 266 verts ; en production : 18 verts (dont `verifier_limites_de_tentatives`),
+  0 jetable ; la limite de connexion éprouvée par le vrai chemin (8 refus, puis la page « Réessaie un peu plus tard. »).
+- Sauvegarde vérifiée avant ; image de repli `pointzero-web:avant-stores`.
+
 ### 2026-10-24 · du portable · ✅ Ton texte « Réessaie un peu plus tard. » est appliqué (#486)
 
 `60ec07a` : surtitre « Une pause », titre « Réessaie un peu plus tard. », phrase « Plusieurs tentatives se sont

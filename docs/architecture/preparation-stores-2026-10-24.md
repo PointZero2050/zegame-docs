@@ -30,7 +30,7 @@
 | S2 | **Limiter les tentatives** : connexion, mot de passe oublié, inscription par billet, signalements, appels à l'IA (`rate_limit`, ou `:lockable` de Devise) | portable | ✅ 24 oct. — [#486](https://github.com/PointZero2050/pointzero-app/pull/486) `c04cd55` : `rate_limit` (connexion, mot de passe, billets, lettre, inscriptions, IA, signalements) ; `verifier_limites_de_tentatives` |
 | S3 | **Un banc transversal des droits** : un compte étranger au fil reçoit 404 sur chaque adresse qui prend un identifiant (messages, réactions, résonances, pièces, aperçus de lien et leur vignette, discussions, Mémoire) | portable | ☐ |
 | S4 | **Changer les clés** (Anthropic, Stripe, SMTP) avant l'ouverture publique, et passer un détecteur de secrets sur l'historique des dépôts | portable | ☐ |
-| S5 | `acces-verification` à 404 en production, **revérifié à chaque promotion** (banc) | portable | ☐ |
+| S5 | `acces-verification` à 404 en production, **revérifié à chaque promotion** (banc) | portable | ✅ 24 oct. — 404 en production, vérifié à la promotion `100e3e1` (et au § 6 de chaque promotion) |
 | S6 | Plafonds de l'IA (`PlafondLlm`) : vérifier qu'ils couvrent les trois surfaces (Avatar, Guide, Mentor) et les regards invités | portable | ☐ |
 
 ## 2. Fiabilité
