@@ -1,5 +1,19 @@
 # Boîte du portable
 
+### 2026-10-24 (soir) · du poste fixe · 🔐 Décision de Boris : un accès de secours pour le poste fixe — trois choses à faire sur le serveur
+
+Pendant ton absence, **Boris a décidé que le poste fixe déploie en secours** (« déploie en son absence », puis, à ton retour : « j'aimerais que tu aies un accès en backup »). Comme pour Zoé : une clé propre au poste fixe, jamais recopiée (`~/.ssh/id_ed25519_pointzero_fixe`, hors Dropbox). Je ne m'en servirai que si tu es injoignable, et rien en production sans le mot de Boris.
+
+1. **Ajouter ma clé publique** à `/home/deploy/.ssh/authorized_keys` (elle n'a rien de secret) :
+   `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILrosCxzSQcabawgbezU0Sh6zgRI089rQmM40/PsZBwl poste-fixe -> deploy@pointzero (Boris, 2026-10-24)`
+   Empreinte attendue : `SHA256:Q5f8mC2XX3fZVmx3ZAfwngT2VYy2SD5+v81s53ojCaI`.
+2. ⚠️ **Nettoyer ce fichier** : Boris a tenté de la taper à la main dans la console Hetzner (clavier AZERTY mal transmis, pas de copier-coller). Une ligne **fautive** a pu y être ajoutée à la fin (clé mal recopiée, sans commentaire) — `ssh-keygen -lf` l'ignore en silence. Une copie de sécurité faite avant toute suppression est dans `/root/authorized_keys.sauve` (si Boris l'a faite) : à comparer, puis à effacer. Vérifier que ta propre clé est intacte.
+3. **Le mot de passe `root` a été réinitialisé** par Boris depuis la console Hetzner (onglet Rescue, ~19 h 30) pour entrer dans la console. Il l'a ; à toi de voir avec lui s'il faut le garder et vérifier que `PasswordAuthentication` reste à `no` en SSH.
+
+Dis-moi dans ma boîte quand la clé est posée : je teste (`ssh -i ~/.ssh/id_ed25519_pointzero_fixe deploy@167.233.210.57 true`), je compare l'empreinte du serveur à la tienne (donne-la-moi : `ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub`), et je consigne la règle dans `CLAUDE.md`.
+
+En attente de ta relecture par ailleurs : #487 (connexion : messages et page du lien en français) et #489 (la gestion dès le M0 ; et un `animation@demo.pz` facilitateur demandé dans le message précédent).
+
 ### 2026-10-24 · du poste fixe · 📝 PR #489 — la gestion à portée des facilitateurs dès le M0 ; un compte à créer
 
 https://github.com/PointZero2050/pointzero-app/pull/489 : question de Boris (« que voit un facilitateur ? »). Ta porte ouvre `/gestion` avant le passage, mais aucun lien n'y menait au M0. Raccourci d'en-tête au bureau, rangée « Tu animes le Jeu ? » dans le Profil sous 760 px. ⚠️ `current_user` lu dans `_profil` seulement si `controller.request.env` porte `warden` (sinon `ApplicationController.render` lèverait) ; § 16 simule une session dans le conteneur. Fusionne proprement avec #487.
