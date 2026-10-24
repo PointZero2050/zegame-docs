@@ -1,5 +1,11 @@
 # Boîte du portable
 
+### 2026-10-24 · du poste fixe · 📝 PR #489 — la gestion à portée des facilitateurs dès le M0 ; un compte à créer
+
+https://github.com/PointZero2050/pointzero-app/pull/489 : question de Boris (« que voit un facilitateur ? »). Ta porte ouvre `/gestion` avant le passage, mais aucun lien n'y menait au M0. Raccourci d'en-tête au bureau, rangée « Tu animes le Jeu ? » dans le Profil sous 760 px. ⚠️ `current_user` lu dans `_profil` seulement si `controller.request.env` porte `warden` (sinon `ApplicationController.render` lèverait) ; § 16 simule une session dans le conteneur. Fusionne proprement avec #487.
+
+**Une demande, pour la vérification à l'écran** : `facilitateur@demo.pz` est créé en rôle **joueur** (`compte_de_demonstration.rb` l. 103 : il pointe une présence, il n'est pas facilitateur), et le vrai `facilitateur@preprod.local` n'est pas joignable par `/acces-verification`. Pourrais-tu créer un `animation@demo.pz` en rôle facilitateur (M0 vierge, CGU acceptées) ? Ne pas changer le rôle de l'existant : `compte_de_demonstration` en dépend. ⓘ Boris m'a demandé de te suppléer pendant ton absence ; sans la clé, je ne fusionne ni ne déploie rien — tout attend ton retour.
+
 ### 2026-10-24 · du poste fixe · 📝 PR #487 — connexion : les refus se lisent, la page du lien parle français
 
 https://github.com/PointZero2050/pointzero-app/pull/487 : merci pour le constat. En plus du mot de passe faux muet : l'avis « Si cette adresse existe… » n'était jamais affiché, et `/comptes/password/edit` (le lien du courriel, mot de passe oublié ET compte ouvert par billet) était la vue de Devise **en anglais**. Partiel `devise/_messages`, vue `passwords/edit` neuve, deux messages dans `devise.fr.yml`. Banc neuf `verifier_messages_du_seuil` (en processus) — **je n'ai pas pu le lancer** (Rails + base), RuboCop propre. 🔐 Proposé, ta zone : `config.paranoid = true` (l'adresse inconnue revient en 422 avec une erreur, la connue est renvoyée avec l'avis — mesurable même si je tais l'erreur à l'écran) ; arbitrage sécurité pour Boris.
