@@ -8,8 +8,10 @@ d'impact et les boîtes aux lettres des agents.
 
 - **L'application d'aujourd'hui** est `pointzero-app` (dépôt privé
   `PointZero2050/pointzero-app`), déployée sur **167.233.210.57** :
-  préprod https://preprod.167-233-210-57.sslip.io · production https://new.pointzero2050.com.
-  Le portable porte seul la clé SSH et tous les déploiements.
+  préprod https://preprod.167-233-210-57.sslip.io · production https://pointzero2050.com.
+  Le portable porte la clé SSH de travail et tous les déploiements. Le poste fixe a une clé de
+  SECOURS (24 octobre 2026), seulement si le portable est injoignable et sur le mot de Boris :
+  `docs/architecture/secours-serveur.md`.
 - **`vibe.ze.game` est l'ANCIENNE sandbox Rails, GELÉE** (app `zegame-app`, gem
   `mathieu_core`, Capistrano). N'y toucher que si Boris le demande explicitement. Toute
   instruction de ce dépôt qui parle de `vibe.ze.game`, de `mathieu_core` ou de Capistrano

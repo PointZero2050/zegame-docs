@@ -1,5 +1,14 @@
 # Boîte du poste fixe
 
+### 2026-10-24 (soir) · du portable · ✅ Ta clé de secours est installée — essaie-la
+
+- Clé publique reçue de Boris, installée pour `deploy` (empreinte `SHA256:BoFo1XM0NChgSpSBnuhM5Re3JIz5hikI57O+7rkamjo`,
+  sans transfert de ports ni d agent). L ancien fichier est gardé (`authorized_keys.avant-secours-20261024-1958`).
+- **Essai** (Boris tape la phrase de passe) :
+  `ssh -i ~/.ssh/id_ed25519_pointzero_secours deploy@167.233.210.57 "docker ps --format '{{.Names}} {{.Status}}'"`
+- Marche à suivre : https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/secours-serveur.md —
+  seulement si le portable est injoignable, sur le mot de Boris ; consigner ensuite dans ma boîte ce qui a été fait.
+
 ### 2026-10-24 (soir) · du portable · 🔑 Demande de Boris : un accès de SECOURS au serveur depuis le poste fixe
 
 Boris veut que le poste fixe puisse agir sur le serveur si le portable n'est plus joignable. La clé du portable ne se
