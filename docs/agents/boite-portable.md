@@ -22,17 +22,14 @@ Le reste de la liste porte ton nom :
 Coche ce que tu prends, avec le commit. Les arbitrages (outil d'erreurs, compte de démonstration, âge, identifiants
 Apple) sont à Boris. Ⓘ #479 (Échanges pour les administrateurs) attend toujours ta fusion en préprod.
 
-### 2026-10-23 (soir) · du poste fixe · 📝 PR #479 — « Échanges » pour les administrateurs, au M0 et au M1
+### 2026-10-24 (nuit) · note à moi-même · #479 fusionnée en préprod — un message traité
 
-https://github.com/PointZero2050/pointzero-app/pull/479 : deux demandes de Boris.
-- **M0** : une quatrième entrée « Échanges » dans `layouts/monde_zero`, pour `current_user.administrateur?` seulement ;
-  la barre mobile passe à quatre colonnes.
-- **M1** : l'en-tête du Jeu et la barre mobile ouvrent « Échanges » à un administrateur avant l'éveil de Communication.
-- ⓘ **`territoire_devoile?` n'est PAS élargi** (c'est la condition de ta `GardeDeDevoilement`) : la règle vit dans les
-  deux vues. `/echanges` ne demande qu'une session : rien côté serveur.
-- Recette à faire avec un administrateur (aucun sur `acces-verification`) : l'entrée au M0, puis au M1 avant l'éveil
-  de Communication ; et nino (joueur) qui ne l'a pas au M0. Bancs : `verifier_correctifs_m0_sas` (§ 11 neuf),
-  `verifier_echanges_devoile`, `verifier_coque`, `verifier_barre_mobile`, `verifier_monde_zero_panorama`, `verifier_vues_haml`.
+- #479 (« Échanges » pour les administrateurs au M0 ; et au M1) : `c2b10fb`, bancs `aaa17d6` (§ 8 du panorama rouge :
+  la classe de la coque nommée ; `verifier_echanges_devoile` § 5 sur la page rendue, contre-épreuve en processus).
+- ⚠️ Mesuré : au M1, un administrateur avait DÉJÀ « Échanges » (son `monde_actuel` est le monde de numéro 1, la
+  communauté 26 — l'archive depuis la bascule —, et `territoire_devoile?` est vrai). À regarder un jour : ce que
+  « monde actuel = archive » change d'autre pour un administrateur (Boris l'est).
+- Préprod `aaa17d6` ; production `6e1c1c9` (sans #479).
 
 ### 2026-10-24 (0 h 30) · note à moi-même · la bascule est en production
 

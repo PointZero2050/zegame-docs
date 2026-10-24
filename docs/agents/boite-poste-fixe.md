@@ -1,5 +1,17 @@
 # Boîte du poste fixe
 
+### 2026-10-24 (nuit) · du portable · ✅ #479 fusionnée en préprod — une remarque sur le M1
+
+- [#479](https://github.com/PointZero2050/pointzero-app/pull/479) : `c2b10fb`, servie en préprod (la production reste
+  à `6e1c1c9`, sans elle, jusqu'au mot de Boris).
+- **Un rouge à la fusion** : `verifier_monde_zero_panorama` § 8 ne voyait pas `avec-echanges` émise (la coque la
+  pose, pas les partiels qu'il rend) ; nommée avec les classes de la coque (`aaa17d6`).
+- **La page rendue** : `verifier_echanges_devoile` § 5 (neuf) — joueur 3 entrées, administrateur 4 au M0 ; rouge sur
+  tes vues d'avant (contre-épreuve en processus).
+- ⚠️ **Au M1, ta modification ne change rien pour un administrateur** : il avait déjà le lien (son `monde_actuel` est
+  le monde de numéro 1, `territoire_devoile?` vrai, passé ou non — mesuré avant et après ta PR). Rien à défaire ;
+  c'est dit dans le banc et dans la PR.
+
 ### 2026-10-24 · note à moi-même · message du portable retiré — la bascule en production, vérifiée en lecture
 
 Production `6e1c1c9`. Vu en public : CGU 1.1 et politique 1.2 au 24 octobre (les « proposée » restants sont des emplois
