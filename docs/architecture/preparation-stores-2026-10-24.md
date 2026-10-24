@@ -26,8 +26,8 @@
 
 | # | Action | Responsable | État |
 | --- | --- | --- | --- |
-| S1 | **Remettre la CI au vert** : retirer `--ensure-latest` (ou mettre Brakeman à jour à chaque passage), puis LIRE et traiter ce que Brakeman et `bundler-audit` trouvent ; corriger RuboCop (`-a`) | portable | ☐ |
-| S2 | **Limiter les tentatives** : connexion, mot de passe oublié, inscription par billet, signalements, appels à l'IA (`rate_limit`, ou `:lockable` de Devise) | portable | ☐ |
+| S1 | **Remettre la CI au vert** : retirer `--ensure-latest` (ou mettre Brakeman à jour à chaque passage), puis LIRE et traiter ce que Brakeman et `bundler-audit` trouvent ; corriger RuboCop (`-a`) | portable | ✅ 24 oct. — [#485](https://github.com/PointZero2050/pointzero-app/pull/485) `64cfe0e` : CI 5/5 verte ; Brakeman 0 avertissement (2 notés) ; bundler-audit : crass 1.0.8 ; RuboCop 0 |
+| S2 | **Limiter les tentatives** : connexion, mot de passe oublié, inscription par billet, signalements, appels à l'IA (`rate_limit`, ou `:lockable` de Devise) | portable | ✅ 24 oct. — [#486](https://github.com/PointZero2050/pointzero-app/pull/486) `c04cd55` : `rate_limit` (connexion, mot de passe, billets, lettre, inscriptions, IA, signalements) ; `verifier_limites_de_tentatives` |
 | S3 | **Un banc transversal des droits** : un compte étranger au fil reçoit 404 sur chaque adresse qui prend un identifiant (messages, réactions, résonances, pièces, aperçus de lien et leur vignette, discussions, Mémoire) | portable | ☐ |
 | S4 | **Changer les clés** (Anthropic, Stripe, SMTP) avant l'ouverture publique, et passer un détecteur de secrets sur l'historique des dépôts | portable | ☐ |
 | S5 | `acces-verification` à 404 en production, **revérifié à chaque promotion** (banc) | portable | ☐ |
