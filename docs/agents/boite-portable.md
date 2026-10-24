@@ -4,29 +4,14 @@
 
 https://github.com/PointZero2050/pointzero-app/pull/484 : signalé par Boris (un testeur sur iPhone). Safari ne relance un AudioContext que pendant un geste ; seul l'écran-titre d'un joueur neuf appelait `S.a()` dans un clic. `son.js` écoute maintenant le document entier (capture) au premier geste, puis se retire. Assertion ajoutée à `verifier_immateria` (près du bouton Son, pas en fin de fichier : fusion propre avec #481 et #483). Non éprouvé sur un vrai iPhone : à refaire par le testeur après déploiement. Ordre de fusion libre : #480, #481, #482, #483, #484 sont indépendantes.
 
-### 2026-10-24 · du poste fixe · 📝 PR #483 — Accueil du M0 : un seul bloc d'introduction
+### 2026-10-24 · note à moi-même · #480 à #483 fusionnées en préprod — quatre messages traités (« stores » reste)
 
-https://github.com/PointZero2050/pointzero-app/pull/483 : demande de Boris. Le bandeau de l'accueil porte son texte (« Cinq questions pour comprendre ce qui nous arrive. » + l'ordre libre et l'Atelier) ; le titre de section, sa phrase et les trois repères `.hero-meta` disparaissent. ⚠️ Je retire aussi l'homonyme `.hero-meta` de `public/pz/conseil.css` (feuille partagée), mort depuis que l'accueil ne l'émet plus. Bancs : `verifier_monde_zero_panorama` § 15, vert en local (15 sections). Fusionne proprement avec #482 (`git merge-tree` testé).
-
-### 2026-10-24 · du poste fixe · 📝 PR #482 — M0 mobile : un bandeau d'exploration plus bas
-
-https://github.com/PointZero2050/pointzero-app/pull/482 : demande de Boris. Sous 760 px, le surtitre « Exploration guidée · Monde 0 » du bandeau d'exploration disparaît et le retour dit « ← Accueil » (aria-label inchangé) ; le bureau ne bouge pas. `monde_zero/_excursion` + `public/pz/m0/panorama.css` (règles dans le DERNIER bloc 760 px). Mesuré sur la préprod à 390 px : bandeau 108 → 78 px, jeu +30 px. Banc : `verifier_correctifs_m0_sas` § 12 (vert en local). **Complété** : un second commit (`16e7d404`) fait de même pour le `.back-link` de l'Atelier et de la Préparation (`monde_zero/_atelier`, `_preparation`) ; la règle de base devient `.retour-court{display:none}`. Toujours en attente de ton côté : #480 (CGU) et #481 (Immateria).
-
-### 2026-10-24 · du poste fixe · 📝 PR #481 — Immateria : un mot à effet ne se coupe plus
-
-https://github.com/PointZero2050/pointzero-app/pull/481 : demande de Boris. `public/pz/immateria/js/e1/interface.js`
-(chaque mot de la machine à écrire tenu par un `span.im-mot`), une règle de `css/style.css` et `verifier_immateria` § 8.
-Mesuré : 5 à 6 mots à effet coupés avant (320/360/390 px), aucun après. La carte d'import et `feuille_publique`
-font arriver la retouche chez les joueurs déjà venus. ⓘ En attente chez toi : #479, #480, #481.
-
-### 2026-10-24 · du poste fixe · 📝 PR #480 — CGU : la version et la date en tête de la page des CGU
-
-https://github.com/PointZero2050/pointzero-app/pull/480 : demande de Boris. Elles quittent l'écran d'acceptation et
-passent en tête de `/cgu`, avant le sommaire, comme dans la politique.
-- ⚠️ **`CguHelper#cgu_html`** (helper partagé, à relire) : le corps ne répète plus le paragraphe. `cgu_markdown` est
-  inchangé, donc `cgu_version`, `cgu_entree_en_vigueur` et `AcceptationCgu.version_courante` aussi.
-- `verifier_ecran_cgu` (ton banc) suit : § 2 et § 4 sans numéros, § 6 neuf sur `/cgu`.
-- ⓘ Le contrôleur fournit toujours `@version` et `@entree_en_vigueur` : la vue ne s'en sert plus.
+- #480 `c4b4c0d` (CGU : version et date en tête de /cgu), #481 `284e94a` (Immateria), #482 `bfdbd8d` (bandeau M0
+  mobile), #483 `fa47653` (accueil M0 en un bloc). 18 bancs verts ; vus au navigateur (/cgu ; exploration à 375 et
+  1 024 px). Préprod `fa47653` ; production `6e1c1c9`.
+- « Stores » (message ci-dessous, gardé) : S1 mesuré — Brakeman s'arrête sur `--ensure-latest` (8.0.6 / 8.1.0), donc
+  `bundler-audit` ne tourne jamais ; le lint, c'est 11 offenses RuboCop. S2 : Devise sans contrôleurs propres, cache
+  de production partagé (`solid_cache_store`, 3 workers). Plan S1 + S2 soumis à Boris.
 
 ### 2026-10-24 · du poste fixe · 🔴 Stores : deux bloquants de sécurité mesurés — la liste de contrôle est écrite
 

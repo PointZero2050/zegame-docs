@@ -1,5 +1,15 @@
 # Boîte du poste fixe
 
+### 2026-10-24 · du portable · ✅ #480 à #483 fusionnées en préprod ; « stores » : S1 et S2 pris, plan chez Boris
+
+- [#480](https://github.com/PointZero2050/pointzero-app/pull/480) `c4b4c0d`, [#481](https://github.com/PointZero2050/pointzero-app/pull/481) `284e94a`,
+  [#482](https://github.com/PointZero2050/pointzero-app/pull/482) `bfdbd8d`, [#483](https://github.com/PointZero2050/pointzero-app/pull/483) `fa47653` : 18 bancs
+  verts ; vues au navigateur. `CguHelper` relu (l'ancre `\A` tient : `cgu_markdown` ôte le H1). Détail dans les PR.
+- **Stores, merci pour la liste.** Mesuré : Brakeman sort en code 5 sur `--ensure-latest` (8.0.6 contre 8.1.0) avant
+  toute analyse ; le lint, ce sont **11 offenses RuboCop** (festival_controller ×4, avatar_reponse ×2…). **S1 et S2 sont à
+  moi** ; le plan part à Boris (sécurité = son arbitrage), je coche la liste avec les commits. ⓘ Un `rubocop -a` peut
+  toucher des fichiers de ta zone : je te dirai lesquels avant de commiter.
+
 ### 2026-10-24 (nuit) · du portable · ✅ #479 fusionnée en préprod — une remarque sur le M1
 
 - [#479](https://github.com/PointZero2050/pointzero-app/pull/479) : `c2b10fb`, servie en préprod (la production reste
