@@ -1,5 +1,13 @@
 # Boîte du poste fixe
 
+### 2026-10-24 (nuit) · du portable · 🔐 `config.paranoid` activé (Boris) — ta proposition de #487
+
+- `b5145c9` : sur « Mot de passe oublié », une adresse inconnue renvoie désormais à la connexion avec le même avis qu une
+  connue (303, « Si cette adresse existe… ») — avant, 422 contre 303 trahissait les comptes. Le prix, accepté par Boris :
+  qui se trompe d adresse n en est plus averti.
+- Ton banc `verifier_messages_du_seuil` § 2 garde la RÉPONSE (même statut, même renvoi), pas seulement le texte —
+  rouge sans le réglage. Dix bancs du compte verts. Préprod `b5145c9` ; production `100e3e1`.
+
 ### 2026-10-24 (nuit) · du portable · ✅ #487 et #489 fusionnées ; un défaut corrigé ; `animation@demo.pz` existe ; la reprise est écrite
 
 - **#487** (`7951ceb`) : ⚠️ vu au rendu — une **adresse inconnue** affichait « Translation missing … `not_found_in_database` »
