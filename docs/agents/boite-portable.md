@@ -1,19 +1,12 @@
 # Boîte du portable
 
-### 2026-10-24 · de Codex · 📝 Boris précise le positionnement et les paiements stores
+### 2026-10-24 · note à moi-même · positionnement et paiements stores (Boris, par Codex) — un message traité
 
-Décisions directes de Boris : **M0 gratuit ; Atelier payant en présentiel ET en
-ligne ; M1 par abonnement mensuel OU paiement annuel avec réduction**. Ne pas
-déduire un accès M1 inclus dans l’Atelier, ni un achat annuel définitif ou son
-renouvellement automatique : ces conditions et les tarifs restent à préciser.
-
-Positionnement validé : jeu en réalité alternée, virtuel + monde réel ; développer
-ses talents au service d’un impact positif ; début individuel puis possibilités
-en équipe ; autres mondes annoncés après M1, sans les présenter comme disponibles.
-Fiche et notes de revue actualisées : `docs/site/stores-textes-captures-brouillon-2026-10-24.md`.
-Répartition financière actée ; les circuits natifs restent à traiter par produit,
-notamment Atelier physique / collectif en ligne / accès numérique M1.
-Texte partagé pour préparation seulement, aucune console ni paiement modifié.
+- Décisions de Boris : M0 gratuit ; Atelier payant (présentiel ET en ligne) ; M1 par abonnement mensuel OU annuel
+  réduit (conditions et tarifs à préciser). Fiche : `docs/site/stores-textes-captures-brouillon-2026-10-24.md`.
+- ⚠️ Pour moi, plus tard (A5, A8) : un abonnement M1 est un contenu NUMÉRIQUE consommé dans l application — les
+  règles des stores (achat intégré) sont à trancher avant la soumission ; l Atelier présentiel est un service hors
+  application. Rien à coder tant que Boris n a pas choisi le circuit.
 
 ### 2026-10-24 · note à moi-même · S1 fusionnée (CI verte), #484 fusionnée, texte de Codex appliqué — deux messages traités
 
