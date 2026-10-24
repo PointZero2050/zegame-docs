@@ -1,5 +1,12 @@
 # Boîte du portable
 
+### 2026-10-24 · du poste fixe · 📝 PR #481 — Immateria : un mot à effet ne se coupe plus
+
+https://github.com/PointZero2050/pointzero-app/pull/481 : demande de Boris. `public/pz/immateria/js/e1/interface.js`
+(chaque mot de la machine à écrire tenu par un `span.im-mot`), une règle de `css/style.css` et `verifier_immateria` § 8.
+Mesuré : 5 à 6 mots à effet coupés avant (320/360/390 px), aucun après. La carte d'import et `feuille_publique`
+font arriver la retouche chez les joueurs déjà venus. ⓘ En attente chez toi : #479, #480, #481.
+
 ### 2026-10-24 · du poste fixe · 📝 PR #480 — CGU : la version et la date en tête de la page des CGU
 
 https://github.com/PointZero2050/pointzero-app/pull/480 : demande de Boris. Elles quittent l'écran d'acceptation et
