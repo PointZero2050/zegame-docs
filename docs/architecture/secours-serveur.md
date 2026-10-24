@@ -141,8 +141,78 @@ docker exec pointzero-db-1 sh -c 'psql -U $POSTGRES_USER -d postgres -c "ALTER D
 - Pour ne revenir que sur la base de production, les archives `~/sauvegardes/prod-*.sql.gz` (§ 5 et § 6) sont plus
   fines. Elles sont prises à chaque promotion.
 
+## 9. Fusionner une PR en préprod — la séquence du portable
+
+> Écrit par le portable le 24 octobre 2026, à la demande du poste fixe, d'après les fusions de #474 à #486.
+> Chaque commande se lance par `ssh -i ~/.ssh/id_ed25519_pointzero_secours deploy@167.233.210.57 '…'`.
+> Les messages de commit s'écrivent dans un FICHIER (les apostrophes cassent `-m` à travers ssh), puis
+> `git commit -F` ou `git merge -F`. Ils sont préfixés `[Claude]` et finissent par la ligne `Co-Authored-By`.
+
+1. **L'arbre est propre et à jour.**
+   - `cd ~/src/pointzero-preprod && git status --porcelain` ne doit rien montrer d'inconnu ; seul
+     `scripts/inscrits_depuis.rb`, non suivi, est connu.
+   - Puis `git fetch -q origin`, et vérifier que `HEAD` est égal à `origin/preprod`.
+2. **Relire la PR** (`gh pr view`, `gh pr diff`). La branche doit être entière : relire au dernier commit, car une
+   PR ouverte bouge encore.
+3. **Fusionner à la main**, jamais `gh pr merge` : `git merge -q --no-ff origin/<branche> -F /tmp/msg.txt`. Ensuite,
+   `git diff --stat origin/<branche> HEAD` ne doit rien montrer, sauf ce que la branche n'avait pas.
+4. **Contrôles AVANT la construction** :
+   - Copier les vues et le code fusionnés dans le conteneur : `docker cp <fichier>
+     pointzero-preprod-preprod-web-1:/rails/<fichier>`.
+   - Compiler les vues : `docker exec pointzero-preprod-preprod-web-1 bin/rails runner scripts/verifier_vues_haml.rb`.
+     Une erreur Haml n'apparaît qu'au rendu.
+   - Vérifier chaque fichier Ruby : `docker exec -i pointzero-preprod-preprod-web-1 ruby -c < <fichier>`. Le `-i` est
+     obligatoire, sinon tout passe.
+   - JavaScript : `node --check` sur le poste fixe (le serveur n'a pas `node`).
+5. **Pousser, construire, redémarrer** :
+   - `git push -q origin HEAD:preprod`.
+   - Puis `cd ~/preprod && docker compose -f compose.yml build preprod-web && docker compose -f compose.yml run --rm
+     preprod-web bin/rails db:migrate && docker compose -f compose.yml up -d --force-recreate preprod-web`.
+   - Jamais `;` entre la migration et le `up` : une migration cassée ferait boucler la préprod.
+   - Un second `docker restart` si un `.yml` mémoïsé a changé.
+6. **Les bancs touchés** :
+   - Attendre que `https://preprod.167-233-210-57.sslip.io/` réponde 200.
+   - Vérifier qu'aucune recette ne tourne, avec `pgrep -fa "^/bin/bash ./scripts/recette"` lancé SEUL.
+   - Puis, dans un second appel : `cd ~/src/pointzero-preprod && (setsid nohup ./scripts/recette.sh <banc1> <banc2>
+     > /tmp/recette-x.log 2>&1 &)`.
+   - Lire `/tmp/recette-x.log` jusqu'à `VERTS`. Un banc qui affirme une balise changée change dans la même livraison.
+7. **Commenter la PR** avec l'identifiant RELU après le commit (`git log --oneline -1`), puis écrire dans les boîtes.
+
+## 10. Promouvoir en production — sur le mot EXPLICITE de Boris
+
+1. **Recette transversale complète en préprod**, verte : `./scripts/recette.sh` sans argument, environ 90 minutes
+   pour 267 bancs. Le banc Stripe est hors de portée en préprod.
+2. **Relever ce que la promotion emporte** :
+   - les migrations : `git diff --name-only main origin/preprod -- db/migrate/` ;
+   - les `.yml` mémoïsés ;
+   - les gestes de DONNÉES à rejouer en production (scripts `ECRIRE=oui`, relevés dans la passation). La promotion ne
+     transporte que le code.
+3. **Sauvegarde vérifiée (§ 5)**, puis l'image de repli : `docker tag pointzero-web:latest pointzero-web:avant-<nom>`.
+4. **Fusionner** : `cd ~/src/pointzero-app && git status --porcelain && git fetch -q origin && git merge -q
+   --no-edit origin/preprod`. Puis **`git diff --stat origin/preprod HEAD` doit être VIDE**. Deux scripts non suivis
+   (`importer_inscrits_wordpress.rb`, `supprimer_essai.rb`) sont à laisser.
+5. **Construire sans couper** : `cd ~/deploy && docker compose -f compose.yml build web`. L'ancien conteneur sert
+   pendant la construction.
+6. **Sur l'image neuve, en conteneurs ponctuels** :
+   - `docker compose -f compose.yml run --rm web bin/rails runner scripts/verifier_vues_haml.rb` ;
+   - puis, s'il y a des migrations, `… run --rm web bin/rails db:migrate` ;
+   - puis les gestes de données : simulation d'abord, et arrêt au moindre écart.
+7. **Basculer** :
+   - `docker compose -f compose.yml up -d --force-recreate web` ;
+   - un second `docker restart pointzero-web-1` si un `.yml` mémoïsé a changé ;
+   - attendre que `/up` réponde 200, et lire les journaux.
+8. **Pousser** : `cd ~/src/pointzero-app && git push -q origin main`.
+9. **Les bancs en production** :
+   - `cd ~/src/pointzero-app && CONTENEUR=pointzero-web-1 ./scripts/recette.sh <liste>`, avec Stripe, les bancs du
+     lot et `verifier_limites_de_tentatives` ;
+   - puis compter les comptes jetables (`email LIKE '%.pz' OR email LIKE '%banc%'`) : il doit en rester 0 ;
+   - vérifier que `acces-verification` répond 404.
+10. **Après** : `sh ~/purger_cache_docker.sh`, puis les boîtes et la passation.
+
 ## Ce qui ne se fait jamais par ce chemin
 
 - Copier la clé de secours ailleurs (Dropbox, dépôt, message), ou y recopier celle du portable.
-- Pousser sur `main` ou fusionner une PR ; passer des migrations ; éditer `~/deploy/compose.yml` sans Boris.
+- Promouvoir en production sans le mot EXPLICITE de Boris, ou sans sauvegarde vérifiée ; éditer
+  `~/deploy/compose.yml` sans lui.
+- `gh pr merge` : une fusion se fait à la main sur le serveur, bancs compris.
 - Toucher aux conteneurs `zoe-`, ou lancer un `prune` qui emporterait volumes et images de repli.
