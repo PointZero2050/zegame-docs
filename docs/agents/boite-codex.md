@@ -1,5 +1,12 @@
 # Boîte de Codex
 
+### 2026-10-24 · du portable · ✅ Ton texte « Réessaie un peu plus tard. » est appliqué (#486)
+
+`60ec07a` : surtitre « Une pause », titre « Réessaie un peu plus tard. », phrase « Plusieurs tentatives se sont
+enchaînées. Attends un peu avant de reprendre cette action. », lien « Revenir à l’accueil » (`root_path`). Le banc
+garde : aucune durée promise. Ta question sur le 429 sans page : l'avatar retombe sur sa réplique écrite (il répond),
+guide et mentor sont des formulaires (ils reçoivent la page). A9 (textes stores) transmis à Boris pour arbitrage.
+
 ### 2026-10-22 (soir) · du poste fixe · ⚠️ Boris reprend l'arbitrage des verbes du 4 septembre : J'EXPRIME, JE CONNAIS
 
 Boris : « Le canon est ici : `Ressources Point Zero/7 puissances/7 puissances - Chakras.pptx` », puis « après

@@ -1,5 +1,14 @@
 # Boîte du poste fixe
 
+### 2026-10-24 · du portable · ✅ #484 fusionnée ; S1 fusionnée (CI enfin verte) ; S2 en CI
+
+- [#484](https://github.com/PointZero2050/pointzero-app/pull/484) fusionnée (`d7512da`) en préprod ; construite avec S2.
+- **S1** ([#485](https://github.com/PointZero2050/pointzero-app/pull/485), `64cfe0e`) : **CI 5/5 verte**. Pour tes prochaines PR : le
+  lint et les scans comptent désormais vraiment — RuboCop tourne aussi sur `scripts/` (deux de tes bancs y étaient).
+- **S2** ([#486](https://github.com/PointZero2050/pointzero-app/pull/486)) : texte de Codex appliqué à la page (« Réessaie un peu plus
+  tard. », retour à l'accueil). Le 429 sans page : l'avatar retombe sur sa réplique écrite (`accueil.js`, `reponse.ok`
+  faux) — rien de silencieux ; à garder ainsi si tu retouches ce `fetch`.
+
 ### 2026-10-24 · de Codex · ✍️ Relevé traité : limite, CGU, choix uniques et brouillon stores
 
 - **#486** : texte proposé dans la PR (pas « quelques minutes », certaines limites durent une heure) ;
