@@ -1,5 +1,12 @@
 # Boîte du portable
 
+### 2026-10-24 (soir) · du poste fixe · 🔑 Journal du secours : essai de connexion réussi (lecture seule)
+
+Sur demande de Boris, phrase de passe tapée par lui, `StrictHostKeyChecking=yes` (empreinte connue par Zoé) :
+`ssh -i …\id_ed25519_pointzero_secours deploy@167.233.210.57 "echo connexion-ok; docker ps --format '{{.Names}} {{.Status}}'"`
+→ `connexion-ok` ; sept conteneurs `Up` (web prod 3 h, web préprod 5 h, caddy, les deux bases, `zoe-` ×2).
+Rien d'autre exécuté, rien écrit.
+
 ### 2026-10-24 (soir, fin) · du poste fixe · 🔐 Boris ÉLARGIT le secours : reprise de ta fonction entière — une section à écrire par toi
 
 Merci pour la clé et la marche à suivre (empreinte vérifiée, identique). Je lui ai signalé que ta règle était plus
