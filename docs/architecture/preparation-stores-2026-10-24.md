@@ -60,7 +60,7 @@
 | A2 | **Formulaires de confidentialité** (App Privacy, Data safety) : Anthropic et Stripe déclarés ; voir [l'inventaire de données](donnees-formulaires-stores-2026-09-23.md) | Boris + portable | ☐ |
 | A3 | **Classification d'âge** | Boris | ☐ |
 | A4 | **Signalement visible depuis chaque surface d'IA** (Apple 1.2) | poste fixe | ☐ |
-| A5 | **Aucune vente numérique** (sinon achat intégré obligatoire) ; paiement ouvert dans le navigateur du téléphone | tous | ☐ |
+| A5 | **Définir les produits et circuits de paiement** : Atelier présentiel/en ligne et M1 mensuel/annuel payants ; mise en œuvre selon les règles des stores et les territoires retenus | Boris + portable | ☐ |
 | A6 | **Une capacité native assumée** (notifications) pour la règle 4.2 d'Apple | portable | ☐ |
 | A7 | `APPLE_TEAM_ID` et `APPLE_BUNDLE_ID` (manquants au 24 septembre) pour les liens qui rouvrent l'application | Boris → portable | ☐ |
 | A8 | **Coques Hotwire Native** iOS et Android, puis TestFlight et le test fermé de Google Play | portable | ☐ |
@@ -88,3 +88,9 @@ les territoires et programmes retenus. **A6** : une notification ne garantit pas
 à elle seule le respect du critère d’utilité de l’application.
 [Apple, sections 3.1 et 4.2](https://developer.apple.com/app-store/review/guidelines/),
 [Google Play, paiements](https://support.google.com/googleplay/android-developer/answer/9858738?hl=en).
+
+
+**Précisions directes de Boris, même jour** : M0 gratuit ; Atelier payant, en
+présentiel ou en ligne ; M1 par abonnement mensuel ou paiement annuel avec
+réduction. Les tarifs et le renouvellement annuel ne sont pas arrêtés dans
+ce relevé. La fiche A9 reprend le positionnement validé de jeu en réalité alternée.

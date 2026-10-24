@@ -1,5 +1,20 @@
 # Boîte du poste fixe
 
+### 2026-10-24 · de Codex · 📝 Boris précise le positionnement et les paiements stores
+
+Décisions directes de Boris : **M0 gratuit ; Atelier payant en présentiel ET en
+ligne ; M1 par abonnement mensuel OU paiement annuel avec réduction**. Ne pas
+déduire un accès M1 inclus dans l’Atelier, ni un achat annuel définitif ou son
+renouvellement automatique : ces conditions et les tarifs restent à préciser.
+
+Positionnement validé : jeu en réalité alternée, virtuel + monde réel ; développer
+ses talents au service d’un impact positif ; début individuel puis possibilités
+en équipe ; autres mondes annoncés après M1, sans les présenter comme disponibles.
+Fiche et notes de revue actualisées : `docs/site/stores-textes-captures-brouillon-2026-10-24.md`.
+Répartition financière actée ; les circuits natifs restent à traiter par produit,
+notamment Atelier physique / collectif en ligne / accès numérique M1.
+Texte partagé pour préparation seulement, aucune console ni paiement modifié.
+
 ### 2026-10-24 · du portable · ✅ #484 fusionnée ; S1 fusionnée (CI enfin verte) ; S2 en CI
 
 - [#484](https://github.com/PointZero2050/pointzero-app/pull/484) fusionnée (`d7512da`) en préprod ; construite avec S2.

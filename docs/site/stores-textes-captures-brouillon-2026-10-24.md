@@ -4,17 +4,37 @@
 > Transmission aux Claude pour préparation seulement. Aucun texte saisi dans
 > les consoles Apple ou Google ; aucune soumission ni publication autorisée par ce document.
 
-## Positionnement proposé
+## Positionnement validé et périmètre
 
-Présenter d’abord l’exploration progressive, avec les cinq questions du nouveau
-Monde 0. Présenter le Monde 1 comme la suite soumise à progression. Le Festival
-reste un contexte événementiel, pas la promesse centrale d’une application durable.
-Ne pas annoncer les parcours M1 de la maquette catalogue, les mondes suivants,
-un fonctionnement hors ligne ou des notifications natives tant qu’ils ne sont
-pas disponibles dans le binaire présenté à la revue.
+Ajout Codex — arbitrages directs de Boris du 24 octobre : présenter Point Zéro
+comme un **jeu en réalité alternée**, entre parcours virtuel et expériences dans
+le monde réel, pour développer ses talents au service d’un impact positif.
+Le jeu commence individuellement puis ouvre des possibilités en équipe. Les voies
+solo de M1 restent possibles. Les mondes après le 1 sont un horizon annoncé,
+pas des fonctions déjà disponibles dans la version candidate.
+
+Le Festival est un contexte événementiel de cette aventure durable. Les parcours
+M1 du catalogue en maquette, le hors-ligne et les notifications natives ne sont
+annoncés comme disponibles que s’ils sont réellement inclus dans le binaire soumis.
+
+**Modèle d’accès décidé par Boris :**
+
+| Partie | Condition financière | Progression |
+|---|---|---|
+| Monde 0 | Gratuit | Cinq explorations librement accessibles, ordre conseillé |
+| Atelier Point Zéro | Payant, en présentiel ou en ligne | Passage après les cinq explorations |
+| Monde 1 | Abonnement mensuel ou paiement annuel avec réduction | Suite après l’Atelier et selon les conditions d’accès M1 |
+
+Ne pas laisser entendre que le prix de l’Atelier inclut M1. Boris confirme les
+deux formats d’Atelier et les deux formules M1 : abonnement mensuel ou paiement
+annuel avec réduction. Le renouvellement automatique éventuel de la formule
+annuelle, les prix et les conditions d’arrêt restent à préciser. Ne pas la
+présenter comme un achat définitif. La gratuité du M0 ne tranche pas à elle seule
+la procédure de création de compte.
 
 Base produit : décisions M0/M1 du 15 octobre et bascule du 24 octobre rapportée
-par le portable. Ce dossier ne remplace pas une recette de la future coque native.
+par le portable. La cible financière ci-dessus n’est pas une affirmation que
+les paiements natifs ou leurs écrans sont déjà mis en œuvre.
 
 ## Champs proposés
 
@@ -22,7 +42,7 @@ par le portable. Ce dossier ne remplace pas une recette de la future coque nativ
 |---|---|---|
 | Nom | Point Zéro | 10 caractères |
 | Sous-titre Apple | Comprendre, explorer, agir | 26 caractères |
-| Description courte Google | Explore l’histoire humaine, ses futurs et tes puissances, à ton rythme. | 71 caractères |
+| Description courte Google | Un jeu entre virtuel et réel pour développer tes talents et agir dans le monde. | 79 caractères |
 | Mots-clés Apple | civilisation,futurs,histoire,prospective,conscience,parcours,collectif,imagination | 82 octets UTF-8 |
 
 Le nom et le sous-titre restent courts. Les mots-clés Apple sont une proposition,
@@ -31,11 +51,11 @@ sur Google Play. Les limites et champs sont à recontrôler dans les consoles au
 
 ## Description publique proposée pour les deux stores
 
-L’avenir ne manque pas de scénarios. Reste à comprendre comment nous en sommes arrivés là — et où nous voulons aller.
+Point Zéro est un jeu en réalité alternée : une aventure qui se déploie dans l’application et dans le monde réel.
 
-Point Zéro est un jeu d’exploration de l’histoire humaine, des futurs possibles et de nos manières d’agir. Tu avances par expériences interactives, à ton rythme.
+Explore l’histoire humaine et ses futurs possibles, puis découvre tes talents et comment les mettre au service d’un impact positif dans le monde. Tu commences individuellement. Puis tu peux rejoindre une équipe pour expérimenter, apprendre et agir ensemble.
 
-COMMENCER PAR CINQ QUESTIONS
+COMMENCER GRATUITEMENT DANS LE MONDE 0
 
 Le Monde 0 propose cinq explorations :
 • Qu’arrive-t-il à l’humanité ?
@@ -44,28 +64,29 @@ Le Monde 0 propose cinq explorations :
 • Qu’est-ce qui nous paralyse ?
 • Comment nous réveiller ?
 
-Explore-les librement, avec un ordre conseillé. Retrouve ta progression et les badges obtenus, puis prépare l’Atelier Point Zéro qui ouvre la suite.
+Explore-les librement, avec un ordre conseillé. Retrouve ta progression, les badges et les Omégas obtenus. Après ces cinq explorations, l’Atelier Point Zéro, payant et proposé en présentiel ou en ligne, prépare ton passage vers la suite.
 
 POURSUIVRE DANS LE MONDE 1
 
-Après ce premier panorama et l’Atelier, l’exploration devient personnelle : découvre ton jumeau, les Puissances et leurs polarités Ombre et Lumière. Les fonctions se dévoilent au fil de ta progression : expériences de jeu, ressources, guides et mentors IA, échanges avec les autres joueurs.
+Le Monde 1 est accessible par abonnement mensuel ou par paiement annuel à tarif réduit. Après le panorama du Monde 0 et l’Atelier, l’exploration devient personnelle : découvre ton jumeau, les Puissances et leurs polarités Ombre et Lumière. Les fonctions se dévoilent au fil de ta progression : expériences de jeu, ressources, guides et mentors IA, échanges avec les autres joueurs.
 
 Dans les Échanges, partage une question, réponds à une contribution, propose une rencontre ou une action. Les regards IA invités sont identifiés ; leur lecture de tes nouveaux messages dépend de ton accord dans le fil concerné.
 
-GARDER LE FIL
+UNE AVENTURE QUI SE POURSUIT
 
-Les Omégas reconnaissent les expériences accomplies. Dans le Monde 0, tu découvres ton solde ; leur usage se précise dans la suite du Jeu.
+L’aventure s’ouvre avec les Mondes 0 et 1. D’autres mondes viendront prolonger cette exploration.
 
-L’accès aux différents mondes et fonctions dépend de ta progression et des conditions de ton compte. Les modalités de l’Atelier sont présentées dans l’application.
+Le Monde 0 est gratuit. L’Atelier Point Zéro et l’accès au Monde 1 sont payants. Pour M1, le paiement annuel bénéficie d’une réduction par rapport à douze mensualités. Consulte les tarifs, les conditions de renouvellement et de résiliation avant tout achat.
 
-Une connexion internet est nécessaire. Les modalités de création de compte et d’accès doivent être consultées avant de commencer.
+Un compte et une connexion internet sont nécessaires.
 
-Fin de la description — **1674 caractères**, espaces et retours compris.
+Fin de la description — **1948 caractères**, espaces et retours compris.
 
-La dernière phrase d’accès doit être remplacée par la modalité exacte arrêtée
-pour la version native : création libre, invitation ou billet. Ne pas annoncer
-« gratuit » pour tout le Jeu ni une inscription libre sans ce choix. Retirer de
-la description toute surface M1 absente de la version candidate.
+La formulation du positionnement et le modèle gratuit/payant sont validés par
+Boris ; cette description complète reste un brouillon à relire. Les modalités
+concrètes d’achat et de création de compte seront raccordées à la version native.
+Retirer toute surface M1 absente de la version candidate ; ne pas présenter les
+mondes suivants comme déjà jouables.
 
 ## Trame des notes de revue en anglais
 
@@ -76,11 +97,18 @@ ni attente d’une date pour que le relecteur teste toutes les fonctions déclar
 
 **Texte proposé :**
 
-Point Zéro is a guided exploration game. World 0 offers five interactive journeys
-about human history, possible futures and collective patterns. World 1 introduces
-personal exploration, an avatar, AI guides and mentors, and community exchanges.
-Access to these features is progressive. The supplied review accounts must allow
-you to inspect both stages without completing a real-world workshop.
+Point Zéro is an alternate reality game combining a digital journey with
+real-world experiences. Players begin individually and may then join a team.
+World 0 is free and offers five interactive journeys about human history,
+possible futures and collective patterns. The Point Zéro workshop is paid and is offered both in person and online.
+World 1 offers a monthly subscription or a discounted annual payment option.
+It introduces personal exploration, an avatar, AI guides
+and mentors, and community exchanges. The workshop fee must not be described
+as including World 1 unless that is part of the offer actually submitted.
+
+Access is progressive. Further worlds are planned and are not presented as
+available in this version. Review access must cover both available worlds
+without requiring an actual purchase or attendance at a workshop.
 
 The New Civilization Festival is a related real-world event. When an event mode
 is active, the application may show event information and participation features
@@ -98,22 +126,25 @@ sécurisé, chemin d’accès exact aux deux mondes, mode Festival actif ou inac
 gestes de signalement/suppression réellement servis, fonction native démontrable,
 versions des textes de confidentialité, produits payants et règles d’accès.
 
-## Billet du Festival et accès numérique
+## Paiements à raccorder à la version native
 
-Le billet d’un événement physique et un accès payant à du contenu numérique ne
-se déclarent pas comme un seul produit interchangeable. Expliquer au relecteur
-ce qui est acheté, où il est consommé, et quels droits cela ouvre. L’offre évoquée
-pour le Festival — conservation de 100 euros et un an de M1 inclus — doit être
-qualifiée par Boris et le portable avant d’affirmer que tous les paiements peuvent
-passer par Stripe.
+Le modèle est tranché : **M0 gratuit ; Atelier payant en présentiel ou en ligne ;
+M1 par abonnement mensuel ou paiement annuel avec réduction**. Le circuit de
+paiement ne l’est pas. Décrire distinctement le service de l’Atelier, l’accès
+numérique M1 et leurs éventuelles offres groupées. Ne pas affirmer que tous
+ces paiements peuvent passer par Stripe ou un navigateur externe.
 
-Ouvrir un navigateur externe ne suffit pas à rendre un achat numérique admissible.
-Les possibilités dépendent du produit, du territoire de distribution et des
-programmes applicables. La ligne A5 de la liste de préparation doit être lue avec
-cette distinction, pas comme une autorisation générale de paiement externe.
-Le dossier n’affirme pas que les Omégas s’achètent ou se convertissent en argent.
+Les deux formats d’Atelier sont prévus. Distinguer l’atelier en présence physique
+et l’atelier collectif en ligne dans le catalogue de produits et l’analyse des
+paiements ; ne pas les ranger automatiquement dans la même catégorie. Pour M1,
+les formules mensuelle et annuelle sont établies, mais leur mise en œuvre native,
+les territoires et les programmes applicables restent à arrêter.
 [Apple, section 3.1](https://developer.apple.com/app-store/review/guidelines/#business),
 [Google Play, Payments](https://support.google.com/googleplay/android-developer/answer/9858738?hl=en).
+
+Les droits offerts historiquement aux participants du Festival sont à documenter
+séparément ; ils ne fixent pas le prix ou la durée de l’offre générale M1.
+Le dossier n’affirme pas que les Omégas s’achètent ou se convertissent en argent.
 
 ## Séquence de captures proposée avec le poste fixe
 
@@ -136,8 +167,11 @@ la configuration de la version candidate. Ces images restent à produire ensembl
 ## Choix à valider avant finalisation
 
 1. Nom affiché et catégorie principale ; piste éditoriale : Éducation, à confirmer.
-2. Création de compte et accès public : billet, invitation ou inscription libre.
-3. Offres Festival/Atelier/M1, ce que chaque paiement débloque et territoires visés.
+2. Procédure de création de compte pour l’accès gratuit au M0.
+3. Tarifs M1 mensuel/annuel et montant de la réduction, renouvellement de la formule
+   annuelle, résiliation, tarifs des deux formats d’Atelier, offres groupées
+   éventuelles, droits Festival et territoires visés. La répartition gratuit/payant
+   et les deux formules/formats sont décidés, ne pas les remettre dans les points ouverts.
 4. Périmètre natif et M1 réellement présent dans la première version.
 5. Comptes de revue, classification d’âge et collecte effective du binaire.
 
@@ -148,4 +182,6 @@ la configuration de la version candidate. Ces images restent à produire ensembl
 - [Apple — directives de revue](https://developer.apple.com/app-store/review/guidelines/) : métadonnées fidèles, captures de l’usage réel et accès complet à la revue ; les notifications seules ne garantissent pas le respect de la règle 4.2.
 
 Sources consultées le 24 octobre 2026. Les textes publics ci-dessus sont une
-proposition éditoriale ; les rubriques de paiement et d’accès restent ouvertes.
+proposition éditoriale. M0 gratuit / Atelier payant / M1 payant est acté ;
+les formats présentiel/en ligne et les formules M1 mensuelle/annuelle sont actés.
+Les tarifs, le renouvellement annuel et les circuits de paiement restent à préciser.
