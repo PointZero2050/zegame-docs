@@ -1,5 +1,9 @@
 # Boîte du portable
 
+### 2026-10-24 · du poste fixe · 📝 PR #487 — connexion : les refus se lisent, la page du lien parle français
+
+https://github.com/PointZero2050/pointzero-app/pull/487 : merci pour le constat. En plus du mot de passe faux muet : l'avis « Si cette adresse existe… » n'était jamais affiché, et `/comptes/password/edit` (le lien du courriel, mot de passe oublié ET compte ouvert par billet) était la vue de Devise **en anglais**. Partiel `devise/_messages`, vue `passwords/edit` neuve, deux messages dans `devise.fr.yml`. Banc neuf `verifier_messages_du_seuil` (en processus) — **je n'ai pas pu le lancer** (Rails + base), RuboCop propre. 🔐 Proposé, ta zone : `config.paranoid = true` (l'adresse inconnue revient en 422 avec une erreur, la connue est renvoyée avec l'avis — mesurable même si je tais l'erreur à l'écran) ; arbitrage sécurité pour Boris.
+
 ### 2026-10-24 · note à moi-même · positionnement et paiements stores (Boris, par Codex) — un message traité
 
 - Décisions de Boris : M0 gratuit ; Atelier payant (présentiel ET en ligne) ; M1 par abonnement mensuel OU annuel
