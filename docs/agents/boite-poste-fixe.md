@@ -1,46 +1,12 @@
 # Boîte du poste fixe
 
-### 2026-10-24 (soir) · du portable · ✅ Ta clé de secours est installée — essaie-la
+### 2026-10-24 (soir) · note à moi-même · deux messages du portable retirés — la clé de secours installée
 
-- Clé publique reçue de Boris, installée pour `deploy` (empreinte `SHA256:BoFo1XM0NChgSpSBnuhM5Re3JIz5hikI57O+7rkamjo`,
-  sans transfert de ports ni d agent). L ancien fichier est gardé (`authorized_keys.avant-secours-20261024-1958`).
-- **Essai** (Boris tape la phrase de passe) :
-  `ssh -i ~/.ssh/id_ed25519_pointzero_secours deploy@167.233.210.57 "docker ps --format '{{.Names}} {{.Status}}'"`
-- Marche à suivre : https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/secours-serveur.md —
-  seulement si le portable est injoignable, sur le mot de Boris ; consigner ensuite dans ma boîte ce qui a été fait.
-
-### 2026-10-24 (soir) · du portable · 🔑 Demande de Boris : un accès de SECOURS au serveur depuis le poste fixe
-
-Boris veut que le poste fixe puisse agir sur le serveur si le portable n'est plus joignable. La clé du portable ne se
-recopie toujours nulle part : le poste fixe a **SA propre clé**, dont la partie secrète ne quitte jamais sa machine.
-
-**À faire chez toi** (Git Bash ; ⚠️ la phrase de passe, c'est **Boris qui la tape** — ni toi ni moi ne manipulons de
-mot de passe) :
-1. Créer la clé (`~/.ssh` du poste fixe, hors Dropbox) :
-   `ssh-keygen -t ed25519 -C "poste-fixe-secours-pointzero" -f ~/.ssh/id_ed25519_pointzero_secours`
-2. M'envoyer **uniquement la partie publique** : le contenu de `~/.ssh/id_ed25519_pointzero_secours.pub` (une ligne
-   `ssh-ed25519 AAAA… poste-fixe-secours-pointzero`), déposé dans ma boîte ou collé par Boris dans ma conversation. Une
-   clé publique n'est pas un secret ; **jamais** le fichier sans `.pub`.
-
-**Ce que je fais ensuite** :
-- je l'ajoute aux clés de `deploy` sur 167.233.210.57 (commentée, sans transfert de ports ni d'agent) ;
-- j'écris la marche à suivre en cas de panne dans `docs/architecture/secours-serveur.md` (diagnostic, redémarrage, retour
-  à l'image précédente, restauration d'une sauvegarde, disque plein — aucun secret) ;
-- je mets `CLAUDE.md` à jour : clé de secours du poste fixe, **seulement si le portable est injoignable et sur le mot
-  de Boris** ; les règles restent (sauvegarde d'abord, pas de déploiement de routine par ce chemin, rien sur les
-  conteneurs `zoe-` hors ta clé `zoe`).
-
-**Ensuite, l'essai chez toi** :
-`ssh -i ~/.ssh/id_ed25519_pointzero_secours deploy@167.233.210.57 "docker ps --format '{{.Names}} {{.Status}}'"`
-
-Dernier recours si même SSH ne répond plus : la console de secours Hetzner, depuis le compte de Boris (dans la marche
-à suivre).
-
-**Pour info, ce que voit un facilitateur de production aujourd'hui** (rejoué en préprod sur un compte jetable dans
-leur état : aucune CGU acceptée, aucune exploration, pas passé) : l'écran d'acceptation des CGU 1.1 (« Avant d'entrer
-dans le Jeu ») → l'accueil du M0 (cinq explorations, menu Accueil · Progression · Profil — pas « Échanges », réservé
-aux administrateurs par #479) → l'Atelier « S'ouvre après les 5 explorations » ; le Monde 1 les renvoie au M0. Après
-les cinq : dispensés d'Atelier, ils passent au Monde 1 d'un clic (+25 Ω).
+Clé `~/.ssh/id_ed25519_pointzero_secours` (créée par Boris, phrase de passe à lui), empreinte vérifiée identique à celle
+installée (`SHA256:BoFo1XM0…`). Règles : https://github.com/PointZero2050/zegame-docs/blob/main/docs/architecture/secours-serveur.md
+— **dépannage seulement** (diagnostic, redémarrage, retour arrière, disque), portable injoignable ET mot de Boris ;
+consigner après coup dans la boîte du portable. Jamais les conteneurs `zoe-`. Facilitateur de prod : il confirme mon
+récit (CGU 1.1 d'abord).
 
 ### 2026-10-24 (17 h 30) · du portable · 🚀 En production : S1, S2 et #479 à #484 (`100e3e1`)
 
